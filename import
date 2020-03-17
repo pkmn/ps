@@ -16,7 +16,6 @@ const exec = async (cmd, cwd = __dirname) => {
 const execOrDie = async (cmd, cwd = __dirname) => {
   console.log(cmd);
   const [error, stdout, stderr ]= await exec(cmd, cwd);
-  // console.log({error, stdout, stderr});
   if (error || stderr) {
     console.error(stderr);
     process.exit(error);
@@ -24,22 +23,53 @@ const execOrDie = async (cmd, cwd = __dirname) => {
   return stdout;
 }
 
-const FILES = new Set([]);
+const tree = root => {
+  const leaves = [];
+  for (const child of fs.readdirSync(root)) {
+    const p = path.join(root, child);
+    leaves.push(...(fs.lstatSync(p).isDirectory() ? tree(p) : [p]));
+  }
+  return leaves;
+}
+
+const HEAD = path.resolve(__dirname, 'HEAD');
+const submodule = path.resolve(__dirname, 'vendor/pokemon-showdown');
+const sim = path.resolve(__dirname, 'sim');
+const data = path.resolve(__dirname, 'data');
+
+const FILES = new Set(tree(sim).map(m => m.slice(sim.length + 1)));
+const OVERRIDDEN = new Set([
+  'package.json',
+  'README.md',
+  'sim/index.ts',
+  'tsconfig.json',
+]);
+const COPIED = [...FILES].filter(f => !OVERRIDDEN.has(f));
+
+const interesting = f => {
+  if (f.startsWith('sim') || f.startsWith('test/sim')) return true;
+  if (f.startsWith('data') && !f.endsWith('random-teams.js')) return true;
+  return COPIED.has(f);
+}
 
 (async () => {
   await execOrDie('git submodule update --remote --rebase');
-  const submodule = path.resolve(__dirname, 'vendor/pokemon-showdown');
-  const now = (await execOrDie('git rev-parse HEAD', submodule)).trim();
-  const last = fs.readFileSync(path.resolve(__dirname, '.last'), 'utf-8').trim();
+  const now = (await execOrDie('git rev-parse HEAD', submodule)).slice(0, 8);
+  const last = fs.readFileSync(HEAD, 'utf-8').trim();
 
-  const changed = (await execOrDie(`git diff --name-only ${now} ${last}`, submodule)).split('\n');
+  const changed = (await execOrDie(`git diff --name-only ${last}..${now}`, submodule)).split
+  ('\n');
+  console.log(`https://github.com/smogon/pokemon-showdown/compare/${last}..${now}`);
   for (const change of changed) {
     if (!change) continue;
-    if (FILES.has(change)) {
+    if (interesting(change)) {
       console.log('\x1b[91mCHANGED\x1b[0m', change);
     }
   }
 
+  for (const file of COPIED) {
+    fs.copyFileSync(path.resolve(submodule, file), path.resolve(sim, file));
+  }
 
-  fs.writeFileSync(path.resolve(__dirname, '.last'), now);
+  fs.writeFileSync(HEAD, now);
 })().catch(console.error);
