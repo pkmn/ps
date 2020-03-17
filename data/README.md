@@ -1,4 +1,4 @@
-# `@pkmn/data`
+# @pkmn/data
 [![npm version](https://img.shields.io/npm/v/@pkmn/data.svg)](https://www.npmjs.com/package/@pkmn/data)&nbsp;
 
 A 'lite' `Dex` implementation from [smogon/pokemon-showdown][0] and data files which would be suitable for use in a browser based on the simulators's data files.
