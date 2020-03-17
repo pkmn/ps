@@ -1,82 +1,29 @@
-## Layout
+# @pkmn/ps
 
-**vendor**
-  - smogon/pokemon-showdown
+> [Pokémon Showdown][0], [modularized into packages][1].
 
-**types**
-  - just common types for all projects
+This is the top level of @pkmn's Pokémon Showdown components:
 
-**sim** (~full GEN)
-  - lib/streams
-  - sim/
-  - random-player-ai
-  - data/ (no random teams, js including all scripts)
+- [`@pkmn/sim`][2]: an automatically generated extraction of just the simulator portion of [smogon/pokemon-showdown][3]
+- [`@pkmn/data`][4]: a 'lite' `Dex` implementation from [smogon/pokemon-showdown][3] and data files which would be suitable for use in a browser based on the sim's data files
+- [`@pkmn/types`][5]: TypeScript definitions for types common to Pokémon projects
+- [`@pkmn/protocol`][6]: Parsing logic for Pokémon Showdown's [PROTOCOL][7] and [SIM-PROTOCOL][8].
+- [`@pkmn/client`][9]: a forked implementation of [smogon/pokemon-showdown-client][10]'s battle engine, build on top of `@pkmn/data` and `@pkmn/protocol`.
 
-**data** (partial GEN)
-  - dex (based on sim/dex.ts from minus cruft)
-  - builds on top of sims data files, either uses them untouched as JS or in the
-    decomposed mode
+Everything is distributed under the terms of the [MIT License][11], where substantial
+amounts of the code have been either derived or generated from the portions of Guangcong
+Luo's Pokémon Showdown [server][3] and [client][10] which are also distributed under the [MIT License][12].
 
-**client**
-  - depends on data (can depend either JS or JSON version)
-  - battle/pokemon/client - mirror
-  - dogarized, depends on protocol/
-
-**protocol**
-  - dogar types and parsing
-
-### Future
-
-**team**
-  - team validator (need to be able to pass into Sim)
-
-**view**
- - text.json/BattleTextParser (though using protocol/)
-
-**chat**
- - rooms/users (needs to be useful to bots AND UI)
-
-**login**
- - as advertised on the tin
-
-### Deps
-
-**calc**
- - must have a generic data layer so can be swapped for:
-   - its own data
-   - smogon/data
-   - pkmn/ps/data
-
-## Principles
-
-- not allowed to change pokemon-showdown source locally, only copy files and add
-  - will need to upstream any changes that are required to get it to work
-    instead of maintaining a patch queue to apply
-- minimize the number of files needing additions as well, instead restructure PS
-  upstream to cut down on this
-
-
-## Implementation
-
-- top level pkmn/ps has standard tsconfig/eslint/package.json
-- each sub folder is a package
-- generated code:
- - smogon/pokemon-showdown is vendor, sync/import script updates vendored copy
-   and then builds: sim first, then data
- - gets checked in, import script update then run smoke tests and check in
-
-## Roadmap
-
-1. sim (vendor)
-2. data
-3. client (types/protocol)
-4. calc
-
-**Goal:**
-- 1 set of data files when bundling sim + client + calc (JS version)
-- 1 set of data files when bundling client + calc (JSON version)
-
-
----
-
-add logic to the imports script that detects diffs in relavant files since last sync
+  [0]: https://pokemonshowdown.com
+  [1]: https://pkmn.cc/modular-ps
+  [2]: https://github.com/pkmn/ps/blob/masterpkmn/sim
+  [3]: https://github.com/smogon/pokemon-showdown
+  [4]: https://github.com/pkmn/ps/blob/masterpkmn/data
+  [5]: https://github.com/pkmn/ps/blob/masterpkmn/types
+  [6]: https://github.com/pkmn/ps/blob/masterpkmn/protocol
+  [7]: https://github.com/smogon/pokemon-showdown/blob/master/PROTOCOL.md
+  [8]: https://github.com/smogon/pokemon-showdown/blob/master/sim/SIM-PROTOCOL.md
+  [9]: https://github.com/pkmn/ps/blob/masterpkmn/client
+  [10]: https://github.com/smogon/pokemon-showdown-client
+  [11]: https://github.com/pkmn/ps/blob/master/LICENSE
+  [12]: https://github.com/smogon/pokemon-showdown/blob/master/LICENSE

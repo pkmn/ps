@@ -1,2 +1,7 @@
-data/data
 node_modules/
+build/
+.DS_Store
+Thumbs.db
+package-lock.json
+.eslintcache
+.tsbuildinfo

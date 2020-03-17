@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "repository": "github:pkmn/ps",
+  "license": "MIT",
+  "devDependencies": {
+    "@pkmn/eslint-config": "^0.1.0",
+    "@types/node": "^13.9.0",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint": "^6.8.0",
+    "subpkg": "^2.0.0",
+    "typescript": "^3.8.3"
+  },
+  "subPackages": [
+    "bot",
+    "chat",
+    "multi",
+    "ps/bot",
+    "ps/chat",
+    "ps/login"
+  ],
+  "scripts": {
+    "lint": "subpkg run lint",
+    "fix": "subpkg run fix",
+    "compile": "subpkg run compile",
+    "start": "subpkg run start",
+    "test": "subpkg run test",
+    "postinstall": "subpkg install"
+  }
+}
