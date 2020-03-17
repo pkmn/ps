@@ -1,0 +1,45 @@
+#!/usr/bin/env node
+'use strict';
+
+const child_process = require('child_process');
+const fs = require('fs');
+const path = require('path');
+
+const exec = async (cmd, cwd = __dirname) => {
+  return new Promise(resolve => {
+    child_process.exec(cmd, {cwd}, (error, stdout, stderr) => {
+      resolve([error ? error.code : 0, stdout, stderr]);
+    });
+  });
+}
+
+const execOrDie = async (cmd, cwd = __dirname) => {
+  console.log(cmd);
+  const [error, stdout, stderr ]= await exec(cmd, cwd);
+  // console.log({error, stdout, stderr});
+  if (error || stderr) {
+    console.error(stderr);
+    process.exit(error);
+  }
+  return stdout;
+}
+
+const FILES = new Set([]);
+
+(async () => {
+  await execOrDie('git submodule update --remote --rebase');
+  const submodule = path.resolve(__dirname, 'vendor/pokemon-showdown');
+  const now = (await execOrDie('git rev-parse HEAD', submodule)).trim();
+  const last = fs.readFileSync(path.resolve(__dirname, '.last'), 'utf-8').trim();
+
+  const changed = (await execOrDie(`git diff --name-only ${now} ${last}`, submodule)).split('\n');
+  for (const change of changed) {
+    if (!change) continue;
+    if (FILES.has(change)) {
+      console.log('\x1b[91mCHANGED\x1b[0m', change);
+    }
+  }
+
+
+  fs.writeFileSync(path.resolve(__dirname, '.last'), now);
+})().catch(console.error);

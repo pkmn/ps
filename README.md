@@ -19,7 +19,7 @@
 
 **client**
   - depends on data (can depend either JS or JSON version)
-  - battle/pokemon/client - mirror 
+  - battle/pokemon/client - mirror
   - dogarized, depends on protocol/
 
 **protocol**
@@ -31,7 +31,7 @@
   - team validator (need to be able to pass into Sim)
 
 **view**
- - text.json/BattleTextParser (though using protocol/) 
+ - text.json/BattleTextParser (though using protocol/)
 
 **chat**
  - rooms/users (needs to be useful to bots AND UI)
@@ -75,3 +75,8 @@
 **Goal:**
 - 1 set of data files when bundling sim + client + calc (JS version)
 - 1 set of data files when bundling client + calc (JSON version)
+
+
+---
+
+add logic to the imports script that detects diffs in relavant files since last sync
