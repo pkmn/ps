@@ -40,7 +40,7 @@ interface SelfEffect extends SelfEffectData {
 }
 
 type SecondaryEffectData = import('@pkmn/types').SecondaryEffect;
-interface SecondaryEffect extends SecondaryEffectData  {
+interface SecondaryEffect extends SecondaryEffectData {
 	self?: SelfEffect;
 	onHit?: MoveEventMethods['onHit'];
 }

@@ -184,7 +184,7 @@
   },
   "overrides": [
     {
-      "files": ["./lib/*.ts", "./sim/**/*.ts"],
+      "files": ["./lib/*.ts", "./sim/**/*.ts", "./data/**/*.ts"],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "ecmaVersion": 9,

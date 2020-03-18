@@ -391,8 +391,9 @@ export class ModdedDex {
 
 	getOutOfBattleSpecies(template: Template) {
 		return !template.battleOnly ? template.species :
-		template.inheritsFrom ? this.getTemplate(template.inheritsFrom).species :
-		template.baseSpecies;	}
+			template.inheritsFrom ? this.getTemplate(template.inheritsFrom).species :
+			template.baseSpecies;
+	}
 
 	getLearnsetData(id: ID): LearnsetData {
 		let learnsetData = this.learnsetCache.get(id);
@@ -1346,7 +1347,7 @@ export class ModdedDex {
 		}
 		let section = '';
 		let column = 1;
-		for (let [i, f] of Formats.entries()) {
+		for (const [i, f] of Formats.entries()) {
 			const format = f as FormatsData;
 			const id = toID(format.name);
 			if (format.section) section = format.section;
