@@ -13,9 +13,9 @@ declare global {
   namespace NodeJS {
 		interface Global {
       Config: any;
+      Chat: any;
 			Dex: any
 			toID(input: any): string
-			TeamValidator: any
 			__version: {head: string, origin?: string, tree?: string}
 		}
   }
@@ -41,6 +41,6 @@ declare global {
 	const TypeInfo: DataType.TypeInfo;
   const toID: typeof DataType.Tools.getId;
 
-  const Config: AnyObject; // FIXME
+  const Config: {potd?: string, allowrequestingties?: boolean};
   const Chat: typeof ChatType;
 }
