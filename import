@@ -72,6 +72,7 @@ const OVERRIDDEN = new Set([
   'package.json',
   'README.md',
   'sim/chat.ts',
+  'sim/global-types.ts',
   'sim/global-variables.d.ts',
   'sim/index.ts',
   'test/main.js',
@@ -86,6 +87,7 @@ const interesting = f => {
 }
 
 (async () => {
+  await execOrDie('npm install @pkmn/types);
   await execOrDie('git submodule update --remote --rebase');
   const now = (await execOrDie('git rev-parse HEAD', submodule)).slice(0, 8);
   const last = fs.readFileSync(HEAD, 'utf-8').trim();

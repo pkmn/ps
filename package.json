@@ -13,8 +13,9 @@
     "typescript": "^3.8.3"
   },
   "subPackages": [
-    "protocol",
-    "types"
+    "types",
+    "sim",
+    "protocol"
   ],
   "scripts": {
     "lint": "subpkg run lint",

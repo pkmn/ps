@@ -6,7 +6,10 @@
     "checkJs": true,
     "lib": ["es2015", "es2016.array.include", "es2017.object"],
     "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": false,
+    "noImplicitReturns": false,
+    "outDir": "build",
     "typeRoots": ["./node_modules/@types", "./node_modules/@pkmn/types"]
   },
-  "exclude": ["test"]
+  "exclude": ["test", "build"]
 }

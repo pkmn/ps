@@ -10,6 +10,15 @@ import {TeamValidator as TeamValidatorType} from './team-validator';
 import {Chat as ChatType} from './chat';
 
 declare global {
+  namespace NodeJS {
+		interface Global {
+      Config: any;
+			Dex: any
+			toID(input: any): string
+			TeamValidator: any
+			__version: {head: string, origin?: string, tree?: string}
+		}
+  }
 	const Battle: BattleType;
 	const BattleStream: BattleStreamType.BattleStream;
 	const Dex: typeof DexType;
@@ -32,5 +41,6 @@ declare global {
 	const TypeInfo: DataType.TypeInfo;
   const toID: typeof DataType.Tools.getId;
 
+  const Config: AnyObject; // FIXME
   const Chat: typeof ChatType;
 }
