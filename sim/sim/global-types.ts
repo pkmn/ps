@@ -14,7 +14,7 @@ interface DexTable<T> {
 	[key: string]: T;
 }
 
-type GenderName = 'M' | 'F' | 'N' | '';
+type GenderName = import('@pkmn/types').GenderName | '';
 type StatNameExceptHP = 'atk' | 'def' | 'spa' | 'spd' | 'spe';
 type StatName = 'hp' | StatNameExceptHP;
 type StatsExceptHPTable = {[stat in StatNameExceptHP]: number};
