@@ -63,6 +63,7 @@ const data = path.resolve(__dirname, 'data');
 
 const FILES = new Set(tree(sim).map(m => m.slice(sim.length + 1)));
 const FRAGILE = new Set([
+  'sim/dex.ts',
   'sim/global-types.ts',
   'sim/global-variables.d.ts',
 ])

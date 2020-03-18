@@ -1,33 +1,3 @@
-/**
- * Dex
- * Pokemon Showdown - http://pokemonshowdown.com/
- *
- * Handles getting data about pokemon, items, etc. Also contains some useful
- * helper functions for using dex data.
- *
- * By default, nothing is loaded until you call Dex.mod(mod) or
- * Dex.forFormat(format).
- *
- * You may choose to preload some things:
- * - Dex.includeMods() ~10ms
- *   This will populate Dex.dexes, giving you a list of possible mods.
- *   Note that you don't need this for Dex.mod, Dex.mod will
- *   automatically populate this.
- * - Dex.includeFormats() ~30ms
- *   As above, but will also populate Dex.formats, giving an object
- *   containing formats.
- * - Dex.includeData() ~500ms
- *   As above, but will also preload all of Dex.data, giving access to
- *   the data access functions like Dex.getTemplate, Dex.getMove, etc.
- * - Dex.includeModData() ~1500ms
- *   As above, but will also preload Dex.dexes[...].data for all mods.
- *
- * Note that preloading is only necessary for iterating Dex.dexes. Getters
- * like Dex.getTemplate will automatically load this data as needed.
- *
- * @license MIT license
- */
-
 // eslint-disable-next-line no-extend-native
 Object.defineProperty(Array.prototype, 'flatMap', {
 	value<T, U, W>(this: T[], callback: (this: W, item: T, index: number, array: T[]) => U[], thisArg: W): U[] {
@@ -41,17 +11,14 @@ Object.defineProperty(Array.prototype, 'flatMap', {
 	writable: true,
 });
 
-import * as fs from 'fs';
-import * as path from 'path';
-
 import * as Data from './dex-data';
 import {PRNG, PRNGSeed} from './prng';
 
 const BASE_MOD = 'gen8' as ID;
 const DEFAULT_MOD = BASE_MOD;
-const DATA_DIR = path.resolve(__dirname, '../data');
-const MODS_DIR = path.resolve(__dirname, '../data/mods');
-const FORMATS = path.resolve(__dirname, '../config/formats');
+// const DATA_DIR = path.resolve(__dirname, '../data');
+// const MODS_DIR = path.resolve(__dirname, '../data/mods');
+// const FORMATS = path.resolve(__dirname, '../config/formats');
 
 const dexes: {[mod: string]: ModdedDex} = Object.create(null);
 
@@ -154,8 +121,8 @@ export class ModdedDex {
 	parentMod: string;
 	modsLoaded: boolean;
 
-	dataCache: DexTableData | null;
-	formatsCache: DexTable<Format> | null;
+	dataCache: DexTableData;
+	formatsCache: DexTable<Format>;
 
 	constructor(mod = 'base', isOriginal = false) {
 		this.ModdedDex = ModdedDex;
@@ -177,13 +144,13 @@ export class ModdedDex {
 
 		this.gen = 0;
 		this.parentMod = '';
-		this.modsLoaded = false;
+		this.modsLoaded = true;
 
 		this.dataCache = null;
 		this.formatsCache = null;
 
 		if (!isOriginal) {
-			const original = dexes['base'].mod(mod).includeData();
+			const original = dexes['base'].mod(mod);
 			this.currentMod = original.currentMod;
 
 			this.gen = original.gen;
@@ -199,33 +166,25 @@ export class ModdedDex {
 		}
 	}
 
-	get dataDir(): string {
-		return (this.isBase ? DATA_DIR : MODS_DIR + '/' + this.currentMod);
-	}
-
 	get data(): DexTableData {
-		return this.loadData();
+		return this.dataCache;
 	}
 
 	get formats(): DexTable<Format> {
-		this.includeFormats();
 		return this.formatsCache!;
 	}
 
 	get dexes(): {[mod: string]: ModdedDex} {
-		this.includeMods();
 		return dexes;
 	}
 
 	mod(mod: string | undefined): ModdedDex {
-		if (!dexes['base'].modsLoaded) dexes['base'].includeMods();
 		return dexes[mod || 'base'];
 	}
 
 	forFormat(format: Format | string): ModdedDex {
-		if (!this.modsLoaded) this.includeMods();
 		const mod = this.getFormat(format).mod;
-		return dexes[mod || BASE_MOD].includeData();
+		return dexes[mod || BASE_MOD];
 	}
 
 	modData(dataType: DataType, id: string) {
@@ -1050,53 +1009,6 @@ export class ModdedDex {
 		return arr;
 	}
 
-	levenshtein(s: string, t: string, l: number): number {
-		// Original levenshtein distance function by James Westgate, turned out to be the fastest
-		const d: number[][] = [];
-
-		// Step 1
-		const n = s.length;
-		const m = t.length;
-
-		if (n === 0) return m;
-		if (m === 0) return n;
-		if (l && Math.abs(m - n) > l) return Math.abs(m - n);
-
-		// Create an array of arrays in javascript (a descending loop is quicker)
-		for (let i = n; i >= 0; i--) d[i] = [];
-
-		// Step 2
-		for (let i = n; i >= 0; i--) d[i][0] = i;
-		for (let j = m; j >= 0; j--) d[0][j] = j;
-
-		// Step 3
-		for (let i = 1; i <= n; i++) {
-			const si = s.charAt(i - 1);
-
-			// Step 4
-			for (let j = 1; j <= m; j++) {
-				// Check the jagged ld total so far
-				if (i === j && d[i][j] > 4) return n;
-
-				const tj = t.charAt(j - 1);
-				const cost = (si === tj) ? 0 : 1; // Step 5
-
-				// Calculate the minimum
-				let mi = d[i - 1][j] + 1;
-				const b = d[i][j - 1] + 1;
-				const c = d[i - 1][j - 1] + cost;
-
-				if (b < mi) mi = b;
-				if (c < mi) mi = c;
-
-				d[i][j] = mi; // Step 6
-			}
-		}
-
-		// Step 7
-		return d[n][m];
-	}
-
 	/** Forces num to be an integer (between min and max). */
 	clampIntRange(num: any, min?: number, max?: number): number {
 		if (typeof num !== 'number') num = 0;
@@ -1116,69 +1028,7 @@ export class ModdedDex {
 	}
 
 	getTeamGenerator(format: Format | string, seed: PRNG | PRNGSeed | null = null) {
-		// eslint-disable-next-line @typescript-eslint/no-var-requires
-		const TeamGenerator = require(dexes['base'].forFormat(format).dataDir + '/random-teams');
-		return new TeamGenerator(format, seed);
-	}
-
-	generateTeam(format: Format | string, options: PlayerOptions | null = null): PokemonSet[] {
-		return this.getTeamGenerator(format, options?.seed).getTeam(options);
-	}
-
-	dataSearch(target: string, searchIn?: DataType[] | null, isInexact?: boolean): AnyObject[] | false {
-		if (!target) return false;
-
-		searchIn = searchIn || ['Pokedex', 'Movedex', 'Abilities', 'Items', 'Natures'];
-
-		const searchFunctions = {
-			Pokedex: 'getTemplate', Movedex: 'getMove', Abilities: 'getAbility', Items: 'getItem', Natures: 'getNature',
-		};
-		const searchTypes: {[k in DataType]?: string} = {
-			Pokedex: 'pokemon', Movedex: 'move', Abilities: 'ability', Items: 'item', Natures: 'nature',
-		};
-		let searchResults: AnyObject[] | false = [];
-		for (const table of searchIn) {
-			// @ts-ignore
-			const res: AnyObject = this[searchFunctions[table]](target);
-			if (res.exists && res.gen <= this.gen) {
-				searchResults.push({
-					isInexact,
-					searchType: searchTypes[table],
-					name: res.species ? res.species : res.name,
-				});
-			}
-		}
-		if (searchResults.length) return searchResults;
-		if (isInexact) return false; // prevent infinite loop
-
-		const cmpTarget = toID(target);
-		let maxLd = 3;
-		if (cmpTarget.length <= 1) {
-			return false;
-		} else if (cmpTarget.length <= 4) {
-			maxLd = 1;
-		} else if (cmpTarget.length <= 6) {
-			maxLd = 2;
-		}
-		searchResults = false;
-		for (const table of [...searchIn, 'Aliases'] as DataType[]) {
-			const searchObj = this.data[table];
-			if (!searchObj) continue;
-
-			for (const j in searchObj) {
-				const ld = this.levenshtein(cmpTarget, j, maxLd);
-				if (ld <= maxLd) {
-					const word = searchObj[j].name || searchObj[j].species || j;
-					const results = this.dataSearch(word, searchIn, word);
-					if (results) {
-						searchResults = results;
-						maxLd = ld;
-					}
-				}
-			}
-		}
-
-		return searchResults;
+		throw new Error('getTeamGenerator is not supported');
 	}
 
 	packTeam(team: PokemonSet[] | null): string {
@@ -1573,7 +1423,7 @@ export class ModdedDex {
 			if (format.searchShow === undefined) format.searchShow = true;
 			if (format.tournamentShow === undefined) format.tournamentShow = true;
 			if (format.mod === undefined) format.mod = 'gen8';
-			// if (!dexes[format.mod]) throw new Error(`Format "${format.name}" requires nonexistent mod: '${format.mod}'`);
+			if (!dexes[format.mod]) format.exists = false;
 			this.formatsCache[id] = format;
 		}
 

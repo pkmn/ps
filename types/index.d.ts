@@ -46,6 +46,13 @@ export type NatureName =
 	'Modest' | 'Naive' | 'Naughty' | 'Quiet' | 'Quirky' |
 	'Rash' | 'Relaxed' | 'Sassy' | 'Serious' | 'Timid';
 
+export interface Nature {
+	name: NatureName;
+	plus?: StatName;
+	minus?: StatName;
+	[k: string]: any;
+}
+
 export type TypeName =
 	'Normal' | 'Fighting' | 'Flying' | 'Poison' | 'Ground' | 'Rock' | 'Bug' | 'Ghost' | 'Steel' |
 	'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' | '???';
