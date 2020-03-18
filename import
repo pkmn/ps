@@ -62,11 +62,14 @@ const sim = path.resolve(__dirname, 'sim');
 const data = path.resolve(__dirname, 'data');
 
 const FILES = new Set(tree(sim).map(m => m.slice(sim.length + 1)));
-const OVERRIDDEN = new Set([
-  'package.json',
-  'README.md',
+const FRAGILE = new Set([
   'sim/global-types.ts',
   'sim/global-variables.d.ts',
+])
+const OVERRIDDEN = new Set([
+  ...FRAGILE,
+  'package.json',
+  'README.md',
   'sim/index.ts',
   'test/main.js',
   'tsconfig.json',
@@ -90,7 +93,8 @@ const interesting = f => {
   for (const change of changed) {
     if (!change) continue;
     if (interesting(change)) {
-      console.log('\x1b[91mCHANGED\x1b[0m', change);
+      const color = FRAGILE.has(change) ? 91 : 93;
+      console.log(`\x1b[${color}mCHANGED\x1b[0m ${change}`);
     }
   }
 
