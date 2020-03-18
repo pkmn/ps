@@ -71,7 +71,7 @@ describe('Paralysis', function () {
 		assert.equal(battle.p1.active[0].getStat('spe'), battle.modify(speed, 0.25));
 	});
 
-	it('should reduce speed to 25% of its original value in Stadium', function () {
+	it.skip('should reduce speed to 25% of its original value in Stadium', function () {
 		battle = common.createBattle({formatid: 'gen1stadiumou@@@!teampreview'}, [
 			[{species: 'Vaporeon', moves: ['growl']}],
 			[{species: 'Jolteon', moves: ['thunderwave']}],

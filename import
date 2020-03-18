@@ -82,6 +82,7 @@ const OVERRIDDEN = new Set([
   'data/mods/gen5/index.ts',
   'data/mods/gen6/index.ts',
   'data/mods/gen7/index.ts',
+  'test/sim/misc/statuses.js',
 ]);
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
 
