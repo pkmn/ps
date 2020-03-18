@@ -14,6 +14,8 @@ Object.defineProperty(Array.prototype, 'flatMap', {
 import * as Data from './dex-data';
 import {PRNG, PRNGSeed} from './prng';
 
+import {Formats} from '../config/formats';
+
 const BASE_MOD = 'gen8' as ID;
 const DEFAULT_MOD = BASE_MOD;
 
@@ -103,10 +105,10 @@ export class ModdedDex {
 	parentMod: string;
 	modsLoaded: boolean;
 
-	dataCache: DexTableData;
-	formatsCache: DexTable<Format>;
+	dataCache: DexTableData | null;
+	formatsCache: DexTable<Format> | null;
 
-	constructor(mod = 'base', isOriginal = false) {
+	constructor(mod = 'base') {
 		this.ModdedDex = ModdedDex;
 		this.Data = Data;
 
@@ -130,26 +132,10 @@ export class ModdedDex {
 
 		this.dataCache = null;
 		this.formatsCache = null;
-
-		if (!isOriginal) {
-			const original = dexes['base'].mod(mod).includeData();
-			this.currentMod = original.currentMod;
-
-			this.gen = original.gen;
-			this.parentMod = original.parentMod;
-
-			this.abilityCache = original.abilityCache;
-			this.itemCache = original.itemCache;
-			this.moveCache = original.moveCache;
-			this.templateCache = original.templateCache;
-
-			this.dataCache = original.dataCache;
-			this.formatsCache = original.formatsCache;
-		}
 	}
 
 	get data(): DexTableData {
-		return this.dataCache;
+		return this.loadData();
 	}
 
 	get formats(): DexTable<Format> {
@@ -166,7 +152,6 @@ export class ModdedDex {
 	}
 
 	forFormat(format: Format | string): ModdedDex {
-		if (!this.modsLoaded) this.includeMods();
 		const mod = this.getFormat(format).mod;
 		return dexes[mod || BASE_MOD].includeData();
 	}
@@ -1276,7 +1261,6 @@ export class ModdedDex {
 
 	loadData(): DexTableData {
 		if (this.dataCache) return this.dataCache;
-		dexes['base'].includeMods();
 		const dataCache: {[k in keyof DexTableData]?: any} = {};
 
 		const basePath = this.dataDir + '/';
@@ -1359,26 +1343,17 @@ export class ModdedDex {
 
 	includeFormats(): ModdedDex {
 		if (!this.isBase) throw new Error(`This should only be run on the base mod`);
-		this.includeMods();
 		if (this.formatsCache) return this;
 
 		if (!this.formatsCache) this.formatsCache = {};
 
-		// Load formats
-		let Formats;
-		try {
-			Formats = require(FORMATS).Formats;
-		} catch (e) {
-			if (e.code !== 'MODULE_NOT_FOUND' && e.code !== 'ENOENT') {
-				throw e;
-			}
-		}
 		if (!Array.isArray(Formats)) {
 			throw new TypeError(`Exported property 'Formats' from "./config/formats.js" must be an array`);
 		}
 		let section = '';
 		let column = 1;
-		for (const [i, format] of Formats.entries()) {
+		for (let [i, f] of Formats.entries()) {
+			const format = f as FormatsData;
 			const id = toID(format.name);
 			if (format.section) section = format.section;
 			if (format.column) column = format.column;
@@ -1390,27 +1365,29 @@ export class ModdedDex {
 			if (!format.column) format.column = column;
 			if (this.formatsCache[id]) throw new Error(`Format #${i + 1} has a duplicate ID: '${id}'`);
 			format.effectType = 'Format';
+			// @ts-ignore
 			format.baseRuleset = format.ruleset ? format.ruleset.slice() : [];
 			if (format.challengeShow === undefined) format.challengeShow = true;
 			if (format.searchShow === undefined) format.searchShow = true;
 			if (format.tournamentShow === undefined) format.tournamentShow = true;
 			if (format.mod === undefined) format.mod = 'gen8';
-			// if (!dexes[format.mod]) throw new Error(`Format "${format.name}" requires nonexistent mod: '${format.mod}'`);
-			this.formatsCache[id] = format;
+			// @ts-ignore
+			if (!dexes[format.mod]) format.exists = false;
+			this.formatsCache[id] = format as Format;
 		}
 
 		return this;
 	}
 }
 
-dexes['base'] = new ModdedDex(undefined, true);
-dexes['gen1'] = new ModdedDex('gen1', true);
-dexes['gen2'] = new ModdedDex('gen2', true);
-dexes['gen3'] = new ModdedDex('gen3', true);
-dexes['gen4'] = new ModdedDex('gen4', true);
-dexes['gen5'] = new ModdedDex('gen5', true);
-dexes['gen6'] = new ModdedDex('gen6', true);
-dexes['gen7'] = new ModdedDex('gen7', true);
+dexes['base'] = new ModdedDex();
+dexes['gen1'] = new ModdedDex('gen1');
+dexes['gen2'] = new ModdedDex('gen2');
+dexes['gen3'] = new ModdedDex('gen3');
+dexes['gen4'] = new ModdedDex('gen4');
+dexes['gen5'] = new ModdedDex('gen5');
+dexes['gen6'] = new ModdedDex('gen6');
+dexes['gen7'] = new ModdedDex('gen7');
 
 // "gen8" is an alias for the current base data
 dexes[BASE_MOD] = dexes['base'];
