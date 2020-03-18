@@ -69,11 +69,8 @@ const FRAGILE = new Set([
 ])
 const OVERRIDDEN = new Set([
   ...FRAGILE,
-  'package.json',
-  'README.md',
-  'sim/index.ts',
-  'test/main.js',
-  'tsconfig.json',
+  '.eslintrc-no-types.json',
+  '.eslintrc-types.json',
   'data/index.ts',
   'data/mods/gen1/index.ts',
   'data/mods/gen2/index.ts',
@@ -82,7 +79,12 @@ const OVERRIDDEN = new Set([
   'data/mods/gen5/index.ts',
   'data/mods/gen6/index.ts',
   'data/mods/gen7/index.ts',
+  'package.json',
+  'README.md',
+  'sim/index.ts',
+  'test/main.js',
   'test/sim/misc/statuses.js',
+  'tsconfig.json',
 ]);
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
 

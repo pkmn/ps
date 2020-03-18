@@ -8,12 +8,8 @@
     }
   },
   "ignorePatterns": [
-    "logs/",
     "node_modules/",
-    ".*-dist/",
-    "tools/set-import/importer.js",
-    "tools/set-import/sets",
-    "server/global-variables.d.ts",
+    "build/",
     "sim/global-variables.d.ts"
  ],
   "env": {
@@ -188,7 +184,7 @@
   },
   "overrides": [
     {
-      "files": ["./lib/*.ts", "./server/**/*.ts", "./sim/**/*.ts", "./tools/set-import/*.ts"],
+      "files": ["./lib/*.ts", "./sim/**/*.ts"],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "ecmaVersion": 9,
@@ -307,7 +303,7 @@ REGEXFREE SOURCE FOR IGNOREPATTERN
 
   (
     # define a variable, append to a variable, or define a single-arg arrow function
-    (export\ )?(let\ |const\ )?[a-zA-Z0-9$.]+\ \+?=>?\ 
+    (export\ )?(let\ |const\ )?[a-zA-Z0-9$.]+\ \+?=>?\
   |
     # optionally return or throw
     (return\ |throw\ )?
