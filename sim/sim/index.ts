@@ -2,10 +2,6 @@ import {Dex} from './dex';
 global.Dex = Dex;
 global.toID = Dex.getId;
 
-global.Config = {
-  allowrequestingties: false
-};
-
 export {Battle} from './battle';
 export {BattleStream} from './battle-stream';
 export {Dex} from './dex';

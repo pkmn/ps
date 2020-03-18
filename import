@@ -26,6 +26,7 @@ const execOrDie = async (cmd, cwd = __dirname) => {
 const tree = root => {
   const leaves = [];
   for (const child of fs.readdirSync(root)) {
+    if (['build', 'node_modules'].includes(child)) continue;
     const p = path.join(root, child);
     leaves.push(...(fs.lstatSync(p).isDirectory() ? tree(p) : [p]));
   }
@@ -37,7 +38,7 @@ const replace = async (file, replacements) => {
 	if (stats.isSymbolicLink()) return;
 	if (stats.isFile()) {
     if (!file.endsWith('.js')) return;
-    const text = await fs.promises.readFile(file, "utf-8");
+    let text = await fs.promises.readFile(file, "utf-8");
     let anyMatch = false;
     for (var i = 0; i < replacements.length; i++) {
       anyMatch = anyMatch || text.match(replacements[i].regex);
@@ -70,7 +71,7 @@ const OVERRIDDEN = new Set([
   'test/main.js',
   'tsconfig.json',
 ]);
-const COPIED = [...FILES].filter(f => !OVERRIDDEN.has(f));
+const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
 
 const interesting = f => {
   if (f.startsWith('sim') || f.startsWith('test/sim')) return true;

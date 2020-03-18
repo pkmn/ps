@@ -32,7 +32,8 @@ export type EvoType =
 
 export type Player = 'p1' | 'p2' | 'p3' | 'p4';
 
-export type GameType = 'singles' | 'doubles' | 'triples' | 'multi' | 'free-for-all';
+export type GameType =
+	'singles' | 'doubles' | 'triples' | 'multi' | 'free-for-all' | 'rotation';
 
 export type HPColor = 'r' | 'y' | 'g';
 
