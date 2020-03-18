@@ -1,33 +1,3 @@
-/**
- * Dex
- * Pokemon Showdown - http://pokemonshowdown.com/
- *
- * Handles getting data about pokemon, items, etc. Also contains some useful
- * helper functions for using dex data.
- *
- * By default, nothing is loaded until you call Dex.mod(mod) or
- * Dex.forFormat(format).
- *
- * You may choose to preload some things:
- * - Dex.includeMods() ~10ms
- *   This will populate Dex.dexes, giving you a list of possible mods.
- *   Note that you don't need this for Dex.mod, Dex.mod will
- *   automatically populate this.
- * - Dex.includeFormats() ~30ms
- *   As above, but will also populate Dex.formats, giving an object
- *   containing formats.
- * - Dex.includeData() ~500ms
- *   As above, but will also preload all of Dex.data, giving access to
- *   the data access functions like Dex.getTemplate, Dex.getMove, etc.
- * - Dex.includeModData() ~1500ms
- *   As above, but will also preload Dex.dexes[...].data for all mods.
- *
- * Note that preloading is only necessary for iterating Dex.dexes. Getters
- * like Dex.getTemplate will automatically load this data as needed.
- *
- * @license MIT license
- */
-
 // eslint-disable-next-line no-extend-native
 Object.defineProperty(Array.prototype, 'flatMap', {
 	value<T, U, W>(this: T[], callback: (this: W, item: T, index: number, array: T[]) => U[], thisArg: W): U[] {
@@ -41,17 +11,11 @@ Object.defineProperty(Array.prototype, 'flatMap', {
 	writable: true,
 });
 
-import * as fs from 'fs';
-import * as path from 'path';
-
 import * as Data from './dex-data';
 import {PRNG, PRNGSeed} from './prng';
 
 const BASE_MOD = 'gen8' as ID;
 const DEFAULT_MOD = BASE_MOD;
-const DATA_DIR = path.resolve(__dirname, '../data');
-const MODS_DIR = path.resolve(__dirname, '../data/mods');
-const FORMATS = path.resolve(__dirname, '../config/formats');
 
 const dexes: {[mod: string]: ModdedDex} = Object.create(null);
 
@@ -62,21 +26,6 @@ const DATA_TYPES: (DataType | 'Aliases')[] = [
 	'Abilities', 'Formats', 'FormatsData', 'Items', 'Learnsets', 'Movedex',
 	'Natures', 'Pokedex', 'Scripts', 'Statuses', 'TypeChart',
 ];
-
-const DATA_FILES = {
-	Abilities: 'abilities',
-	Aliases: 'aliases',
-	Formats: 'rulesets',
-	FormatsData: 'formats-data',
-	Items: 'items',
-	Learnsets: 'learnsets',
-	Movedex: 'moves',
-	Natures: 'natures',
-	Pokedex: 'pokedex',
-	Scripts: 'scripts',
-	Statuses: 'statuses',
-	TypeChart: 'typechart',
-};
 
 const nullEffect: PureEffect = new Data.PureEffect({name: '', exists: false});
 
@@ -154,8 +103,8 @@ export class ModdedDex {
 	parentMod: string;
 	modsLoaded: boolean;
 
-	dataCache: DexTableData | null;
-	formatsCache: DexTable<Format> | null;
+	dataCache: DexTableData;
+	formatsCache: DexTable<Format>;
 
 	constructor(mod = 'base', isOriginal = false) {
 		this.ModdedDex = ModdedDex;
@@ -199,12 +148,8 @@ export class ModdedDex {
 		}
 	}
 
-	get dataDir(): string {
-		return (this.isBase ? DATA_DIR : MODS_DIR + '/' + this.currentMod);
-	}
-
 	get data(): DexTableData {
-		return this.loadData();
+		return this.dataCache;
 	}
 
 	get formats(): DexTable<Format> {
@@ -213,12 +158,10 @@ export class ModdedDex {
 	}
 
 	get dexes(): {[mod: string]: ModdedDex} {
-		this.includeMods();
 		return dexes;
 	}
 
 	mod(mod: string | undefined): ModdedDex {
-		if (!dexes['base'].modsLoaded) dexes['base'].includeMods();
 		return dexes[mod || 'base'];
 	}
 
@@ -1319,18 +1262,6 @@ export class ModdedDex {
 		return {};
 	}
 
-	includeMods(): ModdedDex {
-		if (!this.isBase) throw new Error(`This must be called on the base Dex`);
-		if (this.modsLoaded) return this;
-
-		for (const mod of fs.readdirSync(MODS_DIR)) {
-			dexes[mod] = new ModdedDex(mod, true);
-		}
-		this.modsLoaded = true;
-
-		return this;
-	}
-
 	includeModData(): ModdedDex {
 		for (const mod in this.dexes) {
 			dexes[mod].includeData();
@@ -1473,6 +1404,13 @@ export class ModdedDex {
 }
 
 dexes['base'] = new ModdedDex(undefined, true);
+dexes['gen1'] = new ModdedDex('gen1', true);
+dexes['gen2'] = new ModdedDex('gen2', true);
+dexes['gen3'] = new ModdedDex('gen3', true);
+dexes['gen4'] = new ModdedDex('gen4', true);
+dexes['gen5'] = new ModdedDex('gen5', true);
+dexes['gen6'] = new ModdedDex('gen6', true);
+dexes['gen7'] = new ModdedDex('gen7', true);
 
 // "gen8" is an alias for the current base data
 dexes[BASE_MOD] = dexes['base'];
