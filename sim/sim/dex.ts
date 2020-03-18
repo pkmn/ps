@@ -11,6 +11,14 @@ Object.defineProperty(Array.prototype, 'flatMap', {
 	writable: true,
 });
 
+import * as gen1 from '../data/mods/gen1';
+import * as gen2 from '../data/mods/gen2';
+import * as gen3 from '../data/mods/gen3';
+import * as gen4 from '../data/mods/gen4';
+import * as gen5 from '../data/mods/gen5';
+import * as gen6 from '../data/mods/gen6';
+import * as gen7 from '../data/mods/gen7';
+
 import * as Data from './dex-data';
 import {PRNG, PRNGSeed} from './prng';
 
