@@ -1,3 +1,33 @@
+/**
+ * Dex
+ * Pokemon Showdown - http://pokemonshowdown.com/
+ *
+ * Handles getting data about pokemon, items, etc. Also contains some useful
+ * helper functions for using dex data.
+ *
+ * By default, nothing is loaded until you call Dex.mod(mod) or
+ * Dex.forFormat(format).
+ *
+ * You may choose to preload some things:
+ * - Dex.includeMods() ~10ms
+ *   This will populate Dex.dexes, giving you a list of possible mods.
+ *   Note that you don't need this for Dex.mod, Dex.mod will
+ *   automatically populate this.
+ * - Dex.includeFormats() ~30ms
+ *   As above, but will also populate Dex.formats, giving an object
+ *   containing formats.
+ * - Dex.includeData() ~500ms
+ *   As above, but will also preload all of Dex.data, giving access to
+ *   the data access functions like Dex.getTemplate, Dex.getMove, etc.
+ * - Dex.includeModData() ~1500ms
+ *   As above, but will also preload Dex.dexes[...].data for all mods.
+ *
+ * Note that preloading is only necessary for iterating Dex.dexes. Getters
+ * like Dex.getTemplate will automatically load this data as needed.
+ *
+ * @license MIT license
+ */
+
 // eslint-disable-next-line no-extend-native
 Object.defineProperty(Array.prototype, 'flatMap', {
 	value<T, U, W>(this: T[], callback: (this: W, item: T, index: number, array: T[]) => U[], thisArg: W): U[] {
@@ -11,14 +41,17 @@ Object.defineProperty(Array.prototype, 'flatMap', {
 	writable: true,
 });
 
+import * as fs from 'fs';
+import * as path from 'path';
+
 import * as Data from './dex-data';
 import {PRNG, PRNGSeed} from './prng';
 
 const BASE_MOD = 'gen8' as ID;
 const DEFAULT_MOD = BASE_MOD;
-// const DATA_DIR = path.resolve(__dirname, '../data');
-// const MODS_DIR = path.resolve(__dirname, '../data/mods');
-// const FORMATS = path.resolve(__dirname, '../config/formats');
+const DATA_DIR = path.resolve(__dirname, '../data');
+const MODS_DIR = path.resolve(__dirname, '../data/mods');
+const FORMATS = path.resolve(__dirname, '../config/formats');
 
 const dexes: {[mod: string]: ModdedDex} = Object.create(null);
 
@@ -121,8 +154,8 @@ export class ModdedDex {
 	parentMod: string;
 	modsLoaded: boolean;
 
-	dataCache: DexTableData;
-	formatsCache: DexTable<Format>;
+	dataCache: DexTableData | null;
+	formatsCache: DexTable<Format> | null;
 
 	constructor(mod = 'base', isOriginal = false) {
 		this.ModdedDex = ModdedDex;
@@ -144,13 +177,13 @@ export class ModdedDex {
 
 		this.gen = 0;
 		this.parentMod = '';
-		this.modsLoaded = true;
+		this.modsLoaded = false;
 
 		this.dataCache = null;
 		this.formatsCache = null;
 
 		if (!isOriginal) {
-			const original = dexes['base'].mod(mod);
+			const original = dexes['base'].mod(mod).includeData();
 			this.currentMod = original.currentMod;
 
 			this.gen = original.gen;
@@ -166,25 +199,33 @@ export class ModdedDex {
 		}
 	}
 
+	get dataDir(): string {
+		return (this.isBase ? DATA_DIR : MODS_DIR + '/' + this.currentMod);
+	}
+
 	get data(): DexTableData {
-		return this.dataCache;
+		return this.loadData();
 	}
 
 	get formats(): DexTable<Format> {
+		this.includeFormats();
 		return this.formatsCache!;
 	}
 
 	get dexes(): {[mod: string]: ModdedDex} {
+		this.includeMods();
 		return dexes;
 	}
 
 	mod(mod: string | undefined): ModdedDex {
+		if (!dexes['base'].modsLoaded) dexes['base'].includeMods();
 		return dexes[mod || 'base'];
 	}
 
 	forFormat(format: Format | string): ModdedDex {
+		if (!this.modsLoaded) this.includeMods();
 		const mod = this.getFormat(format).mod;
-		return dexes[mod || BASE_MOD];
+		return dexes[mod || BASE_MOD].includeData();
 	}
 
 	modData(dataType: DataType, id: string) {
@@ -1423,7 +1464,7 @@ export class ModdedDex {
 			if (format.searchShow === undefined) format.searchShow = true;
 			if (format.tournamentShow === undefined) format.tournamentShow = true;
 			if (format.mod === undefined) format.mod = 'gen8';
-			if (!dexes[format.mod]) format.exists = false;
+			// if (!dexes[format.mod]) throw new Error(`Format "${format.name}" requires nonexistent mod: '${format.mod}'`);
 			this.formatsCache[id] = format;
 		}
 
