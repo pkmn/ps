@@ -1,23 +1,11 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "allowJs": true,
-    "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "checkJs": true,
-    "declaration": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "incremental": true,
     "lib": ["es2015", "es2016.array.include", "es2017.object"],
-    "module": "commonjs",
     "moduleResolution": "node",
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "pretty": true,
-    "sourceMap": true,
-    "strict": true,
-    "target": "es2017",
-    "tsBuildInfoFile": ".tsbuildinfo"
-  }
+  },
+  "exclude": ["test"]
 }
