@@ -18,6 +18,8 @@ import * as gen4 from '../data/mods/gen4';
 import * as gen5 from '../data/mods/gen5';
 import * as gen6 from '../data/mods/gen6';
 import * as gen7 from '../data/mods/gen7';
+import * as gen8 from '../data';
+const DATA = {gen1, gen2, gen3, gen4, gen5, gen6, gen7, gen8};
 
 import * as Data from './dex-data';
 import {PRNG, PRNGSeed} from './prng';
@@ -1004,7 +1006,7 @@ export class ModdedDex {
 		return num >>> 0;
 	}
 
-	getTeamGenerator(format: Format | string, seed: PRNG | PRNGSeed | null = null) {
+	getTeamGenerator(format: Format | string, seed: PRNG | PRNGSeed | null = null): any {
 		throw new Error('getTeamGenerator is not supported');
 	}
 
@@ -1234,25 +1236,8 @@ export class ModdedDex {
 		return clone;
 	}
 
-	loadDataFile(basePath: string, dataType: DataType | 'Aliases'): AnyObject {
-		try {
-			const filePath = basePath + DATA_FILES[dataType];
-			// eslint-disable-next-line @typescript-eslint/no-var-requires
-			const dataObject = require(filePath);
-			const key = `Battle${dataType}`;
-			if (!dataObject || typeof dataObject !== 'object') {
-				return new TypeError(`${filePath}, if it exists, must export a non-null object`);
-			}
-			if (!dataObject[key] || typeof dataObject[key] !== 'object') {
-				return new TypeError(`${filePath}, if it exists, must export an object whose '${key}' property is a non-null object`);
-			}
-			return dataObject[key];
-		} catch (e) {
-			if (e.code !== 'MODULE_NOT_FOUND' && e.code !== 'ENOENT') {
-				throw e;
-			}
-		}
-		return {};
+	loadDataFile(mod: string, dataType: DataType | 'Aliases'): AnyObject {
+		return (DATA as any)[mod === 'base' ? 'gen8' : mod][dataType] || {};
 	}
 
 	includeModData(): ModdedDex {
@@ -1271,9 +1256,7 @@ export class ModdedDex {
 		if (this.dataCache) return this.dataCache;
 		const dataCache: {[k in keyof DexTableData]?: any} = {};
 
-		const basePath = this.dataDir + '/';
-
-		const BattleScripts = this.loadDataFile(basePath, 'Scripts');
+		const BattleScripts = this.loadDataFile(this.currentMod, 'Scripts');
 		this.parentMod = this.isBase ? '' : (BattleScripts.inherit || 'base');
 
 		let parentDex;
@@ -1291,10 +1274,10 @@ export class ModdedDex {
 				dataCache[dataType] = BattleNatures;
 				continue;
 			}
-			const BattleData = this.loadDataFile(basePath, dataType);
+			const BattleData = this.loadDataFile(this.currentMod, dataType);
 			if (!BattleData || typeof BattleData !== 'object') {
 				throw new TypeError(
-					`Exported property 'Battle${dataType}'from './data/${DATA_FILES[dataType]}' must be an object except 'null'.`
+					`Exported property 'Battle${dataType}' for '${this.currentMod}' must be an object except 'null'.`
 				);
 			}
 			if (BattleData !== dataCache[dataType]) dataCache[dataType] = Object.assign(BattleData, dataCache[dataType]);
