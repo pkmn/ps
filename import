@@ -71,9 +71,11 @@ const FILES = new Set(tree(sim).map(m => m.slice(sim.length + 1)));
 const OVERRIDDEN = new Set([
   'package.json',
   'README.md',
+  'sim/chat.ts',
+  'sim/global-variables.d.ts',
   'sim/index.ts',
-  'tsconfig.json',
   'test/main.js',
+  'tsconfig.json',
 ]);
 const COPIED = [...FILES].filter(f => !OVERRIDDEN.has(f));
 
