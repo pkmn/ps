@@ -8,124 +8,40 @@ type Side = import('./side').Side;
 type TeamValidator = import('./team-validator').TeamValidator;
 type PokemonSources = import('./team-validator').PokemonSources;
 
-type ID = '' | string & {__isID: true};
+type ID = import('@pkmn/types').ID;
 interface AnyObject {[k: string]: any}
 interface DexTable<T> {
 	[key: string]: T;
 }
 
 type GenderName = import('@pkmn/types').GenderName | '';
-type StatNameExceptHP = 'atk' | 'def' | 'spa' | 'spd' | 'spe';
-type StatName = 'hp' | StatNameExceptHP;
+type StatName = import('@pkmn/types').StatName;
+type StatNameExceptHP = Exclude<StatName, 'hp'>;
 type StatsExceptHPTable = {[stat in StatNameExceptHP]: number};
-type StatsTable = {[stat in StatName]: number };
+type StatsTable<T = number> = import('@pkmn/types').StatsTable<T>;
 type SparseStatsTable = Partial<StatsTable>;
-type BoostName = StatNameExceptHP | 'accuracy' | 'evasion';
-type BoostsTable = {[boost in BoostName]: number };
+type BoostName = import('@pkmn/types').BoostName;
+type BoostsTable = import('@pkmn/types').BoostsTable;
 type SparseBoostsTable = Partial<BoostsTable>;
-type Nonstandard = 'Past' | 'Future' | 'Unobtainable' | 'CAP' | 'LGPE' | 'Custom';
-/**
- * Describes the acceptable target(s) of a move.
- * adjacentAlly - Only relevant to Doubles or Triples, the move only targets an ally of the user.
- * adjacentAllyOrSelf - The move can target the user or its ally.
- * adjacentFoe - The move can target a foe, but not (in Triples) a distant foe.
- * all - The move targets the field or all Pokémon at once.
- * allAdjacent - The move is a spread move that also hits the user's ally.
- * allAdjacentFoes - The move is a spread move.
- * allies - The move affects all active Pokémon on the user's team.
- * allySide - The move adds a side condition on the user's side.
- * allyTeam - The move affects all unfainted Pokémon on the user's team.
- * any - The move can hit any other active Pokémon, not just those adjacent.
- * foeSide - The move adds a side condition on the foe's side.
- * normal - The move can hit one adjacent Pokémon of your choice.
- * randomNormal - The move targets an adjacent foe at random.
- * scripted - The move targets the foe that damaged the user.
- * self - The move affects the user of the move.
- */
-type MoveTarget =
-	'adjacentAlly' | 'adjacentAllyOrSelf' | 'adjacentFoe' | 'all' | 'allAdjacent' | 'allAdjacentFoes' |
-	'allies' | 'allySide' | 'allyTeam' | 'any' | 'foeSide' | 'normal' | 'randomNormal' | 'scripted' | 'self';
+type Nonstandard = import('@pkmn/types').Nonstandard;
+type MoveTarget = import('@pkmn/types').MoveTarget;
 
-interface PokemonSet {
-	name: string;
-	species: string;
-	item: string;
-	ability: string;
-	moves: string[];
-	nature: string;
-	gender: string;
-	evs: StatsTable;
-	ivs: StatsTable;
-	level: number;
-	shiny?: boolean;
-	happiness?: number;
-	pokeball?: string;
-	hpType?: string;
-}
+type PokemonSet<T = string> = import('@pkmn/types').PokemonSet<T>;
 
-/**
- * Describes a possible way to get a move onto a pokemon.
- *
- * First character is a generation number, 1-7.
- * Second character is a source ID, one of:
- *
- * - L = start or level-up, 3rd char+ is the level
- * - M = TM/HM
- * - T = tutor
- * - R = restricted (special moves like Rotom moves)
- * - E = egg
- * - S = event, 3rd char+ is the index in .eventPokemon
- * - D = Dream World, only 5D is valid
- * - V = Virtual Console or Let's Go transfer, only 7V/8V is valid
- * - C = NOT A REAL SOURCE, see note, only 3C/4C is valid
- *
- * C marks certain moves learned by a pokemon's prevo. It's used to
- * work around the chainbreeding checker's shortcuts for performance;
- * it lets the pokemon be a valid father for teaching the move, but
- * is otherwise ignored by the learnset checker (which will actually
- * check prevos for compatibility).
- */
-type MoveSource = string;
+type MoveSource = import('@pkmn/types').MoveSource;
 
-interface EventInfo {
-	generation: number;
-	level?: number;
-	shiny?: boolean | 1;
-	gender?: GenderName;
-	nature?: string;
-	ivs?: SparseStatsTable;
-	perfectIVs?: number;
-	isHidden?: boolean;
-	abilities?: string[];
-	maxEggMoves?: number;
-	moves?: string[];
-	pokeball?: string;
-	from?: string;
-}
+type EventInfo = import('@pkmn/types').EventInfo;
 
 type Effect = Ability | Item | ActiveMove | Template | PureEffect | Format;
 
-interface SelfEffect {
-	boosts?: SparseBoostsTable;
-	chance?: number;
-	pseudoWeather?: string;
-	sideCondition?: string;
-	slotCondition?: string;
-	terrain?: string;
-	volatileStatus?: string;
-	weather?: string;
+type SelfEffectData = import('@pkmn/types').SelfEffectData;
+interface SelfEffect extends SelfEffectData {
 	onHit?: MoveEventMethods['onHit'];
 }
 
-interface SecondaryEffect {
-	chance?: number;
-	ability?: Ability;
-	boosts?: SparseBoostsTable;
-	dustproof?: boolean;
-	kingsrock?: boolean;
+type SecondaryEffectData = import('@pkmn/types').SecondaryEffectData;
+interface SecondaryEffect extends SecondaryEffectData  {
 	self?: SelfEffect;
-	status?: string;
-	volatileStatus?: string;
 	onHit?: MoveEventMethods['onHit'];
 }
 

@@ -65,3 +65,43 @@ export interface PokemonSet<T = string> {
   pokeball?: T;
   hpType?: string;
 }
+
+export type MoveSource = string;
+
+export interface EventInfo {
+	generation: number;
+	level?: number;
+	shiny?: boolean | 1;
+	gender?: GenderName;
+	nature?: string;
+	ivs?: SparseStatsTable;
+	perfectIVs?: number;
+	isHidden?: boolean;
+	abilities?: string[];
+	maxEggMoves?: number;
+	moves?: string[];
+	pokeball?: string;
+	from?: string;
+}
+
+export interface SelfEffectData {
+	boosts?: Partial<BoostsTable>;
+	chance?: number;
+	pseudoWeather?: string;
+	sideCondition?: string;
+	slotCondition?: string;
+	terrain?: string;
+	volatileStatus?: string;
+	weather?: string;
+}
+
+export interface SecondaryEffectData {
+	chance?: number;
+	ability?: Ability;
+	boosts?: Partial<BoostsTable>;
+	dustproof?: boolean;
+	kingsrock?: boolean;
+	self?: SelfEffectData;
+	status?: string;
+	volatileStatus?: string;
+}
