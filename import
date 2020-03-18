@@ -32,6 +32,36 @@ const tree = root => {
   return leaves;
 }
 
+// FIXME promisify!
+const replace = (file, replacements) => {
+	fs.lstat(file, (err, stats) => {
+		if (err) throw err;
+		if (stats.isSymbolicLink()) return;
+		if (stats.isFile()) {
+			if (!file.endsWith('.js')) return;
+			fs.readFile(file, "utf-8", (err, text) => {
+					if (err) throw err;
+					var anyMatch = false;
+					for (var i = 0; i < replacements.length; i++) {
+						anyMatch = anyMatch || text.match(replacements[i].regex);
+						if (anyMatch) text = text.replace(replacements[i].regex, replacements[i].replace);
+					}
+					if (!anyMatch) return;
+					fs.writeFile(file, text, err => {
+						if (err) throw err;
+					});
+				});
+		} else if (stats.isDirectory()) {
+			fs.readdir(file, (err, files) => {
+				if (err) throw err;
+				for (var i = 0; i < files.length; i++) {
+					replace(path.join(file, files[i]), replacements);
+				}
+			});
+		}
+	});
+}
+
 const HEAD = path.resolve(__dirname, 'HEAD');
 const submodule = path.resolve(__dirname, 'vendor/pokemon-showdown');
 const sim = path.resolve(__dirname, 'sim');
@@ -43,6 +73,7 @@ const OVERRIDDEN = new Set([
   'README.md',
   'sim/index.ts',
   'tsconfig.json',
+  'test/main.js',
 ]);
 const COPIED = [...FILES].filter(f => !OVERRIDDEN.has(f));
 

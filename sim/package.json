@@ -1,0 +1,32 @@
+{
+  "name": "@pkmn/ps",
+  "version": "0.0.1",
+  "description": "An automatically generated extraction of just the simulator portion of Pokémon Showdown",
+  "homepage": "https://psim.us",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "repository": "github:pkmn/ps",
+  "author": "Guangcong Luo <guangcongluo@gmail.com> (http://guangcongluo.com)",
+  "contributors": [
+    "Cathy J. Fitzpatrick <cathy@cathyjf.com> (https://cathyjf.com)",
+    "Bill Meltsner <bill@meltsner.com> (http://www.meltsner.com)"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^13.7.7",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.1",
+    "mocha": "^7.1.0",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint",
+    "lint": "eslint . --config .eslintrc-types.json --cache --ext .js,.ts",
+    "full-test": "npm run compile && mocha --forbid-only -R spec -g \".*\" && npm run lint"
+  }
+}
