@@ -494,6 +494,30 @@ export class Ability extends BasicEffect implements Readonly<BasicEffect & Abili
 	}
 }
 
+export class Learnset {
+	readonly effectType: 'Learnset';
+	/**
+	 * Keeps track of exactly how a pokemon might learn a move, in the
+	 * form moveid:sources[].
+	 */
+	readonly learnset?: {[moveid: string]: MoveSource[]};
+	/** True if the only way to get this Pokemon is from events. */
+	readonly eventOnly: boolean;
+	/** List of event data for each event. */
+	readonly eventData?: EventInfo[];
+	readonly encounters?: EventInfo[];
+	readonly exists: boolean;
+
+	constructor(data: AnyObject) {
+		this.exists = true;
+		this.effectType = 'Learnset';
+		this.learnset = data.learnset || undefined;
+		this.eventOnly = !!data.eventOnly;
+		this.eventData = data.eventData || undefined;
+		this.encounters = data.encounters || undefined;
+	}
+}
+
 export class Template extends BasicEffect implements Readonly<BasicEffect & TemplateData & TemplateFormatsData> {
 	readonly effectType: 'Pokemon';
 	/**
@@ -592,7 +616,7 @@ export class Template extends BasicEffect implements Readonly<BasicEffect & Temp
 	/** Name of its Gigantamax move, if a pokemon is gigantamax. */
 	readonly isGigantamax?: string;
 	/** True if a pokemon is a forme that is only accessible in battle. */
-	readonly battleOnly?: boolean;
+	readonly battleOnly?: string | string[];
 	/** Required item. Do not use this directly; see requiredItems. */
 	readonly requiredItem?: string;
 	/** Required move. Move required to use this forme in-battle. */
@@ -607,11 +631,6 @@ export class Template extends BasicEffect implements Readonly<BasicEffect & Temp
 	readonly requiredItems?: string[];
 
 	/**
-	 * Keeps track of exactly how a pokemon might learn a move, in the
-	 * form moveid:sources[].
-	 */
-	readonly learnset?: {[moveid: string]: MoveSource[]};
-	/**
 	 * Formes that can transform into this Pokemon, to inherit learnsets
 	 * from. (Like `prevo`, but for transformations that aren't
 	 * technically evolution. Includes in-battle transformations like
@@ -621,10 +640,6 @@ export class Template extends BasicEffect implements Readonly<BasicEffect & Temp
 	 * for in-battle formes.
 	 */
 	readonly inheritsFrom: ID;
-	/** True if the only way to get this pokemon is from events. */
-	readonly eventOnly: boolean;
-	/** List of event data for each event. */
-	readonly eventPokemon?: EventInfo[];
 
 	/**
 	 * Singles Tier. The Pokemon's location in the Smogon tier system.
@@ -686,13 +701,11 @@ export class Template extends BasicEffect implements Readonly<BasicEffect & Temp
 		this.unreleasedHidden = data.unreleasedHidden || false;
 		this.maleOnlyHidden = !!data.maleOnlyHidden;
 		this.maxHP = data.maxHP || undefined;
-		this.learnset = data.learnset || undefined;
-		this.eventOnly = !!data.eventOnly;
-		this.eventPokemon = data.eventPokemon || undefined;
 		this.isMega = !!(this.forme && ['Mega', 'Mega-X', 'Mega-Y'].includes(this.forme)) || undefined;
 		this.isGigantamax = data.isGigantamax || undefined;
-		this.battleOnly = !!data.battleOnly || !!this.isMega || !!this.isGigantamax || undefined;
-		this.inheritsFrom = data.inheritsFrom || undefined;
+		this.battleOnly = data.battleOnly ||
+			(data.requiredAbility || !!this.isMega || !!this.isGigantamax ? this.baseSpecies : undefined);
+		this.inheritsFrom = data.inheritsFrom || (this.isGigantamax ? toID(this.baseSpecies) : undefined);
 
 		if (!this.gen && this.num >= 1) {
 			if (this.num >= 810 || ['Gmax', 'Galar', 'Galar-Zen'].includes(this.forme)) {
@@ -702,7 +715,7 @@ export class Template extends BasicEffect implements Readonly<BasicEffect & Temp
 			} else if (this.forme === 'Primal') {
 				this.gen = 6;
 				this.isPrimal = true;
-				this.battleOnly = true;
+				this.battleOnly = this.baseSpecies;
 			} else if (this.num >= 650 || this.isMega) {
 				this.gen = 6;
 			} else if (this.num >= 494) {

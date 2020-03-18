@@ -323,20 +323,21 @@ export interface TemplateData {
 	otherForms?: string[];
 	otherFormes?: string[];
 	prevo?: string;
+	requiredAbility?: string;
+	requiredItem?: string;
+	requiredItems?: string[];
+	requiredMove?: string;
+	battleOnly?: string | string[];
+	isGigantamax?: string;
 	inheritsFrom?: string;
 }
 export interface ModdedTemplateData extends Partial<TemplateData> {
 	inherit?: true;
 }
 export interface TemplateFormatsData {
-	battleOnly?: boolean;
 	comboMoves?: readonly string[];
 	doublesTier?: string;
-	encounters?: EventInfo[];
-	eventOnly?: boolean;
-	eventPokemon?: EventInfo[];
 	gen?: number;
-	isGigantamax?: string;
 	isNonstandard?: Nonstandard | null;
 	isUnreleased?: boolean | 'Past';
 	maleOnlyHidden?: boolean;
@@ -344,6 +345,18 @@ export interface TemplateFormatsData {
 	unreleasedHidden?: boolean | 'Past';
 }
 export interface ModdedTemplateFormatsData extends Partial<TemplateFormatsData> {
+	inherit?: true;
+}
+
+export interface LearnsetData {
+	learnset?: {[moveid: string]: MoveSource[]};
+	eventData?: EventInfo[];
+	eventOnly?: boolean;
+	encounters?: EventInfo[];
+	exists?: boolean;
+}
+
+export interface ModdedLearnsetData extends Partial<LearnsetData> {
 	inherit?: true;
 }
 

@@ -932,11 +932,28 @@ interface ActiveMove extends BasicEffect, MoveData {
 }
 
 type TemplateAbility = import('@pkmn/types').TemplateAbility;
-type TemplateData = import('@pkmn/types').TemplateData;
-type ModdedTemplateData = import('@pkmn/types').ModdedTemplateData;
+type BaseTemplateData = import('@pkmn/types').TemplateData;
+interface TemplateData extends Omit<BaseTemplateData, 'gender'> {
+	gender?: GenderName;
+}
+interface ModdedTemplateData extends Partial<TemplateData> {
+	inherit?: true;
+}
+type BaseTemplateFormatsData = import('@pkmn/types').TemplateFormatsData;
+interface TemplateFormatsData extends BaseTemplateFormatsData {
+	comboMoves?: readonly string[];
+	essentialMove?: string;
+	exclusiveMoves?: readonly string[];
+	randomBattleMoves?: readonly string[];
+	randomDoubleBattleMoves?: readonly string[];
+	randomSets?: readonly RandomTeamsTypes.Gen2RandomSet[];
 
-type TemplateFormatsData = import('@pkmn/types').TemplateFormatsData;
-type ModdedTemplateFormatsData = import('@pkmn/types').ModdedTemplateFormatsData;
+}
+interface ModdedTemplateFormatsData extends Partial<TemplateFormatsData> {
+	inherit?: true;
+}
+type LearnsetData = import('@pkmn/types').LearnsetData;
+type ModdedLearnsetData = import('@pkmn/types').ModdedLearnsetData;
 
 type Template = import('./dex-data').Template;
 

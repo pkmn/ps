@@ -69,6 +69,8 @@ const FRAGILE = new Set([
 ])
 const OVERRIDDEN = new Set([
   ...FRAGILE,
+  '.eslintcache',
+  '.tsbuildinfo',
   '.eslintrc-no-types.json',
   '.eslintrc-types.json',
   'data/index.ts',

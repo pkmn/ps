@@ -54,7 +54,7 @@ interface DexTableData {
 	Formats: DexTable<Format>;
 	FormatsData: DexTable<ModdedTemplateFormatsData>;
 	Items: DexTable<Item>;
-	Learnsets: DexTable<{learnset: {[k: string]: MoveSource[]}}>;
+	Learnsets: DexTable<LearnsetData>;
 	Movedex: DexTable<Move>;
 	Natures: DexTable<Nature>;
 	Pokedex: DexTable<Template>;
@@ -106,6 +106,7 @@ export class ModdedDex {
 
 	readonly abilityCache: Map<ID, Ability>;
 	readonly effectCache: Map<ID, Effect | Move>;
+	readonly learnsetCache: Map<ID, LearnsetData>;
 	readonly itemCache: Map<ID, Item>;
 	readonly moveCache: Map<ID, Move>;
 	readonly templateCache: Map<ID, Template>;
@@ -132,6 +133,7 @@ export class ModdedDex {
 		this.abilityCache = new Map();
 		this.effectCache = new Map();
 		this.itemCache = new Map();
+		this.learnsetCache = new Map();
 		this.moveCache = new Map();
 		this.templateCache = new Map();
 		this.typeCache = new Map();
@@ -336,7 +338,7 @@ export class ModdedDex {
 			}
 		}
 		if (id && this.data.Pokedex.hasOwnProperty(id)) {
-			template = new Data.Template({name}, this.data.Pokedex[id], this.data.FormatsData[id], this.data.Learnsets[id]);
+			template = new Data.Template({name}, this.data.Pokedex[id], this.data.FormatsData[id]);
 			// Inherit any statuses from the base species (Arceus, Silvally).
 			const baseSpeciesStatuses = this.data.Statuses[toID(template.baseSpecies)];
 			if (baseSpeciesStatuses !== undefined) {
@@ -352,9 +354,9 @@ export class ModdedDex {
 				} else if (template.speciesid.endsWith('totem')) {
 					template.tier = this.data.FormatsData[template.speciesid.slice(0, -5)].tier || 'Illegal';
 					template.doublesTier = this.data.FormatsData[template.speciesid.slice(0, -5)].doublesTier || 'Illegal';
-				} else if (template.inheritsFrom) {
-					template.tier = this.data.FormatsData[template.inheritsFrom].tier || 'Illegal';
-					template.doublesTier = this.data.FormatsData[template.inheritsFrom].doublesTier || 'Illegal';
+				} else if (template.battleOnly) {
+					template.tier = this.data.FormatsData[toID(template.battleOnly)].tier || 'Illegal';
+					template.doublesTier = this.data.FormatsData[toID(template.battleOnly)].doublesTier || 'Illegal';
 				} else {
 					const baseFormatsData = this.data.FormatsData[toID(template.baseSpecies)];
 					if (!baseFormatsData) {
@@ -388,13 +390,19 @@ export class ModdedDex {
 	}
 
 	getOutOfBattleSpecies(template: Template) {
-		return template.inheritsFrom ? this.getTemplate(template.inheritsFrom).species : template.baseSpecies;
-	}
+		return !template.battleOnly ? template.species :
+		template.inheritsFrom ? this.getTemplate(template.inheritsFrom).species :
+		template.baseSpecies;	}
 
-	getLearnset(template: string | AnyObject): AnyObject | null {
-		const id = toID(template);
-		if (!this.data.Learnsets[id]) return null;
-		return this.data.Learnsets[id].learnset;
+	getLearnsetData(id: ID): LearnsetData {
+		let learnsetData = this.learnsetCache.get(id);
+		if (learnsetData) return learnsetData;
+		if (!this.data.Learnsets.hasOwnProperty(id)) {
+			return new Data.Learnset({exists: false});
+		}
+		learnsetData = new Data.Learnset(this.data.Learnsets[id]);
+		this.learnsetCache.set(id, learnsetData);
+		return learnsetData;
 	}
 
 	getMove(name?: string | Move): Move {
@@ -1275,11 +1283,6 @@ export class ModdedDex {
 				continue;
 			}
 			const BattleData = this.loadDataFile(this.currentMod, dataType);
-			if (!BattleData || typeof BattleData !== 'object') {
-				throw new TypeError(
-					`Exported property 'Battle${dataType}' for '${this.currentMod}' must be an object except 'null'.`
-				);
-			}
 			if (BattleData !== dataCache[dataType]) dataCache[dataType] = Object.assign(BattleData, dataCache[dataType]);
 			if (dataType === 'Formats' && !parentDex) Object.assign(BattleData, this.formats);
 		}
