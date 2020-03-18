@@ -105,7 +105,7 @@ const interesting = f => {
   for (const change of changed) {
     if (!change) continue;
     if (interesting(change)) {
-      const color = FRAGILE.has(change) ? 91 : 93;
+      const color = FRAGILE.has(change) ? 91 : OVERRIDDEN.has(change) ? 93 : 96;
       console.log(`\x1b[${color}mCHANGED\x1b[0m ${change}`);
     }
   }
