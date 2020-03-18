@@ -7,13 +7,11 @@ import {Pokemon as PokemonType} from './pokemon';
 import {PRNG as PRNGType} from './prng';
 import {Side as SideType} from './side';
 import {TeamValidator as TeamValidatorType} from './team-validator';
-import {Chat as ChatType} from './chat';
 
 declare global {
   namespace NodeJS {
 		interface Global {
       Config: any;
-      Chat: any;
 			Dex: any
 			toID(input: any): string
 			__version: {head: string, origin?: string, tree?: string}
@@ -42,5 +40,4 @@ declare global {
   const toID: typeof DataType.Tools.getId;
 
   const Config: {potd?: string, allowrequestingties?: boolean};
-  const Chat: typeof ChatType;
 }

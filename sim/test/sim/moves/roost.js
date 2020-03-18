@@ -2,7 +2,7 @@
 
 const assert = require('./../../assert');
 const common = require('./../../common');
-const Sim = require('./../../../.sim-dist');
+const Sim = require('./../../../build/sim');
 
 let battle;
 

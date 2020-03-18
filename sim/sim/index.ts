@@ -1,9 +1,7 @@
-import {Chat} from './chat';
 import {Dex} from './dex';
 global.Dex = Dex;
 global.toID = Dex.getId;
 
-global.Chat = Chat;
 global.Config = {
   allowrequestingties: false
 };

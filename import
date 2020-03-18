@@ -11,7 +11,7 @@ const exec = async (cmd, cwd = __dirname) => {
       resolve([error ? error.code : 0, stdout, stderr]);
     });
   });
-}
+};
 
 const execOrDie = async (cmd, cwd = __dirname) => {
   console.log(cmd);
@@ -21,7 +21,7 @@ const execOrDie = async (cmd, cwd = __dirname) => {
     process.exit(error);
   }
   return stdout;
-}
+};
 
 const tree = root => {
   const leaves = [];
@@ -30,37 +30,30 @@ const tree = root => {
     leaves.push(...(fs.lstatSync(p).isDirectory() ? tree(p) : [p]));
   }
   return leaves;
-}
+};
 
-// FIXME promisify!
-const replace = (file, replacements) => {
-	fs.lstat(file, (err, stats) => {
-		if (err) throw err;
-		if (stats.isSymbolicLink()) return;
-		if (stats.isFile()) {
-			if (!file.endsWith('.js')) return;
-			fs.readFile(file, "utf-8", (err, text) => {
-					if (err) throw err;
-					var anyMatch = false;
-					for (var i = 0; i < replacements.length; i++) {
-						anyMatch = anyMatch || text.match(replacements[i].regex);
-						if (anyMatch) text = text.replace(replacements[i].regex, replacements[i].replace);
-					}
-					if (!anyMatch) return;
-					fs.writeFile(file, text, err => {
-						if (err) throw err;
-					});
-				});
-		} else if (stats.isDirectory()) {
-			fs.readdir(file, (err, files) => {
-				if (err) throw err;
-				for (var i = 0; i < files.length; i++) {
-					replace(path.join(file, files[i]), replacements);
-				}
-			});
-		}
-	});
-}
+const replace = async (file, replacements) => {
+	const stats = await fs.promises.lstat(file);
+	if (stats.isSymbolicLink()) return;
+	if (stats.isFile()) {
+    if (!file.endsWith('.js')) return;
+    const text = await fs.promises.readFile(file, "utf-8");
+    let anyMatch = false;
+    for (var i = 0; i < replacements.length; i++) {
+      anyMatch = anyMatch || text.match(replacements[i].regex);
+      if (anyMatch) text = text.replace(replacements[i].regex, replacements[i].replace);
+    }
+    if (!anyMatch) return;
+    await fs.promises.writeFile(file, text);
+  } else if (stats.isDirectory()) {
+    const files = await fs.promises.readdir(file);
+    const all = [];
+    for (var i = 0; i < files.length; i++) {
+      all.push(replace(path.join(file, files[i]), replacements));
+    }
+    await Promise.all(all);
+  }
+};
 
 const HEAD = path.resolve(__dirname, 'HEAD');
 const submodule = path.resolve(__dirname, 'vendor/pokemon-showdown');
@@ -71,7 +64,6 @@ const FILES = new Set(tree(sim).map(m => m.slice(sim.length + 1)));
 const OVERRIDDEN = new Set([
   'package.json',
   'README.md',
-  'sim/chat.ts',
   'sim/global-types.ts',
   'sim/global-variables.d.ts',
   'sim/index.ts',
@@ -87,7 +79,6 @@ const interesting = f => {
 }
 
 (async () => {
-  await execOrDie('npm install @pkmn/types);
   await execOrDie('git submodule update --remote --rebase');
   const now = (await execOrDie('git rev-parse HEAD', submodule)).slice(0, 8);
   const last = fs.readFileSync(HEAD, 'utf-8').trim();
@@ -105,6 +96,10 @@ const interesting = f => {
   for (const file of COPIED) {
     fs.copyFileSync(path.resolve(submodule, file), path.resolve(sim, file));
   }
+
+  await replace(path.join(sim, 'test'), [
+    {regex: new RegExp(`(require\\\(.*?)(.sim-dist)(.*?\\\))`, 'g'), replace: `$1build/sim$3`},
+  ]);
 
   fs.writeFileSync(HEAD, now);
 })().catch(console.error);

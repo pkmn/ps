@@ -1,6 +1,5 @@
 'use strict';
 
 before('initialization', function () {
-	let sim = require('../sim');
-	global.Dex = sim.Dex;
+	require('../build/sim'); // sets up globals
 });

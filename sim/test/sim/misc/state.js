@@ -2,7 +2,7 @@
 
 const assert = require('./../../assert');
 const common = require('./../../common');
-const Battle = require('./../../../.sim-dist/battle').Battle;
+const Battle = require('./../../../build/sim/battle').Battle;
 
 const TEAMS = [[
 	{species: 'Mew', ability: 'synchronize', item: 'assaultvest', moves: ['psychic']},
