@@ -261,20 +261,21 @@ export namespace Protocol {
     'swap': ['swap', PokemonIdent, Num];
     'cant': ['cant', PokemonIdent, Reason | Ability | Effect | Move, Effect | Move];
     'faint': ['faint', PokemonIdent];
+    'switchout': ['switchout', PokemonIdent];
   }
 
   export type BattleMajorArgName = keyof BattleMajorArgs;
   export type BattleMajorArgType = BattleMajorArgs[BattleMajorArgName];
 
   export interface BattleMinorArgs {
-    '-formechange': ['formechange', PokemonIdent, PokemonDetails, PokemonHealth];
+    '-formechange': ['-formechange', PokemonIdent, PokemonDetails, PokemonHealth];
     '-fail': ['-fail', PokemonIdent, Move] | ['-fail', PokemonIdent];
     '-block': ['-block', PokemonIdent, Effect, Move, PokemonIdent?];
     '-notarget': ['-notarget', PokemonIdent] | ['-notarget'];
     '-miss': ['-miss', PokemonIdent, PokemonIdent] | ['-miss', PokemonIdent];
     '-damage': ['-damage', PokemonIdent, PokemonHealth];
     '-heal': ['-heal', PokemonIdent, PokemonHealth];
-    '-sethp': ['-sethp', PokemonIdent, Num];
+    '-sethp': ['-sethp', PokemonIdent, Num] | ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
     '-status': ['-status', PokemonIdent, StatusName];
     '-curestatus': ['-curestatus', PokemonIdent, StatusName];
     '-cureteam': ['-cureteam', PokemonIdent];
@@ -301,7 +302,8 @@ export namespace Protocol {
     '-immune': ['-immune', PokemonIdent];
     '-item': ['-item', PokemonIdent, Item];
     '-enditem': ['-enditem', PokemonIdent, Item];
-    '-ability': ['-ability', PokemonIdent, Ability];
+    '-ability': ['-ability', PokemonIdent, Ability]
+    | ['-ability', PokemonIdent, Ability, PokemonIdent];
     '-endability': ['-endability', PokemonIdent];
     '-transform': ['-transform', PokemonIdent, Species];
     '-mega': ['-mega', PokemonIdent, Item];
@@ -314,7 +316,7 @@ export namespace Protocol {
       PokemonIdent, Ability | Effect,
       (Item | Move | Num | PokemonIdent)?,
       (Ability | Num)?
-    ];
+    ] | ['-activate', PokemonIdent, Effect | PokemonIdent];
     '-fieldactivate': ['-fieldactivate', Effect];
     '-hint': ['-hint', Message];
     '-center': ['-center'];
@@ -327,6 +329,7 @@ export namespace Protocol {
     '-singlemove': ['-singlemove', PokemonIdent, Move];
     '-singleturn': ['-singleturn', PokemonIdent, Move];
     '-anim': ['-anim', PokemonIdent, Move, PokemonIdent];
+    '-ohko': ['-ohko'];
   }
 
   export type BattleMinorArgName = keyof BattleMinorArgs;
@@ -387,6 +390,7 @@ export namespace Protocol {
     'cant': 'of';
     'detailschange': 'msg' | 'from';
     'move': 'anim' | 'miss' | 'notarget' | 'prepare' | 'spread' | 'still';
+    'switchout': 'from';
     '-activate':
     | 'ability' | 'ability2' | 'block' | 'broken' | 'damage'
     | 'from' | 'item' | 'move' | 'number' | 'of' | 'consumed';
@@ -434,37 +438,23 @@ export namespace Protocol {
   export type BattleArgsKWArgName = BattleArgName;
   export type BattleArgsKWArgType = BattleArgsKWArgs[Protocol.BattleArgsWithKWArgName];
 
-  export interface LegacyArgs {
-    // '|-sethp|TARGET|TARGET HP|SOURCE|SOURCE HP' before 7e4929a39f
-    '-sethp': ['-sethp', PokemonIdent, Num, PokemonIdent, Num]; // ([from] EFFECT, [silent])
-    // '|-activate|SOURCE|EFFECT|TARGET|' legacy Skill Swap
-    '-activate': ['-activate', PokemonIdent, Effect | PokemonIdent];
-    '-ohko': ['-ohko'];
-    // |-ability|TARGET|ABILITY|SOURCE
-    '-ability': ['-ability', PokemonIdent, Ability, PokemonIdent];
-  }
-
-  export type LegacyArgName = keyof LegacyArgs;
-  export type LegacyArgType = LegacyArgs[LegacyArgName];
-
   export type Args =
     RoomArgs &
     GlobalArgs &
     TournamentArgs &
     MiscArgs &
-    BattleArgs &
-    LegacyArgs;
+    BattleArgs;
   export type ArgName =
     | RoomArgName
     | GlobalArgName
     | TournamentArgName
     | MiscArgName
-    | BattleArgName
-    | LegacyArgName;
+    | BattleArgName;
 
   export type ArgType = Args[ArgName];
 
   export type KWArgs = BattleArgsKWArgs;
+  export type KWArgType = BattleArgsKWArgType;
 
   export type ArgsWithKWArgName = BattleArgsWithKWArgName;
   export type ArgsWithKWArgType = BattleArgsKWArgType;
@@ -585,15 +575,12 @@ export type BattleArgsKWArgs = Protocol.BattleArgsKWArgs;
 export type BattleArgsKWArgName = Protocol.BattleArgsKWArgName;
 export type BattleArgsKWArgType = Protocol.BattleArgsKWArgType;
 
-export type LegacyArgs = Protocol.LegacyArgs;
-export type LegacyArgName = Protocol.LegacyArgName;
-export type LegacyArgType = Protocol.LegacyArgType;
-
 export type Args = Protocol.Args;
 export type ArgName = Protocol.ArgName;
 export type ArgType = Protocol.ArgType;
 
 export type KWArgs = Protocol.KWArgs;
+export type KWArgType = Protocol.KWArgType;
 export type ArgsWithKWArgName = Protocol.ArgsWithKWArgName;
 export type ArgsWithKWArgType = Protocol.ArgsWithKWArgType;
 
@@ -628,7 +615,7 @@ export const Protocol = new class {
   ARGS: {[k in Protocol.ArgName]: 1} = {
     'init':1, 'title':1, 'userlist':1, '':1, 'html':1, 'uhtml':1, 'uhtmlchange':1, 'join':1,
     'leave':1, 'name':1, 'chat':1, ':':1, 'c:':1, 'battle':1, 'popup':1, 'pm':1, 'usercount':1,
-    'nametaken':1, 'challstr':1, 'updateuser':1, 'formats':1, 'updatesearch':1,
+    'nametaken':1, 'challstr':1, 'updateuser':1, 'formats':1, 'updatesearch':1, 'switchout':1,
     'updatechallenges':1, 'queryresponse':1, 'unlink':1, 'raw':1, 'warning':1, 'error':1,
     'bigerror':1, 'chatmsg':1, 'chatmsg-raw':1, 'controlshtml':1, 'fieldhtml':1, 'debug':1,
     'tournament|create':1, 'tournament|update':1, 'tournament|updateEnd':1, 'tournament|error':1,
@@ -655,7 +642,7 @@ export const Protocol = new class {
     '-setboost':1, '-swapboost':1, '-invertboost':1, '-clearnegativeboost':1, '-weather':1,
     '-fieldend':1, '-sideend':1, '-start':1, '-end':1, '-crit':1, '-supereffective':1,
     '-resisted':1, '-immune':1, '-item':1, '-enditem':1, '-ability':1, '-endability':1,
-    '-transform':1,  '-activate':1, '-singleturn':1,
+    '-transform':1,  '-activate':1, '-singleturn':1, 'switchout':1,
   };
   /* eslint-enable key-spacing */
 
