@@ -469,7 +469,7 @@ export namespace Protocol {
   export type ArgsWithKWArgName = BattleArgsWithKWArgName;
   export type ArgsWithKWArgType = BattleArgsKWArgType;
 
-  export type Handler<T = void> = {
+  export type Handler<T = void | Promise<void>> = {
     [key in Exclude<ArgName, ArgsWithKWArgName>]?: (m: Args[key]) => T;
   } & {
     [key in ArgsWithKWArgName]?: (a: Args[key], k: KWArgs[key]) => T;
@@ -641,13 +641,21 @@ export const Protocol = new class {
     'detailschange':1, 'replace':1, 'swap':1, 'cant':1, 'faint':1, '-formechange':1, '-fail':1,
     '-block':1, '-notarget':1, '-miss':1, '-damage':1, '-heal':1, '-sethp':1, '-status':1,
     '-curestatus':1, '-cureteam':1, '-boost':1, '-unboost':1, '-setboost':1, '-swapboost':1,
-    '-invertboost':1, '-clearboost':1, '-clearallboost':1, '-clearpositiveboost':1,
+    '-invertboost':1, '-clearboost':1, '-clearallboost':1, '-clearpositiveboost':1, '-ohko':1,
     '-clearnegativeboost':1, '-copyboost':1, '-weather':1, '-fieldstart':1, '-fieldend':1,
     '-sidestart':1, '-sideend':1, '-start':1, '-end':1, '-crit':1, '-supereffective':1,
     '-resisted':1, '-immune':1, '-item':1, '-enditem':1, '-ability':1, '-endability':1,
     '-transform':1, '-mega':1, '-primal':1, '-burst':1, '-zpower':1, '-zbroken':1, '-activate':1,
-    '-fieldactivate':1, '-hint':1, '-center':1, '-message':1, '-combine':1, '-waiting':1, '-ohko':1,
+    '-fieldactivate':1, '-hint':1, '-center':1, '-message':1, '-combine':1, '-waiting':1,
     '-prepare':1, '-mustrecharge':1, '-hitcount':1, '-singlemove':1, '-singleturn':1, '-anim':1,
+  };
+  ARGS_WITH_KWARGS: {[k in Protocol.ArgsWithKWArgName]: 1} = {
+    'move':1, 'detailschange':1,  'cant':1, '-formechange':1, '-fail':1, '-block':1, '-damage':1,
+    '-heal':1, '-sethp':1, '-status':1, '-curestatus':1, '-cureteam':1, '-boost':1, '-unboost':1,
+    '-setboost':1, '-swapboost':1, '-invertboost':1, '-clearnegativeboost':1, '-weather':1,
+    '-fieldend':1, '-sideend':1, '-start':1, '-end':1, '-crit':1, '-supereffective':1,
+    '-resisted':1, '-immune':1, '-item':1, '-enditem':1, '-ability':1, '-endability':1,
+    '-transform':1,  '-activate':1, '-singleturn':1,
   };
   /* eslint-enable key-spacing */
 
