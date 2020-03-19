@@ -1013,6 +1013,7 @@ interface TemplateData {
 	otherForms?: string[];
 	otherFormes?: string[];
 	prevo?: string;
+	gen?: number;
 	requiredAbility?: string;
 	requiredItem?: string;
 	requiredItems?: string[];
@@ -1027,7 +1028,6 @@ interface ModdedTemplateData extends Partial<TemplateData> {
 interface TemplateFormatsData {
 	comboMoves?: readonly string[];
 	doublesTier?: string;
-	gen?: number;
 	isNonstandard?: Nonstandard | null;
 	isUnreleased?: boolean | 'Past';
 	maleOnlyHidden?: boolean;

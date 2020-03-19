@@ -30,7 +30,6 @@
     "lint": "eslint . --cache --ext .js,.ts",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
-    "posttest": "npm run lint",
-    "commit": "git add -A && git commit -m 'Import smogon/pokemon-showdown@$(cat HEAD)'"
+    "posttest": "npm run lint"
   }
 }
