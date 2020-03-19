@@ -1,6 +1,225 @@
-import {Protocol, Args, KWArgs} from '@pkmn/protocol';
+import {Protocol, ArgType, Args, KWArgs} from '@pkmn/protocol';
+import {ID, StatName, GenerationNum} from '@pkmn/types';
+import * as TextJSON from '../data/text.json';
 
-export class Handler implements Protocol.Handler {
+const Text = TextJSON as {
+  default: {[templateName: string]: string},
+  [id: string]: {[templateName: string]: string},
+} & {
+  [s in StatName]: {statName: string, statShortName: string}
+};
+
+function toID(s: string): ID {
+  return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
+}
+
+const VALS = ['pokemon', 'opposingPokemon', 'team', 'opposingTeam', 'party', 'opposingParty']; // TODO rename
+export class TextParser implements Protocol.Handler {
+  #out: (s: string) => void;
+  #perspective: 0 | 1;
+
+  #p1: Protocol.Username;
+  #p2: Protocol.Username;
+  #gen: GenerationNum;
+
+  #curLineSection: 'break' | 'preMajor' | 'major' | 'postMajor';
+  #lowercaseRegExp: RegExp | null | undefined;
+
+  constructor(out: (s: string) => void, perspective: 0 | 1 = 0) {
+    this.#out = out;
+    this.#perspective = perspective;
+
+    this.#p1 = 'Player 1' as Protocol.Username;
+    this.#p2 = 'Player 2' as Protocol.Username;
+    this.#gen = 8;
+
+    this.#curLineSection = 'break';
+    this.#lowercaseRegExp = undefined;
+  }
+
+  fixLowercase(input: string) {
+    if (this.#lowercaseRegExp === undefined) {
+      const prefixes = VALS.map(templateId => {
+        const template = Text.default[templateId];
+        if (template.charAt(0) === template.charAt(0).toUpperCase()) return '';
+        const bracketIndex = template.indexOf('[');
+        return bracketIndex >= 0 ? template.slice(0, bracketIndex) : template;
+      }).filter(prefix => prefix);
+      if (prefixes.length) {
+        const buf = `((?:^|\n)(?:  |  \\\(|\\\[)?)(` +
+          prefixes.map(TextParser.escapeRegExp).join('|') +
+          `)`;
+        this.#lowercaseRegExp = new RegExp(buf, 'g');
+      } else {
+        this.#lowercaseRegExp = null;
+      }
+    }
+    if (!this.#lowercaseRegExp) return input;
+    return input.replace(this.#lowercaseRegExp, (_, p1, p2) => (
+      p1 + p2.charAt(0).toUpperCase() + p2.slice(1)
+    ));
+  }
+
+  static escapeRegExp(input: string) {
+    return input.replace(/[\\^$.*+?()[\]{}|]/g, '\\$&');
+  }
+
+  pokemonName = (pokemon: string) => {
+    if (!pokemon) return '';
+    if (!pokemon.startsWith('p1') && !pokemon.startsWith('p2')) return `???pokemon:${pokemon}???`;
+    if (pokemon.charAt(3) === ':') return pokemon.slice(4).trim();
+    else if (pokemon.charAt(2) === ':') return pokemon.slice(3).trim();
+    return `???pokemon:${pokemon}???`;
+  };
+
+  pokemon(pokemon: string) {
+    if (!pokemon) return '';
+    let side;
+    switch (pokemon.slice(0, 2)) {
+      case 'p1': side = 0; break;
+      case 'p2': side = 1; break;
+      default: return `???pokemon:${pokemon}???`;
+    }
+    const name = this.pokemonName(pokemon);
+    const template = Text.default[side === this.#perspective ? 'pokemon' : 'opposingPokemon'];
+    return template.replace('[NICKNAME]', name);
+  }
+
+  pokemonFull(pokemon: string, details: string): [string, string] {
+    const nickname = this.pokemonName(pokemon);
+
+    const species = details.split(',')[0];
+    if (nickname === species) return [pokemon.slice(0, 2), `**${species}**`];
+    return [pokemon.slice(0, 2), `${nickname} (**${species}**)`];
+  }
+
+  trainer(side: string) {
+    side = side.slice(0, 2);
+    if (side === 'p1') return this.#p1;
+    if (side === 'p2') return this.#p2;
+    return `???side:${side}???`;
+  }
+
+  team(side: string) {
+    side = side.slice(0, 2);
+    if (side === (this.#perspective === 0 ? 'p1' : 'p2')) {
+      return Text.default.team;
+    }
+    return Text.default.opposingTeam;
+  }
+
+  own(side: string) {
+    side = side.slice(0, 2);
+    if (side === (this.#perspective === 0 ? 'p1' : 'p2')) {
+      return 'OWN';
+    }
+    return '';
+  }
+
+  party(side: string) {
+    side = side.slice(0, 2);
+    if (side === (this.#perspective === 0 ? 'p1' : 'p2')) {
+      return Text.default.party;
+    }
+    return Text.default.opposingParty;
+  }
+
+  static effectId(effect?: string) {
+    return Protocol.parseEffect(effect, toID).name as ID;
+  }
+
+  effect(effect?: string) {
+    return Protocol.parseEffect(effect).name;
+  }
+
+  template(type: string, ...namespaces: (string | undefined)[]) {
+    for (const namespace of namespaces) {
+      if (!namespace) continue;
+      if (namespace === 'OWN') return `${Text.default[type + 'Own']}\n`;
+      if (namespace === 'NODEFAULT') return '';
+      let id = TextParser.effectId(namespace);
+      if (Text[id] && type in Text[id]) {
+        if (Text[id][type].charAt(1) === '.') type = Text[id][type].slice(2) as ID;
+        if (Text[id][type].charAt(0) === '#') id = Text[id][type].slice(1) as ID;
+        if (!Text[id][type]) return '';
+        return `${Text[id][type]}\n`;
+      }
+    }
+    if (!Text.default[type]) return '';
+    return `${Text.default[type]}\n`;
+  }
+
+  maybeAbility(effect: string | undefined, holder: string) {
+    if (!effect) return '';
+    if (!effect.startsWith('ability:')) return '';
+    return this.ability(effect.slice(8).trim(), holder);
+  }
+
+  ability(name: string | undefined, holder: string) {
+    if (!name) return '';
+    return (Text.default.abilityActivation
+      .replace('[POKEMON]', this.pokemon(holder))
+      .replace('[ABILITY]', this.effect(name)) + '\n');
+  }
+
+  stat(stat: string) {
+    const entry = Text[stat || 'stats'];
+    if (!entry || !entry.statName) return `???stat:${stat}???`;
+    return entry.statName;
+  }
+
+  lineSection(args: ArgType, kwArgs: KWArgs) {
+    const cmd = args[0];
+    switch (cmd) {
+      case 'done': case 'turn':
+        return 'break';
+      case 'move': case 'cant': case 'switch': case 'drag': case 'upkeep': case 'start': case '-mega':
+        return 'major';
+      case 'faint': /* case 'switchout': */
+        return 'preMajor';
+      case '-zpower':
+        return 'postMajor';
+      case '-damage': {
+        const id = TextParser.effectId((kwArgs as KWArgs['-damage']).from);
+        return id === 'confusion' ? 'major' : 'postMajor';
+      }
+      case '-curestatus': {
+        const id = TextParser.effectId((kwArgs as KWArgs['-curestatus']).from);
+        return id === 'naturalcure' ? 'preMajor' : 'postMajor';
+      }
+      case '-start': {
+        const id = TextParser.effectId((kwArgs as unknown as KWArgs['-start']).from);
+        return id === 'protean' ? 'preMajor' : 'postMajor';
+      }
+      case '-activate': {
+        const id = TextParser.effectId((args as Args['-activate'])[2]);
+        return id === 'confusion' || id === 'attract' ? 'preMajor' : 'postMajor';
+      }
+    }
+    return (cmd.charAt(0) === '-' ? 'postMajor' : '');
+  }
+
+  sectionBreak(args: ArgType, kwArgs = {} as KWArgs) {
+    const prevSection = this.#curLineSection;
+    const curSection = this.lineSection(args, kwArgs);
+    if (!curSection) return false;
+    this.#curLineSection = curSection;
+    switch (curSection) {
+      case 'break':
+        return prevSection !== 'break';
+      case 'preMajor':
+      case 'major':
+        return prevSection === 'postMajor' || prevSection === 'major';
+      case 'postMajor':
+        return false;
+    }
+  }
+
+  out(args: ArgType, s?: string, kwArgs?: KWArgs, noSectionBreak?: boolean) {
+    const buf = !noSectionBreak && this.sectionBreak(args, kwArgs) ? '\n' : '';
+    this.#out(buf + this.fixLowercase(s || ''));
+  }
+
   'init'(args: Args['init']) { }
   'title'(args: Args['title']) { }
   'userlist'(args: Args['userlist']) { }

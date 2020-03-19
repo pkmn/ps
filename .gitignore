@@ -5,3 +5,4 @@ Thumbs.db
 package-lock.json
 .eslintcache
 .tsbuildinfo
+.vscode
