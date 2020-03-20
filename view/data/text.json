@@ -354,7 +354,7 @@
     "start": "  [POKEMON] started heating up its beak!"
   },
   "beatup": {
-    "activate": "  [TARGET]'s attack!"
+    "activate": "  [NAME]'s attack!"
   },
   "bestow": {
     "takeItem": "  [SOURCE] gave [POKEMON] its [ITEM]!"

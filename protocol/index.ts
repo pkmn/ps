@@ -368,6 +368,7 @@ export namespace Protocol {
     'miss': true;
     'move': Move;
     'msg': true;
+    'name': PokemonIdent;
     'notarget': true;
     'number': Num;
     'of': PokemonIdent;
@@ -398,7 +399,7 @@ export namespace Protocol {
     'detailschange': GeneralKWArgs | 'msg';
     'move': GeneralKWArgs | 'anim' | 'miss' | 'notarget' | 'prepare' | 'spread' |  'zeffect';
     'switchout': GeneralKWArgs;
-    '-activate': GeneralKWArgs | 'ability' | 'ability2' | 'block' | 'broken' | 'damage' | 'item' | 'move' | 'number' | 'consumed';
+    '-activate': GeneralKWArgs | 'ability' | 'ability2' | 'block' | 'broken' | 'damage' | 'item' | 'move' | 'number' | 'consumed' | 'name';
     '-ability': GeneralKWArgs | 'move' | 'weaken';
     '-block': GeneralKWArgs;
     '-boost': GeneralKWArgs | 'zeffect';
@@ -929,6 +930,9 @@ function upgradeBattleArgs(
         args: ['-immune', pokemon],
         kwArgs: {from: 'ability:Wonder Guard'} as Protocol.BattleArgsKWArgType,
       };
+    }
+    if (id === 'beatup' && kwArgs.of) {
+      return {args, kwArgs: {name: kwArgs.of as Protocol.PokemonIdent}};
     }
     if (BLOCKABLE.has(id)) {
       if (target) {

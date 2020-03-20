@@ -706,11 +706,12 @@ export class TextParser implements Protocol.Handler<string> {
     if (kwArgs.ability2) {
       line1 += this.ability(kwArgs.ability2, target as Protocol.PokemonIdent);
     }
-    if (kwArgs.move || kwArgs.number || kwArgs.item) {
+    if (kwArgs.move || kwArgs.number || kwArgs.item || kwArgs.name) {
       template = template
         .replace('[MOVE]', kwArgs.move!)
         .replace('[NUMBER]', kwArgs.number!)
-        .replace('[ITEM]', kwArgs.item!);
+        .replace('[ITEM]', kwArgs.item!)
+        .replace('[NAME]', kwArgs.name!);
     }
     return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
