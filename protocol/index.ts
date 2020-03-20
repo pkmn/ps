@@ -270,7 +270,7 @@ export namespace Protocol {
   export type BattleMajorArgName = keyof BattleMajorArgs;
   export type BattleMajorArgType = BattleMajorArgs[BattleMajorArgName];
 
-  export interface BattleMinorArgs {
+  export type BattleMinorArgs = {
     '-formechange': ['-formechange', PokemonIdent, PokemonDetails, PokemonHealth];
     '-fail': ['-fail', PokemonIdent, Move] | ['-fail', PokemonIdent];
     '-block': ['-block', PokemonIdent, Effect, Move, PokemonIdent?];
@@ -278,7 +278,7 @@ export namespace Protocol {
     '-miss': ['-miss', PokemonIdent, PokemonIdent] | ['-miss', PokemonIdent];
     '-damage': ['-damage', PokemonIdent, PokemonHealth];
     '-heal': ['-heal', PokemonIdent, PokemonHealth];
-    '-sethp': ['-sethp', PokemonIdent, Num] | ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
+    '-sethp': ['-sethp', PokemonIdent, Num];
     '-status': ['-status', PokemonIdent, StatusName];
     '-curestatus': ['-curestatus', PokemonIdent, StatusName];
     '-cureteam': ['-cureteam', PokemonIdent];
@@ -305,8 +305,7 @@ export namespace Protocol {
     '-immune': ['-immune', PokemonIdent];
     '-item': ['-item', PokemonIdent, Item];
     '-enditem': ['-enditem', PokemonIdent, Item];
-    '-ability': ['-ability', PokemonIdent, Ability]
-    | ['-ability', PokemonIdent, Ability, Ability, PokemonIdent];
+    '-ability': ['-ability', PokemonIdent, Ability];
     '-endability': ['-endability', PokemonIdent] | ['-endability', PokemonIdent, Ability];
     '-transform': ['-transform', PokemonIdent, Species];
     '-mega': ['-mega', PokemonIdent, Item];
@@ -316,10 +315,11 @@ export namespace Protocol {
     '-zbroken': ['-zbroken', PokemonIdent];
     '-activate': [
       '-activate',
-      PokemonIdent, Ability | Effect,
+      PokemonIdent,
+      Ability | Effect,
       (Item | Move | Num | PokemonIdent)?,
       (Ability | Num)?
-    ] | ['-activate', PokemonIdent, Effect | PokemonIdent];
+    ];
     '-fieldactivate': ['-fieldactivate', Effect];
     '-hint': ['-hint', Message];
     '-center': ['-center'];
@@ -332,7 +332,13 @@ export namespace Protocol {
     '-singlemove': ['-singlemove', PokemonIdent, Move];
     '-singleturn': ['-singleturn', PokemonIdent, Move];
     '-anim': ['-anim', PokemonIdent, Move, PokemonIdent];
+  } & {
+    // '|-sethp|TARGET|TARGET HP|SOURCE|SOURCE HP' before smogon/pokemon-showdown@7e4929a3
+    '-sethp': ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
+    // '|-activate|SOURCE|EFFECT|TARGET|' legacy Skill Swap
+    '-activate': ['-activate', PokemonIdent, Effect, PokemonIdent];
     '-ohko': ['-ohko'];
+    '-ability': ['-ability', PokemonIdent, Ability, Ability, PokemonIdent];
   }
 
   export type BattleMinorArgName = keyof BattleMinorArgs;
@@ -998,7 +1004,10 @@ function upgradeBattleArgs(
   case '-nothing':
     // OLD: |-nothing
     // NEW: |-activate||move:Splash
-    args = ['-activate', '' as Protocol.PokemonIdent, 'move:Splash' as Protocol.Effect];
+    args = [
+      '-activate', '' as Protocol.PokemonIdent,
+      'move:Splash' as Protocol.Effect
+    ] as Protocol.Args['-activate'];
   }
 
   return {args, kwArgs};
