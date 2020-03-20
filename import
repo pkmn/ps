@@ -187,10 +187,3 @@ const interesting = f => {
 
   fs.writeFileSync(HEAD, now);
 })().catch(console.error);
-
-// Import code
-//  - if conflicts, fix and run import again!
-// Run tests
-//  - if issues, fix and run import again!
-// Run secondary inclusion tests!
-//  - if issues, fix and run import again!
