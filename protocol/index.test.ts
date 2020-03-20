@@ -30,7 +30,7 @@ describe('Protocol', () => {
   // FIXME
   test('#readme', () => {
     class BoostHandler implements Protocol.Handler {
-      '-boost'(args: Args['-boost'], kwArgs: KWArgs['-boost']) {
+      '|-boost|'(args: Args['|-boost|'], kwArgs: KWArgs['|-boost|']) {
         const [, p, stat, n] = args;
         const pokemon = Protocol.parsePokemonIdent(p);
         const num = Number(n);
@@ -46,7 +46,7 @@ describe('Protocol', () => {
     for (const [roomid, data] of Protocol.handle(chunk)) {
       expect(roomid).toEqual('battle-1');
       if (data.args[0] === '-boost') {
-        handler['-boost'](data.args as Args['-boost'], data.kwArgs as KWArgs['-boost']);
+        handler['|-boost|'](data.args as Args['|-boost|'], data.kwArgs as KWArgs['|-boost|']);
         count.called++;
       }
       count.looped++;

@@ -133,26 +133,26 @@ export namespace Protocol {
   }
 
   export interface RoomInitArgs {
-    'init': ['init', RoomType];
-    'title': ['title', RoomTitle];
-    'userlist': ['userlist', UserList];
+    '|init|': ['init', RoomType];
+    '|title|': ['title', RoomTitle];
+    '|userlist|': ['userlist', UserList];
   }
 
   export type RoomInitArgName = keyof RoomInitArgs;
   export type RoomInitArgType = RoomInitArgs[RoomInitArgName];
 
   export interface RoomMessageArgs {
-    '': ['', Message];
-    'html': ['html', HTML];
-    'uhtml': ['uhtml', UHTMLName, HTML];
-    'uhtmlchange': ['uhtmlchange', UHTMLName, HTML];
-    'join': ['join', Username, boolean]; // join, j, J
-    'leave': ['leave', Username, boolean]; // leave, l, J
-    'name': ['name', Username, ID, boolean]; // name, n
-    'chat': ['chat', Username, Message]; // chat, c
-    ':': [':', Timestamp];
-    'c:': ['c:', Timestamp, Username, Message];
-    'battle': ['battle', RoomID, Username, Username]; // battle, b
+    '||': ['', Message];
+    '|html|': ['html', HTML];
+    '|uhtml|': ['uhtml', UHTMLName, HTML];
+    '|uhtmlchange|': ['uhtmlchange', UHTMLName, HTML];
+    '|join|': ['join', Username, boolean]; // join, j, J
+    '|leave|': ['leave', Username, boolean]; // leave, l, J
+    '|name|': ['name', Username, ID, boolean]; // name, n
+    '|chat|': ['chat', Username, Message]; // chat, c
+    '|:|': [':', Timestamp];
+    '|c:|': ['c:', Timestamp, Username, Message];
+    '|battle|': ['battle', RoomID, Username, Username]; // battle, b
   }
 
   export type RoomMessageArgName = keyof RoomMessageArgs;
@@ -163,54 +163,54 @@ export namespace Protocol {
   export type RoomArgsType = RoomArgs[RoomArgName];
 
   export interface GlobalArgs {
-    'popup': ['popup', Message];
-    'pm': ['pm', Username, Username, Message];
-    'usercount': ['usercount', Num];
-    'nametaken': ['nametaken', Username, Message];
-    'challstr': ['challstr', '4', string];
-    'updateuser': ['updateuser', Username, '1' | '0', Avatar, JSON];
-    'formats': ['formats', FormatsList];
-    'updatesearch': ['updatesearch', SearchStateJSON];
-    'updatechallenges': ['updatechallenges', ChallengesJSON];
-    'queryresponse': ['queryresponse', QueryType, JSON];
+    '|popup|': ['popup', Message];
+    '|pm|': ['pm', Username, Username, Message];
+    '|usercount|': ['usercount', Num];
+    '|nametaken|': ['nametaken', Username, Message];
+    '|challstr|': ['challstr', '4', string];
+    '|updateuser|': ['updateuser', Username, '1' | '0', Avatar, JSON];
+    '|formats|': ['formats', FormatsList];
+    '|updatesearch|': ['updatesearch', SearchStateJSON];
+    '|updatechallenges|': ['updatechallenges', ChallengesJSON];
+    '|queryresponse|': ['queryresponse', QueryType, JSON];
   }
 
   export type GlobalArgName = keyof GlobalArgs;
   export type GlobalArgType = GlobalArgs[GlobalArgName];
 
   export interface MiscArgs {
-    'unlink': ['unlink', Username] | ['unlink', 'hide', Username];
-    'raw': ['raw', HTML];
-    'warning': ['warning', Message];
-    'error': ['error', Message];
-    'bigerror': ['bigerror', Message];
-    'chatmsg': ['chatmsg', Message];
-    'chatmsg-raw': ['chatmsg-raw', HTML];
-    'controlshtml': ['controlshtml', HTML];
-    'fieldhtml': ['fieldhtml', HTML];
-    'debug': ['debug', Message];
+    '|unlink|': ['unlink', Username] | ['unlink', 'hide', Username];
+    '|raw|': ['raw', HTML];
+    '|warning|': ['warning', Message];
+    '|error|': ['error', Message];
+    '|bigerror|': ['bigerror', Message];
+    '|chatmsg|': ['chatmsg', Message];
+    '|chatmsg-raw|': ['chatmsg-raw', HTML];
+    '|controlshtml|': ['controlshtml', HTML];
+    '|fieldhtml|': ['fieldhtml', HTML];
+    '|debug|': ['debug', Message];
   }
 
   export interface TournamentArgs {
-    'tournament|create': ['tournament', 'create', Generator, '0' | Num];
-    'tournament|update': ['tournament', 'update', JSON];
-    'tournament|updateEnd': ['tournament', 'updateEnd'];
-    'tournament|error': ['tournament', 'error', Message];
-    'tournament|forceend': ['tournament', 'forceend'];
-    'tournament|join': ['tournament', 'join', Username];
-    'tournament|leave': ['tournament', 'leave', Username];
-    'tournament|replace': ['tournament', 'replace', Username, Username];
-    'tournament|start': ['tournament', 'start', Num];
-    'tournament|disqualify': ['tournament', 'disqualify', Username];
-    'tournament|battlestart': ['tournament', 'battlestart', Username, Username, RoomID];
-    'tournament|battleend':
+    '|tournament|create|': ['tournament', 'create', Generator, '0' | Num];
+    '|tournament|update|': ['tournament', 'update', JSON];
+    '|tournament|updateEnd|': ['tournament', 'updateEnd'];
+    '|tournament|error|': ['tournament', 'error', Message];
+    '|tournament|forceend|': ['tournament', 'forceend'];
+    '|tournament|join|': ['tournament', 'join', Username];
+    '|tournament|leave|': ['tournament', 'leave', Username];
+    '|tournament|replace|': ['tournament', 'replace', Username, Username];
+    '|tournament|start|': ['tournament', 'start', Num];
+    '|tournament|disqualify|': ['tournament', 'disqualify', Username];
+    '|tournament|battlestart|': ['tournament', 'battlestart', Username, Username, RoomID];
+    '|tournament|battleend|':
     | ['tournament', 'battleend', Username, Username, 'win' | 'loss' | 'draw', Score, 'success']
     | ['tournament', 'battleend', Username, Username, 'draw', Score, 'fail'];
-    'tournament|end': ['tournament', 'end', JSON];
-    'tournament|autostart':
+    '|tournament|end|': ['tournament', 'end', JSON];
+    '|tournament|autostart|':
     | ['tournament', 'autostart', 'on', Num]
     | ['tournament', 'autostart', 'off'];
-    'tournament|autodq':
+    '|tournament|autodq|':
     | ['tournament', 'autodq', 'on', Num]
     | ['tournament', 'autodq', 'off']
     | ['tournament', 'autodq', 'target', Num];
@@ -223,122 +223,122 @@ export namespace Protocol {
   export type MiscArgType = MiscArgs[MiscArgName];
 
   export interface BattleInitArgs {
-    'player': ['player', Player, Username, Avatar, Num?] | ['player', Player];
-    'teamsize': ['teamsize', Player, Num];
-    'gametype': ['gametype', GameType];
-    'gen': ['gen', GenerationNum];
-    'tier': ['tier', FormatName];
-    'rated': ['rated'] | ['rated', Message];
-    'seed': ['seed', Seed];
-    'teampreview': ['teampreview'];
-    'rule': ['rule', Rule];
-    'clearpoke': ['clearpoke'];
-    'poke': ['player', Player, PokemonIdent, 'item' | ''];
-    'start': ['start'];
+    '|player|': ['player', Player, Username, Avatar, Num?] | ['player', Player];
+    '|teamsize|': ['teamsize', Player, Num];
+    '|gametype|': ['gametype', GameType];
+    '|gen|': ['gen', GenerationNum];
+    '|tier|': ['tier', FormatName];
+    '|rated|': ['rated'] | ['rated', Message];
+    '|seed|': ['seed', Seed];
+    '|teampreview|': ['teampreview'];
+    '|rule|': ['rule', Rule];
+    '|clearpoke|': ['clearpoke'];
+    '|poke|': ['player', Player, PokemonIdent, 'item' | ''];
+    '|start|': ['start'];
   }
 
   export type BattleInitArgName = keyof BattleInitArgs;
   export type BattleInitArgType = BattleInitArgs[BattleInitArgName];
 
   export interface BattleProgressArgs {
-    'done': ['done']; // '|'
-    'request': ['request', RequestJSON];
-    'inactive': ['inactive', Message];
-    'inactiveoff': ['inactiveoff', Message];
-    'upkeep': ['upkeep'];
-    'turn': ['turn', Num];
-    'win': ['win', Username];
-    'tie': ['tie'];
+    '|done|': ['done']; // '|'
+    '|request|': ['request', RequestJSON];
+    '|inactive|': ['inactive', Message];
+    '|inactiveoff|': ['inactiveoff', Message];
+    '|upkeep|': ['upkeep'];
+    '|turn|': ['turn', Num];
+    '|win|': ['win', Username];
+    '|tie|': ['tie'];
   }
 
   export type BattleProgressArgName = keyof BattleProgressArgs;
   export type BattleProgressArgType = BattleProgressArgs[BattleProgressArgName];
 
   export interface BattleMajorArgs {
-    'move': ['move', PokemonIdent, Move, PokemonIdent] | ['move', PokemonIdent, Move];
-    'switch': ['switch', PokemonIdent, PokemonDetails, PokemonHealth];
-    'drag': ['drag', PokemonIdent, PokemonDetails, PokemonHealth];
-    'detailschange': ['detailschange', PokemonIdent, PokemonDetails, PokemonHealth];
-    'replace': ['replace', PokemonIdent, PokemonDetails, PokemonHealth];
-    'swap': ['swap', PokemonIdent, Num];
-    'cant': ['cant', PokemonIdent, Reason | Ability | Effect | Move, Effect | Move];
-    'faint': ['faint', PokemonIdent];
-    'switchout': ['switchout', PokemonIdent];
-    'message': ['message', Message];
+    '|move|': ['move', PokemonIdent, Move, PokemonIdent] | ['move', PokemonIdent, Move];
+    '|switch|': ['switch', PokemonIdent, PokemonDetails, PokemonHealth];
+    '|drag|': ['drag', PokemonIdent, PokemonDetails, PokemonHealth];
+    '|detailschange|': ['detailschange', PokemonIdent, PokemonDetails, PokemonHealth];
+    '|replace|': ['replace', PokemonIdent, PokemonDetails, PokemonHealth];
+    '|swap|': ['swap', PokemonIdent, Num];
+    '|cant|': ['cant', PokemonIdent, Reason | Ability | Effect | Move, Effect | Move];
+    '|faint|': ['faint', PokemonIdent];
+    '|switchout|': ['switchout', PokemonIdent];
+    '|message|': ['message', Message];
   }
 
   export type BattleMajorArgName = keyof BattleMajorArgs;
   export type BattleMajorArgType = BattleMajorArgs[BattleMajorArgName];
 
   export type BattleMinorArgs = {
-    '-formechange': ['-formechange', PokemonIdent, PokemonDetails, PokemonHealth];
-    '-fail': ['-fail', PokemonIdent, Move] | ['-fail', PokemonIdent];
-    '-block': ['-block', PokemonIdent, Effect, Move, PokemonIdent?];
-    '-notarget': ['-notarget', PokemonIdent] | ['-notarget'];
-    '-miss': ['-miss', PokemonIdent, PokemonIdent] | ['-miss', PokemonIdent];
-    '-damage': ['-damage', PokemonIdent, PokemonHealth];
-    '-heal': ['-heal', PokemonIdent, PokemonHealth];
-    '-sethp': ['-sethp', PokemonIdent, Num];
-    '-status': ['-status', PokemonIdent, StatusName];
-    '-curestatus': ['-curestatus', PokemonIdent, StatusName];
-    '-cureteam': ['-cureteam', PokemonIdent];
-    '-boost': ['-boost', PokemonIdent, StatName, Num];
-    '-unboost': ['-unboost', PokemonIdent, StatName, Num];
-    '-setboost': ['-setboost', PokemonIdent, StatName, Num];
-    '-swapboost': ['-swapboost', PokemonIdent, PokemonIdent, StatNames];
-    '-invertboost': ['-invertboost', PokemonIdent];
-    '-clearboost': ['-clearboost', PokemonIdent];
-    '-clearallboost': ['-clearallboost'];
-    '-clearpositiveboost': ['-clearpositiveboost', PokemonIdent, PokemonIdent, Effect];
-    '-clearnegativeboost': ['-clearnegativeboost', PokemonIdent];
-    '-copyboost': ['-copyboost', PokemonIdent, PokemonIdent];
-    '-weather': ['-weather', Weather | 'none'];
-    '-fieldstart': ['-fieldstart', FieldCondition];
-    '-fieldend': ['-fieldend', FieldCondition];
-    '-sidestart': ['-sidestart', Side, SideCondition];
-    '-sideend': ['-sideend', Side, SideCondition];
-    '-start': ['-start', PokemonIdent, Effect] | ['-start', PokemonIdent, Effect, Types];
-    '-end': ['-end', PokemonIdent, Effect];
-    '-crit': ['-crit', PokemonIdent];
-    '-supereffective': ['-supereffective', PokemonIdent];
-    '-resisted': ['-resisted', PokemonIdent];
-    '-immune': ['-immune', PokemonIdent];
-    '-item': ['-item', PokemonIdent, Item];
-    '-enditem': ['-enditem', PokemonIdent, Item];
-    '-ability': ['-ability', PokemonIdent, Ability];
-    '-endability': ['-endability', PokemonIdent] | ['-endability', PokemonIdent, Ability];
-    '-transform': ['-transform', PokemonIdent, Species];
-    '-mega': ['-mega', PokemonIdent, Item];
-    '-primal': ['-primal', PokemonIdent];
-    '-burst': ['-burst', PokemonIdent, Species, Item];
-    '-zpower': ['-zpower', PokemonIdent];
-    '-zbroken': ['-zbroken', PokemonIdent];
-    '-activate': [
+    '|-formechange|': ['-formechange', PokemonIdent, PokemonDetails, PokemonHealth];
+    '|-fail|': ['-fail', PokemonIdent, Move] | ['-fail', PokemonIdent];
+    '|-block|': ['-block', PokemonIdent, Effect, Move, PokemonIdent?];
+    '|-notarget|': ['-notarget', PokemonIdent] | ['-notarget'];
+    '|-miss|': ['-miss', PokemonIdent, PokemonIdent] | ['-miss', PokemonIdent];
+    '|-damage|': ['-damage', PokemonIdent, PokemonHealth];
+    '|-heal|': ['-heal', PokemonIdent, PokemonHealth];
+    '|-sethp|': ['-sethp', PokemonIdent, Num];
+    '|-status|': ['-status', PokemonIdent, StatusName];
+    '|-curestatus|': ['-curestatus', PokemonIdent, StatusName];
+    '|-cureteam|': ['-cureteam', PokemonIdent];
+    '|-boost|': ['-boost', PokemonIdent, StatName, Num];
+    '|-unboost|': ['-unboost', PokemonIdent, StatName, Num];
+    '|-setboost|': ['-setboost', PokemonIdent, StatName, Num];
+    '|-swapboost|': ['-swapboost', PokemonIdent, PokemonIdent, StatNames];
+    '|-invertboost|': ['-invertboost', PokemonIdent];
+    '|-clearboost|': ['-clearboost', PokemonIdent];
+    '|-clearallboost|': ['-clearallboost'];
+    '|-clearpositiveboost|': ['-clearpositiveboost', PokemonIdent, PokemonIdent, Effect];
+    '|-clearnegativeboost|': ['-clearnegativeboost', PokemonIdent];
+    '|-copyboost|': ['-copyboost', PokemonIdent, PokemonIdent];
+    '|-weather|': ['-weather', Weather | 'none'];
+    '|-fieldstart|': ['-fieldstart', FieldCondition];
+    '|-fieldend|': ['-fieldend', FieldCondition];
+    '|-sidestart|': ['-sidestart', Side, SideCondition];
+    '|-sideend|': ['-sideend', Side, SideCondition];
+    '|-start|': ['-start', PokemonIdent, Effect] | ['-start', PokemonIdent, Effect, Types];
+    '|-end|': ['-end', PokemonIdent, Effect];
+    '|-crit|': ['-crit', PokemonIdent];
+    '|-supereffective|': ['-supereffective', PokemonIdent];
+    '|-resisted|': ['-resisted', PokemonIdent];
+    '|-immune|': ['-immune', PokemonIdent];
+    '|-item|': ['-item', PokemonIdent, Item];
+    '|-enditem|': ['-enditem', PokemonIdent, Item];
+    '|-ability|': ['-ability', PokemonIdent, Ability];
+    '|-endability|': ['-endability', PokemonIdent] | ['-endability', PokemonIdent, Ability];
+    '|-transform|': ['-transform', PokemonIdent, Species];
+    '|-mega|': ['-mega', PokemonIdent, Item];
+    '|-primal|': ['-primal', PokemonIdent];
+    '|-burst|': ['-burst', PokemonIdent, Species, Item];
+    '|-zpower|': ['-zpower', PokemonIdent];
+    '|-zbroken|': ['-zbroken', PokemonIdent];
+    '|-activate|': [
       '-activate',
       PokemonIdent,
       Ability | Effect,
       (Item | Move | Num | PokemonIdent)?,
       (Ability | Num)?
     ];
-    '-fieldactivate': ['-fieldactivate', Effect];
-    '-hint': ['-hint', Message];
-    '-center': ['-center'];
-    '-message': ['-message', Message];
-    '-combine': ['-combine'];
-    '-waiting': ['-waiting', PokemonIdent, PokemonIdent];
-    '-prepare': ['-prepare', PokemonIdent, Move, PokemonIdent];
-    '-mustrecharge': ['-mustrecharge', PokemonIdent];
-    '-hitcount': ['-hitcount', PokemonIdent, Num];
-    '-singlemove': ['-singlemove', PokemonIdent, Move];
-    '-singleturn': ['-singleturn', PokemonIdent, Move];
-    '-anim': ['-anim', PokemonIdent, Move, PokemonIdent];
+    '|-fieldactivate|': ['-fieldactivate', Effect];
+    '|-hint|': ['-hint', Message];
+    '|-center|': ['-center'];
+    '|-message|': ['-message', Message];
+    '|-combine|': ['-combine'];
+    '|-waiting|': ['-waiting', PokemonIdent, PokemonIdent];
+    '|-prepare|': ['-prepare', PokemonIdent, Move, PokemonIdent];
+    '|-mustrecharge|': ['-mustrecharge', PokemonIdent];
+    '|-hitcount|': ['-hitcount', PokemonIdent, Num];
+    '|-singlemove|': ['-singlemove', PokemonIdent, Move];
+    '|-singleturn|': ['-singleturn', PokemonIdent, Move];
+    '|-anim|': ['-anim', PokemonIdent, Move, PokemonIdent];
   } & {
     // '|-sethp|TARGET|TARGET HP|SOURCE|SOURCE HP' before smogon/pokemon-showdown@7e4929a3
-    '-sethp': ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
+    '|-sethp|': ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
     // '|-activate|SOURCE|EFFECT|TARGET|' legacy Skill Swap
-    '-activate': ['-activate', PokemonIdent, Effect, PokemonIdent];
-    '-ohko': ['-ohko'];
-    '-ability': ['-ability', PokemonIdent, Ability, Ability, PokemonIdent];
+    '|-activate|': ['-activate', PokemonIdent, Effect, PokemonIdent];
+    '|-ohko|': ['-ohko'];
+    '|-ability|': ['-ability', PokemonIdent, Ability, Ability, PokemonIdent];
   }
 
   export type BattleMinorArgName = keyof BattleMinorArgs;
@@ -401,44 +401,44 @@ export namespace Protocol {
   export type GeneralKWArgs = 'from' | 'of' | 'still' | 'silent';
 
   export interface BattleArgsWithKWArgs {
-    'cant': GeneralKWArgs;
-    'detailschange': GeneralKWArgs | 'msg';
-    'move': GeneralKWArgs | 'anim' | 'miss' | 'notarget' | 'prepare' | 'spread' |  'zeffect';
-    'switchout': GeneralKWArgs;
-    '-activate': GeneralKWArgs | 'ability' | 'ability2' | 'block' | 'broken' | 'damage' | 'item' | 'move' | 'number' | 'consumed' | 'name';
-    '-ability': GeneralKWArgs | 'move' | 'weaken';
-    '-block': GeneralKWArgs;
-    '-boost': GeneralKWArgs | 'zeffect';
-    '-copyboost': GeneralKWArgs;
-    '-clearallboost': GeneralKWArgs;
-    '-clearnegativeboost': GeneralKWArgs | 'zeffect';
-    '-crit': 'spread';
-    '-curestatus': GeneralKWArgs| 'thaw' | 'msg';
-    '-cureteam': GeneralKWArgs;
-    '-damage': GeneralKWArgs | 'partiallytrapped';
-    '-end': GeneralKWArgs | 'partiallytrapped' | 'interrupt';
-    '-endability': GeneralKWArgs;
-    '-enditem': GeneralKWArgs | 'eat' | 'move' |'weaken';
-    '-fail': GeneralKWArgs | 'forme' | 'heavy' | 'msg' | 'weak' | 'fail';
-    '-fieldend': GeneralKWArgs;
-    '-formechange': GeneralKWArgs | 'msg';
-    '-heal': GeneralKWArgs | 'wisher' |  'zeffect';
-    '-immune': GeneralKWArgs | 'ohko';
-    '-invertboost': GeneralKWArgs;
-    '-item': GeneralKWArgs | 'identify';
-    '-miss': GeneralKWArgs;
-    '-resisted': 'spread';
-    '-setboost': GeneralKWArgs;
-    '-sethp': GeneralKWArgs;
-    '-sideend': GeneralKWArgs;
-    '-singleturn': GeneralKWArgs | 'zeffect';
-    '-start': GeneralKWArgs | 'already' | 'damage' | 'block' | 'fatigue' | 'upkeep' | 'zeffect';
-    '-status': GeneralKWArgs;
-    '-supereffective': 'spread';
-    '-swapboost': GeneralKWArgs;
-    '-transform': GeneralKWArgs | 'msg';
-    '-unboost': GeneralKWArgs | 'zeffect';
-    '-weather': GeneralKWArgs | 'upkeep';
+    '|cant|': GeneralKWArgs;
+    '|detailschange|': GeneralKWArgs | 'msg';
+    '|move|': GeneralKWArgs | 'anim' | 'miss' | 'notarget' | 'prepare' | 'spread' |  'zeffect';
+    '|switchout|': GeneralKWArgs;
+    '|-activate|': GeneralKWArgs | 'ability' | 'ability2' | 'block' | 'broken' | 'damage' | 'item' | 'move' | 'number' | 'consumed' | 'name';
+    '|-ability|': GeneralKWArgs | 'move' | 'weaken';
+    '|-block|': GeneralKWArgs;
+    '|-boost|': GeneralKWArgs | 'zeffect';
+    '|-copyboost|': GeneralKWArgs;
+    '|-clearallboost|': GeneralKWArgs;
+    '|-clearnegativeboost|': GeneralKWArgs | 'zeffect';
+    '|-crit|': 'spread';
+    '|-curestatus|': GeneralKWArgs| 'thaw' | 'msg';
+    '|-cureteam|': GeneralKWArgs;
+    '|-damage|': GeneralKWArgs | 'partiallytrapped';
+    '|-end|': GeneralKWArgs | 'partiallytrapped' | 'interrupt';
+    '|-endability|': GeneralKWArgs;
+    '|-enditem|': GeneralKWArgs | 'eat' | 'move' |'weaken';
+    '|-fail|': GeneralKWArgs | 'forme' | 'heavy' | 'msg' | 'weak' | 'fail';
+    '|-fieldend|': GeneralKWArgs;
+    '|-formechange|': GeneralKWArgs | 'msg';
+    '|-heal|': GeneralKWArgs | 'wisher' |  'zeffect';
+    '|-immune|': GeneralKWArgs | 'ohko';
+    '|-invertboost|': GeneralKWArgs;
+    '|-item|': GeneralKWArgs | 'identify';
+    '|-miss|': GeneralKWArgs;
+    '|-resisted|': 'spread';
+    '|-setboost|': GeneralKWArgs;
+    '|-sethp|': GeneralKWArgs;
+    '|-sideend|': GeneralKWArgs;
+    '|-singleturn|': GeneralKWArgs | 'zeffect';
+    '|-start|': GeneralKWArgs | 'already' | 'damage' | 'block' | 'fatigue' | 'upkeep' | 'zeffect';
+    '|-status|': GeneralKWArgs;
+    '|-supereffective|': 'spread';
+    '|-swapboost|': GeneralKWArgs;
+    '|-transform|': GeneralKWArgs | 'msg';
+    '|-unboost|': GeneralKWArgs | 'zeffect';
+    '|-weather|': GeneralKWArgs | 'upkeep';
   }
 
   export type BattleArgsWithKWArgName = keyof BattleArgsWithKWArgs;
@@ -626,42 +626,40 @@ function toID(s: string): ID {
 
 export const Protocol = new class {
   // NOTE: An object is used here to get TypeScript to perform exhaustiveness checking
-  /* eslint-disable key-spacing */
   ARGS: {[k in Protocol.ArgName]: 1} = {
-    'init':1, 'title':1, 'userlist':1, '':1, 'html':1, 'uhtml':1, 'uhtmlchange':1, 'join':1,
-    'leave':1, 'name':1, 'chat':1, ':':1, 'c:':1, 'battle':1, 'popup':1, 'pm':1, 'usercount':1,
-    'nametaken':1, 'challstr':1, 'updateuser':1, 'formats':1, 'updatesearch':1, 'switchout':1,
-    'updatechallenges':1, 'queryresponse':1, 'unlink':1, 'raw':1, 'warning':1, 'error':1,
-    'bigerror':1, 'chatmsg':1, 'chatmsg-raw':1, 'controlshtml':1, 'fieldhtml':1, 'debug':1,
-    'tournament|create':1, 'tournament|update':1, 'tournament|updateEnd':1, 'tournament|error':1,
-    'tournament|forceend':1, 'tournament|join':1, 'tournament|leave':1, 'tournament|replace':1,
-    'tournament|start':1, 'tournament|disqualify':1, 'tournament|battlestart':1,
-    'tournament|battleend':1, 'tournament|end':1, 'tournament|autostart':1, 'tournament|autodq':1,
-    'player':1, 'teamsize':1, 'gametype':1, 'gen':1, 'tier':1, 'rated':1, 'seed':1, 'rule':1,
-    'teampreview':1, 'clearpoke':1, 'poke':1, 'start':1, 'done':1, 'request':1, 'inactive':1,
-    'inactiveoff':1, 'upkeep':1, 'turn':1, 'win':1, 'tie':1, 'move':1, 'switch':1, 'drag':1,
-    'detailschange':1, 'replace':1, 'swap':1, 'cant':1, 'faint':1, '-formechange':1, '-fail':1,
-    '-block':1, '-notarget':1, '-miss':1, '-damage':1, '-heal':1, '-sethp':1, '-status':1,
-    '-curestatus':1, '-cureteam':1, '-boost':1, '-unboost':1, '-setboost':1, '-swapboost':1,
-    '-invertboost':1, '-clearboost':1, '-clearallboost':1, '-clearpositiveboost':1, '-ohko':1,
-    '-clearnegativeboost':1, '-copyboost':1, '-weather':1, '-fieldstart':1, '-fieldend':1,
-    '-sidestart':1, '-sideend':1, '-start':1, '-end':1, '-crit':1, '-supereffective':1,
-    '-resisted':1, '-immune':1, '-item':1, '-enditem':1, '-ability':1, '-endability':1,
-    '-transform':1, '-mega':1, '-primal':1, '-burst':1, '-zpower':1, '-zbroken':1, '-activate':1,
-    '-fieldactivate':1, '-hint':1, '-center':1, '-message':1, '-combine':1, '-waiting':1,
-    '-prepare':1, '-mustrecharge':1, '-hitcount':1, '-singlemove':1, '-singleturn':1, '-anim':1,
-    'message':1,
+    '|init|': 1, '|title|': 1, '|userlist|': 1, '||': 1, '|html|': 1, '|uhtml|': 1, '|uhtmlchange|': 1, '|join|': 1,
+    '|leave|': 1, '|name|': 1, '|chat|': 1, '|:|': 1, '|c:|': 1, '|battle|': 1, '|popup|': 1, '|pm|': 1, '|usercount|': 1,
+    '|nametaken|': 1, '|challstr|': 1, '|updateuser|': 1, '|formats|': 1, '|updatesearch|': 1, '|switchout|': 1,
+    '|updatechallenges|': 1, '|queryresponse|': 1, '|unlink|': 1, '|raw|': 1, '|warning|': 1, '|error|': 1,
+    '|bigerror|': 1, '|chatmsg|': 1, '|chatmsg-raw|': 1, '|controlshtml|': 1, '|fieldhtml|': 1, '|debug|': 1,
+    '|tournament|create|': 1, '|tournament|update|': 1, '|tournament|updateEnd|': 1, '|tournament|error|': 1,
+    '|tournament|forceend|': 1, '|tournament|join|': 1, '|tournament|leave|': 1, '|tournament|replace|': 1,
+    '|tournament|start|': 1, '|tournament|disqualify|': 1, '|tournament|battlestart|': 1,
+    '|tournament|battleend|': 1, '|tournament|end|': 1, '|tournament|autostart|': 1, '|tournament|autodq|': 1,
+    '|player|': 1, '|teamsize|': 1, '|gametype|': 1, '|gen|': 1, '|tier|': 1, '|rated|': 1, '|seed|': 1, '|rule|': 1,
+    '|teampreview|': 1, '|clearpoke|': 1, '|poke|': 1, '|start|': 1, '|done|': 1, '|request|': 1, '|inactive|': 1,
+    '|inactiveoff|': 1, '|upkeep|': 1, '|turn|': 1, '|win|': 1, '|tie|': 1, '|move|': 1, '|switch|': 1, '|drag|': 1,
+    '|detailschange|': 1, '|replace|': 1, '|swap|': 1, '|cant|': 1, '|faint|': 1, '|-formechange|': 1, '|-fail|': 1,
+    '|-block|': 1, '|-notarget|': 1, '|-miss|': 1, '|-damage|': 1, '|-heal|': 1, '|-sethp|': 1, '|-status|': 1,
+    '|-curestatus|': 1, '|-cureteam|': 1, '|-boost|': 1, '|-unboost|': 1, '|-setboost|': 1, '|-swapboost|': 1,
+    '|-invertboost|': 1, '|-clearboost|': 1, '|-clearallboost|': 1, '|-clearpositiveboost|': 1, '|-ohko|': 1,
+    '|-clearnegativeboost|': 1, '|-copyboost|': 1, '|-weather|': 1, '|-fieldstart|': 1, '|-fieldend|': 1,
+    '|-sidestart|': 1, '|-sideend|': 1, '|-start|': 1, '|-end|': 1, '|-crit|': 1, '|-supereffective|': 1,
+    '|-resisted|': 1, '|-immune|': 1, '|-item|': 1, '|-enditem|': 1, '|-ability|': 1, '|-endability|': 1,
+    '|-transform|': 1, '|-mega|': 1, '|-primal|': 1, '|-burst|': 1, '|-zpower|': 1, '|-zbroken|': 1, '|-activate|': 1,
+    '|-fieldactivate|': 1, '|-hint|': 1, '|-center|': 1, '|-message|': 1, '|-combine|': 1, '|-waiting|': 1,
+    '|-prepare|': 1, '|-mustrecharge|': 1, '|-hitcount|': 1, '|-singlemove|': 1, '|-singleturn|': 1, '|-anim|': 1,
+    '|message|': 1,
   };
   ARGS_WITH_KWARGS: {[k in Protocol.ArgsWithKWArgName]: 1} = {
-    'move':1, 'detailschange':1,  'cant':1, '-formechange':1, '-fail':1, '-block':1, '-damage':1,
-    '-heal':1, '-sethp':1, '-status':1, '-curestatus':1, '-cureteam':1, '-boost':1, '-unboost':1,
-    '-setboost':1, '-swapboost':1, '-invertboost':1, '-clearnegativeboost':1, '-weather':1,
-    '-fieldend':1, '-sideend':1, '-start':1, '-end':1, '-crit':1, '-supereffective':1,
-    '-resisted':1, '-immune':1, '-item':1, '-enditem':1, '-ability':1, '-endability':1,
-    '-transform':1,  '-activate':1, '-singleturn':1, 'switchout':1, '-miss': 1, '-clearallboost': 1,
-    '-copyboost': 1,
+    '|move|': 1, '|detailschange|': 1,  '|cant|': 1, '|-formechange|': 1, '|-fail|': 1, '|-block|': 1, '|-damage|': 1,
+    '|-heal|': 1, '|-sethp|': 1, '|-status|': 1, '|-curestatus|': 1, '|-cureteam|': 1, '|-boost|': 1, '|-unboost|': 1,
+    '|-setboost|': 1, '|-swapboost|': 1, '|-invertboost|': 1, '|-clearnegativeboost|': 1, '|-weather|': 1,
+    '|-fieldend|': 1, '|-sideend|': 1, '|-start|': 1, '|-end|': 1, '|-crit|': 1, '|-supereffective|': 1,
+    '|-resisted|': 1, '|-immune|': 1, '|-item|': 1, '|-enditem|': 1, '|-ability|': 1, '|-endability|': 1,
+    '|-transform|': 1,  '|-activate|': 1, '|-singleturn|': 1, '|switchout|': 1, '|-miss|':  1, '|-clearallboost|':  1,
+    '|-copyboost|':  1,
   };
-  /* eslint-enable key-spacing */
 
   *handle(data: string) {
     const lines = data.split('\n');
@@ -680,7 +678,7 @@ export const Protocol = new class {
   }
 
   parseLine(line: string, noDefault?: boolean): Protocol.ArgType | null {
-    if (!line.startsWith('|')) return ['', line] as Protocol.RoomMessageArgs[''];
+    if (!line.startsWith('|')) return ['', line] as Protocol.RoomMessageArgs['||'];
     if (line === '|') return ['done'];
     const index = line.indexOf('|', 1);
     const cmd = line.slice(1, index);
@@ -1007,7 +1005,7 @@ function upgradeBattleArgs(
     args = [
       '-activate', '' as Protocol.PokemonIdent,
       'move:Splash' as Protocol.Effect
-    ] as Protocol.Args['-activate'];
+    ] as Protocol.Args['|-activate|'];
   }
 
   return {args, kwArgs};
