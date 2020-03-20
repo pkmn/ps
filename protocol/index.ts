@@ -134,26 +134,26 @@ export namespace Protocol {
   }
 
   export interface RoomInitArgs {
-    '|init|': ['init', RoomType];
-    '|title|': ['title', RoomTitle];
-    '|userlist|': ['userlist', UserList];
+    '|init|': readonly ['init', RoomType];
+    '|title|': readonly ['title', RoomTitle];
+    '|userlist|': readonly ['userlist', UserList];
   }
 
   export type RoomInitArgName = keyof RoomInitArgs;
   export type RoomInitArgType = RoomInitArgs[RoomInitArgName];
 
   export interface RoomMessageArgs {
-    '||': ['', Message];
-    '|html|': ['html', HTML];
-    '|uhtml|': ['uhtml', UHTMLName, HTML];
-    '|uhtmlchange|': ['uhtmlchange', UHTMLName, HTML];
-    '|join|': ['join', Username, boolean]; // join, j, J
-    '|leave|': ['leave', Username, boolean]; // leave, l, J
-    '|name|': ['name', Username, ID, boolean]; // name, n
-    '|chat|': ['chat', Username, Message]; // chat, c
-    '|:|': [':', Timestamp];
+    '||': readonly ['', Message];
+    '|html|': readonly ['html', HTML];
+    '|uhtml|': readonly ['uhtml', UHTMLName, HTML];
+    '|uhtmlchange|': readonly ['uhtmlchange', UHTMLName, HTML];
+    '|join|': readonly ['join', Username, boolean]; // join, j, J
+    '|leave|': readonly ['leave', Username, boolean]; // leave, l, J
+    '|name|': readonly ['name', Username, ID, boolean]; // name, n
+    '|chat|': readonly ['chat', Username, Message]; // chat, c
+    '|:|': readonly [':', Timestamp];
     '|c:|': ['c:', Timestamp, Username, Message];
-    '|battle|': ['battle', RoomID, Username, Username]; // battle, b
+    '|battle|': readonly ['battle', RoomID, Username, Username]; // battle, b
   }
 
   export type RoomMessageArgName = keyof RoomMessageArgs;
@@ -164,57 +164,58 @@ export namespace Protocol {
   export type RoomArgsType = RoomArgs[RoomArgName];
 
   export interface GlobalArgs {
-    '|popup|': ['popup', Message];
-    '|pm|': ['pm', Username, Username, Message];
-    '|usercount|': ['usercount', Num];
-    '|nametaken|': ['nametaken', Username, Message];
-    '|challstr|': ['challstr', '4', string];
-    '|updateuser|': ['updateuser', Username, '1' | '0', Avatar, JSON];
-    '|formats|': ['formats', FormatsList];
-    '|updatesearch|': ['updatesearch', SearchStateJSON];
-    '|updatechallenges|': ['updatechallenges', ChallengesJSON];
-    '|queryresponse|': ['queryresponse', QueryType, JSON];
+    '|popup|': readonly ['popup', Message];
+    '|pm|': readonly ['pm', Username, Username, Message];
+    '|usercount|': readonly ['usercount', Num];
+    '|nametaken|': readonly ['nametaken', Username, Message];
+    '|challstr|': readonly ['challstr', '4', string];
+    '|updateuser|': readonly ['updateuser', Username, '1' | '0', Avatar, JSON];
+    '|formats|': readonly ['formats', FormatsList];
+    '|updatesearch|': readonly ['updatesearch', SearchStateJSON];
+    '|updatechallenges|': readonly ['updatechallenges', ChallengesJSON];
+    '|queryresponse|': readonly ['queryresponse', QueryType, JSON];
   }
 
   export type GlobalArgName = keyof GlobalArgs;
   export type GlobalArgType = GlobalArgs[GlobalArgName];
 
   export interface MiscArgs {
-    '|unlink|': ['unlink', Username] | ['unlink', 'hide', Username];
-    '|raw|': ['raw', HTML];
-    '|warning|': ['warning', Message];
-    '|error|': ['error', Message];
-    '|bigerror|': ['bigerror', Message];
-    '|chatmsg|': ['chatmsg', Message];
-    '|chatmsg-raw|': ['chatmsg-raw', HTML];
-    '|controlshtml|': ['controlshtml', HTML];
-    '|fieldhtml|': ['fieldhtml', HTML];
-    '|debug|': ['debug', Message];
+    '|unlink|': readonly ['unlink', Username] | readonly ['unlink', 'hide', Username];
+    '|raw|': readonly ['raw', HTML];
+    '|warning|': readonly ['warning', Message];
+    '|error|': readonly ['error', Message];
+    '|bigerror|': readonly ['bigerror', Message];
+    '|chatmsg|': readonly ['chatmsg', Message];
+    '|chatmsg-raw|': readonly ['chatmsg-raw', HTML];
+    '|controlshtml|': readonly ['controlshtml', HTML];
+    '|fieldhtml|': readonly ['fieldhtml', HTML];
+    '|debug|': readonly ['debug', Message];
   }
 
   export interface TournamentArgs {
-    '|tournament|create|': ['tournament', 'create', Generator, '0' | Num];
-    '|tournament|update|': ['tournament', 'update', JSON];
-    '|tournament|updateEnd|': ['tournament', 'updateEnd'];
-    '|tournament|error|': ['tournament', 'error', Message];
-    '|tournament|forceend|': ['tournament', 'forceend'];
-    '|tournament|join|': ['tournament', 'join', Username];
-    '|tournament|leave|': ['tournament', 'leave', Username];
-    '|tournament|replace|': ['tournament', 'replace', Username, Username];
-    '|tournament|start|': ['tournament', 'start', Num];
-    '|tournament|disqualify|': ['tournament', 'disqualify', Username];
-    '|tournament|battlestart|': ['tournament', 'battlestart', Username, Username, RoomID];
+    '|tournament|create|': readonly ['tournament', 'create', Generator, '0' | Num];
+    '|tournament|update|': readonly ['tournament', 'update', JSON];
+    '|tournament|updateEnd|': readonly ['tournament', 'updateEnd'];
+    '|tournament|error|': readonly ['tournament', 'error', Message];
+    '|tournament|forceend|': readonly ['tournament', 'forceend'];
+    '|tournament|join|': readonly ['tournament', 'join', Username];
+    '|tournament|leave|': readonly ['tournament', 'leave', Username];
+    '|tournament|replace|': readonly ['tournament', 'replace', Username, Username];
+    '|tournament|start|': readonly ['tournament', 'start', Num];
+    '|tournament|disqualify|': readonly ['tournament', 'disqualify', Username];
+    '|tournament|battlestart|': readonly ['tournament', 'battlestart', Username, Username, RoomID];
     '|tournament|battleend|':
-    | ['tournament', 'battleend', Username, Username, 'win' | 'loss' | 'draw', Score, 'success']
-    | ['tournament', 'battleend', Username, Username, 'draw', Score, 'fail'];
-    '|tournament|end|': ['tournament', 'end', JSON];
+    | readonly [
+      'tournament', 'battleend', Username, Username, 'win' | 'loss' | 'draw', Score, 'success'
+    ] | readonly ['tournament', 'battleend', Username, Username, 'draw', Score, 'fail'];
+    '|tournament|end|': readonly ['tournament', 'end', JSON];
     '|tournament|autostart|':
-    | ['tournament', 'autostart', 'on', Num]
-    | ['tournament', 'autostart', 'off'];
+    | readonly ['tournament', 'autostart', 'on', Num]
+    | readonly ['tournament', 'autostart', 'off'];
     '|tournament|autodq|':
-    | ['tournament', 'autodq', 'on', Num]
-    | ['tournament', 'autodq', 'off']
-    | ['tournament', 'autodq', 'target', Num];
+    | readonly ['tournament', 'autodq', 'on', Num]
+    | readonly ['tournament', 'autodq', 'off']
+    | readonly ['tournament', 'autodq', 'target', Num];
   }
 
   export type TournamentArgName = keyof TournamentArgs;
@@ -224,125 +225,131 @@ export namespace Protocol {
   export type MiscArgType = MiscArgs[MiscArgName];
 
   export interface BattleInitArgs {
-    '|player|': ['player', Player, Username, Avatar, Num?] | ['player', Player];
-    '|teamsize|': ['teamsize', Player, Num];
-    '|gametype|': ['gametype', GameType];
-    '|gen|': ['gen', GenerationNum];
-    '|tier|': ['tier', FormatName];
-    '|rated|': ['rated'] | ['rated', Message];
-    '|seed|': ['seed', Seed];
-    '|teampreview|': ['teampreview'];
-    '|rule|': ['rule', Rule];
-    '|clearpoke|': ['clearpoke'];
-    '|poke|': ['player', Player, PokemonIdent, 'item' | ''];
-    '|start|': ['start'];
+    '|player|': readonly ['player', Player, Username, Avatar, Num?] |readonly ['player', Player];
+    '|teamsize|': readonly ['teamsize', Player, Num];
+    '|gametype|': readonly ['gametype', GameType];
+    '|gen|': readonly ['gen', GenerationNum];
+    '|tier|': readonly ['tier', FormatName];
+    '|rated|': readonly ['rated'] | readonly ['rated', Message];
+    '|seed|': readonly ['seed', Seed];
+    '|teampreview|': readonly ['teampreview'];
+    '|rule|': readonly ['rule', Rule];
+    '|clearpoke|': readonly ['clearpoke'];
+    '|poke|': readonly ['player', Player, PokemonIdent, 'item' | ''];
+    '|start|': readonly ['start'];
   }
 
   export type BattleInitArgName = keyof BattleInitArgs;
   export type BattleInitArgType = BattleInitArgs[BattleInitArgName];
 
   export interface BattleProgressArgs {
-    '|done|': ['done']; // '|'
-    '|request|': ['request', RequestJSON];
-    '|inactive|': ['inactive', Message];
-    '|inactiveoff|': ['inactiveoff', Message];
-    '|upkeep|': ['upkeep'];
-    '|turn|': ['turn', Num];
-    '|win|': ['win', Username];
-    '|tie|': ['tie'];
+    '|done|': readonly ['done']; // '|'
+    '|request|': readonly ['request', RequestJSON];
+    '|inactive|': readonly ['inactive', Message];
+    '|inactiveoff|': readonly ['inactiveoff', Message];
+    '|upkeep|': readonly ['upkeep'];
+    '|turn|': readonly ['turn', Num];
+    '|win|': readonly ['win', Username];
+    '|tie|': readonly ['tie'];
   }
 
   export type BattleProgressArgName = keyof BattleProgressArgs;
   export type BattleProgressArgType = BattleProgressArgs[BattleProgressArgName];
 
   export interface BattleMajorArgs {
-    '|move|': ['move', PokemonIdent, Move, PokemonIdent] | ['move', PokemonIdent, Move];
-    '|switch|': ['switch', PokemonIdent, PokemonDetails, PokemonHealth];
-    '|drag|': ['drag', PokemonIdent, PokemonDetails, PokemonHealth];
-    '|detailschange|': ['detailschange', PokemonIdent, PokemonDetails, PokemonHealth];
-    '|replace|': ['replace', PokemonIdent, PokemonDetails, PokemonHealth];
-    '|swap|': ['swap', PokemonIdent, Num] | ['swap', PokemonIdent];
-    '|cant|': ['cant', PokemonIdent, Reason | Ability | Effect | Move, Effect | Move];
-    '|faint|': ['faint', PokemonIdent];
-    '|switchout|': ['switchout', PokemonIdent];
-    '|message|': ['message', Message];
+    '|move|':
+    | readonly ['move', PokemonIdent, Move, PokemonIdent]
+    | readonly ['move', PokemonIdent, Move];
+    '|switch|': readonly ['switch', PokemonIdent, PokemonDetails, PokemonHealth];
+    '|drag|': readonly ['drag', PokemonIdent, PokemonDetails, PokemonHealth];
+    '|detailschange|': readonly ['detailschange', PokemonIdent, PokemonDetails, PokemonHealth];
+    '|replace|': readonly ['replace', PokemonIdent, PokemonDetails, PokemonHealth];
+    '|swap|': readonly ['swap', PokemonIdent, Num] | readonly ['swap', PokemonIdent];
+    '|cant|': readonly ['cant', PokemonIdent, Reason | Ability | Effect | Move, Effect | Move];
+    '|faint|': readonly ['faint', PokemonIdent];
+    '|switchout|': readonly ['switchout', PokemonIdent];
+    '|message|': readonly ['message', Message];
   }
 
   export type BattleMajorArgName = keyof BattleMajorArgs;
   export type BattleMajorArgType = BattleMajorArgs[BattleMajorArgName];
 
   export interface BattleMinorArgs {
-    '|-formechange|': ['-formechange', PokemonIdent, Species, PokemonHealth];
+    '|-formechange|': readonly ['-formechange', PokemonIdent, Species, PokemonHealth];
     '|-fail|':
-    | ['-fail', PokemonIdent, Move]
-    | ['-fail', PokemonIdent]
-    | ['-fail', PokemonIdent, 'unboost', StatDisplayName];
-    '|-block|': ['-block', PokemonIdent, Effect, Move, PokemonIdent?];
-    '|-notarget|': ['-notarget', PokemonIdent] | ['-notarget'];
-    '|-miss|': ['-miss', PokemonIdent, PokemonIdent] | ['-miss', PokemonIdent];
-    '|-damage|': ['-damage', PokemonIdent, PokemonHealth];
-    '|-heal|': ['-heal', PokemonIdent, PokemonHealth];
-    '|-sethp|': ['-sethp', PokemonIdent, Num] | ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
-    '|-status|': ['-status', PokemonIdent, StatusName];
-    '|-curestatus|': ['-curestatus', PokemonIdent, StatusName];
-    '|-cureteam|': ['-cureteam', PokemonIdent];
-    '|-boost|': ['-boost', PokemonIdent, StatName, Num];
-    '|-unboost|': ['-unboost', PokemonIdent, StatName, Num];
-    '|-setboost|': ['-setboost', PokemonIdent, StatName, Num];
-    '|-swapboost|': ['-swapboost', PokemonIdent, PokemonIdent, StatNames];
-    '|-invertboost|': ['-invertboost', PokemonIdent];
-    '|-clearboost|': ['-clearboost', PokemonIdent];
-    '|-clearallboost|': ['-clearallboost'];
-    '|-clearpositiveboost|': ['-clearpositiveboost', PokemonIdent, PokemonIdent, Effect];
-    '|-clearnegativeboost|': ['-clearnegativeboost', PokemonIdent];
-    '|-copyboost|': ['-copyboost', PokemonIdent, PokemonIdent];
-    '|-weather|': ['-weather', Weather | 'none'];
-    '|-fieldstart|': ['-fieldstart', FieldCondition];
-    '|-fieldend|': ['-fieldend', FieldCondition];
-    '|-sidestart|': ['-sidestart', Side, SideCondition];
-    '|-sideend|': ['-sideend', Side, SideCondition];
+    | readonly ['-fail', PokemonIdent, Move]
+    | readonly ['-fail', PokemonIdent]
+    | readonly ['-fail', PokemonIdent, 'unboost', StatDisplayName];
+    '|-block|': readonly ['-block', PokemonIdent, Effect, Move, PokemonIdent?];
+    '|-notarget|': readonly ['-notarget', PokemonIdent] | readonly ['-notarget'];
+    '|-miss|': readonly ['-miss', PokemonIdent, PokemonIdent] | readonly ['-miss', PokemonIdent];
+    '|-damage|': readonly ['-damage', PokemonIdent, PokemonHealth];
+    '|-heal|': readonly ['-heal', PokemonIdent, PokemonHealth];
+    '|-sethp|':
+    | readonly ['-sethp', PokemonIdent, Num]
+    | readonly ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
+    '|-status|': readonly ['-status', PokemonIdent, StatusName];
+    '|-curestatus|': readonly ['-curestatus', PokemonIdent, StatusName];
+    '|-cureteam|': readonly ['-cureteam', PokemonIdent];
+    '|-boost|': readonly ['-boost', PokemonIdent, StatName, Num];
+    '|-unboost|': readonly ['-unboost', PokemonIdent, StatName, Num];
+    '|-setboost|': readonly ['-setboost', PokemonIdent, StatName, Num];
+    '|-swapboost|': readonly ['-swapboost', PokemonIdent, PokemonIdent, StatNames];
+    '|-invertboost|': readonly ['-invertboost', PokemonIdent];
+    '|-clearboost|': readonly ['-clearboost', PokemonIdent];
+    '|-clearallboost|': readonly ['-clearallboost'];
+    '|-clearpositiveboost|': readonly ['-clearpositiveboost', PokemonIdent, PokemonIdent, Effect];
+    '|-clearnegativeboost|': readonly ['-clearnegativeboost', PokemonIdent];
+    '|-copyboost|': readonly ['-copyboost', PokemonIdent, PokemonIdent];
+    '|-weather|': readonly ['-weather', Weather | 'none'];
+    '|-fieldstart|': readonly ['-fieldstart', FieldCondition];
+    '|-fieldend|': readonly ['-fieldend', FieldCondition];
+    '|-sidestart|': readonly ['-sidestart', Side, SideCondition];
+    '|-sideend|': readonly ['-sideend', Side, SideCondition];
     '|-start|':
-    | ['-start', PokemonIdent, Effect]
-    | ['-start', PokemonIdent, Effect, Types]
-    | ['-start', PokemonIdent, Effect, Move];
-    '|-end|': ['-end', PokemonIdent, Effect];
-    '|-crit|': ['-crit', PokemonIdent];
-    '|-supereffective|': ['-supereffective', PokemonIdent];
-    '|-resisted|': ['-resisted', PokemonIdent];
-    '|-immune|': ['-immune', PokemonIdent];
-    '|-item|': ['-item', PokemonIdent, Item];
-    '|-enditem|': ['-enditem', PokemonIdent, Item];
+    | readonly ['-start', PokemonIdent, Effect]
+    | readonly ['-start', PokemonIdent, Effect, Types]
+    | readonly ['-start', PokemonIdent, Effect, Move];
+    '|-end|': readonly ['-end', PokemonIdent, Effect];
+    '|-crit|': readonly ['-crit', PokemonIdent];
+    '|-supereffective|': readonly ['-supereffective', PokemonIdent];
+    '|-resisted|': readonly ['-resisted', PokemonIdent];
+    '|-immune|': readonly ['-immune', PokemonIdent];
+    '|-item|': readonly ['-item', PokemonIdent, Item];
+    '|-enditem|': readonly ['-enditem', PokemonIdent, Item];
     '|-ability|':
-    | ['-ability', PokemonIdent, Ability]
-    | ['-ability', PokemonIdent, Ability, PokemonIdent | 'boost']
-    | ['-ability', PokemonIdent, Ability, Ability, PokemonIdent];
-    '|-endability|': ['-endability', PokemonIdent] | ['-endability', PokemonIdent, Ability];
-    '|-transform|': ['-transform', PokemonIdent, Species];
-    '|-mega|': ['-mega', PokemonIdent, Species, Item];
-    '|-primal|': ['-primal', PokemonIdent];
-    '|-burst|': ['-burst', PokemonIdent, Species, Item];
-    '|-zpower|': ['-zpower', PokemonIdent];
-    '|-zbroken|': ['-zbroken', PokemonIdent];
-    '|-activate|': [
+    | readonly ['-ability', PokemonIdent, Ability]
+    | readonly ['-ability', PokemonIdent, Ability, PokemonIdent | 'boost']
+    | readonly ['-ability', PokemonIdent, Ability, Ability, PokemonIdent];
+    '|-endability|':
+    | readonly ['-endability', PokemonIdent]
+    | readonly ['-endability', PokemonIdent, Ability];
+    '|-transform|': readonly ['-transform', PokemonIdent, Species];
+    '|-mega|': readonly ['-mega', PokemonIdent, Species, Item];
+    '|-primal|': readonly ['-primal', PokemonIdent];
+    '|-burst|': readonly ['-burst', PokemonIdent, Species, Item];
+    '|-zpower|': readonly ['-zpower', PokemonIdent];
+    '|-zbroken|': readonly ['-zbroken', PokemonIdent];
+    '|-activate|': readonly [
       '-activate',
       PokemonIdent,
       Ability | Effect,
       (Item | Move | Num | PokemonIdent)?,
       (Ability | Num)?
-    ] | ['-activate', PokemonIdent, Effect, PokemonIdent];
-    '|-fieldactivate|': ['-fieldactivate', Effect];
-    '|-hint|': ['-hint', Message];
-    '|-center|': ['-center'];
-    '|-message|': ['-message', Message];
-    '|-combine|': ['-combine'];
-    '|-waiting|': ['-waiting', PokemonIdent, PokemonIdent];
-    '|-prepare|': ['-prepare', PokemonIdent, Move, PokemonIdent];
-    '|-mustrecharge|': ['-mustrecharge', PokemonIdent];
-    '|-hitcount|': ['-hitcount', PokemonIdent, Num];
-    '|-singlemove|': ['-singlemove', PokemonIdent, Move];
-    '|-singleturn|': ['-singleturn', PokemonIdent, Move];
-    '|-anim|': ['-anim', PokemonIdent, Move, PokemonIdent];
-    '|-ohko|': ['-ohko'];
+    ] | readonly ['-activate', PokemonIdent, Effect, PokemonIdent];
+    '|-fieldactivate|': readonly ['-fieldactivate', Effect];
+    '|-hint|': readonly ['-hint', Message];
+    '|-center|': readonly ['-center'];
+    '|-message|': readonly ['-message', Message];
+    '|-combine|': readonly ['-combine'];
+    '|-waiting|': readonly ['-waiting', PokemonIdent, PokemonIdent];
+    '|-prepare|': readonly ['-prepare', PokemonIdent, Move, PokemonIdent];
+    '|-mustrecharge|': readonly ['-mustrecharge', PokemonIdent];
+    '|-hitcount|': readonly ['-hitcount', PokemonIdent, Num];
+    '|-singlemove|': readonly ['-singlemove', PokemonIdent, Move];
+    '|-singleturn|': readonly ['-singleturn', PokemonIdent, Move];
+    '|-anim|': readonly ['-anim', PokemonIdent, Move, PokemonIdent];
+    '|-ohko|': readonly ['-ohko'];
   }
 
   export type BattleMinorArgName = keyof BattleMinorArgs;
@@ -457,21 +464,21 @@ export namespace Protocol {
   export type BattleArgsWithKWArgName = keyof BattleArgsWithKWArgs;
   export type BattleArgsWithKWArgType = BattleArgsWithKWArgs[BattleArgsWithKWArgName];
 
-  export type BattleArgKWArgs<T extends BattleArgName> =
-    T extends BattleArgsWithKWArgName
-      ? { [K in BattleArgsWithKWArgs[T]]?: BattleArgsKWArgsTypes[K] }
-      : {};
+  export type BattleArgKWArgs<T extends BattleArgName> = Readonly<
+  T extends BattleArgsWithKWArgName
+    ? { [K in BattleArgsWithKWArgs[T]]?: BattleArgsKWArgsTypes[K] }
+    : {}>;
 
   export type BattleArgsKWArgs = { [T in BattleArgName]: BattleArgKWArgs<T> };
   export type BattleArgsKWArgName = BattleArgName;
   export type BattleArgsKWArgType = BattleArgsKWArgs[Protocol.BattleArgsWithKWArgName];
 
-  export type Args =
-    RoomArgs &
-    GlobalArgs &
-    TournamentArgs &
-    MiscArgs &
-    BattleArgs;
+  export type Args = Readonly<
+  RoomArgs &
+  GlobalArgs &
+  TournamentArgs &
+  MiscArgs &
+  BattleArgs>;
   export type ArgName =
     | RoomArgName
     | GlobalArgName
@@ -708,7 +715,7 @@ export const Protocol = new class {
   }
 
   parseLine(line: string, noDefault?: boolean): Protocol.ArgType | null {
-    if (!line.startsWith('|')) return ['', line] as Protocol.RoomMessageArgs['||'];
+    if (!line.startsWith('|')) return ['', line] as const as Protocol.RoomMessageArgs['||'];
     if (line === '|') return ['done'];
     const index = line.indexOf('|', 1);
     const cmd = line.slice(1, index);
@@ -912,23 +919,23 @@ function upgradeArgs<T extends Protocol.ArgType>(args: [string, ...string[]]): T
   switch (args[0]) {
   case 'name': case 'n': case 'N': {
     const [cmd, user, oldid] = args;
-    return ['name', user, oldid, cmd === 'N'] as T;
+    return ['name', user, oldid, cmd === 'N'] as const as T;
   }
   case 'chat': case 'c': {
     const [, user, message] = args;
-    return ['chat', user, message] as T;
+    return ['chat', user, message] as const as T;
   }
   case 'join': case 'j': case 'J': {
     const [cmd, user] = args;
-    return ['join', user, cmd === 'J'] as T;
+    return ['join', user, cmd === 'J'] as const as T;
   }
   case 'leave': case 'l': case 'L': {
     const [cmd, user] = args;
-    return ['leave', user, cmd === 'L'] as T;
+    return ['leave', user, cmd === 'L'] as const as T;
   }
   case 'battle': case 'b': {
     const [, roomid, user1, user2] = args;
-    return ['battle', roomid, user1, user2] as T;
+    return ['battle', roomid, user1, user2] as const as T;
   }
   }
   return args as T;
