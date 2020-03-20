@@ -94,6 +94,14 @@ const IMPORTS = {
   'sim/tools/random-player-ai.ts': ['AnyObject'],
 };
 
+const NATURE = `
+export interface Nature {
+  name: string;
+  plus?: keyof StatsTable;
+  minus?: keyof StatsTable;
+  [k: string]: any;
+}`;
+
 const FILES = new Set(tree(sim).map(m => m.slice(sim.length + 1)));
 const FRAGILE = new Set([
   'sim/dex.ts',
@@ -161,9 +169,21 @@ const interesting = f => {
     }
   }
 
+  const types = fs.readFileSync(path.resolve(submodule, 'sim/global-types.ts'), 'utf8');
+  fs.writeFileSync(path.resolve(sim, 'sim/global-types.ts'), types);
+  const exported = [];
+  for (const line of types.split('\n')) {
+    exported.push(/^(type|interface|namespace)/.test(line) ? `export ${line}` : line);
+  }
+  fs.writeFileSync(
+    path.resolve(sim, 'sim/exported-global-types.ts'),
+    `${exported.join('\n')}${NATURE}`
+  );
+
   await replace(path.join(sim, 'test'), [
     {regex: new RegExp(`(require\\\(.*?)(.sim-dist)(.*?\\\))`, 'g'), replace: `$1build/sim$3`},
   ]);
+
 
   fs.writeFileSync(HEAD, now);
 })().catch(console.error);

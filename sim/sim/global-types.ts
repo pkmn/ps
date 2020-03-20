@@ -8,35 +8,93 @@ type Side = import('./side').Side;
 type TeamValidator = import('./team-validator').TeamValidator;
 type PokemonSources = import('./team-validator').PokemonSources;
 
-type ID = import('@pkmn/types').ID;
+type ID = '' | string & {__isID: true};
 interface AnyObject {[k: string]: any}
 interface DexTable<T> {
 	[key: string]: T;
 }
 
-type GenderName = import('@pkmn/types').GenderName | '';
-type StatName = import('@pkmn/types').StatName;
-type StatNameExceptHP = Exclude<StatName, 'hp'>;
+type GenderName = 'M' | 'F' | 'N' | '';
+type StatNameExceptHP = 'atk' | 'def' | 'spa' | 'spd' | 'spe';
+type StatName = 'hp' | StatNameExceptHP;
 type StatsExceptHPTable = {[stat in StatNameExceptHP]: number};
-type StatsTable<T = number> = import('@pkmn/types').StatsTable<T>;
+type StatsTable = {[stat in StatName]: number };
 type SparseStatsTable = Partial<StatsTable>;
-type BoostName = import('@pkmn/types').BoostName;
-type BoostsTable = import('@pkmn/types').BoostsTable;
+type BoostName = StatNameExceptHP | 'accuracy' | 'evasion';
+type BoostsTable = {[boost in BoostName]: number };
 type SparseBoostsTable = Partial<BoostsTable>;
-type Nonstandard = import('@pkmn/types').Nonstandard;
-type MoveTarget = import('@pkmn/types').MoveTarget;
+type Nonstandard = 'Past' | 'Future' | 'Unobtainable' | 'CAP' | 'LGPE' | 'Custom';
+/**
+ * Describes the acceptable target(s) of a move.
+ * adjacentAlly - Only relevant to Doubles or Triples, the move only targets an ally of the user.
+ * adjacentAllyOrSelf - The move can target the user or its ally.
+ * adjacentFoe - The move can target a foe, but not (in Triples) a distant foe.
+ * all - The move targets the field or all Pokémon at once.
+ * allAdjacent - The move is a spread move that also hits the user's ally.
+ * allAdjacentFoes - The move is a spread move.
+ * allies - The move affects all active Pokémon on the user's team.
+ * allySide - The move adds a side condition on the user's side.
+ * allyTeam - The move affects all unfainted Pokémon on the user's team.
+ * any - The move can hit any other active Pokémon, not just those adjacent.
+ * foeSide - The move adds a side condition on the foe's side.
+ * normal - The move can hit one adjacent Pokémon of your choice.
+ * randomNormal - The move targets an adjacent foe at random.
+ * scripted - The move targets the foe that damaged the user.
+ * self - The move affects the user of the move.
+ */
+type MoveTarget =
+	'adjacentAlly' | 'adjacentAllyOrSelf' | 'adjacentFoe' | 'all' | 'allAdjacent' | 'allAdjacentFoes' |
+	'allies' | 'allySide' | 'allyTeam' | 'any' | 'foeSide' | 'normal' | 'randomNormal' | 'scripted' | 'self';
 
-type PokemonSet<T = string> = import('@pkmn/types').PokemonSet<T>;
+interface PokemonSet {
+	name: string;
+	species: string;
+	item: string;
+	ability: string;
+	moves: string[];
+	nature: string;
+	gender: string;
+	evs: StatsTable;
+	ivs: StatsTable;
+	level: number;
+	shiny?: boolean;
+	happiness?: number;
+	pokeball?: string;
+	hpType?: string;
+}
 
+/**
+ * Describes a possible way to get a move onto a pokemon.
+ *
+ * First character is a generation number, 1-7.
+ * Second character is a source ID, one of:
+ *
+ * - L = start or level-up, 3rd char+ is the level
+ * - M = TM/HM
+ * - T = tutor
+ * - R = restricted (special moves like Rotom moves)
+ * - E = egg
+ * - S = event, 3rd char+ is the index in .eventData
+ * - D = Dream World, only 5D is valid
+ * - V = Virtual Console or Let's Go transfer, only 7V/8V is valid
+ * - C = NOT A REAL SOURCE, see note, only 3C/4C is valid
+ *
+ * C marks certain moves learned by a pokemon's prevo. It's used to
+ * work around the chainbreeding checker's shortcuts for performance;
+ * it lets the pokemon be a valid father for teaching the move, but
+ * is otherwise ignored by the learnset checker (which will actually
+ * check prevos for compatibility).
+ */
 type MoveSource = string;
 
 interface EventInfo {
 	generation: number;
 	level?: number;
+	/** true: always shiny, 1: sometimes shiny, false | undefined: never shiny */
 	shiny?: boolean | 1;
 	gender?: GenderName;
 	nature?: string;
-	ivs?: Partial<StatsTable>;
+	ivs?: SparseStatsTable;
 	perfectIVs?: number;
 	isHidden?: boolean;
 	abilities?: string[];
@@ -49,7 +107,7 @@ interface EventInfo {
 type Effect = Ability | Item | ActiveMove | Template | PureEffect | Format;
 
 interface SelfEffect {
-	boosts?: Partial<BoostsTable>;
+	boosts?: SparseBoostsTable;
 	chance?: number;
 	pseudoWeather?: string;
 	sideCondition?: string;
@@ -63,12 +121,12 @@ interface SelfEffect {
 interface SecondaryEffect {
 	chance?: number;
 	ability?: Ability;
-	boosts?: Partial<BoostsTable>;
+	boosts?: SparseBoostsTable;
 	dustproof?: boolean;
 	kingsrock?: boolean;
+	self?: SelfEffect;
 	status?: string;
 	volatileStatus?: string;
-	self?: SelfEffect;
 	onHit?: MoveEventMethods['onHit'];
 }
 
@@ -728,22 +786,33 @@ interface EffectData {
 	desc?: string;
 	drain?: [number, number];
 	duration?: number;
+	durationCallback?: (this: Battle, target: Pokemon, source: Pokemon, effect: Effect | null) => number;
+	effect?: Partial<PureEffect>;
 	effectType?: string;
 	infiltrates?: boolean;
 	isNonstandard?: Nonstandard | null;
 	isUnreleased?: boolean | 'Past';
+	/**
+	 * `true` for generic Z-moves like Gigavolt Havoc.
+	 * Also `true` for Z-powered status moves like Z-Encore.
+	 * Move ID of the base move, for specific Z-moves like Stoked
+	 * Sparksurfer.
+	 */
 	isZ?: boolean | string;
+	/**
+	 * `true` for Max moves like Max Airstream. If its a G-Max moves, this is
+	 * the species ID of the Gigantamax Pokemon that can use this G-Max move.
+	 */
 	isMax?: boolean | string;
 	noCopy?: boolean;
 	recoil?: [number, number];
-	shortDesc?: string;
-	status?: string;
-	weather?: string;
-	effect?: Partial<PureEffect>;
 	secondary?: SecondaryEffect | null;
 	secondaries?: SecondaryEffect[] | null;
 	self?: SelfEffect | null;
-	durationCallback?: (this: Battle, target: Pokemon, source: Pokemon, effect: Effect | null) => number;
+	shortDesc?: string;
+	status?: string;
+	weather?: string;
+
 	onRestart?: (this: Battle, target: Pokemon & Side & Field, source: Pokemon) => void;
 }
 
@@ -754,7 +823,6 @@ interface ModdedEffectData extends Partial<EffectData> {
 type EffectType =
 	'Effect' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Format' |
 	'Ruleset' | 'Weather' | 'Status' | 'Rule' | 'ValidatorRule';
-
 
 interface BasicEffect extends EffectData {
 	id: ID;
@@ -829,11 +897,10 @@ interface Item extends Readonly<BasicEffect & ItemData> {
 	readonly effectType: 'Item';
 }
 
-type MoveCategory = import('@pkmn/types').MoveCategory;
 interface MoveData extends EffectData, MoveEventMethods {
 	accuracy: true | number;
 	basePower: number;
-	category: MoveCategory;
+	category: 'Physical' | 'Special' | 'Status';
 	flags: AnyObject;
 	pp: number;
 	priority: number;
@@ -848,7 +915,7 @@ interface MoveData extends EffectData, MoveEventMethods {
 	critModifier?: number;
 	critRatio?: number;
 	damage?: number | 'level' | false | null;
-	defensiveCategory?: MoveCategory;
+	defensiveCategory?: 'Physical' | 'Special' | 'Status';
 	forceSwitch?: boolean;
 	hasCustomRecoil?: boolean;
 	heal?: number[] | null;
@@ -986,7 +1053,7 @@ interface TemplateAbility {
 	H?: string;
 	S?: string;
 }
-type EvoType = import('@pkmn/types').EvoType;
+
 interface TemplateData {
 	abilities: TemplateAbility;
 	baseStats: StatsTable;
@@ -1005,10 +1072,10 @@ interface TemplateData {
 	evoCondition?: string;
 	evoItem?: string;
 	evos?: string[];
-	evoType?: EvoType;
+	evoType?: 'trade' | 'useItem' | 'levelMove' | 'levelExtra' | 'levelFriendship' | 'levelHold' | 'other';
 	forme?: string;
 	gender?: GenderName;
-	genderRatio?: { [k: string]: number };
+	genderRatio?: {[k: string]: number};
 	maxHP?: number;
 	otherForms?: string[];
 	otherFormes?: string[];
@@ -1022,27 +1089,30 @@ interface TemplateData {
 	isGigantamax?: string;
 	inheritsFrom?: string;
 }
+
 interface ModdedTemplateData extends Partial<TemplateData> {
 	inherit?: true;
 }
+
 interface TemplateFormatsData {
 	comboMoves?: readonly string[];
 	doublesTier?: string;
+	essentialMove?: string;
+	exclusiveMoves?: readonly string[];
 	isNonstandard?: Nonstandard | null;
 	isUnreleased?: boolean | 'Past';
 	maleOnlyHidden?: boolean;
-	tier?: string;
-	unreleasedHidden?: boolean | 'Past';
-	essentialMove?: string;
-	exclusiveMoves?: readonly string[];
 	randomBattleMoves?: readonly string[];
 	randomDoubleBattleMoves?: readonly string[];
 	randomSets?: readonly RandomTeamsTypes.Gen2RandomSet[];
-
+	tier?: string;
+	unreleasedHidden?: boolean | 'Past';
 }
+
 interface ModdedTemplateFormatsData extends Partial<TemplateFormatsData> {
 	inherit?: true;
 }
+
 interface LearnsetData {
 	learnset?: {[moveid: string]: MoveSource[]};
 	eventData?: EventInfo[];
@@ -1050,14 +1120,15 @@ interface LearnsetData {
 	encounters?: EventInfo[];
 	exists?: boolean;
 }
+
 interface ModdedLearnsetData extends Partial<LearnsetData> {
 	inherit?: true;
 }
 
 type Template = import('./dex-data').Template;
 
-type GameType = import('@pkmn/types').GameType;
-type SideID = import('@pkmn/types').Player;
+type GameType = 'singles' | 'doubles' | 'triples' | 'rotation' | 'multi' | 'free-for-all';
+type SideID = 'p1' | 'p2' | 'p3' | 'p4';
 
 interface GameTimerSettings {
 	dcTimer: boolean;
@@ -1070,6 +1141,7 @@ interface GameTimerSettings {
 	timeoutAutoChoose: boolean;
 	accelerate: boolean;
 }
+
 interface FormatsData extends EventMethods {
 	name: string;
 	banlist?: string[];
@@ -1147,9 +1219,9 @@ interface Format extends Readonly<BasicEffect & FormatsData> {
 
 type SpreadMoveTargets = (Pokemon | false | null)[];
 type SpreadMoveDamage = (number | boolean | undefined)[];
-type ZMoveOptions = ({ move: string, target: MoveTarget } | null)[];
+type ZMoveOptions = ({move: string, target: MoveTarget} | null)[];
 interface DynamaxOptions {
-	maxMoves: ({ move: string, target: MoveTarget, disabled?: boolean })[];
+	maxMoves: ({move: string, target: MoveTarget, disabled?: boolean})[];
 	gigantamax?: string;
 }
 
@@ -1295,24 +1367,25 @@ interface ModdedBattleScriptsData extends Partial<BattleScriptsData> {
 }
 
 interface TypeData {
-	damageTaken: { [attackingTypeNameOrEffectid: string]: number };
-	HPdvs?: Partial<StatsTable>;
-	HPivs?: Partial<StatsTable>;
+	damageTaken: {[attackingTypeNameOrEffectid: string]: number};
+	HPdvs?: SparseStatsTable;
+	HPivs?: SparseStatsTable;
 }
+
 interface ModdedTypeData extends Partial<TypeData> {
 	inherit?: boolean;
 }
 
-type TypeInfo = Readonly<TypeData & {
-	effectType: 'Type' | 'EffectType',
-	exists: boolean,
-	gen: number,
-	HPdvs: Partial<StatsTable>,
-	HPivs: Partial<StatsTable>,
-	id: ID,
-	name: string,
-	toString: () => string,
-}>;
+interface TypeInfo extends Readonly<TypeData> {
+	readonly effectType: 'Type' | 'EffectType';
+	readonly exists: boolean;
+	readonly gen: number;
+	readonly HPdvs: SparseStatsTable;
+	readonly HPivs: SparseStatsTable;
+	readonly id: ID;
+	readonly name: string;
+	readonly toString: () => string;
+}
 
 interface PlayerOptions {
 	name?: string;
@@ -1323,6 +1396,63 @@ interface PlayerOptions {
 }
 
 namespace RandomTeamsTypes {
+	export interface TeamDetails {
+		megaStone?: number;
+		zMove?: number;
+		hail?: number;
+		rain?: number;
+		sand?: number;
+		sun?: number;
+		stealthRock?: number;
+		spikes?: number;
+		toxicSpikes?: number;
+		stickyWeb?: number;
+		rapidSpin?: number;
+		defog?: number;
+		illusion?: number;
+	}
+	export interface FactoryTeamDetails {
+		megaCount: number;
+		zCount?: number;
+		forceResult: boolean;
+		weather?: string;
+		typeCount: {[k: string]: number};
+		typeComboCount: {[k: string]: number};
+		baseFormes: {[k: string]: number};
+		has: {[k: string]: number};
+		weaknesses: {[k: string]: number};
+		resistances: {[k: string]: number};
+	}
+	export interface RandomSet {
+		name: string;
+		species: string;
+		gender: string | boolean;
+		moves: string[];
+		ability: string;
+		evs: SparseStatsTable;
+		ivs: SparseStatsTable;
+		item: string;
+		level: number;
+		shiny: boolean;
+		nature?: string;
+		happiness?: number;
+		moveset?: RandomTeamsTypes.RandomSet;
+		other?: {discard: boolean, restrictMoves: {[k: string]: number}};
+	}
+	export interface RandomFactorySet {
+		name: string;
+		species: string;
+		gender: string;
+		item: string;
+		ability: string;
+		shiny: boolean;
+		level: number;
+		happiness: number;
+		evs: SparseStatsTable;
+		ivs: SparseStatsTable;
+		nature: string;
+		moves: string[];
+	}
 	export interface Gen2RandomSet {
 		chance: number;
 		item?: string[];
