@@ -1,12 +1,12 @@
 import { Protocol, ArgType, Args, KWArgs, KWArgType } from '@pkmn/protocol';
-import { As, ID, StatName, GenerationNum } from '@pkmn/types';
+import { ID, StatName, GenerationNum } from '@pkmn/types';
 import * as TextJSON from '../data/text.json';
 
 const Text = TextJSON as {
   default: { [templateName: string]: string },
   [id: string]: { [templateName: string]: string },
 } & {
-    [s in StatName]: { statName: string, statShortName: string }
+    [s in (StatName | 'spc')]: { statName: string, statShortName: string }
   };
 
 function toID(s: string): ID {
@@ -161,7 +161,7 @@ export class TextParser implements Protocol.Handler<string> {
       .replace('[ABILITY]', this.effect(name)) + '\n');
   }
 
-  stat(stat: StatName) {
+  stat(stat: StatName | 'spc') {
     const entry = Text[stat || 'stats'];
     if (!entry || !entry.statName) return `???stat:${stat}???`;
     return entry.statName;
@@ -358,7 +358,7 @@ export class TextParser implements Protocol.Handler<string> {
       const template = this.template('typeAdd', kwArgs.from);
       return line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[TYPE]', arg3!));
+        .replace('[TYPE]', arg3!);
     }
     if (id.startsWith('stockpile')) {
       const num = id.slice(9);
@@ -389,7 +389,7 @@ export class TextParser implements Protocol.Handler<string> {
     return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
       .replace('[EFFECT]', this.effect(effect))
-      .replace('[MOVE]', arg3) // FIXME ???
+      .replace('[MOVE]', arg3 as Protocol.Move)
       .replace('[SOURCE]', this.pokemon(kwArgs.of!))
       .replace('[ITEM]', this.effect(kwArgs.from)));
   }
@@ -416,13 +416,19 @@ export class TextParser implements Protocol.Handler<string> {
   }
 
   '|-ability|'(args: Args['|-ability|'], kwArgs: KWArgs['|-ability|']) {
-    let [, pokemon, ability, oldAbility, arg4] = args;
+    let [, pokemon, ability, oldAbility, arg4] = args as [
+      '-ability',
+      Protocol.PokemonIdent,
+      Protocol.Ability,
+      Protocol.Ability | Protocol.PokemonIdent,
+      Protocol.PokemonIdent | 'boost' | undefined
+    ];
     let line1 = '';
     if (oldAbility && (oldAbility.startsWith('p1')
       || oldAbility.startsWith('p2')
       || oldAbility === 'boost')) {
-      arg4 = oldAbility;
-      oldAbility = '';
+      arg4 = oldAbility as (Protocol.PokemonIdent | 'boost');
+      oldAbility = '' as Protocol.Ability;
     }
     if (oldAbility) line1 += this.ability(oldAbility, pokemon);
     line1 += this.ability(ability, pokemon);
@@ -885,7 +891,7 @@ export class TextParser implements Protocol.Handler<string> {
       template = this.template(stat ? 'failSingular' : 'fail', 'unboost');
       return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[STAT]', stat));
+        .replace('[STAT]', stat!));
     }
 
     templateId = 'fail';
@@ -1001,8 +1007,8 @@ export class TextParser implements Protocol.Handler<string> {
     let newSpecies = '' as Protocol.Species;
     switch (cmd) {
       case 'detailschange': newSpecies = arg2.split(',')[0].trim() as Protocol.Species; break;
-      case '-transform': newSpecies = arg3; break;
-      case '-formechange': newSpecies = arg2; break;
+      case '-transform': newSpecies = arg3; break; // FIXME ????
+      case '-formechange': newSpecies = arg2 as Protocol.Species; break;
     }
     let newSpeciesId = toID(newSpecies);
     let id = '';
@@ -1054,7 +1060,7 @@ export class TextParser implements Protocol.Handler<string> {
     if (!template) template = this.template('start').replace('[EFFECT]', this.effect(effect));
     return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[SOURCE]', this.pokemon(kwArgs.of))
+      .replace('[SOURCE]', this.pokemon(kwArgs.of!))
       .replace('[TEAM]', this.team(pokemon.slice(0, 2))));
   }
 
@@ -1063,21 +1069,23 @@ export class TextParser implements Protocol.Handler<string> {
     kwArgs: KWArgs['|-fieldstart|' | '|-fieldactivate|']
   ) {
     const [cmd, effect] = args;
-    const line1 = this.maybeAbility(kwArgs.from, kwArgs.of);
+    const line1 = this.maybeAbility(kwArgs.from, kwArgs.of!);
     let templateId = cmd.slice(6);
     if (TextParser.effectId(effect) === 'perishsong') templateId = 'start';
     let template = this.template(templateId, effect, 'NODEFAULT');
     if (!template) {
       template = this.template('startFieldEffect').replace('[EFFECT]', this.effect(effect));
     }
-    return line1 + template.replace('[POKEMON]', this.pokemon(kwArgs.of));
+    return line1 + template.replace('[POKEMON]', this.pokemon(kwArgs.of!));
   }
 
   private boost(
     args: Args['|-boost|' | '|-unboost|'],
     kwArgs: KWArgs['|-boost|' | '|-unboost|']
   ) {
-    let [cmd, pokemon, stat, num] = args;
+    let [cmd, pokemon, stat, num] = args as [
+      '-boost' | '-unboost', Protocol.PokemonIdent, StatName | 'spc', Protocol.Num
+    ];
     if (stat === 'spa' && this.gen === 1) stat = 'spc';
     const amount = parseInt(num, 10);
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
@@ -1141,11 +1149,11 @@ export class TextParser implements Protocol.Handler<string> {
     const pokemonName = this.pokemon(pokemon);
     if (cmd === '-mega') {
       const template2 = this.template('transformMega');
-      template += template2.replace('[POKEMON]', pokemonName).replace('[SPECIES]', species);
+      template += template2.replace('[POKEMON]', pokemonName).replace('[SPECIES]', species!);
     }
     return (template
       .replace('[POKEMON]', pokemonName)
-      .replace('[ITEM]', item)
+      .replace('[ITEM]', item!)
       .replace('[TRAINER]', this.trainer(side)));
   }
 }

@@ -58,6 +58,7 @@ export namespace Protocol {
   export type Slots = string & As<'Slots'>;
   export type Types = string & As<'Types'>;
   export type Nickname = string & As<'Nickname'>;
+  export type StatDisplayName = string & As<'StatDisplayName'>;
 
   export type Reason = StatusName | 'partiallytrapped' | 'flinch' | 'nopp' | 'recharge';
 
@@ -271,8 +272,11 @@ export namespace Protocol {
   export type BattleMajorArgType = BattleMajorArgs[BattleMajorArgName];
 
   export type BattleMinorArgs = {
-    '|-formechange|': ['-formechange', PokemonIdent, PokemonDetails, PokemonHealth];
-    '|-fail|': ['-fail', PokemonIdent, Move] | ['-fail', PokemonIdent];
+    '|-formechange|': ['-formechange', PokemonIdent, Species, PokemonHealth];
+    '|-fail|':
+    | ['-fail', PokemonIdent, Move]
+    | ['-fail', PokemonIdent]
+    | ['-fail', PokemonIdent, 'unboost', StatDisplayName];
     '|-block|': ['-block', PokemonIdent, Effect, Move, PokemonIdent?];
     '|-notarget|': ['-notarget', PokemonIdent] | ['-notarget'];
     '|-miss|': ['-miss', PokemonIdent, PokemonIdent] | ['-miss', PokemonIdent];
@@ -297,7 +301,10 @@ export namespace Protocol {
     '|-fieldend|': ['-fieldend', FieldCondition];
     '|-sidestart|': ['-sidestart', Side, SideCondition];
     '|-sideend|': ['-sideend', Side, SideCondition];
-    '|-start|': ['-start', PokemonIdent, Effect] | ['-start', PokemonIdent, Effect, Types];
+    '|-start|':
+    | ['-start', PokemonIdent, Effect]
+    | ['-start', PokemonIdent, Effect, Types]
+    | ['-start', PokemonIdent, Effect, Move];
     '|-end|': ['-end', PokemonIdent, Effect];
     '|-crit|': ['-crit', PokemonIdent];
     '|-supereffective|': ['-supereffective', PokemonIdent];
@@ -305,10 +312,12 @@ export namespace Protocol {
     '|-immune|': ['-immune', PokemonIdent];
     '|-item|': ['-item', PokemonIdent, Item];
     '|-enditem|': ['-enditem', PokemonIdent, Item];
-    '|-ability|': ['-ability', PokemonIdent, Ability];
+    '|-ability|':
+    | ['-ability', PokemonIdent, Ability]
+    | ['-ability', PokemonIdent, Ability, PokemonIdent | 'boost'];
     '|-endability|': ['-endability', PokemonIdent] | ['-endability', PokemonIdent, Ability];
     '|-transform|': ['-transform', PokemonIdent, Species];
-    '|-mega|': ['-mega', PokemonIdent, Item];
+    '|-mega|': ['-mega', PokemonIdent, Species, Item];
     '|-primal|': ['-primal', PokemonIdent];
     '|-burst|': ['-burst', PokemonIdent, Species, Item];
     '|-zpower|': ['-zpower', PokemonIdent];
@@ -398,50 +407,55 @@ export namespace Protocol {
     'prepare': true;
   };
 
-  export type GeneralKWArgs = 'from' | 'of' | 'still' | 'silent';
+  export type GeneralKWArgNames = 'from' | 'of' | 'still' | 'silent';
 
   export interface BattleArgsWithKWArgs {
-    '|cant|': GeneralKWArgs;
-    '|detailschange|': GeneralKWArgs | 'msg';
-    '|move|': GeneralKWArgs | 'anim' | 'miss' | 'notarget' | 'prepare' | 'spread' | 'zeffect';
-    '|switchout|': GeneralKWArgs;
-    '|-activate|': GeneralKWArgs
+    '|cant|': GeneralKWArgNames;
+    '|detailschange|': GeneralKWArgNames | 'msg';
+    '|move|': GeneralKWArgNames | 'anim' | 'miss' | 'notarget' | 'prepare' | 'spread' | 'zeffect';
+    '|switchout|': GeneralKWArgNames;
+    '|-activate|': GeneralKWArgNames
     | 'ability' | 'ability2' | 'block' | 'broken' | 'damage'
     | 'item' | 'move' | 'number'| 'consumed' | 'name';
-    '|-ability|': GeneralKWArgs | 'move' | 'weaken';
-    '|-block|': GeneralKWArgs;
-    '|-boost|': GeneralKWArgs | 'zeffect';
-    '|-copyboost|': GeneralKWArgs;
-    '|-clearallboost|': GeneralKWArgs;
-    '|-clearnegativeboost|': GeneralKWArgs | 'zeffect';
+    '|-ability|': GeneralKWArgNames | 'move' | 'weaken' | 'fail';
+    '|-block|': GeneralKWArgNames;
+    '|-boost|': GeneralKWArgNames | 'multiple' | 'zeffect';
+    '|-copyboost|': GeneralKWArgNames | 'zeffect';
+    '|-clearboost|': GeneralKWArgNames | 'zeffect';
+    '|-clearallboost|': GeneralKWArgNames | 'zeffect';
+    '|-clearpositiveboost|': GeneralKWArgNames | 'zeffect';
+    '|-clearnegativeboost|': GeneralKWArgNames | 'zeffect';
     '|-crit|': 'spread';
-    '|-curestatus|': GeneralKWArgs| 'thaw' | 'msg';
-    '|-cureteam|': GeneralKWArgs;
-    '|-damage|': GeneralKWArgs | 'partiallytrapped';
-    '|-end|': GeneralKWArgs | 'partiallytrapped' | 'interrupt';
-    '|-endability|': GeneralKWArgs;
-    '|-enditem|': GeneralKWArgs | 'eat' | 'move' |'weaken';
-    '|-fail|': GeneralKWArgs | 'forme' | 'heavy' | 'msg' | 'weak' | 'fail';
-    '|-fieldend|': GeneralKWArgs;
-    '|-formechange|': GeneralKWArgs | 'msg';
-    '|-heal|': GeneralKWArgs | 'wisher' | 'zeffect';
-    '|-immune|': GeneralKWArgs | 'ohko';
-    '|-invertboost|': GeneralKWArgs;
-    '|-item|': GeneralKWArgs | 'identify';
-    '|-miss|': GeneralKWArgs;
+    '|-curestatus|': GeneralKWArgNames| 'thaw' | 'msg';
+    '|-cureteam|': GeneralKWArgNames;
+    '|-damage|': GeneralKWArgNames | 'partiallytrapped';
+    '|-end|': GeneralKWArgNames | 'partiallytrapped' | 'interrupt';
+    '|-endability|': GeneralKWArgNames;
+    '|-enditem|': GeneralKWArgNames | 'eat' | 'move' |'weaken';
+    '|-fail|': GeneralKWArgNames | 'forme' | 'heavy' | 'msg' | 'weak' | 'fail';
+    '|-fieldactivate|': GeneralKWArgNames;
+    '|-fieldstart|': GeneralKWArgNames;
+    '|-fieldend|': GeneralKWArgNames;
+    '|-formechange|': GeneralKWArgNames | 'msg';
+    '|-heal|': GeneralKWArgNames | 'wisher' | 'zeffect';
+    '|-immune|': GeneralKWArgNames | 'ohko';
+    '|-invertboost|': GeneralKWArgNames;
+    '|-item|': GeneralKWArgNames | 'identify';
+    '|-miss|': GeneralKWArgNames;
     '|-resisted|': 'spread';
-    '|-setboost|': GeneralKWArgs;
-    '|-sethp|': GeneralKWArgs;
-    '|-sideend|': GeneralKWArgs;
-    '|-singleturn|': GeneralKWArgs | 'zeffect';
-    '|-start|': GeneralKWArgs
+    '|-setboost|': GeneralKWArgNames;
+    '|-sethp|': GeneralKWArgNames;
+    '|-sideend|': GeneralKWArgNames;
+    '|-singlemove|': GeneralKWArgNames | 'zeffect';
+    '|-singleturn|': GeneralKWArgNames | 'zeffect';
+    '|-start|': GeneralKWArgNames
     | 'already' | 'damage' | 'block' | 'fatigue' | 'upkeep' | 'zeffect';
-    '|-status|': GeneralKWArgs;
+    '|-status|': GeneralKWArgNames;
     '|-supereffective|': 'spread';
-    '|-swapboost|': GeneralKWArgs;
-    '|-transform|': GeneralKWArgs | 'msg';
-    '|-unboost|': GeneralKWArgs | 'zeffect';
-    '|-weather|': GeneralKWArgs | 'upkeep';
+    '|-swapboost|': GeneralKWArgNames;
+    '|-transform|': GeneralKWArgNames | 'msg';
+    '|-unboost|': GeneralKWArgNames | 'multiple' | 'zeffect';
+    '|-weather|': GeneralKWArgNames | 'upkeep';
   }
 
   export type BattleArgsWithKWArgName = keyof BattleArgsWithKWArgs;
@@ -522,6 +536,9 @@ export type StatNames = Protocol.StatNames;
 export type Side = Protocol.Side;
 export type Seed = Protocol.Seed;
 export type Slots = Protocol.Slots;
+export type Types = Protocol.Types;
+export type Nickname = Protocol.Nickname;
+export type StatDisplayName = Protocol.StatDisplayName;
 
 export type Reason = Protocol.Reason;
 export type QueryType = Protocol.QueryType;
@@ -664,10 +681,11 @@ export const Protocol = new class {
     '|-block|': 1, '|-damage|': 1, '|-heal|': 1, '|-sethp|': 1, '|-status|': 1,
     '|-curestatus|': 1, '|-cureteam|': 1, '|-boost|': 1, '|-unboost|': 1, '|-setboost|': 1,
     '|-swapboost|': 1, '|-invertboost|': 1, '|-clearnegativeboost|': 1, '|-weather|': 1,
-    '|-fieldend|': 1, '|-sideend|': 1, '|-start|': 1, '|-end|': 1, '|-crit|': 1,
-    '|-supereffective|': 1, '|-resisted|': 1, '|-immune|': 1, '|-item|': 1, '|-enditem|': 1,
-    '|-ability|': 1, '|-endability|': 1, '|-transform|': 1, '|-activate|': 1, '|-singleturn|': 1,
-    '|switchout|': 1, '|-miss|': 1, '|-clearallboost|': 1, '|-copyboost|': 1,
+    '|-fieldactivate|': 1, '|-fieldstart|': 1, '|-fieldend|': 1, '|-sideend|': 1, '|-start|': 1,
+    '|-end|': 1, '|-crit|': 1, '|-supereffective|': 1, '|-resisted|': 1, '|-immune|': 1,
+    '|-item|': 1, '|-enditem|': 1, '|-ability|': 1, '|-endability|': 1, '|-transform|': 1,
+    '|-activate|': 1, '|-singleturn|': 1, '|switchout|': 1, '|-miss|': 1, '|-clearallboost|': 1,
+    '|-copyboost|': 1, '|-clearboost|': 1, '|-clearpositiveboost|': 1, '|-singlemove|': 1,
   };
 
   *handle(data: string) {
