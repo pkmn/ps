@@ -16,28 +16,28 @@ function toID(s: string): ID {
 const VALS = ['pokemon', 'opposingPokemon', 'team', 'opposingTeam', 'party', 'opposingParty']; // TODO rename
 
 export class TextParser implements Protocol.Handler<string> {
-  #perspective: 0 | 1;
+  private perspective: 0 | 1;
 
-  #p1: Protocol.Username;
-  #p2: Protocol.Username;
-  #gen: GenerationNum;
+  private p1: Protocol.Username;
+  private p2: Protocol.Username;
+  private gen: GenerationNum;
 
-  #curLineSection: 'break' | 'preMajor' | 'major' | 'postMajor';
-  #lowercaseRegExp: RegExp | null | undefined;
+  private curLineSection: 'break' | 'preMajor' | 'major' | 'postMajor';
+  private lowercaseRegExp: RegExp | null | undefined;
 
   constructor(perspective: 0 | 1 = 0) {
-    this.#perspective = perspective;
+    this.perspective = perspective;
 
-    this.#p1 = 'Player 1' as Protocol.Username;
-    this.#p2 = 'Player 2' as Protocol.Username;
-    this.#gen = 8;
+    this.p1 = 'Player 1' as Protocol.Username;
+    this.p2 = 'Player 2' as Protocol.Username;
+    this.gen = 8;
 
-    this.#curLineSection = 'break';
-    this.#lowercaseRegExp = undefined;
+    this.curLineSection = 'break';
+    this.lowercaseRegExp = undefined;
   }
 
   fixLowercase(input: string) {
-    if (this.#lowercaseRegExp === undefined) {
+    if (this.lowercaseRegExp === undefined) {
       const prefixes = VALS.map(templateId => {
         const template = Text.default[templateId];
         if (template.charAt(0) === template.charAt(0).toUpperCase()) return '';
@@ -48,13 +48,13 @@ export class TextParser implements Protocol.Handler<string> {
         const buf = `((?:^|\n)(?:  |  \\\(|\\\[)?)(` +
           prefixes.map(TextParser.escapeRegExp).join('|') +
           `)`;
-        this.#lowercaseRegExp = new RegExp(buf, 'g');
+        this.lowercaseRegExp = new RegExp(buf, 'g');
       } else {
-        this.#lowercaseRegExp = null;
+        this.lowercaseRegExp = null;
       }
     }
-    if (!this.#lowercaseRegExp) return input;
-    return input.replace(this.#lowercaseRegExp, (_, p1, p2) => (
+    if (!this.lowercaseRegExp) return input;
+    return input.replace(this.lowercaseRegExp, (_, p1, p2) => (
       p1 + p2.charAt(0).toUpperCase() + p2.slice(1)
     ));
   }
@@ -80,7 +80,7 @@ export class TextParser implements Protocol.Handler<string> {
       default: return `???pokemon:${pokemon}???`;
     }
     const name = this.pokemonName(pokemon);
-    const template = Text.default[side === this.#perspective ? 'pokemon' : 'opposingPokemon'];
+    const template = Text.default[side === this.perspective ? 'pokemon' : 'opposingPokemon'];
     return template.replace('[NICKNAME]', name);
   }
 
@@ -94,14 +94,14 @@ export class TextParser implements Protocol.Handler<string> {
 
   trainer(side: string) {
     side = side.slice(0, 2);
-    if (side === 'p1') return this.#p1;
-    if (side === 'p2') return this.#p2;
+    if (side === 'p1') return this.p1;
+    if (side === 'p2') return this.p2;
     return `???side:${side}???`;
   }
 
   team(side: string) {
     side = side.slice(0, 2);
-    if (side === (this.#perspective === 0 ? 'p1' : 'p2')) {
+    if (side === (this.perspective === 0 ? 'p1' : 'p2')) {
       return Text.default.team;
     }
     return Text.default.opposingTeam;
@@ -109,7 +109,7 @@ export class TextParser implements Protocol.Handler<string> {
 
   own(side: string) {
     side = side.slice(0, 2);
-    if (side === (this.#perspective === 0 ? 'p1' : 'p2')) {
+    if (side === (this.perspective === 0 ? 'p1' : 'p2')) {
       return 'OWN';
     }
     return '';
@@ -117,7 +117,7 @@ export class TextParser implements Protocol.Handler<string> {
 
   party(side: string) {
     side = side.slice(0, 2);
-    if (side === (this.#perspective === 0 ? 'p1' : 'p2')) {
+    if (side === (this.perspective === 0 ? 'p1' : 'p2')) {
       return Text.default.party;
     }
     return Text.default.opposingParty;
@@ -200,10 +200,10 @@ export class TextParser implements Protocol.Handler<string> {
   }
 
   sectionBreak(args: ArgType, kwArgs = {} as KWArgType) {
-    const prevSection = this.#curLineSection;
+    const prevSection = this.curLineSection;
     const curSection = this.lineSection(args, kwArgs);
     if (!curSection) return false;
-    this.#curLineSection = curSection;
+    this.curLineSection = curSection;
     switch (curSection) {
       case 'break':
         return prevSection !== 'break';
@@ -224,16 +224,16 @@ export class TextParser implements Protocol.Handler<string> {
   '|player|'(args: Args['|player|']) {
     const [, side, name] = args;
     if (side === 'p1' && name) {
-      this.#p1 = name;
+      this.p1 = name;
     } else if (side === 'p2' && name) {
-      this.#p2 = name;
+      this.p2 = name;
     }
     return '';
   }
 
   '|gen|'(args: Args['|gen|']) {
     const [, gen] = args;
-    this.#gen = gen;
+    this.gen = gen;
     return '';
   }
 
@@ -245,8 +245,8 @@ export class TextParser implements Protocol.Handler<string> {
 
   '|start|'(args: Args['|start|']) {
     return this.template('startBattle')
-      .replace('[TRAINER]', this.#p1)
-      .replace('[TRAINER]', this.#p2);
+      .replace('[TRAINER]', this.p1)
+      .replace('[TRAINER]', this.p2);
   }
 
   '|win|'(args: Args['|win|']) {
@@ -987,8 +987,8 @@ export class TextParser implements Protocol.Handler<string> {
     const [cmd, name] = args;
     if (cmd === 'tie' || !name) {
       return (this.template('tieBattle')
-        .replace('[TRAINER]', this.#p1)
-        .replace('[TRAINER]', this.#p2));
+        .replace('[TRAINER]', this.p1)
+        .replace('[TRAINER]', this.p2));
     }
     return this.template('winBattle').replace('[TRAINER]', name);
   }
@@ -1078,7 +1078,7 @@ export class TextParser implements Protocol.Handler<string> {
     kwArgs: KWArgs['|-boost|' | '|-unboost|']
   ) {
     let [cmd, pokemon, stat, num] = args;
-    if (stat === 'spa' && this.#gen === 1) stat = 'spc';
+    if (stat === 'spa' && this.gen === 1) stat = 'spc';
     const amount = parseInt(num, 10);
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     let templateId = cmd.slice(1);
@@ -1134,7 +1134,7 @@ export class TextParser implements Protocol.Handler<string> {
       id = 'dragonascent';
       templateId = 'megaNoItem';
     }
-    if (!id && cmd === '-mega' && this.#gen < 7) templateId = 'megaGen6';
+    if (!id && cmd === '-mega' && this.gen < 7) templateId = 'megaGen6';
     if (!item && cmd === '-mega') templateId = 'megaNoItem';
     let template = this.template(templateId, id);
     const side = pokemon.slice(0, 2);
