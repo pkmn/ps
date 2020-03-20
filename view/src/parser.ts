@@ -20,6 +20,7 @@ export class TextParser implements Protocol.Handler<string> {
 
   private p1: Protocol.Username;
   private p2: Protocol.Username;
+  private sides: {p1: Protocol.PokemonIdent[], p2: Protocol.PokemonIdent[]};
   private gen: GenerationNum;
 
   private curLineSection: 'break' | 'preMajor' | 'major' | 'postMajor';
@@ -30,6 +31,7 @@ export class TextParser implements Protocol.Handler<string> {
 
     this.p1 = 'Player 1' as Protocol.Username;
     this.p2 = 'Player 2' as Protocol.Username;
+    this.sides = {p1: [], p2: []};
     this.gen = 8;
 
     this.curLineSection = 'break';
@@ -303,16 +305,20 @@ export class TextParser implements Protocol.Handler<string> {
     return template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
-  '|swap|'(args: Args['|swap|']) {
+  '|swap|'(args: Args['|swap|'],  kwArgs: KWArgs['|swap|']) {
     const [, pokemon, target] = args;
-    if (!target || !isNaN(Number(target))) {
-      const template = this.template('swapCenter');
-      return template.replace('[POKEMON]', this.pokemon(pokemon));
+    if (target && !isNaN(Number(target)) && kwArgs.from) {
+      const index = Number(target);
+      const side = pokemon.slice(0, 2);
+      const targetPokemon = (this.sides[(side as 'p1' | 'p2')] ?? [])[index]; // FIXME track!
+      if (targetPokemon) {
+        return (this.template('swap')
+          .replace('[POKEMON]', this.pokemon(pokemon))
+          .replace('[TARGET]', this.pokemon(targetPokemon)));
+      }
     }
-    const template = this.template('swap');
-    return template
-      .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[TARGET]', this.pokemon(target)); // FIXME requires tracking slot (see battle.ts)
+    const template = this.template('swapCenter');
+    return template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '|move|'(args: Args['|move|'], kwArgs: KWArgs['|move|']) {
@@ -468,7 +474,7 @@ export class TextParser implements Protocol.Handler<string> {
     const id = TextParser.effectId(kwArgs.from);
     let target = '';
     if (['magician', 'pickpocket'].includes(id)) {
-      [target, kwArgs.of] = [kwArgs.of!, '' as Protocol.PokemonIdent];
+      [target, kwArgs.of as Protocol.PokemonIdent] = [kwArgs.of!, '' as Protocol.PokemonIdent];
     }
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     if (['thief', 'covet', 'bestow', 'magician', 'pickpocket'].includes(id)) {
