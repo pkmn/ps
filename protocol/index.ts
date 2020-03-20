@@ -271,7 +271,7 @@ export namespace Protocol {
   export type BattleMajorArgName = keyof BattleMajorArgs;
   export type BattleMajorArgType = BattleMajorArgs[BattleMajorArgName];
 
-  export type BattleMinorArgs = {
+  export interface BattleMinorArgs {
     '|-formechange|': ['-formechange', PokemonIdent, Species, PokemonHealth];
     '|-fail|':
     | ['-fail', PokemonIdent, Move]
@@ -282,7 +282,7 @@ export namespace Protocol {
     '|-miss|': ['-miss', PokemonIdent, PokemonIdent] | ['-miss', PokemonIdent];
     '|-damage|': ['-damage', PokemonIdent, PokemonHealth];
     '|-heal|': ['-heal', PokemonIdent, PokemonHealth];
-    '|-sethp|': ['-sethp', PokemonIdent, Num];
+    '|-sethp|': ['-sethp', PokemonIdent, Num] | ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
     '|-status|': ['-status', PokemonIdent, StatusName];
     '|-curestatus|': ['-curestatus', PokemonIdent, StatusName];
     '|-cureteam|': ['-cureteam', PokemonIdent];
@@ -314,7 +314,8 @@ export namespace Protocol {
     '|-enditem|': ['-enditem', PokemonIdent, Item];
     '|-ability|':
     | ['-ability', PokemonIdent, Ability]
-    | ['-ability', PokemonIdent, Ability, PokemonIdent | 'boost'];
+    | ['-ability', PokemonIdent, Ability, PokemonIdent | 'boost']
+    | ['-ability', PokemonIdent, Ability, Ability, PokemonIdent];
     '|-endability|': ['-endability', PokemonIdent] | ['-endability', PokemonIdent, Ability];
     '|-transform|': ['-transform', PokemonIdent, Species];
     '|-mega|': ['-mega', PokemonIdent, Species, Item];
@@ -328,7 +329,7 @@ export namespace Protocol {
       Ability | Effect,
       (Item | Move | Num | PokemonIdent)?,
       (Ability | Num)?
-    ];
+    ] | ['-activate', PokemonIdent, Effect, PokemonIdent];
     '|-fieldactivate|': ['-fieldactivate', Effect];
     '|-hint|': ['-hint', Message];
     '|-center|': ['-center'];
@@ -341,14 +342,8 @@ export namespace Protocol {
     '|-singlemove|': ['-singlemove', PokemonIdent, Move];
     '|-singleturn|': ['-singleturn', PokemonIdent, Move];
     '|-anim|': ['-anim', PokemonIdent, Move, PokemonIdent];
-  } & {
-    // '|-sethp|TARGET|TARGET HP|SOURCE|SOURCE HP' before smogon/pokemon-showdown@7e4929a3
-    '|-sethp|': ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
-    // '|-activate|SOURCE|EFFECT|TARGET|' legacy Skill Swap
-    '|-activate|': ['-activate', PokemonIdent, Effect, PokemonIdent];
     '|-ohko|': ['-ohko'];
-    '|-ability|': ['-ability', PokemonIdent, Ability, Ability, PokemonIdent];
-  };
+  }
 
   export type BattleMinorArgName = keyof BattleMinorArgs;
   export type BattleMinorArgType = BattleMinorArgs[BattleMinorArgName];
@@ -963,6 +958,9 @@ function upgradeBattleArgs(
     const id = Protocol.parseEffect(effect, toID).name;
 
     if (kwArgs.block) return {args: ['-fail', pokemon], kwArgs};
+    if (id === 'sturdy') {
+      return {args: ['-activate', pokemon, 'ability: Sturdy' as Protocol.Effect], kwArgs};
+    }
     if (id === 'wonderguard') {
       return {
         args: ['-immune', pokemon],
@@ -989,14 +987,14 @@ function upgradeBattleArgs(
     if (id === 'fairylock') return {args: ['-fieldactivate', effect], kwArgs: {}};
 
     if (id === 'symbiosis') {
-      kwArgs.item = arg3;
+      kwArgs.item = arg3!;
     } else if (id === 'magnitude') {
-      kwArgs.number = arg3;
+      kwArgs.number = arg3!;
     } else if (id === 'skillswap' || id === 'mummy' || id === 'wanderingspirit') {
-      kwArgs.ability = arg3;
+      kwArgs.ability = arg3!;
       kwArgs.ability2 = arg4!;
     } else if (NUMBERABLE.has(id)) {
-      kwArgs.move = arg3;
+      kwArgs.move = arg3!;
       kwArgs.number = arg4!;
     }
     return {args: ['-activate', pokemon, effect, (target || '') as Protocol.PokemonIdent], kwArgs};
