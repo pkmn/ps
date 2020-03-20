@@ -1,5 +1,5 @@
-import {ID} from '@pkmn/types';
-import {Protocol} from '@pkmn/protocol';
+import {ID} from '@pkmn/sim';
+import {Protocol, PokemonDetails} from '@pkmn/protocol';
 
 import {Side} from './side';
 
@@ -16,6 +16,7 @@ export interface MoveSlot {
 }
 
 export class Pokemon {
+  readonly side: Side;
   // readonly set: PokemonSet;
   // readonly name: string;
   // readonly fullname: string;
@@ -34,7 +35,7 @@ export class Pokemon {
   // hpPower: number;
 
   // position: number;
-  // details: string;
+  details: PokemonDetails;
 
   // baseTemplate: Template;
   // template: Template;
@@ -116,7 +117,8 @@ export class Pokemon {
 
   // m: PokemonModData;
 
-  constructor(data: ps.PokemonDetails, side: Side) {
-    super(data, side);
+  constructor(side: Side, details: PokemonDetails, ) {
+    this.side = side
+    this.details = details;
   }
 }

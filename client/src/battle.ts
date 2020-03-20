@@ -1,4 +1,4 @@
-import {ID} from '@pkmn/types';
+import {ID} from '@pkmn/sim';
 import {Protocol} from '@pkmn/protocol';
 
 import {Side} from './side';
@@ -56,4 +56,9 @@ export class Battle  {
 
   // readonly hints: Set<string>;
 
+  id: Protocol.RoomID;
+
+  constructor(id: Protocol.RoomID) {
+    this.id = id;
+  }
 }

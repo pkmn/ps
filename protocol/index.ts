@@ -653,7 +653,7 @@ export const Protocol = new class {
     '|init|': 1, '|title|': 1, '|userlist|': 1, '||': 1, '|html|': 1, '|uhtml|': 1,
     '|uhtmlchange|': 1, '|join|': 1, '|leave|': 1, '|name|': 1, '|chat|': 1, '|:|': 1, '|c:|': 1,
     '|battle|': 1, '|popup|': 1, '|pm|': 1, '|usercount|': 1, '|nametaken|': 1, '|challstr|': 1,
-    '|updateuser|': 1, '|formats|': 1, '|updatesearch|': 1, '|switchout|': 1,
+    '|updateuser|': 1, '|formats|': 1, '|updatesearch|': 1, '|switchout|': 1, '|message|': 1,
     '|updatechallenges|': 1, '|queryresponse|': 1, '|unlink|': 1, '|raw|': 1, '|warning|': 1,
     '|error|': 1, '|bigerror|': 1, '|chatmsg|': 1, '|chatmsg-raw|': 1, '|controlshtml|': 1,
     '|fieldhtml|': 1, '|debug|': 1, '|tournament|create|': 1, '|tournament|update|': 1,
@@ -677,7 +677,7 @@ export const Protocol = new class {
     '|-mega|': 1, '|-primal|': 1, '|-burst|': 1, '|-zpower|': 1, '|-zbroken|': 1, '|-activate|': 1,
     '|-fieldactivate|': 1, '|-hint|': 1, '|-center|': 1, '|-message|': 1, '|-combine|': 1,
     '|-waiting|': 1, '|-prepare|': 1, '|-mustrecharge|': 1, '|-hitcount|': 1, '|-singlemove|': 1,
-    '|-singleturn|': 1, '|-anim|': 1, '|message|': 1,
+    '|-singleturn|': 1, '|-anim|': 1,
   };
   ARGS_WITH_KWARGS: {[k in Protocol.ArgsWithKWArgName]: 1} = {
     '|move|': 1, '|detailschange|': 1, '|cant|': 1, '|-formechange|': 1, '|-fail|': 1,

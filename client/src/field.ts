@@ -1,4 +1,4 @@
-import {ID} from '@pkmn/types';
+import {ID} from '@pkmn/sim';
 import {Protocol} from '@pkmn/protocol';
 
 export class Field {
