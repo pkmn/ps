@@ -56,6 +56,7 @@ export namespace Protocol {
   export type Side = string & As<'Side'>;
   export type Seed = string & As<'Seed'>;
   export type Slots = string & As<'Slots'>;
+  export type Types = string & As<'Types'>;
 
   export type Reason = StatusName | 'partiallytrapped' | 'flinch' | 'nopp' | 'recharge';
 
@@ -262,6 +263,7 @@ export namespace Protocol {
     'cant': ['cant', PokemonIdent, Reason | Ability | Effect | Move, Effect | Move];
     'faint': ['faint', PokemonIdent];
     'switchout': ['switchout', PokemonIdent];
+    'message': ['message', Message];
   }
 
   export type BattleMajorArgName = keyof BattleMajorArgs;
@@ -294,7 +296,7 @@ export namespace Protocol {
     '-fieldend': ['-fieldend', FieldCondition];
     '-sidestart': ['-sidestart', Side, SideCondition];
     '-sideend': ['-sideend', Side, SideCondition];
-    '-start': ['-start', PokemonIdent, Effect];
+    '-start': ['-start', PokemonIdent, Effect] | ['-start', PokemonIdent, Effect, Types];
     '-end': ['-end', PokemonIdent, Effect];
     '-crit': ['-crit', PokemonIdent];
     '-supereffective': ['-supereffective', PokemonIdent];
@@ -303,8 +305,8 @@ export namespace Protocol {
     '-item': ['-item', PokemonIdent, Item];
     '-enditem': ['-enditem', PokemonIdent, Item];
     '-ability': ['-ability', PokemonIdent, Ability]
-    | ['-ability', PokemonIdent, Ability, PokemonIdent];
-    '-endability': ['-endability', PokemonIdent];
+    | ['-ability', PokemonIdent, Ability, Ability, PokemonIdent];
+    '-endability': ['-endability', PokemonIdent] | ['-endability', PokemonIdent, Ability];
     '-transform': ['-transform', PokemonIdent, Species];
     '-mega': ['-mega', PokemonIdent, Item];
     '-primal': ['-primal', PokemonIdent];
@@ -356,6 +358,7 @@ export namespace Protocol {
     'consumed': true;
     'damage': true;
     'eat': true;
+    'fail': true,
     'fatigue': true;
     'forme': true;
     'from': Effect;
@@ -366,7 +369,7 @@ export namespace Protocol {
     'msg': true;
     'notarget': true;
     'number': Num;
-    'of': Effect; // FIXME: PokemonIdent?
+    'of': PokemonIdent;
     'ohko': true;
     'silent': true;
     'spread': Slots;
@@ -386,44 +389,44 @@ export namespace Protocol {
     'prepare': true;
   };
 
+  export type GeneralKWArgs = 'from' | 'of' | 'still' | 'silent';
+
   export interface BattleArgsWithKWArgs {
-    'cant': 'of';
-    'detailschange': 'msg' | 'from';
-    'move': 'anim' | 'miss' | 'notarget' | 'prepare' | 'spread' | 'still';
-    'switchout': 'from';
-    '-activate':
-    | 'ability' | 'ability2' | 'block' | 'broken' | 'damage'
-    | 'from' | 'item' | 'move' | 'number' | 'of' | 'consumed';
-    '-ability': 'from' | 'of' | 'move' | 'weaken';
-    '-block': 'of';
-    '-boost': 'from' | 'silent' | 'zeffect';
-    '-clearnegativeboost': 'silent' | 'zeffect';
+    'cant': GeneralKWArgs;
+    'detailschange': GeneralKWArgs | 'msg';
+    'move': GeneralKWArgs | 'anim' | 'miss' | 'notarget' | 'prepare' | 'spread' |  'zeffect';
+    'switchout': GeneralKWArgs;
+    '-activate': GeneralKWArgs | 'ability' | 'ability2' | 'block' | 'broken' | 'damage' | 'item' | 'move' | 'number' | 'consumed';
+    '-ability': GeneralKWArgs | 'move' | 'weaken';
+    '-block': GeneralKWArgs;
+    '-boost': GeneralKWArgs | 'zeffect';
+    '-clearnegativeboost': GeneralKWArgs | 'zeffect';
     '-crit': 'spread';
-    '-curestatus': 'thaw' | 'from' | 'silent' | 'msg';
-    '-cureteam': 'from';
-    '-damage': 'from' | 'of' | 'partiallytrapped' | 'silent';
-    '-end': 'from' | 'of' | 'partiallytrapped' | 'silent' | 'interrupt';
-    '-endability': 'from';
-    '-enditem': 'eat' | 'from' | 'move' |'weaken';
-    '-fail': 'forme' | 'heavy' | 'msg' | 'weak' | 'from' | 'of';
-    '-fieldend': 'from';
-    '-formechange': 'msg' | 'from';
-    '-heal': 'wisher' | 'from' | 'of' | 'zeffect' | 'silent';
-    '-immune': 'ohko' | 'from';
-    '-invertboost': 'from';
-    '-item': 'from' | 'of' | 'identify';
+    '-curestatus': GeneralKWArgs| 'thaw' | 'msg';
+    '-cureteam': GeneralKWArgs;
+    '-damage': GeneralKWArgs | 'partiallytrapped';
+    '-end': GeneralKWArgs | 'partiallytrapped' | 'interrupt';
+    '-endability': GeneralKWArgs;
+    '-enditem': GeneralKWArgs | 'eat' | 'move' |'weaken';
+    '-fail': GeneralKWArgs | 'forme' | 'heavy' | 'msg' | 'weak' | 'fail';
+    '-fieldend': GeneralKWArgs;
+    '-formechange': GeneralKWArgs | 'msg';
+    '-heal': GeneralKWArgs | 'wisher' |  'zeffect';
+    '-immune': GeneralKWArgs | 'ohko';
+    '-invertboost': GeneralKWArgs;
+    '-item': GeneralKWArgs | 'identify';
     '-resisted': 'spread';
-    '-setboost': 'from';
-    '-sethp': 'from' | 'silent';
-    '-sideend': 'from' | 'of';
-    '-singleturn': 'of' | 'zeffect';
-    '-start': 'already' | 'fatigue' | 'from' | 'of' | 'silent' | 'upkeep' | 'zeffect';
-    '-status': 'from' | 'of' | 'silent';
+    '-setboost': GeneralKWArgs;
+    '-sethp': GeneralKWArgs;
+    '-sideend': GeneralKWArgs;
+    '-singleturn': GeneralKWArgs | 'zeffect';
+    '-start': GeneralKWArgs | 'already' | 'damage' | 'block' | 'fatigue' | 'upkeep' | 'zeffect';
+    '-status': GeneralKWArgs;
     '-supereffective': 'spread';
-    '-swapboost': 'from';
-    '-transform': 'from' | 'msg' ;
-    '-unboost': 'from' | 'silent' | 'zeffect';
-    '-weather': 'from' | 'of' | 'upkeep';
+    '-swapboost': GeneralKWArgs;
+    '-transform': GeneralKWArgs | 'msg';
+    '-unboost': GeneralKWArgs | 'zeffect';
+    '-weather': GeneralKWArgs | 'upkeep';
   }
 
   export type BattleArgsWithKWArgName = keyof BattleArgsWithKWArgs;
@@ -635,6 +638,7 @@ export const Protocol = new class {
     '-transform':1, '-mega':1, '-primal':1, '-burst':1, '-zpower':1, '-zbroken':1, '-activate':1,
     '-fieldactivate':1, '-hint':1, '-center':1, '-message':1, '-combine':1, '-waiting':1,
     '-prepare':1, '-mustrecharge':1, '-hitcount':1, '-singlemove':1, '-singleturn':1, '-anim':1,
+    'message':1,
   };
   ARGS_WITH_KWARGS: {[k in Protocol.ArgsWithKWArgName]: 1} = {
     'move':1, 'detailschange':1,  'cant':1, '-formechange':1, '-fail':1, '-block':1, '-damage':1,
@@ -975,11 +979,6 @@ function upgradeBattleArgs(
       };
     }
     break;
-  }
-  // @ts-ignore
-  case 'message': {
-    const [, message] = args as [string, Protocol.Message];
-    return {args: ['-message', message], kwArgs: {}};
   }
   case 'gen': {
     const [, num] = args;

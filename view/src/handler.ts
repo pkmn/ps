@@ -16,7 +16,6 @@ function toID(s: string): ID {
 const VALS = ['pokemon', 'opposingPokemon', 'team', 'opposingTeam', 'party', 'opposingParty']; // TODO rename
 
 export class TextParser implements Protocol.Handler<string> {
-  #out: (s: string) => void;
   #perspective: 0 | 1;
 
   #p1: Protocol.Username;
@@ -26,8 +25,7 @@ export class TextParser implements Protocol.Handler<string> {
   #curLineSection: 'break' | 'preMajor' | 'major' | 'postMajor';
   #lowercaseRegExp: RegExp | null | undefined;
 
-  constructor(out: (s: string) => void, perspective: 0 | 1 = 0) {
-    this.#out = out;
+  constructor(perspective: 0 | 1 = 0) {
     this.#perspective = perspective;
 
     this.#p1 = 'Player 1' as Protocol.Username;
@@ -298,7 +296,6 @@ export class TextParser implements Protocol.Handler<string> {
       .replace('[TRAINER]', this.trainer(side))
       .replace('[NICKNAME]', this.pokemonName(pokemon))
       .replace('[POKEMON]', this.pokemon(pokemon));
-;
   }
 
   'faint'(args: Args['faint']) {
@@ -316,13 +313,13 @@ export class TextParser implements Protocol.Handler<string> {
     const template = this.template('swap');
     return template
       .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[TARGET]', this.pokemon(target));
+      .replace('[TARGET]', this.pokemon(target)); // FIXME requires tracking slot (see battle.ts)
   }
 
   'move'(args: Args['move'], kwArgs: KWArgs['move']) {
     const [, pokemon, move] = args;
     let line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
-    if (kwArgs.zEffect) {
+    if (kwArgs.zeffect) {
       line1 = this.template('zEffect').replace('[POKEMON]', this.pokemon(pokemon));
     }
     const template = this.template('move', kwArgs.from);
@@ -341,6 +338,11 @@ export class TextParser implements Protocol.Handler<string> {
       .replace('[MOVE]', move));
   }
 
+  'message'(args: Args['message']) {
+    let [, message] = args;
+    return '' + message + '\n';
+  }
+
   '-start'(args: Args['-start'], kwArgs: KWArgs['-start']) {
     let [, pokemon, effect, arg3] = args;
     const line1 = this.maybeAbility(effect, pokemon)
@@ -350,14 +352,14 @@ export class TextParser implements Protocol.Handler<string> {
       const template = this.template('typeChange', kwArgs.from);
       return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[TYPE]', arg3)
-        .replace('[SOURCE]', this.pokemon(kwArgs.of)));
+        .replace('[TYPE]', arg3!)
+        .replace('[SOURCE]', this.pokemon(kwArgs.of!)));
     }
     if (id === 'typeadd') {
       const template = this.template('typeAdd', kwArgs.from);
       return line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[TYPE]', arg3));
+        .replace('[TYPE]', arg3!));
     }
     if (id.startsWith('stockpile')) {
       const num = id.slice(9);
@@ -388,7 +390,8 @@ export class TextParser implements Protocol.Handler<string> {
     return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
       .replace('[EFFECT]', this.effect(effect))
-      .replace('[MOVE]', arg3).replace('[SOURCE]', this.pokemon(kwArgs.of))
+      .replace('[MOVE]', arg3) // FIXME ???
+      .replace('[SOURCE]', this.pokemon(kwArgs.of!))
       .replace('[ITEM]', this.effect(kwArgs.from)));
   }
 
@@ -410,7 +413,7 @@ export class TextParser implements Protocol.Handler<string> {
     return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
       .replace('[EFFECT]', this.effect(effect))
-      .replace('[SOURCE]', this.pokemon(kwArgs.of)));
+      .replace('[SOURCE]', this.pokemon(kwArgs.of!)));
   }
 
   '-ability'(args: Args['-ability'], kwArgs: KWArgs['-ability']) {
@@ -434,12 +437,12 @@ export class TextParser implements Protocol.Handler<string> {
       return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
         .replace('[ABILITY]', this.effect(ability))
-        .replace('[SOURCE]', this.pokemon(kwArgs.of)));
+        .replace('[SOURCE]', this.pokemon(kwArgs.of!)));
     }
     const id = TextParser.effectId(ability);
     if (id === 'unnerve') {
       const template = this.template('start', ability);
-      return line1 + template.replace('[TEAM]', this.team(arg4));
+      return line1 + template.replace('[TEAM]', this.team(arg4!));
     }
     let templateId = 'start';
     if (id === 'anticipation' || id === 'sturdy') templateId = 'activate';
@@ -644,7 +647,7 @@ export class TextParser implements Protocol.Handler<string> {
 
   '-message'(args: Args['-message']) {
     let [, message] = args;
-    return `${message}\n`;
+    return `  ${message}\n`;
   }
 
   '-hint'(args: Args['-hint']) {
