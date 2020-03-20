@@ -1,3 +1,25 @@
+import {
+	StatsTable,
+	DexTable,
+	Ability,
+	Format,
+	ModdedTemplateFormatsData,
+	Item,
+	LearnsetData,
+	Move,
+	Nature,
+	Template,
+	AnyObject,
+	EffectData,
+	TypeData,
+	ID,
+	Effect,
+	TypeInfo,
+	ActiveMove,
+	PureEffect,
+	PokemonSet,
+} from './exported-global-types';
+
 // eslint-disable-next-line no-extend-native
 Object.defineProperty(Array.prototype, 'flatMap', {
 	value<T, U, W>(this: T[], callback: (this: W, item: T, index: number, array: T[]) => U[], thisArg: W): U[] {
@@ -40,13 +62,6 @@ const DATA_TYPES: (DataType | 'Aliases')[] = [
 ];
 
 const nullEffect: PureEffect = new Data.PureEffect({name: '', exists: false});
-
-export interface Nature {
-	name: string;
-	plus?: keyof StatsTable;
-	minus?: keyof StatsTable;
-	[k: string]: any;
-}
 
 interface DexTableData {
 	Abilities: DexTable<Ability>;

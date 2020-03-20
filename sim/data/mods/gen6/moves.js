@@ -241,7 +241,7 @@ let BattleMovedex = {
 			},
 			onSetStatus(status, target, source, effect) {
 				if (!target.isGrounded() || target.isSemiInvulnerable()) return;
-				if (effect.id === 'synchronize' || (effect.effectType === 'Move' && !effect.secondaries)) {
+				if (effect && (effect.status || effect.id === 'yawn')) {
 					this.add('-activate', target, 'move: Misty Terrain');
 				}
 				return false;
@@ -285,6 +285,9 @@ let BattleMovedex = {
 	partingshot: {
 		inherit: true,
 		desc: "Lowers the target's Attack and Special Attack by 1 stage. If this move is successful, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+		onHit(target, source) {
+			this.boost({atk: -1, spa: -1}, target, source);
+		},
 	},
 	payback: {
 		inherit: true,

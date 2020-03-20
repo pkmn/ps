@@ -280,6 +280,9 @@ let Formats = [
 		gameType: 'doubles',
 		ruleset: ['Standard Doubles'],
 		banlist: ['DUber', 'Beat Up'],
+		onBegin() {
+			if (this.rated && this.format.id === 'gen8doublesou') this.add('html', `<div class="broadcast-red"><strong>Doubles OU is currently suspecting Dynamax! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3661422/">suspect thread</a>.</strong></div>`);
+		},
 	},
 	{
 		name: "[Gen 8] Doubles Ubers",
@@ -451,8 +454,8 @@ let Formats = [
 		banlist: [
 			'Arceus', 'Blaziken', 'Darkrai', 'Deoxys-Attack', 'Deoxys-Base', 'Deoxys-Speed', 'Dialga', 'Eternatus', 'Genesect', 'Gengar-Mega',
 			'Giratina', 'Groudon', 'Ho-Oh', 'Kangaskhan-Mega', 'Kyogre', 'Kyurem-Black', 'Kyurem-White', 'Landorus-Base', 'Lucario-Mega',
-			'Lugia', 'Lunala', 'Marshadow', 'Mewtwo', 'Naganadel', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Palkia', 'Pheromosa',
-			'Rayquaza', 'Reshiram', 'Salamence-Mega', 'Shaymin-Sky', 'Solgaleo', 'Xerneas', 'Yveltal', 'Zacian', 'Zamazenta', 'Zekrom',
+			'Lugia', 'Lunala', 'Marshadow', 'Mewtwo', 'Naganadel', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Palkia', 'Pheromosa', 'Rayquaza',
+			'Reshiram', 'Salamence-Mega', 'Shaymin-Sky', 'Solgaleo', 'Xerneas', 'Yveltal', 'Zacian', 'Zamazenta', 'Zekrom', 'Zygarde-Base',
 			'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'Baton Pass',
 		],
 	},
@@ -720,6 +723,7 @@ let Formats = [
 			}
 		},
 		onBegin() {
+			if (this.rated && this.format.id === 'gen8mixandmega') this.add('html', `<div class="broadcast-red"><strong>Mix and Mega is currently suspecting Gengar! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3661363/">suspect thread</a>.</strong></div>`);
 			for (const pokemon of this.getAllPokemon()) {
 				pokemon.m.originalSpecies = pokemon.baseTemplate.species;
 			}
@@ -1212,7 +1216,7 @@ let Formats = [
 
 		mod: 'gen4',
 		ruleset: ['Standard', 'Baton Pass Clause'],
-		banlist: ['Uber', 'Sand Veil', 'Soul Dew'],
+		banlist: ['Uber', 'Sand Veil', 'Soul Dew', 'Swinub ++ Snow Cloak', 'Piloswine ++ Snow Cloak', 'Mamoswine ++ Snow Cloak'],
 	},
 	{
 		name: "[Gen 3] OU",

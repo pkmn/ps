@@ -1,3 +1,4 @@
+import {Format, StatsTable, SparseStatsTable, Template, AnyObject, Move, EventInfo, PokemonSet, Ability, Item, ID, ModdedDex} from './exported-global-types';
 /**
  * Team Validator
  * Pokemon Showdown - http://pokemonshowdown.com/

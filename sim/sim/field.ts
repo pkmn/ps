@@ -1,3 +1,4 @@
+import {Effect, PureEffect, Pokemon, Battle, Side, AnyObject, ID} from './exported-global-types';
 /**
  * Simulator Field
  * Pokemon Showdown - http://pokemonshowdown.com/

@@ -536,9 +536,13 @@ let BattleAbilities = {
 		desc: "When the Pokémon is hit by an attack, it scatters cotton fluff around and lowers the Speed stat of all Pokémon except itself.",
 		shortDesc: "Lowers Speed of all Pokémon except itself when hit by an attack.",
 		onDamagingHit(damage, target, source, move) {
-			this.add('-ability', target, 'Cotton Down');
+			let activated = false;
 			for (let pokemon of this.getAllActive()) {
-				if (pokemon === target) continue;
+				if (pokemon === target || !pokemon.hp) continue;
+				if (!activated) {
+					this.add('-ability', target, 'Cotton Down');
+					activated = true;
+				}
 				this.boost({spe: -1}, pokemon, target, null, true);
 			}
 		},
@@ -2215,20 +2219,17 @@ let BattleAbilities = {
 		onBoost(boost, target, source, effect) {
 			// Don't bounce self stat changes, or boosts that have already bounced
 			if (target === source || !boost || effect.id === 'mirrorarmor') return;
-			/** @type {SparseBoostsTable} */
-			let negativeBoosts = {};
 			for (let b in boost) {
 				// @ts-ignore Index signature issue with for-in loops
 				if (boost[b] < 0) {
+					let negativeBoost = {};
 					// @ts-ignore Index signature issue with for-in loops
-					negativeBoosts[b] = boost[b];
+					negativeBoost[b] = boost[b];
 					// @ts-ignore Index signature issue with for-in loops
 					delete boost[b];
+					this.add('-ability', target, 'Mirror Armor');
+					this.boost(negativeBoost, source, target, null, true);
 				}
-			}
-			if (Object.keys(negativeBoosts).length) {
-				this.add('-ability', target, 'Mirror Armor');
-				this.boost(negativeBoosts, source, target, null, true);
 			}
 		},
 		id: "mirrorarmor",

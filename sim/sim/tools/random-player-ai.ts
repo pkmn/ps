@@ -1,3 +1,4 @@
+import {AnyObject} from '../exported-global-types';
 /**
  * Example random player AI.
  *

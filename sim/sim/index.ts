@@ -10,3 +10,5 @@ export {PRNG} from './prng';
 export {RandomPlayerAI} from './tools/random-player-ai';
 export {Side} from './side';
 export {TeamValidator} from './team-validator';
+
+export * from './exported-global-types';

@@ -1,3 +1,4 @@
+import {ID, EffectData, EffectType, Nonstandard, AnyObject, GameTimerSettings, FormatsData, GameType, Battle, PureEffectData, ItemData, FlingData, AbilityData, MoveSource, EventInfo, TemplateData, TemplateFormatsData, TemplateAbility, GenderName, StatsTable, RandomTeamsTypes, MoveData, SecondaryEffect, MoveTarget, TypeData, SparseStatsTable} from './exported-global-types';
 /**
  * Simulator Battle
  * Pokemon Showdown - http://pokemonshowdown.com/

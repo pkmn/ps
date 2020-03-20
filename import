@@ -59,11 +59,45 @@ const replace = async (file, replacements) => {
 const HEAD = path.resolve(__dirname, 'HEAD');
 const submodule = path.resolve(__dirname, 'vendor/pokemon-showdown');
 const sim = path.resolve(__dirname, 'sim');
-const data = path.resolve(__dirname, 'data');
+
+// fucking hell zarle, friends don't let friends use globals :(
+const IMPORTS = {
+  'sim/battle-queue.ts': ['Pokemon', 'ID', 'Move', 'Effect', 'AnyObject'],
+  'sim/battle-stream.ts': ['AnyObject'],
+  'sim/battle.ts': [
+    'Effect', 'Format', 'ID', 'PlayerOptions', 'AnyObject', 'ActiveMove', 'SideID',
+    'SparseBoostsTable', 'SpreadMoveDamage', 'Move', 'PokemonSet', 'DynamaxOptions',
+    'SpreadMoveTargets', 'SelfEffect', 'SecondaryEffect', 'GameType', 'ModdedDex',
+  ],
+  'sim/dex-data.ts': [
+    'ID', 'EffectData', 'EffectType', 'Nonstandard', 'AnyObject', 'GameTimerSettings',
+    'FormatsData', 'GameType', 'Battle', 'PureEffectData', 'ItemData', 'FlingData', 'AbilityData',
+    'MoveSource', 'EventInfo', 'TemplateData', 'TemplateFormatsData', 'TemplateAbility',
+    'GenderName', 'StatsTable', 'RandomTeamsTypes', 'MoveData', 'SecondaryEffect', 'MoveTarget',
+    'TypeData', 'SparseStatsTable',
+  ],
+  'sim/field.ts': ['Effect', 'PureEffect', 'Pokemon', 'Battle', 'Side', 'AnyObject', 'ID'],
+  'sim/pokemon.ts': [
+    'ActiveMove', 'Format', 'Ability', 'PureEffect', 'Item', 'Template', 'SparseBoostsTable',
+    'AnyObject', 'DynamaxOptions', 'Move', 'StatNameExceptHP', 'PokemonModData',
+    'StatsExceptHPTable', 'ID', 'BoostsTable', 'StatsTable', 'GenderName', 'PokemonSet', 'Battle',
+    'Side', 'Effect',
+  ],
+  'sim/side.ts': [
+    'AnyObject', 'Effect', 'ActiveMove', 'Format', 'Ability', 'PureEffect',
+    'Item', 'PokemonSet', 'Battle', 'Move', 'SideID'
+  ],
+  'sim/team-validator.ts': [
+    'Format', 'StatsTable', 'SparseStatsTable', 'Template', 'AnyObject', 'Move',
+    'EventInfo', 'PokemonSet', 'Ability', 'Item', 'ID', 'ModdedDex'
+  ],
+  'sim/tools/random-player-ai.ts': ['AnyObject'],
+};
 
 const FILES = new Set(tree(sim).map(m => m.slice(sim.length + 1)));
 const FRAGILE = new Set([
   'sim/dex.ts',
+  'sim/exported-global-types.ts',
   'sim/global-types.ts',
   'sim/global-variables.d.ts',
 ])
@@ -114,7 +148,17 @@ const interesting = f => {
   }
 
   for (const file of COPIED) {
-    fs.copyFileSync(path.resolve(submodule, file), path.resolve(sim, file));
+    if (IMPORTS[file]) {
+      if (!file.startsWith('sim/')) throw new Error('Unsupported import location');
+      const prefix = file.startsWith('sim/tools/') ? '..' : '.';
+      const original = fs.readFileSync(path.resolve(submodule, file), 'utf8');
+      fs.writeFileSync(path.resolve(sim, file),
+        `import {${IMPORTS[file].join(', ')}} from '${prefix}/exported-global-types';\n` +
+        `${original}`
+      );
+    } else {
+      fs.copyFileSync(path.resolve(submodule, file), path.resolve(sim, file));
+    }
   }
 
   await replace(path.join(sim, 'test'), [
@@ -123,3 +167,10 @@ const interesting = f => {
 
   fs.writeFileSync(HEAD, now);
 })().catch(console.error);
+
+// Import code
+//  - if conflicts, fix and run import again!
+// Run tests
+//  - if issues, fix and run import again!
+// Run secondary inclusion tests!
+//  - if issues, fix and run import again!

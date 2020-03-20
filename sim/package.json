@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "An automatically generated extraction of just the simulator portion of Pokémon Showdown",
   "homepage": "https://psim.us",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "build/sim/index.js",
+  "types": "build/sim/index.d.ts",
   "repository": "github:pkmn/ps",
   "author": "Guangcong Luo <guangcongluo@gmail.com> (http://guangcongluo.com)",
   "contributors": [
