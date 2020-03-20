@@ -14,14 +14,14 @@
   "license": "MIT",
   "dependencies": {
     "@pkmn/types": "file:../types",
-    "@types/node": "^13.7.7"
+    "@types/node": "^13.9.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.19.0",
-    "@typescript-eslint/parser": "^2.19.0",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.1",
-    "mocha": "^7.1.0",
+    "mocha": "^7.1.1",
     "typescript": "^3.8.3"
   },
   "scripts": {
@@ -30,6 +30,6 @@
     "lint": "eslint . --cache --ext .js,.ts",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
-    "posttest": "npm run lint",
+    "posttest": "npm run lint"
   }
 }

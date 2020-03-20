@@ -339,7 +339,7 @@ export namespace Protocol {
     '|-activate|': ['-activate', PokemonIdent, Effect, PokemonIdent];
     '|-ohko|': ['-ohko'];
     '|-ability|': ['-ability', PokemonIdent, Ability, Ability, PokemonIdent];
-  }
+  };
 
   export type BattleMinorArgName = keyof BattleMinorArgs;
   export type BattleMinorArgType = BattleMinorArgs[BattleMinorArgName];
@@ -365,7 +365,7 @@ export namespace Protocol {
     'consumed': true;
     'damage': true;
     'eat': true;
-    'fail': true,
+    'fail': true;
     'fatigue': true;
     'forme': true;
     'from': Effect;
@@ -403,9 +403,11 @@ export namespace Protocol {
   export interface BattleArgsWithKWArgs {
     '|cant|': GeneralKWArgs;
     '|detailschange|': GeneralKWArgs | 'msg';
-    '|move|': GeneralKWArgs | 'anim' | 'miss' | 'notarget' | 'prepare' | 'spread' |  'zeffect';
+    '|move|': GeneralKWArgs | 'anim' | 'miss' | 'notarget' | 'prepare' | 'spread' | 'zeffect';
     '|switchout|': GeneralKWArgs;
-    '|-activate|': GeneralKWArgs | 'ability' | 'ability2' | 'block' | 'broken' | 'damage' | 'item' | 'move' | 'number' | 'consumed' | 'name';
+    '|-activate|': GeneralKWArgs
+    | 'ability' | 'ability2' | 'block' | 'broken' | 'damage'
+    | 'item' | 'move' | 'number'| 'consumed' | 'name';
     '|-ability|': GeneralKWArgs | 'move' | 'weaken';
     '|-block|': GeneralKWArgs;
     '|-boost|': GeneralKWArgs | 'zeffect';
@@ -422,7 +424,7 @@ export namespace Protocol {
     '|-fail|': GeneralKWArgs | 'forme' | 'heavy' | 'msg' | 'weak' | 'fail';
     '|-fieldend|': GeneralKWArgs;
     '|-formechange|': GeneralKWArgs | 'msg';
-    '|-heal|': GeneralKWArgs | 'wisher' |  'zeffect';
+    '|-heal|': GeneralKWArgs | 'wisher' | 'zeffect';
     '|-immune|': GeneralKWArgs | 'ohko';
     '|-invertboost|': GeneralKWArgs;
     '|-item|': GeneralKWArgs | 'identify';
@@ -432,7 +434,8 @@ export namespace Protocol {
     '|-sethp|': GeneralKWArgs;
     '|-sideend|': GeneralKWArgs;
     '|-singleturn|': GeneralKWArgs | 'zeffect';
-    '|-start|': GeneralKWArgs | 'already' | 'damage' | 'block' | 'fatigue' | 'upkeep' | 'zeffect';
+    '|-start|': GeneralKWArgs
+    | 'already' | 'damage' | 'block' | 'fatigue' | 'upkeep' | 'zeffect';
     '|-status|': GeneralKWArgs;
     '|-supereffective|': 'spread';
     '|-swapboost|': GeneralKWArgs;
@@ -627,38 +630,44 @@ function toID(s: string): ID {
 export const Protocol = new class {
   // NOTE: An object is used here to get TypeScript to perform exhaustiveness checking
   ARGS: {[k in Protocol.ArgName]: 1} = {
-    '|init|': 1, '|title|': 1, '|userlist|': 1, '||': 1, '|html|': 1, '|uhtml|': 1, '|uhtmlchange|': 1, '|join|': 1,
-    '|leave|': 1, '|name|': 1, '|chat|': 1, '|:|': 1, '|c:|': 1, '|battle|': 1, '|popup|': 1, '|pm|': 1, '|usercount|': 1,
-    '|nametaken|': 1, '|challstr|': 1, '|updateuser|': 1, '|formats|': 1, '|updatesearch|': 1, '|switchout|': 1,
-    '|updatechallenges|': 1, '|queryresponse|': 1, '|unlink|': 1, '|raw|': 1, '|warning|': 1, '|error|': 1,
-    '|bigerror|': 1, '|chatmsg|': 1, '|chatmsg-raw|': 1, '|controlshtml|': 1, '|fieldhtml|': 1, '|debug|': 1,
-    '|tournament|create|': 1, '|tournament|update|': 1, '|tournament|updateEnd|': 1, '|tournament|error|': 1,
-    '|tournament|forceend|': 1, '|tournament|join|': 1, '|tournament|leave|': 1, '|tournament|replace|': 1,
+    '|init|': 1, '|title|': 1, '|userlist|': 1, '||': 1, '|html|': 1, '|uhtml|': 1,
+    '|uhtmlchange|': 1, '|join|': 1, '|leave|': 1, '|name|': 1, '|chat|': 1, '|:|': 1, '|c:|': 1,
+    '|battle|': 1, '|popup|': 1, '|pm|': 1, '|usercount|': 1, '|nametaken|': 1, '|challstr|': 1,
+    '|updateuser|': 1, '|formats|': 1, '|updatesearch|': 1, '|switchout|': 1,
+    '|updatechallenges|': 1, '|queryresponse|': 1, '|unlink|': 1, '|raw|': 1, '|warning|': 1,
+    '|error|': 1, '|bigerror|': 1, '|chatmsg|': 1, '|chatmsg-raw|': 1, '|controlshtml|': 1,
+    '|fieldhtml|': 1, '|debug|': 1, '|tournament|create|': 1, '|tournament|update|': 1,
+    '|tournament|updateEnd|': 1, '|tournament|error|': 1, '|tournament|forceend|': 1,
+    '|tournament|join|': 1, '|tournament|leave|': 1, '|tournament|replace|': 1,
     '|tournament|start|': 1, '|tournament|disqualify|': 1, '|tournament|battlestart|': 1,
-    '|tournament|battleend|': 1, '|tournament|end|': 1, '|tournament|autostart|': 1, '|tournament|autodq|': 1,
-    '|player|': 1, '|teamsize|': 1, '|gametype|': 1, '|gen|': 1, '|tier|': 1, '|rated|': 1, '|seed|': 1, '|rule|': 1,
-    '|teampreview|': 1, '|clearpoke|': 1, '|poke|': 1, '|start|': 1, '|done|': 1, '|request|': 1, '|inactive|': 1,
-    '|inactiveoff|': 1, '|upkeep|': 1, '|turn|': 1, '|win|': 1, '|tie|': 1, '|move|': 1, '|switch|': 1, '|drag|': 1,
-    '|detailschange|': 1, '|replace|': 1, '|swap|': 1, '|cant|': 1, '|faint|': 1, '|-formechange|': 1, '|-fail|': 1,
-    '|-block|': 1, '|-notarget|': 1, '|-miss|': 1, '|-damage|': 1, '|-heal|': 1, '|-sethp|': 1, '|-status|': 1,
-    '|-curestatus|': 1, '|-cureteam|': 1, '|-boost|': 1, '|-unboost|': 1, '|-setboost|': 1, '|-swapboost|': 1,
-    '|-invertboost|': 1, '|-clearboost|': 1, '|-clearallboost|': 1, '|-clearpositiveboost|': 1, '|-ohko|': 1,
-    '|-clearnegativeboost|': 1, '|-copyboost|': 1, '|-weather|': 1, '|-fieldstart|': 1, '|-fieldend|': 1,
-    '|-sidestart|': 1, '|-sideend|': 1, '|-start|': 1, '|-end|': 1, '|-crit|': 1, '|-supereffective|': 1,
-    '|-resisted|': 1, '|-immune|': 1, '|-item|': 1, '|-enditem|': 1, '|-ability|': 1, '|-endability|': 1,
-    '|-transform|': 1, '|-mega|': 1, '|-primal|': 1, '|-burst|': 1, '|-zpower|': 1, '|-zbroken|': 1, '|-activate|': 1,
-    '|-fieldactivate|': 1, '|-hint|': 1, '|-center|': 1, '|-message|': 1, '|-combine|': 1, '|-waiting|': 1,
-    '|-prepare|': 1, '|-mustrecharge|': 1, '|-hitcount|': 1, '|-singlemove|': 1, '|-singleturn|': 1, '|-anim|': 1,
-    '|message|': 1,
+    '|tournament|battleend|': 1, '|tournament|end|': 1, '|tournament|autostart|': 1,
+    '|tournament|autodq|': 1, '|player|': 1, '|teamsize|': 1, '|gametype|': 1, '|gen|': 1,
+    '|tier|': 1, '|rated|': 1, '|seed|': 1, '|rule|': 1, '|teampreview|': 1, '|clearpoke|': 1,
+    '|poke|': 1, '|start|': 1, '|done|': 1, '|request|': 1, '|inactive|': 1, '|inactiveoff|': 1,
+    '|upkeep|': 1, '|turn|': 1, '|win|': 1, '|tie|': 1, '|move|': 1, '|switch|': 1, '|drag|': 1,
+    '|detailschange|': 1, '|replace|': 1, '|swap|': 1, '|cant|': 1, '|faint|': 1,
+    '|-formechange|': 1, '|-fail|': 1, '|-block|': 1, '|-notarget|': 1, '|-miss|': 1,
+    '|-damage|': 1, '|-heal|': 1, '|-sethp|': 1, '|-status|': 1, '|-curestatus|': 1,
+    '|-cureteam|': 1, '|-boost|': 1, '|-unboost|': 1, '|-setboost|': 1, '|-swapboost|': 1,
+    '|-invertboost|': 1, '|-clearboost|': 1, '|-clearallboost|': 1, '|-clearpositiveboost|': 1,
+    '|-ohko|': 1, '|-clearnegativeboost|': 1, '|-copyboost|': 1, '|-weather|': 1,
+    '|-fieldstart|': 1, '|-fieldend|': 1, '|-sidestart|': 1, '|-sideend|': 1, '|-start|': 1,
+    '|-end|': 1, '|-crit|': 1, '|-supereffective|': 1, '|-resisted|': 1, '|-immune|': 1,
+    '|-item|': 1, '|-enditem|': 1, '|-ability|': 1, '|-endability|': 1, '|-transform|': 1,
+    '|-mega|': 1, '|-primal|': 1, '|-burst|': 1, '|-zpower|': 1, '|-zbroken|': 1, '|-activate|': 1,
+    '|-fieldactivate|': 1, '|-hint|': 1, '|-center|': 1, '|-message|': 1, '|-combine|': 1,
+    '|-waiting|': 1, '|-prepare|': 1, '|-mustrecharge|': 1, '|-hitcount|': 1, '|-singlemove|': 1,
+    '|-singleturn|': 1, '|-anim|': 1, '|message|': 1,
   };
   ARGS_WITH_KWARGS: {[k in Protocol.ArgsWithKWArgName]: 1} = {
-    '|move|': 1, '|detailschange|': 1,  '|cant|': 1, '|-formechange|': 1, '|-fail|': 1, '|-block|': 1, '|-damage|': 1,
-    '|-heal|': 1, '|-sethp|': 1, '|-status|': 1, '|-curestatus|': 1, '|-cureteam|': 1, '|-boost|': 1, '|-unboost|': 1,
-    '|-setboost|': 1, '|-swapboost|': 1, '|-invertboost|': 1, '|-clearnegativeboost|': 1, '|-weather|': 1,
-    '|-fieldend|': 1, '|-sideend|': 1, '|-start|': 1, '|-end|': 1, '|-crit|': 1, '|-supereffective|': 1,
-    '|-resisted|': 1, '|-immune|': 1, '|-item|': 1, '|-enditem|': 1, '|-ability|': 1, '|-endability|': 1,
-    '|-transform|': 1,  '|-activate|': 1, '|-singleturn|': 1, '|switchout|': 1, '|-miss|':  1, '|-clearallboost|':  1,
-    '|-copyboost|':  1,
+    '|move|': 1, '|detailschange|': 1, '|cant|': 1, '|-formechange|': 1, '|-fail|': 1,
+    '|-block|': 1, '|-damage|': 1, '|-heal|': 1, '|-sethp|': 1, '|-status|': 1,
+    '|-curestatus|': 1, '|-cureteam|': 1, '|-boost|': 1, '|-unboost|': 1, '|-setboost|': 1,
+    '|-swapboost|': 1, '|-invertboost|': 1, '|-clearnegativeboost|': 1, '|-weather|': 1,
+    '|-fieldend|': 1, '|-sideend|': 1, '|-start|': 1, '|-end|': 1, '|-crit|': 1,
+    '|-supereffective|': 1, '|-resisted|': 1, '|-immune|': 1, '|-item|': 1, '|-enditem|': 1,
+    '|-ability|': 1, '|-endability|': 1, '|-transform|': 1, '|-activate|': 1, '|-singleturn|': 1,
+    '|switchout|': 1, '|-miss|': 1, '|-clearallboost|': 1, '|-copyboost|': 1,
   };
 
   *handle(data: string) {
@@ -675,6 +684,13 @@ export const Protocol = new class {
         }];
       }
     }
+  }
+
+  key(args: Protocol.ArgType): Protocol.ArgName | undefined {
+    const key = (args[0] === 'tournament'
+      ? `|${args[0]}|${args[1]}|`
+      : `|${args[0]}|`) as Protocol.ArgName;
+    return key in this.ARGS ? key : undefined;
   }
 
   parseLine(line: string, noDefault?: boolean): Protocol.ArgType | null {
@@ -955,14 +971,14 @@ function upgradeBattleArgs(
     if (id === 'fairylock') return {args: ['-fieldactivate', effect], kwArgs: {}};
 
     if (id === 'symbiosis') {
-      kwArgs.item = arg3!;
+      kwArgs.item = arg3;
     } else if (id === 'magnitude') {
-      kwArgs.number = arg3!;
+      kwArgs.number = arg3;
     } else if (id === 'skillswap' || id === 'mummy' || id === 'wanderingspirit') {
-      kwArgs.ability = arg3!;
+      kwArgs.ability = arg3;
       kwArgs.ability2 = arg4!;
     } else if (NUMBERABLE.has(id)) {
-      kwArgs.move = arg3!;
+      kwArgs.move = arg3;
       kwArgs.number = arg4!;
     }
     return {args: ['-activate', pokemon, effect, (target || '') as Protocol.PokemonIdent], kwArgs};
@@ -1004,7 +1020,7 @@ function upgradeBattleArgs(
     // NEW: |-activate||move:Splash
     args = [
       '-activate', '' as Protocol.PokemonIdent,
-      'move:Splash' as Protocol.Effect
+      'move:Splash' as Protocol.Effect,
     ] as Protocol.Args['|-activate|'];
   }
 
