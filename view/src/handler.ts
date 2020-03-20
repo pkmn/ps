@@ -13,11 +13,9 @@ function toID(s: string): ID {
   return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
 }
 
-type Output = '' & As<'Output'>;
-
 const VALS = ['pokemon', 'opposingPokemon', 'team', 'opposingTeam', 'party', 'opposingParty']; // TODO rename
 
-export class TextParser implements Protocol.Handler<Output> {
+export class TextParser implements Protocol.Handler<string> {
   #out: (s: string) => void;
   #perspective: 0 | 1;
 
@@ -219,11 +217,11 @@ export class TextParser implements Protocol.Handler<Output> {
     }
   }
 
-  // FIXME default....
-  out(s: string, args: ArgType, kwArgs?: KWArgType, noSectionBreak?: boolean) {
+  parse(args: ArgType, kwArgs?: KWArgType, noSectionBreak?: boolean) {
     const buf = !noSectionBreak && this.sectionBreak(args, kwArgs) ? '\n' : '';
-    this.#out(buf + this.fixLowercase(s || ''));
-    return '' as Output;
+    const key = ((args as ArgType)[0] === 'tournament'
+      ? `${args[0]}|${args[1]}` : args[0]) as Protocol.ArgName;
+    return buf + (key in this ? this.fixLowercase((this as any)[key](args, kwArgs)) : '');
   }
 
   'player'(args: Args['player']) {
@@ -233,26 +231,25 @@ export class TextParser implements Protocol.Handler<Output> {
     } else if (side === 'p2' && name) {
       this.#p2 = name;
     }
-    return this.out('', args);
+    return '';
   }
 
   'gen'(args: Args['gen']) {
     const [, gen] = args;
     this.#gen = gen;
-    return this.out('', args);
+    return '';
   }
 
 
   'turn'(args: Args['turn']) {
     const [, num] = args;
-    return this.out(this.template('turn').replace('[NUMBER]', num) + '\n', args);
+    return this.template('turn').replace('[NUMBER]', num) + '\n';
   }
 
   'start'(args: Args['start']) {
-    return this.out(this.template('startBattle')
+    return this.template('startBattle')
       .replace('[TRAINER]', this.#p1)
-      .replace('[TRAINER]', this.#p2),
-      args);
+      .replace('[TRAINER]', this.#p2);
   }
 
   'win'(args: Args['win']) {
@@ -267,19 +264,18 @@ export class TextParser implements Protocol.Handler<Output> {
     const [, pokemon, details] = args;
     const [side, fullname] = this.pokemonFull(pokemon, details);
     const template = this.template('switchIn', this.own(side));
-    return this.out(template
+    return template
       .replace('[TRAINER]', this.trainer(side))
-      .replace('[FULLNAME]', fullname),
-      args);
+      .replace('[FULLNAME]', fullname);
   }
 
   'drag'(args: Args['drag']) {
     const [, pokemon, details] = args;
     const [side, fullname] = this.pokemonFull(pokemon, details);
     const template = this.template('drag');
-    return this.out(template
+    return template
       .replace('[TRAINER]', this.trainer(side))
-      .replace('[FULLNAME]', fullname), args);
+      .replace('[FULLNAME]', fullname);
   }
 
   'detailschange'(args: Args['detailschange'], kwArgs: KWArgs['detailschange']) {
@@ -298,30 +294,29 @@ export class TextParser implements Protocol.Handler<Output> {
     const [, pokemon] = args;
     const side = pokemon.slice(0, 2);
     const template = this.template('switchOut', kwArgs.from, this.own(side));
-    return this.out(template
+    return template
       .replace('[TRAINER]', this.trainer(side))
       .replace('[NICKNAME]', this.pokemonName(pokemon))
-      .replace('[POKEMON]', this.pokemon(pokemon)),
-      args, kwArgs);
+      .replace('[POKEMON]', this.pokemon(pokemon));
+;
   }
 
   'faint'(args: Args['faint']) {
     const [, pokemon] = args;
     const template = this.template('faint');
-    return this.out(template.replace('[POKEMON]', this.pokemon(pokemon)), args);
+    return template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   'swap'(args: Args['swap']) {
     const [, pokemon, target] = args;
     if (!target || !isNaN(Number(target))) {
       const template = this.template('swapCenter');
-      return this.out(template.replace('[POKEMON]', this.pokemon(pokemon)), args);
+      return template.replace('[POKEMON]', this.pokemon(pokemon));
     }
     const template = this.template('swap');
-    return this.out(template
+    return template
       .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[TARGET]', this.pokemon(target)),
-      args);
+      .replace('[TARGET]', this.pokemon(target));
   }
 
   'move'(args: Args['move'], kwArgs: KWArgs['move']) {
@@ -331,10 +326,9 @@ export class TextParser implements Protocol.Handler<Output> {
       line1 = this.template('zEffect').replace('[POKEMON]', this.pokemon(pokemon));
     }
     const template = this.template('move', kwArgs.from);
-    return this.out(line1 + template
+    return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[MOVE]', move),
-      args, kwArgs);
+      .replace('[MOVE]', move));
   }
 
   'cant'(args: Args['cant'], kwArgs: KWArgs['cant']) {
@@ -342,10 +336,9 @@ export class TextParser implements Protocol.Handler<Output> {
     const template = this.template('cant', effect, 'NODEFAULT') ||
       this.template(move ? 'cant' : 'cantNoMove');
     const line1 = this.maybeAbility(effect, kwArgs.of || pokemon);
-    return this.out(line1 + template
+    return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[MOVE]', move),
-      args, kwArgs)
+      .replace('[MOVE]', move));
   }
 
   '-start'(args: Args['-start'], kwArgs: KWArgs['-start']) {
@@ -355,34 +348,30 @@ export class TextParser implements Protocol.Handler<Output> {
     let id = TextParser.effectId(effect);
     if (id === 'typechange') {
       const template = this.template('typeChange', kwArgs.from);
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
         .replace('[TYPE]', arg3)
-        .replace('[SOURCE]', this.pokemon(kwArgs.of)),
-        args, kwArgs);
+        .replace('[SOURCE]', this.pokemon(kwArgs.of)));
     }
     if (id === 'typeadd') {
       const template = this.template('typeAdd', kwArgs.from);
-      return this.out(line1 + template
+      return line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[TYPE]', arg3),
-        args, kwArgs);
+        .replace('[TYPE]', arg3));
     }
     if (id.startsWith('stockpile')) {
       const num = id.slice(9);
       const template = this.template('start', 'stockpile');
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[NUMBER]', num),
-        args, kwArgs);
+        .replace('[NUMBER]', num));
     }
     if (id.startsWith('perish')) {
       const num = id.slice(6);
       const template = this.template('activate', 'perishsong');
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[NUMBER]', num),
-        args, kwArgs);
+        .replace('[NUMBER]', num));
     }
     let templateId = 'start';
     if (kwArgs.already) templateId = 'alreadyStarted';
@@ -396,12 +385,11 @@ export class TextParser implements Protocol.Handler<Output> {
       templateId += 'FromItem';
     }
     const template = this.template(templateId, effect);
-    return this.out(line1 + template
+    return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
       .replace('[EFFECT]', this.effect(effect))
       .replace('[MOVE]', arg3).replace('[SOURCE]', this.pokemon(kwArgs.of))
-      .replace('[ITEM]', this.effect(kwArgs.from)),
-      args, kwArgs);
+      .replace('[ITEM]', this.effect(kwArgs.from)));
   }
 
   '-end'(args: Args['-end'], kwArgs: KWArgs['-end']) {
@@ -411,7 +399,7 @@ export class TextParser implements Protocol.Handler<Output> {
     let id = TextParser.effectId(effect);
     if (id === 'doomdesire' || id === 'futuresight') {
       const template = this.template('activate', effect);
-      return this.out(line1 + template.replace('[TARGET]', this.pokemon(pokemon)), args, kwArgs);
+      return line1 + template.replace('[TARGET]', this.pokemon(pokemon));
     }
     let templateId = 'end';
     let template = '';
@@ -419,11 +407,10 @@ export class TextParser implements Protocol.Handler<Output> {
       template = this.template('endFromItem', effect);
     }
     if (!template) template = this.template(templateId, effect);
-    return this.out(line1 + template
+    return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
       .replace('[EFFECT]', this.effect(effect))
-      .replace('[SOURCE]', this.pokemon(kwArgs.of)),
-      args, kwArgs);
+      .replace('[SOURCE]', this.pokemon(kwArgs.of)));
   }
 
   '-ability'(args: Args['-ability'], kwArgs: KWArgs['-ability']) {
@@ -439,34 +426,33 @@ export class TextParser implements Protocol.Handler<Output> {
     line1 += this.ability(ability, pokemon);
     if (kwArgs.fail) {
       const template = this.template('block', kwArgs.from);
-      return this.out(line1 + template, args, kwArgs);
+      return line1 + template;
     }
     if (kwArgs.from) {
       line1 = this.maybeAbility(kwArgs.from, pokemon) + line1;
       const template = this.template('changeAbility', kwArgs.from);
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
         .replace('[ABILITY]', this.effect(ability))
-        .replace('[SOURCE]', this.pokemon(kwArgs.of)),
-        args, kwArgs);
+        .replace('[SOURCE]', this.pokemon(kwArgs.of)));
     }
     const id = TextParser.effectId(ability);
     if (id === 'unnerve') {
       const template = this.template('start', ability);
-      return this.out(line1 + template.replace('[TEAM]', this.team(arg4)), args, kwArgs);
+      return line1 + template.replace('[TEAM]', this.team(arg4));
     }
     let templateId = 'start';
     if (id === 'anticipation' || id === 'sturdy') templateId = 'activate';
     const template = this.template(templateId, ability, 'NODEFAULT');
-    return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+    return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-endability'(args: Args['-endability'], kwArgs: KWArgs['-endability']) {
     let [, pokemon, ability] = args;
-    if (ability) return this.out(this.ability(ability, pokemon), args, kwArgs);
+    if (ability) return this.ability(ability, pokemon);
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     const template = this.template('start', 'Gastro Acid');
-    return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+    return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-item'(args: Args['-item'], kwArgs: KWArgs['-item']) {
@@ -479,30 +465,27 @@ export class TextParser implements Protocol.Handler<Output> {
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     if (['thief', 'covet', 'bestow', 'magician', 'pickpocket'].includes(id)) {
       const template = this.template('takeItem', kwArgs.from);
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
         .replace('[ITEM]', this.effect(item))
-        .replace('[SOURCE]', this.pokemon(target || kwArgs.of)),
-        args, kwArgs);
+        .replace('[SOURCE]', this.pokemon(target || kwArgs.of)));
     }
     if (id === 'frisk') {
       const hasTarget = kwArgs.of && pokemon && kwArgs.of !== pokemon;
       const template = this.template(hasTarget ? 'activate' : 'activateNoTarget', "Frisk");
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(kwArgs.of))
         .replace('[ITEM]', this.effect(item))
-        .replace('[TARGET]', this.pokemon(pokemon)),
-        args, kwArgs);
+        .replace('[TARGET]', this.pokemon(pokemon)));
     }
     if (kwArgs.from) {
       const template = this.template('addItem', kwArgs.from);
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[ITEM]', this.effect(item)),
-        args, kwArgs);
+        .replace('[ITEM]', this.effect(item)));
     }
     const template = this.template('start', item, 'NODEFAULT');
-    return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+    return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-enditem'(args: Args['-enditem'], kwArgs: KWArgs['-enditem']) {
@@ -510,48 +493,42 @@ export class TextParser implements Protocol.Handler<Output> {
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     if (kwArgs.eat) {
       const template = this.template('eatItem', kwArgs.from);
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[ITEM]', this.effect(item)),
-        args, kwArgs);;
+        .replace('[ITEM]', this.effect(item)));
     }
     const id = TextParser.effectId(kwArgs.from);
     if (id === 'gem') {
       const template = this.template('useGem', item);
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
         .replace('[ITEM]', this.effect(item))
-        .replace('[MOVE]', kwArgs.move),
-        args, kwArgs);
+        .replace('[MOVE]', kwArgs.move));
     }
     if (id === 'stealeat') {
       const template = this.template('removeItem', "Bug Bite");
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[SOURCE]', this.pokemon(kwArgs.of))
-        .replace('[ITEM]', this.effect(item)),
-        args, kwArgs);
+        .replace('[ITEM]', this.effect(item)));
     }
     if (kwArgs.from) {
       const template = this.template('removeItem', kwArgs.from);
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
         .replace('[ITEM]', this.effect(item))
-        .replace('[SOURCE]', this.pokemon(kwArgs.of)),
-        args, kwArgs);
+        .replace('[SOURCE]', this.pokemon(kwArgs.of)));
     }
     if (kwArgs.weaken) {
       const template = this.template('activateWeaken');
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[ITEM]', this.effect(item)),
-        args, kwArgs);
+        .replace('[ITEM]', this.effect(item)));
     }
     let template = this.template('end', item, 'NODEFAULT');
     if (!template) template = this.template('activateItem').replace('[ITEM]', this.effect(item));
-    return this.out(line1 + template
+    return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[TARGET]', this.pokemon(kwArgs.of)),
-      args, kwArgs);
+      .replace('[TARGET]', this.pokemon(kwArgs.of)));
   }
 
   '-status'(args: Args['-status'], kwArgs: KWArgs['-status']) {
@@ -559,40 +536,38 @@ export class TextParser implements Protocol.Handler<Output> {
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     if (TextParser.effectId(kwArgs.from) === 'rest') {
       const template = this.template('startFromRest', status);
-      return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+      return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
     }
     const template = this.template('start', status);
-    return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+    return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-curestatus'(args: Args['-curestatus'], kwArgs: KWArgs['-curestatus']) {
     const [, pokemon, status] = args;
     if (TextParser.effectId(kwArgs.from) === 'naturalcure') {
       const template = this.template('activate', kwArgs.from);
-      return this.out(template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+      return template.replace('[POKEMON]', this.pokemon(pokemon));
     }
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     if (kwArgs.from?.startsWith('item:')) {
       const template = this.template('endFromItem', status);
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[ITEM]', this.effect(kwArgs.from)),
-        args, kwArgs);
+        .replace('[ITEM]', this.effect(kwArgs.from)));
     }
     if (kwArgs.thaw) {
       const template = this.template('endFromMove', status);
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[MOVE]', this.effect(kwArgs.from)),
-        args, kwArgs);
+        .replace('[MOVE]', this.effect(kwArgs.from)));
     }
     let template = this.template('end', status, 'NODEFAULT');
     if (!template) template = this.template('end').replace('[EFFECT]', status);
-    return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+    return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-cureteam'(args: Args['-cureteam'], kwArgs: KWArgs['-cureteam']) {
-    return this.out(this.template('activate', kwArgs.from), args, kwArgs);
+    return this.template('activate', kwArgs.from);
   }
 
   '-singleturn'(args: Args['-singleturn'], kwArgs: KWArgs['-singleturn']) {
@@ -609,10 +584,9 @@ export class TextParser implements Protocol.Handler<Output> {
     if (!template) {
       template = this.template('startTeamEffect').replace('[EFFECT]', this.effect(effect));
     }
-    return this.out(template
+    return template
       .replace('[TEAM]', this.team(side))
-      .replace('[PARTY]', this.party(side)),
-      args, kwArgs);
+      .replace('[PARTY]', this.party(side)));
   }
 
   '-sideend'(args: Args['-sideend'], kwArgs: KWArgs['-sideend']) {
@@ -621,10 +595,9 @@ export class TextParser implements Protocol.Handler<Output> {
     if (!template) {
       template = this.template('endTeamEffect').replace('[EFFECT]', this.effect(effect));
     }
-    return this.out(template
+    return (template
       .replace('[TEAM]', this.team(side))
-      .replace('[PARTY]', this.party(side)),
-      args, kwArgs);
+      .replace('[PARTY]', this.party(side)));
   }
 
   '-weather'(args: Args['-weather'], kwArgs: KWArgs['-weather']) {
@@ -632,21 +605,20 @@ export class TextParser implements Protocol.Handler<Output> {
     if (!weather || weather === 'none') {
       const template = this.template('end', kwArgs.from, 'NODEFAULT');
       if (!template) {
-        return this.out(this.template('endFieldEffect')
-          .replace('[EFFECT]', this.effect(weather)),
-          args, kwArgs);
+        return (this.template('endFieldEffect')
+          .replace('[EFFECT]', this.effect(weather)));
       }
-      return this.out(template, args, kwArgs);
+      return template;
     }
     if (kwArgs.upkeep) {
-      return this.out(this.template('upkeep', weather, 'NODEFAULT'), args, kwArgs);
+      return this.template('upkeep', weather, 'NODEFAULT');
     }
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of);
     let template = this.template('start', weather, 'NODEFAULT');
     if (!template) {
       template = this.template('startFieldEffect').replace('[EFFECT]', this.effect(weather));
     }
-    return this.out(line1 + template, args, kwArgs);
+    return line1 + template;
   }
 
   '-fieldstart'(args: Args['-fieldstart']) {
@@ -663,30 +635,29 @@ export class TextParser implements Protocol.Handler<Output> {
     if (!template) {
       template = this.template('endFieldEffect').replace('[EFFECT]', this.effect(effect));
     }
-    return this.out(template, args, kwArgs);
+    return template;
   }
 
   '-sethp'(args: Args['-sethp'], kwArgs: KWArgs['-sethp']) {
-    return this.out(this.template('activate', kwArgs.from), args, kwArgs);
+    return this.template('activate', kwArgs.from);
   }
 
   '-message'(args: Args['-message']) {
     let [, message] = args;
-    return this.out(`${message}\n`, args);
+    return `${message}\n`;
   }
 
   '-hint'(args: Args['-hint']) {
     let [, message] = args;
-    return this.out(`  (${message})\n`, args);
+    return `  (${message})\n`;
   }
 
   '-activate'(args: Args['-activate'], kwArgs: KWArgs['-activate']) {
     let [, pokemon, effect, target] = args;
     let id = TextParser.effectId(effect);
     if (id === 'celebrate') {
-      return this.out(this.template('activate', 'celebrate')
-        .replace('[TRAINER]', this.trainer(pokemon.slice(0, 2))),
-        args, kwArgs);
+      return (this.template('activate', 'celebrate')
+        .replace('[TRAINER]', this.trainer(pokemon.slice(0, 2))));
     }
     const breaks = ['hyperspacefury', 'hyperspacehole', 'phantomforce', 'shadowforce', 'feint'];
     if (!target && breaks.includes(id)) {
@@ -699,17 +670,16 @@ export class TextParser implements Protocol.Handler<Output> {
 
     if (id === 'lockon' || id === 'mindreader') {
       const template = this.template('start', effect);
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(kwArgs.of))
-        .replace('[SOURCE]', this.pokemon(pokemon)),
-        args, kwArgs);
+        .replace('[SOURCE]', this.pokemon(pokemon)));
     }
 
     if (id === 'mummy') {
       line1 += this.ability(kwArgs.ability, target);
       line1 += this.ability('Mummy', target);
       const template = this.template('changeAbility', 'mummy');
-      return this.out(line1 + template.replace('[TARGET]', this.pokemon(target)), args, kwArgs);
+      return line1 + template.replace('[TARGET]', this.pokemon(target));
     }
 
     let templateId = 'activate';
@@ -718,9 +688,9 @@ export class TextParser implements Protocol.Handler<Output> {
     }
     let template = this.template(templateId, effect, 'NODEFAULT');
     if (!template) {
-      if (line1) return this.out(line1, args, kwArgs); // Abilities don't have a default template
+      if (line1) return line1; // Abilities don't have a default template
       template = this.template('activate');
-      return this.out(line1 + template.replace('[EFFECT]', this.effect(effect)), args, kwArgs);
+      return line1 + template.replace('[EFFECT]', this.effect(effect));
     }
 
     if (id === 'brickbreak') {
@@ -738,20 +708,18 @@ export class TextParser implements Protocol.Handler<Output> {
         .replace('[NUMBER]', kwArgs.number)
         .replace('[ITEM]', kwArgs.item);
     }
-    return this.out(line1 + template
+    return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
       .replace('[TARGET]', this.pokemon(target))
-      .replace('[SOURCE]', this.pokemon(kwArgs.of)),
-      args, kwArgs);
+      .replace('[SOURCE]', this.pokemon(kwArgs.of)));
   }
 
   '-prepare'(args: Args['-prepare']) {
     const [, pokemon, effect, target] = args;
     const template = this.template('prepare', effect);
-    return this.out(template
+    return (template
       .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[TARGET]', this.pokemon(target)),
-      args);
+      .replace('[TARGET]', this.pokemon(target)));
   }
 
   '-damage'(args: Args['-damage'], kwArgs: KWArgs['-damage']) {
@@ -760,34 +728,31 @@ export class TextParser implements Protocol.Handler<Output> {
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     const id = TextParser.effectId(kwArgs.from);
     if (template) {
-      return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+      return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
     }
 
     if (!kwArgs.from) {
       template = this.template(percentage ? 'damagePercentage' : 'damage');
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[PERCENTAGE]', percentage),
-        args, kwArgs);
+        .replace('[PERCENTAGE]', percentage));
     }
     if (kwArgs.from.startsWith('item:')) {
       template = this.template(kwArgs.of ? 'damageFromPokemon' : 'damageFromItem');
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
         .replace('[ITEM]', this.effect(kwArgs.from))
-        .replace('[SOURCE]', this.pokemon(kwArgs.of)),
-        args, kwArgs);
+        .replace('[SOURCE]', this.pokemon(kwArgs.of)));
     }
     if (kwArgs.partiallytrapped || id === 'bind' || id === 'wrap') {
       template = this.template('damageFromPartialTrapping');
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[MOVE]', this.effect(kwArgs.from)),
-        args, kwArgs);
+        .replace('[MOVE]', this.effect(kwArgs.from)));
     }
 
     template = this.template('damage');
-    return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+    return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-heal'(args: Args['-heal'], kwArgs: KWArgs['-heal']) {
@@ -795,23 +760,21 @@ export class TextParser implements Protocol.Handler<Output> {
     let template = this.template('heal', kwArgs.from, 'NODEFAULT');
     const line1 = this.maybeAbility(kwArgs.from, pokemon);
     if (template) {
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
         .replace('[SOURCE]', this.pokemon(kwArgs.of))
-        .replace('[NICKNAME]', kwArgs.wisher),
-        args, kwArgs);
+        .replace('[NICKNAME]', kwArgs.wisher));
     }
 
     if (kwArgs.from && !kwArgs.from.startsWith('ability:')) {
       template = this.template('healFromEffect');
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[EFFECT]', this.effect(kwArgs.from)),
-        args, kwArgs);
+        .replace('[EFFECT]', this.effect(kwArgs.from)));
     }
 
     template = this.template('heal');
-    return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+    return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-boost'(args: Args['-boost'], kwArgs: KWArgs['-boost']) {
@@ -827,7 +790,7 @@ export class TextParser implements Protocol.Handler<Output> {
     const effect = kwArgs.from;
     const line1 = this.maybeAbility(effect, kwArgs.of || pokemon);
     const template = this.template('boost', effect);
-    return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+    return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-swapboost'(args: Args['-swapboost'], kwArgs: KWArgs['-swapboost']) {
@@ -838,19 +801,18 @@ export class TextParser implements Protocol.Handler<Output> {
     if (id === 'guardswap') templateId = 'swapDefensiveBoost';
     if (id === 'powerswap') templateId = 'swapOffensiveBoost';
     const template = this.template(templateId, kwArgs.from);
-    return this.out(line1 + template
+    return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[TARGET]', this.pokemon(target)),
-      args, kwArgs);
+      .replace('[TARGET]', this.pokemon(target)));
   }
 
   '-copyboost'(args: Args['-copyboost']) {
     const [, pokemon, target] = args;
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     const template = this.template('copyBoost', kwArgs.from);
-    return this.out(line1 + template
+    return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[TARGET]', this.pokemon(target)), args);
+      .replace('[TARGET]', this.pokemon(target)));
   }
 
   '-clearboost'(args: Args['-clearboost']) {
@@ -869,11 +831,11 @@ export class TextParser implements Protocol.Handler<Output> {
     const [, pokemon] = args;
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     const template = this.template('invertBoost', kwArgs.from);
-    return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+    return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-clearallboost'(args: Args['-clearallboost']) {
-    return this.out(this.template('clearAllBoost', kwArgs.from), args, kwArgs);
+    return this.template('clearAllBoost', kwArgs.from);
   }
 
   '-crit'(args: Args['-crit'], kwArgs: KWArgs['-crit']) {
@@ -892,11 +854,10 @@ export class TextParser implements Protocol.Handler<Output> {
     let [, pokemon, effect, move, attacker] = args;
     const line1 = this.maybeAbility(effect, kwArgs.of || pokemon);
     const template = this.template('block', effect);
-    return this.out(line1 + template
+    return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
       .replace('[SOURCE]', this.pokemon(attacker || kwArgs.of))
-      .replace('[MOVE]', move),
-      args, kwArgs);
+      .replace('[MOVE]', move));
   }
 
   '-fail'(args: Args['-fail'], kwArgs: KWArgs['-fail']) {
@@ -913,14 +874,14 @@ export class TextParser implements Protocol.Handler<Output> {
     }
     let template = this.template(templateId, kwArgs.from);
     if (template) {
-      return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+      return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
     }
 
     if (id === 'unboost') {
       template = this.template(stat ? 'failSingular' : 'fail', 'unboost');
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
-        .replace('[STAT]', stat), args, kwArgs);
+        .replace('[STAT]', stat));
     }
 
     templateId = 'fail';
@@ -931,7 +892,7 @@ export class TextParser implements Protocol.Handler<Output> {
     if (kwArgs.weak) templateId = 'fail';
     if (kwArgs.forme) templateId = 'failWrongForme';
     template = this.template(templateId, id);
-    return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+    return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-immune'(args: Args['-immune'], kwArgs: KWArgs['-immune']) {
@@ -942,7 +903,7 @@ export class TextParser implements Protocol.Handler<Output> {
       const templateId = kwArgs.ohko ? 'immuneOHKO' : 'immune';
       template = this.template(pokemon ? templateId : 'immuneNoPokemon', kwArgs.from);
     }
-    return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+    return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-miss'(args: Args['-miss']) {
@@ -950,26 +911,26 @@ export class TextParser implements Protocol.Handler<Output> {
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     if (!pokemon) {
       const template = this.template('missNoPokemon');
-      return this.out(line1 + template.replace('[SOURCE]', this.pokemon(source)), args, kwArgs);
+      return line1 + template.replace('[SOURCE]', this.pokemon(source));
     }
     const template = this.template('miss');
-    return this.out(line1 + template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+    return line1 + template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-center'(args: Args['-center']) {
-    return this.out(this.template('center'), args);
+    return this.template('center');
   }
 
   '-ohko'(args: Args['-ohko']) {
-    return this.out(this.template('ohko'), args);
+    return this.template('ohko');
   }
 
   '-combine'(args: Args['-combine']) {
-    return this.out(this.template('combine'), args);
+    return this.template('combine');
   }
 
   '-notarget'(args: Args['-notarget']) {
-    return this.out(this.template('noTarget'), args);
+    return this.template('noTarget');
   }
 
   '-mega'(args: Args['-mega']) {
@@ -983,51 +944,49 @@ export class TextParser implements Protocol.Handler<Output> {
   '-zpower'(args: Args['-zpower']) {
     const [, pokemon] = args;
     const template = this.template('zPower');
-    return this.out(template.replace('[POKEMON]', this.pokemon(pokemon)), args);
+    return template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-burst'(args: Args['-burst']) {
     const [, pokemon] = args;
     const template = this.template('activate', "Ultranecrozium Z");
-    return this.out(template.replace('[POKEMON]', this.pokemon(pokemon)), args);
+    return template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-zbroken'(args: Args['-zbroken']) {
     const [, pokemon] = args;
     const template = this.template('zBroken');
-    return this.out(template.replace('[POKEMON]', this.pokemon(pokemon)), args);
+    return template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   '-hitcount'(args: Args['-hitcount']) {
     const [, , num] = args;
     if (num === '1') {
-      return this.out(this.template('hitCountSingular'), args);
+      return this.template('hitCountSingular');
     }
-    return this.out(this.template('hitCount').replace('[NUMBER]', num), args);
+    return this.template('hitCount').replace('[NUMBER]', num);
   }
 
   '-waiting'(args: Args['-waiting']) {
     const [, pokemon, target] = args;
     const template = this.template('activate', "Water Pledge");
-    return this.out(template
+    return (template
       .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[TARGET]', this.pokemon(target)),
-      args);
+      .replace('[TARGET]', this.pokemon(target)));
   }
 
   '-anim'(args: Args['-anim']) {
-    return this.out('', args);
+    return '';
   }
 
   private finish(args: Args['win' | 'tie']) {
     const [cmd, name] = args;
     if (cmd === 'tie' || !name) {
-      return this.out(this.template('tieBattle')
+      return (this.template('tieBattle')
         .replace('[TRAINER]', this.#p1)
-        .replace('[TRAINER]', this.#p2),
-        args);
+        .replace('[TRAINER]', this.#p2));
     }
-    return this.out(this.template('winBattle').replace('[TRAINER]', name), args);
+    return this.template('winBattle').replace('[TRAINER]', name);
   }
 
   private change(
@@ -1068,10 +1027,9 @@ export class TextParser implements Protocol.Handler<Output> {
     }
     const template = this.template(templateName, id, kwArgs.msg ? '' : 'NODEFAULT');
     const line1 = this.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
-    return this.out(line1 + template
+    return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[SPECIES]', newSpecies),
-      args, kwArgs);
+      .replace('[SPECIES]', newSpecies));
   }
 
   private single(
@@ -1084,18 +1042,16 @@ export class TextParser implements Protocol.Handler<Output> {
     let id = TextParser.effectId(effect);
     if (id === 'instruct') {
       const template = this.template('activate', effect);
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(kwArgs.of))
-        .replace('[TARGET]', this.pokemon(pokemon)),
-        args, kwArgs);
+        .replace('[TARGET]', this.pokemon(pokemon)));
     }
     let template = this.template('start', effect, 'NODEFAULT');
     if (!template) template = this.template('start').replace('[EFFECT]', this.effect(effect));
-    return this.out(line1 + template
+    return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
       .replace('[SOURCE]', this.pokemon(kwArgs.of))
-      .replace('[TEAM]', this.team(pokemon.slice(0, 2))),
-      args, kwArgs);
+      .replace('[TEAM]', this.team(pokemon.slice(0, 2))));
   }
 
   private fieldbegin(
@@ -1110,7 +1066,7 @@ export class TextParser implements Protocol.Handler<Output> {
     if (!template) {
       template = this.template('startFieldEffect').replace('[EFFECT]', this.effect(effect));
     }
-    return this.out(line1 + template.replace('[POKEMON]', this.pokemon(kwArgs.of)), args, kwArgs);
+    return line1 + template.replace('[POKEMON]', this.pokemon(kwArgs.of));
   }
 
   private boost(
@@ -1129,17 +1085,15 @@ export class TextParser implements Protocol.Handler<Output> {
       templateId += (kwArgs.multiple ? 'MultipleFromZEffect' : 'FromZEffect');
     } else if (amount && kwArgs.from?.startsWith('item:')) {
       const template = this.template(templateId + 'FromItem', kwArgs.from);
-      return this.out(line1 + template
+      return (line1 + template
         .replace('[POKEMON]', this.pokemon(pokemon))
         .replace('[STAT]', this.stat(stat))
-        .replace('[ITEM]', this.effect(kwArgs.from)),
-        args, kwArgs);
+        .replace('[ITEM]', this.effect(kwArgs.from)));
     }
     const template = this.template(templateId, kwArgs.from);
-    return this.out(line1 + template
+    return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[STAT]', this.stat(stat)),
-      args, kwArgs);
+      .replace('[STAT]', this.stat(stat)));
   }
 
   private clearboost(
@@ -1151,10 +1105,9 @@ export class TextParser implements Protocol.Handler<Output> {
     let templateId = 'clearBoost';
     if (kwArgs.zeffect) templateId = 'clearBoostFromZEffect';
     const template = this.template(templateId, kwArgs.from);
-    return this.out(line1 + template
+    return (line1 + template
       .replace('[POKEMON]', this.pokemon(pokemon))
-      .replace('[SOURCE]', this.pokemon(source)),
-      args, kwArgs);
+      .replace('[SOURCE]', this.pokemon(source)));
   }
 
   private effectiveness(
@@ -1166,7 +1119,7 @@ export class TextParser implements Protocol.Handler<Output> {
     if (templateId === 'supereffective') templateId = 'superEffective';
     if (kwArgs.spread) templateId += 'Spread';
     const template = this.template(templateId);
-    return this.out(template.replace('[POKEMON]', this.pokemon(pokemon)), args, kwArgs);
+    return template.replace('[POKEMON]', this.pokemon(pokemon));
   }
 
   private mega(args: Args['-mega' | '-primal']) {
@@ -1186,10 +1139,9 @@ export class TextParser implements Protocol.Handler<Output> {
       const template2 = this.template('transformMega');
       template += template2.replace('[POKEMON]', pokemonName).replace('[SPECIES]', species);
     }
-    return this.out(template
+    return (template
       .replace('[POKEMON]', pokemonName)
       .replace('[ITEM]', item)
-      .replace('[TRAINER]', this.trainer(side)),
-      args);
+      .replace('[TRAINER]', this.trainer(side)));
   }
 }
