@@ -57,6 +57,7 @@ export namespace Protocol {
   export type Seed = string & As<'Seed'>;
   export type Slots = string & As<'Slots'>;
   export type Types = string & As<'Types'>;
+  export type Nickname = string & As<'Nickname'>;
 
   export type Reason = StatusName | 'partiallytrapped' | 'flinch' | 'nopp' | 'recharge';
 
@@ -378,13 +379,14 @@ export namespace Protocol {
     'upkeep': true;
     'weak': true;
     'weaken': true;
-    'wisher': true;
+    'wisher': Nickname;
     'zeffect': true;
   } & {
     'already': true;
     'anim': 'prepare';
     'identify': true;
     'interrupt': true;
+    'multiple': true;
     'partiallytrapped': true;
     'prepare': true;
   };
@@ -400,6 +402,8 @@ export namespace Protocol {
     '-ability': GeneralKWArgs | 'move' | 'weaken';
     '-block': GeneralKWArgs;
     '-boost': GeneralKWArgs | 'zeffect';
+    '-copyboost': GeneralKWArgs;
+    '-clearallboost': GeneralKWArgs;
     '-clearnegativeboost': GeneralKWArgs | 'zeffect';
     '-crit': 'spread';
     '-curestatus': GeneralKWArgs| 'thaw' | 'msg';
@@ -415,6 +419,7 @@ export namespace Protocol {
     '-immune': GeneralKWArgs | 'ohko';
     '-invertboost': GeneralKWArgs;
     '-item': GeneralKWArgs | 'identify';
+    '-miss': GeneralKWArgs;
     '-resisted': 'spread';
     '-setboost': GeneralKWArgs;
     '-sethp': GeneralKWArgs;
@@ -646,7 +651,8 @@ export const Protocol = new class {
     '-setboost':1, '-swapboost':1, '-invertboost':1, '-clearnegativeboost':1, '-weather':1,
     '-fieldend':1, '-sideend':1, '-start':1, '-end':1, '-crit':1, '-supereffective':1,
     '-resisted':1, '-immune':1, '-item':1, '-enditem':1, '-ability':1, '-endability':1,
-    '-transform':1,  '-activate':1, '-singleturn':1, 'switchout':1,
+    '-transform':1,  '-activate':1, '-singleturn':1, 'switchout':1, '-miss': 1, '-clearallboost': 1,
+    '-copyboost': 1,
   };
   /* eslint-enable key-spacing */
 
