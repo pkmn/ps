@@ -1,10 +1,9 @@
 import {Dex, ModdedDex, ID, SideID} from '@pkmn/sim';
 import {Protocol, Protocol as P, Message, PokemonIdent, PokemonSearchID} from '@pkmn/protocol';
-import {GenerationNum, GameType} from '@pkmn/types';
+import {GenerationNum, GameType, GenderName} from '@pkmn/types';
 
 import {Field} from './field';
 import {Side} from './side';
-import {Pokemon} from './pokemon';
 
 // interface FaintedPokemon {
 //  target: Pokemon;
@@ -332,7 +331,7 @@ export class Battle {
     if (siden < 0) throw new Error("Invalid pokemonid passed to getPokemon");
 
     let species = name;
-    let gender = '';
+    let gender: GenderName | '' = '';
     let level = 100;
     let shiny = false;
     if (details) {
@@ -342,7 +341,7 @@ export class Battle {
         splitDetails.pop();
       }
       if (splitDetails[splitDetails.length - 1] === 'M' || splitDetails[splitDetails.length - 1] === 'F') {
-        gender = splitDetails[splitDetails.length - 1];
+        gender = splitDetails[splitDetails.length - 1] as GenderName;
         splitDetails.pop();
       }
       if (splitDetails[1]) {
@@ -354,28 +353,31 @@ export class Battle {
     }
     if (slot < 0) slot = 0;
     const pokemon = this.sides[siden].addPokemon({
-      species,
       details,
       name,
-      ident: (name ? pokemonid : ''),
-      searchid: (name ? (pokemonid + '|' + details) : ''),
+      species,
       level,
-      gender,
       shiny,
-      slot,
+      gender,
+      ident: (name ? pokemonid : '') as PokemonIdent,
+      searchid: (name ? (`${pokemonid}|${details}`) : '') as PokemonSearchID,
     }, isNew ? -2 : -1);
+    pokemon.slot = slot;
     return pokemon;
   }
 
   destroy() {
     this.field.destroy();
-    (this.field) = null!;
+    // @ts-ignore readonly
+    this.field = null!;
 
     for (let i = 0; i < this.sides.length; i++) {
       if (this.sides[i]) this.sides[i].destroy();
       this.sides[i] = null!;
     }
-    (this.p1) = null!;
-    (this.p2) = null!;
+    // @ts-ignore readonly
+    this.p1 = null!;
+    // @ts-ignore readonly
+    this.p2 = null!;
   }
 }

@@ -1,5 +1,4 @@
 import {ID, toID} from '@pkmn/sim';
-import {Protocol} from '@pkmn/protocol';
 import {As, Weather} from '@pkmn/types';
 
 import {Battle} from './battle';
@@ -99,6 +98,7 @@ export class Field {
   }
 
   destroy() {
-    (this.battle) = null!;
+    // @ts-ignore readonly
+    this.battle = null!;
   }
 }

@@ -25,7 +25,7 @@ export class Side {
 
   name: Username | '';
   avatar: Avatar | 'unknown';
-  foe: Side;
+  foe!: Side;
 
   rating: string;
   totalPokemon: number;
@@ -55,7 +55,6 @@ export class Side {
 
     this.name = '';
     this.avatar = 'unknown';
-    this.foe = null!;
     this.rating = '';
     this.totalPokemon = 6;
     this.missedPokemon = null!;
@@ -209,7 +208,7 @@ export class Side {
     pokemon.clearVolatile();
     pokemon.lastMove = '';
     this.battle.lastMove = 'switch-in';
-    // @typescript-eslint/no-non-null-asserted-optional-chain
+    // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
     if (['batonpass', 'zbatonpass'].includes(this.lastPokemon?.lastMove!)) {
       pokemon.copyVolatileFrom(this.lastPokemon!);
     }
@@ -305,7 +304,8 @@ export class Side {
 
   destroy() {
     this.clearPokemon();
-    (this.battle) = null!;
+    // @ts-ignore readonly
+    this.battle = null!;
     this.foe = null!;
   }
 }

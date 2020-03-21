@@ -1,4 +1,4 @@
-import {ID, toID, Move} from '@pkmn/sim';
+import {ID, toID, Ability, Move, PureEffect} from '@pkmn/sim';
 import {StatusName, GenderName, HPColor, BoostsTable, TypeName} from '@pkmn/types';
 import {
   Protocol as P,
@@ -143,15 +143,15 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   turnstatuses: EffectTable;
   movestatuses: EffectTable;
 
-  ability: P.Ability | '';
-  baseAbility: P.Ability | '';
+  ability: ID;
+  baseAbility: ID;
 
-  item: P.Item | '';
+  item: ID;
   itemEffect: string; // FIXME ???
-  lastItem: P.Item | '';
+  lastItem: ID;
   lastItemEffect: string; // FIXME ???
 
-  moves: P.Move[];
+  moves: ID[];
   // [[moveName, ppUsed]]
   moveTrack: [string, number][] = [];
   lastMove: ID | '';
@@ -204,16 +204,16 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     ) as PokemonIdent;
   }
 
-  isActive() {
-    return this.side.active.includes(this);
-  }
-
   getHPColor(): HPColor {
-    if (this.hpcolor) return this.hpcolor; // TODO ????
+    if (this.hpcolor) return this.hpcolor;
     const ratio = this.hp / this.maxhp;
     if (ratio > 0.5) return 'g';
     if (ratio > 0.2) return 'y';
     return 'r';
+  }
+
+  isActive() {
+    return this.side.active.includes(this);
   }
 
   healthParse(hpstring: string, parsedamage?: boolean, heal?: boolean):
@@ -252,7 +252,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     let oldmaxhp = this.maxhp;
     const oldcolor = this.hpcolor;
 
-    Protocol.parseHealth(hpstring, this); // FIXME
+    Protocol.parseHealth(hpstring as P.PokemonHealth, this);
     // max hp not known before parsing this message
     if (oldmaxhp === 0) oldmaxhp = oldhp = this.maxhp;
     const oldnum = oldhp ? (Math.floor(this.maxhp * oldhp / oldmaxhp) || 1) : 0;
@@ -359,10 +359,10 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     this.moveTrack.push([moveName, pp]);
   }
 
-  // FIXME
   useMove(move: Move, target: Pokemon | null, kwArgs: KWArgs['|move|']) {
-    const fromeffect = Dex.getEffect(kwArgs.from);
-    this.activateAbility(fromeffect);
+    const dex = this.side.battle.dex;
+    const fromeffect = dex.getEffect(kwArgs.from) as Ability | PureEffect;
+    this.activateAbility(fromeffect as Effect);
     this.clearMovestatuses();
     if (move.id === 'focuspunch') {
       this.removeTurnstatus('focuspunch' as ID);
@@ -372,15 +372,18 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     } else if (!fromeffect.id || fromeffect.id === 'pursuit') {
       let moveName = move.name;
       if (move.isZ) {
-        this.item = move.isZ;
-        const item = Dex.getItem(move.isZ);
+        const isZ = move.isZ as ID;
+        this.item = isZ;
+        const item = dex.getItem(isZ);
         if (item.zMoveFrom) moveName = item.zMoveFrom;
       } else if (move.name.slice(0, 2) === 'Z-') {
         moveName = moveName.slice(2);
-        move = Dex.getMove(moveName);
-        if (window.BattleItems) {
-          for (const item in BattleItems) {
-            if (BattleItems[item].zMoveType === move.type) this.item = item;
+        move = dex.getMove(moveName);
+        // TODO: use a cached lookup table instead of looping...
+        for (const item in dex.data.Items) {
+          if (dex.getItem(item).zMoveType === move.type) {
+            this.item = item as ID;
+            break;
           }
         }
       }
@@ -425,10 +428,9 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   }
 
   rememberAbility(ability: string, isNotBase?: boolean) {
-    ability = this.side.battle.dex.getAbility(ability).name;
-    this.ability = ability as P.Ability;
+    this.ability = this.side.battle.dex.getAbility(ability).id;
     if (!this.baseAbility && !isNotBase) {
-      this.baseAbility = ability as P.Ability;
+      this.baseAbility = this.ability;
     }
   }
 
@@ -565,6 +567,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   }
 
   destroy() {
-    (this.side) = null!;
+    // @ts-ignore readonly
+    this.side = null!;
   }
 }
