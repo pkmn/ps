@@ -1475,8 +1475,8 @@ export interface PokemonModData {
 }
 
 export interface Nature {
-  name: string;
-  plus?: keyof StatsTable;
-  minus?: keyof StatsTable;
-  [k: string]: any;
+	name: string;
+	plus?: keyof StatsTable;
+	minus?: keyof StatsTable;
+	[k: string]: any;
 }

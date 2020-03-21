@@ -1,4 +1,17 @@
-import {Format, StatsTable, SparseStatsTable, Template, AnyObject, Move, EventInfo, PokemonSet, Ability, Item, ID, ModdedDex} from './exported-global-types';
+import {
+	Format,
+	StatsTable,
+	SparseStatsTable,
+	Template,
+	AnyObject,
+	Move,
+	EventInfo,
+	PokemonSet,
+	Ability,
+	Item,
+	ID,
+	ModdedDex,
+} from './exported-global-types';
 /**
  * Team Validator
  * Pokemon Showdown - http://pokemonshowdown.com/
@@ -1197,7 +1210,7 @@ export class TeamValidator {
 			}
 		}
 
-		const tier = tierTemplate.tier === '(PU)' ? 'ZU' : tierTemplate.tier;
+		const tier = tierTemplate.tier === '(PU)' ? 'ZU' : tierTemplate.tier === '(NU)' ? 'PU' : tierTemplate.tier;
 		const tierTag = 'pokemontag:' + toID(tier);
 		setHas[tierTag] = true;
 

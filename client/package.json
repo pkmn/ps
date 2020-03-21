@@ -9,6 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "@pkmn/protocol": "file:../protocol",
+    "@pkmn/types": "file:../types",
     "@pkmn/sim": "file:../sim"
   },
   "devDependencies": {

@@ -1,4 +1,13 @@
-import {AnyObject, Effect, ActiveMove, Format, Ability, PureEffect, Item, PokemonSet, Battle, Move, SideID} from './exported-global-types';
+import {
+	AnyObject,
+	Effect,
+	ActiveMove,
+	PureEffect,
+	PokemonSet,
+	Battle,
+	Move,
+	SideID,
+} from './exported-global-types';
 /**
  * Simulator Side
  * Pokemon Showdown - http://pokemonshowdown.com/

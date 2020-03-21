@@ -40,10 +40,10 @@ const exec = async (cmd, cwd = __dirname) => {
   });
 };
 
-const execOrDie = async (cmd, cwd = __dirname) => {
+const execOrDie = async (cmd, cwd = __dirname, ignoreStderr = false) => {
   console.log(cmd);
   const [error, stdout, stderr ]= await exec(cmd, cwd);
-  if (error || stderr) {
+  if (error || (!ignoreStderr && stderr)) {
     console.error(stderr);
     process.exit(error);
   }
@@ -105,18 +105,16 @@ const IMPORTS = {
   ],
   'sim/field.ts': ['Effect', 'PureEffect', 'Pokemon', 'Battle', 'Side', 'AnyObject', 'ID'],
   'sim/pokemon.ts': [
-    'ActiveMove', 'Format', 'Ability', 'PureEffect', 'Item', 'Template', 'SparseBoostsTable',
-    'AnyObject', 'DynamaxOptions', 'Move', 'StatNameExceptHP', 'PokemonModData',
+    'ActiveMove', 'Ability', 'PureEffect', 'Item', 'Template', 'SparseBoostsTable', 'Side',
+    'AnyObject', 'DynamaxOptions', 'Move', 'StatNameExceptHP', 'PokemonModData', 'Effect',
     'StatsExceptHPTable', 'ID', 'BoostsTable', 'StatsTable', 'GenderName', 'PokemonSet', 'Battle',
-    'Side', 'Effect',
   ],
   'sim/side.ts': [
-    'AnyObject', 'Effect', 'ActiveMove', 'Format', 'Ability', 'PureEffect',
-    'Item', 'PokemonSet', 'Battle', 'Move', 'SideID'
+    'AnyObject', 'Effect', 'ActiveMove', 'PureEffect', 'PokemonSet', 'Battle', 'Move', 'SideID',
   ],
   'sim/team-validator.ts': [
     'Format', 'StatsTable', 'SparseStatsTable', 'Template', 'AnyObject', 'Move',
-    'EventInfo', 'PokemonSet', 'Ability', 'Item', 'ID', 'ModdedDex'
+    'EventInfo', 'PokemonSet', 'Ability', 'Item', 'ID', 'ModdedDex',
   ],
   'sim/tools/random-player-ai.ts': ['AnyObject'],
 };
@@ -124,11 +122,11 @@ const IMPORTS = {
 // This is actually in sim/dex.ts and really should be in sim/global-types.ts
 const NATURE = `
 export interface Nature {
-  name: string;
-  plus?: keyof StatsTable;
-  minus?: keyof StatsTable;
-  [k: string]: any;
-}`;
+\tname: string;
+\tplus?: keyof StatsTable;
+\tminus?: keyof StatsTable;
+\t[k: string]: any;
+}\n`;
 
 // All the files in our sim/ directory, excluding build/ & node_modules/
 const FILES = new Set(tree(sim).map(m => m.slice(sim.length + 1)));
@@ -176,7 +174,7 @@ const interesting = f => {
 (async () => {
   // `git -C vendor/pokemon-showdown pull origin master` would also work because we only have
   // a single submodule, but this is technically 'more correct'
-  await execOrDie('git submodule update --remote --rebase');
+  await execOrDie('git submodule update --remote --rebase', __dirname, true);
   // Checking in HEAD's hash isn't required, but its makes some things more convenient
   const now = (await execOrDie('git rev-parse HEAD', submodule)).slice(0, 8);
   const last = fs.readFileSync(HEAD, 'utf-8').trim();
@@ -206,7 +204,7 @@ const interesting = f => {
       const prefix = file.startsWith('sim/tools/') ? '..' : '.';
       const original = fs.readFileSync(path.resolve(submodule, file), 'utf8');
       fs.writeFileSync(path.resolve(sim, file),
-        `import {${IMPORTS[file].join(', ')}} from '${prefix}/exported-global-types';\n` +
+        `import {\n\t${IMPORTS[file].join(',\n\t')},\n} from '${prefix}/exported-global-types';\n` +
         `${original}`
       );
     } else {

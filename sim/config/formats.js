@@ -627,7 +627,10 @@ let Formats = [
 
 		mod: 'gen8',
 		ruleset: ['[Gen 8] Ubers', 'Dynamax Clause'],
-		banlist: ['Darmanitan-Galar', 'Gastly', 'Arena Trap', 'Drizzle', 'Drought', 'Huge Power', 'Moody', 'Shadow Tag', 'Baton Pass', 'Rain Dance', 'Sunny Day', 'Eviolite', 'Light Ball'],
+		banlist: [
+			'Crawdaunt', 'Darmanitan', 'Darmanitan-Galar', 'Darumaka', 'Darumaka-Galar', 'Gastly',
+			'Arena Trap', 'Drizzle', 'Drought', 'Huge Power', 'Moody', 'Shadow Tag', 'Baton Pass', 'Rain Dance', 'Sunny Day', 'Eviolite', 'Light Ball',
+		],
 		onModifyTemplate(template, target, source) {
 			const newTemplate = this.dex.deepClone(template);
 			newTemplate.baseStats = this.dex.deepClone(newTemplate.baseStats);
@@ -1964,15 +1967,7 @@ let Formats = [
 		mod: 'gen5',
 		searchShow: false,
 		ruleset: ['[Gen 5] NU'],
-		banlist: [
-			'Alomomola', 'Altaria', 'Ampharos', 'Armaldo', 'Basculin', 'Bastiodon', 'Braviary', 'Cacturne', 'Camerupt',
-			'Carracosta', 'Charizard', 'Combusken', 'Cradily', 'Ditto', 'Drifblim', 'Eelektross', 'Electabuzz', 'Electrode',
-			'Exeggutor', 'Floatzel', 'Garbodor', 'Gardevoir', 'Gigalith', 'Golbat', 'Golem', 'Golurk', 'Gorebyss', 'Gurdurr',
-			'Haunter', 'Jynx', 'Kadabra', 'Kangaskhan', 'Lapras', 'Lickilicky', 'Liepard', 'Linoone', 'Ludicolo', 'Mandibuzz',
-			'Metang', 'Miltank', 'Misdreavus', 'Musharna', 'Ninjask', 'Piloswine', 'Pinsir', 'Primeape', 'Probopass', 'Regice',
-			'Regirock', 'Roselia', 'Rotom-Fan', 'Rotom-Frost', 'Samurott', 'Sawk', 'Sawsbuck', 'Scolipede', 'Seismitoad',
-			'Serperior', 'Skuntank', 'Swellow', 'Tangela', 'Tauros', 'Torkoal', 'Wartortle', 'Weezing', 'Zangoose',
-		],
+		banlist: ['NU'],
 	},
 	{
 		name: "[Gen 5] LC",

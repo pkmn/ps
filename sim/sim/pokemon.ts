@@ -1,4 +1,25 @@
-import {ActiveMove, Format, Ability, PureEffect, Item, Template, SparseBoostsTable, AnyObject, DynamaxOptions, Move, StatNameExceptHP, PokemonModData, StatsExceptHPTable, ID, BoostsTable, StatsTable, GenderName, PokemonSet, Battle, Side, Effect} from './exported-global-types';
+import {
+	ActiveMove,
+	Ability,
+	PureEffect,
+	Item,
+	Template,
+	SparseBoostsTable,
+	Side,
+	AnyObject,
+	DynamaxOptions,
+	Move,
+	StatNameExceptHP,
+	PokemonModData,
+	Effect,
+	StatsExceptHPTable,
+	ID,
+	BoostsTable,
+	StatsTable,
+	GenderName,
+	PokemonSet,
+	Battle,
+} from './exported-global-types';
 /**
  * Simulator Pokemon
  * Pokemon Showdown - http://pokemonshowdown.com/
