@@ -4,8 +4,8 @@ import {Battle} from './battle';
 export class Handler implements Protocol.Handler {
   readonly battle: Battle;
 
-  constructor(id: Protocol.RoomID) {
-    this.battle = new Battle(id);
+  constructor(battle: Battle) {
+    this.battle = battle;
   }
 
   '|init|'(args: Args['|init|']) { }

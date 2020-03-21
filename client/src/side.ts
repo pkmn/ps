@@ -1,9 +1,9 @@
-import { ID, toID, SideID } from '@pkmn/sim';
-import { Protocol as P, PokemonDetails } from '@pkmn/protocol';
-import { SideCondition } from '@pkmn/types';
+import {ID, toID, SideID} from '@pkmn/sim';
+import {Avatar, PokemonDetails, Username} from '@pkmn/protocol';
+import {SideCondition} from '@pkmn/types';
 
-import { Battle } from './battle';
-import { Pokemon } from './pokemon';
+import {Battle} from './battle';
+import {Pokemon} from './pokemon';
 
 export interface Effect {
   readonly id: ID;
@@ -31,8 +31,8 @@ export class Side {
   readonly n: number;
   id: SideID;
 
-  name: P.Username | '';
-  avatar: P.Avatar | 'unknown';
+  name: Username | '';
+  avatar: Avatar | 'unknown';
   foe: Side;
 
   rating: string;
@@ -48,7 +48,15 @@ export class Side {
 
   wisher: Pokemon | null;
 
-  constructor(battle: Battle, n: number) {
+  private readonly provider: (s: Side, d: PokemonDetails) => Pokemon;
+
+  constructor(
+    battle: Battle,
+    n: number,
+    provider = (s: Side, d: PokemonDetails) => new Pokemon(s, d)
+  ) {
+    this.provider = provider;
+
     this.battle = battle;
     this.n = n;
     this.id = ['p1', 'p2', 'p3', 'p4'][n] as SideID;
@@ -81,11 +89,11 @@ export class Side {
     this.sideConditions = {};
   }
 
-  setAvatar(avatar: P.Avatar) {
+  setAvatar(avatar: Avatar) {
     this.avatar = avatar;
   }
 
-  setName(name: P.Username, avatar?: P.Avatar) {
+  setName(name: Username, avatar?: Avatar) {
     if (name) this.name = name;
     this.id = toID(this.name) as SideID;
     if (avatar) this.setAvatar(avatar);
@@ -127,8 +135,8 @@ export class Side {
     delete this.sideConditions[id];
   }
 
-  newPokemon(details: PokemonDetails, replaceSlot = -1) {
-    let poke = new Pokemon(this, details);
+  addPokemon(details: PokemonDetails, replaceSlot = -1) {
+    let poke = this.provider(this, details);
     if (!poke.ability && poke.baseAbility) poke.ability = poke.baseAbility;
     poke.reset();
 

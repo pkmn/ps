@@ -1,6 +1,13 @@
 import { ID, toID } from '@pkmn/sim';
 import { StatusName, GenderName, HPColor, BoostsTable, TypeName } from '@pkmn/types';
-import { PokemonDetails, PokemonHealth, Protocol as P } from '@pkmn/protocol';
+import {
+  Protocol as P,
+  Protocol,
+  PokemonDetails,
+  PokemonHealth,
+  PokemonIdent,
+  PokemonSearchID
+} from '@pkmn/protocol';
 
 import { Side } from './side';
 
@@ -111,8 +118,8 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   level: number;
   shiny: boolean;
   gender: GenderName | '';
-  readonly originalIdent: P.PokemonIdent;
-  searchid: P.PokemonSearchID;
+  readonly originalIdent: PokemonIdent;
+  searchid: PokemonSearchID;
 
   hp: number;
   maxhp: number;
@@ -131,17 +138,17 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   baseAbility: P.Ability | '';
 
   item: P.Item | '';
-  itemEffect = ''; // FIXME
+  itemEffect: string; // FIXME ???
   lastItem: P.Item | '';
-  lastItemEffect = ''; // FIXME
+  lastItemEffect: string; // FIXME ???
 
   moves: P.Move[];
   // [[moveName, ppUsed]]
   moveTrack: [string, number][] = [];
-  lastMove: P.Move | '';
+  lastMove: ID | '';
 
   constructor(side: Side, details: PokemonDetails) {
-     this.side = side
+    this.side = side
     this.slot = 0;
 
     this.species = details.species;
@@ -171,7 +178,9 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     this.baseAbility = '';
 
     this.item = '';
+    this.itemEffect = '';
     this.lastItem = '';
+    this.lastItemEffect = '';
 
     this.moves = [];
     this.moveTrack = [];
@@ -183,7 +192,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
       this.originalIdent.substr(0, 2) +
       SLOTS[this.slot] +
       this.originalIdent.substr(2)
-    ) as P.PokemonIdent;
+    ) as PokemonIdent;
   }
 
   isActive() {
@@ -234,7 +243,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     let oldmaxhp = this.maxhp;
     const oldcolor = this.hpcolor;
 
-    this.side.battle.parseHealth(hpstring, this);
+    Protocol.parseHealth(hpstring, this);
     // max hp not known before parsing this message
     if (oldmaxhp === 0) oldmaxhp = oldhp = this.maxhp;
     const oldnum = oldhp ? (Math.floor(this.maxhp * oldhp / oldmaxhp) || 1) : 0;
@@ -320,7 +329,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     this.clearMovestatuses();
   }
 
-  rememberMove(moveName: string, pp = 1, recursionSource?: P.PokemonIdent) {
+  rememberMove(moveName: string, pp = 1, recursionSource?: PokemonIdent) {
     if (recursionSource === this.ident) return;
     moveName = this.side.battle.dex.getMove(moveName).name;
     if (moveName.charAt(0) === '*') return;
@@ -462,11 +471,11 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   }
 
   getTemplate(serverPokemon?: ServerPokemon) {
-    return this.dex.getTemplate(this.getSpecies(serverPokemon));
+    return this.side.battle.dex.getTemplate(this.getSpecies(serverPokemon));
   }
 
   getBaseTemplate() {
-    return this.dex.getTemplate(this.species);
+    return this.side.battle.dex.getTemplate(this.species);
   }
 
   reset() {
