@@ -1,6 +1,33 @@
 #!/usr/bin/env node
 'use strict';
 
+// This script imports the latest code from smogon/pokemon-showdown and generates a workable
+// module from it. At a high level, this involves copying files from PS's `sim/` directory (after
+// performing some minor modifications) into an existing tree with the correct `package.json` and
+// other configuration. Relevant tests are copied as well to ensure integrity of the final package.
+// However, the main complications are:
+//
+//   - internally the simulator relies on global ambient types which work to compile a
+//     standalone application but which are useless to downstream developers attempting to use this
+//     as a library as part of their own application. As such, we need to mirror and modify the
+//     `sim/global-types.ts` file to export all of its types *and* add imports to all of the files
+//     under `sim/` (ie. any `.ts` files depending on global types - the `data/` files are
+//     currently not required to have ///-references to work).
+//   - `sim/dex.ts` has to have its loading reworked to depend on everything up front so that it can
+//     be used in a browser environment where synchronous `require`` and `fs` APIs don't exist.
+//
+// The general steps for updating this package to smogon/pokemon-showdown@HEAD are:
+//
+//   1. run `./import`, look at which files were changed.
+//     a. if `sim/dex.ts` (or another forked file) changed, manually port the changes over
+//   2. run `subpkg sim test`, ensure everything compiles and all of the copied unit tests pass
+//   3. run `subpkg client test`, ensure consumers can use the new sim package
+//   4. `cd sim && npm version patch` to bump the version
+//   5. `git add -A && git commit -m "Import smogon/pokemon-showdown@$(cat HEAD)"`
+//   6. `npm publish --access public` from the `sim/` directory to publish `@pkmn/sim`
+//
+// If any of these steps fail, return the the beginning with `./import` and run through them again.
+
 const child_process = require('child_process');
 const fs = require('fs');
 const path = require('path');
@@ -94,6 +121,7 @@ const IMPORTS = {
   'sim/tools/random-player-ai.ts': ['AnyObject'],
 };
 
+// This is actually in sim/dex.ts and really should be in sim/global-types.ts
 const NATURE = `
 export interface Nature {
   name: string;
@@ -102,13 +130,15 @@ export interface Nature {
   [k: string]: any;
 }`;
 
+// All the files in our sim/ directory, excluding build/ & node_modules/
 const FILES = new Set(tree(sim).map(m => m.slice(sim.length + 1)));
+// Files which need special attention if changed
 const FRAGILE = new Set([
   'sim/dex.ts',
-  'sim/exported-global-types.ts',
-  'sim/global-types.ts',
   'sim/global-variables.d.ts',
 ])
+// Files which we want to prevent being copied over from PS, either because of modifications or
+// because they only exist in the generated package
 const OVERRIDDEN = new Set([
   ...FRAGILE,
   '.eslintcache',
@@ -124,6 +154,7 @@ const OVERRIDDEN = new Set([
   'data/mods/gen5/index.ts',
   'data/mods/gen6/index.ts',
   'data/mods/gen7/index.ts',
+  'sim/exported-global-types.ts',
   'package.json',
   'README.md',
   'sim/index.ts',
@@ -131,8 +162,11 @@ const OVERRIDDEN = new Set([
   'test/sim/misc/statuses.js',
   'tsconfig.json',
 ]);
+// Any file that hasn't been 'OVERRIDDEN' we need to copy over from PS
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
 
+// Pretty much all changes within sim/ and data/ are interesting to review, whether copied or not.
+// This mostly exists to help detect when *new* files are added which may need to be included
 const interesting = f => {
   if (f.startsWith('sim') || f.startsWith('test/sim')) return true;
   if (f.startsWith('data') && !f.endsWith('random-teams.js')) return true;
@@ -140,23 +174,34 @@ const interesting = f => {
 }
 
 (async () => {
+  // `git -C vendor/pokemon-showdown pull origin master` would also work because we only have
+  // a single submodule, but this is technically 'more correct'
   await execOrDie('git submodule update --remote --rebase');
+  // Checking in HEAD's hash isn't required, but its makes some things more convenient
   const now = (await execOrDie('git rev-parse HEAD', submodule)).slice(0, 8);
   const last = fs.readFileSync(HEAD, 'utf-8').trim();
 
-  const changed = (await execOrDie(`git diff --name-only ${last}..${now}`, submodule)).split
-  ('\n');
+  // Figure out what has changed in PS so that we can later filter out just the interesting changes
+  const changed = (
+    await execOrDie(`git diff --name-only ${last}..${now}`, submodule)
+  ).trim().split('\n');
+  // Log the GitHub link to the diff for convenience in the event review is required
   console.log(`https://github.com/smogon/pokemon-showdown/compare/${last}..${now}`);
   for (const change of changed) {
-    if (!change) continue;
     if (interesting(change)) {
-      const color = FRAGILE.has(change) ? 91 : OVERRIDDEN.has(change) ? 93 : 96;
+      // Even though we copy over `sim/global-types.ts` untouched, any changes to it will have a
+      // large effect on whether we're able to build an acceptable package
+      const color = (FRAGILE.has(change) || change ==='sim/global-types.ts')
+        ? 91 // red -> yellow -> lightblue
+        : OVERRIDDEN.has(change)? 93 : 96;
       console.log(`\x1b[${color}mCHANGED\x1b[0m ${change}`);
     }
   }
 
+  // Copy the files over, generating an 'import' statement for those that need it
   for (const file of COPIED) {
     if (IMPORTS[file]) {
+      // Handling arbitrary relative imports is overkill right now, bail
       if (!file.startsWith('sim/')) throw new Error('Unsupported import location');
       const prefix = file.startsWith('sim/tools/') ? '..' : '.';
       const original = fs.readFileSync(path.resolve(submodule, file), 'utf8');
@@ -169,6 +214,9 @@ const interesting = f => {
     }
   }
 
+  // Mirror `sim/global-types.ts` to export all of its types (making it a module). Its possible
+  // that ///-references could also be added to the data/ files and *nothing* then relies on
+  // ambient declarations, but this hack is the least involved way to get things to work
   const types = fs.readFileSync(path.resolve(submodule, 'sim/global-types.ts'), 'utf8');
   fs.writeFileSync(path.resolve(sim, 'sim/global-types.ts'), types);
   const exported = [];
@@ -180,6 +228,7 @@ const interesting = f => {
     `${exported.join('\n')}${NATURE}`
   );
 
+  // The test files require paths are made with PS's build layout in mind - correc that here
   await replace(path.join(sim, 'test'), [
     {regex: new RegExp(`(require\\\(.*?)(.sim-dist)(.*?\\\))`, 'g'), replace: `$1build/sim$3`},
   ]);
