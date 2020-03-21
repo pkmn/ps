@@ -106,7 +106,7 @@ const BattleNatures: {[k: string]: Nature} = {
 	timid: {name: "Timid", plus: 'spe', minus: 'atk'},
 };
 
-const toID = Data.Tools.getId;
+export const toID = Data.Tools.getId;
 
 export class ModdedDex {
 	readonly Data: typeof Data;

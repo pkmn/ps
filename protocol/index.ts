@@ -22,6 +22,7 @@ export namespace Protocol {
 
   export type PokemonIdent = string & As<'PokemonIdent'>;
   export type PokemonDetails = string & As<'PokemonDetails'>;
+  export type PokemonSearchID= string & As<'PokemonSearchID'>;
   export type PokemonHealth = string & As<'PokemonHealth'>;
   export type PokemonCondition= string & As<'PokemonCondition'>;
 
@@ -504,6 +505,7 @@ export namespace Protocol {
 export type PositionLetter = Protocol.PositionLetter;
 
 export type PokemonIdent = Protocol.PokemonIdent;
+export type PokemonSearchID = Protocol.PokemonSearchID;
 // NOTE: PokemonDetails alias is defined as the parsed type
 export type PokemonCondition = Protocol.PokemonCondition;
 // NOTE: PokemonHealth alias is defined as the parsed type
@@ -639,8 +641,8 @@ export interface PokemonDetails {
   level: number;
   shiny: boolean;
   gender: GenderName | '';
-  ident: string;
-  searchid: string;
+  ident: Protocol.PokemonIdent;
+  searchid: Protocol.PokemonSearchID;
 }
 
 function toID(s: string): ID {
@@ -800,8 +802,8 @@ export const Protocol = new class {
     output.level = 100;
     output.shiny = false;
     output.gender = '';
-    output.ident = name ? ident : '';
-    output.searchid = name ? `${ident}|${details}` : '';
+    output.ident = name ? ident : '' as Protocol.PokemonIdent;
+    output.searchid = (name ? `${ident}|${details}` : '') as Protocol.PokemonSearchID;
 
     const splitDetails = details.split(', ');
     if (splitDetails[splitDetails.length - 1] === 'shiny') {

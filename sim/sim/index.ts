@@ -4,7 +4,7 @@ global.toID = Dex.getId;
 
 export {Battle} from './battle';
 export {BattleStream} from './battle-stream';
-export {Dex} from './dex';
+export {Dex, toID} from './dex';
 export {Pokemon} from './pokemon';
 export {PRNG} from './prng';
 export {RandomPlayerAI} from './tools/random-player-ai';
