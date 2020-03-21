@@ -1,4 +1,4 @@
-import { ID, toID } from '@pkmn/sim';
+import { ID, toID, Move } from '@pkmn/sim';
 import { StatusName, GenderName, HPColor, BoostsTable, TypeName } from '@pkmn/types';
 import {
   Protocol as P,
@@ -6,22 +6,31 @@ import {
   PokemonDetails,
   PokemonHealth,
   PokemonIdent,
-  PokemonSearchID
+  PokemonSearchID,
+  KWArgs
 } from '@pkmn/protocol';
 
 import { Side } from './side';
 
-export interface MoveSlot {
-  id: ID;
-  move: string;
-  pp: number;
-  maxpp: number;
-  target?: string;
-  disabled: boolean | string;
-  disabledSource?: string;
-  used: boolean;
-  virtual?: boolean;
+export interface Effect {
+  readonly id: ID;
+  readonly name: string;
+  readonly gen: number;
+  readonly effectType: 'Item' | 'Move' | 'Ability' | 'Species' | 'Pure';
+  readonly exists: boolean;
 }
+
+// export interface MoveSlot {
+//   id: ID;
+//   move: string;
+//   pp: number;
+//   maxpp: number;
+//   target?: string;
+//   disabled: boolean | string;
+//   disabledSource?: string;
+//   used: boolean;
+//   virtual?: boolean;
+// }
 
 // [id, element?, ...misc]
 type EffectState = any[] & { 0: ID };
@@ -243,7 +252,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     let oldmaxhp = this.maxhp;
     const oldcolor = this.hpcolor;
 
-    Protocol.parseHealth(hpstring, this);
+    Protocol.parseHealth(hpstring, this); // FIXME
     // max hp not known before parsing this message
     if (oldmaxhp === 0) oldmaxhp = oldhp = this.maxhp;
     const oldnum = oldhp ? (Math.floor(this.maxhp * oldhp / oldmaxhp) || 1) : 0;
@@ -350,6 +359,71 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     this.moveTrack.push([moveName, pp]);
   }
 
+  // FIXME
+  useMove(move: Move, target: Pokemon | null, kwArgs: KWArgs['|move|']) {
+    const fromeffect = Dex.getEffect(kwArgs.from);
+    this.activateAbility(fromeffect);
+    this.clearMovestatuses();
+    if (move.id === 'focuspunch') {
+      this.removeTurnstatus('focuspunch' as ID);
+    }
+    if (fromeffect.id === 'sleeptalk') {
+      this.rememberMove(move.name, 0);
+    } else if (!fromeffect.id || fromeffect.id === 'pursuit') {
+      let moveName = move.name;
+      if (move.isZ) {
+        this.item = move.isZ;
+        let item = Dex.getItem(move.isZ);
+        if (item.zMoveFrom) moveName = item.zMoveFrom;
+      } else if (move.name.slice(0, 2) === 'Z-') {
+        moveName = moveName.slice(2);
+        move = Dex.getMove(moveName);
+        if (window.BattleItems) {
+          for (let item in BattleItems) {
+            if (BattleItems[item].zMoveType === move.type) this.item = item;
+          }
+        }
+      }
+      let pp = 1;
+      if (move.target === "all") {
+        for (const active of this.side.foe.active) {
+          if (active && toID(active.ability) === 'pressure') {
+            pp += 1;
+          }
+        }
+      } else if (target && target.side !== this.side && toID(target.ability) === 'pressure') {
+        pp += 1;
+      }
+      this.rememberMove(moveName, pp);
+    }
+    this.lastMove = move.id;
+    this.side.battle.lastMove = move.id;
+    if (move.id === 'wish' || move.id === 'healingwish') {
+      this.side.wisher = this;
+    }
+  }
+
+  cantUseMove(effect: Effect, move: Move) {
+    this.clearMovestatuses();
+    this.activateAbility(effect);
+    if (move.id) this.rememberMove(move.name, 0);
+    switch (effect.id) {
+      case 'slp': return void this.statusData.sleepTurns++;
+      case 'focuspunch': return this.removeTurnstatus('focuspunch' as ID);
+      case 'shelltrap': return this.removeTurnstatus('shelltrap' as ID);
+      case 'flinch': return this.removeTurnstatus('focuspunch' as ID);
+    }
+  }
+
+  activateAbility(effectOrName: Effect | string, isNotBase?: boolean) {
+    if (!effectOrName) return;
+    if (typeof effectOrName !== 'string') {
+      if (effectOrName.effectType !== 'Ability') return;
+      effectOrName = effectOrName.name;
+    }
+    this.rememberAbility(effectOrName, isNotBase);
+  }
+
   rememberAbility(ability: string, isNotBase?: boolean) {
     ability = this.side.battle.dex.getAbility(ability).name;
     this.ability = ability as P.Ability;
@@ -427,7 +501,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     if (this.volatiles.typechange) {
       types = this.volatiles.typechange[1].split('/');
     } else {
-      types = this.getTemplate(serverPokemon).types;
+      types = this.getTemplate(serverPokemon).types as TypeName[];
     }
     if (this.volatiles.roost && types.includes('Flying')) {
       types = types.filter(typeName => typeName !== 'Flying');
@@ -439,7 +513,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
 
   isGrounded(serverPokemon?: ServerPokemon) {
     const battle = this.side.battle;
-    if (battle.hasPseudoWeather('Gravity')) {
+    if (battle.field.hasPseudoWeather('Gravity')) {
       return true;
     } else if (this.volatiles['ingrain'] && battle.gen >= 4) {
       return true;
@@ -449,7 +523,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
 
     let item = toID(serverPokemon ? serverPokemon.item : this.item);
     const ability = toID(this.ability || serverPokemon?.ability);
-    if (battle.hasPseudoWeather('Magic Room') || this.volatiles['embargo'] || ability === 'klutz') {
+    if (battle.field.hasPseudoWeather('Magic Room') || this.volatiles['embargo'] || ability === 'klutz') {
       item = '' as ID;
     }
 

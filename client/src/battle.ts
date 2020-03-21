@@ -1,9 +1,9 @@
-import { Dex, ModdedDex, ID, toID, Move, SideID } from '@pkmn/sim';
-import { Protocol, Protocol as P, KWArgs, Message, PokemonIdent, PokemonSearchID } from '@pkmn/protocol';
+import { Dex, ModdedDex, ID, SideID } from '@pkmn/sim';
+import { Protocol, Protocol as P, Message, PokemonIdent, PokemonSearchID } from '@pkmn/protocol';
 import { GenerationNum, GameType } from '@pkmn/types';
 
 import { Field } from './field';
-import { Side, Effect } from './side';
+import { Side } from './side';
 import { Pokemon } from './pokemon';
 
 // interface FaintedPokemon {
@@ -133,73 +133,6 @@ export class Battle {
         if (poke?.status === 'tox') poke.statusData.toxicTurns++;
       }
     }
-  }
-
-  // TODO: pokemon
-  useMove(pokemon: Pokemon, move: Move, target: Pokemon | null, kwArgs: KWArgs['|move|']) {
-    const fromeffect = Dex.getEffect(kwArgs.from);
-    this.activateAbility(pokemon, fromeffect);
-    pokemon.clearMovestatuses();
-    if (move.id === 'focuspunch') {
-      pokemon.removeTurnstatus('focuspunch' as ID);
-    }
-    if (fromeffect.id === 'sleeptalk') {
-      pokemon.rememberMove(move.name, 0);
-    } else if (!fromeffect.id || fromeffect.id === 'pursuit') {
-      let moveName = move.name;
-      if (move.isZ) {
-        pokemon.item = move.isZ;
-        let item = Dex.getItem(move.isZ);
-        if (item.zMoveFrom) moveName = item.zMoveFrom;
-      } else if (move.name.slice(0, 2) === 'Z-') {
-        moveName = moveName.slice(2);
-        move = Dex.getMove(moveName);
-        if (window.BattleItems) {
-          for (let item in BattleItems) {
-            if (BattleItems[item].zMoveType === move.type) pokemon.item = item;
-          }
-        }
-      }
-      let pp = 1;
-      if (move.target === "all") {
-        for (const active of pokemon.side.foe.active) {
-          if (active && toID(active.ability) === 'pressure') {
-            pp += 1;
-          }
-        }
-      } else if (target && target.side !== pokemon.side && toID(target.ability) === 'pressure') {
-        pp += 1;
-      }
-      pokemon.rememberMove(moveName, pp);
-    }
-    pokemon.lastMove = move.id;
-    this.lastMove = move.id;
-    if (move.id === 'wish' || move.id === 'healingwish') {
-      pokemon.side.wisher = pokemon;
-    }
-  }
-
-  // TODO: pokemon
-  cantUseMove(pokemon: Pokemon, effect: Effect, move: Move) {
-    pokemon.clearMovestatuses();
-    this.activateAbility(pokemon, effect);
-    if (move.id) pokemon.rememberMove(move.name, 0);
-    switch (effect.id) {
-      case 'slp': return void pokemon.statusData.sleepTurns++;
-      case 'focuspunch': return pokemon.removeTurnstatus('focuspunch' as ID);
-      case 'shelltrap': return pokemon.removeTurnstatus('shelltrap' as ID);
-      case 'flinch': return pokemon.removeTurnstatus('focuspunch' as ID);
-    }
-  }
-
-  // TODO: pokemon
-  activateAbility(pokemon: Pokemon | null, effectOrName: Effect | string, isNotBase?: boolean) {
-    if (!pokemon || !effectOrName) return;
-    if (typeof effectOrName !== 'string') {
-      if (effectOrName.effectType !== 'Ability') return;
-      effectOrName = effectOrName.name;
-    }
-    pokemon.rememberAbility(effectOrName, isNotBase);
   }
 
   parsePokemonId(pokemonid: PokemonIdent | SideID) {

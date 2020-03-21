@@ -3,15 +3,7 @@ import {Avatar, PokemonDetails, Username} from '@pkmn/protocol';
 import {SideCondition} from '@pkmn/types';
 
 import {Battle} from './battle';
-import {Pokemon} from './pokemon';
-
-export interface Effect {
-  readonly id: ID;
-  readonly name: string;
-  readonly gen: number;
-  readonly effectType: 'Item' | 'Move' | 'Ability' | 'Species' | 'Pure';
-  readonly exists: boolean;
-}
+import {Pokemon, Effect} from './pokemon';
 
 export class Side {
   // maxTeamSize: number;

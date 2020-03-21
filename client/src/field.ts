@@ -3,8 +3,7 @@ import {Protocol} from '@pkmn/protocol';
 import { As, Weather } from '@pkmn/types';
 
 import { Battle } from './battle';
-import { Pokemon } from './pokemon';
-import { Effect } from './side';
+import { Pokemon, Effect } from './pokemon';
 
 export type WeatherState<T = Weather> = [T, number, number];
 export type PseudoWeather = string & As<'PseudoWeather'>;
@@ -71,7 +70,7 @@ export class Field {
     if (weather) {
       const isExtremeWeather = ['deltastream', 'desolateland', 'primordialsea'].includes(weather);
       if (poke) {
-        if (ability) this.battle.activateAbility(poke, ability.name);
+        if (ability) poke.activateAbility(ability.name);
         this.weatherTimeLeft = (this.battle.dex.gen <= 5 || isExtremeWeather) ? 0 : 8;
         this.weatherMinTimeLeft = (this.battle.dex.gen <= 5 || isExtremeWeather) ? 0 : 5;
       } else if (isExtremeWeather) {
