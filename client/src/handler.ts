@@ -525,9 +525,9 @@ export class Handler implements Protocol.Handler {
     const ofpoke = this.battle.getPokemon(kwArgs.of);
     poke.rememberAbility(ability.name, effect.id && !kwArgs.fail);
 
-    if (kwArgs.silent) {
-      // do nothing
-    } else if (effect.id) {
+    if (kwArgs.silent) return; // do nothing
+
+    if (effect.id) {
       switch (effect.id) {
       case 'trace':
         poke.activateAbility('Trace');
@@ -567,15 +567,15 @@ export class Handler implements Protocol.Handler {
   }
 
   '|detailschange|'(args: Args['|detailschange|'], kwArgs: KWArgs['|detailschange|']) {
-
+    // TODO
   }
 
   '|-transform|'(args: Args['|-transform|'], kwArgs: KWArgs['|-transform|']) {
-
+    // TODO
   }
 
   '|-formechange|'(args: Args['|-formechange|'], kwArgs: KWArgs['|-formechange|']) {
-
+    // TODO
   }
 
   '|-mega|'(args: Args['|-mega|']) {
@@ -583,18 +583,82 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {
-    // TODO
+    const poke = this.battle.getPokemon(args[1])!;
+    const effect = this.battle.dex.getEffect(args[2]) as Effect;
+    const ofpoke = this.battle.getPokemon(kwArgs.of);
+    const fromeffect = this.battle.dex.getEffect(kwArgs.from) as Effect;
+
+    poke.activateAbility(effect);
+    (ofpoke || poke).activateAbility(fromeffect);
+
+    switch (effect.id) {
+    case 'typechange':
+      if (ofpoke && fromeffect.id === 'reflecttype') {
+        poke.copyTypesFrom(ofpoke);
+      } else {
+        poke.removeVolatile('typeadd' as ID);
+        poke.addVolatile('typechange' as ID, Dex.sanitizeName(args[3] || '???'));
+      }
+      break;
+    case 'typeadd':
+      poke.addVolatile('typeadd' as ID, Dex.sanitizeName(args[3]));
+      break;
+    case 'dynamax':
+      poke.addVolatile('dynamax' as ID);
+      break;
+    case 'stockpile2':
+      poke.removeVolatile('stockpile1' as ID);
+      break;
+    case 'stockpile3':
+      poke.removeVolatile('stockpile2' as ID);
+      break;
+    case 'perish0':
+      poke.removeVolatile('perish1' as ID);
+      break;
+    case 'perish1':
+      poke.removeVolatile('perish2' as ID);
+      break;
+    case 'perish2':
+      poke.removeVolatile('perish3' as ID);
+      break;
+    case 'autotomize':
+      if (poke.volatiles.autotomize) {
+        poke.volatiles.autotomize[1]++;
+      } else {
+        poke.addVolatile('autotomize' as ID, 1);
+      }
+      break;
+
+    case 'smackdown':
+      poke.removeVolatile('magnetrise' as ID);
+      poke.removeVolatile('telekinesis' as ID);
+      break;
+    }
+    poke.addVolatile(effect.id);
   }
 
   '|-end|'(args: Args['|-end|'], kwArgs: KWArgs['|-end|']) {
-    // TODO
+    const poke = this.battle.getPokemon(args[1])!;
+    const effect = this.battle.dex.getEffect(args[2]) as Effect;
+    poke.removeVolatile(effect.id);
+
+    if (kwArgs.silent) return; // do nothing
+
+    switch (effect.id) {
+    case 'illusion': return poke.rememberAbility('Illusion');
+    case 'perishsong': return poke.removeVolatile('perish3' as ID); // for backwards compatibility
+    case 'stockpile':
+      poke.removeVolatile('stockpile1' as ID);
+      poke.removeVolatile('stockpile2' as ID);
+      poke.removeVolatile('stockpile3' as ID);
+    }
   }
 
   '|-singleturn|'(args: Args['|-singleturn|'], kwArgs: KWArgs['|-singleturn|']) {
     const poke = this.battle.getPokemon(args[1])!;
     const effect = this.battle.dex.getEffect(args[2]) as Effect;
     poke.addTurnstatus(effect.id);
-    if (effect.id === 'focuspunch' || effect.id == 'shelltrap') poke.rememberMove(effect.name, 0);
+    if (effect.id === 'focuspunch' || effect.id === 'shelltrap') poke.rememberMove(effect.name, 0);
   }
 
   '|-singlemove|'(args: Args['|-singlemove|'], kwArgs: KWArgs['|-singlemove|']) {
