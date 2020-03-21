@@ -138,7 +138,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   ability: ID | '(suppressed)';
   baseAbility: ID;
 
-  item: ID;
+  item: ID | '(exists)';
   itemEffect: string;
   lastItem: ID;
   lastItemEffect: string;

@@ -233,10 +233,10 @@ export namespace Protocol {
     '|tier|': readonly ['tier', FormatName];
     '|rated|': readonly ['rated'] | readonly ['rated', Message];
     '|seed|': readonly ['seed', Seed];
-    '|teampreview|': readonly ['teampreview'];
+    '|teampreview|': readonly ['teampreview'] | ['teampreview', Num];
     '|rule|': readonly ['rule', Rule];
     '|clearpoke|': readonly ['clearpoke'];
-    '|poke|': readonly ['player', Player, PokemonIdent, 'item' | ''];
+    '|poke|': readonly ['player', Player, PokemonDetails, 'item' | ''];
     '|start|': readonly ['start'];
   }
 
@@ -301,7 +301,9 @@ export namespace Protocol {
     '|-clearallboost|': readonly ['-clearallboost'];
     '|-clearpositiveboost|': readonly ['-clearpositiveboost', PokemonIdent, PokemonIdent, Effect];
     '|-clearnegativeboost|': readonly ['-clearnegativeboost', PokemonIdent];
-    '|-copyboost|': readonly ['-copyboost', PokemonIdent, PokemonIdent];
+    '|-copyboost|':
+    | readonly ['-copyboost', PokemonIdent, PokemonIdent]
+    | readonly ['-copyboost', PokemonIdent, PokemonIdent, BoostNames];
     '|-weather|': readonly ['-weather', Weather | 'none'];
     '|-fieldstart|': readonly ['-fieldstart', FieldCondition];
     '|-fieldend|': readonly ['-fieldend', FieldCondition];
