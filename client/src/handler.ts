@@ -597,11 +597,11 @@ export class Handler implements Protocol.Handler {
         poke.copyTypesFrom(ofpoke);
       } else {
         poke.removeVolatile('typeadd' as ID);
-        poke.addVolatile('typechange' as ID, Dex.sanitizeName(args[3] || '???'));
+        poke.addVolatile('typechange' as ID, sanitizeName(args[3] || '???'));
       }
       break;
     case 'typeadd':
-      poke.addVolatile('typeadd' as ID, Dex.sanitizeName(args[3]));
+      poke.addVolatile('typeadd' as ID, sanitizeName(args[3]));
       break;
     case 'dynamax':
       poke.addVolatile('dynamax' as ID);
@@ -666,7 +666,90 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
-    // TODO
+    const poke = this.battle.getPokemon(args[1])!;
+    const effect = this.battle.dex.getEffect(args[2]) as Effect;
+    const target = this.battle.getPokemon(args[3]);
+    poke.activateAbility(effect);
+
+    switch (effect.id) {
+    case 'grudge':
+      poke.rememberMove(kwArgs.move!, Infinity);
+      break;
+
+    // move activations
+    case 'brickbreak':
+      target!.side.removeSideCondition('reflect' as ID);
+      target!.side.removeSideCondition('lightscreen' as ID);
+      break;
+    case 'hyperspacefury':
+    case 'hyperspacehole':
+    case 'phantomforce':
+    case 'shadowforce':
+    case 'feint':
+      poke.removeTurnstatus('protect' as ID);
+      for (const curTarget of poke.side.pokemon) {
+        curTarget.removeTurnstatus('wideguard' as ID);
+        curTarget.removeTurnstatus('quickguard' as ID);
+        curTarget.removeTurnstatus('craftyshield' as ID);
+        curTarget.removeTurnstatus('matblock' as ID);
+      }
+      break;
+    case 'spite':
+      const move = this.battle.dex.getMove(kwArgs.move).name;
+      const pp = Number(kwArgs.number);
+      poke.rememberMove(move, isNaN(pp) ? 4 : pp);
+      break;
+    case 'gravity':
+      poke.removeVolatile('magnetrise' as ID);
+      poke.removeVolatile('telekinesis' as ID);
+      break;
+    case 'skillswap': case 'wanderingspirit':
+      if (this.battle.gen <= 4) break;
+      let pokeability = toID(kwArgs.ability) || target!.ability;
+      let targetability = toID(kwArgs.ability2) || poke.ability;
+      if (pokeability) {
+        poke.ability = pokeability;
+        if (!target!.baseAbility) target!.baseAbility = pokeability as ID;
+      }
+      if (targetability) {
+        target!.ability = targetability;
+        if (!poke.baseAbility) poke.baseAbility = targetability as ID;
+      }
+      if (poke.side !== target!.side) {
+        poke.activateAbility(pokeability, true);
+        target!.activateAbility(targetability, true);
+      }
+      break;
+
+    // ability activations
+    case 'forewarn':
+      if (target) {
+        target.rememberMove(kwArgs.move!, 0);
+      } else {
+        const foeActive = [];
+        for (const maybeTarget of poke.side.foe.active) {
+          if (maybeTarget && !maybeTarget.fainted) foeActive.push(maybeTarget);
+        }
+        if (foeActive.length === 1) foeActive[0].rememberMove(kwArgs.move!, 0);
+      }
+      break;
+    case 'mummy':
+      if (!kwArgs.ability) break; // if Mummy activated but failed, no ability will have been sent
+      let ability = this.battle.dex.getAbility(kwArgs.ability);
+      target!.activateAbility(ability.name);
+      poke.activateAbility( 'Mummy');
+      target!.activateAbility('Mummy', true);
+      break;
+
+    // item activations
+    case 'leppaberry':
+    case 'mysteryberry':
+      poke.rememberMove(kwArgs.move!, effect.id === 'leppaberry' ? -10 : -5);
+      break;
+    case 'focusband':
+      poke.item = 'focusband' as ID;
+      break;
+    }
   }
 
   '|-sidestart|'(args: Args['|-sidestart|']) {
@@ -708,4 +791,11 @@ export class Handler implements Protocol.Handler {
   '|-fieldend|'(args: Args['|-fieldend|']) {
     this.battle.field.removePseudoWeather(this.battle.dex.getEffect(args[1]).id);
   }
+}
+
+function sanitizeName(name: any) {
+  if (!name) return '';
+  return ('' + name)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+    .slice(0, 50);
 }
