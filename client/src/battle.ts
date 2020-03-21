@@ -80,7 +80,7 @@ export class Battle {
   graceTimeLeft: number;
 
 
-  lastMove!: ID | 'switch-in';
+  lastMove!: ID | 'switch-in' | 'healing-wish';
 
   constructor(
     field = (b: Battle) => new Field(b),
@@ -116,7 +116,7 @@ export class Battle {
   }
 
   setTurn(turnNum: string | number) {
-    turnNum = parseInt(turnNum as string, 10);
+    turnNum = parseInt(turnNum as string);
     this.turn = turnNum;
 
     if (this.p1.active[0]) this.p1.active[0]!.clearTurnstatuses();
@@ -341,12 +341,12 @@ export class Battle {
         shiny = true;
         splitDetails.pop();
       }
-      if (splitDetails[splitDetails.length - 1] === 'M' || splitDetails[splitDetails.length - 1] === 'F') {
+      if (['M', 'F'].includes(splitDetails[splitDetails.length - 1])) {
         gender = splitDetails[splitDetails.length - 1] as GenderName;
         splitDetails.pop();
       }
       if (splitDetails[1]) {
-        level = parseInt(splitDetails[1].substr(1), 10) || 100;
+        level = parseInt(splitDetails[1].substr(1)) || 100;
       }
       if (splitDetails[0]) {
         species = splitDetails[0];

@@ -1,11 +1,9 @@
-import {ID, toID, Effect} from '@pkmn/sim';
-import {As, Weather} from '@pkmn/types';
+import {ID, Effect} from '@pkmn/sim';
 
 import {Battle} from './battle';
 import {Pokemon} from './pokemon';
 
-export type WeatherState<T = Weather> = [T, number, number];
-export type PseudoWeather = string & As<'PseudoWeather'>;
+export type WeatherState<T = ID> = [T, number, number];
 
 export class Field {
   //  weather: ID;
@@ -17,7 +15,7 @@ export class Field {
   readonly battle: Battle;
 
   weather!: ID;
-  pseudoWeather!: WeatherState<PseudoWeather>[];
+  pseudoWeather!: WeatherState[];
   weatherTimeLeft!: number;
   weatherMinTimeLeft!: number;
 
@@ -32,7 +30,7 @@ export class Field {
     this.pseudoWeather = [];
   }
 
-  removePseudoWeather(weather: string) {
+  removePseudoWeather(weather: ID) {
     for (let i = 0; i < this.pseudoWeather.length; i++) {
       if (this.pseudoWeather[i][0] === weather) {
         this.pseudoWeather.splice(i, 1);
@@ -41,7 +39,7 @@ export class Field {
     }
   }
 
-  addPseudoWeather(weather: PseudoWeather, minTimeLeft: number, timeLeft: number) {
+  addPseudoWeather(weather: ID, minTimeLeft: number, timeLeft: number) {
     this.pseudoWeather.push([weather, minTimeLeft, timeLeft]);
   }
 
@@ -54,11 +52,8 @@ export class Field {
     return false;
   }
 
-  changeWeather(weatherName: Weather, poke?: Pokemon, isUpkeep?: boolean, ability?: Effect) {
-    let weather = toID(weatherName);
-    if (!weather || weather === 'none') {
-      weather = '' as ID;
-    }
+  changeWeather(weather: ID, poke?: Pokemon, isUpkeep?: boolean, ability?: Effect) {
+    if (!weather || weather === 'none') weather = '' as ID;
     if (isUpkeep) {
       if (this.weather && this.weatherTimeLeft) {
         this.weatherTimeLeft--;

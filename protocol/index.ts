@@ -289,8 +289,8 @@ export namespace Protocol {
     '|-sethp|':
     | readonly ['-sethp', PokemonIdent, Num]
     | readonly ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
-    '|-status|': readonly ['-status', PokemonIdent, StatusName];
-    '|-curestatus|': readonly ['-curestatus', PokemonIdent, StatusName];
+    '|-status|': readonly ['-status', PokemonIdent, StatusName | 'tox'];
+    '|-curestatus|': readonly ['-curestatus', PokemonIdent, StatusName | 'tox'];
     '|-cureteam|': readonly ['-cureteam', PokemonIdent];
     '|-boost|': readonly ['-boost', PokemonIdent, BoostName, Num];
     '|-unboost|': readonly ['-unboost', PokemonIdent, BoostName, Num];

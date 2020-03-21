@@ -135,13 +135,13 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   turnstatuses: EffectTable;
   movestatuses: EffectTable;
 
-  ability: ID;
+  ability: ID | '(suppressed)';
   baseAbility: ID;
 
   item: ID;
-  itemEffect: string; // FIXME ???
+  itemEffect: string;
   lastItem: ID;
-  lastItemEffect: string; // FIXME ???
+  lastItemEffect: string;
 
   moves: ID[];
   // [[moveName, ppUsed]]
@@ -244,7 +244,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     let oldmaxhp = this.maxhp;
     const oldcolor = this.hpcolor;
 
-    Protocol.parseHealth(hpstring as P.PokemonHealth, this);
+    void Protocol.parseHealth(hpstring as P.PokemonHealth, this);
     // max hp not known before parsing this message
     if (oldmaxhp === 0) oldmaxhp = oldhp = this.maxhp;
     const oldnum = oldhp ? (Math.floor(this.maxhp * oldhp / oldmaxhp) || 1) : 0;

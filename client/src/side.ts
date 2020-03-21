@@ -120,10 +120,9 @@ export class Side {
     }
   }
 
-  removeSideCondition(condition: string) {
-    const id = toID(condition);
-    if (!this.sideConditions[id]) return;
-    delete this.sideConditions[id];
+  removeSideCondition(condition: ID) {
+    if (!this.sideConditions[condition]) return;
+    delete this.sideConditions[condition];
   }
 
   addPokemon(details: PokemonDetails, replaceSlot = -1) {
