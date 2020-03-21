@@ -1,5 +1,5 @@
-import { ID, toID, Move } from '@pkmn/sim';
-import { StatusName, GenderName, HPColor, BoostsTable, TypeName } from '@pkmn/types';
+import {ID, toID, Move} from '@pkmn/sim';
+import {StatusName, GenderName, HPColor, BoostsTable, TypeName} from '@pkmn/types';
 import {
   Protocol as P,
   Protocol,
@@ -7,10 +7,10 @@ import {
   PokemonHealth,
   PokemonIdent,
   PokemonSearchID,
-  KWArgs
+  KWArgs,
 } from '@pkmn/protocol';
 
-import { Side } from './side';
+import {Side} from './side';
 
 export interface Effect {
   readonly id: ID;
@@ -35,7 +35,7 @@ export interface Effect {
 // [id, element?, ...misc]
 type EffectState = any[] & { 0: ID };
 // [name, minTimeLeft, maxTimeLeft]
-type EffectTable = { [effectid: string]: EffectState };
+interface EffectTable { [effectid: string]: EffectState }
 
 export interface ServerPokemon extends P.Pokemon, PokemonDetails, PokemonHealth { }
 
@@ -137,7 +137,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   fainted: boolean;
 
   statusStage: number;
-  statusData: { sleepTurns: number, toxicTurns: number };
+  statusData: { sleepTurns: number; toxicTurns: number };
   boosts: Partial<BoostsTable>;
   volatiles: EffectTable;
   turnstatuses: EffectTable;
@@ -157,7 +157,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   lastMove: ID | '';
 
   constructor(side: Side, details: PokemonDetails) {
-    this.side = side
+    this.side = side;
     this.slot = 0;
 
     this.species = details.species;
@@ -177,7 +177,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     this.fainted = false;
 
     this.statusStage = 0;
-    this.statusData = { sleepTurns: 0, toxicTurns: 0 };
+    this.statusData = {sleepTurns: 0, toxicTurns: 0};
     this.boosts = {};
     this.volatiles = {};
     this.turnstatuses = {};
@@ -217,7 +217,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   }
 
   healthParse(hpstring: string, parsedamage?: boolean, heal?: boolean):
-    [number, number, number] | [number, number, number, HPColor] | null {
+  [number, number, number] | [number, number, number, HPColor] | null {
     // returns [delta, denominator, percent(, oldnum, oldcolor)] or null
     if (!hpstring || !hpstring.length) return null;
     const parenIndex = hpstring.lastIndexOf('(');
@@ -264,7 +264,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     if (!details) return false;
     if (details === this.details) return true;
     if (this.searchid) return false;
-    if (details.indexOf(', shiny') >= 0) {
+    if (details.includes(', shiny')) {
       if (this.checkDetails(details.replace(', shiny', '') as P.PokemonDetails)) {
         return true;
       }
@@ -373,13 +373,13 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
       let moveName = move.name;
       if (move.isZ) {
         this.item = move.isZ;
-        let item = Dex.getItem(move.isZ);
+        const item = Dex.getItem(move.isZ);
         if (item.zMoveFrom) moveName = item.zMoveFrom;
       } else if (move.name.slice(0, 2) === 'Z-') {
         moveName = moveName.slice(2);
         move = Dex.getMove(moveName);
         if (window.BattleItems) {
-          for (let item in BattleItems) {
+          for (const item in BattleItems) {
             if (BattleItems[item].zMoveType === move.type) this.item = item;
           }
         }
@@ -408,10 +408,10 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     this.activateAbility(effect);
     if (move.id) this.rememberMove(move.name, 0);
     switch (effect.id) {
-      case 'slp': return void this.statusData.sleepTurns++;
-      case 'focuspunch': return this.removeTurnstatus('focuspunch' as ID);
-      case 'shelltrap': return this.removeTurnstatus('shelltrap' as ID);
-      case 'flinch': return this.removeTurnstatus('focuspunch' as ID);
+    case 'slp': return void this.statusData.sleepTurns++;
+    case 'focuspunch': return this.removeTurnstatus('focuspunch' as ID);
+    case 'shelltrap': return this.removeTurnstatus('shelltrap' as ID);
+    case 'flinch': return this.removeTurnstatus('focuspunch' as ID);
     }
   }
 
@@ -523,7 +523,10 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
 
     let item = toID(serverPokemon ? serverPokemon.item : this.item);
     const ability = toID(this.ability || serverPokemon?.ability);
-    if (battle.field.hasPseudoWeather('Magic Room') || this.volatiles['embargo'] || ability === 'klutz') {
+    if (battle.field.hasPseudoWeather('Magic Room') ||
+      this.volatiles['embargo'] ||
+      ability === 'klutz'
+    ) {
       item = '' as ID;
     }
 
@@ -540,8 +543,8 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   }
 
   getSpecies(serverPokemon?: ServerPokemon): string {
-    return this.volatiles.formechange ? this.volatiles.formechange[1] :
-      (serverPokemon ? serverPokemon.species : this.species);
+    return this.volatiles.formechange ? this.volatiles.formechange[1]
+      : (serverPokemon ? serverPokemon.species : this.species);
   }
 
   getTemplate(serverPokemon?: ServerPokemon) {
@@ -562,6 +565,6 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   }
 
   destroy() {
-    (this.side as Side) = null!;
+    (this.side) = null!;
   }
 }

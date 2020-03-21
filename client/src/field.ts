@@ -1,9 +1,9 @@
 import {ID, toID} from '@pkmn/sim';
 import {Protocol} from '@pkmn/protocol';
-import { As, Weather } from '@pkmn/types';
+import {As, Weather} from '@pkmn/types';
 
-import { Battle } from './battle';
-import { Pokemon, Effect } from './pokemon';
+import {Battle} from './battle';
+import {Pokemon, Effect} from './pokemon';
 
 export type WeatherState<T = Weather> = [T, number, number];
 export type PseudoWeather = string & As<'PseudoWeather'>;
@@ -99,6 +99,6 @@ export class Field {
   }
 
   destroy() {
-    (this.battle as Battle) = null!;
+    (this.battle) = null!;
   }
 }

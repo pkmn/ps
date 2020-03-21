@@ -1,10 +1,10 @@
-import { Dex, ModdedDex, ID, SideID } from '@pkmn/sim';
-import { Protocol, Protocol as P, Message, PokemonIdent, PokemonSearchID } from '@pkmn/protocol';
-import { GenerationNum, GameType } from '@pkmn/types';
+import {Dex, ModdedDex, ID, SideID} from '@pkmn/sim';
+import {Protocol, Protocol as P, Message, PokemonIdent, PokemonSearchID} from '@pkmn/protocol';
+import {GenerationNum, GameType} from '@pkmn/types';
 
-import { Field } from './field';
-import { Side } from './side';
-import { Pokemon } from './pokemon';
+import {Field} from './field';
+import {Side} from './side';
+import {Pokemon} from './pokemon';
 
 // interface FaintedPokemon {
 //  target: Pokemon;
@@ -12,7 +12,7 @@ import { Pokemon } from './pokemon';
 //  effect: Effect | null;
 // }
 
-const SLOTS: { [slot: string]: number } = { a: 0, b: 1, c: 2, d: 3, e: 4, f: 5 };
+const SLOTS: { [slot: string]: number } = {a: 0, b: 1, c: 2, d: 3, e: 4, f: 5};
 
 export class Battle {
   // readonly strictChoices: boolean;
@@ -72,7 +72,7 @@ export class Battle {
   gameType: GameType;
   rated: boolean | Message;
   tier: string;
-  teamPreviewCount: number
+  teamPreviewCount: number;
   speciesClause: boolean;
 
   kickingInactive: number | 'on-unknown' | 'off';
@@ -157,7 +157,7 @@ export class Battle {
       name = name.substr(5);
       pokemonid = 'p1: ' + name as PokemonIdent;
     }
-    return { name, siden, slot, pokemonid };
+    return {name, siden, slot, pokemonid};
   }
 
   getSwitchedPokemon(pokemonid: string, details: P.PokemonDetails) {
@@ -186,7 +186,8 @@ export class Battle {
       if (!pokemon.searchid && pokemon.checkDetails(details)) {
         // switch-in matches Team Preview entry
         pokemon = side.addPokemon(
-          Protocol.parseDetails(name, pokemonid as PokemonIdent, details), i);
+          Protocol.parseDetails(name, pokemonid as PokemonIdent, details), i
+        );
         if (slot >= 0) pokemon.slot = slot;
         return pokemon;
       }
@@ -194,7 +195,8 @@ export class Battle {
 
     // pokemon not found, create a new pokemon object for it
     const pokemon = side.addPokemon(
-      Protocol.parseDetails(name, pokemonid  as PokemonIdent, details));
+      Protocol.parseDetails(name, pokemonid as PokemonIdent, details)
+    );
     if (slot >= 0) pokemon.slot = slot;
     return pokemon;
   }
@@ -204,8 +206,8 @@ export class Battle {
     return this.sides[siden].addPokemon(Protocol.parseDetails('', '' as PokemonIdent, details));
   }
 
-  findCorrespondingPokemon(serverPokemon: {ident: PokemonIdent, details: P.PokemonDetails}) {
-    const { siden } = this.parsePokemonId(serverPokemon.ident);
+  findCorrespondingPokemon(serverPokemon: {ident: PokemonIdent; details: P.PokemonDetails}) {
+    const {siden} = this.parsePokemonId(serverPokemon.ident);
     const searchid = `${serverPokemon.ident}|${serverPokemon.details}` as PokemonSearchID;
     for (const pokemon of this.sides[siden].pokemon) {
       if (pokemon.searchid === searchid) {
@@ -245,8 +247,8 @@ export class Battle {
       isSwitch = true;
       createIfNotFound = true;
     }
-    let parseIdResult = this.parsePokemonId(pokemonid as PokemonIdent);
-    let { name, siden, slot } = parseIdResult;
+    const parseIdResult = this.parsePokemonId(pokemonid as PokemonIdent);
+    let {name, siden, slot} = parseIdResult;
     pokemonid = parseIdResult.pokemonid;
 
     if (!details) {
@@ -269,7 +271,7 @@ export class Battle {
         let pokemon = this.p1.pokemon[i];
         if (pokemon.fainted && (isNew || isSwitch)) continue;
         if (isSwitch || isInactive) {
-          if (this.p1.active.indexOf(pokemon) >= 0) continue;
+          if (this.p1.active.includes(pokemon)) continue;
         }
         if (isSwitch && pokemon === this.p1.lastPokemon && !this.p1.active[slot]) continue;
         if ((searchid && pokemon.searchid === searchid) || // exact match
@@ -281,8 +283,10 @@ export class Battle {
         if (!pokemon.searchid && pokemon.checkDetails(details)) {
           pokemon = this.p1.addPokemon(
             Protocol.parseDetails(
-              name, pokemonid as PokemonIdent, details, { item: pokemon.item } as any),
-            i);
+              name, pokemonid as PokemonIdent, details, {item: pokemon.item} as any
+            ),
+            i
+          );
           if (slot >= 0) pokemon.slot = slot;
           return pokemon;
         }
@@ -300,7 +304,7 @@ export class Battle {
         let pokemon = this.p2.pokemon[i];
         if (pokemon.fainted && (isNew || isSwitch)) continue;
         if (isSwitch || isInactive) {
-          if (this.p2.active.indexOf(pokemon) >= 0) continue;
+          if (this.p2.active.includes(pokemon)) continue;
         }
         if (isSwitch && pokemon === this.p2.lastPokemon && !this.p2.active[slot]) continue;
         if ((searchid && pokemon.searchid === searchid) || // exact match
@@ -312,8 +316,10 @@ export class Battle {
         if (!pokemon.searchid && pokemon.checkDetails(details)) {
           pokemon = this.p2.addPokemon(
             Protocol.parseDetails(
-              name, pokemonid as PokemonIdent, details, { item: pokemon.item } as any),
-            i);
+              name, pokemonid as PokemonIdent, details, {item: pokemon.item} as any
+            ),
+            i
+          );
           if (slot >= 0) pokemon.slot = slot;
           return pokemon;
         }
@@ -330,7 +336,7 @@ export class Battle {
     let level = 100;
     let shiny = false;
     if (details) {
-      let splitDetails = details.split(', ');
+      const splitDetails = details.split(', ');
       if (splitDetails[splitDetails.length - 1] === 'shiny') {
         shiny = true;
         splitDetails.pop();
@@ -347,7 +353,7 @@ export class Battle {
       }
     }
     if (slot < 0) slot = 0;
-    let pokemon = this.sides[siden].addPokemon({
+    const pokemon = this.sides[siden].addPokemon({
       species,
       details,
       name,
@@ -363,13 +369,13 @@ export class Battle {
 
   destroy() {
     this.field.destroy();
-    (this.field as Field) = null!;
+    (this.field) = null!;
 
     for (let i = 0; i < this.sides.length; i++) {
       if (this.sides[i]) this.sides[i].destroy();
       this.sides[i] = null!;
     }
-    (this.p1 as Side) = null!;
-    (this.p2 as Side) = null!;
+    (this.p1) = null!;
+    (this.p2) = null!;
   }
 }

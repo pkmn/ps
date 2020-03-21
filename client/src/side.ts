@@ -92,7 +92,7 @@ export class Side {
   }
 
   addSideCondition(effect: Effect) {
-    let id = effect.id;
+    const id = effect.id;
     if (this.sideConditions[id]) {
       if (id === 'spikes' || id === 'toxicspikes') {
         this.sideConditions[id][1]++;
@@ -103,21 +103,21 @@ export class Side {
     // Side conditions work as: [effectName, levels, minDuration, maxDuration]
     const condition = effect.name as SideCondition;
     switch (id) {
-      case 'tailwind':
-        return this.sideConditions[condition] = [condition, 1, this.battle.gen >= 5 ? 4 : 3, 0];
-      case 'reflect':
-        return this.sideConditions[condition] = [condition, 1, 5, this.battle.gen >= 4 ? 8 : 0];
-      case 'lightscreen':
-          return this.sideConditions[condition] = [condition, 1, 5, this.battle.gen >= 4 ? 8 : 0];
-      case 'auroraveil': return this.sideConditions[condition] = [condition, 1, 5, 8];
-      case 'safeguard': return this.sideConditions[condition] = [condition, 1, 5, 0];
-      case 'mist': return this.sideConditions[condition] = [condition, 1, 5, 0];
-      case 'luckychant': return this.sideConditions[condition] = [condition, 1, 5, 0];
-      case 'stealthrock': return this.sideConditions[condition] = [condition, 1, 0, 0];
-      case 'spikes': return this.sideConditions[condition] = [condition, 1, 0, 0];
-      case 'toxicspikes': return this.sideConditions[condition] = [condition, 1, 0, 0];
-      case 'stickyweb': return this.sideConditions[condition] = [condition, 1, 0, 0];
-      default: return this.sideConditions[condition] = [condition, 1, 0, 0];
+    case 'tailwind':
+      return (this.sideConditions[condition] = [condition, 1, this.battle.gen >= 5 ? 4 : 3, 0]);
+    case 'reflect':
+      return (this.sideConditions[condition] = [condition, 1, 5, this.battle.gen >= 4 ? 8 : 0]);
+    case 'lightscreen':
+      return (this.sideConditions[condition] = [condition, 1, 5, this.battle.gen >= 4 ? 8 : 0]);
+    case 'auroraveil': return (this.sideConditions[condition] = [condition, 1, 5, 8]);
+    case 'safeguard': return (this.sideConditions[condition] = [condition, 1, 5, 0]);
+    case 'mist': return (this.sideConditions[condition] = [condition, 1, 5, 0]);
+    case 'luckychant': return (this.sideConditions[condition] = [condition, 1, 5, 0]);
+    case 'stealthrock': return (this.sideConditions[condition] = [condition, 1, 0, 0]);
+    case 'spikes': return (this.sideConditions[condition] = [condition, 1, 0, 0]);
+    case 'toxicspikes': return (this.sideConditions[condition] = [condition, 1, 0, 0]);
+    case 'stickyweb': return (this.sideConditions[condition] = [condition, 1, 0, 0]);
+    default: return (this.sideConditions[condition] = [condition, 1, 0, 0]);
     }
   }
 
@@ -128,7 +128,7 @@ export class Side {
   }
 
   addPokemon(details: PokemonDetails, replaceSlot = -1) {
-    let poke = this.provider(this, details);
+    const poke = this.provider(this, details);
     if (!poke.ability && poke.baseAbility) poke.ability = poke.baseAbility;
     poke.reset();
 
@@ -139,21 +139,21 @@ export class Side {
     }
     if (this.pokemon.length > this.totalPokemon || this.battle.speciesClause) {
       // check for Illusion
-      let existingTable: { [searchid: string]: number } = {};
+      const existingTable: { [searchid: string]: number } = {};
       let toRemove = -1;
       for (let poke1i = 0; poke1i < this.pokemon.length; poke1i++) {
-        let poke1 = this.pokemon[poke1i];
+        const poke1 = this.pokemon[poke1i];
         if (!poke1.searchid) continue;
         if (poke1.searchid in existingTable) {
-          let poke2i = existingTable[poke1.searchid];
-          let poke2 = this.pokemon[poke2i];
+          const poke2i = existingTable[poke1.searchid];
+          const poke2 = this.pokemon[poke2i];
           if (poke === poke1) {
             toRemove = poke2i;
           } else if (poke === poke2) {
             toRemove = poke1i;
-          } else if (this.active.indexOf(poke1) >= 0) {
+          } else if (this.active.includes(poke1)) {
             toRemove = poke2i;
-          } else if (this.active.indexOf(poke2) >= 0) {
+          } else if (this.active.includes(poke2)) {
             toRemove = poke1i;
           } else if (poke1.fainted && !poke2.fainted) {
             toRemove = poke2i;
@@ -171,7 +171,7 @@ export class Side {
           for (const curPoke of this.pokemon) {
             if (curPoke === poke) continue;
             if (curPoke.fainted) continue;
-            if (this.active.indexOf(curPoke) >= 0) continue;
+            if (this.active.includes(curPoke)) continue;
             if (['Zoroark', 'Zorua'].includes(curPoke.species) || curPoke.ability === 'Illusion') {
               illusionFound = curPoke;
               break;
@@ -185,7 +185,7 @@ export class Side {
             for (const curPoke of this.pokemon) {
               if (curPoke === poke) continue;
               if (curPoke.fainted) continue;
-              if (this.active.indexOf(curPoke) >= 0) continue;
+              if (this.active.includes(curPoke)) continue;
               illusionFound = curPoke;
               break;
             }
@@ -209,13 +209,14 @@ export class Side {
     pokemon.clearVolatile();
     pokemon.lastMove = '';
     this.battle.lastMove = 'switch-in';
+    // @typescript-eslint/no-non-null-asserted-optional-chain
     if (['batonpass', 'zbatonpass'].includes(this.lastPokemon?.lastMove!)) {
       pokemon.copyVolatileFrom(this.lastPokemon!);
     }
   }
 
   dragIn(pokemon: Pokemon, slot = pokemon.slot) {
-    let oldpokemon = this.active[slot];
+    const oldpokemon = this.active[slot];
     if (oldpokemon === pokemon) return;
 
     this.lastPokemon = oldpokemon;
@@ -229,7 +230,7 @@ export class Side {
   }
 
   replace(pokemon: Pokemon, slot = pokemon.slot) {
-    let oldpokemon = this.active[slot];
+    const oldpokemon = this.active[slot];
     if (pokemon === oldpokemon) return;
 
     this.lastPokemon = oldpokemon;
@@ -241,7 +242,7 @@ export class Side {
       pokemon.hpcolor = oldpokemon.hpcolor;
       pokemon.status = oldpokemon.status;
       pokemon.copyVolatileFrom(oldpokemon, 'illusion');
-      pokemon.statusData = { ...oldpokemon.statusData };
+      pokemon.statusData = {...oldpokemon.statusData};
       // we don't know anything about the illusioned pokemon except that it's not fainted
       // technically we also know its status but only at the end of the turn, not here
       oldpokemon.fainted = false;
@@ -269,9 +270,9 @@ export class Side {
 
   swapTo(pokemon: Pokemon, slot: number) {
     if (pokemon.slot === slot) return;
-    let target = this.active[slot];
+    const target = this.active[slot];
 
-    let oslot = pokemon.slot;
+    const oslot = pokemon.slot;
 
     pokemon.slot = slot;
     if (target) target.slot = oslot;
@@ -284,8 +285,8 @@ export class Side {
     // method provided for backwards compatibility only
     if (pokemon === target) return;
 
-    let oslot = pokemon.slot;
-    let nslot = target.slot;
+    const oslot = pokemon.slot;
+    const nslot = target.slot;
 
     pokemon.slot = nslot;
     target.slot = oslot;
@@ -304,7 +305,7 @@ export class Side {
 
   destroy() {
     this.clearPokemon();
-    (this.battle as Battle) = null!;
+    (this.battle) = null!;
     this.foe = null!;
   }
 }
