@@ -477,4 +477,8 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     this.moveTrack = [];
     this.name = this.name || this.species;
   }
+
+  destroy() {
+    (this.side as Side) = null!;
+  }
 }

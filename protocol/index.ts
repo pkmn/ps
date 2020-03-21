@@ -24,7 +24,7 @@ export namespace Protocol {
   export type PokemonDetails = string & As<'PokemonDetails'>;
   export type PokemonSearchID= string & As<'PokemonSearchID'>;
   export type PokemonHealth = string & As<'PokemonHealth'>;
-  export type PokemonCondition= string & As<'PokemonCondition'>;
+  export type PokemonCondition = string & As<'PokemonCondition'>;
 
   export type Username = string & As<'Username'>;
   export type Avatar = string & As<'Avatar'>;

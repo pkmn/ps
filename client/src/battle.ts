@@ -1,5 +1,6 @@
-import {ID} from '@pkmn/sim';
-import {Protocol} from '@pkmn/protocol';
+import {ModdedDex, ID} from '@pkmn/sim';
+import {Protocol as P} from '@pkmn/protocol';
+import {GenerationNum} from '@pkmn/types';
 
 import {Side} from './side';
 
@@ -56,7 +57,13 @@ export class Battle  {
 
   // readonly hints: Set<string>;
 
+  dex: ModdedDex;
+  gen: GenerationNum;
+
   id: Protocol.RoomID;
+
+  lastMove: P.Move | 'switch-in';
+
 
   constructor(id: Protocol.RoomID) {
     this.id = id;
