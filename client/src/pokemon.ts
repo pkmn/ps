@@ -1,4 +1,4 @@
-import {ID, toID, Ability, Move, PureEffect} from '@pkmn/sim';
+import {ID, toID, Move, Effect} from '@pkmn/sim';
 import {StatusName, GenderName, HPColor, BoostsTable, TypeName} from '@pkmn/types';
 import {
   Protocol as P,
@@ -11,14 +11,6 @@ import {
 } from '@pkmn/protocol';
 
 import {Side} from './side';
-
-export interface Effect {
-  readonly id: ID;
-  readonly name: string;
-  readonly gen: number;
-  readonly effectType: 'Item' | 'Move' | 'Ability' | 'Species' | 'Pure';
-  readonly exists: boolean;
-}
 
 // export interface MoveSlot {
 //   id: ID;
@@ -361,8 +353,8 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
 
   useMove(move: Move, target: Pokemon | null, kwArgs: KWArgs['|move|']) {
     const dex = this.side.battle.dex;
-    const fromeffect = dex.getEffect(kwArgs.from) as Ability | PureEffect;
-    this.activateAbility(fromeffect as Effect);
+    const fromeffect = dex.getEffect(kwArgs.from);
+    this.activateAbility(fromeffect);
     this.clearMovestatuses();
     if (move.id === 'focuspunch') {
       this.removeTurnstatus('focuspunch' as ID);

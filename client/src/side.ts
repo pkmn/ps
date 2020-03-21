@@ -1,9 +1,9 @@
-import {ID, toID, SideID} from '@pkmn/sim';
+import {ID, toID, SideID, Effect} from '@pkmn/sim';
 import {Avatar, PokemonDetails, Username} from '@pkmn/protocol';
 import {SideCondition} from '@pkmn/types';
 
 import {Battle} from './battle';
-import {Pokemon, Effect} from './pokemon';
+import {Pokemon} from './pokemon';
 
 export class Side {
   // maxTeamSize: number;

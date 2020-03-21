@@ -1,8 +1,8 @@
-import {ID, toID} from '@pkmn/sim';
+import {ID, toID, Effect} from '@pkmn/sim';
 import {As, Weather} from '@pkmn/types';
 
 import {Battle} from './battle';
-import {Pokemon, Effect} from './pokemon';
+import {Pokemon} from './pokemon';
 
 export type WeatherState<T = Weather> = [T, number, number];
 export type PseudoWeather = string & As<'PseudoWeather'>;

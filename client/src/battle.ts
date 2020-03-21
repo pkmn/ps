@@ -4,6 +4,7 @@ import {GenerationNum, GameType, GenderName} from '@pkmn/types';
 
 import {Field} from './field';
 import {Side} from './side';
+import {Pokemon} from './pokemon';
 
 // interface FaintedPokemon {
 //  target: Pokemon;
@@ -70,7 +71,7 @@ export class Battle {
 
   gameType: GameType;
   rated: boolean | Message;
-  tier: string;
+  tier: P.FormatName | '';
   teamPreviewCount: number;
   speciesClause: boolean;
 
@@ -229,7 +230,7 @@ export class Battle {
     } as any;
   }
 
-  getPokemon(pokemonid: string, details?: P.PokemonDetails) {
+  getPokemon(pokemonid: string | undefined, details?: P.PokemonDetails) {
     let isNew = false; // if true, don't match any pokemon that already exists (for Team Preview)
     let isSwitch = false; // if true, don't match an active, fainted, or just switched-out Pokemon
     let isInactive = false; // if true, don't match an active Pokemon
@@ -364,6 +365,14 @@ export class Battle {
     }, isNew ? -2 : -1);
     pokemon.slot = slot;
     return pokemon;
+  }
+
+  checkActive(poke: Pokemon) {
+    if (!poke.side.active[poke.slot]) {
+      // SOMEONE jumped in in the middle of a replay. <_<
+      poke.side.replace(poke);
+    }
+    return false;
   }
 
   destroy() {
