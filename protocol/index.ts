@@ -1,5 +1,6 @@
 import {
   As,
+  BoostName,
   FieldCondition,
   GameType,
   GenderName,
@@ -9,7 +10,6 @@ import {
   MoveTarget,
   Player,
   SideCondition,
-  StatName,
   StatsTable,
   StatusName,
   Weather,
@@ -53,7 +53,7 @@ export namespace Protocol {
   export type Score = string & As<'Score'>;
   export type FormatName = string & As<'FormatName'>;
   export type Rule = string & As<'Rule'>;
-  export type StatNames = string & As<'StatNames'>;
+  export type BoostNames = string & As<'BoostNames'>;
   export type Side = string & As<'Side'>;
   export type Seed = string & As<'Seed'>;
   export type Slots = string & As<'Slots'>;
@@ -292,10 +292,10 @@ export namespace Protocol {
     '|-status|': readonly ['-status', PokemonIdent, StatusName];
     '|-curestatus|': readonly ['-curestatus', PokemonIdent, StatusName];
     '|-cureteam|': readonly ['-cureteam', PokemonIdent];
-    '|-boost|': readonly ['-boost', PokemonIdent, StatName, Num];
-    '|-unboost|': readonly ['-unboost', PokemonIdent, StatName, Num];
-    '|-setboost|': readonly ['-setboost', PokemonIdent, StatName, Num];
-    '|-swapboost|': readonly ['-swapboost', PokemonIdent, PokemonIdent, StatNames];
+    '|-boost|': readonly ['-boost', PokemonIdent, BoostName, Num];
+    '|-unboost|': readonly ['-unboost', PokemonIdent, BoostName, Num];
+    '|-setboost|': readonly ['-setboost', PokemonIdent, BoostName, Num];
+    '|-swapboost|': readonly ['-swapboost', PokemonIdent, PokemonIdent, BoostNames];
     '|-invertboost|': readonly ['-invertboost', PokemonIdent];
     '|-clearboost|': readonly ['-clearboost', PokemonIdent];
     '|-clearallboost|': readonly ['-clearallboost'];
@@ -537,7 +537,7 @@ export type Generator = Protocol.Generator;
 export type Score = Protocol.Score;
 export type FormatName = Protocol.FormatName;
 export type Rule = Protocol.Rule;
-export type StatNames = Protocol.StatNames;
+export type BoostNames = Protocol.BoostNames;
 export type Side = Protocol.Side;
 export type Seed = Protocol.Seed;
 export type Slots = Protocol.Slots;

@@ -1,6 +1,8 @@
 import {Protocol, Args, KWArgs} from '@pkmn/protocol';
-import {ID, toID} from '@pkmn/sim';
+import {ID, toID, StatName, BoostName, BoostsTable} from '@pkmn/sim';
 import {Battle} from './battle';
+
+const BOOSTS: BoostName[] = ['atk', 'def', 'spa', 'spd', 'spe', 'accuracy', 'evasion'];
 
 export class Handler implements Protocol.Handler {
   readonly battle: Battle;
@@ -182,7 +184,131 @@ export class Handler implements Protocol.Handler {
     this.battle.dex = this.battle.dex.mod(`gen${this.battle.gen}`);
   }
 
+  '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) { }
 
+  '|-heal|'(args: Args['|-heal|'], kwArgs: KWArgs['|-heal|']) { }
+
+  '|-sethp|'(args: Args['|-sethp|'], kwArgs: KWArgs['|-sethp|']) { }
+
+  '|-boost|'(args: Args['|-boost|'], kwArgs: KWArgs['|-boost|']) {
+    let poke = this.battle.getPokemon(args[1])!;
+    let boost: BoostName | 'spc' = args[2];
+    if (this.battle.gen === 1 && boost === 'spd') return;
+    if (this.battle.gen === 1 && boost === 'spa') boost = 'spc';
+    let amount = parseInt(args[3], 10);
+    if (amount === 0) return;
+
+    if (!poke.boosts[boost]) poke.boosts[boost] = 0;
+    poke.boosts[boost]! += amount;
+
+    if (!kwArgs.silent && kwArgs.from) {
+      const effect = this.battle.dex.getEffect(kwArgs.from);
+      const ofpoke = this.battle.getPokemon(kwArgs.of);
+      if (!(effect.id === 'weakarmor' && boost === 'spe')) {
+        if (ofpoke) {
+          ofpoke.activateAbility(effect);
+        } else if (poke) {
+          poke.activateAbility(effect);
+        }
+      }
+    }
+  }
+
+  '|-unboost|'(args: Args['|-unboost|'], kwArgs: KWArgs['|-unboost|']) {
+    let poke = this.battle.getPokemon(args[1])!;
+    let boost: BoostName | 'spc' = args[2];
+    if (this.battle.gen === 1 && boost === 'spd') return;
+    if (this.battle.gen === 1 && boost === 'spa') boost = 'spc';
+    let amount = parseInt(args[3], 10);
+    if (amount === 0) return;
+
+    if (!poke.boosts[boost]) poke.boosts[boost] = 0;
+    poke.boosts[boost]! -= amount;
+
+    if (!kwArgs.silent && kwArgs.from) {
+      const effect = this.battle.dex.getEffect(kwArgs.from);
+      const ofpoke = this.battle.getPokemon(kwArgs.of);
+      if (ofpoke) {
+        ofpoke.activateAbility(effect);
+      } else if (poke) {
+        poke.activateAbility(effect);
+      }
+    }
+  }
+
+  '|-setboost|'(args: Args['|-setboost|'], kwArgs: KWArgs['|-setboost|']) {
+    this.battle.getPokemon(args[1])!.boosts[args[2]] = parseInt(args[3], 10);;
+  }
+
+  '|-swapboost|'(args: Args['|-swapboost|'], kwArgs: KWArgs['|-swapboost|']) {
+    const poke = this.battle.getPokemon(args[1])!;
+    const poke2 = this.battle.getPokemon(args[2])!;
+    const boosts = args[3] ? args[3].split(', ') : BOOSTS;
+    for (const boost of boosts) {
+      const b = boost as BoostName;
+      let tmp = poke.boosts[b];
+      poke.boosts[b] = poke2.boosts[b];
+      if (!poke.boosts[b]) delete poke.boosts[b];
+      poke2.boosts[b] = tmp;
+      if (!poke2.boosts[b]) delete poke2.boosts[b];
+    }
+  }
+
+  '|-clearpositiveboost|'(args: Args['|-clearpositiveboost|']) {
+    const poke = this.battle.getPokemon(args[1])!;
+    for (const boost in poke.boosts) {
+      const b = boost as BoostName;
+      if (poke.boosts[b]! > 0) delete poke.boosts[b];
+    }
+  }
+
+  '|-clearnegativeboost|'(args: Args['|-clearnegativeboost|']) {
+    const poke = this.battle.getPokemon(args[1])!;
+    for (const boost in poke.boosts) {
+      const b = boost as BoostName;
+      if (poke.boosts[b]! < 0) delete poke.boosts[b];
+    }
+  }
+
+  '|-copyboost|'(args: Args['|-copyboost|'], kwArgs: KWArgs['|-copyboost|']) {
+    const poke = this.battle.getPokemon(args[1])!;
+    const frompoke = this.battle.getPokemon(args[2])!;
+    const boosts: BoostName[] = args[3] ? args[3].split(', ') : BOOSTS;
+    for (const boost of boosts) {
+      poke.boosts[boost] = frompoke.boosts[boost];
+      if (!poke.boosts[boost]) delete poke.boosts[boost];
+    }
+    if (this.battle.gen >= 6) {
+      const volatilesToCopy = ['focusenergy', 'laserfocus'];
+      for (const volatile of volatilesToCopy) {
+        if (frompoke.volatiles[volatile]) {
+          poke.addVolatile(volatile as ID);
+        } else {
+          poke.removeVolatile(volatile as ID);
+        }
+      }
+    }
+  }
+
+  '|-clearboost|'(args: Args['|-clearboost|'], kwArgs: KWArgs['|-clearboost|']) {
+    this.battle.getPokemon(args[1])!.boosts = {};
+  }
+
+  '|-invertboost|'(args: Args['|-invertboost|'], kwArgs: KWArgs['|-invertboost|']) {
+    const poke = this.battle.getPokemon(args[1])!;
+    for (const boost in poke.boosts) {
+      const b = boost as BoostName;
+      poke.boosts[b] = -poke.boosts[b]!;
+    }
+  }
+
+  '|-clearallboost|'(args: Args['|-clearallboost|'], kwArgs: KWArgs['|-clearallboost|']) {
+    for (const side of this.battle.sides) {
+      for (const active of side.active) {
+        if (active) active.boosts = {};
+      }
+    }
+  }
 
   '|detailschange|'(args: Args['|detailschange|'], kwArgs: KWArgs['|detailschange|']) { }
   '|-formechange|'(args: Args['|-formechange|'], kwArgs: KWArgs['|-formechange|']) { }
@@ -190,23 +316,10 @@ export class Handler implements Protocol.Handler {
   '|-block|'(args: Args['|-block|'], kwArgs: KWArgs['|-block|']) { }
   '|-notarget|'(args: Args['|-notarget|']) { }
   '|-miss|'(args: Args['|-miss|'], kwArgs: KWArgs['|-miss|']) { }
-  '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) { }
-  '|-heal|'(args: Args['|-heal|'], kwArgs: KWArgs['|-heal|']) { }
-  '|-sethp|'(args: Args['|-sethp|'], kwArgs: KWArgs['|-sethp|']) { }
   '|-status|'(args: Args['|-status|'], kwArgs: KWArgs['|-status|']) { }
   '|-curestatus|'(args: Args['|-curestatus|'], kwArgs: KWArgs['|-curestatus|']) { }
   '|-cureteam|'(args: Args['|-cureteam|'], kwArgs: KWArgs['|-cureteam|']) { }
-  '|-boost|'(args: Args['|-boost|'], kwArgs: KWArgs['|-boost|']) { }
-  '|-unboost|'(args: Args['|-unboost|'], kwArgs: KWArgs['|-unboost|']) { }
-  '|-setboost|'(args: Args['|-setboost|'], kwArgs: KWArgs['|-setboost|']) { }
-  '|-swapboost|'(args: Args['|-swapboost|'], kwArgs: KWArgs['|-swapboost|']) { }
-  '|-invertboost|'(args: Args['|-invertboost|'], kwArgs: KWArgs['|-invertboost|']) { }
-  '|-clearboost|'(args: Args['|-clearboost|'], kwArgs: KWArgs['|-clearboost|']) { }
-  '|-clearallboost|'(args: Args['|-clearallboost|'], kwArgs: KWArgs['|-clearallboost|']) { }
-  '|-clearpositiveboost|'(args: Args['|-clearpositiveboost|'], kwArgs: KWArgs['|-clearpositiveboost|']) { }
   '|-ohko|'(args: Args['|-ohko|']) { }
-  '|-clearnegativeboost|'(args: Args['|-clearnegativeboost|'], kwArgs: KWArgs['|-clearnegativeboost|']) { }
-  '|-copyboost|'(args: Args['|-copyboost|'], kwArgs: KWArgs['|-copyboost|']) { }
   '|-weather|'(args: Args['|-weather|'], kwArgs: KWArgs['|-weather|']) { }
   '|-fieldstart|'(args: Args['|-fieldstart|'], kwArgs: KWArgs['|-fieldstart|']) { }
   '|-fieldend|'(args: Args['|-fieldend|'], kwArgs: KWArgs['|-fieldend|']) { }
