@@ -1,12 +1,10 @@
 import { Dex, ModdedDex, ID, toID, Move, SideID } from '@pkmn/sim';
-import { Protocol, Protocol as P, KWArgs, Message, PokemonHealth, PokemonIdent, PokemonSearchID } from '@pkmn/protocol';
-import { As, Weather, GenerationNum, GameType } from '@pkmn/types';
+import { Protocol, Protocol as P, KWArgs, Message, PokemonIdent, PokemonSearchID } from '@pkmn/protocol';
+import { GenerationNum, GameType } from '@pkmn/types';
 
+import { Field } from './field';
 import { Side, Effect } from './side';
-import { Pokemon, ServerPokemon } from './pokemon';
-
-export type WeatherState<T = Weather> = [T, number, number];
-export type PseudoWeather = string & As<'PseudoWeather'>;
+import { Pokemon } from './pokemon';
 
 // interface FaintedPokemon {
 //  target: Pokemon;
@@ -64,9 +62,10 @@ export class Battle {
   dex: ModdedDex;
   gen: GenerationNum;
 
-  p1: Side;
-  p2: Side;
-  sides: [Side, Side];
+  readonly field: Field;
+  readonly p1: Side;
+  readonly p2: Side;
+  readonly sides: [Side, Side];
 
   turn!: number;
 
@@ -80,19 +79,19 @@ export class Battle {
   totalTimeLeft: number;
   graceTimeLeft: number;
 
-  weather!: ID;
-  pseudoWeather!: WeatherState<PseudoWeather>[];
-  weatherTimeLeft!: number;
-  weatherMinTimeLeft!: number;
 
   lastMove!: ID | 'switch-in';
 
-  constructor(provider = (b: Battle, n: number) => new Side(b, n)) {
+  constructor(
+    field = (b: Battle) => new Field(b),
+    side = (b: Battle, n: number) => new Side(b, n)
+  ) {
     this.dex = Dex;
     this.gen = 8;
 
-    this.p1 = provider(this, 0);
-    this.p2 = provider(this, 1);
+    this.field = field(this);
+    this.p1 = side(this, 0);
+    this.p2 = side(this, 1);
     this.p1.foe = this.p2;
     this.p2.foe = this.p1;
     this.sides = [this.p1, this.p2];
@@ -112,33 +111,8 @@ export class Battle {
 
   reset() {
     this.turn = 0;
-    this.weather = '' as ID;
-    this.weatherTimeLeft = 0;
-    this.weatherMinTimeLeft = 0;
-    this.pseudoWeather = [];
+    this.field.reset();
     this.lastMove = '';
-  }
-
-  removePseudoWeather(weather: string) {
-    for (let i = 0; i < this.pseudoWeather.length; i++) {
-      if (this.pseudoWeather[i][0] === weather) {
-        this.pseudoWeather.splice(i, 1);
-        return;
-      }
-    }
-  }
-
-  addPseudoWeather(weather: PseudoWeather, minTimeLeft: number, timeLeft: number) {
-    this.pseudoWeather.push([weather, minTimeLeft, timeLeft]);
-  }
-
-  hasPseudoWeather(weather: string) {
-    for (const [pseudoWeatherName] of this.pseudoWeather) {
-      if (weather === pseudoWeatherName) {
-        return true;
-      }
-    }
-    return false;
   }
 
   setTurn(turnNum: string | number) {
@@ -161,49 +135,7 @@ export class Battle {
     }
   }
 
-  changeWeather(weatherName: Weather, poke?: Pokemon, isUpkeep?: boolean, ability?: Effect) {
-    let weather = toID(weatherName);
-    if (!weather || weather === 'none') {
-      weather = '' as ID;
-    }
-    if (isUpkeep) {
-      if (this.weather && this.weatherTimeLeft) {
-        this.weatherTimeLeft--;
-        if (this.weatherMinTimeLeft !== 0) this.weatherMinTimeLeft--;
-      }
-      return;
-    }
-    if (weather) {
-      const isExtremeWeather = ['deltastream', 'desolateland', 'primordialsea'].includes(weather);
-      if (poke) {
-        if (ability) this.activateAbility(poke, ability.name);
-        this.weatherTimeLeft = (this.dex.gen <= 5 || isExtremeWeather) ? 0 : 8;
-        this.weatherMinTimeLeft = (this.dex.gen <= 5 || isExtremeWeather) ? 0 : 5;
-      } else if (isExtremeWeather) {
-        this.weatherTimeLeft = 0;
-        this.weatherMinTimeLeft = 0;
-      } else {
-        this.weatherTimeLeft = (this.dex.gen <= 3 ? 5 : 8);
-        this.weatherMinTimeLeft = (this.dex.gen <= 3 ? 0 : 5);
-      }
-    }
-    this.weather = weather;
-  }
-
-  updatePseudoWeatherLeft() {
-    for (const pWeather of this.pseudoWeather) {
-      if (pWeather[1]) pWeather[1]--;
-      if (pWeather[2]) pWeather[2]--;
-    }
-    for (const side of this.sides) {
-      for (const id in side.sideConditions) {
-        const cond = side.sideConditions[id];
-        if (cond[2]) cond[2]--;
-        if (cond[3]) cond[3]--;
-      }
-    }
-  }
-
+  // TODO: pokemon
   useMove(pokemon: Pokemon, move: Move, target: Pokemon | null, kwArgs: KWArgs['|move|']) {
     const fromeffect = Dex.getEffect(kwArgs.from);
     this.activateAbility(pokemon, fromeffect);
@@ -247,6 +179,7 @@ export class Battle {
     }
   }
 
+  // TODO: pokemon
   cantUseMove(pokemon: Pokemon, effect: Effect, move: Move) {
     pokemon.clearMovestatuses();
     this.activateAbility(pokemon, effect);
@@ -259,6 +192,7 @@ export class Battle {
     }
   }
 
+  // TODO: pokemon
   activateAbility(pokemon: Pokemon | null, effectOrName: Effect | string, isNotBase?: boolean) {
     if (!pokemon || !effectOrName) return;
     if (typeof effectOrName !== 'string') {
@@ -346,6 +280,19 @@ export class Battle {
       }
     }
     return null;
+  }
+
+  getSide(sidename: string): Side {
+    if (sidename === 'p1' || sidename.substr(0, 3) === 'p1:') return this.p1;
+    if (sidename === 'p2' || sidename.substr(0, 3) === 'p2:') return this.p2;
+    if (this.p1.id === sidename) return this.p1;
+    if (this.p2.id === sidename) return this.p2;
+    if (this.p1.name === sidename) return this.p1;
+    if (this.p2.name === sidename) return this.p2;
+    return {
+      name: sidename,
+      id: sidename.replace(/ /g, ''),
+    } as any;
   }
 
   getPokemon(pokemonid: string, details?: P.PokemonDetails) {
@@ -481,25 +428,15 @@ export class Battle {
     return pokemon;
   }
 
-  getSide(sidename: string): Side {
-    if (sidename === 'p1' || sidename.substr(0, 3) === 'p1:') return this.p1;
-    if (sidename === 'p2' || sidename.substr(0, 3) === 'p2:') return this.p2;
-    if (this.p1.id === sidename) return this.p1;
-    if (this.p2.id === sidename) return this.p2;
-    if (this.p1.name === sidename) return this.p1;
-    if (this.p2.name === sidename) return this.p2;
-    return {
-      name: sidename,
-      id: sidename.replace(/ /g, ''),
-    } as any;
-  }
-
   destroy() {
+    this.field.destroy();
+    (this.field as Field) = null!;
+
     for (let i = 0; i < this.sides.length; i++) {
       if (this.sides[i]) this.sides[i].destroy();
       this.sides[i] = null!;
     }
-    this.p1 = null!;
-    this.p2 = null!;
+    (this.p1 as Side) = null!;
+    (this.p2 as Side) = null!;
   }
 }
