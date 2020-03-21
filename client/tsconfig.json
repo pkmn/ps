@@ -6,5 +6,5 @@
     "outDir": "build",
     "lib": ["es6", "es2016.array.include", "es2017.object"]
   },
-  "exclude": ["wip", "build"]
+  "exclude": ["build"]
 }
