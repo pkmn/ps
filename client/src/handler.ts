@@ -1,6 +1,7 @@
 import {Protocol, Args, KWArgs, PokemonSearchID} from '@pkmn/protocol';
 import {ID, toID, BoostName, Effect} from '@pkmn/sim';
 import {Battle} from './battle';
+import {Pokemon} from './pokemon';
 
 const BOOSTS: BoostName[] = ['atk', 'def', 'spa', 'spd', 'spe', 'accuracy', 'evasion'];
 
@@ -148,18 +149,18 @@ export class Handler implements Protocol.Handler {
     poke.side.faint(poke);
   }
 
-  '|swap|'(args: Args['|swap|']) {
+  '|swap|'(args: Args['|swap|'], kwArgs: KWArgs['|swap|']) {
+    this.battle.lastSwap = undefined;
     if (isNaN(Number(args[2]))) {
       const poke = this.battle.getPokemon(args[1])!;
       poke.side.swapWith(poke, this.battle.getPokemon(args[2])!);
     } else {
       const poke = this.battle.getPokemon(args[1])!;
       const targetIndex = parseInt(args[2]!);
-      // FIXME TextParser
-      // if (kwArgs.from) {
-      //   const target = poke.side.active[targetIndex];
-      //   if (target) args[2] = target.ident;
-      // }
+      if (kwArgs.from) {
+        const target = poke.side.active[targetIndex];
+        if (target) this.battle.lastSwap = [poke.side.id, targetIndex, target.ident];
+      }
       poke.side.swapTo(poke, targetIndex);
     }
   }
@@ -169,7 +170,7 @@ export class Handler implements Protocol.Handler {
     const move = this.battle.dex.getMove(args[2]);
     if (this.battle.checkActive(poke)) return;
     const poke2 = this.battle.getPokemon(args[3]);
-    poke.useMove(move, poke2, kwArgs);
+    poke.useMove(move, poke2, kwArgs.from);
   }
 
   '|cant|'(args: Args['|cant|']) {
@@ -185,6 +186,7 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
+    this.battle.lastDamagePercentage = undefined;
     const poke = this.battle.getPokemon(args[1])!;
     const damage = poke.healthParse(args[2], true);
     if (damage === null) return;
@@ -200,19 +202,18 @@ export class Handler implements Protocol.Handler {
         }
       }
     } else {
-      // FIXME TextParser
-      // let range = poke.getDamageRange(damage);
-      // let damageinfo = '' + Pokemon.getFormattedRange(range, damage[1] === 100 ? 0 : 1, '\u2013');
-      // if (damage[1] !== 100) {
-      //   let hover = '' + ((damage[0] < 0) ? '\u2212' : '') +
-      //     Math.abs(damage[0]) + '/' + damage[1];
-      //   if (damage[1] === 48) { // this is a hack
-      //     hover += ' pixels';
-      //   }
-      //   // battle-log will convert this into <abbr>
-      //   damageinfo = '||' + hover + '||' + damageinfo + '||';
-      // }
-      // args[3] = damageinfo;
+      const range = Pokemon.getDamageRange(damage, poke.hpcolor);
+      let damageinfo = '' + Pokemon.getFormattedRange(range, damage[1] === 100 ? 0 : 1, '\u2013');
+      if (damage[1] !== 100) {
+        let hover = '' + ((damage[0] < 0) ? '\u2212' : '') +
+          Math.abs(damage[0]) + '/' + damage[1];
+        if (damage[1] === 48) { // this is a hack
+          hover += ' pixels';
+        }
+        // should be converted to <abbr> in html
+        damageinfo = '||' + hover + '||' + damageinfo + '||';
+      }
+      this.battle.lastDamagePercentage = [args[1], args[2], damageinfo];
     }
   }
 
@@ -718,7 +719,7 @@ export class Handler implements Protocol.Handler {
       poke.rememberMove(kwArgs.move!, Infinity);
       break;
 
-    // move activations
+      // move activations
     case 'brickbreak':
       target!.side.removeSideCondition('reflect' as ID);
       target!.side.removeSideCondition('lightscreen' as ID);
@@ -763,7 +764,7 @@ export class Handler implements Protocol.Handler {
       }
       break;
 
-    // ability activations
+      // ability activations
     case 'forewarn':
       if (target) {
         target.rememberMove(kwArgs.move!, 0);
@@ -783,7 +784,7 @@ export class Handler implements Protocol.Handler {
       target!.activateAbility('Mummy', true);
       break;
 
-    // item activations
+      // item activations
     case 'leppaberry':
     case 'mysteryberry':
       poke.rememberMove(kwArgs.move!, effect.id === 'leppaberry' ? -10 : -5);
@@ -803,11 +804,11 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-weather|'(args: Args['|-weather|'], kwArgs: KWArgs['|-weather|']) {
+    this.battle.lastWeather = undefined;
     const effect = this.battle.dex.getEffect(args[1]) as Effect;
     const poke = this.battle.getPokemon(kwArgs.of) || undefined;
     const ability = this.battle.dex.getEffect(kwArgs.from) as Effect;
-    // FIXME TextParser
-    // if (!effect.id || effect.id === 'none') kwArgs.from = this.battle.field.weather;
+    if (!effect.id || effect.id === 'none') this.battle.lastWeather = this.battle.field.weather;
     this.battle.field.changeWeather(effect.id, poke, !!kwArgs.upkeep, ability);
   }
 

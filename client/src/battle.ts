@@ -1,5 +1,11 @@
 import {Dex, ModdedDex, ID, SideID} from '@pkmn/sim';
-import {Protocol, Protocol as P, Message, PokemonIdent, PokemonSearchID} from '@pkmn/protocol';
+import {
+  Protocol,
+  Message,
+  PokemonIdent,
+  PokemonSearchID,
+  Protocol as P,
+} from '@pkmn/protocol';
 import {GenerationNum, GameType, GenderName} from '@pkmn/types';
 
 import {Field} from './field';
@@ -79,8 +85,11 @@ export class Battle {
   totalTimeLeft: number;
   graceTimeLeft: number;
 
-
   lastMove!: ID | 'switch-in' | 'healing-wish';
+
+  lastSwap?: [SideID, number, PokemonIdent];
+  lastDamagePercentage?: [PokemonIdent, P.PokemonHealth, string];
+  lastWeather?: ID;
 
   constructor(
     field = (b: Battle) => new Field(b),

@@ -30,7 +30,8 @@ export type EvoType =
 	'trade' | 'useItem' | 'levelMove' | 'levelExtra' |
 	'levelFriendship' | 'levelHold' | 'other';
 
-export type Player = 'p1' | 'p2' | 'p3' | 'p4';
+export type SideID = 'p1' | 'p2' | 'p3' | 'p4';
+export type Player = SideID;
 
 export type GameType =
 	'singles' | 'doubles' | 'triples' | 'multi' | 'free-for-all' | 'rotation';

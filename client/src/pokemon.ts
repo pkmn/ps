@@ -1,13 +1,12 @@
 import {ID, toID, Move, Effect} from '@pkmn/sim';
 import {StatusName, GenderName, HPColor, BoostsTable, TypeName} from '@pkmn/types';
 import {
-  Protocol as P,
   Protocol,
   PokemonDetails,
   PokemonHealth,
   PokemonIdent,
   PokemonSearchID,
-  KWArgs,
+  Protocol as P,
 } from '@pkmn/protocol';
 
 import {Side} from './side';
@@ -130,7 +129,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
 
   statusStage: number;
   statusData: { sleepTurns: number; toxicTurns: number };
-  boosts: Partial<BoostsTable & {spc: number}>;
+  boosts: Partial<BoostsTable & { spc: number }>;
   volatiles: EffectTable;
   turnstatuses: EffectTable;
   movestatuses: EffectTable;
@@ -351,9 +350,9 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     this.moveTrack.push([moveName, pp]);
   }
 
-  useMove(move: Move, target: Pokemon | null, kwArgs: KWArgs['|move|']) {
+  useMove(move: Move, target: Pokemon | null, from?: P.Effect) {
     const dex = this.side.battle.dex;
-    const fromeffect = dex.getEffect(kwArgs.from);
+    const fromeffect = dex.getEffect(from);
     this.activateAbility(fromeffect);
     this.clearMovestatuses();
     if (move.id === 'focuspunch') {
@@ -547,6 +546,75 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
 
   getBaseTemplate() {
     return this.side.battle.dex.getTemplate(this.species);
+  }
+
+  // Returns [min, max] damage dealt as a proportion of total HP from 0 to 1
+  static getDamageRange(damage: any, hpcolor: string): [number, number] {
+    if (damage[1] !== 48) {
+      const ratio = damage[0] / damage[1];
+      return [ratio, ratio];
+    } else if (damage.length === undefined) {
+      // wrong pixel damage.
+      // this case exists for backward compatibility only.
+      return [damage[2] / 100, damage[2] / 100];
+    }
+    // pixel damage
+    let oldrange = Pokemon.getPixelRange(damage[3], damage[4]);
+    let newrange = Pokemon.getPixelRange(damage[3] + damage[0], hpcolor);
+    if (damage[0] === 0) {
+      // no change in displayed pixel width
+      return [0, newrange[1] - newrange[0]];
+    }
+    if (oldrange[0] < newrange[0]) { // swap order
+      const r = oldrange;
+      oldrange = newrange;
+      newrange = r;
+    }
+    return [oldrange[0] - newrange[1], oldrange[1] - newrange[0]];
+  }
+
+  static getPixelRange(pixels: number, color: HPColor | ''): [number, number] {
+    const epsilon = 0.5 / 714;
+
+    if (pixels === 0) return [0, 0];
+    if (pixels === 1) return [0 + epsilon, 2 / 48 - epsilon];
+    if (pixels === 9) {
+      if (color === 'y') { // ratio is > 0.2
+        return [0.2 + epsilon, 10 / 48 - epsilon];
+      } else { // ratio is <= 0.2
+        return [9 / 48, 0.2];
+      }
+    }
+    if (pixels === 24) {
+      if (color === 'g') { // ratio is > 0.5
+        return [0.5 + epsilon, 25 / 48 - epsilon];
+      } else { // ratio is exactly 0.5
+        return [0.5, 0.5];
+      }
+    }
+    if (pixels === 48) return [1, 1];
+
+    return [pixels / 48, (pixels + 1) / 48 - epsilon];
+  }
+
+  static getFormattedRange(range: [number, number], precision: number, separator: string) {
+    if (range[0] === range[1]) {
+      const percentage = Math.abs(range[0] * 100);
+      if (Math.floor(percentage) === percentage) {
+        return percentage + '%';
+      }
+      return percentage.toFixed(precision) + '%';
+    }
+    let lower;
+    let upper;
+    if (precision === 0) {
+      lower = Math.floor(range[0] * 100);
+      upper = Math.ceil(range[1] * 100);
+    } else {
+      lower = (range[0] * 100).toFixed(precision);
+      upper = (range[1] * 100).toFixed(precision);
+    }
+    return '' + lower + separator + upper + '%';
   }
 
   reset() {
