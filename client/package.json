@@ -27,7 +27,7 @@
     "lint": "eslint --cache src/*.ts",
     "fix": "eslint --fix src/*.ts",
     "compile": "tsc -p .",
-    "text": "true",
+    "test": "true",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
     "posttest": "npm run lint"

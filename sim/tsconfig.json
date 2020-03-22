@@ -9,6 +9,7 @@
     "noFallthroughCasesInSwitch": false,
     "noImplicitReturns": false,
     "outDir": "build",
+    "tsBuildInfoFile": ".tsbuildinfo",
     "typeRoots": ["./node_modules/@types", "./node_modules/@pkmn/types"]
   },
   "exclude": ["test", "build"]

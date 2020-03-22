@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "browserslist": "last 1 Chrome version",
+  "dependencies": {
+    "@pkmn/client": "file:../client",
+    "@pkmn/protocol": "file:../protocol",
+    "@pkmn/sim": "file:../sim",
+    "@pkmn/types": "file:../types",
+    "@pkmn/view": "file:../view",
+    "minimist": "^1.2.5",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-text": "^0.9.6",
+    "terser": "^4.6.7",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "lint": "eslint --cache src/*.ts",
+    "fix": "eslint --fix src/*.ts",
+    "compile": "tsc -p .",
+    "start": "parcel index.html",
+    "test": "true",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  }
+}
