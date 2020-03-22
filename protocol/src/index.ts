@@ -52,7 +52,6 @@ export namespace Protocol {
    *    p4b p2a
    *    p1a p3b
    *
-   *
    *   - `NAME` is the nickname of the Pokémon (or the species name, if no nickname is given).
    *
    * For example: `p1a: Sparky` could be a Charizard named Sparky. `p1: Dragonite` could be an
@@ -1415,7 +1414,7 @@ export const Protocol = new class {
     '|-copyboost|': 1, '|-clearboost|': 1, '|-clearpositiveboost|': 1, '|-singlemove|': 1,
   };
 
-  *handle(data: string) {
+  *parse(data: string) {
     const lines = data.split('\n');
     let roomid = '' as Protocol.RoomID;
     for (const [i, line] of lines.entries()) {

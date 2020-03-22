@@ -43,7 +43,7 @@ describe('Protocol', () => {
     const handler = new BoostHandler();
     const chunk = '>battle-1\n|-boost|p2b: Diancie|atk|2\n|-unboost|p2a: Salamence|def|1';
     const count = {called: 0, looped: 0};
-    for (const [roomid, data] of Protocol.handle(chunk)) {
+    for (const [roomid, data] of Protocol.parse(chunk)) {
       expect(roomid).toEqual('battle-1');
       if (data.args[0] === '-boost') {
         handler['|-boost|'](data.args as Args['|-boost|'], data.kwArgs as KWArgs['|-boost|']);
