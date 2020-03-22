@@ -19,10 +19,73 @@ export {ID} from '@pkmn/types';
 
 export namespace Protocol {
   export type PositionLetter = 'a' | 'b' | 'c';
-
+  /**
+   * A Pokémon ID is in the form `POSITION: NAME`.
+   *
+   *   - `POSITION` is the spot that the Pokémon is in: it consists of the `PLAYER` of the player
+   *     (see `|player|`), followed by a position letter (`a` in singles).
+   *
+   * An inactive Pokémon will not have a position letter.
+   *
+   * In doubles and triples battles, `a` will refer to the leftmost Pokémon from its trainer's
+   * perspective (so the leftmost on your team, and the rightmost on your opponent's team, so
+   * `p1a` faces `p2c`, etc).
+   *
+   * So the layout looks like:
+   *
+   * Doubles, player 1's perspective:
+   *
+   *    p2b p2a
+   *    p1a p1b
+   *
+   * Doubles, player 2's perspective:
+   *
+   *    p1b p1a
+   *    p2a p2b
+   *
+   * In multi and free-for-all battles, players are grouped by parity. That is, `p1` and `p3` share
+   * a side, as do `p2` and `p4`. The position letters still follow the same conventions as in
+   * double battles, so the layout looks like:
+   *
+   * Multi, player 1's perspective
+   *
+   *    p4b p2a
+   *    p1a p3b
+   *
+   *
+   *   - `NAME` is the nickname of the Pokémon (or the species name, if no nickname is given).
+   *
+   * For example: `p1a: Sparky` could be a Charizard named Sparky. `p1: Dragonite` could be an
+   * inactive Dragonite being healed by Heal Bell.
+   *
+   * For most commands, you can just use the position information in the Pokémon ID to identify
+   * the Pokémon. Only a few commands actually change the Pokémon in that position (`|switch|`
+   * switching, `|replace|` illusion dropping, `|drag|` phazing, and `|detailschange|` permanent
+   * forme changes), and these all specify `DETAILS` for you to perform updates with.
+   */
   export type PokemonIdent = string & As<'PokemonIdent'>;
+  /**
+   * A comma-separated list of all information about a Pokemon visible on the battle screen:
+   * species, shininess, gender, and level. So it starts with `SPECIES`, adding `, shiny` if it's
+   * shiny, `, M` if it's male, `, F` if it's female, `, L##` if it's not level 100.
+   *
+   * So, for instance, `Deoxys-Speed` is a level 100 non-shiny genderless Deoxys (Speed forme).
+   * `Sawsbuck, shiny, F, L50` is a level 50 shiny female Sawsbuck (Spring form).
+   *
+   * In Team Preview, `DETAILS` will not include information not available in Team Preview (in
+   * particular, level and shininess will be left off), and for Pokémon whose forme isn't revealed
+   * in Team Preview, it will be given as `-*`. So, for instance, an Arceus in Team Preview would
+   * have the details string `Arceus-*`, no matter what kind of Arceus it is.
+   */
   export type PokemonDetails = string & As<'PokemonDetails'>;
+  /** `` `${ident}|${details}` ``. Tracked for ease of searching. */
   export type PokemonSearchID= string & As<'PokemonSearchID'>;
+  /**
+   * The switched Pokémon has HP `HP`, and status `STATUS`. `HP` is specified as a fraction; if it
+   * is your own Pokémon then it will be `CURRENT/MAX`, if not, it will be `/100` if HP Percentage
+   * Mod is in effect and `/48` otherwise. `STATUS` can be left blank, or it can be `slp`, `par`
+   * etc.
+   */
   export type PokemonHealth = string & As<'PokemonHealth'>;
   export type PokemonCondition = string & As<'PokemonCondition'>;
 
@@ -31,12 +94,27 @@ export namespace Protocol {
    * and the rest of the string being their username.
    */
   export type Username = string & As<'Username'>;
+  /**
+   * The player's avatar identifier (usually a number, but other values can be used for custom
+   * avatars).
+   */
   export type Avatar = string & As<'Avatar'>;
 
+  /**
+   * The name of an 'effect' (move, ability, item, status, etc).
+   *
+   * Effects which are moves, abilities or items are prefixed by `move: `, `ability: ` and `item: `
+   * respectively, whereas all other effects are unprefixed. For example, `move: Spectral Thief` or
+   * `confusion`.
+   */
   export type Effect = string & As<'Effect'>;
+  /** The name of a Pokemon species (unprefixed). */
   export type Species = string & As<'Species'>;
+  /** The name of an ability (unprefixed). */
   export type Ability = string & As<'Ability'>;
+  /** The name of an item (unprefixed). */
   export type Item = string & As<'Item'>;
+  /** The name of a move (unprefixed). */
   export type Move = string & As<'Move'>;
 
   /** An arbitrary message to be displayed as is. */
@@ -90,6 +168,7 @@ export namespace Protocol {
   export type Score = string & As<'Score'>;
   /** The name of a metagame format. */
   export type FormatName = string & As<'FormatName'>;
+  /** Rules affecting the battle, encoded as `RULE: DESCRIPTION`. */
   export type Rule = string & As<'Rule'>;
   export type BoostNames = string & As<'BoostNames'>;
   export type Side = string & As<'Side'>;
@@ -227,7 +306,7 @@ export namespace Protocol {
   }
 
   export interface Request {
-    rqid: number;
+    rqid?: number;
     active: ActivePokemon[];
     side: {
       name: Username;
@@ -361,7 +440,7 @@ export namespace Protocol {
      *
      * `USER` said `MESSAGE`. Note that `MESSAGE` can contain `|` characters.
      */
-    '|chat|': readonly ['chat', Username, Message]
+    '|chat|': readonly ['chat', Username, Message];
     /**
      * `|:|TIMESTAMP`
      *
@@ -465,13 +544,13 @@ export namespace Protocol {
      * prefixed by `,` in it. After that follows the name of the section and another vertical bar.
      */
     '|formats|': readonly ['formats', FormatsList];
-     /**
-      * `|updatesearch|JSON`
-      *
-      * `JSON` is a JSON object representing the current state of what battles the user is currently
-      * searching for. You'll get this whenever searches update (when you search, cancel a search,
-      * or you start or end a battle).
-      */
+    /**
+     * `|updatesearch|JSON`
+     *
+     * `JSON` is a JSON object representing the current state of what battles the user is currently
+     * searching for. You'll get this whenever searches update (when you search, cancel a search,
+     * or you start or end a battle).
+     */
     '|updatesearch|': readonly ['updatesearch', SearchStateJSON];
     /**
      * `|updatechallenges|JSON`
@@ -643,17 +722,89 @@ export namespace Protocol {
   export type MiscArgType = MiscArgs[MiscArgName];
 
   export interface BattleInitArgs {
+    /**
+     * `|player|PLAYER|USERNAME|AVATAR|RATING`
+     *
+     *   - `PLAYER` is `p1` or `p2` (may also be `p3` or `p4` in 4 player battles)
+     *   - `USERNAME` is the username
+     *   - `AVATAR` is the player's avatar identifier
+     *   - `RATING` is the player's Elo rating in the format they're playing. This will only be
+     *     displayed in rated battles and when the player is first introduced otherwise it's blank.
+     */
     '|player|': readonly ['player', Player, Username, Avatar, Num?] |readonly ['player', Player];
+    /**
+     * `|teamsize|PLAYER|NUMBER`
+     *
+     *   - `PLAYER` is `p1`, `p2`, `p3`, or `p4`
+     *   - `NUMBER` is the number of Pokémon your opponent starts with. In games without Team
+     *     Preview, you don't know which Pokémon your opponent has, but you at least know how many
+     *     there are.
+     */
     '|teamsize|': readonly ['teamsize', Player, Num];
+    /**
+     * `|gametype|GAMETYPE`
+     *
+     * - `GAMETYPE` is `singles`, `doubles`, `triples`, `multi`, `free-for-all` or `rotation`.
+     */
     '|gametype|': readonly ['gametype', GameType];
+    /**
+     * `|gen|GENNUM`
+     *
+     * Generation number, from 1 to 8. Stadium counts as its respective gens;,Let's Go counts as 7,
+     * and modded formats count as whatever gen they were based on.
+     */
     '|gen|': readonly ['gen', GenerationNum];
+    /**
+     * `|tier|FORMATNAME`
+     *
+     * The name of the format being played.
+     */
     '|tier|': readonly ['tier', FormatName];
+    /**
+     * `|rated`
+     * `|rated|MESSAGE`
+     *
+     * Will be sent if the game will affect the player's ladder rating (Elo score). `MESSAGE` will
+     * be included if the game is official in some other way, such as being a tournament game. Does
+     * not actually mean the game is rated.
+     */
     '|rated|': readonly ['rated'] | readonly ['rated', Message];
     '|seed|': readonly ['seed', Seed];
-    '|teampreview|': readonly ['teampreview'] | ['teampreview', Num];
+    /**
+     * `|rule|RULE: DESCRIPTION`
+     *
+     * Will appear multiple times, one for each rule in effect.
+     */
     '|rule|': readonly ['rule', Rule];
+    /**
+     * `|clearpoke`
+     *
+     * Marks the start of Team Preview
+     */
     '|clearpoke|': readonly ['clearpoke'];
+    /**
+     * `|poke|PLAYER|DETAILS|ITEM`
+     *
+     * Declares a Pokémon for Team Preview.
+     *
+     *   - `PLAYER` is the player ID (see `|player|`)
+     *   - `DETAILS` describes the pokemon
+     *   - `ITEM` will be `item` if the Pokémon is holding an item, or blank if it isn't.
+     *
+     * Note that forme and shininess are hidden on this, unlike on the `|switch|`details message.
+     */
     '|poke|': readonly ['player', Player, PokemonDetails, 'item' | ''];
+    /**
+     * `|teampreview`
+     *
+     * Marks the end of Team Preview
+     */
+    '|teampreview|': readonly ['teampreview'] | ['teampreview', Num];
+    /**
+     * `|start`
+     *
+     * Indicates that the game has started.
+     */
     '|start|': readonly ['start'];
   }
 
@@ -661,13 +812,59 @@ export namespace Protocol {
   export type BattleInitArgType = BattleInitArgs[BattleInitArgName];
 
   export interface BattleProgressArgs {
-    '|done|': readonly ['done']; // '|'
+    /**
+     * `|`
+     *
+     * Clears the message-bar, and add a spacer to the battle history. This is usually done
+     * automatically by detecting the message-type, but can also be forced to happen with this.
+     */
+    '|done|': readonly ['done'];
+    /**
+     * `|request|REQUEST`
+     *
+     * Gives a JSON object containing a request for a choice (to move or switch). To assist in your
+     * decision, `REQUEST.active` has information about your active Pokémon, and `REQUEST.side` has
+     * information about your, your team as a whole. `REQUEST.rqid` is an optional request ID.
+     */
     '|request|': readonly ['request', RequestJSON];
+    /**
+     * `|inactive|MESSAGE`
+     *
+     * A message related to the battle timer has been sent. The official client displays these
+     * messages in red. `inactive` means that the timer is on at the time the message was sent.
+     */
     '|inactive|': readonly ['inactive', Message];
+    /**
+     * `|inactiveoff|MESSAGE`
+     *
+     * A message related to the battle timer has been sent. The official client displays these
+     * messages in red. `inactiveoff` means that the timer is off.
+     */
     '|inactiveoff|': readonly ['inactiveoff', Message];
+    /**
+     * `|upkeep`
+     *
+     * Signals the upkeep phase of the turn where the number of turns left for field
+     * conditions are updated.
+     */
     '|upkeep|': readonly ['upkeep'];
+    /**
+     * `|turn|NUMBER`
+     *
+     * It is now turn `NUMBER`.
+     */
     '|turn|': readonly ['turn', Num];
+    /**
+     * `|win|USER`
+     *
+     * `USER` has won the battle.
+     */
     '|win|': readonly ['win', Username];
+    /**
+     * `|tie`
+     *
+     * The battle has ended in a tie.
+     */
     '|tie|': readonly ['tie'];
   }
 
@@ -675,15 +872,79 @@ export namespace Protocol {
   export type BattleProgressArgType = BattleProgressArgs[BattleProgressArgName];
 
   export interface BattleMajorArgs {
+    /**
+     * `|move|POKEMON|MOVE|TARGET`
+     *
+     * The specified Pokémon has used move `MOVE` at `TARGET`. If a move has multiple targets or
+     * no target, `TARGET` should be ignored. If a move targets a side, `TARGET` will be a (possibly
+     * fainted) Pokémon on that side.
+     */
     '|move|':
     | readonly ['move', PokemonIdent, Move, PokemonIdent]
     | readonly ['move', PokemonIdent, Move];
+    /**
+     * `|switch|POKEMON|DETAILS|HP STATUS`
+     *
+     * A Pokémon identified by `POKEMON` has switched in (if there was an old Pokémon in that
+     * position, it is switched out).
+     *
+     * `POKEMON|DETAILS` represents all the information that can be used to tell Pokémon apart. If
+     * two pokemon have the same `POKEMON|DETAILS` (which will never happen in any format with
+     * Species Clause), you usually won't be able to tell if the same pokemon switched in or a
+     * different pokemon switched in.
+     *
+     * The switched Pokémon has HP `HP`, and status `STATUS`. `HP` is specified as a fraction; if it
+     * is your own Pokémon then it will be `CURRENT/MAX`, if not, it will be `/100` if HP Percentage
+     * Mod is in effect and `/48` otherwise. `STATUS` can be left blank, or it can be `slp`, `par`,
+     * etc.
+     */
     '|switch|': readonly ['switch', PokemonIdent, PokemonDetails, PokemonHealth];
+    /**
+     * `|drag|POKEMON|DETAILS|HP STATUS`
+     *
+     * As `|switch|`, but `switch` means it was intentional, while `drag` means it was unintentional
+     * (forced by Whirlwind, Roar, etc).
+     */
     '|drag|': readonly ['drag', PokemonIdent, PokemonDetails, PokemonHealth];
+    /**
+     * `|detailschange|POKEMON|DETAILS|HP STATUS`
+     *
+     * The specified Pokémon has changed formes (via Mega Evolution, ability, etc.) to `DETAILS`. If
+     * the forme change is permanent (Mega Evolution or a Shaymin-Sky that is frozen), then
+     * `|detailschange|` will appear; otherwise, the client will send `|-formechange|`.
+     *
+     * Syntax is the same as `|switch|`.
+     */
     '|detailschange|': readonly ['detailschange', PokemonIdent, PokemonDetails, PokemonHealth];
+    /**
+     * `|replace|POKEMON|DETAILS|HP STATUS`
+     *
+     * Illusion has ended for the specified Pokémon. Syntax is the same as `|switch|`, but remember
+     * that everything you thought you knew about the previous Pokémon is now wrong.
+     *
+     * `POKEMON` will be the NEW Pokémon ID - i.e. it will have the nickname of the Zoroark (or
+     * other Illusion user).
+     */
     '|replace|': readonly ['replace', PokemonIdent, PokemonDetails, PokemonHealth];
+    /**
+     * `|swap|POKEMON|POSITION`
+     *
+     * Moves already active `POKEMON` to active field `POSITION` where the leftmost position is 0
+     * and each position to the right counts up by 1.
+     */
     '|swap|': readonly ['swap', PokemonIdent, Num] | readonly ['swap', PokemonIdent];
+    /**
+     * `|cant|POKEMON|REASON` or `|cant|POKEMON|REASON|MOVE`
+     *
+     * The Pokémon `POKEMON` could not perform a move because of the indicated `REASON` (such as
+     * paralysis, Disable, etc). Sometimes, the move it was trying to use is given.
+     */
     '|cant|': readonly ['cant', PokemonIdent, Reason | Ability | Effect | Move, Effect | Move];
+    /**
+     * `|faint|POKEMON`
+     *
+     * The Pokémon `POKEMON` has fainted.
+     */
     '|faint|': readonly ['faint', PokemonIdent];
     '|switchout|': readonly ['switchout', PokemonIdent];
     '|message|': readonly ['message', Message];
@@ -693,6 +954,15 @@ export namespace Protocol {
   export type BattleMajorArgType = BattleMajorArgs[BattleMajorArgName];
 
   export interface BattleMinorArgs {
+    /**
+     * `|-formechange|POKEMON|SPECIES|HP STATUS`
+     *
+     * The specified Pokémon has changed formes (via Mega Evolution, ability, etc.) to `SPECIES`. If
+     * the forme change is permanent (Mega Evolution or a Shaymin-Sky that is frozen), then
+     * `|detailschange|` will appear; otherwise, the client will send `|-formechange|`.
+     *
+     * Syntax is the same as `|switch|`, though with `SPECIES` in lieu of `DETAILS`.
+     */
     '|-formechange|': readonly ['-formechange', PokemonIdent, Species, PokemonHealth];
     '|-fail|':
     | readonly ['-fail', PokemonIdent, Move]
@@ -790,6 +1060,11 @@ export namespace Protocol {
   export type BattleArgsKWArgsTypes = {
     'ability': Ability;
     'ability2': Ability;
+    /**
+     * `[anim] MOVE2`
+     *
+     * Use the animation of `MOVE2` instead.
+     */
     'anim': Move;
     'block': Move;
     'broken': true;
@@ -799,19 +1074,36 @@ export namespace Protocol {
     'fail': true;
     'fatigue': true;
     'forme': true;
+    /** `[from] EFFECT` */
     'from': Effect;
     'heavy': true;
     'item': Item;
+    /**
+     * `[miss]`
+     *
+     * The move missed.
+     */
     'miss': true;
     'move': Move;
     'msg': true;
     'name': PokemonIdent;
     'notarget': true;
     'number': Num;
+    /** `[of] SOURCE` */
     'of': PokemonIdent;
     'ohko': true;
+    /**
+     * `[silent]`
+     *
+     * Suppress message.
+     */
     'silent': true;
     'spread': Slots;
+    /**
+     * `[still]`
+     *
+     * Suppress animation.
+     */
     'still': true;
     'thaw': true;
     'upkeep': true;
