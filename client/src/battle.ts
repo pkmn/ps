@@ -1,10 +1,12 @@
 import {Dex, ModdedDex, ID, SideID} from '@pkmn/sim';
 import {
-  Protocol,
+  FormatName,
   Message,
+  PokemonDetails,
+  PokemonHPStatus,
   PokemonIdent,
   PokemonSearchID,
-  Protocol as P,
+  Protocol,
 } from '@pkmn/protocol';
 import {GenerationNum, GameType, GenderName} from '@pkmn/types';
 
@@ -77,7 +79,7 @@ export class Battle {
 
   gameType: GameType;
   rated: boolean | Message;
-  tier: P.FormatName | '';
+  tier: FormatName | '';
   teamPreviewCount: number;
   speciesClause: boolean;
 
@@ -88,7 +90,7 @@ export class Battle {
   lastMove!: ID | 'switch-in' | 'healing-wish';
 
   lastSwap?: [SideID, number, PokemonIdent];
-  lastDamagePercentage?: [PokemonIdent, P.PokemonHealth, string];
+  lastDamagePercentage?: [PokemonIdent, PokemonHPStatus, string];
   lastWeather?: ID;
 
   constructor(
@@ -169,7 +171,7 @@ export class Battle {
     return {name, siden, slot, pokemonid};
   }
 
-  getSwitchedPokemon(pokemonid: string, details: P.PokemonDetails) {
+  getSwitchedPokemon(pokemonid: string, details: PokemonDetails) {
     if (pokemonid === '??') throw new Error(`pokemonid not passed`);
     const {name, siden, slot, pokemonid: parsedPokemonid} =
       this.parsePokemonId(pokemonid as PokemonIdent);
@@ -210,12 +212,12 @@ export class Battle {
     return pokemon;
   }
 
-  rememberTeamPreviewPokemon(sideid: SideID, details: P.PokemonDetails) {
+  rememberTeamPreviewPokemon(sideid: SideID, details: PokemonDetails) {
     const {siden} = this.parsePokemonId(sideid);
     return this.sides[siden].addPokemon(Protocol.parseDetails('', '' as PokemonIdent, details));
   }
 
-  findCorrespondingPokemon(serverPokemon: {ident: PokemonIdent; details: P.PokemonDetails}) {
+  findCorrespondingPokemon(serverPokemon: {ident: PokemonIdent; details: PokemonDetails}) {
     const {siden} = this.parsePokemonId(serverPokemon.ident);
     const searchid = `${serverPokemon.ident}|${serverPokemon.details}` as PokemonSearchID;
     for (const pokemon of this.sides[siden].pokemon) {
@@ -239,7 +241,7 @@ export class Battle {
     } as any;
   }
 
-  getPokemon(pokemonid: string | undefined, details?: P.PokemonDetails) {
+  getPokemon(pokemonid: string | undefined, details?: PokemonDetails) {
     let isNew = false; // if true, don't match any pokemon that already exists (for Team Preview)
     let isSwitch = false; // if true, don't match an active, fainted, or just switched-out Pokemon
     let isInactive = false; // if true, don't match an active Pokemon

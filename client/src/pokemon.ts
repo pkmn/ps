@@ -1,12 +1,15 @@
 import {ID, toID, Move, Effect} from '@pkmn/sim';
 import {StatusName, GenderName, HPColor, BoostsTable, TypeName} from '@pkmn/types';
 import {
-  Protocol,
+  DetailedPokemon,
+  EffectName,
   PokemonDetails,
   PokemonHealth,
+  PokemonHPStatus,
   PokemonIdent,
   PokemonSearchID,
-  Protocol as P,
+  Protocol,
+  Request,
 } from '@pkmn/protocol';
 
 import {Side} from './side';
@@ -28,11 +31,11 @@ type EffectState = any[] & { 0: ID };
 // [name, minTimeLeft, maxTimeLeft]
 interface EffectTable { [effectid: string]: EffectState }
 
-export interface ServerPokemon extends P.Pokemon, PokemonDetails, PokemonHealth { }
+export interface ServerPokemon extends Request.Pokemon, DetailedPokemon, PokemonHealth { }
 
 const SLOTS = ['a', 'b', 'c', 'd', 'e', 'f'];
 
-export class Pokemon implements PokemonDetails, PokemonHealth {
+export class Pokemon implements DetailedPokemon, PokemonHealth {
   // readonly set: PokemonSet;
   // readonly baseHpType: string;
   // readonly baseHpPower: number;
@@ -112,7 +115,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   readonly side: Side;
   slot: number;
 
-  details: P.PokemonDetails;
+  details: PokemonDetails;
   name: string;
   species: string;
   level: number;
@@ -147,7 +150,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   moveTrack: [string, number][] = [];
   lastMove: ID | '';
 
-  constructor(side: Side, details: PokemonDetails) {
+  constructor(side: Side, details: DetailedPokemon) {
     this.side = side;
     this.slot = 0;
 
@@ -243,7 +246,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     let oldmaxhp = this.maxhp;
     const oldcolor = this.hpcolor;
 
-    void Protocol.parseHealth(hpstring as P.PokemonHealth, this);
+    void Protocol.parseHealth(hpstring as PokemonHPStatus, this);
     // max hp not known before parsing this message
     if (oldmaxhp === 0) oldmaxhp = oldhp = this.maxhp;
     const oldnum = oldhp ? (Math.floor(this.maxhp * oldhp / oldmaxhp) || 1) : 0;
@@ -251,17 +254,17 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     return [delta, this.maxhp, oldnum, oldcolor];
   }
 
-  checkDetails(details?: P.PokemonDetails) {
+  checkDetails(details?: PokemonDetails) {
     if (!details) return false;
     if (details === this.details) return true;
     if (this.searchid) return false;
     if (details.includes(', shiny')) {
-      if (this.checkDetails(details.replace(', shiny', '') as P.PokemonDetails)) {
+      if (this.checkDetails(details.replace(', shiny', '') as PokemonDetails)) {
         return true;
       }
     }
     // the actual forme was hidden on Team Preview
-    details = details.replace(/(-[A-Za-z0-9]+)?(, |$)/, '-*$2') as P.PokemonDetails;
+    details = details.replace(/(-[A-Za-z0-9]+)?(, |$)/, '-*$2') as PokemonDetails;
     return details === this.details;
   }
 
@@ -350,7 +353,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
     this.moveTrack.push([moveName, pp]);
   }
 
-  useMove(move: Move, target: Pokemon | null, from?: P.Effect) {
+  useMove(move: Move, target: Pokemon | null, from?: EffectName) {
     const dex = this.side.battle.dex;
     const fromeffect = dex.getEffect(from);
     this.activateAbility(fromeffect);
@@ -549,7 +552,7 @@ export class Pokemon implements PokemonDetails, PokemonHealth {
   }
 
   // Returns [min, max] damage dealt as a proportion of total HP from 0 to 1
-  static getDamageRange(damage: any, hpcolor: string): [number, number] {
+  static getDamageRange(damage: any, hpcolor: HPColor): [number, number] {
     if (damage[1] !== 48) {
       const ratio = damage[0] / damage[1];
       return [ratio, ratio];

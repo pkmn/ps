@@ -1,5 +1,5 @@
 import {ID, toID, SideID, Effect} from '@pkmn/sim';
-import {Avatar, PokemonDetails, Username} from '@pkmn/protocol';
+import {AvatarIdent, DetailedPokemon, Username} from '@pkmn/protocol';
 import {SideCondition} from '@pkmn/types';
 
 import {Battle} from './battle';
@@ -24,7 +24,7 @@ export class Side {
   id: SideID;
 
   name: Username | '';
-  avatar: Avatar | 'unknown';
+  avatar: AvatarIdent | 'unknown';
   foe!: Side;
 
   rating: string;
@@ -40,12 +40,12 @@ export class Side {
 
   wisher: Pokemon | null;
 
-  private readonly provider: (s: Side, d: PokemonDetails) => Pokemon;
+  private readonly provider: (s: Side, d: DetailedPokemon) => Pokemon;
 
   constructor(
     battle: Battle,
     n: number,
-    provider = (s: Side, d: PokemonDetails) => new Pokemon(s, d)
+    provider = (s: Side, d: DetailedPokemon) => new Pokemon(s, d)
   ) {
     this.provider = provider;
 
@@ -80,11 +80,11 @@ export class Side {
     this.sideConditions = {};
   }
 
-  setAvatar(avatar: Avatar) {
+  setAvatar(avatar: AvatarIdent) {
     this.avatar = avatar;
   }
 
-  setName(name: Username, avatar?: Avatar) {
+  setName(name: Username, avatar?: AvatarIdent) {
     if (name) this.name = name;
     this.id = toID(this.name) as SideID;
     if (avatar) this.setAvatar(avatar);
@@ -125,7 +125,7 @@ export class Side {
     delete this.sideConditions[condition];
   }
 
-  addPokemon(details: PokemonDetails, replaceSlot = -1) {
+  addPokemon(details: DetailedPokemon, replaceSlot = -1) {
     const poke = this.provider(this, details);
     if (!poke.ability && poke.baseAbility) poke.ability = poke.baseAbility;
     poke.reset();

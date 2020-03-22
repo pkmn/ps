@@ -86,7 +86,7 @@ export namespace Protocol {
    * Mod is in effect and `/48` otherwise. `STATUS` can be left blank, or it can be `slp`, `par`
    * etc.
    */
-  export type PokemonHealth = string & As<'PokemonHealth'>;
+  export type PokemonHPStatus = string & As<'PokemonHPStatus'>;
   export type PokemonCondition = string & As<'PokemonCondition'>;
 
   /**
@@ -98,7 +98,7 @@ export namespace Protocol {
    * The player's avatar identifier (usually a number, but other values can be used for custom
    * avatars).
    */
-  export type Avatar = string & As<'Avatar'>;
+  export type AvatarIdent = string & As<'AvatarIdent'>;
 
   /**
    * The name of an 'effect' (move, ability, item, status, etc).
@@ -107,15 +107,15 @@ export namespace Protocol {
    * respectively, whereas all other effects are unprefixed. For example, `move: Spectral Thief` or
    * `confusion`.
    */
-  export type Effect = string & As<'Effect'>;
+  export type EffectName = string & As<'EffectName'>;
   /** The name of a Pokemon species (unprefixed). */
-  export type Species = string & As<'Species'>;
+  export type SpeciesName = string & As<'SpeciesName'>;
   /** The name of an ability (unprefixed). */
-  export type Ability = string & As<'Ability'>;
+  export type AbilityName = string & As<'AbilityName'>;
   /** The name of an item (unprefixed). */
-  export type Item = string & As<'Item'>;
+  export type ItemName = string & As<'ItemName'>;
   /** The name of a move (unprefixed). */
-  export type Move = string & As<'Move'>;
+  export type MoveName = string & As<'MoveName'>;
 
   /** An arbitrary message to be displayed as is. */
   export type Message = string & As<'Message'>;
@@ -183,10 +183,15 @@ export namespace Protocol {
   export type QueryType =
     'userdetails' | 'roomlist' | 'rooms' | 'laddertop' | 'roominfo' | 'savereplay';
 
+  /** An unparsed JSON string containing `Challenges` information. */
   export type ChallengesJSON = string & As<'ChallengesJSON'>;
+  /** An unparsed JSON string containing `SearchState` information. */
   export type SearchStateJSON = string & As<'SearchStateJSON'>;
+  /** An unparsed JSON string containing `TournmanetUpdate` information. */
   export type TournamentUpdateJSON = string & As<'TournamentUpdateJSON'>;
+  /** An unparsed JSON string containing `TournamentEnded` information. */
   export type TournamentEndedJSON = string & As<'TournamentEndedJSON'>;
+  /** An unparsed JSON string containing `Request` information. */
   export type RequestJSON = string & As<'RequestJSON'>;
 
   /**
@@ -307,56 +312,57 @@ export namespace Protocol {
 
   export interface Request {
     rqid?: number;
-    active: ActivePokemon[];
+    active: Request.ActivePokemon[];
     side: {
       name: Username;
       id: Player;
-      pokemon: Pokemon[];
+      pokemon: Request.Pokemon[];
     };
     forceSwitch?: [true] & boolean[];
     wait?: boolean;
   }
 
-  export interface ActivePokemon {
-    trapped?: boolean;
-    maybeDisabled?: boolean;
-    maybeTrapped?: boolean;
-    canMegaEvo?: boolean;
-    canUltraBoost?: boolean;
-    canZMove?: null | Array<{
-      move: Move;
-      target: MoveTarget;
-    }>;
-    canDynamax?: boolean;
-    maxMoves?: {
-      maxMoves: Array<{
-        move: ID;
+  export namespace Request {
+    export interface ActivePokemon {
+      trapped?: boolean;
+      maybeDisabled?: boolean;
+      maybeTrapped?: boolean;
+      canMegaEvo?: boolean;
+      canUltraBoost?: boolean;
+      canZMove?: null | Array<{
+        move: MoveName;
         target: MoveTarget;
-        disabled?: boolean;
       }>;
-      gigantamax?: Species;
-    };
-    moves: Array<{
-      move: Move;
-      id: ID;
-      pp: number;
-      maxpp: number;
-      target: MoveTarget;
-      disabled: string | boolean;
-    }>;
-  }
-
-  export interface Pokemon {
-    active?: boolean;
-    details: PokemonDetails;
-    ident: PokemonIdent;
-    pokeball: ID;
-    ability: ID;
-    baseAbility: ID;
-    condition: PokemonCondition;
-    item: ID;
-    moves: ID[];
-    stats: Omit<StatsTable, 'hp'>;
+      canDynamax?: boolean;
+      maxMoves?: {
+        maxMoves: Array<{
+          move: ID;
+          target: MoveTarget;
+          disabled?: boolean;
+        }>;
+        gigantamax?: SpeciesName;
+      };
+      moves: Array<{
+        move: MoveName;
+        id: ID;
+        pp: number;
+        maxpp: number;
+        target: MoveTarget;
+        disabled: string | boolean;
+      }>;
+    }
+    export interface Pokemon {
+      active?: boolean;
+      details: PokemonDetails;
+      ident: PokemonIdent;
+      pokeball: ID;
+      ability: ID;
+      baseAbility: ID;
+      condition: PokemonCondition;
+      item: ID;
+      moves: ID[];
+      stats: Omit<StatsTable, 'hp'>;
+    }
   }
 
   export interface RoomInitArgs {
@@ -531,7 +537,7 @@ export namespace Protocol {
      * `NAMED` will be `0` if you are a guest or `1` otherwise. Your avatar is now `AVATAR`.
      * `SETTINGS` is a JSON object representing the current state of various user settings.
      */
-    '|updateuser|': readonly ['updateuser', Username, '0' | '1', Avatar, JSON];
+    '|updateuser|': readonly ['updateuser', Username, '0' | '1', AvatarIdent, JSON];
     /**
      * `|formats|FORMATSLIST`
      *
@@ -731,7 +737,7 @@ export namespace Protocol {
      *   - `RATING` is the player's Elo rating in the format they're playing. This will only be
      *     displayed in rated battles and when the player is first introduced otherwise it's blank.
      */
-    '|player|': readonly ['player', Player, Username, Avatar, Num?] |readonly ['player', Player];
+    '|player|': readonly ['player', Player, Username, AvatarIdent, Num?] |readonly ['player', Player];
     /**
      * `|teamsize|PLAYER|NUMBER`
      *
@@ -880,8 +886,8 @@ export namespace Protocol {
      * fainted) Pokémon on that side.
      */
     '|move|':
-    | readonly ['move', PokemonIdent, Move, PokemonIdent]
-    | readonly ['move', PokemonIdent, Move];
+    | readonly ['move', PokemonIdent, MoveName, PokemonIdent]
+    | readonly ['move', PokemonIdent, MoveName];
     /**
      * `|switch|POKEMON|DETAILS|HP STATUS`
      *
@@ -898,14 +904,14 @@ export namespace Protocol {
      * Mod is in effect and `/48` otherwise. `STATUS` can be left blank, or it can be `slp`, `par`,
      * etc.
      */
-    '|switch|': readonly ['switch', PokemonIdent, PokemonDetails, PokemonHealth];
+    '|switch|': readonly ['switch', PokemonIdent, PokemonDetails, PokemonHPStatus];
     /**
      * `|drag|POKEMON|DETAILS|HP STATUS`
      *
      * As `|switch|`, but `switch` means it was intentional, while `drag` means it was unintentional
      * (forced by Whirlwind, Roar, etc).
      */
-    '|drag|': readonly ['drag', PokemonIdent, PokemonDetails, PokemonHealth];
+    '|drag|': readonly ['drag', PokemonIdent, PokemonDetails, PokemonHPStatus];
     /**
      * `|detailschange|POKEMON|DETAILS|HP STATUS`
      *
@@ -915,7 +921,7 @@ export namespace Protocol {
      *
      * Syntax is the same as `|switch|`.
      */
-    '|detailschange|': readonly ['detailschange', PokemonIdent, PokemonDetails, PokemonHealth];
+    '|detailschange|': readonly ['detailschange', PokemonIdent, PokemonDetails, PokemonHPStatus];
     /**
      * `|replace|POKEMON|DETAILS|HP STATUS`
      *
@@ -925,7 +931,7 @@ export namespace Protocol {
      * `POKEMON` will be the NEW Pokémon ID - i.e. it will have the nickname of the Zoroark (or
      * other Illusion user).
      */
-    '|replace|': readonly ['replace', PokemonIdent, PokemonDetails, PokemonHealth];
+    '|replace|': readonly ['replace', PokemonIdent, PokemonDetails, PokemonHPStatus];
     /**
      * `|swap|POKEMON|POSITION`
      *
@@ -939,7 +945,7 @@ export namespace Protocol {
      * The Pokémon `POKEMON` could not perform a move because of the indicated `REASON` (such as
      * paralysis, Disable, etc). Sometimes, the move it was trying to use is given.
      */
-    '|cant|': readonly ['cant', PokemonIdent, Reason | Ability | Effect | Move, Effect | Move];
+    '|cant|': readonly ['cant', PokemonIdent, Reason | AbilityName | EffectName | MoveName, EffectName | MoveName];
     /**
      * `|faint|POKEMON`
      *
@@ -963,16 +969,16 @@ export namespace Protocol {
      *
      * Syntax is the same as `|switch|`, though with `SPECIES` in lieu of `DETAILS`.
      */
-    '|-formechange|': readonly ['-formechange', PokemonIdent, Species, PokemonHealth];
+    '|-formechange|': readonly ['-formechange', PokemonIdent, SpeciesName, PokemonHPStatus];
     '|-fail|':
-    | readonly ['-fail', PokemonIdent, Move]
+    | readonly ['-fail', PokemonIdent, MoveName]
     | readonly ['-fail', PokemonIdent]
     | readonly ['-fail', PokemonIdent, 'unboost', StatDisplayName];
-    '|-block|': readonly ['-block', PokemonIdent, Effect, Move, PokemonIdent?];
+    '|-block|': readonly ['-block', PokemonIdent, EffectName, MoveName, PokemonIdent?];
     '|-notarget|': readonly ['-notarget', PokemonIdent] | readonly ['-notarget'];
     '|-miss|': readonly ['-miss', PokemonIdent, PokemonIdent] | readonly ['-miss', PokemonIdent];
-    '|-damage|': readonly ['-damage', PokemonIdent, PokemonHealth];
-    '|-heal|': readonly ['-heal', PokemonIdent, PokemonHealth];
+    '|-damage|': readonly ['-damage', PokemonIdent, PokemonHPStatus];
+    '|-heal|': readonly ['-heal', PokemonIdent, PokemonHPStatus];
     '|-sethp|':
     | readonly ['-sethp', PokemonIdent, Num]
     | readonly ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
@@ -986,7 +992,7 @@ export namespace Protocol {
     '|-invertboost|': readonly ['-invertboost', PokemonIdent];
     '|-clearboost|': readonly ['-clearboost', PokemonIdent];
     '|-clearallboost|': readonly ['-clearallboost'];
-    '|-clearpositiveboost|': readonly ['-clearpositiveboost', PokemonIdent, PokemonIdent, Effect];
+    '|-clearpositiveboost|': readonly ['-clearpositiveboost', PokemonIdent, PokemonIdent, EffectName];
     '|-clearnegativeboost|': readonly ['-clearnegativeboost', PokemonIdent];
     '|-copyboost|':
     | readonly ['-copyboost', PokemonIdent, PokemonIdent]
@@ -997,48 +1003,48 @@ export namespace Protocol {
     '|-sidestart|': readonly ['-sidestart', Side, SideCondition];
     '|-sideend|': readonly ['-sideend', Side, SideCondition];
     '|-start|':
-    | readonly ['-start', PokemonIdent, Effect]
-    | readonly ['-start', PokemonIdent, Effect, Types]
-    | readonly ['-start', PokemonIdent, Effect, Move];
-    '|-end|': readonly ['-end', PokemonIdent, Effect];
+    | readonly ['-start', PokemonIdent, EffectName]
+    | readonly ['-start', PokemonIdent, EffectName, Types]
+    | readonly ['-start', PokemonIdent, EffectName, MoveName];
+    '|-end|': readonly ['-end', PokemonIdent, EffectName];
     '|-crit|': readonly ['-crit', PokemonIdent];
     '|-supereffective|': readonly ['-supereffective', PokemonIdent];
     '|-resisted|': readonly ['-resisted', PokemonIdent];
     '|-immune|': readonly ['-immune', PokemonIdent];
-    '|-item|': readonly ['-item', PokemonIdent, Item];
-    '|-enditem|': readonly ['-enditem', PokemonIdent, Item];
+    '|-item|': readonly ['-item', PokemonIdent, ItemName];
+    '|-enditem|': readonly ['-enditem', PokemonIdent, ItemName];
     '|-ability|':
-    | readonly ['-ability', PokemonIdent, Ability]
-    | readonly ['-ability', PokemonIdent, Ability, PokemonIdent | 'boost']
-    | readonly ['-ability', PokemonIdent, Ability, Ability, PokemonIdent];
+    | readonly ['-ability', PokemonIdent, AbilityName]
+    | readonly ['-ability', PokemonIdent, AbilityName, PokemonIdent | 'boost']
+    | readonly ['-ability', PokemonIdent, AbilityName, AbilityName, PokemonIdent];
     '|-endability|':
     | readonly ['-endability', PokemonIdent]
-    | readonly ['-endability', PokemonIdent, Ability];
-    '|-transform|': readonly ['-transform', PokemonIdent, Species];
-    '|-mega|': readonly ['-mega', PokemonIdent, Species, Item];
+    | readonly ['-endability', PokemonIdent, AbilityName];
+    '|-transform|': readonly ['-transform', PokemonIdent, SpeciesName];
+    '|-mega|': readonly ['-mega', PokemonIdent, SpeciesName, ItemName];
     '|-primal|': readonly ['-primal', PokemonIdent];
-    '|-burst|': readonly ['-burst', PokemonIdent, Species, Item];
+    '|-burst|': readonly ['-burst', PokemonIdent, SpeciesName, ItemName];
     '|-zpower|': readonly ['-zpower', PokemonIdent];
     '|-zbroken|': readonly ['-zbroken', PokemonIdent];
     '|-activate|': readonly [
       '-activate',
       PokemonIdent,
-      Ability | Effect,
-      (Item | Move | Num | PokemonIdent)?,
-      (Ability | Num)?
-    ] | readonly ['-activate', PokemonIdent, Effect, PokemonIdent];
-    '|-fieldactivate|': readonly ['-fieldactivate', Effect];
+      AbilityName | EffectName,
+      (ItemName | MoveName | Num | PokemonIdent)?,
+      (AbilityName | Num)?
+    ] | readonly ['-activate', PokemonIdent, EffectName, PokemonIdent];
+    '|-fieldactivate|': readonly ['-fieldactivate', EffectName];
     '|-hint|': readonly ['-hint', Message];
     '|-center|': readonly ['-center'];
     '|-message|': readonly ['-message', Message];
     '|-combine|': readonly ['-combine'];
     '|-waiting|': readonly ['-waiting', PokemonIdent, PokemonIdent];
-    '|-prepare|': readonly ['-prepare', PokemonIdent, Move, PokemonIdent];
+    '|-prepare|': readonly ['-prepare', PokemonIdent, MoveName, PokemonIdent];
     '|-mustrecharge|': readonly ['-mustrecharge', PokemonIdent];
     '|-hitcount|': readonly ['-hitcount', PokemonIdent, Num];
-    '|-singlemove|': readonly ['-singlemove', PokemonIdent, Move];
-    '|-singleturn|': readonly ['-singleturn', PokemonIdent, Move];
-    '|-anim|': readonly ['-anim', PokemonIdent, Move, PokemonIdent];
+    '|-singlemove|': readonly ['-singlemove', PokemonIdent, MoveName];
+    '|-singleturn|': readonly ['-singleturn', PokemonIdent, MoveName];
+    '|-anim|': readonly ['-anim', PokemonIdent, MoveName, PokemonIdent];
     '|-ohko|': readonly ['-ohko'];
   }
 
@@ -1058,15 +1064,15 @@ export namespace Protocol {
   export type BattleArgType = BattleArgs[BattleArgName];
 
   export type BattleArgsKWArgsTypes = {
-    'ability': Ability;
-    'ability2': Ability;
+    'ability': AbilityName;
+    'ability2': AbilityName;
     /**
      * `[anim] MOVE2`
      *
      * Use the animation of `MOVE2` instead.
      */
-    'anim': Move;
-    'block': Move;
+    'anim': MoveName;
+    'block': MoveName;
     'broken': true;
     'consumed': true;
     'damage': true;
@@ -1075,16 +1081,16 @@ export namespace Protocol {
     'fatigue': true;
     'forme': true;
     /** `[from] EFFECT` */
-    'from': Effect;
+    'from': EffectName;
     'heavy': true;
-    'item': Item;
+    'item': ItemName;
     /**
      * `[miss]`
      *
      * The move missed.
      */
     'miss': true;
-    'move': Move;
+    'move': MoveName;
     'msg': true;
     'name': PokemonIdent;
     'notarget': true;
@@ -1217,18 +1223,18 @@ export type PositionLetter = Protocol.PositionLetter;
 
 export type PokemonIdent = Protocol.PokemonIdent;
 export type PokemonSearchID = Protocol.PokemonSearchID;
-// NOTE: PokemonDetails alias is defined as the parsed type
+export type PokemonDetails = Protocol.PokemonDetails;
 export type PokemonCondition = Protocol.PokemonCondition;
-// NOTE: PokemonHealth alias is defined as the parsed type
+export type PokemonHPStatus = Protocol.PokemonHPStatus;
 
 export type Username = Protocol.Username;
-export type Avatar = Protocol.Avatar;
+export type AvatarIdent = Protocol.AvatarIdent;
 
-export type Effect = Protocol.Effect;
-export type Species = Protocol.Species;
-export type Ability = Protocol.Ability;
-export type Item = Protocol.Item;
-export type Move = Protocol.Move;
+export type EffectName = Protocol.EffectName;
+export type SpeciesName = Protocol.SpeciesName;
+export type AbilityName = Protocol.AbilityName;
+export type ItemName = Protocol.ItemName;
+export type MoveName = Protocol.MoveName;
 
 export type Message = Protocol.Message;
 export type Timestamp = Protocol.Timestamp;
@@ -1270,8 +1276,10 @@ export type TournamentUpdate = Protocol.TournamentUpdate;
 export type TournamentEnded = Protocol.TournamentEnded;
 
 export type Request = Protocol.Request;
-export type ActivePokemon = Protocol.ActivePokemon;
-export type Pokemon = Protocol.Pokemon;
+export namespace Request {
+  export type ActivePokemon = Protocol.Request.ActivePokemon;
+  export type Pokemon = Protocol.Request.Pokemon;
+}
 
 export type RoomInitArgs = Protocol.RoomInitArgs;
 export type RoomInitArgName = Protocol.RoomInitArgName;
@@ -1348,15 +1356,15 @@ export interface PokemonHealth {
   fainted?: boolean;
 }
 
-export interface PokemonDetails {
-  details: Protocol.PokemonDetails;
+export interface DetailedPokemon {
+  details: PokemonDetails;
   name: string;
   species: string;
   level: number;
   shiny: boolean;
   gender: GenderName | '';
-  ident: Protocol.PokemonIdent;
-  searchid: Protocol.PokemonSearchID;
+  ident: PokemonIdent;
+  searchid: PokemonSearchID;
 }
 
 function toID(s: string): ID {
@@ -1506,7 +1514,7 @@ export const Protocol = new class {
     name: string,
     ident: Protocol.PokemonIdent,
     details = '' as Protocol.PokemonDetails,
-    output = {} as PokemonDetails
+    output = {} as DetailedPokemon
   ) {
     output.details = details;
 
@@ -1533,7 +1541,7 @@ export const Protocol = new class {
     return output;
   }
 
-  parseHealth(hpstring: Protocol.PokemonHealth, output = {} as PokemonHealth) {
+  parseHealth(hpstring: Protocol.PokemonHPStatus, output = {} as PokemonHealth) {
     const [hp, status] = hpstring.split(' ');
 
     // parse hp
@@ -1679,14 +1687,14 @@ function upgradeBattleArgs(
   case '-activate': {
     if (kwArgs.item || kwArgs.move || kwArgs.number || kwArgs.ability) return {args, kwArgs};
     const [, pokemon, e, arg3, arg4] = args;
-    const effect = e as Protocol.Effect;
+    const effect = e as Protocol.EffectName;
 
     const target = kwArgs.of as Protocol.PokemonIdent | undefined;
     const id = Protocol.parseEffect(effect, toID).name;
 
     if (kwArgs.block) return {args: ['-fail', pokemon], kwArgs};
     if (id === 'sturdy') {
-      return {args: ['-activate', pokemon, 'ability: Sturdy' as Protocol.Effect], kwArgs};
+      return {args: ['-activate', pokemon, 'ability: Sturdy' as Protocol.EffectName], kwArgs};
     }
     if (id === 'wonderguard') {
       return {
@@ -1700,9 +1708,9 @@ function upgradeBattleArgs(
     if (BLOCKABLE.has(id)) {
       if (target) {
         kwArgs.of = pokemon;
-        return {args: ['-block', target, effect, arg3 as Protocol.Move], kwArgs};
+        return {args: ['-block', target, effect, arg3 as Protocol.MoveName], kwArgs};
       }
-      return {args: ['-block', pokemon, effect, arg3 as Protocol.Move], kwArgs};
+      return {args: ['-block', pokemon, effect, arg3 as Protocol.MoveName], kwArgs};
     }
 
     if (STARTABLE.has(id)) {
@@ -1739,13 +1747,13 @@ function upgradeBattleArgs(
   case 'cant': {
     const [, pokemon, effect, move] = args;
     const abilities = ['ability: Queenly Majesty', 'ability: Damp', 'ability: Dazzling'];
-    if (abilities.includes(effect as Protocol.Effect)) {
+    if (abilities.includes(effect as Protocol.EffectName)) {
       return {
         args: [
           '-block',
           pokemon,
-          effect as Protocol.Effect,
-          move as Protocol.Move,
+          effect as Protocol.EffectName,
+          move as Protocol.MoveName,
           kwArgs.of as Protocol.PokemonIdent,
         ],
         kwArgs: {},
@@ -1763,7 +1771,7 @@ function upgradeBattleArgs(
     // NEW: |-activate||move:Splash
     args = [
       '-activate', '' as Protocol.PokemonIdent,
-      'move:Splash' as Protocol.Effect,
+      'move:Splash' as Protocol.EffectName,
     ] as Protocol.Args['|-activate|'];
   }
 
