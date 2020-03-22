@@ -160,7 +160,7 @@ let Formats = [
 		],
 
 		mod: 'gen8',
-		ruleset: ['NFE Clause', 'Standard', 'Dynamax Clause'],
+		ruleset: ['Not Fully Evolved', 'Standard', 'Dynamax Clause'],
 		banlist: [
 			'Doublade', 'Gurdurr', 'Ivysaur', 'Mr. Mime-Galar', 'Rhydon', 'Rufflet', 'Sneasel',
 			'Type: Null', 'Shadow Tag', 'Baton Pass',
@@ -626,23 +626,11 @@ let Formats = [
 		],
 
 		mod: 'gen8',
-		ruleset: ['[Gen 8] Ubers', 'Dynamax Clause'],
+		ruleset: ['[Gen 8] Ubers', 'Dynamax Clause', 'Scalemons Mod'],
 		banlist: [
 			'Crawdaunt', 'Darmanitan', 'Darmanitan-Galar', 'Darumaka', 'Darumaka-Galar', 'Gastly',
 			'Arena Trap', 'Drizzle', 'Drought', 'Huge Power', 'Moody', 'Shadow Tag', 'Baton Pass', 'Rain Dance', 'Sunny Day', 'Eviolite', 'Light Ball',
 		],
-		onModifyTemplate(template, target, source) {
-			const newTemplate = this.dex.deepClone(template);
-			newTemplate.baseStats = this.dex.deepClone(newTemplate.baseStats);
-			/** @type {StatName[]} */
-			let stats = ['atk', 'def', 'spa', 'spd', 'spe'];
-			let pst = stats.map(stat => newTemplate.baseStats[stat]).reduce((x, y) => x + y);
-			let scale = 600 - newTemplate.baseStats['hp'];
-			for (const stat of stats) {
-				newTemplate.baseStats[stat] = this.dex.clampIntRange(newTemplate.baseStats[stat] * scale / pst, 1, 255);
-			}
-			return newTemplate;
-		},
 	},
 
 	// Other Metagames
@@ -2258,8 +2246,9 @@ let Formats = [
 
 		mod: 'gen3',
 		searchShow: false,
-		ruleset: ['Standard', 'UU NFE Clause'],
+		ruleset: ['Standard', 'NFE Clause'],
 		banlist: ['Uber', 'OU', 'UUBL', 'Smeargle + Ingrain'],
+		unbanlist: ['Scyther'],
 	},
 	{
 		name: "[Gen 3] NU",
@@ -2269,7 +2258,7 @@ let Formats = [
 
 		mod: 'gen3',
 		searchShow: false,
-		ruleset: ['[Gen 3] UU', '!UU NFE Clause'],
+		ruleset: ['[Gen 3] UU', '!NFE Clause'],
 		banlist: ['UU'],
 	},
 	{

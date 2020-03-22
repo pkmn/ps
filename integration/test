@@ -15,7 +15,7 @@ const client = require('@pkmn/client');
 
 const shell = (cmd, cwd = __dirname) => child_process.execSync(cmd, { stdio: 'inherit', cwd });
 shell('node build', path.resolve(__dirname, '../vendor/pokemon-showdown'));
-shell('node build', path.resolve(__dirname, '../vendor/pokemon-showdown-client'));
+shell('node build indexes', path.resolve(__dirname, '../vendor/pokemon-showdown-client'));
 
 const simdist = '../vendor/pokemon-showdown/.sim-dist';
 const PS = {

@@ -23,7 +23,7 @@
 //   2. run `subpkg sim test`, ensure everything compiles and all of the copied unit tests pass
 //   3. run `subpkg client test`, ensure consumers can use the new sim package
 //   4. `cd sim && npm version patch` to bump the version
-//   5. `git add -A && git commit -m "Import smogon/pokemon-showdown@$(cat HEAD)"`
+//   5. commit using the provided git commands and message
 //   6. `npm publish --access public` from the `sim/` directory to publish `@pkmn/sim`
 //
 // If any of these steps fail, return the the beginning with `./import` and run through them again.
@@ -41,12 +41,9 @@ const exec = async (cmd, cwd = __dirname) => {
 };
 
 const execOrDie = async (cmd, cwd = __dirname, ignoreStderr = false) => {
-  console.log(cmd);
+  console.log(`\x1b[90m${cwd}:\x1b[0m ${cmd}`);
   const [error, stdout, stderr ]= await exec(cmd, cwd);
-  if (error || (!ignoreStderr && stderr)) {
-    console.error(stderr);
-    process.exit(error);
-  }
+  if (error || (!ignoreStderr && stderr)) throw new Error(`exec error ${error}: ${stderr}`);
   return stdout;
 };
 
@@ -83,8 +80,8 @@ const replace = async (file, replacements) => {
   }
 };
 
-const HEAD = path.resolve(__dirname, 'HEAD');
-const submodule = path.resolve(__dirname, 'vendor/pokemon-showdown');
+const ps = path.resolve(__dirname, 'vendor/pokemon-showdown');
+const psc = path.resolve(__dirname, 'vendor/pokemon-showdown-client');
 const sim = path.resolve(__dirname, 'sim');
 
 // fucking hell zarle, friends don't let friends use globals :(
@@ -163,6 +160,15 @@ const OVERRIDDEN = new Set([
 // Any file that hasn't been 'OVERRIDDEN' we need to copy over from PS
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
 
+// Files which are relevant for review in smogon/pokemon-showdown-client
+const INTERESTING = new Set([
+  'src/battle-dex-data.ts',
+  'src/battle-dex.ts',
+  'src/battle-scene-stub.ts',
+  'src/battle-text-parser.ts',
+  'src/battle.ts',
+]);
+
 // Pretty much all changes within sim/ and data/ are interesting to review, whether copied or not.
 // This mostly exists to help detect when *new* files are added which may need to be included
 const interesting = f => {
@@ -171,66 +177,88 @@ const interesting = f => {
   return COPIED.has(f);
 }
 
+const HEAD = async where => (await execOrDie('git rev-parse HEAD', where)).slice(0, 8);
+// Figure out what has changed in PS so that we can later filter out just the interesting changes
+// A GitHub URL for the diff is added for convenience in the event review is required
+const changes = async (where, last, now) => ({
+    files: (await execOrDie(`git diff --name-only ${last}..${now}`, where)).trim().split('\n'),
+    url: `https://github.com/smogon/pokemon-showdown/compare/${last}..${now}`,
+  });
+
 (async () => {
-  // `git -C vendor/pokemon-showdown pull origin master` would also work because we only have
-  // a single submodule, but this is technically 'more correct'
-  await execOrDie('git submodule update --remote --rebase', __dirname, true);
-  // Checking in HEAD's hash isn't required, but its makes some things more convenient
-  const now = (await execOrDie('git rev-parse HEAD', submodule)).slice(0, 8);
-  const last = fs.readFileSync(HEAD, 'utf-8').trim();
+  const last = {ps: await HEAD(ps), psc: await HEAD(psc)};
+  try {
+    // `git -C vendor/pokemon-showdown pull origin master` etc works for individual submodules, but
+    // this command will update both repositories at once
+    await execOrDie('git submodule update --remote --rebase', __dirname, true);
+    const now = {ps: await HEAD(ps), psc: await HEAD(psc)};
 
-  // Figure out what has changed in PS so that we can later filter out just the interesting changes
-  const changed = (
-    await execOrDie(`git diff --name-only ${last}..${now}`, submodule)
-  ).trim().split('\n');
-  // Log the GitHub link to the diff for convenience in the event review is required
-  console.log(`https://github.com/smogon/pokemon-showdown/compare/${last}..${now}`);
-  for (const change of changed) {
-    if (interesting(change)) {
-      // Even though we copy over `sim/global-types.ts` untouched, any changes to it will have a
-      // large effect on whether we're able to build an acceptable package
-      const color = (FRAGILE.has(change) || change ==='sim/global-types.ts')
-        ? 91 // red -> yellow -> lightblue
-        : OVERRIDDEN.has(change)? 93 : 96;
-      console.log(`\x1b[${color}mCHANGED\x1b[0m ${change}`);
+    const changed = {
+      ps: await changes(ps, last.ps, now.ps),
+      psc: await changes(psc, last.psc, now.psc)
+    };
+
+    console.log(`\n${changed.ps.url}\n`);
+    for (const change of changed.ps.files) {
+      if (interesting(change)) {
+        // Even though we copy over `sim/global-types.ts` untouched, any changes to it will have a
+        // large effect on whether we're able to build an acceptable package
+        const color = (FRAGILE.has(change) || change ==='sim/global-types.ts')
+          ? 91 // red -> yellow -> lightblue
+          : OVERRIDDEN.has(change)? 93 : 96;
+        console.log(`\x1b[${color}mCHANGED\x1b[0m ${change}`);
+      }
     }
-  }
 
-  // Copy the files over, generating an 'import' statement for those that need it
-  for (const file of COPIED) {
-    if (IMPORTS[file]) {
-      // Handling arbitrary relative imports is overkill right now, bail
-      if (!file.startsWith('sim/')) throw new Error('Unsupported import location');
-      const prefix = file.startsWith('sim/tools/') ? '..' : '.';
-      const original = fs.readFileSync(path.resolve(submodule, file), 'utf8');
-      fs.writeFileSync(path.resolve(sim, file),
-        `import {\n\t${IMPORTS[file].join(',\n\t')},\n} from '${prefix}/exported-global-types';\n` +
-        `${original}`
-      );
-    } else {
-      fs.copyFileSync(path.resolve(submodule, file), path.resolve(sim, file));
+    console.log(`\n${changed.psc.url}\n`);
+    for (const change of changed.psc.files) {
+      if (INTERESTING.has(change)) console.log(`\x1b[95mCHANGED\x1b[0m ${change}`);
     }
+
+    // Copy the files over, generating an 'import' statement for those that need it
+    for (const file of COPIED) {
+      if (IMPORTS[file]) {
+        // Handling arbitrary relative imports is overkill right now, bail
+        if (!file.startsWith('sim/')) throw new Error('Unsupported import location');
+        const prefix = file.startsWith('sim/tools/') ? '..' : '.';
+        const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
+        fs.writeFileSync(path.resolve(sim, file),
+          `import {\n\t${IMPORTS[file].join(',\n\t')},\n} from ` +
+          `'${prefix}/exported-global-types';\n${original}`);
+      } else {
+        fs.copyFileSync(path.resolve(ps, file), path.resolve(sim, file));
+      }
+    }
+
+    // Mirror `sim/global-types.ts` to export all of its types (making it a module). Its possible
+    // that ///-references could also be added to the data/ files and *nothing* then relies on
+    // ambient declarations, but this hack is the least involved way to get things to work
+    const types = fs.readFileSync(path.resolve(ps, 'sim/global-types.ts'), 'utf8');
+    fs.writeFileSync(path.resolve(sim, 'sim/global-types.ts'), types);
+    const exported = [];
+    for (const line of types.split('\n')) {
+      exported.push(/^(type|interface|namespace)/.test(line) ? `export ${line}` : line);
+    }
+    fs.writeFileSync(
+      path.resolve(sim, 'sim/exported-global-types.ts'),
+      `${exported.join('\n')}${NATURE}`
+    );
+
+    // The test files require paths are made with PS's build layout in mind - correc that here
+    await replace(path.join(sim, 'test'), [
+      {regex: new RegExp(`(require\\\(.*?)(.sim-dist)(.*?\\\))`, 'g'), replace: `$1build/sim$3`},
+    ]);
+
+    const message =
+      `Import smogon/pokemon-showdown@${now.ps}\\n\\nsmogon/pokemon-showdown-client@${now.psc}`;
+    console.log(`git add -A && git commit -m "${message}"`);
+  } catch (err) {
+    await execOrDie(`git reset --hard ${last.ps}`, ps);
+    await execOrDie(`git reset --hard ${last.psc}`, psc);
+    console.error(err);
+    process.exit(1);
   }
-
-  // Mirror `sim/global-types.ts` to export all of its types (making it a module). Its possible
-  // that ///-references could also be added to the data/ files and *nothing* then relies on
-  // ambient declarations, but this hack is the least involved way to get things to work
-  const types = fs.readFileSync(path.resolve(submodule, 'sim/global-types.ts'), 'utf8');
-  fs.writeFileSync(path.resolve(sim, 'sim/global-types.ts'), types);
-  const exported = [];
-  for (const line of types.split('\n')) {
-    exported.push(/^(type|interface|namespace)/.test(line) ? `export ${line}` : line);
-  }
-  fs.writeFileSync(
-    path.resolve(sim, 'sim/exported-global-types.ts'),
-    `${exported.join('\n')}${NATURE}`
-  );
-
-  // The test files require paths are made with PS's build layout in mind - correc that here
-  await replace(path.join(sim, 'test'), [
-    {regex: new RegExp(`(require\\\(.*?)(.sim-dist)(.*?\\\))`, 'g'), replace: `$1build/sim$3`},
-  ]);
-
-
-  fs.writeFileSync(HEAD, now);
-})().catch(console.error);
+})().catch(err => {
+  console.log(err);
+  process.exit(2);
+});

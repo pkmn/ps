@@ -604,18 +604,15 @@ let BattleFormats = {
 			this.add('rule', 'Z-Move Clause: Z-Moves are banned');
 		},
 	},
-	nfeclause: {
+	notfullyevolved: {
 		effectType: 'ValidatorRule',
-		name: 'NFE Clause',
+		name: 'Not Fully Evolved',
 		desc: "Bans Pok&eacute;mon that are fully evolved or can't evolve",
 		onValidateSet(set) {
 			const template = this.dex.getTemplate(set.species);
 			if (!template.nfe) {
 				return [set.species + " cannot evolve."];
 			}
-		},
-		onBegin() {
-			this.add('rule', 'NFE Clause: Fully Evolved Pokémon are banned');
 		},
 	},
 	hppercentagemod: {
@@ -842,16 +839,16 @@ let BattleFormats = {
 		desc: "Holds all custom Pet Mod ruleset validation",
 		// Implemented in mods/[petmod]/rulesets.js
 	},
-	uunfeclause: {
+	nfeclause: {
 		effectType: 'ValidatorRule',
-		name: 'UU NFE Clause',
-		desc: "Bans all NFE Pokemon, except Scyther in Gen 3",
+		name: 'NFE Clause',
+		desc: "Bans all NFE Pokemon",
 		onValidateSet(set) {
 			const template = this.dex.getTemplate(set.species || set.name);
 			const feInCurrentGen = template.evos && this.dex.getTemplate(template.evos[0]).gen > this.gen;
 			if (template.nfe && !feInCurrentGen) {
-				if (template.species === 'Scyther' && this.gen === 3) return;
-				return [`${set.species} is banned due to UU NFE Clause.`];
+				if (this.ruleTable.has(`+pokemon:${template.id}`)) return;
+				return [`${set.species} is banned due to NFE Clause.`];
 			}
 		},
 	},
@@ -884,6 +881,27 @@ let BattleFormats = {
 				}
 				formeTable.add(template.species);
 			}
+		},
+	},
+	scalemonsmod: {
+		effectType: 'Rule',
+		name: 'Scalemons Mod',
+		desc: "Every Pok&eacute;mon's stats, barring HP, are scaled to give them a BST as close to 600 as possible",
+		onBegin() {
+			this.add('rule', 'Scalemons Mod: Every Pokemon\'s stats, barring HP, are scaled to come as close to a BST of 600 as possible');
+		},
+		onModifyTemplate(template, target, source) {
+			const newTemplate = this.dex.deepClone(template);
+			newTemplate.baseStats = this.dex.deepClone(newTemplate.baseStats);
+			/** @type {StatName[]} */
+			let stats = ['atk', 'def', 'spa', 'spd', 'spe'];
+			/** @type {number} */
+			let pst = stats.map(stat => newTemplate.baseStats[stat]).reduce((x, y) => x + y);
+			let scale = 600 - newTemplate.baseStats['hp'];
+			for (const stat of stats) {
+				newTemplate.baseStats[stat] = this.dex.clampIntRange(newTemplate.baseStats[stat] * scale / pst, 1, 255);
+			}
+			return newTemplate;
 		},
 	},
 };
