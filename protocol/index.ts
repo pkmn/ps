@@ -26,6 +26,10 @@ export namespace Protocol {
   export type PokemonHealth = string & As<'PokemonHealth'>;
   export type PokemonCondition = string & As<'PokemonCondition'>;
 
+  /**
+   * A user, the first character being their rank (users with no rank are represented by a space),
+   * and the rest of the string being their username.
+   */
   export type Username = string & As<'Username'>;
   export type Avatar = string & As<'Avatar'>;
 
@@ -35,22 +39,56 @@ export namespace Protocol {
   export type Item = string & As<'Item'>;
   export type Move = string & As<'Move'>;
 
+  /** An arbitrary message to be displayed as is. */
   export type Message = string & As<'Message'>;
+  /** UNIX timestamp; (the number of seconds since 1970). */
   export type Timestamp = string & As<'Timestamp'>;
 
+  /** HTML which should be sanitized before display. */
   export type HTML = string & As<'HTML'>;
+  /** A name to allow for matching two different `|uhtml|` messages. */
   export type UHTMLName = string & As<'UHTMLName'>;
+  /** A string which should be parsed as JSON. */
   export type JSON = string & As<'JSON'>;
 
-  export type RoomType = string & As<'RoomType'>;
+  /** The ID of a Room, may contains non-alphanumerics. */
   export type RoomID = string & As<'RoomID'>;
+  /**
+   * The title of the room. The title is _not_ guaranteed to resemble  the room ID; for instance,
+   * room `battle-gen7uu-779767714` could have title `Alice vs. Bob`.
+   */
   export type RoomTitle = string & As<'RoomTitle'>;
+  /**
+   * `USERLIST` is a comma-separated list of `USER`s, sent from chat rooms when they're joined.
+   * Optionally, a `USER` can end in `@` followed by a user status message. A `STATUS` starting
+   * in `!` indicates the user is away.
+   */
   export type UserList = string & As<'UserList'>;
 
+  /** A number encoded as a string. */
   export type Num = string & As<'Num'>;
+  /**
+   * A `|`-separated list of `FORMAT`s. `FORMAT` is a format name with one or more of these
+   * suffixes: `,#` if the format uses random teams, `,,` if the format is only available for
+   * searching, and `,` if the format is only available for challenging.
+   *
+   * Sections are separated by two vertical bars with the number of the column of that section
+   * prefixed by `,` in it. After that follows the name of the section and another vertical bar.
+   */
   export type FormatsList = string & As<'FormatsList'>;
+  /**
+   * Either `Elimination` or `Round Robin` and describes the type of bracket that will be used.
+   * `Elimination` includes a prefix that denotes the number of times a player can lose before
+   * being eliminated (`Single`, `Double`, etc.). `Round Robin` includes the prefix `Double` if
+   * every matchup will battle twice.
+   */
   export type Generator = string & As<'Generator'>;
+  /**
+   * An array of length 2 that denotes the number of Pokemon `USER1` had left and the number of
+   * Pokemon `USER2` had left.
+   */
   export type Score = string & As<'Score'>;
+  /** The name of a metagame format. */
   export type FormatName = string & As<'FormatName'>;
   export type Rule = string & As<'Rule'>;
   export type BoostNames = string & As<'BoostNames'>;
@@ -68,16 +106,124 @@ export namespace Protocol {
 
   export type ChallengesJSON = string & As<'ChallengesJSON'>;
   export type SearchStateJSON = string & As<'SearchStateJSON'>;
+  export type TournamentUpdateJSON = string & As<'TournamentUpdateJSON'>;
+  export type TournamentEndedJSON = string & As<'TournamentEndedJSON'>;
   export type RequestJSON = string & As<'RequestJSON'>;
 
+  /**
+   * A JSON object representing the current state of who the user is challenging and who is
+   * challenging the user. You'll get this whenever challenges update (when you challenge someone,
+   * when you receive a challenge, when you or someone you challenged accepts/rejects/cancels a
+   * challenge).
+   *
+   *   - `challengesFrom` will be a `{userid: format}` table of received challenges.
+   *   - `challengeTo` will be a challenge if you're challenging someone, or `null` if you haven't.
+   *
+   * If you are challenging someone, `challengeTo` will be in the format:
+   *
+   *   `{"to":"player1","format":"gen7randombattle"}`.
+   *
+   * To challenge someone, send:
+   *
+   *    /utm TEAM
+   *    /challenge USERNAME, FORMAT
+   *
+   * To cancel a challenge you made to someone, send:
+   *
+   *    /cancelchallenge USERNAME
+   *
+   * To reject a challenge you received from someone, send:
+   *
+   *    /reject USERNAME
+   *
+   * To accept a challenge you received from someone, send:
+   *
+   *    /utm TEAM
+   *    /accept USERNAME
+   *
+   * Teams are in packed format. `TEAM` can also be `null`, if the format doesn't require user-built
+   * teams, such as Random Battle.
+   *
+   * Invalid teams will send a `|popup|` with validation errors, and the `/accept` or `/challenge`
+   * command won't take effect.
+   *
+   * If the challenge is accepted, you will receive a room initialization message.
+   */
   export interface Challenges {
     searching: ID[];
     games: { [roomid in RoomID]: RoomTitle};
   }
 
+  /**
+   * A JSON object representing the current state of what battles the user is currently searching
+   * for. You'll get this whenever searches update (when you search, cancel a search, or you start
+   * or end a battle).
+   *
+   *   - `searching` will be an array of format IDs you're currently searching for games in.
+   *   - `games` will be a `{roomid: title}` table of games you're currently in. Note that this
+   *     includes ALL games, so `|updatesearch|` will be sent when you start/end challenge battles,
+   *     and even non-Pokémon games like Mafia.
+   *
+   * To search for a battle against a random opponent, send:
+   *
+   *    /utm TEAM
+   *    /search FORMAT
+   *
+   * Teams are in packed format. `TEAM` can also be `null`, if the format doesn't require
+   * user-built teams, such as Random Battle.
+   *
+   * To cancel searching, send:
+   *
+   *    /cancelsearch
+   */
   export interface SearchState {
     challengesFrom: { [userid in ID]: ID };
     challengeTo: null | { o: Username; format: ID };
+  }
+
+  /**
+   * A JSON object representing the changes in the tournament since the last update you
+   * received or the start of the tournament. These include:
+   *
+   *   - `format`: the tournament's custom name or the format being used
+   *   - `teambuilderFormat`: the format being used; sent if a custom name was set
+   *   - `isStarted`: whether or not the tournament has started
+   *   - `isJoined`: whether or not you have joined the tournament
+   *   - `generator`: the type of bracket being used by the tournament
+   *   - `playerCap`: the player cap that was set or 0 if it was removed
+   *   - `bracketData`: an object representing the current state of the bracket
+   *   - `challenges`: a list of opponents that you can currently challenge
+   *   - `challengeBys`: a list of opponents that can currently challenge you
+   *   - `challenged`: the name of the opponent that has challenged you
+   *   - `challenging`: the name of the opponent that you are challenging
+   */
+  export interface TournamentUpdate {
+    format?: FormatName;
+    teambuilderFormat?: FormatName;
+    isStarted?: boolean;
+    isJoined?: boolean;
+    generator?: Generator;
+    playerCap?: number;
+    bracketData?: {[key: string]: any};
+    challenges?: Username[];
+    challengeBys?: Username[];
+    challenged?: Username[];
+    challenging?: Username[];
+  }
+
+  /**
+   * A JSON object send when a tournament ends containing:
+   *
+   *   - `results`: the name(s) of the winner(s) of the tournament
+   *   - `format`: the tournament's custom name or the format that was used
+   *   - `generator`: the type of bracket that was used by the tournament
+   *   - `bracketData`: an object representing the final state of the bracket
+   */
+  export interface TournamentEnded {
+    results: Username[];
+    format: FormatName;
+    generator: Generator;
+    bracketData: {[key: string]: any};
   }
 
   export interface Request {
@@ -135,8 +281,27 @@ export namespace Protocol {
   }
 
   export interface RoomInitArgs {
-    '|init|': readonly ['init', RoomType];
+    /**
+     * `|init|ROOMTYPE`
+     *
+     * The first message received from a room when you join it. `ROOMTYPE` is one of:
+     * `chat` or `battle`
+     */
+    '|init|': readonly ['init', 'chat' | 'battle'];
+    /**
+     * `|title|TITLE`
+     *
+     * `TITLE` is the title of the room. The title is _not_ guaranteed to resemble
+     * the room ID; for instance, room `battle-gen7uu-779767714` could have title `Alice vs. Bob`.
+     */
     '|title|': readonly ['title', RoomTitle];
+    /**
+     * `|users|USERLIST`
+     *
+     * `USERLIST` is a comma-separated list of `USER`s, sent from chat rooms when they're joined.
+     * Optionally, a `USER` can end in `@` followed by a user status message. A `STATUS` starting
+     * in `!` indicates the user is away.
+     */
     '|userlist|': readonly ['userlist', UserList];
   }
 
@@ -144,17 +309,82 @@ export namespace Protocol {
   export type RoomInitArgType = RoomInitArgs[RoomInitArgName];
 
   export interface RoomMessageArgs {
+    /**
+     * `||MESSAGE` or `MESSAGE`
+     *
+     * We received a message `MESSAGE`, which should be displayed directly in the room's log.
+     */
     '||': readonly ['', Message];
+    /**
+     * `|html|HTML`
+     *
+     * We received an HTML message, which should be sanitized and displayed directly in the
+     * room's log.
+     */
     '|html|': readonly ['html', HTML];
+    /**
+     * `|uhtml|NAME|HTML`
+     *
+     * We recieved an HTML message (NAME) that can change what it's displaying, this is used in
+     * things like our Polls system, for example.
+     */
     '|uhtml|': readonly ['uhtml', UHTMLName, HTML];
+    /**
+     * `|uhtmlchange|NAME|HTML`
+     *
+     * Changes the HTML display of the `|uhtml|` message named (NAME).
+     */
     '|uhtmlchange|': readonly ['uhtmlchange', UHTMLName, HTML];
-    '|join|': readonly ['join', Username, boolean]; // join, j, J
-    '|leave|': readonly ['leave', Username, boolean]; // leave, l, J
-    '|name|': readonly ['name', Username, ID, boolean]; // name, n
-    '|chat|': readonly ['chat', Username, Message]; // chat, c
+    /**
+     * `|join|USER`, `|j|USER`, or `|J|USER`
+     *
+     * `USER` joined the room. Optionally, `USER` may be appended with `@!` to indicate that the
+     * user is away or busy. The final boolean is true if the join was intended to be silent (`J`).
+     */
+    '|join|': readonly ['join', Username, boolean];
+    /**
+     * `|leave|USER`, `|l|USER`, or `|L|USER`
+     *
+     * `USER` left the room. The final boolean is true if the leave was intended to be silent (`L`).
+     */
+    '|leave|': readonly ['leave', Username, boolean];
+    /**
+     * `|name|USER|OLDID`, `|n|USER|OLDID`, or `|N|USER|OLDID`
+     *
+     * A user changed name to `USER`, and their previous userid was `OLDID`. Optionally, `USER` may
+     * be appended with `@!` to indicate that the user is away or busy. The final boolean is true if
+     * the name change was intended to be silent (`N`).
+     */
+    '|name|': readonly ['name', Username, ID, boolean];
+    /**
+     * `|chat|USER|MESSAGE` or `|c|USER|MESSAGE`
+     *
+     * `USER` said `MESSAGE`. Note that `MESSAGE` can contain `|` characters.
+     */
+    '|chat|': readonly ['chat', Username, Message]
+    /**
+     * `|:|TIMESTAMP`
+     *
+     * `:` is the current time according to the server, so that times can be adjusted and reported
+     * in the local time in the case of a discrepancy.
+     *
+     * The exact fate of this command is uncertain - it may or may not be replaced with a more
+     * generalized way to transmit timestamps at some point.
+     */
     '|:|': readonly [':', Timestamp];
+    /**
+     * `|c:|TIMESTAMP|USER|MESSAGE`
+     *
+     * `c:` is pretty much the same as `c`, but also comes with a UNIX timestamp; (the number of
+     * seconds since 1970). This is used for accurate timestamps in chat logs.
+     */
     '|c:|': ['c:', Timestamp, Username, Message];
-    '|battle|': readonly ['battle', RoomID, Username, Username]; // battle, b
+    /**
+     * `|battle|ROOMID|USER1|USER2` or `|b|ROOMID|USER1|USER2`
+     *
+     * A battle started between `USER1` and `USER2`, and the battle room has ID `ROOMID`.
+     */
+    '|battle|': readonly ['battle', RoomID, Username, Username];
   }
 
   export type RoomMessageArgName = keyof RoomMessageArgs;
@@ -165,15 +395,101 @@ export namespace Protocol {
   export type RoomArgsType = RoomArgs[RoomArgName];
 
   export interface GlobalArgs {
+    /**
+     * `|popup|MESSAGE`
+     *
+     * Show the user a popup containing `MESSAGE`. `||` denotes a newline in the popup.
+     */
     '|popup|': readonly ['popup', Message];
+    /**
+     * `|pm|SENDER|RECEIVER|MESSAGE`
+     *
+     * A PM was sent from `SENDER` to `RECEIVER` containing the message `MESSAGE`.
+     */
     '|pm|': readonly ['pm', Username, Username, Message];
+    /**
+     * `|usercount|USERCOUNT`
+     *
+     * `USERCOUNT` is the number of users on the server.
+     */
     '|usercount|': readonly ['usercount', Num];
+    /**
+     * `|nametaken|USERNAME|MESSAGE`
+     *
+     * You tried to change your username to `USERNAME` but it failed for the reason described in
+     * `MESSAGE`.
+     */
     '|nametaken|': readonly ['nametaken', Username, Message];
+    /**
+     * `|challstr|CHALLSTR`
+     *
+     * You just connected to the server, and we're giving you some information you'll need to log
+     * in.
+     *
+     * If you're already logged in and have session cookies, you can make an HTTP GET request to
+     * `http://play.pokemonshowdown.com/action.php?act=upkeep&challstr=CHALLSTR`
+     *
+     * Otherwise, you'll need to make an HTTP POST request to
+     * `http://play.pokemonshowdown.com/action.php` with the data
+     * `act=login&name=USERNAME&pass=PASSWORD&challstr=CHALLSTR`
+     *
+     * `USERNAME` is your username and `PASSWORD` is your password, and `CHALLSTR` is the value you
+     * got from `|challstr|`. Note that `CHALLSTR` contains `|` characters. (Also feel free to make
+     * the request to `https://` if your client supports it.)
+     *
+     * Either way, the response will start with `]` and be followed by a JSON object which we'll
+     * call `data`.
+     *
+     * Finish logging in (or renaming) by sending: `/trn USERNAME,0,ASSERTION` where `USERNAME` is
+     * your desired username and `ASSERTION` is `data.assertion`.
+     */
     '|challstr|': readonly ['challstr', '4', string];
-    '|updateuser|': readonly ['updateuser', Username, '1' | '0', Avatar, JSON];
+    /**
+     * `|updateuser|USER|NAMED|AVATAR|SETTINGS`
+     *
+     * Your name, avatar or settings were successfully changed. Your rank and username are now
+     * `USER`. Optionally, `USER` may be appended with `@!` to indicate that you are away or busy.
+     * `NAMED` will be `0` if you are a guest or `1` otherwise. Your avatar is now `AVATAR`.
+     * `SETTINGS` is a JSON object representing the current state of various user settings.
+     */
+    '|updateuser|': readonly ['updateuser', Username, '0' | '1', Avatar, JSON];
+    /**
+     * `|formats|FORMATSLIST`
+     *
+     * This server supports the formats specified in `FORMATSLIST`. `FORMATSLIST` is a `|`-separated
+     * list of `FORMAT`s. `FORMAT` is a format name with one or more of these suffixes: `,#` if the
+     * format uses random teams, `,,` if the format is only available for searching, and `,` if the
+     * format is only available for challenging.
+     *
+     * Sections are separated by two vertical bars with the number of the column of that section
+     * prefixed by `,` in it. After that follows the name of the section and another vertical bar.
+     */
     '|formats|': readonly ['formats', FormatsList];
+     /**
+      * `|updatesearch|JSON`
+      *
+      * `JSON` is a JSON object representing the current state of what battles the user is currently
+      * searching for. You'll get this whenever searches update (when you search, cancel a search,
+      * or you start or end a battle).
+      */
     '|updatesearch|': readonly ['updatesearch', SearchStateJSON];
+    /**
+     * `|updatechallenges|JSON`
+     *
+     * `JSON` is a JSON object representing the current state of who the user is challenging and
+     * who is challenging the user. You'll get this whenever challenges update (when you challenge
+     * someone, when you receive a challenge, when you or someone you challenged
+     * accepts/rejects/cancels a challenge).
+     */
     '|updatechallenges|': readonly ['updatechallenges', ChallengesJSON];
+    /**
+     * `|queryresponse|QUERYTYPE|JSON`
+     *
+     * `JSON` is a JSON object representing containing the data that was requested with
+     * `/query QUERYTYPE` or `/query QUERYTYPE DETAILS`.
+     *
+     * Possible queries include `/query roomlist` and `/query userdetails USERNAME`.
+     */
     '|queryresponse|': readonly ['queryresponse', QueryType, JSON];
   }
 
@@ -194,25 +510,126 @@ export namespace Protocol {
   }
 
   export interface TournamentArgs {
+    /**
+     * `|tournament|create|FORMAT|GENERATOR|PLAYERCAP`
+     *
+     * `FORMAT` is the name of the format in which each battle will be played. `GENERATOR` is either
+     * `Elimination` or `Round Robin` and describes the type of bracket that will be used.
+     * `Elimination` includes a prefix that denotes the number of times a player can lose before
+     * being eliminated (`Single`, `Double`, etc.). `Round Robin` includes the prefix `Double` if
+     * every matchup will battle twice. `PLAYERCAP` is a number representing the maximum amount of
+     * players that can join the tournament or `0` if no cap was specified.
+     */
     '|tournament|create|': readonly ['tournament', 'create', Generator, '0' | Num];
-    '|tournament|update|': readonly ['tournament', 'update', JSON];
+    /**
+     * `|tournament|update|JSON`
+     *
+     * `JSON` is a JSON object representing the changes in the tournament since the last update you
+     * received or the start of the tournament.
+     */
+    '|tournament|update|': readonly ['tournament', 'update', TournamentUpdateJSON];
+    /**
+     * `|tournament|updateEnd`
+     *
+     * Signals the end of an update period.
+     */
     '|tournament|updateEnd|': readonly ['tournament', 'updateEnd'];
+    /**
+     * `|tournament|error|ERROR`
+     *
+     * An error of type `ERROR` occurred.
+     */
     '|tournament|error|': readonly ['tournament', 'error', Message];
+    /**
+     * `|tournament|forceend`
+     *
+     * The tournament was forcibly ended.
+     */
     '|tournament|forceend|': readonly ['tournament', 'forceend'];
+    /**
+     * `|tournament|join|USER`
+     *
+     * `USER` joined the tournament.
+     */
     '|tournament|join|': readonly ['tournament', 'join', Username];
+    /**
+     * `|tournament|leave|USER`
+     *
+     * `USER` left the tournament.
+     */
     '|tournament|leave|': readonly ['tournament', 'leave', Username];
+    /**
+     * `|tournament|replace|OLD|NEW`
+     *
+     * The player `OLD` has been replaced with `NEW`
+     */
     '|tournament|replace|': readonly ['tournament', 'replace', Username, Username];
+    /**
+     * `|tournament|start|NUMPLAYERS`
+     *
+     * The tournament started with `NUMPLAYERS` participants.
+     */
     '|tournament|start|': readonly ['tournament', 'start', Num];
+    /**
+     * `|tournament|disqualify|USER`
+     *
+     * `USER` was disqualified from the tournament.
+    */
     '|tournament|disqualify|': readonly ['tournament', 'disqualify', Username];
+    /**
+     * `|tournament|battlestart|USER1|USER2|ROOMID`
+     *
+     * A tournament battle started between `USER1` and `USER2`, and the battle room has ID `ROOMID`.
+     */
     '|tournament|battlestart|': readonly ['tournament', 'battlestart', Username, Username, RoomID];
+    /**
+     * `|tournament|battleend|USER1|USER2|RESULT|SCORE|RECORDED|ROOMID`
+     *
+     * The tournament battle between `USER1` and `USER2` in the battle room `ROOMID` ended. `RESULT`
+     * describes the outcome of the battle from `USER1`'s perspective (`win`, `loss`, or `draw`).
+     * `SCORE` is an array of length 2 that denotes the number of Pokemon `USER1` had left and the
+     * number of Pokemon `USER2` had left. `RECORDED` will be `fail` if the battle ended in a draw
+     * and the bracket type does not support draws. Otherwise, it will be `success`.
+     */
     '|tournament|battleend|':
     | readonly [
       'tournament', 'battleend', Username, Username, 'win' | 'loss' | 'draw', Score, 'success'
     ] | readonly ['tournament', 'battleend', Username, Username, 'draw', Score, 'fail'];
-    '|tournament|end|': readonly ['tournament', 'end', JSON];
+    /**
+     * `|tournament|end|JSON`
+     *
+     * The tournament ended with details in `JSON`.
+     */
+    '|tournament|end|': readonly ['tournament', 'end', TournamentEndedJSON];
+    /**
+     * `|tournament|scouting|SETTING`
+     *
+     * Players are now either allowed or not allowed to join other tournament battles based on
+     * `SETTING` (`allow` or `disallow`).
+     */
+    '|tournament|scouting|': readonly ['tournament', 'scouting', 'allow' | 'disallow'];
+    /**
+     * `|tournament|autostart|on|TIMEOUT`
+     * `|tournament|autostart|off`
+     *
+     * If the third parameter is 'on': a timer was set for the tournament to auto-start in
+     * `TIMEOUT` seconds. If the third parameter is 'off': the timer for the tournament to
+     * auto-start was turned off.
+     */
     '|tournament|autostart|':
     | readonly ['tournament', 'autostart', 'on', Num]
     | readonly ['tournament', 'autostart', 'off'];
+    /**
+     * `|tournament|autodq|on|TIMEOUT`
+     * `|tournament|autodq|off`
+     * `|tournament|autodq|target|TIME`
+     *
+     * If the third parameter is 'on': a timer was set for the tournament to auto-disqualify
+     * inactive players every `TIMEOUT` seconds. If the third parameter is 'off': the timer for the
+     * tournament to auto-disqualify inactive players was turned off. If the third parameter is
+     * 'target': you have `TIME` seconds to make or accept a challenge, or else you will be
+     * disqualified for inactivity.
+     */
     '|tournament|autodq|':
     | readonly ['tournament', 'autodq', 'on', Num]
     | readonly ['tournament', 'autodq', 'off']
@@ -528,15 +945,14 @@ export type HTML = Protocol.HTML;
 export type UHTMLName = Protocol.UHTMLName;
 export type JSON = Protocol.JSON;
 
-export type RoomType = Protocol.RoomType;
 export type RoomID = Protocol.RoomID;
 export type RoomTitle = Protocol.RoomTitle;
 export type UserList = Protocol.UserList;
 
 export type Num = Protocol.Num;
 export type FormatsList = Protocol.FormatsList;
-export type Generator = Protocol.Generator;
 export type Score = Protocol.Score;
+export type Generator = Protocol.Generator;
 export type FormatName = Protocol.FormatName;
 export type Rule = Protocol.Rule;
 export type BoostNames = Protocol.BoostNames;
@@ -552,10 +968,14 @@ export type QueryType = Protocol.QueryType;
 
 export type ChallengesJSON = Protocol.ChallengesJSON;
 export type SearchStateJSON = Protocol.SearchStateJSON;
+export type TournamentUpdateJSON = Protocol.TournamentUpdateJSON;
+export type TournamentEndedJSON = Protocol.TournamentEndedJSON;
 export type RequestJSON = Protocol.RequestJSON;
 
 export type Challenges = Protocol.Challenges;
 export type SearchState = Protocol.SearchState;
+export type TournamentUpdate = Protocol.TournamentUpdate;
+export type TournamentEnded = Protocol.TournamentEnded;
 
 export type Request = Protocol.Request;
 export type ActivePokemon = Protocol.ActivePokemon;
@@ -664,14 +1084,14 @@ export const Protocol = new class {
     '|tournament|updateEnd|': 1, '|tournament|error|': 1, '|tournament|forceend|': 1,
     '|tournament|join|': 1, '|tournament|leave|': 1, '|tournament|replace|': 1,
     '|tournament|start|': 1, '|tournament|disqualify|': 1, '|tournament|battlestart|': 1,
-    '|tournament|battleend|': 1, '|tournament|end|': 1, '|tournament|autostart|': 1,
-    '|tournament|autodq|': 1, '|player|': 1, '|teamsize|': 1, '|gametype|': 1, '|gen|': 1,
-    '|tier|': 1, '|rated|': 1, '|seed|': 1, '|rule|': 1, '|teampreview|': 1, '|clearpoke|': 1,
-    '|poke|': 1, '|start|': 1, '|done|': 1, '|request|': 1, '|inactive|': 1, '|inactiveoff|': 1,
-    '|upkeep|': 1, '|turn|': 1, '|win|': 1, '|tie|': 1, '|move|': 1, '|switch|': 1, '|drag|': 1,
-    '|detailschange|': 1, '|replace|': 1, '|swap|': 1, '|cant|': 1, '|faint|': 1,
-    '|-formechange|': 1, '|-fail|': 1, '|-block|': 1, '|-notarget|': 1, '|-miss|': 1,
-    '|-damage|': 1, '|-heal|': 1, '|-sethp|': 1, '|-status|': 1, '|-curestatus|': 1,
+    '|tournament|battleend|': 1, '|tournament|end|': 1, '|tournament|scouting|': 1,
+    '|tournament|autostart|': 1, '|tournament|autodq|': 1, '|player|': 1, '|teamsize|': 1,
+    '|gametype|': 1, '|gen|': 1, '|tier|': 1, '|rated|': 1, '|seed|': 1, '|rule|': 1,
+    '|teampreview|': 1, '|clearpoke|': 1, '|poke|': 1, '|start|': 1, '|done|': 1, '|request|': 1,
+    '|inactive|': 1, '|inactiveoff|': 1, '|upkeep|': 1, '|turn|': 1, '|win|': 1, '|tie|': 1,
+    '|move|': 1, '|switch|': 1, '|drag|': 1, '|detailschange|': 1, '|replace|': 1, '|swap|': 1,
+    '|cant|': 1, '|faint|': 1, '|-formechange|': 1, '|-fail|': 1, '|-block|': 1, '|-notarget|': 1,
+    '|-miss|': 1, '|-damage|': 1, '|-heal|': 1, '|-sethp|': 1, '|-status|': 1, '|-curestatus|': 1,
     '|-cureteam|': 1, '|-boost|': 1, '|-unboost|': 1, '|-setboost|': 1, '|-swapboost|': 1,
     '|-invertboost|': 1, '|-clearboost|': 1, '|-clearallboost|': 1, '|-clearpositiveboost|': 1,
     '|-ohko|': 1, '|-clearnegativeboost|': 1, '|-copyboost|': 1, '|-weather|': 1,
@@ -790,7 +1210,6 @@ export const Protocol = new class {
     return {player, position: letter, name};
   }
 
-  // TODO: make sense of this signature!
   parseDetails(
     name: string,
     ident: Protocol.PokemonIdent,
@@ -893,6 +1312,10 @@ export const Protocol = new class {
 
   parseSearchState(json: Protocol.SearchStateJSON) {
     return JSON.parse(json) as Protocol.SearchState;
+  }
+
+  parseTournamentUpdate(json: Protocol.TournamentUpdateJSON) {
+    return JSON.parse(json) as Protocol.TournamentUpdate;
   }
 
   parseNameParts(text: string) {
