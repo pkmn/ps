@@ -16,7 +16,8 @@
     "types",
     "sim",
     "protocol",
-    "client"
+    "client",
+    "view"
   ],
   "scripts": {
     "lint": "subpkg run lint",

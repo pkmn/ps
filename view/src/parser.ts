@@ -9,15 +9,15 @@ import {
   Num,
   Protocol as P,
 } from '@pkmn/protocol';
-import { ID, StatName, GenerationNum, SideID } from '@pkmn/types';
+import {ID, StatName, GenerationNum, SideID} from '@pkmn/types';
 import * as TextJSON from '../data/text.json';
 
 const Text = TextJSON as {
-  default: { [templateName: string]: string },
-  [id: string]: { [templateName: string]: string },
+  default: { [templateName: string]: string };
+  [id: string]: { [templateName: string]: string };
 } & {
-    [s in (StatName | 'spc')]: { statName: string, statShortName: string }
-  };
+  [s in (StatName | 'spc')]: { statName: string; statShortName: string }
+};
 
 function toID(s: string): ID {
   return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
@@ -29,7 +29,7 @@ export interface Tracker {
   // Percentage damage of applying the health to the ident (ie. before |-damage| is applied)
   damagePercentage(ident: PokemonIdent, health: P.PokemonHealth): string | undefined;
   // Weather (*before() |-weather| is applied)
-  currentWeather():  | undefined;
+  currentWeather(): | undefined;
 }
 
 const NOOP = () => undefined;
@@ -73,9 +73,9 @@ export class TextParser {
         return bracketIndex >= 0 ? template.slice(0, bracketIndex) : template;
       }).filter(prefix => prefix);
       if (prefixes.length) {
+        // eslint-disable-next-line no-useless-escape
         const buf = `((?:^|\n)(?:  |  \\\(|\\\[)?)(` +
-          prefixes.map(TextParser.escapeRegExp).join('|') +
-          `)`;
+          prefixes.map(p => TextParser.escapeRegExp(p)).join('|') + `)`;
         this.lowercaseRegExp = new RegExp(buf, 'g');
       } else {
         this.lowercaseRegExp = null;
@@ -103,9 +103,9 @@ export class TextParser {
     if (!pokemon) return '';
     let side;
     switch (pokemon.slice(0, 2)) {
-      case 'p1': side = 0; break;
-      case 'p2': side = 1; break;
-      default: return `???pokemon:${pokemon}???`;
+    case 'p1': side = 0; break;
+    case 'p2': side = 1; break;
+    default: return `???pokemon:${pokemon}???`;
     }
     const name = this.pokemonName(pokemon);
     const template = Text.default[side === this.perspective ? 'pokemon' : 'opposingPokemon'];
@@ -198,31 +198,31 @@ export class TextParser {
   lineSection(args: ArgType, kwArgs: KWArgType) {
     const cmd = args[0];
     switch (cmd) {
-      case 'done': case 'turn':
-        return 'break';
-      case 'move': case 'cant': case 'switch':case 'drag':
-      case 'upkeep': case 'start': case '-mega':
-        return 'major';
-      case 'faint': case 'switchout':
-        return 'preMajor';
-      case '-zpower':
-        return 'postMajor';
-      case '-damage': {
-        const id = TextParser.effectId((kwArgs as KWArgs['|-damage|']).from);
-        return id === 'confusion' ? 'major' : 'postMajor';
-      }
-      case '-curestatus': {
-        const id = TextParser.effectId((kwArgs as KWArgs['|-curestatus|']).from);
-        return id === 'naturalcure' ? 'preMajor' : 'postMajor';
-      }
-      case '-start': {
-        const id = TextParser.effectId((kwArgs as unknown as KWArgs['|-start|']).from);
-        return id === 'protean' ? 'preMajor' : 'postMajor';
-      }
-      case '-activate': {
-        const id = TextParser.effectId((args as Args['|-activate|'])[2]);
-        return id === 'confusion' || id === 'attract' ? 'preMajor' : 'postMajor';
-      }
+    case 'done': case 'turn':
+      return 'break';
+    case 'move': case 'cant': case 'switch':case 'drag':
+    case 'upkeep': case 'start': case '-mega':
+      return 'major';
+    case 'faint': case 'switchout':
+      return 'preMajor';
+    case '-zpower':
+      return 'postMajor';
+    case '-damage': {
+      const id = TextParser.effectId((kwArgs as KWArgs['|-damage|']).from);
+      return id === 'confusion' ? 'major' : 'postMajor';
+    }
+    case '-curestatus': {
+      const id = TextParser.effectId((kwArgs as KWArgs['|-curestatus|']).from);
+      return id === 'naturalcure' ? 'preMajor' : 'postMajor';
+    }
+    case '-start': {
+      const id = TextParser.effectId((kwArgs as unknown as KWArgs['|-start|']).from);
+      return id === 'protean' ? 'preMajor' : 'postMajor';
+    }
+    case '-activate': {
+      const id = TextParser.effectId((args as Args['|-activate|'])[2]);
+      return id === 'confusion' || id === 'attract' ? 'preMajor' : 'postMajor';
+    }
     }
     return (cmd.charAt(0) === '-' ? 'postMajor' : '');
   }
@@ -233,13 +233,13 @@ export class TextParser {
     if (!curSection) return false;
     this.curLineSection = curSection;
     switch (curSection) {
-      case 'break':
-        return prevSection !== 'break';
-      case 'preMajor':
-      case 'major':
-        return prevSection === 'postMajor' || prevSection === 'major';
-      case 'postMajor':
-        return false;
+    case 'break':
+      return prevSection !== 'break';
+    case 'preMajor':
+    case 'major':
+      return prevSection === 'postMajor' || prevSection === 'major';
+    case 'postMajor':
+      return false;
     }
   }
 
@@ -282,7 +282,7 @@ class Handler implements Protocol.Handler<string> {
     return this.parser.template('turn').replace('[NUMBER]', num) + '\n';
   }
 
-  '|start|'(args: Args['|start|']) {
+  '|start|'() {
     return this.parser.template('startBattle')
       .replace('[TRAINER]', this.parser.p1)
       .replace('[TRAINER]', this.parser.p2);
@@ -338,36 +338,36 @@ class Handler implements Protocol.Handler<string> {
 
   private formechange(
     args: Args['|detailschange|' | '|-formechange|' | '|-transform|'],
-    kwArgs: KWArgs['|detailschange|' | '|-formechange|' | '|-transform|']) {
-
+    kwArgs: KWArgs['|detailschange|' | '|-formechange|' | '|-transform|']
+  ) {
     const [cmd, pokemon, arg2, arg3] = args;
     let newSpecies = '' as P.Species;
     switch (cmd) {
-      case 'detailschange': newSpecies = arg2.split(',')[0].trim() as P.Species; break;
-      case '-transform': newSpecies = arg3 as any; break; // FIXME ????
-      case '-formechange': newSpecies = arg2 as P.Species; break;
+    case 'detailschange': newSpecies = arg2.split(',')[0].trim() as P.Species; break;
+    case '-transform': newSpecies = arg3 as any; break; // FIXME ????
+    case '-formechange': newSpecies = arg2 as P.Species; break;
     }
-    let newSpeciesId = toID(newSpecies);
+    const newSpeciesId = toID(newSpecies);
     let id = '';
     let templateName = 'transform';
     if (cmd !== '-transform') {
       switch (newSpeciesId) {
-        case 'greninjaash': id = 'battlebond'; break;
-        case 'mimikyubusted': id = 'disguise'; break;
-        case 'zygardecomplete': id = 'powerconstruct'; break;
-        case 'necrozmaultra': id = 'ultranecroziumz'; break;
-        case 'darmanitanzen': id = 'zenmode'; break;
-        case 'darmanitan': id = 'zenmode'; templateName = 'transformEnd'; break;
-        case 'darmanitangalarzen': id = 'zenmode'; break;
-        case 'darmanitangalar': id = 'zenmode'; templateName = 'transformEnd'; break;
-        case 'aegislashblade': id = 'stancechange'; break;
-        case 'aegislash': id = 'stancechange'; templateName = 'transformEnd'; break;
-        case 'wishiwashischool': id = 'schooling'; break;
-        case 'wishiwashi': id = 'schooling'; templateName = 'transformEnd'; break;
-        case 'miniormeteor': id = 'shieldsdown'; break;
-        case 'minior': id = 'shieldsdown'; templateName = 'transformEnd'; break;
-        case 'eiscuenoice': id = 'iceface'; break;
-        case 'eiscue': id = 'iceface'; templateName = 'transformEnd'; break;
+      case 'greninjaash': id = 'battlebond'; break;
+      case 'mimikyubusted': id = 'disguise'; break;
+      case 'zygardecomplete': id = 'powerconstruct'; break;
+      case 'necrozmaultra': id = 'ultranecroziumz'; break;
+      case 'darmanitanzen': id = 'zenmode'; break;
+      case 'darmanitan': id = 'zenmode'; templateName = 'transformEnd'; break;
+      case 'darmanitangalarzen': id = 'zenmode'; break;
+      case 'darmanitangalar': id = 'zenmode'; templateName = 'transformEnd'; break;
+      case 'aegislashblade': id = 'stancechange'; break;
+      case 'aegislash': id = 'stancechange'; templateName = 'transformEnd'; break;
+      case 'wishiwashischool': id = 'schooling'; break;
+      case 'wishiwashi': id = 'schooling'; templateName = 'transformEnd'; break;
+      case 'miniormeteor': id = 'shieldsdown'; break;
+      case 'minior': id = 'shieldsdown'; templateName = 'transformEnd'; break;
+      case 'eiscuenoice': id = 'iceface'; break;
+      case 'eiscue': id = 'iceface'; templateName = 'transformEnd'; break;
       }
     } else if (newSpecies) {
       id = 'transform';
@@ -395,7 +395,7 @@ class Handler implements Protocol.Handler<string> {
     return template.replace('[POKEMON]', this.parser.pokemon(pokemon));
   }
 
-  '|swap|'(args: Args['|swap|'],  kwArgs: KWArgs['|swap|']) {
+  '|swap|'(args: Args['|swap|'], kwArgs: KWArgs['|swap|']) {
     const [, pokemon, target] = args;
     if (target && !isNaN(Number(target)) && kwArgs.from) {
       const index = Number(target);
@@ -424,7 +424,7 @@ class Handler implements Protocol.Handler<string> {
   }
 
   '|cant|'(args: Args['|cant|'], kwArgs: KWArgs['|cant|']) {
-    let [, pokemon, effect, move] = args;
+    const [, pokemon, effect, move] = args;
     const template = this.parser.template('cant', effect, 'NODEFAULT') ||
       this.parser.template(move ? 'cant' : 'cantNoMove');
     const line1 = this.parser.maybeAbility(effect, kwArgs.of || pokemon);
@@ -434,15 +434,15 @@ class Handler implements Protocol.Handler<string> {
   }
 
   '|message|'(args: Args['|message|']) {
-    let [, message] = args;
+    const [, message] = args;
     return '' + message + '\n';
   }
 
   '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {
-    let [, pokemon, effect, arg3] = args;
-    const line1 = this.parser.maybeAbility(effect, pokemon)
-      || this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
-    let id = TextParser.effectId(effect);
+    const [, pokemon, effect, arg3] = args;
+    const line1 = this.parser.maybeAbility(effect, pokemon) ||
+      this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
+    const id = TextParser.effectId(effect);
     if (id === 'typechange') {
       const template = this.parser.template('typeChange', kwArgs.from);
       return (line1 + template
@@ -491,15 +491,15 @@ class Handler implements Protocol.Handler<string> {
   }
 
   '|-end|'(args: Args['|-end|'], kwArgs: KWArgs['|-end|']) {
-    let [, pokemon, effect] = args;
-    const line1 = this.parser.maybeAbility(effect, pokemon)
-      || this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
-    let id = TextParser.effectId(effect);
+    const [, pokemon, effect] = args;
+    const line1 = this.parser.maybeAbility(effect, pokemon) ||
+      this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
+    const id = TextParser.effectId(effect);
     if (id === 'doomdesire' || id === 'futuresight') {
       const template = this.parser.template('activate', effect);
       return line1 + template.replace('[TARGET]', this.parser.pokemon(pokemon));
     }
-    let templateId = 'end';
+    const templateId = 'end';
     let template = '';
     if (kwArgs.from?.startsWith('item:')) {
       template = this.parser.template('endFromItem', effect);
@@ -520,9 +520,9 @@ class Handler implements Protocol.Handler<string> {
       PokemonIdent | 'boost' | undefined
     ];
     let line1 = '';
-    if (oldAbility && (oldAbility.startsWith('p1')
-      || oldAbility.startsWith('p2')
-      || oldAbility === 'boost')) {
+    if (oldAbility && (oldAbility.startsWith('p1') ||
+      oldAbility.startsWith('p2') ||
+      oldAbility === 'boost')) {
       arg4 = oldAbility as (PokemonIdent | 'boost');
       oldAbility = '' as P.Ability;
     }
@@ -552,7 +552,7 @@ class Handler implements Protocol.Handler<string> {
   }
 
   '|-endability|'(args: Args['|-endability|'], kwArgs: KWArgs['|-endability|']) {
-    let [, pokemon, ability] = args;
+    const [, pokemon, ability] = args;
     if (ability) return this.parser.ability(ability, pokemon);
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     const template = this.parser.template('start', 'Gastro Acid');
@@ -593,7 +593,7 @@ class Handler implements Protocol.Handler<string> {
   }
 
   '|-enditem|'(args: Args['|-enditem|'], kwArgs: KWArgs['|-enditem|']) {
-    let [, pokemon, item] = args;
+    const [, pokemon, item] = args;
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     if (kwArgs.eat) {
       const template = this.parser.template('eatItem', kwArgs.from);
@@ -629,8 +629,10 @@ class Handler implements Protocol.Handler<string> {
         .replace('[ITEM]', this.parser.effect(item)));
     }
     let template = this.parser.template('end', item, 'NODEFAULT');
-    if (!template) template =
+    if (!template) {
+      template =
       this.parser.template('activateItem').replace('[ITEM]', this.parser.effect(item));
+    }
     return (line1 + template
       .replace('[POKEMON]', this.parser.pokemon(pokemon))
       .replace('[TARGET]', this.parser.pokemon(kwArgs.of!)));
@@ -688,9 +690,9 @@ class Handler implements Protocol.Handler<string> {
     kwArgs: KWArgs['|-singleturn|' | '|-singlemove|']
   ) {
     const [, pokemon, effect] = args;
-    const line1 = this.parser.maybeAbility(effect, (kwArgs.of || pokemon) as PokemonIdent) ||
+    const line1 = this.parser.maybeAbility(effect, (kwArgs.of || pokemon)) ||
       this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
-    let id = TextParser.effectId(effect);
+    const id = TextParser.effectId(effect);
     if (id === 'instruct') {
       const template = this.parser.template('activate', effect);
       return (line1 + template
@@ -698,7 +700,10 @@ class Handler implements Protocol.Handler<string> {
         .replace('[TARGET]', this.parser.pokemon(pokemon)));
     }
     let template = this.parser.template('start', effect, 'NODEFAULT');
-    if (!template) template = this.parser.template('start').replace('[EFFECT]', this.parser.effect(effect));
+    if (!template) {
+      template =
+      this.parser.template('start').replace('[EFFECT]', this.parser.effect(effect));
+    }
     return (line1 + template
       .replace('[POKEMON]', this.parser.pokemon(pokemon))
       .replace('[SOURCE]', this.parser.pokemon(kwArgs.of!))
@@ -706,21 +711,23 @@ class Handler implements Protocol.Handler<string> {
   }
 
   '|-sidestart|'(args: Args['|-sidestart|']) {
-    let [, side, effect] = args;
+    const [, side, effect] = args;
     let template = this.parser.template('start', effect, 'NODEFAULT');
     if (!template) {
-      template = this.parser.template('startTeamEffect').replace('[EFFECT]', this.parser.effect(effect));
+      template =
+        this.parser.template('startTeamEffect').replace('[EFFECT]', this.parser.effect(effect));
     }
     return template
       .replace('[TEAM]', this.parser.team(side))
       .replace('[PARTY]', this.parser.party(side));
   }
 
-  '|-sideend|'(args: Args['|-sideend|'], kwArgs: KWArgs['|-sideend|']) {
-    let [, side, effect] = args;
+  '|-sideend|'(args: Args['|-sideend|']) {
+    const [, side, effect] = args;
     let template = this.parser.template('end', effect, 'NODEFAULT');
     if (!template) {
-      template = this.parser.template('endTeamEffect').replace('[EFFECT]', this.parser.effect(effect));
+      template =
+        this.parser.template('endTeamEffect').replace('[EFFECT]', this.parser.effect(effect));
     }
     return (template
       .replace('[TEAM]', this.parser.team(side))
@@ -745,7 +752,8 @@ class Handler implements Protocol.Handler<string> {
     const line1 = this.parser.maybeAbility(from, kwArgs.of!);
     let template = this.parser.template('start', weather, 'NODEFAULT');
     if (!template) {
-      template = this.parser.template('startFieldEffect').replace('[EFFECT]', this.parser.effect(weather));
+      template =
+        this.parser.template('startFieldEffect').replace('[EFFECT]', this.parser.effect(weather));
     }
     return line1 + template;
   }
@@ -768,37 +776,39 @@ class Handler implements Protocol.Handler<string> {
     if (TextParser.effectId(effect) === 'perishsong') templateId = 'start';
     let template = this.parser.template(templateId, effect, 'NODEFAULT');
     if (!template) {
-      template = this.parser.template('startFieldEffect').replace('[EFFECT]', this.parser.effect(effect));
+      template =
+        this.parser.template('startFieldEffect').replace('[EFFECT]', this.parser.effect(effect));
     }
     return line1 + template.replace('[POKEMON]', this.parser.pokemon(kwArgs.of!));
   }
 
-  '|-fieldend|'(args: Args['|-fieldend|'], kwArgs: KWArgs['|-fieldend|']) {
-    let [, effect] = args;
+  '|-fieldend|'(args: Args['|-fieldend|']) {
+    const [, effect] = args;
     let template = this.parser.template('end', effect, 'NODEFAULT');
     if (!template) {
-      template = this.parser.template('endFieldEffect').replace('[EFFECT]', this.parser.effect(effect));
+      template =
+        this.parser.template('endFieldEffect').replace('[EFFECT]', this.parser.effect(effect));
     }
     return template;
   }
 
-  '|-sethp|'(args: Args['|-sethp|'], kwArgs: KWArgs['|-sethp|']) {
+  '|-sethp|'(_: Args['|-sethp|'], kwArgs: KWArgs['|-sethp|']) {
     return this.parser.template('activate', kwArgs.from);
   }
 
   '|-message|'(args: Args['|-message|']) {
-    let [, message] = args;
+    const [, message] = args;
     return `  ${message}\n`;
   }
 
   '|-hint|'(args: Args['|-hint|']) {
-    let [, message] = args;
+    const [, message] = args;
     return `  (${message})\n`;
   }
 
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
     let [, pokemon, effect, target] = args;
-    let id = TextParser.effectId(effect);
+    const id = TextParser.effectId(effect);
     if (id === 'celebrate') {
       return (this.parser.template('activate', 'celebrate')
         .replace('[TRAINER]', this.parser.trainer(pokemon.slice(0, 2))));
@@ -869,7 +879,7 @@ class Handler implements Protocol.Handler<string> {
   }
 
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
-    let [, pokemon, health] = args;
+    const [, pokemon, health] = args;
     const percentage = kwArgs.from ? undefined : this.tracker.damagePercentage(pokemon, health);
     let template = this.parser.template('damage', kwArgs.from, 'NODEFAULT');
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
@@ -901,7 +911,7 @@ class Handler implements Protocol.Handler<string> {
   }
 
   '|-heal|'(args: Args['|-heal|'], kwArgs: KWArgs['|-heal|']) {
-    let [, pokemon] = args;
+    const [, pokemon] = args;
     let template = this.parser.template('heal', kwArgs.from, 'NODEFAULT');
     const line1 = this.parser.maybeAbility(kwArgs.from, pokemon);
     if (template) {
@@ -938,7 +948,7 @@ class Handler implements Protocol.Handler<string> {
       '-boost' | '-unboost', PokemonIdent, StatName | 'spc', Num
     ];
     if (stat === 'spa' && this.parser.gen === 1) stat = 'spc';
-    const amount = parseInt(num, 10);
+    const amount = parseInt(num);
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     let templateId = cmd.slice(1);
     if (amount >= 3) templateId += '3';
@@ -1053,9 +1063,8 @@ class Handler implements Protocol.Handler<string> {
     return template.replace('[POKEMON]', this.parser.pokemon(pokemon));
   }
 
-
   '|-block|'(args: Args['|-block|'], kwArgs: KWArgs['|-block|']) {
-    let [, pokemon, effect, move, attacker] = args;
+    const [, pokemon, effect, move, attacker] = args;
     const line1 = this.parser.maybeAbility(effect, kwArgs.of || pokemon);
     const template = this.parser.template('block', effect);
     return (line1 + template
@@ -1065,9 +1074,9 @@ class Handler implements Protocol.Handler<string> {
   }
 
   '|-fail|'(args: Args['|-fail|'], kwArgs: KWArgs['|-fail|']) {
-    let [, pokemon, effect, stat] = args;
-    let id = TextParser.effectId(effect);
-    let blocker = TextParser.effectId(kwArgs.from);
+    const [, pokemon, effect, stat] = args;
+    const id = TextParser.effectId(effect);
+    const blocker = TextParser.effectId(kwArgs.from);
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     let templateId = 'block';
     if (['desolateland', 'primordialsea'].includes(blocker) &&
@@ -1121,19 +1130,19 @@ class Handler implements Protocol.Handler<string> {
     return line1 + template.replace('[POKEMON]', this.parser.pokemon(pokemon));
   }
 
-  '|-center|'(args: Args['|-center|']) {
+  '|-center|'() {
     return this.parser.template('center');
   }
 
-  '|-ohko|'(args: Args['|-ohko|']) {
+  '|-ohko|'() {
     return this.parser.template('ohko');
   }
 
-  '|-combine|'(args: Args['|-combine|']) {
+  '|-combine|'() {
     return this.parser.template('combine');
   }
 
-  '|-notarget|'(args: Args['|-notarget|']) {
+  '|-notarget|'() {
     return this.parser.template('noTarget');
   }
 
@@ -1202,7 +1211,7 @@ class Handler implements Protocol.Handler<string> {
       .replace('[TARGET]', this.parser.pokemon(target)));
   }
 
-  '|-anim|'(args: Args['|-anim|']) {
+  '|-anim|'() {
     return '';
   }
 }
