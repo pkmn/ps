@@ -249,9 +249,10 @@ const changes = async (where, last, now) => ({
       {regex: new RegExp(`(require\\\(.*?)(.sim-dist)(.*?\\\))`, 'g'), replace: `$1build/sim$3`},
     ]);
 
-    const message =
-      `Import smogon/pokemon-showdown@${now.ps}\\n\\nsmogon/pokemon-showdown-client@${now.psc}`;
-    console.log(`git add -A && git commit -m "${message}"`);
+    const messages =
+      `-m "Import smogon/pokemon-showdown@${now.ps}" ` +
+      `-m "smogon/pokemon-showdown-client@${now.psc}"`;
+    console.log(`git add -A && git commit ${messages}`);
   } catch (err) {
     await execOrDie(`git reset --hard ${last.ps}`, ps);
     await execOrDie(`git reset --hard ${last.psc}`, psc);
