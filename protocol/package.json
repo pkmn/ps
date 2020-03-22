@@ -22,8 +22,8 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "lint": "eslint --cache index.ts index.test.ts",
-    "fix": "eslint --fix index.ts index.test.ts",
+    "lint": "eslint --cache src/**/*.ts",
+    "fix": "eslint --fix src/**/*.ts",
     "compile": "tsc -p .",
     "test": "jest",
     "prepare": "npm run compile",
