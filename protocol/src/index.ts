@@ -84,6 +84,9 @@ export namespace Protocol {
    * is your own Pokémon then it will be `CURRENT/MAX`, if not, it will be `/100` if HP Percentage
    * Mod is in effect and `/48` otherwise. `STATUS` can be left blank, or it can be `slp`, `par`
    * etc.
+   *
+   * If `HP` is 0, `STATUS` should be ignored. The current behavior is for `STATUS` to be `fnt`,
+   * but this may change and should not be relied upon.
    */
   export type PokemonHPStatus = string & As<'PokemonHPStatus'>;
   export type PokemonCondition = string & As<'PokemonCondition'>;
@@ -169,6 +172,7 @@ export namespace Protocol {
   export type FormatName = string & As<'FormatName'>;
   /** Rules affecting the battle, encoded as `RULE: DESCRIPTION`. */
   export type Rule = string & As<'Rule'>;
+  /** Takes the form of a comma-separated list of `BoostName` abbreviations, where `BOOST`. */
   export type BoostNames = string & As<'BoostNames'>;
   export type Side = string & As<'Side'>;
   export type Seed = string & As<'Seed'>;
@@ -969,62 +973,330 @@ export namespace Protocol {
      * Syntax is the same as `|switch|`, though with `SPECIES` in lieu of `DETAILS`.
      */
     '|-formechange|': readonly ['-formechange', PokemonIdent, SpeciesName, PokemonHPStatus];
+    /**
+     * `|-fail|POKEMON|ACTION`
+     *
+     * The specified `ACTION` has failed against the `POKEMON` targetted. The `ACTION` in question
+     * should be a move that fails due to its own mechanics. Moves (or effect activations) that fail
+     * because they're blocked by another effect should use `-block` instead.
+     */
     '|-fail|':
     | readonly ['-fail', PokemonIdent, MoveName]
     | readonly ['-fail', PokemonIdent]
     | readonly ['-fail', PokemonIdent, 'unboost', StatDisplayName];
+    /**
+     * `|-block|POKEMON|EFFECT|MOVE|ATTACKER`
+     *
+     * An effect targeted at `POKEMON` was blocked by `EFFECT`. This may optionally specify that the
+     * effect was a `MOVE` from `ATTACKER`. `[of]SOURCE` will note the owner of the `EFFECT`, in the
+     * case that it's not `EFFECT` (for instance, an ally with Aroma Veil.)
+     */
     '|-block|': readonly ['-block', PokemonIdent, EffectName, MoveName, PokemonIdent?];
+    /**
+     * `|-notarget|POKEMON`
+     *
+     * A move has failed due to their being no target Pokémon `POKEMON`. `POKEMON` is not present
+     * in Generation 1. This action is specific to Generations 1-4 as in later Generations a failed
+     * move will display using `-fail`.
+     */
     '|-notarget|': readonly ['-notarget', PokemonIdent] | readonly ['-notarget'];
+    /**
+     * |-miss|SOURCE|TARGET`
+     *
+     * The move used by the `SOURCE` Pokémon missed (maybe absent) the `TARGET` Pokémon.
+     */
     '|-miss|': readonly ['-miss', PokemonIdent, PokemonIdent] | readonly ['-miss', PokemonIdent];
+    /**
+     * `|-damage|POKEMON|HP STATUS`
+     *
+     * The specified Pokémon `POKEMON` has taken damage, and is now at `HP STATUS` (see `|switch|`
+     * for details).
+     *
+     * If `HP` is 0, `STATUS` should be ignored. The current behavior is for `STATUS` to be `fnt`,
+     * but this may change and should not be relied upon.
+     */
     '|-damage|': readonly ['-damage', PokemonIdent, PokemonHPStatus];
+    /**
+     * `|-heal|POKEMON|HP STATUS`
+     *
+     * Same as `-damage`, but the Pokémon has healed damage instead.
+     */
     '|-heal|': readonly ['-heal', PokemonIdent, PokemonHPStatus];
+    /**
+     * `|-sethp|POKEMON|HP`
+     *
+     * The specified Pokémon `POKEMON` now has `HP` hit points.
+     */
     '|-sethp|':
     | readonly ['-sethp', PokemonIdent, Num]
     | readonly ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
+    /**
+     * `|-status|POKEMON|STATUS`
+     *
+     * The Pokémon `POKEMON` has been inflicted with `STATUS`.
+     */
     '|-status|': readonly ['-status', PokemonIdent, StatusName | 'tox'];
+    /**
+     * `|-curestatus|POKEMON|STATUS`
+     *
+     * The Pokémon `POKEMON` has recovered from `STATUS`.
+     */
     '|-curestatus|': readonly ['-curestatus', PokemonIdent, StatusName | 'tox'];
+    /**
+     * `|-cureteam|POKEMON`
+     *
+     * The Pokémon `POKEMON` has used a move that cures its team of status effects, like Heal Bell.
+     */
     '|-cureteam|': readonly ['-cureteam', PokemonIdent];
+    /**
+     * `|-boost|POKEMON|BOOST|AMOUNT`
+     *
+     * The specified Pokémon `POKEMON` has gained `AMOUNT` in `BOOST`, using the standard rules for
+     * Pokémon boosts in-battle.
+     */
     '|-boost|': readonly ['-boost', PokemonIdent, BoostName, Num];
+    /**
+     * `|-unboost|POKEMON|BOOST|AMOUNT`
+     *
+     * Same as `-boost`, but for negative boosts instead.
+     */
     '|-unboost|': readonly ['-unboost', PokemonIdent, BoostName, Num];
+    /**
+     * `|-setboost|POKEMON|BOOST|AMOUNT`
+     *
+     * Same as `-boost` and `-unboost`, but `BOOST` is *set* to `AMOUNT` instead of  boosted *by*
+     * `AMOUNT`. (For example: Anger Point, Belly Drum)
+     */
     '|-setboost|': readonly ['-setboost', PokemonIdent, BoostName, Num];
+    /**
+     * `|-swapboost|SOURCE|TARGET|BOOSTS`
+     *
+     * Swaps the boosts from `BOOSTS` between the `SOURCE` Pokémon and `TARGET` Pokémon. (For
+     * example: Guard Swap, Heart Swap).
+     */
     '|-swapboost|': readonly ['-swapboost', PokemonIdent, PokemonIdent, BoostNames];
+    /**
+     * `|-invertboost|POKEMON`
+     *
+     * Invert the boosts of the target Pokémon `POKEMON`. (For example: Topsy-Turvy).
+     */
     '|-invertboost|': readonly ['-invertboost', PokemonIdent];
+    /**
+     * `|-clearboost|POKEMON`
+     *
+     * Clears all of the boosts of the target `POKEMON`. (For example: Clear Smog).
+     */
     '|-clearboost|': readonly ['-clearboost', PokemonIdent];
+    /**
+     * `|-clearallboost`
+     *
+     * Clears all boosts from all Pokémon on both sides. (For example: Haze).
+     */
     '|-clearallboost|': readonly ['-clearallboost'];
+    /**
+     * `|-clearpositiveboost|TARGET|POKEMON|EFFECT`
+     *
+     * Clear the positive boosts from the `TARGET` Pokémon due to an `EFFECT` of the `POKEMON`
+     * Pokémon. (For example: 'move: Spectral Thief').
+     */
     '|-clearpositiveboost|': readonly ['-clearpositiveboost', PokemonIdent, PokemonIdent, EffectName];
+    /**
+     * `|-clearnegativeboost|POKEMON`
+     *
+     * Clear the negative boosts from the target Pokémon `POKEMON`. (For example: usually as the
+     * result of a `[zeffect]`).
+     */
     '|-clearnegativeboost|': readonly ['-clearnegativeboost', PokemonIdent];
+    /**
+     * `|-copyboost|SOURCE|TARGET`
+     *
+     * Copy the boosts from `SOURCE` Pokémon to `TARGET` Pokémon (For example: Psych Up).
+     */
     '|-copyboost|':
     | readonly ['-copyboost', PokemonIdent, PokemonIdent]
     | readonly ['-copyboost', PokemonIdent, PokemonIdent, BoostNames];
+    /**
+     * `|-weather|WEATHER`
+     *
+     * Indicates the weather that is currently in effect. If `|[upkeep]` is present, it means that
+     * `WEATHER` was active previously and is still in effect that turn. Otherwise, it means that
+     * the weather has changed due to a move or ability, or has expired, in which case `WEATHER`
+     * will be `none`.
+     */
     '|-weather|': readonly ['-weather', Weather | 'none'];
+    /**
+     * `|-fieldstart|CONDITION`
+     *
+     * The field condition `CONDITION` has started. Field conditions are all effects that affect the
+     * entire field and aren't a weather. (For example: Trick Room, Grassy Terrain).
+     */
     '|-fieldstart|': readonly ['-fieldstart', FieldCondition];
+    /**
+     * `|-fieldend|CONDITION`
+     *
+     * Indicates that the field condition `CONDITION` has ended.
+     */
     '|-fieldend|': readonly ['-fieldend', FieldCondition];
+    /**
+     * `|-sidestart|SIDE|CONDITION`
+     *
+     * A side condition `CONDITION` has started on `SIDE`. Side conditions are all effects that
+     * affect one side of the field. (For example: Tailwind, Stealth Rock, Reflect).
+     */
     '|-sidestart|': readonly ['-sidestart', Side, SideCondition];
+    /**
+     * `|-sideend|SIDE|CONDITION`
+     *
+     * Indicates that the side condition `CONDITION` ended for the given `SIDE`.
+     */
     '|-sideend|': readonly ['-sideend', Side, SideCondition];
+    /**
+     * `|-start|POKEMON|EFFECT`
+     *
+     * A [*volatile* status](
+     * https://bulbapedia.bulbagarden.net/wiki/Status_condition#Volatile_status) has been inflicted
+     * on the `POKEMON` Pokémon by `EFFECT`. (For example: confusion, Taunt, Substitute).
+     */
     '|-start|':
     | readonly ['-start', PokemonIdent, EffectName]
     | readonly ['-start', PokemonIdent, EffectName, Types]
     | readonly ['-start', PokemonIdent, EffectName, MoveName];
+    /**
+     * `|-end|POKEMON|EFFECT`
+     *
+     * The volatile status from `EFFECT` inflicted on the `POKEMON` Pokémon has ended.
+     */
     '|-end|': readonly ['-end', PokemonIdent, EffectName];
+    /**
+     * `|-crit|POKEMON`
+     *
+     * A move has dealt a critical hit against the `POKEMON`.
+     */
     '|-crit|': readonly ['-crit', PokemonIdent];
+    /**
+     * `|-supereffective|POKEMON`
+     *
+     * A move was super effective against the `POKEMON`.
+     */
     '|-supereffective|': readonly ['-supereffective', PokemonIdent];
+    /**
+     * `|-resisted|POKEMON`
+     *
+     * A move was not very effective against the `POKEMON`.
+     */
     '|-resisted|': readonly ['-resisted', PokemonIdent];
+    /**
+     * `|-immune|POKEMON`
+     *
+     * The `POKEMON` was immune to a move.
+     */
     '|-immune|': readonly ['-immune', PokemonIdent];
+    /**
+     * `|-item|POKEMON|ITEM|[from]EFFECT`
+     *
+     * The `ITEM` held by the `POKEMON` has been changed or revealed due to a move or ability
+     * `EFFECT`.
+     *
+     * `|-item|POKEMON|ITEM`
+     *
+     * `POKEMON` has just switched in, and its item `ITEM` is being announced to have a long-term
+     * effect (will not use `[from]`). Air Balloon is the only current user of this.
+     */
     '|-item|': readonly ['-item', PokemonIdent, ItemName];
+    /**
+     * `|-enditem|POKEMON|ITEM|[from]EFFECT`
+     *
+     * The `ITEM` held by `POKEMON` has been destroyed by a move or ability (like Knock Off), and it
+     * now holds no item.
+     *
+     * This will be silent `[silent]` if the item's ownership was changed (with a move or ability
+     * like Thief or Trick), even if the move or ability would result in a Pokémon without an item.
+     *
+     * `|-enditem|POKEMON|ITEM`
+     *
+     * `POKEMON`'s `ITEM` has destroyed itself (consumed Berries, Air Balloon). If a berry is
+     * consumed, it also has an additional modifier `|[eat]` to indicate that it was consumed.
+     *
+     * Sticky Barb does not announce itself with this or any other message when it changes hands.
+     */
     '|-enditem|': readonly ['-enditem', PokemonIdent, ItemName];
+    /**
+     * `|-ability|POKEMON|ABILITY|[from]EFFECT`
+     *
+     * The `ABILITY` of the `POKEMON` has been changed due to a move/ability `EFFECT`.
+     *
+     * Note that Skill Swap does not send this message despite it changing abilities, because it
+     * does not reveal abilities when used between allies in a Double or Triple Battle.
+     *
+     * `|-ability|POKEMON|ABILITY`
+     *
+     * `POKEMON` has just switched-in, and its ability `ABILITY` is being announced to have a
+     * long-term effect (will not use `[from]`).
+     *
+     * Effects that start at switch-in include Mold Breaker and Neutralizing Gas. It does not
+     * include abilities that activate once and don't have any long-term effects, like Intimidate
+     * (Intimidate should use `-activate`).
+     */
     '|-ability|':
     | readonly ['-ability', PokemonIdent, AbilityName]
     | readonly ['-ability', PokemonIdent, AbilityName, PokemonIdent | 'boost']
     | readonly ['-ability', PokemonIdent, AbilityName, AbilityName, PokemonIdent];
+    /**
+     * `|-endability|POKEMON`
+     *
+     * The `POKEMON` has had its ability suppressed by Gastro Acid.
+     */
     '|-endability|':
     | readonly ['-endability', PokemonIdent]
     | readonly ['-endability', PokemonIdent, AbilityName];
+    /**
+     * `|-transform|POKEMON|SPECIES`
+     *
+     * The Pokémon `POKEMON` has transformed into `SPECIES` by the move Transform or the ability
+     * Imposter.
+     */
     '|-transform|': readonly ['-transform', PokemonIdent, SpeciesName];
+    /**
+     * `|-mega|POKEMON|MEGASTONE`
+     *
+     * The Pokémon `POKEMON` used `MEGASTONE` to Mega Evolve.
+     */
     '|-mega|': readonly ['-mega', PokemonIdent, SpeciesName, ItemName];
+    /**
+     * `|-primal|POKEMON`
+     *
+     * The Pokémon `POKEMON` has reverted to its primal forme.
+     */
     '|-primal|': readonly ['-primal', PokemonIdent];
+    /**
+     * `|-burst|POKEMON|SPECIES|ITEM`
+     *
+     * The Pokémon `POKEMON` has used `ITEM` to Ultra Burst into `SPECIES`.
+     */
     '|-burst|': readonly ['-burst', PokemonIdent, SpeciesName, ItemName];
+    /**
+     * `|-zpower|POKEMON`
+     *
+     * The Pokémon `POKEMON` has used the z-move version of its move.
+     */
     '|-zpower|': readonly ['-zpower', PokemonIdent];
+    /**
+     * `|-zbroken|POKEMON`
+     *
+     * A z-move has broken through protect and hit the `POKEMON`.
+     */
     '|-zbroken|': readonly ['-zbroken', PokemonIdent];
+    /**
+     * `|-activate|EFFECT`
+     *
+     * A miscellaneous effect has activated. This is triggered whenever an effect could not be
+     * better described by one of the other minor messages: for example, healing abilities like
+     * Water Absorb simply use `-heal`.
+     *
+     * Items usually activate with `-end`, although items with two messages, like Berries ("POKEMON
+     * ate the Leppa Berry! POKEMON restored PP...!"), will send the "ate" message as `-eat`, and
+     * the "restored" message as `-activate`.
+     */
     '|-activate|': readonly [
       '-activate',
       PokemonIdent,
@@ -1033,15 +1305,74 @@ export namespace Protocol {
       (AbilityName | Num)?
     ] | readonly ['-activate', PokemonIdent, EffectName, PokemonIdent];
     '|-fieldactivate|': readonly ['-fieldactivate', EffectName];
+    /**
+     * `|-hint|MESSAGE`
+     *
+     * Displays a message in parentheses to the client. Hint messages appear to explain and clarify
+     * why certain actions, such as Fake Out and Mat Block failing, have occurred, when there would
+     * normally be no in-game messages.
+     */
     '|-hint|': readonly ['-hint', Message];
+    /**
+     * `|-center`
+     *
+     * Appears in Triple Battles when only one Pokémon remains on each side, to indicate that the
+     * Pokémon have been automatically centered.
+     */
     '|-center|': readonly ['-center'];
+    /**
+     * `|-message|MESSAGE`
+     *
+     * Displays a miscellaneous message to the client. These messages are primarily used for
+     * messages from game mods that aren't supported by the client, like rule clauses such as Sleep
+     * Clause, or other metagames with custom messages for specific scenarios.
+     */
     '|-message|': readonly ['-message', Message];
+    /**
+     * `|-combine`
+     *
+     * A move has been combined with another (For example: Fire Pledge).
+     */
     '|-combine|': readonly ['-combine'];
+    /**
+     * `|-waiting|SOURCE|TARGET`
+     *
+     * The `SOURCE` Pokémon has used a move and is waiting for the `TARGET` Pokémon (For example:
+     * Fire Pledge).
+     */
     '|-waiting|': readonly ['-waiting', PokemonIdent, PokemonIdent];
+    /**
+     * `|-prepare|ATTACKER|MOVE|DEFENDER`
+     *
+     * The `ATTACKER` Pokémon is preparing to use a charge `MOVE` on the `DEFENDER` (For example:
+     * Dig, Fly).
+     */
     '|-prepare|': readonly ['-prepare', PokemonIdent, MoveName, PokemonIdent];
+    /**
+     * `|-mustrecharge|POKEMON`
+     *
+     * The Pokémon `POKEMON` must spend the turn recharging from a previous move.
+     */
     '|-mustrecharge|': readonly ['-mustrecharge', PokemonIdent];
+    /**
+     * `|-hitcount|POKEMON|NUM`
+     *
+     * A multi-hit move hit the `POKEMON` `NUM` times.
+     */
     '|-hitcount|': readonly ['-hitcount', PokemonIdent, Num];
+    /**
+     * `|-singlemove|POKEMON|MOVE`
+     *
+     * The Pokémon `POKEMON` used move `MOVE` which causes a temporary effect lasting the duration
+     * of the move. (For example: Grudge, Destiny Bond).
+     */
     '|-singlemove|': readonly ['-singlemove', PokemonIdent, MoveName];
+    /**
+     * `|-singleturn|POKEMON|MOVE`
+     *
+     * The Pokémon `POKEMON` used move `MOVE` which causes a temporary effect lasting the duration
+     * of the turn. (For example: Protect, Focus Punch, Roost).
+     */
     '|-singleturn|': readonly ['-singleturn', PokemonIdent, MoveName];
     '|-anim|': readonly ['-anim', PokemonIdent, MoveName, PokemonIdent];
     '|-ohko|': readonly ['-ohko'];
