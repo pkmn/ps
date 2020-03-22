@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+const readline = require('readline');
+
+const {Verifier} = require('./build/verifier');
+
+readline.createInterface({input: process.stdin, output: process.stdout}).on('line', line => {
+  const result = Verifier.verifyLine(line);
+  if (result) {
+    console.error(result);
+    process.exit(1);
+  }
+});

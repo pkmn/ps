@@ -1,6 +1,6 @@
 import {ID} from '@pkmn/types';
 
-import {Protocol, Args, KWArgs} from '../index';
+import {Protocol, Args, ArgType, KWArgs, KWArgType} from '../index';
 
 export const Verifier = new class {
   handler: Handler;
@@ -17,6 +17,15 @@ export const Verifier = new class {
       if (!key || !this.handler[key]) return parsed;
       if (!((this.handler as any)[key](args, kwArgs))) return parsed;
     }
+    return null;
+  }
+
+  verifyLine(line: string) {
+    const parsed = Protocol.parseBattleLine(line);
+    const {args, kwArgs} = parsed;
+    const key = Protocol.key(args);
+    if (!key || !this.handler[key]) return parsed;
+    if (!((this.handler as any)[key](args, kwArgs))) return parsed;
     return null;
   }
 

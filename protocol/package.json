@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "bin": {
+    "generate-handler": "./generate-handler",
+    "protocol-verifier": "./protocol-verifier"
+  },
   "description": "Parsing logic for Pokémon Showdown's PROTOCOL and SIM-PROTOCOL",
   "repository": "github:pkmn/ps",
   "author": "Kirk Scheibelhut <pre@pkmn.cc>",
