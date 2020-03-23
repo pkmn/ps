@@ -106,6 +106,37 @@ const BattleNatures: {[k: string]: Nature} = {
 	timid: {name: "Timid", plus: 'spe', minus: 'atk'},
 };
 
+const BattleStatIDs: {[name: string]: StatName} = {
+	HP: 'hp',
+	hp: 'hp',
+	Atk: 'atk',
+	atk: 'atk',
+	Def: 'def',
+	def: 'def',
+	SpA: 'spa',
+	SAtk: 'spa',
+	SpAtk: 'spa',
+	spa: 'spa',
+	spc: 'spa',
+	Spc: 'spa',
+	SpD: 'spd',
+	SDef: 'spd',
+	SpDef: 'spd',
+	spd: 'spd',
+	Spe: 'spe',
+	Spd: 'spe',
+	spe: 'spe',
+};
+const BattleStatNames: {[key in StatName]: string} = {
+	hp: 'HP',
+	atk: 'Atk',
+	def: 'Def',
+	spa: 'SpA',
+	spd: 'SpD',
+	spe: 'Spe',
+};
+const STATS = Object.keys(BattleStatNames) as StatName[];
+
 export const toID = Data.Tools.getId;
 
 export class ModdedDex {
@@ -1248,6 +1279,232 @@ export class ModdedDex {
 		}
 
 		return team;
+	}
+
+	importTeam(buffer: string) {
+		const text = buffer.split("\n");
+		const team: PokemonSet[] = [];
+		let curSet: Partial<PokemonSet> | null = null;
+		if (text.length === 1 || (text.length === 2 && !text[1])) {
+			return this.fastUnpackTeam(text[0]);
+		}
+		for (let line of text) {
+			line = line.trim();
+			if (line === '' || line === '---') {
+				curSet = null;
+			} else if (!curSet) {
+				curSet = {name: '', species: '', gender: ''};
+				team.push(curSet as PokemonSet);
+				const atIndex = line.lastIndexOf(' @ ');
+				if (atIndex !== -1) {
+					curSet.item = line.substr(atIndex + 3);
+					if (toID(curSet.item) === 'noitem') curSet.item = '';
+					line = line.substr(0, atIndex);
+				}
+				if (line.substr(line.length - 4) === ' (M)') {
+					curSet.gender = 'M';
+					line = line.substr(0, line.length - 4);
+				}
+				if (line.substr(line.length - 4) === ' (F)') {
+					curSet.gender = 'F';
+					line = line.substr(0, line.length - 4);
+				}
+				const parenIndex = line.lastIndexOf(' (');
+				if (line.substr(line.length - 1) === ')' && parenIndex !== -1) {
+					line = line.substr(0, line.length - 1);
+					curSet.species = Dex.getTemplate(line.substr(parenIndex + 2)).species;
+					line = line.substr(0, parenIndex);
+					curSet.name = line;
+				} else {
+					curSet.species = Dex.getTemplate(line).species;
+					curSet.name = '';
+				}
+			} else if (line.substr(0, 7) === 'Trait: ') {
+				line = line.substr(7);
+				curSet.ability = line;
+			} else if (line.substr(0, 9) === 'Ability: ') {
+				line = line.substr(9);
+				curSet.ability = line;
+			} else if (line === 'Shiny: Yes') {
+				curSet.shiny = true;
+			} else if (line.substr(0, 7) === 'Level: ') {
+				line = line.substr(7);
+				curSet.level = +line;
+			} else if (line.substr(0, 11) === 'Happiness: ') {
+				line = line.substr(11);
+				curSet.happiness = +line;
+			} else if (line.substr(0, 10) === 'Pokeball: ') {
+				line = line.substr(10);
+				curSet.pokeball = line;
+			} else if (line.substr(0, 14) === 'Hidden Power: ') {
+				line = line.substr(14);
+				curSet.hpType = line;
+			} else if (line.substr(0, 5) === 'EVs: ') {
+				line = line.substr(5);
+				const evLines = line.split('/');
+				curSet.evs = {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0};
+				for (let evLine of evLines) {
+					evLine = evLine.trim();
+					const spaceIndex = evLine.indexOf(' ');
+					if (spaceIndex === -1) continue;
+					const statid = BattleStatIDs[evLine.substr(spaceIndex + 1)];
+					const statval = parseInt(evLine.substr(0, spaceIndex));
+					if (!statid) continue;
+					curSet.evs[statid] = statval;
+				}
+			} else if (line.substr(0, 5) === 'IVs: ') {
+				line = line.substr(5);
+				const ivLines = line.split(' / ');
+				curSet.ivs = {hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31};
+				for (const ivLine of ivLines) {
+					const spaceIndex = ivLine.indexOf(' ');
+					if (spaceIndex === -1) continue;
+					const statid = BattleStatIDs[ivLine.substr(spaceIndex + 1)];
+					let statval = parseInt(ivLine.substr(0, spaceIndex));
+					if (!statid) continue;
+					if (isNaN(statval)) statval = 31;
+					curSet.ivs[statid] = statval;
+				}
+			} else if (/^[A-Za-z]+ (N|n)ature/.exec(line)) {
+				let natureIndex = line.indexOf(' Nature');
+				if (natureIndex === -1) natureIndex = line.indexOf(' nature');
+				if (natureIndex === -1) continue;
+				line = line.substr(0, natureIndex);
+				if (line !== 'undefined') curSet.nature = line;
+			} else if (line.substr(0, 1) === '-' || line.substr(0, 1) === '~') {
+				line = line.substr(1);
+				if (line.substr(0, 1) === ' ') line = line.substr(1);
+				if (!curSet.moves) curSet.moves = [];
+				if (line.substr(0, 14) === 'Hidden Power [') {
+					const hptype = line.substr(14, line.length - 15);
+					line = 'Hidden Power ' + hptype;
+					const type = this.getType(hptype);
+					if (!curSet.ivs && type.exists) {
+						curSet.ivs = {hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31};
+						for (const stat in type.HPivs) {
+							curSet.ivs[stat as StatName] = type.HPivs[stat as StatName]!;
+						}
+					}
+				}
+				if (line === 'Frustration' && curSet.happiness === undefined) {
+					curSet.happiness = 0;
+				}
+				curSet.moves.push(line);
+			}
+		}
+		return team;
+	}
+
+	exportTeam(team: PokemonSet[] | string) {
+		if (!team) return "";
+		if (typeof team === 'string') {
+			if (team.includes('\n')) return team;
+			team = this.fastUnpackTeam(team)!;
+		}
+		let text = '';
+		for (const curSet of team) {
+			if (curSet.name && curSet.name !== curSet.species) {
+				text += '' + curSet.name + ' (' + curSet.species + ')';
+			} else {
+				text += '' + curSet.species;
+			}
+			if (curSet.gender === 'M') text += ' (M)';
+			if (curSet.gender === 'F') text += ' (F)';
+			if (curSet.item) {
+				text += ' @ ' + curSet.item;
+			}
+			text += "  \n";
+			if (curSet.ability) {
+				text += 'Ability: ' + curSet.ability + "  \n";
+			}
+			if (curSet.level && curSet.level !== 100) {
+				text += 'Level: ' + curSet.level + "  \n";
+			}
+			if (curSet.shiny) {
+				text += 'Shiny: Yes  \n';
+			}
+			if (typeof curSet.happiness === 'number' && curSet.happiness !== 255 && !isNaN(curSet.happiness)) {
+				text += 'Happiness: ' + curSet.happiness + "  \n";
+			}
+			if (curSet.pokeball) {
+				text += 'Pokeball: ' + curSet.pokeball + "  \n";
+			}
+			if (curSet.hpType) {
+				text += 'Hidden Power: ' + curSet.hpType + "  \n";
+			}
+			let first = true;
+			if (curSet.evs) {
+				for (const j of STATS) {
+					if (!curSet.evs[j]) continue;
+					if (first) {
+						text += 'EVs: ';
+						first = false;
+					} else {
+						text += ' / ';
+					}
+					text += '' + curSet.evs[j] + ' ' + BattleStatNames[j];
+				}
+			}
+			if (!first) {
+				text += "  \n";
+			}
+			if (curSet.nature) {
+				text += '' + curSet.nature + ' Nature' + "  \n";
+			}
+			first = true;
+			if (curSet.ivs) {
+				let defaultIvs = true;
+				let hpType: string | boolean = false;
+				for (const move of curSet.moves) {
+					if (move.substr(0, 13) === 'Hidden Power ' && move.substr(0, 14) !== 'Hidden Power [') {
+						hpType = move.substr(13);
+						const type = this.getType(hpType);
+						if (!type.exists) throw new Error("That is not a valid Hidden Power type.");
+						for (const stat of STATS) {
+							if ((curSet.ivs[stat] === undefined ? 31 : curSet.ivs[stat]) !== (type.HPivs[stat] || 31)) {
+								defaultIvs = false;
+								break;
+							}
+						}
+					}
+				}
+				if (defaultIvs && !hpType) {
+					for (const stat of STATS) {
+						if (curSet.ivs[stat] !== 31 && curSet.ivs[stat] !== undefined) {
+							defaultIvs = false;
+							break;
+						}
+					}
+				}
+				if (!defaultIvs) {
+					for (const stat of STATS) {
+						if (typeof curSet.ivs[stat] === 'undefined' || isNaN(curSet.ivs[stat]) || curSet.ivs[stat] === 31) continue;
+						if (first) {
+							text += 'IVs: ';
+							first = false;
+						} else {
+							text += ' / ';
+						}
+						text += '' + curSet.ivs[stat] + ' ' + BattleStatNames[stat];
+					}
+				}
+			}
+			if (!first) {
+				text += "  \n";
+			}
+			if (curSet.moves) {
+				for (let move of curSet.moves) {
+					if (move.substr(0, 13) === 'Hidden Power ') {
+						move = move.substr(0, 13) + '[' + move.substr(13) + ']';
+					}
+					if (move) {
+						text += '- ' + move + "  \n";
+					}
+				}
+			}
+			text += "\n";
+		}
+		return text;
 	}
 
 	deepClone(obj: any): any {
