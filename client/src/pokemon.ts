@@ -198,14 +198,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     ) as PokemonIdent;
   }
 
-  getHPColor(): HPColor {
-    if (this.hpcolor) return this.hpcolor;
-    const ratio = this.hp / this.maxhp;
-    if (ratio > 0.5) return 'g';
-    if (ratio > 0.2) return 'y';
-    return 'r';
-  }
-
   isActive() {
     return this.side.active.includes(this);
   }

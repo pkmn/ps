@@ -181,9 +181,9 @@ const interesting = f => {
 const HEAD = async where => (await execOrDie('git rev-parse HEAD', where)).slice(0, 8);
 // Figure out what has changed in PS so that we can later filter out just the interesting changes
 // A GitHub URL for the diff is added for convenience in the event review is required
-const changes = async (where, last, now) => ({
+const changes = async (where, last, now, repo) => ({
     files: (await execOrDie(`git diff --name-only ${last}..${now}`, where)).trim().split('\n'),
-    url: `https://github.com/smogon/pokemon-showdown/compare/${last}..${now}`,
+    url: `https://github.com/smogon/${repo}/compare/${last}..${now}`,
   });
 
 (async () => {
@@ -195,8 +195,8 @@ const changes = async (where, last, now) => ({
     const now = {ps: await HEAD(ps), psc: await HEAD(psc)};
 
     const changed = {
-      ps: await changes(ps, last.ps, now.ps),
-      psc: await changes(psc, last.psc, now.psc)
+      ps: await changes(ps, last.ps, now.ps, 'pokemon-showdown'),
+      psc: await changes(psc, last.psc, now.psc, 'pokemon-showdown-client')
     };
 
     console.log(`\n${changed.ps.url}\n`);
@@ -253,7 +253,7 @@ const changes = async (where, last, now) => ({
     const messages =
       `-m "Import smogon/pokemon-showdown@${now.ps}" ` +
       `-m "smogon/pokemon-showdown-client@${now.psc}"`;
-    console.log(`git add -A && git commit ${messages}`);
+    console.log(`\ngit add -A && git commit ${messages}`);
   } catch (err) {
     await execOrDie(`git reset --hard ${last.ps}`, ps);
     await execOrDie(`git reset --hard ${last.psc}`, psc);
