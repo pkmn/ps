@@ -13,6 +13,7 @@ import {
   StatsTable,
   StatusName,
   Weather,
+  SideID,
 } from '@pkmn/types';
 
 export {ID} from '@pkmn/types';
@@ -89,7 +90,6 @@ export namespace Protocol {
    * but this may change and should not be relied upon.
    */
   export type PokemonHPStatus = string & As<'PokemonHPStatus'>;
-  export type PokemonCondition = string & As<'PokemonCondition'>;
 
   /**
    * A user, the first character being their rank (users with no rank are represented by a space),
@@ -313,55 +313,83 @@ export namespace Protocol {
     bracketData: {[key: string]: any};
   }
 
-  export interface Request {
-    rqid?: number;
-    active: Request.ActivePokemon[];
-    side: {
-      name: Username;
-      id: Player;
-      pokemon: Request.Pokemon[];
-    };
-    forceSwitch?: [true] & boolean[];
-    wait?: boolean;
+  export type Request = MoveRequest | SwitchRequest | TeamRequest | WaitRequest;
+
+  export interface MoveRequest {
+    requestType: 'move';
+    rqid: number;
+    side: Request.SideInfo;
+    active: (Request.ActivePokemon | null)[];
+    noCancel?: boolean;
+  }
+
+  export interface SwitchRequest {
+    requestType: 'switch';
+    rqid: number;
+    side: Request.SideInfo;
+    forceSwitch: [true] & boolean[];
+    noCancel?: boolean;
+  }
+
+  export interface TeamRequest {
+    requestType: 'team';
+    rqid: number;
+    side: Request.SideInfo;
+    maxTeamSize?: number;
+    noCancel?: boolean;
+  }
+
+  export interface WaitRequest {
+    requestType: 'wait';
+    rqid: number;
+    side: undefined;
+    noCancel?: boolean;
   }
 
   export namespace Request {
+    export interface SideInfo {
+      name: Username;
+      id: SideID;
+      pokemon: Pokemon[];
+    }
+
     export interface ActivePokemon {
-      trapped?: boolean;
-      maybeDisabled?: boolean;
-      maybeTrapped?: boolean;
-      canMegaEvo?: boolean;
-      canUltraBoost?: boolean;
-      canZMove?: null | Array<{
-        move: MoveName;
-        target: MoveTarget;
-      }>;
-      canDynamax?: boolean;
-      maxMoves?: {
-        maxMoves: Array<{
-          move: ID;
-          target: MoveTarget;
-          disabled?: boolean;
-        }>;
-        gigantamax?: SpeciesName;
-      };
       moves: Array<{
-        move: MoveName;
+        name: MoveName;
         id: ID;
         pp: number;
         maxpp: number;
         target: MoveTarget;
-        disabled: string | boolean;
+        disabled: boolean;
       }>;
+      maxMoves?: {
+        // name: MoveName;
+        id: ID;
+        target: MoveTarget;
+        disabled?: boolean;
+      }[];
+      zMoves?: Array<{
+        name: MoveName,
+        id: ID,
+        target: MoveTarget,
+      }> | null;
+      canDynamax?: boolean;
+      canGigantamax?: boolean;
+      canMegaEvo?: boolean;
+      canUltraBurst?: boolean;
+      trapped?: boolean;
+      maybeTrapped?: boolean;
+      maybeDisabled?: boolean;
     }
-    export interface Pokemon {
+
+    export interface Pokemon extends DetailedPokemon, PokemonHealth {
       active?: boolean;
       details: PokemonDetails;
       ident: PokemonIdent;
       pokeball: ID;
       ability: ID;
       baseAbility: ID;
-      condition: PokemonCondition;
+      condition: PokemonHPStatus;
       item: ID;
       moves: ID[];
       stats: Omit<StatsTable, 'hp'>;
@@ -1554,7 +1582,6 @@ export type PositionLetter = Protocol.PositionLetter;
 export type PokemonIdent = Protocol.PokemonIdent;
 export type PokemonSearchID = Protocol.PokemonSearchID;
 export type PokemonDetails = Protocol.PokemonDetails;
-export type PokemonCondition = Protocol.PokemonCondition;
 export type PokemonHPStatus = Protocol.PokemonHPStatus;
 
 export type Username = Protocol.Username;
@@ -1928,12 +1955,56 @@ export const Protocol = new class {
     return {name: fn(effect)};
   }
 
-  // parseCondition(condition: Protocol.PokemonCondition) {
-  //   return null; // TODO
-  // }
-
   parseRequest(json: Protocol.RequestJSON) {
-    return JSON.parse(json) as Protocol.Request;
+    const request = JSON.parse(json);
+    if (!request.requestType) {
+      request.requestType = 'move';
+      if (request.forceSwitch) {
+        request.requestType = 'switch';
+      } else if (request.teamPreview) {
+        request.requestType = 'team';
+      } else if (request.wait) {
+        request.requestType = 'wait';
+      }
+    }
+
+    if (request.side) {
+      for (const pokemon of request.side.pokemon) {
+        this.parseDetails(pokemon.ident.substr(4), pokemon.ident, pokemon.details, pokemon);
+        this.parseHealth(pokemon.condition, pokemon);
+      }
+    }
+
+    if (request.active) {
+      request.active = request.active.map((active: any, i: number) =>
+        request.side.pokemon[i].fainted ? null : active);
+      for (const active of request.active) {
+        if (!active) continue;
+        for (const move of active.moves) {
+          if (move.move) move.name = move.move;
+          move.id = toID(move.name);
+        }
+        if (active.maxMoves) {
+          if (active.maxMoves.maxMoves) {
+            active.canGigantamax = active.maxMoves.gigantamax;
+            active.maxMoves = active.maxMoves.maxMoves;
+          }
+          for (const move of active.maxMoves) {
+            move.id = move.move;
+          }
+        }
+        if (active.canZMove) {
+          active.zMoves = active.canZMove;
+          for (const move of active.zMoves) {
+            if (!move) continue;
+            if (move.move) move.name = move.move;
+            move.id = toID(move.name);
+          }
+        }
+      }
+    }
+
+    return request as Protocol.Request;
   }
 
   parseChallenges(json: Protocol.ChallengesJSON) {
