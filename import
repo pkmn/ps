@@ -162,6 +162,7 @@ const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
 
 // Files which are relevant for review in smogon/pokemon-showdown-client
 const INTERESTING = new Set([
+  'src/battle-choices.ts',
   'src/battle-dex-data.ts',
   'src/battle-dex.ts',
   'src/battle-scene-stub.ts',
