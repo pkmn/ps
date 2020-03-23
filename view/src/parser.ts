@@ -16,7 +16,7 @@ import {
 } from '@pkmn/protocol';
 import {ID, StatName, GenerationNum, SideID} from '@pkmn/types';
 import {Battle} from '@pkmn/client';
-import * as TextJSON from '../data/text.json';
+import * as TextJSON from './data/text.json';
 
 const Text = TextJSON as {
   default: { [templateName: string]: string };
@@ -35,7 +35,7 @@ export interface Tracker {
   // Percentage damage of applying the health to the ident (ie. before |-damage| is applied)
   damagePercentage(ident: PokemonIdent, health: PokemonHPStatus): string | undefined;
   // Weather (*before() |-weather| is applied)
-  currentWeather(): | undefined;
+  currentWeather(): ID | undefined;
 }
 
 export class BattlePostAdapter implements Tracker {

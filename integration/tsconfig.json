@@ -3,7 +3,7 @@
   "compilerOptions": {
     "resolveJsonModule": true,
     "outDir": "build",
-    "lib": ["es6", "es2016.array.include", "es2017.object"],
+    "lib": ["dom", "es6", "es2016.array.include", "es2017.object"],
     "tsBuildInfoFile": ".tsbuildinfo"
   },
   "exclude": ["wip", "build"]
