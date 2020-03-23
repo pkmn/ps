@@ -1657,6 +1657,6 @@ dexes['gen6'] = new ModdedDex('gen6');
 dexes['gen7'] = new ModdedDex('gen7');
 
 // "gen8" is an alias for the current base data
-dexes[BASE_MOD] = dexes['base'];
+dexes[BASE_MOD] = dexes['base'].includeModData();
 
 export const Dex = dexes['base'];
