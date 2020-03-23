@@ -3,6 +3,7 @@
 
 const child_process = require('child_process');
 const path = require('path');
+const assert = require('assert').strict;
 
 const minimist = require('minimist');
 const argv = minimist(process.argv.slice(2));
@@ -88,79 +89,36 @@ function processBattle(streams) {
 }
 
 async function processStream(stream, perspective) {
-  // case 'turn':
-  //   const h2elem = document.createElement('h2');
-  //   h2elem.className = 'battle-history';
-  //   let turnMessage;
-  //   if (this.battleParser) {
-  //     turnMessage = this.battleParser.parseArgs(args, {}).trim();
-  //     if (!turnMessage.startsWith('==') || !turnMessage.endsWith('==')) {
-  //       throw new Error("Turn message must be a heading.");
-  //     }
-  //     turnMessage = turnMessage.slice(2, -2).trim();
-  //     this.battleParser.curLineSection = 'break';
-  //   } else {
-  //     turnMessage = `Turn ${args[1]}`;
-  //   }
-  //   h2elem.innerHTML = BattleLog.escapeHTML(turnMessage);
-  //   this.addSpacer();
-  //   this.addNode(h2elem);
-  //   break;
-
-  // default:
-  //   let line = null;
-  //   if (this.battleParser) {
-  //     line = this.battleParser.parseArgs(args, kwArgs || {}, true);
-  //   }
-  //   if (line === null) {
-  //     this.addDiv('chat message-error', 'Unrecognized: |' + BattleLog.escapeHTML(args.join('|')));
-  //     return;
-  //   }
-  //   if (!line) return;
-  //   this.message(...this.parseLogMessage(line));
-  //   break;
-
-  const extracted = [];
+  let expected = '';
   const ps = {battle: new Battle(), parser: new BattleTextParser(perspective)};
   ps.battle.scene.log = {
     add: (args, kwArgs) => {
-      extracted.push(ps.parser.extractMessage(args, kwArgs));
+      expected += ps.parser.extractMessage(args, kwArgs);
     }
   };
 
   const battle = new client.Battle();
   const handler = new client.Handler(battle);
-  const tracker = {
-    pokemonAt: (side, slot) => {
-      return (battle.lastSwap &&
-        battle.lastSwap[0] === side &&
-        battle.lastSwap[1] === slot) ? battle.lastSwap[2] : undefined;
-    },
-    damagePercentage: (ident, health) => {
-      return (battle.lastDamagePercentage &&
-        battle.lastDamagePercentage[0] === ident &&
-        battle.lastDamagePercentage[1] === health) ? battle.lastDamagePercentage[2] : undefined;
-    },
-    currentWeather: () => battle.lastWeather,
-  };
+  const tracker = new client.BattlePostAdapter(battle);
+
   const parser = new client.TextParser(perspective, tracker);
   const pkmn = {battle, handler, parser};
 
   while ((chunk = await stream.read())) {
+    let actual = '';
     for (const line of chunk.split('\n')) {
-      ps.battle.add(line);
-      const a = ps.parser.extractMessage(line);
-
-
       const {args, kwArgs} = Protocol.parseBattleLine(line);
       const key = Protocol.key(args);
       if (key && pkmn.handler[key]) pkmn.handler[key](args, kwArgs);
-      const b = pkmn.parser.parse(args, kwArgs);
-
-      // TODO compare a and b!
-      // TODO verify battle states!
+      actual += pkmn.parser.parse(args, kwArgs);
+      ps.battle.add(line);
     }
     ps.battle.fastForwardTo(-1);
+    assert.equal(actual, expected);
+    // TODO verify battle states
+
+    actual = '';
+    expected = '';
   }
 }
 
@@ -194,9 +152,3 @@ const prng = argv.seed && argv.seed.split(',').map(s => Number(s));
   } while (forever); // eslint-disable-line no-unmodified-loop-condition
   process.exit(failures);
 })();
-
-
-
-// TODO: WIP process!
-// 1. run exhaustive 1 step on PS stack, save log, run log through PS client, save log
-// 2. run exhaustive 1 step on PKMN stack, save log (COMPARE TO PS), run log through PKMN (COMPARE)

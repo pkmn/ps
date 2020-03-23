@@ -8,6 +8,7 @@
   "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
   "dependencies": {
+    "@pkmn/client": "file:../client",
     "@pkmn/protocol": "file:../protocol",
     "@pkmn/types": "file:../types"
   },
