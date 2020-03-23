@@ -4,26 +4,43 @@
 const child_process = require('child_process');
 const path = require('path');
 
-// TODO: WIP process!
-// 1. run exhaustive 1 step on PS stack, save log, run log through PS client, save log
-// 2. run exhaustive 1 step on PKMN stack, save log (COMPARE TO PS), run log through PKMN (COMPARE)
-
 const minimist = require('minimist');
+const argv = minimist(process.argv.slice(2));
+
+const PS = '../vendor/pokemon-showdown';
+const PSC = '../vendor/pokemon-showdown-client';
+
+// Ensure smogon/pokemon-showdown and smogon/pokemon-showdown-client are built
+const shell = (cmd, cwd = __dirname) => child_process.execSync(cmd, { stdio: 'inherit', cwd });
+shell('npm install && node build', path.resolve(__dirname, PS));
+shell('npm install && node build indexes', path.resolve(__dirname, PSC));
+
+// smogon/pokemon-showdown-client expects to be run in a Browser window and like
+// smogon/pokemon-showdown, tramples all over the global namespace. As such, both projects cannot
+// be loaded together (eg. both assign `globals.Dex` to different objects which do not have
+// compatible interfaces).
+window = global;
+{
+  window.BattleTeambuilderTable = require(`${PSC}/data/teambuilder-tables.js`).BattleTeambuilderTable;
+  window.BattleAbilities = require(`${PSC}/data/abilities.js`).BattleAbilities;
+  window.BattleItems = require(`${PSC}/data/items.js`).BattleItems;
+  window.BattleMovedex = require(`${PSC}/data/moves.js`).BattleMovedex;
+  window.BattlePokdex = require(`${PSC}/data/pokedex.js`).BattlePokdex;
+  window.BattleTypeChart = require(`${PSC}/data/typechart.js`).BattleTypeChart;
+
+  require(`${PSC}/js/battle-dex-data.js`);
+  require(`${PSC}js/battle-dex.js`);
+  require(`${PSC}/js/battle-scene-stub.js`);
+  global.BattleText = require(`${PSC}/data/text.js`).BattleText;
+  require(`${PSC}/js/battle-text-parser.js`);
+  require(`${PSC}/js/battle.js`);
+}
 
 const sim = require('@pkmn/sim');
 const client = require('@pkmn/client');
-
-const shell = (cmd, cwd = __dirname) => child_process.execSync(cmd, { stdio: 'inherit', cwd });
-shell('node build', path.resolve(__dirname, '../vendor/pokemon-showdown'));
-shell('node build indexes', path.resolve(__dirname, '../vendor/pokemon-showdown-client'));
-
-const simdist = '../vendor/pokemon-showdown/.sim-dist';
-const PS = {
-  Dex: require(`${simdist}/dex`).Dex,
-  ExhaustiveRunner: require(`${simdist}/tools/exhaustive-runner`).ExhaustiveRunner,
-};
-global.toID = PS.Dex.getId;
-PS.Dex.includeModData();
+const {Protocol} = require('@pkmn/protocol');
+const {ExhaustiveRunner} = require('@pkmn/sim/tools/exhaustive-runner');
+sim.Dex.includeModData();
 
 // Tracks whether some promises threw errors that weren't caught so we can log
 // and exit with a non-zero status to fail any tests. This "shouldn't happen"
@@ -61,7 +78,92 @@ const RejectionTracker = new class {
 
 RejectionTracker.register();
 
-const argv = minimist(process.argv.slice(2));
+
+function processBattle(streams) {
+  return Promise.all([
+    processStream(streams.p1, 0),
+    processStream(streams.p2, 1),
+    // TODO spectator, omniscient?
+  ]);
+}
+
+async function processStream(stream, perspective) {
+  // case 'turn':
+  //   const h2elem = document.createElement('h2');
+  //   h2elem.className = 'battle-history';
+  //   let turnMessage;
+  //   if (this.battleParser) {
+  //     turnMessage = this.battleParser.parseArgs(args, {}).trim();
+  //     if (!turnMessage.startsWith('==') || !turnMessage.endsWith('==')) {
+  //       throw new Error("Turn message must be a heading.");
+  //     }
+  //     turnMessage = turnMessage.slice(2, -2).trim();
+  //     this.battleParser.curLineSection = 'break';
+  //   } else {
+  //     turnMessage = `Turn ${args[1]}`;
+  //   }
+  //   h2elem.innerHTML = BattleLog.escapeHTML(turnMessage);
+  //   this.addSpacer();
+  //   this.addNode(h2elem);
+  //   break;
+
+  // default:
+  //   let line = null;
+  //   if (this.battleParser) {
+  //     line = this.battleParser.parseArgs(args, kwArgs || {}, true);
+  //   }
+  //   if (line === null) {
+  //     this.addDiv('chat message-error', 'Unrecognized: |' + BattleLog.escapeHTML(args.join('|')));
+  //     return;
+  //   }
+  //   if (!line) return;
+  //   this.message(...this.parseLogMessage(line));
+  //   break;
+
+  const extracted = [];
+  const ps = {battle: new Battle(), parser: new BattleTextParser(perspective)};
+  ps.battle.scene.log = {
+    add: (args, kwArgs) => {
+      extracted.push(ps.parser.extractMessage(args, kwArgs));
+    }
+  };
+
+  const battle = new client.Battle();
+  const handler = new client.Handler(battle);
+  const tracker = {
+    pokemonAt: (side, slot) => {
+      return (battle.lastSwap &&
+        battle.lastSwap[0] === side &&
+        battle.lastSwap[1] === slot) ? battle.lastSwap[2] : undefined;
+    },
+    damagePercentage: (ident, health) => {
+      return (battle.lastDamagePercentage &&
+        battle.lastDamagePercentage[0] === ident &&
+        battle.lastDamagePercentage[1] === health) ? battle.lastDamagePercentage[2] : undefined;
+    },
+    currentWeather: () => battle.lastWeather,
+  };
+  const parser = new client.TextParser(perspective, tracker);
+  const pkmn = {battle, handler, parser};
+
+  while ((chunk = await stream.read())) {
+    for (const line of chunk.split('\n')) {
+      ps.battle.add(line);
+      const a = ps.parser.extractMessage(line);
+
+
+      const {args, kwArgs} = Protocol.parseBattleLine(line);
+      const key = Protocol.key(args);
+      if (key && pkmn.handler[key]) pkmn.handler[key](args, kwArgs);
+      const b = pkmn.parser.parse(args, kwArgs);
+
+      // TODO compare a and b!
+      // TODO verify battle states!
+    }
+    ps.battle.fastForwardTo(-1);
+  }
+}
+
 let formats;
 if (argv.formats) {
   formats = argv.formats.split(',');
@@ -92,3 +194,9 @@ const prng = argv.seed && argv.seed.split(',').map(s => Number(s));
   } while (forever); // eslint-disable-line no-unmodified-loop-condition
   process.exit(failures);
 })();
+
+
+
+// TODO: WIP process!
+// 1. run exhaustive 1 step on PS stack, save log, run log through PS client, save log
+// 2. run exhaustive 1 step on PKMN stack, save log (COMPARE TO PS), run log through PKMN (COMPARE)
