@@ -10,10 +10,11 @@ This is the top level of @pkmn's Pokémon Showdown components:
 - [`@pkmn/client`][8]: a forked implementation of [smogon/pokemon-showdown-client][9]'s battle engine, build on top of `@pkmn/protocol`.
 - [`@pkmn/view`][10]: display primitives for Pokémon Showdown Client UIs
 - [`@pkmn/login`][11]: logic for authenticating with Pokémon Showdown
+- [`@pkmn/calc`][12]: adapter for using `@pkmn/sim` with [`smogon/damage-calc`][13]
 
-Everything is distributed under the terms of the [MIT License][12], where substantial
+Everything is distributed under the terms of the [MIT License][14], where substantial
 amounts of the code have been either derived or generated from the portions of Guangcong
-Luo's Pokémon Showdown [server][3] and [client][9] which are also distributed under the [MIT License][13].
+Luo's Pokémon Showdown [server][3] and [client][9] which are also distributed under the [MIT License][15].
 
   [0]: https://pokemonshowdown.com
   [1]: https://pkmn.cc/modular-ps
@@ -27,5 +28,7 @@ Luo's Pokémon Showdown [server][3] and [client][9] which are also distributed u
   [9]: https://github.com/smogon/pokemon-showdown-client
   [10]: https://github.com/pkmn/ps/blob/master/view
   [11]: https://github.com/pkmn/ps/blob/master/login
-  [12]: https://github.com/pkmn/ps/blob/master/LICENSE
-  [13]: https://github.com/smogon/pokemon-showdown/blob/master/LICENSE
+  [12]: https://github.com/pkmn/smogon/damage-calc
+  [13]: https://github.com/pkmn/ps/blob/master/login
+  [14]: https://github.com/pkmn/ps/blob/master/LICENSE
+  [15]: https://github.com/smogon/pokemon-showdown/blob/master/LICENSE
