@@ -38,6 +38,7 @@ export interface Tracker {
   currentWeather(): ID | undefined;
 }
 
+// FIXME: want preadapter...
 export class BattlePostAdapter implements Tracker {
   private readonly battle: Battle;
 
@@ -70,7 +71,7 @@ const NOOP = () => undefined;
 
 const TEMPLATES = ['pokemon', 'opposingPokemon', 'team', 'opposingTeam', 'party', 'opposingParty'];
 
-export class TextParser {
+export class LogFormatter {
   perspective: 0 | 1;
 
   p1: Username;
@@ -109,7 +110,7 @@ export class TextParser {
       if (prefixes.length) {
         // eslint-disable-next-line no-useless-escape
         const buf = `((?:^|\n)(?:  |  \\\(|\\\[)?)(` +
-          prefixes.map(p => TextParser.escapeRegExp(p)).join('|') + `)`;
+          prefixes.map(p => LogFormatter.escapeRegExp(p)).join('|') + `)`;
         this.lowercaseRegExp = new RegExp(buf, 'g');
       } else {
         this.lowercaseRegExp = null;
@@ -198,7 +199,7 @@ export class TextParser {
       if (!namespace) continue;
       if (namespace === 'OWN') return `${Text.default[type + 'Own']}\n`;
       if (namespace === 'NODEFAULT') return '';
-      let id = TextParser.effectId(namespace);
+      let id = LogFormatter.effectId(namespace);
       if (Text[id] && type in Text[id]) {
         if (Text[id][type].charAt(1) === '.') type = Text[id][type].slice(2) as ID;
         if (Text[id][type].charAt(0) === '#') id = Text[id][type].slice(1) as ID;
@@ -242,19 +243,19 @@ export class TextParser {
     case '-zpower':
       return 'postMajor';
     case '-damage': {
-      const id = TextParser.effectId((kwArgs as KWArgs['|-damage|']).from);
+      const id = LogFormatter.effectId((kwArgs as KWArgs['|-damage|']).from);
       return id === 'confusion' ? 'major' : 'postMajor';
     }
     case '-curestatus': {
-      const id = TextParser.effectId((kwArgs as KWArgs['|-curestatus|']).from);
+      const id = LogFormatter.effectId((kwArgs as KWArgs['|-curestatus|']).from);
       return id === 'naturalcure' ? 'preMajor' : 'postMajor';
     }
     case '-start': {
-      const id = TextParser.effectId((kwArgs as unknown as KWArgs['|-start|']).from);
+      const id = LogFormatter.effectId((kwArgs as unknown as KWArgs['|-start|']).from);
       return id === 'protean' ? 'preMajor' : 'postMajor';
     }
     case '-activate': {
-      const id = TextParser.effectId((args as Args['|-activate|'])[2]);
+      const id = LogFormatter.effectId((args as Args['|-activate|'])[2]);
       return id === 'confusion' || id === 'attract' ? 'preMajor' : 'postMajor';
     }
     }
@@ -277,20 +278,52 @@ export class TextParser {
     }
   }
 
-  parse(args: ArgType, kwArgs?: KWArgType, noSectionBreak?: boolean) {
+  formatText(args: ArgType, kwArgs?: KWArgType, noSectionBreak?: boolean) {
     const buf = !noSectionBreak && this.sectionBreak(args, kwArgs) ? '\n' : '';
     const key = Protocol.key(args);
     return buf + (key && key in this.handler
       ? this.fixLowercase((this.handler as any)[key](args, kwArgs))
       : '');
   }
+
+  formatHTML(args: ArgType, kwArgs?: KWArgType) {
+    if (args[0] === 'turn') {
+      let turnMessage = this.formatText(args, kwArgs).trim();
+      if (!turnMessage.startsWith('==') || !turnMessage.endsWith('==')) {
+        throw new Error('Turn message must be a heading.');
+      }
+      this.curLineSection = 'break';
+      return `<h2>${LogFormatter.escapeHTML(turnMessage.slice(2, -2).trim())}</h2>`;
+    } else {
+      return this.formatText(args, kwArgs, true).split('\n').map(line => {
+        line = LogFormatter.escapeHTML(line);
+        line = line.replace(/\*\*(.*)\*\*/, '<strong>$1</strong>');
+        line = line.replace(/\|\|([^\|]*)\|\|([^\|]*)\|\|/, '<abbr title="$1">$2</abbr>');
+        if (line.startsWith('  ')) line = '<small>' + line.trim() + '</small>';
+        return line;
+      }).join('<br />');
+    }
+  }
+
+  static getString(str: any) {
+    return (typeof str === 'string' || typeof str === 'number') ? `${str}` : '';
+  }
+
+  static escapeHTML(str: string, escapeJS?: boolean) {
+    str = LogFormatter.getString(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+    return escapeJS ? str.replace(/\\/g, '\\\\').replace(/'/g, '\\\'') : str;
+  }
 }
 
 class Handler implements Protocol.Handler<string> {
-  readonly parser: TextParser;
+  readonly parser: LogFormatter;
   readonly tracker: Tracker;
 
-  constructor(parser: TextParser, tracker: Tracker) {
+  constructor(parser: LogFormatter, tracker: Tracker) {
     this.parser = parser;
     this.tracker = tracker;
   }
@@ -476,7 +509,7 @@ class Handler implements Protocol.Handler<string> {
     const [, pokemon, effect, arg3] = args;
     const line1 = this.parser.maybeAbility(effect, pokemon) ||
       this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
-    const id = TextParser.effectId(effect);
+    const id = LogFormatter.effectId(effect);
     if (id === 'typechange') {
       const template = this.parser.template('typeChange', kwArgs.from);
       return (line1 + template
@@ -528,7 +561,7 @@ class Handler implements Protocol.Handler<string> {
     const [, pokemon, effect] = args;
     const line1 = this.parser.maybeAbility(effect, pokemon) ||
       this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
-    const id = TextParser.effectId(effect);
+    const id = LogFormatter.effectId(effect);
     if (id === 'doomdesire' || id === 'futuresight') {
       const template = this.parser.template('activate', effect);
       return line1 + template.replace('[TARGET]', this.parser.pokemon(pokemon));
@@ -574,7 +607,7 @@ class Handler implements Protocol.Handler<string> {
         .replace('[ABILITY]', this.parser.effect(ability))
         .replace('[SOURCE]', this.parser.pokemon(kwArgs.of!)));
     }
-    const id = TextParser.effectId(ability);
+    const id = LogFormatter.effectId(ability);
     if (id === 'unnerve') {
       const template = this.parser.template('start', ability);
       return line1 + template.replace('[TEAM]', this.parser.team(arg4!));
@@ -595,7 +628,7 @@ class Handler implements Protocol.Handler<string> {
 
   '|-item|'(args: Args['|-item|'], kwArgs: KWArgs['|-item|']) {
     const [, pokemon, item] = args;
-    const id = TextParser.effectId(kwArgs.from);
+    const id = LogFormatter.effectId(kwArgs.from);
     let target = '';
     if (['magician', 'pickpocket'].includes(id)) {
       [target, kwArgs.of as PokemonIdent] = [kwArgs.of!, '' as PokemonIdent];
@@ -635,7 +668,7 @@ class Handler implements Protocol.Handler<string> {
         .replace('[POKEMON]', this.parser.pokemon(pokemon))
         .replace('[ITEM]', this.parser.effect(item)));
     }
-    const id = TextParser.effectId(kwArgs.from);
+    const id = LogFormatter.effectId(kwArgs.from);
     if (id === 'gem') {
       const template = this.parser.template('useGem', item);
       return (line1 + template
@@ -675,7 +708,7 @@ class Handler implements Protocol.Handler<string> {
   '|-status|'(args: Args['|-status|'], kwArgs: KWArgs['|-status|']) {
     const [, pokemon, status] = args;
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
-    if (TextParser.effectId(kwArgs.from) === 'rest') {
+    if (LogFormatter.effectId(kwArgs.from) === 'rest') {
       const template = this.parser.template('startFromRest', status);
       return line1 + template.replace('[POKEMON]', this.parser.pokemon(pokemon));
     }
@@ -685,7 +718,7 @@ class Handler implements Protocol.Handler<string> {
 
   '|-curestatus|'(args: Args['|-curestatus|'], kwArgs: KWArgs['|-curestatus|']) {
     const [, pokemon, status] = args;
-    if (TextParser.effectId(kwArgs.from) === 'naturalcure') {
+    if (LogFormatter.effectId(kwArgs.from) === 'naturalcure') {
       const template = this.parser.template('activate', kwArgs.from);
       return template.replace('[POKEMON]', this.parser.pokemon(pokemon));
     }
@@ -726,7 +759,7 @@ class Handler implements Protocol.Handler<string> {
     const [, pokemon, effect] = args;
     const line1 = this.parser.maybeAbility(effect, (kwArgs.of || pokemon)) ||
       this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
-    const id = TextParser.effectId(effect);
+    const id = LogFormatter.effectId(effect);
     if (id === 'instruct') {
       const template = this.parser.template('activate', effect);
       return (line1 + template
@@ -807,7 +840,7 @@ class Handler implements Protocol.Handler<string> {
     const [cmd, effect] = args;
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of!);
     let templateId = cmd.slice(6);
-    if (TextParser.effectId(effect) === 'perishsong') templateId = 'start';
+    if (LogFormatter.effectId(effect) === 'perishsong') templateId = 'start';
     let template = this.parser.template(templateId, effect, 'NODEFAULT');
     if (!template) {
       template =
@@ -842,7 +875,7 @@ class Handler implements Protocol.Handler<string> {
 
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
     let [, pokemon, effect, target] = args;
-    const id = TextParser.effectId(effect);
+    const id = LogFormatter.effectId(effect);
     if (id === 'celebrate') {
       return (this.parser.template('activate', 'celebrate')
         .replace('[TRAINER]', this.parser.trainer(pokemon.slice(0, 2))));
@@ -917,7 +950,7 @@ class Handler implements Protocol.Handler<string> {
     const percentage = kwArgs.from ? undefined : this.tracker.damagePercentage(pokemon, health);
     let template = this.parser.template('damage', kwArgs.from, 'NODEFAULT');
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
-    const id = TextParser.effectId(kwArgs.from);
+    const id = LogFormatter.effectId(kwArgs.from);
     if (template) return line1 + template.replace('[POKEMON]', this.parser.pokemon(pokemon));
 
     if (!kwArgs.from) {
@@ -1014,7 +1047,7 @@ class Handler implements Protocol.Handler<string> {
   '|-swapboost|'(args: Args['|-swapboost|'], kwArgs: KWArgs['|-swapboost|']) {
     const [, pokemon, target] = args;
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
-    const id = TextParser.effectId(kwArgs.from);
+    const id = LogFormatter.effectId(kwArgs.from);
     let templateId = 'swapBoost';
     if (id === 'guardswap') templateId = 'swapDefensiveBoost';
     if (id === 'powerswap') templateId = 'swapOffensiveBoost';
@@ -1109,8 +1142,8 @@ class Handler implements Protocol.Handler<string> {
 
   '|-fail|'(args: Args['|-fail|'], kwArgs: KWArgs['|-fail|']) {
     const [, pokemon, effect, stat] = args;
-    const id = TextParser.effectId(effect);
-    const blocker = TextParser.effectId(kwArgs.from);
+    const id = LogFormatter.effectId(effect);
+    const blocker = LogFormatter.effectId(kwArgs.from);
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     let templateId = 'block';
     if (['desolateland', 'primordialsea'].includes(blocker) &&

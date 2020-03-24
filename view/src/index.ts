@@ -1,1 +1,1 @@
-export * from './parser';
+export * from './log-formatter';

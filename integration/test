@@ -101,8 +101,8 @@ async function processStream(stream, perspective) {
   const handler = new client.Handler(battle);
   const tracker = new client.BattlePostAdapter(battle);
 
-  const parser = new client.TextParser(perspective, tracker);
-  const pkmn = {battle, handler, parser};
+  const formatter = new client.LogFormatter(perspective, tracker);
+  const pkmn = {battle, handler, formatter};
 
   while ((chunk = await stream.read())) {
     let actual = '';
@@ -110,7 +110,7 @@ async function processStream(stream, perspective) {
       const {args, kwArgs} = Protocol.parseBattleLine(line);
       const key = Protocol.key(args);
       if (key && pkmn.handler[key]) pkmn.handler[key](args, kwArgs);
-      actual += pkmn.parser.parse(args, kwArgs);
+      actual += pkmn.formatter.formatText(args, kwArgs);
       ps.battle.add(line);
     }
     ps.battle.fastForwardTo(-1);
