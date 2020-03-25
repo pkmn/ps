@@ -1898,7 +1898,7 @@ export const Protocol = new class {
     return output;
   }
 
-  parseHealth(hpstring: Protocol.PokemonHPStatus, output = {} as PokemonHealth) {
+  parseHealth(hpstring: Protocol.PokemonHPStatus, output = {status: ''} as PokemonHealth) {
     const [hp, status] = hpstring.split(' ');
 
     // parse hp

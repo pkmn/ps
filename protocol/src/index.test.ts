@@ -1,4 +1,4 @@
-import {Protocol, Args, KWArgs} from './index';
+import {Protocol, PokemonHealth, Args, KWArgs} from './index';
 
 describe('Protocol', () => {
   test('#parseNameParts', () => {
@@ -25,6 +25,28 @@ describe('Protocol', () => {
     expect(parts.name).toEqual('pre');
     expect(parts.away).toEqual(false);
     expect(parts.status).toEqual('Status');
+  });
+
+  test('#parseHealth', () => {
+    const parse = (hpstring: string, output?: PokemonHealth) =>
+      Protocol.parseHealth(hpstring as Protocol.PokemonHPStatus, output);
+    const health = (h: Partial<PokemonHealth>) =>
+      ({hp: 0, maxhp: 100, hpcolor: '', status: '', ...h} as PokemonHealth);
+    expect(parse('0 fnt')).toEqual(health({hp: 0, fainted: true}));
+    expect(parse('0 fnt', health({maxhp: 250}))).toEqual(health({hp: 0, maxhp: 250, fainted: true}));
+    expect(parse('10/48y fnt')).toEqual(health({hp: 0, maxhp: 48, hpcolor: 'y', fainted: true}));
+    expect(parse('foo/bar')).toEqual(null);
+    expect(parse('350/300 psn')).toEqual(health({hp: 300, maxhp: 300, status: 'psn'}));
+    expect(parse('20 brn')).toEqual(health({hp: 20, status: 'brn'}));
+    expect(parse('20 brn', health({maxhp: 200}))).toEqual(health({hp: 40, maxhp: 200, status: 'brn'}));
+    expect(parse('200/300 psn')).toEqual(health({hp: 200, maxhp: 300, status: 'psn'}));
+    expect(parse('70/100 tox')).toEqual(health({hp: 70, status: 'tox'}));
+    expect(parse('70/100 psn', health({status: 'tox'}))).toEqual(health({hp: 70, status: 'tox'}));
+    expect(parse('9/48 frz')).toEqual(health({hp: 9, maxhp: 48, status: 'frz'}));
+    expect(parse('9/48 foo')).toEqual(health({hp: 9, maxhp: 48}));
+    expect(parse('9/48y slp')).toEqual(health({hp: 9, maxhp: 48, hpcolor: 'y', status: 'slp'}));
+    expect(parse('24/48y brn')).toEqual(health({hp: 24, maxhp: 48, hpcolor: 'y', status: 'brn'}));
+    expect(parse('24/48g')).toEqual(health({hp: 24, maxhp: 48, hpcolor: 'g'}));
   });
 
   // FIXME
