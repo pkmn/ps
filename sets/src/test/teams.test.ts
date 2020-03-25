@@ -1,19 +1,15 @@
-import {readFileSync} from 'fs';
+import * as fs from 'fs';
 
-import {Format} from '../format';
 import {Team, Teams} from '../teams';
+import {GEN} from './data';
 
-function readTeam(file: string) {
-  return readFileSync(`${__dirname}/fixtures/${file}`).toString();
-}
-
+const readTeam = (file: string) => fs.readFileSync(`${__dirname}/fixtures/${file}`, 'utf8');
 const TEAM: string = readTeam('team');
 const TEAMS: string = readTeam('teams');
 
 describe('Team', () => {
   test('importTeam + exportTeam', () => {
     const t = Team.fromString(TEAM)!;
-    expect(t.tier).not.toBeDefined();
     expect(t.toString()).toEqual(TEAM);
     expect(Teams.exportTeams([t]))
         .toEqual('=== Untitled 1 ===\n\n' + TEAM + '\n');
@@ -25,9 +21,8 @@ describe('Team', () => {
   });
 
   test('bad format', () => {
-    const t = new Team([], Format.fromString('uu'));
+    const t = new Team([], GEN(8), 'uu');
     expect(t.gen).toBe(6);
-    expect(t.tier).toBe('UU');
   });
 
   test('toJSON + fromJSON', () => {
@@ -40,19 +35,17 @@ describe('Team', () => {
 
 describe('Teams', () => {
   test('importTeams + exportTeams', () => {
-    let imported = Teams.fromString(TEAMS.replace(/\[ou\]/, ''))!;
-    expect(imported[0].gen).toBe(7);
+    let imported = Teams.fromString(TEAMS.replace(/\[ou\]/, ''), GEN(8))!;
+    expect(imported[0].gen).toBe(8);
 
-    imported = Teams.fromString(TEAMS)!;
+    imported = Teams.fromString(TEAMS, GEN(8))!;
     expect(imported.length).toBe(2);
 
     expect(imported[0].gen).toBe(6);
-    expect(imported[0].tier).toBe('OU');
     expect(imported[0].name).toBe('Bulky Offense');
     expect(imported[0].folder).toBe('');
 
     expect(imported[1].gen).toBe(1);
-    expect(imported[1].tier).toBe('OU');
     expect(imported[1].name).toBe('Cloyster');
     expect(imported[1].folder).toBe('RBY');
 
@@ -70,9 +63,8 @@ describe('Teams', () => {
   });
 
   test('including packed', () => {
-    const raw = readTeam('team');
-    const teams = Teams.importTeams(readTeam('teams'));
-    const team = Team.import(raw)!;
+    const teams = Teams.importTeams(TEAMS);
+    const team = Team.import(TEAM)!;
     let both = 'ou]RBY/Cloyster|' + (teams[1].pack()) + '\n' +
         Teams.exportTeams([teams[0]]) + '|' + team.pack();
     let imported = Teams.importTeams(both);
@@ -88,13 +80,12 @@ describe('Teams', () => {
     expect(imported[2].team.length).toBe(6);
 
     expect(imported[0].gen).toBe(1);
-    expect(imported[0].tier).toBe('OU');
     expect(imported[0].name).toBe('Cloyster');
     expect(imported[0].folder).toBe('RBY');
 
-    expect(imported[2].export()).toBe(raw);
+    expect(imported[2].export()).toBe(TEAM);
 
     const again = Teams.importTeams(team.pack());
-    expect(again[0].export()).toBe(raw);
+    expect(again[0].export()).toBe(TEAM);
   });
 });

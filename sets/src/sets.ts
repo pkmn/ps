@@ -1,68 +1,90 @@
-import {Abilities} from './abilities';
-import {Generation} from './gen';
-import {toID} from './id';
-import {Items} from './items';
-import {Moves} from './moves';
-import {Species} from './species';
-import {Stat, STAT_NAMES, Stats, StatsTable} from './stats';
-import {Type, Types} from './types';
+import {
+  GenerationNum,
+  HPTypeName,
+  ID,
+  PokemonSet,
+  StatName,
+  StatsTable,
+} from '@pkmn/types';
 
-// clang-format off
-export type PokemonSet = {
-  name?: string;
-  species: string;
-  item?: string;
-  ability?: string;
-  moves: string[];
-  nature?: string;
-  evs: StatsTable;
-  ivs: StatsTable;
-  gender?: string;
-  level?: number;
-  shiny?: boolean;
-  happiness?: number;
-  pokeball?: string;
-  hpType?: string;
+export interface Data {
+  forGen?(gen: GenerationNum): Data;
+
+  readonly gen: GenerationNum;
+  getAbility(ability: string): Readonly<{name: string}> | undefined;
+  getItem(item: string): Readonly<{name: string}> | undefined;
+  getMove(move: string): Readonly<{name: string}> | undefined;
+  getSpecies(species: string): Readonly<{
+    name: string;
+    baseSpecies?: string,
+    abilities?: {0: string; 1?: string; H?: string, S?: string};
+  }> | undefined;
+}
+
+export function toID(s: any) {
+  if (typeof s !== 'string' && typeof s !== 'number') return '';
+  return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
+}
+
+const STAT_NAMES: Readonly<StatsTable<string>> = {
+  hp: 'HP',
+  atk: 'Atk',
+  def: 'Def',
+  spa: 'SpA',
+  spd: 'SpD',
+  spe: 'Spe',
 };
-// clang-format on
 
-export class Sets {
-  // istanbul ignore next: constructor
-  protected constructor() {}
+const STATS = Object.keys(STAT_NAMES) as readonly StatName[];
 
-  static pack(s: PokemonSet, gen?: Generation): string {
-    return Sets.packSet(s, gen);
+const DECODE_STAT: Readonly<{[name: string]: StatName}> = {
+  HP: 'hp',
+  hp: 'hp',
+  Attack: 'atk',
+  Atk: 'atk',
+  atk: 'atk',
+  Defense: 'def',
+  Def: 'def',
+  def: 'def',
+  'Special Attack': 'spa',
+  SpA: 'spa',
+  SAtk: 'spa',
+  SpAtk: 'spa',
+  spa: 'spa',
+  Special: 'spa',
+  spc: 'spa',
+  Spc: 'spa',
+  'Special Defense': 'spd',
+  SpD: 'spd',
+  SDef: 'spd',
+  SpDef: 'spd',
+  spd: 'spd',
+  Speed: 'spe',
+  Spe: 'spe',
+  Spd: 'spe',
+  spe: 'spe',
+};
+
+export const Sets = new class {
+  pack(s: PokemonSet) {
+    return Sets.packSet(s);
   }
 
-  static packSet(s: PokemonSet, gen?: Generation): string {
+  packSet(s: PokemonSet) {
     let buf = '';
     // name
     buf += (s.name || s.species);
 
     // species
-    let id = toID(s.species || s.name);
+    let speciesName = s.species || s.name;
+    let id = toID(speciesName);
     buf += '|' + (toID(s.name || s.species) === id ? '' : id);
 
     // item
     buf += '|' + toID(s.item);
 
     // ability
-    const species = Species.get(s.species || s.name, gen);
-    id = toID(s.ability);
-    if (species && species.abilities) {
-      const abilities = species.abilities;
-      if (id === toID(abilities['0'])) {
-        buf += '|';
-      } else if (id === toID(abilities['1'])) {
-        buf += '|1';
-      } else if (id === toID(abilities['H'])) {
-        buf += '|H';
-      } else {
-        buf += '|' + id;
-      }
-    } else {
-      buf += '|' + id;
-    }
+    buf += '|' + toID(s.ability);;
 
     // moves
     let hasHP = false;
@@ -84,36 +106,32 @@ export class Sets {
     // evs
     let evs = '|';
     if (s.evs) {
-      evs = '|' + (s.evs['hp'] || '') + ',' + (s.evs['atk'] || '') + ',' +
-          (s.evs['def'] || '') + ',' + (s.evs['spa'] || '') + ',' +
-          (s.evs['spd'] || '') + ',' + (s.evs['spe'] || '');
+      evs = '|' + [
+        (s.evs['hp'] ?? ''), (s.evs['atk'] ?? ''), (s.evs['def'] ?? ''),
+        (s.evs['spa'] ?? ''), (s.evs['spd'] ?? ''), (s.evs['spe'] ?? ''),
+      ].join();
     }
     if (evs === '|,,,,,') {
       buf += '|';
-      // if (s.evs['hp'] === 0) buf += 0; // BUG: ???
+			// doing it this way means packTeam doesn't need to be past-gen aware
+			if (s.evs['hp'] === 0) buf += '0';
     } else {
       buf += evs;
     }
 
     // gender
-    if (s.gender && (!species || s.gender !== species.gender)) {
-      buf += '|' + s.gender;
-    } else {
-      buf += '|';
-    }
+    if (s.gender) buf += '|' + s.gender;
 
-    const getIV = (set: PokemonSet, s: Stat): string => {
-      return set.ivs[s] === 31 || set.ivs[s] === undefined ?
-          '' :
-          set.ivs[s].toString();
-    };
+    const getIV = (stat: StatName) =>
+      s.ivs[stat] === 31 || s.ivs[stat] === undefined ? '' : s.ivs[stat].toString();
 
     // ivs
     let ivs = '|';
     if (s.ivs) {
-      ivs = '|' + getIV(s, 'hp') + ',' + getIV(s, 'atk') + ',' +
-          getIV(s, 'def') + ',' + getIV(s, 'spa') + ',' + getIV(s, 'spd') +
-          ',' + getIV(s, 'spe');
+      ivs = '|' + [
+        getIV('hp'), getIV('atk'),  getIV('def'),
+        getIV('spa'), getIV('spd'), getIV('spe'),
+      ].join();
     }
     if (ivs === '|,,,,,') {
       buf += '|';
@@ -150,53 +168,41 @@ export class Sets {
     return buf;
   }
 
-  static exportSet(s: PokemonSet, fast?: boolean, gen?: Generation): string {
+  exportSet(s: PokemonSet, data?: Data) {
     let buf = '';
     let species = s.species || s.name;
-    if (!fast) {
-      const s = Species.get(species);
-      species = (s && s.name) || species;
-    }
+    species = data?.getSpecies(species || name)?.name ?? species;
     if (s.name && s.name !== species) {
       buf += '' + s.name + ' (' + species + ')';
     } else {
       buf += '' + species;
     }
-    if (!gen || gen >= 2) {
+    if (!data || data.gen >= 2) {
       if (s.gender === 'M') buf += ' (M)';
       if (s.gender === 'F') buf += ' (F)';
     }
     if (s.item) {
-      let item = s.item;
-      if (!fast) {
-        const i = Items.get(item);
-        item = (i && i.name) || item;
-      }
+      const item = data?.getItem(s.item)?.name ?? s.item;
       buf += ' @ ' + item;
     }
     buf += '  \n';
-    if (s.ability && (!gen || gen >= 3)) {
-      let ability = s.ability;
-      if (!fast) {
-        const a = Abilities.get(ability);
-        ability = (a && a.name) || ability;
-      }
+    if (s.ability && (!data || data?.gen >= 3)) {
+      const ability = data?.getAbility(s.ability)?.name ?? s.ability;
       buf += 'Ability: ' + ability + '  \n';
     }
     if (s.level && s.level !== 100) {
       buf += 'Level: ' + s.level + '  \n';
     }
-    if (s.shiny && (!gen || gen >= 2)) {
+    if (s.shiny && (!data || data.gen >= 2)) {
       buf += 'Shiny: Yes  \n';
     }
     if (typeof s.happiness === 'number' && s.happiness !== 255 &&
-        !isNaN(s.happiness) && (!gen || gen >= 2)) {
+        !isNaN(s.happiness) && (!data || data.gen >= 2)) {
       buf += 'Happiness: ' + s.happiness + '  \n';
     }
     let first = true;
-    if (s.evs && (!gen || gen >= 3)) {
-      let stat: Stat;
-      for (stat in STAT_NAMES) {
+    if (s.evs && (!data || data.gen >= 3)) {
+      for (const stat of STATS) {
         if (!s.evs[stat]) continue;
         if (first) {
           buf += 'EVs: ';
@@ -210,40 +216,33 @@ export class Sets {
     if (!first) {
       buf += '  \n';
     }
-    if (s.nature && (!gen || gen >= 3)) {
+    if (s.nature && (!data || data.gen >= 3)) {
       buf += '' + s.nature + ' Nature' +
           '  \n';
     }
     first = true;
     if (s.ivs) {
       let defaultIVs = true;
-      let hpType: Type|undefined = undefined;
-      for (const move of s.moves) {
-        hpType = getHiddenPowerType(move);
-        if (hpType) {
-          const t = gen === 2 ? Types.hiddenPowerDVs(hpType) :
-                                Types.hiddenPowerIVs(hpType);
-          const hpIVs: Partial<StatsTable>|undefined =
-              gen === 2 && t ? Stats.dstois(t) : t;
-
-          if (!hpIVs) {
+      let hpType: HPTypeName|undefined = undefined;
+      if (s.moves) {
+        for (const move of s.moves) {
+          hpType = getHiddenPowerType(move);
+          if (hpType) {
+            const hpIVs = getHiddenPowerIVs(hpType, data);
             // not a valid Hidden Power type
-            continue;
-          }
+            if (!hpIVs) continue;
 
-          let stat: Stat;
-          for (stat in STAT_NAMES) {
-            if ((s.ivs[stat] === undefined ? 31 : s.ivs[stat]) !==
-                (hpIVs[stat] || 31)) {
-              defaultIVs = false;
-              break;
+            for (const stat of STATS) {
+              if ((s.ivs[stat] === undefined ? 31 : s.ivs[stat]) !== (hpIVs[stat] || 31)) {
+                defaultIVs = false;
+                break;
+              }
             }
           }
         }
-      }
+    }
       if (defaultIVs && !hpType) {
-        let stat: Stat;
-        for (stat in STAT_NAMES) {
+        for (const stat of STATS) {
           if (s.ivs[stat] !== 31 && s.ivs[stat] !== undefined) {
             defaultIVs = false;
             break;
@@ -251,8 +250,7 @@ export class Sets {
         }
       }
       if (!defaultIVs) {
-        let stat: Stat;
-        for (stat in STAT_NAMES) {
+        for (const stat of STATS) {
           if (typeof s.ivs[stat] === 'undefined' || isNaN(s.ivs[stat]) ||
               s.ivs[stat] === 31) {
             continue;
@@ -273,10 +271,7 @@ export class Sets {
     if (s.moves) {
       for (let move of s.moves) {
         if (move) {
-          if (!fast) {
-            const m = Moves.get(move);
-            move = (m && m.name) || move;
-          }
+          move = data?.getMove(move)?.name ?? move;
           buf += '- ' + exportMove(move) + '  \n';
         }
       }
@@ -286,41 +281,38 @@ export class Sets {
     return buf;
   }
 
-  static unpack(buf: string, gen?: Generation): PokemonSet|undefined {
-    return Sets.unpackSet(buf, gen);
+  unpack(buf: string, data?: Data) {
+    return Sets.unpackSet(buf, data);
   }
 
-  static unpackSet(buf: string, gen?: Generation): PokemonSet|undefined {
-    return _unpack(buf, 0, 0, gen).set;
+  unpackSet(buf: string, data?: Data) {
+    return _unpack(buf, 0, 0, data).set;
   }
 
-  static importSet(buf: string, gen?: Generation): PokemonSet|undefined {
-    return _import(buf.split('\n'), 0, gen).set;
+  importSet(buf: string, data?: Data) {
+    return _import(buf.split('\n'), 0, data).set;
   }
 
-  static toJSON(s: PokemonSet): string {
+  toJSON(s: PokemonSet) {
     return JSON.stringify(s);
   }
 
-  static fromJSON(json: string): PokemonSet|undefined {
-    if (json.charAt(0) !== '{' || json.charAt(json.length - 1) !== '}') {
-      return undefined;
-    }
+  fromJSON(json: string) {
+    if (json.charAt(0) !== '{' || json.charAt(json.length - 1) !== '}') return undefined;
     // BUG: this is completely unvalidated...
     return JSON.parse(json);
   }
 
-  static toString(s: PokemonSet, fast?: boolean, gen?: Generation): string {
-    return Sets.exportSet(s, fast, gen);
+  toString(s: PokemonSet, data?: Data) {
+    return Sets.exportSet(s, data);
   }
 
-  static fromString(str: string): PokemonSet|undefined {
+  fromString(str: string) {
     return Sets.importSet(str);
   }
 }
 
-export function _unpack(buf: string, i = 0, j = 0, gen?: Generation):
-    {set?: PokemonSet, i: number, j: number} {
+export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   const s: Partial<PokemonSet> = {};
   // name
   j = buf.indexOf('|', i);
@@ -343,13 +335,22 @@ export function _unpack(buf: string, i = 0, j = 0, gen?: Generation):
   // ability
   j = buf.indexOf('|', i);
   if (j < 0) return {i, j};
-  const ability = buf.substring(i, j);
-  const species = Species.get(s.species, gen);
-  s.ability =
-      (species && species.abilities && ability in {'': 1, 0: 1, 1: 1, H: 1} ?
-           // @ts-ignore
-           species.abilities[ability || '0'] :
-           ability);
+  let ability = buf.substring(i, j);
+  if (ability in {'': 1, 0: 1, 1: 1, H: 1, S: 1}) {
+    if (data) {
+      const species = data.getSpecies(s.species);
+      if (species?.baseSpecies === 'Zygarde' && ability === 'H') {
+        ability = 'Power Construct';
+      } else if (species?.abilities) {
+        ability = (species?.abilities as any)[ability || '0'];
+      } else {
+        return {i, j};
+      }
+    } else if (ability !== '') {
+      return {i, j};
+    }
+  }
+  s.ability = ability;
   i = j + 1;
 
   // moves
@@ -367,6 +368,7 @@ export function _unpack(buf: string, i = 0, j = 0, gen?: Generation):
   // evs
   j = buf.indexOf('|', i);
   if (j < 0) return {i, j};
+  // FIXME change fill depeneding on gen (or inferred gen?)
   s.evs = {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0};
   if (j !== i) {
     const evstr = buf.substring(i, j);
@@ -378,6 +380,8 @@ export function _unpack(buf: string, i = 0, j = 0, gen?: Generation):
       s.evs.spa = Number(st[3]) || s.evs.spa;
       s.evs.spd = Number(st[4]) || s.evs.spd;
       s.evs.spe = Number(st[5]) || s.evs.spe;
+    } else if (evstr === '0') {
+      s.evs = {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0};
     }
   }
   i = j + 1;
@@ -412,8 +416,7 @@ export function _unpack(buf: string, i = 0, j = 0, gen?: Generation):
   // level
   j = buf.indexOf('|', i);
   if (j < 0) return {i, j};
-  // tslint:disable-next-line:ban
-  if (i !== j) s.level = parseInt(buf.substring(i, j), 10);
+  if (i !== j) s.level = parseInt(buf.substring(i, j));
   i = j + 1;
 
   // happiness
@@ -431,17 +434,16 @@ export function _unpack(buf: string, i = 0, j = 0, gen?: Generation):
     s.pokeball = misc[2] ? misc[2].trim() : misc[2];
   }
 
-  return {set: fromPartial(s, gen), i, j};
+  return {set: s as PokemonSet, i, j};
 }
 
-export function _import(lines: string[], i = 0, gen?: Generation):
-    {set?: PokemonSet, line: number} {
-  let s: Partial<PokemonSet>|undefined = undefined;
+export function _import(lines: string[], i = 0, data?: Data) {
+  let s: Partial<PokemonSet> | undefined = undefined;
   for (; i < lines.length; i++) {
     let line = lines[i].trim();
     if (line === '' || line === '---' || line.substr(0, 3) === '===' ||
         line.includes('|')) {
-      return {set: fromPartial(s, gen), line: i};
+      return {set: s as PokemonSet, line: i};
     } else if (!s) {
       s = {name: '', species: '', gender: ''};
       const atIndex = line.lastIndexOf(' @ ');
@@ -462,13 +464,11 @@ export function _import(lines: string[], i = 0, gen?: Generation):
       if (line.substr(line.length - 1) === ')' && parenIndex !== -1) {
         line = line.substr(0, line.length - 1);
         const sub = line.substr(parenIndex + 2);
-        const species = Species.get(sub);
-        s.species = (species && species.name) || sub;
+        s.species = data?.getSpecies(sub)?.name ?? sub;
         line = line.substr(0, parenIndex);
         s.name = line;
       } else {
-        const species = Species.get(line);
-        s.species = (species && species.name) || line;
+        s.species = data?.getSpecies(line)?.name ?? line;
         s.name = '';
       }
 
@@ -493,9 +493,8 @@ export function _import(lines: string[], i = 0, gen?: Generation):
       for (const evLine of evLines) {
         const spaceIndex = evLine.indexOf(' ');
         if (spaceIndex === -1) continue;
-        const stat = Stats.get(evLine.substr(spaceIndex + 1));
-        // tslint:disable-next-line:ban
-        const val = parseInt(evLine.substr(0, spaceIndex), 10);
+        const stat = DECODE_STAT[evLine.substr(spaceIndex + 1)];
+        const val = parseInt(evLine.substr(0, spaceIndex));
         if (!stat) continue;
         s.evs[stat] = val;
       }
@@ -506,9 +505,8 @@ export function _import(lines: string[], i = 0, gen?: Generation):
       for (const ivLine of ivLines) {
         const spaceIndex = ivLine.indexOf(' ');
         if (spaceIndex === -1) continue;
-        const stat = Stats.get(ivLine.substr(spaceIndex + 1));
-        // tslint:disable-next-line:ban
-        let val = parseInt(ivLine.substr(0, spaceIndex), 10);
+        const stat = DECODE_STAT[ivLine.substr(spaceIndex + 1)];
+        let val = parseInt(ivLine.substr(0, spaceIndex));
         if (!stat) continue;
         if (isNaN(val)) val = 31;
         s.ivs[stat] = val;
@@ -527,13 +525,10 @@ export function _import(lines: string[], i = 0, gen?: Generation):
       const hpType = getHiddenPowerType(line);
       if (hpType) {
         line = 'Hidden Power ' + hpType.toString();
-        const t = gen === 2 ? Types.hiddenPowerDVs(hpType) :
-                              Types.hiddenPowerIVs(hpType);
-        const hpIVs: Partial<StatsTable>|undefined =
-            gen === 2 && t ? Stats.dstois(t) : t;
+        const hpIVs = getHiddenPowerIVs(hpType, data);
         if (!s.ivs && hpIVs) {
           s.ivs = {hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31};
-          let stat: Stat;
+          let stat: StatName;
           for (stat in hpIVs) {
             s.ivs[stat] = hpIVs[stat]!;
           }
@@ -546,45 +541,23 @@ export function _import(lines: string[], i = 0, gen?: Generation):
     }
   }
 
-  return {set: fromPartial(s, gen), line: i + 1};
+  return {set: s as PokemonSet, line: i + 1};
 }
 
-function fromPartial(s?: Partial<PokemonSet>, gen?: Generation): PokemonSet|
-    undefined {
-  if (!s) return undefined;
-
-  return {
-    name: s.name,
-    species: s.species || /* istanbul ignore next: N/A */ (s.name || ''),
-    item: s.item,
-    ability: s.ability,
-    moves: s.moves || /* istanbul ignore next: types */[],
-    nature: s.nature,
-    evs: Stats.fillEVs(s.evs || {}, gen),
-    ivs: Stats.fillIVs(s.ivs || {}),
-    gender: s.gender,
-    level: s.level,
-    shiny: s.shiny,
-    happiness: s.happiness,
-    pokeball: s.pokeball,
-    hpType: s.hpType
-  };
-}
-
-function getHiddenPowerType(move: string): Type|undefined {
+function getHiddenPowerType(move: string) {
   if (move.substr(0, 14) === 'Hidden Power [') {
-    return move.substr(14, move.length - 15) as Type;
+    return move.substr(14, move.length - 15) as HPTypeName;
   }
   if (move.substr(0, 13) === 'Hidden Power ') {
-    return move.substr(13) as Type;
+    return move.substr(13) as HPTypeName;
   }
   if (move.substr(0, 11) === 'hiddenpower') {
-    return (move.substr(11, 1).toUpperCase() + move.substr(12)) as Type;
+    return (move.substr(11, 1).toUpperCase() + move.substr(12)) as HPTypeName;
   }
   return undefined;
 }
 
-function exportMove(move: string): string {
+function exportMove(move: string) {
   if (move.substr(0, 14) === 'Hidden Power [') {
     return move;
   }
@@ -596,4 +569,38 @@ function exportMove(move: string): string {
         '[' + move.substr(11, 1).toUpperCase() + move.substr(12) + ']';
   }
   return move;
+}
+
+const HP: {[type in HPTypeName]: {ivs: Partial<StatsTable>, dvs: Partial<StatsTable>}} = {
+  Bug: 	{ivs: {atk: 30, def: 30, spd: 30}, dvs: {atk: 13, def: 13}},
+  Dark: {ivs: {}, dvs: {}},
+  Dragon: {ivs: {atk: 30}, dvs: {def: 14}},
+  Electric: {ivs: {spa: 30}, dvs: {atk: 14}},
+  Fighting: {ivs: {def: 30, spa: 30, spd: 30, spe: 30}, dvs: {atk: 12, def: 12}},
+  Fire: {ivs: {atk: 30, spa: 30, spe: 30}, dvs: {atk: 14, def: 12}},
+  Flying: {ivs: {hp: 30, atk: 30, def: 30, spa: 30, spd: 30}, dvs: {atk: 12, def: 13}},
+  Ghost: {ivs: {def: 30, spd: 30}, dvs: {atk: 13, def: 14}},
+  Grass: {ivs: {atk: 30, spa: 30}, dvs: {atk: 14, def: 14}},
+  Ground: {ivs: {spa: 30, spd: 30}, dvs: {atk: 12}},
+  Ice: {ivs: {atk: 30, def: 30}, dvs: {def: 13}},
+  Poison: {ivs: {def: 30, spa: 30, spd: 30}, dvs: {atk: 12, def: 14}},
+  Psychic: {ivs: {atk: 30, spe: 30}, dvs: {def: 12}},
+  Rock: {ivs: {def: 30, spd: 30, spe: 30}, dvs: {atk: 13, def: 12}},
+  Steel: {ivs: {spd: 30}, dvs: {atk: 13}},
+  Water: {ivs: {atk: 30, def: 30, spa: 30}, dvs: {atk: 14, def: 13}},
+};
+
+function getHiddenPowerIVs(hpType: HPTypeName, data?: Data) {
+  const hp = HP[hpType];
+  if (!hp) return undefined;
+  return data?.gen === 2 ? DVsToIVs(hp.dvs) : hp.ivs;
+}
+
+function DVsToIVs(dvs: Readonly<Partial<StatsTable>>) {
+  const ivs: Partial<StatsTable> = {};
+  let dv: StatName;
+  for (dv in dvs) {
+    ivs[dv] = dvs[dv]! * 2;
+  }
+  return ivs;
 }

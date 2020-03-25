@@ -19,51 +19,53 @@ export type BoostsTable<T = number> = { [boost in BoostName]: T };
 
 export type MoveCategory = 'Physical' | 'Special' | 'Status';
 export type MoveTarget =
-	'adjacentAlly' | 'adjacentAllyOrSelf' | 'adjacentFoe' | 'all' |
-	'allAdjacent' | 'allAdjacentFoes' | 'allies' | 'allySide' | 'allyTeam' |
-	'any' | 'foeSide' | 'normal' | 'randomNormal' | 'scripted' | 'self';
+  'adjacentAlly' | 'adjacentAllyOrSelf' | 'adjacentFoe' | 'all' |
+  'allAdjacent' | 'allAdjacentFoes' | 'allies' | 'allySide' | 'allyTeam' |
+  'any' | 'foeSide' | 'normal' | 'randomNormal' | 'scripted' | 'self';
 
 export type Nonstandard =
-	'Past' | 'Future' | 'Unobtainable' | 'CAP' | 'LGPE' | 'Custom';
+  'Past' | 'Future' | 'Unobtainable' | 'CAP' | 'LGPE' | 'Custom';
 
 export type EvoType =
-	'trade' | 'useItem' | 'levelMove' | 'levelExtra' |
-	'levelFriendship' | 'levelHold' | 'other';
+  'trade' | 'useItem' | 'levelMove' | 'levelExtra' |
+  'levelFriendship' | 'levelHold' | 'other';
 
 export type SideID = 'p1' | 'p2' | 'p3' | 'p4';
 export type Player = SideID;
 
 export type GameType =
-	'singles' | 'doubles' | 'triples' | 'multi' | 'free-for-all' | 'rotation';
+  'singles' | 'doubles' | 'triples' | 'multi' | 'free-for-all' | 'rotation';
 
 export type HPColor = 'r' | 'y' | 'g';
 
 export type StatusName = 'par' | 'psn' | 'frz' | 'slp' | 'brn';
 
 export type NatureName =
-	'Adamant' | 'Bashful' | 'Bold' | 'Brave' | 'Calm' |
-	'Careful' | 'Docile' | 'Gentle' | 'Hardy' | 'Hasty' |
-	'Impish' | 'Jolly' | 'Lax' | 'Lonely' | 'Mild' |
-	'Modest' | 'Naive' | 'Naughty' | 'Quiet' | 'Quirky' |
-	'Rash' | 'Relaxed' | 'Sassy' | 'Serious' | 'Timid';
+  'Adamant' | 'Bashful' | 'Bold' | 'Brave' | 'Calm' |
+  'Careful' | 'Docile' | 'Gentle' | 'Hardy' | 'Hasty' |
+  'Impish' | 'Jolly' | 'Lax' | 'Lonely' | 'Mild' |
+  'Modest' | 'Naive' | 'Naughty' | 'Quiet' | 'Quirky' |
+  'Rash' | 'Relaxed' | 'Sassy' | 'Serious' | 'Timid';
 
 export type TypeName =
-	'Normal' | 'Fighting' | 'Flying' | 'Poison' | 'Ground' | 'Rock' | 'Bug' | 'Ghost' | 'Steel' |
-	'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' | '???';
+  'Normal' | 'Fighting' | 'Flying' | 'Poison' | 'Ground' | 'Rock' | 'Bug' | 'Ghost' | 'Steel' |
+  'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' | '???';
+
+export type HPTypeName = Exclude<TypeName, 'Normal' | 'Fairy' | '???'>;
 
 export interface PokemonSet<T = string> {
-	name: string;
-	species: T;
-	item: T;
-	ability: T;
-	moves: T[];
-	nature: T;
-	gender: string;
-	evs: StatsTable;
-	ivs: StatsTable;
-	level: number;
-	shiny?: boolean;
-	happiness?: number;
-	pokeball?: T;
-	hpType?: string;
+  name: string;
+  species: T;
+  item: T;
+  ability: T;
+  moves: T[];
+  nature: T;
+  gender: string;
+  evs: StatsTable;
+  ivs: StatsTable;
+  level: number;
+  shiny?: boolean;
+  happiness?: number;
+  pokeball?: T;
+  hpType?: string;
 }

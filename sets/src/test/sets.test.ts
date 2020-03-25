@@ -1,4 +1,6 @@
+import {PokemonSet, StatsTable} from '@pkmn/types';
 import {_import, _unpack, Sets} from '../sets';
+import {GEN} from './data';
 
 function imported(s: string) {
   return s.split('\n').map(x => x.trim()).filter(x => x).join('\n');
@@ -32,14 +34,14 @@ describe('Sets', () => {
 
     test('marowak (gen 2)', () => {
       const marowakIn = imported(`
-        Marowak (M) @ Leftovers
+        Marowak (M) @ Thick Club
         - Earthquake
         - Hidden Power [Bug]
         - Frustration
         - Swords Dance`);
       // NOTE: we differ slightly from PS as we don't specify IV: 30 HP
       const marowakOut = exported(`
-        Marowak (M) @ Leftovers
+        Marowak (M) @ Thick Club
         Happiness: 0
         IVs: 26 Atk / 26 Def
         - Earthquake
@@ -47,7 +49,7 @@ describe('Sets', () => {
         - Frustration
         - Swords Dance`);
 
-      expect(Sets.exportSet(Sets.importSet(marowakIn, 2)!, false, 2))
+      expect(Sets.exportSet(Sets.importSet(marowakIn, GEN(2))!, GEN(2)))
           .toEqual(marowakOut);
     });
 
@@ -180,8 +182,8 @@ describe('Sets', () => {
         - Volt Switch`);
 
       const u =
-          _unpack((Sets.pack(Sets.importSet(magnezoneIn, 7)!)) + ']')!.set!;
-      expect(Sets.exportSet(u, false, 7)).toEqual(magnezoneOut);
+          _unpack((Sets.pack(Sets.importSet(magnezoneIn, GEN(7))!)) + ']')!.set!;
+      expect(Sets.exportSet(u, GEN(7))).toEqual(magnezoneOut);
     });
 
     test('tauros', () => {
@@ -200,7 +202,7 @@ describe('Sets', () => {
         - Earthquake
         - Hyper Beam`);
 
-      const u = Sets.unpack(Sets.pack(Sets.importSet(taurosIn, 1)!))!;
+      const u = Sets.unpack(Sets.pack(Sets.importSet(taurosIn, GEN(1))!))!;
       expect(Sets.exportSet(u)).toEqual(taurosOut);
     });
 
@@ -225,7 +227,7 @@ describe('Sets', () => {
         - seismictoss`);
 
       const u = Sets.unpack(Sets.pack(_import(blisseyIn.split('\n'))!.set!))!;
-      expect(Sets.exportSet(u, true)).toEqual(blisseyOut);
+      expect(Sets.exportSet(u)).toEqual(blisseyOut);
     });
 
     test('fake', () => {
@@ -280,25 +282,24 @@ describe('Sets', () => {
     });
 
     test('bad types', () => {
-      // @ts-ignore
-      let suicune: PokemonSet = {name: 'Suicune', pokeball: 'Cherish Ball'};
+      let suicune = {name: 'Suicune', pokeball: 'Cherish Ball'} as PokemonSet;
       const u = Sets.unpack(Sets.pack(suicune))!;
-      expect(Sets.exportSet(u, true)).toEqual(exported('Suicune'));
+      expect(Sets.exportSet(u)).toEqual(exported('Suicune'));
       expect(Sets.exportSet(suicune)).toEqual(exported('Suicune'));
 
       suicune = {
         name: 'Suicune',
-        ivs: {hp: undefined},
+        ivs: {hp: undefined} as unknown as StatsTable,
         moves: ['Hidden Power Bug']
-      };
+      }  as PokemonSet;;
       expect(Sets.exportSet(suicune))
           .toEqual(exported('Suicune\n- Hidden Power [Bug]'));
 
       suicune = {
         name: 'Suicune',
         moves: ['Hidden Power [Bug]', 'hiddenpowerdark']
-      };
-      expect(Sets.exportSet(suicune, true)).toEqual(exported(`Suicune
+      }  as PokemonSet;
+      expect(Sets.exportSet(suicune)).toEqual(exported(`Suicune
         - Hidden Power [Bug]
         - Hidden Power [Dark]`));
     });

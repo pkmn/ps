@@ -185,7 +185,7 @@ export class ModdedDex {
 		this.typeCache = new Map();
 
 		this.gen = 0;
-		this.parentMod = '';
+	this.parentMod = '';
 		this.modsLoaded = false;
 
 		this.dataCache = null;

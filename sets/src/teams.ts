@@ -1,52 +1,54 @@
-import {Format} from './format';
-import {CURRENT, Generation} from './gen';
-import {_import, _unpack, PokemonSet, Sets} from './sets';
-import {Tier, Tiers} from './tiers';
+import {PokemonSet, GenerationNum} from '@pkmn/types';
+import {_import, _unpack, Sets, Data} from './sets';
+
+const CURRENT = 8;
 
 export class Team {
   constructor(
-      readonly team: Readonly<PokemonSet[]>, readonly format?: Format,
+      readonly team: Readonly<PokemonSet[]>, readonly data?: Data, readonly format?: string,
       readonly name?: string, readonly folder?: string) {
     this.team = team;
     this.format = format;
     this.name = name;
     this.folder = folder;
+
+    this.data = data;
+    if (format && data && data.forGen) {
+      const gen = format.slice(0, 3) === 'gen' ? parseInt(format[3]) : 6;
+      this.data = data.forGen(gen as GenerationNum);
+    }
   }
 
-  get gen(): Generation|undefined {
-    return this.format ? this.format.gen : undefined;
+  get gen() {
+    return this.data?.gen;
   }
 
-  get tier(): Tier|undefined {
-    return this.format ? this.format.tier : undefined;
+   pack(): string {
+    return Teams.packTeam(this);
   }
 
-  pack(gen?: Generation): string {
-    return Teams.packTeam(this, gen || this.gen);
+  static unpack(buf: string, data?: Data)  {
+    return Teams.unpackTeam(buf, data);
   }
 
-  static unpack(buf: string, gen?: Generation): Team|undefined {
-    return Teams.unpackTeam(buf, gen);
-  }
-
-  export(fast?: boolean, gen?: Generation): string {
+  export(data?: Data): string {
     let buf = '';
     for (const s of this.team) {
-      buf += Sets.exportSet(s, fast, gen || this.gen);
+      buf += Sets.exportSet(s, data || this.data);
     }
     return buf;
   }
 
-  static import(buf: string, gen?: Generation): Team|undefined {
-    return Teams.importTeam(buf, gen);
+  static import(buf: string, data?: Data) {
+    return Teams.importTeam(buf, data);
   }
 
-  toString(fast?: boolean, gen?: Generation): string {
-    return this.export(fast, gen);
+  toString(data?: Data) {
+    return this.export(data);
   }
 
-  static fromString(str: string, gen?: Generation): Team|undefined {
-    return Teams.importTeam(str, gen);
+  static fromString(str: string, data?: Data) {
+    return Teams.importTeam(str, data);
   }
 
   toJSON(): string {
@@ -63,20 +65,17 @@ export class Team {
   }
 }
 
-export class Teams {
-  // istanbul ignore next: constructor
-  protected constructor() {}
-
-  static packTeam(team: Team, gen?: Generation): string {
+export const Teams = new class {
+  packTeam(team: Team): string {
     let buf = '';
     for (const s of team.team) {
       if (buf) buf += ']';
-      buf += Sets.packSet(s, gen);
+      buf += Sets.packSet(s);
     }
     return buf;
   }
 
-  static unpackTeam(buf: string, gen?: Generation): Team|undefined {
+  unpackTeam(buf: string, data?: Data): Team | undefined {
     if (!buf) return undefined;
     if (buf.charAt(0) === '[' && buf.charAt(buf.length - 1) === ']') {
       return Team.fromJSON(buf);
@@ -86,7 +85,7 @@ export class Teams {
     let i = 0, j = 0;
 
     while (true) {
-      const r = _unpack(buf, i, j, gen);
+      const r = _unpack(buf, i, j, data);
       if (!r.set) return undefined;
 
       team.push(r.set);
@@ -97,19 +96,19 @@ export class Teams {
       i = j + 1;
     }
 
-    return new Team(team);
+    return new Team(team, data);
   }
 
-  static importTeam(buf: string, gen?: Generation): Team|undefined {
-    const teams = Teams.importTeams(buf, gen, true);
+  importTeam(buf: string, data?: Data): Team|undefined {
+    const teams = Teams.importTeams(buf, data, true);
     return teams.length ? teams[0] : undefined;
   }
 
-  static importTeams(buf: string, gen?: Generation, one?: boolean):
+  importTeams(buf: string, data?: Data, one?: boolean):
       Readonly<Team[]> {
     const lines = buf.split('\n');
     if (lines.length === 1 || (lines.length === 2 && !lines[1])) {
-      const team: Team|undefined = Teams.unpackTeam(lines[0], gen);
+      const team: Team|undefined = Teams.unpackTeam(lines[0], data);
       return team ? [team] : [];
     }
 
@@ -124,7 +123,7 @@ export class Teams {
         if (one && teams.length) return teams;
         team = [];
         line = line.substr(3, line.length - 6).trim();
-        let format = 'gen' + (gen || CURRENT);
+        let format = 'gen' + (data?.gen || CURRENT);
         const bracketIndex = line.indexOf(']');
         if (bracketIndex >= 0) {
           format = line.substr(1, bracketIndex - 1);
@@ -138,13 +137,13 @@ export class Teams {
           line = line.slice(slashIndex + 1);
         }
 
-        teams.push(new Team(team, Format.fromString(format), line, folder));
+        teams.push(new Team(team, data, format, line, folder));
       } else if (line.includes('|')) {
         // packed format
-        const t: Team|undefined = unpackLine(line, gen);
+        const t = unpackLine(line, data);
         if (t) teams.push(t);
       } else if (setLine !== i) {
-        const r = _import(lines, i, gen);
+        const r = _import(lines, i, data);
         if (r.set) team.push(r.set);
         if (r.line === i) {
           continue;
@@ -158,13 +157,13 @@ export class Teams {
     // If we made it here we read in some sets but there was no '===' marker
     // in the file so we assume only one (unnamed) team.
     if (team.length && !teams.length) {
-      teams.push(new Team(team));
+      teams.push(new Team(team, data));
     }
 
     return teams;
   }
 
-  static exportTeams(teams: Readonly<Team[]>, fast?: boolean, gen?: Generation):
+  exportTeams(teams: Readonly<Team[]>, data?: Data):
       string {
     let buf = '';
 
@@ -173,25 +172,24 @@ export class Teams {
       buf += '=== ' + (team.format ? '[' + team.format.toString() + '] ' : '') +
           (team.folder ? '' + team.folder + '/' : '') +
           (team.name || 'Untitled ' + ++i) + ' ===\n\n';
-      buf += team.export(fast, gen);
+      buf += team.export(data);
       buf += '\n';
     }
     return buf;
   }
 
-  static toString(teams: Readonly<Team[]>, fast?: boolean, gen?: Generation):
+  toString(teams: Readonly<Team[]>, data?: Data):
       string {
-    return Teams.exportTeams(teams, fast, gen);
+    return Teams.exportTeams(teams, data);
   }
 
-  static fromString(str: string, gen?: Generation): Readonly<Team[]> {
-    return Teams.importTeams(str, gen);
+  fromString(str: string, data?: Data): Readonly<Team[]> {
+    return Teams.importTeams(str, data);
   }
 }
 
-function unpackLine(line: string, gen?: Generation): Team|undefined {
+function unpackLine(line: string, data?: Data): Team | undefined {
   const pipeIndex = line.indexOf('|');
-  // istanbul ignore if: N/A
   if (pipeIndex < 0) return undefined;
 
   let bracketIndex = line.indexOf(']');
@@ -201,14 +199,14 @@ function unpackLine(line: string, gen?: Generation): Team|undefined {
   // line.slice(slashIndex + 1, pipeIndex) will be ''
   if (slashIndex < 0) slashIndex = bracketIndex;
 
-  const format =
-      bracketIndex > 0 ? line.slice(0, bracketIndex) : 'gen' + (gen || CURRENT);
-  const team: Team|undefined = Teams.unpackTeam(line.slice(pipeIndex + 1), gen);
+  const format = bracketIndex > 0 ? line.slice(0, bracketIndex) : `gen${(data?.gen || CURRENT)}ou`;
+  const team = Teams.unpackTeam(line.slice(pipeIndex + 1), data);
   return !team ?
       team :
       new Team(
           team.team,
-          Format.fromString(format),
+          data,
+          format,
           line.slice(slashIndex + 1, pipeIndex),
           line.slice(
               bracketIndex + 1, slashIndex > 0 ? slashIndex : bracketIndex + 1),
