@@ -96,6 +96,7 @@ export interface EventInfo {
 	nature?: string;
 	ivs?: SparseStatsTable;
 	perfectIVs?: number;
+	/** true: has hidden ability, false | undefined: never has hidden ability */
 	isHidden?: boolean;
 	abilities?: string[];
 	maxEggMoves?: number;

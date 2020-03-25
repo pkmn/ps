@@ -276,12 +276,9 @@ export class LogFormatter {
     }
   }
 
-  static getString(str: any) {
-    return (typeof str === 'string' || typeof str === 'number') ? `${str}` : '';
-  }
-
   static escapeHTML(str: string, escapeJS?: boolean) {
-    str = LogFormatter.getString(str)
+    if (typeof str !== 'string') return '';
+    str = str
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
