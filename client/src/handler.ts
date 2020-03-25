@@ -1,7 +1,6 @@
 import {Protocol, Args, KWArgs, PokemonSearchID} from '@pkmn/protocol';
 import {ID, toID, BoostName, Effect} from '@pkmn/sim';
 import {Battle} from './battle';
-import {Pokemon} from './pokemon';
 
 const BOOSTS: BoostName[] = ['atk', 'def', 'spa', 'spd', 'spe', 'accuracy', 'evasion'];
 
@@ -149,7 +148,7 @@ export class Handler implements Protocol.Handler {
     poke.side.faint(poke);
   }
 
-  '|swap|'(args: Args['|swap|'], kwArgs: KWArgs['|swap|']) {
+  '|swap|'(args: Args['|swap|']) {
     if (isNaN(Number(args[2]))) {
       const poke = this.battle.getPokemon(args[1])!;
       poke.side.swapWith(poke, this.battle.getPokemon(args[2])!);
