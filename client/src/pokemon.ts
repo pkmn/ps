@@ -164,7 +164,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.searchid = details.searchid;
 
     this.hp = 0;
-    this.maxhp = 1000;
+    this.maxhp = 0; // 1000
     this.level = 100;
     this.hpcolor = 'g';
     this.status = '';
@@ -202,48 +202,26 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     return this.side.active.includes(this);
   }
 
-  healthParse(hpstring: string, parsedamage?: boolean, heal?: boolean):
-  [number, number, number] | [number, number, number, HPColor] | null {
-    // returns [delta, denominator, percent(, oldnum, oldcolor)] or null
+  healthParse(hpstring: string) {
+    return Pokemon.parseHealth(hpstring, this);
+  }
+
+  static parseHealth(
+    hpstring: string,
+    output: PokemonHealth = {hp: 0, maxhp: 0, hpcolor: '', status: ''}
+  ): [number, number, number, HPColor | ''] | null { // [delta, denominator, oldnum, oldcolor]
     if (!hpstring || !hpstring.length) return null;
-    const parenIndex = hpstring.lastIndexOf('(');
-    if (parenIndex >= 0) {
-      // old style damage and health reporting
-      if (parsedamage) {
-        let damage = parseFloat(hpstring);
-        // unusual check preseved for backward compatbility
-        if (isNaN(damage)) damage = 50;
-        if (heal) {
-          this.hp += this.maxhp * damage / 100;
-          if (this.hp > this.maxhp) this.hp = this.maxhp;
-        } else {
-          this.hp -= this.maxhp * damage / 100;
-        }
-        // parse the absolute health information
-        const ret = this.healthParse(hpstring);
-        if (ret && (ret[1] === 100)) {
-          // support for old replays with nearest-100th damage and health
-          return [damage, 100, damage];
-        }
-        // complicated expressions preserved for backward compatibility
-        const percent = Math.round(Math.ceil(damage * 48 / 100) / 48 * 100);
-        const pixels = Math.ceil(damage * 48 / 100);
-        return [pixels, 48, percent];
-      }
-      if (hpstring.substr(hpstring.length - 1) !== ')') return null;
-      hpstring = hpstring.substr(parenIndex + 1, hpstring.length - parenIndex - 2);
-    }
 
-    let oldhp = this.fainted ? 0 : (this.hp || 1);
-    let oldmaxhp = this.maxhp;
-    const oldcolor = this.hpcolor;
+    let oldhp = output.fainted ? 0 : (output.hp || 1);
+    let oldmaxhp = output.maxhp;
+    const oldcolor = output.hpcolor;
 
-    void Protocol.parseHealth(hpstring as PokemonHPStatus, this);
+    void Protocol.parseHealth(hpstring as PokemonHPStatus, output);
     // max hp not known before parsing this message
-    if (oldmaxhp === 0) oldmaxhp = oldhp = this.maxhp;
-    const oldnum = oldhp ? (Math.floor(this.maxhp * oldhp / oldmaxhp) || 1) : 0;
-    const delta = this.hp - oldnum;
-    return [delta, this.maxhp, oldnum, oldcolor];
+    if (oldmaxhp === 0) oldmaxhp = oldhp = output.maxhp;
+    const oldnum = oldhp ? (Math.floor(output.maxhp * oldhp / oldmaxhp) || 1) : 0;
+    const delta = output.hp - oldnum;
+    return [delta, output.maxhp, oldnum, oldcolor];
   }
 
   checkDetails(details?: PokemonDetails) {

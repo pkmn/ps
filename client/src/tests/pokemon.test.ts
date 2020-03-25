@@ -5,19 +5,19 @@ describe('Pokemon', () => {
   test('#healthParse', () => {
     const parse = (
       hpstring: string,
-      options = {} as Partial<PokemonHealth> & {parsedamage?: boolean, heal?: boolean}) => {
+      options = {} as Partial<PokemonHealth>) => {
         const pokemon = new Pokemon(null! as Side, {} as DetailedPokemon);
         for (const attr of ['hp', 'maxhp', 'hpcolor', 'status', 'fainted'] as (keyof PokemonHealth)[]) {
           if (options[attr]) (pokemon as any)[attr] = options[attr];
         }
-        const result = pokemon.healthParse(hpstring, !!options.parsedamage, !!options.heal);
+        const result = pokemon.healthParse(hpstring);
         return {pokemon, result};
     };
 
     const health = (p: Partial<PokemonHealth> = {}) => {
       const ret: PokemonHealth = {
         hp: p.hp || 0,
-        maxhp: p.maxhp || 1000,
+        maxhp: p.maxhp || 0,
         hpcolor: p.hpcolor || 'g',
         status: p.status || '',
         fainted: !!p.fainted
@@ -28,53 +28,36 @@ describe('Pokemon', () => {
     expect(parse('').result).toEqual(null);
 
     let p = parse('0 fnt');
-    expect(health(p.pokemon)).toEqual(health({hp: 0, fainted: true}));
-    // expect(p.result).toEqual([0, 100, 0, 0, 'g']);
+    expect(health(p.pokemon)).toEqual(health({hp: 0, maxhp: 100, fainted: true}));
+    expect(p.result).toEqual([-100, 100, 100, 'g']);
 
-    p = parse('0 fnt');
-    expect(health(p.pokemon)).toEqual(health({hp: 0, fainted: true}));
+    p = parse('0 fnt', health({fainted: true}));
+    expect(health(p.pokemon)).toEqual(health({hp: 0, maxhp: 100, fainted: true}));
+    expect(p.result).toEqual([-100, 100, 100, 'g']);
 
     p = parse('0 fnt', health({maxhp: 250}));
     expect(health(p.pokemon)).toEqual(health({hp: 0, maxhp: 250, fainted: true}));
+    expect(p.result).toEqual([-1, 250, 1, 'g']);
+
+    p = parse('0 fnt', health({hp: 200, maxhp: 250}));
+    expect(health(p.pokemon)).toEqual(health({hp: 0, maxhp: 250, fainted: true}));
+    expect(p.result).toEqual([-200, 250, 200, 'g']);
 
     p = parse('10/48y fnt');
     expect(health(p.pokemon)).toEqual(health({hp: 0, maxhp: 48, hpcolor: 'y', fainted: true}));
+    expect(p.result).toEqual([-48, 48, 48, 'g']);
 
-     p = parse('foo/bar');
+    p = parse('10/48y fnt', health({hp: 20, maxhp: 48, hpcolor: 'y'}));
+    expect(health(p.pokemon)).toEqual(health({hp: 0, maxhp: 48, hpcolor: 'y', fainted: true}));
+    expect(p.result).toEqual([-20, 48, 20, 'y']);
+
+    p = parse('foo/bar');
     expect(health(p.pokemon)).toEqual(health());
+    expect(p.result).toEqual([0, 0, 0, 'g']);
 
     p = parse('350/300 psn');
     expect(health(p.pokemon)).toEqual(health({hp: 300, maxhp: 300, status: 'psn'}));
-
-    p = parse('20 brn');
-    expect(health(p.pokemon)).toEqual(health({hp: 200, status: 'brn'}));
-
-    p = parse('20 brn', health({maxhp: 200}));
-    expect(health(p.pokemon)).toEqual(health({hp: 40, maxhp: 200, status: 'brn'}));
-
-    p = parse('200/300 psn');
-    expect(health(p.pokemon)).toEqual(health({hp: 200, maxhp: 300, status: 'psn'}));
-
-    p = parse('70/100 tox', {status: 'tox'});
-    expect(health(p.pokemon)).toEqual(health({hp: 70, maxhp: 100, status: 'tox'}));
-
-    p = parse('70/100 psn', health({status: 'tox'}));
-    expect(health(p.pokemon)).toEqual(health({hp: 70, maxhp: 100, status: 'tox'}));
-
-    p = parse('9/48 frz');
-    expect(health(p.pokemon)).toEqual(health({hp: 9, maxhp: 48, status: 'frz'}));
-
-    p = parse('9/48 foo');
-    expect(health(p.pokemon)).toEqual(health({hp: 9, maxhp: 48}));
-
-    p = parse('9/48y slp');
-    expect(health(p.pokemon)).toEqual(health({hp: 9, maxhp: 48, hpcolor: 'y', status: 'slp'}));
-
-    p = parse('24/48y brn');
-    expect(health(p.pokemon)).toEqual(health({hp: 24, maxhp: 48, hpcolor: 'y', status: 'brn'}));
-
-    p = parse('24/48g');
-    expect(health(p.pokemon)).toEqual(health({hp: 24, maxhp: 48, hpcolor: 'g'}));
+    expect(p.result).toEqual([0, 300, 300, 'g']);
   });
 
 });

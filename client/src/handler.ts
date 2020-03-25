@@ -150,17 +150,12 @@ export class Handler implements Protocol.Handler {
   }
 
   '|swap|'(args: Args['|swap|'], kwArgs: KWArgs['|swap|']) {
-    this.battle.lastSwap = undefined;
     if (isNaN(Number(args[2]))) {
       const poke = this.battle.getPokemon(args[1])!;
       poke.side.swapWith(poke, this.battle.getPokemon(args[2])!);
     } else {
       const poke = this.battle.getPokemon(args[1])!;
       const targetIndex = parseInt(args[2]!);
-      if (kwArgs.from) {
-        const target = poke.side.active[targetIndex];
-        if (target) this.battle.lastSwap = [poke.side.id, targetIndex, target.ident];
-      }
       poke.side.swapTo(poke, targetIndex);
     }
   }
@@ -186,9 +181,8 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
-    this.battle.lastDamagePercentage = undefined;
     const poke = this.battle.getPokemon(args[1])!;
-    const damage = poke.healthParse(args[2], true);
+    const damage = poke.healthParse(args[2]);
     if (damage === null) return;
 
     if (kwArgs.from) {
@@ -201,25 +195,12 @@ export class Handler implements Protocol.Handler {
           itemPoke.item = effect.id;
         }
       }
-    } else {
-      const range = Pokemon.getDamageRange(damage, poke.hpcolor);
-      let damageinfo = '' + Pokemon.getFormattedRange(range, damage[1] === 100 ? 0 : 1, '\u2013');
-      if (damage[1] !== 100) {
-        let hover = '' + ((damage[0] < 0) ? '\u2212' : '') +
-          Math.abs(damage[0]) + '/' + damage[1];
-        if (damage[1] === 48) { // this is a hack
-          hover += ' pixels';
-        }
-        // should be converted to <abbr> in html
-        damageinfo = '||' + hover + '||' + damageinfo + '||';
-      }
-      this.battle.lastDamagePercentage = [args[1], args[2], damageinfo];
     }
   }
 
   '|-heal|'(args: Args['|-heal|'], kwArgs: KWArgs['|-heal|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const damage = poke.healthParse(args[2], true, true);
+    const damage = poke.healthParse(args[2]);
     if (damage === null) return;
 
     if (kwArgs.from) {
@@ -804,11 +785,9 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-weather|'(args: Args['|-weather|'], kwArgs: KWArgs['|-weather|']) {
-    this.battle.lastWeather = undefined;
     const effect = this.battle.dex.getEffect(args[1]) as Effect;
     const poke = this.battle.getPokemon(kwArgs.of) || undefined;
     const ability = this.battle.dex.getEffect(kwArgs.from) as Effect;
-    if (!effect.id || effect.id === 'none') this.battle.lastWeather = this.battle.field.weather;
     this.battle.field.changeWeather(effect.id, poke, !!kwArgs.upkeep, ability);
   }
 

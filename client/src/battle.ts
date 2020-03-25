@@ -3,12 +3,13 @@ import {
   FormatName,
   Message,
   PokemonDetails,
+  PokemonHealth,
   PokemonHPStatus,
   PokemonIdent,
   PokemonSearchID,
   Protocol,
 } from '@pkmn/protocol';
-import {GenerationNum, GameType, GenderName} from '@pkmn/types';
+import {GenerationNum, GameType, GenderName, HPColor} from '@pkmn/types';
 
 import {Field} from './field';
 import {Side} from './side';
@@ -88,10 +89,6 @@ export class Battle {
   graceTimeLeft: number;
 
   lastMove!: ID | 'switch-in' | 'healing-wish';
-
-  lastSwap?: [SideID, number, PokemonIdent];
-  lastDamagePercentage?: [PokemonIdent, PokemonHPStatus, string];
-  lastWeather?: ID;
 
   constructor(
     field = (b: Battle) => new Field(b),
@@ -384,6 +381,40 @@ export class Battle {
       poke.side.replace(poke);
     }
     return false;
+  }
+
+  pokemonAt(side: SideID, slot: number) {
+    return this.getSide(side).active[slot]?.ident || undefined;
+  }
+
+  damagePercentage(ident: PokemonIdent, hpstring: PokemonHPStatus) {
+    const p = this.getPokemon(ident);
+    if (!p) return undefined;
+
+    const health: PokemonHealth = {
+      hp: p.hp,
+      maxhp: p.maxhp,
+      hpcolor: p.hpcolor,
+      status: p.status,
+      fainted: p.fainted,
+    };
+
+    const damage = Pokemon.parseHealth(hpstring, health);
+    if (!damage) return undefined;
+
+    const range = Pokemon.getDamageRange(damage, health.hpcolor as HPColor);
+    let percent = '' + Pokemon.getFormattedRange(range, damage[1] === 100 ? 0 : 1, '\u2013');
+    if (damage[1] !== 100) {
+      let hover = '' + ((damage[0] < 0) ? '\u2212' : '') + Math.abs(damage[0]) + '/' + damage[1];
+      if (damage[1] === 48) hover += ' pixels'; // this is a hack
+      percent = '||' + hover + '||' + percent + '||';
+    }
+
+    return percent;
+  }
+
+  currentWeather() {
+    return this.field.weather;
   }
 
   destroy() {

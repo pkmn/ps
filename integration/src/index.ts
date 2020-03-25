@@ -1,7 +1,7 @@
 import {Dex, TeamValidator, RandomPlayerAI, BattleStreams} from '@pkmn/sim';
 import {Protocol} from '@pkmn/protocol';
 import {Battle, Handler} from '@pkmn/client';
-import {LogFormatter, BattlePostAdapter} from '@pkmn/view';
+import {LogFormatter} from '@pkmn/view';
 
 // @ts-ignore
 import TeamA from './teams/a.txt';
@@ -61,7 +61,7 @@ const p2 = new RandomPlayerAI(streams.p2);
 
 const battle = new Battle();
 const handler = new Handler(battle);
-const formatter = new LogFormatter(0, new BattlePostAdapter(battle));
+const formatter = new LogFormatter(0, battle);
 
 void p1.start();
 void p2.start();
@@ -72,9 +72,10 @@ void (async () => {
 	while ((chunk = await streams.p1.read())) {
     for (const line of chunk.split('\n')) {
       const {args, kwArgs} = Protocol.parseBattleLine(line);
+      const html = formatter.formatHTML(args, kwArgs);
       const key = Protocol.key(args);
       if (key && key in handler) (handler as any)[key](args, kwArgs);
-      display(formatter.formatHTML(args, kwArgs));
+      display(html);
     }
 	}
 })();

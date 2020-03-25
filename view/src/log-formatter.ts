@@ -38,35 +38,6 @@ export interface Tracker {
   currentWeather(): ID | undefined;
 }
 
-// FIXME: want preadapter...
-export class BattlePostAdapter implements Tracker {
-  private readonly battle: Battle;
-
-  constructor(battle: Battle) {
-    this.battle = battle;
-  }
-
-  pokemonAt(side: SideID, slot: number) {
-    return ((this.battle.lastSwap &&
-      this.battle.lastSwap[0] === side &&
-      this.battle.lastSwap[1] === slot)
-      ? this.battle.lastSwap[2]
-      : undefined);
-  }
-
-  damagePercentage(ident: PokemonIdent, health: PokemonHPStatus) {
-    return ((this.battle.lastDamagePercentage &&
-      this.battle.lastDamagePercentage[0] === ident &&
-      this.battle.lastDamagePercentage[1] === health)
-      ? this.battle.lastDamagePercentage[2]
-      : undefined);
-  }
-
-  currentWeather() {
-    return this.battle.lastWeather;
-  }
-}
-
 const NOOP = () => undefined;
 
 const TEMPLATES = ['pokemon', 'opposingPokemon', 'team', 'opposingTeam', 'party', 'opposingParty'];
