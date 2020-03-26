@@ -1,4 +1,5 @@
 # @pkmn/calc
+
 [![npm version](https://img.shields.io/npm/v/@pkmn/calc.svg)](https://www.npmjs.com/package/@pkmn/calc)&nbsp;
 
 Adapter for using [`@pkmn/sim`][0] with [`smogon/damage-calc`][1].

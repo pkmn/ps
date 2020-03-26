@@ -1,17 +1,12 @@
 {
-  "name": "@pkmn/view",
+  "name": "@pkmn/img",
   "version": "0.0.1",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "description": "Library for building Pokémon Showdown client UIs",
+  "description": "Logic for displaying Pokémon Showdown's sprite/icon resources",
   "repository": "github:pkmn/ps",
   "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
-  "dependencies": {
-    "@pkmn/client": "file:../client",
-    "@pkmn/protocol": "file:../protocol",
-    "@pkmn/types": "file:../types"
-  },
   "devDependencies": {
     "@pkmn/eslint-config": "^0.1.0",
     "@types/jest": "^25.1.4",

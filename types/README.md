@@ -1,4 +1,5 @@
 # @pkmn/types
+
 [![npm version](https://img.shields.io/npm/v/@pkmn/types.svg)](https://www.npmjs.com/package/@pkmn/types)&nbsp;
 
 Type definitions common across Pokémon Showdown.

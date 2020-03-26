@@ -10,7 +10,8 @@ This is the top level of @pkmn's Pokémon Showdown components:
 - [`@pkmn/types`][4]: TypeScript definitions for types common to Pokémon projects
 - [`@pkmn/protocol`][5]: Parsing logic for Pokémon Showdown's [PROTOCOL][6] and [SIM-PROTOCOL][7]
 - [`@pkmn/client`][8]: a forked implementation of [smogon/pokemon-showdown-client][9]'s battle engine, build on top of `@pkmn/protocol`
-- [`@pkmn/view`][10]: display primitives for Pokémon Showdown Client UIs
+- [`@pkmn/img`][18]: logic for displaying Pokémon Showdown's sprite/icon resources
+- [`@pkmn/view`][10]: a library for building Pokémon Showdown client UIs
 - [`@pkmn/login`][11]: logic for authenticating with Pokémon Showdown
 - [`@pkmn/calc`][12]: adapter for using `@pkmn/sim` with [`smogon/damage-calc`][13]
 
@@ -36,3 +37,4 @@ Luo's Pokémon Showdown [server][3] and [client][9] which are also distributed u
   [15]: https://github.com/pkmn/ps/blob/master/LICENSE
   [16]: https://github.com/smogon/pokemon-showdown/blob/master/LICENSE
   [17]: https://github.com/pkmn/ps/blob/master/data
+  [18]: https://github.com/pkmn/ps/blob/master/img

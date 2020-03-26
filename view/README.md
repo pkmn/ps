@@ -1,7 +1,8 @@
 # @pkmn/view
+
 [![npm version](https://img.shields.io/npm/v/@pkmn/view.svg)](https://www.npmjs.com/package/@pkmn/view)&nbsp;
 
-Package containg display primitives for Pokémon Showdown Client UIs.
+A library for building Pokémon Showdown client UIs.
 
 This package is distributed under the terms of the [MIT License][1].
 Substantial amounts of the code have been derived from the portions of Guangcong

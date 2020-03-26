@@ -1,4 +1,5 @@
 # @pkmn/protocol
+
 [![npm version](https://img.shields.io/npm/v/@pkmn/protocol.svg)](https://www.npmjs.com/package/@pkmn/protocol)&nbsp;
 
 Parsing logic for [Pokémon Showdown][0]'s [PROTOCOL][1] and [SIM-PROTOCOL][2].
