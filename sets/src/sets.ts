@@ -342,13 +342,10 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
       if (species?.baseSpecies === 'Zygarde' && ability === 'H') {
         ability = 'Power Construct';
       } else if (species?.abilities) {
-        ability = species?.abilities[ability as '0' || '0'] || '';
-      } else {
-        return {i, j};
+        ability = species.abilities[ability as '0' || '0'];
       }
-    } else if (ability !== '') {
-      return {i, j};
     }
+    if (ability !== '' && !ability) return {i, j};
   }
   s.ability = ability;
   i = j + 1;

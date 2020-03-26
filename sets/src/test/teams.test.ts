@@ -62,7 +62,8 @@ describe('Teams', () => {
     expect(Teams.importTeams('|\n\n\n')).toEqual([]);
   });
 
-  test.skip('including packed', () => { // FIXME
+
+  test('including packed', () => {
     const teams = Teams.importTeams(TEAMS);
     const team = Team.import(TEAM)!;
     let both = 'ou]RBY/Cloyster|' + (teams[1].pack()) + '\n' +
