@@ -31,6 +31,6 @@ Luo's Pokémon Showdown [server][3] and [client][9] which are also distributed u
   [11]: https://github.com/pkmn/ps/blob/master/login
   [12]: https://github.com/pkmn/ps/blob/master/calc
   [13]: https://github.com/pkmn/smogon/damage-calc
-  [13]: https://github.com/pkmn/ps/blob/master/sets
-  [14]: https://github.com/pkmn/ps/blob/master/LICENSE
-  [15]: https://github.com/smogon/pokemon-showdown/blob/master/LICENSE
+  [14]: https://github.com/pkmn/ps/blob/master/sets
+  [15]: https://github.com/pkmn/ps/blob/master/LICENSE
+  [16]: https://github.com/smogon/pokemon-showdown/blob/master/LICENSE
