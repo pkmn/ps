@@ -14,8 +14,12 @@ export class Team {
 
     this.data = data;
     if (format && data && data.forGen) {
-      const gen = format.slice(0, 3) === 'gen' ? parseInt(format[3]) : 6;
-      this.data = data.forGen(gen as GenerationNum);
+      if (format.slice(0, 3) === 'gen' ) {
+        this.data = data.forGen(parseInt(format[3]) as GenerationNum);
+      } else {
+        this.format = `gen6${format}`;
+        this.data = data.forGen(6);
+      }
     }
   }
 
@@ -84,7 +88,7 @@ export const Teams = new class {
     const team: PokemonSet[] = [];
     let i = 0, j = 0;
 
-    while (true) {
+    for (let k = 0; k < 24; k++) {
       const r = _unpack(buf, i, j, data);
       if (!r.set) return undefined;
 
@@ -123,7 +127,7 @@ export const Teams = new class {
         if (one && teams.length) return teams;
         team = [];
         line = line.substr(3, line.length - 6).trim();
-        let format = 'gen' + (data?.gen || CURRENT);
+        let format = `gen${data?.gen || CURRENT}`;
         const bracketIndex = line.indexOf(']');
         if (bracketIndex >= 0) {
           format = line.substr(1, bracketIndex - 1);
@@ -199,7 +203,7 @@ function unpackLine(line: string, data?: Data): Team | undefined {
   // line.slice(slashIndex + 1, pipeIndex) will be ''
   if (slashIndex < 0) slashIndex = bracketIndex;
 
-  const format = bracketIndex > 0 ? line.slice(0, bracketIndex) : `gen${(data?.gen || CURRENT)}ou`;
+  const format = bracketIndex > 0 ? line.slice(0, bracketIndex) : `gen${data?.gen || CURRENT}`;
   const team = Teams.unpackTeam(line.slice(pipeIndex + 1), data);
   return !team ?
       team :

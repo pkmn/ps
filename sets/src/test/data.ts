@@ -2,7 +2,7 @@
 import {GenerationNum} from '@pkmn/types';
 import {Data, toID} from '../sets';
 
-const ABILITIES: {[id: string]: string} =  {
+const ABILITIES: {[id: string]: string} = {
   justifed: 'Justified',
   levitate: 'Levitate',
   magicguard: 'Magic Guard',
@@ -104,9 +104,10 @@ const SPECIES: {[id: string]: string} = {
   tornadustherian: 'Tornadus-Therian',
 };
 
-export function GEN(gen: GenerationNum): Data {
-  return {
-    gen,
+export const GEN: {[n: number]: Data} = {};
+for (let gen = 1; gen <= 8; gen++) {
+  GEN[gen] = {
+    gen: gen as GenerationNum,
     getAbility(name: string) {
       return {name: ABILITIES[toID(name)]};
     },
@@ -117,13 +118,14 @@ export function GEN(gen: GenerationNum): Data {
       return {name: MOVES[toID(name)]};
     },
     getSpecies(name: string) {
-       // FIXME abilities Tangrowth?
-      return {name: SPECIES[toID(name)]};
+      const s: any = {name: SPECIES[toID(name)]};
+      if (s.name === 'Tangrowth') {
+        s.abilities = {0: 'Chlorophyll', 1: 'Leaf Guard', H: 'Regenerator'};
+      }
+      return s;
     },
-    forGen(gen: number) {
-      // @ts-ignore
-      this.gen = gen;
-      return this;
-    }
+    forGen(g: number) {
+      return GEN[g];
+    },
   };
 }

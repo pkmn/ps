@@ -107,20 +107,19 @@ export const Sets = new class {
     let evs = '|';
     if (s.evs) {
       evs = '|' + [
-        (s.evs['hp'] ?? ''), (s.evs['atk'] ?? ''), (s.evs['def'] ?? ''),
-        (s.evs['spa'] ?? ''), (s.evs['spd'] ?? ''), (s.evs['spe'] ?? ''),
+        (s.evs['hp'] || ''), (s.evs['atk'] || ''), (s.evs['def'] || ''),
+        (s.evs['spa'] || ''), (s.evs['spd'] || ''), (s.evs['spe'] || ''),
       ].join();
     }
     if (evs === '|,,,,,') {
       buf += '|';
-			// doing it this way means packTeam doesn't need to be past-gen aware
-			if (s.evs['hp'] === 0) buf += '0';
     } else {
       buf += evs;
     }
 
     // gender
-    if (s.gender) buf += '|' + s.gender;
+    buf += '|'
+    if (s.gender) buf += s.gender;
 
     const getIV = (stat: StatName) =>
       s.ivs[stat] === 31 || s.ivs[stat] === undefined ? '' : s.ivs[stat].toString();
@@ -217,8 +216,7 @@ export const Sets = new class {
       buf += '  \n';
     }
     if (s.nature && (!data || data.gen >= 3)) {
-      buf += '' + s.nature + ' Nature' +
-          '  \n';
+      buf += '' + s.nature + ' Nature' + '  \n';
     }
     first = true;
     if (s.ivs) {
@@ -251,8 +249,7 @@ export const Sets = new class {
       }
       if (!defaultIVs) {
         for (const stat of STATS) {
-          if (typeof s.ivs[stat] === 'undefined' || isNaN(s.ivs[stat]) ||
-              s.ivs[stat] === 31) {
+          if (typeof s.ivs[stat] === 'undefined' || isNaN(s.ivs[stat]) || s.ivs[stat] === 31) {
             continue;
           }
           if (first) {
@@ -312,6 +309,8 @@ export const Sets = new class {
   }
 }
 
+const ABILITY = ['', '0', '1', 'H', 'S'];
+
 export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   const s: Partial<PokemonSet> = {};
   // name
@@ -336,13 +335,13 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   j = buf.indexOf('|', i);
   if (j < 0) return {i, j};
   let ability = buf.substring(i, j);
-  if (ability in {'': 1, 0: 1, 1: 1, H: 1, S: 1}) {
+  if (ABILITY.includes(ability)) {
     if (data) {
       const species = data.getSpecies(s.species);
       if (species?.baseSpecies === 'Zygarde' && ability === 'H') {
         ability = 'Power Construct';
       } else if (species?.abilities) {
-        ability = (species?.abilities as any)[ability || '0'];
+        ability = species?.abilities[ability as '0' || '0'] || '';
       } else {
         return {i, j};
       }
@@ -368,7 +367,6 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   // evs
   j = buf.indexOf('|', i);
   if (j < 0) return {i, j};
-  // FIXME change fill depeneding on gen (or inferred gen?)
   s.evs = {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0};
   if (j !== i) {
     const evstr = buf.substring(i, j);
@@ -380,8 +378,6 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
       s.evs.spa = Number(st[3]) || s.evs.spa;
       s.evs.spd = Number(st[4]) || s.evs.spd;
       s.evs.spe = Number(st[5]) || s.evs.spe;
-    } else if (evstr === '0') {
-      s.evs = {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0};
     }
   }
   i = j + 1;
@@ -398,12 +394,12 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   s.ivs = {hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31};
   if (j !== i) {
     const st = buf.substring(i, j).split(',', 6);
-    s.ivs.hp = st[0] === '' ? 31 : Number(st[0]);
-    s.ivs.atk = st[1] === '' ? 31 : Number(st[1]);
-    s.ivs.def = st[2] === '' ? 31 : Number(st[2]);
-    s.ivs.spa = st[3] === '' ? 31 : Number(st[3]);
-    s.ivs.spd = st[4] === '' ? 31 : Number(st[4]);
-    s.ivs.spe = st[5] === '' ? 31 : Number(st[5]);
+    s.ivs.hp = st[0] === '' ? 31 : Number(st[0]) || 0;
+    s.ivs.atk = st[1] === '' ? 31 : Number(st[1]) || 0;
+    s.ivs.def = st[2] === '' ? 31 : Number(st[2]) || 0;
+    s.ivs.spa = st[3] === '' ? 31 : Number(st[3]) || 0;
+    s.ivs.spd = st[4] === '' ? 31 : Number(st[4]) || 0;
+    s.ivs.spe = st[5] === '' ? 31 : Number(st[5]) || 0;
   }
   i = j + 1;
 

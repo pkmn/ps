@@ -8,10 +8,10 @@ function imported(s: string) {
 
 function exported(s: string) {
   return s.split('\n')
-             .map((x) => x.trim())
-             .filter(x => x)
-             .map(x => x + '  ')
-             .join('\n') +
+    .map((x) => x.trim())
+    .filter(x => x)
+    .map(x => x + '  ')
+    .join('\n') +
       '\n\n';
 }
 
@@ -29,7 +29,7 @@ describe('Sets', () => {
         - Seismic Toss`;
 
       expect(Sets.toString(Sets.fromString(imported(blissey))!))
-          .toEqual(exported(blissey));
+        .toEqual(exported(blissey));
     });
 
     test('marowak (gen 2)', () => {
@@ -49,8 +49,8 @@ describe('Sets', () => {
         - Frustration
         - Swords Dance`);
 
-      expect(Sets.exportSet(Sets.importSet(marowakIn, GEN(2))!, GEN(2)))
-          .toEqual(marowakOut);
+      expect(Sets.exportSet(Sets.importSet(marowakIn, GEN[2])!, GEN[2]))
+        .toEqual(marowakOut);
     });
 
     test('magnezone', () => {
@@ -83,7 +83,7 @@ describe('Sets', () => {
         - Volt Switch`);
 
       expect(Sets.exportSet(Sets.importSet(magnezoneIn)!))
-          .toEqual(magnezoneOut);
+        .toEqual(magnezoneOut);
     });
 
     test('tauros (rby)', () => {
@@ -95,7 +95,7 @@ describe('Sets', () => {
         - Hyper Beam`;
 
       expect(Sets.exportSet(Sets.importSet(imported(tauros))!))
-          .toEqual(exported(tauros));
+        .toEqual(exported(tauros));
     });
 
     test('fake', () => {
@@ -108,7 +108,7 @@ describe('Sets', () => {
         - Hidden Power [Fake]`;
 
       expect(Sets.exportSet(Sets.importSet(imported(fake))!))
-          .toEqual(exported(fake));
+        .toEqual(exported(fake));
     });
 
     test('nothing', () => {
@@ -130,7 +130,7 @@ describe('Sets', () => {
         - Recover`;
 
       const u = Sets.unpack(Sets.pack(Sets.importSet(imported(malakazam))!))!;
-      expect(Sets.exportSet(u)).toEqual(exported(malakazam));
+      expect(Sets.exportSet(u, GEN[7])).toEqual(exported(malakazam));
     });
 
     test('tangrowth (packed in)', () => {
@@ -147,9 +147,9 @@ describe('Sets', () => {
         - Power Whip
         - Earthquake`);
 
-      const u = Sets.unpack(tangrowthIn)!;
-      expect(Sets.unpack(Sets.pack(u))!).toEqual(u);
-      expect(Sets.exportSet(u)).toEqual(tangrowthOut);
+      const u = Sets.unpack(tangrowthIn, GEN[7])!;
+      expect(Sets.unpack(Sets.pack(u), GEN[7])!).toEqual({...u, ability: 'regenerator'});
+      expect(Sets.exportSet(u, GEN[7])).toEqual(tangrowthOut);
     });
 
     test('magnezone', () => {
@@ -182,8 +182,8 @@ describe('Sets', () => {
         - Volt Switch`);
 
       const u =
-          _unpack((Sets.pack(Sets.importSet(magnezoneIn, GEN(7))!)) + ']')!.set!;
-      expect(Sets.exportSet(u, GEN(7))).toEqual(magnezoneOut);
+          _unpack((Sets.pack(Sets.importSet(magnezoneIn, GEN[7])!)) + ']')!.set!;
+      expect(Sets.exportSet(u, GEN[7])).toEqual(magnezoneOut);
     });
 
     test('tauros', () => {
@@ -195,15 +195,13 @@ describe('Sets', () => {
         - Hyper Beam`);
       const taurosOut = exported(`
         Tauros
-        Ability: Intimidate
-        EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
         - Blizzard
         - Body Slam
         - Earthquake
         - Hyper Beam`);
 
-      const u = Sets.unpack(Sets.pack(Sets.importSet(taurosIn, GEN(1))!))!;
-      expect(Sets.exportSet(u)).toEqual(taurosOut);
+      const u = Sets.unpack(Sets.pack(Sets.importSet(taurosIn, GEN[1])!))!;
+      expect(Sets.exportSet(u, GEN[1])).toEqual(taurosOut);
     });
 
     test('blissey (after unpack)', () => {
@@ -218,7 +216,7 @@ describe('Sets', () => {
         - Seismic Toss`);
       const blisseyOut = exported(`
         Blissey @ leftovers
-        Ability: Natural Cure
+        Ability: naturalcure
         EVs: 148 HP / 252 Def / 108 SpD
         Bold Nature
         - wish
@@ -226,7 +224,7 @@ describe('Sets', () => {
         - protect
         - seismictoss`);
 
-      const u = Sets.unpack(Sets.pack(_import(blisseyIn.split('\n'))!.set!))!;
+      const u = Sets.unpack(Sets.pack(_import(blisseyIn.split('\n'))!.set))!;
       expect(Sets.exportSet(u)).toEqual(blisseyOut);
     });
 
@@ -259,7 +257,7 @@ describe('Sets', () => {
       expect(Sets.unpack(p)).not.toBeDefined();
       p += '|assaultvest';
       expect(Sets.unpack(p)).not.toBeDefined();
-      p += '|H';
+      p += '|regenerator';
       expect(Sets.unpack(p)).not.toBeDefined();
       p += '|gigadrain,knockoff,powerwhip,earthquake';
       expect(Sets.unpack(p)).not.toBeDefined();
@@ -290,15 +288,15 @@ describe('Sets', () => {
       suicune = {
         name: 'Suicune',
         ivs: {hp: undefined} as unknown as StatsTable,
-        moves: ['Hidden Power Bug']
-      }  as PokemonSet;;
+        moves: ['Hidden Power Bug'],
+      } as PokemonSet;
       expect(Sets.exportSet(suicune))
-          .toEqual(exported('Suicune\n- Hidden Power [Bug]'));
+        .toEqual(exported('Suicune\n- Hidden Power [Bug]'));
 
       suicune = {
         name: 'Suicune',
-        moves: ['Hidden Power [Bug]', 'hiddenpowerdark']
-      }  as PokemonSet;
+        moves: ['Hidden Power [Bug]', 'hiddenpowerdark'],
+      } as PokemonSet;
       expect(Sets.exportSet(suicune)).toEqual(exported(`Suicune
         - Hidden Power [Bug]
         - Hidden Power [Dark]`));
