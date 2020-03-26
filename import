@@ -40,8 +40,10 @@ const exec = async (cmd, cwd = __dirname) => {
   });
 };
 
-const execOrDie = async (cmd, cwd = __dirname, ignoreStderr = false) => {
-  console.log(`\x1b[90m${cwd}:\x1b[0m ${cmd}`);
+const IGNORE_STDERR = true;
+const execOrDie = async (cmd, cwd = __dirname, ignoreStderr = !IGNORE_STDERR) => {
+  const dir = path.relative(__dirname, cwd);
+  console.log(dir ? `${cmd} \x1b[90m(${path.relative(__dirname, cwd)})\x1b[0m` : cmd);
   const [error, stdout, stderr ]= await exec(cmd, cwd);
   if (error || (!ignoreStderr && stderr)) throw new Error(`exec error ${error}: ${stderr}`);
   return stdout;
@@ -83,6 +85,7 @@ const replace = async (file, replacements) => {
 const ps = path.resolve(__dirname, 'vendor/pokemon-showdown');
 const psc = path.resolve(__dirname, 'vendor/pokemon-showdown-client');
 const sim = path.resolve(__dirname, 'sim');
+const data = path.resolve(__dirname, 'data');
 
 // fucking hell zarle, friends don't let friends use globals :(
 const IMPORTS = {
@@ -114,6 +117,19 @@ const IMPORTS = {
     'EventInfo', 'PokemonSet', 'Ability', 'Item', 'ID', 'ModdedDex',
   ],
   'sim/tools/random-player-ai.ts': ['AnyObject'],
+};
+
+const imports = (types, where) => {
+	let s = '';
+	for (const t in types.sort()) {
+		// Readable generated code is more fun! :)
+		if (types[t].length > 5) {
+			s += `import {\n \t${types[t].join(',\n\t')}\n} from '${where}';\n`;
+		} else {
+			s += `import {${types[t].join(', ')}} from '${where}';\n`;
+		}
+	}
+	return s + '\n';
 };
 
 // This is actually in sim/dex.ts and really should be in sim/global-types.ts
@@ -162,6 +178,7 @@ const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
 
 // Files which are relevant for review in smogon/pokemon-showdown-client
 const INTERESTING = new Set([
+  'data/text.js',
   'js/storage.js',
   'src/battle-choices.ts',
   'src/battle-dex-data.ts',
@@ -171,6 +188,7 @@ const INTERESTING = new Set([
   'src/battle.ts',
 ]);
 
+
 // Pretty much all changes within sim/ and data/ are interesting to review, whether copied or not.
 // This mostly exists to help detect when *new* files are added which may need to be included
 const interesting = f => {
@@ -178,6 +196,48 @@ const interesting = f => {
   if (f.startsWith('data') && !f.endsWith('random-teams.js')) return true;
   return COPIED.has(f);
 }
+
+const DATA = new Set([
+  ['data/abilities.js', 'BattleAbilities', 'abilities'],
+  ['data/aliases.js', 'BattleAliases', 'aliases'],
+  ['data/items.js', 'BattleItems', 'items'],
+  ['data/moves.js', 'BattleMovedex', 'moves'],
+  ['data/pokedex.js', 'BattlePokedex', 'species'],
+  ['data/typechart.js', 'BattleTypeChart', 'types'],
+]);
+
+const decomposeTeambuilderTables = () => {
+  const BattleTeambuilderTable =
+    require(path.resolve(/*FIXME psc*/ '../pokemon-showdown-client', 'data/teambuilder-tables.js')).BattleTeambuilderTable;
+
+  const table = {};
+  // Pull out just the useful bits from BattleTeambuilderTable to be written as 'formats-data.json'
+  // and the 'lite' learnsets which can be written as 'learnsets.json' to allow them to be loaded
+  // only on demand.
+  const learnsets = {};
+  const SKIP = new Set(['tiers', 'items', 'formatSlices']);
+  for (const m in BattleTeambuilderTable) {
+    if (SKIP.has(m)) continue;
+    if (m === 'learnsets') {
+      learnsets[m] = BattleTeambuilderTable[m];
+      continue;
+    }
+    const mod = {};
+    const ls = {};
+    for (const f in BattleTeambuilderTable[m]) {
+      if (SKIP.has(f)) continue;
+      if (f === 'learnsets') {
+        ls[f] = BattleTeambuilderTable[m][f];
+        continue;
+      }
+      mod[f] = BattleTeambuilderTable[m][f];
+    }
+    if (Object.keys(mod).length) table[m] = mod;
+    if (Object.keys(ls).length) learnsets[m] = ls;
+  }
+
+  return {table, learnsets};
+};
 
 const HEAD = async where => (await execOrDie('git rev-parse HEAD', where)).slice(0, 8);
 // Figure out what has changed in PS so that we can later filter out just the interesting changes
@@ -189,10 +249,10 @@ const changes = async (where, last, now, repo) => ({
 
 (async () => {
   const last = {ps: await HEAD(ps), psc: await HEAD(psc)};
-  try {
+  try {/*
     // `git -C vendor/pokemon-showdown pull origin master` etc works for individual submodules, but
     // this command will update both repositories at once
-    await execOrDie('git submodule update --remote --rebase', __dirname, true);
+    await execOrDie('git submodule update --remote --rebase', __dirname, IGNORE_STDERR);
     const now = {ps: await HEAD(ps), psc: await HEAD(psc)};
 
     const changed = {
@@ -225,8 +285,7 @@ const changes = async (where, last, now, repo) => ({
         const prefix = file.startsWith('sim/tools/') ? '..' : '.';
         const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
         fs.writeFileSync(path.resolve(sim, file),
-          `import {\n\t${IMPORTS[file].sort().join(',\n\t')},\n} from ` +
-          `'${prefix}/exported-global-types';\n${original}`);
+          `${imports(IMPORTS[file], prefix + '/exported-global-types')}${original}`);
       } else {
         fs.copyFileSync(path.resolve(ps, file), path.resolve(sim, file));
       }
@@ -251,10 +310,24 @@ const changes = async (where, last, now, repo) => ({
       {regex: new RegExp(`(require\\\(.*?)(.sim-dist)(.*?\\\))`, 'g'), replace: `$1build/sim$3`},
     ]);
 
+    // Build the client's data files
+    await execOrDie('npm install', psc, IGNORE_STDERR);
+    await execOrDie('node build indexes', psc); */
+
+    for (const [js, name, json] of DATA) {
+      const type = require(path.resolve(/*FIXME psc*/ '../pokemon-showdown-client', js))[name];
+      fs.writeFileSync(path.resolve(data, `src/data/${json}.json`), JSON.stringify(type));
+    }
+
+    const {table, learnsets} = decomposeTeambuilderTables();
+    fs.writeFileSync(path.resolve(data, `src/data/formats-data.json`), JSON.stringify(table));
+    fs.writeFileSync(path.resolve(data, `src/data/learnsets.json`), JSON.stringify(learnsets));
+
+/*
     const messages =
       `-m "Import smogon/pokemon-showdown@${now.ps}" ` +
       `-m "smogon/pokemon-showdown-client@${now.psc}"`;
-    console.log(`\ngit add -A && git commit ${messages}`);
+    console.log(`\ngit add -A && git commit ${messages}`); */
   } catch (err) {
     await execOrDie(`git reset --hard ${last.ps}`, ps);
     await execOrDie(`git reset --hard ${last.psc}`, psc);
@@ -265,3 +338,4 @@ const changes = async (where, last, now, repo) => ({
   console.log(err);
   process.exit(2);
 });
+
