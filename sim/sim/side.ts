@@ -1,11 +1,11 @@
 import {
-	AnyObject,
-	Effect,
 	ActiveMove,
-	PureEffect,
-	PokemonSet,
+	AnyObject,
 	Battle,
+	Effect,
 	Move,
+	PokemonSet,
+	PureEffect,
 	SideID,
 } from './exported-global-types';
 /**
@@ -596,7 +596,7 @@ export class Side {
 			// maybe it's a name/species id!
 			slot = -1;
 			for (const [i, mon] of this.pokemon.entries()) {
-				if (slotText!.toLowerCase() === mon.name.toLowerCase() || toID(slotText) === mon.speciesid) {
+				if (slotText!.toLowerCase() === mon.name.toLowerCase() || toID(slotText) === mon.id) {
 					slot = i;
 					break;
 				}

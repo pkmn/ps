@@ -96,13 +96,13 @@ const IMPORTS = {
   'sim/dex-data.ts': [
     'ID', 'EffectData', 'EffectType', 'Nonstandard', 'AnyObject', 'GameTimerSettings',
     'FormatsData', 'GameType', 'Battle', 'PureEffectData', 'ItemData', 'FlingData', 'AbilityData',
-    'MoveSource', 'EventInfo', 'TemplateData', 'TemplateFormatsData', 'TemplateAbility',
+    'MoveSource', 'EventInfo', 'SpeciesData', 'SpeciesFormatsData', 'SpeciesAbility',
     'GenderName', 'StatsTable', 'RandomTeamsTypes', 'MoveData', 'SecondaryEffect', 'MoveTarget',
     'TypeData', 'SparseStatsTable',
   ],
   'sim/field.ts': ['Effect', 'PureEffect', 'Pokemon', 'Battle', 'Side', 'AnyObject', 'ID'],
   'sim/pokemon.ts': [
-    'ActiveMove', 'Ability', 'PureEffect', 'Item', 'Template', 'SparseBoostsTable', 'Side',
+    'ActiveMove', 'Ability', 'PureEffect', 'Item', 'Species', 'SparseBoostsTable', 'Side',
     'AnyObject', 'DynamaxOptions', 'Move', 'StatNameExceptHP', 'PokemonModData', 'Effect',
     'StatsExceptHPTable', 'ID', 'BoostsTable', 'StatsTable', 'GenderName', 'PokemonSet', 'Battle',
   ],
@@ -110,7 +110,7 @@ const IMPORTS = {
     'AnyObject', 'Effect', 'ActiveMove', 'PureEffect', 'PokemonSet', 'Battle', 'Move', 'SideID',
   ],
   'sim/team-validator.ts': [
-    'Format', 'StatsTable', 'SparseStatsTable', 'Template', 'AnyObject', 'Move',
+    'Format', 'StatsTable', 'SparseStatsTable', 'Species', 'AnyObject', 'Move',
     'EventInfo', 'PokemonSet', 'Ability', 'Item', 'ID', 'ModdedDex',
   ],
   'sim/tools/random-player-ai.ts': ['AnyObject'],
@@ -225,7 +225,7 @@ const changes = async (where, last, now, repo) => ({
         const prefix = file.startsWith('sim/tools/') ? '..' : '.';
         const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
         fs.writeFileSync(path.resolve(sim, file),
-          `import {\n\t${IMPORTS[file].join(',\n\t')},\n} from ` +
+          `import {\n\t${IMPORTS[file].sort().join(',\n\t')},\n} from ` +
           `'${prefix}/exported-global-types';\n${original}`);
       } else {
         fs.copyFileSync(path.resolve(ps, file), path.resolve(sim, file));

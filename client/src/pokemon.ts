@@ -400,7 +400,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   getWeightKg(serverPokemon?: ServerPokemon) {
     const autotomizeFactor = this.volatiles.autotomize?.[1] * 100 || 0;
-    return Math.max(this.getTemplate(serverPokemon).weightkg - autotomizeFactor, 0.1);
+    return Math.max(this.getSpecies(serverPokemon).weightkg - autotomizeFactor, 0.1);
   }
 
   clearVolatile() {
@@ -467,7 +467,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     if (this.volatiles.typechange) {
       types = this.volatiles.typechange[1].split('/');
     } else {
-      types = this.getTemplate(serverPokemon).types as TypeName[];
+      types = this.getSpecies(serverPokemon).types as TypeName[];
     }
     if (this.volatiles.roost && types.includes('Flying')) {
       types = types.filter(typeName => typeName !== 'Flying');
@@ -508,17 +508,17 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     return addedType ? types.concat(addedType) : types;
   }
 
-  getSpecies(serverPokemon?: ServerPokemon): string {
+  getForme(serverPokemon?: ServerPokemon): string {
     return this.volatiles.formechange ? this.volatiles.formechange[1]
       : (serverPokemon ? serverPokemon.species : this.species);
   }
 
-  getTemplate(serverPokemon?: ServerPokemon) {
-    return this.side.battle.dex.getTemplate(this.getSpecies(serverPokemon));
+  getSpecies(serverPokemon?: ServerPokemon) {
+    return this.side.battle.dex.getSpecies(this.getForme(serverPokemon));
   }
 
-  getBaseTemplate() {
-    return this.side.battle.dex.getTemplate(this.species);
+  getBaseSpecies() {
+    return this.side.battle.dex.getSpecies(this.species);
   }
 
   // Returns [min, max] damage dealt as a proportion of total HP from 0 to 1

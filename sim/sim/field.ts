@@ -1,11 +1,11 @@
 import {
-	Effect,
-	PureEffect,
-	Pokemon,
-	Battle,
-	Side,
 	AnyObject,
+	Battle,
+	Effect,
 	ID,
+	Pokemon,
+	PureEffect,
+	Side,
 } from './exported-global-types';
 /**
  * Simulator Field

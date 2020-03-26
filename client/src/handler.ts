@@ -559,10 +559,10 @@ export class Handler implements Protocol.Handler {
       if (level.charAt(0) === 'L') poke.level = parseInt(level.substr(1));
       newSpecies = args[2].substr(0, commaIndex);
     }
-    const template = this.battle.dex.getTemplate(newSpecies);
+    const species = this.battle.dex.getSpecies(newSpecies);
 
     poke.species = newSpecies;
-    poke.ability = poke.baseAbility = (template.abilities ? toID(template.abilities['0']) : '');
+    poke.ability = poke.baseAbility = (species.abilities ? toID(species.abilities['0']) : '');
 
     poke.details = args[2];
     poke.searchid = args[1].substr(0, 2) + args[1].substr(3) + '|' + args[2] as PokemonSearchID;
@@ -598,7 +598,7 @@ export class Handler implements Protocol.Handler {
 
     if (!kwArgs.silent) poke.activateAbility(this.battle.dex.getEffect(kwArgs.from));
     // the formechange volatile reminds us to revert the sprite change on switch-out
-    poke.addVolatile('formechange' as ID, this.battle.dex.getTemplate(args[2]).species);
+    poke.addVolatile('formechange' as ID, this.battle.dex.getSpecies(args[2]).name);
   }
 
   '|-mega|'(args: Args['|-mega|']) {

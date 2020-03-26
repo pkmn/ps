@@ -173,7 +173,7 @@ class Species implements I.Species {
   }
 
   get(id: I.ID) {
-    const species = this.dex.getTemplate(id);
+    const species = this.dex.getSpecies(id);
     return exists(species) ? new Specie(species) : undefined;
   }
 
@@ -207,7 +207,7 @@ class Specie implements I.Specie {
   readonly isAlternateForme?: boolean;
   readonly ab?: I.AbilityName;
 
-  constructor(species: sim.Template) {
+  constructor(species: sim.Species) {
     this.kind = 'Species';
     this.id = species.id as I.ID;
     this.name = species.name as I.SpeciesName;
@@ -309,7 +309,7 @@ class Nature implements I.Nature {
   }
 }
 
-function exists(val?: sim.Ability | sim.Item | sim.Move | sim.Template | sim.Nature) {
+function exists(val?: sim.Ability | sim.Item | sim.Move | sim.Species | sim.Nature) {
   if (!val || (typeof val.exists === 'boolean' && !val.exists)) return false;
   if ('tier' in val && (val.tier === 'Unreleased' || val.tier === 'Illegal')) return false;
   return !(val.isNonstandard && val.isNonstandard !== 'CAP');
