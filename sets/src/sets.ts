@@ -338,6 +338,7 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   if (ABILITY.includes(ability)) {
     if (data) {
       const species = data.getSpecies(s.species);
+      // Workaround for bug introduced by smogon/pokemon-showdown/817236b0
       if (species?.baseSpecies === 'Zygarde' && ability === 'H') {
         ability = 'Power Construct';
       } else if (species?.abilities) {
