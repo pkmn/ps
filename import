@@ -143,9 +143,11 @@ export interface Nature {
 
 // All the files in our sim/ directory, excluding build/ & node_modules/
 const FILES = new Set(tree(sim).map(m => m.slice(sim.length + 1)));
-// Files which need special attention if changed
+// Files which need special attention if changed (usually manual intervention)
 const FRAGILE = new Set([
+  'sim/dex-data.ts',
   'sim/dex.ts',
+  'sim/global-types.ts',
   'sim/global-variables.d.ts',
 ])
 // Files which we want to prevent being copied over from PS, either because of modifications or
@@ -187,7 +189,6 @@ const INTERESTING = new Set([
   'src/battle-text-parser.ts',
   'src/battle.ts',
 ]);
-
 
 // Pretty much all changes within sim/ and data/ are interesting to review, whether copied or not.
 // This mostly exists to help detect when *new* files are added which may need to be included
