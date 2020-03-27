@@ -1,22 +1,23 @@
 import {
-	ActiveMove,
-	AnyObject,
-	DynamaxOptions,
-	Effect,
+ 	Effect,
 	Format,
-	GameType,
 	ID,
-	ModdedDex,
-	Move,
 	PlayerOptions,
-	PokemonSet,
-	SecondaryEffect,
-	SelfEffect,
+	AnyObject,
+	ActiveMove,
 	SideID,
 	SparseBoostsTable,
 	SpreadMoveDamage,
+	Move,
+	PokemonSet,
+	DynamaxOptions,
 	SpreadMoveTargets,
+	SelfEffect,
+	SecondaryEffect,
+	GameType,
+	ModdedDex
 } from './exported-global-types';
+
 /**
  * Simulator Battle
  * Pokemon Showdown - http://pokemonshowdown.com/

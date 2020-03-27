@@ -1,17 +1,18 @@
 import {
-	Ability,
-	AnyObject,
-	EventInfo,
-	Format,
-	ID,
-	Item,
-	ModdedDex,
-	Move,
-	PokemonSet,
+ 	Format,
+	StatsTable,
 	SparseStatsTable,
 	Species,
-	StatsTable,
+	AnyObject,
+	Move,
+	EventInfo,
+	PokemonSet,
+	Ability,
+	Item,
+	ID,
+	ModdedDex
 } from './exported-global-types';
+
 /**
  * Team Validator
  * Pokemon Showdown - http://pokemonshowdown.com/
@@ -1658,7 +1659,7 @@ export class TeamValidator {
 		if (setSources.babyOnly && setSources.size()) {
 			const baby = dex.getSpecies(setSources.babyOnly);
 			setSources.sources = setSources.sources.filter(source => {
-				if (baby.gen > parseInt(source.charAt(0))) return false;
+				if (baby.gen > parseInt(source.charAt(0)) && !source.startsWith('1ST')) return false;
 				if (baby.gen > 2 && source === '7V') return false;
 				return true;
 			});

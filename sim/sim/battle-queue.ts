@@ -1,10 +1,5 @@
-import {
-	AnyObject,
-	Effect,
-	ID,
-	Move,
-	Pokemon,
-} from './exported-global-types';
+import {Pokemon, ID, Move, Effect, AnyObject} from './exported-global-types';
+
 /**
  * Simulator Battle Action Queue
  * Pokemon Showdown - http://pokemonshowdown.com/

@@ -1,25 +1,26 @@
 import {
+ 	ActiveMove,
 	Ability,
-	ActiveMove,
-	AnyObject,
-	Battle,
-	BoostsTable,
-	DynamaxOptions,
-	Effect,
-	GenderName,
-	ID,
-	Item,
-	Move,
-	PokemonModData,
-	PokemonSet,
 	PureEffect,
-	Side,
-	SparseBoostsTable,
+	Item,
 	Species,
+	SparseBoostsTable,
+	Side,
+	AnyObject,
+	DynamaxOptions,
+	Move,
 	StatNameExceptHP,
+	PokemonModData,
+	Effect,
 	StatsExceptHPTable,
+	ID,
+	BoostsTable,
 	StatsTable,
+	GenderName,
+	PokemonSet,
+	Battle
 } from './exported-global-types';
+
 /**
  * Simulator Pokemon
  * Pokemon Showdown - http://pokemonshowdown.com/

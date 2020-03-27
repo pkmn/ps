@@ -34,7 +34,7 @@ const path = require('path');
 
 const exec = async (cmd, cwd = __dirname) => {
   return new Promise(resolve => {
-    child_process.exec(cmd, {cwd}, (error, stdout, stderr) => {
+    child_process.exec(cmd, { cwd }, (error, stdout, stderr) => {
       resolve([error ? error.code : 0, stdout, stderr]);
     });
   });
@@ -44,7 +44,7 @@ const IGNORE_STDERR = true;
 const execOrDie = async (cmd, cwd = __dirname, ignoreStderr = !IGNORE_STDERR) => {
   const dir = path.relative(__dirname, cwd);
   console.log(dir ? `${cmd} \x1b[90m(${path.relative(__dirname, cwd)})\x1b[0m` : cmd);
-  const [error, stdout, stderr ]= await exec(cmd, cwd);
+  const [error, stdout, stderr] = await exec(cmd, cwd);
   if (error || (!ignoreStderr && stderr)) throw new Error(`exec error ${error}: ${stderr}`);
   return stdout;
 };
@@ -60,9 +60,9 @@ const tree = root => {
 };
 
 const replace = async (file, replacements) => {
-	const stats = await fs.promises.lstat(file);
-	if (stats.isSymbolicLink()) return;
-	if (stats.isFile()) {
+  const stats = await fs.promises.lstat(file);
+  if (stats.isSymbolicLink()) return;
+  if (stats.isFile()) {
     if (!file.endsWith('.js')) return;
     let text = await fs.promises.readFile(file, "utf-8");
     let anyMatch = false;
@@ -120,16 +120,8 @@ const IMPORTS = {
 };
 
 const imports = (types, where) => {
-	let s = '';
-	for (const t in types.sort()) {
-		// Readable generated code is more fun! :)
-		if (types[t].length > 5) {
-			s += `import {\n \t${types[t].join(',\n\t')}\n} from '${where}';\n`;
-		} else {
-			s += `import {${types[t].join(', ')}} from '${where}';\n`;
-		}
-	}
-	return s + '\n';
+  if (types.length <= 5) return`import {${types.join(', ')}} from '${where}';\n\n`;
+  return `import {\n \t${types.join(',\n\t')}\n} from '${where}';\n\n`;
 };
 
 // This is actually in sim/dex.ts and really should be in sim/global-types.ts
@@ -209,7 +201,7 @@ const DATA = new Set([
 
 const decomposeTeambuilderTables = () => {
   const BattleTeambuilderTable =
-    require(path.resolve(/*FIXME psc*/ '../pokemon-showdown-client', 'data/teambuilder-tables.js')).BattleTeambuilderTable;
+    require(path.resolve(psc, 'data/teambuilder-tables.js')).BattleTeambuilderTable;
 
   const table = {};
   // Pull out just the useful bits from BattleTeambuilderTable to be written as 'formats-data.json'
@@ -237,24 +229,24 @@ const decomposeTeambuilderTables = () => {
     if (Object.keys(ls).length) learnsets[m] = ls;
   }
 
-  return {table, learnsets};
+  return { table, learnsets };
 };
 
 const HEAD = async where => (await execOrDie('git rev-parse HEAD', where)).slice(0, 8);
 // Figure out what has changed in PS so that we can later filter out just the interesting changes
 // A GitHub URL for the diff is added for convenience in the event review is required
 const changes = async (where, last, now, repo) => ({
-    files: (await execOrDie(`git diff --name-only ${last}..${now}`, where)).trim().split('\n'),
-    url: `https://github.com/smogon/${repo}/compare/${last}..${now}`,
-  });
+  files: (await execOrDie(`git diff --name-only ${last}..${now}`, where)).trim().split('\n'),
+  url: `https://github.com/smogon/${repo}/compare/${last}..${now}`,
+});
 
 (async () => {
-  const last = {ps: await HEAD(ps), psc: await HEAD(psc)};
+  const last = { ps: await HEAD(ps), psc: await HEAD(psc) };
   try {
     // `git -C vendor/pokemon-showdown pull origin master` etc works for individual submodules, but
     // this command will update both repositories at once
     await execOrDie('git submodule update --remote --rebase', __dirname, IGNORE_STDERR);
-    const now = {ps: await HEAD(ps), psc: await HEAD(psc)};
+    const now = { ps: await HEAD(ps), psc: await HEAD(psc) };
 
     const changed = {
       ps: await changes(ps, last.ps, now.ps, 'pokemon-showdown'),
@@ -266,9 +258,9 @@ const changes = async (where, last, now, repo) => ({
       if (interesting(change)) {
         // Even though we copy over `sim/global-types.ts` untouched, any changes to it will have a
         // large effect on whether we're able to build an acceptable package
-        const color = (FRAGILE.has(change) || change ==='sim/global-types.ts')
+        const color = (FRAGILE.has(change) || change === 'sim/global-types.ts')
           ? 91 // red -> yellow -> lightblue
-          : OVERRIDDEN.has(change)? 93 : 96;
+          : OVERRIDDEN.has(change) ? 93 : 96;
         console.log(`\x1b[${color}mCHANGED\x1b[0m ${change}`);
       }
     }
@@ -308,7 +300,7 @@ const changes = async (where, last, now, repo) => ({
 
     // The test files require paths are made with PS's build layout in mind - correc that here
     await replace(path.join(sim, 'test'), [
-      {regex: new RegExp(`(require\\\(.*?)(.sim-dist)(.*?\\\))`, 'g'), replace: `$1build/sim$3`},
+      { regex: new RegExp(`(require\\\(.*?)(.sim-dist)(.*?\\\))`, 'g'), replace: `$1build/sim$3` },
     ]);
 
     // Build the client's data files
@@ -320,7 +312,7 @@ const changes = async (where, last, now, repo) => ({
       fs.writeFileSync(path.resolve(data, `src/data/${json}.json`), JSON.stringify(type));
     }
 
-    const {table, learnsets} = decomposeTeambuilderTables();
+    const { table, learnsets } = decomposeTeambuilderTables();
     fs.writeFileSync(path.resolve(data, `src/data/formats-data.json`), JSON.stringify(table));
     fs.writeFileSync(path.resolve(data, `src/data/learnsets.json`), JSON.stringify(learnsets));
 

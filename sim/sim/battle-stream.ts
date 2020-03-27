@@ -1,6 +1,5 @@
-import {
-	AnyObject,
-} from './exported-global-types';
+import {AnyObject} from './exported-global-types';
+
 /**
  * Battle Stream
  * Pokemon Showdown - http://pokemonshowdown.com/
