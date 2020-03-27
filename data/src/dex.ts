@@ -279,11 +279,13 @@ export interface Overrides {
 }
 export type PastGen = 'gen1' | 'gen2' | 'gen3' | 'gen4' | 'gen5' | 'gen6' | 'gen7';
 
-export type LearnsetData = {
-  learnsets: { [id: string]: { [move: string]: string } };
+export type LearnsetData = { [move: string]: string };
+export type Learnsets = {
+  learnsets: { [id: string]: LearnsetData };
 } & {
-  [mod: string]: { learnsets: { [id: string]: { [move: string]: string } } };
+  [mod: string]: { learnsets: { [id: string]: LearnsetData } };
 };
+
 
 export type FormatsData =
   Tiering & { [mod: string]: Partial<Tiering> } & { [gen in PastGen]: Overrides };
@@ -840,7 +842,7 @@ const Data = {
   Natures,
   Types: TypesJSON as { [type in Exclude<TypeName, '???'>]: TypeData },
   FormatsData: FormatsDataJSON as FormatsData,
-  Learnsets: null! as LearnsetData,
+  Learnsets: null! as Learnsets,
 }
 
 const BASE_MOD = 'gen8' as ID;
@@ -859,6 +861,7 @@ export class ModdedDex {
     Moves: Object.create(null) as { [id: string]: Move },
     Species: Object.create(null) as { [id: string]: Species },
     Types: Object.create(null) as { [id: string]: Type },
+    Learnsets: Object.create(null) as { [id: string]: LearnsetData },
   };
 
   constructor(modid = BASE_MOD) {
@@ -1059,25 +1062,46 @@ export class ModdedDex {
   }
 
   /* TODO
-  var LEARNSETS: Promise<Learnsets> | null = null;
-  (Dex as any).getLearnsets = () => {
-    if (LEARNSETS) return LEARNSETS;
-    if (typeof window === 'undefined') {
-      LEARNSETS = Promise.resolve(require('./data/learnsets.json') as Learnsets);
-    } else {
-      LEARNSETS = import('./data/learnsets.json') as unknown as Promise<Learnsets>;
-    }
-    return LEARNSETS;
+  nextLearnsetid(learnsetid: ID, speciesid?: ID) {
+		if (!speciesid) {
+			if (learnsetid in BattleTeambuilderTable.learnsets) return learnsetid;
+			let baseLearnsetid = BattlePokedex[learnsetid] && toID(BattlePokedex[learnsetid].baseSpecies);
+			if (!baseLearnsetid) {
+				baseLearnsetid = toID(BattleAliases[learnsetid]);
+			}
+			if (baseLearnsetid in BattleTeambuilderTable.learnsets) return baseLearnsetid;
+			return '' as ID;
+		}
+
+		if (learnsetid === 'lycanrocdusk' || (speciesid === 'rockruff' && learnsetid === 'rockruff')) {
+			return 'rockruffdusk' as ID;
+		}
+		let species = BattlePokedex[learnsetid];
+		if (!species) return '' as ID;
+		if (species.prevo) return species.prevo as ID;
+		let baseSpecies = species.baseSpecies;
+		if (baseSpecies !== species.name && (baseSpecies === 'Rotom' || baseSpecies === 'Pumpkaboo')) {
+			return toID(species.baseSpecies);
+		}
+		return '' as ID;
+	}
   };*/
 
-  async getLearnsetData(id: ID): LearnsetData {
-    let learnsetData = this.cache.Learnsets.get(id);
+  async getLearnsetData(id: ID): Promise<LearnsetData> {
+    let learnsetData = this.cache.Learnsets[id];
     if (learnsetData) return learnsetData;
-    if (!this.data.Learnsets.hasOwnProperty(id)) {
-      return new Learnset({ exists: false });
+
+    if (!this.data.Learnsets) {
+      if (typeof window === 'undefined') {
+        this.data.Learnsets = require('./data/learnsets.json');
+      } else {
+        this.data.Learnsets = (await import('./data/learnsets.json')) as unknown as Learnsets;
+      }
     }
-    learnsetData = new Learnset(this.data.Learnsets[id]);
-    this.learnsetCache.set(id, learnsetData);
+
+
+    if (!this.data.Learnsets[id]) return new Learnset({ exists: false });
+     this.cache.Learnsets[id] = learnsetData;
     return learnsetData;
   }
 
