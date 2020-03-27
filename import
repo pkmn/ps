@@ -250,7 +250,7 @@ const changes = async (where, last, now, repo) => ({
 
 (async () => {
   const last = {ps: await HEAD(ps), psc: await HEAD(psc)};
-  try {/*
+  try {
     // `git -C vendor/pokemon-showdown pull origin master` etc works for individual submodules, but
     // this command will update both repositories at once
     await execOrDie('git submodule update --remote --rebase', __dirname, IGNORE_STDERR);
@@ -313,10 +313,10 @@ const changes = async (where, last, now, repo) => ({
 
     // Build the client's data files
     await execOrDie('npm install', psc, IGNORE_STDERR);
-    await execOrDie('node build indexes', psc); */
+    await execOrDie('node build indexes', psc);
 
     for (const [js, name, json] of DATA) {
-      const type = require(path.resolve(/*FIXME psc*/ '../pokemon-showdown-client', js))[name];
+      const type = require(path.resolve(psc, js))[name];
       fs.writeFileSync(path.resolve(data, `src/data/${json}.json`), JSON.stringify(type));
     }
 
@@ -324,11 +324,10 @@ const changes = async (where, last, now, repo) => ({
     fs.writeFileSync(path.resolve(data, `src/data/formats-data.json`), JSON.stringify(table));
     fs.writeFileSync(path.resolve(data, `src/data/learnsets.json`), JSON.stringify(learnsets));
 
-/*
     const messages =
       `-m "Import smogon/pokemon-showdown@${now.ps}" ` +
       `-m "smogon/pokemon-showdown-client@${now.psc}"`;
-    console.log(`\ngit add -A && git commit ${messages}`); */
+    console.log(`\ngit add -A && git commit ${messages}`);
   } catch (err) {
     await execOrDie(`git reset --hard ${last.ps}`, ps);
     await execOrDie(`git reset --hard ${last.psc}`, psc);
