@@ -6,7 +6,7 @@
 //
 //    1. `./import-data download` to download the files
 //    2. manual inspection of the downloaded files so that you don't blindly execute remote code
-//    3. `./import-data generate` to produce `src/data.json`
+//    3. `./import-data generate` to produce `src/data/index.json`
 
 const fs = require('fs');
 const https = require('https');
@@ -814,4 +814,4 @@ const BattleAvatarNumbers = {
 
 data.avatars = BattleAvatarNumbers;
 
-fs.writeFileSync(path.resolve(__dirname, 'src/data.json'), JSON.stringify(data));
+fs.writeFileSync(path.resolve(__dirname, 'src/data/index.json'), JSON.stringify(data));
