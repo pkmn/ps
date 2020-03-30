@@ -1,11 +1,11 @@
 import {
- 	Effect,
+	Effect,
 	PureEffect,
 	Pokemon,
 	Battle,
 	Side,
 	AnyObject,
-	ID
+	ID,
 } from './exported-global-types';
 
 /**

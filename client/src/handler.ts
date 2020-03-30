@@ -552,16 +552,16 @@ export class Handler implements Protocol.Handler {
     poke.removeVolatile('typeadd' as ID);
     poke.removeVolatile('typechange' as ID);
 
-    let newSpecies: string = args[2];
-    const commaIndex = newSpecies.indexOf(',');
+    let newSpeciesForme: string = args[2];
+    const commaIndex = newSpeciesForme.indexOf(',');
     if (commaIndex !== -1) {
-      const level = newSpecies.substr(commaIndex + 1).trim();
+      const level = newSpeciesForme.substr(commaIndex + 1).trim();
       if (level.charAt(0) === 'L') poke.level = parseInt(level.substr(1));
-      newSpecies = args[2].substr(0, commaIndex);
+      newSpeciesForme = args[2].substr(0, commaIndex);
     }
-    const species = this.battle.dex.getSpecies(newSpecies);
+    const species = this.battle.dex.getSpecies(newSpeciesForme);
 
-    poke.species = newSpecies;
+    poke.speciesForme = newSpeciesForme;
     poke.ability = poke.baseAbility = (species.abilities ? toID(species.abilities['0']) : '');
 
     poke.details = args[2];
@@ -579,12 +579,14 @@ export class Handler implements Protocol.Handler {
     poke.boosts = {...tpoke.boosts};
     poke.copyTypesFrom(tpoke);
     poke.ability = tpoke.ability;
-    const species = (tpoke.volatiles.formechange ? tpoke.volatiles.formechange[1] : tpoke.species);
+    const speciesForme = tpoke.volatiles.formechange
+      ? tpoke.volatiles.formechange[1]
+      : tpoke.speciesForme;
     const pokemon = tpoke;
     const shiny = tpoke.shiny;
     const gender = tpoke.gender;
     poke.addVolatile('transform' as ID, pokemon, shiny, gender);
-    poke.addVolatile('formechange' as ID, species);
+    poke.addVolatile('formechange' as ID, speciesForme);
     for (const trackedMove of tpoke.moveTrack) {
       poke.rememberMove(trackedMove[0], 0);
     }

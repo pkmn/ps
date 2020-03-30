@@ -117,7 +117,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   details: PokemonDetails;
   name: string;
-  species: string;
+  speciesForme: string;
   level: number;
   shiny: boolean;
   gender: GenderName | '';
@@ -154,7 +154,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.side = side;
     this.slot = 0;
 
-    this.species = details.species;
+    this.speciesForme = details.speciesForme;
     this.details = details.details;
     this.name = details.name;
     this.level = details.level;
@@ -508,17 +508,17 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     return addedType ? types.concat(addedType) : types;
   }
 
-  getForme(serverPokemon?: ServerPokemon): string {
+  getSpeciesForme(serverPokemon?: ServerPokemon): string {
     return this.volatiles.formechange ? this.volatiles.formechange[1]
-      : (serverPokemon ? serverPokemon.species : this.species);
+      : (serverPokemon ? serverPokemon.speciesForme : this.speciesForme);
   }
 
   getSpecies(serverPokemon?: ServerPokemon) {
-    return this.side.battle.dex.getSpecies(this.getForme(serverPokemon));
+    return this.side.battle.dex.getSpecies(this.getSpeciesForme(serverPokemon));
   }
 
   getBaseSpecies() {
-    return this.side.battle.dex.getSpecies(this.species);
+    return this.side.battle.dex.getSpecies(this.speciesForme);
   }
 
   // Returns [min, max] damage dealt as a proportion of total HP from 0 to 1
@@ -596,7 +596,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.fainted = false;
     this.status = '';
     this.moveTrack = [];
-    this.name = this.name || this.species;
+    this.name = this.name || this.speciesForme;
   }
 
   destroy() {

@@ -40,7 +40,7 @@ export class Battle {
   // readonly inputLog: string[];
   // readonly messageLog: string[];
   // sentLogPos: number;
-  // sentEnd: boolean;
+  // sentEnd: boolean;©367
 
   // requestState: RequestState;
   // turn: number;
@@ -339,7 +339,7 @@ export class Battle {
     // pokemon not found, create a new pokemon object for it
     if (siden < 0) throw new Error("Invalid pokemonid passed to getPokemon");
 
-    let species = name;
+    let speciesForme = name;
     let gender: GenderName | '' = '';
     let level = 100;
     let shiny = false;
@@ -357,14 +357,14 @@ export class Battle {
         level = parseInt(splitDetails[1].substr(1)) || 100;
       }
       if (splitDetails[0]) {
-        species = splitDetails[0];
+        speciesForme = splitDetails[0];
       }
     }
     if (slot < 0) slot = 0;
     const pokemon = this.sides[siden].addPokemon({
       details,
       name,
-      species,
+      speciesForme,
       level,
       shiny,
       gender,

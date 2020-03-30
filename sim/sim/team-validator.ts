@@ -1,5 +1,5 @@
 import {
- 	Format,
+	Format,
 	StatsTable,
 	SparseStatsTable,
 	Species,
@@ -10,7 +10,7 @@ import {
 	Ability,
 	Item,
 	ID,
-	ModdedDex
+	ModdedDex,
 } from './exported-global-types';
 
 /**

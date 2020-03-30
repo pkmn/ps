@@ -121,7 +121,7 @@ const IMPORTS = {
 
 const imports = (types, where) => {
   if (types.length <= 5) return`import {${types.join(', ')}} from '${where}';\n\n`;
-  return `import {\n \t${types.join(',\n\t')}\n} from '${where}';\n\n`;
+  return `import {\n\t${types.join(',\n\t')},\n} from '${where}';\n\n`;
 };
 
 // This is actually in sim/dex.ts and really should be in sim/global-types.ts
@@ -166,6 +166,7 @@ const OVERRIDDEN = new Set([
   'test/main.js',
   'test/sim/misc/statuses.js',
   'tsconfig.json',
+  'pnpm-debug.log', // sigh...
 ]);
 // Any file that hasn't been 'OVERRIDDEN' we need to copy over from PS
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
@@ -304,8 +305,9 @@ const changes = async (where, last, now, repo) => ({
     ]);
 
     // Build the client's data files
+    console.log('');
     await execOrDie('npm install', psc, IGNORE_STDERR);
-    await execOrDie('node build indexes', psc);
+    await execOrDie('node build indexes', psc, IGNORE_STDERR);
 
     for (const [js, name, json] of DATA) {
       const type = require(path.resolve(psc, js))[name];

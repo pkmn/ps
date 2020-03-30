@@ -1716,7 +1716,7 @@ export interface PokemonHealth {
 export interface DetailedPokemon {
   details: PokemonDetails;
   name: string;
-  species: string;
+  speciesForme: string;
   level: number;
   shiny: boolean;
   gender: GenderName | '';
@@ -1876,7 +1876,7 @@ export const Protocol = new class {
     output.details = details;
 
     output.name = name;
-    output.species = name;
+    output.speciesForme = name;
     output.level = 100;
     output.shiny = false;
     output.gender = '';
@@ -1894,7 +1894,7 @@ export const Protocol = new class {
       splitDetails.pop();
     }
     if (splitDetails[1]) output.level = parseInt(splitDetails[1].substr(1)) || 100;
-    if (splitDetails[0]) output.species = splitDetails[0];
+    if (splitDetails[0]) output.speciesForme = splitDetails[0];
     return output;
   }
 

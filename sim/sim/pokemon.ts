@@ -1,5 +1,5 @@
 import {
- 	ActiveMove,
+	ActiveMove,
 	Ability,
 	PureEffect,
 	Item,
@@ -18,7 +18,7 @@ import {
 	StatsTable,
 	GenderName,
 	PokemonSet,
-	Battle
+	Battle,
 } from './exported-global-types';
 
 /**

@@ -1,5 +1,5 @@
 import {
- 	Effect,
+	Effect,
 	Format,
 	ID,
 	PlayerOptions,
@@ -15,7 +15,7 @@ import {
 	SelfEffect,
 	SecondaryEffect,
 	GameType,
-	ModdedDex
+	ModdedDex,
 } from './exported-global-types';
 
 /**

@@ -170,7 +170,8 @@ export class Side {
             if (curPoke === poke) continue;
             if (curPoke.fainted) continue;
             if (this.active.includes(curPoke)) continue;
-            if (['Zoroark', 'Zorua'].includes(curPoke.species) || curPoke.ability === 'Illusion') {
+            if (['Zoroark', 'Zorua'].includes(curPoke.speciesForme) ||
+              curPoke.ability === 'Illusion') {
               illusionFound = curPoke;
               break;
             }

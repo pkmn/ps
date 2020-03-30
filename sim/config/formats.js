@@ -43,9 +43,6 @@ let Formats = [
 		mod: 'gen8',
 		ruleset: ['Standard', 'Dynamax Clause'],
 		banlist: ['Uber', 'Moody', 'Shadow Tag', 'Baton Pass'],
-		onBegin() {
-			if (this.rated && this.format.id === 'gen8ou') this.add('html', `<div class="broadcast-red"><strong>OU is currently suspecting Arena Trap! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3661134/">suspect thread</a>.</strong></div>`);
-		},
 	},
 	/*{
 		name: "[Gen 8] OU (Blitz)",
@@ -141,9 +138,6 @@ let Formats = [
 			'Necrozma-Dusk-Mane', 'Reshiram', 'Solgaleo', 'Zacian', 'Zamazenta', 'Zekrom',
 			'Damp Rock', 'Smooth Rock', 'Moody', 'Shadow Tag', 'Baton Pass',
 		],
-		onBegin() {
-			if (this.rated && this.format.id === 'gen8monotype') this.add('html', `<div class="broadcast-red"><strong>Monotype is currently suspecting Melmetal! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3661136/">suspect thread</a>.</strong></div>`);
-		},
 	},
 	{
 		name: "[Gen 8] Anything Goes",
@@ -631,6 +625,7 @@ let Formats = [
 		desc: `Anything that can be hacked in-game and is usable in local battles is allowed.`,
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3656408/">Balanced Hackmons</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3659817/">BH Resources</a>`,
 		],
 
 		mod: 'gen8',
@@ -640,9 +635,6 @@ let Formats = [
 			'Arena Trap', 'Contrary', 'Gorilla Tactics', 'Huge Power', 'Illusion', 'Innards Out', 'Libero', 'Magnet Pull', 'Moody',
 			'Neutralizing Gas', 'Parental Bond', 'Protean', 'Psychic Surge', 'Pure Power', 'Shadow Tag', 'Stakeout', 'Water Bubble', 'Wonder Guard',
 		],
-		onBegin() {
-			if (this.rated && this.format.id === 'gen8balancedhackmons') this.add('html', `<div class="broadcast-red"><strong>Balanced Hackmons is currently suspecting Dynamax! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3661121/">suspect thread</a>.</strong></div>`);
-		},
 		onValidateSet(set) {
 			if (set.species === 'Zacian-Crowned' && (toID(set.item) !== 'rustedsword' || toID(set.ability) !== 'intrepidsword')) {
 				return [set.species + " is banned."];
@@ -761,7 +753,7 @@ let Formats = [
 			'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Reshiram', 'Silvally', 'Solgaleo', 'Zacian', 'Zamazenta', 'Zekrom',
 			'King\'s Rock', 'Razor Fang', 'Moody', 'Shadow Tag', 'Baton Pass',
 		],
-		restricted: ['Acupressure', 'Belly Drum', 'Bolt Beak', 'Double Iron Bash', 'Extreme Speed', 'Fishious Rend', 'Shell Smash', 'Shift Gear', 'Spore'],
+		restricted: ['Acupressure', 'Belly Drum', 'Bolt Beak', 'Double Iron Bash', 'Electrify', 'Extreme Speed', 'Fishious Rend', 'Shell Smash', 'Shift Gear', 'Spore'],
 	},
 	{
 		name: "[Gen 8] Camomons",

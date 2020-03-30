@@ -1,12 +1,12 @@
 import {
- 	AnyObject,
+	AnyObject,
 	Effect,
 	ActiveMove,
 	PureEffect,
 	PokemonSet,
 	Battle,
 	Move,
-	SideID
+	SideID,
 } from './exported-global-types';
 
 /**
