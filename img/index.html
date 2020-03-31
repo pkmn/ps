@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sprites</title>
+  <style>
+    body {
+      font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    tr {
+      min-height: 96px;
+    }
+    td, th {
+      border: 5px solid black;
+    }
+    .picon {
+      display: inline-block;
+      width: 40px;
+      height: 30px;
+    }
+    th {
+      font-size: 2em;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    exports = window;
+  </script>
+  <script src="http://play.pokemonshowdown.com/data/pokedex-mini.js"></script>
+  <script src="http://play.pokemonshowdown.com/data/pokedex-mini-bw.js"></script>
+  <script src="../vendor/pokemon-showdown-client/data/teambuilder-tables.js"></script>
+  <script src="../vendor/pokemon-showdown-client/data/abilities.js"></script>
+  <script src="../vendor/pokemon-showdown-client/data/aliases.js"></script>
+  <script src="../vendor/pokemon-showdown-client/data/items.js"></script>
+  <script src="../vendor/pokemon-showdown-client/data/moves.js"></script>
+  <script src="../vendor/pokemon-showdown-client/data/pokedex.js"></script>
+  <script src="../vendor/pokemon-showdown-client/data/typechart.js"></script>
+  <script src="../vendor/pokemon-showdown-client/js/battle-dex-data.js"></script>
+  <script src="../vendor/pokemon-showdown-client/js/battle-dex.js"></script>
+  <script src="../vendor/pokemon-showdown-client/js/battle-scene-stub.js"></script>
+  <script src="../vendor/pokemon-showdown-client/data/text.js"></script>
+  <script src="../vendor/pokemon-showdown-client/js/battle-text-parser.js"></script>
+  <script src="../vendor/pokemon-showdown-client/js/battle.js"></script>
+  <script>
+    const withPrefs = (prefs, fn) => {
+      const saved = Dex.prefs;
+      Dex.prefs = s => prefs[s];
+      fn();
+      Dex.prefs = saved;
+    };
+
+    const GENS = {
+      // 'gen1rg': 1,
+      // 'gen1rb': 1,
+      'gen1': 1,
+      // 'gen2g': 2,
+      // 'gen2s': 2,
+      'gen2': 2,
+      // 'gen3rs': 3,
+      'gen3': 3,
+      // 'gen3frlg': 3,
+      // 'gen4dp': 4,
+      'gen4': 4,
+      'gen5': 5,
+      'gen5ani': 5,
+      'dex': 6,
+      'ani': 6,
+    };
+
+    const SIZE = 30;
+    const CHUNK = 5;
+
+    const pagedOut = {}; // index => tr
+    const view = {min: 100, max: 100+SIZE, rows: []};
+
+    function onPage(table, i) {
+      console.log('BEFORE onPage', i, view);
+      if (i >= view.max - (3*CHUNK)) {
+        console.log('SCROLLDOWN');
+        // FIXME what if at end?
+        for (let j = view.min; j < view.min + CHUNK; j++) {
+          const row = view.rows.shift();
+          pagedOut[j] = row;
+          row.remove();
+        }
+        view.min += CHUNK;
+        for (let j = view.max; j < view.max + CHUNK; j++) {
+          const row = pagedOut[j] || renderRow(j);
+          console.log('appending', j, row);
+          view.rows.push(row);
+          table.appendChild(row);
+        }
+        view.max += CHUNK;
+        console.log(pagedOut);
+      }
+
+      // if (i <= view.min + CHUNK) {
+      //   console.log('SCROLLUP');
+
+      //   // FIXME what if at begining?
+      //   for (let j = view.max - CHUNK; j < CHUNK; j++) {
+      //     const row = view.rows.pop();
+      //     pagedOut[j] = row;
+      //     row.remove();
+      //   }
+      //   view.max -= CHUNK;
+      //   const prepend = [];
+      //   for (let j = view.min - CHUNK; j < CHUNK; j++) {
+      //     const row = pagedOut[j] || renderRow(j);
+      //     view.rows.unshift(row);
+      //     prepend.push(row);
+      //   }
+      //   // table.prepend(prepend);
+      //   view.min -= CHUNK;
+      // }
+
+      console.log('AFTER onPage', i, view);
+    }
+
+    function e(type, content) {
+      const tag = document.createElement(type);
+      if (content) tag.textContent = content;
+      return tag;
+    };
+
+    function icontd(style) {
+      const td = e('td');
+      const span = e('div');
+      span.classList.add('picon');
+      span.style = style;
+      td.appendChild(span);
+      return td;
+    };
+
+    function spritetd(graphics, spriteid, species) {
+      const td = e('td');
+      const gen = GENS[graphics];
+
+      if (graphics === 'dex') {
+        // no gender or back sprites
+        const data = Dex.getTeambuilderSpriteData({species: species.name, spriteid}, gen);
+        for (const shiny of (gen > 1 ? ['', '-shiny'] : [''])) {
+          const img = e('img');
+          img.src = `${Dex.resourcePrefix}${data.spriteDir}${shiny}/${data.spriteid}.png`;
+          if (gen < 5) img.style = 'image-rendering: pixelated;';
+          td.appendChild(img);
+        }
+        return td;
+      }
+
+      const prefs = {};
+      if (!graphics.endsWith('ani')) {
+        prefs.noanim = true;
+      }
+
+      withPrefs(prefs, () =>  {
+        for (const shiny of (gen > 1 ? [false, true] : [false])) {
+          for (const siden of [1, 0]) {
+            for (const gender of (gen === 1 || species.gender ? [undefined] : ['M', 'F'])) {
+              const data = Dex.getSpriteData(spriteid, siden,{gen, noScale: true, shiny, gender});
+              const img = e('img');
+              img.src = data.url;
+              img.width = data.w;
+              img.height = data.h;
+              if (data.pixelated) img.style = 'image-rendering: pixelated;';
+             td.appendChild(img);
+            }
+          }
+        }
+      });
+
+      return td;
+    };
+
+    function formename(species, spriteid) {
+      if (species.name === 'Toxtricity-Low-Key-Gmax') return species.name;
+      let forme = spriteid.slice(species.id.length);
+      forme = forme.charAt(0).toUpperCase() + forme.substr(1);
+      return `${species.name}-${forme}`;
+    }
+
+    function renderRow(i) {
+      const [spriteid, species] = SPECIES[i];
+      tr = e('tr')
+      tr.dataset.index = i;
+      tr.appendChild(icontd(Dex.getPokemonIcon(spriteid)));
+      const name = species.id !== spriteid ? formename(species, spriteid) : species.name;
+      const n = e('td', name);
+      n.dataset.index = i;
+      if (i % CHUNK === 0) observer.observe(n);
+      tr.appendChild(n);
+      for (const gen in GENS) {
+        tr.appendChild(spritetd(gen, spriteid, species));
+      }
+      return tr;
+    }
+
+    /////
+
+    const SPECIES = [];
+    for (let baseid in BattlePokedex) {
+      if (baseid.endsWith('totem')) continue;
+      const species = Dex.getSpecies(baseid);
+      for (let formid of [''].concat(species.cosmeticFormes || [])) {
+        let spriteid = species.spriteid;
+        if (formid) spriteid += '-' + formid.slice(species.id.length);
+        const id = toID(spriteid);
+        SPECIES.push([id, species]);
+      }
+    }
+
+    const root = document.getElementById('root');
+    const table = e('table')
+    let tr = e('tr');
+    tr.appendChild(e('th'));
+    tr.appendChild(e('th'));
+    for (const gen in GENS) {
+      tr.appendChild(e('th', gen));
+    }
+    table.appendChild(tr);
+
+    SPECIES.sort(([, a], [, b]) => {
+      if (a.gen - b.gen) return a.gen - b.gen;
+      return Math.abs(a.num) - Math.abs(b.num);
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        onPage(table, entry.target.dataset.index);
+      }
+    });
+
+    for (let i = view.min; i < view.max; i++) {
+      const row = renderRow(i);
+      table.appendChild(row);
+      view.rows.push(row);
+    }
+    root.appendChild(table);
+  </script>
+</body>
+</html>
+
+

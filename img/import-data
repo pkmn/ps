@@ -472,12 +472,35 @@ const BattlePokemonIconIndexesLeft = {
 
 const data = {};
 
-data.pokemon = {};
-for (const name in BattlePokemonSprites) {
-  const sprite = BattlePokemonSprites[name];
-  const bwSprite = BattlePokemonSpritesBW[name];
 
-  const s = data.pokemon[name] = {num: sprite.num};
+// we expect this to have been built...
+const Dex = require('../vendor/pokemon-showdown/.sim-dist/dex.js').Dex;
+
+const DEX = [
+  "pikachustarter", "eeveestarter", "meltan", "melmetal", "fidgit", "stratagem", "tomohawk",
+  "mollux", "crucibelle", "crucibellemega", "kerfluffle", "pajantom", "jumbao", "caribolt",
+  "smokomodo", "snaelstrom", "equilibra", "scratchet", "pluffle", "smogecko", "pokestarufo",
+  "pokestarufo2", "pokestarbrycenman", "pokestarmt", "pokestarmt2", "pokestargiant",
+  "pokestarhumanoid", "pokestarmonster", "pokestarf00", "pokestarf002", "pokestarspirit",
+];
+
+// Reverse map from spriteid as calculated by `build-minidex` to Species
+const SPECIES = {};
+for (const baseid in Dex.data.Pokedex) {
+  const species = Dex.getSpecies(baseid);
+  for (const formid of [''].concat(species.cosmeticFormes || [])) {
+    let spriteid = species.spriteid;
+    if (formid) spriteid += '-' + formid.slice(species.id.length);
+    SPECIES[toID(spriteid)] = species;
+  }
+}
+
+data.pokemon = {};
+for (const spriteid in BattlePokemonSprites) {
+  const sprite = BattlePokemonSprites[spriteid];
+  const bwSprite = BattlePokemonSpritesBW[spriteid];
+
+  const s = data.pokemon[spriteid] = {n: sprite.num};
 
   if (sprite.front) s.f = sprite.front;
   if (sprite.frontf) s.ff = sprite.frontf;
@@ -491,10 +514,18 @@ for (const name in BattlePokemonSprites) {
     if (bwSprite.back) s.bw.b = bwSprite.back;
     if (bwSprite.backf) s.bw.bf = bwSprite.backf;
   }
-}
 
-// we expect this to have been built...
-const Dex = require('../vendor/pokemon-showdown/.sim-dist/dex.js').Dex;
+  if (!s.n) {
+    s.g = 1;
+    s.nd = true;
+    continue;
+  }
+
+  const species = SPECIES[spriteid];
+  const dex = (!species.isNonstandard || species.isNonstandard === 'Past') || DEX.has(species.id);
+  s.g = species.gen;
+  s.nd = !dex;
+}
 
 data.items = {};
 for (const item in Dex.data.Items) {
