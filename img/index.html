@@ -14,6 +14,13 @@
     tr {
       min-height: 96px;
     }
+    .outline img {
+      border: 1px solid black;
+      margin: 2px;
+    }
+    img {
+      margin: 3px;
+    }
     td, th {
       border: 5px solid black;
     }
@@ -29,6 +36,32 @@
       z-index: 10;
       background: black;
       color: white;
+    }
+    ul {
+      margin: 10px auto;
+      padding: 0;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+    li {
+      /* font-size: 13px; */
+      display: inline-block;
+      padding: 0 5px;
+    }
+    button {
+      align-items: normal;
+      background-color: rgba(0,0,0,0);
+      border-style: none;
+      box-sizing: content-box;
+      cursor: pointer;
+      display: inline;
+      font: inherit;
+      padding: 0;
+      perspective-origin: 0 0;
+      text-align: start;
+      transform-origin: 0 0;
+      -moz-appearance: none;
     }
   </style>
 </head>
@@ -78,55 +111,7 @@
       'ani': 6,
     };
 
-    const SIZE = 30;
-    const CHUNK = 5;
-
-    const pagedOut = {}; // index => tr
-    const view = {min: 100, max: 100+SIZE, rows: []};
-
-    function onPage(table, i) {
-      console.log('BEFORE onPage', i, view);
-      if (i >= view.max - (3*CHUNK)) {
-        console.log('SCROLLDOWN');
-        // FIXME what if at end?
-        for (let j = view.min; j < view.min + CHUNK; j++) {
-          const row = view.rows.shift();
-          pagedOut[j] = row;
-          row.remove();
-        }
-        view.min += CHUNK;
-        for (let j = view.max; j < view.max + CHUNK; j++) {
-          const row = pagedOut[j] || renderRow(j);
-          console.log('appending', j, row);
-          view.rows.push(row);
-          table.appendChild(row);
-        }
-        view.max += CHUNK;
-        console.log(pagedOut);
-      }
-
-      // if (i <= view.min + CHUNK) {
-      //   console.log('SCROLLUP');
-
-      //   // FIXME what if at begining?
-      //   for (let j = view.max - CHUNK; j < CHUNK; j++) {
-      //     const row = view.rows.pop();
-      //     pagedOut[j] = row;
-      //     row.remove();
-      //   }
-      //   view.max -= CHUNK;
-      //   const prepend = [];
-      //   for (let j = view.min - CHUNK; j < CHUNK; j++) {
-      //     const row = pagedOut[j] || renderRow(j);
-      //     view.rows.unshift(row);
-      //     prepend.push(row);
-      //   }
-      //   // table.prepend(prepend);
-      //   view.min -= CHUNK;
-      // }
-
-      console.log('AFTER onPage', i, view);
-    }
+    const SIZE = 25;
 
     function e(type, content) {
       const tag = document.createElement(type);
@@ -143,13 +128,13 @@
       return td;
     };
 
-    function spritetd(graphics, spriteid, species) {
+    function spritetd(graphics, spriteid, name, species) {
       const td = e('td');
       const gen = GENS[graphics];
 
       if (graphics === 'dex') {
         // no gender or back sprites
-        const data = Dex.getTeambuilderSpriteData({species: species.name, spriteid}, gen);
+        const data = Dex.getTeambuilderSpriteData({species: name}, gen);
         for (const shiny of (gen > 1 ? ['', '-shiny'] : [''])) {
           const img = e('img');
           img.src = `${Dex.resourcePrefix}${data.spriteDir}${shiny}/${data.spriteid}.png`;
@@ -193,22 +178,57 @@
     function renderRow(i) {
       const [spriteid, species] = SPECIES[i];
       tr = e('tr')
-      tr.dataset.index = i;
       tr.appendChild(icontd(Dex.getPokemonIcon(spriteid)));
       const name = species.id !== spriteid ? formename(species, spriteid) : species.name;
-      const n = e('td', name);
-      n.dataset.index = i;
-      if (i % CHUNK === 0) observer.observe(n);
-      tr.appendChild(n);
+      tr.appendChild(e('td', name));
       for (const gen in GENS) {
-        tr.appendChild(spritetd(gen, spriteid, species));
+        tr.appendChild(spritetd(gen, spriteid, name, species));
       }
       return tr;
     }
 
-    /////
+    function createNav(page) {
+      const ul = e('ul');
+      for (let i = 0; i < pages; i++) {
+        const li = e('li');
+        if (page === i) li.style = 'background-color: yellow;'
+        const button = e('button');
+        button.addEventListener('click', () => displayPage(i));
+        button.appendChild(e(page === i ? 'b' : 'span', i + 1));
+        li.appendChild(button);
+        ul.appendChild(li);
+      }
+      return ul;
+    }
 
+    var PAGE;
+    function displayPage(page) {
+      PAGE = page;
+      if (root.firstChild) root.removeChild(root.firstChild);
+      const div = e('div');
+      div.appendChild(createNav(page));
+
+      const table = e('table')
+      let tr = e('tr');
+      tr.appendChild(e('th'));
+      tr.appendChild(e('th'));
+      for (const gen in GENS) {
+        tr.appendChild(e('th', gen));
+      }
+      table.appendChild(tr);
+      for (let i = page * SIZE; i < Math.min(SPECIES.length, (page + 1) * SIZE); i++) {
+        const row = renderRow(i);
+        table.appendChild(row);
+      }
+      div.appendChild(table);
+      div.appendChild(createNav(page));
+      root.appendChild(div);
+      window.scrollTo(0,0);
+    };
+
+    let pages = 0;
     const SPECIES = [];
+    let i = 0;
     for (let baseid in BattlePokedex) {
       if (baseid.endsWith('totem')) continue;
       const species = Dex.getSpecies(baseid);
@@ -217,37 +237,27 @@
         if (formid) spriteid += '-' + formid.slice(species.id.length);
         const id = toID(spriteid);
         SPECIES.push([id, species]);
+        if (i++ % SIZE === 0) pages++;
       }
     }
-
-    const root = document.getElementById('root');
-    const table = e('table')
-    let tr = e('tr');
-    tr.appendChild(e('th'));
-    tr.appendChild(e('th'));
-    for (const gen in GENS) {
-      tr.appendChild(e('th', gen));
-    }
-    table.appendChild(tr);
 
     SPECIES.sort(([, a], [, b]) => {
       if (a.gen - b.gen) return a.gen - b.gen;
       return Math.abs(a.num) - Math.abs(b.num);
     });
 
-    const observer = new IntersectionObserver(entries => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        onPage(table, entry.target.dataset.index);
+    const root = document.getElementById('root');
+
+    displayPage(0);
+    document.addEventListener('keydown', e => {
+      if (e.keyCode === 37 && PAGE !== 0) {
+        displayPage(PAGE - 1);
+      } else if (e.keyCode === 39 && PAGE !== pages) {
+        displayPage(PAGE + 1);
+      } else if (e.keyCode === 219) {
+        root.classList.toggle('outline');
       }
     });
-
-    for (let i = view.min; i < view.max; i++) {
-      const row = renderRow(i);
-      table.appendChild(row);
-      view.rows.push(row);
-    }
-    root.appendChild(table);
   </script>
 </body>
 </html>
