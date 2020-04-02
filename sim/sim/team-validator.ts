@@ -629,7 +629,7 @@ export class TeamValidator {
 				legal = true;
 				break;
 			}
-			if (!legal && species.id === 'celebi' && dex.gen >= 7 && !this.validateSource(set, '7V', setSources, species)) {
+			if (!legal && species.gen <= 2 && dex.gen >= 7 && !this.validateSource(set, '7V', setSources, species)) {
 				legal = true;
 			}
 			if (!legal) {
@@ -978,6 +978,7 @@ export class TeamValidator {
 				generation: 5,
 				level: 10,
 				from: 'Gen 5 Dream World',
+				isHidden: true,
 			};
 		} else if (source.charAt(1) === 'E') {
 			if (this.findEggMoveFathers(source, species, setSources)) {

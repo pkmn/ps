@@ -214,6 +214,19 @@ export class Pokemon {
 
 	isActive: boolean;
 	activeTurns: number;
+	/**
+	 * This is for Fake-Out-likes specifically - it mostly counts how many move
+	 * actions you've had since the last time you switched in, so 1/turn normally,
+	 * +1 for Dancer/Instruct, -1 for shifting/Sky Drop.
+	 *
+	 * Incremented before the move is used, so the first move use has
+	 * `activeMoveActions === 1`.
+	 *
+	 * Unfortunately, Truant counts Mega Evolution as an action and Fake
+	 * Out doesn't, meaning that Truant can't use this number.
+	 */
+	activeMoveActions: number;
+	previouslySwitchedIn: number;
 	truantTurn: boolean;
 	/** Have this pokemon's Start events run yet? */
 	isStarted: boolean;
@@ -395,6 +408,8 @@ export class Pokemon {
 
 		this.isActive = false;
 		this.activeTurns = 0;
+		this.activeMoveActions = 0;
+		this.previouslySwitchedIn = 0;
 		this.truantTurn = false;
 		this.isStarted = false;
 		this.duringMove = false;
@@ -1252,15 +1267,13 @@ export class Pokemon {
 	}
 
 	hasType(type: string | string[]) {
-		if (!type) return false;
-		if (Array.isArray(type)) {
-			for (const typeid of type) {
-				if (this.hasType(typeid)) return true;
-			}
-		} else {
-			if (this.getTypes().includes(type)) {
-				return true;
-			}
+		const thisTypes = this.getTypes();
+		if (typeof type === 'string') {
+			return thisTypes.includes(type);
+		}
+
+		for (const typeName of type) {
+			if (thisTypes.includes(typeName)) return true;
 		}
 		return false;
 	}

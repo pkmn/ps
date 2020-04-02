@@ -365,6 +365,7 @@ describe('Team Validator', function () {
 		assert.equal(illegal, null);
 		team = [
 			{species: 'tauros', ability: 'intimidate', ivs: {hp: 31, atk: 31, def: 30, spa: 30, spd: 30, spe: 30}, moves: ['bodyslam'], evs: {hp: 1}},
+			{species: 'suicune', ability: 'innerfocus', moves: ['scald'], evs: {hp: 1}},
 		];
 		illegal = TeamValidator.get('gen7anythinggoes').validateTeam(team);
 		assert.equal(illegal, null);
@@ -437,10 +438,18 @@ describe('Team Validator', function () {
 
 	it('should reject Ultra Necrozma where ambiguous', function () {
 		let team = [
-			{species: 'necrozmaultra', ability: 'neuroforce', moves: ['confusion']},
+			{species: 'necrozmaultra', ability: 'neuroforce', moves: ['confusion'], evs: {hp: 1}},
 		];
 		let illegal = TeamValidator.get('gen7ubers').validateTeam(team);
 		assert(illegal);
+	});
+
+	it('should handle Dream World moves', function () {
+		let team = [
+			{species: 'garchomp', ability: 'roughskin', moves: ['endure'], evs: {hp: 1}},
+		];
+		let illegal = TeamValidator.get('gen5ou').validateTeam(team);
+		assert.equal(illegal, null);
 	});
 
 	it('should reject newer Pokemon in older gens', function () {
