@@ -1,6 +1,6 @@
 import {Data, GenerationNum} from './data/interface';
 
-type Gender = 'M' | 'F' | 'N';
+type GenderName = 'M' | 'F' | 'N';
 type SideID = 'p1' | 'p2';
 type Protocol = 'https' | 'http';
 type Facing = 'front' | 'frontf' | 'back' | 'backf';
@@ -8,7 +8,7 @@ type Facing = 'front' | 'frontf' | 'back' | 'backf';
 const PROTOCOL = 'https';
 const DOMAIN = 'play.pokemonshowdown.com';
 const URL = (options?: {protocol?: Protocol, domain?: string}) => {
-  const url =  `${options?.protocol ?? PROTOCOL}://${options?.domain ?? DOMAIN}`;
+  const url = `${options?.protocol ?? PROTOCOL}://${options?.domain ?? DOMAIN}`;
   return url.endsWith('/') ? url.slice(0, -1) : url;
 };
 
@@ -90,10 +90,9 @@ export class Sprites {
   getPokemon(
     name: string,
     options?: {
-      gen?: GenerationNum;
-      graphics?: GraphicsGen;
+      gen?: GraphicsGen | GenerationNum;
       side?: SideID,
-      gender?: Gender,
+      gender?: GenderName,
       shiny?: boolean,
       protocol?: Protocol,
       domain?: string,
@@ -106,19 +105,20 @@ export class Sprites {
       return {gen: 5, w: 96, h: 96, url: `${url}/gen5/0.png`, pixelated: true};
     }
 
-    let graphics = options?.graphics;
-    // If graphics have been set, convert it into a generation and use it, otherwise, rely on the
-    // context generation (or fallback to gen 6).
-    // NOTE: We're deliberately not checking `options?.graphics === undefined` here because `''`
-    // can be used for the 'default' which is to just rely on the context generation.
-    const max = graphics ? Sprites.GENS[graphics] as GenerationNum : options?.gen || 6;
+    const max = typeof options?.gen === 'string'
+      ? Sprites.GENS[options.gen] as GenerationNum : options?.gen || 8;
     // Regardless of the generation context, we can only go back to the first generation
-    // the Pokemon existed in (or BW, because the Smogon sprite project guarantees BW sprites).
+    // the Pokemon existed in (or BW, because the Smogon Sprite Project guarantees BW sprites).
     const min = Math.min(data.gen, 5) as GenerationNum;
-
     const gen = Math.max(max, min) as GenerationNum;
-    if (!graphics || gen !== Sprites.GENS[graphics]) {
+
+    let graphics: GraphicsGen;
+    if (!options?.gen ||
+      typeof options.gen === 'number' ||
+      gen !== Sprites.GENS[options.gen]) {
       graphics = (min < 5 ? `gen${min}` : 'ani') as GraphicsGen;
+    } else {
+      graphics = options.gen;
     }
 
     let dir: string = graphics;
@@ -164,6 +164,7 @@ export class Sprites {
     } else if ((data[facingf] && options?.gender === 'F')) {
       facing = `${facing}f` as Facing
     }
+
     // Visual gender differences didn't exist for sprites until Gen 4
     const file = (data.gen >= 4 && data[facing] && facing.endsWith('f')) ? `${data.id}-f` : data.id;
 
@@ -173,14 +174,13 @@ export class Sprites {
   getDexPokemon(
     name: string,
     options?: {
-      gen?: GenerationNum;
-      graphics?: GraphicsGen | 'dex';
+      gen?: GraphicsGen | 'dex';
       shiny?: boolean,
       protocol?: Protocol,
       domain?: string,
     }
   ) {
-    let graphics = options?.graphics ?? 'dex';
+    let graphics = options?.gen ?? 'dex';
     if (graphics in Sprites.ANIMATED) graphics = Sprites.ANIMATED[graphics as AnimatedGraphicsGen];
     const data = this.data.getPokemon(name);
     if (!data || graphics !== 'dex' || !data.dex) return this.getPokemon(name, options as any);
@@ -193,13 +193,15 @@ export class Sprites {
   }
 
   getSubstitute(
-    gen: GenerationNum = 8,
+    gen: GraphicsGen | GenerationNum = 8,
     options?: {side: SideID, protocol?: Protocol, domain?: string}
   ) {
     const url = `${URL(options)}/substitutes`;
     let dir: string;
     let iw = 0; // TODO innerWidth
     let ih = 0; // TODO innerHeight
+
+    if (typeof gen === 'string') gen = GENS[gen] as GenerationNum;
     if (gen < 3) {
       dir = 'gen1';
     } else if (gen < 4) {
@@ -233,13 +235,18 @@ export class Icons {
     name: string,
     options?: {
       side?: SideID,
-      gender?: Gender,
+      gender?: GenderName,
       fainted?: boolean,
       protocol?: Protocol,
       domain?: string,
     }
   ) {
-    const num = 0; // TODO name gender left
+    const data = this.data.getPokemon(name);
+
+    let num = data?.icon ?? data?.num ?? 0;
+    if (num < 0 || num > 890) num = 0;
+    if (options?.gender === 'F') num = data?.iconf ?? num;
+    if (options?.side !== 'p2') num = data?.iconl ?? num;
 
     const top = -Math.floor(num / 12) * 30;
     const left = -(num % 12) * 40;

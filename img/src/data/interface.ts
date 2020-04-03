@@ -5,6 +5,9 @@ export interface PokemonData {
   id: string;
   gen: number;
   num: number;
+  icon?: number;
+  iconf?: number;
+  iconl?: number;
   dex?: boolean;
   front?: Dimensions;
   frontf?: Dimensions;

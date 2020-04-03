@@ -1,4 +1,4 @@
-import * as DataJSON from './index.json';
+import * as DataJSON from './data.json';
 import * as I from './interface';
 
 // These cryptic field names cut down bandwidth size - see
@@ -6,6 +6,9 @@ import * as I from './interface';
 export interface PokemonData {
   g: I.GenerationNum;
   n: number;
+  i?: number;
+  if?: number;
+  il?: number;
   nd?: boolean;
   f?: I.Dimensions;
   ff?: I.Dimensions;
@@ -26,7 +29,7 @@ const DATA = DataJSON as {
 };
 
 function toID(s: string) {
-  return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
+  return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as I.ID;
 }
 
 export const Data = new class implements I.Data {
@@ -38,6 +41,9 @@ export const Data = new class implements I.Data {
       id,
       gen: data.g,
       num: data.n,
+      icon: data.i,
+      iconf: data.if,
+      iconl: data.il,
       dex: !!data.nd,
       front: data.f,
       frontf: data.ff,
