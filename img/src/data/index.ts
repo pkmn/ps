@@ -5,7 +5,7 @@ import * as I from './interface';
 // getPokemon below for what the obfuscated names represent
 export interface PokemonData {
   g: I.GenerationNum;
-  n?: number;
+  n: number;
   nd?: boolean;
   f?: I.Dimensions;
   ff?: I.Dimensions;

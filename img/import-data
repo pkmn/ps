@@ -499,6 +499,7 @@ data.pokemon = {};
 for (const spriteid in BattlePokemonSprites) {
   const sprite = BattlePokemonSprites[spriteid];
   const bwSprite = BattlePokemonSpritesBW[spriteid];
+  if (!sprite.exists) continue;
 
   const s = data.pokemon[spriteid] = {n: sprite.num};
 

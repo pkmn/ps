@@ -4,7 +4,8 @@ export type Dimensions = {w: number, h: number};
 export interface PokemonData {
   id: string;
   gen: number;
-  num?: number;
+  num: number;
+  dex?: boolean;
   front?: Dimensions;
   frontf?: Dimensions;
   back?: Dimensions;
@@ -15,7 +16,6 @@ export interface PokemonData {
     back?: Dimensions;
     backf?: Dimensions;
   };
-  dex?: boolean;
 }
 export interface Data {
   getPokemon(name: string): PokemonData | undefined;

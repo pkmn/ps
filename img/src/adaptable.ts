@@ -3,6 +3,7 @@ import {Data, GenerationNum} from './data/interface';
 type Gender = 'M' | 'F' | 'N';
 type SideID = 'p1' | 'p2';
 type Protocol = 'https' | 'http';
+type Facing = 'front' | 'frontf' | 'back' | 'backf';
 
 const PROTOCOL = 'https';
 const DOMAIN = 'play.pokemonshowdown.com';
@@ -22,22 +23,28 @@ const GENS = {
   'gen2': 2,
   // 'gen2ani': 2,
   'gen3rs': 3,
+  'gen3frlg': 3,
   'gen3': 3,
   // 'gen3ani': 3,
-  'gen3frlg': 3,
   'gen4dp': 4,
+  // 'gen4dpani': 4,
   'gen4': 4,
   // 'gen4ani': 4,
   // 'gen4hgss': 4,
   // 'gen4hgssani': 4,
   'gen5': 5,
   'gen5ani': 5,
-  'dex': 6,
+  // 'static': 6,
   'ani': 6,
 };
 
-const SOURCES: {[name: string]: GraphicsGen | ''} = {
-  // 'Default': '',
+export type AnimatedGraphicsGen = keyof typeof ANIMATED;
+const ANIMATED = {
+  'gen5ani': 'gen5' as GraphicsGen,
+  'ani': 'dex' as GraphicsGen,
+};
+
+const SOURCES: {[name: string]: GraphicsGen} = {
   'Green': 'gen1rg',
   'Red/Blue': 'gen1rb',
   'Yellow': 'gen1',
@@ -57,15 +64,12 @@ const SOURCES: {[name: string]: GraphicsGen | ''} = {
   // 'HeartGold/SoulSilver (Animated)': 'gen4hgssani':
   'Black/White': 'gen5',
   'Black/White (Animated)': 'gen5ani',
-  // FIXME need static back/front etc
-  // 'Modern': 'dex',
+  // 'Modern': 'noani',
   'Modern (Animated)': 'ani',
 };
 
 export interface PokemonSprite {
   gen: GenerationNum;
-  x: number;
-  y: number;
   w: number;
   h: number;
   url: string;
@@ -75,26 +79,13 @@ export interface PokemonSprite {
 export class Sprites {
   static SOURCES = SOURCES;
   static GENS = GENS;
+  static ANIMATED = ANIMATED;
 
   readonly data: Data;
 
   constructor(data: Data) {
     this.data = data;
   }
-
-  // # fill in missing backsprites
-  // RewriteRule ^sprites\/gen1rg-back(.*)?$ sprites/gen1-back$1 [L,QSA]
-  // RewriteRule ^sprites\/gen1rb-back(.*)?$ sprites/gen1-back$1 [L,QSA]
-  // RewriteRule ^sprites\/gen2g-back(.*)?$ sprites/gen2-back$1 [L,QSA]
-  // RewriteRule ^sprites\/gen2s-back(.*)?$ sprites/gen2-back$1 [L,QSA]
-  // RewriteRule ^sprites\/gen3rs-back(.*)?$ sprites/gen3-back$1 [L,QSA]
-  // RewriteRule ^sprites\/gen3frlg-back(.*)?$ sprites/gen3-back$1 [L,QSA]
-  // RewriteRule ^sprites\/gen4dp-back(.*)?$ sprites/gen4-back$1 [L,QSA]
-  // RewriteRule ^sprites\/gen4dp-2-back(.*)?$ sprites/gen4-back$1 [L,QSA]
-
-  // # FRLG only added new sprites for Kanto Pokemon
-  // RewriteCond %{REQUEST_FILENAME} !-f
-  // RewriteRule ^sprites\/gen3frlg(.*)?$ sprites/gen3$1 [L,QSA]
 
   getPokemon(
     name: string,
@@ -112,66 +103,114 @@ export class Sprites {
     const data = this.data.getPokemon(name);
     if (!data) {
       // If we can't figure out the Pokemon in question we just return a question mark icon
-      return {gen: 5, x: 10, y: 5, w: 96, h: 96, url: `${url}/gen5/0.png`, pixelated: true};
+      return {gen: 5, w: 96, h: 96, url: `${url}/gen5/0.png`, pixelated: true};
     }
 
+    let graphics = options?.graphics;
     // If graphics have been set, convert it into a generation and use it, otherwise, rely on the
     // context generation (or fallback to gen 6).
     // NOTE: We're deliberately not checking `options?.graphics === undefined` here because `''`
-    // is used for the 'default' which is to just rely on the context generation.
-    // TODO handle no xydex exists!
-    const max = options?.graphics // FIXME  what about if fallback is also dex?
-      ? (options?.graphics === 'dex' && !data.dex ? 5 : Sprites.GENS[options?.graphics]) as GenerationNum
-      : options?.gen || 6;
+    // can be used for the 'default' which is to just rely on the context generation.
+    const max = graphics ? Sprites.GENS[graphics] as GenerationNum : options?.gen || 6;
     // Regardless of the generation context, we can only go back to the first generation
-    // the Pokemon existed in (or BW, because the Smogon sprite project guarantees BW sprites)
+    // the Pokemon existed in (or BW, because the Smogon sprite project guarantees BW sprites).
     const min = Math.min(data.gen, 5) as GenerationNum;
 
     const gen = Math.max(max, min) as GenerationNum;
-    if (gen !== Sprites.GENS[graphics]) {
-      const g = dex ? 'dex' : 'ani';
-      graphics = (['gen1', 'gen2', 'gen3', 'gen4', 'gen5', g, g, g] as GraphicsGen[])[min - 1];
+    if (!graphics || gen !== Sprites.GENS[graphics]) {
+      graphics = (min < 5 ? `gen${min}` : 'ani') as GraphicsGen;
     }
 
-    const fallback = options?.side || options?.graphics?.endsWith('ani') ? 'ani' : 'dex';
-
-    // The 'dex' directory is currently only possible for:
-    //
-    //   - data which is marked as having 'dex' sprites
-    //   - if we're not requesting 'p1' sprites (back facing)
-    //   - if the requests graphics are animated
-    //
-    // TODO: add static 'dex' backl sprites?
-    const dex = !data.dex && options?.side !== 'p1' && options?.graphics?.endsWith('ani');
-
-        // FIXME handle default!!!
-    // let graphics = options?.graphics ?? dex ? 'dex' : 'ani';
-
-
-    const sprite: PokemonSprite = {gen, x: 0, y: 0, w: 96, h: 96, url};
-    if (graphics === 'dex')
-
-
     let dir: string = graphics;
-    let facing = 'f';
+    let facing: Facing  = 'front';
     if (options?.side === 'p1') {
       dir += '-back';
-      facing = 'b';
+      facing = 'back';
     }
     if (options?.shiny && gen > 1) dir += '-shiny';
 
-    const ani = !!options?.graphics?.endsWith('ani');
+    // Missing back sprites
+    if (dir.startsWith('gen1rg-back') || dir.startsWith('gen1rb-back')) {
+      dir = `gen1-back${dir.slice(11)}`;
+    } else if (dir.startsWith('gen2g-back') || dir.startsWith('gen2s-back')) {
+      dir = `gen2-back${dir.slice(10)}`;
+    } else if (dir.startsWith('gen3rs-back')) {
+      dir = `gen3-back${dir.slice(11)}`;
+    } else if (dir.startsWith('gen3frlg-back')) {
+      dir = `gen3-back${dir.slice(13)}`;
+    } else if (dir.startsWith('gen4dp-back')) {
+      dir = `gen4-back${dir.slice(11)}`;
+    }
 
-    if (data[facing + 'f' as 'bf' | 'ff'] && options?.gender === 'F') facing += 'f';
+    // FRLG added new sprites for Kanto Pokemon only
+    if (dir.startsWith('gen3frlg') && data.gen === 1 && data.num <= 151) {
+      dir = `gen3${dir.slice(8)}`;
+    }
 
+    const facingf = facing + 'f' as 'frontf' | 'backf';
+    if (graphics in Sprites.ANIMATED) {
+      const d = graphics === 'gen5ani' ? (data.bw ?? {}) : data;
+      if (d[facingf] && options?.gender === 'F') facing = `${facing}f` as Facing;
 
+      if (d[facing]) {
+        const w = d[facing]!.w ?? 96;
+        const h = d[facing]!.h ?? 96;
+        const file = facing.endsWith('f') ? `${data.id}-f` : data.id;
 
+        return {gen, w, h, url: `${url}/${dir}/${file}.gif`, pixelated: gen <= 5};
+      }
 
+      dir = `gen5${dir.slice(graphics.length)}`;
+    } else if ((data[facingf] && options?.gender === 'F')) {
+      facing = `${facing}f` as Facing
+    }
+    // Visual gender differences didn't exist for sprites until Gen 4
+    const file = (data.gen >= 4 && data[facing] && facing.endsWith('f')) ? `${data.id}-f` : data.id;
 
+    return {gen, w: 96, h: 96, url: `${url}/${dir}/${file}.png`, pixelated: true};
+  }
 
+  getDexPokemon(
+    name: string,
+    options?: {
+      gen?: GenerationNum;
+      graphics?: GraphicsGen | 'dex';
+      shiny?: boolean,
+      protocol?: Protocol,
+      domain?: string,
+    }
+  ) {
+    let graphics = options?.graphics ?? 'dex';
+    if (graphics in Sprites.ANIMATED) graphics = Sprites.ANIMATED[graphics as AnimatedGraphicsGen];
+    const data = this.data.getPokemon(name);
+    if (!data || graphics !== 'dex' || !data.dex) return this.getPokemon(name, options as any);
 
+    const gen = Math.max(data.gen, 6);
+    const size = data.gen >= 7 ? 128 : 120;
+    const url = `${URL(options)}/sprites/dex/${data.id}.png`;
 
+    return {gen, w: size, height: size, url};
+  }
 
+  getSubstitute(
+    gen: GenerationNum = 8,
+    options?: {side: SideID, protocol?: Protocol, domain?: string}
+  ) {
+    const url = `${URL(options)}/substitutes`;
+    let dir: string;
+    let iw = 0; // TODO innerWidth
+    let ih = 0; // TODO innerHeight
+    if (gen < 3) {
+      dir = 'gen1';
+    } else if (gen < 4) {
+      dir = 'gen3';
+    } else if (gen < 5) {
+      dir = 'gen4';
+    } else {
+      dir = 'gen5';
+    }
+    if (options?.side === 'p1') dir += '-back';
+    return {gen, w: 96, h: 96, iw, ih, url: `${url}/${dir}/substitute.png`, pixelated: true};
   }
 
   getAvatar(avatar: string, options?: {protocol?: Protocol, domain?: string}) {
@@ -181,13 +220,6 @@ export class Sprites {
       ? `${url}-custom/${avatar.substring(1)}.png`
       : `${url}/${sanitizeName(avatar || 'unknown')}.png`);
   }
-}
-
-function sanitizeName(name: any) {
-  if (!name) return '';
-  return ('' + name)
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
-    .slice(0, 50);
 }
 
 export class Icons {
@@ -214,8 +246,9 @@ export class Icons {
     const extra = options?.fainted? ';opacity:.3;filter:grayscale(100%) brightness(.5)' : '';
 
     const url = `${URL(options)}/sprites/pokemonicons-sheet.png`;
+    const base = 'width:40px;height:30px;image-rendering:pixelated';
     const style =
-      `background:transparent url(${url}) no-repeat scroll ${left}px ${top}px${extra}`;
+      `${base};background:transparent url(${url}) no-repeat scroll ${left}px ${top}px${extra}`;
     return {style, url, left, top, extra};
   }
 
@@ -240,8 +273,9 @@ export class Icons {
       return undefined;
     }
     const url = `${URL(options)}/sprites/pokemonicons-pokeball-sheet.png`;
+    const base = 'width:40px;height:30px;image-rendering:pixelated';
     const style =
-      `background:transparent url(${url}) no-repeat scroll ${left}px ${top}px${extra}`;
+      `${base};background:transparent url(${url}) no-repeat scroll ${left}px ${top}px${extra}`;
     return {style, url, left, top, extra};
   }
 
@@ -250,7 +284,8 @@ export class Icons {
     const top = -Math.floor(num / 16) * 24;
     const left = -(num % 16) * 24;
     const url = `${URL(options)}/sprites/itemicons-sheet.png`;
-    const style = `background:transparent url(${url}) no-repeat scroll ${left}px ${top}px`;
+    const base = 'width:24px;height:24x;image-rendering:pixelated';
+    const style = `${base};background:transparent url(${url}) no-repeat scroll ${left}px ${top}px`;
     return {style, url, top, left};
   }
 
@@ -261,4 +296,11 @@ export class Icons {
     const url = `${URL(options)}/sprites/types/${type}.png`;
     return {url, type, w: 32, h: 14};
   }
+}
+
+function sanitizeName(name: any) {
+  if (!name) return '';
+  return ('' + name)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+    .slice(0, 50);
 }
