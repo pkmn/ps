@@ -209,13 +209,15 @@ export class Sprites {
     } else if (gen < 5) {
       dir = 'gen4';
     } else {
+      gen = 5;
       dir = 'gen5';
     }
     if (options?.side === 'p1') dir += '-back';
     return {gen, w: 96, h: 96, iw, ih, url: `${url}/${dir}/substitute.png`, pixelated: true};
   }
 
-  getAvatar(avatar: string, options?: {protocol?: Protocol, domain?: string}) {
+  getAvatar(avatar: number | string, options?: {protocol?: Protocol, domain?: string}) {
+    avatar = `${avatar}`;
     avatar = this.data.getAvatar(avatar) ?? avatar;
     const url = `${URL(options)}/sprites/trainers`
     return (avatar.charAt(0) === '#'
@@ -243,14 +245,15 @@ export class Icons {
   ) {
     const data = this.data.getPokemon(name);
 
-    let num = data?.icon ?? data?.num ?? 0;
+    let num = data?.num ?? 0;
     if (num < 0 || num > 890) num = 0;
+    if (data?.icon) num = data.icon;
     if (options?.gender === 'F') num = data?.iconf ?? num;
     if (options?.side !== 'p2') num = data?.iconl ?? num;
 
     const top = -Math.floor(num / 12) * 30;
     const left = -(num % 12) * 40;
-    const extra = options?.fainted? ';opacity:.3;filter:grayscale(100%) brightness(.5)' : '';
+    const extra = options?.fainted? ';opacity:.3;filter:grayscale(100%) brightness(.5)' : undefined;
 
     const url = `${URL(options)}/sprites/pokemonicons-sheet.png`;
     const base = 'width:40px;height:30px;image-rendering:pixelated';
@@ -262,7 +265,7 @@ export class Icons {
   getPokeball(name: string, options?: {protocol?: Protocol, domain?: string}) {
     let left = 0;
     let top = 0;
-    let extra = '';
+    let extra = undefined;
     if (name === 'pokeball') {
       left = 0;
       top = 4;
