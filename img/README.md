@@ -11,8 +11,7 @@ without any dependencies:
 import {Sprites, Icons} from '@pkmn/img';
 
 // Shiny Charizard sprite from FireRed / LeafGreen
-const {url, w, h, pixelated} =
-  Sprites.getPokemon('charizard', {graphics: 'gen3frlg', shiny: true});
+const {url, w, h, pixelated} = Sprites.getPokemon('charizard', {gen: 'gen3frlg', shiny: true});
 const sprite = document.createElement('img');
 sprite.src = url;
 sprite.width = w;
