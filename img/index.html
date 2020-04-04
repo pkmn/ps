@@ -80,9 +80,11 @@
 <body>
   <div id="root"></div>
   <script src="./data/species.js"></script>
-  <script src="../build/bundled.js"></script>
+  <script src="./build/bundled.js"></script>
   <script>
     const ROOT = document.getElementById('root');
+    const GENS = Object.keys(PokemonSprites.GENS);
+    GENS.splice(GENS.length-1, 0, 'dex');
     const PAGE_SIZE = 25;
     const PAGES = Math.ceil(SPECIES.length / PAGE_SIZE);
 
@@ -165,16 +167,17 @@
 
     function renderRow(i) {
       const namestar = SPECIES[i];
+      const name = namestar.endsWith('*') ? namestar.slice(0, -1) : namestar;
       const tr = e('tr')
 
       const td = e('td');
-      for (const icon of picons(spriteid)) {
+      for (const icon of picons(name)) {
         td.appendChild(icon);
       }
       tr.appendChild(td);
 
-      tr.appendChild(e('td', namestar.endsWith('*') ? namestar.slice(0, -1) : namestar));
-      for (const gen in Sprites.GENS) {
+      tr.appendChild(e('td', name));
+      for (const gen of GENS) {
         const td = e('td');
         for (const sprite of sprites(gen, namestar)) {
           td.appendChild(sprite);
@@ -206,7 +209,7 @@
       const tr = e('tr');
       tr.appendChild(e('th'));
       tr.appendChild(e('th'));
-      for (const gen in Sprites.GENS) {
+      for (const gen of GENS) {
         tr.appendChild(e('th', gen));
       }
       table.appendChild(tr);
