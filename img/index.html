@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sprites</title>
+  <style>
+    body {
+      font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    tr {
+      min-height: 96px;
+    }
+
+    td,
+    th {
+      border: 5px solid black;
+    }
+
+    .outline img {
+      border: 1px solid black;
+      margin: 2px;
+    }
+
+    img {
+      margin: 3px;
+    }
+
+    .picon {
+      display: inline-block;
+      width: 40px;
+      height: 30px;
+    }
+
+    th {
+      font-size: 2em;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: black;
+      color: white;
+    }
+
+    ul {
+      margin: 10px auto;
+      padding: 0;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    li {
+      display: inline-block;
+      padding: 0 5px;
+    }
+
+    button {
+      align-items: normal;
+      background-color: rgba(0, 0, 0, 0);
+      border-style: none;
+      box-sizing: content-box;
+      cursor: pointer;
+      display: inline;
+      font: inherit;
+      padding: 0;
+      perspective-origin: 0 0;
+      text-align: start;
+      transform-origin: 0 0;
+      -moz-appearance: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script src="./data/species.js"></script>
+  <script src="../build/bundled.js"></script>
+  <script>
+    const ROOT = document.getElementById('root');
+    const PAGE_SIZE = 25;
+    const PAGES = Math.ceil(SPECIES.length / PAGE_SIZE);
+
+    function e(type, options) {
+      const tag = document.createElement(type);
+      if (!options) return tag;
+
+      if (typeof options === 'string' || typeof options === 'number') {
+        tag.textContent = options;
+        return tag;
+      } else if (options instanceof Node) {
+        tag.appendChild(options);
+        return tag;
+      }
+      if (options.content) {
+        if (typeof options.content === 'string' || typeof options.content === 'number') {
+          tag.textContent = options.content;
+        } else if (tag instanceof Node) {
+          tag.appendChild(options.content);
+        }
+      }
+      if (options.id) tag.setAttribute('id', options.id);
+      if (options.class) tag.classList.add(options.class);
+      return tag;
+    }
+
+    function picons(name) {
+      const styles = new Set([
+        PokemonIcons.getPokemon(name, {side: 'p1'}).style,
+        PokemonIcons.getPokemon(name, {side: 'p1', gender: 'F'}).style,
+        PokemonIcons.getPokemon(name, {side: 'p2'}).style,
+      ]);
+
+      const icons = [];
+      for (const style of styles) {
+        const span = e('span');
+        span.style = style;
+        icons.push(span);
+      }
+
+      return icons;
+    };
+
+    function sprites(gen, namestar) {
+      const name = namestar.endsWith('*') ? namestar.slice(0, -1) : namestar;
+      const imgs = [];
+
+      if (gen === 'dex') {
+        // no gender or back sprites
+        for (const shiny of [true, false]) {
+          const {url, w, h, pixelated} = PokemonSprites.getDexPokemon(name, {gen, shiny});
+          const img = e('img');
+          img.src = url;
+          img.width = w;
+          img.height = h;
+          if (pixelated) img.style = 'image-rendering: pixelated;';
+          imgs.push(img);
+        }
+        return imgs;
+      }
+
+      const genders = (gen.startsWith('gen1') || namestar.endsWith('*')) ? [undefined] : ['M', 'F'];
+      for (const shiny of (gen.startsWith('gen1') ? [false] :  [false, true])) {
+        for (const side of ['p2', 'p1']) {
+          for (const gender of genders) {
+            const {url, w, h, pixelated} =
+              PokemonSprites.getPokemon(name, {gen, side, shiny, gender});
+            const img = e('img');
+            img.src = url;
+            img.width = w;
+            img.height = h;
+            if (pixelated) img.style = 'image-rendering: pixelated;';
+            imgs.push(img);
+          }
+        }
+      }
+
+      return imgs;
+    };
+
+    function renderRow(i) {
+      const namestar = SPECIES[i];
+      const tr = e('tr')
+
+      const td = e('td');
+      for (const icon of picons(spriteid)) {
+        td.appendChild(icon);
+      }
+      tr.appendChild(td);
+
+      tr.appendChild(e('td', namestar.endsWith('*') ? namestar.slice(0, -1) : namestar));
+      for (const gen in Sprites.GENS) {
+        const td = e('td');
+        for (const sprite of sprites(gen, namestar)) {
+          td.appendChild(sprite);
+        }
+        tr.appendChild(td);
+      }
+
+      return tr;
+    }
+
+    function createNav(page) {
+      const ul = e('ul');
+      for (let i = 0; i < PAGES; i++) {
+        const li = e('li');
+        if (page === i) li.style = 'background-color: yellow;'
+        const button = e('button', e(page === i ? 'b' : 'span', `${i + 1}`));
+        button.addEventListener('click', () => displayPage(i));
+        li.appendChild(button);
+        ul.appendChild(li);
+      }
+      return ul;
+    }
+
+    function displayPage(page) {
+      PAGE = page;
+      if (ROOT.firstChild) ROOT.removeChild(ROOT.firstChild);
+
+      const table = e('table')
+      const tr = e('tr');
+      tr.appendChild(e('th'));
+      tr.appendChild(e('th'));
+      for (const gen in Sprites.GENS) {
+        tr.appendChild(e('th', gen));
+      }
+      table.appendChild(tr);
+      for (let i = page * PAGE_SIZE; i < Math.min(SPECIES.length, (page + 1) * PAGE_SIZE); i++) {
+        const row = renderRow(i);
+        table.appendChild(row);
+      }
+
+      const div = e('div');
+      div.appendChild(createNav(page));
+      div.appendChild(table);
+      div.appendChild(createNav(page));
+
+      ROOT.appendChild(div);
+      window.scrollTo(0, 0);
+    };
+
+    displayPage(0);
+
+    document.addEventListener('keydown', e => {
+      if (e.keyCode === 37 && PAGE !== 0) {
+        displayPage(PAGE - 1);
+      } else if (e.keyCode === 39 && PAGE !== PAGES) {
+        displayPage(PAGE + 1);
+      } else if (e.keyCode === 219) {
+        ROOT.classList.toggle('outline');
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+'use strict';
 
 // Downloads Pokémon Showdown's "minidexes" which contain animated sprite size and index
 // information and then generates a combined JSON file with the data. For safety this process should
@@ -774,13 +775,20 @@ function fetch(u) {
   });
 }
 
+function formeName(species, spriteid) {
+  if (species.id !== spriteid || species.name === 'Toxtricity-Low-Key-Gmax') return species.name;
+  let forme = spriteid.slice(species.id.length);
+  forme = forme.charAt(0).toUpperCase() + forme.substr(1);
+  return `${species.name}-${forme}`;
+}
+
 (async () => {
+  const dir = path.resolve(__dirname, 'data');
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir);
   if (process.argv[2] !== 'generate') {
-    const data = path.resolve(__dirname, 'data');
-    if (!fs.existsSync(data)) fs.mkdirSync(data);
-    fs.writeFileSync(path.join(data, 'pokedex-mini.js'),
+    fs.writeFileSync(path.join(dir, 'pokedex-mini.js'),
       await fetch('https://play.pokemonshowdown.com/data/pokedex-mini.js'));
-    fs.writeFileSync(path.join(data, 'pokedex-mini-bw.js'),
+    fs.writeFileSync(path.join(dir, 'pokedex-mini-bw.js'),
       await fetch('https://play.pokemonshowdown.com/data/pokedex-mini-bw.js'));
   }
   if (process.argv[2] === 'download') process.exit(0);
@@ -796,14 +804,26 @@ function fetch(u) {
   const toID = s => ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '');
   // Reverse map from spriteid as calculated by `build-minidex` to Species
   const SPECIES = {};
+  const names = [];
   for (const baseid in Dex.data.Pokedex) {
     const species = Dex.getSpecies(baseid);
     for (const formid of [''].concat(species.cosmeticFormes || [])) {
       let spriteid = species.spriteid;
       if (formid) spriteid += '-' + formid.slice(species.id.length);
-      SPECIES[toID(spriteid)] = species;
+      const id = toID(spriteid);
+      SPECIES[id] = species;
+      if (!id.endsWith('totem')) {
+        names.push([id, species, `${formeName(species, spriteid)}${species.gender ? '' : '*'}`]);
+      }
     }
   }
+
+  const sorted = names.sort(([, a], [, b]) => {
+  	if (a.gen - b.gen) return a.gen - b.gen;
+  	return Math.abs(a.num) - Math.abs(b.num);
+  }).map(a => a[2]);
+
+  fs.writeFileSync(path.join(dir, 'index.js'), `const SPECIES = ${JSON.stringify(sorted)};`);
 
   data.pokemon = {};
   for (const spriteid in BattlePokemonSprites) {

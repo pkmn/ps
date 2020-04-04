@@ -264,7 +264,7 @@ export class Icons {
       : undefined;
 
     const url = `${URL(options)}/sprites/pokemonicons-sheet.png`;
-    const base = 'width:40px;height:30px;image-rendering:pixelated';
+    const base = 'display:inline-block;width:40px;height:30px;image-rendering:pixelated';
     const style =
       `${base};background:transparent url(${url}) no-repeat scroll ${left}px ${top}px${extra}`;
     return {style, url, left, top, extra};
@@ -291,7 +291,7 @@ export class Icons {
       return undefined;
     }
     const url = `${URL(options)}/sprites/pokemonicons-pokeball-sheet.png`;
-    const base = 'width:40px;height:30px;image-rendering:pixelated';
+    const base = 'display:inline-block;width:40px;height:30px;image-rendering:pixelated';
     const style =
       `${base};background:transparent url(${url}) no-repeat scroll ${left}px ${top}px${extra}`;
     return {style, url, left, top, extra};
@@ -302,7 +302,7 @@ export class Icons {
     const top = -Math.floor(num / 16) * 24;
     const left = -(num % 16) * 24;
     const url = `${URL(options)}/sprites/itemicons-sheet.png`;
-    const base = 'width:24px;height:24x;image-rendering:pixelated';
+    const base = 'display:inline-block;width:24px;height:24x;image-rendering:pixelated';
     const style = `${base};background:transparent url(${url}) no-repeat scroll ${left}px ${top}px`;
     return {style, url, top, left};
   }

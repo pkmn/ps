@@ -55,6 +55,14 @@ All methods take `protocol` and `domain` arguments in their `options` to facilit
 your own sprites (which you are strongly encouraged to do to avoid driving up Pokémon Showdown's
 bandwidth costs).
 
+### Browser
+
+The recommended way of using `@pkmn/img` in a web browser is to configure your bundler
+(Webpack, Rollup, Parcel, etc) to minimize it and package it with the rest of your application.
+If you do not use a bundler, a convenience `bundled.js` is included in the package (and used in the
+[`index.html`][6] example code). You simply need to depend on `./node_modules/@pkmn/img/bundled.js`
+in a `script` tag, after which `PokemonSprites` and `PokemonIcons` will be accessible as globals.
+
 ## Performance
 
 The JSON data required to be able to know how to display the sprites and icons weighs in at ~34.6KB
@@ -78,3 +86,4 @@ Luo's [Pokémon Showdown client][2] which are distributed under the [MIT License
   [3]: https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle.ts#L6
   [4]: https://github.com/pkmn/ps/blob/master/img/src/data/interface.ts
   [5]: https://github.com/GoogleChromeLabs/json-parse-benchmark
+  [6]: https://github.com/pkmn/ps/blob/master/img/index.html

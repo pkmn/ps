@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+'use strict';
+
+const fs = require('fs');
+const path = require('path');
+
+const built = path.resolve(__dirname, 'build');
+
+const read = (f, b = 0, e = 0) => {
+  try {
+    const lines = fs.readFileSync(path.join(built, f), 'utf8').split('\n');
+    return lines.slice(b, -e).join('\n');
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      console.error(`Missing file 'build/${f}' - did you run \`npm run compile\`?`);
+      process.exit(1);
+    }
+    throw err;
+  }
+};
+
+let bundled = `(() => {
+'use strict';
+const exports = {};
+`;
+// Typescript is obnoxiously adding spaces for no apparent reason...
+const json = fs.readFileSync(path.resolve(__dirname, 'src/data/data.json'), 'utf8');
+bundled += `const DATA = ${json};\n`;
+bundled += read('data/index.js', 11, 1);
+bundled += read('adaptable.js', 2, 1);
+bundled += `
+// EXPORTS
+window.PokemonSprites = new exports.Sprites(exports.Data);
+window.PokemonIcons = new exports.Icons(exports.Data);
+})();`
+fs.writeFileSync(path.join(built, 'bundled.js'), bundled);

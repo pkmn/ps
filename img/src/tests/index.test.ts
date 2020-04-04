@@ -90,7 +90,7 @@ describe('Sprites', () => {
     expect(pokemon.h).toBe(96);
     expect(pokemon.pixelated).toBe(true);
 
-    pokemon = Sprites.getDexPokemon('melmetal', {gen: 'dex'});
+    pokemon = Sprites.getDexPokemon('melmetal', {gen: 8});
     expect(pokemon.url).toEqual(`${URL}/sprites/dex/melmetal.png`);
     expect(pokemon.gen).toBe(7);
     expect(pokemon.w).toBe(128);
@@ -182,7 +182,7 @@ describe('Icons', () => {
     pokemon = Icons.getPokemon('Kingler', {side: 'p2', fainted: true});
     expect(pokemon.extra).toEqual(';opacity:.3;filter:grayscale(100%) brightness(.5)');
     expect(pokemon.style).toEqual(
-      'width:40px;height:30px;image-rendering:pixelated;' +
+      'display:inline-block;width:40px;height:30px;image-rendering:pixelated;' +
       `background:transparent url(${URL}/sprites/pokemonicons-sheet.png) ` +
       'no-repeat scroll -120px -240px;opacity:.3;filter:grayscale(100%) brightness(.5)'
     );
@@ -205,7 +205,7 @@ describe('Icons', () => {
     pokeball = Icons.getPokeball('pokeball-fainted')!;
     expect(pokeball.extra).toEqual(';opacity:.4;filter:contrast(0)');
     expect(pokeball.style).toEqual(
-      'width:40px;height:30px;image-rendering:pixelated;' +
+      'display:inline-block;width:40px;height:30px;image-rendering:pixelated;' +
       `background:transparent url(${URL}/sprites/pokemonicons-pokeball-sheet.png) ` +
       `no-repeat scroll 80px 4px;opacity:.4;filter:contrast(0)`
     );
@@ -230,7 +230,7 @@ describe('Icons', () => {
 
     item = Icons.getItem('focus Band', {protocol: 'http', domain: 'pkmn.cc'});
     expect(item.style).toEqual(
-      'width:24px;height:24x;image-rendering:pixelated;' +
+      'display:inline-block;width:24px;height:24x;image-rendering:pixelated;' +
       'background:transparent url(http://pkmn.cc/sprites/itemicons-sheet.png) ' +
       'no-repeat scroll -144px -216px')
 
