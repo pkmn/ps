@@ -21,17 +21,17 @@ const GENS = {
   'gen2g': 2,
   'gen2s': 2,
   'gen2': 2,
-  // 'gen2ani': 2,
+  // 'gen2-2': 2
   'gen3rs': 3,
   'gen3frlg': 3,
   'gen3': 3,
-  // 'gen3ani': 3,
+  'gen3-2': 3, // TODO
   'gen4dp': 4,
-  // 'gen4dpani': 4,
+  'gen4dp-2': 4, // TODO
   'gen4': 4,
-  // 'gen4ani': 4,
+  // 'gen4-2': 4,
   // 'gen4hgss': 4,
-  // 'gen4hgssani': 4,
+  // 'gen4hgss-2': 4,
   'gen5': 5,
   'gen5ani': 5,
   // 'static': 6,
@@ -42,6 +42,15 @@ export type AnimatedGraphicsGen = keyof typeof ANIMATED;
 const ANIMATED = {
   'gen5ani': 'gen5' as GraphicsGen,
   'ani': 'dex' as GraphicsGen,
+};
+
+export type SecondFrameGraphicsGen = keyof typeof FRAME2;
+const FRAME2 = {
+  // 'gen2-2': 'gen2' as GraphicsGen,
+  'gen3-2': 'gen3' as GraphicsGen,
+  'gen4dp-2': 'gen4dp' as GraphicsGen,
+  // 'gen4-2': 'gen4' as GraphicsGen,
+  // 'gen4hgss-2': 'gen4hgss' as GraphicsGen,
 };
 
 const SOURCES: {[name: string]: GraphicsGen} = {
