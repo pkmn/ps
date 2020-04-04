@@ -111,13 +111,13 @@ export class Sprites {
     // Regardless of the generation context, we can only go back to the first generation
     // the Pokemon existed in (or BW, because the Smogon Sprite Project guarantees BW sprites).
     const min = Math.min(data.gen, 5) as GenerationNum;
-    const gen = Math.max(max, min) as GenerationNum;
+    let gen = Math.max(max, min) as GenerationNum;
 
     let graphics: GraphicsGen;
     if (!options?.gen ||
       typeof options.gen === 'number' ||
       gen !== Sprites.GENS[options.gen]) {
-      graphics = (min < 5 ? `gen${min}` : 'ani') as GraphicsGen;
+      graphics = (gen <= 5 ? `gen${gen}` : 'ani') as GraphicsGen;
     } else {
       graphics = options.gen;
     }
@@ -144,7 +144,7 @@ export class Sprites {
     }
 
     // FRLG added new sprites for Kanto Pokemon only
-    if (dir.startsWith('gen3frlg') && data.gen === 1 && data.num <= 151) {
+    if (dir.startsWith('gen3frlg') && (data.gen !== 1 || data.num > 151)) {
       dir = `gen3${dir.slice(8)}`;
     }
 
@@ -161,6 +161,7 @@ export class Sprites {
         return {gen, w, h, url: `${url}/${dir}/${file}.gif`, pixelated: gen <= 5};
       }
 
+      gen = 5;
       dir = `gen5${dir.slice(graphics.length)}`;
     } else if ((data[facingf] && options?.gender === 'F')) {
       facing = `${facing}f` as Facing;
@@ -175,7 +176,7 @@ export class Sprites {
   getDexPokemon(
     name: string,
     options?: {
-      gen?: GraphicsGen | 'dex';
+      gen?: GraphicsGen | 'dex' | GenerationNum;
       shiny?: boolean;
       protocol?: Protocol;
       domain?: string;
@@ -184,20 +185,24 @@ export class Sprites {
     let graphics = options?.gen ?? 'dex';
     if (graphics in Sprites.ANIMATED) graphics = Sprites.ANIMATED[graphics as AnimatedGraphicsGen];
     const data = this.data.getPokemon(name);
-    if (!data || graphics !== 'dex' || !data.dex) return this.getPokemon(name, options as any);
+    if (!data ||
+      !data.dex ||
+      (graphics !== 'dex' && !(typeof graphics === 'number' && graphics >= 6))) {
+      return this.getPokemon(name, options as any);
+    }
 
     const gen = Math.max(data.gen, 6);
     const size = data.gen >= 7 ? 128 : 120;
     const url = `${URL(options)}/sprites/dex/${data.id}.png`;
 
-    return {gen, w: size, height: size, url};
+    return {gen, w: size, h: size, url, pixelated: false};
   }
 
   getSubstitute(
     gen: GraphicsGen | GenerationNum = 8,
     options?: {side: SideID; protocol?: Protocol; domain?: string}
   ) {
-    const url = `${URL(options)}/substitutes`;
+    const url = `${URL(options)}/sprites/substitutes`;
     let dir: string;
     const iw = 0; // TODO innerWidth
     const ih = 0; // TODO innerHeight

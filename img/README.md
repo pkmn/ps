@@ -4,6 +4,14 @@
 
 Logic for displaying Pokémon Showdown's sprite/icon resources.
 
+## Installation
+
+```sh
+$ npm install @pkmn/img
+```
+
+## Usage
+
 This package can be used to determine the information required to render sprites or icons
 without any dependencies:
 
@@ -47,6 +55,19 @@ All methods take `protocol` and `domain` arguments in their `options` to facilit
 your own sprites (which you are strongly encouraged to do to avoid driving up Pokémon Showdown's
 bandwidth costs).
 
+## Performance
+
+The JSON data required to be able to know how to display the sprites and icons weighs in at ~34.6KB
+after compression. This could be further optimized by storing the data as Javascript objects (which
+don't require quoted keys), but this only amounts to a ~1-2KB saving once compressed. Furthermore,
+[Javascript runtimes optimize JSON parsing to be 2x faster][5] than Javascript object literals in
+some cases, so the additional size overhead from JSON is likely not worth worrying about. Switching
+to arrays instead of object fields may also save space and improve performance, but if the size of
+the data is really a concern for your application you should be using the asynchronous or adaptable
+entrypoints to the API.
+
+## License
+
 This package is distributed under the terms of the [MIT License][1].
 Substantial amounts of the code have been derived from the portions of Guangcong
 Luo's [Pokémon Showdown client][2] which are distributed under the [MIT License][3].
@@ -56,3 +77,4 @@ Luo's [Pokémon Showdown client][2] which are distributed under the [MIT License
   [2]: https://github.com/smogon/pokemon-showdown-client
   [3]: https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle.ts#L6
   [4]: https://github.com/pkmn/ps/blob/master/img/src/data/interface.ts
+  [5]: https://github.com/GoogleChromeLabs/json-parse-benchmark

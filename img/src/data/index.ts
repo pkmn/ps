@@ -44,7 +44,7 @@ export const Data = new class implements I.Data {
       icon: data.i,
       iconf: data.if,
       iconl: data.il,
-      dex: !!data.nd,
+      dex: !data.nd,
       front: data.f,
       frontf: data.ff,
       back: data.b,
