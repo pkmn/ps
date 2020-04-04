@@ -7,7 +7,7 @@ type Facing = 'front' | 'frontf' | 'back' | 'backf';
 
 const PROTOCOL = 'https';
 const DOMAIN = 'play.pokemonshowdown.com';
-const URL = (options?: {protocol?: Protocol, domain?: string}) => {
+const URL = (options?: {protocol?: Protocol; domain?: string}) => {
   const url = `${options?.protocol ?? PROTOCOL}://${options?.domain ?? DOMAIN}`;
   return url.endsWith('/') ? url.slice(0, -1) : url;
 };
@@ -91,11 +91,11 @@ export class Sprites {
     name: string,
     options?: {
       gen?: GraphicsGen | GenerationNum;
-      side?: SideID,
-      gender?: GenderName,
-      shiny?: boolean,
-      protocol?: Protocol,
-      domain?: string,
+      side?: SideID;
+      gender?: GenderName;
+      shiny?: boolean;
+      protocol?: Protocol;
+      domain?: string;
     }
   ) {
     const url = `${URL(options)}/sprites`;
@@ -106,7 +106,8 @@ export class Sprites {
     }
 
     const max = typeof options?.gen === 'string'
-      ? Sprites.GENS[options.gen] as GenerationNum : options?.gen || 8;
+      ? Sprites.GENS[options.gen] as GenerationNum
+      : options?.gen || 8;
     // Regardless of the generation context, we can only go back to the first generation
     // the Pokemon existed in (or BW, because the Smogon Sprite Project guarantees BW sprites).
     const min = Math.min(data.gen, 5) as GenerationNum;
@@ -122,7 +123,7 @@ export class Sprites {
     }
 
     let dir: string = graphics;
-    let facing: Facing  = 'front';
+    let facing: Facing = 'front';
     if (options?.side === 'p1') {
       dir += '-back';
       facing = 'back';
@@ -162,7 +163,7 @@ export class Sprites {
 
       dir = `gen5${dir.slice(graphics.length)}`;
     } else if ((data[facingf] && options?.gender === 'F')) {
-      facing = `${facing}f` as Facing
+      facing = `${facing}f` as Facing;
     }
 
     // Visual gender differences didn't exist for sprites until Gen 4
@@ -175,9 +176,9 @@ export class Sprites {
     name: string,
     options?: {
       gen?: GraphicsGen | 'dex';
-      shiny?: boolean,
-      protocol?: Protocol,
-      domain?: string,
+      shiny?: boolean;
+      protocol?: Protocol;
+      domain?: string;
     }
   ) {
     let graphics = options?.gen ?? 'dex';
@@ -194,12 +195,12 @@ export class Sprites {
 
   getSubstitute(
     gen: GraphicsGen | GenerationNum = 8,
-    options?: {side: SideID, protocol?: Protocol, domain?: string}
+    options?: {side: SideID; protocol?: Protocol; domain?: string}
   ) {
     const url = `${URL(options)}/substitutes`;
     let dir: string;
-    let iw = 0; // TODO innerWidth
-    let ih = 0; // TODO innerHeight
+    const iw = 0; // TODO innerWidth
+    const ih = 0; // TODO innerHeight
 
     if (typeof gen === 'string') gen = GENS[gen] as GenerationNum;
     if (gen < 3) {
@@ -216,10 +217,10 @@ export class Sprites {
     return {gen, w: 96, h: 96, iw, ih, url: `${url}/${dir}/substitute.png`, pixelated: true};
   }
 
-  getAvatar(avatar: number | string, options?: {protocol?: Protocol, domain?: string}) {
+  getAvatar(avatar: number | string, options?: {protocol?: Protocol; domain?: string}) {
     avatar = `${avatar}`;
     avatar = this.data.getAvatar(avatar) ?? avatar;
-    const url = `${URL(options)}/sprites/trainers`
+    const url = `${URL(options)}/sprites/trainers`;
     return (avatar.charAt(0) === '#'
       ? `${url}-custom/${avatar.substring(1)}.png`
       : `${url}/${sanitizeName(avatar || 'unknown')}.png`);
@@ -236,11 +237,11 @@ export class Icons {
   getPokemon(
     name: string,
     options?: {
-      side?: SideID,
-      gender?: GenderName,
-      fainted?: boolean,
-      protocol?: Protocol,
-      domain?: string,
+      side?: SideID;
+      gender?: GenderName;
+      fainted?: boolean;
+      protocol?: Protocol;
+      domain?: string;
     }
   ) {
     const data = this.data.getPokemon(name);
@@ -253,7 +254,9 @@ export class Icons {
 
     const top = -Math.floor(num / 12) * 30;
     const left = -(num % 12) * 40;
-    const extra = options?.fainted? ';opacity:.3;filter:grayscale(100%) brightness(.5)' : undefined;
+    const extra = options?.fainted
+      ? ';opacity:.3;filter:grayscale(100%) brightness(.5)'
+      : undefined;
 
     const url = `${URL(options)}/sprites/pokemonicons-sheet.png`;
     const base = 'width:40px;height:30px;image-rendering:pixelated';
@@ -262,7 +265,7 @@ export class Icons {
     return {style, url, left, top, extra};
   }
 
-  getPokeball(name: string, options?: {protocol?: Protocol, domain?: string}) {
+  getPokeball(name: string, options?: {protocol?: Protocol; domain?: string}) {
     let left = 0;
     let top = 0;
     let extra = undefined;
@@ -275,7 +278,7 @@ export class Icons {
     } else if (name === 'pokeball-fainted') {
       left = 80;
       top = 4;
-      extra = ';opacity:.4;filter:contrast(0)'
+      extra = ';opacity:.4;filter:contrast(0)';
     } else if (name === 'pokeball-none') {
       left = -80;
       top = 4;
@@ -289,7 +292,7 @@ export class Icons {
     return {style, url, left, top, extra};
   }
 
-  getItem(name: string, options?: {protocol?: Protocol, domain?: string}) {
+  getItem(name: string, options?: {protocol?: Protocol; domain?: string}) {
     const num = this.data.getItem(name)?.spritenum ?? 0;
     const top = -Math.floor(num / 16) * 24;
     const left = -(num % 16) * 24;
@@ -299,7 +302,7 @@ export class Icons {
     return {style, url, top, left};
   }
 
-  getType(name: string, options?: {protocol?: Protocol, domain?: string}) {
+  getType(name: string, options?: {protocol?: Protocol; domain?: string}) {
     const type = name === '???'
       ? '%3f%3f%3f'
       : `${name.charAt(0).toUpperCase()}${(name).substr(1).toLowerCase()}`;

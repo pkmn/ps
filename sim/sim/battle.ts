@@ -1276,6 +1276,11 @@ export class Battle {
 		pokemon.isActive = true;
 		this.runEvent('BeforeSwitchIn', pokemon);
 		if (oldActive) {
+			if (isDrag) {
+				this.runEvent('SwitchOut', oldActive);
+				oldActive.illusion = null;
+				this.singleEvent('End', oldActive.getAbility(), oldActive.abilityData, oldActive);
+			}
 			oldActive.isActive = false;
 			oldActive.isStarted = false;
 			oldActive.usedItemThisTurn = false;
@@ -1292,6 +1297,7 @@ export class Battle {
 			moveSlot.used = false;
 		}
 		this.add(isDrag ? 'drag' : 'switch', pokemon, pokemon.getDetails);
+		if (isDrag && this.gen === 2) pokemon.draggedIn = this.turn;
 		if (sourceEffect) this.log[this.log.length - 1] += `|[from]${sourceEffect.fullname}`;
 		pokemon.previouslySwitchedIn++;
 

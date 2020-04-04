@@ -1,8 +1,8 @@
 import * as A from './adaptable';
 import {Data} from './data/interface';
 
-var data = import('./data');
-var DATA: Data | null;
+const data = import('./data');
+let DATA: Data | null;
 
 export const Sprites = new class {
   sprites!: A.Sprites;
