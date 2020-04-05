@@ -170,7 +170,7 @@ export class Sprites {
       const d = graphics === 'gen5ani' ? (data.bw ?? {}) : data;
       if (d[facingf] && options?.gender === 'F') facing = `${facing}f` as Facing;
 
-      if (d[facing]) {
+      if (d[facing] && !data.missing?.includes(dir)) {
         const w = d[facing]!.w ?? 96;
         const h = d[facing]!.h ?? 96;
         const file = facing.endsWith('f') ? `${data.spriteid}-f` : data.spriteid;

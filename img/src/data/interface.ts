@@ -10,6 +10,7 @@ export interface PokemonData {
   iconf?: number;
   iconl?: number;
   dex?: boolean;
+  missing?: string[],
   front?: Dimensions;
   frontf?: Dimensions;
   back?: Dimensions;

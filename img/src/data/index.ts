@@ -11,6 +11,7 @@ export interface PokemonData {
   if?: number;
   il?: number;
   nd?: boolean;
+  m?: string[];
   f?: I.Dimensions;
   ff?: I.Dimensions;
   b?: I.Dimensions;
@@ -48,6 +49,7 @@ export const Data = new class implements I.Data {
       iconf: data.if,
       iconl: data.il,
       dex: data.g < 8 && !data.nd,
+      missing: data.m,
       front: data.f,
       frontf: data.ff,
       back: data.b,

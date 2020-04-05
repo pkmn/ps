@@ -81,6 +81,11 @@ describe('Sprites', () => {
     expect(pokemon.url).toEqual(`${URL}/sprites/ani/toxtricity-gmax.gif`);
     pokemon = Sprites.getPokemon('Flabébé', {gen: 'ani'});
     expect(pokemon.url).toEqual(`${URL}/sprites/ani/flabebe.gif`);
+
+    pokemon = Sprites.getPokemon('Chesnaught', {gen: 'gen5ani'});
+    expect(pokemon.url).toEqual(`${URL}/sprites/gen5ani/chesnaught.gif`);
+    pokemon = Sprites.getPokemon('Chesnaught', {gen: 'gen5ani', shiny: true});
+    expect(pokemon.url).toEqual(`${URL}/sprites/gen5-shiny/chesnaught.png`);
   });
 
   test('#getDexPokemon', () => {
