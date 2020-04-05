@@ -140,38 +140,34 @@ export class Sprites {
     }
     if (options?.shiny && gen > 1 && !data.nonshiny) dir += '-shiny';
 
-    // Missing back sprites
+    // Directory rewrites due to missing sprites
+    const rewrite = (d: string, a: GraphicsGen, b: GraphicsGen) =>
+      [Sprites.GENS[b], b, `${b}${d.slice(a.length)}`] as [GenerationNum, GraphicsGen, string];
+
     if (facing === 'back' && graphics in Sprites.FRAME2) {
       const frame1 = Sprites.FRAME2[graphics as SecondFrameGraphicsGen];
+      [gen, graphics, dir] = rewrite(dir, graphics, frame1);
       dir = `${frame1}${dir.slice(graphics.length)}`;
     } else if (dir.startsWith('gen1rg-back') || dir.startsWith('gen1rb-back')) {
-      dir = `gen1-back${dir.slice(11)}`;
+      [gen, graphics, dir] = rewrite(dir, graphics, 'gen1');
     } else if (dir.startsWith('gen2g-back') || dir.startsWith('gen2s-back')) {
-      dir = `gen2-back${dir.slice(10)}`;
-    } else if (dir.startsWith('gen3rs-back')) {
-      dir = `gen3-back${dir.slice(11)}`;
-    } else if (dir.startsWith('gen3frlg-back')) {
-      dir = `gen3-back${dir.slice(13)}`;
+      [gen, graphics, dir] = rewrite(dir, graphics, 'gen2');
+    } else if (dir.startsWith('gen3rs-back') || dir.startsWith('gen3frlg-back')) {
+      [gen, graphics, dir] = rewrite(dir, graphics, 'gen3');
     } else if (dir.startsWith('gen4dp-back')) {
-      dir = `gen4-back${dir.slice(11)}`;
-    }
-
-    // FRLG added new sprites only for Kanto Pokemon, Deoxys and Teddiursa(?!)
-    if (dir.startsWith('gen3frlg')) {
+      [gen, graphics, dir] = rewrite(dir, graphics, 'gen4');
+    } else if (dir.startsWith('gen3frlg')) {
+      // FRLG added new sprites only for Kanto Pokemon, Deoxys and Teddiursa(?!)
       if (!((data.gen === 1 && data.num <= 151) ||
              data.id === 'teddiursa' ||
              data.id.startsWith('deoxys'))) {
-        dir = `gen3${dir.slice(8)}`;
+        [gen, graphics, dir] = rewrite(dir, graphics, 'gen3');
       }
-    }
-
-    // FIXME: temporary weird missing sprite special cases that are hard to elegantly handle
-    if (dir === 'ani-back-shiny') {
+    } else if (dir === 'ani-back-shiny') {
+      // FIXME: temporary weird missing sprite special cases that are hard to elegantly handle
       if (['unown-f', 'unown-p'].includes(data.spriteid) ||
           (options?.gender === 'F' && ['snover', 'buizel'].includes(data.spriteid))) {
-        gen = 5;
-        dir = `gen5${dir.slice(3)}`;
-        graphics = 'gen5';
+        [gen, graphics, dir] = rewrite(dir, graphics, 'gen5');
       }
     }
 
@@ -188,9 +184,7 @@ export class Sprites {
         return {gen, w, h, url: `${url}/${dir}/${file}.gif`, pixelated: gen <= 5};
       }
 
-      gen = 5;
-      dir = `gen5${dir.slice(graphics.length)}`;
-      graphics = 'gen5';
+      [gen, graphics, dir] = rewrite(dir, graphics, 'gen5');
     } else if ((data[facingf] && options?.gender === 'F')) {
       facing = `${facing}f` as Facing;
     }
