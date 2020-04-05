@@ -809,7 +809,7 @@ function fetch(u) {
       const baseid = toID(species.baseSpecies);
       let spriteid;
       if (species.baseSpecies === 'Flabébé') {
-        spriteid = formeid ? `flabebe-${formeid.slice(7)}` : 'flabebe';
+        spriteid = formeid === 'flabebe' ? formeid : `flabebe-${formeid.slice(7)}`;
       } else {
         spriteid = formeid === baseid
           ? baseid
