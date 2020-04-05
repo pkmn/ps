@@ -1,0 +1,15 @@
+#!/bin/bash -ex
+
+rev=$(git rev-parse --short HEAD | tr -d "\n")
+
+npm --prefix img run build
+
+git checkout gh-pages
+
+# img
+git checkout master img/index.html # img/build/production.min.js img/data/index.js
+
+git add -A .
+git commit -m "Publish: '${rev}'"
+git push origin --force gh-pages
+git checkout -
