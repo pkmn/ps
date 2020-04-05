@@ -755,8 +755,8 @@ const NODEX = new Set([
   'pikachulibre', 'pikachuphd', 'pikachupopstar', 'pikachubelle', 'pikachurockstar',
 ]);
 
+// FIXME: ideally this list should be unnecesary and shiny sprites would be added
 const MISSING = {
-  buizelf: ['ani-back-shiny'],
   chesnaught: ['gen5ani-shiny', 'gen5ani-back-shiny'],
   corviknight: ['gen5ani-shiny'],
   drednaw: ['gen5ani-shiny'],
@@ -772,11 +772,8 @@ const MISSING = {
   rookidee: ['gen5ani-shiny'],
   scorbunny: ['gen5ani-shiny'],
   snom: ['gen5ani-shiny'],
-  snoverf: ['ani-back-shiny'],
   sobble: ['gen5ani-shiny'],
   toxel: ['gen5ani-shiny'],
-  unknownf: ['ani-back-shiny'],
-  unknownp: ['ani-back-shiny'],
   wooloo: ['gen5ani-shiny', 'gen5ani-back-shiny'],
   yamper:  ['gen5ani-shiny', 'gen5ani-back-shiny'],
 };

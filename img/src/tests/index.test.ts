@@ -88,6 +88,23 @@ describe('Sprites', () => {
     expect(pokemon.url).toEqual(`${URL}/sprites/gen5-shiny/chesnaught.png`);
     pokemon = Sprites.getPokemon('Pikachu-Original', {shiny: true});
     expect(pokemon.url).toEqual(`${URL}/sprites/ani/pikachu-original.gif`);
+
+    pokemon = Sprites.getPokemon('Buizel', {shiny: true, side: 'p1', gender: 'F'});
+    expect(pokemon.url).toEqual(`${URL}/sprites/gen5-back-shiny/buizel-f.png`);
+    pokemon = Sprites.getPokemon('Buizel', {side: 'p1', gender: 'F'});
+    expect(pokemon.url).toEqual(`${URL}/sprites/ani-back/buizel-f.gif`);
+    pokemon = Sprites.getPokemon('Snover', {shiny: true, side: 'p1', gender: 'F'});
+    expect(pokemon.url).toEqual(`${URL}/sprites/gen5-back-shiny/snover-f.png`);
+    pokemon = Sprites.getPokemon('Snover', {side: 'p1'});
+    expect(pokemon.url).toEqual(`${URL}/sprites/ani-back/snover.gif`);
+    pokemon = Sprites.getPokemon('Unown-F', {shiny: true, side: 'p1'});
+    expect(pokemon.url).toEqual(`${URL}/sprites/gen5-back-shiny/unown-f.png`);
+    pokemon = Sprites.getPokemon('Unown-F', {side: 'p1'});
+    expect(pokemon.url).toEqual(`${URL}/sprites/ani-back/unown-f.gif`);
+    pokemon = Sprites.getPokemon('Unown-P', {shiny: true, side: 'p1'});
+    expect(pokemon.url).toEqual(`${URL}/sprites/gen5-back-shiny/unown-p.png`);
+    pokemon = Sprites.getPokemon('Unown-P', {shiny: true});
+    expect(pokemon.url).toEqual(`${URL}/sprites/ani-shiny/unown-p.gif`);
   });
 
   test('#getDexPokemon', () => {

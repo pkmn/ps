@@ -165,6 +165,16 @@ export class Sprites {
       }
     }
 
+    // FIXME: temporary weird missing sprite special cases that are hard to elegantly handle
+    if (dir === 'ani-back-shiny') {
+      if (['unown-f', 'unown-p'].includes(data.spriteid) ||
+          (options?.gender === 'F' && ['snover', 'buizel'].includes(data.spriteid))) {
+        gen = 5;
+        dir = `gen5${dir.slice(3)}`;
+        graphics = 'gen5';
+      }
+    }
+
     const facingf = facing + 'f' as 'frontf' | 'backf';
     if (graphics in Sprites.ANIMATED) {
       const d = graphics === 'gen5ani' ? (data.bw ?? {}) : data;
@@ -180,6 +190,7 @@ export class Sprites {
 
       gen = 5;
       dir = `gen5${dir.slice(graphics.length)}`;
+      graphics = 'gen5';
     } else if ((data[facingf] && options?.gender === 'F')) {
       facing = `${facing}f` as Facing;
     }
