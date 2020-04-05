@@ -21,7 +21,6 @@ const GENS = {
   'gen2g': 2,
   'gen2s': 2,
   'gen2': 2,
-  // 'gen2-2': 2
   'gen3rs': 3,
   'gen3frlg': 3,
   'gen3': 3,
@@ -46,7 +45,6 @@ const ANIMATED = {
 
 export type SecondFrameGraphicsGen = keyof typeof FRAME2;
 const FRAME2 = {
-  // 'gen2-2': 'gen2' as GraphicsGen,
   'gen3-2': 'gen3' as GraphicsGen,
   'gen4dp-2': 'gen4dp' as GraphicsGen,
   // 'gen4-2': 'gen4' as GraphicsGen,
@@ -84,6 +82,11 @@ export interface PokemonSprite {
   url: string;
   pixelated?: boolean;
 }
+
+// Several Pokemon were added in the middle of Gen 4 and thus are not present in gen4dp{,-2}
+const NONDP = new Set([
+  'giratinaorigin', 'rotomfan', 'rotomfrost', 'rotomheat', 'rotommow', 'rotomwash', 'shayminsky',
+]);
 
 export class Sprites {
   static SOURCES = SOURCES;
@@ -146,6 +149,8 @@ export class Sprites {
 
     if (data.spriteid === 'missingno' && gen > 1) {
       [gen, graphics, dir] = rewrite(dir, graphics, 'gen1');
+    } else if (dir.startsWith('gen4dp') && NONDP.has(data.id)) {
+      [gen, graphics, dir] = rewrite(dir, graphics, 'gen4');
     } else if (facing === 'back' && graphics in Sprites.FRAME2) {
       const frame1 = Sprites.FRAME2[graphics as SecondFrameGraphicsGen];
       [gen, graphics, dir] = rewrite(dir, graphics, frame1);

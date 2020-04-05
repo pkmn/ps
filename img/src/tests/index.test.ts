@@ -93,6 +93,8 @@ describe('Sprites', () => {
     expect(pokemon.url).toEqual(`${URL}/sprites/gen5-shiny/chesnaught.png`);
     pokemon = Sprites.getPokemon('Pikachu-Original', {shiny: true});
     expect(pokemon.url).toEqual(`${URL}/sprites/ani/pikachu-original.gif`);
+    pokemon = Sprites.getPokemon('Rotom-Heat', {gen: 'gen4dp-2'});
+    expect(pokemon.url).toEqual(`${URL}/sprites/gen4/rotom-heat.png`);
 
     pokemon = Sprites.getPokemon('Buizel', {shiny: true, side: 'p1', gender: 'F'});
     expect(pokemon.url).toEqual(`${URL}/sprites/gen5-back-shiny/buizel-f.png`);
