@@ -887,6 +887,30 @@ function fetch(u) {
 
   data.avatars = BattleAvatarNumbers;
 
+  // FIXME
+  // "gen5ani-shiny/noivern",
+  // "gen5ani-shiny/meowth-galar",
+  // "gen5ani-shiny/meowth-gmax",
+  // "gen5ani-shiny/grookey",
+  // "gen5ani-shiny/scorbunny",
+  // "gen5ani-shiny/sobble",
+  // "gen5ani-shiny/rookidee",
+  // "gen5ani-shiny/corviknight",
+  // "gen5ani-shiny/wooloo",
+  // "gen5ani-back-shiny/wooloo",
+  // "gen5ani-shiny/drednaw",
+  // "gen5ani-shiny/drednaw-gmax",
+  // "gen5ani-shiny/yamper",
+  // "gen5ani-back-shiny/yamper",
+  // "gen5ani-shiny/toxel",
+  // "gen5ani-shiny/hatenna",
+  // "gen5ani-shiny/milcery",
+  // "gen5ani-shiny/snom",
+  // "gen5ani-shiny/duraludon"
+  data.missing = {
+    chesnaught: ['gen5ani-shiny', 'gen5ani-back-shiny'],
+  };
+
   fs.writeFileSync(path.resolve(__dirname, 'src/data/data.json'), JSON.stringify(data));
 })();
 

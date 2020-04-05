@@ -20,6 +20,7 @@ export interface PokemonData {
     back?: Dimensions;
     backf?: Dimensions;
   };
+  missing?: string[];
 }
 export interface Data {
   getPokemon(name: string): PokemonData | undefined;
