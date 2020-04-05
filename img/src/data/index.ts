@@ -24,10 +24,9 @@ export interface PokemonData {
 }
 
 const DATA = DataJSON as {
-  pokemon: {[id: string]: PokemonData};
+  pokemon: {[spriteid: string]: PokemonData};
   items: {[id: string]: number};
   avatars: {[key: string]: string};
-  missing: {[id: string]: string[]};
 };
 
 function toID(s: string) {
@@ -58,8 +57,7 @@ export const Data = new class implements I.Data {
         frontf: data.bw?.ff,
         back: data.bw?.b,
         backf: data.bw?.bf,
-      },
-      missing: DATA.missing[id],
+      }
     };
   }
 

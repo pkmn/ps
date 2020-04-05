@@ -147,8 +147,7 @@
     function sprites(gen, namestar) {
       const name = namestar.endsWith('*') ? namestar.slice(0, -1) : namestar;
       const imgs = [];
-      const alt = (u, g) =>
-        u.slice('https://play.pokemonshowdown.com/sprites/'.length, -4) + (g ? ` (${g})` : '');
+      const alt = u => u.slice('https://play.pokemonshowdown.com/sprites/'.length, -4);
 
       if (gen === 'dex') {
         // no gender or back sprites
@@ -176,7 +175,7 @@
               PokemonSprites.getPokemon(name, {gen, side, shiny, gender});
             const img = e('img');
             img.src = url;
-            img.alt = alt(url, gender);
+            img.alt = alt(url);
             img.width = w;
             img.height = h;
             if (pixelated) img.style = 'image-rendering: pixelated;';
