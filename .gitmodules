@@ -1,6 +1,0 @@
-[submodule "vendor/pokemon-showdown"]
-	path = vendor/pokemon-showdown
-	url = git://github.com/smogon/pokemon-showdown.git
-[submodule "vendor/pokemon-showdown-client"]
-	path = vendor/pokemon-showdown-client
-	url = git://github.com/smogon/pokemon-showdown-client.git
