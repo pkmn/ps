@@ -96,7 +96,7 @@
 <body>
   <div id="root"></div>
   <script src="./data/index.js"></script>
-  <script src="./build/production.min.js?asf7687"></script>
+  <script src="./build/production.min.js"></script>
   <script>
     const ROOT = document.getElementById('root');
     const GENS = Object.keys(PokemonSprites.GENS);
@@ -142,7 +142,7 @@
       }
 
       return icons;
-    };
+    }
 
     function sprites(gen, namestar) {
       const name = namestar.endsWith('*') ? namestar.slice(0, -1) : namestar;
@@ -165,7 +165,8 @@
         return imgs;
       }
 
-      const genders = (gen.startsWith('gen1') || namestar.endsWith('*')) ? [undefined] : ['M', 'F'];
+      const genders =
+        (PokemonSprites.GENS[gen] < 4 || !namestar.endsWith('*')) ? [undefined] : ['M', 'F'];
       for (const shiny of (gen.startsWith('gen1') ? [false] :  [false, true])) {
         if (name.endsWith('-Starter') && shiny === true) continue;
         for (const side of ['p2', 'p1']) {
@@ -184,7 +185,7 @@
       }
 
       return imgs;
-    };
+    }
 
     function renderRow(i) {
       const namestar = SPECIES[i];
@@ -253,7 +254,7 @@
       ROOT.appendChild(div);
       window.history[replace ? 'replaceState' : 'pushState'](null, '', `#${page + 1}`);
       window.scrollTo(0, 0);
-    };
+    }
 
     displayPage(0, true);
 

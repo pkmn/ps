@@ -117,22 +117,15 @@ describe('Sprites', () => {
 
     pokemon = Sprites.getDexPokemon('MissingNo.');
     expect(pokemon.url).toEqual(`${URL}/sprites/gen5/missingno.png`);
-    expect(pokemon.gen).toBe(5);
-    expect(pokemon.w).toBe(96);
-    expect(pokemon.h).toBe(96);
-    expect(pokemon.pixelated).toBe(true);
 
     pokemon = Sprites.getDexPokemon('vivillonsun');
     expect(pokemon.url).toEqual(`${URL}/sprites/dex/vivillon-sun.png`);
-    expect(pokemon.gen).toBe(6);
-    expect(pokemon.w).toBe(120);
-    expect(pokemon.h).toBe(120);
 
     pokemon = Sprites.getDexPokemon('Centiskorch');
     expect(pokemon.url).toEqual(`${URL}/sprites/gen5/centiskorch.png`);
-    expect(pokemon.gen).toBe(5);
-    expect(pokemon.w).toBe(96);
-    expect(pokemon.h).toBe(96);
+
+    pokemon = Sprites.getDexPokemon('Delphox', {shiny: true});
+    expect(pokemon.url).toEqual(`${URL}/sprites/dex-shiny/delphox.png`);
   });
 
   test('#getSubstitute', () => {

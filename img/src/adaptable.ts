@@ -213,8 +213,9 @@ export class Sprites {
     }
 
     const gen = Math.max(data.gen, 6);
+    const shiny = options?.shiny ? '-shiny' : '';
     const size = data.gen >= 7 ? 128 : 120;
-    const url = `${URL(options)}/sprites/dex/${data.spriteid}.png`;
+    const url = `${URL(options)}/sprites/dex${shiny}/${data.spriteid}.png`;
 
     return {gen, w: size, h: size, url, pixelated: false};
   }
