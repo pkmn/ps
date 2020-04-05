@@ -751,6 +751,10 @@ const DEX = new Set([
   "pokestarhumanoid", "pokestarmonster", "pokestarf00", "pokestarf002", "pokestarspirit",
 ]);
 
+const NODEX = new Set([
+  'pikachulibre', 'pikachuphd', 'pikachupopstar', 'pikachubelle', 'pikachurockstar',
+]);
+
 //#endregion
 //#region Main
 
@@ -803,16 +807,19 @@ function fetch(u) {
     const species = Dex.getSpecies(baseid);
     for (const formeid of [species.id].concat(species.cosmeticFormes || [])) {
       const baseid = toID(species.baseSpecies);
-      const spriteid = formeid === baseid
-        ? baseid
-        : `${baseid}-${formeid.slice(baseid.length)}`;
+      let spriteid;
+      if (species.baseSpecies === 'Flabébé') {
+        spriteid = formeid ? `flabebe-${formeid.slice(7)}` : 'flabebe';
+      } else {
+        spriteid = formeid === baseid
+          ? baseid
+          : `${baseid}-${formeid.slice(baseid.length)}`;
+      }
       const id = toID(spriteid);
       SPECIES[id] = [species, spriteid];
       // Totems have no visual difference other than size, which is handled during rendering
       if (!id.endsWith('totem')) {
         index.push([species, `${Dex.getForme(formeid)}${species.gender ? '' : '*'}`]);
-        if (formeid !== baseid) console.log(id, spriteid, Dex.getForme(formeid));
-
       }
     }
   }
@@ -869,7 +876,7 @@ function fetch(u) {
     s.g = species.gen;
     if (id !== spriteid) s.s = spriteid.indexOf('-');
     const dex = (!species.isNonstandard || species.isNonstandard === 'Past') || DEX.has(species.id);
-    if (!dex) s.nd = true;
+    if (!dex || NODEX.has(species.id)) s.nd = true;
   }
 
   data.items = {};

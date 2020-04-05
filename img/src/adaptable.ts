@@ -204,7 +204,6 @@ export class Sprites {
     let graphics = options?.gen ?? 'dex';
     if (graphics in Sprites.ANIMATED) graphics = Sprites.ANIMATED[graphics as AnimatedGraphicsGen];
     const data = this.data.getPokemon(name);
-    console.log(name, options?.gen)
     if (!data ||
       !data.dex ||
       (graphics !== 'dex' && !(typeof graphics === 'number' && graphics >= 6))) {

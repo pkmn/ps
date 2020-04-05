@@ -285,7 +285,7 @@ export class ModdedDex {
 		const id = toID(name || '');
 		const species = this.getSpecies(id);
 		if (species.cosmeticFormes && species.cosmeticFormes.includes(id)) {
-			const forme = id.slice(species.name.length);
+			const forme = id.slice(species.id.length);
 			if (forme) return species.name + '-' + forme[0].toUpperCase() + forme.slice(1);
 		}
 		return species.name;

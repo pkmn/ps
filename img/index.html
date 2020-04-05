@@ -151,7 +151,8 @@
 
       if (gen === 'dex') {
         // no gender or back sprites
-        for (const shiny of [true, false]) {
+        for (const shiny of [false, true]) {
+          if (name.endsWith('-Starter') && shiny === true) continue;
           const {url, w, h, pixelated} = PokemonSprites.getDexPokemon(name, {gen, shiny});
           const img = e('img');
           img.src = url;
@@ -166,6 +167,7 @@
 
       const genders = (gen.startsWith('gen1') || namestar.endsWith('*')) ? [undefined] : ['M', 'F'];
       for (const shiny of (gen.startsWith('gen1') ? [false] :  [false, true])) {
+        if (name.endsWith('-Starter') && shiny === true) continue;
         for (const side of ['p2', 'p1']) {
           for (const gender of genders) {
             const {url, w, h, pixelated} =
@@ -258,7 +260,7 @@
     document.addEventListener('keydown', e => {
       if (e.keyCode === 37 && PAGE !== 0) {
         displayPage(PAGE - 1);
-      } else if (e.keyCode === 39 && PAGE !== PAGES) {
+      } else if (e.keyCode === 39 && (PAGE + 1) !== PAGES) {
         displayPage(PAGE + 1);
       } else if (e.keyCode === 219) {
         ROOT.classList.toggle('outline');
