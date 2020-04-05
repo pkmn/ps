@@ -82,6 +82,11 @@ describe('Sprites', () => {
     pokemon = Sprites.getPokemon('Flabébé', {gen: 'ani'});
     expect(pokemon.url).toEqual(`${URL}/sprites/ani/flabebe.gif`);
 
+    pokemon = Sprites.getPokemon('missi ngno', {gen: 'gen1rb'});
+    expect(pokemon.url).toEqual(`${URL}/sprites/gen1rb/missingno.png`);
+    pokemon = Sprites.getPokemon('MissingNo.', {gen: 'ani', shiny: true, side: 'p1'});
+    expect(pokemon.url).toEqual(`${URL}/sprites/gen1-back/missingno.png`);
+
     pokemon = Sprites.getPokemon('Chesnaught', {gen: 'gen5ani'});
     expect(pokemon.url).toEqual(`${URL}/sprites/gen5ani/chesnaught.gif`);
     pokemon = Sprites.getPokemon('Chesnaught', {gen: 'gen5ani', shiny: true});
@@ -142,7 +147,7 @@ describe('Sprites', () => {
     expect(pokemon.h).toBe(120);
 
     pokemon = Sprites.getDexPokemon('MissingNo.');
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen5/missingno.png`);
+    expect(pokemon.url).toEqual(`${URL}/sprites/gen1/missingno.png`);
 
     pokemon = Sprites.getDexPokemon('vivillonsun');
     expect(pokemon.url).toEqual(`${URL}/sprites/dex/vivillon-sun.png`);

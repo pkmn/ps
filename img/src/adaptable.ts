@@ -144,7 +144,9 @@ export class Sprites {
     const rewrite = (d: string, a: GraphicsGen, b: GraphicsGen) =>
       [Sprites.GENS[b], b, `${b}${d.slice(a.length)}`] as [GenerationNum, GraphicsGen, string];
 
-    if (facing === 'back' && graphics in Sprites.FRAME2) {
+    if (data.spriteid === 'missingno' && gen > 1) {
+      [gen, graphics, dir] = rewrite(dir, graphics, 'gen1');
+    } else if (facing === 'back' && graphics in Sprites.FRAME2) {
       const frame1 = Sprites.FRAME2[graphics as SecondFrameGraphicsGen];
       [gen, graphics, dir] = rewrite(dir, graphics, frame1);
       dir = `${frame1}${dir.slice(graphics.length)}`;
