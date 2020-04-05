@@ -75,7 +75,7 @@ above is doing), after which **`PokemonSprites` and `PokemonIcons` will be acces
 ## Performance
 
 The JSON data required to be able to know how to display the sprites and icons weighs in at
-**~34.6KB after compression**. This could be further optimized by storing the data as Javascript
+**~34.4KB after compression**. This could be further optimized by storing the data as Javascript
 objects (which don't require quoted keys), but this only amounts to a ~1-2KB saving once compressed.
 Furthermore, [Javascript runtimes **optimize JSON** parsing to be 2x faster][5] than Javascript
 object literals in some cases, so the additional size overhead from JSON is likely not worth

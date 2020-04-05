@@ -3,6 +3,7 @@ export type GenerationNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 export type Dimensions = {w: number, h: number};
 export interface PokemonData {
   id: string;
+  spriteid: string;
   gen: number;
   num: number;
   icon?: number;

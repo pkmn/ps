@@ -7,6 +7,7 @@ export interface PokemonData {
   g: I.GenerationNum;
   n: number;
   i?: number;
+  s?: number;
   if?: number;
   il?: number;
   nd?: boolean;
@@ -34,17 +35,19 @@ function toID(s: string) {
 
 export const Data = new class implements I.Data {
   getPokemon(name: string) {
-    const id = toID(name);
+    let id = toID(name);
+    if (id === 'toxtricitylowkeygmax') id = 'toxtricitygmax' as I.ID;
     const data = DATA.pokemon[id];
     if (!data) return undefined;
     return {
       id,
+      spriteid: data.s ? `${id.slice(0, data.s)}-${id.slice(data.s)}` : id,
       gen: data.g,
       num: data.n,
       icon: data.i,
       iconf: data.if,
       iconl: data.il,
-      dex: !data.nd,
+      dex: data.g < 8 && !data.nd,
       front: data.f,
       frontf: data.ff,
       back: data.b,

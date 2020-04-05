@@ -754,6 +754,8 @@ const DEX = new Set([
 //#endregion
 //#region Main
 
+const toID = s => ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '');
+
 function fetch(u) {
   return new Promise((resolve, reject) => {
     let data = '';
@@ -775,13 +777,6 @@ function fetch(u) {
   });
 }
 
-function formeName(species, spriteid) {
-  if (species.id !== spriteid || species.name === 'Toxtricity-Low-Key-Gmax') return species.name;
-  let forme = spriteid.slice(species.id.length);
-  forme = forme.charAt(0).toUpperCase() + forme.substr(1);
-  return `${species.name}-${forme}`;
-}
-
 (async () => {
   const dir = path.resolve(__dirname, 'data');
   if (!fs.existsSync(dir)) fs.mkdirSync(dir);
@@ -801,41 +796,61 @@ function formeName(species, spriteid) {
   // we expect this to have been built...
   const Dex = require('../vendor/pokemon-showdown/.sim-dist/dex.js').Dex;
 
-  const toID = s => ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '');
-  // Reverse map from spriteid as calculated by `build-minidex` to Species
+  // Reverse map from spriteid as calculated by `build-minidex` to [Species, sprite-id]
   const SPECIES = {};
-  const names = [];
+  const index = [];
   for (const baseid in Dex.data.Pokedex) {
     const species = Dex.getSpecies(baseid);
-    for (const formid of [''].concat(species.cosmeticFormes || [])) {
-      let spriteid = species.spriteid;
-      if (formid) spriteid += '-' + formid.slice(species.id.length);
+    for (const formeid of [species.id].concat(species.cosmeticFormes || [])) {
+      const baseid = toID(species.baseSpecies);
+      const spriteid = formeid === baseid
+        ? baseid
+        : `${baseid}-${formeid.slice(baseid.length)}`;
       const id = toID(spriteid);
-      SPECIES[id] = species;
+      SPECIES[id] = [species, spriteid];
+      // Totems have no visual difference other than size, which is handled during rendering
       if (!id.endsWith('totem')) {
-        names.push([id, species, `${formeName(species, spriteid)}${species.gender ? '' : '*'}`]);
+        index.push([species, `${Dex.getForme(formeid)}${species.gender ? '' : '*'}`]);
+        if (formeid !== baseid) console.log(id, spriteid, Dex.getForme(formeid));
+
       }
     }
   }
 
-  const sorted = names.sort(([, a], [, b]) => {
+  const sorted = index.sort(([a, ], [b, ]) => {
   	if (a.gen - b.gen) return a.gen - b.gen;
   	return Math.abs(a.num) - Math.abs(b.num);
-  }).map(a => a[2]);
+  });
 
-  fs.writeFileSync(path.join(dir, 'index.js'), `const SPECIES = ${JSON.stringify(sorted)};`);
+  const names = [];
+  const offsets = [];
+  let gen = 0;
+  let offset = 0;
+  for (const [species, name] of sorted) {
+    names.push(name);
+    if (!species.isNonstandard && species.gen === gen + 1){
+      offsets.push(offset);
+      gen++;
+    }
+    offset++;
+  }
+
+  fs.writeFileSync(
+    path.join(dir, 'index.js'),
+    `const SPECIES = ${JSON.stringify(names)};\nconst OFFSETS = ${JSON.stringify(offsets)};\n`
+  );
 
   data.pokemon = {};
-  for (const spriteid in BattlePokemonSprites) {
-    const sprite = BattlePokemonSprites[spriteid];
-    const bwSprite = BattlePokemonSpritesBW[spriteid];
+  for (const id in BattlePokemonSprites) {
+    const sprite = BattlePokemonSprites[id];
+    const bwSprite = BattlePokemonSpritesBW[id];
     if (sprite.exists === false) continue;
 
-    const s = data.pokemon[spriteid] = { n: sprite.num };
+    const s = data.pokemon[id] = { n: sprite.num };
 
-    if (BattlePokemonIconIndexes[spriteid] !== s.n) s.i = BattlePokemonIconIndexes[spriteid];
-    if (BattlePokemonIconIndexes[`${spriteid}f`]) s.if = BattlePokemonIconIndexes[`${spriteid}f`];
-    if (BattlePokemonIconIndexesLeft[spriteid]) s.il = BattlePokemonIconIndexesLeft[spriteid];
+    if (BattlePokemonIconIndexes[id] !== s.n) s.i = BattlePokemonIconIndexes[id];
+    if (BattlePokemonIconIndexes[`${id}f`]) s.if = BattlePokemonIconIndexes[`${id}f`];
+    if (BattlePokemonIconIndexesLeft[id]) s.il = BattlePokemonIconIndexesLeft[id];
 
     if (sprite.front) s.f = sprite.front;
     if (sprite.frontf) s.ff = sprite.frontf;
@@ -850,9 +865,10 @@ function formeName(species, spriteid) {
       if (bwSprite.backf) s.bw.bf = bwSprite.backf;
     }
 
-    const species = SPECIES[spriteid];
-    const dex = (!species.isNonstandard || species.isNonstandard === 'Past') || DEX.has(species.id);
+    const [species, spriteid] = SPECIES[id];
     s.g = species.gen;
+    if (id !== spriteid) s.s = spriteid.indexOf('-');
+    const dex = (!species.isNonstandard || species.isNonstandard === 'Past') || DEX.has(species.id);
     if (!dex) s.nd = true;
   }
 

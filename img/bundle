@@ -60,6 +60,7 @@ window.PokemonSprites = new exports.Sprites(exports.Data);
 window.PokemonSprites.SOURCES = exports.Sprites.SOURCES;
 window.PokemonSprites.GENS = exports.Sprites.GENS;
 window.PokemonSprites.ANIMATED = exports.Sprites.ANIMATED;
+window.PokemonSprites.FRAME2 = exports.Sprites.FRAME2;
 window.PokemonIcons = new exports.Icons(exports.Data);
 })();`
 bundled = babel.transformSync(bundled, config).code;

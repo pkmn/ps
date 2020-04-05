@@ -25,16 +25,16 @@ const GENS = {
   'gen3rs': 3,
   'gen3frlg': 3,
   'gen3': 3,
-  'gen3-2': 3, // TODO
+  'gen3-2': 3,
   'gen4dp': 4,
-  'gen4dp-2': 4, // TODO
+  'gen4dp-2': 4,
   'gen4': 4,
   // 'gen4-2': 4,
   // 'gen4hgss': 4,
   // 'gen4hgss-2': 4,
   'gen5': 5,
   'gen5ani': 5,
-  // 'static': 6,
+  // 'noani': 6,
   'ani': 6,
 };
 
@@ -60,17 +60,17 @@ const SOURCES: {[name: string]: GraphicsGen} = {
   'Gold': 'gen2g',
   'Silver': 'gen2s',
   'Crystal': 'gen2',
-  // 'Crystal (Animated)': 'gen2ani',
+  // 'Crystal (2)': 'gen2-2',
   'Ruby/Sapphire': 'gen3rs',
   'FireRed/LeafGreen': 'gen3frlg',
   'Emerald': 'gen3',
-  // 'Emerald (Animated)': 'gen3ani',
+  'Emerald (2)': 'gen3-2',
   'Diamond/Pearl': 'gen4dp',
-  // 'Diamond/Pearl (Animated)': 'gen4dpani',
+  'Diamond/Pearl (2)': 'gen4dp-2',
   'Platinum': 'gen4',
-  // 'Platinum (Animated)': 'gen4ani':
+  // 'Platinum (2)': 'gen4-2':
   // 'HeartGold/SoulSilver': 'gen4hgss':
-  // 'HeartGold/SoulSilver (Animated)': 'gen4hgssani':
+  // 'HeartGold/SoulSilver (2)': 'gen4hgss-2':
   'Black/White': 'gen5',
   'Black/White (Animated)': 'gen5ani',
   // 'Modern': 'noani',
@@ -89,6 +89,7 @@ export class Sprites {
   static SOURCES = SOURCES;
   static GENS = GENS;
   static ANIMATED = ANIMATED;
+  static FRAME2 = FRAME2;
 
   readonly data: Data;
 
@@ -140,7 +141,10 @@ export class Sprites {
     if (options?.shiny && gen > 1) dir += '-shiny';
 
     // Missing back sprites
-    if (dir.startsWith('gen1rg-back') || dir.startsWith('gen1rb-back')) {
+    if (facing === 'back' && graphics in Sprites.FRAME2) {
+      const frame1 = Sprites.FRAME2[graphics as SecondFrameGraphicsGen];
+      dir = `${frame1}${dir.slice(graphics.length)}`;
+    } else if (dir.startsWith('gen1rg-back') || dir.startsWith('gen1rb-back')) {
       dir = `gen1-back${dir.slice(11)}`;
     } else if (dir.startsWith('gen2g-back') || dir.startsWith('gen2s-back')) {
       dir = `gen2-back${dir.slice(10)}`;
@@ -152,9 +156,13 @@ export class Sprites {
       dir = `gen4-back${dir.slice(11)}`;
     }
 
-    // FRLG added new sprites for Kanto Pokemon only
-    if (dir.startsWith('gen3frlg') && (data.gen !== 1 || data.num > 151)) {
-      dir = `gen3${dir.slice(8)}`;
+    // FRLG added new sprites only for Kanto Pokemon, Deoxys and Teddiursa(?!)
+    if (dir.startsWith('gen3frlg')) {
+      if (!((data.gen === 1 && data.num <= 151) ||
+             data.id === 'teddiursa' ||
+             data.id.startsWith('deoxys'))) {
+        dir = `gen3${dir.slice(8)}`;
+      }
     }
 
     const facingf = facing + 'f' as 'frontf' | 'backf';
@@ -165,7 +173,7 @@ export class Sprites {
       if (d[facing]) {
         const w = d[facing]!.w ?? 96;
         const h = d[facing]!.h ?? 96;
-        const file = facing.endsWith('f') ? `${data.id}-f` : data.id;
+        const file = facing.endsWith('f') ? `${data.spriteid}-f` : data.spriteid;
 
         return {gen, w, h, url: `${url}/${dir}/${file}.gif`, pixelated: gen <= 5};
       }
@@ -177,7 +185,9 @@ export class Sprites {
     }
 
     // Visual gender differences didn't exist for sprites until Gen 4
-    const file = (data.gen >= 4 && data[facing] && facing.endsWith('f')) ? `${data.id}-f` : data.id;
+    const file = (data.gen >= 4 && data[facing] && facing.endsWith('f'))
+      ? `${data.spriteid}-f`
+      : data.spriteid;
 
     return {gen, w: 96, h: 96, url: `${url}/${dir}/${file}.png`, pixelated: true};
   }
@@ -194,15 +204,18 @@ export class Sprites {
     let graphics = options?.gen ?? 'dex';
     if (graphics in Sprites.ANIMATED) graphics = Sprites.ANIMATED[graphics as AnimatedGraphicsGen];
     const data = this.data.getPokemon(name);
+    console.log(name, options?.gen)
     if (!data ||
       !data.dex ||
       (graphics !== 'dex' && !(typeof graphics === 'number' && graphics >= 6))) {
+      options = {...options};
+      if (!options.gen || options.gen === 'dex') options.gen = 'gen5';
       return this.getPokemon(name, options as any);
     }
 
     const gen = Math.max(data.gen, 6);
     const size = data.gen >= 7 ? 128 : 120;
-    const url = `${URL(options)}/sprites/dex/${data.id}.png`;
+    const url = `${URL(options)}/sprites/dex/${data.spriteid}.png`;
 
     return {gen, w: size, h: size, url, pixelated: false};
   }
@@ -268,9 +281,7 @@ export class Icons {
 
     const top = -Math.floor(num / 12) * 30;
     const left = -(num % 12) * 40;
-    const extra = options?.fainted
-      ? ';opacity:.3;filter:grayscale(100%) brightness(.5)'
-      : undefined;
+    const extra = options?.fainted ? ';opacity:.3;filter:grayscale(100%) brightness(.5)' : '';
 
     const url = `${URL(options)}/sprites/pokemonicons-sheet.png`;
     const base = 'display:inline-block;width:40px;height:30px;image-rendering:pixelated';
@@ -282,7 +293,7 @@ export class Icons {
   getPokeball(name: string, options?: {protocol?: Protocol; domain?: string}) {
     let left = 0;
     let top = 0;
-    let extra = undefined;
+    let extra = '';
     if (name === 'pokeball') {
       left = 0;
       top = 4;

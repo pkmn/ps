@@ -6,8 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sprites</title>
   <style>
+    :root {
+      --fg-color: black;
+      --bg-color: white;
+    }
+    [data-theme="dark"] {
+      --fg-color: white;
+      --bg-color: black;
+    }
+
     body {
       font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+      color: var(--fg-color);
+      background-color: var(--bg-color);
     }
 
     table {
@@ -20,11 +31,11 @@
 
     td,
     th {
-      border: 5px solid black;
+      border: 5px solid var(--fg-color);
     }
 
     .outline img {
-      border: 1px solid black;
+      border: 1px solid var(--fg-color);;
       margin: 2px;
     }
 
@@ -43,8 +54,8 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: black;
-      color: white;
+      background: var(--fg-color);;
+      color: var(--bg-color);;
     }
 
     ul {
@@ -57,12 +68,13 @@
 
     li {
       display: inline-block;
-      padding: 0 5px;
+      padding: 0 3px;
     }
 
     button {
       align-items: normal;
-      background-color: rgba(0, 0, 0, 0);
+      color: var(--fg-color);
+      background-color: var(--bg-color);
       border-style: none;
       box-sizing: content-box;
       cursor: pointer;
@@ -74,18 +86,22 @@
       transform-origin: 0 0;
       -moz-appearance: none;
     }
+
+    .divider {
+      font-weight: bold;
+    }
   </style>
 </head>
 
 <body>
   <div id="root"></div>
-  <script src="./data/species.js"></script>
-  <script src="./build/production.min.js"></script>
+  <script src="./data/index.js"></script>
+  <script src="./build/production.min.js?asf7687"></script>
   <script>
     const ROOT = document.getElementById('root');
     const GENS = Object.keys(PokemonSprites.GENS);
     GENS.splice(GENS.length-1, 0, 'dex');
-    const PAGE_SIZE = 25;
+    const PAGE_SIZE = 10;
     const PAGES = Math.ceil(SPECIES.length / PAGE_SIZE);
 
     function e(type, options) {
@@ -131,6 +147,7 @@
     function sprites(gen, namestar) {
       const name = namestar.endsWith('*') ? namestar.slice(0, -1) : namestar;
       const imgs = [];
+      const alt = u => u.slice('https://play.pokemonshowdown.com/sprites/'.length, -4);
 
       if (gen === 'dex') {
         // no gender or back sprites
@@ -138,6 +155,7 @@
           const {url, w, h, pixelated} = PokemonSprites.getDexPokemon(name, {gen, shiny});
           const img = e('img');
           img.src = url;
+          img.alt = alt(url);
           img.width = w;
           img.height = h;
           if (pixelated) img.style = 'image-rendering: pixelated;';
@@ -154,6 +172,7 @@
               PokemonSprites.getPokemon(name, {gen, side, shiny, gender});
             const img = e('img');
             img.src = url;
+            img.alt = alt(url);
             img.width = w;
             img.height = h;
             if (pixelated) img.style = 'image-rendering: pixelated;';
@@ -190,18 +209,24 @@
 
     function createNav(page) {
       const ul = e('ul');
+      const offsets = OFFSETS.slice();
       for (let i = 0; i < PAGES; i++) {
+        if (offsets.length && (((i + 2) * PAGE_SIZE) >= offsets[0])) {
+          offsets.shift();
+          ul.appendChild(e('li', {content: '◼', class: 'divider'}));
+        }
         const li = e('li');
-        if (page === i) li.style = 'background-color: yellow;'
         const button = e('button', e(page === i ? 'b' : 'span', `${i + 1}`));
+        if (page === i) li.style = button.style = 'background-color:yellow;'
         button.addEventListener('click', () => displayPage(i));
         li.appendChild(button);
         ul.appendChild(li);
       }
+      ul.appendChild(e('li', {content: '◼', class: 'divider'}));
       return ul;
     }
 
-    function displayPage(page) {
+    function displayPage(page, replace) {
       PAGE = page;
       if (ROOT.firstChild) ROOT.removeChild(ROOT.firstChild);
 
@@ -224,10 +249,11 @@
       div.appendChild(createNav(page));
 
       ROOT.appendChild(div);
+      window.history[replace ? 'replaceState' : 'pushState'](null, '', `#${page + 1}`);
       window.scrollTo(0, 0);
     };
 
-    displayPage(0);
+    displayPage(0, true);
 
     document.addEventListener('keydown', e => {
       if (e.keyCode === 37 && PAGE !== 0) {
@@ -236,7 +262,16 @@
         displayPage(PAGE + 1);
       } else if (e.keyCode === 219) {
         ROOT.classList.toggle('outline');
+      } else if (e.keyCode === 221) {
+        const theme = document.documentElement.getAttribute('data-theme');
+        document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'light' : 'dark');
       }
+    });
+
+    window.addEventListener('hashchange', () => {
+      if (!document.location.hash) return;
+      const page = Number(document.location.hash.slice(1)) - 1;
+      if (!isNaN(page)) displayPage(Math.min(Math.max(0, page), PAGES - 1));
     });
   </script>
 </body>
