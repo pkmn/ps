@@ -208,9 +208,9 @@
       tr.appendChild(e('td', name));
       for (const gen of GENS) {
         const td = e('td');
-        // for (const sprite of sprites(gen, namestar)) {
-        //   td.appendChild(sprite);
-        // }
+        for (const sprite of sprites(gen, namestar)) {
+           td.appendChild(sprite);
+        }
         tr.appendChild(td);
       }
 
