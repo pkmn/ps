@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/@pkmn/img.svg)](https://www.npmjs.com/package/@pkmn/view)&nbsp;
 
-Logic for displaying Pokémon Showdown's sprite and icon resources.
+Logic for displaying [Pokémon Showdown's sprite and icon resources](https://pkmn.github.io/ps/img).
 
 ## Installation
 

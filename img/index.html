@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang=en>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -94,7 +93,6 @@
     }
   </style>
 </head>
-
 <body>
   <div id="root"></div>
   <script src="./data/index.js"></script>
@@ -266,8 +264,10 @@
       window.scrollTo(0, 0);
     }
 
-    const p = Number(localStorage.getItem('page'));
-    displayPage(isNaN(p) ? 0 : p, true);
+    const p = document.location.hash && !isNaN(Number(document.location.hash.slice(1)))
+      ? Number(document.location.hash.slice(1)) - 1
+      : Number(localStorage.getItem('page'));
+    displayPage(isNaN(p) ? 0 : Math.min(Math.max(0, p), PAGES - 1), true);
 
     document.addEventListener('keydown', e => {
       if (e.keyCode === 191) {
@@ -291,5 +291,4 @@
     });
   </script>
 </body>
-
 </html>
