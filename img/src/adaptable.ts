@@ -138,7 +138,7 @@ export class Sprites {
       dir += '-back';
       facing = 'back';
     }
-    if (options?.shiny && gen > 1) dir += '-shiny';
+    if (options?.shiny && gen > 1 && !data.nonshiny) dir += '-shiny';
 
     // Missing back sprites
     if (facing === 'back' && graphics in Sprites.FRAME2) {

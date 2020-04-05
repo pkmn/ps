@@ -756,26 +756,45 @@ const NODEX = new Set([
 ]);
 
 const MISSING = {
+  buizelf: ['ani-back-shiny'],
   chesnaught: ['gen5ani-shiny', 'gen5ani-back-shiny'],
-  noivern: ['gen5ani-shiny'],
-  meowthgalar: ['gen5ani-shiny'],
-  meowthgmax: ['gen5ani-shiny'],
-  grookey: ['gen5ani-shiny'],
-  scorbunny: ['gen5ani-shiny'],
-  sobble: ['gen5ani-shiny'],
-  rookidee: ['gen5ani-shiny'],
   corviknight: ['gen5ani-shiny'],
-  wooloo: ['gen5ani-shiny', 'gen5ani-back-shiny'],
   drednaw: ['gen5ani-shiny'],
   drednawgmax: ['gen5ani-shiny'],
-  yamper:  ['gen5ani-shiny', 'gen5ani-back-shiny'],
-  toxel: ['gen5ani-shiny'],
+  duraludon: ['gen5ani-shiny'],
+  grookey: ['gen5ani-shiny'],
   hatenna: ['gen5ani-shiny'],
+  meowthgalar: ['gen5ani-shiny'],
+  meowthgmax: ['gen5ani-shiny'],
   milcery: ['gen5ani-shiny'],
   noivern: ['gen5ani-shiny'],
+  noivern: ['gen5ani-shiny'],
+  rookidee: ['gen5ani-shiny'],
+  scorbunny: ['gen5ani-shiny'],
   snom: ['gen5ani-shiny'],
-  duraludon: ['gen5ani-shiny'],
-}
+  snoverf: ['ani-back-shiny'],
+  sobble: ['gen5ani-shiny'],
+  toxel: ['gen5ani-shiny'],
+  unknownf: ['ani-back-shiny'],
+  unknownp: ['ani-back-shiny'],
+  wooloo: ['gen5ani-shiny', 'gen5ani-back-shiny'],
+  yamper:  ['gen5ani-shiny', 'gen5ani-back-shiny'],
+};
+
+// Certain Pokemon can be hacked to be shiny and will be considered 'shiny' without change of sprite
+// Research from Anubis: https://twitter.com/Sibuna_Switch/status/1246865031431516162
+const NONSHINY = new Set([
+  'pikachuoriginal',
+  // Probably safe to assume they follow the same rules as Pikachu-Original
+  'pikachuhoenn', 'pikachusinnoh', 'pikachuunova', 'pikachukalos', 'pikachualola',
+  // Gen 1 only so clearly can't be shiny
+  'missingno',
+  // TODO: verify Pokestar also falls under this category
+  'pokestarsmeargle', 'pokestarufo', 'pokestarufo2', 'pokestarbrycenman', 'pokestarmt',
+  'pokestarmt2', 'pokestartransport', 'pokestargiant', 'pokestarhumanoid', 'pokestarmonster',
+  'pokestarf00', 'pokestarf002', 'pokestarspirit', 'pokestarblackdoor', 'pokestarwhitedoor',
+  'pokestarblackbelt',
+]);
 
 //#endregion
 //#region Main
@@ -900,6 +919,7 @@ function fetch(u) {
     const dex = (!species.isNonstandard || species.isNonstandard === 'Past') || DEX.has(species.id);
     if (!dex || NODEX.has(species.id)) s.nd = true;
     if (MISSING[id]) s.m = MISSING[id];
+    if (NONSHINY.has(species.id)) s.ns = true;
   }
 
   data.items = {};
