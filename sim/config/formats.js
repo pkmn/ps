@@ -38,7 +38,7 @@ let Formats = [
 	{
 		name: "[Gen 8] OU",
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3659980/">OU Metagame Discussion</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3661910/">OU Metagame Discussion</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3657382/">OU Sample Teams</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3658351/">OU Viability Rankings</a>`,
 		],
@@ -69,7 +69,7 @@ let Formats = [
 	{
 		name: "[Gen 8] UU",
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3658529/">UU Metagame Discussion</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3661513/">UU Metagame Discussion</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3659681/">UU Sample Teams</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3659427/">UU Viability Rankings</a>`,
 		],
@@ -77,9 +77,6 @@ let Formats = [
 		mod: 'gen8',
 		ruleset: ['[Gen 8] OU'],
 		banlist: ['OU', 'UUBL'],
-		onBegin() {
-			if (this.rated && this.format.id === 'gen8uu') this.add('html', `<div class="broadcast-red"><strong>UU is currently suspecting Mamoswine! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3661513/">suspect thread</a>.</strong></div>`);
-		},
 	},
 	{
 		name: "[Gen 8] RU",
@@ -106,7 +103,7 @@ let Formats = [
 	{
 		name: "[Gen 8] PU",
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3660651/">PU Metagame Discussion</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3661966/">PU Metagame Discussion</a>`,
 		],
 
 		mod: 'gen8',
@@ -266,7 +263,7 @@ let Formats = [
 	{
 		name: "[Gen 8] Doubles OU",
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3656244/">Doubles OU Metagame Discussion</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3661422/">Doubles OU Metagame Discussion</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3658826/">Doubles OU Sample Teams</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3658242/">Doubles OU Viability Rankings</a>`,
 		],
@@ -275,9 +272,6 @@ let Formats = [
 		gameType: 'doubles',
 		ruleset: ['Standard Doubles'],
 		banlist: ['DUber', 'Beat Up'],
-		onBegin() {
-			if (this.rated && this.format.id === 'gen8doublesou') this.add('html', `<div class="broadcast-red"><strong>Doubles OU is currently suspecting Dynamax! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3661422/">suspect thread</a>.</strong></div>`);
-		},
 	},
 	{
 		name: "[Gen 8] Doubles Ubers",
@@ -459,7 +453,7 @@ let Formats = [
 	},
 	{
 		name: "[Gen 8] Shared Power",
-		desc: `All of the team's abilities are active at once whenever a new Pok&eacute;mon switches in.`,
+		desc: `Once a Pok&eacute;mon switches in, its ability is shared with the rest of the team.`,
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3660877/">Shared Power</a>`,
 		],
@@ -469,8 +463,8 @@ let Formats = [
 		banlist: [
 			'Darmanitan-Galar', 'Eternatus', 'Kyurem-Black', 'Kyurem-White', 'Lunala', 'Marshadow', 'Melmetal', 'Mewtwo',
 			'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Reshiram', 'Shedinja', 'Solgaleo', 'Zacian', 'Zamazenta', 'Zekrom',
-			'Arena Trap', 'Huge Power', 'Imposter', 'Innards Out', 'Magic Guard', 'Mold Breaker', 'Moody', 'Neutralizing Gas',
-			'Regenerator ++ Emergency Exit', 'Regenerator ++ Wimp Out', 'Shadow Tag', 'Trace', 'Water Bubble',
+			'Arena Trap', 'Huge Power', 'Imposter', 'Innards Out', 'Magic Bounce', 'Magic Guard', 'Mold Breaker', 'Moody',
+			'Neutralizing Gas', 'Regenerator', 'Shadow Tag', 'Speed Boost', 'Trace', 'Water Bubble', 'Baton Pass',
 		],
 		/** @param {Pokemon} pokemon */
 		// @ts-ignore
@@ -536,7 +530,7 @@ let Formats = [
 		mod: 'gen8',
 		ruleset: ['[Gen 8] Ubers'],
 		banlist: [
-			'Magic Bounce', 'Magic Guard', 'Regenerator',
+			'Magic Bounce', 'Magic Guard', 'Neutralizing Gas', 'Regenerator', 'Assault Vest',
 			'Ingrain', 'Life Dew', 'move:Metronome', 'Moonlight', 'Morning Sun', 'Nature Power', 'Purify', 'Recover',
 			'Rest', 'Roost', 'Slack Off', 'Soft-Boiled', 'Strength Sap', 'Swallow', 'Synthesis', 'Taunt', 'Wish',
 		],
@@ -1719,7 +1713,6 @@ let Formats = [
 		searchShow: false,
 		ruleset: ['Standard Doubles', 'Swagger Clause'],
 		banlist: ['DUber', 'Soul Dew', 'Dark Void'],
-		unbanlist: ['Shaymin-Sky'],
 	},
 	{
 		name: "[Gen 6] VGC 2016",

@@ -69,6 +69,7 @@ let BattleItems = {
 		itemUser: ["Dialga"],
 		num: 135,
 		gen: 4,
+		isNonstandard: "Past",
 		desc: "If held by a Dialga, its Steel- and Dragon-type attacks have 1.2x power.",
 	},
 	"adrenalineorb": {
@@ -403,7 +404,6 @@ let BattleItems = {
 	"belueberry": {
 		id: "belueberry",
 		name: "Belue Berry",
-		isUnreleased: true,
 		spritenum: 21,
 		isBerry: true,
 		naturalGift: {
@@ -413,6 +413,7 @@ let BattleItems = {
 		onEat: false,
 		num: 183,
 		gen: 3,
+		isNonstandard: "Past",
 		desc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
 	"berryjuice": {
@@ -658,7 +659,7 @@ let BattleItems = {
 		},
 		num: 558,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Bug-type attack will have 1.3x power. Single use.",
 	},
 	"bugmemory": {
@@ -1096,7 +1097,6 @@ let BattleItems = {
 	"cornnberry": {
 		id: "cornnberry",
 		name: "Cornn Berry",
-		isUnreleased: true,
 		spritenum: 81,
 		isBerry: true,
 		naturalGift: {
@@ -1106,6 +1106,7 @@ let BattleItems = {
 		onEat: false,
 		num: 175,
 		gen: 3,
+		isNonstandard: "Past",
 		desc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
 	"coverfossil": {
@@ -1136,7 +1137,6 @@ let BattleItems = {
 		name: "Custap Berry",
 		spritenum: 86,
 		isBerry: true,
-		isUnreleased: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Ghost",
@@ -1153,6 +1153,7 @@ let BattleItems = {
 		onEat() { },
 		num: 210,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder moves first in its priority bracket when at 1/4 max HP or less. Single use.",
 	},
 	"damprock": {
@@ -1179,7 +1180,7 @@ let BattleItems = {
 		},
 		num: 562,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Dark-type attack will have 1.3x power. Single use.",
 	},
 	"darkmemory": {
@@ -1368,6 +1369,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Dragon",
 		num: 311,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Dragon-type attacks have 1.2x power. Judgment is Dragon type.",
 	},
 	"dragonfang": {
@@ -1400,7 +1402,7 @@ let BattleItems = {
 		},
 		num: 561,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Dragon-type attack will have 1.3x power. Single use.",
 	},
 	"dragonmemory": {
@@ -1465,6 +1467,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Dark",
 		num: 312,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Dark-type attacks have 1.2x power. Judgment is Dark type.",
 	},
 	"dreamball": {
@@ -1490,7 +1493,6 @@ let BattleItems = {
 	"durinberry": {
 		id: "durinberry",
 		name: "Durin Berry",
-		isUnreleased: true,
 		spritenum: 114,
 		isBerry: true,
 		naturalGift: {
@@ -1500,6 +1502,7 @@ let BattleItems = {
 		onEat: false,
 		num: 182,
 		gen: 3,
+		isNonstandard: "Past",
 		desc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
 	"duskball": {
@@ -1543,6 +1546,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Ground",
 		num: 305,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Ground-type attacks have 1.2x power. Judgment is Ground type.",
 	},
 	"eeviumz": {
@@ -1635,7 +1639,7 @@ let BattleItems = {
 		},
 		num: 550,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Electric-type attack will have 1.3x power. Single use.",
 	},
 	"electricmemory": {
@@ -1727,6 +1731,7 @@ let BattleItems = {
 		onEat() { },
 		num: 208,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 		desc: "Restores 1/4 max HP after holder is hit by a supereffective move. Single use.",
 	},
 	"eviolite": {
@@ -1797,7 +1802,7 @@ let BattleItems = {
 		},
 		num: 715,
 		gen: 6,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Fairy-type attack will have 1.3x power. Single use.",
 	},
 	"fairymemory": {
@@ -1839,7 +1844,7 @@ let BattleItems = {
 		},
 		num: 553,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Fighting-type attack will have 1.3x power. Single use.",
 	},
 	"fightingmemory": {
@@ -1913,7 +1918,7 @@ let BattleItems = {
 		},
 		num: 548,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Fire-type attack will have 1.3x power. Single use.",
 	},
 	"firememory": {
@@ -1979,6 +1984,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Fighting",
 		num: 303,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Fighting-type attacks have 1.2x power. Judgment is Fighting type.",
 	},
 	"flameorb": {
@@ -2018,6 +2024,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Fire",
 		num: 298,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Fire-type attacks have 1.2x power. Judgment is Fire type.",
 	},
 	"floatstone": {
@@ -2058,7 +2065,7 @@ let BattleItems = {
 		},
 		num: 556,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Flying-type attack will have 1.3x power. Single use.",
 	},
 	"flyingmemory": {
@@ -2292,7 +2299,7 @@ let BattleItems = {
 		},
 		num: 560,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Ghost-type attack will have 1.3x power. Single use.",
 	},
 	"ghostmemory": {
@@ -2366,7 +2373,7 @@ let BattleItems = {
 		},
 		num: 551,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Grass-type attack will have 1.3x power. Single use.",
 	},
 	"grassmemory": {
@@ -2483,6 +2490,7 @@ let BattleItems = {
 		itemUser: ["Giratina-Origin"],
 		num: 112,
 		gen: 4,
+		isNonstandard: "Past",
 		desc: "If held by a Giratina, its Ghost- and Dragon-type attacks have 1.2x power.",
 	},
 	"groundgem": {
@@ -2498,7 +2506,7 @@ let BattleItems = {
 		},
 		num: 555,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Ground-type attack will have 1.3x power. Single use.",
 	},
 	"groundmemory": {
@@ -2727,7 +2735,7 @@ let BattleItems = {
 		},
 		num: 552,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Ice-type attack will have 1.3x power. Single use.",
 	},
 	"icememory": {
@@ -2779,6 +2787,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Ice",
 		num: 302,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Ice-type attacks have 1.2x power. Judgment is Ice type.",
 	},
 	"iciumz": {
@@ -2839,6 +2848,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Bug",
 		num: 308,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Bug-type attacks have 1.2x power. Judgment is Bug type.",
 	},
 	"ironball": {
@@ -2881,6 +2891,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Steel",
 		num: 313,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Steel-type attacks have 1.2x power. Judgment is Steel type.",
 	},
 	"jabocaberry": {
@@ -2888,7 +2899,6 @@ let BattleItems = {
 		name: "Jaboca Berry",
 		spritenum: 230,
 		isBerry: true,
-		isUnreleased: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Dragon",
@@ -2903,6 +2913,7 @@ let BattleItems = {
 		onEat() { },
 		num: 211,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "If holder is hit by a physical move, attacker loses 1/8 of its max HP. Single use.",
 	},
 	"jawfossil": {
@@ -3367,6 +3378,7 @@ let BattleItems = {
 		itemUser: ["Chansey"],
 		num: 256,
 		gen: 2,
+		isNonstandard: "Past",
 		desc: "If held by a Chansey, its critical hit ratio is raised by 2 stages.",
 	},
 	"lumberry": {
@@ -3451,6 +3463,7 @@ let BattleItems = {
 		itemUser: ["Palkia"],
 		num: 136,
 		gen: 4,
+		isNonstandard: "Past",
 		desc: "If held by a Palkia, its Water- and Dragon-type attacks have 1.2x power.",
 	},
 	"luxuryball": {
@@ -3548,7 +3561,6 @@ let BattleItems = {
 	"magostberry": {
 		id: "magostberry",
 		name: "Magost Berry",
-		isUnreleased: true,
 		spritenum: 275,
 		isBerry: true,
 		naturalGift: {
@@ -3558,6 +3570,7 @@ let BattleItems = {
 		onEat: false,
 		num: 176,
 		gen: 3,
+		isNonstandard: "Past",
 		desc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
 	"mail": {
@@ -3668,6 +3681,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Grass",
 		num: 301,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Grass-type attacks have 1.2x power. Judgment is Grass type.",
 	},
 	"medichamite": {
@@ -3866,7 +3880,6 @@ let BattleItems = {
 		name: "Micle Berry",
 		spritenum: 290,
 		isBerry: true,
-		isUnreleased: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Rock",
@@ -3891,6 +3904,7 @@ let BattleItems = {
 		},
 		num: 209,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's next move has 1.2x accuracy when at 1/4 max HP or less. Single use.",
 	},
 	"mimikiumz": {
@@ -3926,6 +3940,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Psychic",
 		num: 307,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Psychic-type attacks have 1.2x power. Judgment is Psychic type.",
 	},
 	"miracleseed": {
@@ -4028,7 +4043,6 @@ let BattleItems = {
 	"nanabberry": {
 		id: "nanabberry",
 		name: "Nanab Berry",
-		isUnreleased: true,
 		spritenum: 302,
 		isBerry: true,
 		naturalGift: {
@@ -4038,6 +4052,7 @@ let BattleItems = {
 		onEat: false,
 		num: 166,
 		gen: 3,
+		isNonstandard: "Past",
 		desc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
 	"nestball": {
@@ -4078,7 +4093,6 @@ let BattleItems = {
 	"nomelberry": {
 		id: "nomelberry",
 		name: "Nomel Berry",
-		isUnreleased: true,
 		spritenum: 306,
 		isBerry: true,
 		naturalGift: {
@@ -4088,6 +4102,7 @@ let BattleItems = {
 		onEat: false,
 		num: 178,
 		gen: 3,
+		isNonstandard: "Past",
 		desc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
 	"normalgem": {
@@ -4207,7 +4222,6 @@ let BattleItems = {
 	"pamtreberry": {
 		id: "pamtreberry",
 		name: "Pamtre Berry",
-		isUnreleased: true,
 		spritenum: 323,
 		isBerry: true,
 		naturalGift: {
@@ -4217,6 +4231,7 @@ let BattleItems = {
 		onEat: false,
 		num: 180,
 		gen: 3,
+		isNonstandard: "Past",
 		desc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
 	"parkball": {
@@ -4476,7 +4491,7 @@ let BattleItems = {
 		},
 		num: 554,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Poison-type attack will have 1.3x power. Single use.",
 	},
 	"poisonmemory": {
@@ -4746,7 +4761,7 @@ let BattleItems = {
 		},
 		num: 557,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Psychic-type attack will have 1.3x power. Single use.",
 	},
 	"psychicmemory": {
@@ -4866,7 +4881,6 @@ let BattleItems = {
 	"rabutaberry": {
 		id: "rabutaberry",
 		name: "Rabuta Berry",
-		isUnreleased: true,
 		spritenum: 375,
 		isBerry: true,
 		naturalGift: {
@@ -4876,6 +4890,7 @@ let BattleItems = {
 		onEat: false,
 		num: 177,
 		gen: 3,
+		isNonstandard: "Past",
 		desc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
 	"rarebone": {
@@ -4950,13 +4965,13 @@ let BattleItems = {
 		},
 		num: 327,
 		gen: 4,
+		isNonstandard: "Past",
 		desc: "Holder's attacks without a chance to flinch gain a 10% chance to flinch. Evolves Gligar into Gliscor when held and leveled up during the night.",
 		shortDesc: "Holder's attacks without a chance to flinch gain a 10% chance to flinch.",
 	},
 	"razzberry": {
 		id: "razzberry",
 		name: "Razz Berry",
-		isUnreleased: true,
 		spritenum: 384,
 		isBerry: true,
 		naturalGift: {
@@ -4966,6 +4981,7 @@ let BattleItems = {
 		onEat: false,
 		num: 164,
 		gen: 3,
+		isNonstandard: "Past",
 		desc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
 	"reapercloth": {
@@ -5090,7 +5106,7 @@ let BattleItems = {
 		},
 		num: 559,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Rock-type attack will have 1.3x power. Single use.",
 	},
 	"rockincense": {
@@ -5234,7 +5250,6 @@ let BattleItems = {
 		name: "Rowap Berry",
 		spritenum: 420,
 		isBerry: true,
-		isUnreleased: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Dark",
@@ -5249,6 +5264,7 @@ let BattleItems = {
 		onEat() { },
 		num: 212,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "If holder is hit by a special move, attacker loses 1/8 of its max HP. Single use.",
 	},
 	"rustedshield": {
@@ -5659,6 +5675,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Flying",
 		num: 306,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Flying-type attacks have 1.2x power. Judgment is Flying type.",
 	},
 	"slowbronite": {
@@ -5766,6 +5783,7 @@ let BattleItems = {
 		itemUser: ["Latios", "Latias"],
 		num: 225,
 		gen: 3,
+		isNonstandard: "Past",
 		desc: "If held by a Latias/Latios, its Dragon- and Psychic-type moves have 1.2x power.",
 	},
 	"spelltag": {
@@ -5788,7 +5806,6 @@ let BattleItems = {
 	"spelonberry": {
 		id: "spelonberry",
 		name: "Spelon Berry",
-		isUnreleased: true,
 		spritenum: 462,
 		isBerry: true,
 		naturalGift: {
@@ -5798,6 +5815,7 @@ let BattleItems = {
 		onEat: false,
 		num: 179,
 		gen: 3,
+		isNonstandard: "Past",
 		desc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
 	"splashplate": {
@@ -5820,6 +5838,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Water",
 		num: 299,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Water-type attacks have 1.2x power. Judgment is Water type.",
 	},
 	"spookyplate": {
@@ -5842,6 +5861,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Ghost",
 		num: 310,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Ghost-type attacks have 1.2x power. Judgment is Ghost type.",
 	},
 	"sportball": {
@@ -5927,7 +5947,7 @@ let BattleItems = {
 		},
 		num: 563,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Steel-type attack will have 1.3x power. Single use.",
 	},
 	"steelmemory": {
@@ -6023,6 +6043,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Rock",
 		num: 309,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Rock-type attacks have 1.2x power. Judgment is Rock type.",
 	},
 	"strawberrysweet": {
@@ -6242,6 +6263,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Poison",
 		num: 304,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Poison-type attacks have 1.2x power. Judgment is Poison type.",
 	},
 	"tr00": {
@@ -7475,7 +7497,7 @@ let BattleItems = {
 		},
 		num: 549,
 		gen: 5,
-		isNonstandard: 'Past',
+		isNonstandard: "Past",
 		desc: "Holder's first successful Water-type attack will have 1.3x power. Single use.",
 	},
 	"watermemory": {
@@ -7524,7 +7546,6 @@ let BattleItems = {
 	"watmelberry": {
 		id: "watmelberry",
 		name: "Watmel Berry",
-		isUnreleased: true,
 		spritenum: 530,
 		isBerry: true,
 		naturalGift: {
@@ -7534,6 +7555,7 @@ let BattleItems = {
 		onEat: false,
 		num: 181,
 		gen: 3,
+		isNonstandard: "Past",
 		desc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
 	"waveincense": {
@@ -7577,7 +7599,6 @@ let BattleItems = {
 	"wepearberry": {
 		id: "wepearberry",
 		name: "Wepear Berry",
-		isUnreleased: true,
 		spritenum: 533,
 		isBerry: true,
 		naturalGift: {
@@ -7587,6 +7608,7 @@ let BattleItems = {
 		onEat: false,
 		num: 167,
 		gen: 3,
+		isNonstandard: "Past",
 		desc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
 	"whippeddream": {
@@ -7746,6 +7768,7 @@ let BattleItems = {
 		forcedForme: "Arceus-Electric",
 		num: 300,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 		desc: "Holder's Electric-type attacks have 1.2x power. Judgment is Electric type.",
 	},
 	"zoomlens": {

@@ -17,6 +17,8 @@
     "sim",
     "protocol",
     "client",
+    "sets",
+    "img",
     "view"
   ],
   "scripts": {

@@ -613,7 +613,7 @@ let BattleFormatsData = {
 		tier: "LC Uber",
 	},
 	haunter: {
-		tier: "NU",
+		tier: "NUBL",
 		doublesTier: "NFE",
 	},
 	gengar: {
@@ -1301,7 +1301,7 @@ let BattleFormatsData = {
 		isNonstandard: "Past",
 	},
 	sneasel: {
-		tier: "NU",
+		tier: "NUBL",
 		doublesTier: "LC Uber",
 	},
 	weavile: {
@@ -2084,7 +2084,7 @@ let BattleFormatsData = {
 		isNonstandard: "Past",
 	},
 	latios: {
-		randomBattleMoves: ["aurasphere", "defog", "dracometeor", "psychic", "roost", "trick"],
+		randomBattleMoves: ["aurasphere", "defog", "dracometeor", "psyshock", "roost", "trick"],
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
