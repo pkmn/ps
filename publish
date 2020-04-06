@@ -1,15 +1,36 @@
 #!/bin/bash -ex
 
+# Setup
+
+TMP=$(mktemp -dt "$(basename $0).XXXXXXXXXXXXX")
+trap "rm -rf $TMP" 0
+
 rev=$(git rev-parse --short HEAD | tr -d "\n")
 
+# Build
+
+node img/import-data
 npm --prefix img run build
+
+mkdir $TMP/img
+cp img/index.html img/build/production.min.js img/data/index.js $TMP/img
+
+# Checkout: master -> gh-pages
 
 git checkout gh-pages
 
-# img
-git checkout master img/index.html # img/build/production.min.js img/data/index.js
+# Copy
+
+cp $TMP/img/index.html img/
+cp $TMP/img/production.min.js img/build/production.min.js
+cp $TMP/img/index.js img/data/index.js
+
+# Publish
 
 git add -A .
 git commit -m "Publish: '${rev}'"
 git push origin --force gh-pages
+
+# Checkout: gh-pages -> master
+
 git checkout -
