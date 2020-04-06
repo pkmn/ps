@@ -38,6 +38,7 @@ const GENS = {
 };
 
 export type AnimatedGraphicsGen = keyof typeof ANIMATED;
+// TODO: gen2ani? gen3ani? etc
 const ANIMATED = {
   'gen5ani': 'gen5' as GraphicsGen,
   'ani': 'dex' as GraphicsGen,
@@ -45,6 +46,7 @@ const ANIMATED = {
 
 export type SecondFrameGraphicsGen = keyof typeof FRAME2;
 const FRAME2 = {
+    // 'gen2ani': 2,
   'gen3-2': 'gen3' as GraphicsGen,
   'gen4dp-2': 'gen4dp' as GraphicsGen,
   // 'gen4-2': 'gen4' as GraphicsGen,
