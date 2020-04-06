@@ -102,6 +102,23 @@ export class Sprites {
     this.data = data;
   }
 
+  /**
+   * Returns information suitable for rendering a named Pokémon sprite based on the options.
+   *
+   * @param name - name of the Pokémon to retrieve a sprite for
+   * @param options - options controlling which sprite is chosen:
+   *
+   *   - `gen`: the preferred graphics or generation to use, defaults to `'ani'`
+   *   - `side`: which side the Pokémon is on. Defaults to `'p2'` which is a front sprite, `'p1'`
+   *             will select a back sprite
+   *   - `gender`: the gender of the Pokémon, `undefined` by default, only relevant if it set to
+   *               `'F'` in Gen 4 or later
+   *   - `shiny`: whether or not the Pokémon sprite should be shiny, defaults to `false`
+   *   - `protocol`: URL protocol, defaults to `'https'`, but `'http'` is also allowed
+   *   - `domain`: the domain to fetch sprites from, defaults to `'play.pokemonshowdown.com`
+   *
+   * @return {PokemonSprite}
+   */
   getPokemon(
     name: string,
     options?: {
@@ -206,6 +223,22 @@ export class Sprites {
     return {gen, w: 96, h: 96, url: `${url}/${dir}/${file}.png`, pixelated: true};
   }
 
+  /**
+   * Returns information suitable for rendering a Pokémon 'dex' sprite based on the options. Unlike
+   * `getPokemon`, the Pokémon returned by `getDexPokemon` based on what a player would see when
+   * they inspect a Pokémon in the Pokédex application in their game (ie. static genderless front
+   * sprites).
+   *
+   * @param name - name of the Pokémon to retrieve a dex sprite for
+   * @param options - options controlling which dex sprite is chosen:
+   *
+   *   - `gen`: the preferred graphics or generation to use, defaults to `'dex'`, must be static
+   *   - `shiny`: whether or not the Pokémon sprite should be shiny, defaults to `false`
+   *   - `protocol`: URL protocol, defaults to `'https'`, but `'http'` is also allowed
+   *   - `domain`: the domain to fetch sprites from, defaults to `'play.pokemonshowdown.com`
+   *
+   * @return {PokemonSprite}
+   */
   getDexPokemon(
     name: string,
     options?: {
