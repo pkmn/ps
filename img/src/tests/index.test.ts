@@ -210,32 +210,27 @@ describe('Icons', () => {
 
     pokemon = Icons.getPokemon('Charizard', {protocol: 'http'});
     expect(pokemon.url).toEqual(`http://${DOMAIN}/sprites/pokemonicons-sheet.png`);
-    expect(pokemon.extra).toEqual('');
     expect(pokemon.left).toEqual(-240);
     expect(pokemon.top).toEqual(-0);
 
     pokemon = Icons.getPokemon('Lucario-Mega', {domain: 'pkmn.cc', gender: 'F'});
     expect(pokemon.url).toEqual(`https://pkmn.cc/sprites/pokemonicons-sheet.png`);
-    expect(pokemon.extra).toEqual('');
     expect(pokemon.left).toEqual(-360);
     expect(pokemon.top).toEqual(-2850);
 
     pokemon = Icons.getPokemon('Pyroar', {gender: 'F'});
-    expect(pokemon.extra).toEqual('');
     expect(pokemon.left).toEqual(-320);
     expect(pokemon.top).toEqual(-2460);
 
     pokemon = Icons.getPokemon('Kingler', {side: 'p1'});
-    expect(pokemon.extra).toEqual('');
     expect(pokemon.left).toEqual(-400);
     expect(pokemon.top).toEqual(-2970);
 
     pokemon = Icons.getPokemon('Kingler', {side: 'p2', fainted: true});
-    expect(pokemon.extra).toEqual(';opacity:.3;filter:grayscale(100%) brightness(.5)');
     expect(pokemon.style).toEqual(
       'display:inline-block;width:40px;height:30px;image-rendering:pixelated;' +
       `background:transparent url(${URL}/sprites/pokemonicons-sheet.png) ` +
-      'no-repeat scroll -120px -240px;opacity:.3;filter:grayscale(100%) brightness(.5)'
+      'no-repeat scroll -120px -240px;opacity:0.3;filter:grayscale(100%) brightness(.5);'
     );
   });
 
@@ -246,25 +241,21 @@ describe('Icons', () => {
     expect(pokeball.url).toEqual(`${URL}/sprites/pokemonicons-pokeball-sheet.png`);
     expect(pokeball.left).toEqual(0);
     expect(pokeball.top).toEqual(4);
-    expect(pokeball.extra).toEqual('');
 
     pokeball = Icons.getPokeball('pokeball-statused')!;
     expect(pokeball.left).toEqual(-40);
     expect(pokeball.top).toEqual(4);
-    expect(pokeball.extra).toEqual('');
 
     pokeball = Icons.getPokeball('pokeball-fainted')!;
-    expect(pokeball.extra).toEqual(';opacity:.4;filter:contrast(0)');
     expect(pokeball.style).toEqual(
       'display:inline-block;width:40px;height:30px;image-rendering:pixelated;' +
-      `background:transparent url(${URL}/sprites/pokemonicons-pokeball-sheet.png) ` +
-      `no-repeat scroll 80px 4px;opacity:.4;filter:contrast(0)`
+      `opacity:0.4;filter:contrast(0);background:transparent url(${URL}/sprites/` +
+      'pokemonicons-pokeball-sheet.png) no-repeat scroll 80px 4px;'
     );
 
     pokeball = Icons.getPokeball('pokeball-none', {protocol: 'http', domain: 'pkmn.cc'})!;
     expect(pokeball.left).toEqual(-80);
     expect(pokeball.top).toEqual(4);
-    expect(pokeball.extra).toEqual('');
     expect(pokeball.url).toEqual(`http://pkmn.cc/sprites/pokemonicons-pokeball-sheet.png`);
   });
 
@@ -281,9 +272,9 @@ describe('Icons', () => {
 
     item = Icons.getItem('focus Band', {protocol: 'http', domain: 'pkmn.cc'});
     expect(item.style).toEqual(
-      'display:inline-block;width:24px;height:24x;image-rendering:pixelated;' +
+      'display:inline-block;width:24px;height:24px;image-rendering:pixelated;' +
       'background:transparent url(http://pkmn.cc/sprites/itemicons-sheet.png) ' +
-      'no-repeat scroll -144px -216px');
+      'no-repeat scroll -144px -216px;');
   });
 
   test('#getType', () => {

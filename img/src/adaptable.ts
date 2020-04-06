@@ -46,7 +46,7 @@ const ANIMATED = {
 
 export type SecondFrameGraphicsGen = keyof typeof FRAME2;
 const FRAME2 = {
-    // 'gen2ani': 2,
+  // 'gen2ani': 2,
   'gen3-2': 'gen3' as GraphicsGen,
   'gen4dp-2': 'gen4dp' as GraphicsGen,
   // 'gen4-2': 'gen4' as GraphicsGen,
@@ -295,19 +295,34 @@ export class Icons {
 
     const top = -Math.floor(num / 12) * 30;
     const left = -(num % 12) * 40;
-    const extra = options?.fainted ? ';opacity:.3;filter:grayscale(100%) brightness(.5)' : '';
 
     const url = `${URL(options)}/sprites/pokemonicons-sheet.png`;
-    const base = 'display:inline-block;width:40px;height:30px;image-rendering:pixelated';
-    const style =
-      `${base};background:transparent url(${url}) no-repeat scroll ${left}px ${top}px${extra}`;
-    return {style, url, left, top, extra};
+    const css: {[attr: string]: number | string} = {
+      display: 'inline-block',
+      width: '40px',
+      height: '30px',
+      imageRendering: 'pixelated',
+      background: `transparent url(${url}) no-repeat scroll ${left}px ${top}px`,
+    };
+    if (options?.fainted) {
+      css.opacity = 0.3;
+      css.filter = 'grayscale(100%) brightness(.5)';
+    }
+
+    return {style: toStyle(css), url, left, top, css};
   }
 
   getPokeball(name: string, options?: {protocol?: Protocol; domain?: string}) {
     let left = 0;
     let top = 0;
-    let extra = '';
+
+    const css: {[attr: string]: number | string} = {
+      display: 'inline-block',
+      width: '40px',
+      height: '30px',
+      imageRendering: 'pixelated',
+    };
+
     if (name === 'pokeball') {
       left = 0;
       top = 4;
@@ -317,7 +332,8 @@ export class Icons {
     } else if (name === 'pokeball-fainted') {
       left = 80;
       top = 4;
-      extra = ';opacity:.4;filter:contrast(0)';
+      css.opacity = 0.4;
+      css.filter = 'contrast(0)';
     } else if (name === 'pokeball-none') {
       left = -80;
       top = 4;
@@ -325,10 +341,9 @@ export class Icons {
       return undefined;
     }
     const url = `${URL(options)}/sprites/pokemonicons-pokeball-sheet.png`;
-    const base = 'display:inline-block;width:40px;height:30px;image-rendering:pixelated';
-    const style =
-      `${base};background:transparent url(${url}) no-repeat scroll ${left}px ${top}px${extra}`;
-    return {style, url, left, top, extra};
+    css.background = `transparent url(${url}) no-repeat scroll ${left}px ${top}px`;
+
+    return {style: toStyle(css), url, left, top, css};
   }
 
   getItem(name: string, options?: {protocol?: Protocol; domain?: string}) {
@@ -336,9 +351,16 @@ export class Icons {
     const top = -Math.floor(num / 16) * 24;
     const left = -(num % 16) * 24;
     const url = `${URL(options)}/sprites/itemicons-sheet.png`;
-    const base = 'display:inline-block;width:24px;height:24x;image-rendering:pixelated';
-    const style = `${base};background:transparent url(${url}) no-repeat scroll ${left}px ${top}px`;
-    return {style, url, top, left};
+
+    const css: {[attr: string]: number | string} = {
+      display: 'inline-block',
+      width: '24px',
+      height: '24px',
+      imageRendering: 'pixelated',
+      background: `transparent url(${url}) no-repeat scroll ${left}px ${top}px`,
+    };
+
+    return {style: toStyle(css), url, top, left, css};
   }
 
   getType(name: string, options?: {protocol?: Protocol; domain?: string}) {
@@ -355,4 +377,12 @@ function sanitizeName(name: any) {
   return ('' + name)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
     .slice(0, 50);
+}
+
+function toStyle(css: {[attr: string]: number | string}) {
+  const style = [];
+  for (const attr in css) {
+    style.push(`${attr === 'imageRendering' ? 'image-rendering' : attr}:${css[attr]}`);
+  }
+  return `${style.join(';')};`;
 }
