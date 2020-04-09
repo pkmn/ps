@@ -522,7 +522,7 @@ let BattleFormatsData = {
 		doublesTier: "(DUU)",
 	},
 	slowpoke: {
-		isUnreleased: true,
+		isNonstandard: "Unobtainable",
 		tier: "Unreleased",
 	},
 	slowpokegalar: {
@@ -1334,7 +1334,7 @@ let BattleFormatsData = {
 	},
 	mamoswine: {
 		randomBattleMoves: ["earthquake", "iceshard", "iciclecrash", "knockoff", "stealthrock", "superpower"],
-		tier: "UU",
+		tier: "UUBL",
 		doublesTier: "DUU",
 	},
 	corsola: {
@@ -3594,7 +3594,7 @@ let BattleFormatsData = {
 		doublesTier: "DUU",
 	},
 	xerneas: {
-		randomBattleMoves: ["closecombat", "defog", "playrough", "rockslide", "zenheadbutt"],
+		randomBattleMoves: ["calmmind", "focusblast", "moonblast", "psyshock", "thunderbolt"],
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
@@ -4174,7 +4174,7 @@ let BattleFormatsData = {
 		doublesTier: "DOU",
 	},
 	melmetalgmax: {
-		isUnreleased: true,
+		isNonstandard: "Unobtainable",
 		tier: "Unreleased",
 	},
 	grookey: {

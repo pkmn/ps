@@ -34,7 +34,6 @@ export interface EffectData {
   effectType?: string;
   infiltrates?: boolean;
   isNonstandard?: Nonstandard | null;
-  isUnreleased?: boolean | 'Past';
   isZ?: boolean | string;
   isMax?: boolean | string;
   noCopy?: boolean;
@@ -320,7 +319,6 @@ export class BasicEffect implements Readonly<EffectData> {
   exists: boolean;
   num: number;
   gen: GenerationNum;
-  isUnreleased: boolean | 'Past';
   shortDesc: string;
   desc: string;
   isNonstandard: Nonstandard | null;
@@ -342,7 +340,6 @@ export class BasicEffect implements Readonly<EffectData> {
     this.exists = !!(this.exists && this.id);
     this.num = data.num || 0;
     this.gen = data.gen || 0;
-    this.isUnreleased = data.isUnreleased || false;
     this.shortDesc = data.shortDesc || '';
     this.desc = data.desc || '';
     this.isNonstandard = data.isNonstandard || null;

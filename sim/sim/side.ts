@@ -16,7 +16,7 @@ import {
  * @license MIT license
  */
 import {RequestState} from './battle';
-import {Pokemon} from './pokemon';
+import {Pokemon, EffectState} from './pokemon';
 import {State} from './state';
 
 /** A single action that can be chosen. */
@@ -67,8 +67,8 @@ export class Side {
 	faintedThisTurn: boolean;
 	zMoveUsed: boolean;
 
-	sideConditions: AnyObject;
-	slotConditions: AnyObject[];
+	sideConditions: {[id: string]: EffectState};
+	slotConditions: {[id: string]: EffectState}[];
 
 	activeRequest: AnyObject | null;
 	choice: Choice;

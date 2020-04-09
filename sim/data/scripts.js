@@ -435,6 +435,7 @@ let BattleScripts = {
 	hitStepAccuracy(targets, pokemon, move) {
 		const hitResults = [];
 		for (let [i, target] of targets.entries()) {
+			this.activeTarget = target;
 			// calculate true accuracy
 			/** @type {number | true} */ // TypeScript bug: incorrectly infers {number | true} as {number | boolean}
 			let accuracy = move.accuracy;
@@ -867,6 +868,7 @@ let BattleScripts = {
 		for (let i = 0; i < targets.length; i++) {
 			let target = targets[i];
 			if (!target) continue;
+			this.activeTarget = target;
 			damage[i] = undefined;
 			let curDamage = this.getDamage(pokemon, target, moveData);
 			// getDamage has several possible return values:
@@ -1193,13 +1195,18 @@ let BattleScripts = {
 	},
 
 	canMegaEvo(pokemon) {
-		let altForme = pokemon.baseSpecies.otherFormes && this.dex.getSpecies(pokemon.baseSpecies.otherFormes[0]);
-		let item = pokemon.getItem();
-		if (altForme && altForme.isMega && altForme.requiredMove && pokemon.baseMoves.includes(toID(altForme.requiredMove)) && !item.zMove) return altForme.name;
-		if (item.megaEvolves !== pokemon.baseSpecies.baseSpecies || item.megaStone === pokemon.name) {
-			return null;
+		const species = pokemon.baseSpecies;
+		const altForme = species.otherFormes && this.dex.getSpecies(species.otherFormes[0]);
+		const item = pokemon.getItem();
+		// Mega Rayquaza
+		if (altForme && altForme.isMega && altForme.requiredMove && pokemon.baseMoves.includes(toID(altForme.requiredMove)) && !item.zMove) {
+			return altForme.name;
 		}
-		return item.megaStone;
+		// a hacked-in Megazard X can mega evolve into Megazard Y, but not into Megazard X
+		if (item.megaEvolves === species.baseSpecies && item.megaStone !== species.name) {
+			return item.megaStone;
+		}
+		return null;
 	},
 
 	canUltraBurst(pokemon) {

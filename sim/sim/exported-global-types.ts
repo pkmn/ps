@@ -1,4 +1,5 @@
 export type Battle = import('./battle').Battle;
+export type BattleQueue = import('./battle-queue').BattleQueue;
 export type Field = import('./field').Field;
 export type Action = import('./battle-queue').Action;
 export type ModdedDex = import('./dex').ModdedDex;
@@ -792,7 +793,6 @@ export interface EffectData {
 	effectType?: string;
 	infiltrates?: boolean;
 	isNonstandard?: Nonstandard | null;
-	isUnreleased?: boolean | 'Past';
 	/**
 	 * `true` for generic Z-moves like Gigavolt Havoc.
 	 * Also `true` for Z-powered status moves like Z-Encore.
@@ -1101,7 +1101,6 @@ export interface SpeciesFormatsData {
 	essentialMove?: string;
 	exclusiveMoves?: readonly string[];
 	isNonstandard?: Nonstandard | null;
-	isUnreleased?: boolean | 'Past';
 	maleOnlyHidden?: boolean;
 	randomBattleMoves?: readonly string[];
 	randomDoubleBattleMoves?: readonly string[];
@@ -1148,6 +1147,8 @@ export interface FormatsData extends EventMethods {
 	banlist?: string[];
 	battle?: ModdedBattleScriptsData;
 	pokemon?: ModdedBattlePokemon;
+	// queue?: ModdedBattleQueue;
+	field?: ModdedField;
 	cannotMega?: string[];
 	challengeShow?: boolean;
 	debug?: boolean;
@@ -1333,6 +1334,12 @@ export interface ModdedBattlePokemon {
 		sourceEffect: Effect | null, ignoreImmunities: boolean
 	) => boolean;
 	ignoringAbility?: (this: Pokemon) => boolean;
+}
+
+// interface ModdedBattleQueue extends Partial<BattleQueue> {}
+
+export interface ModdedField extends Partial<Field> {
+	suppressingWeather?: (this: Field) => boolean;
 }
 
 export interface ModdedBattleScriptsData extends Partial<BattleScriptsData> {
