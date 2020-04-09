@@ -1,3 +1,4 @@
+/* eslint-disable */ // FIXME
 import {ID} from '@pkmn/types';
 
 import {Protocol, Args, ArgType, KWArgs, KWArgType} from '../index';

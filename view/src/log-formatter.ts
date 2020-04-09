@@ -12,10 +12,9 @@ import {
   PokemonIdent,
   Protocol,
   SpeciesName,
-  Username
+  Username,
 } from '@pkmn/protocol';
 import {ID, StatName, GenerationNum, SideID} from '@pkmn/types';
-import {Battle} from '@pkmn/client';
 import * as TextJSON from './data/text.json';
 
 const Text = TextJSON as {
@@ -259,7 +258,7 @@ export class LogFormatter {
 
   formatHTML(args: ArgType, kwArgs?: KWArgType) {
     if (args[0] === 'turn') {
-      let turnMessage = this.formatText(args, kwArgs).trim();
+      const turnMessage = this.formatText(args, kwArgs).trim();
       if (!turnMessage.startsWith('==') || !turnMessage.endsWith('==')) {
         throw new Error('Turn message must be a heading.');
       }
@@ -269,7 +268,7 @@ export class LogFormatter {
       return this.formatText(args, kwArgs, true).split('\n').map(line => {
         line = LogFormatter.escapeHTML(line);
         line = line.replace(/\*\*(.*)\*\*/, '<strong>$1</strong>');
-        line = line.replace(/\|\|([^\|]*)\|\|([^\|]*)\|\|/, '<abbr title="$1">$2</abbr>');
+        line = line.replace(/\|\|([^|]*)\|\|([^|]*)\|\|/, '<abbr title="$1">$2</abbr>');
         if (line.startsWith('  ')) line = '<small>' + line.trim() + '</small>';
         return line;
       }).join('<br />');
