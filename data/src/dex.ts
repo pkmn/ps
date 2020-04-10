@@ -21,7 +21,7 @@ import * as SpeciesJSON from './data/species.json';
 import * as TypesJSON from './data/types.json';
 import * as FormatsDataJSON from './data/formats-data.json';
 
-function toID(text: any): ID {
+export function toID(text: any): ID {
   if (text?.id) text = text.id;
   if (typeof text !== 'string' && typeof text !== 'number') return '';
   return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
@@ -1135,10 +1135,12 @@ export class ModdedDex {
     } else if (name.startsWith('ability:')) {
       effect = this.getAbility(name.slice(8));
     }
+
     if (effect) {
       this.cache.Effects[id] = effect;
       return effect;
     }
+
     return this.getPureEffectByID(id);
   }
 
