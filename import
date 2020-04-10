@@ -316,7 +316,8 @@ const changes = async (where, last, now, repo) => ({
 
     const { table, learnsets } = decomposeTeambuilderTables();
     fs.writeFileSync(path.resolve(data, `src/data/formats-data.json`), JSON.stringify(table));
-    fs.writeFileSync(path.resolve(data, `src/data/learnsets.json`), JSON.stringify(learnsets));
+    fs.writeFileSync(path.resolve(data, `src/data/learnsets.json`),
+      JSON.stringify(learnsets.learnsets));
 
     const messages =
       `-m "Import smogon/pokemon-showdown@${now.ps}" ` +

@@ -21,6 +21,25 @@ import * as SpeciesJSON from './data/species.json';
 import * as TypesJSON from './data/types.json';
 import * as FormatsDataJSON from './data/formats-data.json';
 
+function toID(text: any): ID {
+  if (text?.id) text = text.id;
+  if (typeof text !== 'string' && typeof text !== 'number') return '';
+  return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
+}
+
+function getString(str: any): string {
+  return (typeof str === 'string' || typeof str === 'number') ? '' + str : '';
+}
+
+function combine(obj: AnyObject, ...data: (AnyObject | null)[]): AnyObject {
+  for (const d of data) {
+    if (d) Object.assign(obj, d);
+  }
+  return obj;
+}
+
+// #region Definitons
+
 export interface EffectData {
   id: string;
   name: string;
@@ -91,7 +110,7 @@ export interface ItemData extends EffectData {
   isPokeball?: boolean;
   megaStone?: string;
   megaEvolves?: string;
-  naturalGift?: { basePower: number, type: string };
+  naturalGift?: { basePower: number; type: string };
   onDrive?: string;
   onMemory?: string;
   onPlate?: string;
@@ -249,11 +268,10 @@ export interface SpeciesData {
 }
 
 export interface TypeData {
-  damageTaken: { [t in Exclude<TypeName, '???'>]: number } & { [key: string]: number };
+  damageTaken: { [t in Exclude<TypeName, '???'>]?: number } & { [key: string]: number };
   HPdvs?: Partial<StatsTable>;
   HPivs?: Partial<StatsTable>;
 }
-
 export interface Tiering {
   overrideTier: { [id: string]: string };
   zuBans?: { [id: string]: 1 };
@@ -274,43 +292,24 @@ export interface Overrides {
   overrideAbilityDesc: { [id: string]: string };
   overrideTier: { [id: string]: string };
   removeType: {[id in TypeName]?: true};
-  overrideTypeChart: {[id in TypeName]: TypeData};
+  overrideTypeChart: {[id in TypeName]?: TypeData};
 }
-export type PastGen = 'gen1' | 'gen2' | 'gen3' | 'gen4' | 'gen5' | 'gen6' | 'gen7';
 
-export type LearnsetData = { [move: string]: string };
-export type Learnsets = {
-  learnsets: { [id: string]: LearnsetData };
-} & {
-  [mod: string]: { learnsets: { [id: string]: LearnsetData } };
-};
-
+export interface LearnsetData { [moveid: string]: string }
 
 export type FormatsData =
-  Tiering & { [mod: string]: Partial<Tiering> } & { [gen in PastGen]: Overrides };
+  Tiering & { [mod: string]: Partial<Tiering> } & { [gen in PastGenID]: Overrides };
 
 export type EffectType =
   'Effect' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Weather' | 'Status';
 
+export type Effect = Ability | Item | Move | PureEffect;
+
 interface AnyObject { [k: string]: any }
 
-function toID(text: any): ID {
-  if (text && text.id) text = text.id;
-  if (typeof text !== 'string' && typeof text !== 'number') return '';
-  return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
-}
+// #endregion
 
-function getString(str: any): string {
-  return (typeof str === 'string' || typeof str === 'number') ? '' + str : '';
-}
-
-function combine(obj: AnyObject, ...data: (AnyObject | null)[]): AnyObject {
-  for (const d of data) {
-    if (d) Object.assign(obj, d);
-  }
-  return obj;
-}
-
+// #region Implementations
 export class BasicEffect implements Readonly<EffectData> {
   id: ID;
   name: string;
@@ -453,11 +452,11 @@ export class Item extends BasicEffect implements Readonly<BasicEffect & ItemData
       // specified manually
     }
 
-    if (this.isBerry) this.fling = { basePower: 10 };
-    if (this.id.endsWith('plate')) this.fling = { basePower: 90 };
-    if (this.onDrive) this.fling = { basePower: 70 };
-    if (this.megaStone) this.fling = { basePower: 80 };
-    if (this.onMemory) this.fling = { basePower: 50 };
+    if (this.isBerry) this.fling = {basePower: 10};
+    if (this.id.endsWith('plate')) this.fling = {basePower: 90};
+    if (this.onDrive) this.fling = {basePower: 70};
+    if (this.megaStone) this.fling = {basePower: 80};
+    if (this.onMemory) this.fling = {basePower: 50};
   }
 }
 
@@ -536,8 +535,8 @@ export class Move extends BasicEffect implements Readonly<BasicEffect & MoveData
     this.selfSwitch =
       (typeof data.selfSwitch === 'string'
         ? (data.selfSwitch as ID)
-        : data.selfSwitch)
-      || undefined;
+        : data.selfSwitch) ||
+      undefined;
     this.pressureTarget = data.pressureTarget || '';
     this.nonGhostTarget = data.nonGhostTarget || '';
     this.ignoreAbility = data.ignoreAbility || false;
@@ -650,13 +649,13 @@ export class Species extends BasicEffect implements Readonly<BasicEffect & Speci
   readonly addedType?: string;
   readonly prevo: ID;
   readonly evos: ID[];
-  readonly evoType?: EvoType
+  readonly evoType?: EvoType;
   readonly evoMove?: string;
   readonly evoLevel?: number;
   readonly nfe: boolean;
   readonly eggGroups: string[];
   readonly gender: GenderName;
-  readonly genderRatio: { M: number, F: number };
+  readonly genderRatio: { M: number; F: number };
   readonly baseStats: StatsTable;
   readonly maxHP?: number;
   readonly weightkg: number;
@@ -697,7 +696,7 @@ export class Species extends BasicEffect implements Readonly<BasicEffect & Speci
     this.otherFormes = data.otherFormes || undefined;
     this.spriteid = data.spriteid ||
       (toID(this.baseSpecies) + (this.baseSpecies !== this.name ? `-${toID(this.forme)}` : ''));
-    this.abilities = data.abilities || { 0: '' };
+    this.abilities = data.abilities || {0: ''};
     this.types = data.types || ['???'];
     this.addedType = data.addedType || undefined;
     this.prevo = data.prevo || '';
@@ -710,14 +709,14 @@ export class Species extends BasicEffect implements Readonly<BasicEffect & Speci
     this.nfe = !!this.evos.length;
     this.eggGroups = data.eggGroups || [];
     this.gender = data.gender || '';
-    this.genderRatio = data.genderRatio || (this.gender === 'M' ? { M: 1, F: 0 } :
-      this.gender === 'F' ? { M: 0, F: 1 } :
-        this.gender === 'N' ? { M: 0, F: 0 } :
-          { M: 0.5, F: 0.5 });
+    this.genderRatio = data.genderRatio || (this.gender === 'M' ? {M: 1, F: 0}
+      : this.gender === 'F' ? {M: 0, F: 1}
+      : this.gender === 'N' ? {M: 0, F: 0}
+      : {M: 0.5, F: 0.5});
     this.requiredItem = data.requiredItem || undefined;
     this.requiredItems =
       this.requiredItems || (this.requiredItem ? [this.requiredItem] : undefined);
-    this.baseStats = data.baseStats || { hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0 };
+    this.baseStats = data.baseStats || {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0};
     this.weightkg = data.weightkg || 0;
     this.weighthg = this.weightkg * 10;
     this.heightm = data.heightm || 0;
@@ -755,6 +754,50 @@ export class Species extends BasicEffect implements Readonly<BasicEffect & Speci
         this.gen = 1;
       }
     }
+  }
+}
+
+const HIDDEN_POWERS = [
+  'hiddenpowerbug', 'hiddenpowerdark', 'hiddenpowerdragon', 'hiddenpowerelectric',
+  'hiddenpowerfighting', 'hiddenpowerfire', 'hiddenpowerflying', 'hiddenpowerghost',
+  'hiddenpowergrass', 'hiddenpowerground', 'hiddenpowerice', 'hiddenpowerpoison',
+  'hiddenpowerpsychic', 'hiddenpowerrock', 'hiddenpowersteel', 'hiddenpowerwater',
+] as ID[];
+
+export class Learnset {
+  readonly effectType: 'Learnset';
+  readonly exists: boolean;
+
+  private readonly gen: GenerationNum;
+  private readonly data: LearnsetData[];
+
+  constructor(gen: GenerationNum, data: LearnsetData[], exists = true) {
+    this.effectType = 'Learnset';
+    this.exists = exists;
+    this.gen = gen;
+    this.data = data;
+  }
+
+  moves() {
+    const moves = new Set<ID>();
+    if (!this.exists || !this.data.length) return moves;
+
+    const g = `${this.gen}`;
+    for (const learnsetData of this.data) {
+      for (const moveid in learnsetData) {
+        const learnsetEntry = learnsetData[moveid];
+        if (!learnsetEntry.includes(g)) continue;
+        moves.add(moveid as ID);
+        // TODO if (moveid === 'sketch') ...
+        if (moveid === 'hiddenpower') {
+          for (const hp of HIDDEN_POWERS) {
+            moves.add(hp);
+          }
+        }
+      }
+    }
+
+    return moves;
   }
 }
 
@@ -803,32 +846,36 @@ export interface Nature extends NatureData {
 }
 
 const Natures: { [k: string]: NatureData } = {
-  adamant: { name: 'Adamant', plus: 'atk', minus: 'spa' },
-  bashful: { name: 'Bashful' },
-  bold: { name: 'Bold', plus: 'def', minus: 'atk' },
-  brave: { name: 'Brave', plus: 'atk', minus: 'spe' },
-  calm: { name: 'Calm', plus: 'spd', minus: 'atk' },
-  careful: { name: 'Careful', plus: 'spd', minus: 'spa' },
-  docile: { name: 'Docile' },
-  gentle: { name: 'Gentle', plus: 'spd', minus: 'def' },
-  hardy: { name: 'Hardy' },
-  hasty: { name: 'Hasty', plus: 'spe', minus: 'def' },
-  impish: { name: 'Impish', plus: 'def', minus: 'spa' },
-  jolly: { name: 'Jolly', plus: 'spe', minus: 'spa' },
-  lax: { name: 'Lax', plus: 'def', minus: 'spd' },
-  lonely: { name: 'Lonely', plus: 'atk', minus: 'def' },
-  mild: { name: 'Mild', plus: 'spa', minus: 'def' },
-  modest: { name: 'Modest', plus: 'spa', minus: 'atk' },
-  naive: { name: 'Naive', plus: 'spe', minus: 'spd' },
-  naughty: { name: 'Naughty', plus: 'atk', minus: 'spd' },
-  quiet: { name: 'Quiet', plus: 'spa', minus: 'spe' },
-  quirky: { name: 'Quirky' },
-  rash: { name: 'Rash', plus: 'spa', minus: 'spd' },
-  relaxed: { name: 'Relaxed', plus: 'def', minus: 'spe' },
-  sassy: { name: 'Sassy', plus: 'spd', minus: 'spe' },
-  serious: { name: 'Serious' },
-  timid: { name: 'Timid', plus: 'spe', minus: 'atk' },
+  adamant: {name: 'Adamant', plus: 'atk', minus: 'spa'},
+  bashful: {name: 'Bashful'},
+  bold: {name: 'Bold', plus: 'def', minus: 'atk'},
+  brave: {name: 'Brave', plus: 'atk', minus: 'spe'},
+  calm: {name: 'Calm', plus: 'spd', minus: 'atk'},
+  careful: {name: 'Careful', plus: 'spd', minus: 'spa'},
+  docile: {name: 'Docile'},
+  gentle: {name: 'Gentle', plus: 'spd', minus: 'def'},
+  hardy: {name: 'Hardy'},
+  hasty: {name: 'Hasty', plus: 'spe', minus: 'def'},
+  impish: {name: 'Impish', plus: 'def', minus: 'spa'},
+  jolly: {name: 'Jolly', plus: 'spe', minus: 'spa'},
+  lax: {name: 'Lax', plus: 'def', minus: 'spd'},
+  lonely: {name: 'Lonely', plus: 'atk', minus: 'def'},
+  mild: {name: 'Mild', plus: 'spa', minus: 'def'},
+  modest: {name: 'Modest', plus: 'spa', minus: 'atk'},
+  naive: {name: 'Naive', plus: 'spe', minus: 'spd'},
+  naughty: {name: 'Naughty', plus: 'atk', minus: 'spd'},
+  quiet: {name: 'Quiet', plus: 'spa', minus: 'spe'},
+  quirky: {name: 'Quirky'},
+  rash: {name: 'Rash', plus: 'spa', minus: 'spd'},
+  relaxed: {name: 'Relaxed', plus: 'def', minus: 'spe'},
+  sassy: {name: 'Sassy', plus: 'spd', minus: 'spe'},
+  serious: {name: 'Serious'},
+  timid: {name: 'Timid', plus: 'spe', minus: 'atk'},
 };
+
+// #endregion
+
+// #region Dex
 
 const Data = {
   Abilities: AbilitiesJSON as { [id: string]: AbilityData },
@@ -837,54 +884,61 @@ const Data = {
   Moves: MovesJSON as { [id: string]: MoveData },
   Species: SpeciesJSON as { [id: string]: SpeciesData },
   Natures,
+  Learnsets: null! as { [id: string]: LearnsetData },
   Types: TypesJSON as { [type in Exclude<TypeName, '???'>]: TypeData },
   FormatsData: FormatsDataJSON as FormatsData,
-  Learnsets: null! as Learnsets,
-}
+};
 
-const BASE_MOD = 'gen8' as ID;
+const GEN_IDS = ['gen1', 'gen2', 'gen3', 'gen4', 'gen5', 'gen6', 'gen7', 'gen8'] as const;
+type GenID = typeof GEN_IDS[number];
+type PastGenID = Exclude<GenID, 'gen8'>;
+const CURRENT_GEN_ID: GenID = GEN_IDS[7];
+
 const dexes: { [mod: string]: ModdedDex } = Object.create(null);
 
-const nullEffect: PureEffect = new PureEffect({ name: '', exists: false });
+const nullEffect: PureEffect = new PureEffect({name: '', exists: false});
 
 export class ModdedDex {
+  static readonly STATS: ReadonlyArray<StatName> = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
+
   readonly gen: GenerationNum;
-  readonly modid: ID;
+  readonly genid: GenID;
   readonly data = Data;
-  readonly statNames: ReadonlyArray<StatName> = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
-  readonly cache = {
+
+  private readonly cache = {
     Abilities: Object.create(null) as { [id: string]: Ability },
     Items: Object.create(null) as { [id: string]: Item },
     Moves: Object.create(null) as { [id: string]: Move },
     Species: Object.create(null) as { [id: string]: Species },
     Types: Object.create(null) as { [id: string]: Type },
-    Learnsets: Object.create(null) as { [id: string]: LearnsetData },
+    Learnsets: Object.create(null) as { [id: string]: Learnset },
+    Effects: Object.create(null) as { [id: string]: Ability | Item | Move },
+    PureEffects: Object.create(null) as { [id: string]: PureEffect },
   };
 
-  constructor(modid = BASE_MOD) {
-    this.modid = modid;
-    let gen = parseInt(modid.slice(3));
-    if (!modid.startsWith('gen') || !gen) throw new Error("Unsupported modid");
-    this.gen = gen as GenerationNum;
+  constructor(genid = CURRENT_GEN_ID) {
+    if (!GEN_IDS.includes(genid)) throw new Error('Unsupported modid');
+    this.genid = genid;
+    this.gen = parseInt(genid.slice(3)) as GenerationNum;
   }
 
-  mod(modid: ID): ModdedDex {
-    if (modid in dexes) return dexes[modid];
-    dexes[modid] = new ModdedDex(modid);
-    return dexes[modid]; // FIXME what about if missing?
+  mod(genid: GenID): ModdedDex {
+    if (genid in dexes) return dexes[genid];
+    dexes[genid] = new ModdedDex(genid);
+    return dexes[genid];
   }
 
   forGen(gen: number) {
     if (!gen) return this;
-    return this.mod(`gen${gen}` as ID);
+    return this.mod(`gen${gen}` as GenID);
   }
 
   getForme(speciesid: string | Species): string {
     const id = toID(speciesid || '');
     const species = this.getSpecies(id);
     if (species.cosmeticFormes && species.cosmeticFormes.includes(id)) {
-      const form = id.slice(species.name.length);
-      if (form) return species.name + '-' + form[0].toUpperCase() + form.slice(1);
+      const forme = id.slice(species.id.length);
+      if (forme) return species.name + '-' + forme[0].toUpperCase() + forme.slice(1);
     }
     return species.name;
   }
@@ -911,62 +965,9 @@ export class ModdedDex {
 
     let data = this.data.Species[id];
 
-    if (id && data) {
-      data = {...data};
-
-      const table = this.data.FormatsData[this.modid as PastGen];
-      		if (this.gen < 3) {
-			data.abilities = {0: "None"};
-		} else {
-			let abilities = {...data.abilities};
-			if (id in table.overrideAbility) {
-				abilities['0'] = table.overrideAbility[id];
-			}
-			if (id in table.removeSecondAbility) {
-				delete abilities['1'];
-			}
-			if (id in table.overrideHiddenAbility) {
-				abilities['H'] = table.overrideHiddenAbility[id];
-			}
-			if (this.gen < 5) delete abilities['H'];
-			if (this.gen < 7) delete abilities['S'];
-
-			data.abilities = abilities;
-		}
-		if (id in table.overrideStats) {
-			data.baseStats = {...data.baseStats, ...table.overrideStats[id]};
-		}
-		if (id in table.overrideType) data.types = table.overrideType[id].split('/');
-
-		if (id in table.overrideTier) data.tier = table.overrideTier[id];
-		if (!data.tier && id.slice(-5) === 'totem') {
-			data.tier = this.getSpecies(id.slice(0, -5)).tier;
-		}
-		if (!data.tier && data.baseSpecies && toID(data.baseSpecies) !== id) {
-			data.tier = this.getSpecies(data.baseSpecies).tier;
-		}
-		if (data.gen > this.gen) data.tier = 'Illegal';
-
-    } else {
-      species = new Species({
-        id, name, exists: false, tier: 'Illegal', doublesTier: 'Illegal', isNonstandard: 'Custom',
-      });
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-    if (!this.data.Species.hasOwnProperty(id)) {
+    if (id && !data) {
       let aliasTo = '';
-      const formeNames: { [k: string]: string[] } = {
+      const formeNames: {[k: string]: string[]} = {
         alola: ['a', 'alola', 'alolan'],
         galar: ['g', 'galar', 'galarian'],
         gmax: ['gigantamax', 'gmax'],
@@ -982,7 +983,8 @@ export class ModdedDex {
             pokeName = id.slice(0, -i.length);
           }
         }
-        if (this.data.Aliases.hasOwnProperty(pokeName)) pokeName = toID(this.data.Aliases[pokeName]);
+        const aliased = this.data.Aliases[pokeName];
+        if (aliased) pokeName = toID(aliased);
         if (this.data.Species[pokeName + forme]) {
           aliasTo = pokeName + forme;
           break;
@@ -997,44 +999,48 @@ export class ModdedDex {
       }
     }
 
+    data = this.data.Species[id];
 
+    if (id && data) {
+      data = {...data};
 
-    if (id && this.data.Species.hasOwnProperty(id)) {
-
-
-
-
-      species = new Species({ name }, this.data.Species[id], this.data.FormatsDataFIXME[id]);
-      if (!species.tier && !species.doublesTier && species.baseSpecies !== species.name) {
-        if (species.baseSpecies === 'Mimikyu') {
-          species.tier = this.data.FormatsDataFIXME[toID(species.baseSpecies)].tier || 'Illegal';
-          species.doublesTier = this.data.FormatsDataFIXME[toID(species.baseSpecies)].doublesTier || 'Illegal';
-        } else if (species.id.endsWith('totem')) {
-          species.tier = this.data.FormatsDataFIXME[species.id.slice(0, -5)].tier || 'Illegal';
-          species.doublesTier = this.data.FormatsDataFIXME[species.id.slice(0, -5)].doublesTier || 'Illegal';
-        } else if (species.battleOnly) {
-          species.tier = this.data.FormatsDataFIXME[toID(species.battleOnly)].tier || 'Illegal';
-          species.doublesTier = this.data.FormatsDataFIXME[toID(species.battleOnly)].doublesTier || 'Illegal';
+      if (this.genid !== CURRENT_GEN_ID) {
+        const table = this.data.FormatsData[this.genid as PastGenID];
+        if (this.gen < 3) {
+          data.abilities = {0: 'None'};
         } else {
-          const baseFormatsData = this.data.FormatsDataFIXME[toID(species.baseSpecies)];
-          if (!baseFormatsData) {
-            throw new Error(`${species.baseSpecies} has no formats-data entry`);
+          const abilities = {...data.abilities};
+          if (id in table.overrideAbility) {
+            abilities['0'] = table.overrideAbility[id];
           }
-          species.tier = baseFormatsData.tier || 'Illegal';
-          species.doublesTier = baseFormatsData.doublesTier || 'Illegal';
+          if (id in table.removeSecondAbility) {
+            delete abilities['1'];
+          }
+          if (id in table.overrideHiddenAbility) {
+            abilities['H'] = table.overrideHiddenAbility[id];
+          }
+          if (this.gen < 5) delete abilities['H'];
+          if (this.gen < 7) delete abilities['S'];
+
+          data.abilities = abilities;
         }
+        if (id in table.overrideStats) {
+          data.baseStats = {...data.baseStats, ...table.overrideStats[id]};
+        }
+        if (id in table.overrideType) data.types = table.overrideType[id].split('/');
+
+        if (id in table.overrideTier) data.tier = table.overrideTier[id];
       }
-      if (!species.tier) species.tier = 'Illegal';
-      if (!species.doublesTier) species.doublesTier = species.tier;
-      if (species.gen > this.gen) {
-        species.tier = 'Illegal';
-        species.doublesTier = 'Illegal';
-        species.isNonstandard = 'Future';
+
+      if (!data.tier && id.slice(-5) === 'totem') {
+        data.tier = this.getSpecies(id.slice(0, -5)).tier;
       }
+      if (!data.tier && data.baseSpecies && toID(data.baseSpecies) !== id) {
+        data.tier = this.getSpecies(data.baseSpecies).tier;
+      }
+      if (data.gen && (data.gen > this.gen)) data.tier = 'Illegal';
 
-
-
-
+      species = new Species({name}, data);
     } else {
       species = new Species({
         id, name, exists: false, tier: 'Illegal', doublesTier: 'Illegal', isNonstandard: 'Custom',
@@ -1045,112 +1051,119 @@ export class ModdedDex {
   }
 
   getOutOfBattleSpecies(species: Species) {
-    return !species.battleOnly ? species.name :
-      species.inheritsFrom ? this.getSpecies(species.inheritsFrom).name :
-        species.baseSpecies;
+    return !species.battleOnly
+      ? species.name
+      : species.inheritsFrom
+        ? this.getSpecies(species.inheritsFrom).name
+        : species.baseSpecies;
   }
 
   hasAbility(species: Species, ability: string) {
     for (const i in species.abilities) {
-      // @ts-ignore
-      if (ability === species.abilities[i]) return true;
+      if (ability === species.abilities[i as keyof SpeciesAbility]) return true;
     }
     return false;
   }
 
-  /* TODO
-  nextLearnsetid(learnsetid: ID, speciesid?: ID) {
-		if (!speciesid) {
-			if (learnsetid in BattleTeambuilderTable.learnsets) return learnsetid;
-			let baseLearnsetid = BattlePokedex[learnsetid] && toID(BattlePokedex[learnsetid].baseSpecies);
-			if (!baseLearnsetid) {
-				baseLearnsetid = toID(BattleAliases[learnsetid]);
-			}
-			if (baseLearnsetid in BattleTeambuilderTable.learnsets) return baseLearnsetid;
-			return '' as ID;
-		}
-
-		if (learnsetid === 'lycanrocdusk' || (speciesid === 'rockruff' && learnsetid === 'rockruff')) {
-			return 'rockruffdusk' as ID;
-		}
-		let species = BattlePokedex[learnsetid];
-		if (!species) return '' as ID;
-		if (species.prevo) return species.prevo as ID;
-		let baseSpecies = species.baseSpecies;
-		if (baseSpecies !== species.name && (baseSpecies === 'Rotom' || baseSpecies === 'Pumpkaboo')) {
-			return toID(species.baseSpecies);
-		}
-		return '' as ID;
-	}
-  };*/
-
-  async getLearnsetData(id: ID): Promise<LearnsetData> {
-    let learnsetData = this.cache.Learnsets[id];
-    if (learnsetData) return learnsetData;
+  async getLearnset(id: ID): Promise<Learnset> {
+    let learnset = this.cache.Learnsets[id];
+    if (learnset) return learnset;
 
     if (!this.data.Learnsets) {
+      /* global window */
       if (typeof window === 'undefined') {
         this.data.Learnsets = require('./data/learnsets.json');
       } else {
-        this.data.Learnsets = (await import('./data/learnsets.json')) as unknown as Learnsets;
+        // Typescript thinks asynchronously imported modules need a default export...
+        this.data.Learnsets =
+          (await import('./data/learnsets.json')) as unknown as { [id: string]: LearnsetData };
       }
     }
 
+    let learnsetid = this.nextLearnsetID(id);
+    const learnsetData = this.data.Learnsets[learnsetid];
+    if (!learnsetData) return new Learnset(this.gen, [], false);
 
-    if (!this.data.Learnsets[id]) return new Learnset({ exists: false });
-     this.cache.Learnsets[id] = learnsetData;
-    return learnsetData;
+    const learnsetsData = [learnsetData];
+    while ((learnsetid = this.nextLearnsetID(learnsetid, id))) {
+      const data = this.data.Learnsets[learnsetid];
+      if (data) learnsetsData.push(data);
+    }
+
+    learnset = new Learnset(this.gen, learnsetsData);
+    this.cache.Learnsets[id] = learnset;
+    return learnset;
   }
 
-	/**
-	 * While this function can technically return any kind of effect at
-	 * all, that's not a feature TypeScript needs to know about.
-	 */
-  // getEffect(name?: string | Effect | null): PureEffect {
-  //   if (!name) return nullEffect;
-  //   if (typeof name !== 'string') return name as PureEffect;
+  private nextLearnsetID(learnsetid: ID, speciesid?: ID) {
+    if (!speciesid) {
+      if (learnsetid in this.data.Learnsets) return learnsetid;
+      const learnsetSpecies = this.getSpecies(learnsetid);
+      let baseLearnsetid = learnsetSpecies.exists && toID(learnsetSpecies.baseSpecies);
+      if (!baseLearnsetid) baseLearnsetid = toID(this.data.Aliases[learnsetid]);
+      if (baseLearnsetid in this.data.Learnsets) return baseLearnsetid;
+      return '' as ID;
+    }
 
-  //   const id = toID(name);
-  //   let effect = this.effectCache.get(id);
-  //   if (effect) return effect as PureEffect;
+    if (learnsetid === 'lycanrocdusk' || (speciesid === 'rockruff' && learnsetid === 'rockruff')) {
+      return 'rockruffdusk' as ID;
+    }
+    const learnsetSpecies = this.getSpecies(learnsetid);
 
-  //   if (name.startsWith('move:')) {
-  //     effect = this.getMove(name.slice(5));
-  //   } else if (name.startsWith('item:')) {
-  //     effect = this.getItem(name.slice(5));
-  //   } else if (name.startsWith('ability:')) {
-  //     effect = this.getAbility(name.slice(8));
-  //   }
-  //   if (effect) {
-  //     this.effectCache.set(id, effect);
-  //     // @ts-ignore
-  //     return effect;
-  //   }
-  //   return this.getEffectByID(id, effect);
-  // }
+    if (!learnsetSpecies) return '' as ID;
+    if (learnsetSpecies.prevo) return learnsetSpecies.prevo as ID;
+    const baseSpecies = learnsetSpecies.baseSpecies;
+    if (baseSpecies !== learnsetSpecies.name &&
+      (baseSpecies === 'Rotom' || baseSpecies === 'Pumpkaboo')) {
+      return toID(learnsetSpecies.baseSpecies);
+    }
+    return '' as ID;
+  }
 
-  // getEffectByID(id: ID, effect?: Effect | Move): PureEffect {
-  //   if (!id) return nullEffect;
+  getEffect(name?: string | Effect| null): Effect {
+    if (!name) return nullEffect;
+    if (typeof name !== 'string') return name;
 
-  //   if (!effect) effect = this.effectCache.get(id);
-  //   if (effect) return effect as PureEffect;
+    const id = toID(name);
+    let effect = this.cache.Effects[id];
+    if (effect) return effect;
 
-  //   let found;
-  //   if ((this.data.Movedex.hasOwnProperty(id) && (found = this.data.Movedex[id]).effect) ||
-  //     (this.data.Abilities.hasOwnProperty(id) && (found = this.data.Abilities[id]).effect) ||
-  //     (this.data.Items.hasOwnProperty(id) && (found = this.data.Items[id]).effect)) {
-  //     effect = new PureEffect({ name: found.name || id }, found.effect!);
-  //   } else if (id === 'recoil') {
-  //     effect = new PureEffect({ id, name: 'Recoil', effectType: 'Recoil' });
-  //   } else if (id === 'drain') {
-  //     effect = new PureEffect({ id, name: 'Drain', effectType: 'Drain' });
-  //   } else {
-  //     effect = new PureEffect({ id, name: id, exists: false });
-  //   }
+    if (name.startsWith('move:')) {
+      effect = this.getMove(name.slice(5));
+    } else if (name.startsWith('item:')) {
+      effect = this.getItem(name.slice(5));
+    } else if (name.startsWith('ability:')) {
+      effect = this.getAbility(name.slice(8));
+    }
+    if (effect) {
+      this.cache.Effects[id] = effect;
+      return effect;
+    }
+    return this.getPureEffectByID(id);
+  }
 
-  //   this.effectCache.set(id, effect);
-  //   return effect as PureEffect;
-  // }
+  getPureEffectByID(id: ID): PureEffect {
+    if (!id) return nullEffect;
+
+    let effect = this.cache.PureEffects[id];
+    if (effect) return effect;
+
+    let found: AbilityData | ItemData | MoveData;
+    if ((this.data.Moves.hasOwnProperty(id) && (found = this.data.Moves[id]).effect) ||
+      (this.data.Abilities.hasOwnProperty(id) && (found = this.data.Abilities[id]).effect) ||
+      (this.data.Items.hasOwnProperty(id) && (found = this.data.Items[id]).effect)) {
+      effect = new PureEffect({name: found.name || id}, found.effect!);
+    } else if (id === 'recoil') {
+      effect = new PureEffect({id, name: 'Recoil', effectType: 'Recoil'});
+    } else if (id === 'drain') {
+      effect = new PureEffect({id, name: 'Drain', effectType: 'Drain'});
+    } else {
+      effect = new PureEffect({id, name: id, exists: false});
+    }
+
+    this.cache.PureEffects[id] = effect;
+    return effect;
+  }
 
   getAbility(name: string | Ability = ''): Ability {
     if (name && typeof name !== 'string') return name;
@@ -1170,15 +1183,16 @@ export class ModdedDex {
     if (id && data) {
       data = {...data};
       for (let i = this.gen; i < 8; i++) {
-        if (id in this.data.FormatsData['gen' + i as PastGen].overrideAbilityDesc) {
-          data.shortDesc = this.data.FormatsData['gen' + i as PastGen].overrideAbilityDesc[id];
+        const genid = `gen${i}` as PastGenID;
+        if (id in this.data.FormatsData[genid].overrideAbilityDesc) {
+          data.shortDesc = this.data.FormatsData[genid].overrideAbilityDesc[id];
           break;
         }
       }
-      ability = new Ability({ name }, data);
+      ability = new Ability({name}, data);
       if (ability.gen > this.gen) (ability as any).isNonstandard = 'Future';
     } else {
-      ability = new Ability({ id, name, exists: false });
+      ability = new Ability({id, name, exists: false});
     }
 
     if (ability.exists) this.cache.Abilities[id] = ability;
@@ -1209,15 +1223,16 @@ export class ModdedDex {
     if (id && data) {
       data = {...data};
       for (let i = this.gen; i < 8; i++) {
-        if (id in this.data.FormatsData['gen' + i as PastGen].overrideItemDesc) {
-          data.shortDesc = this.data.FormatsData['gen' + i as PastGen].overrideItemDesc[id];
+        const genid = `gen${i}` as PastGenID;
+        if (id in this.data.FormatsData[genid].overrideItemDesc) {
+          data.shortDesc = this.data.FormatsData[genid].overrideItemDesc[id];
           break;
         }
       }
-      item = new Item({ name }, data);
+      item = new Item({name}, data);
       if (item.gen > this.gen) (item as any).isNonstandard = 'Future';
     } else {
-      item = new Item({ id, name, exists: false });
+      item = new Item({id, name, exists: false});
     }
 
     if (item.exists) this.cache.Items[id] = item;
@@ -1238,7 +1253,7 @@ export class ModdedDex {
     let move = this.cache.Moves[id];
     if (move) return move;
 
-   let basePower = 0;
+    let basePower = 0;
     if (id.substr(0, 11) === 'hiddenpower') {
       id = /([a-z]*)([0-9]*)/.exec(id)![1] as ID;
     } else if (id.substr(0, 6) === 'return' && id.length > 6) {
@@ -1252,25 +1267,28 @@ export class ModdedDex {
     let data = this.data.Moves[id];
     if (id && data) {
       data = {...data};
-      const table = this.data.FormatsData[this.modid as PastGen];
-      if (id in table.overrideAcc) data.accuracy = table.overrideAcc[id];
-      if (id in table.overrideBP) data.basePower = table.overrideBP[id];
-      if (id in table.overridePP) data.pp = table.overridePP[id];
-      if (id in table.overrideMoveType) data.type = table.overrideMoveType[id];
-      for (let i = this.gen; i < 8; i++) {
-        if (id in this.data.FormatsData['gen' + i as PastGen].overrideMoveDesc) {
-          data.shortDesc = this.data.FormatsData['gen' + i as PastGen].overrideMoveDesc[id];
-          break;
+      if (this.genid !== CURRENT_GEN_ID) {
+        const table = this.data.FormatsData[this.genid as PastGenID];
+        if (id in table.overrideAcc) data.accuracy = table.overrideAcc[id];
+        if (id in table.overrideBP) data.basePower = table.overrideBP[id];
+        if (id in table.overridePP) data.pp = table.overridePP[id];
+        if (id in table.overrideMoveType) data.type = table.overrideMoveType[id];
+        for (let i = this.gen; i < 8; i++) {
+          const genid = `gen${i}` as PastGenID;
+          if (id in this.data.FormatsData[genid].overrideMoveDesc) {
+            data.shortDesc = this.data.FormatsData[genid].overrideMoveDesc[id];
+            break;
+          }
         }
       }
       if (this.gen <= 3 && data.category !== 'Status') {
         data.category = Dex.getGen3Category(data.type);
       }
       if (basePower) data.basePower = basePower;
-      move = new Move({ name }, data);
+      move = new Move({name}, data);
       if (move.gen > this.gen) (move as any).isNonstandard = 'Future';
     } else {
-      move = new Move({ id, name, exists: false });
+      move = new Move({id, name, exists: false});
     }
     if (move.exists) this.cache.Moves[id] = move;
     return move;
@@ -1321,19 +1339,19 @@ export class ModdedDex {
     let data = this.data.Types[typeName];
     if (id && data) {
       for (let i = 7; i >= this.gen; i--) {
-        const gen = `gen${i}` as PastGen;
-        if (id in this.data.FormatsData[gen].removeType) {
+        const gen = `gen${i}` as PastGenID;
+        if (typeName in this.data.FormatsData[gen].removeType) {
           (data as any) = {...data, exists: false};
           // don't bother correcting its attributes given it doesn't exist
           break;
         }
-        if (id in this.data.FormatsData[gen].overrideTypeChart) {
+        if (typeName in this.data.FormatsData[gen].overrideTypeChart) {
           data = {...data, ...this.data.FormatsData[gen].overrideTypeChart[typeName]};
         }
       }
-      type = new Type({ id, name: typeName }, data);
+      type = new Type({id, name: typeName}, data);
     } else {
-      type = new Type({ id, name, exists: false });
+      type = new Type({id, name, exists: false});
     }
 
     if (type.exists) this.cache.Types[id] = type;
@@ -1375,10 +1393,10 @@ export class ModdedDex {
     const typeData = this.data.Types[targetTyping as Exclude<TypeName, '???'>];
     if (!typeData) return 0;
     switch (typeData.damageTaken[sourceType]) {
-      case 1: return 1; // super-effective
-      case 2: return -1; // resist
+    case 1: return 1; // super-effective
+    case 2: return -1; // resist
       // in case of weird situations like Gravity, immunity is handled elsewhere
-      default: return 0;
+    default: return 0;
     }
   }
 
@@ -1390,8 +1408,8 @@ export class ModdedDex {
     const tr = (num: number, bits = 0) => {
       if (bits) return (num >>> 0) % (2 ** bits);
       return num >>> 0;
-    }
-    const stats = { hp: 31, atk: 31, def: 31, spe: 31, spa: 31, spd: 31 };
+    };
+    const stats = {hp: 31, atk: 31, def: 31, spe: 31, spa: 31, spd: 31};
     if (this.gen <= 2) {
       // Gen 2 specific Hidden Power check. IVs are still treated 0-31 so we get them 0-15
       const atkDV = tr(ivs.atk / 2);
@@ -1443,7 +1461,7 @@ export class ModdedDex {
   }
 }
 
-dexes[BASE_MOD] = new ModdedDex(BASE_MOD);
+// #endregion
 
-// 'gen8' is an alias for the current base data
-export const Dex = dexes[BASE_MOD];
+dexes[CURRENT_GEN_ID] = new ModdedDex(CURRENT_GEN_ID);
+export const Dex = dexes[CURRENT_GEN_ID];
