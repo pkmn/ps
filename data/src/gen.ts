@@ -33,7 +33,7 @@ export const Generations = new class {
   get(gen: GenerationNum) {
     if (GENERATIONS[gen]) return GENERATIONS[gen];
     return (GENERATIONS[gen] = new Generation(Dex.forGen(gen)));
-  };
+  }
 }
 
 export class Generation {
@@ -47,7 +47,7 @@ export class Generation {
   readonly effects: Effects;
   readonly stats: Stats;
 
-  private readonly dex: ModdedDex;
+  readonly dex: ModdedDex;
 
   constructor(dex: ModdedDex) {
     this.dex = dex;

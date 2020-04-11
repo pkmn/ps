@@ -2,7 +2,11 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "build",
-    "tsBuildInfoFile": ".tsbuildinfo"
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "baseUrl": ".",
+    "paths": {
+      "@smogon/calc/data/*": ["node_modules/@smogon/calc/dist/data/*"]
+    }
   },
   "files": ["index.ts"]
 }

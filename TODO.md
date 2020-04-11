@@ -2,12 +2,12 @@
 
 ## Stage 0
 
-- **calc** - impl + unit tests + doc
 - **login** - impl + unit tests + doc
 - **view** - impl + unit tests + doc
 
 ## Stage 1
 
+- **calc** - unit tests + doc + usage (???)
 - **client** - unit tests + integration + doc
 - **protocol** - impl: verifier + unit tests + integration + doc
 
@@ -26,7 +26,6 @@
 
 ---
 
-- make sure to remove undefined because no exists from interation
 - test number of formes = expected when iterating through data and calc
 - add `eval` bundled test
 - calc: test against `@pkmn/data` and `@pkmn/sim`, ensure data is correct compared to

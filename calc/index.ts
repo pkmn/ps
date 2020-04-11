@@ -1,10 +1,12 @@
 import {ID, GenerationNum, TypeName} from '@pkmn/types';
-import * as I from './interface'; // FIXME '@smogon/calc/data/interface';
+import * as I from '@smogon/calc/data/interface';
 import * as D from './dex';
 
 function toID(s: string): ID {
   return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
 }
+
+const GENERATIONS = Object.create(null) as {[num: number]: Generation};
 
 export class Generations implements I.Generations {
   private readonly dex: D.Dex;
@@ -13,10 +15,10 @@ export class Generations implements I.Generations {
     this.dex = dex;
   }
 
-  // TODO: cache!
   get(gen: I.GenerationNum) {
-    return new Generation(this.dex.mod(`gen${gen}` as D.GenID));
-  }
+    if (GENERATIONS[gen]) return GENERATIONS[gen];
+    return (GENERATIONS[gen] = new Generation(this.dex.forGen(gen)));
+  };
 }
 
 class Generation implements I.Generation {
@@ -174,7 +176,8 @@ class Move implements I.Move {
     this.name = move.name as I.MoveName;
     this.bp = move.basePower;
     this.type = move.type as I.TypeName;
-    // TODO
+
+    // TODO !!!!
   }
 }
 

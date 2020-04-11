@@ -11,8 +11,6 @@ import {
   BoostsTable,
 } from '@pkmn/types';
 
-export type GenID = 'gen1' | 'gen2' | 'gen3' | 'gen4' | 'gen5' | 'gen6' | 'gen7' | 'gen8';
-
 export interface Dex {
   readonly gen: GenerationNum;
   readonly data: {
@@ -24,7 +22,7 @@ export interface Dex {
     Types: { [type in Exclude<TypeName, '???'>]: TypeData },
   }
 
-  mod(genid: GenID): Dex;
+  forGen(gen: GenerationNum): Dex;
 
   getAbility(id: ID): Ability;
   getItem(id: ID): Item;
