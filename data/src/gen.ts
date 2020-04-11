@@ -4,10 +4,25 @@ import {
   GenerationNum,
   ID,
   Nonstandard,
+  StatName,
   StatsTable,
+  TypeName,
 } from '@pkmn/types';
 
-import {toID, Dex, ModdedDex, Species as DexSpecies, SpeciesAbility} from './dex';
+import {
+  Dex,
+  Effect,
+  ModdedDex,
+  Nature,
+  Species as DexSpecies,
+  SpeciesAbility,
+  Type as DexType,
+  toID,
+} from './dex';
+
+function ifExists(e: Effect | DexSpecies, gen: GenerationNum) {
+  return (!e.exists || e.gen > gen || e.isNonstandard) ? undefined : e;
+}
 
 const GENERATIONS = Object.create(null) as {[num: number]: Generation};
 
@@ -15,11 +30,8 @@ export const Generations = new class {
   get(gen: GenerationNum) {
     if (GENERATIONS[gen]) return GENERATIONS[gen];
     return (GENERATIONS[gen] = new Generation(Dex.forGen(gen)));
-
   };
 }
-
-// FIXME exists check
 
 export class Generation {
   readonly abilities: Abilities;
@@ -30,6 +42,7 @@ export class Generation {
   readonly natures: Natures;
   readonly learnsets: Learnsets;
   readonly effects: Effects;
+  readonly stats: Stats;
 
   private readonly dex: ModdedDex;
 
@@ -44,6 +57,7 @@ export class Generation {
     this.types = new Types(this.dex);
     this.learnsets = new Learnsets(this.dex);
     this.effects = new Effects(this.dex);
+    this.stats = new Stats(this.dex);
   }
 
   get num() {
@@ -59,7 +73,7 @@ export class Abilities {
 
   get(name: string) {
     const ability = this.dex.getAbility(name);
-    return !ability.exists ? undefined : ability;
+    return ifExists(ability, this.dex.gen);
   }
 
   *[Symbol.iterator]() {
@@ -76,13 +90,13 @@ export class Items {
   }
 
   get(name: string) {
-    const move = this.dex.getMove(name);
-    return !move.exists ? undefined : move;
+    const item = this.dex.getItem(name);
+    return ifExists(item, this.dex.gen);
   }
 
   *[Symbol.iterator]() {
-    for (const move in this.dex.data.Moves) {
-      yield this.get(move);
+    for (const item in this.dex.data.Items) {
+      yield this.get(item);
     }
   }
 }
@@ -95,7 +109,7 @@ export class Moves {
 
   get(name: string) {
     const move = this.dex.getMove(name);
-    return !move.exists ? undefined : move;
+    return ifExists(move, this.dex.gen);
   }
 
   *[Symbol.iterator]() {
@@ -117,7 +131,9 @@ export class Species {
 
   get(name: string) {
     const species = this.dex.getSpecies(name);
-    return !species.exists ? undefined : species;
+    if (species.tier === 'Illegal' || species.tier === 'Unreleased') return undefined;
+    if ((species.tier.startsWith('CAP') && this.dex.gen < 4)) return undefined;
+    return ifExists(species, this.dex.gen);
   }
 
   *[Symbol.iterator]() {
@@ -211,7 +227,7 @@ export class Effects {
 
   get(name: string) {
     const effect = this.dex.getEffect(name);
-    return !effect.exists ? undefined : effect;
+    return ifExists(effect, this.dex.gen);
   }
 }
 
@@ -222,6 +238,7 @@ export class Natures {
   }
 
   get(name: string) {
+    if (this.dex.gen < 3) return undefined;
     const nature = this.dex.getNature(name);
     return !nature.exists ? undefined : nature;
   }
@@ -233,9 +250,14 @@ export class Natures {
   }
 }
 
-// FIXME fix this type to not be retarded
-// TODO getEffectiveness
-// TODO getImmunity
+const EFFECTIVENESS = {
+  '-2': 0.25,
+  '-1': 0.5,
+  '0': 1,
+  '1': 2,
+  '2': 4,
+};
+
 export class Types {
   private readonly dex: ModdedDex;
   constructor(dex: ModdedDex) {
@@ -256,6 +278,48 @@ export class Types {
   getHiddenPower(ivs: StatsTable) {
     return this.dex.getHiddenPower(ivs);
   }
+
+  getImmunity(
+    source: { type: string } | string,
+    target: { getTypes: () => string[] } | { types: string[] } | string[] | string
+  ) {
+    return this.dex.getImmunity(source, target);
+  }
+
+  getEffectiveness(
+    source: { type: string } | string,
+    target: { getTypes: () => string[] } | { types: string[] } | string[] | string
+  ) {
+    const e = `${this.dex.getEffectiveness(source, target)}`;
+    // convert from PS's ridiculous encoding to something usable
+    return EFFECTIVENESS[e as keyof typeof EFFECTIVENESS];
+  }
+}
+
+const DAMAGE_TAKEN = [0, 0.5, 1, 2];
+
+export class Type {
+  readonly id!: ID;
+  readonly name!: string;
+  readonly effectType!: 'Type';
+  readonly exists!: boolean;
+  readonly gen!: GenerationNum;
+  readonly damageTaken: { [t in Exclude<TypeName, '???'>]: number };
+  readonly HPivs!: Partial<StatsTable>;
+  readonly HPdvs!: Partial<StatsTable>;
+
+  private readonly dex: ModdedDex;
+  constructor(dex: ModdedDex, type: DexType) {
+    Object.assign(this, type);
+    this.dex = dex;
+
+    this.damageTaken = {} as { [t in Exclude<TypeName, '???'>]: number };
+    for (const k in type.damageTaken) {
+      const t = k as Exclude<TypeName, '???'>;
+      // convert from PS's ridiculous encoding to something usable
+      this.damageTaken[t] = DAMAGE_TAKEN[type.damageTaken[k]];
+    }
+  }
 }
 
 export class Learnsets {
@@ -274,5 +338,117 @@ export class Learnsets {
     for (const id in this.dex.data.Learnsets) {
       yield this.get(id);
     }
+  }
+}
+
+const STATS = ['hp', 'atk', 'def', 'spe', 'spa', 'spd'] as const;
+
+const NAMES: Readonly<{ [name: string]: StatName }> = {
+  HP: 'hp', hp: 'hp',
+  Attack: 'atk', Atk: 'atk', atk: 'atk',
+  Defense: 'def', Def: 'def', def: 'def',
+  'Special Attack': 'spa', SpA: 'spa', SAtk: 'spa', SpAtk: 'spa', spa: 'spa',
+  Special: 'spa', spc: 'spa', Spc: 'spa',
+  'Special Defense': 'spd', SpD: 'spd', SDef: 'spd', SpDef: 'spd', spd: 'spd',
+  Speed: 'spe', Spe: 'spe', Spd: 'spe', spe: 'spe',
+};
+
+const DISPLAY: Readonly<{ [stat: string]: Readonly<[string, string]> }> = {
+  hp: ['HP', 'HP'],
+  atk: ['Atk', 'Attack'],
+  def: ['Def', 'Defense'],
+  spa: ['SpA', 'Special Attack'],
+  spd: ['SpD', 'Special Defense'],
+  spe: ['Spd', 'Speed'],
+  spc: ['Spc', 'Special'],
+};
+
+export class Stats  {
+  private readonly dex: ModdedDex;
+  constructor(dex: ModdedDex) {
+    this.dex = dex;
+  }
+
+  calc(stat: StatName, base: number, iv?: number, ev?: number, level?: number): number;
+  calc(stat: StatName, base: number, iv: number, ev: number, level: number, nature: Nature): number;
+  calc(stat: StatName, base: number, iv = 31, ev = 252, level = 100, nature?: Nature) {
+    return this.dex.gen < 3
+      ? calcRBY(stat, base, Stats.itod(iv), ev, level)
+      : calcADV(stat, base, iv, ev, level, nature);
+  }
+
+  get(s: string): StatName | undefined {
+    return NAMES[s];
+  }
+
+  display(str: string, full = false): string {
+    let s: StatName | 'spc' | undefined = NAMES[str];
+    if (s === undefined) return str;
+    if (this.dex.gen === 1 && s === 'spa') s = 'spc';
+    return DISPLAY[s][+full];
+  }
+
+  fill<T>(stats: Partial<StatsTable<T>>, val: T): StatsTable<T> {
+    for (const stat of STATS) {
+      if (!(stat in stats)) stats[stat] = val;
+    }
+    return stats as StatsTable<T>;
+  }
+
+  getHPDV(ivs: Partial<StatsTable>): number {
+    return (
+      (Stats.itod(ivs.atk === undefined ? 31 : ivs.atk) % 2) * 8 +
+      (Stats.itod(ivs.def === undefined ? 31 : ivs.def) % 2) * 4 +
+      (Stats.itod(ivs.spe === undefined ? 31 : ivs.spe) % 2) * 2 +
+      (Stats.itod(ivs.spa === undefined ? 31 : ivs.spa) % 2)
+    );
+  }
+
+  *[Symbol.iterator](): IterableIterator<StatName> {
+    for (const s of STATS) {
+      yield s;
+    }
+  }
+
+  static itod(iv: number): number {
+    return Math.floor(iv / 2);
+  }
+
+  static dtoi(dv: number): number {
+    return dv * 2 + 1;
+  }
+};
+
+function calcRBY(stat: StatName, base: number, dv: number, ev: number, level: number) {
+  // BUG: we ignore EVs - do we care about converting ev to stat experience?
+  if (stat === 'hp') {
+    return Math.floor((((base + dv) * 2 + 63) * level) / 100) + level + 10;
+  } else {
+    return Math.floor((((base + dv) * 2 + 63) * level) / 100) + 5;
+  }
+}
+
+function calcADV(
+  stat: StatName,
+  base: number,
+  iv: number,
+  ev: number,
+  level: number,
+  nature?: Nature
+) {
+  if (stat === 'hp') {
+    return base === 1
+      ? base
+      : Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + level + 10;
+  } else {
+    let mod = 1;
+    if (nature !== undefined) {
+      if (nature.plus === stat) {
+        mod = 1.1;
+      } else if (nature.minus === stat) {
+        mod = 0.9;
+      }
+    }
+    return Math.floor((Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * mod);
   }
 }

@@ -15,9 +15,12 @@
 
 - **img** - impl: multiple gen preferences feature, edge cases + doc
 - **sim** - integration + doc
-- **data** - unit tests + doc
+- **data** - unit tests + doc + bundle
 
 ## Stage 3
 
 - **types** - done
-- **sets** - doc
+- **sets** - done
+
+
+TESTS FOR BUNDLED! `const window = exports;`
