@@ -5,5 +5,5 @@
     "resolveJsonModule": true,
     "tsBuildInfoFile": ".tsbuildinfo"
   },
-  "files": ["index.ts"]
+  "files": ["index.ts", "index.test.ts"]
 }

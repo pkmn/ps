@@ -19,9 +19,19 @@ describe('Dex', () => {
     expect(Dex.forGen(2).getMove('CRUNCH').category).toEqual('Special');
   });
 
-  it('#getTemplate', () => {
+  it('#getSpecies', () => {
     expect(Dex.getSpecies('Alakazam').baseStats.spd).toEqual(95);
     expect(Dex.forGen(3).getSpecies('Alakazam').baseStats.spd).toEqual(85);
+
+    const dex = Dex.forGen(1);
+    let count = 0;
+    for (const id in dex.data.Species) {
+      const s = dex.getSpecies(id);
+      if (!s.exists || s.gen > dex.gen) continue;
+      if (s.isNonstandard && !['Past', 'Unobtainable'].includes(s.isNonstandard)) continue;
+       count++;
+    }
+    expect(count).toBe(151);
   });
 
   it('#getType', () => {

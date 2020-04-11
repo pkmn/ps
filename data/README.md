@@ -14,57 +14,20 @@ Alternatively, as [detailed below](#browser), if you are using `@pkmn/data` in t
 a convenient way to get started, simply depend on a transpiled and minified version via [unpkg][5]:
 
 ```html
+<script src="https://unpkg.com/@pkmn/dex"></script>
 <script src="https://unpkg.com/@pkmn/data"></script>
 ```
 
+*In this example, [`@pkmn/dex`][13] is included as well, because `@pkmn/data` requires a `Dex`
+implementation to be useful.*
+
 ## Usage
+
+FIXME all below
 
 This package can be used as a data layer within Pokémon applications **without any runtime
 dependencies** (this package only depends on `@pkmn/types` which consists of type definitions only
 and is not required at runtime):
-
-### `Dex`
-
-The `Dex` object is designed to map closely to the `Dex` in [`smogon/pokemon-showdown`][2] and
-[`smogon/pokemon-showdown-client`][3]. However, because these interfaces diverge, some work was
-done to help unify them as best as possible:
-
-- every `Dex` is a `ModdedDex` and behaves similarly to how it does on the server (all methods can
-  be called through a `ModdedDex` instance, there is no need to call some methods on `Dex` and
-  others on `ModdedDex`).
-- Pokémon Showdown's view-specific logic has been excluded from the data package (the standalone
-  [`@pkmn/img`][0] package exists if you wish to deal with Pokémon Showdown's image resources).
-- the `packSet`, `unpackSet`, `fastUnpackSet` logic was also removed - use the more comphrensive
-  standalone [`@pkmn/sets`][12] package for these methods - the packages `Data` interface is
-  purposefully designed to be compatible with `Dex`.
-- only the **data** from Pokémon Showdown is included, none of the mechanics implementation logic.
-- certain methods (like `Dex#includeModData()` exist for compatibility but are no-ops).
-
-Some changes were made which should be relatively easy handle if migration from Pokémon Showdown
-APIs:
-
-- only mainstream generations are supported (ie. no non standard formats, no `LGPE`, etc).
-- all of the data files are encoded in JSON instead of JS - this is encapsulated by the API but will
-  result in slightly larger download size in exchange for [faster parsing][11].
-- certain methods and fields have been renamed, including:
-  - `getEffectByID` → `getPureEffectByID`
-  - `dex.data.Pokedex` → `dex.data.Species`
-  - `dex.data.Movedex` → `dex.data.Moves`
-
-The most important breaking change is that **`getLearnsets` has been made `async`** and its API has
-been changed to be more generally useful. In [an ideal api](#limitations) we wouldn't fetch data
-we don't need during startup, but to maximize compatibility with Pokémon Showdown only the
-`getLearnsets` method call from `Dex` has been made async. Compressed, all of the data files
-amount to ~381KB, but **`data/learnsets.json` takes up ~148KB just on its own**. Only loading this
-data on demand helps make the loading experience more reasonable given the constraints of this
-package.
-
-```ts
-import {Dex} from '@pkmn/data';
-
-TODO
-
-```
 
 ### `Generations`
 
@@ -138,3 +101,5 @@ Luo's [Pokémon Showdown client][3] which are distributed under the [MIT License
   [10]: https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle.ts#L6
   [11]: https://github.com/GoogleChromeLabs/json-parse-benchmark
   [12]: https://github.com/pkmn/ps/blob/master/sets/
+  [13]: https://github.com/pkmn/ps/blob/master/img/
+

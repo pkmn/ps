@@ -12,13 +12,11 @@ import {
 import {
   Dex,
   Effect,
-  ModdedDex,
   Nature,
   Species as DexSpecies,
   SpeciesAbility,
   Type as DexType,
-  toID,
-} from './dex';
+} from '@pkmn/dex-types';
 
 function ifExists(e: Effect | DexSpecies, gen: GenerationNum) {
   if (typeof e.exists === 'boolean' && !e.exists) return undefined;
@@ -27,20 +25,33 @@ function ifExists(e: Effect | DexSpecies, gen: GenerationNum) {
   return e;
 }
 
+export function toID(text: any): ID {
+  if (text?.id) text = text.id;
+  if (typeof text !== 'string' && typeof text !== 'number') return '';
+  return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
+}
+
 const GENERATIONS = Object.create(null) as {[num: number]: Generation};
 
-export const Generations = new class {
+export class Generations {
+  private readonly dex: Dex;
+  constructor(dex: Dex) {
+    this.dex = dex;
+  }
+
   get(gen: GenerationNum) {
     if (GENERATIONS[gen]) return GENERATIONS[gen];
-    return (GENERATIONS[gen] = new Generation(Dex.forGen(gen)));
+    return (GENERATIONS[gen] = new Generation(this.dex.forGen(gen)));
+  }
+
+  *[Symbol.iterator]() {
+    for (let gen = 1; gen <= 8; gen++) {
+      yield this.get(gen as GenerationNum);
+    }
   }
 }
 
-export interface Dex<A, I, M, S, T, N, L> {
-
-}
-
-export class Generation<DexT extends Dex> {
+export class Generation {
   readonly abilities: Abilities;
   readonly items: Items;
   readonly moves: Moves;
@@ -51,9 +62,9 @@ export class Generation<DexT extends Dex> {
   readonly effects: Effects;
   readonly stats: Stats;
 
-  readonly dex: DexT;
+  readonly dex: Dex;
 
-  constructor(dex: ModdedDex) {
+  constructor(dex: Dex) {
     this.dex = dex;
 
     this.abilities = new Abilities(this.dex);
@@ -73,8 +84,8 @@ export class Generation<DexT extends Dex> {
 }
 
 export class Abilities {
-  private readonly dex: ModdedDex;
-  constructor(dex: ModdedDex) {
+  private readonly dex: Dex;
+  constructor(dex: Dex) {
     this.dex = dex;
   }
 
@@ -92,8 +103,8 @@ export class Abilities {
 }
 
 export class Items {
-  private readonly dex: ModdedDex;
-  constructor(dex: ModdedDex) {
+  private readonly dex: Dex;
+  constructor(dex: Dex) {
     this.dex = dex;
   }
 
@@ -111,8 +122,8 @@ export class Items {
 }
 
 export class Moves {
-  private readonly dex: ModdedDex;
-  constructor(dex: ModdedDex) {
+  private readonly dex: Dex;
+  constructor(dex: Dex) {
     this.dex = dex;
   }
 
@@ -130,8 +141,8 @@ export class Moves {
 }
 
 export class Species {
-  private readonly dex: ModdedDex;
-  constructor(dex: ModdedDex) {
+  private readonly dex: Dex;
+  constructor(dex: Dex) {
     this.dex = dex;
   }
 
@@ -215,8 +226,8 @@ export class Specie implements DexSpecies {
   readonly comboMoves?: readonly ID[];
   readonly essentialMove?: ID;
 
-  private readonly dex: ModdedDex;
-  constructor(dex: ModdedDex, species: DexSpecies) {
+  private readonly dex: Dex;
+  constructor(dex: Dex, species: DexSpecies) {
     Object.assign(this, species);
     this.dex = dex;
   }
@@ -231,8 +242,8 @@ export class Specie implements DexSpecies {
 }
 
 export class Effects {
-  private readonly dex: ModdedDex;
-  constructor(dex: ModdedDex) {
+  private readonly dex: Dex;
+  constructor(dex: Dex) {
     this.dex = dex;
   }
 
@@ -243,8 +254,8 @@ export class Effects {
 }
 
 export class Natures {
-  private readonly dex: ModdedDex;
-  constructor(dex: ModdedDex) {
+  private readonly dex: Dex;
+  constructor(dex: Dex) {
     this.dex = dex;
   }
 
@@ -271,8 +282,8 @@ const EFFECTIVENESS = {
 };
 
 export class Types {
-  private readonly dex: ModdedDex;
-  constructor(dex: ModdedDex) {
+  private readonly dex: Dex;
+  constructor(dex: Dex) {
     this.dex = dex;
   }
 
@@ -320,8 +331,8 @@ export class Type {
   readonly HPivs!: Partial<StatsTable>;
   readonly HPdvs!: Partial<StatsTable>;
 
-  private readonly dex: ModdedDex;
-  constructor(dex: ModdedDex, type: DexType) {
+  private readonly dex: Dex;
+  constructor(dex: Dex, type: DexType) {
     Object.assign(this, type);
     this.dex = dex;
 
@@ -335,8 +346,8 @@ export class Type {
 }
 
 export class Learnsets {
-  private readonly dex: ModdedDex;
-  constructor(dex: ModdedDex) {
+  private readonly dex: Dex;
+  constructor(dex: Dex) {
     this.dex = dex;
   }
 
@@ -377,8 +388,8 @@ const DISPLAY: Readonly<{ [stat: string]: Readonly<[string, string]> }> = {
 };
 
 export class Stats  {
-  private readonly dex: ModdedDex;
-  constructor(dex: ModdedDex) {
+  private readonly dex: Dex;
+  constructor(dex: Dex) {
     this.dex = dex;
   }
 

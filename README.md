@@ -7,7 +7,7 @@
 This is the top level of @pkmn's Pokémon Showdown components:
 
 - [`@pkmn/sim`][2]: an automatically generated extraction of just the simulator portion of [smogon/pokemon-showdown][3]
-- [`@pkmn/dex`][17]: a unification of [smogon/pokemon-showdown][3] and [smogon/pokemon-showdown-client][9]'s data layer
+- [`@pkmn/dex`][17]: a unification of [smogon/pokemon-showdown][3]'s and [smogon/pokemon-showdown-client][9]'s data layers
 - [`@pkmn/data`][19]: a higher level data API wrapper compatible with [`@pkmn/sim`][2] and [`@pkmn/dex`][17]
 - [`@pkmn/sets`][14]: importing and exporting logic for Pokémon Showdown's set specification
 - [`@pkmn/types`][4]: TypeScript definitions for types common to Pokémon projects

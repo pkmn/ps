@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "description": "A forked implementation of the Pokémon Showdown client's data layer",
+  "description": "A unification of Pokémon Showdown's client's and server's data layers",
   "repository": "github:pkmn/ps",
   "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
   "dependencies": {
+    "@pkmn/dex-types": "file:types",
     "@pkmn/types": "^0.0.2"
   },
   "devDependencies": {

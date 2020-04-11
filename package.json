@@ -40,6 +40,8 @@
     "sim",
     "protocol",
     "client",
+    "dex/types",
+    "dex",
     "data",
     "sets",
     "img",
