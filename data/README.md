@@ -20,8 +20,8 @@ a convenient way to get started, simply depend on a transpiled and minified vers
 ## Usage
 
 This package can be used as a data layer within Pokémon applications **without any runtime
-dependencies** (this package only depends on `@pkmn/types` which consists of type definitions only
-which are not required at runtime):
+dependencies** (this package only depends on `@pkmn/types` and `@pkmn/datat` which both consists of
+type definitions only and are not required at runtime):
 
 ### `Dex`
 
@@ -78,7 +78,8 @@ a couple of Pokémon Showdown quirks. While this interface is far from the
   returned.
 - `undefined` is returned from functions as opposed to an object with its `exists` field set to
   `false`.
-- `Dex#getForme` is renamed to `Species#getFormeName`, as it returns a display name
+- `Dex#getForme` and `Dex#getOutOfBattleSpecies` renamed to `Species#getFormeName` and
+  `Species#getOutOfBattleSpeciesName`, as they actually return a string display name.
 - methods are moved to more intuitive locations than all existing on `Dex`
   (eg. `Species#hasAbility`).
 - `Types` is overhauled to hide Pokémon Showdown's enum-based type effectiveness handling.
@@ -136,3 +137,7 @@ Luo's [Pokémon Showdown client][3] which are distributed under the [MIT License
   [10]: https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle.ts#L6
   [11]: https://github.com/GoogleChromeLabs/json-parse-benchmark
   [12]: https://github.com/pkmn/ps/blob/master/sets/
+
+
+
+TODO explain `datat`

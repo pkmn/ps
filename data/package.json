@@ -8,6 +8,7 @@
   "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
   "dependencies": {
+    "@pkmn/datat": "file:datat",
     "@pkmn/types": "^0.0.2"
   },
   "devDependencies": {

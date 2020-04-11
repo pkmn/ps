@@ -442,10 +442,10 @@ export interface ModdedDex {
 
   mod(genid: GenID): ModdedDex;
   forGen(gen: number): ModdedDex;
-  includeMods(): ModdedDex;
-  includeModData(): ModdedDex;
-  includeData(): ModdedDex;
-  includeFormats(): ModdedDex;
+  includeMods(): this;
+  includeModData(): this;
+  includeData(): this;
+  includeFormats(): this;
 
   getSpecies(name?: string | Species): Species;
   getEffect(name?: string | Effect| null): Effect;
@@ -457,7 +457,7 @@ export interface ModdedDex {
   getType(name: string | Type): Type;
 
   getForme(speciesid: string | Species): string;
-  getOutOfBattleSpecies(species: Species): Species;
+  getOutOfBattleSpecies(species: Species): string;
   hasAbility(species: Species, ability: string): boolean;
   getHiddenPower(ivs: StatsTable): {type: TypeName, power: number};
   getImmunity(

@@ -214,7 +214,7 @@ export class Specie implements DexSpecies {
     return this.dex.hasAbility(this, ability);
   }
 
-  getOutOfBattleSpecies() {
+  getOutOfBattleSpeciesName() {
     return this.dex.getOutOfBattleSpecies(this);
   }
 }
