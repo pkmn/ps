@@ -8,8 +8,7 @@
   "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
   "dependencies": {
-    "@pkmn/sim": "file:../sim",
-    "@smogon/calc": "file:../../damage-calc/calc"
+    "@smogon/calc": "^0.1.1"
   },
   "devDependencies": {
     "@pkmn/eslint-config": "^0.2.2",

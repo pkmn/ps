@@ -1,5 +1,17 @@
 import * as I from './interface';
-import * as sim from '@pkmn/sim';
+
+export type Effect = Ability | Item | Move;
+
+
+export interface Dex {
+  getAbility(name: string | Ability): Ability;
+
+
+}
+
+export interface Ability {
+
+}
 
 export const Generations: I.Generations = new (class {
   get(gen: I.GenerationNum) {
@@ -10,7 +22,7 @@ export const Generations: I.Generations = new (class {
 // FIXME deal with forme name/id etc differences etc!
 
 class Generation implements I.Generation {
-  dex: sim.ModdedDex;
+  dex: Dex;
 
   abilities: Abilities;
   items: Items;
@@ -19,7 +31,7 @@ class Generation implements I.Generation {
   types: Types;
   natures: Natures;
 
-  constructor(dex: sim.ModdedDex) {
+  constructor(dex: Dex) {
     this.dex = dex;
 
     this.abilities = new Abilities(dex);
@@ -36,14 +48,14 @@ class Generation implements I.Generation {
 }
 
 class Abilities implements I.Abilities {
-  private readonly dex: sim.ModdedDex;
+  private readonly dex: Dex;
 
-  constructor(dex: sim.ModdedDex) {
+  constructor(dex: Dex) {
     this.dex = dex;
   }
 
   get(id: string) {
-    const ability = this.dex.getEffect(id) as unknown as sim.Ability;
+    const ability = this.dex.getAbility(id);
     return exists(ability) ? new Ability(ability) : undefined;
   }
 
