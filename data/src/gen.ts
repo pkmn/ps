@@ -21,7 +21,10 @@ import {
 } from './dex';
 
 function ifExists(e: Effect | DexSpecies, gen: GenerationNum) {
-  return (!e.exists || e.gen > gen || e.isNonstandard) ? undefined : e;
+  if (typeof e.exists === 'boolean' && !e.exists) return undefined;
+  if ('tier' in e && (e.tier === 'Unreleased' || e.tier === 'Illegal')) return undefined;
+  if (e.gen > gen || e.isNonstandard) return undefined;
+  return e;
 }
 
 const GENERATIONS = Object.create(null) as {[num: number]: Generation};
@@ -78,7 +81,8 @@ export class Abilities {
 
   *[Symbol.iterator]() {
     for (const ability in this.dex.data.Abilities) {
-      yield this.get(ability);
+      const a = this.get(ability);
+      if (a) yield a;
     }
   }
 }
@@ -96,7 +100,8 @@ export class Items {
 
   *[Symbol.iterator]() {
     for (const item in this.dex.data.Items) {
-      yield this.get(item);
+      const i = this.get(item);
+      if (i) yield i;
     }
   }
 }
@@ -114,7 +119,8 @@ export class Moves {
 
   *[Symbol.iterator]() {
     for (const move in this.dex.data.Moves) {
-      yield this.get(move);
+      const m = this.get(move);
+      if (m) yield m;
     }
   }
 }
@@ -138,7 +144,8 @@ export class Species {
 
   *[Symbol.iterator]() {
     for (const species in this.dex.data.Species) {
-      yield this.get(species);
+      const s = this.get(species);
+      if (s) yield s;
     }
   }
 }
@@ -168,7 +175,7 @@ export class Specie implements DexSpecies {
   readonly otherFormes?: string[];
   readonly spriteid!: string;
   readonly abilities!: SpeciesAbility;
-  readonly types!: string[];
+  readonly types!: TypeName[];
   readonly addedType?: string;
   readonly prevo!: ID;
   readonly evos!: ID[];
@@ -245,7 +252,8 @@ export class Natures {
 
   *[Symbol.iterator]() {
     for (const nature in this.dex.data.Natures) {
-      yield this.get(nature);
+      const n = this.get(nature);
+      if (n) yield n;
     }
   }
 }
@@ -336,7 +344,8 @@ export class Learnsets {
   async *[Symbol.iterator]() {
     if (!this.dex.data.Learnsets) await this.dex.getLearnset('LOAD' as ID);
     for (const id in this.dex.data.Learnsets) {
-      yield this.get(id);
+      const l = this.get(id);
+      if (l) yield l;
     }
   }
 }

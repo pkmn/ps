@@ -1,28 +1,26 @@
-import * as I from './interface';
+import {ID, GenerationNum, TypeName} from '@pkmn/types';
+import * as I from './interface'; // FIXME '@smogon/calc/data/interface';
+import * as D from './dex';
 
-export type Effect = Ability | Item | Move;
-
-
-export interface Dex {
-  getAbility(name: string | Ability): Ability;
-
-
+function toID(s: string): ID {
+  return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
 }
 
-export interface Ability {
+export class Generations implements I.Generations {
+  private readonly dex: D.Dex;
 
-}
-
-export const Generations: I.Generations = new (class {
-  get(gen: I.GenerationNum) {
-    return new Generation(sim.Dex.mod(`gen${gen}`));
+  constructor(dex: D.Dex) {
+    this.dex = dex;
   }
-})();
 
-// FIXME deal with forme name/id etc differences etc!
+  // TODO: cache!
+  get(gen: I.GenerationNum) {
+    return new Generation(this.dex.mod(`gen${gen}` as D.GenID));
+  }
+}
 
 class Generation implements I.Generation {
-  dex: Dex;
+  dex: D.Dex;
 
   abilities: Abilities;
   items: Items;
@@ -31,7 +29,7 @@ class Generation implements I.Generation {
   types: Types;
   natures: Natures;
 
-  constructor(dex: Dex) {
+  constructor(dex: D.Dex) {
     this.dex = dex;
 
     this.abilities = new Abilities(dex);
@@ -48,20 +46,21 @@ class Generation implements I.Generation {
 }
 
 class Abilities implements I.Abilities {
-  private readonly dex: Dex;
+  private readonly dex: D.Dex;
 
-  constructor(dex: Dex) {
+  constructor(dex: D.Dex) {
     this.dex = dex;
   }
 
-  get(id: string) {
+  get(id: I.ID) {
     const ability = this.dex.getAbility(id);
-    return exists(ability) ? new Ability(ability) : undefined;
+    return exists(ability, this.dex.gen) ? new Ability(ability) : undefined;
   }
 
   *[Symbol.iterator]() {
     for (const id in this.dex.data.Abilities) {
-      yield this.get(id as I.ID)!;
+      const a = this.get(id as I.ID)!;
+      if (a) yield a;
     }
   }
 }
@@ -71,7 +70,7 @@ class Ability implements I.Ability {
   readonly id: I.ID;
   readonly name: I.AbilityName;
 
-  constructor(ability: sim.Ability) {
+  constructor(ability: D.Ability) {
     this.kind = 'Ability';
     this.id = ability.id as I.ID;
     this.name = ability.name as I.AbilityName;
@@ -79,20 +78,21 @@ class Ability implements I.Ability {
 }
 
 class Items implements I.Items {
-  private readonly dex: sim.ModdedDex;
+  private readonly dex: D.Dex;
 
-  constructor(dex: sim.ModdedDex) {
+  constructor(dex: D.Dex) {
     this.dex = dex;
   }
 
-  get(id: string) {
-    const item = this.dex.getEffect(id) as unknown as sim.Item;
-    return exists(item) ? new Item(item) : undefined;
+  get(id: I.ID) {
+    const item = this.dex.getItem(id);
+    return exists(item, this.dex.gen) ? new Item(item) : undefined;
   }
 
   *[Symbol.iterator]() {
     for (const id in this.dex.data.Items) {
-      yield this.get(id as I.ID)!;
+      const i = this.get(id as I.ID)!;
+      if (i) yield i;
     }
   }
 }
@@ -105,7 +105,7 @@ class Item implements I.Item {
   readonly isBerry?: boolean;
   readonly naturalGift?: Readonly<{basePower: number; type: I.TypeName}>;
 
-  constructor(item: sim.Item) {
+  constructor(item: D.Item) {
     this.kind = 'Item';
     this.id = item.id as I.ID;
     this.name = item.name as I.ItemName;
@@ -116,20 +116,21 @@ class Item implements I.Item {
 }
 
 class Moves implements I.Moves {
-  private readonly dex: sim.ModdedDex;
+  private readonly dex: D.Dex;
 
-  constructor(dex: sim.ModdedDex) {
+  constructor(dex: D.Dex) {
     this.dex = dex;
   }
 
-  get(id: string) {
-    const move = this.dex.getMove(id) as unknown as sim.Move;
-    return exists(move) ? new Move(move) : undefined;
+  get(id: I.ID) {
+    const move = this.dex.getMove(id);
+    return exists(move, this.dex.gen) ? new Move(move) : undefined;
   }
 
   *[Symbol.iterator]() {
-    for (const id in this.dex.data.Movedex) {
-      yield this.get(id as I.ID)!;
+    for (const id in this.dex.data.Moves) {
+      const m = this.get(id as I.ID)!;
+      if (m) yield m;
     }
   }
 }
@@ -167,7 +168,7 @@ class Move implements I.Move {
   readonly isMultiHit?: boolean;
   readonly isTwoHit?: boolean;
 
-  constructor(move: sim.Move) {
+  constructor(move: D.Move) {
     this.kind = 'Move';
     this.id = move.id as I.ID;
     this.name = move.name as I.MoveName;
@@ -178,20 +179,21 @@ class Move implements I.Move {
 }
 
 class Species implements I.Species {
-  private readonly dex: sim.ModdedDex;
+  private readonly dex: D.Dex;
 
-  constructor(dex: sim.ModdedDex) {
+  constructor(dex: D.Dex) {
     this.dex = dex;
   }
 
   get(id: I.ID) {
     const species = this.dex.getSpecies(id);
-    return exists(species) ? new Specie(species) : undefined;
+    return exists(species, this.dex.gen) ? new Specie(species) : undefined;
   }
 
   *[Symbol.iterator]() {
-    for (const id in this.dex.data.Pokedex) {
-      yield this.get(id as I.ID)!;
+    for (const id in this.dex.data.Species) {
+      const s = this.get(id as I.ID)!;
+      if (s) yield s;
     }
   }
 }
@@ -219,7 +221,7 @@ class Specie implements I.Specie {
   readonly isAlternateForme?: boolean;
   readonly ab?: I.AbilityName;
 
-  constructor(species: sim.Species) {
+  constructor(species: D.Species) {
     this.kind = 'Species';
     this.id = species.id as I.ID;
     this.name = species.name as I.SpeciesName;
@@ -238,64 +240,75 @@ class Specie implements I.Specie {
     this.w = species.weightkg;
     this.canEvolve = !!species.evos;
     if (species.gender) this.gender = species.gender;
-    // TODO formes
+    // FIXME deal with forme name/id etc differences etc!
     const abilities = Object.values(species.abilities) as I.AbilityName[];
     if (abilities.length === 1) this.ab = abilities[0];
   }
 }
 
-export class Types implements I.Types {
-  private readonly dex: sim.ModdedDex;
+const DAMAGE_TAKEN = [0, 0.5, 1, 2] as I.TypeEffectiveness[];
 
-  constructor(dex: sim.ModdedDex) {
+export class Types implements I.Types {
+  private readonly dex: D.Dex
+  private readonly byID: {[id: string]: I.Type}
+
+  constructor(dex: D.Dex) {
     this.dex = dex;
+
+    const unknown = {
+      kind: 'Type',
+      id: '' as ID,
+      name: '???',
+      category: 'Physical',
+      damageTaken: {'???': 1},
+    } as I.Type;
+
+    this.byID = {};
+    for (const t in this.dex.data.Types) {
+      const id = toID(t) as I.ID;
+      const name = t as Exclude<TypeName, '???'>;
+      const damageTaken = {} as {[type in I.TypeName]: I.TypeEffectiveness};
+      const dt = this.dex.data.Types[name].damageTaken;
+      for (const d in dt) {
+        if (d in this.dex.data.Types) {
+          damageTaken[d as Exclude<TypeName, '???'>] = DAMAGE_TAKEN[dt[d]];
+        }
+        damageTaken['???'] = 1;
+      }
+      (unknown.damageTaken as any)[name] = 1;
+      this.byID[id] = {kind: 'Type', id, name, damageTaken};
+    }
+    this.byID[unknown.id] = unknown;
   }
 
   get(id: I.ID) {
     // toID('???') => '', as do many other things, but returning the '???' type seems appropriate :)
-    return TYPES_BY_ID[this.gen][id];
+    return this.byID[id];
   }
 
   *[Symbol.iterator]() {
-    for (const id in this.dex.data.TypeChart) {
-      yield this.get(id as I.ID)!;
+    for (const id in this.byID) {
+      yield this.byID[id];
     }
   }
 }
 
-class Type implements I.Type {
-  readonly kind: 'Type';
-  readonly id: I.ID;
-  readonly name: I.TypeName;
-  readonly category: I.MoveCategory;
-  readonly damageTaken: Readonly<{[type in I.TypeName]?: I.TypeEffectiveness}>;
-
-  constructor(type: sim.TypeInfo) {
-    this.kind = 'Type';
-    this.id = type.id as I.ID;
-    this.name = type.name as I.TypeName;
-    this.category = damageTaken!.category;
-    delete damageTaken!.category;
-    this.damageTaken = damageTaken! as {[type in I.TypeName]?: I.TypeEffectiveness};
-  }
-}
-
-
 export class Natures implements I.Natures {
-  private readonly dex: sim.ModdedDex;
+  private readonly dex: D.Dex;
 
-  constructor(dex: sim.ModdedDex) {
+  constructor(dex: D.Dex) {
     this.dex = dex;
   }
 
   get(id: I.ID) {
     const nature = this.dex.getNature(id)
-    return exists(nature) ? new Nature(nature) : undefined;
+    return exists(nature, this.dex.gen) ? new Nature(nature) : undefined;
   }
 
   *[Symbol.iterator]() {
     for (const id in this.dex.data.Natures) {
-      yield this.get(id as I.ID)!;
+      const n = this.get(id as I.ID)!;
+      if (n) yield n;
     }
   }
 }
@@ -307,9 +320,9 @@ class Nature implements I.Nature {
   readonly plus: I.StatName;
   readonly minus: I.StatName;
 
-  constructor(nature: sim.Nature) {
+  constructor(nature: D.Nature) {
     this.kind = 'Nature';
-    this.id = nature.id;
+    this.id = nature.id as I.ID;
     this.name = nature.name as I.NatureName;
     if (nature.plus) {
       this.plus = nature.plus;
@@ -321,8 +334,8 @@ class Nature implements I.Nature {
   }
 }
 
-function exists(val?: sim.Ability | sim.Item | sim.Move | sim.Species | sim.Nature) {
-  if (!val || (typeof val.exists === 'boolean' && !val.exists)) return false;
+function exists(val: D.Ability| D.Item | D.Move | D.Species | D.Nature, gen: GenerationNum) {
+  if (typeof val.exists === 'boolean' && !val.exists) return false;
   if ('tier' in val && (val.tier === 'Unreleased' || val.tier === 'Illegal')) return false;
-  return !(val.isNonstandard && val.isNonstandard !== 'CAP');
+  return !(val.gen > gen || (val.isNonstandard && val.isNonstandard !== 'CAP'));
 }

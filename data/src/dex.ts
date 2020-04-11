@@ -159,7 +159,7 @@ export interface MoveData extends EffectData {
   pp: number;
   priority: number;
   target: MoveTarget;
-  type: string;
+  type: TypeName;
   alwaysHit?: boolean;
   baseMoveType?: string;
   basePowerModifier?: number;
@@ -244,7 +244,7 @@ export interface SpeciesData {
   heightm: number;
   num: number;
   name: string;
-  types: string[];
+  types: TypeName[];
   weightkg: number;
   baseForme?: string;
   baseSpecies?: string;
@@ -470,7 +470,7 @@ export class Item extends BasicEffect implements Readonly<BasicEffect & ItemData
 
 export class Move extends BasicEffect implements Readonly<BasicEffect & MoveData> {
   readonly effectType: 'Move';
-  readonly type: string;
+  readonly type: TypeName;
   readonly target: MoveTarget;
   readonly basePower: number;
   readonly accuracy: true | number;
@@ -502,7 +502,6 @@ export class Move extends BasicEffect implements Readonly<BasicEffect & MoveData
   readonly nonGhostTarget: string;
   readonly ignoreAbility: boolean;
   readonly damage: number | 'level' | false | null;
-  readonly spreadHit: boolean;
   readonly spreadModifier?: number;
   readonly critModifier?: number;
   readonly forceSTAB: boolean;
@@ -517,7 +516,7 @@ export class Move extends BasicEffect implements Readonly<BasicEffect & MoveData
 
     this.fullname = `move: ${this.name}`;
     this.effectType = 'Move';
-    this.type = getString(data.type);
+    this.type = getString(data.type) as TypeName;
     this.target = data.target;
     this.basePower = Number(data.basePower!);
     this.accuracy = data.accuracy!;
@@ -549,7 +548,6 @@ export class Move extends BasicEffect implements Readonly<BasicEffect & MoveData
     this.nonGhostTarget = data.nonGhostTarget || '';
     this.ignoreAbility = data.ignoreAbility || false;
     this.damage = data.damage!;
-    this.spreadHit = data.spreadHit || false;
     this.forceSTAB = !!data.forceSTAB;
     this.noSketch = !!data.noSketch;
     this.stab = data.stab || undefined;
@@ -653,7 +651,7 @@ export class Species extends BasicEffect implements Readonly<BasicEffect & Speci
   readonly otherFormes?: string[];
   readonly spriteid: string;
   readonly abilities: SpeciesAbility;
-  readonly types: string[];
+  readonly types: TypeName[];
   readonly addedType?: string;
   readonly prevo: ID;
   readonly evos: ID[];
@@ -1033,7 +1031,7 @@ export class ModdedDex implements ModdedDex {
         if (id in table.overrideStats) {
           data.baseStats = {...data.baseStats, ...table.overrideStats[id]};
         }
-        if (id in table.overrideType) data.types = table.overrideType[id].split('/');
+        if (id in table.overrideType) data.types = table.overrideType[id].split('/') as TypeName[];
 
         if (id in table.overrideTier) data.tier = table.overrideTier[id];
       }

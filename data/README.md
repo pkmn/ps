@@ -83,7 +83,8 @@ a couple of Pokémon Showdown quirks. While this interface is far from the
 - methods are moved to more intuitive locations than all existing on `Dex`
   (eg. `Species#hasAbility`).
 - `Types` is overhauled to hide Pokémon Showdown's enum-based type effectiveness handling.
-- the 'sub-API' fields of `Generation` all have a `get` method and can be iterated over.
+- the 'sub-API' fields of `Generation` all have a `get` method and can be iterated over (save for
+  `Generation#effects`).
 - a stats API including calculation logic is provided via `Generation#stats`.
 
 ```ts

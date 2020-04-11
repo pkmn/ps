@@ -1,7 +1,5 @@
 # TODO
 
-`@pkmn/datat`
-
 ## Stage 0
 
 - **calc** - impl + unit tests + doc
@@ -29,3 +27,7 @@
 ---
 
 - make sure to remove undefined because no exists from interation
+- test number of formes = expected when iterating through data and calc
+- add `eval` bundled test
+- calc: test against `@pkmn/data` and `@pkmn/sim`, ensure data is correct compared to
+  `@smogon/calc/data`!
