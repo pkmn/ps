@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+'use strict';
+
+const Compiler = require('../compiler');
+const compiler = new Compiler(__dirname);
+
+const DATA = [
+  ['Abilities', 'abilities'],
+  ['Aliases', 'aliases'],
+  ['Items', 'items'],
+  ['Moves', 'moves'],
+  ['Species', 'species'],
+  ['FormatsData', 'formats-data'],
+];
+
+let bundled = `(() => {
+'use strict';
+const DEX_ = {};
+const GEN_ = {};
+(exports => {
+`;
+for (const [name, file] of DATA) {
+  bundled += `const ${name}JSON = ${compiler.read(`data/${file}.json`)};\n`;
+}
+bundled += compiler.read('dex.js', 16, 1);
+bundled += `
+})(DEX_);
+(exports => {
+  const dex_1 = DEX_;
+`;
+const gen = compiler.read('gen.js').split('\n');
+bundled += gen.slice(1, 13).join('\n'); // polyfill
+bundled += gen.slice(15, -1).join('\n'); // code
+bundled += '})(GEN_);'
+bundled += `
+// EXPORTS
+window.Dex = DEX_.Dex;
+window.Generations = GEN_.Generations;
+})();`
+compiler.compile(bundled);

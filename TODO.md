@@ -1,5 +1,7 @@
 # TODO
 
+`@pkmn/datat`
+
 ## Stage 0
 
 - **calc** - impl + unit tests + doc
@@ -22,5 +24,4 @@
 - **types** - done
 - **sets** - done
 
-
-TESTS FOR BUNDLED! `const window = exports;`
+**TESTS FOR BUNDLED! `const window = exports;`**

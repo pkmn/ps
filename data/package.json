@@ -25,6 +25,8 @@
     "lint": "eslint --cache src/**/*.ts",
     "fix": "eslint --fix src/**/*.ts",
     "compile": "tsc -p .",
+    "bundle": "node bundle",
+    "build": "npm run compile && npm run bundle",
     "test": "jest",
     "prepare": "npm run compile",
     "pretest": "npm run compile",

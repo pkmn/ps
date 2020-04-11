@@ -6,7 +6,8 @@ const babel = require('@babel/core');
 const terser = require('terser');
 
 const config = {
-  'plugins': [
+  compact: false,
+  plugins: [
     ['@babel/plugin-transform-typescript', {'isTSX': true}],
     ['@babel/plugin-proposal-class-properties', {'loose': true}],
     ['@babel/plugin-proposal-optional-chaining', {'loose': true}],
@@ -35,8 +36,10 @@ class Compiler {
 
   read(f, b = 0, e = 0) {
     try {
-      const lines = fs.readFileSync(path.join(this.built, f), 'utf8').split('\n');
-      return lines.slice(b, -e).join('\n');
+      const data = fs.readFileSync(path.join(this.built, f), 'utf8');
+      if (e) return data.split('\n').slice(b, -e).join('\n');
+      if (b) return data.split('\n').slice(b).join('\n');
+      return data;
     } catch (err) {
       if (err.code === 'ENOENT') {
         console.error(`Missing file 'build/${f}' - did you run \`npm run compile\`?`);

@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
-
 const Compiler = require('../compiler');
 const compiler = new Compiler(__dirname);
 
@@ -11,9 +8,7 @@ let bundled = `(() => {
 'use strict';
 const exports = {};
 `;
-// Typescript is obnoxiously adding spaces for no apparent reason...
-const json = fs.readFileSync(path.resolve(__dirname, 'src/data/data.json'), 'utf8');
-bundled += `const DATA = ${json};\n`;
+bundled += `const DATA = ${compiler.read('data/data.json')};\n`;
 bundled += compiler.read('data/index.js', 11, 1);
 bundled += compiler.read('adaptable.js', 2, 1);
 bundled += `
