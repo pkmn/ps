@@ -19,7 +19,7 @@ export interface EffectData {
   affectsFainted?: boolean;
   counterMax?: number;
   desc?: string;
-  drain?: number[]; // [number, number];
+  drain?: [number, number];
   duration?: number;
   effect?: Partial<PureEffect>
   effectType?: string;
@@ -28,7 +28,7 @@ export interface EffectData {
   isZ?: boolean | string;
   isMax?: boolean | string;
   noCopy?: boolean;
-  recoil?: number[]; // [number, number];
+  recoil?: [number, number];
   secondary?: SecondaryEffect | null;
   secondaries?: SecondaryEffect[] | null;
   self?: SelfEffect | null;
@@ -333,7 +333,6 @@ export interface Move extends Readonly<BasicEffect & MoveData> {
   readonly nonGhostTarget: string;
   readonly ignoreAbility: boolean;
   readonly damage: number | 'level' | false | null;
-  readonly spreadHit: boolean;
   readonly spreadModifier?: number;
   readonly critModifier?: number;
   readonly forceSTAB: boolean;
@@ -442,7 +441,6 @@ export interface ModdedDex {
 
   mod(genid: GenID): ModdedDex;
   forGen(gen: number): ModdedDex;
-  includeMods(): this;
   includeModData(): this;
   includeData(): this;
   includeFormats(): this;

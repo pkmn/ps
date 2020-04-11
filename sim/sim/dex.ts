@@ -76,6 +76,10 @@ interface DexTableData {
 	Scripts: DexTable<AnyObject>;
 	Statuses: DexTable<EffectData>;
 	TypeChart: DexTable<TypeData>;
+
+	Species: DexTable<Species>;
+	Types: DexTable<TypeData>;
+	Moves: DexTable<Move>;
 }
 
 const BattleNatures: {[k: string]: Nature} = {
@@ -161,6 +165,10 @@ export class ModdedDex {
 		this.formatsCache = null;
 	}
 
+	get modid() {
+		return this.currentMod as ID;
+	}
+
 	get data(): DexTableData {
 		return this.loadData();
 	}
@@ -176,6 +184,11 @@ export class ModdedDex {
 
 	mod(mod: string | undefined): ModdedDex {
 		return dexes[mod || 'base'];
+	}
+
+	forGen(gen: number) {
+		if (!gen) return this;
+		return this.mod(`gen${gen}`);
 	}
 
 	forFormat(format: Format | string): ModdedDex {
@@ -1343,6 +1356,11 @@ export class ModdedDex {
 		// Flag the generation. Required for team validator.
 		this.gen = dataCache.Scripts.gen;
 		if (!this.gen) throw new Error(`Mod ${this.currentMod} needs a generation number in scripts.js`);
+
+		dataCache.Types = dataCache.TypeChart;
+		dataCache.Moves = dataCache.Movedex;
+		dataCache.Species = dataCache.Pokedex;
+
 		this.dataCache = dataCache as DexTableData;
 
 		// Execute initialization script.

@@ -626,7 +626,7 @@ const Data = {
   Abilities: AbilitiesJSON as { [id: string]: DataT.AbilityData },
   Aliases: AliasesJSON as { [id: string]: string },
   Items: ItemsJSON as { [id: string]: DataT.ItemData },
-  Moves: MovesJSON as { [id: string]: DataT.MoveData },
+  Moves: MovesJSON as unknown as { [id: string]: DataT.MoveData },
   Species: SpeciesJSON as { [id: string]: DataT.SpeciesData },
   Natures,
   Learnsets: null! as { [id: string]: DataT.LearnsetData },
@@ -1194,10 +1194,6 @@ export class ModdedDex implements DataT.ModdedDex {
         power: (this.gen && this.gen < 6) ? tr(hpPowerX * 40 / 63) + 30 : 60,
       };
     }
-  }
-
-  includeMods() {
-    return this;
   }
 
   includeModData() {

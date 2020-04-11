@@ -13,7 +13,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@pkmn/types": "file:../types",
     "@types/node": "^13.9.2"
   },
   "devDependencies": {
