@@ -36,7 +36,11 @@ export const Generations = new class {
   }
 }
 
-export class Generation {
+export interface Dex<A, I, M, S, T, N, L> {
+
+}
+
+export class Generation<DexT extends Dex> {
   readonly abilities: Abilities;
   readonly items: Items;
   readonly moves: Moves;
@@ -47,7 +51,7 @@ export class Generation {
   readonly effects: Effects;
   readonly stats: Stats;
 
-  readonly dex: ModdedDex;
+  readonly dex: DexT;
 
   constructor(dex: ModdedDex) {
     this.dex = dex;

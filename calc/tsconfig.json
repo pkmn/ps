@@ -7,6 +7,5 @@
     "paths": {
       "@smogon/calc/data/*": ["node_modules/@smogon/calc/dist/data/*"]
     }
-  },
-  "files": ["index.ts"]
+  }
 }

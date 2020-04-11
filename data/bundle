@@ -4,15 +4,7 @@
 const Compiler = require('../compiler');
 const compiler = new Compiler(__dirname);
 
-const DATA = [
-  ['Abilities', 'abilities'],
-  ['Aliases', 'aliases'],
-  ['Items', 'items'],
-  ['Moves', 'moves'],
-  ['Species', 'species'],
-  ['FormatsData', 'formats-data'],
-];
-
+// FIXME: depend on existing dex global!
 let bundled = `(() => {
 'use strict';
 const DEX_ = {};

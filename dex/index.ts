@@ -38,7 +38,7 @@ function combine(obj: AnyObject, ...data: (AnyObject | null)[]): AnyObject {
   return obj;
 }
 
-//#region Data Types
+// #region Data Types
 
 export type EffectType =
   'Effect' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Weather' | 'Status';
@@ -54,7 +54,7 @@ export interface EffectData {
   desc?: string;
   drain?: [number, number];
   duration?: number;
-  effect?: Partial<PureEffect>
+  effect?: Partial<PureEffect>;
   effectType?: string;
   infiltrates?: boolean;
   isNonstandard?: Nonstandard | null;
@@ -318,7 +318,7 @@ interface AnyObject { [k: string]: any }
 
 // #region Data Implementations
 
-export class BasicEffect implements Readonly<EffectData>  {
+export class BasicEffect implements Readonly<EffectData> {
   id: ID;
   name: string;
   fullname: string;
@@ -406,7 +406,7 @@ export class Ability extends BasicEffect implements Readonly<BasicEffect & Abili
   }
 }
 
-export class Item extends BasicEffect implements Readonly<BasicEffect & ItemData>  {
+export class Item extends BasicEffect implements Readonly<BasicEffect & ItemData> {
   readonly effectType: 'Item';
   readonly fling?: FlingData;
   readonly onDrive?: string;
@@ -873,9 +873,9 @@ const Natures: { [k: string]: NatureData } = {
   timid: {name: 'Timid', plus: 'spe', minus: 'atk'},
 };
 
-//#endregion
+// #endregion
 
-//#region Dex
+// #region Dex
 
 const Data = {
   Abilities: AbilitiesJSON as { [id: string]: AbilityData },
@@ -1080,7 +1080,7 @@ export class ModdedDex implements ModdedDex {
       } else {
         // Typescript thinks asynchronously imported modules need a default export...
         this.data.Learnsets = (await import('./data/learnsets.json')) as unknown as {
-          [id: string]: LearnsetData
+          [id: string]: LearnsetData;
         };
       }
     }

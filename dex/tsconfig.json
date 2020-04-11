@@ -4,6 +4,5 @@
     "outDir": "build",
     "resolveJsonModule": true,
     "tsBuildInfoFile": ".tsbuildinfo"
-  },
-  "files": ["index.ts"]
+  }
 }
