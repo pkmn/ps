@@ -26,6 +26,7 @@
   },
   "scripts": {
     "compile": "tsc -p .",
+    "build": "npm run compile",
     "test": "mocha test/main.js test/sim/**/*.js -R dot -u bdd --exit",
     "lint": "eslint . --cache --ext .js,.ts",
     "prepare": "npm run compile",

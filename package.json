@@ -37,6 +37,7 @@
   },
   "subPackages": [
     "types",
+    "data/datat",
     "sim",
     "protocol",
     "client",

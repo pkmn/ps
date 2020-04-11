@@ -26,6 +26,7 @@
     "lint": "eslint --cache index.ts",
     "fix": "eslint --fix index.ts",
     "compile": "tsc -p .",
+    "build": "npm run compile",
     "test": "true",
     "prepare": "npm run compile",
     "pretest": "npm run compile",

@@ -13,6 +13,9 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "compile": "tsc -p ."
+    "compile": "tsc -p .",
+    "build": "npm run compile",
+    "test": "npm run compile",
+    "prepare": "npm run compile"
   }
 }
