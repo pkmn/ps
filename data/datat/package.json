@@ -1,12 +1,14 @@
 {
-  "name": "@pkmn/types",
-  "version": "0.0.2",
+  "name": "@pkmn/datat",
+  "version": "0.0.1",
   "types": "index.d.ts",
-  "description": "Type definitions common across Pokemon Showdown",
+  "description": "Type definition of the common @pkmn/data and @pkmn/sim Dex interface",
   "repository": "github:pkmn/ps",
   "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "@pkmn/types": "^0.0.2"
+  },
   "devDependencies": {
     "typescript": "^3.8.3"
   },

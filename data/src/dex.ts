@@ -922,6 +922,10 @@ export class ModdedDex {
     this.gen = parseInt(genid.slice(3)) as GenerationNum;
   }
 
+  get modid() {
+    return this.genid as ID;
+  }
+
   mod(genid: GenID): ModdedDex {
     if (genid in dexes) return dexes[genid];
     dexes[genid] = new ModdedDex(genid);
@@ -1167,7 +1171,7 @@ export class ModdedDex {
     return effect;
   }
 
-  getAbility(name: string | Ability = ''): Ability {
+  getAbility(name: string | Ability): Ability {
     if (name && typeof name !== 'string') return name;
 
     name = (name || '').trim();

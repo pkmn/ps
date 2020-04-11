@@ -25,3 +25,7 @@
 - **sets** - done
 
 **TESTS FOR BUNDLED! `const window = exports;`**
+
+---
+
+- make sure to remove undefined because no exists from interation
