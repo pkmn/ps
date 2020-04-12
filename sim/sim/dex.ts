@@ -434,6 +434,10 @@ export class ModdedDex {
 		return learnsetData;
 	}
 
+	async getLearnset(name: string) {
+		return Promise.resolve(this.getLearnsetData(toID(name)) as Data.Learnset);
+	}
+
 	getMove(name?: string | Move): Move {
 		if (name && typeof name !== 'string') return name;
 
