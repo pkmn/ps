@@ -41,31 +41,12 @@ function combine(obj: AnyObject, ...data: (AnyObject | null)[]): AnyObject {
 
 // #region Data
 
-export interface Tiering {
-  overrideTier: { [id: string]: string };
-  zuBans?: { [id: string]: 1 };
-  nfeBans: { [id: string]: 1 };
+export interface FormatsData {
+  tier?: string;
+  doublesTier?: string;
+  isNonstandard?: Nonstandard;
+  inherit?: boolean;
 }
-export interface Overrides {
-  overrideStats: { [id: string]: { [stat in StatName]?: number } };
-  overrideType: { [id: string]: string };
-  overrideAbility: { [id: string]: string };
-  overrideHiddenAbility: { [id: string]: string };
-  removeSecondAbility: { [id: string]: true };
-  overrideAcc: { [id: string]: true | number };
-  overrideBP: { [id: string]: number };
-  overridePP: { [id: string]: number };
-  overrideMoveDesc: { [id: string]: string };
-  overrideMoveType: { [id: string]: TypeName };
-  overrideItemDesc: { [id: string]: string };
-  overrideAbilityDesc: { [id: string]: string };
-  overrideTier: { [id: string]: string };
-  removeType: {[id in TypeName]?: true};
-  overrideTypeChart: {[id in TypeName]?: T.TypeData};
-}
-
-export type FormatsData =
-  Tiering & { [mod: string]: Partial<Tiering> } & { [gen in PastGenID]: Overrides };
 
 interface AnyObject { [k: string]: any }
 
@@ -514,47 +495,21 @@ export class Species extends BasicEffect implements T.Species {
   }
 }
 
-const HIDDEN_POWERS = [
-  'hiddenpowerbug', 'hiddenpowerdark', 'hiddenpowerdragon', 'hiddenpowerelectric',
-  'hiddenpowerfighting', 'hiddenpowerfire', 'hiddenpowerflying', 'hiddenpowerghost',
-  'hiddenpowergrass', 'hiddenpowerground', 'hiddenpowerice', 'hiddenpowerpoison',
-  'hiddenpowerpsychic', 'hiddenpowerrock', 'hiddenpowersteel', 'hiddenpowerwater',
-] as ID[];
-
 export class Learnset implements T.Learnset {
   readonly effectType: 'Learnset';
+  readonly learnset?: { [moveid: string]: T.MoveSource[] };
+  readonly eventOnly: boolean;
+  readonly eventData?: T.EventInfo[];
+  readonly encounters?: T.EventInfo[];
   readonly exists: boolean;
 
-  private readonly gen: GenerationNum;
-  private readonly data: T.LearnsetData[];
-
-  constructor(gen: GenerationNum, data: T.LearnsetData[], exists = true) {
+  constructor(data: AnyObject) {
     this.effectType = 'Learnset';
-    this.exists = exists;
-    this.gen = gen;
-    this.data = data;
-  }
-
-  moves() {
-    const moves = new Set<ID>();
-    if (!this.exists || !this.data.length) return moves;
-
-    const g = `${this.gen}`;
-    for (const learnsetData of this.data) {
-      for (const moveid in learnsetData) {
-        const learnsetEntry = learnsetData[moveid];
-        if (!learnsetEntry.includes(g)) continue;
-        moves.add(moveid as ID);
-        // TODO if (moveid === 'sketch') ...
-        if (moveid === 'hiddenpower') {
-          for (const hp of HIDDEN_POWERS) {
-            moves.add(hp);
-          }
-        }
-      }
-    }
-
-    return moves;
+    this.learnset = data.learnset || undefined;
+    this.eventOnly = !!data.eventOnly;
+    this.eventData = data.eventData || undefined;
+    this.encounters = data.encounters || undefined;
+    this.exists = data.exists ?? true;
   }
 }
 
@@ -623,33 +578,56 @@ const Natures: { [k: string]: T.NatureData } = {
 
 // #region Dex
 
-const Data = {
-  Abilities: AbilitiesJSON as { [id: string]: T.AbilityData },
+type DeepPartial<T> = {
+  [P in keyof T]?: T[P] extends Array<infer U>
+    ? Array<DeepPartial<U>>
+    : T[P] extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : DeepPartial<T[P]>
+};
+
+type Data<T> = { 8: { [id: string]: T } } & {
+  [num in Exclude<GenerationNum, 8>]?: { [id: string]: { inherit?: boolean } & DeepPartial<T> }
+};
+
+const DATA = {
+  Abilities: AbilitiesJSON as Data<T.AbilityData>,
   Aliases: AliasesJSON as { [id: string]: string },
-  Items: ItemsJSON as { [id: string]: T.ItemData },
-  Moves: MovesJSON as unknown as { [id: string]: T.MoveData },
-  Species: SpeciesJSON as { [id: string]: T.SpeciesData },
+  Items: ItemsJSON as Data<T.ItemData>,
+  Moves: MovesJSON as unknown as Data<T.MoveData>,
+  Species: SpeciesJSON as Data<T.SpeciesData>,
   Natures,
-  Learnsets: null! as { [id: string]: T.LearnsetData },
-  Types: TypesJSON as { [type in Exclude<TypeName, '???'>]: T.TypeData },
-  FormatsData: FormatsDataJSON as FormatsData,
+  Learnsets: null! as Data<T.LearnsetData>,
+  Types: TypesJSON as { 8: { [id: string]: T.TypeData } } & {
+    [num in Exclude<GenerationNum, 8>]?: { [type in Exclude<TypeName, '???'>]?: T.TypeData | null }
+  },
+  FormatsData: FormatsDataJSON as Data<FormatsData>,
 };
 
 const GEN_IDS = ['gen1', 'gen2', 'gen3', 'gen4', 'gen5', 'gen6', 'gen7', 'gen8'] as const;
 type GenID = typeof GEN_IDS[number];
-type PastGenID = Exclude<GenID, 'gen8'>;
 const CURRENT_GEN_ID: GenID = GEN_IDS[7];
 
 const dexes: { [mod: string]: ModdedDex } = Object.create(null);
 
 const nullEffect: PureEffect = new PureEffect({name: '', exists: false});
 
-export class ModdedDex implements ModdedDex {
+export class ModdedDex implements T.Dex {
   static readonly STATS: ReadonlyArray<StatName> = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
 
   readonly gen: GenerationNum;
   readonly genid: GenID;
-  readonly data = Data;
+  readonly data!: {
+    Abilities: { [id: string]: T.AbilityData };
+    Aliases: { [id: string]: string };
+    Items: { [id: string]: T.ItemData };
+    Moves: { [id: string]: T.MoveData };
+    Species: { [id: string]: T.SpeciesData };
+    Natures: { [id: string]: T.NatureData };
+    Learnsets: null | { [id: string]: T.LearnsetData };
+    Types: { [type in Exclude<TypeName, '???'>]: T.TypeData };
+    FormatsData: { [id: string]: FormatsData };
+  };
 
   private readonly cache = {
     Abilities: Object.create(null) as { [id: string]: Ability },
@@ -663,9 +641,10 @@ export class ModdedDex implements ModdedDex {
   };
 
   constructor(genid = CURRENT_GEN_ID) {
-    if (!GEN_IDS.includes(genid)) throw new Error('Unsupported modid');
+    if (!GEN_IDS.includes(genid)) throw new Error('Unsupported genid');
     this.genid = genid;
     this.gen = parseInt(genid.slice(3)) as GenerationNum;
+    this.loadData();
   }
 
   get modid() {
@@ -704,20 +683,38 @@ export class ModdedDex implements ModdedDex {
       id = 'nidoranm' as ID;
     }
 
-    const alias = this.data.Aliases[id];
-    if (alias) {
-      name = alias;
-      id = toID(alias);
-    }
-
     let species = this.cache.Species[id];
     if (species) return species;
+
+    const alias = this.data.Aliases[id];
+    if (alias) {
+      const data = this.data.FormatsData[id];
+      if (data) {
+        // special event ID, like Rockruff-Dusk
+        const baseId = toID(alias);
+        species = new Species(
+          {name},
+          this.data.Species[baseId],
+          this.data.FormatsData[id],
+          /* BUG: this.data.Learnsets[id] */
+        );
+        (species as any).name = id;
+        (species as any).species = id; // BUG ???
+        (species as any).speciesid = id;
+        (species as any).abilities = {0: species.abilities['S']};
+      } else {
+        species = this.getSpecies(alias);
+      }
+
+      if (species?.exists) this.cache.Species[id] = species;
+      return species;
+    }
 
     let data = this.data.Species[id];
 
     if (id && !data) {
       let aliasTo = '';
-      const formeNames: {[k: string]: string[]} = {
+      const formeNames: { [k: string]: string[] } = {
         alola: ['a', 'alola', 'alolan'],
         galar: ['g', 'galar', 'galarian'],
         gmax: ['gigantamax', 'gmax'],
@@ -752,45 +749,36 @@ export class ModdedDex implements ModdedDex {
     data = this.data.Species[id];
 
     if (id && data) {
-      data = {...data};
-
-      if (this.genid !== CURRENT_GEN_ID) {
-        const table = this.data.FormatsData[this.genid as PastGenID];
-        if (this.gen < 3) {
-          data.abilities = {0: 'None'};
+      species = new Species({name}, data, this.data.FormatsData[id]);
+      if (!species.tier && !species.doublesTier && species.baseSpecies !== species.name) {
+        if (species.baseSpecies === 'Mimikyu') {
+          const base = this.data.FormatsData[toID(species.baseSpecies)];
+          (species as any).tier = base.tier || 'Illegal';
+          (species as any).doublesTier = base.doublesTier || 'Illegal';
+        } else if (species.id.endsWith('totem')) {
+          const base = this.data.FormatsData[species.id.slice(0, -5)];
+          (species as any).tier = base.tier || 'Illegal';
+          (species as any).doublesTier = base.doublesTier || 'Illegal';
+        } else if (species.battleOnly) {
+          const base = this.data.FormatsData[toID(species.battleOnly)];
+          (species as any).tier = base.tier || 'Illegal';
+          (species as any).doublesTier = base.doublesTier || 'Illegal';
         } else {
-          const abilities = {...data.abilities};
-          if (id in table.overrideAbility) {
-            abilities['0'] = table.overrideAbility[id];
+          const baseFormatsData = this.data.FormatsData[toID(species.baseSpecies)];
+          if (!baseFormatsData) {
+            throw new Error(`${species.baseSpecies} has no formats-data entry`);
           }
-          if (id in table.removeSecondAbility) {
-            delete abilities['1'];
-          }
-          if (id in table.overrideHiddenAbility) {
-            abilities['H'] = table.overrideHiddenAbility[id];
-          }
-          if (this.gen < 5) delete abilities['H'];
-          if (this.gen < 7) delete abilities['S'];
-
-          data.abilities = abilities;
+          (species as any).tier = baseFormatsData.tier || 'Illegal';
+          (species as any).doublesTier = baseFormatsData.doublesTier || 'Illegal';
         }
-        if (id in table.overrideStats) {
-          data.baseStats = {...data.baseStats, ...table.overrideStats[id]};
-        }
-        if (id in table.overrideType) data.types = table.overrideType[id].split('/') as TypeName[];
-
-        if (id in table.overrideTier) data.tier = table.overrideTier[id];
       }
-
-      if (!data.tier && id.slice(-5) === 'totem') {
-        data.tier = this.getSpecies(id.slice(0, -5)).tier;
+      if (!species.tier) (species as any).tier = 'Illegal';
+      if (!species.doublesTier) (species as any).doublesTier = species.tier;
+      if (species.gen > this.gen) {
+        (species as any).tier = 'Illegal';
+        (species as any).doublesTier = 'Illegal';
+        (species as any).isNonstandard = 'Future';
       }
-      if (!data.tier && data.baseSpecies && toID(data.baseSpecies) !== id) {
-        data.tier = this.getSpecies(data.baseSpecies).tier;
-      }
-      if (data.gen && (data.gen > this.gen)) data.tier = 'Illegal';
-
-      species = new Species({name}, data);
     } else {
       species = new Species({
         id, name, exists: false, tier: 'Illegal', doublesTier: 'Illegal', isNonstandard: 'Custom',
@@ -815,7 +803,8 @@ export class ModdedDex implements ModdedDex {
     return false;
   }
 
-  async getLearnset(id: ID): Promise<Learnset> {
+  async getLearnset(name: string): Promise<Learnset> {
+    const id = toID(name);
     let learnset = this.cache.Learnsets[id];
     if (learnset) return learnset;
 
@@ -831,44 +820,15 @@ export class ModdedDex implements ModdedDex {
       }
     }
 
-    let learnsetid = this.nextLearnsetID(id);
-    const learnsetData = this.data.Learnsets[learnsetid];
-    if (!learnsetData) return new Learnset(this.gen, [], false);
-
-    const learnsetsData = [learnsetData];
-    while ((learnsetid = this.nextLearnsetID(learnsetid, id))) {
-      const data = this.data.Learnsets[learnsetid];
-      if (data) learnsetsData.push(data);
+    // FIXME learnsets has multiple gens, need to loadData!
+    const data = this.data.Learnsets![id];
+    if (id && data) {
+      learnset = new Learnset(data);
+    } else {
+      learnset = new Learnset({exists: false});
     }
-
-    learnset = new Learnset(this.gen, learnsetsData);
-    this.cache.Learnsets[id] = learnset;
+    if (learnset.exists) this.cache.Learnsets[id] = learnset;
     return learnset;
-  }
-
-  private nextLearnsetID(learnsetid: ID, speciesid?: ID) {
-    if (!speciesid) {
-      if (learnsetid in this.data.Learnsets) return learnsetid;
-      const learnsetSpecies = this.getSpecies(learnsetid);
-      let baseLearnsetid = learnsetSpecies.exists && toID(learnsetSpecies.baseSpecies);
-      if (!baseLearnsetid) baseLearnsetid = toID(this.data.Aliases[learnsetid]);
-      if (baseLearnsetid in this.data.Learnsets) return baseLearnsetid;
-      return '' as ID;
-    }
-
-    if (learnsetid === 'lycanrocdusk' || (speciesid === 'rockruff' && learnsetid === 'rockruff')) {
-      return 'rockruffdusk' as ID;
-    }
-    const learnsetSpecies = this.getSpecies(learnsetid);
-
-    if (!learnsetSpecies) return '' as ID;
-    if (learnsetSpecies.prevo) return learnsetSpecies.prevo as ID;
-    const baseSpecies = learnsetSpecies.baseSpecies;
-    if (baseSpecies !== learnsetSpecies.name &&
-      (baseSpecies === 'Rotom' || baseSpecies === 'Pumpkaboo')) {
-      return toID(learnsetSpecies.baseSpecies);
-    }
-    return '' as ID;
   }
 
   getEffect(name?: string | T.Effect | null): T.Effect {
@@ -932,16 +892,8 @@ export class ModdedDex implements ModdedDex {
     let ability = this.cache.Abilities[id];
     if (ability) return ability;
 
-    let data = this.data.Abilities[id];
+    const data = this.data.Abilities[id];
     if (id && data) {
-      data = {...data};
-      for (let i = this.gen; i < 8; i++) {
-        const genid = `gen${i}` as PastGenID;
-        if (id in this.data.FormatsData[genid].overrideAbilityDesc) {
-          data.shortDesc = this.data.FormatsData[genid].overrideAbilityDesc[id];
-          break;
-        }
-      }
       ability = new Ability({name}, data);
       if (ability.gen > this.gen) (ability as any).isNonstandard = 'Future';
     } else {
@@ -972,16 +924,8 @@ export class ModdedDex implements ModdedDex {
       return item;
     }
 
-    let data = this.data.Items[id];
+    const data = this.data.Items[id];
     if (id && data) {
-      data = {...data};
-      for (let i = this.gen; i < 8; i++) {
-        const genid = `gen${i}` as PastGenID;
-        if (id in this.data.FormatsData[genid].overrideItemDesc) {
-          data.shortDesc = this.data.FormatsData[genid].overrideItemDesc[id];
-          break;
-        }
-      }
       item = new Item({name}, data);
       if (item.gen > this.gen) (item as any).isNonstandard = 'Future';
     } else {
@@ -1006,51 +950,27 @@ export class ModdedDex implements ModdedDex {
     let move = this.cache.Moves[id];
     if (move) return move;
 
-    let basePower = 0;
-    if (id.substr(0, 11) === 'hiddenpower') {
-      id = /([a-z]*)([0-9]*)/.exec(id)![1] as ID;
-    } else if (id.substr(0, 6) === 'return' && id.length > 6) {
-      id = 'return' as ID;
-      basePower = Number(id.slice(6));
-    } else if (id.substr(0, 11) === 'frustration' && id.length > 11) {
-      id = 'frustration' as ID;
-      basePower = Number(id.slice(11));
-    }
-
-    let data = this.data.Moves[id];
+    const data = this.data.Moves[id];
     if (id && data) {
-      data = {...data};
-      if (this.genid !== CURRENT_GEN_ID) {
-        const table = this.data.FormatsData[this.genid as PastGenID];
-        if (id in table.overrideAcc) data.accuracy = table.overrideAcc[id];
-        if (id in table.overrideBP) data.basePower = table.overrideBP[id];
-        if (id in table.overridePP) data.pp = table.overridePP[id];
-        if (id in table.overrideMoveType) data.type = table.overrideMoveType[id];
-        for (let i = this.gen; i < 8; i++) {
-          const genid = `gen${i}` as PastGenID;
-          if (id in this.data.FormatsData[genid].overrideMoveDesc) {
-            data.shortDesc = this.data.FormatsData[genid].overrideMoveDesc[id];
-            break;
-          }
-        }
+      move = new Move({name}, data);
+      if (id.substr(0, 11) === 'hiddenpower') {
+        id = /([a-z]*)([0-9]*)/.exec(id)![1] as ID;
+      } else if (id.substr(0, 6) === 'return' && id.length > 6) {
+        id = 'return' as ID;
+        (move as any).basePower = Number(id.slice(6));
+      } else if (id.substr(0, 11) === 'frustration' && id.length > 11) {
+        id = 'frustration' as ID;
+        (move as any).basePower = Number(id.slice(11));
       }
       if (this.gen <= 3 && data.category !== 'Status') {
-        data.category = Dex.getGen3Category(data.type);
+        (move as any).category = getGen3Category(data.type);
       }
-      if (basePower) data.basePower = basePower;
-      move = new Move({name}, data);
       if (move.gen > this.gen) (move as any).isNonstandard = 'Future';
     } else {
       move = new Move({id, name, exists: false});
     }
     if (move.exists) this.cache.Moves[id] = move;
     return move;
-  }
-
-  getGen3Category(type: string): MoveCategory {
-    return [
-      'Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', 'Dragon',
-    ].includes(type) ? 'Special' : 'Physical';
   }
 
   getNature(name: string | Nature): Nature {
@@ -1089,19 +1009,8 @@ export class ModdedDex implements ModdedDex {
     if (type) return type;
 
     const typeName = id.charAt(0).toUpperCase() + id.substr(1) as Exclude<TypeName, '???'>;
-    let data = this.data.Types[typeName];
+    const data = this.data.Types[typeName];
     if (id && data) {
-      for (let i = 7; i >= this.gen; i--) {
-        const gen = `gen${i}` as PastGenID;
-        if (typeName in this.data.FormatsData[gen].removeType) {
-          (data as any) = {...data, exists: false};
-          // don't bother correcting its attributes given it doesn't exist
-          break;
-        }
-        if (typeName in this.data.FormatsData[gen].overrideTypeChart) {
-          data = {...data, ...this.data.FormatsData[gen].overrideTypeChart[typeName]};
-        }
-      }
       type = new Type({id, name: typeName}, data);
     } else {
       type = new Type({id, name, exists: false});
@@ -1197,17 +1106,86 @@ export class ModdedDex implements ModdedDex {
     }
   }
 
+  loadData() {
+    if (this.data) return this.data;
+    const data: ModdedDex['data'] = {} as ModdedDex['data'];
+
+    const parentDex = this.genid === CURRENT_GEN_ID
+      ? null! as ModdedDex
+      : this.forGen(this.gen + 1 as GenerationNum);
+
+    for (const t in DATA) {
+      const type = t as keyof typeof DATA;
+      if (type === 'Learnsets') continue; // async
+      if (type === 'Natures' || type === 'Aliases') {
+        (data as any)[type] = DATA[type];
+        continue;
+      }
+      const d = DATA[type][this.gen];
+      if (d !== data[type]) data[type] = Object.assign({}, d, data[type]) as any;
+      if (this.genid === CURRENT_GEN_ID) continue;
+
+      const parentDataType = parentDex.data[type];
+      const childDataType = data[type] || (data[type] = {} as any);
+      for (const e in parentDataType) {
+        const entry = e as keyof typeof parentDataType;
+        if (childDataType[entry] === null) {
+          // null means don't inherit
+          delete childDataType[entry];
+        } else if (!(entry in childDataType)) {
+          // If it doesn't exist it's inherited from the parent data
+          if (type === 'Species') {
+            // Species entries can be modified too many different ways
+            // e.g. inheriting different formats-data/learnsets
+            childDataType[entry] = deepClone(parentDataType[entry]);
+          } else {
+            childDataType[entry] = parentDataType[entry];
+          }
+        } else if (childDataType[entry] && childDataType[entry].inherit) {
+          // {inherit: true} can be used to modify only parts of the parent data,
+          // instead of overwriting entirely
+          delete childDataType[entry].inherit;
+          // Merge parent into children entry, preserving existing childs' properties.
+          for (const key in parentDataType[entry]) {
+            if (key in childDataType[entry]) continue;
+            (childDataType[entry] as any)[key] = (parentDataType[entry] as any)[key];
+          }
+        }
+      }
+    }
+    return ((this.data as any) = data);
+  }
+
   includeModData() {
+    for (const mod in dexes) {
+      dexes[mod].includeData();
+    }
     return this;
   }
 
   includeData() {
+    this.loadData();
     return this;
   }
 
   includeFormats() {
     return this;
   }
+}
+
+const SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', 'Dragon'];
+function getGen3Category(type: TypeName) {
+  return SPECIAL.includes(type) ? 'Special' : 'Physical';
+}
+
+function deepClone(obj: any): any {
+  if (obj === null || typeof obj !== 'object') return obj;
+  if (Array.isArray(obj)) return obj.map(prop => deepClone(prop));
+  const clone = Object.create(Object.getPrototypeOf(obj));
+  for (const key of Object.keys(obj)) {
+    clone[key] = deepClone(obj[key]);
+  }
+  return clone;
 }
 
 // #endregion

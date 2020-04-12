@@ -70,9 +70,7 @@ const dex = Dex.forGen(1);
 let count = 0;
 for (const id in dex.data.Species) {
   const s = dex.getSpecies(id);
-  if (!s.exists || s.gen > dex.gen) continue;
-  if (s.isNonstandard && !['Past', 'Unobtainable'].includes(s.isNonstandard)) continue;
-    count++;
+  if (s.exists && s.tier !== 'Illegal' && !s.isNonstandard) count++;
 }
 assert(count === 151);
 ```

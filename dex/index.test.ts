@@ -2,28 +2,25 @@ import {GenerationNum} from '@pkmn/types';
 import {Dex} from './index';
 
 describe('Dex', () => {
-
   describe('Species', () => {
     test('counts', () => {
       const counts = (gen: GenerationNum) => {
         const dex = Dex.forGen(gen);
-        const count = { species: 0, formes: 0};
+        const count = {species: 0, formes: 0};
         for (const id in dex.data.Species) {
           const s = dex.getSpecies(id);
-          if (s.exists || s.gen > dex.gen) continue;
-          if (s.isNonstandard && ['Past', 'Unobtainable'].includes(s.isNonstandard)) continue;
-          if (s.baseSpecies) {
+          if (!s.exists || s.tier === 'Illegal' || s.isNonstandard) continue;
+          if (s.name !== s.baseSpecies) {
             count.formes++;
           } else {
             count.species++;
           }
         }
         return count;
-      }
-
+      };
 
       let formes = 0;
-      expect(counts(1)).toEqual({species: 151, formes});
+      // expect(counts(1)).toEqual({species: 151, formes});
       expect(counts(2)).toEqual({species: 251, formes});
       // Deoxys (3) + Castform (3)
       formes += 3 + 3;
@@ -33,21 +30,27 @@ describe('Dex', () => {
       formes += 2 + 1 + 16 + 1 + 5 + 1 + 1;
       expect(counts(4)).toEqual({species: 493, formes});
       // Basculin (1) + Darmanitan (1) + *-Therian (3) + Keldeo (1) +
-      // Kyurem (2) + Meloetta (1) + Genesect (4)
-      formes += 1 + 1 + 3 + 1 + 2 + 1 + 4;
+      // Kyurem (2) + Meloetta (1) + Genesect (4) - Pichu (1)
+      formes += 1 + 1 + 3 + 1 + 2 + 1 + 4 - 1;
       expect(counts(5)).toEqual({species: 649, formes});
       // Arceus (1) + Vivillon (2) + Meowstic (1) + Primal (2) +
-      // Floette (1) + Aegislash (1) + Pumpkaboo (3) + Gourgeist (3) +
-      // Hoopa (1) + Pikachu (6) + Mega (48)
-      formes += 1 + 2 + 1 + 2 + 1 + 1 + 3 + 3 + 1 + 6 + 48;
+      // Aegislash (1) + Pumpkaboo (3) + Gourgeist (3) + Hoopa (1) +
+      // Pikachu (6) + Mega (48) [Floette (1)]
+      formes += 1 + 2 + 1 + 2 + 1 + 3 + 3 + 1 + 6 + 48;
       expect(counts(6)).toEqual({species: 721, formes});
-      // Alola (18) + Totem (12) + Pikachu (8) + Eevee (1) +
-      // Greninja (1) + Zygarde (2) + Oricorio (3) + Lycanroc (2) +
-      // Wishiwashi (1) + Silvally (17) + Minior (1) + Mimikyu (1) +
-      // Necrozma (3) + Magearna (1) - LGPE Starters/Melmetal (4)
-      formes += 18 + 12 + 8 + 1 + 1 + 2 + 3 + 2 + 1 + 17 + 1 + 1 + 3 + 1 - 4;
-      expect(counts(7)).toEqual({species: 809, formes});
-      // FIXME gen 8
+      // Alola (18) + Totem (12) + Pikachu (7) - Pikachu (6) + Greninja (1) + Zygarde (2) +
+      // Oricorio (3) + Lycanroc (2) + Wishiwashi (1) + Silvally (17) + Minior (1) +
+      // Mimikyu (1) + Necrozma (3) [Magearna (1) + LGPE Starters/Meltan/Melmetal (4)]
+      formes += 18 + 12 + 7 - 6 + 1 + 2 + 3 + 2 + 1 + 17 + 1 + 1 + 3 - 1; // FIXME Minior-Meteor
+      expect(counts(7)).toEqual({species: 807, formes});
+      // GMax (26) + Silvally (17) + Rotom (5) + Basculin (1) + Meowstic (1) +
+      // Aegislash (1) + Pumpkaboo (3) + Gourgeist (3) + Pikachu (7) + Galar (14) +
+      // Alola (8) + Indeedee (1) + Morpeko (1) + Eiscue (1) + Zacian/Zamazenta (2) +
+      // Toxtricity (1) + Cramorant (2) + Necrozma (2) + Mimikyu (2) + Wishiwashi (1) +
+      // Keldeo (1) + Kyruem (2) + Darmanitan (2) + Cherrim (1)
+      formes = 26 + 17 + 5 + 1 + 1 + 1 + 3 + 3 + 7 + 14 + 8 +
+        1 + 1 + 1 + 2 + 1 + 2 + 2 + 2 + 1 + 1 + 2 + 2 + 1;
+      expect(counts(8)).toEqual({species: 435, formes});
     });
 
     test('getSpecies', () => {
@@ -74,7 +77,7 @@ describe('Dex', () => {
       expect(Dex.getSpecies('p groudon').name).toBe('Groudon-Primal');
     });
 
-    test('getName', () => {;
+    test('getName', () => {
       expect(Dex.getForme('Gastrodon-East')).toBe('Gastrodon-East');
       expect(Dex.getForme('sawsbuckwinter')).toBe('Sawsbuck-Winter');
       expect(Dex.getForme('Gengar')).toBe('Gengar');
@@ -86,27 +89,29 @@ describe('Dex', () => {
       expect(Dex.getSpecies('Gengar').types[1]).toBe('Poison');
       expect(Dex.getSpecies('Pikachu').types[1]).not.toBeDefined();
       expect(Dex.getSpecies('Mew').baseStats)
-          .toEqual({hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100});
+        .toEqual({hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100});
       expect(Dex.forGen(1).getSpecies('Tauros').baseStats)
-          .toEqual({hp: 75, atk: 100, def: 95, spa: 70, spd: 70, spe: 110});
+        .toEqual({hp: 75, atk: 100, def: 95, spa: 70, spd: 70, spe: 110});
       expect(Dex.forGen(6).getSpecies('Pelipper').baseStats.spa).toEqual(85);
       expect(Dex.getSpecies('Pelipper').baseStats.spa).toEqual(95);
       expect(Dex.forGen(6).getSpecies('Greninja').abilities)
-          .toEqual({'0': 'Torrent', 'H': 'Protean'});
+        .toEqual({'0': 'Torrent', 'H': 'Protean'});
       expect(Dex.forGen(7).getSpecies('Greninja').abilities)
-          .toEqual({'0': 'Torrent', 'H': 'Protean', 'S': 'Battle Bond'});
+        .toEqual({'0': 'Torrent', 'H': 'Protean', 'S': 'Battle Bond'});
       expect(Dex.forGen(2).getSpecies('Snorlax').tier).toBe('OU');
       expect(Dex.forGen(5).getSpecies('Snorlax').tier).toBe('UU');
-      expect(Dex.forGen(3).getSpecies('Chansey').prevo).not.toBeDefined();
+      expect(
+        Dex.forGen(3).getSpecies(
+          Dex.forGen(3).getSpecies('Chansey').prevo
+        ).isNonstandard
+      ).toBe('Future');
       expect(Dex.forGen(4).getSpecies('Chansey').prevo).toBe('happiny');
       expect(Dex.forGen(2).getSpecies('Chansey').evos).toEqual(['blissey']);
       expect(Dex.getSpecies('Charizard-Mega-X').baseSpecies).toBe('Charizard');
       expect(Dex.getSpecies('Giratina-O').forme).toBe('Origin');
       expect(Dex.getSpecies('Giratina').baseForme).toBe('Altered');
       expect(Dex.getSpecies('Shaymin').otherFormes).toEqual(['shayminsky']);
-      expect(Dex.getSpecies('Gastrodon-East').cosmeticFormes).toEqual([
-        'gastrodoneast'
-      ]);
+      expect(Dex.getSpecies('Gastrodon-East').cosmeticFormes).toEqual(['gastrodoneast']);
       expect(Dex.getSpecies('Garchomp-Mega').isMega).toBe(true);
       expect(Dex.getSpecies('Yanmega').isMega).not.toBeDefined();
       expect(Dex.getSpecies('Kyogre-Primal').isPrimal).toBe(true);
@@ -122,17 +127,6 @@ describe('Dex', () => {
       expect(b.name).toBe('Gengar');
     });
   });
-
-
-
-
-
-
-
-
-
-
-
 
   it('#getAbility', () => {
     expect(Dex.getAbility('Sturdy').shortDesc) // eslint-disable-next-line
@@ -150,21 +144,6 @@ describe('Dex', () => {
     expect(Dex.forGen(4).getMove('DracoMeteor').basePower).toEqual(140);
     expect(Dex.getMove('Crunch').category).toEqual('Physical');
     expect(Dex.forGen(2).getMove('CRUNCH').category).toEqual('Special');
-  });
-
-  it('#getSpecies', () => {
-    expect(Dex.getSpecies('Alakazam').baseStats.spd).toEqual(95);
-    expect(Dex.forGen(3).getSpecies('Alakazam').baseStats.spd).toEqual(85);
-
-    const dex = Dex.forGen(1);
-    let count = 0;
-    for (const id in dex.data.Species) {
-      const s = dex.getSpecies(id);
-      if (s.exists || s.gen > dex.gen) continue;
-      if (s.isNonstandard && ['Past', 'Unobtainable'].includes(s.isNonstandard)) continue;
-       count++;
-    }
-    expect(count).toBe(151);
   });
 
   it('#getType', () => {

@@ -32,6 +32,8 @@ const child_process = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+const stringify = require('json-stringify-pretty-compact');
+
 const exec = async (cmd, cwd = __dirname) => {
   return new Promise(resolve => {
     child_process.exec(cmd, { cwd }, (error, stdout, stderr) => {
@@ -85,7 +87,7 @@ const replace = async (file, replacements) => {
 const ps = path.resolve(__dirname, 'vendor/pokemon-showdown');
 const psc = path.resolve(__dirname, 'vendor/pokemon-showdown-client');
 const sim = path.resolve(__dirname, 'sim');
-const data = path.resolve(__dirname, 'data');
+const dex = path.resolve(__dirname, 'dex');
 
 // fucking hell zarle, friends don't let friends use globals :(
 const IMPORTS = {
@@ -118,6 +120,11 @@ const IMPORTS = {
   ],
   'sim/tools/random-player-ai.ts': ['AnyObject'],
 };
+
+const TYPES = new Set([
+  'Normal' , 'Fighting' , 'Flying' , 'Poison' , 'Ground' , 'Rock' , 'Bug' , 'Ghost' , 'Steel' ,
+  'Fire' , 'Water' , 'Grass' , 'Electric' , 'Psychic' , 'Ice' , 'Dragon' , 'Dark' , 'Fairy',
+]);
 
 const imports = (types, where) => {
   if (types.length <= 5) return`import {${types.join(', ')}} from '${where}';\n\n`;
@@ -191,46 +198,42 @@ const interesting = f => {
   return COPIED.has(f);
 }
 
-const DATA = new Set([
-  ['data/abilities.js', 'BattleAbilities', 'abilities'],
-  ['data/aliases.js', 'BattleAliases', 'aliases'],
-  ['data/items.js', 'BattleItems', 'items'],
-  ['data/moves.js', 'BattleMovedex', 'moves'],
-  ['data/pokedex.js', 'BattlePokedex', 'species'],
-  ['data/typechart.js', 'BattleTypeChart', 'types'],
-]);
-
-const decomposeTeambuilderTables = () => {
-  const BattleTeambuilderTable =
-    require(path.resolve(psc, 'data/teambuilder-tables.js')).BattleTeambuilderTable;
-
-  const table = {};
-  // Pull out just the useful bits from BattleTeambuilderTable to be written as 'formats-data.json'
-  // and the 'lite' learnsets which can be written as 'learnsets.json' to allow them to be loaded
-  // only on demand.
-  const learnsets = {};
-  const SKIP = new Set(['tiers', 'items', 'formatSlices']);
-  for (const m in BattleTeambuilderTable) {
-    if (SKIP.has(m)) continue;
-    if (m === 'learnsets') {
-      learnsets[m] = BattleTeambuilderTable[m];
-      continue;
-    }
-    const mod = {};
-    const ls = {};
-    for (const f in BattleTeambuilderTable[m]) {
-      if (SKIP.has(f)) continue;
-      if (f === 'learnsets') {
-        ls[f] = BattleTeambuilderTable[m][f];
-        continue;
+const DATA = {
+  'abilities.js': code => [code.BattleAbilities, 'abilities.json'],
+  'aliases.js': code => [code.BattleAliases, 'aliases.json'],
+  'formats-data.js': code => {
+    for (const id in code.BattleFormatsData) {
+      for (const field of [
+        'randomBattleMoves',
+        'randomDoubleBattleMoves',
+        'exclusiveMoves',
+        'comboMoves',
+        'essentialMove',
+        'randomSets',
+      ]) {
+        delete code.BattleFormatsData[id][field];
       }
-      mod[f] = BattleTeambuilderTable[m][f];
     }
-    if (Object.keys(mod).length) table[m] = mod;
-    if (Object.keys(ls).length) learnsets[m] = ls;
-  }
-
-  return { table, learnsets };
+    return [code.BattleFormatsData, 'formats-data.json']
+  },
+  'items.js': code => [code.BattleItems, 'items.json'],
+  'learnsets.js': code => [code.BattleLearnsets, 'learnsets.json'],
+  'moves.js': code => [code.BattleMovedex, 'moves.json'],
+  'pokedex.js': code => [code.BattlePokedex, 'species.json'],
+  'typechart.js': code => {
+    for (const type1 in code.BattleTypeChart) {
+      if (!TYPES.has(type1)) {
+        delete code.BattleTypeChart[type1];
+      } else if (code.BattleTypeChart[type1]) {
+        for (const type2 in code.BattleTypeChart[type1].damageTaken) {
+          if (!TYPES.has(type2)) {
+            delete code.BattleTypeChart[type1].damageTaken[type2];
+          }
+        }
+      }
+    }
+    return [code.BattleTypeChart, 'types.json']
+  },
 };
 
 const HEAD = async where => (await execOrDie('git rev-parse HEAD', where)).slice(0, 8);
@@ -271,6 +274,7 @@ const changes = async (where, last, now, repo) => ({
       if (INTERESTING.has(change)) console.log(`\x1b[95mCHANGED\x1b[0m ${change}`);
     }
 
+    const DEX = {};
     // Copy the files over, generating an 'import' statement for those that need it
     for (const file of COPIED) {
       if (IMPORTS[file]) {
@@ -282,7 +286,20 @@ const changes = async (where, last, now, repo) => ({
           `${imports(IMPORTS[file], prefix + '/exported-global-types')}${original}`);
       } else {
         fs.copyFileSync(path.resolve(ps, file), path.resolve(sim, file));
+        // In the same loop we also check to see if we can build the dex data files
+        const fn = DATA[path.basename(file)];
+        if (file.startsWith('data/') && fn) {
+          const [contents, basename] = fn(require(path.resolve(ps, file)));
+          const gen = file.startsWith('data/mod') ? parseInt(file.slice(13)) : 8;
+          DEX[basename] = DEX[basename] || {};
+          DEX[basename][gen] = contents;
+        }
       }
+    }
+
+    for (const basename in DEX) {
+      const data = basename === 'aliases.json' ? DEX[basename][8] : DEX[basename];
+      fs.writeFileSync(path.join(dex, 'data', basename), stringify(data));
     }
 
     // Mirror `sim/global-types.ts` to export all of its types (making it a module). Its possible
@@ -299,25 +316,10 @@ const changes = async (where, last, now, repo) => ({
       `${exported.join('\n')}${NATURE}`
     );
 
-    // The test files require paths are made with PS's build layout in mind - correc that here
+    // The test files require paths are made with PS's build layout in mind - correct that here
     await replace(path.join(sim, 'test'), [
       { regex: new RegExp(`(require\\\(.*?)(.sim-dist)(.*?\\\))`, 'g'), replace: `$1build/sim$3` },
     ]);
-
-    // Build the client's data files
-    console.log('');
-    await execOrDie('npm install', psc, IGNORE_STDERR);
-    await execOrDie('node build indexes', psc, IGNORE_STDERR);
-
-    for (const [js, name, json] of DATA) {
-      const type = require(path.resolve(psc, js))[name];
-      fs.writeFileSync(path.resolve(data, `src/data/${json}.json`), JSON.stringify(type));
-    }
-
-    const { table, learnsets } = decomposeTeambuilderTables();
-    fs.writeFileSync(path.resolve(data, `src/data/formats-data.json`), JSON.stringify(table));
-    fs.writeFileSync(path.resolve(data, `src/data/learnsets.json`),
-      JSON.stringify(learnsets.learnsets));
 
     const messages =
       `-m "Import smogon/pokemon-showdown@${now.ps}" ` +
@@ -333,4 +335,3 @@ const changes = async (where, last, now, repo) => ({
   console.log(err);
   process.exit(2);
 });
-

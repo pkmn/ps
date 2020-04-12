@@ -18,7 +18,6 @@ export type EffectType =
 export type Effect = Ability | Item | Move | PureEffect;
 
 export interface EffectData {
-  id: string;
   name: string;
   num: number;
   affectsFainted?: boolean;
@@ -40,6 +39,7 @@ export interface EffectData {
   shortDesc?: string;
   status?: string;
   weather?: string;
+  inherit?: boolean;
 }
 
 export interface SecondaryEffect {
@@ -131,7 +131,7 @@ export interface MoveData extends EffectData {
   pp: number;
   priority: number;
   target: MoveTarget;
-  type: string;
+  type: TypeName;
   alwaysHit?: boolean;
   baseMoveType?: string;
   basePowerModifier?: number;
@@ -242,14 +242,40 @@ export interface SpeciesData {
   isGigantamax?: string;
   inheritsFrom?: string;
   tier?: string;
+  inherit?: boolean;
 }
 
-export interface LearnsetData { [moveid: string]: string }
+export type MoveSource = string;
+
+export interface EventInfo {
+  generation: number;
+  level?: number;
+  shiny?: boolean | 1;
+  gender?: GenderName;
+  nature?: string;
+  ivs?: Partial<StatsTable>;
+  perfectIVs?: number;
+  isHidden?: boolean;
+  abilities?: string[];
+  maxEggMoves?: number;
+  moves?: string[];
+  pokeball?: string;
+  from?: string;
+}
+
+export interface LearnsetData {
+  learnset?: {[moveid: string]: MoveSource[]};
+  eventData?: EventInfo[];
+  eventOnly?: boolean;
+  encounters?: EventInfo[];
+  exists?: boolean;
+}
 
 export interface TypeData {
   damageTaken: { [t in Exclude<TypeName, '???'>]?: number } & { [key: string]: number };
   HPdvs?: Partial<StatsTable>;
   HPivs?: Partial<StatsTable>;
+  inherit?: boolean;
 }
 
 export interface NatureData {
@@ -309,7 +335,7 @@ export interface Item extends Readonly<BasicEffect & ItemData> {
 
 export interface Move extends Readonly<BasicEffect & MoveData> {
   readonly effectType: 'Move';
-  readonly type: string;
+  readonly type: TypeName;
   readonly target: MoveTarget;
   readonly basePower: number;
   readonly accuracy: true | number;
@@ -399,9 +425,11 @@ export interface Species extends Readonly<BasicEffect & SpeciesData> {
 
 export interface Learnset {
   readonly effectType: 'Learnset';
+  readonly learnset?: {[moveid: string]: MoveSource[]};
+  readonly eventOnly: boolean;
+  readonly eventData?: EventInfo[];
+  readonly encounters?: EventInfo[];
   readonly exists: boolean;
-
-  moves(): Set<ID>;
 }
 
 export interface Type extends Readonly<TypeData> {
@@ -435,7 +463,7 @@ export interface Dex {
     Moves: { [id: string]: MoveData };
     Species: { [id: string]: SpeciesData };
     Natures: { [id: string]: NatureData };
-    Learnsets: null | { [id: string]: LearnsetData },
+    Learnsets: null | { [id: string]: LearnsetData };
     Types: { [type in Exclude<TypeName, '???'>]: TypeData };
   };
 

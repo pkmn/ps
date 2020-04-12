@@ -359,7 +359,7 @@ export class Learnsets {
   async *[Symbol.iterator]() {
     if (!this.dex.data.Learnsets) await this.dex.getLearnset('LOAD' as ID);
     for (const id in this.dex.data.Learnsets) {
-      const l = this.get(id);
+      const l = await this.get(id);
       if (l) yield l;
     }
   }
@@ -387,13 +387,14 @@ const DISPLAY: Readonly<{ [stat: string]: Readonly<[string, string]> }> = {
   spc: ['Spc', 'Special'],
 };
 
-export class Stats  {
+export class Stats {
   private readonly dex: Dex;
   constructor(dex: Dex) {
     this.dex = dex;
   }
 
   calc(stat: StatName, base: number, iv?: number, ev?: number, level?: number): number;
+  // eslint-disable-next-line @typescript-eslint/unified-signatures
   calc(stat: StatName, base: number, iv: number, ev: number, level: number, nature: Nature): number;
   calc(stat: StatName, base: number, iv = 31, ev = 252, level = 100, nature?: Nature) {
     return this.dex.gen < 3
@@ -441,7 +442,7 @@ export class Stats  {
   static dtoi(dv: number): number {
     return dv * 2 + 1;
   }
-};
+}
 
 function calcRBY(stat: StatName, base: number, dv: number, ev: number, level: number) {
   // BUG: we ignore EVs - do we care about converting ev to stat experience?
