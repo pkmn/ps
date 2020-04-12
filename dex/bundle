@@ -11,6 +11,7 @@ const DATA = [
   ['Moves', 'moves'],
   ['Species', 'species'],
   ['FormatsData', 'formats-data'],
+  ['Types', 'types'],
 ];
 
 let bundled = `(() => {

@@ -63,8 +63,10 @@ package.
 ```ts
 import {Dex} from '@pkmn/dex';
 
+assert(Dex.forGen(1).getType('Psychic').damageTaken['Ghost'] === 3);
+
 let dex = Dex.forGen(5);
-assert(dex.hasAbility(dex.getSpecies('Gengar', 'Levitate')));
+assert(dex.hasAbility(dex.getSpecies('Gengar'), 'Levitate')));
 
 const dex = Dex.forGen(1);
 let count = 0;
@@ -85,6 +87,7 @@ import {Dex} from '@pkmn/dex';
 import {Generations} from '@pkmn/data';
 
 const gens = new Generations(Dex);
+assert(gens.get(1).types.get('Psychic').damageTaken['Ghost'] === 0);
 assert(gens.get(5).species.get('Gengar').hasAbility('Levitate'));
 assert(Array.from(gens.get(1).species).length === 151);
 ```

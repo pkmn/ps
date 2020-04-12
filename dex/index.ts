@@ -277,6 +277,7 @@ export class Move extends BasicEffect implements T.Move {
 
     this.fullname = `move: ${this.name}`;
     this.effectType = 'Move';
+
     this.type = getString(data.type) as TypeName;
     this.basePower = Number(data.basePower!);
     this.critRatio = Number(data.critRatio) || 1;
@@ -434,7 +435,6 @@ export class Species extends BasicEffect implements T.Species {
     this.effectType = 'Pokemon';
 
     this.baseSpecies = data.baseSpecies || data.name;
-
     this.forme = data.forme || '';
     this.baseForme = data.baseForme || '';
     this.abilities = data.abilities || {0: ''};
@@ -525,11 +525,12 @@ export class Type implements T.Type {
     this.exists = true;
     data = combine(this, data, ...moreData);
 
+    this.effectType = 'Type';
     this.id = data.id || '';
     this.name = getString(data.name).trim();
-    this.effectType = 'Type';
     this.exists = !!(this.exists && this.id);
     this.gen = data.gen || 0;
+
     this.damageTaken = data.damageTaken || {};
     this.HPivs = data.HPivs || {};
     this.HPdvs = data.HPdvs || {};
@@ -806,19 +807,18 @@ export class ModdedDex implements T.Dex {
     let learnset = this.cache.Learnsets[id];
     if (learnset) return learnset;
 
-    if (!this.data.Learnsets) {
+    if (!DATA.Learnsets) {
       /* global window */
       if (typeof window === 'undefined') {
-        this.data.Learnsets = require('./data/learnsets.json');
+        DATA.Learnsets = require('./data/learnsets.json');
       } else {
         // Typescript thinks asynchronously imported modules need a default export...
-        this.data.Learnsets = (await import('./data/learnsets.json')) as unknown as {
-          [id: string]: T.LearnsetData;
-        };
+        DATA.Learnsets =
+          (await import('./data/learnsets.json')) as unknown as Data<T.LearnsetData>;
       }
     }
+    this.load('Learnsets');
 
-    // FIXME learnsets has multiple gens, need to loadData!
     const data = this.data.Learnsets![id];
     if (id && data) {
       learnset = new Learnset(data);
@@ -1106,52 +1106,18 @@ export class ModdedDex implements T.Dex {
 
   loadData() {
     if (this.data) return this.data;
-    const data: ModdedDex['data'] = {} as ModdedDex['data'];
-
-    const parentDex = this.genid === CURRENT_GEN_ID
-      ? null! as ModdedDex
-      : this.forGen(this.gen + 1 as GenerationNum);
+    (this.data as any) = {} as ModdedDex['data'];
 
     for (const t in DATA) {
       const type = t as keyof typeof DATA;
       if (type === 'Learnsets') continue; // async
       if (type === 'Natures' || type === 'Aliases') {
-        (data as any)[type] = DATA[type];
+        (this.data as any)[type] = DATA[type];
         continue;
       }
-      const d = DATA[type][this.gen];
-      if (d !== data[type]) data[type] = Object.assign({}, d, data[type]) as any;
-      if (this.genid === CURRENT_GEN_ID) continue;
-
-      const parentDataType = parentDex.data[type];
-      const childDataType = data[type] || (data[type] = {} as any);
-      for (const e in parentDataType) {
-        const entry = e as keyof typeof parentDataType;
-        if (childDataType[entry] === null) {
-          // null means don't inherit
-          delete childDataType[entry];
-        } else if (!(entry in childDataType)) {
-          // If it doesn't exist it's inherited from the parent data
-          if (type === 'Species') {
-            // Species entries can be modified too many different ways
-            // e.g. inheriting different formats-data/learnsets
-            childDataType[entry] = deepClone(parentDataType[entry]);
-          } else {
-            childDataType[entry] = parentDataType[entry];
-          }
-        } else if (childDataType[entry] && childDataType[entry].inherit) {
-          // {inherit: true} can be used to modify only parts of the parent data,
-          // instead of overwriting entirely
-          delete childDataType[entry].inherit;
-          // Merge parent into children entry, preserving existing childs' properties.
-          for (const key in parentDataType[entry]) {
-            if (key in childDataType[entry]) continue;
-            (childDataType[entry] as any)[key] = (parentDataType[entry] as any)[key];
-          }
-        }
-      }
+      this.load(type);
     }
-    return ((this.data as any) = data);
+    return this.data;
   }
 
   includeModData() {
@@ -1168,6 +1134,46 @@ export class ModdedDex implements T.Dex {
 
   includeFormats() {
     return this;
+  }
+
+  load(type: Exclude<keyof ModdedDex['data'], 'Natures' | 'Aliases'>) {
+    if (this.data[type]) return;
+
+    const d = DATA[type][this.gen];
+    if (d !== this.data[type]) this.data[type] = Object.assign({}, d, this.data[type]) as any;
+
+    if (this.genid === CURRENT_GEN_ID) return;
+
+    const parentDex = this.forGen(this.gen + 1 as GenerationNum);
+    if (type === 'Learnsets') parentDex.load('Learnsets');
+
+    const parentDataType = parentDex.data[type];
+    const childDataType = this.data[type] || (this.data[type] = {} as any);
+    for (const e in parentDataType) {
+      const entry = e as keyof typeof parentDataType;
+      if (childDataType[entry] === null) {
+        // null means don't inherit
+        delete childDataType[entry];
+      } else if (!(entry in childDataType)) {
+        // If it doesn't exist it's inherited from the parent data
+        if (type === 'Species') {
+          // Species entries can be modified too many different ways
+          // e.g. inheriting different formats-data/learnsets
+          childDataType[entry] = deepClone(parentDataType[entry]);
+        } else {
+          childDataType[entry] = parentDataType[entry];
+        }
+      } else if (childDataType[entry] && childDataType[entry].inherit) {
+        // {inherit: true} can be used to modify only parts of the parent data,
+        // instead of overwriting entirely
+        delete childDataType[entry].inherit;
+        // Merge parent into children entry, preserving existing childs' properties.
+        for (const key in parentDataType[entry]) {
+          if (key in childDataType[entry]) continue;
+          (childDataType[entry])[key] = (parentDataType[entry] as any)[key];
+        }
+      }
+    }
   }
 }
 
