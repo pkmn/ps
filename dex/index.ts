@@ -108,7 +108,6 @@ export class PureEffect extends BasicEffect implements T.PureEffect {
 
 export class Ability extends BasicEffect implements T.Ability {
   readonly effectType: 'Ability';
-  readonly rating: number;
   readonly suppressWeather: boolean;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
@@ -118,7 +117,6 @@ export class Ability extends BasicEffect implements T.Ability {
     this.fullname = `ability: ${this.name}`;
     this.effectType = 'Ability';
     this.suppressWeather = !!data.suppressWeather;
-    this.rating = data.rating!;
 
     if (!this.gen) {
       if (this.num >= 234) {
@@ -209,7 +207,6 @@ export class Move extends BasicEffect implements T.Move {
   readonly critRatio: number;
   readonly willCrit?: boolean;
   readonly ohko?: boolean | string;
-  readonly baseMoveType: string;
   readonly secondary: T.SecondaryEffect | null;
   readonly secondaries: T.SecondaryEffect[] | null;
   readonly priority: number;
@@ -253,7 +250,6 @@ export class Move extends BasicEffect implements T.Move {
     this.basePower = Number(data.basePower!);
     this.accuracy = data.accuracy!;
     this.critRatio = Number(data.critRatio) || 1;
-    this.baseMoveType = getString(data.baseMoveType) || this.type;
     this.secondary = data.secondary || null;
     this.secondaries = data.secondaries || (this.secondary && [this.secondary]) || null;
     this.priority = Number(data.priority) || 0;
@@ -381,10 +377,8 @@ export class Species extends BasicEffect implements T.Species {
   readonly baseForme: string;
   readonly cosmeticFormes?: string[];
   readonly otherFormes?: string[];
-  readonly spriteid: string;
   readonly abilities: T.SpeciesAbility;
   readonly types: TypeName[];
-  readonly addedType?: string;
   readonly prevo: ID;
   readonly evos: ID[];
   readonly evoType?: EvoType;
@@ -413,11 +407,6 @@ export class Species extends BasicEffect implements T.Species {
   readonly inheritsFrom: ID;
   readonly tier: string;
   readonly doublesTier: string;
-  readonly randomBattleMoves?: readonly ID[];
-  readonly randomDoubleBattleMoves?: readonly ID[];
-  readonly exclusiveMoves?: readonly ID[];
-  readonly comboMoves?: readonly ID[];
-  readonly essentialMove?: ID;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     super(data, ...moreData);
@@ -432,11 +421,8 @@ export class Species extends BasicEffect implements T.Species {
     this.baseForme = data.baseForme || '';
     this.cosmeticFormes = data.cosmeticFormes || undefined;
     this.otherFormes = data.otherFormes || undefined;
-    this.spriteid = data.spriteid ||
-      (toID(this.baseSpecies) + (this.baseSpecies !== this.name ? `-${toID(this.forme)}` : ''));
     this.abilities = data.abilities || {0: ''};
     this.types = data.types || ['???'];
-    this.addedType = data.addedType || undefined;
     this.prevo = data.prevo || '';
     this.tier = data.tier || '';
     this.doublesTier = data.doublesTier || '';

@@ -65,7 +65,6 @@ export interface SelfEffect {
 }
 
 export interface AbilityData extends EffectData {
-  rating: number;
   isUnbreakable?: boolean;
   suppressWeather?: boolean;
 }
@@ -91,7 +90,6 @@ export interface ItemData extends EffectData {
   onDrive?: string;
   onMemory?: string;
   onPlate?: string;
-  spritenum?: number;
   zMove?: string | true;
   zMoveFrom?: string;
   zMoveType?: string;
@@ -133,11 +131,9 @@ export interface MoveData extends EffectData {
   target: MoveTarget;
   type: TypeName;
   alwaysHit?: boolean;
-  baseMoveType?: string;
   basePowerModifier?: number;
   boosts?: Partial<BoostsTable> | false;
   breaksProtect?: boolean;
-  contestType?: string;
   critModifier?: number;
   critRatio?: number;
   damage?: number | 'level' | false | null;
@@ -154,9 +150,7 @@ export interface MoveData extends EffectData {
   ignoreOffensive?: boolean;
   ignorePositiveDefensive?: boolean;
   ignorePositiveEvasion?: boolean;
-  isSelfHit?: boolean;
   isFutureMove?: boolean;
-  isViable?: boolean;
   isMax?: boolean | string;
   mindBlownRecoil?: boolean;
   multiaccuracy?: boolean;
@@ -195,7 +189,6 @@ export interface MoveData extends EffectData {
   zMoveEffect?: string;
   zMoveBoost?: Partial<BoostsTable>;
   gmaxPower?: number;
-  baseMove?: string;
   isZPowered?: boolean;
   maxPowered?: boolean;
 }
@@ -311,7 +304,6 @@ export interface PureEffect extends Readonly<BasicEffect> {
 
 export interface Ability extends Readonly<BasicEffect & AbilityData> {
   readonly effectType: 'Ability';
-  readonly rating: number;
   readonly suppressWeather: boolean;
 }
 
@@ -342,7 +334,6 @@ export interface Move extends Readonly<BasicEffect & MoveData> {
   readonly critRatio: number;
   readonly willCrit?: boolean;
   readonly ohko?: boolean | string;
-  readonly baseMoveType: string;
   readonly secondary: SecondaryEffect | null;
   readonly secondaries: SecondaryEffect[] | null;
   readonly priority: number;
@@ -384,10 +375,8 @@ export interface Species extends Readonly<BasicEffect & SpeciesData> {
   readonly baseForme: string;
   readonly cosmeticFormes?: string[];
   readonly otherFormes?: string[];
-  readonly spriteid: string;
   readonly abilities: SpeciesAbility;
-  readonly types: string[];
-  readonly addedType?: string;
+  readonly types: TypeName[];
   readonly prevo: ID;
   readonly evos: ID[];
   readonly evoType?: EvoType;
@@ -416,11 +405,6 @@ export interface Species extends Readonly<BasicEffect & SpeciesData> {
   readonly inheritsFrom: ID;
   readonly tier: string;
   readonly doublesTier: string;
-  readonly randomBattleMoves?: readonly ID[];
-  readonly randomDoubleBattleMoves?: readonly ID[];
-  readonly exclusiveMoves?: readonly ID[];
-  readonly comboMoves?: readonly ID[];
-  readonly essentialMove?: ID;
 }
 
 export interface Learnset {

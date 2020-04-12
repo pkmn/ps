@@ -198,27 +198,32 @@ const interesting = f => {
   return COPIED.has(f);
 }
 
-const DATA = {
-  'abilities.js': code => [code.BattleAbilities, 'abilities.json'],
-  'aliases.js': code => [code.BattleAliases, 'aliases.json'],
-  'formats-data.js': code => {
-    for (const id in code.BattleFormatsData) {
-      for (const field of [
-        'randomBattleMoves',
-        'randomDoubleBattleMoves',
-        'exclusiveMoves',
-        'comboMoves',
-        'essentialMove',
-        'randomSets',
-      ]) {
-        delete code.BattleFormatsData[id][field];
-      }
+const removeFields = (data, fields) => {
+  for (const id in data) {
+    for (const field of fields) {
+    delete data[id][field];
     }
-    return [code.BattleFormatsData, 'formats-data.json']
-  },
-  'items.js': code => [code.BattleItems, 'items.json'],
+  }
+  return data;
+}
+
+const RANDBAT_FIELDS = [
+  'randomBattleMoves',
+  'randomDoubleBattleMoves',
+  'exclusiveMoves',
+  'comboMoves',
+  'essentialMove',
+  'randomSets',
+];
+
+const DATA = {
+  'abilities.js': code => [removeFields(code.BattleAbilities, ['rating']), 'abilities.json'],
+  'aliases.js': code => [code.BattleAliases, 'aliases.json'],
+  'formats-data.js': code =>
+    [removeFields(code.BattleFormatsData, RANDBAT_FIELDS), 'formats-data.json'],
+  'items.js': code => [removeFields(code.BattleItems, ['spritenum']), 'items.json'],
   'learnsets.js': code => [code.BattleLearnsets, 'learnsets.json'],
-  'moves.js': code => [code.BattleMovedex, 'moves.json'],
+  'moves.js': code => [removeFields(code.BattleMovedex, ['isViable', 'contestType']), 'moves.json'],
   'pokedex.js': code => [code.BattlePokedex, 'species.json'],
   'typechart.js': code => {
     for (const type1 in code.BattleTypeChart) {

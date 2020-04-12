@@ -188,10 +188,8 @@ export class Specie implements DexSpecies {
   readonly baseForme!: string;
   readonly cosmeticFormes?: string[];
   readonly otherFormes?: string[];
-  readonly spriteid!: string;
   readonly abilities!: SpeciesAbility;
   readonly types!: TypeName[];
-  readonly addedType?: string;
   readonly prevo!: ID;
   readonly evos!: ID[];
   readonly evoType?: EvoType;
@@ -220,11 +218,6 @@ export class Specie implements DexSpecies {
   readonly inheritsFrom!: ID;
   readonly tier!: string;
   readonly doublesTier!: string;
-  readonly randomBattleMoves?: readonly ID[];
-  readonly randomDoubleBattleMoves?: readonly ID[];
-  readonly exclusiveMoves?: readonly ID[];
-  readonly comboMoves?: readonly ID[];
-  readonly essentialMove?: ID;
 
   private readonly dex: Dex;
   constructor(dex: Dex, species: DexSpecies) {
