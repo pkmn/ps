@@ -8,9 +8,9 @@ let bundled = `(() => {
 'use strict';
 const exports = {};
 `;
-const gen = compiler.read('gen.js').split('\n');
+const gen = compiler.read('index.js').split('\n');
 bundled += gen.slice(1, 13).join('\n'); // polyfill
-bundled += gen.slice(15, -1).join('\n'); // code
+bundled += gen.slice(14, -1).join('\n'); // code
 bundled += `
 // EXPORTS
 window.Generations = exports.Generations;

@@ -13,7 +13,7 @@
   "scripts": {
     "compile": "tsc -p .",
     "build": "npm run compile",
-    "test": "npm run compile",
-    "prepare": "npm run compile"
+    "test": "npm run build",
+    "prepare": "npm run build"
   }
 }
