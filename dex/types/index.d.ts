@@ -91,7 +91,6 @@ export interface ItemData extends EffectData {
   onMemory?: string;
   onPlate?: string;
   zMove?: string | true;
-  zMoveFrom?: string;
   zMoveType?: string;
   itemUser?: string[];
   boosts?: Partial<BoostsTable> | false;
@@ -204,7 +203,6 @@ export interface SpeciesData {
   abilities: SpeciesAbility;
   baseStats: StatsTable;
   canHatch?: boolean;
-  color: string;
   eggGroups: string[];
   heightm: number;
   num: number;
@@ -291,8 +289,6 @@ export interface BasicEffect extends Readonly<EffectData> {
   desc: string;
   isNonstandard: Nonstandard | null;
   duration?: number;
-  noCopy: boolean;
-  affectsFainted: boolean;
   status?: ID;
   weather?: ID;
   sourceEffect: string;
@@ -304,104 +300,36 @@ export interface PureEffect extends Readonly<BasicEffect> {
 
 export interface Ability extends Readonly<BasicEffect & AbilityData> {
   readonly effectType: 'Ability';
-  readonly suppressWeather: boolean;
 }
 
 export interface Item extends Readonly<BasicEffect & ItemData> {
   readonly effectType: 'Item';
-  readonly fling?: FlingData;
-  readonly onDrive?: string;
-  readonly onMemory?: string;
-  readonly megaStone?: string;
-  readonly megaEvolves?: string;
-  readonly zMove?: true | string;
-  readonly zMoveType?: string;
-  readonly zMoveFrom?: string;
-  readonly itemUser?: string[];
-  readonly isBerry: boolean;
-  readonly ignoreKlutz: boolean;
-  readonly onPlate?: string;
-  readonly isGem: boolean;
-  readonly isPokeball: boolean;
 }
 
 export interface Move extends Readonly<BasicEffect & MoveData> {
   readonly effectType: 'Move';
-  readonly type: TypeName;
-  readonly target: MoveTarget;
-  readonly basePower: number;
-  readonly accuracy: true | number;
-  readonly critRatio: number;
-  readonly willCrit?: boolean;
-  readonly ohko?: boolean | string;
-  readonly secondary: SecondaryEffect | null;
   readonly secondaries: SecondaryEffect[] | null;
-  readonly priority: number;
-  readonly category: MoveCategory;
-  readonly defensiveCategory?: MoveCategory;
-  readonly useTargetOffensive: boolean;
-  readonly useSourceDefensiveAsOffensive: boolean;
-  readonly ignoreNegativeOffensive: boolean;
-  readonly ignorePositiveDefensive: boolean;
-  readonly ignoreOffensive: boolean;
-  readonly ignoreDefensive: boolean;
-  readonly ignoreImmunity: AnyObject | boolean;
-  readonly pp: number;
-  readonly noPPBoosts: boolean;
-  readonly isZ: boolean | string;
-  readonly multihit?: number | number[];
-  readonly gmaxPower?: number;
-  readonly zMovePower?: number;
   readonly flags: MoveFlags;
   readonly selfSwitch?: ID | boolean;
-  readonly pressureTarget: string;
-  readonly nonGhostTarget: string;
-  readonly ignoreAbility: boolean;
-  readonly damage: number | 'level' | false | null;
-  readonly spreadModifier?: number;
-  readonly critModifier?: number;
-  readonly forceSTAB: boolean;
-  readonly noSketch: boolean;
-  readonly stab?: number;
   readonly volatileStatus?: ID;
 }
 
 export interface Species extends Readonly<BasicEffect & SpeciesData> {
   readonly effectType: 'Pokemon';
-  readonly id: ID;
-  readonly name: string;
   readonly baseSpecies: string;
-  readonly forme: string;
   readonly baseForme: string;
-  readonly cosmeticFormes?: string[];
-  readonly otherFormes?: string[];
+  readonly forme: string;
   readonly abilities: SpeciesAbility;
   readonly types: TypeName[];
   readonly prevo: ID;
   readonly evos: ID[];
-  readonly evoType?: EvoType;
-  readonly evoMove?: string;
-  readonly evoLevel?: number;
   readonly nfe: boolean;
   readonly eggGroups: string[];
-  readonly gender: GenderName;
   readonly genderRatio: { M: number; F: number };
-  readonly baseStats: StatsTable;
-  readonly maxHP?: number;
-  readonly weightkg: number;
   readonly weighthg: number;
   readonly heightm: number;
-  readonly color: string;
   readonly unreleasedHidden: boolean | 'Past';
   readonly maleOnlyHidden: boolean;
-  readonly isMega?: boolean;
-  readonly isPrimal?: boolean;
-  readonly isGigantamax?: string;
-  readonly battleOnly?: string | string[];
-  readonly requiredItem?: string;
-  readonly requiredMove?: string;
-  readonly requiredAbility?: string;
-  readonly requiredItems?: string[];
   readonly inheritsFrom: ID;
   readonly tier: string;
   readonly doublesTier: string;

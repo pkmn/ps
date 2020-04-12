@@ -1,4 +1,5 @@
 import {
+  BoostsTable,
   EvoType,
   GenderName,
   GenerationNum,
@@ -62,11 +63,21 @@ export class BasicEffect implements T.BasicEffect {
   desc: string;
   isNonstandard: Nonstandard | null;
   duration?: number;
-  noCopy: boolean;
-  affectsFainted: boolean;
+  noCopy?: boolean;
+  affectsFainted?: boolean;
   status?: ID;
   weather?: ID;
   sourceEffect: string;
+  counterMax?: number;
+  drain?: [number, number];
+  effect?: Partial<PureEffect>;
+  infiltrates?: boolean;
+  isZ?: boolean | string;
+  isMax?: boolean | string;
+  recoil?: [number, number];
+  secondary?: T.SecondaryEffect | null;
+  secondaries?: T.SecondaryEffect[] | null;
+  self?: T.SelfEffect | null;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     this.exists = true;
@@ -83,8 +94,6 @@ export class BasicEffect implements T.BasicEffect {
     this.desc = data.desc || '';
     this.isNonstandard = data.isNonstandard || null;
     this.duration = data.duration;
-    this.noCopy = !!data.noCopy;
-    this.affectsFainted = !!data.affectsFainted;
     this.status = data.status as ID || undefined;
     this.weather = data.weather as ID || undefined;
     this.sourceEffect = data.sourceEffect || '';
@@ -108,7 +117,8 @@ export class PureEffect extends BasicEffect implements T.PureEffect {
 
 export class Ability extends BasicEffect implements T.Ability {
   readonly effectType: 'Ability';
-  readonly suppressWeather: boolean;
+  readonly isUnbreakable?: boolean;
+  readonly suppressWeather?: boolean;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     super(data, ...moreData);
@@ -116,7 +126,6 @@ export class Ability extends BasicEffect implements T.Ability {
 
     this.fullname = `ability: ${this.name}`;
     this.effectType = 'Ability';
-    this.suppressWeather = !!data.suppressWeather;
 
     if (!this.gen) {
       if (this.num >= 234) {
@@ -141,17 +150,20 @@ export class Item extends BasicEffect implements T.Item {
   readonly fling?: T.FlingData;
   readonly onDrive?: string;
   readonly onMemory?: string;
+  readonly onPlate?: string;
   readonly megaStone?: string;
   readonly megaEvolves?: string;
-  readonly zMove?: true | string;
+  readonly zMove?: string | true;
   readonly zMoveType?: string;
-  readonly zMoveFrom?: string;
   readonly itemUser?: string[];
-  readonly isBerry: boolean;
-  readonly ignoreKlutz: boolean;
-  readonly onPlate?: string;
-  readonly isGem: boolean;
-  readonly isPokeball: boolean;
+  readonly isBerry?: boolean;
+  readonly ignoreKlutz?: boolean;
+  readonly isChoice?: boolean;
+  readonly isGem?: boolean;
+  readonly isPokeball?: boolean;
+  readonly forcedForme?: string;
+  readonly naturalGift?: { basePower: number; type: string };
+  readonly boosts?: Partial<BoostsTable> | false;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     super(data, ...moreData);
@@ -159,20 +171,6 @@ export class Item extends BasicEffect implements T.Item {
 
     this.fullname = `item: ${this.name}`;
     this.effectType = 'Item';
-    this.fling = data.fling || undefined;
-    this.onDrive = data.onDrive || undefined;
-    this.onMemory = data.onMemory || undefined;
-    this.megaStone = data.megaStone || undefined;
-    this.megaEvolves = data.megaEvolves || undefined;
-    this.zMove = data.zMove || undefined;
-    this.zMoveType = data.zMoveType || undefined;
-    this.zMoveFrom = data.zMoveFrom || undefined;
-    this.itemUser = data.itemUser || undefined;
-    this.isBerry = !!data.isBerry;
-    this.ignoreKlutz = !!data.ignoreKlutz;
-    this.onPlate = data.onPlate || undefined;
-    this.isGem = !!data.isGem;
-    this.isPokeball = !!data.isPokeball;
 
     if (!this.gen) {
       if (this.num >= 689) {
@@ -200,27 +198,21 @@ export class Item extends BasicEffect implements T.Item {
 
 export class Move extends BasicEffect implements T.Move {
   readonly effectType: 'Move';
-  readonly type: TypeName;
-  readonly target: MoveTarget;
-  readonly basePower: number;
-  readonly accuracy: true | number;
+  readonly type!: TypeName;
+  readonly target!: MoveTarget;
+  readonly basePower!: number;
+  readonly accuracy!: true | number;
   readonly critRatio: number;
   readonly willCrit?: boolean;
   readonly ohko?: boolean | string;
   readonly secondary: T.SecondaryEffect | null;
   readonly secondaries: T.SecondaryEffect[] | null;
-  readonly priority: number;
-  readonly category: MoveCategory;
+  readonly priority!: number;
+  readonly category!: MoveCategory;
   readonly defensiveCategory?: MoveCategory;
-  readonly useTargetOffensive: boolean;
-  readonly useSourceDefensiveAsOffensive: boolean;
-  readonly ignoreNegativeOffensive: boolean;
-  readonly ignorePositiveDefensive: boolean;
-  readonly ignoreOffensive: boolean;
-  readonly ignoreDefensive: boolean;
-  readonly ignoreImmunity: AnyObject | boolean;
-  readonly pp: number;
-  readonly noPPBoosts: boolean;
+  readonly ignoreImmunity?: boolean | { [k: string]: boolean };
+  readonly pp!: number;
+  readonly noPPBoosts?: boolean;
   readonly isZ: boolean | string;
   readonly multihit?: number | number[];
   readonly gmaxPower?: number;
@@ -228,16 +220,56 @@ export class Move extends BasicEffect implements T.Move {
   readonly flags: T.MoveFlags;
   readonly selfSwitch?: ID | boolean;
   readonly pressureTarget: string;
-  readonly nonGhostTarget: string;
-  readonly ignoreAbility: boolean;
-  readonly damage: number | 'level' | false | null;
+  readonly nonGhostTarget?: string;
+  readonly ignoreAbility?: boolean;
+  readonly damage?: number | 'level' | false | null;
   readonly spreadModifier?: number;
   readonly critModifier?: number;
-  readonly forceSTAB: boolean;
-  readonly noSketch: boolean;
+  readonly forceSTAB?: boolean;
+  readonly noSketch?: boolean;
   readonly stab?: number;
-
   readonly volatileStatus?: ID;
+  readonly alwaysHit?: boolean;
+  readonly basePowerModifier?: number;
+  readonly boosts?: Partial<BoostsTable> | false;
+  readonly breaksProtect?: boolean;
+  readonly forceSwitch?: boolean;
+  readonly hasCustomRecoil?: boolean;
+  readonly heal?: number[] | null;
+  readonly ignoreAccuracy?: boolean;
+  readonly ignoreDefensive?: boolean;
+  readonly ignoreEvasion?: boolean;
+  readonly ignoreNegativeOffensive?: boolean;
+  readonly ignoreOffensive?: boolean;
+  readonly ignorePositiveDefensive?: boolean;
+  readonly ignorePositiveEvasion?: boolean;
+  readonly isFutureMove?: boolean;
+  readonly isMax?: boolean | string;
+  readonly mindBlownRecoil?: boolean;
+  readonly multiaccuracy?: boolean;
+  readonly multihitType?: string;
+  readonly noDamageVariance?: boolean;
+  readonly noFaint?: boolean;
+  readonly noMetronome?: string[];
+  readonly pseudoWeather?: string;
+  readonly selfBoost?: { boosts?: Partial<BoostsTable> };
+  readonly selfdestruct?: string | boolean;
+  readonly sideCondition?: string;
+  readonly sleepUsable?: boolean;
+  readonly slotCondition?: string;
+  readonly stallingMove?: boolean;
+  readonly stealsBoosts?: boolean;
+  readonly struggleRecoil?: boolean;
+  readonly terrain?: string;
+  readonly thawsTarget?: boolean;
+  readonly tracksTarget?: boolean;
+  readonly smartTarget?: boolean;
+  readonly useTargetOffensive?: boolean;
+  readonly useSourceDefensiveAsOffensive?: boolean;
+  readonly zMoveEffect?: string;
+  readonly zMoveBoost?: Partial<BoostsTable>;
+  readonly isZPowered?: boolean;
+  readonly maxPowered?: boolean;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     super(data, ...moreData);
@@ -246,25 +278,14 @@ export class Move extends BasicEffect implements T.Move {
     this.fullname = `move: ${this.name}`;
     this.effectType = 'Move';
     this.type = getString(data.type) as TypeName;
-    this.target = data.target;
     this.basePower = Number(data.basePower!);
-    this.accuracy = data.accuracy!;
     this.critRatio = Number(data.critRatio) || 1;
     this.secondary = data.secondary || null;
     this.secondaries = data.secondaries || (this.secondary && [this.secondary]) || null;
     this.priority = Number(data.priority) || 0;
-    this.category = data.category!;
-    this.defensiveCategory = data.defensiveCategory || undefined;
-    this.useTargetOffensive = !!data.useTargetOffensive;
-    this.useSourceDefensiveAsOffensive = !!data.useSourceDefensiveAsOffensive;
-    this.ignoreNegativeOffensive = !!data.ignoreNegativeOffensive;
-    this.ignorePositiveDefensive = !!data.ignorePositiveDefensive;
-    this.ignoreOffensive = !!data.ignoreOffensive;
-    this.ignoreDefensive = !!data.ignoreDefensive;
     this.ignoreImmunity =
-      (data.ignoreImmunity !== undefined ? data.ignoreImmunity : this.category === 'Status');
+      (data.ignoreImmunity !== undefined ? data.ignoreImmunity : data.category === 'Status');
     this.pp = Number(data.pp!);
-    this.noPPBoosts = !!data.noPPBoosts;
     this.isZ = data.isZ || false;
     this.flags = data.flags || {};
     this.selfSwitch =
@@ -275,10 +296,6 @@ export class Move extends BasicEffect implements T.Move {
     this.pressureTarget = data.pressureTarget || '';
     this.nonGhostTarget = data.nonGhostTarget || '';
     this.ignoreAbility = data.ignoreAbility || false;
-    this.damage = data.damage!;
-    this.forceSTAB = !!data.forceSTAB;
-    this.noSketch = !!data.noSketch;
-    this.stab = data.stab || undefined;
     this.volatileStatus =
       typeof data.volatileStatus === 'string' ? (data.volatileStatus as ID) : undefined;
 
@@ -370,23 +387,16 @@ export class Move extends BasicEffect implements T.Move {
 
 export class Species extends BasicEffect implements T.Species {
   readonly effectType: 'Pokemon';
-  readonly id: ID;
-  readonly name: string;
   readonly baseSpecies: string;
-  readonly forme: string;
   readonly baseForme: string;
-  readonly cosmeticFormes?: string[];
-  readonly otherFormes?: string[];
+  readonly forme: string;
   readonly abilities: T.SpeciesAbility;
   readonly types: TypeName[];
   readonly prevo: ID;
   readonly evos: ID[];
-  readonly evoType?: EvoType;
-  readonly evoMove?: string;
-  readonly evoLevel?: number;
   readonly nfe: boolean;
   readonly eggGroups: string[];
-  readonly gender: GenderName;
+  readonly gender?: GenderName;
   readonly genderRatio: { M: number; F: number };
   readonly baseStats: StatsTable;
   readonly maxHP?: number;
@@ -400,13 +410,21 @@ export class Species extends BasicEffect implements T.Species {
   readonly isPrimal?: boolean;
   readonly isGigantamax?: string;
   readonly battleOnly?: string | string[];
-  readonly requiredItem?: string;
-  readonly requiredMove?: string;
-  readonly requiredAbility?: string;
-  readonly requiredItems?: string[];
   readonly inheritsFrom: ID;
   readonly tier: string;
   readonly doublesTier: string;
+  readonly canHatch?: boolean;
+  readonly evoLevel?: number;
+  readonly evoMove?: string;
+  readonly evoCondition?: string;
+  readonly evoItem?: string;
+  readonly evoType?: EvoType;
+  readonly cosmeticFormes?: string[];
+  readonly otherFormes?: string[];
+  readonly requiredAbility?: string;
+  readonly requiredItem?: string;
+  readonly requiredItems?: string[];
+  readonly requiredMove?: string;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     super(data, ...moreData);
@@ -414,25 +432,19 @@ export class Species extends BasicEffect implements T.Species {
 
     this.fullname = `pokemon: ${data.name}`;
     this.effectType = 'Pokemon';
-    this.id = data.id as ID;
-    this.name = data.name;
-    this.baseSpecies = data.baseSpecies || this.name;
+
+    this.baseSpecies = data.baseSpecies || data.name;
+
     this.forme = data.forme || '';
     this.baseForme = data.baseForme || '';
-    this.cosmeticFormes = data.cosmeticFormes || undefined;
-    this.otherFormes = data.otherFormes || undefined;
     this.abilities = data.abilities || {0: ''};
     this.types = data.types || ['???'];
     this.prevo = data.prevo || '';
     this.tier = data.tier || '';
     this.doublesTier = data.doublesTier || '';
     this.evos = data.evos || [];
-    this.evoType = data.evoType || undefined;
-    this.evoMove = data.evoMove || undefined;
-    this.evoLevel = data.evoLevel || undefined;
     this.nfe = !!this.evos.length;
     this.eggGroups = data.eggGroups || [];
-    this.gender = data.gender || '';
     this.genderRatio = data.genderRatio || (this.gender === 'M' ? {M: 1, F: 0}
       : this.gender === 'F' ? {M: 0, F: 1}
       : this.gender === 'N' ? {M: 0, F: 0}
@@ -455,24 +467,24 @@ export class Species extends BasicEffect implements T.Species {
     this.inheritsFrom =
       data.inheritsFrom || (this.isGigantamax ? toID(this.baseSpecies) : undefined);
 
-    if (!this.gen && this.num >= 1) {
-      if (this.num >= 810 || ['Gmax', 'Galar', 'Galar-Zen'].includes(this.forme)) {
+    if (!this.gen && data.num >= 1) {
+      if (data.num >= 810 || ['Gmax', 'Galar', 'Galar-Zen'].includes(this.forme)) {
         this.gen = 8;
-      } else if (this.num >= 722 || this.forme.startsWith('Alola') || this.forme === 'Starter') {
+      } else if (data.num >= 722 || this.forme.startsWith('Alola') || this.forme === 'Starter') {
         this.gen = 7;
       } else if (this.forme === 'Primal') {
         this.gen = 6;
         this.isPrimal = true;
         this.battleOnly = this.baseSpecies;
-      } else if (this.num >= 650 || this.isMega) {
+      } else if (data.num >= 650 || this.isMega) {
         this.gen = 6;
-      } else if (this.num >= 494) {
+      } else if (data.num >= 494) {
         this.gen = 5;
-      } else if (this.num >= 387) {
+      } else if (data.num >= 387) {
         this.gen = 4;
-      } else if (this.num >= 252) {
+      } else if (data.num >= 252) {
         this.gen = 3;
-      } else if (this.num >= 152) {
+      } else if (data.num >= 152) {
         this.gen = 2;
       } else {
         this.gen = 1;

@@ -224,7 +224,7 @@ const DATA = {
   'items.js': code => [removeFields(code.BattleItems, ['spritenum']), 'items.json'],
   'learnsets.js': code => [code.BattleLearnsets, 'learnsets.json'],
   'moves.js': code => [removeFields(code.BattleMovedex, ['isViable', 'contestType']), 'moves.json'],
-  'pokedex.js': code => [code.BattlePokedex, 'species.json'],
+  'pokedex.js': code => [removeFields(code.BattlePokedex, 'color'), 'species.json'],
   'typechart.js': code => {
     for (const type1 in code.BattleTypeChart) {
       if (!TYPES.has(type1)) {
