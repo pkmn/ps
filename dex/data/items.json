@@ -77,7 +77,6 @@
       "id": "enigmaberry",
       "name": "Enigma Berry",
       "desc": "No competitive use.",
-      "spritenum": 124,
       "isBerry": true,
       "num": 208,
       "gen": 3,
@@ -567,7 +566,6 @@
     "energypowder": {
       "id": "energypowder",
       "name": "Energy Powder",
-      "spritenum": 123,
       "fling": {"basePower": 30},
       "num": 34,
       "gen": 2,
@@ -661,7 +659,6 @@
     "dreamball": {
       "id": "dreamball",
       "name": "Dream Ball",
-      "spritenum": 111,
       "num": 576,
       "gen": 5,
       "isPokeball": true,
@@ -820,7 +817,6 @@
     "abomasite": {
       "id": "abomasite",
       "name": "Abomasite",
-      "spritenum": 575,
       "megaStone": "Abomasnow-Mega",
       "megaEvolves": "Abomasnow",
       "itemUser": ["Abomasnow"],
@@ -832,7 +828,6 @@
     "absolite": {
       "id": "absolite",
       "name": "Absolite",
-      "spritenum": 576,
       "megaStone": "Absol-Mega",
       "megaEvolves": "Absol",
       "itemUser": ["Absol"],
@@ -844,7 +839,6 @@
     "absorbbulb": {
       "id": "absorbbulb",
       "name": "Absorb Bulb",
-      "spritenum": 2,
       "fling": {"basePower": 30},
       "boosts": {"spa": 1},
       "num": 545,
@@ -854,7 +848,6 @@
     "adamantorb": {
       "id": "adamantorb",
       "name": "Adamant Orb",
-      "spritenum": 4,
       "fling": {"basePower": 60},
       "onBasePowerPriority": 6,
       "itemUser": ["Dialga"],
@@ -866,7 +859,6 @@
     "adrenalineorb": {
       "id": "adrenalineorb",
       "name": "Adrenaline Orb",
-      "spritenum": 660,
       "fling": {"basePower": 30},
       "boosts": {"spe": 1},
       "num": 846,
@@ -876,7 +868,6 @@
     "aerodactylite": {
       "id": "aerodactylite",
       "name": "Aerodactylite",
-      "spritenum": 577,
       "megaStone": "Aerodactyl-Mega",
       "megaEvolves": "Aerodactyl",
       "itemUser": ["Aerodactyl"],
@@ -888,7 +879,6 @@
     "aggronite": {
       "id": "aggronite",
       "name": "Aggronite",
-      "spritenum": 578,
       "megaStone": "Aggron-Mega",
       "megaEvolves": "Aggron",
       "itemUser": ["Aggron"],
@@ -900,7 +890,6 @@
     "aguavberry": {
       "id": "aguavberry",
       "name": "Aguav Berry",
-      "spritenum": 5,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Dragon"},
       "num": 162,
@@ -910,7 +899,6 @@
     "airballoon": {
       "id": "airballoon",
       "name": "Air Balloon",
-      "spritenum": 6,
       "fling": {"basePower": 10},
       "num": 541,
       "gen": 5,
@@ -919,7 +907,6 @@
     "alakazite": {
       "id": "alakazite",
       "name": "Alakazite",
-      "spritenum": 579,
       "megaStone": "Alakazam-Mega",
       "megaEvolves": "Alakazam",
       "itemUser": ["Alakazam"],
@@ -931,7 +918,6 @@
     "aloraichiumz": {
       "id": "aloraichiumz",
       "name": "Aloraichium Z",
-      "spritenum": 655,
       "onTakeItem": false,
       "zMove": "Stoked Sparksurfer",
       "zMoveFrom": "Thunderbolt",
@@ -944,7 +930,6 @@
     "altarianite": {
       "id": "altarianite",
       "name": "Altarianite",
-      "spritenum": 615,
       "megaStone": "Altaria-Mega",
       "megaEvolves": "Altaria",
       "itemUser": ["Altaria"],
@@ -956,7 +941,6 @@
     "ampharosite": {
       "id": "ampharosite",
       "name": "Ampharosite",
-      "spritenum": 580,
       "megaStone": "Ampharos-Mega",
       "megaEvolves": "Ampharos",
       "itemUser": ["Ampharos"],
@@ -968,7 +952,6 @@
     "apicotberry": {
       "id": "apicotberry",
       "name": "Apicot Berry",
-      "spritenum": 10,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Ground"},
       "num": 205,
@@ -978,7 +961,6 @@
     "armorfossil": {
       "id": "armorfossil",
       "name": "Armor Fossil",
-      "spritenum": 12,
       "fling": {"basePower": 100},
       "num": 104,
       "gen": 4,
@@ -988,7 +970,6 @@
     "aspearberry": {
       "id": "aspearberry",
       "name": "Aspear Berry",
-      "spritenum": 13,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Ice"},
       "num": 153,
@@ -998,7 +979,6 @@
     "assaultvest": {
       "id": "assaultvest",
       "name": "Assault Vest",
-      "spritenum": 581,
       "fling": {"basePower": 80},
       "onModifySpDPriority": 1,
       "num": 640,
@@ -1008,7 +988,6 @@
     "audinite": {
       "id": "audinite",
       "name": "Audinite",
-      "spritenum": 617,
       "megaStone": "Audino-Mega",
       "megaEvolves": "Audino",
       "itemUser": ["Audino"],
@@ -1020,7 +999,6 @@
     "babiriberry": {
       "id": "babiriberry",
       "name": "Babiri Berry",
-      "spritenum": 17,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Steel"},
       "num": 199,
@@ -1030,7 +1008,6 @@
     "banettite": {
       "id": "banettite",
       "name": "Banettite",
-      "spritenum": 582,
       "megaStone": "Banette-Mega",
       "megaEvolves": "Banette",
       "itemUser": ["Banette"],
@@ -1042,7 +1019,6 @@
     "beastball": {
       "id": "beastball",
       "name": "Beast Ball",
-      "spritenum": 661,
       "num": 851,
       "gen": 7,
       "isPokeball": true,
@@ -1051,7 +1027,6 @@
     "beedrillite": {
       "id": "beedrillite",
       "name": "Beedrillite",
-      "spritenum": 628,
       "megaStone": "Beedrill-Mega",
       "megaEvolves": "Beedrill",
       "itemUser": ["Beedrill"],
@@ -1063,7 +1038,6 @@
     "belueberry": {
       "id": "belueberry",
       "name": "Belue Berry",
-      "spritenum": 21,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Electric"},
       "onEat": false,
@@ -1075,7 +1049,6 @@
     "berryjuice": {
       "id": "berryjuice",
       "name": "Berry Juice",
-      "spritenum": 22,
       "fling": {"basePower": 30},
       "num": 43,
       "gen": 2,
@@ -1084,7 +1057,6 @@
     "berrysweet": {
       "id": "berrysweet",
       "name": "Berry Sweet",
-      "spritenum": 706,
       "fling": {"basePower": 10},
       "num": 1111,
       "gen": 8,
@@ -1093,7 +1065,6 @@
     "bigroot": {
       "id": "bigroot",
       "name": "Big Root",
-      "spritenum": 29,
       "fling": {"basePower": 10},
       "onTryHealPriority": 1,
       "num": 296,
@@ -1103,7 +1074,6 @@
     "bindingband": {
       "id": "bindingband",
       "name": "Binding Band",
-      "spritenum": 31,
       "fling": {"basePower": 30},
       "num": 544,
       "gen": 5,
@@ -1112,7 +1082,6 @@
     "blackbelt": {
       "id": "blackbelt",
       "name": "Black Belt",
-      "spritenum": 32,
       "fling": {"basePower": 30},
       "onBasePowerPriority": 6,
       "num": 241,
@@ -1122,7 +1091,6 @@
     "blacksludge": {
       "id": "blacksludge",
       "name": "Black Sludge",
-      "spritenum": 34,
       "fling": {"basePower": 30},
       "onResidualOrder": 5,
       "onResidualSubOrder": 2,
@@ -1133,7 +1101,6 @@
     "blackglasses": {
       "id": "blackglasses",
       "name": "Black Glasses",
-      "spritenum": 35,
       "fling": {"basePower": 30},
       "onBasePowerPriority": 6,
       "num": 240,
@@ -1143,7 +1110,6 @@
     "blastoisinite": {
       "id": "blastoisinite",
       "name": "Blastoisinite",
-      "spritenum": 583,
       "megaStone": "Blastoise-Mega",
       "megaEvolves": "Blastoise",
       "itemUser": ["Blastoise"],
@@ -1155,7 +1121,6 @@
     "blazikenite": {
       "id": "blazikenite",
       "name": "Blazikenite",
-      "spritenum": 584,
       "megaStone": "Blaziken-Mega",
       "megaEvolves": "Blaziken",
       "itemUser": ["Blaziken"],
@@ -1167,7 +1132,6 @@
     "blueorb": {
       "id": "blueorb",
       "name": "Blue Orb",
-      "spritenum": 41,
       "itemUser": ["Kyogre"],
       "num": 535,
       "gen": 6,
@@ -1177,7 +1141,6 @@
     "blukberry": {
       "id": "blukberry",
       "name": "Bluk Berry",
-      "spritenum": 44,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Fire"},
       "onEat": false,
@@ -1188,7 +1151,6 @@
     "blunderpolicy": {
       "id": "blunderpolicy",
       "name": "Blunder Policy",
-      "spritenum": 716,
       "fling": {"basePower": 80},
       "num": 1121,
       "gen": 8,
@@ -1197,7 +1159,6 @@
     "bottlecap": {
       "id": "bottlecap",
       "name": "Bottle Cap",
-      "spritenum": 696,
       "fling": {"basePower": 30},
       "num": 795,
       "gen": 7,
@@ -1206,7 +1167,6 @@
     "brightpowder": {
       "id": "brightpowder",
       "name": "Bright Powder",
-      "spritenum": 51,
       "fling": {"basePower": 10},
       "num": 213,
       "gen": 2,
@@ -1215,7 +1175,6 @@
     "buggem": {
       "id": "buggem",
       "name": "Bug Gem",
-      "spritenum": 53,
       "isGem": true,
       "num": 558,
       "gen": 5,
@@ -1225,7 +1184,6 @@
     "bugmemory": {
       "id": "bugmemory",
       "name": "Bug Memory",
-      "spritenum": 673,
       "onMemory": "Bug",
       "forcedForme": "Silvally-Bug",
       "itemUser": ["Silvally-Bug"],
@@ -1236,7 +1194,6 @@
     "buginiumz": {
       "id": "buginiumz",
       "name": "Buginium Z",
-      "spritenum": 642,
       "onPlate": "Bug",
       "onTakeItem": false,
       "zMove": true,
@@ -1250,7 +1207,6 @@
     "burndrive": {
       "id": "burndrive",
       "name": "Burn Drive",
-      "spritenum": 54,
       "onDrive": "Fire",
       "forcedForme": "Genesect-Burn",
       "itemUser": ["Genesect-Burn"],
@@ -1262,7 +1218,6 @@
     "cameruptite": {
       "id": "cameruptite",
       "name": "Cameruptite",
-      "spritenum": 625,
       "megaStone": "Camerupt-Mega",
       "megaEvolves": "Camerupt",
       "itemUser": ["Camerupt"],
@@ -1274,7 +1229,6 @@
     "cellbattery": {
       "id": "cellbattery",
       "name": "Cell Battery",
-      "spritenum": 60,
       "fling": {"basePower": 30},
       "boosts": {"atk": 1},
       "num": 546,
@@ -1284,7 +1238,6 @@
     "charcoal": {
       "id": "charcoal",
       "name": "Charcoal",
-      "spritenum": 61,
       "fling": {"basePower": 30},
       "onBasePowerPriority": 6,
       "num": 249,
@@ -1294,7 +1247,6 @@
     "charizarditex": {
       "id": "charizarditex",
       "name": "Charizardite X",
-      "spritenum": 585,
       "megaStone": "Charizard-Mega-X",
       "megaEvolves": "Charizard",
       "itemUser": ["Charizard"],
@@ -1306,7 +1258,6 @@
     "charizarditey": {
       "id": "charizarditey",
       "name": "Charizardite Y",
-      "spritenum": 586,
       "megaStone": "Charizard-Mega-Y",
       "megaEvolves": "Charizard",
       "itemUser": ["Charizard"],
@@ -1318,7 +1269,6 @@
     "chartiberry": {
       "id": "chartiberry",
       "name": "Charti Berry",
-      "spritenum": 62,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Rock"},
       "num": 195,
@@ -1328,7 +1278,6 @@
     "cheriberry": {
       "id": "cheriberry",
       "name": "Cheri Berry",
-      "spritenum": 63,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Fire"},
       "num": 149,
@@ -1338,7 +1287,6 @@
     "cherishball": {
       "id": "cherishball",
       "name": "Cherish Ball",
-      "spritenum": 64,
       "num": 16,
       "gen": 4,
       "isPokeball": true,
@@ -1347,7 +1295,6 @@
     "chestoberry": {
       "id": "chestoberry",
       "name": "Chesto Berry",
-      "spritenum": 65,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Water"},
       "num": 150,
@@ -1357,7 +1304,6 @@
     "chilanberry": {
       "id": "chilanberry",
       "name": "Chilan Berry",
-      "spritenum": 66,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Normal"},
       "num": 200,
@@ -1367,7 +1313,6 @@
     "chilldrive": {
       "id": "chilldrive",
       "name": "Chill Drive",
-      "spritenum": 67,
       "onDrive": "Ice",
       "forcedForme": "Genesect-Chill",
       "itemUser": ["Genesect-Chill"],
@@ -1379,7 +1324,6 @@
     "chippedpot": {
       "id": "chippedpot",
       "name": "Chipped Pot",
-      "spritenum": 720,
       "fling": {"basePower": 80},
       "num": 1254,
       "gen": 8,
@@ -1388,7 +1332,6 @@
     "choiceband": {
       "id": "choiceband",
       "name": "Choice Band",
-      "spritenum": 68,
       "fling": {"basePower": 10},
       "onModifyAtkPriority": 1,
       "isChoice": true,
@@ -1399,7 +1342,6 @@
     "choicescarf": {
       "id": "choicescarf",
       "name": "Choice Scarf",
-      "spritenum": 69,
       "fling": {"basePower": 10},
       "isChoice": true,
       "num": 287,
@@ -1409,7 +1351,6 @@
     "choicespecs": {
       "id": "choicespecs",
       "name": "Choice Specs",
-      "spritenum": 70,
       "fling": {"basePower": 10},
       "onModifySpAPriority": 1,
       "isChoice": true,
@@ -1420,7 +1361,6 @@
     "chopleberry": {
       "id": "chopleberry",
       "name": "Chople Berry",
-      "spritenum": 71,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Fighting"},
       "num": 189,
@@ -1430,7 +1370,6 @@
     "clawfossil": {
       "id": "clawfossil",
       "name": "Claw Fossil",
-      "spritenum": 72,
       "fling": {"basePower": 100},
       "num": 100,
       "gen": 3,
@@ -1440,7 +1379,6 @@
     "cloversweet": {
       "id": "cloversweet",
       "name": "Clover Sweet",
-      "spritenum": 707,
       "fling": {"basePower": 10},
       "num": 1112,
       "gen": 8,
@@ -1449,7 +1387,6 @@
     "cobaberry": {
       "id": "cobaberry",
       "name": "Coba Berry",
-      "spritenum": 76,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Flying"},
       "num": 192,
@@ -1459,7 +1396,6 @@
     "colburberry": {
       "id": "colburberry",
       "name": "Colbur Berry",
-      "spritenum": 78,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Dark"},
       "num": 198,
@@ -1469,7 +1405,6 @@
     "cornnberry": {
       "id": "cornnberry",
       "name": "Cornn Berry",
-      "spritenum": 81,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Bug"},
       "onEat": false,
@@ -1481,7 +1416,6 @@
     "coverfossil": {
       "id": "coverfossil",
       "name": "Cover Fossil",
-      "spritenum": 85,
       "fling": {"basePower": 100},
       "num": 572,
       "gen": 5,
@@ -1491,7 +1425,6 @@
     "crackedpot": {
       "id": "crackedpot",
       "name": "Cracked Pot",
-      "spritenum": 719,
       "fling": {"basePower": 80},
       "num": 1253,
       "gen": 8,
@@ -1500,7 +1433,6 @@
     "custapberry": {
       "id": "custapberry",
       "name": "Custap Berry",
-      "spritenum": 86,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Ghost"},
       "onFractionalPriorityPriority": -1,
@@ -1512,7 +1444,6 @@
     "damprock": {
       "id": "damprock",
       "name": "Damp Rock",
-      "spritenum": 88,
       "fling": {"basePower": 60},
       "num": 285,
       "gen": 4,
@@ -1521,7 +1452,6 @@
     "darkgem": {
       "id": "darkgem",
       "name": "Dark Gem",
-      "spritenum": 89,
       "isGem": true,
       "num": 562,
       "gen": 5,
@@ -1531,7 +1461,6 @@
     "darkmemory": {
       "id": "darkmemory",
       "name": "Dark Memory",
-      "spritenum": 683,
       "onMemory": "Dark",
       "forcedForme": "Silvally-Dark",
       "itemUser": ["Silvally-Dark"],
@@ -1542,7 +1471,6 @@
     "darkiniumz": {
       "id": "darkiniumz",
       "name": "Darkinium Z",
-      "spritenum": 646,
       "onPlate": "Dark",
       "onTakeItem": false,
       "zMove": true,
@@ -1556,7 +1484,6 @@
     "dawnstone": {
       "id": "dawnstone",
       "name": "Dawn Stone",
-      "spritenum": 92,
       "fling": {"basePower": 80},
       "num": 109,
       "gen": 4,
@@ -1566,7 +1493,6 @@
     "decidiumz": {
       "id": "decidiumz",
       "name": "Decidium Z",
-      "spritenum": 650,
       "onTakeItem": false,
       "zMove": "Sinister Arrow Raid",
       "zMoveFrom": "Spirit Shackle",
@@ -1579,7 +1505,6 @@
     "deepseascale": {
       "id": "deepseascale",
       "name": "Deep Sea Scale",
-      "spritenum": 93,
       "fling": {"basePower": 30},
       "onModifySpDPriority": 2,
       "itemUser": ["Clamperl"],
@@ -1591,7 +1516,6 @@
     "deepseatooth": {
       "id": "deepseatooth",
       "name": "Deep Sea Tooth",
-      "spritenum": 94,
       "fling": {"basePower": 90},
       "onModifySpAPriority": 1,
       "itemUser": ["Clamperl"],
@@ -1603,7 +1527,6 @@
     "destinyknot": {
       "id": "destinyknot",
       "name": "Destiny Knot",
-      "spritenum": 95,
       "fling": {"basePower": 10},
       "onAttractPriority": -100,
       "num": 280,
@@ -1613,7 +1536,6 @@
     "diancite": {
       "id": "diancite",
       "name": "Diancite",
-      "spritenum": 624,
       "megaStone": "Diancie-Mega",
       "megaEvolves": "Diancie",
       "itemUser": ["Diancie"],
@@ -1625,7 +1547,6 @@
     "diveball": {
       "id": "diveball",
       "name": "Dive Ball",
-      "spritenum": 101,
       "num": 7,
       "gen": 3,
       "isPokeball": true,
@@ -1634,7 +1555,6 @@
     "domefossil": {
       "id": "domefossil",
       "name": "Dome Fossil",
-      "spritenum": 102,
       "fling": {"basePower": 100},
       "num": 102,
       "gen": 3,
@@ -1644,7 +1564,6 @@
     "dousedrive": {
       "id": "dousedrive",
       "name": "Douse Drive",
-      "spritenum": 103,
       "onDrive": "Water",
       "forcedForme": "Genesect-Douse",
       "itemUser": ["Genesect-Douse"],
@@ -1656,7 +1575,6 @@
     "dracoplate": {
       "id": "dracoplate",
       "name": "Draco Plate",
-      "spritenum": 105,
       "onPlate": "Dragon",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Dragon",
@@ -1668,7 +1586,6 @@
     "dragonfang": {
       "id": "dragonfang",
       "name": "Dragon Fang",
-      "spritenum": 106,
       "fling": {"basePower": 70},
       "onBasePowerPriority": 6,
       "num": 250,
@@ -1678,7 +1595,6 @@
     "dragongem": {
       "id": "dragongem",
       "name": "Dragon Gem",
-      "spritenum": 107,
       "isGem": true,
       "num": 561,
       "gen": 5,
@@ -1688,7 +1604,6 @@
     "dragonmemory": {
       "id": "dragonmemory",
       "name": "Dragon Memory",
-      "spritenum": 682,
       "onMemory": "Dragon",
       "forcedForme": "Silvally-Dragon",
       "itemUser": ["Silvally-Dragon"],
@@ -1699,7 +1614,6 @@
     "dragonscale": {
       "id": "dragonscale",
       "name": "Dragon Scale",
-      "spritenum": 108,
       "fling": {"basePower": 30},
       "num": 250,
       "gen": 2,
@@ -1708,7 +1622,6 @@
     "dragoniumz": {
       "id": "dragoniumz",
       "name": "Dragonium Z",
-      "spritenum": 645,
       "onPlate": "Dragon",
       "onTakeItem": false,
       "zMove": true,
@@ -1722,7 +1635,6 @@
     "dreadplate": {
       "id": "dreadplate",
       "name": "Dread Plate",
-      "spritenum": 110,
       "onPlate": "Dark",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Dark",
@@ -1734,7 +1646,6 @@
     "dreamball": {
       "id": "dreamball",
       "name": "Dream Ball",
-      "spritenum": 111,
       "num": 576,
       "gen": 5,
       "isPokeball": true,
@@ -1743,7 +1654,6 @@
     "dubiousdisc": {
       "id": "dubiousdisc",
       "name": "Dubious Disc",
-      "spritenum": 113,
       "fling": {"basePower": 50},
       "num": 324,
       "gen": 4,
@@ -1752,7 +1662,6 @@
     "durinberry": {
       "id": "durinberry",
       "name": "Durin Berry",
-      "spritenum": 114,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Water"},
       "onEat": false,
@@ -1764,7 +1673,6 @@
     "duskball": {
       "id": "duskball",
       "name": "Dusk Ball",
-      "spritenum": 115,
       "num": 13,
       "gen": 4,
       "isPokeball": true,
@@ -1773,7 +1681,6 @@
     "duskstone": {
       "id": "duskstone",
       "name": "Dusk Stone",
-      "spritenum": 116,
       "fling": {"basePower": 80},
       "num": 108,
       "gen": 4,
@@ -1783,7 +1690,6 @@
     "earthplate": {
       "id": "earthplate",
       "name": "Earth Plate",
-      "spritenum": 117,
       "onPlate": "Ground",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Ground",
@@ -1795,7 +1701,6 @@
     "eeviumz": {
       "id": "eeviumz",
       "name": "Eevium Z",
-      "spritenum": 657,
       "onTakeItem": false,
       "zMove": "Extreme Evoboost",
       "zMoveFrom": "Last Resort",
@@ -1808,7 +1713,6 @@
     "ejectbutton": {
       "id": "ejectbutton",
       "name": "Eject Button",
-      "spritenum": 118,
       "fling": {"basePower": 30},
       "onAfterMoveSecondaryPriority": 2,
       "num": 547,
@@ -1818,7 +1722,6 @@
     "ejectpack": {
       "id": "ejectpack",
       "name": "Eject Pack",
-      "spritenum": 714,
       "fling": {"basePower": 50},
       "num": 1119,
       "gen": 8,
@@ -1827,7 +1730,6 @@
     "electirizer": {
       "id": "electirizer",
       "name": "Electirizer",
-      "spritenum": 119,
       "fling": {"basePower": 80},
       "num": 322,
       "gen": 4,
@@ -1836,7 +1738,6 @@
     "electricgem": {
       "id": "electricgem",
       "name": "Electric Gem",
-      "spritenum": 120,
       "isGem": true,
       "num": 550,
       "gen": 5,
@@ -1846,7 +1747,6 @@
     "electricmemory": {
       "id": "electricmemory",
       "name": "Electric Memory",
-      "spritenum": 679,
       "onMemory": "Electric",
       "forcedForme": "Silvally-Electric",
       "itemUser": ["Silvally-Electric"],
@@ -1857,7 +1757,6 @@
     "electricseed": {
       "id": "electricseed",
       "name": "Electric Seed",
-      "spritenum": 664,
       "fling": {"basePower": 10},
       "boosts": {"def": 1},
       "num": 881,
@@ -1867,7 +1766,6 @@
     "electriumz": {
       "id": "electriumz",
       "name": "Electrium Z",
-      "spritenum": 634,
       "onPlate": "Electric",
       "onTakeItem": false,
       "zMove": true,
@@ -1881,7 +1779,6 @@
     "energypowder": {
       "id": "energypowder",
       "name": "Energy Powder",
-      "spritenum": 123,
       "fling": {"basePower": 30},
       "num": 34,
       "gen": 2,
@@ -1890,7 +1787,6 @@
     "enigmaberry": {
       "id": "enigmaberry",
       "name": "Enigma Berry",
-      "spritenum": 124,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Bug"},
       "num": 208,
@@ -1901,7 +1797,6 @@
     "eviolite": {
       "id": "eviolite",
       "name": "Eviolite",
-      "spritenum": 130,
       "fling": {"basePower": 40},
       "onModifyDefPriority": 2,
       "onModifySpDPriority": 2,
@@ -1912,7 +1807,6 @@
     "expertbelt": {
       "id": "expertbelt",
       "name": "Expert Belt",
-      "spritenum": 132,
       "fling": {"basePower": 10},
       "num": 268,
       "gen": 4,
@@ -1921,7 +1815,6 @@
     "fairiumz": {
       "id": "fairiumz",
       "name": "Fairium Z",
-      "spritenum": 648,
       "onPlate": "Fairy",
       "onTakeItem": false,
       "zMove": true,
@@ -1935,7 +1828,6 @@
     "fairygem": {
       "id": "fairygem",
       "name": "Fairy Gem",
-      "spritenum": 611,
       "isGem": true,
       "num": 715,
       "gen": 6,
@@ -1945,7 +1837,6 @@
     "fairymemory": {
       "id": "fairymemory",
       "name": "Fairy Memory",
-      "spritenum": 684,
       "onMemory": "Fairy",
       "forcedForme": "Silvally-Fairy",
       "itemUser": ["Silvally-Fairy"],
@@ -1956,7 +1847,6 @@
     "fastball": {
       "id": "fastball",
       "name": "Fast Ball",
-      "spritenum": 137,
       "num": 492,
       "gen": 2,
       "isPokeball": true,
@@ -1965,7 +1855,6 @@
     "fightinggem": {
       "id": "fightinggem",
       "name": "Fighting Gem",
-      "spritenum": 139,
       "isGem": true,
       "num": 553,
       "gen": 5,
@@ -1975,7 +1864,6 @@
     "fightingmemory": {
       "id": "fightingmemory",
       "name": "Fighting Memory",
-      "spritenum": 668,
       "onMemory": "Fighting",
       "forcedForme": "Silvally-Fighting",
       "itemUser": ["Silvally-Fighting"],
@@ -1986,7 +1874,6 @@
     "fightiniumz": {
       "id": "fightiniumz",
       "name": "Fightinium Z",
-      "spritenum": 637,
       "onPlate": "Fighting",
       "onTakeItem": false,
       "zMove": true,
@@ -2000,7 +1887,6 @@
     "figyberry": {
       "id": "figyberry",
       "name": "Figy Berry",
-      "spritenum": 140,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Bug"},
       "num": 159,
@@ -2010,7 +1896,6 @@
     "firegem": {
       "id": "firegem",
       "name": "Fire Gem",
-      "spritenum": 141,
       "isGem": true,
       "num": 548,
       "gen": 5,
@@ -2020,7 +1905,6 @@
     "firememory": {
       "id": "firememory",
       "name": "Fire Memory",
-      "spritenum": 676,
       "onMemory": "Fire",
       "forcedForme": "Silvally-Fire",
       "itemUser": ["Silvally-Fire"],
@@ -2031,7 +1915,6 @@
     "firestone": {
       "id": "firestone",
       "name": "Fire Stone",
-      "spritenum": 142,
       "fling": {"basePower": 30},
       "num": 82,
       "gen": 1,
@@ -2041,7 +1924,6 @@
     "firiumz": {
       "id": "firiumz",
       "name": "Firium Z",
-      "spritenum": 632,
       "onPlate": "Fire",
       "onTakeItem": false,
       "zMove": true,
@@ -2055,7 +1937,6 @@
     "fistplate": {
       "id": "fistplate",
       "name": "Fist Plate",
-      "spritenum": 143,
       "onPlate": "Fighting",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Fighting",
@@ -2067,7 +1948,6 @@
     "flameorb": {
       "id": "flameorb",
       "name": "Flame Orb",
-      "spritenum": 145,
       "fling": {"basePower": 30, "status": "brn"},
       "onResidualOrder": 26,
       "onResidualSubOrder": 2,
@@ -2078,7 +1958,6 @@
     "flameplate": {
       "id": "flameplate",
       "name": "Flame Plate",
-      "spritenum": 146,
       "onPlate": "Fire",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Fire",
@@ -2090,7 +1969,6 @@
     "floatstone": {
       "id": "floatstone",
       "name": "Float Stone",
-      "spritenum": 147,
       "fling": {"basePower": 30},
       "num": 539,
       "gen": 5,
@@ -2099,7 +1977,6 @@
     "flowersweet": {
       "id": "flowersweet",
       "name": "Flower Sweet",
-      "spritenum": 708,
       "fling": {"basePower": 0},
       "num": 1113,
       "gen": 8,
@@ -2108,7 +1985,6 @@
     "flyinggem": {
       "id": "flyinggem",
       "name": "Flying Gem",
-      "spritenum": 149,
       "isGem": true,
       "num": 556,
       "gen": 5,
@@ -2118,7 +1994,6 @@
     "flyingmemory": {
       "id": "flyingmemory",
       "name": "Flying Memory",
-      "spritenum": 669,
       "onMemory": "Flying",
       "forcedForme": "Silvally-Flying",
       "itemUser": ["Silvally-Flying"],
@@ -2129,7 +2004,6 @@
     "flyiniumz": {
       "id": "flyiniumz",
       "name": "Flyinium Z",
-      "spritenum": 640,
       "onPlate": "Flying",
       "onTakeItem": false,
       "zMove": true,
@@ -2143,7 +2017,6 @@
     "focusband": {
       "id": "focusband",
       "name": "Focus Band",
-      "spritenum": 150,
       "fling": {"basePower": 10},
       "num": 230,
       "gen": 2,
@@ -2152,7 +2025,6 @@
     "focussash": {
       "id": "focussash",
       "name": "Focus Sash",
-      "spritenum": 151,
       "fling": {"basePower": 10},
       "num": 275,
       "gen": 4,
@@ -2161,7 +2033,6 @@
     "fossilizedbird": {
       "id": "fossilizedbird",
       "name": "Fossilized Bird",
-      "spritenum": 700,
       "fling": {"basePower": 100},
       "num": 1105,
       "gen": 8,
@@ -2170,7 +2041,6 @@
     "fossilizeddino": {
       "id": "fossilizeddino",
       "name": "Fossilized Dino",
-      "spritenum": 703,
       "fling": {"basePower": 100},
       "num": 1108,
       "gen": 8,
@@ -2179,7 +2049,6 @@
     "fossilizeddrake": {
       "id": "fossilizeddrake",
       "name": "Fossilized Drake",
-      "spritenum": 702,
       "fling": {"basePower": 100},
       "num": 1107,
       "gen": 8,
@@ -2188,7 +2057,6 @@
     "fossilizedfish": {
       "id": "fossilizedfish",
       "name": "Fossilized Fish",
-      "spritenum": 701,
       "fling": {"basePower": 100},
       "num": 1106,
       "gen": 8,
@@ -2197,7 +2065,6 @@
     "friendball": {
       "id": "friendball",
       "name": "Friend Ball",
-      "spritenum": 153,
       "num": 497,
       "gen": 2,
       "isPokeball": true,
@@ -2206,7 +2073,6 @@
     "fullincense": {
       "id": "fullincense",
       "name": "Full Incense",
-      "spritenum": 155,
       "fling": {"basePower": 10},
       "num": 316,
       "gen": 4,
@@ -2215,7 +2081,6 @@
     "galladite": {
       "id": "galladite",
       "name": "Galladite",
-      "spritenum": 616,
       "megaStone": "Gallade-Mega",
       "megaEvolves": "Gallade",
       "itemUser": ["Gallade"],
@@ -2227,7 +2092,6 @@
     "ganlonberry": {
       "id": "ganlonberry",
       "name": "Ganlon Berry",
-      "spritenum": 158,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Ice"},
       "num": 202,
@@ -2237,7 +2101,6 @@
     "garchompite": {
       "id": "garchompite",
       "name": "Garchompite",
-      "spritenum": 589,
       "megaStone": "Garchomp-Mega",
       "megaEvolves": "Garchomp",
       "itemUser": ["Garchomp"],
@@ -2249,7 +2112,6 @@
     "gardevoirite": {
       "id": "gardevoirite",
       "name": "Gardevoirite",
-      "spritenum": 587,
       "megaStone": "Gardevoir-Mega",
       "megaEvolves": "Gardevoir",
       "itemUser": ["Gardevoir"],
@@ -2261,7 +2123,6 @@
     "gengarite": {
       "id": "gengarite",
       "name": "Gengarite",
-      "spritenum": 588,
       "megaStone": "Gengar-Mega",
       "megaEvolves": "Gengar",
       "itemUser": ["Gengar"],
@@ -2273,7 +2134,6 @@
     "ghostgem": {
       "id": "ghostgem",
       "name": "Ghost Gem",
-      "spritenum": 161,
       "isGem": true,
       "num": 560,
       "gen": 5,
@@ -2283,7 +2143,6 @@
     "ghostmemory": {
       "id": "ghostmemory",
       "name": "Ghost Memory",
-      "spritenum": 674,
       "onMemory": "Ghost",
       "forcedForme": "Silvally-Ghost",
       "itemUser": ["Silvally-Ghost"],
@@ -2294,7 +2153,6 @@
     "ghostiumz": {
       "id": "ghostiumz",
       "name": "Ghostium Z",
-      "spritenum": 644,
       "onPlate": "Ghost",
       "onTakeItem": false,
       "zMove": true,
@@ -2308,7 +2166,6 @@
     "glalitite": {
       "id": "glalitite",
       "name": "Glalitite",
-      "spritenum": 623,
       "megaStone": "Glalie-Mega",
       "megaEvolves": "Glalie",
       "itemUser": ["Glalie"],
@@ -2320,7 +2177,6 @@
     "goldbottlecap": {
       "id": "goldbottlecap",
       "name": "Gold Bottle Cap",
-      "spritenum": 697,
       "fling": {"basePower": 30},
       "num": 796,
       "gen": 7,
@@ -2329,7 +2185,6 @@
     "grassgem": {
       "id": "grassgem",
       "name": "Grass Gem",
-      "spritenum": 172,
       "isGem": true,
       "num": 551,
       "gen": 5,
@@ -2339,7 +2194,6 @@
     "grassmemory": {
       "id": "grassmemory",
       "name": "Grass Memory",
-      "spritenum": 678,
       "onMemory": "Grass",
       "forcedForme": "Silvally-Grass",
       "itemUser": ["Silvally-Grass"],
@@ -2350,7 +2204,6 @@
     "grassiumz": {
       "id": "grassiumz",
       "name": "Grassium Z",
-      "spritenum": 635,
       "onPlate": "Grass",
       "onTakeItem": false,
       "zMove": true,
@@ -2364,7 +2217,6 @@
     "grassyseed": {
       "id": "grassyseed",
       "name": "Grassy Seed",
-      "spritenum": 667,
       "fling": {"basePower": 10},
       "boosts": {"def": 1},
       "num": 884,
@@ -2374,7 +2226,6 @@
     "greatball": {
       "id": "greatball",
       "name": "Great Ball",
-      "spritenum": 174,
       "num": 3,
       "gen": 1,
       "isPokeball": true,
@@ -2383,7 +2234,6 @@
     "grepaberry": {
       "id": "grepaberry",
       "name": "Grepa Berry",
-      "spritenum": 178,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Flying"},
       "onEat": false,
@@ -2394,7 +2244,6 @@
     "gripclaw": {
       "id": "gripclaw",
       "name": "Grip Claw",
-      "spritenum": 179,
       "fling": {"basePower": 90},
       "num": 286,
       "gen": 4,
@@ -2403,7 +2252,6 @@
     "griseousorb": {
       "id": "griseousorb",
       "name": "Griseous Orb",
-      "spritenum": 180,
       "fling": {"basePower": 60},
       "onBasePowerPriority": 6,
       "forcedForme": "Giratina-Origin",
@@ -2416,7 +2264,6 @@
     "groundgem": {
       "id": "groundgem",
       "name": "Ground Gem",
-      "spritenum": 182,
       "isGem": true,
       "num": 555,
       "gen": 5,
@@ -2426,7 +2273,6 @@
     "groundmemory": {
       "id": "groundmemory",
       "name": "Ground Memory",
-      "spritenum": 671,
       "onMemory": "Ground",
       "forcedForme": "Silvally-Ground",
       "itemUser": ["Silvally-Ground"],
@@ -2437,7 +2283,6 @@
     "groundiumz": {
       "id": "groundiumz",
       "name": "Groundium Z",
-      "spritenum": 639,
       "onPlate": "Ground",
       "onTakeItem": false,
       "zMove": true,
@@ -2451,7 +2296,6 @@
     "gyaradosite": {
       "id": "gyaradosite",
       "name": "Gyaradosite",
-      "spritenum": 589,
       "megaStone": "Gyarados-Mega",
       "megaEvolves": "Gyarados",
       "itemUser": ["Gyarados"],
@@ -2463,7 +2307,6 @@
     "habanberry": {
       "id": "habanberry",
       "name": "Haban Berry",
-      "spritenum": 185,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Dragon"},
       "num": 197,
@@ -2473,7 +2316,6 @@
     "hardstone": {
       "id": "hardstone",
       "name": "Hard Stone",
-      "spritenum": 187,
       "fling": {"basePower": 100},
       "onBasePowerPriority": 6,
       "num": 238,
@@ -2483,7 +2325,6 @@
     "healball": {
       "id": "healball",
       "name": "Heal Ball",
-      "spritenum": 188,
       "num": 14,
       "gen": 4,
       "isPokeball": true,
@@ -2492,7 +2333,6 @@
     "heatrock": {
       "id": "heatrock",
       "name": "Heat Rock",
-      "spritenum": 193,
       "fling": {"basePower": 60},
       "num": 284,
       "gen": 4,
@@ -2501,7 +2341,6 @@
     "heavyball": {
       "id": "heavyball",
       "name": "Heavy Ball",
-      "spritenum": 194,
       "num": 495,
       "gen": 2,
       "isPokeball": true,
@@ -2510,7 +2349,6 @@
     "heavydutyboots": {
       "id": "heavydutyboots",
       "name": "Heavy-Duty Boots",
-      "spritenum": 715,
       "fling": {"basePower": 80},
       "num": 1120,
       "gen": 8,
@@ -2519,7 +2357,6 @@
     "helixfossil": {
       "id": "helixfossil",
       "name": "Helix Fossil",
-      "spritenum": 195,
       "fling": {"basePower": 100},
       "num": 101,
       "gen": 3,
@@ -2529,7 +2366,6 @@
     "heracronite": {
       "id": "heracronite",
       "name": "Heracronite",
-      "spritenum": 590,
       "megaStone": "Heracross-Mega",
       "megaEvolves": "Heracross",
       "itemUser": ["Heracross"],
@@ -2541,7 +2377,6 @@
     "hondewberry": {
       "id": "hondewberry",
       "name": "Hondew Berry",
-      "spritenum": 213,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Ground"},
       "onEat": false,
@@ -2552,7 +2387,6 @@
     "houndoominite": {
       "id": "houndoominite",
       "name": "Houndoominite",
-      "spritenum": 591,
       "megaStone": "Houndoom-Mega",
       "megaEvolves": "Houndoom",
       "itemUser": ["Houndoom"],
@@ -2564,7 +2398,6 @@
     "iapapaberry": {
       "id": "iapapaberry",
       "name": "Iapapa Berry",
-      "spritenum": 217,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Dark"},
       "num": 163,
@@ -2574,7 +2407,6 @@
     "icegem": {
       "id": "icegem",
       "name": "Ice Gem",
-      "spritenum": 218,
       "isGem": true,
       "num": 552,
       "gen": 5,
@@ -2584,7 +2416,6 @@
     "icememory": {
       "id": "icememory",
       "name": "Ice Memory",
-      "spritenum": 681,
       "onMemory": "Ice",
       "forcedForme": "Silvally-Ice",
       "itemUser": ["Silvally-Ice"],
@@ -2595,7 +2426,6 @@
     "icestone": {
       "id": "icestone",
       "name": "Ice Stone",
-      "spritenum": 693,
       "fling": {"basePower": 30},
       "num": 849,
       "gen": 7,
@@ -2605,7 +2435,6 @@
     "icicleplate": {
       "id": "icicleplate",
       "name": "Icicle Plate",
-      "spritenum": 220,
       "onPlate": "Ice",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Ice",
@@ -2617,7 +2446,6 @@
     "iciumz": {
       "id": "iciumz",
       "name": "Icium Z",
-      "spritenum": 636,
       "onPlate": "Ice",
       "onTakeItem": false,
       "zMove": true,
@@ -2631,7 +2459,6 @@
     "icyrock": {
       "id": "icyrock",
       "name": "Icy Rock",
-      "spritenum": 221,
       "fling": {"basePower": 40},
       "num": 282,
       "gen": 4,
@@ -2640,7 +2467,6 @@
     "inciniumz": {
       "id": "inciniumz",
       "name": "Incinium Z",
-      "spritenum": 651,
       "onTakeItem": false,
       "zMove": "Malicious Moonsault",
       "zMoveFrom": "Darkest Lariat",
@@ -2653,7 +2479,6 @@
     "insectplate": {
       "id": "insectplate",
       "name": "Insect Plate",
-      "spritenum": 223,
       "onPlate": "Bug",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Bug",
@@ -2665,7 +2490,6 @@
     "ironball": {
       "id": "ironball",
       "name": "Iron Ball",
-      "spritenum": 224,
       "fling": {"basePower": 130},
       "num": 278,
       "gen": 4,
@@ -2674,7 +2498,6 @@
     "ironplate": {
       "id": "ironplate",
       "name": "Iron Plate",
-      "spritenum": 225,
       "onPlate": "Steel",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Steel",
@@ -2686,7 +2509,6 @@
     "jabocaberry": {
       "id": "jabocaberry",
       "name": "Jaboca Berry",
-      "spritenum": 230,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Dragon"},
       "num": 211,
@@ -2697,7 +2519,6 @@
     "jawfossil": {
       "id": "jawfossil",
       "name": "Jaw Fossil",
-      "spritenum": 694,
       "fling": {"basePower": 100},
       "num": 710,
       "gen": 6,
@@ -2707,7 +2528,6 @@
     "kasibberry": {
       "id": "kasibberry",
       "name": "Kasib Berry",
-      "spritenum": 233,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Ghost"},
       "num": 196,
@@ -2717,7 +2537,6 @@
     "kebiaberry": {
       "id": "kebiaberry",
       "name": "Kebia Berry",
-      "spritenum": 234,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Poison"},
       "num": 190,
@@ -2727,7 +2546,6 @@
     "keeberry": {
       "id": "keeberry",
       "name": "Kee Berry",
-      "spritenum": 593,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Fairy"},
       "num": 687,
@@ -2737,7 +2555,6 @@
     "kelpsyberry": {
       "id": "kelpsyberry",
       "name": "Kelpsy Berry",
-      "spritenum": 235,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Fighting"},
       "onEat": false,
@@ -2748,7 +2565,6 @@
     "kangaskhanite": {
       "id": "kangaskhanite",
       "name": "Kangaskhanite",
-      "spritenum": 592,
       "megaStone": "Kangaskhan-Mega",
       "megaEvolves": "Kangaskhan",
       "itemUser": ["Kangaskhan"],
@@ -2760,7 +2576,6 @@
     "kingsrock": {
       "id": "kingsrock",
       "name": "King's Rock",
-      "spritenum": 236,
       "fling": {"basePower": 30, "volatileStatus": "flinch"},
       "onModifyMovePriority": -1,
       "num": 221,
@@ -2771,7 +2586,6 @@
     "kommoniumz": {
       "id": "kommoniumz",
       "name": "Kommonium Z",
-      "spritenum": 690,
       "onTakeItem": false,
       "zMove": "Clangorous Soulblaze",
       "zMoveFrom": "Clanging Scales",
@@ -2784,7 +2598,6 @@
     "laggingtail": {
       "id": "laggingtail",
       "name": "Lagging Tail",
-      "spritenum": 237,
       "fling": {"basePower": 10},
       "num": 279,
       "gen": 4,
@@ -2793,7 +2606,6 @@
     "lansatberry": {
       "id": "lansatberry",
       "name": "Lansat Berry",
-      "spritenum": 238,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Flying"},
       "num": 206,
@@ -2803,7 +2615,6 @@
     "latiasite": {
       "id": "latiasite",
       "name": "Latiasite",
-      "spritenum": 629,
       "megaStone": "Latias-Mega",
       "megaEvolves": "Latias",
       "itemUser": ["Latias"],
@@ -2815,7 +2626,6 @@
     "latiosite": {
       "id": "latiosite",
       "name": "Latiosite",
-      "spritenum": 630,
       "megaStone": "Latios-Mega",
       "megaEvolves": "Latios",
       "itemUser": ["Latios"],
@@ -2827,7 +2637,6 @@
     "laxincense": {
       "id": "laxincense",
       "name": "Lax Incense",
-      "spritenum": 240,
       "fling": {"basePower": 10},
       "num": 255,
       "gen": 3,
@@ -2836,7 +2645,6 @@
     "leafstone": {
       "id": "leafstone",
       "name": "Leaf Stone",
-      "spritenum": 241,
       "fling": {"basePower": 30},
       "num": 85,
       "gen": 1,
@@ -2847,7 +2655,6 @@
       "id": "leek",
       "name": "Leek",
       "fling": {"basePower": 60},
-      "spritenum": 475,
       "itemUser": ["Farfetch'd", "Sirfetch'd"],
       "num": 259,
       "gen": 8,
@@ -2856,7 +2663,6 @@
     "leftovers": {
       "id": "leftovers",
       "name": "Leftovers",
-      "spritenum": 242,
       "fling": {"basePower": 10},
       "onResidualOrder": 5,
       "onResidualSubOrder": 2,
@@ -2867,7 +2673,6 @@
     "leppaberry": {
       "id": "leppaberry",
       "name": "Leppa Berry",
-      "spritenum": 244,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Fighting"},
       "num": 154,
@@ -2877,7 +2682,6 @@
     "levelball": {
       "id": "levelball",
       "name": "Level Ball",
-      "spritenum": 246,
       "num": 493,
       "gen": 2,
       "isPokeball": true,
@@ -2886,7 +2690,6 @@
     "liechiberry": {
       "id": "liechiberry",
       "name": "Liechi Berry",
-      "spritenum": 248,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Grass"},
       "num": 201,
@@ -2896,7 +2699,6 @@
     "lifeorb": {
       "id": "lifeorb",
       "name": "Life Orb",
-      "spritenum": 249,
       "fling": {"basePower": 30},
       "num": 270,
       "gen": 4,
@@ -2905,7 +2707,6 @@
     "lightball": {
       "id": "lightball",
       "name": "Light Ball",
-      "spritenum": 251,
       "fling": {"basePower": 30, "status": "par"},
       "onModifyAtkPriority": 1,
       "onModifySpAPriority": 1,
@@ -2917,7 +2718,6 @@
     "lightclay": {
       "id": "lightclay",
       "name": "Light Clay",
-      "spritenum": 252,
       "fling": {"basePower": 30},
       "num": 269,
       "gen": 4,
@@ -2926,7 +2726,6 @@
     "lopunnite": {
       "id": "lopunnite",
       "name": "Lopunnite",
-      "spritenum": 626,
       "megaStone": "Lopunny-Mega",
       "megaEvolves": "Lopunny",
       "itemUser": ["Lopunny"],
@@ -2938,7 +2737,6 @@
     "loveball": {
       "id": "loveball",
       "name": "Love Ball",
-      "spritenum": 258,
       "num": 496,
       "gen": 2,
       "isPokeball": true,
@@ -2947,7 +2745,6 @@
     "lovesweet": {
       "id": "lovesweet",
       "name": "Love Sweet",
-      "spritenum": 705,
       "fling": {"basePower": 10},
       "num": 1110,
       "gen": 8,
@@ -2956,7 +2753,6 @@
     "lucarionite": {
       "id": "lucarionite",
       "name": "Lucarionite",
-      "spritenum": 594,
       "megaStone": "Lucario-Mega",
       "megaEvolves": "Lucario",
       "itemUser": ["Lucario"],
@@ -2968,7 +2764,6 @@
     "luckypunch": {
       "id": "luckypunch",
       "name": "Lucky Punch",
-      "spritenum": 261,
       "fling": {"basePower": 40},
       "itemUser": ["Chansey"],
       "num": 256,
@@ -2979,7 +2774,6 @@
     "lumberry": {
       "id": "lumberry",
       "name": "Lum Berry",
-      "spritenum": 262,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Flying"},
       "num": 157,
@@ -2989,7 +2783,6 @@
     "luminousmoss": {
       "id": "luminousmoss",
       "name": "Luminous Moss",
-      "spritenum": 595,
       "fling": {"basePower": 30},
       "boosts": {"spd": 1},
       "num": 648,
@@ -2999,7 +2792,6 @@
     "lunaliumz": {
       "id": "lunaliumz",
       "name": "Lunalium Z",
-      "spritenum": 686,
       "onTakeItem": false,
       "zMove": "Menacing Moonraze Maelstrom",
       "zMoveFrom": "Moongeist Beam",
@@ -3012,7 +2804,6 @@
     "lureball": {
       "id": "lureball",
       "name": "Lure Ball",
-      "spritenum": 264,
       "num": 494,
       "gen": 2,
       "isPokeball": true,
@@ -3021,7 +2812,6 @@
     "lustrousorb": {
       "id": "lustrousorb",
       "name": "Lustrous Orb",
-      "spritenum": 265,
       "fling": {"basePower": 60},
       "onBasePowerPriority": 6,
       "itemUser": ["Palkia"],
@@ -3033,7 +2823,6 @@
     "luxuryball": {
       "id": "luxuryball",
       "name": "Luxury Ball",
-      "spritenum": 266,
       "num": 11,
       "gen": 3,
       "isPokeball": true,
@@ -3042,7 +2831,6 @@
     "lycaniumz": {
       "id": "lycaniumz",
       "name": "Lycanium Z",
-      "spritenum": 689,
       "onTakeItem": false,
       "zMove": "Splintered Stormshards",
       "zMoveFrom": "Stone Edge",
@@ -3055,7 +2843,6 @@
     "machobrace": {
       "id": "machobrace",
       "name": "Macho Brace",
-      "spritenum": 269,
       "ignoreKlutz": true,
       "fling": {"basePower": 60},
       "num": 215,
@@ -3065,7 +2852,6 @@
     "magmarizer": {
       "id": "magmarizer",
       "name": "Magmarizer",
-      "spritenum": 272,
       "fling": {"basePower": 80},
       "num": 323,
       "gen": 4,
@@ -3074,7 +2860,6 @@
     "magnet": {
       "id": "magnet",
       "name": "Magnet",
-      "spritenum": 273,
       "fling": {"basePower": 30},
       "onBasePowerPriority": 6,
       "num": 242,
@@ -3084,7 +2869,6 @@
     "magoberry": {
       "id": "magoberry",
       "name": "Mago Berry",
-      "spritenum": 274,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Ghost"},
       "num": 161,
@@ -3094,7 +2878,6 @@
     "magostberry": {
       "id": "magostberry",
       "name": "Magost Berry",
-      "spritenum": 275,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Rock"},
       "onEat": false,
@@ -3106,7 +2889,6 @@
     "mail": {
       "id": "mail",
       "name": "Mail",
-      "spritenum": 403,
       "num": 0,
       "gen": 2,
       "isNonstandard": "Past",
@@ -3115,7 +2897,6 @@
     "manectite": {
       "id": "manectite",
       "name": "Manectite",
-      "spritenum": 596,
       "megaStone": "Manectric-Mega",
       "megaEvolves": "Manectric",
       "itemUser": ["Manectric"],
@@ -3127,7 +2908,6 @@
     "marangaberry": {
       "id": "marangaberry",
       "name": "Maranga Berry",
-      "spritenum": 597,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Dark"},
       "num": 688,
@@ -3137,7 +2917,6 @@
     "marshadiumz": {
       "id": "marshadiumz",
       "name": "Marshadium Z",
-      "spritenum": 654,
       "onTakeItem": false,
       "zMove": "Soul-Stealing 7-Star Strike",
       "zMoveFrom": "Spectral Thief",
@@ -3150,7 +2929,6 @@
     "masterball": {
       "id": "masterball",
       "name": "Master Ball",
-      "spritenum": 276,
       "num": 1,
       "gen": 1,
       "isPokeball": true,
@@ -3159,7 +2937,6 @@
     "mawilite": {
       "id": "mawilite",
       "name": "Mawilite",
-      "spritenum": 598,
       "megaStone": "Mawile-Mega",
       "megaEvolves": "Mawile",
       "itemUser": ["Mawile"],
@@ -3171,7 +2948,6 @@
     "meadowplate": {
       "id": "meadowplate",
       "name": "Meadow Plate",
-      "spritenum": 282,
       "onPlate": "Grass",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Grass",
@@ -3183,7 +2959,6 @@
     "medichamite": {
       "id": "medichamite",
       "name": "Medichamite",
-      "spritenum": 599,
       "megaStone": "Medicham-Mega",
       "megaEvolves": "Medicham",
       "itemUser": ["Medicham"],
@@ -3195,7 +2970,6 @@
     "mentalherb": {
       "id": "mentalherb",
       "name": "Mental Herb",
-      "spritenum": 285,
       "fling": {"basePower": 10},
       "num": 219,
       "gen": 3,
@@ -3204,7 +2978,6 @@
     "metagrossite": {
       "id": "metagrossite",
       "name": "Metagrossite",
-      "spritenum": 618,
       "megaStone": "Metagross-Mega",
       "megaEvolves": "Metagross",
       "itemUser": ["Metagross"],
@@ -3216,7 +2989,6 @@
     "metalcoat": {
       "id": "metalcoat",
       "name": "Metal Coat",
-      "spritenum": 286,
       "fling": {"basePower": 30},
       "onBasePowerPriority": 6,
       "num": 233,
@@ -3228,7 +3000,6 @@
       "id": "metalpowder",
       "name": "Metal Powder",
       "fling": {"basePower": 10},
-      "spritenum": 287,
       "onModifyDefPriority": 2,
       "itemUser": ["Ditto"],
       "num": 257,
@@ -3238,7 +3009,6 @@
     "metronome": {
       "id": "metronome",
       "name": "Metronome",
-      "spritenum": 289,
       "fling": {"basePower": 30},
       "effect": {"onTryMovePriority": -2},
       "num": 277,
@@ -3248,7 +3018,6 @@
     "mewniumz": {
       "id": "mewniumz",
       "name": "Mewnium Z",
-      "spritenum": 658,
       "onTakeItem": false,
       "zMove": "Genesis Supernova",
       "zMoveFrom": "Psychic",
@@ -3261,7 +3030,6 @@
     "mewtwonitex": {
       "id": "mewtwonitex",
       "name": "Mewtwonite X",
-      "spritenum": 600,
       "megaStone": "Mewtwo-Mega-X",
       "megaEvolves": "Mewtwo",
       "itemUser": ["Mewtwo"],
@@ -3273,7 +3041,6 @@
     "mewtwonitey": {
       "id": "mewtwonitey",
       "name": "Mewtwonite Y",
-      "spritenum": 601,
       "megaStone": "Mewtwo-Mega-Y",
       "megaEvolves": "Mewtwo",
       "itemUser": ["Mewtwo"],
@@ -3285,7 +3052,6 @@
     "micleberry": {
       "id": "micleberry",
       "name": "Micle Berry",
-      "spritenum": 290,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Rock"},
       "effect": {"duration": 2},
@@ -3297,7 +3063,6 @@
     "mimikiumz": {
       "id": "mimikiumz",
       "name": "Mimikium Z",
-      "spritenum": 688,
       "onTakeItem": false,
       "zMove": "Let's Snuggle Forever",
       "zMoveFrom": "Play Rough",
@@ -3315,7 +3080,6 @@
     "mindplate": {
       "id": "mindplate",
       "name": "Mind Plate",
-      "spritenum": 291,
       "onPlate": "Psychic",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Psychic",
@@ -3328,7 +3092,6 @@
       "id": "miracleseed",
       "name": "Miracle Seed",
       "fling": {"basePower": 30},
-      "spritenum": 292,
       "onBasePowerPriority": 6,
       "num": 239,
       "gen": 2,
@@ -3337,7 +3100,6 @@
     "mistyseed": {
       "id": "mistyseed",
       "name": "Misty Seed",
-      "spritenum": 666,
       "fling": {"basePower": 10},
       "boosts": {"spd": 1},
       "num": 883,
@@ -3347,7 +3109,6 @@
     "moonball": {
       "id": "moonball",
       "name": "Moon Ball",
-      "spritenum": 294,
       "num": 498,
       "gen": 2,
       "isPokeball": true,
@@ -3356,7 +3117,6 @@
     "moonstone": {
       "id": "moonstone",
       "name": "Moon Stone",
-      "spritenum": 295,
       "fling": {"basePower": 30},
       "num": 81,
       "gen": 1,
@@ -3366,7 +3126,6 @@
     "muscleband": {
       "id": "muscleband",
       "name": "Muscle Band",
-      "spritenum": 297,
       "fling": {"basePower": 10},
       "onBasePowerPriority": 6,
       "num": 266,
@@ -3376,7 +3135,6 @@
     "mysticwater": {
       "id": "mysticwater",
       "name": "Mystic Water",
-      "spritenum": 300,
       "fling": {"basePower": 30},
       "onBasePowerPriority": 6,
       "num": 243,
@@ -3386,7 +3144,6 @@
     "nanabberry": {
       "id": "nanabberry",
       "name": "Nanab Berry",
-      "spritenum": 302,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Water"},
       "onEat": false,
@@ -3398,7 +3155,6 @@
     "nestball": {
       "id": "nestball",
       "name": "Nest Ball",
-      "spritenum": 303,
       "num": 8,
       "gen": 3,
       "isPokeball": true,
@@ -3407,7 +3163,6 @@
     "netball": {
       "id": "netball",
       "name": "Net Ball",
-      "spritenum": 304,
       "num": 6,
       "gen": 3,
       "isPokeball": true,
@@ -3416,7 +3171,6 @@
     "nevermeltice": {
       "id": "nevermeltice",
       "name": "Never-Melt Ice",
-      "spritenum": 305,
       "fling": {"basePower": 30},
       "onBasePowerPriority": 6,
       "num": 246,
@@ -3426,7 +3180,6 @@
     "nomelberry": {
       "id": "nomelberry",
       "name": "Nomel Berry",
-      "spritenum": 306,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Dragon"},
       "onEat": false,
@@ -3438,7 +3191,6 @@
     "normalgem": {
       "id": "normalgem",
       "name": "Normal Gem",
-      "spritenum": 307,
       "isGem": true,
       "num": 564,
       "gen": 5,
@@ -3447,7 +3199,6 @@
     "normaliumz": {
       "id": "normaliumz",
       "name": "Normalium Z",
-      "spritenum": 631,
       "onTakeItem": false,
       "zMove": true,
       "zMoveType": "Normal",
@@ -3459,7 +3210,6 @@
     "occaberry": {
       "id": "occaberry",
       "name": "Occa Berry",
-      "spritenum": 311,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Fire"},
       "num": 184,
@@ -3469,7 +3219,6 @@
     "oddincense": {
       "id": "oddincense",
       "name": "Odd Incense",
-      "spritenum": 312,
       "fling": {"basePower": 10},
       "onBasePowerPriority": 6,
       "num": 314,
@@ -3479,7 +3228,6 @@
     "oldamber": {
       "id": "oldamber",
       "name": "Old Amber",
-      "spritenum": 314,
       "fling": {"basePower": 100},
       "num": 103,
       "gen": 3,
@@ -3489,7 +3237,6 @@
     "oranberry": {
       "id": "oranberry",
       "name": "Oran Berry",
-      "spritenum": 319,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Poison"},
       "num": 155,
@@ -3499,7 +3246,6 @@
     "ovalstone": {
       "id": "ovalstone",
       "name": "Oval Stone",
-      "spritenum": 321,
       "fling": {"basePower": 80},
       "num": 110,
       "gen": 4,
@@ -3508,7 +3254,6 @@
     "pamtreberry": {
       "id": "pamtreberry",
       "name": "Pamtre Berry",
-      "spritenum": 323,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Steel"},
       "onEat": false,
@@ -3520,7 +3265,6 @@
     "parkball": {
       "id": "parkball",
       "name": "Park Ball",
-      "spritenum": 325,
       "num": 500,
       "gen": 4,
       "isPokeball": true,
@@ -3529,7 +3273,6 @@
     "passhoberry": {
       "id": "passhoberry",
       "name": "Passho Berry",
-      "spritenum": 329,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Water"},
       "num": 185,
@@ -3539,7 +3282,6 @@
     "payapaberry": {
       "id": "payapaberry",
       "name": "Payapa Berry",
-      "spritenum": 330,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Psychic"},
       "num": 193,
@@ -3549,7 +3291,6 @@
     "pechaberry": {
       "id": "pechaberry",
       "name": "Pecha Berry",
-      "spritenum": 333,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Electric"},
       "num": 151,
@@ -3559,7 +3300,6 @@
     "persimberry": {
       "id": "persimberry",
       "name": "Persim Berry",
-      "spritenum": 334,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Ground"},
       "num": 156,
@@ -3569,7 +3309,6 @@
     "petayaberry": {
       "id": "petayaberry",
       "name": "Petaya Berry",
-      "spritenum": 335,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Poison"},
       "num": 204,
@@ -3579,7 +3318,6 @@
     "pidgeotite": {
       "id": "pidgeotite",
       "name": "Pidgeotite",
-      "spritenum": 622,
       "megaStone": "Pidgeot-Mega",
       "megaEvolves": "Pidgeot",
       "itemUser": ["Pidgeot"],
@@ -3591,7 +3329,6 @@
     "pikaniumz": {
       "id": "pikaniumz",
       "name": "Pikanium Z",
-      "spritenum": 649,
       "onTakeItem": false,
       "zMove": "Catastropika",
       "zMoveFrom": "Volt Tackle",
@@ -3604,7 +3341,6 @@
     "pikashuniumz": {
       "id": "pikashuniumz",
       "name": "Pikashunium Z",
-      "spritenum": 659,
       "onTakeItem": false,
       "zMove": "10,000,000 Volt Thunderbolt",
       "zMoveFrom": "Thunderbolt",
@@ -3625,7 +3361,6 @@
     "pinapberry": {
       "id": "pinapberry",
       "name": "Pinap Berry",
-      "spritenum": 337,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Grass"},
       "onEat": false,
@@ -3636,7 +3371,6 @@
     "pinsirite": {
       "id": "pinsirite",
       "name": "Pinsirite",
-      "spritenum": 602,
       "megaStone": "Pinsir-Mega",
       "megaEvolves": "Pinsir",
       "itemUser": ["Pinsir"],
@@ -3648,7 +3382,6 @@
     "pixieplate": {
       "id": "pixieplate",
       "name": "Pixie Plate",
-      "spritenum": 610,
       "onPlate": "Fairy",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Fairy",
@@ -3659,7 +3392,6 @@
     "plumefossil": {
       "id": "plumefossil",
       "name": "Plume Fossil",
-      "spritenum": 339,
       "fling": {"basePower": 100},
       "num": 573,
       "gen": 5,
@@ -3669,7 +3401,6 @@
     "poisonbarb": {
       "id": "poisonbarb",
       "name": "Poison Barb",
-      "spritenum": 343,
       "fling": {"basePower": 70, "status": "psn"},
       "onBasePowerPriority": 6,
       "num": 245,
@@ -3679,7 +3410,6 @@
     "poisongem": {
       "id": "poisongem",
       "name": "Poison Gem",
-      "spritenum": 344,
       "isGem": true,
       "num": 554,
       "gen": 5,
@@ -3689,7 +3419,6 @@
     "poisonmemory": {
       "id": "poisonmemory",
       "name": "Poison Memory",
-      "spritenum": 670,
       "onMemory": "Poison",
       "forcedForme": "Silvally-Poison",
       "itemUser": ["Silvally-Poison"],
@@ -3700,7 +3429,6 @@
     "poisoniumz": {
       "id": "poisoniumz",
       "name": "Poisonium Z",
-      "spritenum": 638,
       "onPlate": "Poison",
       "onTakeItem": false,
       "zMove": true,
@@ -3714,7 +3442,6 @@
     "pokeball": {
       "id": "pokeball",
       "name": "Poke Ball",
-      "spritenum": 345,
       "num": 4,
       "gen": 1,
       "isPokeball": true,
@@ -3723,7 +3450,6 @@
     "pomegberry": {
       "id": "pomegberry",
       "name": "Pomeg Berry",
-      "spritenum": 351,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Ice"},
       "onEat": false,
@@ -3734,7 +3460,6 @@
     "poweranklet": {
       "id": "poweranklet",
       "name": "Power Anklet",
-      "spritenum": 354,
       "ignoreKlutz": true,
       "fling": {"basePower": 70},
       "num": 293,
@@ -3744,7 +3469,6 @@
     "powerband": {
       "id": "powerband",
       "name": "Power Band",
-      "spritenum": 355,
       "ignoreKlutz": true,
       "fling": {"basePower": 70},
       "num": 292,
@@ -3754,7 +3478,6 @@
     "powerbelt": {
       "id": "powerbelt",
       "name": "Power Belt",
-      "spritenum": 356,
       "ignoreKlutz": true,
       "fling": {"basePower": 70},
       "num": 290,
@@ -3764,7 +3487,6 @@
     "powerbracer": {
       "id": "powerbracer",
       "name": "Power Bracer",
-      "spritenum": 357,
       "ignoreKlutz": true,
       "fling": {"basePower": 70},
       "num": 289,
@@ -3774,7 +3496,6 @@
     "powerherb": {
       "id": "powerherb",
       "name": "Power Herb",
-      "spritenum": 358,
       "fling": {"basePower": 10},
       "num": 271,
       "gen": 4,
@@ -3783,7 +3504,6 @@
     "powerlens": {
       "id": "powerlens",
       "name": "Power Lens",
-      "spritenum": 359,
       "ignoreKlutz": true,
       "fling": {"basePower": 70},
       "num": 291,
@@ -3793,7 +3513,6 @@
     "powerweight": {
       "id": "powerweight",
       "name": "Power Weight",
-      "spritenum": 360,
       "ignoreKlutz": true,
       "fling": {"basePower": 70},
       "num": 294,
@@ -3803,7 +3522,6 @@
     "premierball": {
       "id": "premierball",
       "name": "Premier Ball",
-      "spritenum": 363,
       "num": 12,
       "gen": 3,
       "isPokeball": true,
@@ -3812,7 +3530,6 @@
     "primariumz": {
       "id": "primariumz",
       "name": "Primarium Z",
-      "spritenum": 652,
       "onTakeItem": false,
       "zMove": "Oceanic Operetta",
       "zMoveFrom": "Sparkling Aria",
@@ -3825,7 +3542,6 @@
     "prismscale": {
       "id": "prismscale",
       "name": "Prism Scale",
-      "spritenum": 365,
       "fling": {"basePower": 30},
       "num": 537,
       "gen": 5,
@@ -3834,7 +3550,6 @@
     "protectivepads": {
       "id": "protectivepads",
       "name": "Protective Pads",
-      "spritenum": 663,
       "fling": {"basePower": 30},
       "onAttractPriority": -1,
       "onBoostPriority": -1,
@@ -3846,7 +3561,6 @@
     "protector": {
       "id": "protector",
       "name": "Protector",
-      "spritenum": 367,
       "fling": {"basePower": 80},
       "num": 321,
       "gen": 4,
@@ -3855,7 +3569,6 @@
     "psychicgem": {
       "id": "psychicgem",
       "name": "Psychic Gem",
-      "spritenum": 369,
       "isGem": true,
       "num": 557,
       "gen": 5,
@@ -3865,7 +3578,6 @@
     "psychicmemory": {
       "id": "psychicmemory",
       "name": "Psychic Memory",
-      "spritenum": 680,
       "onMemory": "Psychic",
       "forcedForme": "Silvally-Psychic",
       "itemUser": ["Silvally-Psychic"],
@@ -3876,7 +3588,6 @@
     "psychicseed": {
       "id": "psychicseed",
       "name": "Psychic Seed",
-      "spritenum": 665,
       "fling": {"basePower": 10},
       "boosts": {"spd": 1},
       "num": 882,
@@ -3886,7 +3597,6 @@
     "psychiumz": {
       "id": "psychiumz",
       "name": "Psychium Z",
-      "spritenum": 641,
       "onPlate": "Psychic",
       "onTakeItem": false,
       "zMove": true,
@@ -3900,7 +3610,6 @@
     "qualotberry": {
       "id": "qualotberry",
       "name": "Qualot Berry",
-      "spritenum": 371,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Poison"},
       "onEat": false,
@@ -3911,7 +3620,6 @@
     "quickball": {
       "id": "quickball",
       "name": "Quick Ball",
-      "spritenum": 372,
       "num": 15,
       "gen": 4,
       "isPokeball": true,
@@ -3921,7 +3629,6 @@
       "id": "quickclaw",
       "onFractionalPriorityPriority": -1,
       "name": "Quick Claw",
-      "spritenum": 373,
       "fling": {"basePower": 80},
       "num": 217,
       "gen": 2,
@@ -3930,7 +3637,6 @@
     "quickpowder": {
       "id": "quickpowder",
       "name": "Quick Powder",
-      "spritenum": 374,
       "fling": {"basePower": 10},
       "itemUser": ["Ditto"],
       "num": 274,
@@ -3940,7 +3646,6 @@
     "rabutaberry": {
       "id": "rabutaberry",
       "name": "Rabuta Berry",
-      "spritenum": 375,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Ghost"},
       "onEat": false,
@@ -3952,7 +3657,6 @@
     "rarebone": {
       "id": "rarebone",
       "name": "Rare Bone",
-      "spritenum": 379,
       "fling": {"basePower": 100},
       "num": 106,
       "gen": 4,
@@ -3961,7 +3665,6 @@
     "rawstberry": {
       "id": "rawstberry",
       "name": "Rawst Berry",
-      "spritenum": 381,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Grass"},
       "num": 152,
@@ -3971,7 +3674,6 @@
     "razorclaw": {
       "id": "razorclaw",
       "name": "Razor Claw",
-      "spritenum": 382,
       "fling": {"basePower": 80},
       "num": 326,
       "gen": 4,
@@ -3981,7 +3683,6 @@
     "razorfang": {
       "id": "razorfang",
       "name": "Razor Fang",
-      "spritenum": 383,
       "fling": {"basePower": 30, "volatileStatus": "flinch"},
       "onModifyMovePriority": -1,
       "num": 327,
@@ -3993,7 +3694,6 @@
     "razzberry": {
       "id": "razzberry",
       "name": "Razz Berry",
-      "spritenum": 384,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Steel"},
       "onEat": false,
@@ -4005,7 +3705,6 @@
     "reapercloth": {
       "id": "reapercloth",
       "name": "Reaper Cloth",
-      "spritenum": 385,
       "fling": {"basePower": 10},
       "num": 325,
       "gen": 4,
@@ -4014,7 +3713,6 @@
     "redcard": {
       "id": "redcard",
       "name": "Red Card",
-      "spritenum": 387,
       "fling": {"basePower": 10},
       "num": 542,
       "gen": 5,
@@ -4023,7 +3721,6 @@
     "redorb": {
       "id": "redorb",
       "name": "Red Orb",
-      "spritenum": 390,
       "itemUser": ["Groudon"],
       "num": 534,
       "gen": 6,
@@ -4033,7 +3730,6 @@
     "repeatball": {
       "id": "repeatball",
       "name": "Repeat Ball",
-      "spritenum": 401,
       "num": 9,
       "gen": 3,
       "isPokeball": true,
@@ -4042,7 +3738,6 @@
     "ribbonsweet": {
       "id": "ribbonsweet",
       "name": "Ribbon Sweet",
-      "spritenum": 710,
       "fling": {"basePower": 10},
       "num": 1115,
       "gen": 8,
@@ -4051,7 +3746,6 @@
     "rindoberry": {
       "id": "rindoberry",
       "name": "Rindo Berry",
-      "spritenum": 409,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Grass"},
       "num": 187,
@@ -4061,7 +3755,6 @@
     "ringtarget": {
       "id": "ringtarget",
       "name": "Ring Target",
-      "spritenum": 410,
       "fling": {"basePower": 10},
       "onNegateImmunity": false,
       "num": 543,
@@ -4071,7 +3764,6 @@
     "rockgem": {
       "id": "rockgem",
       "name": "Rock Gem",
-      "spritenum": 415,
       "isGem": true,
       "num": 559,
       "gen": 5,
@@ -4081,7 +3773,6 @@
     "rockincense": {
       "id": "rockincense",
       "name": "Rock Incense",
-      "spritenum": 416,
       "fling": {"basePower": 10},
       "onBasePowerPriority": 6,
       "num": 315,
@@ -4091,7 +3782,6 @@
     "rockmemory": {
       "id": "rockmemory",
       "name": "Rock Memory",
-      "spritenum": 672,
       "onMemory": "Rock",
       "forcedForme": "Silvally-Rock",
       "itemUser": ["Silvally-Rock"],
@@ -4102,7 +3792,6 @@
     "rockiumz": {
       "id": "rockiumz",
       "name": "Rockium Z",
-      "spritenum": 643,
       "onPlate": "Rock",
       "onTakeItem": false,
       "zMove": true,
@@ -4116,7 +3805,6 @@
     "rockyhelmet": {
       "id": "rockyhelmet",
       "name": "Rocky Helmet",
-      "spritenum": 417,
       "fling": {"basePower": 60},
       "onDamagingHitOrder": 2,
       "num": 540,
@@ -4126,7 +3814,6 @@
     "roomservice": {
       "id": "roomservice",
       "name": "Room Service",
-      "spritenum": 717,
       "fling": {"basePower": 100},
       "boosts": {"spe": -1},
       "num": 1122,
@@ -4136,7 +3823,6 @@
     "rootfossil": {
       "id": "rootfossil",
       "name": "Root Fossil",
-      "spritenum": 418,
       "fling": {"basePower": 100},
       "num": 99,
       "gen": 3,
@@ -4146,7 +3832,6 @@
     "roseincense": {
       "id": "roseincense",
       "name": "Rose Incense",
-      "spritenum": 419,
       "fling": {"basePower": 10},
       "onBasePowerPriority": 6,
       "num": 318,
@@ -4156,7 +3841,6 @@
     "roseliberry": {
       "id": "roseliberry",
       "name": "Roseli Berry",
-      "spritenum": 603,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Fairy"},
       "num": 686,
@@ -4166,7 +3850,6 @@
     "rowapberry": {
       "id": "rowapberry",
       "name": "Rowap Berry",
-      "spritenum": 420,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Dark"},
       "num": 212,
@@ -4177,7 +3860,6 @@
     "rustedshield": {
       "id": "rustedshield",
       "name": "Rusted Shield",
-      "spritenum": 699,
       "forcedForme": "Zamazenta-Crowned",
       "itemUser": ["Zamazenta-Crowned"],
       "num": 1104,
@@ -4187,7 +3869,6 @@
     "rustedsword": {
       "id": "rustedsword",
       "name": "Rusted Sword",
-      "spritenum": 698,
       "forcedForme": "Zacian-Crowned",
       "itemUser": ["Zacian-Crowned"],
       "num": 1103,
@@ -4197,7 +3878,6 @@
     "sablenite": {
       "id": "sablenite",
       "name": "Sablenite",
-      "spritenum": 614,
       "megaStone": "Sableye-Mega",
       "megaEvolves": "Sableye",
       "itemUser": ["Sableye"],
@@ -4209,7 +3889,6 @@
     "sachet": {
       "id": "sachet",
       "name": "Sachet",
-      "spritenum": 691,
       "fling": {"basePower": 80},
       "num": 647,
       "gen": 6,
@@ -4218,7 +3897,6 @@
     "safariball": {
       "id": "safariball",
       "name": "Safari Ball",
-      "spritenum": 425,
       "num": 5,
       "gen": 1,
       "isPokeball": true,
@@ -4227,7 +3905,6 @@
     "safetygoggles": {
       "id": "safetygoggles",
       "name": "Safety Goggles",
-      "spritenum": 604,
       "fling": {"basePower": 80},
       "num": 650,
       "gen": 6,
@@ -4236,7 +3913,6 @@
     "sailfossil": {
       "id": "sailfossil",
       "name": "Sail Fossil",
-      "spritenum": 695,
       "fling": {"basePower": 100},
       "num": 711,
       "gen": 6,
@@ -4246,7 +3922,6 @@
     "salacberry": {
       "id": "salacberry",
       "name": "Salac Berry",
-      "spritenum": 426,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Fighting"},
       "num": 203,
@@ -4256,7 +3931,6 @@
     "salamencite": {
       "id": "salamencite",
       "name": "Salamencite",
-      "spritenum": 627,
       "megaStone": "Salamence-Mega",
       "megaEvolves": "Salamence",
       "itemUser": ["Salamence"],
@@ -4268,7 +3942,6 @@
     "sceptilite": {
       "id": "sceptilite",
       "name": "Sceptilite",
-      "spritenum": 613,
       "megaStone": "Sceptile-Mega",
       "megaEvolves": "Sceptile",
       "itemUser": ["Sceptile"],
@@ -4280,7 +3953,6 @@
     "scizorite": {
       "id": "scizorite",
       "name": "Scizorite",
-      "spritenum": 605,
       "megaStone": "Scizor-Mega",
       "megaEvolves": "Scizor",
       "itemUser": ["Scizor"],
@@ -4292,7 +3964,6 @@
     "scopelens": {
       "id": "scopelens",
       "name": "Scope Lens",
-      "spritenum": 429,
       "fling": {"basePower": 30},
       "num": 232,
       "gen": 2,
@@ -4301,7 +3972,6 @@
     "seaincense": {
       "id": "seaincense",
       "name": "Sea Incense",
-      "spritenum": 430,
       "fling": {"basePower": 10},
       "onBasePowerPriority": 6,
       "num": 254,
@@ -4311,7 +3981,6 @@
     "sharpbeak": {
       "id": "sharpbeak",
       "name": "Sharp Beak",
-      "spritenum": 436,
       "fling": {"basePower": 50},
       "onBasePowerPriority": 6,
       "num": 244,
@@ -4321,7 +3990,6 @@
     "sharpedonite": {
       "id": "sharpedonite",
       "name": "Sharpedonite",
-      "spritenum": 619,
       "megaStone": "Sharpedo-Mega",
       "megaEvolves": "Sharpedo",
       "itemUser": ["Sharpedo"],
@@ -4333,7 +4001,6 @@
     "shedshell": {
       "id": "shedshell",
       "name": "Shed Shell",
-      "spritenum": 437,
       "fling": {"basePower": 10},
       "onTrapPokemonPriority": -10,
       "num": 295,
@@ -4343,7 +4010,6 @@
     "shellbell": {
       "id": "shellbell",
       "name": "Shell Bell",
-      "spritenum": 438,
       "fling": {"basePower": 30},
       "onAfterMoveSecondarySelfPriority": -1,
       "num": 253,
@@ -4353,7 +4019,6 @@
     "shinystone": {
       "id": "shinystone",
       "name": "Shiny Stone",
-      "spritenum": 439,
       "fling": {"basePower": 80},
       "num": 107,
       "gen": 4,
@@ -4363,7 +4028,6 @@
     "shockdrive": {
       "id": "shockdrive",
       "name": "Shock Drive",
-      "spritenum": 442,
       "onDrive": "Electric",
       "forcedForme": "Genesect-Shock",
       "itemUser": ["Genesect-Shock"],
@@ -4375,7 +4039,6 @@
     "shucaberry": {
       "id": "shucaberry",
       "name": "Shuca Berry",
-      "spritenum": 443,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Ground"},
       "num": 191,
@@ -4385,7 +4048,6 @@
     "silkscarf": {
       "id": "silkscarf",
       "name": "Silk Scarf",
-      "spritenum": 444,
       "fling": {"basePower": 10},
       "onBasePowerPriority": 6,
       "num": 251,
@@ -4395,7 +4057,6 @@
     "silverpowder": {
       "id": "silverpowder",
       "name": "SilverPowder",
-      "spritenum": 447,
       "fling": {"basePower": 10},
       "onBasePowerPriority": 6,
       "num": 222,
@@ -4405,7 +4066,6 @@
     "sitrusberry": {
       "id": "sitrusberry",
       "name": "Sitrus Berry",
-      "spritenum": 448,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Psychic"},
       "num": 158,
@@ -4415,7 +4075,6 @@
     "skullfossil": {
       "id": "skullfossil",
       "name": "Skull Fossil",
-      "spritenum": 449,
       "fling": {"basePower": 100},
       "num": 105,
       "gen": 4,
@@ -4425,7 +4084,6 @@
     "skyplate": {
       "id": "skyplate",
       "name": "Sky Plate",
-      "spritenum": 450,
       "onPlate": "Flying",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Flying",
@@ -4437,7 +4095,6 @@
     "slowbronite": {
       "id": "slowbronite",
       "name": "Slowbronite",
-      "spritenum": 620,
       "megaStone": "Slowbro-Mega",
       "megaEvolves": "Slowbro",
       "itemUser": ["Slowbro"],
@@ -4449,7 +4106,6 @@
     "smoothrock": {
       "id": "smoothrock",
       "name": "Smooth Rock",
-      "spritenum": 453,
       "fling": {"basePower": 10},
       "num": 283,
       "gen": 4,
@@ -4458,7 +4114,6 @@
     "snorliumz": {
       "id": "snorliumz",
       "name": "Snorlium Z",
-      "spritenum": 656,
       "onTakeItem": false,
       "zMove": "Pulverizing Pancake",
       "zMoveFrom": "Giga Impact",
@@ -4471,7 +4126,6 @@
     "snowball": {
       "id": "snowball",
       "name": "Snowball",
-      "spritenum": 606,
       "fling": {"basePower": 30},
       "boosts": {"atk": 1},
       "num": 649,
@@ -4481,7 +4135,6 @@
     "softsand": {
       "id": "softsand",
       "name": "Soft Sand",
-      "spritenum": 456,
       "fling": {"basePower": 10},
       "onBasePowerPriority": 6,
       "num": 237,
@@ -4491,7 +4144,6 @@
     "solganiumz": {
       "id": "solganiumz",
       "name": "Solganium Z",
-      "spritenum": 685,
       "onTakeItem": false,
       "zMove": "Searing Sunraze Smash",
       "zMoveFrom": "Sunsteel Strike",
@@ -4504,7 +4156,6 @@
     "souldew": {
       "id": "souldew",
       "name": "Soul Dew",
-      "spritenum": 459,
       "fling": {"basePower": 30},
       "onBasePowerPriority": 6,
       "itemUser": ["Latios", "Latias"],
@@ -4516,7 +4167,6 @@
     "spelltag": {
       "id": "spelltag",
       "name": "Spell Tag",
-      "spritenum": 461,
       "fling": {"basePower": 30},
       "onBasePowerPriority": 6,
       "num": 247,
@@ -4526,7 +4176,6 @@
     "spelonberry": {
       "id": "spelonberry",
       "name": "Spelon Berry",
-      "spritenum": 462,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Dark"},
       "onEat": false,
@@ -4538,7 +4187,6 @@
     "splashplate": {
       "id": "splashplate",
       "name": "Splash Plate",
-      "spritenum": 463,
       "onPlate": "Water",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Water",
@@ -4550,7 +4198,6 @@
     "spookyplate": {
       "id": "spookyplate",
       "name": "Spooky Plate",
-      "spritenum": 464,
       "onPlate": "Ghost",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Ghost",
@@ -4562,7 +4209,6 @@
     "sportball": {
       "id": "sportball",
       "name": "Sport Ball",
-      "spritenum": 465,
       "num": 499,
       "gen": 2,
       "isPokeball": true,
@@ -4571,7 +4217,6 @@
     "starfberry": {
       "id": "starfberry",
       "name": "Starf Berry",
-      "spritenum": 472,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Psychic"},
       "num": 207,
@@ -4581,7 +4226,6 @@
     "starsweet": {
       "id": "starsweet",
       "name": "Star Sweet",
-      "spritenum": 709,
       "fling": {"basePower": 10},
       "num": 1114,
       "gen": 8,
@@ -4590,7 +4234,6 @@
     "steelixite": {
       "id": "steelixite",
       "name": "Steelixite",
-      "spritenum": 621,
       "megaStone": "Steelix-Mega",
       "megaEvolves": "Steelix",
       "itemUser": ["Steelix"],
@@ -4602,7 +4245,6 @@
     "steelgem": {
       "id": "steelgem",
       "name": "Steel Gem",
-      "spritenum": 473,
       "isGem": true,
       "num": 563,
       "gen": 5,
@@ -4612,7 +4254,6 @@
     "steelmemory": {
       "id": "steelmemory",
       "name": "Steel Memory",
-      "spritenum": 675,
       "onMemory": "Steel",
       "forcedForme": "Silvally-Steel",
       "itemUser": ["Silvally-Steel"],
@@ -4623,7 +4264,6 @@
     "steeliumz": {
       "id": "steeliumz",
       "name": "Steelium Z",
-      "spritenum": 647,
       "onPlate": "Steel",
       "onTakeItem": false,
       "zMove": true,
@@ -4638,7 +4278,6 @@
       "id": "stick",
       "name": "Stick",
       "fling": {"basePower": 60},
-      "spritenum": 475,
       "itemUser": ["Farfetch'd"],
       "num": 259,
       "gen": 2,
@@ -4648,7 +4287,6 @@
     "stickybarb": {
       "id": "stickybarb",
       "name": "Sticky Barb",
-      "spritenum": 476,
       "fling": {"basePower": 80},
       "onResidualOrder": 26,
       "onResidualSubOrder": 2,
@@ -4659,7 +4297,6 @@
     "stoneplate": {
       "id": "stoneplate",
       "name": "Stone Plate",
-      "spritenum": 477,
       "onPlate": "Rock",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Rock",
@@ -4671,7 +4308,6 @@
     "strawberrysweet": {
       "id": "strawberrysweet",
       "name": "Strawberry Sweet",
-      "spritenum": 704,
       "fling": {"basePower": 10},
       "num": 1109,
       "gen": 8,
@@ -4680,7 +4316,6 @@
     "sunstone": {
       "id": "sunstone",
       "name": "Sun Stone",
-      "spritenum": 480,
       "fling": {"basePower": 30},
       "num": 80,
       "gen": 2,
@@ -4690,7 +4325,6 @@
     "swampertite": {
       "id": "swampertite",
       "name": "Swampertite",
-      "spritenum": 612,
       "megaStone": "Swampert-Mega",
       "megaEvolves": "Swampert",
       "itemUser": ["Swampert"],
@@ -4702,7 +4336,6 @@
     "sweetapple": {
       "id": "sweetapple",
       "name": "Sweet Apple",
-      "spritenum": 711,
       "fling": {"basePower": 30},
       "num": 1116,
       "gen": 8,
@@ -4711,7 +4344,6 @@
     "tamatoberry": {
       "id": "tamatoberry",
       "name": "Tamato Berry",
-      "spritenum": 486,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Psychic"},
       "onEat": false,
@@ -4722,7 +4354,6 @@
     "tangaberry": {
       "id": "tangaberry",
       "name": "Tanga Berry",
-      "spritenum": 487,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Bug"},
       "num": 194,
@@ -4732,7 +4363,6 @@
     "tapuniumz": {
       "id": "tapuniumz",
       "name": "Tapunium Z",
-      "spritenum": 653,
       "onTakeItem": false,
       "zMove": "Guardian of Alola",
       "zMoveFrom": "Nature's Madness",
@@ -4745,7 +4375,6 @@
     "tartapple": {
       "id": "tartapple",
       "name": "Tart Apple",
-      "spritenum": 712,
       "fling": {"basePower": 30},
       "num": 1117,
       "gen": 8,
@@ -4754,7 +4383,6 @@
     "terrainextender": {
       "id": "terrainextender",
       "name": "Terrain Extender",
-      "spritenum": 662,
       "fling": {"basePower": 60},
       "num": 879,
       "gen": 7,
@@ -4763,7 +4391,6 @@
     "thickclub": {
       "id": "thickclub",
       "name": "Thick Club",
-      "spritenum": 491,
       "fling": {"basePower": 90},
       "onModifyAtkPriority": 1,
       "itemUser": ["Marowak", "Cubone"],
@@ -4774,7 +4401,6 @@
     "throatspray": {
       "id": "throatspray",
       "name": "Throat Spray",
-      "spritenum": 713,
       "fling": {"basePower": 30},
       "boosts": {"spa": 1},
       "num": 1118,
@@ -4784,7 +4410,6 @@
     "thunderstone": {
       "id": "thunderstone",
       "name": "Thunder Stone",
-      "spritenum": 492,
       "fling": {"basePower": 30},
       "num": 83,
       "gen": 1,
@@ -4794,7 +4419,6 @@
     "timerball": {
       "id": "timerball",
       "name": "Timer Ball",
-      "spritenum": 494,
       "num": 10,
       "gen": 3,
       "isPokeball": true,
@@ -4803,7 +4427,6 @@
     "toxicorb": {
       "id": "toxicorb",
       "name": "Toxic Orb",
-      "spritenum": 515,
       "fling": {"basePower": 30, "status": "tox"},
       "onResidualOrder": 26,
       "onResidualSubOrder": 2,
@@ -4814,7 +4437,6 @@
     "toxicplate": {
       "id": "toxicplate",
       "name": "Toxic Plate",
-      "spritenum": 516,
       "onPlate": "Poison",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Poison",
@@ -4827,7 +4449,6 @@
       "id": "tr00",
       "name": "TR00",
       "fling": {"basePower": 10},
-      "spritenum": 721,
       "num": 1130,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Swords Dance. One use."
@@ -4836,7 +4457,6 @@
       "id": "tr01",
       "name": "TR01",
       "fling": {"basePower": 85},
-      "spritenum": 721,
       "num": 1131,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Body Slam. One use."
@@ -4845,7 +4465,6 @@
       "id": "tr02",
       "name": "TR02",
       "fling": {"basePower": 90},
-      "spritenum": 730,
       "num": 1132,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Flamethrower. One use."
@@ -4854,7 +4473,6 @@
       "id": "tr03",
       "name": "TR03",
       "fling": {"basePower": 110},
-      "spritenum": 731,
       "num": 1133,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Hydro Pump. One use."
@@ -4863,7 +4481,6 @@
       "id": "tr04",
       "name": "TR04",
       "fling": {"basePower": 90},
-      "spritenum": 731,
       "num": 1134,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Surf. One use."
@@ -4872,7 +4489,6 @@
       "id": "tr05",
       "name": "TR05",
       "fling": {"basePower": 90},
-      "spritenum": 735,
       "num": 1135,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Ice Beam. One use."
@@ -4881,7 +4497,6 @@
       "id": "tr06",
       "name": "TR06",
       "fling": {"basePower": 110},
-      "spritenum": 735,
       "num": 1136,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Blizzard. One use."
@@ -4890,7 +4505,6 @@
       "id": "tr07",
       "name": "TR07",
       "fling": {"basePower": 10},
-      "spritenum": 722,
       "num": 1137,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Low Kick. One use."
@@ -4899,7 +4513,6 @@
       "id": "tr08",
       "name": "TR08",
       "fling": {"basePower": 90},
-      "spritenum": 733,
       "num": 1138,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Thunderbolt. One use."
@@ -4908,7 +4521,6 @@
       "id": "tr09",
       "name": "TR09",
       "fling": {"basePower": 110},
-      "spritenum": 733,
       "num": 1139,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Thunder. One use."
@@ -4917,7 +4529,6 @@
       "id": "tr10",
       "name": "TR10",
       "fling": {"basePower": 100},
-      "spritenum": 725,
       "num": 1140,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Earthquake. One use."
@@ -4926,7 +4537,6 @@
       "id": "tr11",
       "name": "TR11",
       "fling": {"basePower": 90},
-      "spritenum": 734,
       "num": 1141,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Psychic. One use."
@@ -4935,7 +4545,6 @@
       "id": "tr12",
       "name": "TR12",
       "fling": {"basePower": 10},
-      "spritenum": 734,
       "num": 1142,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Agility. One use."
@@ -4944,7 +4553,6 @@
       "id": "tr13",
       "name": "TR13",
       "fling": {"basePower": 10},
-      "spritenum": 721,
       "num": 1143,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Focus Energy. One use."
@@ -4953,7 +4561,6 @@
       "id": "tr14",
       "name": "TR14",
       "fling": {"basePower": 10},
-      "spritenum": 721,
       "num": 1144,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Metronome. One use."
@@ -4962,7 +4569,6 @@
       "id": "tr15",
       "name": "TR15",
       "fling": {"basePower": 110},
-      "spritenum": 730,
       "num": 1145,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Fire Blast. One use."
@@ -4971,7 +4577,6 @@
       "id": "tr16",
       "name": "TR16",
       "fling": {"basePower": 80},
-      "spritenum": 731,
       "num": 1146,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Waterfall. One use."
@@ -4980,7 +4585,6 @@
       "id": "tr17",
       "name": "TR17",
       "fling": {"basePower": 10},
-      "spritenum": 734,
       "num": 1147,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Amnesia. One use."
@@ -4989,7 +4593,6 @@
       "id": "tr18",
       "name": "TR18",
       "fling": {"basePower": 80},
-      "spritenum": 727,
       "num": 1148,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Leech Life. One use."
@@ -4998,7 +4601,6 @@
       "id": "tr19",
       "name": "TR19",
       "fling": {"basePower": 80},
-      "spritenum": 721,
       "num": 1149,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Tri Attack. One use."
@@ -5007,7 +4609,6 @@
       "id": "tr20",
       "name": "TR20",
       "fling": {"basePower": 10},
-      "spritenum": 721,
       "num": 1150,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Substitute. One use."
@@ -5016,7 +4617,6 @@
       "id": "tr21",
       "name": "TR21",
       "fling": {"basePower": 10},
-      "spritenum": 722,
       "num": 1151,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Reversal. One use."
@@ -5025,7 +4625,6 @@
       "id": "tr22",
       "name": "TR22",
       "fling": {"basePower": 90},
-      "spritenum": 724,
       "num": 1152,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Sludge Bomb. One use."
@@ -5034,7 +4633,6 @@
       "id": "tr23",
       "name": "TR23",
       "fling": {"basePower": 10},
-      "spritenum": 725,
       "num": 1153,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Spikes. One use."
@@ -5043,7 +4641,6 @@
       "id": "tr24",
       "name": "TR24",
       "fling": {"basePower": 120},
-      "spritenum": 736,
       "num": 1154,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Outrage. One use."
@@ -5052,7 +4649,6 @@
       "id": "tr25",
       "name": "TR25",
       "fling": {"basePower": 80},
-      "spritenum": 734,
       "num": 1155,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Psyshock. One use."
@@ -5061,7 +4657,6 @@
       "id": "tr26",
       "name": "TR26",
       "fling": {"basePower": 10},
-      "spritenum": 721,
       "num": 1156,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Endure. One use."
@@ -5070,7 +4665,6 @@
       "id": "tr27",
       "name": "TR27",
       "fling": {"basePower": 10},
-      "spritenum": 721,
       "num": 1157,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Sleep Talk. One use."
@@ -5079,7 +4673,6 @@
       "id": "tr28",
       "name": "TR28",
       "fling": {"basePower": 120},
-      "spritenum": 727,
       "num": 1158,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Megahorn. One use."
@@ -5088,7 +4681,6 @@
       "id": "tr29",
       "name": "TR29",
       "fling": {"basePower": 10},
-      "spritenum": 721,
       "num": 1159,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Baton Pass. One use."
@@ -5097,7 +4689,6 @@
       "id": "tr30",
       "name": "TR30",
       "fling": {"basePower": 10},
-      "spritenum": 721,
       "num": 1160,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Encore. One use."
@@ -5106,7 +4697,6 @@
       "id": "tr31",
       "name": "TR31",
       "fling": {"basePower": 100},
-      "spritenum": 729,
       "num": 1161,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Iron Tail. One use."
@@ -5115,7 +4705,6 @@
       "id": "tr32",
       "name": "TR32",
       "fling": {"basePower": 80},
-      "spritenum": 737,
       "num": 1162,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Crunch. One use."
@@ -5124,7 +4713,6 @@
       "id": "tr33",
       "name": "TR33",
       "fling": {"basePower": 80},
-      "spritenum": 728,
       "num": 1163,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Shadow Ball. One use."
@@ -5133,7 +4721,6 @@
       "id": "tr34",
       "name": "TR34",
       "fling": {"basePower": 120},
-      "spritenum": 734,
       "num": 1164,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Future Sight. One use."
@@ -5142,7 +4729,6 @@
       "id": "tr35",
       "name": "TR35",
       "fling": {"basePower": 90},
-      "spritenum": 721,
       "num": 1165,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Uproar. One use."
@@ -5151,7 +4737,6 @@
       "id": "tr36",
       "name": "TR36",
       "fling": {"basePower": 95},
-      "spritenum": 730,
       "num": 1166,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Heat Wave. One use."
@@ -5160,7 +4745,6 @@
       "id": "tr37",
       "name": "TR37",
       "fling": {"basePower": 10},
-      "spritenum": 737,
       "num": 1167,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Taunt. One use."
@@ -5169,7 +4753,6 @@
       "id": "tr38",
       "name": "TR38",
       "fling": {"basePower": 10},
-      "spritenum": 734,
       "num": 1168,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Trick. One use."
@@ -5178,7 +4761,6 @@
       "id": "tr39",
       "name": "TR39",
       "fling": {"basePower": 120},
-      "spritenum": 722,
       "num": 1169,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Superpower. One use."
@@ -5187,7 +4769,6 @@
       "id": "tr40",
       "name": "TR40",
       "fling": {"basePower": 10},
-      "spritenum": 734,
       "num": 1170,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Skill Swap. One use."
@@ -5196,7 +4777,6 @@
       "id": "tr41",
       "name": "TR41",
       "fling": {"basePower": 85},
-      "spritenum": 730,
       "num": 1171,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Blaze Kick. One use."
@@ -5205,7 +4785,6 @@
       "id": "tr42",
       "name": "TR42",
       "fling": {"basePower": 90},
-      "spritenum": 721,
       "num": 1172,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Hyper Voice. One use."
@@ -5214,7 +4793,6 @@
       "id": "tr43",
       "name": "TR43",
       "fling": {"basePower": 130},
-      "spritenum": 730,
       "num": 1173,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Overheat. One use."
@@ -5223,7 +4801,6 @@
       "id": "tr44",
       "name": "TR44",
       "fling": {"basePower": 10},
-      "spritenum": 734,
       "num": 1174,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Cosmic Power. One use."
@@ -5232,7 +4809,6 @@
       "id": "tr45",
       "name": "TR45",
       "fling": {"basePower": 90},
-      "spritenum": 731,
       "num": 1175,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Muddy Water. One use."
@@ -5241,7 +4817,6 @@
       "id": "tr46",
       "name": "TR46",
       "fling": {"basePower": 10},
-      "spritenum": 729,
       "num": 1176,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Iron Defense. One use."
@@ -5250,7 +4825,6 @@
       "id": "tr47",
       "name": "TR47",
       "fling": {"basePower": 80},
-      "spritenum": 736,
       "num": 1177,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Dragon Claw. One use."
@@ -5259,7 +4833,6 @@
       "id": "tr48",
       "name": "TR48",
       "fling": {"basePower": 10},
-      "spritenum": 722,
       "num": 1178,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Bulk Up. One use."
@@ -5268,7 +4841,6 @@
       "id": "tr49",
       "name": "TR49",
       "fling": {"basePower": 10},
-      "spritenum": 734,
       "num": 1179,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Calm Mind. One use."
@@ -5277,7 +4849,6 @@
       "id": "tr50",
       "name": "TR50",
       "fling": {"basePower": 90},
-      "spritenum": 732,
       "num": 1180,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Leaf Blade. One use."
@@ -5286,7 +4857,6 @@
       "id": "tr51",
       "name": "TR51",
       "fling": {"basePower": 10},
-      "spritenum": 736,
       "num": 1181,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Dragon Dance. One use."
@@ -5295,7 +4865,6 @@
       "id": "tr52",
       "name": "TR52",
       "fling": {"basePower": 10},
-      "spritenum": 729,
       "num": 1182,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Gyro Ball. One use."
@@ -5304,7 +4873,6 @@
       "id": "tr53",
       "name": "TR53",
       "fling": {"basePower": 120},
-      "spritenum": 722,
       "num": 1183,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Close Combat. One use."
@@ -5313,7 +4881,6 @@
       "id": "tr54",
       "name": "TR54",
       "fling": {"basePower": 10},
-      "spritenum": 724,
       "num": 1184,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Toxic Spikes. One use."
@@ -5322,7 +4889,6 @@
       "id": "tr55",
       "name": "TR55",
       "fling": {"basePower": 120},
-      "spritenum": 730,
       "num": 1185,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Flare Blitz. One use."
@@ -5331,7 +4897,6 @@
       "id": "tr56",
       "name": "TR56",
       "fling": {"basePower": 80},
-      "spritenum": 722,
       "num": 1186,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Aura Sphere. One use."
@@ -5340,7 +4905,6 @@
       "id": "tr57",
       "name": "TR57",
       "fling": {"basePower": 80},
-      "spritenum": 724,
       "num": 1187,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Poison Jab. One use."
@@ -5349,7 +4913,6 @@
       "id": "tr58",
       "name": "TR58",
       "fling": {"basePower": 80},
-      "spritenum": 737,
       "num": 1188,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Dark Pulse. One use."
@@ -5358,7 +4921,6 @@
       "id": "tr59",
       "name": "TR59",
       "fling": {"basePower": 80},
-      "spritenum": 732,
       "num": 1189,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Seed Bomb. One use."
@@ -5367,7 +4929,6 @@
       "id": "tr60",
       "name": "TR60",
       "fling": {"basePower": 80},
-      "spritenum": 727,
       "num": 1190,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move X-Scissor. One use."
@@ -5376,7 +4937,6 @@
       "id": "tr61",
       "name": "TR61",
       "fling": {"basePower": 90},
-      "spritenum": 727,
       "num": 1191,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Bug Buzz. One use."
@@ -5385,7 +4945,6 @@
       "id": "tr62",
       "name": "TR62",
       "fling": {"basePower": 85},
-      "spritenum": 736,
       "num": 1192,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Dragon Pulse. One use."
@@ -5394,7 +4953,6 @@
       "id": "tr63",
       "name": "TR63",
       "fling": {"basePower": 80},
-      "spritenum": 726,
       "num": 1193,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Power Gem. One use."
@@ -5403,7 +4961,6 @@
       "id": "tr64",
       "name": "TR64",
       "fling": {"basePower": 120},
-      "spritenum": 722,
       "num": 1194,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Focus Blast. One use."
@@ -5412,7 +4969,6 @@
       "id": "tr65",
       "name": "TR65",
       "fling": {"basePower": 90},
-      "spritenum": 732,
       "num": 1195,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Energy Ball. One use."
@@ -5421,7 +4977,6 @@
       "id": "tr66",
       "name": "TR66",
       "fling": {"basePower": 120},
-      "spritenum": 723,
       "num": 1196,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Brave Bird. One use."
@@ -5430,7 +4985,6 @@
       "id": "tr67",
       "name": "TR67",
       "fling": {"basePower": 90},
-      "spritenum": 725,
       "num": 1197,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Earth Power. One use."
@@ -5439,7 +4993,6 @@
       "id": "tr68",
       "name": "TR68",
       "fling": {"basePower": 10},
-      "spritenum": 737,
       "num": 1198,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Nasty Plot. One use."
@@ -5448,7 +5001,6 @@
       "id": "tr69",
       "name": "TR69",
       "fling": {"basePower": 80},
-      "spritenum": 734,
       "num": 1199,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Zen Headbutt. One use."
@@ -5457,7 +5009,6 @@
       "id": "tr70",
       "name": "TR70",
       "fling": {"basePower": 80},
-      "spritenum": 729,
       "num": 1200,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Flash Cannon. One use."
@@ -5466,7 +5017,6 @@
       "id": "tr71",
       "name": "TR71",
       "fling": {"basePower": 130},
-      "spritenum": 732,
       "num": 1201,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Leaf Storm. One use."
@@ -5475,7 +5025,6 @@
       "id": "tr72",
       "name": "TR72",
       "fling": {"basePower": 120},
-      "spritenum": 732,
       "num": 1202,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Power Whip. One use."
@@ -5484,7 +5033,6 @@
       "id": "tr73",
       "name": "TR73",
       "fling": {"basePower": 120},
-      "spritenum": 724,
       "num": 1203,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Gunk Shot. One use."
@@ -5493,7 +5041,6 @@
       "id": "tr74",
       "name": "TR74",
       "fling": {"basePower": 80},
-      "spritenum": 729,
       "num": 1204,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Iron Head. One use."
@@ -5502,7 +5049,6 @@
       "id": "tr75",
       "name": "TR75",
       "fling": {"basePower": 100},
-      "spritenum": 726,
       "num": 1205,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Stone Edge. One use."
@@ -5511,7 +5057,6 @@
       "id": "tr76",
       "name": "TR76",
       "fling": {"basePower": 10},
-      "spritenum": 726,
       "num": 1206,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Stealth Rock. One use."
@@ -5520,7 +5065,6 @@
       "id": "tr77",
       "name": "TR77",
       "fling": {"basePower": 10},
-      "spritenum": 732,
       "num": 1207,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Grass Knot. One use."
@@ -5529,7 +5073,6 @@
       "id": "tr78",
       "name": "TR78",
       "fling": {"basePower": 95},
-      "spritenum": 724,
       "num": 1208,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Sludge Wave. One use."
@@ -5538,7 +5081,6 @@
       "id": "tr79",
       "name": "TR79",
       "fling": {"basePower": 10},
-      "spritenum": 729,
       "num": 1209,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Heavy Slam. One use."
@@ -5547,7 +5089,6 @@
       "id": "tr80",
       "name": "TR80",
       "fling": {"basePower": 10},
-      "spritenum": 733,
       "num": 1210,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Electro Ball. One use."
@@ -5556,7 +5097,6 @@
       "id": "tr81",
       "name": "TR81",
       "fling": {"basePower": 95},
-      "spritenum": 737,
       "num": 1211,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Foul Play. One use."
@@ -5565,7 +5105,6 @@
       "id": "tr82",
       "name": "TR82",
       "fling": {"basePower": 20},
-      "spritenum": 734,
       "num": 1212,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Stored Power. One use."
@@ -5574,7 +5113,6 @@
       "id": "tr83",
       "name": "TR83",
       "fling": {"basePower": 10},
-      "spritenum": 734,
       "num": 1213,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Ally Switch. One use."
@@ -5583,7 +5121,6 @@
       "id": "tr84",
       "name": "TR84",
       "fling": {"basePower": 80},
-      "spritenum": 731,
       "num": 1214,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Scald. One use."
@@ -5592,7 +5129,6 @@
       "id": "tr85",
       "name": "TR85",
       "fling": {"basePower": 10},
-      "spritenum": 721,
       "num": 1215,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Work Up. One use."
@@ -5601,7 +5137,6 @@
       "id": "tr86",
       "name": "TR86",
       "fling": {"basePower": 90},
-      "spritenum": 733,
       "num": 1216,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Wild Charge. One use."
@@ -5610,7 +5145,6 @@
       "id": "tr87",
       "name": "TR87",
       "fling": {"basePower": 80},
-      "spritenum": 725,
       "num": 1217,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Drill Run. One use."
@@ -5619,7 +5153,6 @@
       "id": "tr88",
       "name": "TR88",
       "fling": {"basePower": 10},
-      "spritenum": 730,
       "num": 1218,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Heat Crash. One use."
@@ -5628,7 +5161,6 @@
       "id": "tr89",
       "name": "TR89",
       "fling": {"basePower": 110},
-      "spritenum": 723,
       "num": 1219,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Hurricane. One use."
@@ -5637,7 +5169,6 @@
       "id": "tr90",
       "name": "TR90",
       "fling": {"basePower": 90},
-      "spritenum": 738,
       "num": 1220,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Play Rough. One use."
@@ -5646,7 +5177,6 @@
       "id": "tr91",
       "name": "TR91",
       "fling": {"basePower": 10},
-      "spritenum": 724,
       "num": 1221,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Venom Drench. One use."
@@ -5655,7 +5185,6 @@
       "id": "tr92",
       "name": "TR92",
       "fling": {"basePower": 80},
-      "spritenum": 738,
       "num": 1222,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Dazzling Gleam. One use."
@@ -5664,7 +5193,6 @@
       "id": "tr93",
       "name": "TR93",
       "fling": {"basePower": 85},
-      "spritenum": 737,
       "num": 1223,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Darkest Lariat. One use."
@@ -5673,7 +5201,6 @@
       "id": "tr94",
       "name": "TR94",
       "fling": {"basePower": 95},
-      "spritenum": 725,
       "num": 1224,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move High Horsepower. One use."
@@ -5682,7 +5209,6 @@
       "id": "tr95",
       "name": "TR95",
       "fling": {"basePower": 80},
-      "spritenum": 737,
       "num": 1225,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Throat Chop. One use."
@@ -5691,7 +5217,6 @@
       "id": "tr96",
       "name": "TR96",
       "fling": {"basePower": 90},
-      "spritenum": 727,
       "num": 1226,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Pollen Puff. One use."
@@ -5700,7 +5225,6 @@
       "id": "tr97",
       "name": "TR97",
       "fling": {"basePower": 85},
-      "spritenum": 734,
       "num": 1227,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Psychic Fangs. One use."
@@ -5709,7 +5233,6 @@
       "id": "tr98",
       "name": "TR98",
       "fling": {"basePower": 85},
-      "spritenum": 731,
       "num": 1228,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Liquidation. One use."
@@ -5718,7 +5241,6 @@
       "id": "tr99",
       "name": "TR99",
       "fling": {"basePower": 80},
-      "spritenum": 722,
       "num": 1229,
       "gen": 8,
       "desc": "Teaches certain Pokemon the move Body Press. One use."
@@ -5726,7 +5248,6 @@
     "twistedspoon": {
       "id": "twistedspoon",
       "name": "Twisted Spoon",
-      "spritenum": 520,
       "fling": {"basePower": 30},
       "onBasePowerPriority": 6,
       "num": 248,
@@ -5736,7 +5257,6 @@
     "tyranitarite": {
       "id": "tyranitarite",
       "name": "Tyranitarite",
-      "spritenum": 607,
       "megaStone": "Tyranitar-Mega",
       "megaEvolves": "Tyranitar",
       "itemUser": ["Tyranitar"],
@@ -5748,7 +5268,6 @@
     "ultraball": {
       "id": "ultraball",
       "name": "Ultra Ball",
-      "spritenum": 521,
       "num": 2,
       "gen": 1,
       "isPokeball": true,
@@ -5757,7 +5276,6 @@
     "ultranecroziumz": {
       "id": "ultranecroziumz",
       "name": "Ultranecrozium Z",
-      "spritenum": 687,
       "onTakeItem": false,
       "zMove": "Light That Burns the Sky",
       "zMoveFrom": "Photon Geyser",
@@ -5770,7 +5288,6 @@
     "upgrade": {
       "id": "upgrade",
       "name": "Up-Grade",
-      "spritenum": 523,
       "fling": {"basePower": 30},
       "num": 252,
       "gen": 2,
@@ -5779,7 +5296,6 @@
     "utilityumbrella": {
       "id": "utilityumbrella",
       "name": "Utility Umbrella",
-      "spritenum": 718,
       "fling": {"basePower": 60},
       "num": 1123,
       "gen": 8,
@@ -5789,7 +5305,6 @@
     "venusaurite": {
       "id": "venusaurite",
       "name": "Venusaurite",
-      "spritenum": 608,
       "megaStone": "Venusaur-Mega",
       "megaEvolves": "Venusaur",
       "itemUser": ["Venusaur"],
@@ -5801,7 +5316,6 @@
     "wacanberry": {
       "id": "wacanberry",
       "name": "Wacan Berry",
-      "spritenum": 526,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Electric"},
       "num": 186,
@@ -5811,7 +5325,6 @@
     "watergem": {
       "id": "watergem",
       "name": "Water Gem",
-      "spritenum": 528,
       "isGem": true,
       "num": 549,
       "gen": 5,
@@ -5821,7 +5334,6 @@
     "watermemory": {
       "id": "watermemory",
       "name": "Water Memory",
-      "spritenum": 677,
       "onMemory": "Water",
       "forcedForme": "Silvally-Water",
       "itemUser": ["Silvally-Water"],
@@ -5832,7 +5344,6 @@
     "waterstone": {
       "id": "waterstone",
       "name": "Water Stone",
-      "spritenum": 529,
       "fling": {"basePower": 30},
       "num": 84,
       "gen": 1,
@@ -5842,7 +5353,6 @@
     "wateriumz": {
       "id": "wateriumz",
       "name": "Waterium Z",
-      "spritenum": 633,
       "onPlate": "Water",
       "onTakeItem": false,
       "zMove": true,
@@ -5856,7 +5366,6 @@
     "watmelberry": {
       "id": "watmelberry",
       "name": "Watmel Berry",
-      "spritenum": 530,
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Fire"},
       "onEat": false,
@@ -5868,7 +5377,6 @@
     "waveincense": {
       "id": "waveincense",
       "name": "Wave Incense",
-      "spritenum": 531,
       "fling": {"basePower": 10},
       "onBasePowerPriority": 6,
       "num": 317,
@@ -5878,7 +5386,6 @@
     "weaknesspolicy": {
       "id": "weaknesspolicy",
       "name": "Weakness Policy",
-      "spritenum": 609,
       "fling": {"basePower": 80},
       "onHitPriority": 1,
       "boosts": {"atk": 2, "spa": 2},
@@ -5889,7 +5396,6 @@
     "wepearberry": {
       "id": "wepearberry",
       "name": "Wepear Berry",
-      "spritenum": 533,
       "isBerry": true,
       "naturalGift": {"basePower": 90, "type": "Electric"},
       "onEat": false,
@@ -5901,7 +5407,6 @@
     "whippeddream": {
       "id": "whippeddream",
       "name": "Whipped Dream",
-      "spritenum": 692,
       "fling": {"basePower": 80},
       "num": 646,
       "gen": 6,
@@ -5910,7 +5415,6 @@
     "whiteherb": {
       "id": "whiteherb",
       "name": "White Herb",
-      "spritenum": 535,
       "fling": {"basePower": 10},
       "num": 214,
       "gen": 3,
@@ -5919,7 +5423,6 @@
     "widelens": {
       "id": "widelens",
       "name": "Wide Lens",
-      "spritenum": 537,
       "fling": {"basePower": 10},
       "num": 265,
       "gen": 4,
@@ -5928,7 +5431,6 @@
     "wikiberry": {
       "id": "wikiberry",
       "name": "Wiki Berry",
-      "spritenum": 538,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Rock"},
       "num": 160,
@@ -5938,7 +5440,6 @@
     "wiseglasses": {
       "id": "wiseglasses",
       "name": "Wise Glasses",
-      "spritenum": 539,
       "fling": {"basePower": 10},
       "onBasePowerPriority": 6,
       "num": 267,
@@ -5948,7 +5449,6 @@
     "yacheberry": {
       "id": "yacheberry",
       "name": "Yache Berry",
-      "spritenum": 567,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Ice"},
       "num": 188,
@@ -5958,7 +5458,6 @@
     "zapplate": {
       "id": "zapplate",
       "name": "Zap Plate",
-      "spritenum": 572,
       "onPlate": "Electric",
       "onBasePowerPriority": 6,
       "forcedForme": "Arceus-Electric",
@@ -5970,7 +5469,6 @@
     "zoomlens": {
       "id": "zoomlens",
       "name": "Zoom Lens",
-      "spritenum": 574,
       "fling": {"basePower": 10},
       "num": 276,
       "gen": 4,
@@ -5979,7 +5477,6 @@
     "berserkgene": {
       "id": "berserkgene",
       "name": "Berserk Gene",
-      "spritenum": 388,
       "num": 0,
       "gen": 2,
       "isNonstandard": "Past",
@@ -5988,7 +5485,6 @@
     "berry": {
       "id": "berry",
       "name": "Berry",
-      "spritenum": 319,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Poison"},
       "onResidualOrder": 5,
@@ -6000,7 +5496,6 @@
     "bitterberry": {
       "id": "bitterberry",
       "name": "Bitter Berry",
-      "spritenum": 334,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Ground"},
       "num": 156,
@@ -6011,7 +5506,6 @@
     "burntberry": {
       "id": "burntberry",
       "name": "Burnt Berry",
-      "spritenum": 13,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Ice"},
       "num": 153,
@@ -6022,7 +5516,6 @@
     "goldberry": {
       "id": "goldberry",
       "name": "Gold Berry",
-      "spritenum": 448,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Psychic"},
       "onResidualOrder": 5,
@@ -6034,7 +5527,6 @@
     "iceberry": {
       "id": "iceberry",
       "name": "Ice Berry",
-      "spritenum": 381,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Grass"},
       "num": 152,
@@ -6045,7 +5537,6 @@
     "mintberry": {
       "id": "mintberry",
       "name": "Mint Berry",
-      "spritenum": 65,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Water"},
       "num": 150,
@@ -6056,7 +5547,6 @@
     "miracleberry": {
       "id": "miracleberry",
       "name": "Miracle Berry",
-      "spritenum": 262,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Flying"},
       "num": 157,
@@ -6067,7 +5557,6 @@
     "mysteryberry": {
       "id": "mysteryberry",
       "name": "Mystery Berry",
-      "spritenum": 244,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Fighting"},
       "num": 154,
@@ -6078,7 +5567,6 @@
     "pinkbow": {
       "id": "pinkbow",
       "name": "Pink Bow",
-      "spritenum": 444,
       "num": 251,
       "gen": 2,
       "isNonstandard": "Past",
@@ -6087,7 +5575,6 @@
     "polkadotbow": {
       "id": "polkadotbow",
       "name": "Polkadot Bow",
-      "spritenum": 444,
       "num": 251,
       "gen": 2,
       "isNonstandard": "Past",
@@ -6096,7 +5583,6 @@
     "przcureberry": {
       "id": "przcureberry",
       "name": "PRZ Cure Berry",
-      "spritenum": 63,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Fire"},
       "num": 149,
@@ -6107,7 +5593,6 @@
     "psncureberry": {
       "id": "psncureberry",
       "name": "PSN Cure Berry",
-      "spritenum": 333,
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Electric"},
       "num": 151,
@@ -6118,7 +5603,6 @@
     "crucibellite": {
       "id": "crucibellite",
       "name": "Crucibellite",
-      "spritenum": 577,
       "megaStone": "Crucibelle-Mega",
       "megaEvolves": "Crucibelle",
       "itemUser": ["Crucibelle"],

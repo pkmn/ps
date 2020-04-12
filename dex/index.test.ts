@@ -41,7 +41,7 @@ describe('Dex', () => {
       // Alola (18) + Totem (12) + Pikachu (7) - Pikachu (6) + Greninja (1) + Zygarde (2) +
       // Oricorio (3) + Lycanroc (2) + Wishiwashi (1) + Silvally (17) + Minior (1) +
       // Mimikyu (1) + Necrozma (3) [Magearna (1) + LGPE Starters/Meltan/Melmetal (4)]
-      formes += 18 + 12 + 7 - 6 + 1 + 2 + 3 + 2 + 1 + 17 + 1 + 1 + 3 - 1; // FIXME Minior-Meteor
+      formes += 18 + 12 + 7 - 6 + 1 + 2 + 3 + 2 + 1 + 17 + 1 + 1 + 3;
       expect(counts(7)).toEqual({species: 807, formes});
       // GMax (26) + Silvally (17) + Rotom (5) + Basculin (1) + Meowstic (1) +
       // Aegislash (1) + Pumpkaboo (3) + Gourgeist (3) + Pikachu (7) + Galar (14) +
