@@ -96,7 +96,7 @@ The recommended way of using `@pkmn/dex` in a web browser is to **configure your
 application. If you do not use a bundler, a convenience `production.min.js` is included in the
 package. You simply need to depend on `./node_modules/@pkmn/dex/production.min.js` in a `script`
 tag (which is what the unpkg shortcut above is doing), after which **`Dex` will be accessible as a
-globals.**
+global.**
 
 ## Limitations
 

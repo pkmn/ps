@@ -31,16 +31,17 @@ and is not required at runtime):
 
 ### `Generations`
 
-The `Generations` object provides an alternative, higher-level data API than `Dex` which irons out
+The `Generations` object provides an alternative, higher-level data API to `Dex` which irons out
 a couple of Pokémon Showdown quirks. While this interface is far from the
 [optimal design](#limitations), it aims to be slightly more ergonomic and intuitive to use than
 `Dex`.
 
 - data returned from a `Generation`s methods are constrained to the generation in question. Data
   which does not exist, only exists in later gens, or is illegal or non standard will not be
-  returned.
+  returned which means you do not need filter data before using it.
 - `undefined` is returned from functions as opposed to an object with its `exists` field set to
-  `false`.
+  `false`. `undefined` fails loudly, can be checked statically by Typescript and allows for more
+  efficient implementation under the hood.
 - `Dex#getForme` and `Dex#getOutOfBattleSpecies` renamed to `Species#getFormeName` and
   `Species#getOutOfBattleSpeciesName`, as they actually return a string display name.
 - methods are moved to more intuitive locations than all existing on `Dex`
@@ -63,20 +64,13 @@ The recommended way of using `@pkmn/data` in a web browser is to **configure you
 ([Webpack][6], [Rollup][7], [Parcel][8], etc) to minimize it and package it with the rest of your
 application. If you do not use a bundler, a convenience `production.min.js` is included in the
 package. You simply need to depend on `./node_modules/@pkmn/data/production.min.js` in a `script`
-tag (which is what the unpkg shortcut above is doing), after which **`Dex` and
-`Generations` will be accessible as globals.**
+tag (which is what the unpkg shortcut above is doing), after which **`Generations` will be
+accessible as a global.**
 
 ## Limitations
 
-This package is heavily constrained by Pokémon Showdown's data layer - staying as close as possible
-to the Pokémon Showdown client and server repositories' `Dex` APIs (whether or not they are
-desirable) is  primary feature for compatibility purposes. However, this package's `Dex` interface
-will break compatibility with Pokémon Showdown to:
-
-- attempt to unify the `client` and `server` logic to provide a more consistent API
-- provide an API that works for as broad a range of clients as possible while still maintaining the
- 'spirit' of Pokémon Showdown's interface
-
+This package is heavily constrained by Pokémon Showdown's data layer - because it simply serves as
+a wrapper to the `Dex` it cannot doing anything too ambitious or making suitable optimizations.
 As such, this package does **not** attempt to provide the 'ideal' data layer for any and all
 Pokémon projects - please see [`@smogon/data`][4] for a project attempting to go after the more
 ambitious goal of providing a powerful, type-safe and well thought out API that allows clients to
