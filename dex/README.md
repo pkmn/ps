@@ -55,9 +55,9 @@ APIs:
 The most important breaking change is that **`getLearnsets` has been made `async`** and its API has
 been changed to be more generally useful. In [an ideal api](#limitations) we wouldn't fetch data
 we don't need during startup, but to maximize compatibility with Pokémon Showdown only the
-`getLearnsets` method call from `Dex` has been made async. Compressed, all of the data files
-amount to ~381KB, but **`data/learnsets.json` takes up ~148KB just on its own**. Only loading this
-data on demand helps make the loading experience more reasonable given the constraints of this
+`getLearnsets` method call from `Dex` has been made async. Compressed, all of the data files without
+learnsets to ~287KB, while **`data/learnsets.json` takes up ~384KB just on its own**. Only loading
+this data on demand helps make the loading experience more reasonable given the constraints of this
 package.
 
 ```ts
