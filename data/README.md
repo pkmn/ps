@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/@pkmn/data.svg)](https://www.npmjs.com/package/@pkmn/data)&nbsp;
 
-A forked implementation of [smogon/pokemon-showdown-client][3]'s data layer with an alternative API.
+A higher level data API wrapper compatible with [`@pkmn/sim`][2] and [`@pkmn/dex`][11].
 
 ## Installation
 
@@ -18,16 +18,28 @@ a convenient way to get started, simply depend on a transpiled and minified vers
 <script src="https://unpkg.com/@pkmn/data"></script>
 ```
 
-*In this example, [`@pkmn/dex`][13] is included as well, because `@pkmn/data` requires a `Dex`
+*In this example, [`@pkmn/dex`][11] is included as well, because `@pkmn/data` requires a `Dex`
 implementation to be useful.*
 
 ## Usage
 
-FIXME all below
+This package can be used to wrap an implementation of the Pokémon Showdown [`@pkmn/dex-types`][12]
+to provide an alternative data layer API. This package is not generally useful without a runtime
+dependency - you must bring your own data layer. **You almost certainly should be using `@pkmn/dex`
+instead of `@pkmn/sim` unless you know what you are doing**.
 
-This package can be used as a data layer within Pokémon applications **without any runtime
-dependencies** (this package only depends on `@pkmn/types` which consists of type definitions only
-and is not required at runtime):
+```ts
+import * as dex from '@pkmn/dex';
+import * as sim from '@pkmn/sim';
+import {Dex} from '@pkmn/dex-types';
+import {Generations} from '@pkmn/data';
+
+// dex.Dex implements the @pkmn/dex-types's Dex directly, so this just works without complaints
+const dexGens = new Generations(dex.Dex);
+
+// All of the types from sim.Dex don't actually line up perfectly, but casting sidesteps that
+const simGens = new Generations(sim.Dex as uknown as Dex);
+```
 
 ### `Generations`
 
@@ -52,11 +64,16 @@ a couple of Pokémon Showdown quirks. While this interface is far from the
 - a stats API including calculation logic is provided via `Generation#stats`.
 
 ```ts
+import {Dex} from '@pkmn/dex';
 import {Generations} from '@pkmn/data';
 
-TODO
-
+const gens = new Generations(Dex);
+assert(gens.get(1).types.get('Psychic').damageTaken['Ghost'] === 0);
+assert(gens.get(5).species.get('Gengar').hasAbility('Levitate'));
+assert(Array.from(gens.get(1).species).length === 151);
 ```
+
+Please see the [unit tests][13] for more comprehensive usage examples.
 
 ### Browser
 
@@ -82,9 +99,8 @@ This package is distributed under the terms of the [MIT License][1].
 Substantial amounts of the code have been derived from the portions of Guangcong
 Luo's [Pokémon Showdown client][3] which are distributed under the [MIT License][10].
 
-  [0]: https://github.com/pkmn/ps/blob/master/img/
   [1]: https://github.com/pkmn/ps/blob/master/data/LICENSE
-  [2]: https://github.com/smogon/pokemon-showdown
+  [2]: https://github.com/pkmn/ps/blob/master/sim
   [3]: https://github.com/smogon/pokemon-showdown-client
   [4]: https://github.com/smogon/data
   [5]: https://unpkg.com/
@@ -93,7 +109,6 @@ Luo's [Pokémon Showdown client][3] which are distributed under the [MIT License
   [8]: https://parceljs.org/
   [9]: https://pkmn.cc/ps-core-design
   [10]: https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle.ts#L6
-  [11]: https://github.com/GoogleChromeLabs/json-parse-benchmark
-  [12]: https://github.com/pkmn/ps/blob/master/sets/
-  [13]: https://github.com/pkmn/ps/blob/master/img/
-
+  [11]: https://github.com/pkmn/ps/blob/master/dex
+  [12]: https://github.com/pkmn/ps/blob/master/dex/types/index.d.ts
+  [13]: https://github.com/pkmn/ps/blob/master/data/index.test.ts

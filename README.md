@@ -13,10 +13,10 @@ This is the top level of @pkmn's Pokémon Showdown components:
 - [`@pkmn/types`][4]: TypeScript definitions for types common to Pokémon projects
 - [`@pkmn/protocol`][5]: Parsing logic for Pokémon Showdown's [PROTOCOL][6] and [SIM-PROTOCOL][7]
 - [`@pkmn/client`][8]: a fork of [smogon/pokemon-showdown-client][9]'s battle  engine, build on top of [`@pkmn/protocol`][5]
-- [`@pkmn/img`][18]: logic for displaying Pokémon Showdown's sprite/icon resources
+- [`@pkmn/img`][18]: logic for displaying [Pokémon Showdown's sprite/icon resources][20]
 - [`@pkmn/view`][10]: a library for building Pokémon Showdown client UIs
 - [`@pkmn/login`][11]: logic for authenticating with Pokémon Showdown
-- [`@pkmn/calc`][12]: adapter for using `@pkmn/sim` with [`@smogon/calc`][13]
+- [`@pkmn/calc`][12]: adapter for using [`@pkmn/dex`][19] or [`@pkmn/sim`][2] with [`@smogon/calc`][13]
 
 Everything in this repository is distributed under the terms of the [MIT License][15]. For some
 packages, substantial amounts of the code have been either derived or generated from the portions of
@@ -43,3 +43,4 @@ under the [MIT License][16].
   [17]: https://github.com/pkmn/ps/blob/master/dex
   [18]: https://github.com/pkmn/ps/blob/master/img
   [19]: https://github.com/pkmn/ps/blob/master/data
+  [20]: https://github.com/smogon/pokemon-sprites

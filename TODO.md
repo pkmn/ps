@@ -13,20 +13,23 @@
 
 ## Stage 2
 
-- **img** - impl: multiple gen preferences feature, edge cases + doc
+- **img** - impl: multiple gen preferences feature, edge cases + doc, pokemon-sprites
 - **sim** - integration + doc
-- **data** - unit tests + doc + bundle
+
+### Stage 2.9
+
+- **data**
+- **dex**
+  - **dex/types**
 
 ## Stage 3
 
 - **types** - done
 - **sets** - done
 
-**TESTS FOR BUNDLED! `const window = exports;`**
-
 ---
 
-- test number of formes = expected when iterating through data and calc
-- add `eval` bundled test
 - calc: test against `@pkmn/data` and `@pkmn/sim`, ensure data is correct compared to
   `@smogon/calc/data`!
+- npm publish/update!
+- package version bumps
