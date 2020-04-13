@@ -330,6 +330,8 @@ export interface Species extends Readonly<BasicEffect & SpeciesData> {
   readonly heightm: number;
   readonly unreleasedHidden: boolean | 'Past';
   readonly maleOnlyHidden: boolean;
+  readonly isMega?: boolean;
+  readonly isPrimal?: boolean;
   readonly inheritsFrom: ID;
   readonly tier: string;
   readonly doublesTier: string;
@@ -394,7 +396,7 @@ export interface Dex {
   getNature(name: string): Nature;
   getType(name: string): Type;
 
-  getForme(speciesid: string | Species): string;
+  getForme(species: string | Species): string;
   getOutOfBattleSpecies(species: Species): string;
   hasAbility(species: Species, ability: string): boolean;
   getHiddenPower(ivs: StatsTable): {type: TypeName; power: number};

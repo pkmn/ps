@@ -699,7 +699,7 @@ export class ModdedDex implements T.Dex {
         );
         (species as any).name = id;
         (species as any).species = id; // BUG ???
-        (species as any).speciesid = id;
+        (species as any).speciesid = id; // BUG ???
         (species as any).abilities = {0: species.abilities['S']};
       } else {
         species = this.getSpecies(alias);
@@ -808,11 +808,14 @@ export class ModdedDex implements T.Dex {
     if (learnset) return learnset;
 
     if (!DATA.Learnsets) {
-      /* global window */
-      if (typeof window === 'undefined') {
+      const isNode =
+        typeof process !== 'undefined' &&
+        process.versions !== null &&
+        process.versions.node !== null;
+      if (isNode) {
         DATA.Learnsets = require('./data/learnsets.json');
       } else {
-        // Typescript thinks asynchronously imported modules need a default export...
+        // Casts required since Typescript thinks asynchronously imported JSON have default exports
         DATA.Learnsets =
           (await import('./data/learnsets.json')) as unknown as Data<T.LearnsetData>;
       }
@@ -894,6 +897,7 @@ export class ModdedDex implements T.Dex {
     if (id && data) {
       ability = new Ability({name}, data);
       if (ability.gen > this.gen) (ability as any).isNonstandard = 'Future';
+      if (this.gen <= 2 && ability.id === 'noability') (ability as any).isNonstandard = null;
     } else {
       ability = new Ability({id, name, exists: false});
     }

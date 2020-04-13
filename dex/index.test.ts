@@ -54,7 +54,7 @@ describe('Dex', () => {
         let count = 0;
         for (const id in dex.data.Abilities) {
           const a = dex.getAbility(id);
-          if (!a.exists || a.isNonstandard) continue;
+          if (!a.exists || a.isNonstandard || a.id === 'noability') continue;
           count++;
         }
         return count;
@@ -309,9 +309,9 @@ describe('Dex', () => {
       formes += 1 + 2 + 1 + 2 + 1 + 3 + 3 + 1 + 6 + 48;
       expect(counts(6)).toEqual({species: 721, formes});
       // Alola (18) + Totem (12) + Pikachu (7) - Pikachu (6) + Greninja (1) + Zygarde (2) +
-      // Oricorio (3) + Lycanroc (2) + Wishiwashi (1) + Silvally (17) + Minior (1) +
+      // Oricorio (3) + Rockruff (1) + Lycanroc (2) + Wishiwashi (1) + Silvally (17) + Minior (1)
       // Mimikyu (1) + Necrozma (3) [Magearna (1) + LGPE Starters/Meltan/Melmetal (4)]
-      formes += 18 + 12 + 7 - 6 + 1 + 2 + 3 + 2 + 1 + 17 + 1 + 1 + 3;
+      formes += 18 + 12 + 7 - 6 + 1 + 2 + 3 + 1 + 2 + 1 + 17 + 1 + 1 + 3 - 1; // FIXME Rockruff
       expect(counts(7)).toEqual({species: 807, formes});
       // GMax (26) + Silvally (17) + Rotom (5) + Basculin (1) + Meowstic (1) +
       // Aegislash (1) + Pumpkaboo (3) + Gourgeist (3) + Pikachu (7) + Galar (14) +
@@ -356,6 +356,18 @@ describe('Dex', () => {
       expect(Dex.getSpecies('Garchomp-Mega').isMega).toBe(true);
       expect(Dex.getSpecies('Yanmega').isMega).not.toBeDefined();
       expect(Dex.getSpecies('Kyogre-Primal').isPrimal).toBe(true);
+    });
+
+
+    test('#hasAbility', () => {
+      expect(Dex.forGen(7).hasAbility(Dex.forGen(7).getSpecies('Gengar'), 'Levitate')).toBe(false);
+      expect(Dex.forGen(5).hasAbility(Dex.forGen(5).getSpecies('Gengar'), 'Levitate')).toBe(true);
+    });
+
+    test('#getOutOfBattleSpecies', () => {
+      expect(Dex.getOutOfBattleSpecies(Dex.getSpecies('Mimikyu-Busted'))).toBe('Mimikyu');
+      expect(Dex.getOutOfBattleSpecies(Dex.getSpecies('Venusaur-Mega'))).toBe('Venusaur');
+      expect(Dex.getOutOfBattleSpecies(Dex.getSpecies('Wormadam-Trash'))).toBe('Wormadam-Trash');
     });
 
     test('cached', () => {
@@ -458,6 +470,7 @@ describe('Bundle', () => {
   it('usage', async () => {
     {
       const window = {} as { Dex: typeof Dex };
+      // eslint-disable-next-line no-eval
       eval(fs.readFileSync(path.resolve(__dirname, './build/production.min.js'), 'utf8'));
       expect(window.Dex.forGen(2).getSpecies('kabigon').tier).toBe('OU');
       expect(Dex.forGen(1).getMove('thunderbolt').exists).toBe(true);

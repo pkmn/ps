@@ -12,7 +12,9 @@
     "@pkmn/types": "^0.0.2"
   },
   "devDependencies": {
+    "@pkmn/dex": "file:../dex",
     "@pkmn/eslint-config": "^0.2.2",
+    "@pkmn/sim": "file:../sim",
     "@types/jest": "^25.1.4",
     "@typescript-eslint/eslint-plugin": "^2.24.0",
     "eslint-plugin-import": "^2.20.1",

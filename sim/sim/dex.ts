@@ -666,6 +666,13 @@ export class ModdedDex {
 		return ability;
 	}
 
+	hasAbility(species: Species, ability: string) {
+		for (const i in species.abilities) {
+			if (ability === species.abilities[i as keyof SpeciesAbility]) return true;
+		}
+		return false;
+	}
+
 	getType(name: string | TypeInfo): TypeInfo {
 		if (name && typeof name !== 'string') return name;
 

@@ -13,16 +13,17 @@ import {
   Dex,
   Effect,
   Nature,
+  PureEffect,
+  SecondaryEffect,
+  SelfEffect,
   Species as DexSpecies,
   SpeciesAbility,
   Type as DexType,
 } from '@pkmn/dex-types';
 
-function ifExists(e: Effect | DexSpecies, gen: GenerationNum) {
-  if (typeof e.exists === 'boolean' && !e.exists) return undefined;
-  if ('tier' in e && (e.tier === 'Unreleased' || e.tier === 'Illegal')) return undefined;
-  if (e.gen > gen || e.isNonstandard) return undefined;
-  return e;
+function exists(e: Effect | DexSpecies) {
+  if (!e.exists || e.isNonstandard || e.id === 'noability') return false;
+  return !('tier' in e && ['Illegal', 'Unreleased'].includes(e.tier));
 }
 
 export function toID(text: any): ID {
@@ -91,7 +92,7 @@ export class Abilities {
 
   get(name: string) {
     const ability = this.dex.getAbility(name);
-    return ifExists(ability, this.dex.gen);
+    return exists(ability) ? ability : undefined;
   }
 
   *[Symbol.iterator]() {
@@ -110,7 +111,7 @@ export class Items {
 
   get(name: string) {
     const item = this.dex.getItem(name);
-    return ifExists(item, this.dex.gen);
+    return exists(item) ? item : undefined;
   }
 
   *[Symbol.iterator]() {
@@ -129,7 +130,7 @@ export class Moves {
 
   get(name: string) {
     const move = this.dex.getMove(name);
-    return ifExists(move, this.dex.gen);
+    return exists(move) ? move : undefined;
   }
 
   *[Symbol.iterator]() {
@@ -141,6 +142,8 @@ export class Moves {
 }
 
 export class Species {
+  private readonly cache = Object.create(null) as { [id: string]: Specie };
+
   private readonly dex: Dex;
   constructor(dex: Dex) {
     this.dex = dex;
@@ -152,9 +155,11 @@ export class Species {
 
   get(name: string) {
     const species = this.dex.getSpecies(name);
-    if (species.tier === 'Illegal' || species.tier === 'Unreleased') return undefined;
-    if ((species.tier.startsWith('CAP') && this.dex.gen < 4)) return undefined;
-    return ifExists(species, this.dex.gen);
+    if (!exists(species)) return undefined;
+    const id = (species as any).speciesid || species.id; // FIXME Event-only ability hack
+    const cached = this.cache[id];
+    if (cached) return cached;
+    return (this.cache[id] = new Specie(this.dex, species));
   }
 
   *[Symbol.iterator]() {
@@ -166,6 +171,8 @@ export class Species {
 }
 
 export class Specie implements DexSpecies {
+  readonly id!: ID;
+  readonly name!: string;
   readonly fullname!: string;
   readonly exists!: boolean;
   readonly num!: number;
@@ -174,30 +181,34 @@ export class Specie implements DexSpecies {
   readonly desc!: string;
   readonly isNonstandard!: Nonstandard | null;
   readonly duration?: number;
-  readonly noCopy!: boolean;
-  readonly affectsFainted!: boolean;
+  readonly noCopy?: boolean;
+  readonly affectsFainted?: boolean;
   readonly status?: ID;
   readonly weather?: ID;
   readonly sourceEffect!: string;
+  readonly counterMax?: number;
+  readonly drain?: [number, number];
+  readonly effect?: Partial<PureEffect>;
+  readonly infiltrates?: boolean;
+  readonly isZ?: boolean | string;
+  readonly isMax?: boolean | string;
+  readonly recoil?: [number, number];
+  readonly secondary?: SecondaryEffect | null;
+  readonly secondaries?: SecondaryEffect[] | null;
+  readonly self?: SelfEffect | null;
+
 
   readonly effectType!: 'Pokemon';
-  readonly id!: ID;
-  readonly name!: string;
   readonly baseSpecies!: string;
-  readonly forme!: string;
   readonly baseForme!: string;
-  readonly cosmeticFormes?: string[];
-  readonly otherFormes?: string[];
+  readonly forme!: string;
   readonly abilities!: SpeciesAbility;
   readonly types!: TypeName[];
   readonly prevo!: ID;
   readonly evos!: ID[];
-  readonly evoType?: EvoType;
-  readonly evoMove?: string;
-  readonly evoLevel?: number;
   readonly nfe!: boolean;
   readonly eggGroups!: string[];
-  readonly gender!: GenderName;
+  readonly gender?: GenderName;
   readonly genderRatio!: { M: number; F: number };
   readonly baseStats!: StatsTable;
   readonly maxHP?: number;
@@ -211,13 +222,21 @@ export class Specie implements DexSpecies {
   readonly isPrimal?: boolean;
   readonly isGigantamax?: string;
   readonly battleOnly?: string | string[];
-  readonly requiredItem?: string;
-  readonly requiredMove?: string;
-  readonly requiredAbility?: string;
-  readonly requiredItems?: string[];
   readonly inheritsFrom!: ID;
   readonly tier!: string;
   readonly doublesTier!: string;
+  readonly canHatch?: boolean;
+  readonly evoLevel?: number;
+  readonly evoMove?: string;
+  readonly evoCondition?: string;
+  readonly evoItem?: string;
+  readonly evoType?: EvoType;
+  readonly cosmeticFormes?: string[];
+  readonly otherFormes?: string[];
+  readonly requiredAbility?: string;
+  readonly requiredItem?: string;
+  readonly requiredItems?: string[];
+  readonly requiredMove?: string;
 
   private readonly dex: Dex;
   constructor(dex: Dex, species: DexSpecies) {
@@ -242,7 +261,7 @@ export class Effects {
 
   get(name: string) {
     const effect = this.dex.getEffect(name);
-    return ifExists(effect, this.dex.gen);
+    return exists(effect) ? effect : undefined;
   }
 }
 
@@ -255,7 +274,7 @@ export class Natures {
   get(name: string) {
     if (this.dex.gen < 3) return undefined;
     const nature = this.dex.getNature(name);
-    return !nature.exists ? undefined : nature;
+    return nature.exists ? nature : undefined;
   }
 
   *[Symbol.iterator]() {
@@ -275,6 +294,8 @@ const EFFECTIVENESS = {
 };
 
 export class Types {
+  private readonly cache = Object.create(null) as { [id: string]: Type };
+
   private readonly dex: Dex;
   constructor(dex: Dex) {
     this.dex = dex;
@@ -282,7 +303,10 @@ export class Types {
 
   get(name: string) {
     const type = this.dex.getType(name);
-    return !type.exists ? undefined : type;
+    if (!type.exists) return undefined;
+    const cached = this.cache[type.id];
+    if (cached) return cached;
+    return (this.cache[type.id] = new Type(type));
   }
 
   *[Symbol.iterator]() {
@@ -312,7 +336,7 @@ export class Types {
   }
 }
 
-const DAMAGE_TAKEN = [0, 0.5, 1, 2];
+const DAMAGE_TAKEN = [1, 2, 0.5, 0];
 
 export class Type {
   readonly id!: ID;
@@ -324,10 +348,8 @@ export class Type {
   readonly HPivs!: Partial<StatsTable>;
   readonly HPdvs!: Partial<StatsTable>;
 
-  private readonly dex: Dex;
-  constructor(dex: Dex, type: DexType) {
+  constructor(type: DexType) {
     Object.assign(this, type);
-    this.dex = dex;
 
     this.damageTaken = {} as { [t in Exclude<TypeName, '???'>]: number };
     for (const k in type.damageTaken) {
@@ -346,7 +368,7 @@ export class Learnsets {
 
   async get(name: string) {
     const learnset = await this.dex.getLearnset(toID(name));
-    return !learnset.exists ? undefined : learnset;
+    return learnset.exists ? learnset : undefined;
   }
 
   async *[Symbol.iterator]() {
@@ -391,7 +413,7 @@ export class Stats {
   calc(stat: StatName, base: number, iv: number, ev: number, level: number, nature: Nature): number;
   calc(stat: StatName, base: number, iv = 31, ev = 252, level = 100, nature?: Nature) {
     return this.dex.gen < 3
-      ? calcRBY(stat, base, Stats.itod(iv), ev, level)
+      ? calcRBY(stat, base, this.itod(iv), ev, level)
       : calcADV(stat, base, iv, ev, level, nature);
   }
 
@@ -415,10 +437,10 @@ export class Stats {
 
   getHPDV(ivs: Partial<StatsTable>): number {
     return (
-      (Stats.itod(ivs.atk === undefined ? 31 : ivs.atk) % 2) * 8 +
-      (Stats.itod(ivs.def === undefined ? 31 : ivs.def) % 2) * 4 +
-      (Stats.itod(ivs.spe === undefined ? 31 : ivs.spe) % 2) * 2 +
-      (Stats.itod(ivs.spa === undefined ? 31 : ivs.spa) % 2)
+      (this.itod(ivs.atk === undefined ? 31 : ivs.atk) % 2) * 8 +
+      (this.itod(ivs.def === undefined ? 31 : ivs.def) % 2) * 4 +
+      (this.itod(ivs.spe === undefined ? 31 : ivs.spe) % 2) * 2 +
+      (this.itod(ivs.spa === undefined ? 31 : ivs.spa) % 2)
     );
   }
 
@@ -428,11 +450,11 @@ export class Stats {
     }
   }
 
-  static itod(iv: number): number {
+  itod(iv: number): number {
     return Math.floor(iv / 2);
   }
 
-  static dtoi(dv: number): number {
+  dtoi(dv: number): number {
     return dv * 2 + 1;
   }
 }
