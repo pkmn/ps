@@ -9,7 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "@pkmn/dex-types": "file:types",
-    "@pkmn/types": "^0.0.2"
+    "@pkmn/types": "^0.0.3"
   },
   "devDependencies": {
     "@pkmn/eslint-config": "^0.2.3",
