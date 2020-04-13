@@ -24,7 +24,7 @@ export type MoveTarget =
   'any' | 'foeSide' | 'normal' | 'randomNormal' | 'scripted' | 'self';
 
 export type Nonstandard =
-  'Past' | 'Future' | 'Unobtainable' | 'CAP' | 'LGPE' | 'Custom';
+  'Past' | 'Future' | 'Unobtainable' | 'CAP' | 'LGPE' | 'G-Max' | 'Custom';
 
 export type EvoType =
   'trade' | 'useItem' | 'levelMove' | 'levelExtra' |

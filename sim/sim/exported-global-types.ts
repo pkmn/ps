@@ -24,7 +24,7 @@ export type SparseStatsTable = Partial<StatsTable>;
 export type BoostName = StatNameExceptHP | 'accuracy' | 'evasion';
 export type BoostsTable = {[boost in BoostName]: number };
 export type SparseBoostsTable = Partial<BoostsTable>;
-export type Nonstandard = 'Past' | 'Future' | 'Unobtainable' | 'CAP' | 'LGPE' | 'Custom';
+export type Nonstandard = 'Past' | 'Future' | 'Unobtainable' | 'CAP' | 'LGPE' | 'G-Max' | 'Custom';
 /**
  * Describes the acceptable target(s) of a move.
  * adjacentAlly - Only relevant to Doubles or Triples, the move only targets an ally of the user.
