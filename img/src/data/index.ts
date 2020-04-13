@@ -61,7 +61,7 @@ export const Data = new class implements I.Data {
         frontf: data.bw?.ff,
         back: data.bw?.b,
         backf: data.bw?.bf,
-      }
+      },
     };
   }
 
@@ -73,4 +73,4 @@ export const Data = new class implements I.Data {
   getAvatar(key: string) {
     return DATA.avatars[key];
   }
-}
+};

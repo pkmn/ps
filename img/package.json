@@ -20,8 +20,8 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "lint": "eslint --cache src/*.ts",
-    "fix": "eslint --fix src/*.ts",
+    "lint": "eslint --cache src/**/*.ts",
+    "fix": "eslint --fix src/**/*.ts",
     "compile": "tsc -p .",
     "bundle": "node bundle",
     "build": "npm run compile && npm run bundle",

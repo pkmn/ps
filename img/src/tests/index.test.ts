@@ -1,5 +1,8 @@
 import {Sprites, Icons} from '../index';
 
+import * as fs from 'fs';
+import * as path from 'path';
+
 const PROTOCOL = 'https';
 const DOMAIN = 'play.pokemonshowdown.com';
 const URL = `${PROTOCOL}://${DOMAIN}`;
@@ -194,7 +197,7 @@ describe('Sprites', () => {
       .toEqual(`${URL}/sprites/trainers-custom/pre.png`);
     expect(Sprites.getAvatar(''))
       .toEqual(`${URL}/sprites/trainers/unknown.png`);
-      expect(Sprites.getAvatar('<pre>'))
+    expect(Sprites.getAvatar('<pre>'))
       .toEqual(`${URL}/sprites/trainers/&lt;pre&gt;.png`);
     expect(Sprites.getAvatar('1010', {protocol: 'http'}))
       .toEqual(`http://${DOMAIN}/sprites/trainers-custom/1010.png`);
@@ -274,7 +277,8 @@ describe('Icons', () => {
     expect(item.style).toEqual(
       'display:inline-block;width:24px;height:24px;image-rendering:pixelated;' +
       'background:transparent url(http://pkmn.cc/sprites/itemicons-sheet.png) ' +
-      'no-repeat scroll -144px -216px;');
+      'no-repeat scroll -144px -216px;'
+    );
   });
 
   test('#getType', () => {
@@ -283,5 +287,22 @@ describe('Icons', () => {
       .toEqual(`http://${DOMAIN}/sprites/types/Bird.png`);
     expect(Icons.getType('water', {domain: 'pkmn.cc'}).url)
       .toEqual(`https://pkmn.cc/sprites/types/Water.png`);
+  });
+});
+
+describe('Bundle', () => {
+  it('usage', () => {
+    {
+      const window = {} as { PokemonSprites: typeof Sprites; PokemonIcons: typeof Icons };
+      // eslint-disable-next-line no-eval
+      eval(fs.readFileSync(path.resolve(__dirname, '../../build/production.min.js'), 'utf8'));
+      expect(window.PokemonSprites.getPokemon('Charizard').url)
+        .toEqual(`${URL}/sprites/ani/charizard.gif`);
+
+      const icon = window.PokemonIcons.getPokemon('Charizard', {protocol: 'http'});
+      expect(icon.url).toEqual(`http://${DOMAIN}/sprites/pokemonicons-sheet.png`);
+      expect(icon.left).toEqual(-240);
+      expect(icon.top).toEqual(-0);
+    }
   });
 });
