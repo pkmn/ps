@@ -1,5 +1,5 @@
 // ID gets its own special brand for compatibility reasons
-export type ID = '' | (string & { __isID: true });
+export type ID = (string & As<'ID'>) | (string & { __isID: true }) | '';
 
 export type As<T> = { __brand: T };
 
@@ -24,7 +24,7 @@ export type MoveTarget =
   'any' | 'foeSide' | 'normal' | 'randomNormal' | 'scripted' | 'self';
 
 export type Nonstandard =
-  'Past' | 'Future' | 'Unobtainable' | 'CAP' | 'LGPE' | 'G-Max' | 'Custom';
+  'Past' | 'Future' | 'Unobtainable' | 'CAP' | 'LGPE' | 'Custom';
 
 export type EvoType =
   'trade' | 'useItem' | 'levelMove' | 'levelExtra' |
