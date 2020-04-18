@@ -312,6 +312,13 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(7).species.get('Garchomp-Mega')!.isMega).toBe(true);
         expect(Gen(7).species.get('Yanmega')!.isMega).not.toBeDefined();
         expect(Gen(7).species.get('Kyogre-Primal')!.isPrimal).toBe(true);
+        expect(Gen(1).species.get('Charizard')!.otherFormes).toBeUndefined();
+        expect(Gen(7).species.get('Charizard')!.otherFormes)
+          .toEqual(['charizardmegax', 'charizardmegay']);
+        expect(Gen(3).species.get('Nosepass')!.evos).toEqual([]);
+        expect(Gen(4).species.get('Nosepass')!.evos).toEqual(['probopass']);
+        expect(Gen(3).species.get('Chansey')!.prevo).toEqual('');
+        expect(Gen(4).species.get('Chansey')!.prevo).toEqual('happiny');
       });
 
       test('#hasAbility', () => {

@@ -63,9 +63,14 @@ a couple of Pokémon Showdown quirks. While this interface is far from the
   `Generation#effects`).
 - a stats API including calculation logic is provided via `Generation#stats`.
 
-**`Generations` does not currently correct existence at the field level, you will need to ensure
-any references actually exist in the generation in question. This may change in a future
-implementation of the API.**
+**`Generations` handles existence at the field level slightly differently than at the object level**
+\- references in fields which point to objects that do not exist in the generation will be updated
+to remove those objects, but fields which should not be relevant at all to an earlier generation
+are not pruned. For example, Chansey's `prevo` field in Gen 3 will not be `happiny`, but a move from
+the same generation may still have its `zMovePower` field populated as it should never be queried in
+Gen 3 anyway. This is mostly an artifact of how the Pokémon Showdown `Dex` `Generations` is built on
+top of works - for efficiency reasons its only worthwhile to clean up the fields which are actually
+relevant to the generation in question.
 
 ```ts
 import {Dex} from '@pkmn/dex';
@@ -78,7 +83,6 @@ assert(Array.from(gens.get(1).species).length === 151);
 ```
 
 Please see the [unit tests][13] for more comprehensive usage examples.
-
 
 ### Browser
 

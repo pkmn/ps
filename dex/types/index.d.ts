@@ -76,7 +76,7 @@ export interface ItemData extends EffectData {
   effect?: Partial<PureEffect>;
   fling?: FlingData;
   forcedForme?: string;
-  ignoreKlutz?: boolean; // TODO gen 4
+  ignoreKlutz?: boolean;
   isBerry?: boolean;
   isChoice?: boolean;
   isGem?: boolean;
@@ -93,9 +93,8 @@ export interface ItemData extends EffectData {
   boosts?: Partial<BoostsTable> | false;
 }
 
-// TODO
+
 export interface MoveFlags {
-  // Gen 1
   authentic?: 1 | 0;
   charge?: 1 | 0;
   contact?: 1 | 0;
@@ -103,26 +102,20 @@ export interface MoveFlags {
   mirror?: 1 | 0;
   mystery?: 1 | 0;
   recharge?: 1 | 0;
-  // Gen 2
   protect?: 1 | 0;
-  // Gen 3
   bite?: 1 | 0;
   reflectable?: 1 | 0;
   snatch?: 1 | 0;
   sound?: 1 | 0;
-  // Gen 4
   gravity?: 1 | 0;
   heal?: 1 | 0;
   punch?: 1 | 0;
-  // Gen 5
-  distance?: 1 | 0; // * gen 5/6
+  distance?: 1 | 0;
   powder?: 1 | 0;
-  // Gen 6
   bullet?: 1 | 0;
-  nonsky?: 1 | 0; // * gen 6 only
+  nonsky?: 1 | 0;
   pulse?: 1 | 0;
-  // Gen 7
-  dance?: 1 | 0; // gen 7
+  dance?: 1 | 0;
 }
 
 export interface MoveData extends EffectData, MoveHitEffect {
@@ -232,15 +225,15 @@ export interface SpeciesData {
   evoMove?: string;
   evoCondition?: string;
   evoItem?: string;
-  evos?: string[]; // TODO filter
+  evos?: string[];
   evoType?: EvoType;
   forme?: string;
-  gender?: GenderName; // TODO filter
-  genderRatio?: { [k: string]: number }; // TODO filter
+  gender?: GenderName;
+  genderRatio?: { [k: string]: number };
   maxHP?: number;
-  cosmeticFormes?: string[]; // TODO filter
-  otherFormes?: string[]; // TODO filter
-  prevo?: string; // TODO filter
+  cosmeticFormes?: string[];
+  otherFormes?: string[];
+  prevo?: string;
   gen?: number;
   requiredAbility?: string;
   requiredItem?: string;

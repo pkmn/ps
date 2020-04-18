@@ -26,6 +26,14 @@ function exists(e: Effect | DexSpecies) {
   return !('tier' in e && ['Illegal', 'Unreleased'].includes(e.tier));
 }
 
+function assignWithout(a: {[key: string]: any}, b: {[key: string]: any}, exclude: Set<string>) {
+  for (const key in b) {
+    if (Object.prototype.hasOwnProperty.call(b, key) && !exclude.has(key)) {
+      a[key] = b[key];
+    }
+  }
+}
+
 export function toID(text: any): ID {
   if (text?.id) text = text.id;
   if (typeof text !== 'string' && typeof text !== 'number') return '';
@@ -239,9 +247,29 @@ export class Specie implements DexSpecies {
   readonly requiredMove?: string;
 
   private readonly dex: Dex;
+
+  private static readonly EXCLUDE = new Set([
+    'evos',
+    'gender',
+    'genderRatio',
+    'cosmeticFormes',
+    'otherFormes',
+    'prevo',
+  ]);
+
   constructor(dex: Dex, species: DexSpecies) {
-    Object.assign(this, species);
+    assignWithout(this, species, Specie.EXCLUDE);
     this.dex = dex;
+    if (this.dex.gen >= 2) {
+      this.gender = species.gender;
+      this.genderRatio = species.genderRatio;
+    } else {
+      this.genderRatio = {M: 0, F: 0};
+    }
+    this.evos = species.evos.filter(s => exists(this.dex.getSpecies(s)));
+    this.cosmeticFormes = species.cosmeticFormes?.filter(s => exists(this.dex.getSpecies(s)));
+    this.otherFormes = species.otherFormes?.filter(s => exists(this.dex.getSpecies(s)));
+    this.prevo = exists(this.dex.getSpecies(species.prevo)) ? species.prevo : '';
   }
 
   hasAbility(ability: string) {
