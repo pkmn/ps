@@ -319,6 +319,7 @@ export class Types {
     return this.dex.getHiddenPower(ivs);
   }
 
+  // TODO move to Type, clean up ordering/name
   getImmunity(
     source: { type: string } | string,
     target: { getTypes: () => string[] } | { types: string[] } | string[] | string
@@ -326,6 +327,7 @@ export class Types {
     return this.dex.getImmunity(source, target);
   }
 
+  // TODO: move to type
   getEffectiveness(
     source: { type: string } | string,
     target: { getTypes: () => string[] } | { types: string[] } | string[] | string

@@ -5,7 +5,8 @@
     "tsBuildInfoFile": ".tsbuildinfo",
     "baseUrl": ".",
     "paths": {
-      "@smogon/calc/data/*": ["node_modules/@smogon/calc/dist/data/*"]
+      "@smogon/calc/*": ["node_modules/@smogon/calc/dist/*"],
+      // "@smogon/calc/adaptable/*": ["node_modules/@smogon/calc/dist/adaptable/*"],
     }
   }
 }

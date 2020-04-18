@@ -63,23 +63,8 @@ export class BasicEffect implements T.BasicEffect {
   desc: string;
   isNonstandard: Nonstandard | null;
   duration?: number;
-  noCopy?: boolean;
-  affectsFainted?: boolean;
-  status?: ID;
-  weather?: ID;
-  sourceEffect: string;
-  counterMax?: number;
-  drain?: [number, number];
-  effect?: Partial<PureEffect>;
-  infiltrates?: boolean;
-  isZ?: boolean | string;
-  isMax?: boolean | string;
-  recoil?: [number, number];
-  secondary?: T.SecondaryEffect | null;
-  secondaries?: T.SecondaryEffect[] | null;
-  self?: T.SelfEffect | null;
 
-  constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
+   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     this.exists = true;
     data = combine(this, data, ...moreData);
 
@@ -94,9 +79,6 @@ export class BasicEffect implements T.BasicEffect {
     this.desc = data.desc || '';
     this.isNonstandard = data.isNonstandard || null;
     this.duration = data.duration;
-    this.status = data.status as ID || undefined;
-    this.weather = data.weather as ID || undefined;
-    this.sourceEffect = data.sourceEffect || '';
   }
 
   toString() {
@@ -270,6 +252,16 @@ export class Move extends BasicEffect implements T.Move {
   readonly zMoveBoost?: Partial<BoostsTable>;
   readonly isZPowered?: boolean;
   readonly maxPowered?: boolean;
+  readonly status?: string;
+  readonly weather?: string;
+  readonly effect?: Partial<PureEffect>;
+  readonly affectsFainted?: boolean;
+  readonly self?: T.SelfEffect | null;
+  readonly drain?: [number, number];
+  readonly recoil?: [number, number];
+  readonly noCopy?: boolean;
+  readonly infiltrates?: boolean;
+  readonly counterMax?: number;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     super(data, ...moreData);
@@ -584,6 +576,8 @@ type DeepPartial<T> = {
       ? ReadonlyArray<DeepPartial<U>>
       : DeepPartial<T[P]>
 };
+
+type Writable<T> = { -readonly [P in keyof T]: T[P] };
 
 type Data<T> = { 8: { [id: string]: T } } & {
   [num in Exclude<GenerationNum, 8>]?: { [id: string]: { inherit?: boolean } & DeepPartial<T> }
@@ -980,11 +974,10 @@ export class ModdedDex implements T.Dex {
 
     name = (name || '').trim();
     const id = toID(name);
-    // tslint:disable-next-line:no-object-literal-type-assertion
-    let nature = {} as Nature;
+    let nature = {} as Writable<Partial<Nature>>;;
     if (id && id !== 'constructor' && this.data.Natures[id]) {
-      nature = this.data.Natures[id] as Nature;
-      if (nature.cached) return nature;
+      nature = this.data.Natures[id];
+      if (nature.cached) return nature as Nature;
       nature.cached = true;
       nature.exists = true;
     }
@@ -993,7 +986,7 @@ export class ModdedDex implements T.Dex {
     if (!nature.effectType) nature.effectType = 'Nature';
     if (!nature.gen) nature.gen = 3;
 
-    return nature;
+    return nature as Nature;
   }
 
   getType(name: string | Type): Type {

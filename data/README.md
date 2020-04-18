@@ -63,6 +63,10 @@ a couple of Pokémon Showdown quirks. While this interface is far from the
   `Generation#effects`).
 - a stats API including calculation logic is provided via `Generation#stats`.
 
+**`Generations` does not currently correct existence at the field level, you will need to ensure
+any references actually exist in the generation in question. This may change in a future
+implementation of the API.**
+
 ```ts
 import {Dex} from '@pkmn/dex';
 import {Generations} from '@pkmn/data';
@@ -74,6 +78,7 @@ assert(Array.from(gens.get(1).species).length === 151);
 ```
 
 Please see the [unit tests][13] for more comprehensive usage examples.
+
 
 ### Browser
 

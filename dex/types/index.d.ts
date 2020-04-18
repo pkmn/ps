@@ -20,40 +20,34 @@ export type Effect = Ability | Item | Move | PureEffect;
 export interface EffectData {
   name: string;
   num: number;
-  affectsFainted?: boolean;
-  counterMax?: number;
+
   desc?: string;
-  drain?: [number, number];
-  duration?: number;
-  effect?: Partial<PureEffect>;
   effectType?: string;
-  infiltrates?: boolean;
   isNonstandard?: Nonstandard | null;
-  isZ?: boolean | string;
-  isMax?: boolean | string;
-  noCopy?: boolean;
-  recoil?: [number, number];
-  secondary?: SecondaryEffect | null;
-  secondaries?: SecondaryEffect[] | null;
-  self?: SelfEffect | null;
   shortDesc?: string;
-  status?: string;
-  weather?: string;
   inherit?: boolean;
+  duration?: number;
 }
 
-export interface SecondaryEffect {
+export interface MoveHitEffect {
+  status?: string;
+  weather?: string;
+  effect?: Partial<PureEffect>;
+  affectsFainted?: boolean;
+}
+
+export interface SecondaryEffect extends MoveHitEffect {
   chance?: number;
   ability?: Ability;
   boosts?: Partial<BoostsTable>;
   dustproof?: boolean;
   kingsrock?: boolean;
-  self?: SelfEffect;
+  self?: SelfEffect | null;
   status?: string;
   volatileStatus?: string;
 }
 
-export interface SelfEffect {
+export interface SelfEffect extends MoveHitEffect {
   boosts?: Partial<BoostsTable>;
   chance?: number;
   pseudoWeather?: string;
@@ -67,6 +61,7 @@ export interface SelfEffect {
 export interface AbilityData extends EffectData {
   isUnbreakable?: boolean;
   suppressWeather?: boolean;
+  effect?: Partial<PureEffect>;
 }
 
 export interface FlingData {
@@ -77,9 +72,11 @@ export interface FlingData {
 
 export interface ItemData extends EffectData {
   gen: GenerationNum;
+
+  effect?: Partial<PureEffect>;
   fling?: FlingData;
   forcedForme?: string;
-  ignoreKlutz?: boolean;
+  ignoreKlutz?: boolean; // TODO gen 4
   isBerry?: boolean;
   isChoice?: boolean;
   isGem?: boolean;
@@ -96,39 +93,48 @@ export interface ItemData extends EffectData {
   boosts?: Partial<BoostsTable> | false;
 }
 
+// TODO
 export interface MoveFlags {
+  // Gen 1
   authentic?: 1 | 0;
-  bite?: 1 | 0;
-  bullet?: 1 | 0;
   charge?: 1 | 0;
   contact?: 1 | 0;
-  dance?: 1 | 0;
   defrost?: 1 | 0;
-  distance?: 1 | 0;
-  gravity?: 1 | 0;
-  heal?: 1 | 0;
   mirror?: 1 | 0;
   mystery?: 1 | 0;
-  nonsky?: 1 | 0;
-  powder?: 1 | 0;
-  protect?: 1 | 0;
-  pulse?: 1 | 0;
-  punch?: 1 | 0;
   recharge?: 1 | 0;
+  // Gen 2
+  protect?: 1 | 0;
+  // Gen 3
+  bite?: 1 | 0;
   reflectable?: 1 | 0;
   snatch?: 1 | 0;
   sound?: 1 | 0;
+  // Gen 4
+  gravity?: 1 | 0;
+  heal?: 1 | 0;
+  punch?: 1 | 0;
+  // Gen 5
+  distance?: 1 | 0; // * gen 5/6
+  powder?: 1 | 0;
+  // Gen 6
+  bullet?: 1 | 0;
+  nonsky?: 1 | 0; // * gen 6 only
+  pulse?: 1 | 0;
+  // Gen 7
+  dance?: 1 | 0; // gen 7
 }
 
-export interface MoveData extends EffectData {
-  accuracy: true | number;
+export interface MoveData extends EffectData, MoveHitEffect {
   basePower: number;
-  category: MoveCategory;
-  flags: MoveFlags;
-  pp: number;
-  priority: number;
-  target: MoveTarget;
   type: TypeName;
+  accuracy: true | number;
+  pp: number;
+  target: MoveTarget;
+  priority: number;
+  flags: MoveFlags;
+  category: MoveCategory;
+
   alwaysHit?: boolean;
   basePowerModifier?: number;
   boosts?: Partial<BoostsTable> | false;
@@ -138,7 +144,6 @@ export interface MoveData extends EffectData {
   damage?: number | 'level' | false | null;
   defensiveCategory?: MoveCategory;
   forceSwitch?: boolean;
-  hasCustomRecoil?: boolean;
   heal?: number[] | null;
   ignoreAbility?: boolean;
   ignoreAccuracy?: boolean;
@@ -149,9 +154,12 @@ export interface MoveData extends EffectData {
   ignoreOffensive?: boolean;
   ignorePositiveDefensive?: boolean;
   ignorePositiveEvasion?: boolean;
+  self?: SelfEffect | null;
+  secondary?: SecondaryEffect | null;
+  secondaries?: SecondaryEffect[] | null;
   isFutureMove?: boolean;
+  isZ?: boolean | string;
   isMax?: boolean | string;
-  mindBlownRecoil?: boolean;
   multiaccuracy?: boolean;
   multihit?: number | number[];
   multihitType?: string;
@@ -173,7 +181,6 @@ export interface MoveData extends EffectData {
   spreadModifier?: number;
   stallingMove?: boolean;
   stealsBoosts?: boolean;
-  struggleRecoil?: boolean;
   terrain?: string;
   thawsTarget?: boolean;
   tracksTarget?: boolean;
@@ -190,6 +197,14 @@ export interface MoveData extends EffectData {
   gmaxPower?: number;
   isZPowered?: boolean;
   maxPowered?: boolean;
+  drain?: [number, number];
+  noCopy?: boolean;
+  infiltrates?: boolean;
+  counterMax?: number;
+  recoil?: [number, number];
+  hasCustomRecoil?: boolean;
+  mindBlownRecoil?: boolean;
+  struggleRecoil?: boolean;
 }
 
 export interface SpeciesAbility {
@@ -202,28 +217,30 @@ export interface SpeciesAbility {
 export interface SpeciesData {
   abilities: SpeciesAbility;
   baseStats: StatsTable;
-  canHatch?: boolean;
   eggGroups: string[];
   heightm: number;
   num: number;
   name: string;
   types: string[];
   weightkg: number;
+
+  effect?: Partial<PureEffect>;
+  canHatch?: boolean;
   baseForme?: string;
   baseSpecies?: string;
   evoLevel?: number;
   evoMove?: string;
   evoCondition?: string;
   evoItem?: string;
-  evos?: string[];
+  evos?: string[]; // TODO filter
   evoType?: EvoType;
   forme?: string;
-  gender?: GenderName;
-  genderRatio?: { [k: string]: number };
+  gender?: GenderName; // TODO filter
+  genderRatio?: { [k: string]: number }; // TODO filter
   maxHP?: number;
-  cosmeticFormes?: string[];
-  otherFormes?: string[];
-  prevo?: string;
+  cosmeticFormes?: string[]; // TODO filter
+  otherFormes?: string[]; // TODO filter
+  prevo?: string; // TODO filter
   gen?: number;
   requiredAbility?: string;
   requiredItem?: string;
@@ -240,6 +257,7 @@ export type MoveSource = string;
 
 export interface EventInfo {
   generation: number;
+
   level?: number;
   shiny?: boolean | 1;
   gender?: GenderName;
@@ -289,9 +307,6 @@ export interface BasicEffect extends Readonly<EffectData> {
   desc: string;
   isNonstandard: Nonstandard | null;
   duration?: number;
-  status?: ID;
-  weather?: ID;
-  sourceEffect: string;
 }
 
 export interface PureEffect extends Readonly<BasicEffect> {
@@ -330,20 +345,20 @@ export interface Species extends Readonly<BasicEffect & SpeciesData> {
   readonly heightm: number;
   readonly unreleasedHidden: boolean | 'Past';
   readonly maleOnlyHidden: boolean;
-  readonly isMega?: boolean;
-  readonly isPrimal?: boolean;
   readonly inheritsFrom: ID;
   readonly tier: string;
   readonly doublesTier: string;
+  readonly isMega?: boolean;
+  readonly isPrimal?: boolean;
 }
 
 export interface Learnset {
   readonly effectType: 'Learnset';
-  readonly learnset?: {[moveid: string]: MoveSource[]};
+  readonly exists: boolean;
   readonly eventOnly: boolean;
   readonly eventData?: EventInfo[];
   readonly encounters?: EventInfo[];
-  readonly exists: boolean;
+  readonly learnset?: {[moveid: string]: MoveSource[]};
 }
 
 export interface Type extends Readonly<TypeData> {
@@ -358,11 +373,11 @@ export interface Type extends Readonly<TypeData> {
 }
 
 export interface Nature extends NatureData {
-  effectType: 'Nature';
-  id: ID;
-  name: NatureName;
-  gen: GenerationNum;
-  exists?: boolean;
+  readonly effectType: 'Nature';
+  readonly id: ID;
+  readonly name: NatureName;
+  readonly gen: GenerationNum;
+  readonly exists?: boolean;
 }
 
 export type GenID = 'gen1' | 'gen2' | 'gen3' | 'gen4' | 'gen5' | 'gen6' | 'gen7' | 'gen8';

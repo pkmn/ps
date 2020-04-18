@@ -24,11 +24,11 @@ export interface Dex {
 
   forGen(gen: GenerationNum): Dex;
 
-  getAbility(id: ID): Ability;
-  getItem(id: ID): Item;
-  getMove(id: ID): Move;
-  getSpecies(id: ID): Species;
-  getNature(id: ID): Nature;
+  getAbility(name: string): Ability;
+  getItem(name: string): Item;
+  getMove(name: string): Move;
+  getSpecies(name: string): Species;
+  getNature(name: string): Nature;
 }
 
 export interface AbilityData  {
@@ -60,15 +60,13 @@ export interface MoveData {
   basePower: number;
   type: TypeName;
   category: MoveCategory;
-  secondaries?: {self?: {boosts?: Partial<BoostsTable>}}[] | null;
+  secondaries?: {self?: {boosts?: Partial<BoostsTable>} | null}[] | null;
   target: MoveTarget;
   flags: MoveFlags;
-  recoil?: [number, number];
-  hasCustomRecoil?: boolean;
   willCrit?: boolean;
   heal?: number[] | null;
   priority: number;
-  self: {boosts?: Partial<BoostsTable>}
+  self?: {boosts?: Partial<BoostsTable>}  | null;
   ignoreDefensive?: boolean;
   defensiveCategory?: MoveCategory;
   breaksProtect?: boolean;
@@ -77,6 +75,10 @@ export interface MoveData {
   zMovePower?: number;
   gmaxPower?: number;
   multihit?: number | number[];
+  recoil?: [number, number];
+  hasCustomRecoil?: boolean;
+  mindBlownRecoil?: boolean;
+  struggleRecoil?: boolean;
 }
 
 export interface SpeciesAbility {
@@ -95,6 +97,8 @@ export interface SpeciesData {
   gender?: GenderName;
   abilities: SpeciesAbility;
   tier?: string;
+  baseSpecies?: string;
+  otherFormes?: string[];
 }
 
 export interface NatureData {
@@ -113,7 +117,7 @@ export interface Effect {
   id: ID;
   gen: GenerationNum;
   isNonstandard?: Nonstandard | null;
-  exists: boolean;
+  exists?: boolean;
 }
 
 export interface Ability extends AbilityData, Effect {}
