@@ -64,7 +64,7 @@ export class BasicEffect implements T.BasicEffect {
   isNonstandard: Nonstandard | null;
   duration?: number;
 
-   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
+  constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     this.exists = true;
     data = combine(this, data, ...moreData);
 
@@ -974,7 +974,7 @@ export class ModdedDex implements T.Dex {
 
     name = (name || '').trim();
     const id = toID(name);
-    let nature = {} as Writable<Partial<Nature>>;;
+    let nature = {} as Writable<Partial<Nature>>;
     if (id && id !== 'constructor' && this.data.Natures[id]) {
       nature = this.data.Natures[id];
       if (nature.cached) return nature as Nature;

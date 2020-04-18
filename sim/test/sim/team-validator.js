@@ -486,6 +486,16 @@ describe('Team Validator', function () {
 		assert(illegal);
 	});
 
+	it('should reject exclusive G-Max moves added directly to a Pokemon\'s moveset', function () {
+		let team = [
+			{species: 'charizard-gmax', ability: 'blaze', moves: ['gmaxwildfire'], evs: {hp: 1}},
+		];
+		let illegal = TeamValidator.get('gen8anythinggoes').validateTeam(team);
+		assert(illegal);
+		illegal = TeamValidator.get('gen8customgame@@@-nonexistent').validateTeam(team);
+		assert(illegal);
+	});
+
 	/*********************************************************
  	* Custom rules
  	*********************************************************/
@@ -552,6 +562,12 @@ describe('Team Validator', function () {
 			{species: 'giratinaorigin', ability: 'levitate', moves: ['protect'], evs: {hp: 1}},
 		];
 		illegal = TeamValidator.get('gen7ubers@@@-allpokemon,+giratinaaltered').validateTeam(team);
+		assert(illegal);
+
+		team = [
+			{species: 'tyrantrum', ability: 'strongjaw', moves: ['protect'], evs: {hp: 1}},
+		];
+		illegal = TeamValidator.get('gen8nationaldex@@@-allpokemon').validateTeam(team);
 		assert(illegal);
 	});
 

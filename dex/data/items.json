@@ -1093,7 +1093,7 @@
       "name": "Black Sludge",
       "fling": {"basePower": 30},
       "onResidualOrder": 5,
-      "onResidualSubOrder": 2,
+      "onResidualSubOrder": 5,
       "num": 281,
       "gen": 4,
       "desc": "Each turn, if holder is a Poison type, restores 1/16 max HP; loses 1/8 if not."
@@ -2665,7 +2665,7 @@
       "name": "Leftovers",
       "fling": {"basePower": 10},
       "onResidualOrder": 5,
-      "onResidualSubOrder": 2,
+      "onResidualSubOrder": 5,
       "num": 234,
       "gen": 2,
       "desc": "At the end of every turn, holder restores 1/16 of its max HP."

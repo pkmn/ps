@@ -958,7 +958,7 @@
       "id": "healer",
       "name": "Healer",
       "onResidualOrder": 5,
-      "onResidualSubOrder": 1,
+      "onResidualSubOrder": 4,
       "num": 131
     },
     "heatproof": {
@@ -1008,7 +1008,7 @@
       "desc": "This Pokemon has its major status condition cured at the end of each turn if Rain Dance is active. If this Pokemon is holding Utility Umbrella, its major status condition will not be cured.",
       "shortDesc": "This Pokemon has its status cured at the end of each turn if Rain Dance is active.",
       "onResidualOrder": 5,
-      "onResidualSubOrder": 1,
+      "onResidualSubOrder": 4,
       "id": "hydration",
       "name": "Hydration",
       "num": 93
@@ -1588,7 +1588,7 @@
       "num": 155
     },
     "receiver": {
-      "desc": "This Pokemon copies the Ability of an ally that faints. Abilities that cannot be copied are Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Stance Change, Trace, Wonder Guard, and Zen Mode.",
+      "desc": "This Pokemon copies the Ability of an ally that faints. Abilities that cannot be copied are Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Neutralizing Gas, Stance Change, Trace, Wonder Guard, and Zen Mode.",
       "shortDesc": "This Pokemon copies the Ability of an ally that faints.",
       "id": "receiver",
       "name": "Receiver",
@@ -1749,7 +1749,7 @@
       "desc": "This Pokemon has a 33% chance to have its major status condition cured at the end of each turn.",
       "shortDesc": "This Pokemon has a 33% chance to have its status cured at the end of each turn.",
       "onResidualOrder": 5,
-      "onResidualSubOrder": 1,
+      "onResidualSubOrder": 4,
       "id": "shedskin",
       "name": "Shed Skin",
       "num": 61
