@@ -189,6 +189,17 @@ class Move implements I.Move {
     this.type = move.type as I.TypeName;
     this.category = move.category;
 
+    if (move.recoil) {
+      this.recoilDamage = move.recoil;
+    } else if (move.hasCustomRecoil) {
+      this.recoilDamage = 'crash';
+    } else if (move.mindBlownRecoil) {
+      this.recoilDamage = 'mindblown';
+    } else if (move.struggleRecoil) {
+      this.recoilDamage = 'struggle';
+    }
+
+
     // TODO !!!!
   }
 }

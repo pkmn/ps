@@ -4,6 +4,7 @@ import {
   GenderName,
   GenerationNum,
   ID,
+  MoveCategory,
   Nonstandard,
   StatName,
   StatsTable,
@@ -311,6 +312,8 @@ const EFFECTIVENESS = {
   '2': 4,
 };
 
+type TypeTarget = { getTypes: () => TypeName[] } | { types: TypeName[] } | TypeName[] | TypeName;
+
 export class Types {
   private readonly cache = Object.create(null) as { [id: string]: Type };
 
@@ -324,7 +327,7 @@ export class Types {
     if (!type.exists) return undefined;
     const cached = this.cache[type.id];
     if (cached) return cached;
-    return (this.cache[type.id] = new Type(type));
+    return (this.cache[type.id] = new Type(type, this.dex, this));
   }
 
   *[Symbol.iterator]() {
@@ -337,19 +340,11 @@ export class Types {
     return this.dex.getHiddenPower(ivs);
   }
 
-  // TODO move to Type, clean up ordering/name
-  getImmunity(
-    source: { type: string } | string,
-    target: { getTypes: () => string[] } | { types: string[] } | string[] | string
-  ) {
+  canDamage(source: { type: TypeName } | TypeName, target: TypeTarget) {
     return this.dex.getImmunity(source, target);
   }
 
-  // TODO: move to type
-  getEffectiveness(
-    source: { type: string } | string,
-    target: { getTypes: () => string[] } | { types: string[] } | string[] | string
-  ) {
+  totalEffectiveness(source: { type: TypeName } | TypeName, target: TypeTarget) {
     const e = `${this.dex.getEffectiveness(source, target)}`;
     // convert from PS's ridiculous encoding to something usable
     return EFFECTIVENESS[e as keyof typeof EFFECTIVENESS];
@@ -357,26 +352,41 @@ export class Types {
 }
 
 const DAMAGE_TAKEN = [1, 2, 0.5, 0];
+const SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', 'Dragon'];
 
 export class Type {
   readonly id!: ID;
   readonly name!: TypeName;
   readonly effectType!: 'Type';
+  readonly kind!: 'Type';
   readonly exists!: boolean;
   readonly gen!: GenerationNum;
-  readonly damageTaken: { [t in Exclude<TypeName, '???'>]: number };
+  readonly effectiveness: { [t in Exclude<TypeName, '???'>]: number };
   readonly HPivs!: Partial<StatsTable>;
   readonly HPdvs!: Partial<StatsTable>;
+  readonly category?: Exclude<MoveCategory, 'Status'>;
 
-  constructor(type: DexType) {
+  private readonly types: Types;
+
+  constructor(type: DexType, dex: Dex, types: Types) {
     Object.assign(this, type);
-
-    this.damageTaken = {} as { [t in Exclude<TypeName, '???'>]: number };
-    for (const k in type.damageTaken) {
+    this.types = types;
+    this.category =
+      this.name === 'Fairy' ? undefined : SPECIAL.includes(this.name) ? 'Special' : 'Physical';
+    // convert from PS's ridiculous encoding to something usable (plus damageTaken -> damageDealt)
+    this.effectiveness = {} as { [t in Exclude<TypeName, '???'>]: number };
+    for (const k in dex.data.Types) {
       const t = k as Exclude<TypeName, '???'>;
-      // convert from PS's ridiculous encoding to something usable
-      this.damageTaken[t] = DAMAGE_TAKEN[type.damageTaken[k]];
+      this.effectiveness[t] = DAMAGE_TAKEN[dex.data.Types[t].damageTaken[this.name]!];
     }
+  }
+
+  canDamage(target: TypeTarget) {
+    return this.types.canDamage(this.name, target);
+  }
+
+  totalEffectiveness(target: TypeTarget) {
+    return this.types.totalEffectiveness(this.name, target);
   }
 }
 

@@ -239,7 +239,6 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly boosts?: Partial<BoostsTable> | false;
   readonly breaksProtect?: boolean;
   readonly forceSwitch?: boolean;
-  readonly hasCustomRecoil?: boolean;
   readonly heal?: number[] | null;
   readonly ignoreAccuracy?: boolean;
   readonly ignoreDefensive?: boolean;
@@ -249,7 +248,6 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly ignorePositiveDefensive?: boolean;
   readonly ignorePositiveEvasion?: boolean;
   readonly isFutureMove?: boolean;
-  readonly mindBlownRecoil?: boolean;
   readonly multiaccuracy?: boolean;
   readonly noDamageVariance?: boolean;
   readonly noFaint?: boolean;
@@ -258,7 +256,6 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly sleepUsable?: boolean;
   readonly stallingMove?: boolean;
   readonly stealsBoosts?: boolean;
-  readonly struggleRecoil?: boolean;
   readonly thawsTarget?: boolean;
   readonly tracksTarget?: boolean;
   readonly smartTarget?: boolean;
@@ -272,7 +269,11 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly affectsFainted?: boolean;
   readonly self?: T.SelfEffect | null;
   readonly drain?: [number, number];
+  readonly recoilDamage?: T.MoveRecoil;
   readonly recoil?: [number, number];
+  readonly hasCustomRecoil?: boolean;
+  readonly mindBlownRecoil?: boolean;
+  readonly struggleRecoil?: boolean;
   readonly noCopy?: boolean;
   readonly infiltrates?: boolean;
   readonly counterMax?: number;
@@ -306,6 +307,16 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
     this.ignoreAbility = data.ignoreAbility || false;
     this.volatileStatus =
       typeof data.volatileStatus === 'string' ? (data.volatileStatus as ID) : undefined;
+
+    if (this.recoil) {
+      this.recoilDamage = this.recoil;
+    } else if (this.hasCustomRecoil) {
+      this.recoilDamage = 'crash';
+    } else if (this.mindBlownRecoil) {
+      this.recoilDamage = 'mindblown';
+    } else if (this.struggleRecoil) {
+      this.recoilDamage = 'struggle';
+    }
 
     if (this.category !== 'Status' && !this.gmaxPower) {
       if (!this.basePower) {

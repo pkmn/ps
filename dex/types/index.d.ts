@@ -329,6 +329,7 @@ export interface Item extends Readonly<BasicEffect<ItemName> & ItemData> {
   readonly itemUser?: SpeciesName[];
 }
 
+export type MoveRecoil = [number, number] | 'crash' | 'struggle' | 'mindblown';
 export interface Move extends Readonly<BasicEffect<MoveName> & MoveData> {
   readonly effectType: 'Move';
   readonly kind: 'Move';
@@ -344,6 +345,7 @@ export interface Move extends Readonly<BasicEffect<MoveName> & MoveData> {
   readonly terrain?: ID;
   readonly pseudoWeather?: ID;
   readonly weather?: ID;
+  readonly recoilDamage?: MoveRecoil;
 }
 
 export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData> {

@@ -403,11 +403,11 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(gen.types.get('Fairy')).toBeDefined();
         expect(Gen(5).types.get('Fairy')).toBeUndefined();
         expect(Gen(1).types.get('steel')).toBeUndefined();
-        expect(Gen(1).types.get('Psychic')!.damageTaken['Ghost']).toEqual(0);
-        expect(gen.types.get('Psychic')!.damageTaken['Ghost']).toEqual(2);
-        expect(gen.types.get('Fire')!.damageTaken['Water']).toEqual(2);
-        expect(gen.types.get('Water')!.damageTaken['Fire']).toEqual(0.5);
-        expect(gen.types.get('Ground')!.damageTaken['Electric']).toEqual(0);
+        expect(Gen(1).types.get('Ghost')!.effectiveness['Psychic']).toEqual(0);
+        expect(gen.types.get('Ghost')!.effectiveness['Psychic']).toEqual(2);
+        expect(gen.types.get('Water')!.effectiveness['Fire']).toEqual(2);
+        expect(gen.types.get('Fire')!.effectiveness['Water']).toEqual(0.5);
+        expect(gen.types.get('Electric')!.effectiveness['Ground']).toEqual(0);
 
         expect(gen.types.get('Ice')!.HPdvs).toEqual({'def': 13});
         expect(gen.types.get('Flying')!.HPdvs).toEqual({'atk': 12, 'def': 13});
@@ -415,24 +415,25 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(gen.types.get('Ground')!.HPivs).toEqual({'spa': 30, 'spd': 30});
       });
 
-      it('#getImmunity', () => {
+      it('#canDamage', () => {
         const gen = Gen(8);
-        // TODO fix naming / reverse logic here?
-        expect(gen.types.getImmunity('Electric', ['Ground'])).toBe(false);
-        expect(gen.types.getImmunity({type: 'Fire'}, 'Fire')).toBe(true);
-        expect(gen.types.getImmunity('Ground', ['Ghost', 'Flying'])).toBe(false);
-        expect(gen.types.getImmunity('Normal', {getTypes: () => ['Steel', 'Rock']})).toBe(true);
-        expect(Gen(1).types.getImmunity('Ghost', 'Psychic')).toBe(false);
+        expect(gen.types.canDamage('Electric', ['Ground'])).toBe(false);
+        expect(gen.types.get('Electric')!.canDamage(['Ground'])).toBe(false);
+        expect(gen.types.canDamage({type: 'Fire'}, 'Fire')).toBe(true);
+        expect(gen.types.canDamage('Ground', ['Ghost', 'Flying'])).toBe(false);
+        expect(gen.types.canDamage('Normal', {getTypes: () => ['Steel', 'Rock']})).toBe(true);
+        expect(Gen(1).types.canDamage('Ghost', 'Psychic')).toBe(false);
       });
 
-      it('#getEffectiveness', () => {
+      it('#totalEffectiveness', () => {
         const gen = Gen(8);
-        expect(gen.types.getEffectiveness('Water', ['Fire'])).toBe(2);
-        expect(gen.types.getEffectiveness({type: 'Fire'}, 'Fire')).toBe(0.5);
-        expect(gen.types.getEffectiveness('Dark', ['Ghost', 'Psychic'])).toBe(4);
-        expect(gen.types.getEffectiveness('Normal', {getTypes: () => ['Steel', 'Rock']}))
+        expect(gen.types.totalEffectiveness('Water', ['Fire'])).toBe(2);
+        expect(gen.types.totalEffectiveness({type: 'Fire'}, 'Fire')).toBe(0.5);
+        expect(gen.types.totalEffectiveness('Dark', ['Ghost', 'Psychic'])).toBe(4);
+        expect(gen.types.get('Dark')!.totalEffectiveness(['Ghost', 'Psychic'])).toBe(4);
+        expect(gen.types.totalEffectiveness('Normal', {getTypes: () => ['Steel', 'Rock']}))
           .toBe(0.25);
-        expect(gen.types.getEffectiveness('BUug', 'Bug')).toBe(1);
+        expect(gen.types.totalEffectiveness('Bug', 'Bug')).toBe(1);
       });
 
       it('#getHiddenPower', () => {
@@ -541,7 +542,7 @@ describe('Bundle', () => {
       const gens = new window.Generations(window.Dex);
       expect(gens.get(2).species.get('kabigon')!.tier).toBe('OU');
       expect(gens.get(1).moves.get('thunderbolt')).toBeDefined();
-      expect(gens.get(1).types.get('Psychic')!.damageTaken['Ghost']).toEqual(0);
+      expect(gens.get(1).types.get('Ghost')!.effectiveness['Psychic']).toEqual(0);
       expect((await gens.get(8).learnsets.get('bulbasaur'))!.learnset!.leafstorm)
         .toEqual(['8M', '7E', '6E', '5E', '4E']);
       expect(gens.get(3).abilities.get('s turdy')!.shortDesc)
