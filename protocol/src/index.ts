@@ -1063,13 +1063,13 @@ export namespace Protocol {
      *
      * The Pokémon `POKEMON` has been inflicted with `STATUS`.
      */
-    '|-status|': readonly ['-status', PokemonIdent, StatusName | 'tox'];
+    '|-status|': readonly ['-status', PokemonIdent, StatusName];
     /**
      * `|-curestatus|POKEMON|STATUS`
      *
      * The Pokémon `POKEMON` has recovered from `STATUS`.
      */
-    '|-curestatus|': readonly ['-curestatus', PokemonIdent, StatusName | 'tox'];
+    '|-curestatus|': readonly ['-curestatus', PokemonIdent, StatusName];
     /**
      * `|-cureteam|POKEMON`
      *
@@ -1709,7 +1709,7 @@ export interface PokemonHealth {
   hp: number;
   maxhp: number;
   hpcolor: HPColor | '';
-  status: StatusName | 'tox' | '' | '???';
+  status: StatusName | '' | '???';
   fainted?: boolean;
 }
 

@@ -1,5 +1,7 @@
 import {
+  As,
   BoostsTable,
+  EggGroup,
   EvoType,
   GenderName,
   GenerationNum,
@@ -12,8 +14,15 @@ import {
   TypeName,
 } from '@pkmn/types';
 
-export type EffectType =
-  'Effect' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Weather' | 'Status';
+export type AbilityName = string & As<'AbilityName'>;
+export type ItemName = string & As<'ItemName'>;
+export type MoveName = string & As<'MoveName'>;
+export type SpeciesName = string & As<'SpeciesName'>;
+export type FormeName = string & As<'FormeName'>;
+
+export type EffectType = 'Effect' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Weather' | 'Status';
+export type DataKind =
+  'Effect' | 'Species' | 'Move' | 'Item' | 'Ability' | 'Nature' | 'Type' | 'Learnset';
 
 export type Effect = Ability | Item | Move | PureEffect;
 
@@ -22,7 +31,7 @@ export interface EffectData {
   num: number;
 
   desc?: string;
-  effectType?: string;
+  effectType?: EffectType;
   isNonstandard?: Nonstandard | null;
   shortDesc?: string;
   inherit?: boolean;
@@ -83,7 +92,7 @@ export interface ItemData extends EffectData {
   isPokeball?: boolean;
   megaStone?: string;
   megaEvolves?: string;
-  naturalGift?: { basePower: number; type: string };
+  naturalGift?: { basePower: number; type: TypeName };
   onDrive?: string;
   onMemory?: string;
   onPlate?: string;
@@ -92,7 +101,6 @@ export interface ItemData extends EffectData {
   itemUser?: string[];
   boosts?: Partial<BoostsTable> | false;
 }
-
 
 export interface MoveFlags {
   authentic?: 1 | 0;
@@ -155,19 +163,18 @@ export interface MoveData extends EffectData, MoveHitEffect {
   isMax?: boolean | string;
   multiaccuracy?: boolean;
   multihit?: number | number[];
-  multihitType?: string;
   noDamageVariance?: boolean;
   noFaint?: boolean;
   noMetronome?: string[];
-  nonGhostTarget?: string;
+  nonGhostTarget?: MoveTarget;
   noPPBoosts?: boolean;
   noSketch?: boolean;
-  ohko?: boolean | string;
-  pressureTarget?: string;
+  ohko?: boolean | TypeName;
+  pressureTarget?: MoveTarget;
   pseudoWeather?: string;
   selfBoost?: { boosts?: Partial<BoostsTable> };
-  selfdestruct?: string | boolean;
-  selfSwitch?: string | boolean;
+  selfdestruct?: boolean | 'ifHit' | 'always';
+  selfSwitch?: boolean | 'copyvolatile';
   sideCondition?: string;
   sleepUsable?: boolean;
   slotCondition?: string;
@@ -200,17 +207,12 @@ export interface MoveData extends EffectData, MoveHitEffect {
   struggleRecoil?: boolean;
 }
 
-export interface SpeciesAbility {
-  0: string;
-  1?: string;
-  H?: string;
-  S?: string;
-}
+export interface SpeciesAbility<A = string> {0: A; 1?: A; H?: A; S?: A}
 
 export interface SpeciesData {
   abilities: SpeciesAbility;
   baseStats: StatsTable;
-  eggGroups: string[];
+  eggGroups: EggGroup[];
   heightm: number;
   num: number;
   name: string;
@@ -229,12 +231,12 @@ export interface SpeciesData {
   evoType?: EvoType;
   forme?: string;
   gender?: GenderName;
-  genderRatio?: { [k: string]: number };
+  genderRatio?: {M: number, F: number};
   maxHP?: number;
   cosmeticFormes?: string[];
   otherFormes?: string[];
   prevo?: string;
-  gen?: number;
+  gen?: GenerationNum;
   requiredAbility?: string;
   requiredItem?: string;
   requiredItems?: string[];
@@ -248,8 +250,8 @@ export interface SpeciesData {
 
 export type MoveSource = string;
 
-export interface EventInfo {
-  generation: number;
+export interface EventInfoData {
+  generation: number; // sigh
 
   level?: number;
   shiny?: boolean | 1;
@@ -267,9 +269,9 @@ export interface EventInfo {
 
 export interface LearnsetData {
   learnset?: {[moveid: string]: MoveSource[]};
-  eventData?: EventInfo[];
+  eventData?: EventInfoData[];
   eventOnly?: boolean;
-  encounters?: EventInfo[];
+  encounters?: EventInfoData[];
   exists?: boolean;
 }
 
@@ -288,11 +290,12 @@ export interface NatureData {
 
 interface AnyObject { [k: string]: any }
 
-export interface BasicEffect extends Readonly<EffectData> {
+export interface BasicEffect<NameT extends string = string> extends Readonly<EffectData> {
   id: ID;
-  name: string;
+  name: NameT;
   fullname: string;
   effectType: EffectType;
+  kind: DataKind;
   exists: boolean;
   num: number;
   gen: GenerationNum;
@@ -304,35 +307,59 @@ export interface BasicEffect extends Readonly<EffectData> {
 
 export interface PureEffect extends Readonly<BasicEffect> {
   readonly effectType: 'Effect' | 'Weather' | 'Status';
+  readonly kind: 'Effect';
 }
 
-export interface Ability extends Readonly<BasicEffect & AbilityData> {
+export interface Ability extends Readonly<BasicEffect<AbilityName> & AbilityData> {
   readonly effectType: 'Ability';
+  readonly kind: 'Ability';
 }
 
-export interface Item extends Readonly<BasicEffect & ItemData> {
+export interface Item extends Readonly<BasicEffect<ItemName> & ItemData> {
   readonly effectType: 'Item';
+  readonly kind: 'Item';
+  readonly forcedForme?: SpeciesName;
+  readonly megaStone?: SpeciesName;
+  readonly megaEvolves?: SpeciesName;
+  readonly onDrive?: TypeName;
+  readonly onMemory?: TypeName;
+  readonly onPlate?: TypeName;
+  readonly zMove?: MoveName | true;
+  readonly zMoveType?: TypeName;
+  readonly itemUser?: SpeciesName[];
 }
 
-export interface Move extends Readonly<BasicEffect & MoveData> {
+export interface Move extends Readonly<BasicEffect<MoveName> & MoveData> {
   readonly effectType: 'Move';
+  readonly kind: 'Move';
   readonly secondaries: SecondaryEffect[] | null;
   readonly flags: MoveFlags;
-  readonly selfSwitch?: ID | boolean;
+  readonly zMoveEffect?: ID;
+  readonly isZ: boolean | ID;
+  readonly isMax?: SpeciesName;
+  readonly noMetronome?: ID[];
   readonly volatileStatus?: ID;
+  readonly slotCondition?: ID;
+  readonly sideCondition?: ID;
+  readonly terrain?: ID;
+  readonly pseudoWeather?: ID;
+  readonly weather?: ID;
 }
 
-export interface Species extends Readonly<BasicEffect & SpeciesData> {
+export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData> {
   readonly effectType: 'Pokemon';
-  readonly baseSpecies: string;
-  readonly baseForme: string;
-  readonly forme: string;
-  readonly abilities: SpeciesAbility;
+  readonly kind: 'Species';
+  readonly baseSpecies: SpeciesName;
+  readonly baseForme: FormeName | '';
+  readonly forme: FormeName | '';
+  readonly abilities: SpeciesAbility<AbilityName | ''>;
   readonly types: TypeName[];
   readonly prevo: ID;
   readonly evos: ID[];
   readonly nfe: boolean;
-  readonly eggGroups: string[];
+  readonly evoMove?: MoveName;
+  readonly cosmeticFormes?: ID[];
+  readonly otherFormes?: ID[];
   readonly genderRatio: { M: number; F: number };
   readonly weighthg: number;
   readonly heightm: number;
@@ -343,10 +370,25 @@ export interface Species extends Readonly<BasicEffect & SpeciesData> {
   readonly doublesTier: string;
   readonly isMega?: boolean;
   readonly isPrimal?: boolean;
+  readonly battleOnly?: SpeciesName | SpeciesName[];
+  readonly isGigantamax?: MoveName;
+  readonly requiredAbility?: AbilityName;
+  readonly requiredItem?: ItemName;
+  readonly requiredItems?: ItemName[];
+  readonly requiredMove?: MoveName;
+}
+
+export interface EventInfo extends Readonly<EventInfoData> {
+  readonly gen: GenerationNum;
+  readonly nature?: NatureName;
+  readonly abilities?: ID[];
+  readonly moves?: string[];
+  readonly pokeball?: string;
 }
 
 export interface Learnset {
   readonly effectType: 'Learnset';
+  readonly kind: 'Learnset';
   readonly exists: boolean;
   readonly eventOnly: boolean;
   readonly eventData?: EventInfo[];
@@ -355,9 +397,10 @@ export interface Learnset {
 }
 
 export interface Type extends Readonly<TypeData> {
-  readonly id: ID;
-  readonly name: string;
   readonly effectType: 'Type';
+  readonly kind: 'Type';
+  readonly id: ID;
+  readonly name: TypeName;
   readonly exists: boolean;
   readonly gen: GenerationNum;
   readonly damageTaken: { [t in Exclude<TypeName, '???'>]: number } & { [key: string]: number };
@@ -367,6 +410,7 @@ export interface Type extends Readonly<TypeData> {
 
 export interface Nature extends NatureData {
   readonly effectType: 'Nature';
+  readonly kind: 'Nature';
   readonly id: ID;
   readonly name: NatureName;
   readonly gen: GenerationNum;

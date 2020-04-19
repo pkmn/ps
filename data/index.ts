@@ -1,4 +1,5 @@
 import {
+  EggGroup,
   EvoType,
   GenderName,
   GenerationNum,
@@ -10,14 +11,17 @@ import {
 } from '@pkmn/types';
 
 import {
+  AbilityName,
   Dex,
   Effect,
+  FormeName,
+  ItemName,
+  MoveName,
   Nature,
   PureEffect,
-  SecondaryEffect,
-  SelfEffect,
   Species as DexSpecies,
   SpeciesAbility,
+  SpeciesName,
   Type as DexType,
 } from '@pkmn/dex-types';
 
@@ -180,7 +184,7 @@ export class Species {
 
 export class Specie implements DexSpecies {
   readonly id!: ID;
-  readonly name!: string;
+  readonly name!: SpeciesName;
   readonly fullname!: string;
   readonly exists!: boolean;
   readonly num!: number;
@@ -189,62 +193,48 @@ export class Specie implements DexSpecies {
   readonly desc!: string;
   readonly isNonstandard!: Nonstandard | null;
   readonly duration?: number;
-  readonly noCopy?: boolean;
-  readonly affectsFainted?: boolean;
-  readonly status?: ID;
-  readonly weather?: ID;
-  readonly sourceEffect!: string;
-  readonly counterMax?: number;
-  readonly drain?: [number, number];
-  readonly effect?: Partial<PureEffect>;
-  readonly infiltrates?: boolean;
-  readonly isZ?: boolean | string;
-  readonly isMax?: boolean | string;
-  readonly recoil?: [number, number];
-  readonly secondary?: SecondaryEffect | null;
-  readonly secondaries?: SecondaryEffect[] | null;
-  readonly self?: SelfEffect | null;
-
 
   readonly effectType!: 'Pokemon';
-  readonly baseSpecies!: string;
-  readonly baseForme!: string;
-  readonly forme!: string;
-  readonly abilities!: SpeciesAbility;
+  readonly kind!: 'Species';
+  readonly baseStats!: StatsTable;
+  readonly baseSpecies!: SpeciesName;
+  readonly baseForme!: FormeName | '';
+  readonly forme!: FormeName | '';
+  readonly abilities!: SpeciesAbility<AbilityName | ''>;
   readonly types!: TypeName[];
   readonly prevo!: ID;
   readonly evos!: ID[];
   readonly nfe!: boolean;
-  readonly eggGroups!: string[];
-  readonly gender?: GenderName;
-  readonly genderRatio!: { M: number; F: number };
-  readonly baseStats!: StatsTable;
-  readonly maxHP?: number;
+  readonly eggGroups!: EggGroup[];
   readonly weightkg!: number;
   readonly weighthg!: number;
   readonly heightm!: number;
-  readonly color!: string;
   readonly unreleasedHidden!: boolean | 'Past';
   readonly maleOnlyHidden!: boolean;
-  readonly isMega?: boolean;
-  readonly isPrimal?: boolean;
-  readonly isGigantamax?: string;
-  readonly battleOnly?: string | string[];
   readonly inheritsFrom!: ID;
   readonly tier!: string;
   readonly doublesTier!: string;
-  readonly canHatch?: boolean;
+
+  readonly evoMove?: MoveName;
+  readonly cosmeticFormes?: ID[];
+  readonly otherFormes?: ID[];
+  readonly genderRatio: { M: number; F: number };
+  readonly isMega?: boolean;
+  readonly isPrimal?: boolean;
+  readonly battleOnly?: SpeciesName | SpeciesName[];
+  readonly isGigantamax?: MoveName;
+  readonly requiredAbility?: AbilityName;
+  readonly requiredItem?: ItemName;
+  readonly requiredItems?: ItemName[];
+  readonly requiredMove?: MoveName;
+  readonly gender?: GenderName;
+  readonly maxHP?: number;
   readonly evoLevel?: number;
-  readonly evoMove?: string;
   readonly evoCondition?: string;
   readonly evoItem?: string;
   readonly evoType?: EvoType;
-  readonly cosmeticFormes?: string[];
-  readonly otherFormes?: string[];
-  readonly requiredAbility?: string;
-  readonly requiredItem?: string;
-  readonly requiredItems?: string[];
-  readonly requiredMove?: string;
+  readonly effect?: Partial<PureEffect>;
+  readonly canHatch?: boolean;
 
   private readonly dex: Dex;
 
@@ -370,7 +360,7 @@ const DAMAGE_TAKEN = [1, 2, 0.5, 0];
 
 export class Type {
   readonly id!: ID;
-  readonly name!: string;
+  readonly name!: TypeName;
   readonly effectType!: 'Type';
   readonly exists!: boolean;
   readonly gen!: GenerationNum;

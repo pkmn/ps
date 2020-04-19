@@ -9,7 +9,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@pkmn/types": "^0.0.5",
+    "@pkmn/types": "^0.1.0",
     "@typescript-eslint/eslint-plugin": "^2.28.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jest": "^23.8.2",

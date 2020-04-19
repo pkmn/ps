@@ -127,7 +127,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   hp: number;
   maxhp: number;
   hpcolor: HPColor;
-  status: StatusName | 'tox' | '' | '???';
+  status: StatusName | '' | '???';
   fainted: boolean;
 
   statusStage: number;

@@ -8,7 +8,7 @@
   "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
   "dependencies": {
-    "@pkmn/types": "^0.0.5",
+    "@pkmn/types": "^0.1.0",
     "@smogon/calc": "^file:../../../../damage-calc/calc"
   },
   "devDependencies": {
@@ -20,7 +20,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jest": "^23.8.2",
     "jest": "^25.3.0",
-    "ts-jest": "^25.3.1",
+    "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
   },
   "scripts": {
