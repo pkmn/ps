@@ -30,15 +30,19 @@ export type EvoType =
   'trade' | 'useItem' | 'levelMove' | 'levelExtra' |
   'levelFriendship' | 'levelHold' | 'other';
 
+export type EggGroup =
+  'Monster' | 'Water 1' | 'Bug' | 'Flying' | 'Field' | 'Fairy' | 'Grass' | 'Human-Like' |
+  'Water 3' | 'Mineral' | 'Amorphous' | 'Water 2' | 'Ditto' | 'Dragon' | 'Undiscovered';
+
 export type SideID = 'p1' | 'p2' | 'p3' | 'p4';
 export type Player = SideID;
 
 export type GameType =
   'singles' | 'doubles' | 'triples' | 'multi' | 'free-for-all' | 'rotation';
 
-export type HPColor = 'r' | 'y' | 'g';
+export type HPColor = 'g' | 'y' | 'r';
 
-export type StatusName = 'par' | 'psn' | 'frz' | 'slp' | 'brn';
+export type StatusName = 'slp' | 'psn' | 'brn' | 'frz' | 'par' | 'tox';
 
 export type NatureName =
   'Adamant' | 'Bashful' | 'Bold' | 'Brave' | 'Calm' |
