@@ -4662,7 +4662,7 @@
     "pawniard": {"tier": "PU", "doublesTier": "LC"},
     "bisharp": {"tier": "OU", "doublesTier": "(DUU)"},
     "bouffalant": {"isNonstandard": "Past", "tier": "Illegal"},
-    "rufflet": {"tier": "LC"},
+    "rufflet": {"tier": "LC Uber"},
     "braviary": {"tier": "UU", "doublesTier": "DUU"},
     "vullaby": {"tier": "LC"},
     "mandibuzz": {"tier": "OU", "doublesTier": "(DUU)"},

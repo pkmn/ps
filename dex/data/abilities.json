@@ -405,7 +405,8 @@
     "swiftswim": {
       "inherit": true,
       "desc": "If Rain Dance is active, this Pokemon's Speed is doubled."
-    }
+    },
+    "technician": {"inherit": true, "onBasePowerPriority": 19}
   },
   "8": {
     "noability": {
@@ -426,7 +427,7 @@
       "desc": "This Pokemon's Normal-type moves become Flying-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
       "shortDesc": "This Pokemon's Normal-type moves become Flying type and have 1.2x power.",
       "onModifyTypePriority": -1,
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 23,
       "id": "aerilate",
       "name": "Aerilate",
       "num": 185
@@ -449,7 +450,7 @@
     "analytic": {
       "desc": "The power of this Pokemon's move is multiplied by 1.3 if it is the last to move in a turn. Does not affect Doom Desire and Future Sight.",
       "shortDesc": "This Pokemon's attacks have 1.3x power if it is the last to move in a turn.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 21,
       "id": "analytic",
       "name": "Analytic",
       "num": 148
@@ -506,7 +507,7 @@
     },
     "battery": {
       "shortDesc": "This Pokemon's allies have the power of their special attacks multiplied by 1.3.",
-      "onAllyBasePowerPriority": 8,
+      "onAllyBasePowerPriority": 22,
       "id": "battery",
       "name": "Battery",
       "num": 217
@@ -668,6 +669,7 @@
     "darkaura": {
       "desc": "While this Pokemon is active, the power of Dark-type moves used by active Pokemon is multiplied by 1.33.",
       "shortDesc": "While this Pokemon is active, a Dark move used by any Pokemon has 1.33x power.",
+      "onAnyBasePowerPriority": 20,
       "isUnbreakable": true,
       "id": "darkaura",
       "name": "Dark Aura",
@@ -746,7 +748,7 @@
     "dryskin": {
       "desc": "This Pokemon is immune to Water-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Water-type move. The power of Fire-type moves is multiplied by 1.25 when used on this Pokemon. At the end of each turn, this Pokemon restores 1/8 of its maximum HP, rounded down, if the weather is Rain Dance, and loses 1/8 of its maximum HP, rounded down, if the weather is Sunny Day. If this Pokemon is holding Utility Umbrella, the effects of weather are nullified.",
       "shortDesc": "This Pokemon is healed 1/4 by Water, 1/8 by Rain; is hurt 1.25x by Fire, 1/8 by Sun.",
-      "onFoeBasePowerPriority": 7,
+      "onFoeBasePowerPriority": 17,
       "id": "dryskin",
       "name": "Dry Skin",
       "num": 87
@@ -780,6 +782,7 @@
     "fairyaura": {
       "desc": "While this Pokemon is active, the power of Fairy-type moves used by active Pokemon is multiplied by 1.33.",
       "shortDesc": "While this Pokemon is active, a Fairy move used by any Pokemon has 1.33x power.",
+      "onAnyBasePowerPriority": 20,
       "isUnbreakable": true,
       "id": "fairyaura",
       "name": "Fairy Aura",
@@ -800,7 +803,7 @@
     "flareboost": {
       "desc": "While this Pokemon is burned, the power of its special attacks is multiplied by 1.5.",
       "shortDesc": "While this Pokemon is burned, its special attacks have 1.5x power.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 19,
       "id": "flareboost",
       "name": "Flare Boost",
       "num": 138
@@ -891,7 +894,7 @@
       "desc": "This Pokemon's Normal-type moves become Electric-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
       "shortDesc": "This Pokemon's Normal-type moves become Electric type and have 1.2x power.",
       "onModifyTypePriority": -1,
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 23,
       "id": "galvanize",
       "name": "Galvanize",
       "num": 206
@@ -964,7 +967,7 @@
     "heatproof": {
       "desc": "The power of Fire-type attacks against this Pokemon is halved, and burn damage taken is halved.",
       "shortDesc": "The power of Fire-type attacks against this Pokemon is halved; burn damage halved.",
-      "onSourceBasePowerPriority": 7,
+      "onSourceBasePowerPriority": 18,
       "id": "heatproof",
       "name": "Heatproof",
       "num": 85
@@ -1118,7 +1121,7 @@
     "ironfist": {
       "desc": "This Pokemon's punch-based attacks have their power multiplied by 1.2.",
       "shortDesc": "This Pokemon's punch-based attacks have 1.2x power. Sucker Punch is not boosted.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 23,
       "id": "ironfist",
       "name": "Iron Fist",
       "num": 89
@@ -1250,7 +1253,7 @@
     "megalauncher": {
       "desc": "This Pokemon's pulse moves have their power multiplied by 1.5. Heal Pulse restores 3/4 of a target's maximum HP, rounded half down.",
       "shortDesc": "This Pokemon's pulse moves have 1.5x power. Heal Pulse heals 3/4 target's max HP.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 19,
       "id": "megalauncher",
       "name": "Mega Launcher",
       "num": 178
@@ -1367,7 +1370,7 @@
       "desc": "This Pokemon's moves are changed to be Normal type and have their power multiplied by 1.2. This effect comes before other effects that change a move's type.",
       "shortDesc": "This Pokemon's moves are changed to be Normal type and have 1.2x power.",
       "onModifyTypePriority": 1,
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 23,
       "id": "normalize",
       "name": "Normalize",
       "num": 96
@@ -1405,7 +1408,7 @@
     "parentalbond": {
       "desc": "This Pokemon's damaging moves become multi-hit moves that hit twice. The second hit has its damage quartered. Does not affect multi-hit moves or moves that have multiple targets.",
       "shortDesc": "This Pokemon's damaging moves hit twice. The second hit has its damage quartered.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 7,
       "id": "parentalbond",
       "name": "Parental Bond",
       "num": 184
@@ -1442,7 +1445,7 @@
       "desc": "This Pokemon's Normal-type moves become Fairy-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
       "shortDesc": "This Pokemon's Normal-type moves become Fairy type and have 1.2x power.",
       "onModifyTypePriority": -1,
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 23,
       "id": "pixilate",
       "name": "Pixilate",
       "num": 182
@@ -1492,7 +1495,7 @@
     },
     "powerspot": {
       "shortDesc": "This Pokemon's allies have the power of their moves multiplied by 1.3.",
-      "onAllyBasePowerPriority": 8,
+      "onAllyBasePowerPriority": 22,
       "id": "powerspot",
       "name": "Power Spot",
       "num": 249
@@ -1547,7 +1550,7 @@
     "punkrock": {
       "desc": "This Pokemon's sound-based moves have their power multiplied by 1.3. This Pokemon takes halved damage from sound-based moves.",
       "shortDesc": "This Pokemon receives 1/2 damage from sound moves. Its own have 1.3x power.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 7,
       "id": "punkrock",
       "name": "Punk Rock",
       "num": 244
@@ -1597,7 +1600,7 @@
     "reckless": {
       "desc": "This Pokemon's attacks with recoil or crash damage have their power multiplied by 1.2. Does not affect Struggle.",
       "shortDesc": "This Pokemon's attacks with recoil or crash damage have 1.2x power; not Struggle.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 23,
       "id": "reckless",
       "name": "Reckless",
       "num": 120
@@ -1606,7 +1609,7 @@
       "desc": "This Pokemon's Normal-type moves become Ice-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
       "shortDesc": "This Pokemon's Normal-type moves become Ice type and have 1.2x power.",
       "onModifyTypePriority": -1,
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 23,
       "id": "refrigerate",
       "name": "Refrigerate",
       "num": 174
@@ -1626,7 +1629,7 @@
     "rivalry": {
       "desc": "This Pokemon's attacks have their power multiplied by 1.25 against targets of the same gender or multiplied by 0.75 against targets of the opposite gender. There is no modifier if either this Pokemon or the target is genderless.",
       "shortDesc": "This Pokemon's attacks do 1.25x on same gender targets; 0.75x on opposite gender.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 24,
       "id": "rivalry",
       "name": "Rivalry",
       "num": 79
@@ -1661,7 +1664,7 @@
     "sandforce": {
       "desc": "If Sandstorm is active, this Pokemon's Ground-, Rock-, and Steel-type attacks have their power multiplied by 1.3. This Pokemon takes no damage from Sandstorm.",
       "shortDesc": "This Pokemon's Ground/Rock/Steel attacks do 1.3x in Sandstorm; immunity to it.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 21,
       "id": "sandforce",
       "name": "Sand Force",
       "num": 159
@@ -1757,7 +1760,7 @@
     "sheerforce": {
       "desc": "This Pokemon's attacks with secondary effects have their power multiplied by 1.3, but the secondary effects are removed.",
       "shortDesc": "This Pokemon's attacks with secondary effects have 1.3x power; nullifies the effects.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 21,
       "id": "sheerforce",
       "name": "Sheer Force",
       "num": 125
@@ -1928,7 +1931,7 @@
     },
     "steelyspirit": {
       "shortDesc": "This Pokemon and its allies' Steel-type moves have their power multiplied by 1.5.",
-      "onAllyBasePowerPriority": 8,
+      "onAllyBasePowerPriority": 22,
       "id": "steelyspirit",
       "name": "Steely Spirit",
       "num": 252
@@ -1956,7 +1959,7 @@
     "strongjaw": {
       "desc": "This Pokemon's bite-based attacks have their power multiplied by 1.5.",
       "shortDesc": "This Pokemon's bite-based attacks have 1.5x power. Bug Bite is not boosted.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 19,
       "id": "strongjaw",
       "name": "Strong Jaw",
       "num": 173
@@ -2039,7 +2042,7 @@
     "technician": {
       "desc": "This Pokemon's moves of 60 power or less have their power multiplied by 1.5. Does affect Struggle.",
       "shortDesc": "This Pokemon's moves of 60 power or less have 1.5x power. Includes Struggle.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 30,
       "id": "technician",
       "name": "Technician",
       "num": 101
@@ -2082,7 +2085,7 @@
     },
     "toughclaws": {
       "shortDesc": "This Pokemon's contact moves have their power multiplied by 1.3.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 21,
       "id": "toughclaws",
       "name": "Tough Claws",
       "num": 181
@@ -2090,7 +2093,7 @@
     "toxicboost": {
       "desc": "While this Pokemon is poisoned, the power of its physical attacks is multiplied by 1.5.",
       "shortDesc": "While this Pokemon is poisoned, its physical attacks have 1.5x power.",
-      "onBasePowerPriority": 8,
+      "onBasePowerPriority": 19,
       "id": "toxicboost",
       "name": "Toxic Boost",
       "num": 137

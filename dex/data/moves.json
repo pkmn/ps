@@ -5407,7 +5407,7 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "volatileStatus": "charge",
-      "effect": {"duration": 2, "onBasePowerPriority": 3},
+      "effect": {"duration": 2, "onBasePowerPriority": 9},
       "boosts": {"spd": 1},
       "secondary": null,
       "target": "self",
@@ -6967,7 +6967,12 @@
       "priority": 0,
       "flags": {"nonsky": 1},
       "terrain": "electricterrain",
-      "effect": {"duration": 5, "onResidualOrder": 21, "onResidualSubOrder": 2},
+      "effect": {
+        "duration": 5,
+        "onBasePowerPriority": 6,
+        "onResidualOrder": 21,
+        "onResidualSubOrder": 2
+      },
       "secondary": null,
       "target": "all",
       "type": "Electric",
@@ -9004,7 +9009,12 @@
       "priority": 0,
       "flags": {"nonsky": 1},
       "terrain": "grassyterrain",
-      "effect": {"duration": 5, "onResidualOrder": 5, "onResidualSubOrder": 3},
+      "effect": {
+        "duration": 5,
+        "onBasePowerPriority": 6,
+        "onResidualOrder": 5,
+        "onResidualSubOrder": 3
+      },
       "secondary": null,
       "target": "all",
       "type": "Grass",
@@ -9570,7 +9580,7 @@
       "priority": 5,
       "flags": {"authentic": 1},
       "volatileStatus": "helpinghand",
-      "effect": {"duration": 1, "onBasePowerPriority": 3},
+      "effect": {"duration": 1, "onBasePowerPriority": 10},
       "secondary": null,
       "target": "adjacentAlly",
       "type": "Normal",
@@ -11775,7 +11785,7 @@
       "pp": 20,
       "priority": 0,
       "flags": {"protect": 1, "authentic": 1},
-      "effect": {"duration": 1, "onBasePowerPriority": 4},
+      "effect": {"duration": 1, "onBasePowerPriority": 12},
       "secondary": null,
       "target": "adjacentFoe",
       "type": "Normal",
@@ -12298,7 +12308,12 @@
       "priority": 0,
       "flags": {"nonsky": 1},
       "terrain": "mistyterrain",
-      "effect": {"duration": 5, "onResidualOrder": 21, "onResidualSubOrder": 2},
+      "effect": {
+        "duration": 5,
+        "onBasePowerPriority": 6,
+        "onResidualOrder": 21,
+        "onResidualSubOrder": 2
+      },
       "secondary": null,
       "target": "all",
       "type": "Fairy",
@@ -13677,6 +13692,7 @@
       "effect": {
         "duration": 5,
         "onTryHitPriority": 4,
+        "onBasePowerPriority": 6,
         "onResidualOrder": 21,
         "onResidualSubOrder": 2
       },

@@ -43,10 +43,6 @@ let Formats = [
 		mod: 'gen8',
 		ruleset: ['Standard', 'Dynamax Clause'],
 		banlist: ['Uber', 'Arena Trap', 'Moody', 'Shadow Tag', 'Baton Pass'],
-		unbanlist: ['Melmetal'],
-		onBegin() {
-			if (this.rated && this.format.id === 'gen8ou') this.add('html', `<div class="broadcast-red"><strong>OU is currently suspecting Melmetal! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3662190/">suspect thread</a>.</strong></div>`);
-		},
 	},
 	/*{
 		name: "[Gen 8] OU (Blitz)",
@@ -76,7 +72,7 @@ let Formats = [
 		],
 
 		mod: 'gen8',
-		ruleset: ['[Gen 8] OU', '-Melmetal'],
+		ruleset: ['[Gen 8] OU'],
 		banlist: ['OU', 'UUBL'],
 	},
 	{
@@ -122,10 +118,10 @@ let Formats = [
 		mod: 'gen8',
 		maxLevel: 5,
 		ruleset: ['Little Cup', 'Standard', 'Dynamax Clause'],
-		banlist: ['Corsola-Galar', 'Cutiefly', 'Drifloon', 'Gastly', 'Gothita', 'Sneasel', 'Swirlix', 'Vulpix', 'Vulpix-Alola', 'Moody', 'Baton Pass'],
-		onBegin() {
-			if (this.rated && this.format.id === 'gen8lc') this.add('html', `<div class="broadcast-red"><strong>LC is currently suspecting Rufflet! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3662358/">suspect thread</a>.</strong></div>`);
-		},
+		banlist: [
+			'Corsola-Galar', 'Cutiefly', 'Drifloon', 'Gastly', 'Gothita', 'Rufflet', 'Sneasel', 'Swirlix', 'Vulpix', 'Vulpix-Alola',
+			'Moody', 'Baton Pass',
+		],
 	},
 	{
 		name: "[Gen 8] Monotype",
@@ -199,6 +195,9 @@ let Formats = [
 			'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Reshiram', 'Sableye', 'Solgaleo', 'Zacian', 'Zamazenta', 'Zekrom',
 			'Focus Sash', 'Moody', 'Perish Song',
 		],
+		onBegin() {
+			if (this.rated && this.format.id === 'gen81v1') this.add('html', `<div class="broadcast-red"><strong>1v1 is currently suspecting Mimikyu! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3662782/">suspect thread</a>.</strong></div>`);
+		},
 	},
 	{
 		name: "[Gen 8] CAP",
@@ -464,8 +463,8 @@ let Formats = [
 			'Mewtwo', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Reshiram', 'Shedinja', 'Solgaleo', 'Toxapex',
 			'Zacian', 'Zamazenta', 'Zekrom', 'Baton Pass',
 			'Arena Trap', 'Contrary', 'Drizzle ++ Swift Swim', 'Drought ++ Chlorophyll', 'Electric Surge ++ Surge Surfer',
-			'Fur Coat', 'Harvest', 'Huge Power', 'Imposter', 'Innards Out', 'Magic Bounce', 'Magic Guard',
-			'Mirror Armor', 'Mold Breaker', 'Moody', 'Neutralizing Gas', 'Regenerator ++ Emergency Exit',
+			'Flare Boost', 'Fur Coat', 'Guts', 'Harvest', 'Huge Power', 'Imposter', 'Innards Out', 'Magic Bounce',
+			'Magic Guard', 'Mirror Armor', 'Mold Breaker', 'Moody', 'Neutralizing Gas', 'Regenerator ++ Emergency Exit',
 			'Regenerator ++ Wimp Out', 'Sand Rush', 'Sand Veil', 'Shadow Tag', 'Simple', 'Slush Rush', 'Snow Cloak',
 			'Speed Boost', 'Steelworker ++ Steely Spirit', 'Tinted Lens', 'Trace', 'Unaware', 'Unburden', 'Water Bubble',
 		],
