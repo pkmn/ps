@@ -20,11 +20,10 @@
 //
 //   1. run `./import`, look at which files were changed.
 //     a. if `sim/dex.ts` (or another forked file) changed, manually port the changes over
-//   2. run `subpkg sim test`, ensure everything compiles and all of the copied unit tests pass
-//   3. run `subpkg client test`, ensure consumers can use the new sim package
-//   4. `cd sim && npm version patch` to bump the version
-//   5. commit using the provided git commands and message
-//   6. `npm publish --access public` from the `sim/` directory to publish `@pkmn/sim`
+//   2. run `npm test`, ensure everything compiles and all of the copied unit tests pass
+//   3. `cd sim && npm version patch` to bump the version
+//   4. commit using the provided git commands and message
+//   5. `npm publish --access public` from the `sim/` directory to publish `@pkmn/sim`
 //
 // If any of these steps fail, return the the beginning with `./import` and run through them again.
 
@@ -241,35 +240,35 @@ const DATA = {
 };
 
 // TODO need multiple gens :(
-const RANDBAT_DATA = {
-  abilities: (() => {
-    const abilities = {};
-    const data = require(path.resolve(ps, 'data/abilities.js')).BattleAbilities;
-    for (const id in data) {
-      if ('rating' in data[id]) abilities[id] = data[id].rating;
-    }
-    return abilities;
-  })(),
-  moves: (() => {
-    const moves = {};
-    const data = require(path.resolve(ps, 'data/moves.js')).BattleMovedex;
-    for (const id in data) {
-      if (data[id].isViable) moves[id] = 1;
-    }
-    return moves;
-  })(),
-  species: (() => {
-    let data = require(path.resolve(ps, 'data/formats-data.js')).BattleFormatsData;
-    data = JSON.parse(JSON.stringify(data));
-    for (const id in data) {
-      for (const field of Object.keys(data[id])) {
-        if (!RANDBAT_FIELDS.includes(field)) delete data[id][field];
-      }
-      if (!Object.keys(data[id]).length) delete data[id];
-    }
-    return data;
-  })(),
-};
+// const RANDBAT_DATA = {
+//   abilities: (() => {
+//     const abilities = {};
+//     const data = require(path.resolve(ps, 'data/abilities.js')).BattleAbilities;
+//     for (const id in data) {
+//       if ('rating' in data[id]) abilities[id] = data[id].rating;
+//     }
+//     return abilities;
+//   })(),
+//   moves: (() => {
+//     const moves = {};
+//     const data = require(path.resolve(ps, 'data/moves.js')).BattleMovedex;
+//     for (const id in data) {
+//       if (data[id].isViable) moves[id] = 1;
+//     }
+//     return moves;
+//   })(),
+//   species: (() => {
+//     let data = require(path.resolve(ps, 'data/formats-data.js')).BattleFormatsData;
+//     data = JSON.parse(JSON.stringify(data));
+//     for (const id in data) {
+//       for (const field of Object.keys(data[id])) {
+//         if (!RANDBAT_FIELDS.includes(field)) delete data[id][field];
+//       }
+//       if (!Object.keys(data[id]).length) delete data[id];
+//     }
+//     return data;
+//   })(),
+// };
 
 const HEAD = async where => (await execOrDie('git rev-parse HEAD', where)).slice(0, 8);
 // Figure out what has changed in PS so that we can later filter out just the interesting changes
@@ -312,7 +311,6 @@ const changes = async (where, last, now, repo) => ({
       if (INTERESTING.has(change)) console.log(`\x1b[96mCHANGED\x1b[0m ${change}`);
     }
 
-    const DEX = {};
     // Copy the files over, generating an 'import' statement for those that need it
     for (const file of COPIED) {
       if (IMPORTS[file]) {
@@ -324,11 +322,20 @@ const changes = async (where, last, now, repo) => ({
           `${imports(IMPORTS[file], prefix + '/exported-global-types')}${original}`);
       } else {
         fs.copyFileSync(path.resolve(ps, file), path.resolve(sim, file));
-        // In the same loop we also check to see if we can build the dex data files
+      }
+    }
+
+    // The data files are Typescript, so we need to build to convert them to JS before requiring
+    await execOrDie(`node build`, ps);
+
+    const DEX = {};
+    for (let gen = 1; gen <= 8; gen++) {
+      let dir = path.join(ps, '.data-dist');
+      if (gen !== 8) dir = path.join(dir, `mods/gen${gen}`);
+      for (const file of fs.readdirSync(dir)) {
         const fn = DATA[path.basename(file)];
-        if (file.startsWith('data/') && fn) {
-          const [contents, basename] = fn(require(path.resolve(ps, file)));
-          const gen = file.startsWith('data/mod') ? parseInt(file.slice(13)) : 8;
+        if (fn) {
+          const [contents, basename] = fn(require(path.resolve(dir, file)));
           DEX[basename] = DEX[basename] || {};
           DEX[basename][gen] = contents;
         }

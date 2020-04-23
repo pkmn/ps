@@ -150,6 +150,7 @@ export class Battle {
 	readonly maxMoveTable: {[k: string]: string};
 
 	readonly NOT_FAIL: '';
+	readonly HIT_SUBSTITUTE: 0;
 	readonly FAIL: false;
 	readonly SILENT_FAIL: null;
 
@@ -224,6 +225,7 @@ export class Battle {
 		this.hints = new Set();
 
 		this.NOT_FAIL = '';
+		this.HIT_SUBSTITUTE = 0;
 		this.FAIL = false;
 		this.SILENT_FAIL = null;
 

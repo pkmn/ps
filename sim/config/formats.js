@@ -4,7 +4,7 @@
 // The rules that formats use are stored in data/rulesets.js
 
 /**@type {(FormatsData | {section: string, column?: number})[]} */
-let Formats = [
+const Formats = [
 
 	// Sw/Sh Singles
 	///////////////////////////////////////////////////////////////////
@@ -356,23 +356,23 @@ let Formats = [
 			'Oran Berry', 'Rocky Helmet', 'Shell Bell', 'Sitrus Berry', 'Wiki Berry', 'Shedinja + Sturdy', 'Harvest + Jaboca Berry', 'Harvest + Rowap Berry',
 		],
 		onValidateSet(set) {
-			let species = this.dex.getSpecies(set.species);
+			const species = this.dex.getSpecies(set.species);
 			if (species.types.includes('Steel')) {
 				return [`${species.name} is a Steel-type, which is banned from Metronome Battle.`];
 			}
 			let bst = 0;
-			for (let stat in species.baseStats) {
+			for (const stat in species.baseStats) {
 				// @ts-ignore
 				bst += species.baseStats[stat];
 			}
 			if (bst > 625) {
 				return [`${species.name} is banned.`, `(Pok\u00e9mon with a BST higher than 625 are banned)`];
 			}
-			let item = this.dex.getItem(set.item);
+			const item = this.dex.getItem(set.item);
 			if (set.item && item.megaStone) {
 				let bstMega = 0;
-				let megaSpecies = this.dex.getSpecies(item.megaStone);
-				for (let stat in megaSpecies.baseStats) {
+				const megaSpecies = this.dex.getSpecies(item.megaStone);
+				for (const stat in megaSpecies.baseStats) {
 					// @ts-ignore
 					bstMega += megaSpecies.baseStats[stat];
 				}
@@ -420,15 +420,12 @@ let Formats = [
 		mod: 'gen8',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
 		banlist: [
-			'Arceus', 'Blaziken', 'Darkrai', 'Deoxys-Attack', 'Deoxys-Base', 'Deoxys-Speed', 'Dialga', 'Eternatus', 'Genesect', 'Gengar-Mega',
-			'Giratina', 'Groudon', 'Ho-Oh', 'Kangaskhan-Mega', 'Kyogre', 'Kyurem-Black', 'Kyurem-White', 'Landorus-Base', 'Lucario-Mega',
+			'Arceus', 'Blastoise-Mega', 'Blaziken', 'Darkrai', 'Deoxys-Attack', 'Deoxys-Base', 'Deoxys-Speed', 'Dialga', 'Eternatus', 'Genesect',
+			'Gengar-Mega', 'Giratina', 'Groudon', 'Ho-Oh', 'Kangaskhan-Mega', 'Kyogre', 'Kyurem-Black', 'Kyurem-White', 'Landorus-Base', 'Lucario-Mega',
 			'Lugia', 'Lunala', 'Marshadow', 'Mewtwo', 'Naganadel', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Palkia', 'Pheromosa', 'Rayquaza',
 			'Reshiram', 'Salamence-Mega', 'Shaymin-Sky', 'Solgaleo', 'Xerneas', 'Yveltal', 'Zacian', 'Zamazenta', 'Zekrom', 'Zygarde-Base',
 			'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'Baton Pass',
 		],
-		onBegin() {
-			if (this.rated && this.format.id === 'gen8nationaldex') this.add('html', `<div class="broadcast-red"><strong>National Dex is currently suspecting Mega Blastoise! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3662033/">suspect thread</a>.</strong></div>`);
-		},
 	},
 	{
 		name: "[Gen 8] National Dex AG",
@@ -472,7 +469,7 @@ let Formats = [
 		// @ts-ignore
 		getSharedPower(pokemon) {
 			/** @type {Set<string>} */
-			let sharedPower = new Set();
+			const sharedPower = new Set();
 			for (const ally of pokemon.side.pokemon) {
 				if (ally.previouslySwitchedIn > 0) {
 					sharedPower.add(ally.baseAbility);
@@ -486,7 +483,7 @@ let Formats = [
 			if (!this.format.getSharedPower) return;
 			// @ts-ignore
 			for (const ability of this.format.getSharedPower(pokemon)) {
-				let effect = 'ability:' + ability;
+				const effect = 'ability:' + ability;
 				pokemon.volatiles[effect] = {id: toID(effect), target: pokemon};
 			}
 		},
@@ -496,7 +493,7 @@ let Formats = [
 			if (!this.format.getSharedPower) return;
 			// @ts-ignore
 			for (const ability of this.format.getSharedPower(pokemon)) {
-				let effect = 'ability:' + ability;
+				const effect = 'ability:' + ability;
 				delete pokemon.volatiles[effect];
 				pokemon.addVolatile(effect);
 			}
@@ -517,7 +514,7 @@ let Formats = [
 			hasAbility(ability) {
 				if (this.ignoringAbility()) return false;
 				if (Array.isArray(ability)) return ability.some(ability => this.hasAbility(ability));
-				let abilityid = toID(ability);
+				const abilityid = toID(ability);
 				return this.ability === abilityid || !!this.volatiles['ability:' + abilityid];
 			},
 		},
@@ -581,7 +578,7 @@ let Formats = [
 			if (set.species === 'Zacian' && item === 'rustedsword') {
 				set.species = 'Zacian-Crowned';
 				set.ability = 'Intrepid Sword';
-				let ironHead = set.moves.indexOf('ironhead');
+				const ironHead = set.moves.indexOf('ironhead');
 				if (ironHead >= 0) {
 					set.moves[ironHead] = 'behemothblade';
 				}
@@ -589,7 +586,7 @@ let Formats = [
 			if (set.species === 'Zamazenta' && item === 'rustedshield') {
 				set.species = 'Zamazenta-Crowned';
 				set.ability = 'Dauntless Shield';
-				let ironHead = set.moves.indexOf('ironhead');
+				const ironHead = set.moves.indexOf('ironhead');
 				if (ironHead >= 0) {
 					set.moves[ironHead] = 'behemothbash';
 				}
@@ -614,11 +611,11 @@ let Formats = [
 		onValidateTeam(team, format) {
 			const restrictedPokemon = format.restricted || [];
 			/**@type {{[k: string]: true}} */
-			let itemTable = {};
+			const itemTable = {};
 			for (const set of team) {
-				let item = this.dex.getItem(set.item);
+				const item = this.dex.getItem(set.item);
 				if (!item || !item.megaStone) continue;
-				let species = this.dex.getSpecies(set.species);
+				const species = this.dex.getSpecies(set.species);
 				if (species.isNonstandard) return [`${species.baseSpecies} does not exist in gen 8.`];
 				if (restrictedPokemon.includes(species.name)) {
 					return [`${species.name} is not allowed to hold ${item.name}.`];
@@ -634,11 +631,11 @@ let Formats = [
 		},
 		onSwitchIn(pokemon) {
 			// @ts-ignore
-			let oMegaSpecies = this.dex.getSpecies(pokemon.species.originalMega);
+			const oMegaSpecies = this.dex.getSpecies(pokemon.species.originalMega);
 			if (oMegaSpecies.exists && pokemon.m.originalSpecies !== oMegaSpecies.baseSpecies) {
 				// Place volatiles on the Pokémon to show its mega-evolved condition and details
 				this.add('-start', pokemon, oMegaSpecies.requiredItem || oMegaSpecies.requiredMove, '[silent]');
-				let oSpecies = this.dex.getSpecies(pokemon.m.originalSpecies);
+				const oSpecies = this.dex.getSpecies(pokemon.m.originalSpecies);
 				if (oSpecies.types.length !== pokemon.species.types.length || oSpecies.types[1] !== pokemon.species.types[1]) {
 					this.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
 				}
@@ -646,7 +643,7 @@ let Formats = [
 		},
 		onSwitchOut(pokemon) {
 			// @ts-ignore
-			let oMegaSpecies = this.dex.getSpecies(pokemon.species.originalMega);
+			const oMegaSpecies = this.dex.getSpecies(pokemon.species.originalMega);
 			if (oMegaSpecies.exists && pokemon.m.originalSpecies !== oMegaSpecies.baseSpecies) {
 				this.add('-end', pokemon, oMegaSpecies.requiredItem || oMegaSpecies.requiredMove, '[silent]');
 			}
@@ -705,7 +702,7 @@ let Formats = [
 		onModifySpecies(species, target, source, effect) {
 			if (!target) return; // Chat command
 			if (effect && ['imposter', 'transform'].includes(effect.id)) return;
-			let types = [...new Set(target.baseMoveSlots.slice(0, 2).map(move => this.dex.getMove(move.id).type))];
+			const types = [...new Set(target.baseMoveSlots.slice(0, 2).map(move => this.dex.getMove(move.id).type))];
 			return Object.assign({}, species, {types: types});
 		},
 		onSwitchIn(pokemon) {
@@ -755,9 +752,9 @@ let Formats = [
 			let tier = species.tier || 'OU';
 			if (tier[0] === '(') tier = tier.slice(1, -1);
 			if (!(tier in boosts)) return;
-			let pokemon = this.dex.deepClone(species);
-			let boost = boosts[tier];
-			for (let statName in pokemon.baseStats) {
+			const pokemon = this.dex.deepClone(species);
+			const boost = boosts[tier];
+			for (const statName in pokemon.baseStats) {
 				if (statName === 'hp') continue;
 				pokemon.baseStats[statName] = this.dex.clampIntRange(pokemon.baseStats[statName] + boost, 1, 255);
 			}
@@ -952,7 +949,7 @@ let Formats = [
 				name = /** @type {ID} */(name + 'user');
 			}
 			// Add the mon's status effect to it as a volatile.
-			let status = this.dex.getEffect(name);
+			const status = this.dex.getEffect(name);
 			if (status && status.exists) {
 				pokemon.addVolatile(name, pokemon);
 			}
@@ -1737,7 +1734,7 @@ let Formats = [
 			const legends = ['Mewtwo', 'Lugia', 'Ho-Oh', 'Kyogre', 'Groudon', 'Rayquaza', 'Dialga', 'Palkia', 'Giratina', 'Reshiram', 'Zekrom', 'Kyurem', 'Xerneas', 'Yveltal', 'Zygarde'];
 			let n = 0;
 			for (const set of team) {
-				let baseSpecies = this.dex.getSpecies(set.species).baseSpecies;
+				const baseSpecies = this.dex.getSpecies(set.species).baseSpecies;
 				if (legends.includes(baseSpecies)) n++;
 				if (n > 2) return ["You can only use up to two legendary Pok\u00E9mon."];
 			}

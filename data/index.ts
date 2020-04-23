@@ -259,7 +259,9 @@ export class Specie implements DexSpecies {
     }
     this.evos = species.evos.filter(s => exists(this.dex.getSpecies(s)));
     this.cosmeticFormes = species.cosmeticFormes?.filter(s => exists(this.dex.getSpecies(s)));
+    if (!this.cosmeticFormes?.length) this.cosmeticFormes = undefined;
     this.otherFormes = species.otherFormes?.filter(s => exists(this.dex.getSpecies(s)));
+    if (!this.otherFormes?.length) this.otherFormes = undefined;
     this.prevo = exists(this.dex.getSpecies(species.prevo)) ? species.prevo : '';
   }
 

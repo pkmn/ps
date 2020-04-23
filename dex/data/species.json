@@ -1,10 +1,9 @@
 {
   "1": {
     "missingno": {
-      "num": 0,
+      "inherit": true,
       "name": "MissingNo.",
       "types": ["Bird", "Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 33,
         "atk": 136,
@@ -13,17 +12,15 @@
         "spd": 6,
         "spe": 29
       },
-      "abilities": {},
       "heightm": 3,
       "weightkg": 1590.8,
       "color": "Gray",
       "eggGroups": ["Undiscovered"]
     },
     "bulbasaur": {
-      "num": 1,
+      "inherit": true,
       "name": "Bulbasaur",
       "types": ["Grass", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 45,
         "atk": 49,
@@ -32,7 +29,6 @@
         "spd": 65,
         "spe": 45
       },
-      "abilities": {},
       "heightm": 0.7,
       "weightkg": 6.9,
       "color": "Green",
@@ -40,10 +36,9 @@
       "eggGroups": ["Monster", "Grass"]
     },
     "ivysaur": {
-      "num": 2,
+      "inherit": true,
       "name": "Ivysaur",
       "types": ["Grass", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 62,
@@ -52,7 +47,6 @@
         "spd": 80,
         "spe": 60
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 13,
       "color": "Green",
@@ -62,10 +56,9 @@
       "eggGroups": ["Monster", "Grass"]
     },
     "venusaur": {
-      "num": 3,
+      "inherit": true,
       "name": "Venusaur",
       "types": ["Grass", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 80,
         "atk": 82,
@@ -74,7 +67,6 @@
         "spd": 100,
         "spe": 80
       },
-      "abilities": {},
       "heightm": 2,
       "weightkg": 100,
       "color": "Green",
@@ -83,10 +75,9 @@
       "eggGroups": ["Monster", "Grass"]
     },
     "charmander": {
-      "num": 4,
+      "inherit": true,
       "name": "Charmander",
       "types": ["Fire"],
-      "gender": "N",
       "baseStats": {
         "hp": 39,
         "atk": 52,
@@ -95,7 +86,6 @@
         "spd": 50,
         "spe": 65
       },
-      "abilities": {},
       "heightm": 0.6,
       "weightkg": 8.5,
       "color": "Red",
@@ -103,10 +93,9 @@
       "eggGroups": ["Monster", "Dragon"]
     },
     "charmeleon": {
-      "num": 5,
+      "inherit": true,
       "name": "Charmeleon",
       "types": ["Fire"],
-      "gender": "N",
       "baseStats": {
         "hp": 58,
         "atk": 64,
@@ -115,7 +104,6 @@
         "spd": 65,
         "spe": 80
       },
-      "abilities": {},
       "heightm": 1.1,
       "weightkg": 19,
       "color": "Red",
@@ -125,10 +113,9 @@
       "eggGroups": ["Monster", "Dragon"]
     },
     "charizard": {
-      "num": 6,
+      "inherit": true,
       "name": "Charizard",
       "types": ["Fire", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 78,
         "atk": 84,
@@ -137,7 +124,6 @@
         "spd": 85,
         "spe": 100
       },
-      "abilities": {},
       "heightm": 1.7,
       "weightkg": 90.5,
       "color": "Red",
@@ -146,10 +132,9 @@
       "eggGroups": ["Monster", "Dragon"]
     },
     "squirtle": {
-      "num": 7,
+      "inherit": true,
       "name": "Squirtle",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 44,
         "atk": 48,
@@ -158,7 +143,6 @@
         "spd": 50,
         "spe": 43
       },
-      "abilities": {},
       "heightm": 0.5,
       "weightkg": 9,
       "color": "Blue",
@@ -166,10 +150,9 @@
       "eggGroups": ["Monster", "Water 1"]
     },
     "wartortle": {
-      "num": 8,
+      "inherit": true,
       "name": "Wartortle",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 59,
         "atk": 63,
@@ -178,7 +161,6 @@
         "spd": 65,
         "spe": 58
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 22.5,
       "color": "Blue",
@@ -188,10 +170,9 @@
       "eggGroups": ["Monster", "Water 1"]
     },
     "blastoise": {
-      "num": 9,
+      "inherit": true,
       "name": "Blastoise",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 79,
         "atk": 83,
@@ -200,7 +181,6 @@
         "spd": 85,
         "spe": 78
       },
-      "abilities": {},
       "heightm": 1.6,
       "weightkg": 85.5,
       "color": "Blue",
@@ -209,10 +189,9 @@
       "eggGroups": ["Monster", "Water 1"]
     },
     "caterpie": {
-      "num": 10,
+      "inherit": true,
       "name": "Caterpie",
       "types": ["Bug"],
-      "gender": "N",
       "baseStats": {
         "hp": 45,
         "atk": 30,
@@ -221,7 +200,6 @@
         "spd": 20,
         "spe": 45
       },
-      "abilities": {},
       "heightm": 0.3,
       "weightkg": 2.9,
       "color": "Green",
@@ -229,10 +207,9 @@
       "eggGroups": ["Bug"]
     },
     "metapod": {
-      "num": 11,
+      "inherit": true,
       "name": "Metapod",
       "types": ["Bug"],
-      "gender": "N",
       "baseStats": {
         "hp": 50,
         "atk": 20,
@@ -241,7 +218,6 @@
         "spd": 25,
         "spe": 30
       },
-      "abilities": {},
       "heightm": 0.7,
       "weightkg": 9.9,
       "color": "Green",
@@ -251,10 +227,9 @@
       "eggGroups": ["Bug"]
     },
     "butterfree": {
-      "num": 12,
+      "inherit": true,
       "name": "Butterfree",
       "types": ["Bug", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 45,
@@ -263,7 +238,6 @@
         "spd": 80,
         "spe": 70
       },
-      "abilities": {},
       "heightm": 1.1,
       "weightkg": 32,
       "color": "White",
@@ -272,10 +246,9 @@
       "eggGroups": ["Bug"]
     },
     "weedle": {
-      "num": 13,
+      "inherit": true,
       "name": "Weedle",
       "types": ["Bug", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 40,
         "atk": 35,
@@ -284,7 +257,6 @@
         "spd": 20,
         "spe": 50
       },
-      "abilities": {},
       "heightm": 0.3,
       "weightkg": 3.2,
       "color": "Brown",
@@ -292,10 +264,9 @@
       "eggGroups": ["Bug"]
     },
     "kakuna": {
-      "num": 14,
+      "inherit": true,
       "name": "Kakuna",
       "types": ["Bug", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 45,
         "atk": 25,
@@ -304,7 +275,6 @@
         "spd": 25,
         "spe": 35
       },
-      "abilities": {},
       "heightm": 0.6,
       "weightkg": 10,
       "color": "Yellow",
@@ -314,10 +284,9 @@
       "eggGroups": ["Bug"]
     },
     "beedrill": {
-      "num": 15,
+      "inherit": true,
       "name": "Beedrill",
       "types": ["Bug", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 80,
@@ -326,7 +295,6 @@
         "spd": 45,
         "spe": 75
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 29.5,
       "color": "Yellow",
@@ -335,10 +303,9 @@
       "eggGroups": ["Bug"]
     },
     "pidgey": {
-      "num": 16,
+      "inherit": true,
       "name": "Pidgey",
       "types": ["Normal", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 40,
         "atk": 45,
@@ -347,7 +314,6 @@
         "spd": 35,
         "spe": 56
       },
-      "abilities": {},
       "heightm": 0.3,
       "weightkg": 1.8,
       "color": "Brown",
@@ -355,10 +321,9 @@
       "eggGroups": ["Flying"]
     },
     "pidgeotto": {
-      "num": 17,
+      "inherit": true,
       "name": "Pidgeotto",
       "types": ["Normal", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 63,
         "atk": 60,
@@ -367,7 +332,6 @@
         "spd": 50,
         "spe": 71
       },
-      "abilities": {},
       "heightm": 1.1,
       "weightkg": 30,
       "color": "Brown",
@@ -377,10 +341,9 @@
       "eggGroups": ["Flying"]
     },
     "pidgeot": {
-      "num": 18,
+      "inherit": true,
       "name": "Pidgeot",
       "types": ["Normal", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 83,
         "atk": 80,
@@ -389,7 +352,6 @@
         "spd": 70,
         "spe": 91
       },
-      "abilities": {},
       "heightm": 1.5,
       "weightkg": 39.5,
       "color": "Brown",
@@ -398,10 +360,9 @@
       "eggGroups": ["Flying"]
     },
     "rattata": {
-      "num": 19,
+      "inherit": true,
       "name": "Rattata",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 30,
         "atk": 56,
@@ -410,7 +371,6 @@
         "spd": 25,
         "spe": 72
       },
-      "abilities": {},
       "heightm": 0.3,
       "weightkg": 3.5,
       "color": "Purple",
@@ -418,10 +378,9 @@
       "eggGroups": ["Field"]
     },
     "raticate": {
-      "num": 20,
+      "inherit": true,
       "name": "Raticate",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 55,
         "atk": 81,
@@ -430,7 +389,6 @@
         "spd": 50,
         "spe": 97
       },
-      "abilities": {},
       "heightm": 0.7,
       "weightkg": 18.5,
       "color": "Brown",
@@ -439,10 +397,9 @@
       "eggGroups": ["Field"]
     },
     "spearow": {
-      "num": 21,
+      "inherit": true,
       "name": "Spearow",
       "types": ["Normal", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 40,
         "atk": 60,
@@ -451,7 +408,6 @@
         "spd": 31,
         "spe": 70
       },
-      "abilities": {},
       "heightm": 0.3,
       "weightkg": 2,
       "color": "Brown",
@@ -459,10 +415,9 @@
       "eggGroups": ["Flying"]
     },
     "fearow": {
-      "num": 22,
+      "inherit": true,
       "name": "Fearow",
       "types": ["Normal", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 90,
@@ -471,7 +426,6 @@
         "spd": 61,
         "spe": 100
       },
-      "abilities": {},
       "heightm": 1.2,
       "weightkg": 38,
       "color": "Brown",
@@ -480,10 +434,9 @@
       "eggGroups": ["Flying"]
     },
     "ekans": {
-      "num": 23,
+      "inherit": true,
       "name": "Ekans",
       "types": ["Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 35,
         "atk": 60,
@@ -492,7 +445,6 @@
         "spd": 40,
         "spe": 55
       },
-      "abilities": {},
       "heightm": 2,
       "weightkg": 6.9,
       "color": "Purple",
@@ -500,10 +452,9 @@
       "eggGroups": ["Field", "Dragon"]
     },
     "arbok": {
-      "num": 24,
+      "inherit": true,
       "name": "Arbok",
       "types": ["Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 85,
@@ -512,7 +463,6 @@
         "spd": 65,
         "spe": 80
       },
-      "abilities": {},
       "heightm": 3.5,
       "weightkg": 65,
       "color": "Purple",
@@ -521,10 +471,9 @@
       "eggGroups": ["Field", "Dragon"]
     },
     "pikachu": {
-      "num": 25,
+      "inherit": true,
       "name": "Pikachu",
       "types": ["Electric"],
-      "gender": "N",
       "baseStats": {
         "hp": 35,
         "atk": 55,
@@ -533,19 +482,16 @@
         "spd": 50,
         "spe": 90
       },
-      "abilities": {},
       "heightm": 0.4,
       "weightkg": 6,
       "color": "Yellow",
-      "prevo": "pichu",
       "evos": ["raichu"],
       "eggGroups": ["Field", "Fairy"]
     },
     "raichu": {
-      "num": 26,
+      "inherit": true,
       "name": "Raichu",
       "types": ["Electric"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 90,
@@ -554,19 +500,18 @@
         "spd": 90,
         "spe": 100
       },
-      "abilities": {},
       "heightm": 0.8,
       "weightkg": 30,
       "color": "Yellow",
       "prevo": "pikachu",
-      "evoLevel": 1,
+      "evoType": "useItem",
+      "evoItem": "Thunder Stone",
       "eggGroups": ["Field", "Fairy"]
     },
     "sandshrew": {
-      "num": 27,
+      "inherit": true,
       "name": "Sandshrew",
       "types": ["Ground"],
-      "gender": "N",
       "baseStats": {
         "hp": 50,
         "atk": 75,
@@ -575,7 +520,6 @@
         "spd": 30,
         "spe": 40
       },
-      "abilities": {},
       "heightm": 0.6,
       "weightkg": 12,
       "color": "Yellow",
@@ -583,10 +527,9 @@
       "eggGroups": ["Field"]
     },
     "sandslash": {
-      "num": 28,
+      "inherit": true,
       "name": "Sandslash",
       "types": ["Ground"],
-      "gender": "N",
       "baseStats": {
         "hp": 75,
         "atk": 100,
@@ -595,7 +538,6 @@
         "spd": 55,
         "spe": 65
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 29.5,
       "color": "Yellow",
@@ -604,10 +546,9 @@
       "eggGroups": ["Field"]
     },
     "nidoranf": {
-      "num": 29,
+      "inherit": true,
       "name": "Nidoran-F",
       "types": ["Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 55,
         "atk": 47,
@@ -616,7 +557,6 @@
         "spd": 40,
         "spe": 41
       },
-      "abilities": {},
       "heightm": 0.4,
       "weightkg": 7,
       "color": "Blue",
@@ -624,10 +564,9 @@
       "eggGroups": ["Monster", "Field"]
     },
     "nidorina": {
-      "num": 30,
+      "inherit": true,
       "name": "Nidorina",
       "types": ["Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 70,
         "atk": 62,
@@ -636,7 +575,6 @@
         "spd": 55,
         "spe": 56
       },
-      "abilities": {},
       "heightm": 0.8,
       "weightkg": 20,
       "color": "Blue",
@@ -646,10 +584,9 @@
       "eggGroups": ["Undiscovered"]
     },
     "nidoqueen": {
-      "num": 31,
+      "inherit": true,
       "name": "Nidoqueen",
       "types": ["Poison", "Ground"],
-      "gender": "N",
       "baseStats": {
         "hp": 90,
         "atk": 82,
@@ -658,19 +595,18 @@
         "spd": 75,
         "spe": 76
       },
-      "abilities": {},
       "heightm": 1.3,
       "weightkg": 60,
       "color": "Blue",
       "prevo": "nidorina",
-      "evoLevel": 16,
+      "evoType": "useItem",
+      "evoItem": "Moon Stone",
       "eggGroups": ["Undiscovered"]
     },
     "nidoranm": {
-      "num": 32,
+      "inherit": true,
       "name": "Nidoran-M",
       "types": ["Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 46,
         "atk": 57,
@@ -679,7 +615,6 @@
         "spd": 40,
         "spe": 50
       },
-      "abilities": {},
       "heightm": 0.5,
       "weightkg": 9,
       "color": "Purple",
@@ -687,10 +622,9 @@
       "eggGroups": ["Monster", "Field"]
     },
     "nidorino": {
-      "num": 33,
+      "inherit": true,
       "name": "Nidorino",
       "types": ["Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 61,
         "atk": 72,
@@ -699,7 +633,6 @@
         "spd": 55,
         "spe": 65
       },
-      "abilities": {},
       "heightm": 0.9,
       "weightkg": 19.5,
       "color": "Purple",
@@ -709,10 +642,9 @@
       "eggGroups": ["Monster", "Field"]
     },
     "nidoking": {
-      "num": 34,
+      "inherit": true,
       "name": "Nidoking",
       "types": ["Poison", "Ground"],
-      "gender": "N",
       "baseStats": {
         "hp": 81,
         "atk": 92,
@@ -721,19 +653,18 @@
         "spd": 75,
         "spe": 85
       },
-      "abilities": {},
       "heightm": 1.4,
       "weightkg": 62,
       "color": "Purple",
       "prevo": "nidorino",
-      "evoLevel": 16,
+      "evoType": "useItem",
+      "evoItem": "Moon Stone",
       "eggGroups": ["Monster", "Field"]
     },
     "clefairy": {
-      "num": 35,
+      "inherit": true,
       "name": "Clefairy",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 70,
         "atk": 45,
@@ -742,7 +673,6 @@
         "spd": 60,
         "spe": 35
       },
-      "abilities": {},
       "heightm": 0.6,
       "weightkg": 7.5,
       "color": "Pink",
@@ -751,10 +681,9 @@
       "eggGroups": ["Fairy"]
     },
     "clefable": {
-      "num": 36,
+      "inherit": true,
       "name": "Clefable",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 95,
         "atk": 70,
@@ -763,19 +692,18 @@
         "spd": 85,
         "spe": 60
       },
-      "abilities": {},
       "heightm": 1.3,
       "weightkg": 40,
       "color": "Pink",
       "prevo": "clefairy",
-      "evoLevel": 1,
+      "evoType": "useItem",
+      "evoItem": "Moon Stone",
       "eggGroups": ["Fairy"]
     },
     "vulpix": {
-      "num": 37,
+      "inherit": true,
       "name": "Vulpix",
       "types": ["Fire"],
-      "gender": "N",
       "baseStats": {
         "hp": 38,
         "atk": 41,
@@ -784,7 +712,6 @@
         "spd": 65,
         "spe": 65
       },
-      "abilities": {},
       "heightm": 0.6,
       "weightkg": 9.9,
       "color": "Brown",
@@ -792,10 +719,9 @@
       "eggGroups": ["Field"]
     },
     "ninetales": {
-      "num": 38,
+      "inherit": true,
       "name": "Ninetales",
       "types": ["Fire"],
-      "gender": "N",
       "baseStats": {
         "hp": 73,
         "atk": 76,
@@ -804,19 +730,18 @@
         "spd": 100,
         "spe": 100
       },
-      "abilities": {},
       "heightm": 1.1,
       "weightkg": 19.9,
       "color": "Yellow",
       "prevo": "vulpix",
-      "evoLevel": 1,
+      "evoType": "useItem",
+      "evoItem": "Fire Stone",
       "eggGroups": ["Field"]
     },
     "jigglypuff": {
-      "num": 39,
+      "inherit": true,
       "name": "Jigglypuff",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 115,
         "atk": 45,
@@ -825,19 +750,16 @@
         "spd": 25,
         "spe": 20
       },
-      "abilities": {},
       "heightm": 0.5,
       "weightkg": 5.5,
       "color": "Pink",
-      "prevo": "igglybuff",
       "evos": ["wigglytuff"],
       "eggGroups": ["Fairy"]
     },
     "wigglytuff": {
-      "num": 40,
+      "inherit": true,
       "name": "Wigglytuff",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 140,
         "atk": 70,
@@ -846,19 +768,18 @@
         "spd": 50,
         "spe": 45
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 12,
       "color": "Pink",
       "prevo": "jigglypuff",
-      "evoLevel": 1,
+      "evoType": "useItem",
+      "evoItem": "Moon Stone",
       "eggGroups": ["Fairy"]
     },
     "zubat": {
-      "num": 41,
+      "inherit": true,
       "name": "Zubat",
       "types": ["Poison", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 40,
         "atk": 45,
@@ -867,7 +788,6 @@
         "spd": 40,
         "spe": 55
       },
-      "abilities": {},
       "heightm": 0.8,
       "weightkg": 7.5,
       "color": "Purple",
@@ -875,10 +795,9 @@
       "eggGroups": ["Flying"]
     },
     "golbat": {
-      "num": 42,
+      "inherit": true,
       "name": "Golbat",
       "types": ["Poison", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 75,
         "atk": 80,
@@ -887,20 +806,17 @@
         "spd": 75,
         "spe": 90
       },
-      "abilities": {},
       "heightm": 1.6,
       "weightkg": 55,
       "color": "Purple",
       "prevo": "zubat",
-      "evos": ["crobat"],
       "evoLevel": 22,
       "eggGroups": ["Flying"]
     },
     "oddish": {
-      "num": 43,
+      "inherit": true,
       "name": "Oddish",
       "types": ["Grass", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 45,
         "atk": 50,
@@ -909,7 +825,6 @@
         "spd": 75,
         "spe": 30
       },
-      "abilities": {},
       "heightm": 0.5,
       "weightkg": 5.4,
       "color": "Blue",
@@ -917,10 +832,9 @@
       "eggGroups": ["Grass"]
     },
     "gloom": {
-      "num": 44,
+      "inherit": true,
       "name": "Gloom",
       "types": ["Grass", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 65,
@@ -929,20 +843,18 @@
         "spd": 85,
         "spe": 40
       },
-      "abilities": {},
       "heightm": 0.8,
       "weightkg": 8.6,
       "color": "Blue",
       "prevo": "oddish",
-      "evos": ["vileplume", "bellossom"],
+      "evos": ["vileplume"],
       "evoLevel": 21,
       "eggGroups": ["Grass"]
     },
     "vileplume": {
-      "num": 45,
+      "inherit": true,
       "name": "Vileplume",
       "types": ["Grass", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 75,
         "atk": 80,
@@ -951,19 +863,18 @@
         "spd": 100,
         "spe": 50
       },
-      "abilities": {},
       "heightm": 1.2,
       "weightkg": 18.6,
       "color": "Red",
       "prevo": "gloom",
-      "evoLevel": 21,
+      "evoType": "useItem",
+      "evoItem": "Leaf Stone",
       "eggGroups": ["Grass"]
     },
     "paras": {
-      "num": 46,
+      "inherit": true,
       "name": "Paras",
       "types": ["Bug", "Grass"],
-      "gender": "N",
       "baseStats": {
         "hp": 35,
         "atk": 70,
@@ -972,7 +883,6 @@
         "spd": 55,
         "spe": 25
       },
-      "abilities": {},
       "heightm": 0.3,
       "weightkg": 5.4,
       "color": "Red",
@@ -980,10 +890,9 @@
       "eggGroups": ["Bug", "Grass"]
     },
     "parasect": {
-      "num": 47,
+      "inherit": true,
       "name": "Parasect",
       "types": ["Bug", "Grass"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 95,
@@ -992,7 +901,6 @@
         "spd": 80,
         "spe": 30
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 29.5,
       "color": "Red",
@@ -1001,10 +909,9 @@
       "eggGroups": ["Bug", "Grass"]
     },
     "venonat": {
-      "num": 48,
+      "inherit": true,
       "name": "Venonat",
       "types": ["Bug", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 55,
@@ -1013,7 +920,6 @@
         "spd": 40,
         "spe": 45
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 30,
       "color": "Purple",
@@ -1021,10 +927,9 @@
       "eggGroups": ["Bug"]
     },
     "venomoth": {
-      "num": 49,
+      "inherit": true,
       "name": "Venomoth",
       "types": ["Bug", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 70,
         "atk": 65,
@@ -1033,7 +938,6 @@
         "spd": 90,
         "spe": 90
       },
-      "abilities": {},
       "heightm": 1.5,
       "weightkg": 12.5,
       "color": "Purple",
@@ -1042,10 +946,9 @@
       "eggGroups": ["Bug"]
     },
     "diglett": {
-      "num": 50,
+      "inherit": true,
       "name": "Diglett",
       "types": ["Ground"],
-      "gender": "N",
       "baseStats": {
         "hp": 10,
         "atk": 55,
@@ -1054,7 +957,6 @@
         "spd": 45,
         "spe": 95
       },
-      "abilities": {},
       "heightm": 0.2,
       "weightkg": 0.8,
       "color": "Brown",
@@ -1062,10 +964,9 @@
       "eggGroups": ["Field"]
     },
     "dugtrio": {
-      "num": 51,
+      "inherit": true,
       "name": "Dugtrio",
       "types": ["Ground"],
-      "gender": "N",
       "baseStats": {
         "hp": 35,
         "atk": 80,
@@ -1074,7 +975,6 @@
         "spd": 70,
         "spe": 120
       },
-      "abilities": {},
       "heightm": 0.7,
       "weightkg": 33.3,
       "color": "Brown",
@@ -1083,10 +983,9 @@
       "eggGroups": ["Field"]
     },
     "meowth": {
-      "num": 52,
+      "inherit": true,
       "name": "Meowth",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 40,
         "atk": 45,
@@ -1095,7 +994,6 @@
         "spd": 40,
         "spe": 90
       },
-      "abilities": {},
       "heightm": 0.4,
       "weightkg": 4.2,
       "color": "Yellow",
@@ -1103,10 +1001,9 @@
       "eggGroups": ["Field"]
     },
     "persian": {
-      "num": 53,
+      "inherit": true,
       "name": "Persian",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 70,
@@ -1115,7 +1012,6 @@
         "spd": 65,
         "spe": 115
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 32,
       "color": "Yellow",
@@ -1124,10 +1020,9 @@
       "eggGroups": ["Field"]
     },
     "psyduck": {
-      "num": 54,
+      "inherit": true,
       "name": "Psyduck",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 50,
         "atk": 52,
@@ -1136,7 +1031,6 @@
         "spd": 50,
         "spe": 55
       },
-      "abilities": {},
       "heightm": 0.8,
       "weightkg": 19.6,
       "color": "Yellow",
@@ -1144,10 +1038,9 @@
       "eggGroups": ["Water 1", "Field"]
     },
     "golduck": {
-      "num": 55,
+      "inherit": true,
       "name": "Golduck",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 80,
         "atk": 82,
@@ -1156,7 +1049,6 @@
         "spd": 80,
         "spe": 85
       },
-      "abilities": {},
       "heightm": 1.7,
       "weightkg": 76.6,
       "color": "Blue",
@@ -1165,10 +1057,9 @@
       "eggGroups": ["Water 1", "Field"]
     },
     "mankey": {
-      "num": 56,
+      "inherit": true,
       "name": "Mankey",
       "types": ["Fighting"],
-      "gender": "N",
       "baseStats": {
         "hp": 40,
         "atk": 80,
@@ -1177,7 +1068,6 @@
         "spd": 35,
         "spe": 70
       },
-      "abilities": {},
       "heightm": 0.5,
       "weightkg": 28,
       "color": "Brown",
@@ -1185,10 +1075,9 @@
       "eggGroups": ["Field"]
     },
     "primeape": {
-      "num": 57,
+      "inherit": true,
       "name": "Primeape",
       "types": ["Fighting"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 105,
@@ -1197,7 +1086,6 @@
         "spd": 60,
         "spe": 95
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 32,
       "color": "Brown",
@@ -1206,10 +1094,9 @@
       "eggGroups": ["Field"]
     },
     "growlithe": {
-      "num": 58,
+      "inherit": true,
       "name": "Growlithe",
       "types": ["Fire"],
-      "gender": "N",
       "baseStats": {
         "hp": 55,
         "atk": 70,
@@ -1218,7 +1105,6 @@
         "spd": 50,
         "spe": 60
       },
-      "abilities": {},
       "heightm": 0.7,
       "weightkg": 19,
       "color": "Brown",
@@ -1226,10 +1112,9 @@
       "eggGroups": ["Field"]
     },
     "arcanine": {
-      "num": 59,
+      "inherit": true,
       "name": "Arcanine",
       "types": ["Fire"],
-      "gender": "N",
       "baseStats": {
         "hp": 90,
         "atk": 110,
@@ -1238,19 +1123,18 @@
         "spd": 80,
         "spe": 95
       },
-      "abilities": {},
       "heightm": 1.9,
       "weightkg": 155,
       "color": "Brown",
       "prevo": "growlithe",
-      "evoLevel": 1,
+      "evoType": "useItem",
+      "evoItem": "Fire Stone",
       "eggGroups": ["Field"]
     },
     "poliwag": {
-      "num": 60,
+      "inherit": true,
       "name": "Poliwag",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 40,
         "atk": 50,
@@ -1259,7 +1143,6 @@
         "spd": 40,
         "spe": 90
       },
-      "abilities": {},
       "heightm": 0.6,
       "weightkg": 12.4,
       "color": "Blue",
@@ -1267,10 +1150,9 @@
       "eggGroups": ["Water 1"]
     },
     "poliwhirl": {
-      "num": 61,
+      "inherit": true,
       "name": "Poliwhirl",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 65,
@@ -1279,20 +1161,18 @@
         "spd": 50,
         "spe": 90
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 20,
       "color": "Blue",
       "prevo": "poliwag",
-      "evos": ["poliwrath", "politoed"],
+      "evos": ["poliwrath"],
       "evoLevel": 25,
       "eggGroups": ["Water 1"]
     },
     "poliwrath": {
-      "num": 62,
+      "inherit": true,
       "name": "Poliwrath",
       "types": ["Water", "Fighting"],
-      "gender": "N",
       "baseStats": {
         "hp": 90,
         "atk": 85,
@@ -1301,19 +1181,18 @@
         "spd": 70,
         "spe": 70
       },
-      "abilities": {},
       "heightm": 1.3,
       "weightkg": 54,
       "color": "Blue",
       "prevo": "poliwhirl",
-      "evoLevel": 25,
+      "evoType": "useItem",
+      "evoItem": "Water Stone",
       "eggGroups": ["Water 1"]
     },
     "abra": {
-      "num": 63,
+      "inherit": true,
       "name": "Abra",
       "types": ["Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 25,
         "atk": 20,
@@ -1322,7 +1201,6 @@
         "spd": 105,
         "spe": 90
       },
-      "abilities": {},
       "heightm": 0.9,
       "weightkg": 19.5,
       "color": "Brown",
@@ -1330,10 +1208,9 @@
       "eggGroups": ["Human-Like"]
     },
     "kadabra": {
-      "num": 64,
+      "inherit": true,
       "name": "Kadabra",
       "types": ["Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 40,
         "atk": 35,
@@ -1342,7 +1219,6 @@
         "spd": 120,
         "spe": 105
       },
-      "abilities": {},
       "heightm": 1.3,
       "weightkg": 56.5,
       "color": "Brown",
@@ -1352,10 +1228,9 @@
       "eggGroups": ["Human-Like"]
     },
     "alakazam": {
-      "num": 65,
+      "inherit": true,
       "name": "Alakazam",
       "types": ["Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 55,
         "atk": 50,
@@ -1364,19 +1239,17 @@
         "spd": 135,
         "spe": 120
       },
-      "abilities": {},
       "heightm": 1.5,
       "weightkg": 48,
       "color": "Brown",
       "prevo": "kadabra",
-      "evoLevel": 16,
+      "evoType": "trade",
       "eggGroups": ["Human-Like"]
     },
     "machop": {
-      "num": 66,
+      "inherit": true,
       "name": "Machop",
       "types": ["Fighting"],
-      "gender": "N",
       "baseStats": {
         "hp": 70,
         "atk": 80,
@@ -1385,7 +1258,6 @@
         "spd": 35,
         "spe": 35
       },
-      "abilities": {},
       "heightm": 0.8,
       "weightkg": 19.5,
       "color": "Gray",
@@ -1393,10 +1265,9 @@
       "eggGroups": ["Human-Like"]
     },
     "machoke": {
-      "num": 67,
+      "inherit": true,
       "name": "Machoke",
       "types": ["Fighting"],
-      "gender": "N",
       "baseStats": {
         "hp": 80,
         "atk": 100,
@@ -1405,7 +1276,6 @@
         "spd": 50,
         "spe": 45
       },
-      "abilities": {},
       "heightm": 1.5,
       "weightkg": 70.5,
       "color": "Gray",
@@ -1415,10 +1285,9 @@
       "eggGroups": ["Human-Like"]
     },
     "machamp": {
-      "num": 68,
+      "inherit": true,
       "name": "Machamp",
       "types": ["Fighting"],
-      "gender": "N",
       "baseStats": {
         "hp": 90,
         "atk": 130,
@@ -1427,19 +1296,17 @@
         "spd": 65,
         "spe": 55
       },
-      "abilities": {},
       "heightm": 1.6,
       "weightkg": 130,
       "color": "Gray",
       "prevo": "machoke",
-      "evoLevel": 28,
+      "evoType": "trade",
       "eggGroups": ["Human-Like"]
     },
     "bellsprout": {
-      "num": 69,
+      "inherit": true,
       "name": "Bellsprout",
       "types": ["Grass", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 50,
         "atk": 75,
@@ -1448,7 +1315,6 @@
         "spd": 70,
         "spe": 40
       },
-      "abilities": {},
       "heightm": 0.7,
       "weightkg": 4,
       "color": "Green",
@@ -1456,10 +1322,9 @@
       "eggGroups": ["Grass"]
     },
     "weepinbell": {
-      "num": 70,
+      "inherit": true,
       "name": "Weepinbell",
       "types": ["Grass", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 90,
@@ -1468,7 +1333,6 @@
         "spd": 85,
         "spe": 55
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 6.4,
       "color": "Green",
@@ -1478,10 +1342,9 @@
       "eggGroups": ["Grass"]
     },
     "victreebel": {
-      "num": 71,
+      "inherit": true,
       "name": "Victreebel",
       "types": ["Grass", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 80,
         "atk": 105,
@@ -1490,19 +1353,18 @@
         "spd": 100,
         "spe": 70
       },
-      "abilities": {},
       "heightm": 1.7,
       "weightkg": 15.5,
       "color": "Green",
       "prevo": "weepinbell",
-      "evoLevel": 21,
+      "evoType": "useItem",
+      "evoItem": "Leaf Stone",
       "eggGroups": ["Grass"]
     },
     "tentacool": {
-      "num": 72,
+      "inherit": true,
       "name": "Tentacool",
       "types": ["Water", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 40,
         "atk": 40,
@@ -1511,7 +1373,6 @@
         "spd": 100,
         "spe": 70
       },
-      "abilities": {},
       "heightm": 0.9,
       "weightkg": 45.5,
       "color": "Blue",
@@ -1519,10 +1380,9 @@
       "eggGroups": ["Water 3"]
     },
     "tentacruel": {
-      "num": 73,
+      "inherit": true,
       "name": "Tentacruel",
       "types": ["Water", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 80,
         "atk": 70,
@@ -1531,7 +1391,6 @@
         "spd": 120,
         "spe": 100
       },
-      "abilities": {},
       "heightm": 1.6,
       "weightkg": 55,
       "color": "Blue",
@@ -1540,10 +1399,9 @@
       "eggGroups": ["Water 3"]
     },
     "geodude": {
-      "num": 74,
+      "inherit": true,
       "name": "Geodude",
       "types": ["Rock", "Ground"],
-      "gender": "N",
       "baseStats": {
         "hp": 40,
         "atk": 80,
@@ -1552,7 +1410,6 @@
         "spd": 30,
         "spe": 20
       },
-      "abilities": {},
       "heightm": 0.4,
       "weightkg": 20,
       "color": "Brown",
@@ -1560,10 +1417,9 @@
       "eggGroups": ["Mineral"]
     },
     "graveler": {
-      "num": 75,
+      "inherit": true,
       "name": "Graveler",
       "types": ["Rock", "Ground"],
-      "gender": "N",
       "baseStats": {
         "hp": 55,
         "atk": 95,
@@ -1572,7 +1428,6 @@
         "spd": 45,
         "spe": 35
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 105,
       "color": "Brown",
@@ -1582,10 +1437,9 @@
       "eggGroups": ["Mineral"]
     },
     "golem": {
-      "num": 76,
+      "inherit": true,
       "name": "Golem",
       "types": ["Rock", "Ground"],
-      "gender": "N",
       "baseStats": {
         "hp": 80,
         "atk": 110,
@@ -1594,19 +1448,17 @@
         "spd": 55,
         "spe": 45
       },
-      "abilities": {},
       "heightm": 1.4,
       "weightkg": 300,
       "color": "Brown",
       "prevo": "graveler",
-      "evoLevel": 25,
+      "evoType": "trade",
       "eggGroups": ["Mineral"]
     },
     "ponyta": {
-      "num": 77,
+      "inherit": true,
       "name": "Ponyta",
       "types": ["Fire"],
-      "gender": "N",
       "baseStats": {
         "hp": 50,
         "atk": 85,
@@ -1615,7 +1467,6 @@
         "spd": 65,
         "spe": 90
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 30,
       "color": "Yellow",
@@ -1623,10 +1474,9 @@
       "eggGroups": ["Field"]
     },
     "rapidash": {
-      "num": 78,
+      "inherit": true,
       "name": "Rapidash",
       "types": ["Fire"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 100,
@@ -1635,7 +1485,6 @@
         "spd": 80,
         "spe": 105
       },
-      "abilities": {},
       "heightm": 1.7,
       "weightkg": 95,
       "color": "Yellow",
@@ -1644,10 +1493,9 @@
       "eggGroups": ["Field"]
     },
     "slowpoke": {
-      "num": 79,
+      "inherit": true,
       "name": "Slowpoke",
       "types": ["Water", "Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 90,
         "atk": 65,
@@ -1656,18 +1504,16 @@
         "spd": 40,
         "spe": 15
       },
-      "abilities": {},
       "heightm": 1.2,
       "weightkg": 36,
       "color": "Pink",
-      "evos": ["slowbro", "slowking"],
+      "evos": ["slowbro"],
       "eggGroups": ["Monster", "Water 1"]
     },
     "slowbro": {
-      "num": 80,
+      "inherit": true,
       "name": "Slowbro",
       "types": ["Water", "Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 95,
         "atk": 75,
@@ -1676,7 +1522,6 @@
         "spd": 80,
         "spe": 30
       },
-      "abilities": {},
       "heightm": 1.6,
       "weightkg": 78.5,
       "color": "Pink",
@@ -1685,10 +1530,9 @@
       "eggGroups": ["Monster", "Water 1"]
     },
     "magnemite": {
-      "num": 81,
+      "inherit": true,
       "name": "Magnemite",
       "types": ["Electric"],
-      "gender": "N",
       "baseStats": {
         "hp": 25,
         "atk": 35,
@@ -1697,7 +1541,6 @@
         "spd": 95,
         "spe": 45
       },
-      "abilities": {},
       "heightm": 0.3,
       "weightkg": 6,
       "color": "Gray",
@@ -1705,10 +1548,9 @@
       "eggGroups": ["Mineral"]
     },
     "magneton": {
-      "num": 82,
+      "inherit": true,
       "name": "Magneton",
       "types": ["Electric"],
-      "gender": "N",
       "baseStats": {
         "hp": 50,
         "atk": 60,
@@ -1717,20 +1559,17 @@
         "spd": 120,
         "spe": 70
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 60,
       "color": "Gray",
       "prevo": "magnemite",
-      "evos": ["magnezone"],
       "evoLevel": 30,
       "eggGroups": ["Mineral"]
     },
     "farfetchd": {
-      "num": 83,
+      "inherit": true,
       "name": "Farfetch'd",
       "types": ["Normal", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 52,
         "atk": 65,
@@ -1739,17 +1578,15 @@
         "spd": 58,
         "spe": 60
       },
-      "abilities": {},
       "heightm": 0.8,
       "weightkg": 15,
       "color": "Brown",
       "eggGroups": ["Flying", "Field"]
     },
     "doduo": {
-      "num": 84,
+      "inherit": true,
       "name": "Doduo",
       "types": ["Normal", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 35,
         "atk": 85,
@@ -1758,7 +1595,6 @@
         "spd": 35,
         "spe": 75
       },
-      "abilities": {},
       "heightm": 1.4,
       "weightkg": 39.2,
       "color": "Brown",
@@ -1766,10 +1602,9 @@
       "eggGroups": ["Flying"]
     },
     "dodrio": {
-      "num": 85,
+      "inherit": true,
       "name": "Dodrio",
       "types": ["Normal", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 110,
@@ -1778,7 +1613,6 @@
         "spd": 60,
         "spe": 100
       },
-      "abilities": {},
       "heightm": 1.8,
       "weightkg": 85.2,
       "color": "Brown",
@@ -1787,10 +1621,9 @@
       "eggGroups": ["Flying"]
     },
     "seel": {
-      "num": 86,
+      "inherit": true,
       "name": "Seel",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 45,
@@ -1799,7 +1632,6 @@
         "spd": 70,
         "spe": 45
       },
-      "abilities": {},
       "heightm": 1.1,
       "weightkg": 90,
       "color": "White",
@@ -1807,10 +1639,9 @@
       "eggGroups": ["Water 1", "Field"]
     },
     "dewgong": {
-      "num": 87,
+      "inherit": true,
       "name": "Dewgong",
       "types": ["Water", "Ice"],
-      "gender": "N",
       "baseStats": {
         "hp": 90,
         "atk": 70,
@@ -1819,7 +1650,6 @@
         "spd": 95,
         "spe": 70
       },
-      "abilities": {},
       "heightm": 1.7,
       "weightkg": 120,
       "color": "White",
@@ -1828,10 +1658,9 @@
       "eggGroups": ["Water 1", "Field"]
     },
     "grimer": {
-      "num": 88,
+      "inherit": true,
       "name": "Grimer",
       "types": ["Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 80,
         "atk": 80,
@@ -1840,7 +1669,6 @@
         "spd": 40,
         "spe": 25
       },
-      "abilities": {},
       "heightm": 0.9,
       "weightkg": 30,
       "color": "Purple",
@@ -1848,10 +1676,9 @@
       "eggGroups": ["Amorphous"]
     },
     "muk": {
-      "num": 89,
+      "inherit": true,
       "name": "Muk",
       "types": ["Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 105,
         "atk": 105,
@@ -1860,7 +1687,6 @@
         "spd": 65,
         "spe": 50
       },
-      "abilities": {},
       "heightm": 1.2,
       "weightkg": 30,
       "color": "Purple",
@@ -1869,10 +1695,9 @@
       "eggGroups": ["Amorphous"]
     },
     "shellder": {
-      "num": 90,
+      "inherit": true,
       "name": "Shellder",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 30,
         "atk": 65,
@@ -1881,7 +1706,6 @@
         "spd": 45,
         "spe": 40
       },
-      "abilities": {},
       "heightm": 0.3,
       "weightkg": 4,
       "color": "Purple",
@@ -1889,10 +1713,9 @@
       "eggGroups": ["Water 3"]
     },
     "cloyster": {
-      "num": 91,
+      "inherit": true,
       "name": "Cloyster",
       "types": ["Water", "Ice"],
-      "gender": "N",
       "baseStats": {
         "hp": 50,
         "atk": 95,
@@ -1901,19 +1724,18 @@
         "spd": 85,
         "spe": 70
       },
-      "abilities": {},
       "heightm": 1.5,
       "weightkg": 132.5,
       "color": "Purple",
       "prevo": "shellder",
-      "evoLevel": 1,
+      "evoType": "useItem",
+      "evoItem": "Water Stone",
       "eggGroups": ["Water 3"]
     },
     "gastly": {
-      "num": 92,
+      "inherit": true,
       "name": "Gastly",
       "types": ["Ghost", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 30,
         "atk": 35,
@@ -1922,7 +1744,6 @@
         "spd": 100,
         "spe": 80
       },
-      "abilities": {},
       "heightm": 1.3,
       "weightkg": 0.1,
       "color": "Purple",
@@ -1930,10 +1751,9 @@
       "eggGroups": ["Amorphous"]
     },
     "haunter": {
-      "num": 93,
+      "inherit": true,
       "name": "Haunter",
       "types": ["Ghost", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 45,
         "atk": 50,
@@ -1942,7 +1762,6 @@
         "spd": 115,
         "spe": 95
       },
-      "abilities": {},
       "heightm": 1.6,
       "weightkg": 0.1,
       "color": "Purple",
@@ -1952,10 +1771,9 @@
       "eggGroups": ["Amorphous"]
     },
     "gengar": {
-      "num": 94,
+      "inherit": true,
       "name": "Gengar",
       "types": ["Ghost", "Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 65,
@@ -1964,19 +1782,17 @@
         "spd": 130,
         "spe": 110
       },
-      "abilities": {},
       "heightm": 1.5,
       "weightkg": 40.5,
       "color": "Purple",
       "prevo": "haunter",
-      "evoLevel": 25,
+      "evoType": "trade",
       "eggGroups": ["Amorphous"]
     },
     "onix": {
-      "num": 95,
+      "inherit": true,
       "name": "Onix",
       "types": ["Rock", "Ground"],
-      "gender": "N",
       "baseStats": {
         "hp": 35,
         "atk": 45,
@@ -1985,18 +1801,15 @@
         "spd": 30,
         "spe": 70
       },
-      "abilities": {},
       "heightm": 8.8,
       "weightkg": 210,
       "color": "Gray",
-      "evos": ["steelix"],
       "eggGroups": ["Mineral"]
     },
     "drowzee": {
-      "num": 96,
+      "inherit": true,
       "name": "Drowzee",
       "types": ["Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 48,
@@ -2005,7 +1818,6 @@
         "spd": 90,
         "spe": 42
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 32.4,
       "color": "Yellow",
@@ -2013,10 +1825,9 @@
       "eggGroups": ["Human-Like"]
     },
     "hypno": {
-      "num": 97,
+      "inherit": true,
       "name": "Hypno",
       "types": ["Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 85,
         "atk": 73,
@@ -2025,7 +1836,6 @@
         "spd": 115,
         "spe": 67
       },
-      "abilities": {},
       "heightm": 1.6,
       "weightkg": 75.6,
       "color": "Yellow",
@@ -2034,10 +1844,9 @@
       "eggGroups": ["Human-Like"]
     },
     "krabby": {
-      "num": 98,
+      "inherit": true,
       "name": "Krabby",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 30,
         "atk": 105,
@@ -2046,7 +1855,6 @@
         "spd": 25,
         "spe": 50
       },
-      "abilities": {},
       "heightm": 0.4,
       "weightkg": 6.5,
       "color": "Red",
@@ -2054,10 +1862,9 @@
       "eggGroups": ["Water 3"]
     },
     "kingler": {
-      "num": 99,
+      "inherit": true,
       "name": "Kingler",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 55,
         "atk": 130,
@@ -2066,7 +1873,6 @@
         "spd": 50,
         "spe": 75
       },
-      "abilities": {},
       "heightm": 1.3,
       "weightkg": 60,
       "color": "Red",
@@ -2075,10 +1881,9 @@
       "eggGroups": ["Water 3"]
     },
     "voltorb": {
-      "num": 100,
+      "inherit": true,
       "name": "Voltorb",
       "types": ["Electric"],
-      "gender": "N",
       "baseStats": {
         "hp": 40,
         "atk": 30,
@@ -2087,7 +1892,6 @@
         "spd": 55,
         "spe": 100
       },
-      "abilities": {},
       "heightm": 0.5,
       "weightkg": 10.4,
       "color": "Red",
@@ -2095,10 +1899,9 @@
       "eggGroups": ["Mineral"]
     },
     "electrode": {
-      "num": 101,
+      "inherit": true,
       "name": "Electrode",
       "types": ["Electric"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 50,
@@ -2107,7 +1910,6 @@
         "spd": 80,
         "spe": 140
       },
-      "abilities": {},
       "heightm": 1.2,
       "weightkg": 66.6,
       "color": "Red",
@@ -2116,10 +1918,9 @@
       "eggGroups": ["Mineral"]
     },
     "exeggcute": {
-      "num": 102,
+      "inherit": true,
       "name": "Exeggcute",
       "types": ["Grass", "Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 40,
@@ -2128,7 +1929,6 @@
         "spd": 60,
         "spe": 40
       },
-      "abilities": {},
       "heightm": 0.4,
       "weightkg": 2.5,
       "color": "Pink",
@@ -2136,10 +1936,9 @@
       "eggGroups": ["Grass"]
     },
     "exeggutor": {
-      "num": 103,
+      "inherit": true,
       "name": "Exeggutor",
       "types": ["Grass", "Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 95,
         "atk": 95,
@@ -2148,19 +1947,18 @@
         "spd": 125,
         "spe": 55
       },
-      "abilities": {},
       "heightm": 2,
       "weightkg": 120,
       "color": "Yellow",
       "prevo": "exeggcute",
-      "evoLevel": 1,
+      "evoType": "useItem",
+      "evoItem": "Leaf Stone",
       "eggGroups": ["Grass"]
     },
     "cubone": {
-      "num": 104,
+      "inherit": true,
       "name": "Cubone",
       "types": ["Ground"],
-      "gender": "N",
       "baseStats": {
         "hp": 50,
         "atk": 50,
@@ -2169,7 +1967,6 @@
         "spd": 40,
         "spe": 35
       },
-      "abilities": {},
       "heightm": 0.4,
       "weightkg": 6.5,
       "color": "Brown",
@@ -2177,10 +1974,9 @@
       "eggGroups": ["Monster"]
     },
     "marowak": {
-      "num": 105,
+      "inherit": true,
       "name": "Marowak",
       "types": ["Ground"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 80,
@@ -2189,7 +1985,6 @@
         "spd": 50,
         "spe": 45
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 45,
       "color": "Brown",
@@ -2198,10 +1993,9 @@
       "eggGroups": ["Monster"]
     },
     "hitmonlee": {
-      "num": 106,
+      "inherit": true,
       "name": "Hitmonlee",
       "types": ["Fighting"],
-      "gender": "N",
       "baseStats": {
         "hp": 50,
         "atk": 120,
@@ -2210,18 +2004,15 @@
         "spd": 35,
         "spe": 87
       },
-      "abilities": {},
       "heightm": 1.5,
       "weightkg": 49.8,
       "color": "Brown",
-      "prevo": "tyrogue",
       "eggGroups": ["Human-Like"]
     },
     "hitmonchan": {
-      "num": 107,
+      "inherit": true,
       "name": "Hitmonchan",
       "types": ["Fighting"],
-      "gender": "N",
       "baseStats": {
         "hp": 50,
         "atk": 105,
@@ -2230,18 +2021,15 @@
         "spd": 35,
         "spe": 76
       },
-      "abilities": {},
       "heightm": 1.4,
       "weightkg": 50.2,
       "color": "Brown",
-      "prevo": "tyrogue",
       "eggGroups": ["Human-Like"]
     },
     "lickitung": {
-      "num": 108,
+      "inherit": true,
       "name": "Lickitung",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 90,
         "atk": 55,
@@ -2250,18 +2038,15 @@
         "spd": 60,
         "spe": 30
       },
-      "abilities": {},
       "heightm": 1.2,
       "weightkg": 65.5,
       "color": "Pink",
-      "evos": ["lickilicky"],
       "eggGroups": ["Monster"]
     },
     "koffing": {
-      "num": 109,
+      "inherit": true,
       "name": "Koffing",
       "types": ["Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 40,
         "atk": 65,
@@ -2270,7 +2055,6 @@
         "spd": 60,
         "spe": 35
       },
-      "abilities": {},
       "heightm": 0.6,
       "weightkg": 1,
       "color": "Purple",
@@ -2278,10 +2062,9 @@
       "eggGroups": ["Amorphous"]
     },
     "weezing": {
-      "num": 110,
+      "inherit": true,
       "name": "Weezing",
       "types": ["Poison"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 90,
@@ -2290,7 +2073,6 @@
         "spd": 85,
         "spe": 60
       },
-      "abilities": {},
       "heightm": 1.2,
       "weightkg": 9.5,
       "color": "Purple",
@@ -2299,10 +2081,9 @@
       "eggGroups": ["Amorphous"]
     },
     "rhyhorn": {
-      "num": 111,
+      "inherit": true,
       "name": "Rhyhorn",
       "types": ["Ground", "Rock"],
-      "gender": "N",
       "baseStats": {
         "hp": 80,
         "atk": 85,
@@ -2311,7 +2092,6 @@
         "spd": 30,
         "spe": 25
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 115,
       "color": "Gray",
@@ -2319,10 +2099,9 @@
       "eggGroups": ["Monster", "Field"]
     },
     "rhydon": {
-      "num": 112,
+      "inherit": true,
       "name": "Rhydon",
       "types": ["Ground", "Rock"],
-      "gender": "N",
       "baseStats": {
         "hp": 105,
         "atk": 130,
@@ -2331,20 +2110,17 @@
         "spd": 45,
         "spe": 40
       },
-      "abilities": {},
       "heightm": 1.9,
       "weightkg": 120,
       "color": "Gray",
       "prevo": "rhyhorn",
-      "evos": ["rhyperior"],
       "evoLevel": 42,
       "eggGroups": ["Monster", "Field"]
     },
     "chansey": {
-      "num": 113,
+      "inherit": true,
       "name": "Chansey",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 250,
         "atk": 5,
@@ -2353,18 +2129,15 @@
         "spd": 105,
         "spe": 50
       },
-      "abilities": {},
       "heightm": 1.1,
       "weightkg": 34.6,
       "color": "Pink",
-      "evos": ["blissey"],
       "eggGroups": ["Fairy"]
     },
     "tangela": {
-      "num": 114,
+      "inherit": true,
       "name": "Tangela",
       "types": ["Grass"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 55,
@@ -2373,18 +2146,15 @@
         "spd": 100,
         "spe": 60
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 35,
       "color": "Blue",
-      "evos": ["tangrowth"],
       "eggGroups": ["Grass"]
     },
     "kangaskhan": {
-      "num": 115,
+      "inherit": true,
       "name": "Kangaskhan",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 105,
         "atk": 95,
@@ -2393,17 +2163,15 @@
         "spd": 40,
         "spe": 90
       },
-      "abilities": {},
       "heightm": 2.2,
       "weightkg": 80,
       "color": "Brown",
       "eggGroups": ["Monster"]
     },
     "horsea": {
-      "num": 116,
+      "inherit": true,
       "name": "Horsea",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 30,
         "atk": 40,
@@ -2412,7 +2180,6 @@
         "spd": 70,
         "spe": 60
       },
-      "abilities": {},
       "heightm": 0.4,
       "weightkg": 8,
       "color": "Blue",
@@ -2420,10 +2187,9 @@
       "eggGroups": ["Water 1", "Dragon"]
     },
     "seadra": {
-      "num": 117,
+      "inherit": true,
       "name": "Seadra",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 55,
         "atk": 65,
@@ -2432,20 +2198,17 @@
         "spd": 95,
         "spe": 85
       },
-      "abilities": {},
       "heightm": 1.2,
       "weightkg": 25,
       "color": "Blue",
       "prevo": "horsea",
-      "evos": ["kingdra"],
       "evoLevel": 32,
       "eggGroups": ["Water 1", "Dragon"]
     },
     "goldeen": {
-      "num": 118,
+      "inherit": true,
       "name": "Goldeen",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 45,
         "atk": 67,
@@ -2454,7 +2217,6 @@
         "spd": 50,
         "spe": 63
       },
-      "abilities": {},
       "heightm": 0.6,
       "weightkg": 15,
       "color": "Red",
@@ -2462,10 +2224,9 @@
       "eggGroups": ["Water 2"]
     },
     "seaking": {
-      "num": 119,
+      "inherit": true,
       "name": "Seaking",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 80,
         "atk": 92,
@@ -2474,7 +2235,6 @@
         "spd": 80,
         "spe": 68
       },
-      "abilities": {},
       "heightm": 1.3,
       "weightkg": 39,
       "color": "Red",
@@ -2483,10 +2243,9 @@
       "eggGroups": ["Water 2"]
     },
     "staryu": {
-      "num": 120,
+      "inherit": true,
       "name": "Staryu",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 30,
         "atk": 45,
@@ -2495,7 +2254,6 @@
         "spd": 70,
         "spe": 85
       },
-      "abilities": {},
       "heightm": 0.8,
       "weightkg": 34.5,
       "color": "Brown",
@@ -2503,10 +2261,9 @@
       "eggGroups": ["Water 3"]
     },
     "starmie": {
-      "num": 121,
+      "inherit": true,
       "name": "Starmie",
       "types": ["Water", "Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 75,
@@ -2515,19 +2272,18 @@
         "spd": 100,
         "spe": 115
       },
-      "abilities": {},
       "heightm": 1.1,
       "weightkg": 80,
       "color": "Purple",
       "prevo": "staryu",
-      "evoLevel": 1,
+      "evoType": "useItem",
+      "evoItem": "Water Stone",
       "eggGroups": ["Water 3"]
     },
     "mrmime": {
-      "num": 122,
+      "inherit": true,
       "name": "Mr. Mime",
       "types": ["Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 40,
         "atk": 45,
@@ -2536,17 +2292,15 @@
         "spd": 100,
         "spe": 90
       },
-      "abilities": {},
       "heightm": 1.3,
       "weightkg": 54.5,
       "color": "Pink",
       "eggGroups": ["Human-Like"]
     },
     "scyther": {
-      "num": 123,
+      "inherit": true,
       "name": "Scyther",
       "types": ["Bug", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 70,
         "atk": 110,
@@ -2555,18 +2309,15 @@
         "spd": 55,
         "spe": 105
       },
-      "abilities": {},
       "heightm": 1.5,
       "weightkg": 56,
       "color": "Green",
-      "evos": ["scizor"],
       "eggGroups": ["Bug"]
     },
     "jynx": {
-      "num": 124,
+      "inherit": true,
       "name": "Jynx",
       "types": ["Ice", "Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 50,
@@ -2575,18 +2326,15 @@
         "spd": 95,
         "spe": 95
       },
-      "abilities": {},
       "heightm": 1.4,
       "weightkg": 40.6,
       "color": "Red",
-      "prevo": "smoochum",
       "eggGroups": ["Human-Like"]
     },
     "electabuzz": {
-      "num": 125,
+      "inherit": true,
       "name": "Electabuzz",
       "types": ["Electric"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 83,
@@ -2595,19 +2343,15 @@
         "spd": 85,
         "spe": 105
       },
-      "abilities": {},
       "heightm": 1.1,
       "weightkg": 30,
       "color": "Yellow",
-      "prevo": "elekid",
-      "evos": ["electivire"],
       "eggGroups": ["Human-Like"]
     },
     "magmar": {
-      "num": 126,
+      "inherit": true,
       "name": "Magmar",
       "types": ["Fire"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 95,
@@ -2616,19 +2360,15 @@
         "spd": 85,
         "spe": 93
       },
-      "abilities": {},
       "heightm": 1.3,
       "weightkg": 44.5,
       "color": "Red",
-      "prevo": "magby",
-      "evos": ["magmortar"],
       "eggGroups": ["Human-Like"]
     },
     "pinsir": {
-      "num": 127,
+      "inherit": true,
       "name": "Pinsir",
       "types": ["Bug"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 125,
@@ -2637,17 +2377,15 @@
         "spd": 55,
         "spe": 85
       },
-      "abilities": {},
       "heightm": 1.5,
       "weightkg": 55,
       "color": "Brown",
       "eggGroups": ["Bug"]
     },
     "tauros": {
-      "num": 128,
+      "inherit": true,
       "name": "Tauros",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 75,
         "atk": 100,
@@ -2656,17 +2394,15 @@
         "spd": 70,
         "spe": 110
       },
-      "abilities": {},
       "heightm": 1.4,
       "weightkg": 88.4,
       "color": "Brown",
       "eggGroups": ["Field"]
     },
     "magikarp": {
-      "num": 129,
+      "inherit": true,
       "name": "Magikarp",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 20,
         "atk": 10,
@@ -2675,7 +2411,6 @@
         "spd": 20,
         "spe": 80
       },
-      "abilities": {},
       "heightm": 0.9,
       "weightkg": 10,
       "color": "Red",
@@ -2683,10 +2418,9 @@
       "eggGroups": ["Water 2", "Dragon"]
     },
     "gyarados": {
-      "num": 130,
+      "inherit": true,
       "name": "Gyarados",
       "types": ["Water", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 95,
         "atk": 125,
@@ -2695,7 +2429,6 @@
         "spd": 100,
         "spe": 81
       },
-      "abilities": {},
       "heightm": 6.5,
       "weightkg": 235,
       "color": "Blue",
@@ -2704,10 +2437,9 @@
       "eggGroups": ["Water 2", "Dragon"]
     },
     "lapras": {
-      "num": 131,
+      "inherit": true,
       "name": "Lapras",
       "types": ["Water", "Ice"],
-      "gender": "N",
       "baseStats": {
         "hp": 130,
         "atk": 85,
@@ -2716,17 +2448,15 @@
         "spd": 95,
         "spe": 60
       },
-      "abilities": {},
       "heightm": 2.5,
       "weightkg": 220,
       "color": "Blue",
       "eggGroups": ["Monster", "Water 1"]
     },
     "ditto": {
-      "num": 132,
+      "inherit": true,
       "name": "Ditto",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 48,
         "atk": 48,
@@ -2735,17 +2465,15 @@
         "spd": 48,
         "spe": 48
       },
-      "abilities": {},
       "heightm": 0.3,
       "weightkg": 4,
       "color": "Purple",
       "eggGroups": ["Ditto"]
     },
     "eevee": {
-      "num": 133,
+      "inherit": true,
       "name": "Eevee",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 55,
         "atk": 55,
@@ -2754,27 +2482,16 @@
         "spd": 65,
         "spe": 55
       },
-      "abilities": {},
       "heightm": 0.3,
       "weightkg": 6.5,
       "color": "Brown",
-      "evos": [
-        "vaporeon",
-        "jolteon",
-        "flareon",
-        "espeon",
-        "umbreon",
-        "leafeon",
-        "glaceon",
-        "sylveon"
-      ],
+      "evos": ["vaporeon", "jolteon", "flareon"],
       "eggGroups": ["Field"]
     },
     "vaporeon": {
-      "num": 134,
+      "inherit": true,
       "name": "Vaporeon",
       "types": ["Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 130,
         "atk": 65,
@@ -2783,19 +2500,18 @@
         "spd": 110,
         "spe": 65
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 29,
       "color": "Blue",
       "prevo": "eevee",
-      "evoLevel": 1,
+      "evoType": "useItem",
+      "evoItem": "Water Stone",
       "eggGroups": ["Field"]
     },
     "jolteon": {
-      "num": 135,
+      "inherit": true,
       "name": "Jolteon",
       "types": ["Electric"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 65,
@@ -2804,19 +2520,18 @@
         "spd": 110,
         "spe": 130
       },
-      "abilities": {},
       "heightm": 0.8,
       "weightkg": 24.5,
       "color": "Yellow",
       "prevo": "eevee",
-      "evoLevel": 1,
+      "evoType": "useItem",
+      "evoItem": "Thunder Stone",
       "eggGroups": ["Field"]
     },
     "flareon": {
-      "num": 136,
+      "inherit": true,
       "name": "Flareon",
       "types": ["Fire"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 130,
@@ -2825,19 +2540,18 @@
         "spd": 110,
         "spe": 65
       },
-      "abilities": {},
       "heightm": 0.9,
       "weightkg": 25,
       "color": "Red",
       "prevo": "eevee",
-      "evoLevel": 1,
+      "evoType": "useItem",
+      "evoItem": "Fire Stone",
       "eggGroups": ["Field"]
     },
     "porygon": {
-      "num": 137,
+      "inherit": true,
       "name": "Porygon",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 65,
         "atk": 60,
@@ -2846,18 +2560,15 @@
         "spd": 75,
         "spe": 40
       },
-      "abilities": {},
       "heightm": 0.8,
       "weightkg": 36.5,
       "color": "Pink",
-      "evos": ["porygon2"],
       "eggGroups": ["Mineral"]
     },
     "omanyte": {
-      "num": 138,
+      "inherit": true,
       "name": "Omanyte",
       "types": ["Rock", "Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 35,
         "atk": 40,
@@ -2866,7 +2577,6 @@
         "spd": 90,
         "spe": 35
       },
-      "abilities": {},
       "heightm": 0.4,
       "weightkg": 7.5,
       "color": "Blue",
@@ -2874,10 +2584,9 @@
       "eggGroups": ["Water 1", "Water 3"]
     },
     "omastar": {
-      "num": 139,
+      "inherit": true,
       "name": "Omastar",
       "types": ["Rock", "Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 70,
         "atk": 60,
@@ -2886,7 +2595,6 @@
         "spd": 115,
         "spe": 55
       },
-      "abilities": {},
       "heightm": 1,
       "weightkg": 35,
       "color": "Blue",
@@ -2895,10 +2603,9 @@
       "eggGroups": ["Water 1", "Water 3"]
     },
     "kabuto": {
-      "num": 140,
+      "inherit": true,
       "name": "Kabuto",
       "types": ["Rock", "Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 30,
         "atk": 80,
@@ -2907,7 +2614,6 @@
         "spd": 45,
         "spe": 55
       },
-      "abilities": {},
       "heightm": 0.5,
       "weightkg": 11.5,
       "color": "Brown",
@@ -2915,10 +2621,9 @@
       "eggGroups": ["Water 1", "Water 3"]
     },
     "kabutops": {
-      "num": 141,
+      "inherit": true,
       "name": "Kabutops",
       "types": ["Rock", "Water"],
-      "gender": "N",
       "baseStats": {
         "hp": 60,
         "atk": 115,
@@ -2927,7 +2632,6 @@
         "spd": 70,
         "spe": 80
       },
-      "abilities": {},
       "heightm": 1.3,
       "weightkg": 40.5,
       "color": "Brown",
@@ -2936,10 +2640,9 @@
       "eggGroups": ["Water 1", "Water 3"]
     },
     "aerodactyl": {
-      "num": 142,
+      "inherit": true,
       "name": "Aerodactyl",
       "types": ["Rock", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 80,
         "atk": 105,
@@ -2948,17 +2651,15 @@
         "spd": 60,
         "spe": 130
       },
-      "abilities": {},
       "heightm": 1.8,
       "weightkg": 59,
       "color": "Purple",
       "eggGroups": ["Flying"]
     },
     "snorlax": {
-      "num": 143,
+      "inherit": true,
       "name": "Snorlax",
       "types": ["Normal"],
-      "gender": "N",
       "baseStats": {
         "hp": 160,
         "atk": 110,
@@ -2967,17 +2668,15 @@
         "spd": 65,
         "spe": 30
       },
-      "abilities": {},
       "heightm": 2.1,
       "weightkg": 460,
       "color": "Black",
       "eggGroups": ["Monster"]
     },
     "articuno": {
-      "num": 144,
+      "inherit": true,
       "name": "Articuno",
       "types": ["Ice", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 90,
         "atk": 85,
@@ -2986,17 +2685,15 @@
         "spd": 125,
         "spe": 85
       },
-      "abilities": {},
       "heightm": 1.7,
       "weightkg": 55.4,
       "color": "Blue",
       "eggGroups": ["Undiscovered"]
     },
     "zapdos": {
-      "num": 145,
+      "inherit": true,
       "name": "Zapdos",
       "types": ["Electric", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 90,
         "atk": 90,
@@ -3005,17 +2702,15 @@
         "spd": 125,
         "spe": 100
       },
-      "abilities": {},
       "heightm": 1.6,
       "weightkg": 52.6,
       "color": "Yellow",
       "eggGroups": ["Undiscovered"]
     },
     "moltres": {
-      "num": 146,
+      "inherit": true,
       "name": "Moltres",
       "types": ["Fire", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 90,
         "atk": 100,
@@ -3024,17 +2719,15 @@
         "spd": 125,
         "spe": 90
       },
-      "abilities": {},
       "heightm": 2,
       "weightkg": 60,
       "color": "Yellow",
       "eggGroups": ["Undiscovered"]
     },
     "dratini": {
-      "num": 147,
+      "inherit": true,
       "name": "Dratini",
       "types": ["Dragon"],
-      "gender": "N",
       "baseStats": {
         "hp": 41,
         "atk": 64,
@@ -3043,7 +2736,6 @@
         "spd": 50,
         "spe": 50
       },
-      "abilities": {},
       "heightm": 1.8,
       "weightkg": 3.3,
       "color": "Blue",
@@ -3051,10 +2743,9 @@
       "eggGroups": ["Water 1", "Dragon"]
     },
     "dragonair": {
-      "num": 148,
+      "inherit": true,
       "name": "Dragonair",
       "types": ["Dragon"],
-      "gender": "N",
       "baseStats": {
         "hp": 61,
         "atk": 84,
@@ -3063,7 +2754,6 @@
         "spd": 70,
         "spe": 70
       },
-      "abilities": {},
       "heightm": 4,
       "weightkg": 16.5,
       "color": "Blue",
@@ -3073,10 +2763,9 @@
       "eggGroups": ["Water 1", "Dragon"]
     },
     "dragonite": {
-      "num": 149,
+      "inherit": true,
       "name": "Dragonite",
       "types": ["Dragon", "Flying"],
-      "gender": "N",
       "baseStats": {
         "hp": 91,
         "atk": 134,
@@ -3085,7 +2774,6 @@
         "spd": 100,
         "spe": 80
       },
-      "abilities": {},
       "heightm": 2.2,
       "weightkg": 210,
       "color": "Brown",
@@ -3094,10 +2782,9 @@
       "eggGroups": ["Water 1", "Dragon"]
     },
     "mewtwo": {
-      "num": 150,
+      "inherit": true,
       "name": "Mewtwo",
       "types": ["Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 106,
         "atk": 110,
@@ -3106,17 +2793,15 @@
         "spd": 154,
         "spe": 130
       },
-      "abilities": {},
       "heightm": 2,
       "weightkg": 122,
       "color": "Purple",
       "eggGroups": ["Undiscovered"]
     },
     "mew": {
-      "num": 151,
+      "inherit": true,
       "name": "Mew",
       "types": ["Psychic"],
-      "gender": "N",
       "baseStats": {
         "hp": 100,
         "atk": 100,
@@ -3125,7 +2810,6 @@
         "spd": 100,
         "spe": 100
       },
-      "abilities": {},
       "heightm": 0.4,
       "weightkg": 4,
       "color": "Pink",
