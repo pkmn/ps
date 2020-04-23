@@ -148,7 +148,7 @@ const FRAGILE = new Set([
   'sim/dex.ts',
   'sim/global-types.ts',
   'sim/global-variables.d.ts',
-])
+]);
 // Files which we want to prevent being copied over from PS, either because of modifications or
 // because they only exist in the generated package
 const OVERRIDDEN = new Set([
@@ -196,16 +196,15 @@ const interesting = f => {
   if (f.startsWith('sim') || f.startsWith('test/sim')) return true;
   if (f.startsWith('data') && !f.endsWith('random-teams.js')) return true;
   return COPIED.has(f);
-}
+};
 
 const removeFields = (data, fields) => {
+  data = JSON.parse(JSON.stringify(data));
   for (const id in data) {
-    for (const field of fields) {
-    delete data[id][field];
-    }
+    for (const field of fields) delete data[id][field];
   }
   return data;
-}
+};
 
 const RANDBAT_FIELDS = [
   'randomBattleMoves',
@@ -241,6 +240,37 @@ const DATA = {
   },
 };
 
+// TODO need multiple gens :(
+const RANDBAT_DATA = {
+  abilities: (() => {
+    const abilities = {};
+    const data = require(path.resolve(ps, 'data/abilities.js')).BattleAbilities;
+    for (const id in data) {
+      if ('rating' in data[id]) abilities[id] = data[id].rating;
+    }
+    return abilities;
+  })(),
+  moves: (() => {
+    const moves = {};
+    const data = require(path.resolve(ps, 'data/moves.js')).BattleMovedex;
+    for (const id in data) {
+      if (data[id].isViable) moves[id] = 1;
+    }
+    return moves;
+  })(),
+  species: (() => {
+    let data = require(path.resolve(ps, 'data/formats-data.js')).BattleFormatsData;
+    data = JSON.parse(JSON.stringify(data));
+    for (const id in data) {
+      for (const field of Object.keys(data[id])) {
+        if (!RANDBAT_FIELDS.includes(field)) delete data[id][field];
+      }
+      if (!Object.keys(data[id]).length) delete data[id];
+    }
+    return data;
+  })(),
+};
+
 const HEAD = async where => (await execOrDie('git rev-parse HEAD', where)).slice(0, 8);
 // Figure out what has changed in PS so that we can later filter out just the interesting changes
 // A GitHub URL for the diff is added for convenience in the event review is required
@@ -264,19 +294,22 @@ const changes = async (where, last, now, repo) => ({
 
     console.log(`\n${changed.ps.url}\n`);
     for (const change of changed.ps.files) {
-      if (interesting(change)) {
+      let color = 0;
+      if (/random|formats-data/.test(change)) {
+        color = 95; // magenta
+      } else if (interesting(change)) {
         // Even though we copy over `sim/global-types.ts` untouched, any changes to it will have a
         // large effect on whether we're able to build an acceptable package
-        const color = (FRAGILE.has(change) || change === 'sim/global-types.ts')
+        color = (FRAGILE.has(change) || change === 'sim/global-types.ts')
           ? 91 // red -> yellow -> lightblue
           : OVERRIDDEN.has(change) ? 93 : 96;
-        console.log(`\x1b[${color}mCHANGED\x1b[0m ${change}`);
       }
+      if (color) console.log(`\x1b[${color}mCHANGED\x1b[0m ${change}`);
     }
 
     console.log(`\n${changed.psc.url}\n`);
     for (const change of changed.psc.files) {
-      if (INTERESTING.has(change)) console.log(`\x1b[95mCHANGED\x1b[0m ${change}`);
+      if (INTERESTING.has(change)) console.log(`\x1b[96mCHANGED\x1b[0m ${change}`);
     }
 
     const DEX = {};
