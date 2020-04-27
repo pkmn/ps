@@ -269,7 +269,6 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly affectsFainted?: boolean;
   readonly self?: T.SelfEffect | null;
   readonly drain?: [number, number];
-  readonly recoilDamage?: T.MoveRecoil;
   readonly recoil?: [number, number];
   readonly hasCustomRecoil?: boolean;
   readonly mindBlownRecoil?: boolean;
@@ -307,16 +306,6 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
     this.ignoreAbility = data.ignoreAbility || false;
     this.volatileStatus =
       typeof data.volatileStatus === 'string' ? (data.volatileStatus as ID) : undefined;
-
-    if (this.recoil) {
-      this.recoilDamage = this.recoil;
-    } else if (this.hasCustomRecoil) {
-      this.recoilDamage = 'crash';
-    } else if (this.mindBlownRecoil) {
-      this.recoilDamage = 'mindblown';
-    } else if (this.struggleRecoil) {
-      this.recoilDamage = 'struggle';
-    }
 
     if (this.category !== 'Status' && !this.gmaxPower) {
       if (!this.basePower) {

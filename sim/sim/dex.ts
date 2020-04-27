@@ -460,15 +460,6 @@ export class ModdedDex {
 			if (move.gen > this.gen) {
 				(move as any).isNonstandard = 'Future';
 			}
-			if (move.recoil) {
-				(move as any).recoilDamage = move.recoil;
-			} else if (move.hasCustomRecoil) {
-				(move as any).recoilDamage = 'crash';
-			} else if (move.mindBlownRecoil) {
-				(move as any).recoilDamage = 'mindblown';
-			} else if (move.struggleRecoil) {
-				(move as any).recoilDamage = 'struggle';
-			}
 		} else {
 			move = new Data.Move({id, name, exists: false});
 		}

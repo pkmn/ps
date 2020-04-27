@@ -64,14 +64,15 @@ export interface MoveData {
   target: MoveTarget;
   flags: MoveFlags;
   willCrit?: boolean;
-  heal?: number[] | null;
+  critRatio?: number;
+  drain?: [number, number];
   priority: number;
   self?: {boosts?: Partial<BoostsTable>}  | null;
   ignoreDefensive?: boolean;
   defensiveCategory?: MoveCategory;
   breaksProtect?: boolean;
-  isZPowered?: boolean;
-  maxPowered?: boolean;
+  isZ?: boolean | string;
+  isMax?: boolean | string;
   zMovePower?: number;
   gmaxPower?: number;
   multihit?: number | number[];

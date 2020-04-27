@@ -45,7 +45,8 @@
     "data",
     "sets",
     "img",
-    "view"
+    "view",
+    "calc"
   ],
   "scripts": {
     "lint": "subpkg run lint",

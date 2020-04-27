@@ -42,7 +42,7 @@ describe('Generations', () => {
     }
   });
 
-  it.skip('moves', () => {
+  it('moves', () => {
     for (const gen of gens) {
       const p = Array.from(pkmn.get(gen).moves);
       const c = new Map<I.ID, I.Move>();
@@ -121,8 +121,7 @@ describe('Adaptable', () => {
       }),
       new Move(gen, 'Focus Blast')
     );
-    expect(result.damage[0]).toEqual(274);
-    expect(result.damage[result.damage.length - 1]).toBe(324);
+    expect(result.range()).toEqual([274, 324]);
   });
 });
 

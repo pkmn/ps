@@ -2,8 +2,8 @@ import {ID, GenerationNum, TypeName} from '@pkmn/types';
 import * as I from '@smogon/calc/data/interface';
 import * as D from './dex';
 
-function toID(s: string): ID {
-  return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
+export function toID(s: string) {
+  return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as I.ID;
 }
 
 const GENERATIONS = Object.create(null) as {[num: number]: Generation};
@@ -137,16 +137,23 @@ class Moves implements I.Moves {
 
   get(name: string) {
     const move = this.dex.getMove(name);
-    return exists(move, this.dex.gen) ? new Move(move) : undefined;
+    return exists(move, this.dex.gen) ? new Move(move, this.dex) : undefined;
   }
 
   *[Symbol.iterator]() {
+    yield NoMove(this.dex);
     for (const id in this.dex.data.Moves) {
       const m = this.get(id);
       if (m) yield m;
     }
   }
 }
+
+// BUG: these don't actually *always* crit, but for the purposes of the calc they are considered to
+const GEN1_ALWAYS_CRIT = ['crabhammer', 'razorleaf', 'slash'];
+
+// Moves which caused typeless damage between Gen 2 and 4
+const TYPELESS_DAMAGE = ['futuresight', 'doomdesire', 'struggle'];
 
 class Move implements I.Move {
   readonly kind: 'Move';
@@ -181,26 +188,109 @@ class Move implements I.Move {
   readonly isMultiHit?: boolean;
   readonly isTwoHit?: boolean;
 
-  constructor(move: D.Move) {
+  constructor(move: D.Move, dex: D.Dex) {
     this.kind = 'Move';
-    this.id = move.id as I.ID;
+    this.id = move.id === 'hiddenpower' ? toID(move.name) : move.id as I.ID;
     this.name = move.name as I.MoveName;
-    this.bp = move.basePower;
-    this.type = move.type as I.TypeName;
-    this.category = move.category;
 
-    if (move.recoil) {
-      this.recoilDamage = move.recoil;
-    } else if (move.hasCustomRecoil) {
-      this.recoilDamage = 'crash';
-    } else if (move.mindBlownRecoil) {
-      this.recoilDamage = 'mindblown';
-    } else if (move.struggleRecoil) {
-      this.recoilDamage = 'struggle';
+    if (dex.gen === 3 && move.id === 'Explosion') console.log(move);
+    this.bp = move.basePower;
+    if (['return', 'frustration', 'pikapapow', 'veeveevolley'].includes(move.id)) {
+      this.bp = 102;
+    } else if ([3, 4].includes(dex.gen) && ['explosion', 'selfdestruct'].includes(move.id)) {
+      this.bp /= 2; // FIXME: wtf PS
+    } else if (move.id === 'naturepower') {
+      this.bp = 80; // FIXME terrain...
+      if (dex.gen >= 4) this.category = 'Special';
+      if (dex.gen >= 5) this.hasSecondaryEffect = true;
     }
 
+    if (move.isZ) delete move.zMovePower; // FIXME: wtf PS
 
-    // TODO !!!!
+    this.type = move.type;
+    if (dex.gen > 1 && dex.gen <= 4 && TYPELESS_DAMAGE.includes(move.id)) {
+      this.type = '???';
+    }
+
+    if (move.recoil) {
+      this.hasRecoil = Math.floor((move.recoil[0] / move.recoil[1]) * 100);
+    } else if (move.hasCustomRecoil) {
+      this.hasRecoil = 'crash';
+    } else if (move.mindBlownRecoil) {
+      this.hasRecoil = true;
+    } else if (move.struggleRecoil) {
+      this.hasRecoil = 'Struggle';
+    }
+
+    const stat = move.category === 'Special' ? 'spa' : 'atk';
+    if (move.self?.boosts && move.self.boosts[stat] && move.self.boosts[stat]! < 0) {
+      this.dropsStats = Math.abs(move.self.boosts[stat]!);
+    }
+
+    if (move.multihit) {
+      // FIXME: Triple Kick
+      if (move.multihit === 2) {
+        this.isTwoHit = true;
+      } else {
+        this.isMultiHit = true;
+      }
+    }
+
+    if ( move.drain) {
+      this.givesHealth = true;
+      this.percentHealed = move.drain[0] / move.drain[1];
+    }
+
+    if (move.willCrit || dex.gen === 1 && GEN1_ALWAYS_CRIT.includes(move.id)) {
+      this.alwaysCrit = true;
+    }
+    if (move.priority > 0) this.hasPriority = true;
+
+    if (dex.gen >= 2) {
+      if (move.breaksProtect) this.bypassesProtect = true;
+      if (GEN1_ALWAYS_CRIT.includes(move.id)) this.alwaysCrit = false;
+    }
+    if (dex.gen >= 3) {
+      if (move.flags.contact) this.makesContact = true;
+      if (move.flags.sound) this.isSound = true;
+
+      if (['allAdjacentFoes', 'adjacentFoe'].includes(move.target)) {
+        this.isSpread = true;
+      } else if (move.target === 'allAdjacent') {
+        this.isSpread = move.target;
+      }
+    }
+    if (dex.gen >= 4) {
+      if (move.flags.punch) this.isPunch = true;
+      if (move.flags.bite) this.isBite = true;
+
+      if (move.category !== 'Status') this.category = move.category;
+    }
+    if (dex.gen >= 5) {
+      if (move.ignoreDefensive) this.ignoresDefenseBoosts = true;
+      if (move.defensiveCategory === 'Physical') this.dealsPhysicalDamage = true;
+
+      if ('secondaries' in move && move.secondaries?.length) {
+        this.hasSecondaryEffect = true;
+      }
+    }
+    if (dex.gen >= 6) {
+      if (move.flags.bullet) this.isBullet = true;
+      if (move.flags.pulse) this.isPulse = true;
+      if (move.id === 'facade') this.ignoresBurn = true;
+    }
+    if (dex.gen >= 7) {
+      if (move.isZ) this.isZ = true;
+      if (move.zMovePower) this.zp = move.zMovePower;
+    }
+    if (dex.gen >= 8) {
+      if (move.isMax) this.isMax = true
+      if (move.gmaxPower) this.maxPower = move.gmaxPower;
+    }
+
+    if (['lightthatburnsthesky', 'photongeyser'].includes(move.id)) {
+      this.usesHighestAttackStat = true;
+    }
   }
 }
 
@@ -226,6 +316,21 @@ class Species implements I.Species {
       }
     }
   }
+}
+
+// Custom Move placeholder
+function NoMove(dex: D.Dex) {
+  return new Move({
+    id: 'nomove' as ID,
+    name: '(No Move)',
+    basePower: 0,
+    type: 'Normal',
+    category: 'Status',
+    target: 'any',
+    flags: {},
+    gen: 1,
+    priority: 0,
+  }, dex);
 }
 
 class Specie implements I.Specie {
