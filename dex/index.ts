@@ -10,6 +10,7 @@ import {
   NatureName,
   Nonstandard,
   StatsTable,
+  StatusName,
   StatName,
   TypeName,
 } from '@pkmn/types';
@@ -194,6 +195,15 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly effectType: 'Move';
   readonly kind: 'Move';
 
+  readonly boosts?: Partial<BoostsTable>;
+  readonly status?: StatusName;
+  readonly volatileStatus?: ID;
+  readonly slotCondition?: ID;
+  readonly sideCondition?: ID;
+  readonly terrain?: ID;
+  readonly pseudoWeather?: ID;
+  readonly weather?: ID;
+
   readonly basePower!: number;
   readonly type!: TypeName;
   readonly accuracy!: true | number;
@@ -203,79 +213,71 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly flags: T.MoveFlags;
   readonly category!: MoveCategory;
 
-  readonly secondary: T.SecondaryEffect | null;
-  readonly secondaries: T.SecondaryEffect[] | null;
-  readonly zMoveEffect?: ID;
-  readonly isZ: boolean | ID;
-  readonly isMax?: T.SpeciesName;
-  readonly noMetronome?: ID[];
-  readonly volatileStatus?: ID;
-  readonly slotCondition?: ID;
-  readonly sideCondition?: ID;
-  readonly terrain?: ID;
-  readonly pseudoWeather?: ID;
-  readonly weather?: ID;
-  readonly critRatio: number;
-  readonly willCrit?: boolean;
-  readonly ohko?: boolean | TypeName;
-  readonly defensiveCategory?: MoveCategory;
-  readonly ignoreImmunity?: boolean | { [k: string]: boolean };
-  readonly noPPBoosts?: boolean;
-  readonly multihit?: number | number[];
-  readonly gmaxPower?: number;
-  readonly zMovePower?: number;
-  readonly selfSwitch?: boolean | 'copyvolatile';
-  readonly pressureTarget?: MoveTarget;
-  readonly nonGhostTarget?: MoveTarget;
-  readonly ignoreAbility?: boolean;
+  readonly effect?: Partial<T.PureEffectData>;
   readonly damage?: number | 'level' | false | null;
-  readonly spreadModifier?: number;
-  readonly critModifier?: number;
-  readonly forceSTAB?: boolean;
-  readonly noSketch?: boolean;
-  readonly stab?: number;
+  readonly noPPBoosts?: boolean;
+
+  readonly isZ: boolean | ID;
+  readonly zMovePower?: number;
+  readonly zMoveEffect?: ID;
+  readonly zMoveBoost?: Partial<BoostsTable>;
+  readonly isMax?: T.SpeciesName;
+  readonly gmaxPower?: number;
+
+  readonly ohko?: boolean | TypeName;
+  readonly thawsTarget?: boolean;
+  readonly heal?: number[] | null;
+  readonly forceSwitch?: boolean;
+  readonly selfSwitch?: boolean | 'copyvolatile';
+  readonly selfBoost?: { boosts?: Partial<BoostsTable> };
+  readonly selfdestruct?: boolean | 'ifHit' | 'always';
+  readonly breaksProtect?: boolean;
+  readonly recoil?: [number, number];
+  readonly drain?: [number, number];
+  readonly mindBlownRecoil?: boolean;
+  readonly struggleRecoil?: boolean;
+  readonly stealsBoosts?: boolean;
+  readonly secondary?: T.SecondaryEffect | null;
+  readonly secondaries: T.SecondaryEffect[] | null;
+  readonly self?: T.HitEffect | null;
+
   readonly alwaysHit?: boolean;
   readonly basePowerModifier?: number;
-  readonly boosts?: Partial<BoostsTable> | false;
-  readonly breaksProtect?: boolean;
-  readonly forceSwitch?: boolean;
-  readonly heal?: number[] | null;
+  readonly critModifier?: number;
+  readonly critRatio?: number;
+  readonly defensiveCategory?: MoveCategory;
+  readonly forceSTAB?: boolean;
+  readonly ignoreAbility?: boolean;
   readonly ignoreAccuracy?: boolean;
   readonly ignoreDefensive?: boolean;
   readonly ignoreEvasion?: boolean;
+  readonly ignoreImmunity?: boolean | { [k in keyof TypeName]?: boolean };
   readonly ignoreNegativeOffensive?: boolean;
   readonly ignoreOffensive?: boolean;
   readonly ignorePositiveDefensive?: boolean;
   readonly ignorePositiveEvasion?: boolean;
-  readonly isFutureMove?: boolean;
+  readonly infiltrates?: boolean;
   readonly multiaccuracy?: boolean;
+  readonly multihit?: number | number[];
+  readonly noCopy?: boolean;
   readonly noDamageVariance?: boolean;
   readonly noFaint?: boolean;
-  readonly selfBoost?: { boosts?: Partial<BoostsTable> };
-  readonly selfdestruct?: boolean | 'ifHit' | 'always';
+  readonly nonGhostTarget?: MoveTarget;
+  readonly pressureTarget?: MoveTarget;
   readonly sleepUsable?: boolean;
-  readonly stallingMove?: boolean;
-  readonly stealsBoosts?: boolean;
-  readonly thawsTarget?: boolean;
-  readonly tracksTarget?: boolean;
   readonly smartTarget?: boolean;
-  readonly useTargetOffensive?: boolean;
+  readonly spreadModifier?: number;
+  readonly tracksTarget?: boolean;
   readonly useSourceDefensiveAsOffensive?: boolean;
-  readonly zMoveBoost?: Partial<BoostsTable>;
-  readonly isZPowered?: boolean;
-  readonly maxPowered?: boolean;
-  readonly status?: string;
-  readonly effect?: Partial<PureEffect>;
-  readonly affectsFainted?: boolean;
-  readonly self?: T.SelfEffect | null;
-  readonly drain?: [number, number];
-  readonly recoil?: [number, number];
-  readonly hasCustomRecoil?: boolean;
-  readonly mindBlownRecoil?: boolean;
-  readonly struggleRecoil?: boolean;
-  readonly noCopy?: boolean;
-  readonly infiltrates?: boolean;
-  readonly counterMax?: number;
+  readonly useTargetOffensive?: boolean;
+  readonly willCrit?: boolean;
+
+  readonly hasCrashDamage?: boolean;
+  readonly isConfusionSelfHit?: boolean;
+  readonly isFutureMove?: boolean;
+  readonly noMetronome?: ID[];
+  readonly noSketch?: boolean;
+  readonly stallingMove?: boolean;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     super(data, ...moreData);
@@ -403,8 +405,8 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly forme: T.FormeName | '';
   readonly abilities: T.SpeciesAbility<T.AbilityName | ''>;
   readonly types: TypeName[];
-  readonly prevo: ID;
-  readonly evos: ID[];
+  readonly prevo: T.SpeciesName | '';
+  readonly evos: T.SpeciesName[];
   readonly nfe: boolean;
   readonly eggGroups: EggGroup[];
   readonly weightkg: number;
@@ -412,13 +414,13 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly heightm: number;
   readonly unreleasedHidden: boolean | 'Past';
   readonly maleOnlyHidden: boolean;
-  readonly inheritsFrom: ID;
+  readonly changesFrom?: T.SpeciesName;
   readonly tier: string;
   readonly doublesTier: string;
 
   readonly evoMove?: T.MoveName;
-  readonly cosmeticFormes?: ID[];
-  readonly otherFormes?: ID[];
+  readonly cosmeticFormes?: T.SpeciesName[];
+  readonly otherFormes?: T.SpeciesName[];
   readonly genderRatio: { M: number; F: number };
   readonly isMega?: boolean;
   readonly isPrimal?: boolean;
@@ -474,8 +476,8 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     this.isGigantamax = data.isGigantamax || undefined;
     this.battleOnly =
       data.battleOnly || (this.isMega || this.isGigantamax ? this.baseSpecies : undefined);
-    this.inheritsFrom =
-      data.inheritsFrom || (this.isGigantamax ? toID(this.baseSpecies) : undefined);
+    this.changesFrom =
+      data.changesFrom || (this.isGigantamax ? toID(this.baseSpecies) : undefined);
 
     if (!this.gen && data.num >= 1) {
       if (data.num >= 810 || ['Gmax', 'Galar', 'Galar-Zen'].includes(this.forme)) {
@@ -677,16 +679,6 @@ export class ModdedDex implements T.Dex {
     return this.mod(`gen${gen}` as GenID);
   }
 
-  getForme(speciesid: string | Species): string {
-    const id = toID(speciesid || '');
-    const species = this.getSpecies(id);
-    if (species.cosmeticFormes && species.cosmeticFormes.includes(id)) {
-      const forme = id.slice(species.id.length);
-      if (forme) return species.name + '-' + forme[0].toUpperCase() + forme.slice(1);
-    }
-    return species.name;
-  }
-
   getSpecies(name: string | Species): Species {
     if (name && typeof name !== 'string') return name;
 
@@ -719,6 +711,22 @@ export class ModdedDex implements T.Dex {
         (species as any).abilities = {0: species.abilities['S']};
       } else {
         species = this.getSpecies(alias);
+        if (species.cosmeticFormes) {
+          for (const forme of species.cosmeticFormes) {
+            if (toID(forme) === id) {
+              species = new Species(species, {
+                name: forme,
+                id,
+                forme: forme.slice(species.name.length + 1),
+                baseForme: '',
+                baseSpecies: species.name,
+                otherFormes: null,
+                cosmeticFormes: null,
+              });
+              break;
+            }
+          }
+        }
       }
 
       if (species?.exists) this.cache.Species[id] = species;
@@ -806,8 +814,8 @@ export class ModdedDex implements T.Dex {
   getOutOfBattleSpecies(species: Species) {
     return !species.battleOnly
       ? species.name
-      : species.inheritsFrom
-        ? this.getSpecies(species.inheritsFrom).name
+      : species.changesFrom
+        ? this.getSpecies(species.changesFrom).name
         : species.baseSpecies;
   }
 

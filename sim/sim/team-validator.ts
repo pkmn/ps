@@ -1,16 +1,16 @@
 import {
+	Ability,
+	AnyObject,
+	EventInfo,
 	Format,
-	StatsTable,
+	ID,
+	Item,
+	ModdedDex,
+	Move,
+	PokemonSet,
 	SparseStatsTable,
 	Species,
-	AnyObject,
-	Move,
-	EventInfo,
-	PokemonSet,
-	Ability,
-	Item,
-	ID,
-	ModdedDex,
+	StatsTable,
 } from './exported-global-types';
 
 /**
@@ -290,11 +290,13 @@ export class TeamValidator {
 				problems = problems.concat(setProblems);
 			}
 			if (options.removeNicknames) {
+				const species = dex.getSpecies(set.species);
 				let crossSpecies: Species;
 				if (format.name === '[Gen 8] Cross Evolution' && (crossSpecies = dex.getSpecies(set.name)).exists) {
 					set.name = crossSpecies.name;
 				} else {
-					set.name = dex.getSpecies(set.species).baseSpecies;
+					set.name = species.baseSpecies;
+					if (species.baseSpecies === 'Unown') set.species = 'Unown';
 				}
 			}
 		}
@@ -341,7 +343,7 @@ export class TeamValidator {
 		}
 
 		let species = dex.getSpecies(set.species);
-		set.species = Dex.getForme(set.species);
+		set.species = species.name;
 		set.name = dex.getName(set.name);
 		let item = dex.getItem(Dex.getString(set.item));
 		set.item = item.name;
@@ -879,8 +881,17 @@ export class TeamValidator {
 			}
 		} else { // EVs
 			for (const stat in set.evs) {
-				if (set.evs[stat as 'hp'] > 255) {
+				if (set.evs[stat as StatName] > 255) {
 					problems.push(`${name} has more than 255 EVs in ${statTable[stat as 'hp']}.`);
+				}
+			}
+			if (dex.gen <= 2) {
+				if (set.evs.spa !== set.evs.spd) {
+					if (dex.gen === 2) {
+						problems.push(`${name} has different SpA and SpD EVs, which is not possible in Gen 2.`);
+					} else {
+						set.evs.spd = set.evs.spa;
+					}
 				}
 			}
 		}
@@ -1025,6 +1036,9 @@ export class TeamValidator {
 		let eggGroups = species.eggGroups;
 		if (species.id === 'nidoqueen' || species.id === 'nidorina') {
 			eggGroups = dex.getSpecies('nidoranf').eggGroups;
+		} else if (dex !== this.dex) {
+			// Gen 1 tradeback; grab the egg groups from Gen 2
+			eggGroups = dex.getSpecies(species.id).eggGroups;
 		}
 		if (eggGroups[0] === 'Undiscovered') eggGroups = dex.getSpecies(species.evos[0]).eggGroups;
 		if (eggGroups[0] === 'Undiscovered' || !eggGroups.length) {
@@ -1726,15 +1740,15 @@ export class TeamValidator {
 			if (dex.gen <= 2 && species.gen === 1) tradebackEligible = true;
 			const lsetData = dex.getLearnsetData(species.id);
 			if (!lsetData.learnset) {
-				if (species.baseSpecies !== species.name) {
+				if ((species.changesFrom || species.baseSpecies) !== species.name) {
 					// forme without its own learnset
-					species = dex.getSpecies(species.baseSpecies);
+					species = dex.getSpecies(species.changesFrom || species.baseSpecies);
 					// warning: formes with their own learnset, like Wormadam, should NOT
 					// inherit from their base forme unless they're freely switchable
 					continue;
 				}
 				// should never happen
-				break;
+				throw new Error(`Species with no learnset data: ${species.id}`);
 			}
 			const checkingPrevo = species.baseSpecies !== s.baseSpecies;
 			if (checkingPrevo && !moveSources.size()) {
@@ -1953,9 +1967,9 @@ export class TeamValidator {
 			species = this.dex.getSpecies(species.prevo);
 			if (species.gen > Math.max(2, this.dex.gen)) return null;
 			return species;
-		} else if (species.inheritsFrom) {
+		} else if (species.changesFrom) {
 			// For Pokemon like Rotom, Necrozma, and Gmax formes whose movesets are extensions are their base formes
-			return this.dex.getSpecies(species.inheritsFrom);
+			return this.dex.getSpecies(species.changesFrom);
 		}
 		return null;
 	}

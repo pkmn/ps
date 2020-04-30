@@ -264,7 +264,7 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 	battlebond: {
 		desc: "If this Pokemon is a Greninja, it transforms into Ash-Greninja after knocking out a Pokemon. As Ash-Greninja, its Water Shuriken has 20 base power and always hits 3 times.",
 		shortDesc: "After KOing a Pokemon: becomes Ash-Greninja, Water Shuriken: 20 power, hits 3x.",
-		onSourceFaint(target, source, effect) {
+		onSourceAfterFaint(length, target, source, effect) {
 			if (effect?.effectType !== 'Move') {
 				return;
 			}
@@ -287,7 +287,7 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 	beastboost: {
 		desc: "This Pokemon's highest stat is raised by 1 stage if it attacks and knocks out another Pokemon.",
 		shortDesc: "This Pokemon's highest stat is raised by 1 if it attacks and KOes another Pokemon.",
-		onSourceFaint(target, source, effect) {
+		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
 				let statName = 'atk';
 				let bestStat = 0;
@@ -298,7 +298,7 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 						bestStat = source.storedStats[s];
 					}
 				}
-				this.boost({[statName]: 1}, source);
+				this.boost({[statName]: length}, source);
 			}
 		},
 		id: "beastboost",
@@ -465,8 +465,9 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 			this.add('-ability', pokemon, 'Comatose');
 		},
 		onSetStatus(status, target, source, effect) {
-			if (!effect || !effect.status) return false;
-			this.add('-immune', target, '[from] ability: Comatose');
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Comatose');
+			}
 			return false;
 		},
 		// Permanent sleep "status" implemented in the relevant sleep-checking effects
@@ -1712,8 +1713,9 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'psn' && status.id !== 'tox') return;
-			if (!effect || !effect.status) return false;
-			this.add('-immune', target, '[from] ability: Immunity');
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Immunity');
+			}
 			return false;
 		},
 		id: "immunity",
@@ -1786,8 +1788,9 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'slp') return;
-			if (!effect || !effect.status) return false;
-			this.add('-immune', target, '[from] ability: Insomnia');
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Insomnia');
+			}
 			return false;
 		},
 		id: "insomnia",
@@ -1905,7 +1908,9 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		shortDesc: "If Sunny Day is active, this Pokemon cannot be statused and Rest will fail for it.",
 		onSetStatus(status, target, source, effect) {
 			if (['sunnyday', 'desolateland'].includes(target.effectiveWeather())) {
-				if (effect?.status) this.add('-immune', target, '[from] ability: Leaf Guard');
+				if ((effect as Move)?.status) {
+					this.add('-immune', target, '[from] ability: Leaf Guard');
+				}
 				return false;
 			}
 		},
@@ -1992,8 +1997,9 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'par') return;
-			if (!effect || !effect.status) return false;
-			this.add('-immune', target, '[from] ability: Limber');
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Limber');
+			}
 			return false;
 		},
 		id: "limber",
@@ -2358,9 +2364,9 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 	moxie: {
 		desc: "This Pokemon's Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
 		shortDesc: "This Pokemon's Attack is raised by 1 stage if it attacks and KOes another Pokemon.",
-		onSourceFaint(target, source, effect) {
+		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
-				this.boost({atk: 1}, source);
+				this.boost({atk: length}, source);
 			}
 		},
 		id: "moxie",
@@ -2431,7 +2437,7 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 					// this.add('-message', "" + curPoke + " skipped: Natural Cure already known");
 					continue;
 				}
-				const species = this.dex.getSpecies(curPoke.forme);
+				const species = curPoke.species;
 				// pokemon can't get Natural Cure
 				if (!Object.values(species.abilities).includes('Natural Cure')) {
 					// this.add('-message', "" + curPoke + " skipped: no Natural Cure");
@@ -2712,15 +2718,17 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		},
 		onSetStatus(status, target, source, effect) {
 			if (!['psn', 'tox'].includes(status.id)) return;
-			if (!effect || !effect.status) return false;
-			this.add('-immune', target, '[from] ability: Pastel Veil');
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Pastel Veil');
+			}
 			return false;
 		},
 		onAllySetStatus(status, target, source, effect) {
 			if (!['psn', 'tox'].includes(status.id)) return;
-			if (!effect || !effect.status) return false;
-			const effectHolder = this.effectData.target;
-			this.add('-block', target, 'ability: Pastel Veil', '[of] ' + effectHolder);
+			if ((effect as Move)?.status) {
+				const effectHolder = this.effectData.target;
+				this.add('-block', target, 'ability: Pastel Veil', '[of] ' + effectHolder);
+			}
 			return false;
 		},
 		id: "pastelveil",
@@ -3067,7 +3075,7 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		},
 		id: "punkrock",
 		name: "Punk Rock",
-		rating: 3,
+		rating: 3.5,
 		num: 244,
 	},
 	purepower: {
@@ -3170,7 +3178,7 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		shortDesc: "This Pokemon's attacks with recoil or crash damage have 1.2x power; not Struggle.",
 		onBasePowerPriority: 23,
 		onBasePower(basePower, attacker, defender, move) {
-			if (move.recoil || move.hasCustomRecoil) {
+			if (move.recoil || move.hasCrashDamage) {
 				this.debug('Reckless boost');
 				return this.chainModify([0x1333, 0x1000]);
 			}
@@ -3632,8 +3640,9 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		},
 		onSetStatus(status, target, source, effect) {
 			if (target.species.id !== 'miniormeteor' || target.transformed) return;
-			if (!effect || !effect.status) return false;
-			this.add('-immune', target, '[from] ability: Shields Down');
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Shields Down');
+			}
 			return false;
 		},
 		onTryAddVolatile(status, target) {
@@ -4523,8 +4532,9 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'slp') return;
-			if (!effect || !effect.status) return false;
-			this.add('-immune', target, '[from] ability: Vital Spirit');
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Vital Spirit');
+			}
 			return false;
 		},
 		id: "vitalspirit",
@@ -4618,8 +4628,9 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'brn') return;
-			if (!effect || !effect.status) return false;
-			this.add('-immune', target, '[from] ability: Water Bubble');
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Water Bubble');
+			}
 			return false;
 		},
 		id: "waterbubble",
@@ -4649,8 +4660,9 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'brn') return;
-			if (!effect || !effect.status) return false;
-			this.add('-immune', target, '[from] ability: Water Veil');
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Water Veil');
+			}
 			return false;
 		},
 		id: "waterveil",

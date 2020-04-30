@@ -94,8 +94,8 @@ const IMPORTS = {
   'sim/battle-stream.ts': ['AnyObject'],
   'sim/battle.ts': [
     'Effect', 'Format', 'ID', 'PlayerOptions', 'AnyObject', 'ActiveMove', 'SideID',
-    'SparseBoostsTable', 'SpreadMoveDamage', 'Move', 'PokemonSet', 'DynamaxOptions',
-    'SpreadMoveTargets', 'SelfEffect', 'SecondaryEffect', 'GameType', 'ModdedDex',
+    'SparseBoostsTable', 'SpreadMoveDamage', 'Move', 'PokemonSet', 'SpreadMoveTargets',
+    'HitEffect', 'GameType', 'ModdedDex',
   ],
   'sim/dex-data.ts': [
     'ID', 'EffectData', 'EffectType', 'Nonstandard', 'AnyObject', 'GameTimerSettings',
@@ -126,6 +126,7 @@ const TYPES = new Set([
 ]);
 
 const imports = (types, where) => {
+  types.sort();
   if (types.length <= 5) return`import {${types.join(', ')}} from '${where}';\n\n`;
   return `import {\n\t${types.join(',\n\t')},\n} from '${where}';\n\n`;
 };
@@ -151,7 +152,7 @@ const FRAGILE = new Set([
 // Files which we want to prevent being copied over from PS, either because of modifications or
 // because they only exist in the generated package
 const OVERRIDDEN = new Set([
-  ...FRAGILE,
+  ...Array.from(FRAGILE).slice(1), // sim/dex-data.ts has *not* been overridden
   '.eslintcache',
   '.eslintrc-no-types.json',
   '.eslintrc-types.json',

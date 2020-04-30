@@ -2479,8 +2479,8 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		desc: "Raises the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage in exchange for the user losing 1/3 of its maximum HP, rounded down. Fails if the user would faint or if its Attack, Defense, Special Attack, Special Defense, and Speed stat stages would not change.",
-		shortDesc: "User loses 1/3 its max HP. Raises all stats by 1.",
+		desc: "Raises the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage in exchange for the user losing 33% of its maximum HP, rounded down. Fails if the user would faint or if its Attack, Defense, Special Attack, Special Defense, and Speed stat stages would not change.",
+		shortDesc: "User loses 33% of its max HP. +1 to all stats.",
 		id: "clangoroussoul",
 		isViable: true,
 		name: "Clangorous Soul",
@@ -2488,14 +2488,14 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {snatch: 1, sound: 1, dance: 1},
 		onTryHit(pokemon, target, move) {
-			if (pokemon.hp <= pokemon.maxhp / 3 || pokemon.maxhp === 1) {
+			if (pokemon.hp <= (pokemon.maxhp * 33 / 100) || pokemon.maxhp === 1) {
 				return false;
 			}
 			if (!this.boost(move.boosts as SparseBoostsTable)) return null;
 			delete move.boosts;
 		},
 		onHit(pokemon) {
-			this.directDamage(pokemon.maxhp / 3);
+			this.directDamage(pokemon.maxhp * 33 / 100);
 		},
 		boosts: {
 			atk: 1,
@@ -3463,8 +3463,8 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		desc: "Lowers the target's evasiveness by 1 stage. If this move is successful and whether or not the target's evasiveness was affected, the effects of Reflect, Light Screen, Aurora Veil, Safeguard, Mist, Spikes, Toxic Spikes, Stealth Rock, and Sticky Web end for the target's side, and the effects of Spikes, Toxic Spikes, Stealth Rock, and Sticky Web end for the user's side. Ignores a target's substitute, although a substitute will still block the lowering of evasiveness.",
-		shortDesc: "-1 evasion; clears user and target side's hazards.",
+		desc: "Lowers the target's evasiveness by 1 stage. If this move is successful and whether or not the target's evasiveness was affected, the effects of Reflect, Light Screen, Aurora Veil, Safeguard, Mist, Spikes, Toxic Spikes, Stealth Rock, and Sticky Web end for the target's side, and the effects of Spikes, Toxic Spikes, Stealth Rock, and Sticky Web end for the user's side. Ignores a target's substitute, although a substitute will still block the lowering of evasiveness. If there is a terrain active and this move is successful, the terrain will be cleared.",
+		shortDesc: "-1 evasion; clears terrain and hazards on both sides.",
 		id: "defog",
 		isViable: true,
 		name: "Defog",
@@ -9034,7 +9034,7 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1},
-		hasCustomRecoil: true,
+		hasCrashDamage: true,
 		onMoveFail(target, source, move) {
 			this.damage(source.baseMaxhp / 2, source, source, this.dex.getEffect('High Jump Kick'));
 		},
@@ -10001,7 +10001,7 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1},
-		hasCustomRecoil: true,
+		hasCrashDamage: true,
 		onMoveFail(target, source, move) {
 			this.damage(source.baseMaxhp / 2, source, source, this.dex.getEffect('Jump Kick'));
 		},
@@ -12491,7 +12491,7 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 			},
 			onSetStatus(status, target, source, effect) {
 				if (!target.isGrounded() || target.isSemiInvulnerable()) return;
-				if (effect && (effect.status || effect.id === 'yawn')) {
+				if (effect && ((effect as Move).status || effect.id === 'yawn')) {
 					this.add('-activate', target, 'move: Misty Terrain');
 				}
 				return false;
@@ -16695,7 +16695,7 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 					pokemon.volatiles['shelltrap'].gotHit = true;
 					const action = this.queue.willMove(pokemon);
 					if (action) {
-						this.queue.prioritizeAction(action, move);
+						this.queue.prioritizeAction(action);
 					}
 				}
 			},
@@ -18360,7 +18360,7 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		accuracy: 95,
 		basePower: 140,
 		category: "Special",
-		desc: "If this move is successful, the user loses 1/2 of its maximum HP, rounded up, unless the user has the Magic Guard Ability.",
+		desc: "Whether or not this move is successful and even if it would cause fainting, the user loses 1/2 of its maximum HP, rounded up, unless the user has the Magic Guard Ability.",
 		shortDesc: "User loses 50% max HP.",
 		id: "steelbeam",
 		isViable: true,

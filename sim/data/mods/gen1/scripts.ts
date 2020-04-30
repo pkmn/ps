@@ -7,9 +7,10 @@
 export const BattleScripts: ModdedBattleScriptsData = {
 	inherit: 'gen2',
 	gen: 1,
-	debug(activity) {
-		if (this.format.debug) {
-			this.add('debug', activity);
+	init() {
+		for (const i in this.data.Pokedex) {
+			(this.data.Pokedex[i] as any).gender = 'N';
+			(this.data.Pokedex[i] as any).eggGroups = null;
 		}
 	},
 	// Gen 1 stores the last damage dealt by a move in the battle.
@@ -609,7 +610,6 @@ export const BattleScripts: ModdedBattleScriptsData = {
 		boost = this.runEvent('Boost', target, source, effect, Object.assign({}, boost));
 		let i: BoostName;
 		for (i in boost) {
-			/** @type {SparseBoostsTable} */
 			const currentBoost: SparseBoostsTable = {};
 			currentBoost[i] = boost[i];
 			if (boost[i] !== 0 && target.boostBy(currentBoost)) {

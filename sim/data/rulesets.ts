@@ -772,7 +772,7 @@ export const BattleFormats: {[k: string]: FormatsData} = {
 		onBegin() {
 			this.add('rule', 'Mega Rayquaza Clause: You cannot mega evolve Rayquaza');
 			for (const pokemon of this.getAllPokemon()) {
-				if (pokemon.speciesid === 'rayquaza') pokemon.canMegaEvo = null;
+				if (pokemon.species.id === 'rayquaza') pokemon.canMegaEvo = null;
 			}
 		},
 	},
@@ -794,7 +794,7 @@ export const BattleFormats: {[k: string]: FormatsData} = {
 		onBegin() {
 			const cannotDynamax = this.format.restricted || [];
 			for (const pokemon of this.getAllPokemon()) {
-				if (cannotDynamax.includes(pokemon.forme)) pokemon.canDynamax = false;
+				if (cannotDynamax.includes(pokemon.species.name)) pokemon.canDynamax = false;
 			}
 			this.add('html', 'Ubers Dynamax Clause: Pokémon on the <a href="https://www.smogon.com/dex/ss/formats/uber/">Ubers Dynamax Banlist</a> cannot Dynamax.');
 		},
@@ -849,23 +849,30 @@ export const BattleFormats: {[k: string]: FormatsData} = {
 		desc: "Allows Pok&eacute;mon to use any move that they or a previous evolution/out-of-battle forme share a type with",
 		checkLearnset(move, species, setSources, set) {
 			const restrictedMoves = this.format.restricted || [];
-			if (!restrictedMoves.includes(move.name) && !move.isNonstandard && !move.isMax) {
+			if (!restrictedMoves.includes(move.name) && !move.isNonstandard && !move.isZ && !move.isMax) {
 				const dex = this.dex;
-				let types = species.types;
-				const baseSpecies = dex.getSpecies(species.baseSpecies);
-				while (species.prevo) {
-					const prevoSpecies = dex.getSpecies(species.prevo);
-					types = types.concat(prevoSpecies.types);
-				}
-				if (baseSpecies.otherFormes) {
-					for (const formeid of baseSpecies.otherFormes) {
-						const forme = dex.getSpecies(formeid);
-						if (!forme.battleOnly) {
-							if (!forme.forme.includes('Alola') && forme.forme !== 'Galar' && forme.baseSpecies !== 'Wormadam') {
-								types = types.concat(forme.types).concat(baseSpecies.types);
+				let types: string[];
+				if (species.forme || species.otherFormes) {
+					const baseSpecies = dex.getSpecies(species.baseSpecies);
+					const originalForme = dex.getSpecies(species.changesFrom || species.name);
+					types = originalForme.types;
+					if (baseSpecies.otherFormes) {
+						for (const formeid of baseSpecies.otherFormes) {
+							const forme = dex.getSpecies(formeid);
+							if (forme.changesFrom === originalForme.name) {
+								types = types.concat(forme.types);
 							}
 						}
 					}
+				} else {
+					types = species.types;
+				}
+
+				let prevo = species.prevo;
+				while (prevo) {
+					const prevoSpecies = dex.getSpecies(prevo);
+					types = types.concat(prevoSpecies.types);
+					prevo = prevoSpecies.prevo;
 				}
 				if (types.includes(move.type)) return null;
 			}

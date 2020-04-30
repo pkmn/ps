@@ -289,21 +289,6 @@ export class ModdedDex {
 		}
 	}
 
-	/**
-	 * Convert a pokemon name, ID, or species into its forme name, preserving
-	 * cosmetic forme name (which is the main way Dex.getForme(id) differs from
-	 * Dex.getSpecies(id).name).
-	 */
-	getForme(name: string | Species): string {
-		const id = toID(name || '');
-		const species = this.getSpecies(id);
-		if (species.cosmeticFormes && species.cosmeticFormes.includes(id)) {
-			const forme = id.slice(species.id.length);
-			if (forme) return species.name + '-' + forme[0].toUpperCase() + forme.slice(1);
-		}
-		return species.name;
-	}
-
 	getSpecies(name?: string | Species): Species {
 		if (name && typeof name !== 'string') return name;
 
@@ -327,6 +312,22 @@ export class ModdedDex {
 				species.abilities = {0: species.abilities['S']};
 			} else {
 				species = this.getSpecies(this.data.Aliases[id]);
+				if (species.cosmeticFormes) {
+					for (const forme of species.cosmeticFormes) {
+						if (toID(forme) === id) {
+							species = new Data.Species(species, {
+								name: forme,
+								id,
+								forme: forme.slice(species.name.length + 1),
+								baseForme: "",
+								baseSpecies: species.name,
+								otherFormes: null,
+								cosmeticFormes: null,
+							});
+							break;
+						}
+					}
+				}
 			}
 			if (species) {
 				this.speciesCache.set(id, species);
@@ -419,7 +420,7 @@ export class ModdedDex {
 
 	getOutOfBattleSpecies(species: Species) {
 		return !species.battleOnly ? species.name :
-			species.inheritsFrom ? this.getSpecies(species.inheritsFrom).name :
+			species.changesFrom ? this.getSpecies(species.changesFrom).name :
 			species.baseSpecies;
 	}
 

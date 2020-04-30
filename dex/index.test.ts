@@ -187,7 +187,7 @@ describe('Dex', () => {
       expect(Dex.getMove('Double Kick').multihit).toBe(2);
       expect(Dex.getMove('Rock Blast').multihit).toEqual([2, 5]);
       expect(Dex.getMove('Softboiled').heal).toEqual([1, 2]);
-      expect(Dex.getMove('Hi Jump Kick').hasCustomRecoil).toBe(true);
+      expect(Dex.getMove('Hi Jump Kick').hasCrashDamage).toBe(true);
       expect(Dex.getMove('Struggle').struggleRecoil).toBe(true);
       expect(Dex.forGen(1).getMove('Double Edge').recoil).toEqual([25, 100]);
       expect(Dex.getMove('Double Edge').recoil).toEqual([33, 100]);
@@ -249,7 +249,8 @@ describe('Dex', () => {
       expect(Dex.getSpecies('foo').exists).toBe(false);
       // normal
       expect(Dex.getSpecies('gengar').name).toBe('Gengar');
-      expect(Dex.getSpecies('Gastrodon-East').name).toBe('Gastrodon');
+      expect(Dex.getSpecies('Gastrodon-East').name).toBe('Gastrodon-East');
+      expect(Dex.getSpecies('sawsbuckwinter').name).toBe('Sawsbuck-Winter');
       // nidoran
       expect(Dex.getSpecies('nidoran♀').name).toBe('Nidoran-F');
       expect(Dex.getSpecies('nidoran♂').name).toBe('Nidoran-M');
@@ -266,13 +267,6 @@ describe('Dex', () => {
       expect(Dex.getSpecies('Rockruff-Dusk').exists).toBe(true);
       // FIXME expect(Dex.getSpecies('Rockruff-Dusk').name).toBe('Rockruff-Dusk');
     });
-
-    test('#getForme', () => {
-      expect(Dex.getForme('Gastrodon-East')).toBe('Gastrodon-East');
-      expect(Dex.getForme('sawsbuckwinter')).toBe('Sawsbuck-Winter');
-      expect(Dex.getForme('Gengar')).toBe('Gengar');
-    });
-
     test('counts', () => {
       const counts = (gen: GenerationNum) => {
         const dex = Dex.forGen(gen);
@@ -346,13 +340,15 @@ describe('Dex', () => {
           Dex.forGen(3).getSpecies('Chansey').prevo
         ).isNonstandard
       ).toBe('Future');
-      expect(Dex.forGen(4).getSpecies('Chansey').prevo).toBe('happiny');
-      expect(Dex.forGen(2).getSpecies('Chansey').evos).toEqual(['blissey']);
+      expect(Dex.forGen(4).getSpecies('Chansey').prevo).toBe('Happiny');
+      expect(Dex.forGen(2).getSpecies('Chansey').evos).toEqual(['Blissey']);
       expect(Dex.getSpecies('Charizard-Mega-X').baseSpecies).toBe('Charizard');
       expect(Dex.getSpecies('Giratina-O').forme).toBe('Origin');
       expect(Dex.getSpecies('Giratina').baseForme).toBe('Altered');
-      expect(Dex.getSpecies('Shaymin').otherFormes).toEqual(['shayminsky']);
-      expect(Dex.getSpecies('Gastrodon-East').cosmeticFormes).toEqual(['gastrodoneast']);
+      expect(Dex.getSpecies('Shaymin').otherFormes).toEqual(['Shaymin-Sky']);
+      expect(Dex.forGen(7).getSpecies('Charizard').otherFormes)
+        .toEqual(['Charizard-Mega-X', 'Charizard-Mega-Y']);
+      expect(Dex.getSpecies('Gastrodon').cosmeticFormes).toEqual(['Gastrodon-East']);
       expect(Dex.getSpecies('Garchomp-Mega').isMega).toBe(true);
       expect(Dex.getSpecies('Yanmega').isMega).not.toBeDefined();
       expect(Dex.getSpecies('Kyogre-Primal').isPrimal).toBe(true);

@@ -54,8 +54,7 @@ a couple of Pokémon Showdown quirks. While this interface is far from the
 - `undefined` is returned from functions as opposed to an object with its `exists` field set to
   `false`. `undefined` fails loudly, can be checked statically by Typescript and allows for more
   efficient implementation under the hood.
-- `Dex#getForme` and `Dex#getOutOfBattleSpecies` renamed to `Species#getFormeName` and
-  `Species#getOutOfBattleSpeciesName`, as they actually return a string display name.
+- `Dex#getOutOfBattleSpecies` renamed to  `Species#getOutOfBattleSpeciesName`, as they actually return a string display name.
 - methods are moved to more intuitive locations than all existing on `Dex`
   (eg. `Species#hasAbility`).
 - `Types` is overhauled to hide Pokémon Showdown's enum-based type effectiveness handling.

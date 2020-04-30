@@ -162,10 +162,6 @@ export class Species {
     this.dex = dex;
   }
 
-  getFormeName(name: string) {
-    return this.dex.getForme(name);
-  }
-
   get(name: string) {
     const species = this.dex.getSpecies(name);
     if (!exists(species)) return undefined;
@@ -203,8 +199,8 @@ export class Specie implements DexSpecies {
   readonly forme!: FormeName | '';
   readonly abilities!: SpeciesAbility<AbilityName | ''>;
   readonly types!: TypeName[];
-  readonly prevo!: ID;
-  readonly evos!: ID[];
+  readonly prevo!: SpeciesName | '';
+  readonly evos!: SpeciesName[];
   readonly nfe!: boolean;
   readonly eggGroups!: EggGroup[];
   readonly weightkg!: number;
@@ -217,8 +213,8 @@ export class Specie implements DexSpecies {
   readonly doublesTier!: string;
 
   readonly evoMove?: MoveName;
-  readonly cosmeticFormes?: ID[];
-  readonly otherFormes?: ID[];
+  readonly cosmeticFormes?: SpeciesName[];
+  readonly otherFormes?: SpeciesName[];
   readonly genderRatio: { M: number; F: number };
   readonly isMega?: boolean;
   readonly isPrimal?: boolean;

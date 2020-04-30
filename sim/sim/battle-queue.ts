@@ -1,4 +1,4 @@
-import {Pokemon, ID, Move, Effect, AnyObject} from './exported-global-types';
+import {AnyObject, Effect, ID, Move, Pokemon} from './exported-global-types';
 
 /**
  * Simulator Battle Action Queue

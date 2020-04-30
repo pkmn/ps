@@ -77,7 +77,7 @@ export interface MoveData {
   gmaxPower?: number;
   multihit?: number | number[];
   recoil?: [number, number];
-  hasCustomRecoil?: boolean;
+  hasCrashDamage?: boolean;
   mindBlownRecoil?: boolean;
   struggleRecoil?: boolean;
 }

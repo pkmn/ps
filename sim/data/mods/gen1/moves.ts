@@ -881,6 +881,7 @@ export const BattleMovedex: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		desc: "Deals Normal-type damage. If this move was successful, the user takes damage equal to 1/2 the HP lost by the target, rounded down, but not less than 1 HP. This move is automatically used if none of the user's known moves can be selected.",
 		shortDesc: "User loses 1/2 the HP lost by the target.",
+		pp: 10,
 		recoil: [1, 2],
 		onModifyMove() {},
 	},
@@ -954,7 +955,7 @@ export const BattleMovedex: {[k: string]: ModdedMoveData} = {
 				if (!uncappedDamage) return uncappedDamage;
 				source.lastDamage = uncappedDamage;
 				target.volatiles['substitute'].hp -= uncappedDamage > target.volatiles['substitute'].hp ?
-					/** @type {number} */(target.volatiles['substitute'].hp) : uncappedDamage;
+					target.volatiles['substitute'].hp : uncappedDamage;
 				if (target.volatiles['substitute'].hp <= 0) {
 					target.removeVolatile('substitute');
 					target.subFainted = true;

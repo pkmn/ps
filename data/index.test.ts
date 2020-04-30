@@ -161,7 +161,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(7).moves.get('Double Kick')!.multihit).toBe(2);
         expect(Gen(7).moves.get('Rock Blast')!.multihit).toEqual([2, 5]);
         expect(Gen(7).moves.get('Softboiled')!.heal).toEqual([1, 2]);
-        expect(Gen(7).moves.get('Hi Jump Kick')!.hasCustomRecoil).toBe(true);
+        expect(Gen(7).moves.get('Hi Jump Kick')!.hasCrashDamage).toBe(true);
         expect(Gen(7).moves.get('Struggle')!.struggleRecoil).toBe(true);
         expect(Gen(1).moves.get('Double Edge')!.recoil).toEqual([25, 100]);
         expect(Gen(7).moves.get('Double Edge')!.recoil).toEqual([33, 100]);
@@ -210,7 +210,9 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(gen.species.get('foo')).toBeUndefined();
         // normal
         expect(gen.species.get('gengar')!.name).toBe('Gengar');
-        expect(gen.species.get('Gastrodon-East')!.name).toBe('Gastrodon');
+        expect(gen.species.get('Gastrodon-East')!.name).toBe('Gastrodon-East');
+        expect(gen.species.get('sawsbuckwinter')!.name).toBe('Sawsbuck-Winter');
+
         // nidoran
         expect(gen.species.get('nidoran♀')!.name).toBe('Nidoran-F');
         expect(gen.species.get('nidoran♂')!.name).toBe('Nidoran-M');
@@ -226,13 +228,6 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         // Rockruff-Dusk
         expect(gen.species.get('Rockruff-Dusk')).toBeDefined();
         // FIXME expect(Gen(7).species.get('Rockruff-Dusk')!.name).toBe('Rockruff-Dusk');
-      });
-
-      test('#getFormeName', () => {
-        const gen = Gen(7);
-        expect(gen.species.getFormeName('Gastrodon-East')).toBe('Gastrodon-East');
-        expect(gen.species.getFormeName('sawsbuckwinter')).toBe('Sawsbuck-Winter');
-        expect(gen.species.getFormeName('Gengar')).toBe('Gengar');
       });
 
       test('counts', () => {
@@ -302,23 +297,23 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(2).species.get('Snorlax')!.tier).toBe('OU');
         expect(Gen(5).species.get('Snorlax')!.tier).toBe('UU');
         expect(Gen(3).species.get(Gen(3).species.get('Chansey')!.prevo)).toBeUndefined();
-        expect(Gen(4).species.get('Chansey')!.prevo).toBe('happiny');
-        expect(Gen(2).species.get('Chansey')!.evos).toEqual(['blissey']);
+        expect(Gen(4).species.get('Chansey')!.prevo).toBe('Happiny');
+        expect(Gen(2).species.get('Chansey')!.evos).toEqual(['Blissey']);
         expect(Gen(7).species.get('Charizard-Mega-X')!.baseSpecies).toBe('Charizard');
         expect(Gen(7).species.get('Giratina-O')!.forme).toBe('Origin');
         expect(Gen(7).species.get('Giratina')!.baseForme).toBe('Altered');
-        expect(Gen(7).species.get('Shaymin')!.otherFormes).toEqual(['shayminsky']);
-        expect(Gen(7).species.get('Gastrodon-East')!.cosmeticFormes).toEqual(['gastrodoneast']);
+        expect(Gen(7).species.get('Shaymin')!.otherFormes).toEqual(['Shaymin-Sky']);
+        expect(Gen(7).species.get('Gastrodon')!.cosmeticFormes).toEqual(['Gastrodon-East']);
         expect(Gen(7).species.get('Garchomp-Mega')!.isMega).toBe(true);
         expect(Gen(7).species.get('Yanmega')!.isMega).not.toBeDefined();
         expect(Gen(7).species.get('Kyogre-Primal')!.isPrimal).toBe(true);
         expect(Gen(1).species.get('Charizard')!.otherFormes).toBeUndefined();
         expect(Gen(7).species.get('Charizard')!.otherFormes)
-          .toEqual(['charizardmegax', 'charizardmegay']);
+          .toEqual(['Charizard-Mega-X', 'Charizard-Mega-Y']);
         expect(Gen(3).species.get('Nosepass')!.evos).toEqual([]);
-        expect(Gen(4).species.get('Nosepass')!.evos).toEqual(['probopass']);
+        expect(Gen(4).species.get('Nosepass')!.evos).toEqual(['Probopass']);
         expect(Gen(3).species.get('Chansey')!.prevo).toEqual('');
-        expect(Gen(4).species.get('Chansey')!.prevo).toEqual('happiny');
+        expect(Gen(4).species.get('Chansey')!.prevo).toEqual('Happiny');
       });
 
       test('#hasAbility', () => {

@@ -11,6 +11,7 @@ import {
   NatureName,
   Nonstandard,
   StatsTable,
+  StatusName,
   TypeName,
 } from '@pkmn/types';
 
@@ -38,51 +39,27 @@ export interface EffectData {
   duration?: number;
 }
 
-export interface MoveHitEffect {
-  status?: string;
-  weather?: string;
-  effect?: Partial<PureEffect>;
-  affectsFainted?: boolean;
-}
-
-export interface SecondaryEffect extends MoveHitEffect {
-  chance?: number;
-  ability?: Ability;
-  boosts?: Partial<BoostsTable>;
-  dustproof?: boolean;
-  kingsrock?: boolean;
-  self?: SelfEffect | null;
-  status?: string;
-  volatileStatus?: string;
-}
-
-export interface SelfEffect extends MoveHitEffect {
-  boosts?: Partial<BoostsTable>;
-  chance?: number;
-  pseudoWeather?: string;
-  sideCondition?: string;
-  slotCondition?: string;
-  terrain?: string;
-  volatileStatus?: string;
-  weather?: string;
+export interface PureEffectData extends EffectData {
+  noCopy?: boolean;
+  counterMax?: number;
 }
 
 export interface AbilityData extends EffectData {
   isUnbreakable?: boolean;
   suppressWeather?: boolean;
-  effect?: Partial<PureEffect>;
+  effect?: Partial<PureEffectData>;
 }
 
 export interface FlingData {
   basePower: number;
-  status?: string;
+  status?: StatusName;
   volatileStatus?: string;
 }
 
 export interface ItemData extends EffectData {
   gen: GenerationNum;
 
-  effect?: Partial<PureEffect>;
+  effect?: Partial<PureEffectData>;
   fling?: FlingData;
   forcedForme?: string;
   ignoreKlutz?: boolean;
@@ -126,7 +103,28 @@ export interface MoveFlags {
   dance?: 1 | 0;
 }
 
-export interface MoveData extends EffectData, MoveHitEffect {
+export interface HitEffect {
+  boosts?: Partial<BoostsTable>;
+  status?: StatusName;
+  volatileStatus?: string;
+
+  sideCondition?: string;
+  slotCondition?: string;
+
+  pseudoWeather?: string;
+  terrain?: string;
+  weather?: string;
+}
+
+export interface SecondaryEffect extends HitEffect {
+  chance?: number;
+  ability?: Ability;
+  dustproof?: boolean;
+  kingsrock?: boolean;
+  self?: HitEffect;
+}
+
+export interface MoveData extends EffectData, HitEffect {
   basePower: number;
   type: TypeName;
   accuracy: true | number;
@@ -136,78 +134,75 @@ export interface MoveData extends EffectData, MoveHitEffect {
   flags: MoveFlags;
   category: MoveCategory;
 
+  effect?: Partial<PureEffectData>;
+  damage?: number | 'level' | false | null;
+  noPPBoosts?: boolean;
+
+  isZ?: boolean | string;
+  zMovePower?: number;
+  zMoveEffect?: string;
+  zMoveBoost?: Partial<BoostsTable>;
+
+  isMax?: boolean | string;
+  gmaxPower?: number;
+
+  ohko?: boolean | TypeName;
+  thawsTarget?: boolean;
+  heal?: number[] | null;
+  forceSwitch?: boolean;
+  selfSwitch?: boolean | 'copyvolatile';
+  selfBoost?: { boosts?: Partial<BoostsTable> };
+  selfdestruct?: boolean | 'ifHit' | 'always';
+  breaksProtect?: boolean;
+  recoil?: [number, number];
+  drain?: [number, number];
+  mindBlownRecoil?: boolean;
+  stealsBoosts?: boolean;
+  secondary?: SecondaryEffect | null;
+  secondaries?: SecondaryEffect[] | null;
+  self?: HitEffect | null;
+  struggleRecoil?: boolean;
+
   alwaysHit?: boolean;
   basePowerModifier?: number;
-  boosts?: Partial<BoostsTable> | false;
-  breaksProtect?: boolean;
   critModifier?: number;
   critRatio?: number;
-  damage?: number | 'level' | false | null;
   defensiveCategory?: MoveCategory;
-  forceSwitch?: boolean;
-  heal?: number[] | null;
+  forceSTAB?: boolean;
   ignoreAbility?: boolean;
   ignoreAccuracy?: boolean;
   ignoreDefensive?: boolean;
   ignoreEvasion?: boolean;
-  ignoreImmunity?: boolean | { [k: string]: boolean };
+  ignoreImmunity?: boolean | { [k in keyof TypeName]?: boolean };
   ignoreNegativeOffensive?: boolean;
   ignoreOffensive?: boolean;
   ignorePositiveDefensive?: boolean;
   ignorePositiveEvasion?: boolean;
-  self?: SelfEffect | null;
-  secondary?: SecondaryEffect | null;
-  secondaries?: SecondaryEffect[] | null;
-  isFutureMove?: boolean;
-  isZ?: boolean | string;
-  isMax?: boolean | string;
+  infiltrates?: boolean;
   multiaccuracy?: boolean;
   multihit?: number | number[];
+  noCopy?: boolean;
   noDamageVariance?: boolean;
   noFaint?: boolean;
-  noMetronome?: string[];
   nonGhostTarget?: MoveTarget;
-  noPPBoosts?: boolean;
-  noSketch?: boolean;
-  ohko?: boolean | TypeName;
   pressureTarget?: MoveTarget;
-  pseudoWeather?: string;
-  selfBoost?: { boosts?: Partial<BoostsTable> };
-  selfdestruct?: boolean | 'ifHit' | 'always';
-  selfSwitch?: boolean | 'copyvolatile';
-  sideCondition?: string;
   sleepUsable?: boolean;
-  slotCondition?: string;
-  spreadModifier?: number;
-  stallingMove?: boolean;
-  stealsBoosts?: boolean;
-  terrain?: string;
-  thawsTarget?: boolean;
-  tracksTarget?: boolean;
   smartTarget?: boolean;
-  useTargetOffensive?: boolean;
+  spreadModifier?: number;
+  tracksTarget?: boolean;
   useSourceDefensiveAsOffensive?: boolean;
-  volatileStatus?: string;
-  weather?: string;
+  useTargetOffensive?: boolean;
   willCrit?: boolean;
-  forceSTAB?: boolean;
-  zMovePower?: number;
-  zMoveEffect?: string;
-  zMoveBoost?: Partial<BoostsTable>;
-  gmaxPower?: number;
-  isZPowered?: boolean;
-  maxPowered?: boolean;
-  drain?: [number, number];
-  noCopy?: boolean;
-  infiltrates?: boolean;
-  counterMax?: number;
-  recoil?: [number, number];
-  hasCustomRecoil?: boolean;
-  mindBlownRecoil?: boolean;
-  struggleRecoil?: boolean;
+
+  hasCrashDamage?: boolean;
+  isConfusionSelfHit?: boolean;
+  isFutureMove?: boolean;
+  noMetronome?: string[];
+  noSketch?: boolean;
+  stallingMove?: boolean;
 }
 
-export interface SpeciesAbility<A = string> {0: A; 1?: A; H?: A; S?: A}
+export interface SpeciesAbility<A = string> { 0: A; 1?: A; H?: A; S?: A }
 
 export interface SpeciesData {
   abilities: SpeciesAbility;
@@ -231,7 +226,7 @@ export interface SpeciesData {
   evoType?: EvoType;
   forme?: string;
   gender?: GenderName;
-  genderRatio?: {M: number, F: number};
+  genderRatio?: { M: number, F: number };
   maxHP?: number;
   cosmeticFormes?: string[];
   otherFormes?: string[];
@@ -243,7 +238,7 @@ export interface SpeciesData {
   requiredMove?: string;
   battleOnly?: string | string[];
   isGigantamax?: string;
-  inheritsFrom?: string;
+  changesFrom?: string;
   tier?: string;
   inherit?: boolean;
 }
@@ -268,7 +263,7 @@ export interface EventInfoData {
 }
 
 export interface LearnsetData {
-  learnset?: {[moveid: string]: MoveSource[]};
+  learnset?: { [moveid: string]: MoveSource[] };
   eventData?: EventInfoData[];
   eventOnly?: boolean;
   encounters?: EventInfoData[];
@@ -354,18 +349,18 @@ export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData
   readonly forme: FormeName | '';
   readonly abilities: SpeciesAbility<AbilityName | ''>;
   readonly types: TypeName[];
-  readonly prevo: ID;
-  readonly evos: ID[];
+  readonly prevo: SpeciesName | '';
+  readonly evos: SpeciesName[];
   readonly nfe: boolean;
   readonly evoMove?: MoveName;
-  readonly cosmeticFormes?: ID[];
-  readonly otherFormes?: ID[];
+  readonly cosmeticFormes?: SpeciesName[];
+  readonly otherFormes?: SpeciesName[];
   readonly genderRatio: { M: number; F: number };
   readonly weighthg: number;
   readonly heightm: number;
   readonly unreleasedHidden: boolean | 'Past';
   readonly maleOnlyHidden: boolean;
-  readonly inheritsFrom: ID;
+  readonly changesFrom?: SpeciesName;
   readonly tier: string;
   readonly doublesTier: string;
   readonly isMega?: boolean;
@@ -393,7 +388,7 @@ export interface Learnset {
   readonly eventOnly: boolean;
   readonly eventData?: EventInfo[];
   readonly encounters?: EventInfo[];
-  readonly learnset?: {[moveid: string]: MoveSource[]};
+  readonly learnset?: { [moveid: string]: MoveSource[] };
 }
 
 export interface Type extends Readonly<TypeData> {
@@ -448,10 +443,9 @@ export interface Dex {
   getNature(name: string): Nature;
   getType(name: string): Type;
 
-  getForme(species: string | Species): string;
   getOutOfBattleSpecies(species: Species): string;
   hasAbility(species: Species, ability: string): boolean;
-  getHiddenPower(ivs: StatsTable): {type: TypeName; power: number};
+  getHiddenPower(ivs: StatsTable): { type: TypeName; power: number };
   getImmunity(
     source: { type: string } | string,
     target: { getTypes: () => string[] } | { types: string[] } | string[] | string

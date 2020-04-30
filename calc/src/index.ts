@@ -197,8 +197,6 @@ class Move implements I.Move {
     this.bp = move.basePower;
     if (['return', 'frustration', 'pikapapow', 'veeveevolley'].includes(move.id)) {
       this.bp = 102;
-    } else if ([3, 4].includes(dex.gen) && ['explosion', 'selfdestruct'].includes(move.id)) {
-      this.bp /= 2; // FIXME: wtf PS
     } else if (move.id === 'naturepower') {
       this.bp = 80; // FIXME terrain...
       if (dex.gen >= 4) this.category = 'Special';
@@ -214,7 +212,7 @@ class Move implements I.Move {
 
     if (move.recoil) {
       this.hasRecoil = Math.floor((move.recoil[0] / move.recoil[1]) * 100);
-    } else if (move.hasCustomRecoil) {
+    } else if (move.hasCrashDamage) {
       this.hasRecoil = 'crash';
     } else if (move.mindBlownRecoil) {
       this.hasRecoil = true;

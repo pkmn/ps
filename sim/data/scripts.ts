@@ -118,6 +118,7 @@ export const BattleScripts: BattleScriptsData = {
 			);
 			for (const dancer of dancers) {
 				if (this.faintMessages()) break;
+				if (dancer.fainted) continue;
 				this.add('-activate', dancer, 'ability: Dancer');
 				// @ts-ignore - the Dancer ability can't trigger on a move where target is null because it does not copy failed moves.
 				const dancersTarget = target.side !== dancer.side && pokemon.side === dancer.side ? target : pokemon;
@@ -1031,15 +1032,12 @@ export const BattleScripts: BattleScriptsData = {
 		for (const target of targets) {
 			if (target === false) continue;
 			if (moveData.self && !move.selfDropped) {
-				let selfRoll = 0;
 				if (!isSecondary && moveData.self.boosts) {
-					selfRoll = this.random(100);
+					// This is done solely to mimic in-game RNG behaviour. All self drops have a 100% chance of happening but still grab a random number.
+					this.random(100);
 					if (!move.multihit) move.selfDropped = true;
 				}
-				// This is done solely to mimic in-game RNG behaviour. All self drops have a 100% chance of happening but still grab a random number.
-				if (moveData.self.chance === undefined || selfRoll < moveData.self.chance) {
-					this.moveHit(pokemon, pokemon, move, moveData.self, isSecondary, true);
-				}
+				this.moveHit(pokemon, pokemon, move, moveData.self, isSecondary, true);
 			}
 		}
 	},
@@ -1231,38 +1229,6 @@ export const BattleScripts: BattleScriptsData = {
 		Steel: 'Max Steelspike',
 		Normal: 'Max Strike',
 		Dragon: 'Max Wyrmwind',
-	},
-
-	canDynamax(pokemon, skipChecks) {
-		// {gigantamax?: string, maxMoves: {[k: string]: string} | null}[]
-		if (!skipChecks) {
-			if (!pokemon.canDynamax) return;
-			if (
-				pokemon.species.isMega || pokemon.species.isPrimal || pokemon.species.forme === "Ultra" ||
-				pokemon.getItem().zMove || this.canMegaEvo(pokemon)
-			) {
-				return;
-			}
-			// Some pokemon species are unable to dynamax
-			const cannotDynamax = ['zacian', 'zamazenta', 'eternatus'];
-			if (cannotDynamax.includes(toID(pokemon.species.baseSpecies))) {
-				return;
-			}
-		}
-		const result: DynamaxOptions = {maxMoves: []};
-		for (const moveSlot of pokemon.moveSlots) {
-			const move = this.dex.getMove(moveSlot.id);
-			const maxMove = this.getMaxMove(move, pokemon);
-			if (maxMove) {
-				if (pokemon.maxMoveDisabled(maxMove)) {
-					result.maxMoves.push({move: maxMove.id, target: maxMove.target, disabled: true});
-				} else {
-					result.maxMoves.push({move: maxMove.id, target: maxMove.target});
-				}
-			}
-		}
-		if (pokemon.canGigantamax) result.gigantamax = pokemon.canGigantamax;
-		return result;
 	},
 
 	getMaxMove(move, pokemon) {

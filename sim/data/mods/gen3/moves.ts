@@ -86,7 +86,7 @@ export const BattleMovedex: {[k: string]: ModdedMoveData} = {
 						target = possibleTarget;
 					}
 					const moveData = {
-						id: /** @type {ID} */('bide'),
+						id: 'bide' as ID,
 						name: "Bide",
 						accuracy: 100,
 						damage: this.effectData.totalDamage * 2,
@@ -147,7 +147,7 @@ export const BattleMovedex: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		desc: "If the user uses an Electric-type attack on the next turn, its power will be doubled.",
 		shortDesc: "The user's Electric attack next turn has 2x power.",
-		boosts: false,
+		boosts: null,
 	},
 	clamp: {
 		inherit: true,
@@ -184,15 +184,6 @@ export const BattleMovedex: {[k: string]: ModdedMoveData} = {
 	counter: {
 		inherit: true,
 		desc: "Deals damage to the last opposing Pokemon to hit the user with a physical attack this turn equal to twice the HP lost by the user from that attack. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. This move considers Hidden Power as Normal type, and only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's physical attack this turn, or if the user did not lose HP from the attack.",
-		damageCallback(pokemon) {
-			const lastAttackedBy = pokemon.getLastAttackedBy();
-			if (!lastAttackedBy || !lastAttackedBy.move || !lastAttackedBy.thisTurn) return false;
-
-			if (this.getCategory(lastAttackedBy.move) === 'Physical') {
-				return 2 * lastAttackedBy.damage;
-			}
-			return false;
-		},
 		effect: {
 			duration: 1,
 			noCopy: true,
