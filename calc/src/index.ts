@@ -148,12 +148,6 @@ class Moves implements I.Moves {
   }
 }
 
-// BUG: these don't actually *always* crit, but for the purposes of the calc they are considered to
-const GEN1_ALWAYS_CRIT = ['crabhammer', 'razorleaf', 'slash'];
-
-// Moves which caused typeless damage between Gen 2 and 4
-const TYPELESS_DAMAGE = ['futuresight', 'doomdesire', 'struggle'];
-
 class Move implements I.Move {
   readonly kind: 'Move';
   readonly id: I.ID;
@@ -162,56 +156,41 @@ class Move implements I.Move {
   readonly type: I.TypeName;
   readonly category?: I.MoveCategory;
   readonly hasSecondaryEffect?: boolean;
-  readonly isSpread?: boolean | 'allAdjacent';
+  readonly target?: I.MoveTarget;
   readonly makesContact?: boolean;
   readonly hasRecoil?: I.MoveRecoil;
-  readonly alwaysCrit?: boolean;
-  readonly givesHealth?: boolean;
-  readonly percentHealed?: number;
-  readonly ignoresBurn?: boolean;
+  readonly willCrit?: boolean;
+  readonly drain?: [number, number];
   readonly isPunch?: boolean;
   readonly isBite?: boolean;
   readonly isBullet?: boolean;
   readonly isSound?: boolean;
   readonly isPulse?: boolean;
-  readonly hasPriority?: boolean;
+  readonly priority?: number;
   readonly dropsStats?: number;
-  readonly ignoresDefenseBoosts?: boolean;
-  readonly dealsPhysicalDamage?: boolean;
-  readonly bypassesProtect?: boolean;
+  readonly ignoreDefensive?: boolean;
+  readonly defensiveCategory?: I.MoveCategory;
+  readonly breaksProtect?: boolean;
   readonly isZ?: boolean;
   readonly isMax?: boolean;
-  readonly usesHighestAttackStat?: boolean;
   readonly zp?: number;
   readonly maxPower?: number;
-  readonly isMultiHit?: boolean;
-  readonly isTwoHit?: boolean;
+  readonly multihit?: number | number[];
 
   constructor(move: D.Move, dex: D.Dex) {
     this.kind = 'Move';
     this.id = move.id === 'hiddenpower' ? toID(move.name) : move.id as I.ID;
     this.name = move.name as I.MoveName;
+    this.bp = move.basePower;
+    this.type = move.type;
 
     if (move.category === 'Status' || dex.gen >= 4) {
       this.category = move.category;
     }
 
-    if (dex.gen === 3 && move.id === 'Explosion') console.log(move);
-    this.bp = move.basePower;
-    if (['return', 'frustration', 'pikapapow', 'veeveevolley'].includes(move.id)) {
-      this.bp = 102;
-    } else if (move.id === 'naturepower') {
-      this.bp = 80; // FIXME terrain...
-      if (dex.gen >= 5) this.hasSecondaryEffect = true;
-    }
-
     if (move.isZ) delete move.zMovePower; // FIXME: wtf PS
 
-    this.type = move.type;
-    if (dex.gen > 1 && dex.gen <= 4 && TYPELESS_DAMAGE.includes(move.id)) {
-      this.type = '???';
-    }
-
+    // TODO move.recoil / move.hasCrashDamage / move.mindBlownRecoil / move.struggleRecoil
     if (move.recoil) {
       this.hasRecoil = Math.floor((move.recoil[0] / move.recoil[1]) * 100);
     } else if (move.hasCrashDamage) {
@@ -224,40 +203,25 @@ class Move implements I.Move {
 
     const stat = move.category === 'Special' ? 'spa' : 'atk';
     if (move.self?.boosts && move.self.boosts[stat] && move.self.boosts[stat]! < 0) {
+      // TODO dropsStats
       this.dropsStats = Math.abs(move.self.boosts[stat]!);
     }
 
-    if (move.multihit) {
-      // FIXME: Triple Kick
-      if (move.multihit === 2) {
-        this.isTwoHit = true;
-      } else {
-        this.isMultiHit = true;
-      }
-    }
+    if (move.multihit) this.multihit = move.multihit;
+    if (move.drain) this.drain = move.drain;
+    if (move.willCrit) this.willCrit = move.willCrit;
+    if (move.priority > 0) this.priority = move.priority;
 
-    if ( move.drain) {
-      this.givesHealth = true;
-      this.percentHealed = move.drain[0] / move.drain[1];
-    }
-
-    if (move.willCrit || dex.gen === 1 && GEN1_ALWAYS_CRIT.includes(move.id)) {
-      this.alwaysCrit = true;
-    }
-    if (move.priority > 0) this.hasPriority = true;
-
+    // TODO move.flags
     if (dex.gen >= 2) {
-      if (move.breaksProtect) this.bypassesProtect = true;
-      if (GEN1_ALWAYS_CRIT.includes(move.id)) this.alwaysCrit = false;
+      if (move.breaksProtect) this.breaksProtect = move.breaksProtect;
     }
     if (dex.gen >= 3) {
       if (move.flags.contact) this.makesContact = true;
       if (move.flags.sound) this.isSound = true;
 
-      if (['allAdjacentFoes', 'adjacentFoe'].includes(move.target)) {
-        this.isSpread = true;
-      } else if (move.target === 'allAdjacent') {
-        this.isSpread = move.target;
+      if (['allAdjacent', 'allAdjacentFoes', 'adjacentFoe'].includes(move.target)) {
+        this.target = move.target;
       }
     }
     if (dex.gen >= 4) {
@@ -266,9 +230,12 @@ class Move implements I.Move {
 
     }
     if (dex.gen >= 5) {
-      if (move.ignoreDefensive) this.ignoresDefenseBoosts = true;
-      if (move.defensiveCategory === 'Physical') this.dealsPhysicalDamage = true;
+      if (move.ignoreDefensive) this.ignoreDefensive = move.ignoreDefensive;
+      if (move.defensiveCategory && move.defensiveCategory !== move.category) {
+        this.defensiveCategory = move.defensiveCategory;
+      }
 
+      // TODO move.secondaries
       if ('secondaries' in move && move.secondaries?.length) {
         this.hasSecondaryEffect = true;
       }
@@ -276,19 +243,14 @@ class Move implements I.Move {
     if (dex.gen >= 6) {
       if (move.flags.bullet) this.isBullet = true;
       if (move.flags.pulse) this.isPulse = true;
-      if (move.id === 'facade') this.ignoresBurn = true;
     }
     if (dex.gen >= 7) {
       if (move.isZ) this.isZ = true;
-      if (move.zMovePower) this.zp = move.zMovePower;
+      if (move.zMovePower) this.zp = move.zMovePower; // TODO zMovePower FIXME rename
     }
     if (dex.gen >= 8) {
       if (move.isMax) this.isMax = true
-      if (move.gmaxPower) this.maxPower = move.gmaxPower;
-    }
-
-    if (['lightthatburnsthesky', 'photongeyser'].includes(move.id)) {
-      this.usesHighestAttackStat = true;
+      if (move.gmaxPower) this.maxPower = move.gmaxPower; // TODO dynamaxPower FIXME rename
     }
   }
 }
@@ -424,7 +386,6 @@ function AegislashBoth(dex: D.Dex) {
 }
 
 const DAMAGE_TAKEN = [1, 2, 0.5, 0] as I.TypeEffectiveness[];
-const SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', 'Dragon'];
 
 export class Types implements I.Types {
   private readonly dex: D.Dex
@@ -437,7 +398,6 @@ export class Types implements I.Types {
       kind: 'Type',
       id: '' as ID,
       name: '???',
-      category: 'Physical',
       effectiveness: {},
     } as I.Type;
 
@@ -445,8 +405,6 @@ export class Types implements I.Types {
     for (const t1 in this.dex.data.Types) {
       const id = toID(t1) as I.ID;
       const name = t1 as Exclude<TypeName, '???'>;
-      const category =
-        name === 'Fairy' ? undefined : SPECIAL.includes(name) ? 'Special' : 'Physical';
 
       const effectiveness = {'???': 1} as {[type in I.TypeName]: I.TypeEffectiveness};
       for (const t2 in this.dex.data.Types) {
@@ -455,7 +413,7 @@ export class Types implements I.Types {
       }
       (unknown.effectiveness as any)[name] = 1;
 
-      this.byID[id] = {kind: 'Type', id, name, effectiveness, category};
+      this.byID[id] = {kind: 'Type', id, name, effectiveness};
     }
     this.byID[unknown.id] = unknown;
   }

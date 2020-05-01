@@ -315,12 +315,30 @@ type TypeTarget = { getTypes: () => TypeName[] } | { types: TypeName[] } | TypeN
 export class Types {
   private readonly cache = Object.create(null) as { [id: string]: Type };
 
+  private readonly unknown: Type;
   private readonly dex: Dex;
   constructor(dex: Dex) {
     this.dex = dex;
+    // PS doesn't contain data for the '???' type
+    this.unknown = new Type({
+      effectType: 'Type',
+      kind: 'Type',
+      // Regrettably PS ID's can't represent '???'
+      id: '',
+      name: '???',
+      // Technically this only exists as a true type in Gens 2-4, but there are moves dealing
+      // typeless damage in Gen 1 so we include it there.
+      exists: dex.gen <= 4,
+      gen: 1,
+      // This gets filled in for us by Type's constructor
+      damageTaken: {} as { [t in Exclude<TypeName, '???'>]: number },
+      HPivs: {},
+      HPdvs: {},
+    }, dex, this);
   }
 
   get(name: string) {
+    if (name === '???') return this.unknown;
     const type = this.dex.getType(name);
     if (!type.exists) return undefined;
     const cached = this.cache[type.id];
@@ -331,6 +349,9 @@ export class Types {
   *[Symbol.iterator]() {
     for (const type in this.dex.data.Types) {
       yield this.get(type);
+    }
+    if (this.dex.gen >= 2 && this.dex.gen <= 4) {
+      yield this.unknown;
     }
   }
 
@@ -359,7 +380,7 @@ export class Type {
   readonly kind!: 'Type';
   readonly exists!: boolean;
   readonly gen!: GenerationNum;
-  readonly effectiveness: { [t in Exclude<TypeName, '???'>]: number };
+  readonly effectiveness: { [t in TypeName]: number };
   readonly HPivs!: Partial<StatsTable>;
   readonly HPdvs!: Partial<StatsTable>;
   readonly category?: Exclude<MoveCategory, 'Status'>;
@@ -371,11 +392,11 @@ export class Type {
     this.types = types;
     this.category =
       this.name === 'Fairy' ? undefined : SPECIAL.includes(this.name) ? 'Special' : 'Physical';
-    // convert from PS's ridiculous encoding to something usable (plus damageTaken -> damageDealt)
-    this.effectiveness = {} as { [t in Exclude<TypeName, '???'>]: number };
+    // convert from PS's ridiculous encoding to something usable (plus damage taken -> dealt)
+    this.effectiveness = {'???': 1} as { [t in TypeName]: number };
     for (const k in dex.data.Types) {
       const t = k as Exclude<TypeName, '???'>;
-      this.effectiveness[t] = DAMAGE_TAKEN[dex.data.Types[t].damageTaken[this.name]!];
+      this.effectiveness[t] = DAMAGE_TAKEN[dex.data.Types[t].damageTaken[this.name] || 0];
     }
   }
 
