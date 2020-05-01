@@ -120,9 +120,8 @@ class Item implements I.Item {
     this.name = item.name as I.ItemName;
     this.megaEvolves = item.megaEvolves as I.SpeciesName;
     this.isBerry = item.isBerry;
-    const mod = gen === 2 ? -20 : gen === 5 ? 20 : 0; // FIXME: wtf?
     this.naturalGift = item.naturalGift && {
-      basePower: item.naturalGift.basePower + mod,
+      basePower: item.naturalGift.basePower - (gen === 2 ? 20 : 0),
       type: item.naturalGift.type as I.TypeName
     };
   }
@@ -193,13 +192,16 @@ class Move implements I.Move {
     this.id = move.id === 'hiddenpower' ? toID(move.name) : move.id as I.ID;
     this.name = move.name as I.MoveName;
 
+    if (move.category === 'Status' || dex.gen >= 4) {
+      this.category = move.category;
+    }
+
     if (dex.gen === 3 && move.id === 'Explosion') console.log(move);
     this.bp = move.basePower;
     if (['return', 'frustration', 'pikapapow', 'veeveevolley'].includes(move.id)) {
       this.bp = 102;
     } else if (move.id === 'naturepower') {
       this.bp = 80; // FIXME terrain...
-      if (dex.gen >= 4) this.category = 'Special';
       if (dex.gen >= 5) this.hasSecondaryEffect = true;
     }
 
@@ -262,7 +264,6 @@ class Move implements I.Move {
       if (move.flags.punch) this.isPunch = true;
       if (move.flags.bite) this.isBite = true;
 
-      if (move.category !== 'Status') this.category = move.category;
     }
     if (dex.gen >= 5) {
       if (move.ignoreDefensive) this.ignoresDefenseBoosts = true;
