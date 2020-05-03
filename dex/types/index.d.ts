@@ -349,8 +349,8 @@ export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData
   readonly forme: FormeName | '';
   readonly abilities: SpeciesAbility<AbilityName | ''>;
   readonly types: TypeName[];
-  readonly prevo: SpeciesName | '';
-  readonly evos: SpeciesName[];
+  readonly prevo?: SpeciesName | '';
+  readonly evos?: SpeciesName[];
   readonly nfe: boolean;
   readonly evoMove?: MoveName;
   readonly cosmeticFormes?: SpeciesName[];

@@ -247,7 +247,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         };
 
         let formes = 0;
-        // expect(counts(1)).toEqual({species: 151, formes});
+        expect(counts(1)).toEqual({species: 151, formes});
         expect(counts(2)).toEqual({species: 251, formes});
         // Deoxys (3) + Castform (3)
         formes += 3 + 3;
@@ -296,7 +296,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
           .toEqual({'0': 'Torrent', 'H': 'Protean', 'S': 'Battle Bond'});
         expect(Gen(2).species.get('Snorlax')!.tier).toBe('OU');
         expect(Gen(5).species.get('Snorlax')!.tier).toBe('UU');
-        expect(Gen(3).species.get(Gen(3).species.get('Chansey')!.prevo)).toBeUndefined();
+        expect(Gen(3).species.get('Chansey')!.prevo).toBeUndefined();
         expect(Gen(4).species.get('Chansey')!.prevo).toBe('Happiny');
         expect(Gen(2).species.get('Chansey')!.evos).toEqual(['Blissey']);
         expect(Gen(7).species.get('Charizard-Mega-X')!.baseSpecies).toBe('Charizard');
@@ -310,9 +310,9 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(1).species.get('Charizard')!.otherFormes).toBeUndefined();
         expect(Gen(7).species.get('Charizard')!.otherFormes)
           .toEqual(['Charizard-Mega-X', 'Charizard-Mega-Y']);
-        expect(Gen(3).species.get('Nosepass')!.evos).toEqual([]);
+        expect(Gen(3).species.get('Nosepass')!.evos).toBeUndefined();
         expect(Gen(4).species.get('Nosepass')!.evos).toEqual(['Probopass']);
-        expect(Gen(3).species.get('Chansey')!.prevo).toEqual('');
+        expect(Gen(3).species.get('Chansey')!.prevo).toBeUndefined();
         expect(Gen(4).species.get('Chansey')!.prevo).toEqual('Happiny');
       });
 
@@ -436,7 +436,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         for (let num = 3; num <= 7; num++) {
           const gen = Gen(num as GenerationNum);
           for (const type of gen.types) {
-            if (type!.name === 'Normal' || type!.name === 'Fairy') continue;
+            if (['Normal', 'Fairy', '???'].includes(type!.name)) continue;
             expect(gen.types.getHiddenPower({...ivs, ...type!.HPivs}))
               .toEqual({power: gen.num >= 6 ? 60 : 70, type: type!.name});
           }

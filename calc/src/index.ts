@@ -155,19 +155,17 @@ class Move implements I.Move {
   readonly bp: number;
   readonly type: I.TypeName;
   readonly category?: I.MoveCategory;
-  readonly hasSecondaryEffect?: boolean;
+  readonly flags: I.MoveFlags;
+  readonly secondaries?: any;
   readonly target?: I.MoveTarget;
-  readonly makesContact?: boolean;
-  readonly hasRecoil?: I.MoveRecoil;
+  readonly recoil?: [number, number];
+  readonly hasCrashDamage?: boolean;
+  readonly mindBlownRecoil?: boolean;
+  readonly struggleRecoil?: boolean;
   readonly willCrit?: boolean;
   readonly drain?: [number, number];
-  readonly isPunch?: boolean;
-  readonly isBite?: boolean;
-  readonly isBullet?: boolean;
-  readonly isSound?: boolean;
-  readonly isPulse?: boolean;
   readonly priority?: number;
-  readonly dropsStats?: number;
+  readonly self?: I.SelfOrSecondaryEffect | null;
   readonly ignoreDefensive?: boolean;
   readonly defensiveCategory?: I.MoveCategory;
   readonly breaksProtect?: boolean;
@@ -190,21 +188,14 @@ class Move implements I.Move {
 
     if (move.isZ) delete move.zMovePower; // FIXME: wtf PS
 
-    // TODO move.recoil / move.hasCrashDamage / move.mindBlownRecoil / move.struggleRecoil
-    if (move.recoil) {
-      this.hasRecoil = Math.floor((move.recoil[0] / move.recoil[1]) * 100);
-    } else if (move.hasCrashDamage) {
-      this.hasRecoil = 'crash';
-    } else if (move.mindBlownRecoil) {
-      this.hasRecoil = true;
-    } else if (move.struggleRecoil) {
-      this.hasRecoil = 'Struggle';
-    }
+    if (move.recoil) this.recoil = move.recoil;
+    if (move.hasCrashDamage) this.hasCrashDamage = move.hasCrashDamage;
+    if (move.mindBlownRecoil) this.mindBlownRecoil = move.mindBlownRecoil;
+    if (move.struggleRecoil) this.struggleRecoil = move.struggleRecoil;
 
     const stat = move.category === 'Special' ? 'spa' : 'atk';
     if (move.self?.boosts && move.self.boosts[stat] && move.self.boosts[stat]! < 0) {
-      // TODO dropsStats
-      this.dropsStats = Math.abs(move.self.boosts[stat]!);
+      this.self = move.self;
     }
 
     if (move.multihit) this.multihit = move.multihit;
@@ -212,22 +203,21 @@ class Move implements I.Move {
     if (move.willCrit) this.willCrit = move.willCrit;
     if (move.priority > 0) this.priority = move.priority;
 
-    // TODO move.flags
+    this.flags = {};
     if (dex.gen >= 2) {
       if (move.breaksProtect) this.breaksProtect = move.breaksProtect;
     }
     if (dex.gen >= 3) {
-      if (move.flags.contact) this.makesContact = true;
-      if (move.flags.sound) this.isSound = true;
+      if (move.flags.contact) this.flags.contact = move.flags.contact;
+      if (move.flags.sound) this.flags.sound = move.flags.sound;
 
       if (['allAdjacent', 'allAdjacentFoes', 'adjacentFoe'].includes(move.target)) {
         this.target = move.target;
       }
     }
     if (dex.gen >= 4) {
-      if (move.flags.punch) this.isPunch = true;
-      if (move.flags.bite) this.isBite = true;
-
+      if (move.flags.punch) this.flags.punch = move.flags.punch;
+      if (move.flags.bite) this.flags.bite = move.flags.bite;
     }
     if (dex.gen >= 5) {
       if (move.ignoreDefensive) this.ignoreDefensive = move.ignoreDefensive;
@@ -235,14 +225,13 @@ class Move implements I.Move {
         this.defensiveCategory = move.defensiveCategory;
       }
 
-      // TODO move.secondaries
       if ('secondaries' in move && move.secondaries?.length) {
-        this.hasSecondaryEffect = true;
+        this.secondaries = true;
       }
     }
     if (dex.gen >= 6) {
-      if (move.flags.bullet) this.isBullet = true;
-      if (move.flags.pulse) this.isPulse = true;
+      if (move.flags.bullet) this.flags.bullet = move.flags.bullet;
+      if (move.flags.pulse) this.flags.pulse = move.flags.pulse;
     }
     if (dex.gen >= 7) {
       if (move.isZ) this.isZ = true;
@@ -299,9 +288,8 @@ class Specie implements I.Specie {
   readonly id: I.ID;
   readonly name: I.SpeciesName;
 
-  readonly t1: I.TypeName;
-  readonly t2?: I.TypeName;
-  readonly bs: {
+  readonly types: [I.TypeName] | [I.TypeName, I.TypeName];
+  readonly bs: { // TODO baseStats
     hp: number;
     at: number;
     df: number;
@@ -310,19 +298,19 @@ class Specie implements I.Specie {
     sp: number;
     sl?: number;
   }; // baseStats
-  readonly w: number;
-  readonly canEvolve?: boolean;
+  readonly weightkg: number;
+  readonly nfe?: boolean;
   readonly gender?: I.GenderName;
-  readonly formes?: I.SpeciesName[];
-  readonly isAlternateForme?: boolean;
-  readonly ab?: I.AbilityName;
+  readonly formes?: I.SpeciesName[]; // TODO otherFormes
+  readonly baseSpecies?: I.SpeciesName;
+  readonly abilities?: {0: I.AbilityName};
 
   constructor(species: D.Species, dex: D.Dex) {
     this.kind = 'Species';
     this.id = (species.id === 'aegislash' ? 'aegislashshield' : species.id) as I.ID;
     this.name = (species.name === 'Aegislash' ? 'Aegislash-Shield' : species.name) as I.SpeciesName;
-    this.t1 = species.types[0] as I.TypeName;
-    if (species.types[1]) this.t2 = species.types[1] as I.TypeName;
+
+    this.types = species.types as [I.TypeName] | [I.TypeName, I.TypeName];
     this.bs = {
       hp: species.baseStats.hp,
       at: species.baseStats.atk,
@@ -336,32 +324,33 @@ class Specie implements I.Specie {
       delete this.bs.sd;
       this.bs.sl = species.baseStats.spa;
     }
-    this.w = species.weightkg;
-    const canEvolve = !!species.evos?.some(s => exists(dex.getSpecies(s), dex.gen));
-    if (canEvolve) this.canEvolve = canEvolve;
+    this.weightkg = species.weightkg;
+    const nfe = !!species.evos?.some(s => exists(dex.getSpecies(s), dex.gen));
+    if (nfe) this.nfe = nfe;
     if (species.gender === 'N' && dex.gen > 1) this.gender = species.gender;
+
     const formes = species.otherFormes?.filter(s => exists(dex.getSpecies(s), dex.gen));
     if (species.id.startsWith('aegislash')) {
       if (species.id === 'aegislashblade') {
         this.formes = ['Aegislash-Blade', 'Aegislash-Shield', 'Aegislash-Both'] as I.SpeciesName[];
       } else {
-        this.isAlternateForme = true;
+        this.baseSpecies = 'Aegislash-Blade' as I.SpeciesName;
       }
     } else if (species.id === 'toxtricity') {
       this.formes = [
         'Toxtricity', 'Toxtricity-Gmax', 'Toxtricity-Low-Key', 'Toxtricity-Low-Key-Gmax'
       ] as I.SpeciesName[];
     } else if (species.id === 'toxtricitylowkey') {
-      this.isAlternateForme = true;
+      this.baseSpecies = 'Toxtricity' as I.SpeciesName;
     } else if (species.id === 'eternatus') {
       this.formes = ['Eternatus', 'Eternatus-Eternamax'] as I.SpeciesName[];
     } else if (formes && formes.length) {
-      this.formes = [this.name, ...formes.map(s => dex.getSpecies(s).name as I.SpeciesName)].sort();
+      this.formes = [this.name, ...formes].sort() as I.SpeciesName[];
     } else if (species.baseSpecies !== this.name) {
-      this.isAlternateForme = true;
+      this.baseSpecies = species.baseSpecies as I.SpeciesName;
     }
-    const abilities = Object.values(species.abilities) as I.AbilityName[];
-    if (dex.gen > 2) this.ab = abilities[0];
+
+    if (dex.gen > 2) this.abilities = {0: species.abilities[0] as I.AbilityName};
   }
 }
 

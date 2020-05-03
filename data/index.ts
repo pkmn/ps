@@ -199,9 +199,9 @@ export class Specie implements DexSpecies {
   readonly forme!: FormeName | '';
   readonly abilities!: SpeciesAbility<AbilityName | ''>;
   readonly types!: TypeName[];
-  readonly prevo!: SpeciesName | '';
-  readonly evos!: SpeciesName[];
-  readonly nfe!: boolean;
+  readonly prevo?: SpeciesName | '';
+  readonly evos?: SpeciesName[];
+  readonly nfe: boolean;
   readonly eggGroups!: EggGroup[];
   readonly weightkg!: number;
   readonly weighthg!: number;
@@ -240,6 +240,7 @@ export class Specie implements DexSpecies {
     'gender',
     'genderRatio',
     'cosmeticFormes',
+    'nfe',
     'otherFormes',
     'prevo',
   ]);
@@ -253,12 +254,15 @@ export class Specie implements DexSpecies {
     } else {
       this.genderRatio = {M: 0, F: 0};
     }
-    this.evos = species.evos.filter(s => exists(this.dex.getSpecies(s)));
+    this.evos = species.evos?.filter(s => exists(this.dex.getSpecies(s)));
+    this.nfe = !!this.evos?.length;
+    if (!this.nfe) this.evos = undefined;
     this.cosmeticFormes = species.cosmeticFormes?.filter(s => exists(this.dex.getSpecies(s)));
     if (!this.cosmeticFormes?.length) this.cosmeticFormes = undefined;
     this.otherFormes = species.otherFormes?.filter(s => exists(this.dex.getSpecies(s)));
     if (!this.otherFormes?.length) this.otherFormes = undefined;
-    this.prevo = exists(this.dex.getSpecies(species.prevo)) ? species.prevo : '';
+    this.prevo =
+      species.prevo && exists(this.dex.getSpecies(species.prevo)) ? species.prevo : undefined;
   }
 
   hasAbility(ability: string) {

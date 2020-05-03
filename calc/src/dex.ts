@@ -60,14 +60,14 @@ export interface MoveData {
   basePower: number;
   type: TypeName;
   category: MoveCategory;
-  secondaries?: {self?: {boosts?: Partial<BoostsTable>} | null}[] | null;
+  secondaries?: {self?: SelfOrSecondaryEffect | null}[] | null;
   target: MoveTarget;
   flags: MoveFlags;
   willCrit?: boolean;
   critRatio?: number;
   drain?: [number, number];
   priority: number;
-  self?: {boosts?: Partial<BoostsTable>}  | null;
+  self?: SelfOrSecondaryEffect  | null;
   ignoreDefensive?: boolean;
   defensiveCategory?: MoveCategory;
   breaksProtect?: boolean;

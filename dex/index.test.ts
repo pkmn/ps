@@ -284,7 +284,7 @@ describe('Dex', () => {
       };
 
       let formes = 0;
-      // expect(counts(1)).toEqual({species: 151, formes});
+      expect(counts(1)).toEqual({species: 151, formes});
       expect(counts(2)).toEqual({species: 251, formes});
       // Deoxys (3) + Castform (3)
       formes += 3 + 3;
@@ -337,7 +337,7 @@ describe('Dex', () => {
       expect(Dex.forGen(5).getSpecies('Snorlax').tier).toBe('UU');
       expect(
         Dex.forGen(3).getSpecies(
-          Dex.forGen(3).getSpecies('Chansey').prevo
+          Dex.forGen(3).getSpecies('Chansey').prevo!
         ).isNonstandard
       ).toBe('Future');
       expect(Dex.forGen(4).getSpecies('Chansey').prevo).toBe('Happiny');

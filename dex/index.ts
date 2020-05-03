@@ -291,7 +291,10 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
     this.basePower = Number(data.basePower!);
     this.critRatio = Number(data.critRatio) || 1;
     this.secondary = data.secondary || null;
-    this.secondaries = data.secondaries || (this.secondary && [this.secondary]) || null;
+    this.secondaries = data.secondaries && data.secondaries.length
+      ? data.secondaries : this.secondary
+      ? [this.secondary] :
+      null;
     this.priority = Number(data.priority) || 0;
     this.ignoreImmunity =
       (data.ignoreImmunity !== undefined ? data.ignoreImmunity : data.category === 'Status');
@@ -405,8 +408,8 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly forme: T.FormeName | '';
   readonly abilities: T.SpeciesAbility<T.AbilityName | ''>;
   readonly types: TypeName[];
-  readonly prevo: T.SpeciesName | '';
-  readonly evos: T.SpeciesName[];
+  readonly prevo?: T.SpeciesName | '';
+  readonly evos?: T.SpeciesName[];
   readonly nfe: boolean;
   readonly eggGroups: EggGroup[];
   readonly weightkg: number;
@@ -456,7 +459,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     this.tier = data.tier || '';
     this.doublesTier = data.doublesTier || '';
     this.evos = data.evos || [];
-    this.nfe = !!this.evos.length;
+    this.nfe = !!this.evos?.length;
     this.eggGroups = data.eggGroups || [];
     this.genderRatio = data.genderRatio || (this.gender === 'M' ? {M: 1, F: 0}
       : this.gender === 'F' ? {M: 0, F: 1}
