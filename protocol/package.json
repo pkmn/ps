@@ -12,7 +12,7 @@
   "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
   "dependencies": {
-    "@pkmn/types": "file:../types"
+    "@pkmn/types": "^0.1.0"
   },
   "devDependencies": {
     "@pkmn/eslint-config": "^0.2.3",

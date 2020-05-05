@@ -10,7 +10,7 @@
   "dependencies": {
     "@pkmn/client": "file:../client",
     "@pkmn/protocol": "file:../protocol",
-    "@pkmn/types": "file:../types"
+    "@pkmn/types": "^0.1.0"
   },
   "devDependencies": {
     "@pkmn/eslint-config": "^0.2.3",

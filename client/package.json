@@ -9,8 +9,8 @@
   "license": "MIT",
   "dependencies": {
     "@pkmn/protocol": "file:../protocol",
-    "@pkmn/types": "file:../types",
-    "@pkmn/sim": "file:../sim"
+    "@pkmn/types": "^0.1.0",
+    "@pkmn/sim": "^0.0.2"
   },
   "devDependencies": {
     "@pkmn/eslint-config": "^0.2.3",
