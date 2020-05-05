@@ -198,7 +198,7 @@ export class Specie implements DexSpecies {
   readonly baseForme!: FormeName | '';
   readonly forme!: FormeName | '';
   readonly abilities!: SpeciesAbility<AbilityName | ''>;
-  readonly types!: TypeName[];
+  readonly types!: [TypeName] | [TypeName, TypeName];
   readonly prevo?: SpeciesName | '';
   readonly evos?: SpeciesName[];
   readonly nfe: boolean;
@@ -348,7 +348,7 @@ export class Types {
 
   *[Symbol.iterator]() {
     for (const type in this.dex.data.Types) {
-      yield this.get(type);
+      yield this.get(type)!;
     }
     if (this.dex.gen >= 2 && this.dex.gen <= 4) {
       yield this.unknown;
@@ -370,7 +370,9 @@ export class Types {
   }
 }
 
-const DAMAGE_TAKEN = [1, 2, 0.5, 0];
+export type TypeEffectiveness = 0 | 0.5 | 1 | 2;
+
+const DAMAGE_TAKEN = [1, 2, 0.5, 0] as TypeEffectiveness[];
 const SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', 'Dragon'];
 
 export class Type {
@@ -380,7 +382,7 @@ export class Type {
   readonly kind!: 'Type';
   readonly exists!: boolean;
   readonly gen!: GenerationNum;
-  readonly effectiveness: { [t in TypeName]: number };
+  readonly effectiveness: { [t in TypeName]: TypeEffectiveness };
   readonly HPivs!: Partial<StatsTable>;
   readonly HPdvs!: Partial<StatsTable>;
   readonly category?: Exclude<MoveCategory, 'Status'>;
@@ -393,7 +395,7 @@ export class Type {
     this.category =
       this.name === 'Fairy' ? undefined : SPECIAL.includes(this.name) ? 'Special' : 'Physical';
     // convert from PS's ridiculous encoding to something usable (plus damage taken -> dealt)
-    this.effectiveness = {'???': 1} as { [t in TypeName]: number };
+    this.effectiveness = {'???': 1} as { [t in TypeName]: TypeEffectiveness };
     for (const k in dex.data.Types) {
       const t = k as Exclude<TypeName, '???'>;
       this.effectiveness[t] = DAMAGE_TAKEN[dex.data.Types[t].damageTaken[this.name] || 0];

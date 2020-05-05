@@ -3,7 +3,11 @@
   "compilerOptions": {
     "outDir": "build",
     "resolveJsonModule": true,
-    "tsBuildInfoFile": ".tsbuildinfo"
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "baseUrl": ".",
+    "paths": {
+      "@smogon/calc/*": ["node_modules/@smogon/calc/dist/*"]
+    }
   },
   "files": ["index.ts", "index.test.ts"]
 }

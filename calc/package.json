@@ -9,7 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "@pkmn/types": "^0.1.0",
-    "@smogon/calc": "^file:../../../../damage-calc/calc"
+    "@smogon/calc": "^0.3.0"
   },
   "devDependencies": {
     "@pkmn/dex": "file:../dex",

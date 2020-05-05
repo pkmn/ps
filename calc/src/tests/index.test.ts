@@ -4,19 +4,20 @@ import * as path from 'path';
 import {calculate, Pokemon, Move} from '@smogon/calc/adaptable';
 import * as I from '@smogon/calc/data/interface';
 
-import {Generations as calc} from '@smogon/calc';
+import * as calc from '@smogon/calc';
 import {Dex} from '@pkmn/dex';
 import {Generations} from '../index';
-const pkmn = new Generations(Dex);
+
+const pkmn = {Generations: new Generations(Dex)};
 
 const gens = [1, 2, 3, 4, 5, 6, 7, 8] as I.GenerationNum[];
 
 describe('Generations', () => {
   it('abilities', () => {
     for (const gen of gens) {
-      const p = Array.from(pkmn.get(gen).abilities);
+      const p = Array.from(pkmn.Generations.get(gen).abilities);
       const c = new Map<I.ID, I.Ability>();
-      for (const ability of calc.get(gen).abilities) c.set(ability.id, ability);
+      for (const ability of calc.Generations.get(gen).abilities) c.set(ability.id, ability);
 
       expect(p).toHaveLength(c.size);
       for (const ability of p) {
@@ -29,9 +30,9 @@ describe('Generations', () => {
 
   it('items', () => {
     for (const gen of gens) {
-      const p = Array.from(pkmn.get(gen).items);
+      const p = Array.from(pkmn.Generations.get(gen).items);
       const c = new Map<I.ID, I.Item>();
-      for (const item of calc.get(gen).items) c.set(item.id, item);
+      for (const item of calc.Generations.get(gen).items) c.set(item.id, item);
 
       expect(p).toHaveLength(c.size);
       for (const item of p) {
@@ -44,9 +45,9 @@ describe('Generations', () => {
 
   it('moves', () => {
     for (const gen of gens) {
-      const p = Array.from(pkmn.get(gen).moves);
+      const p = Array.from(pkmn.Generations.get(gen).moves);
       const c = new Map<I.ID, I.Move>();
-      for (const move of calc.get(gen).moves) c.set(move.id, move);
+      for (const move of calc.Generations.get(gen).moves) c.set(move.id, move);
 
       expect(p).toHaveLength(c.size);
       for (const move of p) {
@@ -59,9 +60,9 @@ describe('Generations', () => {
 
   it('species', () => {
     for (const gen of gens) {
-      const p = Array.from(pkmn.get(gen).species);
+      const p = Array.from(pkmn.Generations.get(gen).species);
       const c = new Map<I.ID, I.Specie>();
-      for (const specie of calc.get(gen).species) c.set(specie.id, specie);
+      for (const specie of calc.Generations.get(gen).species) c.set(specie.id, specie);
 
       expect(p).toHaveLength(c.size);
       for (const specie of p) {
@@ -74,9 +75,9 @@ describe('Generations', () => {
 
   it('types', () => {
     for (const gen of gens) {
-      const p = Array.from(pkmn.get(gen).types);
+      const p = Array.from(pkmn.Generations.get(gen).types);
       const c = new Map<I.ID, I.Type>();
-      for (const type of calc.get(gen).types) c.set(type.id, type);
+      for (const type of calc.Generations.get(gen).types) c.set(type.id, type);
 
       expect(p).toHaveLength(c.size);
       for (const type of p) {
@@ -89,9 +90,9 @@ describe('Generations', () => {
 
   it('natures', () => {
     for (const gen of gens) {
-      const p = Array.from(pkmn.get(gen).natures);
+      const p = Array.from(pkmn.Generations.get(gen).natures);
       const c = new Map<I.ID, I.Nature>();
-      for (const nature of calc.get(gen).natures) c.set(nature.id, nature);
+      for (const nature of calc.Generations.get(gen).natures) c.set(nature.id, nature);
 
       expect(p).toHaveLength(c.size);
       for (const nature of p) {
@@ -105,7 +106,7 @@ describe('Generations', () => {
 
 describe('Adaptable', () => {
   it('usage', () => {
-    const gen = pkmn.get(5);
+    const gen = pkmn.Generations.get(5);
     const result = calculate(
       gen,
       new Pokemon(gen, 'Gengar', {
@@ -128,7 +129,9 @@ describe('Adaptable', () => {
 describe('Bundle', () => {
   it('usage', () => {
     {
-      const window = {} as { Dex: typeof Dex; CalcGenerations: typeof Generations };
+      const window = {} as {
+        Dex: typeof Dex; CalcGenerations: typeof Generations;
+      };
       const dex = '../../node_modules/@pkmn/dex/build/production.min.js';
 
       // eslint-disable-next-line no-eval

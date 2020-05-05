@@ -43,6 +43,7 @@
     "dex/types",
     "dex",
     "data",
+    "calc",
     "sets",
     "img",
     "view"

@@ -1,7 +1,8 @@
 import {GenerationNum, StatsTable} from '@pkmn/types';
-import {Dex as DexT} from '@pkmn/dex-types';
+import {Dex as DexT, ItemName} from '@pkmn/dex-types';
 import {Generations} from './index';
 
+import {calculate, Pokemon, Move} from '@smogon/calc/adaptable';
 import * as dex from '@pkmn/dex';
 import * as sim from '@pkmn/sim';
 
@@ -429,9 +430,9 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         for (let num = 3; num <= 7; num++) {
           const gen = Gen(num as GenerationNum);
           for (const type of gen.types) {
-            if (['Normal', 'Fairy', '???'].includes(type!.name)) continue;
-            expect(gen.types.getHiddenPower({...ivs, ...type!.HPivs}))
-              .toEqual({power: gen.num >= 6 ? 60 : 70, type: type!.name});
+            if (['Normal', 'Fairy', '???'].includes(type.name)) continue;
+            expect(gen.types.getHiddenPower({...ivs, ...type.HPivs}))
+              .toEqual({power: gen.num >= 6 ? 60 : 70, type: type.name});
           }
         }
         ivs = {hp: 31, atk: 31, def: 27, spe: 31, spa: 31, spd: 31};
@@ -511,6 +512,28 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
     });
   });
 }
+
+describe('@smogon/calc', () => {
+  it('usage', () => {
+    const gen = new Generations(dex.Dex).get(5);
+    const result = calculate(
+      gen,
+      new Pokemon(gen, 'Gengar', {
+        item: 'Choice Specs' as ItemName,
+        nature: 'Timid',
+        evs: {spa: 252},
+        boosts: {spa: 1},
+      }),
+      new Pokemon(gen, 'Chansey', {
+        item: 'Eviolite' as ItemName,
+        nature: 'Calm',
+        evs: {hp: 252, spd: 252},
+      }),
+      new Move(gen, 'Focus Blast')
+    );
+    expect(result.range()).toEqual([274, 324]);
+  });
+});
 
 describe('Bundle', () => {
   it('usage', async () => {

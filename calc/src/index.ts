@@ -152,7 +152,7 @@ class Move implements I.Move {
   readonly kind: 'Move';
   readonly id: I.ID;
   readonly name: I.MoveName;
-  readonly bp: number;
+  readonly basePower: number;
   readonly type: I.TypeName;
   readonly category?: I.MoveCategory;
   readonly flags: I.MoveFlags;
@@ -183,7 +183,7 @@ class Move implements I.Move {
     this.kind = 'Move';
     this.id = move.id === 'hiddenpower' ? toID(move.name) : move.id as I.ID;
     this.name = move.name as I.MoveName;
-    this.bp = move.basePower;
+    this.basePower = move.basePower;
     this.type = move.type;
 
     if (move.category === 'Status' || dex.gen >= 4) {
