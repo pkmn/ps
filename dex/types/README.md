@@ -1,6 +1,6 @@
-# @pkmn/dex-type
+# @pkmn/dex-types
 
-[![npm version](https://img.shields.io/npm/v/@pkmn/dex-type.svg)](https://www.npmjs.com/package/@pkmn/dex-type)&nbsp;
+[![npm version](https://img.shields.io/npm/v/@pkmn/dex-types.svg)](https://www.npmjs.com/package/@pkmn/dex-types)&nbsp;
 
 Common Pokémon Showdown Dex types shared by [`@pkmn/dex`][0] and [`@pkmn/sim`][1].
 

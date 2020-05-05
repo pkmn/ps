@@ -36,7 +36,7 @@ done to help unify them as best as possible:
 - Pokémon Showdown's view-specific logic has been excluded from the data package (the standalone
   [`@pkmn/img`][0] package exists if you wish to deal with Pokémon Showdown's image resources).
 - the `packSet`, `unpackSet`, `fastUnpackSet` logic was also removed - use the more comphrensive
-  standalone [`@pkmn/sets`][12] package for these methods - the packages `Data` interface is
+  standalone [`@pkmn/sets`][12] package for these methods - the package's `Data` interface is
   purposefully designed to be compatible with `Dex`.
 - only the **data** from Pokémon Showdown is included, none of the mechanics implementation logic.
 - certain methods (like `Dex#includeModData()` exist for compatibility but are no-ops).
@@ -44,13 +44,14 @@ done to help unify them as best as possible:
 Some changes were made which should be relatively easy handle if migration from Pokémon Showdown
 APIs:
 
-- only mainstream generations are supported (ie. no non standard formats, no `LGPE`, etc).
+- only mainstream generations are supported (ie. no non-standard formats, no `LGPE`, etc).
 - all of the data files are encoded in JSON instead of JS - this is encapsulated by the API but will
   result in slightly larger download size in exchange for [faster parsing][11].
 - certain methods and fields have been renamed, including:
   - `getEffectByID` → `getPureEffectByID`
   - `dex.data.Pokedex` → `dex.data.Species`
   - `dex.data.Movedex` → `dex.data.Moves`
+  - `dex.data.TypeChart` → `dex.data.Types`
 
 The most important breaking change is that **`getLearnsets` has been made `async`** and its API has
 been changed to be more generally useful. In [an ideal api](#limitations) we wouldn't fetch data

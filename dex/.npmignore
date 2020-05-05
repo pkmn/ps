@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+Thumbs.db
+package-lock.json
+.eslintcache
+.tsbuildinfo
+.vscode
+pnpm-debug.log
+types/

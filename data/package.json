@@ -8,20 +8,20 @@
   "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
   "dependencies": {
-    "@pkmn/dex-types": "file:../dex/types",
+    "@pkmn/dex-types": "^0.0.1",
     "@pkmn/types": "^0.1.0"
   },
   "devDependencies": {
-    "@pkmn/dex": "file:../dex",
+    "@pkmn/dex": "^0.0.1",
     "@pkmn/eslint-config": "^0.2.3",
     "@pkmn/sim": "file:../sim",
     "@smogon/calc": "^0.3.0",
     "@types/jest": "^25.2.1",
-    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
     "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-jest": "^23.9.0",
     "eslint": "^6.8.0",
-    "jest": "^25.5.2",
+    "jest": "^26.0.1",
     "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
   },
