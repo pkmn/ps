@@ -13,8 +13,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^13.13.5",
-    "@pkmn/sets": "^0.0.2"
+    "@pkmn/sets": "^0.0.2",
+    "@types/node": "^13.13.5"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.31.0",

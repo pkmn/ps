@@ -38,10 +38,11 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
   Let's Go, or pet mods). The `Dex#mod` method will `throw` if an unsupported mod is requested.
   A `Dex#modid` method has also been added which returns the current mod applied to the `Dex`.
 - **random battles are not supported by the `@pkmn/sim` package**. All team generation logic and
-  data has been removed from the package and are instead provided by [`@pkmn/randoms`][5] which can
-  be used to generate a team (see example below) after being configured with the new
+  data has been removed from the package and are instead to be provided eventually by a
+  `@pkmn/randoms` package which will export a generator that can be configured using the
   `Dex#setTeamGenerator` method. Unless a team generator has been set `Dex#getTeamGenerator` and
-  `Dex#generateTeam` will throw. ==TODO==
+  `Dex#generateTeam` will throw. *Currently these methods will all throw as `@pkmn/randoms` has
+  yet to be implemented.*
 - **all generations and all of their data is automatically loaded**. With Pokémon Showdown, data is
   loaded lazily, and often requires you run `includeX` methods to ensure you are getting consistent
   state. These functions still exist and can be called, but are now wholly unnecessary. Lazily
@@ -72,7 +73,6 @@ $ npm install @pkmn/sim
 
 ```ts
 import {Dex, BattleStream, getPlayerStreams, RandomPlayerAI} from '@pkmn/sim';
-import {TeamGenerator} from '@pkmn/randoms';
 import {RandomPlayerAI} from '../tools/random-player-ai';
 
 Dex.setTeamGenerator(new TeamGenerator());
@@ -81,11 +81,23 @@ const streams = getPlayerStreams(new BattleStream());
 const spec = {formatid: 'gen7customgame'};
 const p1spec = {
   name: 'Bot 1',
-  team: Dex.packTeam(Dex.generateTeam('gen7randombattle')),
+  team: 'gen7ou]Poli Rain|' +
+    'Under The Sea|politoed|leftovers|H|whirlpool,perishsong,rest,protect|Calm|248,,,8,252,|F|,0,,,,|S||]' +
+    'Fade Away|swampertmega|swampertite||scald,earthquake,rest,sleeptalk|Sassy|248,,8,,252,|F||S||]' +
+    'Shallow Waters|greninjaash|choicespecs||surf,darkpulse,watershuriken,icebeam|Timid|,,4,252,,252|||||]' +
+    'Eternal Silence|skarmory|shedshell|1|roost,defog,spikes,counter|Impish|248,,252,,8,||,0,,,,|||]' +
+    'Toxic Heart|mukalola|figyberry|1|knockoff,pursuit,recycle,poisonfang|Careful|248,,32,,228,|||S||]' +
+    'Another Dream|clefable|leftovers|1|moonblast,softboiled,stealthrock,calmmind|Bold|252,,252,,4,|F|,0,,,,|S||',
 };
 const p2spec = {
   name: 'Bot 2',
-  team: Dex.packTeam(Dex.generateTeam('gen7randombattle')),
+  team: 'gen7ou]fol1/Dual Dance Zam|' +
+    'Alakazam-Mega||alakazite|magicguard|barrier,calmmind,recover,psychic|Timid|244,,240,,,24|M|,0,,,,|S||]' +
+    'Krookodile||choicescarf||knockoff,earthquake,pursuit,foulplay|Jolly|56,252,,,,200|||||]' +
+    'Skarmory||rockyhelmet|1|spikes,defog,counter,roost|Impish|248,,248,,,12||,0,,,,|||]' +
+    'Reuniclus||rockyhelmet|1|psychic,energyball,calmmind,recover|Bold|208,,252,,,48||,0,,,,|||]' +
+    'Toxapex||wateriumz|H|scald,toxic,toxicspikes,recover|Calm|248,,40,80,140,||,0,,,,|||]' +
+    'Chansey||eviolite||seismictoss,thunderwave,stealthrock,softboiled|Bold|248,,252,,8,|||||',
 };
 
 const p1 = new RandomPlayerAI(streams.p1);
@@ -127,7 +139,6 @@ of Guangcong Luo's [Pokémon Showdown code][0] which is distributed under the [M
   [2]: https://github.com/pkmn/ps/blob/master/dex/types/index.d.ts
   [3]: https://github.com/pkmn/ps/blob/master/data
   [4]: https://github.com/pkmn/ps/blob/master/dex
-  [5]: https://github.com/pkmn/ps/blob/master/random
   [6]: https://github.com/pkmn/ps/blob/master/sets
   [7]: https://webpack.js.org/
   [8]: https://rollupjs.org/

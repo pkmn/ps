@@ -1039,8 +1039,16 @@ export class ModdedDex {
 		return num >>> 0;
 	}
 
+	generateTeam(format: Format | string, options: PlayerOptions | null = null): PokemonSet[] {
+		throw new Error('generateTeam maybe not be used unless a TeamGenerator has been set');
+	}
+
 	getTeamGenerator(format: Format | string, seed: PRNG | PRNGSeed | null = null): any {
-		throw new Error('getTeamGenerator is not supported');
+		throw new Error('getTeamGenerator maybe not be used unless a TeamGenerator has been set');
+	}
+
+	setTeamGenerator(generator: any): any {
+		throw new Error('setTeamGenerator is not supported'); // TODO support team generators
 	}
 
 	packTeam(team: PokemonSet[] | null): string {
