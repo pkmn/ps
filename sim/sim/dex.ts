@@ -13,6 +13,7 @@ import {
 	ModdedSpeciesFormatsData,
 	Move,
 	Nature,
+	PlayerOptions,
 	PokemonSet,
 	PureEffect,
 	Species,
