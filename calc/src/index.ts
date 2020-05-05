@@ -289,19 +289,11 @@ class Specie implements I.Specie {
   readonly name: I.SpeciesName;
 
   readonly types: [I.TypeName] | [I.TypeName, I.TypeName];
-  readonly bs: { // TODO baseStats
-    hp: number;
-    at: number;
-    df: number;
-    sa: number;
-    sd: number;
-    sp: number;
-    sl?: number;
-  }; // baseStats
+  readonly baseStats: Readonly<I.StatsTable>;
   readonly weightkg: number;
   readonly nfe?: boolean;
   readonly gender?: I.GenderName;
-  readonly formes?: I.SpeciesName[]; // TODO otherFormes
+  readonly otherFormes?: I.SpeciesName[];
   readonly baseSpecies?: I.SpeciesName;
   readonly abilities?: {0: I.AbilityName};
 
@@ -309,22 +301,10 @@ class Specie implements I.Specie {
     this.kind = 'Species';
     this.id = (species.id === 'aegislash' ? 'aegislashshield' : species.id) as I.ID;
     this.name = (species.name === 'Aegislash' ? 'Aegislash-Shield' : species.name) as I.SpeciesName;
-
     this.types = species.types as [I.TypeName] | [I.TypeName, I.TypeName];
-    this.bs = {
-      hp: species.baseStats.hp,
-      at: species.baseStats.atk,
-      df: species.baseStats.def,
-      sa: species.baseStats.spa,
-      sd: species.baseStats.spd,
-      sp: species.baseStats.spe,
-    };
-    if (dex.gen === 1) {
-      delete this.bs.sa;
-      delete this.bs.sd;
-      this.bs.sl = species.baseStats.spa;
-    }
+    this.baseStats = species.baseStats;
     this.weightkg = species.weightkg;
+
     const nfe = !!species.evos?.some(s => exists(dex.getSpecies(s), dex.gen));
     if (nfe) this.nfe = nfe;
     if (species.gender === 'N' && dex.gen > 1) this.gender = species.gender;
@@ -332,20 +312,19 @@ class Specie implements I.Specie {
     const formes = species.otherFormes?.filter(s => exists(dex.getSpecies(s), dex.gen));
     if (species.id.startsWith('aegislash')) {
       if (species.id === 'aegislashblade') {
-        this.formes = ['Aegislash-Blade', 'Aegislash-Shield', 'Aegislash-Both'] as I.SpeciesName[];
+        this.otherFormes = ['Aegislash-Shield', 'Aegislash-Both'] as I.SpeciesName[];
       } else {
         this.baseSpecies = 'Aegislash-Blade' as I.SpeciesName;
       }
     } else if (species.id === 'toxtricity') {
-      this.formes = [
-        'Toxtricity', 'Toxtricity-Gmax', 'Toxtricity-Low-Key', 'Toxtricity-Low-Key-Gmax'
+      this.otherFormes = ['Toxtricity-Gmax', 'Toxtricity-Low-Key', 'Toxtricity-Low-Key-Gmax'
       ] as I.SpeciesName[];
     } else if (species.id === 'toxtricitylowkey') {
       this.baseSpecies = 'Toxtricity' as I.SpeciesName;
     } else if (species.id === 'eternatus') {
-      this.formes = ['Eternatus', 'Eternatus-Eternamax'] as I.SpeciesName[];
+      this.otherFormes = ['Eternatus-Eternamax'] as I.SpeciesName[];
     } else if (formes && formes.length) {
-      this.formes = [this.name, ...formes].sort() as I.SpeciesName[];
+      this.otherFormes = [...formes].sort() as I.SpeciesName[];
     } else if (species.baseSpecies !== this.name) {
       this.baseSpecies = species.baseSpecies as I.SpeciesName;
     }

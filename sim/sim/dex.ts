@@ -713,17 +713,6 @@ export class ModdedDex {
 		return nature;
 	}
 
-	getAwakeningValues(set: PokemonSet, statName?: string) {
-		if (typeof statName === 'string') statName = toID(statName);
-		const avs: StatsTable = {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0};
-		let ev: keyof StatsTable;
-		for (ev in set.evs) {
-			avs[ev] = set.evs[ev];
-		}
-		if (typeof statName === 'string' && statName in avs) return avs[statName as keyof StatsTable];
-		return avs;
-	}
-
 	/** Given a table of base stats and a pokemon set, return the actual stats. */
 	spreadModify(baseStats: StatsTable, set: PokemonSet): StatsTable {
 		const modStats: SparseStatsTable = {atk: 10, def: 10, spa: 10, spd: 10, spe: 10};
@@ -1287,6 +1276,10 @@ export class ModdedDex {
 
 	loadDataFile(mod: string, dataType: DataType | 'Aliases'): AnyObject {
 		return (DATA as any)[mod === 'base' ? 'gen8' : mod][dataType] || {};
+	}
+
+	includeMods(): ModdedDex {
+		return this;
 	}
 
 	includeModData(): ModdedDex {
