@@ -170,9 +170,13 @@ class Move implements I.Move {
   readonly defensiveCategory?: I.MoveCategory;
   readonly breaksProtect?: boolean;
   readonly isZ?: boolean;
+  readonly zMove?: {
+    basePower?: number,
+  };
   readonly isMax?: boolean;
-  readonly zp?: number;
-  readonly maxPower?: number;
+  readonly maxMove?: {
+    basePower: number,
+  };
   readonly multihit?: number | number[];
 
   constructor(move: D.Move, dex: D.Dex) {
@@ -233,11 +237,11 @@ class Move implements I.Move {
     }
     if (dex.gen >= 7) {
       if (move.isZ) this.isZ = true;
-      if (move.zMove) this.zp = move.zMove.basePower; // TODO
+      if (move.zMove?.basePower) this.zMove = {basePower: move.zMove.basePower};
     }
     if (dex.gen >= 8) {
       if (move.isMax) this.isMax = true
-      if (move.maxMove) this.maxPower = move.maxMove.basePower; // TODO
+      if (move.maxMove) this.maxMove = {basePower: move.maxMove.basePower};
     }
   }
 }

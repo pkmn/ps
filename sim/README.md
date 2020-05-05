@@ -48,7 +48,7 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
   loading older generations would still be desirable (and this package still lazily constructs the
   data objects), but lazy loading only works on web with asynchronous APIs which Pokémon Showdown
   does not support. `Dex#includeMods` is a no-op.
-- **`Dex#packTeam` and `Dex#fastUnpackTeam` delegate to [`@pkmn/sets`][6]**. ==TODO==
+- **`Dex#packTeam` and `Dex#fastUnpackTeam` delegate to [`@pkmn/sets`][6]**.
 - **the `isOriginal` optional constructor parameter to `Dex` has been removed**, as it was only
   intended for use internally for a legacy testing setup.
 - **`dataDir`, `levenshtein`, `dataSearch` and `getAwakeningValues` have been removed**.
