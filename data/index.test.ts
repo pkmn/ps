@@ -155,9 +155,9 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(7).moves.get('Frost Breath')!.willCrit).toBe(true);
         expect(Gen(7).moves.get('Bloom Doom')!.isZ).toBe('grassiumz');
         expect(Gen(7).moves.get('Acid')!.isZ).toBeFalsy();
-        expect(Gen(7).moves.get('Acid')!.zMovePower).toBe(100);
-        // FIXME expect(Gen(6).moves.get('Acid').zMovePower)!.toBeFalsy();
-        expect(Gen(7).moves.get('Hypnosis')!.zMoveBoost).toEqual({spe: 1});
+        expect(Gen(7).moves.get('Acid')!.zMove!.basePower).toBe(100);
+        // FIXME expect(Gen(6).moves.get('Acid').zMove)!.toBeFalsy();
+        expect(Gen(7).moves.get('Hypnosis')!.zMove!.boost).toEqual({spe: 1});
         expect(Gen(7).moves.get('Double Kick')!.multihit).toBe(2);
         expect(Gen(7).moves.get('Rock Blast')!.multihit).toEqual([2, 5]);
         expect(Gen(7).moves.get('Softboiled')!.heal).toEqual([1, 2]);
@@ -319,13 +319,6 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       test('#hasAbility', () => {
         expect(Gen(7).species.get('Gengar')!.hasAbility('Levitate')).toBe(false);
         expect(Gen(5).species.get('Gengar')!.hasAbility('Levitate')).toBe(true);
-      });
-
-      test('#getOutOfBattleSpecies', () => {
-        expect(Gen(8).species.get('Mimikyu-Busted')!.getOutOfBattleSpeciesName()).toBe('Mimikyu');
-        expect(Gen(7).species.get('Venusaur-Mega')!.getOutOfBattleSpeciesName()).toBe('Venusaur');
-        expect(Gen(4).species.get('Wormadam-Trash')!.getOutOfBattleSpeciesName())
-          .toBe('Wormadam-Trash');
       });
 
       test('cached', () => {

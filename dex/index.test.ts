@@ -181,9 +181,9 @@ describe('Dex', () => {
       expect(Dex.getMove('Frost Breath').willCrit).toBe(true);
       expect(Dex.getMove('Bloom Doom').isZ).toBe('grassiumz');
       expect(Dex.getMove('Acid').isZ).toBeFalsy();
-      expect(Dex.getMove('Acid').zMovePower).toBe(100);
-      // FIXME expect(Dex.forGen(6).getMove('Acid').zMovePower).toBeFalsy();
-      expect(Dex.getMove('Hypnosis').zMoveBoost).toEqual({spe: 1});
+      expect(Dex.getMove('Acid').zMove!.basePower).toBe(100);
+      // FIXME expect(Dex.forGen(6).getMove('Acid').zMove).toBeFalsy();
+      expect(Dex.getMove('Hypnosis').zMove!.boost).toEqual({spe: 1});
       expect(Dex.getMove('Double Kick').multihit).toBe(2);
       expect(Dex.getMove('Rock Blast').multihit).toEqual([2, 5]);
       expect(Dex.getMove('Softboiled').heal).toEqual([1, 2]);
@@ -347,7 +347,7 @@ describe('Dex', () => {
       expect(Dex.getSpecies('Giratina').baseForme).toBe('Altered');
       expect(Dex.getSpecies('Shaymin').otherFormes).toEqual(['Shaymin-Sky']);
       expect(Dex.forGen(7).getSpecies('Charizard').otherFormes)
-        .toEqual(['Charizard-Mega-X', 'Charizard-Mega-Y']);
+        .toEqual(['Charizard-Mega-X', 'Charizard-Mega-Y', 'Charizard-Gmax']); // sigh
       expect(Dex.getSpecies('Gastrodon').cosmeticFormes).toEqual(['Gastrodon-East']);
       expect(Dex.getSpecies('Garchomp-Mega').isMega).toBe(true);
       expect(Dex.getSpecies('Yanmega').isMega).not.toBeDefined();
@@ -358,12 +358,6 @@ describe('Dex', () => {
     test('#hasAbility', () => {
       expect(Dex.forGen(7).hasAbility(Dex.forGen(7).getSpecies('Gengar'), 'Levitate')).toBe(false);
       expect(Dex.forGen(5).hasAbility(Dex.forGen(5).getSpecies('Gengar'), 'Levitate')).toBe(true);
-    });
-
-    test('#getOutOfBattleSpecies', () => {
-      expect(Dex.getOutOfBattleSpecies(Dex.getSpecies('Mimikyu-Busted'))).toBe('Mimikyu');
-      expect(Dex.getOutOfBattleSpecies(Dex.getSpecies('Venusaur-Mega'))).toBe('Venusaur');
-      expect(Dex.getOutOfBattleSpecies(Dex.getSpecies('Wormadam-Trash'))).toBe('Wormadam-Trash');
     });
 
     test('cached', () => {

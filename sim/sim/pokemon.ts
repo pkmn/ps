@@ -149,7 +149,7 @@ export class Pokemon {
 	newlySwitched: boolean;
 	beingCalledBack: boolean;
 
-	lastMove: Move | null;
+	lastMove: ActiveMove | null;
 	lastMoveTargetLoc?: number;
 	moveThisTurn: string | boolean;
 	/**
@@ -296,25 +296,26 @@ export class Pokemon {
 
 		this.baseMoveSlots = [];
 		this.moveSlots = [];
-		if (this.set.moves) {
-			for (const moveid of this.set.moves) {
-				let move = this.battle.dex.getMove(moveid);
-				if (!move.id) continue;
-				if (move.id === 'hiddenpower' && move.type !== 'Normal') {
-					if (!set.hpType) set.hpType = move.type;
-					move = this.battle.dex.getMove('hiddenpower');
-				}
-				this.baseMoveSlots.push({
-					move: move.name,
-					id: move.id,
-					pp: ((move.noPPBoosts || move.isZ) ? move.pp : move.pp * 8 / 5),
-					maxpp: ((move.noPPBoosts || move.isZ) ? move.pp : move.pp * 8 / 5),
-					target: move.target,
-					disabled: false,
-					disabledSource: '',
-					used: false,
-				});
+		if (!this.set.moves || !this.set.moves.length) {
+			throw new Error(`Set ${this.name} has no moves`);
+		}
+		for (const moveid of this.set.moves) {
+			let move = this.battle.dex.getMove(moveid);
+			if (!move.id) continue;
+			if (move.id === 'hiddenpower' && move.type !== 'Normal') {
+				if (!set.hpType) set.hpType = move.type;
+				move = this.battle.dex.getMove('hiddenpower');
 			}
+			this.baseMoveSlots.push({
+				move: move.name,
+				id: move.id,
+				pp: ((move.noPPBoosts || move.isZ) ? move.pp : move.pp * 8 / 5),
+				maxpp: ((move.noPPBoosts || move.isZ) ? move.pp : move.pp * 8 / 5),
+				target: move.target,
+				disabled: false,
+				disabledSource: '',
+				used: false,
+			});
 		}
 
 		this.position = 0;
@@ -766,7 +767,7 @@ export class Pokemon {
 		return amount;
 	}
 
-	moveUsed(move: Move, targetLoc?: number) {
+	moveUsed(move: ActiveMove, targetLoc?: number) {
 		this.lastMove = move;
 		this.lastMoveTargetLoc = targetLoc;
 		this.moveThisTurn = move.id;
@@ -1120,8 +1121,17 @@ export class Pokemon {
 		for (boostName in pokemon.boosts) {
 			this.boosts[boostName] = pokemon.boosts[boostName]!;
 		}
-		if (this.battle.gen >= 6 && pokemon.volatiles['focusenergy']) this.addVolatile('focusenergy');
-		if (pokemon.volatiles['laserfocus']) this.addVolatile('laserfocus');
+		if (this.battle.gen >= 6) {
+			const volatilesToCopy = ['focusenergy', 'gmaxchistrike', 'laserfocus'];
+			for (const volatile of volatilesToCopy) {
+				if (pokemon.volatiles[volatile]) {
+					this.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') this.volatiles[volatile].layers = pokemon.volatiles[volatile].layers;
+				} else {
+					this.removeVolatile(volatile);
+				}
+			}
+		}
 		if (effect) {
 			this.battle.add('-transform', this, pokemon, '[from] ' + effect.fullname);
 		} else {

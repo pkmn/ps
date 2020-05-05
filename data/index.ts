@@ -268,10 +268,6 @@ export class Specie implements DexSpecies {
   hasAbility(ability: string) {
     return this.dex.hasAbility(this, ability);
   }
-
-  getOutOfBattleSpeciesName() {
-    return this.dex.getOutOfBattleSpecies(this);
-  }
 }
 
 export class Effects {

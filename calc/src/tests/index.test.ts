@@ -50,7 +50,7 @@ describe('Generations', () => {
 
       expect(p).toHaveLength(c.size);
       for (const move of p) {
-        try {
+        try { // TODO
           expect(move).toEqual(c.get(move.id));
         } catch (e) {
           console.log(gen, move.name, e.message);

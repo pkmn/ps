@@ -438,7 +438,7 @@ export class Handler implements Protocol.Handler {
         return;
       case 'magician':
       case 'pickpocket':
-        poke.activateAbility(effect.name);
+        poke.activateAbility(effect.name!);
         // falls through
       case 'thief':
       case 'covet':
@@ -516,7 +516,7 @@ export class Handler implements Protocol.Handler {
         break;
       case 'powerofalchemy':
       case 'receiver':
-        poke.activateAbility(effect.name);
+        poke.activateAbility(effect.name!);
         poke.activateAbility(ability.name, true);
         ofpoke!.rememberAbility(ability.name);
         break;
@@ -683,7 +683,7 @@ export class Handler implements Protocol.Handler {
     const poke = this.battle.getPokemon(args[1])!;
     const effect = this.battle.dex.getEffect(args[2]) as Effect;
     poke.addTurnstatus(effect.id);
-    if (effect.id === 'focuspunch' || effect.id === 'shelltrap') poke.rememberMove(effect.name, 0);
+    if (effect.id === 'focuspunch' || effect.id === 'shelltrap') poke.rememberMove(effect.name!, 0);
   }
 
   '|-singlemove|'(args: Args['|-singlemove|']) {

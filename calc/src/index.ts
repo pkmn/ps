@@ -186,8 +186,6 @@ class Move implements I.Move {
       this.category = move.category;
     }
 
-    if (move.isZ) delete move.zMovePower; // FIXME: wtf PS
-
     if (move.recoil) this.recoil = move.recoil;
     if (move.hasCrashDamage) this.hasCrashDamage = move.hasCrashDamage;
     if (move.mindBlownRecoil) this.mindBlownRecoil = move.mindBlownRecoil;
@@ -235,11 +233,11 @@ class Move implements I.Move {
     }
     if (dex.gen >= 7) {
       if (move.isZ) this.isZ = true;
-      if (move.zMovePower) this.zp = move.zMovePower; // TODO zMovePower FIXME rename
+      if (move.zMove) this.zp = move.zMove.basePower; // TODO
     }
     if (dex.gen >= 8) {
       if (move.isMax) this.isMax = true
-      if (move.gmaxPower) this.maxPower = move.gmaxPower; // TODO dynamaxPower FIXME rename
+      if (move.maxMove) this.maxPower = move.maxMove.basePower; // TODO
     }
   }
 }

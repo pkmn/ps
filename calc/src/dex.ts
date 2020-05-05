@@ -72,9 +72,13 @@ export interface MoveData {
   defensiveCategory?: MoveCategory;
   breaksProtect?: boolean;
   isZ?: boolean | string;
+  zMove?: {
+    basePower?: number,
+  };
   isMax?: boolean | string;
-  zMovePower?: number;
-  gmaxPower?: number;
+  maxMove?: {
+    basePower: number,
+  };
   multihit?: number | number[];
   recoil?: [number, number];
   hasCrashDamage?: boolean;

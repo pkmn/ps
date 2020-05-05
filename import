@@ -102,7 +102,7 @@ const IMPORTS = {
     'FormatsData', 'GameType', 'Battle', 'PureEffectData', 'ItemData', 'FlingData', 'AbilityData',
     'MoveSource', 'EventInfo', 'SpeciesData', 'SpeciesFormatsData', 'SpeciesAbility',
     'GenderName', 'StatsTable', 'RandomTeamsTypes', 'MoveData', 'SecondaryEffect', 'MoveTarget',
-    'TypeData', 'SparseStatsTable',
+    'TypeData', 'SparseStatsTable', 'SparseBoostsTable',
   ],
   'sim/field.ts': ['Effect', 'PureEffect', 'Pokemon', 'Battle', 'Side', 'AnyObject', 'ID'],
   'sim/pokemon.ts': [

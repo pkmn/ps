@@ -32,9 +32,7 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
   when used externally without these additions. Pokémon Showdown's internal type setup is also
   fairly convoluted - because of global definitions there is quite a bit of merging going on and
   with explicit `import` and `export` statements the TypeScript compiler better able to detect type
-  errors. `index.ts` files have been added to each of the generations in `data/`, and the files
-  which exist at the top level of `data/` in `smogon/pokemon-showdown` have been moved to
-  `data/gen8`.
+  errors. `index.ts` files have been added to each of the generations in `data/`.
 - **only Gens 1 - 8 are supported, no other mods**. Generation 8 as the `base` mod is supported as
   with Pokémon Showdown, but after that only the canconical `genN` mods are supported (no Stadium,
   Let's Go, or pet mods). The `Dex#mod` method will `throw` if an unsupported mod is requested.

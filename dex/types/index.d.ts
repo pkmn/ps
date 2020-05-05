@@ -42,6 +42,7 @@ export interface EffectData {
 export interface PureEffectData extends EffectData {
   noCopy?: boolean;
   counterMax?: number;
+  affectsFainted?: boolean;
 }
 
 export interface AbilityData extends EffectData {
@@ -134,17 +135,21 @@ export interface MoveData extends EffectData, HitEffect {
   flags: MoveFlags;
   category: MoveCategory;
 
+  realMove?: string;
   effect?: Partial<PureEffectData>;
   damage?: number | 'level' | false | null;
   noPPBoosts?: boolean;
 
   isZ?: boolean | string;
-  zMovePower?: number;
-  zMoveEffect?: string;
-  zMoveBoost?: Partial<BoostsTable>;
-
+  zMove?: {
+    basePower?: number,
+    effect?: string,
+    boost?: Partial<BoostsTable>,
+  };
   isMax?: boolean | string;
-  gmaxPower?: number;
+  maxMove?: {
+    basePower: number,
+  };
 
   ohko?: boolean | TypeName;
   thawsTarget?: boolean;
@@ -208,7 +213,6 @@ export interface SpeciesData {
   abilities: SpeciesAbility;
   baseStats: StatsTable;
   eggGroups: EggGroup[];
-  heightm: number;
   num: number;
   name: string;
   types: string[];
@@ -331,8 +335,16 @@ export interface Move extends Readonly<BasicEffect<MoveName> & MoveData> {
   readonly flags: MoveFlags;
   readonly zMoveEffect?: ID;
   readonly isZ: boolean | ID;
-  readonly isMax?: SpeciesName;
-  readonly noMetronome?: ID[];
+  readonly zMove?: {
+    basePower?: number,
+    effect?: ID,
+    boost?: Partial<BoostsTable>,
+  };
+  readonly isMax: boolean | SpeciesName;
+  readonly maxMove?: {
+    basePower: number,
+  };
+  readonly noMetronome?: MoveName[];
   readonly volatileStatus?: ID;
   readonly slotCondition?: ID;
   readonly sideCondition?: ID;
@@ -443,7 +455,6 @@ export interface Dex {
   getNature(name: string): Nature;
   getType(name: string): Type;
 
-  getOutOfBattleSpecies(species: Species): string;
   hasAbility(species: Species, ability: string): boolean;
   getHiddenPower(ivs: StatsTable): { type: TypeName; power: number };
   getImmunity(

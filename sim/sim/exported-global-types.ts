@@ -190,7 +190,7 @@ export interface PureEffectEventMethods {
 	durationCallback?: (this: Battle, target: Pokemon, source: Pokemon, effect: Effect | null) => number;
 	onCopy?: (this: Battle, pokemon: Pokemon) => void;
 	onEnd?: (this: Battle, target: Pokemon & Side & Field) => void;
-	onRestart?: (this: Battle, target: Pokemon & Side & Field, source: Pokemon) => void;
+	onRestart?: (this: Battle, target: Pokemon & Side & Field, source: Pokemon, sourceEffect: Effect) => void;
 	onStart?: (this: Battle, target: Pokemon & Side & Field, source: Pokemon, sourceEffect: Effect) => void;
 }
 
@@ -762,10 +762,7 @@ export interface EventMethods {
 }
 
 export interface EffectData {
-	id: string;
-	name: string;
-	num: number;
-	affectsFainted?: boolean;
+	name?: string;
 	desc?: string;
 	duration?: number;
 	durationCallback?: (this: Battle, target: Pokemon, source: Pokemon, effect: Effect | null) => number;
@@ -773,13 +770,9 @@ export interface EffectData {
 	infiltrates?: boolean;
 	isNonstandard?: Nonstandard | null;
 	shortDesc?: string;
-
-	onRestart?: (this: Battle, target: Pokemon & Side & Field, source: Pokemon) => void;
 }
 
-export interface ModdedEffectData extends Partial<EffectData> {
-	inherit?: boolean;
-}
+export type ModdedEffectData = EffectData | Partial<EffectData> & {inherit: true};
 
 export type EffectType =
 	'Effect' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Format' |
@@ -797,28 +790,31 @@ export interface BasicEffect extends EffectData {
 
 export interface PureEffectData extends EffectData, PureEffectEventMethods, EventMethods {
 	noCopy?: boolean;
+	affectsFainted?: boolean;
 	counterMax?: number;
 }
 
-export interface ModdedPureEffectData extends Partial<PureEffectData>, ModdedEffectData {}
+export type ModdedPureEffectData = PureEffectData | Partial<PureEffectData> & {inherit: true};
 
 export interface PureEffect extends Readonly<BasicEffect & PureEffectData> {
 	readonly effectType: 'Status' | 'Effect' | 'Weather';
 }
 
 export interface AbilityData extends EffectData, AbilityEventMethods, EventMethods {
+	name: string;
+	/** internal index number */
+	num?: number;
 	effect?: Partial<PureEffectData>;
-	rating: number;
+	rating?: number;
 	isUnbreakable?: boolean;
 	suppressWeather?: boolean;
 }
 
-export interface ModdedAbilityData extends Partial<AbilityData>, ModdedEffectData {
-	onAfterMega?: (this: Battle, pokemon: Pokemon) => void;
-}
+export type ModdedAbilityData = AbilityData | Partial<AbilityData> & {inherit: true};
 
 export interface Ability extends Readonly<BasicEffect & AbilityData> {
 	readonly effectType: 'Ability';
+	rating: number;
 }
 
 export interface FlingData {
@@ -829,6 +825,9 @@ export interface FlingData {
 }
 
 export interface ItemData extends EffectData, ItemEventMethods, EventMethods {
+	name: string;
+	/** just controls location on the item spritesheet */
+	num?: number;
 	effect?: Partial<PureEffectData>;
 	gen: number;
 	fling?: FlingData;
@@ -852,9 +851,10 @@ export interface ItemData extends EffectData, ItemEventMethods, EventMethods {
 	boosts?: SparseBoostsTable | false;
 }
 
-export interface ModdedItemData extends Partial<ItemData>, ModdedEffectData {
-	onCustap?: (this: Battle, pokemon: Pokemon) => void;
-}
+export type ModdedItemData = ItemData | Partial<Omit<ItemData, 'name'>> & {
+	inherit: true,
+	onCustap?: (this: Battle, pokemon: Pokemon) => void,
+};
 
 export interface Item extends Readonly<BasicEffect & ItemData> {
 	readonly effectType: 'Item';
@@ -896,6 +896,9 @@ export interface SecondaryEffect extends HitEffect {
 }
 
 export interface MoveData extends EffectData, MoveEventMethods, HitEffect {
+	name: string;
+	/** move index number, used for Metronome rolls */
+	num?: number;
 	effect?: Partial<PureEffectData>;
 	basePower: number;
 	accuracy: true | number;
@@ -905,6 +908,8 @@ export interface MoveData extends EffectData, MoveEventMethods, HitEffect {
 	priority: number;
 	target: MoveTarget;
 	flags: AnyObject;
+	/** Hidden Power */
+	realMove?: string;
 
 	damage?: number | 'level' | false | null;
 	contestType?: string;
@@ -920,29 +925,22 @@ export interface MoveData extends EffectData, MoveEventMethods, HitEffect {
 	 * Sparksurfer.
 	 */
 	isZ?: boolean | string;
-	zMovePower?: number;
-	zMoveEffect?: string;
-	zMoveBoost?: SparseBoostsTable;
-	/**
-	 * Has this move been boosted by a Z-crystal? Usually the same as
-	 * `isZ`, but hacked moves will have this be `false` and `isZ` be
-	 * truthy.
-	 */
-	isZPowered?: boolean;
+	zMove?: {
+		basePower?: number,
+		effect?: string,
+		boost?: SparseBoostsTable,
+	};
 
 	// Max move data
 	// -------------
-	gmaxPower?: number;
 	/**
 	 * `true` for Max moves like Max Airstream. If its a G-Max moves, this is
 	 * the species ID of the Gigantamax Pokemon that can use this G-Max move.
 	 */
 	isMax?: boolean | string;
-	/**
-	 * Same idea has `isZPowered`. Hacked Max moves will have this be
-	 * `false` and `isMax` be truthy.
-	 */
-	maxPowered?: boolean;
+	maxMove?: {
+		basePower: number,
+	};
 
 	// Hit effects
 	// -----------
@@ -1021,7 +1019,7 @@ export interface MoveData extends EffectData, MoveEventMethods, HitEffect {
 	baseMove?: string;
 }
 
-export interface ModdedMoveData extends Partial<MoveData>, ModdedEffectData {}
+export type ModdedMoveData = MoveData | Partial<Omit<MoveData, 'name'>> & {inherit: true};
 
 export interface Move extends Readonly<BasicEffect & MoveData> {
 	readonly effectType: 'Move';
@@ -1042,8 +1040,10 @@ export interface MoveHitData {
 }
 
 export interface ActiveMove extends BasicEffect, MoveData {
+	readonly name: string;
 	readonly effectType: 'Move';
-	id: ID;
+	readonly id: ID;
+	num: number;
 	weather?: ID;
 	status?: ID;
 	hit: number;
@@ -1075,6 +1075,12 @@ export interface ActiveMove extends BasicEffect, MoveData {
 	totalDamage?: number | false;
 	willChangeForme?: boolean;
 	infiltrates?: boolean;
+
+	/**
+	 * Has this move been boosted by a Z-crystal or used by a Dynamax Pokemon? Usually the same as
+	 * `isZ` or `isMax`, but hacked moves will have this be `false` and `isZ` / `isMax` be truthy.
+	 */
+	isZOrMaxPowered?: boolean;
 }
 
 export interface SpeciesAbility {
@@ -1085,16 +1091,19 @@ export interface SpeciesAbility {
 }
 
 export interface SpeciesData {
+	name: string;
+	/** National Dex number */
+	num: number;
+
+	types: string[];
 	abilities: SpeciesAbility;
 	baseStats: StatsTable;
-	canHatch?: boolean;
-	color: string;
 	eggGroups: string[];
-	heightm: number;
-	num: number;
-	name: string;
-	types: string[];
 	weightkg: number;
+	color?: string;
+	heightm?: number;
+
+	canHatch?: boolean;
 	baseForme?: string;
 	baseSpecies?: string;
 	evoLevel?: number;
@@ -1120,9 +1129,7 @@ export interface SpeciesData {
 	changesFrom?: string;
 }
 
-export interface ModdedSpeciesData extends Partial<SpeciesData> {
-	inherit?: true;
-}
+export type ModdedSpeciesData = SpeciesData | Partial<Omit<SpeciesData, 'name'>> & {inherit: true};
 
 export interface SpeciesFormatsData {
 	comboMoves?: readonly string[];
@@ -1138,9 +1145,7 @@ export interface SpeciesFormatsData {
 	unreleasedHidden?: boolean | 'Past';
 }
 
-export interface ModdedSpeciesFormatsData extends Partial<SpeciesFormatsData> {
-	inherit?: true;
-}
+export type ModdedSpeciesFormatsData = SpeciesFormatsData & {inherit?: true};
 
 export interface LearnsetData {
 	learnset?: {[moveid: string]: MoveSource[]};
@@ -1150,9 +1155,7 @@ export interface LearnsetData {
 	exists?: boolean;
 }
 
-export interface ModdedLearnsetData extends Partial<LearnsetData> {
-	inherit?: true;
-}
+export type ModdedLearnsetData = LearnsetData & {inherit?: true};
 
 export type Species = import('./dex-data').Species;
 
@@ -1173,6 +1176,7 @@ export interface GameTimerSettings {
 
 export interface FormatsData extends EventMethods {
 	name: string;
+
 	banlist?: string[];
 	battle?: ModdedBattleScriptsData;
 	pokemon?: ModdedBattlePokemon;
@@ -1231,9 +1235,7 @@ export interface FormatsData extends EventMethods {
 	column?: number;
 }
 
-export interface ModdedFormatsData extends Partial<FormatsData> {
-	inherit?: boolean;
-}
+export type ModdedFormatsData = FormatsData | Omit<FormatsData, 'name'> & {inherit: true};
 
 export interface Format extends Readonly<BasicEffect & FormatsData> {
 	readonly effectType: 'Format' | 'Ruleset' | 'Rule' | 'ValidatorRule';
@@ -1335,7 +1337,8 @@ export interface ModdedBattleSide {
 }
 
 export interface ModdedBattlePokemon {
-	inherit?: boolean;
+	/** TODO: remove, completely meaningless */
+	inherit?: true;
 	boostBy?: (this: Pokemon, boost: SparseBoostsTable) => boolean | number;
 	calculateStat?: (this: Pokemon, statName: StatNameExceptHP, boost: number, modifier?: number) => number;
 	getAbility?: (this: Pokemon) => Ability;
@@ -1409,9 +1412,7 @@ export interface TypeData {
 	HPivs?: SparseStatsTable;
 }
 
-export interface ModdedTypeData extends Partial<TypeData> {
-	inherit?: boolean;
-}
+export type ModdedTypeData = TypeData | Partial<Omit<TypeData, 'name'>> & {inherit: true};
 
 export interface TypeInfo extends Readonly<TypeData> {
 	readonly effectType: 'Type' | 'EffectType';

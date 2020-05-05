@@ -72,7 +72,7 @@ export class BasicEffect<NameT extends string = string> implements T.BasicEffect
     data = combine(this, data, ...moreData);
 
     this.name = getString(data.name).trim() as NameT;
-    this.id = data.id as ID || toID(this.name); // Hidden Power hack
+    this.id = data.realMove ? toID(data.realMove) : toID(this.name); // Hidden Power hack
     this.fullname = getString(data.fullname) || this.name;
     this.effectType = getString(data.effectType) as T.EffectType || 'Effect';
     this.kind = 'Effect';
@@ -218,11 +218,15 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly noPPBoosts?: boolean;
 
   readonly isZ: boolean | ID;
-  readonly zMovePower?: number;
-  readonly zMoveEffect?: ID;
-  readonly zMoveBoost?: Partial<BoostsTable>;
-  readonly isMax?: T.SpeciesName;
-  readonly gmaxPower?: number;
+  readonly zMove?: {
+    basePower?: number;
+    effect?: ID;
+    boost?: Partial<BoostsTable>;
+  };
+  readonly isMax: boolean | T.SpeciesName;
+  readonly maxMove?: {
+    basePower: number;
+  };
 
   readonly ohko?: boolean | TypeName;
   readonly thawsTarget?: boolean;
@@ -275,7 +279,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly hasCrashDamage?: boolean;
   readonly isConfusionSelfHit?: boolean;
   readonly isFutureMove?: boolean;
-  readonly noMetronome?: ID[];
+  readonly noMetronome?: T.MoveName[];
   readonly noSketch?: boolean;
   readonly stallingMove?: boolean;
 
@@ -293,13 +297,14 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
     this.secondary = data.secondary || null;
     this.secondaries = data.secondaries && data.secondaries.length
       ? data.secondaries : this.secondary
-      ? [this.secondary] :
-      null;
+        ? [this.secondary]
+        : null;
     this.priority = Number(data.priority) || 0;
     this.ignoreImmunity =
       (data.ignoreImmunity !== undefined ? data.ignoreImmunity : data.category === 'Status');
     this.pp = Number(data.pp!);
     this.isZ = data.isZ || false;
+    this.isMax = data.isMax || false;
     this.flags = data.flags || {};
     this.selfSwitch =
       (typeof data.selfSwitch === 'string'
@@ -312,68 +317,72 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
     this.volatileStatus =
       typeof data.volatileStatus === 'string' ? (data.volatileStatus as ID) : undefined;
 
-    if (this.category !== 'Status' && !this.gmaxPower) {
-      if (!this.basePower) {
-        this.gmaxPower = 100;
+    if (this.category !== 'Status' && !this.maxMove && this.id !== 'struggle') {
+      this.maxMove = {basePower: 1};
+      if (this.isMax || this.isZ) {
+        // already initialized to 1
+      } else if (!this.basePower) {
+        this.maxMove.basePower = 100;
       } else if (['Fighting', 'Poison'].includes(this.type)) {
         if (this.basePower >= 150) {
-          this.gmaxPower = 100;
+          this.maxMove.basePower = 100;
         } else if (this.basePower >= 110) {
-          this.gmaxPower = 95;
+          this.maxMove.basePower = 95;
         } else if (this.basePower >= 75) {
-          this.gmaxPower = 90;
+          this.maxMove.basePower = 90;
         } else if (this.basePower >= 65) {
-          this.gmaxPower = 85;
+          this.maxMove.basePower = 85;
         } else if (this.basePower >= 55) {
-          this.gmaxPower = 80;
+          this.maxMove.basePower = 80;
         } else if (this.basePower >= 45) {
-          this.gmaxPower = 75;
+          this.maxMove.basePower = 75;
         } else {
-          this.gmaxPower = 70;
+          this.maxMove.basePower = 70;
         }
       } else {
         if (this.basePower >= 150) {
-          this.gmaxPower = 150;
+          this.maxMove.basePower = 150;
         } else if (this.basePower >= 110) {
-          this.gmaxPower = 140;
+          this.maxMove.basePower = 140;
         } else if (this.basePower >= 75) {
-          this.gmaxPower = 130;
+          this.maxMove.basePower = 130;
         } else if (this.basePower >= 65) {
-          this.gmaxPower = 120;
+          this.maxMove.basePower = 120;
         } else if (this.basePower >= 55) {
-          this.gmaxPower = 110;
+          this.maxMove.basePower = 110;
         } else if (this.basePower >= 45) {
-          this.gmaxPower = 100;
+          this.maxMove.basePower = 100;
         } else {
-          this.gmaxPower = 90;
+          this.maxMove.basePower = 90;
         }
       }
     }
-    if (this.category !== 'Status' && !this.zMovePower) {
+    if (this.category !== 'Status' && !this.zMove && !this.isZ && !this.isMax) {
       let basePower = this.basePower;
+      this.zMove = {};
       if (Array.isArray(this.multihit)) basePower *= 3;
       if (!basePower) {
-        this.zMovePower = 100;
+        this.zMove.basePower = 100;
       } else if (basePower >= 140) {
-        this.zMovePower = 200;
+        this.zMove.basePower = 200;
       } else if (basePower >= 130) {
-        this.zMovePower = 195;
+        this.zMove.basePower = 195;
       } else if (basePower >= 120) {
-        this.zMovePower = 190;
+        this.zMove.basePower = 190;
       } else if (basePower >= 110) {
-        this.zMovePower = 185;
+        this.zMove.basePower = 185;
       } else if (basePower >= 100) {
-        this.zMovePower = 180;
+        this.zMove.basePower = 180;
       } else if (basePower >= 90) {
-        this.zMovePower = 175;
+        this.zMove.basePower = 175;
       } else if (basePower >= 80) {
-        this.zMovePower = 160;
+        this.zMove.basePower = 160;
       } else if (basePower >= 70) {
-        this.zMovePower = 140;
+        this.zMove.basePower = 140;
       } else if (basePower >= 60) {
-        this.zMovePower = 120;
+        this.zMove.basePower = 120;
       } else {
-        this.zMovePower = 100;
+        this.zMove.basePower = 100;
       }
     }
     if (!this.gen) {
@@ -812,14 +821,6 @@ export class ModdedDex implements T.Dex {
     }
     if (species.exists) this.cache.Species[id] = species;
     return species;
-  }
-
-  getOutOfBattleSpecies(species: Species) {
-    return !species.battleOnly
-      ? species.name
-      : species.changesFrom
-        ? this.getSpecies(species.changesFrom).name
-        : species.baseSpecies;
   }
 
   hasAbility(species: Species, ability: string) {
