@@ -634,6 +634,11 @@ const DATA = {
   FormatsData: FormatsDataJSON as Data<FormatsData>,
 };
 
+const HP_TYPES = [
+  'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel',
+  'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark',
+];
+
 const GEN_IDS = ['gen1', 'gen2', 'gen3', 'gen4', 'gen5', 'gen6', 'gen7', 'gen8'] as const;
 type GenID = typeof GEN_IDS[number];
 const CURRENT_GEN_ID: GenID = GEN_IDS[7];
@@ -1094,10 +1099,6 @@ export class ModdedDex implements T.Dex {
   }
 
   getHiddenPower(ivs: StatsTable) {
-    const hpTypes = [
-      'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel',
-      'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark',
-    ];
     const tr = (num: number, bits = 0) => {
       if (bits) return (num >>> 0) % (2 ** bits);
       return num >>> 0;
@@ -1110,7 +1111,7 @@ export class ModdedDex implements T.Dex {
       const speDV = tr(ivs.spe / 2);
       const spcDV = tr(ivs.spa / 2);
       return {
-        type: hpTypes[4 * (atkDV % 4) + (defDV % 4)] as TypeName,
+        type: HP_TYPES[4 * (atkDV % 4) + (defDV % 4)] as TypeName,
         power: tr(
           (5 * ((spcDV >> 3) +
             (2 * (speDV >> 3)) +
@@ -1130,7 +1131,7 @@ export class ModdedDex implements T.Dex {
         i *= 2;
       }
       return {
-        type: hpTypes[tr(hpTypeX * 15 / 63)] as TypeName,
+        type: HP_TYPES[tr(hpTypeX * 15 / 63)] as TypeName,
         // After Gen 6, Hidden Power is always 60 base power
         power: (this.gen && this.gen < 6) ? tr(hpPowerX * 40 / 63) + 30 : 60,
       };
