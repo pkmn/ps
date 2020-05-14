@@ -16,7 +16,6 @@ This is the top level of @pkmn's Pokémon Showdown components:
 - [`@pkmn/img`][18]: logic for displaying [Pokémon Showdown's sprite/icon resources][20]
 - [`@pkmn/view`][10]: a library for building Pokémon Showdown client UIs
 - [`@pkmn/login`][11]: logic for authenticating with Pokémon Showdown
-- [`@pkmn/calc`][12]: adapter for using [`@pkmn/dex`][19] or [`@pkmn/sim`][2] with [`@smogon/calc`][13]
 
 Everything in this repository is distributed under the terms of the [MIT License][15]. For some
 packages, substantial amounts of the code have been either derived or generated from the portions of
@@ -35,8 +34,6 @@ under the [MIT License][16].
   [9]: https://github.com/smogon/pokemon-showdown-client
   [10]: https://github.com/pkmn/ps/blob/master/view
   [11]: https://github.com/pkmn/ps/blob/master/login
-  [12]: https://github.com/pkmn/ps/blob/master/calc
-  [13]: https://github.com/smogon/damage-calc/blob/master/calc
   [14]: https://github.com/pkmn/ps/blob/master/sets
   [15]: https://github.com/pkmn/ps/blob/master/LICENSE
   [16]: https://github.com/smogon/pokemon-showdown/blob/master/LICENSE

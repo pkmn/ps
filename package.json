@@ -47,7 +47,6 @@
     "client",
     "dex/types",
     "dex",
-    "calc",
     "data",
     "img",
     "view"
