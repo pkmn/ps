@@ -913,16 +913,13 @@ interface MoveData extends EffectData, MoveEventMethods, HitEffect {
 
 	damage?: number | 'level' | false | null;
 	contestType?: string;
-	isViable?: boolean;
 	noPPBoosts?: boolean;
 
 	// Z-move data
 	// -----------
 	/**
-	 * `true` for generic Z-moves like Gigavolt Havoc.
-	 * Also `true` for Z-powered status moves like Z-Encore.
-	 * Move ID of the base move, for specific Z-moves like Stoked
-	 * Sparksurfer.
+	 * ID of the Z-Crystal that calls the move.
+	 * `true` for Z-Powered status moves like Z-Encore.
 	 */
 	isZ?: boolean | string;
 	zMove?: {
@@ -1118,6 +1115,7 @@ interface SpeciesData {
 	maxHP?: number;
 	cosmeticFormes?: string[];
 	otherFormes?: string[];
+	formeOrder?: string[];
 	prevo?: string;
 	gen?: number;
 	requiredAbility?: string;

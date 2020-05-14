@@ -10,6 +10,7 @@ import {
   MoveTarget,
   NatureName,
   Nonstandard,
+  StatName,
   StatsTable,
   StatusName,
   TypeName,
@@ -234,6 +235,7 @@ export interface SpeciesData {
   maxHP?: number;
   cosmeticFormes?: string[];
   otherFormes?: string[];
+  formeOrder?: string[];
   prevo?: string;
   gen?: GenerationNum;
   requiredAbility?: string;
@@ -283,8 +285,8 @@ export interface TypeData {
 
 export interface NatureData {
   name: NatureName;
-  plus?: keyof StatsTable;
-  minus?: keyof StatsTable;
+  plus?: Exclude<StatName, 'hp'>;
+  minus?: Exclude<StatName, 'hp'>;
 }
 
 interface AnyObject { [k: string]: any }
@@ -367,6 +369,7 @@ export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData
   readonly evoMove?: MoveName;
   readonly cosmeticFormes?: SpeciesName[];
   readonly otherFormes?: SpeciesName[];
+  readonly formeOrder?: SpeciesName[];
   readonly genderRatio: { M: number; F: number };
   readonly weighthg: number;
   readonly heightm: number;

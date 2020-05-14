@@ -7,21 +7,15 @@
   "repository": "github:pkmn/ps",
   "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@pkmn/types": "^0.1.0",
     "@smogon/calc": "^0.3.0"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.0.1",
-    "@pkmn/eslint-config": "^0.2.3",
-    "@types/jest": "^25.2.1",
-    "@typescript-eslint/eslint-plugin": "^2.31.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jest": "^23.9.0",
-    "jest": "^26.0.1",
-    "ts-jest": "^25.4.0",
-    "typescript": "^3.8.3"
+    "@pkmn/dex": "^0.0.1"
   },
   "scripts": {
     "lint": "eslint --cache src/**/*.ts",

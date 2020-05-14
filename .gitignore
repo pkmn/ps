@@ -2,8 +2,8 @@ node_modules/
 build/
 .DS_Store
 Thumbs.db
-package-lock.json
+*package-lock.json
 .eslintcache
 .tsbuildinfo
 .vscode
-pnpm-debug.log
+*-debug.log

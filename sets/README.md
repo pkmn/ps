@@ -62,8 +62,8 @@ const set = Sets.unpack(
 The recommended way of using `@pkmn/data` in a web browser is to **configure your bundler**
 ([Webpack][6], [Rollup][7], [Parcel][8], etc) to minimize it and package it with the rest of your
 application. If you do not use a bundler, a convenience `production.min.js` is included in the
-package. You simply need to depend on `./node_modules/@pkmn/sets/production.min.js` in a `script`
-tag (which is what the unpkg shortcut above is doing), after which **`PokemonSets` and
+package. You simply need to depend on `./node_modules/@pkmn/sets/build/production.min.js` in a
+`script` tag (which is what the unpkg shortcut above is doing), after which **`PokemonSets` and
 `PokemonTeams` will be accessible as globals.**
 
 ## License

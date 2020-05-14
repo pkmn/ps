@@ -281,6 +281,23 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(counts(8)).toEqual({species: 435, formes});
       });
 
+      test('formeNum', () => {
+        for (const gen of gens) {
+          for (const species of gen.species) {
+            expect(species.formeNum).toBeGreaterThanOrEqual(0);
+          }
+        }
+        expect(Gen(1).species.get('Pikachu')!.formeNum).toBe(0);
+        expect(Gen(6).species.get('Pikachu-Libre')!.formeNum).toBe(5);
+        expect(Gen(7).species.get('Pikachu-Kalos')!.formeNum).toBe(5);
+        expect(Gen(6).species.get('Vivillon')!.formeNum).toBe(6);
+        expect(Gen(6).species.get('Vivillon-Meadow')!.formeNum).toBe(6);
+        expect(Gen(6).species.get('Vivillon-Icy-Snow')!.formeNum).toBe(0);
+        expect(Gen(7).species.get('Minior-Meteor')!.formeNum).toBe(0);
+        expect(Gen(7).species.get('Minior')!.formeNum).toBe(7);
+        expect(Gen(7).species.get('Minior-Violet')!.formeNum).toBe(13);
+      });
+
       test('fields', () => {
         expect(Gen(7).species.get('Clefable')!.types).toEqual(['Fairy']);
         expect(Gen(3).species.get('Clefable')!.types).toEqual(['Normal']);

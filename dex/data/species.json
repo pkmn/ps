@@ -2129,6 +2129,18 @@
         "spe": 80
       }
     },
+    "pikachu": {
+      "inherit": true,
+      "formeOrder": [
+        "Pikachu",
+        "Pikachu-Rock-Star",
+        "Pikachu-Belle",
+        "Pikachu-Pop-Star",
+        "Pikachu-PhD",
+        "Pikachu-Libre",
+        "Pikachu-Cosplay"
+      ]
+    },
     "dugtrio": {
       "inherit": true,
       "baseStats": {
@@ -2693,7 +2705,8 @@
       "prevo": "Ivysaur",
       "evoLevel": 32,
       "eggGroups": ["Monster", "Grass"],
-      "otherFormes": ["Venusaur-Mega"]
+      "otherFormes": ["Venusaur-Mega"],
+      "formeOrder": ["Venusaur", "Venusaur-Mega"]
     },
     "venusaurmega": {
       "num": 3,
@@ -2771,7 +2784,13 @@
       "prevo": "Charmeleon",
       "evoLevel": 36,
       "eggGroups": ["Monster", "Dragon"],
-      "otherFormes": ["Charizard-Mega-X", "Charizard-Mega-Y", "Charizard-Gmax"]
+      "otherFormes": ["Charizard-Mega-X", "Charizard-Mega-Y", "Charizard-Gmax"],
+      "formeOrder": [
+        "Charizard",
+        "Charizard-Mega-X",
+        "Charizard-Mega-Y",
+        "Charizard-Gmax"
+      ]
     },
     "charizardmegax": {
       "num": 6,
@@ -2889,7 +2908,8 @@
       "prevo": "Wartortle",
       "evoLevel": 36,
       "eggGroups": ["Monster", "Water 1"],
-      "otherFormes": ["Blastoise-Mega"]
+      "otherFormes": ["Blastoise-Mega"],
+      "formeOrder": ["Blastoise", "Blastoise-Mega"]
     },
     "blastoisemega": {
       "num": 9,
@@ -2964,7 +2984,8 @@
       "prevo": "Metapod",
       "evoLevel": 10,
       "eggGroups": ["Bug"],
-      "otherFormes": ["Butterfree-Gmax"]
+      "otherFormes": ["Butterfree-Gmax"],
+      "formeOrder": ["Butterfree", "Butterfree-Gmax"]
     },
     "butterfreegmax": {
       "num": 12,
@@ -3038,7 +3059,8 @@
       "prevo": "Kakuna",
       "evoLevel": 10,
       "eggGroups": ["Bug"],
-      "otherFormes": ["Beedrill-Mega"]
+      "otherFormes": ["Beedrill-Mega"],
+      "formeOrder": ["Beedrill", "Beedrill-Mega"]
     },
     "beedrillmega": {
       "num": 15,
@@ -3112,7 +3134,8 @@
       "prevo": "Pidgeotto",
       "evoLevel": 36,
       "eggGroups": ["Flying"],
-      "otherFormes": ["Pidgeot-Mega"]
+      "otherFormes": ["Pidgeot-Mega"],
+      "formeOrder": ["Pidgeot", "Pidgeot-Mega"]
     },
     "pidgeotmega": {
       "num": 18,
@@ -3149,7 +3172,8 @@
       "weightkg": 3.5,
       "evos": ["Raticate"],
       "eggGroups": ["Field"],
-      "otherFormes": ["Rattata-Alola"]
+      "otherFormes": ["Rattata-Alola"],
+      "formeOrder": ["Rattata", "Rattata-Alola"]
     },
     "rattataalola": {
       "num": 19,
@@ -3187,7 +3211,8 @@
       "prevo": "Rattata",
       "evoLevel": 20,
       "eggGroups": ["Field"],
-      "otherFormes": ["Raticate-Alola", "Raticate-Alola-Totem"]
+      "otherFormes": ["Raticate-Alola", "Raticate-Alola-Totem"],
+      "formeOrder": ["Raticate", "Raticate-Alola", "Raticate-Alola-Totem"]
     },
     "raticatealola": {
       "num": 20,
@@ -3330,6 +3355,24 @@
         "Pikachu-Alola",
         "Pikachu-Partner",
         "Pikachu-Starter",
+        "Pikachu-Gmax"
+      ],
+      "formeOrder": [
+        "Pikachu",
+        "Pikachu-Original",
+        "Pikachu-Hoenn",
+        "Pikachu-Sinnoh",
+        "Pikachu-Unova",
+        "Pikachu-Kalos",
+        "Pikachu-Alola",
+        "Pikachu-Partner",
+        "Pikachu-Starter",
+        "Pikachu-Rock-Star",
+        "Pikachu-Belle",
+        "Pikachu-Pop-Star",
+        "Pikachu-PhD",
+        "Pikachu-Libre",
+        "Pikachu-Cosplay",
         "Pikachu-Gmax"
       ]
     },
@@ -3653,7 +3696,8 @@
       "evoType": "useItem",
       "evoItem": "Thunder Stone",
       "eggGroups": ["Field", "Fairy"],
-      "otherFormes": ["Raichu-Alola"]
+      "otherFormes": ["Raichu-Alola"],
+      "formeOrder": ["Raichu", "Raichu-Alola"]
     },
     "raichualola": {
       "num": 26,
@@ -3692,7 +3736,8 @@
       "weightkg": 12,
       "evos": ["Sandslash"],
       "eggGroups": ["Field"],
-      "otherFormes": ["Sandshrew-Alola"]
+      "otherFormes": ["Sandshrew-Alola"],
+      "formeOrder": ["Sandshrew", "Sandshrew-Alola"]
     },
     "sandshrewalola": {
       "num": 27,
@@ -3730,7 +3775,8 @@
       "prevo": "Sandshrew",
       "evoLevel": 22,
       "eggGroups": ["Field"],
-      "otherFormes": ["Sandslash-Alola"]
+      "otherFormes": ["Sandslash-Alola"],
+      "formeOrder": ["Sandslash", "Sandslash-Alola"]
     },
     "sandslashalola": {
       "num": 28,
@@ -3926,7 +3972,8 @@
       "weightkg": 9.9,
       "evos": ["Ninetales"],
       "eggGroups": ["Field"],
-      "otherFormes": ["Vulpix-Alola"]
+      "otherFormes": ["Vulpix-Alola"],
+      "formeOrder": ["Vulpix", "Vulpix-Alola"]
     },
     "vulpixalola": {
       "num": 37,
@@ -3967,7 +4014,8 @@
       "evoType": "useItem",
       "evoItem": "Fire Stone",
       "eggGroups": ["Field"],
-      "otherFormes": ["Ninetales-Alola"]
+      "otherFormes": ["Ninetales-Alola"],
+      "formeOrder": ["Ninetales", "Ninetales-Alola"]
     },
     "ninetalesalola": {
       "num": 38,
@@ -4208,7 +4256,8 @@
       "weightkg": 0.8,
       "evos": ["Dugtrio"],
       "eggGroups": ["Field"],
-      "otherFormes": ["Diglett-Alola"]
+      "otherFormes": ["Diglett-Alola"],
+      "formeOrder": ["Diglett", "Diglett-Alola"]
     },
     "diglettalola": {
       "num": 50,
@@ -4246,7 +4295,8 @@
       "prevo": "Diglett",
       "evoLevel": 26,
       "eggGroups": ["Field"],
-      "otherFormes": ["Dugtrio-Alola"]
+      "otherFormes": ["Dugtrio-Alola"],
+      "formeOrder": ["Dugtrio", "Dugtrio-Alola"]
     },
     "dugtrioalola": {
       "num": 51,
@@ -4284,7 +4334,8 @@
       "weightkg": 4.2,
       "evos": ["Persian"],
       "eggGroups": ["Field"],
-      "otherFormes": ["Meowth-Alola", "Meowth-Galar", "Meowth-Gmax"]
+      "otherFormes": ["Meowth-Alola", "Meowth-Galar", "Meowth-Gmax"],
+      "formeOrder": ["Meowth", "Meowth-Alola", "Meowth-Galar", "Meowth-Gmax"]
     },
     "meowthalola": {
       "num": 52,
@@ -4360,7 +4411,8 @@
       "prevo": "Meowth",
       "evoLevel": 28,
       "eggGroups": ["Field"],
-      "otherFormes": ["Persian-Alola"]
+      "otherFormes": ["Persian-Alola"],
+      "formeOrder": ["Persian", "Persian-Alola"]
     },
     "persianalola": {
       "num": 53,
@@ -4601,7 +4653,8 @@
       "prevo": "Kadabra",
       "evoType": "trade",
       "eggGroups": ["Human-Like"],
-      "otherFormes": ["Alakazam-Mega"]
+      "otherFormes": ["Alakazam-Mega"],
+      "formeOrder": ["Alakazam", "Alakazam-Mega"]
     },
     "alakazammega": {
       "num": 65,
@@ -4679,7 +4732,8 @@
       "prevo": "Machoke",
       "evoType": "trade",
       "eggGroups": ["Human-Like"],
-      "otherFormes": ["Machamp-Gmax"]
+      "otherFormes": ["Machamp-Gmax"],
+      "formeOrder": ["Machamp", "Machamp-Gmax"]
     },
     "machampgmax": {
       "num": 68,
@@ -4807,7 +4861,8 @@
       "weightkg": 20,
       "evos": ["Graveler"],
       "eggGroups": ["Mineral"],
-      "otherFormes": ["Geodude-Alola"]
+      "otherFormes": ["Geodude-Alola"],
+      "formeOrder": ["Geodude", "Geodude-Alola"]
     },
     "geodudealola": {
       "num": 74,
@@ -4846,7 +4901,8 @@
       "evoLevel": 25,
       "evos": ["Golem"],
       "eggGroups": ["Mineral"],
-      "otherFormes": ["Graveler-Alola"]
+      "otherFormes": ["Graveler-Alola"],
+      "formeOrder": ["Graveler", "Graveler-Alola"]
     },
     "graveleralola": {
       "num": 75,
@@ -4886,7 +4942,8 @@
       "prevo": "Graveler",
       "evoType": "trade",
       "eggGroups": ["Mineral"],
-      "otherFormes": ["Golem-Alola"]
+      "otherFormes": ["Golem-Alola"],
+      "formeOrder": ["Golem", "Golem-Alola"]
     },
     "golemalola": {
       "num": 76,
@@ -4924,7 +4981,8 @@
       "weightkg": 30,
       "evos": ["Rapidash"],
       "eggGroups": ["Field"],
-      "otherFormes": ["Ponyta-Galar"]
+      "otherFormes": ["Ponyta-Galar"],
+      "formeOrder": ["Ponyta", "Ponyta-Galar"]
     },
     "ponytagalar": {
       "num": 77,
@@ -4962,7 +5020,8 @@
       "prevo": "Ponyta",
       "evoLevel": 40,
       "eggGroups": ["Field"],
-      "otherFormes": ["Rapidash-Galar"]
+      "otherFormes": ["Rapidash-Galar"],
+      "formeOrder": ["Rapidash", "Rapidash-Galar"]
     },
     "rapidashgalar": {
       "num": 78,
@@ -5000,7 +5059,8 @@
       "weightkg": 36,
       "evos": ["Slowbro", "Slowking"],
       "eggGroups": ["Monster", "Water 1"],
-      "otherFormes": ["Slowpoke-Galar"]
+      "otherFormes": ["Slowpoke-Galar"],
+      "formeOrder": ["Slowpoke", "Slowpoke-Galar"]
     },
     "slowpokegalar": {
       "num": 79,
@@ -5037,7 +5097,8 @@
       "prevo": "Slowpoke",
       "evoLevel": 37,
       "eggGroups": ["Monster", "Water 1"],
-      "otherFormes": ["Slowbro-Mega"]
+      "otherFormes": ["Slowbro-Mega"],
+      "formeOrder": ["Slowbro", "Slowbro-Mega"]
     },
     "slowbromega": {
       "num": 80,
@@ -5111,7 +5172,8 @@
       "abilities": {"0": "Keen Eye", "1": "Inner Focus", "H": "Defiant"},
       "weightkg": 15,
       "eggGroups": ["Flying", "Field"],
-      "otherFormes": ["Farfetch'd-Galar"]
+      "otherFormes": ["Farfetch'd-Galar"],
+      "formeOrder": ["Farfetch'd", "Farfetch'd-Galar"]
     },
     "farfetchdgalar": {
       "num": 83,
@@ -5218,7 +5280,8 @@
       "weightkg": 30,
       "evos": ["Muk"],
       "eggGroups": ["Amorphous"],
-      "otherFormes": ["Grimer-Alola"]
+      "otherFormes": ["Grimer-Alola"],
+      "formeOrder": ["Grimer", "Grimer-Alola"]
     },
     "grimeralola": {
       "num": 88,
@@ -5260,7 +5323,8 @@
       "prevo": "Grimer",
       "evoLevel": 38,
       "eggGroups": ["Amorphous"],
-      "otherFormes": ["Muk-Alola"]
+      "otherFormes": ["Muk-Alola"],
+      "formeOrder": ["Muk", "Muk-Alola"]
     },
     "mukalola": {
       "num": 89,
@@ -5375,7 +5439,8 @@
       "prevo": "Haunter",
       "evoType": "trade",
       "eggGroups": ["Amorphous"],
-      "otherFormes": ["Gengar-Mega", "Gengar-Gmax"]
+      "otherFormes": ["Gengar-Mega", "Gengar-Gmax"],
+      "formeOrder": ["Gengar", "Gengar-Mega", "Gengar-Gmax"]
     },
     "gengarmega": {
       "num": 94,
@@ -5509,7 +5574,8 @@
       "prevo": "Krabby",
       "evoLevel": 28,
       "eggGroups": ["Water 3"],
-      "otherFormes": ["Kingler-Gmax"]
+      "otherFormes": ["Kingler-Gmax"],
+      "formeOrder": ["Kingler", "Kingler-Gmax"]
     },
     "kinglergmax": {
       "num": 99,
@@ -5606,7 +5672,8 @@
       "evoType": "useItem",
       "evoItem": "Leaf Stone",
       "eggGroups": ["Grass"],
-      "otherFormes": ["Exeggutor-Alola"]
+      "otherFormes": ["Exeggutor-Alola"],
+      "formeOrder": ["Exeggutor", "Exeggutor-Alola"]
     },
     "exeggutoralola": {
       "num": 103,
@@ -5671,7 +5738,8 @@
       "prevo": "Cubone",
       "evoLevel": 28,
       "eggGroups": ["Monster"],
-      "otherFormes": ["Marowak-Alola", "Marowak-Alola-Totem"]
+      "otherFormes": ["Marowak-Alola", "Marowak-Alola-Totem"],
+      "formeOrder": ["Marowak", "Marowak-Alola", "Marowak-Alola-Totem"]
     },
     "marowakalola": {
       "num": 105,
@@ -5800,7 +5868,8 @@
       "prevo": "Koffing",
       "evoLevel": 35,
       "eggGroups": ["Amorphous"],
-      "otherFormes": ["Weezing-Galar"]
+      "otherFormes": ["Weezing-Galar"],
+      "formeOrder": ["Weezing", "Weezing-Galar"]
     },
     "weezinggalar": {
       "num": 110,
@@ -5918,7 +5987,8 @@
       "abilities": {"0": "Early Bird", "1": "Scrappy", "H": "Inner Focus"},
       "weightkg": 80,
       "eggGroups": ["Monster"],
-      "otherFormes": ["Kangaskhan-Mega"]
+      "otherFormes": ["Kangaskhan-Mega"],
+      "formeOrder": ["Kangaskhan", "Kangaskhan-Mega"]
     },
     "kangaskhanmega": {
       "num": 115,
@@ -6068,7 +6138,8 @@
       "evoMove": "Mimic",
       "eggGroups": ["Human-Like"],
       "canHatch": true,
-      "otherFormes": ["Mr. Mime-Galar"]
+      "otherFormes": ["Mr. Mime-Galar"],
+      "formeOrder": ["Mr. Mime", "Mr. Mime-Galar"]
     },
     "mrmimegalar": {
       "num": 122,
@@ -6188,7 +6259,8 @@
       "abilities": {"0": "Hyper Cutter", "1": "Mold Breaker", "H": "Moxie"},
       "weightkg": 55,
       "eggGroups": ["Bug"],
-      "otherFormes": ["Pinsir-Mega"]
+      "otherFormes": ["Pinsir-Mega"],
+      "formeOrder": ["Pinsir", "Pinsir-Mega"]
     },
     "pinsirmega": {
       "num": 127,
@@ -6260,7 +6332,8 @@
       "prevo": "Magikarp",
       "evoLevel": 20,
       "eggGroups": ["Water 2", "Dragon"],
-      "otherFormes": ["Gyarados-Mega"]
+      "otherFormes": ["Gyarados-Mega"],
+      "formeOrder": ["Gyarados", "Gyarados-Mega"]
     },
     "gyaradosmega": {
       "num": 130,
@@ -6296,7 +6369,8 @@
       "abilities": {"0": "Water Absorb", "1": "Shell Armor", "H": "Hydration"},
       "weightkg": 220,
       "eggGroups": ["Monster", "Water 1"],
-      "otherFormes": ["Lapras-Gmax"]
+      "otherFormes": ["Lapras-Gmax"],
+      "formeOrder": ["Lapras", "Lapras-Gmax"]
     },
     "laprasgmax": {
       "num": 131,
@@ -6360,7 +6434,8 @@
         "Sylveon"
       ],
       "eggGroups": ["Field"],
-      "otherFormes": ["Eevee-Starter", "Eevee-Gmax"]
+      "otherFormes": ["Eevee-Starter", "Eevee-Gmax"],
+      "formeOrder": ["Eevee", "Eevee-Starter", "Eevee-Gmax"]
     },
     "eeveestarter": {
       "num": 133,
@@ -6569,7 +6644,8 @@
       "abilities": {"0": "Rock Head", "1": "Pressure", "H": "Unnerve"},
       "weightkg": 59,
       "eggGroups": ["Flying"],
-      "otherFormes": ["Aerodactyl-Mega"]
+      "otherFormes": ["Aerodactyl-Mega"],
+      "formeOrder": ["Aerodactyl", "Aerodactyl-Mega"]
     },
     "aerodactylmega": {
       "num": 142,
@@ -6610,7 +6686,8 @@
       "evoType": "levelFriendship",
       "eggGroups": ["Monster"],
       "canHatch": true,
-      "otherFormes": ["Snorlax-Gmax"]
+      "otherFormes": ["Snorlax-Gmax"],
+      "formeOrder": ["Snorlax", "Snorlax-Gmax"]
     },
     "snorlaxgmax": {
       "num": 143,
@@ -6753,7 +6830,8 @@
       "abilities": {"0": "Pressure", "H": "Unnerve"},
       "weightkg": 122,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Mewtwo-Mega-X", "Mewtwo-Mega-Y"]
+      "otherFormes": ["Mewtwo-Mega-X", "Mewtwo-Mega-Y"],
+      "formeOrder": ["Mewtwo", "Mewtwo-Mega-X", "Mewtwo-Mega-Y"]
     },
     "mewtwomegax": {
       "num": 150,
@@ -7193,7 +7271,8 @@
       "evos": ["Pikachu"],
       "eggGroups": ["Undiscovered"],
       "canHatch": true,
-      "otherFormes": ["Pichu-Spiky-eared"]
+      "otherFormes": ["Pichu-Spiky-eared"],
+      "formeOrder": ["Pichu", "Pichu-Spiky-eared"]
     },
     "pichuspikyeared": {
       "num": 172,
@@ -7379,7 +7458,8 @@
       "prevo": "Flaaffy",
       "evoLevel": 30,
       "eggGroups": ["Monster", "Field"],
-      "otherFormes": ["Ampharos-Mega"]
+      "otherFormes": ["Ampharos-Mega"],
+      "formeOrder": ["Ampharos", "Ampharos-Mega"]
     },
     "ampharosmega": {
       "num": 181,
@@ -7793,6 +7873,36 @@
         "Unown-Z",
         "Unown-Exclamation",
         "Unown-Question"
+      ],
+      "formeOrder": [
+        "Unown",
+        "Unown-B",
+        "Unown-C",
+        "Unown-D",
+        "Unown-E",
+        "Unown-F",
+        "Unown-G",
+        "Unown-H",
+        "Unown-I",
+        "Unown-J",
+        "Unown-K",
+        "Unown-L",
+        "Unown-M",
+        "Unown-N",
+        "Unown-O",
+        "Unown-P",
+        "Unown-Q",
+        "Unown-R",
+        "Unown-S",
+        "Unown-T",
+        "Unown-U",
+        "Unown-V",
+        "Unown-W",
+        "Unown-X",
+        "Unown-Y",
+        "Unown-Z",
+        "Unown-Exclamation",
+        "Unown-Question"
       ]
     },
     "wobbuffet": {
@@ -7915,7 +8025,8 @@
       "evoType": "trade",
       "evoItem": "Metal Coat",
       "eggGroups": ["Mineral"],
-      "otherFormes": ["Steelix-Mega"]
+      "otherFormes": ["Steelix-Mega"],
+      "formeOrder": ["Steelix", "Steelix-Mega"]
     },
     "steelixmega": {
       "num": 208,
@@ -8007,7 +8118,8 @@
       "evoType": "trade",
       "evoItem": "Metal Coat",
       "eggGroups": ["Bug"],
-      "otherFormes": ["Scizor-Mega"]
+      "otherFormes": ["Scizor-Mega"],
+      "formeOrder": ["Scizor", "Scizor-Mega"]
     },
     "scizormega": {
       "num": 212,
@@ -8059,7 +8171,8 @@
       "abilities": {"0": "Swarm", "1": "Guts", "H": "Moxie"},
       "weightkg": 54,
       "eggGroups": ["Bug"],
-      "otherFormes": ["Heracross-Mega"]
+      "otherFormes": ["Heracross-Mega"],
+      "formeOrder": ["Heracross", "Heracross-Mega"]
     },
     "heracrossmega": {
       "num": 214,
@@ -8219,7 +8332,8 @@
       "abilities": {"0": "Hustle", "1": "Natural Cure", "H": "Regenerator"},
       "weightkg": 5,
       "eggGroups": ["Water 1", "Water 3"],
-      "otherFormes": ["Corsola-Galar"]
+      "otherFormes": ["Corsola-Galar"],
+      "formeOrder": ["Corsola", "Corsola-Galar"]
     },
     "corsolagalar": {
       "num": 222,
@@ -8362,7 +8476,8 @@
       "prevo": "Houndour",
       "evoLevel": 24,
       "eggGroups": ["Field"],
-      "otherFormes": ["Houndoom-Mega"]
+      "otherFormes": ["Houndoom-Mega"],
+      "formeOrder": ["Houndoom", "Houndoom-Mega"]
     },
     "houndoommega": {
       "num": 229,
@@ -8725,7 +8840,8 @@
       "prevo": "Pupitar",
       "evoLevel": 55,
       "eggGroups": ["Monster"],
-      "otherFormes": ["Tyranitar-Mega"]
+      "otherFormes": ["Tyranitar-Mega"],
+      "formeOrder": ["Tyranitar", "Tyranitar-Mega"]
     },
     "tyranitarmega": {
       "num": 248,
@@ -8853,7 +8969,8 @@
       "prevo": "Grovyle",
       "evoLevel": 36,
       "eggGroups": ["Monster", "Dragon"],
-      "otherFormes": ["Sceptile-Mega"]
+      "otherFormes": ["Sceptile-Mega"],
+      "formeOrder": ["Sceptile", "Sceptile-Mega"]
     },
     "sceptilemega": {
       "num": 254,
@@ -8931,7 +9048,8 @@
       "prevo": "Combusken",
       "evoLevel": 36,
       "eggGroups": ["Field"],
-      "otherFormes": ["Blaziken-Mega"]
+      "otherFormes": ["Blaziken-Mega"],
+      "formeOrder": ["Blaziken", "Blaziken-Mega"]
     },
     "blazikenmega": {
       "num": 257,
@@ -9009,7 +9127,8 @@
       "prevo": "Marshtomp",
       "evoLevel": 36,
       "eggGroups": ["Monster", "Water 1"],
-      "otherFormes": ["Swampert-Mega"]
+      "otherFormes": ["Swampert-Mega"],
+      "formeOrder": ["Swampert", "Swampert-Mega"]
     },
     "swampertmega": {
       "num": 260,
@@ -9082,7 +9201,8 @@
       "weightkg": 17.5,
       "evos": ["Linoone"],
       "eggGroups": ["Field"],
-      "otherFormes": ["Zigzagoon-Galar"]
+      "otherFormes": ["Zigzagoon-Galar"],
+      "formeOrder": ["Zigzagoon", "Zigzagoon-Galar"]
     },
     "zigzagoongalar": {
       "num": 263,
@@ -9120,7 +9240,8 @@
       "prevo": "Zigzagoon",
       "evoLevel": 20,
       "eggGroups": ["Field"],
-      "otherFormes": ["Linoone-Galar"]
+      "otherFormes": ["Linoone-Galar"],
+      "formeOrder": ["Linoone", "Linoone-Galar"]
     },
     "linoonegalar": {
       "num": 264,
@@ -9467,7 +9588,8 @@
       "prevo": "Kirlia",
       "evoLevel": 30,
       "eggGroups": ["Human-Like", "Amorphous"],
-      "otherFormes": ["Gardevoir-Mega"]
+      "otherFormes": ["Gardevoir-Mega"],
+      "formeOrder": ["Gardevoir", "Gardevoir-Mega"]
     },
     "gardevoirmega": {
       "num": 282,
@@ -9847,7 +9969,8 @@
       "abilities": {"0": "Keen Eye", "1": "Stall", "H": "Prankster"},
       "weightkg": 11,
       "eggGroups": ["Human-Like"],
-      "otherFormes": ["Sableye-Mega"]
+      "otherFormes": ["Sableye-Mega"],
+      "formeOrder": ["Sableye", "Sableye-Mega"]
     },
     "sableyemega": {
       "num": 302,
@@ -9883,7 +10006,8 @@
       "abilities": {"0": "Hyper Cutter", "1": "Intimidate", "H": "Sheer Force"},
       "weightkg": 11.5,
       "eggGroups": ["Field", "Fairy"],
-      "otherFormes": ["Mawile-Mega"]
+      "otherFormes": ["Mawile-Mega"],
+      "formeOrder": ["Mawile", "Mawile-Mega"]
     },
     "mawilemega": {
       "num": 303,
@@ -9957,7 +10081,8 @@
       "prevo": "Lairon",
       "evoLevel": 42,
       "eggGroups": ["Monster"],
-      "otherFormes": ["Aggron-Mega"]
+      "otherFormes": ["Aggron-Mega"],
+      "formeOrder": ["Aggron", "Aggron-Mega"]
     },
     "aggronmega": {
       "num": 306,
@@ -10012,7 +10137,8 @@
       "prevo": "Meditite",
       "evoLevel": 37,
       "eggGroups": ["Human-Like"],
-      "otherFormes": ["Medicham-Mega"]
+      "otherFormes": ["Medicham-Mega"],
+      "formeOrder": ["Medicham", "Medicham-Mega"]
     },
     "medichammega": {
       "num": 308,
@@ -10067,7 +10193,8 @@
       "prevo": "Electrike",
       "evoLevel": 26,
       "eggGroups": ["Field"],
-      "otherFormes": ["Manectric-Mega"]
+      "otherFormes": ["Manectric-Mega"],
+      "formeOrder": ["Manectric", "Manectric-Mega"]
     },
     "manectricmega": {
       "num": 310,
@@ -10248,7 +10375,8 @@
       "prevo": "Carvanha",
       "evoLevel": 30,
       "eggGroups": ["Water 2"],
-      "otherFormes": ["Sharpedo-Mega"]
+      "otherFormes": ["Sharpedo-Mega"],
+      "formeOrder": ["Sharpedo", "Sharpedo-Mega"]
     },
     "sharpedomega": {
       "num": 319,
@@ -10338,7 +10466,8 @@
       "prevo": "Numel",
       "evoLevel": 33,
       "eggGroups": ["Field"],
-      "otherFormes": ["Camerupt-Mega"]
+      "otherFormes": ["Camerupt-Mega"],
+      "formeOrder": ["Camerupt", "Camerupt-Mega"]
     },
     "cameruptmega": {
       "num": 323,
@@ -10549,7 +10678,8 @@
       "prevo": "Swablu",
       "evoLevel": 35,
       "eggGroups": ["Flying", "Dragon"],
-      "otherFormes": ["Altaria-Mega"]
+      "otherFormes": ["Altaria-Mega"],
+      "formeOrder": ["Altaria", "Altaria-Mega"]
     },
     "altariamega": {
       "num": 334,
@@ -10876,7 +11006,13 @@
       "abilities": {"0": "Forecast"},
       "weightkg": 0.8,
       "eggGroups": ["Fairy", "Amorphous"],
-      "otherFormes": ["Castform-Sunny", "Castform-Rainy", "Castform-Snowy"]
+      "otherFormes": ["Castform-Sunny", "Castform-Rainy", "Castform-Snowy"],
+      "formeOrder": [
+        "Castform",
+        "Castform-Sunny",
+        "Castform-Rainy",
+        "Castform-Snowy"
+      ]
     },
     "castformsunny": {
       "num": 351,
@@ -10988,7 +11124,8 @@
       "prevo": "Shuppet",
       "evoLevel": 37,
       "eggGroups": ["Amorphous"],
-      "otherFormes": ["Banette-Mega"]
+      "otherFormes": ["Banette-Mega"],
+      "formeOrder": ["Banette", "Banette-Mega"]
     },
     "banettemega": {
       "num": 354,
@@ -11096,7 +11233,8 @@
       "abilities": {"0": "Pressure", "1": "Super Luck", "H": "Justified"},
       "weightkg": 47,
       "eggGroups": ["Field"],
-      "otherFormes": ["Absol-Mega"]
+      "otherFormes": ["Absol-Mega"],
+      "formeOrder": ["Absol", "Absol-Mega"]
     },
     "absolmega": {
       "num": 359,
@@ -11169,7 +11307,8 @@
       "prevo": "Snorunt",
       "evoLevel": 42,
       "eggGroups": ["Fairy", "Mineral"],
-      "otherFormes": ["Glalie-Mega"]
+      "otherFormes": ["Glalie-Mega"],
+      "formeOrder": ["Glalie", "Glalie-Mega"]
     },
     "glaliemega": {
       "num": 362,
@@ -11386,7 +11525,8 @@
       "prevo": "Shelgon",
       "evoLevel": 50,
       "eggGroups": ["Dragon"],
-      "otherFormes": ["Salamence-Mega"]
+      "otherFormes": ["Salamence-Mega"],
+      "formeOrder": ["Salamence", "Salamence-Mega"]
     },
     "salamencemega": {
       "num": 373,
@@ -11463,7 +11603,8 @@
       "prevo": "Metang",
       "evoLevel": 45,
       "eggGroups": ["Mineral"],
-      "otherFormes": ["Metagross-Mega"]
+      "otherFormes": ["Metagross-Mega"],
+      "formeOrder": ["Metagross", "Metagross-Mega"]
     },
     "metagrossmega": {
       "num": 376,
@@ -11552,7 +11693,8 @@
       "abilities": {"0": "Levitate"},
       "weightkg": 40,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Latias-Mega"]
+      "otherFormes": ["Latias-Mega"],
+      "formeOrder": ["Latias", "Latias-Mega"]
     },
     "latiasmega": {
       "num": 380,
@@ -11590,7 +11732,8 @@
       "abilities": {"0": "Levitate"},
       "weightkg": 60,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Latios-Mega"]
+      "otherFormes": ["Latios-Mega"],
+      "formeOrder": ["Latios", "Latios-Mega"]
     },
     "latiosmega": {
       "num": 381,
@@ -11628,7 +11771,8 @@
       "abilities": {"0": "Drizzle"},
       "weightkg": 352,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Kyogre-Primal"]
+      "otherFormes": ["Kyogre-Primal"],
+      "formeOrder": ["Kyogre", "Kyogre-Primal"]
     },
     "kyogreprimal": {
       "num": 382,
@@ -11666,7 +11810,8 @@
       "abilities": {"0": "Drought"},
       "weightkg": 950,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Groudon-Primal"]
+      "otherFormes": ["Groudon-Primal"],
+      "formeOrder": ["Groudon", "Groudon-Primal"]
     },
     "groudonprimal": {
       "num": 383,
@@ -11704,7 +11849,8 @@
       "abilities": {"0": "Air Lock"},
       "weightkg": 206.5,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Rayquaza-Mega"]
+      "otherFormes": ["Rayquaza-Mega"],
+      "formeOrder": ["Rayquaza", "Rayquaza-Mega"]
     },
     "rayquazamega": {
       "num": 384,
@@ -11760,7 +11906,13 @@
       "abilities": {"0": "Pressure"},
       "weightkg": 60.8,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Deoxys-Attack", "Deoxys-Defense", "Deoxys-Speed"]
+      "otherFormes": ["Deoxys-Attack", "Deoxys-Defense", "Deoxys-Speed"],
+      "formeOrder": [
+        "Deoxys",
+        "Deoxys-Attack",
+        "Deoxys-Defense",
+        "Deoxys-Speed"
+      ]
     },
     "deoxysattack": {
       "num": 386,
@@ -12307,7 +12459,8 @@
       "weightkg": 3.4,
       "evos": ["Wormadam", "Wormadam-Sandy", "Wormadam-Trash", "Mothim"],
       "eggGroups": ["Bug"],
-      "cosmeticFormes": ["Burmy-Sandy", "Burmy-Trash"]
+      "cosmeticFormes": ["Burmy-Sandy", "Burmy-Trash"],
+      "formeOrder": ["Burmy", "Burmy-Sandy", "Burmy-Trash"]
     },
     "wormadam": {
       "num": 413,
@@ -12328,7 +12481,8 @@
       "prevo": "Burmy",
       "evoLevel": 20,
       "eggGroups": ["Bug"],
-      "otherFormes": ["Wormadam-Sandy", "Wormadam-Trash"]
+      "otherFormes": ["Wormadam-Sandy", "Wormadam-Trash"],
+      "formeOrder": ["Wormadam", "Wormadam-Sandy", "Wormadam-Trash"]
     },
     "wormadamsandy": {
       "num": 413,
@@ -12514,7 +12668,8 @@
       "prevo": "Cherubi",
       "evoLevel": 25,
       "eggGroups": ["Fairy", "Grass"],
-      "otherFormes": ["Cherrim-Sunshine"]
+      "otherFormes": ["Cherrim-Sunshine"],
+      "formeOrder": ["Cherrim", "Cherrim-Sunshine"]
     },
     "cherrimsunshine": {
       "num": 421,
@@ -12553,7 +12708,8 @@
       "weightkg": 6.3,
       "evos": ["Gastrodon"],
       "eggGroups": ["Water 1", "Amorphous"],
-      "cosmeticFormes": ["Shellos-East"]
+      "cosmeticFormes": ["Shellos-East"],
+      "formeOrder": ["Shellos", "Shellos-East"]
     },
     "gastrodon": {
       "num": 423,
@@ -12573,7 +12729,8 @@
       "prevo": "Shellos",
       "evoLevel": 30,
       "eggGroups": ["Water 1", "Amorphous"],
-      "cosmeticFormes": ["Gastrodon-East"]
+      "cosmeticFormes": ["Gastrodon-East"],
+      "formeOrder": ["Gastrodon", "Gastrodon-East"]
     },
     "ambipom": {
       "num": 424,
@@ -12663,7 +12820,8 @@
       "prevo": "Buneary",
       "evoType": "levelFriendship",
       "eggGroups": ["Field", "Human-Like"],
-      "otherFormes": ["Lopunny-Mega"]
+      "otherFormes": ["Lopunny-Mega"],
+      "formeOrder": ["Lopunny", "Lopunny-Mega"]
     },
     "lopunnymega": {
       "num": 428,
@@ -12993,7 +13151,8 @@
       "prevo": "Gabite",
       "evoLevel": 48,
       "eggGroups": ["Monster", "Dragon"],
-      "otherFormes": ["Garchomp-Mega"]
+      "otherFormes": ["Garchomp-Mega"],
+      "formeOrder": ["Garchomp", "Garchomp-Mega"]
     },
     "garchompmega": {
       "num": 445,
@@ -13071,7 +13230,8 @@
       "evoType": "levelFriendship",
       "evoCondition": "during the day",
       "eggGroups": ["Field", "Human-Like"],
-      "otherFormes": ["Lucario-Mega"]
+      "otherFormes": ["Lucario-Mega"],
+      "formeOrder": ["Lucario", "Lucario-Mega"]
     },
     "lucariomega": {
       "num": 448,
@@ -13301,7 +13461,8 @@
       "prevo": "Snover",
       "evoLevel": 40,
       "eggGroups": ["Monster", "Grass"],
-      "otherFormes": ["Abomasnow-Mega"]
+      "otherFormes": ["Abomasnow-Mega"],
+      "formeOrder": ["Abomasnow", "Abomasnow-Mega"]
     },
     "abomasnowmega": {
       "num": 460,
@@ -13615,7 +13776,8 @@
       "evoType": "useItem",
       "evoItem": "Dawn Stone",
       "eggGroups": ["Human-Like", "Amorphous"],
-      "otherFormes": ["Gallade-Mega"]
+      "otherFormes": ["Gallade-Mega"],
+      "formeOrder": ["Gallade", "Gallade-Mega"]
     },
     "gallademega": {
       "num": 475,
@@ -13712,6 +13874,14 @@
       "weightkg": 0.3,
       "eggGroups": ["Amorphous"],
       "otherFormes": [
+        "Rotom-Heat",
+        "Rotom-Wash",
+        "Rotom-Frost",
+        "Rotom-Fan",
+        "Rotom-Mow"
+      ],
+      "formeOrder": [
+        "Rotom",
         "Rotom-Heat",
         "Rotom-Wash",
         "Rotom-Frost",
@@ -13954,7 +14124,8 @@
       "abilities": {"0": "Pressure", "H": "Telepathy"},
       "weightkg": 750,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Giratina-Origin"]
+      "otherFormes": ["Giratina-Origin"],
+      "formeOrder": ["Giratina", "Giratina-Origin"]
     },
     "giratinaorigin": {
       "num": 487,
@@ -14062,7 +14233,8 @@
       "abilities": {"0": "Natural Cure"},
       "weightkg": 2.1,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Shaymin-Sky"]
+      "otherFormes": ["Shaymin-Sky"],
+      "formeOrder": ["Shaymin", "Shaymin-Sky"]
     },
     "shayminsky": {
       "num": 492,
@@ -14119,6 +14291,26 @@
         "Arceus-Rock",
         "Arceus-Steel",
         "Arceus-Water"
+      ],
+      "formeOrder": [
+        "Arceus",
+        "Arceus-Fighting",
+        "Arceus-Flying",
+        "Arceus-Poison",
+        "Arceus-Ground",
+        "Arceus-Rock",
+        "Arceus-Bug",
+        "Arceus-Ghost",
+        "Arceus-Steel",
+        "Arceus-Fire",
+        "Arceus-Water",
+        "Arceus-Grass",
+        "Arceus-Electric",
+        "Arceus-Psychic",
+        "Arceus-Ice",
+        "Arceus-Dragon",
+        "Arceus-Dark",
+        "Arceus-Fairy"
       ]
     },
     "arceusbug": {
@@ -15177,7 +15369,8 @@
       "abilities": {"0": "Healer", "1": "Regenerator", "H": "Klutz"},
       "weightkg": 31,
       "eggGroups": ["Fairy"],
-      "otherFormes": ["Audino-Mega"]
+      "otherFormes": ["Audino-Mega"],
+      "formeOrder": ["Audino", "Audino-Mega"]
     },
     "audinomega": {
       "num": 531,
@@ -15545,7 +15738,8 @@
       "abilities": {"0": "Reckless", "1": "Adaptability", "H": "Mold Breaker"},
       "weightkg": 18,
       "eggGroups": ["Water 2"],
-      "otherFormes": ["Basculin-Blue-Striped"]
+      "otherFormes": ["Basculin-Blue-Striped"],
+      "formeOrder": ["Basculin", "Basculin-Blue-Striped"]
     },
     "basculinbluestriped": {
       "num": 550,
@@ -15635,7 +15829,8 @@
       "weightkg": 37.5,
       "evos": ["Darmanitan"],
       "eggGroups": ["Field"],
-      "otherFormes": ["Darumaka-Galar"]
+      "otherFormes": ["Darumaka-Galar"],
+      "formeOrder": ["Darumaka", "Darumaka-Galar"]
     },
     "darumakagalar": {
       "num": 554,
@@ -15675,6 +15870,12 @@
       "evoLevel": 35,
       "eggGroups": ["Field"],
       "otherFormes": [
+        "Darmanitan-Zen",
+        "Darmanitan-Galar",
+        "Darmanitan-Galar-Zen"
+      ],
+      "formeOrder": [
+        "Darmanitan",
         "Darmanitan-Zen",
         "Darmanitan-Galar",
         "Darmanitan-Galar-Zen"
@@ -15863,7 +16064,8 @@
       "weightkg": 1.5,
       "evos": ["Cofagrigus"],
       "eggGroups": ["Mineral", "Amorphous"],
-      "otherFormes": ["Yamask-Galar"]
+      "otherFormes": ["Yamask-Galar"],
+      "formeOrder": ["Yamask", "Yamask-Galar"]
     },
     "yamaskgalar": {
       "num": 562,
@@ -16010,7 +16212,8 @@
       "prevo": "Trubbish",
       "evoLevel": 36,
       "eggGroups": ["Mineral"],
-      "otherFormes": ["Garbodor-Gmax"]
+      "otherFormes": ["Garbodor-Gmax"],
+      "formeOrder": ["Garbodor", "Garbodor-Gmax"]
     },
     "garbodorgmax": {
       "num": 569,
@@ -16327,6 +16530,12 @@
         "Deerling-Summer",
         "Deerling-Autumn",
         "Deerling-Winter"
+      ],
+      "formeOrder": [
+        "Deerling",
+        "Deerling-Summer",
+        "Deerling-Autumn",
+        "Deerling-Winter"
       ]
     },
     "sawsbuck": {
@@ -16348,6 +16557,12 @@
       "evoLevel": 34,
       "eggGroups": ["Field"],
       "cosmeticFormes": [
+        "Sawsbuck-Summer",
+        "Sawsbuck-Autumn",
+        "Sawsbuck-Winter"
+      ],
+      "formeOrder": [
+        "Sawsbuck",
         "Sawsbuck-Summer",
         "Sawsbuck-Autumn",
         "Sawsbuck-Winter"
@@ -16920,7 +17135,8 @@
       "abilities": {"0": "Static", "1": "Limber", "H": "Sand Veil"},
       "weightkg": 11,
       "eggGroups": ["Water 1", "Amorphous"],
-      "otherFormes": ["Stunfisk-Galar"]
+      "otherFormes": ["Stunfisk-Galar"],
+      "formeOrder": ["Stunfisk", "Stunfisk-Galar"]
     },
     "stunfiskgalar": {
       "num": 618,
@@ -17342,7 +17558,8 @@
       "abilities": {"0": "Prankster", "H": "Defiant"},
       "weightkg": 63,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Tornadus-Therian"]
+      "otherFormes": ["Tornadus-Therian"],
+      "formeOrder": ["Tornadus", "Tornadus-Therian"]
     },
     "tornadustherian": {
       "num": 641,
@@ -17381,7 +17598,8 @@
       "abilities": {"0": "Prankster", "H": "Defiant"},
       "weightkg": 61,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Thundurus-Therian"]
+      "otherFormes": ["Thundurus-Therian"],
+      "formeOrder": ["Thundurus", "Thundurus-Therian"]
     },
     "thundurustherian": {
       "num": 642,
@@ -17454,7 +17672,8 @@
       "abilities": {"0": "Sand Force", "H": "Sheer Force"},
       "weightkg": 68,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Landorus-Therian"]
+      "otherFormes": ["Landorus-Therian"],
+      "formeOrder": ["Landorus", "Landorus-Therian"]
     },
     "landorustherian": {
       "num": 645,
@@ -17492,7 +17711,8 @@
       "abilities": {"0": "Pressure"},
       "weightkg": 325,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Kyurem-Black", "Kyurem-White"]
+      "otherFormes": ["Kyurem-Black", "Kyurem-White"],
+      "formeOrder": ["Kyurem", "Kyurem-White", "Kyurem-Black"]
     },
     "kyuremblack": {
       "num": 646,
@@ -17551,7 +17771,8 @@
       "abilities": {"0": "Justified"},
       "weightkg": 48.5,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Keldeo-Resolute"]
+      "otherFormes": ["Keldeo-Resolute"],
+      "formeOrder": ["Keldeo", "Keldeo-Resolute"]
     },
     "keldeoresolute": {
       "num": 647,
@@ -17591,7 +17812,8 @@
       "abilities": {"0": "Serene Grace"},
       "weightkg": 6.5,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Meloetta-Pirouette"]
+      "otherFormes": ["Meloetta-Pirouette"],
+      "formeOrder": ["Meloetta", "Meloetta-Pirouette"]
     },
     "meloettapirouette": {
       "num": 648,
@@ -17631,6 +17853,13 @@
       "weightkg": 82.5,
       "eggGroups": ["Undiscovered"],
       "otherFormes": [
+        "Genesect-Douse",
+        "Genesect-Shock",
+        "Genesect-Burn",
+        "Genesect-Chill"
+      ],
+      "formeOrder": [
+        "Genesect",
         "Genesect-Douse",
         "Genesect-Shock",
         "Genesect-Burn",
@@ -17891,7 +18120,8 @@
       "prevo": "Frogadier",
       "evoLevel": 36,
       "eggGroups": ["Water 1"],
-      "otherFormes": ["Greninja-Ash"]
+      "otherFormes": ["Greninja-Ash"],
+      "formeOrder": ["Greninja", "Greninja", "Greninja-Ash"]
     },
     "greninjaash": {
       "num": 658,
@@ -18085,6 +18315,28 @@
         "Vivillon-Savanna",
         "Vivillon-Sun",
         "Vivillon-Tundra"
+      ],
+      "formeOrder": [
+        "Vivillon-Icy Snow",
+        "Vivillon-Polar",
+        "Vivillon-Tundra",
+        "Vivillon-Continental",
+        "Vivillon-Garden",
+        "Vivillon-Elegant",
+        "Vivillon",
+        "Vivillon-Modern",
+        "Vivillon-Marine",
+        "Vivillon-Archipelago",
+        "Vivillon-High Plains",
+        "Vivillon-Sandstorm",
+        "Vivillon-River",
+        "Vivillon-Monsoon",
+        "Vivillon-Savanna",
+        "Vivillon-Sun",
+        "Vivillon-Ocean",
+        "Vivillon-Jungle",
+        "Vivillon-Fancy",
+        "Vivillon-Pokeball"
       ]
     },
     "vivillonfancy": {
@@ -18183,6 +18435,13 @@
         "Flabébé-Orange",
         "Flabébé-White",
         "Flabébé-Yellow"
+      ],
+      "formeOrder": [
+        "Flabébé",
+        "Flabébé-Blue",
+        "Flabébé-Orange",
+        "Flabébé-White",
+        "Flabébé-Yellow"
       ]
     },
     "floette": {
@@ -18211,6 +18470,14 @@
         "Floette-Orange",
         "Floette-White",
         "Floette-Yellow"
+      ],
+      "formeOrder": [
+        "Floette",
+        "Floette-Blue",
+        "Floette-Orange",
+        "Floette-White",
+        "Floette-Yellow",
+        "Floette-Eternal"
       ]
     },
     "floetteeternal": {
@@ -18253,6 +18520,13 @@
       "evoItem": "Shiny Stone",
       "eggGroups": ["Fairy"],
       "cosmeticFormes": [
+        "Florges-Blue",
+        "Florges-Orange",
+        "Florges-White",
+        "Florges-Yellow"
+      ],
+      "formeOrder": [
+        "Florges",
         "Florges-Blue",
         "Florges-Orange",
         "Florges-White",
@@ -18355,6 +18629,18 @@
         "Furfrou-Matron",
         "Furfrou-Pharaoh",
         "Furfrou-Star"
+      ],
+      "formeOrder": [
+        "Furfrou",
+        "Furfrou-Heart",
+        "Furfrou-Star",
+        "Furfrou-Diamond",
+        "Furfrou-Debutante",
+        "Furfrou-Matron",
+        "Furfrou-Dandy",
+        "Furfrou-La Reine",
+        "Furfrou-Kabuki",
+        "Furfrou-Pharaoh"
       ]
     },
     "espurr": {
@@ -18393,7 +18679,8 @@
       "prevo": "Espurr",
       "evoLevel": 25,
       "eggGroups": ["Field"],
-      "otherFormes": ["Meowstic-F"]
+      "otherFormes": ["Meowstic-F"],
+      "formeOrder": ["Meowstic", "Meowstic-F"]
     },
     "meowsticf": {
       "num": 678,
@@ -18471,7 +18758,8 @@
       "evoType": "useItem",
       "evoItem": "Dusk Stone",
       "eggGroups": ["Mineral"],
-      "otherFormes": ["Aegislash-Blade"]
+      "otherFormes": ["Aegislash-Blade"],
+      "formeOrder": ["Aegislash", "Aegislash-Blade"]
     },
     "aegislashblade": {
       "num": 681,
@@ -19014,7 +19302,13 @@
       "weightkg": 5,
       "evos": ["Gourgeist"],
       "eggGroups": ["Amorphous"],
-      "otherFormes": ["Pumpkaboo-Small", "Pumpkaboo-Large", "Pumpkaboo-Super"]
+      "otherFormes": ["Pumpkaboo-Small", "Pumpkaboo-Large", "Pumpkaboo-Super"],
+      "formeOrder": [
+        "Pumpkaboo",
+        "Pumpkaboo-Small",
+        "Pumpkaboo-Large",
+        "Pumpkaboo-Super"
+      ]
     },
     "pumpkaboosmall": {
       "num": 710,
@@ -19091,7 +19385,13 @@
       "prevo": "Pumpkaboo",
       "evoType": "trade",
       "eggGroups": ["Amorphous"],
-      "otherFormes": ["Gourgeist-Small", "Gourgeist-Large", "Gourgeist-Super"]
+      "otherFormes": ["Gourgeist-Small", "Gourgeist-Large", "Gourgeist-Super"],
+      "formeOrder": [
+        "Gourgeist",
+        "Gourgeist-Small",
+        "Gourgeist-Large",
+        "Gourgeist-Super"
+      ]
     },
     "gourgeistsmall": {
       "num": 711,
@@ -19274,7 +19574,14 @@
       "abilities": {"0": "Aura Break", "S": "Power Construct"},
       "weightkg": 305,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Zygarde-10%", "Zygarde-Complete"]
+      "otherFormes": ["Zygarde-10%", "Zygarde-Complete"],
+      "formeOrder": [
+        "Zygarde",
+        "Zygarde-10%",
+        "Zygarde-10%",
+        "Zygarde",
+        "Zygarde-Complete"
+      ]
     },
     "zygarde10": {
       "num": 718,
@@ -19335,7 +19642,8 @@
       "abilities": {"0": "Clear Body"},
       "weightkg": 8.8,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Diancie-Mega"]
+      "otherFormes": ["Diancie-Mega"],
+      "formeOrder": ["Diancie", "Diancie-Mega"]
     },
     "dianciemega": {
       "num": 719,
@@ -19374,7 +19682,8 @@
       "abilities": {"0": "Magician"},
       "weightkg": 9,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Hoopa-Unbound"]
+      "otherFormes": ["Hoopa-Unbound"],
+      "formeOrder": ["Hoopa", "Hoopa-Unbound"]
     },
     "hoopaunbound": {
       "num": 720,
@@ -19672,7 +19981,8 @@
       "prevo": "Yungoos",
       "evoLevel": 20,
       "eggGroups": ["Field"],
-      "otherFormes": ["Gumshoos-Totem"]
+      "otherFormes": ["Gumshoos-Totem"],
+      "formeOrder": ["Gumshoos", "Gumshoos-Totem"]
     },
     "gumshoostotem": {
       "num": 735,
@@ -19746,7 +20056,8 @@
       "evoType": "useItem",
       "evoItem": "Thunder Stone",
       "eggGroups": ["Bug"],
-      "otherFormes": ["Vikavolt-Totem"]
+      "otherFormes": ["Vikavolt-Totem"],
+      "formeOrder": ["Vikavolt", "Vikavolt-Totem"]
     },
     "vikavolttotem": {
       "num": 738,
@@ -19819,7 +20130,13 @@
       "abilities": {"0": "Dancer"},
       "weightkg": 3.4,
       "eggGroups": ["Flying"],
-      "otherFormes": ["Oricorio-Pom-Pom", "Oricorio-Pa'u", "Oricorio-Sensu"]
+      "otherFormes": ["Oricorio-Pom-Pom", "Oricorio-Pa'u", "Oricorio-Sensu"],
+      "formeOrder": [
+        "Oricorio",
+        "Oricorio-Pom-Pom",
+        "Oricorio-Pa'u",
+        "Oricorio-Sensu"
+      ]
     },
     "oricoriopompom": {
       "num": 741,
@@ -19915,7 +20232,8 @@
       "prevo": "Cutiefly",
       "evoLevel": 25,
       "eggGroups": ["Bug", "Fairy"],
-      "otherFormes": ["Ribombee-Totem"]
+      "otherFormes": ["Ribombee-Totem"],
+      "formeOrder": ["Ribombee", "Ribombee-Totem"]
     },
     "ribombeetotem": {
       "num": 743,
@@ -19956,7 +20274,8 @@
       },
       "weightkg": 9.2,
       "evos": ["Lycanroc", "Lycanroc-Midnight", "Lycanroc-Dusk"],
-      "eggGroups": ["Field"]
+      "eggGroups": ["Field"],
+      "formeOrder": ["Rockruff", "Rockruff"]
     },
     "lycanroc": {
       "num": 745,
@@ -19976,7 +20295,8 @@
       "prevo": "Rockruff",
       "evoLevel": 25,
       "eggGroups": ["Field"],
-      "otherFormes": ["Lycanroc-Midnight", "Lycanroc-Dusk"]
+      "otherFormes": ["Lycanroc-Midnight", "Lycanroc-Dusk"],
+      "formeOrder": ["Lycanroc", "Lycanroc-Midnight", "Lycanroc-Dusk"]
     },
     "lycanrocmidnight": {
       "num": 745,
@@ -20034,7 +20354,8 @@
       "abilities": {"0": "Schooling"},
       "weightkg": 0.3,
       "eggGroups": ["Water 2"],
-      "otherFormes": ["Wishiwashi-School"]
+      "otherFormes": ["Wishiwashi-School"],
+      "formeOrder": ["Wishiwashi", "Wishiwashi-School"]
     },
     "wishiwashischool": {
       "num": 746,
@@ -20160,7 +20481,8 @@
       "prevo": "Dewpider",
       "evoLevel": 22,
       "eggGroups": ["Water 1", "Bug"],
-      "otherFormes": ["Araquanid-Totem"]
+      "otherFormes": ["Araquanid-Totem"],
+      "formeOrder": ["Araquanid", "Araquanid-Totem"]
     },
     "araquanidtotem": {
       "num": 752,
@@ -20214,7 +20536,8 @@
       "prevo": "Fomantis",
       "evoLevel": 34,
       "eggGroups": ["Grass"],
-      "otherFormes": ["Lurantis-Totem"]
+      "otherFormes": ["Lurantis-Totem"],
+      "formeOrder": ["Lurantis", "Lurantis-Totem"]
     },
     "lurantistotem": {
       "num": 754,
@@ -20305,7 +20628,8 @@
       "prevo": "Salandit",
       "evoLevel": 33,
       "eggGroups": ["Monster", "Dragon"],
-      "otherFormes": ["Salazzle-Totem"]
+      "otherFormes": ["Salazzle-Totem"],
+      "formeOrder": ["Salazzle", "Salazzle-Totem"]
     },
     "salazzletotem": {
       "num": 758,
@@ -20612,6 +20936,26 @@
         "Silvally-Rock",
         "Silvally-Steel",
         "Silvally-Water"
+      ],
+      "formeOrder": [
+        "Silvally",
+        "Silvally-Fighting",
+        "Silvally-Flying",
+        "Silvally-Poison",
+        "Silvally-Ground",
+        "Silvally-Rock",
+        "Silvally-Bug",
+        "Silvally-Ghost",
+        "Silvally-Steel",
+        "Silvally-Fire",
+        "Silvally-Water",
+        "Silvally-Grass",
+        "Silvally-Electric",
+        "Silvally-Psychic",
+        "Silvally-Ice",
+        "Silvally-Dragon",
+        "Silvally-Dark",
+        "Silvally-Fairy"
       ]
     },
     "silvallybug": {
@@ -20996,6 +21340,22 @@
         "Minior-Blue",
         "Minior-Indigo",
         "Minior-Violet"
+      ],
+      "formeOrder": [
+        "Minior-Meteor",
+        "Minior-Meteor",
+        "Minior-Meteor",
+        "Minior-Meteor",
+        "Minior-Meteor",
+        "Minior-Meteor",
+        "Minior-Meteor",
+        "Minior",
+        "Minior-Orange",
+        "Minior-Yellow",
+        "Minior-Green",
+        "Minior-Blue",
+        "Minior-Indigo",
+        "Minior-Violet"
       ]
     },
     "miniormeteor": {
@@ -21066,7 +21426,8 @@
       "abilities": {"0": "Iron Barbs", "1": "Lightning Rod", "H": "Sturdy"},
       "weightkg": 3.3,
       "eggGroups": ["Field", "Fairy"],
-      "otherFormes": ["Togedemaru-Totem"]
+      "otherFormes": ["Togedemaru-Totem"],
+      "formeOrder": ["Togedemaru", "Togedemaru-Totem"]
     },
     "togedemarutotem": {
       "num": 777,
@@ -21102,7 +21463,17 @@
       "abilities": {"0": "Disguise"},
       "weightkg": 0.7,
       "eggGroups": ["Amorphous"],
-      "otherFormes": ["Mimikyu-Busted", "Mimikyu-Totem", "Mimikyu-Busted-Totem"]
+      "otherFormes": [
+        "Mimikyu-Busted",
+        "Mimikyu-Totem",
+        "Mimikyu-Busted-Totem"
+      ],
+      "formeOrder": [
+        "Mimikyu",
+        "Mimikyu-Busted",
+        "Mimikyu-Totem",
+        "Mimikyu-Busted-Totem"
+      ]
     },
     "mimikyubusted": {
       "num": 778,
@@ -21264,7 +21635,8 @@
       "prevo": "Hakamo-o",
       "evoLevel": 45,
       "eggGroups": ["Dragon"],
-      "otherFormes": ["Kommo-o-Totem"]
+      "otherFormes": ["Kommo-o-Totem"],
+      "formeOrder": ["Kommo-o", "Kommo-o-Totem"]
     },
     "kommoototem": {
       "num": 784,
@@ -21567,6 +21939,12 @@
         "Necrozma-Dusk-Mane",
         "Necrozma-Dawn-Wings",
         "Necrozma-Ultra"
+      ],
+      "formeOrder": [
+        "Necrozma",
+        "Necrozma-Dusk-Mane",
+        "Necrozma-Dawn-Wings",
+        "Necrozma-Ultra"
       ]
     },
     "necrozmaduskmane": {
@@ -21646,7 +22024,8 @@
       "abilities": {"0": "Soul-Heart"},
       "weightkg": 80.5,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Magearna-Original"]
+      "otherFormes": ["Magearna-Original"],
+      "formeOrder": ["Magearna", "Magearna-Original"]
     },
     "magearnaoriginal": {
       "num": 801,
@@ -21806,7 +22185,8 @@
       "abilities": {"0": "Iron Fist"},
       "weightkg": 800,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Melmetal-Gmax"]
+      "otherFormes": ["Melmetal-Gmax"],
+      "formeOrder": ["Melmetal", "Melmetal-Gmax"]
     },
     "melmetalgmax": {
       "num": 809,
@@ -22087,7 +22467,8 @@
       "prevo": "Corvisquire",
       "evoLevel": 38,
       "eggGroups": ["Flying"],
-      "otherFormes": ["Corviknight-Gmax"]
+      "otherFormes": ["Corviknight-Gmax"],
+      "formeOrder": ["Corviknight", "Corviknight-Gmax"]
     },
     "corviknightgmax": {
       "num": 823,
@@ -22161,7 +22542,8 @@
       "prevo": "Dottler",
       "evoLevel": 30,
       "eggGroups": ["Bug"],
-      "otherFormes": ["Orbeetle-Gmax"]
+      "otherFormes": ["Orbeetle-Gmax"],
+      "formeOrder": ["Orbeetle", "Orbeetle-Gmax"]
     },
     "orbeetlegmax": {
       "num": 826,
@@ -22329,7 +22711,8 @@
       "prevo": "Chewtle",
       "evoLevel": 22,
       "eggGroups": ["Monster", "Water 1"],
-      "otherFormes": ["Drednaw-Gmax"]
+      "otherFormes": ["Drednaw-Gmax"],
+      "formeOrder": ["Drednaw", "Drednaw-Gmax"]
     },
     "drednawgmax": {
       "num": 834,
@@ -22438,7 +22821,8 @@
       "prevo": "Carkol",
       "evoLevel": 34,
       "eggGroups": ["Mineral"],
-      "otherFormes": ["Coalossal-Gmax"]
+      "otherFormes": ["Coalossal-Gmax"],
+      "formeOrder": ["Coalossal", "Coalossal-Gmax"]
     },
     "coalossalgmax": {
       "num": 839,
@@ -22494,7 +22878,8 @@
       "evoType": "useItem",
       "evoItem": "Tart Apple",
       "eggGroups": ["Grass", "Dragon"],
-      "otherFormes": ["Flapple-Gmax"]
+      "otherFormes": ["Flapple-Gmax"],
+      "formeOrder": ["Flapple", "Flapple-Gmax"]
     },
     "flapplegmax": {
       "num": 841,
@@ -22533,7 +22918,8 @@
       "evoType": "useItem",
       "evoItem": "Sweet Apple",
       "eggGroups": ["Grass", "Dragon"],
-      "otherFormes": ["Appletun-Gmax"]
+      "otherFormes": ["Appletun-Gmax"],
+      "formeOrder": ["Appletun", "Appletun-Gmax"]
     },
     "appletungmax": {
       "num": 842,
@@ -22588,7 +22974,8 @@
       "prevo": "Silicobra",
       "evoLevel": 36,
       "eggGroups": ["Field", "Dragon"],
-      "otherFormes": ["Sandaconda-Gmax"]
+      "otherFormes": ["Sandaconda-Gmax"],
+      "formeOrder": ["Sandaconda", "Sandaconda-Gmax"]
     },
     "sandacondagmax": {
       "num": 844,
@@ -22624,7 +23011,8 @@
       "abilities": {"0": "Gulp Missile"},
       "weightkg": 18,
       "eggGroups": ["Water 1", "Flying"],
-      "otherFormes": ["Cramorant-Gulping", "Cramorant-Gorging"]
+      "otherFormes": ["Cramorant-Gulping", "Cramorant-Gorging"],
+      "formeOrder": ["Cramorant", "Cramorant-Gulping", "Cramorant-Gorging"]
     },
     "cramorantgulping": {
       "num": 845,
@@ -22740,6 +23128,12 @@
         "Toxtricity-Low-Key",
         "Toxtricity-Gmax",
         "Toxtricity-Low-Key-Gmax"
+      ],
+      "formeOrder": [
+        "Toxtricity",
+        "Toxtricity-Low-Key",
+        "Toxtricity-Gmax",
+        "Toxtricity-Low-Key-Gmax"
       ]
     },
     "toxtricitylowkey": {
@@ -22835,7 +23229,8 @@
       "prevo": "Sizzlipede",
       "evoLevel": 28,
       "eggGroups": ["Bug"],
-      "otherFormes": ["Centiskorch-Gmax"]
+      "otherFormes": ["Centiskorch-Gmax"],
+      "formeOrder": ["Centiskorch", "Centiskorch-Gmax"]
     },
     "centiskorchgmax": {
       "num": 851,
@@ -22910,7 +23305,8 @@
       "weightkg": 0.2,
       "evos": ["Polteageist"],
       "eggGroups": ["Mineral", "Amorphous"],
-      "otherFormes": ["Sinistea-Antique"]
+      "otherFormes": ["Sinistea-Antique"],
+      "formeOrder": ["Sinistea", "Sinistea-Antique"]
     },
     "sinisteaantique": {
       "num": 854,
@@ -22952,7 +23348,8 @@
       "evoType": "useItem",
       "evoItem": "Cracked Pot",
       "eggGroups": ["Mineral", "Amorphous"],
-      "otherFormes": ["Polteageist-Antique"]
+      "otherFormes": ["Polteageist-Antique"],
+      "formeOrder": ["Polteageist", "Polteageist-Antique"]
     },
     "polteageistantique": {
       "num": 855,
@@ -23032,7 +23429,8 @@
       "prevo": "Hattrem",
       "evoLevel": 42,
       "eggGroups": ["Fairy"],
-      "otherFormes": ["Hatterene-Gmax"]
+      "otherFormes": ["Hatterene-Gmax"],
+      "formeOrder": ["Hatterene", "Hatterene-Gmax"]
     },
     "hatterenegmax": {
       "num": 858,
@@ -23110,7 +23508,8 @@
       "prevo": "Morgrem",
       "evoLevel": 42,
       "eggGroups": ["Fairy", "Human-Like"],
-      "otherFormes": ["Grimmsnarl-Gmax"]
+      "otherFormes": ["Grimmsnarl-Gmax"],
+      "formeOrder": ["Grimmsnarl", "Grimmsnarl-Gmax"]
     },
     "grimmsnarlgmax": {
       "num": 861,
@@ -23300,6 +23699,18 @@
         "Alcremie-Ruby-Swirl",
         "Alcremie-Caramel-Swirl",
         "Alcremie-Rainbow-Swirl"
+      ],
+      "formeOrder": [
+        "Alcremie",
+        "Alcremie-Ruby-Cream",
+        "Alcremie-Matcha-Cream",
+        "Alcremie-Mint-Cream",
+        "Alcremie-Lemon-Cream",
+        "Alcremie-Salted-Cream",
+        "Alcremie-Ruby-Swirl",
+        "Alcremie-Caramel-Swirl",
+        "Alcremie-Rainbow-Swirl",
+        "Alcremie-Gmax"
       ]
     },
     "alcremiegmax": {
@@ -23422,7 +23833,8 @@
       "abilities": {"0": "Ice Face"},
       "weightkg": 89,
       "eggGroups": ["Water 1", "Field"],
-      "otherFormes": ["Eiscue-Noice"]
+      "otherFormes": ["Eiscue-Noice"],
+      "formeOrder": ["Eiscue", "Eiscue-Noice"]
     },
     "eiscuenoice": {
       "num": 875,
@@ -23465,7 +23877,8 @@
       },
       "weightkg": 28,
       "eggGroups": ["Fairy"],
-      "otherFormes": ["Indeedee-F"]
+      "otherFormes": ["Indeedee-F"],
+      "formeOrder": ["Indeedee", "Indeedee-F"]
     },
     "indeedeef": {
       "num": 876,
@@ -23501,7 +23914,8 @@
       "abilities": {"0": "Hunger Switch"},
       "weightkg": 3,
       "eggGroups": ["Field", "Fairy"],
-      "otherFormes": ["Morpeko-Hangry"]
+      "otherFormes": ["Morpeko-Hangry"],
+      "formeOrder": ["Morpeko", "Morpeko-Hangry"]
     },
     "morpekohangry": {
       "num": 877,
@@ -23557,7 +23971,8 @@
       "prevo": "Cufant",
       "evoLevel": 34,
       "eggGroups": ["Field", "Mineral"],
-      "otherFormes": ["Copperajah-Gmax"]
+      "otherFormes": ["Copperajah-Gmax"],
+      "formeOrder": ["Copperajah", "Copperajah-Gmax"]
     },
     "copperajahgmax": {
       "num": 879,
@@ -23661,7 +24076,8 @@
       "abilities": {"0": "Light Metal", "1": "Heavy Metal", "H": "Stalwart"},
       "weightkg": 40,
       "eggGroups": ["Mineral", "Dragon"],
-      "otherFormes": ["Duraludon-Gmax"]
+      "otherFormes": ["Duraludon-Gmax"],
+      "formeOrder": ["Duraludon", "Duraludon-Gmax"]
     },
     "duraludongmax": {
       "num": 884,
@@ -23752,7 +24168,8 @@
       "abilities": {"0": "Intrepid Sword"},
       "weightkg": 110,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Zacian-Crowned"]
+      "otherFormes": ["Zacian-Crowned"],
+      "formeOrder": ["Zacian", "Zacian-Crowned"]
     },
     "zaciancrowned": {
       "num": 888,
@@ -23791,7 +24208,8 @@
       "abilities": {"0": "Dauntless Shield"},
       "weightkg": 210,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Zamazenta-Crowned"]
+      "otherFormes": ["Zamazenta-Crowned"],
+      "formeOrder": ["Zamazenta", "Zamazenta-Crowned"]
     },
     "zamazentacrowned": {
       "num": 889,
@@ -23830,7 +24248,8 @@
       "abilities": {"0": "Pressure"},
       "weightkg": 950,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Eternatus-Eternamax"]
+      "otherFormes": ["Eternatus-Eternamax"],
+      "formeOrder": ["Eternatus", "Eternatus-Eternamax"]
     },
     "eternatuseternamax": {
       "num": 890,
@@ -24601,6 +25020,7 @@
       "weightkg": 23.6,
       "eggGroups": ["Amorphous", "Mineral"],
       "otherFormes": ["Crucibelle-Mega"],
+      "formeOrder": ["Crucibelle", "Crucibelle-Mega"],
       "gen": 6
     },
     "crucibellemega": {

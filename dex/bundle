@@ -21,7 +21,7 @@ const exports = {};
 for (const [name, file] of DATA) {
   bundled += `const ${name}JSON = ${compiler.read(`data/${file}.json`)};\n`;
 }
-bundled += compiler.read('index.js', 16, 1);
+bundled += compiler.read('index.js', 29, 1);
 bundled += `
 // EXPORTS
 window.Dex = exports.Dex;

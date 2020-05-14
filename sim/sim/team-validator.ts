@@ -344,6 +344,13 @@ export class TeamValidator {
 
 		let species = dex.getSpecies(set.species);
 		set.species = species.name;
+		if (set.name && set.name.length > 18) {
+			if (set.name === set.species) {
+				set.name = species.baseSpecies;
+			} else {
+				problems.push(`Nickname "${set.name}" too long (should be 18 characters or fewer)`);
+			}
+		}
 		set.name = dex.getName(set.name);
 		let item = dex.getItem(Dex.getString(set.item));
 		set.item = item.name;
@@ -1866,10 +1873,6 @@ export class TeamValidator {
 						// past-gen level-up, TM, or tutor moves:
 						//   available as long as the source gen was or was before this gen
 						if (learned.charAt(1) === 'R') {
-							if (baseSpecies.name === 'Pikachu-Gmax') {
-								// Volt Tackle is weird (from egg, but not an egg move), and Pikachu-Gmax can't learn it
-								continue;
-							}
 							moveSources.restrictedMove = moveid;
 						}
 						limit1 = false;

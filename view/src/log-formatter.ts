@@ -598,6 +598,7 @@ class Handler implements Protocol.Handler<string> {
     const id = LogFormatter.effectId(kwArgs.from);
     let target = '';
     if (['magician', 'pickpocket'].includes(id)) {
+      // eslint-disable-next-line no-import-assign
       [target, kwArgs.of as PokemonIdent] = [kwArgs.of!, '' as PokemonIdent];
     }
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);

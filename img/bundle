@@ -9,8 +9,8 @@ let bundled = `(() => {
 const exports = {};
 `;
 bundled += `const DATA = ${compiler.read('data/data.json')};\n`;
-bundled += compiler.read('data/index.js', 11, 1);
-bundled += compiler.read('adaptable.js', 2, 1);
+bundled += compiler.read('data/index.js', 24, 1);
+bundled += compiler.read('adaptable.js', 3, 1);
 bundled += `
 // EXPORTS
 window.PokemonSprites = new exports.Sprites(exports.Data);

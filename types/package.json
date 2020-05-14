@@ -6,9 +6,6 @@
   "repository": "github:pkmn/ps",
   "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
-  "devDependencies": {
-    "typescript": "^3.8.3"
-  },
   "scripts": {
     "compile": "tsc -p .",
     "build": "npm run compile",

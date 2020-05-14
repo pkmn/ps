@@ -135,8 +135,8 @@ const imports = (types, where) => {
 const NATURE = `
 export interface Nature {
 \tname: string;
-\tplus?: keyof StatsTable;
-\tminus?: keyof StatsTable;
+\tplus?: Exclude<keyof StatsTable, 'hp'>;
+\tminus?: Exclude<keyof StatsTable, 'hp'>;
 \t[k: string]: any;
 }\n`;
 
@@ -222,7 +222,7 @@ const DATA = {
     [removeFields(code.BattleFormatsData, RANDBAT_FIELDS), 'formats-data.json'],
   'items.js': code => [removeFields(code.BattleItems, ['spritenum']), 'items.json'],
   'learnsets.js': code => [code.BattleLearnsets, 'learnsets.json'],
-  'moves.js': code => [removeFields(code.BattleMovedex, ['isViable', 'contestType']), 'moves.json'],
+  'moves.js': code => [removeFields(code.BattleMovedex, ['contestType']), 'moves.json'],
   'pokedex.js': code => [removeFields(code.BattlePokedex, ['color', 'heightm']), 'species.json'],
   'typechart.js': code => {
     for (const type1 in code.BattleTypeChart) {

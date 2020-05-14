@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/sim",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An automatically generated extraction of just the simulator portion of Pokémon Showdown",
   "homepage": "https://psim.us",
   "main": "build/sim/index.js",
@@ -13,16 +13,10 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@pkmn/sets": "^0.0.2",
-    "@types/node": "^13.13.5"
+    "@pkmn/sets": "^0.0.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.31.0",
-    "@typescript-eslint/parser": "^2.31.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-import": "^2.20.2",
-    "mocha": "^7.1.2",
-    "typescript": "^3.8.3"
+    "mocha": "^7.1.2"
   },
   "scripts": {
     "compile": "tsc -p .",

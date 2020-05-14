@@ -69,8 +69,9 @@ The recommended way of using `@pkmn/img` in a web browser is to **configure your
 ([Webpack][8], [Rollup][9], [Parcel][10], etc) to minimize it and package it with the rest of your
 application. If you do not use a bundler, a convenience `production.min.js` is included in the
 package (and used in the [`index.html`][6] example code). You simply need to depend on
-`./node_modules/@pkmn/img/production.min.js` in a `script` tag (which is what the unpkg shortcut
-above is doing), after which **`PokemonSprites` and `PokemonIcons` will be accessible as globals.**
+`./node_modules/@pkmn/img/build/production.min.js` in a `script` tag (which is what the unpkg
+shortcut above is doing), after which **`PokemonSprites` and `PokemonIcons` will be accessible as
+globals.**
 
 ## Performance
 

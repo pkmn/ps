@@ -17028,7 +17028,7 @@
         "brickbreak": ["8M", "8V", "7M", "6M", "5M", "5S26", "4M", "3M"],
         "calmmind": ["8V"],
         "captivate": ["4M"],
-        "celebrate": ["7S48", "7S43", "6S41", "6S31"],
+        "celebrate": ["8S50", "7S48", "7S43", "6S41", "6S31"],
         "chargebeam": ["7M", "6M", "5M", "4M"],
         "charm": ["8M", "8L1", "6S36"],
         "confide": ["7M", "6M"],
@@ -17172,6 +17172,7 @@
         "payday": ["8M", "8V", "7V"],
         "playnice": [
           "8L1",
+          "8S50",
           "7L7",
           "7S45",
           "7S44",
@@ -17201,6 +17202,7 @@
         ],
         "quickattack": [
           "8L1",
+          "8S50",
           "8V",
           "7L10",
           "7S49",
@@ -17364,6 +17366,7 @@
         "thunderpunch": ["8M", "8V", "7T", "7V", "6T", "5T", "4T", "3T"],
         "thundershock": [
           "8L1",
+          "8S50",
           "8V",
           "7L1",
           "7S46",
@@ -17766,6 +17769,14 @@
           "generation": 7,
           "level": 10,
           "moves": ["fly", "surf", "thunderbolt", "quickattack"],
+          "pokeball": "cherishball"
+        },
+        {
+          "generation": 8,
+          "level": 5,
+          "gender": "M",
+          "nature": "Serious",
+          "moves": ["celebrate", "playnice", "thundershock", "quickattack"],
           "pokeball": "cherishball"
         }
       ],
@@ -18852,8 +18863,7 @@
           "moves": ["growl", "quickattack", "thunderwave", "doubleteam"],
           "pokeball": "pokeball"
         }
-      ],
-      "eventOnly": true
+      ]
     },
     "raichu": {
       "learnset": {
@@ -28820,7 +28830,7 @@
         "lightscreen": ["8V", "7M", "7L13", "6M", "5M", "4M"],
         "lockon": ["7L41", "7V", "6L41", "5L30", "4L27", "3L32"],
         "magiccoat": ["7T", "6T", "5T", "4T"],
-        "magnetbomb": ["7L11", "6L17", "5L33", "4L30"],
+        "magnetbomb": ["7L11", "6L17", "5L18", "4L30"],
         "magnetrise": ["7T", "7L43", "6T", "6L43", "5T", "5L49", "4T", "4L46"],
         "metalsound": ["7L25", "6L25", "5L1", "5D", "4L1", "3L1"],
         "mimic": ["7V", "3T"],
@@ -40068,7 +40078,7 @@
         ],
         "bodyslam": ["8M", "7V", "3T"],
         "captivate": ["7E", "6E", "4M"],
-        "celebrate": ["7S5", "6S3"],
+        "celebrate": ["8S6", "7S5", "6S3"],
         "charm": [
           "8M",
           "8L45",
@@ -40087,6 +40097,7 @@
         "copycat": ["8L30"],
         "covet": [
           "8L1",
+          "8S6",
           "7T",
           "7L1",
           "7E",
@@ -40118,6 +40129,7 @@
         "helpinghand": [
           "8M",
           "8L1",
+          "8S6",
           "8V",
           "7T",
           "7L1",
@@ -40208,7 +40220,7 @@
           "3T"
         ],
         "synchronoise": ["7E", "6E", "5E"],
-        "tackle": ["8L1", "8V", "7L1", "7V", "6L1", "5L1", "4L1", "3L1"],
+        "tackle": ["8L1", "8S6", "8V", "7L1", "7V", "6L1", "5L1", "4L1", "3L1"],
         "tailwhip": ["8L1", "8V", "7L1", "7V", "6L1", "5L1", "4L1", "3L1"],
         "takedown": [
           "8L40",
@@ -40276,6 +40288,15 @@
           "level": 10,
           "nature": "Jolly",
           "moves": ["celebrate", "sandattack", "babydolleyes"],
+          "pokeball": "cherishball"
+        },
+        {
+          "generation": 8,
+          "level": 5,
+          "gender": "M",
+          "nature": "Docile",
+          "abilities": ["runaway"],
+          "moves": ["celebrate", "covet", "helpinghand", "tackle"],
           "pokeball": "cherishball"
         }
       ],

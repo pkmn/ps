@@ -215,6 +215,8 @@ export class Specie implements DexSpecies {
   readonly evoMove?: MoveName;
   readonly cosmeticFormes?: SpeciesName[];
   readonly otherFormes?: SpeciesName[];
+  readonly formeOrder?: SpeciesName[];
+  readonly formes?: SpeciesName[];
   readonly genderRatio: { M: number; F: number };
   readonly isMega?: boolean;
   readonly isPrimal?: boolean;
@@ -261,12 +263,23 @@ export class Specie implements DexSpecies {
     if (!this.cosmeticFormes?.length) this.cosmeticFormes = undefined;
     this.otherFormes = species.otherFormes?.filter(s => exists(this.dex.getSpecies(s)));
     if (!this.otherFormes?.length) this.otherFormes = undefined;
+    this.formeOrder = species.formeOrder?.filter(s => exists(this.dex.getSpecies(s)));
+    if (!this.formeOrder?.length) this.formeOrder = undefined;
+    this.formes = this.formeOrder?.filter(s => !this.dex.getSpecies(s).isGigantamax);
     this.prevo =
       species.prevo && exists(this.dex.getSpecies(species.prevo)) ? species.prevo : undefined;
   }
 
   hasAbility(ability: string) {
     return this.dex.hasAbility(this, ability);
+  }
+
+  get formeNum() {
+    if (this.isGigantamax) return this;
+    return (this.baseSpecies === this.name
+      ? this.formeOrder ? this.formeOrder.findIndex(name => name === this.name) : 0
+      : this.dex.getSpecies(this.baseSpecies).formeOrder!.findIndex(
+        name => name === (this.isGigantamax ? this.baseSpecies : this.name)));
   }
 }
 

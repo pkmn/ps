@@ -98,9 +98,9 @@ assert(Array.from(gens.get(1).species).length === 151);
 The recommended way of using `@pkmn/dex` in a web browser is to **configure your bundler**
 ([Webpack][6], [Rollup][7], [Parcel][8], etc) to minimize it and package it with the rest of your
 application. If you do not use a bundler, a convenience `production.min.js` is included in the
-package. You simply need to depend on `./node_modules/@pkmn/dex/production.min.js` in a `script`
-tag (which is what the unpkg shortcut above is doing), after which **`Dex` will be accessible as a
-global.**
+package. You simply need to depend on `./node_modules/@pkmn/dex/build/production.min.js` in a
+`script` tag (which is what the unpkg shortcut above is doing), after which **`Dex` will be
+accessible as a global.**
 
 ## Limitations
 

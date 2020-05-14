@@ -65,10 +65,10 @@ a couple of Pokémon Showdown quirks. While this interface is far from the
 \- references in fields which point to objects that do not exist in the generation will be updated
 to remove those objects, but fields which should not be relevant at all to an earlier generation
 are not pruned. For example, Chansey's `prevo` field in Gen 3 will not be `happiny`, but a move from
-the same generation may still have its `zMovePower` field populated as it should never be queried in
-Gen 3 anyway. This is mostly an artifact of how the Pokémon Showdown `Dex` `Generations` is built on
-top of works - for efficiency reasons its only worthwhile to clean up the fields which are actually
-relevant to the generation in question.
+the same generation may still have its `zMove.basePower` field populated as it should never be
+queried in Gen 3 anyway. This is mostly an artifact of how the Pokémon Showdown `Dex` `Generations`
+is built on top of works - for efficiency reasons its only worthwhile to clean up the fields which
+are actually relevant to the generation in question.
 
 ```ts
 import {Dex} from '@pkmn/dex';
@@ -87,8 +87,8 @@ Please see the [unit tests][13] for more comprehensive usage examples.
 The recommended way of using `@pkmn/data` in a web browser is to **configure your bundler**
 ([Webpack][6], [Rollup][7], [Parcel][8], etc) to minimize it and package it with the rest of your
 application. If you do not use a bundler, a convenience `production.min.js` is included in the
-package. You simply need to depend on `./node_modules/@pkmn/data/production.min.js` in a `script`
-tag (which is what the unpkg shortcut above is doing), after which **`Generations` will be
+package. You simply need to depend on `./node_modules/@pkmn/data/build/production.min.js` in a
+`script` tag (which is what the unpkg shortcut above is doing), after which **`Generations` will be
 accessible as a global.**
 
 ## Limitations

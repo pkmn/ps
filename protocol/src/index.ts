@@ -2077,7 +2077,7 @@ const BLOCKABLE = new Set([
 ]);
 const STARTABLE = new Set([
   'wrap', 'clamp', 'whirlpool', 'firespin', 'magmastorm',
-  'sandtomb', 'infestation', 'charge', 'trapped', 'bind',
+  'sandtomb', 'infestation', 'trapped', 'bind',
 ]);
 const NUMBERABLE = new Set(['spite', 'grudge', 'forewarn', 'sketch', 'leppaberry', 'mysteryberry']);
 
@@ -2114,6 +2114,12 @@ function upgradeBattleArgs(
       return {args: ['-block', pokemon, effect, arg3 as Protocol.MoveName], kwArgs};
     }
 
+    if (id === 'charge') {
+      return {
+        args: ['-singlemove', pokemon, effect as unknown as Protocol.MoveName],
+        kwArgs: {of: target}
+      };
+    }
     if (STARTABLE.has(id)) {
       return {
         args: ['-start', pokemon, effect],
