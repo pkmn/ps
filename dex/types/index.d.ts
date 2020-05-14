@@ -143,13 +143,13 @@ export interface MoveData extends EffectData, HitEffect {
 
   isZ?: boolean | string;
   zMove?: {
-    basePower?: number,
-    effect?: string,
-    boost?: Partial<BoostsTable>,
+    basePower?: number;
+    effect?: string;
+    boost?: Partial<BoostsTable>;
   };
   isMax?: boolean | string;
   maxMove?: {
-    basePower: number,
+    basePower: number;
   };
 
   ohko?: boolean | TypeName;
@@ -231,7 +231,7 @@ export interface SpeciesData {
   evoType?: EvoType;
   forme?: string;
   gender?: GenderName;
-  genderRatio?: { M: number, F: number };
+  genderRatio?: { M: number; F: number };
   maxHP?: number;
   cosmeticFormes?: string[];
   otherFormes?: string[];
@@ -338,13 +338,13 @@ export interface Move extends Readonly<BasicEffect<MoveName> & MoveData> {
   readonly zMoveEffect?: ID;
   readonly isZ: boolean | ID;
   readonly zMove?: {
-    basePower?: number,
-    effect?: ID,
-    boost?: Partial<BoostsTable>,
+    basePower?: number;
+    effect?: ID;
+    boost?: Partial<BoostsTable>;
   };
   readonly isMax: boolean | SpeciesName;
   readonly maxMove?: {
-    basePower: number,
+    basePower: number;
   };
   readonly noMetronome?: MoveName[];
   readonly volatileStatus?: ID;

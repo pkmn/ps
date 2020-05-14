@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 'use strict';
 
-const Compiler = require('../compiler');
-const compiler = new Compiler(__dirname);
+const Bundler = require('../bundler');
+const bundler = new Bundler(__dirname);
 
 let bundled = `(() => {
 'use strict';
 const exports = {};
 `;
-bundled += compiler.read('sets.js', 3, 1);
+bundled += bundler.read('sets.js', 3, 1);
 bundled += 'const sets_1 = exports;\n';
-bundled += compiler.read('teams.js', 4, 1);
+bundled += bundler.read('teams.js', 4, 1);
 bundled += `
 // EXPORTS
 window.PokemonSets = exports.Sets;
 window.PokemonTeams = exports.Teams;
 })();`
-compiler.compile(bundled);
+bundler.bundle(bundled);

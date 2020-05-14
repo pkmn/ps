@@ -29,7 +29,7 @@ const config = {
   ],
 }
 
-class Compiler {
+class Bundler {
   constructor(dirname) {
     this.built = path.resolve(dirname, 'build');
   }
@@ -37,23 +37,23 @@ class Compiler {
   read(f, b = 0, e = 0) {
     try {
       const data = fs.readFileSync(path.join(this.built, f), 'utf8');
-      if (e) return data.split('\n').slice(b, -e).join('\n');
-      if (b) return data.split('\n').slice(b).join('\n');
-      return data;
+      if (e) return data.split('\n').slice(b, -e).join('\n') + '\n';
+      if (b) return data.split('\n').slice(b).join('\n') + '\n';
+      return data + '\n';
     } catch (err) {
       if (err.code === 'ENOENT') {
-        console.error(`Missing file 'build/${f}' - did you run \`npm run compile\`?`);
+        console.error(`Missing file 'dist/${f}' - did you run \`npm run compile\`?`);
         process.exit(1);
       }
       throw err;
     }
   }
 
-  compile(bundled) {
+  bundle(bundled, output = 'production.min.js') {
     bundled = babel.transformSync(bundled, config).code;
     bundled = terser.minify(bundled).code;
-    fs.writeFileSync(path.join(this.built, 'production.min.js'), bundled);
+    fs.writeFileSync(path.join(this.built, output), bundled);
   }
 }
 
-module.exports = Compiler;
+module.exports = Bundler;

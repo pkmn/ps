@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 'use strict';
 
-const Compiler = require('../compiler');
-const compiler = new Compiler(__dirname);
+const Bundler = require('../bundler');
+const bundler = new Bundler(__dirname);
 
 let bundled = `(() => {
 'use strict';
 const exports = {};
 `;
-bundled += `const DATA = ${compiler.read('data/data.json')};\n`;
-bundled += compiler.read('data/index.js', 24, 1);
-bundled += compiler.read('adaptable.js', 3, 1);
+bundled += `const DATA = ${bundler.read('data/data.json')};\n`;
+bundled += bundler.read('data/index.js', 24, 1);
+bundled += bundler.read('adaptable.js', 3, 1);
 bundled += `
 // EXPORTS
 window.PokemonSprites = new exports.Sprites(exports.Data);
@@ -20,4 +20,4 @@ window.PokemonSprites.ANIMATED = exports.Sprites.ANIMATED;
 window.PokemonSprites.FRAME2 = exports.Sprites.FRAME2;
 window.PokemonIcons = new exports.Icons(exports.Data);
 })();`
-compiler.compile(bundled);
+bundler.bundle(bundled);

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 'use strict';
 
-const Compiler = require('../compiler');
-const compiler = new Compiler(__dirname);
+const Bundler = require('../bundler');
+const bundler = new Bundler(__dirname);
 
 const DATA = [
   ['Abilities', 'abilities'],
@@ -19,11 +19,11 @@ let bundled = `(() => {
 const exports = {};
 `;
 for (const [name, file] of DATA) {
-  bundled += `const ${name}JSON = ${compiler.read(`data/${file}.json`)};\n`;
+  bundled += `const ${name}JSON = ${bundler.read(`data/${file}.json`)};\n`;
 }
-bundled += compiler.read('index.js', 29, 1);
+bundled += bundler.read('index.js', 29, 1);
 bundled += `
 // EXPORTS
 window.Dex = exports.Dex;
 })();`
-compiler.compile(bundled);
+bundler.bundle(bundled);

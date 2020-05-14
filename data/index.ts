@@ -275,11 +275,11 @@ export class Specie implements DexSpecies {
   }
 
   get formeNum() {
-    if (this.isGigantamax) return this;
     return (this.baseSpecies === this.name
       ? this.formeOrder ? this.formeOrder.findIndex(name => name === this.name) : 0
       : this.dex.getSpecies(this.baseSpecies).formeOrder!.findIndex(
-        name => name === (this.isGigantamax ? this.baseSpecies : this.name)));
+        name => name === (this.isGigantamax ? this.baseSpecies : this.name)
+      ));
   }
 }
 
