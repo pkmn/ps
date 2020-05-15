@@ -1,4 +1,4 @@
-import {GenerationNum} from '@pkmn/types';
+import {GenerationNum} from '@pkmn/dex-types';
 import {Dex} from './index';
 
 import * as fs from 'fs';

@@ -1217,8 +1217,32 @@ function deepClone(obj: any): any {
 dexes[CURRENT_GEN_ID] = new ModdedDex(CURRENT_GEN_ID);
 export const Dex = dexes[CURRENT_GEN_ID];
 
-export * from '@pkmn/types';
 export {
+  ID,
+  As,
+  Weather,
+  FieldCondition,
+  SideCondition,
+  GenerationNum,
+  GenderName,
+  StatName,
+  StatsTable,
+  BoostName,
+  BoostsTable,
+  MoveCategory,
+  MoveTarget,
+  Nonstandard,
+  EvoType,
+  EggGroup,
+  SideID,
+  Player,
+  GameType,
+  HPColor,
+  StatusName,
+  NatureName,
+  TypeName,
+  HPTypeName,
+  PokemonSet,
   AbilityName,
   ItemName,
   MoveName,

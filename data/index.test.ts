@@ -1,5 +1,4 @@
-import {GenerationNum, StatsTable} from '@pkmn/types';
-import {Dex as DexT, ItemName} from '@pkmn/dex-types';
+import {GenerationNum, StatsTable, Dex as DexT, ItemName} from '@pkmn/dex-types';
 import {Generations} from './index';
 
 import {calculate, Pokemon, Move} from '@smogon/calc/adaptable';

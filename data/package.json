@@ -11,8 +11,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/dex-types": "^0.0.3",
-    "@pkmn/types": "^0.1.0"
+    "@pkmn/dex-types": "^0.0.3"
   },
   "devDependencies": {
     "@pkmn/dex": "^0.0.3",

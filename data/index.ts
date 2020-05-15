@@ -1,29 +1,26 @@
 import {
-  EggGroup,
-  EvoType,
-  GenderName,
-  GenerationNum,
-  ID,
-  MoveCategory,
-  Nonstandard,
-  StatName,
-  StatsTable,
-  TypeName,
-} from '@pkmn/types';
-
-import {
   AbilityName,
   Dex,
   Effect,
+  EggGroup,
+  EvoType,
   FormeName,
+  GenderName,
+  GenerationNum,
+  ID,
   ItemName,
+  MoveCategory,
   MoveName,
   Nature,
+  Nonstandard,
   PureEffect,
   Species as DexSpecies,
   SpeciesAbility,
   SpeciesName,
+  StatName,
+  StatsTable,
   Type as DexType,
+  TypeName,
 } from '@pkmn/dex-types';
 
 function exists(e: Effect | DexSpecies) {
@@ -557,8 +554,32 @@ function calcADV(
   }
 }
 
-export * from '@pkmn/types';
 export {
+  ID,
+  As,
+  Weather,
+  FieldCondition,
+  SideCondition,
+  GenerationNum,
+  GenderName,
+  StatName,
+  StatsTable,
+  BoostName,
+  BoostsTable,
+  MoveCategory,
+  MoveTarget,
+  Nonstandard,
+  EvoType,
+  EggGroup,
+  SideID,
+  Player,
+  GameType,
+  HPColor,
+  StatusName,
+  NatureName,
+  TypeName,
+  HPTypeName,
+  PokemonSet,
   AbilityName,
   ItemName,
   MoveName,
