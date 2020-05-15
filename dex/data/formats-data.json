@@ -4778,6 +4778,7 @@
     "noibat": {"tier": "LC"},
     "noivern": {"tier": "UU", "doublesTier": "DUU"},
     "xerneas": {"isNonstandard": "Past", "tier": "Illegal"},
+    "xerneasneutral": {"isNonstandard": "Unobtainable", "tier": "Illegal"},
     "yveltal": {"isNonstandard": "Past", "tier": "Illegal"},
     "zygarde": {"isNonstandard": "Past", "tier": "Illegal"},
     "zygarde10": {"isNonstandard": "Past", "tier": "Illegal"},

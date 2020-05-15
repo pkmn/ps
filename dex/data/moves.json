@@ -3401,6 +3401,7 @@
     "coreenforcer": {"inherit": true, "isNonstandard": null},
     "corkscrewcrash": {"inherit": true, "isNonstandard": null},
     "crushgrip": {"inherit": true, "isNonstandard": null},
+    "curse": {"inherit": true, "target": "normal"},
     "darkvoid": {"inherit": true, "isNonstandard": null},
     "detect": {
       "inherit": true,
@@ -5985,7 +5986,7 @@
       "volatileStatus": "curse",
       "effect": {"onResidualOrder": 10},
       "secondary": null,
-      "target": "normal",
+      "target": "randomNormal",
       "nonGhostTarget": "self",
       "type": "Ghost",
       "zMove": {"effect": "curse"}

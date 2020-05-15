@@ -1056,7 +1056,7 @@
       "desc": "This Pokemon is immune to Electric-type moves and raises its Special Attack by 1 stage when hit by an Electric-type move. If this Pokemon is not the target of a single-target Electric-type move used by another Pokemon, this Pokemon redirects that move to itself if it is within the range of that move.",
       "shortDesc": "This Pokemon draws Electric moves to itself to raise Sp. Atk by 1; Electric immunity.",
       "name": "Lightning Rod",
-      "num": 32
+      "num": 31
     },
     "limber": {
       "shortDesc": "This Pokemon cannot be paralyzed. Gaining this Ability while paralyzed cures it.",

@@ -19526,6 +19526,28 @@
     "xerneas": {
       "num": 716,
       "name": "Xerneas",
+      "baseForme": "Active",
+      "types": ["Fairy"],
+      "gender": "N",
+      "baseStats": {
+        "hp": 126,
+        "atk": 131,
+        "def": 95,
+        "spa": 131,
+        "spd": 98,
+        "spe": 99
+      },
+      "abilities": {"0": "Fairy Aura"},
+      "weightkg": 215,
+      "eggGroups": ["Undiscovered"],
+      "otherFormes": ["Xerneas-Neutral"],
+      "formeOrder": ["Xerneas-Neutral", "Xerneas"]
+    },
+    "xerneasneutral": {
+      "num": 716,
+      "name": "Xerneas-Neutral",
+      "baseSpecies": "Xerneas",
+      "forme": "Neutral",
       "types": ["Fairy"],
       "gender": "N",
       "baseStats": {
