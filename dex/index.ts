@@ -1,20 +1,3 @@
-import {
-  BoostsTable,
-  EggGroup,
-  EvoType,
-  GenderName,
-  GenerationNum,
-  ID,
-  MoveCategory,
-  MoveTarget,
-  NatureName,
-  Nonstandard,
-  StatsTable,
-  StatusName,
-  StatName,
-  TypeName,
-} from '@pkmn/types';
-
 import * as T from '@pkmn/dex-types';
 
 import * as AbilitiesJSON from './data/abilities.json';
@@ -25,10 +8,10 @@ import * as SpeciesJSON from './data/species.json';
 import * as TypesJSON from './data/types.json';
 import * as FormatsDataJSON from './data/formats-data.json';
 
-export function toID(text: any): ID {
+export function toID(text: any): T.ID {
   if (text?.id) text = text.id;
   if (typeof text !== 'string' && typeof text !== 'number') return '';
-  return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
+  return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as T.ID;
 }
 
 function getString(str: any): string {
@@ -47,24 +30,24 @@ function combine(obj: AnyObject, ...data: (AnyObject | null)[]): AnyObject {
 export interface FormatsData {
   tier?: string;
   doublesTier?: string;
-  isNonstandard?: Nonstandard;
+  isNonstandard?: T.Nonstandard;
   inherit?: boolean;
 }
 
 interface AnyObject { [k: string]: any }
 
 export class BasicEffect<NameT extends string = string> implements T.BasicEffect<NameT> {
-  id: ID;
+  id: T.ID;
   name: NameT;
   fullname: string;
   effectType: T.EffectType;
   kind: T.DataKind;
   exists: boolean;
   num: number;
-  gen: GenerationNum;
+  gen: T.GenerationNum;
   shortDesc: string;
   desc: string;
-  isNonstandard: Nonstandard | null;
+  isNonstandard: T.Nonstandard | null;
   duration?: number;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
@@ -143,21 +126,22 @@ export class Item extends BasicEffect<T.ItemName> implements T.Item {
   readonly forcedForme?: T.SpeciesName;
   readonly megaStone?: T.SpeciesName;
   readonly megaEvolves?: T.SpeciesName;
-  readonly onDrive?: TypeName;
-  readonly onMemory?: TypeName;
-  readonly onPlate?: TypeName;
+  readonly onDrive?: T.TypeName;
+  readonly onMemory?: T.TypeName;
+  readonly onPlate?: T.TypeName;
   readonly zMove?: T.MoveName | true;
-  readonly zMoveType?: TypeName;
+  readonly zMoveType?: T.TypeName;
+  readonly zMoveFrom?: T.MoveName;
   readonly itemUser?: T.SpeciesName[];
-  readonly fling?: T.FlingData;
+  readonly fling?: T.ItemData['fling'];
   readonly effect?: Partial<PureEffect>;
   readonly ignoreKlutz?: boolean;
   readonly isBerry?: boolean;
   readonly isChoice?: boolean;
   readonly isGem?: boolean;
   readonly isPokeball?: boolean;
-  readonly naturalGift?: { basePower: number; type: TypeName };
-  readonly boosts?: Partial<BoostsTable> | false;
+  readonly naturalGift?: { basePower: number; type: T.TypeName };
+  readonly boosts?: Partial<T.BoostsTable> | false;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     super(data, ...moreData);
@@ -195,45 +179,45 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly effectType: 'Move';
   readonly kind: 'Move';
 
-  readonly boosts?: Partial<BoostsTable>;
-  readonly status?: StatusName;
-  readonly volatileStatus?: ID;
-  readonly slotCondition?: ID;
-  readonly sideCondition?: ID;
-  readonly terrain?: ID;
-  readonly pseudoWeather?: ID;
-  readonly weather?: ID;
+  readonly boosts?: Partial<T.BoostsTable>;
+  readonly status?: T.StatusName;
+  readonly volatileStatus?: T.ID;
+  readonly slotCondition?: T.ID;
+  readonly sideCondition?: T.ID;
+  readonly terrain?: T.ID;
+  readonly pseudoWeather?: T.ID;
+  readonly weather?: T.ID;
 
   readonly basePower!: number;
-  readonly type!: TypeName;
+  readonly type!: T.TypeName;
   readonly accuracy!: true | number;
   readonly pp!: number;
-  readonly target!: MoveTarget;
+  readonly target!: T.MoveTarget;
   readonly priority!: number;
-  readonly flags: T.MoveFlags;
-  readonly category!: MoveCategory;
+  readonly flags: T.Move['flags'];
+  readonly category!: T.MoveCategory;
 
   readonly effect?: Partial<T.PureEffectData>;
   readonly damage?: number | 'level' | false | null;
   readonly noPPBoosts?: boolean;
 
-  readonly isZ: boolean | ID;
+  readonly isZ: boolean | T.ID;
   readonly zMove?: {
     basePower?: number;
-    effect?: ID;
-    boost?: Partial<BoostsTable>;
+    effect?: T.ID;
+    boost?: Partial<T.BoostsTable>;
   };
   readonly isMax: boolean | T.SpeciesName;
   readonly maxMove?: {
     basePower: number;
   };
 
-  readonly ohko?: boolean | TypeName;
+  readonly ohko?: boolean | T.TypeName;
   readonly thawsTarget?: boolean;
   readonly heal?: number[] | null;
   readonly forceSwitch?: boolean;
   readonly selfSwitch?: boolean | 'copyvolatile';
-  readonly selfBoost?: { boosts?: Partial<BoostsTable> };
+  readonly selfBoost?: { boosts?: Partial<T.BoostsTable> };
   readonly selfdestruct?: boolean | 'ifHit' | 'always';
   readonly breaksProtect?: boolean;
   readonly recoil?: [number, number];
@@ -249,13 +233,13 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly basePowerModifier?: number;
   readonly critModifier?: number;
   readonly critRatio?: number;
-  readonly defensiveCategory?: MoveCategory;
+  readonly defensiveCategory?: T.MoveCategory;
   readonly forceSTAB?: boolean;
   readonly ignoreAbility?: boolean;
   readonly ignoreAccuracy?: boolean;
   readonly ignoreDefensive?: boolean;
   readonly ignoreEvasion?: boolean;
-  readonly ignoreImmunity?: boolean | { [k in keyof TypeName]?: boolean };
+  readonly ignoreImmunity?: boolean | { [k in keyof T.TypeName]?: boolean };
   readonly ignoreNegativeOffensive?: boolean;
   readonly ignoreOffensive?: boolean;
   readonly ignorePositiveDefensive?: boolean;
@@ -266,8 +250,8 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly noCopy?: boolean;
   readonly noDamageVariance?: boolean;
   readonly noFaint?: boolean;
-  readonly nonGhostTarget?: MoveTarget;
-  readonly pressureTarget?: MoveTarget;
+  readonly nonGhostTarget?: T.MoveTarget;
+  readonly pressureTarget?: T.MoveTarget;
   readonly sleepUsable?: boolean;
   readonly smartTarget?: boolean;
   readonly spreadModifier?: number;
@@ -291,7 +275,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
     this.effectType = 'Move';
     this.kind = 'Move';
 
-    this.type = getString(data.type) as TypeName;
+    this.type = getString(data.type) as T.TypeName;
     this.basePower = Number(data.basePower!);
     this.critRatio = Number(data.critRatio) || 1;
     this.secondary = data.secondary || null;
@@ -308,14 +292,14 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
     this.flags = data.flags || {};
     this.selfSwitch =
       (typeof data.selfSwitch === 'string'
-        ? (data.selfSwitch as ID)
+        ? (data.selfSwitch as T.ID)
         : data.selfSwitch) ||
       undefined;
     this.pressureTarget = data.pressureTarget || undefined;
     this.nonGhostTarget = data.nonGhostTarget || undefined;
     this.ignoreAbility = data.ignoreAbility || false;
     this.volatileStatus =
-      typeof data.volatileStatus === 'string' ? (data.volatileStatus as ID) : undefined;
+      typeof data.volatileStatus === 'string' ? (data.volatileStatus as T.ID) : undefined;
 
     if (this.category !== 'Status' && !this.maxMove && this.id !== 'struggle') {
       this.maxMove = {basePower: 1};
@@ -412,16 +396,16 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly effectType: 'Pokemon';
   readonly kind: 'Species';
 
-  readonly baseStats: StatsTable;
+  readonly baseStats: T.StatsTable;
   readonly baseSpecies: T.SpeciesName;
   readonly baseForme: T.FormeName | '';
   readonly forme: T.FormeName | '';
   readonly abilities: T.SpeciesAbility<T.AbilityName | ''>;
-  readonly types: TypeName[];
+  readonly types: T.TypeName[];
   readonly prevo?: T.SpeciesName | '';
   readonly evos?: T.SpeciesName[];
   readonly nfe: boolean;
-  readonly eggGroups: EggGroup[];
+  readonly eggGroups: T.EggGroup[];
   readonly weightkg: number;
   readonly weighthg: number;
   readonly heightm: number;
@@ -443,12 +427,12 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly requiredItem?: T.ItemName;
   readonly requiredItems?: T.ItemName[];
   readonly requiredMove?: T.MoveName;
-  readonly gender?: GenderName;
+  readonly gender?: T.GenderName;
   readonly maxHP?: number;
   readonly evoLevel?: number;
   readonly evoCondition?: string;
   readonly evoItem?: string;
-  readonly evoType?: EvoType;
+  readonly evoType?: T.EvoType;
   readonly effect?: Partial<PureEffect>;
   readonly canHatch?: boolean;
 
@@ -539,15 +523,15 @@ export class Learnset implements T.Learnset {
 }
 
 export class Type implements T.Type {
-  readonly id: ID;
-  readonly name: TypeName;
+  readonly id: T.ID;
+  readonly name: T.TypeName;
   readonly effectType: 'Type';
   readonly kind: 'Type';
   readonly exists: boolean;
-  readonly gen: GenerationNum;
-  readonly damageTaken: { [t in Exclude<TypeName, '???'>]: number } & { [key: string]: number };
-  readonly HPivs: Partial<StatsTable>;
-  readonly HPdvs: Partial<StatsTable>;
+  readonly gen: T.GenerationNum;
+  readonly damageTaken: { [t in Exclude<T.TypeName, '???'>]: number } & { [key: string]: number };
+  readonly HPivs: Partial<T.StatsTable>;
+  readonly HPdvs: Partial<T.StatsTable>;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     this.exists = true;
@@ -556,7 +540,7 @@ export class Type implements T.Type {
     this.effectType = 'Type';
     this.kind = 'Type';
     this.id = data.id || '';
-    this.name = getString(data.name).trim() as TypeName;
+    this.name = getString(data.name).trim() as T.TypeName;
     this.exists = !!(this.exists && this.id);
     this.gen = data.gen || 0;
 
@@ -617,7 +601,7 @@ type DeepPartial<T> = {
 type Writable<T> = { -readonly [P in keyof T]: T[P] };
 
 type Data<T> = { 8: { [id: string]: T } } & {
-  [num in Exclude<GenerationNum, 8>]?: { [id: string]: { inherit?: boolean } & DeepPartial<T> }
+  [num in Exclude<T.GenerationNum, 8>]?: { [id: string]: { inherit?: boolean } & DeepPartial<T> }
 };
 
 const DATA = {
@@ -629,7 +613,9 @@ const DATA = {
   Natures,
   Learnsets: null! as Data<T.LearnsetData>,
   Types: TypesJSON as { 8: { [id: string]: T.TypeData } } & {
-    [num in Exclude<GenerationNum, 8>]?: { [type in Exclude<TypeName, '???'>]?: T.TypeData | null }
+    [num in Exclude<T.GenerationNum, 8>]?: {
+      [type in Exclude<T.TypeName, '???'>]?: T.TypeData | null
+    }
   },
   FormatsData: FormatsDataJSON as Data<FormatsData>,
 };
@@ -648,9 +634,9 @@ const dexes: { [mod: string]: ModdedDex } = Object.create(null);
 const nullEffect: PureEffect = new PureEffect({name: '', exists: false});
 
 export class ModdedDex implements T.Dex {
-  static readonly STATS: ReadonlyArray<StatName> = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
+  static readonly STATS: ReadonlyArray<T.StatName> = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
 
-  readonly gen: GenerationNum;
+  readonly gen: T.GenerationNum;
   readonly genid: GenID;
   readonly data!: {
     Abilities: { [id: string]: T.AbilityData };
@@ -660,7 +646,7 @@ export class ModdedDex implements T.Dex {
     Species: { [id: string]: T.SpeciesData };
     Natures: { [id: string]: T.NatureData };
     Learnsets: null | { [id: string]: T.LearnsetData };
-    Types: { [type in Exclude<TypeName, '???'>]: T.TypeData };
+    Types: { [type in Exclude<T.TypeName, '???'>]: T.TypeData };
     FormatsData: { [id: string]: FormatsData };
   };
 
@@ -678,12 +664,12 @@ export class ModdedDex implements T.Dex {
   constructor(genid = CURRENT_GEN_ID) {
     if (!GEN_IDS.includes(genid)) throw new Error('Unsupported genid');
     this.genid = genid;
-    this.gen = parseInt(genid.slice(3)) as GenerationNum;
+    this.gen = parseInt(genid.slice(3)) as T.GenerationNum;
     this.loadData();
   }
 
   get modid() {
-    return this.genid as ID;
+    return this.genid as T.ID;
   }
 
   mod(genid: GenID) {
@@ -703,9 +689,9 @@ export class ModdedDex implements T.Dex {
     name = (name || '').trim();
     let id = toID(name);
     if (id === 'nidoran' && name.slice(-1) === '♀') {
-      id = 'nidoranf' as ID;
+      id = 'nidoranf' as T.ID;
     } else if (id === 'nidoran' && name.slice(-1) === '♂') {
-      id = 'nidoranm' as ID;
+      id = 'nidoranm' as T.ID;
     }
 
     let species = this.cache.Species[id];
@@ -890,7 +876,7 @@ export class ModdedDex implements T.Dex {
     return this.getPureEffectByID(id);
   }
 
-  getPureEffectByID(id: ID): PureEffect {
+  getPureEffectByID(id: T.ID): PureEffect {
     if (!id) return nullEffect;
 
     let effect = this.cache.PureEffects[id];
@@ -990,12 +976,12 @@ export class ModdedDex implements T.Dex {
     if (id && data) {
       move = new Move({name}, data);
       if (id.substr(0, 11) === 'hiddenpower') {
-        id = /([a-z]*)([0-9]*)/.exec(id)![1] as ID;
+        id = /([a-z]*)([0-9]*)/.exec(id)![1] as T.ID;
       } else if (id.substr(0, 6) === 'return' && id.length > 6) {
-        id = 'return' as ID;
+        id = 'return' as T.ID;
         (move as any).basePower = Number(id.slice(6));
       } else if (id.substr(0, 11) === 'frustration' && id.length > 11) {
-        id = 'frustration' as ID;
+        id = 'frustration' as T.ID;
         (move as any).basePower = Number(id.slice(11));
       }
       if (this.gen <= 3 && data.category !== 'Status') {
@@ -1022,7 +1008,7 @@ export class ModdedDex implements T.Dex {
       nature.exists = true;
     }
     if (!nature.id) nature.id = id;
-    if (!nature.name) nature.name = name as NatureName;
+    if (!nature.name) nature.name = name as T.NatureName;
     if (!nature.effectType) nature.effectType = 'Nature';
     if (!nature.kind) nature.kind = 'Nature';
     if (!nature.gen) nature.gen = 3;
@@ -1044,7 +1030,7 @@ export class ModdedDex implements T.Dex {
     let type = this.cache.Types[id];
     if (type) return type;
 
-    const typeName = id.charAt(0).toUpperCase() + id.substr(1) as Exclude<TypeName, '???'>;
+    const typeName = id.charAt(0).toUpperCase() + id.substr(1) as Exclude<T.TypeName, '???'>;
     const data = this.data.Types[typeName];
     if (id && data) {
       type = new Type({id, name: typeName}, data);
@@ -1069,7 +1055,7 @@ export class ModdedDex implements T.Dex {
       }
       return true;
     }
-    const typeData = this.data.Types[targetTyping as Exclude<TypeName, '???'>];
+    const typeData = this.data.Types[targetTyping as Exclude<T.TypeName, '???'>];
     if (typeData && typeData.damageTaken[sourceType] === 3) return false;
     return true;
   }
@@ -1088,7 +1074,7 @@ export class ModdedDex implements T.Dex {
       }
       return totalTypeMod;
     }
-    const typeData = this.data.Types[targetTyping as Exclude<TypeName, '???'>];
+    const typeData = this.data.Types[targetTyping as Exclude<T.TypeName, '???'>];
     if (!typeData) return 0;
     switch (typeData.damageTaken[sourceType]) {
     case 1: return 1; // super-effective
@@ -1098,7 +1084,7 @@ export class ModdedDex implements T.Dex {
     }
   }
 
-  getHiddenPower(ivs: StatsTable) {
+  getHiddenPower(ivs: T.StatsTable) {
     const tr = (num: number, bits = 0) => {
       if (bits) return (num >>> 0) % (2 ** bits);
       return num >>> 0;
@@ -1111,7 +1097,7 @@ export class ModdedDex implements T.Dex {
       const speDV = tr(ivs.spe / 2);
       const spcDV = tr(ivs.spa / 2);
       return {
-        type: HP_TYPES[4 * (atkDV % 4) + (defDV % 4)] as TypeName,
+        type: HP_TYPES[4 * (atkDV % 4) + (defDV % 4)] as T.TypeName,
         power: tr(
           (5 * ((spcDV >> 3) +
             (2 * (speDV >> 3)) +
@@ -1126,12 +1112,12 @@ export class ModdedDex implements T.Dex {
       let hpPowerX = 0;
       let i = 1;
       for (const s in stats) {
-        hpTypeX += i * (ivs[s as StatName] % 2);
-        hpPowerX += i * (tr(ivs[s as StatName] / 2) % 2);
+        hpTypeX += i * (ivs[s as T.StatName] % 2);
+        hpPowerX += i * (tr(ivs[s as T.StatName] / 2) % 2);
         i *= 2;
       }
       return {
-        type: HP_TYPES[tr(hpTypeX * 15 / 63)] as TypeName,
+        type: HP_TYPES[tr(hpTypeX * 15 / 63)] as T.TypeName,
         // After Gen 6, Hidden Power is always 60 base power
         power: (this.gen && this.gen < 6) ? tr(hpPowerX * 40 / 63) + 30 : 60,
       };
@@ -1178,7 +1164,7 @@ export class ModdedDex implements T.Dex {
 
     if (this.genid === CURRENT_GEN_ID) return;
 
-    const parentDex = this.forGen(this.gen + 1 as GenerationNum);
+    const parentDex = this.forGen(this.gen + 1 as T.GenerationNum);
     if (type === 'Learnsets') parentDex.load('Learnsets');
 
     const parentDataType = parentDex.data[type];
@@ -1212,7 +1198,7 @@ export class ModdedDex implements T.Dex {
 }
 
 const SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', 'Dragon'];
-function getGen3Category(type: TypeName) {
+function getGen3Category(type: T.TypeName) {
   return SPECIAL.includes(type) ? 'Special' : 'Physical';
 }
 
@@ -1230,3 +1216,40 @@ function deepClone(obj: any): any {
 
 dexes[CURRENT_GEN_ID] = new ModdedDex(CURRENT_GEN_ID);
 export const Dex = dexes[CURRENT_GEN_ID];
+
+export * from '@pkmn/types';
+export {
+  AbilityName,
+  ItemName,
+  MoveName,
+  SpeciesName,
+  FormeName,
+  EffectType,
+  DataKind,
+  Effect,
+  EffectData,
+  HitEffect,
+  SecondaryEffect,
+  PureEffectData,
+  AbilityData,
+  ItemData,
+  MoveData,
+  SpeciesData,
+  MoveSource,
+  EventInfoData,
+  LearnsetData,
+  TypeData,
+  NatureData,
+  // BasicEffect,
+  // PureEffect,
+  // Ability,
+  // Item,
+  // Move,
+  // Species,
+  EventInfo,
+  // Learnset,
+  // Type,
+  // Nature,
+  GenID,
+  // Dex,
+} from '@pkmn/dex-types';

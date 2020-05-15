@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+const fs = require('fs');
+const path = require('path');
+
+const subPackages = {};
+for (const pkg of require('./package.json').subPackages) {
+  const json = require(path.join(__dirname, pkg, 'package.json'));
+  subPackages[json.name] = { path: pkg, json };
+}
+
+function update(name, version) {
+  if (!name.startsWith('@pkmn/')) name = `@pkmn/${name}`;
+
+  const bumpPkg = subPackages[name];
+  if (!bumpPkg) throw new Error(`Unknown package ${name}`);
+
+  if (!version) {
+    const [major, minor, patch] = bumpPkg.json.version.split('.');
+    version = `${major}.${minor}.${Number(patch) + 1}`;
+  }
+
+  console.log(`\x1b[96m${name}\x1b[0m ${bumpPkg.json.version} -> ${version}`);
+  bumpPkg.json.version = version;
+  fs.writeFileSync(
+    path.join(__dirname, bumpPkg.path, 'package.json'),
+    JSON.stringify(bumpPkg.json, null, 2));
+
+  let nl = false;
+  for (const n in subPackages) {
+    const pkg = subPackages[n];
+    for (const dep of ['dependencies', 'devDependencies', 'optionalDependencies']) {
+      if (pkg.json[dep] && pkg.json[dep][name]) {
+        console.log(`${pkg.json.name} \x1b[90m${dep}\x1b[0m ${pkg.json[dep][name]} -> ^${version}`);
+        nl = true;
+        pkg.json[dep][name] = `^${version}`;
+        fs.writeFileSync(
+          path.join(__dirname, pkg.path, 'package.json'),
+          JSON.stringify(pkg.json, null, 2));
+      }
+    }
+  }
+  if (nl) console.log();
+}
+
+const name = process.argv[2];
+const version = process.argv[3];
+if (!name) {
+  for (const name of ['sim', 'dex-types', 'dex', 'data']) {
+    update(name, version);
+  }
+} else {
+  update(name, version);
+}
+

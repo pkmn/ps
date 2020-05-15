@@ -52,17 +52,15 @@ export interface AbilityData extends EffectData {
   effect?: Partial<PureEffectData>;
 }
 
-export interface FlingData {
-  basePower: number;
-  status?: StatusName;
-  volatileStatus?: string;
-}
-
 export interface ItemData extends EffectData {
   gen: GenerationNum;
 
   effect?: Partial<PureEffectData>;
-  fling?: FlingData;
+  fling?: {
+    basePower: number;
+    status?: StatusName;
+    volatileStatus?: string;
+  };
   forcedForme?: string;
   ignoreKlutz?: boolean;
   isBerry?: boolean;
@@ -77,11 +75,12 @@ export interface ItemData extends EffectData {
   onPlate?: string;
   zMove?: string | true;
   zMoveType?: string;
+  zMoveFrom?: string;
   itemUser?: string[];
   boosts?: Partial<BoostsTable> | false;
 }
 
-export interface MoveFlags {
+interface MoveFlags {
   authentic?: 1 | 0;
   charge?: 1 | 0;
   contact?: 1 | 0;
@@ -327,6 +326,7 @@ export interface Item extends Readonly<BasicEffect<ItemName> & ItemData> {
   readonly onPlate?: TypeName;
   readonly zMove?: MoveName | true;
   readonly zMoveType?: TypeName;
+  readonly zMoveFrom?: MoveName;
   readonly itemUser?: SpeciesName[];
 }
 
@@ -469,3 +469,5 @@ export interface Dex {
     target: { getTypes: () => string[] } | { types: string[] } | string[] | string
   ): number;
 }
+
+export * from '@pkmn/types';

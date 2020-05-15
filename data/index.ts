@@ -556,3 +556,40 @@ function calcADV(
     return Math.floor((Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * mod);
   }
 }
+
+export * from '@pkmn/types';
+export {
+  AbilityName,
+  ItemName,
+  MoveName,
+  SpeciesName,
+  FormeName,
+  EffectType,
+  DataKind,
+  Effect,
+  EffectData,
+  HitEffect,
+  SecondaryEffect,
+  PureEffectData,
+  AbilityData,
+  ItemData,
+  MoveData,
+  SpeciesData,
+  MoveSource,
+  EventInfoData,
+  LearnsetData,
+  TypeData,
+  NatureData,
+  BasicEffect,
+  PureEffect,
+  Ability,
+  Item,
+  Move,
+  // Species,
+  EventInfo,
+  Learnset,
+  // Type,
+  Nature,
+  GenID,
+  Dex,
+} from '@pkmn/dex-types';
