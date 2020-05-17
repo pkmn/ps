@@ -50,8 +50,8 @@ class Bundler {
   }
 
   bundle(bundled, output = 'production.min.js') {
-    // bundled = babel.transformSync(bundled, config).code;
-    // bundled = terser.minify(bundled).code;
+    bundled = babel.transformSync(bundled, config).code;
+    bundled = terser.minify(bundled).code;
     fs.writeFileSync(path.join(this.built, output), bundled);
   }
 }
