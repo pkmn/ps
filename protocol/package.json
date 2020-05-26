@@ -9,7 +9,6 @@
   },
   "description": "Parsing logic for Pokémon Showdown's PROTOCOL and SIM-PROTOCOL",
   "repository": "github:pkmn/ps",
-  "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

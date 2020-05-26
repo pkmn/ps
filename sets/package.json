@@ -6,7 +6,6 @@
   "unpkg": "build/production.min.js",
   "description": "Parsing logic for Pokémon Showdown sets and teams",
   "repository": "github:pkmn/ps",
-  "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

@@ -18,6 +18,8 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
     const gens = new Generations(Dex);
     const Gen = (num: GenerationNum) => gens.get(num);
 
+    // FIXME test exists override!
+
     describe('Abilities', () => {
       it('#get', () => {
         expect(Gen(7).abilities.get('foo')).toBeUndefined();
@@ -508,16 +510,16 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
 
       test('getHPDV', () => {
         const stats = Gen(8).stats;
-        expect(stats.getHPDV({spa: stats.dtoi(15), spe: stats.dtoi(15)})).toBe(15);
+        expect(stats.getHPDV({spa: stats.toIV(15), spe: stats.toIV(15)})).toBe(15);
         expect(
           stats.getHPDV({
-            atk: stats.dtoi(5),
-            def: stats.dtoi(15),
-            spa: stats.dtoi(13),
-            spe: stats.dtoi(13),
+            atk: stats.toIV(5),
+            def: stats.toIV(15),
+            spa: stats.toIV(13),
+            spe: stats.toIV(13),
           })
         ).toBe(15);
-        expect(stats.getHPDV({def: stats.dtoi(3), spa: stats.dtoi(11), spe: stats.dtoi(10)}))
+        expect(stats.getHPDV({def: stats.toIV(3), spa: stats.toIV(11), spe: stats.toIV(10)}))
           .toBe(13);
       });
 

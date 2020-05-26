@@ -6,7 +6,6 @@
   "unpkg": "build/production.min.js",
   "description": "Logic for displaying Pokémon Showdown's sprite/icon resources",
   "repository": "github:pkmn/ps",
-  "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

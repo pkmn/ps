@@ -4,8 +4,10 @@
   "types": "index.d.ts",
   "description": "Type definitions common across Pokemon Showdown",
   "repository": "github:pkmn/ps",
-  "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "compile": "tsc -p .",
     "build": "npm run compile",

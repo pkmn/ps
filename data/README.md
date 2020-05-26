@@ -1,8 +1,9 @@
-# @pkmn/data
+# `@pkmn/data`
 
-[![npm version](https://img.shields.io/npm/v/@pkmn/data.svg)](https://www.npmjs.com/package/@pkmn/data)&nbsp;
+![Test Status](https://github.com/pkmn/ps/workflows/Tests/badge.svg)
+[![npm version](https://img.shields.io/npm/v/@pkmn/data.svg)](https://www.npmjs.com/package/@pkmn/data)
 
-A higher level data API wrapper compatible with [`@pkmn/sim`][2] and [`@pkmn/dex`][11].
+A higher level data API wrapper compatible with [`@pkmn/sim`](../sim) and [`@pkmn/dex`](../dex).
 
 ## Installation
 
@@ -11,22 +12,23 @@ $ npm install @pkmn/data
 ```
 
 Alternatively, as [detailed below](#browser), if you are using `@pkmn/data` in the browser and want
-a convenient way to get started, simply depend on a transpiled and minified version via [unpkg][5]:
+a convenient way to get started, simply depend on a transpiled and minified version via
+[unpkg](https://unpkg.com/):
 
 ```html
 <script src="https://unpkg.com/@pkmn/dex"></script>
 <script src="https://unpkg.com/@pkmn/data"></script>
 ```
 
-*In this example, [`@pkmn/dex`][11] is included as well, because `@pkmn/data` requires a `Dex`
+*In this example, [`@pkmn/dex`](../dex) is included as well, because `@pkmn/data` requires a `Dex`
 implementation to be useful.*
 
 ## Usage
 
-This package can be used to wrap an implementation of the Pokémon Showdown [`@pkmn/dex-types`][12]
-to provide an alternative data layer API. This package is not generally useful without a runtime
-dependency - you must bring your own data layer. **You almost certainly should be using `@pkmn/dex`
-instead of `@pkmn/sim` unless you know what you are doing**.
+This package can be used to wrap an implementation of the Pokémon Showdown
+[`@pkmn/dex-types`](../dex/types) to provide an alternative data layer API. This package is not
+generally useful without a runtime dependency - you must bring your own data layer. **You almost
+certainly should be using `@pkmn/dex` instead of `@pkmn/sim` unless you know what you are doing**.
 
 ```ts
 import * as dex from '@pkmn/dex';
@@ -80,12 +82,13 @@ assert(gens.get(5).species.get('Gengar').hasAbility('Levitate'));
 assert(Array.from(gens.get(1).species).length === 151);
 ```
 
-Please see the [unit tests][13] for more comprehensive usage examples.
+Please see the [unit tests](index.test.ts) for more comprehensive usage examples.
 
 ### Browser
 
 The recommended way of using `@pkmn/data` in a web browser is to **configure your bundler**
-([Webpack][6], [Rollup][7], [Parcel][8], etc) to minimize it and package it with the rest of your
+([Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/),
+[Parcel](https://parceljs.org/), etc) to minimize it and package it with the rest of your
 application. If you do not use a bundler, a convenience `production.min.js` is included in the
 package. You simply need to depend on `./node_modules/@pkmn/data/build/production.min.js` in a
 `script` tag (which is what the unpkg shortcut above is doing), after which **`Generations` will be
@@ -93,29 +96,16 @@ accessible as a global.**
 
 ## Limitations
 
-This package is heavily constrained by Pokémon Showdown's data layer - because it simply serves as
-a wrapper to the `Dex` it cannot doing anything too ambitious or making suitable optimizations.
-As such, this package does **not** attempt to provide the 'ideal' data layer for any and all
-Pokémon projects - please see [`@smogon/data`][4] for a project attempting to go after the more
-ambitious goal of providing a powerful, type-safe and well thought out API that allows clients to
-only depend on the data they need ([design doc][9]).
+This package is heavily constrained by Pokémon Showdown's data layer - because it simply serves as a
+wrapper to the `Dex` it cannot doing anything too ambitious or making suitable optimizations. As
+such, this package does **not** attempt to provide the 'ideal' data layer for any and all Pokémon
+projects - please see the [Pokémon Showdown Core design doc](https://pkmn.cc/ps-core-design) which
+provides details on a design for the ambitious goal of providing a powerful, type-safe and well
+thought out API that allows clients to only depend on the data they need.
 
 ## License
 
-This package is distributed under the terms of the [MIT License][1].
-Substantial amounts of the code have been derived from the portions of Guangcong
-Luo's [Pokémon Showdown client][3] which are distributed under the [MIT License][10].
-
-  [1]: https://github.com/pkmn/ps/blob/master/data/LICENSE
-  [2]: https://github.com/pkmn/ps/blob/master/sim
-  [3]: https://github.com/smogon/pokemon-showdown-client
-  [4]: https://github.com/smogon/data
-  [5]: https://unpkg.com/
-  [6]: https://webpack.js.org/
-  [7]: https://rollupjs.org/
-  [8]: https://parceljs.org/
-  [9]: https://pkmn.cc/ps-core-design
-  [10]: https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle.ts#L6
-  [11]: https://github.com/pkmn/ps/blob/master/dex
-  [12]: https://github.com/pkmn/ps/blob/master/dex/types/index.d.ts
-  [13]: https://github.com/pkmn/ps/blob/master/data/index.test.ts
+This package is distributed under the terms of the [MIT License](LICENSE). Substantial amounts of
+the code have been derived from the portions of the [Pokémon Showdown
+client](https://github.com/smogon/pokemon-showdown-client) which are distributed under the [MIT
+License](https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle.ts#L6).

@@ -12,6 +12,9 @@
     "Bill Meltsner <bill@meltsner.com> (http://www.meltsner.com)"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@pkmn/sets": "^0.0.2"
   },

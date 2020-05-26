@@ -1,8 +1,11 @@
-# @pkmn/protocol
+# `@pkmn/protocol`
 
-[![npm version](https://img.shields.io/npm/v/@pkmn/protocol.svg)](https://www.npmjs.com/package/@pkmn/protocol)&nbsp;
+![Test Status](https://github.com/pkmn/ps/workflows/Tests/badge.svg)
+[![npm version](https://img.shields.io/npm/v/@pkmn/protocol.svg)](https://www.npmjs.com/package/@pkmn/protocol)
 
-Parsing logic for [Pokémon Showdown][0]'s [PROTOCOL][1] and [SIM-PROTOCOL][2].
+Parsing logic for [Pokémon Showdown](https://pokemonshowdown.com)'s
+[PROTOCOL](https://github.com/smogon/pokemon-showdown/blob/master/PROTOCOL.md) and
+[SIM-PROTOCOL](https://github.com/smogon/pokemon-showdown/blob/master/sim/SIM-PROTOCOL.md).
 
 This package converts Pokémon Showdown's text protocols into typed object
 respresentations for ease of use.
@@ -23,13 +26,7 @@ class BoostHandler implements Protocol.Handler {
 }
 ```
 
-This package is distributed under the terms of the [MIT License][3].
-Substantial amounts of the code have been derived from the portions of Guangcong
-Luo's [Pokémon Showdown client][5] which are distributed under the [MIT License][4].
-
-  [0]: https://pokemonshowdown.com
-  [1]: https://github.com/smogon/pokemon-showdown/blob/master/PROTOCOL.md
-  [2]: https://github.com/smogon/pokemon-showdown/blob/master/sim/SIM-PROTOCOL.md
-  [3]: https://github.com/pkmn/ps/blob/master/protocol/LICENSE
-  [4]: https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle.ts#L6
-  [5]: https://github.com/smogon/pokemon-showdown-client
+This package is distributed under the terms of the [MIT License](LICENSE). Substantial amounts of
+the code have been derived from the portions the [Pokémon Showdown
+client](https://github.com/smogon/pokemon-showdown-client) which are distributed under the [MIT
+License](https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle.ts#L6).

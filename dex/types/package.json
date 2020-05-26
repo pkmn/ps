@@ -4,7 +4,6 @@
   "types": "index.d.ts",
   "description": "Common Pokémon Showdown Dex types shared by @pkmn/dex and @pkmn/sim",
   "repository": "github:pkmn/ps",
-  "author": "Kirk Scheibelhut <pre@pkmn.cc>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

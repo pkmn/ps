@@ -23,7 +23,8 @@ import {
   TypeName,
 } from '@pkmn/dex-types';
 
-function exists(e: Effect | DexSpecies) {
+type ExistsFn = typeof DEFAULT_EXISTS;
+const DEFAULT_EXISTS = (e: Effect | DexSpecies) => {
   if (!e.exists || e.isNonstandard || e.id === 'noability') return false;
   return !('tier' in e && ['Illegal', 'Unreleased'].includes(e.tier));
 }
@@ -46,13 +47,16 @@ const GENERATIONS = Object.create(null) as {[num: number]: Generation};
 
 export class Generations {
   private readonly dex: Dex;
-  constructor(dex: Dex) {
+  private readonly exists: ExistsFn;
+
+  constructor(dex: Dex, exists = DEFAULT_EXISTS) {
     this.dex = dex;
+    this.exists = exists;
   }
 
   get(gen: GenerationNum) {
     if (GENERATIONS[gen]) return GENERATIONS[gen];
-    return (GENERATIONS[gen] = new Generation(this.dex.forGen(gen)));
+    return (GENERATIONS[gen] = new Generation(this.dex.forGen(gen), this.exists));
   }
 
   *[Symbol.iterator]() {
@@ -75,17 +79,20 @@ export class Generation {
 
   readonly dex: Dex;
 
-  constructor(dex: Dex) {
-    this.dex = dex;
+  private readonly exists: ExistsFn;
 
-    this.abilities = new Abilities(this.dex);
-    this.items = new Items(this.dex);
-    this.moves = new Moves(this.dex);
-    this.species = new Species(this.dex);
+  constructor(dex: Dex, exists: ExistsFn) {
+    this.dex = dex;
+    this.exists = exists;
+
+    this.abilities = new Abilities(this.dex, this.exists);
+    this.items = new Items(this.dex, this.exists);
+    this.moves = new Moves(this.dex, this.exists);
+    this.species = new Species(this.dex, this.exists);
     this.natures = new Natures(this.dex);
     this.types = new Types(this.dex);
     this.learnsets = new Learnsets(this.dex);
-    this.effects = new Effects(this.dex);
+    this.effects = new Effects(this.dex, this.exists);
     this.stats = new Stats(this.dex);
   }
 
@@ -96,13 +103,16 @@ export class Generation {
 
 export class Abilities {
   private readonly dex: Dex;
-  constructor(dex: Dex) {
+  private readonly exists: ExistsFn;
+
+  constructor(dex: Dex, exists: ExistsFn) {
     this.dex = dex;
+    this.exists = exists;
   }
 
   get(name: string) {
     const ability = this.dex.getAbility(name);
-    return exists(ability) ? ability : undefined;
+    return this.exists(ability) ? ability : undefined;
   }
 
   *[Symbol.iterator]() {
@@ -115,13 +125,16 @@ export class Abilities {
 
 export class Items {
   private readonly dex: Dex;
-  constructor(dex: Dex) {
+  private readonly exists: ExistsFn;
+
+  constructor(dex: Dex, exists: ExistsFn) {
     this.dex = dex;
+    this.exists = exists;
   }
 
   get(name: string) {
     const item = this.dex.getItem(name);
-    return exists(item) ? item : undefined;
+    return this.exists(item) ? item : undefined;
   }
 
   *[Symbol.iterator]() {
@@ -134,13 +147,16 @@ export class Items {
 
 export class Moves {
   private readonly dex: Dex;
-  constructor(dex: Dex) {
+  private readonly exists: ExistsFn;
+
+  constructor(dex: Dex, exists: ExistsFn) {
     this.dex = dex;
+    this.exists = exists;
   }
 
   get(name: string) {
     const move = this.dex.getMove(name);
-    return exists(move) ? move : undefined;
+    return this.exists(move) ? move : undefined;
   }
 
   *[Symbol.iterator]() {
@@ -155,17 +171,20 @@ export class Species {
   private readonly cache = Object.create(null) as { [id: string]: Specie };
 
   private readonly dex: Dex;
-  constructor(dex: Dex) {
+  private readonly exists: ExistsFn;
+
+  constructor(dex: Dex, exists: ExistsFn) {
     this.dex = dex;
+    this.exists = exists;
   }
 
   get(name: string) {
     const species = this.dex.getSpecies(name);
-    if (!exists(species)) return undefined;
+    if (!this.exists(species)) return undefined;
     const id = (species as any).speciesid || species.id; // FIXME Event-only ability hack
     const cached = this.cache[id];
     if (cached) return cached;
-    return (this.cache[id] = new Specie(this.dex, species));
+    return (this.cache[id] = new Specie(this.dex, this.exists, species));
   }
 
   *[Symbol.iterator]() {
@@ -244,7 +263,7 @@ export class Specie implements DexSpecies {
     'prevo',
   ]);
 
-  constructor(dex: Dex, species: DexSpecies) {
+  constructor(dex: Dex, exists: ExistsFn, species: DexSpecies) {
     assignWithout(this, species, Specie.EXCLUDE);
     this.dex = dex;
     if (this.dex.gen >= 2) {
@@ -282,18 +301,22 @@ export class Specie implements DexSpecies {
 
 export class Effects {
   private readonly dex: Dex;
-  constructor(dex: Dex) {
+  private readonly exists: ExistsFn;
+
+  constructor(dex: Dex, exists: ExistsFn) {
     this.dex = dex;
+    this.exists = exists;
   }
 
   get(name: string) {
     const effect = this.dex.getEffect(name);
-    return exists(effect) ? effect : undefined;
+    return this.exists(effect) ? effect : undefined;
   }
 }
 
 export class Natures {
   private readonly dex: Dex;
+
   constructor(dex: Dex) {
     this.dex = dex;
   }
@@ -474,7 +497,7 @@ export class Stats {
   calc(stat: StatName, base: number, iv: number, ev: number, level: number, nature: Nature): number;
   calc(stat: StatName, base: number, iv = 31, ev = 252, level = 100, nature?: Nature) {
     return this.dex.gen < 3
-      ? calcRBY(stat, base, this.itod(iv), ev, level)
+      ? calcRBY(stat, base, this.toDV(iv), ev, level)
       : calcADV(stat, base, iv, ev, level, nature);
   }
 
@@ -498,10 +521,10 @@ export class Stats {
 
   getHPDV(ivs: Partial<StatsTable>): number {
     return (
-      (this.itod(ivs.atk === undefined ? 31 : ivs.atk) % 2) * 8 +
-      (this.itod(ivs.def === undefined ? 31 : ivs.def) % 2) * 4 +
-      (this.itod(ivs.spe === undefined ? 31 : ivs.spe) % 2) * 2 +
-      (this.itod(ivs.spa === undefined ? 31 : ivs.spa) % 2)
+      (this.toDV(ivs.atk === undefined ? 31 : ivs.atk) % 2) * 8 +
+      (this.toDV(ivs.def === undefined ? 31 : ivs.def) % 2) * 4 +
+      (this.toDV(ivs.spe === undefined ? 31 : ivs.spe) % 2) * 2 +
+      (this.toDV(ivs.spa === undefined ? 31 : ivs.spa) % 2)
     );
   }
 
@@ -511,11 +534,11 @@ export class Stats {
     }
   }
 
-  itod(iv: number): number {
+  toDV(iv: number): number {
     return Math.floor(iv / 2);
   }
 
-  dtoi(dv: number): number {
+  toIV(dv: number): number {
     return dv * 2 + 1;
   }
 }
