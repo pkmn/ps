@@ -2,16 +2,17 @@
   "3": {
     "cutecharm": {
       "inherit": true,
-      "desc": "There is a 1/3 chance a Pokemon making contact with this Pokemon will become infatuated if it is of the opposite gender.",
+      "desc": "There is a 1/3 chance a Pokemon making contact with this Pokemon will become infatuated if it is of the opposite gender. This effect does not happen if this Pokemon did not lose HP from the attack.",
       "shortDesc": "1/3 chance of infatuating Pokemon of the opposite gender if they make contact."
     },
     "effectspore": {
       "inherit": true,
-      "desc": "10% chance a Pokemon making contact with this Pokemon will be poisoned, paralyzed, or fall asleep.",
+      "desc": "10% chance a Pokemon making contact with this Pokemon will be poisoned, paralyzed, or fall asleep. This effect does not happen if this Pokemon did not lose HP from the attack.",
       "shortDesc": "10% chance of poison/paralysis/sleep on others making contact with this Pokemon."
     },
     "flamebody": {
       "inherit": true,
+      "desc": "1/3 chance a Pokemon making contact with this Pokemon will be burned. This effect does not happen if this Pokemon did not lose HP from the attack.",
       "shortDesc": "1/3 chance a Pokemon making contact with this Pokemon will be burned."
     },
     "flashfire": {
@@ -37,12 +38,13 @@
     },
     "poisonpoint": {
       "inherit": true,
+      "desc": "1/3 chance a Pokemon making contact with this Pokemon will be poisoned. This effect does not happen if this Pokemon did not lose HP from the attack.",
       "shortDesc": "1/3 chance a Pokemon making contact with this Pokemon will be poisoned."
     },
     "pressure": {"inherit": true},
     "roughskin": {
       "inherit": true,
-      "desc": "Pokemon making contact with this Pokemon lose 1/16 of their maximum HP, rounded down.",
+      "desc": "Pokemon making contact with this Pokemon lose 1/16 of their maximum HP, rounded down. This effect does not happen if this Pokemon did not lose HP from the attack.",
       "shortDesc": "Pokemon making contact with this Pokemon lose 1/16 of their max HP."
     },
     "shadowtag": {
@@ -52,6 +54,7 @@
     },
     "static": {
       "inherit": true,
+      "desc": "1/3 chance a Pokemon making contact with this Pokemon will be paralyzed. This effect does not happen if this Pokemon did not lose HP from the attack.",
       "shortDesc": "1/3 chance a Pokemon making contact with this Pokemon will be paralyzed."
     },
     "trace": {"inherit": true},
@@ -81,9 +84,20 @@
     },
     "colorchange": {
       "inherit": true,
-      "desc": "This Pokemon's type changes to match the type of the last move that hit it, unless that type is already one of its types. This effect applies after each hit from a multi-hit move."
+      "desc": "This Pokemon's type changes to match the type of the last move that hit it, unless that type is already one of its types. This effect applies after each hit from a multi-hit move. This effect does not happen if this Pokemon did not lose HP from the attack."
     },
-    "effectspore": {"inherit": true},
+    "cutecharm": {
+      "inherit": true,
+      "desc": "There is a 30% chance a Pokemon making contact with this Pokemon will become infatuated if it is of the opposite gender. This effect does not happen if this Pokemon did not lose HP from the attack."
+    },
+    "effectspore": {
+      "inherit": true,
+      "desc": "30% chance a Pokemon making contact with this Pokemon will be poisoned, paralyzed, or fall asleep. This effect does not happen if this Pokemon did not lose HP from the attack."
+    },
+    "flamebody": {
+      "inherit": true,
+      "desc": "30% chance a Pokemon making contact with this Pokemon will be burned. This effect does not happen if this Pokemon did not lose HP from the attack."
+    },
     "flashfire": {"inherit": true, "effect": {"noCopy": true}},
     "flowergift": {
       "inherit": true,
@@ -136,11 +150,19 @@
       "name": "Plus",
       "num": 57
     },
+    "poisonpoint": {
+      "inherit": true,
+      "desc": "30% chance a Pokemon making contact with this Pokemon will be poisoned. This effect does not happen if this Pokemon did not lose HP from the attack."
+    },
     "pressure": {
       "desc": "If this Pokemon is the target of another Pokemon's move, that move loses one additional PP.",
       "shortDesc": "If this Pokemon is the target of a move, that move loses one additional PP.",
       "name": "Pressure",
       "num": 46
+    },
+    "roughskin": {
+      "inherit": true,
+      "desc": "Pokemon making contact with this Pokemon lose 1/16 of their maximum HP, rounded down. This effect does not happen if this Pokemon did not lose HP from the attack."
     },
     "serenegrace": {"inherit": true},
     "simple": {
@@ -151,6 +173,10 @@
     "soundproof": {
       "inherit": true,
       "shortDesc": "This Pokemon is immune to sound-based moves, including Heal Bell."
+    },
+    "static": {
+      "inherit": true,
+      "desc": "30% chance a Pokemon making contact with this Pokemon will be paralyzed. This effect does not happen if this Pokemon did not lose HP from the attack."
     },
     "stench": {
       "desc": "No competitive use.",
@@ -1847,7 +1873,7 @@
       "num": 137
     },
     "trace": {
-      "desc": "On switch-in, or when this Pokemon acquires this ability, this Pokemon copies a random adjacent opposing Pokemon's Ability. However, if one or more adjacent Pokemon has the Ability \"No Ability\", Trace won't copy anything even if there is another valid Ability it could normally copy. Otherwise, if there is no Ability that can be copied at that time, this Ability will activate as soon as an Ability can be copied. Abilities that cannot be copied are the previously mentioned \"No Ability\", as well as Comatose, Disguise, Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Schooling, Stance Change, Trace, and Zen Mode.",
+      "desc": "On switch-in, or when this Pokemon acquires this ability, this Pokemon copies a random adjacent opposing Pokemon's Ability. However, if one or more adjacent Pokemon has the Ability \"No Ability\", Trace won't copy anything even if there is another valid Ability it could normally copy. Otherwise, if there is no Ability that can be copied at that time, this Ability will activate as soon as an Ability can be copied. Abilities that cannot be copied are the previously mentioned \"No Ability\", as well as Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Neutralizing Gas, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, and Zen Mode.",
       "shortDesc": "On switch-in, or when it can, this Pokemon copies a random adjacent foe's Ability.",
       "name": "Trace",
       "num": 36

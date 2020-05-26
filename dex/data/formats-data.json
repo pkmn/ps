@@ -4101,11 +4101,7 @@
     "ditto": {"tier": "UU", "doublesTier": "(DUU)"},
     "eevee": {"tier": "LC"},
     "eeveestarter": {"isNonstandard": "LGPE", "tier": "Illegal"},
-    "eeveegmax": {
-      "unreleasedHidden": true,
-      "tier": "(Uber)",
-      "doublesTier": "(DUber)"
-    },
+    "eeveegmax": {"tier": "(Uber)", "doublesTier": "(DUber)"},
     "vaporeon": {"tier": "RU", "doublesTier": "(DUU)"},
     "jolteon": {"tier": "NU", "doublesTier": "(DUU)"},
     "flareon": {"tier": "NU", "doublesTier": "(DUU)"},
@@ -4733,7 +4729,7 @@
     "spritzee": {"tier": "LC"},
     "aromatisse": {"tier": "RU", "doublesTier": "DUU"},
     "swirlix": {"tier": "LC Uber"},
-    "slurpuff": {"tier": "RU", "doublesTier": "(DUU)"},
+    "slurpuff": {"tier": "RUBL", "doublesTier": "(DUU)"},
     "inkay": {"tier": "LC"},
     "malamar": {"tier": "NU", "doublesTier": "DUU"},
     "binacle": {"tier": "LC"},
@@ -4778,7 +4774,7 @@
     "noibat": {"tier": "LC"},
     "noivern": {"tier": "UU", "doublesTier": "DUU"},
     "xerneas": {"isNonstandard": "Past", "tier": "Illegal"},
-    "xerneasneutral": {"isNonstandard": "Unobtainable", "tier": "Illegal"},
+    "xerneasneutral": {"isNonstandard": "Custom", "tier": "Illegal"},
     "yveltal": {"isNonstandard": "Past", "tier": "Illegal"},
     "zygarde": {"isNonstandard": "Past", "tier": "Illegal"},
     "zygarde10": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -4928,7 +4924,11 @@
     "cinderace": {"unreleasedHidden": true, "tier": "OU", "doublesTier": "DUU"},
     "sobble": {"unreleasedHidden": true, "tier": "LC"},
     "drizzile": {"unreleasedHidden": true, "tier": "NFE"},
-    "inteleon": {"unreleasedHidden": true, "tier": "RU", "doublesTier": "DUU"},
+    "inteleon": {
+      "unreleasedHidden": true,
+      "tier": "RUBL",
+      "doublesTier": "DUU"
+    },
     "skwovet": {"unreleasedHidden": true, "tier": "LC"},
     "greedent": {
       "unreleasedHidden": true,

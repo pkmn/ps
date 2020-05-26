@@ -31,7 +31,7 @@
     },
     "stick": {
       "inherit": true,
-      "desc": "If held by a Farfetch'd, its critical hit ratio is always at stage 2. (25% crit rate)",
+      "desc": "If held by a Farfetch’d, its critical hit ratio is always at stage 2. (25% crit rate)",
       "onModifyCritRatioPriority": -1
     },
     "thickclub": {"inherit": true},
@@ -2462,10 +2462,10 @@
     "leek": {
       "name": "Leek",
       "fling": {"basePower": 60},
-      "itemUser": ["Farfetch'd", "Sirfetch'd"],
+      "itemUser": ["Farfetch’d", "Sirfetch’d"],
       "num": 259,
       "gen": 8,
-      "desc": "If held by a Farfetch'd or Sirfetch'd, its critical hit ratio is raised by 2 stages."
+      "desc": "If held by a Farfetch’d or Sirfetch’d, its critical hit ratio is raised by 2 stages."
     },
     "leftovers": {
       "name": "Leftovers",
@@ -3917,11 +3917,11 @@
     "stick": {
       "name": "Stick",
       "fling": {"basePower": 60},
-      "itemUser": ["Farfetch'd"],
+      "itemUser": ["Farfetch’d"],
       "num": 259,
       "gen": 2,
       "isNonstandard": "Past",
-      "desc": "If held by a Farfetch'd, its critical hit ratio is raised by 2 stages."
+      "desc": "If held by a Farfetch’d, its critical hit ratio is raised by 2 stages."
     },
     "stickybarb": {
       "name": "Sticky Barb",

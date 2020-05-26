@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/view",
-  "version": "0.0.1",
+  "private": true,
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "description": "Library for building Pokémon Showdown client UIs",
@@ -20,7 +20,6 @@
     "compile": "tsc -p .",
     "build": "npm run compile",
     "test": "true",
-    "prepare": "npm run build",
     "pretest": "npm run build",
     "posttest": "npm run lint"
   }

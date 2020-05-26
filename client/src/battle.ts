@@ -169,7 +169,7 @@ export class Battle {
   }
 
   getSwitchedPokemon(pokemonid: string, details: PokemonDetails) {
-    if (pokemonid === '??') throw new Error(`pokemonid not passed`);
+    if (pokemonid === '??') throw new Error('pokemonid not passed');
     const {name, siden, slot, pokemonid: parsedPokemonid} =
       this.parsePokemonId(pokemonid as PokemonIdent);
     pokemonid = parsedPokemonid;
@@ -337,7 +337,7 @@ export class Battle {
     if (!details || !createIfNotFound) return null;
 
     // pokemon not found, create a new pokemon object for it
-    if (siden < 0) throw new Error("Invalid pokemonid passed to getPokemon");
+    if (siden < 0) throw new Error('Invalid pokemonid passed to getPokemon');
 
     let speciesForme = name;
     let gender: GenderName | '' = '';

@@ -40362,8 +40362,7 @@
           "moves": ["growl", "tailwhip", "sandattack", "quickattack"],
           "pokeball": "pokeball"
         }
-      ],
-      "eventOnly": true
+      ]
     },
     "vaporeon": {
       "learnset": {

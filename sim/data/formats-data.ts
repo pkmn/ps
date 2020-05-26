@@ -963,7 +963,6 @@ export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	eeveegmax: {
-		unreleasedHidden: true,
 		tier: "(Uber)",
 		doublesTier: "(DUber)",
 	},
@@ -3670,7 +3669,7 @@ export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
 	slurpuff: {
 		randomBattleMoves: ["bellydrum", "drainpunch", "facade", "playrough"],
 		randomDoubleBattleMoves: ["faketears", "flamethrower", "helpinghand", "playrough", "stickyweb"],
-		tier: "RU",
+		tier: "RUBL",
 		doublesTier: "(DUU)",
 	},
 	inkay: {
@@ -3840,7 +3839,7 @@ export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	xerneasneutral: {
-		isNonstandard: "Unobtainable", // can't be used in battle
+		isNonstandard: "Custom", // can't be used in battle
 		tier: "Illegal",
 	},
 	yveltal: {
@@ -4521,7 +4520,7 @@ export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleMoves: ["airslash", "darkpulse", "hydropump", "icebeam", "scald", "uturn"],
 		randomDoubleBattleMoves: ["airslash", "hydropump", "icebeam", "muddywater", "shadowball", "uturn"],
 		unreleasedHidden: true,
-		tier: "RU",
+		tier: "RUBL",
 		doublesTier: "DUU",
 	},
 	skwovet: {

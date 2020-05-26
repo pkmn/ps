@@ -1,33 +1,32 @@
 {
-  "name": "@pkmn/sim",
-  "version": "0.0.3",
-  "description": "An automatically generated extraction of just the simulator portion of Pokémon Showdown",
-  "homepage": "https://psim.us",
-  "main": "build/sim/index.js",
-  "types": "build/sim/index.d.ts",
-  "repository": "github:pkmn/ps",
-  "author": "Guangcong Luo <guangcongluo@gmail.com> (http://guangcongluo.com)",
-  "contributors": [
-    "Cathy J. Fitzpatrick <cathy@cathyjf.com> (https://cathyjf.com)",
-    "Bill Meltsner <bill@meltsner.com> (http://www.meltsner.com)"
-  ],
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@pkmn/sets": "^0.0.2"
-  },
-  "devDependencies": {
-    "mocha": "^7.1.2"
-  },
-  "scripts": {
-    "compile": "tsc -p .",
-    "build": "npm run compile",
-    "test": "mocha test/main.js test/sim/**/*.js -R dot -u bdd --exit",
-    "lint": "eslint . --cache --ext .js,.ts",
-    "prepare": "npm run compile",
-    "pretest": "npm run compile",
-    "posttest": "npm run lint"
-  }
+	"name": "@pkmn/sim",
+	"version": "0.0.3",
+	"description": "An automatically generated extraction of just the simulator portion of Pokémon Showdown",
+	"homepage": "https://psim.us",
+	"main": "build/sim/index.js",
+	"types": "build/sim/index.d.ts",
+	"repository": "github:pkmn/ps",
+	"author": "Guangcong Luo <guangcongluo@gmail.com> (http://guangcongluo.com)",
+	"contributors": [
+		"Cathy J. Fitzpatrick <cathy@cathyjf.com> (https://cathyjf.com)",
+		"Bill Meltsner <bill@meltsner.com> (http://www.meltsner.com)"
+	],
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@pkmn/sets": "^0.0.2"
+	},
+	"devDependencies": {
+		"mocha": "^7.2.0"
+	},
+	"scripts": {
+		"compile": "tsc -p .",
+		"build": "npm run compile",
+		"test": "mocha test/main.js test/sim/**/*.js -R dot -u bdd --exit",
+		"lint": "eslint . --cache --ext .js,.ts",
+		"pretest": "npm run compile",
+		"posttest": "npm run lint"
+	}
 }

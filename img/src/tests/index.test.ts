@@ -133,7 +133,7 @@ describe('Sprites', () => {
     expect(pokemon.pixelated).toBe(true);
 
     pokemon = Sprites.getDexPokemon('RAIKOU', {gen: 'gen2g', domain: 'pkmn.cc'});
-    expect(pokemon.url).toEqual(`https://pkmn.cc/sprites/gen2g/raikou.png`);
+    expect(pokemon.url).toEqual('https://pkmn.cc/sprites/gen2g/raikou.png');
     expect(pokemon.gen).toBe(2);
     expect(pokemon.w).toBe(96);
     expect(pokemon.h).toBe(96);
@@ -177,7 +177,7 @@ describe('Sprites', () => {
     expect(sub.url).toEqual(`http://${DOMAIN}/sprites/substitutes/gen5-back/substitute.png`);
 
     sub = Sprites.getSubstitute(2, {side: 'p2', domain: 'pkmn.cc'});
-    expect(sub.url).toEqual(`https://pkmn.cc/sprites/substitutes/gen1/substitute.png`);
+    expect(sub.url).toEqual('https://pkmn.cc/sprites/substitutes/gen1/substitute.png');
 
     sub = Sprites.getSubstitute(3, {side: 'p1'});
     expect(sub.url).toEqual(`${URL}/sprites/substitutes/gen3-back/substitute.png`);
@@ -217,7 +217,7 @@ describe('Icons', () => {
     expect(pokemon.top).toEqual(-0);
 
     pokemon = Icons.getPokemon('Lucario-Mega', {domain: 'pkmn.cc', gender: 'F'});
-    expect(pokemon.url).toEqual(`https://pkmn.cc/sprites/pokemonicons-sheet.png`);
+    expect(pokemon.url).toEqual('https://pkmn.cc/sprites/pokemonicons-sheet.png');
     expect(pokemon.left).toEqual(-360);
     expect(pokemon.top).toEqual(-2850);
 
@@ -259,7 +259,7 @@ describe('Icons', () => {
     pokeball = Icons.getPokeball('pokeball-none', {protocol: 'http', domain: 'pkmn.cc'})!;
     expect(pokeball.left).toEqual(-80);
     expect(pokeball.top).toEqual(4);
-    expect(pokeball.url).toEqual(`http://pkmn.cc/sprites/pokemonicons-pokeball-sheet.png`);
+    expect(pokeball.url).toEqual('http://pkmn.cc/sprites/pokemonicons-pokeball-sheet.png');
   });
 
   test('#getItem', () => {
@@ -286,7 +286,7 @@ describe('Icons', () => {
     expect(Icons.getType('BIRD', {protocol: 'http'}).url)
       .toEqual(`http://${DOMAIN}/sprites/types/Bird.png`);
     expect(Icons.getType('water', {domain: 'pkmn.cc'}).url)
-      .toEqual(`https://pkmn.cc/sprites/types/Water.png`);
+      .toEqual('https://pkmn.cc/sprites/types/Water.png');
   });
 });
 

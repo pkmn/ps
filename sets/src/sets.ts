@@ -297,7 +297,7 @@ export const Sets = new class {
   fromJSON(json: string) {
     if (json.charAt(0) !== '{' || json.charAt(json.length - 1) !== '}') return undefined;
     // BUG: this is completely unvalidated...
-    return JSON.parse(json);
+    return JSON.parse(json) as PokemonSet;
   }
 
   toString(s: PokemonSet, data?: Data) {

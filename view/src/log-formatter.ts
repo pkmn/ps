@@ -79,8 +79,8 @@ export class LogFormatter {
       }).filter(prefix => prefix);
       if (prefixes.length) {
         // eslint-disable-next-line no-useless-escape
-        const buf = `((?:^|\n)(?:  |  \\\(|\\\[)?)(` +
-          prefixes.map(p => LogFormatter.escapeRegExp(p)).join('|') + `)`;
+        const buf = '((?:^|\n)(?:  |  \\\(|\\\[)?)(' +
+          prefixes.map(p => LogFormatter.escapeRegExp(p)).join('|') + ')';
         this.lowercaseRegExp = new RegExp(buf, 'g');
       } else {
         this.lowercaseRegExp = null;
@@ -611,7 +611,7 @@ class Handler implements Protocol.Handler<string> {
     }
     if (id === 'frisk') {
       const hasTarget = kwArgs.of && pokemon && kwArgs.of !== pokemon;
-      const template = this.parser.template(hasTarget ? 'activate' : 'activateNoTarget', "Frisk");
+      const template = this.parser.template(hasTarget ? 'activate' : 'activateNoTarget', 'Frisk');
       return (line1 + template
         .replace('[POKEMON]', this.parser.pokemon(kwArgs.of!))
         .replace('[ITEM]', this.parser.effect(item))
@@ -645,7 +645,7 @@ class Handler implements Protocol.Handler<string> {
         .replace('[MOVE]', kwArgs.move!));
     }
     if (id === 'stealeat') {
-      const template = this.parser.template('removeItem', "Bug Bite");
+      const template = this.parser.template('removeItem', 'Bug Bite');
       return (line1 + template
         .replace('[SOURCE]', this.parser.pokemon(kwArgs.of!))
         .replace('[ITEM]', this.parser.effect(item)));
@@ -1220,7 +1220,7 @@ class Handler implements Protocol.Handler<string> {
 
   '|-burst|'(args: Args['|-burst|']) {
     const [, pokemon] = args;
-    const template = this.parser.template('activate', "Ultranecrozium Z");
+    const template = this.parser.template('activate', 'Ultranecrozium Z');
     return template.replace('[POKEMON]', this.parser.pokemon(pokemon));
   }
 
@@ -1240,7 +1240,7 @@ class Handler implements Protocol.Handler<string> {
 
   '|-waiting|'(args: Args['|-waiting|']) {
     const [, pokemon, target] = args;
-    const template = this.parser.template('activate', "Water Pledge");
+    const template = this.parser.template('activate', 'Water Pledge');
     return (template
       .replace('[POKEMON]', this.parser.pokemon(pokemon))
       .replace('[TARGET]', this.parser.pokemon(target)));

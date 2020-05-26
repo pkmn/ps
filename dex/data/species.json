@@ -5159,7 +5159,7 @@
     },
     "farfetchd": {
       "num": 83,
-      "name": "Farfetch'd",
+      "name": "Farfetch’d",
       "types": ["Normal", "Flying"],
       "baseStats": {
         "hp": 52,
@@ -5172,13 +5172,13 @@
       "abilities": {"0": "Keen Eye", "1": "Inner Focus", "H": "Defiant"},
       "weightkg": 15,
       "eggGroups": ["Flying", "Field"],
-      "otherFormes": ["Farfetch'd-Galar"],
-      "formeOrder": ["Farfetch'd", "Farfetch'd-Galar"]
+      "otherFormes": ["Farfetch’d-Galar"],
+      "formeOrder": ["Farfetch’d", "Farfetch’d-Galar"]
     },
     "farfetchdgalar": {
       "num": 83,
-      "name": "Farfetch'd-Galar",
-      "baseSpecies": "Farfetch'd",
+      "name": "Farfetch’d-Galar",
+      "baseSpecies": "Farfetch’d",
       "forme": "Galar",
       "types": ["Fighting"],
       "baseStats": {
@@ -5191,7 +5191,7 @@
       },
       "abilities": {"0": "Steadfast", "H": "Scrappy"},
       "weightkg": 15,
-      "evos": ["Sirfetch'd"],
+      "evos": ["Sirfetch’d"],
       "eggGroups": ["Flying", "Field"]
     },
     "doduo": {
@@ -23615,7 +23615,7 @@
     },
     "sirfetchd": {
       "num": 865,
-      "name": "Sirfetch'd",
+      "name": "Sirfetch’d",
       "types": ["Fighting"],
       "baseStats": {
         "hp": 62,
@@ -23627,7 +23627,7 @@
       },
       "abilities": {"0": "Steadfast", "H": "Scrappy"},
       "weightkg": 117,
-      "prevo": "Farfetch'd-Galar",
+      "prevo": "Farfetch’d-Galar",
       "evoType": "other",
       "evoCondition": "Land 3 critical hits in 1 battle",
       "eggGroups": ["Flying", "Field"]

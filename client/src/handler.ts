@@ -64,14 +64,14 @@ export class Handler implements Protocol.Handler {
 
   '|inactive|'(args: Args['|inactive|']) {
     if (this.battle.kickingInactive === 'off') this.battle.kickingInactive = 'on-unknown';
-    if (args[1].slice(0, 11) === "Time left: ") {
+    if (args[1].slice(0, 11) === 'Time left: ') {
       const [time, totalTime, graceTime] = args[1].split(' | ');
       this.battle.kickingInactive = parseInt(time.slice(11)) || 'on-unknown';
       this.battle.totalTimeLeft = parseInt(totalTime);
       this.battle.graceTimeLeft = parseInt(graceTime || '') || 0;
       if (this.battle.totalTimeLeft === this.battle.kickingInactive) this.battle.totalTimeLeft = 0;
       return;
-    } else if (args[1].slice(0, 9) === "You have ") {
+    } else if (args[1].slice(0, 9) === 'You have ') {
       // this is ugly but parseInt is documented to work this way
       // so I'm going to be lazy and not chop off the rest of the
       // sentence
@@ -572,7 +572,7 @@ export class Handler implements Protocol.Handler {
     const poke = this.battle.getPokemon(args[1])!;
     const tpoke = this.battle.getPokemon(args[2])!;
     const effect = this.battle.dex.getEffect(kwArgs.from) as Effect;
-    if (poke === tpoke) throw new Error("Transforming into self");
+    if (poke === tpoke) throw new Error('Transforming into self');
 
     if (!kwArgs.silent) poke.activateAbility(effect);
 

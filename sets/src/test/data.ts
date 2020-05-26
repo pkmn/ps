@@ -118,7 +118,7 @@ for (let gen = 1; gen <= 8; gen++) {
       return {name: MOVES[toID(name)]};
     },
     getSpecies(name: string) {
-      const s: any = {name: SPECIES[toID(name)]};
+      const s: {name: string; abilities?: any} = {name: SPECIES[toID(name)]};
       if (s.name === 'Tangrowth') {
         s.abilities = {0: 'Chlorophyll', 1: 'Leaf Guard', H: 'Regenerator'};
       }

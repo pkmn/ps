@@ -19,7 +19,6 @@
     "compile": "tsc -p .",
     "start": "parcel index.html",
     "test": "true",
-    "prepare": "npm run compile",
     "pretest": "npm run compile",
     "posttest": "npm run lint"
   }

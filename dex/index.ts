@@ -440,7 +440,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     super(data, ...moreData);
     data = this;
 
-    this.fullname = `pokemon: ${data.name}`;
+    this.fullname = `pokemon: ${data.name as string}`;
     this.effectType = 'Pokemon';
     this.kind = 'Species';
 

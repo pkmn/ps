@@ -352,7 +352,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
         }
       }
       let pp = 1;
-      if (move.target === "all") {
+      if (move.target === 'all') {
         for (const active of this.side.foe.active) {
           if (active && toID(active.ability) === 'pressure') {
             pp += 1;

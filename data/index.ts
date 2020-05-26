@@ -23,11 +23,12 @@ import {
   TypeName,
 } from '@pkmn/dex-types';
 
-type ExistsFn = typeof DEFAULT_EXISTS;
 const DEFAULT_EXISTS = (e: Effect | DexSpecies) => {
   if (!e.exists || e.isNonstandard || e.id === 'noability') return false;
   return !('tier' in e && ['Illegal', 'Unreleased'].includes(e.tier));
-}
+};
+
+type ExistsFn = typeof DEFAULT_EXISTS;
 
 function assignWithout(a: {[key: string]: any}, b: {[key: string]: any}, exclude: Set<string>) {
   for (const key in b) {
