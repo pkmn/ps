@@ -33,12 +33,14 @@ describe('Protocol', () => {
     const health = (h: Partial<PokemonHealth>) =>
       ({hp: 0, maxhp: 100, hpcolor: '', status: '', ...h} as PokemonHealth);
     expect(parse('0 fnt')).toEqual(health({hp: 0, fainted: true}));
-    expect(parse('0 fnt', health({maxhp: 250}))).toEqual(health({hp: 0, maxhp: 250, fainted: true}));
+    expect(parse('0 fnt', health({maxhp: 250})))
+      .toEqual(health({hp: 0, maxhp: 250, fainted: true}));
     expect(parse('10/48y fnt')).toEqual(health({hp: 0, maxhp: 48, hpcolor: 'y', fainted: true}));
-    expect(parse('foo/bar')).toEqual(null);
+    expect(parse('foo/bar')).toBeNull();
     expect(parse('350/300 psn')).toEqual(health({hp: 300, maxhp: 300, status: 'psn'}));
     expect(parse('20 brn')).toEqual(health({hp: 20, status: 'brn'}));
-    expect(parse('20 brn', health({maxhp: 200}))).toEqual(health({hp: 40, maxhp: 200, status: 'brn'}));
+    expect(parse('20 brn', health({maxhp: 200})))
+      .toEqual(health({hp: 40, maxhp: 200, status: 'brn'}));
     expect(parse('200/300 psn')).toEqual(health({hp: 200, maxhp: 300, status: 'psn'}));
     expect(parse('70/100 tox')).toEqual(health({hp: 70, status: 'tox'}));
     expect(parse('70/100 psn', health({status: 'tox'}))).toEqual(health({hp: 70, status: 'tox'}));
@@ -59,7 +61,7 @@ describe('Protocol', () => {
 
         let message = `${pokemon.player}'s ${pokemon.name}'s ${stat} stat was boosted by ${num}`;
         if (kwArgs.from) message += ` from ${Protocol.parseEffect(kwArgs.from).name}`;
-        expect(message).toEqual("p2's  Diancie's atk stat was boosted by 2");
+        expect(message).toEqual('p2\'s  Diancie\'s atk stat was boosted by 2');
       }
     }
     const handler = new BoostHandler();

@@ -5,8 +5,9 @@ const CURRENT = 8;
 
 export class Team {
   constructor(
-      readonly team: Readonly<PokemonSet[]>, readonly data?: Data, readonly format?: string,
-      readonly name?: string, readonly folder?: string) {
+    readonly team: Readonly<PokemonSet[]>, readonly data?: Data, readonly format?: string,
+    readonly name?: string, readonly folder?: string
+  ) {
     this.team = team;
     this.format = format;
     this.name = name;
@@ -14,7 +15,7 @@ export class Team {
 
     this.data = data;
     if (format && data && data.forGen) {
-      if (format.slice(0, 3) === 'gen' ) {
+      if (format.slice(0, 3) === 'gen') {
         this.data = data.forGen(parseInt(format[3]) as GenerationNum);
       } else {
         this.format = `gen6${format}`;
@@ -27,11 +28,11 @@ export class Team {
     return this.data?.gen;
   }
 
-   pack(): string {
+  pack(): string {
     return Teams.packTeam(this);
   }
 
-  static unpack(buf: string, data?: Data)  {
+  static unpack(buf: string, data?: Data) {
     return Teams.unpackTeam(buf, data);
   }
 
@@ -109,7 +110,7 @@ export const Teams = new class {
   }
 
   importTeams(buf: string, data?: Data, one?: boolean):
-      Readonly<Team[]> {
+  Readonly<Team[]> {
     const lines = buf.split('\n');
     if (lines.length === 1 || (lines.length === 2 && !lines[1])) {
       const team: Team|undefined = Teams.unpackTeam(lines[0], data);
@@ -168,7 +169,7 @@ export const Teams = new class {
   }
 
   exportTeams(teams: Readonly<Team[]>, data?: Data):
-      string {
+  string {
     let buf = '';
 
     let i = 0;
@@ -183,14 +184,14 @@ export const Teams = new class {
   }
 
   toString(teams: Readonly<Team[]>, data?: Data):
-      string {
+  string {
     return Teams.exportTeams(teams, data);
   }
 
   fromString(str: string, data?: Data): Readonly<Team[]> {
     return Teams.importTeams(str, data);
   }
-}
+};
 
 function unpackLine(line: string, data?: Data): Team | undefined {
   const pipeIndex = line.indexOf('|');
@@ -205,14 +206,15 @@ function unpackLine(line: string, data?: Data): Team | undefined {
 
   const format = bracketIndex > 0 ? line.slice(0, bracketIndex) : `gen${data?.gen || CURRENT}`;
   const team = Teams.unpackTeam(line.slice(pipeIndex + 1), data);
-  return !team ?
-      team :
-      new Team(
-          team.team,
-          data,
-          format,
-          line.slice(slashIndex + 1, pipeIndex),
-          line.slice(
-              bracketIndex + 1, slashIndex > 0 ? slashIndex : bracketIndex + 1),
-      );
+  return !team
+    ? team
+    : new Team(
+      team.team,
+      data,
+      format,
+      line.slice(slashIndex + 1, pipeIndex),
+      line.slice(
+        bracketIndex + 1, slashIndex > 0 ? slashIndex : bracketIndex + 1
+      ),
+    );
 }

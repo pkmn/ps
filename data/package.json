@@ -18,8 +18,8 @@
     "@smogon/calc": "^0.3.0"
   },
   "scripts": {
-    "lint": "eslint --cache *.ts",
-    "fix": "eslint --fix *.ts",
+    "lint": "eslint --cache --ext ts",
+    "fix": "eslint --fix --ext ts",
     "compile": "tsc -p .",
     "bundle": "node bundle",
     "build": "npm run compile && npm run bundle",

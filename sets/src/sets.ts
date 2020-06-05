@@ -16,8 +16,8 @@ export interface Data {
   getMove(move: string): Readonly<{name: string}> | undefined;
   getSpecies(species: string): Readonly<{
     name: string;
-    baseSpecies?: string,
-    abilities?: {0: string; 1?: string; H?: string, S?: string};
+    baseSpecies?: string;
+    abilities?: {0: string; 1?: string; H?: string; S?: string};
   }> | undefined;
 }
 
@@ -76,15 +76,15 @@ export const Sets = new class {
     buf += (s.name || s.species);
 
     // species
-    let speciesName = s.species || s.name;
-    let id = toID(speciesName);
+    const speciesName = s.species || s.name;
+    const id = toID(speciesName);
     buf += '|' + (toID(s.name || s.species) === id ? '' : id);
 
     // item
     buf += '|' + toID(s.item);
 
     // ability
-    buf += '|' + toID(s.ability);;
+    buf += '|' + toID(s.ability);
 
     // moves
     let hasHP = false;
@@ -118,7 +118,7 @@ export const Sets = new class {
     }
 
     // gender
-    buf += '|'
+    buf += '|';
     if (s.gender) buf += s.gender;
 
     const getIV = (stat: StatName) =>
@@ -128,7 +128,7 @@ export const Sets = new class {
     let ivs = '|';
     if (s.ivs) {
       ivs = '|' + [
-        getIV('hp'), getIV('atk'),  getIV('def'),
+        getIV('hp'), getIV('atk'), getIV('def'),
         getIV('spa'), getIV('spd'), getIV('spe'),
       ].join();
     }
@@ -238,7 +238,7 @@ export const Sets = new class {
             }
           }
         }
-    }
+      }
       if (defaultIVs && !hpType) {
         for (const stat of STATS) {
           if (s.ivs[stat] !== 31 && s.ivs[stat] !== undefined) {
@@ -307,7 +307,7 @@ export const Sets = new class {
   fromString(str: string) {
     return Sets.importSet(str);
   }
-}
+};
 
 const ABILITY = ['', '0', '1', 'H', 'S'];
 
@@ -431,6 +431,8 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   return {set: s as PokemonSet, i, j};
 }
 
+const NATURE_REGEX = /^[A-Za-z]+ (N|n)ature/;
+
 export function _import(lines: string[], i = 0, data?: Data) {
   let s: Partial<PokemonSet> | undefined = undefined;
   for (; i < lines.length; i++) {
@@ -465,7 +467,6 @@ export function _import(lines: string[], i = 0, data?: Data) {
         s.species = data?.getSpecies(line)?.name ?? line;
         s.name = '';
       }
-
     } else if (line.substr(0, 7) === 'Trait: ') {
       line = line.substr(7);
       s.ability = line;
@@ -505,7 +506,7 @@ export function _import(lines: string[], i = 0, data?: Data) {
         if (isNaN(val)) val = 31;
         s.ivs[stat] = val;
       }
-    } else if (line.match(/^[A-Za-z]+ (N|n)ature/)) {
+    } else if (NATURE_REGEX.exec(line)) {
       let natureIndex = line.indexOf(' Nature');
       if (natureIndex === -1) natureIndex = line.indexOf(' nature');
       // if (natureIndex === -1) continue; // Can't happen or we wouldn't match
@@ -565,8 +566,8 @@ function exportMove(move: string) {
   return move;
 }
 
-const HP: {[type in HPTypeName]: {ivs: Partial<StatsTable>, dvs: Partial<StatsTable>}} = {
-  Bug: 	{ivs: {atk: 30, def: 30, spd: 30}, dvs: {atk: 13, def: 13}},
+const HP: {[type in HPTypeName]: {ivs: Partial<StatsTable>; dvs: Partial<StatsTable>}} = {
+  Bug: {ivs: {atk: 30, def: 30, spd: 30}, dvs: {atk: 13, def: 13}},
   Dark: {ivs: {}, dvs: {}},
   Dragon: {ivs: {atk: 30}, dvs: {def: 14}},
   Electric: {ivs: {spa: 30}, dvs: {atk: 14}},

@@ -14,8 +14,8 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "lint": "eslint --cache src/*.ts",
-    "fix": "eslint --fix src/*.ts",
+    "lint": "eslint --cache src --ext ts",
+    "fix": "eslint --fix src --ext ts",
     "compile": "tsc -p .",
     "start": "parcel index.html",
     "test": "true",

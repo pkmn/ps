@@ -369,9 +369,9 @@ export namespace Protocol {
         disabled?: boolean;
       }[];
       zMoves?: Array<{
-        name: MoveName,
-        id: ID,
-        target: MoveTarget,
+        name: MoveName;
+        id: ID;
+        target: MoveTarget;
       }> | null;
       canDynamax?: boolean;
       canGigantamax?: boolean;
@@ -768,7 +768,8 @@ export namespace Protocol {
      *   - `RATING` is the player's Elo rating in the format they're playing. This will only be
      *     displayed in rated battles and when the player is first introduced otherwise it's blank.
      */
-    '|player|': readonly ['player', Player, Username, AvatarIdent, Num?] |readonly ['player', Player];
+    '|player|':
+    readonly ['player', Player, Username, AvatarIdent, Num?] |readonly ['player', Player];
     /**
      * `|teamsize|PLAYER|NUMBER`
      *
@@ -976,7 +977,12 @@ export namespace Protocol {
      * The Pokémon `POKEMON` could not perform a move because of the indicated `REASON` (such as
      * paralysis, Disable, etc). Sometimes, the move it was trying to use is given.
      */
-    '|cant|': readonly ['cant', PokemonIdent, Reason | AbilityName | EffectName | MoveName, EffectName | MoveName];
+    '|cant|': readonly [
+      'cant',
+      PokemonIdent,
+      Reason | AbilityName | EffectName | MoveName,
+      EffectName | MoveName
+    ];
     /**
      * `|faint|POKEMON`
      *
@@ -1127,7 +1133,8 @@ export namespace Protocol {
      * Clear the positive boosts from the `TARGET` Pokémon due to an `EFFECT` of the `POKEMON`
      * Pokémon. (For example: 'move: Spectral Thief').
      */
-    '|-clearpositiveboost|': readonly ['-clearpositiveboost', PokemonIdent, PokemonIdent, EffectName];
+    '|-clearpositiveboost|':
+    readonly ['-clearpositiveboost', PokemonIdent, PokemonIdent, EffectName];
     /**
      * `|-clearnegativeboost|POKEMON`
      *
@@ -1540,10 +1547,10 @@ export namespace Protocol {
   export type BattleArgsWithKWArgName = keyof BattleArgsWithKWArgs;
   export type BattleArgsWithKWArgType = BattleArgsWithKWArgs[BattleArgsWithKWArgName];
 
-  export type BattleArgKWArgs<T extends BattleArgName> = Readonly<
-  T extends BattleArgsWithKWArgName
-    ? { [K in BattleArgsWithKWArgs[T]]?: BattleArgsKWArgsTypes[K] }
-    : {}>;
+  export type BattleArgKWArgs<T extends BattleArgName> =
+    Readonly< T extends BattleArgsWithKWArgName
+      ? { [K in BattleArgsWithKWArgs[T]]?: BattleArgsKWArgsTypes[K] }
+      : {}>; // eslint-disable-line @typescript-eslint/ban-types
 
   export type BattleArgsKWArgs = { [T in BattleArgName]: BattleArgKWArgs<T> };
   export type BattleArgsKWArgName = BattleArgName;
@@ -2117,7 +2124,7 @@ function upgradeBattleArgs(
     if (id === 'charge') {
       return {
         args: ['-singlemove', pokemon, effect as unknown as Protocol.MoveName],
-        kwArgs: {of: target}
+        kwArgs: {of: target},
       };
     }
     if (STARTABLE.has(id)) {

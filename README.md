@@ -28,7 +28,7 @@ This is the top level of [`@pkmn`](https://pkmn.cc/@pkmn/)'s Pokémon Showdown c
 - *[`@pkmn/randoms`](randoms)*: random team generation logic for Pokémon Showdown's Random Battle
   formats, for use with [`@pkmn/sim`](sim)
 
-Everything in this repository is distributed under the terms of the [MIT License](LICENSE)). For
+Everything in this repository is distributed under the terms of the [MIT License](LICENSE). For
 some packages, substantial amounts of the code have been either derived or generated from the
 portions of Pokémon Showdown's [server](https://github.com/smogon/pokemon-showdown) and
 [client](https://github.com/smogon/pokemon-showdown-client) codebases  which are also distributed

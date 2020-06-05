@@ -14,8 +14,8 @@
     "@pkmn/types": "^0.1.0"
   },
   "scripts": {
-    "lint": "eslint --cache src/**/*.ts",
-    "fix": "eslint --fix src/**/*.ts",
+    "lint": "eslint --cache src --ext ts",
+    "fix": "eslint --fix src --ext ts",
     "compile": "tsc -p .",
     "bundle": "node bundle",
     "build": "npm run compile && npm run bundle",

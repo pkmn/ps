@@ -5,13 +5,15 @@ describe('Pokemon', () => {
   test('#healthParse', () => {
     const parse = (
       hpstring: string,
-      options = {} as Partial<PokemonHealth>) => {
-        const pokemon = new Pokemon(null! as Side, {} as DetailedPokemon);
-        for (const attr of ['hp', 'maxhp', 'hpcolor', 'status', 'fainted'] as (keyof PokemonHealth)[]) {
-          if (options[attr]) (pokemon as any)[attr] = options[attr];
-        }
-        const result = pokemon.healthParse(hpstring);
-        return {pokemon, result};
+      options = {} as Partial<PokemonHealth>
+    ) => {
+      const pokemon = new Pokemon(null! as Side, {} as DetailedPokemon);
+      const attrs: Array<keyof PokemonHealth> = ['hp', 'maxhp', 'hpcolor', 'status', 'fainted'];
+      for (const attr of attrs) {
+        if (options[attr]) (pokemon as any)[attr] = options[attr];
+      }
+      const result = pokemon.healthParse(hpstring);
+      return {pokemon, result};
     };
 
     const health = (p: Partial<PokemonHealth> = {}) => {
@@ -20,12 +22,12 @@ describe('Pokemon', () => {
         maxhp: p.maxhp || 0,
         hpcolor: p.hpcolor || 'g',
         status: p.status || '',
-        fainted: !!p.fainted
+        fainted: !!p.fainted,
       };
       return ret;
     };
-    expect(parse(null!).result).toEqual(null);
-    expect(parse('').result).toEqual(null);
+    expect(parse(null!).result).toBeNull();
+    expect(parse('').result).toBeNull();
 
     let p = parse('0 fnt');
     expect(health(p.pokemon)).toEqual(health({hp: 0, maxhp: 100, fainted: true}));
@@ -59,5 +61,4 @@ describe('Pokemon', () => {
     expect(health(p.pokemon)).toEqual(health({hp: 300, maxhp: 300, status: 'psn'}));
     expect(p.result).toEqual([0, 300, 300, 'g']);
   });
-
 });

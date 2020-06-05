@@ -12,8 +12,6 @@ const URL = (options?: {protocol?: Protocol; domain?: string}) => {
   return url.endsWith('/') ? url.slice(0, -1) : url;
 };
 
-export type GraphicsGen = keyof typeof GENS;
-
 const GENS = {
   'gen1rg': 1,
   'gen1rb': 1,
@@ -37,14 +35,16 @@ const GENS = {
   'ani': 6,
 };
 
-export type AnimatedGraphicsGen = keyof typeof ANIMATED;
+export type GraphicsGen = keyof typeof GENS;
+
 // TODO: gen2ani? gen3ani? etc
 const ANIMATED = {
   'gen5ani': 'gen5' as GraphicsGen,
   'ani': 'dex' as GraphicsGen,
 };
 
-export type SecondFrameGraphicsGen = keyof typeof FRAME2;
+export type AnimatedGraphicsGen = keyof typeof ANIMATED;
+
 const FRAME2 = {
   // 'gen2ani': 2,
   'gen3-2': 'gen3' as GraphicsGen,
@@ -52,6 +52,8 @@ const FRAME2 = {
   // 'gen4-2': 'gen4' as GraphicsGen,
   // 'gen4hgss-2': 'gen4hgss' as GraphicsGen,
 };
+
+export type SecondFrameGraphicsGen = keyof typeof FRAME2;
 
 const SOURCES: {[name: string]: GraphicsGen} = {
   'Green': 'gen1rg',
