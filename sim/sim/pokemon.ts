@@ -49,6 +49,12 @@ export interface EffectState {
 	[k: string]: any;
 }
 
+// Berries which restore PP/HP and thus inflict external staleness when given to an opponent as
+// there are very few non-malicious competitive reasons to do so
+export const RESTORATIVE_BERRIES = new Set([
+	'leppaberry', 'aguavberry', 'enigmaberry', 'figyberry', 'iapapaberry', 'magoberry', 'sitrusberry', 'wikiberry', 'oranberry',
+] as ID[]);
+
 export class Pokemon {
 	readonly side: Side;
 	readonly battle: Battle;
@@ -1529,7 +1535,7 @@ export class Pokemon {
 			this.battle.singleEvent('Eat', item, this.itemData, this, source, sourceEffect);
 			this.battle.runEvent('EatItem', this, null, null, item);
 
-			if (item.id === 'leppaberry') {
+			if (RESTORATIVE_BERRIES.has(item.id)) {
 				switch (this.pendingStaleness) {
 				case 'internal':
 					if (this.staleness !== 'external') this.staleness = 'internal';
@@ -1611,7 +1617,7 @@ export class Pokemon {
 		if (typeof item === 'string') item = this.battle.dex.getItem(item);
 
 		const effectid = this.battle.effect ? this.battle.effect.id : '';
-		if (item.id === 'leppaberry') {
+		if (RESTORATIVE_BERRIES.has('leppaberry' as ID)) {
 			const inflicted = ['trick', 'switcheroo'].includes(effectid);
 			const external = inflicted && source && source.side.id !== this.side.id;
 			this.pendingStaleness = external ? 'external' : 'internal';

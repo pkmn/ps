@@ -111,6 +111,10 @@ class Handler implements Protocol.Handler<boolean> {
     return Verifier.verifyUsername(args[1]);
   }
 
+  '|notify|'(args: Args['|notify|']) {
+    return false;
+  }
+
   '|:|'(args: Args['|:|']) {
     if (args.length !== 2) return false;
     return Verifier.verifyTimestamp(args[1]);

@@ -411,6 +411,7 @@ export class ModdedDex {
 				);
 				if (!isLetsGo) species.isNonstandard = 'Past';
 			}
+			species.nfe = species.evos.length && this.getSpecies(species.evos[0]).gen <= this.gen;
 		} else {
 			species = new Data.Species({
 				id, name, exists: false, tier: 'Illegal', doublesTier: 'Illegal', isNonstandard: 'Custom',
@@ -1177,7 +1178,7 @@ export class ModdedDex {
 		if (!this.formatsCache) this.formatsCache = {};
 
 		if (!Array.isArray(Formats)) {
-			throw new TypeError(`Exported property 'Formats' from "./config/formats.js" must be an array`);
+			throw new TypeError(`Exported property 'Formats' from "./config/formats.ts" must be an array`);
 		}
 		let section = '';
 		let column = 1;

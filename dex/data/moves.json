@@ -3479,6 +3479,10 @@
     },
     "guardianofalola": {"inherit": true, "isNonstandard": null},
     "headcharge": {"inherit": true, "isNonstandard": null},
+    "healbell": {
+      "inherit": true,
+      "desc": "Every Pokemon in the user's party is cured of its major status condition. Active Pokemon with the Soundproof Ability are not cured."
+    },
     "healblock": {
       "inherit": true,
       "isNonstandard": null,
@@ -9125,7 +9129,7 @@
       "accuracy": true,
       "basePower": 0,
       "category": "Status",
-      "desc": "Every Pokemon in the user's party is cured of its major status condition. Active Pokemon with the Soundproof Ability are not cured.",
+      "desc": "Every Pokemon in the user's party is cured of its major status condition. Active Pokemon with the Soundproof Ability are not cured, unless they are the user.",
       "shortDesc": "Cures the user's party of all status conditions.",
       "name": "Heal Bell",
       "pp": 5,
@@ -13373,7 +13377,7 @@
       "basePower": 40,
       "category": "Physical",
       "desc": "If an opposing Pokemon switches out this turn, this move hits that Pokemon before it leaves the field, even if it was not the original target. If the user moves after an opponent using Parting Shot, U-turn, or Volt Switch, but not Baton Pass, it will hit that opponent before it leaves the field. Power doubles and no accuracy check is done if the user hits an opponent switching out, and the user's turn is over; if an opponent faints from this, the replacement Pokemon does not become active until the end of the turn.",
-      "shortDesc": "Power doubles if a foe is switching out.",
+      "shortDesc": "If a foe is switching out, hits it at 2x power.",
       "isNonstandard": "Past",
       "name": "Pursuit",
       "pp": 20,
@@ -16311,7 +16315,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1},
       "volatileStatus": "tarshot",
-      "effect": {},
+      "effect": {"onEffectivenessPriority": -2},
       "boosts": {"spe": -1},
       "secondary": null,
       "target": "normal",

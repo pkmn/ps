@@ -124,6 +124,11 @@ export namespace Protocol {
   /** UNIX timestamp; (the number of seconds since 1970). */
   export type Timestamp = string & As<'Timestamp'>;
 
+  /** The title of a notification, usually displayed as bold. */
+  export type NotificationTitle = string & As<'NotificationTitle'>;
+  /** Token used to determine whether a notification should highlight a user.  */
+  export type HighlightToken = string & As<'HighlightToken'>;
+
   /** HTML which should be sanitized before display. */
   export type HTML = string & As<'HTML'>;
   /** A name to allow for matching two different `|uhtml|` messages. */
@@ -478,6 +483,21 @@ export namespace Protocol {
      * `USER` said `MESSAGE`. Note that `MESSAGE` can contain `|` characters.
      */
     '|chat|': readonly ['chat', Username, Message];
+    /**
+     * `|notify|TITLE|MESSAGE`
+     *
+     * Send a notification with `TITLE` and `MESSAGE` (usually, `TITLE` will be bold, and `MESSAGE`
+     * is optional).
+     *
+     * `|notify|TITLE|MESSAGE|HIGHLIGHTTOKEN`
+     *
+     * Send a notification as above, but only if the user would be notified by a chat message
+     * containing `HIGHLIGHTTOKEN` (i.e. if `HIGHLIGHTTOKEN` contains words added to `/highlight`,
+     * or their username by default).
+     */
+    '|notify|':
+    | readonly ['notify', NotificationTitle, Message?]
+    | readonly ['notify', NotificationTitle, Message, HighlightToken];
     /**
      * `|:|TIMESTAMP`
      *
@@ -1739,14 +1759,14 @@ export const Protocol = new class {
   // NOTE: An object is used here to get TypeScript to perform exhaustiveness checking
   ARGS: {[k in Protocol.ArgName]: 1} = {
     '|init|': 1, '|title|': 1, '|userlist|': 1, '||': 1, '|html|': 1, '|uhtml|': 1,
-    '|uhtmlchange|': 1, '|join|': 1, '|leave|': 1, '|name|': 1, '|chat|': 1, '|:|': 1, '|c:|': 1,
-    '|battle|': 1, '|popup|': 1, '|pm|': 1, '|usercount|': 1, '|nametaken|': 1, '|challstr|': 1,
-    '|updateuser|': 1, '|formats|': 1, '|updatesearch|': 1, '|switchout|': 1, '|message|': 1,
-    '|updatechallenges|': 1, '|queryresponse|': 1, '|unlink|': 1, '|raw|': 1, '|warning|': 1,
+    '|uhtmlchange|': 1, '|join|': 1, '|leave|': 1, '|name|': 1, '|chat|': 1, '|notify|': 1,
+    '|:|': 1, '|c:|': 1, '|battle|': 1, '|popup|': 1, '|pm|': 1, '|usercount|': 1,
+    '|nametaken|': 1, '|challstr|': 1, '|updateuser|': 1, '|formats|': 1, '|updatesearch|': 1,
+    '|message|': 1, '|updatechallenges|': 1, '|queryresponse|': 1, '|unlink|': 1, '|raw|': 1,
     '|error|': 1, '|bigerror|': 1, '|chatmsg|': 1, '|chatmsg-raw|': 1, '|controlshtml|': 1,
     '|fieldhtml|': 1, '|debug|': 1, '|tournament|create|': 1, '|tournament|update|': 1,
     '|tournament|updateEnd|': 1, '|tournament|error|': 1, '|tournament|forceend|': 1,
-    '|tournament|join|': 1, '|tournament|leave|': 1, '|tournament|replace|': 1,
+    '|tournament|join|': 1, '|tournament|leave|': 1, '|tournament|replace|': 1, '|switchout|': 1,
     '|tournament|start|': 1, '|tournament|disqualify|': 1, '|tournament|battlestart|': 1,
     '|tournament|battleend|': 1, '|tournament|end|': 1, '|tournament|scouting|': 1,
     '|tournament|autostart|': 1, '|tournament|autodq|': 1, '|player|': 1, '|teamsize|': 1,
@@ -1765,7 +1785,7 @@ export const Protocol = new class {
     '|-mega|': 1, '|-primal|': 1, '|-burst|': 1, '|-zpower|': 1, '|-zbroken|': 1, '|-activate|': 1,
     '|-fieldactivate|': 1, '|-hint|': 1, '|-center|': 1, '|-message|': 1, '|-combine|': 1,
     '|-waiting|': 1, '|-prepare|': 1, '|-mustrecharge|': 1, '|-hitcount|': 1, '|-singlemove|': 1,
-    '|-singleturn|': 1, '|-anim|': 1,
+    '|-singleturn|': 1, '|-anim|': 1, '|warning|': 1,
   };
   ARGS_WITH_KWARGS: {[k in Protocol.ArgsWithKWArgName]: 1} = {
     '|move|': 1, '|detailschange|': 1, '|cant|': 1, '|-formechange|': 1, '|-fail|': 1,

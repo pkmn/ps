@@ -12,7 +12,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jest": "^23.13.2",
     "jest": "^26.0.1",
-    "subpkg": "^3.0.2",
+    "subpkg": "^3.0.3",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
   },
