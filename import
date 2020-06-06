@@ -321,6 +321,11 @@ const changes = async (where, last, now, repo) => ({
         const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
         fs.writeFileSync(path.resolve(sim, file),
           `${imports(IMPORTS[file], prefix + '/exported-global-types')}${original}`);
+      } else if (file === 'lib/streams.ts') {
+        const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
+        // double fuck you zarle, AnyObject is a dreadful hack to begin with, feel ashamed
+        fs.writeFileSync(path.resolve(sim, file),
+          `import {AnyObject} from '../sim/exported-global-types';\n${original}`);
       } else {
         fs.copyFileSync(path.resolve(ps, file), path.resolve(sim, file));
       }

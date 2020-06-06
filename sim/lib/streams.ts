@@ -1,3 +1,4 @@
+import {AnyObject} from '../sim/exported-global-types';
 /**
  * Streams
  * Pokemon Showdown - http://pokemonshowdown.com/

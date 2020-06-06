@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/dex",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "description": "A unification of Pokémon Showdown's client's and server's data layers",
@@ -10,7 +10,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/dex-types": "^0.0.5"
+    "@pkmn/dex-types": "^0.0.6"
   },
   "scripts": {
     "lint": "eslint --cache --ext ts",
