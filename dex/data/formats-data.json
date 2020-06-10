@@ -4063,7 +4063,7 @@
     "rapidash": {"randomBattleLevel": 86, "tier": "NU", "doublesTier": "(DUU)"},
     "rapidashgalar": {
       "randomBattleLevel": 88,
-      "tier": "PU",
+      "tier": "PUBL",
       "doublesTier": "(DUU)"
     },
     "slowpoke": {"isNonstandard": "Unobtainable", "tier": "Unreleased"},
@@ -5154,7 +5154,7 @@
       "tier": "Illegal"
     },
     "golett": {"tier": "LC"},
-    "golurk": {"randomBattleLevel": 88, "tier": "PU", "doublesTier": "(DUU)"},
+    "golurk": {"randomBattleLevel": 88, "tier": "PUBL", "doublesTier": "(DUU)"},
     "pawniard": {"tier": "PU", "doublesTier": "LC"},
     "bisharp": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "DUU"},
     "bouffalant": {
@@ -5652,7 +5652,11 @@
     "blacephalon": {"isNonstandard": "Past", "tier": "Illegal"},
     "zeraora": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "DOU"},
     "meltan": {"tier": "PU", "doublesTier": "(DUU)"},
-    "melmetal": {"randomBattleLevel": 72, "tier": "Uber", "doublesTier": "DOU"},
+    "melmetal": {
+      "randomBattleLevel": 72,
+      "tier": "Uber",
+      "doublesTier": "DUber"
+    },
     "melmetalgmax": {"isNonstandard": "Unobtainable", "tier": "Unreleased"},
     "grookey": {"tier": "LC"},
     "thwackey": {"tier": "NFE"},
