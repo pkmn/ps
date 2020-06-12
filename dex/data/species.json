@@ -24906,7 +24906,7 @@
       "weightkg": 15,
       "evos": ["Volkraken"],
       "eggGroups": ["Water 1", "Water 2"],
-      "gen": 5
+      "gen": 6
     },
     "volkraken": {
       "num": -33,
@@ -24925,7 +24925,7 @@
       "prevo": "Volkritter",
       "evoLevel": 34,
       "eggGroups": ["Water 1", "Water 2"],
-      "gen": 5
+      "gen": 6
     },
     "snugglow": {
       "num": -34,
@@ -25346,7 +25346,7 @@
       "gen": 7
     },
     "equilibra": {
-      "num": -54,
+      "num": -55,
       "name": "Equilibra",
       "types": ["Steel", "Ground"],
       "gender": "N",
@@ -25362,6 +25362,23 @@
       "weightkg": 51.3,
       "eggGroups": ["Mineral"],
       "gen": 7
+    },
+    "astrolotl": {
+      "num": -57,
+      "name": "Astrolotl",
+      "types": ["Fire", "Dragon"],
+      "baseStats": {
+        "hp": 108,
+        "atk": 108,
+        "def": 74,
+        "spa": 92,
+        "spd": 64,
+        "spe": 114
+      },
+      "abilities": {"0": "Regenerator", "1": "Vital Spirit", "H": "Magician"},
+      "weightkg": 50,
+      "eggGroups": ["Dragon", "Fairy"],
+      "gen": 8
     },
     "pokestarsmeargle": {
       "num": -5000,

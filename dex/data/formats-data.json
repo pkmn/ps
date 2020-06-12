@@ -4227,7 +4227,11 @@
       "doublesTier": "NFE"
     },
     "mrrime": {"randomBattleLevel": 88, "tier": "PU", "doublesTier": "(DUU)"},
-    "scyther": {"isNonstandard": "Past", "tier": "Illegal"},
+    "scyther": {
+      "randomBattleLevel": 88,
+      "isNonstandard": "Past",
+      "tier": "Illegal"
+    },
     "scizor": {
       "randomBattleLevel": 82,
       "isNonstandard": "Past",
@@ -4333,7 +4337,7 @@
     "furret": {"isNonstandard": "Past", "tier": "Illegal"},
     "hoothoot": {"tier": "LC"},
     "noctowl": {
-      "randomBattleLevel": 88,
+      "randomBattleLevel": 86,
       "tier": "PUBL",
       "doublesTier": "(DUU)"
     },
@@ -5010,11 +5014,11 @@
       "doublesTier": "(DUU)"
     },
     "darmanitangalar": {
-      "randomBattleLevel": 72,
+      "randomBattleLevel": 76,
       "tier": "Uber",
       "doublesTier": "DOU"
     },
-    "darmanitangalarzen": {"randomBattleLevel": 80},
+    "darmanitangalarzen": {"randomBattleLevel": 76},
     "maractus": {
       "randomBattleLevel": 88,
       "tier": "(PU)",
@@ -5849,7 +5853,7 @@
       "doublesTier": "(DUU)"
     },
     "dracovish": {
-      "randomBattleLevel": 72,
+      "randomBattleLevel": 76,
       "unreleasedHidden": true,
       "tier": "Uber",
       "doublesTier": "DOU"
@@ -5943,6 +5947,7 @@
     "coribalis": {"isNonstandard": "CAP", "tier": "CAP NFE"},
     "snaelstrom": {"isNonstandard": "CAP", "tier": "CAP"},
     "equilibra": {"isNonstandard": "CAP", "tier": "CAP"},
+    "astrolotl": {"isNonstandard": "CAP", "tier": "CAP"},
     "pokestarsmeargle": {"isNonstandard": "Custom", "tier": "Illegal"},
     "pokestarufo": {"isNonstandard": "Custom", "tier": "Illegal"},
     "pokestarufo2": {"isNonstandard": "Custom", "tier": "Illegal"},

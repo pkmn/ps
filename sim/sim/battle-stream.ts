@@ -58,7 +58,7 @@ export class BattleStream extends Streams.ObjectReadWriteStream<string> {
 		try {
 			this._writeLines(chunk);
 		} catch (err) {
-			this.pushError(err);
+			this.pushError(err, true);
 			return;
 		}
 		if (this.battle) this.battle.sendUpdates();
@@ -90,7 +90,7 @@ export class BattleStream extends Streams.ObjectReadWriteStream<string> {
 			options.send = (t: string, data: any) => {
 				if (Array.isArray(data)) data = data.join("\n");
 				this.pushMessage(t, data);
-				if (t === 'end' && !this.keepAlive) this.push(null);
+				if (t === 'end' && !this.keepAlive) this.pushEnd();
 			};
 			if (this.debug) options.debug = true;
 			this.battle = new Battle(options);
@@ -121,7 +121,7 @@ export class BattleStream extends Streams.ObjectReadWriteStream<string> {
 
 	_end() {
 		// this is in theory synchronous...
-		this.push(null);
+		this.pushEnd();
 		this._destroy();
 	}
 
@@ -140,11 +140,11 @@ export function getPlayerStreams(stream: BattleStream) {
 			write(data: string) {
 				void stream.write(data);
 			},
-			end() {
-				return stream.end();
+			writeEnd() {
+				return stream.writeEnd();
 			},
 		}),
-		spectator: new Streams.ObjectReadStream({
+		spectator: new Streams.ObjectReadStream<string>({
 			read() {},
 		}),
 		p1: new Streams.ObjectReadWriteStream({
@@ -192,11 +192,11 @@ export function getPlayerStreams(stream: BattleStream) {
 			}
 		}
 		for (const s of Object.values(streams)) {
-			s.push(null);
+			s.pushEnd();
 		}
 	})().catch(err => {
 		for (const s of Object.values(streams)) {
-			s.pushError(err);
+			s.pushError(err, true);
 		}
 	});
 	return streams;
@@ -264,7 +264,7 @@ export class BattleTextStream extends Streams.ReadWriteStream {
 			if (!message.endsWith('\n')) message += '\n';
 			this.push(message + '\n');
 		}
-		this.push(null);
+		this.pushEnd();
 	}
 
 	_write(message: string | Buffer) {
@@ -277,6 +277,6 @@ export class BattleTextStream extends Streams.ReadWriteStream {
 	}
 
 	_end() {
-		return this.battleStream.end();
+		return this.battleStream.writeEnd();
 	}
 }
