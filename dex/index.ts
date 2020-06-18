@@ -473,8 +473,9 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     this.isGigantamax = data.isGigantamax || undefined;
     this.battleOnly =
       data.battleOnly || (this.isMega || this.isGigantamax ? this.baseSpecies : undefined);
-    this.changesFrom =
-      data.changesFrom || (this.isGigantamax ? toID(this.baseSpecies) : undefined);
+    this.changesFrom = data.changesFrom || (!this.isGigantamax
+        ? undefined : this.battleOnly !== this.baseSpecies
+        ? this.battleOnly : this.baseSpecies);
 
     if (!this.gen && data.num >= 1) {
       if (data.num >= 810 || ['Gmax', 'Galar', 'Galar-Zen'].includes(this.forme)) {

@@ -3872,6 +3872,7 @@
     "ivysaur": {"tier": "NFE"},
     "venusaur": {"randomBattleLevel": 82, "tier": "UUBL", "doublesTier": "DOU"},
     "venusaurmega": {"isNonstandard": "Past", "tier": "Illegal"},
+    "venusaurgmax": {"tier": "(Uber)", "doublesTier": "(DUber)"},
     "charmander": {"tier": "LC"},
     "charmeleon": {"tier": "NFE"},
     "charizard": {"randomBattleLevel": 82, "tier": "RU", "doublesTier": "DOU"},
@@ -3882,6 +3883,7 @@
     "wartortle": {"tier": "NFE"},
     "blastoise": {"randomBattleLevel": 82, "tier": "UU", "doublesTier": "DOU"},
     "blastoisemega": {"isNonstandard": "Past", "tier": "Illegal"},
+    "blastoisegmax": {"tier": "(Uber)", "doublesTier": "(DUber)"},
     "caterpie": {"tier": "LC"},
     "metapod": {"tier": "NFE"},
     "butterfree": {
@@ -3929,16 +3931,17 @@
     "pikachupartner": {"tier": "PU", "doublesTier": "(DUU)"},
     "pikachustarter": {"isNonstandard": "LGPE", "tier": "Illegal"},
     "pikachugmax": {"tier": "(Uber)", "doublesTier": "(DUber)"},
+    "pikachuworld": {"tier": "PU", "doublesTier": "(DUU)"},
     "raichu": {"randomBattleLevel": 88, "tier": "PU", "doublesTier": "(DUU)"},
     "raichualola": {
       "randomBattleLevel": 84,
       "tier": "RU",
       "doublesTier": "(DUU)"
     },
-    "sandshrew": {"isNonstandard": "Past", "tier": "Illegal"},
-    "sandshrewalola": {"isNonstandard": "Past", "tier": "Illegal"},
-    "sandslash": {"isNonstandard": "Past", "tier": "Illegal"},
-    "sandslashalola": {"isNonstandard": "Past", "tier": "Illegal"},
+    "sandshrew": {"tier": "LC"},
+    "sandshrewalola": {"tier": "LC"},
+    "sandslash": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
+    "sandslashalola": {"tier": "OU", "doublesTier": "DOU"},
     "nidoranf": {"isNonstandard": "Past", "tier": "Illegal"},
     "nidorina": {"isNonstandard": "Past", "tier": "Illegal"},
     "nidoqueen": {
@@ -3964,9 +3967,9 @@
       "tier": "OU",
       "doublesTier": "DUU"
     },
-    "igglybuff": {"isNonstandard": "Past", "tier": "Illegal"},
-    "jigglypuff": {"isNonstandard": "Past", "tier": "Illegal"},
-    "wigglytuff": {"isNonstandard": "Past", "tier": "Illegal"},
+    "igglybuff": {"tier": "LC"},
+    "jigglypuff": {"tier": "NFE"},
+    "wigglytuff": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
     "zubat": {"isNonstandard": "Past", "tier": "Illegal"},
     "golbat": {"isNonstandard": "Past", "tier": "Illegal"},
     "crobat": {
@@ -4017,32 +4020,20 @@
       "tier": "NU",
       "doublesTier": "(DUU)"
     },
-    "psyduck": {"isNonstandard": "Past", "tier": "Illegal"},
-    "golduck": {
-      "randomBattleLevel": 88,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "psyduck": {"tier": "LC"},
+    "golduck": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
     "mankey": {"isNonstandard": "Past", "tier": "Illegal"},
     "primeape": {"isNonstandard": "Past", "tier": "Illegal"},
     "growlithe": {"tier": "LC"},
     "arcanine": {"randomBattleLevel": 82, "tier": "UU", "doublesTier": "DUU"},
-    "poliwag": {"isNonstandard": "Past", "tier": "Illegal"},
-    "poliwhirl": {"isNonstandard": "Past", "tier": "Illegal"},
-    "poliwrath": {
-      "randomBattleLevel": 88,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
-    "politoed": {
-      "randomBattleLevel": 82,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
-    "abra": {"isNonstandard": "Past", "tier": "Illegal"},
-    "kadabra": {"isNonstandard": "Past", "tier": "Illegal"},
-    "alakazam": {"isNonstandard": "Past", "tier": "Illegal"},
-    "alakazammega": {"isNonstandard": "Past"},
+    "poliwag": {"tier": "LC"},
+    "poliwhirl": {"tier": "NFE"},
+    "poliwrath": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
+    "politoed": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
+    "abra": {"tier": "LC"},
+    "kadabra": {"tier": "NFE"},
+    "alakazam": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
+    "alakazammega": {"isNonstandard": "Past", "tier": "Illegal"},
     "machop": {"tier": "LC"},
     "machoke": {"tier": "NFE"},
     "machamp": {"randomBattleLevel": 82, "tier": "UU", "doublesTier": "(DUU)"},
@@ -4050,8 +4041,8 @@
     "bellsprout": {"isNonstandard": "Past", "tier": "Illegal"},
     "weepinbell": {"isNonstandard": "Past", "tier": "Illegal"},
     "victreebel": {"isNonstandard": "Past", "tier": "Illegal"},
-    "tentacool": {"isNonstandard": "Past", "tier": "Illegal"},
-    "tentacruel": {"isNonstandard": "Past", "tier": "Illegal"},
+    "tentacool": {"tier": "LC"},
+    "tentacruel": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
     "geodude": {"isNonstandard": "Past", "tier": "Illegal"},
     "geodudealola": {"isNonstandard": "Past", "tier": "Illegal"},
     "graveler": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -4066,30 +4057,19 @@
       "tier": "PUBL",
       "doublesTier": "(DUU)"
     },
-    "slowpoke": {"isNonstandard": "Unobtainable", "tier": "Unreleased"},
-    "slowpokegalar": {
-      "unreleasedHidden": true,
-      "tier": "(PU)",
-      "doublesTier": "(DUU)"
-    },
-    "slowbro": {
+    "slowpoke": {"tier": "LC"},
+    "slowpokegalar": {"tier": "LC"},
+    "slowbro": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
+    "slowbromega": {"isNonstandard": "Past", "tier": "Illegal"},
+    "slowbrogalar": {
       "randomBattleLevel": 82,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
+      "tier": "OU",
+      "doublesTier": "DOU"
     },
-    "slowbromega": {"isNonstandard": "Past"},
-    "slowking": {
-      "randomBattleLevel": 84,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
-    "magnemite": {"isNonstandard": "Past", "tier": "Illegal"},
-    "magneton": {"isNonstandard": "Past", "tier": "Illegal"},
-    "magnezone": {
-      "randomBattleLevel": 82,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "slowking": {"randomBattleLevel": 84, "tier": "OU", "doublesTier": "DOU"},
+    "magnemite": {"tier": "LC"},
+    "magneton": {"tier": "NFE"},
+    "magnezone": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
     "farfetchd": {
       "randomBattleLevel": 88,
       "tier": "PU",
@@ -4134,20 +4114,20 @@
     "kinglergmax": {"tier": "(Uber)", "doublesTier": "(DUber)"},
     "voltorb": {"isNonstandard": "Past", "tier": "Illegal"},
     "electrode": {"isNonstandard": "Past", "tier": "Illegal"},
-    "exeggcute": {"isNonstandard": "Past", "tier": "Illegal"},
-    "exeggutor": {
-      "randomBattleLevel": 88,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "exeggcute": {"tier": "LC"},
+    "exeggutor": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
     "exeggutoralola": {
       "randomBattleLevel": 86,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
+      "tier": "OU",
+      "doublesTier": "DOU"
     },
-    "cubone": {"isNonstandard": "Past", "tier": "Illegal"},
-    "marowak": {"isNonstandard": "Past", "tier": "Illegal"},
-    "marowakalola": {"isNonstandard": "Past", "tier": "Illegal"},
+    "cubone": {"tier": "LC"},
+    "marowak": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
+    "marowakalola": {
+      "randomBattleLevel": 84,
+      "tier": "OU",
+      "doublesTier": "DOU"
+    },
     "marowakalolatotem": {"isNonstandard": "Past"},
     "tyrogue": {"tier": "LC"},
     "hitmonlee": {
@@ -4165,8 +4145,8 @@
       "tier": "PU",
       "doublesTier": "(DUU)"
     },
-    "lickitung": {"isNonstandard": "Past", "tier": "Illegal"},
-    "lickilicky": {"isNonstandard": "Past", "tier": "Illegal"},
+    "lickitung": {"tier": "LC"},
+    "lickilicky": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
     "koffing": {"tier": "LC"},
     "weezing": {"randomBattleLevel": 84, "tier": "RU", "doublesTier": "(DUU)"},
     "weezinggalar": {
@@ -4177,48 +4157,24 @@
     "rhyhorn": {"tier": "LC"},
     "rhydon": {"tier": "RU", "doublesTier": "NFE"},
     "rhyperior": {"randomBattleLevel": 82, "tier": "UU", "doublesTier": "DOU"},
-    "happiny": {"isNonstandard": "Past", "tier": "Illegal"},
-    "chansey": {
-      "randomBattleLevel": 80,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
-    "blissey": {
-      "randomBattleLevel": 82,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
-    "tangela": {"isNonstandard": "Past", "tier": "Illegal"},
-    "tangrowth": {
-      "randomBattleLevel": 80,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
-    "kangaskhan": {
-      "randomBattleLevel": 88,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
-    "kangaskhanmega": {"isNonstandard": "Past"},
-    "horsea": {"isNonstandard": "Past", "tier": "Illegal"},
-    "seadra": {"isNonstandard": "Past", "tier": "Illegal"},
-    "kingdra": {
-      "randomBattleLevel": 84,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "happiny": {"tier": "LC"},
+    "chansey": {"randomBattleLevel": 80, "tier": "NFE"},
+    "blissey": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
+    "tangela": {"tier": "LC Uber"},
+    "tangrowth": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "DOU"},
+    "kangaskhan": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
+    "kangaskhanmega": {"isNonstandard": "Past", "tier": "Illegal"},
+    "horsea": {"tier": "LC"},
+    "seadra": {"tier": "NFE"},
+    "kingdra": {"randomBattleLevel": 84, "tier": "OU", "doublesTier": "DOU"},
     "goldeen": {"tier": "LC"},
     "seaking": {
       "randomBattleLevel": 88,
       "tier": "(PU)",
       "doublesTier": "(DUU)"
     },
-    "staryu": {"isNonstandard": "Past", "tier": "Illegal"},
-    "starmie": {
-      "randomBattleLevel": 82,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "staryu": {"tier": "LC"},
+    "starmie": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
     "mimejr": {"tier": "LC"},
     "mrmime": {"randomBattleLevel": 88, "tier": "PU", "doublesTier": "(DUU)"},
     "mrmimegalar": {
@@ -4227,17 +4183,9 @@
       "doublesTier": "NFE"
     },
     "mrrime": {"randomBattleLevel": 88, "tier": "PU", "doublesTier": "(DUU)"},
-    "scyther": {
-      "randomBattleLevel": 88,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
-    "scizor": {
-      "randomBattleLevel": 82,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
-    "scizormega": {"isNonstandard": "Past"},
+    "scyther": {"randomBattleLevel": 88, "tier": "LC Uber"},
+    "scizor": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
+    "scizormega": {"isNonstandard": "Past", "tier": "Illegal"},
     "smoochum": {"isNonstandard": "Past", "tier": "Illegal"},
     "jynx": {"isNonstandard": "Past", "tier": "Illegal"},
     "elekid": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -4254,13 +4202,9 @@
       "isNonstandard": "Past",
       "tier": "Illegal"
     },
-    "pinsir": {"isNonstandard": "Past", "tier": "Illegal"},
-    "pinsirmega": {"isNonstandard": "Past"},
-    "tauros": {
-      "randomBattleLevel": 86,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "pinsir": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
+    "pinsirmega": {"isNonstandard": "Past", "tier": "Illegal"},
+    "tauros": {"randomBattleLevel": 86, "tier": "OU", "doublesTier": "DOU"},
     "magikarp": {"tier": "LC"},
     "gyarados": {"randomBattleLevel": 82, "tier": "UUBL", "doublesTier": "DUU"},
     "gyaradosmega": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -4282,15 +4226,15 @@
     "leafeon": {"randomBattleLevel": 88, "tier": "PU", "doublesTier": "(DUU)"},
     "glaceon": {"randomBattleLevel": 88, "tier": "PU", "doublesTier": "(DUU)"},
     "sylveon": {"randomBattleLevel": 82, "tier": "UU", "doublesTier": "DOU"},
-    "porygon": {"isNonstandard": "Past", "tier": "Illegal"},
-    "porygon2": {"isNonstandard": "Past", "tier": "Illegal"},
-    "porygonz": {"isNonstandard": "Past", "tier": "Illegal"},
+    "porygon": {"tier": "LC"},
+    "porygon2": {"randomBattleLevel": 84, "tier": "NFE"},
+    "porygonz": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
     "omanyte": {"isNonstandard": "Past", "tier": "Illegal"},
     "omastar": {"isNonstandard": "Past", "tier": "Illegal"},
     "kabuto": {"isNonstandard": "Past", "tier": "Illegal"},
     "kabutops": {"isNonstandard": "Past", "tier": "Illegal"},
     "aerodactyl": {"isNonstandard": "Past", "tier": "Illegal"},
-    "aerodactylmega": {"isNonstandard": "Past"},
+    "aerodactylmega": {"isNonstandard": "Past", "tier": "Illegal"},
     "munchlax": {"tier": "LC"},
     "snorlax": {"randomBattleLevel": 84, "tier": "RU", "doublesTier": "(DUU)"},
     "snorlaxgmax": {
@@ -4355,14 +4299,10 @@
     "mareep": {"isNonstandard": "Past", "tier": "Illegal"},
     "flaaffy": {"isNonstandard": "Past", "tier": "Illegal"},
     "ampharos": {"isNonstandard": "Past", "tier": "Illegal"},
-    "ampharosmega": {"isNonstandard": "Past"},
-    "azurill": {"isNonstandard": "Past", "tier": "Illegal"},
-    "marill": {"isNonstandard": "Past", "tier": "Illegal"},
-    "azumarill": {
-      "randomBattleLevel": 82,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "ampharosmega": {"isNonstandard": "Past", "tier": "Illegal"},
+    "azurill": {"tier": "LC"},
+    "marill": {"tier": "NFE"},
+    "azumarill": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
     "bonsly": {"tier": "LC"},
     "sudowoodo": {
       "randomBattleLevel": 88,
@@ -4394,15 +4334,15 @@
     "girafarig": {"isNonstandard": "Past", "tier": "Illegal"},
     "pineco": {"isNonstandard": "Past", "tier": "Illegal"},
     "forretress": {"isNonstandard": "Past", "tier": "Illegal"},
-    "dunsparce": {"isNonstandard": "Past", "tier": "Illegal"},
+    "dunsparce": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
     "gligar": {"isNonstandard": "Past", "tier": "Illegal"},
     "gliscor": {"isNonstandard": "Past", "tier": "Illegal"},
     "snubbull": {"isNonstandard": "Past", "tier": "Illegal"},
     "granbull": {"isNonstandard": "Past", "tier": "Illegal"},
     "qwilfish": {"randomBattleLevel": 86, "tier": "NU", "doublesTier": "(DUU)"},
     "shuckle": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "(DUU)"},
-    "heracross": {"isNonstandard": "Past", "tier": "Illegal"},
-    "heracrossmega": {"isNonstandard": "Past"},
+    "heracross": {"randomBattleLevel": 84, "tier": "OU", "doublesTier": "DOU"},
+    "heracrossmega": {"isNonstandard": "Past", "tier": "Illegal"},
     "sneasel": {"tier": "NUBL", "doublesTier": "LC Uber"},
     "weavile": {"randomBattleLevel": 82, "tier": "UUBL", "doublesTier": "DUU"},
     "teddiursa": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -4436,19 +4376,15 @@
     },
     "mantyke": {"tier": "LC"},
     "mantine": {"randomBattleLevel": 82, "tier": "UU", "doublesTier": "(DUU)"},
-    "skarmory": {
-      "randomBattleLevel": 80,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "skarmory": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "DOU"},
     "houndour": {"isNonstandard": "Past", "tier": "Illegal"},
     "houndoom": {"isNonstandard": "Past", "tier": "Illegal"},
-    "houndoommega": {"isNonstandard": "Past"},
+    "houndoommega": {"isNonstandard": "Past", "tier": "Illegal"},
     "phanpy": {"isNonstandard": "Past", "tier": "Illegal"},
     "donphan": {"isNonstandard": "Past", "tier": "Illegal"},
     "stantler": {"isNonstandard": "Past", "tier": "Illegal"},
     "smeargle": {"isNonstandard": "Past", "tier": "Illegal"},
-    "miltank": {"isNonstandard": "Past", "tier": "Illegal"},
+    "miltank": {"randomBattleLevel": 86, "tier": "OU", "doublesTier": "DOU"},
     "raikou": {
       "randomBattleLevel": 84,
       "isNonstandard": "Past",
@@ -4482,15 +4418,15 @@
     "treecko": {"isNonstandard": "Past", "tier": "Illegal"},
     "grovyle": {"isNonstandard": "Past", "tier": "Illegal"},
     "sceptile": {"isNonstandard": "Past", "tier": "Illegal"},
-    "sceptilemega": {"isNonstandard": "Past"},
+    "sceptilemega": {"isNonstandard": "Past", "tier": "Illegal"},
     "torchic": {"isNonstandard": "Past", "tier": "Illegal"},
     "combusken": {"isNonstandard": "Past", "tier": "Illegal"},
     "blaziken": {"isNonstandard": "Past", "tier": "Illegal"},
-    "blazikenmega": {"isNonstandard": "Past"},
+    "blazikenmega": {"isNonstandard": "Past", "tier": "Illegal"},
     "mudkip": {"isNonstandard": "Past", "tier": "Illegal"},
     "marshtomp": {"isNonstandard": "Past", "tier": "Illegal"},
     "swampert": {"isNonstandard": "Past", "tier": "Illegal"},
-    "swampertmega": {"isNonstandard": "Past"},
+    "swampertmega": {"isNonstandard": "Past", "tier": "Illegal"},
     "poochyena": {"isNonstandard": "Past", "tier": "Illegal"},
     "mightyena": {"isNonstandard": "Past", "tier": "Illegal"},
     "zigzagoon": {"tier": "LC"},
@@ -4545,13 +4481,9 @@
       "tier": "(PU)",
       "doublesTier": "(DUU)"
     },
-    "whismur": {"isNonstandard": "Past", "tier": "Illegal"},
-    "loudred": {"isNonstandard": "Past", "tier": "Illegal"},
-    "exploud": {
-      "randomBattleLevel": 86,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "whismur": {"tier": "LC"},
+    "loudred": {"tier": "NFE"},
+    "exploud": {"randomBattleLevel": 86, "tier": "OU", "doublesTier": "DOU"},
     "makuhita": {"isNonstandard": "Past", "tier": "Illegal"},
     "hariyama": {"isNonstandard": "Past", "tier": "Illegal"},
     "nosepass": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -4569,10 +4501,10 @@
       "isNonstandard": "Past",
       "tier": "Illegal"
     },
-    "aggronmega": {"isNonstandard": "Past"},
+    "aggronmega": {"isNonstandard": "Past", "tier": "Illegal"},
     "meditite": {"isNonstandard": "Past", "tier": "Illegal"},
     "medicham": {"isNonstandard": "Past", "tier": "Illegal"},
-    "medichammega": {"isNonstandard": "Past"},
+    "medichammega": {"isNonstandard": "Past", "tier": "Illegal"},
     "electrike": {"tier": "LC"},
     "manectric": {
       "randomBattleLevel": 88,
@@ -4589,9 +4521,9 @@
     "roserade": {"randomBattleLevel": 82, "tier": "UU", "doublesTier": "(DUU)"},
     "gulpin": {"isNonstandard": "Past", "tier": "Illegal"},
     "swalot": {"isNonstandard": "Past", "tier": "Illegal"},
-    "carvanha": {"isNonstandard": "Past", "tier": "Illegal"},
-    "sharpedo": {"isNonstandard": "Past", "tier": "Illegal"},
-    "sharpedomega": {"isNonstandard": "Past"},
+    "carvanha": {"tier": "LC"},
+    "sharpedo": {"randomBattleLevel": 84, "tier": "OU", "doublesTier": "DOU"},
+    "sharpedomega": {"isNonstandard": "Past", "tier": "Illegal"},
     "wailmer": {"tier": "LC"},
     "wailord": {
       "randomBattleLevel": 88,
@@ -4600,7 +4532,7 @@
     },
     "numel": {"isNonstandard": "Past", "tier": "Illegal"},
     "camerupt": {"isNonstandard": "Past", "tier": "Illegal"},
-    "cameruptmega": {"isNonstandard": "Past"},
+    "cameruptmega": {"isNonstandard": "Past", "tier": "Illegal"},
     "torkoal": {"randomBattleLevel": 84, "tier": "RU", "doublesTier": "DOU"},
     "spoink": {"isNonstandard": "Past", "tier": "Illegal"},
     "grumpig": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -4616,7 +4548,7 @@
       "isNonstandard": "Past",
       "tier": "Illegal"
     },
-    "altariamega": {"isNonstandard": "Past"},
+    "altariamega": {"isNonstandard": "Past", "tier": "Illegal"},
     "zangoose": {"isNonstandard": "Past", "tier": "Illegal"},
     "seviper": {"isNonstandard": "Past", "tier": "Illegal"},
     "lunatone": {
@@ -4656,7 +4588,7 @@
     "kecleon": {"isNonstandard": "Past", "tier": "Illegal"},
     "shuppet": {"isNonstandard": "Past", "tier": "Illegal"},
     "banette": {"isNonstandard": "Past", "tier": "Illegal"},
-    "banettemega": {"isNonstandard": "Past"},
+    "banettemega": {"isNonstandard": "Past", "tier": "Illegal"},
     "duskull": {"tier": "LC"},
     "dusclops": {"tier": "PU", "doublesTier": "DOU"},
     "dusknoir": {"randomBattleLevel": 88, "tier": "PU", "doublesTier": "(DUU)"},
@@ -4668,7 +4600,7 @@
       "isNonstandard": "Past",
       "tier": "Illegal"
     },
-    "absolmega": {"isNonstandard": "Past"},
+    "absolmega": {"isNonstandard": "Past", "tier": "Illegal"},
     "snorunt": {"tier": "LC"},
     "glalie": {"randomBattleLevel": 72, "tier": "(PU)", "doublesTier": "(DUU)"},
     "glaliemega": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -4692,7 +4624,7 @@
     "bagon": {"isNonstandard": "Past", "tier": "Illegal"},
     "shelgon": {"isNonstandard": "Past", "tier": "Illegal"},
     "salamence": {"isNonstandard": "Past", "tier": "Illegal"},
-    "salamencemega": {"isNonstandard": "Past"},
+    "salamencemega": {"isNonstandard": "Past", "tier": "Illegal"},
     "beldum": {"isNonstandard": "Past", "tier": "Illegal"},
     "metang": {"isNonstandard": "Past", "tier": "Illegal"},
     "metagross": {
@@ -4700,7 +4632,7 @@
       "isNonstandard": "Past",
       "tier": "Illegal"
     },
-    "metagrossmega": {"isNonstandard": "Past"},
+    "metagrossmega": {"isNonstandard": "Past", "tier": "Illegal"},
     "regirock": {
       "randomBattleLevel": 86,
       "isNonstandard": "Past",
@@ -4721,13 +4653,13 @@
       "isNonstandard": "Past",
       "tier": "Illegal"
     },
-    "latiasmega": {"isNonstandard": "Past"},
+    "latiasmega": {"isNonstandard": "Past", "tier": "Illegal"},
     "latios": {
       "randomBattleLevel": 80,
       "isNonstandard": "Past",
       "tier": "Illegal"
     },
-    "latiosmega": {"isNonstandard": "Past"},
+    "latiosmega": {"isNonstandard": "Past", "tier": "Illegal"},
     "kyogre": {
       "randomBattleLevel": 72,
       "isNonstandard": "Past",
@@ -4745,7 +4677,7 @@
       "isNonstandard": "Past",
       "tier": "Illegal"
     },
-    "rayquazamega": {"isNonstandard": "Past"},
+    "rayquazamega": {"isNonstandard": "Past", "tier": "Illegal"},
     "jirachi": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "DUber"},
     "deoxys": {"isNonstandard": "Past", "tier": "Illegal"},
     "deoxysattack": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -4767,13 +4699,9 @@
     "bibarel": {"isNonstandard": "Past", "tier": "Illegal"},
     "kricketot": {"isNonstandard": "Past", "tier": "Illegal"},
     "kricketune": {"isNonstandard": "Past", "tier": "Illegal"},
-    "shinx": {"isNonstandard": "Past", "tier": "Illegal"},
-    "luxio": {"isNonstandard": "Past", "tier": "Illegal"},
-    "luxray": {
-      "randomBattleLevel": 88,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "shinx": {"tier": "LC"},
+    "luxio": {"tier": "NFE"},
+    "luxray": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
     "cranidos": {"isNonstandard": "Past", "tier": "Illegal"},
     "rampardos": {"isNonstandard": "Past", "tier": "Illegal"},
     "shieldon": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -4792,7 +4720,7 @@
     "pachirisu": {"isNonstandard": "Past", "tier": "Illegal"},
     "buizel": {"isNonstandard": "Past", "tier": "Illegal"},
     "floatzel": {"isNonstandard": "Past", "tier": "Illegal"},
-    "cherubi": {"tier": "LC"},
+    "cherubi": {"tier": "LC Uber"},
     "cherrim": {
       "randomBattleLevel": 88,
       "tier": "(PU)",
@@ -4803,9 +4731,9 @@
     "gastrodon": {"randomBattleLevel": 84, "tier": "RU", "doublesTier": "DOU"},
     "drifloon": {"tier": "LC Uber"},
     "drifblim": {"randomBattleLevel": 86, "tier": "NU", "doublesTier": "DUU"},
-    "buneary": {"isNonstandard": "Past", "tier": "Illegal"},
-    "lopunny": {"isNonstandard": "Past", "tier": "Illegal"},
-    "lopunnymega": {"isNonstandard": "Past"},
+    "buneary": {"tier": "LC"},
+    "lopunny": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
+    "lopunnymega": {"isNonstandard": "Past", "tier": "Illegal"},
     "glameow": {"isNonstandard": "Past", "tier": "Illegal"},
     "purugly": {"isNonstandard": "Past", "tier": "Illegal"},
     "stunky": {"tier": "LC"},
@@ -4821,7 +4749,7 @@
       "isNonstandard": "Past",
       "tier": "Illegal"
     },
-    "garchompmega": {"isNonstandard": "Past"},
+    "garchompmega": {"isNonstandard": "Past", "tier": "Illegal"},
     "riolu": {"tier": "LC"},
     "lucario": {"randomBattleLevel": 82, "tier": "UU", "doublesTier": "(DUU)"},
     "lucariomega": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -4940,9 +4868,9 @@
     "samurott": {"isNonstandard": "Past", "tier": "Illegal"},
     "patrat": {"isNonstandard": "Past", "tier": "Illegal"},
     "watchog": {"isNonstandard": "Past", "tier": "Illegal"},
-    "lillipup": {"isNonstandard": "Past", "tier": "Illegal"},
-    "herdier": {"isNonstandard": "Past", "tier": "Illegal"},
-    "stoutland": {"isNonstandard": "Past", "tier": "Illegal"},
+    "lillipup": {"tier": "LC"},
+    "herdier": {"tier": "NFE"},
+    "stoutland": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
     "purrloin": {"tier": "LC"},
     "liepard": {"randomBattleLevel": 86, "tier": "NU", "doublesTier": "(DUU)"},
     "pansage": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -4970,7 +4898,7 @@
     "drilbur": {"tier": "LC"},
     "excadrill": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "DOU"},
     "audino": {"isNonstandard": "Past", "tier": "Illegal"},
-    "audinomega": {"isNonstandard": "Past"},
+    "audinomega": {"isNonstandard": "Past", "tier": "Illegal"},
     "timburr": {"tier": "LC"},
     "gurdurr": {"randomBattleLevel": 86, "tier": "NU", "doublesTier": "NFE"},
     "conkeldurr": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "DOU"},
@@ -4986,26 +4914,22 @@
     "sewaddle": {"isNonstandard": "Past", "tier": "Illegal"},
     "swadloon": {"isNonstandard": "Past", "tier": "Illegal"},
     "leavanny": {"isNonstandard": "Past", "tier": "Illegal"},
-    "venipede": {"isNonstandard": "Past", "tier": "Illegal"},
-    "whirlipede": {"isNonstandard": "Past", "tier": "Illegal"},
-    "scolipede": {"isNonstandard": "Past", "tier": "Illegal"},
+    "venipede": {"tier": "LC"},
+    "whirlipede": {"tier": "NFE"},
+    "scolipede": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
     "cottonee": {"tier": "LC"},
     "whimsicott": {"randomBattleLevel": 84, "tier": "RU", "doublesTier": "DOU"},
-    "petilil": {"isNonstandard": "Past", "tier": "Illegal"},
-    "lilligant": {"isNonstandard": "Past", "tier": "Illegal"},
+    "petilil": {"tier": "LC"},
+    "lilligant": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
     "basculin": {"randomBattleLevel": 88, "tier": "PU", "doublesTier": "(DUU)"},
     "basculinbluestriped": {
       "randomBattleLevel": 88,
       "tier": "PU",
       "doublesTier": "(DUU)"
     },
-    "sandile": {"isNonstandard": "Past", "tier": "Illegal"},
-    "krokorok": {"isNonstandard": "Past", "tier": "Illegal"},
-    "krookodile": {
-      "randomBattleLevel": 82,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "sandile": {"tier": "LC"},
+    "krokorok": {"tier": "NFE"},
+    "krookodile": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
     "darumaka": {"tier": "LC"},
     "darumakagalar": {"tier": "LC"},
     "darmanitan": {
@@ -5056,8 +4980,8 @@
       "tier": "(Uber)",
       "doublesTier": "(DUber)"
     },
-    "zorua": {"isNonstandard": "Past", "tier": "Illegal"},
-    "zoroark": {"isNonstandard": "Past", "tier": "Illegal"},
+    "zorua": {"tier": "LC"},
+    "zoroark": {"tier": "OU", "doublesTier": "DOU"},
     "minccino": {"tier": "LC"},
     "cinccino": {"randomBattleLevel": 84, "tier": "RU", "doublesTier": "(DUU)"},
     "gothita": {"tier": "LC Uber"},
@@ -5081,19 +5005,15 @@
     },
     "deerling": {"isNonstandard": "Past", "tier": "Illegal"},
     "sawsbuck": {"isNonstandard": "Past", "tier": "Illegal"},
-    "emolga": {
-      "randomBattleLevel": 88,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "emolga": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
     "karrablast": {"tier": "LC"},
     "escavalier": {
       "randomBattleLevel": 82,
       "tier": "UU",
       "doublesTier": "(DUU)"
     },
-    "foongus": {"isNonstandard": "Past", "tier": "Illegal"},
-    "amoonguss": {"isNonstandard": "Past", "tier": "Illegal"},
+    "foongus": {"tier": "LC"},
+    "amoonguss": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
     "frillish": {"tier": "LC"},
     "jellicent": {"randomBattleLevel": 84, "tier": "RU", "doublesTier": "DUU"},
     "alomomola": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -5146,26 +5066,14 @@
       "tier": "NU",
       "doublesTier": "(DUU)"
     },
-    "mienfoo": {"isNonstandard": "Past", "tier": "Illegal"},
-    "mienshao": {
-      "randomBattleLevel": 84,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
-    "druddigon": {
-      "randomBattleLevel": 86,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "mienfoo": {"tier": "LC"},
+    "mienshao": {"randomBattleLevel": 84, "tier": "OU", "doublesTier": "DOU"},
+    "druddigon": {"randomBattleLevel": 86, "tier": "OU", "doublesTier": "DOU"},
     "golett": {"tier": "LC"},
     "golurk": {"randomBattleLevel": 88, "tier": "PUBL", "doublesTier": "(DUU)"},
     "pawniard": {"tier": "PU", "doublesTier": "LC"},
     "bisharp": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "DUU"},
-    "bouffalant": {
-      "randomBattleLevel": 88,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "bouffalant": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
     "rufflet": {"tier": "LC Uber"},
     "braviary": {"randomBattleLevel": 84, "tier": "RU", "doublesTier": "DUU"},
     "vullaby": {"tier": "LC"},
@@ -5179,12 +5087,8 @@
     "deino": {"tier": "LC"},
     "zweilous": {"tier": "NFE"},
     "hydreigon": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "DUU"},
-    "larvesta": {"isNonstandard": "Past", "tier": "Illegal"},
-    "volcarona": {
-      "randomBattleLevel": 80,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "larvesta": {"tier": "LC"},
+    "volcarona": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "DOU"},
     "cobalion": {"randomBattleLevel": 82, "tier": "UU", "doublesTier": "DUU"},
     "terrakion": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "DOU"},
     "virizion": {"randomBattleLevel": 84, "tier": "RU", "doublesTier": "(DUU)"},
@@ -5207,7 +5111,7 @@
     },
     "zekrom": {"randomBattleLevel": 72, "tier": "Uber", "doublesTier": "DUber"},
     "landorus": {
-      "randomBattleLevel": 72,
+      "randomBattleLevel": 76,
       "isNonstandard": "Past",
       "tier": "Illegal"
     },
@@ -5248,13 +5152,9 @@
       "tier": "UUBL",
       "doublesTier": "(DUU)"
     },
-    "fletchling": {"isNonstandard": "Past", "tier": "Illegal"},
-    "fletchinder": {"isNonstandard": "Past", "tier": "Illegal"},
-    "talonflame": {
-      "randomBattleLevel": 82,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "fletchling": {"tier": "LC"},
+    "fletchinder": {"tier": "NFE"},
+    "talonflame": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
     "scatterbug": {"isNonstandard": "Past", "tier": "Illegal"},
     "spewpa": {"isNonstandard": "Past", "tier": "Illegal"},
     "vivillon": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -5302,14 +5202,10 @@
       "tier": "UU",
       "doublesTier": "(DUU)"
     },
-    "skrelp": {"isNonstandard": "Past", "tier": "Illegal"},
-    "dragalge": {
-      "randomBattleLevel": 84,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
-    "clauncher": {"isNonstandard": "Past", "tier": "Illegal"},
-    "clawitzer": {"isNonstandard": "Past", "tier": "Illegal"},
+    "skrelp": {"tier": "LC"},
+    "dragalge": {"randomBattleLevel": 84, "tier": "OU", "doublesTier": "DOU"},
+    "clauncher": {"tier": "LC"},
+    "clawitzer": {"randomBattleLevel": 86, "tier": "OU", "doublesTier": "DOU"},
     "helioptile": {"tier": "LC"},
     "heliolisk": {"randomBattleLevel": 82, "tier": "UU", "doublesTier": "DUU"},
     "tyrunt": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -5321,16 +5217,12 @@
       "tier": "Illegal"
     },
     "hawlucha": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "DUU"},
-    "dedenne": {
-      "randomBattleLevel": 88,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "dedenne": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
     "carbink": {"isNonstandard": "Past", "tier": "Illegal"},
     "goomy": {"tier": "LC"},
     "sliggoo": {"tier": "NFE"},
     "goodra": {"randomBattleLevel": 84, "tier": "RUBL", "doublesTier": "(DUU)"},
-    "klefki": {"isNonstandard": "Past", "tier": "Illegal"},
+    "klefki": {"randomBattleLevel": 82, "tier": "OU", "doublesTier": "DOU"},
     "phantump": {"tier": "LC"},
     "trevenant": {
       "randomBattleLevel": 88,
@@ -5386,7 +5278,7 @@
     "zygarde10": {"isNonstandard": "Past", "tier": "Illegal"},
     "zygardecomplete": {"isNonstandard": "Past", "tier": "Illegal"},
     "diancie": {"isNonstandard": "Past", "tier": "Illegal"},
-    "dianciemega": {"isNonstandard": "Past"},
+    "dianciemega": {"isNonstandard": "Past", "tier": "Illegal"},
     "hoopa": {"isNonstandard": "Past", "tier": "Illegal"},
     "hoopaunbound": {"isNonstandard": "Past", "tier": "Illegal"},
     "volcanion": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -5422,19 +5314,19 @@
     "cutiefly": {"tier": "LC Uber"},
     "ribombee": {"randomBattleLevel": 82, "tier": "UU", "doublesTier": "DUU"},
     "ribombeetotem": {"isNonstandard": "Past", "tier": "Illegal"},
-    "rockruff": {"isNonstandard": "Past", "tier": "Illegal"},
-    "rockruffdusk": {"isNonstandard": "Past", "tier": "Illegal"},
-    "lycanroc": {
-      "randomBattleLevel": 86,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "rockruff": {"tier": "LC"},
+    "rockruffdusk": {"tier": "LC"},
+    "lycanroc": {"randomBattleLevel": 86, "tier": "OU", "doublesTier": "DOU"},
     "lycanrocmidnight": {
       "randomBattleLevel": 88,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
+      "tier": "OU",
+      "doublesTier": "DOU"
     },
-    "lycanrocdusk": {"isNonstandard": "Past", "tier": "Illegal"},
+    "lycanrocdusk": {
+      "randomBattleLevel": 84,
+      "tier": "OU",
+      "doublesTier": "DOU"
+    },
     "wishiwashi": {"tier": "NU", "doublesTier": "(DUU)"},
     "wishiwashischool": {"randomBattleLevel": 88},
     "mareanie": {"tier": "PU", "doublesTier": "LC"},
@@ -5444,12 +5336,8 @@
     "dewpider": {"tier": "LC"},
     "araquanid": {"randomBattleLevel": 82, "tier": "UU", "doublesTier": "DUU"},
     "araquanidtotem": {"isNonstandard": "Past", "tier": "Illegal"},
-    "fomantis": {"isNonstandard": "Past", "tier": "Illegal"},
-    "lurantis": {
-      "randomBattleLevel": 88,
-      "isNonstandard": "Past",
-      "tier": "Illegal"
-    },
+    "fomantis": {"tier": "LC"},
+    "lurantis": {"randomBattleLevel": 88, "tier": "OU", "doublesTier": "DOU"},
     "lurantistotem": {"isNonstandard": "Past"},
     "morelull": {"tier": "LC"},
     "shiinotic": {
@@ -5465,7 +5353,7 @@
     "bounsweet": {"tier": "LC"},
     "steenee": {"tier": "NFE"},
     "tsareena": {"randomBattleLevel": 82, "tier": "UU", "doublesTier": "(DUU)"},
-    "comfey": {"isNonstandard": "Past", "tier": "Illegal"},
+    "comfey": {"randomBattleLevel": 86, "tier": "OU", "doublesTier": "DOU"},
     "oranguru": {"randomBattleLevel": 88, "tier": "(PU)", "doublesTier": "DUU"},
     "passimian": {
       "randomBattleLevel": 84,
@@ -5478,8 +5366,8 @@
       "tier": "UU",
       "doublesTier": "(DUU)"
     },
-    "sandygast": {"isNonstandard": "Past", "tier": "Illegal"},
-    "palossand": {"isNonstandard": "Past", "tier": "Illegal"},
+    "sandygast": {"tier": "LC"},
+    "palossand": {"randomBattleLevel": 86, "tier": "OU", "doublesTier": "DOU"},
     "pyukumuku": {
       "randomBattleLevel": 88,
       "tier": "PU",
@@ -5643,8 +5531,8 @@
       "doublesTier": "DUber"
     },
     "necrozmaultra": {"isNonstandard": "Past", "tier": "Illegal"},
-    "magearna": {"isNonstandard": "Past", "tier": "Illegal"},
-    "magearnaoriginal": {"isNonstandard": "Past", "tier": "Illegal"},
+    "magearna": {"tier": "OU", "doublesTier": "DOU"},
+    "magearnaoriginal": {"tier": "OU", "doublesTier": "DOU"},
     "marshadow": {
       "randomBattleLevel": 72,
       "tier": "Uber",
@@ -5665,12 +5553,15 @@
     "grookey": {"tier": "LC"},
     "thwackey": {"tier": "NFE"},
     "rillaboom": {"randomBattleLevel": 84, "tier": "RU", "doublesTier": "DUU"},
+    "rillaboomgmax": {"tier": "(Uber)", "doublesTier": "(DUber)"},
     "scorbunny": {"tier": "LC"},
     "raboot": {"tier": "NFE"},
     "cinderace": {"randomBattleLevel": 80, "tier": "OU", "doublesTier": "DUU"},
+    "cinderacegmax": {"tier": "(Uber)", "doublesTier": "(DUber)"},
     "sobble": {"tier": "LC"},
     "drizzile": {"tier": "NFE"},
     "inteleon": {"randomBattleLevel": 84, "tier": "RUBL", "doublesTier": "DUU"},
+    "inteleongmax": {"tier": "(Uber)", "doublesTier": "(DUber)"},
     "skwovet": {"unreleasedHidden": true, "tier": "LC"},
     "greedent": {
       "randomBattleLevel": 88,
@@ -5891,6 +5782,13 @@
       "doublesTier": "DUber"
     },
     "eternatuseternamax": {"isNonstandard": "Unobtainable", "tier": "Illegal"},
+    "kubfu": {"tier": "NFE"},
+    "urshifu": {"tier": "OU", "doublesTier": "DOU"},
+    "urshifurapidstrike": {"tier": "OU", "doublesTier": "DOU"},
+    "urshifugmax": {"tier": "(Uber)", "doublesTier": "(DUber)"},
+    "urshifurapidstrikegmax": {"tier": "(Uber)", "doublesTier": "(DUber)"},
+    "zarude": {"isNonstandard": "Unobtainable", "tier": "Unreleased"},
+    "zarudedada": {"isNonstandard": "Unobtainable"},
     "missingno": {"isNonstandard": "Custom", "tier": "Illegal"},
     "syclar": {"isNonstandard": "CAP", "tier": "CAP LC"},
     "syclant": {"isNonstandard": "CAP", "tier": "CAP"},

@@ -1418,6 +1418,12 @@
       "name": "Queenly Majesty",
       "num": 214
     },
+    "quickdraw": {
+      "shortDesc": "This Pokemon has a 20% chance to move first in its priority bracket.",
+      "onFractionalPriorityPriority": -1,
+      "name": "Quick Draw",
+      "num": 259
+    },
     "quickfeet": {
       "desc": "If this Pokemon has a major status condition, its Speed is multiplied by 1.5; the Speed drop from paralysis is ignored.",
       "shortDesc": "If this Pokemon is statused, its Speed is 1.5x; ignores Speed drop from paralysis.",
@@ -1914,6 +1920,12 @@
       "onFoeTryEatItem": false,
       "name": "Unnerve",
       "num": 127
+    },
+    "unseenfist": {
+      "desc": "All of this Pokemon's moves that make contact bypass protection.",
+      "shortDesc": "All contact moves hit through protection.",
+      "name": "Unseen Fist",
+      "num": 260
     },
     "victorystar": {
       "shortDesc": "This Pokemon and its allies' moves have their accuracy multiplied by 1.1.",

@@ -60,7 +60,7 @@ describe('Dex', () => {
         return count;
       };
 
-      const COUNTS = [0, 0, 76, 47, 41, 27, 42, 25];
+      const COUNTS = [0, 0, 76, 47, 41, 27, 42, 27];
       let total = 0;
       for (let gen = 1; gen <= 8; gen++) {
         expect(counts(gen as GenerationNum)).toEqual(total += COUNTS[gen - 1]);
@@ -230,7 +230,7 @@ describe('Dex', () => {
       for (let gen = 1; gen <= 7; gen++) {
         expect(counts(gen as GenerationNum)).toEqual(total += COUNTS[gen - 1]);
       }
-      expect(counts(8)).toBe(624);
+      expect(counts(8)).toBe(624 + 41);
     });
 
     test('cached', () => {
@@ -312,9 +312,12 @@ describe('Dex', () => {
       // Alola (8) + Indeedee (1) + Morpeko (1) + Eiscue (1) + Zacian/Zamazenta (2) +
       // Toxtricity (1) + Cramorant (2) + Necrozma (2) + Mimikyu (2) + Wishiwashi (1) +
       // Keldeo (1) + Kyruem (2) + Darmanitan (2) + Cherrim (1)
+      // {DLC} GMax (7) + Alola (4) + Galar (1) + Pikachu (1) + Magearna (1) + Urshifu (1) +
+      // Rockruff (1) + Lycanroc (2) + [Zarude (2)]
       formes = 26 + 17 + 5 + 1 + 1 + 1 + 3 + 3 + 7 + 14 + 8 +
-        1 + 1 + 1 + 2 + 1 + 2 + 2 + 2 + 1 + 1 + 2 + 2 + 1;
-      expect(counts(8)).toEqual({species: 435, formes});
+        1 + 1 + 1 + 2 + 1 + 2 + 2 + 2 + 1 + 1 + 2 + 2 + 1 +
+        7 + 4 + 1 + 1 + 1 + 1 + 1 + 2 - 1; // FIXME Rockruff
+      expect(counts(8)).toEqual({species: 539, formes});
     });
 
 

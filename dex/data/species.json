@@ -2583,6 +2583,11 @@
     "trapinch": {"inherit": true, "eggGroups": ["Bug"]},
     "vibrava": {"inherit": true, "eggGroups": ["Bug"]},
     "flygon": {"inherit": true, "eggGroups": ["Bug"]},
+    "magnezone": {
+      "inherit": true,
+      "evoType": "levelExtra",
+      "evoCondition": "in a special magnetic field"
+    },
     "leafeon": {
       "inherit": true,
       "evoType": "levelExtra",
@@ -2642,6 +2647,11 @@
       "inherit": true,
       "evoType": "levelExtra",
       "evoCondition": "near a special magnetic field"
+    },
+    "lycanroc": {"inherit": true, "evoCondition": "in Pokemon Sun/Ultra Sun"},
+    "lycanrocmidnight": {
+      "inherit": true,
+      "evoCondition": "in Pokemon Moon/Ultra Moon"
     },
     "tapukoko": {"inherit": true, "abilities": {"0": "Electric Surge"}},
     "tapulele": {"inherit": true, "abilities": {"0": "Psychic Surge"}},
@@ -2705,8 +2715,8 @@
       "prevo": "Ivysaur",
       "evoLevel": 32,
       "eggGroups": ["Monster", "Grass"],
-      "otherFormes": ["Venusaur-Mega"],
-      "formeOrder": ["Venusaur", "Venusaur-Mega"]
+      "otherFormes": ["Venusaur-Mega", "Venusaur-Gmax"],
+      "formeOrder": ["Venusaur", "Venusaur-Mega", "Venusaur-Gmax"]
     },
     "venusaurmega": {
       "num": 3,
@@ -2727,6 +2737,25 @@
       "weightkg": 155.5,
       "eggGroups": ["Monster", "Grass"],
       "requiredItem": "Venusaurite"
+    },
+    "venusaurgmax": {
+      "num": 3,
+      "name": "Venusaur-Gmax",
+      "baseSpecies": "Venusaur",
+      "forme": "Gmax",
+      "types": ["Grass", "Poison"],
+      "genderRatio": {"M": 0.875, "F": 0.125},
+      "baseStats": {
+        "hp": 80,
+        "atk": 82,
+        "def": 83,
+        "spa": 100,
+        "spd": 100,
+        "spe": 80
+      },
+      "abilities": {"0": "Overgrow", "H": "Chlorophyll"},
+      "weightkg": 0,
+      "eggGroups": ["Monster", "Grass"]
     },
     "charmander": {
       "num": 4,
@@ -2908,8 +2937,8 @@
       "prevo": "Wartortle",
       "evoLevel": 36,
       "eggGroups": ["Monster", "Water 1"],
-      "otherFormes": ["Blastoise-Mega"],
-      "formeOrder": ["Blastoise", "Blastoise-Mega"]
+      "otherFormes": ["Blastoise-Mega", "Blastoise-Gmax"],
+      "formeOrder": ["Blastoise", "Blastoise-Mega", "Blastoise-Gmax"]
     },
     "blastoisemega": {
       "num": 9,
@@ -2930,6 +2959,26 @@
       "weightkg": 101.1,
       "eggGroups": ["Monster", "Water 1"],
       "requiredItem": "Blastoisinite"
+    },
+    "blastoisegmax": {
+      "num": 9,
+      "name": "Blastoise-Gmax",
+      "baseSpecies": "Blastoise",
+      "forme": "Gmax",
+      "types": ["Water"],
+      "genderRatio": {"M": 0.875, "F": 0.125},
+      "baseStats": {
+        "hp": 79,
+        "atk": 83,
+        "def": 100,
+        "spa": 85,
+        "spd": 105,
+        "spe": 78
+      },
+      "abilities": {"0": "Torrent", "H": "Rain Dish"},
+      "weightkg": 0,
+      "eggGroups": ["Monster", "Water 1"],
+      "isGigantamax": "G-Max Cannonade"
     },
     "caterpie": {
       "num": 10,
@@ -3355,7 +3404,8 @@
         "Pikachu-Alola",
         "Pikachu-Partner",
         "Pikachu-Starter",
-        "Pikachu-Gmax"
+        "Pikachu-Gmax",
+        "Pikachu-World"
       ],
       "formeOrder": [
         "Pikachu",
@@ -3367,6 +3417,7 @@
         "Pikachu-Alola",
         "Pikachu-Partner",
         "Pikachu-Starter",
+        "Pikachu-World",
         "Pikachu-Rock-Star",
         "Pikachu-Belle",
         "Pikachu-Pop-Star",
@@ -3677,6 +3728,26 @@
       "weightkg": 0,
       "eggGroups": ["Field", "Fairy"],
       "isGigantamax": "G-Max Volt Crash"
+    },
+    "pikachuworld": {
+      "num": 25,
+      "name": "Pikachu-World",
+      "baseSpecies": "Pikachu",
+      "forme": "World",
+      "types": ["Electric"],
+      "gender": "M",
+      "baseStats": {
+        "hp": 35,
+        "atk": 55,
+        "def": 40,
+        "spa": 50,
+        "spd": 50,
+        "spe": 90
+      },
+      "abilities": {"0": "Static", "H": "Lightning Rod"},
+      "weightkg": 6,
+      "eggGroups": ["Undiscovered"],
+      "gen": 8
     },
     "raichu": {
       "num": 26,
@@ -5078,6 +5149,7 @@
       },
       "abilities": {"0": "Gluttony", "1": "Own Tempo", "H": "Regenerator"},
       "weightkg": 36,
+      "evos": ["Slowbro-Galar"],
       "eggGroups": ["Monster", "Water 1"]
     },
     "slowbro": {
@@ -5097,8 +5169,8 @@
       "prevo": "Slowpoke",
       "evoLevel": 37,
       "eggGroups": ["Monster", "Water 1"],
-      "otherFormes": ["Slowbro-Mega"],
-      "formeOrder": ["Slowbro", "Slowbro-Mega"]
+      "otherFormes": ["Slowbro-Mega", "Slowbro-Galar"],
+      "formeOrder": ["Slowbro", "Slowbro-Mega", "Slowbro-Galar"]
     },
     "slowbromega": {
       "num": 80,
@@ -5118,6 +5190,27 @@
       "weightkg": 120,
       "eggGroups": ["Monster", "Water 1"],
       "requiredItem": "Slowbronite"
+    },
+    "slowbrogalar": {
+      "num": 80,
+      "name": "Slowbro-Galar",
+      "baseSpecies": "Slowbro",
+      "forme": "Galar",
+      "types": ["Psychic", "Poison"],
+      "baseStats": {
+        "hp": 95,
+        "atk": 100,
+        "def": 95,
+        "spa": 100,
+        "spd": 70,
+        "spe": 30
+      },
+      "abilities": {"0": "Quick Draw", "1": "Own Tempo", "H": "Regenerator"},
+      "weightkg": 70.5,
+      "prevo": "Slowpoke-Galar",
+      "evoType": "useItem",
+      "evoItem": "Galarica Cuff",
+      "eggGroups": ["Monster", "Water 1"]
     },
     "magnemite": {
       "num": 81,
@@ -5796,6 +5889,7 @@
       "weightkg": 49.8,
       "prevo": "Tyrogue",
       "evoLevel": 20,
+      "evoCondition": "with an Atk stat > its Def stat",
       "eggGroups": ["Human-Like"]
     },
     "hitmonchan": {
@@ -5815,6 +5909,7 @@
       "weightkg": 50.2,
       "prevo": "Tyrogue",
       "evoLevel": 20,
+      "evoCondition": "with an Atk stat < its Def stat",
       "eggGroups": ["Human-Like"]
     },
     "lickitung": {
@@ -8641,6 +8736,7 @@
       "weightkg": 48,
       "prevo": "Tyrogue",
       "evoLevel": 20,
+      "evoCondition": "with an Atk stat equal to its Def stat",
       "eggGroups": ["Human-Like"]
     },
     "smoochum": {
@@ -13518,8 +13614,8 @@
       "abilities": {"0": "Magnet Pull", "1": "Sturdy", "H": "Analytic"},
       "weightkg": 180,
       "prevo": "Magneton",
-      "evoType": "levelExtra",
-      "evoCondition": "in a special magnetic field",
+      "evoType": "useItem",
+      "evoItem": "Thunder Stone",
       "eggGroups": ["Mineral"]
     },
     "lickilicky": {
@@ -18601,6 +18697,7 @@
       "weightkg": 136,
       "prevo": "Pancham",
       "evoLevel": 32,
+      "evoCondition": "with a Dark-type in the party",
       "eggGroups": ["Field", "Human-Like"]
     },
     "furfrou": {
@@ -18886,6 +18983,7 @@
       "weightkg": 47,
       "prevo": "Inkay",
       "evoLevel": 30,
+      "evoCondition": "with the console turned upside-down",
       "eggGroups": ["Water 1", "Water 2"]
     },
     "binacle": {
@@ -20316,6 +20414,7 @@
       "weightkg": 25,
       "prevo": "Rockruff",
       "evoLevel": 25,
+      "evoCondition": "during the day",
       "eggGroups": ["Field"],
       "otherFormes": ["Lycanroc-Midnight", "Lycanroc-Dusk"],
       "formeOrder": ["Lycanroc", "Lycanroc-Midnight", "Lycanroc-Dusk"]
@@ -20338,6 +20437,7 @@
       "weightkg": 25,
       "prevo": "Rockruff",
       "evoLevel": 25,
+      "evoCondition": "during the night",
       "eggGroups": ["Field"]
     },
     "lycanrocdusk": {
@@ -20358,6 +20458,7 @@
       "weightkg": 25,
       "prevo": "Rockruff",
       "evoLevel": 25,
+      "evoCondition": "from a special Rockruff",
       "eggGroups": ["Field"]
     },
     "wishiwashi": {
@@ -22285,7 +22386,29 @@
       "weightkg": 90,
       "prevo": "Thwackey",
       "evoLevel": 35,
-      "eggGroups": ["Field", "Grass"]
+      "eggGroups": ["Field", "Grass"],
+      "otherFormes": ["Rillaboom-Gmax"],
+      "formeOrder": ["Rillaboom", "Rillaboom-Gmax"]
+    },
+    "rillaboomgmax": {
+      "num": 812,
+      "name": "Rillaboom-Gmax",
+      "baseSpecies": "Rillaboom",
+      "forme": "Gmax",
+      "types": ["Grass"],
+      "genderRatio": {"M": 0.875, "F": 0.125},
+      "baseStats": {
+        "hp": 100,
+        "atk": 125,
+        "def": 90,
+        "spa": 60,
+        "spd": 70,
+        "spe": 85
+      },
+      "abilities": {"0": "Overgrow", "H": "Grassy Surge"},
+      "weightkg": 0,
+      "eggGroups": ["Field", "Grass"],
+      "isGigantamax": "G-Max Drum Solo"
     },
     "scorbunny": {
       "num": 813,
@@ -22342,7 +22465,29 @@
       "weightkg": 33,
       "prevo": "Raboot",
       "evoLevel": 35,
-      "eggGroups": ["Field", "Human-Like"]
+      "eggGroups": ["Field", "Human-Like"],
+      "otherFormes": ["Cinderace-Gmax"],
+      "formeOrder": ["Cinderace", "Cinderace-Gmax"]
+    },
+    "cinderacegmax": {
+      "num": 815,
+      "name": "Cinderace-Gmax",
+      "baseSpecies": "Cinderace",
+      "forme": "Gmax",
+      "types": ["Fire"],
+      "genderRatio": {"M": 0.875, "F": 0.125},
+      "baseStats": {
+        "hp": 80,
+        "atk": 116,
+        "def": 75,
+        "spa": 65,
+        "spd": 75,
+        "spe": 119
+      },
+      "abilities": {"0": "Blaze", "H": "Libero"},
+      "weightkg": 0,
+      "eggGroups": ["Field", "Human-Like"],
+      "isGigantamax": "G-Max Fireball"
     },
     "sobble": {
       "num": 816,
@@ -22399,7 +22544,29 @@
       "weightkg": 45.2,
       "prevo": "Drizzile",
       "evoLevel": 35,
-      "eggGroups": ["Water 1", "Field"]
+      "eggGroups": ["Water 1", "Field"],
+      "otherFormes": ["Inteleon-Gmax"],
+      "formeOrder": ["Inteleon", "Inteleon-Gmax"]
+    },
+    "inteleongmax": {
+      "num": 818,
+      "name": "Inteleon-Gmax",
+      "baseSpecies": "Inteleon",
+      "forme": "Gmax",
+      "types": ["Water"],
+      "genderRatio": {"M": 0.875, "F": 0.125},
+      "baseStats": {
+        "hp": 70,
+        "atk": 85,
+        "def": 65,
+        "spa": 125,
+        "spd": 65,
+        "spe": 120
+      },
+      "abilities": {"0": "Torrent", "H": "Sniper"},
+      "weightkg": 0,
+      "eggGroups": ["Water 1", "Field"],
+      "isGigantamax": "G-Max Hydrosnipe"
     },
     "skwovet": {
       "num": 819,
@@ -23201,7 +23368,7 @@
       "num": 849,
       "name": "Toxtricity-Low-Key-Gmax",
       "baseSpecies": "Toxtricity",
-      "forme": "Gmax",
+      "forme": "Low-Key-Gmax",
       "types": ["Electric", "Poison"],
       "baseStats": {
         "hp": 75,
@@ -24290,6 +24457,155 @@
       },
       "abilities": {"0": "Pressure"},
       "weightkg": 0,
+      "eggGroups": ["Undiscovered"]
+    },
+    "kubfu": {
+      "num": 891,
+      "name": "Kubfu",
+      "types": ["Fighting"],
+      "genderRatio": {"M": 0.875, "F": 0.125},
+      "baseStats": {
+        "hp": 60,
+        "atk": 90,
+        "def": 60,
+        "spa": 53,
+        "spd": 50,
+        "spe": 73
+      },
+      "abilities": {"0": "Inner Focus"},
+      "weightkg": 12,
+      "evos": ["Urshifu", "Urshifu-Rapid-Strike"],
+      "eggGroups": ["Undiscovered"]
+    },
+    "urshifu": {
+      "num": 892,
+      "name": "Urshifu",
+      "baseForme": "Single-Strike",
+      "types": ["Fighting", "Dark"],
+      "genderRatio": {"M": 0.875, "F": 0.125},
+      "baseStats": {
+        "hp": 100,
+        "atk": 130,
+        "def": 100,
+        "spa": 63,
+        "spd": 60,
+        "spe": 97
+      },
+      "abilities": {"0": "Unseen Fist"},
+      "weightkg": 105,
+      "prevo": "Kubfu",
+      "evoCondition": "Defeat the Single Strike Tower",
+      "eggGroups": ["Undiscovered"],
+      "otherFormes": [
+        "Urshifu-Rapid-Strike",
+        "Urshifu-Gmax",
+        "Urshifu-Rapid-Strike-Gmax"
+      ],
+      "formeOrder": [
+        "Urshifu",
+        "Urshifu-Gmax",
+        "Urshifu-Rapid-Strike",
+        "Urshifu-Rapid-Strike-Gmax"
+      ]
+    },
+    "urshifurapidstrike": {
+      "num": 892,
+      "name": "Urshifu-Rapid-Strike",
+      "baseSpecies": "Urshifu",
+      "forme": "Rapid-Strike",
+      "types": ["Fighting", "Water"],
+      "genderRatio": {"M": 0.875, "F": 0.125},
+      "baseStats": {
+        "hp": 100,
+        "atk": 130,
+        "def": 100,
+        "spa": 63,
+        "spd": 60,
+        "spe": 97
+      },
+      "abilities": {"0": "Unseen Fist"},
+      "weightkg": 105,
+      "prevo": "Kubfu",
+      "evoCondition": "Defeat the Rapid Strike Tower",
+      "eggGroups": ["Undiscovered"]
+    },
+    "urshifugmax": {
+      "num": 892,
+      "name": "Urshifu-Gmax",
+      "baseSpecies": "Urshifu",
+      "forme": "Gmax",
+      "types": ["Fighting", "Dark"],
+      "genderRatio": {"M": 0.875, "F": 0.125},
+      "baseStats": {
+        "hp": 100,
+        "atk": 130,
+        "def": 100,
+        "spa": 63,
+        "spd": 60,
+        "spe": 97
+      },
+      "abilities": {"0": "Unseen Fist"},
+      "weightkg": 0,
+      "eggGroups": ["Undiscovered"],
+      "isGigantamax": "G-Max One Blow"
+    },
+    "urshifurapidstrikegmax": {
+      "num": 892,
+      "name": "Urshifu-Rapid-Strike-Gmax",
+      "baseSpecies": "Urshifu",
+      "forme": "Rapid-Strike-Gmax",
+      "types": ["Fighting", "Water"],
+      "genderRatio": {"M": 0.875, "F": 0.125},
+      "baseStats": {
+        "hp": 100,
+        "atk": 130,
+        "def": 100,
+        "spa": 63,
+        "spd": 60,
+        "spe": 97
+      },
+      "abilities": {"0": "Unseen Fist"},
+      "weightkg": 105,
+      "eggGroups": ["Undiscovered"],
+      "isGigantamax": "G-Max Rapid Flow",
+      "battleOnly": "Urshifu-Rapid-Strike"
+    },
+    "zarude": {
+      "num": 893,
+      "name": "Zarude",
+      "types": ["Dark", "Grass"],
+      "gender": "N",
+      "baseStats": {
+        "hp": 105,
+        "atk": 120,
+        "def": 105,
+        "spa": 70,
+        "spd": 95,
+        "spe": 105
+      },
+      "abilities": {"0": "Leaf Guard"},
+      "weightkg": 70,
+      "eggGroups": ["Undiscovered"],
+      "otherFormes": ["Zarude-Dada"],
+      "formeOrder": ["Zarude", "Zarude-Dada"]
+    },
+    "zarudedada": {
+      "num": 893,
+      "name": "Zarude-Dada",
+      "baseSpecies": "Zarude",
+      "forme": "Dada",
+      "types": ["Dark", "Grass"],
+      "gender": "N",
+      "baseStats": {
+        "hp": 105,
+        "atk": 120,
+        "def": 105,
+        "spa": 70,
+        "spd": 95,
+        "spe": 105
+      },
+      "abilities": {"0": "Leaf Guard"},
+      "weightkg": 70,
       "eggGroups": ["Undiscovered"]
     },
     "missingno": {

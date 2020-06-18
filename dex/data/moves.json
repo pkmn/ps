@@ -3373,7 +3373,6 @@
     },
     "bloomdoom": {"inherit": true, "isNonstandard": null},
     "boneclub": {"inherit": true, "isNonstandard": null},
-    "bonemerang": {"inherit": true, "isNonstandard": null},
     "bouncybubble": {"inherit": true, "basePower": 90, "pp": 15},
     "breakneckblitz": {"inherit": true, "isNonstandard": null},
     "bubble": {"inherit": true, "isNonstandard": null},
@@ -3392,8 +3391,6 @@
     "cometpunch": {"inherit": true, "isNonstandard": null},
     "constrict": {"inherit": true, "isNonstandard": null},
     "continentalcrush": {"inherit": true, "isNonstandard": null},
-    "conversion": {"inherit": true, "isNonstandard": null},
-    "conversion2": {"inherit": true, "isNonstandard": null},
     "copycat": {
       "inherit": true,
       "desc": "The user uses the last move used by any Pokemon, including itself. Fails if no move has been used, or if the last move used was Assist, Baneful Bunker, Beak Blast, Belch, Bestow, Celebrate, Chatter, Circle Throw, Copycat, Counter, Covet, Crafty Shield, Destiny Bond, Detect, Dragon Tail, Endure, Feint, Focus Punch, Follow Me, Helping Hand, Hold Hands, King's Shield, Mat Block, Me First, Metronome, Mimic, Mirror Coat, Mirror Move, Nature Power, Protect, Rage Powder, Roar, Shell Trap, Sketch, Sleep Talk, Snatch, Spiky Shield, Spotlight, Struggle, Switcheroo, Thief, Transform, Trick, Whirlwind, or any Z-Move."
@@ -3422,7 +3419,6 @@
     "doubleironbash": {"inherit": true, "isNonstandard": "LGPE"},
     "doubleslap": {"inherit": true, "isNonstandard": null},
     "dragonascent": {"inherit": true, "isNonstandard": null},
-    "dragonhammer": {"inherit": true, "isNonstandard": null},
     "dragonrage": {"inherit": true, "isNonstandard": null},
     "eggbomb": {"inherit": true, "isNonstandard": null},
     "electricterrain": {
@@ -3445,11 +3441,8 @@
       "desc": "Prevents all active Pokemon from switching next turn. A Pokemon can still switch out if it is holding Shed Shell or uses Baton Pass, Parting Shot, U-turn, or Volt Switch. Fails if the effect is already active."
     },
     "feintattack": {"inherit": true, "isNonstandard": null},
-    "fierydance": {"inherit": true, "isNonstandard": null},
     "flameburst": {"inherit": true, "isNonstandard": null},
     "flash": {"inherit": true, "isNonstandard": null},
-    "fleurcannon": {"inherit": true, "isNonstandard": null},
-    "floralhealing": {"inherit": true, "isNonstandard": null},
     "foresight": {"inherit": true, "isNonstandard": null},
     "freezyfrost": {
       "inherit": true,
@@ -3478,7 +3471,6 @@
       "desc": "Raises the user's Attack and Special Attack by 1 stage. If the weather is Sunny Day or Desolate Land, this move raises the user's Attack and Special Attack by 2 stages."
     },
     "guardianofalola": {"inherit": true, "isNonstandard": null},
-    "headcharge": {"inherit": true, "isNonstandard": null},
     "healbell": {
       "inherit": true,
       "desc": "Every Pokemon in the user's party is cured of its major status condition. Active Pokemon with the Soundproof Ability are not cured."
@@ -3555,7 +3547,6 @@
     "judgment": {"inherit": true, "isNonstandard": null},
     "jumpkick": {"inherit": true, "isNonstandard": null},
     "karatechop": {"inherit": true, "isNonstandard": null},
-    "kinesis": {"inherit": true, "isNonstandard": null},
     "kingsshield": {
       "inherit": true,
       "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 2 stages. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
@@ -3664,7 +3655,6 @@
         "Wide Guard"
       ]
     },
-    "milkdrink": {"inherit": true, "isNonstandard": null},
     "mindblown": {"inherit": true, "isNonstandard": null},
     "miracleeye": {"inherit": true, "isNonstandard": null},
     "mirrormove": {"inherit": true, "isNonstandard": null},
@@ -3745,11 +3735,9 @@
     "searingsunrazesmash": {"inherit": true, "isNonstandard": null},
     "secretpower": {"inherit": true, "isNonstandard": null},
     "seedflare": {"inherit": true, "isNonstandard": null},
-    "shadowbone": {"inherit": true, "isNonstandard": null},
     "shadowforce": {"inherit": true, "isNonstandard": null},
     "sharpen": {"inherit": true, "isNonstandard": null},
     "shatteredpsyche": {"inherit": true, "isNonstandard": null},
-    "shoreup": {"inherit": true, "isNonstandard": null},
     "signalbeam": {"inherit": true, "isNonstandard": null},
     "silverwind": {"inherit": true, "isNonstandard": null},
     "sinisterarrowraid": {"inherit": true, "isNonstandard": null},
@@ -4932,7 +4920,6 @@
       "category": "Physical",
       "desc": "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
       "shortDesc": "Hits 2 times in one turn.",
-      "isNonstandard": "Past",
       "name": "Bonemerang",
       "pp": 10,
       "priority": 0,
@@ -5248,6 +5235,21 @@
       "type": "Grass",
       "zMove": {"basePower": 140},
       "maxMove": {"basePower": 130}
+    },
+    "burningjealousy": {
+      "num": 807,
+      "accuracy": 100,
+      "basePower": 70,
+      "category": "Special",
+      "desc": "Burns all Pokemon on the field that have boosted a stat during the same turn.",
+      "shortDesc": "Burns all that set up in the same turn.",
+      "name": "Burning Jealousy",
+      "pp": 5,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1, "mystery": 1},
+      "secondary": {"chance": 100},
+      "target": "allAdjacentFoes",
+      "type": "Fire"
     },
     "burnup": {
       "num": 682,
@@ -5570,6 +5572,22 @@
       "target": "normal",
       "type": "Fighting"
     },
+    "coaching": {
+      "num": 811,
+      "accuracy": true,
+      "basePower": 0,
+      "category": "Status",
+      "desc": "Raises the target's Attack and Defense by 1 stage.",
+      "shortDesc": "Raises the target's Attack and Defense by 1.",
+      "name": "Coaching",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"authentic": 1},
+      "secondary": null,
+      "boosts": {"atk": 1, "def": 1},
+      "target": "allies",
+      "type": "Fighting"
+    },
     "coil": {
       "num": 489,
       "accuracy": true,
@@ -5693,7 +5711,6 @@
       "category": "Status",
       "desc": "The user's type changes to match the original type of the move in its first move slot. Fails if the user cannot change its type, or if the type is one of the user's current types.",
       "shortDesc": "Changes user's type to match its first move.",
-      "isNonstandard": "Past",
       "name": "Conversion",
       "pp": 30,
       "priority": 0,
@@ -5710,7 +5727,6 @@
       "category": "Status",
       "desc": "The user's type changes to match a type that resists or is immune to the type of the last move used by the target, but not either of its current types. The determined type of the move is used rather than the original type. Fails if the target has not made a move, if the user cannot change its type, or if this move would only be able to select one of the user's current types.",
       "shortDesc": "Changes user's type to resist target's last move.",
-      "isNonstandard": "Past",
       "name": "Conversion 2",
       "pp": 30,
       "priority": 0,
@@ -5768,6 +5784,21 @@
       "secondary": null,
       "target": "normal",
       "type": "Steel"
+    },
+    "corrosivegas": {
+      "num": 810,
+      "accuracy": 100,
+      "basePower": 0,
+      "category": "Status",
+      "desc": "Removes the target's item. This move cannot cause Pokemon with the Sticky Hold Ability to lose their held item or cause a Kyogre, a Groudon, a Giratina, an Arceus, a Genesect, a Silvally, a Zacian, or a Zamazenta to lose their Blue Orb, Red Orb, Griseous Orb, Plate, Drive, Memory, Rusted Sword, or Rusted Shield respectively. Items lost to this move cannot be regained with Recycle or the Harvest Ability.",
+      "shortDesc": "Removes the target's item.",
+      "name": "Corrosive Gas",
+      "pp": 40,
+      "priority": 0,
+      "flags": {"protect": 1, "reflectable": 1, "mirror": 1, "mystery": 1},
+      "secondary": null,
+      "target": "allAdjacent",
+      "type": "Poison"
     },
     "cosmicpower": {
       "num": 322,
@@ -5842,7 +5873,7 @@
       "accuracy": 100,
       "basePower": 0,
       "category": "Status",
-      "desc": "Switches the Mist, Light Screen, Reflect, Spikes, Safeguard, Tailwind, Toxic Spikes, Stealth Rock, Water Pledge, Fire Pledge, Grass Pledge, Sticky Web, Aurora Veil, G-Max Steelsurge, and G-Max Wildfire effects from the user's side to the opposing side and vice versa.",
+      "desc": "Switches the Mist, Light Screen, Reflect, Spikes, Safeguard, Tailwind, Toxic Spikes, Stealth Rock, Water Pledge, Fire Pledge, Grass Pledge, Sticky Web, Aurora Veil, G-Max Steelsurge, G-Max Cannonade, G-Max Vine Lash, and G-Max Wildfire effects from the user's side to the opposing side and vice versa.",
       "shortDesc": "Swaps user's field effects with the opposing side.",
       "name": "Court Change",
       "pp": 10,
@@ -6549,7 +6580,6 @@
       "basePower": 90,
       "category": "Physical",
       "shortDesc": "No additional effect.",
-      "isNonstandard": "Past",
       "name": "Dragon Hammer",
       "pp": 15,
       "priority": 0,
@@ -6726,6 +6756,23 @@
       "secondary": null,
       "target": "normal",
       "type": "Dragon",
+      "maxMove": {"basePower": 130}
+    },
+    "dualwingbeat": {
+      "num": 814,
+      "accuracy": 90,
+      "basePower": 40,
+      "category": "Physical",
+      "desc": "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+      "shortDesc": "Hits 2 times in one turn.",
+      "name": "Dual Wingbeat",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1, "mirror": 1},
+      "multihit": 2,
+      "secondary": null,
+      "target": "normal",
+      "type": "Flying",
       "maxMove": {"basePower": 130}
     },
     "dynamaxcannon": {
@@ -7058,6 +7105,21 @@
       "target": "normal",
       "type": "Dragon"
     },
+    "expandingforce": {
+      "num": 797,
+      "accuracy": 100,
+      "basePower": 80,
+      "category": "Special",
+      "desc": "If the current active terrain is Psychic Terrain, this move's base power is boosted, and this move hits all opposing Pokemon.",
+      "shortDesc": "Psychic Terrain:Boosted power+hits all foes.",
+      "name": "Expanding Force",
+      "pp": 20,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1},
+      "secondary": null,
+      "target": "normal",
+      "type": "Psychic"
+    },
     "explosion": {
       "num": 153,
       "accuracy": 100,
@@ -7307,7 +7369,6 @@
       "category": "Special",
       "desc": "Has a 50% chance to raise the user's Special Attack by 1 stage.",
       "shortDesc": "50% chance to raise the user's Sp. Atk by 1.",
-      "isNonstandard": "Past",
       "name": "Fiery Dance",
       "pp": 10,
       "priority": 0,
@@ -7628,7 +7689,6 @@
       "category": "Special",
       "desc": "Lowers the user's Special Attack by 2 stages.",
       "shortDesc": "Lowers the user's Sp. Atk by 2.",
-      "isNonstandard": "Past",
       "name": "Fleur Cannon",
       "pp": 5,
       "priority": 0,
@@ -7653,6 +7713,22 @@
       "target": "normal",
       "type": "Dark"
     },
+    "flipturn": {
+      "num": 812,
+      "accuracy": 100,
+      "basePower": 60,
+      "category": "Physical",
+      "desc": "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
+      "shortDesc": "User switches out after damaging the target.",
+      "name": "Flip Turn",
+      "pp": 20,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1, "mirror": 1},
+      "selfSwitch": true,
+      "secondary": null,
+      "target": "normal",
+      "type": "Water"
+    },
     "floatyfall": {
       "num": 731,
       "accuracy": 95,
@@ -7676,7 +7752,6 @@
       "category": "Status",
       "desc": "The target restores 1/2 of its maximum HP, rounded half up. If the terrain is Grassy Terrain, the target instead restores 2/3 of its maximum HP, rounded half down.",
       "shortDesc": "Heals the target by 50% of its max HP.",
-      "isNonstandard": "Past",
       "name": "Floral Healing",
       "pp": 10,
       "priority": 0,
@@ -8273,6 +8348,28 @@
       "target": "adjacentFoe",
       "type": "Bug"
     },
+    "gmaxcannonade": {
+      "num": 1000,
+      "accuracy": true,
+      "basePower": 10,
+      "category": "Physical",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, for 4 turns each non-Water-type Pokemon on the opposing side takes damage equal to 1/6 of its maximum HP, rounded down, at the end of each turn during effect, including the last turn.",
+      "shortDesc": "Base move affects power. Foes: -1/6 HP, 4 turns.",
+      "name": "G-Max Cannonade",
+      "pp": 10,
+      "priority": 0,
+      "flags": {},
+      "isMax": "Blastoise",
+      "self": {},
+      "effect": {
+        "duration": 4,
+        "onResidualOrder": 5,
+        "onResidualSubOrder": 1.1
+      },
+      "secondary": null,
+      "target": "adjacentFoe",
+      "type": "Water"
+    },
     "gmaxcentiferno": {
       "num": 1000,
       "accuracy": true,
@@ -8342,6 +8439,23 @@
       "target": "adjacentFoe",
       "type": "Dragon"
     },
+    "gmaxdrumsolo": {
+      "num": 1000,
+      "accuracy": true,
+      "basePower": 10,
+      "category": "Physical",
+      "desc": "Power is equal to the base move's Max Move power. This move ignores the abilities of opposing Pokemon.",
+      "shortDesc": "Base move affects power. Ignores abilities.",
+      "name": "G-Max Drum Solo",
+      "pp": 5,
+      "priority": 0,
+      "flags": {},
+      "isMax": "Rillaboom",
+      "ignoreAbility": true,
+      "secondary": null,
+      "target": "adjacentFoe",
+      "type": "Grass"
+    },
     "gmaxfinale": {
       "num": 1000,
       "accuracy": true,
@@ -8358,6 +8472,23 @@
       "secondary": null,
       "target": "adjacentFoe",
       "type": "Fairy"
+    },
+    "gmaxfireball": {
+      "num": 1000,
+      "accuracy": true,
+      "basePower": 10,
+      "category": "Physical",
+      "desc": "Power is equal to the base move's Max Move power. This move ignores the abilities of opposing Pokemon.",
+      "shortDesc": "Base move affects power. Ignores abilities.",
+      "name": "G-Max Fire Ball",
+      "pp": 5,
+      "priority": 0,
+      "flags": {},
+      "isMax": "Cinderace",
+      "ignoreAbility": true,
+      "secondary": null,
+      "target": "adjacentFoe",
+      "type": "Fire"
     },
     "gmaxfoamburst": {
       "num": 1000,
@@ -8409,6 +8540,23 @@
       "target": "adjacentFoe",
       "type": "Psychic"
     },
+    "gmaxhydrosnipe": {
+      "num": 1000,
+      "accuracy": true,
+      "basePower": 10,
+      "category": "Physical",
+      "desc": "Power is equal to the base move's Max Move power. This move ignores the abilities of opposing Pokemon.",
+      "shortDesc": "Base move affects power. Ignores abilities.",
+      "name": "G-Max Hydrosnipe",
+      "pp": 5,
+      "priority": 0,
+      "flags": {},
+      "isMax": "Inteleon",
+      "ignoreAbility": true,
+      "secondary": null,
+      "target": "adjacentFoe",
+      "type": "Water"
+    },
     "gmaxmalodor": {
       "num": 1000,
       "accuracy": true,
@@ -8441,6 +8589,38 @@
       "secondary": null,
       "target": "adjacentFoe",
       "type": "Steel"
+    },
+    "gmaxoneblow": {
+      "num": 1000,
+      "accuracy": true,
+      "basePower": 10,
+      "category": "Physical",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful and any Pokemon on the opposing side is using Baneful Bunker, Detect, King's Shield, Mat Block, Max Guard, Obstruct, Protect, or Spiky Shield, this move will fully break the protection.",
+      "shortDesc": "Base move affects power. Breaks all protection.",
+      "name": "G-Max One Blow",
+      "pp": 5,
+      "priority": 0,
+      "flags": {},
+      "isMax": "Urshifu",
+      "secondary": null,
+      "target": "adjacentFoe",
+      "type": "Dark"
+    },
+    "gmaxrapidflow": {
+      "num": 1000,
+      "accuracy": true,
+      "basePower": 10,
+      "category": "Physical",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful and any Pokemon on the opposing side is using Baneful Bunker, Detect, King's Shield, Mat Block, Max Guard, Obstruct, Protect, or Spiky Shield, this move will fully break the protection.",
+      "shortDesc": "Base move affects power. Breaks all protection.",
+      "name": "G-Max Rapid Flow",
+      "pp": 5,
+      "priority": 0,
+      "flags": {},
+      "isMax": "Urshifu-Rapid-Strike",
+      "secondary": null,
+      "target": "adjacentFoe",
+      "type": "Water"
     },
     "gmaxreplenish": {
       "num": 1000,
@@ -8629,6 +8809,28 @@
       "target": "adjacentFoe",
       "type": "Ghost"
     },
+    "gmaxvinelash": {
+      "num": 1000,
+      "accuracy": true,
+      "basePower": 10,
+      "category": "Physical",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, for 4 turns each non-Grass-type Pokemon on the opposing side takes damage equal to 1/6 of its maximum HP, rounded down, at the end of each turn during effect, including the last turn.",
+      "shortDesc": "Base move affects power. Foes: -1/6 HP, 4 turns.",
+      "name": "G-Max Vine Lash",
+      "pp": 10,
+      "priority": 0,
+      "flags": {},
+      "isMax": "Venusaur",
+      "self": {},
+      "effect": {
+        "duration": 4,
+        "onResidualOrder": 5,
+        "onResidualSubOrder": 1.1
+      },
+      "secondary": null,
+      "target": "adjacentFoe",
+      "type": "Grass"
+    },
     "gmaxvolcalith": {
       "num": 1000,
       "accuracy": true,
@@ -8762,6 +8964,21 @@
       "target": "normal",
       "type": "Grass",
       "zMove": {"boost": {"spe": 1}}
+    },
+    "grassyglide": {
+      "num": 803,
+      "accuracy": 100,
+      "basePower": 70,
+      "category": "Physical",
+      "desc": "If this move is used while Grassy Terrain is active, its user will nearly always move first.",
+      "shortDesc": "+1 Priority under Grassy Terrain.",
+      "name": "Grassy Glide",
+      "pp": 20,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1, "mystery": 1},
+      "secondary": null,
+      "target": "normal",
+      "type": "Grass"
     },
     "grassyterrain": {
       "num": 580,
@@ -9098,7 +9315,6 @@
       "category": "Physical",
       "desc": "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded half up, but not less than 1 HP.",
       "shortDesc": "Has 1/4 recoil.",
-      "isNonstandard": "Past",
       "name": "Head Charge",
       "pp": 15,
       "priority": 0,
@@ -10317,6 +10533,22 @@
       "target": "normal",
       "type": "Fighting"
     },
+    "junglehealing": {
+      "num": 816,
+      "accuracy": true,
+      "basePower": 0,
+      "category": "Status",
+      "desc": "Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up.",
+      "shortDesc": "Heals the user and its allies by 1/4 their max HP.",
+      "name": "Jungle Healing",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"distance": 1, "heal": 1, "authentic": 1, "mystery": 1},
+      "heal": [1, 4],
+      "secondary": null,
+      "target": "allies",
+      "type": "Grass"
+    },
     "karatechop": {
       "num": 2,
       "accuracy": 100,
@@ -10341,7 +10573,6 @@
       "category": "Status",
       "desc": "Lowers the target's accuracy by 1 stage.",
       "shortDesc": "Lowers the target's accuracy by 1.",
-      "isNonstandard": "Past",
       "name": "Kinesis",
       "pp": 15,
       "priority": 0,
@@ -10420,6 +10651,20 @@
       "target": "self",
       "type": "Normal",
       "zMove": {"boost": {"atk": 1}}
+    },
+    "lashout": {
+      "num": 808,
+      "accuracy": 100,
+      "basePower": 75,
+      "category": "Physical",
+      "desc": "This move's base power is doubles if one of its stats were lowered this turn.",
+      "shortDesc": "2x power if stat lowered on same turn.",
+      "name": "Lash Out",
+      "pp": 5,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1, "mirror": 1},
+      "target": "normal",
+      "type": "Dark"
     },
     "lastresort": {
       "num": 387,
@@ -11582,6 +11827,21 @@
       "target": "normal",
       "type": "Fighting"
     },
+    "meteorbeam": {
+      "num": 800,
+      "accuracy": 90,
+      "basePower": 120,
+      "category": "Special",
+      "desc": "This attack charges on the first turn and executes on the second. Raises the user's Special Attack by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
+      "shortDesc": "Raises user's Sp. Atk by 1 on turn 1. Hits turn 2.",
+      "name": "Meteor Beam",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"charge": 1, "protect": 1, "mirror": 1},
+      "secondary": null,
+      "target": "normal",
+      "type": "Rock"
+    },
     "meteormash": {
       "num": 309,
       "accuracy": 90,
@@ -11652,6 +11912,7 @@
         "Hyperspace Hole",
         "Ice Burn",
         "Instruct",
+        "Jungle Healing",
         "King's Shield",
         "Life Dew",
         "Light of Ruin",
@@ -11695,6 +11956,7 @@
         "Strange Steam",
         "Struggle",
         "Sunsteel Strike",
+        "Surging Strikes",
         "Switcheroo",
         "Techno Blast",
         "Thief",
@@ -11703,6 +11965,7 @@
         "Transform",
         "Trick",
         "V-create",
+        "Wicked Blow",
         "Wide Guard"
       ],
       "secondary": null,
@@ -11716,7 +11979,6 @@
       "category": "Status",
       "desc": "The user restores 1/2 of its maximum HP, rounded half up.",
       "shortDesc": "Heals the user by 50% of its max HP.",
-      "isNonstandard": "Past",
       "name": "Milk Drink",
       "pp": 10,
       "priority": 0,
@@ -11896,6 +12158,22 @@
       "secondary": {"chance": 50, "boosts": {"spa": -1}},
       "target": "normal",
       "type": "Psychic"
+    },
+    "mistyexplosion": {
+      "num": 802,
+      "accuracy": 100,
+      "basePower": 100,
+      "category": "Special",
+      "desc": "The user faints after using this move, even if this move fails for having no target. This move is prevented from executing if any active Pokemon has the Damp Ability. If Misty Terrain is active, this move's power is doubled.",
+      "shortDesc": "Hits all Pokemon. Stronger in terrain.",
+      "name": "Misty Explosion",
+      "pp": 5,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1},
+      "selfdestruct": "always",
+      "secondary": null,
+      "target": "allAdjacent",
+      "type": "Fairy"
     },
     "mistyterrain": {
       "num": 581,
@@ -12909,6 +13187,21 @@
       "target": "normal",
       "type": "Bug"
     },
+    "poltergeist": {
+      "num": 809,
+      "accuracy": 90,
+      "basePower": 110,
+      "category": "Physical",
+      "desc": "This move fails if the target doesn't have an item or is afflicted with Embargo. Additionally, this move fails if Magic Room is up, or the target has the ability Klutz and is not holding an item that ignores Klutz.",
+      "shortDesc": "Fails if the target has no item.",
+      "name": "Poltergeist",
+      "pp": 5,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1},
+      "secondary": null,
+      "target": "normal",
+      "type": "Ghost"
+    },
     "pound": {
       "num": 1,
       "accuracy": 100,
@@ -13781,6 +14074,21 @@
       "type": "Fighting",
       "zMove": {"basePower": 160}
     },
+    "risingvoltage": {
+      "num": 804,
+      "accuracy": 100,
+      "basePower": 70,
+      "category": "Special",
+      "desc": "If the current active terrain is Electric Terrain, this move's base power is doubled.",
+      "shortDesc": "2x power in Electric Terrain.",
+      "name": "Rising Voltage",
+      "pp": 20,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1},
+      "secondary": null,
+      "target": "normal",
+      "type": "Electric"
+    },
     "roar": {
       "num": 46,
       "accuracy": true,
@@ -14195,6 +14503,24 @@
       "target": "normal",
       "type": "Water"
     },
+    "scaleshot": {
+      "num": 799,
+      "accuracy": 90,
+      "basePower": 25,
+      "category": "Physical",
+      "desc": "Hits two to five times. Has a 1/3 chance to hit two or three times, and a 1/6 chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. This move has a 100% chance to raise the user's Speed by 1 stage and lower the user's Defense by 1 stage after each successful hit.",
+      "shortDesc": "Raises Spe, Lowers Def. Hits 2-5 times.",
+      "name": "Scale Shot",
+      "pp": 20,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1},
+      "multihit": [2, 5],
+      "secondary": null,
+      "target": "normal",
+      "type": "Dragon",
+      "zMove": {"basePower": 140},
+      "maxMove": {"basePower": 130}
+    },
     "scaryface": {
       "num": 184,
       "accuracy": 100,
@@ -14211,6 +14537,22 @@
       "target": "normal",
       "type": "Normal",
       "zMove": {"boost": {"spe": 1}}
+    },
+    "scorchingsands": {
+      "num": 815,
+      "accuracy": 100,
+      "basePower": 70,
+      "category": "Special",
+      "desc": "Has a 30% chance to burn the target. The target thaws out if it is frozen.",
+      "shortDesc": "30% chance to burn the target. Thaws target.",
+      "name": "Scorching Sands",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1, "defrost": 1},
+      "thawsTarget": true,
+      "secondary": {"chance": 30, "status": "brn"},
+      "target": "normal",
+      "type": "Ground"
     },
     "scratch": {
       "num": 10,
@@ -14401,7 +14743,6 @@
       "category": "Physical",
       "desc": "Has a 20% chance to lower the target's Defense by 1 stage.",
       "shortDesc": "20% chance to lower the target's Defense by 1.",
-      "isNonstandard": "Past",
       "name": "Shadow Bone",
       "pp": 10,
       "priority": 0,
@@ -14541,6 +14882,21 @@
       "zMove": {"basePower": 180},
       "maxMove": {"basePower": 130}
     },
+    "shellsidearm": {
+      "num": 801,
+      "accuracy": 100,
+      "basePower": 90,
+      "category": "Special",
+      "desc": "This move becomes a physical attack if the target's Defense is lower than its Special Defense, including stat stage changes. This move has a 20% chance to poison the target.",
+      "shortDesc": "Physical if target Def > Sp. Def. 20% poison chance.",
+      "name": "Shell Side Arm",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1},
+      "secondary": {"chance": 20, "status": "psn"},
+      "target": "normal",
+      "type": "Poison"
+    },
     "shellsmash": {
       "num": 504,
       "accuracy": true,
@@ -14612,7 +14968,6 @@
       "category": "Status",
       "desc": "The user restores 1/2 of its maximum HP, rounded half down. If the weather is Sandstorm, the user instead restores 2/3 of its maximum HP, rounded half down.",
       "shortDesc": "User restores 1/2 its max HP; 2/3 in Sandstorm.",
-      "isNonstandard": "Past",
       "name": "Shore Up",
       "pp": 10,
       "priority": 0,
@@ -14760,6 +15115,21 @@
       "target": "normal",
       "type": "Psychic",
       "zMove": {"boost": {"spe": 1}}
+    },
+    "skittersmack": {
+      "num": 806,
+      "accuracy": 90,
+      "basePower": 70,
+      "category": "Physical",
+      "desc": "Has a 100% chance to lower the target's Special Attack by 1 stage.",
+      "shortDesc": "100% chance to lower target's Sp. Atk by 1.",
+      "name": "Skitter Smack",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1, "mirror": 1},
+      "secondary": {"chance": 100, "boosts": {"spa": -1}},
+      "target": "normal",
+      "type": "Bug"
     },
     "skullbash": {
       "num": 130,
@@ -15599,6 +15969,21 @@
       "target": "normal",
       "type": "Steel"
     },
+    "steelroller": {
+      "num": 798,
+      "accuracy": 100,
+      "basePower": 130,
+      "category": "Physical",
+      "desc": "Ends the effects of Electric Terrain, Grassy Terrain, Misty Terrain, and Psychic Terrain. This move fails if there is not a terrain active.",
+      "shortDesc": "Fails if no terrain. Ends terrain.",
+      "name": "Steel Roller",
+      "pp": 5,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1, "mirror": 1},
+      "secondary": null,
+      "target": "normal",
+      "type": "Steel"
+    },
     "steelwing": {
       "num": 211,
       "accuracy": 90,
@@ -16055,6 +16440,23 @@
       "target": "allAdjacent",
       "type": "Water"
     },
+    "surgingstrikes": {
+      "num": 818,
+      "accuracy": 100,
+      "basePower": 25,
+      "category": "Physical",
+      "desc": "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities. This move hits the target three times.",
+      "shortDesc": "Always results in a critical hit. Hits 3 times.",
+      "name": "Surging Strikes",
+      "pp": 5,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1},
+      "willCrit": true,
+      "multihit": 3,
+      "secondary": null,
+      "target": "normal",
+      "type": "Water"
+    },
     "swagger": {
       "num": 207,
       "accuracy": 85,
@@ -16471,6 +16873,23 @@
       "type": "Psychic",
       "zMove": {"effect": "heal"}
     },
+    "terrainpulse": {
+      "num": 805,
+      "accuracy": 100,
+      "basePower": 50,
+      "category": "Special",
+      "desc": "Power doubles if a terrain is active, and this move's type changes to match. Electric type during Electric Terrain, Grass type during Grassy Terrain, Fairy type during Misty Terrain, and Psychic type during Psychic Terrain.",
+      "shortDesc": "Power doubles and type varies in each terrain.",
+      "name": "Terrain Pulse",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1},
+      "secondary": null,
+      "target": "normal",
+      "type": "Normal",
+      "zMove": {"basePower": 160},
+      "maxMove": {"basePower": 130}
+    },
     "thief": {
       "num": 168,
       "accuracy": 100,
@@ -16838,6 +17257,25 @@
       "target": "all",
       "type": "Psychic",
       "zMove": {"boost": {"accuracy": 1}}
+    },
+    "tripleaxel": {
+      "num": 813,
+      "accuracy": 90,
+      "basePower": 20,
+      "category": "Physical",
+      "desc": "Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
+      "shortDesc": "Hits 3 times. Each hit can miss, but power rises.",
+      "name": "Triple Axel",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1, "mirror": 1},
+      "multihit": 3,
+      "multiaccuracy": true,
+      "secondary": null,
+      "target": "normal",
+      "type": "Ice",
+      "zMove": {"basePower": 120},
+      "maxMove": {"basePower": 140}
     },
     "triplekick": {
       "num": 167,
@@ -17307,6 +17745,22 @@
       "target": "normal",
       "type": "Normal",
       "zMove": {"boost": {"spd": 1}}
+    },
+    "wickedblow": {
+      "num": 817,
+      "accuracy": 100,
+      "basePower": 80,
+      "category": "Physical",
+      "desc": "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
+      "shortDesc": "Always results in a critical hit.",
+      "name": "Wicked Blow",
+      "pp": 5,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1},
+      "willCrit": true,
+      "secondary": null,
+      "target": "normal",
+      "type": "Dark"
     },
     "wideguard": {
       "num": 469,
