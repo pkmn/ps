@@ -393,6 +393,9 @@
     "start": "  [SOURCE] clamped down on [POKEMON]!",
     "move": "#wrap"
   },
+  "corrosivegas": {
+		"removeItem": "  [SOURCE] corroded [POKEMON]'s [ITEM]!"
+	},
   "courtchange": {
     "activate": "  [POKEMON] swapped the battle effects affecting each side of the field!"
   },
@@ -686,6 +689,9 @@
   "pluck": {
     "removeItem": "#bugbite"
   },
+  "poltergeist": {
+		"activate": "  [POKEMON] is about to be attacked by its [ITEM]!"
+	},
   "powder": {
     "start": "  [POKEMON] is covered in powder!",
     "activate": "  When the flame touched the powder on the Pokémon, it exploded!"
@@ -1037,6 +1043,9 @@
   "queenlymajesty": {
     "block": "#damp"
   },
+  "quickdraw": {
+		"activate": "  Quick Draw made [POKEMON] move faster!"
+	},
   "rebound": {
     "move": "#magiccoat"
   },

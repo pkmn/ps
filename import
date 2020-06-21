@@ -207,6 +207,7 @@ const removeFields = (data, fields) => {
 };
 
 const RANDBAT_FIELDS = [
+  'randomBattleLevel',
   'randomBattleMoves',
   'randomDoubleBattleMoves',
   'exclusiveMoves',

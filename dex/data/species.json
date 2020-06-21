@@ -1688,6 +1688,15 @@
     "rotommow": {"inherit": true, "types": ["Electric", "Ghost"]}
   },
   "5": {
+    "bulbasaur": {"inherit": true, "maleOnlyHidden": true},
+    "ivysaur": {"inherit": true, "maleOnlyHidden": true},
+    "venusaur": {"inherit": true, "maleOnlyHidden": true},
+    "charmander": {"inherit": true, "maleOnlyHidden": true},
+    "charmeleon": {"inherit": true, "maleOnlyHidden": true},
+    "charizard": {"inherit": true, "maleOnlyHidden": true},
+    "squirtle": {"inherit": true, "maleOnlyHidden": true},
+    "wartortle": {"inherit": true, "maleOnlyHidden": true},
+    "blastoise": {"inherit": true, "maleOnlyHidden": true},
     "butterfree": {
       "inherit": true,
       "baseStats": {
@@ -1920,9 +1929,22 @@
     },
     "snubbull": {"inherit": true, "types": ["Normal"]},
     "granbull": {"inherit": true, "types": ["Normal"]},
+    "tyrogue": {"inherit": true, "maleOnlyHidden": true},
+    "hitmonlee": {"inherit": true, "maleOnlyHidden": true},
+    "hitmonchan": {"inherit": true, "maleOnlyHidden": true},
+    "hitmontop": {"inherit": true, "maleOnlyHidden": true},
     "raikou": {"inherit": true, "abilities": {"0": "Pressure"}},
     "entei": {"inherit": true, "abilities": {"0": "Pressure"}},
     "suicune": {"inherit": true, "abilities": {"0": "Pressure"}},
+    "treecko": {"inherit": true, "maleOnlyHidden": true},
+    "grovyle": {"inherit": true, "maleOnlyHidden": true},
+    "sceptile": {"inherit": true, "maleOnlyHidden": true},
+    "torchic": {"inherit": true, "maleOnlyHidden": true},
+    "combusken": {"inherit": true, "maleOnlyHidden": true},
+    "blaziken": {"inherit": true, "maleOnlyHidden": true},
+    "mudkip": {"inherit": true, "maleOnlyHidden": true},
+    "marshtomp": {"inherit": true, "maleOnlyHidden": true},
+    "swampert": {"inherit": true, "maleOnlyHidden": true},
     "beautifly": {
       "inherit": true,
       "baseStats": {
@@ -1962,6 +1984,15 @@
     "regirock": {"inherit": true, "abilities": {"0": "Clear Body"}},
     "regice": {"inherit": true, "abilities": {"0": "Clear Body"}},
     "registeel": {"inherit": true, "abilities": {"0": "Clear Body"}},
+    "turtwig": {"inherit": true, "maleOnlyHidden": true},
+    "grotle": {"inherit": true, "maleOnlyHidden": true},
+    "torterra": {"inherit": true, "maleOnlyHidden": true},
+    "chimchar": {"inherit": true, "maleOnlyHidden": true},
+    "monferno": {"inherit": true, "maleOnlyHidden": true},
+    "infernape": {"inherit": true, "maleOnlyHidden": true},
+    "piplup": {"inherit": true, "maleOnlyHidden": true},
+    "prinplup": {"inherit": true, "maleOnlyHidden": true},
+    "empoleon": {"inherit": true, "maleOnlyHidden": true},
     "starly": {"inherit": true, "abilities": {"0": "Keen Eye"}},
     "staraptor": {
       "inherit": true,
@@ -2089,11 +2120,13 @@
     "gothita": {"inherit": true, "abilities": {"0": "Frisk"}},
     "gothorita": {
       "inherit": true,
-      "abilities": {"0": "Frisk", "H": "Shadow Tag"}
+      "abilities": {"0": "Frisk", "H": "Shadow Tag"},
+      "maleOnlyHidden": true
     },
     "gothitelle": {
       "inherit": true,
-      "abilities": {"0": "Frisk", "H": "Shadow Tag"}
+      "abilities": {"0": "Frisk", "H": "Shadow Tag"},
+      "maleOnlyHidden": true
     },
     "ferrothorn": {"inherit": true, "abilities": {"0": "Iron Barbs"}},
     "klink": {"inherit": true, "abilities": {"0": "Plus", "1": "Minus"}},
@@ -2755,7 +2788,8 @@
       },
       "abilities": {"0": "Overgrow", "H": "Chlorophyll"},
       "weightkg": 0,
-      "eggGroups": ["Monster", "Grass"]
+      "eggGroups": ["Monster", "Grass"],
+      "isGigantamax": "G-Max Vine Lash"
     },
     "charmander": {
       "num": 4,
@@ -19425,7 +19459,8 @@
       "abilities": {"0": "Pickup", "1": "Frisk", "H": "Insomnia"},
       "weightkg": 3.5,
       "evos": ["Gourgeist-Small"],
-      "eggGroups": ["Amorphous"]
+      "eggGroups": ["Amorphous"],
+      "unreleasedHidden": true
     },
     "pumpkaboolarge": {
       "num": 710,
@@ -19444,7 +19479,8 @@
       "abilities": {"0": "Pickup", "1": "Frisk", "H": "Insomnia"},
       "weightkg": 7.5,
       "evos": ["Gourgeist-Large"],
-      "eggGroups": ["Amorphous"]
+      "eggGroups": ["Amorphous"],
+      "unreleasedHidden": true
     },
     "pumpkaboosuper": {
       "num": 710,
@@ -19509,7 +19545,8 @@
       "weightkg": 9.5,
       "prevo": "Pumpkaboo-Small",
       "evoType": "trade",
-      "eggGroups": ["Amorphous"]
+      "eggGroups": ["Amorphous"],
+      "unreleasedHidden": true
     },
     "gourgeistlarge": {
       "num": 711,
@@ -19529,7 +19566,8 @@
       "weightkg": 14,
       "prevo": "Pumpkaboo-Large",
       "evoType": "trade",
-      "eggGroups": ["Amorphous"]
+      "eggGroups": ["Amorphous"],
+      "unreleasedHidden": true
     },
     "gourgeistsuper": {
       "num": 711,
@@ -23515,7 +23553,8 @@
       "abilities": {"0": "Weak Armor", "H": "Cursed Body"},
       "weightkg": 0.2,
       "evos": ["Polteageist-Antique"],
-      "eggGroups": ["Undiscovered"]
+      "eggGroups": ["Undiscovered"],
+      "unreleasedHidden": true
     },
     "polteageist": {
       "num": 855,
@@ -23560,7 +23599,8 @@
       "prevo": "Sinistea-Antique",
       "evoType": "useItem",
       "evoItem": "Chipped Pot",
-      "eggGroups": ["Undiscovered"]
+      "eggGroups": ["Undiscovered"],
+      "unreleasedHidden": true
     },
     "hatenna": {
       "num": 856,
@@ -24197,7 +24237,8 @@
       },
       "abilities": {"0": "Volt Absorb", "1": "Hustle", "H": "Sand Rush"},
       "weightkg": 190,
-      "eggGroups": ["Undiscovered"]
+      "eggGroups": ["Undiscovered"],
+      "unreleasedHidden": true
     },
     "arctozolt": {
       "num": 881,
@@ -24214,7 +24255,8 @@
       },
       "abilities": {"0": "Volt Absorb", "1": "Static", "H": "Slush Rush"},
       "weightkg": 150,
-      "eggGroups": ["Undiscovered"]
+      "eggGroups": ["Undiscovered"],
+      "unreleasedHidden": true
     },
     "dracovish": {
       "num": 882,
@@ -24231,7 +24273,8 @@
       },
       "abilities": {"0": "Water Absorb", "1": "Strong Jaw", "H": "Sand Rush"},
       "weightkg": 215,
-      "eggGroups": ["Undiscovered"]
+      "eggGroups": ["Undiscovered"],
+      "unreleasedHidden": true
     },
     "arctovish": {
       "num": 883,
@@ -24248,7 +24291,8 @@
       },
       "abilities": {"0": "Water Absorb", "1": "Ice Body", "H": "Slush Rush"},
       "weightkg": 175,
-      "eggGroups": ["Undiscovered"]
+      "eggGroups": ["Undiscovered"],
+      "unreleasedHidden": true
     },
     "duraludon": {
       "num": 884,
@@ -24470,7 +24514,7 @@
         "def": 60,
         "spa": 53,
         "spd": 50,
-        "spe": 73
+        "spe": 72
       },
       "abilities": {"0": "Inner Focus"},
       "weightkg": 12,

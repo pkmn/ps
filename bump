@@ -35,7 +35,7 @@ function update(name, version) {
         pkg.json[dep][name] = `^${version}`;
         fs.writeFileSync(
           path.join(__dirname, pkg.path, 'package.json'),
-          JSON.stringify(pkg.json, null, 2));
+          JSON.stringify(pkg.json, null, 2) + '\n');
       }
     }
   }

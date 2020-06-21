@@ -174,6 +174,7 @@ export interface MoveEventMethods {
 	onHitField?: CommonHandlers['ResultMove'];
 	onHitSide?: (this: Battle, side: Side, source: Pokemon, move: ActiveMove) => boolean | null | "" | void;
 	onModifyMove?: (this: Battle, move: ActiveMove, pokemon: Pokemon, target: Pokemon) => void;
+	onModifyPriority?: CommonHandlers['ModifierSourceMove'];
 	onMoveFail?: CommonHandlers['VoidMove'];
 	onModifyType?: (this: Battle, move: ActiveMove, pokemon: Pokemon, target: Pokemon) => void;
 	onPrepareHit?: CommonHandlers['ResultMove'];
@@ -1126,6 +1127,8 @@ export interface SpeciesData {
 	battleOnly?: string | string[];
 	isGigantamax?: string;
 	changesFrom?: string;
+	maleOnlyHidden?: boolean;
+	unreleasedHidden?: boolean | 'Past';
 }
 
 export type ModdedSpeciesData = SpeciesData | Partial<Omit<SpeciesData, 'name'>> & {inherit: true};
@@ -1136,13 +1139,11 @@ export interface SpeciesFormatsData {
 	essentialMove?: string;
 	exclusiveMoves?: readonly string[];
 	isNonstandard?: Nonstandard | null;
-	maleOnlyHidden?: boolean;
 	randomBattleMoves?: readonly string[];
 	randomBattleLevel?: number;
 	randomDoubleBattleMoves?: readonly string[];
 	randomSets?: readonly RandomTeamsTypes.Gen2RandomSet[];
 	tier?: string;
-	unreleasedHidden?: boolean | 'Past';
 }
 
 export type ModdedSpeciesFormatsData = SpeciesFormatsData & {inherit?: true};
