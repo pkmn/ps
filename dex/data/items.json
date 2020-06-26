@@ -106,7 +106,8 @@
     "magoberry": {"inherit": true, "onResidualOrder": 5},
     "metalcoat": {
       "inherit": true,
-      "desc": "Holder's Steel-type attacks have 1.1x power."
+      "desc": "Holder's Steel-type attacks have 1.1x power. Evolves Onix into Steelix and Scyther into Scizor when traded.",
+      "shortDesc": "Holder's Steel-type attacks have 1.1x power."
     },
     "miracleseed": {
       "inherit": true,

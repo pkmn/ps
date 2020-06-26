@@ -5230,7 +5230,7 @@
       "name": "Slowbro-Galar",
       "baseSpecies": "Slowbro",
       "forme": "Galar",
-      "types": ["Psychic", "Poison"],
+      "types": ["Poison", "Psychic"],
       "baseStats": {
         "hp": 95,
         "atk": 100,
@@ -24538,6 +24538,7 @@
       "abilities": {"0": "Unseen Fist"},
       "weightkg": 105,
       "prevo": "Kubfu",
+      "evoType": "other",
       "evoCondition": "Defeat the Single Strike Tower",
       "eggGroups": ["Undiscovered"],
       "otherFormes": [
@@ -24570,6 +24571,7 @@
       "abilities": {"0": "Unseen Fist"},
       "weightkg": 105,
       "prevo": "Kubfu",
+      "evoType": "other",
       "evoCondition": "Defeat the Rapid Strike Tower",
       "eggGroups": ["Undiscovered"]
     },

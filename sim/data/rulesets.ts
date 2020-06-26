@@ -82,9 +82,18 @@ export const BattleFormats: {[k: string]: FormatsData} = {
 		onValidateSet(set) {
 			// These Pokemon are still unobtainable
 			const unobtainables = [
-				'Eevee-Starter', 'Floette-Eternal', 'Pichu-Spiky-eared', 'Pikachu-Belle', 'Pikachu-Cosplay', 'Pikachu-Libre', 'Pikachu-PhD', 'Pikachu-Pop-Star', 'Pikachu-Rock-Star', 'Pikachu-Starter', 'Magearna-Original', 'Eternatus-Eternamax',
+				'Eevee-Starter', 'Floette-Eternal', 'Pichu-Spiky-eared', 'Pikachu-Belle', 'Pikachu-Cosplay', 'Pikachu-Libre',
+				'Pikachu-PhD', 'Pikachu-Pop-Star', 'Pikachu-Rock-Star', 'Pikachu-Starter', 'Eternatus-Eternamax',
 			];
-			if (unobtainables.includes(set.species)) {
+			const species = this.dex.getSpecies(set.species);
+			if (unobtainables.includes(species.name)) {
+				if (this.ruleTable.has(`+pokemon:${species.id}`)) return;
+				return [`${set.name || set.species} does not exist in the National Dex.`];
+			}
+			if (species.tier === "Unreleased") {
+				if (this.ruleTable.has(`+pokemon:${species.id}`) || this.ruleTable.has(`+basepokemon:${toID(species.baseSpecies)}`)) {
+					return;
+				}
 				return [`${set.name || set.species} does not exist in the National Dex.`];
 			}
 			// Items other than Z-Crystals and Pokémon-specific items should be illegal
@@ -92,6 +101,7 @@ export const BattleFormats: {[k: string]: FormatsData} = {
 			const item = this.dex.getItem(set.item);
 			if (!item.isNonstandard) return;
 			if (['Past', 'Unobtainable'].includes(item.isNonstandard) && !item.zMove && !item.itemUser && !item.forcedForme) {
+				if (this.ruleTable.has(`+item:${item.id}`)) return;
 				return [`${set.name}'s item ${item.name} does not exist in Gen ${this.dex.gen}.`];
 			}
 		},
@@ -908,7 +918,8 @@ export const BattleFormats: {[k: string]: FormatsData} = {
 		desc: "Allows Pok&eacute;mon to use any move that they or a previous evolution/out-of-battle forme share a type with",
 		checkLearnset(move, species, setSources, set) {
 			const restrictedMoves = this.format.restricted || [];
-			if (!restrictedMoves.includes(move.name) && !move.isNonstandard && !move.isZ && !move.isMax) {
+			const nonstandard = move.isNonstandard === 'Past' && !this.ruleTable.has('standardnatdex');
+			if (!restrictedMoves.includes(move.name) && !nonstandard && !move.isZ && !move.isMax) {
 				const dex = this.dex;
 				let types: string[];
 				if (species.forme || species.otherFormes) {
@@ -916,8 +927,12 @@ export const BattleFormats: {[k: string]: FormatsData} = {
 					const originalForme = dex.getSpecies(species.changesFrom || species.name);
 					types = originalForme.types;
 					if (baseSpecies.otherFormes) {
-						for (const formeid of baseSpecies.otherFormes) {
-							const forme = dex.getSpecies(formeid);
+						for (const formeName of baseSpecies.otherFormes) {
+							if (baseSpecies.prevo) {
+								const prevo = dex.getSpecies(baseSpecies.prevo);
+								if (prevo.evos.includes(formeName)) continue;
+							}
+							const forme = dex.getSpecies(formeName);
 							if (forme.changesFrom === originalForme.name) {
 								types = types.concat(forme.types);
 							}

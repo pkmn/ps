@@ -15,7 +15,7 @@
   "devDependencies": {
     "@pkmn/dex": "^0.0.9",
     "@pkmn/sim": "^0.0.9",
-    "@smogon/calc": "^0.3.0"
+    "@smogon/calc": "^0.4.1"
   },
   "scripts": {
     "lint": "eslint --cache --ext ts",
