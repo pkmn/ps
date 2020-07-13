@@ -1691,6 +1691,7 @@
     },
     "stall": {
       "shortDesc": "This Pokemon moves last among Pokemon using the same or greater priority moves.",
+      "onFractionalPriority": -0.1,
       "name": "Stall",
       "num": 100
     },

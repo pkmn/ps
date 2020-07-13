@@ -288,8 +288,6 @@ export interface NatureData {
   minus?: Exclude<StatName, 'hp'>;
 }
 
-interface AnyObject { [k: string]: any }
-
 export interface BasicEffect<NameT extends string = string> extends Readonly<EffectData> {
   id: ID;
   name: NameT;

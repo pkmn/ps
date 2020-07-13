@@ -1368,7 +1368,7 @@
       "name": "Custap Berry",
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Ghost"},
-      "onFractionalPriorityPriority": -1,
+      "onFractionalPriorityPriority": -2,
       "num": 210,
       "gen": 4,
       "isNonstandard": "Unobtainable",
@@ -1941,6 +1941,7 @@
     "fullincense": {
       "name": "Full Incense",
       "fling": {"basePower": 10},
+      "onFractionalPriority": -0.1,
       "num": 316,
       "gen": 4,
       "desc": "Holder moves last in its priority bracket."
@@ -2413,6 +2414,7 @@
     "laggingtail": {
       "name": "Lagging Tail",
       "fling": {"basePower": 10},
+      "onFractionalPriority": -0.1,
       "num": 279,
       "gen": 4,
       "desc": "Holder moves last in its priority bracket."
@@ -3335,7 +3337,7 @@
       "desc": "A Poke Ball that provides a better catch rate at the start of a wild encounter."
     },
     "quickclaw": {
-      "onFractionalPriorityPriority": -1,
+      "onFractionalPriorityPriority": -2,
       "name": "Quick Claw",
       "fling": {"basePower": 80},
       "num": 217,

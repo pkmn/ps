@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/data",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "description": "A forked implementation of the Pokémon Showdown client's data layer",
@@ -10,12 +10,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/dex-types": "^0.0.9"
+    "@pkmn/dex-types": "^0.0.10"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.0.9",
-    "@pkmn/sim": "^0.0.9",
-    "@smogon/calc": "^0.4.1"
+    "@pkmn/dex": "^0.0.10",
+    "@pkmn/sim": "^0.0.10",
+    "@smogon/calc": "^0.4.2"
   },
   "scripts": {
     "lint": "eslint --cache --ext ts",
