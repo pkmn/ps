@@ -924,6 +924,13 @@ export namespace Protocol {
      * The battle has ended in a tie.
      */
     '|tie|': readonly ['tie'];
+    /**
+     * `|t:|TIMESTAMP`
+     *
+     * The current UNIX timestamp (the number of seconds since 1970) - useful for determining
+     * when events occured in real time.
+     */
+    '|t:|': readonly ['t:', Timestamp];
   }
 
   export type BattleProgressArgName = keyof BattleProgressArgs;
@@ -1760,7 +1767,7 @@ export const Protocol = new class {
   ARGS: {[k in Protocol.ArgName]: 1} = {
     '|init|': 1, '|title|': 1, '|userlist|': 1, '||': 1, '|html|': 1, '|uhtml|': 1,
     '|uhtmlchange|': 1, '|join|': 1, '|leave|': 1, '|name|': 1, '|chat|': 1, '|notify|': 1,
-    '|:|': 1, '|c:|': 1, '|battle|': 1, '|popup|': 1, '|pm|': 1, '|usercount|': 1,
+    '|:|': 1, '|c:|': 1, '|t:|': 1, '|battle|': 1, '|popup|': 1, '|pm|': 1, '|usercount|': 1,
     '|nametaken|': 1, '|challstr|': 1, '|updateuser|': 1, '|formats|': 1, '|updatesearch|': 1,
     '|message|': 1, '|updatechallenges|': 1, '|queryresponse|': 1, '|unlink|': 1, '|raw|': 1,
     '|error|': 1, '|bigerror|': 1, '|chatmsg|': 1, '|chatmsg-raw|': 1, '|controlshtml|': 1,

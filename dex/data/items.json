@@ -1129,6 +1129,7 @@
     "brightpowder": {
       "name": "Bright Powder",
       "fling": {"basePower": 10},
+      "onModifyAccuracyPriority": 5,
       "num": 213,
       "gen": 2,
       "desc": "The accuracy of attacks against the holder is 0.9x."
@@ -2450,6 +2451,7 @@
     "laxincense": {
       "name": "Lax Incense",
       "fling": {"basePower": 10},
+      "onModifyAccuracyPriority": 5,
       "num": 255,
       "gen": 3,
       "desc": "The accuracy of attacks against the holder is 0.9x."
@@ -2823,7 +2825,7 @@
       "name": "Micle Berry",
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Rock"},
-      "effect": {"duration": 2},
+      "effect": {"duration": 2, "onSourceModifyAccuracyPriority": 3},
       "num": 209,
       "gen": 4,
       "isNonstandard": "Unobtainable",
@@ -3720,7 +3722,7 @@
       "desc": "Holder's Normal-type attacks have 1.2x power."
     },
     "silverpowder": {
-      "name": "SilverPowder",
+      "name": "Silver Powder",
       "fling": {"basePower": 10},
       "onBasePowerPriority": 15,
       "num": 222,
@@ -4930,6 +4932,7 @@
     "widelens": {
       "name": "Wide Lens",
       "fling": {"basePower": 10},
+      "onSourceModifyAccuracyPriority": 4,
       "num": 265,
       "gen": 4,
       "desc": "The accuracy of attacks by the holder is 1.1x."
@@ -4971,6 +4974,7 @@
     "zoomlens": {
       "name": "Zoom Lens",
       "fling": {"basePower": 10},
+      "onSourceModifyAccuracyPriority": 4,
       "num": 276,
       "gen": 4,
       "desc": "The accuracy of attacks by the holder is 1.2x if it moves after its target."
