@@ -77,16 +77,13 @@ $ npm install @pkmn/sim
 ## Usage
 
 ```ts
-import {Dex, BattleStream, getPlayerStreams, RandomPlayerAI} from '@pkmn/sim';
-import {RandomPlayerAI} from '../tools/random-player-ai';
+import {BattleStreams, RandomPlayerAI} from '@pkmn/sim';
 
-Dex.setTeamGenerator(new TeamGenerator());
-
-const streams = getPlayerStreams(new BattleStream());
+const streams = BattleStreams.getPlayerStreams(new BattleStreams.BattleStream());
 const spec = {formatid: 'gen7customgame'};
 const p1spec = {
   name: 'Bot 1',
-  team: 'gen7ou]Poli Rain|' +
+  team:
     'Under The Sea|politoed|leftovers|H|whirlpool,perishsong,rest,protect|Calm|248,,,8,252,|F|,0,,,,|S||]' +
     'Fade Away|swampertmega|swampertite||scald,earthquake,rest,sleeptalk|Sassy|248,,8,,252,|F||S||]' +
     'Shallow Waters|greninjaash|choicespecs||surf,darkpulse,watershuriken,icebeam|Timid|,,4,252,,252|||||]' +
@@ -96,7 +93,7 @@ const p1spec = {
 };
 const p2spec = {
   name: 'Bot 2',
-  team: 'gen7ou]fol1/Dual Dance Zam|' +
+  team:
     'Alakazam-Mega||alakazite|magicguard|barrier,calmmind,recover,psychic|Timid|244,,240,,,24|M|,0,,,,|S||]' +
     'Krookodile||choicescarf||knockoff,earthquake,pursuit,foulplay|Jolly|56,252,,,,200|||||]' +
     'Skarmory||rockyhelmet|1|spikes,defog,counter,roost|Impish|248,,248,,,12||,0,,,,|||]' +
