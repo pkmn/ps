@@ -22,11 +22,11 @@ export type MoveName = string & As<'MoveName'>;
 export type SpeciesName = string & As<'SpeciesName'>;
 export type FormeName = string & As<'FormeName'>;
 
-export type EffectType = 'Effect' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Weather' | 'Status';
+export type EffectType = 'Condition' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Weather' | 'Status';
 export type DataKind =
-  'Effect' | 'Species' | 'Move' | 'Item' | 'Ability' | 'Nature' | 'Type' | 'Learnset';
+  'Condition' | 'Species' | 'Move' | 'Item' | 'Ability' | 'Nature' | 'Type' | 'Learnset';
 
-export type Effect = Ability | Item | Move | PureEffect;
+export type Effect = Ability | Item | Move | Condition;
 
 export interface EffectData {
   name: string;
@@ -40,7 +40,7 @@ export interface EffectData {
   duration?: number;
 }
 
-export interface PureEffectData extends EffectData {
+export interface ConditionData extends EffectData {
   noCopy?: boolean;
   counterMax?: number;
   affectsFainted?: boolean;
@@ -49,13 +49,13 @@ export interface PureEffectData extends EffectData {
 export interface AbilityData extends EffectData {
   isUnbreakable?: boolean;
   suppressWeather?: boolean;
-  effect?: Partial<PureEffectData>;
+  condition?: Partial<ConditionData>;
 }
 
 export interface ItemData extends EffectData {
   gen: GenerationNum;
 
-  effect?: Partial<PureEffectData>;
+  condition?: Partial<ConditionData>;
   fling?: {
     basePower: number;
     status?: StatusName;
@@ -136,7 +136,7 @@ export interface MoveData extends EffectData, HitEffect {
   category: MoveCategory;
 
   realMove?: string;
-  effect?: Partial<PureEffectData>;
+  condition?: Partial<ConditionData>;
   damage?: number | 'level' | false | null;
   noPPBoosts?: boolean;
 
@@ -218,7 +218,7 @@ export interface SpeciesData {
   types: string[];
   weightkg: number;
 
-  effect?: Partial<PureEffect>;
+  condition?: Partial<Condition>;
   canHatch?: boolean;
   baseForme?: string;
   baseSpecies?: string;
@@ -303,9 +303,9 @@ export interface BasicEffect<NameT extends string = string> extends Readonly<Eff
   duration?: number;
 }
 
-export interface PureEffect extends Readonly<BasicEffect> {
-  readonly effectType: 'Effect' | 'Weather' | 'Status';
-  readonly kind: 'Effect';
+export interface Condition extends Readonly<BasicEffect> {
+  readonly effectType: 'Condition' | 'Weather' | 'Status';
+  readonly kind: 'Condition';
 }
 
 export interface Ability extends Readonly<BasicEffect<AbilityName> & AbilityData> {

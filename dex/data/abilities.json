@@ -98,7 +98,7 @@
       "inherit": true,
       "desc": "30% chance a Pokemon making contact with this Pokemon will be burned. This effect does not happen if this Pokemon did not lose HP from the attack."
     },
-    "flashfire": {"inherit": true, "effect": {"noCopy": true}},
+    "flashfire": {"inherit": true, "condition": {"noCopy": true}},
     "flowergift": {
       "inherit": true,
       "desc": "If Sunny Day is active, the Attack and Special Defense of this Pokemon and its allies are multiplied by 1.5.",
@@ -773,7 +773,7 @@
     "flashfire": {
       "desc": "This Pokemon is immune to Fire-type moves. The first time it is hit by a Fire-type move, its attacking stat is multiplied by 1.5 while using a Fire-type attack as long as it remains active and has this Ability. If this Pokemon is frozen, it cannot be defrosted by Fire-type attacks.",
       "shortDesc": "This Pokemon's Fire attacks do 1.5x damage if hit by one Fire move; Fire immunity.",
-      "effect": {
+      "condition": {
         "noCopy": true,
         "onModifyAtkPriority": 5,
         "onModifySpAPriority": 5
@@ -1117,7 +1117,7 @@
       "shortDesc": "This Pokemon blocks certain status moves and bounces them back to the user.",
       "name": "Magic Bounce",
       "onTryHitPriority": 1,
-      "effect": {"duration": 1},
+      "condition": {"duration": 1},
       "num": 156
     },
     "magicguard": {
@@ -1164,7 +1164,7 @@
     },
     "mimicry": {
       "shortDesc": "This Pokemon's type changes to match the Terrain. Type reverts when Terrain ends.",
-      "effect": {},
+      "condition": {},
       "name": "Mimicry",
       "num": 250
     },
@@ -1632,7 +1632,7 @@
     },
     "slowstart": {
       "shortDesc": "On switch-in, this Pokemon's Attack and Speed are halved for 5 turns.",
-      "effect": {"duration": 5, "onModifyAtkPriority": 5},
+      "condition": {"duration": 5, "onModifyAtkPriority": 5},
       "name": "Slow Start",
       "num": 112
     },
@@ -1902,7 +1902,7 @@
     "truant": {
       "shortDesc": "This Pokemon skips every other turn instead of using a move.",
       "onBeforeMovePriority": 9,
-      "effect": {},
+      "condition": {},
       "name": "Truant",
       "num": 54
     },
@@ -1920,7 +1920,7 @@
     "unburden": {
       "desc": "If this Pokemon loses its held item for any reason, its Speed is doubled. This boost is lost if it switches out or gains a new item or Ability.",
       "shortDesc": "Speed is doubled on held item loss; boost is lost if it switches, gets new item/Ability.",
-      "effect": {},
+      "condition": {},
       "name": "Unburden",
       "num": 84
     },
@@ -2015,7 +2015,7 @@
       "desc": "If this Pokemon is a Darmanitan or Darmanitan-Galar, it changes to Zen Mode if it has 1/2 or less of its maximum HP at the end of a turn. If Darmanitan's HP is above 1/2 of its maximum HP at the end of a turn, it changes back to Standard Mode. This Ability cannot be removed or suppressed.",
       "shortDesc": "If Darmanitan, at end of turn changes Mode to Standard if > 1/2 max HP, else Zen.",
       "onResidualOrder": 27,
-      "effect": {},
+      "condition": {},
       "name": "Zen Mode",
       "num": 161
     },
@@ -2031,7 +2031,7 @@
       "isNonstandard": "CAP",
       "name": "Rebound",
       "onTryHitPriority": 1,
-      "effect": {"duration": 1},
+      "condition": {"duration": 1},
       "num": -3
     },
     "persistent": {

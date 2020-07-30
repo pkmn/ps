@@ -52,7 +52,7 @@ APIs:
   result in slightly larger download size in exchange for [faster
   parsing](https://github.com/GoogleChromeLabs/json-parse-benchmark).
 - certain methods and fields have been renamed, including:
-  - `getEffectByID` → `getPureEffectByID`
+  - `getEffectByID` → `getConditionByID`
   - `dex.data.Pokedex` → `dex.data.Species`
   - `dex.data.Movedex` → `dex.data.Moves`
   - `dex.data.TypeChart` → `dex.data.Types`

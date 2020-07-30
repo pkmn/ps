@@ -56,7 +56,7 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 	{
 		name: "[Gen 8] Ubers",
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3659981/">Ubers Metagame Discussion</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3666897/">Ubers Metagame Discussion</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3658364/">Ubers Sample Teams</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3661412/">Ubers Viability Rankings</a>`,
 		],
@@ -212,21 +212,6 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 			battle: 3,
 		},
 		ruleset: ['Standard GBU'],
-		minSourceGen: 8,
-	},
-	{
-		name: "[Gen 8] Armor Beginnings",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3667440/">Armor Beginnings Discussion</a>`,
-		],
-
-		mod: 'gen8',
-		forcedLevel: 50,
-		teamLength: {
-			validate: [3, 6],
-			battle: 3,
-		},
-		ruleset: ['Standard GBU', 'Isle of Armor Pokedex'],
 		minSourceGen: 8,
 	},
 	{
@@ -469,6 +454,156 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 
 		mod: 'gen8',
 		ruleset: ['Standard NatDex'],
+	},
+	{
+		name: "[Gen 8] National Dex BH",
+		desc: `Balanced Hackmons with National Dex elements mixed in.`,
+		threads: [
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3658587/">More Balanced Hackmons</a>`,
+		],
+
+		mod: 'gen8',
+		ruleset: ['-Nonexistent', 'Standard NatDex', 'Forme Clause', 'Sleep Clause Mod', '2 Ability Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause', 'CFZ Clause', '!Obtainable'],
+		banlist: [
+			// Pokemon
+			'Groudon-Primal', 'Rayquaza-Mega', 'Shedinja',
+			// Abilities
+			'Arena Trap', 'Contrary', 'Gorilla Tactics', 'Huge Power', 'Illusion', 'Innards Out', 'Libero', 'Magnet Pull', 'Moody',
+			'Neutralizing Gas', 'Parental Bond', 'Protean', 'Pure Power', 'Shadow Tag', 'Stakeout', 'Water Bubble', 'Wonder Guard',
+			// Items
+			'Gengarite',
+			// Moves
+			'Chatter', 'Double Iron Bash', 'Octolock', 'Shell Smash',
+			// Other
+			'Comatose + Sleep Talk',
+		],
+		onValidateSet(set) {
+			if (toID(set.ability) === 'intrepidsword' &&
+				!toID(set.species).startsWith('zacian') && toID(set.item) !== 'rustedsword') {
+				return [`${set.ability} is banned.`];
+			}
+			if (set.species === 'Zacian-Crowned' && (toID(set.item) !== 'rustedsword' || toID(set.ability) !== 'intrepidsword')) {
+				return [set.species + " is banned."];
+			}
+		},
+		onChangeSet(set) {
+			const item = toID(set.item);
+			if (set.species === 'Zacian' && item === 'rustedsword') {
+				set.species = 'Zacian-Crowned';
+				set.ability = 'Intrepid Sword';
+				const ironHead = set.moves.indexOf('ironhead');
+				if (ironHead >= 0) {
+					set.moves[ironHead] = 'behemothblade';
+				}
+			}
+			if (set.species === 'Zamazenta' && item === 'rustedshield') {
+				set.species = 'Zamazenta-Crowned';
+				set.ability = 'Dauntless Shield';
+				const ironHead = set.moves.indexOf('ironhead');
+				if (ironHead >= 0) {
+					set.moves[ironHead] = 'behemothbash';
+				}
+			}
+		},
+		onValidateTeam(team) {
+			let arceus = 0;
+			for (const set of team) {
+				const species = this.dex.getSpecies(set.species);
+				if (species.baseSpecies === "Arceus") arceus++;
+			}
+			if (arceus > 1) {
+				return [`You are limited to one Arceus forme.`, `(You have ${arceus} Arceus formes.)`];
+			}
+		},
+	},
+
+	// Pet Mods
+	///////////////////////////////////////////////////////////////////
+
+	{
+		section: "Pet Mods",
+	},
+	{
+		name: "[Gen 8] Megamax",
+		desc: `A metagame where Gigantamax formes are turned into new Mega Evolutions. To see the new stats of a Megamax forme or to see what new ability does, do <code>/dt [target], megamax</code>.`,
+		threads: [
+			`<a href="https://www.smogon.com/forums/threads/3658623/">Megamax</a>`,
+		],
+
+		mod: 'megamax',
+		ruleset: ['[Gen 8] OU'],
+		banlist: ['Corviknight-Gmax', 'Melmetal-Gmax', 'Urshifu-Gmax'],
+		onChangeSet(set) {
+			if (set.species.endsWith('-Gmax')) set.species = set.species.slice(0, -5);
+		},
+		checkLearnset(move, species, lsetData, set) {
+			if (species.name === 'Pikachu' || species.name === 'Pikachu-Gmax') {
+				if (['boltstrike', 'fusionbolt', 'pikapapow', 'zippyzap'].includes(move.id)) {
+					return null;
+				}
+			}
+			if (species.name === 'Meowth' || species.name === 'Meowth-Gmax') {
+				if (['partingshot', 'skillswap', 'wrap'].includes(move.id)) {
+					return null;
+				}
+			}
+			if (species.name === 'Eevee' || species.name === 'Eevee-Gmax') {
+				if (['iciclecrash', 'liquidation', 'sappyseed', 'sizzlyslide', 'wildcharge'].includes(move.id)) {
+					return null;
+				}
+			}
+			return this.checkLearnset(move, species, lsetData, set);
+		},
+		onModifySpecies(species) {
+			const newSpecies = this.dex.deepClone(species);
+			if (newSpecies.forme.includes('Gmax')) {
+				newSpecies.isMega = true;
+			}
+			return newSpecies;
+		},
+		onSwitchIn(pokemon) {
+			const baseSpecies = this.dex.getSpecies(pokemon.species.baseSpecies);
+			if (baseSpecies.exists && pokemon.species.name !== (pokemon.species.changesFrom || baseSpecies.name)) {
+				if (pokemon.species.types.length !== baseSpecies.types.length || pokemon.species.types[1] !== baseSpecies.types[1]) {
+					this.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
+				}
+			}
+		},
+		onAfterMega(pokemon) {
+			const baseSpecies = this.dex.getSpecies(pokemon.species.baseSpecies);
+			if (baseSpecies.exists && pokemon.species.name !== (pokemon.species.changesFrom || baseSpecies.name)) {
+				if (pokemon.species.types.length !== baseSpecies.types.length || pokemon.species.types[1] !== baseSpecies.types[1]) {
+					this.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
+				}
+			}
+		},
+	},
+	{
+		name: "[Gen 8] Optimons",
+		desc: `Every Pok&eacute;mon is optimized to become viable for a balanced metagame. To see the new stats of optimized Pok&eacute;mon, do <code>/dt [pokemon], optimons</code>.`,
+		threads: [
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3657509/">Optimons</a>`,
+		],
+
+		mod: 'optimons',
+		searchShow: false,
+		ruleset: ['[Gen 8] OU'],
+		unbanlist: ['Electabuzz', 'Electivire', 'Elekid', 'Magby', 'Magmar', 'Magmortar', 'Yanma', 'Yanmega'],
+		onSwitchIn(pokemon) {
+			const baseSpecies = this.dex.mod('gen8').getSpecies(pokemon.species.name);
+			if (pokemon.species.types.length !== baseSpecies.types.length || pokemon.species.types[1] !== baseSpecies.types[1]) {
+				this.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
+			}
+		},
+	},
+	{
+		name: "[Gen 6] Gen-NEXT OU",
+
+		mod: 'gennext',
+		searchShow: false,
+		challengeShow: false,
+		ruleset: ['Obtainable', 'Standard NEXT', 'Team Preview'],
+		banlist: ['Uber'],
 	},
 
 	// OM of the Month
@@ -812,6 +947,31 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		},
 	},
 	{
+		name: "[Gen 8] Godly Gift",
+		desc: `Each Pok&eacute;mon receives one base stat from a God (Uber Pok&eacute;mon) depending on its position in the team. If there is no Uber Pok&eacute;mon, it uses the Pok&eacute;mon in the first slot.`,
+		threads: [
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3660461/">Godly Gift</a>`,
+		],
+
+		mod: 'gen8',
+		searchShow: false,
+		ruleset: ['Standard', 'Dynamax Clause'],
+		banlist: ['Blissey', 'Chansey', 'Uber > 1', 'AG + Uber > 1', 'Arena Trap', 'Huge Power', 'Pure Power', 'Shadow Tag', 'Baton Pass'],
+		onModifySpecies(species, target, source) {
+			if (source || !target || !target.side) return;
+			const god = target.side.team.find(set => {
+				const teamSpecies = this.dex.getSpecies(set.species);
+				const validator = this.dex.getRuleTable(this.dex.getFormat(`gen${this.gen}ou`));
+				const isBanned = validator.isBannedSpecies(teamSpecies);
+				return isBanned;
+			}) || target.side.team[0];
+			const stat = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'][target.side.team.indexOf(target.set)];
+			const newSpecies = this.dex.deepClone(species);
+			newSpecies.baseStats[stat] = this.dex.getSpecies(god.species).baseStats[stat as StatName];
+			return newSpecies;
+		},
+	},
+	{
 		name: "[Gen 8] Inheritance",
 		desc: `Pok&eacute;mon may use the ability and moves of another, as long as they forfeit their own learnset.`,
 		threads: [
@@ -841,7 +1001,7 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 					const pokemon = this.dex.getSpecies(speciesid);
 					if (pokemon.isNonstandard || unreleased(pokemon)) continue;
 					if (pokemon.requiredAbility || pokemon.requiredItem || pokemon.requiredMove) continue;
-					if (pokemon.isGigantamax || this.ruleTable.isRestrictedSpecies(pokemon)) continue;
+					if (this.ruleTable.isRestrictedSpecies(pokemon)) continue;
 
 					for (const key of Object.values(pokemon.abilities)) {
 						const abilityId = toID(key);
@@ -864,6 +1024,9 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 			}
 
 			const name = set.name;
+			if (this.ruleTable.isBanned(`pokemon:${species.id}`) || this.ruleTable.isBanned(`basepokemon:${species.id}`)) {
+				return this.validateSet(set, teamHas);
+			}
 
 			const ability = this.dex.getAbility(set.ability);
 			if (!ability.exists || ability.isNonstandard) return [`${name} needs to have a valid ability.`];
@@ -981,14 +1144,15 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 			'Zacian', 'Zamazenta', 'Zekrom', 'Leppa Berry', 'Baton Pass',
 			'Arena Trap', 'Contrary', 'Drizzle ++ Swift Swim', 'Drought ++ Chlorophyll', 'Electric Surge ++ Surge Surfer',
 			'Flare Boost', 'Fur Coat', 'Guts', 'Harvest', 'Huge Power', 'Imposter', 'Innards Out', 'Libero', 'Magic Bounce',
-			'Magic Guard', 'Mirror Armor', 'Mold Breaker', 'Moody', 'Neutralizing Gas', 'Regenerator ++ Emergency Exit',
+			'Magic Guard', 'Mold Breaker', 'Moody', 'Neutralizing Gas', 'Regenerator ++ Emergency Exit',
 			'Regenerator ++ Wimp Out', 'Sand Rush', 'Sand Veil', 'Shadow Tag', 'Simple', 'Slush Rush', 'Snow Cloak',
-			'Speed Boost', 'Steelworker ++ Steely Spirit', 'Tinted Lens', 'Trace', 'Unaware', 'Unburden', 'Water Bubble',
+			'Speed Boost', 'Steelworker ++ Steely Spirit', 'Tinted Lens', 'Unaware', 'Unburden', 'Water Bubble',
 		],
 		getSharedPower(pokemon) {
 			const sharedPower = new Set<string>();
 			for (const ally of pokemon.side.pokemon) {
 				if (ally.previouslySwitchedIn > 0) {
+					if (['mirrorarmor', 'trace'].includes(toID(ally.baseAbility))) continue;
 					sharedPower.add(ally.baseAbility);
 				}
 			}
@@ -1081,7 +1245,7 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		mod: 'gen8',
 		searchShow: false,
 		ruleset: ['[Gen 8] OU'],
-		banlist: [],
+		banlist: ['Dragapult'],
 		restricted: [
 			'Baneful Bunker', 'Block', 'Copycat', 'Detect', 'Destiny Bond', 'Ingrain', 'King\'s Shield', 'Mean Look', 'move:Metronome', 'Obstruct', 'Octolock',
 			'Nature Power', 'Parting Shot', 'Protect', 'Roar', 'Skill Swap', 'Sleep Talk', 'Spiky Shield', 'Teleport', 'Whirlwind', 'Wish', 'Yawn',
@@ -1217,162 +1381,6 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 				this.add('-start', pokemon, oMegaSpecies.requiredItem || oMegaSpecies.requiredMove, '[silent]');
 			}
 		},
-	},
-
-	// Pet Mods
-	///////////////////////////////////////////////////////////////////
-
-	{
-		section: "Pet Mods",
-		column: 2,
-	},
-	{
-		name: "[Gen 8] Megamax",
-		desc: `A metagame where Gigantamax formes are turned into new Mega Evolutions. To see the new stats of a Megamax forme or to see what new ability does, do <code>/dt [target], megamax</code>.`,
-		threads: [
-			`<a href="https://www.smogon.com/forums/threads/3658623/">Megamax</a>`,
-		],
-
-		mod: 'megamax',
-		ruleset: ['[Gen 8] OU'],
-		banlist: ['Corviknight-Gmax', 'Melmetal-Gmax', 'Urshifu-Gmax'],
-		onChangeSet(set) {
-			if (set.species.endsWith('-Gmax')) set.species = set.species.slice(0, -5);
-		},
-		checkLearnset(move, species, lsetData, set) {
-			if (species.name === 'Pikachu' || species.name === 'Pikachu-Gmax') {
-				if (['boltstrike', 'fusionbolt', 'pikapapow', 'zippyzap'].includes(move.id)) {
-					return null;
-				}
-			}
-			if (species.name === 'Meowth' || species.name === 'Meowth-Gmax') {
-				if (['partingshot', 'skillswap', 'wrap'].includes(move.id)) {
-					return null;
-				}
-			}
-			if (species.name === 'Eevee' || species.name === 'Eevee-Gmax') {
-				if (['iciclecrash', 'liquidation', 'sappyseed', 'sizzlyslide', 'wildcharge'].includes(move.id)) {
-					return null;
-				}
-			}
-			return this.checkLearnset(move, species, lsetData, set);
-		},
-		onModifySpecies(species) {
-			const newSpecies = this.dex.deepClone(species);
-			if (newSpecies.forme.includes('Gmax')) {
-				newSpecies.isMega = true;
-			}
-			return newSpecies;
-		},
-		onSwitchIn(pokemon) {
-			const baseSpecies = this.dex.getSpecies(pokemon.species.baseSpecies);
-			if (baseSpecies.exists && pokemon.species.name !== (pokemon.species.changesFrom || baseSpecies.name)) {
-				if (pokemon.species.types.length !== baseSpecies.types.length || pokemon.species.types[1] !== baseSpecies.types[1]) {
-					this.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
-				}
-			}
-		},
-		onAfterMega(pokemon) {
-			const baseSpecies = this.dex.getSpecies(pokemon.species.baseSpecies);
-			if (baseSpecies.exists && pokemon.species.name !== (pokemon.species.changesFrom || baseSpecies.name)) {
-				if (pokemon.species.types.length !== baseSpecies.types.length || pokemon.species.types[1] !== baseSpecies.types[1]) {
-					this.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
-				}
-			}
-		},
-	},
-	{
-		name: "[Gen 8] National Dex BH",
-		desc: `Balanced Hackmons with National Dex elements mixed in.`,
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3658587/">More Balanced Hackmons</a>`,
-		],
-
-		mod: 'gen8',
-		ruleset: ['-Nonexistent', 'Standard NatDex', 'Forme Clause', 'Sleep Clause Mod', '2 Ability Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause', 'CFZ Clause', '!Obtainable'],
-		banlist: [
-			// Pokemon
-			'Groudon-Primal', 'Rayquaza-Mega', 'Shedinja',
-			// Abilities
-			'Arena Trap', 'Contrary', 'Gorilla Tactics', 'Huge Power', 'Illusion', 'Innards Out', 'Libero', 'Magnet Pull', 'Moody',
-			'Neutralizing Gas', 'Parental Bond', 'Protean', 'Pure Power', 'Shadow Tag', 'Stakeout', 'Water Bubble', 'Wonder Guard',
-			// Items
-			'Gengarite',
-			// Moves
-			'Chatter', 'Double Iron Bash', 'Octolock',
-			// Other
-			'Comatose + Sleep Talk',
-		],
-		onValidateSet(set) {
-			if (toID(set.ability) === 'intrepidsword' &&
-				!toID(set.species).startsWith('zacian') && toID(set.item) !== 'rustedsword') {
-				return [`${set.ability} is banned.`];
-			}
-			if (set.species === 'Zacian-Crowned' && (toID(set.item) !== 'rustedsword' || toID(set.ability) !== 'intrepidsword')) {
-				return [set.species + " is banned."];
-			}
-		},
-		onChangeSet(set) {
-			const item = toID(set.item);
-			if (set.species === 'Zacian' && item === 'rustedsword') {
-				set.species = 'Zacian-Crowned';
-				set.ability = 'Intrepid Sword';
-				const ironHead = set.moves.indexOf('ironhead');
-				if (ironHead >= 0) {
-					set.moves[ironHead] = 'behemothblade';
-				}
-			}
-			if (set.species === 'Zamazenta' && item === 'rustedshield') {
-				set.species = 'Zamazenta-Crowned';
-				set.ability = 'Dauntless Shield';
-				const ironHead = set.moves.indexOf('ironhead');
-				if (ironHead >= 0) {
-					set.moves[ironHead] = 'behemothbash';
-				}
-			}
-		},
-		onValidateTeam(team) {
-			let arceus = 0;
-			for (const set of team) {
-				const species = this.dex.getSpecies(set.species);
-				if (species.baseSpecies === "Arceus") arceus++;
-			}
-			if (arceus > 1) {
-				return [`You are limited to one Arceus forme.`, `(You have ${arceus} Arceus formes.)`];
-			}
-		},
-		onBegin() {
-			if (this.rated && this.format.id === 'gen8nationaldexbh') {
-				this.add('html', '<div class="broadcast-blue"><strong>National Dex BH is currently suspecting Shell Smash! For information on how to participate check out the <a href="https://www.smogon.com/forums/posts/8534254/">suspect thread</a>.</strong></div>');
-			}
-		},
-	},
-	{
-		name: "[Gen 8] Optimons",
-		desc: `Every Pok&eacute;mon is optimized to become viable for a balanced metagame. To see the new stats of optimized Pok&eacute;mon, do <code>/dt [pokemon], optimons</code>.`,
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3657509/">Optimons</a>`,
-		],
-
-		mod: 'optimons',
-		searchShow: false,
-		ruleset: ['[Gen 8] OU'],
-		unbanlist: ['Electabuzz', 'Electivire', 'Elekid', 'Magby', 'Magmar', 'Magmortar', 'Yanma', 'Yanmega'],
-		onSwitchIn(pokemon) {
-			const baseSpecies = this.dex.mod('gen8').getSpecies(pokemon.species.name);
-			if (pokemon.species.types.length !== baseSpecies.types.length || pokemon.species.types[1] !== baseSpecies.types[1]) {
-				this.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
-			}
-		},
-	},
-	{
-		name: "[Gen 6] Gen-NEXT OU",
-
-		mod: 'gennext',
-		searchShow: false,
-		challengeShow: false,
-		ruleset: ['Obtainable', 'Standard NEXT', 'Team Preview'],
-		banlist: ['Uber'],
 	},
 
 	// Randomized Metas
@@ -2270,6 +2278,10 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		maxLevel: 9999,
 		battle: {trunc: Math.trunc},
 		defaultLevel: 100,
+		teamLength: {
+			validate: [1, 24],
+			battle: 24,
+		},
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Team Preview', 'Cancel Mod'],
 	},
@@ -2356,6 +2368,10 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		battle: {trunc: Math.trunc},
 		defaultLevel: 100,
 		debug: true,
+		teamLength: {
+			validate: [1, 24],
+			battle: 24,
+		},
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Team Preview', 'Cancel Mod'],
 	},
@@ -2386,6 +2402,10 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		battle: {trunc: Math.trunc},
 		defaultLevel: 100,
 		debug: true,
+		teamLength: {
+			validate: [1, 24],
+			battle: 24,
+		},
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Team Preview', 'Cancel Mod'],
 	},
@@ -2520,6 +2540,10 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		maxLevel: 9999,
 		battle: {trunc: Math.trunc},
 		defaultLevel: 100,
+		teamLength: {
+			validate: [1, 24],
+			battle: 24,
+		},
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Team Preview', 'Cancel Mod'],
 	},
@@ -2569,6 +2593,10 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		maxLevel: 9999,
 		battle: {trunc: Math.trunc},
 		defaultLevel: 100,
+		teamLength: {
+			validate: [1, 24],
+			battle: 24,
+		},
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Team Preview', 'Cancel Mod'],
 	},
@@ -2681,6 +2709,10 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		maxLevel: 9999,
 		battle: {trunc: Math.trunc},
 		defaultLevel: 100,
+		teamLength: {
+			validate: [1, 24],
+			battle: 24,
+		},
 		// no restrictions
 		ruleset: ['Cancel Mod'],
 	},
@@ -2713,6 +2745,10 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		maxLevel: 9999,
 		battle: {trunc: Math.trunc},
 		defaultLevel: 100,
+		teamLength: {
+			validate: [1, 24],
+			battle: 24,
+		},
 		// no restrictions
 		ruleset: ['Cancel Mod'],
 	},
@@ -2784,6 +2820,10 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		maxLevel: 9999,
 		battle: {trunc: Math.trunc},
 		defaultLevel: 100,
+		teamLength: {
+			validate: [1, 24],
+			battle: 24,
+		},
 		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
 	},
 	{
@@ -2793,6 +2833,10 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		gameType: 'doubles',
 		searchShow: false,
 		debug: true,
+		teamLength: {
+			validate: [1, 24],
+			battle: 24,
+		},
 		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
 	},
 	{
@@ -2822,6 +2866,10 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		maxLevel: 9999,
 		battle: {trunc: Math.trunc},
 		defaultLevel: 100,
+		teamLength: {
+			validate: [1, 24],
+			battle: 24,
+		},
 		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
 	},
 	{
@@ -2881,6 +2929,10 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		maxLevel: 9999,
 		battle: {trunc: Math.trunc},
 		defaultLevel: 100,
+		teamLength: {
+			validate: [1, 24],
+			battle: 24,
+		},
 		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
 	},
 ];

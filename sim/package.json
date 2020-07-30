@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/sim",
-  "version": "0.0.11",
+  "version": "0.1.0",
   "description": "An automatically generated extraction of just the simulator portion of Pokémon Showdown",
   "homepage": "https://psim.us",
   "main": "build/sim/index.js",
@@ -16,7 +16,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/sets": "^0.0.2"
+    "@pkmn/sets": "^0.0.3"
   },
   "devDependencies": {
     "mocha": "^8.0.1"

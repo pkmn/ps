@@ -135,10 +135,11 @@ describe('Sets', () => {
 
     test('tangrowth (packed in)', () => {
       const tangrowthIn = 'Tangrowth||assaultvest|H|gigadrain,knockoff' +
-          ',powerwhip,earthquake|Sassy|248,,8,,252,||,30,30,,,|||,ice,';
+          ',powerwhip,earthquake|Sassy|248,,8,,252,||,30,30,,,|||,Ice,';
       const tangrowthOut = exported(`
         Tangrowth @ Assault Vest
         Ability: Regenerator
+        Hidden Power: Ice
         EVs: 248 HP / 8 Def / 252 SpD
         Sassy Nature
         IVs: 30 Atk / 30 Def
@@ -282,8 +283,10 @@ describe('Sets', () => {
     test('bad types', () => {
       let suicune = {name: 'Suicune', pokeball: 'Cherish Ball'} as PokemonSet;
       const u = Sets.unpack(Sets.pack(suicune))!;
-      expect(Sets.exportSet(u)).toEqual(exported('Suicune'));
-      expect(Sets.exportSet(suicune)).toEqual(exported('Suicune'));
+      expect(Sets.exportSet(u)).toEqual(exported(`Suicune
+        Pokeball: cherishball`));
+      expect(Sets.exportSet(suicune)).toEqual(exported(`Suicune
+        Pokeball: Cherish Ball`));
 
       suicune = {
         name: 'Suicune',

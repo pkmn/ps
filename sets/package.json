@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/sets",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "unpkg": "build/production.min.js",
@@ -11,7 +11,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/types": "^0.1.0"
+    "@pkmn/types": "^0.1.1"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",

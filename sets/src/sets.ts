@@ -159,9 +159,10 @@ export const Sets = new class {
       buf += '|';
     }
 
-    if (s.pokeball || (s.hpType && !hasHP)) {
+    if (s.pokeball || (s.hpType && !hasHP) || s.gigantamax) {
       buf += ',' + (s.hpType || '');
       buf += ',' + toID(s.pokeball);
+      buf += ',' + (s.gigantamax ? 'G' : '');
     }
 
     return buf;
@@ -198,6 +199,15 @@ export const Sets = new class {
     if (typeof s.happiness === 'number' && s.happiness !== 255 &&
         !isNaN(s.happiness) && (!data || data.gen >= 2)) {
       buf += 'Happiness: ' + s.happiness + '  \n';
+    }
+    if (s.pokeball) {
+      buf += 'Pokeball: ' + s.pokeball + '  \n';
+    }
+    if (s.hpType) {
+      buf += 'Hidden Power: ' + s.hpType + '  \n';
+    }
+    if (s.gigantamax) {
+      buf += 'Gigantamax: Yes  \n';
     }
     let first = true;
     if (s.evs && (!data || data.gen >= 3)) {
@@ -417,15 +427,16 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   j = buf.indexOf(']', i);
   let misc;
   if (j < 0) {
-    if (i < buf.length) misc = buf.substring(i).split(',', 3);
+    if (i < buf.length) misc = buf.substring(i).split(',', 4);
   } else {
-    if (i !== j) misc = buf.substring(i, j).split(',', 3);
+    if (i !== j) misc = buf.substring(i, j).split(',', 4);
   }
 
   if (misc) {
     s.happiness = (misc[0] ? Number(misc[0]) : 255);
     s.hpType = misc[1];
     s.pokeball = misc[2] ? misc[2].trim() : misc[2];
+    s.gigantamax = !!misc[3];
   }
 
   return {set: s as PokemonSet, i, j};
@@ -481,6 +492,14 @@ export function _import(lines: string[], i = 0, data?: Data) {
     } else if (line.substr(0, 11) === 'Happiness: ') {
       line = line.substr(11);
       s.happiness = +line;
+    } else if (line.substr(0, 10) === 'Pokeball: ') {
+      line = line.substr(10);
+      s.pokeball = line;
+    } else if (line.substr(0, 14) === 'Hidden Power: ') {
+      line = line.substr(14);
+      s.hpType = line;
+    } else if (line === 'Gigantamax: Yes') {
+      s.gigantamax = true;
     } else if (line.substr(0, 5) === 'EVs: ') {
       line = line.substr(5);
       const evLines = line.split(' / ');

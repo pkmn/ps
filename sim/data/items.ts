@@ -1,4 +1,4 @@
-export const BattleItems: {[itemid: string]: ItemData} = {
+export const Items: {[itemid: string]: ItemData} = {
 	abomasite: {
 		name: "Abomasite",
 		spritenum: 575,
@@ -3601,7 +3601,7 @@ export const BattleItems: {[itemid: string]: ItemData} = {
 		onStart(pokemon) {
 			pokemon.addVolatile('metronome');
 		},
-		effect: {
+		condition: {
 			onStart(pokemon) {
 				this.effectData.numConsecutive = 0;
 				this.effectData.lastMove = '';
@@ -3687,7 +3687,7 @@ export const BattleItems: {[itemid: string]: ItemData} = {
 		onEat(pokemon) {
 			pokemon.addVolatile('micleberry');
 		},
-		effect: {
+		condition: {
 			duration: 2,
 			onSourceModifyAccuracyPriority: 3,
 			onSourceModifyAccuracy(accuracy, target, source) {

@@ -1,5 +1,6 @@
 import {
   AbilityName,
+  Condition,
   Dex,
   Effect,
   EggGroup,
@@ -13,7 +14,6 @@ import {
   MoveName,
   Nature,
   Nonstandard,
-  PureEffect,
   Species as DexSpecies,
   SpeciesAbility,
   SpeciesName,
@@ -249,7 +249,7 @@ export class Specie implements DexSpecies {
   readonly evoCondition?: string;
   readonly evoItem?: string;
   readonly evoType?: EvoType;
-  readonly effect?: Partial<PureEffect>;
+  readonly condition?: Partial<Condition>;
   readonly canHatch?: boolean;
 
   private readonly dex: Dex;
@@ -615,7 +615,7 @@ export {
   EffectData,
   HitEffect,
   SecondaryEffect,
-  PureEffectData,
+  ConditionData,
   AbilityData,
   ItemData,
   MoveData,
@@ -626,7 +626,7 @@ export {
   TypeData,
   NatureData,
   BasicEffect,
-  PureEffect,
+  Condition,
   Ability,
   Item,
   Move,

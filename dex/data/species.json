@@ -2748,8 +2748,9 @@
       "prevo": "Ivysaur",
       "evoLevel": 32,
       "eggGroups": ["Monster", "Grass"],
-      "otherFormes": ["Venusaur-Mega", "Venusaur-Gmax"],
-      "formeOrder": ["Venusaur", "Venusaur-Mega", "Venusaur-Gmax"]
+      "otherFormes": ["Venusaur-Mega"],
+      "formeOrder": ["Venusaur", "Venusaur-Mega"],
+      "canGigantamax": "G-Max Vine Lash"
     },
     "venusaurmega": {
       "num": 3,
@@ -2789,7 +2790,7 @@
       "abilities": {"0": "Overgrow", "H": "Chlorophyll"},
       "weightkg": 0,
       "eggGroups": ["Monster", "Grass"],
-      "isGigantamax": "G-Max Vine Lash"
+      "changesFrom": "Venusaur"
     },
     "charmander": {
       "num": 4,
@@ -2847,13 +2848,9 @@
       "prevo": "Charmeleon",
       "evoLevel": 36,
       "eggGroups": ["Monster", "Dragon"],
-      "otherFormes": ["Charizard-Mega-X", "Charizard-Mega-Y", "Charizard-Gmax"],
-      "formeOrder": [
-        "Charizard",
-        "Charizard-Mega-X",
-        "Charizard-Mega-Y",
-        "Charizard-Gmax"
-      ]
+      "otherFormes": ["Charizard-Mega-X", "Charizard-Mega-Y"],
+      "formeOrder": ["Charizard", "Charizard-Mega-X", "Charizard-Mega-Y"],
+      "canGigantamax": "G-Max Wildfire"
     },
     "charizardmegax": {
       "num": 6,
@@ -2912,8 +2909,7 @@
       },
       "abilities": {"0": "Blaze", "H": "Solar Power"},
       "weightkg": 0,
-      "eggGroups": ["Monster", "Dragon"],
-      "isGigantamax": "G-Max Wildfire"
+      "eggGroups": ["Monster", "Dragon"]
     },
     "squirtle": {
       "num": 7,
@@ -2971,8 +2967,9 @@
       "prevo": "Wartortle",
       "evoLevel": 36,
       "eggGroups": ["Monster", "Water 1"],
-      "otherFormes": ["Blastoise-Mega", "Blastoise-Gmax"],
-      "formeOrder": ["Blastoise", "Blastoise-Mega", "Blastoise-Gmax"]
+      "otherFormes": ["Blastoise-Mega"],
+      "formeOrder": ["Blastoise", "Blastoise-Mega"],
+      "canGigantamax": "G-Max Cannonade"
     },
     "blastoisemega": {
       "num": 9,
@@ -3011,8 +3008,7 @@
       },
       "abilities": {"0": "Torrent", "H": "Rain Dish"},
       "weightkg": 0,
-      "eggGroups": ["Monster", "Water 1"],
-      "isGigantamax": "G-Max Cannonade"
+      "eggGroups": ["Monster", "Water 1"]
     },
     "caterpie": {
       "num": 10,
@@ -3067,8 +3063,7 @@
       "prevo": "Metapod",
       "evoLevel": 10,
       "eggGroups": ["Bug"],
-      "otherFormes": ["Butterfree-Gmax"],
-      "formeOrder": ["Butterfree", "Butterfree-Gmax"]
+      "canGigantamax": "G-Max Befuddle"
     },
     "butterfreegmax": {
       "num": 12,
@@ -3086,8 +3081,7 @@
       },
       "abilities": {"0": "Compound Eyes", "H": "Tinted Lens"},
       "weightkg": 0,
-      "eggGroups": ["Bug"],
-      "isGigantamax": "G-Max Befuddle"
+      "eggGroups": ["Bug"]
     },
     "weedle": {
       "num": 13,
@@ -3438,7 +3432,6 @@
         "Pikachu-Alola",
         "Pikachu-Partner",
         "Pikachu-Starter",
-        "Pikachu-Gmax",
         "Pikachu-World"
       ],
       "formeOrder": [
@@ -3457,9 +3450,9 @@
         "Pikachu-Pop-Star",
         "Pikachu-PhD",
         "Pikachu-Libre",
-        "Pikachu-Cosplay",
-        "Pikachu-Gmax"
-      ]
+        "Pikachu-Cosplay"
+      ],
+      "canGigantamax": "G-Max Volt Crash"
     },
     "pikachucosplay": {
       "num": 25,
@@ -3760,8 +3753,7 @@
       },
       "abilities": {"0": "Static", "H": "Lightning Rod"},
       "weightkg": 0,
-      "eggGroups": ["Field", "Fairy"],
-      "isGigantamax": "G-Max Volt Crash"
+      "eggGroups": ["Field", "Fairy"]
     },
     "pikachuworld": {
       "num": 25,
@@ -4439,8 +4431,9 @@
       "weightkg": 4.2,
       "evos": ["Persian"],
       "eggGroups": ["Field"],
-      "otherFormes": ["Meowth-Alola", "Meowth-Galar", "Meowth-Gmax"],
-      "formeOrder": ["Meowth", "Meowth-Alola", "Meowth-Galar", "Meowth-Gmax"]
+      "otherFormes": ["Meowth-Alola", "Meowth-Galar"],
+      "formeOrder": ["Meowth", "Meowth-Alola", "Meowth-Galar"],
+      "canGigantamax": "G-Max Gold Rush"
     },
     "meowthalola": {
       "num": 52,
@@ -4496,8 +4489,7 @@
       },
       "abilities": {"0": "Pickup", "1": "Technician", "H": "Unnerve"},
       "weightkg": 0,
-      "eggGroups": ["Field"],
-      "isGigantamax": "G-Max Gold Rush"
+      "eggGroups": ["Field"]
     },
     "persian": {
       "num": 53,
@@ -4837,8 +4829,7 @@
       "prevo": "Machoke",
       "evoType": "trade",
       "eggGroups": ["Human-Like"],
-      "otherFormes": ["Machamp-Gmax"],
-      "formeOrder": ["Machamp", "Machamp-Gmax"]
+      "canGigantamax": "G-Max Chi Strike"
     },
     "machampgmax": {
       "num": 68,
@@ -4857,8 +4848,7 @@
       },
       "abilities": {"0": "Guts", "1": "No Guard", "H": "Steadfast"},
       "weightkg": 0,
-      "eggGroups": ["Human-Like"],
-      "isGigantamax": "G-Max Chi Strike"
+      "eggGroups": ["Human-Like"]
     },
     "bellsprout": {
       "num": 69,
@@ -5566,8 +5556,9 @@
       "prevo": "Haunter",
       "evoType": "trade",
       "eggGroups": ["Amorphous"],
-      "otherFormes": ["Gengar-Mega", "Gengar-Gmax"],
-      "formeOrder": ["Gengar", "Gengar-Mega", "Gengar-Gmax"]
+      "otherFormes": ["Gengar-Mega"],
+      "formeOrder": ["Gengar", "Gengar-Mega"],
+      "canGigantamax": "G-Max Terror"
     },
     "gengarmega": {
       "num": 94,
@@ -5604,8 +5595,7 @@
       },
       "abilities": {"0": "Cursed Body"},
       "weightkg": 0,
-      "eggGroups": ["Amorphous"],
-      "isGigantamax": "G-Max Terror"
+      "eggGroups": ["Amorphous"]
     },
     "onix": {
       "num": 95,
@@ -5701,8 +5691,7 @@
       "prevo": "Krabby",
       "evoLevel": 28,
       "eggGroups": ["Water 3"],
-      "otherFormes": ["Kingler-Gmax"],
-      "formeOrder": ["Kingler", "Kingler-Gmax"]
+      "canGigantamax": "G-Max Foam Burst"
     },
     "kinglergmax": {
       "num": 99,
@@ -5724,8 +5713,7 @@
         "H": "Sheer Force"
       },
       "weightkg": 0,
-      "eggGroups": ["Water 3"],
-      "isGigantamax": "G-Max Foam Burst"
+      "eggGroups": ["Water 3"]
     },
     "voltorb": {
       "num": 100,
@@ -6498,8 +6486,7 @@
       "abilities": {"0": "Water Absorb", "1": "Shell Armor", "H": "Hydration"},
       "weightkg": 220,
       "eggGroups": ["Monster", "Water 1"],
-      "otherFormes": ["Lapras-Gmax"],
-      "formeOrder": ["Lapras", "Lapras-Gmax"]
+      "canGigantamax": "G-Max Resonance"
     },
     "laprasgmax": {
       "num": 131,
@@ -6517,8 +6504,7 @@
       },
       "abilities": {"0": "Water Absorb", "1": "Shell Armor", "H": "Hydration"},
       "weightkg": 0,
-      "eggGroups": ["Monster", "Water 1"],
-      "isGigantamax": "G-Max Resonance"
+      "eggGroups": ["Monster", "Water 1"]
     },
     "ditto": {
       "num": 132,
@@ -6563,8 +6549,9 @@
         "Sylveon"
       ],
       "eggGroups": ["Field"],
-      "otherFormes": ["Eevee-Starter", "Eevee-Gmax"],
-      "formeOrder": ["Eevee", "Eevee-Starter", "Eevee-Gmax"]
+      "otherFormes": ["Eevee-Starter"],
+      "formeOrder": ["Eevee", "Eevee-Starter"],
+      "canGigantamax": "G-Max Cuddle"
     },
     "eeveestarter": {
       "num": 133,
@@ -6602,8 +6589,7 @@
       },
       "abilities": {"0": "Run Away", "1": "Adaptability", "H": "Anticipation"},
       "weightkg": 0,
-      "eggGroups": ["Field"],
-      "isGigantamax": "G-Max Cuddle"
+      "eggGroups": ["Field"]
     },
     "vaporeon": {
       "num": 134,
@@ -6815,8 +6801,7 @@
       "evoType": "levelFriendship",
       "eggGroups": ["Monster"],
       "canHatch": true,
-      "otherFormes": ["Snorlax-Gmax"],
-      "formeOrder": ["Snorlax", "Snorlax-Gmax"]
+      "canGigantamax": "G-Max Replenish"
     },
     "snorlaxgmax": {
       "num": 143,
@@ -6835,8 +6820,7 @@
       },
       "abilities": {"0": "Immunity", "1": "Thick Fat", "H": "Gluttony"},
       "weightkg": 0,
-      "eggGroups": ["Monster"],
-      "isGigantamax": "G-Max Replenish"
+      "eggGroups": ["Monster"]
     },
     "articuno": {
       "num": 144,
@@ -16342,8 +16326,7 @@
       "prevo": "Trubbish",
       "evoLevel": 36,
       "eggGroups": ["Mineral"],
-      "otherFormes": ["Garbodor-Gmax"],
-      "formeOrder": ["Garbodor", "Garbodor-Gmax"]
+      "canGigantamax": "G-Max Malodor"
     },
     "garbodorgmax": {
       "num": 569,
@@ -16361,8 +16344,7 @@
       },
       "abilities": {"0": "Stench", "1": "Weak Armor", "H": "Aftermath"},
       "weightkg": 0,
-      "eggGroups": ["Mineral"],
-      "isGigantamax": "G-Max Malodor"
+      "eggGroups": ["Mineral"]
     },
     "zorua": {
       "num": 570,
@@ -22346,8 +22328,7 @@
       "abilities": {"0": "Iron Fist"},
       "weightkg": 800,
       "eggGroups": ["Undiscovered"],
-      "otherFormes": ["Melmetal-Gmax"],
-      "formeOrder": ["Melmetal", "Melmetal-Gmax"]
+      "canGigantamax": "G-Max Meltdown"
     },
     "melmetalgmax": {
       "num": 809,
@@ -22366,8 +22347,7 @@
       },
       "abilities": {"0": "Iron Fist"},
       "weightkg": 0,
-      "eggGroups": ["Undiscovered"],
-      "isGigantamax": "G-Max Meltdown"
+      "eggGroups": ["Undiscovered"]
     },
     "grookey": {
       "num": 810,
@@ -22425,8 +22405,7 @@
       "prevo": "Thwackey",
       "evoLevel": 35,
       "eggGroups": ["Field", "Grass"],
-      "otherFormes": ["Rillaboom-Gmax"],
-      "formeOrder": ["Rillaboom", "Rillaboom-Gmax"]
+      "canGigantamax": "G-Max Drum Solo"
     },
     "rillaboomgmax": {
       "num": 812,
@@ -22445,8 +22424,7 @@
       },
       "abilities": {"0": "Overgrow", "H": "Grassy Surge"},
       "weightkg": 0,
-      "eggGroups": ["Field", "Grass"],
-      "isGigantamax": "G-Max Drum Solo"
+      "eggGroups": ["Field", "Grass"]
     },
     "scorbunny": {
       "num": 813,
@@ -22504,8 +22482,7 @@
       "prevo": "Raboot",
       "evoLevel": 35,
       "eggGroups": ["Field", "Human-Like"],
-      "otherFormes": ["Cinderace-Gmax"],
-      "formeOrder": ["Cinderace", "Cinderace-Gmax"]
+      "canGigantamax": "G-Max Fireball"
     },
     "cinderacegmax": {
       "num": 815,
@@ -22524,8 +22501,7 @@
       },
       "abilities": {"0": "Blaze", "H": "Libero"},
       "weightkg": 0,
-      "eggGroups": ["Field", "Human-Like"],
-      "isGigantamax": "G-Max Fireball"
+      "eggGroups": ["Field", "Human-Like"]
     },
     "sobble": {
       "num": 816,
@@ -22583,8 +22559,7 @@
       "prevo": "Drizzile",
       "evoLevel": 35,
       "eggGroups": ["Water 1", "Field"],
-      "otherFormes": ["Inteleon-Gmax"],
-      "formeOrder": ["Inteleon", "Inteleon-Gmax"]
+      "canGigantamax": "G-Max Hydrosnipe"
     },
     "inteleongmax": {
       "num": 818,
@@ -22603,8 +22578,7 @@
       },
       "abilities": {"0": "Torrent", "H": "Sniper"},
       "weightkg": 0,
-      "eggGroups": ["Water 1", "Field"],
-      "isGigantamax": "G-Max Hydrosnipe"
+      "eggGroups": ["Water 1", "Field"]
     },
     "skwovet": {
       "num": 819,
@@ -22694,8 +22668,7 @@
       "prevo": "Corvisquire",
       "evoLevel": 38,
       "eggGroups": ["Flying"],
-      "otherFormes": ["Corviknight-Gmax"],
-      "formeOrder": ["Corviknight", "Corviknight-Gmax"]
+      "canGigantamax": "G-Max Wind Rage"
     },
     "corviknightgmax": {
       "num": 823,
@@ -22713,8 +22686,7 @@
       },
       "abilities": {"0": "Pressure", "1": "Unnerve", "H": "Mirror Armor"},
       "weightkg": 0,
-      "eggGroups": ["Flying"],
-      "isGigantamax": "G-Max Wind Rage"
+      "eggGroups": ["Flying"]
     },
     "blipbug": {
       "num": 824,
@@ -22769,8 +22741,7 @@
       "prevo": "Dottler",
       "evoLevel": 30,
       "eggGroups": ["Bug"],
-      "otherFormes": ["Orbeetle-Gmax"],
-      "formeOrder": ["Orbeetle", "Orbeetle-Gmax"]
+      "canGigantamax": "G-Max Gravitas"
     },
     "orbeetlegmax": {
       "num": 826,
@@ -22788,8 +22759,7 @@
       },
       "abilities": {"0": "Swarm", "1": "Frisk", "H": "Telepathy"},
       "weightkg": 0,
-      "eggGroups": ["Bug"],
-      "isGigantamax": "G-Max Gravitas"
+      "eggGroups": ["Bug"]
     },
     "nickit": {
       "num": 827,
@@ -22938,8 +22908,7 @@
       "prevo": "Chewtle",
       "evoLevel": 22,
       "eggGroups": ["Monster", "Water 1"],
-      "otherFormes": ["Drednaw-Gmax"],
-      "formeOrder": ["Drednaw", "Drednaw-Gmax"]
+      "canGigantamax": "G-Max Stonesurge"
     },
     "drednawgmax": {
       "num": 834,
@@ -22957,8 +22926,7 @@
       },
       "abilities": {"0": "Strong Jaw", "1": "Shell Armor", "H": "Swift Swim"},
       "weightkg": 0,
-      "eggGroups": ["Monster", "Water 1"],
-      "isGigantamax": "G-Max Stonesurge"
+      "eggGroups": ["Monster", "Water 1"]
     },
     "yamper": {
       "num": 835,
@@ -23048,8 +23016,7 @@
       "prevo": "Carkol",
       "evoLevel": 34,
       "eggGroups": ["Mineral"],
-      "otherFormes": ["Coalossal-Gmax"],
-      "formeOrder": ["Coalossal", "Coalossal-Gmax"]
+      "canGigantamax": "G-Max Volcalith"
     },
     "coalossalgmax": {
       "num": 839,
@@ -23067,8 +23034,7 @@
       },
       "abilities": {"0": "Steam Engine", "1": "Flame Body", "H": "Flash Fire"},
       "weightkg": 0,
-      "eggGroups": ["Mineral"],
-      "isGigantamax": "G-Max Volcalith"
+      "eggGroups": ["Mineral"]
     },
     "applin": {
       "num": 840,
@@ -23105,8 +23071,7 @@
       "evoType": "useItem",
       "evoItem": "Tart Apple",
       "eggGroups": ["Grass", "Dragon"],
-      "otherFormes": ["Flapple-Gmax"],
-      "formeOrder": ["Flapple", "Flapple-Gmax"]
+      "canGigantamax": "G-Max Tartness"
     },
     "flapplegmax": {
       "num": 841,
@@ -23124,8 +23089,7 @@
       },
       "abilities": {"0": "Ripen", "1": "Gluttony", "H": "Hustle"},
       "weightkg": 0,
-      "eggGroups": ["Grass", "Dragon"],
-      "isGigantamax": "G-Max Tartness"
+      "eggGroups": ["Grass", "Dragon"]
     },
     "appletun": {
       "num": 842,
@@ -23145,8 +23109,7 @@
       "evoType": "useItem",
       "evoItem": "Sweet Apple",
       "eggGroups": ["Grass", "Dragon"],
-      "otherFormes": ["Appletun-Gmax"],
-      "formeOrder": ["Appletun", "Appletun-Gmax"]
+      "canGigantamax": "G-Max Sweetness"
     },
     "appletungmax": {
       "num": 842,
@@ -23164,8 +23127,7 @@
       },
       "abilities": {"0": "Ripen", "1": "Gluttony", "H": "Thick Fat"},
       "weightkg": 0,
-      "eggGroups": ["Grass", "Dragon"],
-      "isGigantamax": "G-Max Sweetness"
+      "eggGroups": ["Grass", "Dragon"]
     },
     "silicobra": {
       "num": 843,
@@ -23201,8 +23163,7 @@
       "prevo": "Silicobra",
       "evoLevel": 36,
       "eggGroups": ["Field", "Dragon"],
-      "otherFormes": ["Sandaconda-Gmax"],
-      "formeOrder": ["Sandaconda", "Sandaconda-Gmax"]
+      "canGigantamax": "G-Max Sandblast"
     },
     "sandacondagmax": {
       "num": 844,
@@ -23220,8 +23181,7 @@
       },
       "abilities": {"0": "Sand Spit", "1": "Shed Skin", "H": "Sand Veil"},
       "weightkg": 0,
-      "eggGroups": ["Field", "Dragon"],
-      "isGigantamax": "G-Max Sandblast"
+      "eggGroups": ["Field", "Dragon"]
     },
     "cramorant": {
       "num": 845,
@@ -23351,17 +23311,9 @@
       "prevo": "Toxel",
       "evoLevel": 30,
       "eggGroups": ["Human-Like"],
-      "otherFormes": [
-        "Toxtricity-Low-Key",
-        "Toxtricity-Gmax",
-        "Toxtricity-Low-Key-Gmax"
-      ],
-      "formeOrder": [
-        "Toxtricity",
-        "Toxtricity-Low-Key",
-        "Toxtricity-Gmax",
-        "Toxtricity-Low-Key-Gmax"
-      ]
+      "otherFormes": ["Toxtricity-Low-Key"],
+      "formeOrder": ["Toxtricity", "Toxtricity-Low-Key"],
+      "canGigantamax": "G-Max Stun Shock"
     },
     "toxtricitylowkey": {
       "num": 849,
@@ -23381,7 +23333,8 @@
       "weightkg": 40,
       "prevo": "Toxel",
       "evoLevel": 30,
-      "eggGroups": ["Human-Like"]
+      "eggGroups": ["Human-Like"],
+      "canGigantamax": "G-Max Stun Shock"
     },
     "toxtricitygmax": {
       "num": 849,
@@ -23399,8 +23352,7 @@
       },
       "abilities": {"0": "Punk Rock", "1": "Plus", "H": "Technician"},
       "weightkg": 0,
-      "eggGroups": ["Human-Like"],
-      "isGigantamax": "G-Max Stun Shock"
+      "eggGroups": ["Human-Like"]
     },
     "toxtricitylowkeygmax": {
       "num": 849,
@@ -23419,7 +23371,6 @@
       "abilities": {"0": "Punk Rock", "1": "Minus", "H": "Technician"},
       "weightkg": 0,
       "eggGroups": ["Human-Like"],
-      "isGigantamax": "G-Max Stun Shock",
       "battleOnly": "Toxtricity-Low-Key"
     },
     "sizzlipede": {
@@ -23456,8 +23407,7 @@
       "prevo": "Sizzlipede",
       "evoLevel": 28,
       "eggGroups": ["Bug"],
-      "otherFormes": ["Centiskorch-Gmax"],
-      "formeOrder": ["Centiskorch", "Centiskorch-Gmax"]
+      "canGigantamax": "G-Max Centiferno"
     },
     "centiskorchgmax": {
       "num": 851,
@@ -23475,8 +23425,7 @@
       },
       "abilities": {"0": "Flash Fire", "1": "White Smoke", "H": "Flame Body"},
       "weightkg": 0,
-      "eggGroups": ["Bug"],
-      "isGigantamax": "G-Max Centiferno"
+      "eggGroups": ["Bug"]
     },
     "clobbopus": {
       "num": 852,
@@ -23658,8 +23607,7 @@
       "prevo": "Hattrem",
       "evoLevel": 42,
       "eggGroups": ["Fairy"],
-      "otherFormes": ["Hatterene-Gmax"],
-      "formeOrder": ["Hatterene", "Hatterene-Gmax"]
+      "canGigantamax": "G-Max Smite"
     },
     "hatterenegmax": {
       "num": 858,
@@ -23678,8 +23626,7 @@
       },
       "abilities": {"0": "Healer", "1": "Anticipation", "H": "Magic Bounce"},
       "weightkg": 0,
-      "eggGroups": ["Fairy"],
-      "isGigantamax": "G-Max Smite"
+      "eggGroups": ["Fairy"]
     },
     "impidimp": {
       "num": 859,
@@ -23737,8 +23684,7 @@
       "prevo": "Morgrem",
       "evoLevel": 42,
       "eggGroups": ["Fairy", "Human-Like"],
-      "otherFormes": ["Grimmsnarl-Gmax"],
-      "formeOrder": ["Grimmsnarl", "Grimmsnarl-Gmax"]
+      "canGigantamax": "G-Max Snooze"
     },
     "grimmsnarlgmax": {
       "num": 861,
@@ -23757,8 +23703,7 @@
       },
       "abilities": {"0": "Prankster", "1": "Frisk", "H": "Pickpocket"},
       "weightkg": 0,
-      "eggGroups": ["Fairy", "Human-Like"],
-      "isGigantamax": "G-Max Snooze"
+      "eggGroups": ["Fairy", "Human-Like"]
     },
     "obstagoon": {
       "num": 862,
@@ -23918,7 +23863,6 @@
       "evoType": "other",
       "evoCondition": "spin while holding a Sweet",
       "eggGroups": ["Fairy", "Amorphous"],
-      "otherFormes": ["Alcremie-Gmax"],
       "cosmeticFormes": [
         "Alcremie-Ruby-Cream",
         "Alcremie-Matcha-Cream",
@@ -23938,9 +23882,9 @@
         "Alcremie-Salted-Cream",
         "Alcremie-Ruby-Swirl",
         "Alcremie-Caramel-Swirl",
-        "Alcremie-Rainbow-Swirl",
-        "Alcremie-Gmax"
-      ]
+        "Alcremie-Rainbow-Swirl"
+      ],
+      "canGigantamax": "G-Max Finale"
     },
     "alcremiegmax": {
       "num": 869,
@@ -23959,8 +23903,7 @@
       },
       "abilities": {"0": "Sweet Veil", "H": "Aroma Veil"},
       "weightkg": 0,
-      "eggGroups": ["Fairy", "Amorphous"],
-      "isGigantamax": "G-Max Finale"
+      "eggGroups": ["Fairy", "Amorphous"]
     },
     "falinks": {
       "num": 870,
@@ -24200,8 +24143,7 @@
       "prevo": "Cufant",
       "evoLevel": 34,
       "eggGroups": ["Field", "Mineral"],
-      "otherFormes": ["Copperajah-Gmax"],
-      "formeOrder": ["Copperajah", "Copperajah-Gmax"]
+      "canGigantamax": "G-Max Steelsurge"
     },
     "copperajahgmax": {
       "num": 879,
@@ -24219,8 +24161,7 @@
       },
       "abilities": {"0": "Sheer Force", "H": "Heavy Metal"},
       "weightkg": 0,
-      "eggGroups": ["Field", "Mineral"],
-      "isGigantamax": "G-Max Steelsurge"
+      "eggGroups": ["Field", "Mineral"]
     },
     "dracozolt": {
       "num": 880,
@@ -24309,8 +24250,7 @@
       "abilities": {"0": "Light Metal", "1": "Heavy Metal", "H": "Stalwart"},
       "weightkg": 40,
       "eggGroups": ["Mineral", "Dragon"],
-      "otherFormes": ["Duraludon-Gmax"],
-      "formeOrder": ["Duraludon", "Duraludon-Gmax"]
+      "canGigantamax": "G-Max Depletion"
     },
     "duraludongmax": {
       "num": 884,
@@ -24328,8 +24268,7 @@
       },
       "abilities": {"0": "Light Metal", "1": "Heavy Metal", "H": "Stalwart"},
       "weightkg": 0,
-      "eggGroups": ["Mineral", "Dragon"],
-      "isGigantamax": "G-Max Depletion"
+      "eggGroups": ["Mineral", "Dragon"]
     },
     "dreepy": {
       "num": 885,
@@ -24402,7 +24341,8 @@
       "weightkg": 110,
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Zacian-Crowned"],
-      "formeOrder": ["Zacian", "Zacian-Crowned"]
+      "formeOrder": ["Zacian", "Zacian-Crowned"],
+      "cannotDynamax": true
     },
     "zaciancrowned": {
       "num": 888,
@@ -24423,7 +24363,8 @@
       "weightkg": 355,
       "eggGroups": ["Undiscovered"],
       "requiredItem": "Rusted Sword",
-      "changesFrom": "Zacian"
+      "changesFrom": "Zacian",
+      "cannotDynamax": true
     },
     "zamazenta": {
       "num": 889,
@@ -24442,7 +24383,8 @@
       "weightkg": 210,
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Zamazenta-Crowned"],
-      "formeOrder": ["Zamazenta", "Zamazenta-Crowned"]
+      "formeOrder": ["Zamazenta", "Zamazenta-Crowned"],
+      "cannotDynamax": true
     },
     "zamazentacrowned": {
       "num": 889,
@@ -24463,7 +24405,8 @@
       "weightkg": 785,
       "eggGroups": ["Undiscovered"],
       "requiredItem": "Rusted Shield",
-      "changesFrom": "Zamazenta"
+      "changesFrom": "Zamazenta",
+      "cannotDynamax": true
     },
     "eternatus": {
       "num": 890,
@@ -24482,7 +24425,8 @@
       "weightkg": 950,
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Eternatus-Eternamax"],
-      "formeOrder": ["Eternatus", "Eternatus-Eternamax"]
+      "formeOrder": ["Eternatus", "Eternatus-Eternamax"],
+      "cannotDynamax": true
     },
     "eternatuseternamax": {
       "num": 890,
@@ -24501,7 +24445,8 @@
       },
       "abilities": {"0": "Pressure"},
       "weightkg": 0,
-      "eggGroups": ["Undiscovered"]
+      "eggGroups": ["Undiscovered"],
+      "cannotDynamax": true
     },
     "kubfu": {
       "num": 891,
@@ -24541,17 +24486,9 @@
       "evoType": "other",
       "evoCondition": "Defeat the Single Strike Tower",
       "eggGroups": ["Undiscovered"],
-      "otherFormes": [
-        "Urshifu-Rapid-Strike",
-        "Urshifu-Gmax",
-        "Urshifu-Rapid-Strike-Gmax"
-      ],
-      "formeOrder": [
-        "Urshifu",
-        "Urshifu-Gmax",
-        "Urshifu-Rapid-Strike",
-        "Urshifu-Rapid-Strike-Gmax"
-      ]
+      "otherFormes": ["Urshifu-Rapid-Strike"],
+      "formeOrder": ["Urshifu", "Urshifu-Rapid-Strike"],
+      "canGigantamax": "G-Max One Blow"
     },
     "urshifurapidstrike": {
       "num": 892,
@@ -24573,7 +24510,8 @@
       "prevo": "Kubfu",
       "evoType": "other",
       "evoCondition": "Defeat the Rapid Strike Tower",
-      "eggGroups": ["Undiscovered"]
+      "eggGroups": ["Undiscovered"],
+      "canGigantamax": "G-Max Rapid Flow"
     },
     "urshifugmax": {
       "num": 892,
@@ -24592,8 +24530,7 @@
       },
       "abilities": {"0": "Unseen Fist"},
       "weightkg": 0,
-      "eggGroups": ["Undiscovered"],
-      "isGigantamax": "G-Max One Blow"
+      "eggGroups": ["Undiscovered"]
     },
     "urshifurapidstrikegmax": {
       "num": 892,
@@ -24613,7 +24550,6 @@
       "abilities": {"0": "Unseen Fist"},
       "weightkg": 105,
       "eggGroups": ["Undiscovered"],
-      "isGigantamax": "G-Max Rapid Flow",
       "battleOnly": "Urshifu-Rapid-Strike"
     },
     "zarude": {
@@ -24918,7 +24854,7 @@
     "kitsunoh": {
       "num": -14,
       "name": "Kitsunoh",
-      "types": ["Steel", "Ghost"],
+      "types": ["Ghost", "Steel"],
       "baseStats": {
         "hp": 80,
         "atk": 103,
@@ -25707,6 +25643,25 @@
       "eggGroups": ["Water 1", "Fairy"],
       "gen": 7
     },
+    "justyke": {
+      "num": -54,
+      "name": "Justyke",
+      "types": ["Steel", "Ground"],
+      "gender": "N",
+      "baseStats": {
+        "hp": 72,
+        "atk": 70,
+        "def": 56,
+        "spa": 83,
+        "spd": 68,
+        "spe": 30
+      },
+      "abilities": {"0": "Levitate", "1": "Bulletproof", "H": "Justified"},
+      "weightkg": 36.5,
+      "evos": ["Equilibra"],
+      "eggGroups": ["Mineral"],
+      "gen": 7
+    },
     "equilibra": {
       "num": -55,
       "name": "Equilibra",
@@ -25722,8 +25677,28 @@
       },
       "abilities": {"0": "Levitate", "1": "Bulletproof", "H": "Justified"},
       "weightkg": 51.3,
+      "prevo": "Justyke",
+      "evoLevel": 32,
       "eggGroups": ["Mineral"],
       "gen": 7
+    },
+    "solotl": {
+      "num": -56,
+      "name": "Solotl",
+      "types": ["Fire", "Dragon"],
+      "baseStats": {
+        "hp": 68,
+        "atk": 48,
+        "def": 34,
+        "spa": 72,
+        "spd": 24,
+        "spe": 84
+      },
+      "abilities": {"0": "Regenerator", "1": "Vital Spirit", "H": "Magician"},
+      "weightkg": 11.8,
+      "evos": ["Astrolotl"],
+      "eggGroups": ["Dragon", "Fairy"],
+      "gen": 8
     },
     "astrolotl": {
       "num": -57,
@@ -25739,6 +25714,8 @@
       },
       "abilities": {"0": "Regenerator", "1": "Vital Spirit", "H": "Magician"},
       "weightkg": 50,
+      "prevo": "Solotl",
+      "evoLevel": 36,
       "eggGroups": ["Dragon", "Fairy"],
       "gen": 8
     },

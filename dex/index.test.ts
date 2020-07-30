@@ -23,8 +23,8 @@ describe('Dex', () => {
       expect(Dex.getEffect('item: Metronome').name).toBe('Metronome');
       expect(Dex.getEffect('item: Metronome').effectType).toBe('Item');
 
-      // Falls back to PureEffect
-      expect(Dex.getEffect('Metronome').effectType).toBe('Effect');
+      // Falls back to Condition
+      expect(Dex.getEffect('Metronome').effectType).toBe('Condition');
     });
   });
 
@@ -230,7 +230,7 @@ describe('Dex', () => {
       for (let gen = 1; gen <= 7; gen++) {
         expect(counts(gen as GenerationNum)).toEqual(total += COUNTS[gen - 1]);
       }
-      expect(counts(8)).toBe(624 + 41);
+      expect(counts(8)).toBe(624 + 41 - /* GMax */ 33);
     });
 
     test('cached', () => {
@@ -307,16 +307,17 @@ describe('Dex', () => {
       // Mimikyu (1) + Necrozma (3) [Magearna (1) + LGPE Starters/Meltan/Melmetal (4)]
       formes += 18 + 12 + 7 - 6 + 1 + 2 + 3 + 1 + 2 + 1 + 17 + 1 + 1 + 3 - 1; // FIXME Rockruff
       expect(counts(7)).toEqual({species: 807, formes});
-      // GMax (26) + Silvally (17) + Rotom (5) + Basculin (1) + Meowstic (1) +
+      // Silvally (17) + Rotom (5) + Basculin (1) + Meowstic (1) +
       // Aegislash (1) + Pumpkaboo (3) + Gourgeist (3) + Pikachu (7) + Galar (14) +
       // Alola (8) + Indeedee (1) + Morpeko (1) + Eiscue (1) + Zacian/Zamazenta (2) +
       // Toxtricity (1) + Cramorant (2) + Necrozma (2) + Mimikyu (2) + Wishiwashi (1) +
       // Keldeo (1) + Kyruem (2) + Darmanitan (2) + Cherrim (1)
-      // {DLC} GMax (7) + Alola (4) + Galar (1) + Magearna (1) + Urshifu (1) +
+      // {DLC} Alola (4) + Galar (1) + Magearna (1) + Urshifu (1) +
       // Rockruff (1) + Lycanroc (2) + [Pikachu (1) + Zarude (2)]
-      formes = 26 + 17 + 5 + 1 + 1 + 1 + 3 + 3 + 7 + 14 + 8 +
+      // {GMax} 26 + 7
+      formes = 17 + 5 + 1 + 1 + 1 + 3 + 3 + 7 + 14 + 8 +
         1 + 1 + 1 + 2 + 1 + 2 + 2 + 2 + 1 + 1 + 2 + 2 + 1 +
-        7 + 4 + 1 + 1 + 1 + 1 + 2 - 1; // FIXME Rockruff
+        4 + 1 + 1 + 1 + 1 + 2 - 1; // FIXME Rockruff
       expect(counts(8)).toEqual({species: 539, formes});
     });
 
@@ -350,7 +351,7 @@ describe('Dex', () => {
       expect(Dex.getSpecies('Giratina').baseForme).toBe('Altered');
       expect(Dex.getSpecies('Shaymin').otherFormes).toEqual(['Shaymin-Sky']);
       expect(Dex.forGen(7).getSpecies('Charizard').otherFormes)
-        .toEqual(['Charizard-Mega-X', 'Charizard-Mega-Y', 'Charizard-Gmax']); // sigh
+        .toEqual(['Charizard-Mega-X', 'Charizard-Mega-Y']);
       expect(Dex.getSpecies('Gastrodon').cosmeticFormes).toEqual(['Gastrodon-East']);
       expect(Dex.getSpecies('Garchomp-Mega').isMega).toBe(true);
       expect(Dex.getSpecies('Yanmega').isMega).not.toBeDefined();

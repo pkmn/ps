@@ -99,19 +99,19 @@ const IMPORTS = {
   ],
   'sim/dex-data.ts': [
     'ID', 'EffectData', 'EffectType', 'Nonstandard', 'AnyObject', 'GameTimerSettings',
-    'FormatsData', 'GameType', 'Battle', 'PureEffectData', 'ItemData', 'FlingData', 'AbilityData',
+    'FormatsData', 'GameType', 'Battle', 'ConditionData', 'ItemData', 'FlingData', 'AbilityData',
     'MoveSource', 'EventInfo', 'SpeciesData', 'SpeciesFormatsData', 'SpeciesAbility',
     'GenderName', 'StatsTable', 'RandomTeamsTypes', 'MoveData', 'SecondaryEffect', 'MoveTarget',
     'TypeData', 'SparseStatsTable', 'SparseBoostsTable',
   ],
-  'sim/field.ts': ['Effect', 'PureEffect', 'Pokemon', 'Battle', 'Side', 'AnyObject', 'ID'],
+  'sim/field.ts': ['Effect', 'Condition', 'Pokemon', 'Battle', 'Side', 'AnyObject', 'ID'],
   'sim/pokemon.ts': [
-    'ActiveMove', 'Ability', 'PureEffect', 'Item', 'Species', 'SparseBoostsTable', 'Side',
+    'ActiveMove', 'Ability', 'Condition', 'Item', 'Species', 'SparseBoostsTable', 'Side',
     'AnyObject', 'DynamaxOptions', 'Move', 'StatNameExceptHP', 'PokemonModData', 'Effect',
     'StatsExceptHPTable', 'ID', 'BoostsTable', 'StatsTable', 'GenderName', 'PokemonSet', 'Battle',
   ],
   'sim/side.ts': [
-    'AnyObject', 'Effect', 'ActiveMove', 'PureEffect', 'PokemonSet', 'Battle', 'Move', 'SideID',
+    'AnyObject', 'Effect', 'ActiveMove', 'Condition', 'PokemonSet', 'Battle', 'Move', 'SideID',
   ],
   'sim/team-validator.ts': [
     'Format', 'StatsTable', 'SparseStatsTable', 'Species', 'AnyObject', 'Move',
@@ -218,27 +218,27 @@ const RANDBAT_FIELDS = [
 ];
 
 const DATA = {
-  'abilities.js': code => [removeFields(code.BattleAbilities, ['rating']), 'abilities.json'],
-  'aliases.js': code => [code.BattleAliases, 'aliases.json'],
+  'abilities.js': code => [removeFields(code.Abilities, ['rating']), 'abilities.json'],
+  'aliases.js': code => [code.Aliases, 'aliases.json'],
   'formats-data.js': code =>
-    [removeFields(code.BattleFormatsData, RANDBAT_FIELDS), 'formats-data.json'],
-  'items.js': code => [removeFields(code.BattleItems, ['spritenum']), 'items.json'],
-  'learnsets.js': code => [code.BattleLearnsets, 'learnsets.json'],
-  'moves.js': code => [removeFields(code.BattleMovedex, ['contestType']), 'moves.json'],
-  'pokedex.js': code => [removeFields(code.BattlePokedex, ['color', 'heightm']), 'species.json'],
+    [removeFields(code.FormatsData, RANDBAT_FIELDS), 'formats-data.json'],
+  'items.js': code => [removeFields(code.Items, ['spritenum']), 'items.json'],
+  'learnsets.js': code => [code.Learnsets, 'learnsets.json'],
+  'moves.js': code => [removeFields(code.Moves, ['contestType']), 'moves.json'],
+  'pokedex.js': code => [removeFields(code.Pokedex, ['color', 'heightm']), 'species.json'],
   'typechart.js': code => {
-    for (const type1 in code.BattleTypeChart) {
+    for (const type1 in code.TypeChart) {
       if (!TYPES.has(type1)) {
-        delete code.BattleTypeChart[type1];
-      } else if (code.BattleTypeChart[type1]) {
-        for (const type2 in code.BattleTypeChart[type1].damageTaken) {
+        delete code.TypeChart[type1];
+      } else if (code.TypeChart[type1]) {
+        for (const type2 in code.TypeChart[type1].damageTaken) {
           if (!TYPES.has(type2)) {
-            delete code.BattleTypeChart[type1].damageTaken[type2];
+            delete code.TypeChart[type1].damageTaken[type2];
           }
         }
       }
     }
-    return [code.BattleTypeChart, 'types.json']
+    return [code.TypeChart, 'types.json']
   },
 };
 
@@ -246,7 +246,7 @@ const DATA = {
 // const RANDBAT_DATA = {
 //   abilities: (() => {
 //     const abilities = {};
-//     const data = require(path.resolve(ps, 'data/abilities.js')).BattleAbilities;
+//     const data = require(path.resolve(ps, 'data/abilities.js')).Abilities;
 //     for (const id in data) {
 //       if ('rating' in data[id]) abilities[id] = data[id].rating;
 //     }
@@ -254,14 +254,14 @@ const DATA = {
 //   })(),
 //   moves: (() => {
 //     const moves = {};
-//     const data = require(path.resolve(ps, 'data/moves.js')).BattleMovedex;
+//     const data = require(path.resolve(ps, 'data/moves.js')).Moves;
 //     for (const id in data) {
 //       if (data[id].isViable) moves[id] = 1;
 //     }
 //     return moves;
 //   })(),
 //   species: (() => {
-//     let data = require(path.resolve(ps, 'data/formats-data.js')).BattleFormatsData;
+//     let data = require(path.resolve(ps, 'data/formats-data.js')).FormatsData;
 //     data = JSON.parse(JSON.stringify(data));
 //     for (const id in data) {
 //       for (const field of Object.keys(data[id])) {

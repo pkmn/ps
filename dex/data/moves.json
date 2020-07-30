@@ -33,7 +33,7 @@
       "priority": 0,
       "accuracy": true,
       "ignoreEvasion": true,
-      "effect": {"duration": 2},
+      "condition": {"duration": 2},
       "type": "???"
     },
     "bind": {
@@ -112,13 +112,13 @@
       "inherit": true,
       "desc": "This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks other than Bide, Swift, and Transform. If the user is fully paralyzed on the second turn, it continues avoiding attacks until it switches out or successfully executes the second turn of this move or Fly.",
       "basePower": 100,
-      "effect": {"duration": 2, "onLockMove": "dig"}
+      "condition": {"duration": 2, "onLockMove": "dig"}
     },
     "disable": {
       "inherit": true,
       "desc": "For 0 to 7 turns, one of the target's known moves that has at least 1 PP remaining becomes disabled, at random. Fails if one of the target's moves is already disabled, or if none of the target's moves have PP remaining. If any Pokemon uses Haze, this effect ends. Whether or not this move was successful, it counts as a hit for the purposes of the opponent's use of Rage.",
       "shortDesc": "For 0-7 turns, disables one of the target's moves.",
-      "effect": {"duration": 4, "onResidualOrder": 14}
+      "condition": {"duration": 4, "onResidualOrder": 14}
     },
     "dizzypunch": {
       "inherit": true,
@@ -178,13 +178,13 @@
     "fly": {
       "inherit": true,
       "desc": "This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks other than Bide, Swift, and Transform. If the user is fully paralyzed on the second turn, it continues avoiding attacks until it switches out or successfully executes the second turn of this move or Dig.",
-      "effect": {"duration": 2, "onLockMove": "fly"}
+      "condition": {"duration": 2, "onLockMove": "fly"}
     },
     "focusenergy": {
       "inherit": true,
       "desc": "While the user remains active, its chance for a critical hit is quartered. Fails if the user already has the effect. If any Pokemon uses Haze, this effect ends.",
       "shortDesc": "Quarters the user's chance for a critical hit.",
-      "effect": {}
+      "condition": {}
     },
     "furyattack": {
       "inherit": true,
@@ -246,7 +246,7 @@
     "leechseed": {
       "inherit": true,
       "desc": "At the end of each of the target's turns, The Pokemon at the user's position steals 1/16 of the target's maximum HP, rounded down and multiplied by the target's current Toxic counter if it has one, even if the target currently has less than that amount of HP remaining. If the target switches out or any Pokemon uses Haze, this effect ends. Grass-type Pokemon are immune to this move.",
-      "effect": {"onAfterMoveSelfPriority": 1}
+      "condition": {"onAfterMoveSelfPriority": 1}
     },
     "lightscreen": {
       "num": 113,
@@ -260,7 +260,7 @@
       "priority": 0,
       "flags": {},
       "volatileStatus": "lightscreen",
-      "effect": {},
+      "condition": {},
       "target": "self",
       "type": "Psychic"
     },
@@ -323,7 +323,7 @@
       "desc": "Once this move is successfully used, the user automatically uses this move every turn and can no longer switch out. During the effect, the user's Attack is raised by 1 stage every time it is hit by the opposing Pokemon, and this move's accuracy is overwritten every turn with the current calculated accuracy including stat stage changes, but not to less than 1/256 or more than 255/256.",
       "shortDesc": "Lasts forever. Raises user's Attack by 1 when hit.",
       "self": {"volatileStatus": "rage"},
-      "effect": {"duration": 255, "onLockMove": "rage"}
+      "condition": {"duration": 255, "onLockMove": "rage"}
     },
     "razorleaf": {"inherit": true, "critRatio": 2, "target": "normal"},
     "razorwind": {
@@ -350,7 +350,7 @@
       "priority": 0,
       "flags": {},
       "volatileStatus": "reflect",
-      "effect": {},
+      "condition": {},
       "secondary": null,
       "target": "self",
       "type": "Psychic"
@@ -444,7 +444,7 @@
       "pp": 10,
       "priority": 0,
       "volatileStatus": "substitute",
-      "effect": {"onTryHitPriority": -1},
+      "condition": {"onTryHitPriority": -1},
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -534,7 +534,11 @@
       "inherit": true,
       "desc": "The user spends two or three turns locked into this move and then, on the second or third turn after using this move, the user attacks the opponent, inflicting double the damage in HP it lost during those turns. If the user is prevented from moving during this move's use, the effect ends. This move does not ignore type immunity.",
       "shortDesc": "Waits 2-3 turns; deals double the damage taken.",
-      "effect": {"duration": 3, "onLockMove": "bide", "onDamagePriority": -101}
+      "condition": {
+        "duration": 3,
+        "onLockMove": "bide",
+        "onDamagePriority": -101
+      }
     },
     "blizzard": {
       "inherit": true,
@@ -552,7 +556,7 @@
     "counter": {
       "inherit": true,
       "desc": "Deals damage to the opposing Pokemon equal to twice the HP lost by the user from a physical attack this turn. This move considers Hidden Power as Normal type, and only the last hit of a multi-hit attack is counted. Fails if the user moves first, if the user was not hit by a physical attack this turn, or if the user did not lose HP from the attack. If the opposing Pokemon used Fissure or Horn Drill and missed, this move deals 65535 damage.",
-      "effect": {},
+      "condition": {},
       "priority": -1
     },
     "crabhammer": {"inherit": true, "critRatio": 3},
@@ -560,7 +564,7 @@
     "curse": {
       "inherit": true,
       "desc": "If the user is not a Ghost type, lowers the user's Speed by 1 stage and raises the user's Attack and Defense by 1 stage, unless the user's Attack and Defense stats are both at stage 6. If the user is a Ghost type, the user loses 1/2 of its maximum HP, rounded down and even if it would cause fainting, in exchange for the target losing 1/4 of its maximum HP, rounded down, at the end of each turn while it is active. If the target uses Baton Pass, the replacement will continue to be affected. Fails if the target is already affected or has a substitute.",
-      "effect": {}
+      "condition": {}
     },
     "defensecurl": {
       "inherit": true,
@@ -578,7 +582,7 @@
     "dig": {
       "inherit": true,
       "desc": "This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks other than Earthquake, Fissure, and Magnitude, the user is unaffected by weather, and Earthquake and Magnitude have doubled power when used against the user.",
-      "effect": {"duration": 2}
+      "condition": {"duration": 2}
     },
     "disable": {
       "inherit": true,
@@ -595,7 +599,7 @@
     "encore": {
       "inherit": true,
       "desc": "For 3 to 6 turns, the target is forced to repeat its last move used. If the affected move runs out of PP, the effect ends. Fails if the target is already under this effect, if it has not made a move, if the move has 0 PP, or if the move is Encore, Metronome, Mimic, Mirror Move, Sketch, Sleep Talk, Struggle, or Transform.",
-      "effect": {"onResidualOrder": 13}
+      "condition": {"onResidualOrder": 13}
     },
     "endure": {
       "inherit": true,
@@ -620,13 +624,13 @@
     "fly": {
       "inherit": true,
       "desc": "This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks other than Gust, Thunder, Twister, and Whirlwind, and Gust and Twister have doubled power when used against it.",
-      "effect": {"duration": 2}
+      "condition": {"duration": 2}
     },
     "focusenergy": {
       "inherit": true,
       "desc": "Raises the user's chance for a critical hit by 1 stage. Fails if the user already has the effect. Baton Pass can be used to transfer this effect to an ally.",
       "shortDesc": "Raises the user's critical hit ratio by 1.",
-      "effect": {}
+      "condition": {}
     },
     "foresight": {
       "inherit": true,
@@ -669,19 +673,19 @@
       "shortDesc": "If miss, user takes 1/8 damage it would've dealt."
     },
     "karatechop": {"inherit": true, "critRatio": 3},
-    "leechseed": {"inherit": true, "effect": {"onAfterMoveSelfPriority": 2}},
+    "leechseed": {"inherit": true, "condition": {"onAfterMoveSelfPriority": 2}},
     "leer": {"inherit": true, "shortDesc": "Lowers the target's Defense by 1."},
     "lightscreen": {
       "inherit": true,
       "desc": "For 5 turns, the user and its party members have their Special Defense doubled. Critical hits ignore this effect. Fails if the effect is already active on the user's side.",
       "shortDesc": "For 5 turns, the user's party has doubled Sp. Def.",
-      "effect": {"duration": 5, "onResidualOrder": 21}
+      "condition": {"duration": 5, "onResidualOrder": 21}
     },
     "lockon": {
       "inherit": true,
       "desc": "The next accuracy check against the target succeeds. The target will still avoid Earthquake, Fissure, and Magnitude if it is using Fly. If the target leaves the field using Baton Pass, the replacement remains under this effect. This effect ends when the target leaves the field or an accuracy check is done against it.",
       "shortDesc": "The next move will not miss the target.",
-      "effect": {"duration": 2}
+      "condition": {"duration": 2}
     },
     "lowkick": {
       "inherit": true,
@@ -727,7 +731,7 @@
     "mirrorcoat": {
       "inherit": true,
       "desc": "Deals damage to the opposing Pokemon equal to twice the HP lost by the user from a special attack this turn. This move considers Hidden Power as Normal type, and only the last hit of a multi-hit attack is counted. Fails if the user moves first, if the user was not hit by a special attack this turn, or if the user did not lose HP from the attack.",
-      "effect": {},
+      "condition": {},
       "priority": -1
     },
     "mirrormove": {
@@ -750,7 +754,7 @@
     },
     "nightmare": {
       "inherit": true,
-      "effect": {"noCopy": true, "onAfterMoveSelfPriority": 1}
+      "condition": {"noCopy": true, "onAfterMoveSelfPriority": 1}
     },
     "outrage": {
       "inherit": true,
@@ -818,7 +822,7 @@
       "inherit": true,
       "desc": "For 5 turns, the user and its party members have their Defense doubled. Critical hits ignore this effect. Fails if the effect is already active on the user's side.",
       "shortDesc": "For 5 turns, the user's party has doubled Def.",
-      "effect": {"duration": 5, "onResidualOrder": 21}
+      "condition": {"duration": 5, "onResidualOrder": 21}
     },
     "rest": {
       "inherit": true,
@@ -880,7 +884,7 @@
       "inherit": true,
       "desc": "Sets up a hazard on the opposing side of the field, causing each opposing Pokemon that switches in to lose 1/8 of their maximum HP, rounded down, unless it is a Flying-type Pokemon. Fails if the effect is already active on the opposing side. Can be removed from the opposing side if any opposing Pokemon uses Rapid Spin successfully.",
       "shortDesc": "Hurts grounded foes on switch-in. Max 1 layer.",
-      "effect": {}
+      "condition": {}
     },
     "spite": {
       "inherit": true,
@@ -906,7 +910,10 @@
       "inherit": true,
       "desc": "For 5 turns, the weather becomes Sunny Day, even if the current weather is Sunny Day. The damage of Fire-type attacks is multiplied by 1.5 and the damage of Water-type attacks is multiplied by 0.5 during the effect."
     },
-    "substitute": {"inherit": true, "effect": {"onTryPrimaryHitPriority": -1}},
+    "substitute": {
+      "inherit": true,
+      "condition": {"onTryPrimaryHitPriority": -1}
+    },
     "surf": {
       "inherit": true,
       "desc": "No additional effect.",
@@ -1025,7 +1032,11 @@
       "desc": "The user spends two turns locked into this move and then, on the second turn after using this move, the user attacks the last Pokemon that hit it, inflicting double the damage in HP it lost during the two turns. If the last Pokemon that hit it is no longer active, the user attacks a random opposing Pokemon instead. If the user is prevented from moving during this move's use, the effect ends. This move does not ignore type immunity.",
       "accuracy": 100,
       "priority": 0,
-      "effect": {"duration": 3, "onLockMove": "bide", "onDamagePriority": -101}
+      "condition": {
+        "duration": 3,
+        "onLockMove": "bide",
+        "onDamagePriority": -101
+      }
     },
     "bind": {
       "inherit": true,
@@ -1085,7 +1096,7 @@
     "counter": {
       "inherit": true,
       "desc": "Deals damage to the last opposing Pokemon to hit the user with a physical attack this turn equal to twice the HP lost by the user from that attack. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. This move considers Hidden Power as Normal type, and only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's physical attack this turn, or if the user did not lose HP from the attack.",
-      "effect": {
+      "condition": {
         "duration": 1,
         "noCopy": true,
         "onRedirectTargetPriority": -1,
@@ -1119,7 +1130,7 @@
       "shortDesc": "For 2-5 turns, disables the target's last move.",
       "flags": {"protect": 1, "mirror": 1, "authentic": 1},
       "volatileStatus": "disable",
-      "effect": {"noCopy": true}
+      "condition": {"noCopy": true}
     },
     "dive": {
       "inherit": true,
@@ -1145,7 +1156,7 @@
       "shortDesc": "The target repeats its last move for 3-6 turns.",
       "flags": {"protect": 1, "mirror": 1, "authentic": 1},
       "volatileStatus": "encore",
-      "effect": {"onResidualOrder": 13}
+      "condition": {"onResidualOrder": 13}
     },
     "endure": {
       "inherit": true,
@@ -1277,7 +1288,7 @@
     "mirrorcoat": {
       "inherit": true,
       "desc": "Deals damage to the last opposing Pokemon to hit the user with a special attack this turn equal to twice the HP lost by the user from that attack. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. This move considers Hidden Power as Normal type, and only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's special attack this turn, or if the user did not lose HP from the attack.",
-      "effect": {
+      "condition": {
         "duration": 1,
         "noCopy": true,
         "onRedirectTargetPriority": -1,
@@ -1441,7 +1452,7 @@
       "desc": "The user's Stockpile count increases by 1. Fails if the user's Stockpile count is 3. The user's Stockpile count is reset to 0 when it is no longer active.",
       "shortDesc": "Raises user's Stockpile count by 1. Max 3 uses.",
       "pp": 10,
-      "effect": {"noCopy": true}
+      "condition": {"noCopy": true}
     },
     "stomp": {
       "inherit": true,
@@ -1477,7 +1488,7 @@
       "desc": "For 2 turns, prevents the target from using non-damaging moves.",
       "shortDesc": "For 2 turns, the target can't use status moves.",
       "flags": {"protect": 1, "authentic": 1},
-      "effect": {"duration": 2, "onResidualOrder": 12}
+      "condition": {"duration": 2, "onResidualOrder": 12}
     },
     "teeterdance": {"inherit": true, "flags": {"protect": 1}},
     "thief": {
@@ -1573,7 +1584,7 @@
       "inherit": true,
       "basePower": 10,
       "desc": "Deals typeless damage. Hits one time for the user and one time for each unfainted Pokemon without a major status condition in the user's party. For each hit, the damage formula uses the participating Pokemon's base Attack as the Attack stat, the target's base Defense as the Defense stat, and ignores stat stages and other effects that modify Attack or Defense; each hit is considered to come from the user.",
-      "effect": {
+      "condition": {
         "duration": 1,
         "onModifyAtkPriority": -101,
         "onFoeModifyDefPriority": -101
@@ -1582,7 +1593,11 @@
     "bide": {
       "inherit": true,
       "desc": "The user spends two turns locked into this move and then, on the second turn after using this move, the user attacks the last Pokemon that hit it, inflicting double the damage in HP it lost to attacks during the two turns. If the last Pokemon that hit it is no longer active, the user attacks a random opposing Pokemon instead. If the user is prevented from moving during this move's use, the effect ends. This move does not check accuracy and ignores type immunity.",
-      "effect": {"duration": 3, "onLockMove": "bide", "onDamagePriority": -101}
+      "condition": {
+        "duration": 3,
+        "onLockMove": "bide",
+        "onDamagePriority": -101
+      }
     },
     "bind": {
       "inherit": true,
@@ -1692,7 +1707,7 @@
       "inherit": true,
       "desc": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and doubles each time this move is successfully used, up to a maximum of 8. X resets to 1 if this move fails or if the user's last move used is not Detect, Endure, or Protect. Fails if the user moves last this turn.",
       "priority": 3,
-      "effect": {"duration": 1, "onTryHitPriority": 3}
+      "condition": {"duration": 1, "onTryHitPriority": 3}
     },
     "dig": {
       "inherit": true,
@@ -1705,7 +1720,7 @@
       "shortDesc": "For 4-7 turns, disables the target's last move.",
       "flags": {"protect": 1, "mirror": 1, "authentic": 1},
       "volatileStatus": "disable",
-      "effect": {"noCopy": true, "onBeforeMovePriority": 7}
+      "condition": {"noCopy": true, "onBeforeMovePriority": 7}
     },
     "dive": {
       "inherit": true,
@@ -1757,7 +1772,7 @@
       "shortDesc": "The target repeats its last move for 4-8 turns.",
       "flags": {"protect": 1, "mirror": 1, "authentic": 1},
       "volatileStatus": "encore",
-      "effect": {"onResidualOrder": 13}
+      "condition": {"onResidualOrder": 13}
     },
     "endeavor": {"inherit": true},
     "endure": {
@@ -1876,7 +1891,7 @@
       "inherit": true,
       "desc": "For 5 turns, the target is prevented from restoring any HP as long as it remains active. During the effect, healing moves are unusable, move effects that grant healing will not heal, but Abilities and items will continue to heal the user. If an affected Pokemon uses Baton Pass, the replacement will remain under the effect. Pain Split is unaffected.",
       "flags": {"protect": 1, "mirror": 1},
-      "effect": {
+      "condition": {
         "duration": 5,
         "onBeforeMovePriority": 6,
         "onResidualOrder": 17
@@ -1886,7 +1901,7 @@
       "inherit": true,
       "desc": "The user faints and the Pokemon brought out to replace it has its HP fully restored along with having any major status condition cured. The new Pokemon is sent out immediately and the healing happens after hazards take effect. Fails if the user is the last unfainted Pokemon in its party.",
       "flags": {"heal": 1},
-      "effect": {"duration": 1, "onSwitchInPriority": -1}
+      "condition": {"duration": 1, "onSwitchInPriority": -1}
     },
     "healorder": {
       "inherit": true,
@@ -1933,24 +1948,24 @@
     "lightscreen": {
       "inherit": true,
       "desc": "For 5 turns, the user and its party members take 1/2 damage from special attacks, or 2/3 damage if there are multiple active Pokemon on the user's side. Critical hits ignore this effect. It is removed from the user's side if the user or an ally is successfully hit by Brick Break or Defog. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
-      "effect": {"duration": 5, "onResidualOrder": 21}
+      "condition": {"duration": 5, "onResidualOrder": 21}
     },
     "lockon": {
       "inherit": true,
       "desc": "Until the end of the next turn, the target cannot avoid the user's moves, even if the target is in the middle of a two-turn move. When this effect is started against the target, this and Mind Reader's effects end for every other Pokemon against that target. If the target leaves the field using Baton Pass, the replacement remains under this effect. If the user leaves the field using Baton Pass, this effect is restarted against the same target for the replacement. The effect ends if either the user or the target leaves the field.",
-      "effect": {"duration": 2, "onSourceInvulnerabilityPriority": 1}
+      "condition": {"duration": 2, "onSourceInvulnerabilityPriority": 1}
     },
     "luckychant": {"inherit": true, "flags": {}},
     "lunardance": {
       "inherit": true,
       "desc": "The user faints and the Pokemon brought out to replace it has its HP and PP fully restored along with having any major status condition cured. The new Pokemon is sent out immediately and the healing happens after hazards take effect. Fails if the user is the last unfainted Pokemon in its party.",
       "flags": {"heal": 1},
-      "effect": {"duration": 1, "onSwitchInPriority": -1}
+      "condition": {"duration": 1, "onSwitchInPriority": -1}
     },
     "magiccoat": {
       "inherit": true,
       "desc": "The user is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. If the move targets both opposing Pokemon, the Pokemon under this effect will reflect the move only targeting the original user. The effect ends once a move is reflected or at the end of the turn. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this move takes effect.",
-      "effect": {"duration": 1, "onTryHitPriority": 2}
+      "condition": {"duration": 1, "onTryHitPriority": 2}
     },
     "magmastorm": {
       "inherit": true,
@@ -1963,7 +1978,11 @@
       "desc": "For 5 turns, the user is immune to Ground-type attacks and the effects of Spikes, Toxic Spikes, and the Arena Trap Ability as long as it remains active. If the user uses Baton Pass, the replacement will gain the effect. Ingrain and Iron Ball override this move if the user is under any of their effects. Fails if the user is already under this effect or the effect of Ingrain.",
       "flags": {"gravity": 1},
       "volatileStatus": "magnetrise",
-      "effect": {"duration": 5, "onResidualOrder": 6, "onResidualSubOrder": 9}
+      "condition": {
+        "duration": 5,
+        "onResidualOrder": 6,
+        "onResidualSubOrder": 9
+      }
     },
     "magnitude": {
       "inherit": true,
@@ -1976,7 +1995,7 @@
     "mefirst": {
       "inherit": true,
       "desc": "The user uses the move the target chose for use this turn against it, if possible, with its power multiplied by 1.5. The move must be a damaging move other than Chatter, Counter, Covet, Focus Punch, Mirror Coat, or Thief. Fails if the target moves before the user. Ignores the target's substitute for the purpose of copying the move.",
-      "effect": {"duration": 1}
+      "condition": {"duration": 1}
     },
     "megadrain": {
       "inherit": true,
@@ -2065,7 +2084,7 @@
       "inherit": true,
       "desc": "While the user is active, all Electric-type attacks used by any active Pokemon have their power halved. Fails if this effect is already active for the user. Baton Pass can be used to transfer this effect to an ally.",
       "shortDesc": "Weakens Electric-type attacks to 1/2 their power.",
-      "effect": {"noCopy": true, "onBasePowerPriority": 3}
+      "condition": {"noCopy": true, "onBasePowerPriority": 3}
     },
     "naturalgift": {
       "inherit": true,
@@ -2110,7 +2129,7 @@
       "inherit": true,
       "desc": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and doubles each time this move is successfully used, up to a maximum of 8. X resets to 1 if this move fails or if the user's last move used is not Detect, Endure, or Protect. Fails if the user moves last this turn.",
       "priority": 3,
-      "effect": {"duration": 1, "onTryHitPriority": 3}
+      "condition": {"duration": 1, "onTryHitPriority": 3}
     },
     "psychup": {"inherit": true, "flags": {"snatch": 1, "authentic": 1}},
     "psywave": {
@@ -2142,7 +2161,7 @@
     "reflect": {
       "inherit": true,
       "desc": "For 5 turns, the user and its party members take 1/2 damage from physical attacks, or 2/3 damage if there are multiple active Pokemon on the user's side. Critical hits ignore this effect. It is removed from the user's side if the user or an ally is successfully hit by Brick Break or Defog. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
-      "effect": {"duration": 5, "onResidualOrder": 21}
+      "condition": {"duration": 5, "onResidualOrder": 21}
     },
     "revenge": {
       "inherit": true,
@@ -2256,7 +2275,10 @@
       "inherit": true,
       "desc": "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded down, but not less than 1 HP."
     },
-    "substitute": {"inherit": true, "effect": {"onTryPrimaryHitPriority": -1}},
+    "substitute": {
+      "inherit": true,
+      "condition": {"onTryPrimaryHitPriority": -1}
+    },
     "suckerpunch": {
       "inherit": true,
       "desc": "Fails if the target did not select a physical or special attack for use this turn, or if the target moves before the user."
@@ -2289,7 +2311,11 @@
       "inherit": true,
       "desc": "For 3 turns, the user and its party members have their Speed doubled. Fails if this move is already in effect for the user's side.",
       "shortDesc": "For 3 turns, allies' Speed is doubled.",
-      "effect": {"duration": 3, "onResidualOrder": 21, "onResidualSubOrder": 4}
+      "condition": {
+        "duration": 3,
+        "onResidualOrder": 21,
+        "onResidualSubOrder": 4
+      }
     },
     "takedown": {
       "inherit": true,
@@ -2300,7 +2326,7 @@
       "desc": "For 3 to 5 turns, prevents the target from using non-damaging moves.",
       "shortDesc": "For 3-5 turns, the target can't use status moves.",
       "flags": {"protect": 1, "mirror": 1, "authentic": 1},
-      "effect": {"onResidualOrder": 12, "onBeforeMovePriority": 5}
+      "condition": {"onResidualOrder": 12, "onBeforeMovePriority": 5}
     },
     "thief": {
       "inherit": true,
@@ -2325,7 +2351,7 @@
       "inherit": true,
       "desc": "Sets up a hazard on the opposing side of the field, poisoning each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. Can be used up to two times before failing. Opposing Pokemon become poisoned with one layer and badly poisoned with two layers. Can be removed from the opposing side if any opposing Pokemon uses Rapid Spin successfully, is hit by Defog, or a grounded Poison-type Pokemon switches in. Safeguard prevents the opposing party from being poisoned on switch-in, as well as switching in with a substitute.",
       "flags": {},
-      "effect": {}
+      "condition": {}
     },
     "transform": {
       "inherit": true,
@@ -2376,7 +2402,7 @@
       "inherit": true,
       "desc": "While the user is active, all Fire-type attacks used by any active Pokemon have their power halved. Fails if this effect is already active for the user. Baton Pass can be used to transfer this effect to an ally.",
       "shortDesc": "Weakens Fire-type attacks to 1/2 their power.",
-      "effect": {"noCopy": true, "onBasePowerPriority": 3}
+      "condition": {"noCopy": true, "onBasePowerPriority": 3}
     },
     "whirlpool": {
       "inherit": true,
@@ -2396,7 +2422,7 @@
       "shortDesc": "Next turn, heals 50% of the recipient's max HP.",
       "flags": {"heal": 1},
       "slotCondition": "Wish",
-      "effect": {"duration": 2, "onResidualOrder": 0.5}
+      "condition": {"duration": 2, "onResidualOrder": 0.5}
     },
     "woodhammer": {
       "inherit": true,
@@ -2441,7 +2467,7 @@
     "autotomize": {
       "inherit": true,
       "volatileStatus": "autotomize",
-      "effect": {"noCopy": true, "onModifyWeightPriority": 2}
+      "condition": {"noCopy": true, "onModifyWeightPriority": 2}
     },
     "barrier": {"inherit": true, "pp": 30},
     "bestow": {
@@ -2567,7 +2593,11 @@
     },
     "followme": {"inherit": true, "priority": 3},
     "frostbreath": {"inherit": true, "basePower": 40},
-    "furycutter": {"inherit": true, "basePower": 20, "effect": {"duration": 2}},
+    "furycutter": {
+      "inherit": true,
+      "basePower": 20,
+      "condition": {"duration": 2}
+    },
     "futuresight": {"inherit": true, "basePower": 100},
     "gigadrain": {"inherit": true, "flags": {"protect": 1, "mirror": 1}},
     "glare": {"inherit": true, "accuracy": 90},
@@ -2671,7 +2701,11 @@
     "lick": {"inherit": true, "basePower": 20},
     "lightscreen": {
       "inherit": true,
-      "effect": {"duration": 5, "onResidualOrder": 21, "onResidualSubOrder": 1}
+      "condition": {
+        "duration": 5,
+        "onResidualOrder": 21,
+        "onResidualSubOrder": 1
+      }
     },
     "lowsweep": {"inherit": true, "basePower": 60},
     "magiccoat": {
@@ -2707,7 +2741,7 @@
       "inherit": true,
       "desc": "Raises the user's evasiveness by 2 stages. Whether or not the user's evasiveness was changed, Stomp and Steamroller will have their damage doubled if used against the user while it is active.",
       "pp": 20,
-      "effect": {"noCopy": true}
+      "condition": {"noCopy": true}
     },
     "moonlight": {
       "inherit": true,
@@ -2730,7 +2764,7 @@
       "priority": 0,
       "flags": {},
       "volatileStatus": "mudsport",
-      "effect": {"noCopy": true, "onAnyBasePowerPriority": 1},
+      "condition": {"noCopy": true, "onAnyBasePowerPriority": 1},
       "secondary": null,
       "target": "all",
       "type": "Ground"
@@ -2769,12 +2803,12 @@
       "inherit": true,
       "desc": "The user and its party members are protected from attacks with original priority greater than 0 made by other Pokemon, including allies, during this turn. This attack has a 1/X chance of being successful, where X starts at 1 and doubles each time this move is successfully used. X resets to 1 if this attack fails or if the user's last used move is not Detect, Endure, Protect, Quick Guard, or Wide Guard. If X is 256 or more, this move has a 1/(2^32) chance of being successful. Fails if the user moves last this turn or if this move is already in effect for the user's side.",
       "stallingMove": true,
-      "effect": {"duration": 1, "onTryHitPriority": 4}
+      "condition": {"duration": 1, "onTryHitPriority": 4}
     },
     "ragepowder": {"inherit": true, "priority": 3, "flags": {}},
     "reflect": {
       "inherit": true,
-      "effect": {"duration": 5, "onResidualOrder": 21}
+      "condition": {"duration": 5, "onResidualOrder": 21}
     },
     "relicsong": {
       "inherit": true,
@@ -2819,7 +2853,7 @@
       "inherit": true,
       "desc": "Has a 30% chance to cause a secondary effect on the target based on the battle terrain. Lowers accuracy by 1 stage on the regular Wi-Fi terrain. The secondary effect chance is not affected by the Serene Grace Ability.",
       "shortDesc": "Effect varies with terrain. (30% chance acc -1)",
-      "effect": {"duration": 1}
+      "condition": {"duration": 1}
     },
     "shadowforce": {
       "inherit": true,
@@ -2899,7 +2933,7 @@
     "substitute": {
       "inherit": true,
       "desc": "The user takes 1/4 of its maximum HP, rounded down, and puts it into a substitute to take its place in battle. The substitute is removed once enough damage is inflicted on it, or if the user switches out or faints. Baton Pass can be used to transfer the substitute to an ally, and the substitute will keep its remaining HP. Until the substitute is broken, it receives damage from all attacks made by other Pokemon and shields the user from status effects and stat stage changes caused by other Pokemon. The user still takes normal damage from weather and status effects while behind its substitute. If the substitute breaks during a multi-hit attack, the user will take damage from any remaining hits. If a substitute is created while the user is trapped by a binding move, the binding effect ends immediately. Fails if the user does not have enough HP remaining to create a substitute without fainting, or if it already has a substitute.",
-      "effect": {"onTryPrimaryHitPriority": -1}
+      "condition": {"onTryPrimaryHitPriority": -1}
     },
     "submission": {"inherit": true, "pp": 25},
     "supersonic": {
@@ -2978,7 +3012,7 @@
       "priority": 0,
       "flags": {},
       "volatileStatus": "watersport",
-      "effect": {"noCopy": true, "onAnyBasePowerPriority": 1},
+      "condition": {"noCopy": true, "onAnyBasePowerPriority": 1},
       "secondary": null,
       "target": "all",
       "type": "Water"
@@ -3078,7 +3112,7 @@
     "encore": {
       "inherit": true,
       "desc": "For 3 turns, the target is forced to repeat its last move used. If the affected move runs out of PP, the effect ends. Fails if the target is already under this effect, if it has not made a move, if the move has 0 PP, or if the move is Encore, Mimic, Mirror Move, Sketch, Struggle, or Transform.",
-      "effect": {"duration": 3, "onResidualOrder": 13}
+      "condition": {"duration": 3, "onResidualOrder": 13}
     },
     "endure": {
       "inherit": true,
@@ -3171,7 +3205,7 @@
     "minimize": {
       "inherit": true,
       "desc": "Raises the user's evasiveness by 2 stages. Whether or not the user's evasiveness was changed, Body Slam, Dragon Rush, Flying Press, Heat Crash, Phantom Force, Shadow Force, Steamroller, and Stomp will not check accuracy and have their damage doubled if used against the user while it is active.",
-      "effect": {"noCopy": true}
+      "condition": {"noCopy": true}
     },
     "mirrorcoat": {
       "inherit": true,
@@ -3180,7 +3214,11 @@
     "mistyterrain": {
       "inherit": true,
       "desc": "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a major status condition. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain.",
-      "effect": {"duration": 5, "onResidualOrder": 21, "onResidualSubOrder": 2}
+      "condition": {
+        "duration": 5,
+        "onResidualOrder": 21,
+        "onResidualSubOrder": 2
+      }
     },
     "mysticalfire": {"inherit": true, "basePower": 65},
     "naturepower": {
@@ -3211,7 +3249,7 @@
     "powder": {
       "inherit": true,
       "desc": "If the target uses a Fire-type move this turn, it is prevented from executing and the target loses 1/4 of its maximum HP, rounded half up. This effect happens before the Fire-type move would be prevented by Primordial Sea.",
-      "effect": {"duration": 1, "onTryMovePriority": 1}
+      "condition": {"duration": 1, "onTryMovePriority": 1}
     },
     "protect": {
       "inherit": true,
@@ -3280,7 +3318,7 @@
       "inherit": true,
       "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon making contact with the user lose 1/8 of their maximum HP, rounded down. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Detect, Endure, King's Shield, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn."
     },
-    "stockpile": {"inherit": true, "effect": {"noCopy": true}},
+    "stockpile": {"inherit": true, "condition": {"noCopy": true}},
     "struggle": {
       "inherit": true,
       "desc": "Deals typeless damage to a random adjacent opposing Pokemon. If this move was successful, the user loses 1/4 of its maximum HP, rounded half up, and the Rock Head Ability does not prevent this. This move is automatically used if none of the user's known moves can be selected."
@@ -3336,7 +3374,7 @@
       "inherit": true,
       "desc": "The user and its party members are protected from damaging attacks made by other Pokemon, including allies, during this turn that target all adjacent foes or all adjacent Pokemon. This move modifies the same 1/X chance of being successful used by other protection moves, where X starts at 1 and triples each time this move is successfully used, but does not use the chance to check for failure. X resets to 1 if this move fails, if the user's last move used is not Detect, Endure, King's Shield, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn or if this move is already in effect for the user's side.",
       "shortDesc": "Protects allies from multi-target damage this turn.",
-      "effect": {"duration": 1, "onTryHitPriority": 4}
+      "condition": {"duration": 1, "onTryHitPriority": 4}
     },
     "worryseed": {
       "inherit": true,
@@ -3425,7 +3463,11 @@
     "electricterrain": {
       "inherit": true,
       "desc": "For 5 turns, the terrain becomes Electric Terrain. During the effect, the power of Electric-type attacks made by grounded Pokemon is multiplied by 1.5 and grounded Pokemon cannot fall asleep; Pokemon already asleep do not wake up. Camouflage transforms the user into an Electric type, Nature Power becomes Thunderbolt, and Secret Power has a 30% chance to cause paralysis. Fails if the current terrain is Electric Terrain.",
-      "effect": {"duration": 5, "onResidualOrder": 21, "onResidualSubOrder": 2}
+      "condition": {
+        "duration": 5,
+        "onResidualOrder": 21,
+        "onResidualSubOrder": 2
+      }
     },
     "embargo": {"inherit": true, "isNonstandard": null},
     "encore": {
@@ -3461,7 +3503,11 @@
     "grassyterrain": {
       "inherit": true,
       "desc": "For 5 turns, the terrain becomes Grassy Terrain. During the effect, the power of Grass-type attacks used by grounded Pokemon is multiplied by 1.5, the power of Bulldoze, Earthquake, and Magnitude used against grounded Pokemon is multiplied by 0.5, and grounded Pokemon have 1/16 of their maximum HP, rounded down, restored at the end of each turn, including the last turn. Camouflage transforms the user into a Grass type, Nature Power becomes Energy Ball, and Secret Power has a 30% chance to cause sleep. Fails if the current terrain is Grassy Terrain.",
-      "effect": {"duration": 5, "onResidualOrder": 5, "onResidualSubOrder": 3}
+      "condition": {
+        "duration": 5,
+        "onResidualOrder": 5,
+        "onResidualSubOrder": 3
+      }
     },
     "gravity": {
       "inherit": true,
@@ -3485,7 +3531,7 @@
       "inherit": true,
       "desc": "The user faints and the Pokemon brought out to replace it has its HP fully restored along with having any major status condition cured. The new Pokemon is sent out at the end of the turn, and the healing happens before hazards take effect. Fails if the user is the last unfainted Pokemon in its party.",
       "shortDesc": "User faints. Replacement is fully healed.",
-      "effect": {"duration": 2, "onSwitchInPriority": 1}
+      "condition": {"duration": 2, "onSwitchInPriority": 1}
     },
     "healorder": {"inherit": true, "isNonstandard": null},
     "heartstamp": {"inherit": true, "isNonstandard": null},
@@ -3552,7 +3598,7 @@
       "inherit": true,
       "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 2 stages. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
       "shortDesc": "Protects from damaging attacks. Contact: -2 Atk.",
-      "effect": {"duration": 1, "onTryHitPriority": 3}
+      "condition": {"duration": 1, "onTryHitPriority": 3}
     },
     "knockoff": {
       "inherit": true,
@@ -3691,7 +3737,7 @@
     "psychicterrain": {
       "inherit": true,
       "desc": "For 5 turns, the terrain becomes Psychic Terrain. During the effect, the power of Psychic-type attacks made by grounded Pokemon is multiplied by 1.5 and grounded Pokemon cannot be hit by moves with priority greater than 0, unless the target is an ally. Camouflage transforms the user into a Psychic type, Nature Power becomes Psychic, and Secret Power has a 30% chance to lower the target's Speed by 1 stage. Fails if the current terrain is Psychic Terrain.",
-      "effect": {
+      "condition": {
         "duration": 5,
         "onTryHitPriority": 4,
         "onResidualOrder": 21,
@@ -4216,7 +4262,7 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "volatileStatus": "aquaring",
-      "effect": {"onResidualOrder": 6},
+      "condition": {"onResidualOrder": 6},
       "secondary": null,
       "target": "self",
       "type": "Water",
@@ -4358,7 +4404,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1, "authentic": 1},
       "volatileStatus": "attract",
-      "effect": {"noCopy": true, "onBeforeMovePriority": 2},
+      "condition": {"noCopy": true, "onBeforeMovePriority": 2},
       "secondary": null,
       "target": "normal",
       "type": "Normal",
@@ -4426,7 +4472,11 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "sideCondition": "auroraveil",
-      "effect": {"duration": 5, "onResidualOrder": 21, "onResidualSubOrder": 1},
+      "condition": {
+        "duration": 5,
+        "onResidualOrder": 21,
+        "onResidualSubOrder": 1
+      },
       "secondary": null,
       "target": "allySide",
       "type": "Ice",
@@ -4511,7 +4561,7 @@
       "flags": {},
       "stallingMove": true,
       "volatileStatus": "banefulbunker",
-      "effect": {"duration": 1, "onTryHitPriority": 3},
+      "condition": {"duration": 1, "onTryHitPriority": 3},
       "secondary": null,
       "target": "self",
       "type": "Poison",
@@ -4581,7 +4631,7 @@
       "pp": 15,
       "priority": -3,
       "flags": {"bullet": 1, "protect": 1},
-      "effect": {"duration": 1},
+      "condition": {"duration": 1},
       "secondary": null,
       "target": "normal",
       "type": "Flying"
@@ -4691,7 +4741,11 @@
       "flags": {"contact": 1, "protect": 1},
       "volatileStatus": "bide",
       "ignoreImmunity": true,
-      "effect": {"duration": 3, "onLockMove": "bide", "onDamagePriority": -101},
+      "condition": {
+        "duration": 3,
+        "onLockMove": "bide",
+        "onDamagePriority": -101
+      },
       "secondary": null,
       "target": "self",
       "type": "Normal"
@@ -4982,7 +5036,7 @@
         "gravity": 1,
         "distance": 1
       },
-      "effect": {"duration": 2},
+      "condition": {"duration": 2},
       "secondary": {"chance": 30, "status": "par"},
       "target": "any",
       "type": "Flying"
@@ -5379,7 +5433,7 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "volatileStatus": "charge",
-      "effect": {"duration": 2, "onBasePowerPriority": 9},
+      "condition": {"duration": 2, "onBasePowerPriority": 9},
       "boosts": {"spd": 1},
       "secondary": null,
       "target": "self",
@@ -5863,7 +5917,11 @@
       "pp": 20,
       "priority": -5,
       "flags": {"contact": 1, "protect": 1},
-      "effect": {"duration": 1, "noCopy": true, "onRedirectTargetPriority": -1},
+      "condition": {
+        "duration": 1,
+        "noCopy": true,
+        "onRedirectTargetPriority": -1
+      },
       "secondary": null,
       "target": "scripted",
       "type": "Fighting",
@@ -5927,7 +5985,7 @@
       "priority": 3,
       "flags": {},
       "sideCondition": "craftyshield",
-      "effect": {"duration": 1, "onTryHitPriority": 3},
+      "condition": {"duration": 1, "onTryHitPriority": 3},
       "secondary": null,
       "target": "allySide",
       "type": "Fairy",
@@ -6025,7 +6083,7 @@
       "priority": 0,
       "flags": {"authentic": 1},
       "volatileStatus": "curse",
-      "effect": {"onResidualOrder": 10},
+      "condition": {"onResidualOrder": 10},
       "secondary": null,
       "target": "randomNormal",
       "nonGhostTarget": "self",
@@ -6157,7 +6215,7 @@
       "flags": {"snatch": 1},
       "boosts": {"def": 1},
       "volatileStatus": "defensecurl",
-      "effect": {"noCopy": true},
+      "condition": {"noCopy": true},
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -6191,7 +6249,7 @@
       "priority": 0,
       "flags": {"authentic": 1},
       "volatileStatus": "destinybond",
-      "effect": {"onBeforeMovePriority": -1},
+      "condition": {"onBeforeMovePriority": -1},
       "secondary": null,
       "target": "self",
       "type": "Ghost",
@@ -6264,7 +6322,7 @@
         "mirror": 1,
         "nonsky": 1
       },
-      "effect": {"duration": 2},
+      "condition": {"duration": 2},
       "secondary": null,
       "target": "normal",
       "type": "Ground"
@@ -6281,7 +6339,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1, "authentic": 1},
       "volatileStatus": "disable",
-      "effect": {
+      "condition": {
         "duration": 5,
         "noCopy": true,
         "onResidualOrder": 14,
@@ -6339,7 +6397,7 @@
         "mirror": 1,
         "nonsky": 1
       },
-      "effect": {"duration": 2},
+      "condition": {"duration": 2},
       "secondary": null,
       "target": "normal",
       "type": "Water"
@@ -6846,7 +6904,7 @@
       "pp": 15,
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1, "sound": 1, "authentic": 1},
-      "effect": {"duration": 2},
+      "condition": {"duration": 2},
       "secondary": null,
       "target": "normal",
       "type": "Normal"
@@ -6895,7 +6953,7 @@
       "priority": 0,
       "flags": {"nonsky": 1},
       "terrain": "electricterrain",
-      "effect": {
+      "condition": {
         "duration": 5,
         "onBasePowerPriority": 6,
         "onResidualOrder": 21,
@@ -6918,7 +6976,7 @@
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1, "mystery": 1},
       "volatileStatus": "electrify",
-      "effect": {"duration": 1, "onModifyTypePriority": -2},
+      "condition": {"duration": 1, "onModifyTypePriority": -2},
       "secondary": null,
       "target": "normal",
       "type": "Electric",
@@ -6969,7 +7027,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1},
       "volatileStatus": "embargo",
-      "effect": {"duration": 5, "onResidualOrder": 18},
+      "condition": {"duration": 5, "onResidualOrder": 18},
       "secondary": null,
       "target": "normal",
       "type": "Dark",
@@ -7002,7 +7060,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1, "authentic": 1},
       "volatileStatus": "encore",
-      "effect": {"duration": 3, "noCopy": true, "onResidualOrder": 13},
+      "condition": {"duration": 3, "noCopy": true, "onResidualOrder": 13},
       "secondary": null,
       "target": "normal",
       "type": "Normal",
@@ -7038,7 +7096,7 @@
       "flags": {},
       "stallingMove": true,
       "volatileStatus": "endure",
-      "effect": {"duration": 1, "onDamagePriority": -10},
+      "condition": {"duration": 1, "onDamagePriority": -10},
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -7212,7 +7270,7 @@
       "priority": 0,
       "flags": {"mirror": 1, "authentic": 1},
       "pseudoWeather": "fairylock",
-      "effect": {"duration": 2},
+      "condition": {"duration": 2},
       "secondary": null,
       "target": "all",
       "type": "Fairy",
@@ -7454,7 +7512,11 @@
       "pp": 10,
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1, "nonsky": 1},
-      "effect": {"duration": 4, "onResidualOrder": 5, "onResidualSubOrder": 1},
+      "condition": {
+        "duration": 4,
+        "onResidualOrder": 5,
+        "onResidualSubOrder": 1
+      },
       "secondary": null,
       "target": "normal",
       "type": "Fire"
@@ -7796,7 +7858,7 @@
         "gravity": 1,
         "distance": 1
       },
-      "effect": {"duration": 2},
+      "condition": {"duration": 2},
       "secondary": null,
       "target": "any",
       "type": "Flying"
@@ -7851,7 +7913,7 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "volatileStatus": "focusenergy",
-      "effect": {},
+      "condition": {},
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -7868,7 +7930,7 @@
       "pp": 20,
       "priority": -3,
       "flags": {"contact": 1, "protect": 1, "punch": 1},
-      "effect": {"duration": 1},
+      "condition": {"duration": 1},
       "secondary": null,
       "target": "normal",
       "type": "Fighting"
@@ -7885,7 +7947,7 @@
       "priority": 2,
       "flags": {},
       "volatileStatus": "followme",
-      "effect": {"duration": 1, "onFoeRedirectTargetPriority": 1},
+      "condition": {"duration": 1, "onFoeRedirectTargetPriority": 1},
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -7919,7 +7981,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1, "authentic": 1},
       "volatileStatus": "foresight",
-      "effect": {"noCopy": true},
+      "condition": {"noCopy": true},
       "secondary": null,
       "target": "normal",
       "type": "Normal",
@@ -8080,7 +8142,7 @@
       "pp": 20,
       "priority": 0,
       "flags": {"contact": 1, "protect": 1, "mirror": 1},
-      "effect": {"duration": 2},
+      "condition": {"duration": 2},
       "secondary": null,
       "target": "normal",
       "type": "Bug"
@@ -8161,7 +8223,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1, "mystery": 1},
       "volatileStatus": "gastroacid",
-      "effect": {},
+      "condition": {},
       "secondary": null,
       "target": "normal",
       "type": "Poison",
@@ -8340,6 +8402,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side either falls asleep, becomes poisoned, or becomes paralyzed, even if they have a substitute.",
       "shortDesc": "Base move affects power. Foes: slp or psn or par.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Befuddle",
       "pp": 5,
       "priority": 0,
@@ -8356,13 +8419,14 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, for 4 turns each non-Water-type Pokemon on the opposing side takes damage equal to 1/6 of its maximum HP, rounded down, at the end of each turn during effect, including the last turn.",
       "shortDesc": "Base move affects power. Foes: -1/6 HP, 4 turns.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Cannonade",
       "pp": 10,
       "priority": 0,
       "flags": {},
       "isMax": "Blastoise",
       "self": {},
-      "effect": {
+      "condition": {
         "duration": 4,
         "onResidualOrder": 5,
         "onResidualSubOrder": 1.1
@@ -8378,6 +8442,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side is prevented from switching for four or five turns (seven turns if the user is holding Grip Claw), even if they have a substitute. Causes damage equal to 1/8 of their maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. They can still switch out if they are holding Shed Shell or use Baton Pass, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends for a target if it leaves the field, or if it uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
       "shortDesc": "Base move affects power. Foes: bound 4-5 turns.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Centiferno",
       "pp": 5,
       "priority": 0,
@@ -8395,13 +8460,14 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the user's side has their critical hit ratio raised by 1 stage, even if they have a substitute.",
       "shortDesc": "Base move affects power. Allies: Crit Ratio +1.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Chi Strike",
       "pp": 5,
       "priority": 0,
       "flags": {},
       "isMax": "Machamp",
       "self": {},
-      "effect": {"noCopy": true},
+      "condition": {"noCopy": true},
       "secondary": null,
       "target": "adjacentFoe",
       "type": "Fighting"
@@ -8413,6 +8479,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side becomes infatuated, even if they have a substitute. This effect does not happen for a target if both it and the user are the same gender, if either is genderless, or if the target is already infatuated.",
       "shortDesc": "Base move affects power. Foes: infatuated.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Cuddle",
       "pp": 5,
       "priority": 0,
@@ -8430,6 +8497,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side loses 2 PP from its last move used, even if they have a substitute.",
       "shortDesc": "Base move affects power. Foes: last move -2 PP.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Depletion",
       "pp": 5,
       "priority": 0,
@@ -8447,6 +8515,7 @@
       "category": "Physical",
       "desc": "This move will always have 160 Base Power, and it ignores the abilities of opposing Pokemon.",
       "shortDesc": "Stronger than other Max Moves. Ignores abilities.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Drum Solo",
       "pp": 5,
       "priority": 0,
@@ -8464,6 +8533,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the user's side restores 1/6 of its current maximum HP, even if they have a substitute.",
       "shortDesc": "Base move affects power. Allies: +1/6 max HP.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Finale",
       "pp": 5,
       "priority": 0,
@@ -8481,7 +8551,8 @@
       "category": "Physical",
       "desc": "This move will always have 160 Base Power, and it ignores the abilities of opposing Pokemon.",
       "shortDesc": "Stronger than other Max Moves. Ignores abilities.",
-      "name": "G-Max Fire Ball",
+      "isNonstandard": "Gigantamax",
+      "name": "G-Max Fireball",
       "pp": 5,
       "priority": 0,
       "flags": {},
@@ -8498,6 +8569,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Speed of each Pokemon on the opposing side is lowered by 2 stages, even if they have a substitute.",
       "shortDesc": "Base move affects power. Foes: -2 Speed.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Foam Burst",
       "pp": 5,
       "priority": 0,
@@ -8515,6 +8587,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side becomes confused, even if they have a substitute.",
       "shortDesc": "Base move affects power. Foes: confused.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Gold Rush",
       "pp": 5,
       "priority": 0,
@@ -8532,6 +8605,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Gravity begins.",
       "shortDesc": "Base move affects power. Starts Gravity.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Gravitas",
       "pp": 5,
       "priority": 0,
@@ -8548,6 +8622,7 @@
       "category": "Physical",
       "desc": "This move will always have 160 Base Power, and it ignores the abilities of opposing Pokemon.",
       "shortDesc": "Stronger than other Max Moves. Ignores abilities.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Hydrosnipe",
       "pp": 5,
       "priority": 0,
@@ -8565,6 +8640,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side becomes poisoned, even if they have a substitute.",
       "shortDesc": "Base move affects power. Foes: poisoned.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Malodor",
       "pp": 5,
       "priority": 0,
@@ -8581,6 +8657,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Torment begins for each Pokemon on the opposing side, even if they have a substitute.",
       "shortDesc": "Base move affects power. Foes: Tormented.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Meltdown",
       "pp": 5,
       "priority": 0,
@@ -8598,6 +8675,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful and any Pokemon on the opposing side is using Baneful Bunker, Detect, King's Shield, Mat Block, Max Guard, Obstruct, Protect, or Spiky Shield, this move will fully break the protection.",
       "shortDesc": "Base move affects power. Breaks all protection.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max One Blow",
       "pp": 5,
       "priority": 0,
@@ -8615,6 +8693,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful and any Pokemon on the opposing side is using Baneful Bunker, Detect, King's Shield, Mat Block, Max Guard, Obstruct, Protect, or Spiky Shield, this move will fully break the protection.",
       "shortDesc": "Base move affects power. Breaks all protection.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Rapid Flow",
       "pp": 5,
       "priority": 0,
@@ -8632,6 +8711,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, there is a 50% chance every Pokemon on the user's side has its Berry restored, even if they have a substitute.",
       "shortDesc": "Base move affects power. 50% restores Berries.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Replenish",
       "pp": 5,
       "priority": 0,
@@ -8649,6 +8729,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Aurora Veil begins on the user's side.",
       "shortDesc": "Base move affects power. Allies: Aurora Veil.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Resonance",
       "pp": 5,
       "priority": 0,
@@ -8666,6 +8747,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side is prevented from switching for four or five turns (seven turns if the user is holding Grip Claw), even if they have a substitute. Causes damage equal to 1/8 of their maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. They can still switch out if they are holding Shed Shell or use Baton Pass, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends for a target if it leaves the field, or if it uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
       "shortDesc": "Base move affects power. Foes: bound 4-5 turns.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Sandblast",
       "pp": 5,
       "priority": 0,
@@ -8683,6 +8765,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side becomes confused, even if they have a substitute.",
       "shortDesc": "Base move affects power. Foes: confused.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Smite",
       "pp": 5,
       "priority": 0,
@@ -8700,6 +8783,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, there is a 50% chance the effect of Yawn begins on the target, even if it has a substitute.",
       "shortDesc": "Base move affects power. Target: 50% Yawn.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Snooze",
       "pp": 5,
       "priority": 0,
@@ -8716,13 +8800,14 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, it sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Steel type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. Can be removed from the opposing side if any opposing Pokemon uses Rapid Spin or Defog successfully, or is hit by Defog.",
       "shortDesc": "Base move affects power. Foes: Steel hazard.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Steelsurge",
       "pp": 5,
       "priority": 0,
       "flags": {},
       "isMax": "Copperajah",
       "self": {},
-      "effect": {},
+      "condition": {},
       "secondary": null,
       "target": "adjacentFoe",
       "type": "Steel"
@@ -8734,6 +8819,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, it sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Rock type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. Can be removed from the opposing side if any opposing Pokemon uses Rapid Spin or Defog successfully, or is hit by Defog.",
       "shortDesc": "Base move affects power. Foes: Stealth Rock.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Stonesurge",
       "pp": 5,
       "priority": 0,
@@ -8751,6 +8837,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side either becomes poisoned or paralyzed, even if they have a substitute.",
       "shortDesc": "Base move affects power. Foes: psn or par.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Stun Shock",
       "pp": 10,
       "priority": 0,
@@ -8768,6 +8855,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the user's side has its status condition cured, even if they have a substitute.",
       "shortDesc": "Base move affects power. Allies: status cured.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Sweetness",
       "pp": 10,
       "priority": 0,
@@ -8785,6 +8873,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, the evasiveness of each Pokemon on the opposing side is lowered by 1 stage, even if they have a substitute.",
       "shortDesc": "Base move affects power. Foes: -1 evasiveness.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Tartness",
       "pp": 10,
       "priority": 0,
@@ -8802,6 +8891,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side is prevented from switching out, even if they have a substitute. They can still switch out if they are holding Shed Shell or use Baton Pass, Parting Shot, Teleport, U-turn, or Volt Switch. If a target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field.",
       "shortDesc": "Base move affects power. Foes: trapped.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Terror",
       "pp": 10,
       "priority": 0,
@@ -8819,13 +8909,14 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, for 4 turns each non-Grass-type Pokemon on the opposing side takes damage equal to 1/6 of its maximum HP, rounded down, at the end of each turn during effect, including the last turn.",
       "shortDesc": "Base move affects power. Foes: -1/6 HP, 4 turns.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Vine Lash",
       "pp": 10,
       "priority": 0,
       "flags": {},
       "isMax": "Venusaur",
       "self": {},
-      "effect": {
+      "condition": {
         "duration": 4,
         "onResidualOrder": 5,
         "onResidualSubOrder": 1.1
@@ -8841,13 +8932,14 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, for 4 turns each non-Rock-type Pokemon on the opposing side takes damage equal to 1/6 of its maximum HP, rounded down, at the end of each turn during effect, including the last turn.",
       "shortDesc": "Base move affects power. Foes: -1/6 HP, 4 turns.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Volcalith",
       "pp": 10,
       "priority": 0,
       "flags": {},
       "isMax": "Coalossal",
       "self": {},
-      "effect": {
+      "condition": {
         "duration": 4,
         "onResidualOrder": 5,
         "onResidualSubOrder": 1.1
@@ -8863,6 +8955,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side becomes paralyzed, even if they have a substitute.",
       "shortDesc": "Base move affects power. Foes: paralyzed.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Volt Crash",
       "pp": 10,
       "priority": 0,
@@ -8880,13 +8973,14 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, for 4 turns each non-Fire-type Pokemon on the opposing side takes damage equal to 1/6 of its maximum HP, rounded down, at the end of each turn during effect, including the last turn.",
       "shortDesc": "Base move affects power. Foes: -1/6 HP, 4 turns.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Wildfire",
       "pp": 10,
       "priority": 0,
       "flags": {},
       "isMax": "Charizard",
       "self": {},
-      "effect": {
+      "condition": {
         "duration": 4,
         "onResidualOrder": 5,
         "onResidualSubOrder": 1.1
@@ -8902,6 +8996,7 @@
       "category": "Physical",
       "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effects of Electric Terrain, Grassy Terrain, Misty Terrain, and Psychic Terrain end, the effects of Reflect, Light Screen, Aurora Veil, Safeguard, Mist, G-Max Steelsurge, Spikes, Toxic Spikes, Stealth Rock, and Sticky Web end for the target's side, and the effects of G-Max Steelsurge, Spikes, Toxic Spikes, Stealth Rock, and Sticky Web end for the user's side.",
       "shortDesc": "Base move affects power. Ends Terrain, hazards.",
+      "isNonstandard": "Gigantamax",
       "name": "G-Max Wind Rage",
       "pp": 10,
       "priority": 0,
@@ -8940,7 +9035,7 @@
       "pp": 10,
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1, "nonsky": 1},
-      "effect": {"duration": 4},
+      "condition": {"duration": 4},
       "secondary": null,
       "target": "normal",
       "type": "Grass"
@@ -8995,7 +9090,7 @@
       "priority": 0,
       "flags": {"nonsky": 1},
       "terrain": "grassyterrain",
-      "effect": {
+      "condition": {
         "duration": 5,
         "onBasePowerPriority": 6,
         "onResidualOrder": 5,
@@ -9033,7 +9128,7 @@
       "priority": 0,
       "flags": {"nonsky": 1},
       "pseudoWeather": "gravity",
-      "effect": {
+      "condition": {
         "duration": 5,
         "onBeforeMovePriority": 6,
         "onResidualOrder": 22
@@ -9095,7 +9190,7 @@
       "priority": 0,
       "flags": {"authentic": 1},
       "volatileStatus": "grudge",
-      "effect": {"onBeforeMovePriority": 100},
+      "condition": {"onBeforeMovePriority": 100},
       "secondary": null,
       "target": "self",
       "type": "Ghost",
@@ -9371,7 +9466,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1},
       "volatileStatus": "healblock",
-      "effect": {
+      "condition": {
         "duration": 5,
         "onBeforeMovePriority": 6,
         "onResidualOrder": 17
@@ -9394,7 +9489,7 @@
       "flags": {"snatch": 1, "heal": 1},
       "selfdestruct": "ifHit",
       "slotCondition": "healingwish",
-      "effect": {},
+      "condition": {},
       "secondary": null,
       "target": "self",
       "type": "Psychic"
@@ -9534,7 +9629,7 @@
       "priority": 5,
       "flags": {"authentic": 1},
       "volatileStatus": "helpinghand",
-      "effect": {"duration": 1, "onBasePowerPriority": 10},
+      "condition": {"duration": 1, "onBasePowerPriority": 10},
       "secondary": null,
       "target": "adjacentAlly",
       "type": "Normal",
@@ -10159,7 +10254,7 @@
       "pp": 20,
       "priority": 0,
       "flags": {"bullet": 1, "contact": 1, "protect": 1, "mirror": 1},
-      "effect": {"duration": 2, "onLockMove": "iceball"},
+      "condition": {"duration": 2, "onLockMove": "iceball"},
       "secondary": null,
       "target": "normal",
       "type": "Ice"
@@ -10319,7 +10414,7 @@
       "priority": 0,
       "flags": {"snatch": 1, "authentic": 1},
       "volatileStatus": "imprison",
-      "effect": {"noCopy": true, "onFoeBeforeMovePriority": 4},
+      "condition": {"noCopy": true, "onFoeBeforeMovePriority": 4},
       "secondary": null,
       "pressureTarget": "foeSide",
       "target": "self",
@@ -10400,7 +10495,7 @@
       "priority": 0,
       "flags": {"snatch": 1, "nonsky": 1},
       "volatileStatus": "ingrain",
-      "effect": {"onResidualOrder": 7},
+      "condition": {"onResidualOrder": 7},
       "secondary": null,
       "target": "self",
       "type": "Grass",
@@ -10435,7 +10530,7 @@
       "priority": 1,
       "flags": {},
       "pseudoWeather": "iondeluge",
-      "effect": {"duration": 1, "onModifyTypePriority": -2},
+      "condition": {"duration": 1, "onModifyTypePriority": -2},
       "secondary": null,
       "target": "all",
       "type": "Electric",
@@ -10599,7 +10694,7 @@
       "flags": {},
       "stallingMove": true,
       "volatileStatus": "kingsshield",
-      "effect": {"duration": 1, "onTryHitPriority": 3},
+      "condition": {"duration": 1, "onTryHitPriority": 3},
       "secondary": null,
       "target": "self",
       "type": "Steel",
@@ -10649,7 +10744,7 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "volatileStatus": "laserfocus",
-      "effect": {"duration": 2},
+      "condition": {"duration": 2},
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -10789,7 +10884,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1},
       "volatileStatus": "leechseed",
-      "effect": {"onResidualOrder": 8},
+      "condition": {"onResidualOrder": 8},
       "secondary": null,
       "target": "normal",
       "type": "Grass",
@@ -10888,7 +10983,11 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "sideCondition": "lightscreen",
-      "effect": {"duration": 5, "onResidualOrder": 21, "onResidualSubOrder": 1},
+      "condition": {
+        "duration": 5,
+        "onResidualOrder": 21,
+        "onResidualSubOrder": 1
+      },
       "secondary": null,
       "target": "allySide",
       "type": "Psychic",
@@ -10938,7 +11037,7 @@
       "pp": 5,
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1},
-      "effect": {
+      "condition": {
         "noCopy": true,
         "duration": 2,
         "onSourceInvulnerabilityPriority": 1
@@ -11009,7 +11108,7 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "sideCondition": "luckychant",
-      "effect": {
+      "condition": {
         "duration": 5,
         "onCriticalHit": false,
         "onResidualOrder": 21,
@@ -11034,7 +11133,7 @@
       "flags": {"snatch": 1, "heal": 1, "dance": 1},
       "selfdestruct": "ifHit",
       "sideCondition": "lunardance",
-      "effect": {"duration": 2, "onSwitchInPriority": 1},
+      "condition": {"duration": 2, "onSwitchInPriority": 1},
       "secondary": null,
       "target": "self",
       "type": "Psychic"
@@ -11111,7 +11210,7 @@
       "priority": 4,
       "flags": {},
       "volatileStatus": "magiccoat",
-      "effect": {"duration": 1, "onTryHitPriority": 2},
+      "condition": {"duration": 1, "onTryHitPriority": 2},
       "secondary": null,
       "target": "self",
       "type": "Psychic",
@@ -11150,7 +11249,7 @@
       "priority": 0,
       "flags": {"mirror": 1},
       "pseudoWeather": "magicroom",
-      "effect": {"duration": 5, "onResidualOrder": 25},
+      "condition": {"duration": 5, "onResidualOrder": 25},
       "secondary": null,
       "target": "all",
       "type": "Psychic",
@@ -11216,7 +11315,7 @@
       "priority": 0,
       "flags": {"snatch": 1, "gravity": 1},
       "volatileStatus": "magnetrise",
-      "effect": {"duration": 5, "onResidualOrder": 15},
+      "condition": {"duration": 5, "onResidualOrder": 15},
       "secondary": null,
       "target": "self",
       "type": "Electric",
@@ -11270,7 +11369,7 @@
       "flags": {"snatch": 1, "nonsky": 1},
       "stallingMove": true,
       "sideCondition": "matblock",
-      "effect": {"duration": 1, "onTryHitPriority": 3},
+      "condition": {"duration": 1, "onTryHitPriority": 3},
       "secondary": null,
       "target": "allySide",
       "type": "Fighting",
@@ -11370,7 +11469,7 @@
       "isMax": true,
       "stallingMove": true,
       "volatileStatus": "maxguard",
-      "effect": {"duration": 1, "onTryHitPriority": 3},
+      "condition": {"duration": 1, "onTryHitPriority": 3},
       "secondary": null,
       "target": "self",
       "type": "Normal"
@@ -11629,7 +11728,7 @@
       "pp": 20,
       "priority": 0,
       "flags": {"protect": 1, "authentic": 1},
-      "effect": {"duration": 1, "onBasePowerPriority": 12},
+      "condition": {"duration": 1, "onBasePowerPriority": 12},
       "secondary": null,
       "target": "adjacentFoe",
       "type": "Normal",
@@ -11741,7 +11840,11 @@
       "pp": 10,
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1},
-      "effect": {"duration": 1, "noCopy": true, "onRedirectTargetPriority": -1},
+      "condition": {
+        "duration": 1,
+        "noCopy": true,
+        "onRedirectTargetPriority": -1
+      },
       "secondary": null,
       "target": "scripted",
       "type": "Steel"
@@ -12024,7 +12127,7 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "volatileStatus": "minimize",
-      "effect": {"noCopy": true},
+      "condition": {"noCopy": true},
       "boosts": {"evasion": 2},
       "secondary": null,
       "target": "self",
@@ -12044,7 +12147,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1, "authentic": 1},
       "volatileStatus": "miracleeye",
-      "effect": {"noCopy": true},
+      "condition": {"noCopy": true},
       "secondary": null,
       "target": "normal",
       "type": "Psychic",
@@ -12061,7 +12164,11 @@
       "pp": 20,
       "priority": -5,
       "flags": {"protect": 1},
-      "effect": {"duration": 1, "noCopy": true, "onRedirectTargetPriority": -1},
+      "condition": {
+        "duration": 1,
+        "noCopy": true,
+        "onRedirectTargetPriority": -1
+      },
       "secondary": null,
       "target": "scripted",
       "type": "Psychic"
@@ -12111,7 +12218,11 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "sideCondition": "mist",
-      "effect": {"duration": 5, "onResidualOrder": 21, "onResidualSubOrder": 3},
+      "condition": {
+        "duration": 5,
+        "onResidualOrder": 21,
+        "onResidualSubOrder": 3
+      },
       "secondary": null,
       "target": "allySide",
       "type": "Ice",
@@ -12161,7 +12272,7 @@
       "priority": 0,
       "flags": {"nonsky": 1},
       "terrain": "mistyterrain",
-      "effect": {
+      "condition": {
         "duration": 5,
         "onBasePowerPriority": 6,
         "onResidualOrder": 21,
@@ -12294,7 +12405,7 @@
       "priority": 0,
       "flags": {"nonsky": 1},
       "pseudoWeather": "mudsport",
-      "effect": {
+      "condition": {
         "duration": 5,
         "onBasePowerPriority": 1,
         "onResidualOrder": 21
@@ -12477,7 +12588,7 @@
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1},
       "volatileStatus": "nightmare",
-      "effect": {"noCopy": true, "onResidualOrder": 9},
+      "condition": {"noCopy": true, "onResidualOrder": 9},
       "secondary": null,
       "target": "normal",
       "type": "Ghost",
@@ -12550,7 +12661,7 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "volatileStatus": "noretreat",
-      "effect": {},
+      "condition": {},
       "boosts": {"atk": 1, "def": 1, "spa": 1, "spd": 1, "spe": 1},
       "secondary": null,
       "target": "self",
@@ -12601,7 +12712,7 @@
       "flags": {},
       "stallingMove": true,
       "volatileStatus": "obstruct",
-      "effect": {"duration": 1, "onTryHitPriority": 3},
+      "condition": {"duration": 1, "onTryHitPriority": 3},
       "secondary": null,
       "target": "self",
       "type": "Dark"
@@ -12649,7 +12760,7 @@
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1},
       "volatileStatus": "octolock",
-      "effect": {"onResidualOrder": 11},
+      "condition": {"onResidualOrder": 11},
       "secondary": null,
       "target": "normal",
       "type": "Fighting"
@@ -12885,7 +12996,7 @@
       "pp": 5,
       "priority": 0,
       "flags": {"sound": 1, "distance": 1, "authentic": 1},
-      "effect": {"duration": 4, "onResidualOrder": 20},
+      "condition": {"duration": 4, "onResidualOrder": 20},
       "secondary": null,
       "target": "all",
       "type": "Normal",
@@ -12934,7 +13045,7 @@
       "priority": 0,
       "flags": {"contact": 1, "charge": 1, "mirror": 1},
       "breaksProtect": true,
-      "effect": {"duration": 2, "onInvulnerability": false},
+      "condition": {"duration": 2, "onInvulnerability": false},
       "secondary": null,
       "target": "normal",
       "type": "Ghost"
@@ -13209,7 +13320,7 @@
         "authentic": 1
       },
       "volatileStatus": "powder",
-      "effect": {"duration": 1, "onTryMovePriority": -1},
+      "condition": {"duration": 1, "onTryMovePriority": -1},
       "secondary": null,
       "target": "normal",
       "type": "Bug",
@@ -13288,7 +13399,7 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "volatileStatus": "powertrick",
-      "effect": {},
+      "condition": {},
       "secondary": null,
       "target": "self",
       "type": "Psychic",
@@ -13399,7 +13510,7 @@
       "flags": {},
       "stallingMove": true,
       "volatileStatus": "protect",
-      "effect": {"duration": 1, "onTryHitPriority": 3},
+      "condition": {"duration": 1, "onTryHitPriority": 3},
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -13478,7 +13589,7 @@
       "priority": 0,
       "flags": {"nonsky": 1},
       "terrain": "psychicterrain",
-      "effect": {
+      "condition": {
         "duration": 5,
         "onTryHitPriority": 4,
         "onBasePowerPriority": 6,
@@ -13650,7 +13761,7 @@
       "pp": 20,
       "priority": 0,
       "flags": {"contact": 1, "protect": 1, "mirror": 1},
-      "effect": {"duration": 1},
+      "condition": {"duration": 1},
       "secondary": null,
       "target": "normal",
       "type": "Dark"
@@ -13713,7 +13824,7 @@
       "priority": 3,
       "flags": {"snatch": 1},
       "sideCondition": "quickguard",
-      "effect": {"duration": 1, "onTryHitPriority": 4},
+      "condition": {"duration": 1, "onTryHitPriority": 4},
       "secondary": null,
       "target": "allySide",
       "type": "Fighting",
@@ -13749,7 +13860,7 @@
       "priority": 0,
       "flags": {"contact": 1, "protect": 1, "mirror": 1},
       "self": {"volatileStatus": "rage"},
-      "effect": {"onBeforeMovePriority": 100},
+      "condition": {"onBeforeMovePriority": 100},
       "secondary": null,
       "target": "normal",
       "type": "Normal"
@@ -13766,7 +13877,7 @@
       "priority": 2,
       "flags": {"powder": 1},
       "volatileStatus": "ragepowder",
-      "effect": {"duration": 1, "onFoeRedirectTargetPriority": 1},
+      "condition": {"duration": 1, "onFoeRedirectTargetPriority": 1},
       "secondary": null,
       "target": "self",
       "type": "Bug",
@@ -13897,7 +14008,7 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "sideCondition": "reflect",
-      "effect": {"duration": 5, "onResidualOrder": 21},
+      "condition": {"duration": 5, "onResidualOrder": 21},
       "secondary": null,
       "target": "allySide",
       "type": "Psychic",
@@ -14272,7 +14383,7 @@
       "pp": 20,
       "priority": 0,
       "flags": {"contact": 1, "protect": 1, "mirror": 1},
-      "effect": {"duration": 2, "onLockMove": "rollout"},
+      "condition": {"duration": 2, "onLockMove": "rollout"},
       "secondary": null,
       "target": "normal",
       "type": "Rock"
@@ -14290,7 +14401,7 @@
       "flags": {"snatch": 1, "heal": 1},
       "heal": [1, 2],
       "self": {"volatileStatus": "roost"},
-      "effect": {"duration": 1, "onResidualOrder": 20, "onTypePriority": -1},
+      "condition": {"duration": 1, "onResidualOrder": 20, "onTypePriority": -1},
       "secondary": null,
       "target": "self",
       "type": "Flying",
@@ -14373,7 +14484,11 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "sideCondition": "safeguard",
-      "effect": {"duration": 5, "onResidualOrder": 21, "onResidualSubOrder": 2},
+      "condition": {
+        "duration": 5,
+        "onResidualOrder": 21,
+        "onResidualSubOrder": 2
+      },
       "secondary": null,
       "target": "allySide",
       "type": "Normal",
@@ -14755,7 +14870,7 @@
       "priority": 0,
       "flags": {"contact": 1, "charge": 1, "mirror": 1},
       "breaksProtect": true,
-      "effect": {"duration": 2, "onInvulnerability": false},
+      "condition": {"duration": 2, "onInvulnerability": false},
       "secondary": null,
       "target": "normal",
       "type": "Ghost"
@@ -14900,7 +15015,7 @@
       "pp": 5,
       "priority": -3,
       "flags": {"protect": 1},
-      "effect": {"duration": 1},
+      "condition": {"duration": 1},
       "secondary": null,
       "target": "allAdjacentFoes",
       "type": "Fire"
@@ -15156,7 +15271,7 @@
         "gravity": 1,
         "distance": 1
       },
-      "effect": {
+      "condition": {
         "duration": 2,
         "onFoeTrapPokemonPriority": -15,
         "onFoeBeforeMovePriority": 12,
@@ -15319,7 +15434,7 @@
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1, "nonsky": 1},
       "volatileStatus": "smackdown",
-      "effect": {"noCopy": true},
+      "condition": {"noCopy": true},
       "secondary": null,
       "target": "normal",
       "type": "Rock"
@@ -15430,7 +15545,7 @@
       "priority": 4,
       "flags": {"authentic": 1},
       "volatileStatus": "snatch",
-      "effect": {"duration": 1},
+      "condition": {"duration": 1},
       "secondary": null,
       "pressureTarget": "foeSide",
       "target": "self",
@@ -15709,7 +15824,7 @@
       "priority": 0,
       "flags": {"reflectable": 1, "nonsky": 1},
       "sideCondition": "spikes",
-      "effect": {},
+      "condition": {},
       "secondary": null,
       "target": "foeSide",
       "type": "Ground",
@@ -15728,7 +15843,7 @@
       "flags": {},
       "stallingMove": true,
       "volatileStatus": "spikyshield",
-      "effect": {"duration": 1, "onTryHitPriority": 3},
+      "condition": {"duration": 1, "onTryHitPriority": 3},
       "secondary": null,
       "target": "self",
       "type": "Grass",
@@ -15871,7 +15986,7 @@
       "priority": 3,
       "flags": {"protect": 1, "reflectable": 1, "mystery": 1},
       "volatileStatus": "spotlight",
-      "effect": {"duration": 1, "onFoeRedirectTargetPriority": 2},
+      "condition": {"duration": 1, "onFoeRedirectTargetPriority": 2},
       "secondary": null,
       "target": "normal",
       "type": "Normal",
@@ -15889,7 +16004,7 @@
       "priority": 0,
       "flags": {"reflectable": 1},
       "sideCondition": "stealthrock",
-      "effect": {},
+      "condition": {},
       "secondary": null,
       "target": "foeSide",
       "type": "Rock",
@@ -15986,7 +16101,7 @@
       "priority": 0,
       "flags": {"reflectable": 1},
       "sideCondition": "stickyweb",
-      "effect": {},
+      "condition": {},
       "secondary": null,
       "target": "foeSide",
       "type": "Bug",
@@ -16004,7 +16119,7 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "volatileStatus": "stockpile",
-      "effect": {"noCopy": true},
+      "condition": {"noCopy": true},
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -16261,7 +16376,7 @@
       "priority": 0,
       "flags": {"snatch": 1, "nonsky": 1},
       "volatileStatus": "substitute",
-      "effect": {"onTryPrimaryHitPriority": -1},
+      "condition": {"onTryPrimaryHitPriority": -1},
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -16660,7 +16775,11 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "sideCondition": "tailwind",
-      "effect": {"duration": 4, "onResidualOrder": 21, "onResidualSubOrder": 4},
+      "condition": {
+        "duration": 4,
+        "onResidualOrder": 21,
+        "onResidualSubOrder": 4
+      },
       "secondary": null,
       "target": "allySide",
       "type": "Flying",
@@ -16694,7 +16813,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1},
       "volatileStatus": "tarshot",
-      "effect": {"onEffectivenessPriority": -2},
+      "condition": {"onEffectivenessPriority": -2},
       "boosts": {"spe": -1},
       "secondary": null,
       "target": "normal",
@@ -16712,7 +16831,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1, "authentic": 1},
       "volatileStatus": "taunt",
-      "effect": {
+      "condition": {
         "duration": 3,
         "onResidualOrder": 12,
         "onBeforeMovePriority": 5
@@ -16822,7 +16941,7 @@
         "mystery": 1
       },
       "volatileStatus": "telekinesis",
-      "effect": {
+      "condition": {
         "duration": 3,
         "onAccuracyPriority": -1,
         "onResidualOrder": 16
@@ -16944,7 +17063,7 @@
       "pp": 15,
       "priority": 0,
       "flags": {"contact": 1, "protect": 1, "mirror": 1},
-      "effect": {
+      "condition": {
         "duration": 2,
         "onBeforeMovePriority": 6,
         "onResidualOrder": 22
@@ -17094,7 +17213,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1, "authentic": 1},
       "volatileStatus": "torment",
-      "effect": {"noCopy": true},
+      "condition": {"noCopy": true},
       "secondary": null,
       "target": "normal",
       "type": "Dark",
@@ -17129,7 +17248,7 @@
       "priority": 0,
       "flags": {"reflectable": 1, "nonsky": 1},
       "sideCondition": "toxicspikes",
-      "effect": {},
+      "condition": {},
       "secondary": null,
       "target": "foeSide",
       "type": "Poison",
@@ -17229,7 +17348,7 @@
       "priority": -7,
       "flags": {"mirror": 1},
       "pseudoWeather": "trickroom",
-      "effect": {"duration": 5, "onResidualOrder": 23},
+      "condition": {"duration": 5, "onResidualOrder": 23},
       "secondary": null,
       "target": "all",
       "type": "Psychic",
@@ -17384,7 +17503,7 @@
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1, "sound": 1, "authentic": 1},
       "self": {"volatileStatus": "uproar"},
-      "effect": {"duration": 3, "onLockMove": "uproar"},
+      "condition": {"duration": 3, "onLockMove": "uproar"},
       "secondary": null,
       "target": "randomNormal",
       "type": "Normal"
@@ -17599,7 +17718,7 @@
       "pp": 10,
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1, "nonsky": 1},
-      "effect": {"duration": 4},
+      "condition": {"duration": 4},
       "secondary": null,
       "target": "normal",
       "type": "Water"
@@ -17648,7 +17767,7 @@
       "priority": 0,
       "flags": {"nonsky": 1},
       "pseudoWeather": "watersport",
-      "effect": {
+      "condition": {
         "duration": 5,
         "onBasePowerPriority": 1,
         "onResidualOrder": 21
@@ -17751,7 +17870,7 @@
       "priority": 3,
       "flags": {"snatch": 1},
       "sideCondition": "wideguard",
-      "effect": {"duration": 1, "onTryHitPriority": 4},
+      "condition": {"duration": 1, "onTryHitPriority": 4},
       "secondary": null,
       "target": "allySide",
       "type": "Rock",
@@ -17816,7 +17935,7 @@
       "priority": 0,
       "flags": {"snatch": 1, "heal": 1},
       "slotCondition": "Wish",
-      "effect": {"duration": 2, "onResidualOrder": 4},
+      "condition": {"duration": 2, "onResidualOrder": 4},
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -17851,7 +17970,7 @@
       "priority": 0,
       "flags": {"mirror": 1},
       "pseudoWeather": "wonderroom",
-      "effect": {"duration": 5, "onResidualOrder": 24},
+      "condition": {"duration": 5, "onResidualOrder": 24},
       "secondary": null,
       "target": "all",
       "type": "Psychic",
@@ -17966,7 +18085,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1},
       "volatileStatus": "yawn",
-      "effect": {"noCopy": true, "duration": 2, "onResidualOrder": 19},
+      "condition": {"noCopy": true, "duration": 2, "onResidualOrder": 19},
       "secondary": null,
       "target": "normal",
       "type": "Normal",

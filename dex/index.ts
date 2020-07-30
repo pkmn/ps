@@ -57,8 +57,8 @@ export class BasicEffect<NameT extends string = string> implements T.BasicEffect
     this.name = getString(data.name).trim() as NameT;
     this.id = data.realMove ? toID(data.realMove) : toID(this.name); // Hidden Power hack
     this.fullname = getString(data.fullname) || this.name;
-    this.effectType = getString(data.effectType) as T.EffectType || 'Effect';
-    this.kind = 'Effect';
+    this.effectType = getString(data.effectType) as T.EffectType || 'Condition';
+    this.kind = 'Condition';
     this.exists = !!(this.exists && this.id);
     this.num = data.num || 0;
     this.gen = data.gen || 0;
@@ -73,16 +73,16 @@ export class BasicEffect<NameT extends string = string> implements T.BasicEffect
   }
 }
 
-export class PureEffect extends BasicEffect implements T.PureEffect {
-  readonly effectType: 'Effect' | 'Weather' | 'Status';
-  readonly kind: 'Effect';
+export class Condition extends BasicEffect implements T.Condition {
+  readonly effectType: 'Condition' | 'Weather' | 'Status';
+  readonly kind: 'Condition';
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     super(data, ...moreData);
     data = this;
     this.effectType =
-      (['Weather', 'Status'].includes(data.effectType) ? data.effectType : 'Effect');
-    this.kind = 'Effect';
+      (['Weather', 'Status'].includes(data.effectType) ? data.effectType : 'Condition');
+    this.kind = 'Condition';
   }
 }
 
@@ -91,7 +91,7 @@ export class Ability extends BasicEffect<T.AbilityName> implements T.Ability {
   readonly kind: 'Ability';
   readonly isUnbreakable?: boolean;
   readonly suppressWeather?: boolean;
-  readonly effect?: Partial<PureEffect>;
+  readonly condition?: Partial<Condition>;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     super(data, ...moreData);
@@ -134,7 +134,7 @@ export class Item extends BasicEffect<T.ItemName> implements T.Item {
   readonly zMoveFrom?: T.MoveName;
   readonly itemUser?: T.SpeciesName[];
   readonly fling?: T.ItemData['fling'];
-  readonly effect?: Partial<PureEffect>;
+  readonly condition?: Partial<Condition>;
   readonly ignoreKlutz?: boolean;
   readonly isBerry?: boolean;
   readonly isChoice?: boolean;
@@ -197,7 +197,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly flags: T.Move['flags'];
   readonly category!: T.MoveCategory;
 
-  readonly effect?: Partial<T.PureEffectData>;
+  readonly condition?: Partial<T.Condition>;
   readonly damage?: number | 'level' | false | null;
   readonly noPPBoosts?: boolean;
 
@@ -422,7 +422,9 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly isMega?: boolean;
   readonly isPrimal?: boolean;
   readonly battleOnly?: T.SpeciesName | T.SpeciesName[];
-  readonly isGigantamax?: T.MoveName;
+  readonly canGigantamax?: T.MoveName;
+  readonly gmaxUnreleased?: boolean;
+  readonly cannotDynamax?: boolean;
   readonly requiredAbility?: T.AbilityName;
   readonly requiredItem?: T.ItemName;
   readonly requiredItems?: T.ItemName[];
@@ -433,7 +435,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly evoCondition?: string;
   readonly evoItem?: string;
   readonly evoType?: T.EvoType;
-  readonly effect?: Partial<PureEffect>;
+  readonly condition?: Partial<Condition>;
   readonly canHatch?: boolean;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
@@ -470,12 +472,12 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     this.maleOnlyHidden = !!data.maleOnlyHidden;
     this.maxHP = data.maxHP || undefined;
     this.isMega = !!(this.forme && ['Mega', 'Mega-X', 'Mega-Y'].includes(this.forme)) || undefined;
-    this.isGigantamax = data.isGigantamax || undefined;
-    this.battleOnly =
-      data.battleOnly || (this.isMega || this.isGigantamax ? this.baseSpecies : undefined);
-    this.changesFrom = data.changesFrom || (!this.isGigantamax
-        ? undefined : this.battleOnly !== this.baseSpecies
-        ? this.battleOnly : this.baseSpecies);
+    this.canGigantamax = data.canGigantamax || undefined;
+    this.gmaxUnreleased = !!data.gmaxUnreleased;
+    this.cannotDynamax = !!data.cannotDynamax;
+    this.battleOnly = data.battleOnly || (this.isMega ? this.baseSpecies : undefined);
+    this.changesFrom = data.changesFrom ||
+      (this.battleOnly !== this.baseSpecies ? this.battleOnly : this.baseSpecies);
 
     if (!this.gen && data.num >= 1) {
       if (data.num >= 810 || ['Gmax', 'Galar', 'Galar-Zen'].includes(this.forme)) {
@@ -632,7 +634,7 @@ const CURRENT_GEN_ID: GenID = GEN_IDS[7];
 
 const dexes: { [mod: string]: ModdedDex } = Object.create(null);
 
-const nullEffect: PureEffect = new PureEffect({name: '', exists: false});
+const nullEffect: Condition = new Condition({name: '', exists: false});
 
 export class ModdedDex implements T.Dex {
   static readonly STATS: ReadonlyArray<T.StatName> = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
@@ -659,7 +661,7 @@ export class ModdedDex implements T.Dex {
     Types: Object.create(null) as { [id: string]: Type },
     Learnsets: Object.create(null) as { [id: string]: Learnset },
     Effects: Object.create(null) as { [id: string]: Ability | Item | Move },
-    PureEffects: Object.create(null) as { [id: string]: PureEffect },
+    Conditions: Object.create(null) as { [id: string]: Condition },
   };
 
   constructor(genid = CURRENT_GEN_ID) {
@@ -874,29 +876,29 @@ export class ModdedDex implements T.Dex {
       return effect;
     }
 
-    return this.getPureEffectByID(id);
+    return this.getConditionByID(id);
   }
 
-  getPureEffectByID(id: T.ID): PureEffect {
+  getConditionByID(id: T.ID): Condition {
     if (!id) return nullEffect;
 
-    let effect = this.cache.PureEffects[id];
+    let effect = this.cache.Conditions[id];
     if (effect) return effect;
 
     let found: T.AbilityData | T.ItemData | T.MoveData;
-    if ((this.data.Moves.hasOwnProperty(id) && (found = this.data.Moves[id]).effect) ||
-      (this.data.Abilities.hasOwnProperty(id) && (found = this.data.Abilities[id]).effect) ||
-      (this.data.Items.hasOwnProperty(id) && (found = this.data.Items[id]).effect)) {
-      effect = new PureEffect({name: found.name || id}, found.effect!);
+    if ((this.data.Moves.hasOwnProperty(id) && (found = this.data.Moves[id]).condition) ||
+      (this.data.Abilities.hasOwnProperty(id) && (found = this.data.Abilities[id]).condition) ||
+      (this.data.Items.hasOwnProperty(id) && (found = this.data.Items[id]).condition)) {
+      effect = new Condition({name: found.name || id}, found.condition!);
     } else if (id === 'recoil') {
-      effect = new PureEffect({id, name: 'Recoil', effectType: 'Recoil'});
+      effect = new Condition({id, name: 'Recoil', effectType: 'Recoil'});
     } else if (id === 'drain') {
-      effect = new PureEffect({id, name: 'Drain', effectType: 'Drain'});
+      effect = new Condition({id, name: 'Drain', effectType: 'Drain'});
     } else {
-      effect = new PureEffect({id, name: id, exists: false});
+      effect = new Condition({id, name: id, exists: false});
     }
 
-    this.cache.PureEffects[id] = effect;
+    this.cache.Conditions[id] = effect;
     return effect;
   }
 
@@ -1255,7 +1257,7 @@ export {
   EffectData,
   HitEffect,
   SecondaryEffect,
-  PureEffectData,
+  ConditionData,
   AbilityData,
   ItemData,
   MoveData,
@@ -1266,7 +1268,7 @@ export {
   TypeData,
   NatureData,
   // BasicEffect,
-  // PureEffect,
+  // Condition,
   // Ability,
   // Item,
   // Move,

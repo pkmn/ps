@@ -178,7 +178,7 @@
     "focussash": {
       "inherit": true,
       "desc": "If holder's HP is full, survives all hits of one attack with at least 1 HP. Single use.",
-      "effect": {"duration": 1}
+      "condition": {"duration": 1}
     },
     "griseousorb": {
       "inherit": true,
@@ -189,7 +189,7 @@
       "desc": "Holder's Speed is halved and it becomes grounded."
     },
     "kingsrock": {"inherit": true},
-    "lifeorb": {"inherit": true, "effect": {"duration": 1}},
+    "lifeorb": {"inherit": true, "condition": {"duration": 1}},
     "lightball": {"inherit": true},
     "luckypunch": {"inherit": true},
     "lustrousorb": {"inherit": true},
@@ -201,7 +201,7 @@
     "metronome": {
       "inherit": true,
       "desc": "Damage of moves used on consecutive turns is increased. Max 2x after 10 turns.",
-      "effect": {"onTryMovePriority": -2}
+      "condition": {"onTryMovePriority": -2}
     },
     "razorfang": {"inherit": true},
     "stick": {"inherit": true},
@@ -2785,7 +2785,7 @@
     "metronome": {
       "name": "Metronome",
       "fling": {"basePower": 30},
-      "effect": {"onTryMovePriority": -2},
+      "condition": {"onTryMovePriority": -2},
       "num": 277,
       "gen": 4,
       "desc": "Damage of moves used on consecutive turns is increased. Max 2x after 5 turns."
@@ -2825,7 +2825,7 @@
       "name": "Micle Berry",
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Rock"},
-      "effect": {"duration": 2, "onSourceModifyAccuracyPriority": 3},
+      "condition": {"duration": 2, "onSourceModifyAccuracyPriority": 3},
       "num": 209,
       "gen": 4,
       "isNonstandard": "Unobtainable",
