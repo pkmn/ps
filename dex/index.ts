@@ -397,6 +397,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly kind: 'Species';
 
   readonly baseStats: T.StatsTable;
+  readonly bst: number;
   readonly baseSpecies: T.SpeciesName;
   readonly baseForme: T.FormeName | '';
   readonly forme: T.FormeName | '';
@@ -406,14 +407,15 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly evos?: T.SpeciesName[];
   readonly nfe: boolean;
   readonly eggGroups: T.EggGroup[];
+  readonly canHatch: boolean;
   readonly weightkg: number;
   readonly weighthg: number;
   readonly heightm: number;
   readonly unreleasedHidden: boolean | 'Past';
   readonly maleOnlyHidden: boolean;
   readonly changesFrom?: T.SpeciesName;
-  readonly tier: string;
-  readonly doublesTier: string;
+  readonly tier: T.Tier.Singles | T.Tier.Other;
+  readonly doublesTier: T.Tier.Doubles;
 
   readonly evoMove?: T.MoveName;
   readonly cosmeticFormes?: T.SpeciesName[];
@@ -436,7 +438,6 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly evoItem?: string;
   readonly evoType?: T.EvoType;
   readonly condition?: Partial<Condition>;
-  readonly canHatch?: boolean;
 
   constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
     super(data, ...moreData);
@@ -457,6 +458,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     this.evos = data.evos || [];
     this.nfe = !!this.evos?.length;
     this.eggGroups = data.eggGroups || [];
+    this.canHatch = data.canHatch || false;
     this.genderRatio = data.genderRatio || (this.gender === 'M' ? {M: 1, F: 0}
       : this.gender === 'F' ? {M: 0, F: 1}
       : this.gender === 'N' ? {M: 0, F: 0}
@@ -465,6 +467,8 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     this.requiredItems =
       this.requiredItems || (this.requiredItem ? [this.requiredItem] : undefined);
     this.baseStats = data.baseStats || {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0};
+    this.bst = this.baseStats.hp + this.baseStats.atk + this.baseStats.def +
+      this.baseStats.spa + this.baseStats.spd + this.baseStats.spe;
     this.weightkg = data.weightkg || 0;
     this.weighthg = this.weightkg * 10;
     this.heightm = data.heightm || 0;
@@ -809,6 +813,10 @@ export class ModdedDex implements T.Dex {
         (species as any).doublesTier = 'Illegal';
         (species as any).isNonstandard = 'Future';
       }
+      (species as any).nfe = species.evos?.length && this.getSpecies(species.evos[0]).gen <= this.gen;
+      (species as any).canHatch = species.canHatch ||
+        (!['Ditto', 'Undiscovered'].includes(species.eggGroups[0]) && !species.prevo && species.name !== 'Manaphy');
+      if (this.gen === 1) (species as any).bst -= species.baseStats.spd;
     } else {
       species = new Species({
         id, name, exists: false, tier: 'Illegal', doublesTier: 'Illegal', isNonstandard: 'Custom',
@@ -1245,6 +1253,7 @@ export {
   NatureName,
   TypeName,
   HPTypeName,
+  Tier,
   PokemonSet,
   AbilityName,
   ItemName,

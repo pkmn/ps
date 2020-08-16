@@ -23,7 +23,7 @@ function update(name, version) {
   bumpPkg.json.version = version;
   fs.writeFileSync(
     path.join(__dirname, bumpPkg.path, 'package.json'),
-    JSON.stringify(bumpPkg.json, null, 2));
+    JSON.stringify(bumpPkg.json, null, 2) + '\n');
 
   let nl = false;
   for (const n in subPackages) {

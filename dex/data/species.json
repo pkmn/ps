@@ -2909,7 +2909,8 @@
       },
       "abilities": {"0": "Blaze", "H": "Solar Power"},
       "weightkg": 0,
-      "eggGroups": ["Monster", "Dragon"]
+      "eggGroups": ["Monster", "Dragon"],
+      "changesFrom": "Charizard"
     },
     "squirtle": {
       "num": 7,
@@ -3008,7 +3009,8 @@
       },
       "abilities": {"0": "Torrent", "H": "Rain Dish"},
       "weightkg": 0,
-      "eggGroups": ["Monster", "Water 1"]
+      "eggGroups": ["Monster", "Water 1"],
+      "changesFrom": "Blastoise"
     },
     "caterpie": {
       "num": 10,
@@ -3081,7 +3083,8 @@
       },
       "abilities": {"0": "Compound Eyes", "H": "Tinted Lens"},
       "weightkg": 0,
-      "eggGroups": ["Bug"]
+      "eggGroups": ["Bug"],
+      "changesFrom": "Butterfree"
     },
     "weedle": {
       "num": 13,
@@ -3753,7 +3756,8 @@
       },
       "abilities": {"0": "Static", "H": "Lightning Rod"},
       "weightkg": 0,
-      "eggGroups": ["Field", "Fairy"]
+      "eggGroups": ["Field", "Fairy"],
+      "changesFrom": "Pikachu"
     },
     "pikachuworld": {
       "num": 25,
@@ -4489,7 +4493,8 @@
       },
       "abilities": {"0": "Pickup", "1": "Technician", "H": "Unnerve"},
       "weightkg": 0,
-      "eggGroups": ["Field"]
+      "eggGroups": ["Field"],
+      "changesFrom": "Meowth"
     },
     "persian": {
       "num": 53,
@@ -4848,7 +4853,8 @@
       },
       "abilities": {"0": "Guts", "1": "No Guard", "H": "Steadfast"},
       "weightkg": 0,
-      "eggGroups": ["Human-Like"]
+      "eggGroups": ["Human-Like"],
+      "changesFrom": "Machamp"
     },
     "bellsprout": {
       "num": 69,
@@ -5595,7 +5601,8 @@
       },
       "abilities": {"0": "Cursed Body"},
       "weightkg": 0,
-      "eggGroups": ["Amorphous"]
+      "eggGroups": ["Amorphous"],
+      "changesFrom": "Gengar"
     },
     "onix": {
       "num": 95,
@@ -5713,7 +5720,8 @@
         "H": "Sheer Force"
       },
       "weightkg": 0,
-      "eggGroups": ["Water 3"]
+      "eggGroups": ["Water 3"],
+      "changesFrom": "Kingler"
     },
     "voltorb": {
       "num": 100,
@@ -6504,7 +6512,8 @@
       },
       "abilities": {"0": "Water Absorb", "1": "Shell Armor", "H": "Hydration"},
       "weightkg": 0,
-      "eggGroups": ["Monster", "Water 1"]
+      "eggGroups": ["Monster", "Water 1"],
+      "changesFrom": "Lapras"
     },
     "ditto": {
       "num": 132,
@@ -6589,7 +6598,8 @@
       },
       "abilities": {"0": "Run Away", "1": "Adaptability", "H": "Anticipation"},
       "weightkg": 0,
-      "eggGroups": ["Field"]
+      "eggGroups": ["Field"],
+      "changesFrom": "Eevee"
     },
     "vaporeon": {
       "num": 134,
@@ -6820,7 +6830,8 @@
       },
       "abilities": {"0": "Immunity", "1": "Thick Fat", "H": "Gluttony"},
       "weightkg": 0,
-      "eggGroups": ["Monster"]
+      "eggGroups": ["Monster"],
+      "changesFrom": "Snorlax"
     },
     "articuno": {
       "num": 144,
@@ -8034,7 +8045,8 @@
       "weightkg": 28.5,
       "prevo": "Wynaut",
       "evoLevel": 15,
-      "eggGroups": ["Amorphous"]
+      "eggGroups": ["Amorphous"],
+      "canHatch": true
     },
     "girafarig": {
       "num": 203,
@@ -16344,7 +16356,8 @@
       },
       "abilities": {"0": "Stench", "1": "Weak Armor", "H": "Aftermath"},
       "weightkg": 0,
-      "eggGroups": ["Mineral"]
+      "eggGroups": ["Mineral"],
+      "changesFrom": "Garbodor"
     },
     "zorua": {
       "num": 570,
@@ -22347,7 +22360,8 @@
       },
       "abilities": {"0": "Iron Fist"},
       "weightkg": 0,
-      "eggGroups": ["Undiscovered"]
+      "eggGroups": ["Undiscovered"],
+      "changesFrom": "Melmetal"
     },
     "grookey": {
       "num": 810,
@@ -22424,7 +22438,8 @@
       },
       "abilities": {"0": "Overgrow", "H": "Grassy Surge"},
       "weightkg": 0,
-      "eggGroups": ["Field", "Grass"]
+      "eggGroups": ["Field", "Grass"],
+      "changesFrom": "Rillaboom"
     },
     "scorbunny": {
       "num": 813,
@@ -22501,7 +22516,8 @@
       },
       "abilities": {"0": "Blaze", "H": "Libero"},
       "weightkg": 0,
-      "eggGroups": ["Field", "Human-Like"]
+      "eggGroups": ["Field", "Human-Like"],
+      "changesFrom": "Cinderace"
     },
     "sobble": {
       "num": 816,
@@ -22578,7 +22594,8 @@
       },
       "abilities": {"0": "Torrent", "H": "Sniper"},
       "weightkg": 0,
-      "eggGroups": ["Water 1", "Field"]
+      "eggGroups": ["Water 1", "Field"],
+      "changesFrom": "Inteleon"
     },
     "skwovet": {
       "num": 819,
@@ -22686,7 +22703,8 @@
       },
       "abilities": {"0": "Pressure", "1": "Unnerve", "H": "Mirror Armor"},
       "weightkg": 0,
-      "eggGroups": ["Flying"]
+      "eggGroups": ["Flying"],
+      "changesFrom": "Corviknight"
     },
     "blipbug": {
       "num": 824,
@@ -22759,7 +22777,8 @@
       },
       "abilities": {"0": "Swarm", "1": "Frisk", "H": "Telepathy"},
       "weightkg": 0,
-      "eggGroups": ["Bug"]
+      "eggGroups": ["Bug"],
+      "changesFrom": "Orbeetle"
     },
     "nickit": {
       "num": 827,
@@ -22926,7 +22945,8 @@
       },
       "abilities": {"0": "Strong Jaw", "1": "Shell Armor", "H": "Swift Swim"},
       "weightkg": 0,
-      "eggGroups": ["Monster", "Water 1"]
+      "eggGroups": ["Monster", "Water 1"],
+      "changesFrom": "Drednaw"
     },
     "yamper": {
       "num": 835,
@@ -23034,7 +23054,8 @@
       },
       "abilities": {"0": "Steam Engine", "1": "Flame Body", "H": "Flash Fire"},
       "weightkg": 0,
-      "eggGroups": ["Mineral"]
+      "eggGroups": ["Mineral"],
+      "changesFrom": "Coalossal"
     },
     "applin": {
       "num": 840,
@@ -23089,7 +23110,8 @@
       },
       "abilities": {"0": "Ripen", "1": "Gluttony", "H": "Hustle"},
       "weightkg": 0,
-      "eggGroups": ["Grass", "Dragon"]
+      "eggGroups": ["Grass", "Dragon"],
+      "changesFrom": "Flapple"
     },
     "appletun": {
       "num": 842,
@@ -23127,7 +23149,8 @@
       },
       "abilities": {"0": "Ripen", "1": "Gluttony", "H": "Thick Fat"},
       "weightkg": 0,
-      "eggGroups": ["Grass", "Dragon"]
+      "eggGroups": ["Grass", "Dragon"],
+      "changesFrom": "Appletun"
     },
     "silicobra": {
       "num": 843,
@@ -23181,7 +23204,8 @@
       },
       "abilities": {"0": "Sand Spit", "1": "Shed Skin", "H": "Sand Veil"},
       "weightkg": 0,
-      "eggGroups": ["Field", "Dragon"]
+      "eggGroups": ["Field", "Dragon"],
+      "changesFrom": "Sandaconda"
     },
     "cramorant": {
       "num": 845,
@@ -23291,7 +23315,8 @@
       "abilities": {"0": "Rattled", "1": "Static", "H": "Klutz"},
       "weightkg": 11,
       "evos": ["Toxtricity", "Toxtricity-Low-Key"],
-      "eggGroups": ["Undiscovered"]
+      "eggGroups": ["Undiscovered"],
+      "canHatch": true
     },
     "toxtricity": {
       "num": 849,
@@ -23352,7 +23377,8 @@
       },
       "abilities": {"0": "Punk Rock", "1": "Plus", "H": "Technician"},
       "weightkg": 0,
-      "eggGroups": ["Human-Like"]
+      "eggGroups": ["Human-Like"],
+      "changesFrom": "Toxtricity"
     },
     "toxtricitylowkeygmax": {
       "num": 849,
@@ -23371,7 +23397,8 @@
       "abilities": {"0": "Punk Rock", "1": "Minus", "H": "Technician"},
       "weightkg": 0,
       "eggGroups": ["Human-Like"],
-      "battleOnly": "Toxtricity-Low-Key"
+      "battleOnly": "Toxtricity-Low-Key",
+      "changesFrom": "Toxtricity-Low-Key"
     },
     "sizzlipede": {
       "num": 850,
@@ -23425,7 +23452,8 @@
       },
       "abilities": {"0": "Flash Fire", "1": "White Smoke", "H": "Flame Body"},
       "weightkg": 0,
-      "eggGroups": ["Bug"]
+      "eggGroups": ["Bug"],
+      "changesFrom": "Centiskorch"
     },
     "clobbopus": {
       "num": 852,
@@ -23626,7 +23654,8 @@
       },
       "abilities": {"0": "Healer", "1": "Anticipation", "H": "Magic Bounce"},
       "weightkg": 0,
-      "eggGroups": ["Fairy"]
+      "eggGroups": ["Fairy"],
+      "changesFrom": "Hatterene"
     },
     "impidimp": {
       "num": 859,
@@ -23703,7 +23732,8 @@
       },
       "abilities": {"0": "Prankster", "1": "Frisk", "H": "Pickpocket"},
       "weightkg": 0,
-      "eggGroups": ["Fairy", "Human-Like"]
+      "eggGroups": ["Fairy", "Human-Like"],
+      "changesFrom": "Grimmsnarl"
     },
     "obstagoon": {
       "num": 862,
@@ -23903,7 +23933,8 @@
       },
       "abilities": {"0": "Sweet Veil", "H": "Aroma Veil"},
       "weightkg": 0,
-      "eggGroups": ["Fairy", "Amorphous"]
+      "eggGroups": ["Fairy", "Amorphous"],
+      "changesFrom": "Alcremie"
     },
     "falinks": {
       "num": 870,
@@ -24161,7 +24192,8 @@
       },
       "abilities": {"0": "Sheer Force", "H": "Heavy Metal"},
       "weightkg": 0,
-      "eggGroups": ["Field", "Mineral"]
+      "eggGroups": ["Field", "Mineral"],
+      "changesFrom": "Copperajah"
     },
     "dracozolt": {
       "num": 880,
@@ -24268,7 +24300,8 @@
       },
       "abilities": {"0": "Light Metal", "1": "Heavy Metal", "H": "Stalwart"},
       "weightkg": 0,
-      "eggGroups": ["Mineral", "Dragon"]
+      "eggGroups": ["Mineral", "Dragon"],
+      "changesFrom": "Duraludon"
     },
     "dreepy": {
       "num": 885,
@@ -24530,7 +24563,8 @@
       },
       "abilities": {"0": "Unseen Fist"},
       "weightkg": 0,
-      "eggGroups": ["Undiscovered"]
+      "eggGroups": ["Undiscovered"],
+      "changesFrom": "Urshifu"
     },
     "urshifurapidstrikegmax": {
       "num": 892,
@@ -24550,7 +24584,8 @@
       "abilities": {"0": "Unseen Fist"},
       "weightkg": 105,
       "eggGroups": ["Undiscovered"],
-      "battleOnly": "Urshifu-Rapid-Strike"
+      "battleOnly": "Urshifu-Rapid-Strike",
+      "changesFrom": "Urshifu-Rapid-Strike"
     },
     "zarude": {
       "num": 893,

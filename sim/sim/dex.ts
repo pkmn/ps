@@ -111,7 +111,7 @@ const Natures: {[k: string]: Nature} = {
 	timid: {name: "Timid", plus: 'spe', minus: 'atk'},
 };
 
-export const toID = Data.Tools.getId;
+export const toID = Data.toID;
 
 export class ModdedDex {
 	readonly Data: typeof Data;
@@ -121,8 +121,7 @@ export class ModdedDex {
 	readonly isBase: boolean;
 	readonly currentMod: string;
 
-	readonly getId: (text: any) => ID;
-	readonly getString: (str: any) => string;
+	readonly toID: (text: any) => ID;
 
 	readonly abilityCache: Map<ID, Ability>;
 	readonly effectCache: Map<ID, Effect | Move>;
@@ -147,8 +146,7 @@ export class ModdedDex {
 		this.isBase = (mod === 'base');
 		this.currentMod = mod;
 
-		this.getId = Data.Tools.getId;
-		this.getString = Data.Tools.getString;
+		this.toID = toID;
 
 		this.abilityCache = new Map();
 		this.effectCache = new Map();
@@ -411,6 +409,9 @@ export class ModdedDex {
 				if (!isLetsGo) species.isNonstandard = 'Past';
 			}
 			species.nfe = species.evos.length && this.getSpecies(species.evos[0]).gen <= this.gen;
+			species.canHatch = species.canHatch ||
+				(!['Ditto', 'Undiscovered'].includes(species.eggGroups[0]) && !species.prevo && species.name !== 'Manaphy');
+			if (this.gen === 1) species.bst -= species.baseStats.spd;
 		} else {
 			species = new Data.Species({
 				id, name, exists: false, tier: 'Illegal', doublesTier: 'Illegal', isNonstandard: 'Custom',

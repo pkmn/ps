@@ -19,6 +19,7 @@ import {
   SpeciesName,
   StatName,
   StatsTable,
+  Tier,
   Type as DexType,
   TypeName,
 } from '@pkmn/dex-types';
@@ -226,8 +227,8 @@ export class Specie implements DexSpecies {
   readonly unreleasedHidden!: boolean | 'Past';
   readonly maleOnlyHidden!: boolean;
   readonly inheritsFrom!: ID;
-  readonly tier!: string;
-  readonly doublesTier!: string;
+  readonly tier!: Tier.Singles | Tier.Other;
+  readonly doublesTier!: Tier.Doubles;
 
   readonly evoMove?: MoveName;
   readonly cosmeticFormes?: SpeciesName[];
@@ -250,7 +251,7 @@ export class Specie implements DexSpecies {
   readonly evoItem?: string;
   readonly evoType?: EvoType;
   readonly condition?: Partial<Condition>;
-  readonly canHatch?: boolean;
+  readonly canHatch!: boolean;
 
   private readonly dex: Dex;
 
@@ -603,6 +604,7 @@ export {
   NatureName,
   TypeName,
   HPTypeName,
+  Tier,
   PokemonSet,
   AbilityName,
   ItemName,

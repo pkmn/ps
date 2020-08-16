@@ -12,7 +12,7 @@
   "dependencies": {
     "@pkmn/client": "file:../client",
     "@pkmn/protocol": "file:../protocol",
-    "@pkmn/types": "^0.1.1"
+    "@pkmn/types": "^0.1.2"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",

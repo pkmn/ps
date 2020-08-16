@@ -90,6 +90,13 @@ interface PokemonSet {
  */
 type MoveSource = string;
 
+namespace TierTypes {
+	export type Singles = "AG" | "Uber" | "(Uber)" | "OU" | "(OU)" | "UUBL" | "UU" | "RUBL" | "RU" | "NUBL" | "NU" |
+	"(NU)" | "PUBL" | "PU" | "(PU)" | "NFE" | "LC Uber" | "LC";
+	export type Doubles = "DUber" | "(DUber)" | "DOU" | "(DOU)" | "DBL" | "DUU" | "(DUU)" | "NFE" | "LC Uber" | "LC";
+	export type Other = "Unreleased" | "Illegal" | "CAP" | "CAP NFE" | "CAP LC";
+}
+
 interface EventInfo {
 	generation: number;
 	level?: number;
@@ -761,6 +768,7 @@ interface EventMethods {
 	onSourceModifySpAPriority?: number;
 	onSwitchInPriority?: number;
 	onTrapPokemonPriority?: number;
+	onTryEatItemPriority?: number;
 	onTryHealPriority?: number;
 	onTryHitPriority?: number;
 	onTryMovePriority?: number;
@@ -1141,7 +1149,7 @@ type ModdedSpeciesData = SpeciesData | Partial<Omit<SpeciesData, 'name'>> & {inh
 
 interface SpeciesFormatsData {
 	comboMoves?: readonly string[];
-	doublesTier?: string;
+	doublesTier?: TierTypes.Doubles | TierTypes.Other;
 	essentialMove?: string;
 	exclusiveMoves?: readonly string[];
 	gmaxUnreleased?: boolean;
@@ -1151,7 +1159,7 @@ interface SpeciesFormatsData {
 	randomDoubleBattleMoves?: readonly string[];
 	randomDoubleBattleLevel?: number;
 	randomSets?: readonly RandomTeamsTypes.Gen2RandomSet[];
-	tier?: string;
+	tier?: TierTypes.Singles | TierTypes.Other;
 }
 
 type ModdedSpeciesFormatsData = SpeciesFormatsData & {inherit?: true};
@@ -1206,7 +1214,7 @@ interface FormatsData extends EventMethods {
 	onModifyMovePriority?: number;
 	onModifyTypePriority?: number;
 	onSwitchInPriority?: number;
-	rated?: boolean;
+	rated?: boolean | string;
 	minSourceGen?: number;
 	restricted?: string[];
 	ruleset?: string[];

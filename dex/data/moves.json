@@ -397,7 +397,8 @@
     "sludge": {
       "inherit": true,
       "desc": "Has a 40% chance to poison the target.",
-      "shortDesc": "40% chance to poison the target."
+      "shortDesc": "40% chance to poison the target.",
+      "secondary": {"chance": 40, "status": "psn"}
     },
     "softboiled": {
       "inherit": true,
@@ -14172,7 +14173,8 @@
       "flags": {"protect": 1, "mirror": 1},
       "secondary": null,
       "target": "normal",
-      "type": "Electric"
+      "type": "Electric",
+      "maxMove": {"basePower": 140}
     },
     "roar": {
       "num": 46,
@@ -16065,7 +16067,7 @@
       "basePower": 130,
       "category": "Physical",
       "desc": "Fails if there is no terrain active. Ends the effects of Electric Terrain, Grassy Terrain, Misty Terrain, and Psychic Terrain.",
-      "shortDesc": "Fails if there is no terrain active. Ends the effects of terrain.",
+      "shortDesc": "Ends the effects of terrain; fails if none is active.",
       "name": "Steel Roller",
       "pp": 5,
       "priority": 0,
@@ -16321,8 +16323,8 @@
       "accuracy": true,
       "basePower": 0,
       "category": "Status",
-      "desc": "The user eats its Berry and raises its Defense by 2 stages. This effect is not prevented by the Klutz or Unnerve Abilities, or the effects of Embargo or Magic Room. Fails if the user is not holding a Berry.",
-      "shortDesc": "User eats its Berry and raises its Defense by 2.",
+      "desc": "This move cannot be selected unless the user is holding a Berry. The user eats its Berry and raises its Defense by 2 stages. This effect is not prevented by the Klutz or Unnerve Abilities, or the effects of Embargo or Magic Room. Fails if the user is not holding a Berry.",
+      "shortDesc": "Must hold Berry to use. User eats Berry, Def +2.",
       "name": "Stuff Cheeks",
       "pp": 10,
       "priority": 0,

@@ -17,6 +17,7 @@ import {
 
 import {State} from './state';
 import {EffectState} from './pokemon';
+import {toID} from './dex';
 
 export class Field {
 	readonly battle: Battle;

@@ -13,6 +13,7 @@ import {
   StatName,
   StatsTable,
   StatusName,
+  Tier,
   TypeName,
 } from '@pkmn/types';
 
@@ -244,7 +245,7 @@ export interface SpeciesData {
   battleOnly?: string | string[];
   isGigantamax?: string;
   changesFrom?: string;
-  tier?: string;
+  tier?: Tier.Singles | Tier.Other;
   inherit?: boolean;
 }
 
@@ -358,6 +359,7 @@ export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData
   readonly kind: 'Species';
   readonly baseSpecies: SpeciesName;
   readonly baseForme: FormeName | '';
+  readonly canHatch: boolean;
   readonly forme: FormeName | '';
   readonly abilities: SpeciesAbility<AbilityName | ''>;
   readonly types: TypeName[];
@@ -374,8 +376,8 @@ export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData
   readonly unreleasedHidden: boolean | 'Past';
   readonly maleOnlyHidden: boolean;
   readonly changesFrom?: SpeciesName;
-  readonly tier: string;
-  readonly doublesTier: string;
+  readonly tier: Tier.Singles | Tier.Other;
+  readonly doublesTier: Tier.Doubles;
   readonly isMega?: boolean;
   readonly isPrimal?: boolean;
   readonly battleOnly?: SpeciesName | SpeciesName[];

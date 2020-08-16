@@ -12,8 +12,6 @@ declare global {
   namespace NodeJS {
 		interface Global {
       Config: any;
-			Dex: any
-			toID(input: any): string
 			__version: {head: string, origin?: string, tree?: string}
 		}
   }
@@ -35,9 +33,7 @@ declare global {
 	const Condition: DataType.Condition;
 	const RuleTable: DataType.RuleTable;
 	const Species: DataType.Species;
-	const Tools: DataType.Tools;
 	const TypeInfo: DataType.TypeInfo;
-  const toID: typeof DataType.Tools.getId;
 
   const Config: {potd?: string, allowrequestingties?: boolean};
 }

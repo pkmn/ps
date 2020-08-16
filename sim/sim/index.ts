@@ -1,7 +1,3 @@
-import {Dex} from './dex';
-global.Dex = Dex;
-global.toID = Dex.getId;
-
 export {Battle} from './battle';
 export * as BattleStreams from './battle-stream';
 export * as Streams from '../lib/streams';

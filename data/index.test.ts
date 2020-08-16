@@ -278,12 +278,12 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         // Toxtricity (1) + Cramorant (2) + Necrozma (2) + Mimikyu (2) + Wishiwashi (1) +
         // Keldeo (1) + Kyruem (2) + Darmanitan (2) + Cherrim (1)
         // {DLC} Alola (4) + Galar (1) + Magearna (1) + Urshifu (1) +
-        // Rockruff (1) + Lycanroc (2) + [Pikachu (1) + Zarude (2)]
+        // Rockruff (1) + Lycanroc (2) + [Pikachu (1) + Zarude (1)]
         // {GMax} 26 + 7
         formes = 17 + 5 + 1 + 1 + 1 + 3 + 3 + 7 + 14 + 8 +
           1 + 1 + 1 + 2 + 1 + 2 + 2 + 2 + 1 + 1 + 2 + 2 + 1 +
           4 + 1 + 1 + 1 + 1 + 2 - 1; // FIXME Rockruff
-        expect(counts(8)).toEqual({species: 539, formes});
+        expect(counts(8)).toEqual({species: 540, formes});
       });
 
       test('formeNum', () => {

@@ -287,7 +287,7 @@ export const Scripts: BattleScriptsData = {
 			const originalHp = pokemon.hp;
 			this.singleEvent('AfterMoveSecondarySelf', move, null, pokemon, target, move);
 			this.runEvent('AfterMoveSecondarySelf', pokemon, target, move);
-			if (pokemon && pokemon !== target && move && move.category !== 'Status') {
+			if (pokemon && pokemon !== target && move.category !== 'Status') {
 				if (pokemon.hp <= pokemon.maxhp / 2 && originalHp > pokemon.maxhp / 2) {
 					this.runEvent('EmergencyExit', pokemon, pokemon);
 				}
@@ -1202,7 +1202,7 @@ export const Scripts: BattleScriptsData = {
 		const item = pokemon.getItem();
 		// Mega Rayquaza
 		if (altForme?.isMega && altForme?.requiredMove &&
-			pokemon.baseMoves.includes(toID(altForme.requiredMove)) && !item.zMove) {
+			pokemon.baseMoves.includes(this.toID(altForme.requiredMove)) && !item.zMove) {
 			return altForme.name;
 		}
 		// a hacked-in Megazard X can mega evolve into Megazard Y, but not into Megazard X
