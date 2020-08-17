@@ -84,7 +84,7 @@ assert(count === 151);
 
 ### `Generations`
 
-The [`@pkmn/data`][13] package wraps this data layer with `Generations` which  provides an
+The [`@pkmn/data`](../data) package wraps this data layer with `Generations` which  provides an
 alternative, higher-level data API than `Dex` which irons out a couple of Pokémon Showdown quirks.
 
 ```ts

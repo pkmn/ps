@@ -26,7 +26,8 @@
   - team members sorted by ID (how to handle formats without Species Clause?)
 
 Once a stable format has been obtained, the team can be packed and then hashed, and then just the
-hash can be shared to verify teams have not be changed (ie. **team lock**)
+hash can be shared to verify teams have not be changed (ie. **team lock**). Need to include a
+version number in case set import changes.
 
 ## `@pkmn/data`
 
@@ -37,8 +38,8 @@ hash can be shared to verify teams have not be changed (ie. **team lock**)
 
 ## `@pkmn/img`
 
-- offload ugliness to `smogon/pokemon-sprites` (embed in `vendor/`?) related to gaps or missing data
-  (should be symlinked), have `smogon/pokemon-sprites` build a mapping file that can be used to
+- offload ugliness to `smogon/sprites` (embed in `vendor/`?) related to gaps or missing data
+  (should be symlinked), have `smogon/sprites` build a mapping file that can be used to
   avoid redundant lookups
 - handle full ordered preference array (not just `gen2g`, full array of preferences)
 - allow for specifying whether to fall back to non-canonical or not
