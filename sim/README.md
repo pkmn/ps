@@ -56,7 +56,8 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
   into a module.
 - **the `isOriginal` optional constructor parameter to `Dex` has been removed**, as it was only
   intended for use internally for a legacy testing setup.
-- **`dataDir`, `levenshtein`, `dataSearch` and `getAwakeningValues` have been removed**.
+- **`dataDir`, `levenshtein`, `dataSearch`, `getAwakeningValues` and `stringifyTeam` have been
+  removed**.
 - in order to be [`@pkmn/dex-types`](../dex/types) compatible, the **asynchronous `getLearnset` API
   has been added** (though unlike like with [`@pkmn/dex`](../dex), the learnsets data is loaded at
   startup, not asynchronously), and **`Dex.data.Species`, `Dex.data.Moves` , `Dex.data.Types`

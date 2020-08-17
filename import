@@ -87,6 +87,7 @@ const ps = path.resolve(__dirname, 'vendor/pokemon-showdown');
 const psc = path.resolve(__dirname, 'vendor/pokemon-showdown-client');
 const sim = path.resolve(__dirname, 'sim');
 const dex = path.resolve(__dirname, 'dex');
+const randoms = path.resolve(__dirname, 'randoms');
 
 // fucking hell zarle, friends don't let friends use globals :(
 const IMPORTS = {
@@ -242,36 +243,24 @@ const DATA = {
   },
 };
 
-// TODO need multiple gens :(
-// const RANDBAT_DATA = {
-//   abilities: (() => {
-//     const abilities = {};
-//     const data = require(path.resolve(ps, 'data/abilities.js')).Abilities;
-//     for (const id in data) {
-//       if ('rating' in data[id]) abilities[id] = data[id].rating;
-//     }
-//     return abilities;
-//   })(),
-//   moves: (() => {
-//     const moves = {};
-//     const data = require(path.resolve(ps, 'data/moves.js')).Moves;
-//     for (const id in data) {
-//       if (data[id].isViable) moves[id] = 1;
-//     }
-//     return moves;
-//   })(),
-//   species: (() => {
-//     let data = require(path.resolve(ps, 'data/formats-data.js')).FormatsData;
-//     data = JSON.parse(JSON.stringify(data));
-//     for (const id in data) {
-//       for (const field of Object.keys(data[id])) {
-//         if (!RANDBAT_FIELDS.includes(field)) delete data[id][field];
-//       }
-//       if (!Object.keys(data[id]).length) delete data[id];
-//     }
-//     return data;
-//   })(),
-// };
+const RANDBAT_DATA = {
+  'abilities.js': code => {
+    const abilities = {};
+    for (const id in code.Abilities) {
+      if ('rating' in code.Abilities[id]) abilities[id] = code.Abilities[id].rating;
+    }
+    return [abilities, 'abilities.json'];
+  },
+  'formats-data.js': code => {
+    for (const id in code.FormatsData) {
+      for (const field of Object.keys(code.FormatsData[id])) {
+        if (!RANDBAT_FIELDS.includes(field)) delete code.FormatsData[id][field];
+      }
+      if (!Object.keys(code.FormatsData[id]).length) delete code.FormatsData[id];
+    }
+    return [code.FormatsData, 'formats-data.json'];
+  }
+};
 
 const HEAD = async where => (await execOrDie('git rev-parse HEAD', where)).slice(0, 8);
 // Figure out what has changed in PS so that we can later filter out just the interesting changes
@@ -336,24 +325,35 @@ const changes = async (where, last, now, repo) => ({
     // The data files are Typescript, so we need to build to convert them to JS before requiring
     await execOrDie(`node build`, ps);
 
-    const DEX = {};
+    const DEX = {regular: {}, random: {}};
     for (let gen = 1; gen <= 8; gen++) {
       let dir = path.join(ps, '.data-dist');
       if (gen !== 8) dir = path.join(dir, `mods/gen${gen}`);
       for (const file of fs.readdirSync(dir)) {
-        const fn = DATA[path.basename(file)];
+        let fn = DATA[path.basename(file)];
         if (fn) {
           const [contents, basename] = fn(require(path.resolve(dir, file)));
-          DEX[basename] = DEX[basename] || {};
-          DEX[basename][gen] = contents;
+          DEX.regular[basename] = DEX.regular[basename] || {};
+          DEX.regular[basename][gen] = contents;
+        }
+        fn = RANDBAT_DATA[path.basename(file)];
+        if (fn) {
+          const [contents, basename] = fn(require(path.resolve(dir, file)));
+          DEX.random[basename] = DEX.random[basename] || {};
+          DEX.random[basename][gen] = contents;
         }
       }
     }
 
-    for (const basename in DEX) {
-      const data = basename === 'aliases.json' ? DEX[basename][8] : DEX[basename];
+    for (const basename in DEX.regular) {
+      const data = basename === 'aliases.json' ? DEX.regular[basename][8] : DEX.regular[basename];
       fs.writeFileSync(path.join(dex, 'data', basename), stringify(data));
     }
+    // TODO: uncomment with @pkmn/randoms has been written
+    // for (const basename in DEX.random) {
+    //   const data = basename === 'aliases.json' ? DEX.random[basename][8] : DEX.random[basename];
+    //   fs.writeFileSync(path.join(randoms, 'data', basename), stringify(data));
+    // }
 
     // Mirror `sim/global-types.ts` to export all of its types (making it a module). Its possible
     // that ///-references could also be added to the data/ files and *nothing* then relies on
