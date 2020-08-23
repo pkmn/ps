@@ -1,4 +1,5 @@
 import {Team, Teams} from '@pkmn/sets';
+import {Utils} from '../lib/utils';
 import {
 	Ability,
 	ActiveMove,
@@ -138,6 +139,8 @@ export class ModdedDex {
 	dataCache: DexTableData | null;
 	formatsCache: DexTable<Format> | null;
 
+	deepClone = Utils.deepClone;
+
 	constructor(mod = 'base') {
 		this.ModdedDex = ModdedDex;
 		this.Data = Data;
@@ -198,7 +201,7 @@ export class ModdedDex {
 	modData(dataType: DataType, id: string) {
 		if (this.isBase) return this.data[dataType][id];
 		if (this.data[dataType][id] !== dexes[this.parentMod].data[dataType][id]) return this.data[dataType][id];
-		return (this.data[dataType][id] = this.deepClone(this.data[dataType][id]));
+		return (this.data[dataType][id] = Utils.deepClone(this.data[dataType][id]));
 	}
 
 	effectToString() {
@@ -477,7 +480,7 @@ export class ModdedDex {
 	getActiveMove(move: Move | string): ActiveMove {
 		if (move && typeof (move as ActiveMove).hit === 'number') return move as ActiveMove;
 		move = this.getMove(move);
-		const moveCopy: ActiveMove = this.deepClone(move);
+		const moveCopy: ActiveMove = Utils.deepClone(move);
 		moveCopy.hit = 0;
 		return moveCopy;
 	}
@@ -1065,16 +1068,6 @@ export class ModdedDex {
 		return Teams.unpackTeam(buf)?.team as PokemonSet[] || null;
 	}
 
-	deepClone(obj: any): any {
-		if (obj === null || typeof obj !== 'object') return obj;
-		if (Array.isArray(obj)) return obj.map(prop => this.deepClone(prop));
-		const clone = Object.create(Object.getPrototypeOf(obj));
-		for (const key of Object.keys(obj)) {
-			clone[key] = this.deepClone(obj[key]);
-		}
-		return clone;
-	}
-
 	loadDataFile(mod: string, dataType: DataType | 'Aliases'): AnyObject {
 		return (DATA as any)[mod === 'base' ? 'gen8' : mod][dataType] || {};
 	}
@@ -1137,7 +1130,7 @@ export class ModdedDex {
 						if (dataType === 'Pokedex') {
 							// Pokedex entries can be modified too many different ways
 							// e.g. inheriting different formats-data/learnsets
-							childTypedData[entryId] = this.deepClone(parentTypedData[entryId]);
+							childTypedData[entryId] = Utils.deepClone(parentTypedData[entryId]);
 						} else {
 							childTypedData[entryId] = parentTypedData[entryId];
 						}

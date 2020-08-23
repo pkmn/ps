@@ -124,14 +124,9 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		maxLevel: 5,
 		ruleset: ['Little Cup', 'Standard', 'Dynamax Clause'],
 		banlist: [
-			'Corsola-Galar', 'Cutiefly', 'Drifloon', 'Gastly', 'Gothita', 'Scyther', 'Sneasel', 'Swirlix', 'Tangela', 'Vulpix-Alola',
+			'Corsola-Galar', 'Cutiefly', 'Drifloon', 'Gastly', 'Gothita', 'Rufflet', 'Scyther', 'Sneasel', 'Swirlix', 'Tangela', 'Vulpix-Alola',
 			'Chlorophyll', 'Moody', 'Baton Pass',
 		],
-		onBegin() {
-			if (this.rated && this.format.id === 'gen8lc') {
-				this.add('html', '<div class="broadcast-blue"><strong>Little Cup is currently suspecting Rufflet! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3668142/">suspect thread</a>.</strong></div>');
-			}
-		},
 	},
 	{
 		name: "[Gen 8] Monotype",
@@ -262,6 +257,11 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		gameType: 'doubles',
 		ruleset: ['Standard Doubles', 'Dynamax Clause'],
 		banlist: ['DUber', 'Beat Up'],
+		onBegin() {
+			if (this.rated && this.format.id === 'gen8doublesou') {
+				this.add('html', '<div class="broadcast-blue"><strong>Doubles OU is currently suspecting Volcarona! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3669212/">suspect thread</a>.</strong></div>');
+			}
+		},
 	},
 	{
 		name: "[Gen 8] Doubles Ubers",
@@ -783,6 +783,11 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 			'Libero', 'Moody', 'Neutralizing Gas', 'Parental Bond', 'Protean', 'Pure Power', 'Shadow Tag', 'Simple', 'Stakeout', 'Speed Boost', 'Water Bubble', 'Wonder Guard',
 			'Baton Pass',
 		],
+		onBegin() {
+			if (this.rated && this.format.id === 'gen8almostanyability') {
+				this.add('html', '<div class="broadcast-blue"><strong>Almost Any Ability is currently suspecting Magearna! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3669035/">suspect thread</a>.</strong></div>');
+			}
+		},
 	},
 	{
 		name: "[Gen 8] STABmons",
@@ -800,11 +805,6 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 			'King\'s Rock', 'Moody', 'Shadow Tag', 'Baton Pass',
 		],
 		restricted: ['Acupressure', 'Belly Drum', 'Bolt Beak', 'Double Iron Bash', 'Electrify', 'Extreme Speed', 'Fishious Rend', 'Shell Smash', 'Shift Gear', 'Spore', 'Wicked Blow'],
-		onBegin() {
-			if (this.rated && this.format.id === 'gen8stabmons') {
-				this.add('html', '<div class="broadcast-blue"><strong>STABmons is currently suspecting V-create! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3668395/">suspect thread</a>.</strong></div>');
-			}
-		},
 	},
 	{
 		name: "[Gen 8] NFE",

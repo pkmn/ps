@@ -697,6 +697,10 @@ export class Handler implements Protocol.Handler {
     poke.activateAbility(effect);
 
     switch (effect.id) {
+    case 'poltergeist':
+      poke.item = toID(kwArgs.item);
+      poke.itemEffect = 'disturbed';
+      break;
     case 'grudge':
       poke.rememberMove(kwArgs.move!, Infinity);
       break;
