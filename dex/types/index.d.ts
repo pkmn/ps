@@ -23,11 +23,13 @@ export type MoveName = string & As<'MoveName'>;
 export type SpeciesName = string & As<'SpeciesName'>;
 export type FormeName = string & As<'FormeName'>;
 
-export type EffectType = 'Condition' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Weather' | 'Status';
+export type EffectType =
+  'Condition' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Weather' | 'Status';
+export type Effect = Ability | Item | Move | Condition;
+
 export type DataKind =
   'Condition' | 'Species' | 'Move' | 'Item' | 'Ability' | 'Nature' | 'Type' | 'Learnset';
-
-export type Effect = Ability | Item | Move | Condition;
+export type Data = Condition | Species | Move | Item | Ability | Nature | Type | Learnset;
 
 export interface EffectData {
   name: string;

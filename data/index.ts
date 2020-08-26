@@ -1,8 +1,8 @@
 import {
   AbilityName,
   Condition,
+  Data,
   Dex,
-  Effect,
   EggGroup,
   EvoType,
   FormeName,
@@ -24,9 +24,11 @@ import {
   TypeName,
 } from '@pkmn/dex-types';
 
-const DEFAULT_EXISTS = (e: Effect | DexSpecies) => {
-  if (!e.exists || e.isNonstandard || e.id === 'noability') return false;
-  return !('tier' in e && ['Illegal', 'Unreleased'].includes(e.tier));
+const DEFAULT_EXISTS = (d: Data) => {
+  if (!d.exists) return false;
+  if ('isNonstandard' in d && d.isNonstandard) return false;
+  if (d.kind === 'Ability' && d.id === 'noability') return false;
+  return !('tier' in d && ['Illegal', 'Unreleased'].includes(d.tier));
 };
 
 type ExistsFn = typeof DEFAULT_EXISTS;
@@ -45,9 +47,9 @@ export function toID(text: any): ID {
   return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
 }
 
-const GENERATIONS = Object.create(null) as {[num: number]: Generation};
-
 export class Generations {
+  private readonly cache = Object.create(null) as {[num: number]: Generation};
+
   private readonly dex: Dex;
   private readonly exists: ExistsFn;
 
@@ -57,8 +59,8 @@ export class Generations {
   }
 
   get(gen: GenerationNum) {
-    if (GENERATIONS[gen]) return GENERATIONS[gen];
-    return (GENERATIONS[gen] = new Generation(this.dex.forGen(gen), this.exists));
+    if (this.cache[gen]) return this.cache[gen];
+    return (this.cache[gen] = new Generation(this.dex.forGen(gen), this.exists));
   }
 
   *[Symbol.iterator]() {
@@ -91,9 +93,9 @@ export class Generation {
     this.items = new Items(this.dex, this.exists);
     this.moves = new Moves(this.dex, this.exists);
     this.species = new Species(this.dex, this.exists);
-    this.natures = new Natures(this.dex);
-    this.types = new Types(this.dex);
-    this.learnsets = new Learnsets(this.dex);
+    this.natures = new Natures(this.dex, this.exists);
+    this.types = new Types(this.dex, this.exists);
+    this.learnsets = new Learnsets(this.dex, this.exists);
     this.effects = new Effects(this.dex, this.exists);
     this.stats = new Stats(this.dex);
   }
@@ -318,15 +320,17 @@ export class Effects {
 
 export class Natures {
   private readonly dex: Dex;
+  private readonly exists: ExistsFn;
 
-  constructor(dex: Dex) {
+  constructor(dex: Dex, exists: ExistsFn) {
     this.dex = dex;
+    this.exists = exists;
   }
 
   get(name: string) {
     if (this.dex.gen < 3) return undefined;
     const nature = this.dex.getNature(name);
-    return nature.exists ? nature : undefined;
+    return this.exists(nature) ? nature : undefined;
   }
 
   *[Symbol.iterator]() {
@@ -352,8 +356,11 @@ export class Types {
 
   private readonly unknown: Type;
   private readonly dex: Dex;
-  constructor(dex: Dex) {
+  private readonly exists: ExistsFn;
+
+  constructor(dex: Dex, exists: ExistsFn) {
     this.dex = dex;
+    this.exists = exists;
     // PS doesn't contain data for the '???' type
     this.unknown = new Type({
       effectType: 'Type',
@@ -375,7 +382,7 @@ export class Types {
   get(name: string) {
     if (name === '???') return this.unknown;
     const type = this.dex.getType(name);
-    if (!type.exists) return undefined;
+    if (!this.exists(type)) return undefined;
     const cached = this.cache[type.id];
     if (cached) return cached;
     return (this.cache[type.id] = new Type(type, this.dex, this));
@@ -448,13 +455,16 @@ export class Type {
 
 export class Learnsets {
   private readonly dex: Dex;
-  constructor(dex: Dex) {
+  private readonly exists: ExistsFn;
+
+  constructor(dex: Dex, exists: ExistsFn) {
     this.dex = dex;
+    this.exists = exists;
   }
 
   async get(name: string) {
     const learnset = await this.dex.getLearnset(toID(name));
-    return learnset.exists ? learnset : undefined;
+    return this.exists(learnset) ? learnset : undefined;
   }
 
   async *[Symbol.iterator]() {
@@ -612,8 +622,9 @@ export {
   SpeciesName,
   FormeName,
   EffectType,
-  DataKind,
   Effect,
+  DataKind,
+  Data,
   EffectData,
   HitEffect,
   SecondaryEffect,

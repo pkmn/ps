@@ -1,5 +1,4 @@
-import {GenerationNum, StatsTable, Dex as DexT, ItemName} from '@pkmn/dex-types';
-import {Generations} from './index';
+import {GenerationNum, Generations, StatsTable, Dex as DexT, ItemName} from './index';
 
 import {calculate, Pokemon, Move} from '@smogon/calc/adaptable';
 import * as dex from '@pkmn/dex';
@@ -18,10 +17,19 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
     const gens = new Generations(Dex);
     const Gen = (num: GenerationNum) => gens.get(num);
 
-    // FIXME test exists override!
+    describe('exists', () => {
+      const gens2 = new Generations(Dex, e => !!e.exists && (!('num' in e) || e.num < 10));
+      expect(gens2.get(5).species.get('Bulbasaur')).toBeDefined();
+      expect(gens2.get(5).species.get('Gengar')).toBeUndefined();
+      expect(gens2.get(1).species.get('Chikorita')).toBeUndefined();
+      expect(gens2.get(4).abilities.get('Foo')).toBeUndefined();
+      expect(gens2.get(5).abilities.get('Stench')).toBeDefined();
+      expect(gens2.get(5).abilities.get('Adaptability')).toBeUndefined();
+    });
 
     describe('Abilities', () => {
       it('#get', () => {
+        expect(Gen(1).abilities.get('No Ability')).toBeUndefined();
         expect(Gen(7).abilities.get('foo')).toBeUndefined();
         expect(Gen(7).abilities.get('Illuminate')!.effectType).toBe('Ability');
         expect(Gen(6).abilities.get('Beast Boost')).toBeUndefined();

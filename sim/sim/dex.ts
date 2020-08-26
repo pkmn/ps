@@ -420,6 +420,7 @@ export class ModdedDex {
 				id, name, exists: false, tier: 'Illegal', doublesTier: 'Illegal', isNonstandard: 'Custom',
 			});
 		}
+		(species as any).kind = 'Species';
 		if (species.exists) this.speciesCache.set(id, species);
 		return species;
 	}
@@ -428,10 +429,13 @@ export class ModdedDex {
 		let learnsetData = this.learnsetCache.get(id);
 		if (learnsetData) return learnsetData;
 		if (!this.data.Learnsets.hasOwnProperty(id)) {
-			return new Data.Learnset({exists: false});
+			learnsetData = new Data.Learnset({});
+			learnsetData.exists = false
+		} else {
+			learnsetData = new Data.Learnset(this.data.Learnsets[id]);
 		}
-		learnsetData = new Data.Learnset(this.data.Learnsets[id]);
-		this.learnsetCache.set(id, learnsetData);
+		(learnsetData as any).kind = 'Learnset';
+		if (learnsetData.exists) this.learnsetCache.set(id, learnsetData);
 		return learnsetData;
 	}
 
@@ -522,18 +526,18 @@ export class ModdedDex {
 		if (this.data.Formats.hasOwnProperty(id)) {
 			effect = new Data.Format({name: id}, this.data.Formats[id]);
 		} else if (this.data.Conditions.hasOwnProperty(id)) {
-			effect = new Data.Condition({name: id}, this.data.Conditions[id]);
+			effect = new Data.Condition({name: id, kind: 'Condition'}, this.data.Conditions[id]);
 		} else if ((this.data.Moves.hasOwnProperty(id) && (found = this.data.Moves[id]).condition) ||
 							 (this.data.Abilities.hasOwnProperty(id) &&
 								(found = this.data.Abilities[id]).condition) ||
 							 (this.data.Items.hasOwnProperty(id) && (found = this.data.Items[id]).condition)) {
 			effect = new Data.Condition({name: found.name || id}, found.condition!);
 		} else if (id === 'recoil') {
-			effect = new Data.Condition({id, name: 'Recoil', effectType: 'Recoil'});
+			effect = new Data.Condition({id, name: 'Recoil', effectType: 'Recoil', kind: 'Condition'});
 		} else if (id === 'drain') {
-			effect = new Data.Condition({id, name: 'Drain', effectType: 'Drain'});
+			effect = new Data.Condition({id, name: 'Drain', effectType: 'Drain', kind: 'Condition'});
 		} else {
-			effect = new Data.Condition({id, name: id, exists: false});
+			effect = new Data.Condition({id, name: id, kind: 'Condition', exists: false});
 		}
 
 		this.effectCache.set(id, effect);
@@ -631,6 +635,7 @@ export class ModdedDex {
 		} else {
 			item = new Data.Item({id, name, exists: false});
 		}
+		(item as any).kind = 'Item';
 
 		if (item.exists) this.itemCache.set(id, item);
 		return item;
@@ -663,6 +668,7 @@ export class ModdedDex {
 		} else {
 			ability = new Data.Ability({id, name, exists: false});
 		}
+		(ability as any).kind = 'Ability';
 
 		if (ability.exists) this.abilityCache.set(id, ability);
 		return ability;
@@ -687,6 +693,7 @@ export class ModdedDex {
 		} else {
 			type = new Data.TypeInfo({id, name, exists: false, effectType: 'EffectType'});
 		}
+		(type as any).kind = 'Type';
 
 		if (type.exists) this.typeCache.set(id, type);
 		return type;
@@ -710,6 +717,7 @@ export class ModdedDex {
 		nature.toString = this.effectToString;
 		if (!nature.effectType) nature.effectType = 'Nature';
 		if (!nature.gen) nature.gen = 3;
+		(nature as any).kind = 'Nature';
 
 		return nature;
 	}
