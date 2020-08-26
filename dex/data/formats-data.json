@@ -4938,7 +4938,7 @@
     "necrozmadawnwings": {"tier": "Uber", "doublesTier": "DUber"},
     "necrozmaultra": {"isNonstandard": "Past", "tier": "Illegal"},
     "magearna": {"tier": "Uber", "doublesTier": "DUber"},
-    "magearnaoriginal": {},
+    "magearnaoriginal": {"tier": "Uber", "doublesTier": "DUber"},
     "marshadow": {"tier": "Uber", "doublesTier": "DUber"},
     "poipole": {"isNonstandard": "Past", "tier": "Illegal"},
     "naganadel": {"isNonstandard": "Past", "tier": "Illegal"},

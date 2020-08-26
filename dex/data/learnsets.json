@@ -43888,7 +43888,7 @@
           "4L67",
           "3M"
         ],
-        "icebeam": ["8M", "7M", "6M", "5M", "4M", "3M"],
+        "icebeam": ["8M", "8S0", "7M", "6M", "5M", "4M", "3M"],
         "icywind": ["8M", "7T", "7V", "6T", "5T", "4T", "3T"],
         "irontail": ["8M", "7T", "7V", "6T", "5T", "4M", "3M"],
         "lastresort": ["7T", "6T", "5T", "4T"],
@@ -43916,7 +43916,16 @@
         "psychup": ["7M", "7V", "6M", "5M", "4M", "3T"],
         "psyshock": ["8M", "7M", "6M", "5M"],
         "raindance": ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
-        "recover": ["8L35", "7L18", "7V", "6L18", "5L18", "4L18", "3L20"],
+        "recover": [
+          "8L35",
+          "8S0",
+          "7L18",
+          "7V",
+          "6L18",
+          "5L18",
+          "4L18",
+          "3L20"
+        ],
         "recycle": [
           "8L1",
           "7T",
@@ -43948,7 +43957,7 @@
         "telekinesis": ["7T"],
         "thief": ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
         "thunder": ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
-        "thunderbolt": ["8M", "7M", "6M", "5M", "4M", "3M"],
+        "thunderbolt": ["8M", "8S0", "7M", "6M", "5M", "4M", "3M"],
         "thundershock": ["8L15"],
         "thunderwave": ["8M", "7M", "6M", "5M", "4M", "3T"],
         "toxic": ["7M", "7V", "6M", "5M", "4M", "3M"],
@@ -43963,11 +43972,22 @@
           "3L36"
         ],
         "trick": ["8M", "7T", "6T", "5T", "4T"],
-        "trickroom": ["8M", "7M", "6M", "5M", "4M"],
+        "trickroom": ["8M", "8S0", "7M", "6M", "5M", "4M"],
         "wonderroom": ["8M", "7T", "6T", "5T"],
         "zapcannon": ["8L60", "7L1", "7V", "6L1", "5L62", "4L62", "3L48"],
         "zenheadbutt": ["8M", "7T", "6T", "5T", "4T"]
-      }
+      },
+      "eventData": [
+        {
+          "generation": 8,
+          "level": 50,
+          "nature": "Sassy",
+          "abilities": ["download"],
+          "ivs": {"hp": 31, "atk": 0, "spe": 0},
+          "moves": ["recover", "trickroom", "icebeam", "thunderbolt"],
+          "pokeball": "cherishball"
+        }
+      ]
     },
     "porygonz": {
       "learnset": {
@@ -60274,7 +60294,6 @@
           "level": 60,
           "shiny": true,
           "nature": "Quirky",
-          "perfectIVs": 3,
           "moves": ["magicalleaf", "futuresight", "lifedew", "healbell"],
           "pokeball": "cherishball"
         }
@@ -82774,7 +82793,7 @@
         "dig": ["8M", "6M", "5M", "4M"],
         "dive": ["8M", "6M", "5M", "4T"],
         "doubleteam": ["7M", "6M", "5M", "4M"],
-        "earthpower": ["8M", "8L39", "7T", "6T", "5T", "4T"],
+        "earthpower": ["8M", "8L39", "7T", "7S0", "6T", "5T", "4T"],
         "earthquake": ["8M", "7M", "6M", "5M", "4M"],
         "endure": ["8M", "4M"],
         "facade": ["8M", "7M", "6M", "5M", "4M"],
@@ -82787,7 +82806,7 @@
         "hiddenpower": ["7M", "7L16", "6M", "6L16", "5M", "5L16", "4M", "4L16"],
         "hydropump": ["8M"],
         "hyperbeam": ["8M", "7M", "6M", "5M", "4M"],
-        "icebeam": ["8M", "7M", "6M", "5M", "4M"],
+        "icebeam": ["8M", "7M", "7S0", "6M", "5M", "4M"],
         "icywind": ["8M", "7T", "6T", "5T", "4T"],
         "infestation": ["7M", "6M"],
         "memento": ["8L53"],
@@ -82798,7 +82817,7 @@
         "mudsport": ["7L1", "6L1", "5L1", "4L1"],
         "naturalgift": ["4M"],
         "painsplit": ["7T", "6T", "5T", "4T"],
-        "protect": ["8M", "7M", "6M", "5M", "4M"],
+        "protect": ["8M", "7M", "7S0", "6M", "5M", "4M"],
         "raindance": [
           "8M",
           "8L46",
@@ -82811,7 +82830,7 @@
           "4M",
           "4L22"
         ],
-        "recover": ["8L1", "7L54", "6L54", "5L54", "4L54"],
+        "recover": ["8L1", "7L54", "7S0", "6L54", "5L54", "4L54"],
         "rest": ["8M", "7M", "6M", "5M", "4M"],
         "return": ["7M", "6M", "5M", "4M"],
         "rockslide": ["8M", "7M", "6M", "5M", "4M"],
@@ -82841,6 +82860,53 @@
         "weatherball": ["8M"],
         "whirlpool": ["8M", "4M"]
       },
+      "eventData": [
+        {
+          "generation": 7,
+          "level": 50,
+          "gender": "F",
+          "nature": "Modest",
+          "abilities": ["stormdrain"],
+          "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "moves": ["earthpower", "icebeam", "recover", "protect"],
+          "pokeball": "cherishball"
+        }
+      ],
+      "encounters": [{"generation": 4, "level": 20}]
+    },
+    "gastrodoneast": {
+      "learnset": {
+        "earthpower": ["8S0"],
+        "icebeam": ["8S0"],
+        "protect": ["8S0"],
+        "surf": ["8S0"]
+      },
+      "eventData": [
+        {
+          "generation": 8,
+          "level": 50,
+          "gender": "F",
+          "nature": "Quiet",
+          "abilities": ["stormdrain"],
+          "ivs": {
+            "hp": 31,
+            "atk": 2,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+          },
+          "moves": ["protect", "surf", "icebeam", "earthpower"],
+          "pokeball": "cherishball"
+        }
+      ],
       "encounters": [{"generation": 4, "level": 20}]
     },
     "drifloon": {
@@ -118905,7 +118971,6 @@
           "generation": 8,
           "level": 60,
           "nature": "Sassy",
-          "perfectIVs": 3,
           "moves": ["closecombat", "powerwhip", "swagger", "snarl"],
           "pokeball": "cherishball"
         }
