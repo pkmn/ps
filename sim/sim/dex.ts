@@ -420,7 +420,7 @@ export class ModdedDex {
 				id, name, exists: false, tier: 'Illegal', doublesTier: 'Illegal', isNonstandard: 'Custom',
 			});
 		}
-		(species as any).kind = 'Species';
+		species.kind = 'Species';
 		if (species.exists) this.speciesCache.set(id, species);
 		return species;
 	}
@@ -430,7 +430,7 @@ export class ModdedDex {
 		if (learnsetData) return learnsetData;
 		if (!this.data.Learnsets.hasOwnProperty(id)) {
 			learnsetData = new Data.Learnset({});
-			learnsetData.exists = false
+			learnsetData.exists = false;
 		} else {
 			learnsetData = new Data.Learnset(this.data.Learnsets[id]);
 		}
