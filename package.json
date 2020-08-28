@@ -3,21 +3,21 @@
   "repository": "github:pkmn/ps",
   "license": "MIT",
   "devDependencies": {
-    "@pkmn/eslint-config": "^0.4.3",
+    "@pkmn/eslint-config": "^0.5.0",
     "@types/jest": "^26.0.10",
-    "@types/node": "^14.0.27",
-    "@typescript-eslint/eslint-plugin": "^3.9.0",
-    "@typescript-eslint/parser": "^3.9.0",
+    "@types/node": "^14.6.1",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
     "eslint": "^7.7.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.20.0",
-    "jest": "^26.4.0",
+    "jest": "^26.4.2",
     "subpkg": "^3.0.3",
-    "ts-jest": "^26.2.0",
-    "typescript": "^3.9.7"
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.2"
   },
   "optionalDependencies": {
-    "@babel/core": "^7.11.1",
+    "@babel/core": "^7.11.4",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
     "@babel/plugin-proposal-optional-catch-binding": "^7.10.4",
@@ -37,7 +37,7 @@
     "@babel/plugin-transform-template-literals": "^7.10.5",
     "@babel/plugin-transform-typescript": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
-    "terser": "^5.1.0"
+    "terser": "^5.2.1"
   },
   "subPackages": [
     "types",

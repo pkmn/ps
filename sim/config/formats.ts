@@ -212,6 +212,10 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 			battle: 3,
 		},
 		ruleset: ['Standard GBU'],
+		banlist: [
+			'Cinderace', 'Dragapult', 'Excadrill', 'Gyarados', 'Hippowdon', 'Incineroar', 'Indeedee', 'Magnezone',
+			'Mimikyu', 'Porygon2', 'Rillaboom', 'Togekiss', 'Torkoal', 'Tyranitar', 'Venusaur', 'Whimsicott',
+		],
 		minSourceGen: 8,
 	},
 	{
@@ -300,6 +304,23 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 			battle: 4,
 		},
 		ruleset: ['Standard GBU', 'VGC Timer'],
+		minSourceGen: 8,
+	},
+	{
+		name: "[Gen 8] Battle Stadium Doubles",
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		forcedLevel: 50,
+		teamLength: {
+			validate: [4, 6],
+			battle: 4,
+		},
+		ruleset: ['Standard GBU', 'VGC Timer'],
+		banlist: [
+			'Cinderace', 'Dragapult', 'Excadrill', 'Gyarados', 'Hippowdon', 'Incineroar', 'Indeedee', 'Magnezone',
+			'Mimikyu', 'Porygon2', 'Rillaboom', 'Togekiss', 'Torkoal', 'Tyranitar', 'Venusaur', 'Whimsicott',
+		],
 		minSourceGen: 8,
 	},
 	{
@@ -983,7 +1004,7 @@ export const Formats: (FormatsData | {section: string, column?: number})[] = [
 		searchShow: false,
 		ruleset: ['Standard', 'Dynamax Clause'],
 		banlist: [
-			'Blissey', 'Chansey', 'Darmanitan-Galar', 'Dracovish', 'Eternatus', 'Kyurem-Black', 'Kyurem-White', 'Lunala', 'Marshadow', 'Melmetal',
+			'Blissey', 'Chansey', 'Darmanitan-Galar', 'Dracovish', 'Eternatus', 'Kyurem-Black', 'Kyurem-White', 'Lunala', 'Magearna', 'Marshadow', 'Melmetal',
 			'Mewtwo', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Reshiram', 'Shedinja', 'Solgaleo', 'Urshifu-Base', 'Zacian', 'Zamazenta', 'Zekrom',
 			'Arena Trap', 'Huge Power', 'Imposter', 'Innards Out', 'Libero', 'Moody', 'Pure Power', 'Shadow Tag', 'Simple', 'Water Bubble',
 			'Baton Pass', 'Bolt Beak', 'Fishious Rend', 'Shell Smash',

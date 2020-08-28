@@ -175,6 +175,7 @@ const OVERRIDDEN = new Set([
   'test/sim/misc/statuses.js',
   'tsconfig.json',
   'pnpm-debug.log', // sigh...
+  'package-lock.json', // double sigh...
 ]);
 // Any file that hasn't been 'OVERRIDDEN' we need to copy over from PS
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
