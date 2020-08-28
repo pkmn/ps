@@ -8,24 +8,24 @@ const TEAM: string = readTeam('team');
 const TEAMS: string = readTeam('teams');
 
 describe('Team', () => {
-  test('importTeam + exportTeam', () => {
+  it('importTeam + exportTeam', () => {
     const t = Team.fromString(TEAM)!;
     expect(t.toString()).toEqual(TEAM);
     expect(Teams.exportTeams([t]))
       .toEqual('=== Untitled 1 ===\n\n' + TEAM + '\n');
   });
 
-  test('pack + unpack', () => {
+  it('pack + unpack', () => {
     const u = Team.import((Team.import(TEAM)!.pack()) + '\n')!;
     expect(u.export(GEN[7])).toEqual(TEAM);
   });
 
-  test('bad format', () => {
+  it('bad format', () => {
     const t = new Team([], GEN[8], 'uu');
     expect(t.gen).toBe(6);
   });
 
-  test('toJSON + fromJSON', () => {
+  it('toJSON + fromJSON', () => {
     const fj = Team.unpack(Team.import(TEAM)!.toJSON())!;
     expect(fj.export()).toEqual(TEAM);
 
@@ -34,7 +34,7 @@ describe('Team', () => {
 });
 
 describe('Teams', () => {
-  test('importTeams + exportTeams', () => {
+  it('importTeams + exportTeams', () => {
     let imported = Teams.fromString(TEAMS.replace(/\[ou\]/, ''), GEN[8])!;
     expect(imported[0].gen).toBe(8);
 
@@ -56,14 +56,14 @@ describe('Teams', () => {
     expect(Teams.importTeam(TEAMS, GEN[8])).toEqual(imported[0]);
   });
 
-  test('unpack', () => {
+  it('unpack', () => {
     expect(Teams.unpackTeam('')).not.toBeDefined();
     expect(Teams.unpackTeam('foo')).not.toBeDefined();
     expect(Teams.importTeams('|\n\n\n')).toEqual([]);
   });
 
 
-  test('including packed', () => {
+  it('including packed', () => {
     const teams = Teams.importTeams(TEAMS);
     const team = Team.import(TEAM)!;
     let both = 'ou]RBY/Cloyster|' + (teams[1].pack()) + '\n' +

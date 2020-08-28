@@ -17,7 +17,7 @@ function exported(s: string) {
 
 describe('Sets', () => {
   describe('importSet + exportSet', () => {
-    test('blissey', () => {
+    it('blissey', () => {
       const blissey = `
         Blissey @ Leftovers
         Ability: Natural Cure
@@ -32,7 +32,7 @@ describe('Sets', () => {
         .toEqual(exported(blissey));
     });
 
-    test('marowak (gen 2)', () => {
+    it('marowak (gen 2)', () => {
       const marowakIn = imported(`
         Marowak (M) @ Thick Club
         - Earthquake
@@ -53,7 +53,7 @@ describe('Sets', () => {
         .toEqual(marowakOut);
     });
 
-    test('magnezone', () => {
+    it('magnezone', () => {
       const magnezoneIn = imported(`
         Maggy (Magnezone) @ No Item
         Trait: Sturdy
@@ -86,7 +86,7 @@ describe('Sets', () => {
         .toEqual(magnezoneOut);
     });
 
-    test('tauros (rby)', () => {
+    it('tauros (rby)', () => {
       const tauros = `
         Tauros
         - Blizzard
@@ -98,7 +98,7 @@ describe('Sets', () => {
         .toEqual(exported(tauros));
     });
 
-    test('fake', () => {
+    it('fake', () => {
       const fake = `
         Fakey (Fake) @ Fake
         Ability: Fake
@@ -111,13 +111,13 @@ describe('Sets', () => {
         .toEqual(exported(fake));
     });
 
-    test('nothing', () => {
+    it('nothing', () => {
       expect(Sets.importSet('')).not.toBeDefined();
     });
   });
 
   describe('pack + unpack', () => {
-    test('m-alakazam', () => {
+    it('m-alakazam', () => {
       const malakazam = `
         Alakazam-Mega (F) @ Alakazite
         Ability: Magic Guard
@@ -133,7 +133,7 @@ describe('Sets', () => {
       expect(Sets.exportSet(u, GEN[7])).toEqual(exported(malakazam));
     });
 
-    test('tangrowth (packed in)', () => {
+    it('tangrowth (packed in)', () => {
       const tangrowthIn = 'Tangrowth||assaultvest|H|gigadrain,knockoff' +
           ',powerwhip,earthquake|Sassy|248,,8,,252,||,30,30,,,|||,Ice,';
       const tangrowthOut = exported(`
@@ -153,7 +153,7 @@ describe('Sets', () => {
       expect(Sets.exportSet(u, GEN[7])).toEqual(tangrowthOut);
     });
 
-    test('magnezone', () => {
+    it('magnezone', () => {
       const magnezoneIn = imported(`
         Maggy (Magnezone) @ No Item
         Trait: Sturdy
@@ -187,7 +187,7 @@ describe('Sets', () => {
       expect(Sets.exportSet(u, GEN[7])).toEqual(magnezoneOut);
     });
 
-    test('tauros', () => {
+    it('tauros', () => {
       const taurosIn = imported(`
         Tauros
         - Blizzard
@@ -205,7 +205,7 @@ describe('Sets', () => {
       expect(Sets.exportSet(u, GEN[1])).toEqual(taurosOut);
     });
 
-    test('blissey (after unpack)', () => {
+    it('blissey (after unpack)', () => {
       const blisseyIn = imported(`
         Blissey @ Leftovers
         Ability: Natural Cure
@@ -229,7 +229,7 @@ describe('Sets', () => {
       expect(Sets.exportSet(u)).toEqual(blisseyOut);
     });
 
-    test('fake', () => {
+    it('fake', () => {
       const fakeIn = imported(`
         Fakey (Fake) @ Fake
         Ability: Fake
@@ -249,7 +249,7 @@ describe('Sets', () => {
       expect(Sets.exportSet(u)).toEqual(fakeOut);
     });
 
-    test('partial', () => {
+    it('partial', () => {
       let p = '';
       expect(Sets.unpack(p)).not.toBeDefined();
       p += 'Tangrowth';
@@ -280,7 +280,7 @@ describe('Sets', () => {
       expect(Sets.unpack(p)).toBeDefined();
     });
 
-    test('bad types', () => {
+    it('bad types', () => {
       let suicune = {name: 'Suicune', pokeball: 'Cherish Ball'} as PokemonSet;
       const u = Sets.unpack(Sets.pack(suicune))!;
       expect(Sets.exportSet(u)).toEqual(exported(`Suicune
@@ -306,7 +306,7 @@ describe('Sets', () => {
     });
   });
 
-  test('weird import', () => {
+  it('weird import', () => {
     const weirdIn = imported(`
         @ Leftovers
         Ability: Illuminate
@@ -321,7 +321,7 @@ describe('Sets', () => {
     expect(Sets.exportSet(Sets.importSet(weirdIn)!)).toEqual(weirdOut);
   });
 
-  test('toJSON + fromJSON', () => {
+  it('toJSON + fromJSON', () => {
     const malakazam = `
       Alakazam-Mega (F) @ Alakazite
       Ability: Magic Guard

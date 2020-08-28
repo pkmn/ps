@@ -8,7 +8,7 @@ const DOMAIN = 'play.pokemonshowdown.com';
 const URL = `${PROTOCOL}://${DOMAIN}`;
 
 describe('Sprites', () => {
-  test('#getPokemon', () => {
+  it('#getPokemon', () => {
     let pokemon = Sprites.getPokemon('foobar', {gen: 4});
     expect(pokemon.url).toEqual(`${URL}/sprites/gen5/0.png`);
     expect(pokemon.gen).toBe(5);
@@ -117,7 +117,7 @@ describe('Sprites', () => {
     expect(pokemon.url).toEqual(`${URL}/sprites/ani-shiny/unown-p.gif`);
   });
 
-  test('#getDexPokemon', () => {
+  it('#getDexPokemon', () => {
     let pokemon = Sprites.getDexPokemon('foobar', {gen: 4});
     expect(pokemon.url).toEqual(`${URL}/sprites/gen5/0.png`);
     expect(pokemon.gen).toBe(5);
@@ -164,7 +164,7 @@ describe('Sprites', () => {
     expect(pokemon.url).toEqual(`${URL}/sprites/dex-shiny/delphox.png`);
   });
 
-  test('#getSubstitute', () => {
+  it('#getSubstitute', () => {
     // TODO test innerWith/innerHeight
     let sub = Sprites.getSubstitute();
     expect(sub.gen).toEqual(5);
@@ -186,7 +186,7 @@ describe('Sprites', () => {
     expect(sub.url).toEqual(`${URL}/sprites/substitutes/gen4/substitute.png`);
   });
 
-  test('#getAvatar', () => {
+  it('#getAvatar', () => {
     expect(Sprites.getAvatar(277, {domain: 'pkmn.cc'}))
       .toEqual('https://pkmn.cc/sprites/trainers/cheren-gen5bw2.png');
     expect(Sprites.getAvatar('#bw2elesa'))
@@ -205,7 +205,7 @@ describe('Sprites', () => {
 });
 
 describe('Icons', () => {
-  test('#getPokemon', () => {
+  it('#getPokemon', () => {
     let pokemon = Icons.getPokemon('foobar');
     expect(pokemon.url).toEqual(`${URL}/sprites/pokemonicons-sheet.png`);
     expect(pokemon.left).toEqual(-0);
@@ -237,7 +237,7 @@ describe('Icons', () => {
     );
   });
 
-  test('#getPokeball', () => {
+  it('#getPokeball', () => {
     expect(Icons.getPokeball('foo')).toBeUndefined();
 
     let pokeball = Icons.getPokeball('pokeball')!;
@@ -262,7 +262,7 @@ describe('Icons', () => {
     expect(pokeball.url).toEqual('http://pkmn.cc/sprites/pokemonicons-pokeball-sheet.png');
   });
 
-  test('#getItem', () => {
+  it('#getItem', () => {
     let item = Icons.getItem('foobar');
     expect(item.url).toEqual(`${URL}/sprites/itemicons-sheet.png`);
     expect(item.left).toEqual(-0);
@@ -281,7 +281,7 @@ describe('Icons', () => {
     );
   });
 
-  test('#getType', () => {
+  it('#getType', () => {
     expect(Icons.getType('???').url).toEqual(`${URL}/sprites/types/%3f%3f%3f.png`);
     expect(Icons.getType('BIRD', {protocol: 'http'}).url)
       .toEqual(`http://${DOMAIN}/sprites/types/Bird.png`);

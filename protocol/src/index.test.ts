@@ -1,7 +1,7 @@
 import {Protocol, PokemonHealth, Args, KWArgs} from './index';
 
 describe('Protocol', () => {
-  test('#parseNameParts', () => {
+  it('#parseNameParts', () => {
     let parts = Protocol.parseNameParts('pre');
     expect(parts.group).toEqual('');
     expect(parts.name).toEqual('pre');
@@ -27,7 +27,7 @@ describe('Protocol', () => {
     expect(parts.status).toEqual('Status');
   });
 
-  test('#parseHealth', () => {
+  it('#parseHealth', () => {
     const parse = (hpstring: string, output?: PokemonHealth) =>
       Protocol.parseHealth(hpstring as Protocol.PokemonHPStatus, output);
     const health = (h: Partial<PokemonHealth>) =>
@@ -52,7 +52,7 @@ describe('Protocol', () => {
   });
 
   // FIXME
-  test('#readme', () => {
+  it('#readme', () => {
     class BoostHandler implements Protocol.Handler {
       '|-boost|'(args: Args['|-boost|'], kwArgs: KWArgs['|-boost|']) {
         const [, p, stat, n] = args;

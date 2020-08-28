@@ -2,7 +2,7 @@ import {DetailedPokemon, PokemonHealth} from '@pkmn/protocol';
 import {Pokemon, Side} from '../index';
 
 describe('Pokemon', () => {
-  test('#healthParse', () => {
+  it('#healthParse', () => {
     const parse = (
       hpstring: string,
       options = {} as Partial<PokemonHealth>

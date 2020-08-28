@@ -48,7 +48,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
           .toEqual('OHKO moves fail when used against this Pokemon.');
       });
 
-      test('counts', () => {
+      it('counts', () => {
         const COUNTS = [0, 0, 76, 47, 41, 27, 42, 27];
         let total = 0;
         for (const gen of gens) {
@@ -56,7 +56,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         }
       });
 
-      test('cached', () => {
+      it('cached', () => {
         const a = Gen(6).abilities.get('Mummy');
         const b = Gen(6).abilities.get('Mummy');
         const c = Gen(7).abilities.get('Mummy');
@@ -95,7 +95,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(5).items.get('Old Amber')!.gen).toBe(3);
       });
 
-      test('fields', () => {
+      it('fields', () => {
         expect(Gen(7).items.get('Sitrus Berry')!.effectType).toBe('Item');
         expect(Gen(4).items.get('Sitrus Berry')!.isBerry).toBe(true);
         expect(Gen(7).items.get('Heracronite')!.megaStone).toBe('Heracross-Mega');
@@ -113,7 +113,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(7).items.get('Choice Specs')!.isChoice).toBe(true);
       });
 
-      test('cached', () => {
+      it('cached', () => {
         const a = Gen(6).items.get('Choice Band');
         const b = Gen(6).items.get('Choice Band');
         const c = Gen(7).items.get('Choice Band');
@@ -136,7 +136,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(7).moves.get('Hidden Power [Bug]')!.name).toEqual('Hidden Power Bug');
       });
 
-      test('fields', () => {
+      it('fields', () => {
         expect(Gen(7).moves.get('Tackle')!.effectType).toBe('Move');
         expect(Gen(1).moves.get('Surf')!.basePower).toBe(95);
         expect(Gen(7).moves.get('Surf')!.basePower).toBe(90);
@@ -194,7 +194,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(7).moves.get('Hurricane')!.secondaries![0].volatileStatus).toBe('confusion');
       });
 
-      test('counts', () => {
+      it('counts', () => {
         const COUNTS = [165, 86 + 16, 103, 113, 92, 59, 105 - 14];
         let total = 0;
         for (const gen of gens) {
@@ -203,7 +203,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         }
       });
 
-      test('cached', () => {
+      it('cached', () => {
         const a = Gen(6).moves.get('Earthquake');
         const b = Gen(6).moves.get('Earthquake');
         const c = Gen(7).moves.get('Earthquake');
@@ -215,7 +215,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
     });
 
     describe('Species', () => {
-      test('#get', () => {
+      it('#get', () => {
         const gen = Gen(7);
         expect(gen.species.get('foo')).toBeUndefined();
         // normal
@@ -240,7 +240,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         // FIXME expect(Gen(7).species.get('Rockruff-Dusk')!.name).toBe('Rockruff-Dusk');
       });
 
-      test('counts', () => {
+      it('counts', () => {
         const counts = (num: GenerationNum) => {
           const gen = Gen(num);
           const ss = [];
@@ -294,7 +294,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(counts(8)).toEqual({species: 540, formes});
       });
 
-      test('formeNum', () => {
+      it('formeNum', () => {
         for (const gen of gens) {
           for (const species of gen.species) {
             expect(species.formeNum).toBeGreaterThanOrEqual(0);
@@ -311,7 +311,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(7).species.get('Minior-Violet')!.formeNum).toBe(13);
       });
 
-      test('fields', () => {
+      it('fields', () => {
         expect(Gen(7).species.get('Clefable')!.types).toEqual(['Fairy']);
         expect(Gen(3).species.get('Clefable')!.types).toEqual(['Normal']);
         expect(Gen(7).species.get('Gengar')!.types[1]).toBe('Poison');
@@ -347,12 +347,12 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(4).species.get('Chansey')!.prevo).toEqual('Happiny');
       });
 
-      test('#hasAbility', () => {
+      it('#hasAbility', () => {
         expect(Gen(7).species.get('Gengar')!.hasAbility('Levitate')).toBe(false);
         expect(Gen(5).species.get('Gengar')!.hasAbility('Levitate')).toBe(true);
       });
 
-      test('cached', () => {
+      it('cached', () => {
         const a = Gen(6).species.get('Gengar');
         const b = Gen(6).species.get('Gengar');
         const c = Gen(7).species.get('Gengar');
@@ -364,7 +364,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
     });
 
     describe('Effects', () => {
-      test('#get', () => {
+      it('#get', () => {
         const gen = Gen(8);
         expect(gen.effects.get('')).toBeUndefined();
         expect(gen.effects.get('foo')).toBeUndefined();
@@ -382,7 +382,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
     });
 
     describe('Learnsets', () => {
-      test('#get', async () => {
+      it('#get', async () => {
         expect((await Gen(8).learnsets.get('foo'))).toBeUndefined();
         const learnset = (await Gen(1).learnsets.get('mew'))!;
         expect(learnset.effectType).toBe('Learnset');
@@ -397,7 +397,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
     });
 
     describe('Natures', () => {
-      test('#get', () => {
+      it('#get', () => {
         const adamant = Gen(8).natures.get('adamant')!;
         expect(adamant.name).toBe('Adamant');
         expect(adamant.plus).toBe('atk');
@@ -411,7 +411,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(8).natures.get('foo')).toBeUndefined();
       });
 
-      test('count', () => {
+      it('count', () => {
         expect(Array.from(Gen(8).natures)).toHaveLength(25);
       });
     });
@@ -471,7 +471,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
     });
 
     describe('Stats', () => {
-      test('calc', () => {
+      it('calc', () => {
         const rby: StatsTable = {hp: 403, atk: 298, def: 298, spa: 298, spd: 298, spe: 298};
         const adv: StatsTable = {hp: 404, atk: 328, def: 299, spa: 269, spd: 299, spe: 299};
 
@@ -493,7 +493,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(8).stats.calc('atk', 100, 31, 252, 100)).toBe(299);
       });
 
-      test('get', () => {
+      it('get', () => {
         const gen = Gen(8);
         expect(gen.stats.get('foo')).not.toBeDefined();
         expect(gen.stats.get('Atk')).toBe('atk');
@@ -502,7 +502,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(gen.stats.get('SAtk')).toBe('spa');
       });
 
-      test('display', () => {
+      it('display', () => {
         const gen = Gen(8);
         expect(gen.stats.display('foo')).toBe('foo');
         expect(gen.stats.display('Atk')).toBe('Atk');
@@ -512,7 +512,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(1).stats.display('SAtk', true)).toBe('Special');
       });
 
-      test('fill', () => {
+      it('fill', () => {
         const gen = Gen(8);
         expect(gen.stats.fill({atk: 10, def: 12, spd: 15}, 31))
           .toEqual({hp: 31, atk: 10, def: 12, spe: 31, spa: 31, spd: 15});
@@ -520,7 +520,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
           .toEqual({hp: 0, atk: 0, def: 0, spe: 252, spa: 200, spd: 0});
       });
 
-      test('getHPDV', () => {
+      it('getHPDV', () => {
         const stats = Gen(8).stats;
         expect(stats.getHPDV({spa: stats.toIV(15), spe: stats.toIV(15)})).toBe(15);
         expect(
@@ -535,7 +535,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
           .toBe(13);
       });
 
-      test('iterate', () => {
+      it('iterate', () => {
         expect(Array.from(Gen(8).stats))
           .toStrictEqual(['hp', 'atk', 'def', 'spe', 'spa', 'spd']);
       });

@@ -6,7 +6,7 @@ import * as path from 'path';
 
 describe('Dex', () => {
   describe('Effects', () => {
-    test('#getEffect', () => {
+    it('#getEffect', () => {
       expect(Dex.getEffect('').exists).toBe(false);
       expect(Dex.getEffect('foo').exists).toBe(false);
 
@@ -48,7 +48,7 @@ describe('Dex', () => {
         .toEqual('OHKO moves fail when used against this Pokemon.');
     });
 
-    test('counts', () => {
+    it('counts', () => {
       const counts = (gen: GenerationNum) => {
         const dex = Dex.forGen(gen);
         let count = 0;
@@ -67,12 +67,12 @@ describe('Dex', () => {
       }
     });
 
-    test('#hasAbility', () => {
+    it('#hasAbility', () => {
       expect(Dex.hasAbility(Dex.getSpecies('Gengar'), 'Levitate')).toBe(false);
       expect(Dex.forGen(5).hasAbility(Dex.forGen(5).getSpecies('Gengar'), 'Levitate')).toBe(true);
     });
 
-    test('cached', () => {
+    it('cached', () => {
       const a = Dex.forGen(6).getAbility('Mummy');
       const b = Dex.forGen(6).getAbility('Mummy');
       const c = Dex.getAbility('Mummy');
@@ -111,7 +111,7 @@ describe('Dex', () => {
       expect(Dex.forGen(5).getItem('Old Amber').gen).toBe(3);
     });
 
-    test('fields', () => {
+    it('fields', () => {
       expect(Dex.getItem('Sitrus Berry').effectType).toBe('Item');
       expect(Dex.forGen(4).getItem('Sitrus Berry').isBerry).toBe(true);
       expect(Dex.getItem('Heracronite').megaStone).toBe('Heracross-Mega');
@@ -129,7 +129,7 @@ describe('Dex', () => {
       expect(Dex.getItem('Choice Specs').isChoice).toBe(true);
     });
 
-    test('cached', () => {
+    it('cached', () => {
       const a = Dex.forGen(6).getItem('Choice Band');
       const b = Dex.forGen(6).getItem('Choice Band');
       const c = Dex.getItem('Choice Band');
@@ -152,7 +152,7 @@ describe('Dex', () => {
       expect(Dex.getMove('Hidden Power [Bug]').name).toEqual('Hidden Power Bug');
     });
 
-    test('fields', () => {
+    it('fields', () => {
       expect(Dex.getMove('Tackle').effectType).toBe('Move');
       expect(Dex.forGen(1).getMove('Surf').basePower).toBe(95);
       expect(Dex.getMove('Surf').basePower).toBe(90);
@@ -213,7 +213,7 @@ describe('Dex', () => {
         .toBe('confusion');
     });
 
-    test('counts', () => {
+    it('counts', () => {
       const counts = (gen: GenerationNum) => {
         const dex = Dex.forGen(gen);
         let count = 0;
@@ -233,7 +233,7 @@ describe('Dex', () => {
       expect(counts(8)).toBe(624 + 41 - /* GMax */ 33);
     });
 
-    test('cached', () => {
+    it('cached', () => {
       const a = Dex.forGen(6).getMove('Earthquake');
       const b = Dex.forGen(6).getMove('Earthquake');
       const c = Dex.getMove('Earthquake');
@@ -245,7 +245,7 @@ describe('Dex', () => {
   });
 
   describe('Species', () => {
-    test('#getSpecies', () => {
+    it('#getSpecies', () => {
       expect(Dex.getSpecies('foo').exists).toBe(false);
       // normal
       expect(Dex.getSpecies('gengar').name).toBe('Gengar');
@@ -267,7 +267,7 @@ describe('Dex', () => {
       expect(Dex.getSpecies('Rockruff-Dusk').exists).toBe(true);
       // FIXME expect(Dex.getSpecies('Rockruff-Dusk').name).toBe('Rockruff-Dusk');
     });
-    test('counts', () => {
+    it('counts', () => {
       const counts = (gen: GenerationNum) => {
         const dex = Dex.forGen(gen);
         const count = {species: 0, formes: 0};
@@ -322,7 +322,7 @@ describe('Dex', () => {
     });
 
 
-    test('fields', () => {
+    it('fields', () => {
       expect(Dex.getSpecies('Clefable').types).toEqual(['Fairy']);
       expect(Dex.forGen(3).getSpecies('Clefable').types).toEqual(['Normal']);
       expect(Dex.getSpecies('Gengar').types[1]).toBe('Poison');
@@ -359,12 +359,12 @@ describe('Dex', () => {
     });
 
 
-    test('#hasAbility', () => {
+    it('#hasAbility', () => {
       expect(Dex.forGen(7).hasAbility(Dex.forGen(7).getSpecies('Gengar'), 'Levitate')).toBe(false);
       expect(Dex.forGen(5).hasAbility(Dex.forGen(5).getSpecies('Gengar'), 'Levitate')).toBe(true);
     });
 
-    test('cached', () => {
+    it('cached', () => {
       const a = Dex.forGen(6).getSpecies('Gengar');
       const b = Dex.forGen(6).getSpecies('Gengar');
       const c = Dex.getSpecies('Gengar');
@@ -376,7 +376,7 @@ describe('Dex', () => {
   });
 
   describe('Learnsets', () => {
-    test('#getLearnset', async () => {
+    it('#getLearnset', async () => {
       expect((await Dex.getLearnset('foo')).exists).toBe(false);
       const learnset = await Dex.forGen(1).getLearnset('mew');
       expect(learnset.effectType).toBe('Learnset');
@@ -392,7 +392,7 @@ describe('Dex', () => {
   });
 
   describe('Natures', () => {
-    test('#getNature', () => {
+    it('#getNature', () => {
       const adamant = Dex.getNature('adamant');
       expect(adamant.exists).toBe(true);
       expect(adamant.name).toBe('Adamant');
@@ -408,7 +408,7 @@ describe('Dex', () => {
       expect(Dex.getNature('foo').exists).toBeFalsy();
     });
 
-    test('count', () => {
+    it('count', () => {
       expect(Object.keys(Dex.data.Natures)).toHaveLength(25);
     });
   });

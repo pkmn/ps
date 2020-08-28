@@ -26,7 +26,7 @@
     "build": "npm run compile",
     "test": "mocha test/main.js test/sim/**/*.js -R dot -u bdd --exit",
     "lint": "eslint . --cache --ext .js,.ts",
-    "pretest": "npm run compile",
+    "pretest": "npm run build",
     "posttest": "npm run lint"
   }
 }
