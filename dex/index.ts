@@ -279,7 +279,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
     this.basePower = Number(data.basePower!);
     this.critRatio = Number(data.critRatio) || 1;
     this.secondary = data.secondary || null;
-    this.secondaries = data.secondaries && data.secondaries.length
+    this.secondaries = data.secondaries?.length
       ? data.secondaries : this.secondary
         ? [this.secondary]
         : null;
@@ -597,18 +597,10 @@ const Natures: { [k: string]: T.NatureData } = {
 
 // #region Dex
 
-type DeepPartial<T> = {
-  [P in keyof T]?: T[P] extends Array<infer U>
-    ? Array<DeepPartial<U>>
-    : T[P] extends ReadonlyArray<infer U>
-      ? ReadonlyArray<DeepPartial<U>>
-      : DeepPartial<T[P]>
-};
-
 type Writable<T> = { -readonly [P in keyof T]: T[P] };
 
 type Data<T> = { 8: { [id: string]: T } } & {
-  [num in Exclude<T.GenerationNum, 8>]?: { [id: string]: { inherit?: boolean } & DeepPartial<T> }
+  [num in Exclude<T.GenerationNum, 8>]?: { [id: string]: { inherit?: boolean } & T.DeepPartial<T> }
 };
 
 const DATA = {
@@ -640,11 +632,13 @@ const dexes: { [mod: string]: ModdedDex } = Object.create(null);
 
 const nullEffect: Condition = new Condition({name: '', exists: false});
 
+export type ModData = T.DeepPartial<ModdedDex['data']> & T.ModData;
+
 export class ModdedDex implements T.Dex {
   static readonly STATS: ReadonlyArray<T.StatName> = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
 
   readonly gen: T.GenerationNum;
-  readonly genid: GenID;
+  readonly modid: T.ID;
   readonly data!: {
     Abilities: { [id: string]: T.AbilityData };
     Aliases: { [id: string]: string };
@@ -668,21 +662,23 @@ export class ModdedDex implements T.Dex {
     Conditions: Object.create(null) as { [id: string]: Condition },
   };
 
-  constructor(genid = CURRENT_GEN_ID) {
-    if (!GEN_IDS.includes(genid)) throw new Error('Unsupported genid');
-    this.genid = genid;
-    this.gen = parseInt(genid.slice(3)) as T.GenerationNum;
-    this.loadData();
+  private modData?: ModData = undefined;
+
+  constructor(modid = CURRENT_GEN_ID as GenID | T.ID, modData?: ModData) {
+    const isGen = (GEN_IDS as unknown as Array<GenID | T.ID>).includes(modid);
+    if (!isGen && !modData) throw new Error(`Must provide mod data with mod '${modid}'`);
+    if (isGen && modData) throw new Error(`Mod data provided with unmodded '${modid}'`);
+    this.modid = modid as T.ID;
+    this.gen = parseInt((modData?.Scripts?.inherit ?? modid).slice(3)) as T.GenerationNum || 8;
+    this.loadData(modData);
   }
 
-  get modid() {
-    return this.genid as T.ID;
-  }
-
-  mod(genid: GenID) {
-    if (genid in dexes) return dexes[genid];
-    dexes[genid] = new ModdedDex(genid);
-    return dexes[genid];
+  mod(genid: GenID): ModdedDex;
+  mod(modid: T.ID, modData: ModData): ModdedDex;
+  mod(modid: GenID | T.ID, modData?: ModData) {
+    if (modid in dexes) return dexes[modid];
+    dexes[modid] = new ModdedDex(modid as T.ID, modData);
+    return dexes[modid];
   }
 
   forGen(gen: number) {
@@ -813,9 +809,11 @@ export class ModdedDex implements T.Dex {
         (species as any).doublesTier = 'Illegal';
         (species as any).isNonstandard = 'Future';
       }
-      (species as any).nfe = species.evos?.length && this.getSpecies(species.evos[0]).gen <= this.gen;
-      (species as any).canHatch = species.canHatch ||
-        (!['Ditto', 'Undiscovered'].includes(species.eggGroups[0]) && !species.prevo && species.name !== 'Manaphy');
+      (species as any).nfe =
+        species.evos?.length && this.getSpecies(species.evos[0]).gen <= this.gen;
+      (species as any).canHatch = species.canHatch || (!['Ditto', 'Undiscovered'].includes(
+        species.eggGroups[0]
+      ) && !species.prevo && species.name !== 'Manaphy');
       if (this.gen === 1) (species as any).bst -= species.baseStats.spd;
     } else {
       species = new Species({
@@ -851,7 +849,8 @@ export class ModdedDex implements T.Dex {
           (await import('./data/learnsets.json')) as unknown as Data<T.LearnsetData>;
       }
     }
-    this.load('Learnsets');
+    this.load('Learnsets', this.modData);
+    this.modData = undefined;
 
     const data = this.data.Learnsets![id];
     if (id && data) {
@@ -897,7 +896,7 @@ export class ModdedDex implements T.Dex {
     if ((this.data.Moves.hasOwnProperty(id) && (found = this.data.Moves[id]).condition) ||
       (this.data.Abilities.hasOwnProperty(id) && (found = this.data.Abilities[id]).condition) ||
       (this.data.Items.hasOwnProperty(id) && (found = this.data.Items[id]).condition)) {
-      effect = new Condition({name: found.name || id}, found.condition!);
+      effect = new Condition({name: found.name || id}, found.condition);
     } else if (id === 'recoil') {
       effect = new Condition({id, name: 'Recoil', effectType: 'Recoil'});
     } else if (id === 'drain') {
@@ -1135,31 +1134,11 @@ export class ModdedDex implements T.Dex {
     }
   }
 
-  loadData() {
-    if (this.data) return this.data;
-    (this.data as any) = {} as ModdedDex['data'];
-
-    for (const t in DATA) {
-      const type = t as keyof typeof DATA;
-      if (type === 'Learnsets') continue; // async
-      if (type === 'Natures' || type === 'Aliases') {
-        (this.data as any)[type] = DATA[type];
-        continue;
-      }
-      this.load(type);
-    }
-    return this.data;
-  }
-
   includeModData() {
-    for (const mod in dexes) {
-      dexes[mod].includeData();
-    }
     return this;
   }
 
   includeData() {
-    this.loadData();
     return this;
   }
 
@@ -1167,15 +1146,36 @@ export class ModdedDex implements T.Dex {
     return this;
   }
 
-  load(type: Exclude<keyof ModdedDex['data'], 'Natures' | 'Aliases'>) {
+  loadData(modData?: ModData) {
+    if (this.data) return this.data;
+    (this.data as any) = {} as ModdedDex['data'];
+
+    for (const t in DATA) {
+      const type = t as keyof typeof DATA;
+      if (type === 'Learnsets') {
+        this.modData = modData;
+        continue; // async
+      }
+      if (type === 'Aliases') {
+        (this.data as any)[type] = DATA[type];
+        continue;
+      }
+      this.load(type, modData);
+    }
+    return this.data;
+  }
+
+  load(type: Exclude<keyof ModdedDex['data'], 'Aliases'>, modData?: ModData) {
     if (this.data[type]) return;
 
-    const d = DATA[type][this.gen];
+    const d = modData ? modData[type] : type === 'Natures' ? DATA[type] : DATA[type][this.gen];
     if (d !== this.data[type]) this.data[type] = Object.assign({}, d, this.data[type]) as any;
 
-    if (this.genid === CURRENT_GEN_ID) return;
+    if (this.modid === CURRENT_GEN_ID) return;
 
-    const parentDex = this.forGen(this.gen + 1 as T.GenerationNum);
+    const parentDex = modData?.Scripts?.inherit
+      ? this.mod(modData.Scripts.inherit)
+      : this.forGen(modData ? this.gen : this.gen + 1 as T.GenerationNum);
     if (type === 'Learnsets') parentDex.load('Learnsets');
 
     const parentDataType = parentDex.data[type];
@@ -1194,7 +1194,7 @@ export class ModdedDex implements T.Dex {
         } else {
           childDataType[entry] = parentDataType[entry];
         }
-      } else if (childDataType[entry] && childDataType[entry].inherit) {
+      } else if (childDataType[entry]?.inherit) {
         // {inherit: true} can be used to modify only parts of the parent data,
         // instead of overwriting entirely
         delete childDataType[entry].inherit;

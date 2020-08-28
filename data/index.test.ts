@@ -17,7 +17,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
     const gens = new Generations(Dex);
     const Gen = (num: GenerationNum) => gens.get(num);
 
-    describe('exists', () => {
+    test('exists', () => {
       const gens2 = new Generations(Dex, e => !!e.exists && (!('num' in e) || e.num < 10));
       expect(gens2.get(5).species.get('Bulbasaur')).toBeDefined();
       expect(gens2.get(5).species.get('Gengar')).toBeUndefined();

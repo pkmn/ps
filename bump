@@ -45,7 +45,7 @@ function update(name, version) {
 const name = process.argv[2];
 const version = process.argv[3];
 if (!name) {
-  for (const name of ['sim', 'dex-types', 'dex', 'data']) {
+  for (const name of ['sim', 'dex-types', 'dex', 'data', 'mods']) {
     update(name, version);
   }
 } else {

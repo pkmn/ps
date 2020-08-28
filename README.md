@@ -13,6 +13,8 @@ This is the top level of [`@pkmn`](https://pkmn.cc/@pkmn/)'s Pokémon Showdown c
   [smogon/pokemon-showdown-client](https://github.com/smogon/pokemon-showdown-client)'s data layers
 - [`@pkmn/data`](data): a higher level data API wrapper compatible with [`@pkmn/sim`](sim) and
   [`@pkmn/dex`](dex)
+- [`@pkmn/mods`](mods): support for non-standard modifications to [`@pkmn/sim`](sim) and
+  [`@pkmn/dex`](dex)
 - [`@pkmn/sets`](sets): importing and exporting logic for Pokémon Showdown's set specification
 - [`@pkmn/types`](types): TypeScript definitions for types common to Pokémon projects
 - *[`@pkmn/protocol`](protocol)*: Parsing logic for Pokémon Showdown's

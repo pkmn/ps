@@ -2,6 +2,7 @@ import {Team, Teams} from '@pkmn/sets';
 import {Utils} from '../lib/utils';
 import {
 	Ability,
+	AbilityData,
 	ActiveMove,
 	AnyObject,
 	Condition,
@@ -9,15 +10,19 @@ import {
 	Effect,
 	EffectData,
 	Format,
+	FormatsData,
 	ID,
 	Item,
+	ItemData,
 	LearnsetData,
 	ModdedSpeciesFormatsData,
 	Move,
+	MoveData,
 	Nature,
 	PlayerOptions,
 	PokemonSet,
 	Species,
+	SpeciesData,
 	StatsTable,
 	TypeData,
 	TypeInfo,
@@ -44,7 +49,6 @@ import * as gen5 from '../data/mods/gen5';
 import * as gen6 from '../data/mods/gen6';
 import * as gen7 from '../data/mods/gen7';
 import * as gen8 from '../data';
-const DATA = {gen1, gen2, gen3, gen4, gen5, gen6, gen7, gen8};
 
 import * as Data from './dex-data';
 import {PRNG, PRNGSeed} from './prng';
@@ -54,6 +58,7 @@ import {Formats} from '../config/formats';
 const BASE_MOD = 'gen8' as ID;
 const DEFAULT_MOD = BASE_MOD;
 
+const dexData = {gen1, gen2, gen3, gen4, gen5, gen6, gen7, gen8};
 const dexes: {[mod: string]: ModdedDex} = Object.create(null);
 
 type DataType =
@@ -67,20 +72,20 @@ const DATA_TYPES: (DataType | 'Aliases')[] = [
 const nullEffect: Condition = new Data.Condition({name: '', exists: false});
 
 interface DexTableData {
-	Abilities: DexTable<Ability>;
+	Abilities: DexTable<AbilityData>;
 	Aliases: {[id: string]: string};
 	Conditions: DexTable<EffectData>;
-	Formats: DexTable<Format>;
+	Formats: DexTable<FormatsData>;
 	FormatsData: DexTable<ModdedSpeciesFormatsData>;
-	Items: DexTable<Item>;
+	Items: DexTable<ItemData>;
 	Learnsets: DexTable<LearnsetData>;
-	Moves: DexTable<Move>;
+	Moves: DexTable<MoveData>;
 	Natures: DexTable<Nature>;
-	Pokedex: DexTable<Species>;
+	Pokedex: DexTable<SpeciesData>;
 	Scripts: DexTable<AnyObject>;
 	TypeChart: DexTable<TypeData>;
 
-	Species: DexTable<Species>;
+	Species: DexTable<SpeciesData>;
 	Types: DexTable<TypeData>;
 }
 
@@ -111,6 +116,18 @@ const Natures: {[k: string]: Nature} = {
 	serious: {name: "Serious"},
 	timid: {name: "Timid", plus: 'spe', minus: 'atk'},
 };
+
+/* eslint-disable @typescript-eslint/array-type */
+type DeepPartial<T> = {
+	[P in keyof T]?: T[P] extends Array<infer U>
+		? Array<DeepPartial<U>>
+		: T[P] extends ReadonlyArray<infer U>
+			? ReadonlyArray<DeepPartial<U>>
+			: DeepPartial<T[P]>
+};
+/* eslint-enable @typescript-eslint/array-type */
+
+export type ModData = DeepPartial<ModdedDex['data']>;
 
 export const toID = Data.toID;
 
@@ -184,8 +201,19 @@ export class ModdedDex {
 		return dexes;
 	}
 
-	mod(mod: string | undefined): ModdedDex {
-		return dexes[mod || 'base'];
+	mod(mod: string | undefined, modData?: Partial<ModdedDex['data']>): ModdedDex {
+		if (!mod) return dexes['base'];
+		if (!dexes[mod]) {
+			if (!modData) throw new Error(`Must provide mod data with mod '${mod}'`);
+			dexes[mod] = new ModdedDex(mod);
+			if (modData.Types && !modData.TypeChart) modData.TypeChart = modData.Types;
+			if (modData.Species && !modData.Pokedex) modData.Pokedex = modData.Species;
+			(dexData as any)[mod] = modData;
+			dexes[mod].loadData();
+		} else if (modData) {
+			throw new Error(`Mod data provided with unmodded '${mod}'`);
+		}
+		return dexes[mod];
 	}
 
 	forGen(gen: number) {
@@ -1077,7 +1105,7 @@ export class ModdedDex {
 	}
 
 	loadDataFile(mod: string, dataType: DataType | 'Aliases'): AnyObject {
-		return (DATA as any)[mod === 'base' ? 'gen8' : mod][dataType] || {};
+		return (dexData as any)[mod === 'base' ? 'gen8' : mod][dataType] || {};
 	}
 
 	includeMods(): ModdedDex {
@@ -1142,7 +1170,7 @@ export class ModdedDex {
 						} else {
 							childTypedData[entryId] = parentTypedData[entryId];
 						}
-					} else if (childTypedData[entryId] && childTypedData[entryId].inherit) {
+					} else if (childTypedData[entryId]?.inherit) {
 						// {inherit: true} can be used to modify only parts of the parent data,
 						// instead of overwriting entirely
 						delete childTypedData[entryId].inherit;

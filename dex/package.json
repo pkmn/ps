@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/dex",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "description": "A unification of Pokémon Showdown's client's and server's data layers",
@@ -10,11 +10,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/dex-types": "^0.1.3"
+    "@pkmn/dex-types": "^0.2.0"
   },
   "scripts": {
-    "lint": "eslint --cache --ext ts",
-    "fix": "eslint --fix --ext ts",
+    "lint": "eslint --cache *.ts",
+    "fix": "eslint --fix *.ts",
     "compile": "tsc -p .",
     "bundle": "node bundle",
     "build": "npm run compile && npm run bundle",

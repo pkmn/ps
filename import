@@ -87,6 +87,7 @@ const ps = path.resolve(__dirname, 'vendor/pokemon-showdown');
 const psc = path.resolve(__dirname, 'vendor/pokemon-showdown-client');
 const sim = path.resolve(__dirname, 'sim');
 const dex = path.resolve(__dirname, 'dex');
+const mods = path.resolve(__dirname, 'mods');
 const randoms = path.resolve(__dirname, 'randoms');
 
 // fucking hell zarle, friends don't let friends use globals :(
@@ -120,16 +121,40 @@ const IMPORTS = {
   ],
   'sim/tools/random-player-ai.ts': ['AnyObject'],
 };
+const MOD_IMPORTS = {
+  // stadium
+  'data/mods/stadium/conditions.ts': ['ModdedConditionData'],
+  'data/mods/stadium/moves.ts': ['ModdedMoveData'],
+  'data/mods/stadium/rulesets.ts': ['ModdedFormatsData'],
+  'data/mods/stadium/scripts.ts': [
+    'ModdedBattleScriptsData', 'StatNameExceptHP', 'BoostName', 'ActiveMove'
+  ],
+  // vgc17
+  'data/mods/vgc17/formats-data.ts': ['ModdedSpeciesFormatsData'],
+  'data/mods/vgc17/items.ts': ['ModdedItemData'],
+  'data/mods/vgc17/learnsets.ts': ['ModdedLearnsetData'],
+  'data/mods/vgc17/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/vgc17/rulesets.ts': ['ModdedFormatsData'],
+  'data/mods/vgc17/scripts.ts': ['ModdedBattleScriptsData'],
+  // letsgo
+  'data/mods/letsgo/formats-data.ts': ['ModdedSpeciesFormatsData'],
+  'data/mods/letsgo/learnsets.ts': ['ModdedLearnsetData'],
+  'data/mods/letsgo/moves.ts': ['ModdedMoveData'],
+  'data/mods/letsgo/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/letsgo/rulesets.ts': ['ModdedFormatsData'],
+  'data/mods/letsgo/scripts.ts': ['ModdedBattleScriptsData', 'StatsTable', 'StatName'],
+};
 
 const TYPES = new Set([
   'Normal' , 'Fighting' , 'Flying' , 'Poison' , 'Ground' , 'Rock' , 'Bug' , 'Ghost' , 'Steel' ,
   'Fire' , 'Water' , 'Grass' , 'Electric' , 'Psychic' , 'Ice' , 'Dragon' , 'Dark' , 'Fairy',
 ]);
 
-const imports = (types, where) => {
+const imports = (types, where, typeOnly = false) => {
   types.sort();
-  if (types.length <= 5) return`import {${types.join(', ')}} from '${where}';\n\n`;
-  return `import {\n\t${types.join(',\n\t')},\n} from '${where}';\n\n`;
+  const importStatement = typeOnly ? 'import type' : 'import';
+  if (types.length <= 5) return`${importStatement} {${types.join(', ')}} from '${where}';\n\n`;
+  return `${importStatement} {\n\t${types.join(',\n\t')},\n} from '${where}';\n\n`;
 };
 
 // This is actually in sim/dex.ts and really should be in sim/global-types.ts
@@ -143,6 +168,9 @@ export interface Nature {
 
 // All the files in our sim/ directory, excluding build/ & node_modules/
 const FILES = new Set(tree(sim).map(m => m.slice(sim.length + 1)));
+const MOD_FILES =
+  new Set(tree(path.join(mods, 'src')).map(m => `data/mods/${m.slice(mods.length + 5)}`));
+
 // Files which need special attention if changed (usually manual intervention)
 const FRAGILE = new Set([
   'sim/dex-data.ts',
@@ -177,8 +205,18 @@ const OVERRIDDEN = new Set([
   'pnpm-debug.log', // sigh...
   'package-lock.json', // double sigh...
 ]);
+const MOD_OVERRIDEN = new Set([
+  'data/mods/index.ts',
+  'data/mods/index.test.ts',
+  'data/mods/stadium/index.ts',
+  'data/mods/letsgo/index.ts',
+  'data/mods/vgc17/index.ts',
+]);
 // Any file that hasn't been 'OVERRIDDEN' we need to copy over from PS
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
+const MOD_COPIED = new Set([...MOD_FILES].filter(f => !MOD_OVERRIDEN.has(f)));
+
+console.log({MOD_FILES, MOD_COPIED});
 
 // Files which are relevant for review in smogon/pokemon-showdown-client
 const INTERESTING = new Set([
@@ -197,7 +235,7 @@ const INTERESTING = new Set([
 const interesting = f => {
   if (f.startsWith('sim') || f.startsWith('test/sim')) return true;
   if (f.startsWith('data') && !f.endsWith('random-teams.js')) return true;
-  return COPIED.has(f);
+  return COPIED.has(f) || MOD_COPIED.has(f);
 };
 
 const removeFields = (data, fields) => {
@@ -323,6 +361,18 @@ const changes = async (where, last, now, repo) => ({
       }
     }
 
+    for (const file of MOD_COPIED) {
+      if (MOD_IMPORTS[file]) {
+        if (!file.startsWith('data/')) throw new Error('Unsupported import location');
+        const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
+        fs.writeFileSync(path.resolve(mods, file.replace('data/mods', 'src')),
+          `${imports(MOD_IMPORTS[file], '@pkmn/sim', true)}${original}`);
+      } else {
+        fs.copyFileSync(
+          path.resolve(ps, file), path.resolve(mods, file.replace('data/mods', '/src')));
+      }
+    }
+
     // The data files are Typescript, so we need to build to convert them to JS before requiring
     await execOrDie(`node build`, ps);
 
@@ -350,11 +400,10 @@ const changes = async (where, last, now, repo) => ({
       const data = basename === 'aliases.json' ? DEX.regular[basename][8] : DEX.regular[basename];
       fs.writeFileSync(path.join(dex, 'data', basename), stringify(data));
     }
-    // TODO: uncomment with @pkmn/randoms has been written
-    // for (const basename in DEX.random) {
-    //   const data = basename === 'aliases.json' ? DEX.random[basename][8] : DEX.random[basename];
-    //   fs.writeFileSync(path.join(randoms, 'data', basename), stringify(data));
-    // }
+    for (const basename in DEX.random) {
+      const data = basename === 'aliases.json' ? DEX.random[basename][8] : DEX.random[basename];
+      fs.writeFileSync(path.join(randoms, 'data', basename), stringify(data));
+    }
 
     // Mirror `sim/global-types.ts` to export all of its types (making it a module). Its possible
     // that ///-references could also be added to the data/ files and *nothing* then relies on

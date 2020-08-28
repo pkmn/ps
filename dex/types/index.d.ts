@@ -430,6 +430,7 @@ export interface Nature extends NatureData {
 }
 
 export type GenID = 'gen1' | 'gen2' | 'gen3' | 'gen4' | 'gen5' | 'gen6' | 'gen7' | 'gen8';
+export type ModData = DeepPartial<Dex['data'] & {Scripts: {inherit?: GenID}}>;
 
 export interface Dex {
   readonly gen: GenerationNum;
@@ -446,6 +447,8 @@ export interface Dex {
   };
 
   mod(genid: GenID): Dex;
+  mod(modid: ID, modData: ModData): Dex;
+
   forGen(gen: number): Dex;
   includeModData(): this;
   includeData(): this;
@@ -473,3 +476,30 @@ export interface Dex {
 }
 
 export * from '@pkmn/types';
+
+// https://github.com/krzkaczor/ts-essentials v6.0.5
+// MIT License Copyright 2018-2019 Chris Kaczor
+
+export type Primitive = string | number | boolean | bigint | symbol | undefined | null;
+export type Builtin = Primitive | Function | Date | Error | RegExp;
+
+export type IsTuple<T> =
+  T extends [infer A] ? T
+  : T extends [infer A, infer B] ? T
+  : T extends [infer A, infer B, infer C] ? T
+  : T extends [infer A, infer B, infer C, infer D] ? T
+  : T extends [infer A, infer B, infer C, infer D, infer E] ? T
+  : never;
+
+export type DeepPartial<T> =
+  T extends Builtin ? T
+  : T extends Map<infer K, infer V> ? Map<DeepPartial<K>, DeepPartial<V>>
+  : T extends ReadonlyMap<infer K, infer V> ? ReadonlyMap<DeepPartial<K>, DeepPartial<V>>
+  : T extends Set<infer U> ? Set<DeepPartial<U>>
+  : T extends ReadonlySet<infer U> ? ReadonlySet<DeepPartial<U>>
+  : T extends Array<infer U> ? T extends IsTuple<T>
+    ? { [K in keyof T]?: DeepPartial<T[K]> }
+    : Array<DeepPartial<U>>
+  : T extends Promise<infer U> ? Promise<DeepPartial<U>>
+  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
+  : Partial<T>;
