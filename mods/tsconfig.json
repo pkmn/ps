@@ -11,5 +11,5 @@
     "outDir": "build",
     "tsBuildInfoFile": ".tsbuildinfo"
   },
-  "exclude": ["build"]
+  "include": ["src"]
 }

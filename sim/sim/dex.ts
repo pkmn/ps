@@ -15,7 +15,7 @@ import {
 	Item,
 	ItemData,
 	LearnsetData,
-	ModdedSpeciesFormatsData,
+	ModdedBattleScriptsData,
 	Move,
 	MoveData,
 	Nature,
@@ -23,6 +23,7 @@ import {
 	PokemonSet,
 	Species,
 	SpeciesData,
+	SpeciesFormatsData,
 	StatsTable,
 	TypeData,
 	TypeInfo,
@@ -73,17 +74,18 @@ const nullEffect: Condition = new Data.Condition({name: '', exists: false});
 
 interface DexTableData {
 	Abilities: DexTable<AbilityData>;
-	Aliases: {[id: string]: string};
 	Conditions: DexTable<EffectData>;
 	Formats: DexTable<FormatsData>;
-	FormatsData: DexTable<ModdedSpeciesFormatsData>;
+	FormatsData: DexTable<SpeciesFormatsData>;
 	Items: DexTable<ItemData>;
 	Learnsets: DexTable<LearnsetData>;
 	Moves: DexTable<MoveData>;
 	Natures: DexTable<Nature>;
 	Pokedex: DexTable<SpeciesData>;
-	Scripts: DexTable<AnyObject>;
 	TypeChart: DexTable<TypeData>;
+
+	Aliases: {[id: string]: string};
+	Scripts: ModdedBattleScriptsData; // NB: Not a DexTable, but PS is dumb AF
 
 	Species: DexTable<SpeciesData>;
 	Types: DexTable<TypeData>;
@@ -201,7 +203,7 @@ export class ModdedDex {
 		return dexes;
 	}
 
-	mod(mod: string | undefined, modData?: Partial<ModdedDex['data']>): ModdedDex {
+	mod(mod: string | undefined, modData?: DeepPartial<ModdedDex['data']>): ModdedDex {
 		if (!mod) return dexes['base'];
 		if (!dexes[mod]) {
 			if (!modData) throw new Error(`Must provide mod data with mod '${mod}'`);
@@ -227,6 +229,7 @@ export class ModdedDex {
 	}
 
 	modData(dataType: DataType, id: string) {
+		if (dataType === 'Scripts') throw new Error(`'${dataType}' cannot be indexed by '${id}'`);
 		if (this.isBase) return this.data[dataType][id];
 		if (this.data[dataType][id] !== dexes[this.parentMod].data[dataType][id]) return this.data[dataType][id];
 		return (this.data[dataType][id] = Utils.deepClone(this.data[dataType][id]));
@@ -1166,9 +1169,9 @@ export class ModdedDex {
 						if (dataType === 'Pokedex') {
 							// Pokedex entries can be modified too many different ways
 							// e.g. inheriting different formats-data/learnsets
-							childTypedData[entryId] = Utils.deepClone(parentTypedData[entryId]);
+							childTypedData[entryId] = Utils.deepClone((parentTypedData as DexTableData['Pokedex'])[entryId]);
 						} else {
-							childTypedData[entryId] = parentTypedData[entryId];
+							childTypedData[entryId] = (parentTypedData as any)[entryId];
 						}
 					} else if (childTypedData[entryId]?.inherit) {
 						// {inherit: true} can be used to modify only parts of the parent data,

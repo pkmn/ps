@@ -3,6 +3,12 @@
   "version": "0.2.0",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "exports": {
+    ".": "./build/index.js",
+    "./stadium": "./build/stadium/index.js",
+    "./vgc17": "./build/vgc17/index.js",
+    "./letsgo": "./build/letsgo/index.js"
+  },
   "description": "Support for non-standard mods to @pkmn/sim and @pkmn/dex",
   "repository": "github:pkmn/ps",
   "author": "Guangcong Luo <guangcongluo@gmail.com> (http://guangcongluo.com)",

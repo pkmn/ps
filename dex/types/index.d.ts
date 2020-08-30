@@ -430,7 +430,7 @@ export interface Nature extends NatureData {
 }
 
 export type GenID = 'gen1' | 'gen2' | 'gen3' | 'gen4' | 'gen5' | 'gen6' | 'gen7' | 'gen8';
-export type ModData = DeepPartial<Dex['data'] & {Scripts: {inherit?: GenID}}>;
+export type ModData = DeepPartial<Dex['data'] & {Scripts: {inherit: GenID}}>;
 
 export interface Dex {
   readonly gen: GenerationNum;

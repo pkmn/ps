@@ -33,6 +33,23 @@ import {Dex, ID, ModData} from '@pkmn/dex'; // '@pkmn/sim'
 const dex = Dex.mod('vgc17' as ID, await import('@pkmn/mods/vgc17') as ModData);
 ```
 
+The TypeScript compiler may require special configuration to be able to directly import a
+subdirectory of the main `@pkmn/mods` package - see the
+[`tsconfig.json` documentation](https://www.typescriptlang.org/tsconfig) on
+[`baseUrl`](https://www.typescriptlang.org/tsconfig#baseUrl) and
+[`paths`](https://www.typescriptlang.org/tsconfig#paths).
+
+```json
+{
+ "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@pkmn/mods/*": ["node_modules/@pkmn/mods/build/*"]
+    }
+  }
+}
+```
+
 The `ModdedDex` wrapper class around `Dex` exists for typechecking purposes as well - if mod data
 contains entirely new fields, `ModdedDex` (initialized with the correct types as parameters) will
 allow for presenting a typesafe API to clients (though internally relies on casting, which is not
@@ -63,7 +80,6 @@ The recommended way of using `@pkmn/sim` in a web browser is to **configure your
 ([Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/),
 [Parcel](https://parceljs.org/), etc) to minimize it and package it with the rest of your
 application.
-
 
 ## License
 

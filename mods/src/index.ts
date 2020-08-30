@@ -1,6 +1,7 @@
 import {
   Ability,
   AbilityData,
+  DeepPartial,
   Dex,
   Effect,
   GenID,
@@ -61,8 +62,8 @@ export class ModdedDex<
   }
 
   mod(genid: GenID): ModdedDex;
-  mod(modid: IDT, modData: Partial<ModdedDex['data']> & ModData): ModdedDex;
-  mod(modid: GenID | IDT, modData?: Partial<ModdedDex['data']> & ModData) {
+  mod(modid: IDT, modData: DeepPartial<ModdedDex['data']> & ModData): ModdedDex;
+  mod(modid: GenID | IDT, modData?: DeepPartial<ModdedDex['data']> & ModData) {
     return this.dex.mod(modid as IDT, modData!);
   }
 
