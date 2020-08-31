@@ -66,11 +66,11 @@ export namespace Protocol {
   export type PokemonIdent = string & As<'PokemonIdent'>;
   /**
    * A comma-separated list of all information about a Pokemon visible on the battle screen:
-   * species, shininess, gender, and level. So it starts with `SPECIES`, adding `, shiny` if it's
-   * shiny, `, M` if it's male, `, F` if it's female, `, L##` if it's not level 100.
+   * species, level, gender, shininess. So it starts with `SPECIES`, adding `, L##` if it's not
+   * level 100, `, M` if it's male, `, F` if it's female, `, shiny` if it's shiny.
    *
    * So, for instance, `Deoxys-Speed` is a level 100 non-shiny genderless Deoxys (Speed forme).
-   * `Sawsbuck, shiny, F, L50` is a level 50 shiny female Sawsbuck (Spring form).
+   * `Sawsbuck, L50, F, shiny` is a level 50 shiny female Sawsbuck (Spring form).
    *
    * In Team Preview, `DETAILS` will not include information not available in Team Preview (in
    * particular, level and shininess will be left off), and for Pokémon whose forme isn't revealed
@@ -179,7 +179,6 @@ export namespace Protocol {
   export type Rule = string & As<'Rule'>;
   /** Takes the form of a comma-separated list of `BoostName` abbreviations, where `BOOST`. */
   export type BoostNames = string & As<'BoostNames'>;
-  export type Side = string & As<'Side'>;
   export type Seed = string & As<'Seed'>;
   export type Slots = string & As<'Slots'>;
   export type Types = string & As<'Types'>;
@@ -767,9 +766,8 @@ export namespace Protocol {
      * disqualified for inactivity.
      */
     '|tournament|autodq|':
-    | readonly ['tournament', 'autodq', 'on', Num]
-    | readonly ['tournament', 'autodq', 'off']
-    | readonly ['tournament', 'autodq', 'target', Num];
+    | readonly ['tournament', 'autodq', 'on' | 'target', Num]
+    | readonly ['tournament', 'autodq', 'off'];
   }
 
   export type TournamentArgName = keyof TournamentArgs;
@@ -851,7 +849,7 @@ export namespace Protocol {
      *
      * Note that forme and shininess are hidden on this, unlike on the `|switch|`details message.
      */
-    '|poke|': readonly ['player', Player, PokemonDetails, 'item' | ''];
+    '|poke|': readonly ['poke', Player, PokemonDetails, 'item' | ''];
     /**
      * `|teampreview`
      *
@@ -1205,13 +1203,13 @@ export namespace Protocol {
      * A side condition `CONDITION` has started on `SIDE`. Side conditions are all effects that
      * affect one side of the field. (For example: Tailwind, Stealth Rock, Reflect).
      */
-    '|-sidestart|': readonly ['-sidestart', Side, SideCondition];
+    '|-sidestart|': readonly ['-sidestart', Player, SideCondition];
     /**
      * `|-sideend|SIDE|CONDITION`
      *
      * Indicates that the side condition `CONDITION` ended for the given `SIDE`.
      */
-    '|-sideend|': readonly ['-sideend', Side, SideCondition];
+    '|-sideend|': readonly ['-sideend', Player, SideCondition];
     /**
      * `|-start|POKEMON|EFFECT`
      *
@@ -1645,7 +1643,6 @@ export type Generator = Protocol.Generator;
 export type FormatName = Protocol.FormatName;
 export type Rule = Protocol.Rule;
 export type BoostNames = Protocol.BoostNames;
-export type Side = Protocol.Side;
 export type Seed = Protocol.Seed;
 export type Slots = Protocol.Slots;
 export type Types = Protocol.Types;
@@ -1886,7 +1883,7 @@ export const Protocol = new class {
   parsePokemonIdent(pokemon: Protocol.PokemonIdent) {
     const index = pokemon.indexOf(':');
     const position = pokemon.slice(0, index);
-    const name = pokemon.slice(index + 1);
+    const name = pokemon.slice(index + 2);
 
     let player: Player;
     let letter: Protocol.PositionLetter | null;
@@ -1909,13 +1906,14 @@ export const Protocol = new class {
   ) {
     output.details = details;
 
+    const isTeamPreview = !name;
     output.name = name;
     output.speciesForme = name;
     output.level = 100;
     output.shiny = false;
     output.gender = '';
-    output.ident = name ? ident : '' as Protocol.PokemonIdent;
-    output.searchid = (name ? `${ident}|${details}` : '') as Protocol.PokemonSearchID;
+    output.ident = !isTeamPreview ? ident : '' as Protocol.PokemonIdent;
+    output.searchid = (!isTeamPreview ? `${ident}|${details}` : '') as Protocol.PokemonSearchID;
 
     const splitDetails = details.split(', ');
     if (splitDetails[splitDetails.length - 1] === 'shiny') {
