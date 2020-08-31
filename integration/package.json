@@ -9,9 +9,9 @@
     "@pkmn/view": "file:../view",
     "minimist": "^1.2.5",
     "parcel-bundler": "^1.12.4",
-    "parcel-plugin-text": "^0.9.6",
-    "terser": "^4.6.7",
-    "typescript": "^3.8.3"
+    "parcel-plugin-text": "^0.9.7",
+    "terser": "^5.2.1",
+    "typescript": "^4.0.2"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
