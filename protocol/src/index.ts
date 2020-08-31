@@ -177,7 +177,7 @@ export namespace Protocol {
   export type FormatName = string & As<'FormatName'>;
   /** Rules affecting the battle, encoded as `RULE: DESCRIPTION`. */
   export type Rule = string & As<'Rule'>;
-  /** Takes the form of a comma-separated list of `BoostName` abbreviations, where `BOOST`. */
+  /** Takes the form of a comma-separated list of `BoostName` abbreviations. */
   export type BoostNames = string & As<'BoostNames'>;
   export type Seed = string & As<'Seed'>;
   export type Slots = string & As<'Slots'>;
@@ -1040,8 +1040,8 @@ export namespace Protocol {
      * because they're blocked by another effect should use `-block` instead.
      */
     '|-fail|':
-    | readonly ['-fail', PokemonIdent, MoveName]
     | readonly ['-fail', PokemonIdent]
+    | readonly ['-fail', PokemonIdent, MoveName]
     | readonly ['-fail', PokemonIdent, 'unboost', StatDisplayName];
     /**
      * `|-block|POKEMON|EFFECT|MOVE|ATTACKER`
@@ -1050,7 +1050,9 @@ export namespace Protocol {
      * effect was a `MOVE` from `ATTACKER`. `[of]SOURCE` will note the owner of the `EFFECT`, in the
      * case that it's not `EFFECT` (for instance, an ally with Aroma Veil.)
      */
-    '|-block|': readonly ['-block', PokemonIdent, EffectName, MoveName, PokemonIdent?];
+    '|-block|':
+    | readonly ['-block', PokemonIdent, EffectName]
+    | readonly ['-block', PokemonIdent, EffectName, MoveName, PokemonIdent?];
     /**
      * `|-notarget|POKEMON`
      *
@@ -1542,7 +1544,7 @@ export namespace Protocol {
     '|-damage|': GeneralKWArgNames | 'partiallytrapped';
     '|-end|': GeneralKWArgNames | 'partiallytrapped' | 'interrupt';
     '|-endability|': GeneralKWArgNames;
-    '|-enditem|': GeneralKWArgNames | 'eat' | 'move' |'weaken';
+    '|-enditem|': GeneralKWArgNames | 'eat' | 'move' | 'weaken';
     '|-fail|': GeneralKWArgNames | 'forme' | 'heavy' | 'msg' | 'weak' | 'fail';
     '|-fieldactivate|': GeneralKWArgNames;
     '|-fieldstart|': GeneralKWArgNames;
@@ -1887,6 +1889,7 @@ export const Protocol = new class {
 
     let player: Player;
     let letter: Protocol.PositionLetter | null;
+    // TODO: remove this case?
     if (position.length < 3) {
       player = position as Player;
       letter = null;

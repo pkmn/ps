@@ -1,8 +1,12 @@
 {
   "name": "@pkmn/protocol",
-  "private": true,
+  "version": "0.0.1",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "exports": {
+    ".": "./build/index.js",
+    "./verifer": "./build/verifier/index.js"
+  },
   "bin": {
     "generate-handler": "./generate-handler",
     "protocol-verifier": "./protocol-verifier"
