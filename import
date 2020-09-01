@@ -216,8 +216,6 @@ const MOD_OVERRIDEN = new Set([
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
 const MOD_COPIED = new Set([...MOD_FILES].filter(f => !MOD_OVERRIDEN.has(f)));
 
-console.log({MOD_FILES, MOD_COPIED});
-
 // Files which are relevant for review in smogon/pokemon-showdown-client
 const INTERESTING = new Set([
   'data/text.js',
