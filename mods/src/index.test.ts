@@ -1,4 +1,4 @@
-/* eslint-disable no-shadow */
+/* eslint-disable @typescript-eslint/no-shadow */
 import {ModdedDex} from './index';
 import {Dex as DexT, ID, ModData, Ability, AbilityData} from '@pkmn/dex-types';
 
