@@ -5,8 +5,11 @@ const CURRENT = 8;
 
 export class Team {
   constructor(
-    readonly team: Readonly<PokemonSet[]>, readonly data?: Data, readonly format?: string,
-    readonly name?: string, readonly folder?: string
+    readonly team: Readonly<PokemonSet[]>,
+    readonly data?: Data,
+    readonly format?: string,
+    readonly name?: string,
+    readonly folder?: string
   ) {
     this.team = team;
     this.format = format;
@@ -109,8 +112,7 @@ export const Teams = new class {
     return teams.length ? teams[0] : undefined;
   }
 
-  importTeams(buf: string, data?: Data, one?: boolean):
-  Readonly<Team[]> {
+  importTeams(buf: string, data?: Data, one?: boolean): Readonly<Team[]> {
     const lines = buf.split('\n');
     if (lines.length === 1 || (lines.length === 2 && !lines[1])) {
       const team: Team|undefined = Teams.unpackTeam(lines[0], data);
@@ -168,8 +170,7 @@ export const Teams = new class {
     return teams;
   }
 
-  exportTeams(teams: Readonly<Team[]>, data?: Data):
-  string {
+  exportTeams(teams: Readonly<Team[]>, data?: Data): string {
     let buf = '';
 
     let i = 0;

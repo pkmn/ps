@@ -1,4 +1,4 @@
-import {ID, toID, SideID, Effect} from '@pkmn/sim';
+import {ID, toID, Effect} from '@pkmn/sim';
 import {AvatarIdent, DetailedPokemon, Username} from '@pkmn/protocol';
 import {SideCondition} from '@pkmn/types';
 
@@ -21,7 +21,7 @@ export class Side {
 
   readonly battle: Battle;
   readonly n: number;
-  id: SideID;
+  id: ID;
 
   name: Username | '';
   avatar: AvatarIdent | 'unknown';
@@ -44,14 +44,14 @@ export class Side {
 
   constructor(
     battle: Battle,
-    n: number,
+    n: 0 | 1 | 2 | 3,
     provider = (s: Side, d: DetailedPokemon) => new Pokemon(s, d)
   ) {
     this.provider = provider;
 
     this.battle = battle;
     this.n = n;
-    this.id = ['p1', 'p2', 'p3', 'p4'][n] as SideID;
+    this.id = '';
 
     this.name = '';
     this.avatar = 'unknown';
@@ -68,25 +68,13 @@ export class Side {
     this.wisher = null;
   }
 
-  clearPokemon() {
-    for (const pokemon of this.pokemon) pokemon.destroy();
-    this.pokemon = [];
-    for (let i = 0; i < this.active.length; i++) this.active[i] = null;
-    this.lastPokemon = null;
-  }
-
-  reset() {
-    this.clearPokemon();
-    this.sideConditions = {};
-  }
-
   setAvatar(avatar: AvatarIdent) {
     this.avatar = avatar;
   }
 
   setName(name: Username, avatar?: AvatarIdent) {
     if (name) this.name = name;
-    this.id = toID(this.name) as SideID;
+    this.id = toID(this.name);
     if (avatar) this.setAvatar(avatar);
   }
 
@@ -103,24 +91,24 @@ export class Side {
     const condition = effect.name as SideCondition;
     switch (id) {
     case 'tailwind':
-      return (this.sideConditions[condition] = [condition, 1, this.battle.gen >= 5 ? 4 : 3, 0]);
+      return (this.sideConditions[id] = [condition, 1, this.battle.gen >= 5 ? 4 : 3, 0]);
     case 'reflect':
-      return (this.sideConditions[condition] = [condition, 1, 5, this.battle.gen >= 4 ? 8 : 0]);
+      return (this.sideConditions[id] = [condition, 1, 5, this.battle.gen >= 4 ? 8 : 0]);
     case 'lightscreen':
-      return (this.sideConditions[condition] = [condition, 1, 5, this.battle.gen >= 4 ? 8 : 0]);
-    case 'auroraveil': return (this.sideConditions[condition] = [condition, 1, 5, 8]);
-    case 'safeguard': return (this.sideConditions[condition] = [condition, 1, 5, 0]);
-    case 'mist': return (this.sideConditions[condition] = [condition, 1, 5, 0]);
-    case 'luckychant': return (this.sideConditions[condition] = [condition, 1, 5, 0]);
-    case 'stealthrock': return (this.sideConditions[condition] = [condition, 1, 0, 0]);
-    case 'spikes': return (this.sideConditions[condition] = [condition, 1, 0, 0]);
-    case 'toxicspikes': return (this.sideConditions[condition] = [condition, 1, 0, 0]);
-    case 'stickyweb': return (this.sideConditions[condition] = [condition, 1, 0, 0]);
-    default: return (this.sideConditions[condition] = [condition, 1, 0, 0]);
+      return (this.sideConditions[id] = [condition, 1, 5, this.battle.gen >= 4 ? 8 : 0]);
+    case 'auroraveil': return (this.sideConditions[id] = [condition, 1, 5, 8]);
+    case 'safeguard': return (this.sideConditions[id] = [condition, 1, 5, 0]);
+    case 'mist': return (this.sideConditions[id] = [condition, 1, 5, 0]);
+    case 'luckychant': return (this.sideConditions[id] = [condition, 1, 5, 0]);
+    case 'stealthrock': return (this.sideConditions[id] = [condition, 1, 0, 0]);
+    case 'spikes': return (this.sideConditions[id] = [condition, 1, 0, 0]);
+    case 'toxicspikes': return (this.sideConditions[id] = [condition, 1, 0, 0]);
+    case 'stickyweb': return (this.sideConditions[id] = [condition, 1, 0, 0]);
+    default: return (this.sideConditions[id] = [condition, 1, 0, 0]);
     }
   }
 
-  removeSideCondition(condition: ID) {
+  removeSideCondition(condition: ID) { // FIXME should not be ID!
     if (!this.sideConditions[condition]) return;
     delete this.sideConditions[condition];
   }
@@ -201,8 +189,7 @@ export class Side {
     return poke;
   }
 
-  switchIn(pokemon: Pokemon, slot?: number) {
-    if (slot === undefined) slot = pokemon.slot;
+  switchIn(pokemon: Pokemon, slot = pokemon.slot) {
     this.active[slot] = pokemon;
     pokemon.slot = slot;
     pokemon.clearVolatile();
@@ -300,6 +287,18 @@ export class Side {
 
     pokemon.fainted = true;
     pokemon.hp = 0;
+  }
+
+  clearPokemon() {
+    for (const pokemon of this.pokemon) pokemon.destroy();
+    this.pokemon = [];
+    for (let i = 0; i < this.active.length; i++) this.active[i] = null;
+    this.lastPokemon = null;
+  }
+
+  reset() {
+    this.clearPokemon();
+    this.sideConditions = {};
   }
 
   destroy() {

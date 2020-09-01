@@ -1889,7 +1889,6 @@ export const Protocol = new class {
 
     let player: Player;
     let letter: Protocol.PositionLetter | null;
-    // TODO: remove this case?
     if (position.length < 3) {
       player = position as Player;
       letter = null;

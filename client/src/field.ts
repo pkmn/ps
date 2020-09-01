@@ -21,13 +21,20 @@ export class Field {
 
   constructor(battle: Battle) {
     this.battle = battle;
+    this.reset();
   }
 
-  reset() {
-    this.weather = '' as ID;
-    this.weatherTimeLeft = 0;
-    this.weatherMinTimeLeft = 0;
-    this.pseudoWeather = [];
+  hasPseudoWeather(weather: ID) {
+    for (const [pseudoWeatherName] of this.pseudoWeather) {
+      if (weather === pseudoWeatherName) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  addPseudoWeather(weather: ID, minTimeLeft: number, timeLeft: number) {
+    this.pseudoWeather.push([weather, minTimeLeft, timeLeft]);
   }
 
   removePseudoWeather(weather: ID) {
@@ -39,17 +46,18 @@ export class Field {
     }
   }
 
-  addPseudoWeather(weather: ID, minTimeLeft: number, timeLeft: number) {
-    this.pseudoWeather.push([weather, minTimeLeft, timeLeft]);
-  }
-
-  hasPseudoWeather(weather: string) {
-    for (const [pseudoWeatherName] of this.pseudoWeather) {
-      if (weather === pseudoWeatherName) {
-        return true;
+  updatePseudoWeatherLeft() {
+    for (const pWeather of this.pseudoWeather) {
+      if (pWeather[1]) pWeather[1]--;
+      if (pWeather[2]) pWeather[2]--;
+    }
+    for (const side of this.battle.sides) {
+      for (const id in side.sideConditions) {
+        const cond = side.sideConditions[id];
+        if (cond[2]) cond[2]--;
+        if (cond[3]) cond[3]--;
       }
     }
-    return false;
   }
 
   changeWeather(weather: ID, poke?: Pokemon, isUpkeep?: boolean, ability?: Effect) {
@@ -78,18 +86,11 @@ export class Field {
     this.weather = weather;
   }
 
-  updatePseudoWeatherLeft() {
-    for (const pWeather of this.pseudoWeather) {
-      if (pWeather[1]) pWeather[1]--;
-      if (pWeather[2]) pWeather[2]--;
-    }
-    for (const side of this.battle.sides) {
-      for (const id in side.sideConditions) {
-        const cond = side.sideConditions[id];
-        if (cond[2]) cond[2]--;
-        if (cond[3]) cond[3]--;
-      }
-    }
+  reset() {
+    this.weather = '' as ID;
+    this.weatherMinTimeLeft = 0;
+    this.weatherTimeLeft = 0;
+    this.pseudoWeather = [];
   }
 
   destroy() {

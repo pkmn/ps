@@ -1,5 +1,6 @@
 import {Dex, TeamValidator, RandomPlayerAI, BattleStreams} from '@pkmn/sim';
 import {Protocol} from '@pkmn/protocol';
+import {Teams} from '@pkmn/sets';
 import {Battle, Handler} from '@pkmn/client';
 import {LogFormatter} from '@pkmn/view';
 
@@ -7,7 +8,6 @@ import {LogFormatter} from '@pkmn/view';
 import TeamA from './teams/a.txt';
 // @ts-ignore
 import TeamB from './teams/b.txt';
-
 
 
 // TODO
@@ -38,15 +38,14 @@ function display(html: string) {
   $display.appendChild(div);
 }
 
-Dex.includeModData();
 const FORMAT = 'gen7anythinggoes';
 const dex = Dex.forFormat(FORMAT);
 const validator = new TeamValidator(FORMAT);
 
-const teamA = dex.importTeam(TeamA)!;
+const teamA = Teams.import(TeamA, dex)!.team;
 let invalid = validator.validateTeam(teamA);
 if (invalid) throw new Error(`Team A is invalid: ${invalid}`);
-const teamB = dex.importTeam(TeamB)!;
+const teamB = Teams.import(TeamB, dex)!.team;
 invalid = validator.validateTeam(teamB);
 if (invalid) throw new Error(`Team B is invalid: ${invalid}`);
 

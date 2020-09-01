@@ -238,23 +238,8 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     return details === this.details;
   }
 
-  removeVolatile(volatile: ID) {
-    if (!this.hasVolatile(volatile)) return;
-    delete this.volatiles[volatile];
-  }
-
-  addVolatile(volatile: ID, ...args: any[]) {
-    if (this.hasVolatile(volatile) && !args.length) return;
-    this.volatiles[volatile] = [volatile, ...args] as EffectState;
-  }
-
-  hasVolatile(volatile: ID) {
-    return !!this.volatiles[volatile];
-  }
-
-  removeTurnstatus(volatile: ID) {
-    if (!this.hasTurnstatus(volatile)) return;
-    delete this.turnstatuses[volatile];
+  hasTurnstatus(volatile: ID) {
+    return !!this.turnstatuses[volatile];
   }
 
   addTurnstatus(volatile: ID) {
@@ -263,8 +248,9 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.turnstatuses[volatile] = [volatile];
   }
 
-  hasTurnstatus(volatile: ID) {
-    return !!this.turnstatuses[volatile];
+  removeTurnstatus(volatile: ID) {
+    if (!this.hasTurnstatus(volatile)) return;
+    delete this.turnstatuses[volatile];
   }
 
   clearTurnstatuses() {
@@ -274,9 +260,8 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.turnstatuses = {};
   }
 
-  removeMovestatus(volatile: ID) {
-    if (!this.hasMovestatus(volatile)) return;
-    delete this.movestatuses[volatile];
+  hasMovestatus(volatile: ID) {
+    return !!this.movestatuses[volatile];
   }
 
   addMovestatus(volatile: ID) {
@@ -285,8 +270,9 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.movestatuses[volatile] = [volatile];
   }
 
-  hasMovestatus(volatile: ID) {
-    return !!this.movestatuses[volatile];
+  removeMovestatus(volatile: ID) {
+    if (!this.hasMovestatus(volatile)) return;
+    delete this.movestatuses[volatile];
   }
 
   clearMovestatuses() {
@@ -296,10 +282,73 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.movestatuses = {};
   }
 
+  hasVolatile(volatile: ID) {
+    return !!this.volatiles[volatile];
+  }
+
+  addVolatile(volatile: ID, ...args: any[]) {
+    if (this.hasVolatile(volatile) && !args.length) return;
+    this.volatiles[volatile] = [volatile, ...args] as EffectState;
+  }
+
+  removeVolatile(volatile: ID) {
+    if (!this.hasVolatile(volatile)) return;
+    delete this.volatiles[volatile];
+  }
+
   clearVolatiles() {
     this.volatiles = {};
     this.clearTurnstatuses();
     this.clearMovestatuses();
+  }
+
+  clearVolatile() {
+    this.ability = this.baseAbility;
+    this.boosts = {};
+    this.clearVolatiles();
+    for (let i = 0; i < this.moveTrack.length; i++) {
+      if (this.moveTrack[i][0].charAt(0) === '*') {
+        this.moveTrack.splice(i, 1);
+        i--;
+      }
+    }
+    // this.lastMove = '';
+    this.statusStage = 0;
+    this.statusData.toxicTurns = 0;
+    if (this.side.battle.gen === 5) this.statusData.sleepTurns = 0;
+  }
+
+  copyVolatileFrom(pokemon: Pokemon, copyAll: 'batonpass' | 'illusion' = 'batonpass') {
+    this.boosts = pokemon.boosts;
+    this.volatiles = pokemon.volatiles;
+    // this.lastMove = pokemon.lastMove; // I think
+    if (copyAll === 'batonpass') {
+      delete this.volatiles['airballoon'];
+      delete this.volatiles['attract'];
+      delete this.volatiles['autotomize'];
+      delete this.volatiles['disable'];
+      delete this.volatiles['encore'];
+      delete this.volatiles['foresight'];
+      delete this.volatiles['imprison'];
+      delete this.volatiles['laserfocus'];
+      delete this.volatiles['mimic'];
+      delete this.volatiles['miracleeye'];
+      delete this.volatiles['nightmare'];
+      delete this.volatiles['smackdown'];
+      delete this.volatiles['stockpile1'];
+      delete this.volatiles['stockpile2'];
+      delete this.volatiles['stockpile3'];
+      delete this.volatiles['torment'];
+      delete this.volatiles['typeadd'];
+      delete this.volatiles['typechange'];
+      delete this.volatiles['yawn'];
+    }
+    delete this.volatiles['transform'];
+    delete this.volatiles['formechange'];
+
+    pokemon.boosts = {};
+    pokemon.volatiles = {};
+    pokemon.statusStage = 0;
   }
 
   rememberMove(moveName: string, pp = 1, recursionSource?: PokemonIdent) {
@@ -403,55 +452,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     return Math.max(this.getSpecies(serverPokemon).weightkg - autotomizeFactor, 0.1);
   }
 
-  clearVolatile() {
-    this.ability = this.baseAbility;
-    this.boosts = {};
-    this.clearVolatiles();
-    for (let i = 0; i < this.moveTrack.length; i++) {
-      if (this.moveTrack[i][0].charAt(0) === '*') {
-        this.moveTrack.splice(i, 1);
-        i--;
-      }
-    }
-    // this.lastMove = '';
-    this.statusStage = 0;
-    this.statusData.toxicTurns = 0;
-    if (this.side.battle.gen === 5) this.statusData.sleepTurns = 0;
-  }
-
-  copyVolatileFrom(pokemon: Pokemon, copyAll: 'batonpass' | 'illusion' = 'batonpass') {
-    this.boosts = pokemon.boosts;
-    this.volatiles = pokemon.volatiles;
-    // this.lastMove = pokemon.lastMove; // I think
-    if (copyAll === 'batonpass') {
-      delete this.volatiles['airballoon'];
-      delete this.volatiles['attract'];
-      delete this.volatiles['autotomize'];
-      delete this.volatiles['disable'];
-      delete this.volatiles['encore'];
-      delete this.volatiles['foresight'];
-      delete this.volatiles['imprison'];
-      delete this.volatiles['laserfocus'];
-      delete this.volatiles['mimic'];
-      delete this.volatiles['miracleeye'];
-      delete this.volatiles['nightmare'];
-      delete this.volatiles['smackdown'];
-      delete this.volatiles['stockpile1'];
-      delete this.volatiles['stockpile2'];
-      delete this.volatiles['stockpile3'];
-      delete this.volatiles['torment'];
-      delete this.volatiles['typeadd'];
-      delete this.volatiles['typechange'];
-      delete this.volatiles['yawn'];
-    }
-    delete this.volatiles['transform'];
-    delete this.volatiles['formechange'];
-
-    pokemon.boosts = {};
-    pokemon.volatiles = {};
-    pokemon.statusStage = 0;
-  }
-
   copyTypesFrom(pokemon: Pokemon) {
     const [types, addedType] = pokemon.getTypes();
     this.addVolatile('typechange' as ID, types.join('/'));
@@ -477,9 +477,14 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     return [types, addedType];
   }
 
+  getTypeList(serverPokemon?: ServerPokemon) {
+    const [types, addedType] = this.getTypes(serverPokemon);
+    return addedType ? types.concat(addedType) : types;
+  }
+
   isGrounded(serverPokemon?: ServerPokemon) {
     const battle = this.side.battle;
-    if (battle.field.hasPseudoWeather('Gravity')) {
+    if (battle.field.hasPseudoWeather('gravity' as ID)) {
       return true;
     } else if (this.volatiles['ingrain'] && battle.gen >= 4) {
       return true;
@@ -489,7 +494,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
     let item = toID(serverPokemon ? serverPokemon.item : this.item);
     const ability = toID(this.ability || serverPokemon?.ability);
-    if (battle.field.hasPseudoWeather('Magic Room') ||
+    if (battle.field.hasPseudoWeather('magicroom' as ID) ||
       this.volatiles['embargo'] ||
       ability === 'klutz'
     ) {
@@ -501,11 +506,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     if (this.volatiles['magnetrise'] || this.volatiles['telekinesis']) return false;
     if (item === 'airballoon') return false;
     return !this.getTypeList(serverPokemon).includes('Flying');
-  }
-
-  getTypeList(serverPokemon?: ServerPokemon) {
-    const [types, addedType] = this.getTypes(serverPokemon);
-    return addedType ? types.concat(addedType) : types;
   }
 
   getSpeciesForme(serverPokemon?: ServerPokemon): string {

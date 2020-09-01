@@ -1105,7 +1105,7 @@ class Handler implements Protocol.Handler<string> {
     return (line1 + template
       .replace('[POKEMON]', this.parser.pokemon(pokemon))
       .replace('[SOURCE]', this.parser.pokemon((attacker || kwArgs.of) as PokemonIdent))
-      .replace('[MOVE]', move));
+      .replace('[MOVE]', move!));
   }
 
   '|-fail|'(args: Args['|-fail|'], kwArgs: KWArgs['|-fail|']) {

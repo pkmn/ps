@@ -92,7 +92,7 @@ export class Battle {
 
   constructor(
     field = (b: Battle) => new Field(b),
-    side = (b: Battle, n: number) => new Side(b, n)
+    side = (b: Battle, n: 0 | 1 | 2 | 3) => new Side(b, n)
   ) {
     this.dex = Dex;
     this.gen = 8;
@@ -115,12 +115,6 @@ export class Battle {
     this.graceTimeLeft = 0;
 
     this.reset();
-  }
-
-  reset() {
-    this.turn = 0;
-    this.field.reset();
-    this.lastMove = '';
   }
 
   setTurn(turnNum: string | number) {
@@ -415,6 +409,12 @@ export class Battle {
 
   currentWeather() {
     return this.field.weather;
+  }
+
+  reset() {
+    this.turn = 0;
+    this.field.reset();
+    this.lastMove = '';
   }
 
   destroy() {

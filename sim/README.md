@@ -37,15 +37,17 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
   errors. `index.ts` files have been added to each of the generations in `data/`.
 - **only Gens 1 - 8 are supported, no other mods**. Generation 8 as the `base` mod is supported as
   with Pokémon Showdown, but after that only the canconical `genN` mods are supported (no Stadium,
-  Let's Go, or pet mods). The `Dex#mod` method will `throw` if an unsupported mod is requested.
-  A `Dex#modid` method has also been added which returns the current mod applied to the `Dex`.
+  Let's Go, or pet mods). However, the [`@pkmn/mods`](../mods) package provides the information
+  required for additional formats, and support for Other Metagames can be acheived with the modified
+  `Dex#mod` method. The `Dex#mod` method will `throw` if an unsupported mod is requested.  A
+  `Dex#modid` method has also been added which returns the current mod applied to the `Dex`.
 - **random battles are not supported by the `@pkmn/sim` package**. All team generation logic and
   data has been removed from the package and are instead to be provided eventually by a
   [`@pkmn/randoms`](../randoms) package which will export a generator that can be configured using
   the `Dex#setTeamGenerator` method. Unless a team generator has been set `Dex#getTeamGenerator` and
   `Dex#generateTeam` will throw. *Currently these methods will all throw as `@pkmn/randoms` has yet
   to be implemented.*
-- **all generations and all of their data is automatically loaded**. With Pokémon Showdown, data is
+- **all generations and all of their data are automatically loaded**. With Pokémon Showdown, data is
   loaded lazily, and often requires you run `includeX` methods to ensure you are getting consistent
   state. These functions still exist and can be called, but are now wholly unnecessary. Lazily
   loading older generations would still be desirable (and this package still lazily constructs the

@@ -60,7 +60,6 @@
     "bundle": "subpkg run bundle",
     "start": "subpkg run start",
     "test": "subpkg run test",
-    "full-test": "subpkg run full-test",
     "postinstall": "subpkg install"
   },
   "dependencies": {

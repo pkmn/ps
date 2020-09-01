@@ -5,6 +5,7 @@
     "@pkmn/client": "file:../client",
     "@pkmn/protocol": "file:../protocol",
     "@pkmn/sim": "file:../sim",
+    "@pkmn/sets": "file:../sets",
     "@pkmn/types": "file:../types",
     "@pkmn/view": "file:../view",
     "minimist": "^1.2.5",

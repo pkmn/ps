@@ -44,12 +44,6 @@ version number in case set import changes.
 - handle full ordered preference array (not just `gen2g`, full array of preferences)
 - allow for specifying whether to fall back to non-canonical or not
 
-## `@pkmn/protocol`
-
-- write tests...
-- finish `Verifier` to be used by integration to comprehensively check correctness of Pokémon
-  Showdown's protocol
-
 ## `@pkmn/login`
 
 - zero dependency API for logging into Pokémon Showdown
