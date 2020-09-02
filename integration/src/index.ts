@@ -1,3 +1,4 @@
+// TODO: include @pkmn/randoms and support multiple generations (and sprites)
 import {Dex, TeamValidator, RandomPlayerAI, BattleStreams} from '@pkmn/sim';
 import {Protocol} from '@pkmn/protocol';
 import {Teams, Data, PokemonSet} from '@pkmn/sets';
@@ -17,7 +18,7 @@ const validator = new TeamValidator(FORMAT);
 const importTeam = (t: string, name: 'A' | 'B') => {
   const team = Teams.importTeam(t, dex as Data)!.team as PokemonSet[];
   const invalid = validator.validateTeam(team);
-  if (invalid) throw new Error(`Team ${name} is invalid: ${invalid}`);
+  if (invalid) throw new Error(`Team ${name} is invalid:\n\n${invalid.join('\n')}`);
   return team;
 };
 
@@ -38,12 +39,16 @@ void p1.start();
 void p2.start();
 
 const $display = document.getElementById('display')!;
-let $tr = document.createElement('tr');
+const $tr = document.createElement('tr');
 let $log = document.createElement('td');
+let $teamPreview: {p1: HTMLTableCellElement; p2: HTMLTableCellElement} | undefined = {
+  p1: document.createElement('td'),
+  p2: document.createElement('td'),
+};
 
-$tr.appendChild(document.createElement('td')); // TODO team preview!
+$tr.appendChild($teamPreview.p1);
 $tr.appendChild($log);
-$tr.appendChild(document.createElement('td'));
+$tr.appendChild($teamPreview.p2);
 $display.appendChild($tr);
 
 const displayLog = (html: string) => {
@@ -51,19 +56,10 @@ const displayLog = (html: string) => {
   const $div = document.createElement('div');
   $div.innerHTML = html;
   $log.appendChild($div);
-}
+};
 
-const displaySide = ($td: HTMLTableCellElement, side: Side) => {
-  const active = side.active[0]?.getSpeciesForme();
-  if (active) {
-    const sprite = Sprites.getPokemon(active);
-    const $img = document.createElement('img');
-    $img.src = sprite.url;
-    $img.width = sprite.w;
-    $img.height = sprite.h;
-    $td.appendChild($img);
-  }
-  let $pdiv = document.createElement('div');
+const displayTeam = ($td: HTMLTableCellElement, side: Side) => {
+  const $pdiv = document.createElement('div');
   let $div!: HTMLElement;
   let i = 0;
   for (const pokemon of side.pokemon) {
@@ -72,11 +68,42 @@ const displaySide = ($td: HTMLTableCellElement, side: Side) => {
       $pdiv.appendChild($div);
     }
     const $span = document.createElement('span');
-    ($span as any).style = Icons.getPokemon(pokemon.getSpeciesForme()).style; // TODO
+    const icon = Icons.getPokemon(pokemon.getSpeciesForme(), {
+      side: `p${side.n + 1}` as 'p1' | 'p2',
+      gender: pokemon.gender || undefined,
+      fainted: pokemon.fainted,
+    });
+    $span.style.display = icon.css.display;
+    $span.style.width = icon.css.width;
+    $span.style.height = icon.css.height;
+    $span.style.imageRendering = icon.css.imageRendering;
+    $span.style.background = icon.css.background;
+    $span.style.opacity = icon.css.opacity;
+    $span.style.filter = icon.css.filter;
+
     $div.appendChild($span);
     i++;
   }
   $td.appendChild($pdiv);
+};
+
+const displayPokemon = ($td: HTMLTableCellElement, side: Side) => {
+  const active = side.active[0];
+  if (active) {
+    const sprite = Sprites.getPokemon(active.getSpeciesForme(), {
+      gender: active.gender || undefined,
+      shiny: active.shiny,
+    });
+    const $img = document.createElement('img');
+    $img.src = sprite.url;
+    $img.width = sprite.w;
+    $img.height = sprite.h;
+    if (active.fainted) {
+      $img.style.opacity = '0.3';
+      $img.style.filter = 'grayscale(100%) brightness(.5)';
+    }
+    $td.appendChild($img);
+  }
 };
 
 let turn = 0;
@@ -90,14 +117,20 @@ void (async () => {
       const key = Protocol.key(args);
       if (key && key in handler) (handler as any)[key](args, kwArgs);
 
+      if (battle.teamPreviewCount && $teamPreview) {
+        displayTeam($teamPreview.p1, battle.p1);
+        displayTeam($teamPreview.p2, battle.p2);
+        $teamPreview = undefined;
+      }
+
       if (battle.turn !== turn) {
         const $tr = document.createElement('tr');
 
         const $p1 = document.createElement('td');
-        displaySide($p1, battle.p1);
+        displayPokemon($p1, battle.p1);
         $log = document.createElement('td');
         const $p2 = document.createElement('td');
-        displaySide($p2, battle.p2);
+        displayPokemon($p2, battle.p2);
 
         $tr.appendChild($p1);
         $tr.appendChild($log);

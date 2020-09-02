@@ -332,7 +332,7 @@ export class Icons {
     const left = -(num % 12) * 40;
 
     const url = `${URL(options)}/sprites/pokemonicons-sheet.png`;
-    const css: {[attr: string]: number | string} = {
+    const css: {[attr: string]: string} = {
       display: 'inline-block',
       width: '40px',
       height: '30px',
@@ -340,7 +340,7 @@ export class Icons {
       background: `transparent url(${url}) no-repeat scroll ${left}px ${top}px`,
     };
     if (options?.fainted) {
-      css.opacity = 0.3;
+      css.opacity = '0.3';
       css.filter = 'grayscale(100%) brightness(.5)';
     }
 
@@ -351,7 +351,7 @@ export class Icons {
     let left = 0;
     let top = 0;
 
-    const css: {[attr: string]: number | string} = {
+    const css: {[attr: string]: string} = {
       display: 'inline-block',
       width: '40px',
       height: '30px',
@@ -367,7 +367,7 @@ export class Icons {
     } else if (name === 'pokeball-fainted') {
       left = 80;
       top = 4;
-      css.opacity = 0.4;
+      css.opacity = '0.4';
       css.filter = 'contrast(0)';
     } else if (name === 'pokeball-none') {
       left = -80;
