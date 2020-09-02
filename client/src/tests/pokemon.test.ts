@@ -233,7 +233,14 @@ describe('Pokemon', () => {
       .toEqual('Gengar');
   });
 
-  it.todo('#getDamageRange'); // FIXME
+  it('#getDamageRange', () => {
+    expect(Pokemon.getDamageRange([0, 300, 300, 'g'], 'g')).toEqual([0, 0]);
+    expect(Pokemon.getDamageRange([-50, 300, 300, 'g'], 'g')).toEqual([-1 / 6, -1 / 6]);
+    expect(Pokemon.getDamageRange([0, 48, 48, 'g'], 'g')).toEqual([0, 0]);
+    const result = Pokemon.getDamageRange([-12, 48, 300, 'g'], 'g');
+    expect(result[0]).toBeCloseTo(0.23);
+    expect(result[1]).toBeCloseTo(0.27);
+  });
 
   it('#getPixelRange', () => {
     const e = 0.5 / 714;
@@ -250,7 +257,14 @@ describe('Pokemon', () => {
     expect(Pokemon.getPixelRange(48, 'g')).toEqual([1, 1]);
   });
 
-  it.todo('#getFormattedRange'); // FIXME
+  it('#getFormattedRange', () => {
+    expect(Pokemon.getFormattedRange([0, 0], 0, '-')).toEqual('0%');
+    expect(Pokemon.getFormattedRange([0.25, 0.50], 0, '_')).toEqual('25_50%');
+    expect(Pokemon.getFormattedRange([0.1, 0.1], 2, 'F')).toEqual('10%');
+    expect(Pokemon.getFormattedRange([0.123, 0.123], 2, 'F')).toEqual('12.30%');
+    expect(Pokemon.getFormattedRange([0.12, 0.123], 0, '-')).toEqual('12-13%');
+    expect(Pokemon.getFormattedRange([0.12, 0.123], 1, '-')).toEqual('12.0-12.3%');
+  });
 
   it('#reset', () => {
     const pokemon = new Pokemon({battle: {gen: 8}} as Side, {} as DetailedPokemon);

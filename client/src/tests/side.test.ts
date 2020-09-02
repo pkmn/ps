@@ -58,7 +58,59 @@ describe('Side', () => {
     expect(pokemon.hasVolatile('bar' as ID)).toBe(true);
   });
 
-  it.todo('#dragIn'); // FIXME
+  it('#dragIn', () => {
+    const side = new Side({gen: 8} as Battle, 0);
+    const poke1 = side.addPokemon({} as DetailedPokemon);
+    const poke2 = side.addPokemon({} as DetailedPokemon);
+
+    expect(poke1.slot).toBe(0);
+    expect(side.active[0]).toBeNull();
+
+    poke1.statusStage = 1;
+    side.dragIn(poke1);
+
+    expect(poke1.slot).toBe(0);
+    expect(poke1.statusStage).toBe(0);
+    expect(side.active[0]).toBe(poke1);
+    expect(side.lastPokemon).toBeNull();
+    expect(side.battle.lastMove).toBe('switch-in');
+
+    poke1.statusStage = 1;
+    side.dragIn(poke1);
+
+    expect(poke1.slot).toBe(0);
+    expect(poke1.statusStage).toBe(1);
+    expect(side.active[0]).toBe(poke1);
+    expect(side.lastPokemon).toBeNull();
+    expect(side.battle.lastMove).toBe('switch-in');
+
+    poke1.statusStage = 1;
+    poke2.statusStage = 2;
+    side.dragIn(poke2);
+
+    expect(poke1.slot).toBe(0);
+    expect(poke1.statusStage).toBe(0);
+    expect(poke2.slot).toBe(0);
+    expect(poke2.statusStage).toBe(0);
+    expect(side.active[0]).toBe(poke2);
+    expect(side.lastPokemon).toBe(poke1);
+    expect(side.battle.lastMove).toBe('switch-in');
+
+    poke1.statusStage = 1;
+    poke2.statusStage = 2;
+    side.dragIn(poke1, 2);
+
+    expect(poke1.slot).toBe(2);
+    expect(poke1.statusStage).toBe(0);
+    expect(poke2.slot).toBe(0);
+    expect(poke2.statusStage).toBe(2);
+    expect(side.active[0]).toBe(poke2);
+    expect(side.active[1]).toBeUndefined();
+    expect(side.active[2]).toBe(poke1);
+    expect(side.lastPokemon).toBeUndefined();
+    expect(side.battle.lastMove).toBe('switch-in');
+  });
+
   it.todo('#replace');
   it.todo('#switchOut');
 

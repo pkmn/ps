@@ -209,7 +209,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   static parseHealth(
     hpstring: string,
     output: PokemonHealth = {hp: 0, maxhp: 0, hpcolor: '', status: ''}
-  ): [number, number, number, HPColor | ''] | null { // [delta, denominator, oldnum, oldcolor]
+  ): [delta: number, denominator: number, oldnum: number, oldcolor: HPColor | ''] | null {
     if (!hpstring || !hpstring.length) return null;
 
     let oldhp = output.fainted ? 0 : (output.hp || 1);
@@ -522,18 +522,17 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   }
 
   // Returns [min, max] damage dealt as a proportion of total HP from 0 to 1
-  static getDamageRange(damage: any, hpcolor: HPColor): [number, number] {
+  static getDamageRange(
+    damage: [delta: number, denominator: number, oldnum: number, oldcolor: HPColor | ''],
+    hpcolor: HPColor
+  ): [number, number] {
     if (damage[1] !== 48) {
       const ratio = damage[0] / damage[1];
       return [ratio, ratio];
-    } else if (damage.length === undefined) {
-      // wrong pixel damage.
-      // this case exists for backward compatibility only.
-      return [damage[2] / 100, damage[2] / 100];
     }
     // pixel damage
-    let oldrange = Pokemon.getPixelRange(damage[3], damage[4]);
-    let newrange = Pokemon.getPixelRange(damage[3] + damage[0], hpcolor);
+    let oldrange = Pokemon.getPixelRange(damage[2], damage[3]);
+    let newrange = Pokemon.getPixelRange(damage[2] + damage[0], hpcolor);
     if (damage[0] === 0) {
       // no change in displayed pixel width
       return [0, newrange[1] - newrange[0]];
