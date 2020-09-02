@@ -112,8 +112,7 @@ void p1.start();
 void p2.start();
 
 void (async () => {
-  let chunk;
-  while ((chunk = await streams.omniscient.read())) {
+  for await (const chunk of streams.omniscient) {
     console.log(chunk);
   }
 })();

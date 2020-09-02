@@ -8,3 +8,5 @@ Thumbs.db
 .vscode
 *-debug.log
 randoms/
+.cache/
+dist/

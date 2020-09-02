@@ -1,5 +1,5 @@
 {
-  "default": {
+  "_": {
     "startBattle": "Battle started between [TRAINER] and [TRAINER]!",
     "winBattle": "**[TRAINER]** won the battle!",
     "tieBattle": "Tie between [TRAINER] and [TRAINER]!",

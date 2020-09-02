@@ -1,57 +1,29 @@
 import {Dex, TeamValidator, RandomPlayerAI, BattleStreams} from '@pkmn/sim';
 import {Protocol} from '@pkmn/protocol';
-import {Teams} from '@pkmn/sets';
-import {Battle, Handler} from '@pkmn/client';
+import {Teams, Data, PokemonSet} from '@pkmn/sets';
+import {Battle, Side, Handler} from '@pkmn/client';
+import {Sprites, Icons} from '@pkmn/img';
 import {LogFormatter} from '@pkmn/view';
 
 // @ts-ignore
-import TeamA from './teams/a.txt';
+import TEAM_A from './teams/a.txt';
 // @ts-ignore
-import TeamB from './teams/b.txt';
-
-
-// TODO
-// case 'turn':
-//   const h2elem = document.createElement('h2');
-//   h2elem.className = 'battle-history';
-//   let turnMessage;
-//   if (this.battleParser) {
-//     turnMessage = this.battleParser.parseArgs(args, {}).trim();
-//     if (!turnMessage.startsWith('==') || !turnMessage.endsWith('==')) {
-//       throw new Error("Turn message must be a heading.");
-//     }
-//     turnMessage = turnMessage.slice(2, -2).trim();
-//     this.battleParser.curLineSection = 'break';
-//   } else {
-//     turnMessage = `Turn ${args[1]}`;
-//   }
-//   h2elem.innerHTML = BattleLog.escapeHTML(turnMessage);
-//   this.addSpacer();
-//   this.addNode(h2elem);
-//   break;
-
-
-const $display = document.getElementById('display')!;
-function display(html: string) {
-  const div = document.createElement('div');
-  div.innerHTML = html;
-  $display.appendChild(div);
-}
+import TEAM_B from './teams/b.txt';
 
 const FORMAT = 'gen7anythinggoes';
 const dex = Dex.forFormat(FORMAT);
 const validator = new TeamValidator(FORMAT);
 
-const teamA = Teams.import(TeamA, dex)!.team;
-let invalid = validator.validateTeam(teamA);
-if (invalid) throw new Error(`Team A is invalid: ${invalid}`);
-const teamB = Teams.import(TeamB, dex)!.team;
-invalid = validator.validateTeam(teamB);
-if (invalid) throw new Error(`Team B is invalid: ${invalid}`);
+const importTeam = (t: string, name: 'A' | 'B') => {
+  const team = Teams.importTeam(t, dex as Data)!.team as PokemonSet[];
+  const invalid = validator.validateTeam(team);
+  if (invalid) throw new Error(`Team ${name} is invalid: ${invalid}`);
+  return team;
+};
 
 const spec = {formatid: FORMAT};
-const p1spec = {name: 'Bot A', team: dex.packTeam(teamA)};
-const p2spec = {name: 'Bot B', team: dex.packTeam(teamB)};
+const p1spec = {name: 'Bot A', team: dex.packTeam(importTeam(TEAM_A, 'A'))};
+const p2spec = {name: 'Bot B', team: dex.packTeam(importTeam(TEAM_B, 'B'))};
 
 const streams = BattleStreams.getPlayerStreams(new BattleStreams.BattleStream());
 
@@ -65,18 +37,78 @@ const formatter = new LogFormatter(0, battle);
 void p1.start();
 void p2.start();
 
+const $display = document.getElementById('display')!;
+let $tr = document.createElement('tr');
+let $log = document.createElement('td');
+
+$tr.appendChild(document.createElement('td')); // TODO team preview!
+$tr.appendChild($log);
+$tr.appendChild(document.createElement('td'));
+$display.appendChild($tr);
+
+const displayLog = (html: string) => {
+  if (!html) return;
+  const $div = document.createElement('div');
+  $div.innerHTML = html;
+  $log.appendChild($div);
+}
+
+const displaySide = ($td: HTMLTableCellElement, side: Side) => {
+  const active = side.active[0]?.getSpeciesForme();
+  if (active) {
+    const sprite = Sprites.getPokemon(active);
+    const $img = document.createElement('img');
+    $img.src = sprite.url;
+    $img.width = sprite.w;
+    $img.height = sprite.h;
+    $td.appendChild($img);
+  }
+  let $pdiv = document.createElement('div');
+  let $div!: HTMLElement;
+  let i = 0;
+  for (const pokemon of side.pokemon) {
+    if (i % 3 === 0) {
+      $div = document.createElement('div');
+      $pdiv.appendChild($div);
+    }
+    const $span = document.createElement('span');
+    ($span as any).style = Icons.getPokemon(pokemon.getSpeciesForme()).style; // TODO
+    $div.appendChild($span);
+    i++;
+  }
+  $td.appendChild($pdiv);
+};
+
+let turn = 0;
 void (async () => {
-	let chunk;
-	// tslint:disable-next-line no-conditional-assignment
-	while ((chunk = await streams.p1.read())) {
+  for await (const chunk of streams.omniscient) {
     for (const line of chunk.split('\n')) {
+      console.log(line);
+
       const {args, kwArgs} = Protocol.parseBattleLine(line);
       const html = formatter.formatHTML(args, kwArgs);
       const key = Protocol.key(args);
       if (key && key in handler) (handler as any)[key](args, kwArgs);
-      display(html);
+
+      if (battle.turn !== turn) {
+        const $tr = document.createElement('tr');
+
+        const $p1 = document.createElement('td');
+        displaySide($p1, battle.p1);
+        $log = document.createElement('td');
+        const $p2 = document.createElement('td');
+        displaySide($p2, battle.p2);
+
+        $tr.appendChild($p1);
+        $tr.appendChild($log);
+        $tr.appendChild($p2);
+
+        $display.appendChild($tr);
+        turn = battle.turn;
+      }
+      displayLog(html);
     }
-	}
+  }
 })();
 
 void streams.omniscient.write(`>start ${JSON.stringify(spec)}

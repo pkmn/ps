@@ -18,7 +18,10 @@ import {ID, StatName, GenerationNum, SideID} from '@pkmn/types';
 import * as TextJSON from './data/text.json';
 
 const Text = TextJSON as {
-  default: { [templateName: string]: string };
+  // NOTE: this is called 'default' in the Pokemon Showdown client, but loaders get tripped up by
+  // the keyword 'default' and think the JSON file is actually an ES module with a default export.
+  // '_' at least has the benefit of being even less likely to cause collisions...
+  _: { [templateName: string]: string };
   [id: string]: { [templateName: string]: string };
 } & {
   [s in (StatName | 'spc')]: { statName: string; statShortName: string }
@@ -72,7 +75,7 @@ export class LogFormatter {
   fixLowercase(input: string) {
     if (this.lowercaseRegExp === undefined) {
       const prefixes = TEMPLATES.map(templateId => {
-        const template = Text.default[templateId];
+        const template = Text._[templateId];
         if (template.charAt(0) === template.charAt(0).toUpperCase()) return '';
         const bracketIndex = template.indexOf('[');
         return bracketIndex >= 0 ? template.slice(0, bracketIndex) : template;
@@ -113,7 +116,7 @@ export class LogFormatter {
     default: return `???pokemon:${pokemon}???`;
     }
     const name = this.pokemonName(pokemon);
-    const template = Text.default[side === this.perspective ? 'pokemon' : 'opposingPokemon'];
+    const template = Text._[side === this.perspective ? 'pokemon' : 'opposingPokemon'];
     return template.replace('[NICKNAME]', name);
   }
 
@@ -135,9 +138,9 @@ export class LogFormatter {
   team(side: string) {
     side = side.slice(0, 2);
     if (side === (this.perspective === 0 ? 'p1' : 'p2')) {
-      return Text.default.team;
+      return Text._.team;
     }
-    return Text.default.opposingTeam;
+    return Text._.opposingTeam;
   }
 
   own(side: string) {
@@ -151,9 +154,9 @@ export class LogFormatter {
   party(side: string) {
     side = side.slice(0, 2);
     if (side === (this.perspective === 0 ? 'p1' : 'p2')) {
-      return Text.default.party;
+      return Text._.party;
     }
-    return Text.default.opposingParty;
+    return Text._.opposingParty;
   }
 
   static effectId(effect?: string) {
@@ -167,7 +170,7 @@ export class LogFormatter {
   template(type: string, ...namespaces: (string | undefined)[]) {
     for (const namespace of namespaces) {
       if (!namespace) continue;
-      if (namespace === 'OWN') return `${Text.default[type + 'Own']}\n`;
+      if (namespace === 'OWN') return `${Text._[type + 'Own']}\n`;
       if (namespace === 'NODEFAULT') return '';
       let id = LogFormatter.effectId(namespace);
       if (Text[id] && type in Text[id]) {
@@ -177,8 +180,8 @@ export class LogFormatter {
         return `${Text[id][type]}\n`;
       }
     }
-    if (!Text.default[type]) return '';
-    return `${Text.default[type]}\n`;
+    if (!Text._[type]) return '';
+    return `${Text._[type]}\n`;
   }
 
   maybeAbility(effect: string | undefined, holder: PokemonIdent) {
@@ -189,7 +192,7 @@ export class LogFormatter {
 
   ability(name: string | undefined, holder: PokemonIdent) {
     if (!name) return '';
-    return (Text.default.abilityActivation
+    return (Text._.abilityActivation
       .replace('[POKEMON]', this.pokemon(holder))
       .replace('[ABILITY]', this.effect(name)) + '\n');
   }

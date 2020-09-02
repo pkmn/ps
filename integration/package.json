@@ -3,9 +3,10 @@
   "browserslist": "last 1 Chrome version",
   "dependencies": {
     "@pkmn/client": "file:../client",
+    "@pkmn/img": "file:../img",
     "@pkmn/protocol": "file:../protocol",
-    "@pkmn/sim": "file:../sim",
     "@pkmn/sets": "file:../sets",
+    "@pkmn/sim": "file:../sim",
     "@pkmn/types": "file:../types",
     "@pkmn/view": "file:../view",
     "minimist": "^1.2.5",
