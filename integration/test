@@ -8,40 +8,13 @@ const assert = require('assert').strict;
 const minimist = require('minimist');
 const argv = minimist(process.argv.slice(2));
 
-const PS = '../vendor/pokemon-showdown';
-const PSC = '../vendor/pokemon-showdown-client';
-
-// Ensure smogon/pokemon-showdown and smogon/pokemon-showdown-client are built
 const shell = (cmd, cwd = __dirname) => child_process.execSync(cmd, { stdio: 'inherit', cwd });
+
+const PS = '../vendor/pokemon-showdown';
 shell('npm install && node build', path.resolve(__dirname, PS));
+
+const PSC = '../vendor/pokemon-showdown-client';
 shell('npm install && node build indexes', path.resolve(__dirname, PSC));
-
-// smogon/pokemon-showdown-client expects to be run in a Browser window and like
-// smogon/pokemon-showdown, tramples all over the global namespace. As such, both projects cannot
-// be loaded together (eg. both assign `globals.Dex` to different objects which do not have
-// compatible interfaces).
-window = global;
-{
-  window.BattleTeambuilderTable = require(`${PSC}/data/teambuilder-tables.js`).BattleTeambuilderTable;
-  window.BattleAbilities = require(`${PSC}/data/abilities.js`).BattleAbilities;
-  window.BattleItems = require(`${PSC}/data/items.js`).BattleItems;
-  window.BattleMovedex = require(`${PSC}/data/moves.js`).BattleMovedex;
-  window.BattlePokdex = require(`${PSC}/data/pokedex.js`).BattlePokdex;
-  window.BattleTypeChart = require(`${PSC}/data/typechart.js`).BattleTypeChart;
-
-  require(`${PSC}/js/battle-dex-data.js`);
-  require(`${PSC}js/battle-dex.js`);
-  require(`${PSC}/js/battle-scene-stub.js`);
-  global.BattleText = require(`${PSC}/data/text.js`).BattleText;
-  require(`${PSC}/js/battle-text-parser.js`);
-  require(`${PSC}/js/battle.js`);
-}
-
-const sim = require('@pkmn/sim');
-const client = require('@pkmn/client');
-const {Protocol} = require('@pkmn/protocol');
-const {ExhaustiveRunner} = require('@pkmn/sim/tools/exhaustive-runner');
-sim.Dex.includeModData();
 
 // Tracks whether some promises threw errors that weren't caught so we can log
 // and exit with a non-zero status to fail any tests. This "shouldn't happen"
