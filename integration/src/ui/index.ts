@@ -2,7 +2,7 @@
 import {Dex, TeamValidator, RandomPlayerAI, BattleStreams} from '@pkmn/sim';
 import {Protocol} from '@pkmn/protocol';
 import {Teams, Data, PokemonSet} from '@pkmn/sets';
-import {Battle, Side, Handler} from '@pkmn/client';
+import {Battle, Side, Pokemon, Handler} from '@pkmn/client';
 import {Sprites, Icons} from '@pkmn/img';
 import {LogFormatter} from '@pkmn/view';
 
@@ -31,24 +31,18 @@ const streams = BattleStreams.getPlayerStreams(new BattleStreams.BattleStream())
 const p1 = new RandomPlayerAI(streams.p1);
 const p2 = new RandomPlayerAI(streams.p2);
 
-const battle = new Battle();
-const handler = new Handler(battle);
-const formatter = new LogFormatter(0, battle);
-
 void p1.start();
 void p2.start();
 
 const $display = document.getElementById('display')!;
 const $tr = document.createElement('tr');
 let $log = document.createElement('td');
-let $teamPreview: {p1: HTMLTableCellElement; p2: HTMLTableCellElement} | undefined = {
-  p1: document.createElement('td'),
-  p2: document.createElement('td'),
-};
+let $p1 = document.createElement('td');
+let $p2 = document.createElement('td');
 
-$tr.appendChild($teamPreview.p1);
+$tr.appendChild($p1);
 $tr.appendChild($log);
-$tr.appendChild($teamPreview.p2);
+$tr.appendChild($p2);
 $display.appendChild($tr);
 
 const displayLog = (html: string) => {
@@ -87,18 +81,17 @@ const displayTeam = ($td: HTMLTableCellElement, side: Side) => {
   $td.appendChild($pdiv);
 };
 
-const displayPokemon = ($td: HTMLTableCellElement, side: Side) => {
-  const active = side.active[0];
-  if (active) {
-    const sprite = Sprites.getPokemon(active.getSpeciesForme(), {
-      gender: active.gender || undefined,
-      shiny: active.shiny,
+const displayPokemon = ($td: HTMLTableCellElement, pokemon: Pokemon | null) => {
+  if (pokemon) {
+    const sprite = Sprites.getPokemon(pokemon.getSpeciesForme(), {
+      gender: pokemon.gender || undefined,
+      shiny: pokemon.shiny,
     });
     const $img = document.createElement('img');
     $img.src = sprite.url;
     $img.width = sprite.w;
     $img.height = sprite.h;
-    if (active.fainted) {
+    if (pokemon.fainted) {
       $img.style.opacity = '0.3';
       $img.style.filter = 'grayscale(100%) brightness(.5)';
     }
@@ -106,7 +99,55 @@ const displayPokemon = ($td: HTMLTableCellElement, side: Side) => {
   }
 };
 
-let turn = 0;
+class PreHandler implements Protocol.Handler {
+  constructor(private readonly battle: Battle) {
+    this.battle = battle;
+  }
+
+  '|faint|'(args: Protocol.Args['|faint|']) {
+    const poke = this.battle.getPokemon(args[1]);
+    if (poke) {
+      const $td = poke.side.n ? $p2 : $p1;
+      if ($td.firstChild) $td.removeChild($td.firstChild);
+      displayPokemon($td, poke);
+    }
+  }
+}
+
+class PostHandler implements Protocol.Handler {
+  constructor(private readonly battle: Battle) {
+    this.battle = battle;
+  }
+
+  '|teampreview|'() {
+    displayTeam($p1, this.battle.p1);
+    displayTeam($p2, this.battle.p2);
+  }
+
+  '|turn|'() {
+    const $tr = document.createElement('tr');
+
+    $p1 = document.createElement('td');
+    displayPokemon($p1, this.battle.p1.active[0]);
+    $log = document.createElement('td');
+    $p2 = document.createElement('td');
+    displayPokemon($p2, this.battle.p2.active[0]);
+
+    $tr.appendChild($p1);
+    $tr.appendChild($log);
+    $tr.appendChild($p2);
+
+    $display.appendChild($tr);
+  }
+}
+
+const battle = new Battle();
+const formatter = new LogFormatter(0, battle);
+
+const preHandler = new PreHandler(battle);
+const battleHandler = new Handler(battle);
+const postHandler = new PostHandler(battle);
+
 void (async () => {
   for await (const chunk of streams.omniscient) {
     for (const line of chunk.split('\n')) {
@@ -115,30 +156,10 @@ void (async () => {
       const {args, kwArgs} = Protocol.parseBattleLine(line);
       const html = formatter.formatHTML(args, kwArgs);
       const key = Protocol.key(args);
-      if (key && key in handler) (handler as any)[key](args, kwArgs);
-
-      if (battle.teamPreviewCount && $teamPreview) {
-        displayTeam($teamPreview.p1, battle.p1);
-        displayTeam($teamPreview.p2, battle.p2);
-        $teamPreview = undefined;
+      for (const handler of [preHandler, battleHandler, postHandler]) {
+        if (key && key in handler) (handler as any)[key](args, kwArgs);
       }
 
-      if (battle.turn !== turn) {
-        const $tr = document.createElement('tr');
-
-        const $p1 = document.createElement('td');
-        displayPokemon($p1, battle.p1);
-        $log = document.createElement('td');
-        const $p2 = document.createElement('td');
-        displayPokemon($p2, battle.p2);
-
-        $tr.appendChild($p1);
-        $tr.appendChild($log);
-        $tr.appendChild($p2);
-
-        $display.appendChild($tr);
-        turn = battle.turn;
-      }
       displayLog(html);
     }
   }

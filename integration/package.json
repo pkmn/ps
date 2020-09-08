@@ -10,24 +10,26 @@
     "@pkmn/sim": "file:../sim",
     "@pkmn/types": "file:../types",
     "@pkmn/view": "file:../view",
-    "@typescript-eslint/eslint-plugin": "^4.0.1",
-    "@typescript-eslint/parser": "^4.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
     "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-jest": "^24.0.0",
     "eslint": "^7.8.1",
+    "jest": "^26.4.2",
     "minimist": "^1.2.5",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-text": "^0.9.7",
-    "terser": "^5.2.1",
     "typescript": "^4.0.2"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
     "fix": "eslint --fix src --ext ts",
-    "compile": "tsc -p .",
+    "compile": "tsc -p . && node ../vendor/pokemon-showdown/build && node ../vendor/pokemon-showdown/build indexes",
+    "build": "npm run compile && parcel build index.html",
     "start": "parcel index.html",
-    "test": "true",
+    "test": "jest",
     "pretest": "npm run compile",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "postinstall": "npm -C ../vendor/pokemon-showdown install && npm -C ../vendor/pokemon-showdown-client install"
   }
 }

@@ -5,6 +5,10 @@
   "homepage": "https://psim.us",
   "main": "build/sim/index.js",
   "types": "build/sim/index.d.ts",
+  "exports": {
+    ".": "./build/sim/index.js",
+    "./tools": "./build/sim/tools/index.js"
+  },
   "repository": "github:pkmn/ps",
   "author": "Guangcong Luo <guangcongluo@gmail.com> (http://guangcongluo.com)",
   "contributors": [

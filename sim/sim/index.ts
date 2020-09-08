@@ -1,6 +1,7 @@
 export {Battle} from './battle';
 export * as BattleStreams from './battle-stream';
 export * as Streams from '../lib/streams';
+export * from './state';
 export {Dex, toID, ModData} from './dex';
 export {Pokemon} from './pokemon';
 export {PRNG} from './prng';

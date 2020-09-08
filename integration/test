@@ -3,18 +3,10 @@
 
 const child_process = require('child_process');
 const path = require('path');
-const assert = require('assert').strict;
-
 const minimist = require('minimist');
+
 const argv = minimist(process.argv.slice(2));
-
-const shell = (cmd, cwd = __dirname) => child_process.execSync(cmd, { stdio: 'inherit', cwd });
-
-const PS = '../vendor/pokemon-showdown';
-shell('npm install && node build', path.resolve(__dirname, PS));
-
-const PSC = '../vendor/pokemon-showdown-client';
-shell('npm install && node build indexes', path.resolve(__dirname, PSC));
+const shell = (cmd, cwd = __dirname) => child_process.execSync(cmd, {stdio: 'inherit', cwd});
 
 // Tracks whether some promises threw errors that weren't caught so we can log
 // and exit with a non-zero status to fail any tests. This "shouldn't happen"
@@ -52,46 +44,20 @@ const RejectionTracker = new class {
 
 RejectionTracker.register();
 
-
-function processBattle(streams) {
-  return Promise.all([
-    processStream(streams.p1, 0),
-    processStream(streams.p2, 1),
-    // TODO spectator, omniscient?
-  ]);
-}
-
-async function processStream(stream, perspective) {
-  let expected = '';
-  const ps = {battle: new Battle(), parser: new BattleTextParser(perspective)};
-  ps.battle.scene.log = {
-    add: (args, kwArgs) => {
-      expected += ps.parser.extractMessage(args, kwArgs);
-    }
-  };
-
-  const battle = new client.Battle();
-  const handler = new client.Handler(battle);
-  const formatter = new client.LogFormatter(perspective, battle);
-  const pkmn = {battle, handler, formatter};
-
-  while ((chunk = await stream.read())) {
-    let actual = '';
-    for (const line of chunk.split('\n')) {
-      const {args, kwArgs} = Protocol.parseBattleLine(line);
-      actual += pkmn.formatter.formatText(args, kwArgs);
-      const key = Protocol.key(args);
-      if (key && pkmn.handler[key]) pkmn.handler[key](args, kwArgs);
-      ps.battle.add(line);
-    }
-    ps.battle.fastForwardTo(-1);
-    assert.equal(actual, expected);
-    // TODO verify battle states
-
-    actual = '';
-    expected = '';
+const ExhaustiveRunner = (() => {
+  if (argv._[0] === 'sim') {
+    const PS = '../vendor/pokemon-showdown';
+    shell('npm install && node build', path.resolve(__dirname, PS));
+    return require('./src/text/sim');
+  } else if (argv._[0] === 'client') {
+    const PSC = '../vendor/pokemon-showdown-client';
+    shell('npm install && node build indexes', path.resolve(__dirname, PSC));
+    return require('./src/text/client');
+  } else {
+    console.error(`Unrecognized mode: ${argv._[0]}\n`);
+    process.exit(1);
   }
-}
+})();
 
 let formats;
 if (argv.formats) {
@@ -110,16 +76,17 @@ if (cycles < 0) {
 const maxFailures =
   argv.maxFailures || argv.failures || (formats.length > 1 ? ExhaustiveRunner.MAX_FAILURES : 1);
 const prng = argv.seed && argv.seed.split(',').map(s => Number(s));
+const log = true;
+const cmd = (cycles, format, seed) =>
+  `node integration/test ${argv._[0]} --cycles=${cycles} --format=${format} --seed=${seed}`;
 (async () => {
   let failures = 0;
   do {
     for (let format of formats) {
-      failures += await new ExhaustiveRunner({
-        format, cycles, prng, maxFailures, log: true, dual: argv.dual,
-      }).run();
+      failures += await new ExhaustiveRunner({format, cycles, prng, maxFailures, log, cmd}).run();
       process.stdout.write('\n');
       if (failures >= maxFailures) break;
     }
-  } while (forever); // eslint-disable-line no-unmodified-loop-condition
+  } while (forever);
   process.exit(failures);
 })();

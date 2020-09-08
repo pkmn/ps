@@ -1,15 +1,8 @@
-/**
- * Battle Simulator exhaustive runner.
- * Pokemon Showdown - http://pokemonshowdown.com/
- *
- * @license MIT
- */
-
 import {ObjectReadWriteStream} from '../../lib/streams';
 import {Dex, toID} from '../dex';
 import {PRNG, PRNGSeed} from '../prng';
 import {RandomPlayerAI} from './random-player-ai';
-import {AIOptions, Runner} from './runner';
+import {AIOptions, Runner, RunnerOptions} from './runner';
 
 interface Pools {
 	pokemon: Pool;
@@ -26,6 +19,8 @@ export interface ExhaustiveRunnerOptions {
 	maxGames?: number;
 	maxFailures?: number;
 	dual?: boolean | 'debug';
+	runner?: (options: RunnerOptions) => Promise<void>;
+	cmd?: (cycles: number, format: string, seed: string) => string;
 }
 
 export class ExhaustiveRunner {
@@ -52,6 +47,9 @@ export class ExhaustiveRunner {
 	private readonly maxFailures?: number;
 	private readonly dual: boolean | 'debug';
 
+	private readonly runner: (options: RunnerOptions) => Promise<void>;
+	private readonly cmd: (cycles: number, format: string, seed: string) => string;
+
 	private failures: number;
 	private games: number;
 
@@ -64,6 +62,9 @@ export class ExhaustiveRunner {
 		this.maxGames = options.maxGames;
 		this.maxFailures = options.maxFailures || ExhaustiveRunner.MAX_FAILURES;
 		this.dual = options.dual || false;
+		this.runner = options.runner || ((o: RunnerOptions) => new Runner(o).run());
+		this.cmd = options.cmd || ((cycles: number, format: string, seed: string) =>
+			`node tools/simulate exhaustive --cycles=${cycles} --format=${format} --seed=${seed}`);
 
 		this.failures = 0;
 		this.games = 0;
@@ -83,21 +84,20 @@ export class ExhaustiveRunner {
 			try {
 				// We run these sequentially instead of async so that the team generator
 				// and the AI can coordinate usage properly.
-				await new Runner({
+				await this.runner({
 					prng: this.prng,
 					p1options: {team: generator.generate(), createAI},
 					p2options: {team: generator.generate(), createAI},
 					format: this.format,
 					dual: this.dual,
 					error: true,
-				}).run();
+				});
 
 				if (this.log) this.logProgress(pools);
 			} catch (err) {
 				this.failures++;
 				console.error(
-					`\n\nRun \`node tools/simulate exhaustive --cycles=${this.cycles} ` +
-						`--format=${this.format} --seed=${seed.join()}\`:\n`,
+					`\n\nRun \`${this.cmd(this.cycles, this.format, seed.join())}\`:\n`,
 					err
 				);
 			}

@@ -115,6 +115,9 @@ const IMPORTS = {
   'sim/side.ts': [
     'AnyObject', 'Effect', 'ActiveMove', 'Condition', 'PokemonSet', 'Battle', 'Move', 'SideID',
   ],
+  'sim/state.ts': [
+    'AnyObject', 'Condition', 'Ability', 'Item', 'Move', 'Species', 'ActiveMove',
+  ],
   'sim/team-validator.ts': [
     'Format', 'StatsTable', 'SparseStatsTable', 'Species', 'AnyObject', 'Move',
     'EventInfo', 'PokemonSet', 'Ability', 'Item', 'ID', 'ModdedDex',
@@ -196,9 +199,11 @@ const OVERRIDDEN = new Set([
   'data/mods/gen6/index.ts',
   'data/mods/gen7/index.ts',
   'sim/exported-global-types.ts',
+  'sim/tools/index.ts',
   'package.json',
   'README.md',
   'sim/index.ts',
+  'sim/tools/exhaustive-runner.ts',
   'test/main.js',
   'test/sim/misc/statuses.js',
   'tsconfig.json',

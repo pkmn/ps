@@ -478,11 +478,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         for (const gen of gens) {
           for (const stat of gen.stats) {
             const s = gen.stats.calc(stat, 100, 31, 252, 100, gen.natures.get('adamant')!);
-            if (gen.num < 3) {
-              expect(s).toBe(rby[stat]);
-            } else {
-              expect(s).toBe(adv[stat]);
-            }
+            expect(s).toBe(gen.num < 3 ? rby[stat] : adv[stat]);
           }
         }
 

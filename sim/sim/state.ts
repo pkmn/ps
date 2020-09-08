@@ -1,3 +1,13 @@
+import {
+	Ability,
+	ActiveMove,
+	AnyObject,
+	Condition,
+	Item,
+	Move,
+	Species,
+} from './exported-global-types';
+
 /**
  * Simulator State
  * Pokemon Showdown - http://pokemonshowdown.com/
