@@ -10,7 +10,7 @@ import {
 	Effect,
 	EffectData,
 	Format,
-	FormatsData,
+	FormatData,
 	ID,
 	Item,
 	ItemData,
@@ -51,6 +51,11 @@ import * as gen6 from '../data/mods/gen6';
 import * as gen7 from '../data/mods/gen7';
 import * as gen8 from '../data';
 
+import {AbilitiesText} from '../data/text/abilities';
+import {ItemsText} from '../data/text/items';
+import {MovesText} from '../data/text/moves';
+// import {PokedexText} from '../data/text/pokedex';
+
 import * as Data from './dex-data';
 import {PRNG, PRNGSeed} from './prng';
 
@@ -75,7 +80,7 @@ const nullEffect: Condition = new Data.Condition({name: '', exists: false});
 interface DexTableData {
 	Abilities: DexTable<AbilityData>;
 	Conditions: DexTable<EffectData>;
-	Formats: DexTable<FormatsData>;
+	Formats: DexTable<FormatData>;
 	FormatsData: DexTable<SpeciesFormatsData>;
 	Items: DexTable<ItemData>;
 	Learnsets: DexTable<LearnsetData>;
@@ -90,6 +95,13 @@ interface DexTableData {
 	Species: DexTable<SpeciesData>;
 	Types: DexTable<TypeData>;
 }
+
+const TEXT = {
+	Abilities: AbilitiesText as AnyObject,
+	Items: ItemsText as AnyObject,
+	Moves: MovesText as AnyObject,
+	// Pokedex: PokedexText as AnyObject,
+};
 
 const Natures: {[k: string]: Nature} = {
 	adamant: {name: "Adamant", plus: 'atk', minus: 'spa'},
@@ -474,6 +486,35 @@ export class ModdedDex {
 		return Promise.resolve(this.getLearnsetData(toID(name)) as Data.Learnset);
 	}
 
+	getDescs(table: keyof typeof TEXT, id: ID, dataEntry: AnyObject) {
+		if (dataEntry.shortDesc) {
+			return {
+				desc: dataEntry.desc,
+				shortDesc: dataEntry.shortDesc,
+			};
+		}
+		const entry = TEXT[table][id];
+		if (!entry) return null;
+		const descs = {
+			desc: '',
+			shortDesc: '',
+		};
+		for (let i = this.gen; i < dexes['base'].gen; i++) {
+			const curDesc = entry[`descGen${i}`];
+			const curShortDesc = entry[`shortDescGen${i}`];
+			if (!descs.desc && curDesc) {
+				descs.desc = curDesc;
+			}
+			if (!descs.shortDesc && curShortDesc) {
+				descs.shortDesc = curShortDesc;
+			}
+			if (descs.desc && descs.shortDesc) break;
+		}
+		if (!descs.shortDesc) descs.shortDesc = entry.shortDesc || '';
+		if (!descs.desc) descs.desc = entry.desc || descs.shortDesc;
+		return descs;
+	}
+
 	getMove(name?: string | Move): Move {
 		if (name && typeof name !== 'string') return name;
 
@@ -492,7 +533,9 @@ export class ModdedDex {
 			id = /([a-z]*)([0-9]*)/.exec(id)![1] as ID;
 		}
 		if (id && this.data.Moves.hasOwnProperty(id)) {
-			move = new Data.Move({name}, this.data.Moves[id]);
+			const moveData = this.data.Moves[id];
+			const moveTextData = this.getDescs('Moves', id, moveData);
+			move = new Data.Move({name}, moveData, moveTextData);
 			if (move.gen > this.gen) {
 				(move as any).isNonstandard = 'Future';
 			}
@@ -655,7 +698,9 @@ export class ModdedDex {
 			return item;
 		}
 		if (id && this.data.Items.hasOwnProperty(id)) {
-			item = new Data.Item({name}, this.data.Items[id]);
+			const itemData = this.data.Items[id];
+			const itemTextData = this.getDescs('Items', id, itemData);
+			item = new Data.Item({name}, itemData, itemTextData);
 			if (item.gen > this.gen) {
 				(item as any).isNonstandard = 'Future';
 			}
@@ -686,7 +731,9 @@ export class ModdedDex {
 			return ability;
 		}
 		if (id && this.data.Abilities.hasOwnProperty(id)) {
-			ability = new Data.Ability({name}, this.data.Abilities[id]);
+			const abilityData = this.data.Abilities[id];
+			const abilityTextData = this.getDescs('Abilities', id, abilityData);
+			ability = new Data.Ability({name}, abilityData, abilityTextData);
 			if (ability.gen > this.gen) {
 				(ability as any).isNonstandard = 'Future';
 			}
@@ -1218,7 +1265,7 @@ export class ModdedDex {
 		let section = '';
 		let column = 1;
 		for (const [i, f] of Formats.entries()) {
-			const format = f as FormatsData;
+			const format = f as FormatData;
 			const id = toID(format.name);
 			if (format.section) section = format.section;
 			if (format.column) column = format.column;

@@ -561,6 +561,37 @@ describe('@smogon/calc', () => {
   });
 });
 
+// NOTE: this is not actually a @pkmn/data test but instead an integration test for the data layer
+describe('Data', () => {
+  it('descriptions', () => {
+    for (let gen = 1; gen <= 8; gen++) {
+      const dexDex = DATA.dex.forGen(gen as GenerationNum);
+      const simDex = DATA.sim.forGen(gen as GenerationNum);
+
+      for (const id in dexDex.data.Abilities) {
+        const d = dexDex.getAbility(id);
+        const s = simDex.getAbility(id);
+        expect(d.desc).toEqual(s.desc);
+        expect(d.shortDesc).toEqual(s.shortDesc);
+      }
+
+      for (const id in dexDex.data.Items) {
+        const d = dexDex.getItem(id);
+        const s = simDex.getItem(id);
+        expect(d.desc).toEqual(s.desc);
+        expect(d.shortDesc).toEqual(s.shortDesc);
+      }
+
+      for (const id in dexDex.data.Moves) {
+        const d = dexDex.getMove(id);
+        const s = simDex.getMove(id);
+        expect(d.desc).toEqual(s.desc);
+        expect(d.shortDesc).toEqual(s.shortDesc);
+      }
+    }
+  });
+});
+
 describe('Bundle', () => {
   it('usage', async () => {
     {

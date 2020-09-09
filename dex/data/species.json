@@ -2689,7 +2689,19 @@
     "tapukoko": {"inherit": true, "abilities": {"0": "Electric Surge"}},
     "tapulele": {"inherit": true, "abilities": {"0": "Psychic Surge"}},
     "tapubulu": {"inherit": true, "abilities": {"0": "Grassy Surge"}},
-    "tapufini": {"inherit": true, "abilities": {"0": "Misty Surge"}}
+    "tapufini": {"inherit": true, "abilities": {"0": "Misty Surge"}},
+    "equilibra": {
+      "inherit": true,
+      "baseStats": {
+        "hp": 102,
+        "atk": 50,
+        "def": 96,
+        "spa": 133,
+        "spd": 118,
+        "spe": 60
+      },
+      "abilities": {"0": "Levitate", "1": "Bulletproof", "H": "Justified"}
+    }
   },
   "8": {
     "bulbasaur": {
@@ -25706,11 +25718,11 @@
         "hp": 102,
         "atk": 50,
         "def": 96,
-        "spa": 133,
+        "spa": 121,
         "spd": 118,
         "spe": 60
       },
-      "abilities": {"0": "Levitate", "1": "Bulletproof", "H": "Justified"},
+      "abilities": {"0": "Levitate", "H": "Justified"},
       "weightkg": 51.3,
       "prevo": "Justyke",
       "evoLevel": 32,

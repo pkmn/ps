@@ -1191,7 +1191,7 @@ export interface GameTimerSettings {
 	accelerate: boolean;
 }
 
-export interface FormatsData extends EventMethods {
+export interface FormatData extends EventMethods {
 	name: string;
 
 	banlist?: string[];
@@ -1253,9 +1253,10 @@ export interface FormatsData extends EventMethods {
 	column?: number;
 }
 
-export type ModdedFormatsData = FormatsData | Omit<FormatsData, 'name'> & {inherit: true};
+export type FormatList = (FormatData | {section: string, column?: number})[];
+export type ModdedFormatData = FormatData | Omit<FormatData, 'name'> & {inherit: true};
 
-export interface Format extends Readonly<BasicEffect & FormatsData> {
+export interface Format extends Readonly<BasicEffect & FormatData> {
 	readonly effectType: 'Format' | 'Ruleset' | 'Rule' | 'ValidatorRule';
 	readonly baseRuleset: string[];
 	readonly banlist: string[];

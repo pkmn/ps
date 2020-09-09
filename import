@@ -101,7 +101,7 @@ const IMPORTS = {
   ],
   'sim/dex-data.ts': [
     'ID', 'EffectData', 'EffectType', 'Nonstandard', 'AnyObject', 'GameTimerSettings',
-    'FormatsData', 'GameType', 'Battle', 'ConditionData', 'ItemData', 'FlingData', 'AbilityData',
+    'FormatData', 'GameType', 'Battle', 'ConditionData', 'ItemData', 'FlingData', 'AbilityData',
     'MoveSource', 'EventInfo', 'SpeciesData', 'SpeciesFormatsData', 'SpeciesAbility',
     'GenderName', 'StatsTable', 'RandomTeamsTypes', 'MoveData', 'SecondaryEffect', 'MoveTarget',
     'TypeData', 'SparseStatsTable', 'SparseBoostsTable', 'TierTypes',
@@ -128,7 +128,7 @@ const MOD_IMPORTS = {
   // stadium
   'data/mods/stadium/conditions.ts': ['ModdedConditionData'],
   'data/mods/stadium/moves.ts': ['ModdedMoveData'],
-  'data/mods/stadium/rulesets.ts': ['ModdedFormatsData'],
+  'data/mods/stadium/rulesets.ts': ['ModdedFormatData'],
   'data/mods/stadium/scripts.ts': [
     'ModdedBattleScriptsData', 'StatNameExceptHP', 'BoostName', 'ActiveMove'
   ],
@@ -137,14 +137,13 @@ const MOD_IMPORTS = {
   'data/mods/vgc17/items.ts': ['ModdedItemData'],
   'data/mods/vgc17/learnsets.ts': ['ModdedLearnsetData'],
   'data/mods/vgc17/pokedex.ts': ['ModdedSpeciesData'],
-  'data/mods/vgc17/rulesets.ts': ['ModdedFormatsData'],
+  'data/mods/vgc17/rulesets.ts': ['ModdedFormatData'],
   'data/mods/vgc17/scripts.ts': ['ModdedBattleScriptsData'],
   // letsgo
   'data/mods/letsgo/formats-data.ts': ['ModdedSpeciesFormatsData'],
   'data/mods/letsgo/learnsets.ts': ['ModdedLearnsetData'],
   'data/mods/letsgo/moves.ts': ['ModdedMoveData'],
   'data/mods/letsgo/pokedex.ts': ['ModdedSpeciesData'],
-  'data/mods/letsgo/rulesets.ts': ['ModdedFormatsData'],
   'data/mods/letsgo/scripts.ts': ['ModdedBattleScriptsData', 'StatsTable', 'StatName'],
 };
 
@@ -210,7 +209,7 @@ const OVERRIDDEN = new Set([
   'pnpm-debug.log', // sigh...
   'package-lock.json', // double sigh...
 ]);
-const MOD_OVERRIDEN = new Set([
+const MOD_OVERRIDDEN = new Set([
   'data/mods/index.ts',
   'data/mods/index.test.ts',
   'data/mods/stadium/index.ts',
@@ -219,7 +218,7 @@ const MOD_OVERRIDEN = new Set([
 ]);
 // Any file that hasn't been 'OVERRIDDEN' we need to copy over from PS
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
-const MOD_COPIED = new Set([...MOD_FILES].filter(f => !MOD_OVERRIDEN.has(f)));
+const MOD_COPIED = new Set([...MOD_FILES].filter(f => !MOD_OVERRIDDEN.has(f)));
 
 // Files which are relevant for review in smogon/pokemon-showdown-client
 const INTERESTING = new Set([
@@ -261,7 +260,17 @@ const RANDBAT_FIELDS = [
 ];
 
 const DATA = {
-  'abilities.js': code => [removeFields(code.Abilities, ['rating']), 'abilities.json'],
+  'abilities.js': code => [
+    removeFields(code.Abilities, ['rating']), 'abilities.json', (d, gen, data) => {
+      // Pokémon Showdown changed its text inheritance in smogon/pokemon-showdown@ea8f52ce to work
+      // independently of its normal `inherit: true` scheme, meaning certain data fields need to be
+      // patched to paper over the difference.
+      if (gen === 4) {
+        d['simple'].desc = data[6]['simple'].desc;
+        d['thickfat'].desc = data[8]['thickfat'].desc;
+      }
+    }
+  ],
   'aliases.js': code => [code.Aliases, 'aliases.json'],
   'formats-data.js': code =>
     [removeFields(code.FormatsData, RANDBAT_FIELDS), 'formats-data.json'],
@@ -302,6 +311,24 @@ const RANDBAT_DATA = {
     }
     return [code.FormatsData, 'formats-data.json'];
   }
+};
+
+const fillDescs = (text, gen, contents) => {
+  for (const id in text) {
+    if (!contents[id] && gen === 8) continue;
+    const desc = text[id][gen === 8 ? 'desc' : `descGen${gen}`];
+    if (desc) {
+      contents[id] = contents[id] || {inherit: true};
+      contents[id].desc = desc;
+    }
+    const shortDesc = text[id][gen === 8 ? 'shortDesc' : `shortDescGen${gen}`];
+    if (shortDesc) {
+      contents[id] = contents[id] || {inherit: true};
+      contents[id].shortDesc = shortDesc;
+    }
+  }
+
+  return contents;
 };
 
 const HEAD = async where => (await execOrDie('git rev-parse HEAD', where)).slice(0, 8);
@@ -372,23 +399,32 @@ const changes = async (where, last, now, repo) => ({
           `${imports(MOD_IMPORTS[file], '@pkmn/sim', true)}${original}`);
       } else {
         fs.copyFileSync(
-          path.resolve(ps, file), path.resolve(mods, file.replace('data/mods', '/src')));
+          path.resolve(ps, file), path.resolve(mods, file.replace('data/mods', 'src')));
       }
     }
 
     // The data files are Typescript, so we need to build to convert them to JS before requiring
     await execOrDie(`node build`, ps);
 
+    const TEXT = {
+      'abilities.json': require(path.resolve(ps, '.data-dist/text/abilities.js')).AbilitiesText,
+      'items.json': require(path.resolve(ps, '.data-dist/text/items.js')).ItemsText,
+      'moves.json': require(path.resolve(ps, '.data-dist/text/moves.js')).MovesText,
+      // 'species.json': require(path.resolve(ps, '.data-dist/text/pokedex.js')).PokedexText,
+    };
+
     const DEX = {regular: {}, random: {}};
-    for (let gen = 1; gen <= 8; gen++) {
+    for (let gen = 8; gen >= 1; gen--) {
       let dir = path.join(ps, '.data-dist');
       if (gen !== 8) dir = path.join(dir, `mods/gen${gen}`);
       for (const file of fs.readdirSync(dir)) {
         let fn = DATA[path.basename(file)];
         if (fn) {
-          const [contents, basename] = fn(require(path.resolve(dir, file)));
+          const [contents, basename, patch] = fn(require(path.resolve(dir, file)));
           DEX.regular[basename] = DEX.regular[basename] || {};
-          DEX.regular[basename][gen] = contents;
+          if (patch) patch(contents, gen, DEX.regular[basename]);
+          const text = TEXT[basename];
+          DEX.regular[basename][gen] = text ? fillDescs(text, gen, contents) : contents;
         }
         fn = RANDBAT_DATA[path.basename(file)];
         if (fn) {

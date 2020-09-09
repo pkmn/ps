@@ -27,7 +27,7 @@ function combine(obj: AnyObject, ...data: (AnyObject | null)[]): AnyObject {
 
 // #region Data
 
-export interface FormatsData {
+export interface FormatData {
   tier?: string;
   doublesTier?: string;
   isNonstandard?: T.Nonstandard;
@@ -63,7 +63,7 @@ export class BasicEffect<NameT extends string = string> implements T.BasicEffect
     this.num = data.num || 0;
     this.gen = data.gen || 0;
     this.shortDesc = data.shortDesc || '';
-    this.desc = data.desc || '';
+    this.desc = data.desc || this.shortDesc;
     this.isNonstandard = data.isNonstandard || null;
     this.duration = data.duration;
   }
@@ -616,7 +616,7 @@ const DATA = {
       [type in Exclude<T.TypeName, '???'>]?: T.TypeData | null
     }
   },
-  FormatsData: FormatsDataJSON as Data<FormatsData>,
+  FormatsData: FormatsDataJSON as Data<FormatData>,
 };
 
 const HP_TYPES = [
@@ -648,7 +648,7 @@ export class ModdedDex implements T.Dex {
     Natures: { [id: string]: T.NatureData };
     Learnsets: null | { [id: string]: T.LearnsetData };
     Types: { [type in Exclude<T.TypeName, '???'>]: T.TypeData };
-    FormatsData: { [id: string]: FormatsData };
+    FormatsData: { [id: string]: FormatData };
   };
 
   private readonly cache = {

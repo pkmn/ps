@@ -1,6 +1,6 @@
-import type {ModdedFormatsData} from '@pkmn/sim';
+import type {ModdedFormatData} from '@pkmn/sim';
 
-export const Formats: {[k: string]: ModdedFormatsData} = {
+export const Formats: {[k: string]: ModdedFormatData} = {
 	standard: {
 		effectType: 'ValidatorRule',
 		name: 'Standard',

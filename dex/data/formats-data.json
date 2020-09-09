@@ -4901,7 +4901,7 @@
     "silvallypsychic": {"tier": "PUBL", "doublesTier": "(DUU)"},
     "silvallyrock": {"tier": "PU", "doublesTier": "(DUU)"},
     "silvallysteel": {"tier": "NU", "doublesTier": "(DUU)"},
-    "silvallywater": {"tier": "PU", "doublesTier": "(DUU)"},
+    "silvallywater": {"tier": "PUBL", "doublesTier": "(DUU)"},
     "minior": {"isNonstandard": "Past", "tier": "Illegal"},
     "miniormeteor": {"isNonstandard": "Past"},
     "komala": {"isNonstandard": "Past", "tier": "Illegal"},
