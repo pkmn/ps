@@ -43,7 +43,7 @@ version number in case set import changes.
   avoid redundant lookups
 - handle full ordered preference array (not just `gen2g`, full array of preferences)
 - allow for specifying whether to fall back to non-canonical or not
-- redo API to use better identifiers than `gen2g` (`gen: 2` = `release: 'Crystal'` replaces `'gen2'`)
+- redo API to use better identifiers than `gen2g` (`gen: 2` = `release: 'Crystal'` > `'gen2'`)
 
 ## `@pkmn/login`
 
@@ -58,7 +58,8 @@ version number in case set import changes.
 
 ## `@pkmn/mods`
 
-- fix mod funtionality (in `@pkmn/sim` and `@pkmn/dex`) to be able to apply a mod to an existing gen (just don't cache unless its a new id mod data).
+- fix mod funtionality (in `@pkmn/sim` and `@pkmn/dex`) to be able to apply a mod to an existing
+  gen (just don't cache unless its a new id mod data).
 
 ## `@pkmn/randoms`
 
@@ -67,9 +68,10 @@ version number in case set import changes.
   respectively)
 - encapsulate logic behind common `TeamGenerator` interface which can be wired into `@pkmn/sim`
 
-## `@pkmn/smogon`
+## `smogon`
 
-- `@smogon/sets` replacement (should include `@pkmn/smogon/sets` and `@pkmn/smogon/analyses` entries). generator depends on `@pkmn/data` and `node-fetch`
+- `@smogon/sets` replacement (should include `smogon/sets` and `smogon/analyses`
+  entries). generator depends on `@pkmn/data` and `node-fetch`
 
 ## Integration
 
