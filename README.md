@@ -4,7 +4,8 @@
 
 > [Pokémon Showdown](https://pokemonshowdown.com), [modularized into packages](https://pkmn.cc/modular-ps).
 
-This is the top level of [`@pkmn`](https://pkmn.cc/@pkmn/)'s Pokémon Showdown components:
+This is the top level of [`@pkmn`](https://pkmn.cc/@pkmn/)'s Pokémon Showdown components. Italicized
+components have yet to be released.
 
 - [`@pkmn/sim`](sim): an automatically generated extraction of just the simulator portion of
   [smogon/pokemon-showdown](https://github.com/smogon/pokemon-showdown)
@@ -29,6 +30,9 @@ This is the top level of [`@pkmn`](https://pkmn.cc/@pkmn/)'s Pokémon Showdown c
 - *[`@pkmn/login`](login)*: logic for authenticating with Pokémon Showdown
 - *[`@pkmn/randoms`](randoms)*: random team generation logic for Pokémon Showdown's Random Battle
   formats, for use with [`@pkmn/sim`](sim)
+
+[TODO](TODO.md) is currently used to track pending work and an [FAQ](FAQ.md) exists to cover
+common questions about the project.
 
 Everything in this repository is distributed under the terms of the [MIT License](LICENSE). For
 some packages, substantial amounts of the code have been either derived or generated from the
