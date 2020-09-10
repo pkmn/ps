@@ -884,7 +884,7 @@ export const Verifier = new class {
   verifyLine(line: string) {
     const parsed = Protocol.parseBattleLine(line);
     const {args, kwArgs} = parsed;
-    return this.dispatch(args, kwArgs) ? null : parsed;
+    return !this.dispatch(args, kwArgs) ? null : parsed;
   }
 
   dispatch(args: Protocol.ArgType, kwArgs: Protocol.BattleArgsKWArgType) {

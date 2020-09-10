@@ -10,12 +10,10 @@ const shell = (cmd, cwd = __dirname) => child_process.execSync(cmd, {stdio: 'ign
 
 const ExhaustiveRunner = (() => {
   if (argv._[0] === 'sim') {
-    const PS = '../vendor/pokemon-showdown';
-    shell('npm install && node build', path.resolve(__dirname, PS));
+    if (!argv.nocompile) shell('node build', path.resolve(__dirname, '../vendor/pokemon-showdown'));
     return require('./src/test/sim').ExhaustiveRunner;
   } else if (argv._[0] === 'client') {
-    const PSC = '../vendor/pokemon-showdown-client';
-    shell('npm install && node build indexes', path.resolve(__dirname, PSC));
+    if (!argv.nocompile) shell('node build indexes', path.resolve(__dirname, '../vendor/pokemon-showdown-client'));
     return require('./src/test/client').ExhaustiveRunner;
   } else {
     console.error(`Unrecognized mode: ${argv._[0] || 'no mode specified'}\n`);

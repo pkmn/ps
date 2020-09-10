@@ -4,7 +4,9 @@ const assert = require('assert').strict;
 
 const sim = require('@pkmn/sim');
 const client = require('@pkmn/client');
+const view = require('@pkmn/view');
 
+const {Protocol} = require('@pkmn/protocol');
 const {ExhaustiveRunner} = require('@pkmn/sim/tools');
 
 // smogon/pokemon-showdown-client expects to be run in a Browser window and like
@@ -30,6 +32,11 @@ var window = global;
   require(`${PSC}/js/battle.js`);
 }
 
+// PS does not call scene.log.add for certain message types (sigh) - this usually would not be too
+// important because they don't show up in the log, but this can effect the curLineSection (log
+// processing is unfortunately stateful) and result in different output.
+const UNLOGGED = new Set(['upkeep']);
+
 class Runner {
   DEFAULT_CYCLES = ExhaustiveRunner.DEFAULT_CYCLES;
   MAX_FAILURES = ExhaustiveRunner.MAX_FAILURES;
@@ -43,15 +50,13 @@ class Runner {
     this.p1options = options.p1options;
     this.p2options = options.p2options;
 
-    this.input = !!options.input;
-    this.output = !!options.output;
     this.error = !!options.error;
   }
 
   async run() {
-    const stream = new RawStream(this.input);
+    const stream = new RawStream();
     const game = this.runGame(this.format, stream);
-    return this.error ? game : game.catch(err => {
+    return /*FIXME !*/this.error ? game : game.catch(err => {
       console.log(`\n${stream.rawInputLog.join('\n')}\n`);
       throw err;
     });
@@ -74,44 +79,45 @@ class Runner {
     const start = streams.omniscient.write(
       `>start ${JSON.stringify(spec)}\n` +
       `>player p1 ${JSON.stringify(p1spec)}\n` +
-      `>player p2 ${JSON.stringify(p2spec)};`);
+      `>player p2 ${JSON.stringify(p2spec)}`);
 
     const all = [];
-    all.push(this.process(streams.omniscient, 0, this.output));
-    all.push(this.process(streams.omniscient, 1));
-    all.push(this.process(streams.spectator, 0));
-    all.push(this.process(streams.spectator, 1));
-    all.push(this.process( streams.p1, 0));
-    all.push(this.process(streams.p2, 1));
+    all.push(this.process(streams.omniscient, 0));
+    // FIXME uncomment
+    // all.push(this.process(streams.omniscient, 1));
+    // all.push(this.process(streams.spectator, 0));
+    // all.push(this.process(streams.spectator, 1));
+    // all.push(this.process( streams.p1, 0));
+    // all.push(this.process(streams.p2, 1));
+    const done = await Promise.all(all);
 
-    return Promise.all([...all, streams.omniscient.writeEnd(), p1, p2, start]);
+    return Promise.all([done, streams.omniscient.writeEnd(), p1, p2, start]);
   }
 
-  async process(stream, perspective, output) {
+  async process(stream, perspective) {
     const ps = {battle: new Battle(), parser: new BattleTextParser(perspective), log: ''};
     ps.battle.scene.log = {
       add: (args, kwArgs) => {
-        ps.log += ps.parser.extractMessage(args, kwArgs);
+        ps.log += ps.parser.parseArgs(args, kwArgs || {});
       }
     };
 
     const battle = new client.Battle();
     const handler = new client.Handler(battle);
-    const formatter = new client.LogFormatter(perspective, battle);
+    const formatter = new view.LogFormatter(perspective, battle);
     const pkmn = {battle, handler, formatter, log: ''};
 
     for await (const chunk of stream) {
       for (const line of chunk.split('\n')) {
         const {args, kwArgs} = Protocol.parseBattleLine(line);
-        pkmn.log += pkmn.formatter.formatText(args, kwArgs);
+        if (!UNLOGGED.has(args[0])) pkmn.log += pkmn.formatter.formatText(args, kwArgs);
         const key = Protocol.key(args);
         if (key && pkmn.handler[key]) pkmn.handler[key](args, kwArgs);
         ps.battle.add(line);
       }
       ps.battle.fastForwardTo(-1);
-      assert.deepStrictEqual(ps.log, pkmn.log);
+      assert.deepStrictEqual(pkmn.log, ps.log);
     }
-    if (output) console.log(chunk);
   }
 
     // Same as PRNG#generatedSeed, only deterministic.
@@ -127,22 +133,20 @@ class Runner {
 }
 
 class RawStream extends sim.BattleStreams.BattleStream {
-  constructor(input) {
+  constructor() {
     super();
-    this.input = !!input;
     this.rawInputLog = [];
   }
 
   _write(message) {
-    if (this.input) console.log(message);
     this.rawInputLog.push(message);
     super._write(message);
   }
 }
 
 class ClientExhaustiveRunner extends ExhaustiveRunner {
-  constructor(o) {
-    super({...o, run: new Runner(o).run()});
+  constructor(options) {
+    super({...options, runner: o => new Runner(o).run()});
   }
 }
 

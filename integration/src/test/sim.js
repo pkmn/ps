@@ -2,7 +2,7 @@
 
 const assert = require('assert').strict;
 
-const ps = require('../../../vendor/pokemon-showdown/.sim-dist');
+const ps = {BattleStreams: require('../../../vendor/pokemon-showdown/.sim-dist/battle-stream')};
 const pkmn = require('@pkmn/sim');
 
 const {Verifier} = require('@pkmn/protocol/verifier');
@@ -21,18 +21,16 @@ class Runner {
     this.p1options = options.p1options;
     this.p2options = options.p2options;
 
-    this.input = !!options.input;
-    this.output = !!options.output;
     this.error = !!options.error;
   }
 
   run() {
-    const psStream = new RawStream(this.input);
-    const pkmnStream = new RawStream(this.input);
+    const psStream = new PSRawStream();
+    const pkmnStream = new PkmnRawStream();
 
     const game = this.runGame(this.format, psStream, pkmnStream);
-    return this.error ? game : game.catch(err => {
-      console.log(`\n${psStream.rawInputLog.join('\n')}\n${pkmnStream.rawInputLog.join('\n')}\n`);
+    return /*FIXME !*/this.error ? game : game.catch(err => {
+      console.log(`${psStream.rawInputLog.join('\n')}\n\n${pkmnStream.rawInputLog.join('\n')}`);
       throw err;
     });
   }
@@ -40,7 +38,6 @@ class Runner {
   async runGame(format, psStream, pkmnStream) {
     const psStreams = ps.BattleStreams.getPlayerStreams(psStream);
     const pkmnStreams = pkmn.BattleStreams.getPlayerStreams(pkmnStream);
-
 
     const spec = {formatid: format, seed: this.prng.seed};
     const p1spec = {name: 'Bot 1', ...this.p1options};
@@ -55,21 +52,19 @@ class Runner {
 
     const start = `>start ${JSON.stringify(spec)}\n` +
       `>player p1 ${JSON.stringify(p1spec)}\n` +
-      `>player p2 ${JSON.stringify(p2spec)};`;
+      `>player p2 ${JSON.stringify(p2spec)}`;
 
     const psStart = psStreams.omniscient.write(start);
     const pkmnStart = pkmnStreams.omniscient.write(start);
+    const streams = new AsyncIterableStreams(psStreams.omniscient, pkmnStreams.omniscient);
 
-    for await (const [psChunk, pkmnChunk] of Promise.all([
-      psStreams.omniscient.read(), pkmnStreams.omniscient.read()
-    ])) {
-      assert.deepStrictEqual(psStream, pkmnChunk);
-      assert.deepStrictEqual(pkmn.State.normalizeLog(psChunk), pkmn.State.normalizeLog(pkmnChunk));
+    for await (const [psChunk, pkmnChunk] of streams) {
+      assert.deepStrictEqual(pkmn.State.normalizeLog(pkmnChunk), pkmn.State.normalizeLog(psChunk));
 
-      const v = Verifier.verify(psChunk);
-      assert(!v, `Invalid protocol: '${psChunk}'`);
-
-      if (this.output) console.log(psChunk);
+      for (const line of psChunk.split('\n')) {
+        const v = Verifier.verifyLine(line);
+        assert(!v, `Invalid protocol: '${line}'`);
+      }
     }
     assert.deepStrictEqual(pkmnStream.rawInputLog, psStream.rawInputLog);
 
@@ -91,23 +86,45 @@ class Runner {
   }
 }
 
-class RawStream extends pkmn.BattleStreams.BattleStream {
-  constructor(input) {
+class PSRawStream extends ps.BattleStreams.BattleStream {
+  constructor() {
     super();
-    this.input = !!input;
     this.rawInputLog = [];
   }
 
   _write(message) {
-    if (this.input) console.log(message);
     this.rawInputLog.push(message);
     super._write(message);
   }
 }
 
+class PkmnRawStream extends pkmn.BattleStreams.BattleStream {
+  constructor() {
+    super();
+    this.rawInputLog = [];
+  }
+
+  _write(message) {
+    this.rawInputLog.push(message);
+    super._write(message);
+  }
+}
+
+class AsyncIterableStreams {
+  constructor(a, b) {
+    this.a = a;
+    this.b = b;
+  }
+  [Symbol.asyncIterator]() { return this; }
+  async next() {
+    const ab = await Promise.all([this.a.next(), this.b.next()]);
+    return {value: [ab[0].value, ab[1].value], done: ab[0].done || ab[1].done};
+  }
+}
+
 class SimExhaustiveRunner extends ExhaustiveRunner {
-  constructor(o) {
-    super({...o, run: new Runner(o).run()});
+  constructor(options) {
+    super({...options, runner: o => new Runner(o).run()});
   }
 }
 
