@@ -76,4 +76,4 @@ version number in case set import changes.
 ## Integration
 
 - figure out how to run `eslint` on JS files without crashing
-- update `publish` to publis the `node build` version of the UI integration test
+- update `publish` to publish the `node build` version of the UI integration test

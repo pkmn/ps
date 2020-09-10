@@ -20,130 +20,99 @@ const NAME_KWARGS = new Set<Protocol.BattleArgsWithKWArgType>([
   'ability', 'ability2', 'anim', 'block', 'item', 'move', 'wisher',
 ]);
 
-export const Verifier = new class {
-  handler: Handler;
+function verifyRoomID(roomid: Protocol.RoomID) {
+  return /^[-a-z0-9]+$/.test(roomid);
+}
 
-  constructor() {
-    this.handler = new Handler();
+function verifyID(id: ID) {
+  return /^[a-z0-9]+$/.test(id);
+}
+
+function verifyName(name: string) {
+  return !!name && !verifyID(name as ID);
+}
+
+function verifyEffectName(name: Protocol.EffectName) {
+  if (name.includes(':')) {
+    return (name.startsWith('ability:') ||
+      name.startsWith('item:') ||
+      name.startsWith('move:')) &&
+      verifyName(name.slice(name.indexOf(':') + 2));
   }
+  return verifyID(name as ID);
+}
 
-  verify(data: string) {
-    for (const parsed of Protocol.parse(data)) {
-      const [roomid, {args, kwArgs}] = parsed;
-      if (!this.verifyRoomID(roomid)) return parsed;
-      if (!this.dispatch(args, kwArgs)) return parsed;
-    }
-    return null;
-  }
+function verifyTimestamp(timestamp: Protocol.Timestamp) {
+  return /^\d+$/.test(timestamp);
+}
 
-  verifyLine(line: string) {
-    const parsed = Protocol.parseBattleLine(line);
-    const {args, kwArgs} = parsed;
-    return this.dispatch(args, kwArgs) ? null : parsed;
-  }
-
-  dispatch(args: Protocol.ArgType, kwArgs: Protocol.BattleArgsKWArgType) {
-    const key = Protocol.key(args);
-    if (!key || !this.handler[key]) return false;
-    if (Object.keys(kwArgs).length && !(key in Protocol.ARGS_WITH_KWARGS)) return false;
-    if (!((this.handler as any)[key](args, kwArgs))) return false;
-    return false;
-  }
-
-  verifyRoomID(roomid: Protocol.RoomID) {
-    return /^[-a-z0-9]+$/.test(roomid);
-  }
-
-  verifyID(id: ID) {
-    return /^[a-z0-9]+$/.test(id);
-  }
-
-  verifyName(name: string) {
-    return !!name && !this.verifyID(name as ID);
-  }
-
-  verifyEffectName(name: Protocol.EffectName) {
-    if (name.includes(':')) {
-      return (name.startsWith('ability:') ||
-        name.startsWith('item:') ||
-        name.startsWith('move:')) &&
-        this.verifyName(name.slice(name.indexOf(':') + 2));
-    }
-    return this.verifyID(name as ID);
-  }
-
-  verifyTimestamp(timestamp: Protocol.Timestamp) {
-    return /^\d+$/.test(timestamp);
-  }
-
-  verifyJSON(json: string) {
-    try {
-      JSON.parse(json);
-      return true;
-    } catch {
-      return false;
-    }
-  }
-
-  verifyNum(num: Protocol.Num) {
-    return !isNaN(+num);
-  }
-
-  verifyPokemonIdent(ident: Protocol.PokemonIdent) {
-    return /^p[1234][abc]: [A-Z].*$/.test(ident);
-  }
-
-  verifyPokemonDetails(details: Protocol.PokemonDetails) {
-    return /^[A-Z].*?(, L\d{0,3})?(, [MF])?(, shiny)?$/.test(details);
-  }
-
-  verifyPokemonHPStatus(hpstatus: Protocol.PokemonHPStatus) {
-    return hpstatus === '0 fnt' || /^\d+\/\d+( (par|brn|slp|frz|tox))?$/.test(hpstatus);
-  }
-
-  verifyPlayer(player: Player) {
-    return PLAYERS.includes(player);
-  }
-
-  verifyStatusName(status: StatusName) {
-    return STATUSES.includes(status);
-  }
-
-  verifyBoostName(boost: BoostName) {
-    return BOOSTS.includes(boost);
-  }
-
-  verifyBoostNames(boosts: Protocol.BoostNames) {
-    return boosts.split(', ').every(boost => this.verifyBoostName(boost as BoostName));
-  }
-
-  verifyKWArgs<T extends Protocol.BattleArgsWithKWArgName>(
-    kwArgs: Protocol.BattleArgsKWArgs[T], keys: Array<Protocol.BattleArgsWithKWArgs[T]>
-  ) {
-    for (const k in kwArgs) {
-      const key = k as unknown as Protocol.BattleArgsWithKWArgs[T];
-      if (!keys.includes(key)) return false;
-      if (!this.verifyKWArg(key, (kwArgs as Protocol.BattleArgsKWArgsTypes)[key])) return false;
-    }
+function verifyJSON(json: string) {
+  try {
+    JSON.parse(json);
     return true;
-  }
-
-  verifyKWArg<T extends Protocol.BattleArgsWithKWArgName>(
-    k: Protocol.BattleArgsWithKWArgs[T],
-    v: Protocol.BattleArgsKWArgsTypes[Protocol.BattleArgsWithKWArgs[T]]
-  ) {
-    if (BOOL_KWARGS.has(k)) return v === true;
-    if (NAME_KWARGS.has(k)) return this.verifyName(v as string);
-    if (k === 'name' || k === 'of') return this.verifyPokemonIdent(v as Protocol.PokemonIdent);
-    if (k === 'spread') {
-      return (v as Protocol.Slots).split(',').every(s => /^p[1234][abc])$/.test(s));
-    }
-    if (k === 'from') return this.verifyEffectName(v as Protocol.EffectName);
-    if (k === 'number') return this.verifyNum(v as Protocol.Num);
-    if (k === 'anim') return v === 'prepare';
+  } catch {
     return false;
   }
-};
+}
+
+function verifyNum(num: Protocol.Num) {
+  return !isNaN(+num);
+}
+
+function verifyPokemonIdent(ident: Protocol.PokemonIdent) {
+  return /^p[1234][abc]: [A-Z].*$/.test(ident);
+}
+
+function verifyPokemonDetails(details: Protocol.PokemonDetails) {
+  return /^[A-Z].*?(, L\d{0,3})?(, [MF])?(, shiny)?$/.test(details);
+}
+
+function verifyPokemonHPStatus(hpstatus: Protocol.PokemonHPStatus) {
+  return hpstatus === '0 fnt' || /^\d+\/\d+( (par|brn|slp|frz|tox))?$/.test(hpstatus);
+}
+
+function verifyPlayer(player: Player) {
+  return PLAYERS.includes(player);
+}
+
+function verifyStatusName(status: StatusName) {
+  return STATUSES.includes(status);
+}
+
+function verifyBoostName(boost: BoostName) {
+  return BOOSTS.includes(boost);
+}
+
+function verifyBoostNames(boosts: Protocol.BoostNames) {
+  return boosts.split(', ').every(boost => verifyBoostName(boost as BoostName));
+}
+
+function verifyKWArgs<T extends Protocol.BattleArgsWithKWArgName>(
+  kwArgs: Protocol.BattleArgsKWArgs[T], keys: Array<Protocol.BattleArgsWithKWArgs[T]>
+) {
+  for (const k in kwArgs) {
+    const key = k as unknown as Protocol.BattleArgsWithKWArgs[T];
+    if (!keys.includes(key)) return false;
+    if (!verifyKWArg(key, (kwArgs as Protocol.BattleArgsKWArgsTypes)[key])) return false;
+  }
+  return true;
+}
+
+function verifyKWArg<T extends Protocol.BattleArgsWithKWArgName>(
+  k: Protocol.BattleArgsWithKWArgs[T],
+  v: Protocol.BattleArgsKWArgsTypes[Protocol.BattleArgsWithKWArgs[T]]
+) {
+  if (BOOL_KWARGS.has(k)) return v === true;
+  if (NAME_KWARGS.has(k)) return verifyName(v as string);
+  if (k === 'name' || k === 'of') return verifyPokemonIdent(v as Protocol.PokemonIdent);
+  if (k === 'spread') {
+    return (v as Protocol.Slots).split(',').every(s => /^p[1234][abc])$/.test(s));
+  }
+  if (k === 'from') return verifyEffectName(v as Protocol.EffectName);
+  if (k === 'number') return verifyNum(v as Protocol.Num);
+  if (k === 'anim') return v === 'prepare';
+  return false;
+}
 
 class Handler implements Protocol.Handler<boolean> {
   '|init|'(args: Args['|init|']) {
@@ -189,7 +158,7 @@ class Handler implements Protocol.Handler<boolean> {
   '|name|'(args: Args['|name|']) {
     if (args.length !== 4) return false;
     if (typeof args[3] !== 'boolean') return false;
-    return !!args[1] && Verifier.verifyID(args[2]);
+    return !!args[1] && verifyID(args[2]);
   }
 
   '|chat|'(args: Args['|chat|']) {
@@ -201,19 +170,19 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|:|'(args: Args['|:|']) {
-    return args.length === 2 && Verifier.verifyTimestamp(args[1]);
+    return args.length === 2 && verifyTimestamp(args[1]);
   }
 
   '|t:|'(args: Args['|t:|']) {
-    return args.length === 2 && Verifier.verifyTimestamp(args[1]);
+    return args.length === 2 && verifyTimestamp(args[1]);
   }
 
   '|c:|'(args: Args['|c:|']) {
-    return args.length === 4 && Verifier.verifyTimestamp(args[1]) && !!args[2];
+    return args.length === 4 && verifyTimestamp(args[1]) && !!args[2];
   }
 
   '|battle|'(args: Args['|battle|']) {
-    return args.length === 4 && Verifier.verifyRoomID(args[1]) && !!args[2] && !!args[3];
+    return args.length === 4 && verifyRoomID(args[1]) && !!args[2] && !!args[3];
   }
 
   '|popup|'(args: Args['|popup|']) {
@@ -225,7 +194,7 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|usercount|'(args: Args['|usercount|']) {
-    return args.length === 2 && Verifier.verifyNum(args[1]);
+    return args.length === 2 && verifyNum(args[1]);
   }
 
   '|nametaken|'(args: Args['|nametaken|']) {
@@ -238,10 +207,7 @@ class Handler implements Protocol.Handler<boolean> {
 
   '|updateuser|'(args: Args['|updateuser|']) {
     if (args.length < 5) return false;
-    return !!args[1] &&
-      (args[2] === '0' || args[2] === '1') &&
-      !!args[3] &&
-      Verifier.verifyJSON(args[4]);
+    return !!args[1] && (args[2] === '0' || args[2] === '1') && !!args[3] && verifyJSON(args[4]);
   }
 
   '|formats|'(args: Args['|formats|']) {
@@ -249,13 +215,11 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|updatesearch|'(args: Args['|updatesearch|']) {
-    return args.length === 2 && Verifier.verifyJSON(args[1]);
+    return args.length === 2 && verifyJSON(args[1]);
   }
 
   '|switchout|'(args: Args['|switchout|'], kwArgs: KWArgs['|switchout|']) {
-    return args.length === 2 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyKWArgs(kwArgs, KWARGS);
+    return args.length === 2 && verifyPokemonIdent(args[1]) && verifyKWArgs(kwArgs, KWARGS);
   }
 
   '|message|'(args: Args['|message|']) {
@@ -263,11 +227,11 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|updatechallenges|'(args: Args['|updatechallenges|']) {
-    return args.length === 2 && Verifier.verifyJSON(args[1]);
+    return args.length === 2 && verifyJSON(args[1]);
   }
 
   '|queryresponse|'(args: Args['|queryresponse|']) {
-    return args.length === 3 && QUERYTYPES.includes(args[1]) && Verifier.verifyJSON(args[2]);
+    return args.length === 3 && QUERYTYPES.includes(args[1]) && verifyJSON(args[2]);
   }
 
   '|unlink|'(args: Args['|unlink|']) {
@@ -313,11 +277,11 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|tournament|create|'(args: Args['|tournament|create|']) {
-    return args.length === 4 && !!args[2] && Verifier.verifyNum(args[3] as Protocol.Num);
+    return args.length === 4 && !!args[2] && verifyNum(args[3] as Protocol.Num);
   }
 
   '|tournament|update|'(args: Args['|tournament|update|']) {
-    return args.length === 3 && Verifier.verifyJSON(args[2]);
+    return args.length === 3 && verifyJSON(args[2]);
   }
 
   '|tournament|updateEnd|'(args: Args['|tournament|updateEnd|']) {
@@ -345,7 +309,7 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|tournament|start|'(args: Args['|tournament|start|']) {
-    return args.length === 3 && Verifier.verifyNum(args[2]);
+    return args.length === 3 && verifyNum(args[2]);
   }
 
   '|tournament|disqualify|'(args: Args['|tournament|disqualify|']) {
@@ -353,7 +317,7 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|tournament|battlestart|'(args: Args['|tournament|battlestart|']) {
-    return args.length === 5 && !!args[2] && !!args[3] && Verifier.verifyRoomID(args[4]);
+    return args.length === 5 && !!args[2] && !!args[3] && verifyRoomID(args[4]);
   }
 
   '|tournament|battleend|'(args: Args['|tournament|battleend|']) {
@@ -370,7 +334,7 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|tournament|end|'(args: Args['|tournament|end|']) {
-    return args.length === 3 && Verifier.verifyJSON(args[2]);
+    return args.length === 3 && verifyJSON(args[2]);
   }
 
   '|tournament|scouting|'(args: Args['|tournament|scouting|']) {
@@ -379,23 +343,23 @@ class Handler implements Protocol.Handler<boolean> {
 
   '|tournament|autostart|'(args: Args['|tournament|autostart|']) {
     return (args.length === 3 && args[2] === 'off') ||
-      (args.length === 4 && args[2] === 'on' && Verifier.verifyNum(args[3]));
+      (args.length === 4 && args[2] === 'on' && verifyNum(args[3]));
   }
 
   '|tournament|autodq|'(args: Args['|tournament|autodq|']) {
     return (args.length === 3 && args[2] === 'off') ||
-      (args.length === 4 && ['on', 'target'].includes(args[2]) && Verifier.verifyNum(args[3]));
+      (args.length === 4 && ['on', 'target'].includes(args[2]) && verifyNum(args[3]));
   }
 
   '|player|'(args: Args['|player|']) {
-    if (args.length === 2) return Verifier.verifyPlayer(args[1]);
-    if (args.length === 4) return Verifier.verifyPlayer(args[1]) && !!args[2] && !!args[3];
+    if (args.length === 2) return verifyPlayer(args[1]);
+    if (args.length === 4) return verifyPlayer(args[1]) && !!args[2] && !!args[3];
     if (args.length !== 5) return false;
-    return Verifier.verifyPlayer(args[1]) && !!args[2] && !!args[3] && Verifier.verifyNum(args[4]!);
+    return verifyPlayer(args[1]) && !!args[2] && !!args[3] && verifyNum(args[4]!);
   }
 
   '|teamsize|'(args: Args['|teamsize|']) {
-    return args.length === 3 && Verifier.verifyPlayer(args[1]) && Verifier.verifyNum(args[2]);
+    return args.length === 3 && verifyPlayer(args[1]) && verifyNum(args[2]);
   }
 
   '|gametype|'(args: Args['|gametype|']) {
@@ -408,7 +372,7 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|tier|'(args: Args['|tier|']) {
-    return args.length === 2 && Verifier.verifyName(args[1]);
+    return args.length === 2 && verifyName(args[1]);
   }
 
   '|rated|'(args: Args['|rated|']) {
@@ -424,7 +388,7 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|teampreview|'(args: Args['|teampreview|']) {
-    return args.length === 1 || (args.length === 2 && Verifier.verifyNum(args[1]));
+    return args.length === 1 || (args.length === 2 && verifyNum(args[1]));
   }
 
   '|clearpoke|'(args: Args['|clearpoke|']) {
@@ -433,8 +397,8 @@ class Handler implements Protocol.Handler<boolean> {
 
   '|poke|'(args: Args['|poke|']) {
     return args.length === 4 &&
-      Verifier.verifyPlayer(args[1]) &&
-      Verifier.verifyPokemonDetails(args[2]) &&
+      verifyPlayer(args[1]) &&
+      verifyPokemonDetails(args[2]) &&
       (args[3] === 'item' || args[3] === '');
   }
 
@@ -447,7 +411,7 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|request|'(args: Args['|request|']) {
-    return args.length === 2 && Verifier.verifyJSON(args[1]);
+    return args.length === 2 && verifyJSON(args[1]);
   }
 
   '|inactive|'(args: Args['|inactive|']) {
@@ -463,7 +427,7 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|turn|'(args: Args['|turn|']) {
-    return args.length === 2 && Verifier.verifyNum(args[1]);
+    return args.length === 2 && verifyNum(args[1]);
   }
 
   '|win|'(args: Args['|win|']) {
@@ -477,215 +441,199 @@ class Handler implements Protocol.Handler<boolean> {
   '|move|'(args: Args['|move|'], kwArgs: KWArgs['|move|']) {
     const keys: Protocol.BattleArgsWithKWArgType[] =
       [...KWARGS, 'anim', 'miss', 'notarget', 'prepare', 'spread', 'zeffect'];
-    if (!Verifier.verifyKWArgs(kwArgs, keys)) return false;
-    if (args.length === 3) {
-      return Verifier.verifyPokemonIdent(args[1]) && Verifier.verifyName(args[2]);
-    }
+    if (!verifyKWArgs(kwArgs, keys)) return false;
+    if (args.length === 3) return verifyPokemonIdent(args[1]) && verifyName(args[2]);
     if (args.length === 4) {
-      return Verifier.verifyPokemonIdent(args[1]) &&
-        Verifier.verifyName(args[2]) &&
-        Verifier.verifyPokemonIdent(args[3]);
+      return verifyPokemonIdent(args[1]) && verifyName(args[2]) && verifyPokemonIdent(args[3]);
     }
     return false;
   }
 
   '|switch|'(args: Args['|switch|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyPokemonDetails(args[2]) &&
-      Verifier.verifyPokemonHPStatus(args[3]);
+      verifyPokemonIdent(args[1]) &&
+      verifyPokemonDetails(args[2]) &&
+      verifyPokemonHPStatus(args[3]);
   }
 
   '|drag|'(args: Args['|drag|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyPokemonDetails(args[2]) &&
-      Verifier.verifyPokemonHPStatus(args[3]);
+      verifyPokemonIdent(args[1]) &&
+      verifyPokemonDetails(args[2]) &&
+      verifyPokemonHPStatus(args[3]);
   }
 
   '|detailschange|'(args: Args['|detailschange|'], kwArgs: KWArgs['|detailschange|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyPokemonDetails(args[2]) &&
-      Verifier.verifyPokemonHPStatus(args[3]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'msg']);
+      verifyPokemonIdent(args[1]) &&
+      verifyPokemonDetails(args[2]) &&
+      verifyPokemonHPStatus(args[3]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'msg']);
   }
 
   '|replace|'(args: Args['|replace|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyPokemonDetails(args[2]) &&
-      Verifier.verifyPokemonHPStatus(args[3]);
+      verifyPokemonIdent(args[1]) &&
+      verifyPokemonDetails(args[2]) &&
+      verifyPokemonHPStatus(args[3]);
   }
 
   '|swap|'(args: Args['|swap|'], kwArgs: KWArgs['|swap|']) {
-    if (!Verifier.verifyKWArgs(kwArgs, KWARGS)) return false;
-    if (args.length === 2) return Verifier.verifyPokemonIdent(args[1]);
-    return args.length === 3 && Verifier.verifyPokemonIdent(args[1]) && Verifier.verifyNum(args[2]);
+    if (!verifyKWArgs(kwArgs, KWARGS)) return false;
+    if (args.length === 2) return verifyPokemonIdent(args[1]);
+    return args.length === 3 && verifyPokemonIdent(args[1]) && verifyNum(args[2]);
   }
 
   '|cant|'(args: Args['|cant|'], kwArgs: KWArgs['|cant|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
+      verifyPokemonIdent(args[1]) &&
       (REASONS.includes(args[2] as Protocol.Reason) ||
-        Verifier.verifyEffectName(args[2] as Protocol.EffectName) ||
-        Verifier.verifyName(args[2])) &&
-      (Verifier.verifyEffectName(args[3] as Protocol.EffectName) || Verifier.verifyName(args[3])) &&
-      Verifier.verifyKWArgs(kwArgs, KWARGS);
+        verifyEffectName(args[2] as Protocol.EffectName) ||
+        verifyName(args[2])) &&
+      (verifyEffectName(args[3] as Protocol.EffectName) || verifyName(args[3])) &&
+      verifyKWArgs(kwArgs, KWARGS);
   }
 
   '|faint|'(args: Args['|faint|']) {
-    return args.length === 2 && Verifier.verifyPokemonIdent(args[1]);
+    return args.length === 2 && verifyPokemonIdent(args[1]);
   }
 
   '|-formechange|'(args: Args['|-formechange|'], kwArgs: KWArgs['|-formechange|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyName(args[2]) &&
-      Verifier.verifyPokemonHPStatus(args[3]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'msg']);
+      verifyPokemonIdent(args[1]) &&
+      verifyName(args[2]) &&
+      verifyPokemonHPStatus(args[3]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'msg']);
   }
 
   '|-fail|'(args: Args['|-fail|'], kwArgs: KWArgs['|-fail|']) {
-    if (!Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'forme', 'heavy', 'msg', 'weak', 'fail'])) {
+    if (!verifyKWArgs(kwArgs, [...KWARGS, 'forme', 'heavy', 'msg', 'weak', 'fail'])) {
       return false;
     }
-    if (args.length === 2) return Verifier.verifyPokemonIdent(args[1]);
-    if (args.length === 3) {
-      return Verifier.verifyPokemonIdent(args[1]) && Verifier.verifyName(args[2]);
-    }
+    if (args.length === 2) return verifyPokemonIdent(args[1]);
+    if (args.length === 3) return verifyPokemonIdent(args[1]) && verifyName(args[2]);
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
+      verifyPokemonIdent(args[1]) &&
       args[2] === 'unboost' &&
-      Verifier.verifyName(args[3]);
+      verifyName(args[3]);
   }
 
   '|-block|'(args: Args['|-block|'], kwArgs: KWArgs['|-block|']) {
-    if (!Verifier.verifyKWArgs(kwArgs, KWARGS)) return false;
-    if (args.length === 3) {
-      return Verifier.verifyPokemonIdent(args[1]) && Verifier.verifyName(args[2]);
-    }
+    if (!verifyKWArgs(kwArgs, KWARGS)) return false;
+    if (args.length === 3) return verifyPokemonIdent(args[1]) && verifyName(args[2]);
     return args.length === 5 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyEffectName(args[2]) &&
-      Verifier.verifyName(args[3]) &&
-      (args[4] === undefined || Verifier.verifyPokemonIdent(args[4]));
+      verifyPokemonIdent(args[1]) &&
+      verifyEffectName(args[2]) &&
+      verifyName(args[3]) &&
+      (args[4] === undefined || verifyPokemonIdent(args[4]));
   }
 
   '|-notarget|'(args: Args['|-notarget|']) {
-    return args.length === 1 || (args.length === 2 && Verifier.verifyPokemonIdent(args[1]));
+    return args.length === 1 || (args.length === 2 && verifyPokemonIdent(args[1]));
   }
 
   '|-miss|'(args: Args['|-miss|'], kwArgs: KWArgs['|-miss|']) {
-    if (!Verifier.verifyKWArgs(kwArgs, KWARGS)) return false;
-    if (args.length === 2) return Verifier.verifyPokemonIdent(args[1]);
-    return args.length === 3 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyPokemonIdent(args[2]);
+    if (!verifyKWArgs(kwArgs, KWARGS)) return false;
+    if (args.length === 2) return verifyPokemonIdent(args[1]);
+    return args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonIdent(args[2]);
   }
 
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
     return args.length === 3 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyPokemonHPStatus(args[2]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'partiallytrapped']);
+      verifyPokemonIdent(args[1]) &&
+      verifyPokemonHPStatus(args[2]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'partiallytrapped']);
   }
 
   '|-heal|'(args: Args['|-heal|'], kwArgs: KWArgs['|-heal|']) {
     return args.length === 3 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyPokemonHPStatus(args[2]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'wisher', 'zeffect']);
+      verifyPokemonIdent(args[1]) &&
+      verifyPokemonHPStatus(args[2]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'wisher', 'zeffect']);
   }
 
   '|-sethp|'(args: Args['|-sethp|'], kwArgs: KWArgs['|-sethp|']) {
-    if (!Verifier.verifyKWArgs(kwArgs, KWARGS)) return false;
-    if (args.length === 3) {
-      return Verifier.verifyPokemonIdent(args[1]) && Verifier.verifyNum(args[2]);
-    }
+    if (!verifyKWArgs(kwArgs, KWARGS)) return false;
+    if (args.length === 3) return verifyPokemonIdent(args[1]) && verifyNum(args[2]);
     return args.length === 5 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyNum(args[2]) &&
-      Verifier.verifyPokemonIdent(args[3]) &&
-      Verifier.verifyNum(args[4]);
+      verifyPokemonIdent(args[1]) &&
+      verifyNum(args[2]) &&
+      verifyPokemonIdent(args[3]) &&
+      verifyNum(args[4]);
   }
 
   '|-status|'(args: Args['|-status|'], kwArgs: KWArgs['|-status|']) {
     return args.length === 3 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyStatusName(args[2]) &&
-      Verifier.verifyKWArgs(kwArgs, KWARGS);
+      verifyPokemonIdent(args[1]) &&
+      verifyStatusName(args[2]) &&
+      verifyKWArgs(kwArgs, KWARGS);
   }
 
   '|-curestatus|'(args: Args['|-curestatus|'], kwArgs: KWArgs['|-curestatus|']) {
     return args.length === 3 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyStatusName(args[2]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'thaw', 'msg']);
+      verifyPokemonIdent(args[1]) &&
+      verifyStatusName(args[2]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'thaw', 'msg']);
   }
 
   '|-cureteam|'(args: Args['|-cureteam|'], kwArgs: KWArgs['|-cureteam|']) {
-    return args.length === 2 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyKWArgs(kwArgs, KWARGS);
+    return args.length === 2 && verifyPokemonIdent(args[1]) && verifyKWArgs(kwArgs, KWARGS);
   }
 
   '|-boost|'(args: Args['|-boost|'], kwArgs: KWArgs['|-boost|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyBoostName(args[2]) &&
-      Verifier.verifyNum(args[3]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'multiple', 'zeffect']);
+      verifyPokemonIdent(args[1]) &&
+      verifyBoostName(args[2]) &&
+      verifyNum(args[3]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'multiple', 'zeffect']);
   }
 
   '|-unboost|'(args: Args['|-unboost|'], kwArgs: KWArgs['|-unboost|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyBoostName(args[2]) &&
-      Verifier.verifyNum(args[3]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'multiple', 'zeffect']);
+      verifyPokemonIdent(args[1]) &&
+      verifyBoostName(args[2]) &&
+      verifyNum(args[3]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'multiple', 'zeffect']);
   }
 
   '|-setboost|'(args: Args['|-setboost|'], kwArgs: KWArgs['|-setboost|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyBoostName(args[2]) &&
-      Verifier.verifyNum(args[3]) &&
-      Verifier.verifyKWArgs(kwArgs, KWARGS);
+      verifyPokemonIdent(args[1]) &&
+      verifyBoostName(args[2]) &&
+      verifyNum(args[3]) &&
+      verifyKWArgs(kwArgs, KWARGS);
   }
 
   '|-swapboost|'(args: Args['|-swapboost|'], kwArgs: KWArgs['|-swapboost|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyPokemonIdent(args[2]) &&
-      Verifier.verifyBoostNames(args[3]) &&
-      Verifier.verifyKWArgs(kwArgs, KWARGS);
+      verifyPokemonIdent(args[1]) &&
+      verifyPokemonIdent(args[2]) &&
+      verifyBoostNames(args[3]) &&
+      verifyKWArgs(kwArgs, KWARGS);
   }
 
   '|-invertboost|'(args: Args['|-invertboost|'], kwArgs: KWArgs['|-invertboost|']) {
-    return args.length === 2 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyKWArgs(kwArgs, KWARGS);
+    return args.length === 2 && verifyPokemonIdent(args[1]) && verifyKWArgs(kwArgs, KWARGS);
   }
 
   '|-clearboost|'(args: Args['|-clearboost|'], kwArgs: KWArgs['|-clearboost|']) {
     return args.length === 2 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']);
+      verifyPokemonIdent(args[1]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']);
   }
 
   '|-clearallboost|'(args: Args['|-clearallboost|'], kwArgs: KWArgs['|-clearallboost|']) {
-    return args.length === 1 && Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']);
+    return args.length === 1 && verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']);
   }
 
   '|-clearpositiveboost|'(
     args: Args['|-clearpositiveboost|'], kwArgs: KWArgs['|-clearpositiveboost|']
   ) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyPokemonIdent(args[2]) &&
-      Verifier.verifyEffectName(args[3]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']);
+      verifyPokemonIdent(args[1]) &&
+      verifyPokemonIdent(args[2]) &&
+      verifyEffectName(args[3]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']);
   }
 
   '|-ohko|'(args: Args['|-ohko|']) {
@@ -696,148 +644,142 @@ class Handler implements Protocol.Handler<boolean> {
     args: Args['|-clearnegativeboost|'], kwArgs: KWArgs['|-clearnegativeboost|']
   ) {
     return args.length === 2 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']);
+      verifyPokemonIdent(args[1]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']);
   }
 
   '|-copyboost|'(args: Args['|-copyboost|'], kwArgs: KWArgs['|-copyboost|']) {
-    if (!(Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyPokemonIdent(args[2]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']))) {
+    if (!(verifyPokemonIdent(args[1]) &&
+      verifyPokemonIdent(args[2]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']))) {
       return false;
     }
-    return args.length === 3 || (args.length === 4) && Verifier.verifyBoostNames(args[3]);
+    return args.length === 3 || (args.length === 4) && verifyBoostNames(args[3]);
   }
 
   '|-weather|'(args: Args['|-weather|'], kwArgs: KWArgs['|-weather|']) {
     return args.length === 2 &&
-      (args[1] === 'none' || Verifier.verifyName(args[1])) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'upkeep']);
+      (args[1] === 'none' || verifyName(args[1])) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'upkeep']);
   }
 
   '|-fieldstart|'(args: Args['|-fieldstart|'], kwArgs: KWArgs['|-fieldstart|']) {
-    return args.length === 2 &&
-      Verifier.verifyName(args[1]) &&
-      Verifier.verifyKWArgs(kwArgs, KWARGS);
+    return args.length === 2 && verifyName(args[1]) && verifyKWArgs(kwArgs, KWARGS);
   }
 
   '|-fieldend|'(args: Args['|-fieldend|'], kwArgs: KWArgs['|-fieldend|']) {
-    return args.length === 2 &&
-      Verifier.verifyName(args[1]) &&
-      Verifier.verifyKWArgs(kwArgs, KWARGS);
+    return args.length === 2 && verifyName(args[1]) && verifyKWArgs(kwArgs, KWARGS);
   }
 
   '|-sidestart|'(args: Args['|-sidestart|']) {
-    return args.length === 3 && Verifier.verifyPlayer(args[1]) && Verifier.verifyName(args[2]);
+    return args.length === 3 && verifyPlayer(args[1]) && verifyName(args[2]);
   }
 
   '|-sideend|'(args: Args['|-sideend|'], kwArgs: KWArgs['|-sideend|']) {
     return args.length === 3 &&
-      Verifier.verifyPlayer(args[1]) &&
-      Verifier.verifyName(args[2]) &&
-      Verifier.verifyKWArgs(kwArgs, KWARGS);
+      verifyPlayer(args[1]) &&
+      verifyName(args[2]) &&
+      verifyKWArgs(kwArgs, KWARGS);
   }
 
   '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {
     const keys: Protocol.BattleArgsWithKWArgType[] =
       [...KWARGS, 'already', 'damage', 'block', 'fatigue', 'upkeep', 'zeffect'];
-    if (!Verifier.verifyKWArgs(kwArgs, keys)) return false;
-    if (!(Verifier.verifyPokemonIdent(args[1]) && Verifier.verifyEffectName(args[2]))) return false;
-    return args.length === 3 || (args.length === 4 && Verifier.verifyName(args[3]));
+    if (!verifyKWArgs(kwArgs, keys)) return false;
+    if (!(verifyPokemonIdent(args[1]) && verifyEffectName(args[2]))) return false;
+    return args.length === 3 || (args.length === 4 && verifyName(args[3]));
   }
 
   '|-end|'(args: Args['|-end|'], kwArgs: KWArgs['|-end|']) {
     return args.length === 3 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyEffectName(args[2]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'partiallytrapped', 'interrupt']);
+      verifyPokemonIdent(args[1]) &&
+      verifyEffectName(args[2]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'partiallytrapped', 'interrupt']);
   }
 
   '|-crit|'(args: Args['|-crit|'], kwArgs: KWArgs['|-crit|']) {
     return args.length === 2 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'spread']);
+      verifyPokemonIdent(args[1]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'spread']);
   }
 
   '|-supereffective|'(args: Args['|-supereffective|'], kwArgs: KWArgs['|-supereffective|']) {
     return args.length === 2 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'spread']);
+      verifyPokemonIdent(args[1]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'spread']);
   }
 
   '|-resisted|'(args: Args['|-resisted|'], kwArgs: KWArgs['|-resisted|']) {
     return args.length === 2 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'spread']);
+      verifyPokemonIdent(args[1]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'spread']);
   }
 
   '|-immune|'(args: Args['|-immune|'], kwArgs: KWArgs['|-immune|']) {
     return args.length === 2 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'ohko']);
+      verifyPokemonIdent(args[1]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'ohko']);
   }
 
   '|-item|'(args: Args['|-item|'], kwArgs: KWArgs['|-item|']) {
     return args.length === 3 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyName(args[2]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'identify']);
+      verifyPokemonIdent(args[1]) &&
+      verifyName(args[2]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'identify']);
   }
 
   '|-enditem|'(args: Args['|-enditem|'], kwArgs: KWArgs['|-enditem|']) {
     return args.length === 3 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyName(args[2]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'eat', 'move', 'weaken']);
+      verifyPokemonIdent(args[1]) &&
+      verifyName(args[2]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'eat', 'move', 'weaken']);
   }
 
   '|-ability|'(args: Args['|-ability|'], kwArgs: KWArgs['|-ability|']) {
-    if (!Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'move', 'weaken', 'fail'])) return false;
-    if (!(Verifier.verifyPokemonIdent(args[1]) && Verifier.verifyName(args[2]))) return false;
+    if (!verifyKWArgs(kwArgs, [...KWARGS, 'move', 'weaken', 'fail'])) return false;
+    if (!(verifyPokemonIdent(args[1]) && verifyName(args[2]))) return false;
     if (args.length === 3) return true;
-    if (args.length === 4) return args[3] === 'boost' || Verifier.verifyPokemonIdent(args[3]);
-    return args.length === 5 &&
-      Verifier.verifyName(args[3]) &&
-      Verifier.verifyPokemonIdent(args[4]);
+    if (args.length === 4) return args[3] === 'boost' || verifyPokemonIdent(args[3]);
+    return args.length === 5 && verifyName(args[3]) && verifyPokemonIdent(args[4]);
   }
 
   '|-endability|'(args: Args['|-endability|'], kwArgs: KWArgs['|-endability|']) {
-    if (!Verifier.verifyKWArgs(kwArgs, KWARGS)) return false;
-    if (!Verifier.verifyPokemonIdent(args[1])) return false;
-    return args.length === 2 || (args.length === 3 && Verifier.verifyName(args[2]));
+    if (!verifyKWArgs(kwArgs, KWARGS)) return false;
+    if (!verifyPokemonIdent(args[1])) return false;
+    return args.length === 2 || (args.length === 3 && verifyName(args[2]));
   }
 
   '|-transform|'(args: Args['|-transform|'], kwArgs: KWArgs['|-transform|']) {
     return args.length === 3 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyName(args[2]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'msg']);
+      verifyPokemonIdent(args[1]) &&
+      verifyName(args[2]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'msg']);
   }
 
   '|-mega|'(args: Args['|-mega|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyName(args[2]) &&
-      Verifier.verifyName(args[3]);
+      verifyPokemonIdent(args[1]) &&
+      verifyName(args[2]) &&
+      verifyName(args[3]);
   }
 
   '|-primal|'(args: Args['|-primal|']) {
-    return args.length === 2 && Verifier.verifyPokemonIdent(args[1]);
+    return args.length === 2 && verifyPokemonIdent(args[1]);
   }
 
   '|-burst|'(args: Args['|-burst|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyName(args[2]) &&
-      Verifier.verifyName(args[3]);
+      verifyPokemonIdent(args[1]) &&
+      verifyName(args[2]) &&
+      verifyName(args[3]);
   }
 
   '|-zpower|'(args: Args['|-zpower|']) {
-    return args.length === 2 && Verifier.verifyPokemonIdent(args[1]);
+    return args.length === 2 && verifyPokemonIdent(args[1]);
   }
 
   '|-zbroken|'(args: Args['|-zbroken|']) {
-    return args.length === 2 && Verifier.verifyPokemonIdent(args[1]);
+    return args.length === 2 && verifyPokemonIdent(args[1]);
   }
 
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
@@ -845,28 +787,25 @@ class Handler implements Protocol.Handler<boolean> {
       ...KWARGS, 'ability', 'ability2', 'block', 'broken',
       'damage', 'item', 'move', 'number', 'consumed', 'name',
     ];
-    if (!Verifier.verifyKWArgs(kwArgs, keys)) return false;
-    if (!Verifier.verifyPokemonIdent(args[1])) return false;
-    if (!(Verifier.verifyEffectName(args[2] as Protocol.EffectName) ||
-      Verifier.verifyName(args[2]))) {
-      return false;
-    }
+    if (!verifyKWArgs(kwArgs, keys)) return false;
+    if (!verifyPokemonIdent(args[1])) return false;
+    if (!(verifyEffectName(args[2] as Protocol.EffectName) || verifyName(args[2]))) return false;
     if (!(args[3] === undefined ||
-      Verifier.verifyPokemonIdent(args[3] as Protocol.PokemonIdent) ||
-      Verifier.verifyNum(args[3] as Protocol.Num) ||
-      Verifier.verifyName(args[3]))) {
+      verifyPokemonIdent(args[3] as Protocol.PokemonIdent) ||
+      verifyNum(args[3] as Protocol.Num) ||
+      verifyName(args[3]))) {
       return false;
     }
     return args.length === 4 || (args.length === 5 &&
       (args[4] === undefined ||
-      Verifier.verifyNum(args[4] as Protocol.Num) ||
-      Verifier.verifyName(args[4])));
+      verifyNum(args[4] as Protocol.Num) ||
+      verifyName(args[4])));
   }
 
   '|-fieldactivate|'(args: Args['|-fieldactivate|'], kwArgs: KWArgs['|-fieldactivate|']) {
     return args.length === 2 &&
-      Verifier.verifyEffectName(args[1]) &&
-      Verifier.verifyKWArgs(kwArgs, KWARGS);
+      verifyEffectName(args[1]) &&
+      verifyKWArgs(kwArgs, KWARGS);
   }
 
   '|-hint|'(args: Args['|-hint|']) {
@@ -886,44 +825,73 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|-waiting|'(args: Args['|-waiting|']) {
-    return args.length === 3 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyPokemonIdent(args[2]);
+    return args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonIdent(args[2]);
   }
 
   '|-prepare|'(args: Args['|-prepare|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyName(args[2]) &&
-      Verifier.verifyPokemonIdent(args[3]);
+      verifyPokemonIdent(args[1]) &&
+      verifyName(args[2]) &&
+      verifyPokemonIdent(args[3]);
   }
 
   '|-mustrecharge|'(args: Args['|-mustrecharge|']) {
-    return args.length === 2 && Verifier.verifyPokemonIdent(args[1]);
+    return args.length === 2 && verifyPokemonIdent(args[1]);
   }
 
   '|-hitcount|'(args: Args['|-hitcount|']) {
-    return args.length === 3 && Verifier.verifyPokemonIdent(args[1]) && Verifier.verifyNum(args[2]);
+    return args.length === 3 && verifyPokemonIdent(args[1]) && verifyNum(args[2]);
   }
 
   '|-singlemove|'(args: Args['|-singlemove|'], kwArgs: KWArgs['|-singlemove|']) {
     return args.length === 3 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyName(args[2]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']);
+      verifyPokemonIdent(args[1]) &&
+      verifyName(args[2]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']);
   }
 
   '|-singleturn|'(args: Args['|-singleturn|'], kwArgs: KWArgs['|-singleturn|']) {
     return args.length === 3 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyName(args[2]) &&
-      Verifier.verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']);
+      verifyPokemonIdent(args[1]) &&
+      verifyName(args[2]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']);
   }
 
   '|-anim|'(args: Args['|-anim|']) {
     return args.length === 4 &&
-      Verifier.verifyPokemonIdent(args[1]) &&
-      Verifier.verifyName(args[2]) &&
-      Verifier.verifyPokemonIdent(args[3]);
+      verifyPokemonIdent(args[1]) &&
+      verifyName(args[2]) &&
+      verifyPokemonIdent(args[3]);
   }
 }
+
+export const Verifier = new class {
+  handler: Handler;
+
+  constructor() {
+    this.handler = new Handler();
+  }
+
+  verify(data: string) {
+    for (const parsed of Protocol.parse(data)) {
+      const [roomid, {args, kwArgs}] = parsed;
+      if (!verifyRoomID(roomid)) return parsed;
+      if (!this.dispatch(args, kwArgs)) return parsed;
+    }
+    return null;
+  }
+
+  verifyLine(line: string) {
+    const parsed = Protocol.parseBattleLine(line);
+    const {args, kwArgs} = parsed;
+    return this.dispatch(args, kwArgs) ? null : parsed;
+  }
+
+  dispatch(args: Protocol.ArgType, kwArgs: Protocol.BattleArgsKWArgType) {
+    const key = Protocol.key(args);
+    if (!key || !this.handler[key]) return false;
+    if (Object.keys(kwArgs).length && !(key in Protocol.ARGS_WITH_KWARGS)) return false;
+    if (!((this.handler as any)[key](args, kwArgs))) return false;
+    return false;
+  }
+};

@@ -9,6 +9,10 @@ const {Verifier} = require('@pkmn/protocol/verifier');
 const {ExhaustiveRunner} = require('@pkmn/sim/tools');
 
 class Runner {
+  DEFAULT_CYCLES = ExhaustiveRunner.DEFAULT_CYCLES;
+  MAX_FAILURES = ExhaustiveRunner.MAX_FAILURES;
+  FORMATS = ExhaustiveRunner.FORMATS;
+
   constructor(options) {
     this.format = options.format;
 
@@ -22,9 +26,9 @@ class Runner {
     this.error = !!options.error;
   }
 
-  async run() {
-    const psStream = new RawStream('C', this.input);
-    const pkmnStream = new RawStream('T', this.input);
+  run() {
+    const psStream = new RawStream(this.input);
+    const pkmnStream = new RawStream(this.input);
 
     const game = this.runGame(this.format, psStream, pkmnStream);
     return this.error ? game : game.catch(err => {
@@ -37,10 +41,10 @@ class Runner {
     const psStreams = ps.BattleStreams.getPlayerStreams(psStream);
     const pkmnStreams = pkmn.BattleStreams.getPlayerStreams(pkmnStream);
 
+
     const spec = {formatid: format, seed: this.prng.seed};
     const p1spec = {name: 'Bot 1', ...this.p1options};
     const p2spec = {name: 'Bot 2', ...this.p2options};
-
     const p1options = {seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p1options};
     const p2options = {seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p2options};
 
@@ -62,10 +66,10 @@ class Runner {
       assert.deepStrictEqual(psStream, pkmnChunk);
       assert.deepStrictEqual(pkmn.State.normalizeLog(psChunk), pkmn.State.normalizeLog(pkmnChunk));
 
-      const v = Verifier.verify()
+      const v = Verifier.verify(psChunk);
       assert(!v, `Invalid protocol: '${psChunk}'`);
 
-      if (this.output) console.log(`[C] ${psChunk}\n[T] ${pkmnChunk}`);
+      if (this.output) console.log(psChunk);
     }
     assert.deepStrictEqual(pkmnStream.rawInputLog, psStream.rawInputLog);
 
@@ -88,24 +92,23 @@ class Runner {
 }
 
 class RawStream extends pkmn.BattleStreams.BattleStream {
-  constructor(type, input) {
+  constructor(input) {
     super();
-    this.type = type;
     this.input = !!input;
     this.rawInputLog = [];
   }
 
   _write(message) {
-    if (this.input) console.log(`[${this.type}] ${message}`);
+    if (this.input) console.log(message);
     this.rawInputLog.push(message);
     super._write(message);
   }
 }
 
-class SimExhausiveRunner extends ExhaustiveRunner {
+class SimExhaustiveRunner extends ExhaustiveRunner {
   constructor(o) {
     super({...o, run: new Runner(o).run()});
   }
 }
 
-exports.ExhaustiveRunner = SimExhausiveRunner;
+exports.ExhaustiveRunner = SimExhaustiveRunner;
