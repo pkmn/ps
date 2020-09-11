@@ -2,7 +2,8 @@
 
 ## `@pkmn/sim`
 
-- **allow `Dex.mod` to be called on a canonical gen (just don't cache - only cache the first call with mod data for a given ID)**
+- **allow `Dex.mod` to be called on a canonical gen (just don't cache - only cache the first
+  call with mod data for a given ID)**
 - Pokémon Showdown's underlying data definitions (eg. `MoveData`) could use a lot of cleanup and
   consolidation (better grouping, naming, etc)
 - In an ideal world, `@pkmn/sim` could be made to depend on `@pkmn/dex`. The main blockers are:
@@ -13,7 +14,8 @@
 
 ## `@pkmn/sets`
 
-- **review and incorporate changes made by [Pokémon Showdown](https://github.com/smogon/pokemon-showdown-client/blob/master/src/panel-teamdropdown.tsx)**
+- **review and incorporate changes made by
+  [Pokémon Showdown](https://github.com/smogon/pokemon-showdown-client/blob/master/src/panel-teamdropdown.tsx)**
 - a `canonicalize` method needs to be added to convert a `PokemonSet` into a canonical form. This
   includes (but is not limited to):
   - turning battle only formes into their base forme (with some more sophisticated logic for
@@ -56,7 +58,8 @@ version number in case set import changes.
 
 ## `@pkmn/protocol`
 
-- **adopt `fixRequest` logic and types from [Pokémon Showdown](https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle-choices.ts)**
+- **adopt `fixRequest` logic and types from
+  [Pokémon Showdown](https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle-choices.ts)**
 
 ## `@pkmn/client`
 
@@ -67,8 +70,10 @@ version number in case set import changes.
 ## `@pkmn/view`
 
 - **documentation, unit tests, bundle support**
-- **include `BattleChoiceBattle` from [Pokémon Showdown](https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle-choices.ts)**
-- demonstration of how to recreate Pokémon Showdown's `AnimatedBattle` hooks on top of `@pkmn/client` (`BattleSceneStub` equivalent, but use `Partial` instead of null object pattern)
+- **include `BattleChoiceBattle` from
+  [Pokémon Showdown](https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle-choices.ts)**
+- demonstration of how to recreate Pokémon Showdown's `AnimatedBattle` hooks on top of
+  `@pkmn/client` (`BattleSceneStub` equivalent, but use `Partial` instead of null object pattern)
 - logic for displaying the Pokémon Showdown protocol *(how should arbitrary HTML be handled? Fully
   escaped? Or embed an HTML sanitizer?)*
 
@@ -92,4 +97,4 @@ version number in case set import changes.
 - **wire up integration test to GitHub CI**
 - figure out how to run `eslint` on JS files without crashing
 - add deeper equality method for Pokémon Showdown's client state vs. pkmns (requires handling
-different representations eg `ID`s, consider using protocol `Verifier` to verify all types)
+  different representations eg `ID`s, consider using protocol `Verifier` to verify all types)
