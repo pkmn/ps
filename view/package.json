@@ -3,6 +3,9 @@
   "private": true,
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "bin": {
+    "format-battle": "./format-battle"
+  },
   "description": "Library for building Pokémon Showdown client UIs",
   "repository": "github:pkmn/ps",
   "license": "MIT",
@@ -13,6 +16,9 @@
     "@pkmn/client": "file:../client",
     "@pkmn/protocol": "file:../protocol",
     "@pkmn/types": "^0.1.2"
+  },
+  "optionalDependencies": {
+    "source-map-support": "^0.5.19"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",

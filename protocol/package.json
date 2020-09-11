@@ -20,6 +20,9 @@
   "dependencies": {
     "@pkmn/types": "^0.1.2"
   },
+  "optionalDependencies": {
+    "source-map-support": "^0.5.19"
+  },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
     "fix": "eslint --fix src --ext ts",

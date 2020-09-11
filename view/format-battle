@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 'use strict';
-// TODO move to @pkmn/view package
-require('source-map-support').install();
+
+try {
+  require('source-map-support').install();
+} catch (err) {
+  if (err.code !== 'MODULE_NOT_FOUND') throw err;
+}
 
 const readline = require('readline');
 
 const client = require('@pkmn/client');
-const view = require('@pkmn/view');
+const view = require('./build');
 
 const {Protocol} = require('@pkmn/protocol');
 

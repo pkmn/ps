@@ -66,7 +66,6 @@ version number in case set import changes.
 
 ## `@pkmn/view`
 
-- **move `integration/parse` to `@pkmn/view`**
 - **documentation, unit tests, bundle support**
 - **include `BattleChoiceBattle` from [Pokémon Showdown](https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle-choices.ts)**
 - demonstration of how to recreate Pokémon Showdown's `AnimatedBattle` hooks on top of `@pkmn/client` (`BattleSceneStub` equivalent, but use `Partial` instead of null object pattern)
