@@ -364,19 +364,19 @@ export namespace Protocol {
         pp: number;
         maxpp: number;
         target: MoveTarget;
-        disabled: boolean;
+        disabled?: boolean;
       }>;
-      maxMoves?: {
+      maxMoves?: Array<{
         // name: MoveName;
         id: ID;
         target: MoveTarget;
         disabled?: boolean;
-      }[];
+      }>;
       zMoves?: Array<{
         name: MoveName;
         id: ID;
         target: MoveTarget;
-      }> | null;
+      } | null>;
       canDynamax?: boolean;
       canGigantamax?: boolean;
       canMegaEvo?: boolean;
@@ -1998,6 +1998,7 @@ export const Protocol = new class {
       }
     }
 
+    if (request.requestType === 'wait') request.noCancel = true;
     if (request.side) {
       for (const pokemon of request.side.pokemon) {
         this.parseDetails(pokemon.ident.substr(4), pokemon.ident, pokemon.details, pokemon);

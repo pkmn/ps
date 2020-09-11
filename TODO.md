@@ -56,11 +56,6 @@ version number in case set import changes.
 - **zero dependency API for logging into Pokémon Showdown**
 - authenticated wrappers of `WebSocket`, `fetch`, Node `http`/`https`, `XMLHttpRequest`
 
-## `@pkmn/protocol`
-
-- **adopt `fixRequest` logic and types from
-  [Pokémon Showdown](https://github.com/smogon/pokemon-showdown-client/blob/master/src/battle-choices.ts)**
-
 ## `@pkmn/client`
 
 - **documentation, bundle support**

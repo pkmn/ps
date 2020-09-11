@@ -695,15 +695,15 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|-crit|'(args: Args['|-crit|']) {
-    return args.length === 2 &&  verifyPokemonIdent(args[1]);
+    return args.length === 2 && verifyPokemonIdent(args[1]);
   }
 
   '|-supereffective|'(args: Args['|-supereffective|']) {
-    return args.length === 2 &&  verifyPokemonIdent(args[1]);
+    return args.length === 2 && verifyPokemonIdent(args[1]);
   }
 
   '|-resisted|'(args: Args['|-resisted|']) {
-    return args.length === 2 &&  verifyPokemonIdent(args[1]);
+    return args.length === 2 && verifyPokemonIdent(args[1]);
   }
 
   '|-immune|'(args: Args['|-immune|'], kwArgs: KWArgs['|-immune|']) {
