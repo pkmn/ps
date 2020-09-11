@@ -1,5 +1,5 @@
 import {ID, toID, Effect} from '@pkmn/sim';
-import {AvatarIdent, DetailedPokemon, Username} from '@pkmn/protocol';
+import {AvatarIdent, DetailedPokemon, PokemonIdent, Protocol, Username} from '@pkmn/protocol';
 import {SideCondition} from '@pkmn/types';
 
 import {Battle} from './battle';
@@ -114,7 +114,10 @@ export class Side {
   }
 
   addPokemon(details: DetailedPokemon, replaceSlot = -1) {
+    const oldItem = replaceSlot ? this.pokemon[replaceSlot]?.item : undefined;
     const poke = this.provider(this, details);
+    if (oldItem) poke.item = oldItem;
+
     if (!poke.ability && poke.baseAbility) poke.ability = poke.baseAbility;
     poke.reset();
 

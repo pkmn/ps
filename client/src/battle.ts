@@ -1,3 +1,4 @@
+// FIXME: remove null
 import {Dex, ModdedDex, ID, SideID} from '@pkmn/sim';
 import {
   FormatName,
@@ -162,8 +163,7 @@ export class Battle {
     return {name, siden, slot, pokemonid};
   }
 
-  getSwitchedPokemon(pokemonid: string, details: PokemonDetails) {
-    if (pokemonid === '??') throw new Error('pokemonid not passed');
+  getSwitchedPokemon(pokemonid: PokemonIdent | SideID, details: PokemonDetails) {
     const {name, siden, slot, pokemonid: parsedPokemonid} =
       this.parsePokemonId(pokemonid as PokemonIdent);
     pokemonid = parsedPokemonid;
@@ -203,6 +203,11 @@ export class Battle {
     return pokemon;
   }
 
+  getSwitchedOutPokemon(pokemonid: PokemonIdent, details: PokemonDetails) {
+    const poke = this.getSwitchedPokemon(pokemonid, details)!;
+    return poke.side.active[poke.slot] || undefined;
+  }
+
   rememberTeamPreviewPokemon(sideid: SideID, details: PokemonDetails) {
     const {siden} = this.parsePokemonId(sideid);
     return this.sides[siden].addPokemon(Protocol.parseDetails('', '' as PokemonIdent, details));
@@ -232,141 +237,29 @@ export class Battle {
     } as any;
   }
 
-  getPokemon(pokemonid: string | undefined, details?: PokemonDetails) {
-    let isNew = false; // if true, don't match any pokemon that already exists (for Team Preview)
-    let isSwitch = false; // if true, don't match an active, fainted, or just switched-out Pokemon
-    let isInactive = false; // if true, don't match an active Pokemon
-    let createIfNotFound = false; // if true, create the pokemon if a match wasn't found
-
-    if (pokemonid === undefined || pokemonid === '??') return null;
-    if (pokemonid.substr(0, 5) === 'new: ') {
-      pokemonid = pokemonid.substr(5);
-      isNew = true;
-      createIfNotFound = true; // obviously
+  getPokemon(pokemonid?: PokemonIdent | SideID) {
+    if (!pokemonid || pokemonid === '??' || pokemonid === 'null' || pokemonid === 'false') {
+      return null;
     }
-    if (pokemonid.substr(0, 10) === 'switchin: ') {
-      pokemonid = pokemonid.substr(10);
-      isSwitch = true;
-      createIfNotFound = true;
-    }
-    const parseIdResult = this.parsePokemonId(pokemonid as PokemonIdent);
-    let {name, siden, slot} = parseIdResult;
-    pokemonid = parseIdResult.pokemonid;
+    const {siden, slot, pokemonid: parsedPokemonid} = this.parsePokemonId(pokemonid);
+    pokemonid = parsedPokemonid;
 
-    if (!details) {
-      if (siden < 0) return null;
-      if (this.sides[siden].active[slot]) return this.sides[siden].active[slot];
-      if (slot >= 0) isInactive = true;
-    }
+    // if true, don't match an active pokemon
+    const isInactive = (slot < 0);
+    const side = this.sides[siden];
 
-    let searchid = '';
-    if (details) searchid = pokemonid + '|' + details;
+    // search player's pokemon
+    if (!isInactive && side.active[slot]) return side.active[slot];
 
-    // search p1's pokemon
-    if (siden !== this.p2.n && !isNew) {
-      const active = this.p1.active[slot];
-      if (active?.searchid === searchid && !isSwitch) {
-        active.slot = slot;
-        return active;
-      }
-      for (let i = 0; i < this.p1.pokemon.length; i++) {
-        let pokemon = this.p1.pokemon[i];
-        if (pokemon.fainted && (isNew || isSwitch)) continue;
-        if (isSwitch || isInactive) {
-          if (this.p1.active.includes(pokemon)) continue;
-        }
-        if (isSwitch && pokemon === this.p1.lastPokemon && !this.p1.active[slot]) continue;
-        if ((searchid && pokemon.searchid === searchid) || // exact match
-          (!searchid && pokemon.ident === pokemonid)) { // name matched, good enough
-          if (slot >= 0) pokemon.slot = slot;
-          return pokemon;
-        }
-        // switch-in matches Team Preview entry
-        if (!pokemon.searchid && pokemon.checkDetails(details)) {
-          pokemon = this.p1.addPokemon(
-            Protocol.parseDetails(
-              name, pokemonid as PokemonIdent, details, {item: pokemon.item} as any
-            ),
-            i
-          );
-          if (slot >= 0) pokemon.slot = slot;
-          return pokemon;
-        }
+    for (const pokemon of side.pokemon) {
+      if (isInactive && side.active.includes(pokemon)) continue;
+      if (pokemon.ident === pokemonid) { // name matched, good enough
+        if (slot >= 0) pokemon.slot = slot;
+        return pokemon;
       }
     }
 
-    // search p2's pokemon
-    if (siden !== this.p1.n && !isNew) {
-      const active = this.p2.active[slot];
-      if (active?.searchid === searchid && !isSwitch) {
-        if (slot >= 0) active.slot = slot;
-        return active;
-      }
-      for (let i = 0; i < this.p2.pokemon.length; i++) {
-        let pokemon = this.p2.pokemon[i];
-        if (pokemon.fainted && (isNew || isSwitch)) continue;
-        if (isSwitch || isInactive) {
-          if (this.p2.active.includes(pokemon)) continue;
-        }
-        if (isSwitch && pokemon === this.p2.lastPokemon && !this.p2.active[slot]) continue;
-        if ((searchid && pokemon.searchid === searchid) || // exact match
-          (!searchid && pokemon.ident === pokemonid)) { // name matched, good enough
-          if (slot >= 0) pokemon.slot = slot;
-          return pokemon;
-        }
-        // switch-in matches Team Preview entry
-        if (!pokemon.searchid && pokemon.checkDetails(details)) {
-          pokemon = this.p2.addPokemon(
-            Protocol.parseDetails(
-              name, pokemonid as PokemonIdent, details, {item: pokemon.item} as any
-            ),
-            i
-          );
-          if (slot >= 0) pokemon.slot = slot;
-          return pokemon;
-        }
-      }
-    }
-
-    if (!details || !createIfNotFound) return null;
-
-    // pokemon not found, create a new pokemon object for it
-    if (siden < 0) throw new Error('Invalid pokemonid passed to getPokemon');
-
-    let speciesForme = name;
-    let gender: GenderName | '' = '';
-    let level = 100;
-    let shiny = false;
-    if (details) {
-      const splitDetails = details.split(', ');
-      if (splitDetails[splitDetails.length - 1] === 'shiny') {
-        shiny = true;
-        splitDetails.pop();
-      }
-      if (['M', 'F'].includes(splitDetails[splitDetails.length - 1])) {
-        gender = splitDetails[splitDetails.length - 1] as GenderName;
-        splitDetails.pop();
-      }
-      if (splitDetails[1]) {
-        level = parseInt(splitDetails[1].substr(1)) || 100;
-      }
-      if (splitDetails[0]) {
-        speciesForme = splitDetails[0];
-      }
-    }
-    if (slot < 0) slot = 0;
-    const pokemon = this.sides[siden].addPokemon({
-      details,
-      name,
-      speciesForme,
-      level,
-      shiny,
-      gender,
-      ident: (name ? pokemonid : '') as PokemonIdent,
-      searchid: (name ? (`${pokemonid}|${details}`) : '') as PokemonSearchID,
-    }, isNew ? -2 : -1);
-    pokemon.slot = slot;
-    return pokemon;
+    return null;
   }
 
   checkActive(poke: Pokemon) {
@@ -405,6 +298,14 @@ export class Battle {
     }
 
     return percent;
+  }
+
+  getPokemonTypeList(ident: PokemonIdent) {
+    return this.getPokemon(ident)!.getTypeList();
+  }
+
+  getPokemonSpeciesForme(ident: PokemonIdent) {
+    return this.getPokemon(ident)!.speciesForme;
   }
 
   currentWeather() {

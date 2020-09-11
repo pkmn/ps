@@ -218,10 +218,6 @@ class Handler implements Protocol.Handler<boolean> {
     return args.length === 2 && verifyJSON(args[1]);
   }
 
-  '|switchout|'(args: Args['|switchout|'], kwArgs: KWArgs['|switchout|']) {
-    return args.length === 2 && verifyPokemonIdent(args[1]) && verifyKWArgs(kwArgs, KWARGS);
-  }
-
   '|message|'(args: Args['|message|']) {
     return args.length === 2 && !!args[1];
   }
@@ -479,9 +475,10 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|swap|'(args: Args['|swap|'], kwArgs: KWArgs['|swap|']) {
-    if (!verifyKWArgs(kwArgs, KWARGS)) return false;
-    if (args.length === 2) return verifyPokemonIdent(args[1]);
-    return args.length === 3 && verifyPokemonIdent(args[1]) && verifyNum(args[2]);
+    return args.length === 3 &&
+      verifyKWArgs(kwArgs, KWARGS) &&
+      verifyPokemonIdent(args[1]) &&
+      (verifyNum(args[2] as Protocol.Num) || verifyPokemonIdent(args[2] as Protocol.PokemonIdent));
   }
 
   '|cant|'(args: Args['|cant|'], kwArgs: KWArgs['|cant|']) {

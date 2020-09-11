@@ -29,7 +29,7 @@ class Runner {
     const pkmnStream = new PkmnRawStream();
 
     const game = this.runGame(this.format, psStream, pkmnStream);
-    return /*FIXME !*/this.error ? game : game.catch(err => {
+    return !this.error ? game : game.catch(err => {
       console.log(`${psStream.rawInputLog.join('\n')}\n\n${pkmnStream.rawInputLog.join('\n')}`);
       throw err;
     });

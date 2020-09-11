@@ -151,7 +151,7 @@ export class Handler implements Protocol.Handler {
   '|swap|'(args: Args['|swap|']) {
     if (isNaN(Number(args[2]))) {
       const poke = this.battle.getPokemon(args[1])!;
-      poke.side.swapWith(poke, this.battle.getPokemon(args[2])!);
+      poke.side.swapWith(poke, this.battle.getPokemon(args[2] as Protocol.PokemonIdent)!);
     } else {
       const poke = this.battle.getPokemon(args[1])!;
       const targetIndex = parseInt(args[2]!);
@@ -219,7 +219,7 @@ export class Handler implements Protocol.Handler {
 
   '|-sethp|'(args: Args['|-sethp|']) {
     for (let k = 0; k < 2; k++) {
-      const poke = this.battle.getPokemon(args[1 + 2 * k]);
+      const poke = this.battle.getPokemon(args[1 + 2 * k] as Protocol.PokemonIdent);
       if (poke) void poke.healthParse(args[2 + 2 * k])!;
     }
   }
@@ -691,18 +691,18 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
-    const poke = this.battle.getPokemon(args[1])!;
+    const poke = this.battle.getPokemon(args[1]);
     const effect = this.battle.dex.getEffect(args[2]) as Effect;
-    const target = this.battle.getPokemon(args[3]);
-    poke.activateAbility(effect);
+    const target = this.battle.getPokemon(args[3] as Protocol.PokemonIdent);
+    if (poke) poke.activateAbility(effect);
 
     switch (effect.id) {
     case 'poltergeist':
-      poke.item = toID(kwArgs.item);
-      poke.itemEffect = 'disturbed';
+      poke!.item = toID(kwArgs.item);
+      poke!.itemEffect = 'disturbed';
       break;
     case 'grudge':
-      poke.rememberMove(kwArgs.move!, Infinity);
+      poke!.rememberMove(kwArgs.move!, Infinity);
       break;
 
       // move activations
@@ -715,8 +715,8 @@ export class Handler implements Protocol.Handler {
     case 'phantomforce':
     case 'shadowforce':
     case 'feint':
-      poke.removeTurnstatus('protect' as ID);
-      for (const curTarget of poke.side.pokemon) {
+      poke!.removeTurnstatus('protect' as ID);
+      for (const curTarget of poke!.side.pokemon) {
         curTarget.removeTurnstatus('wideguard' as ID);
         curTarget.removeTurnstatus('quickguard' as ID);
         curTarget.removeTurnstatus('craftyshield' as ID);
@@ -726,26 +726,26 @@ export class Handler implements Protocol.Handler {
     case 'spite':
       const move = this.battle.dex.getMove(kwArgs.move).name;
       const pp = Number(kwArgs.number);
-      poke.rememberMove(move, isNaN(pp) ? 4 : pp);
+      poke!.rememberMove(move, isNaN(pp) ? 4 : pp);
       break;
     case 'gravity':
-      poke.removeVolatile('magnetrise' as ID);
-      poke.removeVolatile('telekinesis' as ID);
+      poke!.removeVolatile('magnetrise' as ID);
+      poke!.removeVolatile('telekinesis' as ID);
       break;
     case 'skillswap': case 'wanderingspirit':
       if (this.battle.gen <= 4) break;
       const pokeability = toID(kwArgs.ability) || target!.ability;
-      const targetability = toID(kwArgs.ability2) || poke.ability;
+      const targetability = toID(kwArgs.ability2) || poke!.ability;
       if (pokeability) {
-        poke.ability = pokeability;
+        poke!.ability = pokeability;
         if (!target!.baseAbility) target!.baseAbility = pokeability as ID;
       }
       if (targetability) {
         target!.ability = targetability;
-        if (!poke.baseAbility) poke.baseAbility = targetability as ID;
+        if (!poke!.baseAbility) poke!.baseAbility = targetability as ID;
       }
-      if (poke.side !== target!.side) {
-        poke.activateAbility(pokeability, true);
+      if (poke!.side !== target!.side) {
+        poke!.activateAbility(pokeability, true);
         target!.activateAbility(targetability, true);
       }
       break;
@@ -756,7 +756,7 @@ export class Handler implements Protocol.Handler {
         target.rememberMove(kwArgs.move!, 0);
       } else {
         const foeActive = [];
-        for (const maybeTarget of poke.side.foe.active) {
+        for (const maybeTarget of poke!.side.foe.active) {
           if (maybeTarget && !maybeTarget.fainted) foeActive.push(maybeTarget);
         }
         if (foeActive.length === 1) foeActive[0].rememberMove(kwArgs.move!, 0);
@@ -766,17 +766,17 @@ export class Handler implements Protocol.Handler {
       if (!kwArgs.ability) break; // if Mummy activated but failed, no ability will have been sent
       const ability = this.battle.dex.getAbility(kwArgs.ability);
       target!.activateAbility(ability.name);
-      poke.activateAbility('Mummy');
+      if (poke) poke.activateAbility('Mummy');
       target!.activateAbility('Mummy', true);
       break;
 
       // item activations
     case 'leppaberry':
     case 'mysteryberry':
-      poke.rememberMove(kwArgs.move!, effect.id === 'leppaberry' ? -10 : -5);
+      poke!.rememberMove(kwArgs.move!, effect.id === 'leppaberry' ? -10 : -5);
       break;
     case 'focusband':
-      poke.item = 'focusband' as ID;
+      poke!.item = 'focusband' as ID;
       break;
     }
   }
@@ -800,7 +800,7 @@ export class Handler implements Protocol.Handler {
     const effect = this.battle.dex.getEffect(args[1]) as Effect;
     const poke = this.battle.getPokemon(kwArgs.of);
     const fromeffect = this.battle.dex.getEffect(kwArgs.from) as Effect;
-    if (poke) poke.activateAbility(fromeffect);
+    if (poke && fromeffect) poke.activateAbility(fromeffect);
     let maxTimeLeft = 0;
     if (effect.id.endsWith('terrain')) {
       for (let i = this.battle.field.pseudoWeather.length - 1; i >= 0; i--) {

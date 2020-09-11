@@ -4,7 +4,11 @@ const readline = require('readline');
 
 const {Verifier} = require('./build/verifier');
 
-readline.createInterface({input: process.stdin, output: process.stdout}).on('line', line => {
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+}).on('line', line => {
   const result = Verifier.verifyLine(line);
   if (result) {
     console.error(result);

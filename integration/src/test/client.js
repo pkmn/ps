@@ -17,6 +17,7 @@ const PSC = '../../../vendor/pokemon-showdown-client';
 
 var window = global;
 {
+  window.BattleStatusAnims = {};
   window.BattleTeambuilderTable = require(`${PSC}/data/teambuilder-tables.js`).BattleTeambuilderTable;
   window.BattleAbilities = require(`${PSC}/data/abilities.js`).BattleAbilities;
   window.BattleItems = require(`${PSC}/data/items.js`).BattleItems;
@@ -54,18 +55,18 @@ class Runner {
   }
 
   async run() {
-    const stream = new RawStream();
-    const game = this.runGame(this.format, stream);
-    return /*FIXME !*/this.error ? game : game.catch(err => {
-      console.log(`\n${stream.rawInputLog.join('\n')}\n`);
+    const output = [];
+    const game = this.runGame(output);
+    return !this.error ? game : game.catch(err => {
+      console.log(`\n${output.join('\n')}\n`);
       throw err;
     });
   }
 
-  async runGame(format, stream) {
-    const streams = sim.BattleStreams.getPlayerStreams(stream);
+  async runGame(output) {
+    const streams = sim.BattleStreams.getPlayerStreams(new sim.BattleStreams.BattleStream());
 
-    const spec = {formatid: format, seed: this.prng.seed};
+    const spec = {formatid: this.format, seed: this.prng.seed};
     const p1spec = {name: 'Bot 1', ...this.p1options};
     const p2spec = {name: 'Bot 2', ...this.p2options};
 
@@ -82,19 +83,19 @@ class Runner {
       `>player p2 ${JSON.stringify(p2spec)}`);
 
     const all = [];
-    all.push(this.process(streams.omniscient, 0));
+    all.push(this.process(streams.omniscient, 0, output));
     // FIXME uncomment
     // all.push(this.process(streams.omniscient, 1));
     // all.push(this.process(streams.spectator, 0));
     // all.push(this.process(streams.spectator, 1));
-    // all.push(this.process( streams.p1, 0));
+    // all.push(this.process(streams.p1, 0));
     // all.push(this.process(streams.p2, 1));
     const done = await Promise.all(all);
 
     return Promise.all([done, streams.omniscient.writeEnd(), p1, p2, start]);
   }
 
-  async process(stream, perspective) {
+  async process(stream, perspective, output) {
     const ps = {battle: new Battle(), parser: new BattleTextParser(perspective), log: ''};
     ps.battle.scene.log = {
       add: (args, kwArgs) => {
@@ -108,15 +109,19 @@ class Runner {
     const pkmn = {battle, handler, formatter, log: ''};
 
     for await (const chunk of stream) {
+      if (output) output.push(chunk);
+
       for (const line of chunk.split('\n')) {
+        ps.battle.add(line);
+        ps.battle.fastForwardTo(-1);
         const {args, kwArgs} = Protocol.parseBattleLine(line);
         if (!UNLOGGED.has(args[0])) pkmn.log += pkmn.formatter.formatText(args, kwArgs);
         const key = Protocol.key(args);
         if (key && pkmn.handler[key]) pkmn.handler[key](args, kwArgs);
-        ps.battle.add(line);
       }
-      ps.battle.fastForwardTo(-1);
       assert.deepStrictEqual(pkmn.log, ps.log);
+      pkmn.log = '';
+      ps.log = '';
     }
   }
 
@@ -129,18 +134,6 @@ class Runner {
       Math.floor(this.prng.next() * 0x10000),
       Math.floor(this.prng.next() * 0x10000),
     ];
-  }
-}
-
-class RawStream extends sim.BattleStreams.BattleStream {
-  constructor() {
-    super();
-    this.rawInputLog = [];
-  }
-
-  _write(message) {
-    this.rawInputLog.push(message);
-    super._write(message);
   }
 }
 

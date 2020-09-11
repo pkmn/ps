@@ -1,19 +1,21 @@
 #!/usr/bin/env node
 'use strict';
 
+require('source-map-support').install();
+
 const child_process = require('child_process');
 const path = require('path');
 const minimist = require('minimist');
 
-const argv = minimist(process.argv.slice(2));
+const argv = minimist(process.argv.slice(2), {default: {compile: true}});
 const shell = (cmd, cwd = __dirname) => child_process.execSync(cmd, {stdio: 'ignore', cwd});
 
 const ExhaustiveRunner = (() => {
   if (argv._[0] === 'sim') {
-    if (!argv.nocompile) shell('node build', path.resolve(__dirname, '../vendor/pokemon-showdown'));
+    if (!argv.compile) shell('node build', path.resolve(__dirname, '../vendor/pokemon-showdown'));
     return require('./src/test/sim').ExhaustiveRunner;
   } else if (argv._[0] === 'client') {
-    if (!argv.nocompile) shell('node build indexes', path.resolve(__dirname, '../vendor/pokemon-showdown-client'));
+    if (!argv.compile) shell('node build indexes', path.resolve(__dirname, '../vendor/pokemon-showdown-client'));
     return require('./src/test/client').ExhaustiveRunner;
   } else {
     console.error(`Unrecognized mode: ${argv._[0] || 'no mode specified'}\n`);

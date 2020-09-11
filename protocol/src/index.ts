@@ -995,7 +995,7 @@ export namespace Protocol {
      * Moves already active `POKEMON` to active field `POSITION` where the leftmost position is 0
      * and each position to the right counts up by 1.
      */
-    '|swap|': readonly ['swap', PokemonIdent, Num] | readonly ['swap', PokemonIdent];
+    '|swap|': readonly ['swap', PokemonIdent, Num] | readonly ['swap', PokemonIdent, PokemonIdent];
     /**
      * `|cant|POKEMON|REASON` or `|cant|POKEMON|REASON|MOVE`
      *
@@ -1014,7 +1014,6 @@ export namespace Protocol {
      * The Pokémon `POKEMON` has fainted.
      */
     '|faint|': readonly ['faint', PokemonIdent];
-    '|switchout|': readonly ['switchout', PokemonIdent];
     '|message|': readonly ['message', Message];
   }
 
@@ -1312,12 +1311,12 @@ export namespace Protocol {
     | readonly ['-endability', PokemonIdent]
     | readonly ['-endability', PokemonIdent, AbilityName];
     /**
-     * `|-transform|POKEMON|SPECIES`
+     * `|-transform|POKEMON|TARGET`
      *
-     * The Pokémon `POKEMON` has transformed into `SPECIES` by the move Transform or the ability
+     * The Pokémon `POKEMON` has transformed into `TARGET` by the move Transform or the ability
      * Imposter.
      */
-    '|-transform|': readonly ['-transform', PokemonIdent, SpeciesName];
+    '|-transform|': readonly ['-transform', PokemonIdent, PokemonIdent];
     /**
      * `|-mega|POKEMON|MEGASTONE`
      *
@@ -1526,7 +1525,6 @@ export namespace Protocol {
     '|detailschange|': GeneralKWArgNames | 'msg';
     '|move|': GeneralKWArgNames | 'anim' | 'miss' | 'notarget' | 'prepare' | 'spread' | 'zeffect';
     '|swap|': GeneralKWArgNames;
-    '|switchout|': GeneralKWArgNames;
     '|-activate|': GeneralKWArgNames
     | 'ability' | 'ability2' | 'block' | 'broken' | 'damage'
     | 'item' | 'move' | 'number'| 'consumed' | 'name';
@@ -1772,7 +1770,7 @@ export const Protocol = new class {
     '|error|': 1, '|bigerror|': 1, '|chatmsg|': 1, '|chatmsg-raw|': 1, '|controlshtml|': 1,
     '|fieldhtml|': 1, '|debug|': 1, '|tournament|create|': 1, '|tournament|update|': 1,
     '|tournament|updateEnd|': 1, '|tournament|error|': 1, '|tournament|forceend|': 1,
-    '|tournament|join|': 1, '|tournament|leave|': 1, '|tournament|replace|': 1, '|switchout|': 1,
+    '|tournament|join|': 1, '|tournament|leave|': 1, '|tournament|replace|': 1,
     '|tournament|start|': 1, '|tournament|disqualify|': 1, '|tournament|battlestart|': 1,
     '|tournament|battleend|': 1, '|tournament|end|': 1, '|tournament|scouting|': 1,
     '|tournament|autostart|': 1, '|tournament|autodq|': 1, '|player|': 1, '|teamsize|': 1,
@@ -1801,7 +1799,7 @@ export const Protocol = new class {
     '|-fieldactivate|': 1, '|-fieldstart|': 1, '|-fieldend|': 1, '|-sideend|': 1, '|-start|': 1,
     '|-end|': 1, '|-crit|': 1, '|-supereffective|': 1, '|-resisted|': 1, '|-immune|': 1,
     '|-item|': 1, '|-enditem|': 1, '|-ability|': 1, '|-endability|': 1, '|-transform|': 1,
-    '|-activate|': 1, '|-singleturn|': 1, '|switchout|': 1, '|-miss|': 1, '|-clearallboost|': 1,
+    '|-activate|': 1, '|-singleturn|': 1, '|-miss|': 1, '|-clearallboost|': 1,
     '|-copyboost|': 1, '|-clearboost|': 1, '|-clearpositiveboost|': 1, '|-singlemove|': 1,
   };
 
@@ -2182,7 +2180,7 @@ function upgradeBattleArgs(
     break;
   }
   case 'move': {
-    if (kwArgs.from === 'Magic Bounce') kwArgs.from = 'ability:Magic Bounce';
+    if (kwArgs.from === 'Magic Bounce') kwArgs.from = 'ability: Magic Bounce';
     break;
   }
   case 'cant': {

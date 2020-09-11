@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+'use strict';
+// TODO move to @pkmn/view package
+require('source-map-support').install();
+
+const readline = require('readline');
+
+const client = require('@pkmn/client');
+const view = require('@pkmn/view');
+
+const {Protocol} = require('@pkmn/protocol');
+
+const battle = new client.Battle();
+const handler = new client.Handler(battle);
+const formatter = new view.LogFormatter(process.argv[2] ? 1 : 0, battle);
+
+readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+}).on('line', line => {
+  const {args, kwArgs} = Protocol.parseBattleLine(line);
+  const formatted = formatter.formatText(args, kwArgs);
+  if (formatted) process.stdout.write(formatted);
+  const key = Protocol.key(args);
+  if (key && handler[key]) handler[key](args, kwArgs);
+});

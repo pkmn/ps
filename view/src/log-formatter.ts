@@ -14,7 +14,7 @@ import {
   SpeciesName,
   Username,
 } from '@pkmn/protocol';
-import {ID, StatName, GenerationNum, SideID} from '@pkmn/types';
+import {ID, StatName, GenerationNum, SideID, TypeName} from '@pkmn/types';
 import * as TextJSON from './data/text.json';
 
 const Text = TextJSON as {
@@ -32,12 +32,18 @@ function toID(s: string): ID {
 }
 
 export interface Tracker {
-  // Pokemon at the provided slot for a side *before* any |swap| is applied
+  /** Pokemon at the provided slot for a side *before* any |swap| is applied */
   pokemonAt(side: SideID, slot: number): PokemonIdent | undefined;
-  // Percentage damage of applying the health to the ident (ie. before |-damage| is applied)
+  /** Percentage damage of applying the health to the ident (ie. before |-damage| is applied) */
   damagePercentage(ident: PokemonIdent, health: PokemonHPStatus): string | undefined;
-  // Weather (*before() |-weather| is applied)
+  /** Weather (*before() |-weather| is applied) */
   currentWeather(): ID | undefined;
+  // TODO
+  getSwitchedOutPokemon(pokemon: PokemonIdent, details: PokemonDetails): {ident: PokemonIdent, lastMove: ID | ''} | undefined;
+  // TODO
+  getPokemonTypeList(pokemon: PokemonIdent): TypeName[] | undefined;
+  // TODO
+  getPokemonSpeciesForme(pokemon: PokemonIdent): SpeciesName | undefined;
 }
 
 const NOOP = () => undefined;
@@ -58,7 +64,14 @@ export class LogFormatter {
 
   constructor(
     perspective: 0 | 1 = 0,
-    tracker: Tracker = {pokemonAt: NOOP, damagePercentage: NOOP, currentWeather: NOOP}
+    tracker: Tracker = {
+      pokemonAt: NOOP,
+      damagePercentage: NOOP,
+      currentWeather: NOOP,
+      getSwitchedOutPokemon: NOOP,
+      getPokemonTypeList: NOOP,
+      getPokemonSpeciesForme: NOOP,
+    }
   ) {
     this.perspective = perspective;
 
@@ -203,7 +216,7 @@ export class LogFormatter {
     return entry.statName;
   }
 
-  lineSection(args: ArgType, kwArgs: KWArgType) {
+  lineSection(args: ArgType | 'switchout', kwArgs: KWArgType) {
     const cmd = args[0];
     switch (cmd) {
     case 'done': case 'turn':
@@ -211,8 +224,14 @@ export class LogFormatter {
     case 'move': case 'cant': case 'switch':case 'drag':
     case 'upkeep': case 'start': case '-mega':
       return 'major';
-    case 'faint': case 'switchout':
+    case 'faint':
       return 'preMajor';
+    case 'switchout':
+      // NOTE: switchout is a postMajor here compared to a preMajor upstream as lineSection gets
+      // called by switch (major) first followed by switchout (postMajor), even though the actual
+      // buffer gets the switchout before the switch. Effectively we're *attributing* switchout
+      // with the major and switch with the postmajor which should have the same *result* as
+      // switchout (premajor) and switch (major). Yes, this is ugly.
     case '-zpower':
       return 'postMajor';
     case '-damage': {
@@ -235,7 +254,7 @@ export class LogFormatter {
     return (cmd.charAt(0) === '-' ? 'postMajor' : '');
   }
 
-  sectionBreak(args: ArgType, kwArgs = {} as KWArgType) {
+  sectionBreak(args: ArgType | 'switchout', kwArgs = {} as KWArgType) {
     const prevSection = this.curLineSection;
     const curSection = this.lineSection(args, kwArgs);
     if (!curSection) return false;
@@ -254,7 +273,7 @@ export class LogFormatter {
   formatText(args: ArgType, kwArgs?: KWArgType, noSectionBreak?: boolean) {
     const buf = !noSectionBreak && this.sectionBreak(args, kwArgs) ? '\n' : '';
     const key = Protocol.key(args);
-    return buf + (key && key in this.handler
+    return buf + ((key && key in this.handler)
       ? this.fixLowercase((this.handler as any)[key](args, kwArgs))
       : '');
   }
@@ -345,11 +364,31 @@ class Handler implements Protocol.Handler<string> {
 
   '|switch|'(args: Args['|switch|']) {
     const [, pokemon, details] = args;
+
+    let buf = '';
+    const switchedOut = this.tracker.getSwitchedOutPokemon(pokemon, details);
+    if (switchedOut) {
+      if (switchedOut.lastMove === 'uturn' || switchedOut.lastMove === 'voltswitch') {
+        buf = this.switchout(switchedOut.ident, switchedOut.lastMove);
+      } else if (switchedOut.lastMove !== 'batonpass' && switchedOut.lastMove !== 'zbatonpass') {
+        buf = this.switchout(switchedOut.ident, switchedOut.lastMove);
+      }
+    }
+
     const [side, fullname] = this.parser.pokemonFull(pokemon, details);
     const template = this.parser.template('switchIn', this.parser.own(side));
-    return template
+    return buf + template
       .replace('[TRAINER]', this.parser.trainer(side))
       .replace('[FULLNAME]', fullname);
+  }
+
+  switchout(pokemon: PokemonIdent, from?: ID | '') {
+    const side = pokemon.slice(0, 2);
+    const template = this.parser.template('switchOut', from, this.parser.own(side));
+    return this.parser.sectionBreak('switchout') ? '\n' : '' + template
+      .replace('[TRAINER]', this.parser.trainer(side))
+      .replace('[NICKNAME]', this.parser.pokemonName(pokemon))
+      .replace('[POKEMON]', this.parser.pokemon(pokemon));
   }
 
   '|drag|'(args: Args['|drag|']) {
@@ -377,12 +416,14 @@ class Handler implements Protocol.Handler<string> {
     args: Args['|detailschange|' | '|-formechange|' | '|-transform|'],
     kwArgs: KWArgs['|detailschange|' | '|-formechange|' | '|-transform|']
   ) {
-    const [cmd, pokemon, arg2, arg3] = args;
+    const [cmd, pokemon, arg2] = args;
     let newSpecies = '' as SpeciesName;
     switch (cmd) {
     case 'detailschange': newSpecies = arg2.split(',')[0].trim() as SpeciesName; break;
-    case '-transform': newSpecies = arg3 as any; break; // FIXME ????
     case '-formechange': newSpecies = arg2 as SpeciesName; break;
+    case '-transform':
+      newSpecies = this.tracker.getPokemonSpeciesForme(arg2 as PokemonIdent) || newSpecies;
+      break;
     }
     const newSpeciesId = toID(newSpecies);
     let id = '';
@@ -414,16 +455,6 @@ class Handler implements Protocol.Handler<string> {
     return (line1 + template
       .replace('[POKEMON]', this.parser.pokemon(pokemon))
       .replace('[SPECIES]', newSpecies));
-  }
-
-  '|switchout|'(args: Args['|switchout|'], kwArgs: KWArgs['|switchout|']) {
-    const [, pokemon] = args;
-    const side = pokemon.slice(0, 2);
-    const template = this.parser.template('switchOut', kwArgs.from, this.parser.own(side));
-    return template
-      .replace('[TRAINER]', this.parser.trainer(side))
-      .replace('[NICKNAME]', this.parser.pokemonName(pokemon))
-      .replace('[POKEMON]', this.parser.pokemon(pokemon));
   }
 
   '|faint|'(args: Args['|faint|']) {
@@ -719,8 +750,8 @@ class Handler implements Protocol.Handler<string> {
     return this.singleevent(args, kwArgs);
   }
 
-  '|-singlemove|'(args: Args['|-singlemove|']) {
-    return this.singleevent(args, {});
+  '|-singlemove|'(args: Args['|-singlemove|'], kwArgs: KWArgs['|-singlemove|']) {
+    return this.singleevent(args, kwArgs);
   }
 
   private singleevent(
@@ -731,6 +762,7 @@ class Handler implements Protocol.Handler<string> {
     const line1 = this.parser.maybeAbility(effect, (kwArgs.of || pokemon)) ||
       this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     const id = LogFormatter.effectId(effect);
+    if (id === 'roost' && !this.tracker.getPokemonTypeList(pokemon)?.includes('Flying')) return '';
     if (id === 'instruct') {
       const template = this.parser.template('activate', effect);
       return (line1 + template
@@ -796,12 +828,12 @@ class Handler implements Protocol.Handler<string> {
     return line1 + template;
   }
 
-  '|-fieldstart|'(args: Args['|-fieldstart|']) {
-    return this.fieldbegin(args, {});
+  '|-fieldstart|'(args: Args['|-fieldstart|'], kwArgs: KWArgs['|-fieldstart|']) {
+    return this.fieldbegin(args, kwArgs);
   }
 
-  '|-fieldactivate|'(args: Args['|-fieldactivate|']) {
-    return this.fieldbegin(args, {});
+  '|-fieldactivate|'(args: Args['|-fieldactivate|'], kwArgs: KWArgs['|-fieldactivate|']) {
+    return this.fieldbegin(args, kwArgs);
   }
 
   private fieldbegin(
