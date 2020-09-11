@@ -694,22 +694,16 @@ class Handler implements Protocol.Handler<boolean> {
       verifyKWArgs(kwArgs, [...KWARGS, 'partiallytrapped', 'interrupt']);
   }
 
-  '|-crit|'(args: Args['|-crit|'], kwArgs: KWArgs['|-crit|']) {
-    return args.length === 2 &&
-      verifyPokemonIdent(args[1]) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'spread']);
+  '|-crit|'(args: Args['|-crit|']) {
+    return args.length === 2 &&  verifyPokemonIdent(args[1]);
   }
 
-  '|-supereffective|'(args: Args['|-supereffective|'], kwArgs: KWArgs['|-supereffective|']) {
-    return args.length === 2 &&
-      verifyPokemonIdent(args[1]) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'spread']);
+  '|-supereffective|'(args: Args['|-supereffective|']) {
+    return args.length === 2 &&  verifyPokemonIdent(args[1]);
   }
 
-  '|-resisted|'(args: Args['|-resisted|'], kwArgs: KWArgs['|-resisted|']) {
-    return args.length === 2 &&
-      verifyPokemonIdent(args[1]) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'spread']);
+  '|-resisted|'(args: Args['|-resisted|']) {
+    return args.length === 2 &&  verifyPokemonIdent(args[1]);
   }
 
   '|-immune|'(args: Args['|-immune|'], kwArgs: KWArgs['|-immune|']) {
@@ -854,11 +848,12 @@ class Handler implements Protocol.Handler<boolean> {
       verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']);
   }
 
-  '|-anim|'(args: Args['|-anim|']) {
+  '|-anim|'(args: Args['|-anim|'], kwArgs: KWArgs['|-anim|']) {
     return args.length === 4 &&
       verifyPokemonIdent(args[1]) &&
       verifyName(args[2]) &&
-      verifyPokemonIdent(args[3]);
+      verifyPokemonIdent(args[3]) &&
+      verifyKWArgs(kwArgs, [...KWARGS, 'spread']);
   }
 }
 

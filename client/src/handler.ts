@@ -224,6 +224,7 @@ export class Handler implements Protocol.Handler {
     }
   }
 
+  // FIXME: share code with unboost?
   '|-boost|'(args: Args['|-boost|'], kwArgs: KWArgs['|-boost|']) {
     const poke = this.battle.getPokemon(args[1])!;
     let boost: BoostName | 'spc' = args[2];

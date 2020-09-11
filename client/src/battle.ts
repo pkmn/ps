@@ -253,7 +253,7 @@ export class Battle {
 
     for (const pokemon of side.pokemon) {
       if (isInactive && side.active.includes(pokemon)) continue;
-      if (pokemon.ident === pokemonid) { // name matched, good enough
+      if (pokemon.originalIdent === pokemonid) { // name matched, good enough
         if (slot >= 0) pokemon.slot = slot;
         return pokemon;
       }
@@ -271,7 +271,7 @@ export class Battle {
   }
 
   pokemonAt(side: SideID, slot: number) {
-    return this.getSide(side).active[slot]?.ident || undefined;
+    return this.getSide(side).active[slot]?.originalIdent || undefined;
   }
 
   damagePercentage(ident: PokemonIdent, hpstring: PokemonHPStatus) {

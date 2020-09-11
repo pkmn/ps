@@ -18,11 +18,12 @@ const PSC = '../../../vendor/pokemon-showdown-client';
 var window = global;
 {
   window.BattleStatusAnims = {};
-  window.BattleTeambuilderTable = require(`${PSC}/data/teambuilder-tables.js`).BattleTeambuilderTable;
+  window.BattleTeambuilderTable =
+    require(`${PSC}/data/teambuilder-tables.js`).BattleTeambuilderTable;
   window.BattleAbilities = require(`${PSC}/data/abilities.js`).BattleAbilities;
   window.BattleItems = require(`${PSC}/data/items.js`).BattleItems;
   window.BattleMovedex = require(`${PSC}/data/moves.js`).BattleMovedex;
-  window.BattlePokdex = require(`${PSC}/data/pokedex.js`).BattlePokdex;
+  window.BattlePokedex = require(`${PSC}/data/pokedex.js`).BattlePokedex;
   window.BattleTypeChart = require(`${PSC}/data/typechart.js`).BattleTypeChart;
 
   require(`${PSC}/js/battle-dex-data.js`);

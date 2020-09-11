@@ -1536,7 +1536,6 @@ export namespace Protocol {
     '|-clearallboost|': GeneralKWArgNames | 'zeffect';
     '|-clearpositiveboost|': GeneralKWArgNames | 'zeffect';
     '|-clearnegativeboost|': GeneralKWArgNames | 'zeffect';
-    '|-crit|': 'spread';
     '|-curestatus|': GeneralKWArgNames| 'thaw' | 'msg';
     '|-cureteam|': GeneralKWArgNames;
     '|-damage|': GeneralKWArgNames | 'partiallytrapped';
@@ -1553,7 +1552,6 @@ export namespace Protocol {
     '|-invertboost|': GeneralKWArgNames;
     '|-item|': GeneralKWArgNames | 'identify';
     '|-miss|': GeneralKWArgNames;
-    '|-resisted|': 'spread';
     '|-setboost|': GeneralKWArgNames;
     '|-sethp|': GeneralKWArgNames;
     '|-sideend|': GeneralKWArgNames;
@@ -1562,11 +1560,11 @@ export namespace Protocol {
     '|-start|': GeneralKWArgNames
     | 'already' | 'damage' | 'block' | 'fatigue' | 'upkeep' | 'zeffect';
     '|-status|': GeneralKWArgNames;
-    '|-supereffective|': 'spread';
     '|-swapboost|': GeneralKWArgNames;
     '|-transform|': GeneralKWArgNames | 'msg';
     '|-unboost|': GeneralKWArgNames | 'multiple' | 'zeffect';
     '|-weather|': GeneralKWArgNames | 'upkeep';
+    '|-anim|': 'spread';
   }
 
   export type BattleArgsWithKWArgName = keyof BattleArgsWithKWArgs;
@@ -1797,10 +1795,10 @@ export const Protocol = new class {
     '|-curestatus|': 1, '|-cureteam|': 1, '|-boost|': 1, '|-unboost|': 1, '|-setboost|': 1,
     '|-swapboost|': 1, '|-invertboost|': 1, '|-clearnegativeboost|': 1, '|-weather|': 1,
     '|-fieldactivate|': 1, '|-fieldstart|': 1, '|-fieldend|': 1, '|-sideend|': 1, '|-start|': 1,
-    '|-end|': 1, '|-crit|': 1, '|-supereffective|': 1, '|-resisted|': 1, '|-immune|': 1,
-    '|-item|': 1, '|-enditem|': 1, '|-ability|': 1, '|-endability|': 1, '|-transform|': 1,
-    '|-activate|': 1, '|-singleturn|': 1, '|-miss|': 1, '|-clearallboost|': 1,
-    '|-copyboost|': 1, '|-clearboost|': 1, '|-clearpositiveboost|': 1, '|-singlemove|': 1,
+    '|-end|': 1, '|-immune|': 1, '|-item|': 1, '|-enditem|': 1, '|-ability|': 1,
+    '|-endability|': 1, '|-transform|': 1, '|-activate|': 1, '|-singleturn|': 1, '|-miss|': 1,
+    '|-clearallboost|': 1, '|-anim|': 1, '|-copyboost|': 1, '|-clearboost|': 1,
+    '|-clearpositiveboost|': 1, '|-singlemove|': 1,
   };
 
   *parse(data: string) {
@@ -2160,7 +2158,7 @@ function upgradeBattleArgs(
     }
     if (id === 'fairylock') return {args: ['-fieldactivate', effect], kwArgs: {}};
 
-    if (id === 'symbiosis') {
+    if (id === 'symbiosis' || id === 'poltergeist') {
       kwArgs.item = arg3!;
     } else if (id === 'magnitude') {
       kwArgs.number = arg3!;

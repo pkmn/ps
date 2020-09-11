@@ -352,13 +352,13 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   }
 
   rememberMove(moveName: string, pp = 1, recursionSource?: PokemonIdent) {
-    if (recursionSource === this.ident) return;
+    if (recursionSource === this.originalIdent) return;
     moveName = this.side.battle.dex.getMove(moveName).name;
     if (moveName.charAt(0) === '*') return;
     if (moveName === 'Struggle') return;
     if (this.volatiles.transform) {
       // make sure there is no infinite recursion if both Pokemon are transformed into each other
-      if (!recursionSource) recursionSource = this.ident;
+      if (!recursionSource) recursionSource = this.originalIdent;
       this.volatiles.transform[1].rememberMove(moveName, 0, recursionSource);
       moveName = '*' + moveName;
     }
@@ -469,7 +469,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     } else {
       types = this.getSpecies(serverPokemon).types as TypeName[];
     }
-    if (this.volatiles.roost && types.includes('Flying')) {
+    if (this.turnstatuses.roost && types.includes('Flying')) {
       types = types.filter(typeName => typeName !== 'Flying');
       if (!types.length) types = ['Normal'];
     }

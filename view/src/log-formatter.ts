@@ -49,6 +49,9 @@ export interface Tracker {
 const NOOP = () => undefined;
 
 const TEMPLATES = ['pokemon', 'opposingPokemon', 'team', 'opposingTeam', 'party', 'opposingParty'];
+const THAWING = new Set([
+  'flamewheel', 'flareblitz', 'fusionflare', 'sacredfire', 'scald', 'steameruption'
+] as ID[]);
 
 export class LogFormatter {
   perspective: 0 | 1;
@@ -57,6 +60,7 @@ export class LogFormatter {
   p2: Username;
   gen: GenerationNum;
 
+  activeMoveIsSpread: boolean | undefined;
   curLineSection: 'break' | 'preMajor' | 'major' | 'postMajor';
   lowercaseRegExp: RegExp | null | undefined;
 
@@ -79,6 +83,7 @@ export class LogFormatter {
     this.p2 = 'Player 2' as Username;
     this.gen = 8;
 
+    this.activeMoveIsSpread = undefined;
     this.curLineSection = 'break';
     this.lowercaseRegExp = undefined;
 
@@ -481,10 +486,12 @@ class Handler implements Protocol.Handler<string> {
 
   '|move|'(args: Args['|move|'], kwArgs: KWArgs['|move|']) {
     const [, pokemon, move] = args;
+    this.parser.activeMoveIsSpread = !!kwArgs.spread;
     let line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
-    if (kwArgs.zeffect) {
-      line1 = this.parser.template('zEffect').replace('[POKEMON]', this.parser.pokemon(pokemon));
-    }
+    // FIXME PS is broken
+    // if (kwArgs.zeffect) {
+    //   line1 = this.parser.template('zEffect').replace('[POKEMON]', this.parser.pokemon(pokemon));
+    // }
     const template = this.parser.template('move', kwArgs.from);
     return (line1 + template
       .replace('[POKEMON]', this.parser.pokemon(pokemon))
@@ -630,24 +637,24 @@ class Handler implements Protocol.Handler<string> {
   '|-item|'(args: Args['|-item|'], kwArgs: KWArgs['|-item|']) {
     const [, pokemon, item] = args;
     const id = LogFormatter.effectId(kwArgs.from);
-    let target = '';
+    let target = '' as PokemonIdent;
+    let kwArgsOf = kwArgs.of;
     if (['magician', 'pickpocket'].includes(id)) {
-      // eslint-disable-next-line no-import-assign
-      [target, kwArgs.of as PokemonIdent] = [kwArgs.of!, '' as PokemonIdent];
+      [target, kwArgsOf] = [kwArgs.of!, undefined];
     }
-    const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
+    const line1 = this.parser.maybeAbility(kwArgs.from, kwArgsOf || pokemon);
     if (['thief', 'covet', 'bestow', 'magician', 'pickpocket'].includes(id)) {
       const template = this.parser.template('takeItem', kwArgs.from);
       return (line1 + template
         .replace('[POKEMON]', this.parser.pokemon(pokemon))
         .replace('[ITEM]', this.parser.effect(item))
-        .replace('[SOURCE]', this.parser.pokemon((target || kwArgs.of) as PokemonIdent)));
+        .replace('[SOURCE]', this.parser.pokemon((target || kwArgsOf) as PokemonIdent)));
     }
     if (id === 'frisk') {
-      const hasTarget = kwArgs.of && pokemon && kwArgs.of !== pokemon;
+      const hasTarget = kwArgsOf && pokemon && kwArgsOf !== pokemon;
       const template = this.parser.template(hasTarget ? 'activate' : 'activateNoTarget', 'Frisk');
       return (line1 + template
-        .replace('[POKEMON]', this.parser.pokemon(kwArgs.of!))
+        .replace('[POKEMON]', this.parser.pokemon(kwArgsOf!))
         .replace('[ITEM]', this.parser.effect(item))
         .replace('[TARGET]', this.parser.pokemon(pokemon)));
     }
@@ -731,7 +738,7 @@ class Handler implements Protocol.Handler<string> {
         .replace('[POKEMON]', this.parser.pokemon(pokemon))
         .replace('[ITEM]', this.parser.effect(kwArgs.from)));
     }
-    if (kwArgs.thaw) {
+    if (kwArgs.from?.startsWith('move') && THAWING.has(LogFormatter.effectId(kwArgs.from))) {
       const template = this.parser.template('endFromMove', status);
       return (line1 + template
         .replace('[POKEMON]', this.parser.pokemon(pokemon))
@@ -1017,6 +1024,7 @@ class Handler implements Protocol.Handler<string> {
     let [cmd, pokemon, stat, num] = args as [
       '-boost' | '-unboost', PokemonIdent, StatName | 'spc', Num
     ];
+    if (stat === 'spd' && this.parser.gen === 1) return '';
     if (stat === 'spa' && this.parser.gen === 1) stat = 'spc';
     const amount = parseInt(num);
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
@@ -1109,26 +1117,25 @@ class Handler implements Protocol.Handler<string> {
     return this.parser.template('clearAllBoost', kwArgs.from);
   }
 
-  '|-crit|'(args: Args['|-crit|'], kwArgs: KWArgs['|-crit|']) {
-    return this.effectiveness(args, kwArgs);
+  '|-crit|'(args: Args['|-crit|']) {
+    return this.effectiveness(args);
   }
 
-  '|-supereffective|'(args: Args['|-supereffective|'], kwArgs: KWArgs['|-supereffective|']) {
-    return this.effectiveness(args, kwArgs);
+  '|-supereffective|'(args: Args['|-supereffective|']) {
+    return this.effectiveness(args);
   }
 
-  '|-resisted|'(args: Args['|-resisted|'], kwArgs: KWArgs['|-resisted|']) {
-    return this.effectiveness(args, kwArgs);
+  '|-resisted|'(args: Args['|-resisted|']) {
+    return this.effectiveness(args);
   }
 
   private effectiveness(
-    args: Args['|-crit|' | '|-supereffective|' | '|-resisted|'],
-    kwArgs: KWArgs['|-crit|' | '|-supereffective|' | '|-resisted|']
+    args: Args['|-crit|' | '|-supereffective|' | '|-resisted|']
   ) {
     const [cmd, pokemon] = args;
     let templateId = cmd.slice(1);
     if (templateId === 'supereffective') templateId = 'superEffective';
-    if (kwArgs.spread) templateId += 'Spread';
+    if (this.parser.activeMoveIsSpread) templateId += 'Spread';
     const template = this.parser.template(templateId);
     return template.replace('[POKEMON]', this.parser.pokemon(pokemon));
   }
@@ -1281,7 +1288,8 @@ class Handler implements Protocol.Handler<string> {
       .replace('[TARGET]', this.parser.pokemon(target)));
   }
 
-  '|-anim|'() {
+  '|-anim|'(args: Args['|-anim|'], kwArgs: KWArgs['|-anim|']) {
+    this.parser.activeMoveIsSpread = !!kwArgs.spread;
     return '';
   }
 }
