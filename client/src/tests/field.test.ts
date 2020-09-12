@@ -2,6 +2,7 @@ import {Dex, ID} from '@pkmn/sim';
 
 import {Field, Battle, Pokemon} from '../index';
 
+// NOTE: tested exhaustively in integration/src/test/client.js
 describe('Field', () => {
   it('#pseudoWeather', () => {
     const field = new Field({sides: []} as unknown as Battle);

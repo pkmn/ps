@@ -24,6 +24,10 @@ export interface ShiftChoice {
   choiceType: 'shift';
 }
 
+export interface Data {
+  getSpecies(species: string): Readonly<{baseSpecies?: string}> | undefined;
+}
+
 export class ChoiceBuilder {
   request: Protocol.Request;
   choices: string[] = [];
@@ -96,10 +100,10 @@ export class ChoiceBuilder {
     return this.request.requestType === 'move' ? this.request.active[this.index()] : undefined;
   }
 
-  addChoice(choiceString: string) {
+  addChoice(choiceString: string, data?: Data) {
     let choice: Choice | undefined;
     try {
-      choice = this.parseChoice(choiceString);
+      choice = this.parseChoice(choiceString, data);
     } catch (err) {
       return (err as Error).message;
     }
@@ -151,7 +155,7 @@ export class ChoiceBuilder {
     return undefined;
   }
 
-  parseChoice(choice: string): Choice | undefined {
+  private parseChoice(choice: string, data?: Data): Choice | undefined {
     const request = this.request;
     if (request.requestType === 'wait') throw new Error('It\'s not your turn to choose anything');
 
@@ -258,19 +262,19 @@ export class ChoiceBuilder {
         let matchLevel = 0;
         let match = 0;
         for (let i = 0; i < request.side.pokemon.length; i++) {
-          const serverPokemon = request.side.pokemon[i];
+          const p = request.side.pokemon[i];
           let curMatchLevel = 0;
-          if (choice === serverPokemon.name) {
+          if (choice === p.name) {
             curMatchLevel = 10;
-          } else if (lowerChoice === serverPokemon.name.toLowerCase()) {
+          } else if (lowerChoice === p.name.toLowerCase()) {
             curMatchLevel = 9;
-          } else if (choiceid === toID(serverPokemon.name)) {
+          } else if (choiceid === toID(p.name)) {
             curMatchLevel = 8;
-          } else if (choiceid === toID(serverPokemon.speciesForme)) {
+          } else if (choiceid === toID(p.speciesForme)) {
             curMatchLevel = 7;
-          } // else if (choiceid === toID(Dex.getSpecies(serverPokemon.speciesForme).baseSpecies)) {
-          //   curMatchLevel = 6;
-          // }
+          } else if (data && choiceid === toID(data.getSpecies(p.speciesForme)?.baseSpecies!)) {
+            curMatchLevel = 6;
+          }
           if (curMatchLevel > matchLevel) {
             match = i + 1;
             matchLevel = curMatchLevel;
@@ -293,8 +297,7 @@ export class ChoiceBuilder {
     throw new Error(`Unrecognized choice '${choice}'`);
   }
 
-
-  getChosenMove(choice: MoveChoice, pokemonIndex: number) {
+  private getChosenMove(choice: MoveChoice, pokemonIndex: number) {
     const request = this.request as Protocol.MoveRequest;
     const activePokemon = request.active[pokemonIndex]!;
     const moveIndex = choice.move - 1;
@@ -311,7 +314,7 @@ export class ChoiceBuilder {
     return choices.join(', ').replace(/, team /g, ', ');
   }
 
-  stringChoice(choice?: Choice) {
+  private stringChoice(choice?: Choice) {
     if (!choice) return 'pass';
     switch (choice.choiceType) {
     case 'move':

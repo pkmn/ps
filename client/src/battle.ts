@@ -8,6 +8,7 @@ import {
   PokemonIdent,
   PokemonSearchID,
   Protocol,
+  SpeciesName,
 } from '@pkmn/protocol';
 import {GenerationNum, GameType, HPColor} from '@pkmn/types';
 
@@ -304,7 +305,7 @@ export class Battle {
   }
 
   getPokemonSpeciesForme(ident: PokemonIdent) {
-    return this.getPokemon(ident)!.speciesForme;
+    return this.getPokemon(ident)!.speciesForme as SpeciesName;
   }
 
   currentWeather() {

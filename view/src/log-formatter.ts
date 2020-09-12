@@ -28,6 +28,16 @@ const Text = TextJSON as {
   [s in (StatName | 'spc')]: { statName: string; statShortName: string }
 };
 
+/**
+ * Tracks additional state required to display a battle in depth. If not provided the output will
+ * be less detailed and accurate, though tracking all of this state is significantly more
+ * involved. `@pkmn/client`'s `Battle` implements this, though note, the protocol messages need to
+ * be fed into the `LogFormatter` **before** the `@pkmn/client`'s `Handler`.
+ *
+ * smogon/pokemon-showdown-client's `BattleTextParser` receives the protocol *after* the `Battle`
+ * state has been updated, but PS mutates the protocol to encode to pre-updated state for the
+ * logs.
+ */
 export interface Tracker {
   /** Pokemon at the provided slot for a side *before* any |swap| is applied */
   pokemonAt(side: SideID, slot: number): PokemonIdent | undefined;
@@ -35,15 +45,15 @@ export interface Tracker {
   damagePercentage(ident: PokemonIdent, health: PokemonHPStatus): string | undefined;
   /** Weather (*before() |-weather| is applied) */
   currentWeather(): ID | undefined;
-  // TODO
+  /** The Pokémon corresponding to ident and details which was switched out from |switch| */
   getSwitchedOutPokemon(
-    pokemon: PokemonIdent,
+    ident: PokemonIdent,
     details: PokemonDetails
   ): {ident: PokemonIdent; lastMove: ID | ''} | undefined;
-  // TODO
-  getPokemonTypeList(pokemon: PokemonIdent): TypeName[] | undefined;
-  // TODO
-  getPokemonSpeciesForme(pokemon: PokemonIdent): SpeciesName | undefined;
+  /** The list of types of the Pokémon ident references, *before* |singleturn| is applied */
+  getPokemonTypeList(ident: PokemonIdent): readonly TypeName[] | undefined;
+  /** The species forme of the the Pokémon referenced by ident  */
+  getPokemonSpeciesForme(ident: PokemonIdent): SpeciesName | undefined;
 }
 
 const NOOP = () => undefined;

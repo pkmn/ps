@@ -186,6 +186,7 @@ const REQUEST = {
   'rqid': 3,
 };
 
+// NOTE: tested exhaustively in integration/src/test/sim.js
 describe('Protocol', () => {
   it('#key', () => {
     expect(Protocol.key(['init', 'chat'])).toEqual('|init|');

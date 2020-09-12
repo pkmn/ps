@@ -84,13 +84,14 @@ class Runner {
       `>player p2 ${JSON.stringify(p2spec)}`);
 
     const all = [];
-    all.push(this.process(streams.omniscient, 0, output));
-    // FIXME uncomment
+    // TODO: randomly choose between these streams?
+    // all.push(this.process(streams.omniscient, 0, output));
     // all.push(this.process(streams.omniscient, 1));
-    // all.push(this.process(streams.spectator, 0));
-    // all.push(this.process(streams.spectator, 1));
-    // all.push(this.process(streams.p1, 0));
-    // all.push(this.process(streams.p2, 1));
+    // all.push(this.process(streams.spectator, 0, output));
+    // all.push(this.process(streams.spectator, 1, output));
+    // FIXME - also figure out why they exit early without crashing and with no message
+    all.push(this.process(streams.p1, 0, output));
+    all.push(this.process(streams.p2, 1, output));
     const done = await Promise.all(all);
 
     return Promise.all([done, streams.omniscient.writeEnd(), p1, p2, start]);
@@ -126,7 +127,7 @@ class Runner {
     }
   }
 
-    // Same as PRNG#generatedSeed, only deterministic.
+  // Same as PRNG#generatedSeed, only deterministic.
   // NOTE: advances this.prng's seed by 4.
   newSeed() {
     return [

@@ -17,7 +17,9 @@ $ npm install @pkmn/view
 `@pkmn/client` and extend its functionality in ways which are relevant for building client UIs.
 
 This package is expected to grown in scope, as several primitives have yet to be completed (eg.
-`AnimatedBattle`). Currently, a `LogFormatter` for pretty
+`AnimatedBattle`). Currently, this package offers a [`LogFormatter`](#LogFormatter) for
+pretty-printing the battle protocol and a [`ChoiceBuilder`](#ChoiceBuilder) helper tp make it
+easier for humans to construct responses.
 
 #### `LogFormatter`
 

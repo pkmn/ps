@@ -12,8 +12,8 @@
 
 ## `@pkmn/sets`
 
-- **review and incorporate changes made by
-  [Pokémon Showdown](https://github.com/smogon/pokemon-showdown-client/blob/master/src/panel-teamdropdown.tsx)**
+- consider rewriting based on
+  [Pokémon Showdown](https://github.com/smogon/pokemon-showdown-client/blob/master/src/panel-teamdropdown.tsx)
 - a `canonicalize` method needs to be added to convert a `PokemonSet` into a canonical form. This
   includes (but is not limited to):
   - turning battle only formes into their base forme (with some more sophisticated logic for
@@ -83,6 +83,9 @@ version number in case set import changes.
 
 ## Integration
 
+- **Fix client test stream usage - also make sure `jest` works**
+- **Add a homepage for releases linking to projects**
+- **Update documentation for integration tests**
 - **update `publish` to publish the `node build` version of the UI integration test**
 - **wire up integration test to GitHub CI**
 - figure out how to run `eslint` on JS files without crashing

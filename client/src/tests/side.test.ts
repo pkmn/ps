@@ -2,6 +2,7 @@ import {DetailedPokemon, Protocol} from '@pkmn/protocol';
 import {Effect, ID} from '@pkmn/sim';
 import {Side, Battle} from '../index';
 
+// NOTE: tested exhaustively in integration/src/test/client.js
 describe('Side', () => {
   it('#setName', () => {
     const side = new Side({} as Battle, 0);

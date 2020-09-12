@@ -3,6 +3,7 @@ import {ID} from '@pkmn/sim';
 
 import {Battle} from '../index';
 
+// NOTE: tested exhaustively in integration/src/test/client.js
 describe('Battle', () => {
   it.todo('#setTurn');
   it.todo('#updateToxicTurns');

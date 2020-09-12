@@ -11,6 +11,7 @@ import {Dex, Effect, ID} from '@pkmn/sim';
 import {Pokemon, Side} from '../index';
 import {ServerPokemon} from '../pokemon';
 
+// NOTE: tested exhaustively in integration/src/test/client.js
 describe('Pokemon', () => {
   it('#ident', () => {
     const pokemon = new Pokemon(null! as Side, {ident: 'p1: Gengar'} as DetailedPokemon);
