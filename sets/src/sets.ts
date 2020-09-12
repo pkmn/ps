@@ -73,21 +73,20 @@ export const Sets = new class {
   packSet(s: PokemonSet) {
     let buf = '';
     // name
-    buf += (s.name || s.species);
+    buf += s.name || s.species;
 
     // species
-    const speciesName = s.species || s.name;
-    const id = toID(speciesName);
+    const id = toID(s.species);
     buf += '|' + (toID(s.name || s.species) === id ? '' : id);
 
     // item
     buf += '|' + toID(s.item);
 
     // ability
-    buf += '|' + toID(s.ability);
+    buf += '|' + (toID(s.ability) || '-');
 
     // moves
-    let hasHP = false;
+    let hasHP = '';
     buf += '|';
     if (s.moves) {
       for (let j = 0; j < s.moves.length; j++) {
@@ -95,7 +94,7 @@ export const Sets = new class {
         if (j && !moveid) continue;
         buf += (j ? ',' : '') + moveid;
         if (moveid.substr(0, 11) === 'hiddenpower' && moveid.length > 11) {
-          hasHP = true;
+          hasHP = moveid.slice(11);
         }
       }
     }
@@ -106,10 +105,13 @@ export const Sets = new class {
     // evs
     let evs = '|';
     if (s.evs) {
-      evs = '|' + [
-        (s.evs['hp'] || ''), (s.evs['atk'] || ''), (s.evs['def'] || ''),
-        (s.evs['spa'] || ''), (s.evs['spd'] || ''), (s.evs['spe'] || ''),
-      ].join();
+      evs = '|' +
+        (s.evs['hp'] || '') + ',' +
+        (s.evs['atk'] || '') + ',' +
+        (s.evs['def'] || '') + ',' +
+        (s.evs['spa'] || '') + ',' +
+        (s.evs['spd'] || '') + ',' +
+        (s.evs['spe'] || '');
     }
     if (evs === '|,,,,,') {
       buf += '|';
@@ -118,8 +120,11 @@ export const Sets = new class {
     }
 
     // gender
-    buf += '|';
-    if (s.gender) buf += s.gender;
+    if (s.gender) {
+      buf += '|' + s.gender;
+    } else {
+      buf += '|';
+    }
 
     const getIV = (stat: StatName) =>
       s.ivs[stat] === 31 || s.ivs[stat] === undefined ? '' : s.ivs[stat].toString();
@@ -127,10 +132,13 @@ export const Sets = new class {
     // ivs
     let ivs = '|';
     if (s.ivs) {
-      ivs = '|' + [
-        getIV('hp'), getIV('atk'), getIV('def'),
-        getIV('spa'), getIV('spd'), getIV('spe'),
-      ].join();
+      ivs = '|' +
+        getIV('hp') + ',' +
+        getIV('atk') + ',' +
+        getIV('def') + ',' +
+        getIV('spa') + ',' +
+        getIV('spd') + ',' +
+        getIV('spe');
     }
     if (ivs === '|,,,,,') {
       buf += '|';
@@ -159,7 +167,7 @@ export const Sets = new class {
       buf += '|';
     }
 
-    if (s.pokeball || (s.hpType && !hasHP) || s.gigantamax) {
+    if (s.pokeball || (s.hpType && toID(s.hpType) !== hasHP) || s.gigantamax) {
       buf += ',' + (s.hpType || '');
       buf += ',' + toID(s.pokeball);
       buf += ',' + (s.gigantamax ? 'G' : '');
@@ -345,7 +353,9 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   j = buf.indexOf('|', i);
   if (j < 0) return {i, j};
   let ability = buf.substring(i, j);
-  if (ABILITY.includes(ability)) {
+  if (ability === '-') {
+    ability = '';
+  } else if (ABILITY.includes(ability)) {
     if (data) {
       const species = data.getSpecies(s.species);
       // Workaround for bug introduced by smogon/pokemon-showdown/817236b0
@@ -548,7 +558,7 @@ export function _import(lines: string[], i = 0, data?: Data) {
           }
         }
       }
-      if (line === 'Frustration') {
+      if (line === 'Frustration' && s.happiness === undefined) {
         s.happiness = 0;
       }
       s.moves.push(line);
