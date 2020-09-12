@@ -15,6 +15,7 @@ import {
   Username,
 } from '@pkmn/protocol';
 import {ID, StatName, GenerationNum, SideID, TypeName} from '@pkmn/types';
+import {toID} from './common';
 import * as TextJSON from './data/text.json';
 
 const Text = TextJSON as {
@@ -26,10 +27,6 @@ const Text = TextJSON as {
 } & {
   [s in (StatName | 'spc')]: { statName: string; statShortName: string }
 };
-
-function toID(s: string): ID {
-  return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
-}
 
 export interface Tracker {
   /** Pokemon at the provided slot for a side *before* any |swap| is applied */
@@ -50,7 +47,7 @@ const NOOP = () => undefined;
 
 const TEMPLATES = ['pokemon', 'opposingPokemon', 'team', 'opposingTeam', 'party', 'opposingParty'];
 const THAWING = new Set([
-  'flamewheel', 'flareblitz', 'fusionflare', 'sacredfire', 'scald', 'steameruption'
+  'flamewheel', 'flareblitz', 'fusionflare', 'sacredfire', 'scald', 'steameruption',
 ] as ID[]);
 
 export class LogFormatter {
