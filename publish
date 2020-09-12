@@ -10,7 +10,7 @@ rev=$(git rev-parse --short HEAD | tr -d "\n")
 # Build
 
 node img/import-data
-npm --prefix img run build
+npx subpkg build img
 
 mkdir $TMP/img
 cp img/index.html img/build/production.min.js img/data/index.js $TMP/img

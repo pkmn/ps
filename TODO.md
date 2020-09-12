@@ -42,7 +42,6 @@ version number in case set import changes.
 
 - **redo API to use better identifiers than `gen2g` (`gen: 2` = `release: 'Crystal'` > `'gen2'`)**
 - **finish documentation**
-- **import the latest data**
 - **handle full ordered preference array (not just `gen2g`, full array of preferences)**
 - **allow for specifying whether to fall back to non-canonical or not**
 - offload ugliness to `smogon/sprites` (embed in `vendor/`?) related to gaps or missing data
