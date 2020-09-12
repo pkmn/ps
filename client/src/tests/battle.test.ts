@@ -83,7 +83,7 @@ describe('Battle', () => {
 
     const pokemon = battle.p1.addPokemon({ident: 'p1: Gengar'} as DetailedPokemon);
     battle.p1.active[0] = pokemon;
-    expect(battle.pokemonAt('p1', 0)).toBe('p1a: Gengar');
+    expect(battle.pokemonAt('p1', 0)).toBe('p1: Gengar');
     expect(battle.pokemonAt('p1', 2)).toBeUndefined();
   });
 

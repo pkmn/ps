@@ -190,7 +190,7 @@ describe('Pokemon', () => {
     );
 
     expect(pokemon.getTypes()).toEqual([['Electric', 'Flying'], '']);
-    pokemon.addVolatile('roost' as ID);
+    pokemon.addTurnstatus('roost' as ID);
     expect(pokemon.getTypes()).toEqual([['Electric'], '']);
 
     pokemon.speciesForme = 'Tornadus';
