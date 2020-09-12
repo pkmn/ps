@@ -224,32 +224,18 @@ export class Handler implements Protocol.Handler {
     }
   }
 
-  // FIXME: share code with unboost?
   '|-boost|'(args: Args['|-boost|'], kwArgs: KWArgs['|-boost|']) {
-    const poke = this.battle.getPokemon(args[1])!;
-    let boost: BoostName | 'spc' = args[2];
-    if (this.battle.gen === 1 && boost === 'spd') return;
-    if (this.battle.gen === 1 && boost === 'spa') boost = 'spc';
-    const amount = parseInt(args[3]);
-    if (amount === 0) return;
-
-    if (!poke.boosts[boost]) poke.boosts[boost] = 0;
-    poke.boosts[boost]! += amount;
-
-    if (!kwArgs.silent && kwArgs.from) {
-      const effect = this.battle.dex.getEffect(kwArgs.from);
-      const ofpoke = this.battle.getPokemon(kwArgs.of);
-      if (!(effect.id === 'weakarmor' && boost === 'spe')) {
-        if (ofpoke) {
-          ofpoke.activateAbility(effect);
-        } else if (poke) {
-          poke.activateAbility(effect);
-        }
-      }
-    }
+    return this.boost(args, kwArgs);
   }
 
   '|-unboost|'(args: Args['|-unboost|'], kwArgs: KWArgs['|-unboost|']) {
+    return this.boost(args, kwArgs);
+  }
+
+  private boost(
+    args: Args['|-boost|' | '|-unboost|'],
+    kwArgs: KWArgs['|-boost|' | '|-unboost|']
+  ) {
     const poke = this.battle.getPokemon(args[1])!;
     let boost: BoostName | 'spc' = args[2];
     if (this.battle.gen === 1 && boost === 'spd') return;
@@ -258,7 +244,11 @@ export class Handler implements Protocol.Handler {
     if (amount === 0) return;
 
     if (!poke.boosts[boost]) poke.boosts[boost] = 0;
-    poke.boosts[boost]! -= amount;
+    if (args[0] === '-boost') {
+      poke.boosts[boost]! += amount;
+    } else {
+      poke.boosts[boost]! -= amount;
+    }
 
     if (!kwArgs.silent && kwArgs.from) {
       const effect = this.battle.dex.getEffect(kwArgs.from);

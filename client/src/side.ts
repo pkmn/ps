@@ -108,7 +108,7 @@ export class Side {
     }
   }
 
-  removeSideCondition(condition: ID) { // FIXME should not be ID!
+  removeSideCondition(condition: ID) {
     if (!this.sideConditions[condition]) return;
     delete this.sideConditions[condition];
   }

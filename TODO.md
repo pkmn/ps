@@ -2,8 +2,6 @@
 
 ## `@pkmn/sim`
 
-- **allow `Dex.mod` to be called on a canonical gen (just don't cache - only cache the first
-  call with mod data for a given ID)**
 - Pokémon Showdown's underlying data definitions (eg. `MoveData`) could use a lot of cleanup and
   consolidation (better grouping, naming, etc)
 - In an ideal world, `@pkmn/sim` could be made to depend on `@pkmn/dex`. The main blockers are:
@@ -58,13 +56,13 @@ version number in case set import changes.
 
 ## `@pkmn/client`
 
-- **documentation, bundle support**
+- **documentation**
 - **depend on `@pkmn/dex-types` instead of `@pkmn/sim`!**
-- **cleanup usages of `null`**
+- cleanup usages of `null`
 
 ## `@pkmn/view`
 
-- **documentation, unit tests, bundle support**
+- **documentation, unit tests (turn output log snippets -> text and HTML)**
 - demonstration of how to recreate Pokémon Showdown's `AnimatedBattle` hooks on top of
   `@pkmn/client` (`BattleSceneStub` equivalent, but use `Partial` instead of null object pattern)
 - logic for displaying the Pokémon Showdown protocol *(how should arbitrary HTML be handled? Fully
@@ -72,8 +70,8 @@ version number in case set import changes.
 
 ## `@pkmn/mods`
 
-- fix mod funtionality (in `@pkmn/sim` and `@pkmn/dex`) to be able to apply a mod to an existing
-  gen (just don't cache unless its a new id mod data).
+- **fix mod funtionality (in `@pkmn/sim` and `@pkmn/dex`) to be able to apply a mod to an existing
+  gen (just don't cache unless its a new id mod data).**
 
 ## `@pkmn/randoms`
 

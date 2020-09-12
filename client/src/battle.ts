@@ -1,4 +1,3 @@
-// FIXME: remove null
 import {Dex, ModdedDex, ID, SideID} from '@pkmn/sim';
 import {
   FormatName,
