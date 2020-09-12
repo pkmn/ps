@@ -18,7 +18,7 @@ $ npm install @pkmn/protocol
 
 ## Usage
 
-### Handler
+#### `Handler`
 
 `Protocol.parse` can be used to turn protocol messages into objects which can then be dispatched to
 a `Protocol.Handler`. The `Args` and `KWArgs` can be parsed further using the various helper methods
@@ -45,7 +45,7 @@ class BoostHandler implements Protocol.Handler {
 The [`generate-handler`](generate-handler) script can be used to reduce amount of boilerplate code
 required to exhaustively implement the Pokémon Showdown protocol.
 
-### Verifier
+#### `Verifier`
 
 `@pkmn/protocol` also provides protocol-verification logic, primarily useful for testing.
 `Verifier.verify` can be used to verify a data chunk received from the Pokémon Showdown server
@@ -79,6 +79,13 @@ subdirectory of the main `@pkmn/protocol` package - see the
 
 This package ships with a [`protocol-verifier`](protocol-verifier) script which can be used to
 verify protocol lines read from standard input.
+
+### Browser
+
+The recommended way of using `@pkmn/protocol` in a web browser is to **configure your bundler**
+([Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/),
+[Parcel](https://parceljs.org/), etc) to minimize it and package it with the rest of your
+application.
 
 ## License
 
