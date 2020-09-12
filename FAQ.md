@@ -15,8 +15,8 @@ warn about it) and the repository itself will be [archived](https://github.com/p
 
 The release schedule for each package depends on when Pokémon Showdown updates a particular part of
 its codebase and whether a sufficient quantity and quality of changes have landed to justify the
-overhead of a release. If there are large breaking changes in `smogon/pokemon-showdown`
-there may be some increased latency before a release.
+overhead of a release. If there are large breaking changes in `smogon/pokemon-showdown` or
+`smogon/pokemon-showdown-client` there may be some increased latency before a release.
 
 `pkmn/ps`'s [SLO](https://en.wikipedia.org/wiki/Service-level_objective) is to update at *worst*
 once a month, but will aim to release approximately weekly. Pokémon Showdown often runs on the
@@ -44,10 +44,23 @@ usecases for the packages in this repository.
 Certain packages are still a work in progress and have not been released yet. In other cases, the
 work involved to modularize and release a specific package has been deemed to not be worthwhile.
 
+## Should I be depending on `@pkmn/types` and `@pkmn/dex-types`?
+
+These packages exist primarily for internal purposes - **most consumers should not be depending
+directly on these packages**. [`@pkmn/data`](data), [`@pkmn/dex`](dex), and [`@pkmn/sim`](sim)
+re-export all of these types (though `@pkmn/sim`'s are weaker due to practical considerations) -
+simply importing from these packages is the intended usage.
+
+`typeof Dex` is the recommended way to denote the type of the `Dex` object from `@pkmn/dex` and
+`@pkmn/sim`, as once you have a `Dex` implementation chosen the actual object's type is what is
+relevant. If you have reasons to make your code data-layer agnostic, `@pkmn/dex-types` then becomes
+relevant, though you should probably just use `@pkmn/data` and let it handle abstracing over `Dex`.
+
 ## When should I use a package in this repository as opposed to vendoring `smogon/pokemon-showdown`?
 
 There are several reasons as to why you may wish to use a package in this repository:
 
+- your project wants to depend on logic from `smogon/pokemon-showdown-client`
 - you are writing your project in TypeScript and are unable to get a vendored version of
   `smogon/pokemon-showdown` to typecheck
 - you would rather not deal with having to figure out where a safe place to cut a release at would
@@ -55,9 +68,11 @@ There are several reasons as to why you may wish to use a package in this reposi
 - your project needs to run in the browser or is concerned about code size
 
 You should consider **not** using a package in this repository and instead vendoring
-`smogon/pokemon-showdown` (eg. as a Git submodule) if none of the above applies and you need to be
-on the bleeding edge (though note that several projects in this repository add functionality above
-and beyond what is offered by `smogon/pokemon-showdown`).
+`smogon/pokemon-showdown` (eg. as a
+[Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) if none of the above applies
+and you need to be on the bleeding edge (though note that several projects in this repository add
+functionality above and beyond what is offered by `smogon/pokemon-showdown` or
+`smogon/pokemon-showdown-client`).
 
 ## Would it not make more sense for `smogon/pokemon-showdown` to release its own packages?
 
@@ -69,5 +84,5 @@ its engineering resources in other ways.
 
 ## I still have a question
 
-Please feel free to open an 'Question' issue on GitHub or to reach out on
-[Discord](https://pkmn/dev).
+Please feel free to open a 'Question' issue on GitHub or to reach out on
+[Discord](https://pkmn/dev). :)
