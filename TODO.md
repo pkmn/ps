@@ -46,7 +46,7 @@ version number in case set import changes.
 - **finish documentation**
 - **import the latest data**
 - **handle full ordered preference array (not just `gen2g`, full array of preferences)**
-- **allow for specifying whether to fall back to n*******on-canonical or not**
+- **allow for specifying whether to fall back to non-canonical or not**
 - offload ugliness to `smogon/sprites` (embed in `vendor/`?) related to gaps or missing data
   (should be symlinked), have `smogon/sprites` build a mapping file that can be used to
   avoid redundant lookups

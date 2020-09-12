@@ -36,7 +36,10 @@ export interface Tracker {
   /** Weather (*before() |-weather| is applied) */
   currentWeather(): ID | undefined;
   // TODO
-  getSwitchedOutPokemon(pokemon: PokemonIdent, details: PokemonDetails): {ident: PokemonIdent, lastMove: ID | ''} | undefined;
+  getSwitchedOutPokemon(
+    pokemon: PokemonIdent,
+    details: PokemonDetails
+  ): {ident: PokemonIdent; lastMove: ID | ''} | undefined;
   // TODO
   getPokemonTypeList(pokemon: PokemonIdent): TypeName[] | undefined;
   // TODO
@@ -228,13 +231,12 @@ export class LogFormatter {
       return 'major';
     case 'faint':
       return 'preMajor';
-    case 'switchout':
-      // NOTE: switchout is a postMajor here compared to a preMajor upstream as lineSection gets
-      // called by switch (major) first followed by switchout (postMajor), even though the actual
-      // buffer gets the switchout before the switch. Effectively we're *attributing* switchout
-      // with the major and switch with the postmajor which should have the same *result* as
-      // switchout (premajor) and switch (major). Yes, this is ugly.
-    case '-zpower':
+    // NOTE: switchout is a postMajor here compared to a preMajor upstream as lineSection gets
+    // called by switch (major) first followed by switchout (postMajor), even though the actual
+    // buffer gets the switchout before the switch. Effectively we're *attributing* switchout
+    // with the major and switch with the postmajor which should have the same *result* as
+    // switchout (premajor) and switch (major). Yes, this is ugly.
+    case '-zpower': case 'switchout':
       return 'postMajor';
     case '-damage': {
       const id = LogFormatter.effectId((kwArgs as KWArgs['|-damage|']).from);
@@ -484,7 +486,7 @@ class Handler implements Protocol.Handler<string> {
   '|move|'(args: Args['|move|'], kwArgs: KWArgs['|move|']) {
     const [, pokemon, move] = args;
     this.parser.activeMoveIsSpread = !!kwArgs.spread;
-    let line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
+    const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     // FIXME PS is broken
     // if (kwArgs.zeffect) {
     //   line1 = this.parser.template('zEffect').replace('[POKEMON]', this.parser.pokemon(pokemon));

@@ -31,7 +31,7 @@ export class ChoiceBuilder {
   current: MoveChoice = {
     choiceType: 'move',
     move: 0,
-     // NOTE: should always be 0 - not partial if `targetLoc` is known
+    // NOTE: should always be 0 - not partial if `targetLoc` is known
     targetLoc: 0,
     mega: false,
     ultra: false,
@@ -128,7 +128,7 @@ export class ChoiceBuilder {
     } else if (choice.choiceType === 'switch' || choice.choiceType === 'team') {
       if (this.alreadySwitchingIn.includes(choice.targetPokemon)) {
         if (choice.choiceType === 'switch') {
-          return `You've already chosen to switch that Pokémon in`;
+          return 'You\'ve already chosen to switch that Pokémon in';
         }
         // remove choice instead
         for (let i = 0; i < this.alreadySwitchingIn.length; i++) {
@@ -153,7 +153,7 @@ export class ChoiceBuilder {
 
   parseChoice(choice: string): Choice | undefined {
     const request = this.request;
-    if (request.requestType === 'wait') throw new Error(`It's not your turn to choose anything`);
+    if (request.requestType === 'wait') throw new Error('It\'s not your turn to choose anything');
 
     const index = this.choices.length;
 
@@ -161,11 +161,11 @@ export class ChoiceBuilder {
 
     if (choice.startsWith('move ')) {
       if (request.requestType !== 'move') {
-        throw new Error(`You must switch in a Pokémon, not move.`);
+        throw new Error('You must switch in a Pokémon, not move.');
       }
       const moveRequest = request.active[index]!;
       choice = choice.slice(5);
-      let current: MoveChoice = {
+      const current: MoveChoice = {
         choiceType: 'move',
         move: 0,
         targetLoc: 0,
@@ -180,8 +180,8 @@ export class ChoiceBuilder {
         // confused with 'Conversion' erroneously sent with the target
         // '2' (since Conversion targets 'self', targetLoc can't be 2).
         if (/\s(?:-|\+)?[1-3]$/.test(choice) && toID(choice) !== 'conversion2') {
-          if (current.targetLoc) throw new Error(`Move choice has multiple targets`);
-          current.targetLoc = parseInt(choice.slice(-2), 10);
+          if (current.targetLoc) throw new Error('Move choice has multiple targets');
+          current.targetLoc = parseInt(choice.slice(-2));
           choice = choice.slice(0, -2).trim();
         } else if (choice.endsWith(' mega')) {
           current.mega = true;
@@ -205,7 +205,7 @@ export class ChoiceBuilder {
 
       if (/^[0-9]+$/.test(choice)) {
         // Parse a one-based move index.
-        current.move = parseInt(choice, 10);
+        current.move = parseInt(choice);
       } else {
         // Parse a move ID. Move names are also allowed, but may cause ambiguity.
         let moveid = toID(choice);
@@ -244,20 +244,20 @@ export class ChoiceBuilder {
     if (choice.startsWith('switch ') || choice.startsWith('team ')) {
       choice = choice.slice(choice.startsWith('team ') ? 5 : 7);
       const isTeamPreview = request.requestType === 'team';
-      let current: SwitchChoice = {
+      const current: SwitchChoice = {
         choiceType: isTeamPreview ? 'team' : 'switch',
         targetPokemon: 0,
       };
       if (/^[0-9]+$/.test(choice)) {
         // Parse a one-based move index.
-        current.targetPokemon = parseInt(choice, 10);
+        current.targetPokemon = parseInt(choice);
       } else {
         // Parse a pokemon name
         const lowerChoice = choice.toLowerCase();
         const choiceid = toID(choice);
         let matchLevel = 0;
         let match = 0;
-        for (let i = 0 ; i < request.side.pokemon.length; i++) {
+        for (let i = 0; i < request.side.pokemon.length; i++) {
           const serverPokemon = request.side.pokemon[i];
           let curMatchLevel = 0;
           if (choice === serverPokemon.name) {
@@ -280,11 +280,11 @@ export class ChoiceBuilder {
         current.targetPokemon = match;
       }
       if (!isTeamPreview && current.targetPokemon - 1 < this.requestLength()) {
-        throw new Error(`That Pokémon is already in battle!`);
+        throw new Error('That Pokémon is already in battle!');
       }
       const target = request.side.pokemon[current.targetPokemon - 1];
       if (!target) throw new Error(`Couldn't find Pokémon '${choice}' to switch to!`);
-      if (target.fainted) throw new Error(`${target} is fainted and cannot battle!`);
+      if (target.fainted) throw new Error(`${target.name} is fainted and cannot battle!`);
       return current;
     }
 
@@ -312,11 +312,11 @@ export class ChoiceBuilder {
   }
 
   stringChoice(choice?: Choice) {
-    if (!choice) return `pass`;
+    if (!choice) return 'pass';
     switch (choice.choiceType) {
     case 'move':
       const target =
-        choice.targetLoc ? ` ${choice.targetLoc > 0 ? '+' : ''}${choice.targetLoc}` : ``;
+        choice.targetLoc ? ` ${choice.targetLoc > 0 ? '+' : ''}${choice.targetLoc}` : '';
       const boost =
         `${choice.max ? ' max' : ''}${choice.mega ? ' mega' : ''}${choice.z ? ' zmove' : ''}`;
       return `move ${choice.move}${boost}${target}`;
@@ -324,7 +324,7 @@ export class ChoiceBuilder {
     case 'team':
       return `${choice.choiceType} ${choice.targetPokemon}`;
     case 'shift':
-      return `shift`;
+      return 'shift';
     }
   }
 }

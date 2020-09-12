@@ -10,7 +10,7 @@ import {
   PokemonSearchID,
   Protocol,
 } from '@pkmn/protocol';
-import {GenerationNum, GameType, GenderName, HPColor} from '@pkmn/types';
+import {GenerationNum, GameType, HPColor} from '@pkmn/types';
 
 import {Field} from './field';
 import {Side} from './side';

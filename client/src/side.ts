@@ -1,5 +1,5 @@
 import {ID, toID, Effect} from '@pkmn/sim';
-import {AvatarIdent, DetailedPokemon, PokemonIdent, Protocol, Username} from '@pkmn/protocol';
+import {AvatarIdent, DetailedPokemon, Username} from '@pkmn/protocol';
 import {SideCondition} from '@pkmn/types';
 
 import {Battle} from './battle';
