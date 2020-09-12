@@ -50,8 +50,8 @@ version number in case set import changes.
 
 ## `@pkmn/login`
 
-- **zero dependency API for logging into Pokémon Showdown**
-- authenticated wrappers of `WebSocket`, `fetch`, Node `http`/`https`, `XMLHttpRequest`
+- **finish `index.html` example**
+- **finish XHR example in documentation**
 
 ## `@pkmn/client`
 

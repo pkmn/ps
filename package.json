@@ -50,7 +50,8 @@
     "data",
     "mods",
     "img",
-    "view"
+    "view",
+    "login"
   ],
   "scripts": {
     "lint": "subpkg run lint",
