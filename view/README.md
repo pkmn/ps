@@ -26,21 +26,19 @@ easier for humans to construct responses.
 FIXME NOTE ABOUT ORDERING AND TRACKER
 
 ```ts
-import {Battle, Handler} from '@pkmn/client';
+import {Dex} from '@pkmn/dex';
+import {Battle} from '@pkmn/client';
 import {Protocol} from '@pkmn/protocol';
 import {LogFormatter} from '@pkmn/view';
 
-const battle = new Battle();
-const handler = new Handler(battle);
+const battle = new Battle(Dex);
 const formatter = new LogFormatter(0 /* perspective */, battle);
 
-for (const line of lines) {
-  const {args, kwArgs} = Protocol.parseBattleLine(line);
+for (const [_, {args, kwArgs}] of Protocol.parse(chunk)) {
   // NOTE: must come *before* handler
   const formatted = formatter.formatText(args, kwArgs);
   if (formatted) process.stdout.write(formatted);
-  const key = Protocol.key(args);
-  if (key && handler[key]) handler[key](args, kwArgs);
+  battle.add(args, kwArgs);
 }
 ```
 
@@ -55,7 +53,14 @@ in [smogon/pokemon-showdown-client](https://github.com/smogon/pokemon-showdown-c
 #### `ChoiceBuilder`
 
 ```ts
-# choice
+import {ChoiceBuilder} from '@pkmn/view';
+import {Protocol} from '@pkmn/protocol';
+
+const request = Protocol.parseRequest(str);
+const builder = new ChoiceBuilder(request);
+builder.addChoice('switch Gengar');
+builder.addChoice('move 3');
+const choice = builder.toString();
 ```
 
 ### Browser

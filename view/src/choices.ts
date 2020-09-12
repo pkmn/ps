@@ -3,9 +3,9 @@ import {ID} from '@pkmn/types';
 
 import {toID} from './common';
 
-export type Choice = MoveChoice | SwitchChoice | ShiftChoice;
+type Choice = MoveChoice | SwitchChoice | ShiftChoice;
 
-export interface MoveChoice {
+interface MoveChoice {
   choiceType: 'move';
   move: number; // 1-based
   targetLoc: number;
@@ -15,12 +15,12 @@ export interface MoveChoice {
   z: boolean;
 }
 
-export interface SwitchChoice {
+interface SwitchChoice {
   choiceType: 'switch' | 'team';
   targetPokemon: number; // 1-based
 }
 
-export interface ShiftChoice {
+interface ShiftChoice {
   choiceType: 'shift';
 }
 
@@ -52,7 +52,7 @@ export class ChoiceBuilder {
     this.fillPasses();
   }
 
-  fillPasses() {
+  private fillPasses() {
     const r = this.request;
     switch (r.requestType) {
     case 'move':
