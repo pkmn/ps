@@ -217,17 +217,12 @@ export class ModdedDex {
 
 	mod(mod: string | undefined, modData?: DeepPartial<ModdedDex['data']>): ModdedDex {
 		if (!mod) return dexes['base'];
-		if (!dexes[mod]) {
-			if (!modData) throw new Error(`Must provide mod data with mod '${mod}'`);
-			dexes[mod] = new ModdedDex(mod);
-			if (modData.Types && !modData.TypeChart) modData.TypeChart = modData.Types;
-			if (modData.Species && !modData.Pokedex) modData.Pokedex = modData.Species;
-			(dexData as any)[mod] = modData;
-			dexes[mod].loadData();
-		} else if (modData) {
-			throw new Error(`Mod data provided with unmodded '${mod}'`);
-		}
-		return dexes[mod];
+		const modid = toID(mod);
+		if (modData?.Types && !modData.TypeChart) modData.TypeChart = modData.Types;
+		if (modData?.Species && !modData.Pokedex) modData.Pokedex = modData.Species;
+		const dex = (modid in dexes) && !modData ? dexes[modid] : new ModdedDex(modid);
+		dex.loadData(modData);
+		return dex;
 	}
 
 	forGen(gen: number) {
@@ -1155,7 +1150,8 @@ export class ModdedDex {
 		return Teams.unpackTeam(buf)?.team as PokemonSet[] || null;
 	}
 
-	loadDataFile(mod: string, dataType: DataType | 'Aliases'): AnyObject {
+	loadDataFile(mod: string, dataType: DataType | 'Aliases', modData?: DeepPartial<ModdedDex['data']>): AnyObject {
+		if (modData) return modData[dataType] || {};
 		return (dexData as any)[mod === 'base' ? 'gen8' : mod][dataType] || {};
 	}
 
@@ -1175,11 +1171,11 @@ export class ModdedDex {
 		return this;
 	}
 
-	loadData(): DexTableData {
+	loadData(modData?: DeepPartial<ModdedDex['data']>): DexTableData {
 		if (this.dataCache) return this.dataCache;
 		const dataCache: {[k in keyof DexTableData]?: any} = {};
 
-		const Scripts = this.loadDataFile(this.currentMod, 'Scripts');
+		const Scripts = this.loadDataFile(this.currentMod, 'Scripts', modData);
 		this.parentMod = this.isBase ? '' : (Scripts.inherit || 'base');
 
 		let parentDex;
@@ -1197,7 +1193,7 @@ export class ModdedDex {
 				dataCache[dataType] = Natures;
 				continue;
 			}
-			const BattleData = this.loadDataFile(this.currentMod, dataType);
+			const BattleData = this.loadDataFile(this.currentMod, dataType, modData);
 			if (BattleData !== dataCache[dataType]) dataCache[dataType] = Object.assign(BattleData, dataCache[dataType]);
 			if (dataType === 'Formats' && !parentDex) Object.assign(BattleData, this.formats);
 		}

@@ -64,11 +64,6 @@ version number in case set import changes.
 - logic for displaying the Pokémon Showdown protocol *(how should arbitrary HTML be handled? Fully
   escaped? Or embed an HTML sanitizer?)*
 
-## `@pkmn/mods`
-
-- **fix mod funtionality (in `@pkmn/sim` and `@pkmn/dex`) to be able to apply a mod to an existing
-  gen (just don't cache unless its a new id mod data).**
-
 ## `@pkmn/randoms`
 
 - ~~add logic to `import` to extra all randoms battle *data* into `randoms/data` and logic into

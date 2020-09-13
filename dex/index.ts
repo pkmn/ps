@@ -667,7 +667,6 @@ export class ModdedDex implements T.Dex {
   constructor(modid = CURRENT_GEN_ID as GenID | T.ID, modData?: ModData) {
     const isGen = (GEN_IDS as unknown as Array<GenID | T.ID>).includes(modid);
     if (!isGen && !modData) throw new Error(`Must provide mod data with mod '${modid}'`);
-    if (isGen && modData) throw new Error(`Mod data provided with unmodded '${modid}'`);
     this.modid = modid as T.ID;
     this.gen = parseInt((modData?.Scripts?.inherit ?? modid).slice(3)) as T.GenerationNum || 8;
     this.loadData(modData);
@@ -676,9 +675,8 @@ export class ModdedDex implements T.Dex {
   mod(genid: GenID): ModdedDex;
   mod(modid: T.ID, modData: ModData): ModdedDex;
   mod(modid: GenID | T.ID, modData?: ModData) {
-    if (modid in dexes) return dexes[modid];
-    dexes[modid] = new ModdedDex(modid as T.ID, modData);
-    return dexes[modid];
+    if (modid in dexes) return modData ? new ModdedDex(modid, modData) : dexes[modid];
+    return (dexes[modid] = new ModdedDex(modid as T.ID, modData));
   }
 
   forGen(gen: number) {
