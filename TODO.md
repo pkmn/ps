@@ -59,7 +59,7 @@ version number in case set import changes.
 
 ## `@pkmn/view`
 
-- **documentation, unit tests (turn output log snippets -> text and HTML)**
+- **unit tests**
 - demonstration of how to recreate Pokémon Showdown's `AnimatedBattle` hooks on top of
   `@pkmn/client` (`BattleSceneStub` equivalent, but use `Partial` instead of null object pattern)
 - logic for displaying the Pokémon Showdown protocol *(how should arbitrary HTML be handled? Fully
@@ -82,7 +82,6 @@ version number in case set import changes.
 ## Integration
 
 - **Fix client test stream usage - also make sure `jest` works**
-- **Add a homepage for releases linking to projects**
 - **Update documentation for integration tests**
 - **update `publish` to publish the `node build` version of the UI integration test**
 - **wire up integration test to GitHub CI**

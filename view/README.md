@@ -16,14 +16,17 @@ $ npm install @pkmn/view
 `@pkmn/view` provides a collection of view-related helpers and wrappers which build upon the
 `@pkmn/client` and extend its functionality in ways which are relevant for building client UIs.
 
-This package is expected to grown in scope, as several primitives have yet to be completed (eg.
+This package is expected to grow in scope, as several primitives have yet to be completed (eg.
 `AnimatedBattle`). Currently, this package offers a [`LogFormatter`](#LogFormatter) for
-pretty-printing the battle protocol and a [`ChoiceBuilder`](#ChoiceBuilder) helper tp make it
+pretty-printing the battle protocol and a [`ChoiceBuilder`](#ChoiceBuilder) helper to make it
 easier for humans to construct responses.
 
 #### `LogFormatter`
 
-FIXME NOTE ABOUT ORDERING AND TRACKER
+The `LogFormatter` pretty-prints Pokémon Showdown's battle protocol, either as marked up text with
+`formatText` or as HTML with `formatHTML` (see the [UI integration
+test](../integration/src/ui/index.ts) for an example of the latter). The formatter can format the
+text from the perspective of either side.
 
 ```ts
 import {Dex} from '@pkmn/dex';
@@ -42,8 +45,13 @@ for (const {args, kwArgs} of Protocol.parse(chunk)) {
 }
 ```
 
-Instead of pretty-printing as text, the `LogFormatter` can also `formatHTML`. See the [UI
-integration test](../integration/src/ui/index.ts) as an example.
+If the `LogFormatter` is used by itself the output will be less detailed and accurated, as it
+requires certain state about the battle that is more difficult to track to comphrensively display
+the proper output for every scenario. Instead, the `LogFormatter` can be instantiated with a
+'`Tracker`' which handles tracking the full state, though importantly, `LogFormatter` operates on
+the pre-updated state and thus must be called **before** its `Tracker`.
+[`@pkmn/client`](../client)'s [`Battle`](../client/src/battle.ts) is currently the only
+implementation of a `Tracker`.
 
 The [`format-battle`](format-battle) script productionizes the above example and is comparable to
 the [`parse` test script](https://github.com/smogon/pokemon-showdown-client/blob/master/test/parse)
@@ -51,6 +59,11 @@ in [smogon/pokemon-showdown-client](https://github.com/smogon/pokemon-showdown-c
 **will return subtly different results** because `format-battle` leverages the full `Battle` state (via the second parameter to the `LogFormatter`).
 
 #### `ChoiceBuilder`
+
+`ChoiceBuilder` provides a way to incrementally build up a player's response to a `|request|`
+message. It provides features such as filling in `pass` choices where appropriate, guarding against
+the wrong sorts of responses being issued for the various request types, and convenience helpers to
+allow for flexibly specifying choices in a more human-friendly and intuitive way.
 
 ```ts
 import {ChoiceBuilder} from '@pkmn/view';
