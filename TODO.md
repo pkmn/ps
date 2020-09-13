@@ -83,7 +83,6 @@ version number in case set import changes.
 
 - **Fix client test stream usage - also make sure `jest` works**
 - **Update documentation for integration tests**
-- **update `publish` to publish the `node build` version of the UI integration test**
 - **wire up integration test to GitHub CI**
 - figure out how to run `eslint` on JS files without crashing
 - add deeper equality method for Pokémon Showdown's client state vs. pkmns (requires handling

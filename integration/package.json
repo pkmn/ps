@@ -28,6 +28,7 @@
     "fix": "eslint --fix src --ext ts",
     "compile": "tsc -p . && node ../vendor/pokemon-showdown/build && node ../vendor/pokemon-showdown/build indexes",
     "build": "npm run compile && parcel build index.html",
+    "gh-pages": "npm run compile && parcel build --public-url /ps/integration/ index.html",
     "start": "parcel index.html",
     "test": "jest",
     "pretest": "npm run compile",

@@ -155,7 +155,9 @@ void (async () => {
   for await (const chunk of streams.omniscient) {
     console.log(chunk);
 
-    for (const {args, kwArgs} of Protocol.parse(chunk)) {
+    // TODO: why does Parcel not like Protocol.parse?
+    for (const line of chunk.split('\n')) {
+      const {args, kwArgs} = Protocol.parseBattleLine(line);
       const html = formatter.formatHTML(args, kwArgs);
       const key = Protocol.key(args);
 

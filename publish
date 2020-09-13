@@ -15,6 +15,12 @@ npx subpkg build img
 mkdir $TMP/img
 cp img/index.html img/build/production.min.js img/data/index.js $TMP/img
 
+rm -rf integration/dist
+npm -C integration run gh-pages
+
+mkdir $TMP/integration
+cp integration/dist/index.html integration/dist/ui.*.js $TMP/integration
+
 # Checkout: master -> gh-pages
 
 git checkout gh-pages
@@ -25,9 +31,13 @@ cp $TMP/img/index.html img/
 cp $TMP/img/production.min.js img/build/production.min.js
 cp $TMP/img/index.js img/data/index.js
 
+rm -f integration/index.html integration/ui.*.js
+cp $TMP/integration/* integration/
+
 # Publish
 
 git add -A .
+git add -f integration/index.html integration/ui.*.js
 git commit -m "Publish: '${rev}'"
 git push origin --force gh-pages
 
