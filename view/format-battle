@@ -28,3 +28,4 @@ readline.createInterface({
   if (formatted) process.stdout.write(formatted);
   battle.add(args, kwArgs);
 });
+
