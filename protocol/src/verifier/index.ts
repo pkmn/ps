@@ -865,18 +865,17 @@ export const Verifier = new class {
   }
 
   verify(data: string) {
-    for (const parsed of Protocol.parse(data)) {
-      const [roomid, {args, kwArgs}] = parsed;
-      if (!verifyRoomID(roomid)) return parsed;
-      if (!this.dispatch(args, kwArgs)) return parsed;
+    for (const {roomid, args, kwArgs} of Protocol.parse(data)) {
+      if (!verifyRoomID(roomid)) return data;
+      if (!this.dispatch(args, kwArgs)) return data;
     }
-    return null;
+    return undefined;
   }
 
   verifyLine(line: string) {
     const parsed = Protocol.parseBattleLine(line);
     const {args, kwArgs} = parsed;
-    return !this.dispatch(args, kwArgs) ? null : parsed;
+    return !this.dispatch(args, kwArgs) ? undefined : parsed;
   }
 
   dispatch(args: Protocol.ArgType, kwArgs: Protocol.BattleArgsKWArgType) {

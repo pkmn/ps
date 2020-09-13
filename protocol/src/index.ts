@@ -1809,10 +1809,8 @@ export const Protocol = new class {
         roomid = line.slice(1) as Protocol.RoomID;
         continue;
       } else if (line) {
-        yield [roomid, this.parseBattleLine(line)] as [Protocol.RoomID, {
-          args: Protocol.BattleArgType;
-          kwArgs: Protocol.BattleArgsKWArgType;
-        }];
+        const {args, kwArgs} = this.parseBattleLine(line);
+        yield {roomid, args, kwArgs};
       }
     }
   }

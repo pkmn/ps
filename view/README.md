@@ -34,7 +34,7 @@ import {LogFormatter} from '@pkmn/view';
 const battle = new Battle(Dex);
 const formatter = new LogFormatter(0 /* perspective */, battle);
 
-for (const [_, {args, kwArgs}] of Protocol.parse(chunk)) {
+for (const {args, kwArgs} of Protocol.parse(chunk)) {
   // NOTE: must come *before* handler
   const formatted = formatter.formatText(args, kwArgs);
   if (formatted) process.stdout.write(formatted);

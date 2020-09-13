@@ -153,10 +153,9 @@ const add = <T>(h: Handler<T>, k: ArgName | undefined, a: ArgType, kw: BattleArg
 
 void (async () => {
   for await (const chunk of streams.omniscient) {
-    for (const line of chunk.split('\n')) {
-      console.log(line);
+    console.log(chunk);
 
-      const {args, kwArgs} = Protocol.parseBattleLine(line);
+    for (const {args, kwArgs} of Protocol.parse(chunk)) {
       const html = formatter.formatHTML(args, kwArgs);
       const key = Protocol.key(args);
 
