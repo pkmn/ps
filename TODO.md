@@ -55,8 +55,6 @@ version number in case set import changes.
 
 ## `@pkmn/client`
 
-- **documentation**
-- **depend on `@pkmn/dex-types` instead of `@pkmn/sim`!**
 - cleanup usages of `null`
 
 ## `@pkmn/view`

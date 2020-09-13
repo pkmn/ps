@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@pkmn/protocol": "file:../protocol",
-    "@pkmn/types": "^0.1.2",
-    "@pkmn/sim": "^0.2.1"
+    "@pkmn/dex-types": "^0.2.2"
+  },
+  "devDependencies": {
+    "@pkmn/dex": "^0.2.2"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",

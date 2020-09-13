@@ -30,3 +30,4 @@ likely to catch fire.
     each `--cycles` times.
 - **`--seed`**: PRNG seed to use (eg. `'1234,5678,9012,3456'`).
 - **`--maxFailures`**: exit early if this many failures have occured.
+- **`--compile`**: TODO

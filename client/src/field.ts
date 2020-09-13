@@ -1,4 +1,4 @@
-import {ID, Effect} from '@pkmn/sim';
+import {ID, Effect} from '@pkmn/dex-types';
 
 import {Battle} from './battle';
 import {Pokemon} from './pokemon';
@@ -72,7 +72,7 @@ export class Field {
     if (weather) {
       const isExtremeWeather = ['deltastream', 'desolateland', 'primordialsea'].includes(weather);
       if (poke) {
-        if (ability) poke.activateAbility(ability.name!);
+        if (ability) poke.activateAbility(ability.name);
         this.weatherTimeLeft = (this.battle.dex.gen <= 5 || isExtremeWeather) ? 0 : 8;
         this.weatherMinTimeLeft = (this.battle.dex.gen <= 5 || isExtremeWeather) ? 0 : 5;
       } else if (isExtremeWeather) {

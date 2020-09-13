@@ -1,4 +1,4 @@
-import {Dex, ModdedDex, ID, SideID} from '@pkmn/sim';
+import {Dex, ID, SideID} from '@pkmn/dex-types';
 import {
   FormatName,
   Message,
@@ -13,6 +13,7 @@ import {
 import {GenerationNum, GameType, HPColor} from '@pkmn/types';
 
 import {Field} from './field';
+import {Handler} from './handler';
 import {Side} from './side';
 import {Pokemon} from './pokemon';
 
@@ -69,7 +70,7 @@ export class Battle {
 
   // readonly hints: Set<string>;
 
-  dex: ModdedDex;
+  dex: Dex;
   gen: GenerationNum;
 
   readonly field: Field;
@@ -91,11 +92,15 @@ export class Battle {
 
   lastMove!: ID | 'switch-in' | 'healing-wish';
 
+  private readonly handler: Handler;
+
   constructor(
+    dex: Dex,
+    player: ID | null = null,
     field = (b: Battle) => new Field(b),
     side = (b: Battle, n: 0 | 1 | 2 | 3) => new Side(b, n)
   ) {
-    this.dex = Dex;
+    this.dex = dex;
     this.gen = 8;
 
     this.field = field(this);
@@ -115,7 +120,18 @@ export class Battle {
     this.totalTimeLeft = 0;
     this.graceTimeLeft = 0;
 
+    this.handler = new Handler(this, player);
+
     this.reset();
+  }
+
+  add(line: string): void;
+  add(args: Protocol.ArgType, kwArgs: Protocol.BattleArgsKWArgType): void;
+  add(a: Protocol.ArgType | string, b: Protocol.BattleArgsKWArgType = {}) {
+    const {args, kwArgs} =
+      typeof a === 'string' ? Protocol.parseBattleLine(a) : {args: a, kwArgs: b};
+    const key = Protocol.key(args);
+    if (key && key in this.handler) (this.handler as any)[key](args, kwArgs);
   }
 
   setTurn(turnNum: string | number) {

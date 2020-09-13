@@ -1,5 +1,6 @@
+import {Effect, ID} from '@pkmn/dex';
 import {DetailedPokemon, Protocol} from '@pkmn/protocol';
-import {Effect, ID} from '@pkmn/sim';
+
 import {Side, Battle} from '../index';
 
 // NOTE: tested exhaustively in integration/src/test/client.js
@@ -15,15 +16,15 @@ describe('Side', () => {
   it('#sideConditions', () => {
     const side = new Side({gen: 8} as Battle, 0);
 
-    side.addSideCondition({id: 'spikes', name: 'Spikes'} as Effect);
+    side.addSideCondition({id: 'spikes', name: 'Spikes'} as unknown as Effect);
     expect(side.sideConditions['spikes']).toEqual(['Spikes', 1, 0, 0]);
-    side.addSideCondition({id: 'spikes', name: 'Spikes'} as Effect);
+    side.addSideCondition({id: 'spikes', name: 'Spikes'} as unknown as Effect);
     expect(side.sideConditions['spikes']).toEqual(['Spikes', 2, 0, 0]);
 
-    side.addSideCondition({id: 'tailwind', name: 'Tailwind'} as Effect);
+    side.addSideCondition({id: 'tailwind', name: 'Tailwind'} as unknown as Effect);
     expect(side.sideConditions['tailwind']).toEqual(['Tailwind', 1, 4, 0]);
 
-    side.addSideCondition({id: 'lightscreen', name: 'Light Screen'} as Effect);
+    side.addSideCondition({id: 'lightscreen', name: 'Light Screen'} as unknown as Effect);
     expect(side.sideConditions['lightscreen']).toEqual(['Light Screen', 1, 5, 8]);
 
     side.removeSideCondition('tailwind' as ID);

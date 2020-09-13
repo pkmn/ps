@@ -341,7 +341,7 @@ describe('Dex', () => {
       expect(Dex.forGen(5).getSpecies('Snorlax').tier).toBe('UU');
       expect(
         Dex.forGen(3).getSpecies(
-          Dex.forGen(3).getSpecies('Chansey').prevo!
+          Dex.forGen(3).getSpecies('Chansey').prevo
         ).isNonstandard
       ).toBe('Future');
       expect(Dex.forGen(4).getSpecies('Chansey').prevo).toBe('Happiny');

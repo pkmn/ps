@@ -454,14 +454,14 @@ export interface Dex {
   includeData(): this;
   includeFormats(): this;
 
-  getSpecies(name: string): Species;
-  getEffect(name: string): Effect;
-  getAbility(name: string): Ability;
-  getLearnset(name: string): Promise<Learnset>;
-  getItem(name: string): Item;
-  getMove(name: string): Move;
-  getNature(name: string): Nature;
-  getType(name: string): Type;
+  getSpecies(name?: string): Species;
+  getEffect(name?: string): Effect;
+  getAbility(name?: string): Ability;
+  getLearnset(name?: string): Promise<Learnset>;
+  getItem(name?: string): Item;
+  getMove(name?: string): Move;
+  getNature(name?: string): Nature;
+  getType(name?: string): Type;
 
   hasAbility(species: Species, ability: string): boolean;
   getHiddenPower(ivs: StatsTable): { type: TypeName; power: number };

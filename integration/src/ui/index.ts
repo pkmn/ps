@@ -1,8 +1,8 @@
 // TODO: include @pkmn/randoms and support multiple generations (and sprites)
 import {Dex, TeamValidator, RandomPlayerAI, BattleStreams} from '@pkmn/sim';
-import {Protocol} from '@pkmn/protocol';
+import {Protocol, Handler, ArgName, ArgType, BattleArgsKWArgType} from '@pkmn/protocol';
 import {Teams, Data, PokemonSet} from '@pkmn/sets';
-import {Battle, Side, Pokemon, Handler} from '@pkmn/client';
+import {Battle, Side, Pokemon} from '@pkmn/client';
 import {Sprites, Icons} from '@pkmn/img';
 import {LogFormatter} from '@pkmn/view';
 
@@ -99,7 +99,7 @@ const displayPokemon = ($td: HTMLTableCellElement, pokemon: Pokemon | null) => {
   }
 };
 
-class PreHandler implements Protocol.Handler {
+class PreHandler implements Handler<void> {
   constructor(private readonly battle: Battle) {
     this.battle = battle;
   }
@@ -114,7 +114,7 @@ class PreHandler implements Protocol.Handler {
   }
 }
 
-class PostHandler implements Protocol.Handler {
+class PostHandler implements Handler<void> {
   constructor(private readonly battle: Battle) {
     this.battle = battle;
   }
@@ -141,12 +141,15 @@ class PostHandler implements Protocol.Handler {
   }
 }
 
-const battle = new Battle();
+const battle = new Battle(Dex as any);
 const formatter = new LogFormatter(0, battle);
 
-const preHandler = new PreHandler(battle);
-const battleHandler = new Handler(battle);
-const postHandler = new PostHandler(battle);
+const pre = new PreHandler(battle);
+const post = new PostHandler(battle);
+
+const add = <T>(h: Handler<T>, k: ArgName | undefined, a: ArgType, kw: BattleArgsKWArgType) => {
+  if (k && k in h) (h as any)[k](a, kw);
+};
 
 void (async () => {
   for await (const chunk of streams.omniscient) {
@@ -156,9 +159,10 @@ void (async () => {
       const {args, kwArgs} = Protocol.parseBattleLine(line);
       const html = formatter.formatHTML(args, kwArgs);
       const key = Protocol.key(args);
-      for (const handler of [preHandler, battleHandler, postHandler]) {
-        if (key && key in handler) (handler as any)[key](args, kwArgs);
-      }
+
+      add(pre, key, args, kwArgs);
+      battle.add(args, kwArgs);
+      add(post, key, args, kwArgs);
 
       displayLog(html);
     }

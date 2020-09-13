@@ -1,4 +1,4 @@
-import {Dex, ID} from '@pkmn/sim';
+import {Dex, ID} from '@pkmn/dex';
 
 import {Field, Battle, Pokemon} from '../index';
 
@@ -18,7 +18,7 @@ describe('Field', () => {
   });
 
   it('#changeWeather', () => {
-    const field = new Field({dex: Dex} as Battle);
+    const field = new Field({dex: Dex} as unknown as Battle);
 
     field.changeWeather('');
     expect(field.weather).toBe('');

@@ -686,7 +686,7 @@ export class ModdedDex implements T.Dex {
     return this.mod(`gen${gen}` as GenID);
   }
 
-  getSpecies(name: string | Species): Species {
+  getSpecies(name?: string | Species): Species {
     if (name && typeof name !== 'string') return name;
 
     name = (name || '').trim();
@@ -831,7 +831,7 @@ export class ModdedDex implements T.Dex {
     return false;
   }
 
-  async getLearnset(name: string): Promise<Learnset> {
+  async getLearnset(name?: string): Promise<Learnset> {
     const id = toID(name);
     let learnset = this.cache.Learnsets[id];
     if (learnset) return learnset;
@@ -909,7 +909,7 @@ export class ModdedDex implements T.Dex {
     return effect;
   }
 
-  getAbility(name: string | Ability): Ability {
+  getAbility(name?: string | Ability): Ability {
     if (name && typeof name !== 'string') return name;
 
     name = (name || '').trim();
@@ -936,7 +936,7 @@ export class ModdedDex implements T.Dex {
     return ability;
   }
 
-  getItem(name: string | Item): Item {
+  getItem(name?: string | Item): Item {
     if (name && typeof name !== 'string') return name;
 
     name = (name || '').trim();
@@ -968,7 +968,7 @@ export class ModdedDex implements T.Dex {
     return item;
   }
 
-  getMove(name: string | Move): Move {
+  getMove(name?: string | Move): Move {
     if (name && typeof name !== 'string') return name;
 
     name = (name || '').trim();
@@ -1005,7 +1005,7 @@ export class ModdedDex implements T.Dex {
     return move;
   }
 
-  getNature(name: string | Nature): Nature {
+  getNature(name?: string | Nature): Nature {
     if (name && typeof name !== 'string') return name;
 
     name = (name || '').trim();
@@ -1026,7 +1026,7 @@ export class ModdedDex implements T.Dex {
     return nature as Nature;
   }
 
-  getType(name: string | Type): Type {
+  getType(name?: string | Type): Type {
     if (name && typeof name !== 'string') return name;
 
     name = (name || '').trim();

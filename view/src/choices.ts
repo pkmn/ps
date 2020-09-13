@@ -25,7 +25,7 @@ export interface ShiftChoice {
 }
 
 export interface Data {
-  getSpecies(species: string): Readonly<{baseSpecies?: string}> | undefined;
+  getSpecies(species?: string): Readonly<{baseSpecies?: string}> | undefined;
 }
 
 export class ChoiceBuilder {
@@ -272,7 +272,7 @@ export class ChoiceBuilder {
             curMatchLevel = 8;
           } else if (choiceid === toID(p.speciesForme)) {
             curMatchLevel = 7;
-          } else if (data && choiceid === toID(data.getSpecies(p.speciesForme)?.baseSpecies!)) {
+          } else if (data && choiceid === toID(data.getSpecies(p.speciesForme)?.baseSpecies)) {
             curMatchLevel = 6;
           }
           if (curMatchLevel > matchLevel) {

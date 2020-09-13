@@ -12,23 +12,30 @@ Package encapsulating a refactored version of the generic parts of the official
 $ npm install @pkmn/client
 ```
 
+Note that either [`@pkmn/dex`](../dex) or [`@pkmn/sim`](../sim) must also be installed to provide
+a `Dex` implementation.
+
 ## Usage
 
-TODO
+`@pkmn/client` manintains a battle's state based on information contained in the [Pokémon Showdown
+protocol](https://github.com/smogon/pokemon-showdown/blob/master/sim/SIM-PROTOCOL.md). A
+[`Battle`](src/battle.ts) can be instantiated with a `Dex` implementation and used to track the
+state of a battle by `add`-ing protocol messages off the wire. The `Battle` can then be queried
+to determine information about the sides / field / Pokemon involved and their current status. The
+state information that can be obtained from the protocol goes beyond the information provided in
+the `|request|` messages sent from the server and together both provide a more complete view of the
+true state of the battle.
 
 ```ts
-import {Battle, Handler} from '@pkmn/client';
-import {Protocol} from '@pkmn/protocol';
+import {Battle} from '@pkmn/client';
+import {Dex} from '@pkmn/dex';
 
-const battle = new Battle();
-const handler = new Handler(battle);
+const battle = new Battle(Dex);
 
 for (const line of lines) {
-  const {args, kwArgs} = Protocol.parseBattleLine(line);
-  const key = Protocol.key(args);
-  if (key && handler[key]) handler[key](args, kwArgs);
+  battle.add(line);
 
-  ... // manipulate battle
+... // manipulate battle
 }
 ```
 

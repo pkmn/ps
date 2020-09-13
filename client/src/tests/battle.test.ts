@@ -1,5 +1,5 @@
+import {Dex, ID} from '@pkmn/dex';
 import {DetailedPokemon, PokemonIdent, Username} from '@pkmn/protocol';
-import {ID} from '@pkmn/sim';
 
 import {Battle} from '../index';
 
@@ -9,7 +9,7 @@ describe('Battle', () => {
   it.todo('#updateToxicTurns');
 
   it('#parsePokemonId', () => {
-    const battle = new Battle();
+    const battle = new Battle(Dex);
 
     let p = battle.parsePokemonId('p1');
     expect(p.name).toEqual('');
@@ -59,7 +59,7 @@ describe('Battle', () => {
   it.todo('#findCorrespondingPokemon');
 
   it('#getSide', () => {
-    const battle = new Battle();
+    const battle = new Battle(Dex);
     expect(battle.getSide('p1')).toBe(battle.p1);
     expect(battle.getSide('p2')).toBe(battle.p2);
 
@@ -79,7 +79,7 @@ describe('Battle', () => {
   it.todo('#checkActive');
 
   it('#pokemonAt', () => {
-    const battle = new Battle();
+    const battle = new Battle(Dex);
     expect(battle.pokemonAt('p1', 0)).toBeUndefined();
 
     const pokemon = battle.p1.addPokemon({ident: 'p1: Gengar'} as DetailedPokemon);
@@ -91,13 +91,13 @@ describe('Battle', () => {
   it.todo('#damagePercentage');
 
   it('#currentWeather', () => {
-    const battle = new Battle();
+    const battle = new Battle(Dex);
     battle.field.weather = 'raindance' as ID;
     expect(battle.currentWeather()).toBe('raindance');
   });
 
   it('#reset', () => {
-    const battle = new Battle();
+    const battle = new Battle(Dex);
     const field = battle.field;
     field.weather = 'raindance' as ID;
     battle.turn = 10;
@@ -111,7 +111,7 @@ describe('Battle', () => {
   });
 
   it('#destroy', () => {
-    const battle = new Battle();
+    const battle = new Battle(Dex);
 
     const field = battle.field;
     const p1 = battle.p1;

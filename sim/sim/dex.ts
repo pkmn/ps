@@ -482,7 +482,7 @@ export class ModdedDex {
 		return learnsetData;
 	}
 
-	async getLearnset(name: string) {
+	async getLearnset(name?: string) {
 		return Promise.resolve(this.getLearnsetData(toID(name)) as Data.Learnset);
 	}
 
@@ -717,9 +717,10 @@ export class ModdedDex {
 		return item;
 	}
 
-	getAbility(name: string | Ability = ''): Ability {
+	getAbility(name?: string | Ability): Ability {
 		if (name && typeof name !== 'string') return name;
 
+		name = (name || '').trim();
 		const id = toID(name);
 		let ability = this.abilityCache.get(id);
 		if (ability) return ability;
@@ -759,7 +760,7 @@ export class ModdedDex {
 		return false;
 	}
 
-	getType(name: string | TypeInfo): TypeInfo {
+	getType(name?: string | TypeInfo): TypeInfo {
 		if (name && typeof name !== 'string') return name;
 
 		const id = toID(name);
@@ -777,7 +778,7 @@ export class ModdedDex {
 		return type;
 	}
 
-	getNature(name: string | Nature): Nature {
+	getNature(name?: string | Nature): Nature {
 		if (name && typeof name !== 'string') return name;
 
 		name = (name || '').trim();

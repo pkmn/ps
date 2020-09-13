@@ -1,8 +1,8 @@
-import {ID, toID, Effect} from '@pkmn/sim';
+import {ID, Effect, SideCondition} from '@pkmn/dex-types';
 import {AvatarIdent, DetailedPokemon, Username} from '@pkmn/protocol';
-import {SideCondition} from '@pkmn/types';
 
 import {Battle} from './battle';
+import {toID} from './common';
 import {Pokemon} from './pokemon';
 
 export class Side {

@@ -85,13 +85,13 @@ class Runner {
 
     const all = [];
     // TODO: randomly choose between these streams?
-    // all.push(this.process(streams.omniscient, 0, output));
+    all.push(this.process(streams.omniscient, 0, output));
     // all.push(this.process(streams.omniscient, 1));
     // all.push(this.process(streams.spectator, 0, output));
     // all.push(this.process(streams.spectator, 1, output));
     // FIXME - also figure out why they exit early without crashing and with no message
-    all.push(this.process(streams.p1, 0, output));
-    all.push(this.process(streams.p2, 1, output));
+    // all.push(this.process(streams.p1, 0, output));
+    // all.push(this.process(streams.p2, 1, output));
     const done = await Promise.all(all);
 
     return Promise.all([done, streams.omniscient.writeEnd(), p1, p2, start]);
@@ -105,10 +105,9 @@ class Runner {
       }
     };
 
-    const battle = new client.Battle();
-    const handler = new client.Handler(battle);
+    const battle = new client.Battle(sim.Dex);
     const formatter = new view.LogFormatter(perspective, battle);
-    const pkmn = {battle, handler, formatter, log: ''};
+    const pkmn = {battle, formatter, log: ''};
 
     for await (const chunk of stream) {
       if (output) output.push(chunk);
@@ -118,8 +117,7 @@ class Runner {
         ps.battle.fastForwardTo(-1);
         const {args, kwArgs} = Protocol.parseBattleLine(line);
         if (!UNLOGGED.has(args[0])) pkmn.log += pkmn.formatter.formatText(args, kwArgs);
-        const key = Protocol.key(args);
-        if (key && pkmn.handler[key]) pkmn.handler[key](args, kwArgs);
+        battle.add(args, kwArgs);
       }
       assert.deepStrictEqual(pkmn.log, ps.log);
       pkmn.log = '';

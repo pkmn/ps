@@ -1,3 +1,4 @@
+import {Dex, Effect, ID} from '@pkmn/dex';
 import {
   DetailedPokemon,
   PokemonDetails,
@@ -6,7 +7,6 @@ import {
   PokemonSearchID,
   Protocol,
 } from '@pkmn/protocol';
-import {Dex, Effect, ID} from '@pkmn/sim';
 
 import {Pokemon, Side} from '../index';
 import {ServerPokemon} from '../pokemon';
@@ -161,7 +161,7 @@ describe('Pokemon', () => {
   it.todo('#cantUseMove');
 
   it('#abilities', () => {
-    const pokemon = new Pokemon({battle: {dex: Dex}} as Side, {} as DetailedPokemon);
+    const pokemon = new Pokemon({battle: {dex: Dex}} as unknown as Side, {} as DetailedPokemon);
     pokemon.activateAbility({effectType: 'Move', name: 'Tackle'} as Effect);
     expect(pokemon.ability).not.toBe('tackle');
     pokemon.activateAbility({effectType: 'Ability', name: 'Pressure'} as Effect);
@@ -174,7 +174,7 @@ describe('Pokemon', () => {
 
   it('#getWeightKg', () => {
     const pokemon = new Pokemon(
-      {battle: {dex: Dex}} as Side,
+      {battle: {dex: Dex}} as unknown as Side,
       {speciesForme: 'Snorlax'} as DetailedPokemon
     );
     expect(pokemon.getWeightKg()).toBe(460);
@@ -186,7 +186,7 @@ describe('Pokemon', () => {
 
   it('#types', () => {
     const pokemon = new Pokemon(
-      {battle: {dex: Dex}} as Side,
+      {battle: {dex: Dex}} as unknown as Side,
       {speciesForme: 'Zapdos'} as DetailedPokemon
     );
 
@@ -203,7 +203,7 @@ describe('Pokemon', () => {
     expect(pokemon.getTypes()).toEqual([['Dragon', 'Fire'], 'Grass']);
 
     const copy = new Pokemon(
-      {battle: {dex: Dex}} as Side,
+      {battle: {dex: Dex}} as unknown as Side,
       {speciesForme: 'Gengar'} as DetailedPokemon
     );
 
@@ -217,7 +217,7 @@ describe('Pokemon', () => {
 
   it('#species', () => {
     const pokemon = new Pokemon(
-      {battle: {dex: Dex}} as Side,
+      {battle: {dex: Dex}} as unknown as Side,
       {speciesForme: 'Greninja'} as DetailedPokemon
     );
 

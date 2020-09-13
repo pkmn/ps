@@ -1,8 +1,17 @@
-import {ID, toID, Move, Effect} from '@pkmn/sim';
-import {StatusName, GenderName, HPColor, BoostsTable, TypeName} from '@pkmn/types';
+import {
+  StatusName,
+  GenderName,
+  HPColor,
+  BoostsTable,
+  TypeName,
+  ID,
+  Move,
+  Effect,
+} from '@pkmn/dex-types';
 import {
   DetailedPokemon,
   EffectName,
+  MoveName,
   PokemonDetails,
   PokemonHealth,
   PokemonHPStatus,
@@ -12,6 +21,7 @@ import {
   Request,
 } from '@pkmn/protocol';
 
+import {toID} from './common';
 import {Side} from './side';
 
 // export interface MoveSlot {
@@ -390,7 +400,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
         const item = dex.getItem(isZ);
         if (item.zMoveFrom) moveName = item.zMoveFrom;
       } else if (move.name.slice(0, 2) === 'Z-') {
-        moveName = moveName.slice(2);
+        moveName = moveName.slice(2) as MoveName;
         move = dex.getMove(moveName);
         // TODO: use a cached lookup table instead of looping...
         for (const item in dex.data.Items) {
@@ -467,7 +477,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     if (this.volatiles.typechange) {
       types = this.volatiles.typechange[1].split('/');
     } else {
-      types = this.getSpecies(serverPokemon).types as TypeName[];
+      types = this.getSpecies(serverPokemon).types;
     }
     if (this.turnstatuses.roost && types.includes('Flying')) {
       types = types.filter(typeName => typeName !== 'Flying');

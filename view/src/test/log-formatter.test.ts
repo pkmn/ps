@@ -16,32 +16,35 @@ describe('LogFormatter', () => {
     };
 
     expect(extractMessage(
-      `|-activate|p2a: Cool.|move: Skill Swap|Speed Boost|Cute Charm|[of] p1a: Speedy`)
-    ).toEqual(
-      `[The opposing Cool.'s Speed Boost]` +
-      `[Speedy's Cute Charm]` +
-      `  The opposing Cool. swapped Abilities with its target!`);
+      '|-activate|p2a: Cool.|move: Skill Swap|Speed Boost|Cute Charm|[of] p1a: Speedy'
+    )).toEqual(
+      '[The opposing Cool.\'s Speed Boost]' +
+      '[Speedy\'s Cute Charm]' +
+      '  The opposing Cool. swapped Abilities with its target!'
+    );
     expect(extractMessage(
-      `|-activate|p2a: Cool.|move: Skill Swap|p1a: Speedy|`+
-      `[ability]Speed Boost|[ability2]Cute Charm`)
-    ).toEqual(
-      `[The opposing Cool.'s Speed Boost]` +
-      `[Speedy's Cute Charm]` +
-      `  The opposing Cool. swapped Abilities with its target!`);
+      '|-activate|p2a: Cool.|move: Skill Swap|p1a: Speedy|' +
+      '[ability]Speed Boost|[ability2]Cute Charm'
+    )).toEqual(
+      '[The opposing Cool.\'s Speed Boost]' +
+      '[Speedy\'s Cute Charm]' +
+      '  The opposing Cool. swapped Abilities with its target!'
+    );
 
     expect(
-      `|move|p2a: Palkia|Swagger|p1a: Shroomish` +
-      `|-boost|p1a: Shroomish|atk|2` +
-      `|-start|p1a: Shroomish|confusion` +
-      `|-activate|p1a: Shroomish|confusion` +
-      `|move|p1a: Shroomish|Power-Up Punch|p2a: Palkia`
+      '|move|p2a: Palkia|Swagger|p1a: Shroomish' +
+      '|-boost|p1a: Shroomish|atk|2' +
+      '|-start|p1a: Shroomish|confusion' +
+      '|-activate|p1a: Shroomish|confusion' +
+      '|move|p1a: Shroomish|Power-Up Punch|p2a: Palkia'
     ).toEqual(
-      `The opposing Palkia used **Swagger**!` +
-      `  Shroomish's Attack rose sharply!` +
-      `  Shroomish became confused!` +
-      `` +
-      `  Shroomish is confused!` +
-      `Shroomish used **Power-Up Punch**!`);
+      'The opposing Palkia used **Swagger**!' +
+      '  Shroomish\'s Attack rose sharply!' +
+      '  Shroomish became confused!' +
+      '' +
+      '  Shroomish is confused!' +
+      'Shroomish used **Power-Up Punch**!'
+    );
   });
 
   it('formatHTML', () => {
@@ -53,4 +56,4 @@ describe('LogFormatter', () => {
   it.todo('pokemon');
   it.todo('pokemonFull');
   it.todo('escapeHTML');
-})
+});

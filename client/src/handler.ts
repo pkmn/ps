@@ -1,6 +1,8 @@
 import {Protocol, Args, KWArgs, PokemonSearchID} from '@pkmn/protocol';
-import {ID, toID, BoostName, Effect} from '@pkmn/sim';
+import {ID, BoostName, GenID} from '@pkmn/dex-types';
+
 import {Battle} from './battle';
+import {toID} from './common';
 
 const BOOSTS: BoostName[] = ['atk', 'def', 'spa', 'spd', 'spe', 'accuracy', 'evasion'];
 
@@ -8,7 +10,7 @@ export class Handler implements Protocol.Handler {
   readonly battle: Battle;
   readonly player: ID | null;
 
-  constructor(battle: Battle, player = null) {
+  constructor(battle: Battle, player: ID | null = null) {
     this.battle = battle;
     this.player = player;
   }
@@ -176,7 +178,7 @@ export class Handler implements Protocol.Handler {
 
   '|gen|'(args: Args['|gen|']) {
     this.battle.gen = args[1];
-    this.battle.dex = this.battle.dex.mod(`gen${this.battle.gen}`);
+    this.battle.dex = this.battle.dex.mod(`gen${this.battle.gen}` as GenID);
   }
 
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
@@ -185,7 +187,7 @@ export class Handler implements Protocol.Handler {
     if (damage === null) return;
 
     if (kwArgs.from) {
-      const effect = this.battle.dex.getEffect(kwArgs.from) as Effect;
+      const effect = this.battle.dex.getEffect(kwArgs.from);
       const ofpoke = this.battle.getPokemon(kwArgs.of);
       if (ofpoke) ofpoke.activateAbility(effect);
       if (effect.effectType === 'Item') {
@@ -203,7 +205,7 @@ export class Handler implements Protocol.Handler {
     if (damage === null) return;
 
     if (kwArgs.from) {
-      const effect = this.battle.dex.getEffect(kwArgs.from) as Effect;
+      const effect = this.battle.dex.getEffect(kwArgs.from);
       poke.activateAbility(effect);
       if (effect.effectType === 'Item') poke.item = effect.id;
       if (effect.id !== 'lunardance' || effect.id !== 'healingwish') return;
@@ -336,19 +338,19 @@ export class Handler implements Protocol.Handler {
 
   '|-immune|'(args: Args['|-immune|'], kwArgs: KWArgs['|-immune|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const fromeffect = this.battle.dex.getEffect(kwArgs.from) as Effect;
+    const fromeffect = this.battle.dex.getEffect(kwArgs.from);
     (this.battle.getPokemon(kwArgs.of) || poke).activateAbility(fromeffect);
   }
 
   '|-fail|'(args: Args['|-fail|'], kwArgs: KWArgs['|-fail|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const fromeffect = this.battle.dex.getEffect(kwArgs.from) as Effect;
+    const fromeffect = this.battle.dex.getEffect(kwArgs.from);
     (this.battle.getPokemon(kwArgs.of) || poke).activateAbility(fromeffect);
   }
 
   '|-block|'(args: Args['|-block|'], kwArgs: KWArgs['|-block|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const effect = this.battle.dex.getEffect(args[2]) as Effect;
+    const effect = this.battle.dex.getEffect(args[2]);
     (this.battle.getPokemon(kwArgs.of) || poke).activateAbility(effect);
     switch (effect.id) {
     case 'quickguard': return poke.addTurnstatus('quickguard' as ID);
@@ -366,7 +368,7 @@ export class Handler implements Protocol.Handler {
 
   '|-status|'(args: Args['|-status|'], kwArgs: KWArgs['|-status|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const effect = this.battle.dex.getEffect(kwArgs.from) as Effect;
+    const effect = this.battle.dex.getEffect(kwArgs.from);
     const ofpoke = this.battle.getPokemon(kwArgs.of) || poke;
 
     poke.status = args[2];
@@ -406,7 +408,7 @@ export class Handler implements Protocol.Handler {
   '|-item|'(args: Args['|-item|'], kwArgs: KWArgs['|-item|']): void {
     const poke = this.battle.getPokemon(args[1])!;
     const item = this.battle.dex.getItem(args[2]);
-    const effect = this.battle.dex.getEffect(kwArgs.from) as Effect;
+    const effect = this.battle.dex.getEffect(kwArgs.from);
     const ofpoke = this.battle.getPokemon(kwArgs.of);
 
     poke.item = item.id;
@@ -429,7 +431,7 @@ export class Handler implements Protocol.Handler {
         return;
       case 'magician':
       case 'pickpocket':
-        poke.activateAbility(effect.name!);
+        poke.activateAbility(effect.name);
         // falls through
       case 'thief':
       case 'covet':
@@ -452,7 +454,7 @@ export class Handler implements Protocol.Handler {
   '|-enditem|'(args: Args['|-enditem|'], kwArgs: KWArgs['|-enditem|']): void {
     const poke = this.battle.getPokemon(args[1])!;
     const item = this.battle.dex.getItem(args[2]);
-    const effect = this.battle.dex.getEffect(kwArgs.from) as Effect;
+    const effect = this.battle.dex.getEffect(kwArgs.from);
 
     poke.item = '';
     poke.itemEffect = '';
@@ -492,7 +494,7 @@ export class Handler implements Protocol.Handler {
   '|-ability|'(args: Args['|-ability|'], kwArgs: KWArgs['|-ability|']) {
     const poke = this.battle.getPokemon(args[1])!;
     const ability = this.battle.dex.getAbility(args[2]);
-    const effect = this.battle.dex.getEffect(kwArgs.from) as Effect;
+    const effect = this.battle.dex.getEffect(kwArgs.from);
     const ofpoke = this.battle.getPokemon(kwArgs.of);
     poke.rememberAbility(ability.name, !!(effect.id && !kwArgs.fail));
 
@@ -507,7 +509,7 @@ export class Handler implements Protocol.Handler {
         break;
       case 'powerofalchemy':
       case 'receiver':
-        poke.activateAbility(effect.name!);
+        poke.activateAbility(effect.name);
         poke.activateAbility(ability.name, true);
         ofpoke!.rememberAbility(ability.name);
         break;
@@ -562,7 +564,7 @@ export class Handler implements Protocol.Handler {
   '|-transform|'(args: Args['|-transform|'], kwArgs: KWArgs['|-transform|']) {
     const poke = this.battle.getPokemon(args[1])!;
     const tpoke = this.battle.getPokemon(args[2])!;
-    const effect = this.battle.dex.getEffect(kwArgs.from) as Effect;
+    const effect = this.battle.dex.getEffect(kwArgs.from);
     if (poke === tpoke) throw new Error('Transforming into self');
 
     if (!kwArgs.silent) poke.activateAbility(effect);
@@ -600,9 +602,9 @@ export class Handler implements Protocol.Handler {
 
   '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const effect = this.battle.dex.getEffect(args[2]) as Effect;
+    const effect = this.battle.dex.getEffect(args[2]);
     const ofpoke = this.battle.getPokemon(kwArgs.of);
-    const fromeffect = this.battle.dex.getEffect(kwArgs.from) as Effect;
+    const fromeffect = this.battle.dex.getEffect(kwArgs.from);
 
     poke.activateAbility(effect);
     (ofpoke || poke).activateAbility(fromeffect);
@@ -655,7 +657,7 @@ export class Handler implements Protocol.Handler {
 
   '|-end|'(args: Args['|-end|'], kwArgs: KWArgs['|-end|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const effect = this.battle.dex.getEffect(args[2]) as Effect;
+    const effect = this.battle.dex.getEffect(args[2]);
     poke.removeVolatile(effect.id);
 
     if (kwArgs.silent) return; // do nothing
@@ -672,9 +674,9 @@ export class Handler implements Protocol.Handler {
 
   '|-singleturn|'(args: Args['|-singleturn|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const effect = this.battle.dex.getEffect(args[2]) as Effect;
+    const effect = this.battle.dex.getEffect(args[2]);
     poke.addTurnstatus(effect.id);
-    if (effect.id === 'focuspunch' || effect.id === 'shelltrap') poke.rememberMove(effect.name!, 0);
+    if (effect.id === 'focuspunch' || effect.id === 'shelltrap') poke.rememberMove(effect.name, 0);
   }
 
   '|-singlemove|'(args: Args['|-singlemove|']) {
@@ -683,7 +685,7 @@ export class Handler implements Protocol.Handler {
 
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
     const poke = this.battle.getPokemon(args[1]);
-    const effect = this.battle.dex.getEffect(args[2]) as Effect;
+    const effect = this.battle.dex.getEffect(args[2]);
     const target = this.battle.getPokemon(args[3] as Protocol.PokemonIdent);
     if (poke) poke.activateAbility(effect);
 
@@ -773,7 +775,7 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-sidestart|'(args: Args['|-sidestart|']) {
-    this.battle.getSide(args[1]).addSideCondition(this.battle.dex.getEffect(args[2]) as Effect);
+    this.battle.getSide(args[1]).addSideCondition(this.battle.dex.getEffect(args[2]));
   }
 
   '|-sideend|'(args: Args['|-sideend|']) {
@@ -781,16 +783,16 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-weather|'(args: Args['|-weather|'], kwArgs: KWArgs['|-weather|']) {
-    const effect = this.battle.dex.getEffect(args[1]) as Effect;
+    const effect = this.battle.dex.getEffect(args[1]);
     const poke = this.battle.getPokemon(kwArgs.of) || undefined;
-    const ability = this.battle.dex.getEffect(kwArgs.from) as Effect;
+    const ability = this.battle.dex.getEffect(kwArgs.from);
     this.battle.field.changeWeather(effect.id, poke, !!kwArgs.upkeep, ability);
   }
 
   '|-fieldstart|'(args: Args['|-fieldstart|'], kwArgs: KWArgs['|-fieldstart|']) {
-    const effect = this.battle.dex.getEffect(args[1]) as Effect;
+    const effect = this.battle.dex.getEffect(args[1]);
     const poke = this.battle.getPokemon(kwArgs.of);
-    const fromeffect = this.battle.dex.getEffect(kwArgs.from) as Effect;
+    const fromeffect = this.battle.dex.getEffect(kwArgs.from);
     if (poke && fromeffect) poke.activateAbility(fromeffect);
     let maxTimeLeft = 0;
     if (effect.id.endsWith('terrain')) {
