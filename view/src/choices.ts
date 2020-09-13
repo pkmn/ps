@@ -165,7 +165,7 @@ export class ChoiceBuilder {
 
     if (choice.startsWith('move ')) {
       if (request.requestType !== 'move') {
-        throw new Error('You must switch in a Pokémon, not move.');
+        throw new Error('You must switch in a Pokémon, not move');
       }
       const moveRequest = request.active[index]!;
       choice = choice.slice(5);
