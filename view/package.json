@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/view",
-  "private": true,
+  "version": "0.0.1",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "bin": {
@@ -13,8 +13,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/client": "file:../client",
-    "@pkmn/protocol": "file:../protocol",
+    "@pkmn/client": "^0.0.1",
+    "@pkmn/protocol": "^0.0.1",
     "@pkmn/types": "^0.1.2"
   },
   "optionalDependencies": {
