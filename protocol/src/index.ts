@@ -1495,7 +1495,7 @@ export namespace Protocol {
      * Suppress message.
      */
     'silent': true;
-    'spread': Slots;
+    'spread': Slots | true;
     /**
      * `[still]`
      *
@@ -2167,7 +2167,7 @@ function upgradeBattleArgs(
     } else if (id === 'wanderingspirit') {
       // FIXME: workaround for an interaction between Wandering Spirit and Protective Pads
       if (arg3) {
-        kwArgs.ability = arg3!;
+        kwArgs.ability = arg3;
         kwArgs.ability2 = arg4!;
       } else {
         return {

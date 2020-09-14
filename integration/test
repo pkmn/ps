@@ -11,47 +11,51 @@ const argv = minimist(process.argv.slice(2), {default: {compile: true}});
 argv.compile = `${argv.compile}` === 'true';
 const shell = (cmd, cwd = __dirname) => child_process.execSync(cmd, {stdio: 'ignore', cwd});
 
-const ExhaustiveRunner = (() => {
-  if (argv._[0] === 'sim') {
-    if (argv.compile) shell('node build', path.resolve(__dirname, '../vendor/pokemon-showdown'));
-    return require('./src/test/sim').ExhaustiveRunner;
-  } else if (argv._[0] === 'client') {
-    if (!!argv.compile) shell('node build indexes', path.resolve(__dirname, '../vendor/pokemon-showdown-client'));
-    return require('./src/test/client').ExhaustiveRunner;
-  } else {
-    console.error(`Unrecognized mode: ${argv._[0] || 'no mode specified'}\n`);
-    process.exit(1);
-  }
-})();
+if (argv._[0] === 'sim') {
+  if (argv.compile) shell('node build', path.resolve(__dirname, '../vendor/pokemon-showdown'));
+  const {MultiRandomRunner} = require('./src/test/sim');
 
-let formats;
-if (argv.formats) {
-  formats = argv.formats.split(',');
-} else if (argv.format) {
-  formats = argv.format.split(',');
+  const options = Object.assign({totalGames: 100}, argv);
+  options.totalGames = Number(argv._[1] || argv.num) || options.totalGames;
+  if (argv.seed) options.prng = argv.seed.split(',').map(s => Number(s));
+  // Run options.totalGames, exiting with the number of games with errors.
+  (async () => process.exit(await new MultiRandomRunner(options).run()))();
+} else if (argv._[0] === 'client') {
+  if (!!argv.compile) shell('node build indexes', path.resolve(__dirname, '../vendor/pokemon-showdown-client'));
+  const {ExhaustiveRunner} = require('./src/test/client');
+
+  let formats;
+  if (argv.formats) {
+    formats = argv.formats.split(',');
+  } else if (argv.format) {
+    formats = argv.format.split(',');
+  } else {
+    formats = ExhaustiveRunner.FORMATS;
+  }
+  let cycles = Number(argv._[1] || argv.cycles) || ExhaustiveRunner.DEFAULT_CYCLES;
+  let forever = argv.forever;
+  if (cycles < 0) {
+    cycles = -cycles;
+    forever = true;
+  }
+  const maxFailures =
+    argv.maxFailures || argv.failures || (formats.length > 1 ? ExhaustiveRunner.MAX_FAILURES : 1);
+  const prng = argv.seed && argv.seed.split(',').map(s => Number(s));
+  const log = true;
+  const cmd = (cycles, format, seed) =>
+    `node integration/test ${argv._[0]} --cycles=${cycles} --format=${format} --seed=${seed}`;
+  (async () => {
+    let failures = 0;
+    do {
+      for (let format of formats) {
+        failures += await new ExhaustiveRunner({format, cycles, prng, maxFailures, log, cmd}).run();
+        process.stdout.write('\n');
+        if (failures >= maxFailures) break;
+      }
+    } while (forever);
+    process.exit(failures);
+  })();
 } else {
-  formats = ExhaustiveRunner.FORMATS;
+  console.error(`Unrecognized mode: ${argv._[0] || 'no mode specified'}\n`);
+  process.exit(1);
 }
-let cycles = Number(argv._[1] || argv.cycles) || ExhaustiveRunner.DEFAULT_CYCLES;
-let forever = argv.forever;
-if (cycles < 0) {
-  cycles = -cycles;
-  forever = true;
-}
-const maxFailures =
-  argv.maxFailures || argv.failures || (formats.length > 1 ? ExhaustiveRunner.MAX_FAILURES : 1);
-const prng = argv.seed && argv.seed.split(',').map(s => Number(s));
-const log = true;
-const cmd = (cycles, format, seed) =>
-  `node integration/test ${argv._[0]} --cycles=${cycles} --format=${format} --seed=${seed}`;
-(async () => {
-  let failures = 0;
-  do {
-    for (let format of formats) {
-      failures += await new ExhaustiveRunner({format, cycles, prng, maxFailures, log, cmd}).run();
-      process.stdout.write('\n');
-      if (failures >= maxFailures) break;
-    }
-  } while (forever);
-  process.exit(failures);
-})();

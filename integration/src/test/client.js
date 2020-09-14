@@ -7,6 +7,7 @@ const client = require('@pkmn/client');
 const view = require('@pkmn/view');
 
 const {Protocol} = require('@pkmn/protocol');
+const {Verifier} = require('@pkmn/protocol/verifier');
 const {ExhaustiveRunner} = require('@pkmn/sim/tools');
 
 // smogon/pokemon-showdown-client expects to be run in a Browser window and like
@@ -40,10 +41,6 @@ var window = global;
 const UNLOGGED = new Set(['upkeep']);
 
 class Runner {
-  DEFAULT_CYCLES = ExhaustiveRunner.DEFAULT_CYCLES;
-  MAX_FAILURES = ExhaustiveRunner.MAX_FAILURES;
-  FORMATS = ExhaustiveRunner.FORMATS;
-
   constructor(options) {
     this.format = options.format;
 
@@ -109,8 +106,12 @@ class Runner {
       if (output) output.push(chunk);
 
       for (const line of chunk.split('\n')) {
+        const v = Verifier.verifyLine(line);
+        assert(!v, `Invalid protocol: '${line}'`);
+
         ps.battle.add(patch(line));
         ps.battle.fastForwardTo(-1);
+
         const {args, kwArgs} = Protocol.parseBattleLine(line);
         if (!UNLOGGED.has(args[0])) pkmn.log += pkmn.formatter.formatText(args, kwArgs);
         battle.add(args, kwArgs);

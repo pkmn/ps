@@ -106,7 +106,7 @@ function verifyKWArg<T extends Protocol.BattleArgsWithKWArgName>(
   if (NAME_KWARGS.has(k)) return verifyName(v as string);
   if (k === 'name' || k === 'of') return verifyPokemonIdent(v as Protocol.PokemonIdent);
   if (k === 'spread') {
-    return (v as Protocol.Slots).split(',').every(s => /^p[1234][abc])$/.test(s));
+    return v === true || (v as Protocol.Slots).split(',').every(s => /^p[1234][abc]$/.test(s));
   }
   if (k === 'from') return verifyEffectName(v as Protocol.EffectName);
   if (k === 'number') return verifyNum(v as Protocol.Num);

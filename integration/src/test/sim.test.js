@@ -1,13 +1,10 @@
 'use strict';
 
-const {ExhaustiveRunner} = require('./sim');
+const {MultiRandomRunner} = require('./sim');
 
 describe('sim', () => {
   it('test', async () => {
-    const opts = {prng: [1, 2, 3, 4]};
-    for (const format of ExhaustiveRunner.FORMATS) {
-      opts.format = format;
-      expect(await (new ExhaustiveRunner(opts).run())).toEqual(0);
-    }
+    const opts = {totalGames: 100, prng: [1, 2, 3, 4]};
+    expect(await (new MultiRandomRunner(opts).run())).toBe(0);
   });
 });

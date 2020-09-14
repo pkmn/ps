@@ -2,17 +2,99 @@
 
 const assert = require('assert').strict;
 
-const ps = {BattleStreams: require('../../../vendor/pokemon-showdown/.sim-dist/battle-stream')};
+const ps = {
+  BattleStreams:require('../../../vendor/pokemon-showdown/.sim-dist/battle-stream'),
+  Dex: require('../../../vendor/pokemon-showdown/.sim-dist').Dex,
+  RandomPlayerAI:
+    require('../../../vendor/pokemon-showdown/.sim-dist/tools/random-player-ai').RandomPlayerAI,
+};
 const pkmn = require('@pkmn/sim');
 
 const {Verifier} = require('@pkmn/protocol/verifier');
-const {ExhaustiveRunner} = require('@pkmn/sim/tools');
+
+class MultiRandomRunner {
+  static FORMATS = [
+    'gen8randombattle', 'gen8randomdoublesbattle', 'gen8battlefactory',
+    'gen7randombattle', 'gen7randomdoublesbattle', 'gen7battlefactory',
+    'gen6randombattle', 'gen6battlefactory',
+    'gen5randombattle',
+    'gen4randombattle',
+    'gen3randombattle',
+    'gen2randombattle',
+    'gen1randombattle',
+  ];
+
+  constructor(options) {
+    this.options = Object.assign({}, options);
+
+    this.totalGames = options.totalGames;
+
+    this.prng = (options.prng && !Array.isArray(options.prng)) ?
+      options.prng : new pkmn.PRNG(options.prng);
+    this.options.prng = this.prng;
+
+    this.format = options.format;
+    this.cycle = !!options.cycle;
+    this.all = !!options.all;
+
+    this.formatIndex = 0;
+    this.numGames = 0;
+  }
+
+  async run() {
+    let games = [];
+    let format;
+    let lastFormat = false;
+    let failures = 0;
+    while ((format = this.getNextFormat())) {
+      if (this.all && lastFormat && format !== lastFormat) {
+        games = [];
+      }
+
+      const seed = this.prng.seed;
+      const game = new Runner(Object.assign({format}, this.options)).run().catch(err => {
+        failures++;
+        console.error(
+          `Run \`node integration/test sim 1 --format=${format} --seed=${seed.join()}\` ` +
+          `to debug (optionally with \`--output\` and/or \`--input\` for more info):\n`,
+          err
+        );
+      });
+
+      await game;
+      games.push(game);
+      lastFormat = format;
+    }
+    return failures;
+  }
+
+  getNextFormat() {
+    const FORMATS = MultiRandomRunner.FORMATS;
+    if (this.formatIndex > FORMATS.length) return false;
+
+    if (this.numGames++ < this.totalGames) {
+      if (this.format) {
+        return this.format;
+      } else if (this.all) {
+        return FORMATS[this.formatIndex];
+      } else if (this.cycle) {
+        const format = FORMATS[this.formatIndex];
+        this.formatIndex = (this.formatIndex + 1) % FORMATS.length;
+        return format;
+      } else {
+        return this.prng.sample(FORMATS);
+      }
+    } else if (this.all) {
+      this.numGames = 1;
+      this.formatIndex++;
+      return FORMATS[this.formatIndex];
+    }
+
+    return false;
+  }
+}
 
 class Runner {
-  DEFAULT_CYCLES = ExhaustiveRunner.DEFAULT_CYCLES;
-  MAX_FAILURES = ExhaustiveRunner.MAX_FAILURES;
-  FORMATS = ExhaustiveRunner.FORMATS;
-
   constructor(options) {
     this.format = options.format;
 
@@ -22,10 +104,12 @@ class Runner {
     this.p2options = options.p2options;
 
     this.error = !!options.error;
+    this.input = !!options.input;
+    this.output = !!options.output;
   }
 
   run() {
-    const psStream = new PSRawStream();
+    const psStream = new PSRawStream(this.input);
     const pkmnStream = new PkmnRawStream();
 
     const game = this.runGame(this.format, psStream, pkmnStream);
@@ -39,16 +123,23 @@ class Runner {
     const psStreams = ps.BattleStreams.getPlayerStreams(psStream);
     const pkmnStreams = pkmn.BattleStreams.getPlayerStreams(pkmnStream);
 
-    const spec = {formatid: format, seed: this.prng.seed};
-    const p1spec = {name: 'Bot 1', ...this.p1options};
-    const p2spec = {name: 'Bot 2', ...this.p2options};
+    const formatid =
+      format.slice(0, 4) + format.includes('doubles') ? 'doublescustomgame' : 'customgame';
+    const spec = {formatid, seed: this.prng.seed};
+    const p1spec = {
+      name: 'Bot 1', ...this.p1options, team: ps.Dex.packTeam(ps.Dex.generateTeam(format)),
+    };
+    const p2spec = {
+      name: 'Bot 2', ...this.p2options, team: ps.Dex.packTeam(ps.Dex.generateTeam(format)),
+    };
+
     const p1options = {seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p1options};
     const p2options = {seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p2options};
 
-    const psBot1 = this.p1options.createAI(psStreams.p1, p1options).start();
-    const psBot2 = this.p2options.createAI(psStreams.p2, p2options).start();
-    const pkmnBot1 = this.p1options.createAI(pkmnStreams.p1, p1options).start();
-    const pkmnBot2 = this.p2options.createAI(pkmnStreams.p2, p2options).start();
+    const psBot1 = new ps.RandomPlayerAI(psStreams.p1, p1options).start();
+    const psBot2 = new ps.RandomPlayerAI(psStreams.p2, p2options).start();
+    const pkmnBot1 = new pkmn.RandomPlayerAI(pkmnStreams.p1, p1options).start();
+    const pkmnBot2 = new pkmn.RandomPlayerAI(pkmnStreams.p2, p2options).start();
 
     const start = `>start ${JSON.stringify(spec)}\n` +
       `>player p1 ${JSON.stringify(p1spec)}\n` +
@@ -59,6 +150,7 @@ class Runner {
     const streams = new AsyncIterableStreams(psStreams.omniscient, pkmnStreams.omniscient);
 
     for await (const [psChunk, pkmnChunk] of streams) {
+      if (this.output) console.log(psChunk);
       assert.deepStrictEqual(pkmn.State.normalizeLog(pkmnChunk), pkmn.State.normalizeLog(psChunk));
 
       for (const line of psChunk.split('\n')) {
@@ -69,7 +161,7 @@ class Runner {
     assert.deepStrictEqual(pkmnStream.rawInputLog, psStream.rawInputLog);
 
     return Promise.all([
-      psStream.omniscient.writeEnd(), pkmnStreams.omniscient.writeEnd(),
+      psStreams.omniscient.writeEnd(), pkmnStreams.omniscient.writeEnd(),
       psBot1, psBot2, pkmnBot1, pkmnBot2, psStart, pkmnStart,
     ]);
   }
@@ -87,12 +179,14 @@ class Runner {
 }
 
 class PSRawStream extends ps.BattleStreams.BattleStream {
-  constructor() {
+  constructor(input) {
     super();
+    this.input = !!input;
     this.rawInputLog = [];
   }
 
   _write(message) {
+    if (this.input) console.log(message);
     this.rawInputLog.push(message);
     super._write(message);
   }
@@ -122,10 +216,4 @@ class AsyncIterableStreams {
   }
 }
 
-class SimExhaustiveRunner extends ExhaustiveRunner {
-  constructor(options) {
-    super({...options, runner: o => new Runner(o).run()});
-  }
-}
-
-exports.ExhaustiveRunner = SimExhaustiveRunner;
+exports.MultiRandomRunner = MultiRandomRunner;

@@ -1,25 +1,57 @@
 # Integration
 
-Integration tests for the various packages housed in this repository.
+This directory contains integration tests exercising the various packages housed in this repository.
 
-- `npm run start` will run the simulator and client in the browser, pitting two `RandomPlayerAI`
-  instances against each other using predetermined teams and displaying the parsed log output
-- `npm run test` will compare the output of exhaustively running battles using
-  `smogon/pokemon-showdown{,-client}` code and those from the packages in this repository.
+## UI
 
-TODO
+[`src/ui/index.ts`](src/ui/index.ts) runs in the browser and contains logic to randomly play out a
+battle between two predefined teams and display the formatted results in the DOM. There is no 'test'
+logic (whether it is successful or not relies on visual inspection), it mostly serves as an example
+and proof of concept for running the simulator in the browser.
 
-The `exhaustive` subcommand cycles through all generations and game types,
-attempting to use as many different effects as possible in the battles it
-randomly simulates. This can be useful as a form of
-['smoke testing'](https://en.wikipedia.org/wiki/Smoke_testing_\(software\)), a
-form of sanity testing/build verification which can be used to expose obvious
-critical issues with the application. Making it through a successful cycle of
-smoke tests does *not* mean the application is without bugs, or even that it is
-crash free - it simply provides some confidence that the application is less
-likely to catch fire.
+**`npm start`** can be used to serve the page, and `npm run build` can be used to build a 'production'
+version (this version is served on [GitHub Pages](https://pkmn.github.io/ps/integration/), though
+it actually uses the `gh-pages` script as it needs to change the root URL).
 
-## Flags
+## Tests
+
+In addition the the UI example, there are two actual tests - one for the simulator and one for the
+client. Both can be run using the [`test`](test) script (which also provides several different
+options), though they can also be run with a fixed configuration via `npm test`. Several flags are
+available for both tests:
+
+- **`--seed`**: PRNG seed to use (eg. `'1234,5678,9012,3456'`).
+- **`--error`**: dump the battle _input_ logs of each battle which errors.
+
+### Simulator
+
+The simulator test can be started with **`test sim`** - this runs multiple random battles across
+generations with both the `smogon/pokemon-showdown` and `@pkmn/sim` code and ensures their input
+and output matches. Additionally, it verifies the protocol messages the simulator produces. The
+simulator logic does not rely on the exhaustive logic the client test uses due to practical
+difficulties in synchronizing a stateful AI across two different simulations. In addition to the
+regular flags, the following flags may be used with the simulator test:
+
+- **`--num`**: play a specific number of games for a format instead of the
+    default 100.
+- **`--format`**: play the specified format for each of the games it runs.
+    Note that the harness only supports formats where the team can be randomly
+    generated.
+- **`--output`**: makes the harness display the _output_ logs of each battle
+    it runs.
+- **`--cycle`**: cycles through the possible formats, playing one battle in
+    each `--num` battles in total.
+- **`--all`**: plays every supported format `--num` times before moving on to
+    the next format.
+- **`--input`**: dump the battle _input_ logs of each battle it runs.
+
+### Client
+
+The client test can be started with **`test client`** and cycles through all generations and game
+types, attempting to use as many different effects as possible in the battles it randomly simulates.
+The protocol for the simulated battles are verified and then fed into
+`smogon/pokemon-showdown-client` and `@pkmn/client` and the formatted output is compared. The
+following additional flags may be used:
 
 - **`--format`** / **`--formats`**: play the specified format(s) instead of
     iterating through all possible formats. If multiple formats are specified,
@@ -28,6 +60,4 @@ likely to catch fire.
     just once. If `--cycles` is negative, `--forever` is implied.
 - **`--forever`**: continue iterating through formats infinitely, exhausting
     each `--cycles` times.
-- **`--seed`**: PRNG seed to use (eg. `'1234,5678,9012,3456'`).
 - **`--maxFailures`**: exit early if this many failures have occured.
-- **`--compile`**: TODO

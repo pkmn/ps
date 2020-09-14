@@ -80,8 +80,6 @@ version number in case set import changes.
 
 ## Integration
 
-- **Fix client test stream usage**
-- **Update documentation for integration tests**
 - figure out how to run `eslint` on JS files without crashing
 - add deeper equality method for Pokémon Showdown's client state vs. pkmns (requires handling
   different representations eg `ID`s, consider using protocol `Verifier` to verify all types)
