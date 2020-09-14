@@ -35,7 +35,7 @@ const battle = new Battle(Dex);
 for (const line of lines) {
   battle.add(line);
 
-... // manipulate battle
+  ... // manipulate battle
 }
 ```
 
