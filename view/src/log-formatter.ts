@@ -496,11 +496,10 @@ class Handler implements Protocol.Handler<string> {
   '|move|'(args: Args['|move|'], kwArgs: KWArgs['|move|']) {
     const [, pokemon, move] = args;
     this.parser.activeMoveIsSpread = !!kwArgs.spread;
-    const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
-    // FIXME PS is broken
-    // if (kwArgs.zeffect) {
-    //   line1 = this.parser.template('zEffect').replace('[POKEMON]', this.parser.pokemon(pokemon));
-    // }
+    let line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
+    if (kwArgs.zeffect) {
+      line1 = this.parser.template('zEffect').replace('[POKEMON]', this.parser.pokemon(pokemon));
+    }
     const template = this.parser.template('move', kwArgs.from);
     return (line1 + template
       .replace('[POKEMON]', this.parser.pokemon(pokemon))

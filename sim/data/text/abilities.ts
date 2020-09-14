@@ -192,7 +192,7 @@ export const AbilitiesText = {
 		shortDesc: "30% chance of infatuating Pokemon of the opposite gender if they make contact.",
 		descGen4: "There is a 30% chance a Pokemon making contact with this Pokemon will become infatuated if it is of the opposite gender. This effect does not happen if this Pokemon did not lose HP from the attack.",
 		descGen3: "There is a 1/3 chance a Pokemon making contact with this Pokemon will become infatuated if it is of the opposite gender. This effect does not happen if this Pokemon did not lose HP from the attack.",
-		shortdescGen3: "1/3 chance of infatuating Pokemon of the opposite gender if they make contact.",
+		shortDescGen3: "1/3 chance of infatuating Pokemon of the opposite gender if they make contact.",
 	},
 	damp: {
 		name: "Damp",
@@ -581,8 +581,13 @@ export const AbilitiesText = {
 	},
 	levitate: {
 		name: "Levitate",
-		desc: "This Pokemon is immune to Ground. Gravity, Ingrain, Smack Down, Thousand Arrows, and Iron Ball nullify the immunity.",
+		desc: "This Pokemon is immune to Ground-type attacks and the effects of Spikes, Toxic Spikes, Sticky Web, and the Arena Trap Ability. The effects of Gravity, Ingrain, Smack Down, Thousand Arrows, and Iron Ball nullify the immunity.",
 		shortDesc: "This Pokemon is immune to Ground; Gravity/Ingrain/Smack Down/Iron Ball nullify it.",
+		descGen5: "This Pokemon is immune to Ground-type attacks and the effects of Spikes, Toxic Spikes, and the Arena Trap Ability. The effects of Gravity, Ingrain, Smack Down, and Iron Ball nullify the immunity.",
+		descGen4: "This Pokemon is immune to Ground-type attacks and the effects of Spikes, Toxic Spikes, and the Arena Trap Ability. The effects of Gravity, Ingrain, and Iron Ball nullify the immunity.",
+		shortDescGen4: "This Pokemon is immune to Ground; Gravity/Ingrain/Iron Ball nullify it.",
+		descGen3: "This Pokemon is immune to Ground-type attacks and the effects of Spikes and the Arena Trap Ability.",
+		shortDescGen3: "This Pokemon is immune to Ground.",
 	},
 	libero: {
 		name: "Libero",

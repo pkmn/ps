@@ -2,7 +2,8 @@
   "3": {
     "cutecharm": {
       "inherit": true,
-      "desc": "There is a 1/3 chance a Pokemon making contact with this Pokemon will become infatuated if it is of the opposite gender. This effect does not happen if this Pokemon did not lose HP from the attack."
+      "desc": "There is a 1/3 chance a Pokemon making contact with this Pokemon will become infatuated if it is of the opposite gender. This effect does not happen if this Pokemon did not lose HP from the attack.",
+      "shortDesc": "1/3 chance of infatuating Pokemon of the opposite gender if they make contact."
     },
     "effectspore": {
       "inherit": true,
@@ -62,6 +63,11 @@
       "inherit": true,
       "desc": "This Pokemon is immune to damaging Electric-type moves and restores 1/4 of its maximum HP, rounded down, when hit by one.",
       "shortDesc": "This Pokemon heals 1/4 its max HP when hit by a damaging Electric move; immunity."
+    },
+    "levitate": {
+      "inherit": true,
+      "desc": "This Pokemon is immune to Ground-type attacks and the effects of Spikes and the Arena Trap Ability.",
+      "shortDesc": "This Pokemon is immune to Ground."
     },
     "wonderguard": {
       "inherit": true,
@@ -225,6 +231,11 @@
     "wonderguard": {
       "inherit": true,
       "shortDesc": "This Pokemon is only damaged by Fire Fang, supereffective moves, indirect damage."
+    },
+    "levitate": {
+      "inherit": true,
+      "desc": "This Pokemon is immune to Ground-type attacks and the effects of Spikes, Toxic Spikes, and the Arena Trap Ability. The effects of Gravity, Ingrain, and Iron Ball nullify the immunity.",
+      "shortDesc": "This Pokemon is immune to Ground; Gravity/Ingrain/Iron Ball nullify it."
     }
   },
   "5": {
@@ -260,6 +271,10 @@
     "soundproof": {
       "inherit": true,
       "shortDesc": "This Pokemon is immune to sound-based moves, except Heal Bell."
+    },
+    "levitate": {
+      "inherit": true,
+      "desc": "This Pokemon is immune to Ground-type attacks and the effects of Spikes, Toxic Spikes, and the Arena Trap Ability. The effects of Gravity, Ingrain, Smack Down, and Iron Ball nullify the immunity."
     }
   },
   "6": {
@@ -1071,7 +1086,7 @@
     "levitate": {
       "name": "Levitate",
       "num": 26,
-      "desc": "This Pokemon is immune to Ground. Gravity, Ingrain, Smack Down, Thousand Arrows, and Iron Ball nullify the immunity.",
+      "desc": "This Pokemon is immune to Ground-type attacks and the effects of Spikes, Toxic Spikes, Sticky Web, and the Arena Trap Ability. The effects of Gravity, Ingrain, Smack Down, Thousand Arrows, and Iron Ball nullify the immunity.",
       "shortDesc": "This Pokemon is immune to Ground; Gravity/Ingrain/Smack Down/Iron Ball nullify it."
     },
     "libero": {

@@ -479,7 +479,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     } else {
       types = this.getSpecies(serverPokemon).types;
     }
-    if (this.turnstatuses.roost && types.includes('Flying')) {
+    if (this.hasTurnstatus('roost' as ID) && types.includes('Flying')) {
       types = types.filter(typeName => typeName !== 'Flying');
       if (!types.length) types = ['Normal'];
     }

@@ -2690,6 +2690,10 @@
     "tapulele": {"inherit": true, "abilities": {"0": "Psychic Surge"}},
     "tapubulu": {"inherit": true, "abilities": {"0": "Grassy Surge"}},
     "tapufini": {"inherit": true, "abilities": {"0": "Misty Surge"}},
+    "justyke": {
+      "inherit": true,
+      "abilities": {"0": "Levitate", "1": "Bulletproof", "H": "Justified"}
+    },
     "equilibra": {
       "inherit": true,
       "baseStats": {
@@ -25703,7 +25707,7 @@
         "spd": 68,
         "spe": 30
       },
-      "abilities": {"0": "Levitate", "1": "Bulletproof", "H": "Justified"},
+      "abilities": {"0": "Levitate", "1": "Stalwart", "H": "Justified"},
       "weightkg": 36.5,
       "evos": ["Equilibra"],
       "eggGroups": ["Mineral"],
@@ -25722,7 +25726,7 @@
         "spd": 118,
         "spe": 60
       },
-      "abilities": {"0": "Levitate", "H": "Justified"},
+      "abilities": {"0": "Levitate", "1": "Stalwart", "H": "Justified"},
       "weightkg": 51.3,
       "prevo": "Justyke",
       "evoLevel": 32,
