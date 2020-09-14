@@ -2,7 +2,7 @@
 
 const {ExhaustiveRunner} = require('./sim');
 
-describe('client', () => {
+describe('sim', () => {
   it('test', async () => {
     const opts = {prng: [1, 2, 3, 4]};
     for (const format of ExhaustiveRunner.FORMATS) {

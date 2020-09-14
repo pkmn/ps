@@ -60,7 +60,8 @@
     "bundle": "subpkg run bundle",
     "start": "subpkg run start",
     "test": "subpkg run test",
-    "postinstall": "subpkg install"
+    "integrate": "npm test && npm -C integrate test",
+    "postinstall": "subpkg install && npm -C integrate install"
   },
   "dependencies": {
     "json-stringify-pretty-compact": "^2.0.0"

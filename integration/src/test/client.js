@@ -83,18 +83,14 @@ class Runner {
       `>player p1 ${JSON.stringify(p1spec)}\n` +
       `>player p2 ${JSON.stringify(p2spec)}`);
 
-    const all = [];
-    // TODO: randomly choose between these streams?
-    all.push(this.process(streams.omniscient, 0, output));
-    // all.push(this.process(streams.omniscient, 1));
-    // all.push(this.process(streams.spectator, 0, output));
-    // all.push(this.process(streams.spectator, 1, output));
-    // FIXME - also figure out why they exit early without crashing and with no message
-    // all.push(this.process(streams.p1, 0, output));
-    // all.push(this.process(streams.p2, 1, output));
-    const done = await Promise.all(all);
+    const all = [
+      [streams.omniscient, 0], [streams.omniscient, 1],
+      [streams.spectator, 0], [streams.spectator, 1],
+    ];
+    const [stream, perspective] = this.prng.sample(all);
+    await this.process(stream, perspective, output);
 
-    return Promise.all([done, streams.omniscient.writeEnd(), p1, p2, start]);
+    return Promise.all([streams.p2.writeEnd(), p1, p2, start]);
   }
 
   async process(stream, perspective, output) {
@@ -113,7 +109,7 @@ class Runner {
       if (output) output.push(chunk);
 
       for (const line of chunk.split('\n')) {
-        ps.battle.add(line);
+        ps.battle.add(patch(line));
         ps.battle.fastForwardTo(-1);
         const {args, kwArgs} = Protocol.parseBattleLine(line);
         if (!UNLOGGED.has(args[0])) pkmn.log += pkmn.formatter.formatText(args, kwArgs);
@@ -135,6 +131,15 @@ class Runner {
       Math.floor(this.prng.next() * 0x10000),
     ];
   }
+}
+
+function patch(line) {
+  const {args} = Protocol.parseBattleLine(line);
+  // FIXME: workaround for an interaction between Wandering Spirit and Protective Pads
+  if (line.startsWith('|-activate|') && args[0] === '-ability' && args[2] === 'Wandering Spirit') {
+    return '|' + args.join('|');
+  }
+  return line;
 }
 
 class ClientExhaustiveRunner extends ExhaustiveRunner {

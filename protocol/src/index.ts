@@ -2129,7 +2129,7 @@ function upgradeBattleArgs(
     if (id === 'wonderguard') {
       return {
         args: ['-immune', pokemon],
-        kwArgs: {from: 'ability:Wonder Guard'} as Protocol.BattleArgsKWArgType,
+        kwArgs: {from: 'ability: Wonder Guard'} as Protocol.BattleArgsKWArgType,
       };
     }
     if (id === 'beatup' && kwArgs.of) {
@@ -2161,9 +2161,20 @@ function upgradeBattleArgs(
       kwArgs.item = arg3!;
     } else if (id === 'magnitude') {
       kwArgs.number = arg3!;
-    } else if (id === 'skillswap' || id === 'mummy' || id === 'wanderingspirit') {
+    } else if (id === 'skillswap' || id === 'mummy') {
       kwArgs.ability = arg3!;
       kwArgs.ability2 = arg4!;
+    } else if (id === 'wanderingspirit') {
+      // FIXME: workaround for an interaction between Wandering Spirit and Protective Pads
+      if (arg3) {
+        kwArgs.ability = arg3!;
+        kwArgs.ability2 = arg4!;
+      } else {
+        return {
+          args: ['-ability', pokemon, 'Wandering Spirit' as Protocol.AbilityName],
+          kwArgs: {},
+        };
+      }
     } else if (NUMBERABLE.has(id)) {
       kwArgs.move = arg3!;
       kwArgs.number = arg4!;
@@ -2207,7 +2218,7 @@ function upgradeBattleArgs(
     // NEW: |-activate||move:Splash
     args = [
       '-activate', '' as Protocol.PokemonIdent,
-      'move:Splash' as Protocol.EffectName,
+      'move: Splash' as Protocol.EffectName,
     ] as Protocol.Args['|-activate|'];
   }
 

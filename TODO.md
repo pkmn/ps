@@ -59,7 +59,6 @@ version number in case set import changes.
 
 ## `@pkmn/view`
 
-- **unit tests**
 - demonstration of how to recreate Pokémon Showdown's `AnimatedBattle` hooks on top of
   `@pkmn/client` (`BattleSceneStub` equivalent, but use `Partial` instead of null object pattern)
 - logic for displaying the Pokémon Showdown protocol *(how should arbitrary HTML be handled? Fully
@@ -81,9 +80,8 @@ version number in case set import changes.
 
 ## Integration
 
-- **Fix client test stream usage - also make sure `jest` works**
+- **Fix client test stream usage**
 - **Update documentation for integration tests**
-- **wire up integration test to GitHub CI**
 - figure out how to run `eslint` on JS files without crashing
 - add deeper equality method for Pokémon Showdown's client state vs. pkmns (requires handling
   different representations eg `ID`s, consider using protocol `Verifier` to verify all types)
