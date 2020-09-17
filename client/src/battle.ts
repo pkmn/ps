@@ -1,4 +1,4 @@
-import {Dex, ID, SideID} from '@pkmn/dex-types';
+import {Dex, ID, SideID, GenerationNum, GameType, HPColor} from '@pkmn/dex-types';
 import {
   FormatName,
   Message,
@@ -10,7 +10,6 @@ import {
   Protocol,
   SpeciesName,
 } from '@pkmn/protocol';
-import {GenerationNum, GameType, HPColor} from '@pkmn/types';
 
 import {Field} from './field';
 import {Handler} from './handler';

@@ -56,12 +56,19 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		ruleset: ['Standard', 'Dynamax Clause'],
 		banlist: ['Uber', 'Arena Trap', 'Moody', 'Shadow Tag', 'Baton Pass'],
+		unbanlist: ['Cinderace'],
+		onBegin() {
+			if (this.rated && this.format.id === 'gen8ou') {
+				this.add('html', '<div class="broadcast-blue"><strong>OU is currently suspecting Cinderace! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3670532/">suspect thread</a>.</strong></div>');
+			}
+		},
 	},
 	{
 		name: "[Gen 8] OU (Blitz)",
 
 		mod: 'gen8',
 		ruleset: ['[Gen 8] OU', 'Blitz'],
+		banlist: ['Cinderace'],
 	},
 	{
 		name: "[Gen 8] Ubers",
@@ -86,7 +93,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		ruleset: ['[Gen 8] OU'],
-		banlist: ['OU', 'UUBL', 'Drizzle'],
+		banlist: ['OU', 'UUBL', 'Cinderace', 'Drizzle'],
 		onBegin() {
 			if (this.rated && this.format.id === 'gen8uu') {
 				this.add('html', '<div class="broadcast-blue"><strong>UU is currently suspecting Lycanroc-Dusk! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3670407/">suspect thread</a>.</strong></div>');
@@ -212,7 +219,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		ruleset: ['[Gen 8] OU', '+CAP'],
-		banlist: ['Clefable', 'Crucibelle-Mega'],
+		banlist: ['Cinderace', 'Clefable', 'Crucibelle-Mega'],
 	},
 	{
 		name: "[Gen 8] Battle Stadium Singles",
@@ -534,6 +541,11 @@ export const Formats: FormatList = [
 				return [`You are limited to one Arceus forme.`, `(You have ${arceus} Arceus formes.)`];
 			}
 		},
+		onBegin() {
+			if (this.rated && this.format.id === 'gen8nationaldexbh') {
+				this.add('html', '<div class="broadcast-blue"><strong>National Dex BH is currently suspecting Bolt Beak and Fishious Rend! For information on how to participate check out the <a href="https://www.smogon.com/forums/threads/3658587/">suspect thread</a>.</strong></div>');
+			}
+		},
 	},
 
 	// Pet Mods
@@ -551,7 +563,7 @@ export const Formats: FormatList = [
 
 		mod: 'megamax',
 		ruleset: ['[Gen 8] OU'],
-		banlist: ['Corviknight-Gmax', 'Melmetal-Gmax', 'Urshifu-Gmax'],
+		banlist: ['Cinderace', 'Corviknight-Gmax', 'Melmetal-Gmax', 'Urshifu-Gmax'],
 		onChangeSet(set) {
 			if (set.species.endsWith('-Gmax')) set.species = set.species.slice(0, -5);
 		},
@@ -607,6 +619,7 @@ export const Formats: FormatList = [
 		mod: 'optimons',
 		searchShow: false,
 		ruleset: ['[Gen 8] OU'],
+		banlist: ['Cinderace'],
 		unbanlist: ['Electabuzz', 'Electivire', 'Elekid', 'Magby', 'Magmar', 'Magmortar', 'Yanma', 'Yanmega'],
 		onSwitchIn(pokemon) {
 			const baseSpecies = this.dex.mod('gen8').getSpecies(pokemon.species.name);
@@ -1229,7 +1242,7 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		searchShow: false,
 		ruleset: ['[Gen 8] OU'],
-		banlist: ['Damp Rock', 'Eviolite', 'Heat Rock'],
+		banlist: ['Cinderace', 'Damp Rock', 'Eviolite', 'Heat Rock'],
 		onModifySpecies(species, target, source, effect) {
 			if (!species.baseStats) return;
 			const boosts: {[tier: string]: number} = {
