@@ -1,6 +1,6 @@
 import {BoostName, GameType, ID, Player, StatusName} from '@pkmn/types';
 
-import {Protocol, Args, KWArgs} from '../index';
+import {Protocol, Args, KWArgs, PokemonIdent} from '../index';
 
 const QUERYTYPES: Protocol.QueryType[] =
   ['userdetails', 'roomlist', 'rooms', 'laddertop', 'roominfo', 'savereplay'];
@@ -17,8 +17,9 @@ const BOOL_KWARGS = new Set<Protocol.BattleArgsWithKWArgType>([
   'identify', 'interrupt', 'multiple', 'partiallytrapped', 'prepare',
 ]);
 const NAME_KWARGS = new Set<Protocol.BattleArgsWithKWArgType>([
-  'ability', 'ability2', 'anim', 'block', 'item', 'move', 'wisher',
+  'ability', 'ability2', 'anim', 'block', 'item', 'name', 'wisher',
 ]);
+const BARE_EFFECTS = ['Dynamax', 'Recoil'] as Protocol.EffectName[];
 
 function verifyRoomID(roomid: Protocol.RoomID) {
   return /^[-a-z0-9]+$/.test(roomid);
@@ -39,7 +40,7 @@ function verifyEffectName(name: Protocol.EffectName) {
       name.startsWith('move:')) &&
       verifyName(name.slice(name.indexOf(':') + 2));
   }
-  return verifyID(name as ID);
+  return verifyID(name as ID) || BARE_EFFECTS.includes(name);
 }
 
 function verifyTimestamp(timestamp: Protocol.Timestamp) {
@@ -60,7 +61,7 @@ function verifyNum(num: Protocol.Num) {
 }
 
 function verifyPokemonIdent(ident: Protocol.PokemonIdent) {
-  return /^p[1234][abc]: [A-Z].*$/.test(ident);
+  return /^p[1234][abc]?: [A-Z].*$/.test(ident);
 }
 
 function verifyPokemonDetails(details: Protocol.PokemonDetails) {
@@ -68,11 +69,15 @@ function verifyPokemonDetails(details: Protocol.PokemonDetails) {
 }
 
 function verifyPokemonHPStatus(hpstatus: Protocol.PokemonHPStatus) {
-  return hpstatus === '0 fnt' || /^\d+\/\d+( (par|brn|slp|frz|tox))?$/.test(hpstatus);
+  return hpstatus === '0 fnt' || /^\d+\/\d+( (par|brn|slp|frz|tox|psn))?$/.test(hpstatus);
 }
 
 function verifyPlayer(player: Player) {
   return PLAYERS.includes(player);
+}
+
+function verifySide(side: Protocol.Side) {
+  return /^p[1234]: .*$/.test(side);
 }
 
 function verifyStatusName(status: StatusName) {
@@ -102,19 +107,23 @@ function verifyKWArg<T extends Protocol.BattleArgsWithKWArgName>(
   k: Protocol.BattleArgsWithKWArgs[T],
   v: Protocol.BattleArgsKWArgsTypes[Protocol.BattleArgsWithKWArgs[T]]
 ) {
+  if (v === undefined) return true;
   if (BOOL_KWARGS.has(k)) return v === true;
   if (NAME_KWARGS.has(k)) return verifyName(v as string);
-  if (k === 'name' || k === 'of') return verifyPokemonIdent(v as Protocol.PokemonIdent);
+  if (k === 'of') return v === '' || verifyPokemonIdent(v as Protocol.PokemonIdent);
   if (k === 'spread') {
     return v === true || (v as Protocol.Slots).split(',').every(s => /^p[1234][abc]$/.test(s));
   }
-  if (k === 'from') return verifyEffectName(v as Protocol.EffectName);
+  if (k === 'from') {
+    return verifyEffectName(v as Protocol.EffectName) || verifyName(v as Protocol.MoveName);
+  }
   if (k === 'number') return verifyNum(v as Protocol.Num);
+  if (k === 'move') return verifyName(v as Protocol.MoveName) || verifyID(v as ID);
   if (k === 'anim') return v === 'prepare';
   return false;
 }
 
-class Handler implements Protocol.Handler<boolean> {
+class Handler implements Required<Protocol.Handler<boolean>> {
   '|init|'(args: Args['|init|']) {
     return args.length === 2 && (['chat', 'battle'].includes(args[1]));
   }
@@ -349,9 +358,10 @@ class Handler implements Protocol.Handler<boolean> {
 
   '|player|'(args: Args['|player|']) {
     if (args.length === 2) return verifyPlayer(args[1]);
-    if (args.length === 4) return verifyPlayer(args[1]) && !!args[2] && !!args[3];
-    if (args.length !== 5) return false;
-    return verifyPlayer(args[1]) && !!args[2] && !!args[3] && verifyNum(args[4]!);
+    return args.length === 5 &&
+      verifyPlayer(args[1]) &&
+      !!args[2] &&
+      (args[4] === '' || verifyNum(args[4]));
   }
 
   '|teamsize|'(args: Args['|teamsize|']) {
@@ -380,7 +390,7 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|rule|'(args: Args['|rule|']) {
-    return args.length === 2 && args[1].startsWith('RULE: ');
+    return args.length === 2 && args[1].includes(':');
   }
 
   '|teampreview|'(args: Args['|teampreview|']) {
@@ -437,19 +447,19 @@ class Handler implements Protocol.Handler<boolean> {
   '|move|'(args: Args['|move|'], kwArgs: KWArgs['|move|']) {
     const keys: Protocol.BattleArgsWithKWArgType[] =
       [...KWARGS, 'anim', 'miss', 'notarget', 'prepare', 'spread', 'zeffect'];
-    if (!verifyKWArgs(kwArgs, keys)) return false;
-    if (args.length === 3) return verifyPokemonIdent(args[1]) && verifyName(args[2]);
-    if (args.length === 4) {
-      return verifyPokemonIdent(args[1]) && verifyName(args[2]) && verifyPokemonIdent(args[3]);
-    }
-    return false;
+    if (!(verifyPokemonIdent(args[1]) && verifyKWArgs(kwArgs, keys))) return false;
+    if (args.length === 3) return verifyName(args[2]);
+    return args.length === 4 &&
+      (args[2] === 'recharge' || verifyName(args[2])) &&
+      (args[3] === '' || args[3] === 'null' || verifyPokemonIdent(args[3]));
   }
 
-  '|switch|'(args: Args['|switch|']) {
+  '|switch|'(args: Args['|switch|'], kwArgs: KWArgs['|switch|']) {
     return args.length === 4 &&
       verifyPokemonIdent(args[1]) &&
       verifyPokemonDetails(args[2]) &&
-      verifyPokemonHPStatus(args[3]);
+      verifyPokemonHPStatus(args[3]) &&
+      verifyKWArgs(kwArgs, KWARGS);
   }
 
   '|drag|'(args: Args['|drag|']) {
@@ -460,18 +470,14 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|detailschange|'(args: Args['|detailschange|'], kwArgs: KWArgs['|detailschange|']) {
-    return args.length === 4 &&
+    return args.length === 3 &&
       verifyPokemonIdent(args[1]) &&
       verifyPokemonDetails(args[2]) &&
-      verifyPokemonHPStatus(args[3]) &&
       verifyKWArgs(kwArgs, [...KWARGS, 'msg']);
   }
 
   '|replace|'(args: Args['|replace|']) {
-    return args.length === 4 &&
-      verifyPokemonIdent(args[1]) &&
-      verifyPokemonDetails(args[2]) &&
-      verifyPokemonHPStatus(args[3]);
+    return args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonDetails(args[2]);
   }
 
   '|swap|'(args: Args['|swap|'], kwArgs: KWArgs['|swap|']) {
@@ -482,12 +488,12 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|cant|'(args: Args['|cant|'], kwArgs: KWArgs['|cant|']) {
-    return args.length === 4 &&
+    return (args.length === 3 || args.length === 4) &&
       verifyPokemonIdent(args[1]) &&
       (REASONS.includes(args[2] as Protocol.Reason) ||
         verifyEffectName(args[2] as Protocol.EffectName) ||
         verifyName(args[2])) &&
-      (verifyEffectName(args[3] as Protocol.EffectName) || verifyName(args[3])) &&
+      (!args[3] || verifyEffectName(args[3] as Protocol.EffectName) || verifyName(args[3])) &&
       verifyKWArgs(kwArgs, KWARGS);
   }
 
@@ -495,29 +501,41 @@ class Handler implements Protocol.Handler<boolean> {
     return args.length === 2 && verifyPokemonIdent(args[1]);
   }
 
+  '|split|'(args: Args['|split|']) {
+    return args.length === 2 && verifyPlayer(args[1]);
+  }
+
   '|-formechange|'(args: Args['|-formechange|'], kwArgs: KWArgs['|-formechange|']) {
-    return args.length === 4 &&
-      verifyPokemonIdent(args[1]) &&
+    if (!(verifyPokemonIdent(args[1]) &&
       verifyName(args[2]) &&
-      verifyPokemonHPStatus(args[3]) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'msg']);
+      verifyKWArgs(kwArgs, [...KWARGS, 'msg']))) {
+      return false;
+    }
+    return args.length === 3 || (args.length === 4 && args[3] === '');
   }
 
   '|-fail|'(args: Args['|-fail|'], kwArgs: KWArgs['|-fail|']) {
-    if (!verifyKWArgs(kwArgs, [...KWARGS, 'forme', 'heavy', 'msg', 'weak', 'fail'])) {
+    if (!verifyKWArgs(kwArgs, [...KWARGS, 'forme', 'heavy', 'msg', 'weak', 'fail', 'block'])) {
       return false;
     }
     if (args.length === 2) return verifyPokemonIdent(args[1]);
-    if (args.length === 3) return verifyPokemonIdent(args[1]) && verifyName(args[2]);
+    if (args.length === 3) {
+      return verifyPokemonIdent(args[1]) &&
+        (verifyStatusName(args[2] as StatusName) ||
+        verifyEffectName(args[2] as Protocol.EffectName) ||
+        verifyName(args[2]));
+    }
     return args.length === 4 &&
       verifyPokemonIdent(args[1]) &&
       args[2] === 'unboost' &&
-      verifyName(args[3]);
+      (verifyBoostName(args[3] as BoostName) || verifyName(args[3]));
   }
 
   '|-block|'(args: Args['|-block|'], kwArgs: KWArgs['|-block|']) {
     if (!verifyKWArgs(kwArgs, KWARGS)) return false;
-    if (args.length === 3) return verifyPokemonIdent(args[1]) && verifyName(args[2]);
+    if (!(verifyPokemonIdent(args[1]) && verifyName(args[2]))) return false;
+    if (args.length === 3) return true;
+    if (args.length === 4) return args[3] === undefined || verifyName(args[3]);
     return args.length === 5 &&
       verifyPokemonIdent(args[1]) &&
       verifyEffectName(args[2]) &&
@@ -551,7 +569,7 @@ class Handler implements Protocol.Handler<boolean> {
 
   '|-sethp|'(args: Args['|-sethp|'], kwArgs: KWArgs['|-sethp|']) {
     if (!verifyKWArgs(kwArgs, KWARGS)) return false;
-    if (args.length === 3) return verifyPokemonIdent(args[1]) && verifyNum(args[2]);
+    if (args.length === 3) return verifyPokemonIdent(args[1]) && verifyPokemonHPStatus(args[2]);
     return args.length === 5 &&
       verifyPokemonIdent(args[1]) &&
       verifyNum(args[2]) &&
@@ -602,11 +620,9 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|-swapboost|'(args: Args['|-swapboost|'], kwArgs: KWArgs['|-swapboost|']) {
-    return args.length === 4 &&
-      verifyPokemonIdent(args[1]) &&
-      verifyPokemonIdent(args[2]) &&
-      verifyBoostNames(args[3]) &&
-      verifyKWArgs(kwArgs, KWARGS);
+    if (!verifyKWArgs(kwArgs, KWARGS)) return false;
+    if (!(verifyPokemonIdent(args[1]) && verifyPokemonIdent(args[2]))) return false;
+    return args.length === 3 || (args.length === 4 && verifyBoostNames(args[3]));
   }
 
   '|-invertboost|'(args: Args['|-invertboost|'], kwArgs: KWArgs['|-invertboost|']) {
@@ -668,13 +684,16 @@ class Handler implements Protocol.Handler<boolean> {
     return args.length === 2 && verifyName(args[1]) && verifyKWArgs(kwArgs, KWARGS);
   }
 
-  '|-sidestart|'(args: Args['|-sidestart|']) {
-    return args.length === 3 && verifyPlayer(args[1]) && verifyName(args[2]);
+  '|-sidestart|'(args: Args['|-sidestart|'], kwArgs: KWArgs['|-sidestart|']) {
+    return args.length === 3 &&
+      verifySide(args[1]) &&
+      verifyName(args[2]) &&
+      verifyKWArgs(kwArgs, ['silent']);
   }
 
   '|-sideend|'(args: Args['|-sideend|'], kwArgs: KWArgs['|-sideend|']) {
     return args.length === 3 &&
-      verifyPlayer(args[1]) &&
+      verifySide(args[1]) &&
       verifyName(args[2]) &&
       verifyKWArgs(kwArgs, KWARGS);
   }
@@ -683,14 +702,15 @@ class Handler implements Protocol.Handler<boolean> {
     const keys: Protocol.BattleArgsWithKWArgType[] =
       [...KWARGS, 'already', 'damage', 'block', 'fatigue', 'upkeep', 'zeffect'];
     if (!verifyKWArgs(kwArgs, keys)) return false;
-    if (!(verifyPokemonIdent(args[1]) && verifyEffectName(args[2]))) return false;
+    if (!verifyPokemonIdent(args[1])) return false;
+    if (!(verifyEffectName(args[2] as Protocol.EffectName) || verifyName(args[2]))) return false;
     return args.length === 3 || (args.length === 4 && verifyName(args[3]));
   }
 
   '|-end|'(args: Args['|-end|'], kwArgs: KWArgs['|-end|']) {
     return args.length === 3 &&
       verifyPokemonIdent(args[1]) &&
-      verifyEffectName(args[2]) &&
+      (verifyEffectName(args[2] as Protocol.EffectName) || verifyName(args[2])) &&
       verifyKWArgs(kwArgs, [...KWARGS, 'partiallytrapped', 'interrupt']);
   }
 
@@ -707,9 +727,8 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|-immune|'(args: Args['|-immune|'], kwArgs: KWArgs['|-immune|']) {
-    return args.length === 2 &&
-      verifyPokemonIdent(args[1]) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'ohko']);
+    if (!(verifyPokemonIdent(args[1]) && verifyKWArgs(kwArgs, [...KWARGS, 'ohko']))) return false;
+    return args.length === 2 || (args.length === 3 && args[2] === 'confusion');
   }
 
   '|-item|'(args: Args['|-item|'], kwArgs: KWArgs['|-item|']) {
@@ -730,14 +749,18 @@ class Handler implements Protocol.Handler<boolean> {
     if (!verifyKWArgs(kwArgs, [...KWARGS, 'move', 'weaken', 'fail'])) return false;
     if (!(verifyPokemonIdent(args[1]) && verifyName(args[2]))) return false;
     if (args.length === 3) return true;
-    if (args.length === 4) return args[3] === 'boost' || verifyPokemonIdent(args[3]);
+    if (args.length === 4) {
+      return args[3] === 'boost' ||
+        verifySide(args[3] as Protocol.Side) ||
+        verifyPokemonIdent(args[3] as Protocol.PokemonIdent);
+    }
     return args.length === 5 && verifyName(args[3]) && verifyPokemonIdent(args[4]);
   }
 
   '|-endability|'(args: Args['|-endability|'], kwArgs: KWArgs['|-endability|']) {
     if (!verifyKWArgs(kwArgs, KWARGS)) return false;
     if (!verifyPokemonIdent(args[1])) return false;
-    return args.length === 2 || (args.length === 3 && verifyName(args[2]));
+    return args.length === 2 || (args.length === 3 && (args[2] === 'none' || verifyName(args[2])));
   }
 
   '|-transform|'(args: Args['|-transform|'], kwArgs: KWArgs['|-transform|']) {
@@ -751,7 +774,7 @@ class Handler implements Protocol.Handler<boolean> {
     return args.length === 4 &&
       verifyPokemonIdent(args[1]) &&
       verifyName(args[2]) &&
-      verifyName(args[3]);
+      (args[3] === '' || verifyName(args[3]));
   }
 
   '|-primal|'(args: Args['|-primal|']) {
@@ -779,18 +802,19 @@ class Handler implements Protocol.Handler<boolean> {
       'damage', 'item', 'move', 'number', 'consumed', 'name',
     ];
     if (!verifyKWArgs(kwArgs, keys)) return false;
-    if (!verifyPokemonIdent(args[1])) return false;
+    if (!(args[1] === '' || verifyPokemonIdent(args[1]))) return false;
     if (!(verifyEffectName(args[2] as Protocol.EffectName) || verifyName(args[2]))) return false;
-    if (!(args[3] === undefined ||
-      verifyPokemonIdent(args[3] as Protocol.PokemonIdent) ||
-      verifyNum(args[3] as Protocol.Num) ||
-      verifyName(args[3]))) {
-      return false;
+
+    if (args.length === 3) return true;
+    if (args.length === 4) {
+      return args[3] === '' ||
+        verifyName(args[3]) ||
+        verifyNum(args[3] as Protocol.Num) ||
+        verifyPokemonIdent(args[3] as PokemonIdent);
     }
-    return args.length === 4 || (args.length === 5 &&
-      (args[4] === undefined ||
-      verifyNum(args[4] as Protocol.Num) ||
-      verifyName(args[4])));
+    return args.length === 5 &&
+      (args[3] === '' || verifyName(args[3])) &&
+      (args[4] === '' || verifyName(args[4]));
   }
 
   '|-fieldactivate|'(args: Args['|-fieldactivate|'], kwArgs: KWArgs['|-fieldactivate|']) {
@@ -820,10 +844,8 @@ class Handler implements Protocol.Handler<boolean> {
   }
 
   '|-prepare|'(args: Args['|-prepare|']) {
-    return args.length === 4 &&
-      verifyPokemonIdent(args[1]) &&
-      verifyName(args[2]) &&
-      verifyPokemonIdent(args[3]);
+    if (!(verifyPokemonIdent(args[1]) && verifyName(args[2]))) return false;
+    return args.length === 3 || (args.length === 4 && verifyPokemonIdent(args[3]));
   }
 
   '|-mustrecharge|'(args: Args['|-mustrecharge|']) {
@@ -853,7 +875,7 @@ class Handler implements Protocol.Handler<boolean> {
       verifyPokemonIdent(args[1]) &&
       verifyName(args[2]) &&
       verifyPokemonIdent(args[3]) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'spread']);
+      verifyKWArgs(kwArgs, [...KWARGS, 'spread', 'miss']);
   }
 }
 
@@ -875,7 +897,7 @@ export const Verifier = new class {
   verifyLine(line: string) {
     const parsed = Protocol.parseBattleLine(line);
     const {args, kwArgs} = parsed;
-    return !this.dispatch(args, kwArgs) ? undefined : parsed;
+    return this.dispatch(args, kwArgs) ? undefined : parsed;
   }
 
   dispatch(args: Protocol.ArgType, kwArgs: Protocol.BattleArgsKWArgType) {
@@ -883,6 +905,6 @@ export const Verifier = new class {
     if (!key || !this.handler[key]) return false;
     if (Object.keys(kwArgs).length && !(key in Protocol.ARGS_WITH_KWARGS)) return false;
     if (!((this.handler as any)[key](args, kwArgs))) return false;
-    return false;
+    return true;
   }
 };

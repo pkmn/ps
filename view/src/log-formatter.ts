@@ -135,7 +135,7 @@ export class LogFormatter {
     return `???pokemon:${pokemon}???`;
   }
 
-  pokemon(pokemon: PokemonIdent) {
+  pokemon(pokemon: PokemonIdent | '') {
     if (!pokemon) return '';
     let side;
     switch (pokemon.slice(0, 2)) {
@@ -212,13 +212,13 @@ export class LogFormatter {
     return `${Text._[type]}\n`;
   }
 
-  maybeAbility(effect: string | undefined, holder: PokemonIdent) {
+  maybeAbility(effect: string | undefined, holder: PokemonIdent | '') {
     if (!effect) return '';
     if (!effect.startsWith('ability:')) return '';
     return this.ability(effect.slice(8).trim(), holder);
   }
 
-  ability(name: string | undefined, holder: PokemonIdent) {
+  ability(name: string | undefined, holder: PokemonIdent | '') {
     if (!name) return '';
     return (Text._.abilityActivation
       .replace('[POKEMON]', this.pokemon(holder))
@@ -513,7 +513,7 @@ class Handler implements Protocol.Handler<string> {
     const line1 = this.parser.maybeAbility(effect, kwArgs.of || pokemon);
     return (line1 + template
       .replace('[POKEMON]', this.parser.pokemon(pokemon))
-      .replace('[MOVE]', move));
+      .replace('[MOVE]', move!));
   }
 
   '|message|'(args: Args['|message|']) {
@@ -645,7 +645,7 @@ class Handler implements Protocol.Handler<string> {
   '|-item|'(args: Args['|-item|'], kwArgs: KWArgs['|-item|']) {
     const [, pokemon, item] = args;
     const id = LogFormatter.effectId(kwArgs.from);
-    let target = '' as PokemonIdent;
+    let target = '' as PokemonIdent | '';
     let kwArgsOf = kwArgs.of;
     if (['magician', 'pickpocket'].includes(id)) {
       [target, kwArgsOf] = [kwArgs.of!, undefined];
@@ -821,7 +821,7 @@ class Handler implements Protocol.Handler<string> {
 
   '|-weather|'(args: Args['|-weather|'], kwArgs: KWArgs['|-weather|']) {
     const [, weather] = args;
-    let from: EffectName | ID | undefined = kwArgs.from;
+    let from: EffectName | MoveName | ID | undefined = kwArgs.from;
     if (!weather || weather === 'none') {
       from = this.tracker.currentWeather();
       const template = this.parser.template('end', from, 'NODEFAULT');
@@ -960,7 +960,7 @@ class Handler implements Protocol.Handler<string> {
     const template = this.parser.template('prepare', effect);
     return (template
       .replace('[POKEMON]', this.parser.pokemon(pokemon))
-      .replace('[TARGET]', this.parser.pokemon(target)));
+      .replace('[TARGET]', this.parser.pokemon(target || '')));
   }
 
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {

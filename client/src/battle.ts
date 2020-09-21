@@ -252,7 +252,7 @@ export class Battle {
     } as any;
   }
 
-  getPokemon(pokemonid?: PokemonIdent | SideID) {
+  getPokemon(pokemonid?: '' | 'null' | PokemonIdent | SideID) {
     if (!pokemonid || pokemonid === '??' || pokemonid === 'null' || pokemonid === 'false') {
       return null;
     }

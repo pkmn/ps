@@ -10,7 +10,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/protocol": "^0.0.1",
+    "@pkmn/protocol": "^0.1.0",
     "@pkmn/dex-types": "^0.2.3"
   },
   "devDependencies": {

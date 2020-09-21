@@ -131,7 +131,7 @@ export class Handler implements Protocol.Handler {
   switch(args: Args['|switch|' | '|drag|' | '|replace|']) {
     const poke = this.battle.getSwitchedPokemon(args[1], args[2])!;
     const slot = poke.slot;
-    poke.healthParse(args[3]);
+    if (args[3]) poke.healthParse(args[3]);
     poke.removeVolatile('itemremoved' as ID);
     if (args[0] === 'switch') {
       if (poke.side.active[slot]) {

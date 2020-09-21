@@ -382,7 +382,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.moveTrack.push([moveName, pp]);
   }
 
-  useMove(move: Move, target: Pokemon | null, from?: EffectName) {
+  useMove(move: Move, target: Pokemon | null, from?: EffectName | MoveName) {
     const dex = this.side.battle.dex;
     const fromeffect = dex.getEffect(from);
     this.activateAbility(fromeffect);

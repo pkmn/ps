@@ -101,6 +101,7 @@ export namespace Protocol {
    * avatars).
    */
   export type AvatarIdent = string & As<'AvatarIdent'>;
+  export type Side = string & As<'Side'>;
 
   /**
    * The name of an 'effect' (move, ability, item, status, etc).
@@ -787,7 +788,8 @@ export namespace Protocol {
      *     displayed in rated battles and when the player is first introduced otherwise it's blank.
      */
     '|player|':
-    readonly ['player', Player, Username, AvatarIdent, Num?] |readonly ['player', Player];
+    | readonly ['player', Player]
+    | readonly ['player', Player, Username, AvatarIdent | '', Num | ''];
     /**
      * `|teamsize|PLAYER|NUMBER`
      *
@@ -943,8 +945,8 @@ export namespace Protocol {
      * fainted) Pokémon on that side.
      */
     '|move|':
-    | readonly ['move', PokemonIdent, MoveName, PokemonIdent]
-    | readonly ['move', PokemonIdent, MoveName];
+    | readonly ['move', PokemonIdent, MoveName]
+    | readonly ['move', PokemonIdent, MoveName | 'recharge', PokemonIdent | 'null' | ''];
     /**
      * `|switch|POKEMON|DETAILS|HP STATUS`
      *
@@ -970,7 +972,7 @@ export namespace Protocol {
      */
     '|drag|': readonly ['drag', PokemonIdent, PokemonDetails, PokemonHPStatus];
     /**
-     * `|detailschange|POKEMON|DETAILS|HP STATUS`
+     * `|detailschange|POKEMON|DETAILS`
      *
      * The specified Pokémon has changed formes (via Mega Evolution, ability, etc.) to `DETAILS`. If
      * the forme change is permanent (Mega Evolution or a Shaymin-Sky that is frozen), then
@@ -978,9 +980,9 @@ export namespace Protocol {
      *
      * Syntax is the same as `|switch|`.
      */
-    '|detailschange|': readonly ['detailschange', PokemonIdent, PokemonDetails, PokemonHPStatus];
+    '|detailschange|': readonly ['detailschange', PokemonIdent, PokemonDetails];
     /**
-     * `|replace|POKEMON|DETAILS|HP STATUS`
+     * `|replace|POKEMON|DETAILS`
      *
      * Illusion has ended for the specified Pokémon. Syntax is the same as `|switch|`, but remember
      * that everything you thought you knew about the previous Pokémon is now wrong.
@@ -988,7 +990,7 @@ export namespace Protocol {
      * `POKEMON` will be the NEW Pokémon ID - i.e. it will have the nickname of the Zoroark (or
      * other Illusion user).
      */
-    '|replace|': readonly ['replace', PokemonIdent, PokemonDetails, PokemonHPStatus];
+    '|replace|': readonly ['replace', PokemonIdent, PokemonDetails];
     /**
      * `|swap|POKEMON|POSITION`
      *
@@ -1002,11 +1004,10 @@ export namespace Protocol {
      * The Pokémon `POKEMON` could not perform a move because of the indicated `REASON` (such as
      * paralysis, Disable, etc). Sometimes, the move it was trying to use is given.
      */
-    '|cant|': readonly [
-      'cant',
-      PokemonIdent,
-      Reason | AbilityName | EffectName | MoveName,
-      EffectName | MoveName
+    '|cant|':
+    | readonly ['cant', PokemonIdent, Reason | AbilityName | EffectName | MoveName]
+    | readonly [
+      'cant', PokemonIdent, Reason | AbilityName | EffectName | MoveName, EffectName | MoveName,
     ];
     /**
      * `|faint|POKEMON`
@@ -1015,6 +1016,8 @@ export namespace Protocol {
      */
     '|faint|': readonly ['faint', PokemonIdent];
     '|message|': readonly ['message', Message];
+    // NOTE: |split| occurring in the protocol stream is almost certainly a simulator bug...
+    '|split|': readonly ['split', Player];
   }
 
   export type BattleMajorArgName = keyof BattleMajorArgs;
@@ -1022,7 +1025,7 @@ export namespace Protocol {
 
   export interface BattleMinorArgs {
     /**
-     * `|-formechange|POKEMON|SPECIES|HP STATUS`
+     * `|-formechange|POKEMON|SPECIES`
      *
      * The specified Pokémon has changed formes (via Mega Evolution, ability, etc.) to `SPECIES`. If
      * the forme change is permanent (Mega Evolution or a Shaymin-Sky that is frozen), then
@@ -1030,7 +1033,9 @@ export namespace Protocol {
      *
      * Syntax is the same as `|switch|`, though with `SPECIES` in lieu of `DETAILS`.
      */
-    '|-formechange|': readonly ['-formechange', PokemonIdent, SpeciesName, PokemonHPStatus];
+    '|-formechange|':
+    | readonly ['-formechange', PokemonIdent, SpeciesName]
+    | readonly ['-formechange', PokemonIdent, SpeciesName, ''];
     /**
      * `|-fail|POKEMON|ACTION`
      *
@@ -1040,8 +1045,8 @@ export namespace Protocol {
      */
     '|-fail|':
     | readonly ['-fail', PokemonIdent]
-    | readonly ['-fail', PokemonIdent, MoveName]
-    | readonly ['-fail', PokemonIdent, 'unboost', StatDisplayName];
+    | readonly ['-fail', PokemonIdent, EffectName | MoveName | StatusName]
+    | readonly ['-fail', PokemonIdent, 'unboost', StatDisplayName | BoostName];
     /**
      * `|-block|POKEMON|EFFECT|MOVE|ATTACKER`
      *
@@ -1051,6 +1056,7 @@ export namespace Protocol {
      */
     '|-block|':
     | readonly ['-block', PokemonIdent, EffectName]
+    | readonly ['-block', PokemonIdent, EffectName, MoveName?]
     | readonly ['-block', PokemonIdent, EffectName, MoveName, PokemonIdent?];
     /**
      * `|-notarget|POKEMON`
@@ -1088,7 +1094,7 @@ export namespace Protocol {
      * The specified Pokémon `POKEMON` now has `HP` hit points.
      */
     '|-sethp|':
-    | readonly ['-sethp', PokemonIdent, Num]
+    | readonly ['-sethp', PokemonIdent, PokemonHPStatus]
     | readonly ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
     /**
      * `|-status|POKEMON|STATUS`
@@ -1134,7 +1140,9 @@ export namespace Protocol {
      * Swaps the boosts from `BOOSTS` between the `SOURCE` Pokémon and `TARGET` Pokémon. (For
      * example: Guard Swap, Heart Swap).
      */
-    '|-swapboost|': readonly ['-swapboost', PokemonIdent, PokemonIdent, BoostNames];
+    '|-swapboost|':
+    | readonly ['-swapboost', PokemonIdent, PokemonIdent]
+    | readonly ['-swapboost', PokemonIdent, PokemonIdent, BoostNames];
     /**
      * `|-invertboost|POKEMON`
      *
@@ -1204,13 +1212,13 @@ export namespace Protocol {
      * A side condition `CONDITION` has started on `SIDE`. Side conditions are all effects that
      * affect one side of the field. (For example: Tailwind, Stealth Rock, Reflect).
      */
-    '|-sidestart|': readonly ['-sidestart', Player, SideCondition];
+    '|-sidestart|': readonly ['-sidestart', Side, SideCondition];
     /**
      * `|-sideend|SIDE|CONDITION`
      *
      * Indicates that the side condition `CONDITION` ended for the given `SIDE`.
      */
-    '|-sideend|': readonly ['-sideend', Player, SideCondition];
+    '|-sideend|': readonly ['-sideend', Side, SideCondition];
     /**
      * `|-start|POKEMON|EFFECT`
      *
@@ -1219,7 +1227,7 @@ export namespace Protocol {
      * on the `POKEMON` Pokémon by `EFFECT`. (For example: confusion, Taunt, Substitute).
      */
     '|-start|':
-    | readonly ['-start', PokemonIdent, EffectName]
+    | readonly ['-start', PokemonIdent, EffectName | MoveName]
     | readonly ['-start', PokemonIdent, EffectName, Types]
     | readonly ['-start', PokemonIdent, EffectName, MoveName];
     /**
@@ -1227,7 +1235,7 @@ export namespace Protocol {
      *
      * The volatile status from `EFFECT` inflicted on the `POKEMON` Pokémon has ended.
      */
-    '|-end|': readonly ['-end', PokemonIdent, EffectName];
+    '|-end|': readonly ['-end', PokemonIdent, EffectName | MoveName];
     /**
      * `|-crit|POKEMON`
      *
@@ -1251,7 +1259,9 @@ export namespace Protocol {
      *
      * The `POKEMON` was immune to a move.
      */
-    '|-immune|': readonly ['-immune', PokemonIdent];
+    '|-immune|':
+    | readonly ['-immune', PokemonIdent]
+    | readonly ['-immune', PokemonIdent, 'confusion'];
     /**
      * `|-item|POKEMON|ITEM|[from]EFFECT`
      *
@@ -1300,7 +1310,7 @@ export namespace Protocol {
      */
     '|-ability|':
     | readonly ['-ability', PokemonIdent, AbilityName]
-    | readonly ['-ability', PokemonIdent, AbilityName, PokemonIdent | 'boost']
+    | readonly ['-ability', PokemonIdent, AbilityName, Side | PokemonIdent | 'boost']
     | readonly ['-ability', PokemonIdent, AbilityName, AbilityName, PokemonIdent];
     /**
      * `|-endability|POKEMON`
@@ -1309,7 +1319,7 @@ export namespace Protocol {
      */
     '|-endability|':
     | readonly ['-endability', PokemonIdent]
-    | readonly ['-endability', PokemonIdent, AbilityName];
+    | readonly ['-endability', PokemonIdent, AbilityName | 'none'];
     /**
      * `|-transform|POKEMON|TARGET`
      *
@@ -1322,7 +1332,7 @@ export namespace Protocol {
      *
      * The Pokémon `POKEMON` used `MEGASTONE` to Mega Evolve.
      */
-    '|-mega|': readonly ['-mega', PokemonIdent, SpeciesName, ItemName];
+    '|-mega|': readonly ['-mega', PokemonIdent, SpeciesName, ItemName | ''];
     /**
      * `|-primal|POKEMON`
      *
@@ -1358,13 +1368,15 @@ export namespace Protocol {
      * ate the Leppa Berry! POKEMON restored PP...!"), will send the "ate" message as `-eat`, and
      * the "restored" message as `-activate`.
      */
-    '|-activate|': readonly [
+    '|-activate|':
+    | readonly ['-activate', PokemonIdent | '', EffectName]
+    | readonly [
       '-activate',
       PokemonIdent,
-      AbilityName | EffectName,
-      (ItemName | MoveName | Num | PokemonIdent)?,
-      (AbilityName | Num)?
-    ] | readonly ['-activate', PokemonIdent, EffectName, PokemonIdent];
+      EffectName | MoveName | '',
+      ItemName | MoveName | AbilityName | Num | PokemonIdent | ''
+    ]
+    | readonly ['-activate', PokemonIdent, EffectName, AbilityName | '', AbilityName | ''];
     '|-fieldactivate|': readonly ['-fieldactivate', EffectName];
     /**
      * `|-hint|MESSAGE`
@@ -1408,7 +1420,9 @@ export namespace Protocol {
      * The `ATTACKER` Pokémon is preparing to use a charge `MOVE` on the `DEFENDER` (For example:
      * Dig, Fly).
      */
-    '|-prepare|': readonly ['-prepare', PokemonIdent, MoveName, PokemonIdent];
+    '|-prepare|':
+    | readonly ['-prepare', PokemonIdent, MoveName]
+    | readonly ['-prepare', PokemonIdent, MoveName, PokemonIdent];
     /**
      * `|-mustrecharge|POKEMON`
      *
@@ -1472,7 +1486,7 @@ export namespace Protocol {
     'fatigue': true;
     'forme': true;
     /** `[from] EFFECT` */
-    'from': EffectName;
+    'from': EffectName | MoveName;
     'heavy': true;
     'item': ItemName;
     /**
@@ -1481,13 +1495,13 @@ export namespace Protocol {
      * The move missed.
      */
     'miss': true;
-    'move': MoveName;
+    'move': MoveName | ID;
     'msg': true;
-    'name': PokemonIdent;
+    'name': Nickname;
     'notarget': true;
     'number': Num;
     /** `[of] SOURCE` */
-    'of': PokemonIdent;
+    'of': PokemonIdent | '';
     'ohko': true;
     /**
      * `[silent]`
@@ -1525,6 +1539,7 @@ export namespace Protocol {
     '|detailschange|': GeneralKWArgNames | 'msg';
     '|move|': GeneralKWArgNames | 'anim' | 'miss' | 'notarget' | 'prepare' | 'spread' | 'zeffect';
     '|swap|': GeneralKWArgNames;
+    '|switch|': GeneralKWArgNames;
     '|-activate|': GeneralKWArgNames
     | 'ability' | 'ability2' | 'block' | 'broken' | 'damage'
     | 'item' | 'move' | 'number'| 'consumed' | 'name';
@@ -1542,7 +1557,7 @@ export namespace Protocol {
     '|-end|': GeneralKWArgNames | 'partiallytrapped' | 'interrupt';
     '|-endability|': GeneralKWArgNames;
     '|-enditem|': GeneralKWArgNames | 'eat' | 'move' | 'weaken';
-    '|-fail|': GeneralKWArgNames | 'forme' | 'heavy' | 'msg' | 'weak' | 'fail';
+    '|-fail|': GeneralKWArgNames | 'forme' | 'heavy' | 'msg' | 'weak' | 'fail' | 'block';
     '|-fieldactivate|': GeneralKWArgNames;
     '|-fieldstart|': GeneralKWArgNames;
     '|-fieldend|': GeneralKWArgNames;
@@ -1554,6 +1569,7 @@ export namespace Protocol {
     '|-miss|': GeneralKWArgNames;
     '|-setboost|': GeneralKWArgNames;
     '|-sethp|': GeneralKWArgNames;
+    '|-sidestart|': 'silent';
     '|-sideend|': GeneralKWArgNames;
     '|-singlemove|': GeneralKWArgNames | 'zeffect';
     '|-singleturn|': GeneralKWArgNames | 'zeffect';
@@ -1564,7 +1580,7 @@ export namespace Protocol {
     '|-transform|': GeneralKWArgNames | 'msg';
     '|-unboost|': GeneralKWArgNames | 'multiple' | 'zeffect';
     '|-weather|': GeneralKWArgNames | 'upkeep';
-    '|-anim|': 'spread';
+    '|-anim|': 'spread' | 'miss';
   }
 
   export type BattleArgsWithKWArgName = keyof BattleArgsWithKWArgs;
@@ -1572,7 +1588,7 @@ export namespace Protocol {
 
   export type BattleArgKWArgs<T extends BattleArgName> =
     Readonly< T extends BattleArgsWithKWArgName
-      ? { [K in BattleArgsWithKWArgs[T]]?: BattleArgsKWArgsTypes[K] }
+      ? { [K in BattleArgsWithKWArgs[T]]?: BattleArgsKWArgsTypes[K] | undefined }
       : {}>; // eslint-disable-line @typescript-eslint/ban-types
 
   export type BattleArgsKWArgs = { [T in BattleArgName]: BattleArgKWArgs<T> };
@@ -1772,7 +1788,7 @@ export const Protocol = new class {
     '|tournament|start|': 1, '|tournament|disqualify|': 1, '|tournament|battlestart|': 1,
     '|tournament|battleend|': 1, '|tournament|end|': 1, '|tournament|scouting|': 1,
     '|tournament|autostart|': 1, '|tournament|autodq|': 1, '|player|': 1, '|teamsize|': 1,
-    '|gametype|': 1, '|gen|': 1, '|tier|': 1, '|rated|': 1, '|seed|': 1, '|rule|': 1,
+    '|gametype|': 1, '|gen|': 1, '|tier|': 1, '|rated|': 1, '|seed|': 1, '|rule|': 1, '|split|': 1,
     '|teampreview|': 1, '|clearpoke|': 1, '|poke|': 1, '|start|': 1, '|done|': 1, '|request|': 1,
     '|inactive|': 1, '|inactiveoff|': 1, '|upkeep|': 1, '|turn|': 1, '|win|': 1, '|tie|': 1,
     '|move|': 1, '|switch|': 1, '|drag|': 1, '|detailschange|': 1, '|replace|': 1, '|swap|': 1,
@@ -1794,11 +1810,11 @@ export const Protocol = new class {
     '|-block|': 1, '|-damage|': 1, '|-heal|': 1, '|-sethp|': 1, '|-status|': 1, '|swap|': 1,
     '|-curestatus|': 1, '|-cureteam|': 1, '|-boost|': 1, '|-unboost|': 1, '|-setboost|': 1,
     '|-swapboost|': 1, '|-invertboost|': 1, '|-clearnegativeboost|': 1, '|-weather|': 1,
-    '|-fieldactivate|': 1, '|-fieldstart|': 1, '|-fieldend|': 1, '|-sideend|': 1, '|-start|': 1,
-    '|-end|': 1, '|-immune|': 1, '|-item|': 1, '|-enditem|': 1, '|-ability|': 1,
-    '|-endability|': 1, '|-transform|': 1, '|-activate|': 1, '|-singleturn|': 1, '|-miss|': 1,
-    '|-clearallboost|': 1, '|-anim|': 1, '|-copyboost|': 1, '|-clearboost|': 1,
-    '|-clearpositiveboost|': 1, '|-singlemove|': 1,
+    '|-fieldactivate|': 1, '|-fieldstart|': 1, '|-fieldend|': 1, '|-sidestart|': 1,
+    '|-sideend|': 1, '|-start|': 1, '|-end|': 1, '|-immune|': 1, '|-item|': 1, '|-enditem|': 1,
+    '|-ability|': 1, '|-endability|': 1, '|-transform|': 1, '|-activate|': 1, '|-singleturn|': 1,
+    '|-miss|': 1, '|-clearallboost|': 1, '|-anim|': 1, '|-copyboost|': 1, '|-clearboost|': 1,
+    '|-clearpositiveboost|': 1, '|-singlemove|': 1, '|switch|': 1,
   };
 
   *parse(data: string) {
@@ -2110,49 +2126,55 @@ const STARTABLE = new Set([
 ]);
 const NUMBERABLE = new Set(['spite', 'grudge', 'forewarn', 'sketch', 'leppaberry', 'mysteryberry']);
 
-function upgradeBattleArgs(
-  {args, kwArgs}: { args: Protocol.BattleArgType; kwArgs: { [kw: string]: string | true } }
-): { args: Protocol.BattleArgType; kwArgs: Protocol.BattleArgsKWArgType } {
+function upgradeBattleArgs({args, kwArgs}: {
+  args: Protocol.BattleArgType;
+  kwArgs: { [kw: string]: string | true | undefined };
+}): { args: Protocol.BattleArgType; kwArgs: Protocol.BattleArgsKWArgType } {
   switch (args[0]) {
   case '-activate': {
     if (kwArgs.item || kwArgs.move || kwArgs.number || kwArgs.ability) return {args, kwArgs};
     const [, pokemon, e, arg3, arg4] = args;
     const effect = e as Protocol.EffectName;
 
-    const target = kwArgs.of as Protocol.PokemonIdent | undefined;
+    const target = kwArgs.of as Protocol.PokemonIdent | '';
     const id = Protocol.parseEffect(effect, toID).name;
 
-    if (kwArgs.block) return {args: ['-fail', pokemon], kwArgs};
+    if (kwArgs.block) return {args: ['-fail', pokemon as Protocol.PokemonIdent], kwArgs};
     if (id === 'sturdy') {
       return {args: ['-activate', pokemon, 'ability: Sturdy' as Protocol.EffectName], kwArgs};
     }
     if (id === 'wonderguard') {
       return {
-        args: ['-immune', pokemon],
+        args: ['-immune', pokemon as Protocol.PokemonIdent],
         kwArgs: {from: 'ability: Wonder Guard'} as Protocol.BattleArgsKWArgType,
       };
     }
     if (id === 'beatup' && kwArgs.of) {
-      return {args, kwArgs: {name: kwArgs.of as Protocol.PokemonIdent}};
+      return {args, kwArgs: {name: kwArgs.of as Protocol.Nickname}};
     }
     if (BLOCKABLE.has(id)) {
       if (target) {
         kwArgs.of = pokemon;
         return {args: ['-block', target, effect, arg3 as Protocol.MoveName], kwArgs};
       }
-      return {args: ['-block', pokemon, effect, arg3 as Protocol.MoveName], kwArgs};
+      return {
+        args: ['-block', pokemon as Protocol.PokemonIdent, effect, arg3 as Protocol.MoveName],
+        kwArgs,
+      };
     }
 
     if (id === 'charge') {
       return {
-        args: ['-singlemove', pokemon, effect as unknown as Protocol.MoveName],
-        kwArgs: {of: target},
+        args: [
+          '-singlemove', pokemon as Protocol.PokemonIdent, effect as unknown as Protocol.MoveName,
+        ],
+        kwArgs: {of: target || undefined},
       };
     }
     if (STARTABLE.has(id)) {
       return {
-        args: ['-start', pokemon, effect],
-        kwArgs: {of: target as Protocol.PokemonIdent} as Protocol.BattleArgsKWArgType,
+        args: ['-start', pokemon as Protocol.PokemonIdent, effect],
+        kwArgs: {of: target as Protocol.PokemonIdent || ''} as Protocol.BattleArgsKWArgType,
       };
     }
     if (id === 'fairylock') return {args: ['-fieldactivate', effect], kwArgs: {}};
@@ -2163,23 +2185,35 @@ function upgradeBattleArgs(
       kwArgs.number = arg3!;
     } else if (id === 'skillswap' || id === 'mummy') {
       kwArgs.ability = arg3!;
-      kwArgs.ability2 = arg4!;
+      kwArgs.ability2 = arg4;
     } else if (id === 'wanderingspirit') {
       // FIXME: workaround for an interaction between Wandering Spirit and Protective Pads
       if (arg3) {
         kwArgs.ability = arg3;
-        kwArgs.ability2 = arg4!;
+        kwArgs.ability2 = arg4;
       } else {
         return {
-          args: ['-ability', pokemon, 'Wandering Spirit' as Protocol.AbilityName],
+          args: [
+            '-ability',
+            pokemon as Protocol.PokemonIdent,
+            'Wandering Spirit' as Protocol.AbilityName,
+          ],
           kwArgs: {},
         };
       }
     } else if (NUMBERABLE.has(id)) {
       kwArgs.move = arg3!;
-      kwArgs.number = arg4!;
+      kwArgs.number = arg4;
     }
-    return {args: ['-activate', pokemon, effect, (target || '') as Protocol.PokemonIdent], kwArgs};
+    return {
+      args: [
+        '-activate',
+        pokemon as Protocol.PokemonIdent,
+        effect,
+        target as Protocol.PokemonIdent || '',
+      ],
+      kwArgs,
+    };
   }
   case '-start': {
     if (kwArgs.from === 'Protean' || kwArgs.from === 'Color Change') {
