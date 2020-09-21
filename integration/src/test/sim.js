@@ -126,12 +126,12 @@ class Runner {
     const formatid =
       format.slice(0, 4) + format.includes('doubles') ? 'doublescustomgame' : 'customgame';
     const spec = {formatid, seed: this.prng.seed};
-    const p1spec = {
-      name: 'Bot 1', ...this.p1options, team: ps.Dex.packTeam(ps.Dex.generateTeam(format)),
-    };
-    const p2spec = {
-      name: 'Bot 2', ...this.p2options, team: ps.Dex.packTeam(ps.Dex.generateTeam(format)),
-    };
+
+    const team1 = ps.Dex.packTeam(ps.Dex.generateTeam(format, {seed: this.newSeed()}));
+    const team2 = ps.Dex.packTeam(ps.Dex.generateTeam(format, {seed: this.newSeed()}));
+
+    const p1spec = {name: 'Bot 1', ...this.p1options, team: team1};
+    const p2spec = {name: 'Bot 2', ...this.p2options, team: team2};
 
     const p1options = {seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p1options};
     const p2options = {seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p2options};
