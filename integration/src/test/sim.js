@@ -11,17 +11,15 @@ const ps = {
 const pkmn = require('@pkmn/sim');
 
 const {Verifier} = require('@pkmn/protocol/verifier');
+const {TeamGenerators} = require('@pkmn/randoms');
+
+pkmn.Dex.setTeamGeneratorFactory(TeamGenerators);
 
 class MultiRandomRunner {
   static FORMATS = [
-    'gen8randombattle', 'gen8randomdoublesbattle', 'gen8battlefactory',
-    'gen7randombattle', 'gen7randomdoublesbattle', 'gen7battlefactory',
-    'gen6randombattle', 'gen6battlefactory',
-    'gen5randombattle',
-    'gen4randombattle',
-    'gen3randombattle',
-    'gen2randombattle',
-    'gen1randombattle',
+    'gen8randombattle', 'gen8randomdoublesbattle', 'gen8monotyperandombattle',
+    'gen7randombattle', 'gen7randomdoublesbattle', 'gen6randombattle', 'gen5randombattle',
+    'gen4randombattle', 'gen3randombattle', 'gen2randombattle', 'gen1randombattle',
   ];
 
   constructor(options) {
@@ -127,11 +125,20 @@ class Runner {
       format.slice(0, 4) + format.includes('doubles') ? 'doublescustomgame' : 'customgame';
     const spec = {formatid, seed: this.prng.seed};
 
-    const team1 = ps.Dex.packTeam(ps.Dex.generateTeam(format, {seed: this.newSeed()}));
-    const team2 = ps.Dex.packTeam(ps.Dex.generateTeam(format, {seed: this.newSeed()}));
+    const teamSeed1 = this.newSeed();
+    const teamSeed2 = this.newSeed();
 
-    const p1spec = {name: 'Bot 1', ...this.p1options, team: team1};
-    const p2spec = {name: 'Bot 2', ...this.p2options, team: team2};
+    const psTeam1 = ps.Dex.generateTeam(format, {seed: teamSeed1});
+    const psTeam2 = ps.Dex.generateTeam(format, {seed: teamSeed2});
+
+    const pkmnTeam1 = pkmn.Dex.generateTeam(format, {seed: teamSeed1});
+    const pkmnTeam2 = pkmn.Dex.generateTeam(format, {seed: teamSeed2});
+
+    assert.deepStrictEqual(pkmnTeam1, psTeam1);
+    assert.deepStrictEqual(pkmnTeam2, psTeam2);
+
+    const p1spec = {name: 'Bot 1', ...this.p1options, team: pkmn.Dex.packTeam(pkmnTeam1)};
+    const p2spec = {name: 'Bot 2', ...this.p2options, team: pkmn.Dex.packTeam(pkmnTeam2)};
 
     const p1options = {seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p1options};
     const p2options = {seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p2options};

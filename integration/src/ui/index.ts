@@ -1,18 +1,26 @@
-// TODO: include @pkmn/randoms and support multiple generations (and sprites)
-import {Dex, TeamValidator, RandomPlayerAI, BattleStreams} from '@pkmn/sim';
+import {Dex, TeamValidator, RandomPlayerAI, BattleStreams, PRNG} from '@pkmn/sim';
 import {Protocol, Handler, ArgName, ArgType, BattleArgsKWArgType} from '@pkmn/protocol';
-import {Teams, Data, PokemonSet} from '@pkmn/sets';
+import {Teams, Data, PokemonSet} from '@pkmn/sets'
 import {Battle, Side, Pokemon} from '@pkmn/client';
-import {Sprites, Icons} from '@pkmn/img';
+import {TeamGenerators} from '@pkmn/randoms';
+import {Sprites, Icons, GraphicsGen} from '@pkmn/img';
 import {LogFormatter} from '@pkmn/view';
+import {GenerationNum} from '@pkmn/types';
 
 // @ts-ignore
 import TEAM_A from './teams/a.txt';
 // @ts-ignore
 import TEAM_B from './teams/b.txt';
 
-const FORMAT = 'gen7anythinggoes';
-const dex = Dex.forFormat(FORMAT);
+const FIXED = window.location.href.includes('fixed');
+const FORMATS = [
+  'gen1randombattle', 'gen2randombattle', 'gen3randombattle', 'gen4randombattle',
+  'gen5randombattle', 'gen6randombattle', 'gen7randombattle', 'gen8randombattle',
+  'gen7randomdoublesbattle', 'gen8randomdoublesbattle', 'gen8monotyperandombattle',
+];
+const prng = new PRNG();
+const FORMAT = FIXED ? 'gen7anythinggoes' : prng.sample(FORMATS);
+const GEN = Dex.getFormat(FORMAT).gen as GenerationNum;
 const validator = new TeamValidator(FORMAT);
 
 const importTeam = (t: string, name: 'A' | 'B') => {
@@ -22,9 +30,25 @@ const importTeam = (t: string, name: 'A' | 'B') => {
   return team;
 };
 
+const SPRITES: {[gen in GenerationNum]: GraphicsGen[]} = {
+  1: ['gen1rg', 'gen1rb', 'gen1'],
+  2: ['gen2g', 'gen2s', 'gen2'],
+  3: ['gen3rs', 'gen3frlg', 'gen3', 'gen3-2'],
+  4: ['gen4dp', 'gen4dp-2', 'gen4'],
+  5: ['gen5', 'gen5ani'],
+  6: ['ani'],
+  7: ['ani'],
+  8: ['ani'],
+};
+
+const dex = Dex.forFormat(FORMAT);
+dex.setTeamGeneratorFactory(TeamGenerators);
+
 const spec = {formatid: FORMAT};
-const p1spec = {name: 'Bot A', team: dex.packTeam(importTeam(TEAM_A, 'A'))};
-const p2spec = {name: 'Bot B', team: dex.packTeam(importTeam(TEAM_B, 'B'))};
+const p1spec =
+  FIXED ? {name: 'Bot A', team: dex.packTeam(importTeam(TEAM_A, 'A'))} : {name: 'Bot A'};
+const p2spec =
+  FIXED ? {name: 'Bot B', team: dex.packTeam(importTeam(TEAM_B, 'B'))} : {name: 'Bot B'};
 
 const streams = BattleStreams.getPlayerStreams(new BattleStreams.BattleStream());
 
@@ -84,6 +108,7 @@ const displayTeam = ($td: HTMLTableCellElement, side: Side) => {
 const displayPokemon = ($td: HTMLTableCellElement, pokemon: Pokemon | null) => {
   if (pokemon) {
     const sprite = Sprites.getPokemon(pokemon.getSpeciesForme(), {
+      gen: prng.sample(SPRITES[GEN]),
       gender: pokemon.gender || undefined,
       shiny: pokemon.shiny,
     });

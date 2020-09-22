@@ -42,11 +42,10 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
   `Dex#mod` method. The `Dex#mod` method will `throw` if an unsupported mod is requested.  A
   `Dex#modid` method has also been added which returns the current mod applied to the `Dex`.
 - **random battles are not supported by the `@pkmn/sim` package**. All team generation logic and
-  data has been removed from the package and are instead to be provided eventually by a
-  [`@pkmn/randoms`](../randoms) package which will export a generator that can be configured using
-  the `Dex#setTeamGenerator` method. Unless a team generator has been set `Dex#getTeamGenerator` and
-  `Dex#generateTeam` will throw. *Currently these methods will all throw as `@pkmn/randoms` has yet
-  to be implemented.*
+  data has been removed from the package and are instead to be provided by the
+  [`@pkmn/randoms`](../randoms) package which exports a generator factory that can be configured
+  using the `Dex#setTeamGeneratorFactory` method. Unless a team generator factory has been set
+  `Dex#getTeamGenerator` and `Dex#generateTeam` will throw.
 - **all generations and all of their data are automatically loaded**. With Pokémon Showdown, data is
   loaded lazily, and often requires you run `includeX` methods to ensure you are getting consistent
   state. These functions still exist and can be called, but are now wholly unnecessary. Lazily
@@ -80,30 +79,16 @@ $ npm install @pkmn/sim
 ## Usage
 
 ```ts
-import {BattleStreams, RandomPlayerAI} from '@pkmn/sim';
+import {Dex, BattleStreams, RandomPlayerAI} from '@pkmn/sim';
+import {TeamGenerators} from '@pkmn/randoms';
+
+Dex.setTeamGeneratorFactory(TeamGenerators);
 
 const streams = BattleStreams.getPlayerStreams(new BattleStreams.BattleStream());
 const spec = {formatid: 'gen7customgame'};
-const p1spec = {
-  name: 'Bot 1',
-  team:
-    'Under The Sea|politoed|leftovers|H|whirlpool,perishsong,rest,protect|Calm|248,,,8,252,|F|,0,,,,|S||]' +
-    'Fade Away|swampertmega|swampertite||scald,earthquake,rest,sleeptalk|Sassy|248,,8,,252,|F||S||]' +
-    'Shallow Waters|greninjaash|choicespecs||surf,darkpulse,watershuriken,icebeam|Timid|,,4,252,,252|||||]' +
-    'Eternal Silence|skarmory|shedshell|1|roost,defog,spikes,counter|Impish|248,,252,,8,||,0,,,,|||]' +
-    'Toxic Heart|mukalola|figyberry|1|knockoff,pursuit,recycle,poisonfang|Careful|248,,32,,228,|||S||]' +
-    'Another Dream|clefable|leftovers|1|moonblast,softboiled,stealthrock,calmmind|Bold|252,,252,,4,|F|,0,,,,|S||',
-};
-const p2spec = {
-  name: 'Bot 2',
-  team:
-    'Alakazam-Mega||alakazite|magicguard|barrier,calmmind,recover,psychic|Timid|244,,240,,,24|M|,0,,,,|S||]' +
-    'Krookodile||choicescarf||knockoff,earthquake,pursuit,foulplay|Jolly|56,252,,,,200|||||]' +
-    'Skarmory||rockyhelmet|1|spikes,defog,counter,roost|Impish|248,,248,,,12||,0,,,,|||]' +
-    'Reuniclus||rockyhelmet|1|psychic,energyball,calmmind,recover|Bold|208,,252,,,48||,0,,,,|||]' +
-    'Toxapex||wateriumz|H|scald,toxic,toxicspikes,recover|Calm|248,,40,80,140,||,0,,,,|||]' +
-    'Chansey||eviolite||seismictoss,thunderwave,stealthrock,softboiled|Bold|248,,252,,8,|||||',
-};
+
+const p1spec = {name: 'Bot 1', team: Dex.packTeam(Dex.generateTeam('gen7randombattle'))};
+const p1spec = {name: 'Bot 2', team: Dex.packTeam(Dex.generateTeam('gen7randombattle'))};
 
 const p1 = new RandomPlayerAI(streams.p1);
 const p2 = new RandomPlayerAI(streams.p2);
@@ -129,7 +114,6 @@ the [`PROTOCOL.md`](https://github.com/smogon/pokemon-showdown/blob/master/PROTO
 files ([`FORMES.md`](https://github.com/smogon/pokemon-showdown/blob/master/data/FORMES.md) and the
 [long-open PR attempting to document the simulator's inner
 workings](https://github.com/smogon/pokemon-showdown/pull/5439) are also helpful).
-
 
 ### Browser
 

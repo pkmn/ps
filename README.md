@@ -4,8 +4,7 @@
 
 > [Pokémon Showdown](https://pokemonshowdown.com), [modularized into packages](https://pkmn.cc/modular-ps).
 
-This is the top level of [`@pkmn`](https://pkmn.cc/@pkmn/)'s Pokémon Showdown components. Italicized
-components have yet to be released.
+This is the top level of [`@pkmn`](https://pkmn.cc/@pkmn/)'s Pokémon Showdown components.
 
 - [`@pkmn/sim`](sim): an automatically generated extraction of just the simulator portion of
   [smogon/pokemon-showdown](https://github.com/smogon/pokemon-showdown)
@@ -25,10 +24,10 @@ components have yet to be released.
   [smogon/pokemon-showdown-client](https://github.com/smogon/pokemon-showdown-client)'s battle
   engine, built on top of [`@pkmn/protocol`](protocol)
 - [`@pkmn/view`](view): a library for building Pokémon Showdown client UIs
-- *[`@pkmn/img`](img)*: logic for displaying [Pokémon Showdown's sprite/icon
+- [`@pkmn/img`](img): logic for displaying [Pokémon Showdown's sprite/icon
   resources](https://github.com/smogon/sprites)
-- *[`@pkmn/login`](login)*: logic for authenticating with Pokémon Showdown
-- *[`@pkmn/randoms`](randoms)*: random team generation logic for Pokémon Showdown's Random Battle
+- [`@pkmn/login`](login): logic for authenticating with Pokémon Showdown
+- [`@pkmn/randoms`](randoms): random team generation logic for Pokémon Showdown's Random Battle
   formats, for use with [`@pkmn/sim`](sim)
 
 [TODO](TODO.md) is currently used to track pending work and an [FAQ](FAQ.md) exists to cover

@@ -141,6 +141,18 @@ type DeepPartial<T> = {
 };
 /* eslint-enable @typescript-eslint/array-type */
 
+interface TeamGenerator {
+	prng: PRNG;
+	getTeam(options?: PlayerOptions): PokemonSet[];
+	setSeed(prng?: PRNG | PRNGSeed): void;
+}
+
+interface TeamGeneratorFactory {
+	getTeamGenerator(format: Format | string, seed: PRNG | PRNGSeed | null): TeamGenerator;
+}
+
+var teamGeneratorFactory: TeamGeneratorFactory | undefined;
+
 export type ModData = DeepPartial<ModdedDex['data']>;
 
 export const toID = Data.toID;
@@ -1131,15 +1143,19 @@ export class ModdedDex {
 	}
 
 	generateTeam(format: Format | string, options: PlayerOptions | null = null): PokemonSet[] {
-		throw new Error('generateTeam maybe not be used unless a TeamGenerator has been set');
+		return this.getTeamGenerator(format, options?.seed).getTeam(options || undefined);
 	}
 
-	getTeamGenerator(format: Format | string, seed: PRNG | PRNGSeed | null = null): any {
-		throw new Error('getTeamGenerator maybe not be used unless a TeamGenerator has been set');
+	getTeamGenerator(format: Format | string, seed: PRNG | PRNGSeed | null = null): TeamGenerator {
+		if (!teamGeneratorFactory) {
+			throw new Error('getTeamGenerator maybe not be used unless a TeamGeneratorFactory has been set');
+		}
+		return teamGeneratorFactory.getTeamGenerator(format, seed);
 	}
 
-	setTeamGenerator(generator: any): any {
-		throw new Error('setTeamGenerator is not supported'); // TODO support team generators
+	setTeamGeneratorFactory(factory: TeamGeneratorFactory): this {
+		teamGeneratorFactory = factory;
+		return this;
 	}
 
 	packTeam(team: PokemonSet[] | null): string {
