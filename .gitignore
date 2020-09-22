@@ -7,6 +7,5 @@ Thumbs.db
 .tsbuildinfo
 .vscode
 *-debug.log
-randoms/
 .cache/
 dist/

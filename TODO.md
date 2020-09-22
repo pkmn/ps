@@ -66,12 +66,8 @@ version number in case set import changes.
 
 ## `@pkmn/randoms`
 
-- ~~add logic to `import` to extra all randoms battle *data* into `randoms/data` and logic into
-  `random/src` (using similar approaches to how `@pkmn/dex` and `@pkmn/sim` are handled,
-  respectively)~~ Use a similar approach to mods for modding the random data
-- encapsulate logic behind common `TeamGenerator` interface which can be wired into `@pkmn/sim`
-- handle doubles
-- does not depend on `@pkmn/sim` (OK for types), fork `PRNG` etc
+- **add integration test which compares all random formats generation (with same seed)** = just
+  extend sim test to also compare random battle teams.
 
 ## Integration
 

@@ -43,6 +43,7 @@
     "types",
     "sets",
     "sim",
+    "randoms",
     "protocol",
     "client",
     "dex/types",

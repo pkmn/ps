@@ -1,0 +1,14 @@
+{
+  "extends": "@pkmn",
+  "rules": {
+    "@typescript-eslint/quotes": "off",
+    "@typescript-eslint/indent": ["error", "tab", {"flatTernaryExpressions": true}],
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/prefer-optional-chain": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
+    "operator-linebreak": "off",
+    "no-dupe-else-if": "off",
+    "max-len": "off"
+  }
+}

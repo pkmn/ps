@@ -146,6 +146,50 @@ const MOD_IMPORTS = {
   'data/mods/letsgo/pokedex.ts': ['ModdedSpeciesData'],
   'data/mods/letsgo/scripts.ts': ['ModdedBattleScriptsData', 'StatsTable', 'StatName'],
 };
+const RANDOMS_IMPORTS = {
+  'data/random-teams.ts': [
+    [[
+      'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatName',
+      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ModdedDex',
+    ], '@pkmn/sim'],
+  ],
+  'data/mods/gen7/random-teams.ts': [
+    [['RandomTeams', 'TeamData'], './gen8'],
+    [['Utils'], './utils'],
+    [[
+      'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed',
+      'Format', 'Species', 'RandomTeamsTypes', 'toID',
+    ], '@pkmn/sim'],
+  ],
+  'data/mods/gen6/random-teams.ts': [
+    [['RandomGen7Teams'], './gen7'],
+    [['TeamData'], './gen8'],
+    [[
+      'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed',
+      'Format', 'Species', 'RandomTeamsTypes', 'toID'
+    ], '@pkmn/sim'],
+  ],
+  'data/mods/gen5/random-teams.ts': [
+    [['RandomGen6Teams'], './gen6'],
+    [['Species', 'StatName', 'SparseStatsTable', 'RandomTeamsTypes', 'toID'], '@pkmn/sim'],
+  ],
+  'data/mods/gen4/random-teams.ts': [
+    [['RandomGen5Teams'], './gen5'],
+    [['Species', 'RandomTeamsTypes', 'toID'], '@pkmn/sim'],
+  ],
+  'data/mods/gen3/random-teams.ts': [
+    [['RandomGen4Teams'], './gen4'],
+    [['ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes'], '@pkmn/sim'],
+  ],
+  'data/mods/gen2/random-teams.ts': [
+    [['RandomGen3Teams'], './gen3'],
+    [['ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes'], '@pkmn/sim'],
+  ],
+  'data/mods/gen1/random-teams.ts': [
+    [['RandomGen2Teams'], './gen2'],
+    [['ID', 'Species', 'RandomTeamsTypes'], '@pkmn/sim'],
+  ],
+};
 
 const TYPES = new Set([
   'Normal' , 'Fighting' , 'Flying' , 'Poison' , 'Ground' , 'Rock' , 'Bug' , 'Ghost' , 'Steel' ,
@@ -248,7 +292,18 @@ const removeFields = (data, fields) => {
   return data;
 };
 
-const RANDBAT_FIELDS = [
+const RANDOMS_FILES = {
+  'data/random-teams.ts': 'src/gen8.ts',
+  'data/mods/gen7/random-teams.ts': 'src/gen7.ts',
+  'data/mods/gen6/random-teams.ts': 'src/gen6.ts',
+  'data/mods/gen5/random-teams.ts': 'src/gen5.ts',
+  'data/mods/gen4/random-teams.ts': 'src/gen4.ts',
+  'data/mods/gen3/random-teams.ts': 'src/gen3.ts',
+  'data/mods/gen2/random-teams.ts': 'src/gen2.ts',
+  'data/mods/gen1/random-teams.ts': 'src/gen1.ts',
+};
+
+const RANDOMS_FIELDS = [
   'randomBattleLevel',
   'randomBattleMoves',
   'randomDoubleBattleMoves',
@@ -258,6 +313,8 @@ const RANDBAT_FIELDS = [
   'essentialMove',
   'randomSets',
 ];
+
+const INLINE_REQUIRE = /^(.*) = require\(.*\);$/
 
 const DATA = {
   'abilities.js': code => [
@@ -273,7 +330,7 @@ const DATA = {
   ],
   'aliases.js': code => [code.Aliases, 'aliases.json'],
   'formats-data.js': code =>
-    [removeFields(code.FormatsData, RANDBAT_FIELDS), 'formats-data.json'],
+    [removeFields(code.FormatsData, RANDOMS_FIELDS), 'formats-data.json'],
   'items.js': code => [removeFields(code.Items, ['spritenum']), 'items.json'],
   'learnsets.js': code => [code.Learnsets, 'learnsets.json'],
   'moves.js': code => [removeFields(code.Moves, ['contestType']), 'moves.json'],
@@ -292,25 +349,6 @@ const DATA = {
     }
     return [code.TypeChart, 'types.json']
   },
-};
-
-const RANDBAT_DATA = {
-  'abilities.js': code => {
-    const abilities = {};
-    for (const id in code.Abilities) {
-      if ('rating' in code.Abilities[id]) abilities[id] = code.Abilities[id].rating;
-    }
-    return [abilities, 'abilities.json'];
-  },
-  'formats-data.js': code => {
-    for (const id in code.FormatsData) {
-      for (const field of Object.keys(code.FormatsData[id])) {
-        if (!RANDBAT_FIELDS.includes(field)) delete code.FormatsData[id][field];
-      }
-      if (!Object.keys(code.FormatsData[id]).length) delete code.FormatsData[id];
-    }
-    return [code.FormatsData, 'formats-data.json'];
-  }
 };
 
 const fillDescs = (text, gen, contents) => {
@@ -403,6 +441,43 @@ const changes = async (where, last, now, repo) => ({
       }
     }
 
+    // Unspeakable acts occur below, this is effectively "why we have tests" in a nutshell
+    for (const file in RANDOMS_FILES) {
+      // Sadly, we need to go through each of these line-by-line :( very sigh
+      const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
+      const rewritten = [];
+      if (RANDOMS_IMPORTS[file]) {
+        for (const [type, where] of RANDOMS_IMPORTS[file]) {
+          rewritten.push(imports(type, where).trim());
+        }
+      }
+      for (const line of original.split('\n')) {
+        // Yes, this is obviously fragile AF, thanks for noticing
+        if (line.startsWith('import')) continue;
+        const m = INLINE_REQUIRE.exec(line);
+        if (m) {
+          rewritten.push(`${m[1]} = {};`);
+          continue;
+        }
+        // Bless me, Father, for I have sinned...
+        if (line.startsWith('\tconstructor(format:')) {
+          rewritten.push('\tconstructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {');
+          continue;
+        } else if (line === '\t\tsuper(format, prng);') {
+          rewritten.push('\t\tsuper(dex, format, prng);');
+          continue;
+        } else if (line == '\t\tformat = Dex.getFormat(format);') {
+          continue;
+        } else if (line == '\t\tthis.dex = Dex.forFormat(format);') {
+          rewritten.push('\t\tthis.dex = dex;');
+          continue;
+        }
+        rewritten.push(line.replace(/Dex\./g, 'this.dex.'));
+      }
+
+      fs.writeFileSync(path.resolve(randoms, RANDOMS_FILES[file]), rewritten.join('\n'));
+    }
+
     // The data files are Typescript, so we need to build to convert them to JS before requiring
     await execOrDie(`node build`, ps);
 
@@ -413,7 +488,7 @@ const changes = async (where, last, now, repo) => ({
       // 'species.json': require(path.resolve(ps, '.data-dist/text/pokedex.js')).PokedexText,
     };
 
-    const DEX = {regular: {}, random: {}};
+    const DEX = {};
     for (let gen = 8; gen >= 1; gen--) {
       let dir = path.join(ps, '.data-dist');
       if (gen !== 8) dir = path.join(dir, `mods/gen${gen}`);
@@ -421,27 +496,17 @@ const changes = async (where, last, now, repo) => ({
         let fn = DATA[path.basename(file)];
         if (fn) {
           const [contents, basename, patch] = fn(require(path.resolve(dir, file)));
-          DEX.regular[basename] = DEX.regular[basename] || {};
-          if (patch) patch(contents, gen, DEX.regular[basename]);
+          DEX[basename] = DEX[basename] || {};
+          if (patch) patch(contents, gen, DEX[basename]);
           const text = TEXT[basename];
-          DEX.regular[basename][gen] = text ? fillDescs(text, gen, contents) : contents;
-        }
-        fn = RANDBAT_DATA[path.basename(file)];
-        if (fn) {
-          const [contents, basename] = fn(require(path.resolve(dir, file)));
-          DEX.random[basename] = DEX.random[basename] || {};
-          DEX.random[basename][gen] = contents;
+          DEX[basename][gen] = text ? fillDescs(text, gen, contents) : contents;
         }
       }
     }
 
-    for (const basename in DEX.regular) {
-      const data = basename === 'aliases.json' ? DEX.regular[basename][8] : DEX.regular[basename];
+    for (const basename in DEX) {
+      const data = basename === 'aliases.json' ? DEX[basename][8] : DEX[basename];
       fs.writeFileSync(path.join(dex, 'data', basename), stringify(data));
-    }
-    for (const basename in DEX.random) {
-      const data = basename === 'aliases.json' ? DEX.random[basename][8] : DEX.random[basename];
-      fs.writeFileSync(path.join(randoms, 'data', basename), stringify(data));
     }
 
     // Mirror `sim/global-types.ts` to export all of its types (making it a module). Its possible

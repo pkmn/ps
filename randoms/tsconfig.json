@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "allowUnusedLabels": false,
+    "resolveJsonModule": true,
+    "lib": ["es2015", "es2016.array.include", "es2017.object"],
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": false,
+    "noImplicitReturns": false,
+    "outDir": "build",
+    "tsBuildInfoFile": ".tsbuildinfo"
+  },
+  "include": ["src"]
+}

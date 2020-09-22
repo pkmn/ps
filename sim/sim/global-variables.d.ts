@@ -9,12 +9,12 @@ import {Side as SideType} from './side';
 import {TeamValidator as TeamValidatorType} from './team-validator';
 
 declare global {
-  namespace NodeJS {
+	namespace NodeJS {
 		interface Global {
-      Config: any;
+			Config: any;
 			__version: {head: string, origin?: string, tree?: string}
 		}
-  }
+	}
 	const Battle: BattleType;
 	const BattleStream: BattleStreamType.BattleStream;
 	const Dex: typeof DexType;
@@ -35,5 +35,5 @@ declare global {
 	const Species: DataType.Species;
 	const TypeInfo: DataType.TypeInfo;
 
-  const Config: {potd?: string, allowrequestingties?: boolean};
+	const Config: {potd?: string, allowrequestingties?: boolean};
 }
