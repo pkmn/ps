@@ -1,6 +1,6 @@
 import {Dex, TeamValidator, RandomPlayerAI, BattleStreams, PRNG} from '@pkmn/sim';
 import {Protocol, Handler, ArgName, ArgType, BattleArgsKWArgType} from '@pkmn/protocol';
-import {Teams, Data, PokemonSet} from '@pkmn/sets'
+import {Teams, Data, PokemonSet} from '@pkmn/sets';
 import {Battle, Side, Pokemon} from '@pkmn/client';
 import {TeamGenerators} from '@pkmn/randoms';
 import {Sprites, Icons, GraphicsGen} from '@pkmn/img';

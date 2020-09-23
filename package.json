@@ -65,7 +65,7 @@
     "bundle": "subpkg run bundle",
     "start": "subpkg run start",
     "test": "subpkg run test",
-    "integrate": "npm test && npm -C integration test",
+    "test:integration": "npm test && npm -C integration test",
     "postinstall": "subpkg install && npm -C integration install"
   }
 }
