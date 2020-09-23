@@ -1056,8 +1056,8 @@ export namespace Protocol {
      */
     '|-block|':
     | readonly ['-block', PokemonIdent, EffectName]
-    | readonly ['-block', PokemonIdent, EffectName, MoveName?]
-    | readonly ['-block', PokemonIdent, EffectName, MoveName, PokemonIdent?];
+    | readonly ['-block', PokemonIdent, EffectName, MoveName | '']
+    | readonly ['-block', PokemonIdent, EffectName, MoveName, PokemonIdent | ''];
     /**
      * `|-notarget|POKEMON`
      *
@@ -2155,10 +2155,10 @@ function upgradeBattleArgs({args, kwArgs}: {
     if (BLOCKABLE.has(id)) {
       if (target) {
         kwArgs.of = pokemon;
-        return {args: ['-block', target, effect, arg3 as Protocol.MoveName], kwArgs};
+        return {args: ['-block', target, effect, arg3 as Protocol.MoveName || ''], kwArgs};
       }
       return {
-        args: ['-block', pokemon as Protocol.PokemonIdent, effect, arg3 as Protocol.MoveName],
+        args: ['-block', pokemon as Protocol.PokemonIdent, effect, arg3 as Protocol.MoveName || ''],
         kwArgs,
       };
     }
@@ -2235,7 +2235,7 @@ function upgradeBattleArgs({args, kwArgs}: {
           pokemon,
           effect as Protocol.EffectName,
           move as Protocol.MoveName,
-          kwArgs.of as Protocol.PokemonIdent,
+          kwArgs.of as Protocol.PokemonIdent || '',
         ],
         kwArgs: {},
       };

@@ -535,12 +535,12 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     if (!verifyKWArgs(kwArgs, KWARGS)) return false;
     if (!(verifyPokemonIdent(args[1]) && verifyName(args[2]))) return false;
     if (args.length === 3) return true;
-    if (args.length === 4) return args[3] === undefined || verifyName(args[3]);
+    if (args.length === 4) return args[3] === '' || verifyName(args[3]);
     return args.length === 5 &&
       verifyPokemonIdent(args[1]) &&
       verifyEffectName(args[2]) &&
       verifyName(args[3]) &&
-      (args[4] === undefined || verifyPokemonIdent(args[4]));
+      (args[4] === '' || verifyPokemonIdent(args[4]));
   }
 
   '|-notarget|'(args: Args['|-notarget|']) {
