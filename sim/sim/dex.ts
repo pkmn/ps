@@ -151,6 +151,7 @@ interface TeamGeneratorFactory {
 	getTeamGenerator(format: Format | string, seed: PRNG | PRNGSeed | null): TeamGenerator;
 }
 
+// eslint-disable-next-line no-var
 var teamGeneratorFactory: TeamGeneratorFactory | undefined;
 
 export type ModData = DeepPartial<ModdedDex['data']>;
@@ -1146,7 +1147,8 @@ export class ModdedDex {
 		return this.getTeamGenerator(format, options?.seed).getTeam(options || undefined);
 	}
 
-	getTeamGenerator(format: Format | string, seed: PRNG | PRNGSeed | null = null): TeamGenerator {
+	// BUG: SSB is a POS and requires we return any here instead of TeamGenerator, *sigh*
+	getTeamGenerator(format: Format | string, seed: PRNG | PRNGSeed | null = null): any {
 		if (!teamGeneratorFactory) {
 			throw new Error('getTeamGenerator maybe not be used unless a TeamGeneratorFactory has been set');
 		}
