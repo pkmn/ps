@@ -2,6 +2,9 @@
   "private": true,
   "repository": "github:pkmn/ps",
   "license": "MIT",
+  "dependencies": {
+    "json-stringify-pretty-compact": "^2.0.0"
+  },
   "devDependencies": {
     "@pkmn/eslint-config": "^0.6.1",
     "@types/jest": "^26.0.14",
@@ -64,8 +67,5 @@
     "test": "subpkg run test",
     "integrate": "npm test && npm -C integration test",
     "postinstall": "subpkg install && npm -C integration install"
-  },
-  "dependencies": {
-    "json-stringify-pretty-compact": "^2.0.0"
   }
 }
