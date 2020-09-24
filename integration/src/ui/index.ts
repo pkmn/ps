@@ -20,7 +20,6 @@ const FORMATS = [
 ];
 const prng = new PRNG();
 const FORMAT = FIXED ? 'gen7anythinggoes' : prng.sample(FORMATS);
-const GEN = Dex.getFormat(FORMAT).gen as GenerationNum;
 const validator = new TeamValidator(FORMAT);
 
 const importTeam = (t: string, name: 'A' | 'B') => {
@@ -40,6 +39,8 @@ const SPRITES: {[gen in GenerationNum]: GraphicsGen[]} = {
   7: ['ani'],
   8: ['ani'],
 };
+const GEN = +FORMAT.charAt(3) as GenerationNum;
+const GRAPHICS = prng.sample(SPRITES[GEN]);
 
 const dex = Dex.forFormat(FORMAT);
 dex.setTeamGeneratorFactory(TeamGenerators);
@@ -108,7 +109,7 @@ const displayTeam = ($td: HTMLTableCellElement, side: Side) => {
 const displayPokemon = ($td: HTMLTableCellElement, pokemon: Pokemon | null) => {
   if (pokemon) {
     const sprite = Sprites.getPokemon(pokemon.getSpeciesForme(), {
-      gen: prng.sample(SPRITES[GEN]),
+      gen: GRAPHICS,
       gender: pokemon.gender || undefined,
       shiny: pokemon.shiny,
     });

@@ -56,6 +56,7 @@ version number in case set import changes.
 ## `@pkmn/client`
 
 - cleanup usages of `null`
+- depend on `@pkmn/data` instead of `@pkmn/dex-types`
 
 ## `@pkmn/view`
 
@@ -64,14 +65,9 @@ version number in case set import changes.
 - logic for displaying the Pokémon Showdown protocol *(how should arbitrary HTML be handled? Fully
   escaped? Or embed an HTML sanitizer?)*
 
-## `@pkmn/randoms`
-
-- **add integration test which compares all random formats generation (with same seed)** = just
-  extend sim test to also compare random battle teams.
-
 ## Integration
 
-- get `npm run integrate` to run on GitHub
+- get `npm test:integration` to run on GitHub
 - figure out how to run `eslint` on JS files without crashing
 - add deeper equality method for Pokémon Showdown's client state vs. pkmns (requires handling
   different representations eg `ID`s, consider using protocol `Verifier` to verify all types)
