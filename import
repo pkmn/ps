@@ -161,7 +161,7 @@ const RANDOMS_IMPORTS = {
     [['TeamData'], './gen8'],
     [[
       'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed',
-      'Format', 'Species', 'RandomTeamsTypes', 'toID'
+      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'StatName',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen5/random-teams.ts': [

@@ -199,7 +199,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         let total = 0;
         for (const gen of gens) {
           expect(Array.from(gen.moves))
-            .toHaveLength(gen.num === 8 ? 624 + 41 - 33 : (total += COUNTS[gen.num - 1]));
+            .toHaveLength(gen.num === 8 ? 623 + 41 - 33 : (total += COUNTS[gen.num - 1]));
         }
       });
 

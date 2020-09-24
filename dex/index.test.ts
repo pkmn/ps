@@ -230,7 +230,7 @@ describe('Dex', () => {
       for (let gen = 1; gen <= 7; gen++) {
         expect(counts(gen as GenerationNum)).toEqual(total += COUNTS[gen - 1]);
       }
-      expect(counts(8)).toBe(624 + 41 - /* GMax */ 33);
+      expect(counts(8)).toBe(623 + 41 - /* GMax */ 33);
     });
 
     it('cached', () => {

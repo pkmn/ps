@@ -1947,6 +1947,13 @@
       "gen": 4,
       "desc": "Holder moves last in its priority bracket."
     },
+    "galaricacuff": {
+      "name": "Galarica Cuff",
+      "fling": {"basePower": 30},
+      "num": 1582,
+      "gen": 8,
+      "desc": "Evolves Galarian Slowpoke into Galarian Slowbro when used."
+    },
     "galladite": {
       "name": "Galladite",
       "megaStone": "Gallade-Mega",

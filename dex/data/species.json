@@ -13738,7 +13738,7 @@
       "weightkg": 138.6,
       "prevo": "Electabuzz",
       "evoType": "trade",
-      "evoItem": "Electrizer",
+      "evoItem": "Electirizer",
       "eggGroups": ["Human-Like"]
     },
     "magmortar": {
@@ -13896,7 +13896,7 @@
       "weightkg": 34,
       "prevo": "Porygon2",
       "evoType": "trade",
-      "evoItem": "Dubious Disk",
+      "evoItem": "Dubious Disc",
       "eggGroups": ["Mineral"]
     },
     "gallade": {

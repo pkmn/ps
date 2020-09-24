@@ -9,6 +9,7 @@ import {
 	PlayerOptions,
 	RandomTeamsTypes,
 	Species,
+	StatName,
 	toID,
 } from '@pkmn/sim';
 /* eslint max-len: ["error", 240] */
@@ -189,7 +190,6 @@ export class RandomGen6Teams extends RandomGen7Teams {
 				case 'circlethrow': case 'dragontail':
 					if (counter.setupType && ((!hasMove['rest'] && !hasMove['sleeptalk']) || hasMove['stormthrow'])) rejected = true;
 					if (!!counter['speedsetup'] || hasMove['encore'] || hasMove['raindance'] || hasMove['roar'] || hasMove['trickroom'] || hasMove['whirlwind']) rejected = true;
-					// @ts-ignore
 					if ((counter[move.type] > 1 && counter.Status > 1) || (hasAbility['Sheer Force'] && !!counter['sheerforce'])) rejected = true;
 					break;
 				case 'defog':
@@ -472,7 +472,6 @@ export class RandomGen6Teams extends RandomGen7Teams {
 				// This move doesn't satisfy our setup requirements:
 				if ((move.category === 'Physical' && counter.setupType === 'Special') || (move.category === 'Special' && counter.setupType === 'Physical')) {
 					// Reject STABs last in case the setup type changes later on
-					// @ts-ignore
 					const stabs = counter[species.types[0]] + (counter[species.types[1]] || 0);
 					if (!SetupException.includes(moveid) && (!hasType[move.type] || stabs > 1 || counter[move.category] < 2)) rejected = true;
 				}
@@ -517,7 +516,6 @@ export class RandomGen6Teams extends RandomGen7Teams {
 					(hasType['Rock'] && !counter['Rock'] && !hasType['Fairy'] && (hasAbility['Rock Head'] || counter.setupType === 'Physical')) ||
 					(hasType['Steel'] && !counter['Steel'] && hasAbility['Technician']) ||
 					(hasType['Water'] && (!counter['Water'] || !counter.stab) && !hasAbility['Protean']) ||
-					// @ts-ignore
 					((hasAbility['Adaptability'] && !counter.setupType && species.types.length > 1 && (!counter[species.types[0]] || !counter[species.types[1]])) ||
 					((hasAbility['Aerilate'] || hasAbility['Pixilate'] || hasAbility['Refrigerate'] && !hasMove['blizzard']) && !counter['Normal']) ||
 					(hasAbility['Bad Dreams'] && movePool.includes('darkvoid')) ||
@@ -561,9 +559,9 @@ export class RandomGen6Teams extends RandomGen7Teams {
 				// Handle Hidden Power IVs
 				if (moveid === 'hiddenpower') {
 					const HPivs = this.dex.getType(move.type).HPivs;
-					for (const iv in HPivs) {
-						// @ts-ignore
-						ivs[iv] = HPivs[iv];
+					let iv: StatName;
+					for (iv in HPivs) {
+						ivs[iv] = HPivs[iv]!;
 					}
 				}
 			}
@@ -604,7 +602,6 @@ export class RandomGen6Teams extends RandomGen7Teams {
 				rejectAbility = false;
 				if (counterAbilities.includes(ability)) {
 					// Adaptability, Contrary, Iron Fist, Skill Link, Strong Jaw
-					// @ts-ignore
 					rejectAbility = !counter[toID(ability)];
 				} else if (ateAbilities.includes(ability)) {
 					rejectAbility = !counter['Normal'];
@@ -697,7 +694,6 @@ export class RandomGen6Teams extends RandomGen7Teams {
 						ability = ability2.name;
 					} else {
 						// Default to the highest rated ability if all are rejected
-						// @ts-ignore
 						ability = abilities[0];
 						rejectAbility = false;
 					}

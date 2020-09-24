@@ -2,6 +2,7 @@ export type Battle = import('./battle').Battle;
 export type BattleQueue = import('./battle-queue').BattleQueue;
 export type Field = import('./field').Field;
 export type Action = import('./battle-queue').Action;
+export type MoveAction = import('./battle-queue').MoveAction;
 export type ActionChoice = import('./battle-queue').ActionChoice;
 export type ModdedDex = import('./dex').ModdedDex;
 export type Pokemon = import('./pokemon').Pokemon;
@@ -1481,6 +1482,7 @@ export namespace RandomTeamsTypes {
 		stickyWeb?: number;
 		rapidSpin?: number;
 		defog?: number;
+		screens?: number;
 		illusion?: number;
 		statusCure?: number;
 	}

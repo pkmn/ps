@@ -325,8 +325,7 @@ export const Formats: {[k: string]: FormatData} = {
 			}
 		},
 		onStart() {
-			// @ts-ignore
-			if (this.format.gameType === 'singles') this.format.teamLength = {battle: 1};
+			if (this.format.gameType === 'singles') (this.format as any).teamLength = {battle: 1};
 		},
 	},
 	twovstwo: {
@@ -339,8 +338,7 @@ export const Formats: {[k: string]: FormatData} = {
 			}
 		},
 		onStart() {
-			// @ts-ignore
-			if (this.format.gameType !== 'triples') this.format.teamLength = {battle: 2};
+			if (this.format.gameType !== 'triples') (this.format as any).teamLength = {battle: 2};
 		},
 	},
 	littlecup: {
@@ -1074,7 +1072,7 @@ export const Formats: {[k: string]: FormatData} = {
 		onModifySpecies(species) {
 			const newSpecies = this.dex.deepClone(species);
 			const reversedNums = Object.values(newSpecies.baseStats).reverse();
-			for (const [i, statName] of Object.keys(newSpecies).entries()) {
+			for (const [i, statName] of Object.keys(newSpecies.baseStats).entries()) {
 				newSpecies.baseStats[statName] = reversedNums[i];
 			}
 			return newSpecies;
