@@ -1,31 +1,19 @@
 #!/usr/bin/env node
 'use strict';
 
-// This script imports the latest code from smogon/pokemon-showdown and generates a workable
-// module from it. At a high level, this involves copying files from PS's `sim/` directory (after
-// performing some minor modifications) into an existing tree with the correct `package.json` and
-// other configuration. Relevant tests are copied as well to ensure integrity of the final package.
-// However, the main complications are:
+// This script syncs the vendored submodules of smogon/pokemon-showdown and
+// smogon/pokemon-showdown-client and highlights 'interesting' changes before performing several
+// manipulations on the former to generate portions of the @pkmn/sim, @pkmn/mods, @pkmn/randoms and
+// @pkmn/dex packages. Each of these packages involve some amount of handwritten code (which may be
+// broken or become out of sync after running this script) in addition to code generated completely
+// from Pokémon Showdown, and many of the other packages in this repository which have been 'hard'
+// forked from Pokémon Showdown will possibly require manual intervention and updates after an
+// import.
 //
-//   - internally the simulator relies on global ambient types which work to compile a
-//     standalone application but which are useless to downstream developers attempting to use this
-//     as a library as part of their own application. As such, we need to mirror and modify the
-//     `sim/global-types.ts` file to export all of its types *and* add imports to all of the files
-//     under `sim/` (ie. any `.ts` files depending on global types - the `data/` files are
-//     currently not required to have ///-references to work).
-//   - `sim/dex.ts` has to have its loading reworked to depend on everything up front so that it can
-//     be used in a browser environment where synchronous `require`` and `fs` APIs don't exist.
-//
-// The general steps for updating this package to smogon/pokemon-showdown@HEAD are:
-//
-//   1. run `./import`, look at which files were changed.
-//     a. if `sim/dex.ts` (or another forked file) changed, manually port the changes over
-//   2. run `npm test`, ensure everything compiles and all of the copied unit tests pass
-//   3. `cd sim && npm version patch` to bump the version
-//   4. commit using the provided git commands and message
-//   5. `npm publish --access public` from the `sim/` directory to publish `@pkmn/sim`
-//
-// If any of these steps fail, return the the beginning with `./import` and run through them again.
+// This is the most 'HERE BE DRAGONS' and hacky code in the entire project, but is also the magic
+// sauce™ that makes everything work. The fragile nature of this whole ordeal is slightly offset
+// by the large amount of unit and integration tests - assume that whenever you run this script
+// everything is broken unless `npm test:integration` and manual inspection suggests otherwise.
 
 const child_process = require('child_process');
 const fs = require('fs');
@@ -90,7 +78,14 @@ const dex = path.resolve(__dirname, 'dex');
 const mods = path.resolve(__dirname, 'mods');
 const randoms = path.resolve(__dirname, 'randoms');
 
-// fucking hell zarle, friends don't let friends use globals :(
+// > fucking hell zarle, friends don't let friends use globals :(
+//
+// The simulator relies internally on global ambient types which work to compile a standalone
+// application but which are useless to downstream developers attempting to use this as a library as
+// part of their own application. As such, we need to mirror and modify the `sim/global-types.ts`
+// file to export all of its types *and* add imports to all of the files under `sim/` (ie. any `.ts`
+// files depending on global types - the `data/` files are currently not required to have
+// ///-references to work).
 const IMPORTS = {
   'sim/battle-queue.ts': ['Pokemon', 'ID', 'Move', 'Effect', 'AnyObject'],
   'sim/battle-stream.ts': ['AnyObject'],
@@ -220,6 +215,8 @@ const MOD_FILES =
 // Files which need special attention if changed (usually manual intervention)
 const FRAGILE = new Set([
   'sim/dex-data.ts',
+  // `sim/dex.ts` has to have its loading reworked to depend on everything up front so that it can
+  // be used in a browser environment where synchronous `require` and `fs` APIs don't exist.
   'sim/dex.ts',
   'sim/global-types.ts',
   'sim/global-variables.d.ts',

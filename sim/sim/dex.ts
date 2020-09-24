@@ -1147,7 +1147,7 @@ export class ModdedDex {
 		return this.getTeamGenerator(format, options?.seed).getTeam(options || undefined);
 	}
 
-	// BUG: SSB is a POS and requires we return any here instead of TeamGenerator, *sigh*
+	// BUG: SSB3's Easter egg requires we return any here instead of TeamGenerator. *sigh* :(
 	getTeamGenerator(format: Format | string, seed: PRNG | PRNGSeed | null = null): any {
 		if (!teamGeneratorFactory) {
 			throw new Error('getTeamGenerator maybe not be used unless a TeamGeneratorFactory has been set');
