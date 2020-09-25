@@ -4,7 +4,7 @@
 [![npm version](https://img.shields.io/npm/v/@pkmn/randoms.svg)](https://www.npmjs.com/package/@pkmn/randoms)
 
 An automatically generated extraction of a subset of Pokémon Showdown's "Random Battle" generation
-login for use with [`@pkmn/sim`](../sim).
+logic for use with [`@pkmn/sim`](../sim).
 
 ## Installation
 
@@ -14,10 +14,24 @@ $ npm install @pkmn/randoms
 
 ## Usage
 
-FIXME
+To generate a random team, get a `TeamGenerator` for a supported format and call `getTeam`:
 
 ```ts
+import {TeamGenerators} from '@pkmn/randoms';
 
+const generator = TeamGenerators.getTeamGenerator('gen8randombattle');
+const team = generator.getTeam();
+```
+
+`@pkmn/randoms` is commonly used with [`@pkmn/sim`](../sim) to set the `TeamGenerator` factory on
+its `Dex` so that `Dex.generateTeam` will work:
+
+```ts
+import {Dex} from '@pkmn/sim';
+import {TeamGenerators} from '@pkmn/randoms';
+
+Dex.setTeamGeneratorFactory(TeamGenerators);
+const team = Dex.generateTeam('gen1randombattle');
 ```
 
 ### Browser
