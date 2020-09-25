@@ -1885,7 +1885,7 @@ export const Protocol = new class {
     }
 
     return upgradeBattleArgs({
-      args: args as Protocol.BattleArgType, kwArgs,
+      args: upgradeArgs(args), kwArgs,
     }) as {
       args: Protocol.BattleArgType;
       kwArgs: Protocol.BattleArgsKWArgType;

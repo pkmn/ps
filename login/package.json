@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/login",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "unpkg": "build/production.min.js",
@@ -14,7 +14,7 @@
     "access": "public"
   },
   "optionalDependencies": {
-    "@pkmn/protocol": "^0.1.0",
+    "@pkmn/protocol": "^0.1.1",
     "source-map-support": "^0.5.19",
     "ws": "^7.3.1"
   },
