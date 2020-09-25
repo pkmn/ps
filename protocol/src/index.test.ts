@@ -1,5 +1,8 @@
 import {Protocol, PokemonHealth, Args, KWArgs} from './index';
 
+import * as fs from 'fs';
+import * as path from 'path';
+
 const REQUEST = {
   'active': [
     {
@@ -363,5 +366,20 @@ describe('Protocol', () => {
     expect(parts.name).toEqual('pre');
     expect(parts.away).toEqual(false);
     expect(parts.status).toEqual('Status');
+  });
+});
+
+describe('Bundle', () => {
+  it('usage', () => {
+    {
+      const window = {} as {Protocol: typeof Protocol};
+      // eslint-disable-next-line no-eval
+      eval(fs.readFileSync(path.resolve(__dirname, '../build/production.min.js'), 'utf8'));
+
+      expect(window.Protocol.key(['init', 'chat'])).toEqual('|init|');
+      const parts = Protocol.parseEffect('move: Tackle');
+      expect(parts.name).toEqual('Tackle');
+      expect(parts.type).toEqual('move');
+    }
   });
 });

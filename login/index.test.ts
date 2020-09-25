@@ -1,5 +1,8 @@
 import {Actions, Action} from './index';
 
+import * as fs from 'fs';
+import * as path from 'path';
+
 describe('Actions', () => {
   it('register', () => {
     let register = Actions.register({username: 'User', password: 'password', challstr: '4|foo'});
@@ -167,3 +170,19 @@ function expectOnRenameResponse(rename: Action, username: string) {
 
   expect(rename.onResponse('<!DOCTYPE html foo bar>token')).toEqual(`|/trn ${username},0,token`);
 }
+
+describe('Bundle', () => {
+  // eslint-disable-next-line jest/expect-expect
+  it('usage', () => {
+    {
+      const window = {} as {LoginTools: typeof Actions};
+      // eslint-disable-next-line no-eval
+      eval(fs.readFileSync(path.resolve(__dirname, './build/production.min.js'), 'utf8'));
+
+      const login =
+        window.LoginTools.login({username: 'User', password: 'password', challstr: '4|foo'});
+      expectAction(login, 'act=login&name=User&pass=password&challstr=4%7Cfoo');
+      expectOnLoginResponse(login, 'User', '|/trn User,0,token');
+    }
+  });
+});

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "unpkg": "build/production.min.js",
   "exports": {
     ".": "./build/index.js",
     "./verifier": "./build/verifier/index.js"
@@ -27,7 +28,8 @@
     "lint": "eslint --cache src --ext ts",
     "fix": "eslint --fix src --ext ts",
     "compile": "tsc -p .",
-    "build": "npm run compile",
+    "bundle": "node bundle",
+    "build": "npm run compile && npm run bundle",
     "test": "jest",
     "pretest": "npm run build",
     "posttest": "npm run lint"

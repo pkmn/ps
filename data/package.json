@@ -3,6 +3,7 @@
   "version": "0.2.3",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "unpkg": "build/production.min.js",
   "description": "A forked implementation of the Pokémon Showdown client's data layer",
   "repository": "github:pkmn/ps",
   "license": "MIT",

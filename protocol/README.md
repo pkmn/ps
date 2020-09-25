@@ -16,6 +16,14 @@ respresentations for ease of use.
 $ npm install @pkmn/protocol
 ```
 
+Alternatively, as [detailed below](#browser), if you are using `@pkmn/protocol` in the browser and
+want a convenient way to get started, simply depend on a transpiled and minified version via
+[unpkg](https://unpkg.com/):
+
+```html
+<script src="https://unpkg.com/@pkmn/protocol"></script>
+```
+
 ## Usage
 
 #### `Handler`
@@ -85,7 +93,10 @@ verify protocol lines read from standard input.
 The recommended way of using `@pkmn/protocol` in a web browser is to **configure your bundler**
 ([Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/),
 [Parcel](https://parceljs.org/), etc) to minimize it and package it with the rest of your
-application.
+application. If you do not use a bundler, a convenience `production.min.js` is included in the
+package. You simply need to depend on `./node_modules/@pkmn/protocol/build/production.min.js` in a
+`script` tag (which is what the unpkg shortcut above is doing), after which **`Protocol` will be
+accessible as a global.**
 
 ## License
 

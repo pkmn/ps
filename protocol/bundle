@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+'use strict';
+
+const Bundler = require('../bundler');
+const bundler = new Bundler(__dirname);
+
+let bundled = `(() => {
+'use strict';
+const exports = {};
+`;
+const gen = bundler.read('index.js').split('\n');
+bundled += gen.slice(3, -1).join('\n'); // code
+bundled += `
+// EXPORTS
+window.Protocol = exports.Protocol;
+})();`
+bundler.bundle(bundled);
