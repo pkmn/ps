@@ -79,7 +79,7 @@ ws.on('message', message => {
 
 To see a complete worked example, please see the [`login`](login) CLI which trivially logs in and
 out of Pokémon Showdown by leveraging `@pkmn/login` (though note that the majority of the complexity
-comes from setup). [`index.html`](index.html) provides a parallel example for the browser.
+comes from setup). [`index.html`](index.html) provides a similar example for the browser.
 
 #### `http`/`https`
 
@@ -150,8 +150,8 @@ within browsers along with `@pkmn/login` to authenticate:
 
 #### `fetch`
 
-`fetch` is the new browser API for HTTP requests (`node-fetch` provides an isomorphic API for use
-on with Node.js):
+[`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is the new browser API for
+HTTP requests (`node-fetch` provides an isomorphic API for use åon with Node.js):
 
 ```ts
 import fetch from 'node-fetch';

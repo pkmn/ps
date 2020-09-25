@@ -34,6 +34,8 @@
   <script>
     const server = 'sim.smogon.com';
     const serverport = 8000;
+    // XXX: Required to bypass CORS for this example, be very careful as this means you are sending
+    // your password to a third-party (cor-anywhere) where it could be logged etc.
     const BYPASS_CORS = 'https://cors-anywhere.herokuapp.com/';
 
     var challstr = '';
