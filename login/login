@@ -38,14 +38,14 @@ const {Actions} = require('./build');
 const server = 'sim.smogon.com';
 const serverport = 8000;
 
-function fetch(action) {
+function fetch(action, cookie) {
+  const headers = cookie ? {'Set-Cookie': cookie, ...action.headers} : action.headers;
   return new Promise((resolve, reject) => {
     let buf = '';
-    const req = https.request(action.url, {
-      method: action.method,
-      headers: action.headers,
-    }, res => {
+    const req = https.request(action.url, {method: action.method, headers}, res => {
       if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode}`));
+      const sid = res.headers['set-cookie'].find(c => c.startsWith('sid='));
+      if (sid) console.log(sid);
       res.on('data', d => {
         buf += d;
       });
@@ -65,6 +65,12 @@ class User {
   async login(details) {
     const action = Actions.login(details);
     const cmd = action.onResponse(await fetch(action));
+    if (cmd) this.connection.send(cmd);
+  }
+
+  async upkeep(details, cookie) {
+    const action = Actions.upkeep(details);
+    const cmd = action.onResponse(await fetch(action, cookie));
     if (cmd) this.connection.send(cmd);
   }
 
@@ -114,6 +120,7 @@ const user = new User(connection);
 for (const signal of ['SIGINT', 'SIGHUP', 'SIGTERM']) {
   process.on(signal, async () => {
     try {
+      // NOTE: This needs to be commented out when testing upkeep (logout kills the sid cookie)
       await user.logout();
     } finally {
       connection.close();
@@ -131,16 +138,24 @@ connection.open(data => {
     switch (args[0]) {
       case 'challstr': {
         const challstr = args[1];
-        rl.question('Username: ', username => {
-          rl.question('Password: ', password => {
-            user.login({username, challstr, password}).catch(err => {
-              console.error(err);
-              connection.close();
-              process.exit(1);
+        if (!process.argv[2]) {
+          rl.question('Username: ', username => {
+            rl.question('Password: ', password => {
+              user.login({username, challstr, password}).catch(err => {
+                console.error(err);
+                connection.close();
+                process.exit(1);
+              });
+              rl.close();
             });
-            rl.close();
           });
-        });
+        } else {
+          user.upkeep({challstr}, process.argv[2]).catch(err => {
+            console.error(err);
+            connection.close();
+            process.exit(1);
+          });
+        }
         break;
       }
       case 'updateuser': {
