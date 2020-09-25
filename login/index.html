@@ -4,12 +4,105 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Login</title>
+  <style>
+    body {
+      font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    }
+    #root {
+      margin: 5em auto;
+      text-align: center;
+    }
+    form > * {
+      margin: 0.3em;
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <form id="login">
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Username" name="username" required="required" /><br />
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Password" name="password" /><br />
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
   <script src="./build/production.min.js"></script>
   <script src="../protocol/build/production.min.js"></script>
   <script>
+    const server = 'sim.smogon.com';
+    const serverport = 8000;
+    const BYPASS_CORS = 'https://cors-anywhere.herokuapp.com/';
+
+    var challstr = '';
+
+    class Connection {
+      open(fn) {
+        this.ws = new WebSocket(`ws://${server}:${serverport}/showdown/websocket`);
+        this.ws.onmessage = ({data}) => {
+          fn(data);
+        };
+        this.ws.onopen = () => {
+          console.log(`Connected to ${this.ws.url}`);
+        };
+        this.ws.onclose = e => {
+          const clean = e.wasClean ? ' cleanly ' : ' ';
+          const reason = e.reason ? `: ${e.reason}` : '';
+          console.log(`Disconnected${clean}from ${this.ws.url} with ${e.code}${reason}`);
+        };
+        this.ws.onerror = e => {
+          const msg = e.message;
+          if (msg === 'TIMEOUT') return;
+          console.error(`Connection error${e.message ? `: ${e.message}` : ''}`);
+        };
+      }
+
+      close() {
+        this.ws.close();
+      }
+
+      send(message) {
+        this.ws.send(message);
+      }
+    }
+
+    const form = document.getElementById('login');
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const username = form.elements[0].value;
+      const password = form.elements[1].value || undefined;
+      const action = LoginTools.login({username, password, challstr});
+      const response = await (await fetch(BYPASS_CORS + action.url, {
+        method: action.method,
+        headers: action.headers,
+        body: action.data,
+      })).text();
+      const cmd = action.onResponse(response);
+      if (cmd) connection.send(cmd);
+    });
+
+    const connection = new Connection();
+    connection.open(async data => {
+      for (const {args} of Protocol.parse(data)) {
+        switch (args[0]) {
+          case 'challstr': {
+            challstr = args[1];
+            break;
+          }
+          case 'updateuser': {
+            const username = args[1].trim();
+            const message = `Logged in as '${username}'`;
+            console.log(message);
+            if (!username.startsWith('Guest')) {
+              document.getElementById('root').innerHTML = message;
+            }
+            break;
+          }
+        }
+      }
+  });
   </script>
 </body>
 </html>

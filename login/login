@@ -161,6 +161,7 @@ connection.open(data => {
       case 'updateuser': {
         user.username = args[1];
         console.log(`Logged in as '${user.username.trim()}'`);
+        break;
       }
     }
   }
