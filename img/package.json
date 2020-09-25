@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/img",
-  "private": true,
+  "version": "0.0.1",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "unpkg": "build/production.min.js",

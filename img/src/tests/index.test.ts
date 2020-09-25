@@ -173,16 +173,16 @@ describe('Sprites', () => {
     expect(sub.url).toEqual(`${URL}/sprites/substitutes/gen5/substitute.png`);
     expect(sub.pixelated).toBe(true);
 
-    sub = Sprites.getSubstitute('gen5ani', {side: 'p1', protocol: 'http'});
+    sub = Sprites.getSubstitute({gen: 'gen5ani', side: 'p1', protocol: 'http'});
     expect(sub.url).toEqual(`http://${DOMAIN}/sprites/substitutes/gen5-back/substitute.png`);
 
-    sub = Sprites.getSubstitute(2, {side: 'p2', domain: 'pkmn.cc'});
+    sub = Sprites.getSubstitute({gen: 2, side: 'p2', domain: 'pkmn.cc'});
     expect(sub.url).toEqual('https://pkmn.cc/sprites/substitutes/gen1/substitute.png');
 
-    sub = Sprites.getSubstitute(3, {side: 'p1'});
+    sub = Sprites.getSubstitute({gen: 3, side: 'p1'});
     expect(sub.url).toEqual(`${URL}/sprites/substitutes/gen3-back/substitute.png`);
 
-    sub = Sprites.getSubstitute('gen4dp');
+    sub = Sprites.getSubstitute({gen: 'gen4dp'});
     expect(sub.url).toEqual(`${URL}/sprites/substitutes/gen4/substitute.png`);
   });
 
