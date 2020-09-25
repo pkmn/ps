@@ -50,7 +50,7 @@ version number in case set import changes.
 ## `@pkmn/login`
 
 - **finish `index.html` example**
-- **finish XHR example in documentation**
+- **upkeep example with cookies**
 
 ## `@pkmn/client`
 

@@ -130,9 +130,20 @@ within browsers along with `@pkmn/login` to authenticate:
 
   async function onChallstr() {
     const action = LoginTools.login({username: 'User Name', password: 'password', challstr});
-    const response = // FIXME
-    const cmd = action.onResponse();
-    if (cmd) ws.send(cmd);
+    return new Promise((resolve, reject) => {
+      const request = new XMLHttpRequest();
+      request.addEventListener('load', () => {
+        const cmd = action.onResponse(request.responseText);
+        if (cmd) ws.send(cmd);
+        resolve();
+      });
+      request.addEventListener('error', reject);
+      for (const header in action.headers) {
+        request.setRequestHeader(header, action.headers[header]);
+      }
+      request.open(action.method, action.url);
+      request.send(action.data);
+    });
   }
 </script>
 ```
