@@ -23,7 +23,7 @@ once a month, but will aim to release approximately weekly. Pokémon Showdown of
 bleeding edge -  being able to pick a commit from a larger range to cut a release from ends up
 resulting in a more stable package to build off of. If your project has a particular need for a
 one-off import and release to be cut to capture specific functionality or data, please open an issue
-or or reach out on [Discord](https://pkmn/dev) to request one.
+or or reach out on [Discord](https://pkmn.cc/dev) to request one.
 
 ## How do I use `X`?
 
@@ -85,4 +85,4 @@ its engineering resources in other ways.
 ## I still have a question
 
 Please feel free to open a 'Question' issue on GitHub or to reach out on
-[Discord](https://pkmn/dev). :)
+[Discord](https://pkmn.cc/dev). :)
