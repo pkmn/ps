@@ -47,17 +47,17 @@ because these interfaces diverge, some work was done to help unify them as best 
 - only the **data** from Pokémon Showdown is included, none of the mechanics implementation logic.
 - certain methods (like `Dex#includeModData()` exist for compatibility but are no-ops).
 
-Some changes were made which should be relatively easy handle if migration from Pokémon Showdown
+Some changes were made which should be relatively easy handle if migrating from Pokémon Showdown
 APIs:
 
-- only mainstream generations are supported (ie. no non-standard formats, no `LGPE`, etc).
+- only mainstream generations are supported (ie. no non-standard formats, no `LGPE`, etc). Please see
+  [`@pkmn/mods`](../mods) for information on how to modify the `Dex`.
 - all of the data files are encoded in JSON instead of JS - this is encapsulated by the API but will
   result in slightly larger download size in exchange for [faster
   parsing](https://github.com/GoogleChromeLabs/json-parse-benchmark).
 - certain methods and fields have been renamed, including:
   - `getEffectByID` → `getConditionByID`
   - `dex.data.Pokedex` → `dex.data.Species`
-  - `dex.data.Movedex` → `dex.data.Moves`
   - `dex.data.TypeChart` → `dex.data.Types`
 
 The most important breaking change is that **`getLearnsets` has been made `async`** and its API has
@@ -110,7 +110,7 @@ package. You simply need to depend on `./node_modules/@pkmn/dex/build/production
 `script` tag (which is what the unpkg shortcut above is doing), after which **`Dex` will be
 accessible as a global.**
 
-Because `Dex#getLearnsets` is an asynchronous API, it does not play nicely in the browser. As such,
+`Dex#getLearnsets` does not play nicely in the browser because it is an asynchronous API. As such,
 you must first depend on `./node_modules/@pkmn/dex/build/learnsets.min.js` which makes
 **`DexLearnsets` accessible as a global** before calling `Dex#getLearnsets`. If you are using
 `unpkg` this looks like:
