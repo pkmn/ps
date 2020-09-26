@@ -842,9 +842,15 @@ export class ModdedDex implements T.Dex {
       if (isNode) {
         DATA.Learnsets = require('./data/learnsets.json');
       } else {
-        // Casts required since Typescript thinks asynchronously imported JSON have default exports
-        DATA.Learnsets =
-          (await import('./data/learnsets.json')) as unknown as Data<T.LearnsetData>;
+        try {
+          // Cast required since Typescript thinks asynchronously imported JSON have default exports
+          DATA.Learnsets =
+            (await import('./data/learnsets.json')) as unknown as Data<T.LearnsetData>;
+        } catch (err) {
+          // If we're being used via a <script> tag we depend on Learnsets being required separately
+          DATA.Learnsets = (window as any).DexLearnsets as Data<T.LearnsetData>;
+          if (!DATA.Learnsets) throw new Error('Learnsets have not been included!');
+        }
       }
     }
     this.load('Learnsets', this.modData);

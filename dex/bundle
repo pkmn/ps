@@ -21,9 +21,17 @@ const exports = {};
 for (const [name, file] of DATA) {
   bundled += `const ${name}JSON = ${bundler.read(`data/${file}.json`)};\n`;
 }
-bundled += bundler.read('index.js', 29, 1);
+const index = bundler.read('index.js').split('\n');
+bundled += index.slice(1, 20).join('\n'); // polyfill
+bundled += index.slice(29, -1).join('\n');
 bundled += `
 // EXPORTS
 window.Dex = exports.Dex;
 })();`
 bundler.bundle(bundled);
+
+bundled = `(() => {
+  'use strict';
+  window.DexLearnsets = ${bundler.read('data/learnsets.json')};
+})();`
+bundler.bundle(bundled, 'learnsets.min.js');

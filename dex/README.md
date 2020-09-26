@@ -20,6 +20,9 @@ convenient way to get started, simply depend on a transpiled and minified versio
 <script src="https://unpkg.com/@pkmn/dex"></script>
 ```
 
+Please note that `Learnset` data must be imported separately when using `unpkg`, as
+[outlined below]((#browser)).
+
 ## Usage
 
 This package can be used as a data layer within Pokémon applications **without any runtime
@@ -106,6 +109,21 @@ application. If you do not use a bundler, a convenience `production.min.js` is i
 package. You simply need to depend on `./node_modules/@pkmn/dex/build/production.min.js` in a
 `script` tag (which is what the unpkg shortcut above is doing), after which **`Dex` will be
 accessible as a global.**
+
+Because `Dex#getLearnsets` is an asynchronous API, it does not play nicely in the browser. As such,
+you must first depend on `./node_modules/@pkmn/dex/build/learnsets.min.js` which makes
+**`DexLearnsets` accessible as a global** before calling `Dex#getLearnsets`. If you are using
+`unpkg` this looks like:
+
+```html
+<script src="https://unpkg.com/@pkmn/dex/build/learnsets.min.js"></script>
+<script src="https://unpkg.com/@pkmn/dex"></script>
+```
+
+Note that `unpkg.com/@pkmn/dex` is configured to point at
+`unpkg.com/@pkmn/dex/build/production.min.js` already. The ordering of the `<script>` tags does not
+matter as long as the `learnsets.min.js` script has loaded and populated the `DexLearnsets` global
+before `Dex#getLearnsets` is called.
 
 ## Limitations
 

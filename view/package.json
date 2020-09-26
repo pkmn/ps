@@ -18,7 +18,7 @@
     "@pkmn/types": "^0.1.2"
   },
   "optionalDependencies": {
-    "@pkmn/dex": "^0.2.3",
+    "@pkmn/dex": "^0.2.4",
     "source-map-support": "^0.5.19"
   },
   "scripts": {
