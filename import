@@ -366,6 +366,16 @@ const fillDescs = (text, gen, contents) => {
   return contents;
 };
 
+// Yes, this is obviously fragile AF, thanks for noticing
+const rewrite = (original, fn) => {
+  const rewritten = [];
+  for (const line of original.split('\n')) {
+    const rline = fn(line);
+    if (rline !== undefined) rewritten.push(rline);
+  }
+  return rewritten.join('\n');
+};
+
 const HEAD = async where => (await execOrDie('git rev-parse HEAD', where)).slice(0, 8);
 // Figure out what has changed in PS so that we can later filter out just the interesting changes
 // A GitHub URL for the diff is added for convenience in the event review is required
@@ -414,8 +424,13 @@ const changes = async (where, last, now, repo) => ({
         if (!file.startsWith('sim/')) throw new Error('Unsupported import location');
         const prefix = file.startsWith('sim/tools/') ? '..' : '.';
         const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
+        const rewritten = file !== 'sim/battle.ts' ? original : rewrite(original, line => {
+          if (line === `import {FS} from '../lib/fs';`) return undefined;
+          if (line.startsWith('const suspectTests =')) return 'const suspectTests = {} as any;';
+          return line;
+        });
         fs.writeFileSync(path.resolve(sim, file),
-          `${imports(IMPORTS[file], prefix + '/exported-global-types')}${original}`);
+        `${imports(IMPORTS[file], prefix + '/exported-global-types')}${rewritten}`);
       } else if (file === 'lib/streams.ts') {
         const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
         // double fuck you zarle, AnyObject is a dreadful hack to begin with, feel ashamed
@@ -442,37 +457,32 @@ const changes = async (where, last, now, repo) => ({
     for (const file in RANDOMS_FILES) {
       // Sadly, we need to go through each of these line-by-line :( very sigh
       const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
-      const rewritten = [];
+      const header = [];
       if (RANDOMS_IMPORTS[file]) {
         for (const [type, where] of RANDOMS_IMPORTS[file]) {
-          rewritten.push(imports(type, where).trim());
+          header.push(imports(type, where).trim());
         }
       }
-      for (const line of original.split('\n')) {
-        // Yes, this is obviously fragile AF, thanks for noticing
-        if (line.startsWith('import')) continue;
+      const rewritten = rewrite(original, line => {
+        if (line.startsWith('import')) return undefined;
         const m = INLINE_REQUIRE.exec(line);
-        if (m) {
-          rewritten.push(`${m[1]} = {};`);
-          continue;
-        }
+        if (m) return `${m[1]} = {};`;
         // Bless me, Father, for I have sinned...
         if (line.startsWith('\tconstructor(format:')) {
-          rewritten.push('\tconstructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {');
-          continue;
+          return '\tconstructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {';
         } else if (line === '\t\tsuper(format, prng);') {
-          rewritten.push('\t\tsuper(dex, format, prng);');
-          continue;
+          return '\t\tsuper(dex, format, prng);';
         } else if (line == '\t\tformat = Dex.getFormat(format);') {
-          continue;
+          return undefined;
         } else if (line == '\t\tthis.dex = Dex.forFormat(format);') {
-          rewritten.push('\t\tthis.dex = dex;');
-          continue;
+          return '\t\tthis.dex = dex;';
         }
-        rewritten.push(line.replace(/Dex\./g, 'this.dex.'));
-      }
+        return line.replace(/Dex\./g, 'this.dex.');
+      });
 
-      fs.writeFileSync(path.resolve(randoms, RANDOMS_FILES[file]), rewritten.join('\n'));
+      fs.writeFileSync(
+        path.resolve(randoms, RANDOMS_FILES[file]),
+        `${header.join('\n')}\n${rewritten}`);
     }
 
     // The data files are Typescript, so we need to build to convert them to JS before requiring
