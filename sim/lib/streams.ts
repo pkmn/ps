@@ -106,6 +106,7 @@ export class ReadStream {
 		this.buf.copy(newBuf, 0, this.bufStart, this.bufEnd);
 		this.bufEnd -= this.bufStart;
 		this.bufStart = 0;
+		this.bufCapacity = newCapacity;
 		this.buf = newBuf;
 	}
 
@@ -201,7 +202,7 @@ export class ReadStream {
 		);
 		if (!this.errorBuf && !this.atEOF && this.bufSize < this.readSize) {
 			let bytes: number | null = this.readSize - this.bufSize;
-			if (bytes === Infinity || byteCount === null) bytes = null;
+			if (bytes === Infinity || byteCount === null || byteCount === true) bytes = null;
 			return this.doLoad(bytes, readError);
 		}
 	}
@@ -253,10 +254,48 @@ export class ReadStream {
 		if (byteCount === null || byteCount >= this.bufSize) {
 			this.bufStart = 0;
 			this.bufEnd = 0;
+			this.readSize = 0;
 		} else {
 			this.bufStart += byteCount;
+			this.readSize -= byteCount;
 		}
 		return out;
+	}
+
+	byChunk(byteCount?: number | null) {
+		// eslint-disable-next-line @typescript-eslint/no-this-alias
+		const byteStream = this;
+		return new ObjectReadStream<string>({
+			async read(this: ObjectReadStream<string>) {
+				const next = await byteStream.read(byteCount);
+				if (typeof next === 'string') this.push(next);
+				else this.pushEnd();
+			},
+		});
+	}
+
+	byLine() {
+		// eslint-disable-next-line @typescript-eslint/no-this-alias
+		const byteStream = this;
+		return new ObjectReadStream<string>({
+			async read(this: ObjectReadStream<string>) {
+				const next = await byteStream.readLine();
+				if (typeof next === 'string') this.push(next);
+				else this.pushEnd();
+			},
+		});
+	}
+
+	delimitedBy(delimiter: string) {
+		// eslint-disable-next-line @typescript-eslint/no-this-alias
+		const byteStream = this;
+		return new ObjectReadStream<string>({
+			async read(this: ObjectReadStream<string>) {
+				const next = await byteStream.readDelimitedBy(delimiter);
+				if (typeof next === 'string') this.push(next);
+				else this.pushEnd();
+			},
+		});
 	}
 
 	async readBuffer(byteCount: number | null = null) {
@@ -477,6 +516,20 @@ export class ReadWriteStream extends ReadStream implements WriteStream {
 	}
 }
 
+type ObjectReadStreamOptions<T> = {
+	buffer?: T[],
+	read?: (this: ObjectReadStream<T>) => void | Promise<void>,
+	pause?: (this: ObjectReadStream<T>) => void | Promise<void>,
+	destroy?: (this: ObjectReadStream<T>) => void | Promise<void>,
+	nodeStream?: undefined,
+} | {
+	buffer?: undefined,
+	read?: undefined,
+	pause?: undefined,
+	destroy?: undefined,
+	nodeStream: NodeJS.ReadableStream,
+};
+
 export class ObjectReadStream<T> {
 	buf: T[];
 	readSize: number;
@@ -489,7 +542,7 @@ export class ObjectReadStream<T> {
 	nextPush: Promise<void>;
 	awaitingPush: boolean;
 
-	constructor(optionsOrStreamLike: {[k: string]: any} | NodeJS.ReadableStream | T[] = {}) {
+	constructor(optionsOrStreamLike: ObjectReadStreamOptions<T> | NodeJS.ReadableStream | T[] = {}) {
 		this.buf = [];
 		this.readSize = 0;
 		this.atEOF = false;
@@ -503,16 +556,16 @@ export class ObjectReadStream<T> {
 		});
 		this.awaitingPush = false;
 
-		let options;
+		let options: ObjectReadStreamOptions<T>;
 		if (Array.isArray(optionsOrStreamLike)) {
 			options = {buffer: optionsOrStreamLike};
 		} else if (typeof (optionsOrStreamLike as any)._readableState === 'object') {
 			options = {nodeStream: optionsOrStreamLike as NodeJS.ReadableStream};
 		} else {
-			options = optionsOrStreamLike;
+			options = optionsOrStreamLike as ObjectReadStreamOptions<T>;
 		}
-		if (options.nodeStream) {
-			const nodeStream: NodeJS.ReadableStream = options.nodeStream;
+		if ((options as any).nodeStream) {
+			const nodeStream: NodeJS.ReadableStream = (options as any).nodeStream;
 			this.nodeReadableStream = nodeStream;
 			nodeStream.on('data', data => {
 				this.push(data);
@@ -521,12 +574,13 @@ export class ObjectReadStream<T> {
 				this.pushEnd();
 			});
 
-			options.read = function (this: ReadStream, unusedBytes: number) {
-				this.nodeReadableStream!.resume();
-			};
-
-			options.pause = function (this: ReadStream) {
-				this.nodeReadableStream!.pause();
+			options = {
+				read() {
+					this.nodeReadableStream!.resume();
+				},
+				pause() {
+					this.nodeReadableStream!.pause();
+				},
 			};
 		}
 
@@ -743,6 +797,9 @@ export class ObjectWriteStream<T> {
 }
 
 interface ObjectReadWriteStreamOptions<T> {
+	read?: (this: ObjectReadStream<T>) => void | Promise<void>;
+	pause?: (this: ObjectReadStream<T>) => void | Promise<void>;
+	destroy?: (this: ObjectReadStream<T>) => void | Promise<void>;
 	write?: (this: ObjectWriteStream<T>, elem: T) => Promise<any> | undefined | void;
 	writeEnd?: () => Promise<any> | undefined | void;
 }

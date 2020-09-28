@@ -4852,7 +4852,7 @@
     "rockruffdusk": {"tier": "LC"},
     "lycanroc": {"tier": "RU", "doublesTier": "(DUU)"},
     "lycanrocmidnight": {"tier": "PU", "doublesTier": "(DUU)"},
-    "lycanrocdusk": {"tier": "UU", "doublesTier": "(DUU)"},
+    "lycanrocdusk": {"tier": "UUBL", "doublesTier": "(DUU)"},
     "wishiwashi": {"tier": "NU", "doublesTier": "(DUU)"},
     "wishiwashischool": {},
     "mareanie": {"tier": "PU", "doublesTier": "LC"},
