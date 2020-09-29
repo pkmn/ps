@@ -29,19 +29,6 @@ import {
 	TypeInfo,
 } from './exported-global-types';
 
-// eslint-disable-next-line no-extend-native
-Object.defineProperty(Array.prototype, 'flatMap', {
-	value<T, U, W>(this: T[], callback: (this: W, item: T, index: number, array: T[]) => U[], thisArg: W): U[] {
-		const newArray = [];
-		for (let i = 0; i < this.length; i++) {
-			newArray.push(...callback.call(thisArg, this[i], i, this));
-		}
-		return newArray;
-	},
-	configurable: true,
-	writable: true,
-});
-
 import * as gen1 from '../data/mods/gen1';
 import * as gen2 from '../data/mods/gen2';
 import * as gen3 from '../data/mods/gen3';

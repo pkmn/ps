@@ -477,13 +477,13 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
 
         for (const gen of gens) {
           for (const stat of gen.stats) {
-            const s = gen.stats.calc(stat, 100, 31, 252, 100, gen.natures.get('adamant')!);
+            const s = gen.stats.calc(stat, 100, 31, 252, 100, gen.natures.get('adamant'));
             expect(s).toBe(gen.num < 3 ? rby[stat] : adv[stat]);
           }
         }
 
         // Shedinja
-        expect(Gen(5).stats.calc('hp', 1, 31, 252, 100, Gen(5).natures.get('jolly')!))
+        expect(Gen(5).stats.calc('hp', 1, 31, 252, 100, Gen(5).natures.get('jolly')))
           .toBe(1);
         // no nature
         expect(Gen(8).stats.calc('atk', 100, 31, 252, 100)).toBe(299);
@@ -597,7 +597,7 @@ describe('Bundle', () => {
     {
       const window = {} as { Dex: DexT; Generations: typeof Generations };
 
-      // Some gymnastics required to load the learnsets data... (the bundle is not for node)
+      // Some gymnastics required to load the learnsets data... (the bundle is not for Node)
       const build = path.resolve(__dirname, './node_modules/@pkmn/dex/build');
       const converted = fs.readFileSync(`${build}/production.min.js`, 'utf8')
         .replace('./data/learnsets.json', `${build}/data/learnsets.json`);

@@ -4,7 +4,7 @@
     "allowJs": true,
     "allowUnusedLabels": false,
     "checkJs": true,
-    "lib": ["es2015", "es2016.array.include", "es2017.object"],
+    "lib": ["es2019"],
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": false,
     "noImplicitReturns": false,

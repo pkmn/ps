@@ -494,7 +494,7 @@ const DISPLAY: Readonly<{ [stat: string]: Readonly<[string, string]> }> = {
   def: ['Def', 'Defense'],
   spa: ['SpA', 'Special Attack'],
   spd: ['SpD', 'Special Defense'],
-  spe: ['Spd', 'Speed'],
+  spe: ['Spe', 'Speed'],
   spc: ['Spc', 'Special'],
 };
 
@@ -504,13 +504,29 @@ export class Stats {
     this.dex = dex;
   }
 
-  calc(stat: StatName, base: number, iv?: number, ev?: number, level?: number): number;
-  // eslint-disable-next-line @typescript-eslint/unified-signatures
-  calc(stat: StatName, base: number, iv: number, ev: number, level: number, nature: Nature): number;
-  calc(stat: StatName, base: number, iv = 31, ev = 252, level = 100, nature?: Nature) {
-    return this.dex.gen < 3
-      ? calcRBY(stat, base, this.toDV(iv), ev, level)
-      : calcADV(stat, base, iv, ev, level, nature);
+  calc(stat: StatName, base: number, iv = 31, ev?: number, level = 100, nature?: Nature) {
+    if (ev === undefined) ev = this.dex.gen < 3 ? 252 : 0;
+    if (this.dex.gen < 3) {
+      iv = this.toDV(iv) * 2;
+      nature = undefined;
+    }
+    if (stat === 'hp') {
+      return base === 1
+        ? base
+        : Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + level + 10;
+    } else {
+      let mod = 1;
+      if (nature !== undefined) {
+        if (nature.plus === stat) {
+          mod = 1.1;
+        } else if (nature.minus === stat) {
+          mod = 0.9;
+        }
+      }
+      return Math.floor(
+        (Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * mod
+      );
+    }
   }
 
   get(s: string): StatName | undefined {
@@ -552,40 +568,6 @@ export class Stats {
 
   toIV(dv: number): number {
     return dv * 2 + 1;
-  }
-}
-
-function calcRBY(stat: StatName, base: number, dv: number, ev: number, level: number) {
-  // BUG: we ignore EVs - do we care about converting ev to stat experience?
-  if (stat === 'hp') {
-    return Math.floor((((base + dv) * 2 + 63) * level) / 100) + level + 10;
-  } else {
-    return Math.floor((((base + dv) * 2 + 63) * level) / 100) + 5;
-  }
-}
-
-function calcADV(
-  stat: StatName,
-  base: number,
-  iv: number,
-  ev: number,
-  level: number,
-  nature?: Nature
-) {
-  if (stat === 'hp') {
-    return base === 1
-      ? base
-      : Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + level + 10;
-  } else {
-    let mod = 1;
-    if (nature !== undefined) {
-      if (nature.plus === stat) {
-        mod = 1.1;
-      } else if (nature.minus === stat) {
-        mod = 0.9;
-      }
-    }
-    return Math.floor((Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * mod);
   }
 }
 

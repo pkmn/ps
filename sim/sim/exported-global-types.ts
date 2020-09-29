@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 export type Battle = import('./battle').Battle;
 export type BattleQueue = import('./battle-queue').BattleQueue;
 export type Field = import('./field').Field;
