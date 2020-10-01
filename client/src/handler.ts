@@ -316,8 +316,14 @@ export class Handler implements Protocol.Handler {
     }
   }
 
-  '|-clearboost|'(args: Args['|-clearboost|']) {
-    this.battle.getPokemon(args[1])!.boosts = {};
+  '|-clearboost|'(args: Args['|-clearboost|'], kwArgs: KWArgs['|-clearboost|']) {
+    const poke = this.battle.getPokemon(args[1])!;
+    poke.boosts = {};
+    if (!kwArgs.silent && kwArgs.from) {
+      const effect = this.battle.dex.getEffect(kwArgs.from);
+      const ofpoke = this.battle.getPokemon(kwArgs.of);
+      (ofpoke || poke).activateAbility(effect);
+    }
   }
 
   '|-invertboost|'(args: Args['|-invertboost|']) {
