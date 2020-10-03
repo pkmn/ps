@@ -41,7 +41,7 @@ export class Battle {
   // readonly inputLog: string[];
   // readonly messageLog: string[];
   // sentLogPos: number;
-  // sentEnd: boolean;©367
+  // sentEnd: boolean;
 
   // requestState: RequestState;
   // turn: number;
