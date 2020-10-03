@@ -1,8 +1,13 @@
-# `@pkmn/ps`
+<p align="center">
+  <img alt="pkmn/ps" width="192" height="192" src="https://pkmn.cc/pokeball.png" />
+</p>
+
+# `pkmn/ps`
 
 ![Test Status](https://github.com/pkmn/ps/workflows/Tests/badge.svg)
 
-> [Pokémon Showdown](https://pokemonshowdown.com), [modularized into packages](https://pkmn.cc/modular-ps).
+> [Pokémon Showdown](https://pokemonshowdown.com), [modularized into
+> packages](https://pkmn.cc/modular-ps).
 
 This is the top level of [`@pkmn`](https://pkmn.cc/@pkmn/)'s Pokémon Showdown components.
 
@@ -29,9 +34,6 @@ This is the top level of [`@pkmn`](https://pkmn.cc/@pkmn/)'s Pokémon Showdown c
 - [`@pkmn/login`](login): logic for authenticating with Pokémon Showdown
 - [`@pkmn/randoms`](randoms): random team generation logic for Pokémon Showdown's Random Battle
   formats, for use with [`@pkmn/sim`](sim)
-
-[TODO](TODO.md) is currently used to track pending work and an [FAQ](FAQ.md) exists to cover
-common questions about the project.
 
 Everything in this repository is distributed under the terms of the [MIT License](LICENSE). For
 some packages, substantial amounts of the code have been either derived or generated from the
