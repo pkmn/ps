@@ -21,8 +21,14 @@ export class Side {
   lastPokemon: Pokemon | null;
   team: Pokemon[];
 
-  // [effectName, levels, minDuration, maxDuration]
-  sideConditions: { [id: string]: [SideCondition, number, number, number] };
+  sideConditions: {
+    [id: string]: {
+      name: SideCondition;
+      level: number;
+      minDuration: number;
+      maxDuration: number;
+    };
+  };
 
   wisher: Pokemon | null;
 
@@ -55,9 +61,7 @@ export class Side {
   }
 
   get pokemon() {
-    const pokemon = this.active[0];
-    if (!pokemon) throw new Error('No active Pokémon');
-    return pokemon;
+    return this.active[0] || undefined;
   }
 
   setAvatar(avatar: AvatarIdent) {
@@ -74,29 +78,25 @@ export class Side {
     const id = effect.id;
     if (this.sideConditions[id]) {
       if (id === 'spikes' || id === 'toxicspikes') {
-        this.sideConditions[id][1]++;
+        this.sideConditions[id].level++;
       }
       return;
     }
 
-    // Side conditions work as: [effectName, levels, minDuration, maxDuration]
-    const condition = effect.name as SideCondition;
+    const name = effect.name as SideCondition;
     switch (id) {
     case 'tailwind':
-      return (this.sideConditions[id] = [condition, 1, this.battle.gen.num >= 5 ? 4 : 3, 0]);
-    case 'reflect':
-      return (this.sideConditions[id] = [condition, 1, 5, this.battle.gen.num >= 4 ? 8 : 0]);
-    case 'lightscreen':
-      return (this.sideConditions[id] = [condition, 1, 5, this.battle.gen.num >= 4 ? 8 : 0]);
-    case 'auroraveil': return (this.sideConditions[id] = [condition, 1, 5, 8]);
-    case 'safeguard': return (this.sideConditions[id] = [condition, 1, 5, 0]);
-    case 'mist': return (this.sideConditions[id] = [condition, 1, 5, 0]);
-    case 'luckychant': return (this.sideConditions[id] = [condition, 1, 5, 0]);
-    case 'stealthrock': return (this.sideConditions[id] = [condition, 1, 0, 0]);
-    case 'spikes': return (this.sideConditions[id] = [condition, 1, 0, 0]);
-    case 'toxicspikes': return (this.sideConditions[id] = [condition, 1, 0, 0]);
-    case 'stickyweb': return (this.sideConditions[id] = [condition, 1, 0, 0]);
-    default: return (this.sideConditions[id] = [condition, 1, 0, 0]);
+      return (this.sideConditions[id] =
+          {name, level: 1, minDuration: this.battle.gen.num >= 5 ? 4 : 3, maxDuration: 0});
+    case 'reflect': case 'lightscreen':
+      return (this.sideConditions[id] =
+        {name, level: 1, minDuration: 5, maxDuration: this.battle.gen.num >= 4 ? 8 : 0});
+    case 'auroraveil':
+      return (this.sideConditions[id] = {name, level: 1, minDuration: 5, maxDuration: 8});
+    case 'safeguard': case 'mist': case 'luckychant':
+      return (this.sideConditions[id] = {name, level: 1, minDuration: 5, maxDuration: 0});
+    default:
+      return (this.sideConditions[id] = {name, level: 1, minDuration: 0, maxDuration: 0});
     }
   }
 

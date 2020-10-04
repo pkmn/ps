@@ -48,8 +48,8 @@ export class Field {
     for (const side of this.battle.sides) {
       for (const id in side.sideConditions) {
         const cond = side.sideConditions[id];
-        if (cond[2]) cond[2]--;
-        if (cond[3]) cond[3]--;
+        if (cond.minDuration) cond.minDuration--;
+        if (cond.maxDuration) cond.maxDuration--;
       }
     }
   }

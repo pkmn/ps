@@ -17,15 +17,19 @@ describe('Side', () => {
     const side = new Side({gen: {num: 8}} as Battle, 0);
 
     side.addSideCondition({id: 'spikes', name: 'Spikes'} as unknown as Effect);
-    expect(side.sideConditions['spikes']).toEqual(['Spikes', 1, 0, 0]);
+    expect(side.sideConditions['spikes'])
+      .toEqual({name: 'Spikes', level: 1, minDuration: 0, maxDuration: 0});
     side.addSideCondition({id: 'spikes', name: 'Spikes'} as unknown as Effect);
-    expect(side.sideConditions['spikes']).toEqual(['Spikes', 2, 0, 0]);
+    expect(side.sideConditions['spikes'])
+      .toEqual({name: 'Spikes', level: 2, minDuration: 0, maxDuration: 0});
 
     side.addSideCondition({id: 'tailwind', name: 'Tailwind'} as unknown as Effect);
-    expect(side.sideConditions['tailwind']).toEqual(['Tailwind', 1, 4, 0]);
+    expect(side.sideConditions['tailwind'])
+      .toEqual({name: 'Tailwind', level: 1, minDuration: 4, maxDuration: 0});
 
     side.addSideCondition({id: 'lightscreen', name: 'Light Screen'} as unknown as Effect);
-    expect(side.sideConditions['lightscreen']).toEqual(['Light Screen', 1, 5, 8]);
+    expect(side.sideConditions['lightscreen'])
+      .toEqual({name: 'Light Screen', level: 1, minDuration: 5, maxDuration: 8});
 
     side.removeSideCondition('tailwind' as ID);
     expect(side.sideConditions['tailwind']).toBeUndefined();
@@ -236,7 +240,8 @@ describe('Side', () => {
     expect(side.lastPokemon).toBeNull();
     expect(side.active).toEqual([null]);
     expect(side.team).toEqual([]);
-    expect(side.sideConditions['stealthrock']).toEqual(['Stealth Rock', 1, 0, 0]); // WTF?
+    expect(side.sideConditions['stealthrock'])
+      .toEqual({name: 'Stealth Rock', level: 1, minDuration: 0, maxDuration: 0}); // WTF?
     expect(side.battle).toBeNull();
     expect(side.foe).toBeNull();
   });
