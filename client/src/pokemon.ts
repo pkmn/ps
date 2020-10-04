@@ -145,7 +145,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   statusStage: number;
   statusData: { sleepTurns: number; toxicTurns: number };
-  boosts: Partial<BoostsTable & { spc: number }>;
+  boosts: Partial<BoostsTable>;
   volatiles: EffectTable;
   turnstatuses: EffectTable;
   movestatuses: EffectTable;

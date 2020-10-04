@@ -239,9 +239,9 @@ export class Handler implements Protocol.Handler {
     kwArgs: KWArgs['|-boost|' | '|-unboost|']
   ) {
     const poke = this.battle.getPokemon(args[1])!;
-    let boost: BoostName | 'spc' = args[2];
+    const boost: BoostName = args[2];
     if (this.battle.gen.num === 1 && boost === 'spd') return;
-    if (this.battle.gen.num === 1 && boost === 'spa') boost = 'spc';
+    // if (this.battle.gen.num === 1 && boost === 'spa') boost = 'spc';
     const amount = parseInt(args[3]);
     if (amount === 0) return;
 

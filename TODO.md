@@ -60,7 +60,6 @@ version number in case set import changes.
   - migrate `EffectState` to an object
   - `volatiles`/`movestatus`/`turnstatus` - condense and fix type?
   - change `type`/`addedType` etc handling to match server?
-  - remove `spc?` from `boosts`
   - `switch` etc
   - `moveThisTurn` etc
 - handle discrepancies with `@pkmn/sim` (for `@pkmn/epoke` state transforms)
