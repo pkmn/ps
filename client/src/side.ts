@@ -5,19 +5,6 @@ import {Battle} from './battle';
 import {Pokemon} from './pokemon';
 
 export class Side {
-  // maxTeamSize: number;
-  // team: PokemonSet[];
-
-  // pokemonLeft: number;
-  // faintedLastTurn: boolean;
-  // faintedThisTurn: boolean;
-  // zMoveUsed: boolean;
-
-  // activeRequest: AnyObject | null;
-  // choice: Choice;
-
-  // lastMove: Move | null;
-
   readonly battle: Battle;
   readonly n: number;
   id: ID;
@@ -256,6 +243,7 @@ export class Side {
       pokemon.removeVolatile('formechange' as ID);
     }
 
+    pokemon.beingCalledBack = true;
     pokemon.statusData.toxicTurns = 0;
     if (this.battle.gen.num === 5) pokemon.statusData.sleepTurns = 0;
     this.lastPokemon = pokemon;

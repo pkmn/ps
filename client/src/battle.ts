@@ -16,59 +16,9 @@ import {Handler} from './handler';
 import {Side} from './side';
 import {Pokemon} from './pokemon';
 
-// interface FaintedPokemon {
-//  target: Pokemon;
-//  source: Pokemon | null;
-//  effect: Effect | null;
-// }
-
 const SLOTS: { [slot: string]: number } = {a: 0, b: 1, c: 2, d: 3, e: 4, f: 5};
 
 export class Battle {
-  // readonly strictChoices: boolean;
-  // readonly formatid: ps.ID;
-  // readonly formatData: AnyObject;
-  // readonly prngSeed: PRNGSeed;
-  // rated: boolean | string;
-  // reportExactHP: boolean;
-  // reportPercentages: boolean;
-  // supportCancel: boolean;
-
-  // queue: BattleQueue;
-  // readonly faintQueue: FaintedPokemon[];
-
-  // readonly log: string[];
-  // readonly inputLog: string[];
-  // readonly messageLog: string[];
-  // sentLogPos: number;
-  // sentEnd: boolean;
-
-  // requestState: RequestState;
-  // turn: number;
-  // midTurn: boolean;
-  // started: boolean;
-  // ended: boolean;
-  // winner?: string;
-
-  // effect: Effect;
-  // effectData: AnyObject;
-
-  // event: AnyObject;
-  // events: AnyObject | null;
-  // eventDepth: number;
-
-  // activeMove: ActiveMove | null;
-  // activePokemon: Pokemon | null;
-  // activeTarget: Pokemon | null;
-
-  // lastMove: Move | null;
-  // lastMoveThisTurn: Move | null;
-  // lastMoveLine: number;
-  // lastDamage: number;
-  // abilityOrder: number;
-
-  // readonly hints: Set<string>;
-
   readonly gens: Generations;
 
   gen: Generation;
@@ -138,12 +88,15 @@ export class Battle {
     turnNum = parseInt(turnNum as string);
     this.turn = turnNum;
 
-    if (this.p1.active[0]) this.p1.active[0]!.clearTurnstatuses();
-    if (this.p1.active[1]) this.p1.active[1]!.clearTurnstatuses();
-    if (this.p1.active[2]) this.p1.active[2]!.clearTurnstatuses();
-    if (this.p2.active[0]) this.p2.active[0]!.clearTurnstatuses();
-    if (this.p2.active[1]) this.p2.active[1]!.clearTurnstatuses();
-    if (this.p2.active[2]) this.p2.active[2]!.clearTurnstatuses();
+    for (const side of this.sides) {
+      for (const pokemon of side.active) {
+        if (!pokemon) continue;
+        pokemon.clearTurnstatuses();
+        pokemon.moveThisTurn = '';
+        pokemon.hurtThisTurn = false;
+        pokemon.newlySwitched = false;
+      }
+    }
   }
 
   updateToxicTurns() {

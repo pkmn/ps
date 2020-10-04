@@ -53,15 +53,12 @@ version number in case set import changes.
 
 ## `@pkmn/client`
 
-- cleanup usages of `null`
 - remove `serverPokemon?: ServerPokemon` params?
 - migrate to support `@pkmn/dmg`
   - change `sideConditions` -> `sideConditions: {[id: string]: {level?: number}}`
   - migrate `EffectState` to an object
   - `volatiles`/`movestatus`/`turnstatus` - condense and fix type?
   - change `type`/`addedType` etc handling to match server?
-  - `switch` etc
-  - `moveThisTurn` etc
 - handle discrepancies with `@pkmn/sim` (for `@pkmn/epoke` state transforms)
 
 ## `@pkmn/view`

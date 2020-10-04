@@ -24,95 +24,14 @@ import {
 
 import {Side} from './side';
 
-// export interface MoveSlot {
-//   id: ID;
-//   move: string;
-//   pp: number;
-//   maxpp: number;
-//   target?: string;
-//   disabled: boolean | string;
-//   disabledSource?: string;
-//   used: boolean;
-//   virtual?: boolean;
-// }
-
-// interface EffectState {
-//   id: ID;
-//  duration?: number;
-//  [k: string]: any;
-// }
 type EffectState = any[] & { 0: ID };
+
 // [name, minTimeLeft, maxTimeLeft]
 interface EffectTable { [effectid: string]: EffectState }
 
 export interface ServerPokemon extends Request.Pokemon, DetailedPokemon, PokemonHealth { }
 
 export class Pokemon implements DetailedPokemon, PokemonHealth {
-  // readonly set: PokemonSet;
-  // readonly baseHpType: string;
-  // readonly baseHpPower: number;
-
-  // readonly baseMoveSlots: MoveSlot[];
-  // moveSlots: MoveSlot[];
-
-  // hpType: string;
-  // hpPower: number;
-
-  // speciesData: EffectState;
-
-  // showCure?: boolean;
-
-  // baseStoredStats: StatsTable;
-  // storedStats: StatsExceptHPTable;
-
-  // abilityData: EffectState;
-
-  // itemData: EffectState;
-  // usedItemThisTurn: boolean;
-  // ateBerry: boolean;
-
-  // trapped: boolean | "hidden";
-  // maybeTrapped: boolean;
-  // maybeDisabled: boolean;
-
-  // illusion: Pokemon | null;
-  // transformed: boolean;
-
-  // baseMaxhp: number;
-  // faintQueued: boolean;
-  // subFainted: boolean | null;
-
-  // types: string[];
-  // addedType: string;
-  // knownType: boolean;
-  // apparentType: string;
-
-  // lastMoveTargetLoc?: number;
-  // lastDamage: number;
-  // attackedBy: {source: Pokemon, damage: number, thisTurn: boolean, move?: ID}[];
-
-  // isActive: boolean;
-  // activeTurns: number;
-  // truantTurn: boolean;
-  // isStarted: boolean;
-  // duringMove: boolean;
-
-  // weighthg: number;
-  // speed: number;
-  // abilityOrder: number;
-
-  // canMegaEvo: string | null | undefined;
-  // canUltraBurst: string | null | undefined;
-  // canDynamax: boolean;
-  // readonly canGigantamax: string | null;
-
-  // staleness?: 'internal' | 'external';
-  // pendingStaleness?: 'internal' | 'external';
-  // modifiedStats?: StatsExceptHPTable;
-  // modifyStat?: (this: Pokemon, statName: StatNameExceptHP, modifier: number) => void;
-
-  // m: PokemonModData;
-
   readonly side: Side;
   slot: number;
 
@@ -131,17 +50,8 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   status?: StatusName;
   fainted: boolean;
 
-  // switchFlag: ID | boolean;
-  // forceSwitchFlag: boolean;
-  // switchCopyFlag: boolean;
-  // draggedIn: number | null;
-  // newlySwitched: boolean;
-  // beingCalledBack: boolean;
-
-  // moveThisTurn: string | boolean;
-  // moveLastTurnResult: boolean | null | undefined;
-  // moveThisTurnResult: boolean | null | undefined;
-  // hurtThisTurn: boolean;
+  newlySwitched: boolean;
+  beingCalledBack: boolean;
 
   statusStage: number;
   statusData: { sleepTurns: number; toxicTurns: number };
@@ -151,7 +61,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   movestatuses: EffectTable;
 
   ability: ID;
-  suppressedAbility: boolean;
   baseAbility: ID;
 
   item: ID;
@@ -163,7 +72,11 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   moves: ID[];
   // [[moveName, ppUsed]]
   moveTrack: [string, number][] = [];
-  lastMove: ID | '';
+
+  lastMove: ID;
+  lastMoveTargetLoc?: number;
+  moveThisTurn: ID | boolean;
+  hurtThisTurn: boolean;
 
   constructor(side: Side, details: DetailedPokemon) {
     this.side = side;
@@ -185,6 +98,9 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.status = undefined;
     this.fainted = false;
 
+    this.newlySwitched = false;
+    this.beingCalledBack = false;
+
     this.statusStage = 0;
     this.statusData = {sleepTurns: 0, toxicTurns: 0};
     this.boosts = {};
@@ -194,7 +110,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
     this.ability = '';
     this.baseAbility = '';
-    this.suppressedAbility = false;
 
     this.item = '';
     this.itemEffect = '';
@@ -204,7 +119,11 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
     this.moves = [];
     this.moveTrack = [];
+
     this.lastMove = '';
+    this.lastMoveTargetLoc = undefined;
+    this.moveThisTurn = '';
+    this.hurtThisTurn = false;
   }
 
   get ident() {
@@ -345,16 +264,21 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   clearVolatile() {
     this.ability = this.baseAbility;
-    this.suppressedAbility = false;
     this.boosts = {};
     this.clearVolatiles();
+
     for (let i = 0; i < this.moveTrack.length; i++) {
       if (this.moveTrack[i][0].charAt(0) === '*') {
         this.moveTrack.splice(i, 1);
         i--;
       }
     }
-    // this.lastMove = '';
+    this.lastMove = '';
+    this.moveThisTurn = '';
+    this.hurtThisTurn = false;
+    this.newlySwitched = true;
+    this.beingCalledBack = false;
+
     this.statusStage = 0;
     this.statusData.toxicTurns = 0;
     if (this.side.battle.gen.num === 5) this.statusData.sleepTurns = 0;
@@ -455,7 +379,11 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       this.rememberMove(moveName, pp);
     }
     this.lastMove = move.id;
+    this.lastMoveTargetLoc = target
+      ? target.side === this.side ? -(target.slot + 1) : target.slot + 1
+      : 0;
     this.side.battle.lastMove = move.id;
+    this.moveThisTurn = move.id;
     if (move.id === 'wish' || move.id === 'healingwish') {
       this.side.wisher = this;
     }
@@ -466,7 +394,11 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.activateAbility(effect);
     if (move?.id) this.rememberMove(move.name, 0);
     switch (effect.id) {
-    case 'slp': return void this.statusData.sleepTurns++;
+    case 'slp': {
+      this.lastMove = '';
+      return void this.statusData.sleepTurns++;
+    }
+    case 'frz': return void (this.lastMove = '');
     case 'focuspunch': return this.removeTurnstatus('focuspunch' as ID);
     case 'shelltrap': return this.removeTurnstatus('shelltrap' as ID);
     case 'flinch': return this.removeTurnstatus('focuspunch' as ID);
@@ -484,7 +416,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   rememberAbility(ability: string, isNotBase?: boolean) {
     this.ability = this.side.battle.gen.abilities.get(ability)!.id;
-    this.suppressedAbility = false;
     if (!this.baseAbility && !isNotBase) {
       this.baseAbility = this.ability;
     }

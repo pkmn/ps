@@ -6,12 +6,6 @@ import {Pokemon} from './pokemon';
 export type WeatherState<T = ID> = [T, number, number];
 
 export class Field {
-  //  weather: ID;
-  //  weatherData: AnyObject;
-  //  terrain: ID;
-  //  terrainData: AnyObject;
-  //  pseudoWeather: AnyObject;
-
   readonly battle: Battle;
 
   weather!: ID;
