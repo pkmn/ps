@@ -49,18 +49,15 @@ version number in case set import changes.
 
 ## `@pkmn/login`
 
-- **finish `index.html` example**
-- **upkeep example with cookies**
+- upkeep example with cookies
 
 ## `@pkmn/client`
 
 - cleanup usages of `null`
-- depend on `@pkmn/data` instead of `@pkmn/dex-types`
 - remove `serverPokemon?: ServerPokemon` params?
 - migrate to support `@pkmn/dmg`
   - `ability` needs to handle `(suppressed)`
   - `item` needs to handle `(exists)`
-  - remove `''` from `GenderName`
   - remove `'' | '???'` from `status`
   - change `sideConditions` -> `sideConditions: {[id: string]: {level?: number}}`
   - migrate `EffectState` to an object
@@ -81,6 +78,7 @@ version number in case set import changes.
 ## Integration
 
 - get `npm test:integration` to run on GitHub
+  - pull `build-indexes` out to integration and modify... (still call `update`)
 - figure out how to run `eslint` on JS files without crashing
 - add deeper equality method for Pokémon Showdown's client state vs. pkmns (requires handling
   different representations eg `ID`s, consider using protocol `Verifier` to verify all types)

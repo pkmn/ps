@@ -121,7 +121,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   speciesForme: string;
   level: number;
   shiny: boolean;
-  gender: GenderName | '';
+  gender: GenderName;
   readonly originalIdent: PokemonIdent;
   searchid: PokemonSearchID;
 

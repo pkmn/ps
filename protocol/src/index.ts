@@ -1764,7 +1764,7 @@ export interface DetailedPokemon {
   speciesForme: string;
   level: number;
   shiny: boolean;
-  gender: GenderName | '';
+  gender?: GenderName;
   ident: PokemonIdent;
   searchid: PokemonSearchID;
 }
@@ -1923,7 +1923,7 @@ export const Protocol = new class {
     output.speciesForme = name;
     output.level = 100;
     output.shiny = false;
-    output.gender = '';
+    output.gender = undefined;
     output.ident = !isTeamPreview ? ident : '' as Protocol.PokemonIdent;
     output.searchid = (!isTeamPreview ? `${ident}|${details}` : '') as Protocol.PokemonSearchID;
 
@@ -1934,7 +1934,7 @@ export const Protocol = new class {
     }
     const gender = splitDetails[splitDetails.length - 1];
     if (gender === 'M' || gender === 'F') {
-      output.gender = gender as GenderName;
+      output.gender = gender;
       splitDetails.pop();
     }
     if (splitDetails[1]) output.level = parseInt(splitDetails[1].substr(1)) || 100;
