@@ -108,7 +108,7 @@ export class Handler implements Protocol.Handler {
 
   '|poke|'(args: Args['|poke|']) {
     const pokemon = this.battle.rememberTeamPreviewPokemon(args[1], args[2])!;
-    if (args[3] === 'item') pokemon.item = '(exists)';
+    if (args[3] === 'item') pokemon.teamPreviewItem = true;
   }
 
   '|teampreview|'(args: Args['|teampreview|']) {
@@ -541,7 +541,8 @@ export class Handler implements Protocol.Handler {
     // and the third arg of |-ability| for Entrainment et al
     const poke = this.battle.getPokemon(args[1])!;
     const ability = args[2] && this.battle.gen.abilities.get(args[2]);
-    poke.ability = '(suppressed)';
+    poke.ability = ''; // '(suppressed)';
+    poke.suppressedAbility = true;
     if (ability?.id && !poke.baseAbility) poke.baseAbility = ability.id;
   }
 
@@ -562,6 +563,7 @@ export class Handler implements Protocol.Handler {
 
     poke.speciesForme = newSpeciesForme;
     poke.ability = poke.baseAbility = (species.abilities ? toID(species.abilities['0']) : '');
+    poke.suppressedAbility = false;
 
     poke.details = args[2];
     poke.searchid = args[1].substr(0, 2) + args[1].substr(3) + '|' + args[2] as PokemonSearchID;
@@ -578,6 +580,7 @@ export class Handler implements Protocol.Handler {
     poke.boosts = {...tpoke.boosts};
     poke.copyTypesFrom(tpoke);
     poke.ability = tpoke.ability;
+    poke.suppressedAbility = false;
     const speciesForme = tpoke.volatiles.formechange
       ? tpoke.volatiles.formechange[1]
       : tpoke.speciesForme;

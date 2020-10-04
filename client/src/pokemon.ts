@@ -150,13 +150,15 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   turnstatuses: EffectTable;
   movestatuses: EffectTable;
 
-  ability: ID | '(suppressed)';
+  ability: ID;
+  suppressedAbility: boolean;
   baseAbility: ID;
 
-  item: ID | '(exists)';
+  item: ID;
   itemEffect: string;
   lastItem: ID;
   lastItemEffect: string;
+  teamPreviewItem: boolean;
 
   moves: ID[];
   // [[moveName, ppUsed]]
@@ -192,11 +194,13 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
     this.ability = '';
     this.baseAbility = '';
+    this.suppressedAbility = false;
 
     this.item = '';
     this.itemEffect = '';
     this.lastItem = '';
     this.lastItemEffect = '';
+    this.teamPreviewItem = false;
 
     this.moves = [];
     this.moveTrack = [];
@@ -230,6 +234,10 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   // get switching() {
   //   return this.newlySwitched ? 'in' : this.beingCalledBack ? 'out' : undefined;
   // }
+
+  hasItem() {
+    return this.name ? !!this.item : this.teamPreviewItem;
+  }
 
   isActive() {
     return this.side.active.includes(this);
@@ -337,6 +345,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   clearVolatile() {
     this.ability = this.baseAbility;
+    this.suppressedAbility = false;
     this.boosts = {};
     this.clearVolatiles();
     for (let i = 0; i < this.moveTrack.length; i++) {
@@ -475,6 +484,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   rememberAbility(ability: string, isNotBase?: boolean) {
     this.ability = this.side.battle.gen.abilities.get(ability)!.id;
+    this.suppressedAbility = false;
     if (!this.baseAbility && !isNotBase) {
       this.baseAbility = this.ability;
     }
