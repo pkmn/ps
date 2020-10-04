@@ -1754,7 +1754,7 @@ export interface PokemonHealth {
   hp: number;
   maxhp: number;
   hpcolor: HPColor | '';
-  status: StatusName | '' | '???';
+  status?: StatusName;
   fainted?: boolean;
 }
 
@@ -1942,7 +1942,7 @@ export const Protocol = new class {
     return output;
   }
 
-  parseHealth(hpstring: Protocol.PokemonHPStatus, output = {status: ''} as PokemonHealth) {
+  parseHealth(hpstring: Protocol.PokemonHPStatus, output = {} as PokemonHealth) {
     const [hp, status] = hpstring.split(' ');
 
     // parse hp
@@ -1969,7 +1969,7 @@ export const Protocol = new class {
 
     // parse status
     if (!status) {
-      output.status = '';
+      output.status = undefined;
     } else if (
       status === 'par' ||
       status === 'brn' ||

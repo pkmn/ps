@@ -42,7 +42,7 @@ describe('Pokemon', () => {
         hp: p.hp || 0,
         maxhp: p.maxhp || 0,
         hpcolor: p.hpcolor || 'g',
-        status: p.status || '',
+        status: p.status,
         fainted: !!p.fainted,
       };
       return ret;
@@ -282,7 +282,7 @@ describe('Pokemon', () => {
     pokemon.reset();
 
     expect(pokemon.hp).toEqual(105);
-    expect(pokemon.status).toBe('');
+    expect(pokemon.status).toBeUndefined();
     expect(pokemon.name).toBe('Gengar');
     expect(pokemon.statusStage).toBe(0);
   });

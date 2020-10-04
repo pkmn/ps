@@ -394,7 +394,7 @@ export class Handler implements Protocol.Handler {
     const poke = this.battle.getPokemon(args[1]);
     // TODO: confusion its own case and default the rest?
     if (poke) {
-      poke.status = '';
+      poke.status = undefined;
       switch (args[2]) {
       case 'brn': case 'par': case 'frz': break;
       case 'tox': case 'psn': return void (poke.statusData.toxicTurns = 0);
@@ -407,7 +407,7 @@ export class Handler implements Protocol.Handler {
   '|-cureteam|'(args: Args['|-cureteam|']) {
     // For old gens when the whole team was always cured
     for (const target of this.battle.getPokemon(args[1])!.side.pokemon) {
-      target.status = '';
+      target.status = undefined;
     }
   }
 

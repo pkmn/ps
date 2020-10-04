@@ -58,7 +58,6 @@ version number in case set import changes.
 - migrate to support `@pkmn/dmg`
   - `ability` needs to handle `(suppressed)`
   - `item` needs to handle `(exists)`
-  - remove `'' | '???'` from `status`
   - change `sideConditions` -> `sideConditions: {[id: string]: {level?: number}}`
   - migrate `EffectState` to an object
   - `volatiles`/`movestatus`/`turnstatus` - condense and fix type?

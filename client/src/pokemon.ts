@@ -128,7 +128,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   hp: number;
   maxhp: number;
   hpcolor: HPColor;
-  status: StatusName | '' | '???';
+  status?: StatusName;
   fainted: boolean;
 
   // switchFlag: ID | boolean;
@@ -180,7 +180,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.maxhp = 0; // 1000
     this.level = 100;
     this.hpcolor = 'g';
-    this.status = '';
+    this.status = undefined;
     this.fainted = false;
 
     this.statusStage = 0;
@@ -241,7 +241,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   static parseHealth(
     hpstring: string,
-    output: PokemonHealth = {hp: 0, maxhp: 0, hpcolor: '', status: ''}
+    output: PokemonHealth = {hp: 0, maxhp: 0, hpcolor: ''}
   ): [delta: number, denominator: number, oldnum: number, oldcolor: HPColor | ''] | null {
     if (!hpstring || !hpstring.length) return null;
 
@@ -626,7 +626,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.clearVolatile();
     this.hp = this.maxhp;
     this.fainted = false;
-    this.status = '';
+    this.status = undefined;
     this.moveTrack = [];
     this.name = this.name || this.speciesForme;
   }

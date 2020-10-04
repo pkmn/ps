@@ -188,7 +188,7 @@ export class Side {
           if (illusionFound) {
             illusionFound.fainted = true;
             illusionFound.hp = 0;
-            illusionFound.status = '';
+            illusionFound.status = undefined;
           }
         }
         this.pokemon.splice(toRemove, 1);
@@ -241,7 +241,7 @@ export class Side {
       // technically we also know its status but only at the end of the turn, not here
       oldpokemon.fainted = false;
       oldpokemon.hp = oldpokemon.maxhp;
-      oldpokemon.status = '???';
+      oldpokemon.status = undefined; // '???';
     }
 
     this.active[slot] = pokemon;
