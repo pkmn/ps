@@ -12,14 +12,12 @@ export class Side {
   name: Username | '';
   avatar: AvatarIdent | 'unknown';
   foe!: Side;
-
   rating: string;
-  totalPokemon: number;
-  missedPokemon: Pokemon;
 
   active: Array<Pokemon | null>;
   lastPokemon: Pokemon | null;
   team: Pokemon[];
+  totalPokemon: number;
 
   sideConditions: {
     [id: string]: {
@@ -27,6 +25,7 @@ export class Side {
       level: number;
       minDuration: number;
       maxDuration: number;
+      remove?: boolean;
     };
   };
 
@@ -49,7 +48,6 @@ export class Side {
     this.avatar = 'unknown';
     this.rating = '';
     this.totalPokemon = 6;
-    this.missedPokemon = null!;
 
     this.active = [null];
     this.lastPokemon = null;
@@ -95,6 +93,9 @@ export class Side {
       return (this.sideConditions[id] = {name, level: 1, minDuration: 5, maxDuration: 8});
     case 'safeguard': case 'mist': case 'luckychant':
       return (this.sideConditions[id] = {name, level: 1, minDuration: 5, maxDuration: 0});
+    case 'quickguard': case 'wideguard': case 'craftyshield': case 'matblock':
+      return (this.sideConditions[id] =
+        {name, level: 1, minDuration: 1, maxDuration: 1, remove: true});
     default:
       return (this.sideConditions[id] = {name, level: 1, minDuration: 0, maxDuration: 0});
     }

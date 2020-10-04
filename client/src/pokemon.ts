@@ -34,6 +34,7 @@ interface EffectState {
   pokemon?: Pokemon;
   shiny?: boolean;
   gender?: GenderName;
+  duration?: 'turn' | 'move' | number;
 }
 
 interface EffectTable { [effectid: string]: EffectState }
@@ -66,8 +67,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   statusData: { sleepTurns: number; toxicTurns: number };
   boosts: Partial<BoostsTable>;
   volatiles: EffectTable;
-  turnstatuses: EffectTable;
-  movestatuses: EffectTable;
 
   ability: ID;
   baseAbility: ID;
@@ -114,8 +113,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.statusData = {sleepTurns: 0, toxicTurns: 0};
     this.boosts = {};
     this.volatiles = {};
-    this.turnstatuses = {};
-    this.movestatuses = {};
 
     this.ability = '';
     this.baseAbility = '';
@@ -207,50 +204,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     return details === this.details;
   }
 
-  hasTurnstatus(volatile: ID) {
-    return !!this.turnstatuses[volatile];
-  }
-
-  addTurnstatus(volatile: ID) {
-    volatile = toID(volatile);
-    if (this.hasTurnstatus(volatile)) return;
-    this.turnstatuses[volatile] = {id: volatile};
-  }
-
-  removeTurnstatus(volatile: ID) {
-    if (!this.hasTurnstatus(volatile)) return;
-    delete this.turnstatuses[volatile];
-  }
-
-  clearTurnstatuses() {
-    for (const id in this.turnstatuses) {
-      this.removeTurnstatus(id as ID);
-    }
-    this.turnstatuses = {};
-  }
-
-  hasMovestatus(volatile: ID) {
-    return !!this.movestatuses[volatile];
-  }
-
-  addMovestatus(volatile: ID) {
-    volatile = toID(volatile);
-    if (this.hasMovestatus(volatile)) return;
-    this.movestatuses[volatile] = {id: volatile};
-  }
-
-  removeMovestatus(volatile: ID) {
-    if (!this.hasMovestatus(volatile)) return;
-    delete this.movestatuses[volatile];
-  }
-
-  clearMovestatuses() {
-    for (const id in this.movestatuses) {
-      this.removeMovestatus(id as ID);
-    }
-    this.movestatuses = {};
-  }
-
   hasVolatile(volatile: ID) {
     return !!this.volatiles[volatile];
   }
@@ -265,10 +218,20 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     delete this.volatiles[volatile];
   }
 
+  clearTurnstatuses() {
+    for (const id in this.volatiles) {
+      if (this.volatiles[id].duration === 'turn') delete this.volatiles[id];
+    }
+  }
+
+  clearMovestatuses() {
+    for (const id in this.volatiles) {
+      if (this.volatiles[id].duration === 'move') delete this.volatiles[id];
+    }
+  }
+
   clearVolatiles() {
     this.volatiles = {};
-    this.clearTurnstatuses();
-    this.clearMovestatuses();
   }
 
   clearVolatile() {
@@ -310,9 +273,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       delete this.volatiles['miracleeye'];
       delete this.volatiles['nightmare'];
       delete this.volatiles['smackdown'];
-      delete this.volatiles['stockpile1'];
-      delete this.volatiles['stockpile2'];
-      delete this.volatiles['stockpile3'];
+      delete this.volatiles['stockpile'];
       delete this.volatiles['torment'];
       delete this.volatiles['typeadd'];
       delete this.volatiles['typechange'];
@@ -352,9 +313,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     const fromeffect = from && gen.effects.get(from);
     if (fromeffect) this.activateAbility(fromeffect);
     this.clearMovestatuses();
-    if (move.id === 'focuspunch') {
-      this.removeTurnstatus('focuspunch' as ID);
-    }
+    if (move.id === 'focuspunch') this.removeVolatile('focuspunch' as ID);
     if (fromeffect?.id === 'sleeptalk') {
       this.rememberMove(move.name, 0);
     } else if (!fromeffect?.id || fromeffect.id === 'pursuit') {
@@ -408,9 +367,9 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       return void this.statusData.sleepTurns++;
     }
     case 'frz': return void (this.lastMove = '');
-    case 'focuspunch': return this.removeTurnstatus('focuspunch' as ID);
-    case 'shelltrap': return this.removeTurnstatus('shelltrap' as ID);
-    case 'flinch': return this.removeTurnstatus('focuspunch' as ID);
+    case 'focuspunch': return this.removeVolatile('focuspunch' as ID);
+    case 'shelltrap': return this.removeVolatile('shelltrap' as ID);
+    case 'flinch': return this.removeVolatile('focuspunch' as ID);
     }
   }
 
@@ -453,7 +412,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     } else {
       types = this.getSpecies(serverPokemon).types;
     }
-    if (this.hasTurnstatus('roost' as ID) && types.includes('Flying')) {
+    if (this.hasVolatile('roost' as ID) && types.includes('Flying')) {
       types = types.filter(typeName => typeName !== 'Flying') as [TypeName] | [TypeName, TypeName];
       if (!types.length) types = ['Normal'];
     }

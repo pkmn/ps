@@ -53,8 +53,6 @@ version number in case set import changes.
 
 ## `@pkmn/client`
 
-- modify types to support support `@pkmn/dmg`
-  - `volatiles`/`movestatus`/`turnstatus` - condense and fix type?
 - remove `serverPokemon?: ServerPokemon` params, merge `ServerPokemon` info into `Battle`
 - allow user to set side `sets` which can also influence Pokemon state!
 - handle discrepancies with `@pkmn/sim` (for `@pkmn/epoke` state transforms)

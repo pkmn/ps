@@ -366,17 +366,16 @@ export class Handler implements Protocol.Handler {
     const effect = this.battle.gen.effects.get(args[2]);
     (this.battle.getPokemon(kwArgs.of) || poke).activateAbility(effect);
     switch (effect?.id) {
-    case 'quickguard': return poke.addTurnstatus('quickguard' as ID);
-    case 'wideguard': return poke.addTurnstatus('wideguard' as ID);
-    case 'craftyshield': return poke.addTurnstatus('craftyshield' as ID);
-    case 'protect': return poke.addTurnstatus('protect' as ID);
+    case 'quickguard': case 'wideguard': case 'craftyshield': case 'matblock':
+      return void poke.side.addSideCondition(effect);
+    case 'protect': return poke.addVolatile('protect' as ID, {duration: 'turn'});
     case 'safetygoggles': return void (poke.item = 'safetygoggles' as ID);
     case 'protectivepads': return void (poke.item = 'protectivepads' as ID);
     }
   }
 
   '|-mustrecharge|'(args: Args['|-mustrecharge|']) {
-    this.battle.getPokemon(args[1])!.addMovestatus('mustrecharge' as ID);
+    this.battle.getPokemon(args[1])!.addVolatile('mustrecharge' as ID, {duration: 'move'});
   }
 
   '|-status|'(args: Args['|-status|'], kwArgs: KWArgs['|-status|']) {
@@ -633,6 +632,14 @@ export class Handler implements Protocol.Handler {
     poke.activateAbility(effect);
     (ofpoke || poke).activateAbility(fromeffect);
 
+    if (effect.id.startsWith('stockpile')) {
+      poke.addVolatile('stockpile' as ID, {level: +effect.id.charAt(effect.id.length - 1)});
+      return;
+    } else if (effect.id.startsWith('perish')) {
+      poke.addVolatile('perishsong' as ID, {duration: +effect.id.charAt(effect.id.length - 1)});
+      return;
+    }
+
     switch (effect.id) {
     case 'typechange':
       if (ofpoke && fromeffect?.id === 'reflecttype') {
@@ -648,21 +655,6 @@ export class Handler implements Protocol.Handler {
     case 'dynamax':
       poke.addVolatile('dynamax' as ID);
       break;
-    case 'stockpile2':
-      poke.removeVolatile('stockpile1' as ID);
-      break;
-    case 'stockpile3':
-      poke.removeVolatile('stockpile2' as ID);
-      break;
-    case 'perish0':
-      poke.removeVolatile('perish1' as ID);
-      break;
-    case 'perish1':
-      poke.removeVolatile('perish2' as ID);
-      break;
-    case 'perish2':
-      poke.removeVolatile('perish3' as ID);
-      break;
     case 'autotomize':
       if (poke.volatiles.autotomize) {
         poke.volatiles.autotomize.level!++;
@@ -670,7 +662,6 @@ export class Handler implements Protocol.Handler {
         poke.addVolatile('autotomize' as ID, {level: 1});
       }
       break;
-
     case 'smackdown':
       poke.removeVolatile('magnetrise' as ID);
       poke.removeVolatile('telekinesis' as ID);
@@ -685,26 +676,20 @@ export class Handler implements Protocol.Handler {
     poke.removeVolatile(effect.id);
 
     if (kwArgs.silent) return; // do nothing
-
-    switch (effect.id) {
-    case 'illusion': return poke.rememberAbility('Illusion');
-    case 'perishsong': return poke.removeVolatile('perish3' as ID); // for backwards compatibility
-    case 'stockpile':
-      poke.removeVolatile('stockpile1' as ID);
-      poke.removeVolatile('stockpile2' as ID);
-      poke.removeVolatile('stockpile3' as ID);
-    }
+    if (effect.id === 'illusion') poke.rememberAbility('Illusion');
   }
 
   '|-singleturn|'(args: Args['|-singleturn|']) {
     const poke = this.battle.getPokemon(args[1])!;
     const effect = this.battle.gen.effects.get(args[2])!;
-    poke.addTurnstatus(effect.id);
+    poke.addVolatile(effect.id, {duration: 'turn'});
     if (effect.id === 'focuspunch' || effect.id === 'shelltrap') poke.rememberMove(effect.name, 0);
   }
 
   '|-singlemove|'(args: Args['|-singlemove|']) {
-    this.battle.getPokemon(args[1])!.addMovestatus(this.battle.gen.effects.get(args[2])!.id);
+    const poke = this.battle.getPokemon(args[1])!;
+    const effect = this.battle.gen.effects.get(args[2])!;
+    poke.addVolatile(effect.id, {duration: 'move'});
   }
 
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
@@ -732,13 +717,11 @@ export class Handler implements Protocol.Handler {
     case 'phantomforce':
     case 'shadowforce':
     case 'feint':
-      poke!.removeTurnstatus('protect' as ID);
-      for (const curTarget of poke!.side.team) {
-        curTarget.removeTurnstatus('wideguard' as ID);
-        curTarget.removeTurnstatus('quickguard' as ID);
-        curTarget.removeTurnstatus('craftyshield' as ID);
-        curTarget.removeTurnstatus('matblock' as ID);
-      }
+      poke!.removeVolatile('protect' as ID);
+      poke!.side.removeSideCondition('wideguard' as ID);
+      poke!.side.removeSideCondition('quickguard' as ID);
+      poke!.side.removeSideCondition('craftyshield' as ID);
+      poke!.side.removeSideCondition('matblock' as ID);
       break;
     case 'spite':
       const move = this.battle.gen.moves.get(kwArgs.move!)!.name;

@@ -96,6 +96,9 @@ export class Battle {
         pokemon.hurtThisTurn = false;
         pokemon.newlySwitched = false;
       }
+      for (const id in side.sideConditions) {
+        if (side.sideConditions[id].remove) side.removeSideCondition(id as ID);
+      }
     }
   }
 

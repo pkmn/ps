@@ -100,43 +100,35 @@ describe('Pokemon', () => {
     expect(pokemon.checkDetails('Arceus-Grass, L60, shiny' as PokemonDetails)).toBe(false);
   });
 
-  it('#turnstatus', () => {
-    const pokemon = new Pokemon(null! as Side, {} as DetailedPokemon);
-    expect(pokemon.hasTurnstatus('foo' as ID)).toBe(false);
-    pokemon.addTurnstatus('foo' as ID);
-    expect(pokemon.hasTurnstatus('foo' as ID)).toBe(true);
-    pokemon.removeTurnstatus('bar' as ID);
-    expect(pokemon.hasTurnstatus('foo' as ID)).toBe(true);
-    pokemon.clearTurnstatuses();
-    expect(pokemon.hasTurnstatus('foo' as ID)).toBe(false);
-  });
-
-  it('#movestatus', () => {
-    const pokemon = new Pokemon(null! as Side, {} as DetailedPokemon);
-    expect(pokemon.hasMovestatus('foo' as ID)).toBe(false);
-    pokemon.addMovestatus('foo' as ID);
-    expect(pokemon.hasMovestatus('foo' as ID)).toBe(true);
-    pokemon.removeMovestatus('bar' as ID);
-    expect(pokemon.hasMovestatus('foo' as ID)).toBe(true);
-    pokemon.clearMovestatuses();
-    expect(pokemon.hasMovestatus('foo' as ID)).toBe(false);
-  });
-
   it('#volatiles', () => {
     const pokemon = new Pokemon({battle: {gen: {num: 8}}} as Side, {} as DetailedPokemon);
 
-    pokemon.addTurnstatus('foo' as ID);
-    pokemon.addMovestatus('bar' as ID);
+    pokemon.addVolatile('foo' as ID, {duration: 'turn'});
+    pokemon.addVolatile('bar' as ID, {duration: 'move'});
     pokemon.addVolatile('baz' as ID);
     pokemon.addVolatile('qux' as ID, {level: 2});
 
-    expect(pokemon.hasVolatile('foo' as ID)).toBe(false);
-    expect(pokemon.hasTurnstatus('foo' as ID)).toBe(true);
-    expect(pokemon.hasVolatile('bar' as ID)).toBe(false);
-    expect(pokemon.hasMovestatus('bar' as ID)).toBe(true);
+    expect(pokemon.hasVolatile('foo' as ID)).toBe(true);
+    expect(pokemon.hasVolatile('bar' as ID)).toBe(true);
     expect(pokemon.hasVolatile('baz' as ID)).toBe(true);
     expect(pokemon.hasVolatile('qux' as ID)).toBe(true);
 
+    pokemon.clearTurnstatuses();
+
+    expect(pokemon.hasVolatile('foo' as ID)).toBe(false);
+    expect(pokemon.hasVolatile('bar' as ID)).toBe(true);
+    expect(pokemon.hasVolatile('baz' as ID)).toBe(true);
+    expect(pokemon.hasVolatile('qux' as ID)).toBe(true);
+
+    pokemon.addVolatile('foo' as ID, {duration: 'turn'});
+    pokemon.clearMovestatuses();
+
+    expect(pokemon.hasVolatile('foo' as ID)).toBe(true);
+    expect(pokemon.hasVolatile('bar' as ID)).toBe(false);
+    expect(pokemon.hasVolatile('baz' as ID)).toBe(true);
+    expect(pokemon.hasVolatile('qux' as ID)).toBe(true);
+
+    pokemon.addVolatile('bar' as ID, {duration: 'move'});
     pokemon.removeVolatile('baz' as ID);
     expect(pokemon.hasVolatile('baz' as ID)).toBe(false);
     expect(pokemon.hasVolatile('qux' as ID)).toBe(true);
@@ -149,8 +141,8 @@ describe('Pokemon', () => {
 
     pokemon.clearVolatile();
 
-    expect(pokemon.hasTurnstatus('foo' as ID)).toBe(false);
-    expect(pokemon.hasMovestatus('bar' as ID)).toBe(false);
+    expect(pokemon.hasVolatile('foo' as ID)).toBe(false);
+    expect(pokemon.hasVolatile('bar' as ID)).toBe(false);
     expect(pokemon.hasVolatile('qux' as ID)).toBe(false);
 
     expect(pokemon.ability).toBe('baseability');
@@ -194,7 +186,7 @@ describe('Pokemon', () => {
     );
 
     expect(pokemon.getTypes()).toEqual([['Electric', 'Flying'], '']);
-    pokemon.addTurnstatus('roost' as ID);
+    pokemon.addVolatile('roost' as ID, {duration: 'turn'});
     expect(pokemon.getTypes()).toEqual([['Electric'], '']);
 
     pokemon.speciesForme = 'Tornadus';
