@@ -20,7 +20,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/sets": "^0.0.4"
+    "@pkmn/sets": "^1.0.0"
   },
   "devDependencies": {
     "mocha": "^8.1.3"

@@ -5,6 +5,7 @@
 # `pkmn/ps`
 
 ![Test Status](https://github.com/pkmn/ps/workflows/Tests/badge.svg)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 > [Pokémon Showdown](https://pokemonshowdown.com), [modularized into
 > packages](https://pkmn.cc/modular-ps).

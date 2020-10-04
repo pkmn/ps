@@ -1,6 +1,7 @@
 # `@pkmn/client`
 
 ![Test Status](https://github.com/pkmn/ps/workflows/Tests/badge.svg)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 [![npm version](https://img.shields.io/npm/v/@pkmn/client.svg)](https://www.npmjs.com/package/@pkmn/client)
 
 Package encapsulating a refactored version of the generic parts of the official

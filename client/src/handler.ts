@@ -179,6 +179,12 @@ export class Handler implements Protocol.Handler {
     this.battle.gen = this.battle.gens.get(args[1]);
   }
 
+  '|require|'(args: Args['|request|']) {
+    // const request = Protocol.parseRequest(args[1]);
+    // TODO merge into battle
+    // XXX does this come before or after everything has been updated...
+  }
+
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
     const poke = this.battle.getPokemon(args[1])!;
     const damage = poke.healthParse(args[2]);

@@ -44,6 +44,51 @@ usecases for the packages in this repository.
 Certain packages are still a work in progress and have not been released yet. In other cases, the
 work involved to modularize and release a specific package has been deemed to not be worthwhile.
 
+## How does versioning work? Is package `X` stable?
+
+`@pkmn` packages are not published at all if they are not expected to be in a useful and usable
+state. All packages follow [semantic versioning](https://semver.org/), though many packages have
+not yet reached the 1.0.0 mark. After packages have reached 1.0.0, all changes resulting minor or
+major version bumps will be documented in a `CHANGELOG.md` file in the directory for the package.
+
+The following packages are stable and only depend on other stable packages. These packages have
+reached 1.0.0 versions and changes are mostly motivated by underlying changes in Pokémon Showdown:
+
+- [`@pkmn/types`](types)
+- [`@pkmn/sets`](sets)
+
+The following packages are close to being considered stable - their APIs are very unlikely to change
+but they still require some bake time before reaching maturity:
+
+- [`@pkmn/login`](login)
+
+The following packages are all versioned together - a change to any one of them will result in the
+version being bumped for all of them. All except `@pkmn/data` rely directly on `import`-ed Pokémon
+Showdown code/logic, and keeping the versions in lockstep is useful for being able to deduce
+compatibility at a glance. Most of the APIs are stable, with `@pkmn/randoms` being the most stable
+API though having the most internal volitility. `@pkmn/data`'s API has the most flexibility at this
+point, but together these packages are relatively close to 1.0.0 status:
+
+- [`@pkmn/sim`](sim)
+- [`@pkmn/mods`](mods)
+- [`@pkmn/randoms`](randoms)
+- [`@pkmn/dex-types`](dex/types)
+- [`@pkmn/dex`](dex)
+- [`@pkmn/data`](data)
+
+The following packages are in the most flux - `@pkmn/protocol` is relatively stable, but
+`@pkmn/client` is undergoing heavy development to ensure it fits in well with other
+[`@pkmn`](https://pkmn.cc/@pkmn/) projects and its API is actively evolving, possibly requiring
+changes from `@pkmn/protocol` in the process. `@pkmn/view` depends heavily on `@pkmn/client` and
+also will likely have numerous additional classes and helpers added to it before becoming stable.
+`@pkmn/img`'s status depends heavily on the ongoing
+[`smogon/sprites`](https://github.com/smogon/sprites) initiative.
+
+- [`@pkmn/protocol`](protocol)
+- [`@pkmn/client`](client)
+- [`@pkmn/view`](view)
+- [`@pkmn/img`](img)
+
 ## Should I be depending on `@pkmn/types` and `@pkmn/dex-types`?
 
 These packages exist primarily for internal purposes - **most consumers should not be depending

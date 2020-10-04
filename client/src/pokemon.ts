@@ -57,8 +57,8 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   statusData: { sleepTurns: number; toxicTurns: number };
   boosts: Partial<BoostsTable>;
   volatiles: EffectTable;
-  turnstatuses: EffectTable;
-  movestatuses: EffectTable;
+  // turnstatuses: EffectTable;
+  // movestatuses: EffectTable;
 
   ability: ID;
   baseAbility: ID;
@@ -198,49 +198,49 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     return details === this.details;
   }
 
-  hasTurnstatus(volatile: ID) {
-    return !!this.turnstatuses[volatile];
-  }
+  // hasTurnstatus(volatile: ID) {
+  //   return !!this.turnstatuses[volatile];
+  // }
 
-  addTurnstatus(volatile: ID) {
-    volatile = toID(volatile);
-    if (this.hasTurnstatus(volatile)) return;
-    this.turnstatuses[volatile] = [volatile];
-  }
+  // addTurnstatus(volatile: ID) {
+  //   volatile = toID(volatile);
+  //   if (this.hasTurnstatus(volatile)) return;
+  //   this.turnstatuses[volatile] = [volatile];
+  // }
 
-  removeTurnstatus(volatile: ID) {
-    if (!this.hasTurnstatus(volatile)) return;
-    delete this.turnstatuses[volatile];
-  }
+  // removeTurnstatus(volatile: ID) {
+  //   if (!this.hasTurnstatus(volatile)) return;
+  //   delete this.turnstatuses[volatile];
+  // }
 
-  clearTurnstatuses() {
-    for (const id in this.turnstatuses) {
-      this.removeTurnstatus(id as ID);
-    }
-    this.turnstatuses = {};
-  }
+  // clearTurnstatuses() {
+  //   for (const id in this.turnstatuses) {
+  //     this.removeTurnstatus(id as ID);
+  //   }
+  //   this.turnstatuses = {};
+  // }
 
-  hasMovestatus(volatile: ID) {
-    return !!this.movestatuses[volatile];
-  }
+  // hasMovestatus(volatile: ID) {
+  //   return !!this.movestatuses[volatile];
+  // }
 
-  addMovestatus(volatile: ID) {
-    volatile = toID(volatile);
-    if (this.hasMovestatus(volatile)) return;
-    this.movestatuses[volatile] = [volatile];
-  }
+  // addMovestatus(volatile: ID) {
+  //   volatile = toID(volatile);
+  //   if (this.hasMovestatus(volatile)) return;
+  //   this.movestatuses[volatile] = [volatile];
+  // }
 
-  removeMovestatus(volatile: ID) {
-    if (!this.hasMovestatus(volatile)) return;
-    delete this.movestatuses[volatile];
-  }
+  // removeMovestatus(volatile: ID) {
+  //   if (!this.hasMovestatus(volatile)) return;
+  //   delete this.movestatuses[volatile];
+  // }
 
-  clearMovestatuses() {
-    for (const id in this.movestatuses) {
-      this.removeMovestatus(id as ID);
-    }
-    this.movestatuses = {};
-  }
+  // clearMovestatuses() {
+  //   for (const id in this.movestatuses) {
+  //     this.removeMovestatus(id as ID);
+  //   }
+  //   this.movestatuses = {};
+  // }
 
   hasVolatile(volatile: ID) {
     return !!this.volatiles[volatile];

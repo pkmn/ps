@@ -9,7 +9,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/types": "^0.1.2"
+    "@pkmn/types": "^1.0.0"
   },
   "scripts": {
     "lint": "eslint --cache --ext *.ts",

@@ -53,12 +53,13 @@ version number in case set import changes.
 
 ## `@pkmn/client`
 
-- remove `serverPokemon?: ServerPokemon` params?
-- migrate to support `@pkmn/dmg`
+- modify types to support support `@pkmn/dmg`
   - change `sideConditions` -> `sideConditions: {[id: string]: {level?: number}}`
   - migrate `EffectState` to an object
   - `volatiles`/`movestatus`/`turnstatus` - condense and fix type?
   - change `type`/`addedType` etc handling to match server?
+- remove `serverPokemon?: ServerPokemon` params, merge `ServerPokemon` info into `Battle`
+- allow user to set side `sets` which can also influence Pokemon state!
 - handle discrepancies with `@pkmn/sim` (for `@pkmn/epoke` state transforms)
 
 ## `@pkmn/view`

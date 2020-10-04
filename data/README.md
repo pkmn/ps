@@ -1,6 +1,7 @@
 # `@pkmn/data`
 
 ![Test Status](https://github.com/pkmn/ps/workflows/Tests/badge.svg)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 [![npm version](https://img.shields.io/npm/v/@pkmn/data.svg)](https://www.npmjs.com/package/@pkmn/data)
 
 A higher level data API wrapper compatible with [`@pkmn/sim`](../sim) and [`@pkmn/dex`](../dex).
