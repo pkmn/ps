@@ -407,7 +407,7 @@ export class Handler implements Protocol.Handler {
 
   '|-cureteam|'(args: Args['|-cureteam|']) {
     // For old gens when the whole team was always cured
-    for (const target of this.battle.getPokemon(args[1])!.side.pokemon) {
+    for (const target of this.battle.getPokemon(args[1])!.side.team) {
       target.status = undefined;
     }
   }
@@ -727,7 +727,7 @@ export class Handler implements Protocol.Handler {
     case 'shadowforce':
     case 'feint':
       poke!.removeTurnstatus('protect' as ID);
-      for (const curTarget of poke!.side.pokemon) {
+      for (const curTarget of poke!.side.team) {
         curTarget.removeTurnstatus('wideguard' as ID);
         curTarget.removeTurnstatus('quickguard' as ID);
         curTarget.removeTurnstatus('craftyshield' as ID);

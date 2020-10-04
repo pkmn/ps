@@ -141,8 +141,8 @@ export class Battle {
     const side = this.sides[siden];
 
     // search inactive revealed pokemon
-    for (let i = 0; i < side.pokemon.length; i++) {
-      let pokemon = side.pokemon[i];
+    for (let i = 0; i < side.team.length; i++) {
+      let pokemon = side.team[i];
       if (pokemon.fainted) continue;
       // already active, can't be switching in
       if (side.active.includes(pokemon)) continue;
@@ -185,7 +185,7 @@ export class Battle {
   findCorrespondingPokemon(serverPokemon: {ident: PokemonIdent; details: PokemonDetails}) {
     const {siden} = this.parsePokemonId(serverPokemon.ident);
     const searchid = `${serverPokemon.ident}|${serverPokemon.details}` as PokemonSearchID;
-    for (const pokemon of this.sides[siden].pokemon) {
+    for (const pokemon of this.sides[siden].team) {
       if (pokemon.searchid === searchid) {
         return pokemon;
       }
@@ -220,7 +220,7 @@ export class Battle {
     // search player's pokemon
     if (!isInactive && side.active[slot]) return side.active[slot];
 
-    for (const pokemon of side.pokemon) {
+    for (const pokemon of side.team) {
       if (isInactive && side.active.includes(pokemon)) continue;
       if (pokemon.originalIdent === pokemonid) { // name matched, good enough
         if (slot >= 0) pokemon.slot = slot;

@@ -19,7 +19,7 @@ export class Side {
 
   active: Array<Pokemon | null>;
   lastPokemon: Pokemon | null;
-  pokemon: Pokemon[];
+  team: Pokemon[];
 
   // [effectName, levels, minDuration, maxDuration]
   sideConditions: { [id: string]: [SideCondition, number, number, number] };
@@ -47,14 +47,14 @@ export class Side {
 
     this.active = [null];
     this.lastPokemon = null;
-    this.pokemon = [];
+    this.team = [];
 
     this.sideConditions = {};
 
     this.wisher = null;
   }
 
-  get actor() {
+  get pokemon() {
     const pokemon = this.active[0];
     if (!pokemon) throw new Error('No active Pokémon');
     return pokemon;
@@ -106,7 +106,7 @@ export class Side {
   }
 
   addPokemon(details: DetailedPokemon, replaceSlot = -1) {
-    const oldItem = replaceSlot ? this.pokemon[replaceSlot]?.item : undefined;
+    const oldItem = replaceSlot ? this.team[replaceSlot]?.item : undefined;
     const poke = this.provider(this, details);
     if (oldItem) poke.item = oldItem;
 
@@ -114,20 +114,20 @@ export class Side {
     poke.reset();
 
     if (replaceSlot >= 0) {
-      this.pokemon[replaceSlot] = poke;
+      this.team[replaceSlot] = poke;
     } else {
-      this.pokemon.push(poke);
+      this.team.push(poke);
     }
-    if (this.pokemon.length > this.totalPokemon || this.battle.speciesClause) {
+    if (this.team.length > this.totalPokemon || this.battle.speciesClause) {
       // check for Illusion
       const existingTable: { [searchid: string]: number } = {};
       let toRemove = -1;
-      for (let poke1i = 0; poke1i < this.pokemon.length; poke1i++) {
-        const poke1 = this.pokemon[poke1i];
+      for (let poke1i = 0; poke1i < this.team.length; poke1i++) {
+        const poke1 = this.team[poke1i];
         if (!poke1.searchid) continue;
         if (poke1.searchid in existingTable) {
           const poke2i = existingTable[poke1.searchid];
-          const poke2 = this.pokemon[poke2i];
+          const poke2 = this.team[poke2i];
           if (poke === poke1) {
             toRemove = poke2i;
           } else if (poke === poke2) {
@@ -146,10 +146,10 @@ export class Side {
         existingTable[poke1.searchid] = poke1i;
       }
       if (toRemove >= 0) {
-        if (this.pokemon[toRemove].fainted) {
+        if (this.team[toRemove].fainted) {
           // A fainted Pokemon was actually a Zoroark
           let illusionFound = null;
-          for (const curPoke of this.pokemon) {
+          for (const curPoke of this.team) {
             if (curPoke === poke) continue;
             if (curPoke.fainted) continue;
             if (this.active.includes(curPoke)) continue;
@@ -164,7 +164,7 @@ export class Side {
             // This will keep the fainted Pokemon count correct, and will
             // eventually become correct as incorrect guesses are switched in
             // and reguessed.
-            for (const curPoke of this.pokemon) {
+            for (const curPoke of this.team) {
               if (curPoke === poke) continue;
               if (curPoke.fainted) continue;
               if (this.active.includes(curPoke)) continue;
@@ -178,7 +178,7 @@ export class Side {
             illusionFound.status = undefined;
           }
         }
-        this.pokemon.splice(toRemove, 1);
+        this.team.splice(toRemove, 1);
       }
     }
     return poke;
@@ -286,8 +286,8 @@ export class Side {
   }
 
   clearPokemon() {
-    for (const pokemon of this.pokemon) pokemon.destroy();
-    this.pokemon = [];
+    for (const pokemon of this.team) pokemon.destroy();
+    this.team = [];
     for (let i = 0; i < this.active.length; i++) this.active[i] = null;
     this.lastPokemon = null;
   }

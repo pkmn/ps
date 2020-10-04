@@ -215,7 +215,7 @@ describe('Side', () => {
     expect(pokemon.side).toBeNull();
     expect(side.lastPokemon).toBeNull();
     expect(side.active).toEqual([null]);
-    expect(side.pokemon).toEqual([]);
+    expect(side.team).toEqual([]);
     expect(side.sideConditions['tailwind']).toBeUndefined();
   });
 
@@ -235,7 +235,7 @@ describe('Side', () => {
     expect(pokemon.side).toBeNull();
     expect(side.lastPokemon).toBeNull();
     expect(side.active).toEqual([null]);
-    expect(side.pokemon).toEqual([]);
+    expect(side.team).toEqual([]);
     expect(side.sideConditions['stealthrock']).toEqual(['Stealth Rock', 1, 0, 0]); // WTF?
     expect(side.battle).toBeNull();
     expect(side.foe).toBeNull();
