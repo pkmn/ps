@@ -42,7 +42,7 @@ describe('Side', () => {
     let pokemon = side.addPokemon({} as DetailedPokemon);
     pokemon.slot = 2;
     pokemon.lastMove = 'tackle' as ID;
-    pokemon.addVolatile('foo' as ID, 1);
+    pokemon.addVolatile('foo' as ID, {level: 1});
 
     side.switchIn(pokemon);
 
@@ -53,7 +53,7 @@ describe('Side', () => {
 
     side.lastPokemon = pokemon;
     pokemon.lastMove = 'batonpass' as ID;
-    pokemon.addVolatile('bar' as ID, 1);
+    pokemon.addVolatile('bar' as ID, {level: 1});
 
     pokemon = side.addPokemon({} as DetailedPokemon);
     side.switchIn(pokemon, 2);

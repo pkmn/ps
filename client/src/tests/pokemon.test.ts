@@ -1,5 +1,5 @@
 import {Dex} from '@pkmn/dex';
-import {Generations, Effect, ID} from '@pkmn/data';
+import {Generations, Effect, ID, SpeciesName} from '@pkmn/data';
 import {
   DetailedPokemon,
   PokemonDetails,
@@ -128,7 +128,7 @@ describe('Pokemon', () => {
     pokemon.addTurnstatus('foo' as ID);
     pokemon.addMovestatus('bar' as ID);
     pokemon.addVolatile('baz' as ID);
-    pokemon.addVolatile('qux' as ID, 2);
+    pokemon.addVolatile('qux' as ID, {level: 2});
 
     expect(pokemon.hasVolatile('foo' as ID)).toBe(false);
     expect(pokemon.hasTurnstatus('foo' as ID)).toBe(true);
@@ -175,15 +175,15 @@ describe('Pokemon', () => {
     expect(pokemon.baseAbility).toBe('pressure');
   });
 
-  it('#getWeightKg', () => {
+  it('#getWeightHg', () => {
     const pokemon = new Pokemon(
       {battle: {gen}} as unknown as Side,
       {speciesForme: 'Snorlax'} as DetailedPokemon
     );
     expect(pokemon.getWeightHg()).toBe(4600);
-    pokemon.addVolatile('autotomize' as ID, 2);
+    pokemon.addVolatile('autotomize' as ID, {level: 2});
     expect(pokemon.getWeightHg()).toBe(2600);
-    pokemon.addVolatile('autotomize' as ID, 10);
+    pokemon.addVolatile('autotomize' as ID, {level: 10});
     expect(pokemon.getWeightHg()).toBe(1);
   });
 
@@ -199,10 +199,10 @@ describe('Pokemon', () => {
 
     pokemon.speciesForme = 'Tornadus';
 
-    pokemon.addVolatile('typeadd' as ID, 'Grass');
+    pokemon.addVolatile('typeadd' as ID, {type: 'Grass'});
     expect(pokemon.getTypeList()).toEqual(['Normal', 'Grass']);
 
-    pokemon.addVolatile('typechange' as ID, 'Dragon/Fire');
+    pokemon.addVolatile('typechange' as ID, {apparentType: 'Dragon/Fire'});
     expect(pokemon.getTypes()).toEqual([['Dragon', 'Fire'], 'Grass']);
 
     const copy = new Pokemon(
@@ -229,7 +229,7 @@ describe('Pokemon', () => {
     expect(pokemon.getSpecies({speciesForme: 'Greninja-Ash'} as ServerPokemon).name)
       .toEqual('Greninja-Ash');
 
-    pokemon.addVolatile('formechange' as ID, 'Gengar');
+    pokemon.addVolatile('formechange' as ID, {speciesForme: 'Gengar' as SpeciesName});
 
     expect(pokemon.getBaseSpecies().name).toEqual('Greninja');
     expect(pokemon.getSpecies().name).toEqual('Gengar');

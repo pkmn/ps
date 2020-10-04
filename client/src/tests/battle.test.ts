@@ -95,21 +95,22 @@ describe('Battle', () => {
 
   it('#currentWeather', () => {
     const battle = new Battle(GENS);
-    battle.field.weather = 'raindance' as ID;
+    battle.field.changeWeather('raindance' as ID);
     expect(battle.currentWeather()).toBe('raindance');
   });
 
   it('#reset', () => {
     const battle = new Battle(GENS);
     const field = battle.field;
-    field.weather = 'raindance' as ID;
+    field.changeWeather('raindance' as ID);
     battle.turn = 10;
     battle.lastMove = 'healing-wish';
 
     battle.reset();
 
     expect(battle.turn).toBe(0);
-    expect(battle.field.weather).toBe('');
+    expect(battle.field.weather).toBeUndefined();
+    expect(battle.field.weatherData.id).toBe('');
     expect(battle.lastMove).toBe('');
   });
 

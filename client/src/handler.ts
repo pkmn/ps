@@ -1,4 +1,4 @@
-import {ID, toID, BoostName} from '@pkmn/data';
+import {ID, toID, BoostName, SpeciesName, TypeName} from '@pkmn/data';
 import {Protocol, Args, KWArgs, PokemonSearchID} from '@pkmn/protocol';
 
 import {Battle} from './battle';
@@ -20,7 +20,7 @@ export class Handler implements Protocol.Handler {
   }
 
   '|upkeep|'() {
-    this.battle.field.updatePseudoWeatherLeft();
+    this.battle.field.upkeep();
     this.battle.updateToxicTurns();
   }
 
@@ -585,14 +585,13 @@ export class Handler implements Protocol.Handler {
     poke.boosts = {...tpoke.boosts};
     poke.copyTypesFrom(tpoke);
     poke.ability = tpoke.ability;
-    const speciesForme = tpoke.volatiles.formechange
-      ? tpoke.volatiles.formechange[1]
-      : tpoke.speciesForme;
+    const speciesForme =
+      (tpoke.volatiles.formechange?.speciesForme || tpoke.speciesForme) as SpeciesName;
     const pokemon = tpoke;
     const shiny = tpoke.shiny;
     const gender = tpoke.gender;
-    poke.addVolatile('transform' as ID, pokemon, shiny, gender);
-    poke.addVolatile('formechange' as ID, speciesForme);
+    poke.addVolatile('transform' as ID, {pokemon, shiny, gender});
+    poke.addVolatile('formechange' as ID, {speciesForme});
     for (const trackedMove of tpoke.moveTrack) {
       poke.rememberMove(trackedMove[0], 0);
     }
@@ -608,7 +607,8 @@ export class Handler implements Protocol.Handler {
       poke.activateAbility(this.battle.gen.effects.get(kwArgs.from));
     }
     // the formechange volatile reminds us to revert the sprite change on switch-out
-    poke.addVolatile('formechange' as ID, this.battle.gen.species.get(args[2])!.name);
+    const speciesForme = this.battle.gen.species.get(args[2])!.name;
+    poke.addVolatile('formechange' as ID, {speciesForme});
   }
 
   '|-mega|'(args: Args['|-mega|']) {
@@ -639,11 +639,11 @@ export class Handler implements Protocol.Handler {
         poke.copyTypesFrom(ofpoke);
       } else {
         poke.removeVolatile('typeadd' as ID);
-        poke.addVolatile('typechange' as ID, sanitizeName(args[3] || '???'));
+        poke.addVolatile('typechange' as ID, {apparentType: sanitizeName(args[3]) || '???'});
       }
       break;
     case 'typeadd':
-      poke.addVolatile('typeadd' as ID, sanitizeName(args[3]));
+      poke.addVolatile('typeadd' as ID, {type: sanitizeName(args[3]) as TypeName});
       break;
     case 'dynamax':
       poke.addVolatile('dynamax' as ID);
@@ -665,9 +665,9 @@ export class Handler implements Protocol.Handler {
       break;
     case 'autotomize':
       if (poke.volatiles.autotomize) {
-        poke.volatiles.autotomize[1]++;
+        poke.volatiles.autotomize.level!++;
       } else {
-        poke.addVolatile('autotomize' as ID, 1);
+        poke.addVolatile('autotomize' as ID, {level: 1});
       }
       break;
 
@@ -818,22 +818,21 @@ export class Handler implements Protocol.Handler {
     const poke = this.battle.getPokemon(kwArgs.of);
     const fromeffect = kwArgs.from && this.battle.gen.effects.get(kwArgs.from);
     if (poke && fromeffect) poke.activateAbility(fromeffect);
-    let maxTimeLeft = 0;
+
     if (effect.id.endsWith('terrain')) {
-      for (let i = this.battle.field.pseudoWeather.length - 1; i >= 0; i--) {
-        const pwID = this.battle.field.pseudoWeather[i][0];
-        if (pwID.endsWith('terrain')) {
-          this.battle.field.pseudoWeather.splice(i, 1);
-          continue;
-        }
-      }
-      if (this.battle.gen.num > 6) maxTimeLeft = 8;
+      this.battle.field.changeTerrain(effect.id);
+    } else {
+      this.battle.field.addPseudoWeather(effect.id, 5, 0);
     }
-    this.battle.field.addPseudoWeather(effect.id, 5, maxTimeLeft);
   }
 
   '|-fieldend|'(args: Args['|-fieldend|']) {
-    this.battle.field.removePseudoWeather(this.battle.gen.effects.get(args[1])!.id);
+    const effect = this.battle.gen.effects.get(args[1])!;
+    if (effect.id.endsWith('terrain')) {
+      this.battle.field.removeTerrain();
+    } else {
+      this.battle.field.removePseudoWeather(effect.id);
+    }
   }
 }
 

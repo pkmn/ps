@@ -278,7 +278,7 @@ export class Battle {
   }
 
   currentWeather() {
-    return this.field.weather;
+    return this.field.weatherData.id;
   }
 
   reset() {

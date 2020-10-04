@@ -8,6 +8,7 @@ import {
   toID,
   Move,
   Effect,
+  SpeciesName,
 } from '@pkmn/data';
 import {
   DetailedPokemon,
@@ -24,9 +25,17 @@ import {
 
 import {Side} from './side';
 
-type EffectState = any[] & { 0: ID };
+interface EffectState {
+  id: ID;
+  level?: number;
+  apparentType?: string;
+  type?: TypeName;
+  speciesForme?: SpeciesName;
+  pokemon?: Pokemon;
+  shiny?: boolean;
+  gender?: GenderName;
+}
 
-// [name, minTimeLeft, maxTimeLeft]
 interface EffectTable { [effectid: string]: EffectState }
 
 export interface ServerPokemon extends Request.Pokemon, DetailedPokemon, PokemonHealth { }
@@ -205,7 +214,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   addTurnstatus(volatile: ID) {
     volatile = toID(volatile);
     if (this.hasTurnstatus(volatile)) return;
-    this.turnstatuses[volatile] = [volatile];
+    this.turnstatuses[volatile] = {id: volatile};
   }
 
   removeTurnstatus(volatile: ID) {
@@ -227,7 +236,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   addMovestatus(volatile: ID) {
     volatile = toID(volatile);
     if (this.hasMovestatus(volatile)) return;
-    this.movestatuses[volatile] = [volatile];
+    this.movestatuses[volatile] = {id: volatile};
   }
 
   removeMovestatus(volatile: ID) {
@@ -246,9 +255,9 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     return !!this.volatiles[volatile];
   }
 
-  addVolatile(volatile: ID, ...args: any[]) {
-    if (this.hasVolatile(volatile) && !args.length) return;
-    this.volatiles[volatile] = [volatile, ...args] as EffectState;
+  addVolatile(volatile: ID, args?: Omit<EffectState, 'id'>) {
+    if (this.hasVolatile(volatile) && !args) return;
+    this.volatiles[volatile] = {...args, id: volatile};
   }
 
   removeVolatile(volatile: ID) {
@@ -325,7 +334,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     if (this.volatiles.transform) {
       // make sure there is no infinite recursion if both Pokemon are transformed into each other
       if (!recursionSource) recursionSource = this.originalIdent;
-      this.volatiles.transform[1].rememberMove(moveName, 0, recursionSource);
+      this.volatiles.transform.pokemon!.rememberMove(moveName, 0, recursionSource);
       moveName = '*' + moveName;
     }
     for (const entry of this.moveTrack) {
@@ -422,15 +431,15 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   }
 
   getWeightHg(serverPokemon?: ServerPokemon) {
-    const autotomizeFactor = this.volatiles.autotomize?.[1] * 1000 || 0;
+    const autotomizeFactor = (this.volatiles.autotomize?.level || 0) * 1000;
     return Math.max(1, this.getSpecies(serverPokemon).weighthg - autotomizeFactor);
   }
 
   copyTypesFrom(pokemon: Pokemon) {
     const [types, addedType] = pokemon.getTypes();
-    this.addVolatile('typechange' as ID, types.join('/'));
+    this.addVolatile('typechange' as ID, {apparentType: types.join('/')});
     if (addedType) {
-      this.addVolatile('typeadd' as ID, addedType);
+      this.addVolatile('typeadd' as ID, {type: addedType});
     } else {
       this.removeVolatile('typeadd' as ID);
     }
@@ -439,7 +448,8 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   getTypes(serverPokemon?: ServerPokemon): [[TypeName] | [TypeName, TypeName], TypeName | ''] {
     let types: [TypeName] | [TypeName, TypeName];
     if (this.volatiles.typechange) {
-      types = this.volatiles.typechange[1].split('/');
+      types =
+        this.volatiles.typechange.apparentType!.split('/') as [TypeName] | [TypeName, TypeName];
     } else {
       types = this.getSpecies(serverPokemon).types;
     }
@@ -447,8 +457,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       types = types.filter(typeName => typeName !== 'Flying') as [TypeName] | [TypeName, TypeName];
       if (!types.length) types = ['Normal'];
     }
-    const addedType = (this.volatiles.typeadd ? this.volatiles.typeadd[1] : '');
-    return [types, addedType];
+    return [types, this.volatiles.typeadd?.type || ''];
   }
 
   getTypeList(serverPokemon?: ServerPokemon) {
@@ -483,8 +492,8 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   }
 
   getSpeciesForme(serverPokemon?: ServerPokemon): string {
-    return this.volatiles.formechange ? this.volatiles.formechange[1]
-      : (serverPokemon ? serverPokemon.speciesForme : this.speciesForme);
+    return this.volatiles.formechange?.speciesForme ||
+      (serverPokemon ? serverPokemon.speciesForme : this.speciesForme);
   }
 
   getSpecies(serverPokemon?: ServerPokemon) {
