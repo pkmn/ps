@@ -1,4 +1,5 @@
-import {Dex, Effect, ID} from '@pkmn/dex';
+import {Dex} from '@pkmn/dex';
+import {Generations, Effect, ID} from '@pkmn/data';
 import {
   DetailedPokemon,
   PokemonDetails,
@@ -10,6 +11,8 @@ import {
 
 import {Pokemon, Side} from '../index';
 import {ServerPokemon} from '../pokemon';
+
+const gen = new Generations(Dex).get(7);
 
 // NOTE: tested exhaustively in integration/src/test/client.js
 describe('Pokemon', () => {
@@ -120,7 +123,7 @@ describe('Pokemon', () => {
   });
 
   it('#volatiles', () => {
-    const pokemon = new Pokemon({battle: {gen: 8}} as Side, {} as DetailedPokemon);
+    const pokemon = new Pokemon({battle: {gen: {num: 8}}} as Side, {} as DetailedPokemon);
 
     pokemon.addTurnstatus('foo' as ID);
     pokemon.addMovestatus('bar' as ID);
@@ -161,7 +164,7 @@ describe('Pokemon', () => {
   it.todo('#cantUseMove');
 
   it('#abilities', () => {
-    const pokemon = new Pokemon({battle: {dex: Dex}} as unknown as Side, {} as DetailedPokemon);
+    const pokemon = new Pokemon({battle: {gen}} as unknown as Side, {} as DetailedPokemon);
     pokemon.activateAbility({effectType: 'Move', name: 'Tackle'} as Effect);
     expect(pokemon.ability).not.toBe('tackle');
     pokemon.activateAbility({effectType: 'Ability', name: 'Pressure'} as Effect);
@@ -174,7 +177,7 @@ describe('Pokemon', () => {
 
   it('#getWeightKg', () => {
     const pokemon = new Pokemon(
-      {battle: {dex: Dex}} as unknown as Side,
+      {battle: {gen}} as unknown as Side,
       {speciesForme: 'Snorlax'} as DetailedPokemon
     );
     expect(pokemon.getWeightHg()).toBe(4600);
@@ -186,7 +189,7 @@ describe('Pokemon', () => {
 
   it('#types', () => {
     const pokemon = new Pokemon(
-      {battle: {dex: Dex}} as unknown as Side,
+      {battle: {gen}} as unknown as Side,
       {speciesForme: 'Zapdos'} as DetailedPokemon
     );
 
@@ -203,7 +206,7 @@ describe('Pokemon', () => {
     expect(pokemon.getTypes()).toEqual([['Dragon', 'Fire'], 'Grass']);
 
     const copy = new Pokemon(
-      {battle: {dex: Dex}} as unknown as Side,
+      {battle: {gen}} as unknown as Side,
       {speciesForme: 'Gengar'} as DetailedPokemon
     );
 
@@ -217,7 +220,7 @@ describe('Pokemon', () => {
 
   it('#species', () => {
     const pokemon = new Pokemon(
-      {battle: {dex: Dex}} as unknown as Side,
+      {battle: {gen}} as unknown as Side,
       {speciesForme: 'Greninja'} as DetailedPokemon
     );
 
@@ -268,7 +271,7 @@ describe('Pokemon', () => {
   });
 
   it('#reset', () => {
-    const pokemon = new Pokemon({battle: {gen: 8}} as Side, {} as DetailedPokemon);
+    const pokemon = new Pokemon({battle: {gen: {num: 8}}} as Side, {} as DetailedPokemon);
     pokemon.hp = 90;
     pokemon.maxhp = 105;
     pokemon.status = 'tox';
@@ -285,7 +288,7 @@ describe('Pokemon', () => {
   });
 
   it('#destroy', () => {
-    const pokemon = new Pokemon({battle: {gen: 8}} as Side, {} as DetailedPokemon);
+    const pokemon = new Pokemon({battle: {gen: {num: 8}}} as Side, {} as DetailedPokemon);
     expect(pokemon.side).not.toBeNull();
     pokemon.destroy();
     expect(pokemon.side).toBeNull();

@@ -1,8 +1,7 @@
+import {ID, toID, BoostName} from '@pkmn/data';
 import {Protocol, Args, KWArgs, PokemonSearchID} from '@pkmn/protocol';
-import {ID, BoostName, GenID} from '@pkmn/dex-types';
 
 import {Battle} from './battle';
-import {toID} from './common';
 
 const BOOSTS: BoostName[] = ['atk', 'def', 'spa', 'spd', 'spe', 'accuracy', 'evasion'];
 
@@ -163,7 +162,7 @@ export class Handler implements Protocol.Handler {
 
   '|move|'(args: Args['|move|'], kwArgs: KWArgs['|move|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const move = this.battle.dex.getMove(args[2]);
+    const move = this.battle.gen.moves.get(args[2])!;
     if (this.battle.checkActive(poke)) return;
     const poke2 = this.battle.getPokemon(args[3]);
     poke.useMove(move, poke2, kwArgs.from);
@@ -171,14 +170,13 @@ export class Handler implements Protocol.Handler {
 
   '|cant|'(args: Args['|cant|']) {
     const pokemon = this.battle.getPokemon(args[1])!;
-    const effect = this.battle.dex.getEffect(args[2]);
-    const move = this.battle.dex.getMove(args[3]);
+    const effect = this.battle.gen.effects.get(args[2])!;
+    const move = args[3] && this.battle.gen.moves.get(args[3]);
     pokemon.cantUseMove(effect, move);
   }
 
   '|gen|'(args: Args['|gen|']) {
-    this.battle.gen = args[1];
-    this.battle.dex = this.battle.dex.mod(`gen${this.battle.gen}` as GenID);
+    this.battle.gen = this.battle.gens.get(args[1]);
   }
 
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
@@ -187,10 +185,10 @@ export class Handler implements Protocol.Handler {
     if (damage === null) return;
 
     if (kwArgs.from) {
-      const effect = this.battle.dex.getEffect(kwArgs.from);
+      const effect = this.battle.gen.effects.get(kwArgs.from);
       const ofpoke = this.battle.getPokemon(kwArgs.of);
       if (ofpoke) ofpoke.activateAbility(effect);
-      if (effect.effectType === 'Item') {
+      if (effect?.effectType === 'Item') {
         const itemPoke = ofpoke || poke;
         if (itemPoke.lastItem !== effect.id) {
           itemPoke.item = effect.id;
@@ -205,13 +203,15 @@ export class Handler implements Protocol.Handler {
     if (damage === null) return;
 
     if (kwArgs.from) {
-      const effect = this.battle.dex.getEffect(kwArgs.from);
-      poke.activateAbility(effect);
-      if (effect.effectType === 'Item') poke.item = effect.id;
-      if (effect.id !== 'lunardance' || effect.id !== 'healingwish') return;
-      if (effect.id === 'lunardance') {
-        for (const trackedMove of poke.moveTrack) {
-          trackedMove[1] = 0;
+      const effect = this.battle.gen.effects.get(kwArgs.from);
+      if (effect) {
+        poke.activateAbility(effect);
+        if (effect.effectType === 'Item') poke.item = effect.id;
+        if (effect.id !== 'lunardance' || effect.id !== 'healingwish') return;
+        if (effect.id === 'lunardance') {
+          for (const trackedMove of poke.moveTrack) {
+            trackedMove[1] = 0;
+          }
         }
       }
       this.battle.lastMove = 'healing-wish';
@@ -240,8 +240,8 @@ export class Handler implements Protocol.Handler {
   ) {
     const poke = this.battle.getPokemon(args[1])!;
     let boost: BoostName | 'spc' = args[2];
-    if (this.battle.gen === 1 && boost === 'spd') return;
-    if (this.battle.gen === 1 && boost === 'spa') boost = 'spc';
+    if (this.battle.gen.num === 1 && boost === 'spd') return;
+    if (this.battle.gen.num === 1 && boost === 'spa') boost = 'spc';
     const amount = parseInt(args[3]);
     if (amount === 0) return;
 
@@ -253,7 +253,7 @@ export class Handler implements Protocol.Handler {
     }
 
     if (!kwArgs.silent && kwArgs.from) {
-      const effect = this.battle.dex.getEffect(kwArgs.from);
+      const effect = this.battle.gen.effects.get(kwArgs.from);
       const ofpoke = this.battle.getPokemon(kwArgs.of);
       if (ofpoke) {
         ofpoke.activateAbility(effect);
@@ -304,7 +304,7 @@ export class Handler implements Protocol.Handler {
       poke.boosts[boost] = frompoke.boosts[boost];
       if (!poke.boosts[boost]) delete poke.boosts[boost];
     }
-    if (this.battle.gen >= 6) {
+    if (this.battle.gen.num >= 6) {
       const volatilesToCopy = ['focusenergy', 'laserfocus'];
       for (const volatile of volatilesToCopy) {
         if (frompoke.volatiles[volatile]) {
@@ -320,7 +320,7 @@ export class Handler implements Protocol.Handler {
     const poke = this.battle.getPokemon(args[1])!;
     poke.boosts = {};
     if (!kwArgs.silent && kwArgs.from) {
-      const effect = this.battle.dex.getEffect(kwArgs.from);
+      const effect = this.battle.gen.effects.get(kwArgs.from);
       const ofpoke = this.battle.getPokemon(kwArgs.of);
       (ofpoke || poke).activateAbility(effect);
     }
@@ -344,21 +344,21 @@ export class Handler implements Protocol.Handler {
 
   '|-immune|'(args: Args['|-immune|'], kwArgs: KWArgs['|-immune|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const fromeffect = this.battle.dex.getEffect(kwArgs.from);
+    const fromeffect = kwArgs.from && this.battle.gen.effects.get(kwArgs.from);
     (this.battle.getPokemon(kwArgs.of) || poke).activateAbility(fromeffect);
   }
 
   '|-fail|'(args: Args['|-fail|'], kwArgs: KWArgs['|-fail|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const fromeffect = this.battle.dex.getEffect(kwArgs.from);
+    const fromeffect = kwArgs.from && this.battle.gen.effects.get(kwArgs.from);
     (this.battle.getPokemon(kwArgs.of) || poke).activateAbility(fromeffect);
   }
 
   '|-block|'(args: Args['|-block|'], kwArgs: KWArgs['|-block|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const effect = this.battle.dex.getEffect(args[2]);
+    const effect = this.battle.gen.effects.get(args[2]);
     (this.battle.getPokemon(kwArgs.of) || poke).activateAbility(effect);
-    switch (effect.id) {
+    switch (effect?.id) {
     case 'quickguard': return poke.addTurnstatus('quickguard' as ID);
     case 'wideguard': return poke.addTurnstatus('wideguard' as ID);
     case 'craftyshield': return poke.addTurnstatus('craftyshield' as ID);
@@ -374,18 +374,18 @@ export class Handler implements Protocol.Handler {
 
   '|-status|'(args: Args['|-status|'], kwArgs: KWArgs['|-status|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const effect = this.battle.dex.getEffect(kwArgs.from);
+    const effect = kwArgs.from && this.battle.gen.effects.get(kwArgs.from);
     const ofpoke = this.battle.getPokemon(kwArgs.of) || poke;
 
     poke.status = args[2];
     poke.removeVolatile('yawn' as ID);
     ofpoke.activateAbility(effect);
 
-    if (effect.effectType === 'Item') ofpoke.item = effect.id;
+    if (effect?.effectType === 'Item') ofpoke.item = effect.id;
 
     if (args[2] === 'tox') {
-      poke.statusData.toxicTurns = (effect.name === 'Toxic Orb' ? -1 : 0);
-    } else if (args[2] === 'slp' && effect.id === 'rest') {
+      poke.statusData.toxicTurns = (effect?.name === 'Toxic Orb' ? -1 : 0);
+    } else if (args[2] === 'slp' && effect?.id === 'rest') {
       poke.statusData.sleepTurns = 0; // for Gen 2 use through Sleep Talk
     }
   }
@@ -413,8 +413,8 @@ export class Handler implements Protocol.Handler {
 
   '|-item|'(args: Args['|-item|'], kwArgs: KWArgs['|-item|']): void {
     const poke = this.battle.getPokemon(args[1])!;
-    const item = this.battle.dex.getItem(args[2]);
-    const effect = this.battle.dex.getEffect(kwArgs.from);
+    const item = this.battle.gen.items.get(args[2])!;
+    const effect = kwArgs.from && this.battle.gen.effects.get(kwArgs.from);
     const ofpoke = this.battle.getPokemon(kwArgs.of);
 
     poke.item = item.id;
@@ -423,7 +423,7 @@ export class Handler implements Protocol.Handler {
     poke.removeVolatile('airballoon' as ID);
     if (item.id === 'airballoon') poke.addVolatile('airballoon' as ID);
 
-    if (effect.id) {
+    if (effect?.id) {
       switch (effect.id) {
       case 'pickup':
         poke.activateAbility('Pickup');
@@ -459,8 +459,8 @@ export class Handler implements Protocol.Handler {
 
   '|-enditem|'(args: Args['|-enditem|'], kwArgs: KWArgs['|-enditem|']): void {
     const poke = this.battle.getPokemon(args[1])!;
-    const item = this.battle.dex.getItem(args[2]);
-    const effect = this.battle.dex.getEffect(kwArgs.from);
+    const item = this.battle.gen.items.get(args[2])!;
+    const effect = kwArgs.from && this.battle.gen.effects.get(kwArgs.from);
 
     poke.item = '';
     poke.itemEffect = '';
@@ -476,7 +476,7 @@ export class Handler implements Protocol.Handler {
     } else if (kwArgs.weaken) {
       poke.lastItemEffect = 'eaten';
       this.battle.lastMove = item.id;
-    } else if (effect.id) {
+    } else if (effect?.id) {
       switch (effect.id) {
       case 'fling': return void (poke.lastItemEffect = 'flung');
       case 'knockoff': return void (poke.lastItemEffect = 'knocked off');
@@ -499,14 +499,14 @@ export class Handler implements Protocol.Handler {
 
   '|-ability|'(args: Args['|-ability|'], kwArgs: KWArgs['|-ability|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const ability = this.battle.dex.getAbility(args[2]);
-    const effect = this.battle.dex.getEffect(kwArgs.from);
+    const ability = this.battle.gen.abilities.get(args[2])!;
+    const effect = kwArgs.from && this.battle.gen.effects.get(kwArgs.from);
     const ofpoke = this.battle.getPokemon(kwArgs.of);
-    poke.rememberAbility(ability.name, !!(effect.id && !kwArgs.fail));
+    poke.rememberAbility(ability.name, !!(effect?.id && !kwArgs.fail));
 
     if (kwArgs.silent) return; // do nothing
 
-    if (effect.id) {
+    if (effect?.id) {
       switch (effect.id) {
       case 'trace':
         poke.activateAbility('Trace');
@@ -540,9 +540,9 @@ export class Handler implements Protocol.Handler {
     // deprecated; use |-start| for Gastro Acid
     // and the third arg of |-ability| for Entrainment et al
     const poke = this.battle.getPokemon(args[1])!;
-    const ability = this.battle.dex.getAbility(args[2]);
+    const ability = args[2] && this.battle.gen.abilities.get(args[2]);
     poke.ability = '(suppressed)';
-    if (ability.id && !poke.baseAbility) poke.baseAbility = ability.id;
+    if (ability?.id && !poke.baseAbility) poke.baseAbility = ability.id;
   }
 
   '|detailschange|'(args: Args['|detailschange|']) {
@@ -558,7 +558,7 @@ export class Handler implements Protocol.Handler {
       if (level.charAt(0) === 'L') poke.level = parseInt(level.substr(1));
       newSpeciesForme = args[2].substr(0, commaIndex);
     }
-    const species = this.battle.dex.getSpecies(newSpeciesForme);
+    const species = this.battle.gen.species.get(newSpeciesForme)!;
 
     poke.speciesForme = newSpeciesForme;
     poke.ability = poke.baseAbility = (species.abilities ? toID(species.abilities['0']) : '');
@@ -570,7 +570,7 @@ export class Handler implements Protocol.Handler {
   '|-transform|'(args: Args['|-transform|'], kwArgs: KWArgs['|-transform|']) {
     const poke = this.battle.getPokemon(args[1])!;
     const tpoke = this.battle.getPokemon(args[2])!;
-    const effect = this.battle.dex.getEffect(kwArgs.from);
+    const effect = kwArgs.from && this.battle.gen.effects.get(kwArgs.from);
     if (poke === tpoke) throw new Error('Transforming into self');
 
     if (!kwArgs.silent) poke.activateAbility(effect);
@@ -595,29 +595,31 @@ export class Handler implements Protocol.Handler {
     const poke = this.battle.getPokemon(args[1])!;
     poke.removeVolatile('typeadd' as ID);
     poke.removeVolatile('typechange' as ID);
-    if (this.battle.gen >= 7) poke.removeVolatile('autotomize' as ID);
+    if (this.battle.gen.num >= 7) poke.removeVolatile('autotomize' as ID);
 
-    if (!kwArgs.silent) poke.activateAbility(this.battle.dex.getEffect(kwArgs.from));
+    if (!kwArgs.silent && kwArgs.from) {
+      poke.activateAbility(this.battle.gen.effects.get(kwArgs.from));
+    }
     // the formechange volatile reminds us to revert the sprite change on switch-out
-    poke.addVolatile('formechange' as ID, this.battle.dex.getSpecies(args[2]).name);
+    poke.addVolatile('formechange' as ID, this.battle.gen.species.get(args[2])!.name);
   }
 
   '|-mega|'(args: Args['|-mega|']) {
-    if (args[3]) this.battle.getPokemon(args[1])!.item = this.battle.dex.getItem(args[3]).id;
+    if (args[3]) this.battle.getPokemon(args[1])!.item = this.battle.gen.items.get(args[3])!.id;
   }
 
   '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const effect = this.battle.dex.getEffect(args[2]);
+    const effect = this.battle.gen.effects.get(args[2])!;
     const ofpoke = this.battle.getPokemon(kwArgs.of);
-    const fromeffect = this.battle.dex.getEffect(kwArgs.from);
+    const fromeffect = kwArgs.from && this.battle.gen.effects.get(kwArgs.from);
 
     poke.activateAbility(effect);
     (ofpoke || poke).activateAbility(fromeffect);
 
     switch (effect.id) {
     case 'typechange':
-      if (ofpoke && fromeffect.id === 'reflecttype') {
+      if (ofpoke && fromeffect?.id === 'reflecttype') {
         poke.copyTypesFrom(ofpoke);
       } else {
         poke.removeVolatile('typeadd' as ID);
@@ -663,7 +665,7 @@ export class Handler implements Protocol.Handler {
 
   '|-end|'(args: Args['|-end|'], kwArgs: KWArgs['|-end|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const effect = this.battle.dex.getEffect(args[2]);
+    const effect = this.battle.gen.effects.get(args[2])!;
     poke.removeVolatile(effect.id);
 
     if (kwArgs.silent) return; // do nothing
@@ -680,18 +682,18 @@ export class Handler implements Protocol.Handler {
 
   '|-singleturn|'(args: Args['|-singleturn|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    const effect = this.battle.dex.getEffect(args[2]);
+    const effect = this.battle.gen.effects.get(args[2])!;
     poke.addTurnstatus(effect.id);
     if (effect.id === 'focuspunch' || effect.id === 'shelltrap') poke.rememberMove(effect.name, 0);
   }
 
   '|-singlemove|'(args: Args['|-singlemove|']) {
-    this.battle.getPokemon(args[1])!.addMovestatus(this.battle.dex.getEffect(args[2]).id);
+    this.battle.getPokemon(args[1])!.addMovestatus(this.battle.gen.effects.get(args[2])!.id);
   }
 
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
     const poke = this.battle.getPokemon(args[1]);
-    const effect = this.battle.dex.getEffect(args[2]);
+    const effect = this.battle.gen.effects.get(args[2])!;
     const target = this.battle.getPokemon(args[3] as Protocol.PokemonIdent);
     if (poke) poke.activateAbility(effect);
 
@@ -723,7 +725,7 @@ export class Handler implements Protocol.Handler {
       }
       break;
     case 'spite':
-      const move = this.battle.dex.getMove(kwArgs.move).name;
+      const move = this.battle.gen.moves.get(kwArgs.move!)!.name;
       const pp = Number(kwArgs.number);
       poke!.rememberMove(move, isNaN(pp) ? 4 : pp);
       break;
@@ -732,7 +734,7 @@ export class Handler implements Protocol.Handler {
       poke!.removeVolatile('telekinesis' as ID);
       break;
     case 'skillswap': case 'wanderingspirit':
-      if (this.battle.gen <= 4) break;
+      if (this.battle.gen.num <= 4) break;
       const pokeability = toID(kwArgs.ability) || target!.ability;
       const targetability = toID(kwArgs.ability2) || poke!.ability;
       if (pokeability) {
@@ -763,7 +765,7 @@ export class Handler implements Protocol.Handler {
       break;
     case 'mummy':
       if (!kwArgs.ability) break; // if Mummy activated but failed, no ability will have been sent
-      const ability = this.battle.dex.getAbility(kwArgs.ability);
+      const ability = this.battle.gen.abilities.get(kwArgs.ability)!;
       target!.activateAbility(ability.name);
       if (poke) poke.activateAbility('Mummy');
       target!.activateAbility('Mummy', true);
@@ -781,24 +783,24 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-sidestart|'(args: Args['|-sidestart|']) {
-    this.battle.getSide(args[1]).addSideCondition(this.battle.dex.getEffect(args[2]));
+    this.battle.getSide(args[1]).addSideCondition(this.battle.gen.effects.get(args[2])!);
   }
 
   '|-sideend|'(args: Args['|-sideend|']) {
-    this.battle.getSide(args[1]).removeSideCondition(this.battle.dex.getEffect(args[2]).id);
+    this.battle.getSide(args[1]).removeSideCondition(this.battle.gen.effects.get(args[2])!.id);
   }
 
   '|-weather|'(args: Args['|-weather|'], kwArgs: KWArgs['|-weather|']) {
-    const effect = this.battle.dex.getEffect(args[1]);
+    const effect = this.battle.gen.effects.get(args[1])!;
     const poke = this.battle.getPokemon(kwArgs.of) || undefined;
-    const ability = this.battle.dex.getEffect(kwArgs.from);
+    const ability = kwArgs.from && this.battle.gen.effects.get(kwArgs.from);
     this.battle.field.changeWeather(effect.id, poke, !!kwArgs.upkeep, ability);
   }
 
   '|-fieldstart|'(args: Args['|-fieldstart|'], kwArgs: KWArgs['|-fieldstart|']) {
-    const effect = this.battle.dex.getEffect(args[1]);
+    const effect = this.battle.gen.effects.get(args[1])!;
     const poke = this.battle.getPokemon(kwArgs.of);
-    const fromeffect = this.battle.dex.getEffect(kwArgs.from);
+    const fromeffect = kwArgs.from && this.battle.gen.effects.get(kwArgs.from);
     if (poke && fromeffect) poke.activateAbility(fromeffect);
     let maxTimeLeft = 0;
     if (effect.id.endsWith('terrain')) {
@@ -809,13 +811,13 @@ export class Handler implements Protocol.Handler {
           continue;
         }
       }
-      if (this.battle.gen > 6) maxTimeLeft = 8;
+      if (this.battle.gen.num > 6) maxTimeLeft = 8;
     }
     this.battle.field.addPseudoWeather(effect.id, 5, maxTimeLeft);
   }
 
   '|-fieldend|'(args: Args['|-fieldend|']) {
-    this.battle.field.removePseudoWeather(this.battle.dex.getEffect(args[1]).id);
+    this.battle.field.removePseudoWeather(this.battle.gen.effects.get(args[1])!.id);
   }
 }
 

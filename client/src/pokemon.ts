@@ -5,9 +5,10 @@ import {
   BoostsTable,
   TypeName,
   ID,
+  toID,
   Move,
   Effect,
-} from '@pkmn/dex-types';
+} from '@pkmn/data';
 import {
   DetailedPokemon,
   EffectName,
@@ -21,7 +22,6 @@ import {
   Request,
 } from '@pkmn/protocol';
 
-import {toID} from './common';
 import {Side} from './side';
 
 // export interface MoveSlot {
@@ -348,7 +348,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     // this.lastMove = '';
     this.statusStage = 0;
     this.statusData.toxicTurns = 0;
-    if (this.side.battle.gen === 5) this.statusData.sleepTurns = 0;
+    if (this.side.battle.gen.num === 5) this.statusData.sleepTurns = 0;
   }
 
   copyVolatileFrom(pokemon: Pokemon, copyAll: 'batonpass' | 'illusion' = 'batonpass') {
@@ -386,7 +386,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   rememberMove(moveName: string, pp = 1, recursionSource?: PokemonIdent) {
     if (recursionSource === this.originalIdent) return;
-    moveName = this.side.battle.dex.getMove(moveName).name;
+    moveName = this.side.battle.gen.moves.get(moveName)!.name;
     if (moveName.charAt(0) === '*') return;
     if (moveName === 'Struggle') return;
     if (this.volatiles.transform) {
@@ -406,29 +406,29 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   }
 
   useMove(move: Move, target: Pokemon | null, from?: EffectName | MoveName) {
-    const dex = this.side.battle.dex;
-    const fromeffect = dex.getEffect(from);
-    this.activateAbility(fromeffect);
+    const gen = this.side.battle.gen;
+    const fromeffect = from && gen.effects.get(from);
+    if (fromeffect) this.activateAbility(fromeffect);
     this.clearMovestatuses();
     if (move.id === 'focuspunch') {
       this.removeTurnstatus('focuspunch' as ID);
     }
-    if (fromeffect.id === 'sleeptalk') {
+    if (fromeffect?.id === 'sleeptalk') {
       this.rememberMove(move.name, 0);
-    } else if (!fromeffect.id || fromeffect.id === 'pursuit') {
+    } else if (!fromeffect?.id || fromeffect.id === 'pursuit') {
       let moveName = move.name;
       if (move.isZ) {
         const isZ = move.isZ as ID;
         this.item = isZ;
-        const item = dex.getItem(isZ);
+        const item = gen.items.get(isZ)!;
         if (item.zMoveFrom) moveName = item.zMoveFrom;
       } else if (move.name.slice(0, 2) === 'Z-') {
         moveName = moveName.slice(2) as MoveName;
-        move = dex.getMove(moveName);
+        move = gen.moves.get(moveName)!;
         // TODO: use a cached lookup table instead of looping...
-        for (const item in dex.data.Items) {
-          if (dex.getItem(item).zMoveType === move.type) {
-            this.item = item as ID;
+        for (const item of gen.items) {
+          if (item.zMoveType === move.type) {
+            this.item = item.id;
             break;
           }
         }
@@ -452,10 +452,10 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     }
   }
 
-  cantUseMove(effect: Effect, move: Move) {
+  cantUseMove(effect: Effect, move?: Move) {
     this.clearMovestatuses();
     this.activateAbility(effect);
-    if (move.id) this.rememberMove(move.name, 0);
+    if (move?.id) this.rememberMove(move.name, 0);
     switch (effect.id) {
     case 'slp': return void this.statusData.sleepTurns++;
     case 'focuspunch': return this.removeTurnstatus('focuspunch' as ID);
@@ -464,7 +464,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     }
   }
 
-  activateAbility(effectOrName: Effect | string, isNotBase?: boolean) {
+  activateAbility(effectOrName?: Effect | string, isNotBase?: boolean) {
     if (!effectOrName) return;
     if (typeof effectOrName !== 'string') {
       if (effectOrName.effectType !== 'Ability') return;
@@ -474,7 +474,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   }
 
   rememberAbility(ability: string, isNotBase?: boolean) {
-    this.ability = this.side.battle.dex.getAbility(ability).id;
+    this.ability = this.side.battle.gen.abilities.get(ability)!.id;
     if (!this.baseAbility && !isNotBase) {
       this.baseAbility = this.ability;
     }
@@ -519,7 +519,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     const battle = this.side.battle;
     if (battle.field.hasPseudoWeather('gravity' as ID)) {
       return true;
-    } else if (this.volatiles['ingrain'] && battle.gen >= 4) {
+    } else if (this.volatiles['ingrain'] && battle.gen.num >= 4) {
       return true;
     } else if (this.volatiles['smackdown']) {
       return true;
@@ -547,11 +547,11 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   }
 
   getSpecies(serverPokemon?: ServerPokemon) {
-    return this.side.battle.dex.getSpecies(this.getSpeciesForme(serverPokemon));
+    return this.side.battle.gen.species.get(this.getSpeciesForme(serverPokemon))!;
   }
 
   getBaseSpecies() {
-    return this.side.battle.dex.getSpecies(this.speciesForme);
+    return this.side.battle.gen.species.get(this.speciesForme)!;
   }
 
   // Returns [min, max] damage dealt as a proportion of total HP from 0 to 1

@@ -1,6 +1,9 @@
-import {Dex, ID} from '@pkmn/dex';
+import {Dex} from '@pkmn/dex';
+import {Generations, ID} from '@pkmn/data';
 
 import {Field, Battle, Pokemon} from '../index';
+
+const gen = new Generations(Dex).get(8);
 
 // NOTE: tested exhaustively in integration/src/test/client.js
 describe('Field', () => {
@@ -18,7 +21,7 @@ describe('Field', () => {
   });
 
   it('#changeWeather', () => {
-    const field = new Field({dex: Dex} as unknown as Battle);
+    const field = new Field({gen} as unknown as Battle);
 
     field.changeWeather('');
     expect(field.weather).toBe('');

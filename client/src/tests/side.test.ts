@@ -14,7 +14,7 @@ describe('Side', () => {
   });
 
   it('#sideConditions', () => {
-    const side = new Side({gen: 8} as Battle, 0);
+    const side = new Side({gen: {num: 8}} as Battle, 0);
 
     side.addSideCondition({id: 'spikes', name: 'Spikes'} as unknown as Effect);
     expect(side.sideConditions['spikes']).toEqual(['Spikes', 1, 0, 0]);
@@ -34,7 +34,7 @@ describe('Side', () => {
   it.todo('#addPokemon');
 
   it('#switchIn', () => {
-    const side = new Side({gen: 8} as Battle, 0);
+    const side = new Side({gen: {num: 8}} as Battle, 0);
     let pokemon = side.addPokemon({} as DetailedPokemon);
     pokemon.slot = 2;
     pokemon.lastMove = 'tackle' as ID;
@@ -61,7 +61,7 @@ describe('Side', () => {
   });
 
   it('#dragIn', () => {
-    const side = new Side({gen: 8} as Battle, 0);
+    const side = new Side({gen: {num: 8}} as Battle, 0);
     const poke1 = side.addPokemon({} as DetailedPokemon);
     const poke2 = side.addPokemon({} as DetailedPokemon);
 
@@ -117,7 +117,7 @@ describe('Side', () => {
   it.todo('#switchOut');
 
   it('#swapTo', () => {
-    const side = new Side({} as Battle, 0);
+    const side = new Side({gen: {num: 8}} as Battle, 0);
     const poke1 = side.addPokemon({} as DetailedPokemon);
     const poke2 = side.addPokemon({} as DetailedPokemon);
 
@@ -155,7 +155,7 @@ describe('Side', () => {
   });
 
   it('#swapWith', () => {
-    const side = new Side({} as Battle, 0);
+    const side = new Side({gen: {num: 8}} as Battle, 0);
     const poke1 = side.addPokemon({} as DetailedPokemon);
     const poke2 = side.addPokemon({} as DetailedPokemon);
 
@@ -185,7 +185,7 @@ describe('Side', () => {
   });
 
   it('#faint', () => {
-    const side = new Side({gen: 8} as Battle, 0);
+    const side = new Side({gen: {num: 8}} as Battle, 0);
     const pokemon = side.addPokemon({} as DetailedPokemon);
 
     pokemon.addVolatile('baz' as ID);
@@ -202,7 +202,7 @@ describe('Side', () => {
   });
 
   it('#reset', () => {
-    const side = new Side({gen: 8} as Battle, 0);
+    const side = new Side({gen: {num: 8}} as Battle, 0);
     const pokemon = side.addPokemon({} as DetailedPokemon);
 
     expect(pokemon.side).toBe(side);
@@ -220,8 +220,8 @@ describe('Side', () => {
   });
 
   it('#destroy', () => {
-    const side = new Side({gen: 8} as Battle, 0);
-    const foe = new Side({gen: 8} as Battle, 1);
+    const side = new Side({gen: {num: 8}} as Battle, 0);
+    const foe = new Side({gen: {num: 8}} as Battle, 1);
     const pokemon = side.addPokemon({} as DetailedPokemon);
 
     expect(pokemon.side).toBe(side);

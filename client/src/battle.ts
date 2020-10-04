@@ -1,4 +1,4 @@
-import {Dex, ID, SideID, GenerationNum, GameType, HPColor} from '@pkmn/dex-types';
+import {Generations, Generation, ID, SideID, GameType, HPColor} from '@pkmn/data';
 import {
   FormatName,
   Message,
@@ -69,8 +69,9 @@ export class Battle {
 
   // readonly hints: Set<string>;
 
-  dex: Dex;
-  gen: GenerationNum;
+  readonly gens: Generations;
+
+  gen: Generation;
 
   readonly field: Field;
   readonly p1: Side;
@@ -94,13 +95,13 @@ export class Battle {
   private readonly handler: Handler;
 
   constructor(
-    dex: Dex,
+    gens: Generations,
     player: ID | null = null,
     field = (b: Battle) => new Field(b),
     side = (b: Battle, n: 0 | 1 | 2 | 3) => new Side(b, n)
   ) {
-    this.dex = dex;
-    this.gen = 8;
+    this.gens = gens;
+    this.gen = gens.get(8);
 
     this.field = field(this);
     this.p1 = side(this, 0);

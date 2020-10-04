@@ -1,8 +1,7 @@
-import {ID, Effect, SideCondition} from '@pkmn/dex-types';
+import {ID, toID, Effect, SideCondition} from '@pkmn/data';
 import {AvatarIdent, DetailedPokemon, Username} from '@pkmn/protocol';
 
 import {Battle} from './battle';
-import {toID} from './common';
 import {Pokemon} from './pokemon';
 
 export class Side {
@@ -97,11 +96,11 @@ export class Side {
     const condition = effect.name as SideCondition;
     switch (id) {
     case 'tailwind':
-      return (this.sideConditions[id] = [condition, 1, this.battle.gen >= 5 ? 4 : 3, 0]);
+      return (this.sideConditions[id] = [condition, 1, this.battle.gen.num >= 5 ? 4 : 3, 0]);
     case 'reflect':
-      return (this.sideConditions[id] = [condition, 1, 5, this.battle.gen >= 4 ? 8 : 0]);
+      return (this.sideConditions[id] = [condition, 1, 5, this.battle.gen.num >= 4 ? 8 : 0]);
     case 'lightscreen':
-      return (this.sideConditions[id] = [condition, 1, 5, this.battle.gen >= 4 ? 8 : 0]);
+      return (this.sideConditions[id] = [condition, 1, 5, this.battle.gen.num >= 4 ? 8 : 0]);
     case 'auroraveil': return (this.sideConditions[id] = [condition, 1, 5, 8]);
     case 'safeguard': return (this.sideConditions[id] = [condition, 1, 5, 0]);
     case 'mist': return (this.sideConditions[id] = [condition, 1, 5, 0]);
@@ -258,7 +257,7 @@ export class Side {
     }
 
     pokemon.statusData.toxicTurns = 0;
-    if (this.battle.gen === 5) pokemon.statusData.sleepTurns = 0;
+    if (this.battle.gen.num === 5) pokemon.statusData.sleepTurns = 0;
     this.lastPokemon = pokemon;
     this.active[slot] = null;
   }
