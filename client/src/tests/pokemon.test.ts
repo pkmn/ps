@@ -177,11 +177,11 @@ describe('Pokemon', () => {
       {battle: {dex: Dex}} as unknown as Side,
       {speciesForme: 'Snorlax'} as DetailedPokemon
     );
-    expect(pokemon.getWeightKg()).toBe(460);
+    expect(pokemon.getWeightHg()).toBe(4600);
     pokemon.addVolatile('autotomize' as ID, 2);
-    expect(pokemon.getWeightKg()).toBe(260);
+    expect(pokemon.getWeightHg()).toBe(2600);
     pokemon.addVolatile('autotomize' as ID, 10);
-    expect(pokemon.getWeightKg()).toBe(0.1);
+    expect(pokemon.getWeightHg()).toBe(1);
   });
 
   it('#types', () => {

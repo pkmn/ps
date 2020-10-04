@@ -364,7 +364,7 @@ export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData
   readonly canHatch: boolean;
   readonly forme: FormeName | '';
   readonly abilities: SpeciesAbility<AbilityName | ''>;
-  readonly types: TypeName[];
+  readonly types: [TypeName] | [TypeName, TypeName];
   readonly prevo?: SpeciesName | '';
   readonly evos?: SpeciesName[];
   readonly nfe: boolean;

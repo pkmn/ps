@@ -56,6 +56,20 @@ version number in case set import changes.
 
 - cleanup usages of `null`
 - depend on `@pkmn/data` instead of `@pkmn/dex-types`
+- remove `serverPokemon?: ServerPokemon` params?
+- migrate to support `@pkmn/dmg`
+  - `ability` needs to handle `(suppressed)`
+  - `item` needs to handle `(exists)`
+  - remove `''` from `GenderName`
+  - remove `'' | '???'` from `status`
+  - change `sideConditions` -> `sideConditions: {[id: string]: {level?: number}}`
+  - migrate `EffectState` to an object
+  - `volatiles`/`movestatus`/`turnstatus` - condense and fix type?
+  - change `type`/`addedType` etc handling to match server?
+  - remove `spc?` from `boosts`
+  - `switch` etc
+  - `moveThisTurn` etc
+- handle discrepancies with `@pkmn/sim` (for `@pkmn/epoke` state transforms)
 
 ## `@pkmn/view`
 

@@ -402,7 +402,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly baseForme: T.FormeName | '';
   readonly forme: T.FormeName | '';
   readonly abilities: T.SpeciesAbility<T.AbilityName | ''>;
-  readonly types: T.TypeName[];
+  readonly types: [T.TypeName] | [T.TypeName, T.TypeName];
   readonly prevo?: T.SpeciesName | '';
   readonly evos?: T.SpeciesName[];
   readonly nfe: boolean;

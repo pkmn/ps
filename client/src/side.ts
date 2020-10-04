@@ -68,6 +68,12 @@ export class Side {
     this.wisher = null;
   }
 
+  get actor() {
+    const pokemon = this.active[0];
+    if (!pokemon) throw new Error('No active Pokémon');
+    return pokemon;
+  }
+
   setAvatar(avatar: AvatarIdent) {
     this.avatar = avatar;
   }

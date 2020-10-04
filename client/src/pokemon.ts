@@ -36,14 +36,16 @@ import {Side} from './side';
 //   virtual?: boolean;
 // }
 
-// [id, element?, ...misc]
+// interface EffectState {
+//   id: ID;
+//  duration?: number;
+//  [k: string]: any;
+// }
 type EffectState = any[] & { 0: ID };
 // [name, minTimeLeft, maxTimeLeft]
 interface EffectTable { [effectid: string]: EffectState }
 
 export interface ServerPokemon extends Request.Pokemon, DetailedPokemon, PokemonHealth { }
-
-const SLOTS = ['a', 'b', 'c', 'd', 'e', 'f'];
 
 export class Pokemon implements DetailedPokemon, PokemonHealth {
   // readonly set: PokemonSet;
@@ -85,18 +87,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   // knownType: boolean;
   // apparentType: string;
 
-  // switchFlag: ID | boolean;
-  // forceSwitchFlag: boolean;
-  // switchCopyFlag: boolean;
-  // draggedIn: number | null;
-  // newlySwitched: boolean;
-  // beingCalledBack: boolean;
-
   // lastMoveTargetLoc?: number;
-  // moveThisTurn: string | boolean;
-  // moveLastTurnResult: boolean | null | undefined;
-  // moveThisTurnResult: boolean | null | undefined;
-  // hurtThisTurn: boolean;
   // lastDamage: number;
   // attackedBy: {source: Pokemon, damage: number, thisTurn: boolean, move?: ID}[];
 
@@ -139,6 +130,18 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   hpcolor: HPColor;
   status: StatusName | '' | '???';
   fainted: boolean;
+
+  // switchFlag: ID | boolean;
+  // forceSwitchFlag: boolean;
+  // switchCopyFlag: boolean;
+  // draggedIn: number | null;
+  // newlySwitched: boolean;
+  // beingCalledBack: boolean;
+
+  // moveThisTurn: string | boolean;
+  // moveLastTurnResult: boolean | null | undefined;
+  // moveThisTurnResult: boolean | null | undefined;
+  // hurtThisTurn: boolean;
 
   statusStage: number;
   statusData: { sleepTurns: number; toxicTurns: number };
@@ -203,10 +206,30 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   get ident() {
     return (
       this.originalIdent.substr(0, 2) +
-      SLOTS[this.slot] +
+      'abcdef'.charAt(this.slot) +
       this.originalIdent.substr(2)
     ) as PokemonIdent;
   }
+
+  get position() {
+    return this.slot;
+  }
+
+  get weighthg() {
+    return this.getWeightHg();
+  }
+
+  get types() {
+    return this.getTypes()[0];
+  }
+
+  get addedType() {
+    return this.getTypes()[1] || undefined;
+  }
+
+  // get switching() {
+  //   return this.newlySwitched ? 'in' : this.beingCalledBack ? 'out' : undefined;
+  // }
 
   isActive() {
     return this.side.active.includes(this);
@@ -457,9 +480,9 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     }
   }
 
-  getWeightKg(serverPokemon?: ServerPokemon) {
-    const autotomizeFactor = this.volatiles.autotomize?.[1] * 100 || 0;
-    return Math.max(this.getSpecies(serverPokemon).weightkg - autotomizeFactor, 0.1);
+  getWeightHg(serverPokemon?: ServerPokemon) {
+    const autotomizeFactor = this.volatiles.autotomize?.[1] * 1000 || 0;
+    return Math.max(1, this.getSpecies(serverPokemon).weighthg - autotomizeFactor);
   }
 
   copyTypesFrom(pokemon: Pokemon) {
@@ -472,15 +495,15 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     }
   }
 
-  getTypes(serverPokemon?: ServerPokemon): [ReadonlyArray<TypeName>, TypeName | ''] {
-    let types: ReadonlyArray<TypeName>;
+  getTypes(serverPokemon?: ServerPokemon): [[TypeName] | [TypeName, TypeName], TypeName | ''] {
+    let types: [TypeName] | [TypeName, TypeName];
     if (this.volatiles.typechange) {
       types = this.volatiles.typechange[1].split('/');
     } else {
       types = this.getSpecies(serverPokemon).types;
     }
     if (this.hasTurnstatus('roost' as ID) && types.includes('Flying')) {
-      types = types.filter(typeName => typeName !== 'Flying');
+      types = types.filter(typeName => typeName !== 'Flying') as [TypeName] | [TypeName, TypeName];
       if (!types.length) types = ['Normal'];
     }
     const addedType = (this.volatiles.typeadd ? this.volatiles.typeadd[1] : '');
