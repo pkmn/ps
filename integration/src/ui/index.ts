@@ -5,7 +5,7 @@ import {Battle, Side, Pokemon} from '@pkmn/client';
 import {TeamGenerators} from '@pkmn/randoms';
 import {Sprites, Icons, GraphicsGen} from '@pkmn/img';
 import {LogFormatter} from '@pkmn/view';
-import {GenerationNum} from '@pkmn/types';
+import {Generations, GenerationNum} from '@pkmn/data';
 
 // @ts-ignore
 import TEAM_A from './teams/a.txt';
@@ -21,6 +21,10 @@ const FORMATS = [
 const prng = new PRNG();
 const FORMAT = FIXED ? 'gen7anythinggoes' : prng.sample(FORMATS);
 const validator = new TeamValidator(FORMAT);
+
+const dex = Dex.forFormat(FORMAT);
+dex.setTeamGeneratorFactory(TeamGenerators);
+const gens = new Generations(Dex as any);
 
 const importTeam = (t: string, name: 'A' | 'B') => {
   const team = Teams.importTeam(t, dex as Data)!.team as PokemonSet[];
@@ -41,9 +45,6 @@ const SPRITES: {[gen in GenerationNum]: GraphicsGen[]} = {
 };
 const GEN = +FORMAT.charAt(3) as GenerationNum;
 const GRAPHICS = prng.sample(SPRITES[GEN]);
-
-const dex = Dex.forFormat(FORMAT);
-dex.setTeamGeneratorFactory(TeamGenerators);
 
 const spec = {formatid: FORMAT};
 const p1spec =
@@ -167,7 +168,7 @@ class PostHandler implements Handler<void> {
   }
 }
 
-const battle = new Battle(Dex as any);
+const battle = new Battle(gens);
 const formatter = new LogFormatter(0, battle);
 
 const pre = new PreHandler(battle);

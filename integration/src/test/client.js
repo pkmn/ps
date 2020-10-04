@@ -6,6 +6,7 @@ const sim = require('@pkmn/sim');
 const client = require('@pkmn/client');
 const view = require('@pkmn/view');
 
+const {Generations} = require('@pkmn/data');
 const {Protocol} = require('@pkmn/protocol');
 const {Verifier} = require('@pkmn/protocol/verifier');
 const {ExhaustiveRunner} = require('@pkmn/sim/tools');
@@ -98,7 +99,8 @@ class Runner {
       }
     };
 
-    const battle = new client.Battle(sim.Dex);
+    const gens = new Generations(sim.Dex);
+    const battle = new client.Battle(gens);
     const formatter = new view.LogFormatter(perspective, battle);
     const pkmn = {battle, formatter, log: ''};
 
