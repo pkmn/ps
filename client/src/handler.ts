@@ -1,5 +1,5 @@
 import {ID, toID, BoostName, SpeciesName, TypeName} from '@pkmn/data';
-import {Protocol, Args, KWArgs, PokemonSearchID} from '@pkmn/protocol';
+import {Protocol, Args, KWArgs, PokemonSearchID, PokemonIdent} from '@pkmn/protocol';
 
 import {Battle} from './battle';
 
@@ -152,7 +152,7 @@ export class Handler implements Protocol.Handler {
   '|swap|'(args: Args['|swap|']) {
     if (isNaN(Number(args[2]))) {
       const poke = this.battle.getPokemon(args[1])!;
-      poke.side.swapWith(poke, this.battle.getPokemon(args[2] as Protocol.PokemonIdent)!);
+      poke.side.swapWith(poke, this.battle.getPokemon(args[2] as PokemonIdent)!);
     } else {
       const poke = this.battle.getPokemon(args[1])!;
       const targetIndex = parseInt(args[2]!);
@@ -182,7 +182,7 @@ export class Handler implements Protocol.Handler {
   // TODO merge into battle, does this come before or after everything has been updated?
   // '|request|'(args: Args['|request|']) {
   //   const request = Protocol.parseRequest(args[1]);
-  //   ...
+  //   ...x
   // }
 
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
@@ -228,7 +228,7 @@ export class Handler implements Protocol.Handler {
 
   '|-sethp|'(args: Args['|-sethp|']) {
     for (let k = 0; k < 2; k++) {
-      const poke = this.battle.getPokemon(args[1 + 2 * k] as Protocol.PokemonIdent);
+      const poke = this.battle.getPokemon(args[1 + 2 * k] as PokemonIdent);
       if (poke) void poke.healthParse(args[2 + 2 * k])!;
     }
   }
@@ -695,7 +695,7 @@ export class Handler implements Protocol.Handler {
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
     const poke = this.battle.getPokemon(args[1]);
     const effect = this.battle.gen.effects.get(args[2])!;
-    const target = this.battle.getPokemon(args[3] as Protocol.PokemonIdent);
+    const target = this.battle.getPokemon(args[3] as PokemonIdent);
     if (poke) poke.activateAbility(effect);
 
     switch (effect.id) {
@@ -793,7 +793,7 @@ export class Handler implements Protocol.Handler {
     const effect = this.battle.gen.effects.get(args[1])!;
     const poke = this.battle.getPokemon(kwArgs.of) || undefined;
     const ability = kwArgs.from && this.battle.gen.effects.get(kwArgs.from);
-    this.battle.field.changeWeather(effect.id, poke, !!kwArgs.upkeep, ability);
+    this.battle.field.setWeather(effect.id, poke, !!kwArgs.upkeep, ability);
   }
 
   '|-fieldstart|'(args: Args['|-fieldstart|'], kwArgs: KWArgs['|-fieldstart|']) {
@@ -803,7 +803,7 @@ export class Handler implements Protocol.Handler {
     if (poke && fromeffect) poke.activateAbility(fromeffect);
 
     if (effect.id.endsWith('terrain')) {
-      this.battle.field.changeTerrain(effect.id);
+      this.battle.field.setTerrain(effect.id);
     } else {
       this.battle.field.addPseudoWeather(effect.id, 5, 0);
     }
@@ -812,7 +812,7 @@ export class Handler implements Protocol.Handler {
   '|-fieldend|'(args: Args['|-fieldend|']) {
     const effect = this.battle.gen.effects.get(args[1])!;
     if (effect.id.endsWith('terrain')) {
-      this.battle.field.removeTerrain();
+      this.battle.field.setTerrain('');
     } else {
       this.battle.field.removePseudoWeather(effect.id);
     }

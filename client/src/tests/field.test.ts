@@ -7,7 +7,7 @@ const gen = new Generations(Dex).get(8);
 
 // NOTE: tested exhaustively in integration/src/test/client.js
 describe('Field', () => {
-  it('#pseudoWeather', () => {
+  it('pseudoWeather', () => {
     const field = new Field({sides: []} as unknown as Battle);
     expect(field.hasPseudoWeather('trickroom' as ID)).toBe(false);
     field.addPseudoWeather('trickroom' as ID, 3, 5);
@@ -23,55 +23,55 @@ describe('Field', () => {
     expect(field.hasPseudoWeather('trickroom' as ID)).toBe(true);
   });
 
-  it('#changeWeather', () => {
+  it('#setWeather', () => {
     const field = new Field({gen} as unknown as Battle);
 
-    field.changeWeather('');
+    field.setWeather('');
     expect(field.weather).toBeUndefined();
 
-    field.changeWeather('none' as ID);
+    field.setWeather('none' as ID);
     expect(field.weather).toBeUndefined();
 
-    field.changeWeather('sunnyday' as ID, {} as Pokemon);
+    field.setWeather('sunnyday' as ID, {} as Pokemon);
     expect(field.weather).toBe('Sun');
-    expect(field.weatherData).toEqual({id: 'sunnyday', minDuration: 5, maxDuration: 8});
+    expect(field.weatherData).toEqual({id: 'sun', minDuration: 5, maxDuration: 8});
 
-    field.changeWeather('sunnyday' as ID, undefined, true);
+    field.setWeather('sunnyday' as ID, undefined, true);
     expect(field.weather).toBe('Sun');
-    expect(field.weatherData).toEqual({id: 'sunnyday', minDuration: 4, maxDuration: 7});
+    expect(field.weatherData).toEqual({id: 'sun', minDuration: 4, maxDuration: 7});
 
-    field.changeWeather('desolateland' as ID, {} as Pokemon);
+    field.setWeather('desolateland' as ID, {} as Pokemon);
     expect(field.weather).toBe('Harsh Sunshine');
-    expect(field.weatherData).toEqual({id: 'desolateland', minDuration: 0, maxDuration: 0});
+    expect(field.weatherData).toEqual({id: 'harshsunshine', minDuration: 0, maxDuration: 0});
 
-    field.changeWeather('deltastream' as ID);
+    field.setWeather('deltastream' as ID);
     expect(field.weather).toBe('Strong Winds');
-    expect(field.weatherData).toEqual({id: 'deltastream', minDuration: 0, maxDuration: 0});
+    expect(field.weatherData).toEqual({id: 'strongwinds', minDuration: 0, maxDuration: 0});
 
-    field.changeWeather('raindance' as ID);
+    field.setWeather('raindance' as ID);
     expect(field.weather).toBe('Rain');
-    expect(field.weatherData).toEqual({id: 'raindance', minDuration: 5, maxDuration: 8});
+    expect(field.weatherData).toEqual({id: 'rain', minDuration: 5, maxDuration: 8});
   });
 
-  it('#changeTerrain', () => {
+  it('#setTerrain', () => {
     const field = new Field({gen} as unknown as Battle);
 
-    field.changeTerrain('electricterrain' as ID);
+    field.setTerrain('electricterrain' as ID);
     expect(field.terrain).toBe('Electric');
-    expect(field.terrainData).toEqual({id: 'electricterrain', minDuration: 5, maxDuration: 8});
+    expect(field.terrainData).toEqual({id: 'electric', minDuration: 5, maxDuration: 8});
 
-    field.changeTerrain('' as ID);
+    field.setTerrain('' as ID);
     expect(field.terrain).toBeUndefined();
     expect(field.terrainData).toEqual({id: '', minDuration: 0, maxDuration: 0});
 
-    field.changeTerrain('mistyterrain' as ID);
+    field.setTerrain('mistyterrain' as ID);
     expect(field.terrain).toBe('Misty');
-    expect(field.terrainData).toEqual({id: 'mistyterrain', minDuration: 5, maxDuration: 8});
+    expect(field.terrainData).toEqual({id: 'misty', minDuration: 5, maxDuration: 8});
   });
 
   it('#reset', () => {
     const field = new Field({gen} as Battle);
-    field.changeWeather('raindance' as ID);
+    field.setWeather('raindance' as ID);
     field.weatherData.minDuration = 3;
     field.weatherData.maxDuration = 5;
     field.addPseudoWeather('trickroom' as ID, 3, 5);

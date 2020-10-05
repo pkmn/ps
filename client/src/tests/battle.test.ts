@@ -95,14 +95,14 @@ describe('Battle', () => {
 
   it('#currentWeather', () => {
     const battle = new Battle(GENS);
-    battle.field.changeWeather('raindance' as ID);
-    expect(battle.currentWeather()).toBe('raindance');
+    battle.field.setWeather('raindance' as ID);
+    expect(battle.currentWeather()).toBe('rain');
   });
 
   it('#reset', () => {
     const battle = new Battle(GENS);
     const field = battle.field;
-    field.changeWeather('raindance' as ID);
+    field.setWeather('raindance' as ID);
     battle.turn = 10;
     battle.lastMove = 'healing-wish';
 

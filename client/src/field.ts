@@ -1,4 +1,4 @@
-import {ID, Effect} from '@pkmn/data';
+import {ID, Effect, toID} from '@pkmn/data';
 
 import {Battle} from './battle';
 import {Pokemon} from './pokemon';
@@ -19,6 +19,8 @@ const WEATHERS: {[id: string]: WeatherName} = {
   deltastream: 'Strong Winds',
 };
 
+const EXTREME_WEATHER: WeatherName[] = ['Harsh Sunshine', 'Heavy Rain', 'Strong Winds'];
+
 export type TerrainName =
   'Electric' | 'Grassy' | 'Psychic' | 'Misty';
 
@@ -29,7 +31,6 @@ const TERRAINS: {[id: string]: TerrainName} = {
   mistyterrain: 'Misty',
 };
 
-// NOTE: id is not the ID of the WeatherName / TerrainName
 interface FieldConditionState {
   id: ID;
   minDuration: number;
@@ -83,22 +84,19 @@ export class Field {
     }
   }
 
-  changeTerrain(id?: ID) {
+  setTerrain(id: ID) {
+    if (!id || id === 'none') id = '' as ID;
     if (id) {
       this.terrain = TERRAINS[id];
-      this.terrainData = {id, minDuration: 5, maxDuration: this.battle.gen.num > 6 ? 8 : 0};
+      this.terrainData =
+        {id: toID(this.terrain), minDuration: 5, maxDuration: this.battle.gen.num > 6 ? 8 : 0};
     } else {
       this.terrain = undefined;
       this.terrainData = {id: '', minDuration: 0, maxDuration: 0};
     }
   }
 
-  removeTerrain() {
-    this.terrain = undefined;
-    this.terrainData = {id: '', minDuration: 0, maxDuration: 0};
-  }
-
-  changeWeather(id: ID, poke?: Pokemon, isUpkeep?: boolean, ability?: Effect) {
+  setWeather(id: ID, poke?: Pokemon, isUpkeep?: boolean, ability?: Effect) {
     if (!id || id === 'none') id = '' as ID;
     if (isUpkeep) {
       if (this.weather && this.weatherData.maxDuration) {
@@ -107,9 +105,11 @@ export class Field {
       }
       return;
     }
+    this.weather = WEATHERS[id];
+    id = toID(this.weather);
     if (id) {
       this.weatherData.id = id;
-      const isExtremeWeather = ['deltastream', 'desolateland', 'primordialsea'].includes(id);
+      const isExtremeWeather = EXTREME_WEATHER.includes(this.weather);
       if (poke) {
         if (ability) poke.activateAbility(ability.name);
         this.weatherData.maxDuration = (this.battle.gen.num <= 5 || isExtremeWeather) ? 0 : 8;
@@ -122,7 +122,6 @@ export class Field {
         this.weatherData.minDuration = this.battle.gen.num <= 3 ? 0 : 5;
       }
     }
-    this.weather = WEATHERS[id];
   }
 
   reset() {

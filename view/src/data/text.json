@@ -232,20 +232,20 @@
     "block": "  The move was blocked by the power of Dynamax!",
     "fail": "  [POKEMON] shook its head. It seems like it can't use this move..."
   },
-  "sandstorm": {
-    "weatherName": "Sandstorm",
+  "sand": {
+    "weatherName": "Sand",
     "start": "  A sandstorm kicked up!",
     "end": "  The sandstorm subsided.",
     "upkeep": "  (The sandstorm is raging.)",
     "damage": "  [POKEMON] is buffeted by the sandstorm!"
   },
-  "sunnyday": {
+  "sun": {
     "weatherName": "Sun",
     "start": "  The sunlight turned harsh!",
     "end": "  The harsh sunlight faded.",
     "upkeep": "  (The sunlight is strong.)"
   },
-  "raindance": {
+  "rain": {
     "weatherName": "Rain",
     "start": "  It started to rain!",
     "end": "  The rain stopped.",
@@ -258,43 +258,43 @@
     "upkeep": "  (The hail is crashing down.)",
     "damage": "  [POKEMON] is buffeted by the hail!"
   },
-  "desolateland": {
-    "weatherName": "Intense Sun",
+  "harshsunshine": {
+    "weatherName": "Harsh Sunshine",
     "start": "  The sunlight turned extremely harsh!",
     "end": "  The extremely harsh sunlight faded.",
     "block": "  The extremely harsh sunlight was not lessened at all!",
     "blockMove": "  The Water-type attack evaporated in the harsh sunlight!"
   },
-  "primordialsea": {
+  "heavyrain": {
     "weatherName": "Heavy Rain",
     "start": "  A heavy rain began to fall!",
     "end": "  The heavy rain has lifted!",
     "block": "  There is no relief from this heavy rain!",
     "blockMove": "  The Fire-type attack fizzled out in the heavy rain!"
   },
-  "deltastream": {
+  "strongwinds": {
     "weatherName": "Strong Winds",
     "start": "  Mysterious strong winds are protecting Flying-type Pokémon!",
     "end": "  The mysterious strong winds have dissipated!",
     "activate": "  The mysterious strong winds weakened the attack!",
     "block": "  The mysterious strong winds blow on regardless!"
   },
-  "electricterrain": {
+  "electric": {
     "start": "  An electric current ran across the battlefield!",
     "end": "  The electricity disappeared from the battlefield.",
     "block": "  [POKEMON] is protected by the Electric Terrain!"
   },
-  "grassyterrain": {
+  "grassy": {
     "start": "  Grass grew to cover the battlefield!",
     "end": "  The grass disappeared from the battlefield.",
     "heal": "  [POKEMON]'s HP was restored."
   },
-  "mistyterrain": {
+  "misty": {
     "start": "  Mist swirled around the battlefield!",
     "end": "  The mist disappeared from the battlefield.",
     "block": "  [POKEMON] surrounds itself with a protective mist!"
   },
-  "psychicterrain": {
+  "psychic": {
     "start": "  The battlefield got weird!",
     "end": "  The weirdness disappeared from the battlefield!",
     "block": "  [POKEMON] is protected by the Psychic Terrain!"
