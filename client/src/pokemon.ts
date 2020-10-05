@@ -7,6 +7,7 @@ import {
   ID,
   toID,
   Move,
+  MoveTarget,
   Effect,
   SpeciesName,
 } from '@pkmn/data';
@@ -40,6 +41,22 @@ interface EffectState {
 interface EffectTable { [effectid: string]: EffectState }
 
 export interface ServerPokemon extends Request.Pokemon, DetailedPokemon, PokemonHealth { }
+
+type MoveSlot = {
+  name: MoveName;
+  id: ID;
+  ppUsed: number;
+  virtual?: boolean;
+} | {
+  name: MoveName;
+  id: ID;
+  ppUsed: number;
+  pp: number;
+  maxpp: number;
+  target: MoveTarget;
+  disabled?: boolean;
+  virtual?: boolean;
+};
 
 export class Pokemon implements DetailedPokemon, PokemonHealth {
   readonly side: Side;
@@ -77,9 +94,25 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   lastItemEffect: string;
   teamPreviewItem: boolean;
 
-  moves: ID[];
-  // [[moveName, ppUsed]]
-  moveTrack: [string, number][] = [];
+  moveSlots: MoveSlot[];
+  maxMoves?: Array<{
+    id: ID;
+    target: MoveTarget;
+    disabled?: boolean;
+  }>;
+  zMoves?: Array<{
+    name: MoveName;
+    id: ID;
+    target: MoveTarget;
+  } | null>;
+
+  canDynamax?: boolean;
+  canGigantamax?: boolean;
+  canMegaEvo?: boolean;
+  canUltraBurst?: boolean;
+  trapped?: boolean;
+  maybeTrapped?: boolean;
+  maybeDisabled?: boolean;
 
   lastMove: ID;
   lastMoveTargetLoc?: number;
@@ -123,8 +156,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.lastItemEffect = '';
     this.teamPreviewItem = false;
 
-    this.moves = [];
-    this.moveTrack = [];
+    this.moveSlots = [];
 
     this.lastMove = '';
     this.lastMoveTargetLoc = undefined;
@@ -156,9 +188,13 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     return this.getTypes()[1] || undefined;
   }
 
-  // get switching() {
-  //   return this.newlySwitched ? 'in' : this.beingCalledBack ? 'out' : undefined;
-  // }
+  get switching() {
+    return this.newlySwitched ? 'in' : this.beingCalledBack ? 'out' : undefined;
+  }
+
+  get moves() {
+    return this.moveSlots.map(m => m.id);
+  }
 
   hasItem() {
     return this.name ? !!this.item : this.teamPreviewItem;
@@ -239,9 +275,9 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.boosts = {};
     this.clearVolatiles();
 
-    for (let i = 0; i < this.moveTrack.length; i++) {
-      if (this.moveTrack[i][0].charAt(0) === '*') {
-        this.moveTrack.splice(i, 1);
+    for (let i = 0; i < this.moveSlots.length; i++) {
+      if (this.moveSlots[i].virtual) {
+        this.moveSlots.splice(i, 1);
         i--;
       }
     }
@@ -287,25 +323,26 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     pokemon.statusStage = 0;
   }
 
-  rememberMove(moveName: string, pp = 1, recursionSource?: PokemonIdent) {
+  rememberMove(moveName: MoveName | ID, ppUsed = 1, recursionSource?: PokemonIdent) {
     if (recursionSource === this.originalIdent) return;
-    moveName = this.side.battle.gen.moves.get(moveName)!.name;
-    if (moveName.charAt(0) === '*') return;
-    if (moveName === 'Struggle') return;
+    const move = this.side.battle.gen.moves.get(moveName);
+    if (!move) return;
+    if (move.name === 'Struggle') return;
+    let virtual = false;
     if (this.volatiles.transform) {
       // make sure there is no infinite recursion if both Pokemon are transformed into each other
       if (!recursionSource) recursionSource = this.originalIdent;
-      this.volatiles.transform.pokemon!.rememberMove(moveName, 0, recursionSource);
-      moveName = '*' + moveName;
+      this.volatiles.transform.pokemon!.rememberMove(move.name, 0, recursionSource);
+      virtual = true;
     }
-    for (const entry of this.moveTrack) {
-      if (moveName === entry[0]) {
-        entry[1] += pp;
-        if (entry[1] < 0) entry[1] = 0;
+    for (const entry of this.moveSlots) {
+      if (move.name === entry.name && virtual === entry.virtual) {
+        entry.ppUsed += ppUsed;
+        if (entry.ppUsed < 0) entry.ppUsed = 0;
         return;
       }
     }
-    this.moveTrack.push([moveName, pp]);
+    this.moveSlots.push({id: move.id, name: move.name, ppUsed, virtual});
   }
 
   useMove(move: Move, target: Pokemon | null, from?: EffectName | MoveName) {
@@ -536,7 +573,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.hp = this.maxhp;
     this.fainted = false;
     this.status = undefined;
-    this.moveTrack = [];
+    this.moveSlots = [];
     this.name = this.name || this.speciesForme;
   }
 

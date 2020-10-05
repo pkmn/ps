@@ -1,4 +1,4 @@
-import {ID, toID, BoostName, SpeciesName, TypeName} from '@pkmn/data';
+import {ID, toID, BoostName, SpeciesName, TypeName, MoveName} from '@pkmn/data';
 import {Protocol, Args, KWArgs, PokemonSearchID, PokemonIdent} from '@pkmn/protocol';
 
 import {Battle} from './battle';
@@ -216,8 +216,8 @@ export class Handler implements Protocol.Handler {
         if (effect.effectType === 'Item') poke.item = effect.id;
         if (effect.id !== 'lunardance' || effect.id !== 'healingwish') return;
         if (effect.id === 'lunardance') {
-          for (const trackedMove of poke.moveTrack) {
-            trackedMove[1] = 0;
+          for (const moveSlot of poke.moveSlots) {
+            moveSlot.ppUsed = 0;
           }
         }
       }
@@ -591,8 +591,8 @@ export class Handler implements Protocol.Handler {
     const gender = tpoke.gender;
     poke.addVolatile('transform' as ID, {pokemon, shiny, gender});
     poke.addVolatile('formechange' as ID, {speciesForme});
-    for (const trackedMove of tpoke.moveTrack) {
-      poke.rememberMove(trackedMove[0], 0);
+    for (const moveSlot of tpoke.moveSlots) {
+      poke.rememberMove(moveSlot.name, 0);
     }
   }
 
@@ -683,7 +683,9 @@ export class Handler implements Protocol.Handler {
     const poke = this.battle.getPokemon(args[1])!;
     const effect = this.battle.gen.effects.get(args[2])!;
     poke.addVolatile(effect.id, {duration: 'turn'});
-    if (effect.id === 'focuspunch' || effect.id === 'shelltrap') poke.rememberMove(effect.name, 0);
+    if (effect.id === 'focuspunch' || effect.id === 'shelltrap') {
+      poke.rememberMove(effect.name as MoveName, 0);
+    }
   }
 
   '|-singlemove|'(args: Args['|-singlemove|']) {
