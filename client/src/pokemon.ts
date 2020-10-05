@@ -10,6 +10,7 @@ import {
   MoveTarget,
   Effect,
   SpeciesName,
+  StatsTable,
 } from '@pkmn/data';
 import {
   DetailedPokemon,
@@ -40,6 +41,7 @@ interface EffectState {
 
 interface EffectTable { [effectid: string]: EffectState }
 
+// FIXME remove
 export interface ServerPokemon extends Request.Pokemon, DetailedPokemon, PokemonHealth { }
 
 type MoveSlot = {
@@ -82,6 +84,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   statusStage: number;
   statusData: { sleepTurns: number; toxicTurns: number };
+  stats?: StatsTable;
   boosts: Partial<BoostsTable>;
   volatiles: EffectTable;
 
@@ -144,6 +147,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
     this.statusStage = 0;
     this.statusData = {sleepTurns: 0, toxicTurns: 0};
+    this.stats = undefined;
     this.boosts = {};
     this.volatiles = {};
 
@@ -157,6 +161,16 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.teamPreviewItem = false;
 
     this.moveSlots = [];
+    this.maxMoves = undefined;
+    this.zMoves = undefined;
+
+    this.canDynamax = undefined;
+    this.canGigantamax = undefined;
+    this.canMegaEvo = undefined;
+    this.canUltraBurst = undefined;
+    this.trapped = undefined;
+    this.maybeTrapped = undefined;
+    this.maybeDisabled = undefined;
 
     this.lastMove = '';
     this.lastMoveTargetLoc = undefined;

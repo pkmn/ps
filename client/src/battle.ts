@@ -42,6 +42,8 @@ export class Battle {
 
   lastMove!: ID | 'switch-in' | 'healing-wish';
 
+  request?: Protocol.Request;
+
   private readonly handler: Handler;
 
   constructor(
@@ -69,6 +71,8 @@ export class Battle {
     this.kickingInactive = 'off';
     this.totalTimeLeft = 0;
     this.graceTimeLeft = 0;
+
+    this.request = undefined;
 
     this.handler = new Handler(this, player);
 

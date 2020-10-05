@@ -180,10 +180,20 @@ export class Handler implements Protocol.Handler {
   }
 
   // TODO merge into battle, does this come before or after everything has been updated?
-  // '|request|'(args: Args['|request|']) {
-  //   const request = Protocol.parseRequest(args[1]);
-  //   ...x
-  // }
+  '|request|'(args: Args['|request|']) {
+    const request = Protocol.parseRequest(args[1]);
+    this.battle.request = request;
+    // if (request.requestType === 'move') {
+    //   for (const active of request.active) {
+    //     // TODO what if pokemon aren't known - dont use add pokemon
+    //   }
+    // }
+    // if (request.side) {
+    //   for (const poke of request.side.pokemon) {
+    //     // TODO what if pokemon aren't known - dont use add pokemon
+    //   }
+    // }
+  }
 
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
     const poke = this.battle.getPokemon(args[1])!;
