@@ -7,21 +7,17 @@ try {
   if (err.code !== 'MODULE_NOT_FOUND') throw err;
 }
 
-const missing = dep => {
+const packages = [];
+for (const dep of ['@pkmn/protocol', 'ws']) {
   try {
     require.resolve(dep);
-    return false;
   } catch (err) {
     if (err.code !== 'MODULE_NOT_FOUND') throw err;
-    return true;
+    packages.push(dep);
   }
-};
-
-const packages = [];
-if (missing('ws')) packages.push('ws');
-if (missing('@pkmn/protocol')) packages.push('@pkmn/protocol');
+}
 if (packages.length) {
-  require('child_process').execSync(`npm install ${packages.join(' ')}`, {
+  require('child_process').execSync(`npm install ${packages.join(' ')} --no-audit --no-save `, {
     stdio: 'inherit',
     cwd: __dirname,
   });

@@ -7,6 +7,22 @@ try {
   if (err.code !== 'MODULE_NOT_FOUND') throw err;
 }
 
+const packages = [];
+for (const dep of ['@pkmn/dex']) {
+  try {
+    require.resolve(dep);
+  } catch (err) {
+    if (err.code !== 'MODULE_NOT_FOUND') throw err;
+    packages.push(dep);
+  }
+}
+if (packages.length) {
+  require('child_process').execSync(`npm install ${packages.join(' ')} --no-audit --no-save `, {
+    stdio: 'inherit',
+    cwd: __dirname,
+  });
+}
+
 const readline = require('readline');
 
 const {Battle} = require('@pkmn/client');

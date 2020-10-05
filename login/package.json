@@ -13,11 +13,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "optionalDependencies": {
-    "@pkmn/protocol": "^0.1.2",
-    "source-map-support": "^0.5.19",
-    "ws": "^7.3.1"
-  },
   "scripts": {
     "lint": "eslint --cache *.ts",
     "fix": "eslint --fix *.ts",

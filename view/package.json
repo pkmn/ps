@@ -17,10 +17,6 @@
     "@pkmn/protocol": "^0.1.2",
     "@pkmn/types": "^1.0.0"
   },
-  "optionalDependencies": {
-    "@pkmn/dex": "^0.2.5",
-    "source-map-support": "^0.5.19"
-  },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
     "fix": "eslint --fix src --ext ts",
