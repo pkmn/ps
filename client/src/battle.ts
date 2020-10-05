@@ -1,4 +1,4 @@
-import {Generations, Generation, ID, SideID, GameType, HPColor} from '@pkmn/data';
+import {Generations, Generation, ID, SideID, GameType, HPColor, PokemonSet} from '@pkmn/data';
 import {
   FormatName,
   Message,
@@ -49,15 +49,16 @@ export class Battle {
   constructor(
     gens: Generations,
     player: ID | null = null,
+    sets: [] | [PokemonSet[]] | [PokemonSet[], PokemonSet[]] = [],
     field = (b: Battle) => new Field(b),
-    side = (b: Battle, n: 0 | 1 | 2 | 3) => new Side(b, n)
+    side = (b: Battle, n: 0 | 1 | 2 | 3, s?: PokemonSet[]) => new Side(b, n, s)
   ) {
     this.gens = gens;
     this.gen = gens.get(8);
 
     this.field = field(this);
-    this.p1 = side(this, 0);
-    this.p2 = side(this, 1);
+    this.p1 = side(this, 0, sets[0]);
+    this.p2 = side(this, 1, sets[1]);
     this.p1.foe = this.p2;
     this.p2.foe = this.p1;
     this.sides = [this.p1, this.p2];

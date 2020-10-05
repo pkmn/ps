@@ -1,4 +1,4 @@
-import {ID, toID, Effect, SideCondition} from '@pkmn/data';
+import {ID, toID, Effect, SideCondition, PokemonSet} from '@pkmn/data';
 import {AvatarIdent, DetailedPokemon, Username} from '@pkmn/protocol';
 
 import {Battle} from './battle';
@@ -7,6 +7,7 @@ import {Pokemon} from './pokemon';
 export class Side {
   readonly battle: Battle;
   readonly n: number;
+  readonly sets?: PokemonSet[];
   id: ID;
 
   name: Username | '';
@@ -36,12 +37,14 @@ export class Side {
   constructor(
     battle: Battle,
     n: 0 | 1 | 2 | 3,
+    sets?: PokemonSet[],
     provider = (s: Side, d: DetailedPokemon) => new Pokemon(s, d)
   ) {
     this.provider = provider;
 
     this.battle = battle;
     this.n = n;
+    this.sets = sets;
     this.id = '';
 
     this.name = '';
