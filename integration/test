@@ -21,7 +21,7 @@ if (argv._[0] === 'sim') {
   // Run options.totalGames, exiting with the number of games with errors.
   (async () => process.exit(await new MultiRandomRunner(options).run()))();
 } else if (argv._[0] === 'client') {
-  if (!!argv.compile) shell('node build indexes', path.resolve(__dirname, '../vendor/pokemon-showdown-client'));
+  if (!!argv.compile) shell('node build-client');
   const {ExhaustiveRunner} = require('./src/test/client');
 
   let formats;

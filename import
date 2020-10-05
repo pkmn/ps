@@ -263,6 +263,8 @@ const MOD_COPIED = new Set([...MOD_FILES].filter(f => !MOD_OVERRIDDEN.has(f)));
 
 // Files which are relevant for review in smogon/pokemon-showdown-client
 const INTERESTING = new Set([
+  'build',
+  'build-tools/build-indexes',
   'data/text.js',
   'js/storage.js',
   'src/battle-choices.ts',
