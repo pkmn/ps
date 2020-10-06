@@ -82,13 +82,13 @@ const displayTeam = ($td: HTMLTableCellElement, side: Side) => {
   const $pdiv = document.createElement('div');
   let $div!: HTMLElement;
   let i = 0;
-  for (const pokemon of side.pokemon) {
+  for (const pokemon of side.team) {
     if (i % 3 === 0) {
       $div = document.createElement('div');
       $pdiv.appendChild($div);
     }
     const $span = document.createElement('span');
-    const icon = Icons.getPokemon(pokemon.getSpeciesForme(), {
+    const icon = Icons.getPokemon(pokemon.speciesForme, {
       side: `p${side.n + 1}` as 'p1' | 'p2',
       gender: pokemon.gender || undefined,
       fainted: pokemon.fainted,
@@ -109,7 +109,7 @@ const displayTeam = ($td: HTMLTableCellElement, side: Side) => {
 
 const displayPokemon = ($td: HTMLTableCellElement, pokemon: Pokemon | null) => {
   if (pokemon) {
-    const sprite = Sprites.getPokemon(pokemon.getSpeciesForme(), {
+    const sprite = Sprites.getPokemon(pokemon.speciesForme, {
       gen: GRAPHICS,
       gender: pokemon.gender || undefined,
       shiny: pokemon.shiny,
