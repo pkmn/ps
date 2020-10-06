@@ -145,6 +145,25 @@ function patch(line) {
   return line;
 }
 
+class TeeStream extends sim.Streams.ObjectReadWriteStream {
+  constructor(source) {
+    super();
+    this.source = source;
+    this.sink = new sim.Streams.ObjectReadWriteStream({
+      read() {},
+    });
+  }
+
+  push(buffer, encoding) {
+    this.sink.push(buffer, encoding)
+    this.source.push(buffer);
+  }
+
+  write(message) {
+    this.source.write(message);
+  }
+}
+
 class ClientExhaustiveRunner extends ExhaustiveRunner {
   constructor(options) {
     super({...options, runner: o => new Runner(o).run()});
