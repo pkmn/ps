@@ -69,10 +69,13 @@ class Runner {
     const p1spec = {name: 'Bot 1', ...this.p1options};
     const p2spec = {name: 'Bot 2', ...this.p2options};
 
-    const p1 = this.p1options.createAI(streams.p1, {
+    const tee1 = new TeedStream(streams.p1);
+    const tee2 = new TeedStream(streams.p2);
+
+    const p1 = this.p1options.createAI(tee1, {
       seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p1options
     }).start();
-    const p2 = this.p2options.createAI(streams.p2, {
+    const p2 = this.p2options.createAI(tee2, {
       seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p2options
     }).start();
 
@@ -84,6 +87,8 @@ class Runner {
     const all = [
       [streams.omniscient, 0], [streams.omniscient, 1],
       [streams.spectator, 0], [streams.spectator, 1],
+      [tee1.sink, 0], [tee1.sink, 1],
+      [tee2.sink, 0], [tee2.sink, 1],
     ];
     const [stream, perspective] = this.prng.sample(all);
     await this.process(stream, perspective, output);
@@ -145,22 +150,29 @@ function patch(line) {
   return line;
 }
 
-class TeeStream extends sim.Streams.ObjectReadWriteStream {
+class TeedStream extends sim.Streams.ObjectReadWriteStream {
   constructor(source) {
     super();
     this.source = source;
-    this.sink = new sim.Streams.ObjectReadWriteStream({
-      read() {},
+    this.sink = new sim.Streams.ObjectReadStream({
+      read() {}
     });
   }
 
-  push(buffer, encoding) {
-    this.sink.push(buffer, encoding)
-    this.source.push(buffer);
+  async _read() {
+    const data = await this.source.read();
+
+    if (data) {
+      this.push(data);
+      this.sink.push(data);
+    } else {
+      this.pushEnd();
+      this.sink.pushEnd();
+    }
   }
 
-  write(message) {
-    this.source.write(message);
+  write(data) {
+    this.source.write(data);
   }
 }
 
