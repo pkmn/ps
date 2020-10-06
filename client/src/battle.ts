@@ -142,7 +142,7 @@ export class Battle {
     return {name, siden, slot, pokemonid};
   }
 
-  getSwitchedPokemon(pokemonid: PokemonIdent | SideID, details: PokemonDetails) {
+  getOrAddPokemon(pokemonid: PokemonIdent | SideID, details: PokemonDetails, switched: boolean) {
     const {name, siden, slot, pokemonid: parsedPokemonid} =
       this.parsePokemonId(pokemonid as PokemonIdent);
     pokemonid = parsedPokemonid;
@@ -153,12 +153,13 @@ export class Battle {
     // search inactive revealed pokemon
     for (let i = 0; i < side.team.length; i++) {
       let pokemon = side.team[i];
-      if (pokemon.fainted) continue;
-      // already active, can't be switching in
-      if (side.active.includes(pokemon)) continue;
-      // just switched out, can't be switching in
-      if (pokemon === side.lastPokemon && !side.active[slot]) continue;
-
+      if (switched) {
+        if (pokemon.fainted) continue;
+        // already active, can't be switching in
+        if (side.active.includes(pokemon)) continue;
+        // just switched out, can't be switching in
+        if (pokemon === side.lastPokemon && !side.active[slot]) continue;
+      }
       if (pokemon.searchid === searchid) {
         // exact match
         if (slot >= 0) pokemon.slot = slot;
@@ -180,6 +181,10 @@ export class Battle {
     );
     if (slot >= 0) pokemon.slot = slot;
     return pokemon;
+  }
+
+  getSwitchedPokemon(pokemonid: PokemonIdent | SideID, details: PokemonDetails) {
+    return this.getOrAddPokemon(pokemonid, details, true);
   }
 
   getSwitchedOutPokemon(pokemonid: PokemonIdent, details: PokemonDetails) {
@@ -280,7 +285,8 @@ export class Battle {
   }
 
   getPokemonTypeList(ident: PokemonIdent) {
-    return this.getPokemon(ident)!.getTypeList();
+    const poke = this.getPokemon(ident)!;
+    return poke.addedType ? poke.types.concat(poke.addedType) : poke.types;
   }
 
   getPokemonSpeciesForme(ident: PokemonIdent) {

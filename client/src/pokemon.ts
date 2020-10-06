@@ -23,7 +23,6 @@ import {
   PokemonIdent,
   PokemonSearchID,
   Protocol,
-  Request,
 } from '@pkmn/protocol';
 
 import {Side} from './side';
@@ -41,9 +40,6 @@ interface EffectState {
 }
 
 interface EffectTable { [effectid: string]: EffectState }
-
-// FIXME remove
-export interface ServerPokemon extends Request.Pokemon, DetailedPokemon, PokemonHealth { }
 
 type MoveSlot = {
   name: MoveName;
@@ -68,7 +64,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   details: PokemonDetails;
   name: string;
-  speciesForme: string;
+  private baseSpeciesForme: string;
   level: number;
   shiny: boolean;
   gender: GenderName;
@@ -77,6 +73,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   hp: number;
   maxhp: number;
+  baseMaxhp: number;
   hpcolor: HPColor;
   status?: StatusName;
   fainted: boolean;
@@ -129,7 +126,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.set = set;
     this.slot = 0;
 
-    this.speciesForme = details.speciesForme;
+    this.baseSpeciesForme = details.speciesForme;
     this.details = details.details;
     this.name = details.name;
     this.level = details.level;
@@ -140,6 +137,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
     this.hp = 0;
     this.maxhp = 0; // 1000
+    this.baseMaxhp = this.maxhp;
     this.level = 100;
     this.hpcolor = 'g';
     this.status = undefined;
@@ -193,16 +191,44 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     return this.slot;
   }
 
+  get species() {
+    return this.side.battle.gen.species.get(this.speciesForme)!;
+  }
+
+  get baseSpecies() {
+    return this.side.battle.gen.species.get(this.baseSpeciesForme)!;
+  }
+
+  get speciesForme() {
+    return this.volatiles.formechange?.speciesForme || this.baseSpeciesForme;
+  }
+
+  set speciesForme(speciesForme: string) {
+    this.baseSpeciesForme = speciesForme;
+  }
+
   get weighthg() {
-    return this.getWeightHg();
+    const autotomizeFactor = (this.volatiles.autotomize?.level || 0) * 1000;
+    return Math.max(1, this.species.weighthg - autotomizeFactor);
   }
 
   get types() {
-    return this.getTypes()[0];
+    let types: [TypeName] | [TypeName, TypeName];
+    if (this.volatiles.typechange) {
+      types =
+        this.volatiles.typechange.apparentType!.split('/') as [TypeName] | [TypeName, TypeName];
+    } else {
+      types = this.species.types;
+    }
+    if (this.hasVolatile('roost' as ID) && types.includes('Flying')) {
+      types = types.filter(typeName => typeName !== 'Flying') as [TypeName] | [TypeName, TypeName];
+      if (!types.length) types = ['Normal'];
+    }
+    return types;
   }
 
   get addedType() {
-    return this.getTypes()[1] || undefined;
+    return this.volatiles.typeadd?.type;
   }
 
   get switching() {
@@ -242,7 +268,12 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   }
 
   healthParse(hpstring: string) {
-    return Pokemon.parseHealth(hpstring, this);
+    const oldmaxhp = this.maxhp;
+    const health = Pokemon.parseHealth(hpstring, this);
+    // baseMaxhp differs from maxhp after Dynamax, but a Pokemon will always be initialized
+    // in its base form first before Dynamax and so the first maxhp value we see it the base
+    if (oldmaxhp === 0) this.baseMaxhp = this.maxhp;
+    return health;
   }
 
   static parseHealth(
@@ -463,42 +494,16 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     }
   }
 
-  getWeightHg(serverPokemon?: ServerPokemon) {
-    const autotomizeFactor = (this.volatiles.autotomize?.level || 0) * 1000;
-    return Math.max(1, this.getSpecies(serverPokemon).weighthg - autotomizeFactor);
-  }
-
   copyTypesFrom(pokemon: Pokemon) {
-    const [types, addedType] = pokemon.getTypes();
-    this.addVolatile('typechange' as ID, {apparentType: types.join('/')});
-    if (addedType) {
-      this.addVolatile('typeadd' as ID, {type: addedType});
+    this.addVolatile('typechange' as ID, {apparentType: pokemon.types.join('/')});
+    if (pokemon.addedType) {
+      this.addVolatile('typeadd' as ID, {type: pokemon.addedType});
     } else {
       this.removeVolatile('typeadd' as ID);
     }
   }
 
-  getTypes(serverPokemon?: ServerPokemon): [[TypeName] | [TypeName, TypeName], TypeName | ''] {
-    let types: [TypeName] | [TypeName, TypeName];
-    if (this.volatiles.typechange) {
-      types =
-        this.volatiles.typechange.apparentType!.split('/') as [TypeName] | [TypeName, TypeName];
-    } else {
-      types = this.getSpecies(serverPokemon).types;
-    }
-    if (this.hasVolatile('roost' as ID) && types.includes('Flying')) {
-      types = types.filter(typeName => typeName !== 'Flying') as [TypeName] | [TypeName, TypeName];
-      if (!types.length) types = ['Normal'];
-    }
-    return [types, this.volatiles.typeadd?.type || ''];
-  }
-
-  getTypeList(serverPokemon?: ServerPokemon) {
-    const [types, addedType] = this.getTypes(serverPokemon);
-    return addedType ? types.concat(addedType) : types;
-  }
-
-  isGrounded(serverPokemon?: ServerPokemon) {
+  isGrounded() {
     const battle = this.side.battle;
     if (battle.field.hasPseudoWeather('gravity' as ID)) {
       return true;
@@ -508,8 +513,8 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       return true;
     }
 
-    let item = toID(serverPokemon ? serverPokemon.item : this.item);
-    const ability = toID(this.ability || serverPokemon?.ability);
+    let item = this.item;
+    const ability = this.ability;
     if (battle.field.hasPseudoWeather('magicroom' as ID) ||
       this.volatiles['embargo'] ||
       ability === 'klutz'
@@ -521,20 +526,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     if (ability === 'levitate') return false;
     if (this.volatiles['magnetrise'] || this.volatiles['telekinesis']) return false;
     if (item === 'airballoon') return false;
-    return !this.getTypeList(serverPokemon).includes('Flying');
-  }
-
-  getSpeciesForme(serverPokemon?: ServerPokemon): string {
-    return this.volatiles.formechange?.speciesForme ||
-      (serverPokemon ? serverPokemon.speciesForme : this.speciesForme);
-  }
-
-  getSpecies(serverPokemon?: ServerPokemon) {
-    return this.side.battle.gen.species.get(this.getSpeciesForme(serverPokemon))!;
-  }
-
-  getBaseSpecies() {
-    return this.side.battle.gen.species.get(this.speciesForme)!;
+    return !(this.types.includes('Flying') || this.addedType === 'Flying');
   }
 
   // Returns [min, max] damage dealt as a proportion of total HP from 0 to 1
@@ -611,7 +603,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.fainted = false;
     this.status = undefined;
     this.moveSlots = [];
-    this.name = this.name || this.speciesForme;
+    this.name = this.name || this.baseSpeciesForme;
   }
 
   destroy() {

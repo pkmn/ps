@@ -10,7 +10,6 @@ import {
 } from '@pkmn/protocol';
 
 import {Pokemon, Side} from '../index';
-import {ServerPokemon} from '../pokemon';
 
 const gen = new Generations(Dex).get(7);
 
@@ -167,16 +166,16 @@ describe('Pokemon', () => {
     expect(pokemon.baseAbility).toBe('pressure');
   });
 
-  it('#getWeightHg', () => {
+  it('#weighthg', () => {
     const pokemon = new Pokemon(
       {battle: {gen}} as unknown as Side,
       {speciesForme: 'Snorlax'} as DetailedPokemon
     );
-    expect(pokemon.getWeightHg()).toBe(4600);
+    expect(pokemon.weighthg).toBe(4600);
     pokemon.addVolatile('autotomize' as ID, {level: 2});
-    expect(pokemon.getWeightHg()).toBe(2600);
+    expect(pokemon.weighthg).toBe(2600);
     pokemon.addVolatile('autotomize' as ID, {level: 10});
-    expect(pokemon.getWeightHg()).toBe(1);
+    expect(pokemon.weighthg).toBe(1);
   });
 
   it('#types', () => {
@@ -185,27 +184,32 @@ describe('Pokemon', () => {
       {speciesForme: 'Zapdos'} as DetailedPokemon
     );
 
-    expect(pokemon.getTypes()).toEqual([['Electric', 'Flying'], '']);
+    expect(pokemon.types).toEqual(['Electric', 'Flying']);
+    expect(pokemon.addedType).toBeUndefined();
     pokemon.addVolatile('roost' as ID, {duration: 'turn'});
-    expect(pokemon.getTypes()).toEqual([['Electric'], '']);
+    expect(pokemon.types).toEqual(['Electric']);
+    expect(pokemon.addedType).toBeUndefined();
 
     pokemon.speciesForme = 'Tornadus';
 
     pokemon.addVolatile('typeadd' as ID, {type: 'Grass'});
-    expect(pokemon.getTypeList()).toEqual(['Normal', 'Grass']);
+    expect(pokemon.types).toEqual(['Normal']);
+    expect(pokemon.addedType).toEqual('Grass');
 
     pokemon.addVolatile('typechange' as ID, {apparentType: 'Dragon/Fire'});
-    expect(pokemon.getTypes()).toEqual([['Dragon', 'Fire'], 'Grass']);
+    expect(pokemon.types).toEqual(['Dragon', 'Fire']);
+    expect(pokemon.addedType).toEqual('Grass');
 
     const copy = new Pokemon(
       {battle: {gen}} as unknown as Side,
       {speciesForme: 'Gengar'} as DetailedPokemon
     );
 
-    expect(copy.getTypeList()).toEqual(['Ghost', 'Poison']);
+    expect(copy.types).toEqual(['Ghost', 'Poison']);
 
     copy.copyTypesFrom(pokemon);
-    expect(copy.getTypeList()).toEqual(['Dragon', 'Fire', 'Grass']);
+    expect(copy.types).toEqual(['Dragon', 'Fire']);
+    expect(copy.addedType).toEqual('Grass');
   });
 
   it.todo('#isGrounded');
@@ -216,17 +220,18 @@ describe('Pokemon', () => {
       {speciesForme: 'Greninja'} as DetailedPokemon
     );
 
-    expect(pokemon.getBaseSpecies().name).toEqual('Greninja');
-    expect(pokemon.getSpecies().name).toEqual('Greninja');
-    expect(pokemon.getSpecies({speciesForme: 'Greninja-Ash'} as ServerPokemon).name)
-      .toEqual('Greninja-Ash');
+    expect(pokemon.baseSpecies.name).toEqual('Greninja');
+    expect(pokemon.species.name).toEqual('Greninja');
+    pokemon.speciesForme = 'Greninja-Ash';
+    expect(pokemon.species.name).toEqual('Greninja-Ash');
 
     pokemon.addVolatile('formechange' as ID, {speciesForme: 'Gengar' as SpeciesName});
 
-    expect(pokemon.getBaseSpecies().name).toEqual('Greninja');
-    expect(pokemon.getSpecies().name).toEqual('Gengar');
-    expect(pokemon.getSpecies({speciesForme: 'Greninja-Ash'} as ServerPokemon).name)
-      .toEqual('Gengar');
+    pokemon.speciesForme = 'Greninja';
+    expect(pokemon.baseSpecies.name).toEqual('Greninja');
+    expect(pokemon.species.name).toEqual('Gengar');
+    pokemon.speciesForme = 'Greninja-Ash';
+    expect(pokemon.species.name).toEqual('Gengar');
   });
 
   it('#getDamageRange', () => {

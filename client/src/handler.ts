@@ -73,9 +73,8 @@ export class Handler implements Protocol.Handler {
       if (this.battle.totalTimeLeft === this.battle.kickingInactive) this.battle.totalTimeLeft = 0;
       return;
     } else if (args[1].slice(0, 9) === 'You have ') {
-      // this is ugly but parseInt is documented to work this way
-      // so I'm going to be lazy and not chop off the rest of the
-      // sentence
+      // this is ugly but parseInt is documented to work this way so I'm going to be lazy
+      // and not chop off the rest of the sentence
       this.battle.kickingInactive = parseInt(args[1].slice(9)) || 'on-unknown';
       return;
     } else if (args[1].slice(-14) === ' seconds left.') {
@@ -179,20 +178,52 @@ export class Handler implements Protocol.Handler {
     this.battle.gen = this.battle.gens.get(args[1]);
   }
 
-  // TODO merge into battle, does this come before or after everything has been updated?
   '|request|'(args: Args['|request|']) {
     const request = Protocol.parseRequest(args[1]);
     this.battle.request = request;
-    // if (request.requestType === 'move') {
-    //   for (const active of request.active) {
-    //     // TODO what if pokemon aren't known - dont use add pokemon
-    //   }
-    // }
-    // if (request.side) {
-    //   for (const poke of request.side.pokemon) {
-    //     // TODO what if pokemon aren't known - dont use add pokemon
-    //   }
-    // }
+
+    if (request.side) {
+      for (const [i, p] of request.side.pokemon.entries()) {
+        const poke = this.battle.getOrAddPokemon(p.ident, p.details, false);
+        poke.healthParse(p.condition);
+        poke.stats = {hp: poke.baseMaxhp, ...p.stats};
+        if (p.active) poke.side.replace(poke, i);
+
+        poke.ability = p.ability;
+        poke.baseAbility = p.baseAbility;
+        poke.item = p.item;
+
+        // If we have a move request we handle setting full move slots for the active Pokemon below
+        if (!(request.requestType === 'move' && p.active)) {
+          for (const move of p.moves) {
+            poke.rememberMove(move, 0);
+          }
+        }
+      }
+    }
+
+    // After the above loop, side.active should be accurate
+    if (request.requestType === 'move') {
+      const side = this.battle.getSide(request.side.id);
+      for (const [slot, active] of request.active.entries()) {
+        if (!active) continue;
+        const poke = side.active[slot]!;
+        const mpoke = poke.volatiles.transform?.pokemon || poke;
+        mpoke.moveSlots = [];
+        for (const move of active.moves) {
+          if (move.id === 'struggle') continue;
+          mpoke.moveSlots.push({ppUsed: move.maxpp - move.pp, ...move});
+        }
+        poke.maxMoves = active.maxMoves;
+        poke.canDynamax = active.canDynamax;
+        poke.canGigantamax = active.canGigantamax;
+        poke.canMegaEvo = active.canMegaEvo;
+        poke.canUltraBurst = active.canUltraBurst;
+        poke.trapped = active.trapped;
+        poke.maybeTrapped = active.maybeTrapped;
+        poke.maybeDisabled = active.maybeDisabled;
+      }
+    }
   }
 
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
@@ -594,8 +625,7 @@ export class Handler implements Protocol.Handler {
     poke.boosts = {...tpoke.boosts};
     poke.copyTypesFrom(tpoke);
     poke.ability = tpoke.ability;
-    const speciesForme =
-      (tpoke.volatiles.formechange?.speciesForme || tpoke.speciesForme) as SpeciesName;
+    const speciesForme = tpoke.speciesForme as SpeciesName;
     const pokemon = tpoke;
     const shiny = tpoke.shiny;
     const gender = tpoke.gender;
