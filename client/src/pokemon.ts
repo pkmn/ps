@@ -11,6 +11,7 @@ import {
   Effect,
   SpeciesName,
   StatsTable,
+  PokemonSet,
 } from '@pkmn/data';
 import {
   DetailedPokemon,
@@ -62,6 +63,7 @@ type MoveSlot = {
 
 export class Pokemon implements DetailedPokemon, PokemonHealth {
   readonly side: Side;
+  readonly set?: PokemonSet;
   slot: number;
 
   details: PokemonDetails;
@@ -122,8 +124,9 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   moveThisTurn: ID | boolean;
   hurtThisTurn: boolean;
 
-  constructor(side: Side, details: DetailedPokemon) {
+  constructor(side: Side, details: DetailedPokemon, set?: PokemonSet) {
     this.side = side;
+    this.set = set;
     this.slot = 0;
 
     this.speciesForme = details.speciesForme;
@@ -208,6 +211,26 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   get moves() {
     return this.moveSlots.map(m => m.id);
+  }
+
+  get nature() {
+    return this.set?.nature;
+  }
+
+  get evs() {
+    return this.set?.evs;
+  }
+
+  get ivs() {
+    return this.set?.ivs;
+  }
+
+  get happiness() {
+    return this.set?.happiness;
+  }
+
+  get hpType() {
+    return this.set?.hpType;
   }
 
   hasItem() {

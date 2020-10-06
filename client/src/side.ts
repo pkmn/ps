@@ -32,13 +32,13 @@ export class Side {
 
   wisher: Pokemon | null;
 
-  private readonly provider: (s: Side, d: DetailedPokemon) => Pokemon;
+  private readonly provider: (s: Side, d: DetailedPokemon, p?: PokemonSet) => Pokemon;
 
   constructor(
     battle: Battle,
     n: 0 | 1 | 2 | 3,
     sets?: PokemonSet[],
-    provider = (s: Side, d: DetailedPokemon) => new Pokemon(s, d)
+    provider = (s: Side, d: DetailedPokemon, p?: PokemonSet) => new Pokemon(s, d, p)
   ) {
     this.provider = provider;
 
@@ -111,7 +111,10 @@ export class Side {
 
   addPokemon(details: DetailedPokemon, replaceSlot = -1) {
     const oldItem = replaceSlot ? this.team[replaceSlot]?.item : undefined;
-    const poke = this.provider(this, details);
+    const set = replaceSlot
+      ? this.team[replaceSlot]?.set
+      : this.sets?.find(s => (s.name || s.species) === details.name);
+    const poke = this.provider(this, details, set);
     if (oldItem) poke.item = oldItem;
 
     if (!poke.ability && poke.baseAbility) poke.ability = poke.baseAbility;
