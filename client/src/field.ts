@@ -1,4 +1,4 @@
-import {ID, Effect, toID} from '@pkmn/data';
+import {ID, toID} from '@pkmn/data';
 
 import {Battle} from './battle';
 import {Pokemon} from './pokemon';
@@ -63,8 +63,7 @@ export class Field {
     delete this.pseudoWeather[id];
   }
 
-  setTerrain(id: ID) {
-    if (!id || id === 'none') id = '' as ID;
+  setTerrain(id?: ID) {
     if (id) {
       this.terrain = TERRAINS[id];
       this.terrainData =
@@ -75,8 +74,7 @@ export class Field {
     }
   }
 
-  setWeather(id: ID, poke?: Pokemon, isUpkeep?: boolean, ability?: Effect) {
-    if (!id || id === 'none') id = '' as ID;
+  setWeather(id?: ID, poke?: Pokemon, isUpkeep?: boolean, ability?: {name: string}) {
     if (isUpkeep) {
       if (this.weather && this.weatherData.maxDuration) {
         this.weatherData.maxDuration--;
@@ -84,10 +82,9 @@ export class Field {
       }
       return;
     }
-    this.weather = WEATHERS[id];
-    id = toID(this.weather);
-    if (id) {
-      this.weatherData.id = id;
+    this.weather = id ? WEATHERS[id] : undefined;
+    if (this.weather) {
+      this.weatherData.id = toID(this.weather);
       const isExtremeWeather = EXTREME_WEATHER.includes(this.weather);
       if (poke) {
         if (ability) poke.activateAbility(ability.name);

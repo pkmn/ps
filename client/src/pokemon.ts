@@ -8,10 +8,10 @@ import {
   toID,
   Move,
   MoveTarget,
-  Effect,
   SpeciesName,
   StatsTable,
   PokemonSet,
+  DataKind,
 } from '@pkmn/data';
 import {
   DetailedPokemon,
@@ -393,14 +393,13 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   rememberMove(moveName: MoveName | ID, ppUsed = 1, recursionSource?: PokemonIdent) {
     if (recursionSource === this.originalIdent) return;
-    const move = this.side.battle.gen.moves.get(moveName);
-    if (!move) return;
+    const move = this.side.battle.get('moves', moveName);
     if (move.name === 'Struggle') return;
     let virtual = false;
     if (this.volatiles.transform) {
       // make sure there is no infinite recursion if both Pokemon are transformed into each other
       if (!recursionSource) recursionSource = this.originalIdent;
-      this.volatiles.transform.pokemon!.rememberMove(move.name, 0, recursionSource);
+      this.volatiles.transform.pokemon!.rememberMove(move.name as MoveName, 0, recursionSource);
       virtual = true;
     }
     for (const entry of this.moveSlots) {
@@ -410,13 +409,16 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
         return;
       }
     }
-    this.moveSlots.push({id: move.id, name: move.name, ppUsed, virtual});
+    this.moveSlots.push({id: move.id, name: move.name as MoveName, ppUsed, virtual});
   }
 
-  useMove(move: Move, target: Pokemon | null, from?: EffectName | MoveName) {
-    const gen = this.side.battle.gen;
-    const fromeffect = from && gen.effects.get(from);
-    if (fromeffect) this.activateAbility(fromeffect);
+  useMove(
+    move: {id: ID; name: string} & Partial<Move>,
+    target: Pokemon | null,
+    from?: EffectName | MoveName
+  ) {
+    const fromeffect = this.side.battle.get('effects', from);
+    this.activateAbility(fromeffect);
     this.clearMovestatuses();
     if (move.id === 'focuspunch') this.removeVolatile('focuspunch' as ID);
     if (fromeffect?.id === 'sleeptalk') {
@@ -426,13 +428,13 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       if (move.isZ) {
         const isZ = move.isZ as ID;
         this.item = isZ;
-        const item = gen.items.get(isZ)!;
-        if (item.zMoveFrom) moveName = item.zMoveFrom;
+        const item = this.side.battle.gen.items.get(isZ);
+        if (item?.zMoveFrom) moveName = item.zMoveFrom;
       } else if (move.name.slice(0, 2) === 'Z-') {
         moveName = moveName.slice(2) as MoveName;
-        move = gen.moves.get(moveName)!;
+        move = this.side.battle.get('moves', moveName) as {id: ID; name: string} & Partial<Move>;
         // TODO: use a cached lookup table instead of looping...
-        for (const item of gen.items) {
+        for (const item of this.side.battle.gen.items) {
           if (item.zMoveType === move.type) {
             this.item = item.id;
             break;
@@ -462,7 +464,10 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     }
   }
 
-  cantUseMove(effect: Effect, move?: Move) {
+  cantUseMove(
+    effect: {id: ID; name: string; kind: DataKind },
+    move?: {id: ID; name: string} & Partial<Move>
+  ) {
     this.clearMovestatuses();
     this.activateAbility(effect);
     if (move?.id) this.rememberMove(move.name, 0);
@@ -478,17 +483,17 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     }
   }
 
-  activateAbility(effectOrName?: Effect | string, isNotBase?: boolean) {
+  activateAbility(effectOrName?: {kind: DataKind; name: string} | string, isNotBase?: boolean) {
     if (!effectOrName) return;
     if (typeof effectOrName !== 'string') {
-      if (effectOrName.effectType !== 'Ability') return;
+      if (effectOrName.kind !== 'Ability') return;
       effectOrName = effectOrName.name;
     }
     this.rememberAbility(effectOrName, isNotBase);
   }
 
   rememberAbility(ability: string, isNotBase?: boolean) {
-    this.ability = this.side.battle.gen.abilities.get(ability)!.id;
+    this.ability = this.side.battle.get('abilities', ability).id;
     if (!this.baseAbility && !isNotBase) {
       this.baseAbility = this.ability;
     }

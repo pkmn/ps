@@ -1,4 +1,4 @@
-import {Generations, Generation, ID, SideID, GameType, HPColor, PokemonSet} from '@pkmn/data';
+import {Generations, Generation, ID, SideID, GameType, HPColor, PokemonSet, toID} from '@pkmn/data';
 import {
   FormatName,
   Message,
@@ -17,6 +17,7 @@ import {Side} from './side';
 import {Pokemon} from './pokemon';
 
 const SLOTS: { [slot: string]: number } = {a: 0, b: 1, c: 2, d: 3, e: 4, f: 5};
+const NULL = {name: '', id: '' as const, kind: 'Condition' as const};
 
 export class Battle {
   readonly gens: Generations;
@@ -89,6 +90,12 @@ export class Battle {
       typeof a === 'string' ? Protocol.parseBattleLine(a) : {args: a, kwArgs: b};
     const key = Protocol.key(args);
     if (key && key in this.handler) (this.handler as any)[key](args, kwArgs);
+  }
+
+  // Null-object pattern for data retrieval - the server is the source of
+  // truth and if the client is out of date it should degrade gracefully
+  get(type: 'abilities' | 'items' | 'moves' | 'species' | 'effects', s?: string) {
+    return !s ? NULL : (this.gen[type].get(s) || {name: s, id: toID(s), kind: 'Condition'});
   }
 
   setTurn(turnNum: string | number) {

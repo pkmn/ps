@@ -2,6 +2,7 @@ import * as T from '@pkmn/dex-types';
 
 import * as AbilitiesJSON from './data/abilities.json';
 import * as AliasesJSON from './data/aliases.json';
+import * as ConditionsJSON from './data/conditions.json';
 import * as ItemsJSON from './data/items.json';
 import * as MovesJSON from './data/moves.json';
 import * as SpeciesJSON from './data/species.json';
@@ -606,6 +607,7 @@ type Data<T> = { 8: { [id: string]: T } } & {
 const DATA = {
   Abilities: AbilitiesJSON as Data<T.AbilityData>,
   Aliases: AliasesJSON as { [id: string]: string },
+  Conditions: ConditionsJSON as Data<T.ConditionData>,
   Items: ItemsJSON as Data<T.ItemData>,
   Moves: MovesJSON as unknown as Data<T.MoveData>,
   Species: SpeciesJSON as Data<T.SpeciesData>,
@@ -642,6 +644,7 @@ export class ModdedDex implements T.Dex {
   readonly data!: {
     Abilities: { [id: string]: T.AbilityData };
     Aliases: { [id: string]: string };
+    Conditions: { [id: string]: T.ConditionData };
     Items: { [id: string]: T.ItemData };
     Moves: { [id: string]: T.MoveData };
     Species: { [id: string]: T.SpeciesData };
@@ -653,13 +656,13 @@ export class ModdedDex implements T.Dex {
 
   private readonly cache = {
     Abilities: Object.create(null) as { [id: string]: Ability },
+    Conditions: Object.create(null) as { [id: string]: Condition },
     Items: Object.create(null) as { [id: string]: Item },
     Moves: Object.create(null) as { [id: string]: Move },
     Species: Object.create(null) as { [id: string]: Species },
     Types: Object.create(null) as { [id: string]: Type },
     Learnsets: Object.create(null) as { [id: string]: Learnset },
     Effects: Object.create(null) as { [id: string]: Ability | Item | Move },
-    Conditions: Object.create(null) as { [id: string]: Condition },
   };
 
   private modData?: ModData = undefined;
@@ -897,7 +900,9 @@ export class ModdedDex implements T.Dex {
     if (effect) return effect;
 
     let found: T.AbilityData | T.ItemData | T.MoveData;
-    if ((this.data.Moves.hasOwnProperty(id) && (found = this.data.Moves[id]).condition) ||
+    if (this.data.Conditions.hasOwnProperty(id)) {
+      effect = new Condition({name: id, kind: 'Condition'}, this.data.Conditions[id]);
+    } else if ((this.data.Moves.hasOwnProperty(id) && (found = this.data.Moves[id]).condition) ||
       (this.data.Abilities.hasOwnProperty(id) && (found = this.data.Abilities[id]).condition) ||
       (this.data.Items.hasOwnProperty(id) && (found = this.data.Items[id]).condition)) {
       effect = new Condition({name: found.name || id}, found.condition);

@@ -1,0 +1,175 @@
+{
+  "1": {
+    "brn": {
+      "name": "brn",
+      "effectType": "Status",
+      "onAfterMoveSelfPriority": 2
+    },
+    "par": {"name": "par", "effectType": "Status", "onBeforeMovePriority": 2},
+    "slp": {"name": "slp", "effectType": "Status", "onBeforeMovePriority": 10},
+    "frz": {"name": "frz", "effectType": "Status", "onBeforeMovePriority": 10},
+    "psn": {
+      "name": "psn",
+      "effectType": "Status",
+      "onAfterMoveSelfPriority": 2
+    },
+    "tox": {"inherit": true, "onAfterMoveSelfPriority": 2},
+    "confusion": {"name": "confusion", "onBeforeMovePriority": 3},
+    "flinch": {"name": "flinch", "duration": 1, "onBeforeMovePriority": 4},
+    "trapped": {"name": "trapped", "noCopy": true},
+    "partiallytrapped": {
+      "name": "partiallytrapped",
+      "duration": 2,
+      "onBeforeMovePriority": 4
+    },
+    "partialtrappinglock": {"name": "partialtrappinglock"},
+    "mustrecharge": {"inherit": true},
+    "lockedmove": {"inherit": true},
+    "stall": {"name": "stall", "duration": 2, "counterMax": 256}
+  },
+  "2": {
+    "brn": {
+      "name": "brn",
+      "effectType": "Status",
+      "onAfterMoveSelfPriority": 3
+    },
+    "par": {"name": "par", "inherit": true, "onBeforeMovePriority": 2},
+    "slp": {"name": "slp", "effectType": "Status", "onBeforeMovePriority": 10},
+    "frz": {"name": "frz", "inherit": true},
+    "psn": {
+      "name": "psn",
+      "effectType": "Status",
+      "onAfterMoveSelfPriority": 3
+    },
+    "tox": {
+      "name": "tox",
+      "effectType": "Status",
+      "onAfterMoveSelfPriority": 3
+    },
+    "confusion": {"inherit": true},
+    "partiallytrapped": {"inherit": true},
+    "lockedmove": {"name": "lockedmove"},
+    "sandstorm": {"inherit": true},
+    "stall": {"name": "stall", "duration": 2},
+    "residualdmg": {"name": "residualdmg", "onAfterMoveSelfPriority": 100}
+  },
+  "3": {
+    "slp": {"name": "slp", "effectType": "Status", "onBeforeMovePriority": 10},
+    "frz": {"inherit": true},
+    "sandstorm": {"inherit": true}
+  },
+  "4": {
+    "par": {"inherit": true},
+    "slp": {"name": "slp", "effectType": "Status", "onBeforeMovePriority": 10},
+    "frz": {"inherit": true},
+    "substitutebroken": {"noCopy": true},
+    "trapped": {"inherit": true, "noCopy": false},
+    "trapper": {"inherit": true, "noCopy": false},
+    "partiallytrapped": {"inherit": true},
+    "stall": {"inherit": true, "counterMax": 8},
+    "arceus": {"name": "Arceus"}
+  },
+  "5": {
+    "slp": {"inherit": true},
+    "partiallytrapped": {"inherit": true},
+    "stall": {"duration": 2, "counterMax": 256},
+    "gem": {"duration": 1, "affectsFainted": true}
+  },
+  "6": {
+    "brn": {"inherit": true},
+    "par": {"inherit": true},
+    "confusion": {"inherit": true},
+    "choicelock": {"inherit": true}
+  },
+  "8": {
+    "brn": {"name": "brn", "effectType": "Status", "onResidualOrder": 9},
+    "par": {"name": "par", "effectType": "Status", "onBeforeMovePriority": 1},
+    "slp": {"name": "slp", "effectType": "Status", "onBeforeMovePriority": 10},
+    "frz": {"name": "frz", "effectType": "Status", "onBeforeMovePriority": 10},
+    "psn": {"name": "psn", "effectType": "Status", "onResidualOrder": 9},
+    "tox": {"name": "tox", "effectType": "Status", "onResidualOrder": 9},
+    "confusion": {"name": "confusion", "onBeforeMovePriority": 3},
+    "flinch": {"name": "flinch", "duration": 1, "onBeforeMovePriority": 8},
+    "trapped": {"name": "trapped", "noCopy": true},
+    "trapper": {"name": "trapper", "noCopy": true},
+    "partiallytrapped": {
+      "name": "partiallytrapped",
+      "duration": 5,
+      "onResidualOrder": 11
+    },
+    "lockedmove": {"name": "lockedmove", "duration": 2},
+    "twoturnmove": {"name": "twoturnmove", "duration": 2},
+    "choicelock": {"name": "choicelock", "noCopy": true},
+    "mustrecharge": {
+      "name": "mustrecharge",
+      "duration": 2,
+      "onBeforeMovePriority": 11,
+      "onLockMove": "recharge"
+    },
+    "futuremove": {"name": "futuremove", "duration": 3, "onResidualOrder": 3},
+    "healreplacement": {"name": "healreplacement", "onSwitchInPriority": 1},
+    "stall": {"name": "stall", "duration": 2, "counterMax": 729},
+    "gem": {
+      "name": "gem",
+      "duration": 1,
+      "affectsFainted": true,
+      "onBasePowerPriority": 14
+    },
+    "raindance": {
+      "name": "RainDance",
+      "effectType": "Weather",
+      "duration": 5,
+      "onResidualOrder": 1
+    },
+    "primordialsea": {
+      "name": "PrimordialSea",
+      "effectType": "Weather",
+      "duration": 0,
+      "onTryMovePriority": 1,
+      "onResidualOrder": 1
+    },
+    "sunnyday": {
+      "name": "SunnyDay",
+      "effectType": "Weather",
+      "duration": 5,
+      "onResidualOrder": 1
+    },
+    "desolateland": {
+      "name": "DesolateLand",
+      "effectType": "Weather",
+      "duration": 0,
+      "onTryMovePriority": 1,
+      "onResidualOrder": 1
+    },
+    "sandstorm": {
+      "name": "Sandstorm",
+      "effectType": "Weather",
+      "duration": 5,
+      "onModifySpDPriority": 10,
+      "onResidualOrder": 1
+    },
+    "hail": {
+      "name": "Hail",
+      "effectType": "Weather",
+      "duration": 5,
+      "onResidualOrder": 1
+    },
+    "deltastream": {
+      "name": "DeltaStream",
+      "effectType": "Weather",
+      "duration": 0,
+      "onEffectivenessPriority": -1,
+      "onResidualOrder": 1
+    },
+    "dynamax": {
+      "name": "Dynamax",
+      "noCopy": true,
+      "duration": 3,
+      "onBeforeSwitchOutPriority": -1,
+      "onDragOutPriority": 2,
+      "onResidualPriority": -100
+    },
+    "arceus": {"name": "Arceus", "onTypePriority": 1},
+    "silvally": {"name": "Silvally", "onTypePriority": 1}
+  }
+}

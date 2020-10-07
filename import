@@ -328,6 +328,7 @@ const DATA = {
     }
   ],
   'aliases.js': code => [code.Aliases, 'aliases.json'],
+  'conditions.js': code => [code.Conditions, 'conditions.json'],
   'formats-data.js': code =>
     [removeFields(code.FormatsData, RANDOMS_FIELDS), 'formats-data.json'],
   'items.js': code => [removeFields(code.Items, ['spritenum']), 'items.json'],

@@ -43,7 +43,7 @@ export interface EffectData {
   duration?: number;
 }
 
-export interface ConditionData extends EffectData {
+export interface ConditionData extends Omit<EffectData, 'num'> {
   noCopy?: boolean;
   counterMax?: number;
   affectsFainted?: boolean;

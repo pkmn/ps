@@ -56,6 +56,16 @@ export interface Tracker {
   getPokemonSpeciesForme(ident: PokemonIdent): SpeciesName | undefined;
 }
 
+const WEATHERS: {[id: string]: ID} = {
+  sand: 'sandstorm' as ID,
+  sun: 'sunnyday' as ID,
+  rain: 'raindance' as ID,
+  hail: 'hail' as ID,
+  harshsunshine: 'desolateland' as ID,
+  heavyrain: 'primordialsea' as ID,
+  strongwinds: 'deltastream' as ID,
+};
+
 const NOOP = () => undefined;
 
 const TEMPLATES = ['pokemon', 'opposingPokemon', 'team', 'opposingTeam', 'party', 'opposingParty'];
@@ -823,7 +833,7 @@ class Handler implements Protocol.Handler<string> {
     const [, weather] = args;
     let from: EffectName | MoveName | ID | undefined = kwArgs.from;
     if (!weather || weather === 'none') {
-      from = this.tracker.currentWeather();
+      from = WEATHERS[this.tracker.currentWeather()!];
       const template = this.parser.template('end', from, 'NODEFAULT');
       if (!template) {
         return (this.parser.template('endFieldEffect')

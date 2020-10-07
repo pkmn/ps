@@ -10,8 +10,10 @@ import {
 } from '@pkmn/protocol';
 
 import {Pokemon, Side} from '../index';
+import {Battle} from '../battle';
 
-const gen = new Generations(Dex).get(7);
+const gens = new Generations(Dex);
+const gen = gens.get(7);
 
 // NOTE: tested exhaustively in integration/src/test/client.js
 describe('Pokemon', () => {
@@ -155,10 +157,11 @@ describe('Pokemon', () => {
   it.todo('#cantUseMove');
 
   it('#abilities', () => {
-    const pokemon = new Pokemon({battle: {gen}} as unknown as Side, {} as DetailedPokemon);
-    pokemon.activateAbility({effectType: 'Move', name: 'Tackle'} as Effect);
+    const pokemon =
+      new Pokemon({battle: new Battle(gens)} as unknown as Side, {} as DetailedPokemon);
+    pokemon.activateAbility({kind: 'Move', name: 'Tackle'} as Effect);
     expect(pokemon.ability).not.toBe('tackle');
-    pokemon.activateAbility({effectType: 'Ability', name: 'Pressure'} as Effect);
+    pokemon.activateAbility({kind: 'Ability', name: 'Pressure'} as Effect);
     expect(pokemon.ability).toBe('pressure');
     expect(pokemon.baseAbility).toBe('pressure');
     pokemon.activateAbility('Magic Guard', true);

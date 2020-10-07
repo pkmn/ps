@@ -1,4 +1,4 @@
-import {ID, toID, Effect, SideCondition, PokemonSet} from '@pkmn/data';
+import {ID, toID, SideCondition, PokemonSet} from '@pkmn/data';
 import {AvatarIdent, DetailedPokemon, Username} from '@pkmn/protocol';
 
 import {Battle} from './battle';
@@ -75,7 +75,7 @@ export class Side {
     if (avatar) this.setAvatar(avatar);
   }
 
-  addSideCondition(effect: Effect) {
+  addSideCondition(effect: {name: string; id: ID}) {
     const id = effect.id;
     if (this.sideConditions[id]) {
       if (id === 'spikes' || id === 'toxicspikes') {

@@ -85,8 +85,8 @@ class Runner {
       `>player p2 ${JSON.stringify(p2spec)}`);
 
     const all = [
-      [streams.omniscient, 0], [streams.omniscient, 1],
-      [streams.spectator, 0], [streams.spectator, 1],
+      // [streams.omniscient, 0], [streams.omniscient, 1], XXX
+      // [streams.spectator, 0], [streams.spectator, 1], XXX
       [tee1.sink, 0], [tee1.sink, 1],
       [tee2.sink, 0], [tee2.sink, 1],
     ];
