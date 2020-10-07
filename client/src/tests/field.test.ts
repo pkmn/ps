@@ -3,17 +3,21 @@ import {Generations, ID} from '@pkmn/data';
 
 import {Field, Battle, Pokemon} from '../index';
 
-const gen = new Generations(Dex).get(8);
+const gens = new Generations(Dex);
+const gen = gens.get(8);
 
 // NOTE: tested exhaustively in integration/src/test/client.js
 describe('Field', () => {
   it('pseudoWeather', () => {
-    const field = new Field({sides: []} as unknown as Battle);
+    const battle = new Battle(gens);
+    const field = battle.field;
     expect(field.hasPseudoWeather('trickroom' as ID)).toBe(false);
     field.addPseudoWeather('trickroom' as ID, 3, 5);
     expect(field.hasPseudoWeather('trickroom' as ID)).toBe(true);
     field.addPseudoWeather('gravity' as ID, 1, 3);
-    field.upkeep();
+
+    battle.upkeep();
+
     expect(field.pseudoWeather).toEqual({
       trickroom: {id: 'trickroom', minDuration: 2, maxDuration: 4},
       gravity: {id: 'gravity', minDuration: 0, maxDuration: 2},

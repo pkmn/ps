@@ -109,8 +109,25 @@ export class Battle {
     }
   }
 
-  updateToxicTurns() {
+  upkeep() {
+    for (const id in this.field.pseudoWeather) {
+      const pw = this.field.pseudoWeather[id];
+      if (pw.minDuration) pw.minDuration--;
+      if (pw.maxDuration) pw.maxDuration--;
+    }
+
+    if (this.field.terrain) {
+      const td = this.field.terrainData;
+      if (td.minDuration) td.minDuration--;
+      if (td.maxDuration) td.maxDuration--;
+    }
+
     for (const side of this.sides) {
+      for (const id in side.sideConditions) {
+        const sc = side.sideConditions[id];
+        if (sc.minDuration) sc.minDuration--;
+        if (sc.maxDuration) sc.maxDuration--;
+      }
       for (const poke of side.active) {
         if (poke?.status === 'tox') poke.statusData.toxicTurns++;
       }

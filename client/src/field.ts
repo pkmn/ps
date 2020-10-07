@@ -63,27 +63,6 @@ export class Field {
     delete this.pseudoWeather[id];
   }
 
-  upkeep() {
-    for (const id in this.pseudoWeather) {
-      const pw = this.pseudoWeather[id];
-      if (pw.minDuration) pw.minDuration--;
-      if (pw.maxDuration) pw.maxDuration--;
-    }
-
-    if (this.terrain) {
-      if (this.terrainData.minDuration) this.terrainData.minDuration--;
-      if (this.terrainData.maxDuration) this.terrainData.maxDuration--;
-    }
-
-    for (const side of this.battle.sides) {
-      for (const id in side.sideConditions) {
-        const cond = side.sideConditions[id];
-        if (cond.minDuration) cond.minDuration--;
-        if (cond.maxDuration) cond.maxDuration--;
-      }
-    }
-  }
-
   setTerrain(id: ID) {
     if (!id || id === 'none') id = '' as ID;
     if (id) {

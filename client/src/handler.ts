@@ -20,8 +20,7 @@ export class Handler implements Protocol.Handler {
   }
 
   '|upkeep|'() {
-    this.battle.field.upkeep();
-    this.battle.updateToxicTurns();
+    this.battle.upkeep();
   }
 
   '|turn|'(args: Args['|turn|']) {

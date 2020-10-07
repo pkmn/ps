@@ -271,7 +271,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     const oldmaxhp = this.maxhp;
     const health = Pokemon.parseHealth(hpstring, this);
     // baseMaxhp differs from maxhp after Dynamax, but a Pokemon will always be initialized
-    // in its base form first before Dynamax and so the first maxhp value we see it the base
+    // in its base form first before Dynamax and so the first maxhp value we see is the base
     if (oldmaxhp === 0) this.baseMaxhp = this.maxhp;
     return health;
   }
