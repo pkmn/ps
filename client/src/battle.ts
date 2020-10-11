@@ -1,5 +1,7 @@
 import {Generations, Generation, ID, SideID, GameType, HPColor, PokemonSet, toID} from '@pkmn/data';
 import {
+  ArgType,
+  BattleArgsKWArgType,
   FormatName,
   Message,
   PokemonDetails,
@@ -44,6 +46,7 @@ export class Battle {
   lastMove!: ID | 'switch-in' | 'healing-wish';
 
   request?: Protocol.Request;
+  requestStatus: 'inapplicable' | 'received' | 'applicable' | 'applied';
 
   private readonly handler: Handler;
 
@@ -77,6 +80,7 @@ export class Battle {
     this.graceTimeLeft = 0;
 
     this.request = undefined;
+    this.requestStatus = 'inapplicable';
 
     this.handler = new Handler(this, player);
 
@@ -84,15 +88,153 @@ export class Battle {
   }
 
   add(line: string): void;
-  add(args: Protocol.ArgType, kwArgs: Protocol.BattleArgsKWArgType): void;
-  add(a: Protocol.ArgType | string, b: Protocol.BattleArgsKWArgType = {}) {
+  add(args: ArgType, kwArgs: BattleArgsKWArgType): void;
+  add(a: ArgType | string, b: BattleArgsKWArgType = {}) {
     const {args, kwArgs} =
       typeof a === 'string' ? Protocol.parseBattleLine(a) : {args: a, kwArgs: b};
     const key = Protocol.key(args);
     if (key && key in this.handler) (this.handler as any)[key](args, kwArgs);
   }
 
-  // Null-object pattern for data retrieval - the server is the source of
+  update() {
+    if (this.requestStatus === 'received') {
+      this.requestStatus = 'applicable';
+      return;
+    }
+    if (this.requestStatus !== 'applicable' || !this.request) return;
+    const request = this.request;
+
+    if (request.side) {
+      const side = this.getSide(request.side.id);
+      // // DEBUG
+      // console.log('BEFORE',
+      //   side.team.map(p => p.illusion ? `${p.illusion.searchid} (${p.searchid})` : p.searchid),
+      //   side.active.map(p => p && (p.illusion ? `${p.illusion.searchid} (${p.searchid})` : p.searchid)));
+      // console.log('REQUEST', request.side.pokemon.map(p => p.active ? `*${p.searchid}` : p.searchid));
+
+      const team = side.team;
+      side.team = [];
+      const active = side.active;
+      side.active = [];
+
+      const searchids: {[searchid: string]: Pokemon} = {};
+      const illusions: [Pokemon, PokemonSearchID][] = [];
+
+      let slot = 0;
+      for (const [i, p] of request.side.pokemon.entries()) {
+        let poke: Pokemon | undefined = undefined;
+
+        const searchid = `${this.parsePokemonId(p.ident).pokemonid}|${p.details}`;
+        for (let j = 0; j < team.length; j++) {
+          if ((team[j].searchid === searchid) ||
+              (team[j].searchid && team[j].checkDetails(p.details))) {
+            poke = team[j];
+            break;
+          }
+        }
+
+        const illusion = (p.active && !p.fainted && p.ability === 'illusion')
+          ? this.findIllusion(request.side, p, i)
+          : undefined;
+
+        if (poke) {
+          side.team.push(poke);
+        } else {
+          // If Illusion had already broken we would have found it in our initial search above
+          if (illusion) {
+            const illusionDetails = illusion.speciesForme +
+              (p.level === 100 ? '' : ', L' + p.level) +
+              (illusion.gender === 'N' ? '' : ', ' + illusion.gender) +
+              (illusion.shiny ? ', shiny' : '');
+            for (let j = 0; j < active.length; j++) {
+              if (active[j]?.details === illusionDetails) {
+                poke = active[j]!;
+                break;
+              }
+            }
+          }
+          if (!poke) poke = side.addPokemon(p);
+        }
+
+        searchids[poke.searchid] = poke;
+        if (illusion && poke.illusion !== null) illusions.push([poke, illusion.searchid]);
+
+        if (p.active && request.requestType !== 'team') {
+          if (p.fainted) {
+            side.active.push(null);
+          } else {
+           side.active.push(poke);
+           poke.slot = slot;
+          }
+          slot++;
+        }
+
+        poke.healthParse(p.condition);
+        poke.stats = {hp: poke.baseMaxhp, ...p.stats};
+
+        poke.ability = p.ability;
+        poke.baseAbility = p.baseAbility;
+        poke.item = p.item;
+
+        // If we have a move request we handle setting full move slots for the active Pokemon below
+        if (!(request.requestType === 'move' && p.active)) {
+          for (const move of p.moves) {
+            poke.rememberMove(move, 0);
+          }
+        }
+      }
+
+      for (const [poke, illusion] of illusions) {
+        poke.illusion = searchids[illusion];
+      }
+
+      // DEBUG
+      // console.log('AFTER',
+      //   side.team.map(p => p.illusion ? `${p.illusion.searchid} (${p.searchid})` : p.searchid),
+      //   side.active.map(p => p && (p.illusion ? `${p.illusion.searchid} (${p.searchid})` : p.searchid)));
+
+      if (request.requestType === 'move') {
+        for (const [slot, active] of request.active.entries()) {
+          if (!active) continue;
+          const poke = side.active[slot]!;
+          const mpoke = poke.volatiles.transform?.pokemon || poke;
+          mpoke.moveSlots = [];
+          for (const move of active.moves) {
+            if (move.id === 'struggle') continue;
+            mpoke.moveSlots.push({ppUsed: move.maxpp - move.pp, ...move});
+          }
+          poke.maxMoves = active.maxMoves;
+          poke.canDynamax = active.canDynamax;
+          poke.canGigantamax = active.canGigantamax;
+          poke.canMegaEvo = active.canMegaEvo;
+          poke.canUltraBurst = active.canUltraBurst;
+          poke.trapped = active.trapped;
+          poke.maybeTrapped = active.maybeTrapped;
+          poke.maybeDisabled = active.maybeDisabled;
+        }
+      }
+    }
+
+
+    this.requestStatus = 'applied';
+  }
+
+  findIllusion(
+    side: Protocol.Request.SideInfo,
+    pokemon: Protocol.Request.Pokemon,
+    position: number
+  ) {
+    let i: number;
+    for (i = side.pokemon.length - 1; i > position; i--) {
+      if (!side.pokemon[i]) continue;
+      if (!side.pokemon[i].fainted) break;
+    }
+    if (!side.pokemon[i]) return undefined;
+    if (pokemon === side.pokemon[i]) return undefined;
+    return side.pokemon[i];
+  }
+
+  // Null object pattern for data retrieval - the server is the source of
   // truth and if the client is out of date it should degrade gracefully
   get(type: 'abilities' | 'items' | 'moves' | 'species' | 'effects', s?: string) {
     return !s ? NULL : (this.gen[type].get(s) || {name: s, id: toID(s), kind: 'Condition'});
@@ -166,28 +308,52 @@ export class Battle {
     return {name, siden, slot, pokemonid};
   }
 
-  getOrAddPokemon(pokemonid: PokemonIdent | SideID, details: PokemonDetails, switched: boolean) {
-    const {name, siden, slot, pokemonid: parsedPokemonid} =
-      this.parsePokemonId(pokemonid as PokemonIdent);
+  getSwitchedPokemon(pokemonid: PokemonIdent | SideID, details: PokemonDetails, replace = false) {
+    let [pokemon, parsed] = this.findSwitchedPokemon(pokemonid, details, replace);
+    if (pokemon) return pokemon;
+
+    // pokemon not found, create a new pokemon object for it
+    const {siden, name, slot} = parsed;
+    pokemon = this.sides[siden].addPokemon(
+      Protocol.parseDetails(name, pokemonid as PokemonIdent, details)
+    );
+    if (slot >= 0) pokemon.slot = slot;
+    return pokemon;
+  }
+
+  getSwitchedOutPokemon(pokemonid: PokemonIdent, details: PokemonDetails) {
+    const poke = this.findSwitchedPokemon(pokemonid, details)[0];
+    return poke ? poke.side.active[poke.slot] : undefined;
+  }
+
+  private findSwitchedPokemon(
+    pokemonid: PokemonIdent | SideID, details: PokemonDetails, replace = false
+  ): [Pokemon | undefined, ReturnType<Battle['parsePokemonId']>] {
+    const parsed = this.parsePokemonId(pokemonid as PokemonIdent);
+    const {name, siden, slot, pokemonid: parsedPokemonid} = parsed;
     pokemonid = parsedPokemonid;
 
     const searchid = `${pokemonid}|${details}` as PokemonSearchID;
     const side = this.sides[siden];
 
     // search inactive revealed pokemon
+    const illusions = [];
     for (let i = 0; i < side.team.length; i++) {
       let pokemon = side.team[i];
-      if (switched) {
-        if (pokemon.fainted) continue;
-        // already active, can't be switching in
-        if (side.active.includes(pokemon)) continue;
-        // just switched out, can't be switching in
-        if (pokemon === side.lastPokemon && !side.active[slot]) continue;
+      if (pokemon.fainted) continue;
+      if (replace && pokemon.illusion && pokemon.searchid === searchid) {
+        if (slot >= 0) pokemon.slot = slot;
+        return [pokemon, parsed];
       }
+      // already active, can't be switching in
+      if (side.active.includes(pokemon)) continue;
+      // just switched out, can't be switching in
+      if (pokemon === side.lastPokemon && !side.active[slot]) continue;
+
       if (pokemon.searchid === searchid) {
         // exact match
         if (slot >= 0) pokemon.slot = slot;
-        return pokemon;
+        return [pokemon, parsed];
       }
       if (!pokemon.searchid && pokemon.checkDetails(details)) {
         // switch-in matches Team Preview entry
@@ -195,41 +361,37 @@ export class Battle {
           Protocol.parseDetails(name, pokemonid as PokemonIdent, details), i
         );
         if (slot >= 0) pokemon.slot = slot;
-        return pokemon;
+        return [pokemon, parsed];
+      }
+
+      if (pokemon.ability === 'illusion') {
+        illusions.push(pokemon);
       }
     }
 
-    // pokemon not found, create a new pokemon object for it
-    const pokemon = side.addPokemon(
-      Protocol.parseDetails(name, pokemonid as PokemonIdent, details)
-    );
-    if (slot >= 0) pokemon.slot = slot;
-    return pokemon;
-  }
+    if (!illusions.length) return [undefined, parsed];
 
-  getSwitchedPokemon(pokemonid: PokemonIdent | SideID, details: PokemonDetails) {
-    return this.getOrAddPokemon(pokemonid, details, true);
-  }
+    // If any Pokemon has Illusion, try to find the first eligible Pokemon an Illusion Pokemon
+    // could be posing as. In the event that there are multiple potential matches this may return
+    // the wrong Pokemon, but there's no way to disambiguate
+    details = details.replace(/, L\d{0,3}/, '') as PokemonDetails;
+    for (const illusion of illusions) {
+      for (let i = side.team.length - 1; i >= 0; i--) {
+        const pokemon = side.team[i];
+        if (!pokemon.fainted && pokemon.details.replace(/, L\d{0,3}/, '') === details) {
+          illusion.illusion = pokemon;
+          if (slot >= 0) illusion.slot = slot;
+          return [illusion, parsed];
+        }
+      }
+    }
 
-  getSwitchedOutPokemon(pokemonid: PokemonIdent, details: PokemonDetails) {
-    const poke = this.getSwitchedPokemon(pokemonid, details)!;
-    return poke.side.active[poke.slot] || undefined;
+    return [undefined, parsed];
   }
 
   rememberTeamPreviewPokemon(sideid: SideID, details: PokemonDetails) {
     const {siden} = this.parsePokemonId(sideid);
     return this.sides[siden].addPokemon(Protocol.parseDetails('', '' as PokemonIdent, details));
-  }
-
-  findCorrespondingPokemon(serverPokemon: {ident: PokemonIdent; details: PokemonDetails}) {
-    const {siden} = this.parsePokemonId(serverPokemon.ident);
-    const searchid = `${serverPokemon.ident}|${serverPokemon.details}` as PokemonSearchID;
-    for (const pokemon of this.sides[siden].team) {
-      if (pokemon.searchid === searchid) {
-        return pokemon;
-      }
-    }
-    return null;
   }
 
   getSide(sidename: string): Side {
@@ -279,7 +441,8 @@ export class Battle {
   }
 
   pokemonAt(side: SideID, slot: number) {
-    return this.getSide(side).active[slot]?.originalIdent || undefined;
+    const poke = this.getSide(side).active[slot];
+    return poke ? (poke.illusion?.ident || poke.originalIdent) : undefined;
   }
 
   damagePercentage(ident: PokemonIdent, hpstring: PokemonHPStatus) {

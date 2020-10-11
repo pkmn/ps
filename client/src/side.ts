@@ -111,6 +111,7 @@ export class Side {
 
   addPokemon(details: DetailedPokemon, replaceSlot = -1) {
     const oldItem = replaceSlot ? this.team[replaceSlot]?.item : undefined;
+    // TODO: does this get propagated with illusion? add test
     const set = replaceSlot
       ? this.team[replaceSlot]?.set
       : this.sets?.find(s => (s.name || s.species) === details.name);
@@ -219,7 +220,10 @@ export class Side {
 
   replace(pokemon: Pokemon, slot = pokemon.slot) {
     const oldpokemon = this.active[slot];
-    if (pokemon === oldpokemon) return;
+    if (pokemon === oldpokemon) {
+      pokemon.illusion = null;
+      return;
+    }
 
     this.lastPokemon = oldpokemon;
     pokemon.clearVolatile();
@@ -230,6 +234,7 @@ export class Side {
       pokemon.hpcolor = oldpokemon.hpcolor;
       pokemon.status = oldpokemon.status;
       pokemon.copyVolatileFrom(oldpokemon, 'illusion');
+      pokemon.illusion = null;
       pokemon.statusData = {...oldpokemon.statusData};
       // we don't know anything about the illusioned pokemon except that it's not fainted
       // technically we also know its status but only at the end of the turn, not here
@@ -248,6 +253,7 @@ export class Side {
     } else {
       pokemon.removeVolatile('transform' as ID);
       pokemon.removeVolatile('formechange' as ID);
+      pokemon.illusion = undefined;
     }
 
     pokemon.beingCalledBack = true;
@@ -288,6 +294,7 @@ export class Side {
     this.lastPokemon = pokemon;
     this.active[slot] = null;
 
+    pokemon.illusion = undefined;
     pokemon.fainted = true;
     pokemon.hp = 0;
   }

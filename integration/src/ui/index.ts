@@ -194,6 +194,7 @@ void (async () => {
 
       displayLog(html);
     }
+    battle.apply();
   }
 })();
 

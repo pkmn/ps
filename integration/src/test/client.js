@@ -110,7 +110,9 @@ class Runner {
     const pkmn = {battle, formatter, log: ''};
 
     for await (const chunk of stream) {
-      if (output) output.push(chunk);
+      // if (output) output.push(chunk);
+      console.log(chunk);
+      console.log('-------------');
 
       for (const line of chunk.split('\n')) {
         const v = Verifier.verifyLine(line);
@@ -123,6 +125,8 @@ class Runner {
         if (!UNLOGGED.has(args[0])) pkmn.log += pkmn.formatter.formatText(args, kwArgs);
         battle.add(args, kwArgs);
       }
+      battle.update();
+
       assert.deepStrictEqual(pkmn.log, ps.log);
       pkmn.log = '';
       ps.log = '';

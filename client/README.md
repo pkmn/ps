@@ -43,8 +43,12 @@ import {Dex} from '@pkmn/dex';
 
 const battle = new Battle(new Generations(Dex));
 
-for (const line of lines) {
-  battle.add(line);
+for await (const chunk of stream) {
+ // Alternatively: for (const {args, kwArgs} of Protocol.parse(chunk))
+  for (const line of chunk.split('\n')) {
+    battle.add(line);
+  }
+  battle.update(); // optional, if no |request|
 
   ... // manipulate battle
 }

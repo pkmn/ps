@@ -16,8 +16,11 @@ export class Handler implements Protocol.Handler {
   }
 
   '|start|'() {
-    this.battle.p1.active[0] = null;
-    this.battle.p2.active[0] = null;
+    const slots = this.battle.p1.active.length;
+    for (let slot = 0; slots < slots; slot++) {
+      this.battle.p1.active[slot] = null;
+      this.battle.p2.active[slot] = null;
+    }
   }
 
   '|upkeep|'() {
@@ -26,6 +29,11 @@ export class Handler implements Protocol.Handler {
 
   '|turn|'(args: Args['|turn|']) {
     this.battle.setTurn(args[1]);
+  }
+
+  '|request|'(args: Args['|request|']) {
+    this.battle.request = Protocol.parseRequest(args[1]);
+    this.battle.requestStatus = 'received';
   }
 
   '|tier|'(args: Args['|tier|']) {
@@ -127,7 +135,7 @@ export class Handler implements Protocol.Handler {
   }
 
   switch(args: Args['|switch|' | '|drag|' | '|replace|']) {
-    const poke = this.battle.getSwitchedPokemon(args[1], args[2])!;
+    const poke = this.battle.getSwitchedPokemon(args[1], args[2], args[0] === 'replace')!;
     const slot = poke.slot;
     if (args[3]) poke.healthParse(args[3]);
     poke.removeVolatile('itemremoved' as ID);
@@ -176,54 +184,6 @@ export class Handler implements Protocol.Handler {
 
   '|gen|'(args: Args['|gen|']) {
     this.battle.gen = this.battle.gens.get(args[1]);
-  }
-
-  '|request|'(args: Args['|request|']) {
-    const request = Protocol.parseRequest(args[1]);
-    this.battle.request = request;
-
-    if (request.side) {
-      for (const [i, p] of request.side.pokemon.entries()) {
-        const poke = this.battle.getOrAddPokemon(p.ident, p.details, false);
-        poke.healthParse(p.condition);
-        poke.stats = {hp: poke.baseMaxhp, ...p.stats};
-        if (p.active) poke.side.replace(poke, i);
-
-        poke.ability = p.ability;
-        poke.baseAbility = p.baseAbility;
-        poke.item = p.item;
-
-        // If we have a move request we handle setting full move slots for the active Pokemon below
-        if (!(request.requestType === 'move' && p.active)) {
-          for (const move of p.moves) {
-            poke.rememberMove(move, 0);
-          }
-        }
-      }
-    }
-
-    // After the above loop, side.active should be accurate
-    if (request.requestType === 'move') {
-      const side = this.battle.getSide(request.side.id);
-      for (const [slot, active] of request.active.entries()) {
-        if (!active) continue;
-        const poke = side.active[slot]!;
-        const mpoke = poke.volatiles.transform?.pokemon || poke;
-        mpoke.moveSlots = [];
-        for (const move of active.moves) {
-          if (move.id === 'struggle') continue;
-          mpoke.moveSlots.push({ppUsed: move.maxpp - move.pp, ...move});
-        }
-        poke.maxMoves = active.maxMoves;
-        poke.canDynamax = active.canDynamax;
-        poke.canGigantamax = active.canGigantamax;
-        poke.canMegaEvo = active.canMegaEvo;
-        poke.canUltraBurst = active.canUltraBurst;
-        poke.trapped = active.trapped;
-        poke.maybeTrapped = active.maybeTrapped;
-        poke.maybeDisabled = active.maybeDisabled;
-      }
-    }
   }
 
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {

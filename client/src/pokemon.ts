@@ -10,8 +10,10 @@ import {
   MoveTarget,
   SpeciesName,
   StatsTable,
+  NatureName,
   PokemonSet,
   DataKind,
+  HPTypeName,
 } from '@pkmn/data';
 import {
   DetailedPokemon,
@@ -83,14 +85,12 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   statusStage: number;
   statusData: { sleepTurns: number; toxicTurns: number };
-  stats?: StatsTable;
   boosts: Partial<BoostsTable>;
   volatiles: EffectTable;
 
-  ability: ID;
   baseAbility: ID;
+  illusion?: Pokemon | null;
 
-  item: ID;
   itemEffect: string;
   lastItem: ID;
   lastItemEffect: string;
@@ -121,6 +121,14 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   moveThisTurn: ID | boolean;
   hurtThisTurn: boolean;
 
+  readonly computed: {
+    ability: ID;
+    item: ID;
+    stats?: StatsTable;
+    nature?: NatureName;
+    hpType?: HPTypeName;
+  };
+
   constructor(side: Side, details: DetailedPokemon, set?: PokemonSet) {
     this.side = side;
     this.set = set;
@@ -148,14 +156,11 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
     this.statusStage = 0;
     this.statusData = {sleepTurns: 0, toxicTurns: 0};
-    this.stats = undefined;
     this.boosts = {};
     this.volatiles = {};
 
-    this.ability = '';
     this.baseAbility = '';
 
-    this.item = '';
     this.itemEffect = '';
     this.lastItem = '';
     this.lastItemEffect = '';
@@ -177,6 +182,59 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.lastMoveTargetLoc = undefined;
     this.moveThisTurn = '';
     this.hurtThisTurn = false;
+
+    const gen = this.side.battle.gen;
+    this.computed = {
+      stats: undefined,
+      ability: set?.ability ? toID(set.ability) : '',
+      item: set?.item ? toID(set.item) : '',
+      nature: set?.nature ? gen.natures.get(set.nature)?.name : undefined,
+      hpType: set?.hpType ? gen.types.get(set.nature)?.name as HPTypeName : undefined,
+    };
+  }
+
+  get ability() {
+    return this.computed.ability;
+  }
+
+  set ability(ability: ID) {
+    this.computed.ability = ability;
+  }
+
+  get item() {
+    return this.computed.item;
+  }
+
+  set item(item: ID) {
+    this.computed.item = item;
+  }
+
+  get nature() {
+    return this.computed.nature;
+  }
+
+  get ivs() {
+    return this.set?.ivs;
+  }
+
+  get evs() {
+    return this.set?.evs;
+  }
+
+  get happiness() {
+    return this.set?.happiness;
+  }
+
+  get hpType() {
+    return this.computed.hpType;
+  }
+
+  get stats() {
+    return this.computed.stats;
+  }
+
+  set stats(stats: StatsTable | undefined) {
+    this.computed.stats = stats;
   }
 
   get ident() {
@@ -237,26 +295,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   get moves() {
     return this.moveSlots.map(m => m.id);
-  }
-
-  get nature() {
-    return this.set?.nature;
-  }
-
-  get evs() {
-    return this.set?.evs;
-  }
-
-  get ivs() {
-    return this.set?.ivs;
-  }
-
-  get happiness() {
-    return this.set?.happiness;
-  }
-
-  get hpType() {
-    return this.set?.hpType;
   }
 
   hasItem() {
@@ -354,6 +392,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.hurtThisTurn = false;
     this.newlySwitched = true;
     this.beingCalledBack = false;
+    this.illusion = undefined;
 
     this.statusStage = 0;
     this.statusData.toxicTurns = 0;

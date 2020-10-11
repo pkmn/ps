@@ -49,7 +49,11 @@ export interface Tracker {
   getSwitchedOutPokemon(
     ident: PokemonIdent,
     details: PokemonDetails
-  ): {ident: PokemonIdent; lastMove: ID | ''} | undefined;
+  ): {
+    ident: PokemonIdent;
+    lastMove: ID,
+    illusion?: {ident: PokemonIdent} | null
+  } | undefined;
   /** The list of types of the Pokémon ident references, *before* |singleturn| is applied */
   getPokemonTypeList(ident: PokemonIdent): readonly TypeName[] | undefined;
   /** The species forme of the the Pokémon referenced by ident  */
@@ -392,10 +396,11 @@ class Handler implements Protocol.Handler<string> {
     let buf = '';
     const switchedOut = this.tracker.getSwitchedOutPokemon(pokemon, details);
     if (switchedOut) {
+      const ident = switchedOut.illusion?.ident || switchedOut.ident;
       if (switchedOut.lastMove === 'uturn' || switchedOut.lastMove === 'voltswitch') {
-        buf = this.switchout(switchedOut.ident, switchedOut.lastMove);
+        buf = this.switchout(ident, switchedOut.lastMove);
       } else if (switchedOut.lastMove !== 'batonpass' && switchedOut.lastMove !== 'zbatonpass') {
-        buf = this.switchout(switchedOut.ident, switchedOut.lastMove);
+        buf = this.switchout(ident, switchedOut.lastMove);
       }
     }
 

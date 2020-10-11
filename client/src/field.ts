@@ -35,6 +35,7 @@ interface FieldConditionState {
   id: ID;
   minDuration: number;
   maxDuration: number;
+  level?: number;
 }
 
 export class Field {
