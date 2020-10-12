@@ -34,6 +34,7 @@ const {LogFormatter} = require('./build');
 const battle = new Battle(Dex);
 const formatter = new LogFormatter(process.argv[2] ? 1 : 0, battle);
 
+let request = false;
 readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -43,5 +44,9 @@ readline.createInterface({
   const formatted = formatter.formatText(args, kwArgs);
   if (formatted) process.stdout.write(formatted);
   battle.add(args, kwArgs);
+  if (args[0] === 'request') {
+    if (request) battle.update();
+    request = true;
+  }
 });
 
