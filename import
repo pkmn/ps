@@ -417,7 +417,9 @@ const changes = async (where, last, now, repo) => ({
 
     console.log(`\n${changed.psc.url}\n`);
     for (const change of changed.psc.files) {
-      if (INTERESTING.has(change)) console.log(`\x1b[96mCHANGED\x1b[0m ${change}`);
+      if (INTERESTING.has(change)) {
+        console.log(`\x1b[${change.startsWith('build') ? 91 : 96}mCHANGED\x1b[0m ${change}`);
+      }
     }
 
     // Copy the files over, generating an 'import' statement for those that need it
