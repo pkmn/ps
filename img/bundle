@@ -20,4 +20,7 @@ window.PokemonSprites.ANIMATED = exports.Sprites.ANIMATED;
 window.PokemonSprites.FRAME2 = exports.Sprites.FRAME2;
 window.PokemonIcons = new exports.Icons(exports.Data);
 })();`
-bundler.bundle(bundled);
+bundler.bundle(bundled).catch(err => {
+  console.log(err);
+  process.exit(2);
+});

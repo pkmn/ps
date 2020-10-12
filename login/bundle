@@ -14,4 +14,7 @@ bundled += `
 // EXPORTS
 window.LoginTools = exports.Actions;
 })();`
-bundler.bundle(bundled);
+bundler.bundle(bundled).catch(err => {
+  console.log(err);
+  process.exit(2);
+});

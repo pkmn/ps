@@ -16,4 +16,7 @@ bundled += `
 window.PokemonSets = exports.Sets;
 window.PokemonTeams = exports.Teams;
 })();`
-bundler.bundle(bundled);
+bundler.bundle(bundled).catch(err => {
+  console.log(err);
+  process.exit(2);
+});

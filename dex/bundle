@@ -28,10 +28,16 @@ bundled += `
 // EXPORTS
 window.Dex = exports.Dex;
 })();`
-bundler.bundle(bundled);
+bundler.bundle(bundled).catch(err => {
+  console.log(err);
+  process.exit(2);
+});
 
 bundled = `(() => {
   'use strict';
   window.DexLearnsets = ${bundler.read('data/learnsets.json')};
 })();`
-bundler.bundle(bundled, 'learnsets.min.js');
+bundler.bundle(bundled, 'learnsets.min.js').catch(err => {
+  console.log(err);
+  process.exit(2);
+});
