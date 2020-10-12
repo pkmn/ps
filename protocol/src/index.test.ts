@@ -251,7 +251,7 @@ describe('Protocol', () => {
     expect(details.speciesForme).toEqual('Arceus-*');
     expect(details.level).toEqual(100);
     expect(details.shiny).toEqual(false);
-    expect(details.gender).toEqual('');
+    expect(details.gender).toBeUndefined();
     expect(details.ident).toEqual('');
     expect(details.searchid).toEqual('');
 
@@ -264,7 +264,7 @@ describe('Protocol', () => {
     expect(details.speciesForme).toEqual('Deoxys-Speed');
     expect(details.level).toEqual(100);
     expect(details.shiny).toEqual(false);
-    expect(details.gender).toEqual('');
+    expect(details.gender).toBeUndefined();
     expect(details.ident).toEqual('p1a: Deoxys-Speed');
     expect(details.searchid).toEqual('p1a: Deoxys-Speed|Deoxys-Speed');
 
@@ -286,7 +286,7 @@ describe('Protocol', () => {
     const parse = (hpstring: string, output?: PokemonHealth) =>
       Protocol.parseHealth(hpstring as Protocol.PokemonHPStatus, output);
     const health = (h: Partial<PokemonHealth>) =>
-      ({hp: 0, maxhp: 100, hpcolor: '', status: '', ...h} as PokemonHealth);
+      ({hp: 0, maxhp: 100, hpcolor: '', ...h} as PokemonHealth);
     expect(parse('0 fnt')).toEqual(health({hp: 0, fainted: true}));
     expect(parse('0 fnt', health({maxhp: 250})))
       .toEqual(health({hp: 0, maxhp: 250, fainted: true}));

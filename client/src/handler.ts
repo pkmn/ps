@@ -17,7 +17,7 @@ export class Handler implements Protocol.Handler {
 
   '|start|'() {
     const slots = this.battle.p1.active.length;
-    for (let slot = 0; slots < slots; slot++) {
+    for (let slot = 0; slot < slots; slot++) {
       this.battle.p1.active[slot] = null;
       this.battle.p2.active[slot] = null;
     }
@@ -786,7 +786,7 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-weather|'(args: Args['|-weather|'], kwArgs: KWArgs['|-weather|']) {
-    const effect = args[1] == 'none' ? {id: '' as const} : this.battle.get('effects', args[1]);
+    const effect = args[1] === 'none' ? {id: '' as const} : this.battle.get('effects', args[1]);
     const poke = this.battle.getPokemon(kwArgs.of) || undefined;
     const ability = this.battle.get('effects', kwArgs.from);
     this.battle.field.setWeather(effect.id, poke, !!kwArgs.upkeep, ability);

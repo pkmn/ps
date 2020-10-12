@@ -182,13 +182,14 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.moveThisTurn = '';
     this.hurtThisTurn = false;
 
-    const gen = this.side.battle.gen;
     this.computed = {
       stats: undefined,
       ability: set?.ability ? toID(set.ability) : '',
       item: set?.item ? toID(set.item) : '',
-      nature: set?.nature ? gen.natures.get(set.nature)?.name : undefined,
-      hpType: set?.hpType ? gen.types.get(set.nature)?.name as HPTypeName : undefined,
+      nature: set?.nature ? this.side.battle.gen.natures.get(set.nature)?.name : undefined,
+      hpType: set?.hpType
+        ? this.side.battle.gen.types.get(set.nature)?.name as HPTypeName
+        : undefined,
     };
   }
 

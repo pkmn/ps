@@ -51,8 +51,8 @@ export interface Tracker {
     details: PokemonDetails
   ): {
     ident: PokemonIdent;
-    lastMove: ID,
-    illusion?: {ident: PokemonIdent} | null
+    lastMove: ID;
+    illusion?: {ident: PokemonIdent} | null;
   } | undefined;
   /** The list of types of the Pokémon ident references, *before* |singleturn| is applied */
   getPokemonTypeList(ident: PokemonIdent): readonly TypeName[] | undefined;

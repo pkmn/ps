@@ -102,9 +102,9 @@ export class Battle {
       return;
     }
     if (this.requestStatus !== 'applicable' || !this.request) return;
-    const request = this.request;
 
     /* FIXME
+    const request = this.request;
     if (request.side) {
       const side = this.getSide(request.side.id);
 
