@@ -89,7 +89,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   volatiles: EffectTable;
 
   baseAbility: ID;
-  illusion?: Pokemon | null;
 
   itemEffect: string;
   lastItem: ID;
@@ -392,7 +391,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.hurtThisTurn = false;
     this.newlySwitched = true;
     this.beingCalledBack = false;
-    this.illusion = undefined;
 
     this.statusStage = 0;
     this.statusData.toxicTurns = 0;

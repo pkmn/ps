@@ -194,7 +194,7 @@ void (async () => {
 
       displayLog(html);
     }
-    battle.apply();
+    battle.update();
   }
 })();
 

@@ -110,9 +110,7 @@ class Runner {
     const pkmn = {battle, formatter, log: ''};
 
     for await (const chunk of stream) {
-      // if (output) output.push(chunk);
-      console.log(chunk);
-      console.log('-------------');
+      if (output) output.push(chunk);
 
       for (const line of chunk.split('\n')) {
         const v = Verifier.verifyLine(line);
