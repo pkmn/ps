@@ -65,6 +65,3 @@ version number in case set import changes.
 - logic for displaying the Pokémon Showdown protocol *(how should arbitrary HTML be handled? Fully
   escaped? Or embed an HTML sanitizer?)*
 
-## Integration
-
-- figure out how to run `eslint` on JS files without crashing

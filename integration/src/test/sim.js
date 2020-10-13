@@ -3,7 +3,7 @@
 const assert = require('assert').strict;
 
 const ps = {
-  BattleStreams:require('../../../vendor/pokemon-showdown/.sim-dist/battle-stream'),
+  BattleStreams: require('../../../vendor/pokemon-showdown/.sim-dist/battle-stream'),
   Dex: require('../../../vendor/pokemon-showdown/.sim-dist').Dex,
   RandomPlayerAI:
     require('../../../vendor/pokemon-showdown/.sim-dist/tools/random-player-ai').RandomPlayerAI,
@@ -15,20 +15,20 @@ const {TeamGenerators} = require('@pkmn/randoms');
 
 pkmn.Dex.setTeamGeneratorFactory(TeamGenerators);
 
-class MultiRandomRunner {
-  static FORMATS = [
-    'gen8randombattle', 'gen8randomdoublesbattle', 'gen8monotyperandombattle',
-    'gen7randombattle', 'gen7randomdoublesbattle', 'gen6randombattle', 'gen5randombattle',
-    'gen4randombattle', 'gen3randombattle', 'gen2randombattle', 'gen1randombattle',
-  ];
+const FORMATS = [
+  'gen8randombattle', 'gen8randomdoublesbattle', 'gen8monotyperandombattle',
+  'gen7randombattle', 'gen7randomdoublesbattle', 'gen6randombattle', 'gen5randombattle',
+  'gen4randombattle', 'gen3randombattle', 'gen2randombattle', 'gen1randombattle',
+];
 
+class MultiRandomRunner {
   constructor(options) {
     this.options = Object.assign({}, options);
 
     this.totalGames = options.totalGames;
 
-    this.prng = (options.prng && !Array.isArray(options.prng)) ?
-      options.prng : new pkmn.PRNG(options.prng);
+    this.prng = (options.prng && !Array.isArray(options.prng))
+      ? options.prng : new pkmn.PRNG(options.prng);
     this.options.prng = this.prng;
 
     this.format = options.format;
@@ -67,7 +67,6 @@ class MultiRandomRunner {
   }
 
   getNextFormat() {
-    const FORMATS = MultiRandomRunner.FORMATS;
     if (this.formatIndex > FORMATS.length) return false;
 
     if (this.numGames++ < this.totalGames) {
@@ -96,8 +95,8 @@ class Runner {
   constructor(options) {
     this.format = options.format;
 
-    this.prng = (options.prng && !Array.isArray(options.prng)) ?
-      options.prng : new pkmn.PRNG(options.prng);
+    this.prng = (options.prng && !Array.isArray(options.prng))
+      ? options.prng : new pkmn.PRNG(options.prng);
     this.p1options = options.p1options;
     this.p2options = options.p2options;
 
