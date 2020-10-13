@@ -119,6 +119,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   lastMoveTargetLoc?: number;
   moveThisTurn: ID | boolean;
   hurtThisTurn: boolean;
+  movesUsedWhileActive: ID[];
 
   readonly computed: {
     ability: ID;
@@ -181,6 +182,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.lastMoveTargetLoc = undefined;
     this.moveThisTurn = '';
     this.hurtThisTurn = false;
+    this.movesUsedWhileActive = [];
 
     this.computed = {
       stats: undefined,
@@ -392,6 +394,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.hurtThisTurn = false;
     this.newlySwitched = true;
     this.beingCalledBack = false;
+    this.movesUsedWhileActive = [];
 
     this.statusStage = 0;
     this.statusData.toxicTurns = 0;
@@ -497,6 +500,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       : 0;
     this.side.battle.lastMove = move.id;
     this.moveThisTurn = move.id;
+    if (!this.movesUsedWhileActive.includes(move.id)) this.movesUsedWhileActive.push(move.id);
     if (move.id === 'wish' || move.id === 'healingwish') {
       this.side.wisher = this;
     }
