@@ -21,6 +21,8 @@ if (packages.length) {
     stdio: 'inherit',
     cwd: __dirname,
   });
+  console.error('Please rerun now that dependencies have been resolved.');
+  process.exit(1);
 }
 
 const https = require('https');

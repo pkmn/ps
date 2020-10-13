@@ -8,7 +8,7 @@ try {
 }
 
 const packages = [];
-for (const dep of ['@pkmn/dex']) {
+for (const dep of ['@pkmn/dex', '@pkmn/data']) {
   try {
     require.resolve(dep);
   } catch (err) {
@@ -21,17 +21,21 @@ if (packages.length) {
     stdio: 'inherit',
     cwd: __dirname,
   });
+  console.error('Please rerun now that dependencies have been resolved.');
+  process.exit(1);
 }
 
 const readline = require('readline');
 
 const {Battle} = require('@pkmn/client');
 const {Dex} = require('@pkmn/dex');
+const {Generations} = require('@pkmn/data');
 const {Protocol} = require('@pkmn/protocol');
 
 const {LogFormatter} = require('./build');
 
-const battle = new Battle(Dex);
+const gens = new Generations(Dex);
+const battle = new Battle(gens);
 const formatter = new LogFormatter(process.argv[2] ? 1 : 0, battle);
 
 let request = false;
