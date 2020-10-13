@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+'use strict';
+
+try {
+  require('source-map-support').install();
+} catch (err) {
+  if (err.code !== 'MODULE_NOT_FOUND') throw err;
+}
+
+const readline = require('readline');
+
+const {Battle} = require('./build');
+const {Dex} = require('@pkmn/dex');
+const {Generations} = require('@pkmn/data');
+
+const gens = new Generations(Dex);
+const battle = new Battle(gens);
+
+readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+}).on('line', line => {
+  battle.add(line);
+});

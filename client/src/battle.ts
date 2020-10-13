@@ -21,6 +21,14 @@ import {Pokemon} from './pokemon';
 const SLOTS: { [slot: string]: number } = {a: 0, b: 1, c: 2, d: 3, e: 4, f: 5};
 const NULL = {name: '', id: '' as const, kind: 'Condition' as const};
 
+const GROUP: Set<Protocol.ArgName> = new Set([
+  '|move|', '|switch|', '|drag|', '|replace|', '|swap|',
+  '|cant|', '|detailschange|', '|done|', '|upkeep|',
+]);
+const BREAK: Set<Protocol.ArgName> = new Set([
+  ...GROUP, '|start|', '|turn|', '|win|', '|tie|',
+]);
+
 export class Battle {
   readonly gens: Generations;
 
@@ -48,6 +56,7 @@ export class Battle {
   request?: Protocol.Request;
   requestStatus: 'inapplicable' | 'received' | 'applicable' | 'applied';
 
+  private context: Array<{args: ArgType, kwArgs: BattleArgsKWArgType}>;
   private readonly handler: Handler;
 
   constructor(
@@ -82,6 +91,7 @@ export class Battle {
     this.request = undefined;
     this.requestStatus = 'inapplicable';
 
+    this.context = [];
     this.handler = new Handler(this, player);
 
     this.reset();
@@ -90,10 +100,32 @@ export class Battle {
   add(line: string): void;
   add(args: ArgType, kwArgs: BattleArgsKWArgType): void;
   add(a: ArgType | string, b: BattleArgsKWArgType = {}) {
-    const {args, kwArgs} =
-      typeof a === 'string' ? Protocol.parseBattleLine(a) : {args: a, kwArgs: b};
-    const key = Protocol.key(args);
-    if (key && key in this.handler) (this.handler as any)[key](args, kwArgs);
+    // console.log(a); // DEBUG
+    const parsed = typeof a === 'string' ? Protocol.parseBattleLine(a) : {args: a, kwArgs: b};
+    const key = Protocol.key(parsed.args);
+    if (!key) return;
+    if (key in this.handler) (this.handler as any)[key](parsed.args, parsed.kwArgs);
+    this.buildContext(key, parsed);
+  }
+
+  private buildContext(key: Protocol.ArgName, parsed: {args: ArgType, kwArgs: BattleArgsKWArgType}) {
+    if (BREAK.has(key)) {
+      if (this.context.length) {
+        const end = this.context[0].args[0] === 'done' || this.context[0].args[0] === 'upkeep';
+        if (GROUP.has(Protocol.key(this.context[0].args)!) && (!end || this.context.length > 1)) {
+          if (end && key === '|upkeep|') this.context[0] = parsed;
+          this.handle(this.context);
+        }
+        this.context = [];
+      }
+      this.context.push(parsed);
+    } else if (parsed.args[0].startsWith('-') || key === '|faint|') {
+      this.context.push(parsed);
+    }
+  }
+
+  handle(context: Array<{args: ArgType, kwArgs: BattleArgsKWArgType}>) {
+    // console.log('GROUP', context); // DEBUG
   }
 
   update() {
