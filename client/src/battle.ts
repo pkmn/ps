@@ -1,5 +1,16 @@
-import {Generations, Generation, ID, SideID, GameType, HPColor, PokemonSet, toID} from '@pkmn/data';
 import {
+  DataKind,
+  GameType,
+  Generation,
+  Generations,
+  HPColor,
+  ID,
+  PokemonSet,
+  SideID,
+  toID,
+} from '@pkmn/data';
+import {
+  ArgName,
   ArgType,
   BattleArgsKWArgType,
   FormatName,
@@ -14,12 +25,14 @@ import {
 } from '@pkmn/protocol';
 
 import {Field} from './field';
-import {Handler} from './handler';
+import {Handler, Context as HandlerContext} from './handler';
 import {Side} from './side';
 import {Pokemon} from './pokemon';
 
 const SLOTS: { [slot: string]: number } = {a: 0, b: 1, c: 2, d: 3, e: 4, f: 5};
-const NULL = {name: '', id: '' as const, kind: 'Condition' as const};
+
+export const NULL = {name: '', id: '' as ID, kind: 'Condition' as DataKind};
+export type NA = typeof NULL;
 
 const GROUP: Set<Protocol.ArgName> = new Set([
   '|move|', '|switch|', '|drag|', '|replace|', '|swap|',
@@ -28,6 +41,21 @@ const GROUP: Set<Protocol.ArgName> = new Set([
 const BREAK: Set<Protocol.ArgName> = new Set([
   ...GROUP, '|start|', '|turn|', '|win|', '|tie|',
 ]);
+
+export type Context<T extends keyof HandlerContext> = [
+  {
+    context: HandlerContext[T],
+    args: ArgType,
+    kwArgs: BattleArgsKWArgType
+  },
+  ...Array<{
+    context: HandlerContext[keyof HandlerContext] | {},
+    args: ArgType,
+    kwArgs: BattleArgsKWArgType
+  }>,
+];
+
+export type ContextHandler = {[type in keyof HandlerContext]?: (c: Context<type>) => void};
 
 export class Battle {
   readonly gens: Generations;
@@ -56,7 +84,13 @@ export class Battle {
   request?: Protocol.Request;
   requestStatus: 'inapplicable' | 'received' | 'applicable' | 'applied';
 
-  private context: Array<{args: ArgType, kwArgs: BattleArgsKWArgType}>;
+  private context: Array<{
+    type: ArgName,
+    context: HandlerContext[keyof HandlerContext] | {},
+    args: ArgType,
+    kwArgs: BattleArgsKWArgType
+  }>;
+  protected readonly contextHandler: ContextHandler;
   private readonly handler: Handler;
 
   constructor(
@@ -92,6 +126,7 @@ export class Battle {
     this.requestStatus = 'inapplicable';
 
     this.context = [];
+    this.contextHandler = {};
     this.handler = new Handler(this, player);
 
     this.reset();
@@ -100,32 +135,33 @@ export class Battle {
   add(line: string): void;
   add(args: ArgType, kwArgs: BattleArgsKWArgType): void;
   add(a: ArgType | string, b: BattleArgsKWArgType = {}) {
-    // console.log(a); // DEBUG
-    const parsed = typeof a === 'string' ? Protocol.parseBattleLine(a) : {args: a, kwArgs: b};
-    const key = Protocol.key(parsed.args);
+    const {args, kwArgs} = typeof a === 'string' ? Protocol.parseBattleLine(a) : {args: a, kwArgs: b};
+    const key = Protocol.key(args);
     if (!key) return;
-    if (key in this.handler) (this.handler as any)[key](parsed.args, parsed.kwArgs);
-    this.buildContext(key, parsed);
+    if (key in this.handler) (this.handler as any)[key](args, kwArgs);
+    this.buildContext(key, args, kwArgs);
+    this.handler.context = {};
   }
 
-  private buildContext(key: Protocol.ArgName, parsed: {args: ArgType, kwArgs: BattleArgsKWArgType}) {
-    if (BREAK.has(key)) {
+  private buildContext(type: ArgName, args: ArgType, kwArgs: BattleArgsKWArgType) {
+    const context = this.handler.context as HandlerContext[keyof HandlerContext];
+    if (BREAK.has(type)) {
       if (this.context.length) {
-        const end = this.context[0].args[0] === 'done' || this.context[0].args[0] === 'upkeep';
-        if (GROUP.has(Protocol.key(this.context[0].args)!) && (!end || this.context.length > 1)) {
-          if (end && key === '|upkeep|') this.context[0] = parsed;
-          this.handle(this.context);
+        const end = this.context[0].type === '|done|' || this.context[0].type === '|upkeep|';
+        if (GROUP.has(this.context[0].type) &&
+            this.context[0].type in this.contextHandler &&
+            (!end || this.context.length > 1)) {
+          if (end && type === '|upkeep|') {
+            this.context[0] = {type, context, args, kwArgs};
+          }
+          this.contextHandler[this.context[0].type as keyof HandlerContext]!(this.context as any);
         }
         this.context = [];
       }
-      this.context.push(parsed);
-    } else if (parsed.args[0].startsWith('-') || key === '|faint|') {
-      this.context.push(parsed);
+      this.context.push({type, context, args, kwArgs});
+    } else if (args[0].startsWith('-') || type === '|faint|') {
+      this.context.push({type, context, args, kwArgs});
     }
-  }
-
-  handle(context: Array<{args: ArgType, kwArgs: BattleArgsKWArgType}>) {
-    // console.log('GROUP', context); // DEBUG
   }
 
   update() {
@@ -164,7 +200,6 @@ export class Battle {
       }
     }
     */
-
 
     this.requestStatus = 'applied';
   }

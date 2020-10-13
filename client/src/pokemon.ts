@@ -1,19 +1,20 @@
 import {
-  StatusName,
+  BoostsTable,
+  DataKind,
+  Effect,
   GenderName,
   HPColor,
-  BoostsTable,
-  TypeName,
+  HPTypeName,
   ID,
-  toID,
   Move,
   MoveTarget,
-  SpeciesName,
-  StatsTable,
   NatureName,
   PokemonSet,
-  DataKind,
-  HPTypeName,
+  SpeciesName,
+  StatsTable,
+  StatusName,
+  toID,
+  TypeName,
 } from '@pkmn/data';
 import {
   DetailedPokemon,
@@ -27,6 +28,7 @@ import {
   Protocol,
 } from '@pkmn/protocol';
 
+import {NA} from './battle';
 import {Side} from './side';
 
 interface EffectState {
@@ -59,6 +61,11 @@ type MoveSlot = {
   virtual?: boolean;
 };
 
+type ItemEffect =
+   'found' | 'frisked' | 'stolen' | 'harvested' | 'bestowed' | 'tricked' | 'disturbed';
+type LastItemEffect =
+   'eaten' | 'flung' | 'knocked off' | 'stolen' | 'consumed' | 'incinerated' | 'popped' | 'held up';
+
 export class Pokemon implements DetailedPokemon, PokemonHealth {
   readonly side: Side;
   readonly set?: PokemonSet;
@@ -90,9 +97,9 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   baseAbility: ID;
 
-  itemEffect: string;
+  itemEffect: ItemEffect | '';
   lastItem: ID;
-  lastItemEffect: string;
+  lastItemEffect: LastItemEffect | '';
   teamPreviewItem: boolean;
 
   moveSlots: MoveSlot[];
@@ -454,7 +461,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   }
 
   useMove(
-    move: {id: ID; name: string} & Partial<Move>,
+    move: Partial<Move> & NA,
     target: Pokemon | null,
     from?: EffectName | MoveName
   ) {
@@ -473,7 +480,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
         if (item?.zMoveFrom) moveName = item.zMoveFrom;
       } else if (move.name.slice(0, 2) === 'Z-') {
         moveName = moveName.slice(2) as MoveName;
-        move = this.side.battle.get('moves', moveName) as {id: ID; name: string} & Partial<Move>;
+        move = this.side.battle.get('moves', moveName) as Partial<Move> & NA;
         // TODO: use a cached lookup table instead of looping...
         for (const item of this.side.battle.gen.items) {
           if (item.zMoveType === move.type) {
@@ -507,8 +514,8 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   }
 
   cantUseMove(
-    effect: {id: ID; name: string; kind: DataKind },
-    move?: {id: ID; name: string} & Partial<Move>
+    effect: Partial<Effect> & NA,
+    move?: Partial<Move> & NA,
   ) {
     this.clearMovestatuses();
     this.activateAbility(effect);
