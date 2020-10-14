@@ -109,7 +109,7 @@ function verifyKWArg<T extends Protocol.BattleArgsWithKWArgName>(
 ) {
   if (v === undefined) return true;
   if (BOOL_KWARGS.has(k)) return v === true;
-  if (NAME_KWARGS.has(k)) return verifyName(v as string);
+  if (NAME_KWARGS.has(k)) return verifyName(v as string) || (k.startsWith('ability') && v === '');
   if (k === 'of') return v === '' || verifyPokemonIdent(v as Protocol.PokemonIdent);
   if (k === 'spread') {
     return v === true || (v as Protocol.Slots).split(',').every(s => /^p[1234][abc]$/.test(s));
