@@ -73,7 +73,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   details: PokemonDetails;
   name: string;
-  private baseSpeciesForme: string;
+  baseSpeciesForme: string;
   level: number;
   shiny: boolean;
   gender: GenderName;

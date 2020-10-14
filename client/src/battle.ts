@@ -430,7 +430,7 @@ export class Battle {
   }
 
   getPokemonSpeciesForme(ident: PokemonIdent) {
-    return this.getPokemon(ident)!.speciesForme as SpeciesName;
+    return this.getPokemon(ident)!.baseSpeciesForme as SpeciesName;
   }
 
   currentWeather() {
