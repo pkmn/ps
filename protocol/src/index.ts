@@ -1580,7 +1580,7 @@ export namespace Protocol {
     '|-transform|': GeneralKWArgNames | 'msg';
     '|-unboost|': GeneralKWArgNames | 'multiple' | 'zeffect';
     '|-weather|': GeneralKWArgNames | 'upkeep';
-    '|-anim|': 'spread' | 'miss';
+    '|-anim|': 'spread' | 'miss' | 'notarget';
   }
 
   export type BattleArgsWithKWArgName = keyof BattleArgsWithKWArgs;

@@ -875,7 +875,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       verifyPokemonIdent(args[1]) &&
       verifyName(args[2]) &&
       verifyPokemonIdent(args[3]) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'spread', 'miss']);
+      verifyKWArgs(kwArgs, [...KWARGS, 'spread', 'miss', 'notarget']);
   }
 }
 
