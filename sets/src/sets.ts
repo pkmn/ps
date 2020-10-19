@@ -169,7 +169,7 @@ export const Sets = new class {
 
     if (s.pokeball || (s.hpType && toID(s.hpType) !== hasHP) || s.gigantamax) {
       buf += ',' + (s.hpType || '');
-      buf += ',' + toID(s.pokeball);
+      buf += ',' + toID(s.pokeball || '');
       buf += ',' + (s.gigantamax ? 'G' : '');
     }
 
@@ -313,7 +313,7 @@ export const Sets = new class {
   }
 
   fromJSON(json: string) {
-    if (json.charAt(0) !== '{' || json.charAt(json.length - 1) !== '}') return undefined;
+    if (!json.startsWith('{') || !json.endsWith('}')) return undefined;
     // BUG: this is completely unvalidated...
     return JSON.parse(json) as PokemonSet;
   }
@@ -444,8 +444,8 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
 
   if (misc) {
     s.happiness = (misc[0] ? Number(misc[0]) : 255);
-    s.hpType = misc[1];
-    s.pokeball = misc[2] ? misc[2].trim() : misc[2];
+    s.hpType = misc[1] || '';
+    s.pokeball = toID(misc[2] || '');
     s.gigantamax = !!misc[3];
   }
 

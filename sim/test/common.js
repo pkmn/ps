@@ -1,6 +1,6 @@
 'use strict';
 
-const assert = require('assert').strict;
+const assert = require('./assert');
 const Sim = require('./../build/sim');
 const Dex = Sim.Dex;
 

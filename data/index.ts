@@ -516,6 +516,7 @@ export class Stats {
         : Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + level + 10;
     } else {
       let mod = 1;
+      // BUG: Nature modifications are applied with 16-bit truncation
       if (nature !== undefined) {
         if (nature.plus === stat) {
           mod = 1.1;

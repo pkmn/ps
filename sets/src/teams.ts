@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-parameter-properties */
 import {PokemonSet, GenerationNum} from '@pkmn/types';
 import {_import, _unpack, Sets, Data} from './sets';
 

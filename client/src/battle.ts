@@ -44,14 +44,14 @@ const BREAK: Set<Protocol.ArgName> = new Set([
 
 export type Context<T extends keyof HandlerContext> = [
   {
-    context: HandlerContext[T],
-    args: ArgType,
-    kwArgs: BattleArgsKWArgType
+    context: HandlerContext[T];
+    args: ArgType;
+    kwArgs: BattleArgsKWArgType;
   },
   ...Array<{
-    context: HandlerContext[keyof HandlerContext] | {},
-    args: ArgType,
-    kwArgs: BattleArgsKWArgType
+    context: HandlerContext[keyof HandlerContext] | {[k: string]: unknown};
+    args: ArgType;
+    kwArgs: BattleArgsKWArgType;
   }>,
 ];
 
@@ -85,10 +85,10 @@ export class Battle {
   requestStatus: 'inapplicable' | 'received' | 'applicable' | 'applied';
 
   private context: Array<{
-    type: ArgName,
-    context: HandlerContext[keyof HandlerContext] | {},
-    args: ArgType,
-    kwArgs: BattleArgsKWArgType
+    type: ArgName;
+    context: HandlerContext[keyof HandlerContext] | {[k: string]: unknown};
+    args: ArgType;
+    kwArgs: BattleArgsKWArgType;
   }>;
   protected readonly contextHandler: ContextHandler;
   private readonly handler: Handler;
@@ -135,7 +135,8 @@ export class Battle {
   add(line: string): void;
   add(args: ArgType, kwArgs: BattleArgsKWArgType): void;
   add(a: ArgType | string, b: BattleArgsKWArgType = {}) {
-    const {args, kwArgs} = typeof a === 'string' ? Protocol.parseBattleLine(a) : {args: a, kwArgs: b};
+    const {args, kwArgs} =
+      typeof a === 'string' ? Protocol.parseBattleLine(a) : {args: a, kwArgs: b};
     const key = Protocol.key(args);
     if (!key) return;
     if (key in this.handler) (this.handler as any)[key](args, kwArgs);

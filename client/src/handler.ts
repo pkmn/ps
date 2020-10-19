@@ -15,59 +15,76 @@ import {Protocol, Args, KWArgs, PokemonSearchID, PokemonIdent} from '@pkmn/proto
 
 import {Battle, NULL, NA} from './battle';
 import {Side} from './side';
-import {Pokemon } from './pokemon';
+import {Pokemon} from './pokemon';
 
 const BOOSTS: BoostName[] = ['atk', 'def', 'spa', 'spd', 'spe', 'accuracy', 'evasion'];
 
 type Health = ReturnType<Pokemon['healthParse']>;
 export interface Context {
-  '|move|': {poke: Pokemon, move: Move | NA, poke2: Pokemon | null};
-  '|cant|': {poke: Pokemon, effect: Effect | NA, move: Move | NA};
-  '|switch|': {poke: Pokemon, health?: Health};
-  '|drag|': {poke: Pokemon, health?: Health};
-  '|replace|': {poke: Pokemon, health?: Health};
+  '|move|': {poke: Pokemon; move: Move | NA; poke2: Pokemon | null};
+  '|cant|': {poke: Pokemon; effect: Effect | NA; move: Move | NA};
+  '|switch|': {poke: Pokemon; health?: Health};
+  '|drag|': {poke: Pokemon; health?: Health};
+  '|replace|': {poke: Pokemon; health?: Health};
   '|faint|': {poke: Pokemon};
-  '|swap|': {poke: Pokemon, poke2?: Pokemon, index?: number};
-  '|-damage|': {poke: Pokemon, damage: Health, fromEffect?: Effect | NA, ofPoke?: Pokemon | null};
-  '|-heal|': {poke: Pokemon, damage: Health, fromEffect?: Effect | NA};
-  '|-sethp|': {poke1: Pokemon | null, health1?: Health, poke2: Pokemon | null, health2: Health};
-  '|-boost|': {poke: Pokemon, boost: BoostName, amount: number, fromEffect?: Effect | NA, ofPoke?: Pokemon | null};
-  '|-unboost|': {poke: Pokemon, boost: BoostName, amount: number, fromEffect?: Effect | NA, ofPoke?: Pokemon | null};
-  '|-setboost|': {poke: Pokemon, boost: BoostName, amount: number};
-  '|-swapboost|': {poke: Pokemon, poke2: Pokemon, boosts: BoostName[]};
+  '|swap|': {poke: Pokemon; poke2?: Pokemon; index?: number};
+  '|-damage|': {poke: Pokemon; damage: Health; fromEffect?: Effect | NA; ofPoke?: Pokemon | null};
+  '|-heal|': {poke: Pokemon; damage: Health; fromEffect?: Effect | NA};
+  '|-sethp|': {poke1: Pokemon | null; health1?: Health; poke2: Pokemon | null; health2: Health};
+  '|-boost|': {
+    poke: Pokemon;
+    boost: BoostName;
+    amount: number;
+    fromEffect?: Effect | NA;
+    ofPoke?: Pokemon | null;
+  };
+  '|-unboost|': {
+    poke: Pokemon;
+    boost: BoostName;
+    amount: number;
+    fromEffect?: Effect | NA;
+    ofPoke?: Pokemon | null;
+  };
+  '|-setboost|': {poke: Pokemon; boost: BoostName; amount: number};
+  '|-swapboost|': {poke: Pokemon; poke2: Pokemon; boosts: BoostName[]};
   '|-clearpositiveboost|': {poke: Pokemon};
   '|-clearnegativeboost|': {poke: Pokemon};
-  '|-copyboost|': {poke: Pokemon, poke2: Pokemon, boosts: BoostName[]};
-  '|-clearboost|': {poke: Pokemon, fromEffect?: Effect | NA, ofPoke?: Pokemon | null};
+  '|-copyboost|': {poke: Pokemon; poke2: Pokemon; boosts: BoostName[]};
+  '|-clearboost|': {poke: Pokemon; fromEffect?: Effect | NA; ofPoke?: Pokemon | null};
   '|-invertboost|': {poke: Pokemon};
-  '|-immune|': {poke: Pokemon, fromEffect: Effect | NA, ofPoke: Pokemon | null};
-  '|-fail|': {poke: Pokemon, fromEffect: Effect | NA, ofPoke: Pokemon | null};
-  '|-block|': {poke: Pokemon, effect: Effect | NA, ofPoke: Pokemon | null};
+  '|-immune|': {poke: Pokemon; fromEffect: Effect | NA; ofPoke: Pokemon | null};
+  '|-fail|': {poke: Pokemon; fromEffect: Effect | NA; ofPoke: Pokemon | null};
+  '|-block|': {poke: Pokemon; effect: Effect | NA; ofPoke: Pokemon | null};
   '|-mustrecharge|': {poke: Pokemon};
-  '|-status|': {poke: Pokemon, status: StatusName, fromEffect: Effect | NA, ofPoke: Pokemon | null};
-  '|-curestatus|': {poke: Pokemon | null, status: StatusName};
+  '|-status|': {poke: Pokemon; status: StatusName; fromEffect: Effect | NA; ofPoke: Pokemon | null};
+  '|-curestatus|': {poke: Pokemon | null; status: StatusName};
   '|-cureteam|': {poke: Pokemon};
-  '|-item|': {poke: Pokemon, item: Item | NA, fromEffect: Effect | NA, ofPoke: Pokemon | null};
-  '|-enditem|': {poke: Pokemon, item: Item | NA, fromEffect: Effect | NA};
-  '|-ability|': {poke: Pokemon, ability: Ability | NA, fromEffect: Effect | NA, ofPoke: Pokemon | null};
-  '|-endability|': {poke: Pokemon, ability: Ability | NA};
-  '|detailschange|': {poke: Pokemon, species: Specie | NA};
-  '|-transform|': {poke: Pokemon, poke2: Pokemon, fromEffect: Effect | NA};
-  '|-formechange|': {poke: Pokemon, species: Specie | NA};
-  '|-mega|': {poke: Pokemon, item?: Item | NA};
-  '|-burst|': {poke: Pokemon, item?: Item | NA};
-  '|-start|': {poke: Pokemon, effect: Effect | NA, fromEffect: Effect | NA, ofPoke: Pokemon | null};
-  '|-end|': {poke: Pokemon, effect: Effect | NA};
-  '|-singleturn|': {poke: Pokemon, effect: Effect | NA};
-  '|-singlemove|': {poke: Pokemon, effect: Effect | NA};
-  '|-activate|': {poke: Pokemon | null, effect: Effect | NA, poke2: Pokemon | null};
-  '|-sidestart|': {side: Side, effect: Effect | NA};
-  '|-sideend|': {side: Side, effect: Effect | NA};
-  '|-weather|': {effect: Effect | NA, ability: Ability | NA, ofPoke: Pokemon | null};
-  '|-fieldstart|': {effect: Effect | NA, fromEffect: Effect | NA, ofPoke: Pokemon | null};
+  '|-item|': {poke: Pokemon; item: Item | NA; fromEffect: Effect | NA; ofPoke: Pokemon | null};
+  '|-enditem|': {poke: Pokemon; item: Item | NA; fromEffect: Effect | NA};
+  '|-ability|': {
+    poke: Pokemon;
+    ability: Ability | NA;
+    fromEffect: Effect | NA;
+    ofPoke: Pokemon | null;
+  };
+  '|-endability|': {poke: Pokemon; ability: Ability | NA};
+  '|detailschange|': {poke: Pokemon; species: Specie | NA};
+  '|-transform|': {poke: Pokemon; poke2: Pokemon; fromEffect: Effect | NA};
+  '|-formechange|': {poke: Pokemon; species: Specie | NA};
+  '|-mega|': {poke: Pokemon; item?: Item | NA};
+  '|-burst|': {poke: Pokemon; item?: Item | NA};
+  '|-start|': {poke: Pokemon; effect: Effect | NA; fromEffect: Effect | NA; ofPoke: Pokemon | null};
+  '|-end|': {poke: Pokemon; effect: Effect | NA};
+  '|-singleturn|': {poke: Pokemon; effect: Effect | NA};
+  '|-singlemove|': {poke: Pokemon; effect: Effect | NA};
+  '|-activate|': {poke: Pokemon | null; effect: Effect | NA; poke2: Pokemon | null};
+  '|-sidestart|': {side: Side; effect: Effect | NA};
+  '|-sideend|': {side: Side; effect: Effect | NA};
+  '|-weather|': {effect: Effect | NA; ability: Ability | NA; ofPoke: Pokemon | null};
+  '|-fieldstart|': {effect: Effect | NA; fromEffect: Effect | NA; ofPoke: Pokemon | null};
   '|-fieldend|': {effect: Effect | NA};
-  '|done|': {},
-  '|upkeep|': {},
+  '|done|': {[k: string]: unknown};
+  '|upkeep|': {[k: string]: unknown};
 }
 
 export class Handler implements Protocol.Handler {
@@ -229,7 +246,7 @@ export class Handler implements Protocol.Handler {
     if (isNaN(Number(args[2]))) {
       c.poke = this.battle.getPokemon(args[1])!;
       c.poke2 = this.battle.getPokemon(args[2] as PokemonIdent)!;
-      c.poke.side.swapWith(c.poke, c.poke2!);
+      c.poke.side.swapWith(c.poke, c.poke2);
     } else {
       c.poke = this.battle.getPokemon(args[1])!;
       c.index = parseInt(args[2]!);
@@ -304,9 +321,9 @@ export class Handler implements Protocol.Handler {
   '|-sethp|'(args: Args['|-sethp|']) {
     const c = this.context = {} as Context['|-sethp|'];
     for (let k = 0; k < 2; k++) {
-      const poke = c[`poke${k+1}` as 'poke1' | 'poke2'] =
+      const poke = c[`poke${k + 1}` as 'poke1' | 'poke2'] =
         this.battle.getPokemon(args[1 + 2 * k] as PokemonIdent);
-      if (poke) c[`health${k+1}` as 'health1' | 'health2'] = poke.healthParse(args[2 + 2 * k])!;
+      if (poke) c[`health${k + 1}` as 'health1' | 'health2'] = poke.healthParse(args[2 + 2 * k])!;
     }
   }
 
@@ -759,7 +776,9 @@ export class Handler implements Protocol.Handler {
       c.poke.addVolatile('stockpile' as ID, {level: +c.effect.id.charAt(c.effect.id.length - 1)});
       return;
     } else if (c.effect.id.startsWith('perish')) {
-      c.poke.addVolatile('perishsong' as ID, {duration: +c.effect.id.charAt(c.effect.id.length - 1)});
+      c.poke.addVolatile('perishsong' as ID, {
+        duration: +c.effect.id.charAt(c.effect.id.length - 1),
+      });
       return;
     }
 
@@ -959,7 +978,7 @@ export class Handler implements Protocol.Handler {
 
   '|-fieldend|'(args: Args['|-fieldend|']) {
     const c = this.context = {
-      effect: this.battle.get('effects', args[1])
+      effect: this.battle.get('effects', args[1]),
     } as Context['|-fieldend|'];
     if (c.effect.id.endsWith('terrain')) {
       this.battle.field.setTerrain('');

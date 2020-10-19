@@ -483,6 +483,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     this.battleOnly = data.battleOnly || (this.isMega ? this.baseSpecies : undefined);
     this.changesFrom = data.changesFrom ||
       (this.battleOnly !== this.baseSpecies ? this.battleOnly : this.baseSpecies);
+    if (Array.isArray(data.changesFrom)) this.changesFrom = data.changesFrom[0]; // BUG
 
     if (!this.gen && data.num >= 1) {
       if (data.num >= 810 || ['Gmax', 'Galar', 'Galar-Zen'].includes(this.forme)) {
@@ -692,9 +693,9 @@ export class ModdedDex implements T.Dex {
 
     name = (name || '').trim();
     let id = toID(name);
-    if (id === 'nidoran' && name.slice(-1) === '♀') {
+    if (id === 'nidoran' && name.endsWith('♀')) {
       id = 'nidoranf' as T.ID;
-    } else if (id === 'nidoran' && name.slice(-1) === '♂') {
+    } else if (id === 'nidoran' && name.endsWith('♂')) {
       id = 'nidoranm' as T.ID;
     }
 
@@ -1178,7 +1179,7 @@ export class ModdedDex implements T.Dex {
     if (this.data[type]) return;
 
     const d = modData ? modData[type] : type === 'Natures' ? DATA[type] : DATA[type][this.gen];
-    if (d !== this.data[type]) this.data[type] = Object.assign({}, d, this.data[type]) as any;
+    if (d !== this.data[type]) this.data[type] = ({...d, ...this.data[type]}) as any;
 
     if (this.modid === CURRENT_GEN_ID) return;
 

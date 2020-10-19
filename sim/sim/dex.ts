@@ -334,9 +334,9 @@ export class ModdedDex {
 
 		name = (name || '').trim();
 		let id = toID(name);
-		if (id === 'nidoran' && name.slice(-1) === '♀') {
+		if (id === 'nidoran' && name.endsWith('♀')) {
 			id = 'nidoranf' as ID;
-		} else if (id === 'nidoran' && name.slice(-1) === '♂') {
+		} else if (id === 'nidoran' && name.endsWith('♂')) {
 			id = 'nidoranm' as ID;
 		}
 		let species: any = this.speciesCache.get(id);
@@ -1007,7 +1007,7 @@ export class ModdedDex {
 			if (rule.slice(1).includes('>') || rule.slice(1).includes('+')) {
 				let buf = rule.slice(1);
 				const gtIndex = buf.lastIndexOf('>');
-				let limit = rule.charAt(0) === '+' ? Infinity : 0;
+				let limit = rule.startsWith('+') ? Infinity : 0;
 				if (gtIndex >= 0 && /^[0-9]+$/.test(buf.slice(gtIndex + 1).trim())) {
 					if (limit === 0) limit = parseInt(buf.slice(gtIndex + 1));
 					buf = buf.slice(0, gtIndex);
@@ -1032,7 +1032,7 @@ export class ModdedDex {
 			if (!this.data.Formats.hasOwnProperty(id)) {
 				throw new Error(`Unrecognized rule "${rule}"`);
 			}
-			if (rule.charAt(0) === '!') return `!${id}`;
+			if (rule.startsWith('!')) return `!${id}`;
 			return id;
 		}
 	}
@@ -1044,7 +1044,7 @@ export class ModdedDex {
 		const matches = [];
 		let matchTypes = ['pokemon', 'move', 'ability', 'item', 'pokemontag'];
 		for (const matchType of matchTypes) {
-			if (rule.slice(0, 1 + matchType.length) === matchType + ':') {
+			if (rule.startsWith(`${matchType}:`)) {
 				matchTypes = [matchType];
 				id = id.slice(matchType.length) as ID;
 				break;
@@ -1087,7 +1087,7 @@ export class ModdedDex {
 					}
 				}
 				matches.push(matchType + ':' + id);
-			} else if (matchType === 'pokemon' && id.slice(-4) === 'base') {
+			} else if (matchType === 'pokemon' && id.endsWith('base')) {
 				id = id.slice(0, -4) as ID;
 				if (table.hasOwnProperty(id)) {
 					matches.push('pokemon:' + id);
