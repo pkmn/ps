@@ -127,6 +127,11 @@ However, there is a non-trivial maintenance and operational burden involved in c
 continuing to release a cohesive package suite and Pokémon Showdown currently prefers to dedicate
 its engineering resources in other ways.
 
+## What about [`pokemon-showdown`](https://www.npmjs.com/package/pokemon-showdown)?
+
+This faces most of the same problems as vendoring `smogon/pokemon-showdown` except has the added
+"benefit" of being out of date. Good luck.
+
 ## I still have a question
 
 Please feel free to open a 'Question' issue on GitHub or to reach out on
