@@ -96,6 +96,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   volatiles: EffectTable;
 
   baseAbility: ID;
+  illusion?: Pokemon | null;
 
   itemEffect: ItemEffect | '';
   lastItem: ID;
@@ -167,6 +168,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.volatiles = {};
 
     this.baseAbility = '';
+    this.illusion = undefined;
 
     this.itemEffect = '';
     this.lastItem = '';

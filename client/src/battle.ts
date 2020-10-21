@@ -7,6 +7,7 @@ import {
   ID,
   PokemonSet,
   SideID,
+  StatsTable,
   toID,
 } from '@pkmn/data';
 import {
@@ -172,12 +173,63 @@ export class Battle {
     }
     if (this.requestStatus !== 'applicable' || !this.request) return;
 
-    /* FIXME
     const request = this.request;
     if (request.side) {
       const side = this.getSide(request.side.id);
 
-      // TODO
+      const team = side.team.slice();
+      side.team = [];
+      side.active = [];
+
+      for (const [i, p] of request.side.pokemon.entries()) {
+        let pokemon = this.findPokemon(p, team);
+        if (pokemon) {
+          side.team.push(pokemon);
+
+          pokemon.details = p.details;
+          pokemon.name = p.name;
+          pokemon.speciesForme = p.speciesForme;
+          pokemon.level = p.level;
+          pokemon.shiny = p.shiny;
+          pokemon.gender = p.gender || 'N';
+          pokemon.searchid = p.searchid;
+          (pokemon as any).originalIdent = p.ident;
+
+          pokemon.ability = p.ability;
+          pokemon.baseAbility = p.baseAbility;
+          pokemon.item = p.item;
+
+          pokemon.hp = p.hp;
+          pokemon.maxhp = p.maxhp;
+          if (p.hpcolor) pokemon.hpcolor = p.hpcolor;
+          pokemon.status = p.status;
+          pokemon.fainted = !!p.fainted;
+          for (const move of p.moves) {
+            pokemon.rememberMove(move, 0);
+          }
+          p.stats = {hp: pokemon.maxhp, ...pokemon.stats} as  StatsTable;
+          if (side.sets) {
+            if (!pokemon.set || (pokemon.set.name || pokemon.set.species) !== p.name) {
+              (pokemon as any).set = side.sets.find(s => (s.name || s.species) === p.name);
+            }
+          }
+        } else {
+          pokemon = side.addPokemon(p);
+        }
+
+        if (p.active) {
+          if (p.fainted) {
+            side.active[i] = null;
+          } else {
+            side.active[i] = pokemon;
+            pokemon.slot = i;
+            if (p.ability === 'illusion' && pokemon.illusion !== null) {
+              const illusion = this.findIllusion(request.side, p, i);
+              if (illusion) pokemon.illusion = this.findPokemon(illusion, team);
+            }
+          }
+        }
+      }
 
       if (request.requestType === 'move') {
         for (const [slot, active] of request.active.entries()) {
@@ -200,12 +252,19 @@ export class Battle {
         }
       }
     }
-    */
 
     this.requestStatus = 'applied';
   }
 
-  findIllusion(
+  private findPokemon(pokemon: Protocol.Request.Pokemon, team: Pokemon[]) {
+    for (const p of team) {
+      if (p.searchid === pokemon.searchid) return p;
+      if (!p.searchid && p.checkDetails(pokemon.details)) return p;
+    }
+    return undefined;
+  }
+
+  private findIllusion(
     side: Protocol.Request.SideInfo,
     pokemon: Protocol.Request.Pokemon,
     position: number
@@ -294,7 +353,7 @@ export class Battle {
     return {name, siden, slot, pokemonid};
   }
 
-  getOrAddPokemon(pokemonid: PokemonIdent | SideID, details: PokemonDetails, switched: boolean) {
+  getSwitchedPokemon(pokemonid: PokemonIdent | SideID, details: PokemonDetails) {
     const {name, siden, slot, pokemonid: parsedPokemonid} =
       this.parsePokemonId(pokemonid as PokemonIdent);
     pokemonid = parsedPokemonid;
@@ -303,15 +362,18 @@ export class Battle {
     const side = this.sides[siden];
 
     // search inactive revealed pokemon
+    const hasIllusion = [];
     for (let i = 0; i < side.team.length; i++) {
       let pokemon = side.team[i];
-      if (switched) {
-        if (pokemon.fainted) continue;
-        // already active, can't be switching in
-        if (side.active.includes(pokemon)) continue;
-        // just switched out, can't be switching in
-        if (pokemon === side.lastPokemon && !side.active[slot]) continue;
-      }
+
+      if (pokemon.ability === 'illusion') hasIllusion.push(pokemon);
+
+      if (pokemon.fainted) continue;
+      // already active, can't be switching in
+      if (side.active.includes(pokemon)) continue;
+      // just switched out, can't be switching in
+      if (pokemon === side.lastPokemon && !side.active[slot]) continue;
+
       if (pokemon.searchid === searchid) {
         // exact match
         if (slot >= 0) pokemon.slot = slot;
@@ -327,16 +389,48 @@ export class Battle {
       }
     }
 
+    // If we have a request, we know the team is being accurately tracked post -Team Preview and
+    // thus hasIllusion will be accurate. Only active Pokemon can be an Illusion, so we must have
+    // a slot as well.
+    if (this.request && hasIllusion.length && slot >= 0) {
+      const detailed = Protocol.parseDetails(name, pokemonid as PokemonIdent, details);
+      let pokemon: Pokemon | undefined;
+
+      const p = this.request.side?.pokemon[slot];
+      if (p && p.active) {
+        pokemon = this.findPokemon(p, hasIllusion);
+      } else {
+        for (const p of hasIllusion) {
+          // BUG: its impossible for us to disambiguate *which* Illusion Pokemon if all are
+          // the same level, so we simply chose the first and hope that works.
+          if (p.level === detailed.level) {
+            pokemon = p;
+            break;
+          }
+        }
+      }
+
+      // We found a potential Illusion Pokemon, but now need to find the Pokemon they are posing as
+      if (pokemon) {
+        for (let i = side.team.length - 1; i > slot; i--) {
+          const p = side.team[i];
+          if (p.speciesForme === detailed.speciesForme &&
+            p.gender === (detailed.gender || 'N') &&
+            p.shiny === detailed.shiny) {
+            pokemon.slot = slot;
+            if (pokemon.illusion !== null) pokemon.illusion = p;
+            return pokemon;
+          }
+        }
+      }
+    }
+
     // pokemon not found, create a new pokemon object for it
     const pokemon = side.addPokemon(
       Protocol.parseDetails(name, pokemonid as PokemonIdent, details)
     );
     if (slot >= 0) pokemon.slot = slot;
     return pokemon;
-  }
-
-  getSwitchedPokemon(pokemonid: PokemonIdent | SideID, details: PokemonDetails) {
-    return this.getOrAddPokemon(pokemonid, details, true);
   }
 
   getSwitchedOutPokemon(pokemonid: PokemonIdent, details: PokemonDetails) {

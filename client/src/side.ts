@@ -196,6 +196,7 @@ export class Side {
     pokemon.slot = slot;
     pokemon.clearVolatile();
     pokemon.lastMove = '';
+    pokemon.illusion = undefined;
     this.battle.lastMove = 'switch-in';
     // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
     if (['batonpass', 'zbatonpass'].includes(this.lastPokemon?.lastMove!)) {
@@ -231,6 +232,7 @@ export class Side {
       pokemon.status = oldpokemon.status;
       pokemon.copyVolatileFrom(oldpokemon, 'illusion');
       pokemon.statusData = {...oldpokemon.statusData};
+      pokemon.illusion = null;
       // we don't know anything about the illusioned pokemon except that it's not fainted
       // technically we also know its status but only at the end of the turn, not here
       oldpokemon.fainted = false;
@@ -286,6 +288,7 @@ export class Side {
   faint(pokemon: Pokemon, slot = pokemon.slot) {
     pokemon.clearVolatile();
     this.lastPokemon = pokemon;
+    pokemon.illusion = undefined;
     this.active[slot] = null;
 
     pokemon.fainted = true;
