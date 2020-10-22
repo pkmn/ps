@@ -297,10 +297,10 @@ class Pool {
 			this.filled = new Set();
 		}
 		this.filler = this.possible.slice();
-		// POST: this.unused.size === this.possible.length
-		// POST: this.filler.length > 0
-		// POST: this.filled.size === 0
-		// POST: this.iter === undefined
+		// POSTCONDITION: this.unused.size === this.possible.length
+		// POSTCONDITION: this.filler.length > 0
+		// POSTCONDITION: this.filled.size === 0
+		// POSTCONDITION: this.iter === undefined
 	}
 
 	private shuffle<T>(arr: T[]): T[] {
