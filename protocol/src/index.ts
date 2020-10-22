@@ -2017,6 +2017,7 @@ export const Protocol = new class {
       for (const pokemon of request.side.pokemon) {
         this.parseDetails(pokemon.ident.substr(4), pokemon.ident, pokemon.details, pokemon);
         this.parseHealth(pokemon.condition, pokemon);
+        pokemon.ability = pokemon.ability || pokemon.baseAbility;
       }
     }
 
