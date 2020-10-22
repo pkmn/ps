@@ -223,7 +223,7 @@ export class Battle {
           } else {
             side.active[i] = pokemon;
             pokemon.slot = i;
-            if (p.ability === 'illusion' && pokemon.illusion !== null) {
+            if (p.ability === 'illusion' && pokemon.illusion === undefined) {
               const illusion = this.findIllusion(request.side, p, i);
               if (illusion) pokemon.illusion = this.findPokemon(illusion, team);
             }
@@ -366,7 +366,9 @@ export class Battle {
     for (let i = 0; i < side.team.length; i++) {
       let pokemon = side.team[i];
 
-      if (pokemon.ability === 'illusion') hasIllusion.push(pokemon);
+      if ((pokemon.ability || pokemon.baseAbility) === 'illusion') {
+        hasIllusion.push(pokemon);
+      }
 
       if (pokemon.fainted) continue;
       // already active, can't be switching in
@@ -418,7 +420,7 @@ export class Battle {
             p.gender === (detailed.gender || 'N') &&
             p.shiny === detailed.shiny) {
             pokemon.slot = slot;
-            if (pokemon.illusion !== null) pokemon.illusion = p;
+            if (pokemon.illusion === undefined) pokemon.illusion = p;
             return pokemon;
           }
         }
