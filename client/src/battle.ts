@@ -223,9 +223,16 @@ export class Battle {
           } else {
             side.active[i] = pokemon;
             pokemon.slot = i;
-            if (p.ability === 'illusion' && pokemon.illusion === undefined) {
+            if (p.ability === 'illusion' && !pokemon.revealedDetails) {
               const illusion = this.findIllusion(request.side, p, i);
               if (illusion) pokemon.illusion = this.findPokemon(illusion, team);
+              if (pokemon.illusion) {
+                pokemon.revealedDetails =
+                  (pokemon.illusion.baseSpeciesForme +
+                   (pokemon.level === 100 ? '' : ', L' + pokemon.level) +
+                   (pokemon.illusion.gender === 'N' ? '' : ', ' + pokemon.illusion.gender) +
+                   (pokemon.illusion.shiny ? ', shiny' : '')) as PokemonDetails;
+              }
             }
           }
         }
@@ -260,6 +267,8 @@ export class Battle {
     for (const p of team) {
       if (p.searchid === pokemon.searchid) return p;
       if (!p.searchid && p.checkDetails(pokemon.details)) return p;
+      const permaIllusion = p.illusion && p.revealedDetails === p.details;
+      if (permaIllusion && p.originalIdent === pokemon.ident) return p;
     }
     return undefined;
   }
@@ -366,7 +375,7 @@ export class Battle {
     for (let i = 0; i < side.team.length; i++) {
       let pokemon = side.team[i];
 
-      if ((pokemon.ability || pokemon.baseAbility) === 'illusion') {
+      if (pokemon.ability  === 'illusion' || pokemon.baseAbility === 'illusion') {
         hasIllusion.push(pokemon);
       }
 
@@ -379,6 +388,7 @@ export class Battle {
       if (pokemon.searchid === searchid) {
         // exact match
         if (slot >= 0) pokemon.slot = slot;
+        pokemon.revealedDetails = pokemon.details;
         return pokemon;
       }
       if (!pokemon.searchid && pokemon.checkDetails(details)) {
@@ -387,11 +397,12 @@ export class Battle {
           Protocol.parseDetails(name, pokemonid as PokemonIdent, details), i
         );
         if (slot >= 0) pokemon.slot = slot;
+        pokemon.revealedDetails = pokemon.details;
         return pokemon;
       }
     }
 
-    // If we have a request, we know the team is being accurately tracked post -Team Preview and
+    // If we have a request, we know the team is being accurately tracked after Team Preview and
     // thus hasIllusion will be accurate. Only active Pokemon can be an Illusion, so we must have
     // a slot as well.
     if (this.request && hasIllusion.length && slot >= 0) {
@@ -414,13 +425,17 @@ export class Battle {
 
       // We found a potential Illusion Pokemon, but now need to find the Pokemon they are posing as
       if (pokemon) {
-        for (let i = side.team.length - 1; i > slot; i--) {
+        for (let i = side.team.length - 1; i >= 0; i--) {
           const p = side.team[i];
           if (p.speciesForme === detailed.speciesForme &&
             p.gender === (detailed.gender || 'N') &&
             p.shiny === detailed.shiny) {
             pokemon.slot = slot;
-            if (pokemon.illusion === undefined) pokemon.illusion = p;
+            if (pokemon.revealedDetails !== pokemon.details) {
+              pokemon.revealedDetails = detailed.details;
+              pokemon.illusion = p;
+            }
+
             return pokemon;
           }
         }
@@ -492,7 +507,8 @@ export class Battle {
   }
 
   pokemonAt(side: SideID, slot: number) {
-    return this.getSide(side).active[slot]?.originalIdent || undefined;
+    const pokemon = this.getSide(side).active[slot];
+    return pokemon?.illusion?.ident || pokemon?.originalIdent || undefined;
   }
 
   damagePercentage(ident: PokemonIdent, hpstring: PokemonHPStatus) {

@@ -696,6 +696,11 @@ export class Handler implements Protocol.Handler {
     c.species = this.battle.get('species', newSpeciesForme);
     const species = c.species as Partial<Specie>;
 
+    if (c.poke.illusion?.details === args[2]) {
+      c.poke.revealedDetails = c.poke.details;
+      return;
+    }
+
     c.poke.speciesForme = newSpeciesForme;
     c.poke.ability = c.poke.baseAbility = (species.abilities ? toID(species.abilities['0']) : '');
 

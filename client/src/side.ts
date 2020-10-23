@@ -16,6 +16,7 @@ export class Side {
   rating: string;
 
   active: Array<Pokemon | null>;
+  focus: number;
   lastPokemon: Pokemon | null;
   team: Pokemon[];
   totalPokemon: number;
@@ -53,6 +54,7 @@ export class Side {
     this.totalPokemon = 6;
 
     this.active = [null];
+    this.focus = 0;
     this.lastPokemon = null;
     this.team = [];
 
@@ -62,7 +64,7 @@ export class Side {
   }
 
   get pokemon() {
-    return this.active[0] || undefined;
+    return this.active[this.focus] || undefined;
   }
 
   setAvatar(avatar: AvatarIdent) {
@@ -211,6 +213,7 @@ export class Side {
     if (oldpokemon) {
       oldpokemon.clearVolatile();
       oldpokemon.illusion = undefined;
+      oldpokemon.revealedDetails = undefined;
     }
 
     pokemon.clearVolatile();
@@ -222,7 +225,10 @@ export class Side {
 
   replace(pokemon: Pokemon, slot = pokemon.slot) {
     const oldpokemon = this.active[slot];
-    if (oldpokemon) pokemon.illusion = null;
+    if (oldpokemon) {
+      pokemon.illusion = undefined;
+      pokemon.revealedDetails = pokemon.details;
+    }
     if (pokemon === oldpokemon) return;
 
     this.lastPokemon = oldpokemon;
@@ -255,6 +261,7 @@ export class Side {
     }
 
     pokemon.illusion = undefined;
+    pokemon.revealedDetails = undefined;
     pokemon.beingCalledBack = true;
     pokemon.statusData.toxicTurns = 0;
     if (this.battle.gen.num === 5) pokemon.statusData.sleepTurns = 0;
@@ -292,6 +299,7 @@ export class Side {
     pokemon.clearVolatile();
     this.lastPokemon = pokemon;
     pokemon.illusion = undefined;
+    pokemon.revealedDetails = undefined;
     this.active[slot] = null;
 
     pokemon.fainted = true;

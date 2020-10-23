@@ -44,10 +44,10 @@ readline.createInterface({
   terminal: false
 }).on('line', line => {
   const {args, kwArgs} = Protocol.parseBattleLine(line);
+  const request = args[0] === 'request';
   const formatted = formatter.formatText(args, kwArgs);
   if (formatted) process.stdout.write(formatted);
+  if (request) battle.update();
   battle.add(args, kwArgs);
-  if (args[0] === 'request') battle.update();
-}).on('close', () => {
-  battle.update();
+  if (request) battle.update();
 });

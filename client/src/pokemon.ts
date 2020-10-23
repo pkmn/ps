@@ -96,7 +96,8 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   volatiles: EffectTable;
 
   baseAbility: ID;
-  illusion?: Pokemon | null;
+  illusion?: Pokemon;
+  revealedDetails?: PokemonDetails;
 
   itemEffect: ItemEffect | '';
   lastItem: ID;
@@ -169,6 +170,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
     this.baseAbility = '';
     this.illusion = undefined;
+    this.revealedDetails = undefined;
 
     this.itemEffect = '';
     this.lastItem = '';
@@ -202,6 +204,12 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
         ? this.side.battle.gen.types.get(set.nature)?.name as HPTypeName
         : undefined,
     };
+  }
+
+  toString(): string {
+    const ident = this.side.active.includes(this) ? this.ident : this.originalIdent;
+    const s = `${ident}|${this.details}`;
+    return this.illusion ? `${this.illusion.toString()} (${s})` : s;
   }
 
   get ability() {
