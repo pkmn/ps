@@ -87,8 +87,8 @@ class Runner {
     );
 
     const all = [
-      // [streams.omniscient, 0], [streams.omniscient, 1], XXX
-      // [streams.spectator, 0], [streams.spectator, 1], XXX
+      [streams.omniscient, 0], [streams.omniscient, 1],
+      [streams.spectator, 0], [streams.spectator, 1],
       [tee1.sink, 0], [tee1.sink, 1],
       [tee2.sink, 0], [tee2.sink, 1],
     ];
