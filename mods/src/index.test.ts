@@ -34,7 +34,8 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         const dex = new ModdedDex(Dex.mod('vgc20' as ID, await import('./vgc20') as ModData));
         expect(dex.gen).toBe(8);
         expect(dex.getSpecies('Nidoking').tier).toBe('Unreleased');
-        expect(dex.getSpecies('Regidrago').tier).toBe('Illegal'); // BUG: why??
+        expect(dex.getSpecies('Regidrago').tier).toBe('Unreleased');
+        expect(dex.getItem('Custap Berry').isNonstandard).toBe('Unobtainable');
         expect(dex.getSpecies('dracozolt').unreleasedHidden).toBe(true);
       });
 
