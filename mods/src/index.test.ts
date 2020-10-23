@@ -30,6 +30,14 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect((await dex.getLearnset('sandslashalola')).learnset!['iceshard']).toBeUndefined();
       });
 
+      it('vgc20', async () => {
+        const dex = new ModdedDex(Dex.mod('vgc20' as ID, await import('./vgc20') as ModData));
+        expect(dex.gen).toBe(8);
+        expect(dex.getSpecies('Nidoking').tier).toBe('Unreleased');
+        expect(dex.getSpecies('Regidrago').tier).toBe('Illegal'); // BUG: why??
+        expect(dex.getSpecies('dracozolt').unreleasedHidden).toBe(true);
+      });
+
       it('letsgo', async () => {
         const dex = new ModdedDex(Dex.mod('letsgo' as ID, await import('./letsgo') as ModData));
         expect(dex.gen).toBe(7);

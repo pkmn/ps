@@ -7,6 +7,7 @@
     ".": "./build/index.js",
     "./stadium": "./build/stadium/index.js",
     "./vgc17": "./build/vgc17/index.js",
+    "./vgc20": "./build/vgc20/index.js",
     "./letsgo": "./build/letsgo/index.js"
   },
   "description": "Support for non-standard mods to @pkmn/sim and @pkmn/dex",

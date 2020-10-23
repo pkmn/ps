@@ -506,6 +506,12 @@
       "desc": "This Pokemon and its allies cannot be affected by Attract, Disable, Encore, Heal Block, Taunt, or Torment.",
       "shortDesc": "Protects user/allies from Attract, Disable, Encore, Heal Block, Taunt, and Torment."
     },
+    "asone": {
+      "onFoeTryEatItem": false,
+      "name": "As One",
+      "num": 266,
+      "shortDesc": "The combination of Unnerve and Chilling/Grim Neigh."
+    },
     "aurabreak": {
       "name": "Aura Break",
       "num": 188,
@@ -581,6 +587,12 @@
       "desc": "If this Pokemon eats a Berry, it restores 1/3 of its maximum HP, rounded down, in addition to the Berry's effect.",
       "shortDesc": "If this Pokemon eats a Berry, it restores 1/3 of its max HP after the Berry's effect."
     },
+    "chillingneigh": {
+      "name": "Chilling Neigh",
+      "num": 264,
+      "desc": "This Pokemon's Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
+      "shortDesc": "This Pokemon's Attack is raised by 1 stage if it attacks and KOes another Pokemon."
+    },
     "chlorophyll": {
       "name": "Chlorophyll",
       "num": 34,
@@ -639,6 +651,11 @@
       "num": 238,
       "desc": "When this Pokemon is hit by an attack, the Speed of all other Pokemon on the field is lowered by 1 stage.",
       "shortDesc": "If this Pokemon is hit, it lowers the Speed of all other Pokemon on the field 1 stage."
+    },
+    "curiousmedicine": {
+      "name": "Curious Medicine",
+      "num": 261,
+      "shortDesc": "On switch-in, allies stat changes are reset to 0."
     },
     "cursedbody": {
       "name": "Cursed Body",
@@ -721,6 +738,13 @@
       "num": 88,
       "desc": "On switch-in, this Pokemon's Attack or Special Attack is raised by 1 stage based on the weaker combined defensive stat of all opposing Pokemon. Attack is raised if their Defense is lower, and Special Attack is raised if their Special Defense is the same or lower.",
       "shortDesc": "On switch-in, Attack or Sp. Atk is raised 1 stage based on the foes' weaker Defense."
+    },
+    "dragonsmaw": {
+      "onModifyAtkPriority": 5,
+      "onModifySpAPriority": 5,
+      "name": "Dragon's Maw",
+      "num": 263,
+      "shortDesc": "This Pokemon's attacking stat is multiplied by 1.5 while using an Dragon-type attack."
     },
     "drizzle": {
       "name": "Drizzle",
@@ -891,6 +915,12 @@
       "name": "Grassy Surge",
       "num": 229,
       "shortDesc": "On switch-in, this Pokemon summons Grassy Terrain."
+    },
+    "grimneigh": {
+      "name": "Grim Neigh",
+      "num": 265,
+      "desc": "This Pokemon's Special Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
+      "shortDesc": "This Pokemon's Sp. Atk is raised by 1 stage if it attacks and KOes another Pokemon."
     },
     "gulpmissile": {
       "name": "Gulp Missile",
@@ -1910,6 +1940,13 @@
       "num": 36,
       "desc": "On switch-in, or when this Pokemon acquires this ability, this Pokemon copies a random adjacent opposing Pokemon's Ability. However, if one or more adjacent Pokemon has the Ability \"No Ability\", Trace won't copy anything even if there is another valid Ability it could normally copy. Otherwise, if there is no Ability that can be copied at that time, this Ability will activate as soon as an Ability can be copied. Abilities that cannot be copied are the previously mentioned \"No Ability\", as well as Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Neutralizing Gas, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, and Zen Mode.",
       "shortDesc": "On switch-in, or when it can, this Pokemon copies a random adjacent foe's Ability."
+    },
+    "transistor": {
+      "onModifyAtkPriority": 5,
+      "onModifySpAPriority": 5,
+      "name": "Transistor",
+      "num": 262,
+      "shortDesc": "This Pokemon's attacking stat is multiplied by 1.5 while using an Electric-type attack."
     },
     "triage": {
       "name": "Triage",

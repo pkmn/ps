@@ -134,6 +134,11 @@ const MOD_IMPORTS = {
   'data/mods/vgc17/pokedex.ts': ['ModdedSpeciesData'],
   'data/mods/vgc17/rulesets.ts': ['ModdedFormatData'],
   'data/mods/vgc17/scripts.ts': ['ModdedBattleScriptsData'],
+  // vgc20
+  'data/mods/vgc20/formats-data.ts': ['ModdedSpeciesFormatsData'],
+  'data/mods/vgc20/learnsets.ts': ['LearnsetData'],
+  'data/mods/vgc20/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/vgc20/scripts.ts': ['ModdedBattleScriptsData'],
   // letsgo
   'data/mods/letsgo/formats-data.ts': ['ModdedSpeciesFormatsData'],
   'data/mods/letsgo/learnsets.ts': ['ModdedLearnsetData'],
@@ -256,6 +261,7 @@ const MOD_OVERRIDDEN = new Set([
   'data/mods/stadium/index.ts',
   'data/mods/letsgo/index.ts',
   'data/mods/vgc17/index.ts',
+  'data/mods/vgc20/index.ts',
 ]);
 // Any file that hasn't been 'OVERRIDDEN' we need to copy over from PS
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));

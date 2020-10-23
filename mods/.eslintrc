@@ -2,7 +2,12 @@
   "extends": "@pkmn",
   "overrides": [
     {
-      "files": ["./src/stadium/*.ts", "./src/vgc17/*.ts", "./src/letsgo/*.ts"],
+      "files": [
+        "./src/letsgo/*.ts",
+        "./src/stadium/*.ts",
+        "./src/vgc17/*.ts",
+        "./src/vgc20/*.ts"
+      ],
       "rules": {
         "@typescript-eslint/quotes": "off",
         "@typescript-eslint/indent": ["error", "tab", {"flatTernaryExpressions": true}],
