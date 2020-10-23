@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/view",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "bin": {
@@ -13,8 +13,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/client": "^0.0.5",
-    "@pkmn/protocol": "^0.1.3",
+    "@pkmn/client": "^0.1.0",
+    "@pkmn/protocol": "^0.2.0",
     "@pkmn/types": "^1.0.0"
   },
   "scripts": {

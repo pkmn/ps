@@ -207,7 +207,7 @@ export class Battle {
           for (const move of p.moves) {
             pokemon.rememberMove(move, 0);
           }
-          p.stats = {hp: pokemon.maxhp, ...pokemon.stats} as  StatsTable;
+          p.stats = {hp: pokemon.maxhp, ...pokemon.stats} as StatsTable;
           if (side.sets) {
             if (!pokemon.set || (pokemon.set.name || pokemon.set.species) !== p.name) {
               (pokemon as any).set = side.sets.find(s => (s.name || s.species) === p.name);
@@ -375,7 +375,7 @@ export class Battle {
     for (let i = 0; i < side.team.length; i++) {
       let pokemon = side.team[i];
 
-      if (pokemon.ability  === 'illusion' || pokemon.baseAbility === 'illusion') {
+      if (pokemon.ability === 'illusion' || pokemon.baseAbility === 'illusion') {
         hasIllusion.push(pokemon);
       }
 
@@ -409,9 +409,9 @@ export class Battle {
       const detailed = Protocol.parseDetails(name, pokemonid as PokemonIdent, details);
       let pokemon: Pokemon | undefined;
 
-      const p = this.request.side?.pokemon[slot];
-      if (p && p.active) {
-        pokemon = this.findPokemon(p, hasIllusion);
+      const poke = this.request.side?.pokemon[slot];
+      if (poke?.active) {
+        pokemon = this.findPokemon(poke, hasIllusion);
       } else {
         for (const p of hasIllusion) {
           // BUG: its impossible for us to disambiguate *which* Illusion Pokemon if all are

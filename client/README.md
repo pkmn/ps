@@ -48,7 +48,7 @@ for await (const chunk of stream) {
   for (const line of chunk.split('\n')) {
     battle.add(line);
   }
-  battle.update(); // optional, if no |request|
+  battle.update(); // optional, only relevant if stream contains |request|
 
   ... // manipulate battle
 }
