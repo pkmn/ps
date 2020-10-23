@@ -6932,10 +6932,10 @@
       "gender": "N",
       "baseStats": {
         "hp": 90,
-        "atk": 85,
+        "atk": 100,
         "def": 90,
-        "spa": 100,
-        "spd": 125,
+        "spa": 125,
+        "spd": 85,
         "spe": 90
       },
       "abilities": {"0": "Pressure", "H": "Flame Body"},
