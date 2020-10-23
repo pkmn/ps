@@ -506,11 +506,17 @@
       "desc": "This Pokemon and its allies cannot be affected by Attract, Disable, Encore, Heal Block, Taunt, or Torment.",
       "shortDesc": "Protects user/allies from Attract, Disable, Encore, Heal Block, Taunt, and Torment."
     },
-    "asone": {
+    "asoneglastrier": {
       "onFoeTryEatItem": false,
-      "name": "As One",
+      "name": "As One (Glastrier)",
       "num": 266,
-      "shortDesc": "The combination of Unnerve and Chilling/Grim Neigh."
+      "shortDesc": "The combination of Unnerve and Chilling Neigh."
+    },
+    "asonespectrier": {
+      "onFoeTryEatItem": false,
+      "name": "As One (Spectrier)",
+      "num": 267,
+      "shortDesc": "The combination of Unnerve and Grim Neigh."
     },
     "aurabreak": {
       "name": "Aura Break",

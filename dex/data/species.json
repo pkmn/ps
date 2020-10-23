@@ -24823,7 +24823,7 @@
         "spd": 130,
         "spe": 50
       },
-      "abilities": {"0": "As One"},
+      "abilities": {"0": "As One (Glastrier)"},
       "weightkg": 809.1,
       "eggGroups": ["Undiscovered"],
       "changesFrom": "Calyrex"
@@ -24843,7 +24843,7 @@
         "spd": 100,
         "spe": 150
       },
-      "abilities": {"0": "As One"},
+      "abilities": {"0": "As One (Spectrier)"},
       "weightkg": 53.6,
       "eggGroups": ["Undiscovered"],
       "changesFrom": "Calyrex"
