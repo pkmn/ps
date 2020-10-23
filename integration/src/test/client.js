@@ -118,7 +118,7 @@ class Runner {
         const v = Verifier.verifyLine(line);
         assert(!v, `Invalid protocol: '${line}'`);
 
-        ps.battle.add(patch(line));
+        ps.battle.add(line);
         ps.battle.fastForwardTo(-1);
 
         const {args, kwArgs} = Protocol.parseBattleLine(line);
@@ -143,15 +143,6 @@ class Runner {
       Math.floor(this.prng.next() * 0x10000),
     ];
   }
-}
-
-function patch(line) {
-  const {args} = Protocol.parseBattleLine(line);
-  // FIXME: workaround for an interaction between Wandering Spirit and Protective Pads
-  if (line.startsWith('|-activate|') && args[0] === '-ability' && args[2] === 'Wandering Spirit') {
-    return '|' + args.join('|');
-  }
-  return line;
 }
 
 class TeedStream extends sim.Streams.ObjectReadWriteStream {
