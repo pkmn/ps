@@ -1,0 +1,589 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"115/115","active":true,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"203/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"}]}}
+
+|t:|1603471223
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|5
+|tier|[Gen 5] Doubles Custom Game
+|clearpoke
+|poke|p1|Ralts, L64, M|item
+|poke|p1|Sentret, L86, M|item
+|poke|p1|Thundurus-Therian, L61, M|item
+|poke|p1|Carvanha, L70, F|item
+|poke|p1|Ursaring, L93, M|item
+|poke|p1|Larvesta, L94, M|item
+|poke|p2|Tynamo, L66, F|item
+|poke|p2|Volbeat, L83, M|item
+|poke|p2|Mantine, L58, M|item
+|poke|p2|Swoobat, L73, F|item
+|poke|p2|Croconaw, L94, M|item
+|poke|p2|Goldeen, L77, M|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Rock Slide","id":"rockslide","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Double Hit","id":"doublehit","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Wish","id":"wish","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":16,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":16,"maxpp":16,"target":"self","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"115/115","active":true,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"203/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|start
+|switch|p1a: Ralts|Ralts, L64, M|115/115
+|switch|p1b: Sentret|Sentret, L86, M|203/203
+|switch|p2a: Tynamo|Tynamo, L66, F|136/136
+|switch|p2b: Volbeat|Volbeat, L83, M|242/242
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Rock Slide","id":"rockslide","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Double Hit","id":"doublehit","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":16,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":16,"maxpp":16,"target":"self","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115","active":true,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"168/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|move|p2b: Volbeat|Snarl|p1a: Ralts|[spread] p1a,p1b
+|debug|Spread modifier: 0.75
+|-supereffective|p1a: Ralts
+|debug|Spread modifier: 0.75
+|-damage|p1a: Ralts|41/115
+|-damage|p1b: Sentret|168/203
+|-unboost|p1a: Ralts|spa|1
+|-unboost|p1b: Sentret|spa|1
+|move|p2a: Tynamo|Grass Whistle|p1b: Sentret|[miss]
+|-miss|p2a: Tynamo|p1b: Sentret
+|move|p1b: Sentret|Wish|p1b: Sentret
+|move|p1a: Ralts|Rock Slide|p2a: Tynamo|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-crit|p2a: Tynamo
+|debug|Spread modifier: 0.75
+|-supereffective|p2b: Volbeat
+|-damage|p2a: Tynamo|99/136
+|-damage|p2b: Volbeat|218/242
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Rock Slide","id":"rockslide","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Double Hit","id":"doublehit","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":16,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":16,"maxpp":16,"target":"self","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115","active":true,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"203/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|move|p2b: Volbeat|Inferno|p1b: Sentret|[miss]
+|-miss|p2b: Volbeat|p1b: Sentret
+|move|p2a: Tynamo|Brine|p1b: Sentret
+|-damage|p1b: Sentret|128/203
+|move|p1b: Sentret|Waterfall|p2a: Tynamo
+|-damage|p2a: Tynamo|26/136
+|move|p1a: Ralts|Double Hit|p2a: Tynamo
+|-damage|p2a: Tynamo|15/136
+|-damage|p2a: Tynamo|4/136
+|-hitcount|p2a: Tynamo|2
+|
+|-heal|p1b: Sentret|203/203|[from] move: Wish|[wisher] Sentret
+|upkeep
+|turn|3
+
+|error|[Unavailable choice] Can't switch: The active Pokémon is trapped
+
+|request|{"active":[{"moves":[{"move":"Rock Slide","id":"rockslide","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Double Hit","id":"doublehit","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":16,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":16,"maxpp":16,"target":"self","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115","active":true,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"203/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"}]}}
+
+|request|{"active":[{"moves":[{"move":"Rock Slide","id":"rockslide","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Double Hit","id":"doublehit","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Sky Drop","id":"skydrop"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 slp","active":true,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"203/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|move|p2b: Volbeat|Spore|p1a: Ralts
+|-status|p1a: Ralts|slp|[from] move: Spore
+|move|p2a: Tynamo|Mist|p2a: Tynamo
+|-sidestart|p2: Bot 2|Mist
+|move|p1b: Sentret|Sky Drop||[still]
+|-prepare|p1b: Sentret|Sky Drop|p2a: Tynamo
+|cant|p1a: Ralts|slp
+|
+|upkeep
+|turn|4
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115","active":true,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"203/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p2b: Mantine|Mantine, L58, M|155/155
+|debug|Sky drop nullifying.
+|move|p1b: Sentret|Sky Drop|p2a: Tynamo|[from]lockedmove
+|-resisted|p2a: Tynamo
+|-damage|p2a: Tynamo|0 fnt
+|faint|p2a: Tynamo
+|-curestatus|p1a: Ralts|slp|[msg]
+|move|p1a: Ralts|Double Hit|p2b: Mantine
+|-damage|p2b: Mantine|145/155
+|-crit|p2b: Mantine
+|-damage|p2b: Mantine|123/155
+|-hitcount|p2b: Mantine|2
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Rock Slide","id":"rockslide","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Double Hit","id":"doublehit","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":16,"maxpp":16,"target":"self","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115","active":true,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"203/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p2a: Volbeat|Volbeat, L83, M|218/242
+|turn|5
+
+|error|[Unavailable choice] Can't switch: The active Pokémon is trapped
+
+|request|{"active":[{"moves":[{"move":"Rock Slide","id":"rockslide","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Double Hit","id":"doublehit","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":16,"maxpp":16,"target":"self","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115","active":true,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"203/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"}]}}
+
+|request|{"active":[{"moves":[{"move":"Rock Slide","id":"rockslide","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Double Hit","id":"doublehit","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":15,"maxpp":16,"target":"self","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":true,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"203/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|move|p2a: Volbeat|Charm|p1b: Sentret
+|-unboost|p1b: Sentret|atk|2
+|move|p2b: Mantine|Stun Spore|p1a: Ralts
+|-status|p1a: Ralts|par
+|move|p1b: Sentret|Power Trick|p1b: Sentret
+|-start|p1b: Sentret|Power Trick
+|cant|p1a: Ralts|par
+|
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Rock Slide","id":"rockslide","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Double Hit","id":"doublehit","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":true,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"203/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p2a: Swoobat|Swoobat, L73, F|241/241
+|move|p2b: Mantine|Hone Claws|p2b: Mantine
+|-boost|p2b: Mantine|atk|1
+|-boost|p2b: Mantine|accuracy|1
+|move|p1b: Sentret|Waterfall|p2b: Mantine
+|-resisted|p2b: Mantine
+|-damage|p2b: Mantine|108/155
+|move|p1a: Ralts|Sleep Powder|p2a: Swoobat
+|-status|p2a: Swoobat|slp|[from] move: Sleep Powder
+|
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Rock Slide","id":"rockslide","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Double Hit","id":"doublehit","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":22,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":true,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"203/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|cant|p2a: Swoobat|slp
+|move|p2b: Mantine|Fake Tears|p1b: Sentret
+|-unboost|p1b: Sentret|spd|2
+|move|p1b: Sentret|Waterfall|p2b: Mantine
+|-resisted|p2b: Mantine
+|-damage|p2b: Mantine|93/155
+|move|p1a: Ralts|Sleep Powder|p2b: Mantine
+|-status|p2b: Mantine|slp|[from] move: Sleep Powder
+|
+|-sideend|p2: Bot 2|Mist
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Rock Slide","id":"rockslide","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Double Hit","id":"doublehit","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":22,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Curse","id":"curse","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Embargo","id":"embargo","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Dragon Breath","id":"dragonbreath","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":true,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":true,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"203/203","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p2a: Croconaw|Croconaw, L94, M|295/295
+|switch|p1b: Ursaring|Ursaring, L93, M|288/288
+|cant|p2b: Mantine|slp
+|cant|p1a: Ralts|par
+|
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Peck","id":"peck","pp":56,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"153/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p1b: Larvesta|Larvesta, L94, M|266/266
+|switch|p1a: Sentret|Sentret, L86, M|203/203
+|move|p2a: Croconaw|Echoed Voice|p1a: Sentret
+|-damage|p1a: Sentret|153/203
+|cant|p2b: Mantine|slp
+|
+|debug|natural status immunity
+|debug|immune to status
+|upkeep
+|turn|10
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"153/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p1b: Ursaring|Ursaring, L61, M|196/196
+|move|p2a: Croconaw|Lunar Dance|p2a: Croconaw
+|debug|Lunar Dance started on Bot 2
+|faint|p2a: Croconaw
+|-curestatus|p2b: Mantine|slp|[msg]
+|move|p2b: Mantine|Hone Claws|p2b: Mantine
+|-boost|p2b: Mantine|atk|1
+|-boost|p2b: Mantine|accuracy|1
+|move|p1a: Sentret|Waterfall|p2b: Mantine
+|-resisted|p2b: Mantine
+|-damage|p2b: Mantine|55/155
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Cross Poison","id":"crosspoison","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Acrobatics","id":"acrobatics","pp":24,"maxpp":24,"target":"any","disabled":false},{"move":"Force Palm","id":"forcepalm","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Struggle Bug","id":"strugglebug","pp":32,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"153/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"196/196","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p2a: Goldeen|Goldeen, L77, M|209/209
+|-heal|p2a: Goldeen|209/209|[from] move: Lunar Dance
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Sky Drop","id":"skydrop"}],"trapped":true},{"moves":[{"move":"Cross Poison","id":"crosspoison","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Acrobatics","id":"acrobatics","pp":24,"maxpp":24,"target":"any","disabled":false},{"move":"Force Palm","id":"forcepalm","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Struggle Bug","id":"strugglebug","pp":32,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"153/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"160/196","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|move|p1b: Ursaring|Cross Poison|p2b: Mantine
+|-damage|p2b: Mantine|10/155
+|move|p2b: Mantine|Hone Claws|p2b: Mantine
+|-boost|p2b: Mantine|atk|1
+|-boost|p2b: Mantine|accuracy|1
+|move|p2a: Goldeen|Barrage|p1b: Ursaring
+|-crit|p1b: Ursaring
+|-damage|p1b: Ursaring|172/196
+|debug|illusion cleared
+|replace|p1b: Thundurus|Thundurus-Therian, L61, M
+|-end|p1b: Thundurus|Illusion
+|-damage|p1b: Thundurus|160/196
+|-hitcount|p1b: Thundurus|2
+|move|p1a: Sentret|Sky Drop||[still]
+|-prepare|p1a: Sentret|Sky Drop|p2a: Goldeen
+|
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":14,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Peck","id":"peck","pp":56,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"153/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"160/196","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p1b: Larvesta|Larvesta, L94, M|266/266
+|move|p2b: Mantine|Fake Tears|p1b: Larvesta
+|-unboost|p1b: Larvesta|spd|2
+|debug|Sky drop nullifying.
+|move|p1a: Sentret|Sky Drop|p2a: Goldeen|[from]lockedmove
+|-damage|p2a: Goldeen|170/209
+|-end|p2a: Goldeen|Sky Drop
+|
+|debug|natural status immunity
+|debug|immune to status
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":14,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Cross Poison","id":"crosspoison","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Acrobatics","id":"acrobatics","pp":24,"maxpp":24,"target":"any","disabled":false},{"move":"Force Palm","id":"forcepalm","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Struggle Bug","id":"strugglebug","pp":32,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"153/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"145/196 par","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p1b: Ursaring|Ursaring, L61, M|160/196
+|move|p2b: Mantine|Stun Spore|p1b: Ursaring
+|-status|p1b: Ursaring|par
+|move|p2a: Goldeen|Aura Sphere|p1b: Ursaring
+|-resisted|p1b: Ursaring
+|-damage|p1b: Ursaring|145/196 par
+|debug|illusion cleared
+|replace|p1b: Thundurus|Thundurus-Therian, L61, M
+|-end|p1b: Thundurus|Illusion
+|move|p1a: Sentret|Waterfall|p2a: Goldeen
+|-resisted|p2a: Goldeen
+|-damage|p2a: Goldeen|147/209
+|
+|upkeep
+|turn|14
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"90/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"96/196 par","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|move|p2b: Mantine|Surf|p1b: Thundurus|[spread] p2a,p1a,p1b
+|debug|Spread modifier: 0.75
+|-resisted|p2a: Goldeen
+|-crit|p2a: Goldeen
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Goldeen|99/209
+|-damage|p1a: Sentret|90/203
+|-damage|p1b: Thundurus|96/196 par
+|move|p2a: Goldeen|Bestow||[still]
+|-fail|p2a: Goldeen
+|debug|move failed because it did nothing
+|move|p1a: Sentret|Waterfall|p2b: Mantine
+|-resisted|p2b: Mantine
+|-damage|p2b: Mantine|0 fnt
+|faint|p2b: Mantine
+|move|p1b: Thundurus|Acrobatics|p2a: Goldeen
+|-damage|p2a: Goldeen|63/209
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":18,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":14,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Cross Poison","id":"crosspoison","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Acrobatics","id":"acrobatics","pp":23,"maxpp":24,"target":"any","disabled":false},{"move":"Force Palm","id":"forcepalm","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Struggle Bug","id":"strugglebug","pp":32,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"90/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"96/196 par","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p2b: Swoobat|Swoobat, L73, F|241/241 slp
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Sky Drop","id":"skydrop"}],"trapped":true},{"moves":[{"move":"Cross Poison","id":"crosspoison","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Acrobatics","id":"acrobatics","pp":23,"maxpp":24,"target":"any","disabled":false},{"move":"Force Palm","id":"forcepalm","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Struggle Bug","id":"strugglebug","pp":32,"maxpp":32,"target":"allAdjacentFoes","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"90/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"96/196 par","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p2b: Volbeat|Volbeat, L83, M|218/242
+|move|p2a: Goldeen|Bestow||[still]
+|-fail|p2a: Goldeen
+|debug|move failed because it did nothing
+|move|p1a: Sentret|Sky Drop||[still]
+|-prepare|p1a: Sentret|Sky Drop|p2b: Volbeat
+|move|p1b: Thundurus|Force Palm|p2b: Volbeat|[miss]
+|-miss|p1b: Thundurus|p2b: Volbeat
+|
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":18,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":13,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":15,"maxpp":16,"target":"self","disabled":false}],"trapped":true},{"moves":[{"move":"Cross Poison","id":"crosspoison","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Acrobatics","id":"acrobatics","pp":23,"maxpp":24,"target":"any","disabled":false},{"move":"Force Palm","id":"forcepalm","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Struggle Bug","id":"strugglebug","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"90/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"51/196 par","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|debug|Sky drop nullifying.
+|move|p2a: Goldeen|Superpower|p1b: Thundurus
+|-resisted|p1b: Thundurus
+|-damage|p1b: Thundurus|51/196 par
+|-unboost|p2a: Goldeen|atk|1
+|-unboost|p2a: Goldeen|def|1
+|move|p1a: Sentret|Sky Drop|p2b: Volbeat|[from]lockedmove
+|-supereffective|p2b: Volbeat
+|-damage|p2b: Volbeat|140/242
+|-end|p2b: Volbeat|Sky Drop
+|move|p1b: Thundurus|Struggle Bug|p2a: Goldeen|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Goldeen|45/209
+|-damage|p2b: Volbeat|124/242
+|-unboost|p2a: Goldeen|spa|1
+|-unboost|p2b: Volbeat|spa|1
+|
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Waterfall","id":"waterfall","pp":18,"maxpp":24,"target":"normal","disabled":false},{"move":"Sky Drop","id":"skydrop","pp":13,"maxpp":16,"target":"any","disabled":false},{"move":"Power Trick","id":"powertrick","pp":14,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Cross Poison","id":"crosspoison","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Acrobatics","id":"acrobatics","pp":23,"maxpp":24,"target":"any","disabled":false},{"move":"Force Palm","id":"forcepalm","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Struggle Bug","id":"strugglebug","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"26/203","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"51/196 par","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p2b: Swoobat|Swoobat, L73, F|241/241 slp
+|move|p2a: Goldeen|Aura Sphere|p1a: Sentret
+|-supereffective|p1a: Sentret
+|-damage|p1a: Sentret|26/203
+|move|p1a: Sentret|Power Trick|p1a: Sentret
+|-start|p1a: Sentret|Power Trick
+|move|p1b: Thundurus|Force Palm|p2a: Goldeen
+|-damage|p2a: Goldeen|5/209
+|
+|upkeep
+|turn|18
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":true,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"51/196 par","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":false,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471223
+|cant|p2b: Swoobat|slp
+|move|p2a: Goldeen|Aura Sphere|p1a: Sentret
+|-supereffective|p1a: Sentret
+|-damage|p1a: Sentret|0 fnt
+|faint|p1a: Sentret
+|move|p1b: Thundurus|Acrobatics|p2b: Swoobat
+|-damage|p2b: Swoobat|198/241 slp
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Peck","id":"peck","pp":56,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Cross Poison","id":"crosspoison","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Acrobatics","id":"acrobatics","pp":22,"maxpp":24,"target":"any","disabled":false},{"move":"Force Palm","id":"forcepalm","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Struggle Bug","id":"strugglebug","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"51/196 par","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p1a: Larvesta|Larvesta, L94, M|266/266
+|turn|19
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"51/196 par","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|cant|p2b: Swoobat|slp
+|move|p1a: Larvesta|Peck|p2a: Goldeen
+|debug|Rivalry boost
+|-damage|p2a: Goldeen|0 fnt
+|faint|p2a: Goldeen
+|cant|p1b: Thundurus|par
+|
+|debug|natural status immunity
+|debug|immune to status
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Peck","id":"peck","pp":55,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Cross Poison","id":"crosspoison","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Acrobatics","id":"acrobatics","pp":22,"maxpp":24,"target":"any","disabled":false},{"move":"Force Palm","id":"forcepalm","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Struggle Bug","id":"strugglebug","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"51/196 par","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p2a: Volbeat|Volbeat, L83, M|124/242
+|turn|20
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266 slp","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"0 fnt","active":true,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":false,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471223
+|-curestatus|p2b: Swoobat|slp|[msg]
+|move|p2b: Swoobat|Seismic Toss|p1b: Thundurus
+|-damage|p1b: Thundurus|0 fnt
+|faint|p1b: Thundurus
+|move|p2a: Volbeat|Spore|p1a: Larvesta
+|-status|p1a: Larvesta|slp|[from] move: Spore
+|cant|p1a: Larvesta|slp
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Peck","id":"peck","pp":55,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Curse","id":"curse","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Embargo","id":"embargo","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Dragon Breath","id":"dragonbreath","pp":32,"maxpp":32,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266 slp","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":true,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"0 fnt","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|switch|p1b: Ursaring|Ursaring, L93, M|288/288
+|turn|21
+
+|error|[Unavailable choice] Can't switch: The active Pokémon is trapped
+
+|request|{"active":[{"moves":[{"move":"Peck","id":"peck","pp":55,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Curse","id":"curse","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Embargo","id":"embargo","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Dragon Breath","id":"dragonbreath","pp":32,"maxpp":32,"target":"normal","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"266/266 slp","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"288/288","active":true,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"0 fnt","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"}]}}
+
+|request|{"active":[{"moves":[{"move":"Peck","id":"peck","pp":55,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Embargo","id":"embargo","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Dragon Breath","id":"dragonbreath","pp":32,"maxpp":32,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"216/266 slp","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"200/288","active":true,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"0 fnt","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|move|p2b: Swoobat|Seismic Toss|p1b: Ursaring
+|-damage|p1b: Ursaring|215/288
+|move|p2a: Volbeat|Snarl|p1a: Larvesta|[spread] p1a,p1b
+|debug|Spread modifier: 0.75
+|-crit|p1a: Larvesta
+|debug|Spread modifier: 0.75
+|-damage|p1a: Larvesta|216/266 slp
+|-damage|p1b: Ursaring|200/288
+|-unboost|p1a: Larvesta|spa|1
+|-unboost|p1b: Ursaring|spa|1
+|cant|p1a: Larvesta|slp
+|move|p1b: Ursaring|Curse|p1b: Ursaring
+|-unboost|p1b: Ursaring|spe|1
+|-boost|p1b: Ursaring|atk|1
+|-boost|p1b: Ursaring|def|1
+|
+|upkeep
+|turn|22
+
+|error|[Unavailable choice] Can't switch: The active Pokémon is trapped
+
+|request|{"active":[{"moves":[{"move":"Peck","id":"peck","pp":55,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Embargo","id":"embargo","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Dragon Breath","id":"dragonbreath","pp":32,"maxpp":32,"target":"normal","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"216/266 slp","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"200/288","active":true,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"0 fnt","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"}]}}
+
+|request|{"active":[{"moves":[{"move":"Peck","id":"peck","pp":55,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Embargo","id":"embargo","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Dragon Breath","id":"dragonbreath","pp":32,"maxpp":32,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"143/266","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"200/288","active":true,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"0 fnt","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|move|p2b: Swoobat|Seismic Toss|p1a: Larvesta
+|-damage|p1a: Larvesta|143/266 slp
+|move|p2a: Volbeat|Spore|p1a: Larvesta
+|-fail|p1a: Larvesta|slp
+|debug|move failed because it did nothing
+|-curestatus|p1a: Larvesta|slp|[msg]
+|move|p1a: Larvesta|Harden|p1a: Larvesta
+|-boost|p1a: Larvesta|def|1
+|move|p1b: Ursaring|Embargo|p2a: Volbeat
+|-start|p2a: Volbeat|Embargo
+|
+|debug|natural status immunity
+|debug|immune to status
+|upkeep
+|turn|23
+
+|error|[Unavailable choice] Can't switch: The active Pokémon is trapped
+
+|request|{"active":[{"moves":[{"move":"Peck","id":"peck","pp":55,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Embargo","id":"embargo","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Dragon Breath","id":"dragonbreath","pp":32,"maxpp":32,"target":"normal","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"143/266","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"200/288","active":true,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"0 fnt","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"}]}}
+
+|request|{"active":[{"moves":[{"move":"Peck","id":"peck","pp":55,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Embargo","id":"embargo","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Dragon Breath","id":"dragonbreath","pp":32,"maxpp":32,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"92/266 slp","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"200/288","active":true,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"0 fnt","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|move|p2b: Swoobat|Sing|p1a: Larvesta
+|-status|p1a: Larvesta|slp|[from] move: Sing
+|move|p2a: Volbeat|Inferno|p1a: Larvesta
+|-damage|p1a: Larvesta|92/266 slp
+|debug|move failed because it did nothing
+|cant|p1a: Larvesta|slp
+|move|p1b: Ursaring|Work Up|p1b: Ursaring
+|-boost|p1b: Ursaring|atk|1
+|-boost|p1b: Ursaring|spa|1
+|
+|upkeep
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Peck","id":"peck","pp":54,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Embargo","id":"embargo","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Dragon Breath","id":"dragonbreath","pp":31,"maxpp":32,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"19/266","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"200/288","active":true,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"0 fnt","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|move|p2b: Swoobat|Seismic Toss|p1a: Larvesta
+|-damage|p1a: Larvesta|19/266 slp
+|move|p2a: Volbeat|Inferno|p1b: Ursaring|[miss]
+|-miss|p2a: Volbeat|p1b: Ursaring
+|-curestatus|p1a: Larvesta|slp|[msg]
+|move|p1a: Larvesta|Peck|p2a: Volbeat
+|debug|Rivalry boost
+|-supereffective|p2a: Volbeat
+|-damage|p2a: Volbeat|14/242
+|move|p1b: Ursaring|Dragon Breath|p2b: Swoobat
+|-crit|p2b: Swoobat
+|-damage|p2b: Swoobat|49/241
+|-status|p2b: Swoobat|par
+|
+|debug|natural status immunity
+|debug|immune to status
+|upkeep
+|turn|25
+
+|request|{"active":[{"moves":[{"move":"Peck","id":"peck","pp":53,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Embargo","id":"embargo","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":46,"maxpp":48,"target":"self","disabled":false},{"move":"Dragon Breath","id":"dragonbreath","pp":31,"maxpp":32,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"19/266","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"100/288","active":true,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"0 fnt","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|move|p2a: Volbeat|Inferno|p1a: Larvesta|[miss]
+|-miss|p2a: Volbeat|p1a: Larvesta
+|move|p1a: Larvesta|Peck|p2b: Swoobat
+|debug|Rivalry weaken
+|-damage|p2b: Swoobat|14/241 par
+|move|p1b: Ursaring|Work Up|p1b: Ursaring
+|-boost|p1b: Ursaring|atk|1
+|-boost|p1b: Ursaring|spa|1
+|move|p2b: Swoobat|Super Fang|p1b: Ursaring
+|-damage|p1b: Ursaring|100/288
+|
+|debug|natural status immunity
+|debug|immune to status
+|upkeep
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Peck","id":"peck","pp":53,"maxpp":56,"target":"any","disabled":false},{"move":"Silver Wind","id":"silverwind","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Harden","id":"harden","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Embargo","id":"embargo","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":46,"maxpp":48,"target":"self","disabled":false},{"move":"Dragon Breath","id":"dragonbreath","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Larvesta","details":"Larvesta, L94, M","condition":"19/266","active":true,"stats":{"atk":240,"def":150,"spa":155,"spd":163,"spe":170},"moves":["peck","silverwind","harden","reversal"],"baseAbility":"rivalry","item":"flameorb","pokeball":"pokeball"},{"ident":"p1: Ursaring","details":"Ursaring, L93, M","condition":"100/288 slp","active":true,"stats":{"atk":269,"def":210,"spa":167,"spd":223,"spe":136},"moves":["curse","embargo","workup","dragonbreath"],"baseAbility":"leafguard","item":"silverpowder","pokeball":"pokeball"},{"ident":"p1: Sentret","details":"Sentret, L86, M","condition":"0 fnt","active":false,"stats":{"atk":141,"def":124,"spa":113,"spd":98,"spe":89},"moves":["wish","waterfall","skydrop","powertrick"],"baseAbility":"overgrow","item":"buggem","pokeball":"pokeball"},{"ident":"p1: Carvanha","details":"Carvanha, L70, F","condition":"175/175","active":false,"stats":{"atk":154,"def":75,"spa":142,"spd":62,"spe":119},"moves":["retaliate","watersport","octazooka","guillotine"],"baseAbility":"slowstart","item":"fastball","pokeball":"pokeball"},{"ident":"p1: Ralts","details":"Ralts, L64, M","condition":"41/115 par","active":false,"stats":{"atk":60,"def":77,"spa":74,"spd":88,"spe":75},"moves":["rockslide","doublehit","hornattack","sleeppowder"],"baseAbility":"snowcloak","item":"powerband","pokeball":"pokeball"},{"ident":"p1: Thundurus","details":"Thundurus-Therian, L61, M","condition":"0 fnt","active":false,"stats":{"atk":152,"def":125,"spa":215,"spd":136,"spe":169},"moves":["crosspoison","acrobatics","forcepalm","strugglebug"],"baseAbility":"illusion","item":"psychicgem","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471223
+|move|p2a: Volbeat|Spore|p1b: Ursaring
+|-status|p1b: Ursaring|slp|[from] move: Spore
+|move|p1a: Larvesta|Silver Wind|p2a: Volbeat
+|debug|Rivalry boost
+|-damage|p2a: Volbeat|0 fnt
+|faint|p2a: Volbeat
+|cant|p1b: Ursaring|slp
+|cant|p2b: Swoobat|par
+|
+|debug|natural status immunity
+|debug|immune to status
+|upkeep
+|turn|27
+
+|
+|t:|1603471223
+|switch|p1b: Carvanha|Carvanha, L70, F|175/175
+|-start|p1b: Carvanha|ability: Slow Start
+|move|p1a: Larvesta|Reversal|p2b: Swoobat
+|debug|Rivalry weaken
+|-resisted|p2b: Swoobat
+|-damage|p2b: Swoobat|0 fnt
+|faint|p2b: Swoobat
+|
+|win|Bot 1

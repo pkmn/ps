@@ -1,0 +1,1102 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"200/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"237/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|t:|1603471113
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|6
+|tier|[Gen 6] Doubles Custom Game
+|clearpoke
+|poke|p1|Pignite, L93, F|item
+|poke|p1|Spoink, L66, F|item
+|poke|p1|Gallade, L70, M|item
+|poke|p1|Latias, L77, F|item
+|poke|p1|Kricketune, L65, F|item
+|poke|p1|Slowking, L61, M|item
+|poke|p2|Beheeyem, L78, M|item
+|poke|p2|Arceus-*, L64|item
+|poke|p2|Gastly, L71, M|item
+|poke|p2|Swirlix, L52, F|item
+|poke|p2|Ferrothorn, L86, F|item
+|poke|p2|Pidove, L86, M|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"200/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"237/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|start
+|switch|p1a: Pignite|Pignite, L93, F|307/307
+|switch|p1b: Spoink|Spoink, L66, F|200/200
+|switch|p2a: Beheeyem|Beheeyem, L78, M|237/237
+|switch|p2b: Arceus|Arceus-Ice, L64|251/251
+|-weather|PrimordialSea|[from] ability: Primordial Sea|[of] p1a: Pignite
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"130/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"237/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p2b: Arceus|Magnet Bomb|p1b: Spoink
+|-damage|p1b: Spoink|130/200
+|move|p1a: Pignite|String Shot|p2b: Arceus|[spread] p2a,p2b
+|-unboost|p2a: Beheeyem|spe|2
+|-ability|p2a: Beheeyem|Defiant
+|-boost|p2a: Beheeyem|atk|2
+|-unboost|p2b: Arceus|spe|2
+|move|p1b: Spoink|Attract||[still]
+|debug|incompatible gender
+|-fail|p1b: Spoink
+|debug|move failed because it did nothing
+|move|p2a: Beheeyem|Spore|p1a: Pignite
+|-status|p1a: Pignite|slp|[from] move: Spore
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false}]},{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Incinerate","id":"incinerate","pp":24,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"130/200","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"237/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p1b: Gallade|Gallade, L70, M|190/190
+|switch|p2b: Swirlix|Swirlix, L52, F|137/137
+|switch|p2a: Gastly|Gastly, L71, M|147/147
+|-start|p2a: Gastly|ability: Slow Start
+|cant|p1a: Pignite|slp
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"130/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"237/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p1b: Spoink|Spoink, L66, F|130/200
+|switch|p2b: Arceus|Arceus-Ice, L64|251/251
+|cant|p1a: Pignite|slp
+|move|p2a: Gastly|Misty Terrain|p2a: Gastly
+|-fieldstart|move: Misty Terrain
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"237/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"60/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|-weather|none
+|switch|p1a: Latias|Latias, L77, F|237/237
+|move|p2b: Arceus|Magnet Bomb|p1b: Spoink
+|-damage|p1b: Spoink|60/200
+|move|p1b: Spoink|Acid Armor|p1b: Spoink
+|-boost|p1b: Spoink|def|2
+|move|p2a: Gastly|Misty Terrain||[still]
+|-fail|p2a: Gastly
+|debug|move failed because it did nothing
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"237/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"60/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|-end|p2a: Gastly|Slow Start|[silent]
+|switch|p2a: Ferrothorn|Ferrothorn, L86, F|255/255
+|-ability|p2a: Ferrothorn|Download|boost
+|-boost|p2a: Ferrothorn|atk|1
+|move|p2b: Arceus|Sunny Day|p2b: Arceus
+|-weather|SunnyDay
+|move|p1b: Spoink|Attract||[still]
+|debug|incompatible gender
+|-fail|p1b: Spoink
+|debug|move failed because it did nothing
+|move|p1a: Latias|Avalanche|p2b: Arceus
+|-damage|p2b: Arceus|214/251
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"141/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"60/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p2b: Arceus|X-Scissor|p1a: Latias
+|-supereffective|p1a: Latias
+|-damage|p1a: Latias|141/237
+|move|p1b: Spoink|Dazzling Gleam|p2b: Arceus|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-resisted|p2a: Ferrothorn
+|debug|Spread modifier: 0.75
+|-damage|p2a: Ferrothorn|249/255
+|-damage|p2b: Arceus|197/251
+|move|p2a: Ferrothorn|Water Sport|p2a: Ferrothorn
+|-fieldstart|move: Water Sport|[of] p2a: Ferrothorn
+|move|p1a: Latias|Avalanche|p2a: Ferrothorn
+|-damage|p2a: Ferrothorn|223/255
+|
+|-weather|SunnyDay|[upkeep]
+|-heal|p2a: Ferrothorn|238/255|[from] item: Leftovers
+|upkeep
+|turn|7
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"141/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"60/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2b: Arceus|Arceus-Ice, L86|231/231
+|move|p1a: Latias|Shadow Punch|p2a: Ferrothorn
+|-damage|p2a: Ferrothorn|209/255
+|move|p1b: Spoink|Acid Armor|p1b: Spoink
+|-boost|p1b: Spoink|def|2
+|move|p2a: Ferrothorn|Parting Shot|p1b: Spoink
+|-unboost|p1b: Spoink|atk|1
+|-unboost|p1b: Spoink|spa|1
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"141/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"60/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2a: Gastly|Gastly, L71, M|147/147|[from]move: Parting Shot
+|-start|p2a: Gastly|ability: Slow Start
+|
+|-weather|SunnyDay|[upkeep]
+|-fieldend|Misty Terrain
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"141/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"60/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|-end|p2a: Gastly|Slow Start|[silent]
+|switch|p2a: Ferrothorn|Ferrothorn, L86, F|209/255
+|-ability|p2a: Ferrothorn|Download|boost
+|-boost|p2a: Ferrothorn|spa|1
+|move|p1a: Latias|Shadow Punch|p2b: Arceus
+|-immune|p2b: Arceus
+|move|p1b: Spoink|Attract||[still]
+|debug|incompatible gender
+|-fail|p1b: Spoink
+|debug|move failed because it did nothing
+|move|p2b: Arceus|Shift Gear|p2b: Arceus
+|-boost|p2b: Arceus|spe|2
+|-boost|p2b: Arceus|atk|1
+|
+|-weather|SunnyDay|[upkeep]
+|-heal|p2a: Ferrothorn|224/255|[from] item: Leftovers
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":29,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"141/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"60/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2b: Gastly|Gastly, L71, M|147/147
+|-start|p2b: Gastly|ability: Slow Start
+|move|p1a: Latias|Cut|p2a: Ferrothorn
+|-resisted|p2a: Ferrothorn
+|-damage|p2a: Ferrothorn|213/255
+|move|p1b: Spoink|Acid Armor|p1b: Spoink
+|-boost|p1b: Spoink|def|2
+|move|p2a: Ferrothorn|Last Resort||[still]
+|-fail|p2a: Ferrothorn
+|
+|-weather|none
+|-heal|p2a: Ferrothorn|228/255|[from] item: Leftovers
+|upkeep
+|turn|10
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"141/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"60/200","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p1b: Kricketune|Kricketune, L65, F|219/219
+|move|p1a: Latias|Defog|p2b: Gastly
+|-unboost|p2b: Gastly|evasion|1
+|move|p2a: Ferrothorn|Parting Shot|p1b: Kricketune
+|-unboost|p1b: Kricketune|atk|1
+|-unboost|p1b: Kricketune|spa|1
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Razor Shell","id":"razorshell","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Blaze Kick","id":"blazekick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Coat","id":"magiccoat","pp":24,"maxpp":24,"target":"self","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"121/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"60/200","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2a: Beheeyem|Beheeyem, L78, M|237/237|[from]move: Parting Shot
+|move|p2b: Gastly|Icicle Spear|p1a: Latias
+|-supereffective|p1a: Latias
+|-damage|p1a: Latias|133/237
+|-supereffective|p1a: Latias
+|-crit|p1a: Latias
+|-damage|p1a: Latias|121/237
+|-hitcount|p1a: Latias|2
+|
+|-fieldend|move: Water Sport
+|upkeep
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Blaze Kick","id":"blazekick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Coat","id":"magiccoat","pp":24,"maxpp":24,"target":"self","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"121/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"60/200","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|-end|p2b: Gastly|Slow Start|[silent]
+|switch|p2b: Ferrothorn|Ferrothorn, L86, F|228/255
+|-ability|p2b: Ferrothorn|Download|boost
+|-boost|p2b: Ferrothorn|atk|1
+|move|p1a: Latias|Cut|p2b: Ferrothorn
+|-resisted|p2b: Ferrothorn
+|-damage|p2b: Ferrothorn|217/255
+|move|p1b: Kricketune|Razor Shell|p2a: Beheeyem
+|-damage|p2a: Beheeyem|213/237
+|move|p2a: Beheeyem|Wish|p2a: Beheeyem
+|
+|-heal|p2b: Ferrothorn|232/255|[from] item: Leftovers
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":29,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"60/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"121/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p1a: Slowking|Slowking, L61, M|215/215
+|-ability|p1a: Slowking|Turboblaze
+|switch|p1b: Spoink|Spoink, L66, F|60/200
+|switch|p2b: Arceus|Arceus-Ice, L64|197/251
+|move|p2a: Beheeyem|Wish||[still]
+|-fail|p2a: Beheeyem
+|debug|move failed because it did nothing
+|
+|-heal|p2a: Beheeyem|237/237|[from] move: Wish|[wisher] Beheeyem
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":28,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"63/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"307/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"ejectbutton","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p1a: Latias|Latias, L77, F|121/237
+|move|p2b: Arceus|Hex|p1a: Latias
+|-supereffective|p1a: Latias
+|-damage|p1a: Latias|63/237
+|move|p1b: Spoink|Acid Armor|p1b: Spoink
+|-boost|p1b: Spoink|def|2
+|move|p2a: Beheeyem|Waterfall|p1b: Spoink
+|-damage|p1b: Spoink|21/200
+|
+|upkeep
+|turn|14
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"63/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471113
+|switch|p1b: Pignite|Pignite, L93, F|307/307 slp
+|-weather|PrimordialSea|[from] ability: Primordial Sea|[of] p1b: Pignite
+|move|p1a: Latias|Cut|p2a: Beheeyem
+|-damage|p2a: Beheeyem|198/237
+|move|p2b: Arceus|Magnet Bomb|p1b: Pignite
+|-resisted|p1b: Pignite
+|-damage|p1b: Pignite|291/307 slp
+|-enditem|p1b: Pignite|Eject Button
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":45,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Blaze Kick","id":"blazekick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Coat","id":"magiccoat","pp":24,"maxpp":24,"target":"self","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"63/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"219/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|-weather|none
+|switch|p1b: Kricketune|Kricketune, L65, F|219/219
+|move|p2a: Beheeyem|Wish|p2a: Beheeyem
+|
+|upkeep
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":45,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Blaze Kick","id":"blazekick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Coat","id":"magiccoat","pp":23,"maxpp":24,"target":"self","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"63/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"184/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2b: Swirlix|Swirlix, L52, F|137/137
+|move|p1b: Kricketune|Magic Coat|p1b: Kricketune
+|-singleturn|p1b: Kricketune|move: Magic Coat
+|move|p2a: Beheeyem|Aqua Jet|p1b: Kricketune
+|-damage|p1b: Kricketune|184/219
+|move|p1a: Latias|Shadow Punch|p2b: Swirlix
+|-damage|p2b: Swirlix|68/137
+|
+|-heal|p2a: Beheeyem|237/237|[from] move: Wish|[wisher] Beheeyem
+|upkeep
+|turn|16
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"52/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"184/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p2a: Beheeyem|Aqua Jet|p1a: Latias
+|-resisted|p1a: Latias
+|-damage|p1a: Latias|52/237
+|move|p1a: Latias|Cut|p2a: Beheeyem
+|-damage|p2a: Beheeyem|200/237
+|move|p1b: Kricketune|Blaze Kick|p2b: Swirlix
+|-damage|p2b: Swirlix|0 fnt
+|faint|p2b: Swirlix
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":44,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Blaze Kick","id":"blazekick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Coat","id":"magiccoat","pp":23,"maxpp":24,"target":"self","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"52/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"184/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2b: Gastly|Gastly, L71, M|147/147
+|-start|p2b: Gastly|ability: Slow Start
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":44,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":22,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Razor Shell","id":"razorshell","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Blaze Kick","id":"blazekick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Coat","id":"magiccoat","pp":23,"maxpp":24,"target":"self","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"52/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1a: Latias|Defog|p2a: Beheeyem
+|-unboost|p2a: Beheeyem|evasion|1
+|-ability|p2a: Beheeyem|Defiant
+|-boost|p2a: Beheeyem|atk|2
+|move|p1b: Kricketune|Razor Shell|p2b: Gastly
+|-damage|p2b: Gastly|97/147
+|-unboost|p2b: Gastly|def|1
+|move|p2a: Beheeyem|Wish|p2a: Beheeyem
+|move|p2b: Gastly|Icicle Spear|p1b: Kricketune
+|-damage|p1b: Kricketune|178/219
+|-damage|p1b: Kricketune|173/219
+|-hitcount|p1b: Kricketune|2
+|
+|upkeep
+|turn|18
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":44,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Razor Shell","id":"razorshell","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Blaze Kick","id":"blazekick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Coat","id":"magiccoat","pp":23,"maxpp":24,"target":"self","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"52/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2a: Ferrothorn|Ferrothorn, L86, F|232/255
+|-ability|p2a: Ferrothorn|Download|boost
+|-boost|p2a: Ferrothorn|atk|1
+|move|p1a: Latias|Defog|p2a: Ferrothorn
+|-unboost|p2a: Ferrothorn|evasion|1
+|move|p1b: Kricketune|Razor Shell|p2a: Ferrothorn
+|-resisted|p2a: Ferrothorn
+|-damage|p2a: Ferrothorn|222/255
+|-unboost|p2a: Ferrothorn|def|1
+|move|p2b: Gastly|Morning Sun|p2b: Gastly
+|-heal|p2b: Gastly|147/147
+|
+|-heal|p2a: Ferrothorn|255/255|[from] move: Wish|[wisher] Beheeyem
+|upkeep
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Incinerate","id":"incinerate","pp":24,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"52/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p1a: Gallade|Gallade, L70, M|190/190
+|switch|p1b: Slowking|Slowking, L61, M|215/215
+|-ability|p1b: Slowking|Turboblaze
+|switch|p2a: Beheeyem|Beheeyem, L86, M|231/231
+|move|p2b: Gastly|Misty Terrain|p2b: Gastly
+|-fieldstart|move: Misty Terrain
+|
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Incinerate","id":"incinerate","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":28,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"52/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2a: Beheeyem|Beheeyem, L78, M|200/237
+|switch|p1b: Spoink|Spoink, L66, F|21/200
+|move|p1a: Gallade|Incinerate|p2b: Gastly|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Beheeyem|185/237
+|-damage|p2b: Gastly|102/147
+|-enditem|p2b: Gastly|Cheri Berry|[from] move: Incinerate
+|move|p2b: Gastly|Tickle|p1a: Gallade
+|-unboost|p1a: Gallade|atk|1
+|-unboost|p1a: Gallade|def|1
+|
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Incinerate","id":"incinerate","pp":22,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":27,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"52/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1b: Spoink|Acid Armor|p1b: Spoink
+|-boost|p1b: Spoink|def|2
+|move|p1a: Gallade|Incinerate|p2a: Beheeyem|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Beheeyem|170/237
+|-damage|p2b: Gastly|54/147
+|move|p2a: Beheeyem|Spore|p1a: Gallade
+|-activate|p1a: Gallade|move: Misty Terrain
+|debug|set status [slp] interrupted
+|debug|move failed because it did nothing
+|move|p2b: Gastly|Morning Sun|p2b: Gastly
+|-heal|p2b: Gastly|127/147
+|
+|-end|p2b: Gastly|Slow Start
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false}]},{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":27,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"52/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p1a: Pignite|Pignite, L93, F|291/307 slp
+|-weather|PrimordialSea|[from] ability: Primordial Sea|[of] p1a: Pignite
+|move|p2b: Gastly|Tickle|p1a: Pignite
+|-unboost|p1a: Pignite|atk|1
+|-unboost|p1a: Pignite|def|1
+|move|p1b: Spoink|Attract|p2b: Gastly
+|-start|p2b: Gastly|Attract
+|move|p2a: Beheeyem|Wish|p2a: Beheeyem
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Razor Shell","id":"razorshell","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Blaze Kick","id":"blazekick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Coat","id":"magiccoat","pp":23,"maxpp":24,"target":"self","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Incinerate","id":"incinerate","pp":22,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"190/190","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"52/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|-weather|none
+|switch|p1a: Kricketune|Kricketune, L65, F|173/219
+|switch|p1b: Gallade|Gallade, L70, M|190/190
+|debug|Removing Attract volatile on p2b: Gastly
+|-end|p2b: Gastly|Attract|[silent]
+|switch|p2a: Arceus|Arceus-Ice, L64|197/251
+|move|p2b: Gastly|Tickle|p1a: Kricketune
+|-unboost|p1a: Kricketune|atk|1
+|-unboost|p1a: Kricketune|def|1
+|
+|-heal|p2a: Arceus|251/251|[from] move: Wish|[wisher] Beheeyem
+|-fieldend|Misty Terrain
+|upkeep
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Acid Armor","id":"acidarmor","pp":27,"maxpp":32,"target":"self","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Attract","id":"attract","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Incinerate","id":"incinerate","pp":21,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"21/200","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"127/190","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"52/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|-end|p2b: Gastly|Slow Start|[silent]
+|switch|p2b: Gastly|Gastly, L86, M|231/231
+|switch|p1a: Spoink|Spoink, L66, F|21/200
+|move|p2a: Arceus|X-Scissor|p1b: Gallade
+|-damage|p1b: Gallade|127/190
+|move|p1b: Gallade|Incinerate|p2a: Arceus|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Arceus|235/251
+|-damage|p2b: Gastly|204/231
+|debug|illusion cleared
+|replace|p2b: Pidove|Pidove, L86, M
+|-end|p2b: Pidove|Illusion
+|
+|upkeep
+|turn|25
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":true,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"87/190 frz","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"52/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471113
+|move|p2a: Arceus|X-Scissor|p1a: Spoink
+|-supereffective|p1a: Spoink
+|-damage|p1a: Spoink|0 fnt
+|faint|p1a: Spoink
+|move|p1b: Gallade|Incinerate|p2a: Arceus|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Arceus|221/251
+|-damage|p2b: Pidove|179/231
+|move|p2b: Pidove|Tri Attack|p1b: Gallade
+|-damage|p1b: Gallade|87/190
+|-status|p1b: Gallade|frz
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":44,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Incinerate","id":"incinerate","pp":20,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"52/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"87/190 frz","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p1a: Latias|Latias, L77, F|52/237
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":44,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":20,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Incinerate","id":"incinerate","pp":20,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"52/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"47/190 frz","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1a: Latias|Defog|p2b: Pidove
+|-unboost|p2b: Pidove|evasion|1
+|move|p2a: Arceus|Sunny Day|p2a: Arceus
+|-weather|SunnyDay
+|cant|p1b: Gallade|frz
+|move|p2b: Pidove|Tri Attack|p1b: Gallade
+|-damage|p1b: Gallade|47/190 frz
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|27
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"12/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"47/190 frz","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p2a: Arceus|Sunny Day||[still]
+|-fail|p2a: Arceus
+|debug|move failed because it did nothing
+|cant|p1b: Gallade|frz
+|move|p2b: Pidove|Tri Attack|p1a: Latias
+|-damage|p1a: Latias|12/237
+|debug|artificial status immunity
+|debug|immune to status
+|move|p1a: Latias|Avalanche|p2b: Pidove
+|debug|Boosted for getting hit by p2b: Pidove
+|-supereffective|p2b: Pidove
+|-damage|p2b: Pidove|0 fnt
+|faint|p2b: Pidove
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":44,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":20,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Incinerate","id":"incinerate","pp":20,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"12/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"47/190 frz","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2b: Gastly|Gastly, L71, M|127/147
+|-start|p2b: Gastly|ability: Slow Start
+|turn|28
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"12/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"47/190","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2a: Ferrothorn|Ferrothorn, L86, F|255/255
+|-ability|p2a: Ferrothorn|Download|boost
+|-boost|p2a: Ferrothorn|atk|1
+|-curestatus|p1b: Gallade|frz|[msg]
+|move|p1b: Gallade|Incinerate|p2a: Ferrothorn|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Sunny Day fire boost
+|-supereffective|p2a: Ferrothorn
+|debug|Spread modifier: 0.75
+|debug|Sunny Day fire boost
+|-damage|p2a: Ferrothorn|187/255
+|-damage|p2b: Gastly|60/147
+|move|p2b: Gastly|Tickle|p1b: Gallade
+|-unboost|p1b: Gallade|atk|1
+|-unboost|p1b: Gallade|def|1
+|move|p1a: Latias|Avalanche|p2b: Gastly
+|-damage|p2b: Gastly|0 fnt
+|faint|p2b: Gastly
+|-end|p2b: Gastly|Slow Start|[silent]
+|
+|-weather|SunnyDay|[upkeep]
+|-heal|p2a: Ferrothorn|202/255|[from] item: Leftovers
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Avalanche","id":"avalanche","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Cut","id":"cut","pp":44,"maxpp":48,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":20,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Incinerate","id":"incinerate","pp":19,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"12/237","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"47/190","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2b: Beheeyem|Beheeyem, L78, M|170/237
+|turn|29
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"12/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"47/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p1a: Slowking|Slowking, L61, M|215/215
+|-ability|p1a: Slowking|Turboblaze
+|switch|p1b: Pignite|Pignite, L93, F|291/307 slp
+|-weather|PrimordialSea|[from] ability: Primordial Sea|[of] p1b: Pignite
+|move|p2a: Ferrothorn|Parting Shot|p1a: Slowking
+|-unboost|p1a: Slowking|atk|1
+|-unboost|p1a: Slowking|spa|1
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215 slp","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307 slp","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"12/237","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"47/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2a: Arceus|Arceus-Ice, L64|221/251|[from]move: Parting Shot
+|move|p2b: Beheeyem|Spore|p1a: Slowking
+|-status|p1a: Slowking|slp|[from] move: Spore
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|30
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":true,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215 slp","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"47/190","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471113
+|switch|p2b: Ferrothorn|Ferrothorn, L86, F|202/255
+|-ability|p2b: Ferrothorn|Download|boost
+|-boost|p2b: Ferrothorn|spa|1
+|switch|p1a: Latias|Latias, L77, F|12/237
+|move|p2a: Arceus|X-Scissor|p1a: Latias
+|-supereffective|p1a: Latias
+|-damage|p1a: Latias|0 fnt
+|faint|p1a: Latias
+|-curestatus|p1b: Pignite|slp|[msg]
+|move|p1b: Pignite|Surf|p2b: Ferrothorn|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Rain water boost
+|debug|Spread modifier: 0.75
+|debug|Rain water boost
+|-resisted|p2b: Ferrothorn
+|-damage|p2a: Arceus|158/251
+|-damage|p2b: Ferrothorn|179/255
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|194/255|[from] item: Leftovers
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Incinerate","id":"incinerate","pp":19,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"47/190","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215 slp","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p1a: Gallade|Gallade, L70, M|47/190
+|turn|31
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":true,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215 slp","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471113
+|move|p2a: Arceus|Magnet Bomb|p1a: Gallade
+|-damage|p1a: Gallade|2/190
+|move|p1b: Pignite|Surf|p2b: Ferrothorn|[spread] p1a,p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Rain water boost
+|debug|Spread modifier: 0.75
+|debug|Rain water boost
+|debug|Spread modifier: 0.75
+|debug|Rain water boost
+|-resisted|p2b: Ferrothorn
+|-damage|p1a: Gallade|0 fnt
+|-damage|p2a: Arceus|96/251
+|-damage|p2b: Ferrothorn|170/255
+|faint|p1a: Gallade
+|move|p2b: Ferrothorn|Last Resort||[still]
+|-fail|p2b: Ferrothorn
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|185/255|[from] item: Leftovers
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":22,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"215/215 slp","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"291/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p1a: Slowking|Slowking, L61, M|215/215 slp
+|-ability|p1a: Slowking|Turboblaze
+|turn|32
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":21,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"182/215 slp","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p2a: Arceus|X-Scissor|p1b: Pignite
+|-resisted|p1b: Pignite
+|-damage|p1b: Pignite|281/307
+|move|p1b: Pignite|Surf|p2a: Arceus|[spread] p1a,p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Rain water boost
+|-resisted|p1a: Slowking
+|debug|Spread modifier: 0.75
+|debug|Rain water boost
+|debug|Spread modifier: 0.75
+|debug|Rain water boost
+|-resisted|p2b: Ferrothorn
+|-damage|p1a: Slowking|182/215 slp
+|-damage|p2a: Arceus|35/251
+|-damage|p2b: Ferrothorn|160/255
+|move|p2b: Ferrothorn|Water Sport|p2b: Ferrothorn
+|-fieldstart|move: Water Sport|[of] p2b: Ferrothorn
+|cant|p1a: Slowking|slp
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|175/255|[from] item: Leftovers
+|upkeep
+|turn|33
+
+|request|{"active":[{"moves":[{"move":"Razor Shell","id":"razorshell","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Blaze Kick","id":"blazekick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Coat","id":"magiccoat","pp":23,"maxpp":24,"target":"self","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":21,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"173/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"182/215 slp","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2a: Beheeyem|Beheeyem, L78, M|170/237
+|switch|p1a: Kricketune|Kricketune, L65, F|173/219
+|move|p1b: Pignite|Scratch|p2a: Beheeyem
+|-damage|p2a: Beheeyem|133/237
+|move|p2b: Ferrothorn|Water Sport||[still]
+|-fail|p2b: Ferrothorn
+|debug|move failed because it did nothing
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|190/255|[from] item: Leftovers
+|upkeep
+|turn|34
+
+|request|{"active":[{"moves":[{"move":"Razor Shell","id":"razorshell","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Blaze Kick","id":"blazekick","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Coat","id":"magiccoat","pp":23,"maxpp":24,"target":"self","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":54,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":21,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"115/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"182/215 slp","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p2a: Beheeyem|Aqua Jet|p1a: Kricketune
+|debug|Rain water boost
+|-damage|p1a: Kricketune|115/219
+|move|p1b: Pignite|Scratch|p2a: Beheeyem
+|-crit|p2a: Beheeyem
+|-damage|p2a: Beheeyem|73/237
+|move|p1a: Kricketune|Blaze Kick||[still]
+|debug|Primordial Sea fire suppress
+|-fail|p1a: Kricketune|Blaze Kick|[from] Primordial Sea
+|move|p2b: Ferrothorn|Last Resort||[still]
+|-fail|p2b: Ferrothorn
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|205/255|[from] item: Leftovers
+|upkeep
+|turn|35
+
+|request|{"active":[{"moves":[{"move":"Razor Shell","id":"razorshell","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Blaze Kick","id":"blazekick","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Coat","id":"magiccoat","pp":23,"maxpp":24,"target":"self","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"77/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"182/215 slp","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":false,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|-weather|none
+|switch|p1b: Slowking|Slowking, L61, M|182/215 slp
+|-ability|p1b: Slowking|Turboblaze
+|switch|p2b: Arceus|Arceus-Ice, L64|35/251
+|move|p2a: Beheeyem|Aqua Jet|p1a: Kricketune
+|-damage|p1a: Kricketune|77/219
+|move|p1a: Kricketune|Blaze Kick|p2b: Arceus
+|debug|water sport weaken
+|-damage|p2b: Arceus|23/251
+|
+|upkeep
+|turn|36
+
+|request|{"active":[{"moves":[{"move":"Razor Shell","id":"razorshell","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Blaze Kick","id":"blazekick","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Coat","id":"magiccoat","pp":22,"maxpp":24,"target":"self","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":54,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":21,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"3/219","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"182/215 slp","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2a: Ferrothorn|Ferrothorn, L86, F|205/255
+|-ability|p2a: Ferrothorn|Download|boost
+|-boost|p2a: Ferrothorn|atk|1
+|switch|p1b: Pignite|Pignite, L93, F|281/307
+|-weather|PrimordialSea|[from] ability: Primordial Sea|[of] p1b: Pignite
+|move|p1a: Kricketune|Magic Coat|p1a: Kricketune
+|-singleturn|p1a: Kricketune|move: Magic Coat
+|move|p2b: Arceus|X-Scissor|p1a: Kricketune
+|-damage|p1a: Kricketune|3/219
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2a: Ferrothorn|220/255|[from] item: Leftovers
+|-fieldend|move: Water Sport
+|upkeep
+|turn|37
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":true,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"182/215 slp","active":false,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2a: Beheeyem|Beheeyem, L78, M|73/237
+|move|p1a: Kricketune|Defend Order|p1a: Kricketune
+|-boost|p1a: Kricketune|def|1
+|-boost|p1a: Kricketune|spd|1
+|move|p2b: Arceus|Magnet Bomb|p1a: Kricketune
+|-damage|p1a: Kricketune|0 fnt
+|faint|p1a: Kricketune
+|move|p1b: Pignite|Surf|p2b: Arceus|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Rain water boost
+|debug|Spread modifier: 0.75
+|debug|Rain water boost
+|-damage|p2a: Beheeyem|6/237
+|-damage|p2b: Arceus|0 fnt
+|faint|p2b: Arceus
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":54,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":20,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"182/215 slp","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|switch|p2b: Ferrothorn|Ferrothorn, L86, F|220/255
+|switch|p1a: Slowking|Slowking, L61, M|182/215 slp
+|-ability|p2b: Ferrothorn|Download|boost
+|-boost|p2b: Ferrothorn|spa|1
+|-ability|p1a: Slowking|Turboblaze
+|turn|38
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":62,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":54,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":20,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"164/215 slp","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p2a: Beheeyem|Aqua Jet|p1a: Slowking
+|debug|Rain water boost
+|-resisted|p1a: Slowking
+|-damage|p1a: Slowking|164/215 slp
+|move|p1b: Pignite|String Shot|p2b: Ferrothorn|[spread] p2a,p2b
+|-unboost|p2a: Beheeyem|spe|2
+|-ability|p2a: Beheeyem|Defiant
+|-boost|p2a: Beheeyem|atk|2
+|-unboost|p2b: Ferrothorn|spe|2
+|move|p2b: Ferrothorn|Water Sport|p2b: Ferrothorn
+|-fieldstart|move: Water Sport|[of] p2b: Ferrothorn
+|cant|p1a: Slowking|slp
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|235/255|[from] item: Leftovers
+|upkeep
+|turn|39
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":61,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":54,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":20,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"164/215","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1b: Pignite|String Shot|p2b: Ferrothorn|[spread] p2a,p2b
+|-unboost|p2a: Beheeyem|spe|2
+|-ability|p2a: Beheeyem|Defiant
+|-boost|p2a: Beheeyem|atk|2
+|-unboost|p2b: Ferrothorn|spe|2
+|-curestatus|p1a: Slowking|slp|[msg]
+|move|p1a: Slowking|Smelling Salts|p2a: Beheeyem
+|-damage|p2a: Beheeyem|0 fnt
+|faint|p2a: Beheeyem
+|move|p2b: Ferrothorn|Water Sport||[still]
+|-fail|p2b: Ferrothorn
+|debug|move failed because it did nothing
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|250/255|[from] item: Leftovers
+|upkeep
+|turn|40
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":60,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":54,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":20,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"70/215","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1b: Pignite|String Shot|p2b: Ferrothorn
+|-unboost|p2b: Ferrothorn|spe|2
+|move|p1a: Slowking|Secret Sword|p2b: Ferrothorn
+|-supereffective|p2b: Ferrothorn
+|-damage|p2b: Ferrothorn|202/255
+|move|p2b: Ferrothorn|Signal Beam|p1a: Slowking
+|-supereffective|p1a: Slowking
+|-damage|p1a: Slowking|70/215
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|217/255|[from] item: Leftovers
+|upkeep
+|turn|41
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":59,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":54,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":20,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"62/215","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1b: Pignite|String Shot|p2b: Ferrothorn
+|-unboost|p2b: Ferrothorn|spe|0
+|debug|move failed because it did nothing
+|move|p1a: Slowking|Head Smash|p2b: Ferrothorn
+|-resisted|p2b: Ferrothorn
+|-damage|p2b: Ferrothorn|202/255
+|-damage|p1a: Slowking|62/215|[from] Recoil
+|move|p2b: Ferrothorn|Parting Shot|p1b: Pignite
+|-unboost|p1b: Pignite|atk|1
+|-unboost|p1b: Pignite|spa|1
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|217/255|[from] item: Leftovers
+|upkeep
+|turn|42
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":59,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":53,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":20,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"62/215","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1b: Pignite|Scratch|p2b: Ferrothorn
+|-resisted|p2b: Ferrothorn
+|-damage|p2b: Ferrothorn|209/255
+|move|p1a: Slowking|Fire Spin||[still]
+|debug|Primordial Sea fire suppress
+|-fail|p1a: Slowking|Fire Spin|[from] Primordial Sea
+|move|p2b: Ferrothorn|Parting Shot|p1b: Pignite
+|-unboost|p1b: Pignite|atk|1
+|-unboost|p1b: Pignite|spa|1
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|224/255|[from] item: Leftovers
+|-fieldend|move: Water Sport
+|upkeep
+|turn|43
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":22,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":59,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":52,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":20,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"62/215","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1b: Pignite|Scratch|p2b: Ferrothorn
+|-resisted|p2b: Ferrothorn
+|-damage|p2b: Ferrothorn|218/255
+|move|p1a: Slowking|Fire Spin||[still]
+|debug|Primordial Sea fire suppress
+|-fail|p1a: Slowking|Fire Spin|[from] Primordial Sea
+|move|p2b: Ferrothorn|Parting Shot|p1a: Slowking
+|-unboost|p1a: Slowking|atk|1
+|-unboost|p1a: Slowking|spa|1
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|233/255|[from] item: Leftovers
+|upkeep
+|turn|44
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":59,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":52,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":19,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"45/215","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1b: Pignite|Surf|p2b: Ferrothorn|[spread] p1a,p2b
+|debug|Spread modifier: 0.75
+|debug|Rain water boost
+|-resisted|p1a: Slowking
+|debug|Spread modifier: 0.75
+|debug|Rain water boost
+|-resisted|p2b: Ferrothorn
+|-damage|p1a: Slowking|45/215
+|-damage|p2b: Ferrothorn|222/255
+|move|p1a: Slowking|Fire Spin||[still]
+|debug|Primordial Sea fire suppress
+|-fail|p1a: Slowking|Fire Spin|[from] Primordial Sea
+|move|p2b: Ferrothorn|Water Sport|p2b: Ferrothorn
+|-fieldstart|move: Water Sport|[of] p2b: Ferrothorn
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|237/255|[from] item: Leftovers
+|upkeep
+|turn|45
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":59,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":51,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":19,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"0 fnt","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1b: Pignite|Scratch|p2b: Ferrothorn
+|-resisted|p2b: Ferrothorn
+|-damage|p2b: Ferrothorn|231/255
+|move|p1a: Slowking|Head Smash|p2b: Ferrothorn
+|debug|Negating (sp)atk boost/penalty.
+|-resisted|p2b: Ferrothorn
+|-crit|p2b: Ferrothorn
+|-damage|p2b: Ferrothorn|209/255
+|-damage|p1a: Slowking|34/215|[from] Recoil
+|move|p2b: Ferrothorn|Last Resort|p1a: Slowking
+|-damage|p1a: Slowking|0 fnt
+|faint|p1a: Slowking
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|224/255|[from] item: Leftovers
+|upkeep
+|turn|46
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":59,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":50,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":19,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"0 fnt","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1b: Pignite|Scratch|p2b: Ferrothorn
+|-resisted|p2b: Ferrothorn
+|-damage|p2b: Ferrothorn|218/255
+|move|p2b: Ferrothorn|Parting Shot|p1b: Pignite
+|-unboost|p1b: Pignite|atk|1
+|-unboost|p1b: Pignite|spa|1
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|233/255|[from] item: Leftovers
+|upkeep
+|turn|47
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":59,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":50,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":18,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"0 fnt","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"281/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1b: Pignite|Surf|p2b: Ferrothorn
+|debug|Rain water boost
+|-resisted|p2b: Ferrothorn
+|-damage|p2b: Ferrothorn|220/255
+|move|p2b: Ferrothorn|Parting Shot|p1b: Pignite
+|-unboost|p1b: Pignite|atk|1
+|-unboost|p1b: Pignite|spa|1
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|235/255|[from] item: Leftovers
+|upkeep
+|turn|48
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":58,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":50,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":18,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"0 fnt","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"170/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1b: Pignite|String Shot|p2b: Ferrothorn
+|-unboost|p2b: Ferrothorn|spe|0
+|debug|move failed because it did nothing
+|move|p2b: Ferrothorn|Last Resort|p1b: Pignite
+|-damage|p1b: Pignite|170/307
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|250/255|[from] item: Leftovers
+|-fieldend|move: Water Sport
+|upkeep
+|turn|49
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":58,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":50,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":17,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"0 fnt","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"170/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1b: Pignite|Surf|p2b: Ferrothorn
+|debug|Rain water boost
+|-resisted|p2b: Ferrothorn
+|-damage|p2b: Ferrothorn|239/255
+|move|p2b: Ferrothorn|Parting Shot|p1b: Pignite
+|-unboost|p1b: Pignite|atk|1
+|-unboost|p1b: Pignite|spa|1
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|254/255|[from] item: Leftovers
+|upkeep
+|turn|50
+
+|request|{"active":[{"moves":[{"move":"Smelling Salts","id":"smellingsalts","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Secret Sword","id":"secretsword","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fire Spin","id":"firespin","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"String Shot","id":"stringshot","pp":57,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Scratch","id":"scratch","pp":50,"maxpp":56,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":17,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Slowking","details":"Slowking, L61, M","condition":"0 fnt","active":true,"stats":{"atk":94,"def":151,"spa":150,"spd":184,"spe":80},"moves":["smellingsalts","headsmash","secretsword","firespin"],"baseAbility":"turboblaze","item":"reapercloth","pokeball":"pokeball"},{"ident":"p1: Pignite","details":"Pignite, L93, F","condition":"63/307","active":true,"stats":{"atk":194,"def":170,"spa":163,"spd":123,"spe":155},"moves":["belch","stringshot","scratch","surf"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball"},{"ident":"p1: Spoink","details":"Spoink, L66, F","condition":"0 fnt","active":false,"stats":{"atk":81,"def":88,"spa":99,"spd":147,"spe":131},"moves":["acidarmor","dazzlinggleam","attract","takedown"],"baseAbility":"liquidooze","item":"duskball","pokeball":"pokeball"},{"ident":"p1: Gallade","details":"Gallade, L70, M","condition":"0 fnt","active":false,"stats":{"atk":225,"def":131,"spa":107,"spd":207,"spe":126},"moves":["withdraw","incinerate","willowisp","megapunch"],"baseAbility":"shellarmor","item":"luminousmoss","pokeball":"pokeball"},{"ident":"p1: Kricketune","details":"Kricketune, L65, F","condition":"0 fnt","active":false,"stats":{"atk":140,"def":96,"spa":95,"spd":80,"spe":154},"moves":["razorshell","blazekick","magiccoat","defendorder"],"baseAbility":"prankster","item":"diveball","pokeball":"pokeball"},{"ident":"p1: Latias","details":"Latias, L77, F","condition":"0 fnt","active":false,"stats":{"atk":185,"def":169,"spa":220,"spd":216,"spe":219},"moves":["avalanche","cut","shadowpunch","defog"],"baseAbility":"gluttony","item":"scizorite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471113
+|move|p1b: Pignite|String Shot|p2b: Ferrothorn
+|-unboost|p2b: Ferrothorn|spe|0
+|debug|move failed because it did nothing
+|move|p2b: Ferrothorn|Last Resort|p1b: Pignite
+|-damage|p1b: Pignite|63/307
+|
+|-weather|PrimordialSea|[upkeep]
+|-heal|p2b: Ferrothorn|255/255|[from] item: Leftovers
+|upkeep
+|turn|51
+
+|
+|t:|1603471113
+|move|p1b: Pignite|Surf|p2b: Ferrothorn
+|debug|Rain water boost
+|-resisted|p2b: Ferrothorn
+|-damage|p2b: Ferrothorn|245/255
+|move|p2b: Ferrothorn|Last Resort|p1b: Pignite
+|-damage|p1b: Pignite|0 fnt
+|faint|p1b: Pignite
+|-weather|none
+|
+|win|Bot 2

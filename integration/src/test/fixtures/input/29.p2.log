@@ -1,0 +1,611 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"239/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"305/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"258/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|t:|1603471155
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|6
+|tier|[Gen 6] Doubles Custom Game
+|clearpoke
+|poke|p1|Golem, L66, M|item
+|poke|p1|Klinklang, L97|item
+|poke|p1|Burmy, L84, F|item
+|poke|p1|Genesect-*, L81|item
+|poke|p1|Swinub, L62, F|item
+|poke|p1|Huntail, L82, M|item
+|poke|p2|Duosion, L97, F|item
+|poke|p2|Celebi, L55|item
+|poke|p2|Kabutops, L95, F|item
+|poke|p2|Skiddo, L79, M|item
+|poke|p2|Mime Jr., L95, F|item
+|poke|p2|Qwilfish, L97, M|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":56,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"239/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"305/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"258/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|start
+|switch|p1a: Golem|Golem, L66, M|239/239
+|switch|p1b: Klinklang|Klinklang, L97|305/305
+|switch|p2a: Duosion|Duosion, L97, F|276/276
+|switch|p2b: Celebi|Celebi, L55|192/192
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":56,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"239/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"sailfossil","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"305/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"258/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|move|p1b: Klinklang|Swallow||[still]
+|-fail|p1b: Klinklang
+|move|p2b: Celebi|Lucky Chant|p2b: Celebi
+|-sidestart|p2: Bot 2|move: Lucky Chant
+|move|p2a: Duosion|Fly||[still]
+|-prepare|p2a: Duosion|Fly
+|move|p1a: Golem|Switcheroo|p2b: Celebi
+|-activate|p1a: Golem|move: Trick|[of] p2b: Celebi
+|-item|p2b: Celebi|Stone Plate|[from] move: Switcheroo
+|-item|p1a: Golem|Sail Fossil|[from] move: Switcheroo
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":56,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"220/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"sailfossil","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"305/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"258/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|move|p1b: Klinklang|Assurance|p2b: Celebi
+|-supereffective|p2b: Celebi
+|-damage|p2b: Celebi|64/192
+|move|p2b: Celebi|Charm|p1b: Klinklang
+|-unboost|p1b: Klinklang|atk|2
+|move|p2a: Duosion|Fly|p1a: Golem|[from]lockedmove
+|-resisted|p1a: Golem
+|-damage|p1a: Golem|220/239
+|debug|Adding Stench flinch
+|move|p1a: Golem|Clear Smog|p2a: Duosion
+|-damage|p2a: Duosion|258/276
+|-clearboost|p2a: Duosion
+|
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":56,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"109/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"sailfossil","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"305/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"258/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|move|p2b: Celebi|Shadow Sneak|p1a: Golem
+|-damage|p1a: Golem|209/239
+|move|p1b: Klinklang|Swallow||[still]
+|-fail|p1b: Klinklang
+|move|p2a: Duosion|Blast Burn|p1a: Golem
+|-resisted|p1a: Golem
+|-damage|p1a: Golem|109/239
+|-mustrecharge|p2a: Duosion
+|debug|Adding Stench flinch
+|move|p1a: Golem|Clear Smog|p2b: Celebi
+|-supereffective|p2b: Celebi
+|-damage|p2b: Celebi|24/192
+|-clearboost|p2b: Celebi
+|
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":55,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"109/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"sailfossil","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"305/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"258/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p2b: Kabutops|Kabutops, L95, F|226/226
+|move|p1b: Klinklang|Wing Attack|p2a: Duosion
+|-damage|p2a: Duosion|226/276
+|cant|p2a: Duosion|recharge
+|debug|Adding Stench flinch
+|move|p1a: Golem|Round|p2b: Kabutops
+|-resisted|p2b: Kabutops
+|-damage|p2b: Kabutops|216/226
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Magnet Bomb","id":"magnetbomb","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Rain Dance","id":"raindance","pp":8,"maxpp":8,"target":"all","disabled":false},{"move":"Eruption","id":"eruption","pp":8,"maxpp":8,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":13,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":55,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":true,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"305/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"109/239","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"sailfossil","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"258/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p2b: Celebi|Celebi, L55|24/192
+|switch|p1a: Huntail|Huntail, L84, M|192/192
+|move|p1b: Klinklang|Swallow||[still]
+|-fail|p1b: Klinklang
+|move|p2a: Duosion|Stockpile|p2a: Duosion
+|-start|p2a: Duosion|stockpile1
+|-boost|p2a: Duosion|def|1
+|-boost|p2a: Duosion|spd|1
+|
+|-sideend|p2: Bot 2|move: Lucky Chant
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":12,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":55,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"109/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"sailfossil","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"305/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"258/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p2b: Mime Jr.|Mime Jr., L95, F|176/176
+|switch|p2a: Skiddo|Skiddo, L79, M|212/212
+|switch|p1a: Golem|Golem, L66, M|109/239
+|move|p1b: Klinklang|Swallow||[still]
+|-fail|p1b: Klinklang
+|
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":11,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":55,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"109/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"305/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"258/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p2a: Qwilfish|Qwilfish, L97, M|282/282
+|move|p2b: Mime Jr.|Spark|p1a: Golem
+|-immune|p1a: Golem
+|move|p1b: Klinklang|Swallow||[still]
+|-fail|p1b: Klinklang
+|move|p1a: Golem|Switcheroo|p2a: Qwilfish
+|-activate|p1a: Golem|move: Trick|[of] p2a: Qwilfish
+|-item|p2a: Qwilfish|Sail Fossil|[from] move: Switcheroo
+|-item|p1a: Golem|Lucky Punch|[from] move: Switcheroo
+|
+|upkeep
+|turn|8
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"109/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"301/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"258/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|move|p2a: Qwilfish|Lunar Dance|p2a: Qwilfish
+|debug|Lunar Dance started on Bot 2
+|faint|p2a: Qwilfish
+|move|p2b: Mime Jr.|Rollout|p1b: Klinklang
+|debug|Rollout bp: 30
+|-resisted|p1b: Klinklang
+|-damage|p1b: Klinklang|301/305
+|move|p1b: Klinklang|Swallow||[still]
+|-fail|p1b: Klinklang
+|debug|Adding Stench flinch
+|move|p1a: Golem|Round|p2b: Mime Jr.
+|-damage|p2b: Mime Jr.|161/176
+|debug|Shield Dust prevent secondary
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":22,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":10,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":55,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"109/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"301/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"258/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p2a: Skiddo|Skiddo, L79, M|212/212
+|-heal|p2a: Skiddo|212/212|[from] move: Lunar Dance
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Healing Wish","id":"healingwish","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Petal Dance","id":"petaldance","pp":16,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Rock Slide","id":"rockslide","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Metal Burst","id":"metalburst","pp":16,"maxpp":16,"target":"scripted","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"109/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":true,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"301/305","active":false,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p1b: Genesect|Genesect-Douse, L81|258/258
+|-weather|DeltaStream|[from] ability: Delta Stream|[of] p1b: Genesect
+|move|p2b: Mime Jr.|Rollout|p1b: Genesect|[from]lockedmove
+|debug|Rollout bp: 60
+|-damage|p1b: Genesect|226/258
+|move|p2a: Skiddo|Metal Sound|p1a: Golem
+|-unboost|p1a: Golem|spd|2
+|debug|Adding Stench flinch
+|move|p1a: Golem|Round|p2b: Mime Jr.
+|-damage|p2b: Mime Jr.|144/176
+|debug|Shield Dust prevent secondary
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|10
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":10,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":55,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"109/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"285/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|-weather|none
+|switch|p1b: Klinklang|Klinklang, L97|301/305
+|switch|p2a: Celebi|Celebi, L55|24/192
+|move|p2b: Mime Jr.|Rollout|p1b: Klinklang|[from]lockedmove
+|debug|Rollout bp: 120
+|-resisted|p1b: Klinklang
+|-damage|p1b: Klinklang|285/305
+|debug|Adding Stench flinch
+|move|p1a: Golem|Clear Smog|p2b: Mime Jr.
+|-supereffective|p2b: Mime Jr.
+|-damage|p2b: Mime Jr.|118/176
+|-clearboost|p2b: Mime Jr.
+|debug|Shield Dust prevent secondary
+|
+|upkeep
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":10,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":47,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":55,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"251/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|move|p2a: Celebi|Shadow Sneak|p1a: Golem
+|-damage|p1a: Golem|98/239
+|move|p2b: Mime Jr.|Rollout|p1b: Klinklang|[from]lockedmove
+|debug|Rollout bp: 240
+|-resisted|p1b: Klinklang
+|-damage|p1b: Klinklang|251/305
+|move|p1b: Klinklang|Haze|p1b: Klinklang
+|-clearallboost
+|debug|Adding Stench flinch
+|move|p1a: Golem|Clear Smog|p2b: Mime Jr.
+|-supereffective|p2b: Mime Jr.
+|-crit|p2b: Mime Jr.
+|-damage|p2b: Mime Jr.|78/176
+|-clearboost|p2b: Mime Jr.
+|debug|Shield Dust prevent secondary
+|
+|upkeep
+|turn|12
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"189/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|move|p2b: Mime Jr.|Rollout|p1b: Klinklang|[from]lockedmove
+|debug|Rollout bp: 480
+|-resisted|p1b: Klinklang
+|-damage|p1b: Klinklang|189/305
+|move|p1b: Klinklang|Assurance|p2b: Mime Jr.
+|-damage|p2b: Mime Jr.|0 fnt
+|faint|p2b: Mime Jr.
+|move|p2a: Celebi|Charm|p1b: Klinklang
+|-unboost|p1b: Klinklang|atk|2
+|move|p1a: Golem|Switcheroo|p2a: Celebi
+|-activate|p1a: Golem|move: Trick|[of] p2a: Celebi
+|-item|p2a: Celebi|Lucky Punch|[from] move: Switcheroo
+|-item|p1a: Golem|Stone Plate|[from] move: Switcheroo
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":10,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":47,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":55,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"189/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p2b: Kabutops|Kabutops, L95, F|216/226
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":20,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":10,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":47,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":55,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"189/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"151/151","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p2b: Duosion|Duosion, L97, F|226/276
+|switch|p2a: Skiddo|Skiddo, L79, M|212/212
+|move|p1b: Klinklang|Assurance|p2a: Skiddo
+|-damage|p2a: Skiddo|168/212
+|debug|Adding Stench flinch
+|move|p1a: Golem|Round|p2b: Duosion
+|-damage|p2b: Duosion|204/276
+|
+|upkeep
+|turn|14
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":true,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"189/305","active":false,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471155
+|switch|p1b: Swinub|Swinub, L62, F|151/151
+|move|p2a: Skiddo|Heal Pulse||[still]
+|-fail|p2a: Skiddo
+|debug|move failed because it did nothing
+|move|p2b: Duosion|Blast Burn|p1b: Swinub
+|-supereffective|p1b: Swinub
+|-crit|p1b: Swinub
+|-damage|p1b: Swinub|0 fnt
+|-mustrecharge|p2b: Duosion
+|faint|p1b: Swinub
+|debug|Adding Stench flinch
+|move|p1a: Golem|Clear Smog|p2b: Duosion
+|-damage|p2b: Duosion|183/276
+|-clearboost|p2b: Duosion
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":20,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hyperspace Fury","id":"hyperspacefury","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Imprison","id":"imprison","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Hold Back","id":"holdback","pp":64,"maxpp":64,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"189/305","active":false,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p1b: Huntail|Huntail, L82, M|221/221
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Assurance","id":"assurance","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":10,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":47,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":55,"maxpp":56,"target":"any","disabled":false}]},{"moves":[{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hyperspace Fury","id":"hyperspacefury","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Imprison","id":"imprison","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Hold Back","id":"holdback","pp":63,"maxpp":64,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"189/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p1a: Klinklang|Klinklang, L97|189/305
+|move|p2a: Skiddo|Heal Pulse||[still]
+|-fail|p2a: Skiddo
+|debug|move failed because it did nothing
+|move|p1b: Huntail|Hold Back|p2b: Duosion
+|-damage|p2b: Duosion|147/276
+|cant|p2b: Duosion|recharge
+|
+|upkeep
+|turn|16
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"189/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|move|p1a: Klinklang|Wing Attack|p2a: Skiddo
+|-supereffective|p2a: Skiddo
+|-damage|p2a: Skiddo|0 fnt
+|faint|p2a: Skiddo
+|move|p1b: Huntail|Hyperspace Fury|p2b: Duosion
+|-hint|Only a Pokemon whose form is Hoopa Unbound can use this move.
+|-fail|p1b: Huntail|move: Hyperspace Fury
+|move|p2b: Duosion|Fly||[still]
+|-prepare|p2b: Duosion|Fly
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Assurance","id":"assurance","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":10,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":47,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":54,"maxpp":56,"target":"any","disabled":false}]},{"moves":[{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hyperspace Fury","id":"hyperspacefury","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Imprison","id":"imprison","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Hold Back","id":"holdback","pp":63,"maxpp":64,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"189/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"192/192","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p2a: Kabutops|Kabutops, L95, F|216/226
+|turn|17
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"189/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":true,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471155
+|switch|p1b: Golem|Golem, L84, M|192/192
+|move|p2a: Kabutops|Scratch|p1b: Golem
+|-crit|p1b: Golem
+|-damage|p1b: Golem|101/192
+|debug|illusion cleared
+|replace|p1b: Burmy|Burmy, L84, F
+|-end|p1b: Burmy|Illusion
+|move|p1a: Klinklang|Haze|p1a: Klinklang
+|-clearallboost
+|move|p2b: Duosion|Fly|p1b: Burmy|[from]lockedmove
+|-supereffective|p1b: Burmy
+|-damage|p1b: Burmy|0 fnt
+|faint|p1b: Burmy
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Assurance","id":"assurance","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":10,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":46,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":54,"maxpp":56,"target":"any","disabled":false}]},{"moves":[{"move":"Healing Wish","id":"healingwish","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Petal Dance","id":"petaldance","pp":16,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Rock Slide","id":"rockslide","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Metal Burst","id":"metalburst","pp":16,"maxpp":16,"target":"scripted","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"189/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":true,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p1b: Genesect|Genesect-Douse, L81|226/258
+|-weather|DeltaStream|[from] ability: Delta Stream|[of] p1b: Genesect
+|turn|18
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"189/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":true,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|debug|before turn callback: metalburst
+|switch|p2a: Celebi|Celebi, L55|24/192
+|move|p1b: Genesect|Metal Burst||[still]
+|-fail|p1b: Genesect
+|move|p1a: Klinklang|Wing Attack|p2a: Celebi
+|-supereffective|p2a: Celebi
+|-damage|p2a: Celebi|0 fnt
+|faint|p2a: Celebi
+|move|p2b: Duosion|Stockpile|p2b: Duosion
+|-start|p2b: Duosion|stockpile1
+|-boost|p2b: Duosion|def|1
+|-boost|p2b: Duosion|spd|1
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Assurance","id":"assurance","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":10,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":46,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":53,"maxpp":56,"target":"any","disabled":false}]},{"moves":[{"move":"Healing Wish","id":"healingwish","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Petal Dance","id":"petaldance","pp":16,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Rock Slide","id":"rockslide","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Metal Burst","id":"metalburst","pp":15,"maxpp":16,"target":"scripted","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"189/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"226/258","active":true,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p2a: Kabutops|Kabutops, L95, F|216/226
+|turn|19
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"177/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"0 fnt","active":true,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471155
+|move|p2a: Kabutops|Scratch|p1a: Klinklang
+|-resisted|p1a: Klinklang
+|-damage|p1a: Klinklang|177/305
+|move|p1b: Genesect|Healing Wish|p1b: Genesect
+|faint|p1b: Genesect
+|-weather|none
+|move|p1a: Klinklang|Wing Attack|p2b: Duosion
+|-damage|p2b: Duosion|102/276
+|move|p2b: Duosion|Stockpile|p2b: Duosion
+|-start|p2b: Duosion|stockpile2
+|-boost|p2b: Duosion|def|1
+|-boost|p2b: Duosion|spd|1
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Assurance","id":"assurance","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":10,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":46,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":52,"maxpp":56,"target":"any","disabled":false}]},{"moves":[{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hyperspace Fury","id":"hyperspacefury","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Imprison","id":"imprison","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Hold Back","id":"holdback","pp":63,"maxpp":64,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"177/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"0 fnt","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p1b: Huntail|Huntail, L82, M|221/221
+|-heal|p1b: Huntail|221/221|[from] move: Healing Wish
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":20,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hyperspace Fury","id":"hyperspacefury","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Imprison","id":"imprison","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Hold Back","id":"holdback","pp":62,"maxpp":64,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"98/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"221/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"0 fnt","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"177/305","active":false,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p1a: Golem|Golem, L66, M|98/239
+|cant|p2a: Kabutops|ability: Truant
+|move|p1b: Huntail|Hold Back|p2a: Kabutops
+|-resisted|p2a: Kabutops
+|-damage|p2a: Kabutops|206/226
+|move|p2b: Duosion|Fly||[still]
+|-prepare|p2b: Duosion|Fly
+|
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Switcheroo","id":"switcheroo","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Clear Smog","id":"clearsmog","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Round","id":"round","pp":19,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hyperspace Fury","id":"hyperspacefury","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Imprison","id":"imprison","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Hold Back","id":"holdback","pp":62,"maxpp":64,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"77/239","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"193/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"0 fnt","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"177/305","active":false,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|move|p2a: Kabutops|Scratch|p1b: Huntail
+|-damage|p1b: Huntail|193/221
+|move|p1b: Huntail|Imprison|p1b: Huntail
+|-start|p1b: Huntail|move: Imprison
+|move|p2b: Duosion|Fly|p1a: Golem|[from]lockedmove
+|-resisted|p1a: Golem
+|-damage|p1a: Golem|77/239
+|debug|Adding Stench flinch
+|move|p1a: Golem|Round|p2a: Kabutops
+|-resisted|p2a: Kabutops
+|-damage|p2a: Kabutops|196/226
+|
+|upkeep
+|turn|22
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Golem","details":"Golem, L66, M","condition":"0 fnt","active":true,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"177/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"0 fnt","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"193/221","active":false,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471155
+|switch|p1b: Klinklang|Klinklang, L97|177/305
+|move|p2b: Duosion|Blast Burn|p1a: Golem
+|-resisted|p1a: Golem
+|-damage|p1a: Golem|0 fnt
+|-mustrecharge|p2b: Duosion
+|faint|p1a: Golem
+|cant|p2a: Kabutops|ability: Truant
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hyperspace Fury","id":"hyperspacefury","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Imprison","id":"imprison","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Hold Back","id":"holdback","pp":62,"maxpp":64,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":10,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":46,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":52,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"193/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"177/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"0 fnt","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|switch|p1a: Huntail|Huntail, L82, M|193/221
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hyperspace Fury","id":"hyperspacefury","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Imprison","id":"imprison","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Hold Back","id":"holdback","pp":61,"maxpp":64,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":9,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":46,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":52,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"193/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"177/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"0 fnt","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|move|p2a: Kabutops|Mist|p2a: Kabutops
+|-sidestart|p2: Bot 2|Mist
+|move|p1b: Klinklang|Swallow||[still]
+|-fail|p1b: Klinklang
+|move|p1a: Huntail|Hold Back|p2b: Duosion
+|-damage|p2b: Duosion|83/276
+|cant|p2b: Duosion|recharge
+|
+|upkeep
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hyperspace Fury","id":"hyperspacefury","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Imprison","id":"imprison","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Hold Back","id":"holdback","pp":61,"maxpp":64,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":9,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":45,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":52,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"193/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"177/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"0 fnt","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|cant|p2a: Kabutops|ability: Truant
+|move|p1b: Klinklang|Haze|p1b: Klinklang
+|-clearallboost
+|move|p1a: Huntail|Hyperspace Fury|p2b: Duosion
+|-hint|Only a Pokemon whose form is Hoopa Unbound can use this move.
+|-fail|p1a: Huntail|move: Hyperspace Fury
+|move|p2b: Duosion|Fly||[still]
+|-prepare|p2b: Duosion|Fly
+|
+|upkeep
+|turn|25
+
+|request|{"active":[{"moves":[{"move":"Head Smash","id":"headsmash","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Hyperspace Fury","id":"hyperspacefury","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Imprison","id":"imprison","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Hold Back","id":"holdback","pp":61,"maxpp":64,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":8,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":45,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":52,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"158/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"177/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"0 fnt","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|move|p2a: Kabutops|Mist||[still]
+|-fail|p2a: Kabutops
+|debug|move failed because it did nothing
+|move|p1b: Klinklang|Swallow||[still]
+|-fail|p1b: Klinklang
+|move|p1a: Huntail|Head Smash|p2b: Duosion|[miss]
+|-miss|p1a: Huntail|p2b: Duosion
+|move|p2b: Duosion|Fly|p1a: Huntail|[from]lockedmove
+|-damage|p1a: Huntail|158/221
+|-status|p2b: Duosion|par|[from] ability: Effect Spore|[of] p1a: Huntail
+|
+|upkeep
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Head Smash","id":"headsmash","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Hyperspace Fury","id":"hyperspacefury","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Imprison","id":"imprison","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Hold Back","id":"holdback","pp":60,"maxpp":64,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":8,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":45,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":52,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"54/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"177/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"0 fnt","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|cant|p2a: Kabutops|ability: Truant
+|move|p1b: Klinklang|Assurance|p2a: Kabutops
+|-damage|p2a: Kabutops|157/226
+|move|p1a: Huntail|Hold Back|p2a: Kabutops
+|-resisted|p2a: Kabutops
+|-damage|p2a: Kabutops|146/226
+|move|p2b: Duosion|Blast Burn|p1a: Huntail
+|-resisted|p1a: Huntail
+|-damage|p1a: Huntail|54/221
+|-mustrecharge|p2b: Duosion
+|
+|upkeep
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Head Smash","id":"headsmash","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Hyperspace Fury","id":"hyperspacefury","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Imprison","id":"imprison","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Hold Back","id":"holdback","pp":60,"maxpp":64,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":7,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":45,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":52,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"54/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"177/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"0 fnt","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|move|p2a: Kabutops|Mist||[still]
+|-fail|p2a: Kabutops
+|debug|move failed because it did nothing
+|move|p1b: Klinklang|Swallow||[still]
+|-fail|p1b: Klinklang
+|move|p1a: Huntail|Imprison|p1a: Huntail
+|-start|p1a: Huntail|move: Imprison
+|cant|p2b: Duosion|recharge
+|
+|-sideend|p2: Bot 2|Mist
+|upkeep
+|turn|28
+
+|request|{"active":[{"moves":[{"move":"Head Smash","id":"headsmash","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Hyperspace Fury","id":"hyperspacefury","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Imprison","id":"imprison","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Hold Back","id":"holdback","pp":60,"maxpp":64,"target":"normal","disabled":false}]},{"moves":[{"move":"Assurance","id":"assurance","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":7,"maxpp":16,"target":"self","disabled":false},{"move":"Haze","id":"haze","pp":45,"maxpp":48,"target":"all","disabled":false},{"move":"Wing Attack","id":"wingattack","pp":51,"maxpp":56,"target":"any","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Huntail","details":"Huntail, L82, M","condition":"18/221","active":true,"stats":{"atk":194,"def":258,"spa":198,"spd":153,"spe":120},"moves":["headsmash","hyperspacefury","imprison","holdback"],"baseAbility":"effectspore","item":"repeatball","pokeball":"pokeball"},{"ident":"p1: Klinklang","details":"Klinklang, L97","condition":"177/305","active":true,"stats":{"atk":213,"def":283,"spa":162,"spd":220,"spe":187},"moves":["assurance","swallow","haze","wingattack"],"baseAbility":"snowcloak","item":"splashplate","pokeball":"pokeball"},{"ident":"p1: Genesect","details":"Genesect-Douse, L81","condition":"0 fnt","active":false,"stats":{"atk":245,"def":152,"spa":249,"spd":205,"spe":219},"moves":["healingwish","petaldance","rockslide","metalburst"],"baseAbility":"deltastream","item":"rawstberry","pokeball":"pokeball"},{"ident":"p1: Burmy","details":"Burmy, L84, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":120,"spa":130,"spd":117,"spe":97},"moves":["magnetbomb","leechlife","raindance","eruption"],"baseAbility":"illusion","item":"stick","pokeball":"pokeball"},{"ident":"p1: Golem","details":"Golem, L66, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":214,"spa":124,"spd":138,"spe":60},"moves":["belch","switcheroo","clearsmog","round"],"baseAbility":"stench","item":"stoneplate","pokeball":"pokeball"},{"ident":"p1: Swinub","details":"Swinub, L62, F","condition":"0 fnt","active":false,"stats":{"atk":72,"def":101,"spa":94,"spd":67,"spe":97},"moves":["amnesia","kinesis","dragonrush","doublekick"],"baseAbility":"weakarmor","item":"quickclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471155
+|cant|p2a: Kabutops|ability: Truant
+|move|p1b: Klinklang|Wing Attack|p2b: Duosion
+|-damage|p2b: Duosion|18/276 par
+|move|p1a: Huntail|Head Smash|p2a: Kabutops
+|-damage|p2a: Kabutops|75/226
+|-damage|p1a: Huntail|18/221|[from] Recoil
+|cant|p2b: Duosion|par
+|
+|upkeep
+|turn|29
+
+|
+|t:|1603471155
+|move|p1b: Klinklang|Swallow||[still]
+|-fail|p1b: Klinklang
+|move|p1a: Huntail|Hold Back|p2a: Kabutops
+|-resisted|p2a: Kabutops
+|-damage|p2a: Kabutops|64/226
+|move|p2b: Duosion|Blast Burn|p1b: Klinklang
+|-supereffective|p1b: Klinklang
+|-damage|p1b: Klinklang|0 fnt
+|-mustrecharge|p2b: Duosion
+|faint|p1b: Klinklang
+|move|p2a: Kabutops|Vital Throw|p1a: Huntail
+|-damage|p1a: Huntail|0 fnt
+|faint|p1a: Huntail
+|
+|win|Bot 2

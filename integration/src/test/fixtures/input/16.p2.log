@@ -1,0 +1,544 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Snover","details":"Snover, L90, M","condition":"289/289","active":true,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":true,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"204/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"286/286","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"309/309","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|t:|1603471123
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|6
+|tier|[Gen 6] Doubles Custom Game
+|clearpoke
+|poke|p1|Snover, L90, M|item
+|poke|p1|Azurill, L79, F|item
+|poke|p1|Buneary, L81, M|item
+|poke|p1|Mesprit, L80|item
+|poke|p1|Heatmor, L93, M|item
+|poke|p1|Heracross-Mega, L77, M|item
+|poke|p2|Mew, L75|item
+|poke|p2|Altaria, L88, F|item
+|poke|p2|Arceus-*, L86|item
+|poke|p2|Woobat, L50, M|item
+|poke|p2|Heatran, L52, F|item
+|poke|p2|Swalot, L50, M|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Safeguard","id":"safeguard","pp":40,"maxpp":40,"target":"allySide","disabled":false},{"move":"Reflect Type","id":"reflecttype","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Crunch","id":"crunch","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Fire Punch","id":"firepunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Mirror Coat","id":"mirrorcoat","pp":32,"maxpp":32,"target":"scripted","disabled":false},{"move":"Splash","id":"splash","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Leaf Tornado","id":"leaftornado","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Snover","details":"Snover, L90, M","condition":"289/289","active":true,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":true,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"204/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"286/286","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"309/309","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|start
+|switch|p1a: Snover|Snover, L90, M|289/289
+|switch|p1b: Azurill|Azurill, L79, F|226/226
+|switch|p2a: Mew|Mew, L75|253/253
+|switch|p2b: Altaria|Altaria, L88, F|289/289
+|-ability|p1b: Azurill|Unnerve|p2: Bot 2
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Safeguard","id":"safeguard","pp":40,"maxpp":40,"target":"allySide","disabled":false},{"move":"Reflect Type","id":"reflecttype","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Crunch","id":"crunch","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Fire Punch","id":"firepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Mirror Coat","id":"mirrorcoat","pp":32,"maxpp":32,"target":"scripted","disabled":false},{"move":"Splash","id":"splash","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Leaf Tornado","id":"leaftornado","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Snover","details":"Snover, L90, M","condition":"289/289","active":true,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":true,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"204/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"286/286","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"309/309","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|move|p2b: Altaria|Agility|p2b: Altaria
+|-boost|p2b: Altaria|spe|2
+|move|p2a: Mew|Aromatherapy||[still]
+|-activate|p2a: Mew|move: Aromatherapy
+|-fail|p2a: Mew
+|debug|move failed because it did nothing
+|move|p1a: Snover|Disable|p2b: Altaria
+|-start|p2b: Altaria|Disable|Agility
+|move|p1b: Azurill|Fire Punch|p2a: Mew
+|-damage|p2a: Mew|240/253
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Safeguard","id":"safeguard","pp":39,"maxpp":40,"target":"allySide","disabled":false},{"move":"Reflect Type","id":"reflecttype","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Crunch","id":"crunch","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Sing","id":"sing","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Electroweb","id":"electroweb","pp":24,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Snover","details":"Snover, L90, M","condition":"289/289","active":true,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"204/204","active":true,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"286/286","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"309/309","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p2a: Arceus|Arceus-Steel, L86|364/364
+|switch|p1b: Buneary|Buneary, L81, M|204/204
+|move|p2b: Altaria|Bind|p1b: Buneary|[miss]
+|-miss|p2b: Altaria|p1b: Buneary
+|move|p1a: Snover|Safeguard|p1a: Snover
+|-sidestart|p1: Bot 1|Safeguard
+|
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Safeguard","id":"safeguard","pp":39,"maxpp":40,"target":"allySide","disabled":false},{"move":"Reflect Type","id":"reflecttype","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Crunch","id":"crunch","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Sing","id":"sing","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Electroweb","id":"electroweb","pp":24,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Snover","details":"Snover, L90, M","condition":"141/289","active":true,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"204/204","active":true,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"286/286","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"309/309","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|move|p2a: Arceus|Zen Headbutt|p1a: Snover
+|-crit|p1a: Snover
+|-damage|p1a: Snover|141/289
+|move|p2b: Altaria|Lucky Chant|p2b: Altaria
+|-sidestart|p2: Bot 2|move: Lucky Chant
+|move|p1b: Buneary|Sing|p2b: Altaria|[miss]
+|-miss|p1b: Buneary|p2b: Altaria
+|move|p1a: Snover|Reflect Type|p2a: Arceus
+|-start|p1a: Snover|typechange|[from] move: Reflect Type|[of] p2a: Arceus
+|
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Safeguard","id":"safeguard","pp":39,"maxpp":40,"target":"allySide","disabled":false},{"move":"Reflect Type","id":"reflecttype","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Crunch","id":"crunch","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Sing","id":"sing","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Electroweb","id":"electroweb","pp":24,"maxpp":24,"target":"allAdjacentFoes","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Snover","details":"Snover, L90, M","condition":"48/289","active":true,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"158/204","active":true,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"286/286","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"309/309","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|move|p2a: Arceus|Zen Headbutt|p1a: Snover
+|-damage|p1a: Snover|48/289
+|move|p2b: Altaria|Wrap|p1b: Buneary
+|-damage|p1b: Buneary|183/204
+|-activate|p1b: Buneary|move: Wrap|[of] p2b: Altaria
+|move|p1b: Buneary|Thunder|p2a: Arceus
+|-damage|p2a: Arceus|332/364
+|cant|p1a: Snover|flinch
+|
+|-damage|p1b: Buneary|158/204|[from] move: Wrap|[partiallytrapped]
+|upkeep
+|turn|5
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":true,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"112/204","active":true,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"286/286","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"309/309","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471123
+|move|p2a: Arceus|Zen Headbutt|p1a: Snover
+|-damage|p1a: Snover|0 fnt
+|faint|p1a: Snover
+|move|p2b: Altaria|Bind|p1b: Buneary
+|-damage|p1b: Buneary|137/204
+|move|p1b: Buneary|Swagger|p2a: Arceus
+|-boost|p2a: Arceus|atk|2
+|-start|p2a: Arceus|confusion
+|
+|-damage|p1b: Buneary|112/204|[from] move: Wrap|[partiallytrapped]
+|-end|p2b: Altaria|Disable
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Fire Punch","id":"firepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Mirror Coat","id":"mirrorcoat","pp":32,"maxpp":32,"target":"scripted","disabled":false},{"move":"Splash","id":"splash","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Leaf Tornado","id":"leaftornado","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Sing","id":"sing","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Electroweb","id":"electroweb","pp":24,"maxpp":24,"target":"allAdjacentFoes","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":true,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"112/204","active":true,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"286/286","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"309/309","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p1a: Azurill|Azurill, L79, F|226/226
+|-ability|p1a: Azurill|Unnerve|p2: Bot 2
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Assist","id":"assist","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Fissure","id":"fissure","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"V-create","id":"vcreate","pp":8,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Sing","id":"sing","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Electroweb","id":"electroweb","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"286/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"87/204","active":true,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"309/309","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p2a: Woobat|Woobat, L50, M|130/130
+|switch|p1a: Mesprit|Mesprit, L80|286/286
+|move|p2b: Altaria|Agility|p2b: Altaria
+|-boost|p2b: Altaria|spe|2
+|move|p1b: Buneary|Electroweb|p2a: Woobat|[spread] p2b
+|-miss|p1b: Buneary|p2a: Woobat
+|debug|Spread modifier: 0.75
+|-damage|p2b: Altaria|278/289
+|-unboost|p2b: Altaria|spe|1
+|
+|-damage|p1b: Buneary|87/204|[from] move: Wrap|[partiallytrapped]
+|-sideend|p1: Bot 1|Safeguard
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Assist","id":"assist","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Fissure","id":"fissure","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"V-create","id":"vcreate","pp":8,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Sing","id":"sing","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Electroweb","id":"electroweb","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"274/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"62/204","active":true,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"309/309","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|move|p2b: Altaria|Agility|p2b: Altaria
+|-boost|p2b: Altaria|spe|2
+|move|p1b: Buneary|Swagger|p2b: Altaria
+|-boost|p2b: Altaria|atk|2
+|-start|p2b: Altaria|confusion
+|move|p1a: Mesprit|Assist|p1a: Mesprit
+|move|p1a: Mesprit|Crunch|p2b: Altaria|[from]Assist
+|-damage|p2b: Altaria|230/289
+|move|p2a: Woobat|Razor Shell|p1a: Mesprit
+|-damage|p1a: Mesprit|274/286
+|-unboost|p1a: Mesprit|def|1
+|
+|-damage|p1b: Buneary|62/204|[from] move: Wrap|[partiallytrapped]
+|-sideend|p2: Bot 2|move: Lucky Chant
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Assist","id":"assist","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Fissure","id":"fissure","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"V-create","id":"vcreate","pp":8,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Sing","id":"sing","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Electroweb","id":"electroweb","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"274/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":true,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"309/309","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|-activate|p2b: Altaria|confusion
+|move|p2b: Altaria|Wrap|p1b: Buneary
+|-damage|p1b: Buneary|22/204
+|move|p1b: Buneary|Sing|p2a: Woobat
+|-status|p2a: Woobat|slp|[from] move: Sing
+|move|p1a: Mesprit|Fissure|p2a: Woobat
+|-immune|p2a: Woobat
+|cant|p2a: Woobat|slp
+|
+|-end|p1b: Buneary|Wrap|[partiallytrapped]
+|upkeep
+|turn|9
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"274/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":true,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"309/309","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|cant|p2a: Woobat|slp
+|-activate|p2b: Altaria|confusion
+|move|p2b: Altaria|Agility|p2b: Altaria
+|-boost|p2b: Altaria|spe|1
+|move|p1b: Buneary|Sing|p2b: Altaria|[miss]
+|-miss|p1b: Buneary|p2b: Altaria
+|move|p1a: Mesprit|Crabhammer|p2a: Woobat
+|-damage|p2a: Woobat|0 fnt
+|faint|p2a: Woobat
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Assist","id":"assist","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Fissure","id":"fissure","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"V-create","id":"vcreate","pp":8,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Sing","id":"sing","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Electroweb","id":"electroweb","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"274/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":true,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"309/309","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p2a: Heatran|Heatran, L52, F|185/185
+|-weather|Hail|[from] ability: Snow Warning|[of] p2a: Heatran
+|turn|10
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"257/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"290/309","active":true,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p2b: Swalot|Swalot, L50, M|193/193
+|switch|p1b: Heracross|Heracross-Mega, L93, M|309/309
+|move|p1a: Mesprit|V-create|p2a: Heatran
+|-crit|p2a: Heatran
+|-damage|p2a: Heatran|0 fnt
+|-unboost|p1a: Mesprit|spe|1
+|-unboost|p1a: Mesprit|def|1
+|-unboost|p1a: Mesprit|spd|1
+|faint|p2a: Heatran
+|
+|-weather|Hail|[upkeep]
+|-damage|p1b: Heracross|290/309|[from] Hail
+|-damage|p1a: Mesprit|257/286|[from] Hail
+|-damage|p2b: Swalot|181/193|[from] Hail
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Assist","id":"assist","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Fissure","id":"fissure","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"V-create","id":"vcreate","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Switcheroo","id":"switcheroo","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Me First","id":"mefirst","pp":32,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Low Kick","id":"lowkick","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Drill Run","id":"drillrun","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"257/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"290/309","active":true,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicespecs","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"263/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p2a: Altaria|Altaria, L88, F|230/289
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Night Daze","id":"nightdaze","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Entrainment","id":"entrainment","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Switcheroo","id":"switcheroo","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Me First","id":"mefirst","pp":32,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Low Kick","id":"lowkick","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Drill Run","id":"drillrun","pp":16,"maxpp":16,"target":"normal","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"247/263","active":true,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"223/309","active":true,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"257/286","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p1a: Heracross|Heracross-Mega, L77, M|263/263
+|switch|p2b: Arceus|Arceus-Steel, L86|332/364
+|move|p2a: Altaria|Bind|p1b: Heracross
+|-damage|p1b: Heracross|280/309
+|-activate|p1b: Heracross|move: Bind|[of] p2a: Altaria
+|debug|illusion cleared
+|replace|p1b: Heatmor|Heatmor, L93, M
+|-end|p1b: Heatmor|Illusion
+|move|p1b: Heatmor|Switcheroo|p2b: Arceus
+|-activate|p1b: Heatmor|move: Trick|[of] p2b: Arceus
+|-item|p2b: Arceus|Choice Specs|[from] move: Switcheroo
+|debug|removing choicelock: [object Object]
+|-item|p1b: Heatmor|Choice Scarf|[from] move: Switcheroo
+|
+|-weather|Hail|[upkeep]
+|-damage|p1b: Heatmor|261/309|[from] Hail
+|-damage|p2b: Arceus|310/364|[from] Hail
+|-damage|p2a: Altaria|212/289|[from] Hail
+|-damage|p1a: Heracross|247/263|[from] Hail
+|-damage|p1b: Heatmor|223/309|[from] move: Bind|[partiallytrapped]
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Night Daze","id":"nightdaze","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Entrainment","id":"entrainment","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Switcheroo","id":"switcheroo","pp":15,"maxpp":16,"target":"normal","disabled":true},{"move":"Me First","id":"mefirst","pp":31,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Low Kick","id":"lowkick","pp":32,"maxpp":32,"target":"normal","disabled":true},{"move":"Drill Run","id":"drillrun","pp":16,"maxpp":16,"target":"normal","disabled":true}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":true,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"166/309","active":true,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"257/286","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p2b: Mew|Mew, L75|240/253
+|detailschange|p2a: Altaria|Altaria-Mega, L88, F
+|-mega|p2a: Altaria|Altaria|Altarianite
+|move|p1b: Heatmor|Me First|p2a: Altaria
+|move|p1b: Heatmor|Wrap|p2a: Altaria|[from]Me First
+|-damage|p2a: Altaria|198/289
+|-activate|p2a: Altaria|move: Wrap|[of] p1b: Heatmor
+|move|p2a: Altaria|Wrap|p1b: Heatmor|[miss]
+|-miss|p2a: Altaria|p1b: Heatmor
+|move|p1a: Heracross|Land's Wrath|p2a: Altaria|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Altaria|148/289
+|-damage|p2b: Mew|170/253
+|
+|-weather|Hail|[upkeep]
+|-damage|p1b: Heatmor|204/309|[from] Hail
+|-damage|p2a: Altaria|130/289|[from] Hail
+|-damage|p2b: Mew|155/253|[from] Hail
+|-damage|p1a: Heracross|231/263|[from] Hail
+|-damage|p1b: Heatmor|166/309|[from] move: Bind|[partiallytrapped]
+|-damage|p2a: Altaria|94/289|[from] move: Wrap|[partiallytrapped]
+|upkeep
+|turn|13
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"218/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"109/309","active":true,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p1a: Mesprit|Mesprit, L80|257/286
+|move|p1b: Heatmor|Me First|p2b: Mew
+|move|p1b: Heatmor|Spike Cannon|p2b: Mew|[from]Me First
+|-damage|p2b: Mew|128/253
+|-damage|p2b: Mew|98/253
+|-damage|p2b: Mew|68/253
+|-damage|p2b: Mew|38/253
+|-damage|p2b: Mew|8/253
+|-hitcount|p2b: Mew|5
+|move|p2a: Altaria|Agility|p2a: Altaria
+|-boost|p2a: Altaria|spe|2
+|move|p2b: Mew|Spike Cannon|p1a: Mesprit
+|debug|Base Power: 20
+|debug|Technician boost
+|-damage|p1a: Mesprit|246/286
+|debug|Base Power: 20
+|debug|Technician boost
+|-damage|p1a: Mesprit|235/286
+|-hitcount|p1a: Mesprit|2
+|
+|-weather|Hail|[upkeep]
+|-damage|p2a: Altaria|76/289|[from] Hail
+|-damage|p1b: Heatmor|147/309|[from] Hail
+|-damage|p1a: Mesprit|218/286|[from] Hail
+|-damage|p2b: Mew|0 fnt|[from] Hail
+|faint|p2b: Mew
+|-damage|p2a: Altaria|40/289|[from] move: Wrap|[partiallytrapped]
+|-damage|p1b: Heatmor|109/309|[from] move: Bind|[partiallytrapped]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Assist","id":"assist","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Fissure","id":"fissure","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"V-create","id":"vcreate","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Switcheroo","id":"switcheroo","pp":15,"maxpp":16,"target":"normal","disabled":true},{"move":"Me First","id":"mefirst","pp":30,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Low Kick","id":"lowkick","pp":32,"maxpp":32,"target":"normal","disabled":true},{"move":"Drill Run","id":"drillrun","pp":16,"maxpp":16,"target":"normal","disabled":true}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"218/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"109/309","active":true,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p2b: Arceus|Arceus-Steel, L86|310/364
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"Assist","id":"assist","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Fissure","id":"fissure","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"V-create","id":"vcreate","pp":7,"maxpp":8,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Switcheroo","id":"switcheroo","pp":15,"maxpp":16,"target":"normal","disabled":true},{"move":"Me First","id":"mefirst","pp":29,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Low Kick","id":"lowkick","pp":32,"maxpp":32,"target":"normal","disabled":true},{"move":"Drill Run","id":"drillrun","pp":16,"maxpp":16,"target":"normal","disabled":true}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"159/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"71/309","active":true,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p2b: Swalot|Swalot, L50, M|181/193
+|move|p2a: Altaria|Bind|p1a: Mesprit
+|-damage|p1a: Mesprit|194/286
+|-activate|p1a: Mesprit|move: Bind|[of] p2a: Altaria
+|move|p1b: Heatmor|Me First||[still]
+|-fail|p1b: Heatmor
+|move|p1a: Mesprit|Fissure|p2a: Altaria
+|-immune|p2a: Altaria|[ohko]
+|
+|-weather|none
+|-damage|p2a: Altaria|4/289|[from] move: Wrap|[partiallytrapped]
+|-damage|p1b: Heatmor|71/309|[from] move: Bind|[partiallytrapped]
+|-damage|p1a: Mesprit|159/286|[from] move: Bind|[partiallytrapped]
+|upkeep
+|turn|15
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"135/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"71/309","active":true,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|move|p2a: Altaria|Bind|p1a: Mesprit
+|-damage|p1a: Mesprit|135/286
+|move|p1b: Heatmor|Me First||[still]
+|-fail|p1b: Heatmor
+|move|p1a: Mesprit|Assist|p1a: Mesprit
+|move|p1a: Mesprit|Drill Run|p2b: Swalot|[from]Assist
+|-supereffective|p2b: Swalot
+|-damage|p2b: Swalot|7/193
+|-ability|p2b: Swalot|Weak Armor|boost
+|-unboost|p2b: Swalot|def|1
+|-boost|p2b: Swalot|spe|1
+|move|p2b: Swalot|Dragon Dance|p2b: Swalot
+|-boost|p2b: Swalot|atk|1
+|-boost|p2b: Swalot|spe|1
+|
+|-damage|p2a: Altaria|0 fnt|[from] move: Wrap|[partiallytrapped]
+|faint|p2a: Altaria
+|-end|p1b: Heatmor|Bind|[partiallytrapped]|[silent]
+|-end|p1a: Mesprit|Bind|[partiallytrapped]|[silent]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Assist","id":"assist","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Fissure","id":"fissure","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"V-create","id":"vcreate","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Switcheroo","id":"switcheroo","pp":15,"maxpp":16,"target":"normal","disabled":true},{"move":"Me First","id":"mefirst","pp":28,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Low Kick","id":"lowkick","pp":32,"maxpp":32,"target":"normal","disabled":true},{"move":"Drill Run","id":"drillrun","pp":16,"maxpp":16,"target":"normal","disabled":true}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"135/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"71/309","active":true,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p2a: Arceus|Arceus-Steel, L86|310/364
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Assist","id":"assist","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Fissure","id":"fissure","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"V-create","id":"vcreate","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Switcheroo","id":"switcheroo","pp":15,"maxpp":16,"target":"normal","disabled":true},{"move":"Me First","id":"mefirst","pp":27,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Low Kick","id":"lowkick","pp":32,"maxpp":32,"target":"normal","disabled":true},{"move":"Drill Run","id":"drillrun","pp":16,"maxpp":16,"target":"normal","disabled":true}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"71/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"71/309","active":true,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|move|p1b: Heatmor|Me First|p2a: Arceus
+|move|p1b: Heatmor|Electro Ball|p2a: Arceus|[from]Me First
+|debug|60 bp
+|-damage|p2a: Arceus|240/364
+|move|p2a: Arceus|Electro Ball|p1a: Mesprit
+|debug|60 bp
+|-damage|p1a: Mesprit|71/286
+|move|p1a: Mesprit|Crabhammer|p2a: Arceus
+|-damage|p2a: Arceus|181/364
+|move|p2b: Swalot|Light Screen|p2b: Swalot
+|-sidestart|p2: Bot 2|move: Light Screen
+|
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Assist","id":"assist","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Fissure","id":"fissure","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"V-create","id":"vcreate","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Switcheroo","id":"switcheroo","pp":15,"maxpp":16,"target":"normal","disabled":true},{"move":"Me First","id":"mefirst","pp":26,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Low Kick","id":"lowkick","pp":32,"maxpp":32,"target":"normal","disabled":true},{"move":"Drill Run","id":"drillrun","pp":16,"maxpp":16,"target":"normal","disabled":true}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"1/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"38/309","active":true,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|move|p1b: Heatmor|Me First|p2a: Arceus
+|move|p1b: Heatmor|Electro Ball|p2a: Arceus|[from]Me First
+|debug|60 bp
+|debug|Light Screen weaken
+|-damage|p2a: Arceus|138/364
+|move|p2a: Arceus|Electro Ball|p1a: Mesprit
+|debug|60 bp
+|-damage|p1a: Mesprit|1/286
+|move|p1a: Mesprit|Fissure|p2a: Arceus
+|-immune|p2a: Arceus|[ohko]
+|move|p2b: Swalot|Hammer Arm|p1b: Heatmor
+|-damage|p1b: Heatmor|38/309
+|-unboost|p2b: Swalot|spe|1
+|
+|upkeep
+|turn|18
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":true,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"0 fnt","active":true,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"1/286","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471123
+|switch|p1a: Heracross|Heracross-Mega, L77, M|231/263
+|move|p1b: Heatmor|Me First||[still]
+|-fail|p1b: Heatmor
+|move|p2a: Arceus|Electro Ball|p1b: Heatmor
+|debug|40 bp
+|-crit|p1b: Heatmor
+|-damage|p1b: Heatmor|0 fnt
+|faint|p1b: Heatmor
+|move|p2b: Swalot|Dragon Dance|p2b: Swalot
+|-boost|p2b: Swalot|atk|1
+|-boost|p2b: Swalot|spe|1
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Night Daze","id":"nightdaze","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Entrainment","id":"entrainment","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Assist","id":"assist","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Fissure","id":"fissure","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"V-create","id":"vcreate","pp":7,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":true,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"1/286","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":false,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"0 fnt","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p1b: Mesprit|Mesprit, L80|1/286
+|turn|19
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":true,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"0 fnt","active":true,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"0 fnt","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471123
+|switch|p1a: Azurill|Azurill, L79, F|226/226
+|-ability|p1a: Azurill|Unnerve|p2: Bot 2
+|move|p2a: Arceus|Electro Ball|p1b: Mesprit
+|debug|60 bp
+|-damage|p1b: Mesprit|0 fnt
+|faint|p1b: Mesprit
+|move|p2b: Swalot|Dragon Dance|p2b: Swalot
+|-boost|p2b: Swalot|atk|1
+|-boost|p2b: Swalot|spe|1
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Fire Punch","id":"firepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Mirror Coat","id":"mirrorcoat","pp":32,"maxpp":32,"target":"scripted","disabled":false},{"move":"Splash","id":"splash","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Leaf Tornado","id":"leaftornado","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Sing","id":"sing","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Electroweb","id":"electroweb","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":true,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"22/204","active":true,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"0 fnt","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"0 fnt","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p1b: Buneary|Buneary, L81, M|22/204
+|turn|20
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":true,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"0 fnt","active":true,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":false,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"0 fnt","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"0 fnt","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471123
+|debug|before turn callback: mirrorcoat
+|move|p2a: Arceus|Electro Ball|p1b: Buneary
+|debug|60 bp
+|-damage|p1b: Buneary|0 fnt
+|faint|p1b: Buneary
+|move|p2b: Swalot|Light Screen||[still]
+|-fail|p2b: Swalot
+|debug|move failed because it did nothing
+|move|p1a: Azurill|Mirror Coat||[still]
+|-fail|p1a: Azurill
+|
+|-sideend|p2: Bot 2|move: Light Screen
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Fire Punch","id":"firepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Mirror Coat","id":"mirrorcoat","pp":31,"maxpp":32,"target":"scripted","disabled":false},{"move":"Splash","id":"splash","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Leaf Tornado","id":"leaftornado","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Night Daze","id":"nightdaze","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Entrainment","id":"entrainment","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"226/226","active":true,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":true,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"0 fnt","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"0 fnt","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"0 fnt","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|switch|p1b: Heracross|Heracross-Mega, L77, M|231/263
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Fire Punch","id":"firepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Mirror Coat","id":"mirrorcoat","pp":31,"maxpp":32,"target":"scripted","disabled":false},{"move":"Splash","id":"splash","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Leaf Tornado","id":"leaftornado","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Night Daze","id":"nightdaze","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Entrainment","id":"entrainment","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"0 fnt","active":true,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"231/263","active":true,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"0 fnt","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"0 fnt","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"0 fnt","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|move|p2a: Arceus|Electro Ball|p1a: Azurill
+|debug|150 bp
+|-damage|p1a: Azurill|0 fnt
+|faint|p1a: Azurill
+|move|p2b: Swalot|Light Screen|p2b: Swalot
+|-sidestart|p2: Bot 2|move: Light Screen
+|move|p1b: Heracross|Rock Blast|p2a: Arceus
+|-damage|p2a: Arceus|117/364
+|-damage|p2a: Arceus|96/364
+|-damage|p2a: Arceus|75/364
+|-damage|p2a: Arceus|54/364
+|-damage|p2a: Arceus|34/364
+|-hitcount|p2a: Arceus|5
+|
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Fire Punch","id":"firepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Mirror Coat","id":"mirrorcoat","pp":31,"maxpp":32,"target":"scripted","disabled":false},{"move":"Splash","id":"splash","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Leaf Tornado","id":"leaftornado","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Night Daze","id":"nightdaze","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Entrainment","id":"entrainment","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Azurill","details":"Azurill, L79, F","condition":"0 fnt","active":true,"stats":{"atk":49,"def":106,"spa":64,"spd":119,"spe":44},"moves":["firepunch","mirrorcoat","splash","leaftornado"],"baseAbility":"unnerve","item":"shinystone","pokeball":"pokeball"},{"ident":"p1: Heracross","details":"Heracross-Mega, L77, M","condition":"87/263","active":true,"stats":{"atk":304,"def":219,"spa":111,"spd":198,"spe":152},"moves":["landswrath","rockblast","nightdaze","entrainment"],"baseAbility":"moxie","item":"powerweight","pokeball":"pokeball"},{"ident":"p1: Snover","details":"Snover, L90, M","condition":"0 fnt","active":false,"stats":{"atk":171,"def":172,"spa":111,"spd":157,"spe":132},"moves":["disable","safeguard","reflecttype","crunch"],"baseAbility":"vitalspirit","item":"cellbattery","pokeball":"pokeball"},{"ident":"p1: Buneary","details":"Buneary, L81, M","condition":"0 fnt","active":false,"stats":{"atk":185,"def":94,"spa":117,"spd":124,"spe":209},"moves":["sing","thunder","swagger","electroweb"],"baseAbility":"purepower","item":"blackbelt","pokeball":"pokeball"},{"ident":"p1: Mesprit","details":"Mesprit, L80","condition":"0 fnt","active":false,"stats":{"atk":198,"def":240,"spa":192,"spd":224,"spe":197},"moves":["assist","fissure","crabhammer","vcreate"],"baseAbility":"aftermath","item":"salamencite","pokeball":"pokeball"},{"ident":"p1: Heatmor","details":"Heatmor, L93, M","condition":"0 fnt","active":false,"stats":{"atk":219,"def":194,"spa":234,"spd":156,"spe":168},"moves":["switcheroo","mefirst","lowkick","drillrun"],"baseAbility":"illusion","item":"choicescarf","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471123
+|move|p2a: Arceus|Electro Ball|p1b: Heracross
+|debug|120 bp
+|-damage|p1b: Heracross|87/263
+|move|p2b: Swalot|Dragon Dance|p2b: Swalot
+|-boost|p2b: Swalot|atk|1
+|-boost|p2b: Swalot|spe|1
+|move|p1b: Heracross|Night Daze|p2a: Arceus
+|debug|Light Screen weaken
+|-damage|p2a: Arceus|17/364
+|
+|upkeep
+|turn|23
+
+|
+|t:|1603471123
+|move|p2a: Arceus|Electro Ball|p1b: Heracross
+|debug|120 bp
+|-damage|p1b: Heracross|0 fnt
+|faint|p1b: Heracross
+|
+|win|Bot 2

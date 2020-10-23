@@ -1,0 +1,653 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"115/115","active":true,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"230/230","active":false,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"236/236","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"marangaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"161/161","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"221/221","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|t:|1603471105
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|6
+|tier|[Gen 6] Doubles Custom Game
+|clearpoke
+|poke|p1|Pumpkaboo-*, L50, F|item
+|poke|p1|Forretress, L67, F|item
+|poke|p1|Barbaracle, L73, M|item
+|poke|p1|Snorlax, L50, M|item
+|poke|p1|Beedrill-Mega, L64, F|item
+|poke|p1|Foongus, L71, M|item
+|poke|p2|Gourgeist-*, L51, F|item
+|poke|p2|Diggersby, L92, F|item
+|poke|p2|Probopass, L96, M|item
+|poke|p2|Surskit, L68, F|item
+|poke|p2|Scolipede, L78, F|item
+|poke|p2|Stunfisk, L67, F|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Camouflage","id":"camouflage","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Thunderbolt","id":"thunderbolt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Drill Peck","id":"drillpeck","pp":32,"maxpp":32,"target":"any","disabled":false},{"move":"Rock Polish","id":"rockpolish","pp":32,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Bone Rush","id":"bonerush","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"115/115","active":true,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"230/230","active":false,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"236/236","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"marangaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"161/161","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"221/221","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|start
+|switch|p1a: Pumpkaboo|Pumpkaboo-Large, L50, F|115/115
+|switch|p1b: Forretress|Forretress, L67, F|211/211
+|switch|p2a: Gourgeist|Gourgeist-Small, L51, F|144/144
+|switch|p2b: Diggersby|Diggersby, L92, F|313/313
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Camouflage","id":"camouflage","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Thunderbolt","id":"thunderbolt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Drill Peck","id":"drillpeck","pp":32,"maxpp":32,"target":"any","disabled":false},{"move":"Rock Polish","id":"rockpolish","pp":32,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Bone Rush","id":"bonerush","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"15/115","active":true,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"230/230","active":false,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"236/236","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"marangaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"161/161","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"221/221","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|move|p2a: Gourgeist|Magic Coat|p2a: Gourgeist
+|-singleturn|p2a: Gourgeist|move: Magic Coat
+|move|p2b: Diggersby|Flash Cannon|p1a: Pumpkaboo
+|-damage|p1a: Pumpkaboo|15/115
+|move|p1b: Forretress|Bone Rush|p2a: Gourgeist
+|-resisted|p2a: Gourgeist
+|-damage|p2a: Gourgeist|136/144
+|-resisted|p2a: Gourgeist
+|-damage|p2a: Gourgeist|129/144
+|-hitcount|p2a: Gourgeist|2
+|move|p1a: Pumpkaboo|Camouflage|p1a: Pumpkaboo
+|-start|p1a: Pumpkaboo|typechange|Normal
+|
+|upkeep
+|turn|2
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":true,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"230/230","active":false,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"236/236","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"marangaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"161/161","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"221/221","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471105
+|move|p2b: Diggersby|Fire Blast|p1a: Pumpkaboo
+|-damage|p1a: Pumpkaboo|0 fnt
+|faint|p1a: Pumpkaboo
+|move|p2a: Gourgeist|Charge|p2a: Gourgeist
+|-boost|p2a: Gourgeist|spd|1
+|-activate|p2a: Gourgeist|move: Charge
+|move|p1b: Forretress|Parting Shot|p2a: Gourgeist
+|-unboost|p2a: Gourgeist|atk|1
+|-unboost|p2a: Gourgeist|spa|1
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":true,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"230/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"236/236","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"marangaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"161/161","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"221/221","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471105
+|switch|p1b: Barbaracle|Barbaracle, L73, M|230/230
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Bone Rush","id":"bonerush","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":24,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":48,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"230/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"236/236","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"marangaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"161/161","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"221/221","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p1a: Forretress|Forretress, L67, F|211/211
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Bone Rush","id":"bonerush","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"211/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"236/236","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"marangaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"161/161","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"221/221","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|move|p2b: Diggersby|Sludge Wave|p1a: Forretress|[spread] p2a,p1b
+|-immune|p1a: Forretress
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-resisted|p1b: Barbaracle
+|-damage|p2a: Gourgeist|87/144
+|-damage|p1b: Barbaracle|211/230
+|move|p2a: Gourgeist|Bulk Up|p2a: Gourgeist
+|-boost|p2a: Gourgeist|atk|1
+|-boost|p2a: Gourgeist|def|1
+|move|p1b: Barbaracle|Fly||[still]
+|-prepare|p1b: Barbaracle|Fly
+|move|p1a: Forretress|Sleep Powder|p2a: Gourgeist
+|debug|natural powder immunity
+|-immune|p2a: Gourgeist
+|
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Bone Rush","id":"bonerush","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":23,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":48,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"211/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"236/236","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"marangaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"161/161","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"221/221","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|move|p2b: Diggersby|Assurance|p1b: Barbaracle|[miss]
+|-miss|p2b: Diggersby|p1b: Barbaracle
+|move|p2a: Gourgeist|Octazooka|p1b: Barbaracle|[miss]
+|-miss|p2a: Gourgeist|p1b: Barbaracle
+|move|p1b: Barbaracle|Fly|p2b: Diggersby|[from]lockedmove
+|-damage|p2b: Diggersby|259/313
+|move|p1a: Forretress|Ice Beam|p2b: Diggersby
+|-supereffective|p2b: Diggersby
+|-damage|p2b: Diggersby|199/313
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Sucker Punch","id":"suckerpunch","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Play Nice","id":"playnice","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Absorb","id":"absorb","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"String Shot","id":"stringshot","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":23,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":48,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"130/236 psn","active":true,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"203/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"161/161","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"221/221","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p2a: Probopass|Probopass, L96, M|262/262
+|switch|p1a: Snorlax|Snorlax, L50, M|236/236
+|move|p2b: Diggersby|Sludge Wave|p1a: Snorlax|[spread] p1a,p1b
+|-immune|p2a: Probopass
+|debug|Spread modifier: 0.75
+|-crit|p1a: Snorlax
+|debug|Spread modifier: 0.75
+|-resisted|p1b: Barbaracle
+|-damage|p1a: Snorlax|170/236
+|-damage|p1b: Barbaracle|192/230
+|-status|p1a: Snorlax|psn
+|-enditem|p1a: Snorlax|Maranga Berry|[eat]
+|-boost|p1a: Snorlax|spd|1|[from] item: Maranga Berry
+|move|p1b: Barbaracle|Parabolic Charge|p2b: Diggersby|[spread] p1a,p2a
+|-immune|p2b: Diggersby
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p1a: Snorlax|159/236 psn
+|-heal|p1b: Barbaracle|198/230|[from] drain|[of] p1a: Snorlax
+|-damage|p2a: Probopass|253/262
+|-heal|p1b: Barbaracle|203/230|[from] drain|[of] p2a: Probopass
+|
+|-damage|p1a: Snorlax|130/236 psn|[from] psn
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Sucker Punch","id":"suckerpunch","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Play Nice","id":"playnice","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Absorb","id":"absorb","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"String Shot","id":"stringshot","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":23,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":47,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"101/236 psn","active":true,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"165/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"161/161","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"221/221","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|move|p1a: Snorlax|Sucker Punch||[still]
+|-fail|p1a: Snorlax
+|move|p2b: Diggersby|Flash Cannon|p1b: Barbaracle
+|-damage|p1b: Barbaracle|165/230
+|move|p1b: Barbaracle|Acupressure|p1b: Barbaracle
+|-boost|p1b: Barbaracle|atk|2
+|move|p2a: Probopass|Ingrain|p2a: Probopass
+|-start|p2a: Probopass|move: Ingrain
+|
+|-heal|p2a: Probopass|262/262|[from] Ingrain
+|-damage|p1a: Snorlax|101/236 psn|[from] psn
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Sucker Punch","id":"suckerpunch","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Play Nice","id":"playnice","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Absorb","id":"absorb","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"String Shot","id":"stringshot","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Discharge","id":"discharge","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Electro Ball","id":"electroball","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Conversion 2","id":"conversion2","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"44/236 psn","active":true,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"133/161","active":true,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"165/230","active":false,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"221/221","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p1b: Foongus|Foongus, L64, M|161/161
+|move|p2b: Diggersby|Sludge Wave|p1a: Snorlax|[spread] p1a,p1b
+|-immune|p2a: Probopass
+|debug|brightpowder - decreasing accuracy
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-resisted|p1b: Foongus
+|-damage|p1a: Snorlax|73/236 psn
+|-damage|p1b: Foongus|133/161
+|debug|move failed because it did nothing
+|debug|illusion cleared
+|replace|p1b: Beedrill|Beedrill-Mega, L64, F
+|-end|p1b: Beedrill|Illusion
+|move|p2a: Probopass|Phantom Force||[still]
+|-prepare|p2a: Probopass|Phantom Force
+|move|p1a: Snorlax|Play Nice|p2a: Probopass|[miss]
+|-miss|p1a: Snorlax|p2a: Probopass
+|
+|-damage|p1a: Snorlax|44/236 psn|[from] psn
+|upkeep
+|turn|8
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"221/221","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":true,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"165/230","active":false,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"44/236 psn","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471105
+|switch|p2b: Surskit|Surskit, L68, F|185/185
+|switch|p1a: Foongus|Foongus, L71, M|221/221
+|move|p1b: Beedrill|Land's Wrath|p2a: Probopass|[spread] p2b
+|-miss|p1b: Beedrill|p2a: Probopass
+|debug|Spread modifier: 0.75
+|-resisted|p2b: Surskit
+|-damage|p2b: Surskit|143/185
+|move|p2a: Probopass|Phantom Force|p1b: Beedrill|[from]lockedmove
+|debug|brightpowder - decreasing accuracy
+|-damage|p1b: Beedrill|0 fnt
+|faint|p1b: Beedrill
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Covet","id":"covet","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Scald","id":"scald","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Tail Whip","id":"tailwhip","pp":48,"maxpp":48,"target":"allAdjacentFoes","disabled":false},{"move":"Toxic","id":"toxic","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Bone Rush","id":"bonerush","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"221/221","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"165/230","active":false,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"44/236 psn","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p1b: Forretress|Forretress, L67, F|211/211
+|turn|9
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"131/221","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"165/230","active":false,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"44/236 psn","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471105
+|switch|p2b: Diggersby|Diggersby, L92, F|199/313
+|move|p2a: Probopass|Smelling Salts|p1a: Foongus
+|-damage|p1a: Foongus|131/221
+|move|p1b: Forretress|Parting Shot|p2a: Probopass
+|-unboost|p2a: Probopass|atk|1
+|-unboost|p2a: Probopass|spa|1
+
+|request|{"active":[{"moves":[{"move":"Covet","id":"covet","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Scald","id":"scald","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Tail Whip","id":"tailwhip","pp":48,"maxpp":48,"target":"allAdjacentFoes","disabled":false},{"move":"Toxic","id":"toxic","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Sucker Punch","id":"suckerpunch","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Play Nice","id":"playnice","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Absorb","id":"absorb","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"String Shot","id":"stringshot","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"131/221","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"15/236 psn","active":true,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"165/230","active":false,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p1b: Snorlax|Snorlax, L50, M|44/236 psn
+|move|p1a: Foongus|Covet|p2b: Diggersby
+|-damage|p2b: Diggersby|183/313
+|
+|-damage|p1b: Snorlax|15/236 psn|[from] psn
+|upkeep
+|turn|10
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"55/221","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":true,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"165/230","active":false,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471105
+|move|p2b: Diggersby|Assurance|p1b: Snorlax
+|-damage|p1b: Snorlax|0 fnt
+|faint|p1b: Snorlax
+|move|p2a: Probopass|Flame Charge|p1a: Foongus
+|-supereffective|p1a: Foongus
+|-damage|p1a: Foongus|55/221
+|-boost|p2a: Probopass|spe|1
+|move|p1a: Foongus|Scald|p2b: Diggersby
+|-supereffective|p2b: Diggersby
+|-damage|p2b: Diggersby|123/313
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Covet","id":"covet","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Scald","id":"scald","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Tail Whip","id":"tailwhip","pp":48,"maxpp":48,"target":"allAdjacentFoes","disabled":false},{"move":"Toxic","id":"toxic","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":23,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":47,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"55/221","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"165/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"211/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p1b: Barbaracle|Barbaracle, L73, M|165/230
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Bone Rush","id":"bonerush","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":23,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":47,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"63/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"165/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"55/221","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p1a: Forretress|Forretress, L67, F|211/211
+|move|p2b: Diggersby|Fire Blast|p1a: Forretress
+|-supereffective|p1a: Forretress
+|-damage|p1a: Forretress|63/211
+|move|p2a: Probopass|Ingrain||[still]
+|-fail|p2a: Probopass
+|debug|move failed because it did nothing
+|move|p1b: Barbaracle|Rock Blast|p2b: Diggersby
+|-resisted|p2b: Diggersby
+|-damage|p2b: Diggersby|112/313
+|-resisted|p2b: Diggersby
+|-crit|p2b: Diggersby
+|debug|Sniper boost
+|-damage|p2b: Diggersby|85/313
+|-resisted|p2b: Diggersby
+|-damage|p2b: Diggersby|73/313
+|-resisted|p2b: Diggersby
+|-damage|p2b: Diggersby|61/313
+|-hitcount|p2b: Diggersby|4
+|
+|upkeep
+|turn|12
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"63/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"165/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"55/221","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471105
+|switch|p2b: Scolipede|Scolipede, L78, F|235/235
+|move|p2a: Probopass|Ingrain||[still]
+|-fail|p2a: Probopass
+|debug|move failed because it did nothing
+|move|p1b: Barbaracle|Rock Blast|p2b: Scolipede
+|-supereffective|p2b: Scolipede
+|-damage|p2b: Scolipede|187/235
+|-supereffective|p2b: Scolipede
+|-damage|p2b: Scolipede|137/235
+|-supereffective|p2b: Scolipede
+|-crit|p2b: Scolipede
+|debug|Sniper boost
+|-damage|p2b: Scolipede|35/235
+|-hitcount|p2b: Scolipede|3
+|move|p1a: Forretress|Parting Shot|p2a: Probopass
+|-unboost|p2a: Probopass|atk|1
+|-unboost|p2a: Probopass|spa|1
+
+|request|{"active":[{"moves":[{"move":"Covet","id":"covet","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Scald","id":"scald","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Tail Whip","id":"tailwhip","pp":48,"maxpp":48,"target":"allAdjacentFoes","disabled":false},{"move":"Toxic","id":"toxic","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":23,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":47,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"55/221","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"165/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"63/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p1a: Foongus|Foongus, L71, M|55/221
+|
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Covet","id":"covet","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Scald","id":"scald","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Tail Whip","id":"tailwhip","pp":47,"maxpp":48,"target":"allAdjacentFoes","disabled":false},{"move":"Toxic","id":"toxic","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":23,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"55/221","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"165/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"63/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p2b: Stunfisk|Stunfisk, L67, F|264/264
+|move|p2a: Probopass|Ingrain||[still]
+|-fail|p2a: Probopass
+|debug|move failed because it did nothing
+|move|p1b: Barbaracle|Acupressure|p1a: Foongus
+|-boost|p1a: Foongus|atk|2
+|move|p1a: Foongus|Tail Whip|p2b: Stunfisk|[spread] p2a,p2b
+|-unboost|p2a: Probopass|def|1
+|-unboost|p2b: Stunfisk|def|1
+|
+|upkeep
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"Covet","id":"covet","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Scald","id":"scald","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Tail Whip","id":"tailwhip","pp":47,"maxpp":48,"target":"allAdjacentFoes","disabled":false},{"move":"Toxic","id":"toxic","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"55/221","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"153/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"63/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p2b: Scolipede|Scolipede, L78, F|35/235
+|move|p2a: Probopass|Smelling Salts|p1b: Barbaracle
+|-resisted|p1b: Barbaracle
+|-damage|p1b: Barbaracle|153/230
+|move|p1b: Barbaracle|Fly||[still]
+|-prepare|p1b: Barbaracle|Fly
+|move|p1a: Foongus|Toxic|p2b: Scolipede
+|debug|natural status immunity
+|debug|immune to status
+|-immune|p2b: Scolipede
+|debug|move failed because it did nothing
+|
+|upkeep
+|turn|15
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"55/221 slp","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"153/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"63/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|move|p2b: Scolipede|Hypnosis|p1a: Foongus
+|-status|p1a: Foongus|slp|[from] move: Hypnosis
+|move|p2a: Probopass|Phantom Force||[still]
+|-prepare|p2a: Probopass|Phantom Force
+|move|p1b: Barbaracle|Fly|p2b: Scolipede|[from]lockedmove
+|-supereffective|p2b: Scolipede
+|-damage|p2b: Scolipede|0 fnt
+|faint|p2b: Scolipede
+|cant|p1a: Foongus|slp
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Covet","id":"covet","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Scald","id":"scald","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Tail Whip","id":"tailwhip","pp":47,"maxpp":48,"target":"allAdjacentFoes","disabled":false},{"move":"Toxic","id":"toxic","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":22,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"55/221 slp","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"153/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"63/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p2b: Stunfisk|Stunfisk, L67, F|264/264
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Covet","id":"covet","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Scald","id":"scald","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Tail Whip","id":"tailwhip","pp":47,"maxpp":48,"target":"allAdjacentFoes","disabled":false},{"move":"Toxic","id":"toxic","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Bone Rush","id":"bonerush","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"55/221 slp","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"39/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"153/230","active":false,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p1b: Forretress|Forretress, L67, F|63/211
+|move|p2a: Probopass|Phantom Force|p1b: Forretress|[from]lockedmove
+|-damage|p1b: Forretress|39/211
+|cant|p1a: Foongus|slp
+|move|p2b: Stunfisk|Reflect|p2b: Stunfisk
+|-sidestart|p2: Bot 2|Reflect
+|
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Covet","id":"covet","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Scald","id":"scald","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Tail Whip","id":"tailwhip","pp":47,"maxpp":48,"target":"allAdjacentFoes","disabled":false},{"move":"Toxic","id":"toxic","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Bone Rush","id":"bonerush","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"55/221 slp","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"39/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"153/230","active":false,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|move|p2a: Probopass|Ingrain||[still]
+|-fail|p2a: Probopass
+|debug|move failed because it did nothing
+|move|p1b: Forretress|Ice Beam|p2b: Stunfisk
+|-supereffective|p2b: Stunfisk
+|-damage|p2b: Stunfisk|216/264
+|cant|p1a: Foongus|slp
+|move|p2b: Stunfisk|Rest|p2b: Stunfisk
+|-status|p2b: Stunfisk|slp|[from] move: Rest
+|-heal|p2b: Stunfisk|264/264 slp|[silent]
+|
+|upkeep
+|turn|18
+
+|request|{"active":[{"moves":[{"move":"Covet","id":"covet","pp":38,"maxpp":40,"target":"normal","disabled":false},{"move":"Scald","id":"scald","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Tail Whip","id":"tailwhip","pp":47,"maxpp":48,"target":"allAdjacentFoes","disabled":false},{"move":"Toxic","id":"toxic","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":22,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"55/221","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"149/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"39/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p1b: Barbaracle|Barbaracle, L73, M|153/230
+|switch|p2b: Diggersby|Diggersby, L92, F|61/313
+|move|p2a: Probopass|Flame Charge|p1b: Barbaracle
+|-resisted|p1b: Barbaracle
+|-damage|p1b: Barbaracle|149/230
+|-boost|p2a: Probopass|spe|1
+|-curestatus|p1a: Foongus|slp|[msg]
+|move|p1a: Foongus|Covet|p2b: Diggersby
+|debug|Reflect weaken
+|-damage|p2b: Diggersby|41/313
+|
+|upkeep
+|turn|19
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"0 fnt","active":true,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"149/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"39/211","active":false,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471105
+|move|p2a: Probopass|Flame Charge|p1a: Foongus
+|debug|Negating (sp)atk boost/penalty.
+|-supereffective|p1a: Foongus
+|-crit|p1a: Foongus
+|-damage|p1a: Foongus|0 fnt
+|-boost|p2a: Probopass|spe|1
+|-damage|p2a: Probopass|197/262|[from] ability: Aftermath|[of] p1a: Foongus
+|faint|p1a: Foongus
+|move|p2b: Diggersby|Fire Blast|p1b: Barbaracle|[miss]
+|-miss|p2b: Diggersby|p1b: Barbaracle
+|move|p1b: Barbaracle|Fly||[still]
+|-prepare|p1b: Barbaracle|Fly
+|
+|-heal|p2a: Probopass|213/262|[from] Ingrain
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Bone Rush","id":"bonerush","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":14,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly"}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"39/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"149/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"0 fnt","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p1a: Forretress|Forretress, L67, F|39/211
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Bone Rush","id":"bonerush","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":14,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":21,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"39/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"149/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"0 fnt","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|move|p2a: Probopass|Phantom Force||[still]
+|-prepare|p2a: Probopass|Phantom Force
+|move|p2b: Diggersby|Sludge Wave|p1a: Forretress|[spread] 
+|-miss|p2b: Diggersby|p2a: Probopass
+|-miss|p2b: Diggersby|p1b: Barbaracle
+|-immune|p1a: Forretress
+|move|p1b: Barbaracle|Fly|p2b: Diggersby|[from]lockedmove
+|debug|Reflect weaken
+|-damage|p2b: Diggersby|4/313
+|move|p1a: Forretress|Parting Shot|p2a: Probopass|[miss]
+|-miss|p1a: Forretress|p2a: Probopass
+|
+|-heal|p2a: Probopass|229/262|[from] Ingrain
+|-sideend|p2: Bot 2|Reflect
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Bone Rush","id":"bonerush","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":13,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":21,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":13,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"39/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"121/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"0 fnt","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p2b: Stunfisk|Stunfisk, L67, F|264/264 slp
+|move|p2a: Probopass|Phantom Force|p1b: Barbaracle|[from]lockedmove
+|-damage|p1b: Barbaracle|121/230
+|move|p1b: Barbaracle|Rock Blast|p2b: Stunfisk
+|-resisted|p2b: Stunfisk
+|-damage|p2b: Stunfisk|252/264 slp
+|-resisted|p2b: Stunfisk
+|-damage|p2b: Stunfisk|241/264 slp
+|-hitcount|p2b: Stunfisk|2
+|move|p1a: Forretress|Ice Beam|p2b: Stunfisk
+|-supereffective|p2b: Stunfisk
+|-damage|p2b: Stunfisk|191/264 slp
+|
+|-heal|p2a: Probopass|245/262|[from] Ingrain
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Bone Rush","id":"bonerush","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":13,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly"}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"39/211","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"121/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"0 fnt","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p2b: Surskit|Surskit, L68, F|143/185
+|move|p2a: Probopass|Phantom Force||[still]
+|-prepare|p2a: Probopass|Phantom Force
+|move|p1b: Barbaracle|Fly||[still]
+|-prepare|p1b: Barbaracle|Fly
+|move|p1a: Forretress|Bone Rush|p2a: Probopass|[miss]
+|-miss|p1a: Forretress|p2a: Probopass
+|
+|-heal|p2a: Probopass|261/262|[from] Ingrain
+|upkeep
+|turn|23
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"0 fnt","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"121/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"0 fnt","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|move|p2a: Probopass|Phantom Force|p1a: Forretress|[from]lockedmove
+|debug|Negating (sp)atk boost/penalty.
+|-crit|p1a: Forretress
+|-damage|p1a: Forretress|0 fnt
+|faint|p1a: Forretress
+|move|p2b: Surskit|Entrainment|p1b: Barbaracle|[miss]
+|-miss|p2b: Surskit|p1b: Barbaracle
+|move|p1b: Barbaracle|Fly|p2b: Surskit|[from]lockedmove
+|-supereffective|p2b: Surskit
+|-damage|p2b: Surskit|0 fnt
+|faint|p2b: Surskit
+|
+|-heal|p2a: Probopass|262/262|[from] Ingrain
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Bone Rush","id":"bonerush","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":13,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":20,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":13,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"0 fnt","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"121/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"0 fnt","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p2b: Gourgeist|Gourgeist-Small, L51, F|87/144
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Bone Rush","id":"bonerush","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":13,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":20,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":30,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":13,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"0 fnt","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"112/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"0 fnt","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|move|p2a: Probopass|Flame Charge|p1b: Barbaracle
+|-resisted|p1b: Barbaracle
+|-damage|p1b: Barbaracle|117/230
+|-boost|p2a: Probopass|spe|1
+|move|p2b: Gourgeist|Octazooka|p1b: Barbaracle
+|-damage|p1b: Barbaracle|101/230
+|move|p1b: Barbaracle|Parabolic Charge|p2a: Probopass|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-resisted|p2b: Gourgeist
+|-damage|p2a: Probopass|254/262
+|-heal|p1b: Barbaracle|105/230|[from] drain|[of] p2a: Probopass
+|-damage|p2b: Gourgeist|73/144
+|-heal|p1b: Barbaracle|112/230|[from] drain|[of] p2b: Gourgeist
+|
+|-heal|p2a: Probopass|262/262|[from] Ingrain
+|upkeep
+|turn|25
+
+|request|{"active":[{"moves":[{"move":"Bone Rush","id":"bonerush","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":13,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":20,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":29,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":13,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"0 fnt","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"112/230","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"0 fnt","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|switch|p2b: Diggersby|Diggersby, L92, F|4/313
+|move|p2a: Probopass|Flame Charge|p1b: Barbaracle
+|-resisted|p1b: Barbaracle
+|-damage|p1b: Barbaracle|108/230
+|-boost|p2a: Probopass|spe|1
+|move|p1b: Barbaracle|Parabolic Charge|p2a: Probopass|[spread] p2a
+|-immune|p2b: Diggersby
+|debug|Spread modifier: 0.75
+|-damage|p2a: Probopass|254/262
+|-heal|p1b: Barbaracle|112/230|[from] drain|[of] p2a: Probopass
+|
+|-heal|p2a: Probopass|262/262|[from] Ingrain
+|upkeep
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Bone Rush","id":"bonerush","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":13,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":20,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":29,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":12,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"0 fnt","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"66/230 brn","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"0 fnt","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|move|p2a: Probopass|Smelling Salts|p1b: Barbaracle
+|-resisted|p1b: Barbaracle
+|-damage|p1b: Barbaracle|101/230
+|move|p2b: Diggersby|Fire Blast|p1b: Barbaracle
+|-resisted|p1b: Barbaracle
+|-damage|p1b: Barbaracle|94/230
+|-status|p1b: Barbaracle|brn
+|move|p1b: Barbaracle|Rock Blast|p2a: Probopass
+|-resisted|p2a: Probopass
+|-damage|p2a: Probopass|258/262
+|-resisted|p2a: Probopass
+|-damage|p2a: Probopass|254/262
+|-resisted|p2a: Probopass
+|-crit|p2a: Probopass
+|debug|Sniper boost
+|-damage|p2a: Probopass|244/262
+|-hitcount|p2a: Probopass|3
+|
+|-heal|p2a: Probopass|260/262|[from] Ingrain
+|-damage|p1b: Barbaracle|66/230 brn|[from] brn
+|upkeep
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Bone Rush","id":"bonerush","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Parting Shot","id":"partingshot","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":13,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Fly","id":"fly","pp":20,"maxpp":24,"target":"any","disabled":false},{"move":"Parabolic Charge","id":"paraboliccharge","pp":29,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":11,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Forretress","details":"Forretress, L67, F","condition":"0 fnt","active":true,"stats":{"atk":153,"def":238,"spa":108,"spd":130,"spe":96},"moves":["bonerush","partingshot","sleeppowder","icebeam"],"baseAbility":"sturdy","item":"zapplate","pokeball":"pokeball"},{"ident":"p1: Barbaracle","details":"Barbaracle, L73, M","condition":"25/230 brn","active":true,"stats":{"atk":178,"def":203,"spa":125,"spd":189,"spe":110},"moves":["fly","paraboliccharge","acupressure","rockblast"],"baseAbility":"sniper","item":"pixieplate","pokeball":"pokeball"},{"ident":"p1: Pumpkaboo","details":"Pumpkaboo-Large, L50, F","condition":"0 fnt","active":false,"stats":{"atk":89,"def":89,"spa":86,"spd":72,"spe":76},"moves":["camouflage","thunderbolt","drillpeck","rockpolish"],"baseAbility":"compoundeyes","item":"enigmaberry","pokeball":"pokeball"},{"ident":"p1: Beedrill","details":"Beedrill-Mega, L64, F","condition":"0 fnt","active":false,"stats":{"atk":228,"def":87,"spa":51,"spd":124,"spe":199},"moves":["landswrath","discharge","electroball","conversion2"],"baseAbility":"illusion","item":"brightpowder","pokeball":"pokeball"},{"ident":"p1: Snorlax","details":"Snorlax, L50, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":88,"spa":105,"spd":157,"spe":50},"moves":["suckerpunch","playnice","absorb","stringshot"],"baseAbility":"flareboost","item":"","pokeball":"pokeball"},{"ident":"p1: Foongus","details":"Foongus, L71, M","condition":"0 fnt","active":false,"stats":{"atk":79,"def":107,"spa":110,"spd":112,"spe":88},"moves":["covet","scald","tailwhip","toxic"],"baseAbility":"aftermath","item":"protector","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471105
+|move|p2a: Probopass|Flame Charge|p1b: Barbaracle
+|-resisted|p1b: Barbaracle
+|-damage|p1b: Barbaracle|62/230 brn
+|-boost|p2a: Probopass|spe|1
+|move|p2b: Diggersby|Sludge Wave|p1b: Barbaracle|[spread] p1b
+|-immune|p2a: Probopass
+|debug|Spread modifier: 0.75
+|-resisted|p1b: Barbaracle
+|-damage|p1b: Barbaracle|53/230 brn
+|move|p1b: Barbaracle|Rock Blast|p2a: Probopass|[miss]
+|-miss|p1b: Barbaracle|p2a: Probopass
+|
+|-heal|p2a: Probopass|262/262|[from] Ingrain
+|-damage|p1b: Barbaracle|25/230 brn|[from] brn
+|upkeep
+|turn|28
+
+|
+|t:|1603471105
+|switch|p2b: Stunfisk|Stunfisk, L67, F|191/264 slp
+|move|p2a: Probopass|Ingrain||[still]
+|-fail|p2a: Probopass
+|debug|move failed because it did nothing
+|move|p1b: Barbaracle|Fly||[still]
+|-prepare|p1b: Barbaracle|Fly
+|
+|-damage|p1b: Barbaracle|0 fnt|[from] brn
+|faint|p1b: Barbaracle
+|
+|win|Bot 2
+|upkeep

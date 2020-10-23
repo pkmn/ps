@@ -1,0 +1,809 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"147/147","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"166/166","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"238/238","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"203/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"153/153","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"}]}}
+
+|t:|1603471179
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|8
+|tier|[Gen 8] Doubles Custom Game
+|clearpoke
+|poke|p1|Palossand, L68, F|
+|poke|p1|Barraskewda, L82, M|
+|poke|p1|Zacian, L78|
+|poke|p1|Dusclops, L79, F|
+|poke|p1|Silvally-*, L51|
+|poke|p1|Doublade, L64, M|
+|poke|p2|Psyduck, L57, M|
+|poke|p2|Chandelure, L86, F|
+|poke|p2|Axew, L62, F|
+|poke|p2|Terrakion, L76|
+|poke|p2|Roselia, L84, F|
+|poke|p2|Corphish, L71, F|
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Shift Gear","id":"shiftgear","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Scorching Sands","id":"scorchingsands","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Sheer Cold","id":"sheercold","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":32,"maxpp":32,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxquake","target":"adjacentFoe"},{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxlightning","target":"adjacentFoe"}]}},{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":40,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxguard","target":"self"},{"move":"maxovergrowth","target":"adjacentFoe"},{"move":"maxguard","target":"self"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"147/147","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"166/166","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"238/238","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"203/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"153/153","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"}]}}
+
+|
+|t:|1603471179
+|start
+|switch|p1a: Palossand|Palossand, L68, F|235/235
+|switch|p1b: Barraskewda|Barraskewda, L82, M|265/265
+|switch|p2a: Psyduck|Psyduck, L57, M|147/147
+|switch|p2b: Chandelure|Chandelure, L86, F|223/223
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Shift Gear","id":"shiftgear","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Scorching Sands","id":"scorchingsands","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Sheer Cold","id":"sheercold","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":32,"maxpp":32,"target":"normal","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxquake","target":"adjacentFoe"},{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxlightning","target":"adjacentFoe"}]}},{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":40,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"294/294","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"166/166","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"238/238","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"203/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"153/153","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"}]}}
+
+|
+|t:|1603471179
+|-start|p1a: Palossand|Dynamax
+|-heal|p1a: Palossand|470/470|[silent]
+|-start|p2a: Psyduck|Dynamax
+|-heal|p2a: Psyduck|294/294|[silent]
+|move|p1a: Palossand|Max Guard|p1a: Palossand
+|-singleturn|p1a: Palossand|Max Guard
+|move|p2a: Psyduck|Max Guard|p2a: Psyduck
+|-singleturn|p2a: Psyduck|Max Guard
+|move|p1b: Barraskewda|Power-Up Punch|p2b: Chandelure
+|-immune|p2b: Chandelure
+|move|p2b: Chandelure|Sleep Powder|p1b: Barraskewda
+|-status|p1b: Barraskewda|slp|[from] move: Sleep Powder
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Shift Gear","id":"shiftgear","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Scorching Sands","id":"scorchingsands","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Sheer Cold","id":"sheercold","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":31,"maxpp":32,"target":"normal","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxquake","target":"adjacentFoe"},{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxlightning","target":"adjacentFoe"}]}},{"moves":[{"move":"Strength","id":"strength","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Power Trip","id":"powertrip","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"294/294","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"135/166","active":true,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":false,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"238/238","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"203/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"153/153","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"}]}}
+
+|
+|t:|1603471179
+|switch|p2b: Axew|Axew, L62, F|166/166
+|cant|p1b: Barraskewda|slp
+|move|p1a: Palossand|Max Lightning|p2b: Axew
+|-resisted|p2b: Axew
+|-damage|p2b: Axew|125/166
+|-fieldstart|move: Electric Terrain
+|move|p2a: Psyduck|Max Lightning|p1a: Palossand
+|-immune|p1a: Palossand
+|
+|-heal|p2b: Axew|135/166|[from] item: Leftovers
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":40,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Strength","id":"strength","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Power Trip","id":"powertrip","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"145/166","active":true,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"147/147","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"238/238","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"203/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"153/153","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"}]}}
+
+|
+|t:|1603471179
+|-end|p1a: Palossand|Dynamax
+|-heal|p1a: Palossand|235/235|[silent]
+|switch|p1a: Doublade|Doublade, L78, M|283/283
+|-end|p2a: Psyduck|Dynamax
+|-heal|p2a: Psyduck|147/147|[silent]
+|switch|p2a: Chandelure|Chandelure, L86, F|223/223
+|cant|p1b: Barraskewda|slp
+|move|p2b: Axew|Strength|p1a: Doublade
+|-damage|p1a: Doublade|257/283
+|debug|illusion cleared
+|replace|p1a: Zacian|Zacian, L78
+|-end|p1a: Zacian|Illusion
+|
+|-heal|p2b: Axew|145/166|[from] item: Leftovers
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Facade","id":"facade","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sky Attack","id":"skyattack","pp":8,"maxpp":8,"target":"any","disabled":false},{"move":"Foul Play","id":"foulplay","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":64,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Strength","id":"strength","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Power Trip","id":"powertrip","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"124/238","active":true,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"155/166","active":true,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"147/147","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":false,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"203/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"153/153","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"}]}}
+
+|
+|t:|1603471179
+|switch|p2a: Terrakion|Terrakion, L76|238/238
+|move|p1a: Zacian|Psychic|p2a: Terrakion
+|-supereffective|p2a: Terrakion
+|-damage|p2a: Terrakion|124/238
+|cant|p1b: Barraskewda|slp
+|move|p2b: Axew|Scratch|p1b: Barraskewda
+|-damage|p1b: Barraskewda|241/265 slp
+|
+|-heal|p2b: Axew|155/166|[from] item: Leftovers
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Double Kick","id":"doublekick","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Strength","id":"strength","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Power Trip","id":"powertrip","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"191/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"31/166","active":true,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"147/147","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":false,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"124/238","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"153/153","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"}]}}
+
+|
+|t:|1603471179
+|switch|p2a: Roselia|Roselia, L84, F|203/203
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2a: Roselia
+|move|p1a: Zacian|Icicle Crash|p2b: Axew|[miss]
+|-miss|p1a: Zacian|p2b: Axew
+|-curestatus|p1b: Barraskewda|slp|[msg]
+|move|p1b: Barraskewda|Earth Power|p2b: Axew
+|-damage|p2b: Axew|31/166
+|move|p2b: Axew|Razor Shell|p1b: Barraskewda
+|-resisted|p1b: Barraskewda
+|-damage|p1b: Barraskewda|219/265
+|-unboost|p1b: Barraskewda|def|1
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Zacian|240/283|[from] Sandstorm
+|-damage|p1b: Barraskewda|203/265|[from] Sandstorm
+|-damage|p2a: Roselia|191/203|[from] Sandstorm
+|-damage|p2b: Axew|21/166|[from] Sandstorm
+|-heal|p2b: Axew|31/166|[from] item: Leftovers
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Double Kick","id":"doublekick","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Strength","id":"strength","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Power Trip","id":"powertrip","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"179/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"31/166","active":true,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"147/147","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":false,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"124/238","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"153/153","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"}]}}
+
+|
+|t:|1603471179
+|switch|p1a: Dusclops|Dusclops, L79, F|194/194
+|switch|p1b: Silvally|Silvally-Poison, L51|187/187
+|move|p2a: Roselia|Double Kick|p1a: Dusclops
+|-immune|p1a: Dusclops
+|move|p2b: Axew|Power Trip|p1b: Silvally
+|-damage|p1b: Silvally|173/187
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Roselia|179/203|[from] Sandstorm
+|-damage|p1b: Silvally|162/187|[from] Sandstorm
+|-damage|p2b: Axew|21/166|[from] Sandstorm
+|-damage|p1a: Dusclops|182/194|[from] Sandstorm
+|-heal|p2b: Axew|31/166|[from] item: Leftovers
+|-fieldend|move: Electric Terrain
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Double Kick","id":"doublekick","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Leaf Storm","id":"leafstorm","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Meteor Assault","id":"meteorassault","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Bug Bite","id":"bugbite","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Hyper Beam","id":"hyperbeam","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"167/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"144/153","active":true,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"147/147","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":false,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"124/238","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"31/166","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"}]}}
+
+|
+|t:|1603471179
+|switch|p1b: Doublade|Doublade, L64, M|166/166
+|switch|p2b: Corphish|Corphish, L71, F|153/153
+|switch|p1a: Barraskewda|Barraskewda, L82, M|203/265
+|move|p2a: Roselia|Extrasensory|p1b: Doublade
+|-resisted|p1b: Doublade
+|-damage|p1b: Doublade|120/166
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Barraskewda|187/265|[from] Sandstorm
+|-damage|p2a: Roselia|167/203|[from] Sandstorm
+|-damage|p2b: Corphish|144/153|[from] Sandstorm
+|debug|natural status immunity
+|debug|weather immunity
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Double Kick","id":"doublekick","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Meteor Assault","id":"meteorassault","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Bug Bite","id":"bugbite","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Hyper Beam","id":"hyperbeam","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"129/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"124/153","active":true,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"147/147","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":false,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"124/238","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"31/166","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"}]}}
+
+|
+|t:|1603471179
+|switch|p1a: Silvally|Silvally-Poison, L78|240/283
+|move|p2a: Roselia|Poison Gas|p1a: Silvally|[spread] 
+|-miss|p2a: Roselia|p1a: Silvally
+|debug|natural status immunity
+|debug|immune to status
+|-immune|p1b: Doublade
+|debug|move failed because it did nothing
+|move|p2b: Corphish|Leaf Storm|p1a: Silvally
+|-damage|p1a: Silvally|201/283
+|-unboost|p2b: Corphish|spa|2
+|debug|illusion cleared
+|replace|p1a: Zacian|Zacian, L78
+|-end|p1a: Zacian|Illusion
+|move|p1b: Doublade|Glaciate|p2a: Roselia|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-supereffective|p2a: Roselia
+|debug|Spread modifier: 0.75
+|-resisted|p2b: Corphish
+|-damage|p2a: Roselia|141/203
+|-damage|p2b: Corphish|133/153
+|-unboost|p2a: Roselia|spe|1
+|-unboost|p2b: Corphish|spe|1
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Zacian|184/283|[from] Sandstorm
+|-damage|p2a: Roselia|129/203|[from] Sandstorm
+|debug|natural status immunity
+|debug|weather immunity
+|-damage|p2b: Corphish|124/153|[from] Sandstorm
+|upkeep
+|turn|9
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":true,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"124/153","active":true,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"147/147","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":false,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"124/238","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"129/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"}]},"noCancel":true}
+
+|
+|t:|1603471179
+|switch|p2a: Axew|Axew, L62, F|31/166
+|move|p1a: Zacian|Ancient Power|p2a: Axew
+|-damage|p2a: Axew|0 fnt
+|faint|p2a: Axew
+|move|p1b: Doublade|Heal Bell||[still]
+|-activate|p1b: Doublade|move: Heal Bell
+|-fail|p1b: Doublade
+|debug|move failed because it did nothing
+|move|p2b: Corphish|Meteor Assault|p1b: Doublade
+|-immune|p1b: Doublade
+|
+|-weather|none
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Facade","id":"facade","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sky Attack","id":"skyattack","pp":8,"maxpp":8,"target":"any","disabled":false},{"move":"Foul Play","id":"foulplay","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":64,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Meteor Assault","id":"meteorassault","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Bug Bite","id":"bugbite","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Hyper Beam","id":"hyperbeam","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"124/238","active":true,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"124/153","active":true,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"147/147","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":false,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"129/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"}]}}
+
+|
+|t:|1603471179
+|switch|p2a: Terrakion|Terrakion, L76|124/238
+|turn|10
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"110/238","active":true,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":true,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"147/147","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":false,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"129/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"}]},"noCancel":true}
+
+|
+|t:|1603471179
+|move|p1a: Zacian|Bullet Seed|p2b: Corphish
+|-supereffective|p2b: Corphish
+|-damage|p2b: Corphish|54/153
+|-supereffective|p2b: Corphish
+|-damage|p2b: Corphish|0 fnt
+|-hitcount|p2b: Corphish|2
+|faint|p2b: Corphish
+|move|p2a: Terrakion|Facade|p1a: Zacian
+|-damage|p1a: Zacian|138/283
+|move|p1b: Doublade|Stored Power|p2a: Terrakion
+|-supereffective|p2a: Terrakion
+|-damage|p2a: Terrakion|110/238
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Facade","id":"facade","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sky Attack","id":"skyattack","pp":8,"maxpp":8,"target":"any","disabled":false},{"move":"Foul Play","id":"foulplay","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":64,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Shift Gear","id":"shiftgear","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Scorching Sands","id":"scorchingsands","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Sheer Cold","id":"sheercold","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"110/238","active":true,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"147/147","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":false,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"129/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"}]}}
+
+|
+|t:|1603471179
+|switch|p2b: Psyduck|Psyduck, L57, M|147/147
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Double Kick","id":"doublekick","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Shift Gear","id":"shiftgear","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Scorching Sands","id":"scorchingsands","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Sheer Cold","id":"sheercold","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"117/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"138/147","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":false,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"110/238","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1a: Palossand|Palossand, L68, F|235/235
+|switch|p2a: Roselia|Roselia, L84, F|129/203
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2a: Roselia
+|switch|p1b: Barraskewda|Barraskewda, L82, M|187/265
+|move|p2b: Psyduck|Shift Gear|p2b: Psyduck
+|-boost|p2b: Psyduck|spe|2
+|-boost|p2b: Psyduck|atk|1
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1b: Barraskewda|171/265|[from] Sandstorm
+|-damage|p2b: Psyduck|138/147|[from] Sandstorm
+|-damage|p2a: Roselia|117/203|[from] Sandstorm
+|debug|natural status immunity
+|debug|weather immunity
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Facade","id":"facade","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sky Attack","id":"skyattack","pp":8,"maxpp":8,"target":"any","disabled":false},{"move":"Foul Play","id":"foulplay","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":64,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":40,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"20/238","active":true,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"160/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"138/147","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"117/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"}]}}
+
+|
+|t:|1603471179
+|switch|p2b: Chandelure|Chandelure, L86, F|223/223
+|switch|p2a: Terrakion|Terrakion, L76|110/238
+|move|p1b: Barraskewda|Double Iron Bash|p2b: Chandelure
+|-resisted|p2b: Chandelure
+|-damage|p2b: Chandelure|192/223
+|-resisted|p2b: Chandelure
+|-damage|p2b: Chandelure|160/223
+|-hitcount|p2b: Chandelure|2
+|move|p1a: Palossand|Apple Acid|p2a: Terrakion
+|-supereffective|p2a: Terrakion
+|-crit|p2a: Terrakion
+|-damage|p2a: Terrakion|20/238
+|-unboost|p2a: Terrakion|spd|1
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1b: Barraskewda|155/265|[from] Sandstorm
+|debug|natural status immunity
+|debug|weather immunity
+|debug|artificial status immunity
+|debug|weather immunity
+|debug|natural status immunity
+|debug|weather immunity
+|upkeep
+|turn|13
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":true,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"129/147","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"160/223","active":false,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"117/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"}]},"noCancel":true}
+
+|
+|t:|1603471179
+|switch|p2b: Psyduck|Psyduck, L57, M|138/147
+|switch|p1a: Doublade|Doublade, L64, M|120/166
+|move|p1b: Barraskewda|Power-Up Punch|p2a: Terrakion
+|-supereffective|p2a: Terrakion
+|-damage|p2a: Terrakion|0 fnt
+|-boost|p1b: Barraskewda|atk|1
+|faint|p2a: Terrakion
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1b: Barraskewda|139/265|[from] Sandstorm
+|-damage|p2b: Psyduck|129/147|[from] Sandstorm
+|debug|natural status immunity
+|debug|weather immunity
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Double Kick","id":"doublekick","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Shift Gear","id":"shiftgear","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Scorching Sands","id":"scorchingsands","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Sheer Cold","id":"sheercold","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"117/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"129/147","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"160/223","active":false,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p2a: Roselia|Roselia, L84, F|117/203
+|turn|14
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"160/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"120/147","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"117/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1b: Silvally|Silvally-Poison, L78|138/283
+|switch|p2a: Chandelure|Chandelure, L86, F|160/223
+|move|p2b: Psyduck|Scorching Sands|p1a: Doublade
+|-supereffective|p1a: Doublade
+|-damage|p1a: Doublade|62/166
+|move|p1a: Doublade|Memento|p2b: Psyduck
+|-unboost|p2b: Psyduck|atk|2
+|-unboost|p2b: Psyduck|spa|2
+|faint|p1a: Doublade
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1b: Silvally|121/283|[from] Sandstorm
+|debug|artificial status immunity
+|debug|weather immunity
+|-damage|p2b: Psyduck|120/147|[from] Sandstorm
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":40,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Shift Gear","id":"shiftgear","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Scorching Sands","id":"scorchingsands","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Sheer Cold","id":"sheercold","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"160/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"120/147","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"117/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1a: Palossand|Palossand, L68, F|235/235
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":40,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Shift Gear","id":"shiftgear","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Scorching Sands","id":"scorchingsands","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Sheer Cold","id":"sheercold","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"120/147","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"117/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1b: Barraskewda|Barraskewda, L82, M|139/265
+|switch|p1a: Silvally|Silvally-Poison, L51|162/187
+|move|p2a: Chandelure|Recover|p2a: Chandelure
+|-heal|p2a: Chandelure|223/223
+|move|p2b: Psyduck|Sheer Cold|p1a: Silvally|[miss]
+|-miss|p2b: Psyduck|p1a: Silvally
+|
+|-weather|none
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":39,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Shift Gear","id":"shiftgear","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Scorching Sands","id":"scorchingsands","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Sheer Cold","id":"sheercold","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":30,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"66/147","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"117/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1b: Dusclops|Dusclops, L79, F|182/194
+|move|p2a: Chandelure|Razor Leaf|p1a: Silvally|[spread] p1a,p1b
+|debug|Spread modifier: 0.75
+|-resisted|p1a: Silvally
+|debug|Spread modifier: 0.75
+|-damage|p1a: Silvally|148/187
+|-damage|p1b: Dusclops|168/194
+|move|p1a: Silvally|Nature Power|p2b: Psyduck
+|move|p1a: Silvally|Tri Attack|p2b: Psyduck|[from]Nature Power
+|-damage|p2b: Psyduck|66/147
+|move|p2b: Psyduck|Shock Wave|p1a: Silvally
+|-damage|p1a: Silvally|136/187
+|
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":39,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Shift Gear","id":"shiftgear","pp":13,"maxpp":16,"target":"self","disabled":false},{"move":"Scorching Sands","id":"scorchingsands","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Sheer Cold","id":"sheercold","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":30,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"169/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"66/147","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"117/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|move|p2a: Chandelure|Disable||[still]
+|-fail|p2a: Chandelure
+|move|p1a: Silvally|Decorate|p2b: Psyduck
+|-boost|p2b: Psyduck|atk|2
+|-boost|p2b: Psyduck|spa|2
+|move|p1b: Dusclops|Acrobatics|p2a: Chandelure
+|-damage|p2a: Chandelure|169/223
+|move|p2b: Psyduck|Shift Gear|p2b: Psyduck
+|-boost|p2b: Psyduck|spe|2
+|-boost|p2b: Psyduck|atk|1
+|
+|upkeep
+|turn|18
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":39,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Shift Gear","id":"shiftgear","pp":13,"maxpp":16,"target":"self","disabled":false},{"move":"Scorching Sands","id":"scorchingsands","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Sheer Cold","id":"sheercold","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":30,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"66/147","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"117/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1a: Palossand|Palossand, L78, F|121/283
+|switch|p1b: Barraskewda|Barraskewda, L82, M|139/265
+|move|p2b: Psyduck|Scorching Sands|p1a: Palossand
+|-damage|p1a: Palossand|107/283
+|-status|p1a: Palossand|brn
+|debug|illusion cleared
+|replace|p1a: Zacian|Zacian, L78
+|-end|p1a: Zacian|Illusion
+|move|p2a: Chandelure|Recover|p2a: Chandelure
+|-heal|p2a: Chandelure|223/223
+|
+|-damage|p1a: Zacian|90/283 brn|[from] brn
+|upkeep
+|turn|19
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":true,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"117/203","active":false,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]},"noCancel":true}
+
+|
+|t:|1603471179
+|switch|p1b: Dusclops|Dusclops, L79, F|168/194
+|move|p1a: Zacian|Psychic|p2b: Psyduck
+|-damage|p2b: Psyduck|0 fnt
+|faint|p2b: Psyduck
+|move|p2a: Chandelure|Disable||[still]
+|-fail|p2a: Chandelure
+|
+|-damage|p1a: Zacian|73/283 brn|[from] brn
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":39,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"117/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p2b: Roselia|Roselia, L84, F|117/203
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2b: Roselia
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":39,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"119/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1a: Silvally|Silvally-Poison, L51|136/187
+|move|p2a: Chandelure|Disable||[still]
+|-fail|p2a: Chandelure
+|move|p2b: Roselia|Drain Punch|p1a: Silvally
+|-resisted|p1a: Silvally
+|-damage|p1a: Silvally|108/187
+|-heal|p2b: Roselia|131/203|[from] drain|[of] p1a: Silvally
+|move|p1b: Dusclops|Solar Beam||[still]
+|-prepare|p1b: Dusclops|Solar Beam
+|
+|-weather|Sandstorm|[upkeep]
+|debug|artificial status immunity
+|debug|weather immunity
+|-damage|p2b: Roselia|119/203|[from] Sandstorm
+|-damage|p1a: Silvally|97/187|[from] Sandstorm
+|-damage|p1b: Dusclops|156/194|[from] Sandstorm
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":39,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":62,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"99/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|move|p2a: Chandelure|Sleep Powder|p1a: Silvally
+|-status|p1a: Silvally|slp|[from] move: Sleep Powder
+|move|p2b: Roselia|Poison Gas||[still]|[spread] p1a,p1b
+|-fail|p2b: Roselia
+|-status|p1b: Dusclops|psn
+|cant|p1a: Silvally|slp
+|move|p1b: Dusclops|Solar Beam|p2b: Roselia|[from]lockedmove
+|debug|weakened by weather
+|-resisted|p2b: Roselia
+|-damage|p2b: Roselia|111/203
+|
+|-weather|Sandstorm|[upkeep]
+|debug|artificial status immunity
+|debug|weather immunity
+|-damage|p2b: Roselia|99/203|[from] Sandstorm
+|-damage|p1a: Silvally|86/187 slp|[from] Sandstorm
+|-damage|p1b: Dusclops|144/194 psn|[from] Sandstorm
+|-damage|p1b: Dusclops|120/194 psn|[from] psn
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":13,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":39,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":61,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"87/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|move|p2a: Chandelure|Recover||[still]
+|-fail|p2a: Chandelure|heal
+|debug|move failed because it did nothing
+|move|p2b: Roselia|Poison Gas||[still]|[spread] 
+|-fail|p2b: Roselia
+|-fail|p1b: Dusclops|psn
+|debug|move failed because it did nothing
+|cant|p1a: Silvally|slp
+|move|p1b: Dusclops|Play Nice|p2b: Roselia
+|-unboost|p2b: Roselia|atk|1
+|
+|-weather|Sandstorm|[upkeep]
+|debug|artificial status immunity
+|debug|weather immunity
+|-damage|p2b: Roselia|87/203|[from] Sandstorm
+|-damage|p1a: Silvally|75/187 slp|[from] Sandstorm
+|-damage|p1b: Dusclops|108/194 psn|[from] Sandstorm
+|-damage|p1b: Dusclops|84/194 psn|[from] psn
+|upkeep
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":12,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":39,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":61,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"85/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|move|p2a: Chandelure|Recover||[still]
+|-fail|p2a: Chandelure|heal
+|debug|move failed because it did nothing
+|move|p2b: Roselia|Drain Punch|p1a: Silvally
+|-resisted|p1a: Silvally
+|-damage|p1a: Silvally|56/187 slp
+|-heal|p2b: Roselia|97/203|[from] drain|[of] p1a: Silvally
+|cant|p1a: Silvally|slp
+|move|p1b: Dusclops|Storm Throw|p2a: Chandelure
+|-immune|p2a: Chandelure
+|
+|-weather|Sandstorm|[upkeep]
+|debug|artificial status immunity
+|debug|weather immunity
+|-damage|p2b: Roselia|85/203|[from] Sandstorm
+|-damage|p1a: Silvally|45/187 slp|[from] Sandstorm
+|-damage|p1b: Dusclops|72/194 psn|[from] Sandstorm
+|-damage|p1b: Dusclops|48/194 psn|[from] psn
+|upkeep
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":12,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":39,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":61,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"85/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"sandstream"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1b: Barraskewda|Barraskewda, L82, M|139/265
+|move|p2a: Chandelure|Sleep Powder|p1b: Barraskewda
+|-status|p1b: Barraskewda|slp|[from] move: Sleep Powder
+|move|p2b: Roselia|Double Kick|p1a: Silvally
+|-resisted|p1a: Silvally
+|-damage|p1a: Silvally|38/187 slp
+|-resisted|p1a: Silvally
+|-damage|p1a: Silvally|30/187 slp
+|-hitcount|p1a: Silvally|2
+|-curestatus|p1a: Silvally|slp|[msg]
+|move|p1a: Silvally|Entrainment|p2a: Chandelure
+|-endability|p2a: Chandelure|Sand Force|[from] move: Entrainment
+|-ability|p2a: Chandelure|Grass Pelt|[from] move: Entrainment
+|
+|-weather|none
+|upkeep
+|turn|25
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":12,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":38,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":60,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"223/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"85/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|cant|p1b: Barraskewda|slp
+|move|p2a: Chandelure|Razor Leaf|p1a: Silvally|[spread] p1a,p1b
+|debug|Spread modifier: 0.75
+|-resisted|p1a: Silvally
+|debug|Spread modifier: 0.75
+|-supereffective|p1b: Barraskewda
+|-damage|p1a: Silvally|16/187
+|-damage|p1b: Barraskewda|95/265 slp
+|move|p2b: Roselia|Poison Gas||[still]|[spread] 
+|debug|natural status immunity
+|debug|immune to status
+|-immune|p1a: Silvally
+|-fail|p2b: Roselia
+|debug|move failed because it did nothing
+|move|p1a: Silvally|Entrainment|p2b: Roselia
+|-endability|p2b: Roselia|Sand Stream|[from] move: Entrainment
+|-ability|p2b: Roselia|Grass Pelt|[from] move: Entrainment
+|
+|upkeep
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":12,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":38,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":28,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":60,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":13,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"175/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"86/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|-curestatus|p1b: Barraskewda|slp|[msg]
+|move|p1b: Barraskewda|Water Spout|p2a: Chandelure|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-supereffective|p2a: Chandelure
+|debug|Spread modifier: 0.75
+|-resisted|p2b: Roselia
+|-damage|p2a: Chandelure|175/223
+|-damage|p2b: Roselia|70/203
+|move|p2a: Chandelure|Disable|p1b: Barraskewda
+|-start|p1b: Barraskewda|Disable|Water Spout
+|move|p2b: Roselia|Drain Punch|p1b: Barraskewda
+|-damage|p1b: Barraskewda|63/265
+|-heal|p2b: Roselia|86/203|[from] drain|[of] p1b: Barraskewda
+|move|p1a: Silvally|Decorate|p2b: Roselia
+|-boost|p2b: Roselia|atk|2
+|-boost|p2b: Roselia|spa|2
+|
+|upkeep
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":12,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":38,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":28,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":60,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":12,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"175/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"54/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1a: Palossand|Palossand, L78, F|73/283 brn
+|move|p1b: Barraskewda|Earth Power|p2b: Roselia
+|-damage|p2b: Roselia|43/203
+|move|p2a: Chandelure|Sleep Powder||[still]
+|-fail|p2a: Chandelure
+|debug|move failed because it did nothing
+|move|p2b: Roselia|Drain Punch|p1a: Palossand
+|-resisted|p1a: Palossand
+|-damage|p1a: Palossand|52/283 brn
+|-heal|p2b: Roselia|54/203|[from] drain|[of] p1a: Palossand
+|debug|illusion cleared
+|replace|p1a: Zacian|Zacian, L78
+|-end|p1a: Zacian|Illusion
+|
+|-damage|p1a: Zacian|35/283 brn|[from] brn
+|upkeep
+|turn|28
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"103/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"54/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1a: Silvally|Silvally-Poison, L51|16/187
+|move|p1b: Barraskewda|Earth Power|p2a: Chandelure
+|-supereffective|p2a: Chandelure
+|-damage|p2a: Chandelure|103/223
+|move|p2a: Chandelure|Sleep Powder|p1b: Barraskewda|[miss]
+|-miss|p2a: Chandelure|p1b: Barraskewda
+|move|p2b: Roselia|Extrasensory|p1a: Silvally
+|-supereffective|p1a: Silvally
+|-damage|p1a: Silvally|0 fnt
+|faint|p1a: Silvally
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":12,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":38,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":28,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":60,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":12,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"103/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"54/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1a: Palossand|Palossand, L68, F|235/235
+|turn|29
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":11,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":38,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":28,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":45,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":60,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":12,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"175/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"54/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1b: Dusclops|Dusclops, L79, F|48/194 psn
+|move|p2a: Chandelure|Recover|p2a: Chandelure
+|-heal|p2a: Chandelure|215/223
+|move|p2b: Roselia|Double Kick|p1a: Palossand
+|-immune|p1a: Palossand
+|move|p1a: Palossand|Wild Charge|p2a: Chandelure
+|-damage|p2a: Chandelure|175/223
+|-damage|p1a: Palossand|225/235|[from] Recoil
+|
+|-damage|p1b: Dusclops|24/194 psn|[from] psn
+|upkeep
+|turn|30
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":11,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":37,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":28,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":45,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":59,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":12,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"156/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"54/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1b: Barraskewda|Barraskewda, L78, M|35/283 brn
+|move|p2a: Chandelure|Razor Leaf|p1b: Barraskewda|[spread] p1a,p1b
+|debug|Spread modifier: 0.75
+|-supereffective|p1a: Palossand
+|debug|Spread modifier: 0.75
+|-damage|p1a: Palossand|195/235
+|-damage|p1b: Barraskewda|22/283 brn
+|debug|illusion cleared
+|replace|p1b: Zacian|Zacian, L78
+|-end|p1b: Zacian|Illusion
+|move|p2b: Roselia|Poison Gas||[still]|[spread] p1a,p1b
+|-status|p1a: Palossand|psn
+|-fail|p2b: Roselia
+|move|p1a: Palossand|Fire Lash|p2a: Chandelure
+|-resisted|p2a: Chandelure
+|-damage|p2a: Chandelure|156/223
+|-unboost|p2a: Chandelure|def|1
+|
+|-damage|p1b: Zacian|5/283 brn|[from] brn
+|-damage|p1a: Palossand|166/235 psn|[from] psn
+|upkeep
+|turn|31
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"156/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"54/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1b: Barraskewda|Barraskewda, L82, M|63/265
+|switch|p1a: Dusclops|Dusclops, L79, F|24/194 psn
+|move|p2a: Chandelure|Razor Leaf|p1a: Dusclops|[spread] p1a,p1b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-supereffective|p1b: Barraskewda
+|-damage|p1a: Dusclops|10/194 psn
+|-damage|p1b: Barraskewda|19/265
+|move|p2b: Roselia|Poison Gas|p1a: Dusclops|[spread] p1a,p1b
+|-fail|p1a: Dusclops|psn
+|-status|p1b: Barraskewda|psn
+|
+|-damage|p1b: Barraskewda|0 fnt|[from] psn
+|faint|p1b: Barraskewda
+|-damage|p1a: Dusclops|0 fnt|[from] psn
+|faint|p1a: Dusclops
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":11,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":36,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":28,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":45,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":58,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":12,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"156/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"54/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|switch|p1b: Palossand|Palossand, L78, F|5/283 brn
+|switch|p1a: Palossand|Palossand, L68, F|166/235 psn
+|turn|32
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":11,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":35,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":28,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":44,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":58,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":12,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"140/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"54/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|move|p1b: Palossand|Bullet Seed|p2a: Chandelure
+|-resisted|p2a: Chandelure
+|-damage|p2a: Chandelure|148/223
+|-resisted|p2a: Chandelure
+|-damage|p2a: Chandelure|140/223
+|-hitcount|p2a: Chandelure|2
+|move|p2a: Chandelure|Razor Leaf|p1a: Palossand|[spread] p1a,p1b
+|debug|Spread modifier: 0.75
+|-supereffective|p1a: Palossand
+|debug|Spread modifier: 0.75
+|-damage|p1a: Palossand|134/235 psn
+|-damage|p1b: Palossand|0 fnt
+|debug|illusion cleared
+|replace|p1b: Zacian|Zacian, L78
+|-end|p1b: Zacian|Illusion
+|faint|p1b: Zacian
+|move|p2b: Roselia|Double Kick|p1a: Palossand
+|-immune|p1a: Palossand
+|move|p1a: Palossand|Tailwind|p1a: Palossand
+|-sidestart|p1: Bot 1|move: Tailwind
+|
+|-damage|p1a: Palossand|105/235 psn|[from] psn
+|upkeep
+|turn|33
+
+|request|{"active":[{"moves":[{"move":"Sleep Powder","id":"sleeppowder","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Recover","id":"recover","pp":11,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":35,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Disable","id":"disable","pp":27,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Double Kick","id":"doublekick","pp":44,"maxpp":48,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":57,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":12,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Chandelure","details":"Chandelure, L86, F","condition":"112/223","active":true,"stats":{"atk":117,"def":166,"spa":281,"spd":203,"spe":177},"moves":["sleeppowder","recover","razorleaf","disable"],"baseAbility":"sandforce","item":"tr98","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Roselia","details":"Roselia, L84, F","condition":"54/203","active":true,"stats":{"atk":136,"def":98,"spa":218,"spd":167,"spe":151},"moves":["doublekick","extrasensory","poisongas","drainpunch"],"baseAbility":"sandstream","item":"tr51","pokeball":"pokeball","ability":"grasspelt"},{"ident":"p2: Corphish","details":"Corphish, L71, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":110,"spa":119,"spd":95,"spe":99},"moves":["leafstorm","meteorassault","bugbite","hyperbeam"],"baseAbility":"ripen","item":"aspearberry","pokeball":"pokeball","ability":"ripen"},{"ident":"p2: Psyduck","details":"Psyduck, L57, M","condition":"0 fnt","active":false,"stats":{"atk":116,"def":74,"spa":103,"spd":78,"spe":94},"moves":["shiftgear","scorchingsands","sheercold","shockwave"],"baseAbility":"unaware","item":"liechiberry","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Axew","details":"Axew, L62, F","condition":"0 fnt","active":false,"stats":{"atk":164,"def":126,"spa":74,"spd":60,"spe":106},"moves":["strength","scratch","razorshell","powertrip"],"baseAbility":"limber","item":"leftovers","pokeball":"pokeball","ability":"limber"},{"ident":"p2: Terrakion","details":"Terrakion, L76","condition":"0 fnt","active":false,"stats":{"atk":266,"def":196,"spa":149,"spd":152,"spe":188},"moves":["facade","skyattack","foulplay","batonpass"],"baseAbility":"magician","item":"moonball","pokeball":"pokeball","ability":"magician"}]}}
+
+|
+|t:|1603471179
+|move|p1a: Palossand|Fire Lash|p2a: Chandelure
+|-resisted|p2a: Chandelure
+|-damage|p2a: Chandelure|112/223
+|-unboost|p2a: Chandelure|def|1
+|move|p2a: Chandelure|Disable|p1a: Palossand
+|-start|p1a: Palossand|Disable|Fire Lash
+|move|p2b: Roselia|Poison Gas|p1a: Palossand
+|-fail|p1a: Palossand|psn
+|debug|move failed because it did nothing
+|
+|-damage|p1a: Palossand|76/235 psn|[from] psn
+|upkeep
+|turn|34
+
+|
+|t:|1603471179
+|move|p1a: Palossand|Wild Charge|p2a: Chandelure
+|-damage|p2a: Chandelure|22/223
+|-damage|p1a: Palossand|53/235 psn|[from] Recoil
+|move|p2a: Chandelure|Razor Leaf|p1a: Palossand
+|-supereffective|p1a: Palossand
+|-crit|p1a: Palossand
+|-damage|p1a: Palossand|0 fnt
+|faint|p1a: Palossand
+|
+|win|Bot 2

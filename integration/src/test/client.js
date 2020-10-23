@@ -187,3 +187,4 @@ class ClientExhaustiveRunner extends ExhaustiveRunner {
 }
 
 exports.ExhaustiveRunner = ClientExhaustiveRunner;
+exports.UNLOGGED = UNLOGGED;

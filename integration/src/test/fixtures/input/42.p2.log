@@ -1,0 +1,737 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"195/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"227/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"206/206","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"}]}}
+
+|t:|1603471222
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|5
+|tier|[Gen 5] Doubles Custom Game
+|clearpoke
+|poke|p1|Magnezone, L89|item
+|poke|p1|Roselia, L82, F|item
+|poke|p1|Kyurem, L70|item
+|poke|p1|Bisharp, L86, F|item
+|poke|p1|Sceptile, L77, F|item
+|poke|p1|Jigglypuff, L72, F|item
+|poke|p2|Ariados, L73, M|item
+|poke|p2|Heatran, L71, F|item
+|poke|p2|Arceus-*, L90|item
+|poke|p2|Purugly, L77, M|item
+|poke|p2|Carracosta, L87, M|item
+|poke|p2|Snover, L54, F|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":32,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"195/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"227/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"206/206","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|start
+|switch|p1a: Magnezone|Magnezone, L89|223/223
+|switch|p1b: Roselia|Roselia, L82, F|242/242
+|switch|p2a: Ariados|Ariados, L73, M|195/195
+|switch|p2b: Heatran|Heatran, L71, F|227/227
+|-item|p2b: Heatran|Big Root|[from] ability: Frisk|[of] p1b: Roselia
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"195/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"227/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"206/206","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1a: Kyurem|Kyurem, L70|297/297
+|move|p2b: Heatran|Chatter|p1b: Roselia
+|-supereffective|p1b: Roselia
+|-damage|p1b: Roselia|154/242
+|move|p1b: Roselia|Fissure|p2a: Ariados|[miss]
+|-miss|p1b: Roselia|p2a: Ariados
+|move|p2a: Ariados|Soak|p1b: Roselia
+|-start|p1b: Roselia|typechange|Water
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"X-Scissor","id":"xscissor","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":16,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"195/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"227/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"206/206","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1a: Bisharp|Bisharp, L86, F|271/271
+|switch|p2b: Arceus|Arceus-Dragon, L90|343/343
+|move|p1b: Roselia|Telekinesis|p2a: Ariados
+|-start|p2a: Ariados|Telekinesis
+|move|p2a: Ariados|Aqua Ring|p2a: Ariados
+|-start|p2a: Ariados|Aqua Ring
+|
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Chatter","id":"chatter","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"X-Scissor","id":"xscissor","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":16,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"227/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"195/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"206/206","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1a: Sceptile|Sceptile, L77, F|239/239
+|switch|p2a: Heatran|Heatran, L71, F|227/227
+|move|p1b: Roselia|Last Resort||[still]
+|-fail|p1b: Roselia
+|move|p2b: Arceus|X-Scissor|p1a: Sceptile
+|-supereffective|p1a: Sceptile
+|-damage|p1a: Sceptile|45/239
+|-ability|p1a: Sceptile|Rattled|boost
+|-boost|p1a: Sceptile|spe|1
+|
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Growth","id":"growth","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Psychic","id":"psychic","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Astonish","id":"astonish","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Guard","id":"cottonguard","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sweet Kiss","id":"sweetkiss","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"206/206","active":true,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":true,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"195/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"227/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1a: Jigglypuff|Jigglypuff, L72, F|301/301
+|switch|p2b: Carracosta|Carracosta, L87, M|277/277
+|switch|p2a: Purugly|Purugly, L77, M|206/206
+|switch|p1b: Kyurem|Kyurem, L70|297/297
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Moonlight","id":"moonlight","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Dynamic Punch","id":"dynamicpunch","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Aurora Beam","id":"aurorabeam","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":true,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"227/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"206/206","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2a: Purugly|Purugly, L54, M|162/162
+|switch|p2b: Ariados|Ariados, L73, M|195/195
+|move|p1b: Kyurem|Mist|p1b: Kyurem
+|-sidestart|p1: Bot 1|Mist
+|move|p1a: Jigglypuff|Hydro Cannon|p2b: Ariados
+|-damage|p2b: Ariados|121/195
+|-mustrecharge|p1a: Jigglypuff
+|
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Chatter","id":"chatter","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"197/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"206/206","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2a: Heatran|Heatran, L71, F|227/227
+|move|p1b: Kyurem|Slam|p2a: Heatran
+|-resisted|p2a: Heatran
+|-damage|p2a: Heatran|197/227
+|move|p2b: Ariados|Headbutt|p1a: Jigglypuff
+|-damage|p1a: Jigglypuff|187/301
+|cant|p1a: Jigglypuff|recharge
+|
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Growth","id":"growth","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Psychic","id":"psychic","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"206/206","active":true,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"197/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2a: Purugly|Purugly, L77, M|206/206
+|move|p1b: Kyurem|Tail Glow|p1b: Kyurem
+|-boost|p1b: Kyurem|spa|3
+|move|p2b: Ariados|Flash|p1a: Jigglypuff
+|-activate|p1a: Jigglypuff|move: Mist
+|debug|move failed because it did nothing
+|move|p1a: Jigglypuff|Lick|p2a: Purugly
+|-immune|p2a: Purugly
+|
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Growth","id":"growth","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Psychic","id":"psychic","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"206/206","active":true,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"197/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1b: Sceptile|Sceptile, L77, F|45/239
+|switch|p2b: Heatran|Heatran, L71, F|197/227
+|switch|p1a: Roselia|Roselia, L82, F|154/242
+|-item|p2a: Purugly|Starf Berry|[from] ability: Frisk|[of] p1a: Roselia
+|move|p2a: Purugly|Growth|p2a: Purugly
+|-boost|p2a: Purugly|atk|1
+|-boost|p2a: Purugly|spa|1
+|
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Growth","id":"growth","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Psychic","id":"psychic","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Freeze Shock","id":"freezeshock"}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"191/206","active":true,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"182/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|move|p1b: Sceptile|Covet|p2b: Heatran
+|-resisted|p2b: Heatran
+|-damage|p2b: Heatran|182/227
+|move|p2a: Purugly|Psychic|p1a: Roselia
+|-supereffective|p1a: Roselia
+|-damage|p1a: Roselia|42/242
+|move|p2b: Heatran|Freeze Shock||[still]
+|-prepare|p2b: Heatran|Freeze Shock
+|move|p1a: Roselia|Rage|p2a: Purugly
+|-damage|p2a: Purugly|191/206
+|-singlemove|p1a: Roselia|Rage
+|
+|-sideend|p1: Bot 1|Mist
+|upkeep
+|turn|10
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"191/206","active":true,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"182/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1b: Kyurem|Kyurem, L70|297/297
+|move|p2a: Purugly|Ice Beam|p1b: Kyurem
+|-crit|p1b: Kyurem
+|-damage|p1b: Kyurem|125/297
+|move|p2b: Heatran|Freeze Shock|p1a: Roselia|[from]lockedmove
+|-supereffective|p1a: Roselia
+|-damage|p1a: Roselia|0 fnt
+|faint|p1a: Roselia
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Growth","id":"growth","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Psychic","id":"psychic","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"191/206","active":true,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"182/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1a: Jigglypuff|Jigglypuff, L72, F|187/301
+|turn|11
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"191/206","active":true,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"182/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1a: Sceptile|Sceptile, L77, F|45/239
+|move|p2a: Purugly|Flash Cannon|p1a: Sceptile
+|-damage|p1a: Sceptile|0 fnt
+|faint|p1a: Sceptile
+|move|p1b: Kyurem|Bulk Up|p1b: Kyurem
+|-boost|p1b: Kyurem|atk|1
+|-boost|p1b: Kyurem|def|1
+|move|p2b: Heatran|Thief|p1b: Kyurem
+|-damage|p1b: Kyurem|109/297
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Growth","id":"growth","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Psychic","id":"psychic","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"191/206","active":true,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"182/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1a: Magnezone|Magnezone, L89|223/223
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"182/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"191/206","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2a: Ariados|Ariados, L73, M|121/195
+|switch|p1a: Jigglypuff|Jigglypuff, L72, F|187/301
+|move|p1b: Kyurem|Mist|p1b: Kyurem
+|-sidestart|p1: Bot 1|Mist
+|move|p2b: Heatran|Magnet Bomb|p1b: Kyurem
+|-supereffective|p1b: Kyurem
+|-damage|p1b: Kyurem|35/297
+|
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Astonish","id":"astonish","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Guard","id":"cottonguard","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sweet Kiss","id":"sweetkiss","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":30,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":true,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"191/206","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2a: Carracosta|Carracosta, L87, M|277/277
+|move|p1b: Kyurem|Bulk Up|p1b: Kyurem
+|-boost|p1b: Kyurem|atk|1
+|-boost|p1b: Kyurem|def|1
+|move|p2b: Heatran|Chatter|p1a: Jigglypuff
+|-damage|p1a: Jigglypuff|71/301
+|move|p1a: Jigglypuff|Fire Blast|p2b: Heatran
+|-damage|p2b: Heatran|142/227
+|
+|upkeep
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"Astonish","id":"astonish","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Guard","id":"cottonguard","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sweet Kiss","id":"sweetkiss","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Growth","id":"growth","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Psychic","id":"psychic","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":true,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"191/206","active":true,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"162/162","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2b: Purugly|Purugly, L77, M|191/206
+|switch|p1a: Magnezone|Magnezone, L89|223/223
+|move|p1b: Kyurem|Tail Glow|p1b: Kyurem
+|-boost|p1b: Kyurem|spa|3
+|move|p2a: Carracosta|Astonish|p1a: Magnezone
+|-resisted|p1a: Magnezone
+|-damage|p1a: Magnezone|211/223
+|
+|upkeep
+|turn|15
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":true,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"191/206","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471222
+|switch|p2b: Heatran|Heatran, L54, F|162/162
+|switch|p2a: Ariados|Ariados, L73, M|121/195
+|move|p1b: Kyurem|Slam|p2b: Heatran
+|-crit|p2b: Heatran
+|-damage|p2b: Heatran|0 fnt
+|debug|illusion cleared
+|replace|p2b: Snover|Snover, L54, F
+|-end|p2b: Snover|Illusion
+|faint|p2b: Snover
+|move|p1a: Magnezone|Toxic|p2a: Ariados
+|debug|natural status immunity
+|debug|immune to status
+|-immune|p2a: Ariados
+|debug|move failed because it did nothing
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Growth","id":"growth","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Psychic","id":"psychic","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"191/206","active":true,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2b: Purugly|Purugly, L77, M|191/206
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Astonish","id":"astonish","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Guard","id":"cottonguard","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sweet Kiss","id":"sweetkiss","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"277/277","active":true,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"191/206","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2b: Carracosta|Carracosta, L87, M|277/277
+|switch|p1b: Bisharp|Bisharp, L86, F|271/271
+|switch|p1a: Jigglypuff|Jigglypuff, L72, F|71/301
+|move|p2a: Ariados|Flash|p1b: Bisharp
+|-activate|p1b: Bisharp|move: Mist
+|debug|move failed because it did nothing
+|
+|-sideend|p1: Bot 1|Mist
+|upkeep
+|turn|17
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195 slp","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"241/277","active":true,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"191/206","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|move|p1b: Bisharp|Spore|p2a: Ariados
+|-status|p2a: Ariados|slp|[from] move: Spore
+|move|p2b: Carracosta|Head Smash|p1a: Jigglypuff
+|-damage|p1a: Jigglypuff|0 fnt
+|-damage|p2b: Carracosta|241/277|[from] Recoil
+|faint|p1a: Jigglypuff
+|cant|p2a: Ariados|slp
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Astonish","id":"astonish","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Guard","id":"cottonguard","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sweet Kiss","id":"sweetkiss","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"121/195 slp","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"241/277","active":true,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"191/206","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1a: Magnezone|Magnezone, L89|211/223
+|turn|18
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"91/195 slp","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":true,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"241/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471222
+|switch|p2b: Purugly|Purugly, L77, M|191/206
+|move|p1a: Magnezone|Mega Drain|p2a: Ariados
+|-resisted|p2a: Ariados
+|-crit|p2a: Ariados
+|-damage|p2a: Ariados|91/195 slp
+|-heal|p1a: Magnezone|223/223|[from] drain|[of] p2a: Ariados
+|move|p1b: Bisharp|Metal Claw|p2b: Purugly
+|-crit|p2b: Purugly
+|-damage|p2b: Purugly|0 fnt
+|faint|p2b: Purugly
+|cant|p2a: Ariados|slp
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Astonish","id":"astonish","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Guard","id":"cottonguard","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sweet Kiss","id":"sweetkiss","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"91/195 slp","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"241/277","active":true,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2b: Carracosta|Carracosta, L87, M|241/277
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Astonish","id":"astonish","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Guard","id":"cottonguard","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Sweet Kiss","id":"sweetkiss","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"91/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"133/277","active":true,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"343/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1b: Kyurem|Kyurem, L70|35/297
+|move|p1a: Magnezone|Needle Arm|p2b: Carracosta
+|-supereffective|p2b: Carracosta
+|-damage|p2b: Carracosta|133/277
+|move|p2b: Carracosta|Cotton Guard|p2b: Carracosta
+|-boost|p2b: Carracosta|def|3
+|-curestatus|p2a: Ariados|slp|[msg]
+|move|p2a: Ariados|Flash|p1b: Kyurem
+|-unboost|p1b: Kyurem|accuracy|1
+|
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Chatter","id":"chatter","pp":30,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"X-Scissor","id":"xscissor","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":16,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"301/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"133/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"91/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2b: Arceus|Arceus-Dragon, L90|343/343
+|switch|p2a: Heatran|Heatran, L71, F|142/227
+|move|p1b: Kyurem|Mist|p1b: Kyurem
+|-sidestart|p1: Bot 1|Mist
+|move|p1a: Magnezone|Venoshock|p2b: Arceus
+|-damage|p2b: Arceus|301/343
+|
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Chatter","id":"chatter","pp":30,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"X-Scissor","id":"xscissor","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":16,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"301/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"133/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"91/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1a: Bisharp|Bisharp, L86, F|271/271
+|move|p1b: Kyurem|Bulk Up|p1b: Kyurem
+|-boost|p1b: Kyurem|atk|1
+|-boost|p1b: Kyurem|def|1
+|move|p2a: Heatran|Thief|p1b: Kyurem
+|-damage|p1b: Kyurem|20/297
+|move|p2b: Arceus|Spider Web|p1b: Kyurem
+|-activate|p1b: Kyurem|trapped
+|
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Chatter","id":"chatter","pp":29,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"X-Scissor","id":"xscissor","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"301/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"133/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"91/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1a: Magnezone|Magnezone, L89|223/223
+|move|p1b: Kyurem|Bulk Up|p1b: Kyurem
+|-boost|p1b: Kyurem|atk|1
+|-boost|p1b: Kyurem|def|1
+|move|p2a: Heatran|Chatter|p1a: Magnezone
+|-resisted|p1a: Magnezone
+|-damage|p1a: Magnezone|214/223
+|move|p2b: Arceus|Magic Room|p2b: Arceus
+|-fieldstart|move: Magic Room|[of] p2b: Arceus
+|
+|upkeep
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Astonish","id":"astonish","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Smash","id":"headsmash","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Guard","id":"cottonguard","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Sweet Kiss","id":"sweetkiss","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"X-Scissor","id":"xscissor","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"133/277","active":true,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"301/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"91/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1a: Bisharp|Bisharp, L86, F|271/271
+|switch|p2a: Carracosta|Carracosta, L87, M|133/277
+|move|p1b: Kyurem|Tail Glow|p1b: Kyurem
+|-boost|p1b: Kyurem|spa|3
+|move|p2b: Arceus|Calm Mind|p2b: Arceus
+|-boost|p2b: Arceus|spa|1
+|-boost|p2b: Arceus|spd|1
+|
+|upkeep
+|turn|24
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"91/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"301/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"133/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2a: Ariados|Ariados, L73, M|91/195
+|move|p1b: Kyurem|Mist||[still]
+|-fail|p1b: Kyurem
+|debug|move failed because it did nothing
+|move|p1a: Bisharp|Kinesis|p2b: Arceus
+|-unboost|p2b: Arceus|accuracy|1
+|move|p2b: Arceus|X-Scissor|p1b: Kyurem
+|-damage|p1b: Kyurem|0 fnt
+|faint|p1b: Kyurem
+|
+|-sideend|p1: Bot 1|Mist
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"X-Scissor","id":"xscissor","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"91/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"301/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"133/277","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p1b: Magnezone|Magnezone, L89|214/223
+|turn|25
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":true,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"193/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"91/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471222
+|switch|p2a: Carracosta|Carracosta, L87, M|133/277
+|move|p1b: Magnezone|Mega Drain|p2a: Carracosta
+|debug|BasePower handler suppressed by Embargo, Klutz or Magic Room
+|-supereffective|p2a: Carracosta
+|-damage|p2a: Carracosta|0 fnt
+|-heal|p1b: Magnezone|223/223|[from] drain|[of] p2a: Carracosta
+|faint|p2a: Carracosta
+|move|p1a: Bisharp|Megahorn|p2b: Arceus
+|debug|ModifyDamage handler suppressed by Embargo, Klutz or Magic Room
+|-damage|p2b: Arceus|193/343
+|move|p2b: Arceus|Magic Room|p2b: Arceus
+|-fieldend|move: Magic Room|[of] p2b: Arceus
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Chatter","id":"chatter","pp":29,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"X-Scissor","id":"xscissor","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"193/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"91/195","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2a: Heatran|Heatran, L71, F|142/227
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"X-Scissor","id":"xscissor","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"75/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"193/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2a: Ariados|Ariados, L73, M|91/195
+|move|p1b: Magnezone|Mega Drain|p2a: Ariados
+|-resisted|p2a: Ariados
+|-damage|p2a: Ariados|75/195
+|move|p1a: Bisharp|Megahorn|p2b: Arceus|[miss]
+|-miss|p1a: Bisharp|p2b: Arceus
+|move|p2b: Arceus|X-Scissor|p1a: Bisharp|[miss]
+|-miss|p2b: Arceus|p1a: Bisharp
+|
+|upkeep
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"X-Scissor","id":"xscissor","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"75/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"92/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"142/227","active":false,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|move|p1b: Magnezone|Toxic|p2a: Ariados
+|debug|natural status immunity
+|debug|immune to status
+|-immune|p2a: Ariados
+|debug|move failed because it did nothing
+|move|p1a: Bisharp|Megahorn|p2b: Arceus
+|-damage|p2b: Arceus|92/343
+|move|p2a: Ariados|Headbutt|p1a: Bisharp
+|-resisted|p1a: Bisharp
+|-crit|p1a: Bisharp
+|-damage|p1a: Bisharp|246/271
+|move|p2b: Arceus|X-Scissor|p1b: Magnezone
+|-resisted|p1b: Magnezone
+|-crit|p1b: Magnezone
+|-damage|p1b: Magnezone|168/223
+|
+|upkeep
+|turn|28
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":29,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"60/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"125/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"92/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2b: Heatran|Heatran, L71, F|142/227
+|move|p1b: Magnezone|Mega Drain|p2a: Ariados
+|-resisted|p2a: Ariados
+|-damage|p2a: Ariados|60/195
+|-heal|p1b: Magnezone|176/223|[from] drain|[of] p2a: Ariados
+|move|p1a: Bisharp|Metal Claw|p2b: Heatran
+|-resisted|p2b: Heatran
+|-damage|p2b: Heatran|125/227
+|move|p2a: Ariados|Headbutt|p1b: Magnezone
+|-resisted|p1b: Magnezone
+|-damage|p1b: Magnezone|166/223
+|
+|upkeep
+|turn|29
+
+|request|{"active":[{"moves":[{"move":"Soak","id":"soak","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":29,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"45/195","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"125/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"92/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|move|p1b: Magnezone|Needle Arm|p2a: Ariados
+|-resisted|p2a: Ariados
+|-damage|p2a: Ariados|45/195
+|move|p2b: Heatran|Thief|p1b: Magnezone
+|-resisted|p1b: Magnezone
+|-damage|p1b: Magnezone|159/223
+|move|p1a: Bisharp|Megahorn|p2b: Heatran|[miss]
+|-miss|p1a: Bisharp|p2b: Heatran
+|cant|p2a: Ariados|flinch
+|
+|upkeep
+|turn|30
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"0 fnt","active":true,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"125/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"92/343","active":false,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471222
+|move|p1b: Magnezone|Toxic|p2a: Ariados
+|debug|natural status immunity
+|debug|immune to status
+|-immune|p2a: Ariados
+|debug|move failed because it did nothing
+|move|p2b: Heatran|Thief|p1a: Bisharp
+|-resisted|p1a: Bisharp
+|-damage|p1a: Bisharp|243/271
+|move|p1a: Bisharp|Metal Claw|p2a: Ariados
+|-damage|p2a: Ariados|0 fnt
+|faint|p2a: Ariados
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"X-Scissor","id":"xscissor","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":29,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"92/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"125/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"0 fnt","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|switch|p2a: Arceus|Arceus-Dragon, L90|92/343
+|turn|31
+
+|request|{"active":[{"moves":[{"move":"X-Scissor","id":"xscissor","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":29,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":30,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"92/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"86/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"0 fnt","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|move|p1b: Magnezone|Mega Drain|p2b: Heatran
+|-resisted|p2b: Heatran
+|-damage|p2b: Heatran|114/227
+|-heal|p1b: Magnezone|165/223|[from] drain|[of] p2b: Heatran
+|move|p2b: Heatran|Magnet Bomb|p1b: Magnezone
+|-resisted|p1b: Magnezone
+|-damage|p1b: Magnezone|158/223
+|move|p1a: Bisharp|Megahorn|p2b: Heatran
+|-resisted|p2b: Heatran
+|-damage|p2b: Heatran|86/227
+|move|p2a: Arceus|X-Scissor|p1b: Magnezone
+|-resisted|p1b: Magnezone
+|-damage|p1b: Magnezone|129/223
+|
+|upkeep
+|turn|32
+
+|request|{"active":[{"moves":[{"move":"X-Scissor","id":"xscissor","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":28,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":30,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"92/343 slp","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"78/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"0 fnt","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|move|p1b: Magnezone|Needle Arm|p2b: Heatran
+|-resisted|p2b: Heatran
+|-damage|p2b: Heatran|78/227
+|move|p2b: Heatran|Chatter|p1a: Bisharp
+|-immune|p1a: Bisharp|[from] ability: Soundproof
+|move|p1a: Bisharp|Spore|p2a: Arceus
+|-status|p2a: Arceus|slp|[from] move: Spore
+|cant|p2a: Arceus|slp
+|
+|upkeep
+|turn|33
+
+|request|{"active":[{"moves":[{"move":"X-Scissor","id":"xscissor","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":28,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":11,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":30,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"92/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"78/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"0 fnt","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|move|p1b: Magnezone|Venoshock|p2b: Heatran
+|-immune|p2b: Heatran
+|move|p2b: Heatran|Thief|p1a: Bisharp
+|-resisted|p1a: Bisharp
+|-damage|p1a: Bisharp|240/271
+|move|p1a: Bisharp|Kinesis|p2a: Arceus|[miss]
+|-miss|p1a: Bisharp|p2a: Arceus
+|-curestatus|p2a: Arceus|slp|[msg]
+|move|p2a: Arceus|Spider Web|p1b: Magnezone
+|-activate|p1b: Magnezone|trapped
+|
+|upkeep
+|turn|34
+
+|request|{"active":[{"moves":[{"move":"X-Scissor","id":"xscissor","pp":18,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":28,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":10,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":30,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"92/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"78/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"0 fnt","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|move|p1b: Magnezone|Venoshock|p2b: Heatran
+|-immune|p2b: Heatran
+|move|p2b: Heatran|Thief|p1a: Bisharp
+|-resisted|p1a: Bisharp
+|-damage|p1a: Bisharp|236/271
+|move|p1a: Bisharp|Kinesis|p2b: Heatran
+|-unboost|p2b: Heatran|accuracy|1
+|move|p2a: Arceus|X-Scissor|p1b: Magnezone
+|-resisted|p1b: Magnezone
+|-damage|p1b: Magnezone|101/223
+|
+|upkeep
+|turn|35
+
+|request|{"active":[{"moves":[{"move":"X-Scissor","id":"xscissor","pp":17,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Freeze Shock","id":"freezeshock"}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"92/343","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"59/227","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"0 fnt","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|move|p1b: Magnezone|Venoshock|p2b: Heatran
+|-immune|p2b: Heatran
+|move|p2b: Heatran|Freeze Shock||[still]
+|-prepare|p2b: Heatran|Freeze Shock
+|move|p1a: Bisharp|Metal Claw|p2b: Heatran
+|-resisted|p2b: Heatran
+|-damage|p2b: Heatran|59/227
+|move|p2a: Arceus|X-Scissor|p1a: Bisharp
+|-damage|p1a: Bisharp|169/271
+|
+|upkeep
+|turn|36
+
+|request|{"active":[{"moves":[{"move":"X-Scissor","id":"xscissor","pp":17,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":13,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":28,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":10,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":30,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"71/343 tox","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"59/227 slp","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"0 fnt","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|move|p1b: Magnezone|Toxic|p2a: Arceus
+|-status|p2a: Arceus|tox
+|move|p2b: Heatran|Freeze Shock|p1b: Magnezone|[from]lockedmove|[miss]
+|-miss|p2b: Heatran|p1b: Magnezone
+|move|p1a: Bisharp|Spore|p2b: Heatran
+|-status|p2b: Heatran|slp|[from] move: Spore
+|move|p2a: Arceus|Magic Room|p2a: Arceus
+|-fieldstart|move: Magic Room|[of] p2a: Arceus
+|
+|-damage|p2a: Arceus|71/343 tox|[from] psn
+|upkeep
+|turn|37
+
+|request|{"active":[{"moves":[{"move":"X-Scissor","id":"xscissor","pp":17,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":13,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":28,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":10,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":30,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"0 fnt","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"32/227 slp","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"0 fnt","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|move|p1b: Magnezone|Venoshock|p2a: Arceus
+|debug|BasePower handler suppressed by Embargo, Klutz or Magic Room
+|debug|ModifyDamage handler suppressed by Embargo, Klutz or Magic Room
+|-damage|p2a: Arceus|0 fnt
+|faint|p2a: Arceus
+|cant|p2b: Heatran|slp
+|move|p1a: Bisharp|Megahorn|p2b: Heatran
+|-resisted|p2b: Heatran
+|-damage|p2b: Heatran|32/227 slp
+|
+|upkeep
+|turn|38
+
+|request|{"active":[{"moves":[{"move":"X-Scissor","id":"xscissor","pp":17,"maxpp":24,"target":"normal","disabled":false},{"move":"Spider Web","id":"spiderweb","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":13,"maxpp":16,"target":"all","disabled":false},{"move":"Calm Mind","id":"calmmind","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Chatter","id":"chatter","pp":28,"maxpp":32,"target":"any","disabled":false},{"move":"Freeze Shock","id":"freezeshock","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Thief","id":"thief","pp":10,"maxpp":16,"target":"normal","disabled":false},{"move":"Magnet Bomb","id":"magnetbomb","pp":30,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arceus","details":"Arceus-Dragon, L90","condition":"0 fnt","active":true,"stats":{"atk":273,"def":233,"spa":281,"spd":251,"spe":277},"moves":["xscissor","spiderweb","magicroom","calmmind"],"baseAbility":"stall","item":"tangaberry","pokeball":"pokeball"},{"ident":"p2: Heatran","details":"Heatran, L71, F","condition":"3/227 slp","active":true,"stats":{"atk":166,"def":203,"spa":238,"spd":168,"spe":144},"moves":["chatter","freezeshock","thief","magnetbomb"],"baseAbility":"harvest","item":"bigroot","pokeball":"pokeball"},{"ident":"p2: Purugly","details":"Purugly, L77, M","condition":"0 fnt","active":false,"stats":{"atk":188,"def":136,"spa":148,"spd":155,"spe":229},"moves":["growth","psychic","icebeam","flashcannon"],"baseAbility":"stickyhold","item":"starfberry","pokeball":"pokeball"},{"ident":"p2: Snover","details":"Snover, L54, F","condition":"0 fnt","active":false,"stats":{"atk":102,"def":107,"spa":110,"spd":105,"spe":53},"moves":["moonlight","dynamicpunch","doomdesire","aurorabeam"],"baseAbility":"illusion","item":"friendball","pokeball":"pokeball"},{"ident":"p2: Carracosta","details":"Carracosta, L87, M","condition":"0 fnt","active":false,"stats":{"atk":277,"def":265,"spa":174,"spd":150,"spe":120},"moves":["astonish","headsmash","cottonguard","sweetkiss"],"baseAbility":"poisonpoint","item":"zapplate","pokeball":"pokeball"},{"ident":"p2: Ariados","details":"Ariados, L73, M","condition":"0 fnt","active":false,"stats":{"atk":147,"def":124,"spa":124,"spd":110,"spe":105},"moves":["soak","aquaring","headbutt","flash"],"baseAbility":"solidrock","item":"dragonscale","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471222
+|move|p1b: Magnezone|Mega Drain|p2b: Heatran
+|debug|BasePower handler suppressed by Embargo, Klutz or Magic Room
+|-resisted|p2b: Heatran
+|-damage|p2b: Heatran|22/227 slp
+|-heal|p1b: Magnezone|106/223|[from] drain|[of] p2b: Heatran
+|cant|p2b: Heatran|slp
+|move|p1a: Bisharp|Metal Claw|p2b: Heatran
+|-resisted|p2b: Heatran
+|-damage|p2b: Heatran|3/227 slp
+|
+|upkeep
+|turn|39
+
+|
+|t:|1603471222
+|move|p1b: Magnezone|Needle Arm|p2b: Heatran
+|debug|BasePower handler suppressed by Embargo, Klutz or Magic Room
+|-resisted|p2b: Heatran
+|-damage|p2b: Heatran|0 fnt
+|debug|move failed because it did nothing
+|faint|p2b: Heatran
+|
+|win|Bot 1

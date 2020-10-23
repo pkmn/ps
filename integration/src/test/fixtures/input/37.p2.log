@@ -1,0 +1,754 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"235/235","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"233/233","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|t:|1603471197
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|8
+|tier|[Gen 8] Doubles Custom Game
+|clearpoke
+|poke|p1|Bounsweet, L75, F|
+|poke|p1|Solosis, L80, F|
+|poke|p1|Escavalier, L76, F|
+|poke|p1|Gloom, L68, M|
+|poke|p1|Solgaleo, L55|
+|poke|p1|Silvally-*, L52|
+|poke|p2|Kubfu, L62, M|
+|poke|p2|Clefable, L59, M|
+|poke|p2|Clauncher, L88, F|
+|poke|p2|Stoutland, L74, M|
+|poke|p2|Tsareena, L82, F|
+|poke|p2|Toxicroak, L75, M|
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Synthesis","id":"synthesis","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Leaf Storm","id":"leafstorm","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Kinesis","id":"kinesis","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Max Steelspike","id":"maxsteelspike","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxovergrowth","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxsteelspike","target":"adjacentFoe"}]}},{"moves":[{"move":"Wish","id":"wish","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Slam","id":"slam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Giga Impact","id":"gigaimpact","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxguard","target":"self"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"235/235","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"233/233","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471197
+|start
+|switch|p1a: Bounsweet|Bounsweet, L75, F|158/158
+|switch|p1b: Solosis|Solosis, L80, F|173/173
+|switch|p2a: Kubfu|Kubfu, L62, M|171/171
+|switch|p2b: Clefable|Clefable, L59, M|197/197
+|-transform|p1a: Bounsweet|p2b: Clefable|[from] ability: Imposter
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Fire Fang","id":"firefang","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Slam","id":"slam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Giga Impact","id":"gigaimpact","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxguard","target":"self"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"235/235","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"394/394","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"233/233","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471197
+|switch|p2a: Clauncher|Clauncher, L88, F|235/235
+|switch|p1b: Escavalier|Escavalier, L76, F|233/233
+|-start|p2b: Clefable|Dynamax
+|-heal|p2b: Clefable|394/394|[silent]
+|move|p2b: Clefable|Max Guard|p2b: Clefable
+|-singleturn|p2b: Clefable|Max Guard
+|move|p1a: Bounsweet|Wish|p1a: Bounsweet
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Fire Fang","id":"firefang","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Surging Strikes","id":"surgingstrikes","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"U-turn","id":"uturn","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Anchor Shot","id":"anchorshot","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"196/235","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"233/233","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471197
+|-end|p2b: Clefable|Dynamax
+|-heal|p2b: Clefable|197/197|[silent]
+|switch|p2b: Stoutland|Stoutland, L74, M|232/232
+|move|p1b: Escavalier|Quick Attack|p2a: Clauncher
+|-damage|p2a: Clauncher|196/235
+|move|p2a: Clauncher|Fire Fang|p1b: Escavalier
+|-supereffective|p1b: Escavalier
+|-damage|p1b: Escavalier|117/233
+|move|p1a: Bounsweet|Slam|p2a: Clauncher|[miss]
+|-miss|p1a: Bounsweet|p2a: Clauncher
+|
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Fire Fang","id":"firefang","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Slam","id":"slam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Giga Impact","id":"gigaimpact","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"196/235","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"233/233","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471197
+|switch|p2b: Clefable|Clefable, L59, M|197/197
+|switch|p1a: Solosis|Solosis, L80, F|173/173
+|-start|p1b: Escavalier|Dynamax
+|-heal|p1b: Escavalier|234/466|[silent]
+|move|p1b: Escavalier|Max Guard|p1b: Escavalier
+|-singleturn|p1b: Escavalier|Max Guard
+|move|p2a: Clauncher|Bubble Beam|p1b: Escavalier
+|-activate|p1b: Escavalier|move: Max Guard
+|
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Fire Fang","id":"firefang","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"109/235","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"233/233","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471197
+|switch|p1a: Gloom|Gloom, L68, M|180/180
+|switch|p2b: Toxicroak|Toxicroak, L82, M|227/227
+|move|p2a: Clauncher|Flash Cannon|p1a: Gloom
+|-crit|p1a: Gloom
+|-damage|p1a: Gloom|97/180
+|move|p1b: Escavalier|Max Strike|p2a: Clauncher
+|-damage|p2a: Clauncher|109/235
+|-unboost|p2a: Clauncher|spe|1
+|-unboost|p2b: Toxicroak|spe|1
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Fire Fang","id":"firefang","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"80/235","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"233/233","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471197
+|move|p1b: Escavalier|Max Guard|p1b: Escavalier
+|-singleturn|p1b: Escavalier|Max Guard
+|move|p2b: Toxicroak|Steel Roller||[still]
+|-fail|p2b: Toxicroak
+|move|p1a: Gloom|Vise Grip|p2a: Clauncher
+|-damage|p2a: Clauncher|80/235
+|move|p2a: Clauncher|Octazooka|p1b: Escavalier
+|-activate|p1b: Escavalier|move: Max Guard
+|
+|-end|p1b: Escavalier|Dynamax
+|-heal|p1b: Escavalier|117/233|[silent]
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Fire Fang","id":"firefang","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"55/235","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"233/233","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471197
+|move|p2b: Toxicroak|Detect|p2b: Toxicroak
+|-singleturn|p2b: Toxicroak|Protect
+|move|p1a: Gloom|Sunsteel Strike|p2a: Clauncher
+|debug|TryHit handler suppressed by Mold Breaker
+|-resisted|p2a: Clauncher
+|-damage|p2a: Clauncher|55/235
+|move|p1b: Escavalier|Guard Swap|p2a: Clauncher
+|-swapboost|p1b: Escavalier|p2a: Clauncher|def, spd|[from] move: Guard Swap
+|move|p2a: Clauncher|Bubble Beam|p1b: Escavalier
+|-damage|p1b: Escavalier|75/233
+|
+|upkeep
+|turn|7
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"55/235","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"233/233","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471197
+|move|p2b: Toxicroak|Follow Me|p2b: Toxicroak
+|-singleturn|p2b: Toxicroak|move: Follow Me
+|move|p1b: Escavalier|Rage Powder|p1b: Escavalier
+|-singleturn|p1b: Escavalier|move: Rage Powder
+|move|p1a: Gloom|Recycle||[still]
+|-fail|p1a: Gloom
+|debug|move failed because it did nothing
+|move|p2a: Clauncher|Fire Fang|p1b: Escavalier
+|debug|Rage Powder redirected target of move
+|-supereffective|p1b: Escavalier
+|-crit|p1b: Escavalier
+|-damage|p1b: Escavalier|0 fnt
+|faint|p1b: Escavalier
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Fire Fang","id":"firefang","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"55/235","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"233/233","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471197
+|switch|p1b: Solgaleo|Solgaleo, L55|244/244
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Knock Off","id":"knockoff","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Body Press","id":"bodypress","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":7,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"199/233","active":true,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"55/235","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"}]}}
+
+|
+|t:|1603471197
+|switch|p2a: Toxicroak|Toxicroak, L75, M|233/233
+|move|p1b: Solgaleo|Fire Pledge|p2a: Toxicroak
+|-damage|p2a: Toxicroak|199/233
+|move|p2b: Toxicroak|Last Resort|p1b: Solgaleo
+|-resisted|p1b: Solgaleo
+|-damage|p1b: Solgaleo|177/244
+|move|p1a: Gloom|Mat Block||[still]
+|-hint|Mat Block only works on your first turn out.
+|-fail|p1a: Gloom
+|
+|upkeep
+|turn|9
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":true,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"55/235","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"}]},"noCancel":true}
+
+|
+|t:|1603471197
+|switch|p1a: Silvally|Silvally-Ground, L52|198/198
+|move|p2a: Toxicroak|Knock Off|p1a: Silvally
+|-damage|p1a: Silvally|93/198
+|-enditem|p1a: Silvally|Level Ball|[from] move: Knock Off|[of] p2a: Toxicroak
+|move|p1b: Solgaleo|Extrasensory|p2a: Toxicroak
+|-supereffective|p2a: Toxicroak
+|-damage|p2a: Toxicroak|0 fnt
+|faint|p2a: Toxicroak
+|move|p2b: Toxicroak|Steel Roller||[still]
+|-fail|p2b: Toxicroak
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Synthesis","id":"synthesis","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Leaf Storm","id":"leafstorm","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Kinesis","id":"kinesis","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Max Steelspike","id":"maxsteelspike","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":7,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"55/235","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"}]}}
+
+|
+|t:|1603471197
+|switch|p2a: Kubfu|Kubfu, L62, M|171/171
+|turn|10
+
+|request|{"active":[{"moves":[{"move":"Synthesis","id":"synthesis","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Leaf Storm","id":"leafstorm","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Kinesis","id":"kinesis","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Max Steelspike","id":"maxsteelspike","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":6,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":7,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"227/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"55/235","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"}]}}
+
+|
+|t:|1603471197
+|switch|p1a: Bounsweet|Bounsweet, L75, F|158/158
+|move|p2b: Toxicroak|Detect|p2b: Toxicroak
+|-singleturn|p2b: Toxicroak|Protect
+|move|p1b: Solgaleo|Acid|p2b: Toxicroak|[spread] p2a
+|-activate|p2b: Toxicroak|move: Protect
+|debug|Spread modifier: 0.75
+|-damage|p2a: Kubfu|152/171
+|move|p2a: Kubfu|Synthesis|p2a: Kubfu
+|-heal|p2a: Kubfu|171/171
+|
+|upkeep
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Synthesis","id":"synthesis","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Kinesis","id":"kinesis","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Max Steelspike","id":"maxsteelspike","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":6,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":6,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"205/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"55/235","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"}]}}
+
+|
+|t:|1603471197
+|switch|p1a: Silvally|Silvally-Ground, L52|159/198
+|move|p1b: Solgaleo|Rapid Spin|p2b: Toxicroak
+|-damage|p2b: Toxicroak|205/227
+|-boost|p1b: Solgaleo|spe|1
+|debug|illusion cleared
+|replace|p2b: Tsareena|Tsareena, L82, F
+|-end|p2b: Tsareena|Illusion
+|move|p2a: Kubfu|Leaf Storm|p1a: Silvally
+|-supereffective|p1a: Silvally
+|-damage|p1a: Silvally|75/198
+|-unboost|p2a: Kubfu|spa|2
+|move|p2b: Tsareena|Last Resort|p1b: Solgaleo
+|-resisted|p1b: Solgaleo
+|-damage|p1b: Solgaleo|110/244
+|
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Slam","id":"slam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Giga Impact","id":"gigaimpact","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":5,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":6,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"197/197","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"205/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"55/235","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"}]}}
+
+|
+|t:|1603471197
+|switch|p1b: Bounsweet|Bounsweet, L75, F|158/158
+|-transform|p1b: Bounsweet|p2a: Kubfu|[from] ability: Imposter
+|switch|p2a: Clefable|Clefable, L59, M|197/197
+|move|p2b: Tsareena|Detect|p2b: Tsareena
+|-singleturn|p2b: Tsareena|Protect
+|move|p1a: Silvally|Harden|p1a: Silvally
+|-boost|p1a: Silvally|def|1
+|
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Recharge","id":"recharge"}],"trapped":true},{"moves":[{"move":"Fire Fang","id":"firefang","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"180/197","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"55/235","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"205/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"}]}}
+
+|
+|t:|1603471197
+|switch|p1b: Gloom|Gloom, L68, M|97/180
+|switch|p2b: Clauncher|Clauncher, L88, F|55/235
+|move|p1a: Silvally|Secret Sword|p2a: Clefable
+|-resisted|p2a: Clefable
+|-damage|p2a: Clefable|180/197
+|move|p2a: Clefable|Giga Impact|p1b: Gloom
+|-damage|p1b: Gloom|28/180
+|-mustrecharge|p2a: Clefable
+|
+|upkeep
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Slam","id":"slam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Giga Impact","id":"gigaimpact","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Defend Order","id":"defendorder","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Fire Fang","id":"firefang","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"180/197","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"55/235","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"205/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"}]}}
+
+|
+|t:|1603471197
+|switch|p1a: Bounsweet|Bounsweet, L75, F|158/158
+|-transform|p1a: Bounsweet|p2b: Clauncher|[from] ability: Imposter
+|switch|p1b: Solosis|Solosis, L80, F|173/173
+|move|p2b: Clauncher|Octazooka|p1a: Bounsweet
+|-resisted|p1a: Bounsweet
+|-damage|p1a: Bounsweet|120/158
+|cant|p2a: Clefable|recharge
+|
+|upkeep
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Slam","id":"slam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Giga Impact","id":"gigaimpact","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Defend Order","id":"defendorder","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Fire Fang","id":"firefang","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"180/197","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"55/235 slp","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"205/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"}]}}
+
+|
+|t:|1603471197
+|switch|p1a: Gloom|Gloom, L68, M|28/180
+|move|p2b: Clauncher|Fire Fang|p1b: Solosis
+|-damage|p1b: Solosis|126/173
+|move|p1b: Solosis|Hypnosis|p2b: Clauncher
+|-status|p2b: Clauncher|slp|[from] move: Hypnosis
+|move|p2a: Clefable|Defend Order|p2a: Clefable
+|-boost|p2a: Clefable|def|1
+|-boost|p2a: Clefable|spd|1
+|
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Slam","id":"slam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Giga Impact","id":"gigaimpact","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Defend Order","id":"defendorder","pp":14,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Fire Fang","id":"firefang","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"180/197","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"20/235 slp","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"205/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"}]}}
+
+|
+|t:|1603471197
+|cant|p2b: Clauncher|slp
+|move|p1b: Solosis|Reversal|p2b: Clauncher
+|-damage|p2b: Clauncher|44/235 slp
+|move|p2a: Clefable|Defend Order|p2a: Clefable
+|-boost|p2a: Clefable|def|1
+|-boost|p2a: Clefable|spd|1
+|move|p1a: Gloom|Sunsteel Strike|p2b: Clauncher
+|debug|TryHit handler suppressed by Mold Breaker
+|-resisted|p2b: Clauncher
+|-damage|p2b: Clauncher|20/235 slp
+|
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Recharge","id":"recharge"}],"trapped":true},{"moves":[{"move":"Fire Fang","id":"firefang","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"158/197","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"20/235 slp","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"205/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"}]}}
+
+|
+|t:|1603471197
+|switch|p1a: Silvally|Silvally-Ground, L52|141/198
+|cant|p2b: Clauncher|slp
+|move|p1b: Solosis|High Jump Kick|p2a: Clefable
+|-resisted|p2a: Clefable
+|-damage|p2a: Clefable|158/197
+|move|p2a: Clefable|Giga Impact|p1a: Silvally
+|-damage|p1a: Silvally|71/198
+|-mustrecharge|p2a: Clefable
+|
+|upkeep
+|turn|18
+
+|request|{"active":[{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Slam","id":"slam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Giga Impact","id":"gigaimpact","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Defend Order","id":"defendorder","pp":14,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":5,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":6,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"158/197","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"205/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"20/235 slp","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"}]}}
+
+|
+|t:|1603471197
+|switch|p2b: Clauncher|Clauncher, L82, F|205/227
+|move|p1a: Silvally|Poltergeist|p2a: Clefable|[miss]
+|-miss|p1a: Silvally|p2a: Clefable
+|move|p1b: Solosis|Purify||[still]
+|-fail|p1b: Solosis
+|debug|move failed because it did nothing
+|cant|p2a: Clefable|recharge
+|
+|upkeep
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Recharge","id":"recharge"}],"trapped":true},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":5,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":6,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"158/197","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"196/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"20/235 slp","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"}]}}
+
+|
+|t:|1603471197
+|switch|p1a: Bounsweet|Bounsweet, L75, F|120/158
+|move|p2b: Clauncher|Follow Me|p2b: Clauncher
+|-singleturn|p2b: Clauncher|move: Follow Me
+|move|p1b: Solosis|Reversal|p2b: Clauncher
+|debug|Follow Me redirected target of move
+|-damage|p2b: Clauncher|196/227
+|debug|illusion cleared
+|replace|p2b: Tsareena|Tsareena, L82, F
+|-end|p2b: Tsareena|Illusion
+|move|p2a: Clefable|Giga Impact|p1b: Solosis
+|-damage|p1b: Solosis|58/173
+|-mustrecharge|p2a: Clefable
+|
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Wish","id":"wish","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Slam","id":"slam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Giga Impact","id":"gigaimpact","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Defend Order","id":"defendorder","pp":14,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":5,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":29,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":6,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"158/197","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"190/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"20/235 slp","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"}]}}
+
+|
+|t:|1603471197
+|switch|p1b: Gloom|Gloom, L68, M|28/180
+|move|p2b: Tsareena|Follow Me|p2b: Tsareena
+|-singleturn|p2b: Tsareena|move: Follow Me
+|cant|p2a: Clefable|recharge
+|move|p1a: Bounsweet|Thunder Fang|p2b: Tsareena
+|debug|Follow Me redirected target of move
+|-resisted|p2b: Tsareena
+|-damage|p2b: Tsareena|190/227
+|
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Fire Fang","id":"firefang","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":14,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":5,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":28,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":6,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"20/235 slp","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"190/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"158/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471197
+|switch|p2a: Clauncher|Clauncher, L88, F|20/235 slp
+|switch|p1a: Silvally|Silvally-Ground, L52|137/198
+|move|p2b: Tsareena|Follow Me|p2b: Tsareena
+|-singleturn|p2b: Tsareena|move: Follow Me
+|move|p1b: Gloom|Mat Block|p1b: Gloom
+|-singleturn|p1b: Gloom|Mat Block
+|
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Fire Fang","id":"firefang","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":14,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":5,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":27,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":6,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"20/235","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"190/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"158/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471197
+|move|p2b: Tsareena|Follow Me|p2b: Tsareena
+|-singleturn|p2b: Tsareena|move: Follow Me
+|-curestatus|p2a: Clauncher|slp|[msg]
+|move|p2a: Clauncher|Bubble Beam|p1a: Silvally
+|-supereffective|p1a: Silvally
+|-damage|p1a: Silvally|17/198
+|move|p1a: Silvally|Misty Terrain|p1a: Silvally
+|-fieldstart|move: Misty Terrain
+|move|p1b: Gloom|Mat Block||[still]
+|-hint|Mat Block only works on your first turn out.
+|-fail|p1b: Gloom
+|
+|upkeep
+|turn|23
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"20/235","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"190/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"158/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471197
+|switch|p1a: Bounsweet|Bounsweet, L75, F|120/158
+|-transform|p1a: Bounsweet|p2b: Tsareena|[from] ability: Imposter
+|move|p2b: Tsareena|Last Resort||[still]
+|-fail|p2b: Tsareena
+|move|p2a: Clauncher|Flash Cannon|p1b: Gloom
+|-damage|p1b: Gloom|0 fnt
+|faint|p1b: Gloom
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Fire Fang","id":"firefang","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Flash Cannon","id":"flashcannon","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Octazooka","id":"octazooka","pp":14,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":5,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":27,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":5,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"20/235","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"190/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"158/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471197
+|switch|p1b: Silvally|Silvally-Ground, L52|83/198
+|turn|24
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":true,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"190/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"158/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471197
+|switch|p1a: Solosis|Solosis, L80, F|58/173
+|move|p2b: Tsareena|Detect|p2b: Tsareena
+|-singleturn|p2b: Tsareena|Protect
+|move|p2a: Clauncher|Octazooka|p1a: Solosis
+|-damage|p1a: Solosis|0 fnt
+|-damage|p2a: Clauncher|0 fnt|[from] ability: Innards Out|[of] p1a: Solosis
+|faint|p1a: Solosis
+|faint|p2a: Clauncher
+|move|p1b: Silvally|Misty Terrain||[still]
+|-fail|p1b: Silvally
+|debug|move failed because it did nothing
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Surging Strikes","id":"surgingstrikes","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"U-turn","id":"uturn","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Anchor Shot","id":"anchorshot","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":4,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":27,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":5,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"190/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"158/197","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471197
+|switch|p2a: Stoutland|Stoutland, L74, M|232/232
+|switch|p1a: Bounsweet|Bounsweet, L75, F|120/158
+|-transform|p1a: Bounsweet|p2b: Tsareena|[from] ability: Imposter
+|turn|25
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":true,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"190/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"}]},"noCancel":true}
+
+|
+|t:|1603471197
+|switch|p2a: Clefable|Clefable, L59, M|158/197
+|move|p1a: Bounsweet|Steel Roller|p2a: Clefable
+|-supereffective|p2a: Clefable
+|-damage|p2a: Clefable|0 fnt
+|-fieldend|Misty Terrain
+|faint|p2a: Clefable
+|move|p2b: Tsareena|Last Resort||[still]
+|-fail|p2b: Tsareena
+|move|p1b: Silvally|Harden|p1b: Silvally
+|-boost|p1b: Silvally|def|1
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Synthesis","id":"synthesis","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Kinesis","id":"kinesis","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Max Steelspike","id":"maxsteelspike","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":4,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":27,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":4,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"190/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"232/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"}]}}
+
+|
+|t:|1603471197
+|switch|p2a: Kubfu|Kubfu, L62, M|171/171
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Surging Strikes","id":"surgingstrikes","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"U-turn","id":"uturn","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Anchor Shot","id":"anchorshot","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":4,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":27,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":3,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"184/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"190/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"}]}}
+
+|
+|t:|1603471197
+|switch|p2a: Stoutland|Stoutland, L74, M|232/232
+|move|p1a: Bounsweet|Detect|p1a: Bounsweet
+|-singleturn|p1a: Bounsweet|Protect
+|move|p2b: Tsareena|Last Resort||[still]
+|-fail|p2b: Tsareena
+|move|p1b: Silvally|Secret Sword|p2a: Stoutland
+|-supereffective|p2a: Stoutland
+|-damage|p2a: Stoutland|184/232
+|
+|upkeep
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Synthesis","id":"synthesis","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Kinesis","id":"kinesis","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Max Steelspike","id":"maxsteelspike","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":4,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":26,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":3,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"170/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"184/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"}]}}
+
+|
+|t:|1603471197
+|switch|p2a: Kubfu|Kubfu, L62, M|171/171
+|move|p2b: Tsareena|Follow Me|p2b: Tsareena
+|-singleturn|p2b: Tsareena|move: Follow Me
+|move|p1a: Bounsweet|Last Resort||[still]
+|debug|Follow Me redirected target of move
+|-fail|p1a: Bounsweet
+|move|p1b: Silvally|Secret Sword|p2b: Tsareena
+|debug|Follow Me redirected target of move
+|-damage|p2b: Tsareena|170/227
+|
+|upkeep
+|turn|28
+
+|request|{"active":[{"moves":[{"move":"Surging Strikes","id":"surgingstrikes","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"U-turn","id":"uturn","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Anchor Shot","id":"anchorshot","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false}]},{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":3,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":26,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":3,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"184/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"170/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"}]}}
+
+|
+|t:|1603471197
+|switch|p2a: Stoutland|Stoutland, L74, M|184/232
+|move|p2b: Tsareena|Detect|p2b: Tsareena
+|-singleturn|p2b: Tsareena|Protect
+|move|p1a: Bounsweet|Detect|p1a: Bounsweet
+|-singleturn|p1a: Bounsweet|Protect
+|move|p1b: Silvally|Harden|p1b: Silvally
+|-boost|p1b: Silvally|def|1
+|
+|upkeep
+|turn|29
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"184/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"170/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"}]}}
+
+|
+|t:|1603471197
+|switch|p2b: Kubfu|Kubfu, L62, M|171/171
+|move|p1a: Bounsweet|Last Resort||[still]
+|-fail|p1a: Bounsweet
+|move|p2a: Stoutland|Surging Strikes|p1b: Silvally
+|debug|Negating (sp)def boost/penalty.
+|-supereffective|p1b: Silvally
+|-crit|p1b: Silvally
+|-damage|p1b: Silvally|3/198
+|debug|Negating (sp)def boost/penalty.
+|-supereffective|p1b: Silvally
+|-crit|p1b: Silvally
+|-damage|p1b: Silvally|0 fnt
+|-hitcount|p1b: Silvally|2
+|faint|p1b: Silvally
+|-ability|p2b: Kubfu|Soul-Heart|boost
+|-boost|p2b: Kubfu|spa|1
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Surging Strikes","id":"surgingstrikes","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"U-turn","id":"uturn","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Anchor Shot","id":"anchorshot","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false}]},{"moves":[{"move":"Synthesis","id":"synthesis","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Kinesis","id":"kinesis","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Max Steelspike","id":"maxsteelspike","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"184/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"170/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"}]}}
+
+|
+|t:|1603471197
+|switch|p1b: Solgaleo|Solgaleo, L55|110/244
+|turn|30
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"184/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"170/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"}]},"noCancel":true}
+
+|
+|t:|1603471197
+|move|p1a: Bounsweet|Steel Roller||[still]
+|-fail|p1a: Bounsweet
+|move|p2a: Stoutland|U-turn|p1b: Solgaleo
+|-damage|p1b: Solgaleo|53/244
+
+|request|{"active":[{"moves":[{"move":"Steel Roller","id":"steelroller","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":3,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":26,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":3,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Synthesis","id":"synthesis","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Kinesis","id":"kinesis","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Max Steelspike","id":"maxsteelspike","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"130/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"184/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"}]}}
+
+|
+|t:|1603471197
+|switch|p2a: Stoutland|Stoutland, L82, M|170/227
+|move|p1b: Solgaleo|Fire Pledge|p2a: Stoutland
+|-supereffective|p2a: Stoutland
+|-damage|p2a: Stoutland|130/227
+|debug|illusion cleared
+|replace|p2a: Tsareena|Tsareena, L82, F
+|-end|p2a: Tsareena|Illusion
+|move|p2b: Kubfu|Kinesis|p1b: Solgaleo
+|-unboost|p1b: Solgaleo|accuracy|1
+|
+|upkeep
+|turn|31
+
+|request|{"active":[{"moves":[{"move":"Steel Roller","id":"steelroller","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":3,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":26,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":3,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Surging Strikes","id":"surgingstrikes","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"U-turn","id":"uturn","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Anchor Shot","id":"anchorshot","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"90/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"184/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"171/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"}]}}
+
+|
+|t:|1603471197
+|switch|p2b: Stoutland|Stoutland, L74, M|184/232
+|move|p2a: Tsareena|Steel Roller||[still]
+|-fail|p2a: Tsareena
+|move|p1a: Bounsweet|Steel Roller||[still]
+|-fail|p1a: Bounsweet
+|move|p1b: Solgaleo|Fire Pledge|p2a: Tsareena
+|-supereffective|p2a: Tsareena
+|-damage|p2a: Tsareena|90/227
+|
+|upkeep
+|turn|32
+
+|request|{"active":[{"moves":[{"move":"Synthesis","id":"synthesis","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Kinesis","id":"kinesis","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Max Steelspike","id":"maxsteelspike","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Surging Strikes","id":"surgingstrikes","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"U-turn","id":"uturn","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Anchor Shot","id":"anchorshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"151/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"175/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"90/227","active":false,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"}]}}
+
+|
+|t:|1603471197
+|switch|p2a: Kubfu|Kubfu, L62, M|171/171
+|move|p1a: Bounsweet|Last Resort||[still]
+|-fail|p1a: Bounsweet
+|move|p2b: Stoutland|Anchor Shot|p1b: Solgaleo
+|-resisted|p1b: Solgaleo
+|-damage|p1b: Solgaleo|21/244
+|-activate|p1b: Solgaleo|trapped
+|move|p1b: Solgaleo|Acid|p2a: Kubfu|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Kubfu|151/171
+|-damage|p2b: Stoutland|175/232
+|
+|upkeep
+|turn|33
+
+|request|{"active":[{"moves":[{"move":"Steel Roller","id":"steelroller","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":3,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":26,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":3,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Surging Strikes","id":"surgingstrikes","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"U-turn","id":"uturn","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Anchor Shot","id":"anchorshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":55,"maxpp":56,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"74/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"166/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"151/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"}]}}
+
+|
+|t:|1603471197
+|switch|p2a: Kubfu|Kubfu, L82, M|90/227
+|move|p1a: Bounsweet|Follow Me|p1a: Bounsweet
+|-singleturn|p1a: Bounsweet|move: Follow Me
+|move|p2b: Stoutland|Scratch|p1a: Bounsweet
+|debug|Follow Me redirected target of move
+|-damage|p1a: Bounsweet|83/158
+|move|p1b: Solgaleo|Acid|p2a: Kubfu|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-supereffective|p2a: Kubfu
+|debug|Spread modifier: 0.75
+|-damage|p2a: Kubfu|74/227
+|-damage|p2b: Stoutland|166/232
+|debug|illusion cleared
+|replace|p2a: Tsareena|Tsareena, L82, F
+|-end|p2a: Tsareena|Illusion
+|
+|upkeep
+|turn|34
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"74/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"166/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"151/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"}]},"noCancel":true}
+
+|
+|t:|1603471197
+|move|p1a: Bounsweet|Detect|p1a: Bounsweet
+|-singleturn|p1a: Bounsweet|Protect
+|move|p2a: Tsareena|Last Resort||[still]
+|-fail|p2a: Tsareena
+|move|p2b: Stoutland|U-turn|p1b: Solgaleo
+|-damage|p1b: Solgaleo|0 fnt
+|faint|p1b: Solgaleo
+
+|request|{"active":[{"moves":[{"move":"Steel Roller","id":"steelroller","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":3,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":26,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":2,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Synthesis","id":"synthesis","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Kinesis","id":"kinesis","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Max Steelspike","id":"maxsteelspike","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"74/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"151/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"166/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"}]}}
+
+|
+|t:|1603471197
+|switch|p2b: Kubfu|Kubfu, L62, M|151/171
+|
+|upkeep
+|turn|35
+
+|request|{"active":[{"moves":[{"move":"Steel Roller","id":"steelroller","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":2,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":26,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":2,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Synthesis","id":"synthesis","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Kinesis","id":"kinesis","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Max Steelspike","id":"maxsteelspike","pp":7,"maxpp":8,"target":"adjacentFoe","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"74/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"151/171","active":true,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"166/232","active":false,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"}]}}
+
+|
+|t:|1603471197
+|move|p1a: Bounsweet|Detect||[still]
+|debug|Success chance: 33%
+|-fail|p1a: Bounsweet
+|move|p2a: Tsareena|Detect|p2a: Tsareena
+|-singleturn|p2a: Tsareena|Protect
+|move|p2b: Kubfu|Max Steelspike|p1a: Bounsweet
+|-damage|p1a: Bounsweet|79/158
+|
+|upkeep
+|turn|36
+
+|request|{"active":[{"moves":[{"move":"Steel Roller","id":"steelroller","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":1,"maxpp":8,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":26,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":2,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Surging Strikes","id":"surgingstrikes","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"U-turn","id":"uturn","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Anchor Shot","id":"anchorshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":55,"maxpp":56,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"74/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"70/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"151/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"}]}}
+
+|
+|t:|1603471197
+|switch|p2b: Stoutland|Stoutland, L74, M|166/232
+|move|p2a: Tsareena|Detect|p2a: Tsareena
+|debug|Success chance: 33%
+|-singleturn|p2a: Tsareena|Protect
+|move|p1a: Bounsweet|Last Resort|p2b: Stoutland
+|-damage|p2b: Stoutland|70/232
+|
+|upkeep
+|turn|37
+
+|request|{"active":[{"moves":[{"move":"Steel Roller","id":"steelroller","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":0,"maxpp":8,"target":"self","disabled":true},{"move":"Follow Me","id":"followme","pp":26,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":2,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Surging Strikes","id":"surgingstrikes","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"U-turn","id":"uturn","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Anchor Shot","id":"anchorshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":54,"maxpp":56,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"74/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"70/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"151/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"}]}}
+
+|
+|t:|1603471197
+|move|p2a: Tsareena|Detect||[still]
+|debug|Success chance: 11%
+|-fail|p2a: Tsareena
+|move|p1a: Bounsweet|Steel Roller||[still]
+|-fail|p1a: Bounsweet
+|move|p2b: Stoutland|Scratch|p1a: Bounsweet
+|-damage|p1a: Bounsweet|42/158
+|
+|upkeep
+|turn|38
+
+|request|{"active":[{"moves":[{"move":"Steel Roller","id":"steelroller","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":0,"maxpp":8,"target":"self","disabled":true},{"move":"Follow Me","id":"followme","pp":26,"maxpp":32,"target":"self","disabled":false},{"move":"Last Resort","id":"lastresort","pp":1,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Surging Strikes","id":"surgingstrikes","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"U-turn","id":"uturn","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Anchor Shot","id":"anchorshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":54,"maxpp":56,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Tsareena","details":"Tsareena, L82, F","condition":"74/227","active":true,"stats":{"atk":223,"def":208,"spa":127,"spd":222,"spe":164},"moves":["steelroller","detect","followme","lastresort"],"baseAbility":"illusion","item":"throatspray","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Stoutland","details":"Stoutland, L74, M","condition":"70/232","active":true,"stats":{"atk":214,"def":189,"spa":101,"spd":181,"spe":158},"moves":["surgingstrikes","uturn","anchorshot","scratch"],"baseAbility":"iceface","item":"gripclaw","pokeball":"pokeball","ability":"iceface"},{"ident":"p2: Toxicroak","details":"Toxicroak, L75, M","condition":"0 fnt","active":false,"stats":{"atk":203,"def":155,"spa":217,"spd":136,"spe":158},"moves":["knockoff","superfang","bodypress","icefang"],"baseAbility":"aftermath","item":"absorbbulb","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Clauncher","details":"Clauncher, L88, F","condition":"0 fnt","active":false,"stats":{"atk":124,"def":157,"spa":137,"spd":132,"spe":118},"moves":["firefang","bubblebeam","flashcannon","octazooka"],"baseAbility":"soundproof","item":"fastball","pokeball":"pokeball","ability":"soundproof"},{"ident":"p2: Clefable","details":"Clefable, L59, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":114,"spa":138,"spd":140,"spe":107},"moves":["wish","slam","gigaimpact","defendorder"],"baseAbility":"skilllink","item":"yacheberry","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Kubfu","details":"Kubfu, L62, M","condition":"151/171","active":false,"stats":{"atk":123,"def":92,"spa":106,"spd":84,"spe":119},"moves":["synthesis","leafstorm","kinesis","maxsteelspike"],"baseAbility":"soulheart","item":"repeatball","pokeball":"pokeball","ability":"soulheart"}]}}
+
+|
+|t:|1603471197
+|move|p1a: Bounsweet|Detect|p1a: Bounsweet
+|-singleturn|p1a: Bounsweet|Protect
+|move|p2a: Tsareena|Last Resort||[still]
+|-fail|p2a: Tsareena
+|move|p2b: Stoutland|Surging Strikes|p1a: Bounsweet
+|-activate|p1a: Bounsweet|move: Protect
+|
+|upkeep
+|turn|39
+
+|
+|t:|1603471197
+|move|p1a: Bounsweet|Follow Me|p1a: Bounsweet
+|-singleturn|p1a: Bounsweet|move: Follow Me
+|move|p2a: Tsareena|Steel Roller||[still]
+|debug|Follow Me redirected target of move
+|-fail|p2a: Tsareena
+|move|p2b: Stoutland|U-turn|p1a: Bounsweet
+|debug|Follow Me redirected target of move
+|-supereffective|p1a: Bounsweet
+|-damage|p1a: Bounsweet|0 fnt
+|faint|p1a: Bounsweet
+|
+|win|Bot 2

@@ -1,0 +1,923 @@
+|request|{"active":[{"moves":[{"move":"Rock Throw","id":"rockthrow","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Pin Missile","id":"pinmissile","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Rage","id":"rage","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"165/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|t:|1603471715
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|singles
+|gen|1
+|tier|[Gen 1] Custom Game
+|rule|HP Percentage Mod: HP is shown in percentages
+|
+|t:|1603471715
+|start
+|switch|p1a: Pidgey|Pidgey, L59|165/165
+|switch|p2a: Lapras|Lapras, L56|237/237
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Rock Throw","id":"rockthrow","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Pin Missile","id":"pinmissile","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Rage","id":"rage","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"165/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Graveler|Graveler, L72|206/206
+|move|p1a: Pidgey|Rock Throw|p2a: Graveler
+|-resisted|p2a: Graveler
+|-damage|p2a: Graveler|202/206
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Rock Throw","id":"rockthrow","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Pin Missile","id":"pinmissile","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Rage","id":"rage","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"165/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p2a: Graveler|Bone Club|p1a: Pidgey
+|-immune|p1a: Pidgey
+|move|p1a: Pidgey|Pin Missile|p2a: Graveler
+|-damage|p2a: Graveler|199/206
+|-damage|p2a: Graveler|196/206
+|-damage|p2a: Graveler|193/206
+|-hitcount|p2a: Graveler|3
+|
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Rage","id":"rage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"165/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Lapras|Lapras, L56|237/237
+|move|p1a: Pidgey|Rage|p2a: Lapras
+|-damage|p2a: Lapras|225/237
+|
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Rage","id":"rage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"165/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p1a: Pidgey|Rage|p2a: Lapras|[from]Rage
+|-crit|p2a: Lapras
+|debug|Negating (sp)atk boost/penalty.
+|debug|Negating (sp)def boost/penalty.
+|-damage|p2a: Lapras|204/237
+|move|p2a: Lapras|Teleport|p2a: Lapras
+|-fail|p2a: Lapras
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Rage","id":"rage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"149/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p1a: Pidgey|Rage|p2a: Lapras|[from]Rage
+|-damage|p2a: Lapras|193/237
+|move|p2a: Lapras|Bind|p1a: Pidgey
+|-damage|p1a: Pidgey|149/165
+|-boost|p1a: Pidgey|atk|1|[from] Rage
+|
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Rage","id":"rage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"149/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Ekans|Ekans, L68|150/150
+|cant|p1a: Pidgey|partiallytrapped
+|
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Rage","id":"rage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"149/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Graveler|Graveler, L72|193/206
+|move|p1a: Pidgey|Rage|p2a: Graveler|[from]Rage
+|-resisted|p2a: Graveler
+|-damage|p2a: Graveler|189/206
+|
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Rage","id":"rage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"141/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|debug|before turn callback: counter
+|move|p1a: Pidgey|Rage|p2a: Graveler|[from]Rage
+|-resisted|p2a: Graveler
+|-damage|p2a: Graveler|185/206
+|move|p2a: Graveler|Counter|p1a: Pidgey
+|-damage|p1a: Pidgey|141/165
+|-boost|p1a: Pidgey|atk|1|[from] Rage
+|
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Rage","id":"rage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"141/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p2a: Graveler|Flash|p1a: Pidgey
+|-unboost|p1a: Pidgey|accuracy|1
+|move|p1a: Pidgey|Rage|p2a: Graveler|[from]Rage|[miss]
+|-miss|p1a: Pidgey
+|
+|upkeep
+|turn|10
+
+|request|{"active":[{"moves":[{"move":"Rage","id":"rage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"52/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p2a: Graveler|Tackle|p1a: Pidgey
+|-crit|p1a: Pidgey
+|debug|Negating (sp)atk boost/penalty.
+|debug|Negating (sp)def boost/penalty.
+|-damage|p1a: Pidgey|52/165
+|-boost|p1a: Pidgey|atk|1|[from] Rage
+|move|p1a: Pidgey|Rage|p2a: Graveler|[from]Rage
+|-resisted|p2a: Graveler
+|-damage|p2a: Graveler|178/206
+|
+|upkeep
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Rage","id":"rage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"52/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p2a: Graveler|Bone Club|p1a: Pidgey
+|-immune|p1a: Pidgey
+|move|p1a: Pidgey|Rage|p2a: Graveler|[from]Rage
+|-resisted|p2a: Graveler
+|-damage|p2a: Graveler|171/206
+|
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Rage","id":"rage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"52/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Hypno|Hypno, L97|322/322
+|move|p1a: Pidgey|Rage|p2a: Hypno|[from]Rage|[miss]
+|-miss|p1a: Pidgey
+|
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Rage","id":"rage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"52/165","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p2a: Hypno|Mimic|p1a: Pidgey
+|-start|p2a: Hypno|Mimic|Rage
+|move|p1a: Pidgey|Rage|p2a: Hypno|[from]Rage
+|-damage|p2a: Hypno|305/322
+|
+|upkeep
+|turn|14
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":true,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471715
+|move|p2a: Hypno|Peck|p1a: Pidgey
+|-crit|p1a: Pidgey
+|debug|Negating (sp)atk boost/penalty.
+|debug|Negating (sp)def boost/penalty.
+|-damage|p1a: Pidgey|0 fnt
+|faint|p1a: Pidgey
+
+|request|{"active":[{"moves":[{"move":"Explosion","id":"explosion","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Spike Cannon","id":"spikecannon","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Smog","id":"smog","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Splash","id":"splash","pp":64,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"122/122","active":true,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Pidgey|Pidgey, L59|122/122
+|turn|15
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":true,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471715
+|move|p2a: Hypno|Mega Kick|p1a: Pidgey
+|-damage|p1a: Pidgey|0 fnt
+|faint|p1a: Pidgey
+
+|request|{"active":[{"moves":[{"move":"Waterfall","id":"waterfall","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Double Kick","id":"doublekick","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Fire Blast","id":"fireblast","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Bubble","id":"bubble","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":true,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Sandslash|Sandslash, L58|178/178
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Waterfall","id":"waterfall","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Double Kick","id":"doublekick","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Fire Blast","id":"fireblast","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Bubble","id":"bubble","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"178/178","active":true,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p2a: Hypno|Focus Energy|p2a: Hypno
+|-start|p2a: Hypno|move: Focus Energy
+|move|p1a: Sandslash|Waterfall|p2a: Hypno
+|-damage|p2a: Hypno|288/322
+|
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Waterfall","id":"waterfall","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Double Kick","id":"doublekick","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Fire Blast","id":"fireblast","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Bubble","id":"bubble","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"36/178","active":true,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p2a: Hypno|Mega Kick|p1a: Sandslash
+|-damage|p1a: Sandslash|36/178
+|move|p1a: Sandslash|Double Kick|p2a: Hypno
+|-crit|p2a: Hypno
+|debug|Negating (sp)atk boost/penalty.
+|debug|Negating (sp)def boost/penalty.
+|-resisted|p2a: Hypno
+|-damage|p2a: Hypno|276/322
+|-damage|p2a: Hypno|264/322
+|-hitcount|p2a: Hypno|2
+|
+|upkeep
+|turn|18
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":true,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471715
+|move|p2a: Hypno|Mega Kick|p1a: Sandslash
+|-damage|p1a: Sandslash|0 fnt
+|faint|p1a: Sandslash
+
+|request|{"active":[{"moves":[{"move":"Hypnosis","id":"hypnosis","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Sky Attack","id":"skyattack","pp":8,"maxpp":8,"target":"any","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":true,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Clefable|Clefable, L74|237/237
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Hypnosis","id":"hypnosis","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Sky Attack","id":"skyattack","pp":8,"maxpp":8,"target":"any","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":true,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Graveler|Graveler, L72|171/206
+|move|p1a: Clefable|Hypnosis|p2a: Graveler|[miss]
+|-miss|p1a: Clefable
+|
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"237/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Nidoran-F|Nidoran-F, L74|213/213
+|switch|p2a: Hypno|Hypno, L97|264/322
+|
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Hypnosis","id":"hypnosis","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Sky Attack","id":"skyattack","pp":8,"maxpp":8,"target":"any","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Clefable","details":"Clefable, L74","condition":"93/237","active":true,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Clefable|Clefable, L74|237/237
+|move|p2a: Hypno|Mega Kick|p1a: Clefable
+|-damage|p1a: Clefable|93/237
+|
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Hypnosis","id":"hypnosis","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Sky Attack","id":"skyattack","pp":8,"maxpp":8,"target":"any","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Clefable","details":"Clefable, L74","condition":"93/237","active":true,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p2a: Hypno|Focus Energy|p2a: Hypno
+|-start|p2a: Hypno|move: Focus Energy
+|move|p1a: Clefable|Poison Powder|p2a: Hypno|[miss]
+|-miss|p1a: Clefable
+|
+|upkeep
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"93/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Ekans|Ekans, L68|150/150
+|switch|p1a: Scyther|Scyther, L87|241/241
+|
+|upkeep
+|turn|24
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"93/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p1a: Scyther|Hyper Beam|p2a: Ekans
+|-damage|p2a: Ekans|0 fnt
+|faint|p2a: Ekans
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"93/237","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Hypno|Hypno, L97|264/322
+|turn|25
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":true,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471715
+|switch|p1a: Clefable|Clefable, L74|93/237
+|move|p2a: Hypno|Mega Kick|p1a: Clefable
+|-crit|p1a: Clefable
+|debug|Negating (sp)atk boost/penalty.
+|debug|Negating (sp)def boost/penalty.
+|-damage|p1a: Clefable|0 fnt
+|faint|p1a: Clefable
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Scyther|Scyther, L87|241/241
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Nidoran-F|Nidoran-F, L74|213/213
+|move|p2a: Hypno|Mega Kick|p1a: Nidoran-F|[miss]
+|-miss|p2a: Hypno
+|
+|upkeep
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p2a: Hypno|Focus Energy|p2a: Hypno
+|-start|p2a: Hypno|move: Focus Energy
+|move|p1a: Nidoran-F|Dream Eater|p2a: Hypno
+|-immune|p2a: Hypno
+|
+|upkeep
+|turn|28
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p2a: Hypno|Mimic|p1a: Nidoran-F
+|-start|p2a: Hypno|Mimic|Confuse Ray
+|move|p1a: Nidoran-F|Flamethrower|p2a: Hypno
+|-damage|p2a: Hypno|246/322
+|
+|upkeep
+|turn|29
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"241/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Scyther|Scyther, L87|241/241
+|move|p2a: Hypno|Confuse Ray|p1a: Scyther
+|-start|p1a: Scyther|confusion
+|
+|upkeep
+|turn|30
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"184/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|-activate|p1a: Scyther|confusion
+|move|p1a: Scyther|Leech Life|p2a: Hypno
+|-supereffective|p2a: Hypno
+|-damage|p2a: Hypno|188/322
+|move|p2a: Hypno|Peck|p1a: Scyther
+|-supereffective|p1a: Scyther
+|-damage|p1a: Scyther|184/241
+|
+|upkeep
+|turn|31
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"145/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|-activate|p1a: Scyther|confusion
+|-damage|p1a: Scyther|145/241|[from] confusion
+|move|p2a: Hypno|Focus Energy|p2a: Hypno
+|
+|upkeep
+|turn|32
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"145/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Nidoran-F|Nidoran-F, L74|213/213
+|move|p2a: Hypno|Focus Energy|p2a: Hypno
+|
+|upkeep
+|turn|33
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":47,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"145/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Lapras|Lapras, L56|193/237
+|move|p1a: Nidoran-F|Vise Grip|p2a: Lapras
+|-damage|p2a: Lapras|154/237
+|
+|upkeep
+|turn|34
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":46,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"145/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Meowth|Meowth, L53|134/134
+|move|p1a: Nidoran-F|Vise Grip|p2a: Meowth
+|-damage|p2a: Meowth|64/134
+|
+|upkeep
+|turn|35
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":46,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"145/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p2a: Meowth|Light Screen|p2a: Meowth
+|-start|p2a: Meowth|Light Screen
+|move|p1a: Nidoran-F|Confuse Ray|p2a: Meowth
+|-start|p2a: Meowth|confusion
+|
+|upkeep
+|turn|36
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":46,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"145/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|-activate|p2a: Meowth|confusion
+|-damage|p2a: Meowth|45/134|[from] confusion
+|move|p1a: Nidoran-F|Confuse Ray|p2a: Meowth
+|
+|upkeep
+|turn|37
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":46,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"145/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Graveler|Graveler, L72|171/206
+|move|p1a: Nidoran-F|Dream Eater|p2a: Graveler
+|-immune|p2a: Graveler
+|
+|upkeep
+|turn|38
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":46,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"145/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Tauros|Tauros, L93|291/291
+|move|p1a: Nidoran-F|Dream Eater|p2a: Tauros
+|-immune|p2a: Tauros
+|
+|upkeep
+|turn|39
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Scyther|Scyther, L87|145/241
+|move|p2a: Tauros|Pay Day|p1a: Scyther
+|-damage|p1a: Scyther|99/241
+|-fieldactivate|move: Pay Day
+|
+|upkeep
+|turn|40
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":46,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Nidoran-F|Nidoran-F, L74|213/213
+|move|p2a: Tauros|Rest|p2a: Tauros
+|-fail|p2a: Tauros
+|
+|upkeep
+|turn|41
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":46,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Meowth|Meowth, L53|45/134
+|move|p1a: Nidoran-F|Confuse Ray|p2a: Meowth
+|-start|p2a: Meowth|confusion
+|
+|upkeep
+|turn|42
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":45,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Tauros|Tauros, L93|291/291
+|move|p1a: Nidoran-F|Vise Grip|p2a: Tauros
+|-damage|p2a: Tauros|275/291
+|
+|upkeep
+|turn|43
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":44,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p2a: Tauros|Harden|p2a: Tauros
+|-boost|p2a: Tauros|def|1
+|move|p1a: Nidoran-F|Vise Grip|p2a: Tauros
+|-damage|p2a: Tauros|264/291
+|
+|upkeep
+|turn|44
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Scyther|Scyther, L87|99/241
+|move|p2a: Tauros|Earthquake|p1a: Scyther
+|-immune|p1a: Scyther
+|
+|upkeep
+|turn|45
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Lapras|Lapras, L56|154/237
+|move|p1a: Scyther|Amnesia|p1a: Scyther
+|-boost|p1a: Scyther|spd|2
+|-boost|p1a: Scyther|spa|2
+|
+|upkeep
+|turn|46
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":44,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Nidoran-F|Nidoran-F, L74|213/213
+|move|p2a: Lapras|Sand Attack|p1a: Nidoran-F
+|-unboost|p1a: Nidoran-F|accuracy|1
+|
+|upkeep
+|turn|47
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":44,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Tauros|Tauros, L93|264/291
+|move|p1a: Nidoran-F|Confuse Ray|p2a: Tauros|[miss]
+|-miss|p1a: Nidoran-F
+|
+|upkeep
+|turn|48
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":44,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p2a: Tauros|Rest|p2a: Tauros
+|-status|p2a: Tauros|slp|[from] move: Rest
+|-heal|p2a: Tauros|291/291 slp|[silent]
+|move|p1a: Nidoran-F|Flamethrower|p2a: Tauros|[miss]
+|-miss|p1a: Nidoran-F
+|
+|upkeep
+|turn|49
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":44,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|cant|p2a: Tauros|slp
+|move|p1a: Nidoran-F|Dream Eater|p2a: Tauros|[miss]
+|-miss|p1a: Nidoran-F
+|
+|upkeep
+|turn|50
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":11,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":44,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|-curestatus|p2a: Tauros|slp|[msg]
+|move|p1a: Nidoran-F|Confuse Ray|p2a: Tauros
+|-start|p2a: Tauros|confusion
+|
+|upkeep
+|turn|51
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":10,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":44,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Hypno|Hypno, L97|188/322
+|move|p1a: Nidoran-F|Confuse Ray|p2a: Hypno
+|-start|p2a: Hypno|confusion
+|
+|upkeep
+|turn|52
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Tauros|Tauros, L93|291/291
+|switch|p1a: Scyther|Scyther, L87|99/241
+|
+|upkeep
+|turn|53
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":10,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":44,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Meowth|Meowth, L53|45/134
+|switch|p1a: Nidoran-F|Nidoran-F, L74|213/213
+|
+|upkeep
+|turn|54
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":10,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"99/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Tauros|Tauros, L93|291/291
+|move|p1a: Nidoran-F|Vise Grip|p2a: Tauros
+|-damage|p2a: Tauros|275/291
+|
+|upkeep
+|turn|55
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"51/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Scyther|Scyther, L87|99/241
+|move|p2a: Tauros|Pay Day|p1a: Scyther
+|-damage|p1a: Scyther|51/241
+|-fieldactivate|move: Pay Day
+|
+|upkeep
+|turn|56
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":10,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"213/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"51/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Lapras|Lapras, L56|154/237
+|switch|p1a: Nidoran-F|Nidoran-F, L74|213/213
+|
+|upkeep
+|turn|57
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":10,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"49/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"51/241","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p1a: Nidoran-F|Dream Eater|p2a: Lapras
+|-immune|p2a: Lapras
+|move|p2a: Lapras|Blizzard|p1a: Nidoran-F
+|-damage|p1a: Nidoran-F|49/213
+|
+|upkeep
+|turn|58
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"45/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"49/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Scyther|Scyther, L87|51/241
+|move|p2a: Lapras|Bind|p1a: Scyther
+|-damage|p1a: Scyther|45/241
+|
+|upkeep
+|turn|59
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"39/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"49/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|cant|p1a: Scyther|partiallytrapped
+|move|p2a: Lapras|Bind|p1a: Scyther|[from]Bind
+|-damage|p1a: Scyther|39/241
+|
+|upkeep
+|turn|60
+
+|request|{"active":[{"moves":[{"move":"Hyper Beam","id":"hyperbeam","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Amnesia","id":"amnesia","pp":30,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"39/241","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"49/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p1a: Scyther|Amnesia|p1a: Scyther
+|-boost|p1a: Scyther|spd|2
+|-boost|p1a: Scyther|spa|2
+|move|p2a: Lapras|Sand Attack|p1a: Scyther
+|-unboost|p1a: Scyther|accuracy|1
+|
+|upkeep
+|turn|61
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":true,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"49/213","active":false,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471715
+|move|p1a: Scyther|Leech Life|p2a: Lapras
+|-damage|p2a: Lapras|101/237
+|-heal|p1a: Scyther|65/241|[from] drain|[of] p2a: Lapras
+|move|p2a: Lapras|Blizzard|p1a: Scyther
+|-supereffective|p1a: Scyther
+|-damage|p1a: Scyther|0 fnt
+|faint|p1a: Scyther
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":10,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"49/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p1a: Nidoran-F|Nidoran-F, L74|49/213
+|turn|62
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":10,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"49/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p1a: Nidoran-F|Flamethrower|p2a: Lapras
+|-crit|p2a: Lapras
+|debug|Negating (sp)atk boost/penalty.
+|debug|Negating (sp)def boost/penalty.
+|-damage|p2a: Lapras|17/237
+|move|p2a: Lapras|Teleport|p2a: Lapras
+|-fail|p2a: Lapras
+|
+|upkeep
+|turn|63
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"49/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p1a: Nidoran-F|Confuse Ray|p2a: Lapras
+|-start|p2a: Lapras|confusion
+|-activate|p2a: Lapras|confusion
+|-damage|p2a: Lapras|0 fnt|[from] confusion
+|faint|p2a: Lapras
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":9,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"49/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Meowth|Meowth, L53|45/134
+|turn|64
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":9,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"49/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Graveler|Graveler, L72|171/206
+|move|p1a: Nidoran-F|Flamethrower|p2a: Graveler
+|-resisted|p2a: Graveler
+|-damage|p2a: Graveler|149/206
+|
+|upkeep
+|turn|65
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":18,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":9,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"49/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p1a: Nidoran-F|Dream Eater|p2a: Graveler
+|-immune|p2a: Graveler
+|move|p2a: Graveler|Flash|p1a: Nidoran-F
+|-unboost|p1a: Nidoran-F|accuracy|1
+|
+|upkeep
+|turn|66
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":18,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":8,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"49/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p1a: Nidoran-F|Confuse Ray|p2a: Graveler
+|-start|p2a: Graveler|confusion
+|-activate|p2a: Graveler|confusion
+|-damage|p2a: Graveler|131/206|[from] confusion
+|
+|upkeep
+|turn|67
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":17,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":8,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"23/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p1a: Nidoran-F|Dream Eater|p2a: Graveler
+|-immune|p2a: Graveler
+|-activate|p2a: Graveler|confusion
+|move|p2a: Graveler|Tackle|p1a: Nidoran-F
+|-damage|p1a: Nidoran-F|23/213
+|
+|upkeep
+|turn|68
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":17,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":8,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"23/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|move|p1a: Nidoran-F|Flamethrower|p2a: Graveler
+|-resisted|p2a: Graveler
+|-damage|p2a: Graveler|108/206
+|-activate|p2a: Graveler|confusion
+|move|p2a: Graveler|Flash|p1a: Nidoran-F
+|-unboost|p1a: Nidoran-F|accuracy|1
+|
+|upkeep
+|turn|69
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":17,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":7,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"23/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Tauros|Tauros, L93|275/291
+|move|p1a: Nidoran-F|Confuse Ray|p2a: Tauros
+|-start|p2a: Tauros|confusion
+|
+|upkeep
+|turn|70
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":16,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":7,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"23/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|-activate|p2a: Tauros|confusion
+|-damage|p2a: Tauros|246/291|[from] confusion
+|move|p1a: Nidoran-F|Dream Eater|p2a: Tauros
+|-immune|p2a: Tauros
+|
+|upkeep
+|turn|71
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":16,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":18,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":7,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"23/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|-activate|p2a: Tauros|confusion
+|move|p2a: Tauros|Rest|p2a: Tauros
+|-status|p2a: Tauros|slp|[from] move: Rest
+|-heal|p2a: Tauros|291/291 slp|[silent]
+|move|p1a: Nidoran-F|Flamethrower|p2a: Tauros|[miss]
+|-miss|p1a: Nidoran-F
+|
+|upkeep
+|turn|72
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"23/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Meowth|Meowth, L53|45/134
+|move|p1a: Nidoran-F|Flamethrower|p2a: Meowth
+|-damage|p2a: Meowth|0 fnt
+|faint|p2a: Meowth
+
+|request|{"active":[{"moves":[{"move":"Dream Eater","id":"dreameater","pp":16,"maxpp":24,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":17,"maxpp":24,"target":"normal","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":7,"maxpp":16,"target":"normal","disabled":false},{"move":"Vise Grip","id":"visegrip","pp":43,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Nidoran-F","details":"Nidoran-F, L74","condition":"23/213","active":true,"stats":{"atk":130,"def":113,"spa":94,"spd":73,"spe":93},"moves":["dreameater","flamethrower","confuseray","visegrip"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Scyther","details":"Scyther, L87","condition":"0 fnt","active":false,"stats":{"atk":255,"def":195,"spa":175,"spd":124,"spe":229},"moves":["hyperbeam","leechlife","superfang","amnesia"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Clefable","details":"Clefable, L74","condition":"0 fnt","active":false,"stats":{"atk":108,"def":133,"spa":165,"spd":152,"spe":113},"moves":["hypnosis","poisonpowder","skyattack","defensecurl"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":79,"def":66,"spa":65,"spd":61,"spe":74},"moves":["rockthrow","pinmissile","rage","thunder"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Sandslash","details":"Sandslash, L58","condition":"0 fnt","active":false,"stats":{"atk":154,"def":137,"spa":126,"spd":98,"spe":115},"moves":["waterfall","doublekick","fireblast","bubble"],"baseAbility":"none","item":"","pokeball":"pokeball"},{"ident":"p1: Pidgey","details":"Pidgey, L59","condition":"0 fnt","active":false,"stats":{"atk":107,"def":85,"spa":58,"spd":66,"spe":89},"moves":["explosion","spikecannon","smog","splash"],"baseAbility":"none","item":"","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471715
+|switch|p2a: Hypno|Hypno, L97|188/322
+|turn|73
+
+|
+|t:|1603471715
+|move|p2a: Hypno|Peck|p1a: Nidoran-F
+|-damage|p1a: Nidoran-F|0 fnt
+|faint|p1a: Nidoran-F
+|
+|win|Bot 2

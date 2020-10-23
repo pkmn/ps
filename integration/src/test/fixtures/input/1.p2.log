@@ -1,0 +1,892 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"227/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"265/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"360/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"aggronite","pokeball":"pokeball","ability":"download"}]}}
+
+|t:|1603471060
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|singles
+|gen|7
+|tier|[Gen 7] Custom Game
+|clearpoke
+|poke|p1|Noctowl, L61, M|item
+|poke|p1|Malamar, L87, F|item
+|poke|p1|Fletchling, L91, M|item
+|poke|p1|Eelektross, L75, M|item
+|poke|p1|Hydreigon, L53, M|item
+|poke|p1|Doduo, L77, F|item
+|poke|p2|Skarmory, L72, M|item
+|poke|p2|Hoothoot, L99, M|item
+|poke|p2|Espurr, L55, F|item
+|poke|p2|Trapinch, L74, M|item
+|poke|p2|Buzzwole, L92|item
+|poke|p2|Sawk, L55, M|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":32,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"227/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"265/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"360/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"aggronite","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|start
+|switch|p1a: Noctowl|Noctowl, L61, M|219/219
+|switch|p2a: Skarmory|Skarmory, L72, M|227/227
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"227/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"265/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"360/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"aggronite","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|move|p1a: Noctowl|Soft-Boiled||[still]
+|-fail|p1a: Noctowl|heal
+|debug|move failed because it did nothing
+|move|p2a: Skarmory|Pluck|p1a: Noctowl
+|-damage|p1a: Noctowl|152/219
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"227/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"265/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"360/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"aggronite","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|move|p1a: Noctowl|Detect|p1a: Noctowl
+|-singleturn|p1a: Noctowl|Protect
+|move|p2a: Skarmory|Double Hit|p1a: Noctowl
+|-activate|p1a: Noctowl|move: Protect
+|
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"227/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"265/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"360/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"aggronite","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Malamar|Malamar, L87, F|271/271
+|move|p2a: Skarmory|Doom Desire|p1a: Malamar
+|-start|p2a: Skarmory|Doom Desire
+|
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Aura Sphere","id":"aurasphere","pp":20,"maxpp":20,"target":"any","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","aurasphere"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"265/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"360/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"aggronite","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|move|p1a: Malamar|Aura Sphere|p2a: Skarmory
+|-damage|p2a: Skarmory|158/227
+|move|p2a: Skarmory|Mimic|p1a: Malamar
+|-start|p2a: Skarmory|Mimic|Aura Sphere
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Waterfall","id":"waterfall","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Fury Attack","id":"furyattack","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Avalanche","id":"avalanche","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":true,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"360/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"aggronite","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Hoothoot|Hoothoot, L99, M|265/265
+|move|p1a: Malamar|Metal Claw|p2a: Hoothoot
+|-damage|p2a: Hoothoot|212/265
+|
+|-end|p1a: Malamar|move: Doom Desire
+|-damage|p1a: Malamar|225/271
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Synchronoise","id":"synchronoise","pp":16,"maxpp":16,"target":"allAdjacent","disabled":false},{"move":"Supersonic","id":"supersonic","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Bounce","id":"bounce","pp":8,"maxpp":8,"target":"any","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":true,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"360/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"aggronite","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Fletchling|Fletchling, L91, M|245/245
+|switch|p2a: Espurr|Espurr, L55, F|162/162
+|
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Trick-or-Treat","id":"trickortreat","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mach Punch","id":"machpunch","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Triple Kick","id":"triplekick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fleur Cannon","id":"fleurcannon","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":true,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"360/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"aggronite","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Trapinch|Trapinch, L74, M|162/162
+|-weather|DesolateLand|[from] ability: Desolate Land|[of] p2a: Trapinch
+|move|p1a: Fletchling|Splash|p1a: Fletchling
+|-nothing
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":8,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Vine Whip","id":"vinewhip","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Psyshock","id":"psyshock","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":true,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"aggronite","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|-weather|none
+|switch|p2a: Buzzwole|Buzzwole, L92|360/360
+|move|p1a: Fletchling|Let's Snuggle Forever|p2a: Buzzwole
+|-supereffective|p2a: Buzzwole
+|-damage|p2a: Buzzwole|158/360
+|
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Moongeist Beam","id":"moongeistbeam","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":true,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"aggronite","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Sawk|Sawk, L55, M|162/162
+|-ability|p2a: Sawk|Download|boost
+|-boost|p2a: Sawk|spa|1
+|switch|p1a: Eelektross|Eelektross, L75, M|256/256
+|-activate|p1a: Eelektross|ability: Forewarn|Moongeist Beam|[of] p2a: Sawk
+|
+|upkeep
+|turn|10
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Moongeist Beam","id":"moongeistbeam","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":true,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"aggronite","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Doduo|Doduo, L53, F|185/185
+|move|p2a: Sawk|Icicle Spear|p1a: Doduo
+|-supereffective|p1a: Doduo
+|-damage|p1a: Doduo|153/185
+|debug|illusion cleared
+|replace|p1a: Hydreigon|Hydreigon, L53, M
+|-end|p1a: Hydreigon|Illusion
+|-supereffective|p1a: Hydreigon
+|-damage|p1a: Hydreigon|125/185
+|-hitcount|p1a: Hydreigon|2
+|
+|upkeep
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Moongeist Beam","id":"moongeistbeam","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":true,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471060
+|move|p1a: Hydreigon|Follow Me||[still]
+|-fail|p1a: Hydreigon
+|move|p2a: Sawk|Trick|p1a: Hydreigon
+|-activate|p2a: Sawk|move: Trick|[of] p1a: Hydreigon
+|-item|p1a: Hydreigon|Aggronite|[from] move: Trick
+|-item|p2a: Sawk|Grassy Seed|[from] move: Trick
+|
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moongeist Beam","id":"moongeistbeam","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":true,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Doduo|Doduo, L77, F|189/189
+|move|p2a: Sawk|Ice Punch|p1a: Doduo
+|-supereffective|p1a: Doduo
+|-damage|p1a: Doduo|135/189
+|-status|p1a: Doduo|frz
+|
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moongeist Beam","id":"moongeistbeam","pp":7,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":true,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"162/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Doduo|Doduo, L53, F|125/185
+|move|p2a: Sawk|Moongeist Beam|p1a: Doduo
+|-resisted|p1a: Doduo
+|-damage|p1a: Doduo|107/185
+|debug|illusion cleared
+|replace|p1a: Hydreigon|Hydreigon, L53, M
+|-end|p1a: Hydreigon|Illusion
+|
+|upkeep
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"Trick-or-Treat","id":"trickortreat","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mach Punch","id":"machpunch","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Triple Kick","id":"triplekick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fleur Cannon","id":"fleurcannon","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"105/162","active":true,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Trapinch|Trapinch, L74, M|162/162
+|-weather|DesolateLand|[from] ability: Desolate Land|[of] p2a: Trapinch
+|move|p1a: Hydreigon|Attack Order|p2a: Trapinch
+|-crit|p2a: Trapinch
+|-damage|p2a: Trapinch|105/162
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Trick-or-Treat","id":"trickortreat","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mach Punch","id":"machpunch","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Triple Kick","id":"triplekick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fleur Cannon","id":"fleurcannon","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"105/162 slp","active":true,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471060
+|move|p1a: Hydreigon|Grass Whistle|p2a: Trapinch
+|-status|p2a: Trapinch|slp|[from] move: Grass Whistle
+|cant|p2a: Trapinch|slp
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Trick-or-Treat","id":"trickortreat","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mach Punch","id":"machpunch","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Triple Kick","id":"triplekick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fleur Cannon","id":"fleurcannon","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"105/162","active":true,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471060
+|-curestatus|p2a: Trapinch|slp|[msg]
+|move|p2a: Trapinch|Mach Punch|p1a: Hydreigon
+|-supereffective|p1a: Hydreigon
+|-damage|p1a: Hydreigon|41/185
+|move|p1a: Hydreigon|Venom Drench||[still]
+|-fail|p1a: Hydreigon
+|debug|move failed because it did nothing
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Trick-or-Treat","id":"trickortreat","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mach Punch","id":"machpunch","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Triple Kick","id":"triplekick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fleur Cannon","id":"fleurcannon","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"105/162","active":true,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Doduo|Doduo, L77, F|135/189 frz
+|move|p2a: Trapinch|Triple Kick|p1a: Doduo
+|-damage|p1a: Doduo|130/189 frz
+|-damage|p1a: Doduo|121/189 frz
+|-damage|p1a: Doduo|107/189 frz
+|-hitcount|p1a: Doduo|3
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|18
+
+|request|{"active":[{"moves":[{"move":"Trick-or-Treat","id":"trickortreat","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mach Punch","id":"machpunch","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Triple Kick","id":"triplekick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fleur Cannon","id":"fleurcannon","pp":7,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"105/162","active":true,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471060
+|cant|p1a: Doduo|frz
+|move|p2a: Trapinch|Fleur Cannon|p1a: Doduo
+|-damage|p1a: Doduo|47/189 frz
+|-unboost|p2a: Trapinch|spa|2
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":8,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Vine Whip","id":"vinewhip","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Psyshock","id":"psyshock","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":true,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"105/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"}]}}
+
+|
+|t:|1603471060
+|-weather|none
+|switch|p2a: Buzzwole|Buzzwole, L92|158/360
+|cant|p1a: Doduo|frz
+|
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":7,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Vine Whip","id":"vinewhip","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Psyshock","id":"psyshock","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":true,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"105/162","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Fletchling|Fletchling, L91, M|245/245
+|move|p2a: Buzzwole|Heal Bell||[still]
+|-activate|p2a: Buzzwole|move: Heal Bell
+|-fail|p2a: Buzzwole
+|debug|move failed because it did nothing
+|
+|upkeep
+|turn|21
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":true,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"}]},"noCancel":true}
+
+|
+|t:|1603471060
+|switch|p2a: Trapinch|Trapinch, L74, M|105/162
+|-weather|DesolateLand|[from] ability: Desolate Land|[of] p2a: Trapinch
+|move|p1a: Fletchling|Fire Lash|p2a: Trapinch
+|debug|Sunny Day fire boost
+|-damage|p2a: Trapinch|0 fnt
+|faint|p2a: Trapinch
+|-weather|none
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Skarmory|Skarmory, L72, M|158/227
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":7,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Vine Whip","id":"vinewhip","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Psyshock","id":"psyshock","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":true,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Buzzwole|Buzzwole, L92|158/360
+|move|p1a: Fletchling|Swallow||[still]
+|-fail|p1a: Fletchling
+|
+|upkeep
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":7,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Vine Whip","id":"vinewhip","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Psyshock","id":"psyshock","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":true,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Doduo|Doduo, L77, F|47/189 frz
+|move|p2a: Buzzwole|Vine Whip|p1a: Doduo
+|-resisted|p1a: Doduo
+|-damage|p1a: Doduo|26/189 frz
+|
+|upkeep
+|turn|24
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":true,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|move|p2a: Buzzwole|Psyshock|p1a: Doduo
+|-damage|p1a: Doduo|0 fnt
+|faint|p1a: Doduo
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":7,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Vine Whip","id":"vinewhip","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Psyshock","id":"psyshock","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":true,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Eelektross|Eelektross, L75, M|256/256
+|-activate|p1a: Eelektross|ability: Forewarn|Psyshock|[of] p2a: Buzzwole
+|turn|25
+
+|request|{"active":[{"moves":[{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Synchronoise","id":"synchronoise","pp":16,"maxpp":16,"target":"allAdjacent","disabled":false},{"move":"Supersonic","id":"supersonic","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Bounce","id":"bounce","pp":8,"maxpp":8,"target":"any","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":true,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Espurr|Espurr, L55, F|162/162
+|switch|p1a: Malamar|Malamar, L87, F|225/271
+|
+|upkeep
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":7,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Vine Whip","id":"vinewhip","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Psyshock","id":"psyshock","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":true,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Malamar|Malamar, L53, F|41/185
+|switch|p2a: Buzzwole|Buzzwole, L92|158/360
+|
+|upkeep
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":7,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Vine Whip","id":"vinewhip","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Psyshock","id":"psyshock","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"158/360","active":true,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Malamar|Malamar, L87, F|225/271
+|move|p2a: Buzzwole|Swagger|p1a: Malamar
+|-boost|p1a: Malamar|atk|2
+|-start|p1a: Malamar|confusion
+|
+|upkeep
+|turn|28
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":7,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Vine Whip","id":"vinewhip","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Psyshock","id":"psyshock","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Swagger","id":"swagger","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"84/360","active":true,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|move|p2a: Buzzwole|Psyshock|p1a: Malamar
+|-immune|p1a: Malamar
+|-activate|p1a: Malamar|confusion
+|move|p1a: Malamar|Judgment|p2a: Buzzwole
+|-damage|p2a: Buzzwole|84/360
+|
+|upkeep
+|turn|29
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":true,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]},"noCancel":true}
+
+|
+|t:|1603471060
+|move|p2a: Buzzwole|Psyshock|p1a: Malamar
+|-immune|p1a: Malamar
+|-activate|p1a: Malamar|confusion
+|move|p1a: Malamar|Rock Wrecker|p2a: Buzzwole
+|-damage|p2a: Buzzwole|0 fnt
+|-mustrecharge|p1a: Malamar
+|faint|p2a: Buzzwole
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moongeist Beam","id":"moongeistbeam","pp":7,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":true,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Sawk|Sawk, L55, M|162/162
+|-ability|p2a: Sawk|Download|boost
+|-boost|p2a: Sawk|atk|1
+|turn|30
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Skarmory|Skarmory, L72, M|158/227
+|cant|p1a: Malamar|recharge
+|
+|upkeep
+|turn|31
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Malamar|Malamar, L53, F|41/185
+|move|p2a: Skarmory|Double Hit|p1a: Malamar
+|-damage|p1a: Malamar|16/185
+|debug|illusion cleared
+|replace|p1a: Hydreigon|Hydreigon, L53, M
+|-end|p1a: Hydreigon|Illusion
+|-damage|p1a: Hydreigon|0 fnt
+|-hitcount|p1a: Hydreigon|2
+|faint|p1a: Hydreigon
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Fletchling|Fletchling, L91, M|245/245
+|turn|32
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moongeist Beam","id":"moongeistbeam","pp":7,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":true,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Sawk|Sawk, L55, M|162/162
+|-ability|p2a: Sawk|Download|boost
+|-boost|p2a: Sawk|spa|1
+|move|p1a: Fletchling|Splash|p1a: Fletchling
+|-nothing
+|
+|upkeep
+|turn|33
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moongeist Beam","id":"moongeistbeam","pp":6,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":true,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|move|p1a: Fletchling|Splash|p1a: Fletchling
+|-nothing
+|move|p2a: Sawk|Moongeist Beam|p1a: Fletchling
+|-immune|p1a: Fletchling
+|
+|upkeep
+|turn|34
+
+|request|{"active":[{"moves":[{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Synchronoise","id":"synchronoise","pp":16,"maxpp":16,"target":"allAdjacent","disabled":false},{"move":"Supersonic","id":"supersonic","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Bounce","id":"bounce","pp":8,"maxpp":8,"target":"any","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"162/162","active":true,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Espurr|Espurr, L55, F|162/162
+|move|p1a: Fletchling|Swallow||[still]
+|-fail|p1a: Fletchling
+|
+|upkeep
+|turn|35
+
+|request|{"active":[{"moves":[{"move":"Bulldoze","id":"bulldoze","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Synchronoise","id":"synchronoise","pp":16,"maxpp":16,"target":"allAdjacent","disabled":false},{"move":"Supersonic","id":"supersonic","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Bounce","id":"bounce","pp":8,"maxpp":8,"target":"any","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"85/162","active":true,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|move|p1a: Fletchling|Fire Lash|p2a: Espurr
+|-damage|p2a: Espurr|85/162
+|-unboost|p2a: Espurr|def|1
+|move|p2a: Espurr|Bulldoze|p1a: Fletchling
+|-immune|p1a: Fletchling
+|
+|upkeep
+|turn|36
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"85/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Noctowl|Noctowl, L61, M|152/219
+|switch|p2a: Skarmory|Skarmory, L72, M|158/227
+|
+|upkeep
+|turn|37
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moongeist Beam","id":"moongeistbeam","pp":6,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":true,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"85/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Eelektross|Eelektross, L75, M|256/256
+|-activate|p1a: Eelektross|ability: Forewarn|Doom Desire|[of] p2a: Skarmory
+|switch|p2a: Sawk|Sawk, L55, M|162/162
+|-ability|p2a: Sawk|Download|boost
+|-boost|p2a: Sawk|atk|1
+|
+|upkeep
+|turn|38
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"85/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Skarmory|Skarmory, L72, M|158/227
+|switch|p1a: Noctowl|Noctowl, L61, M|152/219
+|
+|upkeep
+|turn|39
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"85/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"}]}}
+
+|
+|t:|1603471060
+|move|p1a: Noctowl|Leaf Tornado|p2a: Skarmory|[miss]
+|-miss|p1a: Noctowl|p2a: Skarmory
+|move|p2a: Skarmory|Double Hit|p1a: Noctowl|[miss]
+|-miss|p2a: Skarmory|p1a: Noctowl
+|
+|upkeep
+|turn|40
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"85/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Eelektross|Eelektross, L75, M|256/256
+|-activate|p1a: Eelektross|ability: Forewarn|Doom Desire|[of] p2a: Skarmory
+|move|p2a: Skarmory|Doom Desire|p1a: Eelektross
+|-start|p2a: Skarmory|Doom Desire
+|
+|upkeep
+|turn|41
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"85/162","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"}]}}
+
+|
+|t:|1603471060
+|move|p2a: Skarmory|Doom Desire||[still]
+|-fail|p2a: Skarmory
+|move|p1a: Eelektross|Growl|p2a: Skarmory
+|-unboost|p2a: Skarmory|atk|1
+|
+|upkeep
+|turn|42
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":true,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]},"noCancel":true}
+
+|
+|t:|1603471060
+|switch|p2a: Espurr|Espurr, L55, F|85/162
+|move|p1a: Eelektross|Spectral Thief|p2a: Espurr
+|-supereffective|p2a: Espurr
+|-damage|p2a: Espurr|0 fnt
+|faint|p2a: Espurr
+|
+|-end|p1a: Eelektross|move: Doom Desire
+|-resisted|p1a: Eelektross
+|-damage|p1a: Eelektross|226/256
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moongeist Beam","id":"moongeistbeam","pp":6,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":true,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"158/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Sawk|Sawk, L55, M|162/162
+|-ability|p2a: Sawk|Download|boost
+|-boost|p2a: Sawk|atk|1
+|turn|43
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"125/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Skarmory|Skarmory, L72, M|158/227
+|move|p1a: Eelektross|Air Slash|p2a: Skarmory
+|-resisted|p2a: Skarmory
+|-damage|p2a: Skarmory|125/227
+|
+|upkeep
+|turn|44
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Air Slash","id":"airslash","pp":15,"maxpp":15,"target":"any","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"125/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","airslash"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|move|p2a: Skarmory|Mimic|p1a: Eelektross
+|-start|p2a: Skarmory|Mimic|Air Slash
+|move|p1a: Eelektross|Wonder Room|p1a: Eelektross
+|-fieldstart|move: Wonder Room|[of] p1a: Eelektross
+|
+|upkeep
+|turn|45
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":4,"maxpp":8,"target":"normal","disabled":false},{"move":"Air Slash","id":"airslash","pp":15,"maxpp":15,"target":"any","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"125/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","airslash"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|move|p2a: Skarmory|Doom Desire|p1a: Eelektross
+|-start|p2a: Skarmory|Doom Desire
+|move|p1a: Eelektross|Air Slash|p2a: Skarmory|[miss]
+|-miss|p1a: Eelektross|p2a: Skarmory
+|
+|upkeep
+|turn|46
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moongeist Beam","id":"moongeistbeam","pp":6,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"162/162","active":true,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"125/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Sawk|Sawk, L55, M|162/162
+|-ability|p2a: Sawk|Download|boost
+|-boost|p2a: Sawk|atk|1
+|switch|p1a: Malamar|Malamar, L87, F|225/271
+|
+|upkeep
+|turn|47
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moongeist Beam","id":"moongeistbeam","pp":6,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"71/162","active":true,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"125/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]}}
+
+|
+|t:|1603471060
+|move|p1a: Malamar|Judgment|p2a: Sawk
+|-damage|p2a: Sawk|71/162
+|move|p2a: Sawk|Icicle Spear|p1a: Malamar
+|-crit|p1a: Malamar
+|-damage|p1a: Malamar|204/271
+|-damage|p1a: Malamar|190/271
+|-damage|p1a: Malamar|177/271
+|-hitcount|p1a: Malamar|3
+|
+|-end|p1a: Malamar|move: Doom Desire
+|-damage|p1a: Malamar|110/271
+|upkeep
+|turn|48
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":true,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"125/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"}]},"noCancel":true}
+
+|
+|t:|1603471060
+|move|p1a: Malamar|Judgment|p2a: Sawk
+|-damage|p2a: Sawk|0 fnt
+|faint|p2a: Sawk
+|
+|-fieldend|move: Wonder Room
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":4,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"125/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"212/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Skarmory|Skarmory, L72, M|125/227
+|turn|49
+
+|request|{"active":[{"moves":[{"move":"Waterfall","id":"waterfall","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Fury Attack","id":"furyattack","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Avalanche","id":"avalanche","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"146/265","active":true,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"125/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Hoothoot|Hoothoot, L99, M|212/265
+|move|p1a: Malamar|Judgment|p2a: Hoothoot
+|-damage|p2a: Hoothoot|146/265
+|
+|upkeep
+|turn|50
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":31,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":4,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"85/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"146/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Skarmory|Skarmory, L72, M|125/227
+|move|p1a: Malamar|Judgment|p2a: Skarmory
+|-resisted|p2a: Skarmory
+|-damage|p2a: Skarmory|85/227
+|
+|upkeep
+|turn|51
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":30,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":4,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"152/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"146/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|move|p1a: Malamar|Judgment|p2a: Skarmory
+|-resisted|p2a: Skarmory
+|-damage|p2a: Skarmory|39/227
+|move|p2a: Skarmory|Pluck|p1a: Malamar
+|-damage|p1a: Malamar|74/271
+|-enditem|p1a: Malamar|Mago Berry|[from] stealeat|[move] Pluck|[of] p2a: Skarmory
+|-heal|p2a: Skarmory|152/227|[from] item: Mago Berry
+|
+|upkeep
+|turn|52
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":30,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":4,"maxpp":8,"target":"normal","disabled":false},{"move":"Rock Wrecker","id":"rockwrecker","pp":5,"maxpp":5,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","rockwrecker"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"146/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|move|p1a: Malamar|Rock Wrecker|p2a: Skarmory
+|-damage|p2a: Skarmory|74/227
+|-mustrecharge|p1a: Malamar
+|move|p2a: Skarmory|Mimic|p1a: Malamar
+|-start|p2a: Skarmory|Mimic|Rock Wrecker
+|
+|upkeep
+|turn|53
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":29,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":4,"maxpp":8,"target":"normal","disabled":false},{"move":"Rock Wrecker","id":"rockwrecker","pp":5,"maxpp":5,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","rockwrecker"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"146/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|cant|p1a: Malamar|recharge
+|move|p2a: Skarmory|Pluck|p1a: Malamar
+|-damage|p1a: Malamar|41/271
+|
+|upkeep
+|turn|54
+
+|request|{"active":[{"moves":[{"move":"Waterfall","id":"waterfall","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Fury Attack","id":"furyattack","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Avalanche","id":"avalanche","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"146/265","active":true,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Noctowl|Noctowl, L61, M|152/219
+|switch|p2a: Hoothoot|Hoothoot, L99, M|146/265
+|
+|upkeep
+|turn|55
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"146/265","active":true,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Malamar|Malamar, L87, F|41/271
+|move|p2a: Hoothoot|Waterfall|p1a: Malamar
+|-damage|p1a: Malamar|5/271
+|-damage|p1a: Malamar|0 fnt
+|-hitcount|p1a: Malamar|2
+|faint|p1a: Malamar
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Waterfall","id":"waterfall","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Fury Attack","id":"furyattack","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Avalanche","id":"avalanche","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"146/265","active":true,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Noctowl|Noctowl, L61, M|152/219
+|turn|56
+
+|request|{"active":[{"moves":[{"move":"Waterfall","id":"waterfall","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Fury Attack","id":"furyattack","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Avalanche","id":"avalanche","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"116/265","active":true,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|move|p2a: Hoothoot|Moonblast|p1a: Noctowl
+|-damage|p1a: Noctowl|78/219
+|-damage|p1a: Noctowl|57/219
+|-hitcount|p1a: Noctowl|2
+|move|p1a: Noctowl|Wood Hammer|p2a: Hoothoot
+|-resisted|p2a: Hoothoot
+|-damage|p2a: Hoothoot|116/265
+|-damage|p1a: Noctowl|47/219|[from] Recoil
+|
+|upkeep
+|turn|57
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"90/265","active":true,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|move|p2a: Hoothoot|Fury Attack|p1a: Noctowl
+|-damage|p1a: Noctowl|23/219
+|-damage|p1a: Noctowl|1/219
+|-hitcount|p1a: Noctowl|2
+|move|p1a: Noctowl|Wood Hammer|p2a: Hoothoot
+|-resisted|p2a: Hoothoot
+|-damage|p2a: Hoothoot|90/265
+|-damage|p1a: Noctowl|0 fnt|[from] Recoil
+|faint|p1a: Noctowl
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Waterfall","id":"waterfall","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Fury Attack","id":"furyattack","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Avalanche","id":"avalanche","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"90/265","active":true,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Fletchling|Fletchling, L91, M|245/245
+|turn|58
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":29,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":4,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":13,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"90/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Skarmory|Skarmory, L72, M|74/227
+|move|p1a: Fletchling|Splash|p1a: Fletchling
+|-nothing
+|
+|upkeep
+|turn|59
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":29,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":4,"maxpp":8,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":10,"maxpp":10,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","swallow"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"90/265","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|move|p1a: Fletchling|Swallow||[still]
+|-fail|p1a: Fletchling
+|move|p2a: Skarmory|Mimic|p1a: Fletchling
+|-start|p2a: Skarmory|Mimic|Swallow
+|
+|upkeep
+|turn|60
+
+|request|{"active":[{"moves":[{"move":"Waterfall","id":"waterfall","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Fury Attack","id":"furyattack","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Avalanche","id":"avalanche","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"90/265","active":true,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Eelektross|Eelektross, L75, M|226/256
+|-activate|p1a: Eelektross|ability: Forewarn|Doom Desire|[of] p2a: Skarmory
+|switch|p2a: Hoothoot|Hoothoot, L99, M|90/265
+|
+|upkeep
+|turn|61
+
+|request|{"active":[{"moves":[{"move":"Waterfall","id":"waterfall","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Fury Attack","id":"furyattack","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Avalanche","id":"avalanche","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"90/265","active":true,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p1a: Fletchling|Fletchling, L91, M|245/245
+|move|p2a: Hoothoot|Avalanche|p1a: Fletchling
+|-supereffective|p1a: Fletchling
+|-damage|p1a: Fletchling|195/245
+|-supereffective|p1a: Fletchling
+|-damage|p1a: Fletchling|179/245
+|-hitcount|p1a: Fletchling|2
+|
+|upkeep
+|turn|62
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"0 fnt","active":true,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":false,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]},"noCancel":true}
+
+|
+|t:|1603471060
+|move|p1a: Fletchling|Fire Lash|p2a: Hoothoot
+|-damage|p2a: Hoothoot|0 fnt
+|faint|p2a: Hoothoot
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Pluck","id":"pluck","pp":29,"maxpp":32,"target":"any","disabled":false},{"move":"Double Hit","id":"doublehit","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":4,"maxpp":8,"target":"normal","disabled":false},{"move":"Mimic","id":"mimic","pp":12,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skarmory","details":"Skarmory, L72, M","condition":"74/227","active":true,"stats":{"atk":126,"def":262,"spa":87,"spd":132,"spe":133},"moves":["pluck","doublehit","doomdesire","mimic"],"baseAbility":"normalize","item":"protectivepads","pokeball":"pokeball","ability":"normalize"},{"ident":"p2: Trapinch","details":"Trapinch, L74, M","condition":"0 fnt","active":false,"stats":{"atk":174,"def":121,"spa":94,"spd":95,"spe":34},"moves":["trickortreat","machpunch","triplekick","fleurcannon"],"baseAbility":"desolateland","item":"fastball","pokeball":"pokeball","ability":"desolateland"},{"ident":"p2: Hoothoot","details":"Hoothoot, L99, M","condition":"0 fnt","active":false,"stats":{"atk":96,"def":112,"spa":129,"spd":167,"spe":145},"moves":["waterfall","moonblast","furyattack","avalanche"],"baseAbility":"parentalbond","item":"safetygoggles","pokeball":"pokeball","ability":"parentalbond"},{"ident":"p2: Espurr","details":"Espurr, L55, F","condition":"0 fnt","active":false,"stats":{"atk":101,"def":92,"spa":93,"spd":87,"spe":86},"moves":["bulldoze","synchronoise","supersonic","bounce"],"baseAbility":"waterbubble","item":"fairiumz","pokeball":"pokeball","ability":"waterbubble"},{"ident":"p2: Buzzwole","details":"Buzzwole, L92","condition":"0 fnt","active":false,"stats":{"atk":311,"def":306,"spa":120,"spd":168,"spe":175},"moves":["healbell","vinewhip","psyshock","swagger"],"baseAbility":"skilllink","item":"dragonscale","pokeball":"pokeball","ability":"skilllink"},{"ident":"p2: Sawk","details":"Sawk, L55, M","condition":"0 fnt","active":false,"stats":{"atk":165,"def":131,"spa":60,"spd":115,"spe":141},"moves":["iciclespear","trick","icepunch","moongeistbeam"],"baseAbility":"download","item":"grassyseed","pokeball":"pokeball","ability":"download"}]}}
+
+|
+|t:|1603471060
+|switch|p2a: Skarmory|Skarmory, L72, M|74/227
+|turn|63
+
+|
+|t:|1603471060
+|move|p1a: Fletchling|Fire Lash|p2a: Skarmory
+|-supereffective|p2a: Skarmory
+|-damage|p2a: Skarmory|0 fnt
+|faint|p2a: Skarmory
+|
+|win|Bot 1

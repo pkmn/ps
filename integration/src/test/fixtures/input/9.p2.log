@@ -1,0 +1,560 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron, L65, M","condition":"185/185","active":true,"stats":{"atk":192,"def":245,"spa":122,"spd":98,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"illusion","item":"aggronite","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"260/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|t:|1603471093
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|singles
+|gen|7
+|tier|[Gen 7] Custom Game
+|clearpoke
+|poke|p1|Talonflame, L51, F|item
+|poke|p1|Charmander, L85, M|item
+|poke|p1|Dodrio, L87, F|item
+|poke|p1|Vibrava, L93, F|item
+|poke|p1|Pheromosa, L54|item
+|poke|p1|Comfey, L84, M|item
+|poke|p2|Aggron, L65, M|item
+|poke|p2|Cubchoo, L91, F|item
+|poke|p2|Xurkitree, L63|item
+|poke|p2|Toxapex, L74, M|item
+|poke|p2|Kakuna, L81, F|item
+|poke|p2|Lurantis, L93, M|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Sludge Bomb","id":"sludgebomb","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false}],"canMegaEvo":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron, L65, M","condition":"185/185","active":true,"stats":{"atk":192,"def":245,"spa":122,"spd":98,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"illusion","item":"aggronite","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"260/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|start
+|switch|p1a: Talonflame|Talonflame, L51, F|148/148
+|switch|p2a: Lurantis|Lurantis, L65, M|185/185
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Sludge Bomb","id":"sludgebomb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"181/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"260/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|detailschange|p2a: Lurantis|Lurantis, L93, M
+|-mega|p2a: Lurantis|Lurantis|Aggronite
+|move|p1a: Talonflame|Barrage|p2a: Lurantis
+|-resisted|p2a: Lurantis
+|-damage|p2a: Lurantis|184/185
+|-resisted|p2a: Lurantis
+|-damage|p2a: Lurantis|183/185
+|-resisted|p2a: Lurantis
+|-damage|p2a: Lurantis|182/185
+|-resisted|p2a: Lurantis
+|-damage|p2a: Lurantis|181/185
+|-hitcount|p2a: Lurantis|4
+|move|p2a: Lurantis|Sludge Bomb|p1a: Talonflame
+|-damage|p1a: Talonflame|88/148
+|-status|p1a: Talonflame|psn
+|
+|-damage|p1a: Talonflame|70/148 psn|[from] psn
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock"}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"177/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"260/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Talonflame|Barrage|p2a: Lurantis
+|-resisted|p2a: Lurantis
+|-damage|p2a: Lurantis|180/185
+|-resisted|p2a: Lurantis
+|-damage|p2a: Lurantis|179/185
+|-resisted|p2a: Lurantis
+|-damage|p2a: Lurantis|178/185
+|-resisted|p2a: Lurantis
+|-damage|p2a: Lurantis|177/185
+|-hitcount|p2a: Lurantis|4
+|move|p2a: Lurantis|Freeze Shock||[still]
+|-prepare|p2a: Lurantis|Freeze Shock
+|
+|-damage|p1a: Talonflame|52/148 psn|[from] psn
+|upkeep
+|turn|3
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"164/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"260/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Talonflame|Struggle Bug|p2a: Lurantis
+|-resisted|p2a: Lurantis
+|-crit|p2a: Lurantis
+|-damage|p2a: Lurantis|164/185
+|-unboost|p2a: Lurantis|spa|1
+|move|p2a: Lurantis|Freeze Shock|p1a: Talonflame|[from]lockedmove
+|-damage|p1a: Talonflame|0 fnt
+|faint|p1a: Talonflame
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Sludge Bomb","id":"sludgebomb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"164/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"260/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Charmander|Charmander, L85, M|189/189
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Aqua Ring","id":"aquaring","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Rock Wrecker","id":"rockwrecker","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hold Hands","id":"holdhands","pp":64,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Heal Order","id":"healorder","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"260/260","active":true,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"164/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|switch|p2a: Cubchoo|Cubchoo, L91, F|260/260
+|move|p1a: Charmander|Speed Swap|p2a: Cubchoo
+|-activate|p1a: Charmander|move: Speed Swap|[of] p2a: Cubchoo
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Aqua Ring","id":"aquaring","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Rock Wrecker","id":"rockwrecker","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hold Hands","id":"holdhands","pp":64,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Heal Order","id":"healorder","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"209/260","active":true,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"164/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|move|p2a: Cubchoo|Heal Order||[still]
+|-fail|p2a: Cubchoo|heal
+|debug|move failed because it did nothing
+|move|p1a: Charmander|Fury Cutter|p2a: Cubchoo
+|-damage|p2a: Cubchoo|209/260
+|
+|upkeep
+|turn|6
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"209/260","active":true,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"164/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|move|p2a: Cubchoo|Rock Wrecker|p1a: Charmander
+|-supereffective|p1a: Charmander
+|-damage|p1a: Charmander|0 fnt
+|-mustrecharge|p2a: Cubchoo
+|faint|p1a: Charmander
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Recharge","id":"recharge"}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"209/260","active":true,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"164/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Dodrio|Dodrio, L87, F|206/206
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Aqua Ring","id":"aquaring","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Rock Wrecker","id":"rockwrecker","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Hold Hands","id":"holdhands","pp":64,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Heal Order","id":"healorder","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":true,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"164/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Dodrio|Lava Plume|p2a: Cubchoo
+|-supereffective|p2a: Cubchoo
+|-crit|p2a: Cubchoo
+|-damage|p2a: Cubchoo|11/260
+|cant|p2a: Cubchoo|recharge
+|
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Recharge","id":"recharge"}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":true,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"164/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Vibrava|Vibrava, L93, F|270/270
+|move|p2a: Cubchoo|Rock Wrecker|p1a: Vibrava
+|-resisted|p1a: Vibrava
+|-damage|p1a: Vibrava|198/270
+|-mustrecharge|p2a: Cubchoo
+|-ability|p1a: Vibrava|Stamina|boost
+|-boost|p1a: Vibrava|def|1
+|
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Aqua Ring","id":"aquaring","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Rock Wrecker","id":"rockwrecker","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Hold Hands","id":"holdhands","pp":64,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Heal Order","id":"healorder","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":true,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"164/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Vibrava|Electric Terrain|p1a: Vibrava
+|-fieldstart|move: Electric Terrain
+|cant|p2a: Cubchoo|recharge
+|
+|upkeep
+|turn|10
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Sludge Bomb","id":"sludgebomb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|switch|p2a: Aggron|Aggron-Mega, L65, M|164/185
+|move|p1a: Vibrava|Corkscrew Crash|p2a: Aggron
+|-resisted|p2a: Aggron
+|-damage|p2a: Aggron|163/185
+|
+|upkeep
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock"}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Pheromosa|Pheromosa, L54|170/170
+|move|p2a: Aggron|Freeze Shock||[still]
+|-prepare|p2a: Aggron|Freeze Shock
+|
+|upkeep
+|turn|12
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Pheromosa|Electrify|p2a: Aggron
+|-singleturn|p2a: Aggron|move: Electrify
+|debug|Electrify making move type electric
+|move|p2a: Aggron|Freeze Shock|p1a: Pheromosa|[from]lockedmove
+|debug|electric terrain boost
+|-damage|p1a: Pheromosa|0 fnt
+|faint|p1a: Pheromosa
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Sludge Bomb","id":"sludgebomb","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Comfey|Comfey, L84, M|233/233
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Sludge Bomb","id":"sludgebomb","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Dodrio|Dodrio, L87, F|206/206
+|move|p2a: Aggron|Sludge Bomb|p1a: Dodrio
+|-damage|p1a: Dodrio|155/206
+|
+|-fieldend|move: Electric Terrain
+|upkeep
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"Extrasensory","id":"extrasensory","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Power-Up Punch","id":"poweruppunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Fissure","id":"fissure","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"219/219","active":true,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Comfey|Comfey, L84, M|233/233
+|switch|p2a: Xurkitree|Xurkitree, L63|219/219
+|
+|upkeep
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Extrasensory","id":"extrasensory","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Power-Up Punch","id":"poweruppunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Fissure","id":"fissure","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"88/219","active":true,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Comfey|Heat Wave|p2a: Xurkitree
+|-crit|p2a: Xurkitree
+|-damage|p2a: Xurkitree|88/219
+|move|p2a: Xurkitree|Tickle|p1a: Comfey
+|-unboost|p1a: Comfey|atk|1
+|-unboost|p1a: Comfey|def|1
+|
+|upkeep
+|turn|16
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":true,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]},"noCancel":true}
+
+|
+|t:|1603471093
+|move|p1a: Comfey|Grass Knot|p2a: Xurkitree
+|debug|100 bp
+|-damage|p2a: Xurkitree|0 fnt
+|faint|p2a: Xurkitree
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Explosion","id":"explosion","pp":8,"maxpp":8,"target":"allAdjacent","disabled":false},{"move":"Rototiller","id":"rototiller","pp":16,"maxpp":16,"target":"all","disabled":false},{"move":"Ingrain","id":"ingrain","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":true,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|switch|p2a: Toxapex|Toxapex, L74, M|215/215
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Explosion","id":"explosion","pp":8,"maxpp":8,"target":"allAdjacent","disabled":false},{"move":"Rototiller","id":"rototiller","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Ingrain","id":"ingrain","pp":32,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"215/215","active":true,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Vibrava|Vibrava, L93, F|198/270
+|move|p2a: Toxapex|Rototiller||[still]
+|-fail|p2a: Toxapex
+|debug|move failed because it did nothing
+|
+|upkeep
+|turn|18
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":true,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Dodrio|Dodrio, L87, F|155/206
+|move|p2a: Toxapex|Explosion|p1a: Dodrio
+|-damage|p1a: Dodrio|0 fnt
+|faint|p2a: Toxapex
+|faint|p1a: Dodrio
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Mist Ball","id":"mistball","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Powder","id":"powder","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":true,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Vibrava|Vibrava, L93, F|198/270
+|switch|p2a: Kakuna|Kakuna, L81, F|221/221
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Signal Beam","id":"signalbeam","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Dragon Rush","id":"dragonrush","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"256/256","active":true,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Comfey|Comfey, L84, M|233/233
+|switch|p2a: Lurantis|Lurantis, L93, M|256/256
+|
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Signal Beam","id":"signalbeam","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Dragon Rush","id":"dragonrush","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256","active":true,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Comfey|Menacing Moonraze Maelstrom|p2a: Lurantis
+|-damage|p2a: Lurantis|152/256
+|move|p2a: Lurantis|Signal Beam|p1a: Comfey
+|-resisted|p1a: Comfey
+|-damage|p1a: Comfey|206/233
+|
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Signal Beam","id":"signalbeam","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Dragon Rush","id":"dragonrush","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256","active":true,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Vibrava|Vibrava, L93, F|198/270
+|move|p2a: Lurantis|Payback|p1a: Vibrava
+|debug|Payback NOT boosted
+|-damage|p1a: Vibrava|126/270
+|-ability|p1a: Vibrava|Stamina|boost
+|-boost|p1a: Vibrava|def|1
+|
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Signal Beam","id":"signalbeam","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Dragon Rush","id":"dragonrush","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256 slp","active":true,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Vibrava|Lovely Kiss|p2a: Lurantis
+|-status|p2a: Lurantis|slp|[from] move: Lovely Kiss
+|cant|p2a: Lurantis|slp
+|
+|upkeep
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Sludge Bomb","id":"sludgebomb","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256 slp","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Comfey|Comfey, L84, M|206/233
+|switch|p2a: Aggron|Aggron-Mega, L65, M|163/185
+|
+|upkeep
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock"}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256 slp","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Vibrava|Vibrava, L93, F|126/270
+|move|p2a: Aggron|Freeze Shock||[still]
+|-prepare|p2a: Aggron|Freeze Shock
+|
+|upkeep
+|turn|25
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256 slp","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Vibrava|Lovely Kiss|p2a: Aggron|[miss]
+|-miss|p1a: Vibrava|p2a: Aggron
+|move|p2a: Aggron|Freeze Shock|p1a: Vibrava|[from]lockedmove
+|-supereffective|p1a: Vibrava
+|-damage|p1a: Vibrava|0 fnt
+|faint|p1a: Vibrava
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Sludge Bomb","id":"sludgebomb","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"163/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256 slp","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"}]}}
+
+|
+|t:|1603471093
+|switch|p1a: Comfey|Comfey, L84, M|206/233
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Sludge Bomb","id":"sludgebomb","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"18/185","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256 slp","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"}]}}
+
+|
+|t:|1603471093
+|move|p2a: Aggron|Aqua Jet|p1a: Comfey
+|-damage|p1a: Comfey|191/233
+|move|p1a: Comfey|Heat Wave|p2a: Aggron
+|-supereffective|p2a: Aggron
+|debug|Filter neutralize
+|-damage|p2a: Aggron|18/185
+|
+|upkeep
+|turn|27
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"0 fnt","active":true,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256 slp","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"}]},"noCancel":true}
+
+|
+|t:|1603471093
+|move|p1a: Comfey|Grass Knot|p2a: Aggron
+|debug|120 bp
+|-resisted|p2a: Aggron
+|-damage|p2a: Aggron|0 fnt
+|faint|p2a: Aggron
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Aqua Ring","id":"aquaring","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Rock Wrecker","id":"rockwrecker","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Hold Hands","id":"holdhands","pp":64,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Heal Order","id":"healorder","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"11/260","active":true,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"0 fnt","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256 slp","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"}]}}
+
+|
+|t:|1603471093
+|switch|p2a: Cubchoo|Cubchoo, L91, F|11/260
+|turn|28
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"0 fnt","active":true,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"0 fnt","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256 slp","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"}]},"noCancel":true}
+
+|
+|t:|1603471093
+|move|p1a: Comfey|Grass Knot|p2a: Cubchoo
+|debug|20 bp
+|-damage|p2a: Cubchoo|0 fnt
+|faint|p2a: Cubchoo
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Mist Ball","id":"mistball","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Powder","id":"powder","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"221/221","active":true,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"0 fnt","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256 slp","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"0 fnt","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"}]}}
+
+|
+|t:|1603471093
+|switch|p2a: Kakuna|Kakuna, L81, F|221/221
+|turn|29
+
+|request|{"active":[{"moves":[{"move":"Mist Ball","id":"mistball","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Powder","id":"powder","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"210/221","active":true,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"0 fnt","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256 slp","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"0 fnt","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Comfey|Grass Knot|p2a: Kakuna
+|debug|40 bp
+|-resisted|p2a: Kakuna
+|-damage|p2a: Kakuna|210/221
+|move|p2a: Kakuna|Scratch|p1a: Comfey
+|-crit|p1a: Comfey
+|-damage|p1a: Comfey|181/233
+|
+|upkeep
+|turn|30
+
+|request|{"active":[{"moves":[{"move":"Mist Ball","id":"mistball","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Powder","id":"powder","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"198/221","active":true,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"0 fnt","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256 slp","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"0 fnt","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Comfey|Grass Knot|p2a: Kakuna
+|debug|40 bp
+|-resisted|p2a: Kakuna
+|-damage|p2a: Kakuna|198/221
+|move|p2a: Kakuna|Mist Ball|p1a: Comfey
+|-damage|p1a: Comfey|169/233
+|
+|upkeep
+|turn|31
+
+|request|{"active":[{"moves":[{"move":"Mist Ball","id":"mistball","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Powder","id":"powder","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"198/221","active":true,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"0 fnt","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"152/256 slp","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"0 fnt","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Comfey|Heat Wave|p2a: Kakuna|[miss]
+|-miss|p1a: Comfey|p2a: Kakuna
+|move|p2a: Kakuna|Mist Ball|p1a: Comfey
+|-damage|p1a: Comfey|156/233
+|
+|upkeep
+|turn|32
+
+|request|{"active":[{"moves":[{"move":"Signal Beam","id":"signalbeam","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Dragon Rush","id":"dragonrush","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"38/256 slp","active":true,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"0 fnt","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"198/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"0 fnt","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"}]}}
+
+|
+|t:|1603471093
+|switch|p2a: Lurantis|Lurantis, L93, M|152/256 slp
+|move|p1a: Comfey|Heat Wave|p2a: Lurantis
+|-supereffective|p2a: Lurantis
+|-damage|p2a: Lurantis|38/256 slp
+|
+|upkeep
+|turn|33
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"0 fnt","active":true,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"0 fnt","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"198/221","active":false,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"0 fnt","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"}]},"noCancel":true}
+
+|
+|t:|1603471093
+|move|p1a: Comfey|Heat Wave|p2a: Lurantis
+|-supereffective|p2a: Lurantis
+|-damage|p2a: Lurantis|0 fnt
+|faint|p2a: Lurantis
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Mist Ball","id":"mistball","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Powder","id":"powder","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"198/221","active":true,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"0 fnt","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"0 fnt","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"0 fnt","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"}]}}
+
+|
+|t:|1603471093
+|switch|p2a: Kakuna|Kakuna, L81, F|198/221
+|turn|34
+
+|request|{"active":[{"moves":[{"move":"Mist Ball","id":"mistball","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Powder","id":"powder","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"198/221","active":true,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"0 fnt","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"0 fnt","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"0 fnt","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Comfey|Heat Wave|p2a: Kakuna|[miss]
+|-miss|p1a: Comfey|p2a: Kakuna
+|move|p2a: Kakuna|Mist Ball|p1a: Comfey
+|-damage|p1a: Comfey|143/233
+|-unboost|p1a: Comfey|spa|1
+|
+|upkeep
+|turn|35
+
+|request|{"active":[{"moves":[{"move":"Mist Ball","id":"mistball","pp":4,"maxpp":8,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Scratch","id":"scratch","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Powder","id":"powder","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kakuna","details":"Kakuna, L81, F","condition":"52/221","active":true,"stats":{"atk":69,"def":110,"spa":61,"spd":99,"spe":103},"moves":["mistball","shadowpunch","scratch","powder"],"baseAbility":"dancer","item":"shucaberry","pokeball":"pokeball","ability":"dancer"},{"ident":"p2: Aggron","details":"Aggron-Mega, L65, M","condition":"0 fnt","active":false,"stats":{"atk":231,"def":310,"spa":122,"spd":124,"spe":87},"moves":["freezeshock","bulldoze","sludgebomb","aquajet"],"baseAbility":"filter","item":"aggronite","pokeball":"pokeball","ability":"filter"},{"ident":"p2: Lurantis","details":"Lurantis, L93, M","condition":"0 fnt","active":false,"stats":{"atk":220,"def":204,"spa":236,"spd":211,"spe":99},"moves":["signalbeam","dragonrush","payback","poisongas"],"baseAbility":"sandforce","item":"ironball","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Xurkitree","details":"Xurkitree, L63","condition":"0 fnt","active":false,"stats":{"atk":140,"def":145,"spa":269,"spd":120,"spe":142},"moves":["extrasensory","poweruppunch","fissure","tickle"],"baseAbility":"refrigerate","item":"earthplate","pokeball":"pokeball","ability":"refrigerate"},{"ident":"p2: Toxapex","details":"Toxapex, L74, M","condition":"0 fnt","active":false,"stats":{"atk":121,"def":275,"spa":127,"spd":246,"spe":86},"moves":["defensecurl","explosion","rototiller","ingrain"],"baseAbility":"hugepower","item":"poisonbarb","pokeball":"pokeball","ability":"hugepower"},{"ident":"p2: Cubchoo","details":"Cubchoo, L91, F","condition":"0 fnt","active":false,"stats":{"atk":158,"def":95,"spa":136,"spd":128,"spe":103},"moves":["aquaring","rockwrecker","holdhands","healorder"],"baseAbility":"unaware","item":"firiumz","pokeball":"pokeball","ability":"unaware"}]}}
+
+|
+|t:|1603471093
+|move|p1a: Comfey|Heat Wave|p2a: Kakuna
+|-supereffective|p2a: Kakuna
+|-damage|p2a: Kakuna|52/221
+|move|p2a: Kakuna|Mist Ball|p1a: Comfey
+|-crit|p1a: Comfey
+|-damage|p1a: Comfey|126/233
+|-unboost|p1a: Comfey|spa|1
+|
+|upkeep
+|turn|36
+
+|
+|t:|1603471093
+|move|p1a: Comfey|Heat Wave|p2a: Kakuna
+|-supereffective|p2a: Kakuna
+|-damage|p2a: Kakuna|0 fnt
+|faint|p2a: Kakuna
+|
+|win|Bot 1

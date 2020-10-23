@@ -1,0 +1,384 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"173/173","active":true,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"183/183","active":true,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"187/187","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"161/161","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"197/197","active":false,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"144/144","active":false,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"}]}}
+
+|t:|1603471243
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|6
+|tier|[Gen 6] Doubles Custom Game
+|clearpoke
+|poke|p1|Gurdurr, L55, M|item
+|poke|p1|Hippopotas, L74, F|item
+|poke|p1|Pyroar, L85, F|item
+|poke|p1|Lucario, L65, M|item
+|poke|p1|Furfrou, L53, M|item
+|poke|p1|Charizard, L92, F|item
+|poke|p2|Qwilfish, L57, M|item
+|poke|p2|Ferroseed, L79, F|item
+|poke|p2|Aerodactyl-Mega, L52, F|item
+|poke|p2|Delcatty, L58, M|item
+|poke|p2|Lickitung, L58, F|item
+|poke|p2|Weezing, L51, M|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Cotton Guard","id":"cottonguard","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Quash","id":"quash","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Extreme Speed","id":"extremespeed","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Aromatic Mist","id":"aromaticmist","pp":32,"maxpp":32,"target":"adjacentAlly","disabled":false}]},{"moves":[{"move":"Crafty Shield","id":"craftyshield","pp":16,"maxpp":16,"target":"allySide","disabled":false},{"move":"Celebrate","id":"celebrate","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Fake Out","id":"fakeout","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Feint","id":"feint","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"173/173","active":true,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"183/183","active":true,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"187/187","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"161/161","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"197/197","active":false,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"144/144","active":false,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471243
+|start
+|switch|p1a: Gurdurr|Gurdurr, L55, M|182/182
+|switch|p1b: Hippopotas|Hippopotas, L74, F|236/236
+|switch|p2a: Qwilfish|Qwilfish, L57, M|173/173
+|switch|p2b: Ferroseed|Ferroseed, L79, F|183/183
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Cotton Guard","id":"cottonguard","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Quash","id":"quash","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Extreme Speed","id":"extremespeed","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Aromatic Mist","id":"aromaticmist","pp":31,"maxpp":32,"target":"adjacentAlly","disabled":false}]},{"moves":[{"move":"Crafty Shield","id":"craftyshield","pp":16,"maxpp":16,"target":"allySide","disabled":false},{"move":"Celebrate","id":"celebrate","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Fake Out","id":"fakeout","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Feint","id":"feint","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"151/173","active":true,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"183/183","active":true,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"187/187","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"161/161","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"197/197","active":false,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"144/144","active":false,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471243
+|move|p2b: Ferroseed|Feint|p1b: Hippopotas
+|-damage|p1b: Hippopotas|214/236
+|move|p2a: Qwilfish|Aromatic Mist|p2b: Ferroseed
+|-boost|p2b: Ferroseed|spd|1
+|move|p1b: Hippopotas|Flower Shield|p1b: Hippopotas
+|-boost|p2b: Ferroseed|def|1
+|move|p1a: Gurdurr|Iron Tail|p2a: Qwilfish
+|-resisted|p2a: Qwilfish
+|-damage|p2a: Qwilfish|151/173
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Cotton Guard","id":"cottonguard","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Quash","id":"quash","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Extreme Speed","id":"extremespeed","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Aromatic Mist","id":"aromaticmist","pp":30,"maxpp":32,"target":"adjacentAlly","disabled":false}]},{"moves":[{"move":"Crafty Shield","id":"craftyshield","pp":16,"maxpp":16,"target":"allySide","disabled":false},{"move":"Celebrate","id":"celebrate","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Fake Out","id":"fakeout","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Feint","id":"feint","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"43/173","active":true,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"183/183","active":true,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"187/187","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"161/161","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"197/197","active":false,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"144/144","active":false,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471243
+|move|p2a: Qwilfish|Aromatic Mist|p2b: Ferroseed
+|-boost|p2b: Ferroseed|spd|1
+|move|p1b: Hippopotas|Brave Bird|p2a: Qwilfish
+|-damage|p2a: Qwilfish|65/173
+|-damage|p1b: Hippopotas|186/236|[from] Recoil
+|move|p1a: Gurdurr|Iron Tail|p2a: Qwilfish
+|-resisted|p2a: Qwilfish
+|-damage|p2a: Qwilfish|43/173
+|move|p2b: Ferroseed|Celebrate|p2b: Ferroseed
+|-activate|p2b: Ferroseed|move: Celebrate
+|
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Cotton Guard","id":"cottonguard","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Quash","id":"quash","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Extreme Speed","id":"extremespeed","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Aromatic Mist","id":"aromaticmist","pp":30,"maxpp":32,"target":"adjacentAlly","disabled":false}]},{"moves":[{"move":"Crafty Shield","id":"craftyshield","pp":16,"maxpp":16,"target":"allySide","disabled":false},{"move":"Celebrate","id":"celebrate","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Fake Out","id":"fakeout","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Feint","id":"feint","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"43/173","active":true,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"160/183","active":true,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"187/187","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"161/161","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"197/197","active":false,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"144/144","active":false,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471243
+|switch|p1b: Pyroar|Pyroar, L85, F|300/300
+|move|p2b: Ferroseed|Fake Out||[still]
+|-fail|p2b: Ferroseed
+|-hint|Fake Out only works on your first turn out.
+|move|p2a: Qwilfish|Quash|p1a: Gurdurr
+|-activate|p1a: Gurdurr|move: Quash
+|move|p1a: Gurdurr|Iron Tail|p2b: Ferroseed
+|debug|Negating (sp)def boost/penalty.
+|-resisted|p2b: Ferroseed
+|-crit|p2b: Ferroseed
+|-damage|p2b: Ferroseed|160/183
+|
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Cotton Guard","id":"cottonguard","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Quash","id":"quash","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Extreme Speed","id":"extremespeed","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Aromatic Mist","id":"aromaticmist","pp":30,"maxpp":32,"target":"adjacentAlly","disabled":false}]},{"moves":[{"move":"Crafty Shield","id":"craftyshield","pp":15,"maxpp":16,"target":"allySide","disabled":false},{"move":"Celebrate","id":"celebrate","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Fake Out","id":"fakeout","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Feint","id":"feint","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"43/173","active":true,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"160/183","active":true,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"187/187","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"161/161","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"197/197","active":false,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"144/144","active":false,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|switch|p1b: Lucario|Lucario, L65, M|200/200
+|switch|p1a: Hippopotas|Hippopotas, L74, F|186/236
+|move|p2b: Ferroseed|Crafty Shield|p2b: Ferroseed
+|-singleturn|p2b: Ferroseed|Crafty Shield
+|move|p2a: Qwilfish|Quash||[still]
+|-fail|p2a: Qwilfish
+|debug|move failed because it did nothing
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Cotton Guard","id":"cottonguard","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Quash","id":"quash","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Extreme Speed","id":"extremespeed","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Aromatic Mist","id":"aromaticmist","pp":30,"maxpp":32,"target":"adjacentAlly","disabled":false}]},{"moves":[{"move":"Synchronoise","id":"synchronoise","pp":16,"maxpp":16,"target":"allAdjacent","disabled":false},{"move":"Mimic","id":"mimic","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fusion Flare","id":"fusionflare","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Heat Crash","id":"heatcrash","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"43/173","active":true,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"136/187","active":true,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"160/183","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"161/161","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"197/197","active":false,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"144/144","active":false,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|switch|p2b: Aerodactyl|Aerodactyl-Mega, L52, F|187/187
+|move|p2a: Qwilfish|Extreme Speed|p1a: Hippopotas
+|-damage|p1a: Hippopotas|145/236
+|move|p1b: Lucario|Mud Bomb|p2b: Aerodactyl
+|-immune|p2b: Aerodactyl
+|move|p1a: Hippopotas|Brave Bird|p2b: Aerodactyl
+|-resisted|p2b: Aerodactyl
+|-damage|p2b: Aerodactyl|136/187
+|-damage|p1a: Hippopotas|128/236|[from] Recoil
+|
+|upkeep
+|turn|6
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":true,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"56/183","active":true,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"136/187","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"161/161","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"197/197","active":false,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"144/144","active":false,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471244
+|switch|p2b: Ferroseed|Ferroseed, L79, F|160/183
+|move|p1b: Lucario|Mystical Fire|p2b: Ferroseed
+|-supereffective|p2b: Ferroseed
+|-damage|p2b: Ferroseed|56/183
+|-unboost|p2b: Ferroseed|spa|1
+|move|p2a: Qwilfish|Aromatic Mist|p2b: Ferroseed
+|-boost|p2b: Ferroseed|spd|1
+|move|p1a: Hippopotas|Brave Bird|p2a: Qwilfish
+|-damage|p2a: Qwilfish|0 fnt
+|-damage|p1a: Hippopotas|114/236|[from] Recoil
+|faint|p2a: Qwilfish
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Meteor Mash","id":"meteormash","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Lovely Kiss","id":"lovelykiss","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Roost","id":"roost","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"King's Shield","id":"kingsshield","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Crafty Shield","id":"craftyshield","pp":15,"maxpp":16,"target":"allySide","disabled":false},{"move":"Celebrate","id":"celebrate","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Fake Out","id":"fakeout","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Feint","id":"feint","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"161/161","active":true,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"56/183","active":true,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"136/187","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"197/197","active":false,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"144/144","active":false,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|switch|p2a: Delcatty|Delcatty, L58, M|161/161
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Meteor Mash","id":"meteormash","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Lovely Kiss","id":"lovelykiss","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Roost","id":"roost","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"King's Shield","id":"kingsshield","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Dizzy Punch","id":"dizzypunch","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Howl","id":"howl","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Thunder Punch","id":"thunderpunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"161/161","active":true,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"197/197","active":true,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"136/187","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"56/183","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"144/144","active":false,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|switch|p1b: Charizard|Charizard, L53, F|162/162
+|switch|p2b: Lickitung|Lickitung, L58, F|197/197
+|move|p2a: Delcatty|King's Shield|p2a: Delcatty
+|-singleturn|p2a: Delcatty|Protect
+|move|p1a: Hippopotas|Camouflage|p1a: Hippopotas
+|-start|p1a: Hippopotas|typechange|Normal
+|
+|upkeep
+|turn|8
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"0 fnt","active":true,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"197/197","active":true,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"136/187","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"56/183","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"144/144","active":false,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471244
+|move|p2a: Delcatty|King's Shield||[still]
+|debug|Success chance: 33%
+|-fail|p2a: Delcatty
+|move|p1b: Charizard|Fire Spin|p2a: Delcatty
+|-damage|p2a: Delcatty|145/161
+|-activate|p2a: Delcatty|move: Fire Spin|[of] p1b: Charizard
+|move|p1a: Hippopotas|Sky Uppercut|p2a: Delcatty
+|-supereffective|p2a: Delcatty
+|-damage|p2a: Delcatty|0 fnt
+|faint|p2a: Delcatty
+|move|p2b: Lickitung|Howl|p2b: Lickitung
+|-boost|p2b: Lickitung|atk|1
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Scratch","id":"scratch","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Bestow","id":"bestow","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Slash","id":"slash","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":8,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Dizzy Punch","id":"dizzypunch","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Howl","id":"howl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Thunder Punch","id":"thunderpunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"144/144","active":true,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"197/197","active":true,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"136/187","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"56/183","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"0 fnt","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|switch|p2a: Weezing|Weezing, L51, M|144/144
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Scratch","id":"scratch","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Bestow","id":"bestow","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Slash","id":"slash","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":8,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Dizzy Punch","id":"dizzypunch","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Howl","id":"howl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Thunder Punch","id":"thunderpunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":55,"maxpp":56,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"144/144","active":true,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"175/197","active":true,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"136/187","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"56/183","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"0 fnt","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|switch|p1a: Charizard|Charizard, L92, F|322/322
+|move|p1b: Charizard|Silver Wind|p2b: Lickitung
+|-crit|p2b: Lickitung
+|-damage|p2b: Lickitung|175/197
+|-boost|p1b: Charizard|atk|1
+|-boost|p1b: Charizard|def|1
+|-boost|p1b: Charizard|spa|1
+|-boost|p1b: Charizard|spd|1
+|-boost|p1b: Charizard|spe|1
+|move|p2a: Weezing|Scratch|p1b: Charizard
+|-damage|p1b: Charizard|141/162
+|debug|illusion cleared
+|replace|p1b: Furfrou|Furfrou, L53, M
+|-end|p1b: Furfrou|Illusion
+|move|p2b: Lickitung|Poison Powder|p1b: Furfrou
+|-status|p1b: Furfrou|psn
+|
+|-damage|p1b: Furfrou|121/162 psn|[from] psn
+|upkeep
+|turn|10
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"127/144","active":true,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"0 fnt","active":true,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"136/187","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"175/197","active":false,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"0 fnt","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471244
+|switch|p2b: Ferroseed|Ferroseed, L79, F|56/183
+|detailschange|p1a: Charizard|Charizard-Mega-Y, L92, F
+|-mega|p1a: Charizard|Charizard|Charizardite Y
+|-weather|SunnyDay|[from] ability: Drought|[of] p1a: Charizard
+|move|p1a: Charizard|Thief|p2b: Ferroseed
+|-damage|p2b: Ferroseed|0 fnt
+|faint|p2b: Ferroseed
+|move|p1b: Furfrou|Silver Wind|p2a: Weezing
+|-resisted|p2a: Weezing
+|-damage|p2a: Weezing|127/144
+|move|p2a: Weezing|Scratch|p1a: Charizard
+|-damage|p1a: Charizard|308/322
+|
+|-weather|SunnyDay|[upkeep]
+|-damage|p1b: Furfrou|101/162 psn|[from] psn
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Scratch","id":"scratch","pp":54,"maxpp":56,"target":"normal","disabled":false},{"move":"Bestow","id":"bestow","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Slash","id":"slash","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":8,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Synchronoise","id":"synchronoise","pp":16,"maxpp":16,"target":"allAdjacent","disabled":false},{"move":"Mimic","id":"mimic","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fusion Flare","id":"fusionflare","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Heat Crash","id":"heatcrash","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"127/144","active":true,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"136/187","active":true,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"0 fnt","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"175/197","active":false,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"0 fnt","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|switch|p2b: Aerodactyl|Aerodactyl-Mega, L52, F|136/187
+|turn|11
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"100/197","active":true,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"0 fnt","active":true,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"0 fnt","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"127/144","active":false,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"0 fnt","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471244
+|switch|p2a: Lickitung|Lickitung, L58, F|175/197
+|move|p1a: Charizard|Magma Storm|p2b: Aerodactyl
+|debug|Sunny Day fire boost
+|-resisted|p2b: Aerodactyl
+|-damage|p2b: Aerodactyl|0 fnt
+|faint|p2b: Aerodactyl
+|move|p1b: Furfrou|Fire Spin|p2a: Lickitung
+|debug|Sunny Day fire boost
+|-damage|p2a: Lickitung|148/197
+|-activate|p2a: Lickitung|move: Fire Spin|[of] p1b: Furfrou
+|
+|-weather|SunnyDay|[upkeep]
+|-damage|p2a: Lickitung|124/197|[from] ability: Dry Skin|[of] p2a: Lickitung
+|-damage|p1b: Furfrou|81/162 psn|[from] psn
+|-damage|p2a: Lickitung|100/197|[from] move: Fire Spin|[partiallytrapped]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Dizzy Punch","id":"dizzypunch","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Howl","id":"howl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Thunder Punch","id":"thunderpunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":55,"maxpp":56,"target":"normal","disabled":false}]},{"moves":[{"move":"Scratch","id":"scratch","pp":54,"maxpp":56,"target":"normal","disabled":false},{"move":"Bestow","id":"bestow","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Slash","id":"slash","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"100/197","active":true,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"127/144","active":true,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"0 fnt","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"0 fnt","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"0 fnt","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|switch|p2b: Weezing|Weezing, L51, M|127/144
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Dizzy Punch","id":"dizzypunch","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Howl","id":"howl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Thunder Punch","id":"thunderpunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":55,"maxpp":56,"target":"normal","disabled":false}]},{"moves":[{"move":"Scratch","id":"scratch","pp":53,"maxpp":56,"target":"normal","disabled":false},{"move":"Bestow","id":"bestow","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Slash","id":"slash","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"52/197","active":true,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"127/144","active":true,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"0 fnt","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"0 fnt","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"0 fnt","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|move|p1a: Charizard|Dual Chop|p2a: Lickitung|[miss]
+|-miss|p1a: Charizard|p2a: Lickitung
+|move|p1b: Furfrou|Harden|p1b: Furfrou
+|-boost|p1b: Furfrou|def|1
+|move|p2b: Weezing|Scratch|p1b: Furfrou
+|-damage|p1b: Furfrou|66/162 psn
+|move|p2a: Lickitung|Dizzy Punch|p1a: Charizard
+|-damage|p1a: Charizard|274/322
+|
+|-weather|SunnyDay|[upkeep]
+|-damage|p2a: Lickitung|76/197|[from] ability: Dry Skin|[of] p2a: Lickitung
+|-damage|p1b: Furfrou|46/162 psn|[from] psn
+|-damage|p2a: Lickitung|52/197|[from] move: Fire Spin|[partiallytrapped]
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Dizzy Punch","id":"dizzypunch","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Howl","id":"howl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Thunder Punch","id":"thunderpunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":54,"maxpp":56,"target":"normal","disabled":false}]},{"moves":[{"move":"Scratch","id":"scratch","pp":53,"maxpp":56,"target":"normal","disabled":false},{"move":"Bestow","id":"bestow","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Slash","id":"slash","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"4/197","active":true,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"111/144","active":true,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"0 fnt","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"0 fnt","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"0 fnt","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|switch|p1a: Gurdurr|Gurdurr, L55, M|182/182
+|move|p1b: Furfrou|Silver Wind|p2b: Weezing
+|-resisted|p2b: Weezing
+|-damage|p2b: Weezing|111/144
+|move|p2b: Weezing|Slash|p1a: Gurdurr
+|-damage|p1a: Gurdurr|150/182
+|-activate|p1a: Gurdurr|ability: Mummy|Leaf Guard|[of] p2b: Weezing
+|move|p2a: Lickitung|Poison Powder|p1a: Gurdurr
+|-status|p1a: Gurdurr|psn
+|
+|-weather|SunnyDay|[upkeep]
+|-damage|p2a: Lickitung|28/197|[from] ability: Dry Skin|[of] p2a: Lickitung
+|-damage|p1b: Furfrou|26/162 psn|[from] psn
+|-damage|p1a: Gurdurr|128/182 psn|[from] psn
+|-damage|p2a: Lickitung|4/197|[from] move: Fire Spin|[partiallytrapped]
+|upkeep
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"Dizzy Punch","id":"dizzypunch","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Howl","id":"howl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Thunder Punch","id":"thunderpunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":54,"maxpp":56,"target":"normal","disabled":false}]},{"moves":[{"move":"Scratch","id":"scratch","pp":53,"maxpp":56,"target":"normal","disabled":false},{"move":"Bestow","id":"bestow","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Slash","id":"slash","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"0 fnt","active":true,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"111/144","active":true,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"0 fnt","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"0 fnt","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"0 fnt","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|move|p1b: Furfrou|Sunny Day||[still]
+|-fail|p1b: Furfrou
+|debug|move failed because it did nothing
+|move|p2b: Weezing|Bestow||[still]
+|-fail|p2b: Weezing
+|debug|move failed because it did nothing
+|move|p1a: Gurdurr|Grass Whistle|p2a: Lickitung
+|-status|p2a: Lickitung|slp|[from] move: Grass Whistle
+|cant|p2a: Lickitung|slp
+|
+|-weather|none
+|-damage|p1b: Furfrou|6/162 psn|[from] psn
+|-damage|p1a: Gurdurr|106/182 psn|[from] psn
+|-damage|p2a: Lickitung|0 fnt|[from] move: Fire Spin|[partiallytrapped]
+|faint|p2a: Lickitung
+|upkeep
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Dizzy Punch","id":"dizzypunch","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Howl","id":"howl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Thunder Punch","id":"thunderpunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":54,"maxpp":56,"target":"normal","disabled":false}]},{"moves":[{"move":"Scratch","id":"scratch","pp":53,"maxpp":56,"target":"normal","disabled":false},{"move":"Bestow","id":"bestow","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Slash","id":"slash","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"0 fnt","active":true,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"111/144","active":true,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"0 fnt","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"0 fnt","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"0 fnt","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|switch|p1b: Hippopotas|Hippopotas, L74, F|114/236
+|switch|p1a: Lucario|Lucario, L65, M|200/200
+|move|p2b: Weezing|Bestow||[still]
+|-fail|p2b: Weezing
+|debug|move failed because it did nothing
+|
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Dizzy Punch","id":"dizzypunch","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Howl","id":"howl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Thunder Punch","id":"thunderpunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":54,"maxpp":56,"target":"normal","disabled":false}]},{"moves":[{"move":"Scratch","id":"scratch","pp":53,"maxpp":56,"target":"normal","disabled":false},{"move":"Bestow","id":"bestow","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Slash","id":"slash","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":7,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"0 fnt","active":true,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"17/144","active":true,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"0 fnt","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"0 fnt","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"0 fnt","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|switch|p1b: Gurdurr|Gurdurr, L55, M|106/182 psn
+|move|p1a: Lucario|Mud Bomb|p2b: Weezing
+|-supereffective|p2b: Weezing
+|-damage|p2b: Weezing|17/144
+|move|p2b: Weezing|Doom Desire|p1b: Gurdurr
+|-start|p2b: Weezing|Doom Desire
+|
+|-damage|p1b: Gurdurr|84/182 psn|[from] psn
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Dizzy Punch","id":"dizzypunch","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Howl","id":"howl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Thunder Punch","id":"thunderpunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":54,"maxpp":56,"target":"normal","disabled":false}]},{"moves":[{"move":"Scratch","id":"scratch","pp":53,"maxpp":56,"target":"normal","disabled":false},{"move":"Bestow","id":"bestow","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Slash","id":"slash","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Doom Desire","id":"doomdesire","pp":7,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lickitung","details":"Lickitung, L58, F","condition":"0 fnt","active":true,"stats":{"atk":113,"def":108,"spa":113,"spd":145,"spe":53},"moves":["dizzypunch","howl","thunderpunch","poisonpowder"],"baseAbility":"dryskin","item":"muscleband","pokeball":"pokeball"},{"ident":"p2: Weezing","details":"Weezing, L51, M","condition":"17/144","active":true,"stats":{"atk":138,"def":144,"spa":131,"spd":99,"spe":102},"moves":["scratch","bestow","slash","doomdesire"],"baseAbility":"leafguard","item":"gengarite","pokeball":"pokeball"},{"ident":"p2: Ferroseed","details":"Ferroseed, L79, F","condition":"0 fnt","active":false,"stats":{"atk":144,"def":195,"spa":84,"spd":193,"spe":57},"moves":["craftyshield","celebrate","fakeout","feint"],"baseAbility":"blaze","item":"pechaberry","pokeball":"pokeball"},{"ident":"p2: Qwilfish","details":"Qwilfish, L57, M","condition":"0 fnt","active":false,"stats":{"atk":142,"def":134,"spa":90,"spd":112,"spe":147},"moves":["cottonguard","quash","extremespeed","aromaticmist"],"baseAbility":"sandrush","item":"abomasite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L52, F","condition":"0 fnt","active":false,"stats":{"atk":161,"def":103,"spa":111,"spd":132,"spe":211},"moves":["synchronoise","mimic","fusionflare","heatcrash"],"baseAbility":"arenatrap","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p2: Delcatty","details":"Delcatty, L58, M","condition":"0 fnt","active":false,"stats":{"atk":123,"def":96,"spa":111,"spd":80,"spe":127},"moves":["meteormash","lovelykiss","roost","kingsshield"],"baseAbility":"chlorophyll","item":"swampertite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471244
+|switch|p1a: Charizard|Charizard-Mega-Y, L92, F|274/322
+|-weather|SunnyDay|[from] ability: Drought|[of] p1a: Charizard
+|move|p2b: Weezing|Slash|p1b: Gurdurr
+|-damage|p1b: Gurdurr|48/182 psn
+|move|p1b: Gurdurr|Iron Tail|p2b: Weezing|[miss]
+|-miss|p1b: Gurdurr|p2b: Weezing
+|
+|-weather|SunnyDay|[upkeep]
+|-damage|p1b: Gurdurr|26/182 psn|[from] psn
+|upkeep
+|turn|18
+
+|
+|t:|1603471244
+|move|p1a: Charizard|Thief|p2b: Weezing
+|-damage|p2b: Weezing|0 fnt
+|-activate|p2b: Weezing|ability: Mummy|Drought|[of] p1a: Charizard
+|faint|p2b: Weezing
+|
+|win|Bot 1

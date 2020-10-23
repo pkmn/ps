@@ -1,0 +1,741 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":true,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"380/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"315/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"199/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"101/101","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"273/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"}]}}
+
+|t:|1603471213
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|8
+|tier|[Gen 8] Doubles Custom Game
+|clearpoke
+|poke|p1|Seaking, L57, F|
+|poke|p1|Duosion, L54, M|
+|poke|p1|Wailord, L66, F|
+|poke|p1|Roselia, L67, F|
+|poke|p1|Amoonguss, L73, M|
+|poke|p1|Hitmonchan, L73, M|
+|poke|p2|Swinub, L89, F|
+|poke|p2|Kyurem-White, L94|
+|poke|p2|Mantine, L92, M|
+|poke|p2|Roggenrola, L76, F|
+|poke|p2|Magikarp, L56, F|
+|poke|p2|Dubwool, L99, M|
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Vital Throw","id":"vitalthrow","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Quick Guard","id":"quickguard","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Self-Destruct","id":"selfdestruct","pp":8,"maxpp":8,"target":"allAdjacent","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxknuckle","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxstrike","target":"adjacentFoe"}]}},{"moves":[{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":64,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":32,"maxpp":32,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxrockfall","target":"adjacentFoe"},{"move":"maxovergrowth","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxknuckle","target":"adjacentFoe"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":true,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"380/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"315/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"199/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"101/101","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"273/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"}]}}
+
+|
+|t:|1603471213
+|start
+|switch|p1a: Seaking|Seaking, L57, F|186/186
+|switch|p1b: Duosion|Duosion, L54, M|166/166
+|switch|p2a: Swinub|Swinub, L89, F|231/231
+|switch|p2b: Kyurem|Kyurem-White, L94|380/380
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":32,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":64,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":32,"maxpp":32,"target":"normal","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxrockfall","target":"adjacentFoe"},{"move":"maxovergrowth","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxknuckle","target":"adjacentFoe"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"315/315","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"749/760","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"199/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"101/101","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"273/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"}]}}
+
+|
+|t:|1603471213
+|switch|p2a: Mantine|Mantine, L92, M|315/315
+|-start|p2b: Kyurem|Dynamax
+|-heal|p2b: Kyurem|760/760|[silent]
+|-start|p1a: Seaking|Dynamax
+|-heal|p1a: Seaking|372/372|[silent]
+|move|p1a: Seaking|Max Guard|p1a: Seaking
+|-singleturn|p1a: Seaking|Max Guard
+|move|p2b: Kyurem|Max Overgrowth|p1a: Seaking
+|-activate|p1a: Seaking|move: Max Guard
+|move|p1b: Duosion|Snipe Shot|p2b: Kyurem
+|-resisted|p2b: Kyurem
+|-damage|p2b: Kyurem|749/760
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":31,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":63,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":32,"maxpp":32,"target":"normal","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxrockfall","target":"adjacentFoe"},{"move":"maxovergrowth","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxknuckle","target":"adjacentFoe"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"315/315","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"749/760","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"199/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"101/101","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"273/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"}]}}
+
+|
+|t:|1603471213
+|switch|p1b: Hitmonchan|Hitmonchan, L66, M|309/309
+|move|p1a: Seaking|Max Guard||[still]
+|debug|Success chance: 33%
+|-fail|p1a: Seaking
+|move|p2b: Kyurem|Max Strike|p1a: Seaking
+|-damage|p1a: Seaking|219/372
+|-unboost|p1a: Seaking|spe|1
+|-unboost|p1b: Hitmonchan|spe|1
+|move|p2a: Mantine|Reflect|p2a: Mantine
+|-sidestart|p2: Bot 2|Reflect
+|
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Bulk Up","id":"bulkup","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Tailwind","id":"tailwind","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Dragon Hammer","id":"dragonhammer","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":62,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"175/199","active":true,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"359/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"315/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"101/101","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"273/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"}]}}
+
+|
+|t:|1603471213
+|switch|p2a: Roggenrola|Roggenrola, L76, F|199/199
+|move|p2b: Kyurem|Max Strike|p1a: Seaking
+|-damage|p1a: Seaking|72/372
+|-unboost|p1a: Seaking|spe|1
+|-unboost|p1b: Hitmonchan|spe|1
+|move|p1b: Hitmonchan|Thunder Fang|p2a: Roggenrola
+|debug|Reflect weaken
+|-damage|p2a: Roggenrola|175/199
+|move|p1a: Seaking|Max Phantasm|p2b: Kyurem
+|debug|Reflect weaken
+|-damage|p2b: Kyurem|718/760
+|-unboost|p2a: Roggenrola|def|1
+|-unboost|p2b: Kyurem|def|1
+|
+|-end|p2b: Kyurem|Dynamax
+|-heal|p2b: Kyurem|359/380|[silent]
+|-end|p1a: Seaking|Dynamax
+|-heal|p1a: Seaking|36/186|[silent]
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Bulk Up","id":"bulkup","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Tailwind","id":"tailwind","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Dragon Hammer","id":"dragonhammer","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Attack Order","id":"attackorder","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Synthesis","id":"synthesis","pp":8,"maxpp":8,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"175/199","active":true,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"101/101","active":true,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"315/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"359/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"273/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"}]}}
+
+|
+|t:|1603471213
+|switch|p2b: Magikarp|Magikarp, L56, F|101/101
+|move|p1b: Hitmonchan|Acupressure|p1a: Seaking
+|-boost|p1a: Seaking|atk|2
+|move|p2a: Roggenrola|Bulk Up|p2a: Roggenrola
+|-boost|p2a: Roggenrola|atk|1
+|-boost|p2a: Roggenrola|def|1
+|move|p1a: Seaking|Phantom Force||[still]
+|-prepare|p1a: Seaking|Phantom Force
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Bulk Up","id":"bulkup","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Tailwind","id":"tailwind","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Dragon Hammer","id":"dragonhammer","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Attack Order","id":"attackorder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Synthesis","id":"synthesis","pp":8,"maxpp":8,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":true,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"101/101","active":true,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"315/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"359/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"273/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"}]}}
+
+|
+|t:|1603471213
+|switch|p1b: Duosion|Duosion, L54, M|166/166
+|move|p2a: Roggenrola|Follow Me|p2a: Roggenrola
+|-singleturn|p2a: Roggenrola|move: Follow Me
+|move|p2b: Magikarp|Attack Order|p1a: Seaking|[miss]
+|-miss|p2b: Magikarp|p1a: Seaking
+|move|p1a: Seaking|Phantom Force|p2a: Roggenrola|[from]lockedmove
+|debug|Follow Me redirected target of move
+|debug|Reflect weaken
+|-damage|p2a: Roggenrola|124/199
+|
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":62,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"359/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"273/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"315/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"101/101","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p2b: Dubwool|Dubwool, L99, M|273/273
+|switch|p1b: Roselia|Roselia, L67, F|184/184
+|switch|p2a: Kyurem|Kyurem-White, L94|359/380
+|move|p1a: Seaking|Moonlight|p1a: Seaking
+|-heal|p1a: Seaking|129/186
+|
+|-sideend|p2: Bot 2|Reflect
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":61,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"359/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"273/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"315/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"101/101","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p1b: Hitmonchan|Hitmonchan, L73, M|193/193
+|switch|p1a: Amoonguss|Amoonguss, L73, M|299/299
+|move|p2b: Dubwool|Disable||[still]
+|-fail|p2b: Dubwool
+|move|p2a: Kyurem|False Swipe|p1a: Amoonguss
+|-crit|p1a: Amoonguss
+|-damage|p1a: Amoonguss|226/299
+|
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":61,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":31,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"315/315","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"273/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"101/101","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p2b: Mantine|Mantine, L92, M|315/315
+|move|p2a: Kyurem|Rock Blast|p1b: Hitmonchan
+|-resisted|p1b: Hitmonchan
+|-damage|p1b: Hitmonchan|175/193
+|-resisted|p1b: Hitmonchan
+|-damage|p1b: Hitmonchan|154/193
+|-resisted|p1b: Hitmonchan
+|-crit|p1b: Hitmonchan
+|-damage|p1b: Hitmonchan|124/193
+|-resisted|p1b: Hitmonchan
+|-damage|p1b: Hitmonchan|106/193
+|-resisted|p1b: Hitmonchan
+|-damage|p1b: Hitmonchan|88/193
+|-hitcount|p1b: Hitmonchan|5
+|move|p1b: Hitmonchan|Pay Day|p2a: Kyurem
+|-damage|p2a: Kyurem|336/380
+|-fieldactivate|move: Pay Day
+|move|p1a: Amoonguss|Copycat|p1a: Amoonguss
+|move|p1a: Amoonguss|Pay Day|p2a: Kyurem|[from]Copycat
+|-damage|p2a: Kyurem|320/380
+|-fieldactivate|move: Pay Day
+|
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":61,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Attack Order","id":"attackorder","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Synthesis","id":"synthesis","pp":8,"maxpp":8,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"49/101","active":true,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"273/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"315/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"}]}}
+
+|
+|t:|1603471213
+|switch|p2b: Magikarp|Magikarp, L56, F|101/101
+|move|p1a: Amoonguss|Max Guard|p1a: Amoonguss
+|-singleturn|p1a: Amoonguss|Max Guard
+|move|p2a: Kyurem|Drum Beating|p1a: Amoonguss
+|-activate|p1a: Amoonguss|move: Max Guard
+|move|p1b: Hitmonchan|Scorching Sands|p2b: Magikarp
+|-damage|p2b: Magikarp|49/101
+|
+|upkeep
+|turn|10
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"258/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":true,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"315/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"}]},"noCancel":true}
+
+|
+|t:|1603471213
+|switch|p2a: Dubwool|Dubwool, L99, M|273/273
+|move|p1b: Hitmonchan|Scorching Sands|p2b: Magikarp
+|-damage|p2b: Magikarp|1/101
+|-status|p2b: Magikarp|brn
+|move|p2b: Magikarp|Withdraw|p2b: Magikarp
+|-boost|p2b: Magikarp|def|1
+|move|p1a: Amoonguss|Snarl|p2b: Magikarp|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-crit|p2b: Magikarp
+|-damage|p2a: Dubwool|258/273
+|-damage|p2b: Magikarp|0 fnt
+|-unboost|p2a: Dubwool|spa|1
+|faint|p2b: Magikarp
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":31,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"258/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"315/315","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p2b: Mantine|Mantine, L92, M|315/315
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Bulk Up","id":"bulkup","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Tailwind","id":"tailwind","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Dragon Hammer","id":"dragonhammer","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":30,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":true,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"261/315","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"258/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p2a: Roggenrola|Roggenrola, L76, F|124/199
+|move|p1b: Hitmonchan|Shock Wave|p2b: Mantine
+|-supereffective|p2b: Mantine
+|-damage|p2b: Mantine|275/315
+|move|p2b: Mantine|Reflect|p2b: Mantine
+|-sidestart|p2: Bot 2|Reflect
+|move|p1a: Amoonguss|Snarl|p2b: Mantine|[spread] p2b
+|-miss|p1a: Amoonguss|p2a: Roggenrola
+|debug|Spread modifier: 0.75
+|-damage|p2b: Mantine|261/315
+|-unboost|p2b: Mantine|spa|1
+|
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Vital Throw","id":"vitalthrow","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Quick Guard","id":"quickguard","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Self-Destruct","id":"selfdestruct","pp":8,"maxpp":8,"target":"allAdjacent","disabled":false}]},{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":30,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":true,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"261/315","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"258/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p2a: Swinub|Swinub, L89, F|231/231
+|move|p2b: Mantine|Baneful Bunker|p2b: Mantine
+|-singleturn|p2b: Mantine|move: Protect
+|move|p1b: Hitmonchan|Shock Wave|p2b: Mantine
+|-activate|p2b: Mantine|move: Protect
+|move|p1a: Amoonguss|Copycat|p1a: Amoonguss
+|move|p1a: Amoonguss|Shock Wave|p2b: Mantine|[from]Copycat
+|-activate|p2b: Mantine|move: Protect
+|
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Bulk Up","id":"bulkup","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Tailwind","id":"tailwind","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Dragon Hammer","id":"dragonhammer","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":30,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":true,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"261/315","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"258/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p2a: Roggenrola|Roggenrola, L76, F|124/199
+|move|p1a: Amoonguss|Max Guard|p1a: Amoonguss
+|-singleturn|p1a: Amoonguss|Max Guard
+|move|p1b: Hitmonchan|Scorching Sands|p2b: Mantine
+|-immune|p2b: Mantine
+|move|p2b: Mantine|Razor Shell|p1b: Hitmonchan
+|-damage|p1b: Hitmonchan|15/193
+|
+|upkeep
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":30,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"243/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"248/315","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"231/231","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p1b: Roselia|Roselia, L67, F|184/184
+|switch|p2a: Dubwool|Dubwool, L99, M|258/273
+|move|p2b: Mantine|Venoshock|p1b: Roselia
+|-damage|p1b: Roselia|141/184
+|move|p1a: Amoonguss|Snarl|p2a: Dubwool|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Dubwool|243/273
+|-damage|p2b: Mantine|248/315
+|-unboost|p2a: Dubwool|spa|1
+|-unboost|p2b: Mantine|spa|1
+|
+|upkeep
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Vital Throw","id":"vitalthrow","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Quick Guard","id":"quickguard","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Self-Destruct","id":"selfdestruct","pp":8,"maxpp":8,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"227/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"171/231","active":true,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"248/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p2b: Swinub|Swinub, L89, F|231/231
+|move|p2a: Dubwool|Sand Tomb|p1b: Roselia
+|-damage|p1b: Roselia|94/184
+|-activate|p1b: Roselia|move: Sand Tomb|[of] p2a: Dubwool
+|move|p1b: Roselia|Misty Terrain|p1b: Roselia
+|-fieldstart|move: Misty Terrain
+|move|p1a: Amoonguss|Snarl|p2a: Dubwool|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Dubwool|227/273
+|-damage|p2b: Swinub|171/231
+|-unboost|p2a: Dubwool|spa|1
+|-unboost|p2b: Swinub|spa|1
+|
+|-damage|p1b: Roselia|71/184|[from] move: Sand Tomb|[partiallytrapped]
+|-sideend|p2: Bot 2|Reflect
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Vital Throw","id":"vitalthrow","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Quick Guard","id":"quickguard","pp":23,"maxpp":24,"target":"allySide","disabled":false},{"move":"Self-Destruct","id":"selfdestruct","pp":8,"maxpp":8,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"227/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"171/231","active":true,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"248/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p1a: Seaking|Seaking, L57, F|129/186
+|move|p2b: Swinub|Quick Guard|p2b: Swinub
+|-singleturn|p2b: Swinub|Quick Guard
+|move|p2a: Dubwool|Gastro Acid|p1a: Seaking
+|-endability|p1a: Seaking
+|move|p1b: Roselia|Smokescreen|p2b: Swinub
+|-unboost|p2b: Swinub|accuracy|1
+|
+|-damage|p1b: Roselia|48/184|[from] move: Sand Tomb|[partiallytrapped]
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Mega Punch","id":"megapunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Vital Throw","id":"vitalthrow","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Quick Guard","id":"quickguard","pp":22,"maxpp":24,"target":"allySide","disabled":false},{"move":"Self-Destruct","id":"selfdestruct","pp":8,"maxpp":8,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"227/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"171/231","active":true,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"248/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|move|p2b: Swinub|Quick Guard|p2b: Swinub
+|-singleturn|p2b: Swinub|Quick Guard
+|move|p2a: Dubwool|Minimize|p2a: Dubwool
+|-boost|p2a: Dubwool|evasion|2
+|move|p1b: Roselia|Wicked Blow|p2a: Dubwool|[miss]
+|-miss|p1b: Roselia|p2a: Dubwool
+|move|p1a: Seaking|Moonlight|p1a: Seaking
+|-heal|p1a: Seaking|186/186
+|
+|-damage|p1b: Roselia|25/184|[from] move: Sand Tomb|[partiallytrapped]
+|upkeep
+|turn|18
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"227/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":true,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"248/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p1a: Hitmonchan|Hitmonchan, L73, M|15/193
+|move|p2a: Dubwool|Gastro Acid|p1a: Hitmonchan
+|-endability|p1a: Hitmonchan
+|move|p1b: Roselia|Smokescreen|p2a: Dubwool
+|-unboost|p2a: Dubwool|accuracy|1
+|move|p2b: Swinub|Self-Destruct|p1b: Roselia|[spread] p1a,p1b
+|-miss|p2b: Swinub|p2a: Dubwool
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p1a: Hitmonchan|0 fnt
+|-damage|p1b: Roselia|0 fnt
+|faint|p2b: Swinub
+|faint|p1a: Hitmonchan
+|faint|p1b: Roselia
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":14,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Bulk Up","id":"bulkup","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Tailwind","id":"tailwind","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Dragon Hammer","id":"dragonhammer","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"227/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"124/199","active":true,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"248/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p1b: Duosion|Duosion, L54, M|166/166
+|switch|p1a: Amoonguss|Amoonguss, L73, M|226/299
+|switch|p2b: Roggenrola|Roggenrola, L76, F|124/199
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":14,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Bulk Up","id":"bulkup","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":30,"maxpp":32,"target":"self","disabled":true},{"move":"Tailwind","id":"tailwind","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Dragon Hammer","id":"dragonhammer","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"210/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"77/199","active":true,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"248/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|move|p2b: Roggenrola|Follow Me|p2b: Roggenrola
+|-singleturn|p2b: Roggenrola|move: Follow Me
+|move|p2a: Dubwool|Disable|p1b: Duosion
+|move|p1b: Duosion|Disable|p2b: Roggenrola|[from]Magic Bounce
+|debug|Follow Me redirected target of move
+|-start|p2b: Roggenrola|Disable|Follow Me
+|move|p1a: Amoonguss|Snarl|p2b: Roggenrola|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Dubwool|210/273
+|-damage|p2b: Roggenrola|77/199
+|-unboost|p2a: Dubwool|spa|1
+|-unboost|p2b: Roggenrola|spa|1
+|move|p1b: Duosion|Snipe Shot|p2a: Dubwool|[miss]
+|-miss|p1b: Duosion|p2a: Dubwool
+|
+|-fieldend|Misty Terrain
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":13,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Bulk Up","id":"bulkup","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":30,"maxpp":32,"target":"self","disabled":true},{"move":"Tailwind","id":"tailwind","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Dragon Hammer","id":"dragonhammer","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"210/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"73/199","active":true,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"248/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|move|p2a: Dubwool|Gastro Acid|p1b: Duosion
+|move|p1b: Duosion|Gastro Acid|p2a: Dubwool|[from]Magic Bounce
+|-endability|p2a: Dubwool
+|move|p1a: Amoonguss|Gear Up||[still]
+|-fail|p1a: Amoonguss
+|debug|move failed because it did nothing
+|move|p1b: Duosion|Acrobatics|p2b: Roggenrola
+|-resisted|p2b: Roggenrola
+|-damage|p2b: Roggenrola|73/199
+|move|p2b: Roggenrola|Dragon Hammer|p1a: Amoonguss
+|-damage|p1a: Amoonguss|175/299
+|
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":12,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Bulk Up","id":"bulkup","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":30,"maxpp":32,"target":"self","disabled":true},{"move":"Tailwind","id":"tailwind","pp":23,"maxpp":24,"target":"allySide","disabled":false},{"move":"Dragon Hammer","id":"dragonhammer","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"210/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"73/199","active":true,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"248/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p1a: Seaking|Seaking, L57, F|186/186
+|move|p2a: Dubwool|Gastro Acid|p1b: Duosion
+|move|p1b: Duosion|Gastro Acid|p2a: Dubwool|[from]Magic Bounce|[miss]
+|debug|ModifyAccuracy handler suppressed by Gastro Acid
+|-miss|p1b: Duosion|p2a: Dubwool
+|move|p1b: Duosion|Feather Dance|p2a: Dubwool
+|debug|ModifyAccuracy handler suppressed by Gastro Acid
+|-unboost|p2a: Dubwool|atk|2
+|move|p2b: Roggenrola|Tailwind|p2b: Roggenrola
+|-sidestart|p2: Bot 2|move: Tailwind
+|
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":11,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Bulk Up","id":"bulkup","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":30,"maxpp":32,"target":"self","disabled":true},{"move":"Tailwind","id":"tailwind","pp":23,"maxpp":24,"target":"allySide","disabled":false},{"move":"Dragon Hammer","id":"dragonhammer","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"210/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"70/199","active":true,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"248/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p1a: Amoonguss|Amoonguss, L73, M|175/299
+|move|p2a: Dubwool|Gastro Acid|p1a: Amoonguss|[miss]
+|-miss|p2a: Dubwool|p1a: Amoonguss
+|move|p2b: Roggenrola|Bulk Up|p2b: Roggenrola
+|-boost|p2b: Roggenrola|atk|1
+|-boost|p2b: Roggenrola|def|1
+|move|p1b: Duosion|Acrobatics|p2b: Roggenrola
+|-resisted|p2b: Roggenrola
+|-damage|p2b: Roggenrola|70/199
+|
+|upkeep
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":10,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Bulk Up","id":"bulkup","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Tailwind","id":"tailwind","pp":22,"maxpp":24,"target":"allySide","disabled":false},{"move":"Dragon Hammer","id":"dragonhammer","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"204/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"70/199","active":true,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"248/315","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p1a: Seaking|Seaking, L57, F|186/186
+|move|p2a: Dubwool|Gastro Acid|p1b: Duosion
+|move|p1b: Duosion|Gastro Acid|p2a: Dubwool|[from]Magic Bounce|[miss]
+|debug|ModifyAccuracy handler suppressed by Gastro Acid
+|-miss|p1b: Duosion|p2a: Dubwool
+|move|p2b: Roggenrola|Tailwind||[still]
+|-fail|p2b: Roggenrola
+|debug|move failed because it did nothing
+|move|p1b: Duosion|Acrobatics|p2a: Dubwool
+|debug|ModifyAccuracy handler suppressed by Gastro Acid
+|-damage|p2a: Dubwool|204/273
+|
+|-end|p2b: Roggenrola|Disable
+|upkeep
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":30,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Bulk Up","id":"bulkup","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Follow Me","id":"followme","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Tailwind","id":"tailwind","pp":21,"maxpp":24,"target":"allySide","disabled":false},{"move":"Dragon Hammer","id":"dragonhammer","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"229/315 tox","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"70/199","active":true,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"204/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p2a: Mantine|Mantine, L92, M|248/315
+|move|p2b: Roggenrola|Tailwind||[still]
+|-fail|p2b: Roggenrola
+|debug|move failed because it did nothing
+|move|p1a: Seaking|Moonlight||[still]
+|-fail|p1a: Seaking
+|debug|move failed because it did nothing
+|move|p1b: Duosion|Toxic|p2a: Mantine
+|-status|p2a: Mantine|tox
+|
+|-damage|p2a: Mantine|229/315 tox|[from] psn
+|-sideend|p2: Bot 2|move: Tailwind
+|upkeep
+|turn|25
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":true,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"204/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"229/315 tox","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]},"noCancel":true}
+
+|
+|t:|1603471213
+|switch|p2a: Kyurem|Kyurem-White, L94|320/380
+|move|p1a: Seaking|Phantom Force||[still]
+|-prepare|p1a: Seaking|Phantom Force
+|move|p1b: Duosion|Snipe Shot|p2b: Roggenrola
+|-supereffective|p2b: Roggenrola
+|-crit|p2b: Roggenrola
+|-damage|p2b: Roggenrola|0 fnt
+|faint|p2b: Roggenrola
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":61,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":10,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"320/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"204/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"229/315 tox","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p2b: Dubwool|Dubwool, L99, M|204/273
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":61,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":30,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"286/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"210/315 tox","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"204/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p2b: Mantine|Mantine, L92, M|229/315 tox
+|move|p2a: Kyurem|Rock Blast|p1a: Seaking|[miss]
+|-miss|p2a: Kyurem|p1a: Seaking
+|move|p1a: Seaking|Phantom Force|p2a: Kyurem|[from]lockedmove
+|-damage|p2a: Kyurem|286/380
+|move|p1b: Duosion|Toxic|p2b: Mantine
+|-fail|p2b: Mantine|tox
+|debug|move failed because it did nothing
+|
+|-damage|p2b: Mantine|210/315 tox|[from] psn
+|upkeep
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":61,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":10,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"258/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"198/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"210/315 tox","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471213
+|switch|p2b: Dubwool|Dubwool, L99, M|204/273
+|move|p2a: Kyurem|Submission|p1b: Duosion
+|-resisted|p1b: Duosion
+|-damage|p1b: Duosion|55/166
+|-damage|p2a: Kyurem|258/380|[from] Recoil
+|move|p1a: Seaking|Phantom Force||[still]
+|-prepare|p1a: Seaking|Phantom Force
+|move|p1b: Duosion|Acrobatics|p2b: Dubwool
+|-damage|p2b: Dubwool|198/273
+|
+|upkeep
+|turn|28
+
+|request|{"active":[{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":30,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":10,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"191/315 tox","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"198/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"258/380","active":false,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471214
+|switch|p2a: Mantine|Mantine, L92, M|210/315 tox
+|move|p2b: Dubwool|Sand Tomb|p1a: Seaking|[miss]
+|-miss|p2b: Dubwool|p1a: Seaking
+|move|p1a: Seaking|Phantom Force|p2b: Dubwool|[from]lockedmove
+|-immune|p2b: Dubwool
+|move|p1b: Duosion|Toxic|p2a: Mantine
+|-fail|p2a: Mantine|tox
+|debug|move failed because it did nothing
+|
+|-damage|p2a: Mantine|191/315 tox|[from] psn
+|upkeep
+|turn|29
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":61,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":10,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"251/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"198/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"191/315 tox","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471214
+|switch|p2a: Kyurem|Kyurem-White, L94|258/380
+|move|p2b: Dubwool|Sand Tomb|p1a: Seaking|[miss]
+|-miss|p2b: Dubwool|p1a: Seaking
+|move|p1a: Seaking|Moonlight||[still]
+|-fail|p1a: Seaking
+|debug|move failed because it did nothing
+|move|p1b: Duosion|Acrobatics|p2a: Kyurem
+|-damage|p2a: Kyurem|251/380
+|
+|upkeep
+|turn|30
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"251/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"198/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"191/315 tox","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471214
+|move|p2b: Dubwool|Sand Tomb|p1b: Duosion
+|-damage|p1b: Duosion|0 fnt
+|faint|p1b: Duosion
+|move|p2a: Kyurem|False Swipe|p1a: Seaking
+|-damage|p1a: Seaking|109/186
+|move|p1a: Seaking|Phantom Force||[still]
+|-prepare|p1a: Seaking|Phantom Force
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":60,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":10,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"251/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"198/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"191/315 tox","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471214
+|switch|p1b: Amoonguss|Amoonguss, L66, M|309/309
+|turn|31
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":60,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":10,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"251/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"198/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"191/315 tox","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471214
+|move|p2b: Dubwool|Minimize|p2b: Dubwool
+|-boost|p2b: Dubwool|evasion|2
+|move|p2a: Kyurem|Rock Blast|p1b: Amoonguss
+|-damage|p1b: Amoonguss|253/309
+|debug|illusion cleared
+|replace|p1b: Wailord|Wailord, L66, F
+|-end|p1b: Wailord|Illusion
+|-damage|p1b: Wailord|201/309
+|-damage|p1b: Wailord|150/309
+|-damage|p1b: Wailord|92/309
+|-hitcount|p1b: Wailord|4
+|move|p1b: Wailord|Speed Swap|p2b: Dubwool
+|-activate|p1b: Wailord|move: Speed Swap|[of] p2b: Dubwool
+|move|p1a: Seaking|Phantom Force|p2b: Dubwool|[from]lockedmove
+|-immune|p2b: Dubwool
+|
+|upkeep
+|turn|32
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":59,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":30,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"251/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"172/315 tox","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"198/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471214
+|switch|p1b: Amoonguss|Amoonguss, L73, M|175/299
+|switch|p2b: Mantine|Mantine, L92, M|191/315 tox
+|move|p2a: Kyurem|False Swipe|p1b: Amoonguss
+|-damage|p1b: Amoonguss|122/299
+|move|p1a: Seaking|Phantom Force||[still]
+|-prepare|p1a: Seaking|Phantom Force
+|
+|-damage|p2b: Mantine|172/315 tox|[from] psn
+|upkeep
+|turn|33
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":58,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":30,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"235/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"118/315 tox","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"198/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471214
+|move|p2b: Mantine|Baneful Bunker|p2b: Mantine
+|-singleturn|p2b: Mantine|move: Protect
+|move|p2a: Kyurem|False Swipe|p1a: Seaking|[miss]
+|-miss|p2a: Kyurem|p1a: Seaking
+|move|p1b: Amoonguss|Snarl|p2b: Mantine|[spread] p2a
+|-activate|p2b: Mantine|move: Protect
+|debug|Spread modifier: 0.75
+|-damage|p2a: Kyurem|235/380
+|-unboost|p2a: Kyurem|spa|1
+|move|p1a: Seaking|Phantom Force|p2b: Mantine|[from]lockedmove
+|-activate|p2b: Mantine|move: Phantom Force|[broken]
+|-damage|p2b: Mantine|156/315 tox
+|
+|-damage|p2b: Mantine|118/315 tox|[from] psn
+|upkeep
+|turn|34
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"235/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"61/315 tox","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"198/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471214
+|switch|p1a: Seaking|Seaking, L66, F|92/309
+|move|p2b: Mantine|Baneful Bunker|p2b: Mantine
+|-singleturn|p2b: Mantine|move: Protect
+|move|p2a: Kyurem|Rock Blast|p1a: Seaking
+|-damage|p1a: Seaking|36/309
+|debug|illusion cleared
+|replace|p1a: Wailord|Wailord, L66, F
+|-end|p1a: Wailord|Illusion
+|-damage|p1a: Wailord|0 fnt
+|-hitcount|p1a: Wailord|2
+|faint|p1a: Wailord
+|move|p1b: Amoonguss|Snarl|p2b: Mantine|[spread] 
+|-activate|p2b: Mantine|move: Protect
+|-miss|p1b: Amoonguss|p2a: Kyurem
+|
+|-damage|p2b: Mantine|61/315 tox|[from] psn
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":58,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Baneful Bunker","id":"banefulbunker","pp":13,"maxpp":16,"target":"self","disabled":false},{"move":"Razor Shell","id":"razorshell","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Reflect","id":"reflect","pp":30,"maxpp":32,"target":"allySide","disabled":false},{"move":"Venoshock","id":"venoshock","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"235/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"61/315 tox","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"198/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471214
+|switch|p1a: Seaking|Seaking, L57, F|109/186
+|turn|35
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"235/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"0 fnt","active":true,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"198/273","active":false,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]},"noCancel":true}
+
+|
+|t:|1603471214
+|move|p2a: Kyurem|Rock Blast|p1a: Seaking
+|-damage|p1a: Seaking|62/186
+|-damage|p1a: Seaking|18/186
+|-damage|p1a: Seaking|0 fnt
+|-hitcount|p1a: Seaking|3
+|faint|p1a: Seaking
+|move|p2b: Mantine|Venoshock|p1b: Amoonguss
+|-damage|p1b: Amoonguss|61/299
+|move|p1b: Amoonguss|Gear Up||[still]
+|-fail|p1b: Amoonguss
+|debug|move failed because it did nothing
+|
+|-damage|p2b: Mantine|0 fnt|[from] psn
+|faint|p2b: Mantine
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":11,"maxpp":16,"target":"normal","disabled":false},{"move":"Drum Beating","id":"drumbeating","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"False Swipe","id":"falseswipe","pp":58,"maxpp":64,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Sand Tomb","id":"sandtomb","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Minimize","id":"minimize","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Gastro Acid","id":"gastroacid","pp":10,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kyurem","details":"Kyurem-White, L94","condition":"235/380","active":true,"stats":{"atk":287,"def":200,"spa":393,"spd":271,"spe":213},"moves":["rockblast","drumbeating","falseswipe","submission"],"baseAbility":"battlearmor","item":"tr14","pokeball":"pokeball","ability":"battlearmor"},{"ident":"p2: Dubwool","details":"Dubwool, L99, M","condition":"198/273","active":true,"stats":{"atk":201,"def":255,"spa":209,"spd":260,"spe":226},"moves":["sandtomb","disable","minimize","gastroacid"],"baseAbility":"tangledfeet","item":"tr06","pokeball":"pokeball","ability":"tangledfeet"},{"ident":"p2: Roggenrola","details":"Roggenrola, L76, F","condition":"0 fnt","active":false,"stats":{"atk":166,"def":174,"spa":99,"spd":86,"spe":60},"moves":["bulkup","followme","tailwind","dragonhammer"],"baseAbility":"sandveil","item":"fossilizeddrake","pokeball":"pokeball","ability":"sandveil"},{"ident":"p2: Mantine","details":"Mantine, L92, M","condition":"0 fnt","active":false,"stats":{"atk":126,"def":192,"spa":176,"spd":296,"spe":135},"moves":["banefulbunker","razorshell","reflect","venoshock"],"baseAbility":"fluffy","item":"rockincense","pokeball":"pokeball","ability":"fluffy"},{"ident":"p2: Swinub","details":"Swinub, L89, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":152,"spa":64,"spd":62,"spe":102},"moves":["megapunch","vitalthrow","quickguard","selfdestruct"],"baseAbility":"leafguard","item":"softsand","pokeball":"pokeball","ability":"leafguard"},{"ident":"p2: Magikarp","details":"Magikarp, L56, F","condition":"0 fnt","active":false,"stats":{"atk":37,"def":89,"spa":47,"spd":63,"spe":132},"moves":["withdraw","attackorder","aquajet","synthesis"],"baseAbility":"heavymetal","item":"tr88","pokeball":"pokeball","ability":"heavymetal"}]}}
+
+|
+|t:|1603471214
+|switch|p2b: Dubwool|Dubwool, L99, M|198/273
+|turn|36
+
+|
+|t:|1603471214
+|move|p2b: Dubwool|Minimize|p2b: Dubwool
+|-boost|p2b: Dubwool|evasion|2
+|move|p2a: Kyurem|Rock Blast|p1b: Amoonguss
+|-damage|p1b: Amoonguss|30/299
+|-damage|p1b: Amoonguss|0 fnt
+|-hitcount|p1b: Amoonguss|2
+|faint|p1b: Amoonguss
+|
+|win|Bot 2

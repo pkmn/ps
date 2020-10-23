@@ -1,0 +1,459 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"321/321","active":true,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"212/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"243/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"249/249","active":false,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|t:|1603471186
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|8
+|tier|[Gen 8] Doubles Custom Game
+|clearpoke
+|poke|p1|Wynaut, L86, M|
+|poke|p1|Timburr, L67, F|
+|poke|p1|Silvally-*, L66|
+|poke|p1|Palpitoad, L67, F|
+|poke|p1|Keldeo-Resolute, L79|
+|poke|p1|Hatterene, L60, F|
+|poke|p2|Klinklang, L78|
+|poke|p2|Drampa, L89, M|
+|poke|p2|Mimikyu-Busted, L51, M|
+|poke|p2|Bunnelby, L54, F|
+|poke|p2|Tauros, L52, M|
+|poke|p2|Hydreigon, L62, M|
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Ancient Power","id":"ancientpower","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Gravity","id":"gravity","pp":8,"maxpp":8,"target":"all","disabled":false},{"move":"Covet","id":"covet","pp":40,"maxpp":40,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxooze","target":"adjacentFoe"},{"move":"maxrockfall","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxstrike","target":"adjacentFoe"}]}},{"moves":[{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":16,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxrockfall","target":"adjacentFoe"}]}}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"321/321","active":true,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"212/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"243/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"249/249","active":false,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|start
+|switch|p1a: Wynaut|Wynaut, L86, M|321/321
+|switch|p1b: Timburr|Timburr, L67, F|212/212
+|switch|p2a: Hydreigon|Hydreigon, L78, M|206/206
+|switch|p2b: Drampa|Drampa, L89, M|268/268
+|-ability|p1b: Timburr|Unnerve|p2: Bot 2
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Ancient Power","id":"ancientpower","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Gravity","id":"gravity","pp":8,"maxpp":8,"target":"all","disabled":false},{"move":"Covet","id":"covet","pp":40,"maxpp":40,"target":"normal","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxooze","target":"adjacentFoe"},{"move":"maxrockfall","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxstrike","target":"adjacentFoe"}]}},{"moves":[{"move":"Ice Shard","id":"iceshard","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":16,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"622/642","active":true,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"199/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"243/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"249/249","active":false,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|switch|p2a: Mimikyu|Mimikyu-Busted, L51, M|147/147
+|-start|p2b: Drampa|Dynamax
+|-heal|p2b: Drampa|536/536|[silent]
+|-start|p1a: Wynaut|Dynamax
+|-heal|p1a: Wynaut|642/642|[silent]
+|move|p2b: Drampa|Max Guard|p2b: Drampa
+|-singleturn|p2b: Drampa|Max Guard
+|move|p1b: Timburr|Ice Shard|p2b: Drampa
+|-activate|p2b: Drampa|move: Max Guard
+|move|p1a: Wynaut|Max Rockfall|p2a: Mimikyu
+|-damage|p2a: Mimikyu|93/147
+|-weather|Sandstorm
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Mimikyu|84/147|[from] Sandstorm
+|-damage|p2b: Drampa|520/536|[from] Sandstorm
+|-damage|p1a: Wynaut|622/642|[from] Sandstorm
+|-damage|p1b: Timburr|199/212|[from] Sandstorm
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Aurora Veil","id":"auroraveil","pp":32,"maxpp":32,"target":"allySide","disabled":false},{"move":"Purify","id":"purify","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Ice Shard","id":"iceshard","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":16,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Silvally","details":"Silvally, L66","condition":"228/243","active":true,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"186/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"249/249","active":false,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|-end|p2b: Drampa|Dynamax
+|-heal|p2b: Drampa|260/268|[silent]
+|switch|p2b: Bunnelby|Bunnelby, L54, F|130/130
+|-end|p1a: Wynaut|Dynamax
+|-heal|p1a: Wynaut|311/321|[silent]
+|switch|p1a: Silvally|Silvally, L66|243/243
+|move|p2a: Mimikyu|Detect|p2a: Mimikyu
+|-singleturn|p2a: Mimikyu|Protect
+|move|p1b: Timburr|Ice Shard|p2a: Mimikyu
+|-activate|p2a: Mimikyu|move: Protect
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Silvally|228/243|[from] Sandstorm
+|-damage|p2a: Mimikyu|75/147|[from] Sandstorm
+|-damage|p2b: Bunnelby|122/130|[from] Sandstorm
+|-damage|p1b: Timburr|186/212|[from] Sandstorm
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Super Fang","id":"superfang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Aurora Veil","id":"auroraveil","pp":31,"maxpp":32,"target":"allySide","disabled":false},{"move":"Purify","id":"purify","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Ice Shard","id":"iceshard","pp":45,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":16,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Silvally","details":"Silvally, L66","condition":"201/243","active":true,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"173/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"249/249","active":false,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|move|p1b: Timburr|Ice Shard|p2a: Mimikyu
+|-damage|p2a: Mimikyu|45/147
+|move|p1a: Silvally|Aurora Veil||[still]
+|-fail|p1a: Silvally
+|move|p2a: Mimikyu|Defense Curl|p2a: Mimikyu
+|-boost|p2a: Mimikyu|def|1
+|move|p2b: Bunnelby|Acrobatics|p1a: Silvally
+|-damage|p1a: Silvally|216/243
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Silvally|201/243|[from] Sandstorm
+|-damage|p2a: Mimikyu|36/147|[from] Sandstorm
+|-damage|p2b: Bunnelby|114/130|[from] Sandstorm
+|-damage|p1b: Timburr|173/212|[from] Sandstorm
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Super Fang","id":"superfang","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Aurora Veil","id":"auroraveil","pp":31,"maxpp":32,"target":"allySide","disabled":false},{"move":"Purify","id":"purify","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Ice Shard","id":"iceshard","pp":44,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":16,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Silvally","details":"Silvally, L66","condition":"169/243","active":true,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"160/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"249/249","active":false,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|switch|p2a: Drampa|Drampa, L89, M|260/268
+|move|p1b: Timburr|Ice Shard|p2b: Bunnelby
+|-damage|p2b: Bunnelby|63/130
+|move|p1a: Silvally|Super Fang|p2b: Bunnelby
+|-damage|p2b: Bunnelby|32/130
+|move|p2b: Bunnelby|Night Slash|p1a: Silvally
+|-damage|p1a: Silvally|184/243
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Silvally|169/243|[from] Sandstorm
+|-damage|p2a: Drampa|244/268|[from] Sandstorm
+|-damage|p2b: Bunnelby|24/130|[from] Sandstorm
+|-damage|p1b: Timburr|160/212|[from] Sandstorm
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Super Fang","id":"superfang","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Aurora Veil","id":"auroraveil","pp":31,"maxpp":32,"target":"allySide","disabled":false},{"move":"Purify","id":"purify","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Ice Shard","id":"iceshard","pp":44,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":15,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Silvally","details":"Silvally, L66","condition":"169/243","active":true,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"160/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"249/249","active":false,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|move|p1b: Timburr|Crafty Shield|p1b: Timburr
+|-singleturn|p1b: Timburr|Crafty Shield
+|move|p1a: Silvally|Energy Ball|p2a: Drampa
+|-resisted|p2a: Drampa
+|-damage|p2a: Drampa|225/268
+|move|p2a: Drampa|Sand Attack|p1b: Timburr
+|-activate|p1b: Timburr|move: Crafty Shield
+|move|p2b: Bunnelby|Psych Up|p1b: Timburr
+|-activate|p1b: Timburr|move: Crafty Shield
+|
+|-weather|none
+|upkeep
+|turn|6
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Silvally","details":"Silvally, L66","condition":"169/243","active":true,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"160/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"249/249","active":false,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|switch|p2a: Tauros|Tauros, L52, M|187/187
+|move|p1b: Timburr|Ice Shard|p2b: Bunnelby
+|-damage|p2b: Bunnelby|0 fnt
+|faint|p2b: Bunnelby
+|move|p1a: Silvally|Energy Ball|p2a: Tauros
+|-damage|p2a: Tauros|105/187
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Super Fang","id":"superfang","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Aurora Veil","id":"auroraveil","pp":31,"maxpp":32,"target":"allySide","disabled":false},{"move":"Purify","id":"purify","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Ice Shard","id":"iceshard","pp":43,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":15,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Silvally","details":"Silvally, L66","condition":"169/243","active":true,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"160/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"249/249","active":false,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|switch|p2b: Hydreigon|Hydreigon, L62, M|203/203
+|-weather|PrimordialSea|[from] ability: Primordial Sea|[of] p2b: Hydreigon
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Super Fang","id":"superfang","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Aurora Veil","id":"auroraveil","pp":31,"maxpp":32,"target":"allySide","disabled":false},{"move":"Purify","id":"purify","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Ice Shard","id":"iceshard","pp":43,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":15,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":true,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"160/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"249/249","active":false,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|move|p1a: Silvally|Energy Ball|p2b: Hydreigon
+|-resisted|p2b: Hydreigon
+|-damage|p2b: Hydreigon|167/203
+|-unboost|p2b: Hydreigon|spd|1
+|move|p2b: Hydreigon|Poltergeist|p1a: Silvally
+|-immune|p1a: Silvally
+|move|p2a: Tauros|Waterfall|p1a: Silvally
+|debug|Rain water boost
+|-damage|p1a: Silvally|113/243
+|move|p1b: Timburr|Pound|p2a: Tauros
+|-damage|p2a: Tauros|80/187
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Giga Drain","id":"gigadrain","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Freeze-Dry","id":"freezedry","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Glare","id":"glare","pp":48,"maxpp":48,"target":"normal","disabled":false}]},{"moves":[{"move":"Ice Shard","id":"iceshard","pp":43,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":14,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":true,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"249/249","active":false,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|switch|p1a: Palpitoad|Palpitoad, L67, F|224/224
+|move|p1b: Timburr|Crafty Shield|p1b: Timburr
+|-singleturn|p1b: Timburr|Crafty Shield
+|move|p2b: Hydreigon|Behemoth Blade|p1b: Timburr
+|-damage|p1b: Timburr|97/212
+|move|p2a: Tauros|Disable|p1a: Palpitoad
+|-activate|p1a: Palpitoad|move: Crafty Shield
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Trop Kick","id":"tropkick","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Steel Wing","id":"steelwing","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":48,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false}]},{"moves":[{"move":"Ice Shard","id":"iceshard","pp":42,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":14,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|switch|p1a: Keldeo|Keldeo-Resolute, L79|249/249
+|switch|p2a: Drampa|Drampa, L89, M|225/268
+|move|p1b: Timburr|Ice Shard|p2a: Drampa
+|-supereffective|p2a: Drampa
+|-damage|p2a: Drampa|183/268
+|move|p2b: Hydreigon|Behemoth Blade|p1a: Keldeo
+|-resisted|p1a: Keldeo
+|-damage|p1a: Keldeo|225/249
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|10
+
+|request|{"active":[{"moves":[{"move":"Trop Kick","id":"tropkick","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Steel Wing","id":"steelwing","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":48,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false}]},{"moves":[{"move":"Ice Shard","id":"iceshard","pp":41,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":14,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|debug|before turn callback: focuspunch
+|-singleturn|p1a: Keldeo|move: Focus Punch
+|-weather|none
+|switch|p2b: Mimikyu|Mimikyu-Busted, L51, M|36/147
+|move|p1b: Timburr|Ice Shard|p2b: Mimikyu
+|-damage|p2b: Mimikyu|4/147
+|move|p2a: Drampa|Clangorous Soul|p2a: Drampa
+|-boost|p2a: Drampa|atk|1
+|-boost|p2a: Drampa|def|1
+|-boost|p2a: Drampa|spa|1
+|-boost|p2a: Drampa|spd|1
+|-boost|p2a: Drampa|spe|1
+|-damage|p2a: Drampa|95/268
+|move|p1a: Keldeo|Focus Punch|p2b: Mimikyu
+|-immune|p2b: Mimikyu
+|
+|upkeep
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Trop Kick","id":"tropkick","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Steel Wing","id":"steelwing","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":47,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false}]},{"moves":[{"move":"Ice Shard","id":"iceshard","pp":41,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":14,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"142/142","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|move|p2a: Drampa|Sand Attack|p1b: Timburr
+|-unboost|p1b: Timburr|accuracy|1
+|move|p1a: Keldeo|Acupressure|p1a: Keldeo
+|-boost|p1a: Keldeo|evasion|2
+|move|p2b: Mimikyu|Supersonic|p1a: Keldeo|[miss]
+|-miss|p2b: Mimikyu|p1a: Keldeo
+|move|p1b: Timburr|Rock Blast|p2a: Drampa
+|-damage|p2a: Drampa|86/268
+|-damage|p2a: Drampa|76/268
+|-hitcount|p2a: Drampa|2
+|
+|upkeep
+|turn|12
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"0 fnt","active":true,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":false,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"}]},"noCancel":true}
+
+|
+|t:|1603471186
+|switch|p1b: Hatterene|Hatterene, L60, F|142/142
+|move|p2b: Mimikyu|Detect|p2b: Mimikyu
+|-singleturn|p2b: Mimikyu|Protect
+|move|p2a: Drampa|Sunsteel Strike|p1b: Hatterene
+|-supereffective|p1b: Hatterene
+|-damage|p1b: Hatterene|0 fnt
+|faint|p1b: Hatterene
+|move|p1a: Keldeo|Steel Wing|p2b: Mimikyu
+|-activate|p2b: Mimikyu|move: Protect
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Trop Kick","id":"tropkick","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Steel Wing","id":"steelwing","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":47,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false}]},{"moves":[{"move":"Ice Shard","id":"iceshard","pp":41,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":14,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"224/224","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|switch|p1b: Timburr|Timburr, L67, F|97/212
+|-ability|p1b: Timburr|Unnerve|p2: Bot 2
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Trop Kick","id":"tropkick","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Steel Wing","id":"steelwing","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false}]},{"moves":[{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Giga Drain","id":"gigadrain","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Freeze-Dry","id":"freezedry","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Glare","id":"glare","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"158/224","active":true,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":false,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|switch|p1b: Palpitoad|Palpitoad, L67, F|224/224
+|move|p2a: Drampa|Sunsteel Strike|p1b: Palpitoad
+|-resisted|p1b: Palpitoad
+|-damage|p1b: Palpitoad|158/224
+|move|p1a: Keldeo|Acupressure|p1b: Palpitoad
+|-boost|p1b: Palpitoad|accuracy|2
+|move|p2b: Mimikyu|Defense Curl|p2b: Mimikyu
+|-boost|p2b: Mimikyu|def|1
+|
+|upkeep
+|turn|14
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"92/224","active":true,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":false,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|debug|before turn callback: focuspunch
+|-singleturn|p1a: Keldeo|move: Focus Punch
+|move|p2a: Drampa|Sunsteel Strike|p1b: Palpitoad
+|-resisted|p1b: Palpitoad
+|-damage|p1b: Palpitoad|88/224
+|move|p1b: Palpitoad|Giga Drain|p2a: Drampa
+|-resisted|p2a: Drampa
+|-damage|p2a: Drampa|69/268
+|-heal|p1b: Palpitoad|92/224|[from] drain|[of] p2a: Drampa
+|move|p2b: Mimikyu|Supersonic|p1b: Palpitoad|[miss]
+|-miss|p2b: Mimikyu|p1b: Palpitoad
+|move|p1a: Keldeo|Focus Punch|p2a: Drampa
+|-supereffective|p2a: Drampa
+|-damage|p2a: Drampa|0 fnt
+|faint|p2a: Drampa
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Trop Kick","id":"tropkick","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Steel Wing","id":"steelwing","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false}]},{"moves":[{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Giga Drain","id":"gigadrain","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Freeze-Dry","id":"freezedry","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Glare","id":"glare","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"92/224","active":true,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":false,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|switch|p2a: Tauros|Tauros, L52, M|80/187
+|turn|15
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"94/224","active":true,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":false,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|debug|before turn callback: focuspunch
+|-singleturn|p1a: Keldeo|move: Focus Punch
+|move|p1b: Palpitoad|Giga Drain|p2b: Mimikyu
+|-damage|p2b: Mimikyu|0 fnt
+|-heal|p1b: Palpitoad|94/224|[from] drain|[of] p2b: Mimikyu
+|faint|p2b: Mimikyu
+|move|p2a: Tauros|Moonlight|p2a: Tauros
+|-heal|p2a: Tauros|173/187
+|move|p1a: Keldeo|Focus Punch|p2a: Tauros
+|-supereffective|p2a: Tauros
+|-damage|p2a: Tauros|0 fnt
+|faint|p2a: Tauros
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Trop Kick","id":"tropkick","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Steel Wing","id":"steelwing","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false}]},{"moves":[{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Giga Drain","id":"gigadrain","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Freeze-Dry","id":"freezedry","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Glare","id":"glare","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"94/224","active":true,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":false,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|switch|p2b: Hydreigon|Hydreigon, L62, M|167/203
+|switch|p2a: Hydreigon|Hydreigon, L78, M|206/206
+|-weather|PrimordialSea|[from] ability: Primordial Sea|[of] p2b: Hydreigon
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Trop Kick","id":"tropkick","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Steel Wing","id":"steelwing","pp":38,"maxpp":40,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false}]},{"moves":[{"move":"Reversal","id":"reversal","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Giga Drain","id":"gigadrain","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Freeze-Dry","id":"freezedry","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Glare","id":"glare","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"10/224","active":true,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":false,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|move|p2a: Hydreigon|Copycat||[still]
+|-fail|p2a: Hydreigon
+|debug|move failed because it did nothing
+|move|p2b: Hydreigon|Poltergeist|p1b: Palpitoad
+|-activate|p1b: Palpitoad|move: Poltergeist|Snowball
+|-damage|p1b: Palpitoad|10/224
+|move|p1a: Keldeo|Steel Wing|p2b: Hydreigon
+|-damage|p2b: Hydreigon|127/203
+|move|p1b: Palpitoad|Reversal|p2b: Hydreigon
+|-supereffective|p2b: Hydreigon
+|-damage|p2b: Hydreigon|0 fnt
+|faint|p2b: Hydreigon
+|-weather|none
+|
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Trop Kick","id":"tropkick","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Steel Wing","id":"steelwing","pp":38,"maxpp":40,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":45,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false}]},{"moves":[{"move":"Reversal","id":"reversal","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Giga Drain","id":"gigadrain","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Freeze-Dry","id":"freezedry","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Glare","id":"glare","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"10/224","active":true,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":false,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|move|p2a: Hydreigon|Reflect Type|p1a: Keldeo
+|-start|p2a: Hydreigon|typechange|[from] move: Reflect Type|[of] p1a: Keldeo
+|move|p1a: Keldeo|Acupressure|p1a: Keldeo
+|-boost|p1a: Keldeo|atk|2
+|move|p1b: Palpitoad|Reversal|p2a: Hydreigon
+|-damage|p2a: Hydreigon|157/206
+|-status|p2a: Hydreigon|psn|[from] ability: Poison Touch|[of] p1b: Palpitoad
+|debug|illusion cleared
+|replace|p2a: Klinklang|Klinklang, L78
+|-end|p2a: Klinklang|Illusion
+|
+|-damage|p2a: Klinklang|132/206 psn|[from] psn
+|upkeep
+|turn|18
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":true,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"0 fnt","active":true,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":false,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":false,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]},"noCancel":true}
+
+|
+|t:|1603471186
+|switch|p1a: Silvally|Silvally, L66|113/243
+|move|p2a: Klinklang|Razor Shell|p1b: Palpitoad
+|-damage|p1b: Palpitoad|0 fnt
+|faint|p1b: Palpitoad
+|
+|-damage|p2a: Klinklang|107/206 psn|[from] psn
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Super Fang","id":"superfang","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Aurora Veil","id":"auroraveil","pp":31,"maxpp":32,"target":"allySide","disabled":false},{"move":"Purify","id":"purify","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Ancient Power","id":"ancientpower","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Gravity","id":"gravity","pp":8,"maxpp":8,"target":"all","disabled":false},{"move":"Covet","id":"covet","pp":40,"maxpp":40,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Silvally","details":"Silvally, L66","condition":"113/243","active":true,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":true,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"0 fnt","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":false,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":false,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|switch|p1b: Wynaut|Wynaut, L86, M|311/321
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Super Fang","id":"superfang","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Aurora Veil","id":"auroraveil","pp":31,"maxpp":32,"target":"allySide","disabled":false},{"move":"Purify","id":"purify","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Trop Kick","id":"tropkick","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Steel Wing","id":"steelwing","pp":38,"maxpp":40,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":45,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Silvally","details":"Silvally, L66","condition":"141/243","active":true,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"225/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"0 fnt","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":false,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|switch|p1b: Keldeo|Keldeo-Resolute, L79|225/249
+|move|p2a: Klinklang|Copycat|p2a: Klinklang
+|move|p2a: Klinklang|Razor Shell|p1a: Silvally|[from]Copycat
+|-damage|p1a: Silvally|19/243
+|-unboost|p1a: Silvally|def|1
+|move|p1a: Silvally|Purify|p2a: Klinklang
+|-curestatus|p2a: Klinklang|psn|[msg]
+|-heal|p1a: Silvally|141/243
+|
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Ice Shard","id":"iceshard","pp":41,"maxpp":48,"target":"normal","disabled":false},{"move":"Pound","id":"pound","pp":55,"maxpp":56,"target":"normal","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":14,"maxpp":16,"target":"allySide","disabled":false},{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Trop Kick","id":"tropkick","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Steel Wing","id":"steelwing","pp":38,"maxpp":40,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":44,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Timburr","details":"Timburr, L67, F","condition":"97/212","active":true,"stats":{"atk":154,"def":120,"spa":86,"spd":67,"spe":54},"moves":["iceshard","pound","craftyshield","rockblast"],"baseAbility":"unnerve","item":"cobaberry","pokeball":"pokeball","ability":"unnerve"},{"ident":"p1: Keldeo","details":"Keldeo-Resolute, L79","condition":"186/249","active":true,"stats":{"atk":132,"def":153,"spa":247,"spd":203,"spe":161},"moves":["tropkick","focuspunch","steelwing","acupressure"],"baseAbility":"waterveil","item":"widelens","pokeball":"pokeball","ability":"waterveil"},{"ident":"p1: Palpitoad","details":"Palpitoad, L67, F","condition":"0 fnt","active":false,"stats":{"atk":133,"def":109,"spa":133,"spd":126,"spe":147},"moves":["reversal","gigadrain","freezedry","glare"],"baseAbility":"poisontouch","item":"snowball","pokeball":"pokeball","ability":"poisontouch"},{"ident":"p1: Wynaut","details":"Wynaut, L86, M","condition":"311/321","active":false,"stats":{"atk":100,"def":125,"spa":97,"spd":155,"spe":68},"moves":["belch","ancientpower","gravity","covet"],"baseAbility":"stall","item":"friendball","pokeball":"pokeball","ability":"stall"},{"ident":"p1: Silvally","details":"Silvally, L66","condition":"141/243","active":false,"stats":{"atk":147,"def":127,"spa":184,"spd":147,"spe":166},"moves":["superfang","energyball","auroraveil","purify"],"baseAbility":"pickup","item":"icememory","pokeball":"pokeball","ability":"pickup"},{"ident":"p1: Hatterene","details":"Hatterene, L60, F","condition":"0 fnt","active":false,"stats":{"atk":132,"def":144,"spa":178,"spd":183,"spe":54},"moves":["muddywater","junglehealing","steelroller","nuzzle"],"baseAbility":"stench","item":"safetygoggles","pokeball":"pokeball","ability":"stench"}]}}
+
+|
+|t:|1603471186
+|switch|p1a: Timburr|Timburr, L67, F|97/212
+|-ability|p1a: Timburr|Unnerve|p2: Bot 2
+|move|p2a: Klinklang|Razor Shell|p1b: Keldeo
+|-resisted|p1b: Keldeo
+|-damage|p1b: Keldeo|186/249
+|move|p1b: Keldeo|Acupressure|p1a: Timburr
+|-boost|p1a: Timburr|spd|2
+|
+|upkeep
+|turn|21
+
+|
+|t:|1603471186
+|debug|before turn callback: focuspunch
+|-singleturn|p1b: Keldeo|move: Focus Punch
+|switch|p1a: Silvally|Silvally, L66|141/243
+|move|p2a: Klinklang|Reflect Type|p1a: Silvally
+|-start|p2a: Klinklang|typechange|[from] move: Reflect Type|[of] p1a: Silvally
+|move|p1b: Keldeo|Focus Punch|p2a: Klinklang
+|-supereffective|p2a: Klinklang
+|-damage|p2a: Klinklang|0 fnt
+|faint|p2a: Klinklang
+|
+|win|Bot 1

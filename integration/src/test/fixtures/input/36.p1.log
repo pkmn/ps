@@ -1,0 +1,544 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":true,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"216/216","active":true,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"152/152","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"271/271","active":false,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"208/208","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"244/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]}}
+
+|t:|1603471194
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|8
+|tier|[Gen 8] Doubles Custom Game
+|clearpoke
+|poke|p1|Darmanitan-Zen, L69, M|
+|poke|p1|Tyrogue, L78, M|
+|poke|p1|Seedot, L61, M|
+|poke|p1|Dracovish, L54|
+|poke|p1|Orbeetle, L52, M|
+|poke|p1|Nickit, L68, M|
+|poke|p2|Venipede, L67, F|
+|poke|p2|Emolga, L81, F|
+|poke|p2|Boltund, L50, M|
+|poke|p2|Arcanine, L85, F|
+|poke|p2|Weavile, L63, F|
+|poke|p2|Octillery, L76, F|
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Mind Reader","id":"mindreader","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Confide","id":"confide","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Circle Throw","id":"circlethrow","pp":16,"maxpp":16,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxguard","target":"self"},{"move":"maxguard","target":"self"},{"move":"maxknuckle","target":"adjacentFoe"}]}},{"moves":[{"move":"Moonlight","id":"moonlight","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Scale Shot","id":"scaleshot","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Lash Out","id":"lashout","pp":8,"maxpp":8,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxwyrmwind","target":"adjacentFoe"},{"move":"maxgeyser","target":"adjacentFoe"},{"move":"maxdarkness","target":"adjacentFoe"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":true,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"216/216","active":true,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"152/152","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"271/271","active":false,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"208/208","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"244/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]}}
+
+|
+|t:|1603471194
+|start
+|switch|p1a: Darmanitan|Darmanitan-Zen, L69, M|245/245
+|switch|p1b: Tyrogue|Tyrogue, L78, M|208/208
+|switch|p2a: Octillery|Octillery, L67, F|156/156
+|switch|p2b: Emolga|Emolga, L81, F|216/216
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Laser Focus","id":"laserfocus","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Behemoth Blade","id":"behemothblade","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sand Tomb","id":"sandtomb","pp":24,"maxpp":24,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxsteelspike","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxquake","target":"adjacentFoe"}]}},{"moves":[{"move":"Moonlight","id":"moonlight","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Scale Shot","id":"scaleshot","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Lash Out","id":"lashout","pp":8,"maxpp":8,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxwyrmwind","target":"adjacentFoe"},{"move":"maxgeyser","target":"adjacentFoe"},{"move":"maxdarkness","target":"adjacentFoe"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"2/152","active":true,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"216/216","active":true,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"271/271","active":false,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"208/208","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"244/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]}}
+
+|
+|t:|1603471194
+|switch|p2a: Boltund|Boltund, L50, M|152/152
+|-start|p1a: Darmanitan|Dynamax
+|-heal|p1a: Darmanitan|490/490|[silent]
+|move|p2b: Emolga|Moonlight||[still]
+|-fail|p2b: Emolga
+|debug|move failed because it did nothing
+|move|p1b: Tyrogue|Gear Grind|p2a: Boltund
+|-resisted|p2a: Boltund
+|-damage|p2a: Boltund|137/152
+|-resisted|p2a: Boltund
+|-damage|p2a: Boltund|121/152
+|-hitcount|p2a: Boltund|2
+|move|p1a: Darmanitan|Max Steelspike|p2a: Boltund
+|-resisted|p2a: Boltund
+|-damage|p2a: Boltund|2/152
+|-boost|p1a: Darmanitan|def|1
+|-boost|p1b: Tyrogue|def|1
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":32,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":16,"maxpp":16,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxgeyser","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxknuckle","target":"adjacentFoe"}]}},{"moves":[{"move":"Snarl","id":"snarl","pp":24,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Body Press","id":"bodypress","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bug Buzz","id":"bugbuzz","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Powder Snow","id":"powdersnow","pp":40,"maxpp":40,"target":"allAdjacentFoes","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxdarkness","target":"adjacentFoe"},{"move":"maxknuckle","target":"adjacentFoe"},{"move":"maxflutterby","target":"adjacentFoe"},{"move":"maxhailstorm","target":"adjacentFoe"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"246/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"105/208","active":true,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"2/152","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"216/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"244/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]}}
+
+|
+|t:|1603471194
+|switch|p2b: Weavile|Weavile, L63, F|208/208
+|switch|p2a: Arcanine|Arcanine, L85, F|271/271
+|move|p1b: Tyrogue|Take Down|p2a: Arcanine
+|-damage|p2a: Arcanine|246/271
+|-damage|p1b: Tyrogue|202/208|[from] Recoil
+|move|p1a: Darmanitan|Max Ooze|p2b: Weavile
+|-damage|p2b: Weavile|105/208
+|-boost|p1a: Darmanitan|spa|1
+|-boost|p1b: Tyrogue|spa|1
+|
+|upkeep
+|turn|3
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"492/542","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":true,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"2/152","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"216/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"244/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]},"noCancel":true}
+
+|
+|t:|1603471194
+|-start|p2a: Arcanine|Dynamax
+|-heal|p2a: Arcanine|492/542|[silent]
+|move|p2a: Arcanine|Max Knuckle|p1b: Tyrogue
+|-damage|p1b: Tyrogue|110/208
+|-unboost|p2a: Arcanine|atk|1
+|-boost|p2b: Weavile|atk|1
+|move|p2b: Weavile|Snarl|p1a: Darmanitan|[spread] p1a,p1b
+|debug|Spread modifier: 0.75
+|-supereffective|p1a: Darmanitan
+|debug|Spread modifier: 0.75
+|-resisted|p1b: Tyrogue
+|-crit|p1b: Tyrogue
+|-damage|p1a: Darmanitan|452/490
+|-damage|p1b: Tyrogue|77/208
+|-unboost|p1a: Darmanitan|spa|1
+|-unboost|p1b: Tyrogue|spa|1
+|move|p1b: Tyrogue|Substitute|p1b: Tyrogue
+|-start|p1b: Tyrogue|Substitute
+|-damage|p1b: Tyrogue|25/208
+|move|p1a: Darmanitan|Max Steelspike|p2b: Weavile
+|-supereffective|p2b: Weavile
+|-damage|p2b: Weavile|0 fnt
+|-boost|p1a: Darmanitan|def|1
+|-boost|p1b: Tyrogue|def|1
+|faint|p2b: Weavile
+|
+|-end|p1a: Darmanitan|Dynamax
+|-heal|p1a: Darmanitan|226/245|[silent]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":32,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":15,"maxpp":16,"target":"normal","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxgeyser","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxknuckle","target":"adjacentFoe"}]}},{"moves":[{"move":"Moonlight","id":"moonlight","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Scale Shot","id":"scaleshot","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Lash Out","id":"lashout","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"492/542","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"216/216","active":true,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"2/152","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"244/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]}}
+
+|
+|t:|1603471194
+|switch|p2b: Emolga|Emolga, L81, F|216/216
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Petal Dance","id":"petaldance","pp":16,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Charge","id":"charge","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false}]},{"moves":[{"move":"Moonlight","id":"moonlight","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Scale Shot","id":"scaleshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Lash Out","id":"lashout","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"201/244","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"162/216","active":true,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"2/152","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"246/271","active":false,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"}]}}
+
+|
+|t:|1603471194
+|-end|p2a: Arcanine|Dynamax
+|-heal|p2a: Arcanine|246/271|[silent]
+|switch|p2a: Octillery|Octillery, L76, F|244/244
+|move|p2b: Emolga|Scale Shot|p1b: Tyrogue
+|-activate|p1b: Tyrogue|move: Substitute|[damage]
+|-activate|p1b: Tyrogue|move: Substitute|[damage]
+|-activate|p1b: Tyrogue|move: Substitute|[damage]
+|-activate|p1b: Tyrogue|move: Substitute|[damage]
+|-activate|p1b: Tyrogue|move: Substitute|[damage]
+|-hitcount|p1b: Tyrogue|5
+|-unboost|p2b: Emolga|def|1
+|-boost|p2b: Emolga|spe|1
+|move|p1b: Tyrogue|Overheat|p2b: Emolga
+|-damage|p2b: Emolga|162/216
+|-unboost|p1b: Tyrogue|spa|2
+|move|p1a: Darmanitan|Flash Cannon|p2a: Octillery
+|-resisted|p2a: Octillery
+|-damage|p2a: Octillery|201/244
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Laser Focus","id":"laserfocus","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Behemoth Blade","id":"behemothblade","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sand Tomb","id":"sandtomb","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Moonlight","id":"moonlight","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Scale Shot","id":"scaleshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Lash Out","id":"lashout","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"2/152","active":true,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"113/216","active":true,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"201/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"246/271","active":false,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"}]}}
+
+|
+|t:|1603471194
+|switch|p2a: Boltund|Boltund, L50, M|2/152
+|move|p2b: Emolga|Brine|p1a: Darmanitan
+|-supereffective|p1a: Darmanitan
+|-damage|p1a: Darmanitan|130/245
+|move|p1b: Tyrogue|Gear Grind|p2b: Emolga
+|-resisted|p2b: Emolga
+|-damage|p2b: Emolga|145/216
+|-resisted|p2b: Emolga
+|-damage|p2b: Emolga|129/216
+|-hitcount|p2b: Emolga|2
+|move|p1a: Darmanitan|Astonish|p2b: Emolga
+|-damage|p2b: Emolga|113/216
+|
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Petal Dance","id":"petaldance","pp":16,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Charge","id":"charge","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false}]},{"moves":[{"move":"Moonlight","id":"moonlight","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Scale Shot","id":"scaleshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Lash Out","id":"lashout","pp":7,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"201/244","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"80/216","active":true,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"2/152","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"246/271","active":false,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"}]}}
+
+|
+|t:|1603471194
+|switch|p2a: Octillery|Octillery, L76, F|201/244
+|switch|p1a: Seedot|Seedot, L61, M|139/139
+|move|p2b: Emolga|Lash Out|p1b: Tyrogue
+|-resisted|p1b: Tyrogue
+|debug|Friend Guard weaken
+|-end|p1b: Tyrogue|Substitute
+|move|p1b: Tyrogue|Gear Grind|p2b: Emolga
+|-resisted|p2b: Emolga
+|-damage|p2b: Emolga|97/216
+|-resisted|p2b: Emolga
+|-damage|p2b: Emolga|80/216
+|-hitcount|p2b: Emolga|2
+|
+|upkeep
+|turn|7
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"201/244","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"228/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"2/152","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"80/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"}]}}
+
+|
+|t:|1603471194
+|switch|p2b: Arcanine|Arcanine, L85, F|246/271
+|move|p2a: Octillery|Petal Dance|p1b: Tyrogue
+|debug|Friend Guard weaken
+|-damage|p1b: Tyrogue|0 fnt
+|faint|p1b: Tyrogue
+|move|p1a: Seedot|Rock Throw|p2b: Arcanine
+|-supereffective|p2b: Arcanine
+|-damage|p2b: Arcanine|228/271
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Petal Dance","id":"petaldance"}],"trapped":true},{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":32,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"201/244","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"228/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"2/152","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"80/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"}]}}
+
+|
+|t:|1603471194
+|switch|p1b: Dracovish|Dracovish, L54|168/168
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Petal Dance","id":"petaldance"}],"trapped":true},{"moves":[{"move":"Laser Focus","id":"laserfocus","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Behemoth Blade","id":"behemothblade","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sand Tomb","id":"sandtomb","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"95/244","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"2/152","active":true,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"228/271","active":false,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"80/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"}]}}
+
+|
+|t:|1603471194
+|switch|p2b: Boltund|Boltund, L50, M|2/152
+|switch|p1a: Orbeetle|Orbeetle, L52, M|147/147
+|move|p2a: Octillery|Petal Dance|p1b: Dracovish|[from]lockedmove
+|-damage|p1b: Dracovish|16/168
+|-activate|p1b: Dracovish|ability: Dancer
+|move|p1b: Dracovish|Petal Dance|p2a: Octillery|[from]Dancer
+|-supereffective|p2a: Octillery
+|-damage|p2a: Octillery|95/244
+|move|p1b: Dracovish|Sleep Powder||[still]
+|debug|Disabled by Choice item lock
+|-fail|p1b: Dracovish
+|
+|upkeep
+|turn|9
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"95/244","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":true,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"228/271","active":false,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"80/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"}]}}
+
+|
+|t:|1603471194
+|switch|p1a: Nickit|Nickit, L68, M|144/144
+|move|p2b: Boltund|Laser Focus|p2b: Boltund
+|-start|p2b: Boltund|move: Laser Focus
+|move|p2a: Octillery|Petal Dance|p1a: Nickit|[from]lockedmove
+|-damage|p1a: Nickit|0 fnt
+|-start|p2a: Octillery|confusion|[fatigue]
+|faint|p1a: Nickit
+|-activate|p1b: Dracovish|ability: Dancer
+|move|p1b: Dracovish|Petal Dance|p2b: Boltund|[from]Dancer
+|-damage|p2b: Boltund|0 fnt
+|faint|p2b: Boltund
+|move|p1b: Dracovish|Blast Burn||[still]
+|debug|Disabled by Choice item lock
+|-fail|p1b: Dracovish
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Petal Dance","id":"petaldance","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Charge","id":"charge","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false}]},{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":32,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"95/244","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"228/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"80/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"}]}}
+
+|
+|t:|1603471194
+|switch|p2b: Arcanine|Arcanine, L85, F|228/271
+|switch|p1a: Darmanitan|Darmanitan-Zen, L69, M|130/245
+|turn|10
+
+|request|{"active":[{"moves":[{"move":"Moonlight","id":"moonlight","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Scale Shot","id":"scaleshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Lash Out","id":"lashout","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"29/216","active":true,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"212/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"156/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"95/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]}}
+
+|
+|t:|1603471194
+|switch|p2a: Emolga|Emolga, L81, F|80/216
+|move|p2b: Arcanine|Sweet Scent|p1b: Dracovish|[spread] p1a,p1b
+|-unboost|p1a: Darmanitan|evasion|2
+|-unboost|p1b: Dracovish|evasion|2
+|move|p1b: Dracovish|Night Slash|p2a: Emolga
+|-damage|p2a: Emolga|42/216
+|move|p1a: Darmanitan|Sandstorm|p1a: Darmanitan
+|-weather|Sandstorm
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Emolga|29/216|[from] Sandstorm
+|-damage|p2b: Arcanine|212/271|[from] Sandstorm
+|-damage|p1b: Dracovish|6/168|[from] Sandstorm
+|-damage|p1a: Darmanitan|115/245|[from] Sandstorm
+|upkeep
+|turn|11
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"147/156","active":true,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"196/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"29/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"95/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]}}
+
+|
+|t:|1603471194
+|switch|p2a: Octillery|Octillery, L67, F|156/156
+|move|p2b: Arcanine|Bubble Beam|p1b: Dracovish
+|-resisted|p1b: Dracovish
+|-damage|p1b: Dracovish|0 fnt
+|faint|p1b: Dracovish
+|move|p1a: Darmanitan|Sandstorm||[still]
+|-fail|p1a: Darmanitan
+|debug|move failed because it did nothing
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2b: Arcanine|196/271|[from] Sandstorm
+|-damage|p2a: Octillery|147/156|[from] Sandstorm
+|-damage|p1a: Darmanitan|100/245|[from] Sandstorm
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Mind Reader","id":"mindreader","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Confide","id":"confide","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Circle Throw","id":"circlethrow","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"147/156","active":true,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"196/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"29/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"95/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]}}
+
+|
+|t:|1603471194
+|switch|p1b: Orbeetle|Orbeetle, L52, M|147/147
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Petal Dance","id":"petaldance","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Charge","id":"charge","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false}]},{"moves":[{"move":"Moonlight","id":"moonlight","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Scale Shot","id":"scaleshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Lash Out","id":"lashout","pp":7,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"80/244","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"16/216","active":true,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"196/271","active":false,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"147/156","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"}]}}
+
+|
+|t:|1603471194
+|switch|p2b: Emolga|Emolga, L81, F|29/216
+|switch|p2a: Octillery|Octillery, L76, F|95/244
+|switch|p1a: Seedot|Seedot, L61, M|139/139
+|move|p1b: Orbeetle|Fake Tears|p2b: Emolga
+|-unboost|p2b: Emolga|spd|2
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2b: Emolga|16/216|[from] Sandstorm
+|-damage|p1b: Orbeetle|138/147|[from] Sandstorm
+|-damage|p2a: Octillery|80/244|[from] Sandstorm
+|-damage|p1a: Seedot|131/139|[from] Sandstorm
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Mind Reader","id":"mindreader","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Confide","id":"confide","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Circle Throw","id":"circlethrow","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"138/156","active":true,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"180/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"16/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"80/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]}}
+
+|
+|t:|1603471194
+|switch|p2b: Arcanine|Arcanine, L85, F|196/271
+|switch|p1b: Darmanitan|Darmanitan-Zen, L69, M|100/245
+|switch|p2a: Octillery|Octillery, L67, F|147/156
+|move|p1a: Seedot|Meteor Beam||[still]
+|-prepare|p1a: Seedot|Meteor Beam
+|-boost|p1a: Seedot|spa|1
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2b: Arcanine|180/271|[from] Sandstorm
+|-damage|p2a: Octillery|138/156|[from] Sandstorm
+|-damage|p1b: Darmanitan|85/245|[from] Sandstorm
+|-damage|p1a: Seedot|123/139|[from] Sandstorm
+|upkeep
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"Mind Reader","id":"mindreader","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Confide","id":"confide","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Circle Throw","id":"circlethrow","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Petal Dance","id":"petaldance","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Charge","id":"charge","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"138/156","active":true,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"42/244","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"16/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"180/271","active":false,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"}]}}
+
+|
+|t:|1603471194
+|switch|p2b: Octillery|Octillery, L76, F|80/244
+|move|p2a: Octillery|Mind Reader|p1a: Seedot
+|-activate|p2a: Octillery|move: Mind Reader|[of] p1a: Seedot
+|move|p1b: Darmanitan|Sandstorm||[still]
+|-fail|p1b: Darmanitan
+|debug|move failed because it did nothing
+|move|p1a: Seedot|Meteor Beam|p2b: Octillery|[from]lockedmove
+|-damage|p2b: Octillery|42/244
+|
+|-weather|none
+|upkeep
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Mind Reader","id":"mindreader","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confide","id":"confide","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Circle Throw","id":"circlethrow","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"23/156","active":true,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"180/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"16/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"42/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]}}
+
+|
+|t:|1603471194
+|switch|p2b: Arcanine|Arcanine, L85, F|180/271
+|move|p2a: Octillery|Will-O-Wisp|p1a: Seedot
+|-status|p1a: Seedot|brn
+|move|p1b: Darmanitan|Flash Cannon|p2a: Octillery
+|-damage|p2a: Octillery|23/156
+|debug|illusion cleared
+|replace|p2a: Venipede|Venipede, L67, F
+|-end|p2a: Venipede|Illusion
+|move|p1a: Seedot|Recycle||[still]
+|-fail|p1a: Seedot
+|debug|move failed because it did nothing
+|
+|-damage|p1a: Seedot|115/139 brn|[from] brn
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Mind Reader","id":"mindreader","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Will-O-Wisp","id":"willowisp","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Confide","id":"confide","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Circle Throw","id":"circlethrow","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"3/156","active":true,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"180/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"16/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"42/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]}}
+
+|
+|t:|1603471194
+|move|p1a: Seedot|Shadow Sneak|p2a: Venipede
+|-damage|p2a: Venipede|16/156
+|move|p2b: Arcanine|Defense Curl|p2b: Arcanine
+|-unboost|p2b: Arcanine|def|1
+|move|p2a: Venipede|Confide|p1b: Darmanitan
+|-unboost|p1b: Darmanitan|spa|1
+|move|p1b: Darmanitan|Astonish|p2a: Venipede
+|-damage|p2a: Venipede|3/156
+|
+|-damage|p1a: Seedot|107/139 brn|[from] brn
+|upkeep
+|turn|17
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"0 fnt","active":true,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"164/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"16/216","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"42/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]},"noCancel":true}
+
+|
+|t:|1603471194
+|switch|p1a: Orbeetle|Orbeetle, L52, M|138/147
+|move|p2b: Arcanine|Hammer Arm|p1a: Orbeetle
+|-resisted|p1a: Orbeetle
+|-damage|p1a: Orbeetle|110/147
+|-boost|p2b: Arcanine|spe|1
+|-ability|p1a: Orbeetle|Stamina|boost
+|-boost|p1a: Orbeetle|def|1
+|move|p1b: Darmanitan|Sandstorm|p1b: Darmanitan
+|-weather|Sandstorm
+|move|p2a: Venipede|Circle Throw|p1a: Orbeetle
+|-resisted|p1a: Orbeetle
+|-damage|p1a: Orbeetle|107/147
+|-ability|p1a: Orbeetle|Stamina|boost
+|-boost|p1a: Orbeetle|def|1
+|drag|p1a: Seedot|Seedot, L61, M|107/139 brn
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2b: Arcanine|164/271|[from] Sandstorm
+|-damage|p2a: Venipede|0 fnt|[from] Sandstorm
+|-damage|p1b: Darmanitan|70/245|[from] Sandstorm
+|-damage|p1a: Seedot|99/139 brn|[from] Sandstorm
+|faint|p2a: Venipede
+|-damage|p1a: Seedot|91/139 brn|[from] brn
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Moonlight","id":"moonlight","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Scale Shot","id":"scaleshot","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Lash Out","id":"lashout","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"16/216","active":true,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"164/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"42/244","active":false,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"}]}}
+
+|
+|t:|1603471194
+|switch|p2a: Emolga|Emolga, L81, F|16/216
+|turn|18
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"0 fnt","active":true,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"27/244","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"164/271","active":false,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"}]},"noCancel":true}
+
+|
+|t:|1603471194
+|switch|p2b: Octillery|Octillery, L76, F|42/244
+|switch|p1a: Orbeetle|Orbeetle, L52, M|107/147
+|move|p2a: Emolga|Scale Shot|p1b: Darmanitan
+|-damage|p1b: Darmanitan|60/245
+|-damage|p1b: Darmanitan|49/245
+|-damage|p1b: Darmanitan|38/245
+|-hitcount|p1b: Darmanitan|3
+|-unboost|p2a: Emolga|def|1
+|-boost|p2a: Emolga|spe|1
+|move|p1b: Darmanitan|Flash Cannon|p2a: Emolga
+|-resisted|p2a: Emolga
+|-damage|p2a: Emolga|0 fnt
+|faint|p2a: Emolga
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Orbeetle|98/147|[from] Sandstorm
+|-damage|p2b: Octillery|27/244|[from] Sandstorm
+|-damage|p1b: Darmanitan|23/245|[from] Sandstorm
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":14,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Petal Dance","id":"petaldance","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Charge","id":"charge","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"164/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"27/244","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"0 fnt","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"}]}}
+
+|
+|t:|1603471194
+|switch|p2a: Arcanine|Arcanine, L85, F|164/271
+|turn|19
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"127/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"0 fnt","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"0 fnt","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"}]}}
+
+|
+|t:|1603471194
+|move|p2a: Arcanine|Bubble Beam|p1b: Darmanitan
+|-supereffective|p1b: Darmanitan
+|-damage|p1b: Darmanitan|0 fnt
+|faint|p1b: Darmanitan
+|move|p1a: Orbeetle|Self-Destruct|p2a: Arcanine|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Arcanine|143/271
+|-damage|p2b: Octillery|0 fnt
+|faint|p1a: Orbeetle
+|faint|p2b: Octillery
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Arcanine|127/271|[from] Sandstorm
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":14,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Petal Dance","id":"petaldance","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Charge","id":"charge","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"127/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"0 fnt","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"0 fnt","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"}]}}
+
+|
+|t:|1603471194
+|switch|p1a: Seedot|Seedot, L61, M|91/139 brn
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":30,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":14,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Petal Dance","id":"petaldance","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Charge","id":"charge","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"111/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"0 fnt","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"0 fnt","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"}]}}
+
+|
+|t:|1603471194
+|move|p2a: Arcanine|Sweet Scent|p1a: Seedot
+|-unboost|p1a: Seedot|evasion|2
+|move|p1a: Seedot|Meteor Beam||[still]
+|-prepare|p1a: Seedot|Meteor Beam
+|-boost|p1a: Seedot|spa|1
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Arcanine|111/271|[from] Sandstorm
+|-damage|p1a: Seedot|83/139 brn|[from] Sandstorm
+|-damage|p1a: Seedot|75/139 brn|[from] brn
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":30,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":14,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Petal Dance","id":"petaldance","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Charge","id":"charge","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"49/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"0 fnt","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"0 fnt","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"}]}}
+
+|
+|t:|1603471194
+|move|p2a: Arcanine|Bubble Beam|p1a: Seedot
+|-resisted|p1a: Seedot
+|-damage|p1a: Seedot|18/139 brn
+|move|p1a: Seedot|Meteor Beam|p2a: Arcanine|[from]lockedmove
+|-supereffective|p2a: Arcanine
+|-damage|p2a: Arcanine|49/271
+|
+|-weather|none
+|-damage|p1a: Seedot|10/139 brn|[from] brn
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Sweet Scent","id":"sweetscent","pp":29,"maxpp":32,"target":"allAdjacentFoes","disabled":false},{"move":"Bubble Beam","id":"bubblebeam","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Defense Curl","id":"defensecurl","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":14,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Petal Dance","id":"petaldance","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Charge","id":"charge","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Headbutt","id":"headbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Arcanine","details":"Arcanine, L85, F","condition":"49/271","active":true,"stats":{"atk":248,"def":201,"spa":224,"spd":180,"spe":224},"moves":["sweetscent","bubblebeam","defensecurl","hammerarm"],"baseAbility":"contrary","item":"tr40","pokeball":"pokeball","ability":"contrary"},{"ident":"p2: Octillery","details":"Octillery, L76, F","condition":"0 fnt","active":true,"stats":{"atk":153,"def":137,"spa":229,"spd":138,"spe":137},"moves":["petaldance","charge","headbutt","hail"],"baseAbility":"bigpecks","item":"cellbattery","pokeball":"pokeball","ability":"bigpecks"},{"ident":"p2: Venipede","details":"Venipede, L67, F","condition":"0 fnt","active":false,"stats":{"atk":74,"def":97,"spa":78,"spd":91,"spe":105},"moves":["mindreader","willowisp","confide","circlethrow"],"baseAbility":"illusion","item":"chippedpot","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Boltund","details":"Boltund, L50, M","condition":"0 fnt","active":false,"stats":{"atk":118,"def":87,"spa":121,"spd":79,"spe":146},"moves":["laserfocus","behemothblade","swallow","sandtomb"],"baseAbility":"torrent","item":"wacanberry","pokeball":"pokeball","ability":"torrent"},{"ident":"p2: Weavile","details":"Weavile, L63, F","condition":"0 fnt","active":false,"stats":{"atk":188,"def":132,"spa":98,"spd":120,"spe":214},"moves":["snarl","bodypress","bugbuzz","powdersnow"],"baseAbility":"sandforce","item":"rockyhelmet","pokeball":"pokeball","ability":"sandforce"},{"ident":"p2: Emolga","details":"Emolga, L81, F","condition":"0 fnt","active":false,"stats":{"atk":117,"def":114,"spa":170,"spd":158,"spe":229},"moves":["moonlight","scaleshot","brine","lashout"],"baseAbility":"earlybird","item":"tr95","pokeball":"pokeball","ability":"earlybird"}]}}
+
+|
+|t:|1603471194
+|move|p2a: Arcanine|Sweet Scent|p1a: Seedot
+|-unboost|p1a: Seedot|evasion|2
+|move|p1a: Seedot|Meteor Beam||[still]
+|-prepare|p1a: Seedot|Meteor Beam
+|-boost|p1a: Seedot|spa|1
+|
+|-damage|p1a: Seedot|2/139 brn|[from] brn
+|upkeep
+|turn|23
+
+|
+|t:|1603471194
+|move|p2a: Arcanine|Sweet Scent|p1a: Seedot
+|-unboost|p1a: Seedot|evasion|2
+|move|p1a: Seedot|Meteor Beam|p2a: Arcanine|[from]lockedmove
+|-supereffective|p2a: Arcanine
+|-damage|p2a: Arcanine|0 fnt
+|faint|p2a: Arcanine
+|
+|win|Bot 1

@@ -1,0 +1,769 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"271/271","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"197/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"243/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"165/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"252/252","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|t:|1603471208
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|8
+|tier|[Gen 8] Doubles Custom Game
+|clearpoke
+|poke|p1|Morpeko, L93, F|
+|poke|p1|Mudsdale, L50, F|
+|poke|p1|Sinistea, L81|
+|poke|p1|Eiscue-Noice, L72, F|
+|poke|p1|Escavalier, L84, F|
+|poke|p1|Urshifu-*, L58, M|
+|poke|p2|Braviary, L74, M|
+|poke|p2|Yamper, L75, M|
+|poke|p2|Politoed, L78, F|
+|poke|p2|Arcanine, L53, M|
+|poke|p2|Klang, L77|
+|poke|p2|Kangaskhan, L70, F|
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":24,"maxpp":24,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxphantasm","target":"adjacentFoe"},{"move":"maxstarfall","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxhailstorm","target":"adjacentFoe"}]}},{"moves":[{"move":"Scary Face","id":"scaryface","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Taunt","id":"taunt","pp":32,"maxpp":32,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxguard","target":"self"},{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxguard","target":"self"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"271/271","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"197/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"243/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"165/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"252/252","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471208
+|start
+|switch|p1a: Urshifu|Urshifu-Rapid-Strike, L93, M|279/279
+|switch|p1b: Mudsdale|Mudsdale, L50, F|170/170
+|switch|p2a: Braviary|Braviary, L74, M|271/271
+|switch|p2b: Yamper|Yamper, L75, M|197/197
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":24,"maxpp":24,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxphantasm","target":"adjacentFoe"},{"move":"maxstarfall","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxhailstorm","target":"adjacentFoe"}]}},{"moves":[{"move":"Branch Poke","id":"branchpoke","pp":64,"maxpp":64,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Spirit Break","id":"spiritbreak","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":16,"maxpp":16,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxovergrowth","target":"adjacentFoe"},{"move":"maxsteelspike","target":"adjacentFoe"},{"move":"maxstarfall","target":"adjacentFoe"},{"move":"maxovergrowth","target":"adjacentFoe"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"239/271","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":true,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"197/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"165/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"252/252","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471208
+|switch|p2b: Politoed|Politoed, L78, F|243/243
+|-start|p1b: Mudsdale|Dynamax
+|-heal|p1b: Mudsdale|340/340|[silent]
+|move|p1a: Urshifu|Acid Spray|p2b: Politoed
+|-damage|p2b: Politoed|220/243
+|-unboost|p2b: Politoed|spd|2
+|move|p2a: Braviary|Echoed Voice|p1a: Urshifu
+|-damage|p1a: Urshifu|245/279
+|debug|illusion cleared
+|replace|p1a: Morpeko|Morpeko, L93, F
+|-end|p1a: Morpeko|Illusion
+|move|p1b: Mudsdale|Max Mindstorm|p2a: Braviary
+|-damage|p2a: Braviary|239/271
+|-fieldstart|move: Psychic Terrain
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":24,"maxpp":24,"target":"normal","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxphantasm","target":"adjacentFoe"},{"move":"maxstarfall","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxhailstorm","target":"adjacentFoe"}]}},{"moves":[{"move":"Scary Face","id":"scaryface","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Taunt","id":"taunt","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"462/542","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"133/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"165/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"252/252","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471208
+|switch|p2b: Yamper|Yamper, L75, M|197/197
+|-start|p2a: Braviary|Dynamax
+|-heal|p2a: Braviary|478/542|[silent]
+|move|p1a: Morpeko|Sunny Day|p1a: Morpeko
+|-weather|SunnyDay
+|move|p2a: Braviary|Max Starfall|p1a: Morpeko
+|-supereffective|p1a: Morpeko
+|-damage|p1a: Morpeko|109/279
+|-fieldstart|move: Misty Terrain
+|move|p1b: Mudsdale|Max Rockfall|p2b: Yamper
+|-damage|p2b: Yamper|145/197
+|-weather|Sandstorm
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Morpeko|92/279|[from] Sandstorm
+|-damage|p2a: Braviary|462/542|[from] Sandstorm
+|-damage|p2b: Yamper|133/197|[from] Sandstorm
+|debug|natural status immunity
+|debug|weather immunity
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":24,"maxpp":24,"target":"normal","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxphantasm","target":"adjacentFoe"},{"move":"maxstarfall","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxhailstorm","target":"adjacentFoe"}]}},{"moves":[{"move":"Scary Face","id":"scaryface","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Taunt","id":"taunt","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"446/542","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"165/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"252/252","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471208
+|-end|p1b: Mudsdale|Dynamax
+|-heal|p1b: Mudsdale|170/170|[silent]
+|switch|p1b: Sinistea|Sinistea, L81|208/208
+|move|p1a: Morpeko|Acid Spray|p2b: Yamper
+|-damage|p2b: Yamper|109/197
+|-unboost|p2b: Yamper|spd|2
+|move|p2a: Braviary|Max Strike|p1b: Sinistea
+|-immune|p1b: Sinistea
+|move|p2b: Yamper|Swallow||[still]
+|-fail|p2b: Yamper
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Morpeko|75/279|[from] Sandstorm
+|-damage|p2a: Braviary|446/542|[from] Sandstorm
+|debug|artificial status immunity
+|debug|weather immunity
+|-damage|p2b: Yamper|97/197|[from] Sandstorm
+|upkeep
+|turn|4
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"189/271","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":true,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"252/252","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471208
+|switch|p2b: Arcanine|Arcanine, L53, M|165/165
+|move|p1a: Morpeko|Acid Spray|p2b: Arcanine
+|-damage|p2b: Arcanine|129/165
+|-unboost|p2b: Arcanine|spd|2
+|move|p2a: Braviary|Max Strike|p1a: Morpeko
+|-damage|p1a: Morpeko|0 fnt
+|-unboost|p1b: Sinistea|spe|1
+|faint|p1a: Morpeko
+|move|p1b: Sinistea|Electroweb|p2a: Braviary|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-supereffective|p2a: Braviary
+|debug|Spread modifier: 0.75
+|-damage|p2a: Braviary|394/542
+|-damage|p2b: Arcanine|78/165
+|-unboost|p2a: Braviary|spe|1
+|-unboost|p2b: Arcanine|spe|1
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Braviary|378/542|[from] Sandstorm
+|debug|artificial status immunity
+|debug|weather immunity
+|-damage|p2b: Arcanine|68/165|[from] Sandstorm
+|-end|p2a: Braviary|Dynamax
+|-heal|p2a: Braviary|189/271|[silent]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Max Airstream","id":"maxairstream","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Entrainment","id":"entrainment","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Solar Blade","id":"solarblade","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"189/271","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":true,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"252/252","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471208
+|switch|p1a: Mudsdale|Mudsdale, L50, F|170/170
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":64,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Klang","details":"Klang, L77","condition":"210/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"252/252","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"}]}}
+
+|
+|t:|1603471208
+|switch|p2b: Klang|Klang, L77|223/223
+|move|p2a: Braviary|Ice Fang|p1a: Mudsdale
+|-supereffective|p1a: Mudsdale
+|-damage|p1a: Mudsdale|38/170
+|move|p1b: Sinistea|Max Overgrowth|p2b: Klang
+|-resisted|p2b: Klang
+|-damage|p2b: Klang|221/223
+|move|p1a: Mudsdale|Boomburst|p2b: Klang|[spread] p2a,p2b
+|-immune|p1b: Sinistea
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-resisted|p2b: Klang
+|-damage|p2a: Braviary|165/271
+|-damage|p2b: Klang|210/223
+|
+|-weather|Sandstorm|[upkeep]
+|debug|natural status immunity
+|debug|weather immunity
+|-damage|p2a: Braviary|149/271|[from] Sandstorm
+|debug|artificial status immunity
+|debug|weather immunity
+|debug|natural status immunity
+|debug|weather immunity
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Max Ooze","id":"maxooze","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Jaw Lock","id":"jawlock","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Snipe Shot","id":"snipeshot","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":63,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"252/252","active":true,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Klang","details":"Klang, L77","condition":"210/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"}]}}
+
+|
+|t:|1603471208
+|switch|p2a: Kangaskhan|Kangaskhan, L70, F|252/252
+|switch|p1b: Escavalier|Escavalier, L84, F|259/259
+|switch|p1a: Eiscue|Eiscue-Noice, L72, F|246/246
+|move|p2b: Klang|Splash|p2b: Klang
+|-nothing
+|
+|-weather|none
+|-fieldend|Misty Terrain
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Max Ooze","id":"maxooze","pp":7,"maxpp":8,"target":"adjacentFoe","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Jaw Lock","id":"jawlock","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Snipe Shot","id":"snipeshot","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Branch Poke","id":"branchpoke","pp":64,"maxpp":64,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Spirit Break","id":"spiritbreak","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"252/252","active":true,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":true,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Klang","details":"Klang, L77","condition":"210/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"}]}}
+
+|
+|t:|1603471208
+|switch|p1a: Urshifu|Urshifu-Rapid-Strike, L58, M|201/201
+|switch|p2b: Politoed|Politoed, L78, F|220/243
+|switch|p1b: Mudsdale|Mudsdale, L50, F|38/170
+|move|p2a: Kangaskhan|Max Ooze|p1a: Urshifu
+|-damage|p1a: Urshifu|194/201
+|
+|upkeep
+|turn|8
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"172/252 psn","active":true,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Klang","details":"Klang, L77","condition":"210/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"}]}}
+
+|
+|t:|1603471208
+|switch|p2b: Klang|Klang, L77|210/223
+|move|p2a: Kangaskhan|Snipe Shot|p1b: Mudsdale
+|-supereffective|p1b: Mudsdale
+|-crit|p1b: Mudsdale
+|-damage|p1b: Mudsdale|0 fnt
+|faint|p1b: Mudsdale
+|move|p1a: Urshifu|Poison Jab|p2a: Kangaskhan
+|-damage|p2a: Kangaskhan|203/252
+|-status|p2a: Kangaskhan|psn
+|
+|-damage|p2a: Kangaskhan|172/252 psn|[from] psn
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Max Ooze","id":"maxooze","pp":7,"maxpp":8,"target":"adjacentFoe","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Jaw Lock","id":"jawlock","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Snipe Shot","id":"snipeshot","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":63,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"172/252 psn","active":true,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Klang","details":"Klang, L77","condition":"210/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"}]}}
+
+|
+|t:|1603471208
+|switch|p1b: Sinistea|Sinistea, L81|208/208
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Max Ooze","id":"maxooze","pp":7,"maxpp":8,"target":"adjacentFoe","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Jaw Lock","id":"jawlock","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Snipe Shot","id":"snipeshot","pp":23,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Superpower","id":"superpower","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":63,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"67/252 psn","active":true,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Klang","details":"Klang, L77","condition":"136/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"}]}}
+
+|
+|t:|1603471208
+|move|p2a: Kangaskhan|Jaw Lock|p1a: Urshifu
+|-resisted|p1a: Urshifu
+|-damage|p1a: Urshifu|167/201
+|-activate|p2a: Kangaskhan|trapped
+|-activate|p1a: Urshifu|trapped
+|move|p1a: Urshifu|Double Kick|p2b: Klang
+|-supereffective|p2b: Klang
+|-damage|p2b: Klang|172/223
+|-supereffective|p2b: Klang
+|-damage|p2b: Klang|136/223
+|-hitcount|p2b: Klang|2
+|move|p2b: Klang|Withdraw|p2b: Klang
+|-boost|p2b: Klang|def|1
+|move|p1b: Sinistea|Vital Throw|p2a: Kangaskhan
+|-supereffective|p2a: Kangaskhan
+|-damage|p2a: Kangaskhan|98/252 psn
+|
+|-damage|p2a: Kangaskhan|67/252 psn|[from] psn
+|upkeep
+|turn|10
+
+|request|{"active":[{"moves":[{"move":"Max Ooze","id":"maxooze","pp":7,"maxpp":8,"target":"adjacentFoe","disabled":false},{"move":"Aqua Jet","id":"aquajet","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Jaw Lock","id":"jawlock","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Snipe Shot","id":"snipeshot","pp":22,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Superpower","id":"superpower","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":63,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"23/252 psn","active":true,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Klang","details":"Klang, L77","condition":"127/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"}]}}
+
+|
+|t:|1603471208
+|switch|p1b: Escavalier|Escavalier, L84, F|259/259
+|move|p2a: Kangaskhan|Snipe Shot|p1a: Urshifu
+|-resisted|p1a: Urshifu
+|-damage|p1a: Urshifu|152/201
+|move|p1a: Urshifu|Twister|p2b: Klang|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-resisted|p2b: Klang
+|-damage|p2a: Kangaskhan|54/252 psn
+|-damage|p2b: Klang|131/223
+|move|p2b: Klang|Take Down|p1b: Escavalier
+|-resisted|p1b: Escavalier
+|-damage|p1b: Escavalier|245/259
+|-damage|p2b: Klang|127/223|[from] Recoil
+|
+|-damage|p2a: Kangaskhan|23/252 psn|[from] psn
+|upkeep
+|turn|11
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":true,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"}]},"noCancel":true}
+
+|
+|t:|1603471208
+|move|p2a: Kangaskhan|Aqua Jet|p1a: Urshifu
+|-resisted|p1a: Urshifu
+|-damage|p1a: Urshifu|139/201
+|move|p1a: Urshifu|Pluck|p2a: Kangaskhan
+|-damage|p2a: Kangaskhan|0 fnt
+|-damage|p1a: Urshifu|89/201|[from] ability: Aftermath|[of] p2a: Kangaskhan
+|faint|p2a: Kangaskhan
+|move|p2b: Klang|Take Down|p1b: Escavalier|[miss]
+|-miss|p2b: Klang|p1b: Escavalier
+|move|p1b: Escavalier|Floral Healing|p2b: Klang
+|-heal|p2b: Klang|223/223
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Branch Poke","id":"branchpoke","pp":64,"maxpp":64,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Spirit Break","id":"spiritbreak","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":63,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"220/243","active":true,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"}]}}
+
+|
+|t:|1603471208
+|switch|p2a: Politoed|Politoed, L78, F|220/243
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Branch Poke","id":"branchpoke","pp":64,"maxpp":64,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Spirit Break","id":"spiritbreak","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"180/243","active":true,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"}]}}
+
+|
+|t:|1603471208
+|switch|p2b: Braviary|Braviary, L74, M|149/271
+|switch|p1b: Sinistea|Sinistea, L81|208/208
+|move|p2a: Politoed|Iron Tail|p1a: Urshifu|[miss]
+|-miss|p2a: Politoed|p1a: Urshifu
+|move|p1a: Urshifu|Double Kick|p2a: Politoed
+|-damage|p2a: Politoed|199/243
+|-damage|p2a: Politoed|180/243
+|-hitcount|p2a: Politoed|2
+|
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Branch Poke","id":"branchpoke","pp":64,"maxpp":64,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Spirit Break","id":"spiritbreak","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Max Airstream","id":"maxairstream","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Entrainment","id":"entrainment","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Solar Blade","id":"solarblade","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"146/243","active":true,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"tr10","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":true,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"}]}}
+
+|
+|t:|1603471208
+|switch|p2b: Arcanine|Arcanine, L53, M|68/165
+|switch|p1a: Eiscue|Eiscue-Noice, L72, F|246/246
+|move|p2a: Politoed|Energy Ball|p1b: Sinistea
+|-damage|p1b: Sinistea|144/208
+|move|p1b: Sinistea|Electroweb|p2b: Arcanine|[spread] p2a
+|-miss|p1b: Sinistea|p2b: Arcanine
+|debug|Spread modifier: 0.75
+|-supereffective|p2a: Politoed
+|-damage|p2a: Politoed|146/243
+|-unboost|p2a: Politoed|spe|1
+|
+|upkeep
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"Branch Poke","id":"branchpoke","pp":63,"maxpp":64,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Spirit Break","id":"spiritbreak","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Max Airstream","id":"maxairstream","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Entrainment","id":"entrainment","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Solar Blade","id":"solarblade","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"90/243","active":true,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":true,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"}]}}
+
+|
+|t:|1603471208
+|move|p1a: Eiscue|Knock Off|p2a: Politoed
+|-damage|p2a: Politoed|100/243
+|-enditem|p2a: Politoed|TR10|[from] move: Knock Off|[of] p1a: Eiscue
+|move|p1b: Sinistea|Max Overgrowth|p2a: Politoed
+|-supereffective|p2a: Politoed
+|-damage|p2a: Politoed|90/243
+|move|p2b: Arcanine|Confuse Ray|p1a: Eiscue
+|-start|p1a: Eiscue|confusion
+|move|p2a: Politoed|Branch Poke|p1b: Sinistea
+|-damage|p1b: Sinistea|114/208
+|
+|upkeep
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Scary Face","id":"scaryface","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Taunt","id":"taunt","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Max Airstream","id":"maxairstream","pp":8,"maxpp":8,"target":"adjacentFoe","disabled":false},{"move":"Confuse Ray","id":"confuseray","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Entrainment","id":"entrainment","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Solar Blade","id":"solarblade","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":true,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"90/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"}]}}
+
+|
+|t:|1603471208
+|switch|p1a: Urshifu|Urshifu-Rapid-Strike, L58, M|89/201
+|switch|p1b: Escavalier|Escavalier, L84, F|245/259
+|switch|p2a: Yamper|Yamper, L75, M|97/197
+|move|p2b: Arcanine|Confuse Ray|p1a: Urshifu
+|-start|p1a: Urshifu|confusion
+|
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Scary Face","id":"scaryface","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Taunt","id":"taunt","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Solar Blade","id":"solarblade"}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"97/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"68/165","active":true,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"90/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"}]}}
+
+|
+|t:|1603471208
+|switch|p1b: Sinistea|Sinistea, L81|114/208
+|-activate|p1a: Urshifu|confusion
+|-damage|p1a: Urshifu|69/201|[from] confusion
+|move|p2b: Arcanine|Solar Blade||[still]
+|-prepare|p2b: Arcanine|Solar Blade
+|move|p2a: Yamper|Taunt|p1b: Sinistea
+|-start|p1b: Sinistea|move: Taunt
+|
+|upkeep
+|turn|17
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"88/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":true,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"90/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"}]},"noCancel":true}
+
+|
+|t:|1603471208
+|-activate|p1a: Urshifu|confusion
+|move|p1a: Urshifu|Double Kick|p2b: Arcanine
+|-damage|p2b: Arcanine|44/165
+|-damage|p2b: Arcanine|20/165
+|-hitcount|p2b: Arcanine|2
+|move|p1b: Sinistea|Electroweb|p2b: Arcanine|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-resisted|p2a: Yamper
+|debug|Spread modifier: 0.75
+|-damage|p2a: Yamper|88/197
+|-damage|p2b: Arcanine|0 fnt
+|-unboost|p2a: Yamper|spe|1
+|faint|p2b: Arcanine
+|move|p2a: Yamper|Taunt||[still]
+|-fail|p2a: Yamper
+|debug|move failed because it did nothing
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Scary Face","id":"scaryface","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Taunt","id":"taunt","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":63,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"88/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"90/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|switch|p2b: Klang|Klang, L77|223/223
+|turn|18
+
+|request|{"active":[{"moves":[{"move":"Scary Face","id":"scaryface","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Taunt","id":"taunt","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":63,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"73/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"90/243","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|switch|p1b: Escavalier|Escavalier, L84, F|245/259
+|-end|p1a: Urshifu|confusion
+|move|p1a: Urshifu|Pluck|p2a: Yamper
+|-resisted|p2a: Yamper
+|-damage|p2a: Yamper|73/197
+|move|p2b: Klang|Superpower|p1b: Escavalier
+|-damage|p1b: Escavalier|202/259
+|-unboost|p2b: Klang|atk|1
+|-unboost|p2b: Klang|def|1
+|move|p2a: Yamper|Scary Face|p1a: Urshifu
+|-unboost|p1a: Urshifu|spe|2
+|
+|upkeep
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Scary Face","id":"scaryface","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Taunt","id":"taunt","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Branch Poke","id":"branchpoke","pp":63,"maxpp":64,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Spirit Break","id":"spiritbreak","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"73/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"47/243","active":true,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|switch|p2b: Politoed|Politoed, L78, F|90/243
+|switch|p1b: Eiscue|Eiscue-Noice, L72, F|246/246
+|move|p1a: Urshifu|Double Kick|p2b: Politoed
+|-damage|p2b: Politoed|69/243
+|-damage|p2b: Politoed|47/243
+|-hitcount|p2b: Politoed|2
+|move|p2a: Yamper|Scary Face|p1a: Urshifu
+|-unboost|p1a: Urshifu|spe|2
+|
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Superpower","id":"superpower","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":63,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Branch Poke","id":"branchpoke","pp":63,"maxpp":64,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Spirit Break","id":"spiritbreak","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Klang","details":"Klang, L77","condition":"212/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"47/243","active":true,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"73/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|switch|p1b: Sinistea|Sinistea, L81|114/208
+|switch|p2a: Klang|Klang, L77|223/223
+|move|p2b: Politoed|Iron Tail|p1b: Sinistea
+|-damage|p1b: Sinistea|41/208
+|move|p1a: Urshifu|Pluck|p2a: Klang
+|-resisted|p2a: Klang
+|-damage|p2a: Klang|212/223
+|
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Superpower","id":"superpower","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":63,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Branch Poke","id":"branchpoke","pp":62,"maxpp":64,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Spirit Break","id":"spiritbreak","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Klang","details":"Klang, L77","condition":"160/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"23/243","active":true,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"73/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|move|p2b: Politoed|Branch Poke|p1a: Urshifu
+|-supereffective|p1a: Urshifu
+|-damage|p1a: Urshifu|25/201
+|move|p2a: Klang|Take Down|p1b: Sinistea
+|-immune|p1b: Sinistea
+|move|p1a: Urshifu|Pluck|p2b: Politoed
+|-damage|p2b: Politoed|23/243
+|move|p1b: Sinistea|Vital Throw|p2a: Klang
+|-supereffective|p2a: Klang
+|-damage|p2a: Klang|160/223
+|
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Superpower","id":"superpower","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":62,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":63,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Branch Poke","id":"branchpoke","pp":61,"maxpp":64,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Spirit Break","id":"spiritbreak","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Klang","details":"Klang, L77","condition":"160/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"23/243","active":true,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"73/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|switch|p1b: Eiscue|Eiscue-Noice, L72, F|246/246
+|switch|p1a: Escavalier|Escavalier, L84, F|202/259
+|move|p2b: Politoed|Branch Poke|p1b: Eiscue
+|-crit|p1b: Eiscue
+|-damage|p1b: Eiscue|204/246
+|-ability|p1b: Eiscue|Perish Body
+|move|p2a: Klang|Withdraw|p2a: Klang
+|-boost|p2a: Klang|def|1
+|
+|-start|p1b: Eiscue|perish3
+|-start|p2b: Politoed|perish3
+|upkeep
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Superpower","id":"superpower","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":62,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":63,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Branch Poke","id":"branchpoke","pp":61,"maxpp":64,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Spirit Break","id":"spiritbreak","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Klang","details":"Klang, L77","condition":"160/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"23/243","active":true,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"73/197","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|switch|p1b: Sinistea|Sinistea, L81|41/208
+|move|p2b: Politoed|Iron Tail|p1a: Escavalier
+|-resisted|p1a: Escavalier
+|-damage|p1a: Escavalier|185/259
+|move|p2a: Klang|Superpower|p1a: Escavalier
+|-damage|p1a: Escavalier|147/259
+|-unboost|p2a: Klang|atk|1
+|-unboost|p2a: Klang|def|1
+|move|p1a: Escavalier|Magnet Rise|p1a: Escavalier
+|-start|p1a: Escavalier|Magnet Rise
+|
+|-start|p2b: Politoed|perish2
+|upkeep
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Scary Face","id":"scaryface","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Taunt","id":"taunt","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Branch Poke","id":"branchpoke","pp":61,"maxpp":64,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Spirit Break","id":"spiritbreak","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Energy Ball","id":"energyball","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"62/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"13/243","active":true,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Klang","details":"Klang, L77","condition":"160/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|switch|p2a: Yamper|Yamper, L75, M|73/197
+|move|p2b: Politoed|Energy Ball|p1a: Escavalier
+|-resisted|p1a: Escavalier
+|-damage|p1a: Escavalier|136/259
+|move|p1b: Sinistea|Max Overgrowth|p2b: Politoed
+|-supereffective|p2b: Politoed
+|-damage|p2b: Politoed|13/243
+|move|p1a: Escavalier|Gust|p2a: Yamper
+|-resisted|p2a: Yamper
+|-damage|p2a: Yamper|62/197
+|
+|-start|p2b: Politoed|perish1
+|upkeep
+|turn|25
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"53/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":true,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Klang","details":"Klang, L77","condition":"160/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|switch|p1b: Urshifu|Urshifu-Rapid-Strike, L58, M|25/201
+|move|p2b: Politoed|Branch Poke|p1b: Urshifu
+|-supereffective|p1b: Urshifu
+|-damage|p1b: Urshifu|0 fnt
+|faint|p1b: Urshifu
+|move|p1a: Escavalier|Gust|p2a: Yamper
+|-resisted|p2a: Yamper
+|-damage|p2a: Yamper|53/197
+|move|p2a: Yamper|Swallow||[still]
+|-fail|p2a: Yamper
+|
+|-start|p2b: Politoed|perish0
+|faint|p2b: Politoed
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Scary Face","id":"scaryface","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Taunt","id":"taunt","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"53/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"149/271","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Klang","details":"Klang, L77","condition":"160/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|switch|p2b: Braviary|Braviary, L74, M|149/271
+|switch|p1b: Sinistea|Sinistea, L81|41/208
+|turn|26
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"53/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"117/271","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Klang","details":"Klang, L77","condition":"160/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|move|p2b: Braviary|Ice Fang|p1b: Sinistea
+|-damage|p1b: Sinistea|0 fnt
+|faint|p1b: Sinistea
+|move|p1a: Escavalier|Gust|p2b: Braviary
+|-damage|p2b: Braviary|117/271
+|move|p2a: Yamper|Swallow||[still]
+|-fail|p2a: Yamper
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Scary Face","id":"scaryface","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":13,"maxpp":16,"target":"self","disabled":false},{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Taunt","id":"taunt","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":22,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"53/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"117/271","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Klang","details":"Klang, L77","condition":"160/223","active":false,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|switch|p1b: Eiscue|Eiscue-Noice, L72, F|204/246
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Scary Face","id":"scaryface","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":12,"maxpp":16,"target":"self","disabled":false},{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Taunt","id":"taunt","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":62,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":63,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"53/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Klang","details":"Klang, L77","condition":"121/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"117/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|switch|p2b: Klang|Klang, L77|160/223
+|move|p1b: Eiscue|Dive||[still]
+|-prepare|p1b: Eiscue|Dive
+|move|p1a: Escavalier|Dual Chop|p2b: Klang
+|-resisted|p2b: Klang
+|-crit|p2b: Klang
+|-damage|p2b: Klang|137/223
+|-resisted|p2b: Klang
+|-damage|p2b: Klang|121/223
+|-hitcount|p2b: Klang|2
+|move|p2a: Yamper|Swallow||[still]
+|-fail|p2a: Yamper
+|
+|-end|p1a: Escavalier|Magnet Rise
+|upkeep
+|turn|28
+
+|request|{"active":[{"moves":[{"move":"Scary Face","id":"scaryface","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Swallow","id":"swallow","pp":11,"maxpp":16,"target":"self","disabled":false},{"move":"Ice Shard","id":"iceshard","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Taunt","id":"taunt","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":61,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":63,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"10/197","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Klang","details":"Klang, L77","condition":"121/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"117/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|move|p1b: Eiscue|Dive|p2a: Yamper|[from]lockedmove
+|-damage|p2a: Yamper|10/197
+|move|p2b: Klang|Withdraw|p2b: Klang
+|-boost|p2b: Klang|def|1
+|move|p1a: Escavalier|Magnet Rise|p1a: Escavalier
+|-start|p1a: Escavalier|Magnet Rise
+|move|p2a: Yamper|Swallow||[still]
+|-fail|p2a: Yamper
+|
+|upkeep
+|turn|29
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"0 fnt","active":true,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Klang","details":"Klang, L77","condition":"121/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"117/271","active":false,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]},"noCancel":true}
+
+|
+|t:|1603471208
+|move|p1b: Eiscue|Dive||[still]
+|-prepare|p1b: Eiscue|Dive
+|move|p2b: Klang|Splash|p2b: Klang
+|-nothing
+|move|p1a: Escavalier|Dual Chop|p2a: Yamper
+|-damage|p2a: Yamper|0 fnt
+|-hitcount|p2a: Yamper|1
+|faint|p2a: Yamper
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":22,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":61,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":62,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"117/271","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Klang","details":"Klang, L77","condition":"121/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"0 fnt","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|switch|p2a: Braviary|Braviary, L74, M|117/271
+|turn|30
+
+|request|{"active":[{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":22,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":61,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":62,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"33/271","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Klang","details":"Klang, L77","condition":"117/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"psychicseed","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"0 fnt","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|move|p2a: Braviary|Shadow Sneak|p1a: Escavalier
+|-damage|p1a: Escavalier|115/259
+|move|p1b: Eiscue|Dive|p2a: Braviary|[from]lockedmove
+|-damage|p2a: Braviary|64/271
+|-damage|p1b: Eiscue|174/246|[from] ability: Rough Skin|[of] p2a: Braviary
+|move|p2b: Klang|Take Down|p1a: Escavalier
+|-resisted|p1a: Escavalier
+|-damage|p1a: Escavalier|100/259
+|-damage|p2b: Klang|117/223|[from] Recoil
+|move|p1a: Escavalier|Gust|p2a: Braviary
+|-damage|p2a: Braviary|33/271
+|
+|upkeep
+|turn|31
+
+|request|{"active":[{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":61,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":61,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"3/271","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"rawstberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Klang","details":"Klang, L77","condition":"89/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"0 fnt","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|move|p1b: Eiscue|Knock Off|p2b: Klang
+|-damage|p2b: Klang|89/223
+|-enditem|p2b: Klang|Psychic Seed|[from] move: Knock Off|[of] p1b: Eiscue
+|move|p2b: Klang|Splash|p2b: Klang
+|-nothing
+|move|p2a: Braviary|Ice Fang|p1a: Escavalier
+|-resisted|p1a: Escavalier
+|-damage|p1a: Escavalier|82/259
+|move|p1a: Escavalier|Gust|p2a: Braviary
+|-damage|p2a: Braviary|3/271
+|
+|upkeep
+|turn|32
+
+|request|{"active":[{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":61,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":60,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"0 fnt","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"aspearberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Klang","details":"Klang, L77","condition":"89/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"0 fnt","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|move|p2b: Klang|Splash|p2b: Klang
+|-nothing
+|move|p1b: Eiscue|Switcheroo|p2a: Braviary
+|-activate|p1b: Eiscue|move: Trick|[of] p2a: Braviary
+|-item|p2a: Braviary|Aspear Berry|[from] move: Switcheroo
+|-item|p1b: Eiscue|Rawst Berry|[from] move: Switcheroo
+|move|p2a: Braviary|Echoed Voice|p1b: Eiscue
+|-damage|p1b: Eiscue|131/246
+|move|p1a: Escavalier|Dual Chop|p2a: Braviary
+|-damage|p2a: Braviary|0 fnt
+|-damage|p1a: Escavalier|50/259|[from] ability: Rough Skin|[of] p2a: Braviary
+|-hitcount|p2a: Braviary|1
+|faint|p2a: Braviary
+|
+|-end|p1a: Escavalier|Magnet Rise
+|upkeep
+|turn|33
+
+|request|{"active":[{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":27,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":61,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":60,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"0 fnt","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"aspearberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Klang","details":"Klang, L77","condition":"186/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"0 fnt","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|move|p2b: Klang|Take Down|p1b: Eiscue
+|-damage|p1b: Eiscue|70/246
+|-ability|p1b: Eiscue|Perish Body
+|-damage|p2b: Klang|74/223|[from] Recoil
+|move|p1b: Eiscue|Dive||[still]
+|-prepare|p1b: Eiscue|Dive
+|move|p1a: Escavalier|Floral Healing|p2b: Klang
+|-heal|p2b: Klang|186/223
+|
+|-start|p2b: Klang|perish3
+|-start|p1b: Eiscue|perish3
+|upkeep
+|turn|34
+
+|request|{"active":[{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":26,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":61,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":60,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"0 fnt","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"aspearberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Klang","details":"Klang, L77","condition":"122/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"0 fnt","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|move|p2b: Klang|Take Down|p1a: Escavalier|[miss]
+|-miss|p2b: Klang|p1a: Escavalier
+|move|p1b: Eiscue|Dive|p2b: Klang|[from]lockedmove
+|debug|Negating (sp)def boost/penalty.
+|-crit|p2b: Klang
+|-damage|p2b: Klang|133/223
+|move|p1a: Escavalier|Gust|p2b: Klang
+|-resisted|p2b: Klang
+|-damage|p2b: Klang|122/223
+|
+|-start|p2b: Klang|perish2
+|-start|p1b: Eiscue|perish2
+|upkeep
+|turn|35
+
+|request|{"active":[{"moves":[{"move":"Shadow Sneak","id":"shadowsneak","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Moonblast","id":"moonblast","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Ice Fang","id":"icefang","pp":21,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Superpower","id":"superpower","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":26,"maxpp":32,"target":"normal","disabled":false},{"move":"Withdraw","id":"withdraw","pp":61,"maxpp":64,"target":"self","disabled":false},{"move":"Splash","id":"splash","pp":60,"maxpp":64,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Braviary","details":"Braviary, L74, M","condition":"0 fnt","active":true,"stats":{"atk":242,"def":127,"spa":137,"spd":137,"spe":142},"moves":["shadowsneak","moonblast","echoedvoice","icefang"],"baseAbility":"roughskin","item":"aspearberry","pokeball":"pokeball","ability":"roughskin"},{"ident":"p2: Klang","details":"Klang, L77","condition":"223/223","active":true,"stats":{"atk":149,"def":207,"spa":144,"spd":160,"spe":132},"moves":["superpower","takedown","withdraw","splash"],"baseAbility":"unburden","item":"","pokeball":"pokeball","ability":"unburden"},{"ident":"p2: Kangaskhan","details":"Kangaskhan, L70, F","condition":"0 fnt","active":false,"stats":{"atk":184,"def":138,"spa":74,"spd":122,"spe":178},"moves":["maxooze","aquajet","jawlock","snipeshot"],"baseAbility":"aftermath","item":"moonstone","pokeball":"pokeball","ability":"aftermath"},{"ident":"p2: Yamper","details":"Yamper, L75, M","condition":"0 fnt","active":false,"stats":{"atk":107,"def":107,"spa":78,"spd":131,"spe":72},"moves":["scaryface","swallow","iceshard","taunt"],"baseAbility":"analytic","item":"eviolite","pokeball":"pokeball","ability":"analytic"},{"ident":"p2: Politoed","details":"Politoed, L78, F","condition":"0 fnt","active":false,"stats":{"atk":146,"def":178,"spa":191,"spd":228,"spe":141},"moves":["branchpoke","irontail","spiritbreak","energyball"],"baseAbility":"zenmode","item":"","pokeball":"pokeball","ability":"zenmode"},{"ident":"p2: Arcanine","details":"Arcanine, L53, M","condition":"0 fnt","active":false,"stats":{"atk":143,"def":147,"spa":109,"spd":133,"spe":125},"moves":["maxairstream","confuseray","entrainment","solarblade"],"baseAbility":"immunity","item":"tr79","pokeball":"pokeball","ability":"immunity"}]}}
+
+|
+|t:|1603471208
+|move|p2b: Klang|Superpower|p1b: Eiscue
+|-supereffective|p1b: Eiscue
+|-damage|p1b: Eiscue|0 fnt
+|-unboost|p2b: Klang|atk|1
+|-unboost|p2b: Klang|def|1
+|faint|p1b: Eiscue
+|move|p1a: Escavalier|Floral Healing|p2b: Klang
+|-heal|p2b: Klang|223/223
+|
+|-start|p2b: Klang|perish1
+|upkeep
+|turn|36
+
+|
+|t:|1603471208
+|move|p2b: Klang|Superpower|p1a: Escavalier
+|-damage|p1a: Escavalier|25/259
+|-unboost|p2b: Klang|atk|1
+|-unboost|p2b: Klang|def|1
+|move|p1a: Escavalier|Gust|p2b: Klang
+|-resisted|p2b: Klang
+|-damage|p2b: Klang|210/223
+|
+|-start|p2b: Klang|perish0
+|upkeep
+|faint|p2b: Klang
+|
+|win|Bot 1

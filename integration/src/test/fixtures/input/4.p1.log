@@ -1,0 +1,635 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":true,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"291/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"242/242","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"}]}}
+
+|t:|1603471071
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|singles
+|gen|7
+|tier|[Gen 7] Custom Game
+|clearpoke
+|poke|p1|Cinccino, L78, M|item
+|poke|p1|Haxorus, L91, F|item
+|poke|p1|Azurill, L61, F|item
+|poke|p1|Lunatone, L54|item
+|poke|p1|Jynx, L54, F|item
+|poke|p1|Pidgeotto, L91, M|item
+|poke|p2|Marshadow, L90|item
+|poke|p2|Crabominable, L63, M|item
+|poke|p2|Keldeo, L62|item
+|poke|p2|Grubbin, L50, F|item
+|poke|p2|Silvally-*, L62|item
+|poke|p2|Poipole, L85|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Clangorous Soulblaze","id":"clangoroussoulblaze","pp":1,"maxpp":1,"target":"allAdjacentFoes","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":16,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":true,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"291/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"242/242","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"}]}}
+
+|
+|t:|1603471071
+|start
+|switch|p1a: Cinccino|Cinccino, L78, M|222/222
+|switch|p2a: Marshadow|Marshadow, L90|279/279
+|-weather|DeltaStream|[from] ability: Delta Stream|[of] p2a: Marshadow
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Oblivion Wing","id":"oblivionwing","pp":16,"maxpp":16,"target":"any","disabled":false},{"move":"Curse","id":"curse","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Barrier","id":"barrier","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"291/291","active":true,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"242/242","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"}]}}
+
+|
+|t:|1603471071
+|-weather|none
+|switch|p2a: Crabominable|Crabominable, L63, M|221/221
+|switch|p1a: Haxorus|Haxorus, L91, F|291/291
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Hydro Pump","id":"hydropump","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Plasma Fists","id":"plasmafists","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Judgment","id":"judgment","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Solar Beam","id":"solarbeam","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"242/242","active":true,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Haxorus|Oblivion Wing|p2a: Crabominable
+|-supereffective|p2a: Crabominable
+|-damage|p2a: Crabominable|35/221
+|move|p2a: Crabominable|Dragon Tail|p1a: Haxorus
+|-supereffective|p1a: Haxorus
+|-crit|p1a: Haxorus
+|-damage|p1a: Haxorus|199/291
+|drag|p1a: Pidgeotto|Pidgeotto, L91, M|242/242
+|
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Hydro Pump","id":"hydropump","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Plasma Fists","id":"plasmafists","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Judgment","id":"judgment","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Solar Beam","id":"solarbeam","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"242/242","active":true,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Pidgeotto|Hydro Pump|p2a: Crabominable|[miss]
+|-miss|p1a: Pidgeotto|p2a: Crabominable
+|move|p2a: Crabominable|Misty Terrain|p2a: Crabominable
+|-fieldstart|move: Misty Terrain
+|
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Hydro Pump","id":"hydropump","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Plasma Fists","id":"plasmafists","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Judgment","id":"judgment","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Solar Beam","id":"solarbeam","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"242/242","active":true,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Keldeo|Keldeo, L62|227/227
+|-fieldstart|move: Psychic Terrain|[from] ability: Psychic Surge|[of] p2a: Keldeo
+|move|p1a: Pidgeotto|Plasma Fists|p2a: Keldeo
+|-supereffective|p2a: Keldeo
+|-damage|p2a: Keldeo|61/227
+|-fieldactivate|move: Ion Deluge
+|
+|upkeep
+|turn|5
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"242/242","active":true,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Pidgeotto|Judgment|p2a: Keldeo
+|-damage|p2a: Keldeo|0 fnt
+|faint|p2a: Keldeo
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Hydro Pump","id":"hydropump","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Plasma Fists","id":"plasmafists","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Judgment","id":"judgment","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Solar Beam","id":"solarbeam","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"242/242","active":true,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Grubbin|Grubbin, L50, F|140/140
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Solar Beam","id":"solarbeam"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"228/242","active":true,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Pidgeotto|Solar Beam||[still]
+|-prepare|p1a: Pidgeotto|Solar Beam
+|move|p2a: Grubbin|Petal Blizzard|p1a: Pidgeotto
+|debug|Analytic boost
+|-resisted|p1a: Pidgeotto
+|-damage|p1a: Pidgeotto|228/242
+|
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Hydro Pump","id":"hydropump","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Plasma Fists","id":"plasmafists","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Judgment","id":"judgment","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Solar Beam","id":"solarbeam","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"228/242","active":true,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Pidgeotto|Solar Beam|p2a: Grubbin|[from]lockedmove
+|-resisted|p2a: Grubbin
+|-damage|p2a: Grubbin|23/140
+|move|p2a: Grubbin|Fire Fang|p1a: Pidgeotto|[miss]
+|-miss|p2a: Grubbin|p1a: Pidgeotto
+|
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Solar Beam","id":"solarbeam"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"215/242","active":true,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Pidgeotto|Solar Beam||[still]
+|-prepare|p1a: Pidgeotto|Solar Beam
+|move|p2a: Grubbin|Petal Blizzard|p1a: Pidgeotto
+|debug|Analytic boost
+|-resisted|p1a: Pidgeotto
+|-damage|p1a: Pidgeotto|215/242
+|
+|-fieldend|move: Psychic Terrain
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Hydro Pump","id":"hydropump","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Plasma Fists","id":"plasmafists","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Judgment","id":"judgment","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Solar Beam","id":"solarbeam","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"215/242","active":true,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Silvally|Silvally-Electric, L62|222/222
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Silvally
+|move|p1a: Pidgeotto|Solar Beam|p2a: Silvally|[from]lockedmove
+|debug|weakened by weather
+|-damage|p2a: Silvally|176/222
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|-start|p2a: Silvally|typechange|Normal|[silent]
+|turn|10
+
+|request|{"active":[{"moves":[{"move":"Hydro Pump","id":"hydropump","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Plasma Fists","id":"plasmafists","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Judgment","id":"judgment","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Solar Beam","id":"solarbeam","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"215/242","active":true,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Poipole|Poipole, L85|281/281
+|move|p1a: Pidgeotto|Plasma Fists|p2a: Poipole
+|-damage|p2a: Poipole|207/281
+|-fieldactivate|move: Ion Deluge
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Hydro Pump","id":"hydropump","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Plasma Fists","id":"plasmafists","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Judgment","id":"judgment","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Solar Beam","id":"solarbeam","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"215/242","active":true,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Marshadow|Marshadow, L90|279/279
+|-weather|DeltaStream|[from] ability: Delta Stream|[of] p2a: Marshadow
+|move|p1a: Pidgeotto|Plasma Fists|p2a: Marshadow
+|-damage|p2a: Marshadow|235/279
+|-fieldactivate|move: Ion Deluge
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Hydro Pump","id":"hydropump","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Plasma Fists","id":"plasmafists","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Judgment","id":"judgment","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Solar Beam","id":"solarbeam","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"99/242","active":true,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"166/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|move|p2a: Marshadow|Crabhammer|p1a: Pidgeotto
+|-damage|p1a: Pidgeotto|99/242
+|-damage|p2a: Marshadow|201/279|[from] ability: Iron Barbs|[of] p1a: Pidgeotto
+|move|p1a: Pidgeotto|Plasma Fists|p2a: Marshadow
+|-damage|p2a: Marshadow|156/279
+|-fieldactivate|move: Ion Deluge
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Avalanche","id":"avalanche","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":true,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"99/242","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|switch|p1a: Haxorus|Haxorus, L61, F|166/166
+|move|p2a: Marshadow|Scratch|p1a: Haxorus
+|-damage|p1a: Haxorus|45/166
+|debug|illusion cleared
+|replace|p1a: Azurill|Azurill, L61, F
+|-end|p1a: Azurill|Illusion
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|14
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":true,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|switch|p1a: Pidgeotto|Pidgeotto, L91, M|99/242
+|move|p2a: Marshadow|Self-Destruct|p1a: Pidgeotto
+|-damage|p1a: Pidgeotto|0 fnt
+|faint|p2a: Marshadow
+|-weather|none
+|faint|p1a: Pidgeotto
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Sand Attack","id":"sandattack","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Ice Burn","id":"iceburn","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":true,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Grubbin|Grubbin, L50, F|23/140
+|switch|p1a: Lunatone|Lunatone, L54|177/177
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Inferno Overdrive","id":"infernooverdrive","pp":1,"maxpp":1,"target":"normal","disabled":false},{"move":"Encore","id":"encore","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Pulverizing Pancake","id":"pulverizingpancake","pp":1,"maxpp":1,"target":"normal","disabled":false},{"move":"Hold Hands","id":"holdhands","pp":64,"maxpp":64,"target":"adjacentAlly","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"162/162","active":true,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"liechiberry","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|switch|p1a: Jynx|Jynx, L54, F|162/162
+|switch|p2a: Poipole|Poipole, L85|207/281
+|
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Inferno Overdrive","id":"infernooverdrive","pp":0,"maxpp":1,"target":"normal","disabled":true},{"move":"Encore","id":"encore","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Pulverizing Pancake","id":"pulverizingpancake","pp":1,"maxpp":1,"target":"normal","disabled":false},{"move":"Hold Hands","id":"holdhands","pp":64,"maxpp":64,"target":"adjacentAlly","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"9/162","active":true,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|move|p2a: Poipole|Clangorous Soulblaze|p1a: Jynx
+|-damage|p1a: Jynx|9/162
+|-enditem|p1a: Jynx|Liechi Berry|[eat]
+|-boost|p1a: Jynx|atk|1|[from] item: Liechi Berry
+|-boost|p2a: Poipole|atk|1
+|-boost|p2a: Poipole|def|1
+|-boost|p2a: Poipole|spa|1
+|-boost|p2a: Poipole|spd|1
+|-boost|p2a: Poipole|spe|1
+|move|p1a: Jynx|Inferno Overdrive|p2a: Poipole
+|-damage|p2a: Poipole|206/281
+|
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Inferno Overdrive","id":"infernooverdrive","pp":0,"maxpp":1,"target":"normal","disabled":true},{"move":"Encore","id":"encore","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Pulverizing Pancake","id":"pulverizingpancake","pp":1,"maxpp":1,"target":"normal","disabled":false},{"move":"Hold Hands","id":"holdhands","pp":64,"maxpp":64,"target":"adjacentAlly","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"9/162","active":true,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Crabominable|Crabominable, L63, M|35/221
+|move|p1a: Jynx|Encore||[still]
+|-fail|p1a: Jynx
+|debug|move failed because it did nothing
+|
+|upkeep
+|turn|18
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"9/162","active":true,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Jynx|Pulverizing Pancake|p2a: Crabominable
+|-damage|p2a: Crabominable|0 fnt
+|faint|p2a: Crabominable
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Inferno Overdrive","id":"infernooverdrive","pp":0,"maxpp":1,"target":"normal","disabled":true},{"move":"Encore","id":"encore","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Pulverizing Pancake","id":"pulverizingpancake","pp":0,"maxpp":1,"target":"normal","disabled":true},{"move":"Hold Hands","id":"holdhands","pp":64,"maxpp":64,"target":"adjacentAlly","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"9/162","active":true,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Poipole|Poipole, L85|206/281
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Inferno Overdrive","id":"infernooverdrive","pp":0,"maxpp":1,"target":"normal","disabled":true},{"move":"Encore","id":"encore","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Pulverizing Pancake","id":"pulverizingpancake","pp":0,"maxpp":1,"target":"normal","disabled":true},{"move":"Hold Hands","id":"holdhands","pp":63,"maxpp":64,"target":"adjacentAlly","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"9/162","active":true,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Grubbin|Grubbin, L50, F|23/140
+|move|p1a: Jynx|Hold Hands|null|[notarget]
+|-fail|p1a: Jynx
+|
+|upkeep
+|turn|20
+
+|request|{"forceSwitch":[true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":true,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"}]},"noCancel":true}
+
+|
+|t:|1603471071
+|move|p1a: Jynx|Encore||[still]
+|-fail|p1a: Jynx
+|debug|move failed because it did nothing
+|move|p2a: Grubbin|Petal Blizzard|p1a: Jynx
+|debug|Analytic boost
+|-damage|p1a: Jynx|0 fnt
+|faint|p1a: Jynx
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Oblivion Wing","id":"oblivionwing","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Curse","id":"curse","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Barrier","id":"barrier","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":true,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|switch|p1a: Haxorus|Haxorus, L91, F|199/291
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Oblivion Wing","id":"oblivionwing","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Barrier","id":"barrier","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"199/291","active":true,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Haxorus|Curse|p1a: Haxorus
+|-unboost|p1a: Haxorus|spe|1
+|-boost|p1a: Haxorus|atk|1
+|-boost|p1a: Haxorus|def|1
+|move|p2a: Grubbin|Shadow Force||[still]
+|-prepare|p2a: Grubbin|Shadow Force
+|
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Oblivion Wing","id":"oblivionwing","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Barrier","id":"barrier","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"188/291","active":true,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Haxorus|Barrier|p1a: Haxorus
+|-boost|p1a: Haxorus|def|2
+|move|p2a: Grubbin|Shadow Force|p1a: Haxorus|[from]lockedmove
+|debug|Analytic boost
+|-damage|p1a: Haxorus|188/291
+|
+|upkeep
+|turn|23
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":true,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Haxorus|Drain Punch|p2a: Grubbin
+|-resisted|p2a: Grubbin
+|-damage|p2a: Grubbin|0 fnt
+|-heal|p1a: Haxorus|200/291|[from] drain|[of] p2a: Grubbin
+|faint|p2a: Grubbin
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Oblivion Wing","id":"oblivionwing","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Barrier","id":"barrier","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":true,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Poipole|Poipole, L85|206/281
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Clangorous Soulblaze","id":"clangoroussoulblaze","pp":1,"maxpp":1,"target":"allAdjacentFoes","disabled":false},{"move":"Reversal","id":"reversal","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":16,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":true,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|switch|p1a: Cinccino|Cinccino, L78, M|222/222
+|move|p2a: Poipole|Lovely Kiss|p1a: Cinccino|[miss]
+|-miss|p2a: Poipole|p1a: Cinccino
+|
+|-ability|p1a: Cinccino|Moody|boost
+|-boost|p1a: Cinccino|spe|2
+|-unboost|p1a: Cinccino|def|1
+|upkeep
+|turn|25
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Clangorous Soulblaze","id":"clangoroussoulblaze","pp":1,"maxpp":1,"target":"allAdjacentFoes","disabled":false},{"move":"Reversal","id":"reversal","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":16,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"222/222","active":true,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Cinccino|Reversal|p2a: Poipole
+|-resisted|p2a: Poipole
+|-damage|p2a: Poipole|196/281
+|move|p2a: Poipole|Hurricane|p1a: Cinccino|[miss]
+|-miss|p2a: Poipole|p1a: Cinccino
+|
+|-ability|p1a: Cinccino|Moody|boost
+|-boost|p1a: Cinccino|spe|2
+|-unboost|p1a: Cinccino|spa|1
+|upkeep
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Clangorous Soulblaze","id":"clangoroussoulblaze","pp":1,"maxpp":1,"target":"allAdjacentFoes","disabled":false},{"move":"Reversal","id":"reversal","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":15,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":true,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Cinccino|Magic Room|p1a: Cinccino
+|-fieldstart|move: Magic Room|[of] p1a: Cinccino
+|move|p2a: Poipole|Hurricane|p1a: Cinccino
+|-damage|p1a: Cinccino|116/222
+|
+|-ability|p1a: Cinccino|Moody|boost
+|-boost|p1a: Cinccino|accuracy|2
+|-unboost|p1a: Cinccino|spd|1
+|upkeep
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Clangorous Soulblaze","id":"clangoroussoulblaze","pp":1,"maxpp":1,"target":"allAdjacentFoes","disabled":false},{"move":"Reversal","id":"reversal","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":14,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":true,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Cinccino|Magic Room|p1a: Cinccino
+|-fieldend|move: Magic Room|[of] p1a: Cinccino
+|move|p2a: Poipole|Sharpen|p2a: Poipole
+|-boost|p2a: Poipole|atk|1
+|
+|-ability|p1a: Cinccino|Moody|boost
+|-boost|p1a: Cinccino|evasion|2
+|-unboost|p1a: Cinccino|atk|1
+|upkeep
+|turn|28
+
+|request|{"active":[{"moves":[{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Avalanche","id":"avalanche","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166 slp","active":true,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|switch|p1a: Lunatone|Lunatone, L61|45/166
+|move|p2a: Poipole|Lovely Kiss|p1a: Lunatone
+|-status|p1a: Lunatone|slp|[from] move: Lovely Kiss
+|
+|upkeep
+|turn|29
+
+|request|{"active":[{"moves":[{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Avalanche","id":"avalanche","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166 slp","active":true,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"177/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Silvally|Silvally-Electric, L62|176/222
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Silvally
+|cant|p1a: Lunatone|slp
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|-start|p2a: Silvally|typechange|Normal|[silent]
+|turn|30
+
+|request|{"active":[{"moves":[{"move":"Sand Attack","id":"sandattack","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Ice Burn","id":"iceburn","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"158/177","active":true,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166 slp","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|switch|p1a: Lunatone|Lunatone, L54|177/177
+|move|p2a: Silvally|Chatter|p1a: Lunatone
+|-resisted|p1a: Lunatone
+|-damage|p1a: Lunatone|158/177
+|-start|p1a: Lunatone|confusion
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|31
+
+|request|{"active":[{"moves":[{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Avalanche","id":"avalanche","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166 slp","active":true,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"158/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Poipole|Poipole, L85|196/281
+|switch|p1a: Lunatone|Lunatone, L61|45/166 slp
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|32
+
+|request|{"active":[{"moves":[{"move":"Bulldoze","id":"bulldoze","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Avalanche","id":"avalanche","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Shock Wave","id":"shockwave","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":true,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"158/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Silvally|Silvally-Electric, L62|176/222
+|-curestatus|p1a: Lunatone|slp|[msg]
+|move|p1a: Lunatone|Avalanche|p2a: Silvally
+|-damage|p2a: Silvally|163/222
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|-start|p2a: Silvally|typechange|Normal|[silent]
+|turn|33
+
+|request|{"active":[{"moves":[{"move":"Oblivion Wing","id":"oblivionwing","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Barrier","id":"barrier","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":true,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"158/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Poipole|Poipole, L85|196/281
+|switch|p1a: Haxorus|Haxorus, L91, F|200/291
+|
+|-weather|none
+|upkeep
+|turn|34
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Clangorous Soulblaze","id":"clangoroussoulblaze","pp":1,"maxpp":1,"target":"allAdjacentFoes","disabled":false},{"move":"Reversal","id":"reversal","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":14,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":true,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"158/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|switch|p1a: Cinccino|Cinccino, L78, M|116/222
+|move|p2a: Poipole|Sharpen|p2a: Poipole
+|-boost|p2a: Poipole|atk|1
+|
+|-ability|p1a: Cinccino|Moody|boost
+|-boost|p1a: Cinccino|accuracy|2
+|-unboost|p1a: Cinccino|evasion|1
+|upkeep
+|turn|35
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Clangorous Soulblaze","id":"clangoroussoulblaze","pp":1,"maxpp":1,"target":"allAdjacentFoes","disabled":false},{"move":"Reversal","id":"reversal","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":14,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":true,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"158/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Silvally|Silvally-Electric, L62|163/222
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Silvally
+|move|p1a: Cinccino|Reversal|p2a: Silvally
+|-supereffective|p2a: Silvally
+|-damage|p2a: Silvally|91/222
+|
+|-weather|RainDance|[upkeep]
+|-ability|p1a: Cinccino|Moody|boost
+|-boost|p1a: Cinccino|evasion|2
+|-unboost|p1a: Cinccino|atk|1
+|upkeep
+|-start|p2a: Silvally|typechange|Normal|[silent]
+|turn|36
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":true,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"158/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Cinccino|Clangorous Soulblaze|p2a: Silvally
+|-damage|p2a: Silvally|0 fnt
+|-boost|p1a: Cinccino|atk|1
+|-boost|p1a: Cinccino|def|1
+|-boost|p1a: Cinccino|spa|1
+|-boost|p1a: Cinccino|spd|1
+|-boost|p1a: Cinccino|spe|1
+|faint|p2a: Silvally
+|
+|-weather|RainDance|[upkeep]
+|-ability|p1a: Cinccino|Moody|boost
+|-boost|p1a: Cinccino|evasion|2
+|-unboost|p1a: Cinccino|atk|1
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Clangorous Soulblaze","id":"clangoroussoulblaze","pp":0,"maxpp":1,"target":"allAdjacentFoes","disabled":true},{"move":"Reversal","id":"reversal","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Magic Room","id":"magicroom","pp":14,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":true,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"200/291","active":false,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"158/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|switch|p2a: Poipole|Poipole, L85|196/281
+|turn|37
+
+|request|{"active":[{"moves":[{"move":"Oblivion Wing","id":"oblivionwing","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Barrier","id":"barrier","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"111/291","active":true,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"158/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|switch|p1a: Haxorus|Haxorus, L91, F|200/291
+|move|p2a: Poipole|Hurricane|p1a: Haxorus
+|-damage|p1a: Haxorus|111/291
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|38
+
+|request|{"active":[{"moves":[{"move":"Oblivion Wing","id":"oblivionwing","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Curse","id":"curse","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Barrier","id":"barrier","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"143/291","active":true,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"158/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Haxorus|Drain Punch|p2a: Poipole
+|-resisted|p2a: Poipole
+|-damage|p2a: Poipole|132/281
+|-heal|p1a: Haxorus|143/291|[from] drain|[of] p2a: Poipole
+|move|p2a: Poipole|Sharpen|p2a: Poipole
+|-boost|p2a: Poipole|atk|1
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|39
+
+|request|{"active":[{"moves":[{"move":"Oblivion Wing","id":"oblivionwing","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Curse","id":"curse","pp":14,"maxpp":16,"target":"self","disabled":false},{"move":"Barrier","id":"barrier","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"59/291","active":true,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"158/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Haxorus|Curse|p1a: Haxorus
+|-unboost|p1a: Haxorus|spe|1
+|-boost|p1a: Haxorus|atk|1
+|-boost|p1a: Haxorus|def|1
+|move|p2a: Poipole|Hurricane|p1a: Haxorus
+|-damage|p1a: Haxorus|59/291
+|
+|-weather|none
+|upkeep
+|turn|40
+
+|request|{"active":[{"moves":[{"move":"Oblivion Wing","id":"oblivionwing","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Curse","id":"curse","pp":13,"maxpp":16,"target":"self","disabled":false},{"move":"Barrier","id":"barrier","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Drain Punch","id":"drainpunch","pp":14,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Haxorus","details":"Haxorus, L91, F","condition":"59/291","active":true,"stats":{"atk":334,"def":240,"spa":180,"spd":158,"spe":220},"moves":["oblivionwing","curse","barrier","drainpunch"],"baseAbility":"powerconstruct","item":"tamatoberry","pokeball":"pokeball","ability":"powerconstruct"},{"ident":"p1: Azurill","details":"Azurill, L61, F","condition":"45/166","active":false,"stats":{"atk":53,"def":59,"spa":45,"spd":79,"spe":56},"moves":["bulldoze","avalanche","shockwave","memento"],"baseAbility":"illusion","item":"tangaberry","pokeball":"pokeball","ability":"illusion"},{"ident":"p1: Cinccino","details":"Cinccino, L78, M","condition":"116/222","active":false,"stats":{"atk":203,"def":130,"spa":140,"spd":126,"spe":234},"moves":["belch","clangoroussoulblaze","reversal","magicroom"],"baseAbility":"moody","item":"duskstone","pokeball":"pokeball","ability":"moody"},{"ident":"p1: Pidgeotto","details":"Pidgeotto, L91, M","condition":"0 fnt","active":false,"stats":{"atk":144,"def":162,"spa":166,"spd":116,"spe":180},"moves":["hydropump","plasmafists","judgment","solarbeam"],"baseAbility":"ironbarbs","item":"mawilite","pokeball":"pokeball","ability":"ironbarbs"},{"ident":"p1: Lunatone","details":"Lunatone, L54","condition":"158/177","active":false,"stats":{"atk":90,"def":82,"spa":125,"spd":123,"spe":114},"moves":["sandattack","destinybond","iceburn","thunder"],"baseAbility":"poisonheal","item":"rockiumz","pokeball":"pokeball","ability":"poisonheal"},{"ident":"p1: Jynx","details":"Jynx, L54, F","condition":"0 fnt","active":false,"stats":{"atk":76,"def":79,"spa":149,"spd":134,"spe":123},"moves":["infernooverdrive","encore","pulverizingpancake","holdhands"],"baseAbility":"slushrush","item":"","pokeball":"pokeball","ability":"slushrush"}]}}
+
+|
+|t:|1603471071
+|move|p1a: Haxorus|Curse|p1a: Haxorus
+|-unboost|p1a: Haxorus|spe|1
+|-boost|p1a: Haxorus|atk|1
+|-boost|p1a: Haxorus|def|1
+|move|p2a: Poipole|Hurricane|p1a: Haxorus|[miss]
+|-miss|p2a: Poipole|p1a: Haxorus
+|
+|upkeep
+|turn|41
+
+|
+|t:|1603471071
+|move|p2a: Poipole|Sharpen|p2a: Poipole
+|-boost|p2a: Poipole|atk|1
+|move|p1a: Haxorus|Drain Punch|p2a: Poipole
+|-resisted|p2a: Poipole
+|-damage|p2a: Poipole|0 fnt
+|-heal|p1a: Haxorus|125/291|[from] drain|[of] p2a: Poipole
+|faint|p2a: Poipole
+|
+|win|Bot 1

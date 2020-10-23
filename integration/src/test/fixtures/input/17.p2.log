@@ -1,0 +1,546 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"273/273","active":true,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"185/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"208/208","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"125/125","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"231/231","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"218/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"}]}}
+
+|t:|1603471125
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|6
+|tier|[Gen 6] Doubles Custom Game
+|clearpoke
+|poke|p1|Wailmer, L65, M|item
+|poke|p1|Dragonair, L65, M|item
+|poke|p1|Wormadam, L80, F|item
+|poke|p1|Ledyba, L59, F|item
+|poke|p1|Drapion, L79, F|item
+|poke|p1|Meganium, L70, M|item
+|poke|p2|Grovyle, L95, M|item
+|poke|p2|Aipom, L90, M|item
+|poke|p2|Golduck, L59, M|item
+|poke|p2|Phantump, L57, M|item
+|poke|p2|Shuppet, L99, F|item
+|poke|p2|Pineco, L95, M|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Rock Slide","id":"rockslide","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Me First","id":"mefirst","pp":32,"maxpp":32,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Stun Spore","id":"stunspore","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":16,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"273/273","active":true,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"185/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"208/208","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"125/125","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"231/231","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"218/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|start
+|switch|p1a: Wailmer|Wailmer, L65, M|273/273
+|switch|p1b: Dragonair|Dragonair, L65, M|185/185
+|switch|p2a: Pineco|Pineco, L95, M|212/212
+|switch|p2b: Aipom|Aipom, L90, M|212/212
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Refresh","id":"refresh","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Bind","id":"bind","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Stun Spore","id":"stunspore","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":16,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"208/208","active":true,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"185/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"273/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"125/125","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"231/231","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"218/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p2a: Golduck|Golduck, L59, M|201/201
+|-activate|p2a: Golduck|ability: Forewarn|Outrage|[of] p1b: Dragonair
+|switch|p2b: Phantump|Phantump, L57, M|127/127
+|-ability|p2b: Phantump|Download|boost
+|-boost|p2b: Phantump|atk|1
+|switch|p1a: Wormadam|Wormadam, L80, F|208/208
+|move|p1b: Dragonair|Slam|p2b: Phantump
+|-immune|p2b: Phantump
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Refresh","id":"refresh","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Bind","id":"bind","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"208/208","active":true,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"185/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"273/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"125/125","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"231/231","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"218/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p2a: Aipom|Aipom, L90, M|212/212
+|switch|p2b: Shuppet|Shuppet, L99, F|238/238
+|move|p1b: Dragonair|Outrage|p2b: Shuppet
+|-damage|p2b: Shuppet|99/238
+|-start|p2b: Shuppet|typechange|Dragon|[from] ability: Color Change
+|move|p1a: Wormadam|Body Slam|p2a: Aipom
+|-damage|p2a: Aipom|168/212
+|
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Refresh","id":"refresh","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Bind","id":"bind","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Stun Spore","id":"stunspore","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":15,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"208/208","active":true,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"178/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"273/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"125/125","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"231/231","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"218/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p2b: Pineco|Pineco, L95, M|269/269
+|move|p2a: Aipom|Grass Knot|p1b: Dragonair
+|debug|20 bp
+|-resisted|p1b: Dragonair
+|-damage|p1b: Dragonair|178/185
+|move|p1b: Dragonair|Outrage|p2b: Pineco|[from]lockedmove
+|-damage|p2b: Pineco|212/269
+|-start|p1b: Dragonair|confusion|[fatigue]
+|move|p1a: Wormadam|Body Slam|p2b: Pineco
+|-damage|p2b: Pineco|187/269
+|
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Refresh","id":"refresh","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Bind","id":"bind","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Stun Spore","id":"stunspore","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":15,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"40/208","active":true,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"130/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"273/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"125/125","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"231/231","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"218/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|move|p2a: Aipom|Arm Thrust|p1b: Dragonair
+|-damage|p1b: Dragonair|162/185
+|-damage|p1b: Dragonair|147/185
+|-damage|p1b: Dragonair|130/185
+|-hitcount|p1b: Dragonair|3
+|-activate|p1b: Dragonair|confusion
+|move|p1b: Dragonair|Slam|p2b: Pineco
+|-damage|p2b: Pineco|165/269
+|move|p1a: Wormadam|Shadow Ball|p2a: Aipom
+|-immune|p2a: Aipom
+|move|p2b: Pineco|Attack Order|p1a: Wormadam
+|-supereffective|p1a: Wormadam
+|-damage|p1a: Wormadam|40/208
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Iron Tail","id":"irontail","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sludge Wave","id":"sludgewave","pp":16,"maxpp":16,"target":"allAdjacent","disabled":false},{"move":"Spore","id":"spore","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Cotton Spore","id":"cottonspore","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Grudge","id":"grudge","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Torment","id":"torment","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"125/125","active":true,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"193/231","active":true,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"273/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"40/208","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"130/185","active":false,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"218/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p2a: Golduck|Golduck, L59, M|201/201
+|-activate|p2a: Golduck|ability: Forewarn|Outrage|[of] p1b: Dragonair
+|switch|p1b: Drapion|Drapion, L79, F|231/231
+|switch|p1a: Ledyba|Ledyba, L59, F|125/125
+|move|p2b: Pineco|Twineedle|p1b: Drapion
+|-damage|p1b: Drapion|212/231
+|-damage|p1b: Drapion|193/231
+|-hitcount|p1b: Drapion|2
+|
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Iron Tail","id":"irontail","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sludge Wave","id":"sludgewave","pp":15,"maxpp":16,"target":"allAdjacent","disabled":false},{"move":"Spore","id":"spore","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Cotton Spore","id":"cottonspore","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Grudge","id":"grudge","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Torment","id":"torment","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"125/125","active":true,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"138/231","active":true,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"273/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"40/208","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"130/185","active":false,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"218/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p2a: Shuppet|Shuppet, L99, F|99/238
+|move|p1b: Drapion|Grudge|p1b: Drapion
+|-singlemove|p1b: Drapion|Grudge
+|move|p1a: Ledyba|Sludge Wave|p2b: Pineco|[spread] p1b,p2a,p2b
+|debug|Spread modifier: 0.75
+|-resisted|p1b: Drapion
+|debug|Spread modifier: 0.75
+|-resisted|p2a: Shuppet
+|-crit|p2a: Shuppet
+|debug|Spread modifier: 0.75
+|-damage|p1b: Drapion|184/231
+|-damage|p2a: Shuppet|77/238
+|-damage|p2b: Pineco|138/269
+|-start|p2a: Shuppet|typechange|Poison|[from] ability: Color Change
+|move|p2b: Pineco|Crabhammer|p1b: Drapion
+|-damage|p1b: Drapion|138/231
+|
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Stun Spore","id":"stunspore","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":15,"maxpp":16,"target":"randomNormal","disabled":false}]},{"moves":[{"move":"Cotton Spore","id":"cottonspore","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Grudge","id":"grudge","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Hammer Arm","id":"hammerarm","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Torment","id":"torment","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"130/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"39/231","active":true,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"273/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"40/208","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"125/125","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"218/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p1a: Dragonair|Dragonair, L65, M|130/185
+|debug|removing Grudge before attack
+|move|p1b: Drapion|Cotton Spore|p2b: Pineco|[spread] p2a,p2b
+|-unboost|p2a: Shuppet|spe|2
+|-unboost|p2b: Pineco|spe|2
+|move|p2a: Shuppet|Scratch|p1b: Drapion
+|-crit|p1b: Drapion
+|-damage|p1b: Drapion|81/231
+|move|p2b: Pineco|Twineedle|p1b: Drapion
+|-damage|p1b: Drapion|60/231
+|-damage|p1b: Drapion|39/231
+|-hitcount|p1b: Drapion|2
+|
+|upkeep
+|turn|8
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"196/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":true,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"273/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"40/208","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"125/125","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"130/185","active":false,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p1a: Meganium|Meganium, L70, M|218/218
+|switch|p2b: Golduck|Golduck, L59, M|201/201
+|-activate|p2b: Golduck|ability: Forewarn|Hammer Arm|[of] p1b: Drapion
+|move|p1b: Drapion|Hammer Arm|p2b: Golduck
+|-damage|p2b: Golduck|101/201
+|-unboost|p1b: Drapion|spe|1
+|-damage|p2b: Golduck|47/201
+|-unboost|p1b: Drapion|spe|1
+|-hitcount|p2b: Golduck|2
+|move|p2a: Shuppet|Discharge|p1b: Drapion|[spread] p2b,p1a,p1b
+|debug|Spread modifier: 0.75
+|-supereffective|p2b: Golduck
+|debug|Spread modifier: 0.75
+|-resisted|p1a: Meganium
+|debug|Spread modifier: 0.75
+|-damage|p2b: Golduck|0 fnt
+|-damage|p1a: Meganium|196/218
+|-damage|p1b: Drapion|0 fnt
+|debug|move failed because it did nothing
+|debug|move failed because it did nothing
+|faint|p2b: Golduck
+|faint|p1b: Drapion
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Topsy-Turvy","id":"topsyturvy","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mean Look","id":"meanlook","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Wonder Room","id":"wonderroom","pp":16,"maxpp":16,"target":"all","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":8,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Stun Spore","id":"stunspore","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":15,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"196/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"130/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"273/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"40/208","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"125/125","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p1b: Dragonair|Dragonair, L65, M|130/185
+|switch|p2b: Pineco|Pineco, L95, M|212/212
+|turn|9
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":true,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"130/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"273/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"40/208","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"196/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471125
+|switch|p1a: Ledyba|Ledyba, L59, F|125/125
+|move|p2b: Pineco|Aromatherapy||[still]
+|-activate|p2b: Pineco|move: Aromatherapy
+|-fail|p2b: Pineco
+|debug|move failed because it did nothing
+|move|p1b: Dragonair|Stun Spore|p2a: Shuppet|[miss]
+|-miss|p1b: Dragonair|p2a: Shuppet
+|move|p2a: Shuppet|Scratch|p1a: Ledyba
+|-damage|p1a: Ledyba|0 fnt
+|faint|p1a: Ledyba
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Rock Slide","id":"rockslide","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Me First","id":"mefirst","pp":32,"maxpp":32,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Stun Spore","id":"stunspore","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":15,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"273/273","active":true,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"130/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"40/208","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"196/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p1a: Wailmer|Wailmer, L65, M|273/273
+|turn|10
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"85/273 par","active":true,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":true,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"130/185","active":false,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"196/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471125
+|switch|p1b: Wormadam|Wormadam, L80, F|40/208
+|move|p2b: Pineco|Gunk Shot|p1b: Wormadam
+|-supereffective|p1b: Wormadam
+|-damage|p1b: Wormadam|0 fnt
+|faint|p1b: Wormadam
+|move|p1a: Wailmer|Me First||[still]
+|-fail|p1a: Wailmer
+|move|p2a: Shuppet|Discharge|p1a: Wailmer|[spread] p2b,p1a
+|debug|Spread modifier: 0.75
+|-resisted|p2b: Pineco
+|-crit|p2b: Pineco
+|debug|Spread modifier: 0.75
+|-supereffective|p1a: Wailmer
+|-damage|p2b: Pineco|174/212
+|-damage|p1a: Wailmer|85/273
+|-status|p2b: Pineco|par
+|-status|p1a: Wailmer|par
+|debug|illusion cleared
+|replace|p2b: Grovyle|Grovyle, L95, M
+|-end|p2b: Grovyle|Illusion
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Rock Slide","id":"rockslide","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Me First","id":"mefirst","pp":31,"maxpp":32,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Stun Spore","id":"stunspore","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":15,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"85/273 par","active":true,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"130/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"196/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p1b: Dragonair|Dragonair, L65, M|130/185
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Topsy-Turvy","id":"topsyturvy","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mean Look","id":"meanlook","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Wonder Room","id":"wonderroom","pp":16,"maxpp":16,"target":"all","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":8,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Stun Spore","id":"stunspore","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":15,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"157/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"66/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"85/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p1a: Meganium|Meganium, L70, M|196/218
+|move|p1b: Dragonair|Meteor Mash|p2a: Shuppet
+|-damage|p2a: Shuppet|15/238
+|-start|p2a: Shuppet|typechange|Steel|[from] ability: Color Change
+|move|p2a: Shuppet|Scratch|p1a: Meganium
+|-damage|p1a: Meganium|157/218
+|move|p2b: Grovyle|Bug Bite|p1b: Dragonair
+|-damage|p1b: Dragonair|66/185
+|
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Topsy-Turvy","id":"topsyturvy","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mean Look","id":"meanlook","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Wonder Room","id":"wonderroom","pp":16,"maxpp":16,"target":"all","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"117/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"66/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"85/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|move|p1a: Meganium|Gyro Ball|p2a: Shuppet
+|debug|13 bp
+|-resisted|p2a: Shuppet
+|-damage|p2a: Shuppet|8/238
+|move|p1b: Dragonair|Outrage|p2b: Grovyle
+|-damage|p2b: Grovyle|89/212 par
+|move|p2a: Shuppet|Scratch|p1a: Meganium
+|-damage|p1a: Meganium|117/218
+|move|p2b: Grovyle|Gunk Shot|p1b: Dragonair|[miss]
+|-miss|p2b: Grovyle|p1b: Dragonair
+|
+|upkeep
+|turn|13
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"117/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"66/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"85/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|move|p1a: Meganium|Wonder Room|p1a: Meganium
+|-fieldstart|move: Wonder Room|[of] p1a: Meganium
+|move|p1b: Dragonair|Outrage|p2a: Shuppet|[from]lockedmove
+|-resisted|p2a: Shuppet
+|-damage|p2a: Shuppet|0 fnt
+|faint|p2a: Shuppet
+|move|p2b: Grovyle|Gunk Shot|p1b: Dragonair|[miss]
+|-miss|p2b: Grovyle|p1b: Dragonair
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Topsy-Turvy","id":"topsyturvy","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mean Look","id":"meanlook","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Wonder Room","id":"wonderroom","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"117/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"66/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"85/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p2a: Pineco|Pineco, L95, M|138/269
+|turn|14
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"117/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"66/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"85/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p2b: Phantump|Phantump, L57, M|127/127
+|-ability|p2b: Phantump|Download|boost
+|-boost|p2b: Phantump|atk|1
+|move|p1a: Meganium|Topsy-Turvy|p2b: Phantump
+|-invertboost|p2b: Phantump|[from] move: Topsy-Turvy
+|move|p1b: Dragonair|Outrage|p2a: Pineco|[from]lockedmove
+|-crit|p2a: Pineco
+|-damage|p2a: Pineco|0 fnt
+|-start|p1b: Dragonair|confusion|[fatigue]
+|faint|p2a: Pineco
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Topsy-Turvy","id":"topsyturvy","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Mean Look","id":"meanlook","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Wonder Room","id":"wonderroom","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Stun Spore","id":"stunspore","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":14,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"117/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"66/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"85/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"ganlonberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p2a: Aipom|Aipom, L95, M|89/212 par
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Rock Slide","id":"rockslide","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Me First","id":"mefirst","pp":31,"maxpp":32,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Stun Spore","id":"stunspore","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":14,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"44/273","active":true,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"66/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"117/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p1a: Wailmer|Wailmer, L65, M|85/273
+|switch|p2a: Aipom|Aipom, L90, M|168/212
+|-activate|p1b: Dragonair|confusion
+|move|p1b: Dragonair|Stun Spore|p2a: Aipom
+|-status|p2a: Aipom|par
+|move|p2b: Phantump|Hyperspace Hole|p1a: Wailmer
+|-damage|p1a: Wailmer|44/273
+|-enditem|p1a: Wailmer|Ganlon Berry|[eat]
+|-boost|p1a: Wailmer|def|1|[from] item: Ganlon Berry
+|
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Rock Slide","id":"rockslide","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Me First","id":"mefirst","pp":31,"maxpp":32,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"39/273","active":true,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"66/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"117/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p2a: Aipom|Aipom, L95, M|89/212 par
+|move|p1a: Wailmer|Belch|p2b: Phantump
+|-damage|p2b: Phantump|47/127
+|-end|p1b: Dragonair|confusion
+|move|p1b: Dragonair|Outrage|p2a: Aipom
+|-damage|p2a: Aipom|2/212 par
+|debug|illusion cleared
+|replace|p2a: Grovyle|Grovyle, L95, M
+|-end|p2a: Grovyle|Illusion
+|move|p2b: Phantump|Heat Crash|p1a: Wailmer
+|-resisted|p1a: Wailmer
+|-damage|p1a: Wailmer|39/273
+|
+|upkeep
+|turn|17
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"117/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"66/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"39/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p1a: Meganium|Meganium, L70, M|117/218
+|move|p2b: Phantump|Wide Guard|p2b: Phantump
+|-singleturn|p2b: Phantump|Wide Guard
+|move|p1b: Dragonair|Outrage|p2a: Grovyle|[from]lockedmove
+|-damage|p2a: Grovyle|0 fnt
+|faint|p2a: Grovyle
+|
+|-fieldend|move: Wonder Room
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Topsy-Turvy","id":"topsyturvy","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Mean Look","id":"meanlook","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Wonder Room","id":"wonderroom","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"117/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"66/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"39/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p2a: Aipom|Aipom, L90, M|168/212 par
+|turn|18
+
+|request|{"active":[{"moves":[{"move":"Topsy-Turvy","id":"topsyturvy","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Mean Look","id":"meanlook","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Wonder Room","id":"wonderroom","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Stun Spore","id":"stunspore","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":13,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"95/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"66/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"39/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|move|p1a: Meganium|Wonder Room|p1a: Meganium
+|-fieldstart|move: Wonder Room|[of] p1a: Meganium
+|move|p1b: Dragonair|Outrage|p2a: Aipom|[from]lockedmove
+|-damage|p2a: Aipom|75/212 par
+|-start|p1b: Dragonair|confusion|[fatigue]
+|move|p2b: Phantump|Hyperspace Hole|p1a: Meganium
+|-damage|p1a: Meganium|95/218
+|move|p2a: Aipom|Curse|p2a: Aipom
+|-unboost|p2a: Aipom|spe|1
+|-boost|p2a: Aipom|atk|1
+|-boost|p2a: Aipom|def|1
+|
+|upkeep
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Topsy-Turvy","id":"topsyturvy","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Mean Look","id":"meanlook","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Wonder Room","id":"wonderroom","pp":13,"maxpp":16,"target":"all","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Stun Spore","id":"stunspore","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":13,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"82/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"21/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"39/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|move|p1a: Meganium|Wonder Room|p1a: Meganium
+|-fieldend|move: Wonder Room
+|-activate|p1b: Dragonair|confusion
+|-damage|p1b: Dragonair|37/185|[from] confusion
+|move|p2b: Phantump|Heat Crash|p1b: Dragonair
+|-resisted|p1b: Dragonair
+|-damage|p1b: Dragonair|32/185
+|move|p2a: Aipom|Sandstorm|p2a: Aipom
+|-weather|Sandstorm
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Meganium|82/218|[from] Sandstorm
+|-damage|p1b: Dragonair|21/185|[from] Sandstorm
+|-damage|p2b: Phantump|40/127|[from] Sandstorm
+|-damage|p2a: Aipom|62/212 par|[from] Sandstorm
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Topsy-Turvy","id":"topsyturvy","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Mean Look","id":"meanlook","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Wonder Room","id":"wonderroom","pp":13,"maxpp":16,"target":"all","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Stun Spore","id":"stunspore","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Slam","id":"slam","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":13,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"69/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"10/185","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"39/273","active":false,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|move|p2b: Phantump|Wide Guard|p2b: Phantump
+|-singleturn|p2b: Phantump|Wide Guard
+|move|p1a: Meganium|Topsy-Turvy|p2b: Phantump
+|-invertboost|p2b: Phantump|[from] move: Topsy-Turvy
+|-activate|p1b: Dragonair|confusion
+|move|p1b: Dragonair|Meteor Mash|p2a: Aipom
+|debug|Negating (sp)def boost/penalty.
+|-crit|p2a: Aipom
+|-damage|p2a: Aipom|0 fnt
+|-boost|p1b: Dragonair|atk|1
+|faint|p2a: Aipom
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Meganium|69/218|[from] Sandstorm
+|-damage|p1b: Dragonair|10/185|[from] Sandstorm
+|-damage|p2b: Phantump|33/127|[from] Sandstorm
+|upkeep
+|turn|21
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"6/273","active":true,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"0 fnt","active":true,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"69/218","active":false,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471125
+|switch|p1a: Wailmer|Wailmer, L65, M|39/273
+|-activate|p1b: Dragonair|confusion
+|-damage|p1b: Dragonair|0 fnt|[from] confusion
+|faint|p1b: Dragonair
+|move|p2b: Phantump|Heat Crash|p1a: Wailmer
+|-resisted|p1a: Wailmer
+|-damage|p1a: Wailmer|23/273
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Wailmer|6/273|[from] Sandstorm
+|-damage|p2b: Phantump|26/127|[from] Sandstorm
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Rock Slide","id":"rockslide","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Me First","id":"mefirst","pp":31,"maxpp":32,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Topsy-Turvy","id":"topsyturvy","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Mean Look","id":"meanlook","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Wonder Room","id":"wonderroom","pp":13,"maxpp":16,"target":"all","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"6/273","active":true,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"69/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"0 fnt","active":false,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|switch|p1b: Meganium|Meganium, L70, M|69/218
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Rock Slide","id":"rockslide","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Me First","id":"mefirst","pp":30,"maxpp":32,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Topsy-Turvy","id":"topsyturvy","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Mean Look","id":"meanlook","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Wonder Room","id":"wonderroom","pp":13,"maxpp":16,"target":"all","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false}],"maybeDisabled":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"0 fnt","active":true,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"56/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"0 fnt","active":false,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|move|p1b: Meganium|Mean Look||[still]
+|debug|natural status immunity
+|debug|immune to volatile status
+|-fail|p1b: Meganium
+|debug|move failed because it did nothing
+|move|p1a: Wailmer|Me First||[still]
+|-fail|p1a: Wailmer
+|move|p2b: Phantump|Imprison|p2b: Phantump
+|-start|p2b: Phantump|move: Imprison
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1b: Meganium|56/218|[from] Sandstorm
+|-damage|p1a: Wailmer|0 fnt|[from] Sandstorm
+|-damage|p2b: Phantump|19/127|[from] Sandstorm
+|faint|p1a: Wailmer
+|upkeep
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Rock Slide","id":"rockslide","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Me First","id":"mefirst","pp":30,"maxpp":32,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Topsy-Turvy","id":"topsyturvy","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Mean Look","id":"meanlook","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Wonder Room","id":"wonderroom","pp":13,"maxpp":16,"target":"all","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false}],"maybeDisabled":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"0 fnt","active":true,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"35/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"0 fnt","active":false,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|move|p1b: Meganium|Mean Look||[still]
+|debug|natural status immunity
+|debug|immune to volatile status
+|-fail|p1b: Meganium
+|debug|move failed because it did nothing
+|move|p2b: Phantump|Hyperspace Hole|p1b: Meganium
+|-damage|p1b: Meganium|35/218
+|
+|-weather|none
+|upkeep
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Rock Slide","id":"rockslide","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Me First","id":"mefirst","pp":30,"maxpp":32,"target":"adjacentFoe","disabled":false}]},{"moves":[{"move":"Topsy-Turvy","id":"topsyturvy","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Mean Look","id":"meanlook","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Wonder Room","id":"wonderroom","pp":12,"maxpp":16,"target":"all","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false}],"maybeDisabled":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Wailmer","details":"Wailmer, L65, M","condition":"0 fnt","active":true,"stats":{"atk":118,"def":89,"spa":110,"spd":83,"spe":114},"moves":["belch","rockslide","tickle","mefirst"],"baseAbility":"naturalcure","item":"","pokeball":"pokeball"},{"ident":"p1: Meganium","details":"Meganium, L70, M","condition":"15/218","active":true,"stats":{"atk":181,"def":185,"spa":156,"spd":184,"spe":141},"moves":["topsyturvy","meanlook","wonderroom","gyroball"],"baseAbility":"sweetveil","item":"pinapberry","pokeball":"pokeball"},{"ident":"p1: Ledyba","details":"Ledyba, L59, F","condition":"0 fnt","active":false,"stats":{"atk":49,"def":56,"spa":90,"spd":114,"spe":87},"moves":["irontail","focuspunch","sludgewave","spore"],"baseAbility":"weakarmor","item":"smoothrock","pokeball":"pokeball"},{"ident":"p1: Wormadam","details":"Wormadam, L80, F","condition":"0 fnt","active":false,"stats":{"atk":113,"def":168,"spa":196,"spd":226,"spe":69},"moves":["refresh","bodyslam","bind","shadowball"],"baseAbility":"bulletproof","item":"luckypunch","pokeball":"pokeball"},{"ident":"p1: Dragonair","details":"Dragonair, L65, M","condition":"0 fnt","active":false,"stats":{"atk":151,"def":114,"spa":135,"spd":141,"spe":104},"moves":["stunspore","slam","meteormash","outrage"],"baseAbility":"lightmetal","item":"jawfossil","pokeball":"pokeball"},{"ident":"p1: Drapion","details":"Drapion, L79, F","condition":"0 fnt","active":false,"stats":{"atk":187,"def":203,"spa":152,"spd":161,"spe":182},"moves":["cottonspore","grudge","hammerarm","torment"],"baseAbility":"parentalbond","item":"upgrade","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471125
+|move|p1b: Meganium|Wonder Room|p1b: Meganium
+|-fieldstart|move: Wonder Room|[of] p1b: Meganium
+|move|p2b: Phantump|Hyperspace Hole|p1b: Meganium
+|-damage|p1b: Meganium|15/218
+|
+|upkeep
+|turn|25
+
+|
+|t:|1603471125
+|move|p1b: Meganium|Wonder Room|p1b: Meganium
+|-fieldend|move: Wonder Room
+|move|p2b: Phantump|Hyperspace Hole|p1b: Meganium
+|-damage|p1b: Meganium|0 fnt
+|faint|p1b: Meganium
+|
+|win|Bot 2

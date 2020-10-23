@@ -1,0 +1,637 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":true,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile, L61, F","condition":"171/171","active":false,"stats":{"atk":158,"def":143,"spa":72,"spd":101,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"illusion","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"310/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|t:|1603471145
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|6
+|tier|[Gen 6] Doubles Custom Game
+|clearpoke
+|poke|p1|Flareon, L61, M|item
+|poke|p1|Mandibuzz, L50, F|item
+|poke|p1|Porygon, L71|item
+|poke|p1|Luvdisc, L96, F|item
+|poke|p1|Charizard, L85, M|item
+|poke|p1|Klang, L65|item
+|poke|p2|Sewaddle, L74, M|item
+|poke|p2|Persian, L88, F|item
+|poke|p2|Mawile, L61, F|item
+|poke|p2|Snorlax, L61, F|item
+|poke|p2|Diglett, L89, F|item
+|poke|p2|Skrelp, L58, F|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Perish Song","id":"perishsong","pp":8,"maxpp":8,"target":"all","disabled":false},{"move":"After You","id":"afteryou","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Toxic Spikes","id":"toxicspikes","pp":32,"maxpp":32,"target":"foeSide","disabled":false},{"move":"Heart Swap","id":"heartswap","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":true,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile, L61, F","condition":"171/171","active":false,"stats":{"atk":158,"def":143,"spa":72,"spd":101,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"illusion","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"310/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|start
+|switch|p1a: Flareon|Flareon, L61, M|156/156
+|switch|p1b: Mandibuzz|Mandibuzz, L50, F|177/177
+|switch|p2a: Sewaddle|Sewaddle, L74, M|183/183
+|switch|p2b: Persian|Persian, L88, F|278/278
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Octazooka","id":"octazooka","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Brick Break","id":"brickbreak","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Fusion Bolt","id":"fusionbolt","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":16,"maxpp":16,"target":"randomNormal","disabled":false}],"canMegaEvo":true},{"moves":[{"move":"Belch","id":"belch","pp":5,"maxpp":5,"target":"normal","disabled":true},{"move":"Trick Room","id":"trickroom","pp":5,"maxpp":5,"target":"all","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":5,"maxpp":5,"target":"foeSide","disabled":false},{"move":"Electroweb","id":"electroweb","pp":5,"maxpp":5,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Mawile","details":"Mawile, L61, F","condition":"171/171","active":true,"stats":{"atk":158,"def":143,"spa":72,"spd":101,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"illusion","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"310/310","active":true,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["belch","trickroom","stickyweb","electroweb"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":false,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p2b: Snorlax|Snorlax, L61, F|310/310
+|-transform|p2b: Snorlax|p1a: Flareon|[from] ability: Imposter
+|switch|p1b: Porygon|Porygon, L71|212/212
+|switch|p2a: Skrelp|Skrelp, L61, F|171/171
+|move|p1a: Flareon|Trick Room|p1a: Flareon
+|-fieldstart|move: Trick Room|[of] p1a: Flareon
+|
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Octazooka","id":"octazooka","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Brick Break","id":"brickbreak","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Fusion Bolt","id":"fusionbolt","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":16,"maxpp":16,"target":"randomNormal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":5,"maxpp":5,"target":"normal","disabled":true},{"move":"Trick Room","id":"trickroom","pp":5,"maxpp":5,"target":"all","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":5,"maxpp":5,"target":"foeSide","disabled":false},{"move":"Electroweb","id":"electroweb","pp":4,"maxpp":5,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"310/310","active":true,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["belch","trickroom","stickyweb","electroweb"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":false,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|detailschange|p2a: Skrelp|Skrelp, L58, F
+|-mega|p2a: Skrelp|Skrelp|Mawilite
+|move|p1b: Porygon|Hyperspace Hole|p2a: Skrelp
+|-resisted|p2a: Skrelp
+|-damage|p2a: Skrelp|148/171
+|move|p2a: Skrelp|Octazooka|p1a: Flareon
+|-supereffective|p1a: Flareon
+|-damage|p1a: Flareon|130/156
+|-unboost|p1a: Flareon|accuracy|1
+|move|p1a: Flareon|Sticky Web|p2b: Snorlax
+|-sidestart|p2: Bot 2|move: Sticky Web
+|move|p2b: Snorlax|Electroweb|p1a: Flareon|[spread] p1a,p1b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p1a: Flareon|115/156
+|-damage|p1b: Porygon|187/212
+|-unboost|p1a: Flareon|spe|1
+|-unboost|p1b: Porygon|spe|1
+|
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Octazooka","id":"octazooka","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Brick Break","id":"brickbreak","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Fusion Bolt","id":"fusionbolt","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":16,"maxpp":16,"target":"randomNormal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":5,"maxpp":5,"target":"normal","disabled":true},{"move":"Trick Room","id":"trickroom","pp":5,"maxpp":5,"target":"all","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":4,"maxpp":5,"target":"foeSide","disabled":false},{"move":"Electroweb","id":"electroweb","pp":4,"maxpp":5,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"310/310","active":true,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["belch","trickroom","stickyweb","electroweb"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":false,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p1b: Luvdisc|Luvdisc, L96, F|238/238
+|switch|p1a: Mandibuzz|Mandibuzz, L50, F|177/177
+|move|p2a: Skrelp|Brick Break|p1b: Luvdisc
+|-damage|p1b: Luvdisc|165/238
+|move|p2b: Snorlax|Sticky Web|p1a: Mandibuzz
+|-sidestart|p1: Bot 1|move: Sticky Web
+|
+|upkeep
+|turn|4
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"310/310","active":true,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["belch","trickroom","stickyweb","electroweb"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":false,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|move|p2a: Skrelp|Fusion Bolt|p1b: Luvdisc
+|-supereffective|p1b: Luvdisc
+|-damage|p1b: Luvdisc|0 fnt
+|faint|p1b: Luvdisc
+|move|p1a: Mandibuzz|Role Play|p2a: Skrelp
+|-endability|p1a: Mandibuzz|Water Absorb|[from] move: Role Play
+|-ability|p1a: Mandibuzz|Huge Power|[from] move: Role Play|[of] p2a: Skrelp
+|move|p2b: Snorlax|Sticky Web||[still]
+|-fail|p2b: Snorlax
+|debug|move failed because it did nothing
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Octazooka","id":"octazooka","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Brick Break","id":"brickbreak","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Fusion Bolt","id":"fusionbolt","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":16,"maxpp":16,"target":"randomNormal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":5,"maxpp":5,"target":"normal","disabled":true},{"move":"Trick Room","id":"trickroom","pp":5,"maxpp":5,"target":"all","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":3,"maxpp":5,"target":"foeSide","disabled":false},{"move":"Electroweb","id":"electroweb","pp":4,"maxpp":5,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"310/310","active":true,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["belch","trickroom","stickyweb","electroweb"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":false,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p1b: Charizard|Charizard, L85, M|259/259
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":5,"maxpp":5,"target":"normal","disabled":true},{"move":"Trick Room","id":"trickroom","pp":4,"maxpp":5,"target":"all","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":3,"maxpp":5,"target":"foeSide","disabled":false},{"move":"Electroweb","id":"electroweb","pp":4,"maxpp":5,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"310/310","active":true,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["belch","trickroom","stickyweb","electroweb"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p2a: Persian|Persian, L88, F|278/278
+|-activate|p2a: Persian|move: Sticky Web
+|-unboost|p2a: Persian|spe|1
+|switch|p1a: Klang|Klang, L65|168/168
+|-activate|p1a: Klang|move: Sticky Web
+|-unboost|p1a: Klang|spe|1
+|switch|p1b: Porygon|Porygon, L71|187/212
+|-activate|p1b: Porygon|move: Sticky Web
+|-unboost|p1b: Porygon|spe|1
+|move|p2b: Snorlax|Trick Room|p2b: Snorlax
+|-fieldend|move: Trick Room
+|
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":5,"maxpp":5,"target":"normal","disabled":true},{"move":"Trick Room","id":"trickroom","pp":4,"maxpp":5,"target":"all","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":3,"maxpp":5,"target":"foeSide","disabled":false},{"move":"Electroweb","id":"electroweb","pp":3,"maxpp":5,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":true,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["belch","trickroom","stickyweb","electroweb"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|move|p2a: Persian|Rock Blast|p1a: Klang
+|-resisted|p1a: Klang
+|-crit|p1a: Klang
+|-damage|p1a: Klang|155/168
+|-resisted|p1a: Klang
+|-damage|p1a: Klang|147/168
+|-resisted|p1a: Klang
+|-damage|p1a: Klang|139/168
+|-resisted|p1a: Klang
+|-damage|p1a: Klang|131/168
+|-hitcount|p1a: Klang|4
+|move|p2b: Snorlax|Electroweb|p1a: Klang|[spread] p1a,p1b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p1a: Klang|111/168
+|-damage|p1b: Porygon|159/212
+|-unboost|p1a: Klang|spe|1
+|-unboost|p1b: Porygon|spe|1
+|move|p1a: Klang|Retaliate|p2b: Snorlax
+|-damage|p2b: Snorlax|265/310
+|move|p1b: Porygon|Bone Rush|p2b: Snorlax
+|-supereffective|p2b: Snorlax
+|-damage|p2b: Snorlax|231/310
+|-supereffective|p2b: Snorlax
+|-damage|p2b: Snorlax|197/310
+|-supereffective|p2b: Snorlax
+|-damage|p2b: Snorlax|161/310
+|-supereffective|p2b: Snorlax
+|-damage|p2b: Snorlax|129/310
+|-supereffective|p2b: Snorlax
+|-damage|p2b: Snorlax|99/310
+|-hitcount|p2b: Snorlax|5
+|
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":5,"maxpp":5,"target":"normal","disabled":true},{"move":"Trick Room","id":"trickroom","pp":4,"maxpp":5,"target":"all","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":2,"maxpp":5,"target":"foeSide","disabled":false},{"move":"Electroweb","id":"electroweb","pp":3,"maxpp":5,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"quickclaw","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":true,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["belch","trickroom","stickyweb","electroweb"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p1a: Charizard|Charizard, L85, M|259/259
+|move|p2a: Persian|Trick|p1b: Porygon
+|-activate|p2a: Persian|move: Trick|[of] p1b: Porygon
+|-item|p1b: Porygon|Wepear Berry|[from] move: Trick
+|-item|p2a: Persian|Quick Claw|[from] move: Trick
+|move|p2b: Snorlax|Sticky Web||[still]
+|-fail|p2b: Snorlax
+|debug|move failed because it did nothing
+|move|p1b: Porygon|Swallow||[still]
+|-fail|p1b: Porygon
+|
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Vise Grip","id":"visegrip","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Feint","id":"feint","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"224/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"quickclaw","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":true,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p2b: Diglett|Diglett, L89, F|163/163
+|-activate|p2b: Diglett|move: Sticky Web
+|-unboost|p2b: Diglett|spe|1
+|move|p1a: Charizard|Autotomize|p1a: Charizard
+|-boost|p1a: Charizard|spe|2
+|-start|p1a: Charizard|Autotomize
+|move|p2a: Persian|Flash|p1a: Charizard
+|-unboost|p1a: Charizard|accuracy|1
+|move|p1b: Porygon|Night Daze|p2a: Persian
+|-damage|p2a: Persian|224/278
+|
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Vise Grip","id":"visegrip","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Feint","id":"feint","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"quickclaw","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":true,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p1b: Flareon|Flareon, L61, M|115/156
+|-activate|p1b: Flareon|move: Sticky Web
+|-unboost|p1b: Flareon|spe|1
+|move|p1a: Charizard|Conversion 2|p2a: Persian
+|-start|p1a: Charizard|typechange|Ghost
+|move|p2a: Persian|Metronome|p2a: Persian
+|move|p2a: Persian|Slack Off|p2a: Persian|[from]Metronome
+|-heal|p2a: Persian|278/278
+|move|p2b: Diglett|Vise Grip|p1a: Charizard
+|-immune|p1a: Charizard
+|
+|upkeep
+|turn|10
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Vise Grip","id":"visegrip","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Feint","id":"feint","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"adamantorb","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":true,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|-activate|p2a: Persian|item: Quick Claw
+|
+|t:|1603471145
+|move|p2a: Persian|Trick|p1a: Charizard
+|-activate|p2a: Persian|move: Trick|[of] p1a: Charizard
+|-item|p1a: Charizard|Quick Claw|[from] move: Trick
+|-item|p2a: Persian|Adamant Orb|[from] move: Trick
+|move|p1a: Charizard|Bind|p2b: Diglett|[miss]
+|-miss|p1a: Charizard|p2b: Diglett
+|move|p2b: Diglett|Meteor Mash|p1b: Flareon
+|-resisted|p1b: Flareon
+|-damage|p1b: Flareon|69/156
+|move|p1b: Flareon|Trick Room|p1b: Flareon
+|-fieldstart|move: Trick Room|[of] p1b: Flareon
+|
+|upkeep
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Pin Missile","id":"pinmissile","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Pain Split","id":"painsplit","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Superpower","id":"superpower","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hold Back","id":"holdback","pp":64,"maxpp":64,"target":"normal","disabled":false}]},{"moves":[{"move":"Vise Grip","id":"visegrip","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Feint","id":"feint","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":true,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"163/163","active":true,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":false,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"adamantorb","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p2a: Skrelp|Skrelp, L58, F|163/163
+|-activate|p2a: Skrelp|move: Sticky Web
+|-unboost|p2a: Skrelp|spe|1
+|move|p2b: Diglett|Feint|p1b: Flareon
+|-damage|p1b: Flareon|38/156
+|move|p1b: Flareon|Sticky Web||[still]
+|-fail|p1b: Flareon
+|debug|move failed because it did nothing
+|move|p1a: Charizard|Thunder|p2b: Diglett
+|-immune|p2b: Diglett
+|
+|-ability|p2a: Skrelp|Moody|boost
+|-boost|p2a: Skrelp|evasion|2
+|-unboost|p2a: Skrelp|spd|1
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Vise Grip","id":"visegrip","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Feint","id":"feint","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"adamantorb","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":true,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|-activate|p1a: Charizard|item: Quick Claw
+|
+|t:|1603471145
+|switch|p2a: Persian|Persian, L88, F|278/278
+|-activate|p2a: Persian|move: Sticky Web
+|-unboost|p2a: Persian|spe|1
+|switch|p1b: Mandibuzz|Mandibuzz, L50, F|177/177
+|move|p1a: Charizard|Bind|p2a: Persian|[miss]
+|-miss|p1a: Charizard|p2a: Persian
+|move|p2b: Diglett|Take Down|p1b: Mandibuzz
+|-damage|p1b: Mandibuzz|111/177
+|-damage|p2b: Diglett|146/163|[from] Recoil
+|
+|upkeep
+|turn|13
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"quickclaw","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":true,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|-activate|p1a: Charizard|item: Quick Claw
+|
+|t:|1603471145
+|switch|p1b: Flareon|Flareon, L61, M|38/156
+|-activate|p1b: Flareon|move: Sticky Web
+|-unboost|p1b: Flareon|spe|1
+|move|p1a: Charizard|Conversion 2|p2b: Diglett
+|-start|p1a: Charizard|typechange|Rock
+|move|p2b: Diglett|Meteor Mash|p1b: Flareon
+|-resisted|p1b: Flareon
+|-damage|p1b: Flareon|0 fnt
+|faint|p1b: Flareon
+|move|p2a: Persian|Trick|p1a: Charizard
+|-activate|p2a: Persian|move: Trick|[of] p1a: Charizard
+|-item|p1a: Charizard|Adamant Orb|[from] move: Trick
+|-item|p2a: Persian|Quick Claw|[from] move: Trick
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Vise Grip","id":"visegrip","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Feint","id":"feint","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"quickclaw","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":true,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p1b: Porygon|Porygon, L71|159/212
+|-activate|p1b: Porygon|move: Sticky Web
+|-unboost|p1b: Porygon|spe|1
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"Role Play","id":"roleplay","pp":5,"maxpp":5,"target":"normal","disabled":false},{"move":"Flamethrower","id":"flamethrower","pp":5,"maxpp":5,"target":"normal","disabled":false},{"move":"Endeavor","id":"endeavor","pp":5,"maxpp":5,"target":"normal","disabled":false},{"move":"Shadow Force","id":"shadowforce","pp":5,"maxpp":5,"target":"normal","disabled":false}]},{"moves":[{"move":"Vise Grip","id":"visegrip","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Meteor Mash","id":"meteormash","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Feint","id":"feint","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Take Down","id":"takedown","pp":31,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":true,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["roleplay","flamethrower","endeavor","shadowforce"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":true,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Persian","details":"Persian, L88, F","condition":"278/278","active":false,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"quickclaw","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p1b: Mandibuzz|Mandibuzz, L50, F|111/177
+|switch|p2a: Snorlax|Snorlax, L61, F|99/310
+|-activate|p2a: Snorlax|move: Sticky Web
+|-unboost|p2a: Snorlax|spe|1
+|-transform|p2a: Snorlax|p1b: Mandibuzz|[from] ability: Imposter
+|switch|p1a: Klang|Klang, L65|111/168
+|-activate|p1a: Klang|move: Sticky Web
+|-unboost|p1a: Klang|spe|1
+|move|p2b: Diglett|Vise Grip|p1b: Mandibuzz
+|-damage|p1b: Mandibuzz|73/177
+|
+|-fieldend|move: Trick Room
+|upkeep
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Octazooka","id":"octazooka","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Brick Break","id":"brickbreak","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Fusion Bolt","id":"fusionbolt","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":16,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"253/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"quickclaw","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"148/171","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p2b: Mawile|Mawile-Mega, L61, F|148/171
+|-activate|p2b: Mawile|move: Sticky Web
+|-unboost|p2b: Mawile|spe|1
+|switch|p2a: Persian|Persian, L88, F|278/278
+|-activate|p2a: Persian|move: Sticky Web
+|-unboost|p2a: Persian|spe|1
+|move|p1b: Mandibuzz|Flamethrower|p2a: Persian
+|-damage|p2a: Persian|253/278
+|move|p1a: Klang|Destiny Bond|p1a: Klang
+|-singlemove|p1a: Klang|Destiny Bond
+|
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage"}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"253/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"quickclaw","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"73/171","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|move|p2a: Persian|Rock Blast|p1a: Klang
+|-resisted|p1a: Klang
+|-damage|p1a: Klang|103/168
+|-resisted|p1a: Klang
+|-damage|p1a: Klang|94/168
+|-resisted|p1a: Klang
+|-damage|p1a: Klang|85/168
+|-resisted|p1a: Klang
+|-damage|p1a: Klang|77/168
+|-resisted|p1a: Klang
+|-damage|p1a: Klang|68/168
+|-hitcount|p1a: Klang|5
+|move|p1b: Mandibuzz|Endeavor|p2b: Mawile
+|-damage|p2b: Mawile|73/171
+|debug|removing Destiny Bond before attack
+|move|p1a: Klang|Moonlight|p1a: Klang
+|-heal|p1a: Klang|152/168
+|move|p2b: Mawile|Outrage|p1a: Klang
+|-resisted|p1a: Klang
+|-damage|p1a: Klang|90/168
+|
+|upkeep
+|turn|17
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"253/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"quickclaw","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"73/171","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p1a: Charizard|Charizard, L85, M|259/259
+|move|p2a: Persian|Rock Blast|p1b: Mandibuzz
+|-supereffective|p1b: Mandibuzz
+|-damage|p1b: Mandibuzz|33/177
+|-supereffective|p1b: Mandibuzz
+|-damage|p1b: Mandibuzz|0 fnt
+|-hitcount|p1b: Mandibuzz|2
+|faint|p1b: Mandibuzz
+|move|p2b: Mawile|Outrage|p1a: Charizard|[from]lockedmove
+|-damage|p1a: Charizard|157/259
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage"}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"253/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"quickclaw","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"73/171","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p1b: Klang|Klang, L65|90/168
+|-activate|p1b: Klang|move: Sticky Web
+|-unboost|p1b: Klang|spe|1
+|turn|18
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Octazooka","id":"octazooka","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Brick Break","id":"brickbreak","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Fusion Bolt","id":"fusionbolt","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":15,"maxpp":16,"target":"randomNormal","disabled":false}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"249/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"quickclaw","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"42/171","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|move|p1a: Charizard|Bind|p2b: Mawile
+|debug|Rivalry weaken
+|-resisted|p2b: Mawile
+|-damage|p2b: Mawile|69/171
+|-activate|p2b: Mawile|move: Bind|[of] p1a: Charizard
+|move|p2a: Persian|Flash|p1a: Charizard
+|-unboost|p1a: Charizard|accuracy|1
+|move|p1b: Klang|Magnitude|p2a: Persian|[spread] p2a,p2b
+|-activate|p1b: Klang|move: Magnitude|4
+|-immune|p1a: Charizard
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-supereffective|p2b: Mawile
+|-damage|p2a: Persian|249/278
+|-damage|p2b: Mawile|63/171
+|move|p2b: Mawile|Outrage|p1b: Klang|[from]lockedmove
+|-resisted|p1b: Klang
+|-damage|p1b: Klang|25/168
+|-enditem|p1b: Klang|Salac Berry|[eat]
+|-boost|p1b: Klang|spe|1|[from] item: Salac Berry
+|-start|p2b: Mawile|confusion|[fatigue]
+|
+|-damage|p2b: Mawile|42/171|[from] move: Bind|[partiallytrapped]
+|upkeep
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage"}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"249/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"quickclaw","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"42/171","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p1a: Porygon|Porygon, L71|159/212
+|-activate|p1a: Porygon|move: Sticky Web
+|-unboost|p1a: Porygon|spe|1
+|move|p2a: Persian|Flash|p1b: Klang
+|-unboost|p1b: Klang|accuracy|1
+|move|p1b: Klang|Destiny Bond|p1b: Klang
+|-singlemove|p1b: Klang|Destiny Bond
+|-activate|p2b: Mawile|confusion
+|move|p2b: Mawile|Outrage|p1a: Porygon
+|-damage|p1a: Porygon|2/212
+|
+|-end|p2b: Mawile|Bind|[partiallytrapped]|[silent]
+|upkeep
+|turn|20
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"249/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"42/171","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|move|p2a: Persian|Trick|p1b: Klang
+|-activate|p2a: Persian|move: Trick|[of] p1b: Klang
+|-item|p1b: Klang|Quick Claw|[from] move: Trick
+|-enditem|p2a: Persian|Quick Claw|[silent]|[from] move: Trick
+|move|p1b: Klang|Destiny Bond|p1b: Klang
+|-singlemove|p1b: Klang|Destiny Bond
+|-activate|p2b: Mawile|confusion
+|move|p2b: Mawile|Outrage|p1a: Porygon|[from]lockedmove
+|-damage|p1a: Porygon|0 fnt
+|faint|p1a: Porygon
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Octazooka","id":"octazooka","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Brick Break","id":"brickbreak","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Fusion Bolt","id":"fusionbolt","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":14,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"249/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"42/171","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p1a: Charizard|Charizard, L85, M|157/259
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Fly","id":"fly"}],"trapped":true},{"moves":[{"move":"Octazooka","id":"octazooka","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Brick Break","id":"brickbreak","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Fusion Bolt","id":"fusionbolt","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Outrage","id":"outrage","pp":14,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"249/278","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"42/171","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|move|p1a: Charizard|Bind|p2b: Mawile|[miss]
+|-miss|p1a: Charizard|p2b: Mawile
+|move|p2a: Persian|Metronome|p2a: Persian
+|move|p2a: Persian|Fly||[from]Metronome|[still]
+|-prepare|p2a: Persian|Fly
+|debug|removing Destiny Bond before attack
+|move|p1b: Klang|Moonlight|p1b: Klang
+|-heal|p1b: Klang|109/168
+|-end|p2b: Mawile|confusion
+|move|p2b: Mawile|Octazooka|p1b: Klang|[miss]
+|-miss|p2b: Mawile|p1b: Klang
+|
+|upkeep
+|turn|22
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"178/278 par","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"0 fnt","active":true,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471145
+|move|p1a: Charizard|Thunder|p2a: Persian
+|debug|Rivalry weaken
+|-damage|p2a: Persian|178/278
+|-status|p2a: Persian|par
+|cant|p2a: Persian|par
+|move|p1b: Klang|Destiny Bond|p1b: Klang
+|-singlemove|p1b: Klang|Destiny Bond
+|move|p2b: Mawile|Brick Break|p1b: Klang
+|-supereffective|p1b: Klang
+|-crit|p1b: Klang
+|-damage|p1b: Klang|0 fnt
+|faint|p1b: Klang
+|-activate|p1b: Klang|move: Destiny Bond
+|faint|p2b: Mawile
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Rock Blast","id":"rockblast","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Trick","id":"trick","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Flash","id":"flash","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Metronome","id":"metronome","pp":14,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Autotomize","id":"autotomize","pp":5,"maxpp":5,"target":"self","disabled":false},{"move":"Conversion 2","id":"conversion2","pp":5,"maxpp":5,"target":"normal","disabled":false},{"move":"Bind","id":"bind","pp":5,"maxpp":5,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":5,"maxpp":5,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Persian","details":"Persian, L88, F","condition":"178/278 par","active":true,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":true,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["autotomize","conversion2","bind","thunder"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":false,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"0 fnt","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p2b: Snorlax|Snorlax, L61, F|99/310
+|-activate|p2b: Snorlax|move: Sticky Web
+|-unboost|p2b: Snorlax|spe|1
+|-transform|p2b: Snorlax|p1a: Charizard|[from] ability: Imposter
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Perish Song","id":"perishsong","pp":8,"maxpp":8,"target":"all","disabled":false},{"move":"After You","id":"afteryou","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Toxic Spikes","id":"toxicspikes","pp":32,"maxpp":32,"target":"foeSide","disabled":false},{"move":"Heart Swap","id":"heartswap","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Pin Missile","id":"pinmissile","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Pain Split","id":"painsplit","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Superpower","id":"superpower","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hold Back","id":"holdback","pp":64,"maxpp":64,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":true,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":true,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"},{"ident":"p2: Persian","details":"Persian, L88, F","condition":"178/278 par","active":false,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"0 fnt","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p2b: Skrelp|Skrelp, L58, F|163/163
+|-activate|p2b: Skrelp|move: Sticky Web
+|-unboost|p2b: Skrelp|spe|1
+|switch|p2a: Sewaddle|Sewaddle, L74, M|183/183
+|-activate|p2a: Sewaddle|move: Sticky Web
+|-unboost|p2a: Sewaddle|spe|1
+|move|p1a: Charizard|Autotomize|p1a: Charizard
+|-boost|p1a: Charizard|spe|2
+|-start|p1a: Charizard|Autotomize
+|
+|-ability|p2b: Skrelp|Moody|boost
+|-boost|p2b: Skrelp|accuracy|2
+|-unboost|p2b: Skrelp|evasion|1
+|upkeep
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Perish Song","id":"perishsong","pp":7,"maxpp":8,"target":"all","disabled":false},{"move":"After You","id":"afteryou","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Toxic Spikes","id":"toxicspikes","pp":32,"maxpp":32,"target":"foeSide","disabled":false},{"move":"Heart Swap","id":"heartswap","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Pin Missile","id":"pinmissile","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Pain Split","id":"painsplit","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Superpower","id":"superpower","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Hold Back","id":"holdback","pp":64,"maxpp":64,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":true,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":true,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"},{"ident":"p2: Persian","details":"Persian, L88, F","condition":"178/278 par","active":false,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"0 fnt","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":false,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["fusionflare","fellstinger","helpinghand","magmastorm"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|move|p1a: Charizard|Thunder|p2a: Sewaddle|[miss]
+|-miss|p1a: Charizard|p2a: Sewaddle
+|move|p2b: Skrelp|Pin Missile|p1a: Charizard
+|-resisted|p1a: Charizard
+|-damage|p1a: Charizard|156/259
+|-resisted|p1a: Charizard
+|-damage|p1a: Charizard|155/259
+|-resisted|p1a: Charizard
+|-crit|p1a: Charizard
+|-damage|p1a: Charizard|153/259
+|-resisted|p1a: Charizard
+|-damage|p1a: Charizard|152/259
+|-hitcount|p1a: Charizard|4
+|move|p2a: Sewaddle|Perish Song|p2a: Sewaddle
+|-start|p1a: Charizard|perish3|[silent]
+|-start|p2a: Sewaddle|perish3|[silent]
+|-start|p2b: Skrelp|perish3|[silent]
+|-fieldactivate|move: Perish Song
+|
+|-start|p1a: Charizard|perish3
+|-start|p2b: Skrelp|perish3
+|-start|p2a: Sewaddle|perish3
+|-ability|p2b: Skrelp|Moody|boost
+|-boost|p2b: Skrelp|atk|2
+|-unboost|p2b: Skrelp|spa|1
+|upkeep
+|turn|25
+
+|request|{"active":[{"moves":[{"move":"Perish Song","id":"perishsong","pp":7,"maxpp":8,"target":"all","disabled":false},{"move":"After You","id":"afteryou","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Toxic Spikes","id":"toxicspikes","pp":32,"maxpp":32,"target":"foeSide","disabled":false},{"move":"Heart Swap","id":"heartswap","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Autotomize","id":"autotomize","pp":5,"maxpp":5,"target":"self","disabled":false},{"move":"Conversion 2","id":"conversion2","pp":5,"maxpp":5,"target":"normal","disabled":false},{"move":"Bind","id":"bind","pp":5,"maxpp":5,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":5,"maxpp":5,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":true,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":true,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["autotomize","conversion2","bind","thunder"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Persian","details":"Persian, L88, F","condition":"178/278 par","active":false,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"0 fnt","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|switch|p2b: Snorlax|Snorlax, L61, F|99/310
+|-activate|p2b: Snorlax|move: Sticky Web
+|-unboost|p2b: Snorlax|spe|1
+|-transform|p2b: Snorlax|p1a: Charizard|[from] ability: Imposter
+|move|p1a: Charizard|Conversion 2||[still]
+|-fail|p1a: Charizard
+|debug|move failed because it did nothing
+|move|p2a: Sewaddle|After You||[still]
+|-fail|p2a: Sewaddle
+|debug|move failed because it did nothing
+|
+|-start|p1a: Charizard|perish2
+|-start|p2a: Sewaddle|perish2
+|upkeep
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Perish Song","id":"perishsong","pp":7,"maxpp":8,"target":"all","disabled":false},{"move":"After You","id":"afteryou","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Toxic Spikes","id":"toxicspikes","pp":31,"maxpp":32,"target":"foeSide","disabled":false},{"move":"Heart Swap","id":"heartswap","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Autotomize","id":"autotomize","pp":5,"maxpp":5,"target":"self","disabled":false},{"move":"Conversion 2","id":"conversion2","pp":5,"maxpp":5,"target":"normal","disabled":false},{"move":"Bind","id":"bind","pp":4,"maxpp":5,"target":"normal","disabled":false},{"move":"Thunder","id":"thunder","pp":5,"maxpp":5,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Sewaddle","details":"Sewaddle, L74, M","condition":"183/183","active":true,"stats":{"atk":137,"def":134,"spa":105,"spd":121,"spe":78},"moves":["perishsong","afteryou","toxicspikes","heartswap"],"baseAbility":"galewings","item":"lustrousorb","pokeball":"pokeball"},{"ident":"p2: Snorlax","details":"Snorlax, L61, F","condition":"99/310","active":true,"stats":{"atk":186,"def":106,"spa":139,"spd":159,"spe":68},"moves":["autotomize","conversion2","bind","thunder"],"baseAbility":"imposter","item":"masterball","pokeball":"pokeball"},{"ident":"p2: Persian","details":"Persian, L88, F","condition":"178/278 par","active":false,"stats":{"atk":162,"def":161,"spa":176,"spd":143,"spe":243},"moves":["rockblast","trick","flash","metronome"],"baseAbility":"vitalspirit","item":"","pokeball":"pokeball"},{"ident":"p2: Diglett","details":"Diglett, L89, F","condition":"146/163","active":false,"stats":{"atk":148,"def":58,"spa":110,"spd":124,"spe":222},"moves":["visegrip","meteormash","feint","takedown"],"baseAbility":"waterveil","item":"griseousorb","pokeball":"pokeball"},{"ident":"p2: Mawile","details":"Mawile-Mega, L61, F","condition":"0 fnt","active":false,"stats":{"atk":183,"def":192,"spa":72,"spd":155,"spe":86},"moves":["octazooka","brickbreak","fusionbolt","outrage"],"baseAbility":"hugepower","item":"mawilite","pokeball":"pokeball"},{"ident":"p2: Skrelp","details":"Skrelp, L58, F","condition":"163/163","active":false,"stats":{"atk":97,"def":98,"spa":106,"spd":87,"spe":93},"moves":["pinmissile","painsplit","superpower","holdback"],"baseAbility":"moody","item":"premierball","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471145
+|move|p2b: Snorlax|Bind|p1a: Charizard
+|debug|Rivalry weaken
+|-damage|p1a: Charizard|147/259
+|-activate|p1a: Charizard|move: Bind|[of] p2b: Snorlax
+|move|p1a: Charizard|Thunder|p2b: Snorlax|[miss]
+|-miss|p1a: Charizard|p2b: Snorlax
+|move|p2a: Sewaddle|Toxic Spikes|p1a: Charizard
+|-sidestart|p1: Bot 1|move: Toxic Spikes
+|
+|-damage|p1a: Charizard|115/259|[from] move: Bind|[partiallytrapped]
+|-start|p1a: Charizard|perish1
+|-start|p2a: Sewaddle|perish1
+|upkeep
+|turn|27
+
+|
+|t:|1603471145
+|switch|p2a: Persian|Persian, L88, F|178/278 par
+|-activate|p2a: Persian|move: Sticky Web
+|-unboost|p2a: Persian|spe|1
+|move|p2b: Snorlax|Autotomize|p2b: Snorlax
+|-boost|p2b: Snorlax|spe|2
+|move|p1a: Charizard|Thunder|p2a: Persian|[miss]
+|-miss|p1a: Charizard|p2a: Persian
+|
+|-damage|p1a: Charizard|83/259|[from] move: Bind|[partiallytrapped]
+|-start|p1a: Charizard|perish0
+|upkeep
+|faint|p1a: Charizard
+|
+|win|Bot 2

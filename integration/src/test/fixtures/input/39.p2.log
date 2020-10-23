@@ -1,0 +1,685 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"221/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"204/204","active":true,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"215/215","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"brightpowder","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"tr36","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|t:|1603471203
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|8
+|tier|[Gen 8] Doubles Custom Game
+|clearpoke
+|poke|p1|Exeggcute, L86, F|
+|poke|p1|Zorua, L92, F|
+|poke|p1|Rillaboom, L58, M|
+|poke|p1|Budew, L53, M|
+|poke|p1|Dugtrio-Alola, L92, M|
+|poke|p1|Pupitar, L85, M|
+|poke|p2|Zeraora, L79|
+|poke|p2|Gengar, L63, F|
+|poke|p2|Clawitzer, L57, F|
+|poke|p2|Butterfree, L93, M|
+|poke|p2|Salandit, L56, F|
+|poke|p2|Thievul, L79, M|
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":16,"maxpp":16,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxphantasm","target":"adjacentFoe"},{"move":"maxdarkness","target":"adjacentFoe"}]}},{"moves":[{"move":"Revenge","id":"revenge","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Final Gambit","id":"finalgambit","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Discharge","id":"discharge","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxknuckle","target":"adjacentFoe"},{"move":"maxknuckle","target":"adjacentFoe"},{"move":"maxstarfall","target":"adjacentFoe"},{"move":"maxlightning","target":"adjacentFoe"}]}}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"221/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"204/204","active":true,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"215/215","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"brightpowder","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"tr36","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|start
+|switch|p1a: Exeggcute|Exeggcute, L86, F|221/221
+|switch|p1b: Zorua|Zorua, L92, F|204/204
+|switch|p2a: Zeraora|Zeraora, L79|258/258
+|switch|p2b: Gengar|Gengar, L63, F|184/184
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxphantasm","target":"adjacentFoe"},{"move":"maxdarkness","target":"adjacentFoe"}]}},{"moves":[{"move":"Revenge","id":"revenge","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Final Gambit","id":"finalgambit","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Discharge","id":"discharge","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"442/442","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"204/204","active":true,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"215/215","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"brightpowder","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"tr36","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p2a: Thievul|Thievul, L57, M|186/186
+|-start|p1a: Exeggcute|Dynamax
+|-heal|p1a: Exeggcute|442/442|[silent]
+|move|p2b: Gengar|Ally Switch|p2b: Gengar
+|swap|p2b: Gengar|0|[from] move: Ally Switch
+|move|p1a: Exeggcute|Max Darkness|p2b: Thievul
+|-start|p1a: Exeggcute|typechange|Dark|[from] ability: Protean
+|-damage|p2b: Thievul|108/186
+|-unboost|p2a: Gengar|spd|1
+|-unboost|p2b: Thievul|spd|1
+|debug|illusion cleared
+|replace|p2b: Clawitzer|Clawitzer, L57, F
+|-end|p2b: Clawitzer|Illusion
+|move|p1b: Zorua|Revenge|p2b: Clawitzer
+|-damage|p2b: Clawitzer|39/186
+|
+|upkeep
+|turn|2
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"442/442","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":true,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"215/215","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"brightpowder","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"tr36","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p2a: Butterfree|Butterfree, L93, M|284/284
+|switch|p2b: Salandit|Salandit, L56, F|158/158
+|move|p1b: Zorua|Final Gambit|p2a: Butterfree
+|-damage|p2a: Butterfree|80/284
+|faint|p1b: Zorua
+|move|p1a: Exeggcute|Max Phantasm|p2b: Salandit
+|-start|p1a: Exeggcute|typechange|Ghost|[from] ability: Protean
+|-damage|p2b: Salandit|0 fnt
+|-unboost|p2a: Butterfree|def|1
+|faint|p2b: Salandit
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxphantasm","target":"adjacentFoe"},{"move":"maxdarkness","target":"adjacentFoe"}]}},{"moves":[{"move":"Outrage","id":"outrage","pp":16,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Stuff Cheeks","id":"stuffcheeks","pp":16,"maxpp":16,"target":"self","disabled":true},{"move":"Cut","id":"cut","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Endeavor","id":"endeavor","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"442/442","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"215/215","active":true,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"brightpowder","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"tr36","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p1b: Rillaboom|Rillaboom, L58, M|215/215
+|switch|p2b: Gengar|Gengar, L63, F|184/184
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"215/215","active":true,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"brightpowder","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"tr36","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p2b: Thievul|Thievul, L79, M|250/250
+|-start|p2a: Butterfree|Dynamax
+|-heal|p2a: Butterfree|160/568|[silent]
+|move|p2a: Butterfree|Max Wyrmwind|p1a: Exeggcute
+|-damage|p1a: Exeggcute|141/442
+|-unboost|p1a: Exeggcute|atk|1
+|-unboost|p1b: Rillaboom|atk|1
+|move|p1b: Rillaboom|Outrage|p2b: Thievul
+|-damage|p2b: Thievul|190/250
+|move|p1a: Exeggcute|Max Phantasm|p2a: Butterfree
+|-damage|p2a: Butterfree|96/568
+|-unboost|p2a: Butterfree|def|1
+|-unboost|p2b: Thievul|def|1
+|
+|-end|p1a: Exeggcute|Dynamax
+|-heal|p1a: Exeggcute|71/221|[silent]
+|upkeep
+|turn|4
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"tr36","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"215/215","active":true,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"brightpowder","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p2b: Gengar|Gengar, L57, F|39/186
+|switch|p1a: Budew|Budew, L53, M|145/145
+|-weather|PrimordialSea|[from] ability: Primordial Sea|[of] p1a: Budew
+|move|p2a: Butterfree|Max Guard|p2a: Butterfree
+|-singleturn|p2a: Butterfree|Max Guard
+|move|p1b: Rillaboom|Outrage|p2b: Gengar|[from]lockedmove
+|-damage|p2b: Gengar|0 fnt
+|debug|illusion cleared
+|replace|p2b: Clawitzer|Clawitzer, L57, F
+|-end|p2b: Clawitzer|Illusion
+|faint|p2b: Clawitzer
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":64,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage"}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"tr36","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"215/215","active":true,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"brightpowder","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p2b: Zeraora|Zeraora, L79|258/258
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":64,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Stuff Cheeks","id":"stuffcheeks","pp":16,"maxpp":16,"target":"self","disabled":true},{"move":"Cut","id":"cut","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Endeavor","id":"endeavor","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"tr36","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"53/215","active":true,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"brightpowder","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|move|p2a: Butterfree|Max Guard||[still]
+|debug|Success chance: 33%
+|-fail|p2a: Butterfree
+|move|p2b: Zeraora|Steel Beam|p1b: Rillaboom
+|debug|brightpowder - decreasing accuracy
+|-damage|p1b: Rillaboom|53/215
+|-damage|p2b: Zeraora|129/258|[from] mindblown
+|move|p1b: Rillaboom|Outrage|p2b: Zeraora|[from]lockedmove
+|-damage|p2b: Zeraora|76/258
+|-start|p1b: Rillaboom|confusion|[fatigue]
+|move|p1a: Budew|Shadow Ball|p2a: Butterfree
+|-damage|p2a: Butterfree|81/568
+|
+|-weather|PrimordialSea|[upkeep]
+|-end|p2a: Butterfree|Dynamax
+|-heal|p2a: Butterfree|41/284|[silent]
+|upkeep
+|turn|6
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"tr36","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"35/215","active":true,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"brightpowder","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|move|p2b: Zeraora|Psychic Terrain|p2b: Zeraora
+|-fieldstart|move: Psychic Terrain
+|move|p2a: Butterfree|No Retreat|p2a: Butterfree
+|-boost|p2a: Butterfree|atk|1
+|-boost|p2a: Butterfree|def|1
+|-boost|p2a: Butterfree|spa|1
+|-boost|p2a: Butterfree|spd|1
+|-boost|p2a: Butterfree|spe|1
+|-start|p2a: Butterfree|move: No Retreat
+|-activate|p1b: Rillaboom|confusion
+|-damage|p1b: Rillaboom|35/215|[from] confusion
+|move|p1a: Budew|Eerie Impulse|p2b: Zeraora
+|-unboost|p2b: Zeraora|spa|2
+|-enditem|p2b: Zeraora|Eject Pack
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":32,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":64,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Stuff Cheeks","id":"stuffcheeks","pp":16,"maxpp":16,"target":"self","disabled":true},{"move":"Cut","id":"cut","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Endeavor","id":"endeavor","pp":8,"maxpp":8,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"tr36","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"35/215","active":true,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"brightpowder","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p2b: Thievul|Thievul, L79, M|190/250
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|7
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":true,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]},"noCancel":true}
+
+|
+|t:|1603471203
+|move|p2a: Butterfree|Corrosive Gas|p1a: Budew|[spread] p2b,p1a,p1b
+|debug|brightpowder - decreasing accuracy
+|-enditem|p2b: Thievul|Dubious Disc|[from] move: Corrosive Gas|[of] p2a: Butterfree
+|-enditem|p1a: Budew|TR36|[from] move: Corrosive Gas|[of] p2a: Butterfree
+|-enditem|p1b: Rillaboom|Bright Powder|[from] move: Corrosive Gas|[of] p2a: Butterfree
+|move|p2b: Thievul|Double Hit|p1b: Rillaboom
+|-damage|p1b: Rillaboom|18/215
+|-damage|p1b: Rillaboom|0 fnt
+|-hitcount|p1b: Rillaboom|2
+|faint|p1b: Rillaboom
+|move|p1a: Budew|Teeter Dance|p2a: Butterfree|[spread] p2a,p2b
+|-start|p2a: Butterfree|confusion
+|-start|p2b: Thievul|confusion
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":64,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p1b: Dugtrio|Dugtrio-Alola, L92, M|201/201
+|turn|8
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":true,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"}]},"noCancel":true}
+
+|
+|t:|1603471203
+|switch|p1b: Pupitar|Pupitar, L85, M|286/286
+|-activate|p2a: Butterfree|confusion
+|move|p2a: Butterfree|Conversion 2||[still]
+|-fail|p2a: Butterfree
+|debug|move failed because it did nothing
+|-activate|p2b: Thievul|confusion
+|move|p2b: Thievul|Electrify|p1a: Budew
+|-singleturn|p1a: Budew|move: Electrify
+|debug|Electrify making move type electric
+|move|p1a: Budew|Baton Pass|p1a: Budew
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Bolt Beak","id":"boltbeak","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Thrash","id":"thrash","pp":16,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Confide","id":"confide","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Attract","id":"attract","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"286/286","active":true,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"}]}}
+
+|
+|t:|1603471203
+|-weather|none
+|switch|p1a: Exeggcute|Exeggcute, L86, F|71/221
+|
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Bolt Beak","id":"boltbeak","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Thrash","id":"thrash","pp":16,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Confide","id":"confide","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Attract","id":"attract","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"145/286","active":true,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"}]}}
+
+|
+|t:|1603471203
+|switch|p1a: Dugtrio|Dugtrio-Alola, L92, M|201/201
+|-activate|p2a: Butterfree|confusion
+|move|p2a: Butterfree|Eternabeam|p1b: Pupitar
+|-damage|p1b: Pupitar|145/286
+|-mustrecharge|p2a: Butterfree
+|-activate|p2b: Thievul|confusion
+|move|p2b: Thievul|Moonlight|p2b: Thievul
+|-heal|p2b: Thievul|250/250
+|move|p1b: Pupitar|Bolt Beak|p2b: Thievul
+|debug|Bolt Beak NOT boosted
+|-damage|p2b: Thievul|170/250
+|
+|upkeep
+|turn|10
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"145/286","active":true,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"}]}}
+
+|
+|t:|1603471203
+|switch|p2b: Gengar|Gengar, L63, F|184/184
+|cant|p2a: Butterfree|recharge
+|move|p1a: Dugtrio|Charge Beam|p2a: Butterfree
+|-supereffective|p2a: Butterfree
+|-damage|p2a: Butterfree|0 fnt
+|-unboost|p1a: Dugtrio|spa|1
+|faint|p2a: Butterfree
+|move|p1b: Pupitar|Thrash|p2b: Gengar
+|-immune|p2b: Gengar
+|
+|-fieldend|move: Psychic Terrain
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Bolt Beak","id":"boltbeak","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Thrash","id":"thrash","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Confide","id":"confide","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Attract","id":"attract","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"145/286","active":true,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"}]}}
+
+|
+|t:|1603471203
+|switch|p2a: Thievul|Thievul, L79, M|170/250
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Bolt Beak","id":"boltbeak","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Thrash","id":"thrash","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Confide","id":"confide","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Attract","id":"attract","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"199/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"145/286","active":true,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"}]}}
+
+|
+|t:|1603471203
+|switch|p2a: Zeraora|Zeraora, L79|76/258
+|move|p1a: Dugtrio|Horn Attack|p2a: Zeraora
+|-damage|p2a: Zeraora|7/258
+|move|p2b: Gengar|Max Airstream|p1a: Dugtrio
+|-resisted|p1a: Dugtrio
+|-damage|p1a: Dugtrio|199/201
+|move|p1b: Pupitar|Confide|p2b: Gengar
+|-unboost|p2b: Gengar|spa|1
+|
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":63,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Bolt Beak","id":"boltbeak","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Thrash","id":"thrash","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Confide","id":"confide","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Attract","id":"attract","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"145/286","active":true,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"199/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"}]}}
+
+|
+|t:|1603471203
+|switch|p1a: Budew|Budew, L53, M|145/145
+|-weather|PrimordialSea|[from] ability: Primordial Sea|[of] p1a: Budew
+|switch|p2a: Thievul|Thievul, L79, M|170/250
+|move|p2b: Gengar|Lock-On|p1a: Budew
+|-activate|p2b: Gengar|move: Lock-On|[of] p1a: Budew
+|move|p1b: Pupitar|Attract||[still]
+|debug|incompatible gender
+|-fail|p1b: Pupitar
+|debug|move failed because it did nothing
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Bolt Beak","id":"boltbeak","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Thrash","id":"thrash","pp":15,"maxpp":16,"target":"randomNormal","disabled":false},{"move":"Confide","id":"confide","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Attract","id":"attract","pp":23,"maxpp":24,"target":"normal","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"46/286","active":true,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"}]}}
+
+|
+|t:|1603471203
+|-weather|none
+|switch|p1a: Dugtrio|Dugtrio-Alola, L92, M|199/201
+|move|p2a: Thievul|Whirlpool|p1b: Pupitar
+|-supereffective|p1b: Pupitar
+|-damage|p1b: Pupitar|81/286
+|-activate|p1b: Pupitar|move: Whirlpool|[of] p2a: Thievul
+|move|p2b: Gengar|Floral Healing|p1a: Dugtrio
+|-heal|p1a: Dugtrio|201/201
+|move|p1b: Pupitar|Confide|p2a: Thievul
+|-unboost|p2a: Thievul|spa|1
+|
+|-damage|p1b: Pupitar|46/286|[from] move: Whirlpool|[partiallytrapped]
+|upkeep
+|turn|14
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":true,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"}]},"noCancel":true}
+
+|
+|t:|1603471203
+|switch|p1a: Exeggcute|Exeggcute, L86, F|71/221
+|move|p2b: Gengar|Ally Switch|p2b: Gengar
+|swap|p2b: Gengar|0|[from] move: Ally Switch
+|move|p2b: Thievul|Double Hit|p1b: Pupitar
+|-resisted|p1b: Pupitar
+|-crit|p1b: Pupitar
+|-damage|p1b: Pupitar|38/286
+|-activate|p1b: Pupitar|ability: Wandering Spirit|Solid Rock|Wandering Spirit|[of] p2b: Thievul
+|-resisted|p1b: Pupitar
+|-damage|p1b: Pupitar|33/286
+|-hitcount|p1b: Pupitar|2
+|move|p1b: Pupitar|Attract|p2a: Gengar
+|-start|p2a: Gengar|Attract
+|
+|-damage|p1b: Pupitar|0 fnt|[from] move: Whirlpool|[partiallytrapped]
+|faint|p1b: Pupitar
+|upkeep
+|debug|Removing Attract volatile on p2a: Gengar
+|-end|p2a: Gengar|Attract|[silent]
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p1b: Dugtrio|Dugtrio-Alola, L92, M|201/201
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":63,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p2a: Zeraora|Zeraora, L79|7/258
+|switch|p1a: Budew|Budew, L53, M|145/145
+|-weather|PrimordialSea|[from] ability: Primordial Sea|[of] p1a: Budew
+|move|p1b: Dugtrio|Work Up|p1b: Dugtrio
+|-unboost|p1b: Dugtrio|atk|1
+|-unboost|p1b: Dugtrio|spa|1
+|move|p2b: Thievul|Whirlpool|p1b: Dugtrio|[miss]
+|-miss|p2b: Thievul|p1b: Dugtrio
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":31,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":63,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p2a: Gengar|Gengar, L63, F|184/184
+|move|p1b: Dugtrio|Baneful Bunker|p1b: Dugtrio
+|-singleturn|p1b: Dugtrio|move: Protect
+|move|p2b: Thievul|Whirlpool|p1b: Dugtrio
+|-activate|p1b: Dugtrio|move: Protect
+|move|p1a: Budew|Eerie Impulse|p2b: Thievul
+|-unboost|p2b: Thievul|spa|2
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":30,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":63,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p2b: Zeraora|Zeraora, L79|7/258
+|move|p2a: Gengar|Ally Switch|p2a: Gengar
+|swap|p2a: Gengar|1|[from] move: Ally Switch
+|move|p1b: Dugtrio|Charge Beam|p2b: Gengar
+|-damage|p2b: Gengar|153/184
+|-unboost|p1b: Dugtrio|spa|1
+|move|p1a: Budew|Teeter Dance|p2a: Zeraora|[spread] p1b,p2a,p2b
+|-start|p1b: Dugtrio|confusion
+|-start|p2a: Zeraora|confusion
+|-start|p2b: Gengar|confusion
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|18
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p1b: Exeggcute|Exeggcute, L86, F|71/221
+|-activate|p2a: Zeraora|confusion
+|-damage|p2a: Zeraora|0 fnt|[from] confusion
+|faint|p2a: Zeraora
+|-activate|p2b: Gengar|confusion
+|-damage|p2b: Gengar|129/184|[from] confusion
+|move|p1a: Budew|Eerie Impulse|p2b: Gengar
+|-unboost|p2b: Gengar|spa|2
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":30,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":63,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"71/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p2a: Thievul|Thievul, L79, M|170/250
+|turn|19
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"182/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]},"noCancel":true}
+
+|
+|t:|1603471203
+|move|p2a: Thievul|Moonlight|p2a: Thievul
+|-heal|p2a: Thievul|232/250
+|-end|p2b: Gengar|confusion
+|move|p2b: Gengar|Floral Healing|p1b: Exeggcute
+|-heal|p1b: Exeggcute|182/221
+|move|p1a: Budew|Baton Pass|p1a: Budew
+
+|request|{"active":[{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"182/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|-weather|none
+|switch|p1a: Dugtrio|Dugtrio-Alola, L92, M|201/201
+|move|p1b: Exeggcute|Icicle Spear|p2a: Thievul
+|-start|p1b: Exeggcute|typechange|Ice|[from] ability: Protean
+|-damage|p2a: Thievul|210/250
+|-damage|p2a: Thievul|189/250
+|-damage|p2a: Thievul|168/250
+|-hitcount|p2a: Thievul|3
+|
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":30,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":62,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"145/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"182/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p1a: Budew|Budew, L53, M|145/145
+|-weather|PrimordialSea|[from] ability: Primordial Sea|[of] p1a: Budew
+|move|p2a: Thievul|Moonlight|p2a: Thievul
+|-heal|p2a: Thievul|230/250
+|move|p2b: Gengar|Lock-On|p1b: Exeggcute
+|-activate|p2b: Gengar|move: Lock-On|[of] p1b: Exeggcute
+|move|p1b: Exeggcute|Tickle|p2a: Thievul
+|-start|p1b: Exeggcute|typechange|Normal|[from] ability: Protean
+|-unboost|p2a: Thievul|atk|1
+|-unboost|p2a: Thievul|def|1
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":30,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":62,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"89/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"198/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"182/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p1b: Dugtrio|Dugtrio-Alola, L92, M|201/201
+|move|p2a: Thievul|Double Hit|p1a: Budew
+|-damage|p1a: Budew|116/145
+|-damage|p1a: Budew|89/145
+|-hitcount|p1a: Budew|2
+|move|p2b: Gengar|Max Airstream|p1b: Dugtrio
+|-resisted|p1b: Dugtrio
+|-damage|p1b: Dugtrio|198/201
+|move|p1a: Budew|Eerie Impulse|p2a: Thievul
+|-unboost|p2a: Thievul|spa|2
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":29,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":62,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":38,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"89/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"198/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"182/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|move|p2b: Gengar|Ally Switch|p2b: Gengar
+|swap|p2b: Gengar|0|[from] move: Ally Switch
+|move|p1b: Dugtrio|Horn Attack|p2b: Thievul
+|-damage|p2b: Thievul|112/250
+|move|p2b: Thievul|Whirlpool|p1b: Dugtrio|[miss]
+|-miss|p2b: Thievul|p1b: Dugtrio
+|move|p1a: Budew|Teeter Dance|p2b: Thievul|[spread] p1b,p2a,p2b
+|-start|p1b: Dugtrio|confusion
+|-start|p2a: Gengar|confusion
+|-start|p2b: Thievul|confusion
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":38,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":14,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"174/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"198/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"89/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|-weather|none
+|switch|p1a: Exeggcute|Exeggcute, L86, F|182/221
+|-activate|p1b: Dugtrio|confusion
+|move|p1b: Dugtrio|Baneful Bunker|p1b: Dugtrio
+|-singleturn|p1b: Dugtrio|move: Protect
+|-activate|p2b: Thievul|confusion
+|-damage|p2b: Thievul|89/250|[from] confusion
+|-activate|p2a: Gengar|confusion
+|move|p2a: Gengar|Max Airstream|p1a: Exeggcute
+|-supereffective|p1a: Exeggcute
+|-damage|p1a: Exeggcute|174/221
+|
+|upkeep
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":29,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":62,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":38,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":14,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"34/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"174/221","active":false,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p1a: Budew|Budew, L53, M|89/145
+|-weather|PrimordialSea|[from] ability: Primordial Sea|[of] p1a: Budew
+|-activate|p1b: Dugtrio|confusion
+|-damage|p1b: Dugtrio|156/201|[from] confusion
+|-end|p2b: Thievul|confusion
+|move|p2b: Thievul|Double Hit|p1a: Budew
+|-damage|p1a: Budew|61/145
+|-damage|p1a: Budew|34/145
+|-hitcount|p1a: Budew|2
+|-end|p2a: Gengar|confusion
+|move|p2a: Gengar|Floral Healing|p1b: Dugtrio
+|-heal|p1b: Dugtrio|201/201
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|25
+
+|request|{"active":[{"moves":[{"move":"Shadow Ball","id":"shadowball","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Eerie Impulse","id":"eerieimpulse","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Teeter Dance","id":"teeterdance","pp":28,"maxpp":32,"target":"allAdjacent","disabled":false},{"move":"Baton Pass","id":"batonpass","pp":62,"maxpp":64,"target":"self","disabled":false}]},{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Budew","details":"Budew, L53, M","condition":"10/145","active":true,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"174/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":false,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|switch|p1b: Exeggcute|Exeggcute, L86, F|174/221
+|move|p2b: Thievul|Electrify|p1a: Budew
+|-singleturn|p1a: Budew|move: Electrify
+|move|p2a: Gengar|Max Airstream|p1a: Budew
+|-supereffective|p1a: Budew
+|-damage|p1a: Budew|10/145
+|debug|Electrify making move type electric
+|move|p1a: Budew|Teeter Dance|p2a: Gengar|[spread] p1b,p2a,p2b
+|-start|p1b: Exeggcute|confusion
+|-start|p2a: Gengar|confusion
+|-start|p2b: Thievul|confusion
+|
+|-weather|PrimordialSea|[upkeep]
+|upkeep
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":38,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":14,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":15,"maxpp":16,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"205/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"10/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|-weather|none
+|switch|p1a: Dugtrio|Dugtrio-Alola, L92, M|201/201
+|-activate|p2b: Thievul|confusion
+|move|p2b: Thievul|Moonlight|p2b: Thievul
+|-heal|p2b: Thievul|214/250
+|-activate|p2a: Gengar|confusion
+|move|p2a: Gengar|Floral Healing|p1b: Exeggcute
+|-heal|p1b: Exeggcute|221/221
+|-activate|p1b: Exeggcute|confusion
+|-damage|p1b: Exeggcute|205/221|[from] confusion
+|
+|upkeep
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":38,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":14,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":14,"maxpp":16,"target":"normal","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"194/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"10/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|move|p1a: Dugtrio|Charge Beam|p2a: Gengar
+|-damage|p2a: Gengar|82/184
+|-unboost|p1a: Dugtrio|spa|1
+|-activate|p2b: Thievul|confusion
+|move|p2b: Thievul|Whirlpool|p1b: Exeggcute
+|-resisted|p1b: Exeggcute
+|-damage|p1b: Exeggcute|192/221
+|-activate|p1b: Exeggcute|move: Whirlpool|[of] p2b: Thievul
+|-activate|p2a: Gengar|confusion
+|move|p2a: Gengar|Floral Healing|p1b: Exeggcute
+|-heal|p1b: Exeggcute|221/221
+|-end|p1b: Exeggcute|confusion
+|move|p1b: Exeggcute|Payback|p2a: Gengar
+|-start|p1b: Exeggcute|typechange|Dark|[from] ability: Protean
+|debug|Payback damage boost
+|-supereffective|p2a: Gengar
+|-damage|p2a: Gengar|0 fnt
+|faint|p2a: Gengar
+|
+|-damage|p1b: Exeggcute|194/221|[from] move: Whirlpool|[partiallytrapped]
+|upkeep
+|turn|28
+
+|request|{"active":[{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":38,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":14,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":13,"maxpp":16,"target":"normal","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"167/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"10/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|move|p1a: Dugtrio|Charge Beam|p2b: Thievul|[miss]
+|-miss|p1a: Dugtrio|p2b: Thievul
+|-end|p2b: Thievul|confusion
+|move|p2b: Thievul|Moonlight|p2b: Thievul
+|-heal|p2b: Thievul|250/250
+|move|p1b: Exeggcute|Payback|p2b: Thievul
+|debug|Payback damage boost
+|-resisted|p2b: Thievul
+|-damage|p2b: Thievul|189/250
+|
+|-damage|p1b: Exeggcute|167/221|[from] move: Whirlpool|[partiallytrapped]
+|upkeep
+|turn|29
+
+|request|{"active":[{"moves":[{"move":"Charge Beam","id":"chargebeam","pp":11,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":38,"maxpp":40,"target":"normal","disabled":false},{"move":"Work Up","id":"workup","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":14,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Icicle Spear","id":"iciclespear","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Tickle","id":"tickle","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Shadow Punch","id":"shadowpunch","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Payback","id":"payback","pp":13,"maxpp":16,"target":"normal","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Dugtrio","details":"Dugtrio-Alola, L92, M","condition":"201/201","active":true,"stats":{"atk":224,"def":139,"spa":153,"spd":174,"spe":245},"moves":["chargebeam","hornattack","workup","banefulbunker"],"baseAbility":"contrary","item":"sitrusberry","pokeball":"pokeball","ability":"contrary"},{"ident":"p1: Exeggcute","details":"Exeggcute, L86, F","condition":"140/221","active":true,"stats":{"atk":107,"def":183,"spa":156,"spd":89,"spe":102},"moves":["iciclespear","tickle","shadowpunch","payback"],"baseAbility":"protean","item":"dragonfang","pokeball":"pokeball","ability":"protean"},{"ident":"p1: Zorua","details":"Zorua, L92, F","condition":"0 fnt","active":false,"stats":{"atk":194,"def":129,"spa":196,"spd":136,"spe":146},"moves":["revenge","finalgambit","dazzlinggleam","discharge"],"baseAbility":"limber","item":"tr07","pokeball":"pokeball","ability":"limber"},{"ident":"p1: Budew","details":"Budew, L53, M","condition":"10/145","active":false,"stats":{"atk":57,"def":60,"spa":65,"spd":90,"spe":104},"moves":["shadowball","eerieimpulse","teeterdance","batonpass"],"baseAbility":"primordialsea","item":"","pokeball":"pokeball","ability":"primordialsea"},{"ident":"p1: Rillaboom","details":"Rillaboom, L58, M","condition":"0 fnt","active":false,"stats":{"atk":209,"def":143,"spa":113,"spd":106,"spe":125},"moves":["outrage","stuffcheeks","cut","endeavor"],"baseAbility":"receiver","item":"","pokeball":"pokeball","ability":"receiver"},{"ident":"p1: Pupitar","details":"Pupitar, L85, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":166,"spa":157,"spd":183,"spe":96},"moves":["boltbeak","thrash","confide","attract"],"baseAbility":"wanderingspirit","item":"eviolite","pokeball":"pokeball","ability":"wanderingspirit"}]}}
+
+|
+|t:|1603471203
+|move|p1a: Dugtrio|Charge Beam|p2b: Thievul
+|-damage|p2b: Thievul|172/250
+|-unboost|p1a: Dugtrio|spa|1
+|move|p2b: Thievul|Electrify||[still]
+|-fail|p2b: Thievul
+|move|p1b: Exeggcute|Icicle Spear|p2b: Thievul
+|-start|p1b: Exeggcute|typechange|Ice|[from] ability: Protean
+|-damage|p2b: Thievul|139/250
+|-damage|p2b: Thievul|108/250
+|-damage|p2b: Thievul|75/250
+|-damage|p2b: Thievul|42/250
+|-hitcount|p2b: Thievul|4
+|
+|-damage|p1b: Exeggcute|140/221|[from] move: Whirlpool|[partiallytrapped]
+|upkeep
+|turn|30
+
+|
+|t:|1603471203
+|move|p1a: Dugtrio|Work Up|p1a: Dugtrio
+|-unboost|p1a: Dugtrio|atk|1
+|-unboost|p1a: Dugtrio|spa|1
+|move|p2b: Thievul|Whirlpool|p1a: Dugtrio
+|-supereffective|p1a: Dugtrio
+|-damage|p1a: Dugtrio|175/201
+|-activate|p1a: Dugtrio|move: Whirlpool|[of] p2b: Thievul
+|move|p1b: Exeggcute|Payback|p2b: Thievul
+|-start|p1b: Exeggcute|typechange|Dark|[from] ability: Protean
+|debug|Payback damage boost
+|-resisted|p2b: Thievul
+|-damage|p2b: Thievul|0 fnt
+|faint|p2b: Thievul
+|
+|win|Bot 1

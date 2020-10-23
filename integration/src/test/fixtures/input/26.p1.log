@@ -1,0 +1,695 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Virizion","details":"Virizion, L63","condition":"238/238","active":true,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"246/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"252/252","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"195/195","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"}]}}
+
+|t:|1603471148
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|6
+|tier|[Gen 6] Doubles Custom Game
+|clearpoke
+|poke|p1|Gorebyss, L79, F|item
+|poke|p1|Scrafty, L95, F|item
+|poke|p1|Swadloon, L71, F|item
+|poke|p1|Oshawott, L62, M|item
+|poke|p1|Arceus-*, L50|item
+|poke|p1|Eevee, L57, F|item
+|poke|p2|Virizion, L63|item
+|poke|p2|Flabébé, L95, F|item
+|poke|p2|Carvanha, L79, M|item
+|poke|p2|Slurpuff, L71, M|item
+|poke|p2|Lunatone, L67|item
+|poke|p2|Exeggutor, L99, M|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Magical Leaf","id":"magicalleaf","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Snarl","id":"snarl","pp":24,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":48,"maxpp":48,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":32,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Virizion","details":"Virizion, L63","condition":"238/238","active":true,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"246/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"252/252","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"195/195","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|start
+|switch|p1a: Gorebyss|Gorebyss, L79, F|186/186
+|switch|p1b: Eevee|Eevee, L95, F|283/283
+|switch|p2a: Virizion|Virizion, L63|238/238
+|switch|p2b: Flabébé|Flabébé, L95, F|246/246
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Magical Leaf","id":"magicalleaf","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Snarl","id":"snarl","pp":24,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":47,"maxpp":48,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":32,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":true,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"246/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"252/252","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"195/195","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|move|p2a: Virizion|Fairy Wind|p1b: Eevee
+|-supereffective|p1b: Eevee
+|-damage|p1b: Eevee|231/283
+|debug|illusion cleared
+|replace|p1b: Scrafty|Scrafty, L95, F
+|-end|p1b: Scrafty|Illusion
+|move|p1b: Scrafty|Metal Claw|p2a: Virizion
+|-damage|p2a: Virizion|168/238
+|move|p2b: Flabébé|Sacred Fire|p1a: Gorebyss
+|-resisted|p1a: Gorebyss
+|-damage|p1a: Gorebyss|165/186
+|-status|p1a: Gorebyss|brn
+|move|p1a: Gorebyss|Sleep Powder|p2a: Virizion
+|debug|natural powder immunity
+|-immune|p2a: Virizion
+|
+|-damage|p1a: Gorebyss|142/186 brn|[from] item: Black Sludge
+|-damage|p1a: Gorebyss|119/186 brn|[from] brn
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Roost","id":"roost","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Quick Guard","id":"quickguard","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Cut","id":"cut","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":32,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":true,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"246/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"252/252","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"195/195","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p2a: Carvanha|Carvanha, L79, M|213/213
+|switch|p1b: Swadloon|Swadloon, L71, F|200/200
+|move|p2b: Flabébé|Mirror Move|p1a: Gorebyss
+|move|p2b: Flabébé|Sleep Powder||[from]Mirror Move|[still]
+|-fail|p2b: Flabébé
+|debug|move failed because it did nothing
+|move|p1a: Gorebyss|Overheat|p2a: Carvanha|[miss]
+|-miss|p1a: Gorebyss|p2a: Carvanha
+|
+|-damage|p1a: Gorebyss|96/186 brn|[from] item: Black Sludge
+|-damage|p1a: Gorebyss|73/186 brn|[from] brn
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Heal Pulse","id":"healpulse","pp":16,"maxpp":16,"target":"any","disabled":false},{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bone Club","id":"boneclub","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"252/252","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"204/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"195/195","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p2a: Slurpuff|Slurpuff, L71, M|252/252
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Slurpuff
+|move|p1b: Swadloon|Bide|p1b: Swadloon
+|-start|p1b: Swadloon|move: Bide
+|move|p2b: Flabébé|Sweet Scent|p1a: Gorebyss|[spread] p1a,p1b
+|-unboost|p1a: Gorebyss|evasion|2
+|-unboost|p1b: Swadloon|evasion|2
+|move|p1a: Gorebyss|Overheat|p2b: Flabébé
+|debug|rain fire suppress
+|-damage|p2b: Flabébé|204/246
+|-unboost|p1a: Gorebyss|spa|2
+|
+|-weather|RainDance|[upkeep]
+|-damage|p1a: Gorebyss|50/186 brn|[from] item: Black Sludge
+|-damage|p1a: Gorebyss|27/186 brn|[from] brn
+|upkeep
+|turn|4
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"252/252 slp","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"204/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"195/195","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|-activate|p1b: Swadloon|move: Bide
+|move|p2a: Slurpuff|Bone Club|p1b: Swadloon
+|-resisted|p1b: Swadloon
+|-damage|p1b: Swadloon|191/200
+|move|p2b: Flabébé|Mirror Move||[still]
+|-fail|p2b: Flabébé
+|move|p1a: Gorebyss|Sleep Powder|p2a: Slurpuff
+|-status|p2a: Slurpuff|slp|[from] move: Sleep Powder
+|
+|-weather|RainDance|[upkeep]
+|-damage|p1a: Gorebyss|4/186 brn|[from] item: Black Sludge
+|-damage|p1a: Gorebyss|0 fnt|[from] brn
+|faint|p1a: Gorebyss
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Heal Pulse","id":"healpulse","pp":16,"maxpp":16,"target":"any","disabled":false},{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bone Club","id":"boneclub","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":31,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"252/252 slp","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"204/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"195/195","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p1a: Eevee|Eevee, L95, F|231/283
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Heal Pulse","id":"healpulse","pp":16,"maxpp":16,"target":"any","disabled":false},{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bone Club","id":"boneclub","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":30,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"204/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"195/195","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|-end|p1b: Swadloon|move: Bide
+|-damage|p2a: Slurpuff|234/252 slp
+|-end|p1b: Swadloon|move: Bide|[silent]
+|move|p1a: Eevee|Metal Claw|p2a: Slurpuff
+|-supereffective|p2a: Slurpuff
+|-damage|p2a: Slurpuff|132/252 slp
+|cant|p2a: Slurpuff|slp
+|move|p2b: Flabébé|Sweet Scent|p1b: Swadloon|[spread] p1a,p1b
+|-unboost|p1a: Eevee|evasion|2
+|-unboost|p1b: Swadloon|evasion|2
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Lick","id":"lick","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":48,"maxpp":48,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":30,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"195/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"167/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p2a: Lunatone|Lunatone, L67|195/195
+|move|p1a: Eevee|Ice Fang|p2a: Lunatone
+|debug|Wonder Guard immunity: icefang
+|-immune|p2a: Lunatone|[from] ability: Wonder Guard
+|move|p1b: Swadloon|Wing Attack|p2b: Flabébé
+|-damage|p2b: Flabébé|167/246
+|move|p2b: Flabébé|Mirror Move|p1b: Swadloon
+|move|p2b: Flabébé|Wing Attack|p1b: Swadloon|[from]Mirror Move
+|-supereffective|p1b: Swadloon
+|-damage|p1b: Swadloon|87/200
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Lick","id":"lick","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":48,"maxpp":48,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":30,"maxpp":32,"target":"allAdjacentFoes","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"167/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p1a: Oshawott|Oshawott, L62, M|166/166
+|move|p1b: Swadloon|Gyro Ball|p2a: Lunatone
+|debug|Wonder Guard immunity: gyroball
+|debug|24 bp
+|-supereffective|p2a: Lunatone
+|-damage|p2a: Lunatone|165/195
+|move|p2b: Flabébé|Mirror Move|p1b: Swadloon
+|move|p2b: Flabébé|Gyro Ball|p1b: Swadloon|[from]Mirror Move
+|debug|26 bp
+|-damage|p1b: Swadloon|74/200
+|move|p2a: Lunatone|Tri Attack|p1b: Swadloon
+|-damage|p1b: Swadloon|32/200
+|
+|-weather|none
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Lick","id":"lick","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":48,"maxpp":48,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":30,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"167/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p1a: Arceus|Arceus-Steel, L50|191/191
+|move|p1b: Swadloon|Bide|p1b: Swadloon
+|-start|p1b: Swadloon|move: Bide
+|move|p2b: Flabébé|Fake Tears|p1b: Swadloon
+|-unboost|p1b: Swadloon|spd|2
+|move|p2a: Lunatone|Tri Attack|p1a: Arceus
+|-damage|p1a: Arceus|142/191
+|-status|p1a: Arceus|par
+|
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Astonish","id":"astonish","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Charge","id":"headcharge","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Megahorn","id":"megahorn","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Magical Leaf","id":"magicalleaf","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Snarl","id":"snarl","pp":24,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":47,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":true,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":true,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"167/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p2b: Virizion|Virizion, L63|168/238
+|switch|p2a: Exeggutor|Exeggutor, L99, M|358/358
+|switch|p1a: Eevee|Eevee, L57, F|134/134
+|-activate|p1b: Swadloon|move: Bide
+|
+|upkeep
+|turn|10
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":true,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"167/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p2b: Flabébé|Flabébé, L95, F|167/246
+|-end|p1b: Swadloon|move: Bide
+|-fail|p1b: Swadloon
+|-end|p1b: Swadloon|move: Bide|[silent]
+|move|p2a: Exeggutor|Megahorn|p1a: Eevee
+|-damage|p1a: Eevee|0 fnt
+|faint|p1a: Eevee
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Astonish","id":"astonish","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Charge","id":"headcharge","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Megahorn","id":"megahorn","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":30,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"358/358","active":true,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"167/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p1a: Arceus|Arceus-Steel, L50|142/191 par
+|turn|11
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"322/358","active":true,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|move|p2a: Exeggutor|Head Charge|p1a: Arceus
+|-damage|p1a: Arceus|0 fnt
+|-damage|p2a: Exeggutor|322/358|[from] Recoil
+|faint|p1a: Arceus
+|move|p2b: Flabébé|Mirror Move||[still]
+|-fail|p2b: Flabébé
+|move|p1b: Swadloon|Gyro Ball|p2b: Flabébé
+|debug|26 bp
+|-supereffective|p2b: Flabébé
+|-damage|p2b: Flabébé|131/246
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Astonish","id":"astonish","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Charge","id":"headcharge","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Megahorn","id":"megahorn","pp":15,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":27,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":30,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"322/358","active":true,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p1a: Oshawott|Oshawott, L95, M|231/283
+|turn|12
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"314/358","active":true,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p1a: Oshawott|Oshawott, L62, M|166/166
+|switch|p2b: Lunatone|Lunatone, L67|165/195
+|move|p2a: Exeggutor|Head Charge|p1b: Swadloon
+|-damage|p1b: Swadloon|0 fnt
+|-damage|p2a: Exeggutor|314/358|[from] Recoil
+|faint|p1b: Swadloon
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Astonish","id":"astonish","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Charge","id":"headcharge","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Megahorn","id":"megahorn","pp":15,"maxpp":16,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Lick","id":"lick","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":48,"maxpp":48,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"314/358","active":true,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p1b: Scrafty|Scrafty, L95, F|231/283
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Astonish","id":"astonish","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Charge","id":"headcharge","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Megahorn","id":"megahorn","pp":14,"maxpp":16,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Lick","id":"lick","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":47,"maxpp":48,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"259/358","active":true,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|move|p1b: Scrafty|Volt Tackle|p2a: Exeggutor
+|-resisted|p2a: Exeggutor
+|-damage|p2a: Exeggutor|259/358
+|-damage|p1b: Scrafty|213/283|[from] Recoil
+|move|p2a: Exeggutor|Megahorn|p1b: Scrafty|[miss]
+|-miss|p2a: Exeggutor|p1b: Scrafty
+|move|p2b: Lunatone|Bullet Seed|p1a: Oshawott
+|-supereffective|p1a: Oshawott
+|-damage|p1a: Oshawott|130/166
+|-supereffective|p1a: Oshawott
+|-damage|p1a: Oshawott|96/166
+|-hitcount|p1a: Oshawott|2
+|move|p1a: Oshawott|Low Kick|p2b: Lunatone
+|debug|Wonder Guard immunity: lowkick
+|-immune|p2b: Lunatone|[from] ability: Wonder Guard
+|
+|upkeep
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"Astonish","id":"astonish","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Charge","id":"headcharge","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Megahorn","id":"megahorn","pp":14,"maxpp":16,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Lick","id":"lick","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":47,"maxpp":48,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"259/358","active":true,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|move|p1b: Scrafty|Volt Tackle|p2b: Lunatone
+|debug|Wonder Guard immunity: volttackle
+|-immune|p2b: Lunatone|[from] ability: Wonder Guard
+|move|p2a: Exeggutor|Astonish|p1b: Scrafty
+|-resisted|p1b: Scrafty
+|-crit|p1b: Scrafty
+|debug|Sniper boost
+|-damage|p1b: Scrafty|189/283
+|move|p2b: Lunatone|Ice Beam|p1b: Scrafty
+|-damage|p1b: Scrafty|151/283
+|move|p1a: Oshawott|Heal Order|p1a: Oshawott
+|-heal|p1a: Oshawott|166/166
+|
+|upkeep
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Astonish","id":"astonish","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Head Charge","id":"headcharge","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Megahorn","id":"megahorn","pp":14,"maxpp":16,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Lick","id":"lick","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":46,"maxpp":48,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"114/358","active":true,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|move|p1b: Scrafty|Ice Fang|p2a: Exeggutor
+|-supereffective|p2a: Exeggutor
+|-damage|p2a: Exeggutor|127/358
+|move|p2a: Exeggutor|Cotton Spore|p1b: Scrafty|[spread] p1a,p1b
+|-unboost|p1a: Oshawott|spe|2
+|-unboost|p1b: Scrafty|spe|2
+|move|p2b: Lunatone|Bullet Seed|p1a: Oshawott
+|-supereffective|p1a: Oshawott
+|-damage|p1a: Oshawott|130/166
+|-supereffective|p1a: Oshawott
+|-damage|p1a: Oshawott|96/166
+|-hitcount|p1a: Oshawott|2
+|move|p1a: Oshawott|Low Kick|p2a: Exeggutor
+|-resisted|p2a: Exeggutor
+|-damage|p2a: Exeggutor|114/358
+|
+|upkeep
+|turn|16
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":true,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471148
+|move|p2a: Exeggutor|Astonish|p1b: Scrafty
+|-resisted|p1b: Scrafty
+|-crit|p1b: Scrafty
+|debug|Sniper boost
+|-damage|p1b: Scrafty|130/283
+|-enditem|p1b: Scrafty|Wiki Berry|[eat]
+|-heal|p1b: Scrafty|165/283|[from] item: Wiki Berry
+|move|p2b: Lunatone|Bullet Seed|p1b: Scrafty
+|-damage|p1b: Scrafty|160/283
+|-damage|p1b: Scrafty|155/283
+|-damage|p1b: Scrafty|150/283
+|-hitcount|p1b: Scrafty|3
+|move|p1b: Scrafty|Ice Fang|p2a: Exeggutor
+|-supereffective|p2a: Exeggutor
+|-damage|p2a: Exeggutor|0 fnt
+|faint|p2a: Exeggutor
+|move|p1a: Oshawott|Low Kick|p2b: Lunatone
+|debug|Wonder Guard immunity: lowkick
+|-immune|p2b: Lunatone|[from] ability: Wonder Guard
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Heal Pulse","id":"healpulse","pp":16,"maxpp":16,"target":"any","disabled":false},{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bone Club","id":"boneclub","pp":31,"maxpp":32,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Lick","id":"lick","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":45,"maxpp":48,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"132/252 slp","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"oranberry","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p2a: Slurpuff|Slurpuff, L71, M|132/252 slp
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Slurpuff
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Heal Pulse","id":"healpulse","pp":16,"maxpp":16,"target":"any","disabled":false},{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bone Club","id":"boneclub","pp":31,"maxpp":32,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Lick","id":"lick","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":45,"maxpp":48,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"77/252 slp","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|cant|p2a: Slurpuff|slp
+|move|p2b: Lunatone|Lick|p1a: Oshawott
+|-damage|p1a: Oshawott|74/166
+|move|p1b: Scrafty|Psystrike|p2a: Slurpuff
+|-damage|p2a: Slurpuff|81/252 slp
+|-enditem|p2a: Slurpuff|Oran Berry|[eat]
+|-heal|p2a: Slurpuff|91/252 slp|[from] item: Oran Berry
+|move|p1a: Oshawott|Rock Slide|p2a: Slurpuff|[spread] p2a
+|debug|Wonder Guard immunity: rockslide
+|-immune|p2b: Lunatone|[from] ability: Wonder Guard
+|debug|Spread modifier: 0.75
+|-damage|p2a: Slurpuff|77/252 slp
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|18
+
+|request|{"active":[{"moves":[{"move":"Heal Pulse","id":"healpulse","pp":16,"maxpp":16,"target":"any","disabled":false},{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bone Club","id":"boneclub","pp":31,"maxpp":32,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Lick","id":"lick","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":45,"maxpp":48,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"77/252 slp","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|cant|p2a: Slurpuff|slp
+|move|p2b: Lunatone|Tri Attack|p1b: Scrafty
+|-damage|p1b: Scrafty|118/283
+|move|p1b: Scrafty|Psystrike|p2b: Lunatone
+|debug|Wonder Guard immunity: psystrike
+|-immune|p2b: Lunatone|[from] ability: Wonder Guard
+|move|p1a: Oshawott|Heal Order|p1a: Oshawott
+|-heal|p1a: Oshawott|157/166
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Heal Pulse","id":"healpulse","pp":15,"maxpp":16,"target":"any","disabled":false},{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bone Club","id":"boneclub","pp":31,"maxpp":32,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Lick","id":"lick","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":45,"maxpp":48,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"64/252","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"165/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|-curestatus|p2a: Slurpuff|slp|[msg]
+|move|p2a: Slurpuff|Heal Pulse|p1b: Scrafty
+|-heal|p1b: Scrafty|260/283
+|move|p2b: Lunatone|Lick|p1a: Oshawott
+|-damage|p1a: Oshawott|137/166
+|move|p1b: Scrafty|Volt Tackle|p2b: Lunatone
+|debug|Wonder Guard immunity: volttackle
+|-immune|p2b: Lunatone|[from] ability: Wonder Guard
+|move|p1a: Oshawott|Rock Slide|p2b: Lunatone|[spread] p2a
+|debug|Wonder Guard immunity: rockslide
+|-immune|p2b: Lunatone|[from] ability: Wonder Guard
+|debug|Spread modifier: 0.75
+|-damage|p2a: Slurpuff|64/252
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Heal Pulse","id":"healpulse","pp":14,"maxpp":16,"target":"any","disabled":false},{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bone Club","id":"boneclub","pp":31,"maxpp":32,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Lick","id":"lick","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":45,"maxpp":48,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"50/252","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"13/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|move|p2a: Slurpuff|Heal Pulse|p1b: Scrafty
+|-heal|p1b: Scrafty|283/283
+|move|p2b: Lunatone|Tri Attack|p1b: Scrafty
+|-damage|p1b: Scrafty|252/283
+|move|p1b: Scrafty|Metal Claw|p2b: Lunatone
+|debug|Wonder Guard immunity: metalclaw
+|-supereffective|p2b: Lunatone
+|-damage|p2b: Lunatone|13/195
+|move|p1a: Oshawott|Rock Slide|p2b: Lunatone|[spread] p2a
+|debug|Wonder Guard immunity: rockslide
+|-immune|p2b: Lunatone|[from] ability: Wonder Guard
+|debug|Spread modifier: 0.75
+|-damage|p2a: Slurpuff|50/252
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Heal Pulse","id":"healpulse","pp":13,"maxpp":16,"target":"any","disabled":false},{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bone Club","id":"boneclub","pp":31,"maxpp":32,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Lick","id":"lick","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":45,"maxpp":48,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"50/252","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"13/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|move|p2a: Slurpuff|Heal Pulse|p1b: Scrafty
+|-heal|p1b: Scrafty|283/283
+|move|p2b: Lunatone|Ice Beam|p1b: Scrafty
+|-damage|p1b: Scrafty|247/283
+|move|p1b: Scrafty|Ice Fang|p2b: Lunatone
+|debug|Wonder Guard immunity: icefang
+|-immune|p2b: Lunatone|[from] ability: Wonder Guard
+|move|p1a: Oshawott|Heal Order|p1a: Oshawott
+|-heal|p1a: Oshawott|166/166
+|
+|-weather|none
+|upkeep
+|turn|22
+
+|error|[Unavailable choice] Can't switch: The active Pokémon is trapped
+
+|request|{"active":[{"moves":[{"move":"Heal Pulse","id":"healpulse","pp":13,"maxpp":16,"target":"any","disabled":false},{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bone Club","id":"boneclub","pp":31,"maxpp":32,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Lick","id":"lick","pp":46,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":45,"maxpp":48,"target":"normal","disabled":false}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"50/252","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"13/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]}}
+
+|request|{"active":[{"moves":[{"move":"Heal Pulse","id":"healpulse","pp":13,"maxpp":16,"target":"any","disabled":false},{"move":"Magnet Rise","id":"magnetrise","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bone Club","id":"boneclub","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Lick","id":"lick","pp":45,"maxpp":48,"target":"normal","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Tri Attack","id":"triattack","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Bullet Seed","id":"bulletseed","pp":45,"maxpp":48,"target":"normal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"50/252","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"13/195","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|move|p2a: Slurpuff|Magnet Rise|p2a: Slurpuff
+|-start|p2a: Slurpuff|Magnet Rise
+|move|p2b: Lunatone|Lick|p1a: Oshawott
+|-damage|p1a: Oshawott|147/166
+|-status|p1a: Oshawott|par
+|move|p1b: Scrafty|Psystrike|p2b: Lunatone
+|debug|Wonder Guard immunity: psystrike
+|-immune|p2b: Lunatone|[from] ability: Wonder Guard
+|cant|p1a: Oshawott|par
+|
+|upkeep
+|turn|23
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"36/252","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"0 fnt","active":true,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471148
+|move|p2a: Slurpuff|Bone Club|p1a: Oshawott
+|-damage|p1a: Oshawott|70/166 par
+|move|p2b: Lunatone|Bullet Seed|p1b: Scrafty
+|-damage|p1b: Scrafty|242/283
+|-crit|p1b: Scrafty
+|-damage|p1b: Scrafty|234/283
+|-damage|p1b: Scrafty|229/283
+|-crit|p1b: Scrafty
+|-damage|p1b: Scrafty|221/283
+|-hitcount|p1b: Scrafty|4
+|move|p1b: Scrafty|Metal Claw|p2b: Lunatone
+|debug|Wonder Guard immunity: metalclaw
+|-supereffective|p2b: Lunatone
+|-damage|p2b: Lunatone|0 fnt
+|faint|p2b: Lunatone
+|move|p1a: Oshawott|Aerial Ace|p2a: Slurpuff
+|-damage|p2a: Slurpuff|36/252
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Heal Pulse","id":"healpulse","pp":13,"maxpp":16,"target":"any","disabled":false},{"move":"Magnet Rise","id":"magnetrise","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bone Club","id":"boneclub","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":27,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":30,"maxpp":32,"target":"allAdjacentFoes","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"36/252","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"131/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"213/213","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"0 fnt","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p2b: Flabébé|Flabébé, L95, F|131/246
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Roost","id":"roost","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Quick Guard","id":"quickguard","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Cut","id":"cut","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":26,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":30,"maxpp":32,"target":"allAdjacentFoes","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"99/213","active":true,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"115/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"36/252","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"0 fnt","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p2a: Carvanha|Carvanha, L79, M|213/213
+|move|p2b: Flabébé|Mirror Move|p1a: Oshawott
+|move|p2b: Flabébé|Aerial Ace|p1a: Oshawott|[from]Mirror Move
+|-damage|p1a: Oshawott|3/166 par
+|move|p1b: Scrafty|Metal Claw|p2a: Carvanha
+|-resisted|p2a: Carvanha
+|-damage|p2a: Carvanha|137/213
+|move|p1a: Oshawott|Rock Slide|p2a: Carvanha|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Carvanha|99/213
+|-damage|p2b: Flabébé|115/246
+|
+|upkeep
+|turn|25
+
+|error|[Unavailable choice] Can't switch: The active Pokémon is trapped
+
+|request|{"active":[{"moves":[{"move":"Roost","id":"roost","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Quick Guard","id":"quickguard","pp":24,"maxpp":24,"target":"allySide","disabled":false},{"move":"Cut","id":"cut","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":26,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":30,"maxpp":32,"target":"allAdjacentFoes","disabled":false}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"99/213","active":true,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"115/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"36/252","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"0 fnt","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|request|{"active":[{"moves":[{"move":"Roost","id":"roost","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Quick Guard","id":"quickguard","pp":23,"maxpp":24,"target":"allySide","disabled":false},{"move":"Cut","id":"cut","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Defog","id":"defog","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":26,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":30,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"1/213","active":true,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"115/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"36/252","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"0 fnt","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|move|p2a: Carvanha|Quick Guard|p2a: Carvanha
+|-singleturn|p2a: Carvanha|Quick Guard
+|move|p2b: Flabébé|Sacred Fire|p1a: Oshawott
+|-resisted|p1a: Oshawott
+|-damage|p1a: Oshawott|0 fnt
+|faint|p1a: Oshawott
+|move|p1b: Scrafty|Ice Fang|p2a: Carvanha
+|-resisted|p2a: Carvanha
+|-damage|p2a: Carvanha|1/213
+|
+|upkeep
+|turn|26
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"0 fnt","active":true,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"115/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"36/252","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"0 fnt","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471148
+|move|p2a: Carvanha|Quick Guard|p2a: Carvanha
+|-singleturn|p2a: Carvanha|Quick Guard
+|move|p2b: Flabébé|Mirror Move|p1b: Scrafty
+|move|p2b: Flabébé|Ice Fang|p1b: Scrafty|[from]Mirror Move
+|-damage|p1b: Scrafty|203/283
+|move|p1b: Scrafty|Ice Fang|p2a: Carvanha
+|-resisted|p2a: Carvanha
+|-damage|p2a: Carvanha|0 fnt
+|faint|p2a: Carvanha
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Magical Leaf","id":"magicalleaf","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Snarl","id":"snarl","pp":24,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":47,"maxpp":48,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":25,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":30,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Virizion","details":"Virizion, L63","condition":"168/238","active":true,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"115/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"0 fnt","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"36/252","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"0 fnt","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p2a: Virizion|Virizion, L63|168/238
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Magical Leaf","id":"magicalleaf","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Snarl","id":"snarl","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":47,"maxpp":48,"target":"normal","disabled":false}]},{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":25,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":29,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Virizion","details":"Virizion, L63","condition":"97/238","active":true,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"115/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"0 fnt","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"36/252","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"0 fnt","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|move|p2a: Virizion|Snarl|p1b: Scrafty
+|-resisted|p1b: Scrafty
+|-damage|p1b: Scrafty|198/283
+|-unboost|p1b: Scrafty|spa|1
+|move|p2b: Flabébé|Sweet Scent|p1b: Scrafty
+|-unboost|p1b: Scrafty|evasion|2
+|move|p1b: Scrafty|Volt Tackle|p2a: Virizion
+|-resisted|p2a: Virizion
+|-damage|p2a: Virizion|97/238
+|-damage|p1b: Scrafty|175/283|[from] Recoil
+|
+|upkeep
+|turn|28
+
+|request|{"active":[{"moves":[{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Magical Leaf","id":"magicalleaf","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Snarl","id":"snarl","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":46,"maxpp":48,"target":"normal","disabled":false}]},{"moves":[{"move":"Heal Pulse","id":"healpulse","pp":13,"maxpp":16,"target":"any","disabled":false},{"move":"Magnet Rise","id":"magnetrise","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Memento","id":"memento","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Bone Club","id":"boneclub","pp":30,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Virizion","details":"Virizion, L63","condition":"97/238","active":true,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"4/252","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"0 fnt","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"115/246","active":false,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"0 fnt","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p2b: Slurpuff|Slurpuff, L71, M|36/252
+|-weather|RainDance|[from] ability: Drizzle|[of] p2b: Slurpuff
+|move|p2a: Virizion|Fairy Wind|p1b: Scrafty
+|-supereffective|p1b: Scrafty
+|-damage|p1b: Scrafty|123/283
+|move|p1b: Scrafty|Psystrike|p2b: Slurpuff
+|-damage|p2b: Slurpuff|4/252
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|29
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"115/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"0 fnt","active":true,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"0 fnt","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"97/238","active":false,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"0 fnt","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471148
+|switch|p2a: Flabébé|Flabébé, L95, F|115/246
+|move|p2b: Slurpuff|Heal Pulse|p1b: Scrafty
+|-heal|p1b: Scrafty|265/283
+|move|p1b: Scrafty|Volt Tackle|p2b: Slurpuff
+|-damage|p2b: Slurpuff|0 fnt
+|debug|move failed because it did nothing
+|-damage|p1b: Scrafty|264/283|[from] Recoil
+|faint|p2b: Slurpuff
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":25,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":29,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Magical Leaf","id":"magicalleaf","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Snarl","id":"snarl","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":46,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"115/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"97/238","active":true,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"0 fnt","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"0 fnt","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"0 fnt","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|switch|p2b: Virizion|Virizion, L63|97/238
+|turn|30
+
+|request|{"active":[{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":25,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":29,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Magical Leaf","id":"magicalleaf","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Snarl","id":"snarl","pp":22,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":46,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"25/246","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"97/238","active":true,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"0 fnt","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"0 fnt","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"0 fnt","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|move|p2b: Virizion|Snarl|p1b: Scrafty
+|-resisted|p1b: Scrafty
+|-damage|p1b: Scrafty|260/283
+|-unboost|p1b: Scrafty|spa|1
+|move|p2a: Flabébé|Fake Tears|p1b: Scrafty
+|-unboost|p1b: Scrafty|spd|2
+|move|p1b: Scrafty|Ice Fang|p2a: Flabébé
+|-damage|p2a: Flabébé|25/246
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|31
+
+|request|{"active":[{"moves":[{"move":"Mirror Move","id":"mirrormove","pp":25,"maxpp":32,"target":"normal","disabled":false},{"move":"Fake Tears","id":"faketears","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Sacred Fire","id":"sacredfire","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Sweet Scent","id":"sweetscent","pp":28,"maxpp":32,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Magical Leaf","id":"magicalleaf","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Snarl","id":"snarl","pp":22,"maxpp":24,"target":"allAdjacentFoes","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":45,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Flabébé","details":"Flabébé, L95, F","condition":"0 fnt","active":true,"stats":{"atk":104,"def":137,"spa":191,"spd":209,"spe":116},"moves":["mirrormove","faketears","sacredfire","sweetscent"],"baseAbility":"immunity","item":"beedrillite","pokeball":"pokeball"},{"ident":"p2: Virizion","details":"Virizion, L63","condition":"97/238","active":true,"stats":{"atk":143,"def":139,"spa":149,"spd":194,"spe":183},"moves":["poisongas","magicalleaf","snarl","fairywind"],"baseAbility":"marvelscale","item":"tamatoberry","pokeball":"pokeball"},{"ident":"p2: Carvanha","details":"Carvanha, L79, M","condition":"0 fnt","active":false,"stats":{"atk":170,"def":56,"spa":136,"spd":79,"spe":133},"moves":["roost","quickguard","cut","defog"],"baseAbility":"flareboost","item":"poweranklet","pokeball":"pokeball"},{"ident":"p2: Slurpuff","details":"Slurpuff, L71, M","condition":"0 fnt","active":false,"stats":{"atk":172,"def":171,"spa":159,"spd":126,"spe":133},"moves":["healpulse","magnetrise","memento","boneclub"],"baseAbility":"drizzle","item":"","pokeball":"pokeball"},{"ident":"p2: Exeggutor","details":"Exeggutor, L99, M","condition":"0 fnt","active":false,"stats":{"atk":244,"def":188,"spa":252,"spd":190,"spe":152},"moves":["astonish","headcharge","cottonspore","megahorn"],"baseAbility":"sniper","item":"razorclaw","pokeball":"pokeball"},{"ident":"p2: Lunatone","details":"Lunatone, L67","condition":"0 fnt","active":false,"stats":{"atk":94,"def":121,"spa":165,"spd":136,"spe":111},"moves":["lick","icebeam","triattack","bulletseed"],"baseAbility":"wonderguard","item":"destinyknot","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471148
+|move|p2b: Virizion|Fairy Wind|p1b: Scrafty
+|-supereffective|p1b: Scrafty
+|-crit|p1b: Scrafty
+|-damage|p1b: Scrafty|84/283
+|move|p2a: Flabébé|Sweet Scent|p1b: Scrafty
+|-unboost|p1b: Scrafty|evasion|2
+|move|p1b: Scrafty|Ice Fang|p2a: Flabébé
+|-damage|p2a: Flabébé|0 fnt
+|faint|p2a: Flabébé
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|32
+
+|
+|t:|1603471148
+|move|p2b: Virizion|Fairy Wind|p1b: Scrafty
+|-supereffective|p1b: Scrafty
+|-damage|p1b: Scrafty|0 fnt
+|faint|p1b: Scrafty
+|
+|win|Bot 2

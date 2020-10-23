@@ -1,0 +1,528 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"215/215","active":true,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"331/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"293/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Golett","details":"Golett, L75","condition":"221/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"206/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"}]}}
+
+|t:|1603471189
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|8
+|tier|[Gen 8] Doubles Custom Game
+|clearpoke
+|poke|p1|Charjabug, L50, F|
+|poke|p1|Thievul, L91, M|
+|poke|p1|Rapidash, L50, F|
+|poke|p1|Bonsly, L78, F|
+|poke|p1|Blipbug, L84, F|
+|poke|p1|Drapion, L82, M|
+|poke|p2|Zorua, L96, F|
+|poke|p2|Seismitoad, L82, F|
+|poke|p2|Reuniclus, L77, F|
+|poke|p2|Golett, L75|
+|poke|p2|Hatenna, L81, F|
+|poke|p2|Eiscue-Noice, L64, M|
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Celebrate","id":"celebrate","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Accelerock","id":"accelerock","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Instruct","id":"instruct","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Seed Bomb","id":"seedbomb","pp":24,"maxpp":24,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxrockfall","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxovergrowth","target":"adjacentFoe"}]}},{"moves":[{"move":"Horn Leech","id":"hornleech","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":32,"maxpp":32,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxovergrowth","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxknuckle","target":"adjacentFoe"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"215/215","active":true,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"331/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"293/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Golett","details":"Golett, L75","condition":"221/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"206/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"}]}}
+
+|
+|t:|1603471189
+|start
+|switch|p1a: Charjabug|Charjabug, L50, F|145/145
+|switch|p1b: Thievul|Thievul, L91, M|283/283
+|switch|p2a: Zorua|Zorua, L96, F|215/215
+|switch|p2b: Seismitoad|Seismitoad, L82, F|331/331
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Power Gem","id":"powergem","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Iron Defense","id":"irondefense","pp":24,"maxpp":24,"target":"self","disabled":false},{"move":"Fire Punch","id":"firepunch","pp":24,"maxpp":24,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxrockfall","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxguard","target":"self"},{"move":"maxflare","target":"adjacentFoe"}]}},{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":32,"maxpp":32,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxovergrowth","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxknuckle","target":"adjacentFoe"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"293/293","active":true,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"331/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"215/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Golett","details":"Golett, L75","condition":"221/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"206/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"}]}}
+
+|
+|t:|1603471189
+|switch|p2a: Eiscue|Eiscue-Noice, L77, M|293/293
+|-start|p1b: Thievul|Dynamax
+|-heal|p1b: Thievul|566/566|[silent]
+|move|p1b: Thievul|Max Guard|p1b: Thievul
+|-singleturn|p1b: Thievul|Max Guard
+|move|p2b: Seismitoad|Horn Leech|p1b: Thievul
+|-activate|p1b: Thievul|move: Max Guard
+|move|p1a: Charjabug|Guard Swap|p2b: Seismitoad
+|-swapboost|p1a: Charjabug|p2b: Seismitoad|def, spd|[from] move: Guard Swap
+|
+|upkeep
+|turn|2
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":true,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"642/662","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"215/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"293/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"206/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"}]}}
+
+|
+|t:|1603471189
+|-end|p1b: Thievul|Dynamax
+|-heal|p1b: Thievul|283/283|[silent]
+|switch|p1b: Bonsly|Bonsly, L78, F|204/204
+|-ability|p1b: Bonsly|Comatose
+|switch|p1a: Rapidash|Rapidash, L50, F|140/140
+|-weather|Hail|[from] ability: Snow Warning|[of] p1a: Rapidash
+|switch|p2a: Golett|Golett, L75|221/221
+|-start|p2b: Seismitoad|Dynamax
+|-heal|p2b: Seismitoad|662/662|[silent]
+|move|p2b: Seismitoad|Max Knuckle|p1a: Rapidash
+|-damage|p1a: Rapidash|1/140
+|-boost|p2a: Golett|atk|1
+|-boost|p2b: Seismitoad|atk|1
+|
+|-weather|Hail|[upkeep]
+|-damage|p2b: Seismitoad|642/662|[from] Hail
+|-damage|p1a: Rapidash|0 fnt|[from] Hail
+|-damage|p2a: Golett|208/221|[from] Hail
+|-damage|p1b: Bonsly|192/204|[from] Hail
+|faint|p1a: Rapidash
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Leaf Storm","id":"leafstorm","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Flip Turn","id":"flipturn","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Draco Meteor","id":"dracometeor","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Psychic Terrain","id":"psychicterrain","pp":16,"maxpp":16,"target":"all","disabled":false}]},{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":31,"maxpp":32,"target":"normal","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxovergrowth","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxknuckle","target":"adjacentFoe"}]}}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":true,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"642/662","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"215/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"293/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"206/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"}]}}
+
+|
+|t:|1603471189
+|switch|p1a: Thievul|Thievul, L91, M|283/283
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Flip Turn","id":"flipturn","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Draco Meteor","id":"dracometeor","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Psychic Terrain","id":"psychicterrain","pp":16,"maxpp":16,"target":"all","disabled":false}]},{"moves":[{"move":"Heat Crash","id":"heatcrash","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Volt Switch","id":"voltswitch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Double Team","id":"doubleteam","pp":24,"maxpp":24,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":true,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"149/206","active":true,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"215/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"293/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":false,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"}]}}
+
+|
+|t:|1603471189
+|-end|p2b: Seismitoad|Dynamax
+|-heal|p2b: Seismitoad|321/331|[silent]
+|switch|p2b: Hatenna|Hatenna, L81, F|206/206
+|-weather|DeltaStream|[from] ability: Delta Stream|[of] p2b: Hatenna
+|move|p1a: Thievul|Mat Block|p1a: Thievul
+|-singleturn|p1a: Thievul|Mat Block
+|move|p1b: Bonsly|Plasma Fists|p2b: Hatenna
+|-damage|p2b: Hatenna|149/206
+|-fieldactivate|move: Ion Deluge
+|move|p2a: Golett|Leaf Storm|p1b: Bonsly
+|-activate|p1b: Bonsly|move: Mat Block|Leaf Storm
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|4
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":true,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":true,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"215/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"293/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":false,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"}]},"noCancel":true}
+
+|
+|t:|1603471189
+|switch|p1b: Blipbug|Blipbug, L84, F|189/189
+|move|p1a: Thievul|Mud Shot|p2b: Hatenna
+|-damage|p2b: Hatenna|94/206
+|-unboost|p2b: Hatenna|spe|1
+|move|p2b: Hatenna|Heat Crash|p1b: Blipbug
+|-supereffective|p1b: Blipbug
+|-damage|p1b: Blipbug|135/189
+|move|p2a: Golett|Flip Turn|p1a: Thievul
+|-damage|p1a: Thievul|226/283
+
+|request|{"active":[{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Heat Crash","id":"heatcrash","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Volt Switch","id":"voltswitch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Double Team","id":"doubleteam","pp":24,"maxpp":24,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":true,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"215/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"293/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"}]}}
+
+|
+|t:|1603471189
+|switch|p2a: Seismitoad|Seismitoad, L82, F|321/331
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Heat Crash","id":"heatcrash","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Volt Switch","id":"voltswitch","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Double Team","id":"doubleteam","pp":24,"maxpp":24,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":true,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"215/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"293/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"}]}}
+
+|
+|t:|1603471189
+|move|p2b: Hatenna|Baneful Bunker|p2b: Hatenna
+|-singleturn|p2b: Hatenna|move: Protect
+|move|p1a: Thievul|Jungle Healing|p1a: Thievul|[spread] p1a,p1b
+|-heal|p1a: Thievul|283/283
+|-heal|p1b: Blipbug|182/189
+|move|p2a: Seismitoad|Stomp|p1a: Thievul
+|-damage|p1a: Thievul|223/283
+|move|p1b: Blipbug|Last Resort||[still]
+|-fail|p1b: Blipbug
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|6
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":true,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"215/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"293/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"}]},"noCancel":true}
+
+|
+|t:|1603471189
+|switch|p1b: Drapion|Drapion, L82, M|219/219
+|move|p1a: Thievul|Rock Throw|p2b: Hatenna|[miss]
+|-miss|p1a: Thievul|p2b: Hatenna
+|move|p2a: Seismitoad|Sand Attack|p1b: Drapion
+|-unboost|p1b: Drapion|accuracy|1
+|move|p2b: Hatenna|Volt Switch|p1a: Thievul
+|-damage|p1a: Thievul|198/283
+
+|request|{"active":[{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Knock Off","id":"knockoff","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Shore Up","id":"shoreup","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":true,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"215/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"293/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"}]}}
+
+|
+|t:|1603471189
+|-weather|none
+|switch|p2b: Eiscue|Eiscue-Noice, L64, M|219/219
+|
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Heat Crash","id":"heatcrash","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Volt Switch","id":"voltswitch","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Double Team","id":"doubleteam","pp":24,"maxpp":24,"target":"self","disabled":false}]},{"moves":[{"move":"Power Gem","id":"powergem","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Iron Defense","id":"irondefense","pp":24,"maxpp":24,"target":"self","disabled":false},{"move":"Fire Punch","id":"firepunch","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":true,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"293/293","active":true,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"215/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":false,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"}]}}
+
+|
+|t:|1603471189
+|switch|p2b: Hatenna|Hatenna, L77, F|293/293
+|switch|p2a: Hatenna|Hatenna, L81, F|94/206
+|-weather|DeltaStream|[from] ability: Delta Stream|[of] p2a: Hatenna
+|move|p1b: Drapion|Bullet Punch|p2b: Hatenna|[miss]
+|-miss|p1b: Drapion|p2b: Hatenna
+|move|p1a: Thievul|Jungle Healing|p1a: Thievul|[spread] p1a,p1b
+|-heal|p1a: Thievul|269/283
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Heat Crash","id":"heatcrash","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Volt Switch","id":"voltswitch","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Double Team","id":"doubleteam","pp":23,"maxpp":24,"target":"self","disabled":false}]},{"moves":[{"move":"Power Gem","id":"powergem","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Iron Defense","id":"irondefense","pp":24,"maxpp":24,"target":"self","disabled":false},{"move":"Fire Punch","id":"firepunch","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":true,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":true,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"215/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":false,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"}]}}
+
+|
+|t:|1603471189
+|move|p1a: Thievul|Jungle Healing|p1a: Thievul|[spread] p1a,p1b
+|-heal|p1a: Thievul|283/283
+|move|p1b: Drapion|Pollen Puff|p2b: Hatenna
+|-supereffective|p2b: Hatenna
+|-damage|p2b: Hatenna|177/293
+|debug|illusion cleared
+|replace|p2b: Reuniclus|Reuniclus, L77, F
+|-end|p2b: Reuniclus|Illusion
+|move|p2a: Hatenna|Double Team|p2a: Hatenna
+|-boost|p2a: Hatenna|evasion|1
+|move|p2b: Reuniclus|Power Gem|p1b: Drapion
+|-damage|p1b: Drapion|158/219
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Celebrate","id":"celebrate","pp":64,"maxpp":64,"target":"self","disabled":false},{"move":"Accelerock","id":"accelerock","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Instruct","id":"instruct","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Seed Bomb","id":"seedbomb","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Power Gem","id":"powergem","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Iron Defense","id":"irondefense","pp":24,"maxpp":24,"target":"self","disabled":false},{"move":"Fire Punch","id":"firepunch","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"154/215","active":true,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":true,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":false,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"}]}}
+
+|
+|t:|1603471189
+|switch|p1b: Charjabug|Charjabug, L50, F|145/145
+|-weather|none
+|switch|p2a: Zorua|Zorua, L96, F|215/215
+|move|p2b: Reuniclus|Detect|p2b: Reuniclus
+|-singleturn|p2b: Reuniclus|Protect
+|move|p1a: Thievul|Mud Shot|p2a: Zorua
+|-damage|p2a: Zorua|154/215
+|-unboost|p2a: Zorua|spe|1
+|
+|upkeep
+|turn|10
+
+|request|{"active":[{"moves":[{"move":"Celebrate","id":"celebrate","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Accelerock","id":"accelerock","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Instruct","id":"instruct","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Seed Bomb","id":"seedbomb","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Heat Crash","id":"heatcrash","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Baneful Bunker","id":"banefulbunker","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Volt Switch","id":"voltswitch","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Double Team","id":"doubleteam","pp":23,"maxpp":24,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"154/215","active":true,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":true,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":false,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"}]}}
+
+|
+|t:|1603471189
+|switch|p1b: Bonsly|Bonsly, L78, F|192/204
+|-ability|p1b: Bonsly|Comatose
+|switch|p2b: Hatenna|Hatenna, L81, F|94/206
+|-weather|DeltaStream|[from] ability: Delta Stream|[of] p2b: Hatenna
+|move|p1a: Thievul|Mat Block||[still]
+|-hint|Mat Block only works on your first turn out.
+|-fail|p1a: Thievul
+|move|p2a: Zorua|Celebrate|p2a: Zorua
+|-activate|p2a: Zorua|move: Celebrate
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":31,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Power Gem","id":"powergem","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Iron Defense","id":"irondefense","pp":24,"maxpp":24,"target":"self","disabled":false},{"move":"Fire Punch","id":"firepunch","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":true,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"154/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"}]}}
+
+|
+|t:|1603471189
+|-weather|none
+|switch|p2b: Seismitoad|Seismitoad, L77, F|177/293
+|switch|p2a: Seismitoad|Seismitoad, L82, F|321/331
+|switch|p1b: Blipbug|Blipbug, L84, F|182/189
+|move|p1a: Thievul|Mud Shot|p2a: Seismitoad|[miss]
+|-miss|p1a: Thievul|p2a: Seismitoad
+|
+|upkeep
+|turn|12
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":true,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"154/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"}]}}
+
+|
+|t:|1603471189
+|debug|before turn callback: focuspunch
+|-singleturn|p2a: Seismitoad|move: Focus Punch
+|move|p1a: Thievul|Mat Block||[still]
+|-hint|Mat Block only works on your first turn out.
+|-fail|p1a: Thievul
+|move|p1b: Blipbug|Feather Dance|p2b: Seismitoad
+|-unboost|p2b: Seismitoad|atk|2
+|move|p2b: Seismitoad|Iron Defense|p2b: Seismitoad
+|-boost|p2b: Seismitoad|def|2
+|move|p2a: Seismitoad|Focus Punch|p1a: Thievul
+|-supereffective|p1a: Thievul
+|-damage|p1a: Thievul|0 fnt
+|faint|p1a: Thievul
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":30,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Power Gem","id":"powergem","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Iron Defense","id":"irondefense","pp":23,"maxpp":24,"target":"self","disabled":false},{"move":"Fire Punch","id":"firepunch","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":true,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"219/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"154/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"}]}}
+
+|
+|t:|1603471189
+|switch|p1a: Bonsly|Bonsly, L78, F|192/204
+|-ability|p1a: Bonsly|Comatose
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Knock Off","id":"knockoff","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Shore Up","id":"shoreup","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":true,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"154/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"}]}}
+
+|
+|t:|1603471189
+|debug|before turn callback: focuspunch
+|-singleturn|p2a: Seismitoad|move: Focus Punch
+|switch|p2b: Eiscue|Eiscue-Noice, L64, M|219/219
+|move|p1b: Blipbug|Wood Hammer|p2b: Eiscue
+|-damage|p2b: Eiscue|175/219
+|-damage|p1b: Blipbug|167/189|[from] Recoil
+|move|p1a: Bonsly|Dual Wingbeat|p2b: Eiscue
+|-damage|p2b: Eiscue|147/219
+|-damage|p2b: Eiscue|115/219
+|-hitcount|p2b: Eiscue|2
+|move|p2a: Seismitoad|Focus Punch|p1a: Bonsly
+|-supereffective|p1a: Bonsly
+|-damage|p1a: Bonsly|14/204
+|
+|upkeep
+|turn|14
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":true,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"154/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"}]}}
+
+|
+|t:|1603471189
+|move|p2b: Eiscue|Knock Off|p1b: Blipbug
+|-damage|p1b: Blipbug|72/189
+|-enditem|p1b: Blipbug|Fire Stone|[from] move: Knock Off|[of] p2b: Eiscue
+|move|p2a: Seismitoad|Stomp|p1b: Blipbug
+|-damage|p1b: Blipbug|0 fnt
+|debug|move failed because it did nothing
+|faint|p1b: Blipbug
+|move|p1a: Bonsly|Thunder Shock|p2a: Seismitoad
+|-immune|p2a: Seismitoad
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":29,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Knock Off","id":"knockoff","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Echoed Voice","id":"echoedvoice","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Shore Up","id":"shoreup","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":true,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"154/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"}]}}
+
+|
+|t:|1603471189
+|switch|p1b: Drapion|Drapion, L82, M|158/219
+|turn|15
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":true,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"154/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"}]}}
+
+|
+|t:|1603471189
+|debug|before turn callback: focuspunch
+|-singleturn|p2a: Seismitoad|move: Focus Punch
+|switch|p2b: Golett|Golett, L75|208/221
+|move|p1b: Drapion|Minimize|p1b: Drapion
+|-boost|p1b: Drapion|evasion|2
+|move|p1a: Bonsly|Poison Gas|p2b: Golett|[spread] 
+|-block|p2a: Seismitoad|ability: Pastel Veil|[of] p2b: Golett
+|debug|set status [psn] interrupted
+|-block|p2b: Golett|ability: Pastel Veil|[of] p2b: Golett
+|debug|set status [psn] interrupted
+|debug|move failed because it did nothing
+|move|p2a: Seismitoad|Focus Punch|p1a: Bonsly
+|-supereffective|p1a: Bonsly
+|-damage|p1a: Bonsly|0 fnt
+|faint|p1a: Bonsly
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":28,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Flip Turn","id":"flipturn","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Draco Meteor","id":"dracometeor","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Psychic Terrain","id":"psychicterrain","pp":16,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"321/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Golett","details":"Golett, L75","condition":"208/221","active":true,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"154/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"}]}}
+
+|
+|t:|1603471189
+|switch|p1a: Charjabug|Charjabug, L50, F|145/145
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":28,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Flip Turn","id":"flipturn","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Draco Meteor","id":"dracometeor","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Psychic Terrain","id":"psychicterrain","pp":16,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"312/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Golett","details":"Golett, L75","condition":"174/221","active":true,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"154/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"}]}}
+
+|
+|t:|1603471189
+|move|p2a: Seismitoad|Sand Attack|p1b: Drapion
+|-unboost|p1b: Drapion|accuracy|1
+|move|p1a: Charjabug|Eruption|p2a: Seismitoad|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-resisted|p2a: Seismitoad
+|debug|Spread modifier: 0.75
+|-damage|p2a: Seismitoad|312/331
+|-damage|p2b: Golett|174/221
+|move|p2b: Golett|Draco Meteor|p1b: Drapion
+|-damage|p1b: Drapion|115/219
+|-unboost|p2b: Golett|spa|2
+|move|p1b: Drapion|Revenge|p2b: Golett
+|-immune|p2b: Golett
+|
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Celebrate","id":"celebrate","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Accelerock","id":"accelerock","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Instruct","id":"instruct","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Seed Bomb","id":"seedbomb","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Leaf Storm","id":"leafstorm","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Flip Turn","id":"flipturn","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Draco Meteor","id":"dracometeor","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Psychic Terrain","id":"psychicterrain","pp":15,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"208/215","active":true,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Golett","details":"Golett, L75","condition":"174/221","active":true,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"312/331","active":false,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"}]}}
+
+|
+|t:|1603471189
+|switch|p2a: Zorua|Zorua, L96, F|154/215
+|move|p1b: Drapion|Pollen Puff|p2b: Golett|[miss]
+|-miss|p1b: Drapion|p2b: Golett
+|move|p1a: Charjabug|Present|p2a: Zorua
+|-heal|p2a: Zorua|208/215
+|move|p2b: Golett|Psychic Terrain|p2b: Golett
+|-fieldstart|move: Psychic Terrain
+|
+|upkeep
+|turn|18
+
+|request|{"active":[{"moves":[{"move":"Celebrate","id":"celebrate","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Accelerock","id":"accelerock","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Instruct","id":"instruct","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Seed Bomb","id":"seedbomb","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Leaf Storm","id":"leafstorm","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Flip Turn","id":"flipturn","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Draco Meteor","id":"dracometeor","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Psychic Terrain","id":"psychicterrain","pp":15,"maxpp":16,"target":"all","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"208/215","active":true,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Golett","details":"Golett, L75","condition":"174/221","active":true,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"312/331","active":false,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"}]}}
+
+|
+|t:|1603471189
+|move|p1b: Drapion|Bullet Punch|p2b: Golett
+|-activate|p2b: Golett|move: Psychic Terrain
+|move|p2a: Zorua|Accelerock|p1a: Charjabug
+|-activate|p1a: Charjabug|move: Psychic Terrain
+|move|p1a: Charjabug|Meteor Mash|p2b: Golett|[miss]
+|-miss|p1a: Charjabug|p2b: Golett
+|move|p2b: Golett|Leaf Storm|p1b: Drapion
+|-resisted|p1b: Drapion
+|-damage|p1b: Drapion|104/219
+|-unboost|p2b: Golett|spa|2
+|
+|upkeep
+|turn|19
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"180/215","active":true,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Golett","details":"Golett, L75","condition":"97/221","active":true,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"312/331","active":false,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"}]},"noCancel":true}
+
+|
+|t:|1603471189
+|move|p1b: Drapion|Minimize|p1b: Drapion
+|-boost|p1b: Drapion|evasion|2
+|move|p2a: Zorua|Instruct|p1a: Charjabug
+|-singleturn|p1a: Charjabug|move: Instruct|[of] p2a: Zorua
+|move|p1a: Charjabug|Meteor Mash|p2b: Golett
+|-damage|p2b: Golett|132/221
+|move|p1a: Charjabug|Eruption|p2b: Golett|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p2a: Zorua|180/215
+|-damage|p2b: Golett|97/221
+|move|p2b: Golett|Flip Turn|p1b: Drapion
+|-damage|p1b: Drapion|84/219
+
+|request|{"active":[{"moves":[{"move":"Celebrate","id":"celebrate","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Accelerock","id":"accelerock","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Instruct","id":"instruct","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Seed Bomb","id":"seedbomb","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":28,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"180/215","active":true,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"312/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Golett","details":"Golett, L75","condition":"97/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"}]}}
+
+|
+|t:|1603471189
+|switch|p2b: Seismitoad|Seismitoad, L82, F|312/331
+|
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Celebrate","id":"celebrate","pp":63,"maxpp":64,"target":"self","disabled":false},{"move":"Accelerock","id":"accelerock","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Instruct","id":"instruct","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Seed Bomb","id":"seedbomb","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":28,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"56/215","active":true,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"312/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Golett","details":"Golett, L75","condition":"97/221","active":false,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"}]}}
+
+|
+|t:|1603471189
+|move|p2a: Zorua|Seed Bomb|p1a: Charjabug
+|-resisted|p1a: Charjabug
+|-crit|p1a: Charjabug
+|-damage|p1a: Charjabug|94/145
+|move|p2b: Seismitoad|Stomp|p1b: Drapion
+|-damage|p1b: Drapion|16/219
+|move|p1a: Charjabug|Guard Swap|p2a: Zorua
+|-swapboost|p1a: Charjabug|p2a: Zorua|def, spd|[from] move: Guard Swap
+|move|p1b: Drapion|Revenge|p2a: Zorua
+|-supereffective|p2a: Zorua
+|-damage|p2a: Zorua|56/215
+|
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Leaf Storm","id":"leafstorm","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Flip Turn","id":"flipturn","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Draco Meteor","id":"dracometeor","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Psychic Terrain","id":"psychicterrain","pp":15,"maxpp":16,"target":"all","disabled":false}]},{"moves":[{"move":"Horn Leech","id":"hornleech","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":28,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Golett","details":"Golett, L75","condition":"97/221","active":true,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"312/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"56/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"}]}}
+
+|
+|t:|1603471189
+|switch|p2a: Golett|Golett, L75|97/221
+|move|p1b: Drapion|Bullet Punch|p2a: Golett
+|-activate|p2a: Golett|move: Psychic Terrain
+|move|p2b: Seismitoad|Stomp|p1a: Charjabug
+|-damage|p1a: Charjabug|26/145
+|cant|p1a: Charjabug|flinch
+|
+|-fieldend|move: Psychic Terrain
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Leaf Storm","id":"leafstorm","pp":5,"maxpp":8,"target":"normal","disabled":false},{"move":"Flip Turn","id":"flipturn","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Draco Meteor","id":"dracometeor","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Psychic Terrain","id":"psychicterrain","pp":15,"maxpp":16,"target":"all","disabled":false}]},{"moves":[{"move":"Horn Leech","id":"hornleech","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":28,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Golett","details":"Golett, L75","condition":"97/221","active":true,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"290/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"56/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"}]}}
+
+|
+|t:|1603471189
+|move|p1b: Drapion|Minimize|p1b: Drapion
+|-boost|p1b: Drapion|evasion|2
+|move|p2b: Seismitoad|Horn Leech|p1b: Drapion|[miss]
+|-miss|p2b: Seismitoad|p1b: Drapion
+|move|p1a: Charjabug|Present|p2b: Seismitoad
+|-damage|p2b: Seismitoad|290/331
+|move|p2a: Golett|Leaf Storm|p1b: Drapion|[miss]
+|-miss|p2a: Golett|p1b: Drapion
+|
+|upkeep
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Leaf Storm","id":"leafstorm","pp":4,"maxpp":8,"target":"normal","disabled":false},{"move":"Flip Turn","id":"flipturn","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Draco Meteor","id":"dracometeor","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Psychic Terrain","id":"psychicterrain","pp":15,"maxpp":16,"target":"all","disabled":false}]},{"moves":[{"move":"Horn Leech","id":"hornleech","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Stomp","id":"stomp","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Focus Punch","id":"focuspunch","pp":28,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Golett","details":"Golett, L75","condition":"91/221","active":true,"stats":{"atk":139,"def":86,"spa":99,"spd":98,"spe":70},"moves":["leafstorm","flipturn","dracometeor","psychicterrain"],"baseAbility":"pastelveil","item":"laggingtail","pokeball":"pokeball","ability":"pastelveil"},{"ident":"p2: Seismitoad","details":"Seismitoad, L82, F","condition":"244/331","active":true,"stats":{"atk":208,"def":146,"spa":181,"spd":173,"spe":152},"moves":["hornleech","stomp","sandattack","focuspunch"],"baseAbility":"stalwart","item":"razorclaw","pokeball":"pokeball","ability":"stalwart"},{"ident":"p2: Hatenna","details":"Hatenna, L81, F","condition":"94/206","active":false,"stats":{"atk":73,"def":144,"spa":121,"spd":146,"spe":117},"moves":["heatcrash","banefulbunker","voltswitch","doubleteam"],"baseAbility":"deltastream","item":"shinystone","pokeball":"pokeball","ability":"deltastream"},{"ident":"p2: Reuniclus","details":"Reuniclus, L77, F","condition":"177/293","active":false,"stats":{"atk":125,"def":146,"spa":248,"spd":130,"spe":66},"moves":["powergem","detect","irondefense","firepunch"],"baseAbility":"illusion","item":"pixieplate","pokeball":"pokeball","ability":"illusion"},{"ident":"p2: Eiscue","details":"Eiscue-Noice, L64, M","condition":"115/219","active":false,"stats":{"atk":128,"def":116,"spa":134,"spd":76,"spe":212},"moves":["knockoff","echoedvoice","shoreup","shadowball"],"baseAbility":"multitype","item":"protectivepads","pokeball":"pokeball","ability":"multitype"},{"ident":"p2: Zorua","details":"Zorua, L96, F","condition":"56/215","active":false,"stats":{"atk":146,"def":130,"spa":187,"spd":118,"spe":166},"moves":["celebrate","accelerock","instruct","seedbomb"],"baseAbility":"magicguard","item":"tr85","pokeball":"pokeball","ability":"magicguard"}]}}
+
+|
+|t:|1603471189
+|debug|before turn callback: focuspunch
+|-singleturn|p2b: Seismitoad|move: Focus Punch
+|move|p1b: Drapion|Pollen Puff|p2b: Seismitoad
+|-damage|p2b: Seismitoad|245/331
+|move|p1a: Charjabug|Eruption|p2a: Golett|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-resisted|p2b: Seismitoad
+|-damage|p2a: Golett|91/221
+|-damage|p2b: Seismitoad|244/331
+|move|p2a: Golett|Leaf Storm|p1a: Charjabug
+|-resisted|p1a: Charjabug
+|-damage|p1a: Charjabug|0 fnt
+|-unboost|p2a: Golett|spa|2
+|faint|p1a: Charjabug
+|cant|p2b: Seismitoad|Focus Punch|Focus Punch
+|
+|upkeep
+|turn|24
+
+|
+|t:|1603471189
+|debug|before turn callback: focuspunch
+|-singleturn|p2b: Seismitoad|move: Focus Punch
+|move|p1b: Drapion|Minimize||[still]
+|-boost|p1b: Drapion|evasion|0
+|-fail|p1b: Drapion
+|debug|move failed because it did nothing
+|move|p2a: Golett|Leaf Storm|p1b: Drapion
+|-resisted|p1b: Drapion
+|-damage|p1b: Drapion|6/219
+|-unboost|p2a: Golett|spa|2
+|move|p2b: Seismitoad|Focus Punch|p1b: Drapion
+|-damage|p1b: Drapion|0 fnt
+|faint|p1b: Drapion
+|
+|win|Bot 2

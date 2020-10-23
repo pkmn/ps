@@ -1,0 +1,705 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"274/274","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"oranberry","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"308/308","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"173/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|t:|1603471182
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|8
+|tier|[Gen 8] Doubles Custom Game
+|clearpoke
+|poke|p1|Umbreon, L87, F|
+|poke|p1|Type: Null, L98|
+|poke|p1|Liepard, L55, F|
+|poke|p1|Chansey, L64, F|
+|poke|p1|Torkoal, L53, F|
+|poke|p1|Cufant, L73, F|
+|poke|p2|Lickilicky, L54, F|
+|poke|p2|Mawile, L56, M|
+|poke|p2|Pichu, L74, M|
+|poke|p2|Drizzile, L96, M|
+|poke|p2|Grimmsnarl, L90, M|
+|poke|p2|Aegislash, L70, M|
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":32,"maxpp":32,"target":"self","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"},{"move":"maxovergrowth","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxguard","target":"self"}]}},{"moves":[{"move":"Aurora Beam","id":"aurorabeam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mega Kick","id":"megakick","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Blizzard","id":"blizzard","pp":8,"maxpp":8,"target":"allAdjacentFoes","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxhailstorm","target":"adjacentFoe"}]}}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"274/274","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"oranberry","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"308/308","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"173/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|
+|t:|1603471182
+|start
+|switch|p1a: Umbreon|Umbreon, L87, F|274/274
+|switch|p1b: Type: Null|Type: Null, L98|308/308
+|switch|p2a: Lickilicky|Lickilicky, L54, F|190/190
+|switch|p2b: Mawile|Mawile, L56, M|151/151
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":32,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Aurora Beam","id":"aurorabeam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mega Kick","id":"megakick","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Blizzard","id":"blizzard","pp":8,"maxpp":8,"target":"allAdjacentFoes","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxhailstorm","target":"adjacentFoe"}]}}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"246/274","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"oranberry","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"616/616","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"173/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|
+|t:|1603471182
+|switch|p2b: Aegislash|Aegislash, L74, M|166/166
+|-start|p1b: Type: Null|Dynamax
+|-heal|p1b: Type: Null|616/616|[silent]
+|-start|p2a: Lickilicky|Dynamax
+|-heal|p2a: Lickilicky|380/380|[silent]
+|move|p1b: Type: Null|Max Guard|p1b: Type: Null
+|-singleturn|p1b: Type: Null|Max Guard
+|move|p1a: Umbreon|Magic Powder|p2a: Lickilicky
+|-start|p2a: Lickilicky|typechange|Psychic
+|move|p2a: Lickilicky|Max Lightning|p1a: Umbreon
+|-damage|p1a: Umbreon|246/274
+|-fieldstart|move: Electric Terrain
+|
+|upkeep
+|turn|2
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"229/274","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"oranberry","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"549/616","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"173/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|
+|t:|1603471182
+|move|p1b: Type: Null|Max Hailstorm|p2b: Aegislash
+|-damage|p2b: Aegislash|0 fnt
+|-weather|Hail
+|debug|illusion cleared
+|replace|p2b: Pichu|Pichu, L74, M
+|-end|p2b: Pichu|Illusion
+|faint|p2b: Pichu
+|move|p1a: Umbreon|Petal Blizzard|p2a: Lickilicky|[spread] p1b,p2a
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p1b: Type: Null|590/616
+|-damage|p2a: Lickilicky|332/380
+|move|p2a: Lickilicky|Max Steelspike|p1b: Type: Null
+|-damage|p1b: Type: Null|568/616
+|-boost|p2a: Lickilicky|def|1
+|
+|-weather|Hail|[upkeep]
+|-damage|p1b: Type: Null|549/616|[from] Hail
+|-damage|p1a: Umbreon|229/274|[from] Hail
+|-damage|p2a: Lickilicky|321/380|[from] Hail
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":32,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Aurora Beam","id":"aurorabeam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mega Kick","id":"megakick","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Blizzard","id":"blizzard","pp":7,"maxpp":8,"target":"allAdjacentFoes","disabled":false}],"maxMoves":{"maxMoves":[{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxhailstorm","target":"adjacentFoe"}]}}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"229/274","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"oranberry","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"549/616","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"173/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|
+|t:|1603471182
+|switch|p2b: Mawile|Mawile, L56, M|151/151
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":32,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Baby-Doll Eyes","id":"babydolleyes","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Rapid Spin","id":"rapidspin","pp":64,"maxpp":64,"target":"normal","disabled":false},{"move":"Stuff Cheeks","id":"stuffcheeks","pp":16,"maxpp":16,"target":"self","disabled":true},{"move":"Wrap","id":"wrap","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"198/274","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"oranberry","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"90/173","active":true,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"275/308","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|
+|t:|1603471182
+|-end|p1b: Type: Null|Dynamax
+|-heal|p1b: Type: Null|275/308|[silent]
+|switch|p1b: Liepard|Liepard, L55, F|173/173
+|move|p1a: Umbreon|Toxic|p2a: Lickilicky
+|-status|p2a: Lickilicky|tox
+|move|p2b: Mawile|Energy Ball|p1a: Umbreon
+|-damage|p1a: Umbreon|215/274
+|move|p2a: Lickilicky|Max Ooze|p1b: Liepard
+|-crit|p1b: Liepard
+|-damage|p1b: Liepard|100/173
+|-boost|p2a: Lickilicky|spa|1
+|-boost|p2b: Mawile|spa|1
+|
+|-weather|Hail|[upkeep]
+|-damage|p1b: Liepard|90/173|[from] Hail
+|-damage|p1a: Umbreon|198/274|[from] Hail
+|-damage|p2b: Mawile|142/151|[from] Hail
+|-damage|p2a: Lickilicky|310/380 tox|[from] Hail
+|-damage|p2a: Lickilicky|299/380 tox|[from] psn
+|-end|p2a: Lickilicky|Dynamax
+|-heal|p2a: Lickilicky|150/190 tox|[silent]
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Aurora Beam","id":"aurorabeam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mega Kick","id":"megakick","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Blizzard","id":"blizzard","pp":7,"maxpp":8,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"198/274","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"oranberry","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"275/308","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"90/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|
+|t:|1603471182
+|switch|p1b: Type: Null|Type: Null, L98|275/308
+|switch|p2a: Drizzile|Drizzile, L96, M|292/292
+|-weather|DesolateLand|[from] ability: Desolate Land|[of] p2a: Drizzile
+|move|p1a: Umbreon|Follow Me|p1a: Umbreon
+|-singleturn|p1a: Umbreon|move: Follow Me
+|move|p2b: Mawile|Rock Polish|p2b: Mawile
+|-boost|p2b: Mawile|spe|2
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":30,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Sleep Talk","id":"sleeptalk","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Absorb","id":"absorb","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":48,"maxpp":48,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"198/274","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"oranberry","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":true,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"90/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"275/308","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|
+|t:|1603471182
+|switch|p1b: Chansey|Chansey, L64, F|435/435
+|switch|p2b: Grimmsnarl|Grimmsnarl, L90, M|341/341
+|move|p1a: Umbreon|Follow Me|p1a: Umbreon
+|-singleturn|p1a: Umbreon|move: Follow Me
+|move|p2a: Drizzile|Fishious Rend||[still]
+|debug|Follow Me redirected target of move
+|debug|Desolate Land water suppress
+|-fail|p2a: Drizzile|Fishious Rend|[from] Desolate Land
+|
+|-weather|DesolateLand|[upkeep]
+|-fieldend|move: Electric Terrain
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":29,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Bonemerang","id":"bonemerang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Forest's Curse","id":"forestscurse","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Storm Throw","id":"stormthrow","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"198/274","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"oranberry","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":true,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"90/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"275/308","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|
+|t:|1603471182
+|switch|p2b: Aegislash|Aegislash, L70, M|221/221
+|switch|p1b: Torkoal|Torkoal, L53, F|161/161
+|move|p1a: Umbreon|Follow Me|p1a: Umbreon
+|-singleturn|p1a: Umbreon|move: Follow Me
+|move|p2a: Drizzile|Psycho Shift||[still]
+|debug|Follow Me redirected target of move
+|-fail|p2a: Drizzile
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":28,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":32,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"59/274","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"90/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"275/308","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|switch|p1b: Cufant|Cufant, L73, F|240/240
+|-ability|p1b: Cufant|Dauntless Shield|boost
+|-boost|p1b: Cufant|def|1
+|move|p1a: Umbreon|Follow Me|p1a: Umbreon
+|-singleturn|p1a: Umbreon|move: Follow Me
+|move|p2a: Drizzile|Cross Chop|p1a: Umbreon
+|debug|Follow Me redirected target of move
+|-supereffective|p1a: Umbreon
+|-damage|p1a: Umbreon|74/274
+|-enditem|p1a: Umbreon|Oran Berry|[eat]
+|-heal|p1a: Umbreon|84/274|[from] item: Oran Berry
+|move|p2b: Aegislash|Drill Peck|p1a: Umbreon
+|debug|Follow Me redirected target of move
+|-damage|p1a: Umbreon|59/274
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":28,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":32,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"59/274","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"90/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"275/308","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|move|p2a: Drizzile|Gastro Acid|p1a: Umbreon
+|-endability|p1a: Umbreon
+|move|p1a: Umbreon|Magic Powder|p2b: Aegislash
+|-start|p2b: Aegislash|typechange|Psychic
+|move|p2b: Aegislash|Rain Dance|p2b: Aegislash
+|-fail|p2b: Aegislash|Rain Dance|[from] desolateland
+|debug|move failed because it did nothing
+|move|p1b: Cufant|Thunderbolt|p2b: Aegislash
+|-damage|p2b: Aegislash|204/221
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":28,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":32,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"59/274","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"90/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"275/308","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|move|p2a: Drizzile|Fishious Rend||[still]
+|debug|Desolate Land water suppress
+|-fail|p2a: Drizzile|Fishious Rend|[from] Desolate Land
+|move|p1a: Umbreon|Magic Powder||[still]
+|-fail|p1a: Umbreon
+|debug|move failed because it did nothing
+|move|p2b: Aegislash|Power Swap|p1b: Cufant
+|-swapboost|p2b: Aegislash|p1b: Cufant|atk, spa|[from] move: Power Swap
+|move|p1b: Cufant|Terrain Pulse|p2a: Drizzile
+|-damage|p2a: Drizzile|277/292
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|10
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":28,"maxpp":32,"target":"self","disabled":false}],"trapped":true},{"moves":[{"move":"Baby-Doll Eyes","id":"babydolleyes","pp":48,"maxpp":48,"target":"normal","disabled":false},{"move":"Rapid Spin","id":"rapidspin","pp":64,"maxpp":64,"target":"normal","disabled":false},{"move":"Stuff Cheeks","id":"stuffcheeks","pp":16,"maxpp":16,"target":"self","disabled":true},{"move":"Wrap","id":"wrap","pp":32,"maxpp":32,"target":"normal","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"59/274","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"90/173","active":true,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"275/308","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|switch|p1b: Liepard|Liepard, L55, F|90/173
+|move|p2a: Drizzile|Fishious Rend||[still]
+|debug|Desolate Land water suppress
+|-fail|p2a: Drizzile|Fishious Rend|[from] Desolate Land
+|move|p1a: Umbreon|Toxic|p2a: Drizzile
+|-status|p2a: Drizzile|tox
+|move|p2b: Aegislash|Fairy Lock|p2b: Aegislash
+|-fieldactivate|move: Fairy Lock
+|
+|-weather|DesolateLand|[upkeep]
+|-damage|p2a: Drizzile|259/292 tox|[from] psn
+|upkeep
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":28,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Baby-Doll Eyes","id":"babydolleyes","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Rapid Spin","id":"rapidspin","pp":64,"maxpp":64,"target":"normal","disabled":false},{"move":"Stuff Cheeks","id":"stuffcheeks","pp":16,"maxpp":16,"target":"self","disabled":true},{"move":"Wrap","id":"wrap","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"42/274 tox","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":true,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"275/308","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|move|p1b: Liepard|Baby-Doll Eyes|p2b: Aegislash
+|-unboost|p2b: Aegislash|atk|1
+|move|p2a: Drizzile|Psycho Shift|p1a: Umbreon
+|-status|p1a: Umbreon|tox
+|-curestatus|p2a: Drizzile|tox|[msg]
+|move|p1a: Umbreon|Toxic|p2b: Aegislash
+|-status|p2b: Aegislash|tox
+|move|p2b: Aegislash|Drill Peck|p1b: Liepard
+|-damage|p1b: Liepard|47/173
+|-ability|p1b: Liepard|Perish Body
+|
+|-weather|DesolateLand|[upkeep]
+|-damage|p1a: Umbreon|42/274 tox|[from] psn
+|-damage|p2b: Aegislash|191/221 tox|[from] psn
+|-start|p1b: Liepard|perish3
+|-start|p2b: Aegislash|perish3
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Sleep Talk","id":"sleeptalk","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Absorb","id":"absorb","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":48,"maxpp":48,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":32,"maxpp":32,"target":"foeSide","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":true,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"275/308","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"42/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|switch|p1b: Cufant|Cufant, L73, F|240/240
+|-ability|p1b: Cufant|Dauntless Shield|boost
+|-boost|p1b: Cufant|def|1
+|debug|CheckShow handler suppressed by Gastro Acid
+|switch|p1a: Chansey|Chansey, L64, F|435/435
+|move|p2a: Drizzile|Gastro Acid|p1a: Chansey
+|-endability|p1a: Chansey
+|move|p2b: Aegislash|Fairy Lock|p2b: Aegislash
+|-fieldactivate|move: Fairy Lock
+|
+|-weather|DesolateLand|[upkeep]
+|-damage|p2b: Aegislash|165/221 tox|[from] psn
+|-start|p2b: Aegislash|perish2
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Sleep Talk","id":"sleeptalk","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Absorb","id":"absorb","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":48,"maxpp":48,"target":"normal","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":32,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":true,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"275/308","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"42/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|move|p2a: Drizzile|Gastro Acid|p1b: Cufant
+|-endability|p1b: Cufant
+|move|p2b: Aegislash|Fairy Lock||[still]
+|-fail|p2b: Aegislash
+|debug|move failed because it did nothing
+|move|p1a: Chansey|Sleep Talk||[still]
+|-fail|p1a: Chansey
+|move|p1b: Cufant|Darkest Lariat|p2b: Aegislash
+|debug|Negating (sp)def boost/penalty.
+|-supereffective|p2b: Aegislash
+|-damage|p2b: Aegislash|91/221 tox
+|
+|-weather|DesolateLand|[upkeep]
+|-damage|p2b: Aegislash|52/221 tox|[from] psn
+|-start|p2b: Aegislash|perish1
+|upkeep
+|turn|14
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"275/308","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"42/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|switch|p1a: Type: Null|Type: Null, L98|275/308
+|move|p2a: Drizzile|Fishious Rend||[still]
+|debug|Desolate Land water suppress
+|-fail|p2a: Drizzile|Fishious Rend|[from] Desolate Land
+|move|p2b: Aegislash|Fairy Lock|p2b: Aegislash
+|-fieldactivate|move: Fairy Lock
+|move|p1b: Cufant|Sticky Web|p2a: Drizzile
+|-sidestart|p2: Bot 2|move: Sticky Web
+|
+|-weather|DesolateLand|[upkeep]
+|-damage|p2b: Aegislash|0 fnt|[from] psn
+|faint|p2b: Aegislash
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Aurora Beam","id":"aurorabeam","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Mega Kick","id":"megakick","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Blizzard","id":"blizzard","pp":7,"maxpp":8,"target":"allAdjacentFoes","disabled":false}],"trapped":true},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":31,"maxpp":32,"target":"foeSide","disabled":false}],"trapped":true}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"275/308","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"42/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|switch|p2b: Grimmsnarl|Grimmsnarl, L90, M|341/341
+|-activate|p2b: Grimmsnarl|move: Sticky Web
+|-unboost|p2b: Grimmsnarl|spe|1
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Aurora Beam","id":"aurorabeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Mega Kick","id":"megakick","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Blizzard","id":"blizzard","pp":7,"maxpp":8,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":31,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"219/308","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"42/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|move|p2a: Drizzile|Psycho Shift||[still]
+|-fail|p2a: Drizzile
+|move|p1a: Type: Null|Aurora Beam|p2a: Drizzile
+|-resisted|p2a: Drizzile
+|-damage|p2a: Drizzile|225/292
+|move|p1b: Cufant|Darkest Lariat|p2a: Drizzile
+|debug|Negating (sp)def boost/penalty.
+|-damage|p2a: Drizzile|172/292
+|move|p2b: Grimmsnarl|Cut|p1a: Type: Null
+|-crit|p1a: Type: Null
+|-damage|p1a: Type: Null|219/308
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Aurora Beam","id":"aurorabeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Mega Kick","id":"megakick","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Blizzard","id":"blizzard","pp":7,"maxpp":8,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":31,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"130/308","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"petayaberry","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"42/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|move|p2a: Drizzile|Cross Chop|p1b: Cufant|[miss]
+|-miss|p2a: Drizzile|p1b: Cufant
+|move|p1a: Type: Null|Mega Kick|p2a: Drizzile|[miss]
+|-miss|p1a: Type: Null|p2a: Drizzile
+|move|p1b: Cufant|Thunderbolt|p2b: Grimmsnarl
+|-damage|p2b: Grimmsnarl|318/341
+|move|p2b: Grimmsnarl|Solar Blade||[still]
+|-prepare|p2b: Grimmsnarl|Solar Blade
+|-anim|p2b: Grimmsnarl|Solar Blade|p1a: Type: Null
+|-damage|p1a: Type: Null|130/308
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Aurora Beam","id":"aurorabeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Mega Kick","id":"megakick","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Blizzard","id":"blizzard","pp":7,"maxpp":8,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":30,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"36/308","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"42/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|move|p2a: Drizzile|Cross Chop|p1a: Type: Null
+|-supereffective|p1a: Type: Null
+|-damage|p1a: Type: Null|36/308
+|-enditem|p1a: Type: Null|Petaya Berry|[eat]
+|-boost|p1a: Type: Null|spa|1|[from] item: Petaya Berry
+|move|p1a: Type: Null|Sand Attack|p2a: Drizzile
+|-unboost|p2a: Drizzile|accuracy|1
+|move|p1b: Cufant|Sticky Web||[still]
+|-fail|p1b: Cufant
+|debug|move failed because it did nothing
+|move|p2b: Grimmsnarl|Aurora Veil||[still]
+|-fail|p2b: Grimmsnarl
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|18
+
+|request|{"active":[{"moves":[{"move":"Aurora Beam","id":"aurorabeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Mega Kick","id":"megakick","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Blizzard","id":"blizzard","pp":6,"maxpp":8,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":30,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"36/308","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"42/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|switch|p2b: Mawile|Mawile, L56, M|142/151
+|-activate|p2b: Mawile|move: Sticky Web
+|-unboost|p2b: Mawile|spe|1
+|move|p2a: Drizzile|Psycho Shift||[still]
+|-fail|p2a: Drizzile
+|move|p1a: Type: Null|Blizzard|p2a: Drizzile|[spread] p2a
+|-miss|p1a: Type: Null|p2b: Mawile
+|debug|Spread modifier: 0.75
+|-resisted|p2a: Drizzile
+|-damage|p2a: Drizzile|108/292
+|move|p1b: Cufant|Thunderbolt|p2b: Mawile
+|-damage|p2b: Mawile|84/151
+|-status|p2b: Mawile|par
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|19
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"36/308","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":true,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"42/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|
+|t:|1603471182
+|switch|p1b: Torkoal|Torkoal, L53, F|161/161
+|move|p2a: Drizzile|Psycho Shift||[still]
+|-fail|p2a: Drizzile
+|move|p1a: Type: Null|Mega Kick|p2b: Mawile
+|-resisted|p2b: Mawile
+|-damage|p2b: Mawile|0 fnt
+|faint|p2b: Mawile
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Aurora Beam","id":"aurorabeam","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Mega Kick","id":"megakick","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Sand Attack","id":"sandattack","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Blizzard","id":"blizzard","pp":6,"maxpp":8,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Bonemerang","id":"bonemerang","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Forest's Curse","id":"forestscurse","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Storm Throw","id":"stormthrow","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"36/308","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":true,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"42/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|
+|t:|1603471182
+|switch|p2b: Grimmsnarl|Grimmsnarl, L90, M|318/341
+|-activate|p2b: Grimmsnarl|move: Sticky Web
+|-unboost|p2b: Grimmsnarl|spe|1
+|turn|20
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":true,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":true,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"42/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]},"noCancel":true}
+
+|
+|t:|1603471182
+|move|p2a: Drizzile|Fishious Rend||[still]
+|debug|Desolate Land water suppress
+|-fail|p2a: Drizzile|Fishious Rend|[from] Desolate Land
+|move|p1a: Type: Null|Mega Kick|p2b: Grimmsnarl|[miss]
+|-miss|p1a: Type: Null|p2b: Grimmsnarl
+|move|p2b: Grimmsnarl|Bolt Beak|p1a: Type: Null
+|debug|Bolt Beak NOT boosted
+|-damage|p1a: Type: Null|0 fnt
+|faint|p1a: Type: Null
+|move|p1b: Torkoal|Bonemerang|p2b: Grimmsnarl|[miss]
+|-miss|p1b: Torkoal|p2b: Grimmsnarl
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Baby-Doll Eyes","id":"babydolleyes","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Rapid Spin","id":"rapidspin","pp":64,"maxpp":64,"target":"normal","disabled":false},{"move":"Stuff Cheeks","id":"stuffcheeks","pp":16,"maxpp":16,"target":"self","disabled":true},{"move":"Wrap","id":"wrap","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Bonemerang","id":"bonemerang","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Forest's Curse","id":"forestscurse","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Storm Throw","id":"stormthrow","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":true,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":true,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"42/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|
+|t:|1603471182
+|switch|p1a: Liepard|Liepard, L55, F|47/173
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":28,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Bonemerang","id":"bonemerang","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Forest's Curse","id":"forestscurse","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Storm Throw","id":"stormthrow","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"25/274 tox","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":true,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"435/435","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|
+|t:|1603471182
+|switch|p1a: Umbreon|Umbreon, L87, F|42/274 tox
+|move|p2a: Drizzile|Psycho Shift||[still]
+|-fail|p2a: Drizzile
+|move|p2b: Grimmsnarl|Aurora Veil||[still]
+|-fail|p2b: Grimmsnarl
+|move|p1b: Torkoal|Forest's Curse|p2a: Drizzile
+|-start|p2a: Drizzile|typeadd|Grass|[from] move: Forest's Curse
+|
+|-weather|DesolateLand|[upkeep]
+|-damage|p1a: Umbreon|25/274 tox|[from] psn
+|upkeep
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Sleep Talk","id":"sleeptalk","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Absorb","id":"absorb","pp":40,"maxpp":40,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":48,"maxpp":48,"target":"normal","disabled":false}]},{"moves":[{"move":"Bonemerang","id":"bonemerang","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Forest's Curse","id":"forestscurse","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Storm Throw","id":"stormthrow","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Horn Attack","id":"hornattack","pp":40,"maxpp":40,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"270/435","active":true,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"161/161","active":true,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"25/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]}}
+
+|
+|t:|1603471182
+|switch|p1a: Chansey|Chansey, L64, F|435/435
+|move|p2a: Drizzile|Fishious Rend||[still]
+|debug|Desolate Land water suppress
+|-fail|p2a: Drizzile|Fishious Rend|[from] Desolate Land
+|move|p2b: Grimmsnarl|Cut|p1a: Chansey
+|-damage|p1a: Chansey|270/435
+|move|p1b: Torkoal|Storm Throw|p2b: Grimmsnarl
+|-crit|p2b: Grimmsnarl
+|-damage|p2b: Grimmsnarl|296/341
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|23
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"273/435","active":true,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"0 fnt","active":true,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"25/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"}]},"noCancel":true}
+
+|
+|t:|1603471182
+|-weather|none
+|switch|p2a: Lickilicky|Lickilicky, L54, F|150/190 tox
+|-activate|p2a: Lickilicky|move: Sticky Web
+|-unboost|p2a: Lickilicky|spe|1
+|-ability|p2a: Lickilicky|Defiant
+|-boost|p2a: Lickilicky|atk|2
+|move|p1a: Chansey|Absorb|p2a: Lickilicky
+|-damage|p2a: Lickilicky|144/190 tox
+|-heal|p1a: Chansey|273/435|[from] drain|[of] p2a: Lickilicky
+|move|p2b: Grimmsnarl|Bolt Beak|p1b: Torkoal
+|debug|Bolt Beak damage boost
+|-crit|p1b: Torkoal
+|-damage|p1b: Torkoal|0 fnt
+|faint|p1b: Torkoal
+|
+|-damage|p2a: Lickilicky|133/190 tox|[from] psn
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Sleep Talk","id":"sleeptalk","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Absorb","id":"absorb","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":48,"maxpp":48,"target":"normal","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":30,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"273/435","active":true,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"25/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"0 fnt","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|switch|p1b: Cufant|Cufant, L73, F|240/240
+|-ability|p1b: Cufant|Dauntless Shield|boost
+|-boost|p1b: Cufant|def|1
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Sleep Talk","id":"sleeptalk","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Absorb","id":"absorb","pp":39,"maxpp":40,"target":"normal","disabled":false},{"move":"Crabhammer","id":"crabhammer","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Fairy Wind","id":"fairywind","pp":48,"maxpp":48,"target":"normal","disabled":false}]},{"moves":[{"move":"Baby-Doll Eyes","id":"babydolleyes","pp":47,"maxpp":48,"target":"normal","disabled":false},{"move":"Rapid Spin","id":"rapidspin","pp":64,"maxpp":64,"target":"normal","disabled":false},{"move":"Stuff Cheeks","id":"stuffcheeks","pp":16,"maxpp":16,"target":"self","disabled":true},{"move":"Wrap","id":"wrap","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"141/435","active":true,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"47/173","active":true,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"25/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"0 fnt","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|switch|p1b: Liepard|Liepard, L55, F|47/173
+|move|p1a: Chansey|Crabhammer|p2a: Lickilicky
+|-damage|p2a: Lickilicky|110/190 tox
+|move|p2b: Grimmsnarl|Aurora Veil||[still]
+|-fail|p2b: Grimmsnarl
+|move|p2a: Lickilicky|Plasma Fists|p1a: Chansey
+|-damage|p1a: Chansey|141/435
+|-fieldactivate|move: Ion Deluge
+|
+|-damage|p2a: Lickilicky|88/190 tox|[from] psn
+|upkeep
+|turn|25
+
+|request|{"forceSwitch":[true,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"0 fnt","active":true,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"0 fnt","active":true,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"25/274 tox","active":false,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":false,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"0 fnt","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]},"noCancel":true}
+
+|
+|t:|1603471182
+|move|p1b: Liepard|Rapid Spin|p2a: Lickilicky
+|-damage|p2a: Lickilicky|68/190 tox
+|-boost|p1b: Liepard|spe|1
+|move|p1a: Chansey|Fairy Wind|p2b: Grimmsnarl
+|-supereffective|p2b: Grimmsnarl
+|-damage|p2b: Grimmsnarl|282/341
+|move|p2b: Grimmsnarl|Cut|p1a: Chansey
+|-damage|p1a: Chansey|0 fnt
+|faint|p1a: Chansey
+|move|p2a: Lickilicky|Round|p1b: Liepard
+|-damage|p1b: Liepard|0 fnt
+|faint|p1b: Liepard
+|
+|-damage|p2a: Lickilicky|35/190 tox|[from] psn
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":28,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":21,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":30,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"25/274 tox","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"0 fnt","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"0 fnt","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"0 fnt","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|switch|p1b: Cufant|Cufant, L73, F|240/240
+|switch|p1a: Umbreon|Umbreon, L87, F|25/274 tox
+|-ability|p1b: Cufant|Dauntless Shield|boost
+|-boost|p1b: Cufant|def|1
+|turn|26
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":28,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":20,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":30,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"0 fnt","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"0 fnt","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"0 fnt","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"0 fnt","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|switch|p2a: Drizzile|Drizzile, L96, M|108/292
+|-activate|p2a: Drizzile|move: Sticky Web
+|-unboost|p2a: Drizzile|spe|1
+|-weather|DesolateLand|[from] ability: Desolate Land|[of] p2a: Drizzile
+|move|p1a: Umbreon|Magic Powder|p2a: Drizzile
+|-start|p2a: Drizzile|typechange|Psychic
+|move|p1b: Cufant|Thunderbolt|p2a: Drizzile
+|-damage|p2a: Drizzile|81/292
+|move|p2b: Grimmsnarl|Solar Blade||[still]
+|-prepare|p2b: Grimmsnarl|Solar Blade
+|-anim|p2b: Grimmsnarl|Solar Blade|p1a: Umbreon
+|-damage|p1a: Umbreon|0 fnt
+|faint|p1a: Umbreon
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":28,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":30,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"0 fnt","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"240/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"0 fnt","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"0 fnt","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"0 fnt","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|-weather|none
+|switch|p2a: Lickilicky|Lickilicky, L54, F|35/190 tox
+|-activate|p2a: Lickilicky|move: Sticky Web
+|-unboost|p2a: Lickilicky|spe|1
+|-ability|p2a: Lickilicky|Defiant
+|-boost|p2a: Lickilicky|atk|2
+|move|p1b: Cufant|Thunderbolt|p2b: Grimmsnarl
+|-damage|p2b: Grimmsnarl|260/341
+|move|p2b: Grimmsnarl|Aurora Veil||[still]
+|-fail|p2b: Grimmsnarl
+|
+|-damage|p2a: Lickilicky|24/190 tox|[from] psn
+|upkeep
+|turn|28
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":28,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":29,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"0 fnt","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"153/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"0 fnt","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"0 fnt","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"0 fnt","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|switch|p2a: Drizzile|Drizzile, L96, M|81/292
+|-activate|p2a: Drizzile|move: Sticky Web
+|-unboost|p2a: Drizzile|spe|1
+|-weather|DesolateLand|[from] ability: Desolate Land|[of] p2a: Drizzile
+|move|p1b: Cufant|Sticky Web||[still]
+|-fail|p1b: Cufant
+|debug|move failed because it did nothing
+|move|p2b: Grimmsnarl|Solar Blade||[still]
+|-prepare|p2b: Grimmsnarl|Solar Blade
+|-anim|p2b: Grimmsnarl|Solar Blade|p1b: Cufant
+|-resisted|p1b: Cufant
+|-damage|p1b: Cufant|153/240
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|29
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":28,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":28,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"0 fnt","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"28/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"0 fnt","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"0 fnt","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"0 fnt","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|move|p2a: Drizzile|Psycho Shift||[still]
+|-fail|p2a: Drizzile
+|move|p1b: Cufant|Sticky Web||[still]
+|-fail|p1b: Cufant
+|debug|move failed because it did nothing
+|move|p2b: Grimmsnarl|Bolt Beak|p1b: Cufant
+|debug|Bolt Beak NOT boosted
+|-damage|p1b: Cufant|28/240
+|
+|-weather|DesolateLand|[upkeep]
+|upkeep
+|turn|30
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"0 fnt","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"28/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"0 fnt","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"0 fnt","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"0 fnt","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|-weather|none
+|switch|p2a: Lickilicky|Lickilicky, L54, F|24/190 tox
+|-activate|p2a: Lickilicky|move: Sticky Web
+|-unboost|p2a: Lickilicky|spe|1
+|-ability|p2a: Lickilicky|Defiant
+|-boost|p2a: Lickilicky|atk|2
+|move|p1b: Cufant|Darkest Lariat|p2a: Lickilicky
+|debug|Negating (sp)def boost/penalty.
+|-damage|p2a: Lickilicky|0 fnt
+|faint|p2a: Lickilicky
+|move|p2b: Grimmsnarl|Solar Blade||[still]
+|-prepare|p2b: Grimmsnarl|Solar Blade
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Magic Powder","id":"magicpowder","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Petal Blizzard","id":"petalblizzard","pp":23,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Toxic","id":"toxic","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Follow Me","id":"followme","pp":28,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":19,"maxpp":24,"target":"normal","disabled":false},{"move":"Terrain Pulse","id":"terrainpulse","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Sticky Web","id":"stickyweb","pp":28,"maxpp":32,"target":"foeSide","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Umbreon","details":"Umbreon, L87, F","condition":"0 fnt","active":true,"stats":{"atk":155,"def":201,"spa":161,"spd":321,"spe":132},"moves":["magicpowder","petalblizzard","toxic","followme"],"baseAbility":"analytic","item":"","pokeball":"pokeball","ability":"analytic"},{"ident":"p1: Cufant","details":"Cufant, L73, F","condition":"28/240","active":true,"stats":{"atk":133,"def":91,"spa":85,"spd":128,"spe":95},"moves":["thunderbolt","terrainpulse","darkestlariat","stickyweb"],"baseAbility":"dauntlessshield","item":"blackglasses","pokeball":"pokeball","ability":"dauntlessshield"},{"ident":"p1: Type: Null","details":"Type: Null, L98","condition":"0 fnt","active":false,"stats":{"atk":224,"def":270,"spa":233,"spd":261,"spe":177},"moves":["aurorabeam","megakick","sandattack","blizzard"],"baseAbility":"insomnia","item":"","pokeball":"pokeball","ability":"insomnia"},{"ident":"p1: Chansey","details":"Chansey, L64, F","condition":"0 fnt","active":false,"stats":{"atk":63,"def":33,"spa":63,"spd":168,"spe":109},"moves":["sleeptalk","absorb","crabhammer","fairywind"],"baseAbility":"furcoat","item":"blackbelt","pokeball":"pokeball","ability":"furcoat"},{"ident":"p1: Liepard","details":"Liepard, L55, F","condition":"0 fnt","active":false,"stats":{"atk":121,"def":84,"spa":131,"spd":72,"spe":135},"moves":["babydolleyes","rapidspin","stuffcheeks","wrap"],"baseAbility":"perishbody","item":"tr15","pokeball":"pokeball","ability":"perishbody"},{"ident":"p1: Torkoal","details":"Torkoal, L53, F","condition":"0 fnt","active":false,"stats":{"atk":104,"def":168,"spa":123,"spd":87,"spe":28},"moves":["bonemerang","forestscurse","stormthrow","hornattack"],"baseAbility":"wonderskin","item":"tangaberry","pokeball":"pokeball","ability":"wonderskin"}]}}
+
+|
+|t:|1603471182
+|switch|p2a: Drizzile|Drizzile, L96, M|81/292
+|-activate|p2a: Drizzile|move: Sticky Web
+|-unboost|p2a: Drizzile|spe|1
+|-weather|DesolateLand|[from] ability: Desolate Land|[of] p2a: Drizzile
+|turn|31
+
+|
+|t:|1603471182
+|move|p2a: Drizzile|Psycho Shift||[still]
+|-fail|p2a: Drizzile
+|move|p1b: Cufant|Thunderbolt|p2a: Drizzile
+|-supereffective|p2a: Drizzile
+|-damage|p2a: Drizzile|27/292
+|-enditem|p2a: Drizzile|Apicot Berry|[eat]
+|-boost|p2a: Drizzile|spd|1|[from] item: Apicot Berry
+|move|p2b: Grimmsnarl|Solar Blade|p1b: Cufant|[from]lockedmove
+|-resisted|p1b: Cufant
+|-damage|p1b: Cufant|0 fnt
+|faint|p1b: Cufant
+|
+|win|Bot 2

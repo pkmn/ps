@@ -1,0 +1,492 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Lopunny","details":"Lopunny, L92, M","condition":"259/259","active":true,"stats":{"atk":158,"def":196,"spa":188,"spd":232,"spe":225},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"dryskin","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"209/209","active":true,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"350/350","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"173/173","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|t:|1603471135
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|6
+|tier|[Gen 6] Doubles Custom Game
+|clearpoke
+|poke|p1|Lopunny, L92, M|item
+|poke|p1|Frillish, L83, F|item
+|poke|p1|Excadrill, L89, F|item
+|poke|p1|Chesnaught, L50, F|item
+|poke|p1|Blastoise-Mega, L64, F|item
+|poke|p1|Abomasnow, L54, F|item
+|poke|p2|Herdier, L51, M|item
+|poke|p2|Cubchoo, L70, M|item
+|poke|p2|Weepinbell, L57, M|item
+|poke|p2|Pansage, L67, M|item
+|poke|p2|Fennekin, L56, F|item
+|poke|p2|Klinklang, L82|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Frenzy Plant","id":"frenzyplant","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":48,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Flail","id":"flail","pp":24,"maxpp":24,"target":"normal","disabled":false}],"canMegaEvo":true},{"moves":[{"move":"Luster Purge","id":"lusterpurge","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Techno Blast","id":"technoblast","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Disarming Voice","id":"disarmingvoice","pp":24,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Lopunny","details":"Lopunny, L92, M","condition":"259/259","active":true,"stats":{"atk":158,"def":196,"spa":188,"spd":232,"spe":225},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"dryskin","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"209/209","active":true,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"350/350","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"173/173","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|start
+|switch|p1a: Lopunny|Lopunny, L92, M|259/259
+|switch|p1b: Frillish|Frillish, L83, F|209/209
+|switch|p2a: Herdier|Herdier, L51, M|153/153
+|switch|p2b: Cubchoo|Cubchoo, L70, M|180/180
+|turn|1
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"259/259","active":true,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"277/350 brn","active":true,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"209/209","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"173/173","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p1b: Excadrill|Excadrill, L89, F|350/350
+|detailschange|p1a: Lopunny|Lopunny-Mega, L92, M
+|-mega|p1a: Lopunny|Lopunny|Lopunnite
+|move|p1a: Lopunny|Frenzy Plant|p2b: Cubchoo
+|-damage|p2b: Cubchoo|0 fnt
+|-mustrecharge|p1a: Lopunny
+|faint|p2b: Cubchoo
+|move|p2a: Herdier|Scald|p1b: Excadrill
+|-supereffective|p1b: Excadrill
+|-damage|p1b: Excadrill|320/350
+|-status|p1b: Excadrill|brn
+|
+|-damage|p1b: Excadrill|277/350 brn|[from] brn
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Recharge","id":"recharge"}],"trapped":true},{"moves":[{"move":"Attract","id":"attract","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Horn Leech","id":"hornleech","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Lucky Chant","id":"luckychant","pp":48,"maxpp":48,"target":"allySide","disabled":false},{"move":"Slack Off","id":"slackoff","pp":16,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"259/259","active":true,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"277/350 brn","active":true,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"209/209","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"173/173","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p2b: Weepinbell|Weepinbell, L57, M|188/188
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Frenzy Plant","id":"frenzyplant","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":48,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Flail","id":"flail","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Attract","id":"attract","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Horn Leech","id":"hornleech","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Lucky Chant","id":"luckychant","pp":48,"maxpp":48,"target":"allySide","disabled":false},{"move":"Slack Off","id":"slackoff","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":true,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":true,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"209/209","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"173/173","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p2a: Pansage|Pansage, L67, M|166/166
+|cant|p1a: Lopunny|recharge
+|move|p1b: Excadrill|Slack Off|p1b: Excadrill
+|-heal|p1b: Excadrill|350/350 brn
+|move|p2b: Weepinbell|Seed Flare|p1a: Lopunny
+|-damage|p1a: Lopunny|219/259
+|
+|-damage|p1b: Excadrill|307/350 brn|[from] brn
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Frenzy Plant","id":"frenzyplant","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":48,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Flail","id":"flail","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Attract","id":"attract","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Horn Leech","id":"hornleech","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Lucky Chant","id":"luckychant","pp":48,"maxpp":48,"target":"allySide","disabled":false},{"move":"Slack Off","id":"slackoff","pp":14,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":true,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":true,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"209/209","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"173/173","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p2b: Fennekin|Fennekin, L56, F|118/118
+|move|p2a: Pansage|Rage Powder|p2a: Pansage
+|-singleturn|p2a: Pansage|move: Rage Powder
+|move|p1a: Lopunny|Flail|p2a: Pansage
+|debug|Rage Powder redirected target of move
+|-damage|p2a: Pansage|109/166
+|move|p1b: Excadrill|Slack Off|p1b: Excadrill
+|-heal|p1b: Excadrill|350/350 brn
+|
+|-damage|p1b: Excadrill|307/350 brn|[from] brn
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Luster Purge","id":"lusterpurge","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Techno Blast","id":"technoblast","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Disarming Voice","id":"disarmingvoice","pp":24,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Foul Play","id":"foulplay","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Spike Cannon","id":"spikecannon","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Jump Kick","id":"jumpkick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"141/209","active":true,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"166/173","active":true,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p1a: Frillish|Frillish, L83, F|209/209
+|switch|p1b: Abomasnow|Abomasnow, L50, F|173/173
+|move|p2a: Pansage|Play Rough|p1a: Frillish
+|-damage|p1a: Frillish|141/209
+|move|p2b: Fennekin|Thief|p1b: Abomasnow
+|-resisted|p1b: Abomasnow
+|-damage|p1b: Abomasnow|166/173
+|debug|illusion cleared
+|replace|p1b: Chesnaught|Chesnaught, L50, F
+|-end|p1b: Chesnaught|Illusion
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Luster Purge","id":"lusterpurge","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Techno Blast","id":"technoblast","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Disarming Voice","id":"disarmingvoice","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Foul Play","id":"foulplay","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Spike Cannon","id":"spikecannon","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Jump Kick","id":"jumpkick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"141/209","active":true,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"137/173","active":true,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|move|p2a: Pansage|Mist|p2a: Pansage
+|-sidestart|p2: Bot 2|Mist
+|move|p1a: Frillish|Disarming Voice|p2a: Pansage|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-resisted|p2b: Fennekin
+|-damage|p2a: Pansage|68/166
+|-damage|p2b: Fennekin|95/118
+|move|p2b: Fennekin|Double-Edge|p1b: Chesnaught
+|-damage|p1b: Chesnaught|137/173
+|-damage|p2b: Fennekin|85/118|[from] Recoil
+|move|p1b: Chesnaught|Foul Play|p2a: Pansage
+|-damage|p2a: Pansage|21/166
+|
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Luster Purge","id":"lusterpurge","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Techno Blast","id":"technoblast","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Disarming Voice","id":"disarmingvoice","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Foul Play","id":"foulplay","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Spike Cannon","id":"spikecannon","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Jump Kick","id":"jumpkick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"141/209","active":true,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"137/173","active":true,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p2a: Klinklang|Klinklang, L82|213/213
+|switch|p2b: Weepinbell|Weepinbell, L57, M|188/188
+|move|p1a: Frillish|Cotton Spore|p2b: Weepinbell|[spread] 
+|debug|natural powder immunity
+|-immune|p2b: Weepinbell
+|-activate|p2a: Klinklang|move: Mist
+|debug|move failed because it did nothing
+|move|p1b: Chesnaught|Jump Kick|p2b: Weepinbell
+|-resisted|p2b: Weepinbell
+|-damage|p2b: Weepinbell|149/188
+|
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Embargo","id":"embargo","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Flame Wheel","id":"flamewheel","pp":40,"maxpp":40,"target":"normal","disabled":false}]},{"moves":[{"move":"Foul Play","id":"foulplay","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Spike Cannon","id":"spikecannon","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Jump Kick","id":"jumpkick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"78/173","active":true,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"141/209","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p2a: Fennekin|Fennekin, L56, F|85/118
+|switch|p1a: Blastoise|Blastoise-Mega, L64, F|195/195
+|move|p1b: Chesnaught|Foul Play|p2b: Weepinbell
+|-damage|p2b: Weepinbell|80/188
+|move|p2b: Weepinbell|Seed Flare|p1b: Chesnaught
+|-resisted|p1b: Chesnaught
+|-damage|p1b: Chesnaught|78/173
+|
+|upkeep
+|turn|8
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"78/173","active":true,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"141/209","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|move|p1a: Blastoise|Land's Wrath|p2b: Weepinbell|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-supereffective|p2a: Fennekin
+|debug|Spread modifier: 0.75
+|-damage|p2a: Fennekin|0 fnt
+|-damage|p2b: Weepinbell|8/188
+|faint|p2a: Fennekin
+|move|p1b: Chesnaught|Jump Kick|p2b: Weepinbell
+|-resisted|p2b: Weepinbell
+|-damage|p2b: Weepinbell|0 fnt
+|faint|p2b: Weepinbell
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Embargo","id":"embargo","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Flame Wheel","id":"flamewheel","pp":40,"maxpp":40,"target":"normal","disabled":false}]},{"moves":[{"move":"Foul Play","id":"foulplay","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Spike Cannon","id":"spikecannon","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Jump Kick","id":"jumpkick","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"78/173","active":true,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"141/209","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p2a: Klinklang|Klinklang, L82|213/213
+|switch|p2b: Herdier|Herdier, L51, M|153/153
+|turn|9
+
+|request|{"wait":true,"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"78/173","active":true,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"141/209","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p2a: Pansage|Pansage, L67, M|21/166
+|move|p1a: Blastoise|Land's Wrath|p2a: Pansage|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-resisted|p2a: Pansage
+|debug|Spread modifier: 0.75
+|-damage|p2a: Pansage|0 fnt
+|-damage|p2b: Herdier|108/153
+|faint|p2a: Pansage
+|move|p1b: Chesnaught|Spike Cannon|p2b: Herdier
+|-damage|p2b: Herdier|100/153
+|-crit|p2b: Herdier
+|-damage|p2b: Herdier|89/153
+|-damage|p2b: Herdier|81/153
+|-hitcount|p2b: Herdier|3
+|move|p2b: Herdier|Bulk Up|p2b: Herdier
+|-boost|p2b: Herdier|atk|1
+|-boost|p2b: Herdier|def|1
+|
+|-sideend|p2: Bot 2|Mist
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":14,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Embargo","id":"embargo","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Flame Wheel","id":"flamewheel","pp":40,"maxpp":40,"target":"normal","disabled":false}]},{"moves":[{"move":"Foul Play","id":"foulplay","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Spike Cannon","id":"spikecannon","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Jump Kick","id":"jumpkick","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Leech Life","id":"leechlife","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"78/173","active":true,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"141/209","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p2a: Klinklang|Klinklang, L82|213/213
+|turn|10
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":true,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":true,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"141/209","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471135
+|switch|p1a: Abomasnow|Abomasnow, L54, F|200/200
+|move|p2a: Klinklang|Fiery Dance|p1b: Chesnaught
+|-supereffective|p1b: Chesnaught
+|-damage|p1b: Chesnaught|0 fnt
+|-boost|p2a: Klinklang|spa|1
+|faint|p1b: Chesnaught
+|move|p2b: Herdier|Bulk Up|p2b: Herdier
+|-boost|p2b: Herdier|atk|1
+|-boost|p2b: Herdier|def|1
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Water Sport","id":"watersport","pp":24,"maxpp":24,"target":"all","disabled":false},{"move":"Giga Impact","id":"gigaimpact","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Recycle","id":"recycle","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Heal Bell","id":"healbell","pp":8,"maxpp":8,"target":"allyTeam","disabled":false}]},{"moves":[{"move":"Luster Purge","id":"lusterpurge","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Techno Blast","id":"technoblast","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Disarming Voice","id":"disarmingvoice","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":true,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"141/209","active":true,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p1b: Frillish|Frillish, L83, F|141/209
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Water Sport","id":"watersport","pp":23,"maxpp":24,"target":"all","disabled":false},{"move":"Giga Impact","id":"gigaimpact","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Recycle","id":"recycle","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Heal Bell","id":"healbell","pp":8,"maxpp":8,"target":"allyTeam","disabled":false}]},{"moves":[{"move":"Luster Purge","id":"lusterpurge","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Techno Blast","id":"technoblast","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Disarming Voice","id":"disarmingvoice","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"200/200","active":true,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"134/209","active":true,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|move|p2a: Klinklang|Switcheroo||[still]
+|-fail|p2a: Klinklang
+|debug|move failed because it did nothing
+|move|p1b: Frillish|Luster Purge|p2a: Klinklang
+|-resisted|p2a: Klinklang
+|-damage|p2a: Klinklang|187/213
+|-unboost|p2a: Klinklang|spd|1
+|move|p1a: Abomasnow|Water Sport|p1a: Abomasnow
+|-fieldstart|move: Water Sport|[of] p1a: Abomasnow
+|move|p2b: Herdier|Scald|p1b: Frillish
+|-resisted|p1b: Frillish
+|-damage|p1b: Frillish|134/209
+|
+|upkeep
+|turn|12
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"0 fnt","active":true,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"108/209 psn","active":true,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471135
+|move|p2a: Klinklang|Fiery Dance|p1a: Abomasnow
+|debug|water sport weaken
+|-supereffective|p1a: Abomasnow
+|-damage|p1a: Abomasnow|12/200
+|-boost|p2a: Klinklang|spa|1
+|move|p1b: Frillish|Cotton Spore|p2a: Klinklang|[spread] p2a,p2b
+|-unboost|p2a: Klinklang|spe|2
+|-unboost|p2b: Herdier|spe|2
+|move|p1a: Abomasnow|Recycle||[still]
+|-fail|p1a: Abomasnow
+|debug|move failed because it did nothing
+|move|p2b: Herdier|Poison Gas|p1a: Abomasnow|[spread] p1a,p1b
+|-status|p1a: Abomasnow|psn
+|-status|p1b: Frillish|psn
+|
+|-damage|p1b: Frillish|108/209 psn|[from] psn
+|-damage|p1a: Abomasnow|0 fnt|[from] psn
+|faint|p1a: Abomasnow
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Frenzy Plant","id":"frenzyplant","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":48,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Flail","id":"flail","pp":23,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Luster Purge","id":"lusterpurge","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":62,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Techno Blast","id":"technoblast","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Disarming Voice","id":"disarmingvoice","pp":23,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":true,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"108/209 psn","active":true,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"0 fnt","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p1a: Lopunny|Lopunny-Mega, L92, M|219/259
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":14,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Embargo","id":"embargo","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Flame Wheel","id":"flamewheel","pp":40,"maxpp":40,"target":"normal","disabled":false}]},{"moves":[{"move":"Luster Purge","id":"lusterpurge","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":62,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Techno Blast","id":"technoblast","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Disarming Voice","id":"disarmingvoice","pp":22,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"195/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"65/209 psn","active":true,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"0 fnt","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p1a: Blastoise|Blastoise-Mega, L64, F|195/195
+|move|p1b: Frillish|Disarming Voice|p2a: Klinklang|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-resisted|p2a: Klinklang
+|debug|Spread modifier: 0.75
+|-damage|p2a: Klinklang|171/213
+|-damage|p2b: Herdier|33/153
+|move|p2a: Klinklang|Fiery Dance|p1b: Frillish
+|debug|water sport weaken
+|-resisted|p1b: Frillish
+|-damage|p1b: Frillish|91/209 psn
+|move|p2b: Herdier|Chip Away|p1b: Frillish
+|-immune|p1b: Frillish
+|
+|-damage|p1b: Frillish|65/209 psn|[from] psn
+|upkeep
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":14,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Embargo","id":"embargo","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flame Wheel","id":"flamewheel","pp":40,"maxpp":40,"target":"normal","disabled":false}]},{"moves":[{"move":"Luster Purge","id":"lusterpurge","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Cotton Spore","id":"cottonspore","pp":62,"maxpp":64,"target":"allAdjacentFoes","disabled":false},{"move":"Techno Blast","id":"technoblast","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Disarming Voice","id":"disarmingvoice","pp":22,"maxpp":24,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"137/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"39/209 psn","active":true,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"0 fnt","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|move|p1a: Blastoise|Embargo|p2b: Herdier
+|-start|p2b: Herdier|Embargo
+|move|p1b: Frillish|Luster Purge|p2b: Herdier
+|-damage|p2b: Herdier|0 fnt
+|faint|p2b: Herdier
+|move|p2a: Klinklang|Snarl|p1b: Frillish|[spread] p1a
+|-miss|p2a: Klinklang|p1b: Frillish
+|debug|Spread modifier: 0.75
+|-damage|p1a: Blastoise|137/195
+|-unboost|p1a: Blastoise|spa|1
+|
+|-damage|p1b: Frillish|39/209 psn|[from] psn
+|upkeep
+|turn|15
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"84/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"0 fnt","active":true,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"0 fnt","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471135
+|move|p1a: Blastoise|Flame Wheel|p2a: Klinklang
+|debug|water sport weaken
+|-supereffective|p2a: Klinklang
+|-damage|p2a: Klinklang|155/213
+|move|p1b: Frillish|Luster Purge|p2a: Klinklang
+|-resisted|p2a: Klinklang
+|-damage|p2a: Klinklang|114/213
+|move|p2a: Klinklang|Snarl|p1a: Blastoise|[spread] p1a,p1b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-supereffective|p1b: Frillish
+|-damage|p1a: Blastoise|84/195
+|-damage|p1b: Frillish|0 fnt
+|-unboost|p1a: Blastoise|spa|1
+|faint|p1b: Frillish
+|
+|-fieldend|move: Water Sport
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":14,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Embargo","id":"embargo","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flame Wheel","id":"flamewheel","pp":39,"maxpp":40,"target":"normal","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Frenzy Plant","id":"frenzyplant","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":48,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Flail","id":"flail","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"84/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"219/259","active":true,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"0 fnt","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"307/350 brn","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"0 fnt","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p1b: Lopunny|Lopunny-Mega, L92, M|219/259
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Attract","id":"attract","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Horn Leech","id":"hornleech","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Lucky Chant","id":"luckychant","pp":48,"maxpp":48,"target":"allySide","disabled":false},{"move":"Slack Off","id":"slackoff","pp":14,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Frenzy Plant","id":"frenzyplant","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":48,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Flail","id":"flail","pp":22,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"197/350 brn","active":true,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"197/259","active":true,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"0 fnt","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"84/195","active":false,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"0 fnt","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p1a: Excadrill|Excadrill, L89, F|307/350 brn
+|move|p1b: Lopunny|Flail|p2a: Klinklang
+|-resisted|p2a: Klinklang
+|-damage|p2a: Klinklang|102/213
+|move|p2a: Klinklang|Snarl|p1b: Lopunny|[spread] p1a,p1b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-resisted|p1b: Lopunny
+|-damage|p1a: Excadrill|240/350 brn
+|-damage|p1b: Lopunny|197/259
+|-unboost|p1a: Excadrill|spa|1
+|-unboost|p1b: Lopunny|spa|1
+|
+|-damage|p1a: Excadrill|197/350 brn|[from] brn
+|upkeep
+|turn|17
+
+|request|{"active":[{"moves":[{"move":"Attract","id":"attract","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Horn Leech","id":"hornleech","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Lucky Chant","id":"luckychant","pp":48,"maxpp":48,"target":"allySide","disabled":false},{"move":"Slack Off","id":"slackoff","pp":14,"maxpp":16,"target":"self","disabled":false}]},{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":14,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Embargo","id":"embargo","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Flame Wheel","id":"flamewheel","pp":39,"maxpp":40,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"154/350 brn","active":true,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"84/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"0 fnt","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"197/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"0 fnt","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p1b: Blastoise|Blastoise-Mega, L64, F|84/195
+|move|p1a: Excadrill|Attract||[still]
+|debug|incompatible gender
+|-fail|p1a: Excadrill
+|debug|move failed because it did nothing
+|move|p2a: Klinklang|Sandstorm|p2a: Klinklang
+|-weather|Sandstorm
+|
+|-weather|Sandstorm|[upkeep]
+|debug|natural status immunity
+|debug|weather immunity
+|debug|damage event failed
+|debug|natural status immunity
+|debug|weather immunity
+|-damage|p1a: Excadrill|154/350 brn|[from] brn
+|upkeep
+|turn|18
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"0 fnt","active":true,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"84/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"0 fnt","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"197/259","active":false,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"0 fnt","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471135
+|move|p1a: Excadrill|Attract||[still]
+|debug|incompatible gender
+|-fail|p1a: Excadrill
+|debug|move failed because it did nothing
+|move|p1b: Blastoise|Embargo|p2a: Klinklang
+|-start|p2a: Klinklang|Embargo
+|move|p2a: Klinklang|Fiery Dance|p1a: Excadrill
+|-supereffective|p1a: Excadrill
+|-damage|p1a: Excadrill|0 fnt
+|faint|p1a: Excadrill
+|
+|-weather|Sandstorm|[upkeep]
+|debug|damage event failed
+|debug|natural status immunity
+|debug|weather immunity
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Frenzy Plant","id":"frenzyplant","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":48,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Flail","id":"flail","pp":22,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":14,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Embargo","id":"embargo","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Flame Wheel","id":"flamewheel","pp":39,"maxpp":40,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"197/259","active":true,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"84/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"0 fnt","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"0 fnt","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"0 fnt","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|switch|p1a: Lopunny|Lopunny-Mega, L92, M|197/259
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Frenzy Plant","id":"frenzyplant","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":47,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Flail","id":"flail","pp":22,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":14,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Embargo","id":"embargo","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Flame Wheel","id":"flamewheel","pp":38,"maxpp":40,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"181/259","active":true,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"84/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"icyrock","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"0 fnt","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"0 fnt","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"0 fnt","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|move|p1a: Lopunny|Acupressure|p1a: Lopunny
+|-boost|p1a: Lopunny|atk|2
+|move|p1b: Blastoise|Flame Wheel|p2a: Klinklang
+|-supereffective|p2a: Klinklang
+|-damage|p2a: Klinklang|56/213
+|move|p2a: Klinklang|Switcheroo|p1b: Blastoise
+|-activate|p2a: Klinklang|move: Trick|[of] p1b: Blastoise
+|-item|p1b: Blastoise|Icy Rock|[from] move: Switcheroo
+|-item|p2a: Klinklang|Rare Bone|[from] move: Switcheroo
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Lopunny|181/259|[from] Sandstorm
+|debug|damage event failed
+|debug|natural status immunity
+|debug|weather immunity
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Belch","id":"belch","pp":16,"maxpp":16,"target":"normal","disabled":true},{"move":"Frenzy Plant","id":"frenzyplant","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Acupressure","id":"acupressure","pp":46,"maxpp":48,"target":"adjacentAllyOrSelf","disabled":false},{"move":"Flail","id":"flail","pp":22,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Land's Wrath","id":"landswrath","pp":14,"maxpp":16,"target":"allAdjacentFoes","disabled":false},{"move":"Poison Powder","id":"poisonpowder","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Embargo","id":"embargo","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Flame Wheel","id":"flamewheel","pp":37,"maxpp":40,"target":"normal","disabled":false}]}],"side":{"name":"Bot 1","id":"p1","pokemon":[{"ident":"p1: Lopunny","details":"Lopunny-Mega, L92, M","condition":"165/259","active":true,"stats":{"atk":269,"def":214,"spa":188,"spd":232,"spe":274},"moves":["belch","frenzyplant","acupressure","flail"],"baseAbility":"scrappy","item":"lopunnite","pokeball":"pokeball"},{"ident":"p1: Blastoise","details":"Blastoise-Mega, L64, F","condition":"84/195","active":true,"stats":{"atk":179,"def":213,"spa":210,"spd":184,"spe":136},"moves":["landswrath","poisonpowder","embargo","flamewheel"],"baseAbility":"magicguard","item":"rarebone","pokeball":"pokeball"},{"ident":"p1: Abomasnow","details":"Abomasnow, L54, F","condition":"0 fnt","active":false,"stats":{"atk":123,"def":103,"spa":116,"spd":101,"spe":84},"moves":["watersport","gigaimpact","recycle","healbell"],"baseAbility":"rattled","item":"abomasite","pokeball":"pokeball"},{"ident":"p1: Excadrill","details":"Excadrill, L89, F","condition":"0 fnt","active":false,"stats":{"atk":267,"def":129,"spa":97,"spd":163,"spe":203},"moves":["attract","hornleech","luckychant","slackoff"],"baseAbility":"infiltrator","item":"sharpbeak","pokeball":"pokeball"},{"ident":"p1: Chesnaught","details":"Chesnaught, L50, F","condition":"0 fnt","active":false,"stats":{"atk":108,"def":156,"spa":102,"spd":85,"spe":90},"moves":["foulplay","spikecannon","jumpkick","leechlife"],"baseAbility":"illusion","item":"roseincense","pokeball":"pokeball"},{"ident":"p1: Frillish","details":"Frillish, L83, F","condition":"0 fnt","active":false,"stats":{"atk":92,"def":92,"spa":198,"spd":178,"spe":120},"moves":["lusterpurge","cottonspore","technoblast","disarmingvoice"],"baseAbility":"flowergift","item":"sablenite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471135
+|move|p1a: Lopunny|Acupressure|p1a: Lopunny
+|-boost|p1a: Lopunny|spe|2
+|move|p1b: Blastoise|Flame Wheel|p2a: Klinklang
+|-supereffective|p2a: Klinklang
+|-damage|p2a: Klinklang|12/213
+|move|p2a: Klinklang|Switcheroo|p1b: Blastoise
+|-activate|p2a: Klinklang|move: Trick|[of] p1b: Blastoise
+|-item|p1b: Blastoise|Rare Bone|[from] move: Switcheroo
+|-item|p2a: Klinklang|Icy Rock|[from] move: Switcheroo
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Lopunny|165/259|[from] Sandstorm
+|debug|damage event failed
+|debug|natural status immunity
+|debug|weather immunity
+|upkeep
+|turn|21
+
+|
+|t:|1603471135
+|move|p1a: Lopunny|Flail|p2a: Klinklang
+|-resisted|p2a: Klinklang
+|-damage|p2a: Klinklang|0 fnt
+|faint|p2a: Klinklang
+|
+|win|Bot 1

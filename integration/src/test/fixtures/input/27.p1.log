@@ -1,0 +1,519 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":true,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"211/211","active":true,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"195/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"186/186","active":false,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"205/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"}]}}
+
+|t:|1603471151
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|6
+|tier|[Gen 6] Doubles Custom Game
+|clearpoke
+|poke|p1|Fletchinder, L99, M|item
+|poke|p1|Vileplume, L70, M|item
+|poke|p1|Yamask, L90, F|item
+|poke|p1|Duskull, L85, M|item
+|poke|p1|Magikarp, L68, M|item
+|poke|p1|Latias-Mega, L92, F|item
+|poke|p2|Cryogonal, L51|item
+|poke|p2|Goldeen, L97, F|item
+|poke|p2|Pumpkaboo-*, L72, F|item
+|poke|p2|Gogoat, L83, M|item
+|poke|p2|Aerodactyl, L55, F|item
+|poke|p2|Eelektross, L64, M|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Thunder","id":"thunder","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Egg Bomb","id":"eggbomb","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Psywave","id":"psywave","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Zen Headbutt","id":"zenheadbutt","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Lovely Kiss","id":"lovelykiss","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Uproar","id":"uproar","pp":16,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":true,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"211/211","active":true,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"195/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"186/186","active":false,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"205/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|start
+|switch|p1a: Fletchinder|Fletchinder, L99, M|282/282
+|switch|p1b: Vileplume|Vileplume, L70, M|226/226
+|switch|p2a: Cryogonal|Cryogonal, L51|165/165
+|switch|p2b: Goldeen|Goldeen, L97, F|211/211
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Petal Blizzard","id":"petalblizzard","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Heavy Slam","id":"heavyslam","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Barrier","id":"barrier","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":16,"maxpp":16,"target":"allySide","disabled":false}]},{"moves":[{"move":"Zen Headbutt","id":"zenheadbutt","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Lovely Kiss","id":"lovelykiss","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Uproar","id":"uproar","pp":16,"maxpp":16,"target":"randomNormal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"195/195","active":true,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"211/211","active":true,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"186/186","active":false,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"205/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|switch|p1a: Yamask|Yamask, L90, F|198/198
+|switch|p2a: Pumpkaboo|Pumpkaboo-Super, L72, F|195/195
+|move|p2b: Goldeen|Zen Headbutt|p1b: Vileplume
+|-supereffective|p1b: Vileplume
+|-damage|p1b: Vileplume|82/226
+|move|p1b: Vileplume|Growth|p1b: Vileplume
+|-boost|p1b: Vileplume|atk|1
+|-boost|p1b: Vileplume|spa|1
+|
+|upkeep
+|turn|2
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"195/195","active":true,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"211/211 par","active":true,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"186/186","active":false,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"205/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|move|p2a: Pumpkaboo|Crafty Shield|p2a: Pumpkaboo
+|-singleturn|p2a: Pumpkaboo|Crafty Shield
+|move|p2b: Goldeen|Zen Headbutt|p1b: Vileplume
+|-supereffective|p1b: Vileplume
+|-damage|p1b: Vileplume|0 fnt
+|debug|move failed because it did nothing
+|-status|p2b: Goldeen|par|[from] ability: Static|[of] p1b: Vileplume
+|-activate|p2b: Goldeen|ability: Synchronize
+|faint|p1b: Vileplume
+|move|p1a: Yamask|Petal Dance|p2a: Pumpkaboo
+|-immune|p2a: Pumpkaboo
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Petal Blizzard","id":"petalblizzard","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Heavy Slam","id":"heavyslam","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Barrier","id":"barrier","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":15,"maxpp":16,"target":"allySide","disabled":false}]},{"moves":[{"move":"Zen Headbutt","id":"zenheadbutt","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Lovely Kiss","id":"lovelykiss","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Uproar","id":"uproar","pp":16,"maxpp":16,"target":"randomNormal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"195/195","active":true,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"211/211 par","active":true,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"186/186","active":false,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"205/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|switch|p1b: Duskull|Duskull, L85, M|151/151
+|debug|natural status immunity
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Petal Blizzard","id":"petalblizzard","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Heavy Slam","id":"heavyslam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Barrier","id":"barrier","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":15,"maxpp":16,"target":"allySide","disabled":false}]},{"moves":[{"move":"Zen Headbutt","id":"zenheadbutt","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Lovely Kiss","id":"lovelykiss","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Uproar","id":"uproar","pp":16,"maxpp":16,"target":"randomNormal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":true,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"165/211 par","active":true,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"186/186","active":false,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"205/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|move|p1a: Yamask|Ember|p2b: Goldeen
+|-damage|p2b: Goldeen|178/211 par
+|move|p1b: Duskull|Icy Wind|p2b: Goldeen|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-supereffective|p2a: Pumpkaboo
+|debug|Spread modifier: 0.75
+|-resisted|p2b: Goldeen
+|-damage|p2a: Pumpkaboo|131/195
+|-damage|p2b: Goldeen|165/211 par
+|-unboost|p2a: Pumpkaboo|spe|1
+|-unboost|p2b: Goldeen|spe|1
+|move|p2a: Pumpkaboo|Heavy Slam|p1b: Duskull
+|-damage|p1b: Duskull|133/151
+|move|p2b: Goldeen|Lovely Kiss|p1b: Duskull
+|-status|p1b: Duskull|slp|[from] move: Lovely Kiss
+|
+|upkeep
+|debug|natural status immunity
+|turn|4
+
+|error|[Unavailable choice] Can't switch: The active Pokémon is trapped
+
+|request|{"active":[{"moves":[{"move":"Petal Blizzard","id":"petalblizzard","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Heavy Slam","id":"heavyslam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Barrier","id":"barrier","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":15,"maxpp":16,"target":"allySide","disabled":false}]},{"moves":[{"move":"Zen Headbutt","id":"zenheadbutt","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Lovely Kiss","id":"lovelykiss","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Uproar","id":"uproar","pp":16,"maxpp":16,"target":"randomNormal","disabled":false}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":true,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"165/211 par","active":true,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"186/186","active":false,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"205/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"}]}}
+
+|request|{"active":[{"moves":[{"move":"Petal Blizzard","id":"petalblizzard","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Heavy Slam","id":"heavyslam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Barrier","id":"barrier","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":14,"maxpp":16,"target":"allySide","disabled":false}]},{"moves":[{"move":"Zen Headbutt","id":"zenheadbutt","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Lovely Kiss","id":"lovelykiss","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Uproar","id":"uproar","pp":16,"maxpp":16,"target":"randomNormal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":true,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"165/211 par","active":true,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"186/186","active":false,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"205/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|switch|p1a: Magikarp|Magikarp, L68, M|127/127
+|move|p2a: Pumpkaboo|Crafty Shield|p2a: Pumpkaboo
+|-singleturn|p2a: Pumpkaboo|Crafty Shield
+|cant|p1b: Duskull|slp
+|move|p2b: Goldeen|Lovely Kiss|p1b: Duskull
+|-fail|p1b: Duskull|slp
+|debug|move failed because it did nothing
+|
+|upkeep
+|debug|natural status immunity
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Tackle","id":"tackle","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":40,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Trick-or-Treat","id":"trickortreat","pp":32,"maxpp":32,"target":"normal","disabled":false}],"trapped":true,"canMegaEvo":true},{"moves":[{"move":"Zen Headbutt","id":"zenheadbutt","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Lovely Kiss","id":"lovelykiss","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Uproar","id":"uproar","pp":15,"maxpp":16,"target":"randomNormal","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"186/186","active":true,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"101/211 par","active":true,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"205/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|switch|p2a: Aerodactyl|Aerodactyl, L55, F|186/186
+|-ability|p2a: Aerodactyl|Intimidate|boost
+|-unboost|p1a: Magikarp|atk|1
+|-unboost|p1b: Duskull|atk|1
+|move|p1a: Magikarp|Guard Split|p2a: Aerodactyl
+|-activate|p1a: Magikarp|move: Guard Split|[of] p2a: Aerodactyl
+|-curestatus|p1b: Duskull|slp|[msg]
+|move|p1b: Duskull|Aeroblast|p2b: Goldeen
+|-damage|p2b: Goldeen|101/211 par
+|move|p2b: Goldeen|Uproar|p1b: Duskull
+|-immune|p1b: Duskull
+|
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Tackle","id":"tackle","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":40,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Trick-or-Treat","id":"trickortreat","pp":32,"maxpp":32,"target":"normal","disabled":false}],"trapped":true,"canMegaEvo":true},{"moves":[{"move":"Zen Headbutt","id":"zenheadbutt","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Lovely Kiss","id":"lovelykiss","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Twineedle","id":"twineedle","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Uproar","id":"uproar","pp":15,"maxpp":16,"target":"randomNormal","disabled":false}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"101/186","active":true,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"73/211 par","active":true,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"205/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|move|p2a: Aerodactyl|Aqua Ring|p2a: Aerodactyl
+|-start|p2a: Aerodactyl|Aqua Ring
+|move|p1a: Magikarp|Clamp|p2b: Goldeen
+|-resisted|p2b: Goldeen
+|-damage|p2b: Goldeen|99/211 par
+|-activate|p2b: Goldeen|move: Clamp|[of] p1a: Magikarp
+|move|p1b: Duskull|Icy Wind|p2a: Aerodactyl|[spread] p2a
+|-miss|p1b: Duskull|p2b: Goldeen
+|debug|Spread modifier: 0.75
+|-supereffective|p2a: Aerodactyl
+|-damage|p2a: Aerodactyl|90/186
+|-unboost|p2a: Aerodactyl|spe|1
+|move|p2b: Goldeen|Twineedle|p1a: Magikarp
+|debug|lax incense - decreasing accuracy
+|-damage|p1a: Magikarp|96/127
+|-damage|p1a: Magikarp|65/127
+|-hitcount|p1a: Magikarp|2
+|
+|-heal|p2a: Aerodactyl|101/186|[from] Aqua Ring
+|-damage|p2b: Goldeen|73/211 par|[from] move: Clamp|[partiallytrapped]
+|upkeep
+|turn|7
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"112/186","active":true,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":true,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"205/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471151
+|move|p1a: Magikarp|Clamp|p2b: Goldeen
+|-resisted|p2b: Goldeen
+|-damage|p2b: Goldeen|71/211 par
+|move|p2a: Aerodactyl|Razor Leaf|p1b: Duskull|[spread] p1a,p1b
+|debug|lax incense - decreasing accuracy
+|debug|Spread modifier: 0.75
+|-supereffective|p1a: Magikarp
+|debug|Spread modifier: 0.75
+|-damage|p1a: Magikarp|19/127
+|-damage|p1b: Duskull|119/151
+|move|p1b: Duskull|Aeroblast|p2b: Goldeen
+|-damage|p2b: Goldeen|0 fnt
+|faint|p2b: Goldeen
+|
+|-heal|p2a: Aerodactyl|112/186|[from] Aqua Ring
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Tackle","id":"tackle","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":39,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Trick-or-Treat","id":"trickortreat","pp":32,"maxpp":32,"target":"normal","disabled":false}],"trapped":true,"canMegaEvo":true},{"moves":[{"move":"Torment","id":"torment","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Conversion","id":"conversion","pp":48,"maxpp":48,"target":"self","disabled":false},{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Endure","id":"endure","pp":16,"maxpp":16,"target":"self","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"112/186","active":true,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"205/205","active":true,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|switch|p2b: Pumpkaboo|Pumpkaboo-Super, L64, F|205/205
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Tackle","id":"tackle","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":39,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Trick-or-Treat","id":"trickortreat","pp":32,"maxpp":32,"target":"normal","disabled":false}],"trapped":true,"canMegaEvo":true},{"moves":[{"move":"Torment","id":"torment","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Conversion","id":"conversion","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Endure","id":"endure","pp":16,"maxpp":16,"target":"self","disabled":false}],"maybeTrapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"27/186","active":true,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":true,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|switch|p1a: Latias|Latias-Mega, L92, F|299/299
+|move|p2a: Aerodactyl|Aqua Ring||[still]
+|-fail|p2a: Aerodactyl
+|debug|move failed because it did nothing
+|move|p2b: Pumpkaboo|Conversion|p2b: Pumpkaboo
+|-start|p2b: Pumpkaboo|typechange|Dark
+|move|p1b: Duskull|Icy Wind|p2b: Pumpkaboo|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-supereffective|p2a: Aerodactyl
+|debug|Spread modifier: 0.75
+|-damage|p2a: Aerodactyl|16/186
+|-damage|p2b: Pumpkaboo|181/205
+|-unboost|p2a: Aerodactyl|spe|1
+|-unboost|p2b: Pumpkaboo|spe|1
+|debug|illusion cleared
+|replace|p2b: Eelektross|Eelektross, L64, M
+|-end|p2b: Eelektross|Illusion
+|
+|-heal|p2a: Aerodactyl|27/186|[from] Aqua Ring
+|upkeep
+|turn|9
+
+|error|[Unavailable choice] Can't switch: The active Pokémon is trapped
+
+|request|{"active":[{"moves":[{"move":"Tackle","id":"tackle","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":39,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Trick-or-Treat","id":"trickortreat","pp":32,"maxpp":32,"target":"normal","disabled":false}],"trapped":true,"canMegaEvo":true},{"moves":[{"move":"Torment","id":"torment","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Conversion","id":"conversion","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Endure","id":"endure","pp":16,"maxpp":16,"target":"self","disabled":false}],"trapped":true}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aerodactyl","details":"Aerodactyl, L55, F","condition":"27/186","active":true,"stats":{"atk":135,"def":95,"spa":105,"spd":100,"spe":170},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"intimidate","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":true,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"38/186","active":true,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":true,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|switch|p1b: Magikarp|Magikarp, L68, M|19/127
+|detailschange|p2a: Aerodactyl|Aerodactyl-Mega, L55, F
+|-mega|p2a: Aerodactyl|Aerodactyl|Aerodactylite
+|move|p2b: Eelektross|Endure|p2b: Eelektross
+|-singleturn|p2b: Eelektross|move: Endure
+|move|p1a: Latias|Natural Gift||[still]
+|-fail|p1a: Latias
+|move|p2a: Aerodactyl|Razor Leaf|p1b: Magikarp|[spread] p1a,p1b
+|debug|lax incense - decreasing accuracy
+|debug|Spread modifier: 0.75
+|-resisted|p1a: Latias
+|debug|Spread modifier: 0.75
+|-supereffective|p1b: Magikarp
+|-damage|p1a: Latias|294/299
+|-damage|p1b: Magikarp|0 fnt
+|faint|p1b: Magikarp
+|
+|-heal|p2a: Aerodactyl|38/186|[from] Aqua Ring
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Tackle","id":"tackle","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":38,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Trick-or-Treat","id":"trickortreat","pp":32,"maxpp":32,"target":"normal","disabled":false}]},{"moves":[{"move":"Torment","id":"torment","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Conversion","id":"conversion","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Endure","id":"endure","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"38/186","active":true,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":true,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":false,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|switch|p1b: Yamask|Yamask, L90, F|198/198
+|turn|10
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Thunder","id":"thunder","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Egg Bomb","id":"eggbomb","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Psywave","id":"psywave","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"327/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"165/165","active":true,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"38/186","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|switch|p1b: Fletchinder|Fletchinder, L99, M|282/282
+|switch|p2a: Gogoat|Gogoat, L83, M|327/327
+|switch|p2b: Cryogonal|Cryogonal, L51|165/165
+|move|p1a: Latias|Natural Gift||[still]
+|-fail|p1a: Latias
+|
+|upkeep
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Thunder","id":"thunder","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Egg Bomb","id":"eggbomb","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Psywave","id":"psywave","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"296/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"108/165","active":true,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"38/186","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|move|p1b: Fletchinder|Muddy Water|p2b: Cryogonal|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-resisted|p2a: Gogoat
+|debug|Spread modifier: 0.75
+|-damage|p2a: Gogoat|301/327
+|-damage|p2b: Cryogonal|108/165
+|move|p1a: Latias|Natural Gift||[still]
+|-fail|p1a: Latias
+|move|p2b: Cryogonal|Extrasensory|p1b: Fletchinder
+|-damage|p1b: Fletchinder|258/282
+|move|p2a: Gogoat|Submission|p1a: Latias
+|-resisted|p1a: Latias
+|-damage|p1a: Latias|275/299
+|-damage|p2a: Gogoat|296/327|[from] Recoil
+|
+|upkeep
+|turn|12
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Thunder","id":"thunder","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Egg Bomb","id":"eggbomb","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Psywave","id":"psywave","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"296/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"108/165","active":true,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"38/186","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|switch|p1b: Yamask|Yamask, L90, F|198/198
+|move|p1a: Latias|Natural Gift||[still]
+|-fail|p1a: Latias
+|move|p2b: Cryogonal|Psywave|p1a: Latias
+|-damage|p1a: Latias|244/299
+|move|p2a: Gogoat|Brine|p1b: Yamask
+|-damage|p1b: Yamask|145/198
+|
+|upkeep
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock"}],"trapped":true},{"moves":[{"move":"Thunder","id":"thunder","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Egg Bomb","id":"eggbomb","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Extrasensory","id":"extrasensory","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Psywave","id":"psywave","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"230/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"57/165","active":true,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"38/186","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|move|p1a: Latias|Thunder Shock|p2b: Cryogonal
+|-damage|p2b: Cryogonal|57/165
+|move|p2b: Cryogonal|Extrasensory|p1b: Yamask
+|-damage|p1b: Yamask|123/198
+|move|p2a: Gogoat|Freeze Shock||[still]
+|-prepare|p2a: Gogoat|Freeze Shock
+|move|p1b: Yamask|Petal Dance|p2a: Gogoat
+|-damage|p2a: Gogoat|230/327
+|
+|upkeep
+|turn|14
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"156/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"0 fnt","active":true,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"38/186","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471151
+|move|p1a: Latias|Dragon Ascent|p2b: Cryogonal
+|-damage|p2b: Cryogonal|0 fnt
+|-unboost|p1a: Latias|def|1
+|-unboost|p1a: Latias|spd|1
+|faint|p2b: Cryogonal
+|move|p2a: Gogoat|Freeze Shock|p1b: Yamask|[from]lockedmove
+|-damage|p1b: Yamask|33/198
+|move|p1b: Yamask|Petal Dance|p2a: Gogoat|[from]lockedmove
+|-damage|p2a: Gogoat|156/327
+|-start|p1b: Yamask|confusion|[fatigue]
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Tackle","id":"tackle","pp":56,"maxpp":56,"target":"normal","disabled":false},{"move":"Razor Leaf","id":"razorleaf","pp":38,"maxpp":40,"target":"allAdjacentFoes","disabled":false},{"move":"Aqua Ring","id":"aquaring","pp":30,"maxpp":32,"target":"self","disabled":false},{"move":"Trick-or-Treat","id":"trickortreat","pp":32,"maxpp":32,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"156/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"38/186","active":true,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"0 fnt","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"131/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|switch|p2b: Aerodactyl|Aerodactyl-Mega, L55, F|38/186
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Petal Blizzard","id":"petalblizzard","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Heavy Slam","id":"heavyslam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Barrier","id":"barrier","pp":32,"maxpp":32,"target":"self","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":14,"maxpp":16,"target":"allySide","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"149/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"77/195","active":true,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"0 fnt","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"38/186","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|switch|p2b: Pumpkaboo|Pumpkaboo-Super, L72, F|131/195
+|switch|p1b: Duskull|Duskull, L85, M|119/151
+|move|p1a: Latias|Thunder Shock|p2b: Pumpkaboo
+|-resisted|p2b: Pumpkaboo
+|-crit|p2b: Pumpkaboo
+|-damage|p2b: Pumpkaboo|77/195
+|move|p2a: Gogoat|Submission|p1a: Latias
+|-resisted|p1a: Latias
+|-damage|p1a: Latias|217/299
+|-damage|p2a: Gogoat|149/327|[from] Recoil
+|
+|upkeep
+|debug|natural status immunity
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":24,"maxpp":24,"target":"normal","disabled":false}],"trapped":true},{"moves":[{"move":"Petal Blizzard","id":"petalblizzard","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Heavy Slam","id":"heavyslam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Barrier","id":"barrier","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":14,"maxpp":16,"target":"allySide","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"115/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"7/195","active":true,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"0 fnt","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"38/186","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|move|p1a: Latias|Natural Gift||[still]
+|-fail|p1a: Latias
+|move|p2a: Gogoat|Brine|p1b: Duskull
+|-crit|p1b: Duskull
+|-damage|p1b: Duskull|81/151
+|move|p1b: Duskull|Icy Wind|p2b: Pumpkaboo|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-supereffective|p2a: Gogoat
+|debug|Spread modifier: 0.75
+|-supereffective|p2b: Pumpkaboo
+|-damage|p2a: Gogoat|115/327
+|-damage|p2b: Pumpkaboo|7/195
+|-unboost|p2a: Gogoat|spe|1
+|-unboost|p2b: Pumpkaboo|spe|1
+|move|p2b: Pumpkaboo|Barrier|p2b: Pumpkaboo
+|-boost|p2b: Pumpkaboo|def|2
+|
+|upkeep
+|debug|natural status immunity
+|turn|17
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"79/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"0 fnt","active":true,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"0 fnt","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"7/195","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471151
+|switch|p2b: Aerodactyl|Aerodactyl-Mega, L55, F|38/186
+|move|p1a: Latias|Natural Gift||[still]
+|-fail|p1a: Latias
+|move|p1b: Duskull|Icy Wind|p2a: Gogoat|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-supereffective|p2a: Gogoat
+|debug|Spread modifier: 0.75
+|-supereffective|p2b: Aerodactyl
+|-crit|p2b: Aerodactyl
+|-damage|p2a: Gogoat|79/327
+|-damage|p2b: Aerodactyl|0 fnt
+|-unboost|p2a: Gogoat|spe|1
+|faint|p2b: Aerodactyl
+|move|p2a: Gogoat|Freeze Shock||[still]
+|-prepare|p2a: Gogoat|Freeze Shock
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock"}],"trapped":true},{"moves":[{"move":"Petal Blizzard","id":"petalblizzard","pp":24,"maxpp":24,"target":"allAdjacent","disabled":false},{"move":"Heavy Slam","id":"heavyslam","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Barrier","id":"barrier","pp":31,"maxpp":32,"target":"self","disabled":false},{"move":"Crafty Shield","id":"craftyshield","pp":14,"maxpp":16,"target":"allySide","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"79/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"7/195","active":true,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"0 fnt","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"0 fnt","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471151
+|switch|p2b: Pumpkaboo|Pumpkaboo-Super, L72, F|7/195
+|debug|natural status immunity
+|turn|18
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"45/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"0 fnt","active":true,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":false,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"0 fnt","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"0 fnt","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471151
+|switch|p1a: Fletchinder|Fletchinder, L99, M|258/282
+|move|p1b: Duskull|Icy Wind|p2b: Pumpkaboo|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-supereffective|p2a: Gogoat
+|debug|Spread modifier: 0.75
+|-supereffective|p2b: Pumpkaboo
+|-damage|p2a: Gogoat|45/327
+|-damage|p2b: Pumpkaboo|0 fnt
+|-unboost|p2a: Gogoat|spe|1
+|faint|p2b: Pumpkaboo
+|move|p2a: Gogoat|Freeze Shock|p1a: Fletchinder|[from]lockedmove
+|-damage|p1a: Fletchinder|115/282
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Torment","id":"torment","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Conversion","id":"conversion","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Disable","id":"disable","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Endure","id":"endure","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"45/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"181/205","active":true,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"0 fnt","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"0 fnt","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"0 fnt","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471152
+|switch|p2b: Eelektross|Eelektross, L64, M|181/205
+|turn|19
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"17/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"61/205","active":true,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"0 fnt","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"0 fnt","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"0 fnt","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471152
+|switch|p1b: Yamask|Yamask, L90, F|33/198
+|move|p1a: Fletchinder|Muddy Water|p2a: Gogoat|[spread] p2a,p2b
+|debug|Spread modifier: 0.75
+|-resisted|p2a: Gogoat
+|debug|Spread modifier: 0.75
+|-crit|p2b: Eelektross
+|-damage|p2a: Gogoat|17/327
+|-damage|p2b: Eelektross|61/205
+|move|p2b: Eelektross|Disable|p1a: Fletchinder
+|-start|p1a: Fletchinder|Disable|Muddy Water
+|move|p2a: Gogoat|Brine|p1a: Fletchinder
+|-supereffective|p1a: Fletchinder
+|-damage|p1a: Fletchinder|0 fnt
+|faint|p1a: Fletchinder
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Torment","id":"torment","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Conversion","id":"conversion","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Disable","id":"disable","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Endure","id":"endure","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"17/327","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"61/205","active":true,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"0 fnt","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"0 fnt","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"0 fnt","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471152
+|switch|p1a: Latias|Latias-Mega, L92, F|217/299
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Torment","id":"torment","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Conversion","id":"conversion","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Endure","id":"endure","pp":15,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"0 fnt","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"61/205","active":true,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"0 fnt","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"0 fnt","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"0 fnt","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471152
+|switch|p1b: Duskull|Duskull, L85, M|81/151
+|move|p1a: Latias|Dragon Ascent|p2a: Gogoat
+|-supereffective|p2a: Gogoat
+|-damage|p2a: Gogoat|0 fnt
+|-unboost|p1a: Latias|def|1
+|-unboost|p1a: Latias|spd|1
+|faint|p2a: Gogoat
+|move|p2b: Eelektross|Disable||[still]
+|-fail|p2b: Eelektross
+|
+|upkeep
+|turn|21
+
+|request|{"active":[{"moves":[{"move":"Freeze Shock","id":"freezeshock","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Submission","id":"submission","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Brine","id":"brine","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Body Slam","id":"bodyslam","pp":24,"maxpp":24,"target":"normal","disabled":false}]},{"moves":[{"move":"Torment","id":"torment","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Conversion","id":"conversion","pp":47,"maxpp":48,"target":"self","disabled":false},{"move":"Disable","id":"disable","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Endure","id":"endure","pp":14,"maxpp":16,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gogoat","details":"Gogoat, L83, M","condition":"0 fnt","active":true,"stats":{"atk":196,"def":134,"spa":200,"spd":194,"spe":122},"moves":["freezeshock","submission","brine","bodyslam"],"baseAbility":"shedskin","item":"reapercloth","pokeball":"pokeball"},{"ident":"p2: Eelektross","details":"Eelektross, L64, M","condition":"6/205","active":true,"stats":{"atk":174,"def":120,"spa":215,"spd":135,"spe":108},"moves":["torment","conversion","disable","endure"],"baseAbility":"illusion","item":"moonstone","pokeball":"pokeball"},{"ident":"p2: Pumpkaboo","details":"Pumpkaboo-Super, L72, F","condition":"0 fnt","active":false,"stats":{"atk":139,"def":150,"spa":116,"spd":105,"spe":82},"moves":["petalblizzard","heavyslam","barrier","craftyshield"],"baseAbility":"bulletproof","item":"rootfossil","pokeball":"pokeball"},{"ident":"p2: Cryogonal","details":"Cryogonal, L51","condition":"0 fnt","active":false,"stats":{"atk":82,"def":45,"spa":113,"spd":165,"spe":131},"moves":["thunder","eggbomb","extrasensory","psywave"],"baseAbility":"regenerator","item":"sablenite","pokeball":"pokeball"},{"ident":"p2: Aerodactyl","details":"Aerodactyl-Mega, L55, F","condition":"0 fnt","active":false,"stats":{"atk":168,"def":117,"spa":116,"spd":122,"spe":192},"moves":["tackle","razorleaf","aquaring","trickortreat"],"baseAbility":"toughclaws","item":"aerodactylite","pokeball":"pokeball"},{"ident":"p2: Goldeen","details":"Goldeen, L97, F","condition":"0 fnt","active":false,"stats":{"atk":170,"def":124,"spa":141,"spd":127,"spe":154},"moves":["zenheadbutt","lovelykiss","twineedle","uproar"],"baseAbility":"synchronize","item":"ampharosite","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471152
+|move|p2b: Eelektross|Endure|p2b: Eelektross
+|-singleturn|p2b: Eelektross|move: Endure
+|move|p1a: Latias|Natural Gift||[still]
+|-fail|p1a: Latias
+|move|p1b: Duskull|Icy Wind|p2b: Eelektross
+|-crit|p2b: Eelektross
+|-damage|p2b: Eelektross|6/205
+|-unboost|p2b: Eelektross|spe|1
+|
+|upkeep
+|turn|22
+
+|
+|t:|1603471152
+|switch|p1a: Yamask|Yamask, L90, F|33/198
+|move|p2b: Eelektross|Endure||[still]
+|debug|Success chance: 33%
+|-fail|p2b: Eelektross
+|move|p1b: Duskull|Icy Wind|p2b: Eelektross
+|-damage|p2b: Eelektross|0 fnt
+|faint|p2b: Eelektross
+|
+|win|Bot 1

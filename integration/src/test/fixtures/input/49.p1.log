@@ -1,0 +1,772 @@
+|request|{"teamPreview":true,"maxTeamSize":24,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"144/144","active":true,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"chartiberry","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"265/265","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"175/175","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"251/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"195/195","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"}]}}
+
+|t:|1603471242
+|player|p1|Bot 1||
+|player|p2|Bot 2||
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|doubles
+|gen|6
+|tier|[Gen 6] Doubles Custom Game
+|clearpoke
+|poke|p1|Swalot, L85, M|item
+|poke|p1|Hitmonchan, L52, M|item
+|poke|p1|Clawitzer, L73, M|item
+|poke|p1|Porygon2, L51|item
+|poke|p1|Pidgeotto, L93, F|item
+|poke|p1|Venonat, L91, F|item
+|poke|p2|Larvesta, L86, F|item
+|poke|p2|Mr. Mime, L65, F|item
+|poke|p2|Malamar, L78, M|item
+|poke|p2|Greninja, L57, F|item
+|poke|p2|Poliwrath, L72, F|item
+|poke|p2|Gardevoir-Mega, L72, M|item
+|teampreview|24
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":64,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":32,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":32,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Aqua Tail","id":"aquatail","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Pay Day","id":"payday","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Needle Arm","id":"needlearm","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"144/144","active":true,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"chartiberry","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"265/265","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"175/175","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"251/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"195/195","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|start
+|switch|p1a: Swalot|Swalot, L85, M|302/302
+|switch|p1b: Hitmonchan|Hitmonchan, L52, M|131/131
+|switch|p2a: Larvesta|Larvesta, L86, F|245/245
+|switch|p2b: Mr. Mime|Mr. Mime, L65, F|144/144
+|-weather|DeltaStream|[from] ability: Delta Stream|[of] p2a: Larvesta
+|turn|1
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":64,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":32,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Aqua Tail","id":"aquatail","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Pay Day","id":"payday","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Needle Arm","id":"needlearm","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"144/144","active":true,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"chartiberry","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"265/265","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"175/175","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"251/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"195/195","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|move|p1b: Hitmonchan|Wide Guard|p1b: Hitmonchan
+|-singleturn|p1b: Hitmonchan|Wide Guard
+|move|p2a: Larvesta|Nasty Plot|p2a: Larvesta
+|-boost|p2a: Larvesta|spa|2
+|move|p2b: Mr. Mime|Aqua Tail|p1b: Hitmonchan
+|-damage|p1b: Hitmonchan|92/131
+|move|p1a: Swalot|Soak|p2b: Mr. Mime
+|-start|p2b: Mr. Mime|typechange|Water
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|2
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":8,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":8,"maxpp":8,"target":"self","disabled":false}]},{"moves":[{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Aqua Tail","id":"aquatail","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Pay Day","id":"payday","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Needle Arm","id":"needlearm","pp":24,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"265/265","active":true,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"144/144 par","active":true,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"chartiberry","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"175/175","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"251/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"195/195","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|-weather|none
+|switch|p2a: Malamar|Malamar, L78, M|265/265
+|switch|p1b: Clawitzer|Clawitzer, L73, M|220/220
+|move|p2b: Mr. Mime|Aqua Tail|p1b: Clawitzer
+|-resisted|p1b: Clawitzer
+|-damage|p1b: Clawitzer|198/220
+|move|p1a: Swalot|Stun Spore|p2b: Mr. Mime
+|-status|p2b: Mr. Mime|par
+|
+|upkeep
+|turn|3
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":8,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":7,"maxpp":8,"target":"self","disabled":false}]},{"moves":[{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Aqua Tail","id":"aquatail","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Pay Day","id":"payday","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Needle Arm","id":"needlearm","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"265/265","active":true,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"144/144 par","active":true,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"chartiberry","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"175/175","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"251/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"195/195","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1a: Hitmonchan|Hitmonchan, L52, M|92/131
+|move|p2a: Malamar|Detect|p2a: Malamar
+|-singleturn|p2a: Malamar|Protect
+|move|p1b: Clawitzer|Stone Edge|p2b: Mr. Mime|[miss]
+|-miss|p1b: Clawitzer|p2b: Mr. Mime
+|move|p2b: Mr. Mime|Needle Arm|p1b: Clawitzer
+|-supereffective|p1b: Clawitzer
+|-damage|p1b: Clawitzer|162/220
+|
+|upkeep
+|turn|4
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":7,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":24,"maxpp":24,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":7,"maxpp":8,"target":"self","disabled":false}]},{"moves":[{"move":"Sludge","id":"sludge","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Power Gem","id":"powergem","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Magnitude","id":"magnitude","pp":48,"maxpp":48,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"265/265","active":true,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"175/175","active":true,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"144/144","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"chartiberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"251/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"195/195","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1a: Porygon2|Porygon2, L51|170/170
+|switch|p2b: Greninja|Greninja, L57, F|175/175
+|move|p1b: Clawitzer|Slack Off|p1b: Clawitzer
+|-heal|p1b: Clawitzer|220/220
+|move|p2a: Malamar|Heal Bell|p2a: Malamar
+|-activate|p2a: Malamar|move: Heal Bell
+|-curestatus|p2: Mr. Mime|par|[msg]
+|
+|upkeep
+|turn|5
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":7,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Hail","id":"hail","pp":16,"maxpp":16,"target":"all","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":7,"maxpp":8,"target":"self","disabled":false}]},{"moves":[{"move":"Sludge","id":"sludge","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Power Gem","id":"powergem","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Magnitude","id":"magnitude","pp":48,"maxpp":48,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"265/265","active":true,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"125/175","active":true,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"144/144","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"chartiberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"251/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"195/195","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|move|p2b: Greninja|Gyro Ball|p1b: Clawitzer
+|debug|18 bp
+|-resisted|p1b: Clawitzer
+|-damage|p1b: Clawitzer|217/220
+|move|p1b: Clawitzer|Slack Off|p1b: Clawitzer
+|-heal|p1b: Clawitzer|220/220
+|move|p1a: Porygon2|Rock Wrecker|p2b: Greninja
+|-damage|p2b: Greninja|125/175
+|-mustrecharge|p1a: Porygon2
+|move|p2a: Malamar|Ice Punch|p1a: Porygon2
+|-damage|p1a: Porygon2|103/170
+|
+|upkeep
+|turn|6
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":7,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Hail","id":"hail","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":23,"maxpp":24,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":7,"maxpp":8,"target":"self","disabled":false}]},{"moves":[{"move":"Haze","id":"haze","pp":48,"maxpp":48,"target":"all","disabled":false},{"move":"Aqua Tail","id":"aquatail","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Pay Day","id":"payday","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Needle Arm","id":"needlearm","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"249/265","active":true,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"135/144","active":true,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"chartiberry","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"125/175","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"251/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"195/195","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p2b: Mr. Mime|Mr. Mime, L65, F|144/144
+|switch|p1b: Pidgeotto|Pidgeotto, L93, F|227/227
+|cant|p1a: Porygon2|recharge
+|move|p2a: Malamar|Hail|p2a: Malamar
+|-weather|Hail
+|
+|-weather|Hail|[upkeep]
+|-damage|p1b: Pidgeotto|213/227|[from] Hail
+|-damage|p2b: Mr. Mime|135/144|[from] Hail
+|-damage|p1a: Porygon2|93/170|[from] Hail
+|-damage|p2a: Malamar|249/265|[from] Hail
+|upkeep
+|turn|7
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":7,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Hail","id":"hail","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":7,"maxpp":8,"target":"self","disabled":false}]},{"moves":[{"move":"Haze","id":"haze","pp":47,"maxpp":48,"target":"all","disabled":false},{"move":"Aqua Tail","id":"aquatail","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Pay Day","id":"payday","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Needle Arm","id":"needlearm","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"233/265","active":true,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"60/144","active":true,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"125/175","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"251/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"195/195","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1a: Venonat|Venonat, L91, F|275/275
+|move|p1b: Pidgeotto|Bug Bite|p2b: Mr. Mime
+|-damage|p2b: Mr. Mime|69/144
+|-enditem|p2b: Mr. Mime|Charti Berry|[from] stealeat|[move] Bug Bite|[of] p1b: Pidgeotto
+|move|p2b: Mr. Mime|Haze|p2b: Mr. Mime
+|-clearallboost
+|move|p2a: Malamar|Ice Punch|p1a: Venonat
+|-crit|p1a: Venonat
+|-damage|p1a: Venonat|212/275
+|
+|-weather|Hail|[upkeep]
+|-damage|p1a: Venonat|195/275|[from] Hail
+|-damage|p1b: Pidgeotto|199/227|[from] Hail
+|-damage|p2b: Mr. Mime|60/144|[from] Hail
+|-damage|p2a: Malamar|233/265|[from] Hail
+|upkeep
+|turn|8
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":7,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Hail","id":"hail","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":7,"maxpp":8,"target":"self","disabled":false}]},{"moves":[{"move":"Haze","id":"haze","pp":46,"maxpp":48,"target":"all","disabled":false},{"move":"Aqua Tail","id":"aquatail","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Pay Day","id":"payday","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Needle Arm","id":"needlearm","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"217/265","active":true,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"26/144","active":true,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"125/175","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"251/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"195/195","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1a: Clawitzer|Clawitzer, L73, M|220/220
+|move|p1b: Pidgeotto|Hyperspace Hole|p2b: Mr. Mime
+|-resisted|p2b: Mr. Mime
+|-damage|p2b: Mr. Mime|35/144
+|move|p2b: Mr. Mime|Haze|p2b: Mr. Mime
+|-clearallboost
+|move|p2a: Malamar|Hail||[still]
+|-fail|p2a: Malamar
+|debug|move failed because it did nothing
+|
+|-weather|Hail|[upkeep]
+|-damage|p1b: Pidgeotto|185/227|[from] Hail
+|-damage|p2b: Mr. Mime|26/144|[from] Hail
+|-damage|p1a: Clawitzer|207/220|[from] Hail
+|-damage|p2a: Malamar|217/265|[from] Hail
+|upkeep
+|turn|9
+
+|request|{"active":[{"moves":[{"move":"Heal Bell","id":"healbell","pp":7,"maxpp":8,"target":"allyTeam","disabled":false},{"move":"Hail","id":"hail","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Ice Punch","id":"icepunch","pp":22,"maxpp":24,"target":"normal","disabled":false},{"move":"Detect","id":"detect","pp":6,"maxpp":8,"target":"self","disabled":false}]},{"moves":[{"move":"Haze","id":"haze","pp":45,"maxpp":48,"target":"all","disabled":false},{"move":"Aqua Tail","id":"aquatail","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Pay Day","id":"payday","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Needle Arm","id":"needlearm","pp":23,"maxpp":24,"target":"normal","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"201/265","active":true,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"17/144","active":true,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"125/175","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"251/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"195/195","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|move|p2a: Malamar|Detect|p2a: Malamar
+|-singleturn|p2a: Malamar|Protect
+|move|p1b: Pidgeotto|Bug Bite|p2a: Malamar
+|-activate|p2a: Malamar|move: Protect
+|move|p2b: Mr. Mime|Haze|p2b: Mr. Mime
+|-clearallboost
+|move|p1a: Clawitzer|Slack Off|p1a: Clawitzer
+|-heal|p1a: Clawitzer|220/220
+|
+|-weather|Hail|[upkeep]
+|-damage|p1b: Pidgeotto|171/227|[from] Hail
+|-damage|p2b: Mr. Mime|17/144|[from] Hail
+|-damage|p1a: Clawitzer|207/220|[from] Hail
+|-damage|p2a: Malamar|201/265|[from] Hail
+|upkeep
+|turn|10
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":true,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"251/251","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"125/175","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"17/144","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"195/195","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471242
+|switch|p2b: Gardevoir|Gardevoir-Mega, L72, M|251/251
+|move|p1b: Pidgeotto|Mega Kick|p2a: Malamar
+|-damage|p2a: Malamar|72/265
+|move|p1a: Clawitzer|Roar of Time|p2a: Malamar
+|-damage|p2a: Malamar|0 fnt
+|-mustrecharge|p1a: Clawitzer
+|faint|p2a: Malamar
+|
+|-weather|none
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"High Jump Kick","id":"highjumpkick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Worry Seed","id":"worryseed","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Mud-Slap","id":"mudslap","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Origin Pulse","id":"originpulse","pp":16,"maxpp":16,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":16,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"195/195","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"251/251","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"125/175","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"17/144","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p2a: Gardevoir|Gardevoir-Mega, L72, M|195/195
+|turn|11
+
+|request|{"active":[{"moves":[{"move":"High Jump Kick","id":"highjumpkick","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Worry Seed","id":"worryseed","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Mud-Slap","id":"mudslap","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Origin Pulse","id":"originpulse","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"183/195","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"236/251","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"125/175","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"17/144","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1b: Hitmonchan|Hitmonchan, L52, M|92/131
+|move|p2a: Gardevoir|Origin Pulse|p1a: Clawitzer|[spread] 
+|-miss|p2a: Gardevoir|p1a: Clawitzer
+|-miss|p2a: Gardevoir|p1b: Hitmonchan
+|move|p2b: Gardevoir|Sandstorm|p2b: Gardevoir
+|-weather|Sandstorm
+|cant|p1a: Clawitzer|recharge
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Gardevoir|183/195|[from] Sandstorm
+|-damage|p1b: Hitmonchan|84/131|[from] Sandstorm
+|-damage|p2b: Gardevoir|236/251|[from] Sandstorm
+|-damage|p1a: Clawitzer|194/220|[from] Sandstorm
+|upkeep
+|turn|12
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"171/195","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"115/175","active":true,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"236/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"17/144","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1b: Pidgeotto|Pidgeotto, L93, F|171/227
+|switch|p2b: Greninja|Greninja, L57, F|125/175
+|switch|p1a: Porygon2|Porygon2, L51|93/170
+|move|p2a: Gardevoir|High Jump Kick|p1a: Porygon2
+|-supereffective|p1a: Porygon2
+|-damage|p1a: Porygon2|0 fnt
+|faint|p1a: Porygon2
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2b: Greninja|115/175|[from] Sandstorm
+|-damage|p1b: Pidgeotto|157/227|[from] Sandstorm
+|-damage|p2a: Gardevoir|171/195|[from] Sandstorm
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"High Jump Kick","id":"highjumpkick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Worry Seed","id":"worryseed","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Mud-Slap","id":"mudslap","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Origin Pulse","id":"originpulse","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Sludge","id":"sludge","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Power Gem","id":"powergem","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Magnitude","id":"magnitude","pp":48,"maxpp":48,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"171/195","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"115/175","active":true,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"236/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"17/144","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1a: Hitmonchan|Hitmonchan, L52, M|84/131
+|turn|13
+
+|request|{"active":[{"moves":[{"move":"High Jump Kick","id":"highjumpkick","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Worry Seed","id":"worryseed","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Mud-Slap","id":"mudslap","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Origin Pulse","id":"originpulse","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false}],"trapped":true},{"moves":[{"move":"Sludge","id":"sludge","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Power Gem","id":"powergem","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Magnitude","id":"magnitude","pp":47,"maxpp":48,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"76/195","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"105/175","active":true,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"236/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"17/144","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1b: Swalot|Swalot, L85, M|302/302
+|move|p2b: Greninja|Magnitude|p1a: Hitmonchan|[spread] p2a,p1a,p1b
+|-activate|p2b: Greninja|move: Magnitude|8
+|debug|Zoom Lens boosting accuracy
+|debug|Spread modifier: 0.75
+|-crit|p2a: Gardevoir
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-supereffective|p1b: Swalot
+|-crit|p1b: Swalot
+|-damage|p2a: Gardevoir|124/195
+|-damage|p1a: Hitmonchan|55/131
+|-damage|p1b: Swalot|244/302
+|move|p2a: Gardevoir|Mud-Slap|p1a: Hitmonchan
+|-damage|p1a: Hitmonchan|34/131
+|-unboost|p1a: Hitmonchan|accuracy|1
+|move|p1a: Hitmonchan|Wrap|p2a: Gardevoir
+|-crit|p2a: Gardevoir
+|-damage|p2a: Gardevoir|112/195
+|-activate|p2a: Gardevoir|move: Wrap|[of] p1a: Hitmonchan
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2b: Greninja|105/175|[from] Sandstorm
+|-damage|p2a: Gardevoir|100/195|[from] Sandstorm
+|-damage|p1a: Hitmonchan|26/131|[from] Sandstorm
+|-damage|p1b: Swalot|226/302|[from] Sandstorm
+|-heal|p1b: Swalot|244/302|[from] item: Leftovers
+|-damage|p2a: Gardevoir|76/195|[from] move: Wrap|[partiallytrapped]
+|upkeep
+|turn|14
+
+|request|{"active":[{"moves":[{"move":"High Jump Kick","id":"highjumpkick","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Worry Seed","id":"worryseed","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Mud-Slap","id":"mudslap","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Origin Pulse","id":"originpulse","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false}],"trapped":true},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"40/195","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"221/251","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"105/175","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"17/144","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p2b: Mr. Mime|Mr. Mime, L72, F|236/251
+|switch|p1b: Venonat|Venonat, L91, F|195/275
+|move|p2a: Gardevoir|High Jump Kick|p1b: Venonat
+|-resisted|p1b: Venonat
+|-damage|p1b: Venonat|177/275
+|move|p1a: Hitmonchan|Spikes|p2b: Mr. Mime
+|-sidestart|p2: Bot 2|Spikes
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1b: Venonat|160/275|[from] Sandstorm
+|-damage|p2a: Gardevoir|64/195|[from] Sandstorm
+|-damage|p1a: Hitmonchan|18/131|[from] Sandstorm
+|-damage|p2b: Mr. Mime|221/251|[from] Sandstorm
+|-damage|p2a: Gardevoir|40/195|[from] move: Wrap|[partiallytrapped]
+|upkeep
+|turn|15
+
+|request|{"active":[{"moves":[{"move":"High Jump Kick","id":"highjumpkick","pp":13,"maxpp":16,"target":"normal","disabled":false},{"move":"Worry Seed","id":"worryseed","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Mud-Slap","id":"mudslap","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Origin Pulse","id":"originpulse","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Sludge","id":"sludge","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Power Gem","id":"powergem","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Magnitude","id":"magnitude","pp":47,"maxpp":48,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"40/195","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"84/175","active":true,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"221/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"17/144","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1a: Swalot|Swalot, L85, M|244/302
+|switch|p2b: Greninja|Greninja, L57, F|105/175
+|-damage|p2b: Greninja|84/175|[from] Spikes
+|move|p1b: Venonat|Baby-Doll Eyes|p2a: Gardevoir
+|-unboost|p2a: Gardevoir|atk|1
+|move|p2a: Gardevoir|High Jump Kick|p1a: Swalot
+|-resisted|p1a: Swalot
+|-damage|p1a: Swalot|223/302
+|
+|-weather|none
+|-heal|p1a: Swalot|241/302|[from] item: Leftovers
+|-end|p2a: Gardevoir|Wrap|[partiallytrapped]|[silent]
+|upkeep
+|turn|16
+
+|request|{"active":[{"moves":[{"move":"High Jump Kick","id":"highjumpkick","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Worry Seed","id":"worryseed","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Mud-Slap","id":"mudslap","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Origin Pulse","id":"originpulse","pp":15,"maxpp":16,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Sludge","id":"sludge","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Power Gem","id":"powergem","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Magnitude","id":"magnitude","pp":47,"maxpp":48,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"40/195","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"84/175 par","active":true,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"221/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"17/144","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|move|p1b: Venonat|Baby-Doll Eyes|p2a: Gardevoir
+|-unboost|p2a: Gardevoir|atk|1
+|move|p2b: Greninja|Power Gem|p1a: Swalot
+|-damage|p1a: Swalot|210/302
+|move|p2a: Gardevoir|High Jump Kick|p1b: Venonat
+|-resisted|p1b: Venonat
+|-damage|p1b: Venonat|152/275
+|move|p1a: Swalot|Stun Spore|p2b: Greninja
+|-status|p2b: Greninja|par
+|
+|-heal|p1a: Swalot|228/302|[from] item: Leftovers
+|upkeep
+|turn|17
+
+|request|{"forceSwitch":[false,true],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"40/195","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":true,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"245/245","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"221/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"84/175 par","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471242
+|switch|p1a: Pidgeotto|Pidgeotto, L93, F|157/227
+|switch|p2b: Mr. Mime|Mr. Mime, L65, F|17/144
+|-damage|p2b: Mr. Mime|0 fnt|[from] Spikes
+|faint|p2b: Mr. Mime
+|move|p1b: Venonat|Baby-Doll Eyes|p2a: Gardevoir
+|-unboost|p2a: Gardevoir|atk|1
+|move|p2a: Gardevoir|Origin Pulse|p1b: Venonat|[spread] p1a,p1b
+|debug|Spread modifier: 0.75
+|debug|Spread modifier: 0.75
+|-damage|p1a: Pidgeotto|53/227
+|-damage|p1b: Venonat|42/275
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"High Jump Kick","id":"highjumpkick","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Worry Seed","id":"worryseed","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Mud-Slap","id":"mudslap","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Origin Pulse","id":"originpulse","pp":14,"maxpp":16,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Hold Hands","id":"holdhands","pp":64,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":32,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"40/195","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"215/245","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"221/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"84/175 par","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p2b: Larvesta|Larvesta, L86, F|245/245
+|-damage|p2b: Larvesta|215/245|[from] Spikes
+|-weather|DeltaStream|[from] ability: Delta Stream|[of] p2b: Larvesta
+|turn|18
+
+|request|{"active":[{"moves":[{"move":"High Jump Kick","id":"highjumpkick","pp":12,"maxpp":16,"target":"normal","disabled":false},{"move":"Worry Seed","id":"worryseed","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Mud-Slap","id":"mudslap","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Origin Pulse","id":"originpulse","pp":14,"maxpp":16,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Hold Hands","id":"holdhands","pp":63,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":32,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"23/195","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"215/245","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"221/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"84/175 par","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1b: Swalot|Swalot, L85, M|228/302
+|move|p1a: Pidgeotto|Hyperspace Hole|p2a: Gardevoir
+|-resisted|p2a: Gardevoir
+|-damage|p2a: Gardevoir|23/195
+|move|p2b: Larvesta|Hold Hands|p2a: Gardevoir
+|move|p2a: Gardevoir|Worry Seed|p1a: Pidgeotto
+|-endability|p1a: Pidgeotto|Motor Drive|[from] move: Worry Seed
+|-ability|p1a: Pidgeotto|Insomnia|[from] move: Worry Seed
+|
+|-weather|DeltaStream|[upkeep]
+|-heal|p1b: Swalot|246/302|[from] item: Leftovers
+|upkeep
+|turn|19
+
+|request|{"active":[{"moves":[{"move":"High Jump Kick","id":"highjumpkick","pp":11,"maxpp":16,"target":"normal","disabled":false},{"move":"Worry Seed","id":"worryseed","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Mud-Slap","id":"mudslap","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Origin Pulse","id":"originpulse","pp":14,"maxpp":16,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Hold Hands","id":"holdhands","pp":62,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":32,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"23/195","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"215/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"221/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"84/175 par","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1a: Clawitzer|Clawitzer, L73, M|194/220
+|move|p2b: Larvesta|Hold Hands|p2a: Gardevoir
+|move|p2a: Gardevoir|High Jump Kick|p1b: Swalot
+|-resisted|p1b: Swalot
+|-damage|p1b: Swalot|233/302
+|move|p1b: Swalot|Stun Spore|p2b: Larvesta
+|-status|p2b: Larvesta|par
+|
+|-weather|DeltaStream|[upkeep]
+|-heal|p1b: Swalot|251/302|[from] item: Leftovers
+|upkeep
+|turn|20
+
+|request|{"active":[{"moves":[{"move":"High Jump Kick","id":"highjumpkick","pp":11,"maxpp":16,"target":"normal","disabled":false},{"move":"Worry Seed","id":"worryseed","pp":15,"maxpp":16,"target":"normal","disabled":false},{"move":"Mud-Slap","id":"mudslap","pp":14,"maxpp":16,"target":"normal","disabled":false},{"move":"Origin Pulse","id":"originpulse","pp":14,"maxpp":16,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Hold Hands","id":"holdhands","pp":62,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":31,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"23/195","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"215/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"221/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"84/175 par","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|move|p2a: Gardevoir|Mud-Slap|p1a: Clawitzer
+|-damage|p1a: Clawitzer|172/220
+|-unboost|p1a: Clawitzer|accuracy|1
+|move|p1a: Clawitzer|Slack Off|p1a: Clawitzer
+|-heal|p1a: Clawitzer|220/220
+|move|p1b: Swalot|Stun Spore|p2b: Larvesta
+|-fail|p2b: Larvesta|par
+|debug|move failed because it did nothing
+|move|p2b: Larvesta|Me First||[still]
+|-fail|p2b: Larvesta
+|
+|-weather|DeltaStream|[upkeep]
+|-heal|p1b: Swalot|269/302|[from] item: Leftovers
+|upkeep
+|turn|21
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":true,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"63/175 par","active":true,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"221/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"215/245 par","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471242
+|-weather|none
+|switch|p2b: Greninja|Greninja, L57, F|84/175 par
+|-damage|p2b: Greninja|63/175 par|[from] Spikes
+|move|p2a: Gardevoir|High Jump Kick|p1b: Swalot|[miss]
+|-miss|p2a: Gardevoir|p1b: Swalot
+|-damage|p2a: Gardevoir|0 fnt|[from] highjumpkick
+|faint|p2a: Gardevoir
+|move|p1a: Clawitzer|Roar of Time|p2b: Greninja|[miss]
+|-miss|p1a: Clawitzer|p2b: Greninja
+|move|p1b: Swalot|Soak|p2b: Greninja
+|-start|p2b: Greninja|typechange|Water
+|
+|-heal|p1b: Swalot|287/302|[from] item: Leftovers
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":62,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":31,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Sludge","id":"sludge","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Power Gem","id":"powergem","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Magnitude","id":"magnitude","pp":47,"maxpp":48,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"185/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"63/175 par","active":true,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"221/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p2a: Larvesta|Larvesta, L86, F|215/245 par
+|-damage|p2a: Larvesta|185/245 par|[from] Spikes
+|-weather|DeltaStream|[from] ability: Delta Stream|[of] p2a: Larvesta
+|turn|22
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":62,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":31,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"185/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"190/251","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"63/175 par","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1a: Venonat|Venonat, L91, F|42/275
+|switch|p2b: Greninja|Greninja, L72, F|221/251
+|-damage|p2b: Greninja|190/251|[from] Spikes
+|move|p1b: Swalot|Ion Deluge|p1b: Swalot
+|-fieldactivate|move: Ion Deluge
+|cant|p2a: Larvesta|par
+|
+|-weather|DeltaStream|[upkeep]
+|-heal|p1b: Swalot|302/302|[from] item: Leftovers
+|upkeep
+|turn|23
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":62,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":31,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Sludge","id":"sludge","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Power Gem","id":"powergem","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Magnitude","id":"magnitude","pp":47,"maxpp":48,"target":"allAdjacent","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"185/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"28/175 par","active":true,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"190/251","active":false,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p2b: Greninja|Greninja, L57, F|63/175 par
+|-damage|p2b: Greninja|42/175 par|[from] Spikes
+|switch|p1b: Pidgeotto|Pidgeotto, L93, F|53/227
+|move|p1a: Venonat|Lick|p2b: Greninja
+|-resisted|p2b: Greninja
+|-damage|p2b: Greninja|28/175 par
+|move|p2a: Larvesta|Twineedle|p1b: Pidgeotto
+|-resisted|p1b: Pidgeotto
+|-damage|p1b: Pidgeotto|38/227
+|-resisted|p1b: Pidgeotto
+|-damage|p1b: Pidgeotto|23/227
+|-hitcount|p1b: Pidgeotto|2
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|24
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":62,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":31,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"185/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"143/251","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"28/175 par","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p2b: Greninja|Greninja, L72, F|190/251
+|-damage|p2b: Greninja|159/251|[from] Spikes
+|move|p1a: Venonat|Lick|p2b: Greninja
+|-damage|p2b: Greninja|143/251
+|debug|illusion cleared
+|replace|p2b: Poliwrath|Poliwrath, L72, F
+|-end|p2b: Poliwrath|Illusion
+|move|p1b: Pidgeotto|Mega Kick|p2b: Poliwrath|[miss]
+|-miss|p1b: Pidgeotto|p2b: Poliwrath
+|cant|p2a: Larvesta|par
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|25
+
+|request|{"active":[{"moves":[{"move":"Sludge","id":"sludge","pp":32,"maxpp":32,"target":"normal","disabled":false},{"move":"Gyro Ball","id":"gyroball","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Power Gem","id":"powergem","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Magnitude","id":"magnitude","pp":47,"maxpp":48,"target":"allAdjacent","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":64,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"7/175 par","active":true,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"109/251 par","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"185/245 par","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|-weather|none
+|switch|p2a: Greninja|Greninja, L57, F|28/175 par
+|-damage|p2a: Greninja|7/175 par|[from] Spikes
+|move|p1a: Venonat|Lick|p2b: Poliwrath
+|-damage|p2b: Poliwrath|128/251
+|-status|p2b: Poliwrath|par
+|move|p1b: Pidgeotto|Bug Bite|p2b: Poliwrath
+|-resisted|p2b: Poliwrath
+|-damage|p2b: Poliwrath|109/251 par
+|move|p2b: Poliwrath|Destiny Bond|p2b: Poliwrath
+|-singlemove|p2b: Poliwrath|Destiny Bond
+|
+|upkeep
+|turn|26
+
+|request|{"forceSwitch":[true,false],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"0 fnt","active":true,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"109/251 par","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"185/245 par","active":false,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]},"noCancel":true}
+
+|
+|t:|1603471242
+|switch|p1b: Swalot|Swalot, L85, M|302/302
+|move|p1a: Venonat|Lick|p2a: Greninja
+|-resisted|p2a: Greninja
+|-damage|p2a: Greninja|0 fnt
+|debug|move failed because it did nothing
+|faint|p2a: Greninja
+|debug|removing Destiny Bond before attack
+|move|p2b: Poliwrath|Poison Gas|p1a: Venonat|[spread] 
+|debug|natural status immunity
+|debug|immune to status
+|-immune|p1a: Venonat
+|debug|natural status immunity
+|debug|immune to status
+|-immune|p1b: Swalot
+|debug|move failed because it did nothing
+|
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":62,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":31,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":15,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"155/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"109/251 par","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p2a: Larvesta|Larvesta, L86, F|185/245 par
+|-damage|p2a: Larvesta|155/245 par|[from] Spikes
+|-weather|DeltaStream|[from] ability: Delta Stream|[of] p2a: Larvesta
+|turn|27
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":61,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":31,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":63,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"155/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"109/251 par","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1a: Pidgeotto|Pidgeotto, L93, F|23/227
+|switch|p1b: Hitmonchan|Hitmonchan, L52, M|18/131
+|move|p2a: Larvesta|Hold Hands|p2b: Poliwrath
+|move|p2b: Poliwrath|Sandstorm|p2b: Poliwrath
+|-fail|p2b: Poliwrath|Sandstorm|[from] deltastream
+|debug|move failed because it did nothing
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|28
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":61,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":30,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":31,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":62,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"141/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"109/251 par","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1a: Swalot|Swalot, L85, M|302/302
+|move|p1b: Hitmonchan|Aura Sphere|p2a: Larvesta
+|-resisted|p2a: Larvesta
+|-damage|p2a: Larvesta|141/245 par
+|move|p2a: Larvesta|Me First||[still]
+|-fail|p2a: Larvesta
+|move|p2b: Poliwrath|Poison Gas|p1b: Hitmonchan|[spread] p1a,p1b
+|debug|natural status immunity
+|debug|immune to status
+|-immune|p1a: Swalot
+|-status|p1b: Hitmonchan|psn
+|
+|-weather|DeltaStream|[upkeep]
+|-damage|p1b: Hitmonchan|2/131 psn|[from] psn
+|upkeep
+|turn|29
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":61,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":30,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":16,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":61,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"141/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"109/251 par","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1b: Clawitzer|Clawitzer, L73, M|220/220
+|move|p1a: Swalot|Stun Spore|p2b: Poliwrath
+|-fail|p2b: Poliwrath|par
+|debug|move failed because it did nothing
+|move|p2a: Larvesta|Twineedle|p1b: Clawitzer
+|-damage|p1b: Clawitzer|193/220
+|-damage|p1b: Clawitzer|162/220
+|-status|p1b: Clawitzer|psn
+|-hitcount|p1b: Clawitzer|2
+|move|p2b: Poliwrath|Poison Gas|p1b: Clawitzer|[spread] 
+|debug|natural status immunity
+|debug|immune to status
+|-immune|p1a: Swalot
+|-fail|p1b: Clawitzer|psn
+|debug|move failed because it did nothing
+|
+|-weather|DeltaStream|[upkeep]
+|-damage|p1b: Clawitzer|135/220 psn|[from] psn
+|upkeep
+|turn|30
+
+|request|{"wait":true,"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"141/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"109/251 par","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1a: Hitmonchan|Hitmonchan, L52, M|2/131 psn
+|move|p1b: Clawitzer|Stone Edge|p2b: Poliwrath|[miss]
+|-miss|p1b: Clawitzer|p2b: Poliwrath
+|move|p2a: Larvesta|Hold Hands|p2b: Poliwrath
+|move|p2b: Poliwrath|Magnet Rise|p2b: Poliwrath
+|-start|p2b: Poliwrath|Magnet Rise
+|
+|-weather|DeltaStream|[upkeep]
+|-damage|p1a: Hitmonchan|0 fnt|[from] psn
+|faint|p1a: Hitmonchan
+|-damage|p1b: Clawitzer|108/220 psn|[from] psn
+|upkeep
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":60,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":30,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":31,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":7,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":61,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"141/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"109/251 par","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1a: Venonat|Venonat, L91, F|42/275
+|turn|31
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":60,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":30,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":30,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":6,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":61,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"141/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"109/251 par","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|switch|p1b: Pidgeotto|Pidgeotto, L93, F|23/227
+|move|p1a: Venonat|Snore||[still]
+|-fail|p1a: Venonat
+|move|p2a: Larvesta|Nasty Plot|p2a: Larvesta
+|-boost|p2a: Larvesta|spa|2
+|move|p2b: Poliwrath|Destiny Bond|p2b: Poliwrath
+|-singlemove|p2b: Poliwrath|Destiny Bond
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|32
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":60,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":30,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":30,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":30,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":6,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":61,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"64/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"109/251 par","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|move|p1a: Venonat|Snore||[still]
+|-fail|p1a: Venonat
+|move|p1b: Pidgeotto|Hyperspace Hole|p2a: Larvesta
+|-damage|p2a: Larvesta|64/245 par
+|cant|p2a: Larvesta|par
+|cant|p2b: Poliwrath|par
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|33
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":60,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":30,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":29,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":30,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":6,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":61,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"64/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"109/251 par","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|move|p1a: Venonat|Snore||[still]
+|-fail|p1a: Venonat
+|move|p1b: Pidgeotto|Sky Drop||[still]
+|-prepare|p1b: Pidgeotto|Sky Drop|p2b: Poliwrath
+|move|p2a: Larvesta|Twineedle|p1b: Pidgeotto|[miss]
+|-miss|p2a: Larvesta|p1b: Pidgeotto
+|debug|Sky drop nullifying.
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|34
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":60,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":30,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":30,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":6,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":61,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"64/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"0 fnt","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|move|p1a: Venonat|Snore|p2b: Poliwrath|[miss]
+|-miss|p1a: Venonat|p2b: Poliwrath
+|move|p1b: Pidgeotto|Sky Drop|p2b: Poliwrath|[from]lockedmove
+|-supereffective|p2b: Poliwrath
+|-damage|p2b: Poliwrath|0 fnt
+|faint|p2b: Poliwrath
+|move|p2a: Larvesta|Twineedle|p1a: Venonat
+|-resisted|p1a: Venonat
+|-crit|p1a: Venonat
+|-damage|p1a: Venonat|22/275
+|-resisted|p1a: Venonat
+|-damage|p1a: Venonat|10/275
+|-hitcount|p1a: Venonat|2
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|35
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":60,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":30,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":29,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":6,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":61,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"64/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"0 fnt","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|move|p1a: Venonat|Snore||[still]
+|-fail|p1a: Venonat
+|move|p1b: Pidgeotto|Mega Kick|p2a: Larvesta|[miss]
+|-miss|p1b: Pidgeotto|p2a: Larvesta
+|move|p2a: Larvesta|Nasty Plot|p2a: Larvesta
+|-boost|p2a: Larvesta|spa|2
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|36
+
+|request|{"active":[{"moves":[{"move":"Hold Hands","id":"holdhands","pp":60,"maxpp":64,"target":"adjacentAlly","disabled":false},{"move":"Me First","id":"mefirst","pp":30,"maxpp":32,"target":"adjacentFoe","disabled":false},{"move":"Twineedle","id":"twineedle","pp":28,"maxpp":32,"target":"normal","disabled":false},{"move":"Nasty Plot","id":"nastyplot","pp":29,"maxpp":32,"target":"self","disabled":false}]},{"moves":[{"move":"Magnet Rise","id":"magnetrise","pp":15,"maxpp":16,"target":"self","disabled":false},{"move":"Sandstorm","id":"sandstorm","pp":14,"maxpp":16,"target":"all","disabled":false},{"move":"Destiny Bond","id":"destinybond","pp":6,"maxpp":8,"target":"self","disabled":false},{"move":"Poison Gas","id":"poisongas","pp":61,"maxpp":64,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Bot 2","id":"p2","pokemon":[{"ident":"p2: Larvesta","details":"Larvesta, L86, F","condition":"64/245 par","active":true,"stats":{"atk":188,"def":119,"spa":112,"spd":136,"spe":148},"moves":["holdhands","mefirst","twineedle","nastyplot"],"baseAbility":"deltastream","item":"wepearberry","pokeball":"pokeball"},{"ident":"p2: Poliwrath","details":"Poliwrath, L72, F","condition":"0 fnt","active":true,"stats":{"atk":174,"def":191,"spa":138,"spd":169,"spe":124},"moves":["magnetrise","sandstorm","destinybond","poisongas"],"baseAbility":"illusion","item":"charcoal","pokeball":"pokeball"},{"ident":"p2: Mr. Mime","details":"Mr. Mime, L65, F","condition":"0 fnt","active":false,"stats":{"atk":96,"def":118,"spa":177,"spd":203,"spe":134},"moves":["haze","aquatail","payday","needlearm"],"baseAbility":"flamebody","item":"","pokeball":"pokeball"},{"ident":"p2: Greninja","details":"Greninja, L57, F","condition":"0 fnt","active":false,"stats":{"atk":115,"def":113,"spa":184,"spd":129,"spe":178},"moves":["sludge","gyroball","powergem","magnitude"],"baseAbility":"infiltrator","item":"zoomlens","pokeball":"pokeball"},{"ident":"p2: Gardevoir","details":"Gardevoir-Mega, L72, M","condition":"0 fnt","active":false,"stats":{"atk":184,"def":118,"spa":287,"spd":260,"spe":143},"moves":["highjumpkick","worryseed","mudslap","originpulse"],"baseAbility":"steadfast","item":"dracoplate","pokeball":"pokeball"},{"ident":"p2: Malamar","details":"Malamar, L78, M","condition":"0 fnt","active":false,"stats":{"atk":178,"def":184,"spa":131,"spd":157,"spe":157},"moves":["healbell","hail","icepunch","detect"],"baseAbility":"adaptability","item":"machobrace","pokeball":"pokeball"}]}}
+
+|
+|t:|1603471242
+|move|p1a: Venonat|Snore||[still]
+|-fail|p1a: Venonat
+|move|p1b: Pidgeotto|Sky Drop||[still]
+|-prepare|p1b: Pidgeotto|Sky Drop|p2a: Larvesta
+|debug|Sky drop nullifying.
+|
+|-weather|DeltaStream|[upkeep]
+|upkeep
+|turn|37
+
+|
+|t:|1603471242
+|switch|p1a: Clawitzer|Clawitzer, L73, M|108/220 psn
+|move|p1b: Pidgeotto|Sky Drop|p2a: Larvesta|[from]lockedmove
+|-supereffective|p2a: Larvesta
+|-damage|p2a: Larvesta|0 fnt
+|faint|p2a: Larvesta
+|-weather|none
+|
+|win|Bot 1
