@@ -120,6 +120,19 @@ const IMPORTS = {
   'sim/tools/random-player-ai.ts': ['AnyObject'],
 };
 const MOD_IMPORTS = {
+  // gen8dlc1
+  'data/mods/gen8dlc1/formats-data.ts': ['ModdedSpeciesFormatsData'],
+  'data/mods/gen8dlc1/learnsets.ts': ['LearnsetData'],
+  'data/mods/gen8dlc1/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/gen8dlc1/scripts.ts': ['ModdedBattleScriptsData'],
+
+  // letsgo
+  'data/mods/letsgo/formats-data.ts': ['ModdedSpeciesFormatsData'],
+  'data/mods/letsgo/learnsets.ts': ['ModdedLearnsetData'],
+  'data/mods/letsgo/moves.ts': ['ModdedMoveData'],
+  'data/mods/letsgo/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/letsgo/scripts.ts': ['ModdedBattleScriptsData', 'StatsTable', 'StatName'],
+
   // stadium
   'data/mods/stadium/conditions.ts': ['ModdedConditionData'],
   'data/mods/stadium/moves.ts': ['ModdedMoveData'],
@@ -134,17 +147,6 @@ const MOD_IMPORTS = {
   'data/mods/vgc17/pokedex.ts': ['ModdedSpeciesData'],
   'data/mods/vgc17/rulesets.ts': ['ModdedFormatData'],
   'data/mods/vgc17/scripts.ts': ['ModdedBattleScriptsData'],
-  // vgc20
-  'data/mods/vgc20/formats-data.ts': ['ModdedSpeciesFormatsData'],
-  'data/mods/vgc20/learnsets.ts': ['LearnsetData'],
-  'data/mods/vgc20/pokedex.ts': ['ModdedSpeciesData'],
-  'data/mods/vgc20/scripts.ts': ['ModdedBattleScriptsData'],
-  // letsgo
-  'data/mods/letsgo/formats-data.ts': ['ModdedSpeciesFormatsData'],
-  'data/mods/letsgo/learnsets.ts': ['ModdedLearnsetData'],
-  'data/mods/letsgo/moves.ts': ['ModdedMoveData'],
-  'data/mods/letsgo/pokedex.ts': ['ModdedSpeciesData'],
-  'data/mods/letsgo/scripts.ts': ['ModdedBattleScriptsData', 'StatsTable', 'StatName'],
 };
 const RANDOMS_IMPORTS = {
   'data/random-teams.ts': [
@@ -258,10 +260,10 @@ const OVERRIDDEN = new Set([
 const MOD_OVERRIDDEN = new Set([
   'data/mods/index.ts',
   'data/mods/index.test.ts',
-  'data/mods/stadium/index.ts',
+  'data/mods/gen8dlc1/index.ts',
   'data/mods/letsgo/index.ts',
+  'data/mods/stadium/index.ts',
   'data/mods/vgc17/index.ts',
-  'data/mods/vgc20/index.ts',
 ]);
 // Any file that hasn't been 'OVERRIDDEN' we need to copy over from PS
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));

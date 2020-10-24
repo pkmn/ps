@@ -13,25 +13,8 @@ const DATA = {
 for (const [pkg, Dex] of Object.entries(DATA)) {
   describe(`ModdedDex (${pkg})`, () => {
     describe('mods', () => {
-      it('stadium', async () => {
-        const dex = new ModdedDex(Dex.mod('stadium' as ID, await import('./stadium') as ModData));
-        expect(dex.gen).toBe(1);
-        expect(dex.getMove('highjumpkick').desc)
-          .toEqual('If this attack misses the target, the user takes 1 HP of damage.');
-      });
-
-      it('vgc17', async () => {
-        const dex = new ModdedDex(Dex.mod('vgc17' as ID, await import('./vgc17') as ModData));
-        expect(dex.gen).toBe(7);
-        expect(dex.getSpecies('naganadel').tier).toBe('Unreleased');
-        expect(dex.getItem('kommoniumz').isNonstandard).toBe('Unobtainable');
-        expect((await dex.getLearnset('swirlix')).learnset!['stickyweb']).toBeUndefined();
-        expect(dex.getSpecies('incineroar').unreleasedHidden).toBe(true);
-        expect((await dex.getLearnset('sandslashalola')).learnset!['iceshard']).toBeUndefined();
-      });
-
-      it('vgc20', async () => {
-        const dex = new ModdedDex(Dex.mod('vgc20' as ID, await import('./vgc20') as ModData));
+      it('gen8dlc1', async () => {
+        const dex = new ModdedDex(Dex.mod('gen8dlc1' as ID, await import('./gen8dlc1') as ModData));
         expect(dex.gen).toBe(8);
         expect(dex.getSpecies('Nidoking').tier).toBe('Unreleased');
         expect(dex.getSpecies('Regidrago').tier).toBe('Unreleased');
@@ -48,6 +31,23 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.getMove('bouncybubble').isNonstandard).toBeNull();
         expect(dex.getMove('teleport').shortDesc).toBe('User switches out.');
         expect((await dex.getLearnset('sandslashalola')).learnset!['iceshard']).toEqual(['7L1']);
+      });
+
+      it('stadium', async () => {
+        const dex = new ModdedDex(Dex.mod('stadium' as ID, await import('./stadium') as ModData));
+        expect(dex.gen).toBe(1);
+        expect(dex.getMove('highjumpkick').desc)
+          .toEqual('If this attack misses the target, the user takes 1 HP of damage.');
+      });
+
+      it('vgc17', async () => {
+        const dex = new ModdedDex(Dex.mod('vgc17' as ID, await import('./vgc17') as ModData));
+        expect(dex.gen).toBe(7);
+        expect(dex.getSpecies('naganadel').tier).toBe('Unreleased');
+        expect(dex.getItem('kommoniumz').isNonstandard).toBe('Unobtainable');
+        expect((await dex.getLearnset('swirlix')).learnset!['stickyweb']).toBeUndefined();
+        expect(dex.getSpecies('incineroar').unreleasedHidden).toBe(true);
+        expect((await dex.getLearnset('sandslashalola')).learnset!['iceshard']).toBeUndefined();
       });
     });
     describe('types', () => {

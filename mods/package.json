@@ -5,10 +5,10 @@
   "types": "build/index.d.ts",
   "exports": {
     ".": "./build/index.js",
+    "./gen8dlc1": "./build/gen8dlc1/index.js",
+    "./letsgo": "./build/letsgo/index.js",
     "./stadium": "./build/stadium/index.js",
-    "./vgc17": "./build/vgc17/index.js",
-    "./vgc20": "./build/vgc20/index.js",
-    "./letsgo": "./build/letsgo/index.js"
+    "./vgc17": "./build/vgc17/index.js"
   },
   "description": "Support for non-standard mods to @pkmn/sim and @pkmn/dex",
   "repository": "github:pkmn/ps",
