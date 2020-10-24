@@ -1100,12 +1100,15 @@ class Handler implements Protocol.Handler<string> {
       .replace('[TARGET]', this.parser.pokemon(target)));
   }
 
-  '|-clearboost|'(args: Args['|-clearboost|']) {
-    return this.clearboost(args, {});
+  '|-clearboost|'(args: Args['|-clearboost|'], kwArgs: KWArgs['|-clearboost|']) {
+    return this.clearboost(args, kwArgs);
   }
 
-  '|-clearpositiveboost|'(args: Args['|-clearpositiveboost|']) {
-    return this.clearboost(args, {});
+  '|-clearpositiveboost|'(
+    args: Args['|-clearpositiveboost|'],
+    kwArgs: KWArgs['|-clearpositiveboost|']
+  ) {
+    return this.clearboost(args, kwArgs);
   }
 
   '|-clearnegativeboost|'(
