@@ -64,6 +64,18 @@ export const Formats: FormatList = [
 		ruleset: ['[Gen 8] OU', 'Blitz'],
 	},
 	{
+		name: "[Gen 8] OU (DLC 1)",
+
+		mod: 'gen8dlc1',
+		searchShow: false,
+		ruleset: ['Standard', 'Dynamax Clause'],
+		banlist: [
+			'Cinderace', 'Darmanitan-Galar', 'Dracovish', 'Eternatus', 'Kyurem-Black', 'Kyurem-White', 'Lunala', 'Magearna', 'Marshadow',
+			'Melmetal', 'Mewtwo', 'Necrozma-Dusk-Mane', 'Necrozma-Dawn-Wings', 'Reshiram', 'Solgaleo', 'Zacian', 'Zamazenta', 'Zekrom',
+			'Arena Trap', 'Moody', 'Shadow Tag', 'Baton Pass',
+		],
+	},
+	{
 		name: "[Gen 8] Ubers",
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3666897/">Ubers Metagame Discussion</a>`,
@@ -149,8 +161,8 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		ruleset: ['Same Type Clause', 'Standard', 'Dynamax Clause'],
 		banlist: [
-			'Dialga', 'Eternatus', 'Giratina', 'Groudon', 'Ho-Oh', 'Kyogre', 'Kyurem-White', 'Lugia', 'Lunala', 'Marshadow',
-			'Mewtwo', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Palkia', 'Rayquaza', 'Reshiram', 'Solgaleo', 'Xerneas',
+			'Calyrex-Shadow', 'Dialga', 'Eternatus', 'Giratina', 'Groudon', 'Ho-Oh', 'Kyogre', 'Kyurem-White', 'Lugia', 'Lunala',
+			'Marshadow', 'Mewtwo', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Palkia', 'Rayquaza', 'Reshiram', 'Solgaleo', 'Xerneas',
 			'Yveltal', 'Zacian', 'Zamazenta', 'Zekrom',
 			'Moody', 'Power Construct', 'Shadow Tag', 'Baton Pass',
 		],
@@ -172,19 +184,18 @@ export const Formats: FormatList = [
 		ruleset: ['Obtainable', 'Species Clause', 'Nickname Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Accuracy Moves Clause', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Dynamax Clause', 'Endless Battle Clause'],
 		banlist: [
 			'Calyrex-Ice', 'Calyrex-Shadow', 'Cinderace', 'Dialga', 'Eternatus', 'Giratina', 'Groudon', 'Ho-Oh', 'Kyogre', 'Kyurem-Black',
-			'Kyurem-White', 'Lugia', 'Lunala', 'Melmetal', 'Mew', 'Mewtwo', 'Mimikyu', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
-			'Palkia', 'Rayquaza', 'Reshiram', 'Sableye', 'Solgaleo', 'Xerneas', 'Yveltal', 'Zacian', 'Zamazenta', 'Zekrom',
+			'Kyurem-White', 'Lugia', 'Lunala', 'Magearna', 'Marshadow', 'Melmetal', 'Mew', 'Mewtwo', 'Mimikyu', 'Necrozma-Dawn-Wings',
+			'Necrozma-Dusk-Mane', 'Palkia', 'Rayquaza', 'Reshiram', 'Sableye', 'Solgaleo', 'Xerneas', 'Yveltal', 'Zacian', 'Zamazenta', 'Zekrom',
 			'Focus Sash', 'Moody', 'Perish Song',
 		],
 	},
 	{
 		name: "[Gen 8] Anything Goes",
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3656317/">Anything Goes</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3672172/">Anything Goes</a>`,
 		],
 
 		mod: 'gen8',
-		searchShow: false,
 		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
 	},
 	{
@@ -208,7 +219,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		ruleset: ['[Gen 8] OU', '+CAP'],
-		banlist: ['Clefable', 'Crucibelle-Mega'],
+		banlist: ['Crucibelle-Mega'],
 	},
 	{
 		name: "[Gen 8] Battle Stadium Singles",
@@ -312,7 +323,7 @@ export const Formats: FormatList = [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3657818/">VGC 2020 Sample Teams</a>`,
 		],
 
-		mod: 'vgc20',
+		mod: 'gen8dlc1',
 		gameType: 'doubles',
 		forcedLevel: 50,
 		teamLength: {

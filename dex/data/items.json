@@ -770,7 +770,6 @@
     "slowbronite": {"inherit": true, "isNonstandard": null},
     "snorliumz": {"inherit": true, "isNonstandard": null},
     "solganiumz": {"inherit": true, "isNonstandard": null},
-    "souldew": {"inherit": true, "isNonstandard": null},
     "spelonberry": {"inherit": true, "isNonstandard": "Unobtainable"},
     "splashplate": {"inherit": true, "isNonstandard": null},
     "spookyplate": {"inherit": true, "isNonstandard": null},
@@ -3802,7 +3801,6 @@
       "itemUser": ["Latios", "Latias"],
       "num": 225,
       "gen": 3,
-      "isNonstandard": "Past",
       "desc": "If held by a Latias/Latios, its Dragon- and Psychic-type moves have 1.2x power."
     },
     "spelltag": {

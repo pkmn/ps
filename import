@@ -121,8 +121,11 @@ const IMPORTS = {
 };
 const MOD_IMPORTS = {
   // gen8dlc1
+  'data/mods/gen8dlc1/abilities.ts': ['ModdedAbilityData'],
   'data/mods/gen8dlc1/formats-data.ts': ['ModdedSpeciesFormatsData'],
+  'data/mods/gen8dlc1/items.ts': ['ModdedItemData'],
   'data/mods/gen8dlc1/learnsets.ts': ['LearnsetData'],
+  'data/mods/gen8dlc1/moves.ts': ['ModdedMoveData'],
   'data/mods/gen8dlc1/pokedex.ts': ['ModdedSpeciesData'],
   'data/mods/gen8dlc1/scripts.ts': ['ModdedBattleScriptsData'],
 

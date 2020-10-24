@@ -20,6 +20,8 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.getSpecies('Regidrago').tier).toBe('Unreleased');
         expect(dex.getItem('Custap Berry').isNonstandard).toBe('Unobtainable');
         expect(dex.getSpecies('dracozolt').unreleasedHidden).toBe(true);
+        expect(dex.getAbility('Curious Medicine').isNonstandard).toBe('Unobtainable');
+        expect(dex.getMove('Dragon Ascent').isNonstandard).toBe('Unobtainable');
       });
 
       it('letsgo', async () => {

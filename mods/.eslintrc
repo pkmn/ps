@@ -3,10 +3,10 @@
   "overrides": [
     {
       "files": [
+        "./src/gen8dlc1/*.ts",
         "./src/letsgo/*.ts",
         "./src/stadium/*.ts",
-        "./src/vgc17/*.ts",
-        "./src/vgc20/*.ts"
+        "./src/vgc17/*.ts"
       ],
       "rules": {
         "@typescript-eslint/quotes": "off",
