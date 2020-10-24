@@ -2122,8 +2122,8 @@ const BLOCKABLE = new Set([
   'flowerveil', 'sweetveil', 'disguise', 'safetygoggles', 'protectivepads',
 ]);
 const STARTABLE = new Set([
-  'wrap', 'clamp', 'whirlpool', 'firespin', 'magmastorm',
-  'sandtomb', 'infestation', 'trapped', 'bind',
+  'thundercage', 'clamp', 'whirlpool', 'firespin', 'magmastorm',
+  'sandtomb', 'infestation', 'trapped', 'bind', 'snaptrap', 'wrap',
 ]);
 const NUMBERABLE = new Set(['spite', 'grudge', 'forewarn', 'sketch', 'leppaberry', 'mysteryberry']);
 
