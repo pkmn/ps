@@ -31,6 +31,8 @@ const DEFAULT_EXISTS = (d: Data) => {
   return !('tier' in d && ['Illegal', 'Unreleased'].includes(d.tier));
 };
 
+const tr = (num: number, bits = 0) => bits ? (num >>> 0) % (2 ** bits) : num >>> 0;
+
 type ExistsFn = typeof DEFAULT_EXISTS;
 
 function assignWithout(a: {[key: string]: any}, b: {[key: string]: any}, exclude: Set<string>) {
@@ -511,22 +513,14 @@ export class Stats {
       nature = undefined;
     }
     if (stat === 'hp') {
-      return base === 1
-        ? base
-        : Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + level + 10;
+      return base === 1 ? base : tr(tr(2 * base + iv + tr(ev / 4) + 100) * level / 100 + 10);
     } else {
-      let mod = 1;
-      // BUG: Nature modifications are applied with 16-bit truncation
+      const val = tr(tr(2 * base + iv + tr(ev / 4)) * level / 100 + 5);
       if (nature !== undefined) {
-        if (nature.plus === stat) {
-          mod = 1.1;
-        } else if (nature.minus === stat) {
-          mod = 0.9;
-        }
+        if (nature.plus === stat) return tr(tr(val * 110, 16) / 100);
+        if (nature.minus === stat) return tr(tr(val * 90, 16) / 100);
       }
-      return Math.floor(
-        (Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * mod
-      );
+      return val;
     }
   }
 
