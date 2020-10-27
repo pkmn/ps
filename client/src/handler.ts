@@ -881,6 +881,8 @@ export class Handler implements Protocol.Handler {
       c.poke!.side.removeSideCondition('craftyshield' as ID);
       c.poke!.side.removeSideCondition('matblock' as ID);
       break;
+    case 'eeriespell':
+    case 'gmaxdepletion':
     case 'spite':
       const move = this.battle.get('moves', kwArgs.move).name as MoveName;
       const pp = Number(kwArgs.number);

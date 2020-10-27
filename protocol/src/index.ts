@@ -2125,7 +2125,10 @@ const STARTABLE = new Set([
   'thundercage', 'clamp', 'whirlpool', 'firespin', 'magmastorm',
   'sandtomb', 'infestation', 'trapped', 'bind', 'snaptrap', 'wrap',
 ]);
-const NUMBERABLE = new Set(['spite', 'grudge', 'forewarn', 'sketch', 'leppaberry', 'mysteryberry']);
+const NUMBERABLE = new Set([
+  'eeriespell', 'gmaxdepletion', 'spite', 'grudge',
+  'forewarn', 'sketch', 'leppaberry', 'mysteryberry',
+]);
 
 function upgradeBattleArgs({args, kwArgs}: {
   args: Protocol.BattleArgType;

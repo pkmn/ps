@@ -116,6 +116,8 @@ export interface EventInfo {
 	moves?: string[];
 	pokeball?: string;
 	from?: string;
+	/** Japan-only events can't be transferred to international games in Gen 1 */
+	japan?: boolean;
 }
 
 export type Effect = Ability | Item | ActiveMove | Species | Condition | Format;

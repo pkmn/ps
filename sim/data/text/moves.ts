@@ -1182,7 +1182,10 @@ export const MovesText = {
 	},
 	eeriespell: {
 		name: "Eerie Spell",
+		desc: "If this move is successful and the user has not fainted, the target loses 3 PP from its last move.",
 		shortDesc: "Removes 3 PP from the target's last move.",
+
+		activate: "#spite",
 	},
 	eggbomb: {
 		name: "Egg Bomb",
@@ -1384,7 +1387,8 @@ export const MovesText = {
 	},
 	fierywrath: {
 		name: "Fiery Wrath",
-		shortDesc: "Hits foe(s). 20% chance to flinch each foe.",
+		desc: "Has a 20% chance to flinch the target.",
+		shortDesc: "20% chance to flinch the foe(s).",
 	},
 	finalgambit: {
 		name: "Final Gambit",
@@ -1800,6 +1804,8 @@ export const MovesText = {
 		name: "G-Max Depletion",
 		desc: "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side loses 2 PP from its last move used, even if they have a substitute.",
 		shortDesc: "Base move affects power. Foes: last move -2 PP.",
+
+		activate: "  [TARGET]'s PP was reduced!",
 	},
 	gmaxdrumsolo: {
 		name: "G-Max Drum Solo",
@@ -2202,97 +2208,81 @@ export const MovesText = {
 		shortDescGen5: "Varies in power and type based on the user's IVs.",
 	},
 	hiddenpowerbug: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Bug",
 	},
 	hiddenpowerdark: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Dark",
 	},
 	hiddenpowerdragon: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Dragon",
 	},
 	hiddenpowerelectric: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Electric",
 	},
 	hiddenpowerfighting: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Fighting",
 	},
 	hiddenpowerfire: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Fire",
 	},
 	hiddenpowerflying: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Flying",
 	},
 	hiddenpowerghost: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Ghost",
 	},
 	hiddenpowergrass: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Grass",
 	},
 	hiddenpowerground: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Ground",
 	},
 	hiddenpowerice: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Ice",
 	},
 	hiddenpowerpoison: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Poison",
 	},
 	hiddenpowerpsychic: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Psychic",
 	},
 	hiddenpowerrock: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Rock",
 	},
 	hiddenpowersteel: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Steel",
 	},
 	hiddenpowerwater: {
-		realMove: "Hidden Power",
 		desc: "",
 		shortDesc: "",
 		name: "Hidden Power Water",
@@ -3044,6 +3034,8 @@ export const MovesText = {
 		name: "Meteor Beam",
 		desc: "This attack charges on the first turn and executes on the second. Raises the user's Special Attack by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "Raises user's Sp. Atk by 1 on turn 1. Hits turn 2.",
+
+		prepare: "[POKEMON] is overflowing with space power!",
 	},
 	meteormash: {
 		name: "Meteor Mash",
@@ -3052,7 +3044,7 @@ export const MovesText = {
 	},
 	metronome: {
 		name: "Metronome",
-		desc: "A random move is selected for use, other than After You, Apple Acid, Assist, Aura Wheel, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Body Press, Branch Poke, Breaking Swipe, Celebrate, Chatter, Clangorous Soul, Copycat, Counter, Covet, Crafty Shield, Decorate, Destiny Bond, Detect, Diamond Storm, Double Iron Bash, Dragon Ascent, Drum Beating, Dynamax Cannon, Endure, Eternabeam, False Surrender, Feint, Fleur Cannon, Focus Punch, Follow Me, Freeze Shock, Grav Apple, Helping Hand, Hold Hands, Hyperspace Fury, Hyperspace Hole, Ice Burn, Instruct, King's Shield, Life Dew, Light of Ruin, Mat Block, Me First, Meteor Assault, Metronome, Mimic, Mind Blown, Mirror Coat, Mirror Move, Moongeist Beam, Nature Power, Nature's Madness, Obstruct, Origin Pulse, Overdrive, Photon Geyser, Plasma Fists, Precipice Blades, Protect, Pyro Ball, Quash, Quick Guard, Rage Powder, Relic Song, Secret Sword, Shell Trap, Sketch, Sleep Talk, Snap Trap, Snarl, Snatch, Snore, Spectral Thief, Spiky Shield, Spirit Break, Spotlight, Steam Eruption, Steel Beam, Strange Steam, Struggle, Sunsteel Strike, Switcheroo, Techno Blast, Thief, Thousand Arrows, Thousand Waves, Transform, Trick, V-create, or Wide Guard.",
+		desc: "A random move is selected for use, other than After You, Apple Acid, Assist, Astral Barrage, Aura Wheel, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Body Press, Branch Poke, Breaking Swipe, Celebrate, Chatter, Clangorous Soul, Copycat, Counter, Covet, Crafty Shield, Decorate, Destiny Bond, Detect, Diamond Storm, Double Iron Bash, Dragon Ascent, Dragon Energy, Drum Beating, Dynamax Cannon, Endure, Eternabeam, False Surrender, Feint, Fiery Wrath, Fleur Cannon, Focus Punch, Follow Me, Freeze Shock, Freezing Glare, Glacial Lance, Grav Apple, Helping Hand, Hold Hands, Hyperspace Fury, Hyperspace Hole, Ice Burn, Instruct, Jungle Healing, King's Shield, Life Dew, Light of Ruin, Mat Block, Me First, Meteor Assault, Metronome, Mimic, Mind Blown, Mirror Coat, Mirror Move, Moongeist Beam, Nature Power, Nature's Madness, Obstruct, Origin Pulse, Overdrive, Photon Geyser, Plasma Fists, Precipice Blades, Protect, Pyro Ball, Quash, Quick Guard, Rage Powder, Relic Song, Secret Sword, Shell Trap, Sketch, Sleep Talk, Snap Trap, Snarl, Snatch, Snore, Spectral Thief, Spiky Shield, Spirit Break, Spotlight, Steam Eruption, Steel Beam, Strange Steam, Struggle, Sunsteel Strike, Surging Strikes, Switcheroo, Techno Blast, Thief, Thousand Arrows, Thousand Waves, Thunder Cage, Thunderous Kick, Transform, Trick, V-create, Wicked Blow, or Wide Guard.",
 		shortDesc: "Picks a random move.",
 		descGen7: "A random move is selected for use, other than After You, Assist, Baneful Bunker, Beak Blast, Belch, Bestow, Celebrate, Chatter, Copycat, Counter, Covet, Crafty Shield, Destiny Bond, Detect, Diamond Storm, Dragon Ascent, Endure, Feint, Fleur Cannon, Focus Punch, Follow Me, Freeze Shock, Helping Hand, Hold Hands, Hyperspace Fury, Hyperspace Hole, Ice Burn, Instruct, King's Shield, Light of Ruin, Mat Block, Me First, Metronome, Mimic, Mind Blown, Mirror Coat, Mirror Move, Nature Power, Origin Pulse, Photon Geyser, Plasma Fists, Precipice Blades, Protect, Quash, Quick Guard, Rage Powder, Relic Song, Secret Sword, Shell Trap, Sketch, Sleep Talk, Snarl, Snatch, Snore, Spectral Thief, Spiky Shield, Spotlight, Steam Eruption, Struggle, Switcheroo, Techno Blast, Thief, Thousand Arrows, Thousand Waves, Transform, Trick, V-create, or Wide Guard.",
 		descGen6: "A random move is selected for use, other than After You, Assist, Belch, Bestow, Celebrate, Chatter, Copycat, Counter, Covet, Crafty Shield, Destiny Bond, Detect, Diamond Storm, Dragon Ascent, Endure, Feint, Focus Punch, Follow Me, Freeze Shock, Helping Hand, Hold Hands, Hyperspace Fury, Hyperspace Hole, Ice Burn, King's Shield, Light of Ruin, Mat Block, Me First, Metronome, Mimic, Mirror Coat, Mirror Move, Nature Power, Origin Pulse, Precipice Blades, Protect, Quash, Quick Guard, Rage Powder, Relic Song, Secret Sword, Sketch, Sleep Talk, Snarl, Snatch, Snore, Spiky Shield, Steam Eruption, Struggle, Switcheroo, Techno Blast, Thief, Thousand Arrows, Thousand Waves, Transform, Trick, V-create, or Wide Guard.",
@@ -3087,6 +3079,8 @@ export const MovesText = {
 		name: "Mind Blown",
 		desc: "Whether or not this move is successful and even if it would cause fainting, the user loses 1/2 of its maximum HP, rounded up, unless the user has the Magic Guard Ability. This move is prevented from executing and the user does not lose HP if any active Pokemon has the Damp Ability, or if this move is Fire type and the user is affected by Powder or the weather is Primordial Sea.",
 		shortDesc: "User loses 50% max HP. Hits adjacent Pokemon.",
+
+		damage: "  ([POKEMON] cut its own HP to power up its move!)",
 	},
 	mindreader: {
 		name: "Mind Reader",
@@ -4404,6 +4398,8 @@ export const MovesText = {
 		name: "Snap Trap",
 		desc: "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
 		shortDesc: "Traps and damages the target for 4-5 turns.",
+
+		start: "  [POKEMON] got trapped by a snap trap!",
 	},
 	snarl: {
 		name: "Snarl",
@@ -5054,6 +5050,8 @@ export const MovesText = {
 		name: "Thunder Cage",
 		desc: "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
 		shortDesc: "Traps and damages the target for 4-5 turns.",
+
+		start: "  [SOURCE] trapped [POKEMON]!",
 	},
 	thunderfang: {
 		name: "Thunder Fang",
@@ -5063,7 +5061,7 @@ export const MovesText = {
 	thunderouskick: {
 		name: "Thunderous Kick",
 		desc: "Has a 100% chance to lower the target's Defense by 1 stage.",
-		shortDesc: "Lowers the target's Defense by 1.",
+		shortDesc: "100% chance to lower the target's Defense by 1.",
 	},
 	thunderpunch: {
 		name: "Thunder Punch",

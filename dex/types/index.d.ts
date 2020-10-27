@@ -268,6 +268,7 @@ export interface EventInfoData {
   moves?: string[];
   pokeball?: string;
   from?: string;
+  japan?: boolean;
 }
 
 export interface LearnsetData {

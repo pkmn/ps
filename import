@@ -75,6 +75,7 @@ const ps = path.resolve(__dirname, 'vendor/pokemon-showdown');
 const psc = path.resolve(__dirname, 'vendor/pokemon-showdown-client');
 const sim = path.resolve(__dirname, 'sim');
 const dex = path.resolve(__dirname, 'dex');
+const view = path.resolve(__dirname, 'view');
 const mods = path.resolve(__dirname, 'mods');
 const randoms = path.resolve(__dirname, 'randoms');
 
@@ -92,7 +93,7 @@ const IMPORTS = {
   'sim/battle.ts': [
     'Effect', 'Format', 'ID', 'PlayerOptions', 'AnyObject', 'ActiveMove', 'SideID',
     'SparseBoostsTable', 'SpreadMoveDamage', 'Move', 'PokemonSet', 'SpreadMoveTargets',
-    'HitEffect', 'GameType', 'ModdedDex',
+    'HitEffect', 'GameType', 'ModdedDex', 'StatsTable',
   ],
   'sim/dex-data.ts': [
     'ID', 'EffectData', 'EffectType', 'Nonstandard', 'AnyObject', 'GameTimerSettings',
@@ -276,7 +277,6 @@ const MOD_COPIED = new Set([...MOD_FILES].filter(f => !MOD_OVERRIDDEN.has(f)));
 const INTERESTING = new Set([
   'build',
   'build-tools/build-indexes',
-  'data/text.js',
   'js/storage.js',
   'src/battle-choices.ts',
   'src/battle-dex-data.ts',
@@ -504,10 +504,10 @@ const changes = async (where, last, now, repo) => ({
     // The data files are Typescript, so we need to build to convert them to JS before requiring
     await execOrDie(`node build`, ps);
 
-    const TEXT = {
+    const TEXTS = {
+      'moves.json': require(path.resolve(ps, '.data-dist/text/moves.js')).MovesText,
       'abilities.json': require(path.resolve(ps, '.data-dist/text/abilities.js')).AbilitiesText,
       'items.json': require(path.resolve(ps, '.data-dist/text/items.js')).ItemsText,
-      'moves.json': require(path.resolve(ps, '.data-dist/text/moves.js')).MovesText,
       // 'species.json': require(path.resolve(ps, '.data-dist/text/pokedex.js')).PokedexText,
     };
 
@@ -521,11 +521,33 @@ const changes = async (where, last, now, repo) => ({
           const [contents, basename, patch] = fn(require(path.resolve(dir, file)));
           DEX[basename] = DEX[basename] || {};
           if (patch) patch(contents, gen, DEX[basename]);
-          const text = TEXT[basename];
+          const text = TEXTS[basename];
           DEX[basename][gen] = text ? fillDescs(text, gen, contents) : contents;
         }
       }
     }
+
+    const DefaultText = require(path.resolve(ps, '.data-dist/text/default.js')).DefaultText;
+    const TEXT = {};
+    for (const key in DefaultText) {
+      if (key === 'sandstorm') {
+        DefaultText[key].weatherName = 'Sand';
+      } else if (key === 'desolateland') {
+        DefaultText[key].weatherName  = 'Harsh Sunshine';
+      }
+
+      TEXT[key === 'default' ? '_' : key] = DefaultText[key];
+    }
+    for (const text in TEXTS) {
+      for (const id in TEXTS[text]) {
+        const entry = TEXTS[text][id];
+        for (const key in entry) {
+          if (key === 'name' || key.startsWith('desc') || key.startsWith('shortDesc')) continue;
+          (TEXT[id] || (TEXT[id] = {}))[key] = entry[key];
+        }
+      }
+    }
+    fs.writeFileSync(path.join(view, 'src/data/text.json'), stringify(TEXT));
 
     for (const basename in DEX) {
       const data = basename === 'aliases.json' ? DEX[basename][8] : DEX[basename];

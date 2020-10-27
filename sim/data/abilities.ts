@@ -180,8 +180,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onFoeTryEatItem: false,
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
-				this.add('-ability', source, 'Chilling Neigh');
-				this.boost({atk: length}, source, source, null, true);
+				this.boost({atk: length}, source, source, this.dex.getEffect('chillingneigh'), true);
 			}
 		},
 		name: "As One (Glastrier)",
@@ -196,8 +195,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onFoeTryEatItem: false,
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
-				this.add('-ability', source, 'Grim Neigh');
-				this.boost({spa: length}, source, source, null, true);
+				this.boost({spa: length}, source, source, this.dex.getEffect('grimneigh'), true);
 			}
 		},
 		name: "As One (Spectrier)",
@@ -2644,7 +2642,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (!this.effectData.target.hp) return;
 			const ability = target.getAbility();
 			const bannedAbilities = [
-				'battlebond', 'comatose', 'disguise', 'flowergift', 'forecast', 'gulpmissile', 'hungerswitch', 'iceface', 'illusion', 'imposter', 'multitype', 'powerconstruct', 'powerofalchemy', 'receiver', 'rkssystem', 'schooling', 'shieldsdown', 'stancechange', 'trace', 'wonderguard', 'zenmode',
+				'asoneglastrier', 'asonespectrier', 'battlebond', 'comatose', 'disguise', 'flowergift', 'forecast', 'gulpmissile', 'hungerswitch', 'iceface', 'illusion', 'imposter', 'multitype', 'powerconstruct', 'powerofalchemy', 'receiver', 'rkssystem', 'schooling', 'shieldsdown', 'stancechange', 'trace', 'wonderguard', 'zenmode',
 			];
 			if (bannedAbilities.includes(target.ability)) return;
 			this.add('-ability', this.effectData.target, ability, '[from] ability: Power of Alchemy', '[of] ' + target);
@@ -2663,7 +2661,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 		name: "Power Spot",
-		rating: 0,
+		rating: 1,
 		num: 249,
 	},
 	prankster: {
@@ -2853,7 +2851,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (!this.effectData.target.hp) return;
 			const ability = target.getAbility();
 			const bannedAbilities = [
-				'battlebond', 'comatose', 'disguise', 'flowergift', 'forecast', 'gulpmissile', 'hungerswitch', 'iceface', 'illusion', 'imposter', 'multitype', 'neutralizinggas', 'powerconstruct', 'powerofalchemy', 'receiver', 'rkssystem', 'schooling', 'shieldsdown', 'stancechange', 'trace', 'wonderguard', 'zenmode',
+				'asoneglastrier', 'asonespectrier', 'battlebond', 'comatose', 'disguise', 'flowergift', 'forecast', 'gulpmissile', 'hungerswitch', 'iceface', 'illusion', 'imposter', 'multitype', 'neutralizinggas', 'powerconstruct', 'powerofalchemy', 'receiver', 'rkssystem', 'schooling', 'shieldsdown', 'stancechange', 'trace', 'wonderguard', 'zenmode',
 			];
 			if (bannedAbilities.includes(target.ability)) return;
 			this.add('-ability', this.effectData.target, ability, '[from] ability: Receiver', '[of] ' + target);
@@ -3908,7 +3906,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				const target = possibleTargets[rand];
 				const ability = target.getAbility();
 				const bannedAbilities = [
-					'noability', 'battlebond', 'comatose', 'disguise', 'flowergift', 'forecast', 'gulpmissile', 'hungerswitch', 'iceface', 'illusion', 'imposter', 'multitype', 'neutralizinggas', 'powerconstruct', 'powerofalchemy', 'receiver', 'rkssystem', 'schooling', 'shieldsdown', 'stancechange', 'trace', 'zenmode',
+					'noability', 'asoneglastrier', 'asonespectrier', 'battlebond', 'comatose', 'disguise', 'flowergift', 'forecast', 'gulpmissile', 'hungerswitch', 'iceface', 'illusion', 'imposter', 'multitype', 'neutralizinggas', 'powerconstruct', 'powerofalchemy', 'receiver', 'rkssystem', 'schooling', 'shieldsdown', 'stancechange', 'trace', 'zenmode',
 				];
 				if (bannedAbilities.includes(target.ability)) {
 					possibleTargets.splice(rand, 1);
