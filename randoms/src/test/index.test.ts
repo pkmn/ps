@@ -41,7 +41,7 @@ describe('TeamGenerators', () => {
 	]) {
 		// eslint-disable-next-line jest/expect-expect,jest/valid-title
 		it(format, () => {
-			const generator = TeamGenerators.getTeamGenerator(format);
+			const generator = TeamGenerators.getTeamGenerator(format, [1, 2, 3, 4]);
 			const gen = +format.charAt(3);
 			for (let i = 0; i < N; i++) {
 				const seed = generator.prng.seed;
