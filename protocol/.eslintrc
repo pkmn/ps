@@ -1,6 +1,0 @@
-{
-  "extends": "@pkmn",
-  "rules": {
-    "no-redeclare": "off"
-  }
-}

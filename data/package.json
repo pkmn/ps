@@ -27,5 +27,13 @@
     "test": "jest",
     "pretest": "npm run build",
     "posttest": "npm run lint"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": ["node_modules/", "build/"],
+    "moduleNameMapper": {
+      "^@smogon/calc/(.*)$": "<rootDir>/node_modules/@smogon/calc/dist/$1"
+    }
   }
 }
