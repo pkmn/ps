@@ -13,7 +13,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/client": "^0.1.0",
     "@pkmn/protocol": "^0.2.0",
     "@pkmn/types": "^1.0.0"
   },
