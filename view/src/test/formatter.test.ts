@@ -1,6 +1,6 @@
 import {PokemonDetails, PokemonIdent, Protocol} from '@pkmn/protocol';
 
-import {LogFormatter} from '../log-formatter';
+import {LogFormatter} from '../formatter';
 
 // NOTE: tested exhaustively in integration/src/test/client.js
 describe('LogFormatter', () => {
