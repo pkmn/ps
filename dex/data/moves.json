@@ -6967,7 +6967,7 @@
       "pp": 5,
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1, "sound": 1, "authentic": 1},
-      "secondary": null,
+      "secondary": {"chance": 100},
       "target": "normal",
       "type": "Psychic",
       "desc": "If this move is successful and the user has not fainted, the target loses 3 PP from its last move.",
@@ -10045,7 +10045,7 @@
       "shortDesc": "Always leaves the target with at least 1 HP."
     },
     "holdhands": {
-      "num": 615,
+      "num": 607,
       "accuracy": true,
       "basePower": 0,
       "category": "Status",

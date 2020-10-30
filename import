@@ -98,13 +98,13 @@ const IMPORTS = {
   'sim/dex-data.ts': [
     'ID', 'EffectData', 'EffectType', 'Nonstandard', 'AnyObject', 'GameTimerSettings',
     'FormatData', 'GameType', 'Battle', 'ConditionData', 'ItemData', 'FlingData', 'AbilityData',
-    'MoveSource', 'EventInfo', 'SpeciesData', 'SpeciesFormatsData', 'SpeciesAbility',
+    'MoveSource', 'EventInfo', 'SpeciesData', 'SpeciesFormatsData', 'SpeciesAbility', 'NatureData',
     'GenderName', 'StatsTable', 'RandomTeamsTypes', 'MoveData', 'SecondaryEffect', 'MoveTarget',
-    'TypeData', 'SparseStatsTable', 'SparseBoostsTable', 'TierTypes',
+    'TypeData', 'SparseStatsTable', 'SparseBoostsTable', 'TierTypes', 'StatNameExceptHP',
   ],
   'sim/field.ts': ['Effect', 'Condition', 'Pokemon', 'Battle', 'Side', 'AnyObject', 'ID'],
   'sim/pokemon.ts': [
-    'ActiveMove', 'Ability', 'Condition', 'Item', 'Species', 'SparseBoostsTable', 'Side',
+    'ActiveMove', 'Ability', 'Condition', 'Item', 'Species', 'SparseBoostsTable', 'Side', 'SideID',
     'AnyObject', 'DynamaxOptions', 'Move', 'StatNameExceptHP', 'PokemonModData', 'Effect',
     'StatsExceptHPTable', 'ID', 'BoostsTable', 'StatsTable', 'GenderName', 'PokemonSet', 'Battle',
   ],
@@ -116,7 +116,7 @@ const IMPORTS = {
   ],
   'sim/team-validator.ts': [
     'Format', 'StatsTable', 'SparseStatsTable', 'Species', 'AnyObject', 'Move',
-    'EventInfo', 'PokemonSet', 'Ability', 'Item', 'ID', 'ModdedDex',
+    'EventInfo', 'PokemonSet', 'Ability', 'Item', 'ID', 'ModdedDex', 'Nature',
   ],
   'sim/tools/random-player-ai.ts': ['AnyObject'],
 };
@@ -209,17 +209,29 @@ const imports = (types, where, typeOnly = false) => {
   return `${importStatement} {\n\t${types.join(',\n\t')},\n} from '${where}';\n\n`;
 };
 
-// This is actually in sim/dex.ts and really should be in sim/global-types.ts
-const NATURE = `
-export interface Nature {
-\tname: string;
-\tplus?: Exclude<keyof StatsTable, 'hp'>;
-\tminus?: Exclude<keyof StatsTable, 'hp'>;
-\t[k: string]: any;
-}\n`;
+const suspectTests =
+  'const suspectTests = JSON.parse(FS(\'../config/suspects.json\').readIfExistsSync() || "{}");'
+const REWRITES = {
+  'sim/side.ts': {
+    '\tgetRequestData() {':
+      '\tgetRequestData(): {id: SideID, name: string, pokemon: AnyObject[]} {',
+  },
+  'sim/pokemon.ts': {
+    '\tgetHealth = () => {':
+      '\tgetHealth = (): {side: SideID, secret: string, shared: string} => {',
+    '\tgetDetails = () => {':
+      '\tgetDetails = (): {side: SideID, secret: string, shared: string} => {',
+  },
+  'sim/battle.ts': {
+    [suspectTests]: 'const suspectTests = {} as any;',
+    'import {FS} from \'../lib/fs\';': undefined,
+  }
+};
 
-// All the files in our sim/ directory, excluding build/ & node_modules/
-const FILES = new Set(tree(sim).map(m => m.slice(sim.length + 1)));
+// All the files in our sim/ directory, excluding build/ & node_modules/ & test/sim/
+const FILES = new Set(tree(sim)
+  .filter(f => !f.startsWith('test/sim'))
+  .map(m => m.slice(sim.length + 1)));
 const MOD_FILES =
   new Set(tree(path.join(mods, 'src')).map(m => `data/mods/${m.slice(mods.length + 5)}`));
 
@@ -256,7 +268,6 @@ const OVERRIDDEN = new Set([
   'sim/index.ts',
   'sim/tools/exhaustive-runner.ts',
   'test/main.js',
-  'test/sim/misc/statuses.js',
   'tsconfig.json',
   'pnpm-debug.log', // sigh...
   'package-lock.json', // double sigh...
@@ -268,6 +279,15 @@ const MOD_OVERRIDDEN = new Set([
   'data/mods/letsgo/index.ts',
   'data/mods/stadium/index.ts',
   'data/mods/vgc17/index.ts',
+]);
+const SKIP_TESTS = new Set([
+  'test/sim/data.js',
+  'test/sim/misc/mixandmega.js',
+  'test/sim/misc/random-teams.js',
+  'test/sim/misc/statuses.js',
+  'test/sim/prng.js',
+  'test/sim/state.js',
+  'test/sim/tools/multi-random-runner.js',
 ]);
 // Any file that hasn't been 'OVERRIDDEN' we need to copy over from PS
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
@@ -345,6 +365,7 @@ const DATA = {
   'items.js': code => [removeFields(code.Items, ['spritenum']), 'items.json'],
   'learnsets.js': code => [code.Learnsets, 'learnsets.json'],
   'moves.js': code => [removeFields(code.Moves, ['contestType']), 'moves.json'],
+  'natures.js': code => [code.Natures, 'natures.json'],
   'pokedex.js': code => [removeFields(code.Pokedex, ['color', 'heightm']), 'species.json'],
   'typechart.js': code => {
     for (const type1 in code.TypeChart) {
@@ -440,11 +461,10 @@ const changes = async (where, last, now, repo) => ({
         if (!file.startsWith('sim/')) throw new Error('Unsupported import location');
         const prefix = file.startsWith('sim/tools/') ? '..' : '.';
         const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
-        const rewritten = file !== 'sim/battle.ts' ? original : rewrite(original, line => {
-          if (line === `import {FS} from '../lib/fs';`) return undefined;
-          if (line.startsWith('const suspectTests =')) return 'const suspectTests = {} as any;';
-          return line;
-        });
+        const changes = REWRITES[file];
+        const rewritten = changes
+          ? rewrite(original, line => line in changes ? changes[line] : line)
+          : original;
         fs.writeFileSync(path.resolve(sim, file),
         `${imports(IMPORTS[file], prefix + '/exported-global-types')}${rewritten}`);
       } else if (file === 'lib/streams.ts') {
@@ -455,6 +475,11 @@ const changes = async (where, last, now, repo) => ({
       } else {
         fs.copyFileSync(path.resolve(ps, file), path.resolve(sim, file));
       }
+    }
+
+    for (const file of tree(path.join(ps, 'test/sim')).map(f => f.slice(ps.length + 1))) {
+      if (SKIP_TESTS.has(file)) continue;
+      fs.copyFileSync(path.resolve(ps, file), path.resolve(sim, file));
     }
 
     for (const file of MOD_COPIED) {
@@ -563,10 +588,7 @@ const changes = async (where, last, now, repo) => ({
     for (const line of types.split('\n')) {
       exported.push(/^(type|interface|namespace)/.test(line) ? `export ${line}` : line);
     }
-    fs.writeFileSync(
-      path.resolve(sim, 'sim/exported-global-types.ts'),
-      `${exported.join('\n')}${NATURE}`
-    );
+    fs.writeFileSync(path.resolve(sim, 'sim/exported-global-types.ts'), exported.join('\n'));
 
     // The test files require paths are made with PS's build layout in mind - correct that here
     await replace(path.join(sim, 'test'), [

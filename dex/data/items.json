@@ -1935,6 +1935,13 @@
       "gen": 8,
       "desc": "Evolves Galarian Slowpoke into Galarian Slowbro when used."
     },
+    "galaricawreath": {
+      "name": "Galarica Wreath",
+      "fling": {"basePower": 30},
+      "num": 1592,
+      "gen": 8,
+      "desc": "Evolves Galarian Slowpoke into Galarian Slowking when used."
+    },
     "galladite": {
       "name": "Galladite",
       "megaStone": "Gallade-Mega",

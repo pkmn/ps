@@ -14,6 +14,7 @@ import {
 	PokemonModData,
 	PokemonSet,
 	Side,
+	SideID,
 	SparseBoostsTable,
 	Species,
 	StatNameExceptHP,
@@ -466,7 +467,7 @@ export class Pokemon {
 		return this.isActive ? this.getSlot() + fullname.slice(2) : fullname;
 	}
 
-	getDetails = () => {
+	getDetails = (): {side: SideID, secret: string, shared: string} => {
 		const health = this.getHealth();
 		let details = this.details;
 		if (this.illusion) {
@@ -1784,7 +1785,7 @@ export class Pokemon {
 		}
 	}
 
-	getHealth = () => {
+	getHealth = (): {side: SideID, secret: string, shared: string} => {
 		if (!this.hp) return {side: this.side.id, secret: '0 fnt', shared: '0 fnt'};
 		let secret = `${this.hp}/${this.maxhp}`;
 		let shared;

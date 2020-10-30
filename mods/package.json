@@ -40,7 +40,10 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "testPathIgnorePatterns": ["node_modules/", "build/"]
+    "testPathIgnorePatterns": [
+      "node_modules/",
+      "build/"
+    ]
   },
   "eslintConfig": {
     "extends": "@pkmn",
@@ -54,7 +57,13 @@
         ],
         "rules": {
           "@typescript-eslint/quotes": "off",
-          "@typescript-eslint/indent": ["error", "tab", {"flatTernaryExpressions": true}],
+          "@typescript-eslint/indent": [
+            "error",
+            "tab",
+            {
+              "flatTernaryExpressions": true
+            }
+          ],
           "@typescript-eslint/no-unused-vars": "off",
           "max-len": "off"
         }

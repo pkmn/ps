@@ -39,7 +39,10 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "testPathIgnorePatterns": ["node_modules/", "build/"],
+    "testPathIgnorePatterns": [
+      "node_modules/",
+      "build/"
+    ],
     "moduleNameMapper": {
       "^@pkmn/protocol/(.*)$": "<rootDir>/node_modules/@pkmn/protocol/build/$1",
       "^@pkmn/sim/(.*)$": "<rootDir>/node_modules/@pkmn/sim/build/sim/$1"
@@ -48,14 +51,23 @@
   "eslintConfig": {
     "extends": "@pkmn",
     "root": true,
-    "overrides": [{
-      "files": ["**/*.ts"],
-      "rules": {
-        "@typescript-eslint/no-shadow": "off",
-        "@typescript-eslint/no-floating-promises": ["error", {"ignoreVoid": true}],
-        "@typescript-eslint/no-unused-vars": "off",
-        "@typescript-eslint/no-parameter-properties": "off"
+    "overrides": [
+      {
+        "files": [
+          "**/*.ts"
+        ],
+        "rules": {
+          "@typescript-eslint/no-shadow": "off",
+          "@typescript-eslint/no-floating-promises": [
+            "error",
+            {
+              "ignoreVoid": true
+            }
+          ],
+          "@typescript-eslint/no-unused-vars": "off",
+          "@typescript-eslint/no-parameter-properties": "off"
+        }
       }
-    }]
+    ]
   }
 }

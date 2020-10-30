@@ -34,7 +34,10 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "testPathIgnorePatterns": ["node_modules/", "build/"]
+    "testPathIgnorePatterns": [
+      "node_modules/",
+      "build/"
+    ]
   },
   "eslintConfig": {
     "extends": "@pkmn",

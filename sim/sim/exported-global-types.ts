@@ -770,6 +770,7 @@ export interface EventMethods {
 	onSourceInvulnerabilityPriority?: number;
 	onSourceModifyAccuracyPriority?: number;
 	onSourceModifyAtkPriority?: number;
+	onSourceModifyDamagePriority?: number;
 	onSourceModifySpAPriority?: number;
 	onSwitchInPriority?: number;
 	onTrapPokemonPriority?: number;
@@ -796,7 +797,7 @@ export type ModdedEffectData = EffectData | Partial<EffectData> & {inherit: true
 
 export type EffectType =
 	'Condition' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Format' |
-	'Ruleset' | 'Weather' | 'Status' | 'Rule' | 'ValidatorRule';
+	'Nature' | 'Ruleset' | 'Weather' | 'Status' | 'Rule' | 'ValidatorRule';
 
 export interface BasicEffect extends EffectData {
 	id: ID;
@@ -1181,6 +1182,16 @@ export type ModdedLearnsetData = LearnsetData & {inherit?: true};
 
 export type Species = import('./dex-data').Species;
 
+export interface NatureData {
+	name: string;
+	plus?: StatNameExceptHP;
+	minus?: StatNameExceptHP;
+}
+
+export type ModdedNatureData = NatureData | Partial<Omit<NatureData, 'name'>> & {inherit: true};
+
+export type Nature = import('./dex-data').Nature;
+
 export type GameType = 'singles' | 'doubles' | 'triples' | 'rotation' | 'multi' | 'free-for-all';
 export type SideID = 'p1' | 'p2' | 'p3' | 'p4';
 
@@ -1553,11 +1564,4 @@ export interface PokemonModData {
 	innate?: string; // Partners in Crime
 	originalSpecies?: string; // Mix and Mega
 	[key: string]: any;
-}
-
-export interface Nature {
-	name: string;
-	plus?: Exclude<keyof StatsTable, 'hp'>;
-	minus?: Exclude<keyof StatsTable, 'hp'>;
-	[k: string]: any;
 }

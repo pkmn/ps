@@ -1527,6 +1527,7 @@
       "shortDesc": "This Pokemon restores 1/3 of its maximum HP, rounded down, when it switches out."
     },
     "ripen": {
+      "onSourceModifyDamagePriority": -1,
       "onTryEatItemPriority": -1,
       "name": "Ripen",
       "num": 247,

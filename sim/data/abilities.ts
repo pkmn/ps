@@ -956,14 +956,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			},
 			onModifyAtkPriority: 5,
 			onModifyAtk(atk, attacker, defender, move) {
-				if (move.type === 'Fire') {
+				if (move.type === 'Fire' && attacker.hasAbility('flashfire')) {
 					this.debug('Flash Fire boost');
 					return this.chainModify(1.5);
 				}
 			},
 			onModifySpAPriority: 5,
 			onModifySpA(atk, attacker, defender, move) {
-				if (move.type === 'Fire') {
+				if (move.type === 'Fire' && attacker.hasAbility('flashfire')) {
 					this.debug('Flash Fire boost');
 					return this.chainModify(1.5);
 				}
@@ -2269,6 +2269,15 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onPreStart(pokemon) {
 			this.add('-ability', pokemon, 'Neutralizing Gas');
 			pokemon.abilityData.ending = false;
+			for (const target of this.getAllActive()) {
+				if (target.illusion) {
+					this.singleEvent('End', this.dex.getAbility('Illusion'), target.abilityData, target, pokemon, 'neutralizinggas');
+				}
+				if (target.volatiles['slowstart']) {
+					delete target.volatiles['slowstart'];
+					this.add('-end', target, 'Slow Start', '[silent]');
+				}
+			}
 		},
 		onEnd(source) {
 			// FIXME this happens before the pokemon switches out, should be the opposite order.
@@ -2916,10 +2925,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				}
 			}
 		},
+		onSourceModifyDamagePriority: -1,
 		onSourceModifyDamage(damage, source, target, move) {
 			if (target.abilityData.berryWeaken) {
-				target.abilityData.berryWeaken = "";
-				// Not sure if this is the correct multiplier to get 3/4 total, assuming its taking 1/2 of 1/2 (3/4)
 				return this.chainModify(0.5);
 			}
 		},
@@ -2931,10 +2939,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			const weakenBerries = [
 				'Babiri Berry', 'Charti Berry', 'Chilan Berry', 'Chople Berry', 'Coba Berry', 'Colbur Berry', 'Haban Berry', 'Kasib Berry', 'Kebia Berry', 'Occa Berry', 'Passho Berry', 'Payapa Berry', 'Rindo Berry', 'Roseli Berry', 'Shuca Berry', 'Tanga Berry', 'Wacan Berry', 'Yache Berry',
 			];
-			if (weakenBerries.includes(item.name)) {
-				// Record that the pokemon ate a berry to resist an attack
-				pokemon.abilityData.berryWeaken = "true";
-			}
+			// Record if the pokemon ate a berry to resist the attack
+			pokemon.abilityData.berryWeaken = weakenBerries.includes(item.name);
 		},
 		name: "Ripen",
 		rating: 2,

@@ -246,8 +246,8 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "(DUber)",
 	},
 	pikachuworld: {
-		isNonstandard: "Unobtainable",
-		tier: "Unreleased",
+		tier: "(PU)",
+		doublesTier: "(DUU)",
 	},
 	raichu: {
 		randomBattleMoves: ["encore", "focusblast", "grassknot", "nastyplot", "thunderbolt", "voltswitch"],
@@ -2695,7 +2695,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	rayquaza: {
-		randomBattleMoves: ["dragondance", "earthquake", "extremespeed", "outrage", "vcreate"],
+		randomBattleMoves: ["dracometeor", "dragonascent", "extremespeed", "swordsdance", "vcreate"],
 		randomBattleLevel: 72,
 		randomDoubleBattleMoves: ["dracometeor", "dragonascent", "dragonclaw", "dragondance", "earthpower", "extremespeed", "vcreate"],
 		randomDoubleBattleLevel: 72,
@@ -4195,23 +4195,23 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 76,
 		randomDoubleBattleMoves: ["blazekick", "ironhead", "leechlife", "protect", "shiftgear", "thunderbolt", "uturn"],
 		randomDoubleBattleLevel: 78,
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	genesectburn: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	genesectchill: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	genesectdouse: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	genesectshock: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	chespin: {
@@ -5402,7 +5402,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 76,
 		randomDoubleBattleMoves: ["dracometeor", "flamethrower", "nastyplot", "sludgebomb", "uturn"],
 		randomDoubleBattleLevel: 76,
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	stakataka: {
@@ -6080,7 +6080,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DOU",
 	},
 	regidrago: {
-		randomBattleMoves: ["dracometeor", "dragondance", "firefang", "outrage", "thunderfang"],
+		randomBattleMoves: ["dracometeor", "dragondance", "hammerarm", "outrage", "thunderfang"],
 		randomBattleLevel: 82,
 		randomDoubleBattleMoves: ["crunch", "dragonclaw", "dragonenergy", "firefang"],
 		randomDoubleBattleLevel: 84,
@@ -6120,8 +6120,8 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DUber",
 	},
 	calyrexshadow: {
-		randomBattleMoves: ["astralbarrage", "darkpulse", "nastyplot", "substitute"],
-		randomBattleLevel: 76,
+		randomBattleMoves: ["astralbarrage", "nastyplot", "pollenpuff", "psyshock", "substitute", "trick"],
+		randomBattleLevel: 74,
 		randomDoubleBattleMoves: ["astralbarrage", "nastyplot", "pollenpuff", "protect", "psyshock"],
 		randomDoubleBattleLevel: 72,
 		tier: "Uber",

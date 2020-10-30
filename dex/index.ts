@@ -5,6 +5,7 @@ import * as AliasesJSON from './data/aliases.json';
 import * as ConditionsJSON from './data/conditions.json';
 import * as ItemsJSON from './data/items.json';
 import * as MovesJSON from './data/moves.json';
+import * as NaturesJSON from './data/natures.json';
 import * as SpeciesJSON from './data/species.json';
 import * as TypesJSON from './data/types.json';
 import * as FormatsDataJSON from './data/formats-data.json';
@@ -393,6 +394,24 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   }
 }
 
+export class Nature extends BasicEffect<T.NatureName> implements T.Nature {
+  readonly effectType: 'Nature';
+  readonly kind: 'Nature';
+  readonly plus?: Exclude<T.StatName, 'hp'>;
+  readonly minus?: Exclude<T.StatName, 'hp'>;
+  constructor(data: AnyObject, ...moreData: (AnyObject | null)[]) {
+    super(data, moreData);
+    data = this;
+
+    this.fullname = `nature: ${this.name}`;
+    this.effectType = 'Nature';
+    this.kind = 'Nature';
+    this.gen = 3;
+    this.plus = data.plus || undefined;
+    this.minus = data.minus || undefined;
+  }
+}
+
 export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly effectType: 'Pokemon';
   readonly kind: 'Species';
@@ -563,43 +582,9 @@ export class Type implements T.Type {
   }
 }
 
-export interface Nature extends T.Nature {
-  cached?: boolean;
-}
-
-const Natures: { [k: string]: T.NatureData } = {
-  adamant: {name: 'Adamant', plus: 'atk', minus: 'spa'},
-  bashful: {name: 'Bashful'},
-  bold: {name: 'Bold', plus: 'def', minus: 'atk'},
-  brave: {name: 'Brave', plus: 'atk', minus: 'spe'},
-  calm: {name: 'Calm', plus: 'spd', minus: 'atk'},
-  careful: {name: 'Careful', plus: 'spd', minus: 'spa'},
-  docile: {name: 'Docile'},
-  gentle: {name: 'Gentle', plus: 'spd', minus: 'def'},
-  hardy: {name: 'Hardy'},
-  hasty: {name: 'Hasty', plus: 'spe', minus: 'def'},
-  impish: {name: 'Impish', plus: 'def', minus: 'spa'},
-  jolly: {name: 'Jolly', plus: 'spe', minus: 'spa'},
-  lax: {name: 'Lax', plus: 'def', minus: 'spd'},
-  lonely: {name: 'Lonely', plus: 'atk', minus: 'def'},
-  mild: {name: 'Mild', plus: 'spa', minus: 'def'},
-  modest: {name: 'Modest', plus: 'spa', minus: 'atk'},
-  naive: {name: 'Naive', plus: 'spe', minus: 'spd'},
-  naughty: {name: 'Naughty', plus: 'atk', minus: 'spd'},
-  quiet: {name: 'Quiet', plus: 'spa', minus: 'spe'},
-  quirky: {name: 'Quirky'},
-  rash: {name: 'Rash', plus: 'spa', minus: 'spd'},
-  relaxed: {name: 'Relaxed', plus: 'def', minus: 'spe'},
-  sassy: {name: 'Sassy', plus: 'spd', minus: 'spe'},
-  serious: {name: 'Serious'},
-  timid: {name: 'Timid', plus: 'spe', minus: 'atk'},
-};
-
 // #endregion
 
 // #region Dex
-
-type Writable<T> = { -readonly [P in keyof T]: T[P] };
 
 type Data<T> = { 8: { [id: string]: T } } & {
   [num in Exclude<T.GenerationNum, 8>]?: { [id: string]: { inherit?: boolean } & T.DeepPartial<T> }
@@ -612,7 +597,7 @@ const DATA = {
   Items: ItemsJSON as Data<T.ItemData>,
   Moves: MovesJSON as unknown as Data<T.MoveData>,
   Species: SpeciesJSON as Data<T.SpeciesData>,
-  Natures,
+  Natures: NaturesJSON as Data<T.NatureData>,
   Learnsets: null! as Data<T.LearnsetData>,
   Types: TypesJSON as { 8: { [id: string]: T.TypeData } } & {
     [num in Exclude<T.GenerationNum, 8>]?: {
@@ -660,6 +645,7 @@ export class ModdedDex implements T.Dex {
     Conditions: Object.create(null) as { [id: string]: Condition },
     Items: Object.create(null) as { [id: string]: Item },
     Moves: Object.create(null) as { [id: string]: Move },
+    Natures: Object.create(null) as { [id: string]: Nature },
     Species: Object.create(null) as { [id: string]: Species },
     Types: Object.create(null) as { [id: string]: Type },
     Learnsets: Object.create(null) as { [id: string]: Learnset },
@@ -1019,21 +1005,26 @@ export class ModdedDex implements T.Dex {
     if (name && typeof name !== 'string') return name;
 
     name = (name || '').trim();
-    const id = toID(name);
-    let nature = {} as Writable<Partial<Nature>>;
-    if (id && id !== 'constructor' && this.data.Natures[id]) {
-      nature = this.data.Natures[id];
-      if (nature.cached) return nature as Nature;
-      nature.cached = true;
-      nature.exists = true;
+    let id = toID(name);
+    const alias = this.data.Aliases[id];
+    if (alias) {
+      name = alias;
+      id = toID(alias);
     }
-    if (!nature.id) nature.id = id;
-    if (!nature.name) nature.name = name as T.NatureName;
-    if (!nature.effectType) nature.effectType = 'Nature';
-    if (!nature.kind) nature.kind = 'Nature';
-    if (!nature.gen) nature.gen = 3;
 
-    return nature as Nature;
+    let nature = this.cache.Natures[id];
+    if (nature) return nature;
+
+    if (id && this.data.Natures.hasOwnProperty(id)) {
+      const natureData = this.data.Natures[id];
+      nature = new Nature(natureData);
+      if (nature.gen > this.gen) nature.isNonstandard = 'Future';
+    } else {
+      nature = new Nature({id, name, exists: false});
+    }
+
+    if (nature.exists) this.cache.Natures[id] = nature;
+    return nature;
   }
 
   getType(name?: string | Type): Type {
@@ -1178,7 +1169,7 @@ export class ModdedDex implements T.Dex {
   load(type: Exclude<keyof ModdedDex['data'], 'Aliases'>, modData?: ModData) {
     if (this.data[type]) return;
 
-    const d = modData ? modData[type] : type === 'Natures' ? DATA[type] : DATA[type][this.gen];
+    const d = modData ? modData[type] : DATA[type][this.gen];
     if (d !== this.data[type]) this.data[type] = ({...d, ...this.data[type]}) as any;
 
     if (this.modid === CURRENT_GEN_ID) return;

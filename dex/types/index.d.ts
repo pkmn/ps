@@ -24,7 +24,7 @@ export type SpeciesName = string & As<'SpeciesName'>;
 export type FormeName = string & As<'FormeName'>;
 
 export type EffectType =
-  'Condition' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Weather' | 'Status';
+  'Condition' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Nature' | 'Weather' | 'Status';
 export type Effect = Ability | Item | Move | Condition;
 
 export type DataKind =

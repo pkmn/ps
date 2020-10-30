@@ -16,7 +16,7 @@
   "devDependencies": {
     "@pkmn/dex": "^0.3.0",
     "@pkmn/sim": "^0.3.0",
-    "@smogon/calc": "^0.5.0"
+    "@smogon/calc": "^0.6.0"
   },
   "scripts": {
     "lint": "eslint --cache *.ts",
@@ -31,7 +31,10 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "testPathIgnorePatterns": ["node_modules/", "build/"],
+    "testPathIgnorePatterns": [
+      "node_modules/",
+      "build/"
+    ],
     "moduleNameMapper": {
       "^@smogon/calc/(.*)$": "<rootDir>/node_modules/@smogon/calc/dist/$1"
     }
