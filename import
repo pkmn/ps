@@ -225,7 +225,12 @@ const REWRITES = {
   'sim/battle.ts': {
     [suspectTests]: 'const suspectTests = {} as any;',
     'import {FS} from \'../lib/fs\';': undefined,
-  }
+  },
+  // smfh Zarle, please learn how Promises work
+  'sim/battle-stream.ts': {
+    '\t\tvoid this._listen();': undefined,
+    '\tasync _listen() {': '\tasync start() {',
+  },
 };
 
 // All the files in our sim/ directory, excluding build/ & node_modules/ & test/sim/
