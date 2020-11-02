@@ -1164,7 +1164,6 @@ interface SpeciesFormatsData {
 	randomBattleLevel?: number;
 	randomDoubleBattleMoves?: readonly string[];
 	randomDoubleBattleLevel?: number;
-	randomSets?: readonly RandomTeamsTypes.Gen2RandomSet[];
 	tier?: TierTypes.Singles | TierTypes.Other;
 }
 
@@ -1528,8 +1527,6 @@ namespace RandomTeamsTypes {
 		nature?: string;
 		happiness?: number;
 		gigantamax?: boolean;
-		moveset?: RandomTeamsTypes.RandomSet;
-		other?: {discard: boolean, restrictMoves: {[k: string]: number}};
 	}
 	export interface RandomFactorySet {
 		name: string;
@@ -1544,18 +1541,6 @@ namespace RandomTeamsTypes {
 		ivs: SparseStatsTable;
 		nature: string;
 		moves: string[];
-	}
-	export interface Gen2RandomSet {
-		chance: number;
-		item?: string[];
-		baseMove1?: string;
-		baseMove2?: string;
-		baseMove3?: string;
-		baseMove4?: string;
-		fillerMoves1?: string[];
-		fillerMoves2?: string[];
-		fillerMoves3?: string[];
-		fillerMoves4?: string[];
 	}
 }
 

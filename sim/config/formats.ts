@@ -78,7 +78,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] Ubers",
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3672182/">Ubers Metagame Discussion</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3672664/">Ubers Metagame Discussion</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3658364/">Ubers Sample Teams</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3668107/">Ubers Viability Rankings</a>`,
 		],
@@ -90,7 +90,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] UU",
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3670407/">UU Metagame Discussion</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3672677/">UU Metagame Discussion</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3659681/">UU Sample Teams</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3668357/">UU Viability Rankings</a>`,
 		],
@@ -114,18 +114,18 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] NU",
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3669764/">NU Metagame Discussion</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3672672/">NU Metagame Discussion</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3662169/">NU Viability Rankings</a>`,
 		],
 
 		mod: 'gen8',
 		ruleset: ['[Gen 8] RU'],
-		banlist: ['RU', 'NUBL', 'Drought'],
+		banlist: ['RU', 'NUBL', 'Drizzle', 'Drought'],
 	},
 	{
 		name: "[Gen 8] PU",
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3666714/">PU Metagame Discussion</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3672670/">PU Metagame Discussion</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3662231/">PU Viability Rankings</a>`,
 		],
 
@@ -202,13 +202,13 @@ export const Formats: FormatList = [
 		name: "[Gen 8] ZU",
 		desc: `The unofficial usage-based tier below PU.`,
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3661968/">ZU Metagame Discussion</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3672675/">ZU Metagame Discussion</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3664800/">ZU Viability Rankings</a>`,
 		],
 
 		mod: 'gen8',
 		ruleset: ['[Gen 8] PU'],
-		banlist: ['PU', 'Grapploct', 'Ludicolo', 'Lycanroc-Midnight', 'Musharna', 'Thwackey'],
+		banlist: ['PU', 'Ludicolo', 'Thwackey'],
 	},
 	{
 		name: "[Gen 8] CAP",
@@ -485,21 +485,21 @@ export const Formats: FormatList = [
 		ruleset: ['[Gen 8] National Dex'],
 		banlist: [
 			// National Dex OU
-			'Articuno-Galar', 'Blacephalon', 'Calyrex', 'Chansey', 'Charizard-Mega-Y', 'Cinderace', 'Clefable', 'Corviknight', 'Dragapult',
-			'Excadrill', 'Ferrothorn', 'Garchomp', 'Garchomp-Mega', 'Glastrier', 'Gliscor', 'Greninja', 'Heatran', 'Hydreigon', 'Kartana', 'Kommo-o',
-			'Landorus-Therian', 'Lopunny-Mega', 'Magearna', 'Magnezone', 'Medicham-Mega', 'Melmetal', 'Moltres-Galar', 'Pelipper', 'Regidrago',
-			'Regieleki', 'Rillaboom', 'Scizor-Mega', 'Serperior', 'Slowbro-Base', 'Slowbro-Mega', 'Slowking-Galar', 'Spectrier', 'Swampert-Mega',
-			'Tangrowth', 'Tapu Fini', 'Tapu Koko', 'Tapu Lele', 'Toxapex', 'Tyranitar', 'Victini', 'Volcanion', 'Volcarona', 'Zapdos',
+			'Blissey', 'Chansey', 'Charizard-Mega-Y', 'Cinderace', 'Clefable', 'Corviknight', 'Dragapult', 'Excadrill', 'Ferrothorn', 'Garchomp',
+			'Garchomp-Mega', 'Gliscor', 'Greninja', 'Heatran', 'Kartana', 'Kommo-o', 'Kyurem', 'Landorus-Therian', 'Lopunny-Mega', 'Magearna',
+			'Magnezone', 'Medicham-Mega', 'Melmetal', 'Pelipper', 'Regieleki', 'Rillaboom', 'Scizor-Mega', 'Serperior', 'Slowbro-Base', 'Slowbro-Mega',
+			'Spectrier', 'Swampert-Mega', 'Tangrowth', 'Tapu Fini', 'Tapu Koko', 'Toxapex', 'Tyranitar', 'Volcarona', 'Zapdos',
 			'nduubl', // National Dex UUBL
-			'Aegislash', 'Alakazam', 'Azumarill', 'Charizard-Mega-X', 'Deoxys-Defense', 'Diggersby', 'Dragonite', 'Gallade-Mega', 'Gardevoir-Mega', 'Gengar',
-			'Gyarados', 'Hawlucha', 'Heracross-Mega', 'Hoopa-Unbound', 'Kyurem', 'Latias-Mega', 'Latios', 'Manaphy', 'Mawile-Mega', 'Mew', 'Pinsir-Mega',
-			'Scolipede', 'Staraptor', 'Thundurus', 'Venusaur-Mega', 'Xurkitree', 'Drizzle', 'Drought', 'Aurora Veil',
+			'Aegislash', 'Alakazam', 'Azumarill', 'Charizard-Mega-X', 'Deoxys-Defense', 'Diggersby', 'Dragonite', 'Gallade-Mega', 'Gardevoir-Mega',
+			'Gengar', 'Gyarados', 'Hawlucha', 'Heracross-Mega', 'Hoopa-Unbound', 'Hydreigon', 'Latias-Mega', 'Latios', 'Manaphy', 'Mawile-Mega', 'Mew',
+			'Pinsir-Mega', 'Scolipede', 'Staraptor', 'Thundurus', 'Venusaur-Mega', 'Victini', 'Xurkitree', 'Drizzle', 'Drought', 'Aurora Veil',
 		],
 		// Used to distinguish UU from below UU in the client
 		restricted: [
-			'Alomomola', 'Altaria-Mega', 'Amoonguss', 'Beedrill-Mega', 'Bisharp', 'Blissey', 'Breloom', 'Buzzwole', 'Celesteela', 'Chandelure', 'Conkeldurr',
-			'Diancie-Mega', 'Hippowdon', 'Infernape', 'Jirachi', 'Keldeo', 'Krookodile', 'Latias', 'Mamoswine', 'Mandibuzz', 'Manectric-Mega', 'Moltres',
-			'Primarina', 'Rotom-Heat', 'Rotom-Wash', 'Salamence', 'Scizor', 'Tapu Bulu', 'Urshifu-Rapid-Strike', 'Weavile', 'Weezing-Galar', 'Zeraora',
+			'Aerodactyl-Mega', 'Altaria-Mega', 'Amoonguss', 'Articuno-Galar', 'Azelf', 'Beedrill-Mega', 'Bisharp', 'Blacephalon', 'Breloom', 'Buzzwole',
+			'Calyrex', 'Celesteela', 'Diancie-Mega', 'Glastrier', 'Grimmsnarl', 'Hatterene', 'Hippowdon', 'Infernape', 'Jirachi', 'Keldeo', 'Krookodile',
+			'Latias', 'Manectric-Mega', 'Moltres', 'Primarina', 'Regidrago', 'Rotom-Heat', 'Rotom-Wash', 'Salamence', 'Scizor', 'Slowking', 'Starmie',
+			'Steelix-Mega', 'Tapu Bulu', 'Tapu Lele', 'Tentacruel', 'Terrakion', 'Urshifu-Rapid-Strike', 'Volcanion', 'Weavile', 'Zeraora',
 		],
 	},
 	{
@@ -509,7 +509,6 @@ export const Formats: FormatList = [
 		],
 
 		mod: 'gen8',
-		searchShow: false,
 		ruleset: ['Standard NatDex', 'Same Type Clause', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
 		banlist: [
 			'Aegislash', 'Arceus', 'Blastoise-Mega', 'Blaziken', 'Calyrex-Ice', 'Calyrex-Shadow', 'Darkrai', 'Deoxys-Base', 'Deoxys-Attack', 'Dialga', 'Dragapult',
@@ -1837,7 +1836,7 @@ export const Formats: FormatList = [
 		],
 
 		mod: 'gen7',
-		// searchShow: false,
+		searchShow: false,
 		ruleset: ['Same Type Clause', 'Standard', 'Swagger Clause'],
 		banlist: [
 			'Aegislash', 'Arceus', 'Blaziken', 'Darkrai', 'Deoxys-Base', 'Deoxys-Attack', 'Dialga', 'Genesect', 'Gengar-Mega', 'Giratina', 'Groudon',
