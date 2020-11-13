@@ -11,7 +11,6 @@ import {
 	ID,
 	Item,
 	Move,
-	PokemonModData,
 	PokemonSet,
 	Side,
 	SideID,
@@ -267,7 +266,12 @@ export class Pokemon {
 	/**
 	 * An object for storing untyped data, for mods to use.
 	 */
-	m: PokemonModData;
+	m: {
+		gluttonyFlag?: boolean, // Gen-NEXT
+		innate?: string, // Partners in Crime
+		originalSpecies?: string, // Mix and Mega
+		[key: string]: any,
+	};
 
 	constructor(set: string | AnyObject, side: Side) {
 		this.side = side;
@@ -735,9 +739,6 @@ export class Pokemon {
 	}
 
 	ignoringAbility() {
-		const abilities = [
-			'asoneglastrier', 'asonespectrier', 'battlebond', 'comatose', 'disguise', 'gulpmissile', 'iceface', 'multitype', 'powerconstruct', 'rkssystem', 'schooling', 'shieldsdown', 'stancechange',
-		];
 		// Check if any active pokemon have the ability Neutralizing Gas
 		let neutralizinggas = false;
 		for (const pokemon of this.battle.getAllActive()) {
@@ -752,7 +753,8 @@ export class Pokemon {
 		return !!(
 			(this.battle.gen >= 5 && !this.isActive) ||
 			((this.volatiles['gastroacid'] || (neutralizinggas && this.ability !== ('neutralizinggas' as ID))) &&
-			!abilities.includes(this.ability))
+			!this.getAbility().isPermanent
+			)
 		);
 	}
 
@@ -1652,11 +1654,7 @@ export class Pokemon {
 		if (typeof ability === 'string') ability = this.battle.dex.getAbility(ability);
 		const oldAbility = this.ability;
 		if (!isFromFormeChange) {
-			const abilities = [
-				'asoneglastrier', 'asonespectrier', 'battlebond', 'comatose', 'disguise', 'gulpmissile', 'hungerswitch', 'iceface', 'multitype', 'powerconstruct', 'rkssystem', 'schooling', 'shieldsdown', 'stancechange',
-			];
-			if (ability.id === 'illusion' || abilities.includes(ability.id) || abilities.includes(oldAbility)) return false;
-			if (this.battle.gen >= 7 && (ability.id === 'zenmode' || oldAbility === 'zenmode')) return false;
+			if (ability.isPermanent || this.getAbility().isPermanent) return false;
 		}
 		if (!this.battle.runEvent('SetAbility', this, source, this.battle.effect, ability)) return false;
 		this.battle.singleEvent('End', this.battle.dex.getAbility(oldAbility), this.abilityData, this, source);

@@ -1,30 +1,33 @@
 import {Team, Teams} from '@pkmn/sets';
 import {Utils} from '../lib/utils';
+import {Condition} from './dex-conditions';
+import {DataMove} from './dex-moves';
+import {Item} from './dex-items';
+import {Ability} from './dex-abilities';
+import {Species} from './dex-species';
+import {Format, RuleTable, ComplexBan, ComplexTeamBan} from './dex-formats';
 import {
-	Ability,
 	AbilityData,
+	AbilityText,
 	ActiveMove,
 	AnyObject,
-	Condition,
 	DexTable,
 	Effect,
 	EffectData,
-	Format,
 	FormatData,
 	ID,
-	Item,
 	ItemData,
+	ItemText,
 	LearnsetData,
 	ModdedBattleScriptsData,
 	Move,
 	MoveData,
+	MoveText,
 	Nature,
 	NatureData,
 	PlayerOptions,
 	PokemonSet,
-	Species,
 	SpeciesData,
-	SpeciesFormatsData,
 	TypeData,
 	TypeInfo,
 } from './exported-global-types';
@@ -63,13 +66,13 @@ const DATA_TYPES: (DataType | 'Aliases')[] = [
 	'Natures', 'Pokedex', 'Scripts', 'Conditions', 'TypeChart',
 ];
 
-const nullEffect: Condition = new Data.Condition({name: '', exists: false});
+const nullEffect: Condition = new Condition({name: '', exists: false});
 
 interface DexTableData {
 	Abilities: DexTable<AbilityData>;
 	Conditions: DexTable<EffectData>;
 	Formats: DexTable<FormatData>;
-	FormatsData: DexTable<SpeciesFormatsData>;
+	FormatsData: DexTable<import('./dex-species').ModdedSpeciesFormatsData>;
 	Items: DexTable<ItemData>;
 	Learnsets: DexTable<LearnsetData>;
 	Moves: DexTable<MoveData>;
@@ -85,11 +88,11 @@ interface DexTableData {
 }
 
 const TEXT = {
-	Abilities: AbilitiesText as AnyObject,
-	Items: ItemsText as AnyObject,
-	Moves: MovesText as AnyObject,
-	// Pokedex: PokedexText as AnyObject,
-	Default: DefaultText as AnyObject,
+	Abilities: AbilitiesText as DexTable<AbilityText>,
+	Items: ItemsText as DexTable<ItemText>,
+	Moves: MovesText as DexTable<MoveText>,
+	// Pokedex: PokedexText as DexTable<PokedexText>,
+	Default: DefaultText as DexTable<AnyObject>,
 };
 
 /* eslint-disable @typescript-eslint/array-type */
@@ -120,27 +123,33 @@ export type ModData = DeepPartial<ModdedDex['data']>;
 export const toID = Data.toID;
 
 export class ModdedDex {
-	readonly Data: typeof Data;
-	readonly ModdedDex: typeof ModdedDex;
+	readonly Data = Data;
+	readonly Condition = Condition;
+	readonly Ability = Ability;
+	readonly Item = Item;
+	readonly Move = DataMove;
+	readonly Species = Species;
+	readonly Format = Format;
+	readonly ModdedDex = ModdedDex;
 
-	readonly name: string;
+	readonly name = "[ModdedDex]";
 	readonly isBase: boolean;
 	readonly currentMod: string;
 
-	readonly toID: (text: any) => ID;
+	readonly toID = Data.toID;
 
-	readonly abilityCache: Map<ID, Ability>;
-	readonly effectCache: Map<ID, Effect | Move>;
-	readonly learnsetCache: Map<ID, LearnsetData>;
-	readonly itemCache: Map<ID, Item>;
-	readonly moveCache: Map<ID, Move>;
-	readonly speciesCache: Map<ID, Species>;
-	readonly natureCache: Map<ID, Nature>;
-	readonly typeCache: Map<string, TypeInfo>;
+	readonly abilityCache = new Map<ID, Ability>();
+	readonly effectCache = new Map<ID, Effect | Move>();
+	readonly itemCache = new Map<ID, Item>();
+	readonly learnsetCache = new Map<ID, LearnsetData>();
+	readonly moveCache = new Map<ID, Move>();
+	readonly speciesCache = new Map<ID, Species>();
+	readonly natureCache = new Map<ID, Nature>();
+	readonly typeCache = new Map<string, TypeInfo>();
 
-	gen: number;
-	parentMod: string;
-	modsLoaded: boolean;
+	gen = 0;
+	parentMod = '';
+	modsLoaded = false;
 
 	dataCache: DexTableData | null;
 	formatsCache: DexTable<Format> | null;
@@ -148,27 +157,8 @@ export class ModdedDex {
 	deepClone = Utils.deepClone;
 
 	constructor(mod = 'base') {
-		this.ModdedDex = ModdedDex;
-		this.Data = Data;
-
-		this.name = "[ModdedDex]";
 		this.isBase = (mod === 'base');
 		this.currentMod = mod;
-
-		this.toID = toID;
-
-		this.abilityCache = new Map();
-		this.effectCache = new Map();
-		this.itemCache = new Map();
-		this.learnsetCache = new Map();
-		this.moveCache = new Map();
-		this.speciesCache = new Map();
-		this.natureCache = new Map();
-		this.typeCache = new Map();
-
-		this.gen = 0;
-		this.parentMod = '';
-		this.modsLoaded = false;
 
 		this.dataCache = null;
 		this.formatsCache = null;
@@ -321,7 +311,7 @@ export class ModdedDex {
 			if (this.data.FormatsData.hasOwnProperty(id)) {
 				// special event ID, like Rockruff-Dusk
 				const baseId = toID(this.data.Aliases[id]);
-				species = new Data.Species({name}, this.data.Pokedex[baseId], this.data.FormatsData[id], this.data.Learnsets[id]);
+				species = new Species({name}, this.data.Pokedex[baseId], this.data.FormatsData[id], this.data.Learnsets[id]);
 				species.name = id;
 				species.species = id;
 				species.speciesid = id;
@@ -331,7 +321,7 @@ export class ModdedDex {
 				if (species.cosmeticFormes) {
 					for (const forme of species.cosmeticFormes) {
 						if (toID(forme) === id) {
-							species = new Data.Species(species, {
+							species = new Species(species, {
 								name: forme,
 								id,
 								forme: forme.slice(species.name.length + 1),
@@ -383,7 +373,7 @@ export class ModdedDex {
 			}
 		}
 		if (id && this.data.Pokedex.hasOwnProperty(id)) {
-			species = new Data.Species({name}, this.data.Pokedex[id], this.data.FormatsData[id]);
+			species = new Species({name}, this.data.Pokedex[id], this.data.FormatsData[id]);
 			// Inherit any statuses from the base species (Arceus, Silvally).
 			const baseSpeciesStatuses = this.data.Conditions[toID(species.baseSpecies)];
 			if (baseSpeciesStatuses !== undefined) {
@@ -430,7 +420,7 @@ export class ModdedDex {
 				(!['Ditto', 'Undiscovered'].includes(species.eggGroups[0]) && !species.prevo && species.name !== 'Manaphy');
 			if (this.gen === 1) species.bst -= species.baseStats.spd;
 		} else {
-			species = new Data.Species({
+			species = new Species({
 				id, name, exists: false, tier: 'Illegal', doublesTier: 'Illegal', isNonstandard: 'Custom',
 			});
 		}
@@ -471,8 +461,8 @@ export class ModdedDex {
 			shortDesc: '',
 		};
 		for (let i = this.gen; i < dexes['base'].gen; i++) {
-			const curDesc = entry[`descGen${i}`];
-			const curShortDesc = entry[`shortDescGen${i}`];
+			const curDesc = entry[`gen${i}`]?.desc;
+			const curShortDesc = entry[`gen${i}`]?.shortDesc;
 			if (!descs.desc && curDesc) {
 				descs.desc = curDesc;
 			}
@@ -506,12 +496,12 @@ export class ModdedDex {
 		if (id && this.data.Moves.hasOwnProperty(id)) {
 			const moveData = this.data.Moves[id];
 			const moveTextData = this.getDescs('Moves', id, moveData);
-			move = new Data.Move({name}, moveData, moveTextData);
+			move = new DataMove({name}, moveData, moveTextData);
 			if (move.gen > this.gen) {
 				(move as any).isNonstandard = 'Future';
 			}
 		} else {
-			move = new Data.Move({id, name, exists: false});
+			move = new DataMove({id, name, exists: false});
 		}
 		if (move.exists) this.moveCache.set(id, move);
 		return move;
@@ -569,20 +559,20 @@ export class ModdedDex {
 
 		let found;
 		if (this.data.Formats.hasOwnProperty(id)) {
-			effect = new Data.Format({name: id}, this.data.Formats[id]);
+			effect = new Format({name: id}, this.data.Formats[id]);
 		} else if (this.data.Conditions.hasOwnProperty(id)) {
-			effect = new Data.Condition({name: id, kind: 'Condition'}, this.data.Conditions[id]);
+			effect = new Condition({name: id, kind: 'Condition'}, this.data.Conditions[id]);
 		} else if ((this.data.Moves.hasOwnProperty(id) && (found = this.data.Moves[id]).condition) ||
 							 (this.data.Abilities.hasOwnProperty(id) &&
 								(found = this.data.Abilities[id]).condition) ||
 							 (this.data.Items.hasOwnProperty(id) && (found = this.data.Items[id]).condition)) {
-			effect = new Data.Condition({name: found.name || id}, found.condition);
+			effect = new Condition({name: found.name || id}, found.condition);
 		} else if (id === 'recoil') {
-			effect = new Data.Condition({id, name: 'Recoil', effectType: 'Recoil', kind: 'Condition'});
+			effect = new Condition({id, name: 'Recoil', effectType: 'Recoil', kind: 'Condition'});
 		} else if (id === 'drain') {
-			effect = new Data.Condition({id, name: 'Drain', effectType: 'Drain', kind: 'Condition'});
+			effect = new Condition({id, name: 'Drain', effectType: 'Drain', kind: 'Condition'});
 		} else {
-			effect = new Data.Condition({id, name: id, kind: 'Condition', exists: false});
+			effect = new Condition({id, name: id, kind: 'Condition', exists: false});
 		}
 
 		this.effectCache.set(id, effect);
@@ -643,9 +633,9 @@ export class ModdedDex {
 		}
 		let effect;
 		if (this.data.Formats.hasOwnProperty(id)) {
-			effect = new Data.Format({name}, this.data.Formats[id], supplementaryAttributes);
+			effect = new Format({name}, this.data.Formats[id], supplementaryAttributes);
 		} else {
-			effect = new Data.Format({id, name, exists: false});
+			effect = new Format({id, name, exists: false});
 		}
 		return effect;
 	}
@@ -672,7 +662,7 @@ export class ModdedDex {
 		if (id && this.data.Items.hasOwnProperty(id)) {
 			const itemData = this.data.Items[id];
 			const itemTextData = this.getDescs('Items', id, itemData);
-			item = new Data.Item({name}, itemData, itemTextData);
+			item = new Item({name}, itemData, itemTextData);
 			if (item.gen > this.gen) {
 				(item as any).isNonstandard = 'Future';
 			}
@@ -681,7 +671,7 @@ export class ModdedDex {
 				(item as any).isNonstandard = 'Past';
 			}
 		} else {
-			item = new Data.Item({id, name, exists: false});
+			item = new Item({id, name, exists: false});
 		}
 		(item as any).kind = 'Item';
 
@@ -706,7 +696,7 @@ export class ModdedDex {
 		if (id && this.data.Abilities.hasOwnProperty(id)) {
 			const abilityData = this.data.Abilities[id];
 			const abilityTextData = this.getDescs('Abilities', id, abilityData);
-			ability = new Data.Ability({name}, abilityData, abilityTextData);
+			ability = new Ability({name}, abilityData, abilityTextData);
 			if (ability.gen > this.gen) {
 				(ability as any).isNonstandard = 'Future';
 			}
@@ -717,7 +707,7 @@ export class ModdedDex {
 				(ability as any).isNonstandard = null;
 			}
 		} else {
-			ability = new Data.Ability({id, name, exists: false});
+			ability = new Ability({id, name, exists: false});
 		}
 		(ability as any).kind = 'Ability';
 
@@ -727,7 +717,7 @@ export class ModdedDex {
 
 	hasAbility(species: Species, ability: string) {
 		for (const i in species.abilities) {
-			if (ability === species.abilities[i as keyof SpeciesAbility]) return true;
+			if (ability === (species.abilities as any)[i]) return true;
 		}
 		return false;
 	}
@@ -814,13 +804,13 @@ export class ModdedDex {
 		}
 	}
 
-	getRuleTable(format: Format, depth = 1, repeals?: Map<string, number>): Data.RuleTable {
+	getRuleTable(format: Format, depth = 1, repeals?: Map<string, number>): RuleTable {
 		if (format.ruleTable && !repeals) return format.ruleTable;
 		if (depth === 1 && dexes[format.mod || 'base'] !== this) {
 			// throw new Error(`${format.mod} ${this.currentMod}`);
 			return this.mod(format.mod).getRuleTable(format, depth + 1);
 		}
-		const ruleTable = new Data.RuleTable();
+		const ruleTable = new RuleTable();
 
 		const ruleset = format.ruleset.slice();
 		for (const ban of format.banlist) {
@@ -860,10 +850,10 @@ export class ModdedDex {
 
 			if (typeof ruleSpec !== 'string') {
 				if (ruleSpec[0] === 'complexTeamBan') {
-					const complexTeamBan: Data.ComplexTeamBan = ruleSpec.slice(1) as Data.ComplexTeamBan;
+					const complexTeamBan: ComplexTeamBan = ruleSpec.slice(1) as ComplexTeamBan;
 					ruleTable.addComplexTeamBan(complexTeamBan[0], complexTeamBan[1], complexTeamBan[2], complexTeamBan[3]);
 				} else if (ruleSpec[0] === 'complexBan') {
-					const complexBan: Data.ComplexBan = ruleSpec.slice(1) as Data.ComplexBan;
+					const complexBan: ComplexBan = ruleSpec.slice(1) as ComplexBan;
 					ruleTable.addComplexBan(complexBan[0], complexBan[1], complexBan[2], complexBan[3]);
 				} else {
 					throw new Error(`Unrecognized rule spec ${ruleSpec}`);
@@ -1216,7 +1206,7 @@ export class ModdedDex {
 		let section = '';
 		let column = 1;
 		for (const [i, f] of Formats.entries()) {
-			const format = f as FormatData;
+			const format = f as any; // (writeable) FormatData
 			const id = toID(format.name);
 			if (format.section) section = format.section;
 			if (format.column) column = format.column;
@@ -1228,13 +1218,11 @@ export class ModdedDex {
 			if (!format.column) format.column = column;
 			if (this.formatsCache[id]) throw new Error(`Format #${i + 1} has a duplicate ID: '${id}'`);
 			format.effectType = 'Format';
-			// @ts-ignore
 			format.baseRuleset = format.ruleset ? format.ruleset.slice() : [];
 			if (format.challengeShow === undefined) format.challengeShow = true;
 			if (format.searchShow === undefined) format.searchShow = true;
 			if (format.tournamentShow === undefined) format.tournamentShow = true;
 			if (format.mod === undefined) format.mod = 'gen8';
-			// @ts-ignore
 			if (!dexes[format.mod]) format.exists = false;
 			this.formatsCache[id] = format as Format;
 		}
@@ -1257,3 +1245,13 @@ dexes[BASE_MOD] = dexes['base'];
 dexes['base'].includeModData();
 
 export const Dex = dexes['base'];
+export namespace Dex {
+	export type Species = import('./dex-species').Species;
+	export type Item = import('./dex-items').Item;
+	export type Move = import('./dex-moves').Move;
+	export type Ability = import('./dex-abilities').Ability;
+
+	export type HitEffect = import('./dex-moves').HitEffect;
+	export type SecondaryEffect = import('./dex-moves').SecondaryEffect;
+	export type RuleTable = import('./dex-formats').RuleTable;
+}

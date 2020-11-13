@@ -1,3 +1,5 @@
+import type {Dex} from '../sim/dex';
+
 const CHOOSABLE_TARGETS = new Set(['normal', 'any', 'adjacentAlly', 'adjacentAllyOrSelf', 'adjacentFoe']);
 
 export const Scripts: BattleScriptsData = {
@@ -1036,11 +1038,14 @@ export const Scripts: BattleScriptsData = {
 			if (target === false) continue;
 			if (moveData.self && !move.selfDropped) {
 				if (!isSecondary && moveData.self.boosts) {
-					// This is done solely to mimic in-game RNG behaviour. All self drops have a 100% chance of happening but still grab a random number.
-					this.random(100);
+					const secondaryRoll = this.random(100);
+					if (typeof moveData.self.chance === 'undefined' || secondaryRoll < moveData.self.chance) {
+						this.moveHit(pokemon, pokemon, move, moveData.self, isSecondary, true);
+					}
 					if (!move.multihit) move.selfDropped = true;
+				} else {
+					this.moveHit(pokemon, pokemon, move, moveData.self, isSecondary, true);
 				}
-				this.moveHit(pokemon, pokemon, move, moveData.self, isSecondary, true);
 			}
 		}
 	},
@@ -1048,7 +1053,7 @@ export const Scripts: BattleScriptsData = {
 		if (!moveData.secondaries) return;
 		for (const target of targets) {
 			if (target === false) continue;
-			const secondaries: SecondaryEffect[] =
+			const secondaries: Dex.SecondaryEffect[] =
 				this.runEvent('ModifySecondaries', target, pokemon, moveData, moveData.secondaries.slice());
 			for (const secondary of secondaries) {
 				const secondaryRoll = this.random(100);

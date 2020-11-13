@@ -4722,7 +4722,7 @@
     "thundurustherian": {"tier": "UU", "doublesTier": "DUU"},
     "reshiram": {"tier": "Uber", "doublesTier": "DUber"},
     "zekrom": {"tier": "Uber", "doublesTier": "DUber"},
-    "landorus": {"tier": "OU", "doublesTier": "DUU"},
+    "landorus": {"tier": "Uber", "doublesTier": "DUU"},
     "landorustherian": {"tier": "OU", "doublesTier": "DOU"},
     "kyurem": {"tier": "UU", "doublesTier": "DUU"},
     "kyuremblack": {"tier": "OU", "doublesTier": "DOU"},
@@ -4950,8 +4950,12 @@
     "blacephalon": {"tier": "UU", "doublesTier": "DOU"},
     "zeraora": {"tier": "UU", "doublesTier": "DOU"},
     "meltan": {"tier": "(PU)", "doublesTier": "(DUU)"},
-    "melmetal": {"gmaxUnreleased": true, "tier": "OU", "doublesTier": "DUber"},
-    "melmetalgmax": {"isNonstandard": "Unobtainable", "tier": "Unreleased"},
+    "melmetal": {"tier": "OU", "doublesTier": "DUber"},
+    "melmetalgmax": {
+      "isNonstandard": "Gigantamax",
+      "tier": "(Uber)",
+      "doublesTier": "(DUber)"
+    },
     "grookey": {"tier": "LC"},
     "thwackey": {"tier": "NU", "doublesTier": "DUU"},
     "rillaboom": {"tier": "OU", "doublesTier": "DOU"},

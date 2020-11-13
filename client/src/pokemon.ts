@@ -361,7 +361,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       }
     }
     // the actual forme was hidden on Team Preview
-    details = details.replace(/(-[A-Za-z0-9]+)?(, |$)/, '-*$2') as PokemonDetails;
+    details = details.replace(/(-[A-Za-z0-9-]+)?(, |$)/, '-*$2') as PokemonDetails;
     return details === this.details;
   }
 

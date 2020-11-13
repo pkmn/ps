@@ -319,6 +319,11 @@
       "desc": "If a physical attack hits this Pokemon, its Defense is lowered by 1 stage and its Speed is raised by 1 stage.",
       "shortDesc": "If a physical attack hits this Pokemon, Defense is lowered by 1, Speed is raised by 1."
     },
+    "zenmode": {
+      "inherit": true,
+      "isPermanent": false,
+      "desc": "If this Pokemon is a Darmanitan, it changes to Zen Mode if it has 1/2 or less of its maximum HP at the end of a turn. If Darmanitan's HP is above 1/2 of its maximum HP at the end of a turn, it changes back to Standard Mode. If Darmanitan loses this Ability while in Zen Mode, it reverts to Standard Mode immediately."
+    },
     "anticipation": {
       "inherit": true,
       "desc": "On switch-in, this Pokemon is alerted if any opposing Pokemon has an attack that is super effective against this Pokemon, or an OHKO move. Counter, Metal Burst, and Mirror Coat count as attacking moves of their respective types, Hidden Power counts as its determined type, and Judgment, Natural Gift, Techno Blast, and Weather Ball are considered Normal-type moves."
@@ -352,10 +357,6 @@
     "simple": {
       "inherit": true,
       "desc": "When this Pokemon's stat stages are raised or lowered, the effect is doubled instead."
-    },
-    "zenmode": {
-      "inherit": true,
-      "desc": "If this Pokemon is a Darmanitan, it changes to Zen Mode if it has 1/2 or less of its maximum HP at the end of a turn. If Darmanitan's HP is above 1/2 of its maximum HP at the end of a turn, it changes back to Standard Mode. If Darmanitan loses this Ability while in Zen Mode, it reverts to Standard Mode immediately."
     }
   },
   "7": {
@@ -428,9 +429,21 @@
       "inherit": true,
       "desc": "If Sunny Day is active, this Pokemon cannot gain a major status condition and Rest will fail for it."
     },
+    "mummy": {
+      "inherit": true,
+      "desc": "Pokemon making contact with this Pokemon have their Ability changed to Mummy. Does not affect a Pokemon which already has Mummy or the Abilities Battle Bond, Comatose, Disguise, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, and Zen Mode."
+    },
+    "powerofalchemy": {
+      "inherit": true,
+      "desc": "This Pokemon copies the Ability of an ally that faints. Abilities that cannot be copied are \"No Ability\", Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Illusion, Imposter, Multitype, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, Wonder Guard, and Zen Mode."
+    },
     "raindish": {
       "inherit": true,
       "desc": "If Rain Dance is active, this Pokemon restores 1/16 of its maximum HP, rounded down, at the end of each turn."
+    },
+    "receiver": {
+      "inherit": true,
+      "desc": "This Pokemon copies the Ability of an ally that faints. Abilities that cannot be copied are \"No Ability\", Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Illusion, Imposter, Multitype, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, Wonder Guard, and Zen Mode."
     },
     "solarpower": {
       "inherit": true,
@@ -439,6 +452,10 @@
     "swiftswim": {
       "inherit": true,
       "desc": "If Rain Dance is active, this Pokemon's Speed is doubled."
+    },
+    "trace": {
+      "inherit": true,
+      "desc": "On switch-in, or when this Pokemon acquires this ability, this Pokemon copies a random adjacent opposing Pokemon's Ability. However, if one or more adjacent Pokemon has the Ability \"No Ability\", Trace won't copy anything even if there is another valid Ability it could normally copy. Otherwise, if there is no Ability that can be copied at that time, this Ability will activate as soon as an Ability can be copied. Abilities that cannot be copied are the previously mentioned \"No Ability\", as well as Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Illusion, Imposter, Multitype, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, and Zen Mode."
     }
   },
   "8": {
@@ -508,12 +525,14 @@
     },
     "asoneglastrier": {
       "onFoeTryEatItem": false,
+      "isPermanent": true,
       "name": "As One (Glastrier)",
       "num": 266,
       "shortDesc": "The combination of Unnerve and Chilling Neigh."
     },
     "asonespectrier": {
       "onFoeTryEatItem": false,
+      "isPermanent": true,
       "name": "As One (Spectrier)",
       "num": 267,
       "shortDesc": "The combination of Unnerve and Grim Neigh."
@@ -551,6 +570,7 @@
     },
     "battlebond": {
       "onModifyMovePriority": -1,
+      "isPermanent": true,
       "name": "Battle Bond",
       "num": 210,
       "desc": "If this Pokemon is a Greninja, it transforms into Ash-Greninja after knocking out a Pokemon. As Ash-Greninja, its Water Shuriken has 20 base power and always hits 3 times.",
@@ -623,6 +643,7 @@
       "shortDesc": "This Pokemon's type changes to the type of a move it's hit by, unless it has the type."
     },
     "comatose": {
+      "isPermanent": true,
       "isUnbreakable": true,
       "name": "Comatose",
       "num": 213,
@@ -734,6 +755,7 @@
     },
     "disguise": {
       "onDamagePriority": 1,
+      "isPermanent": true,
       "name": "Disguise",
       "num": 209,
       "desc": "If this Pokemon is a Mimikyu, the first hit it takes in battle deals 0 neutral damage. Its disguise is then broken, it changes to Busted Form, and it loses 1/8 of its max HP. Confusion damage also breaks the disguise.",
@@ -929,6 +951,7 @@
       "shortDesc": "This Pokemon's Sp. Atk is raised by 1 stage if it attacks and KOes another Pokemon."
     },
     "gulpmissile": {
+      "isPermanent": true,
       "name": "Gulp Missile",
       "num": 241,
       "desc": "If this Pokemon is a Cramorant, it changes forme when it hits a target with Surf or uses the first turn of Dive successfully. It becomes Gulping Form with an Arrokuda in its mouth if it has more than 1/2 of its maximum HP remaining, or Gorging Form with a Pikachu in its mouth if it has 1/2 or less of its maximum HP remaining. If Cramorant gets hit in Gulping or Gorging Form, it spits the Arrokuda or Pikachu at its attacker, even if it has no HP remaining. The projectile deals damage equal to 1/4 of the target's maximum HP, rounded down; this damage is blocked by the Magic Guard Ability but not by a substitute. An Arrokuda also lowers the target's Defense by 1 stage, and a Pikachu paralyzes the target. Cramorant will return to normal if it spits out a projectile, switches out, or Dynamaxes.",
@@ -1015,6 +1038,7 @@
     },
     "iceface": {
       "onDamagePriority": 1,
+      "isPermanent": true,
       "name": "Ice Face",
       "num": 248,
       "desc": "If this Pokemon is an Eiscue, the first physical hit it takes in battle deals 0 neutral damage. Its ice face is then broken and it changes forme to Noice Face. Eiscue regains its Ice Face forme when Hail begins or when Eiscue switches in while Hail is active. Confusion damage also breaks the ice face.",
@@ -1269,6 +1293,7 @@
       "shortDesc": "If this Pokemon is at full HP, damage taken from attacks is halved."
     },
     "multitype": {
+      "isPermanent": true,
       "name": "Multitype",
       "num": 121,
       "shortDesc": "If this Pokemon is an Arceus, its type changes to match its held Plate or Z-Crystal."
@@ -1276,7 +1301,7 @@
     "mummy": {
       "name": "Mummy",
       "num": 152,
-      "desc": "Pokemon making contact with this Pokemon have their Ability changed to Mummy. Does not affect the Battle Bond, Comatose, Disguise, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, and Zen Mode Abilities.",
+      "desc": "Pokemon making contact with this Pokemon have their Ability changed to Mummy. Does not affect a Pokemon which already has Mummy or the Abilities As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, and Zen Mode.",
       "shortDesc": "Pokemon making contact with this Pokemon have their Ability changed to Mummy."
     },
     "naturalcure": {
@@ -1292,7 +1317,7 @@
     "neutralizinggas": {
       "name": "Neutralizing Gas",
       "num": 256,
-      "desc": "While this Pokemon is active, Abilities have no effect. Does not affect the Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, or Zen Mode Abilities.",
+      "desc": "While this Pokemon is active, Abilities have no effect. Does not affect the Abilities As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, or Zen Mode.",
       "shortDesc": "While this Pokemon is active, Abilities have no effect."
     },
     "noguard": {
@@ -1400,6 +1425,7 @@
     },
     "powerconstruct": {
       "onResidualOrder": 27,
+      "isPermanent": true,
       "name": "Power Construct",
       "num": 211,
       "desc": "If this Pokemon is a Zygarde in its 10% or 50% Forme, it changes to Complete Forme when it has 1/2 or less of its maximum HP at the end of the turn.",
@@ -1408,7 +1434,7 @@
     "powerofalchemy": {
       "name": "Power of Alchemy",
       "num": 223,
-      "desc": "This Pokemon copies the Ability of an ally that faints. Abilities that cannot be copied are Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Stance Change, Trace, Wonder Guard, and Zen Mode.",
+      "desc": "This Pokemon copies the Ability of an ally that faints. Abilities that cannot be copied are \"No Ability\", As One, Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Neutralizing Gas, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, Wonder Guard, and Zen Mode.",
       "shortDesc": "This Pokemon copies the Ability of an ally that faints."
     },
     "powerspot": {
@@ -1503,7 +1529,7 @@
     "receiver": {
       "name": "Receiver",
       "num": 222,
-      "desc": "This Pokemon copies the Ability of an ally that faints. Abilities that cannot be copied are Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Neutralizing Gas, Stance Change, Trace, Wonder Guard, and Zen Mode.",
+      "desc": "This Pokemon copies the Ability of an ally that faints. Abilities that cannot be copied are \"No Ability\", As One, Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Neutralizing Gas, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, Wonder Guard, and Zen Mode.",
       "shortDesc": "This Pokemon copies the Ability of an ally that faints."
     },
     "reckless": {
@@ -1541,6 +1567,7 @@
       "shortDesc": "This Pokemon's attacks do 1.25x on same gender targets; 0.75x on opposite gender."
     },
     "rkssystem": {
+      "isPermanent": true,
       "name": "RKS System",
       "num": 225,
       "shortDesc": "If this Pokemon is a Silvally, its type changes to match its held Memory."
@@ -1603,6 +1630,7 @@
     },
     "schooling": {
       "onResidualOrder": 27,
+      "isPermanent": true,
       "name": "Schooling",
       "num": 208,
       "desc": "On switch-in, if this Pokemon is a Wishiwashi that is level 20 or above and has more than 1/4 of its maximum HP left, it changes to School Form. If it is in School Form and its HP drops to 1/4 of its maximum HP or less, it changes to Solo Form at the end of the turn. If it is in Solo Form and its HP is greater than 1/4 its maximum HP at the end of the turn, it changes to School Form.",
@@ -1667,6 +1695,7 @@
     },
     "shieldsdown": {
       "onResidualOrder": 27,
+      "isPermanent": true,
       "isUnbreakable": true,
       "name": "Shields Down",
       "num": 197,
@@ -1769,6 +1798,7 @@
     },
     "stancechange": {
       "onBeforeMovePriority": 0.5,
+      "isPermanent": true,
       "name": "Stance Change",
       "num": 176,
       "desc": "If this Pokemon is an Aegislash, it changes to Blade Forme before attempting to use an attacking move, and changes to Shield Forme before attempting to use King's Shield.",
@@ -1945,7 +1975,7 @@
     "trace": {
       "name": "Trace",
       "num": 36,
-      "desc": "On switch-in, or when this Pokemon acquires this ability, this Pokemon copies a random adjacent opposing Pokemon's Ability. However, if one or more adjacent Pokemon has the Ability \"No Ability\", Trace won't copy anything even if there is another valid Ability it could normally copy. Otherwise, if there is no Ability that can be copied at that time, this Ability will activate as soon as an Ability can be copied. Abilities that cannot be copied are the previously mentioned \"No Ability\", as well as Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Neutralizing Gas, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, and Zen Mode.",
+      "desc": "On switch-in, or when this Pokemon acquires this ability, this Pokemon copies a random adjacent opposing Pokemon's Ability. However, if one or more adjacent Pokemon has the Ability \"No Ability\", Trace won't copy anything even if there is another valid Ability it could normally copy. Otherwise, if there is no Ability that can be copied at that time, this Ability will activate as soon as an Ability can be copied. Abilities that cannot be copied are the previously mentioned \"No Ability\", as well as As One, Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Neutralizing Gas, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, and Zen Mode.",
       "shortDesc": "On switch-in, or when it can, this Pokemon copies a random adjacent foe's Ability."
     },
     "transistor": {
@@ -2017,6 +2047,7 @@
     "wanderingspirit": {
       "name": "Wandering Spirit",
       "num": 254,
+      "desc": "Pokemon making contact with this Pokemon have their Ability swapped with this one. Does not affect a Pokemon which has the Ability As One, Battle Bond, Comatose, Disguise, Gulp Missile, Hunger Switch, Ice Face, Illusion, Multitype, Neutralizing Gas, Power Construct, RKS System, Schooling, Shields Down, Stance Change, or Zen Mode.",
       "shortDesc": "Pokemon making contact with this Pokemon have their Ability swapped with this one."
     },
     "waterabsorb": {
@@ -2075,6 +2106,7 @@
     "zenmode": {
       "onResidualOrder": 27,
       "condition": {},
+      "isPermanent": true,
       "name": "Zen Mode",
       "num": 161,
       "desc": "If this Pokemon is a Darmanitan or Darmanitan-Galar, it changes to Zen Mode if it has 1/2 or less of its maximum HP at the end of a turn. If Darmanitan's HP is above 1/2 of its maximum HP at the end of a turn, it changes back to Standard Mode. This Ability cannot be removed or suppressed.",

@@ -866,7 +866,7 @@ export const Formats: {[k: string]: FormatData} = {
 				}
 				if (this.gen >= 7) {
 					const item = this.dex.getItem(set.item);
-					if (item.megaStone && species.name === item.megaEvolves) {
+					if (item.megaStone && species.baseSpecies === item.megaEvolves) {
 						species = this.dex.getSpecies(item.megaStone);
 						typeTable = typeTable.filter(type => species.types.includes(type));
 					}
@@ -1003,6 +1003,18 @@ export const Formats: {[k: string]: FormatData} = {
 					prevo = prevoSpecies.prevo;
 				}
 				if (types.includes(move.type)) return null;
+			}
+			return this.checkLearnset(move, species, setSources, set);
+		},
+	},
+	alphabetcupmovelegality: {
+		effectType: 'ValidatorRule',
+		name: 'Alphabet Cup Move Legality',
+		desc: "Allows Pok&eacute;mon to use any move that shares the same first letter as their name or a previous evolution's name.",
+		checkLearnset(move, species, setSources, set) {
+			const nonstandard = move.isNonstandard === 'Past' && !this.ruleTable.has('standardnatdex');
+			if (!nonstandard && !move.isZ && !move.isMax && !this.ruleTable.isRestricted(`move:${move.id}`)) {
+				if (move.id.startsWith(species.id[0])) return null;
 			}
 			return this.checkLearnset(move, species, setSources, set);
 		},

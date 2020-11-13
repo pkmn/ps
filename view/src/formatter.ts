@@ -177,9 +177,9 @@ export class LogFormatter {
     return `???side:${side}???`;
   }
 
-  team(side: string) {
+  team(side: string, isFar: 0 | 1 = 0) {
     side = side.slice(0, 2);
-    if (side === (this.perspective === 0 ? 'p1' : 'p2')) {
+    if (side === (this.perspective === isFar ? 'p1' : 'p2')) {
       return Text._.team;
     }
     return Text._.opposingTeam;
@@ -610,7 +610,7 @@ class Handler implements Protocol.Handler<string> {
   }
 
   '|-ability|'(args: Args['|-ability|'], kwArgs: KWArgs['|-ability|']) {
-    let [, pokemon, ability, oldAbility, arg4] = args as [
+    let [, pokemon, ability, oldAbility] = args as [
       '-ability',
       PokemonIdent,
       AbilityName,
@@ -621,7 +621,6 @@ class Handler implements Protocol.Handler<string> {
     if (oldAbility && (oldAbility.startsWith('p1') ||
       oldAbility.startsWith('p2') ||
       oldAbility === 'boost')) {
-      arg4 = oldAbility as (PokemonIdent | 'boost');
       oldAbility = '' as AbilityName;
     }
     if (oldAbility) line1 += this.parser.ability(oldAbility, pokemon);
@@ -641,7 +640,7 @@ class Handler implements Protocol.Handler<string> {
     const id = LogFormatter.effectId(ability);
     if (id === 'unnerve') {
       const template = this.parser.template('start', ability);
-      return line1 + template.replace('[TEAM]', this.parser.team(arg4!));
+      return line1 + template.replace('[TEAM]', this.parser.team(pokemon.slice(0, 2), 1));
     }
     let templateId = 'start';
     if (id === 'anticipation' || id === 'sturdy') templateId = 'activate';

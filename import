@@ -93,20 +93,37 @@ const IMPORTS = {
   'sim/battle.ts': [
     'Effect', 'Format', 'ID', 'PlayerOptions', 'AnyObject', 'ActiveMove', 'SideID',
     'SparseBoostsTable', 'SpreadMoveDamage', 'Move', 'PokemonSet', 'SpreadMoveTargets',
-    'HitEffect', 'GameType', 'ModdedDex', 'StatsTable',
+    'GameType', 'ModdedDex', 'StatsTable',
+  ],
+  'sim/dex-abilities.ts': ['AnyObject', 'Battle', 'Pokemon', 'Side', 'Field', 'ConditionData'],
+  'sim/dex-conditions.ts': [
+    'AnyObject', 'Battle', 'Pokemon', 'Side', 'Field', 'Effect', 'ActiveMove', 'Item',
+    'CommonHandlers', 'SparseBoostsTable',
   ],
   'sim/dex-data.ts': [
-    'ID', 'EffectData', 'EffectType', 'Nonstandard', 'AnyObject', 'GameTimerSettings',
-    'FormatData', 'GameType', 'Battle', 'ConditionData', 'ItemData', 'FlingData', 'AbilityData',
-    'MoveSource', 'EventInfo', 'SpeciesData', 'SpeciesFormatsData', 'SpeciesAbility', 'NatureData',
-    'GenderName', 'StatsTable', 'RandomTeamsTypes', 'MoveData', 'SecondaryEffect', 'MoveTarget',
-    'TypeData', 'SparseStatsTable', 'SparseBoostsTable', 'TierTypes', 'StatNameExceptHP',
+    'AnyObject', 'ID', 'SparseStatsTable', 'TypeData', 'StatNameExceptHP', 'NatureData',
+    'EventInfo', 'MoveSource', 'EffectType', 'Nonstandard', 'EffectData',
+  ],
+  'sim/dex-formats.ts': [
+    'AnyObject', 'ID', 'PokemonSet', 'TeamValidator', 'Battle', 'Species', 'Effect', 'Pokemon',
+    'PokemonSources', 'Move', 'GameTimerSettings', 'ModdedField', 'ModdedBattleQueue',
+    'ModdedBattlePokemon', 'ModdedBattleScriptsData', 'GameType',
+  ],
+  'sim/dex-items.ts': [
+    'AnyObject', 'Battle', 'Pokemon', 'SparseBoostsTable', 'ConditionData',  'CommonHandlers',
+  ],
+  'sim/dex-moves.ts': [
+    'AnyObject', 'ID', 'SparseBoostsTable', 'Pokemon', 'Ability', 'ConditionData', 'CommonHandlers',
+    'EffectData', 'Battle', 'Side',
+  ],
+  'sim/dex-species.ts': [
+    'AnyObject', 'ID', 'TierTypes', 'StatsTable', 'GenderName', 'Nonstandard',
   ],
   'sim/field.ts': ['Effect', 'Condition', 'Pokemon', 'Battle', 'Side', 'AnyObject', 'ID'],
   'sim/pokemon.ts': [
     'ActiveMove', 'Ability', 'Condition', 'Item', 'Species', 'SparseBoostsTable', 'Side', 'SideID',
-    'AnyObject', 'DynamaxOptions', 'Move', 'StatNameExceptHP', 'PokemonModData', 'Effect',
-    'StatsExceptHPTable', 'ID', 'BoostsTable', 'StatsTable', 'GenderName', 'PokemonSet', 'Battle',
+    'AnyObject', 'DynamaxOptions', 'Move', 'StatNameExceptHP', 'Effect', 'StatsExceptHPTable', 'ID',
+    'BoostsTable', 'StatsTable', 'GenderName', 'PokemonSet', 'Battle',
   ],
   'sim/side.ts': [
     'AnyObject', 'Effect', 'ActiveMove', 'Condition', 'PokemonSet', 'Battle', 'Move', 'SideID',
@@ -242,7 +259,13 @@ const MOD_FILES =
 
 // Files which need special attention if changed (usually manual intervention)
 const FRAGILE = new Set([
+  'sim/dex-abilities.ts',
+  'sim/dex-conditions.ts',
   'sim/dex-data.ts',
+  'sim/dex-formats.ts',
+  'sim/dex-items.ts',
+  'sim/dex-moves.ts',
+  'sim/dex-species.ts',
   // `sim/dex.ts` has to have its loading reworked to depend on everything up front so that it can
   // be used in a browser environment where synchronous `require` and `fs` APIs don't exist.
   'sim/dex.ts',
@@ -252,7 +275,7 @@ const FRAGILE = new Set([
 // Files which we want to prevent being copied over from PS, either because of modifications or
 // because they only exist in the generated package
 const OVERRIDDEN = new Set([
-  ...Array.from(FRAGILE).slice(1), // sim/dex-data.ts has *not* been overridden
+  ...Array.from(FRAGILE).slice(7), // sim/dex-*.ts have *not* been overridden
   '.eslintcache',
   '.eslintrc-no-types.json',
   '.eslintrc-types.json',
@@ -391,12 +414,14 @@ const DATA = {
 const fillDescs = (text, gen, contents) => {
   for (const id in text) {
     if (!contents[id] && gen === 8) continue;
-    const desc = text[id][gen === 8 ? 'desc' : `descGen${gen}`];
+    const d = gen === 8 ? text[id] : text[id][`gen${gen}`];
+    const desc = d && d.desc;
     if (desc) {
       contents[id] = contents[id] || {inherit: true};
       contents[id].desc = desc;
     }
-    const shortDesc = text[id][gen === 8 ? 'shortDesc' : `shortDescGen${gen}`];
+    const sd = gen === 8 ? text[id] : text[id][`gen${gen}`];
+    const shortDesc = sd && sd.shortDesc;
     if (shortDesc) {
       contents[id] = contents[id] || {inherit: true};
       contents[id].shortDesc = shortDesc;
@@ -572,8 +597,16 @@ const changes = async (where, last, now, repo) => ({
       for (const id in TEXTS[text]) {
         const entry = TEXTS[text][id];
         for (const key in entry) {
-          if (key === 'name' || key.startsWith('desc') || key.startsWith('shortDesc')) continue;
-          (TEXT[id] || (TEXT[id] = {}))[key] = entry[key];
+          if (['name', 'desc', 'shortDesc'].includes(key)) continue;
+          TEXT[id] = TEXT[id] || {};
+          if (key.startsWith('gen')) {
+            for (const modKey in entry[key]) {
+              if (['desc', 'shortDesc'].includes(key)) continue;
+              TEXT[id][modKey + 'Gen' + key.charAt(3)] = entry[key][modKey];
+            }
+          } else {
+            TEXT[id][key] = entry[key];
+          }
         }
       }
     }
