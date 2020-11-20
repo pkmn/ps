@@ -64,7 +64,7 @@ const set = Sets.unpack(
 
 ### Browser
 
-The recommended way of using `@pkmn/data` in a web browser is to **configure your bundler**
+The recommended way of using `@pkmn/sets` in a web browser is to **configure your bundler**
 ([Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/),
 [Parcel](https://parceljs.org/), etc) to minimize it and package it with the rest of your
 application. If you do not use a bundler, a convenience `production.min.js` is included in the
