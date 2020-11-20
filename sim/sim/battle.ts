@@ -2049,7 +2049,7 @@ export class Battle {
 		return stats;
 	}
 
-	getCategory(move: string | Move) {
+	getCategory(move: string | Move): Move['category'] {
 		return this.dex.getMove(move).category || 'Physical';
 	}
 

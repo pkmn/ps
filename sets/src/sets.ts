@@ -179,7 +179,7 @@ export const Sets = new class {
   exportSet(s: PokemonSet, data?: Data) {
     let buf = '';
     let species = s.species || s.name;
-    species = data?.getSpecies(species || name)?.name ?? species;
+    species = data?.getSpecies(species)?.name || species;
     if (s.name && s.name !== species) {
       buf += '' + s.name + ' (' + species + ')';
     } else {

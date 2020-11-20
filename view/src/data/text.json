@@ -260,7 +260,7 @@
     "start": "  An electric current ran across the battlefield!",
     "end": "  The electricity disappeared from the battlefield.",
     "block": "  [POKEMON] is protected by the Electric Terrain!",
-    "descGen7": "For 5 turns, the terrain becomes Electric Terrain. During the effect, the power of Electric-type attacks made by grounded Pokemon is multiplied by 1.5 and grounded Pokemon cannot fall asleep; Pokemon already asleep do not wake up. Camouflage transforms the user into an Electric type, Nature Power becomes Thunderbolt, and Secret Power has a 30% chance to cause paralysis. Fails if the current terrain is Electric Terrain."
+    "descGen7": "For 5 turns, the terrain becomes Electric Terrain. During the effect, the power of Electric-type attacks made by grounded Pokemon is multiplied by 1.5 and grounded Pokemon cannot fall asleep; Pokemon already asleep do not wake up. Grounded Pokemon cannot become affected by Yawn or fall asleep from its effect. Camouflage transforms the user into an Electric type, Nature Power becomes Thunderbolt, and Secret Power has a 30% chance to cause paralysis. Fails if the current terrain is Electric Terrain."
   },
   "grassyterrain": {
     "start": "  Grass grew to cover the battlefield!",
@@ -272,7 +272,7 @@
     "start": "  Mist swirled around the battlefield!",
     "end": "  The mist disappeared from the battlefield.",
     "block": "  [POKEMON] surrounds itself with a protective mist!",
-    "descGen6": "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a major status condition. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain."
+    "descGen6": "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a non-volatile status condition. Grounded Pokemon can become affected by Yawn but cannot fall asleep from its effect. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain."
   },
   "psychicterrain": {
     "start": "  The battlefield got weird!",
@@ -357,7 +357,7 @@
     "descGen3": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits."
   },
   "aromatherapy": {
-    "descGen5": "Every Pokemon in the user's party is cured of its major status condition.",
+    "descGen5": "Every Pokemon in the user's party is cured of its non-volatile status condition.",
     "activate": "  A soothing aroma wafted through the area!"
   },
   "assist": {
@@ -370,7 +370,7 @@
     "descGen4": "Power doubles if the target has already taken damage this turn."
   },
   "astonish": {
-    "descGen3": "Has a 30% chance to flinch the target. Damage doubles if the target has used Minimize while active."
+    "descGen3": "Has a 30% chance to make the target flinch. Damage doubles if the target has used Minimize while active."
   },
   "attract": {
     "descGen5": "Causes the target to become infatuated, making it unable to attack 50% of the time. Fails if both the user and the target are the same gender, if either is genderless, or if the target is already infatuated. The effect ends when either the user or the target is no longer active. Pokemon with the Oblivious Ability are immune.",
@@ -404,9 +404,9 @@
   },
   "beakblast": {"start": "  [POKEMON] started heating up its beak!"},
   "beatup": {
-    "descGen4": "Deals typeless damage. Hits one time for the user and one time for each unfainted Pokemon without a major status condition in the user's party. For each hit, the damage formula uses the participating Pokemon's base Attack as the Attack stat, the target's base Defense as the Defense stat, and ignores stat stages and other effects that modify Attack or Defense; each hit is considered to come from the user.",
-    "descGen3": "Deals typeless damage. Hits one time for each unfainted Pokemon without a major status condition in the user's party, or fails if no Pokemon meet the criteria. For each hit, the damage formula uses the participating Pokemon's base Attack as the Attack stat, the target's base Defense as the Defense stat, and ignores stat stages and other effects that modify Attack or Defense; each hit is considered to come from the user.",
-    "descGen2": "Deals typeless damage. Hits one time for each unfainted Pokemon without a major status condition in the user's party. For each hit, the damage formula uses the participating Pokemon's level, its base Attack as the Attack stat, the target's base Defense as the Defense stat, and ignores stat stages and other effects that modify Attack or Defense. Fails if no party members can participate.",
+    "descGen4": "Deals typeless damage. Hits one time for the user and one time for each unfainted Pokemon without a non-volatile status condition in the user's party. For each hit, the damage formula uses the participating Pokemon's base Attack as the Attack stat, the target's base Defense as the Defense stat, and ignores stat stages and other effects that modify Attack or Defense; each hit is considered to come from the user.",
+    "descGen3": "Deals typeless damage. Hits one time for each unfainted Pokemon without a non-volatile status condition in the user's party, or fails if no Pokemon meet the criteria. For each hit, the damage formula uses the participating Pokemon's base Attack as the Attack stat, the target's base Defense as the Defense stat, and ignores stat stages and other effects that modify Attack or Defense; each hit is considered to come from the user.",
+    "descGen2": "Deals typeless damage. Hits one time for each unfainted Pokemon without a non-volatile status condition in the user's party. For each hit, the damage formula uses the participating Pokemon's level, its base Attack as the Attack stat, the target's base Defense as the Defense stat, and ignores stat stages and other effects that modify Attack or Defense. Fails if no party members can participate.",
     "activate": "  [NAME]'s attack!"
   },
   "bellydrum": {
@@ -439,8 +439,8 @@
     "move": "#wrap"
   },
   "bite": {
-    "descGen1": "Has a 10% chance to flinch the target.",
-    "shortDescGen1": "10% chance to flinch the target."
+    "descGen1": "Has a 10% chance to make the target flinch.",
+    "shortDescGen1": "10% chance to make the target flinch."
   },
   "blizzard": {
     "descGen3": "Has a 10% chance to freeze the target.",
@@ -689,7 +689,7 @@
   "dragonascent": {
     "megaNoItem": "  [TRAINER]'s fervent wish has reached [POKEMON]!"
   },
-  "dragonrush": {"descGen5": "Has a 20% chance to flinch the target."},
+  "dragonrush": {"descGen5": "Has a 20% chance to make the target flinch."},
   "drainpunch": {
     "descGen4": "The user recovers 1/2 the HP lost by the target, rounded down. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded down."
   },
@@ -748,7 +748,7 @@
     "descGen1": "The user faints after using this move, unless this move broke the target's substitute. The target's Defense is halved during damage calculation."
   },
   "extrasensory": {
-    "descGen3": "Has a 10% chance to flinch the target. Damage doubles if the target has used Minimize while active."
+    "descGen3": "Has a 10% chance to make the target flinch. Damage doubles if the target has used Minimize while active."
   },
   "extremespeed": {"shortDescGen4": "Usually goes first."},
   "facade": {
@@ -774,7 +774,7 @@
     "shortDescGen1": "30% chance to burn the target."
   },
   "firefang": {
-    "descGen4": "Has a 10% chance to burn the target and a 10% chance to flinch it. This move can hit Pokemon with the Wonder Guard Ability regardless of their typing."
+    "descGen4": "Has a 10% chance to burn the target and a 10% chance to make it flinch. This move can hit Pokemon with the Wonder Guard Ability regardless of their typing."
   },
   "firepledge": {
     "activate": "#waterpledge",
@@ -940,17 +940,17 @@
   },
   "happyhour": {"activate": "  Everyone is caught up in the happy atmosphere!"},
   "haze": {
-    "descGen1": "Resets the stat stages of both Pokemon to 0 and removes stat reductions due to burn and paralysis. Resets Toxic counters to 0 and removes the effect of confusion, Disable, Focus Energy, Leech Seed, Light Screen, Mist, and Reflect from both Pokemon. Removes the opponent's major status condition.",
+    "descGen1": "Resets the stat stages of both Pokemon to 0 and removes stat reductions due to burn and paralysis. Resets Toxic counters to 0 and removes the effect of confusion, Disable, Focus Energy, Leech Seed, Light Screen, Mist, and Reflect from both Pokemon. Removes the opponent's non-volatile status condition.",
     "shortDescGen1": "Resets all stat changes. Removes foe's status."
   },
   "headsmash": {
     "descGen4": "If the target lost HP, the user takes recoil damage equal to 1/2 the HP lost by the target, rounded down, but not less than 1 HP."
   },
   "healbell": {
-    "descGen7": "Every Pokemon in the user's party is cured of its major status condition. Active Pokemon with the Soundproof Ability are not cured.",
-    "descGen5": "Every Pokemon in the user's party is cured of its major status condition. Active Pokemon with the Soundproof Ability are also cured.",
-    "descGen4": "Every Pokemon in the user's party is cured of its major status condition. Pokemon with the Soundproof Ability are not cured.",
-    "descGen2": "Every Pokemon in the user's party is cured of its major status condition.",
+    "descGen7": "Every Pokemon in the user's party is cured of its non-volatile status condition. Active Pokemon with the Soundproof Ability are not cured.",
+    "descGen5": "Every Pokemon in the user's party is cured of its non-volatile status condition. Active Pokemon with the Soundproof Ability are also cured.",
+    "descGen4": "Every Pokemon in the user's party is cured of its non-volatile status condition. Pokemon with the Soundproof Ability are not cured.",
+    "descGen2": "Every Pokemon in the user's party is cured of its non-volatile status condition.",
     "activate": "  A bell chimed!"
   },
   "healblock": {
@@ -962,9 +962,9 @@
     "cant": "[POKEMON] can't use [MOVE] because of Heal Block!"
   },
   "healingwish": {
-    "descGen7": "The user faints and the Pokemon brought out to replace it has its HP fully restored along with having any major status condition cured. The new Pokemon is sent out at the end of the turn, and the healing happens before hazards take effect. Fails if the user is the last unfainted Pokemon in its party.",
+    "descGen7": "The user faints and the Pokemon brought out to replace it has its HP fully restored along with having any non-volatile status condition cured. The new Pokemon is sent out at the end of the turn, and the healing happens before hazards take effect. Fails if the user is the last unfainted Pokemon in its party.",
     "shortDescGen7": "User faints. Replacement is fully healed.",
-    "descGen4": "The user faints and the Pokemon brought out to replace it has its HP fully restored along with having any major status condition cured. The new Pokemon is sent out immediately and the healing happens after hazards take effect. Fails if the user is the last unfainted Pokemon in its party.",
+    "descGen4": "The user faints and the Pokemon brought out to replace it has its HP fully restored along with having any non-volatile status condition cured. The new Pokemon is sent out immediately and the healing happens after hazards take effect. Fails if the user is the last unfainted Pokemon in its party.",
     "heal": "  The healing wish came true for [POKEMON]!"
   },
   "healorder": {
@@ -1119,15 +1119,15 @@
     "start": "  [SOURCE] took aim at [POKEMON]!"
   },
   "lowkick": {
-    "descGen2": "Has a 30% chance to flinch the target.",
-    "shortDescGen2": "30% chance to flinch the target."
+    "descGen2": "Has a 30% chance to make the target flinch.",
+    "shortDescGen2": "30% chance to make the target flinch."
   },
   "luckychant": {
     "start": "  Lucky Chant shielded [TEAM] from critical hits!",
     "end": "  [TEAM]'s Lucky Chant wore off!"
   },
   "lunardance": {
-    "descGen4": "The user faints and the Pokemon brought out to replace it has its HP and PP fully restored along with having any major status condition cured. The new Pokemon is sent out immediately and the healing happens after hazards take effect. Fails if the user is the last unfainted Pokemon in its party.",
+    "descGen4": "The user faints and the Pokemon brought out to replace it has its HP and PP fully restored along with having any non-volatile status condition cured. The new Pokemon is sent out immediately and the healing happens after hazards take effect. Fails if the user is the last unfainted Pokemon in its party.",
     "heal": "  [POKEMON] became cloaked in mystical moonlight!"
   },
   "magiccoat": {
@@ -1272,7 +1272,7 @@
     "move": "Nature Power turned into [MOVE]!"
   },
   "needlearm": {
-    "descGen3": "Has a 30% chance to flinch the target. Damage doubles if the target has used Minimize while active."
+    "descGen3": "Has a 30% chance to make the target flinch. Damage doubles if the target has used Minimize while active."
   },
   "nightmare": {
     "start": "  [POKEMON] began having a nightmare!",
@@ -1383,7 +1383,7 @@
     "shortDescGen2": "Random damage from 1 to (user's level*1.5 - 1)."
   },
   "pursuit": {
-    "descGen6": "If an adjacent opposing Pokemon switches out this turn, this move hits that Pokemon before it leaves the field, even if it was not the original target. If the user moves after an opponent using Parting Shot, U-turn, or Volt Switch, but not Baton Pass, it will hit that opponent before it leaves the field. Power doubles and no accuracy check is done if the user hits an opponent switching out, and the user's turn is over; if an opponent faints from this, the replacement Pokemon does not become active until the end of the turn.",
+    "descGen7": "If an adjacent opposing Pokemon switches out this turn, this move hits that Pokemon before it leaves the field, even if it was not the original target. If the user moves after an opponent using Parting Shot, U-turn, or Volt Switch, but not Baton Pass, it will hit that opponent before it leaves the field. Power doubles and no accuracy check is done if the user hits an opponent switching out, and the user's turn is over; if an opponent faints from this, the replacement Pokemon does not become active until the end of the turn.",
     "descGen5": "If an adjacent opposing Pokemon switches out this turn, this move hits that Pokemon before it leaves the field, even if it was not the original target. If the user moves after an opponent using U-turn or Volt Switch, but not Baton Pass, it will hit that opponent before it leaves the field. Power doubles and no accuracy check is done if the user hits an opponent switching out, and the user's turn is over; if an opponent faints from this, the replacement Pokemon does not become active until the end of the turn.",
     "descGen4": "If an opposing Pokemon switches out this turn, this move hits that Pokemon before it leaves the field, even if it was not the original target. If the user moves after an opponent using U-turn, but not Baton Pass, it will hit that opponent before it leaves the field. Power doubles and no accuracy check is done if the user hits an opponent switching out, and the user's turn is over; if an opponent faints from this, the replacement Pokemon becomes active immediately.",
     "descGen3": "If the target is an opposing Pokemon and it switches out this turn, this move hits that Pokemon before it leaves the field. Power doubles and no accuracy check is done if the user hits an opponent switching out, and the user's turn is over; if an opponent faints from this, the replacement Pokemon becomes active immediately.",
@@ -1454,8 +1454,8 @@
     "typeChange": "  [POKEMON]'s type became the same as [SOURCE]'s type!"
   },
   "rest": {
-    "descGen2": "The user falls asleep for the next two turns and restores all of its HP, curing itself of any major status condition in the process, even if it was already asleep. Fails if the user has full HP.",
-    "descGen1": "The user falls asleep for the next two turns and restores all of its HP, curing itself of any major status condition in the process. This does not remove the user's stat penalty for burn or paralysis. Fails if the user has full HP."
+    "descGen2": "The user falls asleep for the next two turns and restores all of its HP, curing itself of any non-volatile status condition in the process, even if it was already asleep. Fails if the user has full HP.",
+    "descGen1": "The user falls asleep for the next two turns and restores all of its HP, curing itself of any non-volatile status condition in the process. This does not remove the user's stat penalty for burn or paralysis. Fails if the user has full HP."
   },
   "revenge": {
     "descGen4": "Power doubles if the user was hit by a Pokemon in the target's current position this turn.",
@@ -1480,7 +1480,7 @@
   "rockslide": {
     "descGen1": "No additional effect.",
     "shortDescGen1": "No additional effect.",
-    "shortDescGen2": "30% chance to flinch the target."
+    "shortDescGen2": "30% chance to make the target flinch."
   },
   "roleplay": {
     "descGen7": "The user's Ability changes to match the target's Ability. Fails if the user's Ability is Battle Bond, Comatose, Disguise, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, Zen Mode, or already matches the target, or if the target's Ability is Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Illusion, Imposter, Multitype, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, Wonder Guard, or Zen Mode.",
@@ -1498,8 +1498,8 @@
     "start": "  ([POKEMON] loses Flying type this turn.)"
   },
   "safeguard": {
-    "descGen3": "For 5 turns, the user and its party members cannot have major status conditions or confusion inflicted on them by other Pokemon. Fails if the effect is already active on the user's side.",
-    "descGen2": "For 5 turns, the user and its party members cannot have major status conditions or confusion inflicted on them by other Pokemon. During the effect, Outrage, Thrash, and Petal Dance do not confuse the user. Fails if the effect is already active on the user's side.",
+    "descGen3": "For 5 turns, the user and its party members cannot have non-volatile status conditions or confusion inflicted on them by other Pokemon. Pokemon on the user's side cannot become affected by Yawn but can fall asleep from its effect. Fails if the effect is already active on the user's side.",
+    "descGen2": "For 5 turns, the user and its party members cannot have non-volatile status conditions or confusion inflicted on them by other Pokemon. During the effect, Outrage, Thrash, and Petal Dance do not confuse the user. Fails if the effect is already active on the user's side.",
     "start": "  [TEAM] cloaked itself in a mystical veil!",
     "end": "  [TEAM] is no longer protected by Safeguard!",
     "block": "  [POKEMON] is protected by Safeguard!"
@@ -1575,7 +1575,7 @@
     "prepare": "[POKEMON] tucked in its head!"
   },
   "skyattack": {
-    "descGen3": "Has a 30% chance to flinch the target and a higher chance for a critical hit. This attack charges on the first turn and executes on the second.",
+    "descGen3": "Has a 30% chance to make the target flinch and a higher chance for a critical hit. This attack charges on the first turn and executes on the second.",
     "descGen2": "This attack charges on the first turn and executes on the second.",
     "shortDescGen2": "Charges turn 1. Hits turn 2.",
     "prepare": "[POKEMON] became cloaked in a harsh light!"
@@ -1694,7 +1694,7 @@
     "damage": "  Pointed stones dug into [POKEMON]!"
   },
   "steamroller": {
-    "descGen5": "Has a 30% chance to flinch the target. Damage doubles if the target has used Minimize while active."
+    "descGen5": "Has a 30% chance to make the target flinch. Damage doubles if the target has used Minimize while active."
   },
   "stickyweb": {
     "start": "  A sticky web has been laid out on the ground around [TEAM]!",
@@ -1708,11 +1708,11 @@
     "end": "  [POKEMON]'s stockpiled effect wore off!"
   },
   "stomp": {
-    "descGen5": "Has a 30% chance to flinch the target. Damage doubles if the target has used Minimize while active.",
-    "descGen4": "Has a 30% chance to flinch the target. Power doubles if the target has used Minimize while active.",
-    "descGen3": "Has a 30% chance to flinch the target. Damage doubles if the target has used Minimize while active.",
-    "descGen2": "Has a 30% chance to flinch the target. Power doubles if the target is under the effect of Minimize.",
-    "descGen1": "Has a 30% chance to flinch the target."
+    "descGen5": "Has a 30% chance to make the target flinch. Damage doubles if the target has used Minimize while active.",
+    "descGen4": "Has a 30% chance to make the target flinch. Power doubles if the target has used Minimize while active.",
+    "descGen3": "Has a 30% chance to make the target flinch. Damage doubles if the target has used Minimize while active.",
+    "descGen2": "Has a 30% chance to make the target flinch. Power doubles if the target is under the effect of Minimize.",
+    "descGen1": "Has a 30% chance to make the target flinch."
   },
   "stringshot": {
     "descGen5": "Lowers the target's Speed by 1 stage.",
@@ -1827,6 +1827,9 @@
     "descGen3": "If this attack was successful and the user has not fainted, it steals the target's held item if the user is not holding one. The target's item is not stolen if it is a Mail or Enigma Berry. Items lost to this move cannot be regained with Recycle.",
     "descGen2": "Has a 100% chance to steal the target's held item if the user is not holding one. The target's item is not stolen if it is a Mail."
   },
+  "thousandwaves": {
+    "descGen7": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Parting Shot, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field."
+  },
   "thrash": {
     "descGen6": "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an adjacent opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
     "descGen4": "The user spends two or three turns locked into this move and becomes confused at the end of the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
@@ -1895,9 +1898,9 @@
     "descGen1": "Hits twice, with the second hit having a 20% chance to poison the target. If the first hit breaks the target's substitute, the move ends."
   },
   "twister": {
-    "descGen4": "Has a 20% chance to flinch the target. Power doubles if the target is using Bounce or Fly.",
-    "descGen2": "Has a 20% chance to flinch the target. Power doubles if the target is using Fly.",
-    "shortDescGen2": "20% chance to flinch the target."
+    "descGen4": "Has a 20% chance to make the target flinch. Power doubles if the target is using Bounce or Fly.",
+    "descGen2": "Has a 20% chance to make the target flinch. Power doubles if the target is using Fly.",
+    "shortDescGen2": "20% chance to make the target flinch."
   },
   "uturn": {
     "descGen6": "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button.",
@@ -1939,7 +1942,7 @@
     "end": "  The rainbow on [TEAM]'s side disappeared!"
   },
   "watershuriken": {
-    "descGen6": "Hits two to five times. Has a 1/3 chance to hit two or three times, and a 1/6 chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times."
+    "descGen6": "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times."
   },
   "weatherball": {
     "descGen5": "Power doubles if a weather condition is active, and this move's type changes to match. Ice type during Hail, Water type during Rain Dance, Rock type during Sandstorm, and Fire type during Sunny Day.",
@@ -2078,7 +2081,7 @@
     "shortDescGen3": "1/3 chance a Pokemon making contact with this Pokemon will be burned."
   },
   "flashfire": {
-    "descGen3": "This Pokemon is immune to Fire-type moves, as long as it is not frozen. The first time it is hit by a Fire-type move, damage from its Fire-type attacks will be multiplied by 1.5 as long as it remains active and has this Ability. If this Pokemon has a major status condition, is a Fire type, or has a substitute, Will-O-Wisp will not activate this Ability.",
+    "descGen3": "This Pokemon is immune to Fire-type moves, as long as it is not frozen. The first time it is hit by a Fire-type move, damage from its Fire-type attacks will be multiplied by 1.5 as long as it remains active and has this Ability. If this Pokemon has a non-volatile status condition, is a Fire type, or has a substitute, Will-O-Wisp will not activate this Ability.",
     "start": "  The power of [POKEMON]'s Fire-type moves rose!"
   },
   "flowergift": {
@@ -2106,7 +2109,7 @@
   },
   "harvest": {"addItem": "  [POKEMON] harvested one [ITEM]!"},
   "hydration": {
-    "descGen7": "This Pokemon has its major status condition cured at the end of each turn if Rain Dance is active."
+    "descGen7": "This Pokemon has its non-volatile status condition cured at the end of each turn if Rain Dance is active."
   },
   "illusion": {"end": "  [POKEMON]'s illusion wore off!"},
   "infiltrator": {
@@ -2126,8 +2129,8 @@
     "shortDescGen5": "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage."
   },
   "leafguard": {
-    "descGen7": "If Sunny Day is active, this Pokemon cannot gain a major status condition and Rest will fail for it.",
-    "descGen4": "If Sunny Day is active, this Pokemon cannot gain a major status condition, but can use Rest normally.",
+    "descGen7": "If Sunny Day is active, this Pokemon cannot gain a non-volatile status condition and Rest will fail for it.",
+    "descGen4": "If Sunny Day is active, this Pokemon cannot gain a non-volatile status condition, but can use Rest normally.",
     "shortDescGen4": "If Sunny Day is active, this Pokemon cannot be statused, but Rest works normally."
   },
   "levitate": {
@@ -2273,6 +2276,10 @@
     "descGen3": "Prevents opposing Pokemon from choosing to switch out.",
     "shortDescGen3": "Prevents opposing Pokemon from choosing to switch out."
   },
+  "sheerforce": {
+    "descGen6": "This Pokemon's attacks with secondary effects have their power multiplied by 1.3, but the secondary effects are removed. If a secondary effect was removed, it also removes the user's Life Orb recoil and Shell Bell recovery, and prevents the target's Color Change, Pickpocket, Red Card, Eject Button, Kee Berry, and Maranga Berry from activating.",
+    "descGen5": "This Pokemon's attacks with secondary effects have their power multiplied by 1.3, but the secondary effects are removed. If a secondary effect was removed, it also removes the user's Life Orb recoil and Shell Bell recovery, and prevents the target's Color Change, Pickpocket, Red Card, and Eject Button from activating."
+  },
   "shieldsdown": {
     "transform": "Shields Down deactivated!\n([POKEMON] shielded itself.)",
     "transformEnd": "Shields Down activated!\n([POKEMON] stopped shielding itself.)"
@@ -2331,7 +2338,7 @@
   },
   "symbiosis": {"activate": "  [POKEMON] shared its [ITEM] with [TARGET]!"},
   "synchronize": {
-    "descGen4": "If another Pokemon burns, paralyzes, or poisons this Pokemon, that Pokemon receives the same major status condition. If another Pokemon badly poisons this Pokemon, that Pokemon becomes poisoned."
+    "descGen4": "If another Pokemon burns, paralyzes, or poisons this Pokemon, that Pokemon receives the same non-volatile status condition. If another Pokemon badly poisons this Pokemon, that Pokemon becomes poisoned."
   },
   "telepathy": {
     "block": "  [POKEMON] can't be hit by attacks from its ally Pokémon!"

@@ -101,6 +101,9 @@ export class Side {
     case 'quickguard': case 'wideguard': case 'craftyshield': case 'matblock':
       return (this.sideConditions[id] =
         {name, level: 1, minDuration: 1, maxDuration: 1, remove: true});
+    case 'gmaxwildfire': case 'gmaxvolcalith': case 'gmaxvinelash': case 'gmaxcannonade':
+    case 'grasspledge': case 'waterpledge': case 'firepledge':
+      return (this.sideConditions[id] = {name, level: 1, minDuration: 4, maxDuration: 0});
     default:
       return (this.sideConditions[id] = {name, level: 1, minDuration: 0, maxDuration: 0});
     }

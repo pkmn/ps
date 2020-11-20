@@ -2391,7 +2391,7 @@
       "onModifyMovePriority": -1,
       "num": 221,
       "gen": 2,
-      "desc": "Holder's attacks without a chance to flinch gain a 10% chance to flinch. Evolves Poliwhirl into Politoed and Slowpoke into Slowking when traded.",
+      "desc": "Holder's attacks without a chance to make the target flinch gain a 10% chance to make the target flinch. Evolves Poliwhirl into Politoed and Slowpoke into Slowking when traded.",
       "shortDesc": "Holder's attacks without a chance to flinch gain a 10% chance to flinch."
     },
     "kommoniumz": {
@@ -2570,7 +2570,7 @@
       "naturalGift": {"basePower": 80, "type": "Flying"},
       "num": 157,
       "gen": 3,
-      "desc": "Holder cures itself if it is confused or has a major status condition. Single use."
+      "desc": "Holder cures itself if it has a non-volatile status or is confused. Single use."
     },
     "luminousmoss": {
       "name": "Luminous Moss",
@@ -3385,7 +3385,7 @@
       "num": 327,
       "gen": 4,
       "isNonstandard": "Past",
-      "desc": "Holder's attacks without a chance to flinch gain a 10% chance to flinch. Evolves Gligar into Gliscor when held and leveled up during the night.",
+      "desc": "Holder's attacks without a chance to make the target flinch gain a 10% chance to make the target flinch. Evolves Gligar into Gliscor when held and leveled up during the night.",
       "shortDesc": "Holder's attacks without a chance to flinch gain a 10% chance to flinch."
     },
     "razzberry": {

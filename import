@@ -126,7 +126,8 @@ const IMPORTS = {
     'BoostsTable', 'StatsTable', 'GenderName', 'PokemonSet', 'Battle',
   ],
   'sim/side.ts': [
-    'AnyObject', 'Effect', 'ActiveMove', 'Condition', 'PokemonSet', 'Battle', 'Move', 'SideID',
+    'AnyObject', 'Effect', 'ActiveMove', 'Condition', 'PokemonSet', 'Battle',
+    'Move', 'SideID', 'ID',
   ],
   'sim/state.ts': [
     'AnyObject', 'Condition', 'Ability', 'Item', 'Move', 'Species', 'ActiveMove',
@@ -242,6 +243,8 @@ const REWRITES = {
   'sim/battle.ts': {
     [suspectTests]: 'const suspectTests = {} as any;',
     'import {FS} from \'../lib/fs\';': undefined,
+    '\tgetCategory(move: string | Move) {':
+      '\tgetCategory(move: string | Move): Move[\'category\'] {',
   },
   // smfh Zarle, please learn how Promises work
   'sim/battle-stream.ts': {
