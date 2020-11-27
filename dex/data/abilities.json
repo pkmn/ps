@@ -75,6 +75,7 @@
     }
   },
   "4": {
+    "airlock": {"inherit": true},
     "angerpoint": {
       "inherit": true,
       "desc": "If this Pokemon, or its substitute, is struck by a critical hit, its Attack is raised by 12 stages.",
@@ -87,6 +88,7 @@
       "desc": "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its Fire-type attacks have their power multiplied by 1.5.",
       "shortDesc": "At 1/3 or less of its max HP, this Pokemon's Fire-type attacks have 1.5x power."
     },
+    "cloudnine": {"inherit": true},
     "colorchange": {
       "inherit": true,
       "desc": "This Pokemon's type changes to match the type of the last move that hit it, unless that type is already one of its types. This effect applies after each hit from a multi-hit move. This effect does not happen if this Pokemon did not lose HP from the attack."
@@ -318,6 +320,7 @@
     },
     "roughskin": {"inherit": true},
     "stancechange": {"inherit": true, "onBeforeMovePriority": 11},
+    "symbiosis": {"inherit": true},
     "weakarmor": {
       "inherit": true,
       "desc": "If a physical attack hits this Pokemon, its Defense is lowered by 1 stage and its Speed is raised by 1 stage.",
@@ -1805,7 +1808,7 @@
       "shortDesc": "This Pokemon's Defense is raised by 1 stage after it is damaged by a move."
     },
     "stancechange": {
-      "onBeforeMovePriority": 0.5,
+      "onModifyMovePriority": 1,
       "isPermanent": true,
       "name": "Stance Change",
       "num": 176,

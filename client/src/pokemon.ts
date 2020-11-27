@@ -61,9 +61,9 @@ type MoveSlot = {
   virtual?: boolean;
 };
 
-type ItemEffect =
+export type ItemEffect =
    'found' | 'frisked' | 'stolen' | 'harvested' | 'bestowed' | 'tricked' | 'disturbed';
-type LastItemEffect =
+export type LastItemEffect =
    'eaten' | 'flung' | 'knocked off' | 'stolen' | 'consumed' | 'incinerated' | 'popped' | 'held up';
 
 export class Pokemon implements DetailedPokemon, PokemonHealth {

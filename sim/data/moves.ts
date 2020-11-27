@@ -5241,11 +5241,18 @@ export const Moves: {[moveid: string]: MoveData} = {
 					move.secondaries.push({volatileStatus: item.fling.volatileStatus});
 				}
 			}
-			source.setItem('');
-			source.lastItem = item.id;
-			source.usedItemThisTurn = true;
-			this.add("-enditem", source, item.name, '[from] move: Fling');
-			this.runEvent('AfterUseItem', source, null, null, item);
+			source.addVolatile('fling');
+		},
+		condition: {
+			onUpdate(pokemon) {
+				const item = pokemon.getItem();
+				pokemon.setItem('');
+				pokemon.lastItem = item.id;
+				pokemon.usedItemThisTurn = true;
+				this.add('-enditem', pokemon, item.name, '[from] move: Fling');
+				this.runEvent('AfterUseItem', pokemon, null, null, item);
+				pokemon.removeVolatile('fling');
+			},
 		},
 		secondary: null,
 		target: "normal",
@@ -8996,7 +9003,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			const lastMove = target.lastMove;
 			const moveIndex = target.moves.indexOf(lastMove.id);
 			const noInstruct = [
-				'assist', 'beakblast', 'bide', 'celebrate', 'copycat', 'dynamaxcannon', 'focuspunch', 'iceball', 'instruct', 'kingsshield', 'mefirst', 'metronome', 'mimic', 'mirrormove', 'naturepower', 'outrage', 'petaldance', 'rollout', 'shelltrap', 'sketch', 'sleeptalk', 'thrash', 'transform',
+				'assist', 'beakblast', 'belch', 'bide', 'celebrate', 'copycat', 'dynamaxcannon', 'focuspunch', 'iceball', 'instruct', 'kingsshield', 'mefirst', 'metronome', 'mimic', 'mirrormove', 'naturepower', 'obstruct', 'outrage', 'petaldance', 'rollout', 'shelltrap', 'sketch', 'sleeptalk', 'struggle', 'thrash', 'transform', 'uproar',
 			];
 			if (
 				noInstruct.includes(lastMove.id) || lastMove.isZ || lastMove.isMax ||

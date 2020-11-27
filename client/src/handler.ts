@@ -15,9 +15,10 @@ import {Protocol, Args, KWArgs, PokemonSearchID, PokemonIdent} from '@pkmn/proto
 
 import {Battle, NULL, NA} from './battle';
 import {Side} from './side';
-import {Pokemon} from './pokemon';
+import {LastItemEffect, Pokemon} from './pokemon';
 
 const BOOSTS: BoostName[] = ['atk', 'def', 'spa', 'spd', 'spe', 'accuracy', 'evasion'];
+const CONSUMED: LastItemEffect[] = ['eaten', 'popped', 'consumed', 'held up'];
 
 type Health = ReturnType<Pokemon['healthParse']>;
 export interface Context {
@@ -290,7 +291,8 @@ export class Handler implements Protocol.Handler {
       if (c.ofPoke) c.ofPoke.activateAbility(c.fromEffect);
       if (c.fromEffect.kind === 'Item') {
         const itemPoke = c.ofPoke || c.poke;
-        if (itemPoke.lastItem !== c.fromEffect.id) {
+        if (itemPoke.lastItem !== c.fromEffect.id &&
+          !CONSUMED.includes(itemPoke.lastItemEffect as LastItemEffect)) {
           itemPoke.item = c.fromEffect.id;
         }
       }
@@ -306,7 +308,11 @@ export class Handler implements Protocol.Handler {
     if (kwArgs.from) {
       c.fromEffect = this.battle.get('effects', kwArgs.from);
       c.poke.activateAbility(c.fromEffect);
-      if (c.fromEffect.kind === 'Item') c.poke.item = c.fromEffect.id;
+      if (c.fromEffect.kind === 'Item' &&
+        !CONSUMED.includes(c.poke.lastItemEffect as LastItemEffect) &&
+        c.poke.lastItem !== c.fromEffect.id) {
+        c.poke.item = c.fromEffect.id;
+      }
       if (c.fromEffect.id !== 'lunardance' || c.fromEffect.id !== 'healingwish') return;
       if (c.fromEffect.id === 'lunardance') {
         for (const moveSlot of c.poke.moveSlots) {
