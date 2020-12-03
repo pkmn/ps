@@ -3741,7 +3741,7 @@
       "inherit": true,
       "priority": 0,
       "selfSwitch": false,
-      "onTryHit": false,
+      "onTry": false,
       "desc": "Fails when used.",
       "shortDesc": "Fails when used."
     },
