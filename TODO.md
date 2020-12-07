@@ -53,8 +53,6 @@ version number in case set import changes.
 
 ## `@pkmn/client`
 
-- remove `serverPokemon?: ServerPokemon` params, merge `ServerPokemon` info into `Battle`
-- allow user to set side `sets` which can also influence Pokemon state!
 - handle discrepancies with `@pkmn/sim` (for `@pkmn/epoke` state transforms)
   - change `type`/`addedType` etc handling to match server?
 
@@ -64,4 +62,3 @@ version number in case set import changes.
   `@pkmn/client` (`BattleSceneStub` equivalent, but use `Partial` instead of null object pattern)
 - logic for displaying the Pokémon Showdown protocol *(how should arbitrary HTML be handled? Fully
   escaped? Or embed an HTML sanitizer?)*
-
