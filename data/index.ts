@@ -10,8 +10,10 @@ import {
   GenerationNum,
   ID,
   ItemName,
+  Move,
   MoveCategory,
   MoveName,
+  MoveSource,
   Nature,
   Nonstandard,
   Species as DexSpecies,
@@ -97,7 +99,7 @@ export class Generation {
     this.species = new Species(this.dex, this.exists);
     this.natures = new Natures(this.dex, this.exists);
     this.types = new Types(this.dex, this.exists);
-    this.learnsets = new Learnsets(this.dex, this.exists);
+    this.learnsets = new Learnsets(this, this.dex, this.exists);
     this.effects = new Effects(this.dex, this.exists);
     this.stats = new Stats(this.dex);
   }
@@ -235,6 +237,7 @@ export class Specie implements DexSpecies {
   readonly doublesTier!: Tier.Doubles;
 
   readonly evoMove?: MoveName;
+  readonly changesFrom?: SpeciesName;
   readonly cosmeticFormes?: SpeciesName[];
   readonly otherFormes?: SpeciesName[];
   readonly formeOrder?: SpeciesName[];
@@ -455,11 +458,25 @@ export class Type {
   }
 }
 
+const GEN3_HMS =
+  new Set(['cut', 'fly', 'surf', 'strength', 'flash', 'rocksmash', 'waterfall', 'dive'] as ID[]);
+// NOTE: Whirlpool and Defog are Gen 4 HMs but the HMs differ in DPPt vs. HGSS
+const GEN4_HMS =
+  new Set(['cut', 'fly', 'surf', 'strength', 'rocksmash', 'waterfall', 'rockclimb'] as ID[]);
+
+type Restriction = 'Pentagon' | 'Plus' | 'Galar';
+
 export class Learnsets {
+  private readonly cache = Object.create(null) as {
+    [speciesid: string]: {[moveid: string]: MoveSource[]};
+  };
+
+  private readonly gen: Generation;
   private readonly dex: Dex;
   private readonly exists: ExistsFn;
 
-  constructor(dex: Dex, exists: ExistsFn) {
+  constructor(gen: Generation, dex: Dex, exists: ExistsFn) {
+    this.gen = gen;
     this.dex = dex;
     this.exists = exists;
   }
@@ -474,6 +491,120 @@ export class Learnsets {
     for (const id in this.dex.data.Learnsets) {
       const l = await this.get(id);
       if (l) yield l;
+    }
+  }
+
+  async* all(species: Specie) {
+    let id = species.id;
+    let learnset = await this.get(id);
+    if (!learnset) {
+      id = typeof species.battleOnly === 'string' && species.battleOnly !== species.baseSpecies
+        ? toID(species.battleOnly)
+        : toID(species.baseSpecies);
+      learnset = await this.get(id);
+    }
+
+    while (learnset) {
+      yield learnset;
+
+      if (id === 'lycanrocdusk' || (species.id === 'rockruff' && id === 'rockruff')) {
+        id = 'rockruffdusk' as ID;
+      } else if (species.id === 'gastrodoneast') {
+        id = 'gastrodon' as ID;
+      } else if (species.id === 'pumpkaboosuper') {
+        id = 'pumpkaboo' as ID;
+      } else {
+        id = toID(species.battleOnly || species.changesFrom || species.prevo);
+      }
+
+      if (!id) break;
+      const s = this.gen.species.get(id);
+      if (!s) break;
+      species = s;
+      learnset = await this.get(id);
+    }
+  }
+
+  async learnable(name: string, restriction?: Restriction) {
+    const species = this.gen.species.get(name);
+    if (!species) return undefined;
+
+    if (!restriction) {
+      const cached = this.cache[species.id];
+      if (cached) return cached;
+    }
+
+    const moves: {[moveid: string]: MoveSource[]} = {};
+
+    for await (const learnset of this.all(species)) {
+      if (learnset.learnset) {
+        for (const moveid in learnset.learnset) {
+          const move = this.gen.moves.get(moveid);
+          if (move) {
+            const sources = learnset.learnset[moveid];
+            if (Learnsets.isLegal(move, sources, restriction || this.gen)) {
+              moves[move.id] = sources.filter(s => +s.charAt(0) <= this.gen.num);
+            }
+          }
+        }
+      }
+    }
+
+    if (!restriction) this.cache[species.id] = moves;
+    return moves;
+  }
+
+  async canLearn(name: string, move: Move | string, restriction?: Restriction) {
+    const species = this.gen.species.get(name);
+    if (!species) return false;
+
+    move = typeof move === 'string' && this.gen.moves.get(move) || move;
+    if (typeof move === 'string') return false;
+
+    for await (const learnset of this.all(species)) {
+      if (Learnsets.isLegal(move, learnset.learnset?.[move.id], restriction || this.gen)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  static isLegal(move: Move, sources: MoveSource[] | undefined, gen: Generation | Restriction) {
+    if (!sources) return undefined;
+
+    const gens = sources.map(x => Number(x[0]));
+    const minGen = Math.min(...gens);
+    const vcOnly = (
+      minGen === 7 && sources.every(x => x[0] !== '7' || x === '7V') ||
+      minGen === 8 && sources.every(x => x[0] !== '8' || x === '8V')
+    );
+
+    if (gen === 'Pentagon') return gens.includes(6);
+    if (gen === 'Plus') return gens.includes(7) && !vcOnly;
+    if (gen === 'Galar') return gens.includes(8) && !vcOnly;
+
+    if (minGen <= 4 && (GEN3_HMS.has(move.id) || GEN4_HMS.has(move.id))) {
+      let legalGens = '';
+      let available = false;
+
+      if (minGen === 3) {
+        legalGens += '3';
+        available = true;
+      }
+      if (available) available = !GEN3_HMS.has(move.id);
+
+      if (available || gens.includes(4)) {
+        legalGens += '4';
+        available = true;
+      }
+      if (available) available = !GEN4_HMS.has(move.id);
+
+      const minUpperGen = available ? 5 : Math.min(...gens.filter(g => g > 4));
+      legalGens += '012345678'.slice(minUpperGen);
+      return legalGens.includes(`${gen.num}`);
+    } else {
+      return '012345678'.slice(minGen).includes(`${gen.num}`);
     }
   }
 }

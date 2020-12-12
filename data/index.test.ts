@@ -396,6 +396,61 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect((await Gen(8).learnsets.get('bulbasaur'))!.learnset!.leafstorm)
           .toEqual(['8M', '7E', '6E', '5E', '4E']);
       });
+
+      it('#learnable', async () => {
+        expect((await Gen(8).learnsets.learnable('Avalugg'))!['mirrorcoat'])
+          .toEqual(['8E', '7E', '6E']);
+        expect((await Gen(7).learnsets.learnable('Breloom'))!['spore'])
+          .toEqual(['7L40', '6L40', '5L45', '4L45', '3L54']);
+        expect((await Gen(8).learnsets.learnable('Gastrodon-East'))!['amnesia'])
+          .toEqual(['8M', '7E', '6E', '5E', '4E']);
+        expect((await Gen(7).learnsets.learnable('Charizard-Mega-Y'))!['ancientpower'])
+          .toEqual(['7E', '7V', '6E', '5E', '4E', '3E']);
+        expect((await Gen(8).learnsets.learnable('Silvally-Bug'))!['tackle'])
+          .toEqual(['8L1', '7L1']);
+        expect((await Gen(6).learnsets.learnable('Gengar', 'Pentagon'))!['selfdestruct'])
+          .toBeUndefined();
+        expect((await Gen(7).learnsets.learnable('Charizard-Mega-Y', 'Plus'))!['curse'])
+          .toBeUndefined();
+        expect((await Gen(8).learnsets.learnable('Clefable', 'Galar'))!['watergun'])
+          .toBeUndefined();
+        expect((await Gen(8).learnsets.learnable('Lycanroc-Dusk'))!['happyhour'])
+          .toEqual(['7S1', '7S0']);
+        expect((await Gen(2).learnsets.learnable('Jynx'))!['dizzypunch'])
+          .toEqual(['2S2']);
+        expect((await Gen(3).learnsets.learnable('Jynx'))!['dizzypunch'])
+          .toBeUndefined();
+        expect((await Gen(3).learnsets.learnable('Pikachu'))!['fly'])
+          .toEqual(['3S2', '3S4', '3S6']);
+        expect((await Gen(4).learnsets.learnable('Pikachu'))!['fly'])
+          .toBeUndefined();
+        expect((await Gen(4).learnsets.learnable('Ursaring'))!['rockclimb'])
+          .toEqual(['4M']);
+        expect((await Gen(5).learnsets.learnable('Ursaring'))!['rockclimb'])
+          .toBeUndefined();
+      });
+
+      it('#canLearn', async () => {
+        expect((await Gen(8).learnsets.canLearn('Avalugg', 'Mirror Coat'))).toBe(true);
+        expect((await Gen(7).learnsets.canLearn('Breloom', 'Spore'))).toBe(true);
+        expect((await Gen(8).learnsets.canLearn('Gastrodon-East', 'Amnesia'))).toBe(true);
+        expect((await Gen(7).learnsets.canLearn('Charizard-Mega-Y', 'Ancient Power'))).toBe(true);
+        expect((await Gen(8).learnsets.canLearn('Silvally-Bug', 'Tackle'))).toBe(true);
+        expect((await Gen(8).learnsets.canLearn('Rotom-Wash', 'Overheat'))).toBe(false);
+        expect((await Gen(8).learnsets.canLearn('Rotom-Wash', 'Hydro Pump'))).toBe(true);
+        expect((await Gen(6).learnsets.canLearn('Gengar', 'Self-Destruct', 'Pentagon')))
+          .toBe(false);
+        expect((await Gen(7).learnsets.canLearn('Charizard-Mega-Y', 'Curse', 'Plus')))
+          .toBe(false);
+        expect((await Gen(8).learnsets.canLearn('Clefable', 'Water Gun', 'Galar'))).toBe(false);
+        expect((await Gen(7).learnsets.canLearn('Lycanroc-Dusk', 'Happy Hour'))).toBe(true);
+        expect(await Gen(2).learnsets.canLearn('Jynx', 'Dizzy Punch')).toBe(true);
+        expect(await Gen(3).learnsets.canLearn('Jynx', 'Dizzy Punch')).toBe(false);
+        expect(await Gen(3).learnsets.canLearn('Pikachu', 'Fly')).toBe(true);
+        expect(await Gen(4).learnsets.canLearn('Pikachu', 'Fly')).toBe(false);
+        expect(await Gen(4).learnsets.canLearn('Ursaring', 'Rock Climb')).toBe(true);
+        expect(await Gen(5).learnsets.canLearn('Ursaring', 'Rock Climb')).toBe(false);
+      });
     });
 
     describe('Natures', () => {
