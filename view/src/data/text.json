@@ -959,7 +959,8 @@
     "descGen4": "For 5 turns, the target is prevented from restoring any HP as long as it remains active. During the effect, healing moves are unusable, move effects that grant healing will not heal, but Abilities and items will continue to heal the user. If an affected Pokemon uses Baton Pass, the replacement will remain under the effect. Pain Split is unaffected.",
     "start": "  [POKEMON] was prevented from healing!",
     "end": "  [POKEMON]'s Heal Block wore off!",
-    "cant": "[POKEMON] can't use [MOVE] because of Heal Block!"
+    "cant": "[POKEMON] can't use [MOVE] because of Heal Block!",
+    "fail": "  But it failed to affect [POKEMON]!"
   },
   "healingwish": {
     "descGen7": "The user faints and the Pokemon brought out to replace it has its HP fully restored along with having any non-volatile status condition cured. The new Pokemon is sent out at the end of the turn, and the healing happens before hazards take effect. Fails if the user is the last unfainted Pokemon in its party.",

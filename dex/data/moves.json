@@ -15291,7 +15291,7 @@
       "target": "normal",
       "type": "Psychic",
       "zMove": {"boost": {"spe": 1}},
-      "desc": "The user swaps its Ability with the target's Ability. Fails if either the user or the target's Ability is As One, Battle Bond, Comatose, Disguise, Gulp Missile, Hunger Switch, Ice Face, Illusion, Multitype, Neutralizing Gas, Power Construct, RKS System, Schooling, Shields Down, Stance Change, or Zen Mode.",
+      "desc": "The user swaps its Ability with the target's Ability. Fails if either the user or the target's Ability is As One, Battle Bond, Comatose, Disguise, Gulp Missile, Hunger Switch, Ice Face, Illusion, Multitype, Neutralizing Gas, Power Construct, RKS System, Schooling, Shields Down, Stance Change, Wonder Guard, or Zen Mode.",
       "shortDesc": "The user and the target trade Abilities."
     },
     "skittersmack": {
@@ -15631,7 +15631,7 @@
       "priority": 4,
       "flags": {"authentic": 1},
       "volatileStatus": "snatch",
-      "condition": {"duration": 1},
+      "condition": {"duration": 1, "onAnyPrepareHitPriority": -1},
       "secondary": null,
       "pressureTarget": "foeSide",
       "target": "self",
