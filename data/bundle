@@ -9,8 +9,8 @@ let bundled = `(() => {
 const exports = {};
 `;
 const gen = bundler.read('index.js').split('\n');
-bundled += gen.slice(1, 13).join('\n'); // polyfill
-bundled += gen.slice(14, -1).join('\n'); // code
+bundled += gen.slice(1, 20).join('\n'); // polyfill
+bundled += gen.slice(21, -1).join('\n'); // code
 bundled += `
 // EXPORTS
 window.Generations = exports.Generations;
