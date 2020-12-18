@@ -93,6 +93,7 @@
       "inherit": true,
       "desc": "This Pokemon's type changes to match the type of the last move that hit it, unless that type is already one of its types. This effect applies after each hit from a multi-hit move. This effect does not happen if this Pokemon did not lose HP from the attack."
     },
+    "compoundeyes": {"onSourceModifyAccuracyPriority": 9, "inherit": true},
     "cutecharm": {
       "inherit": true,
       "desc": "There is a 30% chance a Pokemon making contact with this Pokemon will become infatuated if it is of the opposite gender. This effect does not happen if this Pokemon did not lose HP from the attack."
@@ -112,6 +113,7 @@
       "shortDesc": "If Sunny Day is active, Attack and Sp. Def of this Pokemon and its allies are 1.5x."
     },
     "forewarn": {"inherit": true},
+    "hustle": {"inherit": true, "onSourceModifyAccuracyPriority": 7},
     "insomnia": {"inherit": true},
     "intimidate": {"inherit": true},
     "leafguard": {
@@ -171,6 +173,7 @@
       "inherit": true,
       "desc": "Pokemon making contact with this Pokemon lose 1/16 of their maximum HP, rounded down. This effect does not happen if this Pokemon did not lose HP from the attack."
     },
+    "sandveil": {"inherit": true, "onModifyAccuracyPriority": 8},
     "serenegrace": {"inherit": true},
     "simple": {
       "name": "Simple",
@@ -178,10 +181,7 @@
       "desc": "When this Pokemon's stat stages are raised or lowered, the effect is doubled instead.",
       "shortDesc": "This Pokemon's stat stages are considered doubled during stat calculations."
     },
-    "soundproof": {
-      "inherit": true,
-      "shortDesc": "This Pokemon is immune to sound-based moves, including Heal Bell."
-    },
+    "snowcloak": {"inherit": true, "onModifyAccuracyPriority": 8},
     "static": {
       "inherit": true,
       "desc": "30% chance a Pokemon making contact with this Pokemon will be paralyzed. This effect does not happen if this Pokemon did not lose HP from the attack."
@@ -214,6 +214,7 @@
       "inherit": true,
       "desc": "If another Pokemon burns, paralyzes, or poisons this Pokemon, that Pokemon receives the same non-volatile status condition. If another Pokemon badly poisons this Pokemon, that Pokemon becomes poisoned."
     },
+    "tangledfeet": {"inherit": true, "onModifyAccuracyPriority": 6},
     "thickfat": {
       "onSourceBasePowerPriority": 1,
       "name": "Thick Fat",
@@ -238,6 +239,10 @@
       "inherit": true,
       "desc": "This Pokemon is immune to Ground-type attacks and the effects of Spikes, Toxic Spikes, and the Arena Trap Ability. The effects of Gravity, Ingrain, and Iron Ball nullify the immunity.",
       "shortDesc": "This Pokemon is immune to Ground; Gravity/Ingrain/Iron Ball nullify it."
+    },
+    "soundproof": {
+      "inherit": true,
+      "shortDesc": "This Pokemon is immune to sound-based moves, including Heal Bell."
     }
   },
   "5": {
@@ -668,7 +673,7 @@
       "shortDesc": "This Pokemon's Sp. Atk is raised by 2 for each of its stats that is lowered by a foe."
     },
     "compoundeyes": {
-      "onSourceModifyAccuracyPriority": 9,
+      "onSourceModifyAccuracyPriority": -1,
       "name": "Compound Eyes",
       "num": 14,
       "shortDesc": "This Pokemon's moves have their accuracy multiplied by 1.3."
@@ -1022,7 +1027,7 @@
     },
     "hustle": {
       "onModifyAtkPriority": 5,
-      "onSourceModifyAccuracyPriority": 7,
+      "onSourceModifyAccuracyPriority": -1,
       "name": "Hustle",
       "num": 55,
       "desc": "This Pokemon's Attack is multiplied by 1.5 and the accuracy of its physical attacks is multiplied by 0.8.",
@@ -1626,7 +1631,7 @@
       "shortDesc": "On switch-in, this Pokemon summons Sandstorm."
     },
     "sandveil": {
-      "onModifyAccuracyPriority": 8,
+      "onModifyAccuracyPriority": -1,
       "name": "Sand Veil",
       "num": 8,
       "desc": "If Sandstorm is active, this Pokemon's evasiveness is multiplied by 1.25. This Pokemon takes no damage from Sandstorm.",
@@ -1741,7 +1746,7 @@
       "shortDesc": "If this Pokemon strikes with a critical hit, the damage is multiplied by 1.5."
     },
     "snowcloak": {
-      "onModifyAccuracyPriority": 8,
+      "onModifyAccuracyPriority": -1,
       "name": "Snow Cloak",
       "num": 81,
       "desc": "If Hail is active, this Pokemon's evasiveness is multiplied by 1.25. This Pokemon takes no damage from Hail.",
@@ -1923,7 +1928,7 @@
       "shortDesc": "If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status."
     },
     "tangledfeet": {
-      "onModifyAccuracyPriority": 6,
+      "onModifyAccuracyPriority": -1,
       "name": "Tangled Feet",
       "num": 77,
       "shortDesc": "This Pokemon's evasiveness is doubled as long as it is confused."
@@ -2041,6 +2046,7 @@
       "shortDesc": "All contact moves hit through protection."
     },
     "victorystar": {
+      "onAnyModifyAccuracyPriority": -1,
       "name": "Victory Star",
       "num": 162,
       "shortDesc": "This Pokemon and its allies' moves have their accuracy multiplied by 1.1."

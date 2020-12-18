@@ -168,6 +168,7 @@
   "4": {
     "adamantorb": {"inherit": true},
     "bigroot": {"inherit": true},
+    "brightpowder": {"inherit": true, "onModifyAccuracyPriority": 5},
     "choiceband": {"inherit": true},
     "choicescarf": {"inherit": true},
     "choicespecs": {"inherit": true},
@@ -189,6 +190,7 @@
       "desc": "Holder's Speed is halved and it becomes grounded."
     },
     "kingsrock": {"inherit": true},
+    "laxincense": {"inherit": true, "onModifyAccuracyPriority": 5},
     "lifeorb": {"inherit": true, "condition": {"duration": 1}},
     "lightball": {"inherit": true},
     "luckypunch": {"inherit": true},
@@ -203,9 +205,15 @@
       "desc": "Damage of moves used on consecutive turns is increased. Max 2x after 10 turns.",
       "condition": {"onTryMovePriority": -2}
     },
+    "micleberry": {
+      "inherit": true,
+      "condition": {"duration": 2, "onSourceModifyAccuracyPriority": 3}
+    },
     "razorfang": {"inherit": true},
     "stick": {"inherit": true},
-    "thickclub": {"inherit": true}
+    "thickclub": {"inherit": true},
+    "widelens": {"inherit": true, "onSourceModifyAccuracyPriority": 4},
+    "zoomlens": {"inherit": true, "onSourceModifyAccuracyPriority": 4}
   },
   "5": {
     "aguavberry": {
@@ -1115,7 +1123,7 @@
     "brightpowder": {
       "name": "Bright Powder",
       "fling": {"basePower": 10},
-      "onModifyAccuracyPriority": 5,
+      "onModifyAccuracyPriority": -2,
       "num": 213,
       "gen": 2,
       "desc": "The accuracy of attacks against the holder is 0.9x."
@@ -2444,7 +2452,7 @@
     "laxincense": {
       "name": "Lax Incense",
       "fling": {"basePower": 10},
-      "onModifyAccuracyPriority": 5,
+      "onModifyAccuracyPriority": -2,
       "num": 255,
       "gen": 3,
       "desc": "The accuracy of attacks against the holder is 0.9x."
@@ -2817,7 +2825,7 @@
       "name": "Micle Berry",
       "isBerry": true,
       "naturalGift": {"basePower": 100, "type": "Rock"},
-      "condition": {"duration": 2, "onSourceModifyAccuracyPriority": 3},
+      "condition": {"duration": 2},
       "num": 209,
       "gen": 4,
       "desc": "Holder's next move has 1.2x accuracy when at 1/4 max HP or less. Single use."
@@ -4919,7 +4927,7 @@
     "widelens": {
       "name": "Wide Lens",
       "fling": {"basePower": 10},
-      "onSourceModifyAccuracyPriority": 4,
+      "onSourceModifyAccuracyPriority": -2,
       "num": 265,
       "gen": 4,
       "desc": "The accuracy of attacks by the holder is 1.1x."
@@ -4961,7 +4969,7 @@
     "zoomlens": {
       "name": "Zoom Lens",
       "fling": {"basePower": 10},
-      "onSourceModifyAccuracyPriority": 4,
+      "onSourceModifyAccuracyPriority": -2,
       "num": 276,
       "gen": 4,
       "desc": "The accuracy of attacks by the holder is 1.2x if it moves after its target."
