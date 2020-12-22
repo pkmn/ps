@@ -8,7 +8,7 @@ try {
 }
 
 const packages = [];
-for (const dep of ['@pkmn/dex', '@pkmn/data']) {
+for (const dep of ['@pkmn/dex', '@pkmn/data', '@pkmn/client']) {
   try {
     require.resolve(dep);
   } catch (err) {
@@ -17,7 +17,7 @@ for (const dep of ['@pkmn/dex', '@pkmn/data']) {
   }
 }
 if (packages.length) {
-  require('child_process').execSync(`npm install ${packages.join(' ')} --no-audit --no-save `, {
+  require('child_process').execSync(`npm install ${packages.join(' ')} --no-audit --no-save`, {
     stdio: 'inherit',
     cwd: __dirname,
   });
