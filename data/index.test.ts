@@ -27,6 +27,11 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       expect(gens2.get(5).abilities.get('Adaptability')).toBeUndefined();
     });
 
+    test('toString', () => {
+      expect(Gen(2).toString()).toEqual('[Generation:2]');
+      expect(JSON.stringify(Gen(4).toString())).toEqual('"[Generation:4]"');
+    });
+
     describe('Abilities', () => {
       it('#get', () => {
         expect(Gen(1).abilities.get('No Ability')).toBeUndefined();
@@ -64,6 +69,10 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(b).toBe(a);
         expect(c).not.toBe(a);
         expect(b!.name).toBe('Mummy');
+      });
+
+      it('toString', () => {
+        expect(Gen(6).abilities.get('Mummy')!.toString()).toEqual('Mummy');
       });
     });
 
@@ -121,6 +130,10 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(b).toBe(a);
         expect(c).not.toBe(a);
         expect(b!.name).toBe('Choice Band');
+      });
+
+      it('toString', () => {
+        expect(Gen(6).items.get('Choice Band')!.toString()).toEqual('Choice Band');
       });
     });
 
@@ -211,6 +224,10 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(b).toBe(a);
         expect(c).not.toBe(a);
         expect(b!.name).toBe('Earthquake');
+      });
+
+      it('toString', () => {
+        expect(Gen(6).moves.get('Earthquake')!.toString()).toEqual('Earthquake');
       });
     });
 
@@ -363,6 +380,11 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(c).not.toBe(a);
         expect(b!.name).toBe('Gengar');
       });
+
+      it('toString', () => {
+        expect(Gen(6).species.get('Gengar')!.toString()).toEqual('Gengar');
+        expect(JSON.stringify(Gen(6).species.get('Gengar')).length).toBeLessThan(2000);
+      });
     });
 
     describe('Effects', () => {
@@ -471,6 +493,10 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       it('count', () => {
         expect(Array.from(Gen(8).natures)).toHaveLength(25);
       });
+
+      it('toString', () => {
+        expect(Gen(6).natures.get('serious')!.toString()).toEqual('Serious');
+      });
     });
 
     describe('Types', () => {
@@ -524,6 +550,11 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         }
         ivs = {hp: 31, atk: 31, def: 27, spe: 31, spa: 31, spd: 31};
         expect(Gen(2).types.getHiddenPower(ivs)).toEqual({power: 70, type: 'Ice'});
+      });
+
+      it('toString', () => {
+        expect(Gen(6).types.get('Fairy')!.toString()).toEqual('Fairy');
+        expect(JSON.stringify(Gen(6).types.get('Fairy')).length).toBeLessThan(2000);
       });
     });
 

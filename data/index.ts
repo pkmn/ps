@@ -43,6 +43,7 @@ function assignWithout(a: {[key: string]: any}, b: {[key: string]: any}, exclude
       a[key] = b[key];
     }
   }
+  return a;
 }
 
 export function toID(text: any): ID {
@@ -106,6 +107,14 @@ export class Generation {
 
   get num() {
     return this.dex.gen;
+  }
+
+  toString() {
+    return `[Generation:${this.num}]`;
+  }
+
+  toJSON() {
+    return this.toString();
   }
 }
 
@@ -306,6 +315,14 @@ export class Specie implements DexSpecies {
         name => name === (this.isGigantamax ? this.baseSpecies : this.name)
       ));
   }
+
+  toString() {
+    return this.name;
+  }
+
+  toJSON() {
+    return assignWithout({}, this, new Set(['dex']));
+  }
 }
 
 export class Effects {
@@ -455,6 +472,14 @@ export class Type {
 
   totalEffectiveness(target: TypeTarget) {
     return this.types.totalEffectiveness(this.name, target);
+  }
+
+  toString() {
+    return this.name;
+  }
+
+  toJSON() {
+    return assignWithout({}, this, new Set(['types']));
   }
 }
 
