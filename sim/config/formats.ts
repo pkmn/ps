@@ -109,7 +109,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		ruleset: ['[Gen 8] RU'],
-		banlist: ['RU', 'NUBL', 'Drought', 'Aurora Veil'],
+		banlist: ['RU', 'NUBL', 'Drizzle', 'Drought', 'Aurora Veil'],
 	},
 	{
 		name: "[Gen 8] PU",
@@ -120,7 +120,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		ruleset: ['[Gen 8] NU'],
-		banlist: ['NU', 'PUBL', 'Drizzle'],
+		banlist: ['NU', 'PUBL'],
 	},
 	{
 		name: "[Gen 8] LC",
@@ -594,20 +594,20 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		ruleset: ['Standard', '!Obtainable Abilities', 'STABmons Move Legality', '2 Ability Clause', 'Dynamax Clause'],
 		banlist: [
-			'Archeops', 'Blacephalon', 'Calyrex-Ice', 'Calyrex-Shadow', 'Chandelure', 'Darmanitan-Galar', 'Dialga', 'Dragapult',
-			'Dragonite', 'Eternatus', 'Genesect', 'Giratina', 'Giratina-Origin', 'Groudon', 'Ho-Oh', 'Kartana', 'Keldeo', 'Kyogre',
-			'Kyurem-Black', 'Kyurem-White', 'Landorus-Base', 'Lugia', 'Lunala', 'Marshadow', 'Melmetal', 'Mewtwo', 'Naganadel',
-			'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Palkia', 'Pheromosa', 'Rayquaza', 'Regigigas', 'Reshiram', 'Shedinja',
-			'Silvally', 'Slaking', 'Solgaleo', 'Tapu Koko', 'Terrakion', 'Thundurus', 'Thundurus-Therian', 'Volcarona', 'Xerneas',
+			'Archeops', 'Blacephalon', 'Calyrex-Ice', 'Calyrex-Shadow', 'Chandelure', 'Dialga', 'Dragapult', 'Dragonite',
+			'Eternatus', 'Genesect', 'Giratina', 'Giratina-Origin', 'Groudon', 'Ho-Oh', 'Kartana', 'Keldeo', 'Kyogre',
+			'Kyurem-Black', 'Kyurem-White', 'Lugia', 'Lunala', 'Marshadow', 'Melmetal', 'Mewtwo', 'Naganadel', 'Necrozma-Dawn-Wings',
+			'Necrozma-Dusk-Mane', 'Palkia', 'Pheromosa', 'Rayquaza', 'Regigigas', 'Reshiram', 'Shedinja', 'Silvally', 'Slaking',
+			'Solgaleo', 'Tapu Koko', 'Terrakion', 'Thundurus', 'Thundurus-Therian', 'Urshifu-Base', 'Volcarona', 'Xerneas',
 			'Yveltal', 'Zacian', 'Zacian-Crowned', 'Zamazenta', 'Zamazenta-Crowned', 'Zekrom', 'Zeraora', 'Zygarde-Base',
 			'Arena Trap', 'Comatose', 'Contrary', 'Fluffy', 'Fur Coat', 'Gorilla Tactics', 'Huge Power', 'Ice Scales', 'Illusion',
 			'Imposter', 'Innards Out', 'Intrepid Sword', 'Libero', 'Moody', 'Neutralizing Gas', 'Parental Bond', 'Power Construct',
 			'Protean', 'Pure Power', 'Shadow Tag', 'Simple', 'Stakeout', 'Speed Boost', 'Water Bubble', 'Wonder Guard', 'Tinted Lens',
-			'King\'s Rock', 'Razor Fang', 'Baton Pass', 'Electrify', 'Hypnosis', 'Sing', 'Sleep Powder', 'Wicked Blow',
+			'King\'s Rock', 'Razor Fang', 'Baton Pass', 'Electrify', 'Hypnosis', 'Sing', 'Sleep Powder',
 		],
 		restricted: [
-			'Acupressure', 'Belly Drum', 'Bolt Beak', 'Double Iron Bash', 'Extreme Speed', 'Fishious Rend', 'Geomancy',
-			'Lovely Kiss', 'No Retreat', 'Shell Smash', 'Shift Gear', 'Spore', 'Thousand Arrows', 'Transform', 'V-create',
+			'Acupressure', 'Astral Barrage', 'Belly Drum', 'Bolt Beak', 'Double Iron Bash', 'Extreme Speed', 'Fishious Rend', 'Geomancy', 'Glacial Lance',
+			'Lovely Kiss', 'No Retreat', 'Shell Smash', 'Shift Gear', 'Spore', 'Thousand Arrows', 'Transform', 'V-create', 'Wicked Blow',
 		],
 	},
 
@@ -1356,6 +1356,45 @@ export const Formats: FormatList = [
 		ruleset: ['Obtainable', 'Same Type Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod'],
 	},
 	{
+		name: "[Gen 8] Super Staff Bros 4",
+		desc: "The fourth iteration of Super Staff Bros is here! Battle with a random team of pokemon created by the sim staff.",
+		threads: [
+			`&bullet; <a href="https://www.smogon.com/articles/super-staff-bros-4">Introduction &amp; Roster</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/super-staff-bros-4-discussion-thread.3675237/">Discussion Thread</a>`,
+		],
+
+		mod: 'ssb',
+		team: 'randomStaffBros',
+		ruleset: ['Dynamax Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod'],
+		onBegin() { // TODO look into making an event to put this right after turn|1
+			// https://discordapp.com/channels/630837856075513856/630845310033330206/716126469528485909
+			// Requires client change
+			this.add(`raw|<div class='broadcast-green'><b>Wondering what all these custom moves, abilities, and items do?<br />Check out the <a href="https://www.smogon.com/articles/super-staff-bros-4" target="_blank">Super Staff Bros 4 Guide</a> or use /ssb to find out!</b></div>`);
+
+			this.add('message', [
+				'THE BATTLE FOR SURVIVAL BEGINS!', 'WHO WILL SURVIVE?', 'GET READY TO KEEP UP!', 'GET READY!', 'DARE TO BELIEVE YOU CAN SURVIVE!', 'THERE CAN BE ONLY ONE WINNER!', 'GET READY FOR THE FIGHT OF YOUR LIFE!', 'WHO WILL PREVAIL?', 'ONLY ONE TEAM WILL BE LEFT STANDING!', 'BATTLE WITHOUT LIMITS!',
+			][this.random(10)]);
+			this.add('message', 'FIGHT!');
+		},
+		onSwitchInPriority: 100,
+		onSwitchIn(pokemon) {
+			let name: string = this.toID(pokemon.illusion ? pokemon.illusion.name : pokemon.name);
+			if (this.dex.getSpecies(name).exists || this.dex.getMove(name).exists || this.dex.getAbility(name).exists) {
+				// Certain pokemon have volatiles named after their id
+				// To prevent overwriting those, and to prevent accidentaly leaking
+				// that a pokemon is on a team through the onStart even triggering
+				// at the start of a match, users with pokemon names will need their
+				// statuses to end in "user".
+				name = name + 'user';
+			}
+			// Add the mon's status effect to it as a volatile.
+			const status = this.dex.getEffect(name);
+			if (status?.exists) {
+				pokemon.addVolatile(name, pokemon);
+			}
+		},
+	},
+	{
 		name: "[Gen 8] Challenge Cup 1v1",
 
 		mod: 'gen8',
@@ -1462,40 +1501,6 @@ export const Formats: FormatList = [
 		team: 'randomHC',
 		searchShow: false,
 		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
-	},
-	{
-		name: "[Gen 7] Super Staff Bros Brawl",
-		desc: "Super Staff Bros returns for another round! Battle with a random team of pokemon created by the sim staff.",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/articles/super-staff-bros-brawl">Introduction &amp; Roster</a>`,
-		],
-
-		mod: 'ssb',
-		team: 'randomStaffBros',
-		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod'],
-		onBegin() {
-			this.add('raw|SUPER STAFF BROS <b>BRAWL</b>!!');
-			this.add('message', 'GET READY FOR THE NEXT BATTLE!');
-			if (this.teamGenerator.allXfix) this.add(`c|~HoeenHero|Oops I dropped my bag of xfix sets sorry!`);
-			this.add(`raw|<div class='broadcast-green'><b>Wondering what all these custom moves, abilities, and items do?<br />Check out the <a href="https://www.smogon.com/articles/super-staff-bros-brawl" target="_blank">Super Staff Bros Brawl Guide</a> and find out!</b></div>`);
-		},
-		onSwitchInPriority: 100,
-		onSwitchIn(pokemon) {
-			let name: string = this.toID(pokemon.illusion ? pokemon.illusion.name : pokemon.name);
-			if (this.dex.getSpecies(name).exists || name === 'rage') {
-				// Certain pokemon have volatiles named after their id
-				// To prevent overwriting those, and to prevent accidentaly leaking
-				// that a pokemon is on a team through the onStart even triggering
-				// at the start of a match, users with pokemon names will need their
-				// statuses to end in "user".
-				name = name + 'user';
-			}
-			// Add the mon's status effect to it as a volatile.
-			const status = this.dex.getEffect(name);
-			if (status?.exists) {
-				pokemon.addVolatile(name, pokemon);
-			}
-		},
 	},
 	{
 		name: "[Gen 7 Let's Go] Random Battle",

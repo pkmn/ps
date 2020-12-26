@@ -227,8 +227,6 @@ const imports = (types, where, typeOnly = false) => {
   return `${importStatement} {\n\t${types.join(',\n\t')},\n} from '${where}';\n\n`;
 };
 
-const suspectTests =
-  'const suspectTests = JSON.parse(FS(\'../config/suspects.json\').readIfExistsSync() || "{}");'
 const REWRITES = {
   'sim/side.ts': {
     '\tgetRequestData() {':
@@ -241,8 +239,6 @@ const REWRITES = {
       '\tgetDetails = (): {side: SideID, secret: string, shared: string} => {',
   },
   'sim/battle.ts': {
-    [suspectTests]: 'const suspectTests = {} as any;',
-    'import {FS} from \'../lib/fs\';': undefined,
     '\tgetCategory(move: string | Move) {':
       '\tgetCategory(move: string | Move): Move[\'category\'] {',
   },

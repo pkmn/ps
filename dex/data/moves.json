@@ -2316,7 +2316,7 @@
     },
     "metalburst": {
       "inherit": true,
-      "desc": "Deals damage to the last opposing Pokemon to hit the user with an attack this turn equal to 1.5 times the HP lost by the user from that attack, rounded down. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's attack this turn, or if the user did not lose HP from the attack."
+      "desc": "Deals damage to the last opposing Pokemon to hit the user with a physical or special attack this turn equal to 1.5 times the HP lost by the user from that attack, rounded down. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's physical or special attack this turn, or if the user did not lose HP from the attack."
     },
     "milkdrink": {
       "inherit": true,
@@ -2870,6 +2870,11 @@
       "desc": "Has a 30% chance to paralyze the target. This move can hit a target using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop. If the weather is Rain Dance, this move does not check accuracy. If the weather is Sunny Day, this move's accuracy is 50%."
     },
     "thunderbolt": {"inherit": true, "basePower": 95},
+    "toxic": {
+      "inherit": true,
+      "desc": "Badly poisons the target.",
+      "shortDesc": "Badly poisons the target."
+    },
     "uproar": {
       "inherit": true,
       "flags": {"protect": 1, "mirror": 1, "sound": 1}
@@ -3049,11 +3054,6 @@
     "telekinesis": {
       "inherit": true,
       "desc": "For 3 turns, the target cannot avoid any attacks made against it, other than OHKO moves, as long as it remains active. During the effect, the target is immune to Ground-type attacks and the effects of Spikes, Toxic Spikes, and the Arena Trap Ability as long as it remains active. If the target uses Baton Pass, the replacement will gain the effect. Ingrain, Smack Down, and Iron Ball override this move if the target is under any of their effects. Fails if the target is already under this effect or the effects of Ingrain or Smack Down. The target is immune to this move on use if its species is Diglett or Dugtrio."
-    },
-    "toxic": {
-      "inherit": true,
-      "desc": "Badly poisons the target.",
-      "shortDesc": "Badly poisons the target."
     },
     "toxicspikes": {
       "inherit": true,
@@ -3277,7 +3277,7 @@
     },
     "metalburst": {
       "inherit": true,
-      "desc": "Deals damage to the last opposing Pokemon to hit the user with an attack this turn equal to 1.5 times the HP lost by the user from that attack, rounded down. If the user did not lose HP from the attack, this move deals damage with a power of 1 instead. If that opposing Pokemon's position is no longer in use, the damage is done to a random opposing Pokemon in range. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's attack this turn."
+      "desc": "Deals damage to the last opposing Pokemon to hit the user with a physical or special attack this turn equal to 1.5 times the HP lost by the user from that attack, rounded down. If the user did not lose HP from that attack, this move deals damage with a power of 1 instead. If that opposing Pokemon's position is no longer in use, the damage is done to a random opposing Pokemon in range. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's physical or special attack this turn."
     },
     "metronome": {
       "inherit": true,
@@ -3744,6 +3744,14 @@
       "onTry": false,
       "desc": "Fails when used.",
       "shortDesc": "Fails when used."
+    },
+    "toxic": {
+      "inherit": true,
+      "condition": {
+        "noCopy": true,
+        "duration": 1,
+        "onSourceInvulnerabilityPriority": 1
+      }
     },
     "toxicthread": {"inherit": true, "isNonstandard": null},
     "trumpcard": {"inherit": true, "isNonstandard": null},
@@ -11936,7 +11944,7 @@
       "secondary": null,
       "target": "scripted",
       "type": "Steel",
-      "desc": "Deals damage to the last opposing Pokemon to hit the user with an attack this turn equal to 1.5 times the HP lost by the user from that attack, rounded down. If the user did not lose HP from the attack, this move deals 1 HP of damage instead. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's attack this turn.",
+      "desc": "Deals damage to the last opposing Pokemon to hit the user with a physical or special attack this turn equal to 1.5 times the HP lost by the user from that attack, rounded down. If the user did not lose HP from that attack, this move deals 1 HP of damage instead. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's physical or special attack this turn.",
       "shortDesc": "If hit by an attack, returns 1.5x damage."
     },
     "metalclaw": {

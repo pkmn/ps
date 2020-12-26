@@ -31,8 +31,6 @@ import {State} from './state';
 import {BattleQueue, Action} from './battle-queue';
 import {Utils} from '../lib/utils';
 
-const suspectTests = {} as any;
-
 /** A Pokemon that has fainted. */
 interface FaintedPokemon {
 	target: Pokemon;
@@ -1553,7 +1551,7 @@ export class Battle {
 		this.makeRequest('move');
 	}
 
-	private maybeTriggerEndlessBattleClause(
+	maybeTriggerEndlessBattleClause(
 		trappedBySide: boolean[], stalenessBySide: ('internal' | 'external' | undefined)[]
 	) {
 		if (this.turn <= 100 || !this.ruleTable.has('endlessbattleclause')) return;
@@ -1643,10 +1641,6 @@ export class Battle {
 		if (this.rated) {
 			if (this.rated === 'Rated battle') this.rated = true;
 			this.add('rated', typeof this.rated === 'string' ? this.rated : '');
-			// Suspect test notice
-			if (suspectTests[format.id]) {
-				this.add('html', `<div class="broadcast-blue"><strong>${format.name} is currently suspecting ${suspectTests[format.id].suspect}! For information on how to participate check out the <a href="${suspectTests[format.id].url}">suspect thread</a>.</strong></div>`);
-			}
 		}
 
 		if (format.onBegin) format.onBegin.call(this);

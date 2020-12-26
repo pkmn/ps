@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@pkmn/protocol": "^0.2.0",
-    "@pkmn/data": "^0.3.7"
+    "@pkmn/data": "^0.3.8"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.3.7"
+    "@pkmn/dex": "^0.3.8"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
