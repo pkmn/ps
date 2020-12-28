@@ -5140,7 +5140,7 @@
       "doublesTier": "(DUber)"
     },
     "zarude": {"tier": "RU", "doublesTier": "DUU"},
-    "zarudedada": {"isNonstandard": "Unobtainable", "tier": "Unreleased"},
+    "zarudedada": {},
     "regieleki": {"tier": "UU", "doublesTier": "DOU"},
     "regidrago": {"tier": "RU", "doublesTier": "DOU"},
     "glastrier": {"tier": "RU", "doublesTier": "DOU"},

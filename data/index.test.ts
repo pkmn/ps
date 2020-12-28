@@ -305,11 +305,11 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         // {DLC1} Alola (4) + Galar (1) + Magearna (1) + Urshifu (1) +
         // Rockruff (1) + Lycanroc (2) + [Pikachu (1) + Zarude (1)]
         // {DLC2} Giratina (1) + *-Therian (3) + Genesect (4) + Zygarde (2) +
-        // Birds (3) + Slowking (1) + Calyrex (2) + Pikcahu (1)
+        // Birds (3) + Slowking (1) + Calyrex (2)
         // {GMax} 26 + 7
         formes = 17 + 5 + 1 + 1 + 1 + 3 + 3 + 7 + 14 + 8 +
           1 + 1 + 1 + 2 + 1 + 2 + 2 + 2 + 1 + 1 + 2 + 2 + 1 +
-          (4 + 1 + 1 + 1 + 1 + 2) + (1 + 3 + 4 + 2 + 3 + 1 + 2 + 1) - 1; // FIXME Rockruff
+          (4 + 1 + 1 + 1 + 1 + 2 + (1 + 1)) + (1 + 3 + 4 + 2 + 3 + 1 + 2) - 1; // FIXME Rockruff
         expect(counts(8)).toEqual({species: 664, formes});
       });
 
