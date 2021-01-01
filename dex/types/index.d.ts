@@ -47,6 +47,8 @@ export interface ConditionData extends Omit<EffectData, 'num'> {
   noCopy?: boolean;
   counterMax?: number;
   affectsFainted?: boolean;
+  onResidualOrder?: number;
+  onResidualSubOrder?: number;
 }
 
 export interface AbilityData extends EffectData {
