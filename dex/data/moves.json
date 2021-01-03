@@ -4675,6 +4675,7 @@
       "pp": 40,
       "priority": 0,
       "flags": {},
+      "self": {},
       "selfSwitch": "copyvolatile",
       "secondary": null,
       "target": "self",
@@ -11936,11 +11937,6 @@
       "pp": 10,
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1},
-      "condition": {
-        "duration": 1,
-        "noCopy": true,
-        "onRedirectTargetPriority": -1
-      },
       "secondary": null,
       "target": "scripted",
       "type": "Steel",

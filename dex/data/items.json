@@ -2576,6 +2576,7 @@
       "name": "Lum Berry",
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Flying"},
+      "onAfterSetStatusPriority": -1,
       "num": 157,
       "gen": 3,
       "desc": "Holder cures itself if it has a non-volatile status or is confused. Single use."

@@ -69,6 +69,7 @@ export interface EventMethods {
 		this: Battle, secondaries: SecondaryEffect[], target: Pokemon, source: Pokemon, move: ActiveMove
 	) => void;
 	onModifyType?: MoveEventMethods['onModifyType'];
+	onModifyTarget?: MoveEventMethods['onModifyTarget'];
 	onModifySpA?: CommonHandlers['ModifierSourceMove'];
 	onModifySpD?: CommonHandlers['ModifierMove'];
 	onModifySpe?: (this: Battle, spe: number, pokemon: Pokemon) => number | void;
@@ -173,6 +174,7 @@ export interface EventMethods {
 	onAllyModifySpD?: CommonHandlers['ModifierMove'];
 	onAllyModifySpe?: (this: Battle, spe: number, pokemon: Pokemon) => number | void;
 	onAllyModifyType?: MoveEventMethods['onModifyType'];
+	onAllyModifyTarget?: MoveEventMethods['onModifyTarget'];
 	onAllyModifyWeight?: (this: Battle, weighthg: number, pokemon: Pokemon) => number | void;
 	onAllyMoveAborted?: CommonHandlers['VoidMove'];
 	onAllyNegateImmunity?: ((this: Battle, pokemon: Pokemon, type: string) => boolean | void) | boolean;
@@ -275,6 +277,7 @@ export interface EventMethods {
 	onFoeModifySpD?: CommonHandlers['ModifierMove'];
 	onFoeModifySpe?: (this: Battle, spe: number, pokemon: Pokemon) => number | void;
 	onFoeModifyType?: MoveEventMethods['onModifyType'];
+	onFoeModifyTarget?: MoveEventMethods['onModifyTarget'];
 	onFoeModifyWeight?: (this: Battle, weighthg: number, pokemon: Pokemon) => number | void;
 	onFoeMoveAborted?: CommonHandlers['VoidMove'];
 	onFoeNegateImmunity?: ((this: Battle, pokemon: Pokemon, type: string) => boolean | void) | boolean;
@@ -377,6 +380,7 @@ export interface EventMethods {
 	onSourceModifySpD?: CommonHandlers['ModifierMove'];
 	onSourceModifySpe?: (this: Battle, spe: number, pokemon: Pokemon) => number | void;
 	onSourceModifyType?: MoveEventMethods['onModifyType'];
+	onSourceModifyTarget?: MoveEventMethods['onModifyTarget'];
 	onSourceModifyWeight?: (this: Battle, weighthg: number, pokemon: Pokemon) => number | void;
 	onSourceMoveAborted?: CommonHandlers['VoidMove'];
 	onSourceNegateImmunity?: ((this: Battle, pokemon: Pokemon, type: string) => boolean | void) | boolean;
@@ -481,6 +485,7 @@ export interface EventMethods {
 	onAnyModifySpD?: CommonHandlers['ModifierMove'];
 	onAnyModifySpe?: (this: Battle, spe: number, pokemon: Pokemon) => number | void;
 	onAnyModifyType?: MoveEventMethods['onModifyType'];
+	onAnyModifyTarget?: MoveEventMethods['onModifyTarget'];
 	onAnyModifyWeight?: (this: Battle, weighthg: number, pokemon: Pokemon) => number | void;
 	onAnyMoveAborted?: CommonHandlers['VoidMove'];
 	onAnyNegateImmunity?: ((this: Battle, pokemon: Pokemon, type: string) => boolean | void) | boolean;
@@ -535,6 +540,7 @@ export interface EventMethods {
 	onAfterMoveSecondaryPriority?: number;
 	onAfterMoveSecondarySelfPriority?: number;
 	onAfterMoveSelfPriority?: number;
+	onAfterSetStatusPriority?: number;
 	onAnyBasePowerPriority?: number;
 	onAnyInvulnerabilityPriority?: number;
 	onAnyModifyAccuracyPriority?: number;

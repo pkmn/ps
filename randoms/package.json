@@ -46,6 +46,7 @@
       "@typescript-eslint/member-delimiter-style": "off",
       "operator-linebreak": "off",
       "no-dupe-else-if": "off",
+      "no-mixed-spaces-and-tabs": "off",
       "max-len": "off"
     }
   }

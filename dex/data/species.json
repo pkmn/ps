@@ -25981,6 +25981,28 @@
       "eggGroups": ["Dragon", "Fairy"],
       "gen": 8
     },
+    "miasmite": {
+      "num": -58,
+      "name": "Miasmite",
+      "types": ["Bug", "Dragon"],
+      "baseStats": {
+        "hp": 40,
+        "atk": 85,
+        "def": 60,
+        "spa": 52,
+        "spd": 52,
+        "spe": 44
+      },
+      "abilities": {
+        "0": "Neutralizing Gas",
+        "1": "Hyper Cutter",
+        "H": "Compound Eyes"
+      },
+      "weightkg": 10.1,
+      "evos": ["Miasmaw"],
+      "eggGroups": ["Bug", "Dragon"],
+      "gen": 8
+    },
     "miasmaw": {
       "num": -59,
       "name": "Miasmaw",
@@ -25991,10 +26013,16 @@
         "def": 60,
         "spa": 115,
         "spd": 85,
-        "spe": 89
+        "spe": 92
       },
-      "abilities": {"0": "Neutralizing Gas", "H": "Compound Eyes"},
+      "abilities": {
+        "0": "Neutralizing Gas",
+        "1": "Hyper Cutter",
+        "H": "Compound Eyes"
+      },
       "weightkg": 57,
+      "prevo": "Miasmite",
+      "evoLevel": 30,
       "eggGroups": ["Bug", "Dragon"],
       "gen": 8
     },
