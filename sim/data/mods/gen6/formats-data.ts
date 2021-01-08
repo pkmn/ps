@@ -1362,7 +1362,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	raikou: {
 		randomBattleMoves: ["aurasphere", "calmmind", "extrasensory", "hiddenpowerice", "substitute", "thunderbolt", "voltswitch"],
 		randomDoubleBattleMoves: ["calmmind", "extrasensory", "hiddenpowerice", "protect", "snarl", "substitute", "thunderbolt"],
-		tier: "OU",
+		tier: "(OU)",
 		doublesTier: "(DUU)",
 	},
 	entei: {
@@ -2190,7 +2190,6 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		doublesTier: "DUber",
 	},
 	rayquazamega: {
-		randomBattleMoves: ["dragonascent", "dragonclaw", "dragondance", "earthquake", "extremespeed", "swordsdance", "vcreate"],
 		randomDoubleBattleMoves: ["dragonascent", "dragonclaw", "dragondance", "earthquake", "extremespeed", "protect", "swordsdance", "vcreate"],
 		tier: "AG",
 		doublesTier: "DUber",
@@ -3918,7 +3917,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	volcanion: {
 		randomBattleMoves: ["earthpower", "fireblast", "hiddenpowerice", "sludgewave", "steameruption", "substitute", "superpower"],
 		randomDoubleBattleMoves: ["earthquake", "heatwave", "protect", "rockslide", "sludgebomb", "steameruption", "substitute"],
-		tier: "OU",
+		tier: "(OU)",
 		doublesTier: "DOU",
 	},
 };

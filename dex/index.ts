@@ -837,7 +837,7 @@ export class ModdedDex implements T.Dex {
           DATA.Learnsets =
             (await import('./data/learnsets.json')) as unknown as Data<T.LearnsetData>;
         } catch (err) {
-          // If we're being used via a <script> tag we depend on Learnsets being required separately
+          // @ts-ignore If we're being used via a <script> tag we depend on Learnsets being required
           DATA.Learnsets = (window as any).DexLearnsets as Data<T.LearnsetData>;
           if (!DATA.Learnsets) throw new Error('Learnsets have not been included!');
         }

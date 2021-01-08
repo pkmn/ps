@@ -1882,6 +1882,7 @@
     "focusband": {
       "name": "Focus Band",
       "fling": {"basePower": 10},
+      "onDamagePriority": -40,
       "num": 230,
       "gen": 2,
       "desc": "Holder has a 10% chance to survive an attack that would KO it with 1 HP."
@@ -1889,6 +1890,7 @@
     "focussash": {
       "name": "Focus Sash",
       "fling": {"basePower": 10},
+      "onDamagePriority": -40,
       "num": 275,
       "gen": 4,
       "desc": "If holder's HP is full, will survive an attack that would KO it with 1 HP. Single use."

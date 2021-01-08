@@ -1874,7 +1874,7 @@
       "shortDesc": "This Pokemon's bite-based attacks have 1.5x power. Bug Bite is not boosted."
     },
     "sturdy": {
-      "onDamagePriority": -100,
+      "onDamagePriority": -30,
       "name": "Sturdy",
       "num": 5,
       "desc": "If this Pokemon is at full HP, it survives one hit with at least 1 HP. OHKO moves fail when used against this Pokemon.",

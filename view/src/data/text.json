@@ -742,7 +742,7 @@
   },
   "explosion": {
     "descGen4": "The user faints after using this move, unless this move has no target. The target's Defense is halved during damage calculation. This move is prevented from executing if any active Pokemon has the Damp Ability.",
-    "shortDescGen4": "Deals double damage. The user faints.",
+    "shortDescGen4": "Target's Def halved during damage. User faints.",
     "descGen3": "The user faints after using this move. The target's Defense is halved during damage calculation. This move is prevented from executing if any active Pokemon has the Damp Ability.",
     "descGen2": "The user faints after using this move. The target's Defense is halved during damage calculation.",
     "descGen1": "The user faints after using this move, unless this move broke the target's substitute. The target's Defense is halved during damage calculation."
@@ -1530,7 +1530,7 @@
   },
   "selfdestruct": {
     "descGen4": "The user faints after using this move, unless this move has no target. The target's Defense is halved during damage calculation. This move is prevented from executing if any active Pokemon has the Damp Ability.",
-    "shortDescGen4": "Deals double damage. The user faints.",
+    "shortDescGen4": "Target's Def halved during damage. User faints.",
     "descGen3": "The user faints after using this move. The target's Defense is halved during damage calculation. This move is prevented from executing if any active Pokemon has the Damp Ability.",
     "descGen2": "The user faints after using this move. The target's Defense is halved during damage calculation.",
     "descGen1": "The user faints after using this move, unless the target's substitute was broken by the damage. The target's Defense is halved during damage calculation."
@@ -2198,8 +2198,7 @@
   },
   "owntempo": {
     "descGen7": "This Pokemon cannot be confused. Gaining this Ability while confused cures it.",
-    "shortDescGen7": "This Pokemon cannot be confused.",
-    "block": "  [POKEMON] cannot be confused!"
+    "shortDescGen7": "This Pokemon cannot be confused."
   },
   "parentalbond": {
     "descGen6": "This Pokemon's damaging moves become multi-hit moves that hit twice. The second hit has its damage halved. Does not affect multi-hit moves or moves that have multiple targets.",
