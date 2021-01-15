@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@pkmn/protocol": "^0.2.0",
-    "@pkmn/types": "^1.0.0"
+    "@pkmn/types": "^1.0.1"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",

@@ -11,7 +11,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/types": "^1.0.0"
+    "@pkmn/types": "^1.0.1"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",

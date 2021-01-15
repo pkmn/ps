@@ -74,8 +74,8 @@ export type MoveSource = string;
 
 export namespace TierTypes {
 	export type Singles = "AG" | "Uber" | "(Uber)" | "OU" | "(OU)" | "UUBL" | "UU" | "RUBL" | "RU" | "NUBL" | "NU" |
-	"(NU)" | "PUBL" | "PU" | "(PU)" | "NFE" | "LC Uber" | "LC";
-	export type Doubles = "DUber" | "(DUber)" | "DOU" | "(DOU)" | "DBL" | "DUU" | "(DUU)" | "NFE" | "LC Uber" | "LC";
+	"(NU)" | "PUBL" | "PU" | "(PU)" | "NFE" | "LC";
+	export type Doubles = "DUber" | "(DUber)" | "DOU" | "(DOU)" | "DBL" | "DUU" | "(DUU)" | "NFE" | "LC";
 	export type Other = "Unreleased" | "Illegal" | "CAP" | "CAP NFE" | "CAP LC";
 }
 
@@ -310,6 +310,7 @@ export interface ModdedBattleSide {
 export interface ModdedBattlePokemon {
 	/** TODO: remove, completely meaningless */
 	inherit?: true;
+	lostItemForDelibird?: Item | null;
 	boostBy?: (this: Pokemon, boost: SparseBoostsTable) => boolean | number;
 	calculateStat?: (this: Pokemon, statName: StatNameExceptHP, boost: number, modifier?: number) => number;
 	getAbility?: (this: Pokemon) => Ability;
@@ -331,11 +332,12 @@ export interface ModdedBattlePokemon {
 	setAbility?: (
 		this: Pokemon, ability: string | Ability, source: Pokemon | null, isFromFormeChange: boolean
 	) => string | false;
-	transformInto?: (this: Pokemon, pokemon: Pokemon, effect: Effect | null) => boolean;
+	setItem?: (this: Pokemon, item: string | Item, source?: Pokemon, effect?: Effect) => boolean;
 	setStatus?: (
 		this: Pokemon, status: string | Condition, source: Pokemon | null,
 		sourceEffect: Effect | null, ignoreImmunities: boolean
 	) => boolean;
+	transformInto?: (this: Pokemon, pokemon: Pokemon, effect: Effect | null) => boolean;
 	ignoringAbility?: (this: Pokemon) => boolean;
 	ignoringItem?: (this: Pokemon) => boolean;
 

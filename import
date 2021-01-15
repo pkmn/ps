@@ -199,7 +199,7 @@ const RANDOMS_IMPORTS = {
   ],
   'data/mods/gen4/random-teams.ts': [
     [['RandomGen5Teams'], './gen5'],
-    [['Species', 'RandomTeamsTypes', 'toID'], '@pkmn/sim'],
+    [['Species', 'RandomTeamsTypes', 'toID', 'SparseStatsTable', 'StatName'], '@pkmn/sim'],
   ],
   'data/mods/gen3/random-teams.ts': [
     [['RandomGen4Teams'], './gen4'],
