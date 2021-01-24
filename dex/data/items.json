@@ -1,10 +1,13 @@
 {
   "2": {
     "berryjuice": {"inherit": true, "isNonstandard": null},
+    "blackbelt": {"inherit": true},
+    "blackglasses": {"inherit": true},
     "brightpowder": {
       "inherit": true,
       "desc": "An attack against the holder has its accuracy out of 255 lowered by 20."
     },
+    "charcoal": {"inherit": true},
     "dragonfang": {"inherit": true, "desc": "No competitive use."},
     "dragonscale": {
       "inherit": true,
@@ -14,27 +17,39 @@
       "inherit": true,
       "desc": "Holder has a ~11.7% chance to survive an attack that would KO it with 1 HP."
     },
+    "hardstone": {"inherit": true},
     "kingsrock": {"inherit": true},
     "lightball": {"inherit": true},
     "luckypunch": {
       "inherit": true,
-      "desc": "If held by a Chansey, its critical hit ratio is always at stage 2. (25% crit rate)",
-      "onModifyCritRatioPriority": -1
+      "onModifyCritRatioPriority": -1,
+      "desc": "If held by a Chansey, its critical hit ratio is always at stage 2. (25% crit rate)"
     },
+    "magnet": {"inherit": true},
+    "metalcoat": {"inherit": true},
     "metalpowder": {
       "inherit": true,
       "desc": "If held by a Ditto, its Defense and Sp. Def are 1.5x, even while Transformed."
     },
+    "miracleseed": {"inherit": true},
+    "mysticwater": {"inherit": true},
+    "nevermeltice": {"inherit": true},
+    "poisonbarb": {"inherit": true},
     "quickclaw": {
       "inherit": true,
       "desc": "Each turn, holder has a ~23.4% chance to move first in its priority bracket."
     },
+    "sharpbeak": {"inherit": true},
+    "silverpowder": {"inherit": true},
+    "softsand": {"inherit": true},
+    "spelltag": {"inherit": true},
     "stick": {
       "inherit": true,
-      "desc": "If held by a Farfetch’d, its critical hit ratio is always at stage 2. (25% crit rate)",
-      "onModifyCritRatioPriority": -1
+      "onModifyCritRatioPriority": -1,
+      "desc": "If held by a Farfetch’d, its critical hit ratio is always at stage 2. (25% crit rate)"
     },
     "thickclub": {"inherit": true},
+    "twistedspoon": {"inherit": true},
     "berserkgene": {"inherit": true, "isNonstandard": null},
     "berry": {"inherit": true, "isNonstandard": null},
     "bitterberry": {"inherit": true, "isNonstandard": null},
@@ -178,8 +193,8 @@
     "deepseatooth": {"inherit": true},
     "focussash": {
       "inherit": true,
-      "desc": "If holder's HP is full, survives all hits of one attack with at least 1 HP. Single use.",
-      "condition": {"duration": 1}
+      "condition": {"duration": 1},
+      "desc": "If holder's HP is full, survives all hits of one attack with at least 1 HP. Single use."
     },
     "griseousorb": {
       "inherit": true,
@@ -197,13 +212,13 @@
     "lustrousorb": {"inherit": true},
     "mentalherb": {
       "inherit": true,
-      "desc": "Holder is cured if it is infatuated. Single use.",
-      "fling": {"basePower": 10}
+      "fling": {"basePower": 10},
+      "desc": "Holder is cured if it is infatuated. Single use."
     },
     "metronome": {
       "inherit": true,
-      "desc": "Damage of moves used on consecutive turns is increased. Max 2x after 10 turns.",
-      "condition": {"onTryMovePriority": -2}
+      "condition": {"onTryMovePriority": -2},
+      "desc": "Damage of moves used on consecutive turns is increased. Max 2x after 10 turns."
     },
     "micleberry": {
       "inherit": true,
@@ -565,19 +580,8 @@
       "desc": "Restores 1/8 max HP at 1/2 max HP or less; confuses if -SpD Nature. Single use."
     },
     "belueberry": {"inherit": true, "isNonstandard": null},
-    "bigroot": {
-      "inherit": true,
-      "desc": "Holder gains 1.3x HP from draining moves, Aqua Ring, Ingrain, and Leech Seed."
-    },
     "cornnberry": {"inherit": true, "isNonstandard": null},
     "durinberry": {"inherit": true, "isNonstandard": null},
-    "energypowder": {
-      "name": "Energy Powder",
-      "fling": {"basePower": 30},
-      "num": 34,
-      "gen": 2,
-      "desc": "Restores 50 HP to one Pokemon but lowers Happiness."
-    },
     "figyberry": {
       "inherit": true,
       "desc": "Restores 1/8 max HP at 1/2 max HP or less; confuses if -Atk Nature. Single use."
@@ -588,10 +592,6 @@
     },
     "jabocaberry": {"inherit": true},
     "lifeorb": {"inherit": true},
-    "lightclay": {
-      "inherit": true,
-      "desc": "Holder's use of Light Screen or Reflect lasts 8 turns instead of 5."
-    },
     "machobrace": {"inherit": true, "isNonstandard": null},
     "magoberry": {
       "inherit": true,
@@ -609,15 +609,27 @@
     "spelonberry": {"inherit": true, "isNonstandard": null},
     "souldew": {
       "inherit": true,
-      "desc": "If held by a Latias or a Latios, its Sp. Atk and Sp. Def are 1.5x.",
       "onModifySpAPriority": 1,
-      "onModifySpDPriority": 2
+      "onModifySpDPriority": 2,
+      "desc": "If held by a Latias or a Latios, its Sp. Atk and Sp. Def are 1.5x."
     },
     "watmelberry": {"inherit": true, "isNonstandard": null},
     "wepearberry": {"inherit": true, "isNonstandard": null},
     "wikiberry": {
       "inherit": true,
       "desc": "Restores 1/8 max HP at 1/2 max HP or less; confuses if -SpA Nature. Single use."
+    },
+    "bigroot": {
+      "inherit": true,
+      "desc": "Holder gains 1.3x HP from draining moves, Aqua Ring, Ingrain, and Leech Seed."
+    },
+    "energypowder": {
+      "inherit": true,
+      "desc": "Restores 50 HP to one Pokemon but lowers Happiness."
+    },
+    "lightclay": {
+      "inherit": true,
+      "desc": "Holder's use of Light Screen or Reflect lasts 8 turns instead of 5."
     }
   },
   "7": {
@@ -658,13 +670,6 @@
     "dragongem": {"inherit": true, "isNonstandard": "Unobtainable"},
     "dragoniumz": {"inherit": true, "isNonstandard": null},
     "dreadplate": {"inherit": true, "isNonstandard": null},
-    "dreamball": {
-      "name": "Dream Ball",
-      "num": 576,
-      "gen": 5,
-      "isPokeball": true,
-      "desc": "A special Poke Ball that appears out of nowhere in a bag at the Entree Forest."
-    },
     "durinberry": {"inherit": true, "isNonstandard": "Unobtainable"},
     "earthplate": {"inherit": true, "isNonstandard": null},
     "eeviumz": {"inherit": true, "isNonstandard": null},
@@ -704,10 +709,6 @@
       "desc": "Restores 1/2 max HP at 1/4 max HP or less; confuses if -Def Nature. Single use."
     },
     "icegem": {"inherit": true, "isNonstandard": "Unobtainable"},
-    "icestone": {
-      "inherit": true,
-      "desc": "Evolves Alolan Sandshrew into Alolan Sandslash and Alolan Vulpix into Alolan Ninetales when used."
-    },
     "icicleplate": {"inherit": true, "isNonstandard": null},
     "iciumz": {"inherit": true, "isNonstandard": null},
     "inciniumz": {"inherit": true, "isNonstandard": null},
@@ -718,10 +719,6 @@
     "kommoniumz": {"inherit": true, "isNonstandard": null},
     "latiasite": {"inherit": true, "isNonstandard": null},
     "latiosite": {"inherit": true, "isNonstandard": null},
-    "leafstone": {
-      "inherit": true,
-      "desc": "Evolves Gloom into Vileplume, Weepinbell into Victreebel, Exeggcute into Exeggutor or Alolan Exeggutor, Nuzleaf into Shiftry, and Pansage into Simisage when used."
-    },
     "lopunnite": {"inherit": true, "isNonstandard": null},
     "lucarionite": {"inherit": true, "isNonstandard": null},
     "luckypunch": {"inherit": true, "isNonstandard": null},
@@ -787,10 +784,6 @@
     "stoneplate": {"inherit": true, "isNonstandard": null},
     "swampertite": {"inherit": true, "isNonstandard": null},
     "tapuniumz": {"inherit": true, "isNonstandard": null},
-    "thunderstone": {
-      "inherit": true,
-      "desc": "Evolves Pikachu into Raichu or Alolan Raichu, Eevee into Jolteon, and Eelektrik into Eelektross when used."
-    },
     "toxicplate": {"inherit": true, "isNonstandard": null},
     "tyranitarite": {"inherit": true, "isNonstandard": null},
     "ultranecroziumz": {"inherit": true, "isNonstandard": null},
@@ -804,7 +797,23 @@
       "isNonstandard": null,
       "desc": "Restores 1/2 max HP at 1/4 max HP or less; confuses if -SpA Nature. Single use."
     },
-    "zapplate": {"inherit": true, "isNonstandard": null}
+    "zapplate": {"inherit": true, "isNonstandard": null},
+    "dreamball": {
+      "inherit": true,
+      "desc": "A special Poke Ball that appears out of nowhere in a bag at the Entree Forest."
+    },
+    "icestone": {
+      "inherit": true,
+      "desc": "Evolves Alolan Sandshrew into Alolan Sandslash and Alolan Vulpix into Alolan Ninetales when used."
+    },
+    "leafstone": {
+      "inherit": true,
+      "desc": "Evolves Gloom into Vileplume, Weepinbell into Victreebel, Exeggcute into Exeggutor or Alolan Exeggutor, Nuzleaf into Shiftry, and Pansage into Simisage when used."
+    },
+    "thunderstone": {
+      "inherit": true,
+      "desc": "Evolves Pikachu into Raichu or Alolan Raichu, Eevee into Jolteon, and Eelektrik into Eelektross when used."
+    }
   },
   "8": {
     "abomasite": {

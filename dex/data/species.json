@@ -25667,7 +25667,8 @@
       },
       "weightkg": 24.2,
       "prevo": "Pluffle",
-      "evoType": "levelExtra",
+      "evoType": "levelMove",
+      "evoMove": "Play Rough",
       "eggGroups": ["Fairy", "Human-Like"],
       "gen": 6
     },
@@ -25721,7 +25722,8 @@
       "abilities": {"0": "Drought", "1": "Trace", "H": "Overcoat"},
       "weightkg": 600,
       "prevo": "Mumbao",
-      "evoType": "levelExtra",
+      "evoType": "levelFriendship",
+      "evoCondition": "during the day",
       "eggGroups": ["Grass"],
       "gen": 7
     },
@@ -25977,7 +25979,7 @@
       "abilities": {"0": "Regenerator", "1": "Vital Spirit", "H": "Magician"},
       "weightkg": 50,
       "prevo": "Solotl",
-      "evoLevel": 36,
+      "evoLevel": 35,
       "eggGroups": ["Dragon", "Fairy"],
       "gen": 8
     },

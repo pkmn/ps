@@ -415,6 +415,7 @@
       "desc": "This Pokemon can hit Ghost types with Normal- and Fighting-type moves.",
       "shortDesc": "This Pokemon can hit Ghost types with Normal- and Fighting-type moves."
     },
+    "soundproof": {"inherit": true},
     "technician": {"inherit": true, "onBasePowerPriority": 19},
     "chlorophyll": {
       "inherit": true,

@@ -467,10 +467,10 @@ export class RandomTeams {
 		];
 		// Moves that shouldn't be the only STAB moves:
 		const NoStab = [
-			'accelerock', 'aquajet', 'bounce', 'breakingswipe', 'explosion', 'fakeout', 'firstimpression', 'flamecharge', 'flipturn',
-			'iceshard', 'machpunch', 'pluck', 'pursuit', 'quickattack', 'selfdestruct', 'skydrop', 'suckerpunch', 'watershuriken',
+			'accelerock', 'aquajet', 'beakblast', 'bounce', 'breakingswipe', 'explosion', 'fakeout', 'firstimpression', 'flamecharge',
+			'flipturn', 'iceshard', 'machpunch', 'pluck', 'pursuit', 'quickattack', 'selfdestruct', 'skydrop', 'suckerpunch', 'watershuriken',
 
-			'clearsmog', 'eruption', 'icywind', 'incinerate', 'meteorbeam', 'snarl', 'vacuumwave', 'voltswitch', 'waterspout',
+			'chatter', 'clearsmog', 'eruption', 'icywind', 'incinerate', 'meteorbeam', 'snarl', 'vacuumwave', 'voltswitch', 'waterspout',
 		];
 
 		// Iterate through all moves we've chosen so far and keep track of what they do:
@@ -738,7 +738,7 @@ export class RandomTeams {
 				case 'firstimpression': case 'glare': case 'icywind': case 'tailwind': case 'waterspout':
 					if ((counter.setupType && !isDoubles) || !!counter['speedsetup'] || hasMove['rest']) rejected = true;
 					break;
-				case 'bulletpunch': case 'rockblast':
+				case 'bulletpunch': case 'extremespeed': case 'rockblast':
 					if (!!counter['speedsetup'] || counter.damagingMoves.length < 2) rejected = true;
 					break;
 				case 'closecombat': case 'flashcannon': case 'pollenpuff':
@@ -1022,7 +1022,7 @@ export class RandomTeams {
 					(hasType['Fire'] && (!counter['Fire'] || movePool.includes('flareblitz')) && !hasMove['bellydrum']) ||
 					((hasType['Flying'] || hasMove['swordsdance']) && !counter['Flying'] && (movePool.includes('airslash') || movePool.includes('bravebird') || movePool.includes('dualwingbeat') || movePool.includes('oblivionwing'))) ||
 					(hasType['Ghost'] && (!counter['Ghost'] || movePool.includes('poltergeist') || movePool.includes('spectralthief')) && !counter['Dark']) ||
-					(hasType['Grass'] && !counter['Grass'] && (species.baseStats.atk >= 100 || movePool.includes('leafstorm'))) ||
+					(hasType['Grass'] && ((!counter['Grass'] && (species.baseStats.atk >= 100 || movePool.includes('leafstorm'))) || movePool.includes('grassyglide'))) ||
 					(hasType['Ground'] && !counter['Ground']) ||
 					(hasType['Ice'] && (!counter['Ice'] || movePool.includes('iciclecrash') || (hasAbility['Snow Warning'] && movePool.includes('blizzard')))) ||
 					((hasType['Normal'] && hasAbility['Guts'] && movePool.includes('facade')) || (hasAbility['Pixilate'] && !counter['Normal'])) ||

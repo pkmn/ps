@@ -118,8 +118,9 @@ class Runner {
         const v = Verifier.verifyLine(line);
         assert(!v, `Invalid protocol: '${line}'`);
 
+        // FIXME: workaround for crash in smogon/pokemon-showdown-client's animateMove...
+        ps.battle.seeking = Infinity;
         ps.battle.add(line);
-        ps.battle.fastForwardTo(-1);
 
         const {args, kwArgs} = Protocol.parseBattleLine(line);
         if (!UNLOGGED.has(args[0])) pkmn.log += pkmn.formatter.formatText(args, kwArgs);
