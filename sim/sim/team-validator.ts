@@ -24,7 +24,7 @@ import {
  */
 
 import {Dex, toID} from './dex';
-import {Utils} from '../lib/utils';
+import {Utils} from '../lib';
 
 /**
  * Describes a possible way to get a pokemon. Is not exhaustive!
@@ -446,7 +446,7 @@ export class TeamValidator {
 		if (ability.id === 'owntempo' && species.id === 'rockruff') {
 			tierSpecies = outOfBattleSpecies = dex.getSpecies('rockruffdusk');
 		}
-		if (species.id === 'melmetal' && set.gigantamax) {
+		if (species.id === 'melmetal' && set.gigantamax && this.dex.getLearnsetData(species.id).eventData) {
 			setSources.sourcesBefore = 0;
 			setSources.sources = ['8S0 melmetal'];
 		}

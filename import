@@ -288,16 +288,17 @@ const OVERRIDDEN = new Set([
   'data/mods/gen5/index.ts',
   'data/mods/gen6/index.ts',
   'data/mods/gen7/index.ts',
-  'sim/exported-global-types.ts',
-  'sim/tools/index.ts',
+  'lib/index.ts',
+  'package-lock.json', // double sigh...
   'package.json',
+  'pnpm-debug.log', // sigh...
   'README.md',
+  'sim/exported-global-types.ts',
   'sim/index.ts',
   'sim/tools/exhaustive-runner.ts',
+  'sim/tools/index.ts',
   'test/main.js',
   'tsconfig.json',
-  'pnpm-debug.log', // sigh...
-  'package-lock.json', // double sigh...
 ]);
 const MOD_OVERRIDDEN = new Set([
   'data/mods/index.ts',

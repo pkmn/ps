@@ -29,7 +29,7 @@ import {PRNG, PRNGSeed} from './prng';
 import {Side} from './side';
 import {State} from './state';
 import {BattleQueue, Action} from './battle-queue';
-import {Utils} from '../lib/utils';
+import {Utils} from '../lib';
 
 /** A Pokemon that has fainted. */
 interface FaintedPokemon {
@@ -300,8 +300,10 @@ export class Battle {
 		return this.prng.sample(items);
 	}
 
-	resetRNG() {
-		this.prng = new PRNG(this.prng.startingSeed);
+	/** Note that passing `undefined` resets to the starting seed, but `null` will roll a new seed */
+	resetRNG(seed: PRNGSeed | null = this.prng.startingSeed) {
+		this.prng = new PRNG(seed);
+		this.add('message', "The battle's RNG was reset.");
 	}
 
 	suppressingAttackEvents(target?: Pokemon) {

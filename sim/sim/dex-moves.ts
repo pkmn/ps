@@ -12,7 +12,7 @@ import {
 	SparseBoostsTable,
 } from './exported-global-types';
 
-import {Utils} from '../lib/utils';
+import {Utils} from '../lib';
 import {BasicEffect} from './dex-data';
 
 /**

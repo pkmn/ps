@@ -17,7 +17,7 @@ import {
 	TeamValidator,
 } from './exported-global-types';
 
-import {Utils} from '../lib/utils';
+import {Utils} from '../lib';
 import {toID, BasicEffect} from './dex-data';
 import {EventMethods} from './dex-conditions';
 
