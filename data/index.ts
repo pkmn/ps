@@ -428,6 +428,7 @@ export class Types {
   }
 
   totalEffectiveness(source: { type: TypeName } | TypeName, target: TypeTarget) {
+    if (!this.canDamage(source, target)) return 0;
     const e = `${this.dex.getEffectiveness(source, target)}`;
     // convert from PS's ridiculous encoding to something usable
     return EFFECTIVENESS[e as keyof typeof EFFECTIVENESS];

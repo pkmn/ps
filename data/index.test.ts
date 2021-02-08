@@ -533,6 +533,8 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(gen.types.totalEffectiveness({type: 'Fire'}, 'Fire')).toBe(0.5);
         expect(gen.types.totalEffectiveness('Dark', ['Ghost', 'Psychic'])).toBe(4);
         expect(gen.types.get('Dark')!.totalEffectiveness(['Ghost', 'Psychic'])).toBe(4);
+        expect(gen.types.get('Electric')!.totalEffectiveness('Ground')).toBe(0);
+        expect(gen.types.get('Psychic')!.totalEffectiveness(['Ghost', 'Dark'])).toBe(0);
         expect(gen.types.totalEffectiveness('Normal', {getTypes: () => ['Steel', 'Rock']}))
           .toBe(0.25);
         expect(gen.types.totalEffectiveness('Bug', 'Bug')).toBe(1);
