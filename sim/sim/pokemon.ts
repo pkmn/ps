@@ -583,7 +583,7 @@ export class Pokemon {
 	getActionSpeed() {
 		let speed = this.getStat('spe', false, false);
 		if (this.battle.field.getPseudoWeather('trickroom')) {
-			speed = 0x2710 - speed;
+			speed = 10000 - speed;
 		}
 		return this.battle.trunc(speed, 13);
 	}
@@ -999,7 +999,7 @@ export class Pokemon {
 			if (this.trapped) data.trapped = true;
 		}
 
-		if (!lockedMove || lockedMove === 'struggle') {
+		if (!lockedMove) {
 			if (this.canMegaEvo) data.canMegaEvo = true;
 			if (this.canUltraBurst) data.canUltraBurst = true;
 			const canZMove = this.battle.canZMove(this);

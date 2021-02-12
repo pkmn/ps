@@ -4,12 +4,12 @@
     "allowJs": true,
     "allowUnusedLabels": false,
     "checkJs": true,
-    "lib": ["es2019"],
+    "lib": ["es2019", "dom"],
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": false,
     "noImplicitReturns": false,
     "outDir": "build",
-    "tsBuildInfoFile": ".tsbuildinfo",
+    "tsBuildInfoFile": ".tsbuildinfo"
   },
   "exclude": ["test", "build"]
 }
