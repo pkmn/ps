@@ -1797,7 +1797,7 @@ export class Battle {
 			if (targetDamage !== 0) targetDamage = this.clampIntRange(targetDamage, 1);
 
 			if (this.gen <= 1) {
-				if (this.dex.currentMod === 'stadium' ||
+				if (this.dex.currentMod === 'gen1stadium' ||
 					!['recoil', 'drain'].includes(effect.id) && effect.effectType !== 'Status') {
 					this.lastDamage = targetDamage;
 				}
@@ -1831,7 +1831,7 @@ export class Battle {
 
 			if (targetDamage && effect.effectType === 'Move') {
 				if (this.gen <= 1 && effect.recoil && source) {
-					if (this.dex.currentMod !== 'stadium' || target.hp > 0) {
+					if (this.dex.currentMod !== 'gen1stadium' || target.hp > 0) {
 						const amount = this.clampIntRange(Math.floor(targetDamage * effect.recoil[0] / effect.recoil[1]), 1);
 						this.damage(amount, source, target, 'recoil');
 					}
@@ -1890,7 +1890,7 @@ export class Battle {
 		if (typeof effect === 'string' || !effect) effect = this.dex.getEffectByID((effect || '') as ID);
 
 		// In Gen 1 BUT NOT STADIUM, Substitute also takes confusion and HJK recoil damage
-		if (this.gen <= 1 && this.dex.currentMod !== 'stadium' &&
+		if (this.gen <= 1 && this.dex.currentMod !== 'gen1stadium' &&
 			['confusion', 'jumpkick', 'highjumpkick'].includes(effect.id) && target.volatiles['substitute']) {
 			const hint = "In Gen 1, if a Pokemon with a Substitute hurts itself due to confusion or Jump Kick/Hi Jump Kick recoil and the target";
 			if (source?.volatiles['substitute']) {

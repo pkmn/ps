@@ -44,7 +44,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(3).abilities.get('Lightning Rod'))
           .not.toEqual(Gen(4).abilities.get('Lightning Rod'));
 
-        expect(Gen(7).abilities.get('ph')!.name).toBe('Poison Heal');
+        expect(Gen(7).abilities.get('pheal')!.name).toBe('Poison Heal');
         expect(Gen(7).abilities.get('stag')!.name).toBe('Shadow Tag');
 
         expect(Gen(7).abilities.get('Sturdy')!.shortDesc) // eslint-disable-next-line

@@ -13,6 +13,14 @@ const DATA = {
 for (const [pkg, Dex] of Object.entries(DATA)) {
   describe(`ModdedDex (${pkg})`, () => {
     describe('mods', () => {
+      it('gen1stadium', async () => {
+        const dex =
+          new ModdedDex(Dex.mod('gen1stadium' as ID, await import('./gen1stadium') as ModData));
+        expect(dex.gen).toBe(1);
+        expect(dex.getMove('highjumpkick').desc)
+          .toEqual('If this attack misses the target, the user takes 1 HP of damage.');
+      });
+
       it('gen8dlc1', async () => {
         const dex = new ModdedDex(Dex.mod('gen8dlc1' as ID, await import('./gen8dlc1') as ModData));
         expect(dex.gen).toBe(8);
@@ -35,13 +43,6 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect((await dex.getLearnset('sandslashalola')).learnset!['iceshard']).toEqual(['7L1']);
       });
 
-      it('stadium', async () => {
-        const dex = new ModdedDex(Dex.mod('stadium' as ID, await import('./stadium') as ModData));
-        expect(dex.gen).toBe(1);
-        expect(dex.getMove('highjumpkick').desc)
-          .toEqual('If this attack misses the target, the user takes 1 HP of damage.');
-      });
-
       it('vgc17', async () => {
         const dex = new ModdedDex(Dex.mod('vgc17' as ID, await import('./vgc17') as ModData));
         expect(dex.gen).toBe(7);
@@ -52,6 +53,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect((await dex.getLearnset('sandslashalola')).learnset!['iceshard']).toBeUndefined();
       });
     });
+
     describe('types', () => {
       it('custom', () => {
         const dex = Dex.mod('foo' as ID, {

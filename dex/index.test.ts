@@ -39,7 +39,7 @@ describe('Dex', () => {
       expect(Dex.forGen(3).getAbility('Lightning Rod'))
         .not.toEqual(Dex.forGen(4).getAbility('Lightning Rod'));
 
-      expect(Dex.getAbility('ph').name).toBe('Poison Heal');
+      expect(Dex.getAbility('pheal').name).toBe('Poison Heal');
       expect(Dex.getAbility('stag').name).toBe('Shadow Tag');
 
       expect(Dex.getAbility('Sturdy').shortDesc) // eslint-disable-next-line
