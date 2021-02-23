@@ -1700,7 +1700,7 @@ export class Battle {
 			if (!source) source = this.event.source;
 			if (!effect) effect = this.effect;
 		}
-		if (!target || !target.hp) return 0;
+		if (!target?.hp) return 0;
 		if (!target.isActive) return false;
 		if (this.gen > 5 && !target.side.foe.pokemonLeft) return false;
 		boost = this.runEvent('Boost', target, source, effect, {...boost});
@@ -1883,7 +1883,7 @@ export class Battle {
 			if (!source) source = this.event.source;
 			if (!effect) effect = this.effect;
 		}
-		if (!target || !target.hp) return 0;
+		if (!target?.hp) return 0;
 		if (!damage) return 0;
 		damage = this.clampIntRange(damage, 1);
 
@@ -1937,7 +1937,7 @@ export class Battle {
 		// for things like Liquid Ooze, the Heal event still happens when nothing is healed.
 		damage = this.runEvent('TryHeal', target, source, effect, damage);
 		if (!damage) return damage;
-		if (!target || !target.hp) return false;
+		if (!target?.hp) return false;
 		if (!target.isActive) return false;
 		if (target.hp >= target.maxhp) return false;
 		const finalDamage = target.heal(damage, source, effect);

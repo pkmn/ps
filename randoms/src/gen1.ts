@@ -1,5 +1,5 @@
 import {RandomGen2Teams} from './gen2';
-import {ID, RandomTeamsTypes, Species} from '@pkmn/sim';
+import {ID, Move, RandomTeamsTypes, Species} from '@pkmn/sim';
 
 export class RandomGen1Teams extends RandomGen2Teams {
 	// Challenge Cup or CC teams are basically fully random teams.
@@ -85,7 +85,6 @@ export class RandomGen1Teams extends RandomGen2Teams {
 
 			// Four random unique moves from movepool. don't worry about "attacking" or "viable".
 			// Since Gens 1 and 2 learnsets are shared, we need to weed out Gen 2 moves.
-			let moves;
 			const pool: string[] = [];
 			if (lsetData.learnset) {
 				for (const move in lsetData.learnset) {
@@ -95,19 +94,11 @@ export class RandomGen1Teams extends RandomGen2Teams {
 					}
 				}
 			}
-			if (pool.length <= 4) {
-				moves = pool;
-			} else {
-				moves = [
-					this.sampleNoReplace(pool), this.sampleNoReplace(pool),
-					this.sampleNoReplace(pool), this.sampleNoReplace(pool),
-				];
-			}
 
 			team.push({
 				name: poke,
 				species: species.name,
-				moves: moves,
+				moves: this.multipleSamplesNoReplace(pool, 4),
 				gender: false,
 				ability: 'None',
 				evs: evs,
@@ -126,7 +117,6 @@ export class RandomGen1Teams extends RandomGen2Teams {
 	// Random team generation for Gen 1 Random Battles.
 	randomTeam() {
 		// Get what we need ready.
-		let pokemonLeft = 0;
 		const pokemon = [];
 
 		const handicapMons = ['magikarp', 'weedle', 'kakuna', 'caterpie', 'metapod'];
@@ -148,7 +138,7 @@ export class RandomGen1Teams extends RandomGen2Teams {
 		let nuCount = 0;
 		let hasShitmon = false;
 
-		while (pokemonPool.length && pokemonLeft < 6) {
+		while (pokemonPool.length && pokemon.length < 6) {
 			const species = this.dex.getSpecies(this.sampleNoReplace(pokemonPool));
 			if (!species.exists) continue;
 
@@ -201,12 +191,9 @@ export class RandomGen1Teams extends RandomGen2Teams {
 			if (skip) continue;
 
 			// The set passes the limitations.
-			const set = this.randomSet(species);
-			pokemon.push(set);
+			pokemon.push(this.randomSet(species));
 
-			// Now let's increase the counters. First, the Pokémon left.
-			pokemonLeft++;
-
+			// Now let's increase the counters.
 			// Type counter.
 			for (const type of species.types) {
 				if (typeCount[type]) {
@@ -235,6 +222,29 @@ export class RandomGen1Teams extends RandomGen2Teams {
 		return pokemon;
 	}
 
+	shouldCullMove(move: Move, hasMove: {[k: string]: true}, counter: {[k: string]: any}): {cull: boolean} {
+		switch (move.id) {
+		// bit redundant to have both, but neither particularly better than the other
+		case 'hydropump':
+			return {cull: hasMove['surf']};
+		case 'surf':
+			return {cull: hasMove['hydropump']};
+
+		// other redundancies that aren't handled within the movesets themselves
+		case 'selfdestruct':
+			return {cull: hasMove['rest']};
+		case 'rest':
+			return {cull: hasMove['selfdestruct']};
+		case 'sharpen': case 'swordsdance':
+			return {cull: counter.Special > counter.Physical || !counter.Physical || hasMove['growth']};
+		case 'growth':
+			return {cull: counter.Special < counter.Physical || !counter.Special || hasMove['swordsdance']};
+		case 'poisonpowder': case 'stunspore': case 'sleeppowder': case 'toxic':
+			return {cull: counter.Status > 1};
+		}
+		return {cull: false};
+	}
+
 	/**
 	 * Random set generation for Gen 1 Random Battles.
 	 */
@@ -243,7 +253,7 @@ export class RandomGen1Teams extends RandomGen2Teams {
 		if (!species.exists) species = this.dex.getSpecies('pikachu'); // Because Gen 1.
 
 		const movePool = species.randomBattleMoves ? species.randomBattleMoves.slice() : [];
-		let moves: string[] = [];
+		const moves: string[] = [];
 		const hasType: {[k: string]: true} = {};
 		hasType[species.types[0]] = true;
 		if (species.types[1]) hasType[species.types[1]] = true;
@@ -257,10 +267,8 @@ export class RandomGen1Teams extends RandomGen2Teams {
 		const SpecialSetup = ['amnesia', 'growth'];
 
 		// Either add all moves or add none
-		if (species.comboMoves) {
-			if (this.randomChance(1, 2)) {
-				moves = moves.concat(species.comboMoves);
-			}
+		if (species.comboMoves && this.randomChance(1, 2)) {
+			moves.push(...species.comboMoves);
 		}
 
 		// Add one of the semi-mandatory moves
@@ -289,64 +297,20 @@ export class RandomGen1Teams extends RandomGen2Teams {
 					const move = this.dex.getMove(setMoveid);
 					const moveid = move.id;
 					hasMove[moveid] = true;
-					if (!move.damage && !move.damageCallback) {
-						counter[move.category]++;
-					}
-					if (PhysicalSetup.includes(moveid)) {
-						counter['physicalsetup']++;
-					}
-					if (SpecialSetup.includes(moveid)) {
-						counter['specialsetup']++;
-					}
+					if (!move.damage && !move.damageCallback) counter[move.category]++;
+					if (PhysicalSetup.includes(moveid)) counter.physicalsetup++;
+					if (SpecialSetup.includes(moveid)) counter.specialsetup++;
 				}
-
-				// if (counter['specialsetup']) {
-				// 	setupType = 'Special';
-				// } else if (counter['physicalsetup']) {
-				// 	setupType = 'Physical';
-				// }
 
 				for (const [i, moveid] of moves.entries()) {
 					if (moveid === species.essentialMove) continue;
 					const move = this.dex.getMove(moveid);
-					let rejected = false;
-					if (!species.essentialMove || moveid !== species.essentialMove) {
-						switch (moveid) {
-						// bit redundant to have both, but neither particularly better than the other
-						case 'hydropump':
-							if (hasMove['surf']) rejected = true;
-							break;
-						case 'surf':
-							if (hasMove['hydropump']) rejected = true;
-							break;
-						// other redundancies that aren't handled within the movesets themselves
-						case 'selfdestruct':
-							if (hasMove['rest']) rejected = true;
-							break;
-						case 'rest':
-							if (hasMove['selfdestruct']) rejected = true;
-							break;
-						case 'sharpen':
-						case 'swordsdance':
-							if (counter['Special'] > counter['Physical'] || !counter['Physical'] || hasMove['growth']) rejected = true;
-							break;
-						case 'growth':
-							if (counter['Special'] < counter['Physical'] || !counter['Special'] || hasMove['swordsdance']) rejected = true;
-							break;
-						case 'poisonpowder':
-						case 'stunspore':
-						case 'sleeppowder':
-						case 'toxic':
-							if (counter['Status'] > 1) rejected = true;
-							break;
-						} // End of switch for moveid
-					}
-					if (rejected) {
+					if ((!species.essentialMove || moveid !== species.essentialMove) && this.shouldCullMove(move, hasMove, counter).cull) {
 						moves.splice(i, 1);
 						break;
 					}
 					counter[move.category]++;
-				} // End of for
+				}
 			} // End of the check for more than 4 moves on moveset.
 		}
 
@@ -369,12 +333,12 @@ export class RandomGen1Teams extends RandomGen2Teams {
 		return {
 			name: species.name,
 			species: species.name,
-			moves: moves,
+			moves,
 			ability: 'None',
 			evs: {hp: 255, atk: 255, def: 255, spa: 255, spd: 255, spe: 255},
 			ivs: {hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30},
 			item: '',
-			level: level,
+			level,
 			shiny: false,
 			gender: false,
 		};

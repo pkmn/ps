@@ -203,15 +203,19 @@ const RANDOMS_IMPORTS = {
   ],
   'data/mods/gen3/random-teams.ts': [
     [['RandomGen4Teams'], './gen4'],
-    [['ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes'], '@pkmn/sim'],
+    [[
+      'ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes', 'Move', 'ID',
+    ], '@pkmn/sim'],
   ],
   'data/mods/gen2/random-teams.ts': [
     [['RandomGen3Teams'], './gen3'],
-    [['ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes'], '@pkmn/sim'],
+    [[
+      'ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes', 'Move',
+    ], '@pkmn/sim'],
   ],
   'data/mods/gen1/random-teams.ts': [
     [['RandomGen2Teams'], './gen2'],
-    [['ID', 'Species', 'RandomTeamsTypes'], '@pkmn/sim'],
+    [['ID', 'Species', 'RandomTeamsTypes', 'Move'], '@pkmn/sim'],
   ],
 };
 

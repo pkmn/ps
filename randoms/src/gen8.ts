@@ -80,12 +80,7 @@ export class RandomTeams {
 	 *
 	 * returns true to reject, false otherwise.
 	 */
-	moveRejectionCheckers: {
-		screens: MoveRejectionChecker,
-		recovery: MoveRejectionChecker,
-		lead: MoveRejectionChecker,
-		[k: string]: MoveRejectionChecker,
-	};
+	moveRejectionCheckers: {[k: string]: MoveRejectionChecker};
 
 	constructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {
 		this.dex = dex;
@@ -182,7 +177,7 @@ export class RandomTeams {
 			},
 			Water: (movePool, hasMove, hasAbility, hasType, counter, species) => {
 				if (!counter.Water && !hasMove['hypervoice']) return true;
-				if (movePool.includes('hypervoice')) return true;
+				if (movePool.includes('hypervoice') || movePool.includes('liquidation')) return true;
 				return hasAbility['Huge Power'] && movePool.includes('aquajet');
 			},
 		};
@@ -235,6 +230,20 @@ export class RandomTeams {
 		const length = list.length;
 		const index = this.random(length);
 		return this.fastPop(list, index);
+	}
+
+	/**
+	 * Removes n random elements from an unsorted array and returns them.
+	 * If n is less than the array's length, randomly removes and returns all the elements
+	 * in the array (so the returned array could have length < n).
+	 */
+	multipleSamplesNoReplace<T>(list: T[], n: number): T[] {
+		const samples = [];
+		while (samples.length < n && list.length) {
+			samples.push(this.sampleNoReplace(list));
+		}
+
+		return samples;
 	}
 
 	allowExtraRejectionInSingles(move: Move) {
@@ -301,7 +310,6 @@ export class RandomTeams {
 			const ability: string = this.gen <= 2 ? 'None' : this.sample(abilities);
 
 			// Four random unique moves from the movepool
-			let moves;
 			let pool = ['struggle'];
 			if (forme === 'Smeargle') {
 				pool = Object.keys(this.dex.data.Moves).filter(moveid => {
@@ -326,16 +334,8 @@ export class RandomTeams {
 					pool = [...new Set(pool.concat(basePool))];
 				}
 			}
-			if (pool.length <= 4) {
-				moves = pool;
-			} else {
-				moves = [
-					this.sampleNoReplace(pool),
-					this.sampleNoReplace(pool),
-					this.sampleNoReplace(pool),
-					this.sampleNoReplace(pool),
-				];
-			}
+
+			const moves = this.multipleSamplesNoReplace(pool, 4);
 
 			// Random EVs
 			const evs: StatsTable = {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0};
@@ -786,7 +786,10 @@ export class RandomTeams {
 			return {cull: counter.Physical + counter.Special < 3 || hasMove['rapidspin']};
 		case 'trickroom':
 			const webs = !!teamDetails.stickyWeb;
-			return {cull: isLead || webs || counter.damagingMoves.length < 2 || movePool.includes('nastyplot')};
+			return {cull:
+				isLead || webs || !!counter.speedsetup ||
+				counter.damagingMoves.length < 2 || movePool.includes('nastyplot'),
+			};
 		case 'zenheadbutt':
 			// Special case for Victini, which should prefer Bolt Strike to Zen Headbutt
 			return {cull: movePool.includes('boltstrike') || (species.id === 'eiscue' && hasMove['substitute'])};
@@ -929,8 +932,10 @@ export class RandomTeams {
 			// Special case for Virizion to prevent Leaf Blade on Assault Vest sets
 			return {cull: (hasMove['leafstorm'] || movePool.includes('leafstorm')) && counter.setupType !== 'Physical'};
 		case 'leafstorm':
+			const leafBladePossible = movePool.includes('leafblade') || hasMove['leafblade'];
 			return {cull:
-				(counter.setupType === 'Physical' && movePool.includes('leafblade')) ||
+				// Virizion should always prefer Leaf Blade to Leaf Storm on Physical sets
+				(counter.setupType === 'Physical' && (species.id === 'virizion' || leafBladePossible)) ||
 				(hasMove['gigadrain'] && counter.Status) ||
 				(isDoubles && hasMove['energyball']),
 			};
@@ -1032,9 +1037,6 @@ export class RandomTeams {
 			return {cull: ['foulplay', 'knockoff', 'suckerpunch'].some(m => hasMove[m]) || defogger};
 		case 'suckerpunch':
 			return {cull: hasMove['rest'] || counter.damagingMoves.length < 2 || (counter.Dark > 1 && !hasType['Dark'])};
-		case 'meteormash':
-			// Special case for Lucario, which always wants Extreme Speed
-			return {cull: movePool.includes('extremespeed')};
 		case 'dazzlinggleam':
 			return {cull: ['fleurcannon', 'moonblast', 'petaldance'].some(m => hasMove[m])};
 
@@ -1062,7 +1064,8 @@ export class RandomTeams {
 		case 'substitute':
 			const moveBasedCull = ['bulkup', 'painsplit', 'roost'].some(m => movePool.includes(m));
 			const doublesPowerWhip = isDoubles && movePool.includes('powerwhip');
-			const calmMindCullCondition = !counter.recovery && movePool.includes('calmmind');
+			// Calyrex wants Substitute + Leech Seed not Calm Mind + Leech Seed
+			const calmMindCullCondition = !counter.recovery && movePool.includes('calmmind') && species.id !== 'calyrex';
 			const eiscue = species.id === 'eiscue' && hasMove['zenheadbutt'];
 			return {cull: hasMove['rest'] || moveBasedCull || doublesPowerWhip || calmMindCullCondition || eiscue};
 		case 'helpinghand':
@@ -1073,6 +1076,12 @@ export class RandomTeams {
 		case 'grassknot':
 			// Special case for Raichu
 			return {cull: hasMove['surf']};
+		case 'icepunch':
+			// Special cases for Marshadow and Lucario respectively
+			return {cull: hasMove['rocktomb'] || movePool.includes('extremespeed')};
+		case 'leechseed':
+			// Special case for Calyrex
+			return {cull: !!counter.setupType};
 		}
 
 		if (move.id !== 'photongeyser' && (
@@ -1142,6 +1151,7 @@ export class RandomTeams {
 		case 'Infiltrator':
 			return (hasMove['rest'] && hasMove['sleeptalk']) || (isDoubles && hasAbility['Clear Body']);
 		case 'Intimidate':
+			if (species.id === 'salamence' && hasMove['dragondance']) return true;
 			return ['bodyslam', 'bounce', 'tripleaxel'].some(m => hasMove[m]);
 		case 'Iron Fist':
 			return (counter.ironfist < 2 || hasMove['dynamicpunch']);
@@ -1199,7 +1209,8 @@ export class RandomTeams {
 		case 'Slush Rush':
 			return (!teamDetails.hail && !hasAbility['Swift Swim']);
 		case 'Sniper':
-			return (counter.Water > 1 && !hasMove['focusenergy']);
+			// Inteleon wants Torrent unless it is Gmax
+			return (species.name === 'Inteleon' || (counter.Water > 1 && !hasMove['focusenergy']));
 		case 'Steely Spirit':
 			return (hasMove['fakeout'] && !isDoubles);
 		case 'Sturdy':
@@ -1255,7 +1266,7 @@ export class RandomTeams {
 		isDoubles: boolean
 	) {
 		// not undefined — we want "no item" not "go find a different item"
-		if (hasMove['acrobatics']) return ability === 'Grassy Surge' ? 'Grassy Seed' : '';
+		if (hasMove['acrobatics'] && ability !== 'Ripen') return ability === 'Grassy Surge' ? 'Grassy Seed' : '';
 		if (hasMove['geomancy'] || hasMove['meteorbeam']) return 'Power Herb';
 		if (hasMove['shellsmash']) return (ability === 'Sturdy' && !isLead && !isDoubles) ? 'Heavy-Duty Boots' : 'White Herb';
 		// Species-specific logic
@@ -1279,6 +1290,7 @@ export class RandomTeams {
 		}
 		if (species.name === 'Shuckle' && hasMove['stickyweb']) return 'Mental Herb';
 		if (species.name === 'Unfezant' || hasMove['focusenergy']) return 'Scope Lens';
+		if (species.name === 'Pincurchin') return 'Shuca Berry';
 		if (hasMove['bellydrum'] && hasMove['substitute']) return 'Salac Berry';
 
 		// Misc item generation logic
@@ -1454,12 +1466,15 @@ export class RandomTeams {
 		) return 'Focus Sash';
 		if (!isDoubles && ability === 'Water Bubble') return 'Mystic Water';
 		if (hasMove['clangoroussoul'] || (hasMove['boomburst'] && counter.speedsetup)) return 'Throat Spray';
+
 		const rockWeaknessCase = (
 			this.dex.getEffectiveness('Rock', species) >= 1 &&
 			(!teamDetails.defog || ability === 'Intimidate' || hasMove['uturn'] || hasMove['voltswitch'])
 		);
 		const spinnerCase = (hasMove['rapidspin'] && (ability === 'Regenerator' || !!counter.recovery));
-		if (!isDoubles && (rockWeaknessCase || spinnerCase)) return 'Heavy-Duty Boots';
+		// Glalie prefers Leftovers
+		if (!isDoubles && (rockWeaknessCase || spinnerCase) && species.id !== 'glalie') return 'Heavy-Duty Boots';
+
 		if (
 			!isDoubles && this.dex.getEffectiveness('Ground', species) >= 2 && !hasType['Poison'] &&
 			ability !== 'Levitate' && !hasAbility['Iron Barbs']
@@ -1671,7 +1686,10 @@ export class RandomTeams {
 			// Hardcoded abilities for certain contexts
 			if (forme === 'Copperajah' && gmax) {
 				ability = 'Heavy Metal';
-			} else if (hasAbility['Guts'] && (hasMove['facade'] || (hasMove['rest'] && hasMove['sleeptalk']))) {
+			} else if (hasAbility['Guts'] && (
+				species.id === 'gurdurr' || species.id === 'throh' ||
+				hasMove['facade'] || (hasMove['rest'] && hasMove['sleeptalk'])
+			)) {
 				ability = 'Guts';
 			} else if (hasAbility['Moxie'] && (counter.Physical > 3 || hasMove['bounce']) && !isDoubles) {
 				ability = 'Moxie';
@@ -1858,6 +1876,13 @@ export class RandomTeams {
 
 			// Illusion shouldn't be on the last slot
 			if (species.name === 'Zoroark' && pokemon.length > 4) continue;
+			// The sixth slot should not be Zacian/Zamazenta/Eternatus if a Zoroark is present
+			if (
+				pokemon.some(pkmn => pkmn.species === 'Zoroark') &&
+				['Zacian', 'Zacian-Crowned', 'Zamazenta', 'Zamazenta-Crowned', 'Eternatus'].includes(species.name)
+			) {
+				continue;
+			}
 
 			const tier = species.tier;
 			const types = species.types;

@@ -3737,6 +3737,7 @@
     "stokedsparksurfer": {"inherit": true, "isNonstandard": null},
     "subzeroslammer": {"inherit": true, "isNonstandard": null},
     "supersonicskystrike": {"inherit": true, "isNonstandard": null},
+    "switcheroo": {"inherit": true},
     "synchronoise": {"inherit": true, "isNonstandard": null},
     "tailglow": {"inherit": true, "isNonstandard": null},
     "tectonicrage": {"inherit": true, "isNonstandard": null},
@@ -3758,6 +3759,7 @@
       }
     },
     "toxicthread": {"inherit": true, "isNonstandard": null},
+    "trick": {"inherit": true},
     "trumpcard": {"inherit": true, "isNonstandard": null},
     "twineedle": {"inherit": true, "isNonstandard": null},
     "twinkletackle": {"inherit": true, "isNonstandard": null},
@@ -3815,7 +3817,7 @@
     },
     "entrainment": {
       "inherit": true,
-      "desc": "Causes the target's Ability to become the same as the user's. Fails if the target's Ability is Battle Bond, Comatose, Disguise, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, Truant, or Zen Mode, or the same Ability as the user, or if the user's Ability is Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Illusion, Imposter, Multitype, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, Wonder Guard, or Zen Mode."
+      "desc": "Causes the target's Ability to become the same as the user's. Fails if the target's Ability is Battle Bond, Comatose, Disguise, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, Truant, or Zen Mode, or the same Ability as the user, or if the user's Ability is Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Illusion, Imposter, Multitype, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, or Zen Mode."
     },
     "fairylock": {
       "inherit": true,
@@ -7226,7 +7228,7 @@
       "target": "normal",
       "type": "Normal",
       "zMove": {"boost": {"spd": 1}},
-      "desc": "Causes the target's Ability to become the same as the user's. Fails if the target's Ability is As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, Truant, or Zen Mode, or the same Ability as the user, or if the user's Ability is As One, Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Neutralizing Gas, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, Wonder Guard, or Zen Mode.",
+      "desc": "Causes the target's Ability to become the same as the user's. Fails if the target's Ability is As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, Truant, or Zen Mode, or the same Ability as the user, or if the user's Ability is As One, Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Neutralizing Gas, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, or Zen Mode.",
       "shortDesc": "The target's Ability changes to match the user's."
     },
     "eruption": {

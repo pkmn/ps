@@ -10,11 +10,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/data": "^0.3.16",
+    "@pkmn/data": "^0.3.17",
     "@pkmn/protocol": "^0.2.0"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.3.16"
+    "@pkmn/dex": "^0.3.17"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
