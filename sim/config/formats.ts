@@ -199,7 +199,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		ruleset: ['[Gen 8] PU'],
-		banlist: ['PU', 'Exeggutor-Alola', 'Gallade', 'Haunter', 'Scrafty', 'Toxicroak', 'Turtonator', 'Vikavolt'],
+		banlist: ['PU', 'Exeggutor-Alola', 'Gallade', 'Haunter', 'Scrafty', 'Toxicroak', 'Turtonator', 'Vikavolt', 'Sneasel'],
 	},
 	{
 		name: "[Gen 8] LC UU",
@@ -1452,7 +1452,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		team: 'randomCC',
-		ruleset: ['Obtainable', 'HP Percentage Mod', 'Cancel Mod', 'Dynamax Clause'],
+		ruleset: ['Obtainable', 'HP Percentage Mod', 'Cancel Mod'],
 	},
 	{
 		name: "[Gen 8] Challenge Cup 1v1",
@@ -1462,7 +1462,7 @@ export const Formats: FormatList = [
 		teamLength: {
 			battle: 1,
 		},
-		ruleset: ['[Gen 8] Challenge Cup', 'Team Preview'],
+		ruleset: ['[Gen 8] Challenge Cup', 'Team Preview', 'Dynamax Clause'],
 	},
 	{
 		name: "[Gen 8] Challenge Cup 2v2",
@@ -1627,7 +1627,6 @@ export const Formats: FormatList = [
 		mod: 'gen1',
 		team: 'randomCC',
 		searchShow: false,
-		challengeShow: false,
 		ruleset: ['Obtainable', 'HP Percentage Mod', 'Cancel Mod', 'Desync Clause Mod'],
 	},
 
