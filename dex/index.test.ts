@@ -339,6 +339,9 @@ describe('Dex', () => {
         .toEqual({'0': 'Torrent', 'H': 'Protean'});
       expect(Dex.forGen(7).getSpecies('Greninja').abilities)
         .toEqual({'0': 'Torrent', 'H': 'Protean', 'S': 'Battle Bond'});
+      // FIXME should Unaware be excluded?
+      expect(Dex.forGen(3).getSpecies('Clefable').abilities)
+        .toEqual({'0': 'Cute Charm', '1': 'Magic Guard', H: 'Unaware'});
       expect(Dex.forGen(2).getSpecies('Snorlax').tier).toBe('OU');
       expect(Dex.forGen(5).getSpecies('Snorlax').tier).toBe('UU');
       expect(

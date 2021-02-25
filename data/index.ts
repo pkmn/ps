@@ -272,10 +272,11 @@ export class Specie implements DexSpecies {
   private readonly dex: Dex;
 
   private static readonly EXCLUDE = new Set([
+    'abilities',
+    'cosmeticFormes',
     'evos',
     'gender',
     'genderRatio',
-    'cosmeticFormes',
     'nfe',
     'otherFormes',
     'prevo',
@@ -289,6 +290,17 @@ export class Specie implements DexSpecies {
       this.genderRatio = species.genderRatio;
     } else {
       this.genderRatio = {M: 0, F: 0};
+    }
+    if (this.dex.gen >= 3) {
+      this.abilities = {0: species.abilities[0]};
+      // "because PS", Pokemon have the abilities that were added in Gen 4 in Gen 3 :bigthonk:
+      if (this.abilities[1] && this.dex.getAbility(this.abilities[1]).gen <= this.dex.gen) {
+        this.abilities[1] = species.abilities[1];
+      }
+      if (this.dex.gen >= 5 && species.abilities.H) this.abilities.H = species.abilities.H;
+      if (this.dex.gen >= 7 && species.abilities.S) this.abilities.S = species.abilities.S;
+    } else {
+      this.abilities = {0: ''};
     }
     this.evos = species.evos?.filter(s => exists(this.dex.getSpecies(s)));
     this.nfe = !!this.evos?.length;

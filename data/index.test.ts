@@ -344,6 +344,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(6).species.get('Greninja')!.abilities).toEqual({'0': 'Torrent', 'H': 'Protean'});
         expect(Gen(7).species.get('Greninja')!.abilities)
           .toEqual({'0': 'Torrent', 'H': 'Protean', 'S': 'Battle Bond'});
+        expect(Gen(3).species.get('Clefable')!.abilities).toEqual({'0': 'Cute Charm'});
         expect(Gen(2).species.get('Snorlax')!.tier).toBe('OU');
         expect(Gen(5).species.get('Snorlax')!.tier).toBe('UU');
         expect(Gen(3).species.get('Chansey')!.prevo).toBeUndefined();
