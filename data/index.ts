@@ -294,7 +294,7 @@ export class Specie implements DexSpecies {
     if (this.dex.gen >= 3) {
       this.abilities = {0: species.abilities[0]};
       // "because PS", Pokemon have the abilities that were added in Gen 4 in Gen 3 :bigthonk:
-      if (this.abilities[1] && this.dex.getAbility(this.abilities[1]).gen <= this.dex.gen) {
+      if (species.abilities[1] && this.dex.getAbility(species.abilities[1]).gen <= this.dex.gen) {
         this.abilities[1] = species.abilities[1];
       }
       if (this.dex.gen >= 5 && species.abilities.H) this.abilities.H = species.abilities.H;

@@ -803,6 +803,7 @@ export class ModdedDex implements T.Dex {
         species.eggGroups[0]
       ) && !species.prevo && species.name !== 'Manaphy');
       if (this.gen === 1) (species as any).bst -= species.baseStats.spd;
+      if (this.gen < 5) delete species.abilities['H'];
     } else {
       species = new Species({
         id, name, exists: false, tier: 'Illegal', doublesTier: 'Illegal', isNonstandard: 'Custom',
