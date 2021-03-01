@@ -60,9 +60,10 @@ const SpeedSetup = [
 ];
 // Moves that shouldn't be the only STAB moves:
 const NoStab = [
-	'accelerock', 'aquajet', 'beakblast', 'bounce', 'breakingswipe', 'explosion', 'fakeout', 'firstimpression', 'flamecharge',
-	'flipturn', 'iceshard', 'machpunch', 'pluck', 'pursuit', 'quickattack', 'selfdestruct', 'skydrop', 'suckerpunch', 'watershuriken',
-	'chatter', 'clearsmog', 'eruption', 'icywind', 'incinerate', 'meteorbeam', 'snarl', 'vacuumwave', 'voltswitch', 'waterspout',
+	'accelerock', 'aquajet', 'beakblast', 'bounce', 'breakingswipe', 'chatter', 'clearsmog', 'eruption', 'explosion',
+	'fakeout', 'firstimpression', 'flamecharge', 'flipturn', 'iceshard', 'icywind', 'incinerate', 'machpunch',
+	'meteorbeam', 'pluck', 'pursuit', 'quickattack', 'selfdestruct', 'skydrop', 'snarl', 'suckerpunch', 'uturn', 'watershuriken',
+	'vacuumwave', 'voltswitch', 'waterspout',
 ];
 // Hazard-setting moves
 const Hazards = [
@@ -121,6 +122,7 @@ export class RandomTeams {
 				return hasMove['suckerpunch'] && (movePool.includes('knockoff') || movePool.includes('wickedblow'));
 			},
 			Dragon: (movePool, hasMove, hasAbility, hasType, counter) => (
+				!(counter.setupType === 'Physical' && hasType['Flying']) &&
 				!counter.Dragon &&
 				!hasMove['dragonascent'] &&
 				!hasMove['substitute'] &&
@@ -143,7 +145,7 @@ export class RandomTeams {
 				].some(moveid => movePool.includes(moveid))
 			),
 			Ghost: (movePool, hasMove, hasAbility, hasType, counter) => {
-				if (!counter.Ghost) return true;
+				if (!counter.Ghost && !hasType['Dark']) return true;
 				if (movePool.includes('poltergeist')) return true;
 				return movePool.includes('spectralthief') && !counter.Dark;
 			},
@@ -354,7 +356,7 @@ export class RandomTeams {
 				atk: this.random(32),
 				def: this.random(32),
 				spa: this.random(32),
-				pd: this.random(32),
+				spd: this.random(32),
 				spe: this.random(32),
 			};
 
@@ -737,8 +739,11 @@ export class RandomTeams {
 			// In Doubles, Pokémon with Defense stats >= 140 should always have body press
 			return {cull: true};
 		}
-		if (species.id === 'entei' && movePool.includes('extremespeed')) {
-			// Entei should always have Extreme Speed
+		if (
+			(species.id === 'entei' && movePool.includes('extremespeed')) ||
+			(species.id === 'genesectdouse' && movePool.includes('technoblast'))
+		) {
+			// Entei should always have Extreme Speed, and Genesect-Douse should always have Techno Blast
 			return {cull: true};
 		}
 
@@ -747,9 +752,9 @@ export class RandomTeams {
 		// Reject moves that need support
 		switch (move.id) {
 		case 'acrobatics': case 'junglehealing':
-			return {cull: !isDoubles && !counter.setupType};
-		case 'destinybond': case 'healbell':
-			// Destiny Bond: Special case for preventing Leftovers Sharpedo
+			// Special case to prevent lead Acrobatics Rillaboom
+			return {cull: (species.id.startsWith('rillaboom') && isLead) || (!isDoubles && !counter.setupType)};
+		case 'healbell':
 			return {cull: movePool.includes('protect') || movePool.includes('wish')};
 		case 'dualwingbeat': case 'fly':
 			return {cull: !hasType[move.type] && !counter.setupType && counter.Status};
@@ -846,17 +851,21 @@ export class RandomTeams {
 			return {cull: counter.setupType || ['protect', 'rapidspin', 'substitute', 'uturn'].some(m => hasMove[m])};
 		case 'healingwish': case 'memento':
 			return {cull: counter.setupType || counter.recovery || hasMove['substitute'] || hasMove['uturn']};
-		case 'highjumpkick': case 'machpunch':
-			// Special case for Hitmonlee to mostly prevent non-Unburden Curse; 1% chance to fail
+		case 'highjumpkick':
+			// Special case for Hitmonlee to prevent non-Unburden Curse
 			return {cull: hasMove['curse']};
 		case 'partingshot':
 			return {cull: counter.speedsetup || hasMove['bulkup'] || hasMove['uturn']};
 		case 'protect':
 			if ((counter.setupType && !hasMove['wish'] && !isDoubles) || hasRestTalk) return {cull: true};
-			if (!isDoubles && counter.Status < 2 && !hasAbility['Hunger Switch'] && !hasAbility['Speed Boost']) return {cull: true};
+			if (
+				!isDoubles &&
+				counter.Status < 2 &&
+				['Hunger Switch', 'Speed Boost', 'Moody'].every(m => !hasAbility[m])
+			) return {cull: true};
 			if (movePool.includes('leechseed') || (movePool.includes('toxic') && !hasMove['wish'])) return {cull: true};
 			if (isDoubles && (
-				['bellydrum', 'fakeout', 'shellsmash', 'spore'].some(m => movePool.includes('m')) ||
+				['bellydrum', 'fakeout', 'shellsmash', 'spore'].some(m => movePool.includes(m)) ||
 				hasMove['tailwind'] || hasMove['waterspout']
 			)) return {cull: true};
 			return {cull: false};
@@ -864,7 +873,8 @@ export class RandomTeams {
 			const setup = ['curse', 'nastyplot', 'shellsmash'].some(m => hasMove[m]);
 			return {cull: !!teamDetails.rapidSpin || setup || (counter.setupType && counter.Fighting >= 2)};
 		case 'shadowsneak':
-			return {cull: hasRestTalk || ['substitute', 'trickroom', 'dualwingbeat', 'toxic'].some(m => hasMove[m])};
+			const sneakIncompatible = ['substitute', 'trickroom', 'dualwingbeat', 'toxic'].some(m => hasMove[m]);
+			return {cull: hasRestTalk || sneakIncompatible || counter.setupType === 'Special'};
 		case 'spikes':
 			return {cull: counter.setupType || (teamDetails.spikes && teamDetails.spikes > 1)};
 		case 'stealthrock':
@@ -886,22 +896,23 @@ export class RandomTeams {
 		case 'toxicspikes':
 			return {cull: counter.setupType || teamDetails.toxicSpikes};
 		case 'uturn':
-			const bugAndRecovery = hasType['Bug'] && counter.recovery;
-			return {cull: counter.speedsetup || (counter.setupType && !bugAndRecovery) || (isDoubles && hasMove['leechlife'])};
+			const bugSwordsDanceCase = hasType['Bug'] && counter.recovery && hasMove['swordsdance'];
+			return {cull: counter.speedsetup || (counter.setupType && !bugSwordsDanceCase) || (isDoubles && hasMove['leechlife'])};
 
 		// Ineffective to have two particular moves together
 		case 'explosion':
-			// Special case for Gigalith
-			// [15:33] A Cake Wearing A Hat: meant to prevent rock blast as only stab on choice band
+			// Rock Blast: Special case for Gigalith to prevent Stone Edge-less Choice Band sets
 			const otherMoves = ['curse', 'drainpunch', 'rockblast', 'painsplit', 'wish'].some(m => hasMove[m]);
 			return {cull: counter.speedsetup || counter.recovery || otherMoves};
 		case 'facade':
+			// Special cases for Braviary and regular Snorlax, respectively
 			return {cull: counter.recovery || movePool.includes('doubleedge')};
 		case 'quickattack':
-			const uturnCullCondition = counter.Physical > 3 && movePool.includes('uturn');
-			return {cull: counter.speedsetup || (hasType['Rock'] && counter.Status) || uturnCullCondition};
+			// Diggersby wants U-turn on Choiced sets
+			const diggersbyCull = counter.Physical > 3 && movePool.includes('uturn');
+			return {cull: counter.speedsetup || (hasType['Rock'] && counter.Status) || diggersbyCull};
 		case 'blazekick':
-			return {cull: counter.Special >= 1};
+			return {cull: species.id === 'genesect' && counter.Special >= 1};
 		case 'firefang': case 'flamethrower':
 			// Fire Fang: Special case for Garchomp, which doesn't want Fire Fang w/o Swords Dance
 			const otherFireMoves = ['heatwave', 'overheat'].some(m => hasMove[m]);
@@ -926,6 +937,7 @@ export class RandomTeams {
 			// Special case for Goodra, which only wants one move to hit Water-types
 			return {cull: hasMove['powerwhip']};
 		case 'gigadrain':
+			// Celebi always wants Leaf Storm on its more pivoting-focused non-Nasty Plot sets
 			const celebiPreferLeafStorm = species.id === 'celebi' && !counter.setupType && hasMove['uturn'];
 			return {cull: celebiPreferLeafStorm || (hasType['Poison'] && !counter.Poison)};
 		case 'leafblade':
@@ -949,9 +961,10 @@ export class RandomTeams {
 			const preferThunderWave = movePool.includes('thunderwave') && hasType['Electric'];
 			return {cull: betterIceMove || preferThunderWave || movePool.includes('bodyslam')};
 		case 'bodypress':
-			// Partially a special case for Turtonator to make EQ=Smash, Press=Not Smash, never both
-			const eqShellSmashPossible = hasMove['earthquake'] && movePool.includes('shellsmash');
-			return {cull: eqShellSmashPossible || ['shellsmash', 'mirrorcoat', 'whirlwind'].some(m => hasMove[m])};
+			// Turtonator never wants Earthquake + Body Press, and wants EQ+Smash or Press+No Smash
+			const turtonatorPressCull = species.id === 'turtonator' && hasMove['earthquake'] && movePool.includes('shellsmash');
+			const pressIncompatible = ['shellsmash', 'mirrorcoat', 'whirlwind'].some(m => hasMove[m]);
+			return {cull: turtonatorPressCull || pressIncompatible || counter.setupType === 'Special'};
 		case 'circlethrow':
 			// Part of a special case for Throh to pick one specific Fighting move depending on its set
 			return {cull: hasMove['stormthrow'] && !hasMove['rest']};
@@ -980,18 +993,20 @@ export class RandomTeams {
 			return {cull: !hasType['Poison'] && counter.Status >= 2};
 		case 'earthquake':
 			const doublesCull = hasMove['earthpower'] || hasMove['highhorsepower'];
-			const movePoolCull = movePool.includes('bodypress') && movePool.includes('shellsmash');
+			// Turtonator wants Body Press when it doesn't have Shell Smash
+			const turtQuakeCull = species.id === 'turtonator' && movePool.includes('bodypress') && movePool.includes('shellsmash');
 			const subToxicPossible = hasMove['substitute'] && movePool.includes('toxic');
-			return {cull: movePoolCull || (isDoubles && doublesCull) || subToxicPossible || hasMove['bonemerang']};
+			return {cull: turtQuakeCull || (isDoubles && doublesCull) || subToxicPossible || hasMove['bonemerang']};
 		case 'scorchingsands':
 			// Special cases for Ninetales and Palossand; prevents status redundancy
 			return {cull: hasMove['willowisp'] || hasMove['earthpower'] || (hasMove['toxic'] && movePool.includes('earthpower'))};
 		case 'airslash':
-			return {
-				cull: movePool.includes('flamethrower') ||
-					(hasMove['hurricane'] && !counter.setupType) ||
-					hasRestTalk ||
-					(hasAbility['Simple'] && !!counter.recovery),
+			return {cull:
+				movePool.includes('flamethrower') ||
+				(hasMove['hurricane'] && !counter.setupType) ||
+				hasRestTalk ||
+				(hasAbility['Simple'] && !!counter.recovery) ||
+				counter.setupType === 'Physical',
 			};
 		case 'bravebird':
 			// Special case for Mew, which only wants Brave Bird with Swords Dance
@@ -1012,7 +1027,11 @@ export class RandomTeams {
 		case 'bugbuzz':
 			return {cull: hasMove['uturn'] && !counter.setupType};
 		case 'leechlife':
-			return {cull: (isDoubles && hasMove['lunge']) || movePool.includes('firstimpression') || movePool.includes('spikes')};
+			return {cull:
+				(isDoubles && hasMove['lunge']) ||
+				(hasMove['uturn'] && !counter.setupType) ||
+				movePool.includes('firstimpression') || movePool.includes('spikes'),
+			};
 		case 'stoneedge':
 			const gutsCullCondition = hasAbility['Guts'] && (!hasMove['dynamicpunch'] || hasMove['spikes']);
 			const rockSlidePlusStatusPossible = counter.Status && movePool.includes('rockslide');
@@ -1022,21 +1041,28 @@ export class RandomTeams {
 			// Special case for Dhelmise in Doubles, which doesn't want both
 			return {cull: hasMove['knockoff']};
 		case 'shadowball':
-			const cull = (
+			return {cull:
 				(isDoubles && hasMove['phantomforce']) ||
+				// Special case for Sylveon, which never wants Shadow Ball as its only coverage move
 				(hasAbility['Pixilate'] && (counter.setupType || counter.Status > 1)) ||
-				(!hasType['Ghost'] && movePool.includes('focusblast'))
-			);
-			return {cull};
+				(!hasType['Ghost'] && movePool.includes('focusblast')),
+			};
 		case 'shadowclaw':
 			return {cull: hasType['Steel'] && hasMove['shadowsneak'] && counter.Physical < 4};
 		case 'dragonpulse': case 'spacialrend':
 			return {cull: hasMove['dracometeor'] && counter.Special < 4};
 		case 'darkpulse':
-			const defogger = hasMove['defog'] && counter.setupType !== 'Special';
-			return {cull: ['foulplay', 'knockoff', 'suckerpunch'].some(m => hasMove[m]) || defogger};
+			const pulseIncompatible = ['defog', 'foulplay', 'knockoff', 'suckerpunch'].some(m => hasMove[m]);
+			// Special clause to prevent bugged Shiftry sets with Sucker Punch + Nasty Plot
+			const shiftryCase = movePool.includes('nastyplot') && !hasMove['defog'];
+			return {cull: pulseIncompatible && !shiftryCase && counter.setupType !== 'Special'};
 		case 'suckerpunch':
-			return {cull: hasMove['rest'] || counter.damagingMoves.length < 2 || (counter.Dark > 1 && !hasType['Dark'])};
+			return {cull:
+				hasMove['rest'] ||
+				counter.damagingMoves.length < 2 ||
+				(counter.setupType === 'Special') ||
+				(counter.Dark > 1 && !hasType['Dark']),
+			};
 		case 'dazzlinggleam':
 			return {cull: ['fleurcannon', 'moonblast', 'petaldance'].some(m => hasMove[m])};
 
@@ -1056,31 +1082,38 @@ export class RandomTeams {
 			return {cull: hasMove['rest'] || hasMove['wish'] || (move.id === 'synthesis' && hasMove['gigadrain'])};
 		case 'roost':
 			// Special case for Hawlucha, which doesn't want Roost + 3 attacks
-			return {cull: hasMove['throatchop'] || (hasMove['stoneedge'] && !hasType['Rock'])};
+			return {cull:
+				hasMove['throatchop'] ||
+				(hasMove['stoneedge'] && !hasType['Rock']) ||
+				(hasMove['outrage'] && hasMove['dualwingbeat'] && !hasMove['defog']),
+			};
 		case 'reflect': case 'lightscreen':
 			return {cull: !!teamDetails.screens};
 		case 'slackoff':
+			// Special case to prevent Scaldless Slowking
 			return {cull: species.id === 'slowking' && !hasMove['scald']};
 		case 'substitute':
-			const moveBasedCull = ['bulkup', 'painsplit', 'roost'].some(m => movePool.includes(m));
-			const doublesPowerWhip = isDoubles && movePool.includes('powerwhip');
+			const moveBasedCull = ['bulkup', 'nastyplot', 'painsplit', 'roost', 'swordsdance'].some(m => movePool.includes(m));
+			// Smaller formes of Gourgeist in Doubles don't want Poltergeist as their only attack
+			const doublesGourgeist = isDoubles && movePool.includes('powerwhip');
 			// Calyrex wants Substitute + Leech Seed not Calm Mind + Leech Seed
 			const calmMindCullCondition = !counter.recovery && movePool.includes('calmmind') && species.id !== 'calyrex';
+			// Eiscue wants to always have Liquidation and Belly Drum
 			const eiscue = species.id === 'eiscue' && hasMove['zenheadbutt'];
-			return {cull: hasMove['rest'] || moveBasedCull || doublesPowerWhip || calmMindCullCondition || eiscue};
+			return {cull: hasMove['rest'] || moveBasedCull || doublesGourgeist || calmMindCullCondition || eiscue};
 		case 'helpinghand':
 			// Special case for Shuckle in Doubles, which doesn't want sets with no method to harm foes
 			return {cull: hasMove['acupressure']};
 		case 'wideguard':
 			return {cull: hasMove['protect']};
 		case 'grassknot':
-			// Special case for Raichu
+			// Special case for Raichu and Heliolisk
 			return {cull: hasMove['surf']};
 		case 'icepunch':
-			// Special cases for Marshadow and Lucario respectively
-			return {cull: hasMove['rocktomb'] || movePool.includes('extremespeed')};
+			// Special cases for Marshadow and Lucario, respectively
+			return {cull: hasMove['rocktomb'] || (species.id === 'lucario' && counter.setupType)};
 		case 'leechseed':
-			// Special case for Calyrex
+			// Special case for Calyrex to prevent Leech Seed + Calm Mind
 			return {cull: !!counter.setupType};
 		}
 
@@ -1269,6 +1302,8 @@ export class RandomTeams {
 		if (hasMove['acrobatics'] && ability !== 'Ripen') return ability === 'Grassy Surge' ? 'Grassy Seed' : '';
 		if (hasMove['geomancy'] || hasMove['meteorbeam']) return 'Power Herb';
 		if (hasMove['shellsmash']) return (ability === 'Sturdy' && !isLead && !isDoubles) ? 'Heavy-Duty Boots' : 'White Herb';
+		// Techno Blast should always be Water-type
+		if (hasMove['technoblast']) return 'Douse Drive';
 		// Species-specific logic
 		if (
 			['Corsola', 'Garchomp', 'Tangrowth'].includes(species.name) &&
@@ -1494,6 +1529,7 @@ export class RandomTeams {
 		if (!isDoubles && counter.damagingMoves.length >= 4 && !counter.Dragon && !counter.Normal) return 'Expert Belt';
 		if (
 			!isDoubles &&
+			!hasMove['substitute'] &&
 			(hasMove['dragondance'] || hasMove['swordsdance']) &&
 			(hasMove['outrage'] || (
 				['Bug', 'Fire', 'Ground', 'Normal', 'Poison'].every(type => !hasType[type]) &&
@@ -1587,7 +1623,9 @@ export class RandomTeams {
 
 				// Pokemon should have moves that benefit their types, stats, or ability
 				const isLowBP = move.basePower && move.basePower < 50;
-				const moveNeedsExtraChecks = (
+
+				// Genesect-Douse should never reject Techno Blast
+				const moveNeedsExtraChecks = !(species.id === 'genesectdouse' && move.id === 'technoblast') && (
 					move.category === 'Status' ||
 					!hasType[move.type] ||
 					(isLowBP && !move.multihit && !hasAbility['Technician'])
@@ -1617,7 +1655,9 @@ export class RandomTeams {
 						rejected = true;
 					} else {
 						for (const type of Object.keys(hasType)) {
-							if (runRejectionChecker(type)) rejected = true;
+							if (runRejectionChecker(type)) {
+								rejected = true;
+							}
 						}
 					}
 				}

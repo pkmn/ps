@@ -215,7 +215,10 @@ const RANDOMS_IMPORTS = {
   ],
   'data/mods/gen1/random-teams.ts': [
     [['RandomGen2Teams'], './gen2'],
-    [['ID', 'Species', 'RandomTeamsTypes', 'Move'], '@pkmn/sim'],
+    [['Utils'], './utils'],
+    [[
+      'ID', 'Species', 'RandomTeamsTypes', 'Move', 'StatsTable', 'StatName', 'PokemonSet',
+    ], '@pkmn/sim'],
   ],
 };
 
