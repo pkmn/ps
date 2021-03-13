@@ -2184,11 +2184,11 @@ function upgradeBattleArgs({args, kwArgs}: {
     if (id === 'fairylock') return {args: ['-fieldactivate', effect], kwArgs: {}};
 
     if (id === 'symbiosis' || id === 'poltergeist') {
-      kwArgs.item = arg3!;
+      kwArgs.item = arg3;
     } else if (id === 'magnitude') {
-      kwArgs.number = arg3!;
+      kwArgs.number = arg3;
     } else if (id === 'skillswap' || id === 'mummy') {
-      kwArgs.ability = arg3!;
+      kwArgs.ability = arg3;
       kwArgs.ability2 = arg4;
     } else if (id === 'wanderingspirit') {
       // FIXME: workaround for an interaction between Wandering Spirit and Protective Pads
@@ -2206,7 +2206,7 @@ function upgradeBattleArgs({args, kwArgs}: {
         };
       }
     } else if (NUMBERABLE.has(id)) {
-      kwArgs.move = arg3!;
+      kwArgs.move = arg3;
       kwArgs.number = arg4;
     }
     return {

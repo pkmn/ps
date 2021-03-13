@@ -2262,7 +2262,6 @@
     "shortDescGen6": "This Pokemon's Normal-type moves become Ice type and have 1.3x power."
   },
   "roughskin": {
-    "descGen4": "Pokemon making contact with this Pokemon lose 1/16 of their maximum HP, rounded down. This effect does not happen if this Pokemon did not lose HP from the attack.",
     "descGen3": "Pokemon making contact with this Pokemon lose 1/16 of their maximum HP, rounded down. This effect does not happen if this Pokemon did not lose HP from the attack.",
     "shortDescGen3": "Pokemon making contact with this Pokemon lose 1/16 of their max HP.",
     "damage": "  [POKEMON] was hurt!"

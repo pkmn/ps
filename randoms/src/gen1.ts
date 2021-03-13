@@ -331,6 +331,8 @@ export class RandomGen1Teams extends RandomGen2Teams {
 		const levelScale: {[k: string]: number} = {
 			LC: 88,
 			NFE: 80,
+			NU: 77,
+			NUBL: 76,
 			UU: 74,
 			OU: 68,
 			Uber: 65,
@@ -426,7 +428,7 @@ export class RandomGen1Teams extends RandomGen2Teams {
 			ivs['spd'] = ivs['spa'];
 
 			// Level balance
-			const mbstmin = 1307;
+			const mbstmin = 425;
 			const baseStats = hackmonsCup[species.id].baseStats;
 			const calcStat = (statName: StatName, lvl?: number) => {
 				if (lvl) {
@@ -448,6 +450,7 @@ export class RandomGen1Teams extends RandomGen2Teams {
 				if (mbst >= mbstmin) break;
 				level++;
 			}
+			if (level > 100) level = 100;
 
 			team.push({
 				name: species.baseSpecies,

@@ -329,7 +329,7 @@ export class Handler implements Protocol.Handler {
     for (let k = 0; k < 2; k++) {
       const poke = c[`poke${k + 1}` as 'poke1' | 'poke2'] =
         this.battle.getPokemon(args[1 + 2 * k] as PokemonIdent);
-      if (poke) c[`health${k + 1}` as 'health1' | 'health2'] = poke.healthParse(args[2 + 2 * k])!;
+      if (poke) c[`health${k + 1}` as 'health1' | 'health2'] = poke.healthParse(args[2 + 2 * k]);
     }
   }
 

@@ -174,7 +174,7 @@ const RANDOMS_IMPORTS = {
   'data/random-teams.ts': [
     [[
       'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatName',
-      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ModdedDex', 'Move',
+      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ModdedDex', 'Move', 'ID',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen7/random-teams.ts': [
@@ -182,24 +182,30 @@ const RANDOMS_IMPORTS = {
     [['Utils'], './utils'],
     [[
       'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed',
-      'Format', 'Species', 'RandomTeamsTypes', 'toID',
+      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ID', 'Move',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen6/random-teams.ts': [
     [['RandomGen7Teams'], './gen7'],
     [['TeamData'], './gen8'],
     [[
-      'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed',
-      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'StatName',
+      'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'Move',
+      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'StatName', 'ID',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen5/random-teams.ts': [
     [['RandomGen6Teams'], './gen6'],
-    [['Species', 'StatName', 'SparseStatsTable', 'RandomTeamsTypes', 'toID'], '@pkmn/sim'],
+    [[
+      'Species', 'StatName', 'SparseStatsTable', 'RandomTeamsTypes', 'toID',
+      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Move', 'ID', 'AnyObject',
+    ], '@pkmn/sim'],
   ],
   'data/mods/gen4/random-teams.ts': [
     [['RandomGen5Teams'], './gen5'],
-    [['Species', 'RandomTeamsTypes', 'toID', 'SparseStatsTable', 'StatName'], '@pkmn/sim'],
+    [[
+      'Species', 'RandomTeamsTypes', 'toID', 'SparseStatsTable', 'StatName',
+      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Move', 'ID',
+    ], '@pkmn/sim'],
   ],
   'data/mods/gen3/random-teams.ts': [
     [['RandomGen4Teams'], './gen4'],
@@ -372,6 +378,7 @@ const RANDOMS_FILES = {
 const RANDOMS_FIELDS = [
   'randomBattleLevel',
   'randomBattleMoves',
+  'randomBattleNoDynamaxMoves',
   'randomDoubleBattleMoves',
   'randomDoubleBattleLevel',
   'exclusiveMoves',

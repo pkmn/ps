@@ -606,7 +606,8 @@ class Handler implements Protocol.Handler<string> {
     return (line1 + template
       .replace('[POKEMON]', this.parser.pokemon(pokemon))
       .replace('[EFFECT]', this.parser.effect(effect))
-      .replace('[SOURCE]', this.parser.pokemon(kwArgs.of!)));
+      .replace('[SOURCE]', this.parser.pokemon(kwArgs.of!)))
+      .replace('[ITEM]', this.parser.effect(kwArgs.from));
   }
 
   '|-ability|'(args: Args['|-ability|'], kwArgs: KWArgs['|-ability|']) {

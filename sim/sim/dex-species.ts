@@ -41,6 +41,7 @@ export interface SpeciesFormatsData {
 	randomBattleLevel?: number;
 	randomDoubleBattleMoves?: readonly string[];
 	randomDoubleBattleLevel?: number;
+	randomBattleNoDynamaxMoves?: readonly string[];
 	tier?: TierTypes.Singles | TierTypes.Other;
 }
 
@@ -215,6 +216,7 @@ export class Species extends BasicEffect implements Readonly<BasicEffect & Speci
 	readonly randomBattleLevel?: number;
 	readonly randomDoubleBattleMoves?: readonly ID[];
 	readonly randomDoubleBattleLevel?: number;
+	readonly randomBattleNoDynamaxMoves?: readonly ID[];
 	readonly exclusiveMoves?: readonly ID[];
 	readonly comboMoves?: readonly ID[];
 	readonly essentialMove?: ID;
