@@ -636,7 +636,12 @@
       "desc": "Has a 30% chance to make the target flinch.",
       "shortDesc": "30% chance to make the target flinch."
     },
-    "meanlook": {"inherit": true, "accuracy": true, "ignoreAccuracy": false},
+    "meanlook": {
+      "inherit": true,
+      "accuracy": true,
+      "ignoreAccuracy": false,
+      "flags": {"reflectable": 1, "mirror": 1}
+    },
     "metronome": {
       "inherit": true,
       "noMetronome": [
@@ -779,7 +784,12 @@
       "inherit": true,
       "desc": "This attack charges on the first turn and executes on the second. Damage is halved if the weather is Rain Dance. If the weather is Sunny Day, the move completes in one turn."
     },
-    "spiderweb": {"inherit": true, "accuracy": true, "ignoreAccuracy": false},
+    "spiderweb": {
+      "inherit": true,
+      "accuracy": true,
+      "ignoreAccuracy": false,
+      "flags": {"reflectable": 1, "mirror": 1}
+    },
     "spikes": {
       "inherit": true,
       "condition": {},
@@ -8670,8 +8680,8 @@
       "secondary": null,
       "target": "adjacentFoe",
       "type": "Grass",
-      "desc": "This move will always have 160 Base Power, and it ignores the abilities of opposing Pokemon.",
-      "shortDesc": "Stronger than other Max Moves. Ignores abilities."
+      "desc": "Power is 160 regardless of the base move's Max Move power. This move and its effects ignore the Abilities of other Pokemon.",
+      "shortDesc": "Always 160 power. Ignores Abilities."
     },
     "gmaxfinale": {
       "num": 1000,
@@ -8706,8 +8716,8 @@
       "secondary": null,
       "target": "adjacentFoe",
       "type": "Fire",
-      "desc": "This move will always have 160 Base Power, and it ignores the abilities of opposing Pokemon.",
-      "shortDesc": "Stronger than other Max Moves. Ignores abilities."
+      "desc": "Power is 160 regardless of the base move's Max Move power. This move and its effects ignore the Abilities of other Pokemon.",
+      "shortDesc": "Always 160 power. Ignores Abilities."
     },
     "gmaxfoamburst": {
       "num": 1000,
@@ -8777,8 +8787,8 @@
       "secondary": null,
       "target": "adjacentFoe",
       "type": "Water",
-      "desc": "This move will always have 160 Base Power, and it ignores the abilities of opposing Pokemon.",
-      "shortDesc": "Stronger than other Max Moves. Ignores abilities."
+      "desc": "Power is 160 regardless of the base move's Max Move power. This move and its effects ignore the Abilities of other Pokemon.",
+      "shortDesc": "Always 160 power. Ignores Abilities."
     },
     "gmaxmalodor": {
       "num": 1000,
@@ -8826,12 +8836,11 @@
       "priority": 0,
       "flags": {},
       "isMax": "Urshifu",
-      "breaksProtect": true,
       "secondary": null,
       "target": "adjacentFoe",
       "type": "Dark",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful and any Pokemon on the opposing side is using Baneful Bunker, Detect, King's Shield, Mat Block, Max Guard, Obstruct, Protect, or Spiky Shield, this move will fully break the protection.",
-      "shortDesc": "Base move affects power. Breaks all protection."
+      "desc": "Power is equal to the base move's Max Move power. This move bypasses all protection effects, including Max Guard.",
+      "shortDesc": "Base move affects power. Bypasses Max Guard."
     },
     "gmaxrapidflow": {
       "num": 1000,
@@ -8844,12 +8853,11 @@
       "priority": 0,
       "flags": {},
       "isMax": "Urshifu-Rapid-Strike",
-      "breaksProtect": true,
       "secondary": null,
       "target": "adjacentFoe",
       "type": "Water",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful and any Pokemon on the opposing side is using Baneful Bunker, Detect, King's Shield, Mat Block, Max Guard, Obstruct, Protect, or Spiky Shield, this move will fully break the protection.",
-      "shortDesc": "Base move affects power. Breaks all protection."
+      "desc": "Power is equal to the base move's Max Move power. This move bypasses all protection effects, including Max Guard.",
+      "shortDesc": "Base move affects power. Bypasses Max Guard."
     },
     "gmaxreplenish": {
       "num": 1000,

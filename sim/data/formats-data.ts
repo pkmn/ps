@@ -1377,6 +1377,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 76,
 		randomDoubleBattleMoves: ["dragonclaw", "dragondance", "dualwingbeat", "extremespeed", "firepunch"],
 		randomDoubleBattleLevel: 82,
+		randomBattleNoDynamaxMoves: ["dragondance", "dualwingbeat", "earthquake", "outrage", "roost"],
 		tier: "OU",
 		doublesTier: "(DUU)",
 	},
@@ -1907,7 +1908,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	sceptile: {
-		randomBattleMoves: ["earthquake", "focusblast", "gigadrain", "leafstorm", "leechseed", "substitute"],
+		randomBattleMoves: ["earthquake", "focusblast", "gigadrain", "leafstorm", "leechseed", "rockslide", "substitute"],
 		randomBattleLevel: 86,
 		randomDoubleBattleMoves: ["breakingswipe", "dragonpulse", "focusblast", "leafstorm", "protect"],
 		randomDoubleBattleLevel: 88,
@@ -2382,7 +2383,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	lunatone: {
-		randomBattleMoves: ["earthpower", "moonblast", "nastyplot", "powergem", "psychic", "rockpolish", "stealthrock"],
+		randomBattleMoves: ["earthpower", "moonblast", "nastyplot", "powergem", "psychic", "stealthrock"],
 		randomBattleLevel: 86,
 		randomDoubleBattleMoves: ["earthpower", "icebeam", "meteorbeam", "protect", "psychic", "trickroom"],
 		randomDoubleBattleLevel: 88,
@@ -2861,7 +2862,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	vespiquen: {
 		randomBattleMoves: ["airslash", "defog", "roost", "toxic", "uturn"],
 		randomBattleLevel: 96,
-		randomDoubleBattleMoves: ["defendorder", "infestation", "roost", "toxic"],
+		randomDoubleBattleMoves: ["airslash", "roost", "tailwind", "toxicspikes"],
 		randomDoubleBattleLevel: 96,
 		tier: "(PU)",
 		doublesTier: "(DUU)",
@@ -2942,7 +2943,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	skuntank: {
-		randomBattleMoves: ["crunch", "defog", "fireblast", "poisonjab", "suckerpunch", "toxic"],
+		randomBattleMoves: ["crunch", "defog", "fireblast", "poisonjab", "suckerpunch", "taunt", "toxic"],
 		randomBattleLevel: 84,
 		randomDoubleBattleMoves: ["crunch", "fireblast", "haze", "poisonjab", "suckerpunch", "taunt"],
 		randomDoubleBattleLevel: 88,
@@ -3191,7 +3192,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 80,
 		randomDoubleBattleMoves: ["allyswitch", "helpinghand", "icywind", "moonlight", "psychic"],
 		randomDoubleBattleLevel: 84,
-		tier: "NU",
+		tier: "NUBL",
 		doublesTier: "DOU",
 	},
 	phione: {
@@ -3270,7 +3271,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "Past",
 	},
 	victini: {
-		randomBattleMoves: ["blueflare", "boltstrike", "energyball", "glaciate", "trick", "uturn", "vcreate", "zenheadbutt"],
+		randomBattleMoves: ["blueflare", "boltstrike", "energyball", "glaciate", "uturn", "vcreate", "zenheadbutt"],
 		randomBattleLevel: 78,
 		randomDoubleBattleMoves: ["boltstrike", "glaciate", "protect", "uturn", "vcreate", "zenheadbutt"],
 		randomDoubleBattleLevel: 82,
@@ -3692,7 +3693,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "(DUU)",
 	},
 	garbodorgmax: {
-		randomBattleMoves: ["drainpunch", "explosion", "gunkshot", "painsplit", "spikes", "toxicspikes"],
+		randomBattleMoves: ["explosion", "gunkshot", "painsplit", "spikes", "stompingtantrum", "toxicspikes"],
 		randomBattleLevel: 86,
 		randomDoubleBattleMoves: ["drainpunch", "explosion", "gunkshot", "protect", "toxicspikes"],
 		randomDoubleBattleLevel: 89,
@@ -3779,7 +3780,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	emolga: {
-		randomBattleMoves: ["airslash", "encore", "energyball", "roost", "toxic", "voltswitch"],
+		randomBattleMoves: ["airslash", "encore", "energyball", "roost", "thunderbolt", "toxic", "voltswitch"],
 		randomBattleLevel: 88,
 		randomDoubleBattleMoves: ["acrobatics", "helpinghand", "nuzzle", "tailwind", "taunt"],
 		randomDoubleBattleLevel: 88,
@@ -4653,7 +4654,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 82,
 		randomDoubleBattleMoves: ["dragondance", "extremespeed", "irontail", "protect", "rockslide", "thousandarrows"],
 		randomDoubleBattleLevel: 76,
-		tier: "RU",
+		tier: "RUBL",
 		doublesTier: "(DUU)",
 	},
 	zygardecomplete: {
@@ -4983,7 +4984,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	golisopod: {
-		randomBattleMoves: ["firstimpression", "knockoff", "leechlife", "liquidation", "spikes", "aquajet"],
+		randomBattleMoves: ["firstimpression", "knockoff", "leechlife", "liquidation", "spikes"],
 		randomBattleLevel: 84,
 		randomDoubleBattleMoves: ["aquajet", "closecombat", "firstimpression", "knockoff", "leechlife", "liquidation", "protect", "wideguard"],
 		randomDoubleBattleLevel: 88,
@@ -5983,7 +5984,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	dragapult: {
 		randomBattleMoves: ["dracometeor", "fireblast", "shadowball", "thunderbolt", "uturn"],
 		randomBattleLevel: 78,
-		randomDoubleBattleMoves: ["dragondance", "dragondarts", "fireblast", "phantomforce", "protect", "shadowball", "thunderbolt", "willowisp"],
+		randomDoubleBattleMoves: ["dragondarts", "fireblast", "protect", "shadowball", "thunderbolt", "willowisp"],
 		randomDoubleBattleLevel: 80,
 		tier: "OU",
 		doublesTier: "DOU",

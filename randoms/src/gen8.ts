@@ -61,7 +61,7 @@ const SpeedSetup = [
 ];
 // Moves that shouldn't be the only STAB moves:
 const NoStab = [
-	'accelerock', 'aquajet', 'beakblast', 'bounce', 'breakingswipe', 'chatter', 'clearsmog', 'eruption', 'explosion',
+	'accelerock', 'aquajet', 'beakblast', 'bounce', 'breakingswipe', 'chatter', 'clearsmog', 'dragontail', 'eruption', 'explosion',
 	'fakeout', 'firstimpression', 'flamecharge', 'flipturn', 'iceshard', 'icywind', 'incinerate', 'machpunch',
 	'meteorbeam', 'pluck', 'pursuit', 'quickattack', 'reversal', 'selfdestruct', 'skydrop', 'snarl', 'suckerpunch', 'uturn', 'watershuriken',
 	'vacuumwave', 'voltswitch', 'waterspout',
@@ -155,8 +155,8 @@ export class RandomTeams {
 				return movePool.includes('spectralthief') && !counter.Dark;
 			},
 			Grass: (movePool, hasMove, hasAbility, hasType, counter, species) => {
-				if (species.baseStats.atk >= 100 || movePool.includes('leafstorm') || movePool.includes('grassyglide')) return true;
-				return !counter.Grass;
+				if (movePool.includes('leafstorm') || movePool.includes('grassyglide')) return true;
+				return !counter.Grass && species.baseStats.atk >= 100;
 			},
 			Ground: (movePool, hasMove, hasAbility, hasType, counter) => !counter.Ground,
 			Ice: (movePool, hasMove, hasAbility, hasType, counter) => {
@@ -179,7 +179,8 @@ export class RandomTeams {
 			Rock: (movePool, hasMove, hasAbility, hasType, counter, species) => !counter.Rock && species.baseStats.atk >= 80,
 			Steel: (movePool, hasMove, hasAbility, hasType, counter, species) => {
 				if (species.baseStats.atk < 95) return false;
-				return !counter.Steel || (hasMove['bulletpunch'] && counter.stab < 2);
+				if (movePool.includes('meteormash')) return true;
+				return !counter.Steel;
 			},
 			Water: (movePool, hasMove, hasAbility, hasType, counter, species) => {
 				if (!counter.Water && !hasMove['hypervoice']) return true;
@@ -920,7 +921,7 @@ export class RandomTeams {
 		// Ineffective to have two particular moves together
 		case 'explosion':
 			// Rock Blast: Special case for Gigalith to prevent Stone Edge-less Choice Band sets
-			const otherMoves = ['curse', 'drainpunch', 'rockblast', 'painsplit', 'wish'].some(m => hasMove[m]);
+			const otherMoves = ['curse', 'stompingtantrum', 'rockblast', 'painsplit', 'wish'].some(m => hasMove[m]);
 			return {cull: counter.speedsetup || counter.recovery || otherMoves};
 		case 'facade':
 			// Special cases for Braviary and regular Snorlax, respectively
@@ -1053,7 +1054,7 @@ export class RandomTeams {
 			return {cull:
 				(isDoubles && hasMove['lunge']) ||
 				(hasMove['uturn'] && !counter.setupType) ||
-				movePool.includes('firstimpression') || movePool.includes('spikes'),
+				movePool.includes('spikes'),
 			};
 		case 'stoneedge':
 			const gutsCullCondition = hasAbility['Guts'] && (!hasMove['dynamicpunch'] || hasMove['spikes']);
@@ -1110,7 +1111,8 @@ export class RandomTeams {
 				hasMove['throatchop'] ||
 				// Hawlucha doesn't want Roost + 3 attacks
 				(hasMove['stoneedge'] && species.id === 'hawlucha') ||
-				(hasMove['outrage'] && hasMove['dualwingbeat'] && !hasMove['defog']),
+				// Special cases for Salamence, Dynaless Dragonite, and Scizor to help prevent sets with poor coverage or no setup.
+				(hasMove['dualwingbeat'] && ((hasMove['outrage'] && !hasMove['defog']) || species.id === 'scizor')),
 			};
 		case 'reflect': case 'lightscreen':
 			return {cull: !!teamDetails.screens};
@@ -1144,15 +1146,6 @@ export class RandomTeams {
 			return {cull: hasMove['vcreate']};
 		}
 
-		if (move.id !== 'photongeyser' && (
-			(move.category === 'Physical' && counter.setupType === 'Special') ||
-			(move.category === 'Special' && counter.setupType === 'Physical')
-		)) {
-			// Reject STABs last in case the setup type changes later on
-			const stabs = counter[species.types[0]] + (counter[species.types[1]] || 0);
-			if (!hasType[move.type] || stabs > 1 || counter[move.category] < 2) return {cull: true};
-		}
-
 		return {cull: false};
 	}
 
@@ -1169,7 +1162,7 @@ export class RandomTeams {
 		isNoDynamax: boolean
 	): boolean {
 		if ([
-			'Cloud Nine', 'Flare Boost', 'Hydration', 'Ice Body', 'Innards Out', 'Insomnia', 'Misty Surge',
+			'Flare Boost', 'Hydration', 'Ice Body', 'Innards Out', 'Insomnia', 'Misty Surge',
 			'Quick Feet', 'Rain Dish', 'Snow Cloak', 'Steadfast', 'Steam Engine',
 		].includes(ability)) return true;
 
@@ -1188,6 +1181,8 @@ export class RandomTeams {
 			return (counter.setupType && hasAbility['Soundproof']);
 		case 'Chlorophyll':
 			return (species.baseStats.spe > 100 || !counter.Fire && !hasMove['sunnyday'] && !teamDetails.sun);
+		case 'Cloud Nine':
+			return (!isNoDynamax || species.id !== 'golduck');
 		case 'Competitive':
 			return (counter.Special < 2 || (hasMove['rest'] && hasMove['sleeptalk']));
 		case 'Compound Eyes': case 'No Guard':
@@ -1291,7 +1286,7 @@ export class RandomTeams {
 			return hasType['Grass'];
 		case 'Swift Swim':
 			if (isNoDynamax) {
-				const neverWantsSwim = ['Intimidate', 'Rock Head', 'Water Absorb'].some(m => hasAbility[m]);
+				const neverWantsSwim = !hasMove['raindance'] && ['Intimidate', 'Rock Head', 'Water Absorb'].some(m => hasAbility[m]);
 				const noSwimIfNoRain = !hasMove['raindance'] && [
 					'Cloud Nine', 'Lightning Rod', 'Intimidate', 'Rock Head', 'Sturdy', 'Water Absorb', 'Weak Armor',
 				].some(m => hasAbility[m]);
@@ -1335,7 +1330,7 @@ export class RandomTeams {
 			// The Speed less than 50 case is intended for Cursola, but could apply to any slow Pokémon.
 			return (
 				(!isNoDynamax && species.baseStats.spe > 50) ||
-				counter.Status > 1 ||
+				species.id === 'skarmory' ||
 				hasMove['shellsmash'] || hasMove['rapidspin']
 			);
 		}
@@ -1357,7 +1352,14 @@ export class RandomTeams {
 		// not undefined — we want "no item" not "go find a different item"
 		if (hasMove['acrobatics'] && ability !== 'Ripen') return ability === 'Grassy Surge' ? 'Grassy Seed' : '';
 		if (hasMove['geomancy'] || hasMove['meteorbeam']) return 'Power Herb';
-		if (hasMove['shellsmash']) return (ability === 'Sturdy' && !isLead && !isDoubles) ? 'Heavy-Duty Boots' : 'White Herb';
+		if (hasMove['shellsmash']) {
+			if (ability === 'Sturdy' && !isLead && !isDoubles) return 'Heavy-Duty Boots';
+			// Shell Smash + Solid Rock is intended for Carracosta, but I think
+			// any Pokémon which can take a SE hit via Solid Rock deserves to have
+			// its Shell Smash considered a good enough speed setup move for WP.
+			if (ability === 'Solid Rock') return 'Weakness Policy';
+			return 'White Herb';
+		}
 		// Techno Blast should always be Water-type
 		if (hasMove['technoblast']) return 'Douse Drive';
 		// Species-specific logic
@@ -1558,7 +1560,7 @@ export class RandomTeams {
 		if (
 			isLead && !isDoubles &&
 			!['Disguise', 'Sturdy'].includes(ability) && !hasMove['substitute'] &&
-			!counter.recoil && !counter.recovery && defensiveStatTotal < 255
+			!counter.drain && !counter.recoil && !counter.recovery && defensiveStatTotal < 255
 		) return 'Focus Sash';
 		if (!isDoubles && ability === 'Water Bubble') return 'Mystic Water';
 		if (hasMove['clangoroussoul'] || (hasMove['boomburst'] && counter.speedsetup)) return 'Throat Spray';
@@ -1681,10 +1683,19 @@ export class RandomTeams {
 			for (const [k, moveId] of moves.entries()) {
 				const move = this.dex.getMove(moveId);
 
-				let {cull: rejected, isSetup} = this.shouldCullMove(
+				let {cull, isSetup} = this.shouldCullMove(
 					move, hasType, hasMove, hasAbility, counter,
 					movePool, teamDetails, species, moves, isLead, isDoubles, isNoDynamax
 				);
+
+				if (move.id !== 'photongeyser' && (
+					(move.category === 'Physical' && counter.setupType === 'Special') ||
+					(move.category === 'Special' && counter.setupType === 'Physical')
+				)) {
+					// Reject STABs last in case the setup type changes later on
+					const stabs = counter[species.types[0]] + (counter[species.types[1]] || 0);
+					if (!hasType[move.type] || stabs > 1 || counter[move.category] < 2) cull = true;
+				}
 
 				// Pokemon should have moves that benefit their types, stats, or ability
 				const isLowBP = move.basePower && move.basePower < 50;
@@ -1704,7 +1715,7 @@ export class RandomTeams {
 				);
 
 				if (moveIsRejectable && (
-					!rejected && !isSetup && !move.weather && !move.stallingMove && notImportantSetup && !move.damage &&
+					!cull && !isSetup && !move.weather && !move.stallingMove && notImportantSetup && !move.damage &&
 					(isDoubles ? this.unrejectableMovesInDoubles(move) : this.unrejectableMovesInSingles(move))
 				)) {
 					// There may be more important moves that this Pokemon needs
@@ -1722,23 +1733,23 @@ export class RandomTeams {
 						(isLead && runEnforcementChecker('lead')) ||
 						(hasMove['leechseed'] && runEnforcementChecker('leechseed'))
 					) {
-						rejected = true;
+						cull = true;
 					// Pokemon should have moves that benefit their typing
 					} else {
 						for (const type of Object.keys(hasType)) {
 							if (runEnforcementChecker(type)) {
-								rejected = true;
+								cull = true;
 							}
 						}
 					}
 				}
 
 				// Sleep Talk shouldn't be selected without Rest
-				if (move.id === 'rest' && rejected) {
+				if (move.id === 'rest' && cull) {
 					const sleeptalk = movePool.indexOf('sleeptalk');
 					if (sleeptalk >= 0) {
 						if (movePool.length < 2) {
-							rejected = false;
+							cull = false;
 						} else {
 							this.fastPop(movePool, sleeptalk);
 						}
@@ -1746,12 +1757,12 @@ export class RandomTeams {
 				}
 
 				// Remove rejected moves from the move list
-				if (rejected && movePool.length) {
+				if (cull && movePool.length) {
 					if (move.category !== 'Status' && !move.damage) rejectedPool.push(moves[k]);
 					moves.splice(k, 1);
 					break;
 				}
-				if (rejected && rejectedPool.length) {
+				if (cull && rejectedPool.length) {
 					moves.splice(k, 1);
 					break;
 				}
@@ -1767,10 +1778,10 @@ export class RandomTeams {
 			if (abilityNames[2] && abilities[1].rating <= abilities[2].rating && this.randomChance(1, 2)) {
 				[abilities[1], abilities[2]] = [abilities[2], abilities[1]];
 			}
-			if (abilities[0].rating <= abilities[1].rating && this.randomChance(1, 2)) {
-				[abilities[0], abilities[1]] = [abilities[1], abilities[0]];
-			} else if (abilities[0].rating - 0.6 <= abilities[1].rating && this.randomChance(2, 3)) {
-				[abilities[0], abilities[1]] = [abilities[1], abilities[0]];
+			if (abilities[0].rating <= abilities[1].rating) {
+				if (this.randomChance(1, 2)) [abilities[0], abilities[1]] = [abilities[1], abilities[0]];
+			} else if (abilities[0].rating - 0.6 <= abilities[1].rating) {
+				if (this.randomChance(2, 3)) [abilities[0], abilities[1]] = [abilities[1], abilities[0]];
 			}
 
 			// Start with the first abiility and work our way through, culling as we go
@@ -1806,12 +1817,14 @@ export class RandomTeams {
 				ability = 'Moxie';
 			} else if (isDoubles) {
 				if (hasAbility['Competitive'] && ability !== 'Shadow Tag' && ability !== 'Strong Jaw') ability = 'Competitive';
-				if (hasAbility['Curious Medicine'] && this.randomChance(1, 2)) ability = 'Curious Medicine';
 				if (hasAbility['Friend Guard']) ability = 'Friend Guard';
 				if (hasAbility['Gluttony'] && hasMove['recycle']) ability = 'Gluttony';
 				if (hasAbility['Guts']) ability = 'Guts';
 				if (hasAbility['Harvest']) ability = 'Harvest';
-				if (hasAbility['Healer'] && hasAbility['Natural Cure']) ability = 'Healer';
+				if (hasAbility['Healer'] && (
+					hasAbility['Natural Cure'] ||
+					(hasAbility['Aroma Veil'] && this.randomChance(1, 2))
+				)) ability = 'Healer';
 				if (hasAbility['Intimidate']) ability = 'Intimidate';
 				if (hasAbility['Klutz'] && ability === 'Limber') ability = 'Klutz';
 				if (hasAbility['Magic Guard'] && ability !== 'Friend Guard' && ability !== 'Unaware') ability = 'Magic Guard';

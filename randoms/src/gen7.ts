@@ -205,7 +205,7 @@ export class RandomGen7Teams extends RandomTeams {
 			return {cull: counter.speedsetup};
 		case 'healingwish': case 'memento':
 			return {cull: counter.setupType || !!counter.recovery || hasMove['substitute']};
-		case 'helpinghand':
+		case 'helpinghand': case 'yawn':
 			return {cull: counter.setupType};
 		case 'icywind': case 'stringshot':
 			return {cull: !!counter.speedsetup || hasMove['trickroom']};
@@ -227,7 +227,7 @@ export class RandomGen7Teams extends RandomTeams {
 			return {cull: (
 				(isDoubles ? doublesCondition : singlesCondition) ||
 				!!counter.speedsetup ||
-				hasMove['rest'] ||
+				hasMove['rest'] || hasMove['roar'] || hasMove['whirlwind'] ||
 				(hasMove['lightscreen'] && hasMove['reflect'])
 			)};
 		case 'pursuit':
@@ -342,7 +342,7 @@ export class RandomGen7Teams extends RandomTeams {
 		case 'hex':
 			return {cull: !hasMove['thunderwave'] && !hasMove['willowisp']};
 		case 'shadowball':
-			return {cull: hasMove['darkpulse'] || hasMove['hex'] && hasMove['willowisp']};
+			return {cull: hasMove['darkpulse'] || (hasMove['hex'] && hasMove['willowisp'])};
 		case 'shadowclaw':
 			return {cull: (
 				hasMove['shadowforce'] ||
@@ -367,22 +367,16 @@ export class RandomGen7Teams extends RandomTeams {
 			return {cull: hasMove['trickroom'] || (isDoubles && hasMove['energyball']) || (counter.Grass > 1 && counter.setupType)};
 		case 'seedbomb':
 			return {cull: hasMove['leafstorm'] || isDoubles && hasMove['gigadrain']};
-			break;
 		case 'solarbeam':
 			return {cull: (!hasAbility['Drought'] && !hasMove['sunnyday']) || hasMove['gigadrain'] || hasMove['leafstorm']};
-			break;
 		case 'bonemerang': case 'precipiceblades':
 			return {cull: hasMove['earthquake']};
-			break;
 		case 'earthpower':
 			return {cull: hasMove['earthquake'] && counter.setupType !== 'Special'};
-			break;
 		case 'earthquake':
 			return {cull: isDoubles && hasMove['highhorsepower']};
-			break;
 		case 'freezedry':
 			return {cull: hasMove['icebeam'] || hasMove['icywind'] || counter.stab < 2};
-			break;
 		case 'bodyslam': case 'return':
 			return {cull: (
 				hasMove['doubleedge'] ||
@@ -502,6 +496,9 @@ export class RandomGen7Teams extends RandomTeams {
 			return {cull: hasMove['guardsplit']};
 		case 'wideguard':
 			return {cull: hasMove['protect']};
+		case 'bravebird':
+			// Hurricane > Brave Bird in the rain
+			return {cull: (hasMove['raindance'] || hasAbility['Drizzle']) && movePool.includes('hurricane')};
 		}
 		return {cull: false};
 	}
@@ -1229,6 +1226,8 @@ export class RandomGen7Teams extends RandomTeams {
 				// If it doesn't qualify for Technician, Skill Link is useless on it
 				ability = 'Pickup';
 			}
+			if (species.name === 'Raticate-Alola') ability = 'Hustle';
+			if (species.name === 'Altaria') ability = 'Natural Cure';
 		} else {
 			ability = abilities[0].name;
 		}

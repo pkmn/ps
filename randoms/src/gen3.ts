@@ -11,10 +11,12 @@ import {
 } from '@pkmn/sim';
 
 export class RandomGen3Teams extends RandomGen4Teams {
+	battleHasDitto: boolean;
 	battleHasWobbuffet: boolean;
 
 	constructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {
 		super(dex, format, prng);
+		this.battleHasDitto = false;
 		this.battleHasWobbuffet = false;
 		this.moveEnforcementCheckers = {
 			Bug: (movePool, hasMove, hasAbility, hasType, counter, species) => (
@@ -579,12 +581,13 @@ export class RandomGen3Teams extends RandomGen4Teams {
 		while (pokemonPool.length && pokemon.length < 6) {
 			const species = this.dex.getSpecies(this.sampleNoReplace(pokemonPool));
 			if (!species.exists || !species.randomBattleMoves) continue;
-
 			// Limit to one of each species (Species Clause)
 			if (baseFormes[species.baseSpecies]) continue;
 
 			// Limit to one Wobbuffet per battle (not just per team)
 			if (species.name === 'Wobbuffet' && this.battleHasWobbuffet) continue;
+			// Limit to one Ditto per battle in Gen 2
+			if (this.dex.gen < 3 && species.name === 'Ditto' && this.battleHasDitto) continue;
 
 			const tier = species.tier;
 			const types = species.types;
@@ -646,6 +649,7 @@ export class RandomGen3Teams extends RandomGen4Teams {
 			// In Gen 3, Shadow Tag users can prevent each other from switching out, possibly causing and endless battle or at least causing a long stall war
 			// To prevent this, we prevent more than one Wobbuffet in a single battle.
 			if (set.ability === 'Shadow Tag') this.battleHasWobbuffet = true;
+			if (species.id === 'ditto') this.battleHasDitto = true;
 		}
 
 		if (pokemon.length < 6 && !isMonotype) {

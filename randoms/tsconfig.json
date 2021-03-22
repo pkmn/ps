@@ -7,7 +7,6 @@
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": false,
     "noImplicitReturns": false,
-    "allowUnreachableCode": true,
     "outDir": "build",
     "tsBuildInfoFile": ".tsbuildinfo"
   },
