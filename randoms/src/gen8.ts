@@ -263,7 +263,8 @@ export class RandomTeams {
 	unrejectableMovesInSingles(move: Move) {
 		// These moves cannot be rejected in favor of a forced move in singles
 		return (move.category !== 'Status' || !move.flags.heal) && ![
-			'facade', 'lightscreen', 'reflect', 'sleeptalk', 'spore', 'substitute', 'switcheroo', 'teleport', 'toxic', 'trick',
+			'facade', 'leechseed', 'lightscreen', 'reflect', 'sleeptalk', 'spore', 'substitute', 'switcheroo',
+			'teleport', 'toxic', 'trick',
 		].includes(move.id);
 	}
 
@@ -2024,9 +2025,12 @@ export class RandomTeams {
 			case 'Darmanitan':
 				if (species.gen === 8 && this.randomChance(1, 2)) continue;
 				break;
+			case 'Necrozma': case 'Calyrex':
+				if (this.randomChance(2, 3)) continue;
+				break;
 			case 'Magearna': case 'Toxtricity': case 'Zacian': case 'Zamazenta': case 'Zarude':
 			case 'Appletun': case 'Blastoise': case 'Butterfree': case 'Copperajah': case 'Grimmsnarl':
-			case 'Inteleon': case 'Rillaboom': case 'Snorlax': case 'Urshifu':
+			case 'Inteleon': case 'Rillaboom': case 'Snorlax': case 'Urshifu': case 'Giratina':
 				if (this.gen >= 8 && this.randomChance(1, 2)) continue;
 				break;
 			}

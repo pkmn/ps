@@ -24460,6 +24460,7 @@
     "zacian": {
       "num": 888,
       "name": "Zacian",
+      "baseForme": "Hero",
       "types": ["Fairy"],
       "gender": "N",
       "baseStats": {
@@ -24502,6 +24503,7 @@
     "zamazenta": {
       "num": 889,
       "name": "Zamazenta",
+      "baseForme": "Hero",
       "types": ["Fighting"],
       "gender": "N",
       "baseStats": {
