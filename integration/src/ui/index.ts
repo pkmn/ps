@@ -7,10 +7,10 @@ import {Sprites, Icons, GraphicsGen} from '@pkmn/img';
 import {LogFormatter} from '@pkmn/view';
 import {Generations, GenerationNum} from '@pkmn/data';
 
-// @ts-ignore
-import TEAM_A from './teams/a.txt';
-// @ts-ignore
-import TEAM_B from './teams/b.txt';
+import fs from 'fs';
+
+const TEAM_A = fs.readFileSync(__dirname + '/teams/a.txt', 'utf-8');
+const TEAM_B = fs.readFileSync(__dirname + '/teams/b.txt', 'utf-8');
 
 const FIXED = window.location.href.includes('fixed');
 const FORMATS = [
