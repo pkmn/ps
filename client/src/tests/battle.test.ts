@@ -45,14 +45,14 @@ describe('Battle', () => {
     expect(p.pokemonid).toEqual('p1: Rapidash');
 
     p = battle.parsePokemonId('p2x: Arcanine' as PokemonIdent);
-    expect(p.name).toEqual('Arcanine');
-    expect(p.siden).toEqual(1);
-    expect(p.slot).toBeUndefined(); // BUG: ???
-    expect(p.pokemonid).toEqual('p2: Arcanine');
+    expect(p.name).toEqual('p2x: Arcanine');
+    expect(p.siden).toEqual(-1);
+    expect(p.slot).toEqual(-1);
+    expect(p.pokemonid).toEqual('p2x: Arcanine');
 
     p = battle.parsePokemonId('p3: Foo' as PokemonIdent);
-    expect(p.name).toEqual('p3: Foo');
-    expect(p.siden).toEqual(-1);
+    expect(p.name).toEqual('Foo');
+    expect(p.siden).toEqual(2);
     expect(p.slot).toEqual(-1);
     expect(p.pokemonid).toEqual('p3: Foo');
   });

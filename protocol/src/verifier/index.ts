@@ -653,6 +653,10 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 1;
   }
 
+  '|-candynamax|'(args: Args['|-candynamax|']) {
+    return args.length === 2 && verifyPlayer(args[1]);
+  }
+
   '|-clearnegativeboost|'(
     args: Args['|-clearnegativeboost|'], kwArgs: KWArgs['|-clearnegativeboost|']
   ) {

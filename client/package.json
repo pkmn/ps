@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/client",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "description": "Client battle engine for Pokémon Showdown",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@pkmn/data": "^0.3.22",
-    "@pkmn/protocol": "^0.2.1"
+    "@pkmn/protocol": "^0.2.2"
   },
   "devDependencies": {
     "@pkmn/dex": "^0.3.22"

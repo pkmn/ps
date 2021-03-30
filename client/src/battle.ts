@@ -66,7 +66,9 @@ export class Battle {
   readonly field: Field;
   readonly p1: Side;
   readonly p2: Side;
-  readonly sides: [Side, Side];
+  readonly p3?: Side;
+  readonly p4?: Side;
+  readonly sides: [Side, Side] | [Side, Side, Side, Side];
 
   turn!: number;
 
@@ -94,21 +96,26 @@ export class Battle {
   protected readonly contextHandler: ContextHandler;
   private readonly handler: Handler;
 
+  private readonly createSide: (n: 0 | 1 | 2 | 3) => Side;
+
   constructor(
     gens: Generations,
     player: ID | null = null,
-    sets?: PokemonSet[] | [PokemonSet[] | undefined, PokemonSet[] | undefined],
+    sets?: PokemonSet[] | Array<PokemonSet[] | undefined>,
     field = (b: Battle) => new Field(b),
     side = (b: Battle, n: 0 | 1 | 2 | 3, s?: PokemonSet[]) => new Side(b, n, s)
   ) {
     this.gens = gens;
     this.gen = gens.get(8);
 
+    this.createSide = (n: 0 | 1 | 2 | 3) =>
+      side(this, n,
+        !n ? sets && (!sets[0] || Array.isArray(sets[0]) ? sets[0] : sets as PokemonSet[])
+        : sets && Array.isArray(sets[1]) ? sets[1] : undefined);
+
     this.field = field(this);
-    this.p1 = side(this, 0, sets
-      ? !sets[0] || Array.isArray(sets[0]) ? sets[0] : sets as PokemonSet[]
-      : undefined);
-    this.p2 = side(this, 1, sets && Array.isArray(sets[1]) ? sets[1] : undefined);
+    this.p1 = this.createSide(0);
+    this.p2 = this.createSide(1);
     this.p1.foe = this.p2;
     this.p2.foe = this.p1;
     this.sides = [this.p1, this.p2];
@@ -342,23 +349,16 @@ export class Battle {
 
     let siden = -1;
     let slot = -1; // if there is an explicit slot for this pokemon
-    if (name.substr(0, 4) === 'p2: ' || name === 'p2') {
-      siden = this.p2.n;
-      name = name.substr(4);
-    } else if (name.substr(0, 4) === 'p1: ' || name === 'p1') {
-      siden = this.p1.n;
-      name = name.substr(4);
-    } else if (name.substr(0, 2) === 'p2' && name.substr(3, 2) === ': ') {
-      slot = SLOTS[name.substr(2, 1)];
-      siden = this.p2.n;
-      name = name.substr(5);
-      pokemonid = 'p2: ' + name as PokemonIdent;
-    } else if (name.substr(0, 2) === 'p1' && name.substr(3, 2) === ': ') {
-      slot = SLOTS[name.substr(2, 1)];
-      siden = this.p1.n;
-      name = name.substr(5);
-      pokemonid = 'p1: ' + name as PokemonIdent;
+    if (/^p[1-9]($|: )/.test(name)) {
+      siden = parseInt(name.charAt(1)) - 1;
+      name = name.slice(4);
+    } else if (/^p[1-9][a-f]: /.test(name)) {
+      siden = parseInt(name.charAt(1)) - 1;
+      slot = SLOTS[name.charAt(2)];
+      name = name.slice(5);
+      pokemonid = `p${siden + 1}: ${name}` as PokemonIdent;
     }
+
     return {name, siden, slot, pokemonid};
   }
 
@@ -461,12 +461,18 @@ export class Battle {
   }
 
   getSide(sidename: string): Side {
-    if (sidename === 'p1' || sidename.substr(0, 3) === 'p1:') return this.p1;
-    if (sidename === 'p2' || sidename.substr(0, 3) === 'p2:') return this.p2;
+    if (sidename === 'p1' || sidename.startsWith('p1:')) return this.p1;
+    if (sidename === 'p2' || sidename.startsWith('p2:')) return this.p2;
+    if ((sidename === 'p3' || sidename.startsWith('p3:')) && this.p3) return this.p3;
+    if ((sidename === 'p4' || sidename.startsWith('p4:')) && this.p4) return this.p4;
     if (this.p1.id === sidename) return this.p1;
     if (this.p2.id === sidename) return this.p2;
+    if (this.p3?.id === sidename) return this.p3;
+    if (this.p4?.id === sidename) return this.p4;
     if (this.p1.name === sidename) return this.p1;
     if (this.p2.name === sidename) return this.p2;
+    if (this.p3?.name === sidename) return this.p3;
+    if (this.p4?.name === sidename) return this.p4;
     return {
       name: sidename,
       id: sidename.replace(/ /g, ''),
@@ -569,5 +575,9 @@ export class Battle {
     this.p1 = null!;
     // @ts-ignore readonly
     this.p2 = null!;
+    // @ts-ignore readonly
+    this.p3 = null!;
+    // @ts-ignore readonly
+    this.p4 = null!;
   }
 }

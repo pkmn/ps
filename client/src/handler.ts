@@ -135,6 +135,21 @@ export class Handler implements Protocol.Handler {
       this.battle.p1.active = [null];
       this.battle.p2.active = [null];
       break;
+    case 'multi':
+      // @ts-ignore readonly
+      this.battle.p3 = this.battle.createSide(3);
+      // @ts-ignore readonly
+      this.battle.p4 = this.battle.createSide(4);
+      this.battle.p3.foe = this.battle.p4.ally = this.battle.p2;
+      this.battle.p3.ally = this.battle.p4.foe = this.battle.p1;
+      this.battle.p1.ally = this.battle.p3;
+      this.battle.p2.ally = this.battle.p4;
+
+      this.battle.sides.push(this.battle.p3, this.battle.p4);
+      // intentionally sync p1/p3 and p2/p4's active arrays
+      this.battle.p1.active = this.battle.p3.active = [null, null];
+      this.battle.p2.active = this.battle.p4.active = [null, null];
+      break;
     case 'doubles':
       this.battle.p1.active = [null, null];
       this.battle.p2.active = [null, null];

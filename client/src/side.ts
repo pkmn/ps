@@ -13,6 +13,7 @@ export class Side {
   name: Username | '';
   avatar: AvatarIdent | 'unknown';
   foe!: Side;
+  ally?: Side;
   rating: string;
 
   active: Array<Pokemon | null>;

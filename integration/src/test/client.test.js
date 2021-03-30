@@ -27,7 +27,7 @@ describe('client', () => {
 
       const input = fs.readFileSync(`${__dirname}/fixtures/input/${name}`, 'utf8');
       const expected = fs.readFileSync(`${__dirname}/fixtures/output/${name}`, 'utf8');
-      const perspective = name.endsWith('p1.log') ? 0 : 1;
+      const perspective = name.endsWith('p1.log') ? 'p1' : 'p2';
 
       const gens = new Generations(Dex);
       const battle = new Battle(gens);

@@ -88,12 +88,15 @@ const randoms = path.resolve(__dirname, 'randoms');
 // files depending on global types - the `data/` files are currently not required to have
 // ///-references to work).
 const IMPORTS = {
+  'sim/battle-actions.ts': [
+    'Battle', 'ModdedDex', 'Pokemon', 'Effect', 'Move', 'ActiveMove',
+    'Side', 'SpreadMoveTargets', 'SpreadMoveDamage', 'ZMoveOptions',
+  ],
   'sim/battle-queue.ts': ['Pokemon', 'ID', 'Move', 'Effect', 'AnyObject'],
   'sim/battle-stream.ts': ['AnyObject'],
   'sim/battle.ts': [
-    'Effect', 'Format', 'ID', 'PlayerOptions', 'AnyObject', 'ActiveMove', 'SideID',
-    'SparseBoostsTable', 'SpreadMoveDamage', 'Move', 'PokemonSet', 'SpreadMoveTargets',
-    'GameType', 'ModdedDex', 'StatsTable',
+    'Effect', 'Format', 'ID', 'PlayerOptions', 'AnyObject', 'ActiveMove', 'SideID', 'StatsTable',
+    'SparseBoostsTable', 'SpreadMoveDamage', 'Move', 'PokemonSet', 'GameType', 'ModdedDex',
   ],
   'sim/dex-abilities.ts': ['AnyObject', 'Battle', 'Pokemon', 'Side', 'Field', 'ConditionData'],
   'sim/dex-conditions.ts': [
@@ -107,7 +110,7 @@ const IMPORTS = {
   'sim/dex-formats.ts': [
     'AnyObject', 'ID', 'PokemonSet', 'TeamValidator', 'Battle', 'Species', 'Effect', 'Pokemon',
     'PokemonSources', 'Move', 'GameTimerSettings', 'ModdedField', 'ModdedBattleQueue',
-    'ModdedBattlePokemon', 'ModdedBattleScriptsData', 'GameType',
+    'ModdedBattlePokemon', 'ModdedBattleScriptsData', 'ModdedBattleActions', 'GameType',
   ],
   'sim/dex-items.ts': [
     'AnyObject', 'Battle', 'Pokemon', 'SparseBoostsTable', 'ConditionData',  'CommonHandlers',
@@ -254,6 +257,8 @@ const REWRITES = {
   'sim/battle.ts': {
     '\tgetCategory(move: string | Move) {':
       '\tgetCategory(move: string | Move): Move[\'category\'] {',
+    '\t\t\tconst entry = this.dex.data.Scripts[i];':
+      '\t\t\tconst entry = (this.dex.data.Scripts as any)[i];',
   },
   // smfh Zarle, please learn how Promises work
   'sim/battle-stream.ts': {

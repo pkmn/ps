@@ -1,4 +1,5 @@
 import {PokemonDetails, PokemonIdent, Protocol} from '@pkmn/protocol';
+import {SideID} from '@pkmn/types';
 
 import {LogFormatter} from '../formatter';
 
@@ -88,24 +89,24 @@ describe('LogFormatter', () => {
   it.todo('fixLowercase');
 
   it('pokemon', () => {
-    const pokemon = (i: string, p: 0 | 1 = 0) =>
+    const pokemon = (i: string, p: SideID = 'p1') =>
       new LogFormatter(p).pokemon(i as PokemonIdent);
 
     expect(pokemon('')).toEqual('');
-    expect(pokemon('p4: Bar')).toEqual('???pokemon:p4: Bar???');
+    expect(pokemon('p5: Bar')).toEqual('???pokemon:p5: Bar???');
     expect(pokemon('p1: Foo')).toEqual('Foo');
-    expect(pokemon('p1: Foo', 1)).toEqual('the opposing Foo');
-    expect(pokemon('p2a: Foo', 1)).toEqual('Foo');
+    expect(pokemon('p1: Foo', 'p2')).toEqual('the opposing Foo');
+    expect(pokemon('p2a: Foo', 'p2')).toEqual('Foo');
   });
 
   it('pokemonFull', () => {
-    const pokemonFull = (i: string, d: string, p: 0 | 1 = 0) =>
+    const pokemonFull = (i: string, d: string, p: SideID = 'p1') =>
       new LogFormatter(p).pokemonFull(i as PokemonIdent, d as PokemonDetails);
 
-    expect(pokemonFull('p4: Bar', 'Gengar')).toEqual(['p4', '???pokemon:p4: Bar??? (**Gengar**)']);
+    expect(pokemonFull('p5: Bar', 'Gengar')).toEqual(['p5', 'Bar (**Gengar**)']);
     expect(pokemonFull('p1: Clefable', 'Clefable, L50')).toEqual(['p1', '**Clefable**']);
-    expect(pokemonFull('p1: Foo', 'Mew, shiny', 1)).toEqual(['p1', 'Foo (**Mew**)']);
-    expect(pokemonFull('p2a: Blissey', 'Blissey', 1)).toEqual(['p2', '**Blissey**']);
+    expect(pokemonFull('p1: Foo', 'Mew, shiny', 'p2')).toEqual(['p1', 'Foo (**Mew**)']);
+    expect(pokemonFull('p2a: Blissey', 'Blissey', 'p2')).toEqual(['p2', '**Blissey**']);
   });
 
   it('escapeRegExp', () => {

@@ -169,7 +169,7 @@ class PostHandler implements Handler<void> {
 }
 
 const battle = new Battle(gens);
-const formatter = new LogFormatter(0, battle);
+const formatter = new LogFormatter('p1', battle);
 
 const pre = new PreHandler(battle);
 const post = new PostHandler(battle);

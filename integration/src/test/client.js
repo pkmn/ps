@@ -87,10 +87,10 @@ class Runner {
     );
 
     const all = [
-      [streams.omniscient, 0], [streams.omniscient, 1],
-      [streams.spectator, 0], [streams.spectator, 1],
-      [tee1.sink, 0], [tee1.sink, 1],
-      [tee2.sink, 0], [tee2.sink, 1],
+      [streams.omniscient, 'p1'], [streams.omniscient, 'p2'],
+      [streams.spectator, 'p1'], [streams.spectator, 'p2'],
+      [tee1.sink, 'p1'], [tee1.sink, 'p2'],
+      [tee2.sink, 'p1'], [tee2.sink, 'p2'],
     ];
     const [stream, perspective] = this.prng.sample(all);
     await this.process(stream, perspective, output);

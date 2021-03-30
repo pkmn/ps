@@ -78,11 +78,15 @@ const THAWING = new Set([
 ] as ID[]);
 
 export class LogFormatter {
-  perspective: 0 | 1;
+  perspective: SideID;
 
   p1: Username;
   p2: Username;
+  p3: Username;
+  p4: Username;
   gen: GenerationNum;
+
+  turn: number;
 
   activeMoveIsSpread: boolean | undefined;
   curLineSection: 'break' | 'preMajor' | 'major' | 'postMajor';
@@ -91,7 +95,7 @@ export class LogFormatter {
   private readonly handler: Handler;
 
   constructor(
-    perspective: 0 | 1 = 0,
+    perspective: SideID = 'p1',
     tracker: Tracker = {
       pokemonAt: NOOP,
       damagePercentage: NOOP,
@@ -105,7 +109,10 @@ export class LogFormatter {
 
     this.p1 = 'Player 1' as Username;
     this.p2 = 'Player 2' as Username;
+    this.p3 = 'Player 3' as Username;
+    this.p4 = 'Player 4' as Username;
     this.gen = 8;
+    this.turn = 0;
 
     this.activeMoveIsSpread = undefined;
     this.curLineSection = 'break';
@@ -143,7 +150,7 @@ export class LogFormatter {
 
   pokemonName(pokemon: PokemonIdent) {
     if (!pokemon) return '';
-    if (!pokemon.startsWith('p1') && !pokemon.startsWith('p2')) return `???pokemon:${pokemon}???`;
+    if (!pokemon.startsWith('p')) return `???pokemon:${pokemon}???`;
     if (pokemon.charAt(3) === ':') return pokemon.slice(4).trim();
     else if (pokemon.charAt(2) === ':') return pokemon.slice(3).trim();
     return `???pokemon:${pokemon}???`;
@@ -151,14 +158,11 @@ export class LogFormatter {
 
   pokemon(pokemon: PokemonIdent | '') {
     if (!pokemon) return '';
-    let side;
-    switch (pokemon.slice(0, 2)) {
-    case 'p1': side = 0; break;
-    case 'p2': side = 1; break;
-    default: return `???pokemon:${pokemon}???`;
-    }
+    const side = pokemon.slice(0, 2);
+    if (!['p1', 'p2', 'p3', 'p4'].includes(side)) return `???pokemon:${pokemon}???`;
     const name = this.pokemonName(pokemon);
-    const template = Text._[side === this.perspective ? 'pokemon' : 'opposingPokemon'];
+    const isNear = side === this.perspective || side === LogFormatter.allyID(side as SideID);
+    const template = Text._[isNear ? 'pokemon' : 'opposingPokemon'];
     return template.replace('[NICKNAME]', name);
   }
 
@@ -174,28 +178,32 @@ export class LogFormatter {
     side = side.slice(0, 2);
     if (side === 'p1') return this.p1;
     if (side === 'p2') return this.p2;
+    if (side === 'p3') return this.p3;
+    if (side === 'p4') return this.p4;
     return `???side:${side}???`;
   }
 
-  team(side: string, isFar: 0 | 1 = 0) {
+  static allyID(sideid: SideID): SideID | '' {
+    if (sideid === 'p1') return 'p3';
+    if (sideid === 'p2') return 'p4';
+    if (sideid === 'p3') return 'p1';
+    if (sideid === 'p4') return 'p2';
+    return '';
+  }
+
+  team(side: string, them = false) {
     side = side.slice(0, 2);
-    if (side === (this.perspective === isFar ? 'p1' : 'p2')) {
-      return Text._.team;
-    }
-    return Text._.opposingTeam;
+    const us = side === this.perspective || side === LogFormatter.allyID(side as SideID);
+    return us !== them ? Text._.team : Text._.opposingTeam;
   }
 
   own(side: string) {
-    side = side.slice(0, 2);
-    if (side === (this.perspective === 0 ? 'p1' : 'p2')) {
-      return 'OWN';
-    }
-    return '';
+    return side.slice(0, 2) === this.perspective ? 'OWN' : '';
   }
 
   party(side: string) {
     side = side.slice(0, 2);
-    if (side === (this.perspective === 0 ? 'p1' : 'p2')) {
+    if (side === this.perspective || side === LogFormatter.allyID(side as SideID)) {
       return Text._.party;
     }
     return Text._.opposingParty;
@@ -250,8 +258,8 @@ export class LogFormatter {
     switch (cmd) {
     case 'done': case 'turn':
       return 'break';
-    case 'move': case 'cant': case 'switch':case 'drag':
-    case 'upkeep': case 'start': case '-mega':
+    case 'move': case 'cant': case 'switch': case 'drag':
+    case 'upkeep': case 'start': case '-mega': case '-candynamax':
       return 'major';
     case 'faint':
       return 'preMajor';
@@ -351,6 +359,10 @@ class Handler implements Protocol.Handler<string> {
       this.parser.p1 = name;
     } else if (side === 'p2' && name) {
       this.parser.p2 = name;
+    } else if (side === 'p3' && name) {
+      this.parser.p3 = name;
+    } else if (side === 'p4' && name) {
+      this.parser.p4 = name;
     }
     return '';
   }
@@ -363,6 +375,7 @@ class Handler implements Protocol.Handler<string> {
 
   '|turn|'(args: Args['|turn|']) {
     const [, num] = args;
+    this.parser.turn = Number.parseInt(num);
     return this.parser.template('turn').replace('[NUMBER]', num) + '\n';
   }
 
@@ -531,6 +544,18 @@ class Handler implements Protocol.Handler<string> {
       .replace('[MOVE]', move!));
   }
 
+  '|-candynamax}'(args: Args['|-candynamax|']) {
+    const [, side] = args;
+    const own = this.parser.own(side);
+    let template = '';
+    if (this.parser.turn === 1) {
+      if (own) template = this.parser.template('canDynamax', own);
+    } else {
+      template = this.parser.template('canDynamax', own);
+    }
+    return template.replace('[TRAINER]', this.parser.trainer(side));
+  }
+
   '|message|'(args: Args['|message|']) {
     const [, message] = args;
     return '' + message + '\n';
@@ -641,7 +666,7 @@ class Handler implements Protocol.Handler<string> {
     const id = LogFormatter.effectId(ability);
     if (id === 'unnerve') {
       const template = this.parser.template('start', ability);
-      return line1 + template.replace('[TEAM]', this.parser.team(pokemon.slice(0, 2), 1));
+      return line1 + template.replace('[TEAM]', this.parser.team(pokemon.slice(0, 2), true));
     }
     let templateId = 'start';
     if (id === 'anticipation' || id === 'sturdy') templateId = 'activate';
