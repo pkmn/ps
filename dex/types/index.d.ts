@@ -10,7 +10,7 @@ import {
   MoveTarget,
   NatureName,
   Nonstandard,
-  StatName,
+  StatID,
   StatsTable,
   StatusName,
   Tier,
@@ -285,13 +285,14 @@ export interface TypeData {
   damageTaken: { [t in Exclude<TypeName, '???'>]?: number } & { [key: string]: number };
   HPdvs?: Partial<StatsTable>;
   HPivs?: Partial<StatsTable>;
+  isNonstandard?: Nonstandard | null;
   inherit?: boolean;
 }
 
 export interface NatureData {
   name: NatureName;
-  plus?: Exclude<StatName, 'hp'>;
-  minus?: Exclude<StatName, 'hp'>;
+  plus?: Exclude<StatID, 'hp'>;
+  minus?: Exclude<StatID, 'hp'>;
 }
 
 export interface BasicEffect<NameT extends string = string> extends Readonly<EffectData> {
@@ -381,8 +382,8 @@ export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData
   readonly unreleasedHidden: boolean | 'Past';
   readonly maleOnlyHidden: boolean;
   readonly changesFrom?: SpeciesName;
-  readonly tier: Tier.Singles | Tier.Other;
-  readonly doublesTier: Tier.Doubles;
+  readonly tier: Tier.Singles | Tier.Other | 'Illegal';
+  readonly doublesTier: Tier.Doubles | 'Illegal';
   readonly isMega?: boolean;
   readonly isPrimal?: boolean;
   readonly battleOnly?: SpeciesName | SpeciesName[];
@@ -435,6 +436,11 @@ export interface Nature extends NatureData {
 export type GenID = 'gen1' | 'gen2' | 'gen3' | 'gen4' | 'gen5' | 'gen6' | 'gen7' | 'gen8';
 export type ModData = DeepPartial<Dex['data'] & {Scripts: {inherit: GenID}}>;
 
+export interface DexTable<T> {
+  get(name: string): T;
+  getByID(id: ID): T;
+}
+
 export interface Dex {
   readonly gen: GenerationNum;
   readonly modid: ID;
@@ -446,7 +452,7 @@ export interface Dex {
     Species: { [id: string]: SpeciesData };
     Natures: { [id: string]: NatureData };
     Learnsets: null | { [id: string]: LearnsetData };
-    Types: { [type in Exclude<TypeName, '???'>]: TypeData };
+    Types: { [id: string]: TypeData };
   };
 
   mod(genid: GenID): Dex;
@@ -457,16 +463,15 @@ export interface Dex {
   includeData(): this;
   includeFormats(): this;
 
-  getSpecies(name?: string): Species;
-  getEffect(name?: string): Effect;
-  getAbility(name?: string): Ability;
-  getLearnset(name?: string): Promise<Learnset>;
-  getItem(name?: string): Item;
-  getMove(name?: string): Move;
-  getNature(name?: string): Nature;
-  getType(name?: string): Type;
+  abilities: DexTable<Ability>;
+  conditions: DexTable<Condition>;
+  items: DexTable<Item>;
+  learnsets: DexTable<Promise<Learnset>>;
+  moves: DexTable<Move>;
+  natures: DexTable<Nature>;
+  species: DexTable<Species>;
+  types: DexTable<Type>;
 
-  hasAbility(species: Species, ability: string): boolean;
   getHiddenPower(ivs: StatsTable): { type: TypeName; power: number };
   getImmunity(
     source: { type: string } | string,

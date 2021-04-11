@@ -1,6 +1,6 @@
 {
   "1": {
-    "Bug": {
+    "bug": {
       "damageTaken": {
         "Bug": 0,
         "Dragon": 0,
@@ -19,7 +19,7 @@
         "Water": 0
       }
     },
-    "Fire": {
+    "fire": {
       "damageTaken": {
         "Bug": 2,
         "Dragon": 0,
@@ -38,7 +38,7 @@
         "Water": 1
       }
     },
-    "Ghost": {
+    "ghost": {
       "damageTaken": {
         "Bug": 2,
         "Dragon": 0,
@@ -57,7 +57,7 @@
         "Water": 0
       }
     },
-    "Ice": {
+    "ice": {
       "damageTaken": {
         "Bug": 0,
         "Dark": 0,
@@ -79,7 +79,7 @@
         "Water": 0
       }
     },
-    "Poison": {
+    "poison": {
       "damageTaken": {
         "Bug": 1,
         "Dragon": 0,
@@ -98,7 +98,7 @@
         "Water": 0
       }
     },
-    "Psychic": {
+    "psychic": {
       "damageTaken": {
         "Bug": 1,
         "Dragon": 0,
@@ -117,11 +117,11 @@
         "Water": 0
       }
     },
-    "Dark": null,
-    "Steel": null
+    "dark": {"inherit": true, "isNonstandard": "Future"},
+    "steel": {"inherit": true, "isNonstandard": "Future"}
   },
   "2": {
-    "Fire": {
+    "fire": {
       "inherit": true,
       "damageTaken": {
         "Bug": 2,
@@ -143,7 +143,7 @@
         "Water": 1
       }
     },
-    "Ice": {
+    "ice": {
       "inherit": true,
       "damageTaken": {
         "Bug": 0,
@@ -165,7 +165,7 @@
         "Water": 0
       }
     },
-    "Steel": {
+    "steel": {
       "inherit": true,
       "damageTaken": {
         "Bug": 2,
@@ -190,7 +190,7 @@
     }
   },
   "5": {
-    "Electric": {
+    "electric": {
       "inherit": true,
       "damageTaken": {
         "Bug": 0,
@@ -212,7 +212,7 @@
         "Water": 0
       }
     },
-    "Ghost": {
+    "ghost": {
       "inherit": true,
       "damageTaken": {
         "Bug": 2,
@@ -234,7 +234,7 @@
         "Water": 0
       }
     },
-    "Grass": {
+    "grass": {
       "inherit": true,
       "damageTaken": {
         "Bug": 1,
@@ -256,7 +256,7 @@
         "Water": 2
       }
     },
-    "Steel": {
+    "steel": {
       "inherit": true,
       "damageTaken": {
         "Bug": 2,
@@ -278,10 +278,10 @@
         "Water": 0
       }
     },
-    "Fairy": null
+    "fairy": {"inherit": true, "isNonstandard": "Future"}
   },
   "6": {
-    "Dark": {
+    "dark": {
       "inherit": true,
       "damageTaken": {
         "Bug": 1,
@@ -306,7 +306,7 @@
     }
   },
   "8": {
-    "Bug": {
+    "bug": {
       "damageTaken": {
         "Bug": 0,
         "Dark": 0,
@@ -330,7 +330,7 @@
       "HPivs": {"atk": 30, "def": 30, "spd": 30},
       "HPdvs": {"atk": 13, "def": 13}
     },
-    "Dark": {
+    "dark": {
       "damageTaken": {
         "Bug": 1,
         "Dark": 2,
@@ -353,7 +353,7 @@
       },
       "HPivs": {}
     },
-    "Dragon": {
+    "dragon": {
       "damageTaken": {
         "Bug": 0,
         "Dark": 0,
@@ -377,7 +377,7 @@
       "HPivs": {"atk": 30},
       "HPdvs": {"def": 14}
     },
-    "Electric": {
+    "electric": {
       "damageTaken": {
         "Bug": 0,
         "Dark": 0,
@@ -401,7 +401,7 @@
       "HPivs": {"spa": 30},
       "HPdvs": {"atk": 14}
     },
-    "Fairy": {
+    "fairy": {
       "damageTaken": {
         "Bug": 2,
         "Dark": 2,
@@ -423,7 +423,7 @@
         "Water": 0
       }
     },
-    "Fighting": {
+    "fighting": {
       "damageTaken": {
         "Bug": 2,
         "Dark": 2,
@@ -447,7 +447,7 @@
       "HPivs": {"def": 30, "spa": 30, "spd": 30, "spe": 30},
       "HPdvs": {"atk": 12, "def": 12}
     },
-    "Fire": {
+    "fire": {
       "damageTaken": {
         "Bug": 2,
         "Dark": 0,
@@ -471,7 +471,7 @@
       "HPivs": {"atk": 30, "spa": 30, "spe": 30},
       "HPdvs": {"atk": 14, "def": 12}
     },
-    "Flying": {
+    "flying": {
       "damageTaken": {
         "Bug": 2,
         "Dark": 0,
@@ -495,7 +495,7 @@
       "HPivs": {"hp": 30, "atk": 30, "def": 30, "spa": 30, "spd": 30},
       "HPdvs": {"atk": 12, "def": 13}
     },
-    "Ghost": {
+    "ghost": {
       "damageTaken": {
         "Bug": 2,
         "Dark": 1,
@@ -519,7 +519,7 @@
       "HPivs": {"def": 30, "spd": 30},
       "HPdvs": {"atk": 13, "def": 14}
     },
-    "Grass": {
+    "grass": {
       "damageTaken": {
         "Bug": 1,
         "Dark": 0,
@@ -543,7 +543,7 @@
       "HPivs": {"atk": 30, "spa": 30},
       "HPdvs": {"atk": 14, "def": 14}
     },
-    "Ground": {
+    "ground": {
       "damageTaken": {
         "Bug": 0,
         "Dark": 0,
@@ -567,7 +567,7 @@
       "HPivs": {"spa": 30, "spd": 30},
       "HPdvs": {"atk": 12}
     },
-    "Ice": {
+    "ice": {
       "damageTaken": {
         "Bug": 0,
         "Dark": 0,
@@ -591,7 +591,7 @@
       "HPivs": {"atk": 30, "def": 30},
       "HPdvs": {"def": 13}
     },
-    "Normal": {
+    "normal": {
       "damageTaken": {
         "Bug": 0,
         "Dark": 0,
@@ -613,7 +613,7 @@
         "Water": 0
       }
     },
-    "Poison": {
+    "poison": {
       "damageTaken": {
         "Bug": 2,
         "Dark": 0,
@@ -637,7 +637,7 @@
       "HPivs": {"def": 30, "spa": 30, "spd": 30},
       "HPdvs": {"atk": 12, "def": 14}
     },
-    "Psychic": {
+    "psychic": {
       "damageTaken": {
         "Bug": 1,
         "Dark": 1,
@@ -661,7 +661,7 @@
       "HPivs": {"atk": 30, "spe": 30},
       "HPdvs": {"def": 12}
     },
-    "Rock": {
+    "rock": {
       "damageTaken": {
         "Bug": 0,
         "Dark": 0,
@@ -685,7 +685,7 @@
       "HPivs": {"def": 30, "spd": 30, "spe": 30},
       "HPdvs": {"atk": 13, "def": 12}
     },
-    "Steel": {
+    "steel": {
       "damageTaken": {
         "Bug": 2,
         "Dark": 0,
@@ -709,7 +709,7 @@
       "HPivs": {"spd": 30},
       "HPdvs": {"atk": 13}
     },
-    "Water": {
+    "water": {
       "damageTaken": {
         "Bug": 0,
         "Dark": 0,

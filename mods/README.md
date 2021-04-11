@@ -74,7 +74,7 @@ const dex = Dex.mod('foo' as ID, {
 } as ModData);
 const modded = new ModdedDex<Ability & {foo?: number}, AbilityData & {foo?: number}>(dex);
 
-console.log(modded.getAbility('magicguard').foo);
+console.log(modded.abilities.get('magicguard').foo);
 ```
 
 ### Browser

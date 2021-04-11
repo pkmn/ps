@@ -56,8 +56,8 @@ import {Dex} from '@pkmn/dex';
 import {Sets} from '@pkmn/sets';
 
 const set = Sets.unpack(
-  'Tangrowth||assaultvest|H|gigadrain,knockoff,powerwhip' +
-  ',earthquake|Sassy|248,,8,,252,||,30,30,,,|||,ice,',
+  'Tangrowth||AssaultVest|H|GigaDrain,KnockOff,PowerWhip' +
+  ',Earthquake|Sassy|248,,8,,252,||,30,30,,,|||,Ice,',
   Dex.forGen(6)
 );
 ```

@@ -134,8 +134,8 @@ describe('Sets', () => {
     });
 
     it('tangrowth (packed in)', () => {
-      const tangrowthIn = 'Tangrowth||assaultvest|H|gigadrain,knockoff' +
-          ',powerwhip,earthquake|Sassy|248,,8,,252,||,30,30,,,|||,Ice,';
+      const tangrowthIn = 'Tangrowth||AssaultVest|H|GigaDrain,KnockOff' +
+          ',PowerWhip,Earthquake|Sassy|248,,8,,252,||,30,30,,,|||,Ice,';
       const tangrowthOut = exported(`
         Tangrowth @ Assault Vest
         Ability: Regenerator
@@ -149,7 +149,7 @@ describe('Sets', () => {
         - Earthquake`);
 
       const u = Sets.unpack(tangrowthIn, GEN[7])!;
-      expect(Sets.unpack(Sets.pack(u), GEN[7])!).toEqual({...u, ability: 'regenerator'});
+      expect(Sets.unpack(Sets.pack(u), GEN[7])!).toEqual(u);
       expect(Sets.exportSet(u, GEN[7])).toEqual(tangrowthOut);
     });
 
@@ -216,14 +216,14 @@ describe('Sets', () => {
         - Protect
         - Seismic Toss`);
       const blisseyOut = exported(`
-        Blissey @ leftovers
-        Ability: naturalcure
+        Blissey @ Leftovers
+        Ability: Natural Cure
         EVs: 148 HP / 252 Def / 108 SpD
         Bold Nature
-        - wish
-        - toxic
-        - protect
-        - seismictoss`);
+        - Wish
+        - Toxic
+        - Protect
+        - Seismic Toss`);
 
       const u = Sets.unpack(Sets.pack(_import(blisseyIn.split('\n'))!.set))!;
       expect(Sets.exportSet(u)).toEqual(blisseyOut);
@@ -238,12 +238,12 @@ describe('Sets', () => {
         - Fake Move 3
         - Fake Move 4`);
       const fakeOut = exported(`
-        Fakey (fake) @ fake
-        Ability: fake
-        - fakemove1
-        - fakemove2
-        - fakemove3
-        - fakemove4`);
+        Fakey (Fake) @ Fake
+        Ability: Fake
+        - Fake Move 1
+        - Fake Move 2
+        - Fake Move 3
+        - Fake Move 4`);
 
       const u = Sets.unpack(Sets.pack(Sets.importSet(fakeIn)!))!;
       expect(Sets.exportSet(u)).toEqual(fakeOut);
@@ -256,11 +256,11 @@ describe('Sets', () => {
       expect(Sets.unpack(p)).not.toBeDefined();
       p += '|';
       expect(Sets.unpack(p)).not.toBeDefined();
-      p += '|assaultvest';
+      p += '|AssaultVest';
       expect(Sets.unpack(p)).not.toBeDefined();
-      p += '|regenerator';
+      p += '|Regenerator';
       expect(Sets.unpack(p)).not.toBeDefined();
-      p += '|gigadrain,knockoff,powerwhip,earthquake';
+      p += '|GigaDrain,KnockOff,PowerWhip,Earthquake';
       expect(Sets.unpack(p)).not.toBeDefined();
       p += '|Sassy';
       expect(Sets.unpack(p)).not.toBeDefined();
@@ -276,7 +276,7 @@ describe('Sets', () => {
       expect(Sets.unpack(p)).not.toBeDefined();
       p += '|';
       expect(Sets.unpack(p)).not.toBeDefined();
-      p += '|,ice,';
+      p += '|,Ice,';
       expect(Sets.unpack(p)).toBeDefined();
     });
 
@@ -284,7 +284,7 @@ describe('Sets', () => {
       let suicune = {name: 'Suicune', pokeball: 'Cherish Ball'} as PokemonSet;
       const u = Sets.unpack(Sets.pack(suicune))!;
       expect(Sets.exportSet(u)).toEqual(exported(`Suicune
-        Pokeball: cherishball`));
+        Pokeball: Cherish Ball`));
       expect(Sets.exportSet(suicune)).toEqual(exported(`Suicune
         Pokeball: Cherish Ball`));
 

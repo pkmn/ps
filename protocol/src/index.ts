@@ -1,6 +1,6 @@
 import {
   As,
-  BoostName,
+  BoostID,
   FieldCondition,
   GameType,
   GenderName,
@@ -178,8 +178,8 @@ export namespace Protocol {
   export type FormatName = string & As<'FormatName'>;
   /** Rules affecting the battle, encoded as `RULE: DESCRIPTION`. */
   export type Rule = string & As<'Rule'>;
-  /** Takes the form of a comma-separated list of `BoostName` abbreviations. */
-  export type BoostNames = string & As<'BoostNames'>;
+  /** Takes the form of a comma-separated list of `BoostID` abbreviations. */
+  export type BoostIDs = string & As<'BoostIDs'>;
   export type Seed = string & As<'Seed'>;
   export type Slots = string & As<'Slots'>;
   export type Types = string & As<'Types'>;
@@ -1046,7 +1046,7 @@ export namespace Protocol {
     '|-fail|':
     | readonly ['-fail', PokemonIdent]
     | readonly ['-fail', PokemonIdent, EffectName | MoveName | StatusName]
-    | readonly ['-fail', PokemonIdent, 'unboost', StatDisplayName | BoostName];
+    | readonly ['-fail', PokemonIdent, 'unboost', StatDisplayName | BoostID];
     /**
      * `|-block|POKEMON|EFFECT|MOVE|ATTACKER`
      *
@@ -1120,20 +1120,20 @@ export namespace Protocol {
      * The specified Pokémon `POKEMON` has gained `AMOUNT` in `BOOST`, using the standard rules for
      * Pokémon boosts in-battle.
      */
-    '|-boost|': readonly ['-boost', PokemonIdent, BoostName, Num];
+    '|-boost|': readonly ['-boost', PokemonIdent, BoostID, Num];
     /**
      * `|-unboost|POKEMON|BOOST|AMOUNT`
      *
      * Same as `-boost`, but for negative boosts instead.
      */
-    '|-unboost|': readonly ['-unboost', PokemonIdent, BoostName, Num];
+    '|-unboost|': readonly ['-unboost', PokemonIdent, BoostID, Num];
     /**
      * `|-setboost|POKEMON|BOOST|AMOUNT`
      *
      * Same as `-boost` and `-unboost`, but `BOOST` is *set* to `AMOUNT` instead of  boosted *by*
      * `AMOUNT`. (For example: Anger Point, Belly Drum)
      */
-    '|-setboost|': readonly ['-setboost', PokemonIdent, BoostName, Num];
+    '|-setboost|': readonly ['-setboost', PokemonIdent, BoostID, Num];
     /**
      * `|-swapboost|SOURCE|TARGET|BOOSTS`
      *
@@ -1142,7 +1142,7 @@ export namespace Protocol {
      */
     '|-swapboost|':
     | readonly ['-swapboost', PokemonIdent, PokemonIdent]
-    | readonly ['-swapboost', PokemonIdent, PokemonIdent, BoostNames];
+    | readonly ['-swapboost', PokemonIdent, PokemonIdent, BoostIDs];
     /**
      * `|-invertboost|POKEMON`
      *
@@ -1183,7 +1183,7 @@ export namespace Protocol {
      */
     '|-copyboost|':
     | readonly ['-copyboost', PokemonIdent, PokemonIdent]
-    | readonly ['-copyboost', PokemonIdent, PokemonIdent, BoostNames];
+    | readonly ['-copyboost', PokemonIdent, PokemonIdent, BoostIDs];
     /**
      * `|-weather|WEATHER`
      *
@@ -1657,7 +1657,7 @@ export type Score = Protocol.Score;
 export type Generator = Protocol.Generator;
 export type FormatName = Protocol.FormatName;
 export type Rule = Protocol.Rule;
-export type BoostNames = Protocol.BoostNames;
+export type BoostIDs = Protocol.BoostIDs;
 export type Seed = Protocol.Seed;
 export type Slots = Protocol.Slots;
 export type Types = Protocol.Types;

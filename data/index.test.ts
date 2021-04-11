@@ -372,11 +372,6 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(4).species.get('Chansey')!.prevo).toEqual('Happiny');
       });
 
-      it('#hasAbility', () => {
-        expect(Gen(7).species.get('Gengar')!.hasAbility('Levitate')).toBe(false);
-        expect(Gen(5).species.get('Gengar')!.hasAbility('Levitate')).toBe(true);
-      });
-
       it('cached', () => {
         const a = Gen(6).species.get('Gengar');
         const b = Gen(6).species.get('Gengar');
@@ -393,21 +388,18 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
     });
 
-    describe('Effects', () => {
+    describe('Conditions', () => {
       it('#get', () => {
         const gen = Gen(8);
-        expect(gen.effects.get('')).toBeUndefined();
-        expect(gen.effects.get('foo')).toBeUndefined();
-        expect(gen.effects.get('move: Thunderbolt')!.name).toBe('Thunderbolt');
-        expect(gen.effects.get('move: Foo')).toBeUndefined();
-        expect(gen.effects.get('ability: Flash Fire')!.name).toBe('Flash Fire');
-        expect(gen.effects.get('ability: Foo')).toBeUndefined();
-        expect(gen.effects.get('item: Choice Band')!.name).toBe('Choice Band');
-        expect(gen.effects.get('item: Foo')).toBeUndefined();
-        expect(gen.effects.get('item: Metronome')!.name).toBe('Metronome');
-        expect(gen.effects.get('item: Metronome')!.effectType).toBe('Item');
-        // Falls back to Condition
-        expect(gen.effects.get('Metronome')!.effectType).toBe('Condition');
+        expect(gen.conditions.get('')).toBeUndefined();
+        expect(gen.conditions.get('foo')).toBeUndefined();
+        expect(gen.conditions.get('ability:flashfire')!.name).toBe('Flash Fire');
+        expect(gen.conditions.get('ability:foo')).toBeUndefined();
+        expect(gen.conditions.get('item:choiceband')!.name).toBe('Choice Band');
+        expect(gen.conditions.get('item:foo')).toBeUndefined();
+        expect(gen.conditions.get('item:metronome')!.name).toBe('Metronome');
+        expect(gen.conditions.get('item:metronome')!.effectType).toBe('Item');
+        expect(gen.conditions.get('metronome')!.effectType).toBe('Condition');
       });
     });
 
@@ -665,22 +657,22 @@ describe('Data', () => {
       const simDex = DATA.sim.forGen(gen as GenerationNum);
 
       for (const id in dexDex.data.Abilities) {
-        const d = dexDex.getAbility(id);
-        const s = simDex.getAbility(id);
+        const d = dexDex.abilities.get(id);
+        const s = simDex.abilities.get(id);
         expect(d.desc).toEqual(s.desc);
         expect(d.shortDesc).toEqual(s.shortDesc);
       }
 
       for (const id in dexDex.data.Items) {
-        const d = dexDex.getItem(id);
-        const s = simDex.getItem(id);
+        const d = dexDex.items.get(id);
+        const s = simDex.items.get(id);
         expect(d.desc).toEqual(s.desc);
         expect(d.shortDesc).toEqual(s.shortDesc);
       }
 
       for (const id in dexDex.data.Moves) {
-        const d = dexDex.getMove(id);
-        const s = simDex.getMove(id);
+        const d = dexDex.moves.get(id);
+        const s = simDex.moves.get(id);
         expect(d.desc).toEqual(s.desc);
         expect(d.shortDesc).toEqual(s.shortDesc);
       }

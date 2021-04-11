@@ -25,14 +25,14 @@ const team = generator.getTeam();
 ```
 
 `@pkmn/randoms` is commonly used with [`@pkmn/sim`](../sim) to set the `TeamGenerator` factory on
-its `Dex` so that `Dex.generateTeam` will work:
+its `Teams` so that `Teams.generate` will work:
 
 ```ts
-import {Dex} from '@pkmn/sim';
+import {Teams} from '@pkmn/sim';
 import {TeamGenerators} from '@pkmn/randoms';
 
-Dex.setTeamGeneratorFactory(TeamGenerators);
-const team = Dex.generateTeam('gen1randombattle');
+Teams.setGeneratorFactory(TeamGenerators);
+const team = Teams.generate('gen1randombattle');
 ```
 
 ### Browser

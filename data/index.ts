@@ -19,7 +19,7 @@ import {
   Species as DexSpecies,
   SpeciesAbility,
   SpeciesName,
-  StatName,
+  StatID,
   StatsTable,
   Tier,
   Type as DexType,
@@ -83,7 +83,7 @@ export class Generation {
   readonly types: Types;
   readonly natures: Natures;
   readonly learnsets: Learnsets;
-  readonly effects: Effects;
+  readonly conditions: Conditions;
   readonly stats: Stats;
 
   readonly dex: Dex;
@@ -101,7 +101,7 @@ export class Generation {
     this.natures = new Natures(this.dex, this.exists);
     this.types = new Types(this.dex, this.exists);
     this.learnsets = new Learnsets(this, this.dex, this.exists);
-    this.effects = new Effects(this.dex, this.exists);
+    this.conditions = new Conditions(this.dex, this.exists);
     this.stats = new Stats(this.dex);
   }
 
@@ -128,7 +128,7 @@ export class Abilities {
   }
 
   get(name: string) {
-    const ability = this.dex.getAbility(name);
+    const ability = this.dex.abilities.get(name);
     return this.exists(ability) ? ability : undefined;
   }
 
@@ -150,7 +150,7 @@ export class Items {
   }
 
   get(name: string) {
-    const item = this.dex.getItem(name);
+    const item = this.dex.items.get(name);
     return this.exists(item) ? item : undefined;
   }
 
@@ -172,7 +172,7 @@ export class Moves {
   }
 
   get(name: string) {
-    const move = this.dex.getMove(name);
+    const move = this.dex.moves.get(name);
     return this.exists(move) ? move : undefined;
   }
 
@@ -196,7 +196,7 @@ export class Species {
   }
 
   get(name: string) {
-    const species = this.dex.getSpecies(name);
+    const species = this.dex.species.get(name);
     if (!this.exists(species)) return undefined;
     const id = (species as any).speciesid || species.id; // FIXME Event-only ability hack
     const cached = this.cache[id];
@@ -294,7 +294,8 @@ export class Specie implements DexSpecies {
     if (this.dex.gen >= 3) {
       this.abilities = {0: species.abilities[0]};
       // "because PS", Pokemon have the abilities that were added in Gen 4 in Gen 3 :bigthonk:
-      if (species.abilities[1] && this.dex.getAbility(species.abilities[1]).gen <= this.dex.gen) {
+      if (species.abilities[1] &&
+          this.dex.abilities.get(species.abilities[1]).gen <= this.dex.gen) {
         this.abilities[1] = species.abilities[1];
       }
       if (this.dex.gen >= 5 && species.abilities.H) this.abilities.H = species.abilities.H;
@@ -302,28 +303,24 @@ export class Specie implements DexSpecies {
     } else {
       this.abilities = {0: ''};
     }
-    this.evos = species.evos?.filter(s => exists(this.dex.getSpecies(s)));
+    this.evos = species.evos?.filter(s => exists(this.dex.species.get(s)));
     this.nfe = !!this.evos?.length;
     if (!this.nfe) this.evos = undefined;
-    this.cosmeticFormes = species.cosmeticFormes?.filter(s => exists(this.dex.getSpecies(s)));
+    this.cosmeticFormes = species.cosmeticFormes?.filter(s => exists(this.dex.species.get(s)));
     if (!this.cosmeticFormes?.length) this.cosmeticFormes = undefined;
-    this.otherFormes = species.otherFormes?.filter(s => exists(this.dex.getSpecies(s)));
+    this.otherFormes = species.otherFormes?.filter(s => exists(this.dex.species.get(s)));
     if (!this.otherFormes?.length) this.otherFormes = undefined;
-    this.formeOrder = species.formeOrder?.filter(s => exists(this.dex.getSpecies(s)));
+    this.formeOrder = species.formeOrder?.filter(s => exists(this.dex.species.get(s)));
     if (!this.formeOrder?.length) this.formeOrder = undefined;
-    this.formes = this.formeOrder?.filter(s => !this.dex.getSpecies(s).isGigantamax);
+    this.formes = this.formeOrder?.filter(s => !this.dex.species.get(s).isGigantamax);
     this.prevo =
-      species.prevo && exists(this.dex.getSpecies(species.prevo)) ? species.prevo : undefined;
-  }
-
-  hasAbility(ability: string) {
-    return this.dex.hasAbility(this, ability);
+      species.prevo && exists(this.dex.species.get(species.prevo)) ? species.prevo : undefined;
   }
 
   get formeNum() {
     return (this.baseSpecies === this.name
       ? this.formeOrder ? this.formeOrder.findIndex(name => name === this.name) : 0
-      : this.dex.getSpecies(this.baseSpecies).formeOrder!.findIndex(
+      : this.dex.species.get(this.baseSpecies).formeOrder!.findIndex(
         name => name === (this.isGigantamax ? this.baseSpecies : this.name)
       ));
   }
@@ -337,7 +334,7 @@ export class Specie implements DexSpecies {
   }
 }
 
-export class Effects {
+export class Conditions {
   private readonly dex: Dex;
   private readonly exists: ExistsFn;
 
@@ -347,8 +344,8 @@ export class Effects {
   }
 
   get(name: string) {
-    const effect = this.dex.getEffect(name);
-    return this.exists(effect) ? effect : undefined;
+    const condition = this.dex.conditions.get(name);
+    return this.exists(condition) ? condition : undefined;
   }
 }
 
@@ -363,7 +360,7 @@ export class Natures {
 
   get(name: string) {
     if (this.dex.gen < 3) return undefined;
-    const nature = this.dex.getNature(name);
+    const nature = this.dex.natures.get(name);
     return this.exists(nature) ? nature : undefined;
   }
 
@@ -415,7 +412,7 @@ export class Types {
 
   get(name: string) {
     if (name === '???') return this.unknown;
-    const type = this.dex.getType(name);
+    const type = this.dex.types.get(name);
     if (!this.exists(type)) return undefined;
     const cached = this.cache[type.id];
     if (cached) return cached;
@@ -424,7 +421,8 @@ export class Types {
 
   *[Symbol.iterator]() {
     for (const type in this.dex.data.Types) {
-      yield this.get(type)!;
+      const t = this.get(type);
+      if (t) yield t;
     }
     if (this.dex.gen >= 2 && this.dex.gen <= 4) {
       yield this.unknown;
@@ -474,8 +472,8 @@ export class Type {
     // convert from PS's ridiculous encoding to something usable (plus damage taken -> dealt)
     this.effectiveness = {'???': 1} as { [t in TypeName]: TypeEffectiveness };
     for (const k in dex.data.Types) {
-      const t = k as Exclude<TypeName, '???'>;
-      this.effectiveness[t] = DAMAGE_TAKEN[dex.data.Types[t].damageTaken[this.name] || 0];
+      const t = k.charAt(0).toUpperCase() + k.slice(1) as Exclude<TypeName, '???'>;
+      this.effectiveness[t] = DAMAGE_TAKEN[dex.data.Types[k].damageTaken[this.name] || 0];
     }
   }
 
@@ -520,12 +518,12 @@ export class Learnsets {
   }
 
   async get(name: string) {
-    const learnset = await this.dex.getLearnset(toID(name));
+    const learnset = await this.dex.learnsets.get(toID(name));
     return this.exists(learnset) ? learnset : undefined;
   }
 
   async *[Symbol.iterator]() {
-    if (!this.dex.data.Learnsets) await this.dex.getLearnset('LOAD' as ID);
+    if (!this.dex.data.Learnsets) await this.dex.learnsets.get('LOAD' as ID);
     for (const id in this.dex.data.Learnsets) {
       const l = await this.get(id);
       if (l) yield l;
@@ -649,7 +647,7 @@ export class Learnsets {
 
 const STATS = ['hp', 'atk', 'def', 'spe', 'spa', 'spd'] as const;
 
-const NAMES: Readonly<{ [name: string]: StatName }> = {
+const NAMES: Readonly<{ [name: string]: StatID }> = {
   HP: 'hp', hp: 'hp',
   Attack: 'atk', Atk: 'atk', atk: 'atk',
   Defense: 'def', Def: 'def', def: 'def',
@@ -675,7 +673,7 @@ export class Stats {
     this.dex = dex;
   }
 
-  calc(stat: StatName, base: number, iv = 31, ev?: number, level = 100, nature?: Nature) {
+  calc(stat: StatID, base: number, iv = 31, ev?: number, level = 100, nature?: Nature) {
     if (ev === undefined) ev = this.dex.gen < 3 ? 252 : 0;
     if (this.dex.gen < 3) {
       iv = this.toDV(iv) * 2;
@@ -693,12 +691,12 @@ export class Stats {
     }
   }
 
-  get(s: string): StatName | undefined {
+  get(s: string): StatID | undefined {
     return NAMES[s];
   }
 
   display(str: string, full = false): string {
-    let s: StatName | 'spc' | undefined = NAMES[str];
+    let s: StatID | 'spc' | undefined = NAMES[str];
     if (s === undefined) return str;
     if (this.dex.gen === 1 && s === 'spa') s = 'spc';
     return DISPLAY[s][+full];
@@ -720,7 +718,7 @@ export class Stats {
     );
   }
 
-  *[Symbol.iterator](): IterableIterator<StatName> {
+  *[Symbol.iterator](): IterableIterator<StatID> {
     for (const s of STATS) {
       yield s;
     }
@@ -743,9 +741,9 @@ export {
   SideCondition,
   GenerationNum,
   GenderName,
-  StatName,
+  StatID,
   StatsTable,
-  BoostName,
+  BoostID,
   BoostsTable,
   MoveCategory,
   MoveTarget,

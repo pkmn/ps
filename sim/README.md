@@ -34,16 +34,16 @@ $ npm install @pkmn/sim
 ## Usage
 
 ```ts
-import {Dex, BattleStreams, RandomPlayerAI} from '@pkmn/sim';
+import {Dex, BattleStreams, RandomPlayerAI, Teams} from '@pkmn/sim';
 import {TeamGenerators} from '@pkmn/randoms';
 
-Dex.setTeamGeneratorFactory(TeamGenerators);
+Teams.setTeamGeneratorFactory(TeamGenerators);
 
 const streams = BattleStreams.getPlayerStreams(new BattleStreams.BattleStream());
 const spec = {formatid: 'gen7customgame'};
 
-const p1spec = {name: 'Bot 1', team: Dex.packTeam(Dex.generateTeam('gen7randombattle'))};
-const p1spec = {name: 'Bot 2', team: Dex.packTeam(Dex.generateTeam('gen7randombattle'))};
+const p1spec = {name: 'Bot 1', team: Dex.packTeam(Teams.generate('gen7randombattle'))};
+const p1spec = {name: 'Bot 2', team: Dex.packTeam(Teams.generate('gen7randombattle'))};
 
 const p1 = new RandomPlayerAI(streams.p1);
 const p2 = new RandomPlayerAI(streams.p2);
@@ -66,8 +66,10 @@ Please see [Pokémon Showdown's existing
 documentation](https://github.com/smogon/pokemon-showdown/blob/master/sim/README.md), in particular
 the [`PROTOCOL.md`](https://github.com/smogon/pokemon-showdown/blob/master/PROTOCOL.md) and
 [`SIM-PROTOCOL.md`]( https://github.com/smogon/pokemon-showdown/blob/master/sim/SIM-PROTOCOL.md)
-files ([`FORMES.md`](https://github.com/smogon/pokemon-showdown/blob/master/data/FORMES.md) and the
-[long-open PR attempting to document the simulator's inner
+files ([`FORMES.md`](https://github.com/smogon/pokemon-showdown/blob/master/data/FORMES.md),
+[`TEAMS.md`](https://github.com/smogon/pokemon-showdown/blob/master/sim/TEAMS.md),
+[`NONSTANDARD.md`](https://github.com/smogon/pokemon-showdown/blob/master/sim/NONSTANDARD.md), and
+the [long-open PR attempting to document the simulator's inner
 workings](https://github.com/smogon/pokemon-showdown/pull/5439) are also helpful).
 
 ### Browser
@@ -97,31 +99,23 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
 - **random battles are not supported by the `@pkmn/sim` package**. All team generation logic and
   data has been removed from the package and are instead to be provided by the
   [`@pkmn/randoms`](../randoms) package which exports a generator factory that can be configured
-  using the `Dex#setTeamGeneratorFactory` method. Unless a team generator factory has been set
-  `Dex#getTeamGenerator` and `Dex#generateTeam` will throw.
+  using the `Teams#setGeneratorFactory` method. Unless a team generator factory has been set
+  `Teams#getGenerator` and `Teams#generate` will throw.
 - **all generations and all of their data are automatically loaded**. With Pokémon Showdown, data is
   loaded lazily, and often requires you run `includeX` methods to ensure you are getting consistent
   state. These functions still exist and can be called, but are now wholly unnecessary. Lazily
   loading older generations would still be desirable (and this package still lazily constructs the
   data objects), but lazy loading only works on web with asynchronous APIs which Pokémon Showdown
   does not support. `Dex#includeMods` is a no-op.
-- **`Dex#packTeam` and `Dex#fastUnpackTeam` delegate to [`@pkmn/sets`](../sets)**. In Pokémon
-  Showdown this logic is copied between the client and server, but in `@pkmn` has been extracted
-  into a module.
-- **the `isOriginal` optional constructor parameter to `Dex` has been removed**, as it was only
-  intended for use internally for a legacy testing setup.
-- **`dataDir`, `levenshtein`, `dataSearch`, `getAwakeningValues` and `stringifyTeam` have been
-  removed**.
-- in order to be [`@pkmn/dex-types`](../dex/types) compatible, the **asynchronous `getLearnset` API
+- **`Teams` methods delegate to [`@pkmn/sets`](../sets)**. In Pokémon Showdown this logic is copied
+  between the client and server, but in `@pkmn` has been extracted into a module.
+- **`dataDir` and `dataSearch`  have been removed**.
+- in order to be [`@pkmn/dex-types`](../dex/types) compatible, the **asynchronous `learnsets` API
   has been added** (though unlike like with [`@pkmn/dex`](../dex), the learnsets data is loaded at
-  startup, not asynchronously), and **`Dex.data.Species`, `Dex.data.Moves` , `Dex.data.Types`
-  'aliases' have been added** for what Pokémon Showdown calls `Pokedex`, `Movedex` and `TypeChart`
-  respectively. However, it is important to **note that the types in `@pkmn/sim` do not match the
-  stricter `@pkmn/dex-types`** directly, you must simply cast the `@pkmn/sim` `Dex` and trust that
-  it will work.
-- [**`Dex#getEffect` does not deliberately break the contract of `Ability` by prepending `'ability:
-  '` its `id`
-  field**](https://github.com/smogon/pokemon-showdown/commit/18dfc9ae30f77361429af1768cd88cef2c1c6600).
+  startup, not asynchronously), and **`Dex.data.Species` and `Dex.data.Types` 'aliases' have been
+  added** for what Pokémon Showdown calls `Pokedex` and `TypeChart` respectively. However, it is
+  important to **note that the types in `@pkmn/sim` do not match the stricter `@pkmn/dex-types`**
+  directly, you must simply cast the `@pkmn/sim` `Dex` and trust that it will work.
 
 ## License
 

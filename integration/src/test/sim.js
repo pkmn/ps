@@ -4,7 +4,7 @@ const assert = require('assert').strict;
 
 const ps = {
   BattleStreams: require('../../../vendor/pokemon-showdown/.sim-dist/battle-stream'),
-  Dex: require('../../../vendor/pokemon-showdown/.sim-dist').Dex,
+  Teams: require('../../../vendor/pokemon-showdown/.sim-dist').Teams,
   RandomPlayerAI:
     require('../../../vendor/pokemon-showdown/.sim-dist/tools/random-player-ai').RandomPlayerAI,
 };
@@ -13,7 +13,7 @@ const pkmn = require('@pkmn/sim');
 const {Verifier} = require('@pkmn/protocol/verifier');
 const {TeamGenerators} = require('@pkmn/randoms');
 
-pkmn.Dex.setTeamGeneratorFactory(TeamGenerators);
+pkmn.Teams.setGeneratorFactory(TeamGenerators);
 
 const FORMATS = [
   'gen8randombattle', 'gen8randomdoublesbattle', 'gen8monotyperandombattle',
@@ -127,17 +127,17 @@ class Runner {
     const teamSeed1 = this.newSeed();
     const teamSeed2 = this.newSeed();
 
-    const psTeam1 = ps.Dex.generateTeam(format, {seed: teamSeed1});
-    const psTeam2 = ps.Dex.generateTeam(format, {seed: teamSeed2});
+    const psTeam1 = ps.Teams.generate(format, {seed: teamSeed1});
+    const psTeam2 = ps.Teams.generate(format, {seed: teamSeed2});
 
-    const pkmnTeam1 = pkmn.Dex.generateTeam(format, {seed: teamSeed1});
-    const pkmnTeam2 = pkmn.Dex.generateTeam(format, {seed: teamSeed2});
+    const pkmnTeam1 = pkmn.Teams.generate(format, {seed: teamSeed1});
+    const pkmnTeam2 = pkmn.Teams.generate(format, {seed: teamSeed2});
 
     assert.deepStrictEqual(pkmnTeam1, psTeam1);
     assert.deepStrictEqual(pkmnTeam2, psTeam2);
 
-    const p1spec = {name: 'Bot 1', ...this.p1options, team: pkmn.Dex.packTeam(pkmnTeam1)};
-    const p2spec = {name: 'Bot 2', ...this.p2options, team: pkmn.Dex.packTeam(pkmnTeam2)};
+    const p1spec = {name: 'Bot 1', ...this.p1options, team: pkmn.Teams.pack(pkmnTeam1)};
+    const p2spec = {name: 'Bot 2', ...this.p2options, team: pkmn.Teams.pack(pkmnTeam2)};
 
     const p1options = {seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p1options};
     const p2options = {seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p2options};

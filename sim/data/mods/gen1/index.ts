@@ -1,5 +1,5 @@
 export {Conditions} from './conditions';
-export {Formats} from './rulesets';
+export {Rulesets} from './rulesets';
 export {FormatsData} from './formats-data';
 export {Moves} from './moves';
 export {Pokedex} from './pokedex';

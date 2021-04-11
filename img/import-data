@@ -907,7 +907,7 @@ function fetch(u) {
   const SPECIES = {};
   const index = [];
   for (const baseid in Dex.data.Pokedex) {
-    const species = Dex.getSpecies(baseid);
+    const species = Dex.species.get(baseid);
     for (const formeid of [species.id].concat(species.cosmeticFormes || []).map(toID)) {
       const baseid = toID(species.baseSpecies);
       let spriteid;
@@ -922,7 +922,7 @@ function fetch(u) {
       SPECIES[id] = [species, spriteid];
       // Totems have no visual difference other than size, which is handled during rendering
       if (!id.endsWith('totem')) {
-        index.push([species, `${Dex.getSpecies(formeid).name}${species.gender ? '' : '*'}`]);
+        index.push([species, `${Dex.species.get(formeid).name}${species.gender ? '' : '*'}`]);
       }
     }
   }
@@ -986,7 +986,7 @@ function fetch(u) {
 
   data.items = {};
   for (const item in Dex.data.Items) {
-    const spritenum = Dex.getItem(item).spritenum;
+    const spritenum = Dex.items.get(item).spritenum;
     if (spritenum) data.items[item] = spritenum;
   }
 

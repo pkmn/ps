@@ -1,5 +1,5 @@
 export {Conditions} from './conditions';
-export {Formats} from './rulesets';
+export {Rulesets} from './rulesets';
 export {FormatsData} from './formats-data';
 export {Items} from './items';
 export {Learnsets} from './learnsets';

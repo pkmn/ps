@@ -92,41 +92,37 @@ const IMPORTS = {
     'Battle', 'ModdedDex', 'Pokemon', 'Effect', 'Move', 'ActiveMove',
     'Side', 'SpreadMoveTargets', 'SpreadMoveDamage', 'ZMoveOptions',
   ],
-  'sim/battle-queue.ts': ['Pokemon', 'ID', 'Move', 'Effect', 'AnyObject'],
+  'sim/battle-queue.ts': ['Pokemon', 'ID', 'Move', 'Effect'],
   'sim/battle-stream.ts': ['AnyObject'],
   'sim/battle.ts': [
     'Effect', 'Format', 'ID', 'PlayerOptions', 'AnyObject', 'ActiveMove', 'SideID', 'StatsTable',
     'SparseBoostsTable', 'SpreadMoveDamage', 'Move', 'PokemonSet', 'GameType', 'ModdedDex',
+    'PokemonSlot',
   ],
-  'sim/dex-abilities.ts': ['AnyObject', 'Battle', 'Pokemon', 'Side', 'Field', 'ConditionData'],
+  'sim/dex-abilities.ts': [
+    'AnyObject', 'Battle', 'Pokemon', 'Side', 'Field', 'ConditionData', 'ModdedDex', 'ID',
+  ],
   'sim/dex-conditions.ts': [
     'AnyObject', 'Battle', 'Pokemon', 'Side', 'Field', 'Effect', 'ActiveMove', 'Item',
-    'CommonHandlers', 'SparseBoostsTable',
+    'CommonHandlers', 'SparseBoostsTable', 'ModdedDex', 'ID',
   ],
   'sim/dex-data.ts': [
-    'AnyObject', 'ID', 'SparseStatsTable', 'TypeData', 'StatNameExceptHP', 'NatureData',
-    'EventInfo', 'MoveSource', 'EffectType', 'Nonstandard', 'EffectData',
-  ],
-  'sim/dex-formats.ts': [
-    'AnyObject', 'ID', 'PokemonSet', 'TeamValidator', 'Battle', 'Species', 'Effect', 'Pokemon',
-    'PokemonSources', 'Move', 'GameTimerSettings', 'ModdedField', 'ModdedBattleQueue',
-    'ModdedBattlePokemon', 'ModdedBattleScriptsData', 'ModdedBattleActions', 'GameType',
+    'AnyObject', 'ID', 'SparseStatsTable', 'TypeData', 'NatureData', 'EffectType', 'Nonstandard',
+    'EffectData', 'StatIDExceptHP', 'ModdedDex', 'StatID',
   ],
   'sim/dex-items.ts': [
     'AnyObject', 'Battle', 'Pokemon', 'SparseBoostsTable', 'ConditionData',  'CommonHandlers',
+    'ModdedDex', 'ID',
   ],
   'sim/dex-moves.ts': [
     'AnyObject', 'ID', 'SparseBoostsTable', 'Pokemon', 'Ability', 'ConditionData', 'CommonHandlers',
-    'EffectData', 'Battle', 'Side', 'Effect',
-  ],
-  'sim/dex-species.ts': [
-    'AnyObject', 'ID', 'TierTypes', 'StatsTable', 'GenderName', 'Nonstandard',
+    'EffectData', 'Battle', 'Side', 'Effect', 'ModdedDex',
   ],
   'sim/field.ts': ['Effect', 'Condition', 'Pokemon', 'Battle', 'Side', 'AnyObject', 'ID'],
   'sim/pokemon.ts': [
     'ActiveMove', 'Ability', 'Condition', 'Item', 'Species', 'SparseBoostsTable', 'Side', 'SideID',
-    'AnyObject', 'DynamaxOptions', 'Move', 'StatNameExceptHP', 'Effect', 'StatsExceptHPTable', 'ID',
-    'BoostsTable', 'StatsTable', 'GenderName', 'PokemonSet', 'Battle',
+    'AnyObject', 'DynamaxOptions', 'Move', 'StatIDExceptHP', 'Effect', 'StatsExceptHPTable', 'ID',
+    'BoostsTable', 'StatsTable', 'GenderName', 'PokemonSet', 'Battle', 'PokemonSlot',
   ],
   'sim/side.ts': [
     'AnyObject', 'Effect', 'ActiveMove', 'Condition', 'PokemonSet', 'Battle',
@@ -156,14 +152,14 @@ const MOD_IMPORTS = {
   'data/mods/letsgo/learnsets.ts': ['ModdedLearnsetData'],
   'data/mods/letsgo/moves.ts': ['ModdedMoveData'],
   'data/mods/letsgo/pokedex.ts': ['ModdedSpeciesData'],
-  'data/mods/letsgo/scripts.ts': ['ModdedBattleScriptsData', 'StatsTable', 'StatName'],
+  'data/mods/letsgo/scripts.ts': ['ModdedBattleScriptsData', 'StatsTable', 'StatID'],
 
   // gen1stadium
   'data/mods/gen1stadium/conditions.ts': ['ModdedConditionData'],
   'data/mods/gen1stadium/moves.ts': ['ModdedMoveData'],
   'data/mods/gen1stadium/rulesets.ts': ['ModdedFormatData'],
   'data/mods/gen1stadium/scripts.ts': [
-    'ModdedBattleScriptsData', 'StatNameExceptHP', 'BoostName', 'ActiveMove'
+    'ModdedBattleScriptsData', 'StatIDExceptHP', 'BoostID', 'ActiveMove'
   ],
   // vgc17
   'data/mods/vgc17/formats-data.ts': ['ModdedSpeciesFormatsData'],
@@ -176,7 +172,7 @@ const MOD_IMPORTS = {
 const RANDOMS_IMPORTS = {
   'data/random-teams.ts': [
     [[
-      'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatName',
+      'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatID',
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ModdedDex', 'Move', 'ID',
     ], '@pkmn/sim'],
   ],
@@ -193,20 +189,20 @@ const RANDOMS_IMPORTS = {
     [['TeamData'], './gen8'],
     [[
       'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'Move',
-      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'StatName', 'ID',
+      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'StatID', 'ID',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen5/random-teams.ts': [
     [['RandomGen6Teams'], './gen6'],
     [[
-      'Species', 'StatName', 'SparseStatsTable', 'RandomTeamsTypes', 'toID',
+      'Species', 'StatID', 'SparseStatsTable', 'RandomTeamsTypes', 'toID',
       'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Move', 'ID', 'AnyObject',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen4/random-teams.ts': [
     [['RandomGen5Teams'], './gen5'],
     [[
-      'Species', 'RandomTeamsTypes', 'toID', 'SparseStatsTable', 'StatName',
+      'Species', 'RandomTeamsTypes', 'toID', 'SparseStatsTable', 'StatID',
       'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Move', 'ID',
     ], '@pkmn/sim'],
   ],
@@ -226,7 +222,7 @@ const RANDOMS_IMPORTS = {
     [['RandomGen2Teams'], './gen2'],
     [['Utils'], './utils'],
     [[
-      'ID', 'Species', 'RandomTeamsTypes', 'Move', 'StatsTable', 'StatName', 'PokemonSet',
+      'ID', 'Species', 'RandomTeamsTypes', 'Move', 'StatsTable', 'StatID', 'PokemonSet',
     ], '@pkmn/sim'],
   ],
 };
@@ -254,11 +250,35 @@ const REWRITES = {
     '\tgetDetails = () => {':
       '\tgetDetails = (): {side: SideID, secret: string, shared: string} => {',
   },
+  'sim/dex-abilities.ts': {
+    '\t\tif (ability.exists) this.abilityCache.set(id, ability);':
+      `\t\t(ability as any).kind = 'Ability';\n` +
+      '\t\tif (ability.exists) this.abilityCache.set(id, ability);'
+  },
+  'sim/dex-items.ts': {
+    '\t\tif (item.exists) this.itemCache.set(id, item);':
+      `\t\t(item as any).kind = 'Item';\n` +
+      '\t\tif (item.exists) this.itemCache.set(id, item);'
+  },
+  'sim/dex-moves.ts': {
+    '\t\tif (move.exists) this.moveCache.set(id, move);':
+      `\t\t(move as any).kind = 'Move';\n` +
+      '\t\tif (move.exists) this.moveCache.set(id, move);'
+  },
+  'sim/dex-data.ts': {
+    '\t\tif (nature.exists) this.natureCache.set(id, nature);':
+      `\t\t(nature as any).kind = 'Nature';\n` +
+      '\t\tif (nature.exists) this.natureCache.set(id, nature);',
+    '\t\tif (type.exists) this.typeCache.set(id, type);':
+      `\t\t(type as any).kind = 'Type';\n` +
+      '\t\tif (type.exists) this.typeCache.set(id, type);'
+  },
   'sim/battle.ts': {
     '\tgetCategory(move: string | Move) {':
       '\tgetCategory(move: string | Move): Move[\'category\'] {',
     '\t\t\tconst entry = this.dex.data.Scripts[i];':
       '\t\t\tconst entry = (this.dex.data.Scripts as any)[i];',
+    '\t\treturn team as PokemonSet[];': '\t\treturn team;',
   },
   // smfh Zarle, please learn how Promises work
   'sim/battle-stream.ts': {
@@ -279,10 +299,10 @@ const FRAGILE = new Set([
   'sim/dex-abilities.ts',
   'sim/dex-conditions.ts',
   'sim/dex-data.ts',
-  'sim/dex-formats.ts',
   'sim/dex-items.ts',
   'sim/dex-moves.ts',
   'sim/dex-species.ts',
+  'sim/dex-formats.ts',
   // `sim/dex.ts` has to have its loading reworked to depend on everything up front so that it can
   // be used in a browser environment where synchronous `require` and `fs` APIs don't exist.
   'sim/dex.ts',
@@ -292,7 +312,7 @@ const FRAGILE = new Set([
 // Files which we want to prevent being copied over from PS, either because of modifications or
 // because they only exist in the generated package
 const OVERRIDDEN = new Set([
-  ...Array.from(FRAGILE).slice(7), // sim/dex-*.ts have *not* been overridden
+  ...Array.from(FRAGILE).slice(5), // most sim/dex-*.ts have *not* been overridden
   '.eslintcache',
   '.eslintrc-no-types.json',
   '.eslintrc-types.json',
@@ -315,6 +335,8 @@ const OVERRIDDEN = new Set([
   'sim/index.ts',
   'sim/tools/exhaustive-runner.ts',
   'sim/tools/index.ts',
+  'sim/teams.ts',
+  'sim/dex-formats.ts',
   'test/main.js',
   'tsconfig.json',
 ]);
@@ -416,14 +438,10 @@ const DATA = {
   'natures.js': code => [code.Natures, 'natures.json'],
   'pokedex.js': code => [removeFields(code.Pokedex, ['color', 'heightm']), 'species.json'],
   'typechart.js': code => {
-    for (const type1 in code.TypeChart) {
-      if (!TYPES.has(type1)) {
-        delete code.TypeChart[type1];
-      } else if (code.TypeChart[type1]) {
-        for (const type2 in code.TypeChart[type1].damageTaken) {
-          if (!TYPES.has(type2)) {
-            delete code.TypeChart[type1].damageTaken[type2];
-          }
+    for (const id in code.TypeChart) {
+      for (const type2 in code.TypeChart[id].damageTaken) {
+        if (!TYPES.has(type2)) {
+          delete code.TypeChart[id].damageTaken[type2];
         }
       }
     }
@@ -563,7 +581,7 @@ const changes = async (where, last, now, repo) => ({
           return '\tconstructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {';
         } else if (line === '\t\tsuper(format, prng);') {
           return '\t\tsuper(dex, format, prng);';
-        } else if (line == '\t\tformat = Dex.getFormat(format);') {
+        } else if (line == '\t\tformat = Dex.formats.get(format);') {
           return undefined;
         } else if (line == '\t\tthis.dex = Dex.forFormat(format);') {
           return '\t\tthis.dex = dex;';

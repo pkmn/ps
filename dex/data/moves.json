@@ -1,9 +1,5 @@
 {
   "1": {
-    "absorb": {
-      "inherit": true,
-      "desc": "The user recovers 1/2 the HP lost by the target, rounded down. If this move breaks the target's substitute, the user does not recover any HP."
-    },
     "acid": {
       "inherit": true,
       "secondary": {"chance": 33, "boosts": {"def": -1}},
@@ -22,10 +18,6 @@
       "secondary": {"chance": 33, "boosts": {"atk": -1}},
       "desc": "Has a 33% chance to lower the target's Attack by 1 stage.",
       "shortDesc": "33% chance to lower the target's Attack by 1."
-    },
-    "barrage": {
-      "inherit": true,
-      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
     },
     "bide": {
       "inherit": true,
@@ -53,10 +45,6 @@
       "shortDesc": "10% chance to make the target flinch."
     },
     "blizzard": {"inherit": true, "accuracy": 90, "target": "normal"},
-    "bonemerang": {
-      "inherit": true,
-      "desc": "Hits twice. If the first hit breaks the target's substitute, the move ends."
-    },
     "bubble": {
       "inherit": true,
       "secondary": {"chance": 33, "boosts": {"spe": -1}},
@@ -78,10 +66,6 @@
       "self": {"volatileStatus": "partialtrappinglock"},
       "desc": "The user spends two to five turns using this move. Has a 3/8 chance to last two or three turns, and a 1/8 chance to last four or five turns. The damage calculated for the first turn is used for every other turn. The user cannot select a move and the target cannot execute a move during the effect, but both may switch out. If the user switches out, the target remains unable to execute a move during that turn. If the target switches out, the user uses this move again automatically, and if it had 0 PP at the time, it becomes 63. If the user or the target switch out, or the user is prevented from moving, the effect ends. This move can prevent the target from moving even if it has type immunity, but will not deal damage.",
       "shortDesc": "Prevents the target from moving for 2-5 turns."
-    },
-    "cometpunch": {
-      "inherit": true,
-      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
     },
     "constrict": {
       "inherit": true,
@@ -106,10 +90,6 @@
       "shortDesc": "If hit by Normal/Fighting move, deals 2x damage."
     },
     "crabhammer": {"inherit": true, "critRatio": 2},
-    "defensecurl": {
-      "inherit": true,
-      "desc": "Raises the user's Defense by 1 stage."
-    },
     "dig": {
       "inherit": true,
       "basePower": 100,
@@ -133,24 +113,7 @@
       "basePower": 100,
       "desc": "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not take any recoil damage."
     },
-    "doublekick": {
-      "inherit": true,
-      "desc": "Hits twice. Damage is calculated once for the first hit and used for both hits. If the first hit breaks the target's substitute, the move ends."
-    },
-    "doubleslap": {
-      "inherit": true,
-      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
-    },
     "dragonrage": {"inherit": true, "basePower": 1},
-    "dreameater": {
-      "inherit": true,
-      "desc": "The target is unaffected by this move unless it is asleep. The user recovers 1/2 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not recover any HP."
-    },
-    "earthquake": {
-      "inherit": true,
-      "desc": "No additional effect.",
-      "shortDesc": "No additional effect."
-    },
     "explosion": {
       "inherit": true,
       "basePower": 170,
@@ -172,11 +135,6 @@
       "desc": "The user spends two to five turns using this move. Has a 3/8 chance to last two or three turns, and a 1/8 chance to last four or five turns. The damage calculated for the first turn is used for every other turn. The user cannot select a move and the target cannot execute a move during the effect, but both may switch out. If the user switches out, the target remains unable to execute a move during that turn. If the target switches out, the user uses this move again automatically, and if it had 0 PP at the time, it becomes 63. If the user or the target switch out, or the user is prevented from moving, the effect ends. This move can prevent the target from moving even if it has type immunity, but will not deal damage.",
       "shortDesc": "Prevents the target from moving for 2-5 turns."
     },
-    "fissure": {
-      "inherit": true,
-      "desc": "Deals 65535 damage to the target. Fails if the target's Speed is greater than the user's.",
-      "shortDesc": "Deals 65535 damage. Fails if target is faster."
-    },
     "fly": {
       "inherit": true,
       "condition": {"duration": 2, "onLockMove": "fly"},
@@ -188,14 +146,6 @@
       "desc": "While the user remains active, its chance for a critical hit is quartered. Fails if the user already has the effect. If any Pokemon uses Haze, this effect ends.",
       "shortDesc": "Quarters the user's chance for a critical hit."
     },
-    "furyattack": {
-      "inherit": true,
-      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
-    },
-    "furyswipes": {
-      "inherit": true,
-      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
-    },
     "glare": {
       "inherit": true,
       "ignoreImmunity": true,
@@ -206,11 +156,6 @@
       "boosts": {"spa": 1, "spd": 1},
       "desc": "Raises the user's Special by 1 stage.",
       "shortDesc": "Raises the user's Special by 1."
-    },
-    "guillotine": {
-      "inherit": true,
-      "desc": "Deals 65535 damage to the target. Fails if the target's Speed is greater than the user's.",
-      "shortDesc": "Deals 65535 damage. Fails if target is faster."
     },
     "gust": {
       "inherit": true,
@@ -228,16 +173,6 @@
       "inherit": true,
       "desc": "If this attack misses the target, the user takes 1 HP of crash damage. If the user has a substitute, the crash damage is dealt to the target's substitute if it has one, otherwise no crash damage is dealt.",
       "shortDesc": "User takes 1 HP of damage if it misses."
-    },
-    "horndrill": {
-      "inherit": true,
-      "desc": "Deals 65535 damage to the target. Fails if the target's Speed is greater than the user's.",
-      "shortDesc": "Deals 65535 damage. Fails if target is faster."
-    },
-    "hyperbeam": {
-      "inherit": true,
-      "desc": "If this move is successful, the user must recharge on the following turn and cannot select a move, unless the target or its substitute was knocked out by this move.",
-      "shortDesc": "Can't move next turn if target or sub is not KOed."
     },
     "jumpkick": {
       "inherit": true,
@@ -279,17 +214,9 @@
       "desc": "While the user remains active, this move is replaced by a random move known by the target, even if the user already knows that move. The copied move keeps the remaining PP for this move, regardless of the copied move's maximum PP. Whenever one PP is used for a copied move, one PP is used for this move.",
       "shortDesc": "Random move known by the target replaces this."
     },
-    "minimize": {
-      "inherit": true,
-      "desc": "Raises the user's evasiveness by 1 stage."
-    },
     "mirrormove": {
       "inherit": true,
       "desc": "The user uses the last move used by the target. Fails if the target has not made a move, or if the last move used was Mirror Move."
-    },
-    "mist": {
-      "inherit": true,
-      "desc": "While the user remains active, it is protected from having its stat stages lowered by other Pokemon, unless caused by the secondary effect of a move. Fails if the user already has the effect. If any Pokemon uses Haze, this effect ends."
     },
     "nightshade": {
       "inherit": true,
@@ -297,15 +224,6 @@
       "basePower": 1,
       "desc": "Deals damage to the target equal to the user's level. This move ignores type immunity.",
       "shortDesc": "Damage = user's level. Can hit Normal types."
-    },
-    "petaldance": {
-      "inherit": true,
-      "desc": "Whether or not this move is successful, the user spends three or four turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. During the effect, this move's accuracy is overwritten every turn with the current calculated accuracy including stat stage changes, but not to less than 1/256 or more than 255/256.",
-      "shortDesc": "Lasts 3-4 turns. Confuses the user afterwards."
-    },
-    "pinmissile": {
-      "inherit": true,
-      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
     },
     "poisonsting": {
       "inherit": true,
@@ -407,34 +325,12 @@
       "heal": null,
       "desc": "The user restores 1/2 of its maximum HP, rounded down. Fails if (user's maximum HP - user's current HP + 1) is divisible by 256."
     },
-    "solarbeam": {
-      "inherit": true,
-      "desc": "This attack charges on the first turn and executes on the second.",
-      "shortDesc": "Charges turn 1. Hits turn 2."
-    },
-    "sonicboom": {
-      "inherit": true,
-      "desc": "Deals 20 HP of damage to the target. This move ignores type immunity."
-    },
-    "spikecannon": {
-      "inherit": true,
-      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
-    },
-    "stomp": {
-      "inherit": true,
-      "desc": "Has a 30% chance to make the target flinch."
-    },
     "struggle": {
       "inherit": true,
       "pp": 10,
       "recoil": [1, 2],
       "desc": "Deals Normal-type damage. If this move was successful, the user takes damage equal to 1/2 the HP lost by the target, rounded down, but not less than 1 HP. This move is automatically used if none of the user's known moves can be selected.",
       "shortDesc": "User loses 1/2 the HP lost by the target."
-    },
-    "stunspore": {"inherit": true, "desc": "Paralyzes the target."},
-    "submission": {
-      "inherit": true,
-      "desc": "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not take any recoil damage."
     },
     "substitute": {
       "num": 164,
@@ -460,20 +356,6 @@
       "desc": "Deals damage to the target equal to half of its current HP, rounded down, but not less than 1 HP. This move ignores type immunity.",
       "shortDesc": "Damage = 1/2 target's current HP. Hits Ghosts."
     },
-    "swift": {
-      "inherit": true,
-      "desc": "This move does not check accuracy and hits even if the target is using Dig or Fly.",
-      "shortDesc": "Never misses, even against Dig and Fly."
-    },
-    "takedown": {
-      "inherit": true,
-      "desc": "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not take any recoil damage."
-    },
-    "thrash": {
-      "inherit": true,
-      "desc": "Whether or not this move is successful, the user spends three or four turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. During the effect, this move's accuracy is overwritten every turn with the current calculated accuracy including stat stage changes, but not to less than 1/256 or more than 255/256.",
-      "shortDesc": "Lasts 3-4 turns. Confuses the user afterwards."
-    },
     "thunder": {
       "inherit": true,
       "secondary": {"chance": 10, "status": "par"},
@@ -481,19 +363,11 @@
       "shortDesc": "10% chance to paralyze the target."
     },
     "thunderwave": {"inherit": true, "accuracy": 100},
-    "transform": {
-      "inherit": true,
-      "desc": "The user transforms into the target. The target's current stats, stat stages, types, moves, DVs, species, and sprite are copied. The user's level and HP remain the same and each copied move receives only 5 PP. This move can hit a target using Dig or Fly."
-    },
     "triattack": {
       "inherit": true,
       "secondary": null,
       "desc": "No additional effect.",
       "shortDesc": "No additional effect."
-    },
-    "twineedle": {
-      "inherit": true,
-      "desc": "Hits twice, with the second hit having a 20% chance to poison the target. If the first hit breaks the target's substitute, the move ends."
     },
     "whirlwind": {
       "inherit": true,
@@ -512,6 +386,132 @@
       "self": {"volatileStatus": "partialtrappinglock"},
       "desc": "The user spends two to five turns using this move. Has a 3/8 chance to last two or three turns, and a 1/8 chance to last four or five turns. The damage calculated for the first turn is used for every other turn. The user cannot select a move and the target cannot execute a move during the effect, but both may switch out. If the user switches out, the target remains unable to execute a move during that turn. If the target switches out, the user uses this move again automatically, and if it had 0 PP at the time, it becomes 63. If the user or the target switch out, or the user is prevented from moving, the effect ends. This move can prevent the target from moving even if it has type immunity, but will not deal damage.",
       "shortDesc": "Prevents the target from moving for 2-5 turns."
+    },
+    "absorb": {
+      "inherit": true,
+      "desc": "The user recovers 1/2 the HP lost by the target, rounded down. If this move breaks the target's substitute, the user does not recover any HP."
+    },
+    "barrage": {
+      "inherit": true,
+      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
+    },
+    "bonemerang": {
+      "inherit": true,
+      "desc": "Hits twice. If the first hit breaks the target's substitute, the move ends."
+    },
+    "cometpunch": {
+      "inherit": true,
+      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
+    },
+    "defensecurl": {
+      "inherit": true,
+      "desc": "Raises the user's Defense by 1 stage."
+    },
+    "doublekick": {
+      "inherit": true,
+      "desc": "Hits twice. Damage is calculated once for the first hit and used for both hits. If the first hit breaks the target's substitute, the move ends."
+    },
+    "doubleslap": {
+      "inherit": true,
+      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
+    },
+    "dreameater": {
+      "inherit": true,
+      "desc": "The target is unaffected by this move unless it is asleep. The user recovers 1/2 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not recover any HP."
+    },
+    "earthquake": {
+      "inherit": true,
+      "desc": "No additional effect.",
+      "shortDesc": "No additional effect."
+    },
+    "fissure": {
+      "inherit": true,
+      "desc": "Deals 65535 damage to the target. Fails if the target's Speed is greater than the user's.",
+      "shortDesc": "Deals 65535 damage. Fails if target is faster."
+    },
+    "furyattack": {
+      "inherit": true,
+      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
+    },
+    "furyswipes": {
+      "inherit": true,
+      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
+    },
+    "guillotine": {
+      "inherit": true,
+      "desc": "Deals 65535 damage to the target. Fails if the target's Speed is greater than the user's.",
+      "shortDesc": "Deals 65535 damage. Fails if target is faster."
+    },
+    "horndrill": {
+      "inherit": true,
+      "desc": "Deals 65535 damage to the target. Fails if the target's Speed is greater than the user's.",
+      "shortDesc": "Deals 65535 damage. Fails if target is faster."
+    },
+    "hyperbeam": {
+      "inherit": true,
+      "desc": "If this move is successful, the user must recharge on the following turn and cannot select a move, unless the target or its substitute was knocked out by this move.",
+      "shortDesc": "Can't move next turn if target or sub is not KOed."
+    },
+    "minimize": {
+      "inherit": true,
+      "desc": "Raises the user's evasiveness by 1 stage."
+    },
+    "mist": {
+      "inherit": true,
+      "desc": "While the user remains active, it is protected from having its stat stages lowered by other Pokemon, unless caused by the secondary effect of a move. Fails if the user already has the effect. If any Pokemon uses Haze, this effect ends."
+    },
+    "petaldance": {
+      "inherit": true,
+      "desc": "Whether or not this move is successful, the user spends three or four turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. During the effect, this move's accuracy is overwritten every turn with the current calculated accuracy including stat stage changes, but not to less than 1/256 or more than 255/256.",
+      "shortDesc": "Lasts 3-4 turns. Confuses the user afterwards."
+    },
+    "pinmissile": {
+      "inherit": true,
+      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
+    },
+    "solarbeam": {
+      "inherit": true,
+      "desc": "This attack charges on the first turn and executes on the second.",
+      "shortDesc": "Charges turn 1. Hits turn 2."
+    },
+    "sonicboom": {
+      "inherit": true,
+      "desc": "Deals 20 HP of damage to the target. This move ignores type immunity."
+    },
+    "spikecannon": {
+      "inherit": true,
+      "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
+    },
+    "stomp": {
+      "inherit": true,
+      "desc": "Has a 30% chance to make the target flinch."
+    },
+    "stunspore": {"inherit": true, "desc": "Paralyzes the target."},
+    "submission": {
+      "inherit": true,
+      "desc": "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not take any recoil damage."
+    },
+    "swift": {
+      "inherit": true,
+      "desc": "This move does not check accuracy and hits even if the target is using Dig or Fly.",
+      "shortDesc": "Never misses, even against Dig and Fly."
+    },
+    "takedown": {
+      "inherit": true,
+      "desc": "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not take any recoil damage."
+    },
+    "thrash": {
+      "inherit": true,
+      "desc": "Whether or not this move is successful, the user spends three or four turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. During the effect, this move's accuracy is overwritten every turn with the current calculated accuracy including stat stage changes, but not to less than 1/256 or more than 255/256.",
+      "shortDesc": "Lasts 3-4 turns. Confuses the user afterwards."
+    },
+    "transform": {
+      "inherit": true,
+      "desc": "The user transforms into the target. The target's current stats, stat stages, types, moves, DVs, species, and sprite are copied. The user's level and HP remain the same and each copied move receives only 5 PP. This move can hit a target using Dig or Fly."
+    },
+    "twineedle": {
+      "inherit": true,
+      "desc": "Hits twice, with the second hit having a 20% chance to poison the target. If the first hit breaks the target's substitute, the move ends."
     }
   },
   "2": {

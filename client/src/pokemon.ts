@@ -475,7 +475,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     target: Pokemon | null,
     from?: EffectName | MoveName
   ) {
-    const fromeffect = this.side.battle.get('effects', from);
+    const fromeffect = this.side.battle.get('conditions', from);
     this.activateAbility(fromeffect);
     this.clearMovestatuses();
     if (move.id === 'focuspunch') this.removeVolatile('focuspunch' as ID);

@@ -1,4 +1,4 @@
-import {Dex, TeamValidator, RandomPlayerAI, BattleStreams, PRNG} from '@pkmn/sim';
+import {Dex, Teams as DTeams, TeamValidator, RandomPlayerAI, BattleStreams, PRNG} from '@pkmn/sim';
 import {Protocol, Handler, ArgName, ArgType, BattleArgsKWArgType} from '@pkmn/protocol';
 import {Teams, Data, PokemonSet} from '@pkmn/sets';
 import {Battle, Side, Pokemon} from '@pkmn/client';
@@ -23,7 +23,7 @@ const FORMAT = FIXED ? 'gen7anythinggoes' : prng.sample(FORMATS);
 const validator = new TeamValidator(FORMAT);
 
 const dex = Dex.forFormat(FORMAT);
-dex.setTeamGeneratorFactory(TeamGenerators);
+DTeams.setGeneratorFactory(TeamGenerators);
 const gens = new Generations(Dex as any);
 
 const importTeam = (t: string, name: 'A' | 'B') => {
@@ -48,9 +48,9 @@ const GRAPHICS = prng.sample(SPRITES[GEN]);
 
 const spec = {formatid: FORMAT};
 const p1spec =
-  FIXED ? {name: 'Bot A', team: dex.packTeam(importTeam(TEAM_A, 'A'))} : {name: 'Bot A'};
+  FIXED ? {name: 'Bot A', team: DTeams.pack(importTeam(TEAM_A, 'A'))} : {name: 'Bot A'};
 const p2spec =
-  FIXED ? {name: 'Bot B', team: dex.packTeam(importTeam(TEAM_B, 'B'))} : {name: 'Bot B'};
+  FIXED ? {name: 'Bot B', team: DTeams.pack(importTeam(TEAM_B, 'B'))} : {name: 'Bot B'};
 
 const streams = BattleStreams.getPlayerStreams(new BattleStreams.BattleStream());
 

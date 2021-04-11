@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/view",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "bin": {
@@ -13,8 +13,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/protocol": "^0.2.2",
-    "@pkmn/types": "^1.0.1"
+    "@pkmn/protocol": "^0.3.0",
+    "@pkmn/types": "^2.0.0"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",

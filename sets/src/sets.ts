@@ -3,22 +3,28 @@ import {
   HPTypeName,
   ID,
   PokemonSet,
-  StatName,
+  StatID,
   StatsTable,
 } from '@pkmn/types';
+
+export interface DataTable<T> {
+  get(name: string): Readonly<T> | undefined;
+}
 
 export interface Data {
   forGen?(gen: GenerationNum): Data;
 
   readonly gen: GenerationNum;
-  getAbility(ability: string): Readonly<{name: string}> | undefined;
-  getItem(item: string): Readonly<{name: string}> | undefined;
-  getMove(move: string): Readonly<{name: string}> | undefined;
-  getSpecies(species: string): Readonly<{
+
+  readonly abilities: DataTable<{name: string}>;
+  readonly items: DataTable<{name: string}>;
+  readonly moves: DataTable<{name: string}>;
+  readonly natures: DataTable<{name: string}>;
+  readonly species: DataTable<{
     name: string;
     baseSpecies?: string;
     abilities?: {0: string; 1?: string; H?: string; S?: string};
-  }> | undefined;
+  }>;
 }
 
 export function toID(s: any) {
@@ -35,9 +41,9 @@ const STAT_NAMES: Readonly<StatsTable<string>> = {
   spe: 'Spe',
 };
 
-const STATS = Object.keys(STAT_NAMES) as readonly StatName[];
+const STATS = Object.keys(STAT_NAMES) as readonly StatID[];
 
-const DECODE_STAT: Readonly<{[name: string]: StatName}> = {
+const DECODE_STAT: Readonly<{[name: string]: StatID}> = {
   HP: 'hp',
   hp: 'hp',
   Attack: 'atk',
@@ -65,6 +71,8 @@ const DECODE_STAT: Readonly<{[name: string]: StatName}> = {
   spe: 'spe',
 };
 
+export {PokemonSet} from '@pkmn/types';
+
 export const Sets = new class {
   pack(s: PokemonSet) {
     return Sets.packSet(s);
@@ -76,25 +84,25 @@ export const Sets = new class {
     buf += s.name || s.species;
 
     // species
-    const id = toID(s.species);
-    buf += '|' + (toID(s.name || s.species) === id ? '' : id);
+    const packed = packName(s.species);
+    buf += '|' + (packName(s.name || s.species) === packed ? '' : packed);
 
     // item
-    buf += '|' + toID(s.item);
+    buf += '|' + packName(s.item);
 
     // ability
-    buf += '|' + (toID(s.ability) || '-');
+    buf += '|' + (packName(s.ability) || '-');
 
     // moves
     let hasHP = '';
     buf += '|';
     if (s.moves) {
       for (let j = 0; j < s.moves.length; j++) {
-        const moveid = toID(s.moves[j]);
-        if (j && !moveid) continue;
-        buf += (j ? ',' : '') + moveid;
-        if (moveid.substr(0, 11) === 'hiddenpower' && moveid.length > 11) {
-          hasHP = moveid.slice(11);
+        const packedMove = packName(s.moves[j]);
+        if (j && !packedMove) continue;
+        buf += (j ? ',' : '') + packedMove;
+        if (packedMove.substr(0, 11) === 'HiddenPower' && packedMove.length > 11) {
+          hasHP = packedMove.slice(11);
         }
       }
     }
@@ -126,7 +134,7 @@ export const Sets = new class {
       buf += '|';
     }
 
-    const getIV = (stat: StatName) =>
+    const getIV = (stat: StatID) =>
       s.ivs[stat] === 31 || s.ivs[stat] === undefined ? '' : s.ivs[stat].toString();
 
     // ivs
@@ -167,9 +175,9 @@ export const Sets = new class {
       buf += '|';
     }
 
-    if (s.pokeball || (s.hpType && toID(s.hpType) !== hasHP) || s.gigantamax) {
+    if (s.pokeball || (s.hpType && packName(s.hpType) !== hasHP) || s.gigantamax) {
       buf += ',' + (s.hpType || '');
-      buf += ',' + toID(s.pokeball || '');
+      buf += ',' + packName(s.pokeball || '');
       buf += ',' + (s.gigantamax ? 'G' : '');
     }
 
@@ -179,7 +187,7 @@ export const Sets = new class {
   exportSet(s: PokemonSet, data?: Data) {
     let buf = '';
     let species = s.species || s.name;
-    species = data?.getSpecies(species)?.name || species;
+    species = data?.species.get(species)?.name || species;
     if (s.name && s.name !== species) {
       buf += '' + s.name + ' (' + species + ')';
     } else {
@@ -190,12 +198,12 @@ export const Sets = new class {
       if (s.gender === 'F') buf += ' (F)';
     }
     if (s.item) {
-      const item = data?.getItem(s.item)?.name ?? s.item;
+      const item = data?.items.get(s.item)?.name ?? s.item;
       buf += ' @ ' + item;
     }
     buf += '  \n';
     if (s.ability && (!data || data?.gen >= 3)) {
-      const ability = data?.getAbility(s.ability)?.name ?? s.ability;
+      const ability = data?.abilities.get(s.ability)?.name ?? s.ability;
       buf += 'Ability: ' + ability + '  \n';
     }
     if (s.level && s.level !== 100) {
@@ -286,7 +294,7 @@ export const Sets = new class {
     if (s.moves) {
       for (let move of s.moves) {
         if (move) {
-          move = data?.getMove(move)?.name ?? move;
+          move = data?.moves.get(move)?.name ?? move;
           buf += '- ' + exportMove(move) + '  \n';
         }
       }
@@ -340,24 +348,24 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   // species
   j = buf.indexOf('|', i);
   if (j < 0) return {i, j};
-  s.species = buf.substring(i, j) || s.name;
+  s.species = unpackName(buf.substring(i, j), data?.species) || s.name;
   i = j + 1;
 
   // item
   j = buf.indexOf('|', i);
   if (j < 0) return {i, j};
-  s.item = buf.substring(i, j);
+  s.item = unpackName(buf.substring(i, j), data?.items);
   i = j + 1;
 
   // ability
   j = buf.indexOf('|', i);
   if (j < 0) return {i, j};
-  let ability = buf.substring(i, j);
+  let ability = unpackName(buf.substring(i, j), data?.abilities);
   if (ability === '-') {
     ability = '';
   } else if (ABILITY.includes(ability)) {
     if (data) {
-      const species = data.getSpecies(s.species);
+      const species = data.species.get(s.species);
       // Workaround for bug introduced by smogon/pokemon-showdown/817236b0
       if (species?.baseSpecies === 'Zygarde' && ability === 'H') {
         ability = 'Power Construct';
@@ -373,13 +381,13 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   // moves
   j = buf.indexOf('|', i);
   if (j < 0) return {i, j};
-  s.moves = buf.substring(i, j).split(',', 24).filter(x => x);
+  s.moves = buf.substring(i, j).split(',', 24).filter(x => x).map(m => unpackName(m, data?.moves));
   i = j + 1;
 
   // nature
   j = buf.indexOf('|', i);
   if (j < 0) return {i, j};
-  s.nature = buf.substring(i, j);
+  s.nature = unpackName(buf.substring(i, j), data?.natures);
   i = j + 1;
 
   // evs
@@ -445,7 +453,7 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   if (misc) {
     s.happiness = (misc[0] ? Number(misc[0]) : 255);
     s.hpType = misc[1] || '';
-    s.pokeball = toID(misc[2] || '');
+    s.pokeball = unpackName(misc[2] || '', data?.items);
     s.gigantamax = !!misc[3];
   }
 
@@ -481,11 +489,11 @@ export function _import(lines: string[], i = 0, data?: Data) {
       if (line.substr(line.length - 1) === ')' && parenIndex !== -1) {
         line = line.substr(0, line.length - 1);
         const sub = line.substr(parenIndex + 2);
-        s.species = data?.getSpecies(sub)?.name ?? sub;
+        s.species = data?.species.get(sub)?.name ?? sub;
         line = line.substr(0, parenIndex);
         s.name = line;
       } else {
-        s.species = data?.getSpecies(line)?.name ?? line;
+        s.species = data?.species.get(line)?.name ?? line;
         s.name = '';
       }
     } else if (line.substr(0, 7) === 'Trait: ') {
@@ -552,7 +560,7 @@ export function _import(lines: string[], i = 0, data?: Data) {
         const hpIVs = getHiddenPowerIVs(hpType, data);
         if (!s.ivs && hpIVs) {
           s.ivs = {hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31};
-          let stat: StatName;
+          let stat: StatID;
           for (stat in hpIVs) {
             s.ivs[stat] = hpIVs[stat]!;
           }
@@ -595,6 +603,26 @@ function exportMove(move: string) {
   return move;
 }
 
+function packName(name: string | undefined | null) {
+  if (!name) return '';
+  return name.replace(/[^A-Za-z0-9]+/g, '');
+}
+
+function unpackName(
+  name: string,
+  data?: {get: (name: string) => {name: string; exists?: boolean} | undefined}
+) {
+  if (!name) return '';
+  if (data) {
+    const obj = data.get(name);
+    if (obj?.exists) return obj.name;
+  }
+  return (name.replace(/([0-9]+)/g, ' $1 ')
+    .replace(/([A-Z])/g, ' $1')
+    .replace(/[ ][ ]/g, ' ')
+    .trim());
+}
+
 const HP: {[type in HPTypeName]: {ivs: Partial<StatsTable>; dvs: Partial<StatsTable>}} = {
   Bug: {ivs: {atk: 30, def: 30, spd: 30}, dvs: {atk: 13, def: 13}},
   Dark: {ivs: {}, dvs: {}},
@@ -622,7 +650,7 @@ function getHiddenPowerIVs(hpType: HPTypeName, data?: Data) {
 
 function DVsToIVs(dvs: Readonly<Partial<StatsTable>>) {
   const ivs: Partial<StatsTable> = {};
-  let dv: StatName;
+  let dv: StatID;
   for (dv in dvs) {
     ivs[dv] = dvs[dv]! * 2;
   }

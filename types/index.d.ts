@@ -11,11 +11,11 @@ export type GenerationNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 export type GenderName = 'M' | 'F' | 'N';
 
-export type StatName = 'hp' | 'atk' | 'def' | 'spa' | 'spd' | 'spe';
-export type StatsTable<T = number> = { [stat in StatName]: T };
+export type StatID = 'hp' | 'atk' | 'def' | 'spa' | 'spd' | 'spe';
+export type StatsTable<T = number> = { [stat in StatID]: T };
 
-export type BoostName = Exclude<StatName, 'hp'> | 'accuracy' | 'evasion';
-export type BoostsTable<T = number> = { [boost in BoostName]: T };
+export type BoostID = Exclude<StatID, 'hp'> | 'accuracy' | 'evasion';
+export type BoostsTable<T = number> = { [boost in BoostID]: T };
 
 export type MoveCategory = 'Physical' | 'Special' | 'Status';
 export type MoveTarget =
@@ -38,7 +38,7 @@ export type SideID = 'p1' | 'p2' | 'p3' | 'p4';
 export type Player = SideID;
 
 export type GameType =
-  'singles' | 'doubles' | 'triples' | 'multi' | 'free-for-all' | 'rotation';
+  'singles' | 'doubles' | 'triples' | 'multi' | 'freeforall' | 'rotation';
 
 export type HPColor = 'g' | 'y' | 'r';
 

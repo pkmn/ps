@@ -1,15 +1,15 @@
-import {BoostName, GameType, ID, Player, StatusName} from '@pkmn/types';
+import {BoostID, GameType, ID, Player, StatusName} from '@pkmn/types';
 
 import {Protocol, Args, KWArgs, PokemonIdent} from '../index';
 
 const QUERYTYPES: Protocol.QueryType[] =
   ['userdetails', 'roomlist', 'rooms', 'laddertop', 'roominfo', 'savereplay'];
 const GAMETYPES: GameType[] =
-  ['singles', 'doubles', 'triples', 'multi', 'free-for-all', 'rotation'];
+  ['singles', 'doubles', 'triples', 'multi', 'freeforall', 'rotation'];
 const PLAYERS: Player[] = ['p1', 'p2', 'p3', 'p4'];
 const KWARGS: Protocol.BattleArgsWithKWArgType[] = ['from', 'of', 'still', 'silent'];
 const STATUSES: StatusName[] = ['slp', 'psn', 'brn', 'frz', 'par', 'tox'];
-const BOOSTS: BoostName[] = ['atk', 'def', 'spa', 'spd', 'spe', 'accuracy', 'evasion'];
+const BOOSTS: BoostID[] = ['atk', 'def', 'spa', 'spd', 'spe', 'accuracy', 'evasion'];
 const REASONS: Protocol.Reason[] = [...STATUSES, 'partiallytrapped', 'flinch', 'nopp', 'recharge'];
 const BOOL_KWARGS = new Set<Protocol.BattleArgsWithKWArgType>([
   'broken', 'consumed', 'damage', 'eat', 'fail', 'fatigue', 'forme', 'heavy', 'miss', 'msg',
@@ -84,12 +84,12 @@ function verifyStatusName(status: StatusName) {
   return STATUSES.includes(status);
 }
 
-function verifyBoostName(boost: BoostName) {
+function verifyBoostID(boost: BoostID) {
   return BOOSTS.includes(boost);
 }
 
-function verifyBoostNames(boosts: Protocol.BoostNames) {
-  return boosts.split(', ').every(boost => verifyBoostName(boost as BoostName));
+function verifyBoostIDs(boosts: Protocol.BoostIDs) {
+  return boosts.split(', ').every(boost => verifyBoostID(boost as BoostID));
 }
 
 function verifyKWArgs<T extends Protocol.BattleArgsWithKWArgName>(
@@ -137,7 +137,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '||'(args: Args['||']) {
-    return args.length === 2 && !!args[1];
+    return args.length === 2 && !args[0];
   }
 
   '|html|'(args: Args['|html|']) {
@@ -528,7 +528,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 4 &&
       verifyPokemonIdent(args[1]) &&
       args[2] === 'unboost' &&
-      (verifyBoostName(args[3] as BoostName) || verifyName(args[3]));
+      (verifyBoostID(args[3] as BoostID) || verifyName(args[3]));
   }
 
   '|-block|'(args: Args['|-block|'], kwArgs: KWArgs['|-block|']) {
@@ -598,7 +598,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   '|-boost|'(args: Args['|-boost|'], kwArgs: KWArgs['|-boost|']) {
     return args.length === 4 &&
       verifyPokemonIdent(args[1]) &&
-      verifyBoostName(args[2]) &&
+      verifyBoostID(args[2]) &&
       verifyNum(args[3]) &&
       verifyKWArgs(kwArgs, [...KWARGS, 'multiple', 'zeffect']);
   }
@@ -606,7 +606,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   '|-unboost|'(args: Args['|-unboost|'], kwArgs: KWArgs['|-unboost|']) {
     return args.length === 4 &&
       verifyPokemonIdent(args[1]) &&
-      verifyBoostName(args[2]) &&
+      verifyBoostID(args[2]) &&
       verifyNum(args[3]) &&
       verifyKWArgs(kwArgs, [...KWARGS, 'multiple', 'zeffect']);
   }
@@ -614,7 +614,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   '|-setboost|'(args: Args['|-setboost|'], kwArgs: KWArgs['|-setboost|']) {
     return args.length === 4 &&
       verifyPokemonIdent(args[1]) &&
-      verifyBoostName(args[2]) &&
+      verifyBoostID(args[2]) &&
       verifyNum(args[3]) &&
       verifyKWArgs(kwArgs, KWARGS);
   }
@@ -622,7 +622,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   '|-swapboost|'(args: Args['|-swapboost|'], kwArgs: KWArgs['|-swapboost|']) {
     if (!verifyKWArgs(kwArgs, KWARGS)) return false;
     if (!(verifyPokemonIdent(args[1]) && verifyPokemonIdent(args[2]))) return false;
-    return args.length === 3 || (args.length === 4 && verifyBoostNames(args[3]));
+    return args.length === 3 || (args.length === 4 && verifyBoostIDs(args[3]));
   }
 
   '|-invertboost|'(args: Args['|-invertboost|'], kwArgs: KWArgs['|-invertboost|']) {
@@ -671,7 +671,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       verifyKWArgs(kwArgs, [...KWARGS, 'zeffect']))) {
       return false;
     }
-    return args.length === 3 || (args.length === 4) && verifyBoostNames(args[3]);
+    return args.length === 3 || (args.length === 4) && verifyBoostIDs(args[3]);
   }
 
   '|-weather|'(args: Args['|-weather|'], kwArgs: KWArgs['|-weather|']) {

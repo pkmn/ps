@@ -108,21 +108,34 @@ export const GEN: {[n: number]: Data} = {};
 for (let gen = 1; gen <= 8; gen++) {
   GEN[gen] = {
     gen: gen as GenerationNum,
-    getAbility(name: string) {
-      return {name: ABILITIES[toID(name)]};
+    abilities: {
+      get(name: string) {
+        return {name: ABILITIES[toID(name)]};
+      },
     },
-    getItem(name: string) {
-      return {name: ITEMS[toID(name)]};
+    items: {
+      get(name: string) {
+        return {name: ITEMS[toID(name)]};
+      },
     },
-    getMove(name: string) {
-      return {name: MOVES[toID(name)]};
+    moves: {
+      get(name: string) {
+        return {name: MOVES[toID(name)]};
+      },
     },
-    getSpecies(name: string) {
-      const s: {name: string; abilities?: any} = {name: SPECIES[toID(name)]};
-      if (s.name === 'Tangrowth') {
-        s.abilities = {0: 'Chlorophyll', 1: 'Leaf Guard', H: 'Regenerator'};
-      }
-      return s;
+    species: {
+      get(name: string) {
+        const s: {name: string; abilities?: any} = {name: SPECIES[toID(name)]};
+        if (s.name === 'Tangrowth') {
+          s.abilities = {0: 'Chlorophyll', 1: 'Leaf Guard', H: 'Regenerator'};
+        }
+        return s;
+      },
+    },
+    natures: {
+      get(name: string) {
+        return {name};
+      },
     },
     forGen(g: number) {
       return GEN[g];

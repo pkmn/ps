@@ -17,40 +17,40 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         const dex =
           new ModdedDex(Dex.mod('gen1stadium' as ID, await import('./gen1stadium') as ModData));
         expect(dex.gen).toBe(1);
-        expect(dex.getMove('highjumpkick').desc)
+        expect(dex.moves.get('highjumpkick').desc)
           .toEqual('If this attack misses the target, the user takes 1 HP of damage.');
       });
 
       it('gen8dlc1', async () => {
         const dex = new ModdedDex(Dex.mod('gen8dlc1' as ID, await import('./gen8dlc1') as ModData));
         expect(dex.gen).toBe(8);
-        expect(dex.getSpecies('Nidoking').tier).toBe('Unreleased');
-        expect(dex.getSpecies('Regidrago').tier).toBe('Unreleased');
-        expect(dex.getItem('Custap Berry').isNonstandard).toBe('Unobtainable');
-        expect(dex.getSpecies('dracozolt').unreleasedHidden).toBe(true);
-        expect(dex.getAbility('Curious Medicine').isNonstandard).toBe('Unobtainable');
-        expect(dex.getMove('Dragon Ascent').isNonstandard).toBe('Unobtainable');
+        expect(dex.species.get('Nidoking').tier).toBe('Unreleased');
+        expect(dex.species.get('Regidrago').tier).toBe('Unreleased');
+        expect(dex.items.get('Custap Berry').isNonstandard).toBe('Unobtainable');
+        expect(dex.species.get('dracozolt').unreleasedHidden).toBe(true);
+        expect(dex.abilities.get('Curious Medicine').isNonstandard).toBe('Unobtainable');
+        expect(dex.moves.get('Dragon Ascent').isNonstandard).toBe('Unobtainable');
       });
 
       it('letsgo', async () => {
         const dex = new ModdedDex(Dex.mod('letsgo' as ID, await import('./letsgo') as ModData));
         expect(dex.gen).toBe(7);
-        expect(dex.getSpecies('porygon').evos).toEqual([]);
-        expect(dex.getSpecies('clefairy').prevo).toBe('');
-        expect(dex.getSpecies('melmetal').isNonstandard).toBeNull();
-        expect(dex.getMove('bouncybubble').isNonstandard).toBeNull();
-        expect(dex.getMove('teleport').shortDesc).toBe('User switches out.');
-        expect((await dex.getLearnset('sandslashalola')).learnset!['iceshard']).toEqual(['7L1']);
+        expect(dex.species.get('porygon').evos).toEqual([]);
+        expect(dex.species.get('clefairy').prevo).toBe('');
+        expect(dex.species.get('melmetal').isNonstandard).toBeNull();
+        expect(dex.moves.get('bouncybubble').isNonstandard).toBeNull();
+        expect(dex.moves.get('teleport').shortDesc).toBe('User switches out.');
+        expect((await dex.learnsets.get('sandslashalola')).learnset!['iceshard']).toEqual(['7L1']);
       });
 
       it('vgc17', async () => {
         const dex = new ModdedDex(Dex.mod('vgc17' as ID, await import('./vgc17') as ModData));
         expect(dex.gen).toBe(7);
-        expect(dex.getSpecies('naganadel').tier).toBe('Unreleased');
-        expect(dex.getItem('kommoniumz').isNonstandard).toBe('Unobtainable');
-        expect((await dex.getLearnset('swirlix')).learnset!['stickyweb']).toBeUndefined();
-        expect(dex.getSpecies('incineroar').unreleasedHidden).toBe(true);
-        expect((await dex.getLearnset('sandslashalola')).learnset!['iceshard']).toBeUndefined();
+        expect(dex.species.get('naganadel').tier).toBe('Unreleased');
+        expect(dex.items.get('kommoniumz').isNonstandard).toBe('Unobtainable');
+        expect((await dex.learnsets.get('swirlix')).learnset!['stickyweb']).toBeUndefined();
+        expect(dex.species.get('incineroar').unreleasedHidden).toBe(true);
+        expect((await dex.learnsets.get('sandslashalola')).learnset!['iceshard']).toBeUndefined();
       });
     });
 
@@ -65,7 +65,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
           },
         } as ModData);
         const modded = new ModdedDex<Ability & {foo?: number}, AbilityData & {foo?: number}>(dex);
-        expect(modded.getAbility('magicguard').foo).toBe(5);
+        expect(modded.abilities.get('magicguard').foo).toBe(5);
       });
     });
   });

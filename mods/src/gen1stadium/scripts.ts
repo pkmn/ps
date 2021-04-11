@@ -1,4 +1,4 @@
-import type {ActiveMove, BoostName, ModdedBattleScriptsData, StatNameExceptHP} from '@pkmn/sim';
+import type {ActiveMove, BoostID, ModdedBattleScriptsData, StatIDExceptHP} from '@pkmn/sim';
 
 /**
  * Stadium mechanics inherit from gen 1 mechanics, but fixes some stuff.
@@ -17,7 +17,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		},
 		// This is run on Stadium after boosts and status changes.
 		recalculateStats() {
-			let statName: StatNameExceptHP;
+			let statName: StatIDExceptHP;
 			for (statName in this.storedStats) {
 				let stat = this.species.baseStats[statName];
 				stat = Math.floor(
@@ -42,7 +42,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		// Stadium's fixed boosting function.
 		boostBy(boost) {
 			let changed = false;
-			let i: BoostName;
+			let i: BoostID;
 			for (i in boost) {
 				let delta = boost[i];
 				if (delta === undefined) continue;
@@ -535,8 +535,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			let attacker = pokemon;
 			const defender = target;
 			if (move.useTargetOffensive) attacker = target;
-			let atkType: StatNameExceptHP = (move.category === 'Physical') ? 'atk' : 'spa';
-			const defType: StatNameExceptHP = (move.defensiveCategory === 'Physical') ? 'def' : 'spd';
+			let atkType: StatIDExceptHP = (move.category === 'Physical') ? 'atk' : 'spa';
+			const defType: StatIDExceptHP = (move.defensiveCategory === 'Physical') ? 'def' : 'spd';
 			if (move.useSourceDefensiveAsOffensive) atkType = defType;
 			let attack = attacker.getStat(atkType);
 			let defense = defender.getStat(defType);

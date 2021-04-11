@@ -297,7 +297,7 @@ export class Battle {
 
   // Null object pattern for data retrieval - the server is the source of
   // truth and if the client is out of date it should degrade gracefully
-  get(type: 'abilities' | 'items' | 'moves' | 'species' | 'effects', s?: string) {
+  get(type: 'abilities' | 'items' | 'moves' | 'species' | 'conditions', s?: string) {
     return !s ? NULL : (this.gen[type].get(s) || {name: s, id: toID(s), kind: 'Condition'});
   }
 

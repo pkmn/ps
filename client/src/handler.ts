@@ -1,5 +1,5 @@
 import {
-  BoostName,
+  BoostID,
   Effect,
   ID,
   Item,
@@ -17,7 +17,7 @@ import {Battle, NULL, NA} from './battle';
 import {Side} from './side';
 import {LastItemEffect, Pokemon} from './pokemon';
 
-const BOOSTS: BoostName[] = ['atk', 'def', 'spa', 'spd', 'spe', 'accuracy', 'evasion'];
+const BOOSTS: BoostID[] = ['atk', 'def', 'spa', 'spd', 'spe', 'accuracy', 'evasion'];
 const CONSUMED: LastItemEffect[] = ['eaten', 'popped', 'consumed', 'held up'];
 
 type Health = ReturnType<Pokemon['healthParse']>;
@@ -34,23 +34,23 @@ export interface Context {
   '|-sethp|': {poke1: Pokemon | null; health1?: Health; poke2: Pokemon | null; health2: Health};
   '|-boost|': {
     poke: Pokemon;
-    boost: BoostName;
+    boost: BoostID;
     amount: number;
     fromEffect?: Effect | NA;
     ofPoke?: Pokemon | null;
   };
   '|-unboost|': {
     poke: Pokemon;
-    boost: BoostName;
+    boost: BoostID;
     amount: number;
     fromEffect?: Effect | NA;
     ofPoke?: Pokemon | null;
   };
-  '|-setboost|': {poke: Pokemon; boost: BoostName; amount: number};
-  '|-swapboost|': {poke: Pokemon; poke2: Pokemon; boosts: BoostName[]};
+  '|-setboost|': {poke: Pokemon; boost: BoostID; amount: number};
+  '|-swapboost|': {poke: Pokemon; poke2: Pokemon; boosts: BoostID[]};
   '|-clearpositiveboost|': {poke: Pokemon};
   '|-clearnegativeboost|': {poke: Pokemon};
-  '|-copyboost|': {poke: Pokemon; poke2: Pokemon; boosts: BoostName[]};
+  '|-copyboost|': {poke: Pokemon; poke2: Pokemon; boosts: BoostID[]};
   '|-clearboost|': {poke: Pokemon; fromEffect?: Effect | NA; ofPoke?: Pokemon | null};
   '|-invertboost|': {poke: Pokemon};
   '|-immune|': {poke: Pokemon; fromEffect: Effect | NA; ofPoke: Pokemon | null};
@@ -131,19 +131,20 @@ export class Handler implements Protocol.Handler {
   '|gametype|'(args: Args['|gametype|']) {
     this.battle.gameType = args[1];
     switch (args[1]) {
-    default:
-      this.battle.p1.active = [null];
-      this.battle.p2.active = [null];
-      break;
     case 'multi':
+    case 'freeforall':
       // @ts-ignore readonly
-      this.battle.p3 = this.battle.createSide(3);
+      if (!this.battle.p3) this.battle.p3 = this.battle.createSide(3);
       // @ts-ignore readonly
-      this.battle.p4 = this.battle.createSide(4);
-      this.battle.p3.foe = this.battle.p4.ally = this.battle.p2;
-      this.battle.p3.ally = this.battle.p4.foe = this.battle.p1;
-      this.battle.p1.ally = this.battle.p3;
-      this.battle.p2.ally = this.battle.p4;
+      if (!this.battle.p4) this.battle.p4 = this.battle.createSide(4);
+      this.battle.p3.foe = this.battle.p2;
+      this.battle.p4.foe = this.battle.p1;
+      if (this.battle.gameType === 'multi') {
+        this.battle.p1.ally = this.battle.p3;
+        this.battle.p2.ally = this.battle.p4;
+        this.battle.p3.ally = this.battle.p1;
+        this.battle.p4.ally = this.battle.p2;
+      }
 
       this.battle.sides.push(this.battle.p3, this.battle.p4);
       // intentionally sync p1/p3 and p2/p4's active arrays
@@ -158,6 +159,9 @@ export class Handler implements Protocol.Handler {
     case 'rotation':
       this.battle.p1.active = [null, null, null];
       this.battle.p2.active = [null, null, null];
+      break;
+    default:
+      for (const side of this.battle.sides) side.active = [null];
       break;
     }
   }
@@ -283,7 +287,7 @@ export class Handler implements Protocol.Handler {
   '|cant|'(args: Args['|cant|']) {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
-      effect: this.battle.get('effects', args[2]),
+      effect: this.battle.get('conditions', args[2]),
       move: this.battle.get('moves', args[3]),
     } as Context['|cant|'];
     c.poke.cantUseMove(c.effect as Partial<Effect> & NA, c.move as Partial<Move> & NA);
@@ -301,7 +305,7 @@ export class Handler implements Protocol.Handler {
     if (c.damage[0]) c.poke.hurtThisTurn = true;
 
     if (kwArgs.from) {
-      c.fromEffect = this.battle.get('effects', kwArgs.from);
+      c.fromEffect = this.battle.get('conditions', kwArgs.from);
       c.ofPoke = this.battle.getPokemon(kwArgs.of);
       if (c.ofPoke) c.ofPoke.activateAbility(c.fromEffect);
       if (c.fromEffect.kind === 'Item') {
@@ -321,7 +325,7 @@ export class Handler implements Protocol.Handler {
     if (c.damage === null) return;
 
     if (kwArgs.from) {
-      c.fromEffect = this.battle.get('effects', kwArgs.from);
+      c.fromEffect = this.battle.get('conditions', kwArgs.from);
       c.poke.activateAbility(c.fromEffect);
       if (c.fromEffect.kind === 'Item' &&
         !CONSUMED.includes(c.poke.lastItemEffect as LastItemEffect) &&
@@ -377,7 +381,7 @@ export class Handler implements Protocol.Handler {
     }
 
     if (!kwArgs.silent && kwArgs.from) {
-      c.fromEffect = this.battle.get('effects', kwArgs.from);
+      c.fromEffect = this.battle.get('conditions', kwArgs.from);
       c.ofPoke = this.battle.getPokemon(kwArgs.of);
       (c.ofPoke || c.poke).activateAbility(c.fromEffect);
     }
@@ -395,7 +399,7 @@ export class Handler implements Protocol.Handler {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
       poke2: this.battle.getPokemon(args[2])!,
-      boosts: args[3] ? args[3].split(', ') as BoostName[] : BOOSTS,
+      boosts: args[3] ? args[3].split(', ') as BoostID[] : BOOSTS,
     } as Context['|-swapboost|'];
 
     for (const boost of c.boosts) {
@@ -412,7 +416,7 @@ export class Handler implements Protocol.Handler {
       poke: this.battle.getPokemon(args[1])!,
     } as Context['|-clearpositiveboost|'];
     for (const boost in c.poke.boosts) {
-      const b = boost as BoostName;
+      const b = boost as BoostID;
       if (c.poke.boosts[b]! > 0) delete c.poke.boosts[b];
     }
   }
@@ -422,7 +426,7 @@ export class Handler implements Protocol.Handler {
       poke: this.battle.getPokemon(args[1])!,
     } as Context['|-clearnegativeboost|'];
     for (const boost in c.poke.boosts) {
-      const b = boost as BoostName;
+      const b = boost as BoostID;
       if (c.poke.boosts[b]! < 0) delete c.poke.boosts[b];
     }
   }
@@ -431,7 +435,7 @@ export class Handler implements Protocol.Handler {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
       poke2: this.battle.getPokemon(args[2])!,
-      boosts: args[3] ? args[3].split(', ') as BoostName[] : BOOSTS,
+      boosts: args[3] ? args[3].split(', ') as BoostID[] : BOOSTS,
     } as Context['|-copyboost|'];
 
     for (const boost of c.boosts) {
@@ -454,7 +458,7 @@ export class Handler implements Protocol.Handler {
     const c = this.context = {poke: this.battle.getPokemon(args[1])!} as Context['|-clearboost|'];
     c.poke.boosts = {};
     if (!kwArgs.silent && kwArgs.from) {
-      c.fromEffect = this.battle.get('effects', kwArgs.from);
+      c.fromEffect = this.battle.get('conditions', kwArgs.from);
       c.ofPoke = this.battle.getPokemon(kwArgs.of);
       (c.ofPoke || c.poke).activateAbility(c.fromEffect);
     }
@@ -463,7 +467,7 @@ export class Handler implements Protocol.Handler {
   '|-invertboost|'(args: Args['|-invertboost|']) {
     const c = this.context = {poke: this.battle.getPokemon(args[1])!} as Context['|-invertboost|'];
     for (const boost in c.poke.boosts) {
-      const b = boost as BoostName;
+      const b = boost as BoostID;
       c.poke.boosts[b] = -c.poke.boosts[b]!;
     }
   }
@@ -479,7 +483,7 @@ export class Handler implements Protocol.Handler {
   '|-immune|'(args: Args['|-immune|'], kwArgs: KWArgs['|-immune|']) {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
-      fromEffect: this.battle.get('effects', kwArgs.from),
+      fromEffect: this.battle.get('conditions', kwArgs.from),
       ofPoke: this.battle.getPokemon(kwArgs.of),
     } as Context['|-immune|'];
     (c.ofPoke || c.poke).activateAbility(c.fromEffect);
@@ -488,7 +492,7 @@ export class Handler implements Protocol.Handler {
   '|-fail|'(args: Args['|-fail|'], kwArgs: KWArgs['|-fail|']) {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
-      fromEffect: this.battle.get('effects', kwArgs.from),
+      fromEffect: this.battle.get('conditions', kwArgs.from),
       ofPoke: this.battle.getPokemon(kwArgs.of),
     } as Context['|-fail|'];
     (c.ofPoke || c.poke).activateAbility(c.fromEffect);
@@ -497,7 +501,7 @@ export class Handler implements Protocol.Handler {
   '|-block|'(args: Args['|-block|'], kwArgs: KWArgs['|-block|']) {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
-      effect: this.battle.get('effects', args[2]),
+      effect: this.battle.get('conditions', args[2]),
       ofPoke: this.battle.getPokemon(kwArgs.of),
     } as Context['|-block|'];
     (c.ofPoke || c.poke).activateAbility(c.effect);
@@ -519,7 +523,7 @@ export class Handler implements Protocol.Handler {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
       status: args[2],
-      fromEffect: this.battle.get('effects', kwArgs.from),
+      fromEffect: this.battle.get('conditions', kwArgs.from),
       ofPoke: this.battle.getPokemon(kwArgs.of),
     } as Context['|-status|'];
     const ofpoke = (c.ofPoke || c.poke);
@@ -566,7 +570,7 @@ export class Handler implements Protocol.Handler {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
       item: this.battle.get('items', args[2]),
-      fromEffect: this.battle.get('effects', kwArgs.from),
+      fromEffect: this.battle.get('conditions', kwArgs.from),
       ofPoke: this.battle.getPokemon(kwArgs.of),
     } as Context['|-item|'];
 
@@ -614,7 +618,7 @@ export class Handler implements Protocol.Handler {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
       item: this.battle.get('items', args[2]),
-      fromEffect: this.battle.get('effects', kwArgs.from),
+      fromEffect: this.battle.get('conditions', kwArgs.from),
     } as Context['|-enditem|'];
 
     c.poke.item = '';
@@ -656,7 +660,7 @@ export class Handler implements Protocol.Handler {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
       ability: this.battle.get('abilities', args[2]),
-      fromEffect: this.battle.get('effects', kwArgs.from),
+      fromEffect: this.battle.get('conditions', kwArgs.from),
       ofPoke: this.battle.getPokemon(kwArgs.of),
     } as Context['|-ability|'];
 
@@ -733,7 +737,7 @@ export class Handler implements Protocol.Handler {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
       poke2: this.battle.getPokemon(args[2])!,
-      fromEffect: this.battle.get('effects', kwArgs.from),
+      fromEffect: this.battle.get('conditions', kwArgs.from),
     } as Context['|-transform|'];
 
     if (c.poke === c.poke2) throw new Error('Transforming into self');
@@ -761,7 +765,7 @@ export class Handler implements Protocol.Handler {
     if (this.battle.gen.num >= 7) c.poke.removeVolatile('autotomize' as ID);
 
     if (!kwArgs.silent && kwArgs.from) {
-      c.poke.activateAbility(this.battle.get('effects', kwArgs.from));
+      c.poke.activateAbility(this.battle.get('conditions', kwArgs.from));
     }
     // the formechange volatile reminds us to revert the sprite change on switch-out
     c.species = this.battle.get('species', args[2]);
@@ -790,9 +794,9 @@ export class Handler implements Protocol.Handler {
   '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
-      effect: this.battle.get('effects', args[2]),
+      effect: this.battle.get('conditions', args[2]),
       ofPoke: this.battle.getPokemon(kwArgs.of),
-      fromEffect: this.battle.get('effects', kwArgs.from),
+      fromEffect: this.battle.get('conditions', kwArgs.from),
     } as Context['|-start|'];
 
     c.poke.activateAbility(c.effect);
@@ -841,7 +845,7 @@ export class Handler implements Protocol.Handler {
   '|-end|'(args: Args['|-end|'], kwArgs: KWArgs['|-end|']) {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
-      effect: this.battle.get('effects', args[2]),
+      effect: this.battle.get('conditions', args[2]),
     } as Context['|-end|'];
     c.poke.removeVolatile(c.effect.id);
 
@@ -852,7 +856,7 @@ export class Handler implements Protocol.Handler {
   '|-singleturn|'(args: Args['|-singleturn|']) {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
-      effect: this.battle.get('effects', args[2]),
+      effect: this.battle.get('conditions', args[2]),
     } as Context['|-singleturn|'];
     c.poke.addVolatile(c.effect.id, {duration: 'turn'});
     if (c.effect.id === 'focuspunch' || c.effect.id === 'shelltrap') {
@@ -863,7 +867,7 @@ export class Handler implements Protocol.Handler {
   '|-singlemove|'(args: Args['|-singlemove|']) {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1])!,
-      effect: this.battle.get('effects', args[2]),
+      effect: this.battle.get('conditions', args[2]),
     } as Context['|-singlemove|'];
     c.poke.addVolatile(c.effect.id, {duration: 'move'});
   }
@@ -871,7 +875,7 @@ export class Handler implements Protocol.Handler {
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
     const c = this.context = {
       poke: this.battle.getPokemon(args[1]),
-      effect: this.battle.get('effects', args[2]),
+      effect: this.battle.get('conditions', args[2]),
       poke2: this.battle.getPokemon(args[3] as PokemonIdent),
     } as Context['|-activate|'];
 
@@ -965,7 +969,7 @@ export class Handler implements Protocol.Handler {
   '|-sidestart|'(args: Args['|-sidestart|']) {
     const c = this.context = {
       side: this.battle.getSide(args[1]),
-      effect: this.battle.get('effects', args[2]),
+      effect: this.battle.get('conditions', args[2]),
     } as Context['|-sidestart|'];
     c.side.addSideCondition(c.effect);
   }
@@ -973,15 +977,15 @@ export class Handler implements Protocol.Handler {
   '|-sideend|'(args: Args['|-sideend|']) {
     const c = this.context = {
       side: this.battle.getSide(args[1]),
-      effect: this.battle.get('effects', args[2]),
+      effect: this.battle.get('conditions', args[2]),
     } as Context['|-sideend|'];
     c.side.removeSideCondition(c.effect.id);
   }
 
   '|-weather|'(args: Args['|-weather|'], kwArgs: KWArgs['|-weather|']) {
     const c = this.context = {
-      effect: args[1] === 'none' ? NULL : this.battle.get('effects', args[1]),
-      ability: this.battle.get('effects', kwArgs.from),
+      effect: args[1] === 'none' ? NULL : this.battle.get('conditions', args[1]),
+      ability: this.battle.get('conditions', kwArgs.from),
       ofPoke: this.battle.getPokemon(kwArgs.of),
     } as Context['|-weather|'];
 
@@ -990,8 +994,8 @@ export class Handler implements Protocol.Handler {
 
   '|-fieldstart|'(args: Args['|-fieldstart|'], kwArgs: KWArgs['|-fieldstart|']) {
     const c = this.context = {
-      effect: this.battle.get('effects', args[1]),
-      fromEffect: this.battle.get('effects', kwArgs.from),
+      effect: this.battle.get('conditions', args[1]),
+      fromEffect: this.battle.get('conditions', kwArgs.from),
       ofPoke: this.battle.getPokemon(kwArgs.of),
     } as Context['|-fieldstart|'];
 
@@ -1006,7 +1010,7 @@ export class Handler implements Protocol.Handler {
 
   '|-fieldend|'(args: Args['|-fieldend|']) {
     const c = this.context = {
-      effect: this.battle.get('effects', args[1]),
+      effect: this.battle.get('conditions', args[1]),
     } as Context['|-fieldend|'];
     if (c.effect.id.endsWith('terrain')) {
       this.battle.field.setTerrain('');

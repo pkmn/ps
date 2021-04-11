@@ -14,7 +14,7 @@ import {
   SpeciesName,
   Username,
 } from '@pkmn/protocol';
-import {ID, StatName, GenerationNum, SideID, TypeName} from '@pkmn/types';
+import {ID, StatID, GenerationNum, SideID, TypeName} from '@pkmn/types';
 import {toID} from './common';
 import * as TextJSON from './data/text.json';
 
@@ -25,7 +25,7 @@ const Text = TextJSON as {
   _: { [templateName: string]: string };
   [id: string]: { [templateName: string]: string };
 } & {
-  [s in (StatName | 'spc')]: { statName: string; statShortName: string }
+  [s in (StatID | 'spc')]: { statName: string; statShortName: string }
 };
 
 /**
@@ -247,7 +247,7 @@ export class LogFormatter {
       .replace('[ABILITY]', this.effect(name)) + '\n');
   }
 
-  stat(stat: StatName | 'spc') {
+  stat(stat: StatID | 'spc') {
     const entry = Text[stat || 'stats'];
     if (!entry || !entry.statName) return `???stat:${stat}???`;
     return entry.statName;
@@ -1070,7 +1070,7 @@ class Handler implements Protocol.Handler<string> {
     kwArgs: KWArgs['|-boost|' | '|-unboost|']
   ) {
     let [cmd, pokemon, stat, num] = args as [
-      '-boost' | '-unboost', PokemonIdent, StatName | 'spc', Num
+      '-boost' | '-unboost', PokemonIdent, StatID | 'spc', Num
     ];
     if (stat === 'spd' && this.parser.gen === 1) return '';
     if (stat === 'spa' && this.parser.gen === 1) stat = 'spc';

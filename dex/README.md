@@ -27,7 +27,7 @@ Please note that `Learnset` data must be imported separately when using `unpkg`,
 ## Usage
 
 This package can be used as a data layer within Pokémon applications **without any runtime
-dependencies** (this package only depends on `@pkmn/types` and `@pkmn/dex-types` which consist of
+dependencies** (this package only depends on `@pkmn/types` and `@pkmn/dex-types` which both consist of
 type definitions only and are not required at runtime):
 
 ### `Dex`
@@ -57,11 +57,10 @@ APIs:
   result in slightly larger download size in exchange for [faster
   parsing](https://github.com/GoogleChromeLabs/json-parse-benchmark).
 - certain methods and fields have been renamed, including:
-  - `getEffectByID` → `getConditionByID`
   - `dex.data.Pokedex` → `dex.data.Species`
   - `dex.data.TypeChart` → `dex.data.Types`
 
-The most important breaking change is that **`getLearnsets` has been made `async`** and its API has
+The most important breaking change is that **`learnsets` have been made `async`** and its API has
 been changed to be more generally useful. In [an ideal api](#limitations) we wouldn't fetch data
 we don't need during startup, but to maximize compatibility with Pokémon Showdown only the
 `getLearnsets` method call from `Dex` has been made async. Compressed, all of the data files without
@@ -72,18 +71,11 @@ package.
 ```ts
 import {Dex} from '@pkmn/dex';
 
-assert(Dex.forGen(1).getType('Psychic').damageTaken['Ghost'] === 3);
-
-let dex = Dex.forGen(5);
-assert(dex.hasAbility(dex.getSpecies('Gengar'), 'Levitate')));
-
-const dex = Dex.forGen(1);
-let count = 0;
-for (const id in dex.data.Species) {
-  const s = dex.getSpecies(id);
-  if (s.exists && s.tier !== 'Illegal' && !s.isNonstandard) count++;
-}
-assert(count === 151);
+assert(Dex.forGen(1).types.get('Psychic').damageTaken['Ghost'] === 3);
+assert(Dex.types.getEffectiveness('Dark', ['Ghost', 'Psychic']) === 2);
+assert(Dex.forGen(5).species.get('Dragapult').isNonstandard === 'Future');
+assert(Dex.forGen(3).species.get('Chansey').prevo === 'Happiny');
+assert(Dex.forGen(1).species.all().filter(s => !s.isNonstandard).length === 151);
 ```
 
 ### `Generations`
@@ -96,10 +88,22 @@ import {Dex} from '@pkmn/dex';
 import {Generations} from '@pkmn/data';
 
 const gens = new Generations(Dex);
-assert(gens.get(1).types.get('Psychic').damageTaken['Ghost'] === 0);
-assert(gens.get(5).species.get('Gengar').hasAbility('Levitate'));
+assert(gens.get(1).types.get('Ghost').effectiveness['Psychic'] === 0);
+assert(gens.get(8).types.totalEffectiveness('Dark', ['Ghost', 'Psychic']) === 4);
+assert(gens.get(5).species.get('Dragapult') === undefined);
+assert(gens.get(3).species.get('Chansey').prevo === undefined);
 assert(Array.from(gens.get(1).species).length === 151);
+assert(gen.stats.calc('atk', 100, 31, 252, 100, gen.natures.get('adamant')) === 328);
+assert(await gens.get(4).learnsets.canLearn('Ursaring', 'Rock Climb'));
 ```
+
+Note that Pokémon Showdown has been gradually improving its Dex API such that it appears more
+similar to `@pkmn/data` post
+[pokemon-showdown@13189fdb](https://github.com/smogon/pokemon-showdown/commit/13189fdb). There are
+still several ergonomic advantages to using `@pkmn/data` as outlined in its documentation, though it
+is entirely possible  Pokémon Showdown will continue to be inspired by `@pkmn/data`'s design and
+eventually fully bridge the gap ("`@pkmn/data` - what Pokémon Showdown's data layer will look like
+~2 years from now").
 
 ### Browser
 

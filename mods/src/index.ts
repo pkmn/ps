@@ -1,9 +1,10 @@
 import {
   Ability,
   AbilityData,
+  Condition,
   DeepPartial,
   Dex,
-  Effect,
+  DexTable,
   GenID,
   ID as IDT,
   Item,
@@ -13,10 +14,12 @@ import {
   ModData,
   Move,
   MoveData,
+  Nature,
   NatureData,
   Species,
   SpeciesData,
   StatsTable,
+  Type,
   TypeData,
   TypeName,
 } from '@pkmn/dex-types';
@@ -24,7 +27,7 @@ import {
 export class ModdedDex<
   A extends Ability = Ability,
   AD extends AbilityData = AbilityData,
-  E extends Effect = Effect,
+  C extends Condition = Condition,
   I extends Item = Item,
   ID extends ItemData = ItemData,
   L extends Learnset = Learnset,
@@ -36,8 +39,67 @@ export class ModdedDex<
 > implements Dex {
   private readonly dex: Dex;
 
+  readonly abilities: DexTable<A>;
+  readonly conditions: DexTable<C>;
+  readonly items: DexTable<I>;
+  readonly learnsets: DexTable<Promise<L>>;
+  readonly moves: DexTable<M>;
+  readonly natures: DexTable<Nature>;
+  readonly species: DexTable<S>;
+  readonly types: DexTable<Type>;
+
   constructor(dex: Dex) {
     this.dex = dex;
+    this.abilities = {
+      get(name: string) {
+        return dex.abilities.get(name) as A;
+      },
+      getByID(id: IDT) {
+        return dex.abilities.getByID(id) as A;
+      },
+    };
+    this.conditions = {
+      get(name: string) {
+        return dex.conditions.get(name) as C;
+      },
+      getByID(id: IDT) {
+        return dex.conditions.getByID(id) as C;
+      },
+    };
+    this.items = {
+      get(name: string) {
+        return dex.items.get(name) as I;
+      },
+      getByID(id: IDT) {
+        return dex.items.getByID(id) as I;
+      },
+    };
+    this.learnsets = {
+      get(name: string) {
+        return dex.learnsets.get(name) as Promise<L>;
+      },
+      getByID(id: IDT) {
+        return dex.learnsets.getByID(id) as Promise<L>;
+      },
+    };
+    this.moves = {
+      get(name: string) {
+        return dex.moves.get(name) as M;
+      },
+      getByID(id: IDT) {
+        return dex.moves.getByID(id) as M;
+      },
+    };
+    this.species = {
+      get(name: string) {
+        return dex.species.get(name) as S;
+      },
+      getByID(id: IDT) {
+        return dex.species.getByID(id) as S;
+      },
+    };
+    this.natures = this.dex.natures;
+    this.types = this.dex.types;
   }
 
   get gen() {
@@ -84,42 +146,6 @@ export class ModdedDex<
   includeFormats() {
     this.dex.includeFormats();
     return this;
-  }
-
-  getSpecies(name: string) {
-    return this.dex.getSpecies(name) as S;
-  }
-
-  getEffect(name: string) {
-    return this.dex.getEffect(name) as E;
-  }
-
-  getAbility(name: string) {
-    return this.dex.getAbility(name) as A;
-  }
-
-  getLearnset(name: string) {
-    return this.dex.getLearnset(name) as Promise<L>;
-  }
-
-  getItem(name: string) {
-    return this.dex.getItem(name) as I;
-  }
-
-  getMove(name: string) {
-    return this.dex.getMove(name) as M;
-  }
-
-  getNature(name: string) {
-    return this.dex.getNature(name);
-  }
-
-  getType(name: string) {
-    return this.dex.getType(name);
-  }
-
-  hasAbility(species: S, ability: string) {
-    return this.dex.hasAbility(species, ability);
   }
 
   getHiddenPower(ivs: StatsTable) {

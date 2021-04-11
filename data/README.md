@@ -4,6 +4,8 @@
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 [![npm version](https://img.shields.io/npm/v/@pkmn/data.svg)](https://www.npmjs.com/package/@pkmn/data)
 
+> "what Pokémon Showdown's data layer will look like ~2 years from now"
+
 A higher level data API wrapper compatible with [`@pkmn/sim`](../sim) and [`@pkmn/dex`](../dex).
 
 ## Installation
@@ -53,16 +55,24 @@ a couple of Pokémon Showdown quirks. While this interface is far from the
 
 - data returned from a `Generation`s methods are constrained to the generation in question. Data
   which does not exist, only exists in later gens, or is illegal or non standard will not be
-  returned which means you do not need filter data before using it.
+  returned which means you do not need filter data before using it. This allows you to define the
+  legality requirements for your data set up front across all data types and then forget about it,
+  as opposed to having to filter at each call site.
 - `undefined` is returned from functions as opposed to an object with its `exists` field set to
   `false`. `undefined` fails loudly, can be checked statically by Typescript and allows for more
   efficient implementation under the hood.
 - methods are moved to more intuitive locations than all existing on `Dex`
-  (eg. `Species#hasAbility`).
 - `Types` is overhauled to hide Pokémon Showdown's enum-based type effectiveness handling.
 - the 'sub-API' fields of `Generation` all have a `get` method and can be iterated over (save for
-  `Generation#effects`).
-- a stats API including calculation logic is provided via `Generation#stats`.
+  `Generation#effects`). Post
+  [pokemon-showdown@13189fdb](https://github.com/smogon/pokemon-showdown/commit/13189fdb)
+  this is now supported by `Dex` as well, though `@pkmn/data` is more efficient as it uses iterators
+  as opposed to instantiating the entire (unfiltered) lists to then be iterated over via `all()`.
+- a stats API including calculation logic is provided via `Generation#stats` (as opposed to
+  `Dex#stats` which just provides some lists of names).
+- a usable `Learnsets` API which allows you to easily determine which moves a Pokémon can legally
+  learn (though validating combinations of moves or other features requires `@pkmn/sim`'s
+  `TeamValidator`).
 
 **`Generations` handles existence at the field level slightly differently than at the object level**
 \- references in fields which point to objects that do not exist in the generation will be updated
@@ -78,9 +88,13 @@ import {Dex} from '@pkmn/dex';
 import {Generations} from '@pkmn/data';
 
 const gens = new Generations(Dex);
-assert(gens.get(1).types.get('Psychic').damageTaken['Ghost'] === 0);
-assert(gens.get(5).species.get('Gengar').hasAbility('Levitate'));
+assert(gens.get(1).types.get('Ghost').effectiveness['Psychic'] === 0);
+assert(gens.get(8).types.totalEffectiveness('Dark', ['Ghost', 'Psychic']) === 4);
+assert(gens.get(5).species.get('Dragapult') === undefined);
+assert(gens.get(3).species.get('Chansey').prevo === undefined);
 assert(Array.from(gens.get(1).species).length === 151);
+assert(gen.stats.calc('atk', 100, 31, 252, 100, gen.natures.get('adamant')) === 328);
+assert(await gens.get(4).learnsets.canLearn('Ursaring', 'Rock Climb'));
 ```
 
 Please see the [unit tests](index.test.ts) for more comprehensive usage examples.

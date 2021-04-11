@@ -5,46 +5,42 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 describe('Dex', () => {
-  describe('Effects', () => {
-    it('#getEffect', () => {
-      expect(Dex.getEffect('').exists).toBe(false);
-      expect(Dex.getEffect('foo').exists).toBe(false);
+  describe('Conditions', () => {
+    it('#get', () => {
+      expect(Dex.conditions.get('').exists).toBe(false);
+      expect(Dex.conditions.get('foo').exists).toBe(false);
 
-      expect(Dex.getEffect('move: Thunderbolt').name).toBe('Thunderbolt');
-      expect(Dex.getEffect('move: Foo').exists).toBe(false);
+      expect(Dex.conditions.get('ability: Flash Fire').name).toBe('Flash Fire');
+      expect(Dex.conditions.get('ability: Foo').exists).toBe(false);
 
-      expect(Dex.getEffect('ability: Flash Fire').name).toBe('Flash Fire');
-      expect(Dex.getEffect('ability: Foo').exists).toBe(false);
+      expect(Dex.conditions.get('item: Choice Band').name).toBe('Choice Band');
+      expect(Dex.conditions.get('item: Foo').exists).toBe(false);
 
-
-      expect(Dex.getEffect('item: Choice Band').name).toBe('Choice Band');
-      expect(Dex.getEffect('item: Foo').exists).toBe(false);
-
-      expect(Dex.getEffect('item: Metronome').name).toBe('Metronome');
-      expect(Dex.getEffect('item: Metronome').effectType).toBe('Item');
+      expect(Dex.conditions.get('item: Metronome').name).toBe('Metronome');
+      expect(Dex.conditions.get('item: Metronome').effectType).toBe('Item');
 
       // Falls back to Condition
-      expect(Dex.getEffect('Metronome').effectType).toBe('Condition');
+      expect(Dex.conditions.get('Metronome').effectType).toBe('Condition');
     });
   });
 
   describe('Abilities', () => {
-    it('#getAbility', () => {
-      expect(Dex.getAbility('foo').exists).toBe(false);
-      expect(Dex.getAbility('Illuminate').effectType).toBe('Ability');
-      expect(Dex.forGen(6).getAbility('Beast Boost').isNonstandard).toEqual('Future');
-      expect(Dex.forGen(7).getAbility('Beast Boost').isNonstandard).toBeNull();
-      expect(Dex.getAbility('Shield Dust'))
-        .toEqual(Dex.forGen(4).getAbility('Shield Dust'));
-      expect(Dex.forGen(3).getAbility('Lightning Rod'))
-        .not.toEqual(Dex.forGen(4).getAbility('Lightning Rod'));
+    it('#get', () => {
+      expect(Dex.abilities.get('foo').exists).toBe(false);
+      expect(Dex.abilities.get('Illuminate').effectType).toBe('Ability');
+      expect(Dex.forGen(6).abilities.get('Beast Boost').isNonstandard).toEqual('Future');
+      expect(Dex.forGen(7).abilities.get('Beast Boost').isNonstandard).toBeNull();
+      expect(Dex.abilities.get('Shield Dust'))
+        .toEqual(Dex.forGen(4).abilities.get('Shield Dust'));
+      expect(Dex.forGen(3).abilities.get('Lightning Rod'))
+        .not.toEqual(Dex.forGen(4).abilities.get('Lightning Rod'));
 
-      expect(Dex.getAbility('pheal').name).toBe('Poison Heal');
-      expect(Dex.getAbility('stag').name).toBe('Shadow Tag');
+      expect(Dex.abilities.get('pheal').name).toBe('Poison Heal');
+      expect(Dex.abilities.get('stag').name).toBe('Shadow Tag');
 
-      expect(Dex.getAbility('Sturdy').shortDesc) // eslint-disable-next-line
+      expect(Dex.abilities.get('Sturdy').shortDesc) // eslint-disable-next-line
         .toEqual('If this Pokemon is at full HP, it survives one hit with at least 1 HP. Immune to OHKO.');
-      expect(Dex.forGen(3).getAbility('s turdy').shortDesc)
+      expect(Dex.forGen(3).abilities.get('s turdy').shortDesc)
         .toEqual('OHKO moves fail when used against this Pokemon.');
     });
 
@@ -53,7 +49,7 @@ describe('Dex', () => {
         const dex = Dex.forGen(gen);
         let count = 0;
         for (const id in dex.data.Abilities) {
-          const a = dex.getAbility(id);
+          const a = dex.abilities.get(id);
           if (!a.exists || a.isNonstandard || a.id === 'noability') continue;
           count++;
         }
@@ -67,15 +63,10 @@ describe('Dex', () => {
       }
     });
 
-    it('#hasAbility', () => {
-      expect(Dex.hasAbility(Dex.getSpecies('Gengar'), 'Levitate')).toBe(false);
-      expect(Dex.forGen(5).hasAbility(Dex.forGen(5).getSpecies('Gengar'), 'Levitate')).toBe(true);
-    });
-
     it('cached', () => {
-      const a = Dex.forGen(6).getAbility('Mummy');
-      const b = Dex.forGen(6).getAbility('Mummy');
-      const c = Dex.getAbility('Mummy');
+      const a = Dex.forGen(6).abilities.get('Mummy');
+      const b = Dex.forGen(6).abilities.get('Mummy');
+      const c = Dex.abilities.get('Mummy');
 
       expect(b).toBe(a);
       expect(c).not.toBe(a);
@@ -84,55 +75,55 @@ describe('Dex', () => {
   });
 
   describe('Items', () => {
-    it('#getItem', () => {
-      expect(Dex.getItem('Aerodactylite').megaEvolves).toEqual('Aerodactyl');
+    it('#get', () => {
+      expect(Dex.items.get('Aerodactylite').megaEvolves).toEqual('Aerodactyl');
 
-      expect(Dex.forGen(3).getItem('Berry').isNonstandard).toBe('Past');
-      expect(Dex.forGen(3).getItem('Gold Berry').isNonstandard).toBe('Past');
-      expect(Dex.forGen(3).getItem('Pink Bow').isNonstandard).toBe('Past');
-      expect(Dex.forGen(3).getItem('Polkadot Bow').isNonstandard).toBe('Past');
+      expect(Dex.forGen(3).items.get('Berry').isNonstandard).toBe('Past');
+      expect(Dex.forGen(3).items.get('Gold Berry').isNonstandard).toBe('Past');
+      expect(Dex.forGen(3).items.get('Pink Bow').isNonstandard).toBe('Past');
+      expect(Dex.forGen(3).items.get('Polkadot Bow').isNonstandard).toBe('Past');
 
-      expect(Dex.forGen(2).getItem('berry').name).toBe('Berry');
-      expect(Dex.forGen(2).getItem('berry').isBerry).toBe(true);
-      expect(Dex.forGen(2).getItem('goldberry').name).toBe('Gold Berry');
-      expect(Dex.forGen(2).getItem('goldberry').isBerry).toBe(true);
-      expect(Dex.forGen(2).getItem('Pink Bow').isNonstandard).toBeNull();
-      expect(Dex.forGen(2).getItem('Polkadot Bow').isNonstandard).toBeNull();
+      expect(Dex.forGen(2).items.get('berry').name).toBe('Berry');
+      expect(Dex.forGen(2).items.get('berry').isBerry).toBe(true);
+      expect(Dex.forGen(2).items.get('goldberry').name).toBe('Gold Berry');
+      expect(Dex.forGen(2).items.get('goldberry').isBerry).toBe(true);
+      expect(Dex.forGen(2).items.get('Pink Bow').isNonstandard).toBeNull();
+      expect(Dex.forGen(2).items.get('Polkadot Bow').isNonstandard).toBeNull();
 
-      expect(Dex.getItem('foo').exists).toBe(false);
+      expect(Dex.items.get('foo').exists).toBe(false);
 
-      expect(Dex.forGen(2).getItem('Leftovers')).toEqual(Dex.getItem('Leftovers'));
-      expect(Dex.forGen(3).getItem('Sitrus Berry'))
-        .not.toEqual(Dex.forGen(4).getItem('Sitrus Berry'));
+      expect(Dex.forGen(2).items.get('Leftovers')).toEqual(Dex.items.get('Leftovers'));
+      expect(Dex.forGen(3).items.get('Sitrus Berry'))
+        .not.toEqual(Dex.forGen(4).items.get('Sitrus Berry'));
 
-      expect(Dex.forGen(3).getItem('Red Orb').isNonstandard).toBe('Future');
-      expect(Dex.forGen(6).getItem('Red Orb').gen).toBe(6);
-      expect(Dex.forGen(2).getItem('Old Amber').isNonstandard).toBe('Future');
-      expect(Dex.forGen(5).getItem('Old Amber').gen).toBe(3);
+      expect(Dex.forGen(3).items.get('Red Orb').isNonstandard).toBe('Future');
+      expect(Dex.forGen(6).items.get('Red Orb').gen).toBe(6);
+      expect(Dex.forGen(2).items.get('Old Amber').isNonstandard).toBe('Future');
+      expect(Dex.forGen(5).items.get('Old Amber').gen).toBe(3);
     });
 
     it('fields', () => {
-      expect(Dex.getItem('Sitrus Berry').effectType).toBe('Item');
-      expect(Dex.forGen(4).getItem('Sitrus Berry').isBerry).toBe(true);
-      expect(Dex.getItem('Heracronite').megaStone).toBe('Heracross-Mega');
-      expect(Dex.getItem('Charizardite-X').megaEvolves).toBe('Charizard');
-      expect(Dex.getItem('Pikanium Z').zMove).toBe('Catastropika');
-      expect(Dex.getItem('Fairium Z').zMove).toBe(true);
-      expect(Dex.getItem('Steelium Z').zMoveType).toBe('Steel');
-      expect(Dex.getItem('Lunalium Z').itemUser).toEqual([
+      expect(Dex.items.get('Sitrus Berry').effectType).toBe('Item');
+      expect(Dex.forGen(4).items.get('Sitrus Berry').isBerry).toBe(true);
+      expect(Dex.items.get('Heracronite').megaStone).toBe('Heracross-Mega');
+      expect(Dex.items.get('Charizardite-X').megaEvolves).toBe('Charizard');
+      expect(Dex.items.get('Pikanium Z').zMove).toBe('Catastropika');
+      expect(Dex.items.get('Fairium Z').zMove).toBe(true);
+      expect(Dex.items.get('Steelium Z').zMoveType).toBe('Steel');
+      expect(Dex.items.get('Lunalium Z').itemUser).toEqual([
         'Lunala', 'Necrozma-Dawn-Wings',
       ]);
-      expect(Dex.getItem('Meadow Plate').onPlate).toBe('Grass');
-      expect(Dex.getItem('Electric Memory').onMemory).toBe('Electric');
-      expect(Dex.getItem('Douse Drive').onDrive).toBe('Water');
-      expect(Dex.forGen(6).getItem('Electric Gem').isGem).toBe(true);
-      expect(Dex.getItem('Choice Specs').isChoice).toBe(true);
+      expect(Dex.items.get('Meadow Plate').onPlate).toBe('Grass');
+      expect(Dex.items.get('Electric Memory').onMemory).toBe('Electric');
+      expect(Dex.items.get('Douse Drive').onDrive).toBe('Water');
+      expect(Dex.forGen(6).items.get('Electric Gem').isGem).toBe(true);
+      expect(Dex.items.get('Choice Specs').isChoice).toBe(true);
     });
 
     it('cached', () => {
-      const a = Dex.forGen(6).getItem('Choice Band');
-      const b = Dex.forGen(6).getItem('Choice Band');
-      const c = Dex.getItem('Choice Band');
+      const a = Dex.forGen(6).items.get('Choice Band');
+      const b = Dex.forGen(6).items.get('Choice Band');
+      const c = Dex.items.get('Choice Band');
 
       expect(b).toBe(a);
       expect(c).not.toBe(a);
@@ -141,75 +132,75 @@ describe('Dex', () => {
   });
 
   describe('Moves', () => {
-    it('#getMove', () => {
-      expect(Dex.getMove('foo').exists).toBe(false);
-      expect(Dex.forGen(1).getMove('Thunderbolt').exists).toBe(true);
-      expect(Dex.getMove('Draco Meteor').basePower).toEqual(130);
-      expect(Dex.forGen(6).getMove('eq')).toEqual(Dex.forGen(6).getMove('Earthquake'));
-      expect(Dex.forGen(4).getMove('DracoMeteor').basePower).toEqual(140);
-      expect(Dex.getMove('Crunch').category).toEqual('Physical');
-      expect(Dex.forGen(2).getMove('CRUNCH').category).toEqual('Special');
-      expect(Dex.getMove('Hidden Power [Bug]').name).toEqual('Hidden Power Bug');
+    it('#get', () => {
+      expect(Dex.moves.get('foo').exists).toBe(false);
+      expect(Dex.forGen(1).moves.get('Thunderbolt').exists).toBe(true);
+      expect(Dex.moves.get('Draco Meteor').basePower).toEqual(130);
+      expect(Dex.forGen(6).moves.get('eq')).toEqual(Dex.forGen(6).moves.get('Earthquake'));
+      expect(Dex.forGen(4).moves.get('DracoMeteor').basePower).toEqual(140);
+      expect(Dex.moves.get('Crunch').category).toEqual('Physical');
+      expect(Dex.forGen(2).moves.get('CRUNCH').category).toEqual('Special');
+      expect(Dex.moves.get('Hidden Power [Bug]').name).toEqual('Hidden Power Bug');
     });
 
     it('fields', () => {
-      expect(Dex.getMove('Tackle').effectType).toBe('Move');
-      expect(Dex.forGen(1).getMove('Surf').basePower).toBe(95);
-      expect(Dex.getMove('Surf').basePower).toBe(90);
-      expect(Dex.forGen(4).getMove('Curse').type).toBe('???');
-      expect(Dex.forGen(5).getMove('Curse').type).toBe('Ghost');
-      // FIXME expect(Dex.forGen(1).getMove('Struggle').pp).toBe(10);
-      expect(Dex.forGen(2).getMove('Struggle').pp).toBe(1);
-      expect(Dex.forGen(3).getMove('Bide').accuracy).toBe(100);
-      expect(Dex.forGen(4).getMove('Bide').accuracy).toBe(true);
-      expect(Dex.forGen(3).getMove('Psychic').category).toBe('Special');
-      expect(Dex.getMove('Rock Slide').target).toBe('allAdjacentFoes');
-      expect(Dex.forGen(4).getMove('Psychic').category).toBe('Special');
-      expect(Dex.forGen(5).getMove('Psychic').defensiveCategory).not.toBeDefined();
-      expect(Dex.forGen(5).getMove('Psyshock').defensiveCategory).toBe('Physical');
-      expect(Dex.getMove('Rock Slide').target).toBe('allAdjacentFoes');
-      expect(Dex.getMove('Extreme Speed').priority).toBe(2);
-      // FIXME expect(Dex.forGen(1).getMove('Acid Armor').flags).toEqual({});
-      expect(Dex.getMove('Recover').flags.heal).toBe(1);
-      expect(Dex.getMove('Will-O-Wisp').status).toBe('brn');
-      expect(Dex.getMove('Stealth Rock').sideCondition).toBe('stealthrock');
-      expect(Dex.getMove('Confuse Ray').volatileStatus).toBe('confusion');
-      expect(Dex.forGen(1).getMove('Amnesia').boosts).toEqual({spa: 2, spd: 2});
-      expect(Dex.forGen(2).getMove('Amnesia').boosts).toEqual({spd: 2});
-      expect(Dex.getMove('Karate Chop').critRatio).toBe(2);
-      expect(Dex.getMove('Frost Breath').critRatio).toBe(1);
-      expect(Dex.getMove('Frost Breath').willCrit).toBe(true);
-      expect(Dex.getMove('Bloom Doom').isZ).toBe('grassiumz');
-      expect(Dex.getMove('Acid').isZ).toBeFalsy();
-      expect(Dex.getMove('Acid').zMove!.basePower).toBe(100);
-      // FIXME expect(Dex.forGen(6).getMove('Acid').zMove).toBeFalsy();
-      expect(Dex.getMove('Hypnosis').zMove!.boost).toEqual({spe: 1});
-      expect(Dex.getMove('Double Kick').multihit).toBe(2);
-      expect(Dex.getMove('Rock Blast').multihit).toEqual([2, 5]);
-      expect(Dex.getMove('Softboiled').heal).toEqual([1, 2]);
-      expect(Dex.getMove('Hi Jump Kick').hasCrashDamage).toBe(true);
-      expect(Dex.getMove('Struggle').struggleRecoil).toBe(true);
-      expect(Dex.forGen(1).getMove('Double Edge').recoil).toEqual([25, 100]);
-      expect(Dex.getMove('Double Edge').recoil).toEqual([33, 100]);
-      expect(Dex.getMove('Mind Blown').mindBlownRecoil).toBe(true);
-      expect(Dex.getMove('Feint').breaksProtect).toBe(true);
-      expect(Dex.getMove('Sacred Sword').ignoreDefensive).toBe(true);
-      expect(Dex.getMove('Fissure').ohko).toBe(true);
+      expect(Dex.moves.get('Tackle').effectType).toBe('Move');
+      expect(Dex.forGen(1).moves.get('Surf').basePower).toBe(95);
+      expect(Dex.moves.get('Surf').basePower).toBe(90);
+      expect(Dex.forGen(4).moves.get('Curse').type).toBe('???');
+      expect(Dex.forGen(5).moves.get('Curse').type).toBe('Ghost');
+      // FIXME expect(Dex.forGen(1).moves.get('Struggle').pp).toBe(10);
+      expect(Dex.forGen(2).moves.get('Struggle').pp).toBe(1);
+      expect(Dex.forGen(3).moves.get('Bide').accuracy).toBe(100);
+      expect(Dex.forGen(4).moves.get('Bide').accuracy).toBe(true);
+      expect(Dex.forGen(3).moves.get('Psychic').category).toBe('Special');
+      expect(Dex.moves.get('Rock Slide').target).toBe('allAdjacentFoes');
+      expect(Dex.forGen(4).moves.get('Psychic').category).toBe('Special');
+      expect(Dex.forGen(5).moves.get('Psychic').defensiveCategory).not.toBeDefined();
+      expect(Dex.forGen(5).moves.get('Psyshock').defensiveCategory).toBe('Physical');
+      expect(Dex.moves.get('Rock Slide').target).toBe('allAdjacentFoes');
+      expect(Dex.moves.get('Extreme Speed').priority).toBe(2);
+      // FIXME expect(Dex.forGen(1).moves.get('Acid Armor').flags).toEqual({});
+      expect(Dex.moves.get('Recover').flags.heal).toBe(1);
+      expect(Dex.moves.get('Will-O-Wisp').status).toBe('brn');
+      expect(Dex.moves.get('Stealth Rock').sideCondition).toBe('stealthrock');
+      expect(Dex.moves.get('Confuse Ray').volatileStatus).toBe('confusion');
+      expect(Dex.forGen(1).moves.get('Amnesia').boosts).toEqual({spa: 2, spd: 2});
+      expect(Dex.forGen(2).moves.get('Amnesia').boosts).toEqual({spd: 2});
+      expect(Dex.moves.get('Karate Chop').critRatio).toBe(2);
+      expect(Dex.moves.get('Frost Breath').critRatio).toBe(1);
+      expect(Dex.moves.get('Frost Breath').willCrit).toBe(true);
+      expect(Dex.moves.get('Bloom Doom').isZ).toBe('grassiumz');
+      expect(Dex.moves.get('Acid').isZ).toBeFalsy();
+      expect(Dex.moves.get('Acid').zMove!.basePower).toBe(100);
+      // FIXME expect(Dex.forGen(6).moves.get('Acid').zMove).toBeFalsy();
+      expect(Dex.moves.get('Hypnosis').zMove!.boost).toEqual({spe: 1});
+      expect(Dex.moves.get('Double Kick').multihit).toBe(2);
+      expect(Dex.moves.get('Rock Blast').multihit).toEqual([2, 5]);
+      expect(Dex.moves.get('Softboiled').heal).toEqual([1, 2]);
+      expect(Dex.moves.get('Hi Jump Kick').hasCrashDamage).toBe(true);
+      expect(Dex.moves.get('Struggle').struggleRecoil).toBe(true);
+      expect(Dex.forGen(1).moves.get('Double Edge').recoil).toEqual([25, 100]);
+      expect(Dex.moves.get('Double Edge').recoil).toEqual([33, 100]);
+      expect(Dex.moves.get('Mind Blown').mindBlownRecoil).toBe(true);
+      expect(Dex.moves.get('Feint').breaksProtect).toBe(true);
+      expect(Dex.moves.get('Sacred Sword').ignoreDefensive).toBe(true);
+      expect(Dex.moves.get('Fissure').ohko).toBe(true);
 
       // self
-      expect(Dex.getMove('Petal Dance').self!.volatileStatus).toBe('lockedmove');
-      expect(Dex.getMove('Overheat').self!.boosts).toEqual({spa: -2});
+      expect(Dex.moves.get('Petal Dance').self!.volatileStatus).toBe('lockedmove');
+      expect(Dex.moves.get('Overheat').self!.boosts).toEqual({spa: -2});
 
       // secondaries
-      expect(Dex.getMove('Thunder Fang').secondaries!).toHaveLength(2);
-      expect(Dex.forGen(1).getMove('Psychic').secondaries![0].chance).toBe(33);
-      expect(Dex.forGen(2).getMove('Psychic').secondaries![0].chance).toBe(10);
-      expect(Dex.forGen(1).getMove('Psychic').secondaries![0].boosts)
+      expect(Dex.moves.get('Thunder Fang').secondaries!).toHaveLength(2);
+      expect(Dex.forGen(1).moves.get('Psychic').secondaries![0].chance).toBe(33);
+      expect(Dex.forGen(2).moves.get('Psychic').secondaries![0].chance).toBe(10);
+      expect(Dex.forGen(1).moves.get('Psychic').secondaries![0].boosts)
         .toEqual({spa: -1, spd: -1});
-      expect(Dex.forGen(2).getMove('Psychic').secondaries![0].boosts)
+      expect(Dex.forGen(2).moves.get('Psychic').secondaries![0].boosts)
         .toEqual({spd: -1});
-      expect(Dex.getMove('Fire Blast').secondaries![0].status).toBe('brn');
-      expect(Dex.getMove('Hurricane').secondaries![0].volatileStatus)
+      expect(Dex.moves.get('Fire Blast').secondaries![0].status).toBe('brn');
+      expect(Dex.moves.get('Hurricane').secondaries![0].volatileStatus)
         .toBe('confusion');
     });
 
@@ -218,7 +209,7 @@ describe('Dex', () => {
         const dex = Dex.forGen(gen);
         let count = 0;
         for (const id in dex.data.Moves) {
-          const m = dex.getMove(id);
+          const m = dex.moves.get(id);
           if (!m.exists || m.isNonstandard) continue;
           count++;
         }
@@ -234,9 +225,9 @@ describe('Dex', () => {
     });
 
     it('cached', () => {
-      const a = Dex.forGen(6).getMove('Earthquake');
-      const b = Dex.forGen(6).getMove('Earthquake');
-      const c = Dex.getMove('Earthquake');
+      const a = Dex.forGen(6).moves.get('Earthquake');
+      const b = Dex.forGen(6).moves.get('Earthquake');
+      const c = Dex.moves.get('Earthquake');
 
       expect(b).toBe(a);
       expect(c).not.toBe(a);
@@ -245,34 +236,34 @@ describe('Dex', () => {
   });
 
   describe('Species', () => {
-    it('#getSpecies', () => {
-      expect(Dex.getSpecies('foo').exists).toBe(false);
+    it('#get', () => {
+      expect(Dex.species.get('foo').exists).toBe(false);
       // normal
-      expect(Dex.getSpecies('gengar').name).toBe('Gengar');
-      expect(Dex.getSpecies('Gastrodon-East').name).toBe('Gastrodon-East');
-      expect(Dex.getSpecies('sawsbuckwinter').name).toBe('Sawsbuck-Winter');
+      expect(Dex.species.get('gengar').name).toBe('Gengar');
+      expect(Dex.species.get('Gastrodon-East').name).toBe('Gastrodon-East');
+      expect(Dex.species.get('sawsbuckwinter').name).toBe('Sawsbuck-Winter');
       // nidoran
-      expect(Dex.getSpecies('nidoran♀').name).toBe('Nidoran-F');
-      expect(Dex.getSpecies('nidoran♂').name).toBe('Nidoran-M');
+      expect(Dex.species.get('nidoran♀').name).toBe('Nidoran-F');
+      expect(Dex.species.get('nidoran♂').name).toBe('Nidoran-M');
       // alias
-      expect(Dex.getSpecies('cune').name).toBe('Suicune');
-      expect(Dex.getSpecies('mence').name).toBe('Salamence');
+      expect(Dex.species.get('cune').name).toBe('Suicune');
+      expect(Dex.species.get('mence').name).toBe('Salamence');
       // mega
-      expect(Dex.getSpecies('Mega Salamence').name).toBe('Salamence-Mega');
-      expect(Dex.getSpecies('M-Alakazam').name).toBe('Alakazam-Mega');
+      expect(Dex.species.get('Mega Salamence').name).toBe('Salamence-Mega');
+      expect(Dex.species.get('M-Alakazam').name).toBe('Alakazam-Mega');
       // primal
-      expect(Dex.getSpecies('Primal Kyogre').name).toBe('Kyogre-Primal');
-      expect(Dex.getSpecies('p groudon').name).toBe('Groudon-Primal');
+      expect(Dex.species.get('Primal Kyogre').name).toBe('Kyogre-Primal');
+      expect(Dex.species.get('p groudon').name).toBe('Groudon-Primal');
       // Rockruff-Dusk
-      expect(Dex.getSpecies('Rockruff-Dusk').exists).toBe(true);
-      // FIXME expect(Dex.getSpecies('Rockruff-Dusk').name).toBe('Rockruff-Dusk');
+      expect(Dex.species.get('Rockruff-Dusk').exists).toBe(true);
+      // FIXME expect(Dex.species.get('Rockruff-Dusk').name).toBe('Rockruff-Dusk');
     });
     it('counts', () => {
       const counts = (gen: GenerationNum) => {
         const dex = Dex.forGen(gen);
         const count = {species: 0, formes: 0};
         for (const id in dex.data.Species) {
-          const s = dex.getSpecies(id);
+          const s = dex.species.get(id);
           if (!s.exists || s.tier === 'Illegal' || s.isNonstandard) continue;
           if (s.name !== s.baseSpecies) {
             count.formes++;
@@ -325,58 +316,52 @@ describe('Dex', () => {
 
 
     it('fields', () => {
-      expect(Dex.getSpecies('Clefable').types).toEqual(['Fairy']);
-      expect(Dex.forGen(3).getSpecies('Clefable').types).toEqual(['Normal']);
-      expect(Dex.getSpecies('Gengar').types[1]).toBe('Poison');
-      expect(Dex.getSpecies('Pikachu').types[1]).not.toBeDefined();
-      expect(Dex.getSpecies('Mew').baseStats)
+      expect(Dex.species.get('Clefable').types).toEqual(['Fairy']);
+      expect(Dex.forGen(3).species.get('Clefable').types).toEqual(['Normal']);
+      expect(Dex.species.get('Gengar').types[1]).toBe('Poison');
+      expect(Dex.species.get('Pikachu').types[1]).not.toBeDefined();
+      expect(Dex.species.get('Mew').baseStats)
         .toEqual({hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100});
-      expect(Dex.forGen(1).getSpecies('Tauros').baseStats)
+      expect(Dex.forGen(1).species.get('Tauros').baseStats)
         .toEqual({hp: 75, atk: 100, def: 95, spa: 70, spd: 70, spe: 110});
-      expect(Dex.forGen(6).getSpecies('Pelipper').baseStats.spa).toEqual(85);
-      expect(Dex.getSpecies('Pelipper').baseStats.spa).toEqual(95);
-      expect(Dex.forGen(6).getSpecies('Greninja').abilities)
+      expect(Dex.forGen(6).species.get('Pelipper').baseStats.spa).toEqual(85);
+      expect(Dex.species.get('Pelipper').baseStats.spa).toEqual(95);
+      expect(Dex.forGen(6).species.get('Greninja').abilities)
         .toEqual({'0': 'Torrent', 'H': 'Protean'});
-      expect(Dex.forGen(7).getSpecies('Greninja').abilities)
+      expect(Dex.forGen(7).species.get('Greninja').abilities)
         .toEqual({'0': 'Torrent', 'H': 'Protean', 'S': 'Battle Bond'});
-      expect(Dex.forGen(3).getSpecies('Clefable').abilities)
+      expect(Dex.forGen(3).species.get('Clefable').abilities)
         .toEqual({'0': 'Cute Charm', '1': 'Magic Guard'});
-      expect(Dex.forGen(8).getSpecies('Clefable').abilities)
+      expect(Dex.forGen(8).species.get('Clefable').abilities)
         .toEqual({'0': 'Cute Charm', '1': 'Magic Guard', H: 'Unaware'});
-      expect(Dex.forGen(5).getSpecies('Milotic').abilities).toEqual({'0': 'Marvel Scale'});
-      expect(Dex.forGen(6).getSpecies('Milotic').abilities)
+      expect(Dex.forGen(5).species.get('Milotic').abilities).toEqual({'0': 'Marvel Scale'});
+      expect(Dex.forGen(6).species.get('Milotic').abilities)
         .toEqual({'0': 'Marvel Scale', '1': 'Competitive', H: 'Cute Charm'});
-      expect(Dex.forGen(2).getSpecies('Snorlax').tier).toBe('OU');
-      expect(Dex.forGen(5).getSpecies('Snorlax').tier).toBe('UU');
+      expect(Dex.forGen(2).species.get('Snorlax').tier).toBe('OU');
+      expect(Dex.forGen(5).species.get('Snorlax').tier).toBe('UU');
       expect(
-        Dex.forGen(3).getSpecies(
-          Dex.forGen(3).getSpecies('Chansey').prevo
+        Dex.forGen(3).species.get(
+          Dex.forGen(3).species.get('Chansey').prevo!
         ).isNonstandard
       ).toBe('Future');
-      expect(Dex.forGen(4).getSpecies('Chansey').prevo).toBe('Happiny');
-      expect(Dex.forGen(2).getSpecies('Chansey').evos).toEqual(['Blissey']);
-      expect(Dex.getSpecies('Charizard-Mega-X').baseSpecies).toBe('Charizard');
-      expect(Dex.getSpecies('Giratina-O').forme).toBe('Origin');
-      expect(Dex.getSpecies('Giratina').baseForme).toBe('Altered');
-      expect(Dex.getSpecies('Shaymin').otherFormes).toEqual(['Shaymin-Sky']);
-      expect(Dex.forGen(7).getSpecies('Charizard').otherFormes)
+      expect(Dex.forGen(4).species.get('Chansey').prevo).toBe('Happiny');
+      expect(Dex.forGen(2).species.get('Chansey').evos).toEqual(['Blissey']);
+      expect(Dex.species.get('Charizard-Mega-X').baseSpecies).toBe('Charizard');
+      expect(Dex.species.get('Giratina-O').forme).toBe('Origin');
+      expect(Dex.species.get('Giratina').baseForme).toBe('Altered');
+      expect(Dex.species.get('Shaymin').otherFormes).toEqual(['Shaymin-Sky']);
+      expect(Dex.forGen(7).species.get('Charizard').otherFormes)
         .toEqual(['Charizard-Mega-X', 'Charizard-Mega-Y']);
-      expect(Dex.getSpecies('Gastrodon').cosmeticFormes).toEqual(['Gastrodon-East']);
-      expect(Dex.getSpecies('Garchomp-Mega').isMega).toBe(true);
-      expect(Dex.getSpecies('Yanmega').isMega).not.toBeDefined();
-      expect(Dex.getSpecies('Kyogre-Primal').isPrimal).toBe(true);
-    });
-
-
-    it('#hasAbility', () => {
-      expect(Dex.forGen(7).hasAbility(Dex.forGen(7).getSpecies('Gengar'), 'Levitate')).toBe(false);
-      expect(Dex.forGen(5).hasAbility(Dex.forGen(5).getSpecies('Gengar'), 'Levitate')).toBe(true);
+      expect(Dex.species.get('Gastrodon').cosmeticFormes).toEqual(['Gastrodon-East']);
+      expect(Dex.species.get('Garchomp-Mega').isMega).toBe(true);
+      expect(Dex.species.get('Yanmega').isMega).not.toBeDefined();
+      expect(Dex.species.get('Kyogre-Primal').isPrimal).toBe(true);
     });
 
     it('cached', () => {
-      const a = Dex.forGen(6).getSpecies('Gengar');
-      const b = Dex.forGen(6).getSpecies('Gengar');
-      const c = Dex.getSpecies('Gengar');
+      const a = Dex.forGen(6).species.get('Gengar');
+      const b = Dex.forGen(6).species.get('Gengar');
+      const c = Dex.species.get('Gengar');
 
       expect(b).toBe(a);
       expect(c).not.toBe(a);
@@ -385,9 +370,9 @@ describe('Dex', () => {
   });
 
   describe('Learnsets', () => {
-    it('#getLearnset', async () => {
-      expect((await Dex.getLearnset('foo')).exists).toBe(false);
-      const learnset = await Dex.forGen(1).getLearnset('mew');
+    it('#get', async () => {
+      expect((await Dex.learnsets.get('foo')).exists).toBe(false);
+      const learnset = await Dex.forGen(1).learnsets.get('mew');
       expect(learnset.effectType).toBe('Learnset');
       expect(learnset.exists).toBe(true);
       expect(learnset.eventOnly).toBe(true);
@@ -395,26 +380,26 @@ describe('Dex', () => {
       expect(learnset.encounters).not.toBeDefined();
       expect(learnset.learnset!.reflect).toEqual(['1M']);
 
-      expect((await Dex.getLearnset('bulbasaur')).learnset!.leafstorm)
+      expect((await Dex.learnsets.get('bulbasaur')).learnset!.leafstorm)
         .toEqual(['8M', '7E', '6E', '5E', '4E']);
     });
   });
 
   describe('Natures', () => {
-    it('#getNature', () => {
-      const adamant = Dex.getNature('adamant');
+    it('#get', () => {
+      const adamant = Dex.natures.get('adamant');
       expect(adamant.exists).toBe(true);
       expect(adamant.name).toBe('Adamant');
       expect(adamant.plus).toBe('atk');
       expect(adamant.minus).toBe('spa');
 
-      const serious = Dex.forGen(4).getNature('serious');
+      const serious = Dex.forGen(4).natures.get('serious');
       expect(serious.exists).toBe(true);
       expect(serious.name).toBe('Serious');
       expect(serious.plus).not.toBeDefined();
       expect(serious.minus).not.toBeDefined();
 
-      expect(Dex.getNature('foo').exists).toBeFalsy();
+      expect(Dex.natures.get('foo').exists).toBeFalsy();
     });
 
     it('count', () => {
@@ -423,18 +408,18 @@ describe('Dex', () => {
   });
 
   describe('Types', () => {
-    it('#getType', () => {
-      expect(Dex.getType('Fairy').exists).toBe(true);
-      expect(Dex.forGen(1).getType('steel').exists).toBe(false);
-      expect(Dex.forGen(1).getType('Psychic').damageTaken['Ghost']).toEqual(3);
-      expect(Dex.getType('Psychic').damageTaken['Ghost']).toEqual(1);
-      expect(Dex.getType('Fire').damageTaken['Water']).toEqual(1);
-      expect(Dex.getType('Water').damageTaken['Fire']).toEqual(2);
-      expect(Dex.getType('Ground').damageTaken['Electric']).toEqual(3);
-      expect(Dex.getType('Ice').HPdvs).toEqual({'def': 13});
-      expect(Dex.getType('Flying').HPdvs).toEqual({'atk': 12, 'def': 13});
-      expect(Dex.getType('Dragon').HPivs).toEqual({'atk': 30});
-      expect(Dex.getType('Ground').HPivs).toEqual({'spa': 30, 'spd': 30});
+    it('#get', () => {
+      expect(Dex.types.get('Fairy').exists).toBe(true);
+      expect(Dex.forGen(1).types.get('steel').isNonstandard).toBe('Future');
+      expect(Dex.forGen(1).types.get('Psychic').damageTaken['Ghost']).toEqual(3);
+      expect(Dex.types.get('Psychic').damageTaken['Ghost']).toEqual(1);
+      expect(Dex.types.get('Fire').damageTaken['Water']).toEqual(1);
+      expect(Dex.types.get('Water').damageTaken['Fire']).toEqual(2);
+      expect(Dex.types.get('Ground').damageTaken['Electric']).toEqual(3);
+      expect(Dex.types.get('Ice').HPdvs).toEqual({'def': 13});
+      expect(Dex.types.get('Flying').HPdvs).toEqual({'atk': 12, 'def': 13});
+      expect(Dex.types.get('Dragon').HPivs).toEqual({'atk': 30});
+      expect(Dex.types.get('Ground').HPivs).toEqual({'spa': 30, 'spd': 30});
     });
 
     it('#getImmunity', () => {
@@ -457,9 +442,10 @@ describe('Dex', () => {
       const ivs = {hp: 31, atk: 31, def: 31, spe: 31, spa: 31, spd: 31};
       for (let gen = 3; gen <= 7; gen++) {
         const dex = Dex.forGen(gen);
-        for (const type in dex.data.Types) {
+        for (const t in dex.data.Types) {
+          const type = t.charAt(0).toUpperCase() + t.slice(1);
           if (type === 'Normal' || type === 'Fairy') continue;
-          expect(dex.getHiddenPower({...ivs, ...dex.getType(type).HPivs}))
+          expect(dex.getHiddenPower({...ivs, ...dex.types.get(type).HPivs}))
             .toEqual({power: gen >= 6 ? 60 : 70, type});
         }
       }
@@ -475,12 +461,12 @@ describe('Bundle', () => {
       const window = {} as { Dex: typeof Dex };
       // eslint-disable-next-line no-eval
       eval(fs.readFileSync(path.resolve(__dirname, './build/production.min.js'), 'utf8'));
-      expect(window.Dex.forGen(2).getSpecies('kabigon').tier).toBe('OU');
-      expect(Dex.forGen(1).getMove('thunderbolt').exists).toBe(true);
-      expect(window.Dex.forGen(1).getType('Psychic').damageTaken['Ghost']).toEqual(3);
-      expect((await window.Dex.getLearnset('bulbasaur')).learnset!.leafstorm)
+      expect(window.Dex.forGen(2).species.get('kabigon').tier).toBe('OU');
+      expect(Dex.forGen(1).moves.get('thunderbolt').exists).toBe(true);
+      expect(window.Dex.forGen(1).types.get('Psychic').damageTaken['Ghost']).toEqual(3);
+      expect((await window.Dex.learnsets.get('bulbasaur')).learnset!.leafstorm)
         .toEqual(['8M', '7E', '6E', '5E', '4E']);
-      expect(window.Dex.forGen(3).getAbility('s turdy').shortDesc)
+      expect(window.Dex.forGen(3).abilities.get('s turdy').shortDesc)
         .toEqual('OHKO moves fail when used against this Pokemon.');
     }
   });

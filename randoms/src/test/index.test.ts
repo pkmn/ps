@@ -6,16 +6,16 @@ const N = 1000;
 
 function isValidSet(gen: number, set: PokemonSet) {
 	const dex = Dex.mod(`gen${gen}` as ID);
-	const species = dex.getSpecies(set.species || set.name);
+	const species = dex.species.get(set.species || set.name);
 	if (!species.exists || species.gen > gen) return false;
 	if (set.item) {
-		const item = dex.getItem(set.item);
+		const item = dex.items.get(set.item);
 		if (!item.exists || item.gen > gen) {
 			return false;
 		}
 	}
 	if (set.ability && set.ability !== 'None') {
-		const ability = dex.getAbility(set.ability);
+		const ability = dex.abilities.get(set.ability);
 		if (!ability.exists || ability.gen > gen) {
 			return false;
 		}
@@ -52,7 +52,7 @@ describe('TeamGenerators', () => {
 					let types;
 					for (const set of team) {
 						if (!isValidSet(gen, set)) throw new Error(`Invalid set: ${JSON.stringify(set)}`);
-						const species = Dex.getSpecies(set.species || set.name);
+						const species = Dex.species.get(set.species || set.name);
 						if (types && format.includes('monotype')) {
 							if (!types.filter(t => species.types.includes(t)).length) {
 								throw new Error(`Team is not monotype: ${JSON.stringify(team)}`);
