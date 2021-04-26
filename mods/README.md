@@ -18,7 +18,9 @@ $ npm install @pkmn/mods
 
 This package contains data and logic for several mods:
 
+- `gen1jpn`: A mod on top of Generation 1 which implements Japanese version-specific mechanics
 - `gen1stadium`: A mod on top of Generation 1 which implements Pokémon Stadium
+- `gen2stadium2`: A mod on top of Generation 2 which implements Pokémon Stadium 2
 - `gen8dlc1`: A mod on top of Generation 8 which contains data from just Pokémon Sword and Shield
    and the Isle of Armor DLC (ie. Generation 8 **without** the data from the Crown Tundra DLC)
 - `letsgo`: A mod on top of Generation 7 which implements Let's Go Pikachu and Let's Go Eevee

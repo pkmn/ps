@@ -137,8 +137,8 @@ describe('Pokemon', () => {
     pokemon.ability = 'ability' as ID;
     pokemon.baseAbility = 'baseability' as ID;
     pokemon.statusStage = 2;
-    pokemon.statusData.toxicTurns = 3;
-    pokemon.statusData.sleepTurns = 4;
+    pokemon.statusState.toxicTurns = 3;
+    pokemon.statusState.sleepTurns = 4;
 
     pokemon.clearVolatile();
 
@@ -148,8 +148,8 @@ describe('Pokemon', () => {
 
     expect(pokemon.ability).toBe('baseability');
     expect(pokemon.statusStage).toBe(0);
-    expect(pokemon.statusData.toxicTurns).toBe(0);
-    expect(pokemon.statusData.sleepTurns).toBe(4);
+    expect(pokemon.statusState.toxicTurns).toBe(0);
+    expect(pokemon.statusState.sleepTurns).toBe(4);
   });
 
   it.todo('#rememberMove');

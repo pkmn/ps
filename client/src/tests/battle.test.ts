@@ -110,7 +110,7 @@ describe('Battle', () => {
 
     expect(battle.turn).toBe(0);
     expect(battle.field.weather).toBeUndefined();
-    expect(battle.field.weatherData.id).toBe('');
+    expect(battle.field.weatherState.id).toBe('');
     expect(battle.lastMove).toBe('');
   });
 

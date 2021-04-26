@@ -1,11 +1,13 @@
 {
   "name": "@pkmn/mods",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "exports": {
     ".": "./build/index.js",
+    "./gen1jpn": "./build/gen1jpn/index.js",
     "./gen1stadium": "./build/gen1stadium/index.js",
+    "./gen2stadium2": "./build/gen2stadium2/index.js",
     "./gen8dlc1": "./build/gen8dlc1/index.js",
     "./letsgo": "./build/letsgo/index.js",
     "./vgc17": "./build/vgc17/index.js"
@@ -22,11 +24,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@pkmn/dex-types": "^0.4.1"
+    "@pkmn/dex-types": "^0.4.2"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.4.1",
-    "@pkmn/sim": "^0.4.1"
+    "@pkmn/dex": "^0.4.2",
+    "@pkmn/sim": "^0.4.2"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
@@ -50,7 +52,9 @@
     "overrides": [
       {
         "files": [
+          "./src/gen1jpn/*.ts",
           "./src/gen1stadium/*.ts",
+          "./src/gen2stadium2/*.ts",
           "./src/gen8dlc1/*.ts",
           "./src/letsgo/*.ts",
           "./src/vgc17/*.ts"
@@ -65,7 +69,8 @@
             }
           ],
           "@typescript-eslint/no-unused-vars": "off",
-          "max-len": "off"
+          "max-len": "off",
+          "operator-linebreak": "off"
         }
       }
     ]

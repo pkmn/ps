@@ -42,9 +42,9 @@ export class Field {
   readonly battle: Battle;
 
   weather?: WeatherName;
-  weatherData!: FieldConditionState;
+  weatherState!: FieldConditionState;
   terrain?: TerrainName;
-  terrainData!: FieldConditionState;
+  terrainState!: FieldConditionState;
   pseudoWeather!: {[id: string]: FieldConditionState};
 
   constructor(battle: Battle) {
@@ -67,45 +67,45 @@ export class Field {
   setTerrain(id?: ID) {
     if (id) {
       this.terrain = TERRAINS[id];
-      this.terrainData =
+      this.terrainState =
         {id: toID(this.terrain), minDuration: 5, maxDuration: this.battle.gen.num > 6 ? 8 : 0};
     } else {
       this.terrain = undefined;
-      this.terrainData = {id: '', minDuration: 0, maxDuration: 0};
+      this.terrainState = {id: '', minDuration: 0, maxDuration: 0};
     }
   }
 
   setWeather(id?: ID, poke?: Pokemon, isUpkeep?: boolean, ability?: {name: string}) {
     if (isUpkeep) {
-      if (this.weather && this.weatherData.maxDuration) {
-        this.weatherData.maxDuration--;
-        if (this.weatherData.minDuration !== 0) this.weatherData.minDuration--;
+      if (this.weather && this.weatherState.maxDuration) {
+        this.weatherState.maxDuration--;
+        if (this.weatherState.minDuration !== 0) this.weatherState.minDuration--;
       }
       return;
     }
     this.weather = id ? WEATHERS[id] : undefined;
     if (this.weather) {
-      this.weatherData.id = toID(this.weather);
+      this.weatherState.id = toID(this.weather);
       const isExtremeWeather = EXTREME_WEATHER.includes(this.weather);
       if (poke) {
         if (ability) poke.activateAbility(ability.name);
-        this.weatherData.maxDuration = (this.battle.gen.num <= 5 || isExtremeWeather) ? 0 : 8;
-        this.weatherData.minDuration = (this.battle.gen.num <= 5 || isExtremeWeather) ? 0 : 5;
+        this.weatherState.maxDuration = (this.battle.gen.num <= 5 || isExtremeWeather) ? 0 : 8;
+        this.weatherState.minDuration = (this.battle.gen.num <= 5 || isExtremeWeather) ? 0 : 5;
       } else if (isExtremeWeather) {
-        this.weatherData.maxDuration = 0;
-        this.weatherData.minDuration = 0;
+        this.weatherState.maxDuration = 0;
+        this.weatherState.minDuration = 0;
       } else {
-        this.weatherData.maxDuration = this.battle.gen.num <= 3 ? 5 : 8;
-        this.weatherData.minDuration = this.battle.gen.num <= 3 ? 0 : 5;
+        this.weatherState.maxDuration = this.battle.gen.num <= 3 ? 5 : 8;
+        this.weatherState.minDuration = this.battle.gen.num <= 3 ? 0 : 5;
       }
     }
   }
 
   reset() {
     this.weather = undefined;
-    this.weatherData = {id: '', minDuration: 0, maxDuration: 0};
+    this.weatherState = {id: '', minDuration: 0, maxDuration: 0};
     this.terrain = undefined;
-    this.terrainData = {id: '', minDuration: 0, maxDuration: 0};
+    this.terrainState = {id: '', minDuration: 0, maxDuration: 0};
     this.pseudoWeather = {};
   }
 

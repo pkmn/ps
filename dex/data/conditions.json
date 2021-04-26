@@ -7,7 +7,7 @@
     },
     "par": {"name": "par", "effectType": "Status", "onBeforeMovePriority": 2},
     "slp": {"name": "slp", "effectType": "Status", "onBeforeMovePriority": 10},
-    "frz": {"name": "frz", "effectType": "Status", "onBeforeMovePriority": 10},
+    "frz": {"name": "frz", "effectType": "Status", "onBeforeMovePriority": 12},
     "psn": {
       "name": "psn",
       "effectType": "Status",
@@ -23,7 +23,7 @@
       "onBeforeMovePriority": 4
     },
     "partialtrappinglock": {"name": "partialtrappinglock"},
-    "mustrecharge": {"inherit": true},
+    "mustrecharge": {"inherit": true, "duration": 0},
     "lockedmove": {"inherit": true},
     "stall": {"name": "stall", "duration": 2, "counterMax": 256}
   },
@@ -119,47 +119,47 @@
       "name": "RainDance",
       "effectType": "Weather",
       "duration": 5,
-      "onResidualOrder": 1
+      "onFieldResidualOrder": 1
     },
     "primordialsea": {
       "name": "PrimordialSea",
       "effectType": "Weather",
       "duration": 0,
       "onTryMovePriority": 1,
-      "onResidualOrder": 1
+      "onFieldResidualOrder": 1
     },
     "sunnyday": {
       "name": "SunnyDay",
       "effectType": "Weather",
       "duration": 5,
-      "onResidualOrder": 1
+      "onFieldResidualOrder": 1
     },
     "desolateland": {
       "name": "DesolateLand",
       "effectType": "Weather",
       "duration": 0,
       "onTryMovePriority": 1,
-      "onResidualOrder": 1
+      "onFieldResidualOrder": 1
     },
     "sandstorm": {
       "name": "Sandstorm",
       "effectType": "Weather",
       "duration": 5,
       "onModifySpDPriority": 10,
-      "onResidualOrder": 1
+      "onFieldResidualOrder": 1
     },
     "hail": {
       "name": "Hail",
       "effectType": "Weather",
       "duration": 5,
-      "onResidualOrder": 1
+      "onFieldResidualOrder": 1
     },
     "deltastream": {
       "name": "DeltaStream",
       "effectType": "Weather",
       "duration": 0,
       "onEffectivenessPriority": -1,
-      "onResidualOrder": 1
+      "onFieldResidualOrder": 1
     },
     "dynamax": {
       "name": "Dynamax",

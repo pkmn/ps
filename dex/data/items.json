@@ -3282,9 +3282,6 @@
     "protectivepads": {
       "name": "Protective Pads",
       "fling": {"basePower": 30},
-      "onAttractPriority": -1,
-      "onBoostPriority": -1,
-      "onDamagePriority": -1,
       "num": 880,
       "gen": 7,
       "desc": "Holder's moves are protected from adverse contact effects, except Pickpocket."

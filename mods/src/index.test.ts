@@ -13,12 +13,26 @@ const DATA = {
 for (const [pkg, Dex] of Object.entries(DATA)) {
   describe(`ModdedDex (${pkg})`, () => {
     describe('mods', () => {
+      it('gen1jpn', async () => {
+        const dex =
+          new ModdedDex(Dex.mod('gen1stadium' as ID, await import('./gen1jpn') as ModData));
+        expect(dex.gen).toBe(1);
+        expect(dex.moves.get('swift').accuracy).toBe(100);
+        expect(dex.moves.get('blizzard').secondary!.chance).toBe(30);
+      });
+
       it('gen1stadium', async () => {
         const dex =
           new ModdedDex(Dex.mod('gen1stadium' as ID, await import('./gen1stadium') as ModData));
         expect(dex.gen).toBe(1);
         expect(dex.moves.get('highjumpkick').desc)
           .toEqual('If this attack misses the target, the user takes 1 HP of damage.');
+      });
+
+      it('gen2stadium2', async () => {
+        const dex =
+          new ModdedDex(Dex.mod('gen1stadium' as ID, await import('./gen2stadium2') as ModData));
+        expect(dex.gen).toBe(2);
       });
 
       it('gen8dlc1', async () => {

@@ -535,9 +535,9 @@ export class Handler implements Protocol.Handler {
     if (c.fromEffect?.kind === 'Item') ofpoke.item = c.fromEffect.id;
 
     if (c.status === 'tox') {
-      c.poke.statusData.toxicTurns = (c.fromEffect?.name === 'Toxic Orb' ? -1 : 0);
+      c.poke.statusState.toxicTurns = (c.fromEffect?.name === 'Toxic Orb' ? -1 : 0);
     } else if (c.status === 'slp' && c.fromEffect?.id === 'rest') {
-      c.poke.statusData.sleepTurns = 0; // for Gen 2 use through Sleep Talk
+      c.poke.statusState.sleepTurns = 0; // for Gen 2 use through Sleep Talk
     }
   }
 
@@ -551,8 +551,8 @@ export class Handler implements Protocol.Handler {
       c.poke.status = undefined;
       switch (c.status) {
       case 'brn': case 'par': case 'frz': break;
-      case 'tox': case 'psn': return void (c.poke.statusData.toxicTurns = 0);
-      case 'slp': return void (c.poke.statusData.sleepTurns = 0);
+      case 'tox': case 'psn': return void (c.poke.statusState.toxicTurns = 0);
+      case 'slp': return void (c.poke.statusState.sleepTurns = 0);
       default: return c.poke.removeVolatile('confusion' as ID);
       }
     }

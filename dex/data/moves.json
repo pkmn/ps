@@ -617,7 +617,7 @@
     "leechseed": {"inherit": true, "condition": {"onAfterMoveSelfPriority": 2}},
     "lightscreen": {
       "inherit": true,
-      "condition": {"duration": 5, "onResidualOrder": 21},
+      "condition": {"duration": 5, "onSideResidualOrder": 21},
       "desc": "For 5 turns, the user and its party members have their Special Defense doubled. Critical hits ignore this effect. Fails if the effect is already active on the user's side.",
       "shortDesc": "For 5 turns, the user's party has doubled Sp. Def."
     },
@@ -736,7 +736,7 @@
     },
     "reflect": {
       "inherit": true,
-      "condition": {"duration": 5, "onResidualOrder": 21},
+      "condition": {"duration": 5, "onSideResidualOrder": 21},
       "desc": "For 5 turns, the user and its party members have their Defense doubled. Critical hits ignore this effect. Fails if the effect is already active on the user's side.",
       "shortDesc": "For 5 turns, the user's party has doubled Def."
     },
@@ -1851,7 +1851,7 @@
     "lastresort": {"inherit": true, "basePower": 130},
     "lightscreen": {
       "inherit": true,
-      "condition": {"duration": 5, "onResidualOrder": 21},
+      "condition": {"duration": 5, "onSideResidualOrder": 21},
       "desc": "For 5 turns, the user and its party members take 1/2 damage from special attacks, or 2/3 damage if there are multiple active Pokemon on the user's side. Critical hits ignore this effect. It is removed from the user's side if the user or an ally is successfully hit by Brick Break or Defog. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side."
     },
     "lockon": {
@@ -2004,7 +2004,7 @@
     },
     "reflect": {
       "inherit": true,
-      "condition": {"duration": 5, "onResidualOrder": 21},
+      "condition": {"duration": 5, "onSideResidualOrder": 21},
       "desc": "For 5 turns, the user and its party members take 1/2 damage from physical attacks, or 2/3 damage if there are multiple active Pokemon on the user's side. Critical hits ignore this effect. It is removed from the user's side if the user or an ally is successfully hit by Brick Break or Defog. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side."
     },
     "reversal": {
@@ -2075,8 +2075,8 @@
       "inherit": true,
       "condition": {
         "duration": 3,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 4
+        "onSideResidualOrder": 21,
+        "onSideResidualSubOrder": 4
       },
       "desc": "For 3 turns, the user and its party members have their Speed doubled. Fails if this move is already in effect for the user's side.",
       "shortDesc": "For 3 turns, allies' Speed is doubled."
@@ -2688,8 +2688,8 @@
       "inherit": true,
       "condition": {
         "duration": 5,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 1
+        "onSideResidualOrder": 21,
+        "onSideResidualSubOrder": 1
       }
     },
     "lowsweep": {"inherit": true, "basePower": 60},
@@ -2769,7 +2769,7 @@
     "ragepowder": {"inherit": true, "priority": 3, "flags": {}},
     "reflect": {
       "inherit": true,
-      "condition": {"duration": 5, "onResidualOrder": 21}
+      "condition": {"duration": 5, "onSideResidualOrder": 21}
     },
     "relicsong": {
       "inherit": true,
@@ -3137,8 +3137,8 @@
       "inherit": true,
       "condition": {
         "duration": 5,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 2
+        "onFieldResidualOrder": 21,
+        "onFieldResidualSubOrder": 2
       },
       "desc": "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a non-volatile status condition. Grounded Pokemon can become affected by Yawn but cannot fall asleep from its effect. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain."
     },
@@ -3473,8 +3473,8 @@
       "inherit": true,
       "condition": {
         "duration": 5,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 2
+        "onFieldResidualOrder": 21,
+        "onFieldResidualSubOrder": 2
       },
       "desc": "For 5 turns, the terrain becomes Electric Terrain. During the effect, the power of Electric-type attacks made by grounded Pokemon is multiplied by 1.5 and grounded Pokemon cannot fall asleep; Pokemon already asleep do not wake up. Grounded Pokemon cannot become affected by Yawn or fall asleep from its effect. Camouflage transforms the user into an Electric type, Nature Power becomes Thunderbolt, and Secret Power has a 30% chance to cause paralysis. Fails if the current terrain is Electric Terrain."
     },
@@ -3501,8 +3501,8 @@
       "condition": {
         "duration": 5,
         "onResidualOrder": 5,
-        "onResidualSubOrder": 3,
-        "onTerrainPriority": 1
+        "onFieldResidualOrder": 21,
+        "onFieldResidualSubOrder": 3
       },
       "desc": "For 5 turns, the terrain becomes Grassy Terrain. During the effect, the power of Grass-type attacks used by grounded Pokemon is multiplied by 1.5, the power of Bulldoze, Earthquake, and Magnitude used against grounded Pokemon is multiplied by 0.5, and grounded Pokemon have 1/16 of their maximum HP, rounded down, restored at the end of each turn, including the last turn. Camouflage transforms the user into a Grass type, Nature Power becomes Energy Ball, and Secret Power has a 30% chance to cause sleep. Fails if the current terrain is Grassy Terrain."
     },
@@ -3680,8 +3680,8 @@
       "condition": {
         "duration": 5,
         "onTryHitPriority": 4,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 2
+        "onFieldResidualOrder": 21,
+        "onFieldResidualSubOrder": 2
       },
       "desc": "For 5 turns, the terrain becomes Psychic Terrain. During the effect, the power of Psychic-type attacks made by grounded Pokemon is multiplied by 1.5 and grounded Pokemon cannot be hit by moves with priority greater than 0, unless the target is an ally. Camouflage transforms the user into a Psychic type, Nature Power becomes Psychic, and Secret Power has a 30% chance to lower the target's Speed by 1 stage. Fails if the current terrain is Psychic Terrain."
     },
@@ -4556,8 +4556,8 @@
       "sideCondition": "auroraveil",
       "condition": {
         "duration": 5,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 1
+        "onSideResidualOrder": 21,
+        "onSideResidualSubOrder": 1
       },
       "secondary": null,
       "target": "allySide",
@@ -7066,8 +7066,8 @@
       "condition": {
         "duration": 5,
         "onBasePowerPriority": 6,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 2
+        "onFieldResidualOrder": 21,
+        "onFieldResidualSubOrder": 2
       },
       "secondary": null,
       "target": "all",
@@ -7640,7 +7640,9 @@
       "condition": {
         "duration": 4,
         "onResidualOrder": 5,
-        "onResidualSubOrder": 1
+        "onResidualSubOrder": 1,
+        "onSideResidualOrder": 5,
+        "onSideResidualSubOrder": 1.05
       },
       "secondary": null,
       "target": "normal",
@@ -8584,7 +8586,9 @@
       "condition": {
         "duration": 4,
         "onResidualOrder": 5,
-        "onResidualSubOrder": 1.1
+        "onResidualSubOrder": 1.1,
+        "onSideResidualOrder": 5,
+        "onSideResidualSubOrder": 1.15
       },
       "secondary": null,
       "target": "adjacentFoe",
@@ -9072,7 +9076,9 @@
       "condition": {
         "duration": 4,
         "onResidualOrder": 5,
-        "onResidualSubOrder": 1.1
+        "onResidualSubOrder": 1.1,
+        "onSideResidualOrder": 5,
+        "onSideResidualSubOrder": 1.15
       },
       "secondary": null,
       "target": "adjacentFoe",
@@ -9095,7 +9101,9 @@
       "condition": {
         "duration": 4,
         "onResidualOrder": 5,
-        "onResidualSubOrder": 1.1
+        "onResidualSubOrder": 1.1,
+        "onSideResidualOrder": 5,
+        "onSideResidualSubOrder": 1.15
       },
       "secondary": null,
       "target": "adjacentFoe",
@@ -9136,7 +9144,9 @@
       "condition": {
         "duration": 4,
         "onResidualOrder": 5,
-        "onResidualSubOrder": 1.1
+        "onResidualSubOrder": 1.1,
+        "onSideResidualOrder": 5,
+        "onSideResidualSubOrder": 1.15
       },
       "secondary": null,
       "target": "adjacentFoe",
@@ -9247,8 +9257,8 @@
         "duration": 5,
         "onBasePowerPriority": 6,
         "onResidualOrder": 5,
-        "onResidualSubOrder": 3,
-        "onTerrainPriority": 1
+        "onFieldResidualOrder": 21,
+        "onFieldResidualSubOrder": 3
       },
       "secondary": null,
       "target": "all",
@@ -9285,7 +9295,7 @@
       "condition": {
         "duration": 5,
         "onBeforeMovePriority": 6,
-        "onResidualOrder": 22
+        "onFieldResidualOrder": 22
       },
       "secondary": null,
       "target": "all",
@@ -11105,8 +11115,8 @@
       "sideCondition": "lightscreen",
       "condition": {
         "duration": 5,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 1
+        "onSideResidualOrder": 21,
+        "onSideResidualSubOrder": 1
       },
       "secondary": null,
       "target": "allySide",
@@ -11230,8 +11240,8 @@
       "condition": {
         "duration": 5,
         "onCriticalHit": false,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 5
+        "onSideResidualOrder": 21,
+        "onSideResidualSubOrder": 5
       },
       "secondary": null,
       "target": "allySide",
@@ -11366,7 +11376,7 @@
       "priority": 0,
       "flags": {"mirror": 1},
       "pseudoWeather": "magicroom",
-      "condition": {"duration": 5, "onResidualOrder": 25},
+      "condition": {"duration": 5, "onFieldResidualOrder": 25},
       "secondary": null,
       "target": "all",
       "type": "Psychic",
@@ -12337,8 +12347,8 @@
       "sideCondition": "mist",
       "condition": {
         "duration": 5,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 3
+        "onSideResidualOrder": 21,
+        "onSideResidualSubOrder": 3
       },
       "secondary": null,
       "target": "allySide",
@@ -12391,8 +12401,8 @@
       "condition": {
         "duration": 5,
         "onBasePowerPriority": 6,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 2
+        "onFieldResidualOrder": 21,
+        "onFieldResidualSubOrder": 2
       },
       "secondary": null,
       "target": "all",
@@ -12524,7 +12534,7 @@
       "condition": {
         "duration": 5,
         "onBasePowerPriority": 1,
-        "onResidualOrder": 21
+        "onFieldResidualOrder": 21
       },
       "secondary": null,
       "target": "all",
@@ -13705,8 +13715,8 @@
         "duration": 5,
         "onTryHitPriority": 4,
         "onBasePowerPriority": 6,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 2
+        "onFieldResidualOrder": 21,
+        "onFieldResidualSubOrder": 2
       },
       "secondary": null,
       "target": "all",
@@ -14120,7 +14130,7 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "sideCondition": "reflect",
-      "condition": {"duration": 5, "onResidualOrder": 21},
+      "condition": {"duration": 5, "onSideResidualOrder": 21},
       "secondary": null,
       "target": "allySide",
       "type": "Psychic",
@@ -14597,8 +14607,8 @@
       "sideCondition": "safeguard",
       "condition": {
         "duration": 5,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 2
+        "onSideResidualOrder": 21,
+        "onSideResidualSubOrder": 2
       },
       "secondary": null,
       "target": "allySide",
@@ -16887,8 +16897,8 @@
       "sideCondition": "tailwind",
       "condition": {
         "duration": 4,
-        "onResidualOrder": 21,
-        "onResidualSubOrder": 4
+        "onSideResidualOrder": 21,
+        "onSideResidualSubOrder": 4
       },
       "secondary": null,
       "target": "allySide",
@@ -17486,7 +17496,7 @@
       "priority": -7,
       "flags": {"mirror": 1},
       "pseudoWeather": "trickroom",
-      "condition": {"duration": 5, "onResidualOrder": 23},
+      "condition": {"duration": 5, "onFieldResidualOrder": 23},
       "secondary": null,
       "target": "all",
       "type": "Psychic",
@@ -17908,7 +17918,7 @@
       "condition": {
         "duration": 5,
         "onBasePowerPriority": 1,
-        "onResidualOrder": 21
+        "onFieldResidualOrder": 21
       },
       "secondary": null,
       "target": "all",
@@ -18108,7 +18118,7 @@
       "priority": 0,
       "flags": {"mirror": 1},
       "pseudoWeather": "wonderroom",
-      "condition": {"duration": 5, "onResidualOrder": 24},
+      "condition": {"duration": 5, "onFieldResidualOrder": 24},
       "secondary": null,
       "target": "all",
       "type": "Psychic",

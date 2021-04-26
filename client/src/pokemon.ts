@@ -91,7 +91,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   beingCalledBack: boolean;
 
   statusStage: number;
-  statusData: { sleepTurns: number; toxicTurns: number };
+  statusState: { sleepTurns: number; toxicTurns: number };
   boosts: Partial<BoostsTable>;
   volatiles: EffectTable;
 
@@ -164,7 +164,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.beingCalledBack = false;
 
     this.statusStage = 0;
-    this.statusData = {sleepTurns: 0, toxicTurns: 0};
+    this.statusState = {sleepTurns: 0, toxicTurns: 0};
     this.boosts = {};
     this.volatiles = {};
 
@@ -414,8 +414,8 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.movesUsedWhileActive = [];
 
     this.statusStage = 0;
-    this.statusData.toxicTurns = 0;
-    if (this.side.battle.gen.num === 5) this.statusData.sleepTurns = 0;
+    this.statusState.toxicTurns = 0;
+    if (this.side.battle.gen.num === 5) this.statusState.sleepTurns = 0;
   }
 
   copyVolatileFrom(pokemon: Pokemon, copyAll: 'batonpass' | 'illusion' = 'batonpass') {
@@ -429,6 +429,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       delete this.volatiles['disable'];
       delete this.volatiles['encore'];
       delete this.volatiles['foresight'];
+      delete this.volatiles['gmaxchistrike'];
       delete this.volatiles['imprison'];
       delete this.volatiles['laserfocus'];
       delete this.volatiles['mimic'];
@@ -533,7 +534,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     switch (effect.id) {
     case 'slp': {
       if (this.side.battle.gen.num === 1) this.lastMove = '';
-      return void this.statusData.sleepTurns++;
+      return void this.statusState.sleepTurns++;
     }
     case 'frz': {
       if (this.side.battle.gen.num === 1) this.lastMove = '';

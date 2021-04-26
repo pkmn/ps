@@ -154,6 +154,11 @@ const MOD_IMPORTS = {
   'data/mods/letsgo/pokedex.ts': ['ModdedSpeciesData'],
   'data/mods/letsgo/scripts.ts': ['ModdedBattleScriptsData', 'StatsTable', 'StatID'],
 
+  // gen1jpn
+  'data/mods/gen1jpn/moves.ts': ['ModdedMoveData'],
+  'data/mods/gen1jpn/rulesets.ts': ['ModdedFormatData'],
+  'data/mods/gen1jpn/scripts.ts': ['ModdedBattleScriptsData'],
+
   // gen1stadium
   'data/mods/gen1stadium/conditions.ts': ['ModdedConditionData'],
   'data/mods/gen1stadium/moves.ts': ['ModdedMoveData'],
@@ -161,6 +166,19 @@ const MOD_IMPORTS = {
   'data/mods/gen1stadium/scripts.ts': [
     'ModdedBattleScriptsData', 'StatIDExceptHP', 'BoostID', 'ActiveMove'
   ],
+
+  // gen2stadium2
+  'data/mods/gen2stadium2/conditions.ts': [
+    'ModdedConditionData', 'Battle', 'Pokemon', 'ActiveMove',
+  ],
+  'data/mods/gen2stadium2/items.ts': ['ModdedItemData'],
+  'data/mods/gen2stadium2/moves.ts': ['ModdedMoveData'],
+  'data/mods/gen2stadium2/rulesets.ts': ['ModdedFormatData'],
+  'data/mods/gen2stadium2/scripts.ts': [
+    'ModdedBattleScriptsData', 'ActiveMove', 'BoostID',
+    'SparseBoostsTable', 'Pokemon', 'StatIDExceptHP',
+  ],
+
   // vgc17
   'data/mods/vgc17/formats-data.ts': ['ModdedSpeciesFormatsData'],
   'data/mods/vgc17/items.ts': ['ModdedItemData'],
@@ -171,6 +189,7 @@ const MOD_IMPORTS = {
 };
 const RANDOMS_IMPORTS = {
   'data/random-teams.ts': [
+    [['Utils'], './utils'],
     [[
       'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatID',
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ModdedDex', 'Move', 'ID',
@@ -187,6 +206,7 @@ const RANDOMS_IMPORTS = {
   'data/mods/gen6/random-teams.ts': [
     [['RandomGen7Teams'], './gen7'],
     [['TeamData'], './gen8'],
+    [['Utils'], './utils'],
     [[
       'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'Move',
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'StatID', 'ID',
@@ -194,6 +214,7 @@ const RANDOMS_IMPORTS = {
   ],
   'data/mods/gen5/random-teams.ts': [
     [['RandomGen6Teams'], './gen6'],
+    [['Utils'], './utils'],
     [[
       'Species', 'StatID', 'SparseStatsTable', 'RandomTeamsTypes', 'toID',
       'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Move', 'ID', 'AnyObject',
@@ -201,6 +222,7 @@ const RANDOMS_IMPORTS = {
   ],
   'data/mods/gen4/random-teams.ts': [
     [['RandomGen5Teams'], './gen5'],
+    [['Utils'], './utils'],
     [[
       'Species', 'RandomTeamsTypes', 'toID', 'SparseStatsTable', 'StatID',
       'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Move', 'ID',
@@ -208,6 +230,7 @@ const RANDOMS_IMPORTS = {
   ],
   'data/mods/gen3/random-teams.ts': [
     [['RandomGen4Teams'], './gen4'],
+    [['Utils'], './utils'],
     [[
       'ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes', 'Move', 'ID',
     ], '@pkmn/sim'],
@@ -345,7 +368,9 @@ const MOD_OVERRIDDEN = new Set([
   'data/mods/index.test.ts',
   'data/mods/gen8dlc1/index.ts',
   'data/mods/letsgo/index.ts',
+  'data/mods/gen1jpn/index.ts',
   'data/mods/gen1stadium/index.ts',
+  'data/mods/gen2stadium2/index.ts',
   'data/mods/vgc17/index.ts',
 ]);
 const SKIP_TESTS = new Set([

@@ -187,6 +187,11 @@ export class Format extends BasicEffect implements Readonly<BasicEffect> {
 	/** Table of rule names and banned effects. */
 	ruleTable: RuleTable | null;
 	/**
+	 * The range of levels on Pokemon that players can bring to battle and
+	 * the summative limit of those levels
+	 */
+	readonly cupLevelLimit?: {range: [number, number], total: number};
+	/**
 	 * The number of Pokemon players can bring to battle and
 	 * the number that can actually be used.
 	 */
@@ -249,8 +254,8 @@ export class Format extends BasicEffect implements Readonly<BasicEffect> {
 	readonly onModifySpecies?: (
 		this: Battle, species: Species, target?: Pokemon, source?: Pokemon, effect?: Effect
 	) => Species | void;
-	readonly onStart?: (this: Battle) => void;
-	readonly onTeamPreview?: (this: Battle) => void;
+	readonly onFieldStart?: (this: Battle) => void;
+	readonly onFieldTeamPreview?: (this: Battle) => void;
 	readonly onValidateSet?: (
 		this: TeamValidator, set: PokemonSet, format: Format, setHas: AnyObject, teamHas: AnyObject
 	) => string[] | void;
@@ -281,6 +286,7 @@ export class Format extends BasicEffect implements Readonly<BasicEffect> {
 		this.unbanlist = data.unbanlist || [];
 		this.customRules = data.customRules || null;
 		this.ruleTable = null;
+		this.cupLevelLimit = data.cupLevelLimit || undefined;
 		this.teamLength = data.teamLength || undefined;
 		this.onBegin = data.onBegin || undefined;
 		this.minSourceGen = data.minSourceGen || undefined;

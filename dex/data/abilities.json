@@ -1414,7 +1414,6 @@
       "shortDesc": "This Pokemon cannot be confused. Immune to Intimidate."
     },
     "parentalbond": {
-      "onBasePowerPriority": 7,
       "name": "Parental Bond",
       "num": 185,
       "desc": "This Pokemon's damaging moves become multi-hit moves that hit twice. The second hit has its damage quartered. Does not affect multi-hit moves or moves that have multiple targets.",

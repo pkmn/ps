@@ -327,7 +327,7 @@ export class Battle {
     }
 
     if (this.field.terrain) {
-      const td = this.field.terrainData;
+      const td = this.field.terrainState;
       if (td.minDuration) td.minDuration--;
       if (td.maxDuration) td.maxDuration--;
     }
@@ -339,7 +339,8 @@ export class Battle {
         if (sc.maxDuration) sc.maxDuration--;
       }
       for (const poke of side.active) {
-        if (poke?.status === 'tox') poke.statusData.toxicTurns++;
+        if (poke?.status === 'tox') poke.statusState.toxicTurns++;
+        poke?.clearTurnstatuses();
       }
     }
   }
@@ -553,7 +554,7 @@ export class Battle {
   }
 
   currentWeather() {
-    return this.field.weatherData.id;
+    return this.field.weatherState.id;
   }
 
   reset() {

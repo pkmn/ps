@@ -9,7 +9,7 @@ import {
 	SparseBoostsTable,
 } from './exported-global-types';
 
-import {EventMethods} from './dex-conditions';
+import {PokemonEventMethods} from './dex-conditions';
 import {BasicEffect, toID} from './dex-data';
 
 interface FlingData {
@@ -19,7 +19,7 @@ interface FlingData {
 	effect?: CommonHandlers['ResultMove'];
 }
 
-export interface ItemData extends Partial<Item>, EventMethods {
+export interface ItemData extends Partial<Item>, PokemonEventMethods {
 	name: string;
 }
 
@@ -100,7 +100,7 @@ export class Item extends BasicEffect implements Readonly<BasicEffect> {
 	/** Is this item a Pokeball? */
 	readonly isPokeball: boolean;
 
-	readonly condition?: Partial<ConditionData>;
+	readonly condition?: ConditionData;
 	readonly forcedForme?: string;
 	readonly isChoice?: boolean;
 	readonly naturalGift?: {basePower: number, type: string};

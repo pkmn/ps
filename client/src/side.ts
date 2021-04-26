@@ -244,7 +244,7 @@ export class Side {
       pokemon.hpcolor = oldpokemon.hpcolor;
       pokemon.status = oldpokemon.status;
       pokemon.copyVolatileFrom(oldpokemon, 'illusion');
-      pokemon.statusData = {...oldpokemon.statusData};
+      pokemon.statusState = {...oldpokemon.statusState};
       // we don't know anything about the illusioned pokemon except that it's not fainted
       // technically we also know its status but only at the end of the turn, not here
       oldpokemon.fainted = false;
@@ -267,8 +267,8 @@ export class Side {
     pokemon.illusion = undefined;
     pokemon.revealedDetails = undefined;
     pokemon.beingCalledBack = true;
-    pokemon.statusData.toxicTurns = 0;
-    if (this.battle.gen.num === 5) pokemon.statusData.sleepTurns = 0;
+    pokemon.statusState.toxicTurns = 0;
+    if (this.battle.gen.num === 5) pokemon.statusState.sleepTurns = 0;
     this.lastPokemon = pokemon;
     this.active[slot] = null;
   }
