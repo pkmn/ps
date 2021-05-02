@@ -19,6 +19,7 @@ import {
   Species as DexSpecies,
   SpeciesAbility,
   SpeciesName,
+  SpeciesTag,
   StatID,
   StatsTable,
   Tier,
@@ -238,7 +239,7 @@ export class Specie implements DexSpecies {
   readonly eggGroups!: EggGroup[];
   readonly weightkg!: number;
   readonly weighthg!: number;
-  readonly heightm!: number;
+  readonly tags!: SpeciesTag[];
   readonly unreleasedHidden!: boolean | 'Past';
   readonly maleOnlyHidden!: boolean;
   readonly inheritsFrom!: ID;

@@ -856,6 +856,7 @@
     "adrenalineorb": {
       "name": "Adrenaline Orb",
       "fling": {"basePower": 30},
+      "onBoostPriority": 1,
       "boosts": {"spe": 1},
       "num": 846,
       "gen": 7,

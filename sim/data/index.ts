@@ -10,3 +10,4 @@ export {Natures} from './natures';
 export {Pokedex} from './pokedex';
 export {Scripts} from './scripts';
 export {TypeChart} from './typechart';
+export {Tags} from './tags';

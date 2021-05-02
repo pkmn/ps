@@ -212,6 +212,7 @@ export interface MoveData extends EffectData, HitEffect {
   stallingMove?: boolean;
 }
 
+export type SpeciesTag = 'Mythical' | 'Restricted Legendary' | 'Sub-Legendary';
 export interface SpeciesAbility<A = string> { 0: A; 1?: A; H?: A; S?: A }
 
 export interface SpeciesData {
@@ -223,6 +224,7 @@ export interface SpeciesData {
   types: string[];
   weightkg: number;
 
+  tags?: SpeciesTag[];
   condition?: Partial<Condition>;
   canHatch?: boolean;
   baseForme?: string;
@@ -378,7 +380,7 @@ export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData
   readonly formeOrder?: SpeciesName[];
   readonly genderRatio: { M: number; F: number };
   readonly weighthg: number;
-  readonly heightm: number;
+  readonly tags: SpeciesTag[];
   readonly unreleasedHidden: boolean | 'Past';
   readonly maleOnlyHidden: boolean;
   readonly changesFrom?: SpeciesName;

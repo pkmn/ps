@@ -6868,6 +6868,7 @@
       },
       "abilities": {"0": "Pressure", "H": "Snow Cloak"},
       "weightkg": 55.4,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Articuno-Galar"],
       "formeOrder": ["Articuno", "Articuno-Galar"]
@@ -6906,6 +6907,7 @@
       },
       "abilities": {"0": "Pressure", "H": "Static"},
       "weightkg": 52.6,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Zapdos-Galar"],
       "formeOrder": ["Zapdos", "Zapdos-Galar"]
@@ -6944,6 +6946,7 @@
       },
       "abilities": {"0": "Pressure", "H": "Flame Body"},
       "weightkg": 60,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Moltres-Galar"],
       "formeOrder": ["Moltres", "Moltres-Galar"]
@@ -7037,6 +7040,7 @@
       "abilities": {"0": "Pressure", "H": "Unnerve"},
       "weightkg": 122,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Restricted Legendary"],
       "otherFormes": ["Mewtwo-Mega-X", "Mewtwo-Mega-Y"],
       "formeOrder": ["Mewtwo", "Mewtwo-Mega-X", "Mewtwo-Mega-Y"]
     },
@@ -7095,6 +7099,7 @@
       },
       "abilities": {"0": "Synchronize"},
       "weightkg": 4,
+      "tags": ["Mythical"],
       "eggGroups": ["Undiscovered"]
     },
     "chikorita": {
@@ -8987,6 +8992,7 @@
       },
       "abilities": {"0": "Pressure", "H": "Inner Focus"},
       "weightkg": 178,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "entei": {
@@ -9004,6 +9010,7 @@
       },
       "abilities": {"0": "Pressure", "H": "Inner Focus"},
       "weightkg": 198,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "suicune": {
@@ -9021,6 +9028,7 @@
       },
       "abilities": {"0": "Pressure", "H": "Inner Focus"},
       "weightkg": 187,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "larvitar": {
@@ -9113,6 +9121,7 @@
       },
       "abilities": {"0": "Pressure", "H": "Multiscale"},
       "weightkg": 216,
+      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "hooh": {
@@ -9130,6 +9139,7 @@
       },
       "abilities": {"0": "Pressure", "H": "Regenerator"},
       "weightkg": 199,
+      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "celebi": {
@@ -9147,6 +9157,7 @@
       },
       "abilities": {"0": "Natural Cure"},
       "weightkg": 5,
+      "tags": ["Mythical"],
       "eggGroups": ["Undiscovered"]
     },
     "treecko": {
@@ -11877,6 +11888,7 @@
       },
       "abilities": {"0": "Clear Body", "H": "Sturdy"},
       "weightkg": 230,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "regice": {
@@ -11894,6 +11906,7 @@
       },
       "abilities": {"0": "Clear Body", "H": "Ice Body"},
       "weightkg": 175,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "registeel": {
@@ -11911,6 +11924,7 @@
       },
       "abilities": {"0": "Clear Body", "H": "Light Metal"},
       "weightkg": 205,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "latias": {
@@ -11928,6 +11942,7 @@
       },
       "abilities": {"0": "Levitate"},
       "weightkg": 40,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Latias-Mega"],
       "formeOrder": ["Latias", "Latias-Mega"]
@@ -11968,6 +11983,7 @@
       "abilities": {"0": "Levitate"},
       "weightkg": 60,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Sub-Legendary"],
       "otherFormes": ["Latios-Mega"],
       "formeOrder": ["Latios", "Latios-Mega"]
     },
@@ -12006,6 +12022,7 @@
       },
       "abilities": {"0": "Drizzle"},
       "weightkg": 352,
+      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Kyogre-Primal"],
       "formeOrder": ["Kyogre", "Kyogre-Primal"]
@@ -12045,6 +12062,7 @@
       },
       "abilities": {"0": "Drought"},
       "weightkg": 950,
+      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Groudon-Primal"],
       "formeOrder": ["Groudon", "Groudon-Primal"]
@@ -12084,6 +12102,7 @@
       },
       "abilities": {"0": "Air Lock"},
       "weightkg": 206.5,
+      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Rayquaza-Mega"],
       "formeOrder": ["Rayquaza", "Rayquaza-Mega"]
@@ -12123,6 +12142,7 @@
       },
       "abilities": {"0": "Serene Grace"},
       "weightkg": 1.1,
+      "tags": ["Mythical"],
       "eggGroups": ["Undiscovered"]
     },
     "deoxys": {
@@ -12142,6 +12162,7 @@
       "abilities": {"0": "Pressure"},
       "weightkg": 60.8,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Mythical"],
       "otherFormes": ["Deoxys-Attack", "Deoxys-Defense", "Deoxys-Speed"],
       "formeOrder": [
         "Deoxys",
@@ -14240,6 +14261,7 @@
       },
       "abilities": {"0": "Levitate"},
       "weightkg": 0.3,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "mesprit": {
@@ -14257,6 +14279,7 @@
       },
       "abilities": {"0": "Levitate"},
       "weightkg": 0.3,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "azelf": {
@@ -14274,6 +14297,7 @@
       },
       "abilities": {"0": "Levitate"},
       "weightkg": 0.3,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "dialga": {
@@ -14291,6 +14315,7 @@
       },
       "abilities": {"0": "Pressure", "H": "Telepathy"},
       "weightkg": 683,
+      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "palkia": {
@@ -14308,6 +14333,7 @@
       },
       "abilities": {"0": "Pressure", "H": "Telepathy"},
       "weightkg": 336,
+      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "heatran": {
@@ -14324,6 +14350,7 @@
       },
       "abilities": {"0": "Flash Fire", "H": "Flame Body"},
       "weightkg": 430,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "regigigas": {
@@ -14341,6 +14368,7 @@
       },
       "abilities": {"0": "Slow Start"},
       "weightkg": 420,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "giratina": {
@@ -14360,6 +14388,7 @@
       "abilities": {"0": "Pressure", "H": "Telepathy"},
       "weightkg": 750,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Restricted Legendary"],
       "otherFormes": ["Giratina-Origin"],
       "formeOrder": ["Giratina", "Giratina-Origin"]
     },
@@ -14399,6 +14428,7 @@
       },
       "abilities": {"0": "Levitate"},
       "weightkg": 85.6,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "phione": {
@@ -14416,6 +14446,7 @@
       },
       "abilities": {"0": "Hydration"},
       "weightkg": 3.1,
+      "tags": ["Mythical"],
       "eggGroups": ["Water 1", "Fairy"]
     },
     "manaphy": {
@@ -14433,6 +14464,7 @@
       },
       "abilities": {"0": "Hydration"},
       "weightkg": 1.4,
+      "tags": ["Mythical"],
       "eggGroups": ["Water 1", "Fairy"]
     },
     "darkrai": {
@@ -14450,6 +14482,7 @@
       },
       "abilities": {"0": "Bad Dreams"},
       "weightkg": 50.5,
+      "tags": ["Mythical"],
       "eggGroups": ["Undiscovered"]
     },
     "shaymin": {
@@ -14469,6 +14502,7 @@
       "abilities": {"0": "Natural Cure"},
       "weightkg": 2.1,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Mythical"],
       "otherFormes": ["Shaymin-Sky"],
       "formeOrder": ["Shaymin", "Shaymin-Sky"]
     },
@@ -14508,6 +14542,7 @@
       },
       "abilities": {"0": "Multitype"},
       "weightkg": 320,
+      "tags": ["Mythical"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": [
         "Arceus-Bug",
@@ -14922,6 +14957,7 @@
       },
       "abilities": {"0": "Victory Star"},
       "weightkg": 4,
+      "tags": ["Mythical"],
       "eggGroups": ["Undiscovered"]
     },
     "snivy": {
@@ -17740,6 +17776,7 @@
       },
       "abilities": {"0": "Justified"},
       "weightkg": 250,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "terrakion": {
@@ -17757,6 +17794,7 @@
       },
       "abilities": {"0": "Justified"},
       "weightkg": 260,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "virizion": {
@@ -17774,6 +17812,7 @@
       },
       "abilities": {"0": "Justified"},
       "weightkg": 200,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "tornadus": {
@@ -17792,6 +17831,7 @@
       },
       "abilities": {"0": "Prankster", "H": "Defiant"},
       "weightkg": 63,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Tornadus-Therian"],
       "formeOrder": ["Tornadus", "Tornadus-Therian"]
@@ -17832,6 +17872,7 @@
       },
       "abilities": {"0": "Prankster", "H": "Defiant"},
       "weightkg": 61,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Thundurus-Therian"],
       "formeOrder": ["Thundurus", "Thundurus-Therian"]
@@ -17871,6 +17912,7 @@
       },
       "abilities": {"0": "Turboblaze"},
       "weightkg": 330,
+      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "zekrom": {
@@ -17888,6 +17930,7 @@
       },
       "abilities": {"0": "Teravolt"},
       "weightkg": 345,
+      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "landorus": {
@@ -17906,6 +17949,7 @@
       },
       "abilities": {"0": "Sand Force", "H": "Sheer Force"},
       "weightkg": 68,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Landorus-Therian"],
       "formeOrder": ["Landorus", "Landorus-Therian"]
@@ -17946,6 +17990,7 @@
       "abilities": {"0": "Pressure"},
       "weightkg": 325,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Restricted Legendary"],
       "otherFormes": ["Kyurem-Black", "Kyurem-White"],
       "formeOrder": ["Kyurem", "Kyurem-White", "Kyurem-Black"]
     },
@@ -18006,6 +18051,7 @@
       "abilities": {"0": "Justified"},
       "weightkg": 48.5,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Mythical"],
       "otherFormes": ["Keldeo-Resolute"],
       "formeOrder": ["Keldeo", "Keldeo-Resolute"]
     },
@@ -18047,6 +18093,7 @@
       "abilities": {"0": "Serene Grace"},
       "weightkg": 6.5,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Mythical"],
       "otherFormes": ["Meloetta-Pirouette"],
       "formeOrder": ["Meloetta", "Meloetta-Pirouette"]
     },
@@ -18087,6 +18134,7 @@
       "abilities": {"0": "Download"},
       "weightkg": 82.5,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Mythical"],
       "otherFormes": [
         "Genesect-Douse",
         "Genesect-Shock",
@@ -19777,6 +19825,7 @@
       "abilities": {"0": "Fairy Aura"},
       "weightkg": 215,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Restricted Legendary"],
       "otherFormes": ["Xerneas-Neutral"],
       "formeOrder": ["Xerneas-Neutral", "Xerneas"]
     },
@@ -19814,6 +19863,7 @@
       },
       "abilities": {"0": "Dark Aura"},
       "weightkg": 203,
+      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "zygarde": {
@@ -19832,6 +19882,7 @@
       },
       "abilities": {"0": "Aura Break", "S": "Power Construct"},
       "weightkg": 305,
+      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Zygarde-10%", "Zygarde-Complete"],
       "formeOrder": [
@@ -19901,6 +19952,7 @@
       "abilities": {"0": "Clear Body"},
       "weightkg": 8.8,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Mythical"],
       "otherFormes": ["Diancie-Mega"],
       "formeOrder": ["Diancie", "Diancie-Mega"]
     },
@@ -19941,6 +19993,7 @@
       "abilities": {"0": "Magician"},
       "weightkg": 9,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Mythical"],
       "otherFormes": ["Hoopa-Unbound"],
       "formeOrder": ["Hoopa", "Hoopa-Unbound"]
     },
@@ -19979,6 +20032,7 @@
       },
       "abilities": {"0": "Water Absorb"},
       "weightkg": 195,
+      "tags": ["Mythical"],
       "eggGroups": ["Undiscovered"]
     },
     "rowlet": {
@@ -21159,6 +21213,7 @@
       },
       "abilities": {"0": "Battle Armor"},
       "weightkg": 120.5,
+      "tags": ["Sub-Legendary"],
       "evos": ["Silvally"],
       "eggGroups": ["Undiscovered"]
     },
@@ -21177,6 +21232,7 @@
       },
       "abilities": {"0": "RKS System"},
       "weightkg": 100.5,
+      "tags": ["Sub-Legendary"],
       "prevo": "Type: Null",
       "evoType": "levelFriendship",
       "eggGroups": ["Undiscovered"],
@@ -21933,6 +21989,7 @@
       },
       "abilities": {"0": "Electric Surge", "H": "Telepathy"},
       "weightkg": 20.5,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "tapulele": {
@@ -21950,6 +22007,7 @@
       },
       "abilities": {"0": "Psychic Surge", "H": "Telepathy"},
       "weightkg": 18.6,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "tapubulu": {
@@ -21967,6 +22025,7 @@
       },
       "abilities": {"0": "Grassy Surge", "H": "Telepathy"},
       "weightkg": 45.5,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "tapufini": {
@@ -21984,6 +22043,7 @@
       },
       "abilities": {"0": "Misty Surge", "H": "Telepathy"},
       "weightkg": 21.2,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "cosmog": {
@@ -22002,6 +22062,7 @@
       "abilities": {"0": "Unaware"},
       "weightkg": 0.1,
       "evos": ["Cosmoem"],
+      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "cosmoem": {
@@ -22019,6 +22080,7 @@
       },
       "abilities": {"0": "Sturdy"},
       "weightkg": 999.9,
+      "tags": ["Restricted Legendary"],
       "prevo": "Cosmog",
       "evoLevel": 43,
       "evos": ["Solgaleo", "Lunala"],
@@ -22039,6 +22101,7 @@
       },
       "abilities": {"0": "Full Metal Body"},
       "weightkg": 230,
+      "tags": ["Restricted Legendary"],
       "prevo": "Cosmoem",
       "evoLevel": 53,
       "eggGroups": ["Undiscovered"]
@@ -22058,6 +22121,7 @@
       },
       "abilities": {"0": "Shadow Shield"},
       "weightkg": 120,
+      "tags": ["Restricted Legendary"],
       "prevo": "Cosmoem",
       "evoLevel": 53,
       "eggGroups": ["Undiscovered"]
@@ -22077,6 +22141,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 55.5,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "buzzwole": {
@@ -22094,6 +22159,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 333.6,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "pheromosa": {
@@ -22111,6 +22177,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 25,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "xurkitree": {
@@ -22128,6 +22195,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 100,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "celesteela": {
@@ -22145,6 +22213,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 999.9,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "kartana": {
@@ -22162,6 +22231,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 0.1,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "guzzlord": {
@@ -22179,6 +22249,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 888,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "necrozma": {
@@ -22196,6 +22267,7 @@
       },
       "abilities": {"0": "Prism Armor"},
       "weightkg": 230,
+      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": [
         "Necrozma-Dusk-Mane",
@@ -22286,6 +22358,7 @@
       "abilities": {"0": "Soul-Heart"},
       "weightkg": 80.5,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Mythical"],
       "otherFormes": ["Magearna-Original"],
       "formeOrder": ["Magearna", "Magearna-Original"]
     },
@@ -22323,6 +22396,7 @@
       },
       "abilities": {"0": "Technician"},
       "weightkg": 22.2,
+      "tags": ["Mythical"],
       "eggGroups": ["Undiscovered"]
     },
     "poipole": {
@@ -22340,6 +22414,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 1.8,
+      "tags": ["Sub-Legendary"],
       "evos": ["Naganadel"],
       "eggGroups": ["Undiscovered"]
     },
@@ -22358,6 +22433,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 150,
+      "tags": ["Sub-Legendary"],
       "prevo": "Poipole",
       "evoType": "levelMove",
       "evoMove": "Dragon Pulse",
@@ -22378,6 +22454,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 820,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "blacephalon": {
@@ -22395,6 +22472,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 13,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "zeraora": {
@@ -22412,6 +22490,7 @@
       },
       "abilities": {"0": "Volt Absorb"},
       "weightkg": 44.5,
+      "tags": ["Mythical"],
       "eggGroups": ["Undiscovered"]
     },
     "meltan": {
@@ -22429,6 +22508,7 @@
       },
       "abilities": {"0": "Magnet Pull"},
       "weightkg": 8,
+      "tags": ["Mythical"],
       "eggGroups": ["Undiscovered"]
     },
     "melmetal": {
@@ -22446,6 +22526,7 @@
       },
       "abilities": {"0": "Iron Fist"},
       "weightkg": 800,
+      "tags": ["Mythical"],
       "eggGroups": ["Undiscovered"],
       "canGigantamax": "G-Max Meltdown"
     },
@@ -24474,6 +24555,7 @@
       "abilities": {"0": "Intrepid Sword"},
       "weightkg": 110,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Restricted Legendary"],
       "otherFormes": ["Zacian-Crowned"],
       "formeOrder": ["Zacian", "Zacian-Crowned"],
       "cannotDynamax": true
@@ -24517,6 +24599,7 @@
       "abilities": {"0": "Dauntless Shield"},
       "weightkg": 210,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Restricted Legendary"],
       "otherFormes": ["Zamazenta-Crowned"],
       "formeOrder": ["Zamazenta", "Zamazenta-Crowned"],
       "cannotDynamax": true
@@ -24559,6 +24642,7 @@
       "abilities": {"0": "Pressure"},
       "weightkg": 950,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Restricted Legendary"],
       "otherFormes": ["Eternatus-Eternamax"],
       "formeOrder": ["Eternatus", "Eternatus-Eternamax"],
       "cannotDynamax": true
@@ -24598,6 +24682,7 @@
       },
       "abilities": {"0": "Inner Focus"},
       "weightkg": 12,
+      "tags": ["Sub-Legendary"],
       "evos": ["Urshifu", "Urshifu-Rapid-Strike"],
       "eggGroups": ["Undiscovered"]
     },
@@ -24617,6 +24702,7 @@
       },
       "abilities": {"0": "Unseen Fist"},
       "weightkg": 105,
+      "tags": ["Sub-Legendary"],
       "prevo": "Kubfu",
       "evoType": "other",
       "evoCondition": "Defeat the Single Strike Tower",
@@ -24705,6 +24791,7 @@
       "abilities": {"0": "Leaf Guard"},
       "weightkg": 70,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Mythical"],
       "otherFormes": ["Zarude-Dada"],
       "formeOrder": ["Zarude", "Zarude-Dada"]
     },
@@ -24742,6 +24829,7 @@
       },
       "abilities": {"0": "Transistor"},
       "weightkg": 145,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "regidrago": {
@@ -24759,6 +24847,7 @@
       },
       "abilities": {"0": "Dragon's Maw"},
       "weightkg": 200,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "glastrier": {
@@ -24776,6 +24865,7 @@
       },
       "abilities": {"0": "Chilling Neigh"},
       "weightkg": 800,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "spectrier": {
@@ -24793,6 +24883,7 @@
       },
       "abilities": {"0": "Grim Neigh"},
       "weightkg": 44.5,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "calyrex": {
@@ -24811,6 +24902,7 @@
       "abilities": {"0": "Unnerve"},
       "weightkg": 7.7,
       "eggGroups": ["Undiscovered"],
+      "tags": ["Restricted Legendary"],
       "otherFormes": ["Calyrex-Ice", "Calyrex-Shadow"],
       "formeOrder": ["Calyrex", "Calyrex-Ice", "Calyrex-Shadow"]
     },

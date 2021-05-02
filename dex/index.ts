@@ -675,7 +675,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly canHatch: boolean;
   readonly weightkg: number;
   readonly weighthg: number;
-  readonly heightm: number;
+  readonly tags: T.SpeciesTag[];
   readonly unreleasedHidden: boolean | 'Past';
   readonly maleOnlyHidden: boolean;
   readonly changesFrom?: T.SpeciesName;
@@ -736,7 +736,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
       this.baseStats.spa + this.baseStats.spd + this.baseStats.spe;
     this.weightkg = data.weightkg || 0;
     this.weighthg = this.weightkg * 10;
-    this.heightm = data.heightm || 0;
+    this.tags = data.tags || [];
     this.unreleasedHidden = data.unreleasedHidden || false;
     this.maleOnlyHidden = !!data.maleOnlyHidden;
     this.maxHP = data.maxHP || undefined;
@@ -878,7 +878,8 @@ class DexSpecies implements T.DexTable<Species> {
     data = this.dex.data.Species[id];
 
     if (id && data) {
-      species = new Species({...data, ...this.dex.data.FormatsData[id]});
+      const tags = data.baseSpecies && this.dex.data.Species[toID(data.baseSpecies)].tags;
+      species = new Species({tags, ...data, ...this.dex.data.FormatsData[id]});
       if (!species.tier && !species.doublesTier && species.baseSpecies !== species.name) {
         if (species.baseSpecies === 'Mimikyu') {
           (species as any).tier =
