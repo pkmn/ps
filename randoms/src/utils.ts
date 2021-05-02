@@ -36,7 +36,7 @@ function compare(a: Comparable, b: Comparable): number {
 		}
 		return 0;
 	}
-	if (a.reverse) {
+  if ('reverse' in a) {
 		return compare((b as {reverse: string}).reverse, a.reverse);
 	}
 	throw new Error(`Passed value ${a} is not comparable`);
