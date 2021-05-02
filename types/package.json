@@ -8,6 +8,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "index.d.ts"
+  ],
   "scripts": {
     "compile": "tsc -p .",
     "build": "npm run compile",

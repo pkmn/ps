@@ -18,6 +18,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "build",
+    "!build/*.test.*",
+    "src",
+    "!src/*.test.*"
+  ],
   "dependencies": {
     "@pkmn/types": "^2.0.0"
   },

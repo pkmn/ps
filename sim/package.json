@@ -19,6 +19,13 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "build",
+    "config",
+    "data",
+    "lib",
+    "sim"
+  ],
   "dependencies": {
     "@pkmn/sets": "^2.0.0"
   },

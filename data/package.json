@@ -10,6 +10,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "build",
+    "!build/*.test.*",
+    "index.ts"
+  ],
   "dependencies": {
     "@pkmn/dex-types": "^0.4.2"
   },

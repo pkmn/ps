@@ -8,6 +8,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "index.d.ts"
+  ],
   "dependencies": {
     "@pkmn/types": "^2.0.0"
   },

@@ -23,6 +23,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "build",
+    "!build/*.test.*",
+    "src",
+    "!src/*.test.*"
+  ],
   "dependencies": {
     "@pkmn/dex-types": "^0.4.2"
   },

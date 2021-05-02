@@ -12,6 +12,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "build",
+    "!build/test",
+    "src",
+    "!src/test"
+  ],
   "dependencies": {
     "@pkmn/protocol": "^0.3.0",
     "@pkmn/types": "^2.0.0"

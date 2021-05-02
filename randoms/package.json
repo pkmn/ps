@@ -9,6 +9,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "build",
+    "!build/test",
+    "src",
+    "!src/test"
+  ],
   "dependencies": {
     "@pkmn/sim": "^0.4.2"
   },
