@@ -19,7 +19,7 @@
     "!src/test"
   ],
   "dependencies": {
-    "@pkmn/protocol": "^0.3.0",
+    "@pkmn/protocol": "^0.3.1",
     "@pkmn/types": "^2.0.0"
   },
   "scripts": {

@@ -3,7 +3,7 @@ import {BoostID, GameType, ID, Player, StatusName} from '@pkmn/types';
 import {Protocol, Args, KWArgs, PokemonIdent} from '../index';
 
 const QUERYTYPES: Protocol.QueryType[] =
-  ['userdetails', 'roomlist', 'rooms', 'laddertop', 'roominfo', 'savereplay'];
+  ['userdetails', 'roomlist', 'rooms', 'laddertop', 'roominfo', 'savereplay', 'debug'];
 const GAMETYPES: GameType[] =
   ['singles', 'doubles', 'triples', 'multi', 'freeforall', 'rotation'];
 const PLAYERS: Player[] = ['p1', 'p2', 'p3', 'p4'];
@@ -211,7 +211,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|challstr|'(args: Args['|challstr|']) {
-    return args.length === 3 && args[1] === '4' && !!args[2];
+    return args.length === 2 && !!args[1];
   }
 
   '|updateuser|'(args: Args['|updateuser|']) {

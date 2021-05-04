@@ -189,7 +189,7 @@ export namespace Protocol {
   export type Reason = StatusName | 'partiallytrapped' | 'flinch' | 'nopp' | 'recharge';
 
   export type QueryType =
-    'userdetails' | 'roomlist' | 'rooms' | 'laddertop' | 'roominfo' | 'savereplay';
+    'userdetails' | 'roomlist' | 'rooms' | 'laddertop' | 'roominfo' | 'savereplay' | 'debug';
 
   /** An unparsed JSON string containing `Challenges` information. */
   export type ChallengesJSON = string & As<'ChallengesJSON'>;
@@ -579,7 +579,7 @@ export namespace Protocol {
      * Finish logging in (or renaming) by sending: `/trn USERNAME,0,ASSERTION` where `USERNAME` is
      * your desired username and `ASSERTION` is `data.assertion`.
      */
-    '|challstr|': readonly ['challstr', '4', string];
+    '|challstr|': readonly ['challstr', string];
     /**
      * `|updateuser|USER|NAMED|AVATAR|SETTINGS`
      *
