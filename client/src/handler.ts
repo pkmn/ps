@@ -226,6 +226,18 @@ export class Handler implements Protocol.Handler {
     this.battle.teamPreviewCount = args[1] ? parseInt(args[1]) : 6;
   }
 
+  '|updatepoke|'(args: Args['|updatepoke|']) {
+    const {name, siden, pokemonid} = this.battle.parsePokemonId(args[1]);
+    const side = this.battle.sides[siden];
+    for (let i = 0; i < side.team.length; i++) {
+      const pokemon = side.team[i];
+      if (pokemon.details !== args[2] && pokemon.checkDetails(args[2])) {
+        side.addPokemon(Protocol.parseDetails(name, pokemonid as PokemonIdent, args[2]), i);
+        break;
+      }
+    }
+  }
+
   '|switch|'(args: Args['|switch|']) {
     this.switch(args);
   }

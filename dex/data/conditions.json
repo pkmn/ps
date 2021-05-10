@@ -61,6 +61,7 @@
   "4": {
     "par": {"inherit": true},
     "slp": {"name": "slp", "effectType": "Status", "onBeforeMovePriority": 10},
+    "confusion": {"inherit": true},
     "frz": {"inherit": true},
     "substitutebroken": {"noCopy": true},
     "trapped": {"inherit": true, "noCopy": false},

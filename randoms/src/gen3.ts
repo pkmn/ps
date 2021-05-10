@@ -556,7 +556,7 @@ export class RandomGen3Teams extends RandomGen4Teams {
 			evs: evs,
 			ivs: ivs,
 			item: item,
-			level: level,
+			level,
 			shiny: this.randomChance(1, 1024),
 		};
 	}
@@ -567,9 +567,9 @@ export class RandomGen3Teams extends RandomGen4Teams {
 		const pokemon: RandomTeamsTypes.RandomSet[] = [];
 
 		// For Monotype
-		const isMonotype = ruleTable.has('sametypeclause');
+		const isMonotype = !!this.forceMonotype || ruleTable.has('sametypeclause');
 		const typePool = this.dex.types.names();
-		const type = this.sample(typePool);
+		const type = this.forceMonotype || this.sample(typePool);
 
 		const baseFormes: {[k: string]: number} = {};
 		const tierCount: {[k: string]: number} = {};
@@ -579,7 +579,7 @@ export class RandomGen3Teams extends RandomGen4Teams {
 
 		const pokemonPool = this.getPokemonPool(type, pokemon, isMonotype);
 
-		while (pokemonPool.length && pokemon.length < 6) {
+		while (pokemonPool.length && pokemon.length < this.maxTeamSize) {
 			const species = this.dex.species.get(this.sampleNoReplace(pokemonPool));
 			if (!species.exists || !species.randomBattleMoves) continue;
 			// Limit to one of each species (Species Clause)
@@ -594,14 +594,17 @@ export class RandomGen3Teams extends RandomGen4Teams {
 			const types = species.types;
 			const typeCombo = types.slice().sort().join();
 
-			if (!isMonotype) {
+			if (!isMonotype && !this.forceMonotype) {
+				// Dynamically scale limits for different team sizes. The default and minimum value is 1.
+				const limitFactor = Math.round(this.maxTeamSize / 6) || 1;
+
 				// Limit two Pokemon per tier
-				if (tierCount[tier] >= 2) continue;
+				if (tierCount[tier] >= 2 * limitFactor) continue;
 
 				// Limit two of any type
 				let skip = false;
 				for (const typeName of types) {
-					if (typeCount[typeName] > 1) {
+					if (typeCount[typeName] >= 2 * limitFactor) {
 						skip = true;
 						break;
 					}
@@ -609,7 +612,7 @@ export class RandomGen3Teams extends RandomGen4Teams {
 				if (skip) continue;
 
 				// Limit one of any type combination
-				if (typeComboCount[typeCombo] >= 1) continue;
+				if (!this.forceMonotype && typeComboCount[typeCombo] >= 1 * limitFactor) continue;
 			}
 
 			// Okay, the set passes, add it to our team
@@ -653,7 +656,7 @@ export class RandomGen3Teams extends RandomGen4Teams {
 			if (species.id === 'ditto') this.battleHasDitto = true;
 		}
 
-		if (pokemon.length < 6 && !isMonotype) {
+		if (pokemon.length < this.maxTeamSize && !isMonotype && !this.forceMonotype && pokemon.length < 12) {
 			throw new Error(`Could not build a random team for ${this.format} (seed=${seed})`);
 		}
 

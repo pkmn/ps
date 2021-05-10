@@ -397,6 +397,10 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 1 || (args.length === 2 && verifyNum(args[1]));
   }
 
+  '|updatepoke|'(args: Args['|updatepoke|']) {
+    return args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonDetails(args[2]);
+  }
+
   '|clearpoke|'(args: Args['|clearpoke|']) {
     return args.length === 1;
   }

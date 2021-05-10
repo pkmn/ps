@@ -762,7 +762,6 @@
     },
     "darkaura": {
       "onAnyBasePowerPriority": 20,
-      "isUnbreakable": true,
       "name": "Dark Aura",
       "num": 186,
       "desc": "While this Pokemon is active, the power of Dark-type moves used by active Pokemon is multiplied by 1.33.",
@@ -867,7 +866,6 @@
     },
     "fairyaura": {
       "onAnyBasePowerPriority": 20,
-      "isUnbreakable": true,
       "name": "Fairy Aura",
       "num": 187,
       "desc": "While this Pokemon is active, the power of Fairy-type moves used by active Pokemon is multiplied by 1.33.",
@@ -1520,6 +1518,7 @@
       "shortDesc": "This Pokemon receives 3/4 damage from supereffective attacks."
     },
     "propellertail": {
+      "onModifyMovePriority": 1,
       "name": "Propeller Tail",
       "num": 239,
       "shortDesc": "This Pokemon's moves cannot be redirected to a different target by any effect."
@@ -1839,6 +1838,7 @@
       "shortDesc": "This Pokemon moves last among Pokemon using the same or greater priority moves."
     },
     "stalwart": {
+      "onModifyMovePriority": 1,
       "name": "Stalwart",
       "num": 242,
       "shortDesc": "This Pokemon's moves cannot be redirected to a different target by any effect."
