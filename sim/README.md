@@ -43,7 +43,7 @@ const streams = BattleStreams.getPlayerStreams(new BattleStreams.BattleStream())
 const spec = {formatid: 'gen7customgame'};
 
 const p1spec = {name: 'Bot 1', team: Teams.pack(Teams.generate('gen7randombattle'))};
-const p1spec = {name: 'Bot 2', team: Teans.pack(Teams.generate('gen7randombattle'))};
+const p2spec = {name: 'Bot 2', team: Teams.pack(Teams.generate('gen7randombattle'))};
 
 const p1 = new RandomPlayerAI(streams.p1);
 const p2 = new RandomPlayerAI(streams.p2);
