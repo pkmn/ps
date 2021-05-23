@@ -94,7 +94,8 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
 
         expect(Gen(7).items.get('foo')).toBeUndefined();
 
-        expect(Gen(2).items.get('Leftovers')).toEqual(Gen(7).items.get('Leftovers'));
+        expect(JSON.stringify(Gen(2).items.get('Thick Club')))
+          .toEqual(JSON.stringify(Gen(7).items.get('Thick Club')));
         expect(Gen(3).items.get('Sitrus Berry'))
           .not.toEqual(Gen(4).items.get('Sitrus Berry'));
 

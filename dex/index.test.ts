@@ -92,7 +92,7 @@ describe('Dex', () => {
 
       expect(Dex.items.get('foo').exists).toBe(false);
 
-      expect(Dex.forGen(2).items.get('Leftovers')).toEqual(Dex.items.get('Leftovers'));
+      expect(Dex.forGen(2).items.get('Thick Club')).toEqual(Dex.items.get('Thick Club'));
       expect(Dex.forGen(3).items.get('Sitrus Berry'))
         .not.toEqual(Dex.forGen(4).items.get('Sitrus Berry'));
 

@@ -633,7 +633,7 @@
     "descGen2": "The user is protected from attacks made by the opponent during this turn. This move has an X/255 chance of being successful, where X starts at 255 and halves, rounded down, each time this move is successfully used. X resets to 255 if this move fails or if the user's last move used is not Detect, Endure, or Protect. Fails if the user has a substitute or moves last this turn."
   },
   "diamondstorm": {
-    "descGen6": "Has a 50% chance to raise the user's Defense by 1 stage.",
+    "descGen6": "Has a 50% chance to raise the user's Defense by 1 stage for each hit.",
     "shortDescGen6": "50% chance to raise user's Def by 1 for each hit."
   },
   "dig": {

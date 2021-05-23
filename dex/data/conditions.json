@@ -35,7 +35,7 @@
     },
     "par": {"name": "par", "inherit": true, "onBeforeMovePriority": 2},
     "slp": {"name": "slp", "effectType": "Status", "onBeforeMovePriority": 10},
-    "frz": {"name": "frz", "inherit": true},
+    "frz": {"name": "frz", "inherit": true, "onResidualOrder": 7},
     "psn": {
       "name": "psn",
       "effectType": "Status",
@@ -47,9 +47,16 @@
       "onAfterMoveSelfPriority": 3
     },
     "confusion": {"inherit": true},
-    "partiallytrapped": {"inherit": true},
+    "partiallytrapped": {
+      "inherit": true,
+      "onResidualOrder": 3,
+      "onResidualSubOrder": 1
+    },
     "lockedmove": {"name": "lockedmove"},
-    "sandstorm": {"inherit": true},
+    "futuremove": {"inherit": true, "onResidualOrder": 1},
+    "raindance": {"inherit": true, "onFieldResidualOrder": 2},
+    "sunnyday": {"inherit": true, "onFieldResidualOrder": 2},
+    "sandstorm": {"inherit": true, "onFieldResidualOrder": 2},
     "stall": {"name": "stall", "duration": 2},
     "residualdmg": {"name": "residualdmg", "onAfterMoveSelfPriority": 100}
   },
@@ -59,15 +66,27 @@
     "sandstorm": {"inherit": true}
   },
   "4": {
+    "brn": {"inherit": true, "onResidualOrder": 10, "onResidualSubOrder": 6},
     "par": {"inherit": true},
     "slp": {"name": "slp", "effectType": "Status", "onBeforeMovePriority": 10},
+    "psn": {"inherit": true, "onResidualOrder": 10, "onResidualSubOrder": 6},
+    "tox": {"inherit": true, "onResidualOrder": 10, "onResidualSubOrder": 6},
     "confusion": {"inherit": true},
     "frz": {"inherit": true},
     "substitutebroken": {"noCopy": true},
     "trapped": {"inherit": true, "noCopy": false},
     "trapper": {"inherit": true, "noCopy": false},
-    "partiallytrapped": {"inherit": true},
+    "partiallytrapped": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 9
+    },
+    "futuremove": {"inherit": true, "onResidualOrder": 11},
     "stall": {"inherit": true, "counterMax": 8},
+    "raindance": {"inherit": true, "onFieldResidualOrder": 8},
+    "sunnyday": {"inherit": true, "onFieldResidualOrder": 8},
+    "sandstorm": {"inherit": true, "onFieldResidualOrder": 8},
+    "hail": {"inherit": true, "onFieldResidualOrder": 8},
     "arceus": {"name": "Arceus"}
   },
   "5": {
@@ -83,7 +102,7 @@
     "choicelock": {"inherit": true}
   },
   "8": {
-    "brn": {"name": "brn", "effectType": "Status", "onResidualOrder": 9},
+    "brn": {"name": "brn", "effectType": "Status", "onResidualOrder": 10},
     "par": {"name": "par", "effectType": "Status", "onBeforeMovePriority": 1},
     "slp": {"name": "slp", "effectType": "Status", "onBeforeMovePriority": 10},
     "frz": {"name": "frz", "effectType": "Status", "onBeforeMovePriority": 10},
@@ -96,7 +115,7 @@
     "partiallytrapped": {
       "name": "partiallytrapped",
       "duration": 5,
-      "onResidualOrder": 11
+      "onResidualOrder": 13
     },
     "lockedmove": {"name": "lockedmove", "duration": 2},
     "twoturnmove": {"name": "twoturnmove", "duration": 2},

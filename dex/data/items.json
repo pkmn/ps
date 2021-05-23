@@ -19,6 +19,11 @@
     },
     "hardstone": {"inherit": true},
     "kingsrock": {"inherit": true},
+    "leftovers": {
+      "inherit": true,
+      "onResidualOrder": 5,
+      "onResidualSubOrder": 1
+    },
     "lightball": {"inherit": true},
     "luckypunch": {
       "inherit": true,
@@ -65,11 +70,20 @@
     "psncureberry": {"inherit": true, "isNonstandard": null}
   },
   "3": {
-    "aguavberry": {"inherit": true, "onResidualOrder": 5},
-    "apicotberry": {"inherit": true, "onResidualOrder": 5},
+    "aguavberry": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
+    "apicotberry": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
     "berryjuice": {
       "inherit": true,
-      "onResidualOrder": 5,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4,
       "isNonstandard": "Unobtainable"
     },
     "blackbelt": {
@@ -96,20 +110,40 @@
       "isNonstandard": "Unobtainable",
       "desc": "No competitive use."
     },
-    "figyberry": {"inherit": true, "onResidualOrder": 5},
-    "ganlonberry": {"inherit": true, "onResidualOrder": 5},
+    "figyberry": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
+    "ganlonberry": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
     "hardstone": {
       "inherit": true,
       "desc": "Holder's Rock-type attacks have 1.1x power."
     },
-    "iapapaberry": {"inherit": true, "onResidualOrder": 5},
+    "iapapaberry": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
     "kingsrock": {"inherit": true},
-    "lansatberry": {"inherit": true, "onResidualOrder": 5},
+    "lansatberry": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
     "laxincense": {
       "inherit": true,
       "desc": "The accuracy of attacks against the holder is 0.95x."
     },
-    "liechiberry": {"inherit": true, "onResidualOrder": 5},
+    "liechiberry": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
     "lightball": {
       "inherit": true,
       "desc": "If held by a Pikachu, its Special Attack is doubled."
@@ -118,7 +152,11 @@
       "inherit": true,
       "desc": "Holder's Electric-type attacks have 1.1x power."
     },
-    "magoberry": {"inherit": true, "onResidualOrder": 5},
+    "magoberry": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
     "metalcoat": {
       "inherit": true,
       "desc": "Holder's Steel-type attacks have 1.1x power. Evolves Onix into Steelix and Scyther into Scizor when traded.",
@@ -136,14 +174,26 @@
       "inherit": true,
       "desc": "Holder's Ice-type attacks have 1.1x power."
     },
-    "oranberry": {"inherit": true, "onResidualOrder": 5},
-    "petayaberry": {"inherit": true, "onResidualOrder": 5},
+    "oranberry": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
+    "petayaberry": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
     "poisonbarb": {
       "inherit": true,
       "desc": "Holder's Poison-type attacks have 1.1x power."
     },
     "quickclaw": {"inherit": true},
-    "salacberry": {"inherit": true, "onResidualOrder": 5},
+    "salacberry": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
     "seaincense": {
       "inherit": true,
       "desc": "Holder's Water-type attacks have 1.05x power."
@@ -162,7 +212,8 @@
     },
     "sitrusberry": {
       "inherit": true,
-      "onResidualOrder": 5,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4,
       "desc": "Restores 30 HP when at 1/2 max HP or less. Single use."
     },
     "softsand": {
@@ -173,16 +224,29 @@
       "inherit": true,
       "desc": "Holder's Ghost-type attacks have 1.1x power."
     },
-    "starfberry": {"inherit": true, "onResidualOrder": 5},
+    "starfberry": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
     "twistedspoon": {
       "inherit": true,
       "desc": "Holder's Psychic-type attacks have 1.1x power."
     },
-    "wikiberry": {"inherit": true, "onResidualOrder": 5}
+    "wikiberry": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    }
   },
   "4": {
     "adamantorb": {"inherit": true},
     "bigroot": {"inherit": true},
+    "blacksludge": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
     "brightpowder": {"inherit": true, "onModifyAccuracyPriority": 5},
     "choiceband": {"inherit": true},
     "choicescarf": {"inherit": true},
@@ -191,6 +255,11 @@
     "custapberry": {"inherit": true},
     "deepseascale": {"inherit": true},
     "deepseatooth": {"inherit": true},
+    "flameorb": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 20
+    },
     "focussash": {
       "inherit": true,
       "condition": {"duration": 1},
@@ -206,6 +275,11 @@
     },
     "kingsrock": {"inherit": true},
     "laxincense": {"inherit": true, "onModifyAccuracyPriority": 5},
+    "leftovers": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 4
+    },
     "lifeorb": {"inherit": true, "condition": {"duration": 1}},
     "lightball": {"inherit": true},
     "luckypunch": {"inherit": true},
@@ -226,7 +300,17 @@
     },
     "razorfang": {"inherit": true},
     "stick": {"inherit": true},
+    "stickybarb": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 20
+    },
     "thickclub": {"inherit": true},
+    "toxicorb": {
+      "inherit": true,
+      "onResidualOrder": 10,
+      "onResidualSubOrder": 20
+    },
     "widelens": {"inherit": true, "onSourceModifyAccuracyPriority": 4},
     "zoomlens": {"inherit": true, "onSourceModifyAccuracyPriority": 4}
   },
@@ -1066,7 +1150,7 @@
       "name": "Black Sludge",
       "fling": {"basePower": 30},
       "onResidualOrder": 5,
-      "onResidualSubOrder": 5,
+      "onResidualSubOrder": 4,
       "num": 281,
       "gen": 4,
       "desc": "Each turn, if holder is a Poison type, restores 1/16 max HP; loses 1/8 if not."
@@ -1830,8 +1914,8 @@
     "flameorb": {
       "name": "Flame Orb",
       "fling": {"basePower": 30, "status": "brn"},
-      "onResidualOrder": 26,
-      "onResidualSubOrder": 2,
+      "onResidualOrder": 28,
+      "onResidualSubOrder": 3,
       "num": 273,
       "gen": 4,
       "desc": "At the end of every turn, this item attempts to burn the holder."
@@ -2489,7 +2573,7 @@
       "name": "Leftovers",
       "fling": {"basePower": 10},
       "onResidualOrder": 5,
-      "onResidualSubOrder": 5,
+      "onResidualSubOrder": 4,
       "num": 234,
       "gen": 2,
       "desc": "At the end of every turn, holder restores 1/16 of its max HP."
@@ -3937,8 +4021,8 @@
     "stickybarb": {
       "name": "Sticky Barb",
       "fling": {"basePower": 80},
-      "onResidualOrder": 26,
-      "onResidualSubOrder": 2,
+      "onResidualOrder": 28,
+      "onResidualSubOrder": 3,
       "num": 288,
       "gen": 4,
       "desc": "Each turn, holder loses 1/8 max HP. An attacker making contact can receive it."
@@ -4062,8 +4146,8 @@
     "toxicorb": {
       "name": "Toxic Orb",
       "fling": {"basePower": 30, "status": "tox"},
-      "onResidualOrder": 26,
-      "onResidualSubOrder": 2,
+      "onResidualOrder": 28,
+      "onResidualSubOrder": 3,
       "num": 272,
       "gen": 4,
       "desc": "At the end of every turn, this item attempts to badly poison the holder."

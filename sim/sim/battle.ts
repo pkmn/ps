@@ -255,6 +255,22 @@ export class Battle {
 		this.inputLog.push(`>start ` + JSON.stringify(inputOptions));
 
 		this.add('gametype', this.gameType);
+
+		// timing is early enough to hook into ModifySpecies event
+		for (const rule of this.ruleTable.keys()) {
+			if ('+*-!'.includes(rule.charAt(0))) continue;
+			const subFormat = this.dex.formats.get(rule);
+			if (subFormat.exists) {
+				const hasEventHandler = Object.keys(subFormat).some(
+					// skip event handlers that are handled elsewhere
+					val => val.startsWith('on') && ![
+						'onBegin', 'onTeamPreview', 'onBattleStart', 'onValidateRule', 'onValidateTeam', 'onChangeSet', 'onValidateSet',
+					].includes(val)
+				);
+				if (hasEventHandler) this.field.addPseudoWeather(rule);
+			}
+		}
+
 		const sides: SideID[] = ['p1', 'p2', 'p3', 'p4'];
 		for (const side of sides) {
 			if (options[side]) {
@@ -309,8 +325,8 @@ export class Battle {
 		this.add('message', "The battle's RNG was reset.");
 	}
 
-	suppressingAttackEvents(target?: Pokemon) {
-		return this.activePokemon && this.activePokemon.isActive && this.activePokemon !== target &&
+	suppressingAbility(target?: Pokemon) {
+		return this.activePokemon && this.activePokemon.isActive && (this.activePokemon !== target || this.gen < 8) &&
 			this.activeMove && this.activeMove.ignoreAbility;
 	}
 
@@ -728,36 +744,42 @@ export class Battle {
 				// it's changed; call it off
 				continue;
 			}
-			if (effect.effectType === 'Ability' && !effect.isUnbreakable &&
-					this.suppressingAttackEvents(effectHolder as Pokemon)) {
-				// ignore attacking events
-				const AttackingEvents = {
-					BeforeMove: 1,
-					BasePower: 1,
-					Immunity: 1,
-					RedirectTarget: 1,
-					Heal: 1,
-					SetStatus: 1,
-					CriticalHit: 1,
-					ModifyAtk: 1, ModifyDef: 1, ModifySpA: 1, ModifySpD: 1, ModifySpe: 1, ModifyAccuracy: 1,
-					ModifyBoost: 1,
-					ModifyDamage: 1,
-					ModifySecondaries: 1,
-					ModifyWeight: 1,
-					TryAddVolatile: 1,
-					TryHit: 1,
-					TryHitSide: 1,
-					TryMove: 1,
-					Boost: 1,
-					DragOut: 1,
-					Effectiveness: 1,
-				};
-				if (eventid in AttackingEvents) {
+			if (effect.effectType === 'Ability' && effect.isBreakable !== false &&
+				this.suppressingAbility(effectHolder as Pokemon)) {
+				if (effect.isBreakable) {
 					this.debug(eventid + ' handler suppressed by Mold Breaker');
 					continue;
-				} else if (eventid === 'Damage' && sourceEffect && sourceEffect.effectType === 'Move') {
-					this.debug(eventid + ' handler suppressed by Mold Breaker');
-					continue;
+				}
+				if (!effect.num) {
+					// ignore attacking events for custom abilities
+					const AttackingEvents = {
+						BeforeMove: 1,
+						BasePower: 1,
+						Immunity: 1,
+						RedirectTarget: 1,
+						Heal: 1,
+						SetStatus: 1,
+						CriticalHit: 1,
+						ModifyAtk: 1, ModifyDef: 1, ModifySpA: 1, ModifySpD: 1, ModifySpe: 1, ModifyAccuracy: 1,
+						ModifyBoost: 1,
+						ModifyDamage: 1,
+						ModifySecondaries: 1,
+						ModifyWeight: 1,
+						TryAddVolatile: 1,
+						TryHit: 1,
+						TryHitSide: 1,
+						TryMove: 1,
+						Boost: 1,
+						DragOut: 1,
+						Effectiveness: 1,
+					};
+					if (eventid in AttackingEvents) {
+						this.debug(eventid + ' handler suppressed by Mold Breaker');
+						continue;
+					} else if (eventid === 'Damage' && sourceEffect && sourceEffect.effectType === 'Move') {
+						this.debug(eventid + ' handler suppressed by Mold Breaker');
+						continue;
+					}
 				}
 			}
 			if (eventid !== 'Start' && eventid !== 'SwitchIn' && eventid !== 'TakeItem' &&
@@ -859,7 +881,7 @@ export class Battle {
 			}
 			return handlers;
 		}
-		if (target instanceof Pokemon && target.isActive) {
+		if (target instanceof Pokemon && (target.isActive || source?.isActive)) {
 			handlers = this.findPokemonEventHandlers(target, `on${eventName}`);
 			for (const allyActive of target.alliesAndSelf()) {
 				handlers.push(...this.findPokemonEventHandlers(allyActive, `onAlly${eventName}`));
@@ -2174,7 +2196,7 @@ export class Battle {
 		}
 	}
 
-	faintMessages(lastFirst = false, forceCheck = false) {
+	faintMessages(lastFirst = false, forceCheck = false, checkWin = true) {
 		if (this.ended) return;
 		const length = this.faintQueue.length;
 		if (!length) {
@@ -2185,8 +2207,9 @@ export class Battle {
 			this.faintQueue.unshift(this.faintQueue[this.faintQueue.length - 1]);
 			this.faintQueue.pop();
 		}
-		let faintData;
+		let faintQueueLeft, faintData;
 		while (this.faintQueue.length) {
+			faintQueueLeft = this.faintQueue.length;
 			faintData = this.faintQueue.shift()!;
 			const pokemon: Pokemon = faintData.target;
 			if (!pokemon.fainted &&
@@ -2201,6 +2224,7 @@ export class Battle {
 				pokemon.isActive = false;
 				pokemon.isStarted = false;
 				pokemon.side.faintedThisTurn = pokemon;
+				if (this.faintQueue.length >= faintQueueLeft) checkWin = true;
 			}
 		}
 
@@ -2221,7 +2245,7 @@ export class Battle {
 			}
 		}
 
-		if (this.checkWin(faintData)) return true;
+		if (checkWin && this.checkWin(faintData)) return true;
 
 		if (faintData && length) {
 			this.runEvent('AfterFaint', faintData.target, faintData.source, faintData.effect, length);
@@ -2301,18 +2325,11 @@ export class Battle {
 
 			this.add('start');
 
+			if (this.format.onBattleStart) this.format.onBattleStart.call(this);
 			for (const rule of this.ruleTable.keys()) {
 				if ('+*-!'.includes(rule.charAt(0))) continue;
 				const subFormat = this.dex.formats.get(rule);
-				if (subFormat.exists) {
-					const hasEventHandler = Object.keys(subFormat).some(
-						// skip event handlers that are handled elsewhere
-						val => val.startsWith('on') && ![
-							'onBegin', 'onTeamPreview', 'onValidateRule', 'onValidateTeam', 'onChangeSet', 'onValidateSet',
-						].includes(val)
-					);
-					if (hasEventHandler) this.field.addPseudoWeather(rule);
-				}
+				if (subFormat.onBattleStart) subFormat.onBattleStart.call(this);
 			}
 
 			for (const side of this.sides) {

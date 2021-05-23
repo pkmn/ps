@@ -52,7 +52,7 @@ export interface ConditionData extends Omit<EffectData, 'num'> {
 }
 
 export interface AbilityData extends EffectData {
-  isUnbreakable?: boolean;
+  isBreakable?: boolean;
   suppressWeather?: boolean;
   condition?: Partial<ConditionData>;
 }

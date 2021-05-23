@@ -66,7 +66,7 @@ The following packages are all versioned together - a change to any one of them 
 version being bumped for all of them. All except `@pkmn/data` rely directly on `import`-ed Pokémon
 Showdown code/logic, and keeping the versions in lockstep is useful for being able to deduce
 compatibility at a glance. Most of the APIs are stable, with `@pkmn/randoms` being the most stable
-API though having the most internal volitility. `@pkmn/data`'s API has the most flexibility at this
+API though having the most internal volatility. `@pkmn/data`'s API has the most flexibility at this
 point, but together these packages are relatively close to 1.0.0 status:
 
 - [`@pkmn/sim`](sim)

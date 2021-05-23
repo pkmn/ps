@@ -137,7 +137,7 @@ class DexConditions implements T.DexTable<Condition> {
 export class Ability extends BasicEffect<T.AbilityName> implements T.Ability {
   readonly effectType: 'Ability';
   readonly kind: 'Ability';
-  readonly isUnbreakable?: boolean;
+  readonly isBreakable?: boolean;
   readonly suppressWeather?: boolean;
   readonly condition?: Partial<Condition>;
 

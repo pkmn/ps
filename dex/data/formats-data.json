@@ -2664,7 +2664,7 @@
     "audinomega": {"tier": "NU", "doublesTier": "(DUU)"},
     "timburr": {"tier": "LC"},
     "gurdurr": {"tier": "NU", "doublesTier": "NFE"},
-    "conkeldurr": {"tier": "UU", "doublesTier": "DOU"},
+    "conkeldurr": {"tier": "UUBL", "doublesTier": "DOU"},
     "tympole": {"tier": "LC"},
     "palpitoad": {"tier": "NFE"},
     "seismitoad": {"tier": "RU", "doublesTier": "(DUU)"},

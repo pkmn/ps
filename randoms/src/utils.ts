@@ -62,4 +62,17 @@ function sortBy<T>(array: T[], callback?: (a: T) => Comparable) {
 	return array.sort((a, b) => compare(callback(a), callback(b)));
 }
 
-export const Utils = {clampIntRange, compare, sortBy};
+class Multiset<T> extends Map<T, number> {
+	add(key: T) {
+		this.set(key, (this.get(key) ?? 0) + 1);
+		return this;
+	}
+	remove(key: T) {
+		const newValue = (this.get(key) ?? 0) - 1;
+		if (newValue <= 0) return this.delete(key);
+		this.set(key, newValue);
+		return true;
+	}
+}
+
+export const Utils = {clampIntRange, compare, sortBy, Multiset};

@@ -481,6 +481,14 @@ export namespace Protocol {
      * `|chat|USER|MESSAGE` or `|c|USER|MESSAGE`
      *
      * `USER` said `MESSAGE`. Note that `MESSAGE` can contain `|` characters.
+     *
+     * If `MESSAGE` starts with `/`, it is a special message. For instance, `/me TEXT` or
+     * `/announce TEXT` or `/uhtml HTML`. A lot of these message types are abused to embed protocol
+     * messages in PMs (for instance, `/uhtml` is a stopgap before the client is rewritten to
+     * support `|uhtml|` etc in  PMs).
+     *
+     * If the server wants clients to actually render a message starting with `/`, it will send
+     * message starting with `//` (exactly like how users need to send those messages).
      */
     '|chat|': readonly ['chat', Username, Message];
     /**
