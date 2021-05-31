@@ -242,8 +242,8 @@ export namespace Protocol {
    * If the challenge is accepted, you will receive a room initialization message.
    */
   export interface Challenges {
-    searching: ID[];
-    games: { [roomid in RoomID]: RoomTitle};
+    challengesFrom: { [userid in ID]: ID };
+    challengeTo: null | { o: Username; format: ID };
   }
 
   /**
@@ -269,8 +269,8 @@ export namespace Protocol {
    *    /cancelsearch
    */
   export interface SearchState {
-    challengesFrom: { [userid in ID]: ID };
-    challengeTo: null | { o: Username; format: ID };
+    searching: ID[];
+    games: { [roomid in RoomID]: RoomTitle};
   }
 
   /**
