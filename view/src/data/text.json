@@ -479,6 +479,7 @@
     "descGen6": "If this attack does not miss, the effects of Reflect and Light Screen end for the target's side of the field before damage is calculated.",
     "descGen4": "If this attack does not miss and whether or not the target is immune, the effects of Reflect and Light Screen end for the target's side of the field before damage is calculated.",
     "shortDescGen4": "Destroys screens, even if the target is immune.",
+    "descGen3": "If this attack does not miss and whether or not the target is immune, the effects of Reflect and Light Screen end for the opponent's side of the field before damage is calculated.",
     "activate": "  [POKEMON] shattered [TEAM]'s protections!"
   },
   "bubble": {

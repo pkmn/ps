@@ -501,14 +501,43 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
         }
       }
       let pp = 1;
-      if (move.target === 'all') {
-        for (const active of this.side.foe.active) {
-          if (active && toID(active.ability) === 'pressure') {
+      let ngasActive = false;
+      for (const side of this.side.battle.sides) {
+        for (const active of side.active) {
+          if (active && !active.fainted &&
+              toID(active.ability) === 'neutralizinggas' && !active.volatiles['gastroacid']) {
+            ngasActive = true;
+            break;
+          }
+        }
+      }
+      // Sticky Web is never affected by pressure
+      if (!ngasActive && move.id !== 'stickyweb') {
+        const foeTargets = [];
+
+        const singles = ['self', 'allies', 'allySide', 'adjacentAlly', 'adjacentAllyOrSelf'];
+        const ffa = ['all', 'allAdjacent', 'allAdjacentFoes', 'foeSide'];
+        if (!target && this.side.battle.gameType === 'singles' && !singles.includes(move.target!)) {
+          // Hardcode for moves without a target in singles
+          foeTargets.push(this.side.foe.active[0]);
+        } else if (ffa.includes(move.target!)) {
+          // We loop through all sides here for FFA
+          for (const side of this.side.battle.sides) {
+            if (side === this.side || side === this.side.ally) continue;
+            for (const active of side.active) {
+              foeTargets.push(active);
+            }
+          }
+        } else if (target && target.side !== this.side) {
+          foeTargets.push(target);
+        }
+
+        for (const foe of foeTargets) {
+          if (foe && !foe.fainted && toID(foe.ability) === 'pressure' &&
+            !foe.volatiles['gastroacid']) {
             pp += 1;
           }
         }
-      } else if (target && target.side !== this.side && toID(target.ability) === 'pressure') {
-        pp += 1;
       }
       this.rememberMove(moveName, pp);
     }

@@ -994,6 +994,10 @@ export class Handler implements Protocol.Handler {
     c.side.removeSideCondition(c.effect.id);
   }
 
+  '|-swapsideconditions|'() {
+    this.battle.swapSideConditions();
+  }
+
   '|-weather|'(args: Args['|-weather|'], kwArgs: KWArgs['|-weather|']) {
     const c = this.context = {
       effect: args[1] === 'none' ? NULL : this.battle.get('conditions', args[1]),

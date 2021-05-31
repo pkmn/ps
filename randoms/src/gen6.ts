@@ -106,6 +106,8 @@ export class RandomGen6Teams extends RandomGen7Teams {
 	): {cull: boolean, isSetup?: boolean} {
 		const restTalk = moves.has('rest') && moves.has('sleeptalk');
 
+		if (move.priority > 0 && counter.get('speedsetup')) return {cull: true};
+
 		switch (move.id) {
 		// Not very useful without their supporting moves
 		case 'cottonguard': case 'defendorder':
@@ -814,6 +816,10 @@ export class RandomGen6Teams extends RandomGen7Teams {
 
 			while (moves.size < 4 && rejectedPool.length) {
 				const moveid = this.sampleNoReplace(rejectedPool);
+				if (moveid.startsWith('hiddenpower')) {
+					if (hasHiddenPower) continue;
+					hasHiddenPower = true;
+				}
 				moves.add(moveid);
 			}
 
@@ -956,7 +962,10 @@ export class RandomGen6Teams extends RandomGen7Teams {
 		if (hasHiddenPower) {
 			let hpType;
 			for (const move of moves) {
-				if (move.startsWith('hiddenpower')) hpType = move.substr(11);
+				if (move.startsWith('hiddenpower')) {
+					hpType = move.substr(11);
+					break;
+				}
 			}
 			if (!hpType) throw new Error(`hasHiddenPower is true, but no Hidden Power move was found.`);
 			const HPivs = this.dex.types.get(hpType).HPivs;

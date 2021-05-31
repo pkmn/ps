@@ -1062,6 +1062,10 @@
       "ignoreAccuracy": true,
       "desc": "Prevents the target from switching out. The target can still switch out if it uses Baton Pass. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field, unless it uses Baton Pass, in which case the target will remain trapped."
     },
+    "brickbreak": {
+      "inherit": true,
+      "desc": "If this attack does not miss and whether or not the target is immune, the effects of Reflect and Light Screen end for the opponent's side of the field before damage is calculated."
+    },
     "charge": {
       "inherit": true,
       "boosts": null,
@@ -2134,6 +2138,10 @@
       "inherit": true,
       "desc": "Fails if the target did not select a physical or special attack for use this turn, or if the target moves before the user."
     },
+    "switcheroo": {
+      "inherit": true,
+      "desc": "The user swaps its held item with the target's held item. Fails if either the user or the target is holding a Mail or Griseous Orb, if neither is holding an item, if either has the Multitype Ability, if either is under the effect of Knock Off, or if the target has the Sticky Hold Ability."
+    },
     "synthesis": {
       "inherit": true,
       "desc": "The user restores 1/2 of its maximum HP if no weather conditions are in effect, 2/3 of its maximum HP if the weather is Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Rain Dance, or Sandstorm, all rounded down."
@@ -2183,6 +2191,10 @@
       "inherit": true,
       "flags": {"authentic": 1},
       "desc": "The user transforms into the target. The target's current stats, stat stages, types, moves, Ability, weight, IVs, species, and sprite are copied. The user's level and HP remain the same and each copied move receives only 5 PP. This move fails if the target has transformed."
+    },
+    "trick": {
+      "inherit": true,
+      "desc": "The user swaps its held item with the target's held item. Fails if either the user or the target is holding a Mail or Griseous Orb, if neither is holding an item, if either has the Multitype Ability, if either is under the effect of Knock Off, or if the target has the Sticky Hold Ability."
     },
     "trickroom": {
       "inherit": true,
@@ -2531,10 +2543,6 @@
       "inherit": true,
       "desc": "The user restores its HP based on its Stockpile count. Restores 1/4 of its maximum HP if it's 1, 1/2 of its maximum HP if it's 2, both rounded down, and all of its HP if it's 3. Fails if the user's Stockpile count is 0. The user's Defense and Special Defense decrease by as many stages as Stockpile had increased them, and the user's Stockpile count resets to 0."
     },
-    "switcheroo": {
-      "inherit": true,
-      "desc": "The user swaps its held item with the target's held item. Fails if either the user or the target is holding a Mail or Griseous Orb, if neither is holding an item, if either has the Multitype Ability, if either is under the effect of Knock Off, or if the target has the Sticky Hold Ability."
-    },
     "takedown": {
       "inherit": true,
       "desc": "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded down, but not less than 1 HP."
@@ -2546,10 +2554,6 @@
     "thunder": {
       "inherit": true,
       "desc": "Has a 30% chance to paralyze the target. This move can hit a target using Bounce or Fly. If the weather is Rain Dance, this move does not check accuracy. If the weather is Sunny Day, this move's accuracy is 50%."
-    },
-    "trick": {
-      "inherit": true,
-      "desc": "The user swaps its held item with the target's held item. Fails if either the user or the target is holding a Mail or Griseous Orb, if neither is holding an item, if either has the Multitype Ability, if either is under the effect of Knock Off, or if the target has the Sticky Hold Ability."
     },
     "triplekick": {
       "inherit": true,

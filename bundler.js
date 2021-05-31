@@ -8,7 +8,7 @@ const terser = require('terser');
 const config = {
   compact: false,
   plugins: [
-    ['@babel/plugin-transform-typescript', {'isTSX': true}],
+    ['@babel/plugin-transform-typescript', {'isTSX': true, "allowDeclareFields": true}],
     ['@babel/plugin-proposal-class-properties', {'loose': true}],
     "remove-import-export",
 		"@babel/plugin-proposal-logical-assignment-operators",
@@ -28,7 +28,7 @@ const config = {
     ['@babel/plugin-transform-spread', {'loose': true}],
     ['@babel/plugin-transform-template-literals', {'loose': true}],
     '@babel/plugin-transform-member-expression-literals',
-    '@babel/plugin-transform-property-literals'
+  '@babel/plugin-transform-property-literals'
   ],
 }
 

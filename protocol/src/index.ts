@@ -1234,6 +1234,12 @@ export namespace Protocol {
      */
     '|-sideend|': readonly ['-sideend', Side, SideCondition];
     /**
+     * `|-sswapsideconditions`
+     *
+     * Swaps side conditions between sides. Used for Court Change.
+     */
+    '|-swapsideconditions|': readonly ['-swapsideconditions'];
+    /**
      * `|-start|POKEMON|EFFECT`
      *
      * A [*volatile* status](
@@ -1819,6 +1825,7 @@ export const Protocol = new class {
     '|-fieldactivate|': 1, '|-hint|': 1, '|-center|': 1, '|-message|': 1, '|-combine|': 1,
     '|-waiting|': 1, '|-prepare|': 1, '|-mustrecharge|': 1, '|-hitcount|': 1, '|-singlemove|': 1,
     '|-singleturn|': 1, '|-anim|': 1, '|warning|': 1, '|-candynamax|': 1, '|updatepoke|': 1,
+    '|-swapsideconditions|': 1,
   };
   ARGS_WITH_KWARGS: {[k in Protocol.ArgsWithKWArgName]: 1} = {
     '|move|': 1, '|detailschange|': 1, '|cant|': 1, '|-formechange|': 1, '|-fail|': 1,

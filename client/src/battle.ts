@@ -43,6 +43,12 @@ const BREAK: Set<Protocol.ArgName> = new Set([
   ...GROUP, '|start|', '|turn|', '|win|', '|tie|',
 ]);
 
+const SIDE_CONDITIONS = [
+  'mist', 'lightscreen', 'reflect', 'spikes', 'safeguard', 'tailwind', 'toxicspikes', 'stealthrock',
+  'waterpledge', 'firepledge', 'grasspledge', 'stickyweb', 'auroraveil', 'gmaxsteelsurge',
+  'gmaxcannonade', 'gmaxvinelash', 'gmaxwildfire',
+];
+
 export type Context<T extends keyof HandlerContext> = [
   {
     context: HandlerContext[T];
@@ -478,6 +484,28 @@ export class Battle {
       name: sidename,
       id: sidename.replace(/ /g, ''),
     } as any;
+  }
+
+  swapSideConditions() {
+    if (this.gameType === 'freeforall') {
+      // TODO: Add FFA support
+      return;
+    } else {
+      const side1 = this.sides[0];
+      const side2 = this.sides[1];
+      for (const id of SIDE_CONDITIONS) {
+        if (side1.sideConditions[id] && side2.sideConditions[id]) {
+          [side1.sideConditions[id], side2.sideConditions[id]] =
+            [side2.sideConditions[id], side1.sideConditions[id]];
+        } else if (side1.sideConditions[id] && !side2.sideConditions[id]) {
+          side2.sideConditions[id] = side1.sideConditions[id];
+          side1.removeSideCondition(id as ID);
+        } else if (side2.sideConditions[id] && !side1.sideConditions[id]) {
+          side1.sideConditions[id] = side2.sideConditions[id];
+          side2.removeSideCondition(id as ID);
+        }
+      }
+    }
   }
 
   getPokemon(pokemonid?: '' | 'null' | PokemonIdent | SideID) {

@@ -954,7 +954,7 @@ class Handler implements Protocol.Handler<string> {
         .replace('[SOURCE]', this.parser.pokemon(pokemon)));
     }
 
-    if (id === 'mummy') {
+    if (id === 'mummy' && kwArgs.ability) {
       const targetPokemon = target as PokemonIdent;
       line1 += this.parser.ability(kwArgs.ability, targetPokemon);
       line1 += this.parser.ability('Mummy', targetPokemon);

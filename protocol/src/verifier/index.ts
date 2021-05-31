@@ -706,6 +706,10 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       verifyKWArgs(kwArgs, KWARGS);
   }
 
+  '|-swapsideconditions|'(args: Args['|-swapsideconditions|']) {
+    return args.length === 1;
+  }
+
   '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {
     const keys: Protocol.BattleArgsWithKWArgType[] =
       [...KWARGS, 'already', 'damage', 'block', 'fatigue', 'upkeep', 'zeffect'];
