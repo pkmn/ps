@@ -1873,7 +1873,7 @@ export const Protocol = new class {
   }
 
   key(args: Protocol.ArgType): Protocol.ArgName | undefined {
-    const key = (args[0] === 'tournament'
+    const key = (args[0] === 'noinit' || args[0] === 'hidelines' || args[0] === 'tournament'
       ? `|${args[0]}|${args[1]}|`
       : `|${args[0]}|`) as Protocol.ArgName;
     return key in this.ARGS ? key : undefined;
