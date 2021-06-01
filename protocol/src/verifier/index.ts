@@ -281,6 +281,69 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 2 && !!args[1];
   }
 
+  '|deinit|'(args: Args['|deinit|']) {
+    return args.length === 1;
+  }
+
+  '|selectorhtml|'(args: Args['|selectorhtml|']) {
+    return args.length === 3 && !!args[1] && !!args[2];
+  }
+
+  '|refresh|'(args: Args['|refresh|']) {
+    return args.length === 1;
+  }
+
+  '|tempnotify|'(args: Args['|tempnotify|']) {
+    return args.length >= 3 && !!args[1] && !!args[2] &&
+      (args.length === 3 ||
+        (args.length >= 4 && !!args[3] &&
+          (args.length === 4 || (args.length === 5 && !!args[4]))));
+  }
+
+  '|tempnotifyoff|'(args: Args['|tempnotifyoff|']) {
+    return args.length === 2 && !!args[1];
+  }
+
+  '|noinit|namerequired|'(args: Args['|noinit|namerequired|']) {
+    return args.length === 3 && !!args[2];
+  }
+
+  '|noinit|nonexistent|'(args: Args['|noinit|nonexistent|']) {
+    return args.length === 3 && !!args[2];
+  }
+
+  '|noinit|joinfailed|'(args: Args['|noinit|joinfailed|']) {
+    return args.length === 3 && !!args[2];
+  }
+
+  '|noinit|rename|'(args: Args['|noinit|rename|']) {
+    return args.length === 4 && !!args[2] && !!args[3];
+  }
+
+  '|hidelines|delete|'(args: Args['|hidelines|delete|']) {
+    return args.length === 4 && !!args[2] && verifyNum(args[3]);
+  }
+
+  '|hidelines|hide|'(args: Args['|hidelines|hide|']) {
+    return args.length === 4 && !!args[2] && verifyNum(args[3]);
+  }
+
+  '|hidelines|unlink|'(args: Args['|hidelines|unlink|']) {
+    return args.length === 3 && !!args[2];
+  }
+
+  '|expire|'(args: Args['|expire|']) {
+    return args.length === 1 || (args.length === 2 && !!args[1]);
+  }
+
+  '|modaction|'(args: Args['|modaction|']) {
+    return args.length === 2 && !!args[1];
+  }
+
+  '|askreg|'(args: Args['|askreg|']) {
+    return args.length === 2 && !!args[1];
+  }
+
   '|tournament|create|'(args: Args['|tournament|create|']) {
     return args.length === 4 && !!args[2] && verifyNum(args[3] as Protocol.Num);
   }
