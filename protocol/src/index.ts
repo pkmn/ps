@@ -129,6 +129,8 @@ export namespace Protocol {
   export type NotificationTitle = string & As<'NotificationTitle'>;
   /** Token used to determine whether a notification should highlight a user.  */
   export type HighlightToken = string & As<'HighlightToken'>;
+  /** Group name matched by `|tempnotify|` and `|tempnotifyoff|` messages. */
+  export type TempNotifyName = string & As<'TempNotifyName'>;
 
   /** HTML which should be sanitized before display. */
   export type HTML = string & As<'HTML'>;
@@ -656,8 +658,10 @@ export namespace Protocol {
     '|deinit|': readonly ['deinit'];
     '|selectorhtml|': readonly ['selectorhtml', SelectorName, HTML];
     '|refresh|': readonly ['refresh'];
-    '|tempnotify|': readonly ['tempnotify', string, Message, ...[] | [Message] | [Message, string]];
-    '|tempnotifyoff|': readonly ['tempnotifyoff', string];
+    '|tempnotify|': readonly [
+      'tempnotify', TempNotifyName, Message, ...[] | [Message] | [Message, string]
+    ];
+    '|tempnotifyoff|': readonly ['tempnotifyoff', TempNotifyName];
     '|noinit|':
     | readonly ['noinit', 'joinfailed' | 'namerequired' | 'nonexistent', Message]
     | readonly ['noinit', 'rename', RoomID, RoomTitle];
@@ -1678,6 +1682,10 @@ export type MoveName = Protocol.MoveName;
 
 export type Message = Protocol.Message;
 export type Timestamp = Protocol.Timestamp;
+
+export type NotificationTitle = Protocol.NotificationTitle;
+export type HighlightToken = Protocol.HighlightToken;
+export type TempNotifyName = Protocol.TempNotifyName;
 
 export type HTML = Protocol.HTML;
 export type UHTMLName = Protocol.UHTMLName;
