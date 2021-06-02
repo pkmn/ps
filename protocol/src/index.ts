@@ -658,9 +658,10 @@ export namespace Protocol {
     '|deinit|': readonly ['deinit'];
     '|selectorhtml|': readonly ['selectorhtml', SelectorName, HTML];
     '|refresh|': readonly ['refresh'];
-    '|tempnotify|': readonly [
-      'tempnotify', TempNotifyName, Message, ...[] | [Message] | [Message, string]
-    ];
+    '|tempnotify|':
+    | readonly ['tempnotify', TempNotifyName, Message]
+    | readonly ['tempnotify', TempNotifyName, Message, Message]
+    | readonly ['tempnotify', TempNotifyName, Message, Message, string];
     '|tempnotifyoff|': readonly ['tempnotifyoff', TempNotifyName];
     '|noinit|':
     | readonly ['noinit', 'joinfailed' | 'namerequired' | 'nonexistent', Message]
@@ -668,7 +669,7 @@ export namespace Protocol {
     '|hidelines|':
     | readonly ['hidelines', 'delete' | 'hide', ID, Num]
     | readonly ['hidelines', 'unlink', ID];
-    '|expire|': readonly ['expire', Message?];
+    '|expire|': readonly ['expire'] | readonly ['expire', Message];
     '|askreg|': readonly ['askreg', ID];
   }
 
