@@ -666,8 +666,8 @@ export namespace Protocol {
     | readonly ['noinit', 'joinfailed' | 'namerequired' | 'nonexistent', Message]
     | readonly ['noinit', 'rename', RoomID, RoomTitle];
     '|hidelines|':
-    | readonly ['hidelines', 'delete' | 'hide', string, Num]
-    | readonly ['hidelines', 'unlink', string];
+    | readonly ['hidelines', 'delete' | 'hide', ID, Num]
+    | readonly ['hidelines', 'unlink', ID];
     '|expire|': readonly ['expire', Message?];
     '|modaction|': readonly ['modaction', Message];
     '|askreg|': readonly ['askreg', string];
