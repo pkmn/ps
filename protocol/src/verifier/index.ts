@@ -321,10 +321,6 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 1 || (args.length === 2 && !!args[1]);
   }
 
-  '|modaction|'(args: Args['|modaction|']) {
-    return args.length === 2 && !!args[1];
-  }
-
   '|askreg|'(args: Args['|askreg|']) {
     return args.length === 2 && !!args[1];
   }

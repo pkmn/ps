@@ -669,7 +669,6 @@ export namespace Protocol {
     | readonly ['hidelines', 'delete' | 'hide', ID, Num]
     | readonly ['hidelines', 'unlink', ID];
     '|expire|': readonly ['expire', Message?];
-    '|modaction|': readonly ['modaction', Message];
     '|askreg|': readonly ['askreg', string];
   }
 
@@ -1830,18 +1829,18 @@ export const Protocol = new class {
     '|error|': 1, '|bigerror|': 1, '|chatmsg|': 1, '|chatmsg-raw|': 1, '|controlshtml|': 1,
     '|fieldhtml|': 1, '|debug|': 1, '|deinit|': 1, '|selectorhtml|': 1, '|refresh|': 1,
     '|tempnotify|': 1, '|tempnotifyoff|': 1, '|noinit|': 1, '|hidelines|': 1, '|expire|': 1,
-    '|modaction|': 1, '|askreg|': 1, '|tournament|create|': 1, '|tournament|update|': 1,
-    '|tournament|updateEnd|': 1, '|tournament|error|': 1, '|tournament|forceend|': 1,
-    '|tournament|join|': 1, '|tournament|leave|': 1, '|tournament|replace|': 1,
-    '|tournament|start|': 1, '|tournament|disqualify|': 1, '|tournament|battlestart|': 1,
-    '|tournament|battleend|': 1, '|tournament|end|': 1, '|tournament|scouting|': 1,
-    '|tournament|autostart|': 1, '|tournament|autodq|': 1, '|player|': 1, '|teamsize|': 1,
-    '|gametype|': 1, '|gen|': 1, '|tier|': 1, '|rated|': 1, '|seed|': 1, '|rule|': 1, '|split|': 1,
-    '|teampreview|': 1, '|clearpoke|': 1, '|poke|': 1, '|start|': 1, '|done|': 1, '|request|': 1,
-    '|inactive|': 1, '|inactiveoff|': 1, '|upkeep|': 1, '|turn|': 1, '|win|': 1, '|tie|': 1,
-    '|move|': 1, '|switch|': 1, '|drag|': 1, '|detailschange|': 1, '|replace|': 1, '|swap|': 1,
-    '|cant|': 1, '|faint|': 1, '|-formechange|': 1, '|-fail|': 1, '|-block|': 1, '|-notarget|': 1,
-    '|-miss|': 1, '|-damage|': 1, '|-heal|': 1, '|-sethp|': 1, '|-status|': 1, '|-curestatus|': 1,
+    '|askreg|': 1, '|tournament|create|': 1, '|tournament|update|': 1, '|tournament|updateEnd|': 1,
+    '|tournament|error|': 1, '|tournament|forceend|': 1, '|tournament|join|': 1,
+    '|tournament|leave|': 1, '|tournament|replace|': 1, '|tournament|start|': 1,
+    '|tournament|disqualify|': 1, '|tournament|battlestart|': 1, '|tournament|battleend|': 1,
+    '|tournament|end|': 1, '|tournament|scouting|': 1, '|tournament|autostart|': 1,
+    '|tournament|autodq|': 1, '|player|': 1, '|teamsize|': 1, '|gametype|': 1, '|gen|': 1,
+    '|tier|': 1, '|rated|': 1, '|seed|': 1, '|rule|': 1, '|split|': 1, '|teampreview|': 1,
+    '|clearpoke|': 1, '|poke|': 1, '|start|': 1, '|done|': 1, '|request|': 1, '|inactive|': 1,
+    '|inactiveoff|': 1, '|upkeep|': 1, '|turn|': 1, '|win|': 1, '|tie|': 1, '|move|': 1,
+    '|switch|': 1, '|drag|': 1, '|detailschange|': 1, '|replace|': 1, '|swap|': 1, '|cant|': 1,
+    '|faint|': 1, '|-formechange|': 1, '|-fail|': 1, '|-block|': 1, '|-notarget|': 1, '|-miss|': 1,
+    '|-damage|': 1, '|-heal|': 1, '|-sethp|': 1, '|-status|': 1, '|-curestatus|': 1,
     '|-cureteam|': 1, '|-boost|': 1, '|-unboost|': 1, '|-setboost|': 1, '|-swapboost|': 1,
     '|-invertboost|': 1, '|-clearboost|': 1, '|-clearallboost|': 1, '|-clearpositiveboost|': 1,
     '|-ohko|': 1, '|-clearnegativeboost|': 1, '|-copyboost|': 1, '|-weather|': 1,
