@@ -134,6 +134,8 @@ export namespace Protocol {
   export type HTML = string & As<'HTML'>;
   /** A name to allow for matching two different `|uhtml|` messages. */
   export type UHTMLName = string & As<'UHTMLName'>;
+  /** CSS selector name used in `|selectorhtml|` messages. */
+  export type SelectorName = string & As<'SelectorName'>;
   /** A string which should be parsed as JSON. */
   export type JSON = string & As<'JSON'>;
 
@@ -652,7 +654,7 @@ export namespace Protocol {
     '|fieldhtml|': readonly ['fieldhtml', HTML];
     '|debug|': readonly ['debug', Message];
     '|deinit|': readonly ['deinit'];
-    '|selectorhtml|': readonly ['selectorhtml', string, HTML];
+    '|selectorhtml|': readonly ['selectorhtml', SelectorName, HTML];
     '|refresh|': readonly ['refresh'];
     '|tempnotify|': readonly ['tempnotify', string, Message, ...[] | [Message] | [Message, string]];
     '|tempnotifyoff|': readonly ['tempnotifyoff', string];
@@ -1679,6 +1681,7 @@ export type Timestamp = Protocol.Timestamp;
 
 export type HTML = Protocol.HTML;
 export type UHTMLName = Protocol.UHTMLName;
+export type SelectorName = Protocol.SelectorName;
 export type JSON = Protocol.JSON;
 
 export type RoomID = Protocol.RoomID;
