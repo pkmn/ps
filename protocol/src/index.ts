@@ -669,7 +669,7 @@ export namespace Protocol {
     | readonly ['hidelines', 'delete' | 'hide', ID, Num]
     | readonly ['hidelines', 'unlink', ID];
     '|expire|': readonly ['expire', Message?];
-    '|askreg|': readonly ['askreg', string];
+    '|askreg|': readonly ['askreg', ID];
   }
 
   export interface TournamentArgs {
