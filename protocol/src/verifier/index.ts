@@ -304,32 +304,17 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 2 && !!args[1];
   }
 
-  '|noinit|namerequired|'(args: Args['|noinit|namerequired|']) {
-    return args.length === 3 && !!args[2];
+  '|noinit|'(args: Args['|noinit|']) {
+    return args.length >= 3 && !!args[2] &&
+      (((args[1] === 'joinfailed' || args[1] === 'namerequired' || args[1] === 'nonexistent') &&
+          args.length === 3) ||
+        (args[1] === 'rename' && args.length === 4 && !!args[3]));
   }
 
-  '|noinit|nonexistent|'(args: Args['|noinit|nonexistent|']) {
-    return args.length === 3 && !!args[2];
-  }
-
-  '|noinit|joinfailed|'(args: Args['|noinit|joinfailed|']) {
-    return args.length === 3 && !!args[2];
-  }
-
-  '|noinit|rename|'(args: Args['|noinit|rename|']) {
-    return args.length === 4 && !!args[2] && !!args[3];
-  }
-
-  '|hidelines|delete|'(args: Args['|hidelines|delete|']) {
-    return args.length === 4 && !!args[2] && verifyNum(args[3]);
-  }
-
-  '|hidelines|hide|'(args: Args['|hidelines|hide|']) {
-    return args.length === 4 && !!args[2] && verifyNum(args[3]);
-  }
-
-  '|hidelines|unlink|'(args: Args['|hidelines|unlink|']) {
-    return args.length === 3 && !!args[2];
+  '|hidelines|'(args: Args['|hidelines|']) {
+    return args.length >= 3 && !!args[2] &&
+      (((args[1] === 'delete' || args[1] === 'hide') && args.length === 4 && verifyNum(args[3])) ||
+        (args[1] === 'unlink' && args.length === 3));
   }
 
   '|expire|'(args: Args['|expire|']) {
