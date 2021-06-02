@@ -281,6 +281,50 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 2 && !!args[1];
   }
 
+  '|deinit|'(args: Args['|deinit|']) {
+    return args.length === 1;
+  }
+
+  '|selectorhtml|'(args: Args['|selectorhtml|']) {
+    return args.length === 3 && !!args[1] && !!args[2];
+  }
+
+  '|refresh|'(args: Args['|refresh|']) {
+    return args.length === 1;
+  }
+
+  '|tempnotify|'(args: Args['|tempnotify|']) {
+    return args.length >= 3 && !!args[1] && !!args[2] &&
+      (args.length === 3 ||
+        (args.length >= 4 && !!args[3] &&
+          (args.length === 4 || (args.length === 5 && !!args[4]))));
+  }
+
+  '|tempnotifyoff|'(args: Args['|tempnotifyoff|']) {
+    return args.length === 2 && !!args[1];
+  }
+
+  '|noinit|'(args: Args['|noinit|']) {
+    return args.length >= 3 && !!args[2] &&
+      (((args[1] === 'joinfailed' || args[1] === 'namerequired' || args[1] === 'nonexistent') &&
+          args.length === 3) ||
+        (args[1] === 'rename' && args.length === 4 && verifyRoomID(args[2]) && !!args[3]));
+  }
+
+  '|hidelines|'(args: Args['|hidelines|']) {
+    return args.length >= 3 && verifyID(args[2]) &&
+      (((args[1] === 'delete' || args[1] === 'hide') && args.length === 4 && verifyNum(args[3])) ||
+        (args[1] === 'unlink' && args.length === 3));
+  }
+
+  '|expire|'(args: Args['|expire|']) {
+    return args.length === 1 || (args.length === 2 && !!args[1]);
+  }
+
+  '|askreg|'(args: Args['|askreg|']) {
+    return args.length === 2 && verifyID(args[1]);
+  }
+
   '|tournament|create|'(args: Args['|tournament|create|']) {
     return args.length === 4 && !!args[2] && verifyNum(args[3] as Protocol.Num);
   }
