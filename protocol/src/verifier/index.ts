@@ -308,11 +308,11 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length >= 3 && !!args[2] &&
       (((args[1] === 'joinfailed' || args[1] === 'namerequired' || args[1] === 'nonexistent') &&
           args.length === 3) ||
-        (args[1] === 'rename' && args.length === 4 && !!args[3]));
+        (args[1] === 'rename' && args.length === 4 && verifyRoomID(args[2]) && !!args[3]));
   }
 
   '|hidelines|'(args: Args['|hidelines|']) {
-    return args.length >= 3 && !!args[2] &&
+    return args.length >= 3 && verifyID(args[2]) &&
       (((args[1] === 'delete' || args[1] === 'hide') && args.length === 4 && verifyNum(args[3])) ||
         (args[1] === 'unlink' && args.length === 3));
   }
@@ -322,7 +322,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|askreg|'(args: Args['|askreg|']) {
-    return args.length === 2 && !!args[1];
+    return args.length === 2 && verifyID(args[1]);
   }
 
   '|tournament|create|'(args: Args['|tournament|create|']) {
