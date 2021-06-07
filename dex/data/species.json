@@ -1861,18 +1861,22 @@
       }
     },
     "mrmime": {"inherit": true, "types": ["Psychic"]},
-    "articuno": {"inherit": true, "abilities": {"0": "Pressure"}},
-    "zapdos": {"inherit": true, "abilities": {"0": "Pressure"}},
-    "moltres": {"inherit": true, "abilities": {"0": "Pressure"}},
-    "chikorita": {"inherit": true, "abilities": {"0": "Overgrow"}},
-    "bayleef": {"inherit": true, "abilities": {"0": "Overgrow"}},
-    "meganium": {"inherit": true, "abilities": {"0": "Overgrow"}},
-    "cyndaquil": {"inherit": true, "abilities": {"0": "Blaze"}},
-    "quilava": {"inherit": true, "abilities": {"0": "Blaze"}},
-    "typhlosion": {"inherit": true, "abilities": {"0": "Blaze"}},
-    "totodile": {"inherit": true, "abilities": {"0": "Torrent"}},
-    "croconaw": {"inherit": true, "abilities": {"0": "Torrent"}},
-    "feraligatr": {"inherit": true, "abilities": {"0": "Torrent"}},
+    "articuno": {"inherit": true, "unreleasedHidden": true},
+    "zapdos": {
+      "inherit": true,
+      "abilities": {"0": "Pressure", "H": "Lightning Rod"},
+      "unreleasedHidden": true
+    },
+    "moltres": {"inherit": true, "unreleasedHidden": true},
+    "chikorita": {"inherit": true, "unreleasedHidden": true},
+    "bayleef": {"inherit": true, "unreleasedHidden": true},
+    "meganium": {"inherit": true, "unreleasedHidden": true},
+    "cyndaquil": {"inherit": true, "unreleasedHidden": true},
+    "quilava": {"inherit": true, "unreleasedHidden": true},
+    "typhlosion": {"inherit": true, "unreleasedHidden": true},
+    "totodile": {"inherit": true, "unreleasedHidden": true},
+    "croconaw": {"inherit": true, "unreleasedHidden": true},
+    "feraligatr": {"inherit": true, "unreleasedHidden": true},
     "igglybuff": {
       "inherit": true,
       "types": ["Normal"],
@@ -1933,9 +1937,6 @@
     "hitmonlee": {"inherit": true, "maleOnlyHidden": true},
     "hitmonchan": {"inherit": true, "maleOnlyHidden": true},
     "hitmontop": {"inherit": true, "maleOnlyHidden": true},
-    "raikou": {"inherit": true, "abilities": {"0": "Pressure"}},
-    "entei": {"inherit": true, "abilities": {"0": "Pressure"}},
-    "suicune": {"inherit": true, "abilities": {"0": "Pressure"}},
     "treecko": {"inherit": true, "maleOnlyHidden": true},
     "grovyle": {"inherit": true, "maleOnlyHidden": true},
     "sceptile": {"inherit": true, "maleOnlyHidden": true},
@@ -1985,9 +1986,9 @@
     },
     "duskull": {"inherit": true, "abilities": {"0": "Levitate"}},
     "dusclops": {"inherit": true, "abilities": {"0": "Pressure"}},
-    "regirock": {"inherit": true, "abilities": {"0": "Clear Body"}},
-    "regice": {"inherit": true, "abilities": {"0": "Clear Body"}},
-    "registeel": {"inherit": true, "abilities": {"0": "Clear Body"}},
+    "regirock": {"inherit": true, "unreleasedHidden": true},
+    "regice": {"inherit": true, "unreleasedHidden": true},
+    "registeel": {"inherit": true, "unreleasedHidden": true},
     "turtwig": {"inherit": true, "maleOnlyHidden": true},
     "grotle": {"inherit": true, "maleOnlyHidden": true},
     "torterra": {"inherit": true, "maleOnlyHidden": true},
@@ -2023,16 +2024,15 @@
     "mimejr": {"inherit": true, "types": ["Psychic"]},
     "togekiss": {"inherit": true, "types": ["Normal", "Flying"]},
     "dusknoir": {"inherit": true, "abilities": {"0": "Pressure"}},
-    "heatran": {"inherit": true, "abilities": {"0": "Flash Fire"}},
-    "snivy": {"inherit": true, "abilities": {"0": "Overgrow"}},
-    "servine": {"inherit": true, "abilities": {"0": "Overgrow"}},
-    "serperior": {"inherit": true, "abilities": {"0": "Overgrow"}},
-    "tepig": {"inherit": true, "abilities": {"0": "Blaze"}},
-    "pignite": {"inherit": true, "abilities": {"0": "Blaze"}},
-    "emboar": {"inherit": true, "abilities": {"0": "Blaze"}},
-    "oshawott": {"inherit": true, "abilities": {"0": "Torrent"}},
-    "dewott": {"inherit": true, "abilities": {"0": "Torrent"}},
-    "samurott": {"inherit": true, "abilities": {"0": "Torrent"}},
+    "snivy": {"inherit": true, "unreleasedHidden": true},
+    "servine": {"inherit": true, "unreleasedHidden": true},
+    "serperior": {"inherit": true, "unreleasedHidden": true},
+    "tepig": {"inherit": true, "unreleasedHidden": true},
+    "pignite": {"inherit": true, "unreleasedHidden": true},
+    "emboar": {"inherit": true, "unreleasedHidden": true},
+    "oshawott": {"inherit": true, "unreleasedHidden": true},
+    "dewott": {"inherit": true, "unreleasedHidden": true},
+    "samurott": {"inherit": true, "unreleasedHidden": true},
     "stoutland": {
       "inherit": true,
       "baseStats": {
@@ -2121,7 +2121,7 @@
         "spe": 92
       }
     },
-    "gothita": {"inherit": true, "abilities": {"0": "Frisk"}},
+    "gothita": {"inherit": true, "unreleasedHidden": true},
     "gothorita": {
       "inherit": true,
       "abilities": {"0": "Frisk", "H": "Shadow Tag"},
@@ -2133,25 +2133,25 @@
       "maleOnlyHidden": true
     },
     "ferrothorn": {"inherit": true, "abilities": {"0": "Iron Barbs"}},
-    "klink": {"inherit": true, "abilities": {"0": "Plus", "1": "Minus"}},
+    "klink": {"inherit": true, "unreleasedHidden": true},
     "litwick": {
       "inherit": true,
-      "abilities": {"0": "Flash Fire", "1": "Flame Body"}
+      "abilities": {"0": "Flash Fire", "1": "Flame Body", "H": "Shadow Tag"},
+      "unreleasedHidden": true
     },
     "lampent": {
       "inherit": true,
-      "abilities": {"0": "Flash Fire", "1": "Flame Body"}
+      "abilities": {"0": "Flash Fire", "1": "Flame Body", "H": "Shadow Tag"},
+      "unreleasedHidden": true
     },
     "chandelure": {
       "inherit": true,
-      "abilities": {"0": "Flash Fire", "1": "Flame Body"}
+      "abilities": {"0": "Flash Fire", "1": "Flame Body", "H": "Shadow Tag"},
+      "unreleasedHidden": true
     },
-    "rufflet": {
-      "inherit": true,
-      "abilities": {"0": "Keen Eye", "1": "Sheer Force"}
-    },
-    "larvesta": {"inherit": true, "abilities": {"0": "Flame Body"}},
-    "volcarona": {"inherit": true, "abilities": {"0": "Flame Body"}}
+    "rufflet": {"inherit": true, "unreleasedHidden": true},
+    "larvesta": {"inherit": true, "unreleasedHidden": true},
+    "volcarona": {"inherit": true, "unreleasedHidden": true}
   },
   "6": {
     "charizardmegax": {"inherit": true},
@@ -2311,9 +2311,21 @@
         "spe": 70
       }
     },
-    "raikou": {"inherit": true, "abilities": {"0": "Pressure"}},
-    "entei": {"inherit": true, "abilities": {"0": "Pressure"}},
-    "suicune": {"inherit": true, "abilities": {"0": "Pressure"}},
+    "raikou": {
+      "inherit": true,
+      "abilities": {"0": "Pressure", "H": "Volt Absorb"},
+      "unreleasedHidden": true
+    },
+    "entei": {
+      "inherit": true,
+      "abilities": {"0": "Pressure", "H": "Flash Fire"},
+      "unreleasedHidden": true
+    },
+    "suicune": {
+      "inherit": true,
+      "abilities": {"0": "Pressure", "H": "Water Absorb"},
+      "unreleasedHidden": true
+    },
     "swellow": {
       "inherit": true,
       "baseStats": {
@@ -2636,7 +2648,11 @@
       "evoCondition": "near an Ice Rock"
     },
     "gallade": {"inherit": true, "eggGroups": ["Amorphous"]},
-    "heatran": {"inherit": true, "abilities": {"0": "Flash Fire"}},
+    "heatran": {
+      "inherit": true,
+      "abilities": {"0": "Flash Fire", "H": "Flame Body"},
+      "unreleasedHidden": true
+    },
     "aegislash": {
       "inherit": true,
       "baseStats": {
