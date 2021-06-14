@@ -2710,6 +2710,17 @@
     "tapulele": {"inherit": true, "abilities": {"0": "Psychic Surge"}},
     "tapubulu": {"inherit": true, "abilities": {"0": "Grassy Surge"}},
     "tapufini": {"inherit": true, "abilities": {"0": "Misty Surge"}},
+    "voodoom": {
+      "inherit": true,
+      "baseStats": {
+        "hp": 90,
+        "atk": 85,
+        "def": 80,
+        "spa": 105,
+        "spd": 80,
+        "spe": 110
+      }
+    },
     "justyke": {
       "inherit": true,
       "abilities": {"0": "Levitate", "1": "Bulletproof", "H": "Justified"}
@@ -25321,7 +25332,7 @@
         "hp": 90,
         "atk": 85,
         "def": 80,
-        "spa": 105,
+        "spa": 130,
         "spd": 80,
         "spe": 110
       },

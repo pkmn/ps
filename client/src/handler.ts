@@ -219,7 +219,7 @@ export class Handler implements Protocol.Handler {
 
   '|poke|'(args: Args['|poke|']) {
     const pokemon = this.battle.rememberTeamPreviewPokemon(args[1], args[2])!;
-    if (args[3] === 'item') pokemon.teamPreviewItem = true;
+    if (args[3] === 'item' || args[3] === 'mail') pokemon.teamPreviewItem = true; // TODO: mail
   }
 
   '|teampreview|'(args: Args['|teampreview|']) {

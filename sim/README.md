@@ -66,8 +66,8 @@ Please see [Pokémon Showdown's existing
 documentation](https://github.com/smogon/pokemon-showdown/blob/master/sim/README.md), in particular
 the [`PROTOCOL.md`](https://github.com/smogon/pokemon-showdown/blob/master/PROTOCOL.md) and
 [`SIM-PROTOCOL.md`]( https://github.com/smogon/pokemon-showdown/blob/master/sim/SIM-PROTOCOL.md)
-files ([`FORMES.md`](https://github.com/smogon/pokemon-showdown/blob/master/data/FORMES.md),
-[`TEAMS.md`](https://github.com/smogon/pokemon-showdown/blob/master/sim/TEAMS.md),
+files ([`DEX.md`](https://github.com/smogon/pokemon-showdown/blob/master/sim/DEX.md), [`FORMES.md`](https://github.com/smogon/pokemon-showdown/blob/master/data/FORMES.md),
+[`TEAMS.md`](https://github.com/smogon/pokemon-showdown/blob/master/sim/TEAMS.md), [`SIMULATOR.md`](https://github.com/smogon/pokemon-showdown/blob/master/sim/SIMULATOR.md),
 [`NONSTANDARD.md`](https://github.com/smogon/pokemon-showdown/blob/master/sim/NONSTANDARD.md), and
 the [long-open PR attempting to document the simulator's inner
 workings](https://github.com/smogon/pokemon-showdown/pull/5439) are also helpful).

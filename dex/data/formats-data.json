@@ -5120,7 +5120,7 @@
     "dreepy": {"tier": "LC"},
     "drakloak": {"tier": "NFE"},
     "dragapult": {"tier": "OU", "doublesTier": "DOU"},
-    "zacian": {"tier": "Uber", "doublesTier": "DUber"},
+    "zacian": {"tier": "AG", "doublesTier": "DUber"},
     "zaciancrowned": {"tier": "AG", "doublesTier": "DUber"},
     "zamazenta": {"tier": "Uber", "doublesTier": "DUber"},
     "zamazentacrowned": {"tier": "Uber", "doublesTier": "DUber"},

@@ -40,10 +40,6 @@
     "mysticwater": {"inherit": true},
     "nevermeltice": {"inherit": true},
     "poisonbarb": {"inherit": true},
-    "quickclaw": {
-      "inherit": true,
-      "desc": "Each turn, holder has a ~23.4% chance to move first in its priority bracket."
-    },
     "sharpbeak": {"inherit": true},
     "silverpowder": {"inherit": true},
     "softsand": {"inherit": true},
@@ -67,7 +63,11 @@
     "pinkbow": {"inherit": true, "isNonstandard": null},
     "polkadotbow": {"inherit": true, "isNonstandard": null},
     "przcureberry": {"inherit": true, "isNonstandard": null},
-    "psncureberry": {"inherit": true, "isNonstandard": null}
+    "psncureberry": {"inherit": true, "isNonstandard": null},
+    "quickclaw": {
+      "inherit": true,
+      "desc": "Each turn, holder has a ~23.4% chance to move first in its priority bracket."
+    }
   },
   "3": {
     "aguavberry": {

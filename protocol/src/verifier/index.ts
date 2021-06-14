@@ -20,6 +20,7 @@ const NAME_KWARGS = new Set<Protocol.BattleArgsWithKWArgType>([
   'ability', 'ability2', 'anim', 'block', 'item', 'name', 'wisher',
 ]);
 const BARE_EFFECTS = ['Dynamax', 'Recoil'] as Protocol.EffectName[];
+const POKE_ITEMS = ['item', 'mail', ''] as const;
 
 function verifyRoomID(roomid: Protocol.RoomID) {
   return /^[-a-z0-9]+$/.test(roomid);
@@ -453,7 +454,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 4 &&
       verifyPlayer(args[1]) &&
       verifyPokemonDetails(args[2]) &&
-      (args[3] === 'item' || args[3] === '');
+      POKE_ITEMS.includes(args[3]);
   }
 
   '|start|'(args: Args['|start|']) {

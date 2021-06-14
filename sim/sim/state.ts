@@ -12,6 +12,10 @@ import {
  * Simulator State
  * Pokemon Showdown - http://pokemonshowdown.com/
  *
+ * Helper functions for serializing Battle instances to JSON and back.
+ *
+ * (You might also consider using input logs instead.)
+ *
  * @license MIT
  */
 

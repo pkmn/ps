@@ -875,11 +875,11 @@ export namespace Protocol {
      *
      *   - `PLAYER` is the player ID (see `|player|`)
      *   - `DETAILS` describes the pokemon
-     *   - `ITEM` will be `item` if the Pokémon is holding an item, or blank if it isn't.
-     *
+     *   - `ITEM` will be `item` if the Pokémon is holding an item, `mail` if the Pokémon is holding
+     *     mail in Gen 5 or blank otherwise
      * Note that forme and shininess are hidden on this, unlike on the `|switch|`details message.
      */
-    '|poke|': readonly ['poke', Player, PokemonDetails, 'item' | ''];
+    '|poke|': readonly ['poke', Player, PokemonDetails, 'item' | 'mail' | ''];
     /**
      * `|teampreview`
      *
