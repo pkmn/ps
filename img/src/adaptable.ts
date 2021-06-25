@@ -95,10 +95,10 @@ const NONDP = new Set([
 ]);
 
 export class Sprites {
-  static SOURCES = SOURCES;
-  static GENS = GENS;
-  static ANIMATED = ANIMATED;
-  static FRAME2 = FRAME2;
+  SOURCES = SOURCES;
+  GENS = GENS;
+  ANIMATED = ANIMATED;
+  FRAME2 = FRAME2;
 
   readonly data: Data;
 
@@ -142,7 +142,7 @@ export class Sprites {
     }
 
     const max = typeof options?.gen === 'string'
-      ? Sprites.GENS[options.gen] as GenerationNum
+      ? this.GENS[options.gen] as GenerationNum
       : options?.gen || 8;
     // Regardless of the generation context, we can only go back to the first generation
     // the Pokemon existed in (or BW, because the Smogon Sprite Project guarantees BW sprites).
@@ -152,7 +152,7 @@ export class Sprites {
     let graphics: GraphicsGen;
     if (!options?.gen ||
       typeof options.gen === 'number' ||
-      gen !== Sprites.GENS[options.gen]) {
+      gen !== this.GENS[options.gen]) {
       graphics = (gen <= 5 ? `gen${gen}` : 'ani') as GraphicsGen;
     } else {
       graphics = options.gen;
@@ -168,14 +168,14 @@ export class Sprites {
 
     // Directory rewrites due to missing sprites
     const rewrite = (d: string, a: GraphicsGen, b: GraphicsGen) =>
-      [Sprites.GENS[b], b, `${b}${d.slice(a.length)}`] as [GenerationNum, GraphicsGen, string];
+      [this.GENS[b], b, `${b}${d.slice(a.length)}`] as [GenerationNum, GraphicsGen, string];
 
     if (data.spriteid === 'missingno' && gen > 1) {
       [gen, graphics, dir] = rewrite(dir, graphics, 'gen1');
     } else if (dir.startsWith('gen4dp') && NONDP.has(data.id)) {
       [gen, graphics, dir] = rewrite(dir, graphics, 'gen4');
-    } else if (facing === 'back' && graphics in Sprites.FRAME2) {
-      const frame1 = Sprites.FRAME2[graphics as SecondFrameGraphicsGen];
+    } else if (facing === 'back' && graphics in this.FRAME2) {
+      const frame1 = this.FRAME2[graphics as SecondFrameGraphicsGen];
       [gen, graphics, dir] = rewrite(dir, graphics, frame1);
       dir = `${frame1}${dir.slice(graphics.length)}`;
     } else if (dir.startsWith('gen1rg-back') || dir.startsWith('gen1rb-back')) {
@@ -202,7 +202,7 @@ export class Sprites {
     }
 
     const facingf = facing + 'f' as 'frontf' | 'backf';
-    if (graphics in Sprites.ANIMATED) {
+    if (graphics in this.ANIMATED) {
       const d = graphics === 'gen5ani' ? (data.bw ?? {}) : data;
       if (d[facingf] && options?.gender === 'F') facing = `${facing}f` as Facing;
 
@@ -253,7 +253,7 @@ export class Sprites {
     }
   ) {
     let graphics = options?.gen ?? 'dex';
-    if (graphics in Sprites.ANIMATED) graphics = Sprites.ANIMATED[graphics as AnimatedGraphicsGen];
+    if (graphics in this.ANIMATED) graphics = this.ANIMATED[graphics as AnimatedGraphicsGen];
     const data = this.data.getPokemon(name);
     if (!data ||
       !data.dex ||
