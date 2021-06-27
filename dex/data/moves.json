@@ -726,6 +726,12 @@
       "desc": "Deals damage to the target equal to a random number from 1 to (user's level * 1.5 - 1), rounded down, but not less than 1 HP.",
       "shortDesc": "Random damage from 1 to (user's level*1.5 - 1)."
     },
+    "pursuit": {
+      "inherit": true,
+      "condition": {"duration": 1},
+      "desc": "If the target switches out this turn, this move hits it before it leaves the field with doubled power and the user's turn is over.",
+      "shortDesc": "Power doubles if the foe is switching out."
+    },
     "razorleaf": {
       "inherit": true,
       "critRatio": 3,
@@ -938,11 +944,6 @@
       "inherit": true,
       "desc": "The user copies all of the target's current stat stage changes. Fails if the target's stat stages are 0."
     },
-    "pursuit": {
-      "inherit": true,
-      "desc": "If the target switches out this turn, this move hits it before it leaves the field with doubled power and the user's turn is over.",
-      "shortDesc": "Power doubles if the foe is switching out."
-    },
     "rage": {
       "inherit": true,
       "desc": "Once this move is successfully used, X starts at 1. This move's damage is multiplied by X, and whenever the user is hit by the opposing Pokemon, X increases by 1, with a maximum of 255. X resets to 1 when the user is no longer active or did not choose this move for use.",
@@ -1136,6 +1137,12 @@
       "inherit": true,
       "basePower": 70,
       "desc": "This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks other than Gust, Sky Uppercut, Thunder, and Twister, and Gust and Twister have doubled power when used against it."
+    },
+    "followme": {
+      "inherit": true,
+      "slotCondition": "followme",
+      "condition": {"duration": 1, "onFoeRedirectTargetPriority": 1},
+      "desc": "Until the end of the turn, all single-target attacks from the opposing side are redirected to the user. Such attacks are redirected to the user before they can be reflected by Magic Coat, or drawn in by the Lightning Rod Ability. This effect remains active even if the user leaves the field. Fails if it is not a Double Battle."
     },
     "furycutter": {"inherit": true},
     "gigadrain": {
@@ -1390,10 +1397,6 @@
     "flail": {
       "inherit": true,
       "desc": "The power of this move is 20 if X is 33 to 48, 40 if X is 17 to 32, 80 if X is 10 to 16, 100 if X is 5 to 9, 150 if X is 2 to 4, and 200 if X is 0 or 1, where X is equal to (user's current HP * 48 / user's maximum HP), rounded down."
-    },
-    "followme": {
-      "inherit": true,
-      "desc": "Until the end of the turn, all single-target attacks from the opposing side are redirected to the user. Such attacks are redirected to the user before they can be reflected by Magic Coat, or drawn in by the Lightning Rod Ability. This effect remains active even if the user leaves the field. Fails if it is not a Double Battle."
     },
     "foresight": {
       "inherit": true,
@@ -2066,6 +2069,11 @@
       "desc": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and doubles each time this move is successfully used, up to a maximum of 8. X resets to 1 if this move fails or if the user's last move used is not Detect, Endure, or Protect. Fails if the user moves last this turn."
     },
     "psychup": {"inherit": true, "flags": {"snatch": 1, "authentic": 1}},
+    "pursuit": {
+      "inherit": true,
+      "condition": {"duration": 1},
+      "desc": "If an opposing Pokemon switches out this turn, this move hits that Pokemon before it leaves the field, even if it was not the original target. If the user moves after an opponent using U-turn, but not Baton Pass, it will hit that opponent before it leaves the field. Power doubles and no accuracy check is done if the user hits an opponent switching out, and the user's turn is over; if an opponent faints from this, the replacement Pokemon becomes active immediately."
+    },
     "rapidspin": {
       "inherit": true,
       "self": {},
@@ -2454,10 +2462,6 @@
     "psywave": {
       "inherit": true,
       "desc": "Deals damage to the target equal to (user's level) * (X * 10 + 50) / 100, where X is a random number from 0 to 10, rounded down, but not less than 1 HP."
-    },
-    "pursuit": {
-      "inherit": true,
-      "desc": "If an opposing Pokemon switches out this turn, this move hits that Pokemon before it leaves the field, even if it was not the original target. If the user moves after an opponent using U-turn, but not Baton Pass, it will hit that opponent before it leaves the field. Power doubles and no accuracy check is done if the user hits an opponent switching out, and the user's turn is over; if an opponent faints from this, the replacement Pokemon becomes active immediately."
     },
     "razorwind": {
       "inherit": true,
