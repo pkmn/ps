@@ -2110,6 +2110,15 @@
     },
     "cottonee": {"inherit": true, "types": ["Grass"]},
     "whimsicott": {"inherit": true, "types": ["Grass"]},
+    "basculinbluestriped": {
+      "inherit": true,
+      "abilities": {
+        "0": "Rock Head",
+        "1": "Adaptability",
+        "H": "Mold Breaker",
+        "S": "Reckless"
+      }
+    },
     "krookodile": {
       "inherit": true,
       "baseStats": {
