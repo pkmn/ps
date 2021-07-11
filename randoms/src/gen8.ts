@@ -1756,11 +1756,12 @@ export class RandomTeams {
 			}
 
 			counter = this.queryMoves(moves, species.types, abilities, movePool);
-			const runEnforcementChecker = (checkerName: string) => (
-				this.moveEnforcementCheckers[checkerName]?.(
+			const runEnforcementChecker = (checkerName: string) => {
+				if (!this.moveEnforcementCheckers[checkerName]) return false;
+				return this.moveEnforcementCheckers[checkerName](
 					movePool, moves, abilities, types, counter, species as Species, teamDetails
-				)
-			);
+				);
+			};
 
 			// Iterate through the moves again, this time to cull them:
 			for (const moveid of moves) {

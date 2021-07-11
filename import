@@ -566,7 +566,7 @@ const changes = async (where, last, now, repo) => ({
           ? rewrite(original, line => line in changes ? changes[line] : line)
           : original;
         fs.writeFileSync(path.resolve(sim, file),
-        `${imports(IMPORTS[file], prefix + '/exported-global-types')}${rewritten}`);
+          `${imports(IMPORTS[file], prefix + '/exported-global-types')}${rewritten}`);
       } else if (file === 'lib/streams.ts') {
         const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
         // double fuck you zarle, AnyObject is a dreadful hack to begin with, feel ashamed
@@ -613,9 +613,9 @@ const changes = async (where, last, now, repo) => ({
           return '\tconstructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {';
         } else if (line === '\t\tsuper(format, prng);') {
           return '\t\tsuper(dex, format, prng);';
-        } else if (line == '\t\tformat = Dex.formats.get(format);') {
+        } else if (line === '\t\tformat = Dex.formats.get(format);') {
           return undefined;
-        } else if (line == '\t\tthis.dex = Dex.forFormat(format);') {
+        } else if (line === '\t\tthis.dex = Dex.forFormat(format);') {
           return '\t\tthis.dex = dex;';
         }
         return line.replace(/Dex\./g, 'this.dex.');
@@ -699,9 +699,10 @@ const changes = async (where, last, now, repo) => ({
     fs.writeFileSync(path.resolve(sim, 'sim/exported-global-types.ts'), exported.join('\n'));
 
     // The test files require paths are made with PS's build layout in mind - correct that here
-    await replace(path.join(sim, 'test'), [
-      { regex: new RegExp(`(require\\\(.*?)(.sim-dist)(.*?\\\))`, 'g'), replace: `$1build/sim$3` },
-    ]);
+    await replace(path.join(sim, 'test'), [{
+      regex: new RegExp(`(require\\\(.*?)((?<!build\\\/)sim)(.*?\\\))`, 'g'),
+      replace: `$1build/sim$3`
+    }]);
 
     const messages =
       `-m "Import smogon/pokemon-showdown@${now.ps}" ` +

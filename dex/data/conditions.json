@@ -81,6 +81,7 @@
       "onResidualOrder": 10,
       "onResidualSubOrder": 9
     },
+    "choicelock": {"inherit": true},
     "futuremove": {"inherit": true, "onResidualOrder": 11},
     "stall": {"inherit": true, "counterMax": 8},
     "raindance": {"inherit": true, "onFieldResidualOrder": 8},

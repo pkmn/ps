@@ -1,10 +1,6 @@
+/* eslint-disable no-var */
 export {};
 
 declare global {
-	namespace NodeJS {
-		interface Global {
-			Config: any;
-		}
-	}
-	const Config: {potd?: string; allowrequestingties?: boolean};
+	var Config: {potd?: string; allowrequestingties?: boolean};
 }

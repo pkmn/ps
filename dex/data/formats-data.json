@@ -1755,7 +1755,7 @@
     "torterra": {"tier": "(NU)", "doublesTier": "DUU"},
     "chimchar": {"tier": "LC"},
     "monferno": {"tier": "NFE"},
-    "infernape": {"tier": "OU", "doublesTier": "DOU"},
+    "infernape": {"tier": "(OU)", "doublesTier": "DOU"},
     "piplup": {"tier": "LC"},
     "prinplup": {"tier": "NFE"},
     "empoleon": {"tier": "UU", "doublesTier": "DUU"},
