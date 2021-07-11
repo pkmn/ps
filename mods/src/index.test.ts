@@ -35,6 +35,18 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.gen).toBe(2);
       });
 
+      it('gen7letsgo', async () => {
+        const dex =
+          new ModdedDex(Dex.mod('gen7letsgo' as ID, await import('./gen7letsgo') as ModData));
+        expect(dex.gen).toBe(7);
+        expect(dex.species.get('porygon').evos).toEqual([]);
+        expect(dex.species.get('clefairy').prevo).toBe('');
+        expect(dex.species.get('melmetal').isNonstandard).toBeNull();
+        expect(dex.moves.get('bouncybubble').isNonstandard).toBeNull();
+        expect(dex.moves.get('teleport').shortDesc).toBe('User switches out.');
+        expect((await dex.learnsets.get('sandslashalola')).learnset!['iceshard']).toEqual(['7L1']);
+      });
+
       it('gen8dlc1', async () => {
         const dex = new ModdedDex(Dex.mod('gen8dlc1' as ID, await import('./gen8dlc1') as ModData));
         expect(dex.gen).toBe(8);
@@ -44,17 +56,6 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.species.get('dracozolt').unreleasedHidden).toBe(true);
         expect(dex.abilities.get('Curious Medicine').isNonstandard).toBe('Unobtainable');
         expect(dex.moves.get('Dragon Ascent').isNonstandard).toBe('Unobtainable');
-      });
-
-      it('letsgo', async () => {
-        const dex = new ModdedDex(Dex.mod('letsgo' as ID, await import('./letsgo') as ModData));
-        expect(dex.gen).toBe(7);
-        expect(dex.species.get('porygon').evos).toEqual([]);
-        expect(dex.species.get('clefairy').prevo).toBe('');
-        expect(dex.species.get('melmetal').isNonstandard).toBeNull();
-        expect(dex.moves.get('bouncybubble').isNonstandard).toBeNull();
-        expect(dex.moves.get('teleport').shortDesc).toBe('User switches out.');
-        expect((await dex.learnsets.get('sandslashalola')).learnset!['iceshard']).toEqual(['7L1']);
       });
 
       it('vgc17', async () => {

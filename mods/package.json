@@ -8,8 +8,8 @@
     "./gen1jpn": "./build/gen1jpn/index.js",
     "./gen1stadium": "./build/gen1stadium/index.js",
     "./gen2stadium2": "./build/gen2stadium2/index.js",
+    "./gen7letsgo": "./build/gen7letsgo/index.js",
     "./gen8dlc1": "./build/gen8dlc1/index.js",
-    "./letsgo": "./build/letsgo/index.js",
     "./vgc17": "./build/vgc17/index.js"
   },
   "description": "Support for non-standard mods to @pkmn/sim and @pkmn/dex",
@@ -61,8 +61,8 @@
           "./src/gen1jpn/*.ts",
           "./src/gen1stadium/*.ts",
           "./src/gen2stadium2/*.ts",
+          "./src/gen7letsgo/*.ts",
           "./src/gen8dlc1/*.ts",
-          "./src/letsgo/*.ts",
           "./src/vgc17/*.ts"
         ],
         "rules": {
