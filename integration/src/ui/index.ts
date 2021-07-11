@@ -108,6 +108,11 @@ const displayTeam = ($td: HTMLTableCellElement, side: Side) => {
 };
 
 const displayPokemon = ($td: HTMLTableCellElement, pokemon: Pokemon | null) => {
+  const img = addPokemon(pokemon);
+  if (img) $td.appendChild(img);
+};
+
+const addPokemon = (pokemon: Pokemon | null) => {
   if (pokemon) {
     const sprite = Sprites.getPokemon(pokemon.speciesForme, {
       gen: GRAPHICS,
@@ -118,12 +123,14 @@ const displayPokemon = ($td: HTMLTableCellElement, pokemon: Pokemon | null) => {
     $img.src = sprite.url;
     $img.width = sprite.w;
     $img.height = sprite.h;
+    $img.dataset.name = pokemon.name;
     if (pokemon.fainted) {
       $img.style.opacity = '0.3';
       $img.style.filter = 'grayscale(100%) brightness(.5)';
     }
-    $td.appendChild($img);
+    return $img;
   }
+  return undefined;
 };
 
 class PreHandler implements Handler<void> {
@@ -135,8 +142,14 @@ class PreHandler implements Handler<void> {
     const poke = this.battle.getPokemon(args[1]);
     if (poke) {
       const $td = poke.side.n ? $p2 : $p1;
-      if ($td.firstChild) $td.removeChild($td.firstChild);
-      displayPokemon($td, poke);
+      for (const child in $td.children) {
+        if (($td.children[child] as HTMLImageElement).dataset.name === poke.name) {
+          const old = $td.children[child];
+          $td.insertBefore(addPokemon(poke)!, old);
+          $td.removeChild(old);
+          break;
+        }
+      }
     }
   }
 }
@@ -155,10 +168,14 @@ class PostHandler implements Handler<void> {
     const $tr = document.createElement('tr');
 
     $p1 = document.createElement('td');
-    displayPokemon($p1, this.battle.p1.active[0]);
+    for (const active of this.battle.p1.active) {
+      displayPokemon($p1, active);
+    }
     $log = document.createElement('td');
     $p2 = document.createElement('td');
-    displayPokemon($p2, this.battle.p2.active[0]);
+    for (const active of this.battle.p2.active) {
+      displayPokemon($p2, active);
+    }
 
     $tr.appendChild($p1);
     $tr.appendChild($log);
