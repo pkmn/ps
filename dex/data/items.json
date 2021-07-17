@@ -88,18 +88,22 @@
     },
     "blackbelt": {
       "inherit": true,
+      "onModifyAtkPriority": 1,
       "desc": "Holder's Fighting-type attacks have 1.1x power."
     },
     "blackglasses": {
       "inherit": true,
+      "onModifySpAPriority": 1,
       "desc": "Holder's Dark-type attacks have 1.1x power."
     },
     "charcoal": {
       "inherit": true,
+      "onModifySpAPriority": 1,
       "desc": "Holder's Fire-type attacks have 1.1x power."
     },
     "dragonfang": {
       "inherit": true,
+      "onModifySpAPriority": 1,
       "desc": "Holder's Dragon-type attacks have 1.1x power."
     },
     "enigmaberry": {
@@ -122,6 +126,7 @@
     },
     "hardstone": {
       "inherit": true,
+      "onModifyAtkPriority": 1,
       "desc": "Holder's Rock-type attacks have 1.1x power."
     },
     "iapapaberry": {
@@ -150,6 +155,7 @@
     },
     "magnet": {
       "inherit": true,
+      "onModifySpAPriority": 1,
       "desc": "Holder's Electric-type attacks have 1.1x power."
     },
     "magoberry": {
@@ -159,19 +165,23 @@
     },
     "metalcoat": {
       "inherit": true,
+      "onModifyAtkPriority": 1,
       "desc": "Holder's Steel-type attacks have 1.1x power. Evolves Onix into Steelix and Scyther into Scizor when traded.",
       "shortDesc": "Holder's Steel-type attacks have 1.1x power."
     },
     "miracleseed": {
       "inherit": true,
+      "onModifySpAPriority": 1,
       "desc": "Holder's Grass-type attacks have 1.1x power."
     },
     "mysticwater": {
       "inherit": true,
+      "onModifySpAPriority": 1,
       "desc": "Holder's Water-type attacks have 1.1x power."
     },
     "nevermeltice": {
       "inherit": true,
+      "onModifySpAPriority": 1,
       "desc": "Holder's Ice-type attacks have 1.1x power."
     },
     "oranberry": {
@@ -186,6 +196,7 @@
     },
     "poisonbarb": {
       "inherit": true,
+      "onModifyAtkPriority": 1,
       "desc": "Holder's Poison-type attacks have 1.1x power."
     },
     "quickclaw": {"inherit": true},
@@ -196,18 +207,22 @@
     },
     "seaincense": {
       "inherit": true,
+      "onModifySpAPriority": 1,
       "desc": "Holder's Water-type attacks have 1.05x power."
     },
     "sharpbeak": {
       "inherit": true,
+      "onModifyAtkPriority": 1,
       "desc": "Holder's Flying-type attacks have 1.1x power."
     },
     "silkscarf": {
       "inherit": true,
+      "onModifyAtkPriority": 1,
       "desc": "Holder's Normal-type attacks have 1.1x power."
     },
     "silverpowder": {
       "inherit": true,
+      "onModifyAtkPriority": 1,
       "desc": "Holder's Bug-type attacks have 1.1x power."
     },
     "sitrusberry": {
@@ -218,10 +233,12 @@
     },
     "softsand": {
       "inherit": true,
+      "onModifyAtkPriority": 1,
       "desc": "Holder's Ground-type attacks have 1.1x power."
     },
     "spelltag": {
       "inherit": true,
+      "onModifyAtkPriority": 1,
       "desc": "Holder's Ghost-type attacks have 1.1x power."
     },
     "starfberry": {
@@ -231,6 +248,7 @@
     },
     "twistedspoon": {
       "inherit": true,
+      "onModifySpAPriority": 1,
       "desc": "Holder's Psychic-type attacks have 1.1x power."
     },
     "wikiberry": {
