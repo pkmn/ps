@@ -875,7 +875,7 @@
       "shortDesc": "On switch-in, this Pokemon summons Sunny Day."
     },
     "dryskin": {
-      "onFoeBasePowerPriority": 17,
+      "onSourceBasePowerPriority": 17,
       "isBreakable": true,
       "name": "Dry Skin",
       "num": 87,

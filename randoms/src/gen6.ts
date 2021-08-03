@@ -18,6 +18,7 @@ import {
 export class RandomGen6Teams extends RandomGen7Teams {
 	constructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {
 		super(dex, format, prng);
+		this.noStab = [...this.noStab, 'aquajet', 'fakeout', 'iceshard', 'machpunch', 'quickattack', 'vacuumwave'];
 
 		this.moveEnforcementCheckers = {
 			Bug: movePool => movePool.includes('megahorn') || movePool.includes('pinmissile'),
@@ -325,6 +326,8 @@ export class RandomGen6Teams extends RandomGen7Teams {
 			)};
 		case 'shadowsneak':
 			return {cull: restTalk || (types.has('Ghost') && species.types.length > 1 && counter.get('stab') < 2)};
+		case 'hex':
+			return {cull: moves.has('shadowball') && !moves.has('willowisp')};
 		case 'gigadrain': case 'powerwhip':
 			return {cull: (
 				moves.has('seedbomb') ||
