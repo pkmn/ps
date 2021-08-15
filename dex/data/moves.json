@@ -1041,6 +1041,15 @@
       "inherit": true,
       "desc": "Has a 30% chance to make the target flinch. Damage doubles if the target has used Minimize while active."
     },
+    "beatup": {
+      "inherit": true,
+      "condition": {
+        "duration": 1,
+        "onModifySpAPriority": -101,
+        "onFoeModifySpDPriority": -101
+      },
+      "desc": "Deals typeless damage. Hits one time for each unfainted Pokemon without a non-volatile status condition in the user's party, or fails if no Pokemon meet the criteria. For each hit, the damage formula uses the participating Pokemon's base Attack as the Attack stat, the target's base Defense as the Defense stat, and ignores stat stages and other effects that modify Attack or Defense; each hit is considered to come from the user."
+    },
     "bide": {
       "inherit": true,
       "accuracy": 100,
@@ -1325,10 +1334,6 @@
     "barrage": {
       "inherit": true,
       "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits."
-    },
-    "beatup": {
-      "inherit": true,
-      "desc": "Deals typeless damage. Hits one time for each unfainted Pokemon without a non-volatile status condition in the user's party, or fails if no Pokemon meet the criteria. For each hit, the damage formula uses the participating Pokemon's base Attack as the Attack stat, the target's base Defense as the Defense stat, and ignores stat stages and other effects that modify Attack or Defense; each hit is considered to come from the user."
     },
     "bind": {
       "inherit": true,
@@ -7271,7 +7276,7 @@
       "target": "normal",
       "type": "Normal",
       "zMove": {"boost": {"spe": 1}},
-      "desc": "For its next 3 turns, the target is forced to repeat its last move used. If the affected move runs out of PP, the effect ends. Fails if the target is already under this effect, if it has not made a move, if the move has 0 PP, if the move is Assist, Copycat, Encore, Me First, Metronome, Mimic, Mirror Move, Nature Power, Sketch, Sleep Talk, Struggle, or Transform, or if the target is Dynamaxed.",
+      "desc": "For its next 3 turns, the target is forced to repeat its last move used. If the affected move runs out of PP, the effect ends. Fails if the target is already under this effect, if it has not made a move, if the move has 0 PP, if the move is Assist, Copycat, Dynamax Cannon, Encore, Me First, Metronome, Mimic, Mirror Move, Nature Power, Sketch, Sleep Talk, Struggle, or Transform, or if the target is Dynamaxed.",
       "shortDesc": "Target repeats its last move for its next 3 turns."
     },
     "endeavor": {
@@ -12315,7 +12320,7 @@
       "target": "normal",
       "type": "Normal",
       "zMove": {"boost": {"accuracy": 1}},
-      "desc": "While the user remains active, this move is replaced by the last move used by the target. The copied move has the maximum PP for that move. Fails if the target has not made a move, if the user has Transformed, if the user already knows the move, or if the move is Chatter, Mimic, Sketch, Struggle, Transform, or any Z-Move.",
+      "desc": "While the user remains active, this move is replaced by the last move used by the target. The copied move has the maximum PP for that move. Fails if the target has not made a move, if the user has Transformed, if the user already knows the move, or if the move is Chatter, Dynamax Cannon, Mimic, Sketch, Struggle, Transform, or any Z-Move.",
       "shortDesc": "The last move the target used replaces this one."
     },
     "mindblown": {
@@ -15954,7 +15959,11 @@
       "pp": 10,
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1, "sound": 1, "authentic": 1},
-      "secondary": {"dustproof": true, "chance": 100},
+      "secondary": {
+        "dustproof": true,
+        "chance": 100,
+        "volatileStatus": "sparklingaria"
+      },
       "target": "allAdjacent",
       "type": "Water",
       "desc": "If the user has not fainted, the target is cured of its burn.",

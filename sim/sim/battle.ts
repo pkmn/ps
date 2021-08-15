@@ -533,7 +533,7 @@ export class Battle {
 			return relayVar;
 		}
 		if (eventid !== 'End' && effect.effectType === 'Ability' && (target instanceof Pokemon) && target.ignoringAbility()) {
-			this.debug(eventid + ' handler suppressed by Gastro Acid');
+			this.debug(eventid + ' handler suppressed by Gastro Acid or Neutralizing Gas');
 			return relayVar;
 		}
 		if (
@@ -804,7 +804,7 @@ export class Battle {
 			} else if (eventid !== 'End' && effect.effectType === 'Ability' &&
 					(effectHolder instanceof Pokemon) && effectHolder.ignoringAbility()) {
 				if (eventid !== 'Update') {
-					this.debug(eventid + ' handler suppressed by Gastro Acid');
+					this.debug(eventid + ' handler suppressed by Gastro Acid or Neutralizing Gas');
 				}
 				continue;
 			}

@@ -299,7 +299,10 @@
       "onResidualSubOrder": 4
     },
     "lifeorb": {"inherit": true, "condition": {"duration": 1}},
-    "lightball": {"inherit": true},
+    "lightball": {
+      "inherit": true,
+      "desc": "If held by a Pikachu, its attacks have their power doubled."
+    },
     "luckypunch": {"inherit": true},
     "lustrousorb": {"inherit": true},
     "mentalherb": {
@@ -5088,6 +5091,7 @@
     },
     "berserkgene": {
       "name": "Berserk Gene",
+      "boosts": {"atk": 2},
       "num": 0,
       "gen": 2,
       "isNonstandard": "Past",

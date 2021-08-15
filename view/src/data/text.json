@@ -2512,6 +2512,7 @@
   },
   "lifeorb": {"damage": "  [POKEMON] lost some of its HP!"},
   "lightball": {
+    "descGen4": "If held by a Pikachu, its attacks have their power doubled.",
     "descGen3": "If held by a Pikachu, its Special Attack is doubled."
   },
   "lightclay": {
