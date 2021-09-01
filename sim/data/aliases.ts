@@ -2,6 +2,15 @@ export const Aliases: {[alias: string]: string} = {
 	// formats
 	randbats: "[Gen 8] Random Battle",
 	uber: "[Gen 8] Ubers",
+	anythinggoes: "[Gen 8] Anything Goes",
+	ubers: "[Gen 8] Ubers",
+	overused: "[Gen 8] OU",
+	underused: "[Gen 8] UU",
+	rarelyused: "[Gen 8] RU",
+	neverused: "[Gen 8] NU",
+	pu: "[Gen 8] PU",
+	zeroused: "[Gen 8] ZU",
+	nationaldex: "[Gen 8] National Dex",
 	mono: "[Gen 8] Monotype",
 	ag: "[Gen 8] Anything Goes",
 	bss: "[Gen 8] Battle Stadium Singles",
@@ -56,9 +65,8 @@ export const Aliases: {[alias: string]: string} = {
 	gen6mono: "[Gen 6] Monotype",
 	gen6ag: "[Gen 6] Anything Goes",
 	crossevo: "[Gen 8] Cross Evolution",
-	omotm: "[Gen 8] Alphabet Cup",
-	lcotm: "[Gen 8] STABmons Mix and Mega",
-	m4a: "[Gen 8] Megas For All",
+	omotm: "[Gen 8] Inheritance",
+	lcotm: "[Gen 8] Godly Gift",
 
 	// mega evos
 	fabio: "Ampharos-Mega",

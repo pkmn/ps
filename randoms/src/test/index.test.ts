@@ -61,7 +61,7 @@ describe('TeamGenerators', () => {
 							types = species.types;
 						}
 					}
-				} catch (err) {
+				} catch (err: any) {
 					err.message += ` (seed ${seed})`;
 					throw err;
 				}

@@ -65,7 +65,7 @@ export class BattleStream extends Streams.ObjectReadWriteStream<string> {
 		} else {
 			try {
 				this._writeLines(chunk);
-			} catch (err) {
+			} catch (err: any) {
 				this.pushError(err, true);
 				return;
 			}
@@ -204,7 +204,7 @@ export class BattleStream extends Streams.ObjectReadWriteStream<string> {
 					result = result.replace(/\n/g, '\n||');
 					battle.add('', '<<< ' + result);
 				}
-			} catch (e) {
+			} catch (e: any) {
 				battle.add('', '<<< error: ' + e.message);
 			}
 			break;

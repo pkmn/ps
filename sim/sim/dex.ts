@@ -292,8 +292,8 @@ export class ModdedDex {
 			shortDesc: '',
 		};
 		for (let i = this.gen; i < dexes['base'].gen; i++) {
-			const curDesc = entry[`gen${i}`]?.desc;
-			const curShortDesc = entry[`gen${i}`]?.shortDesc;
+			const curDesc = entry[`gen${i}` as keyof typeof entry]?.desc;
+			const curShortDesc = entry[`gen${i}` as keyof typeof entry]?.shortDesc;
 			if (!descs.desc && curDesc) {
 				descs.desc = curDesc;
 			}
@@ -423,7 +423,7 @@ export class ModdedDex {
 		}
 		if (parentDex) {
 			for (const dataType of DATA_TYPES) {
-				const parentTypedData = parentDex.data[dataType];
+				const parentTypedData: any = parentDex.data[dataType];
 				const childTypedData = dataCache[dataType] || (dataCache[dataType] = {});
 				for (const entryId in parentTypedData) {
 					if (childTypedData[entryId] === null) {
@@ -436,7 +436,7 @@ export class ModdedDex {
 							// e.g. inheriting different formats-data/learnsets
 							childTypedData[entryId] = Utils.deepClone((parentTypedData as DexTableData['Pokedex'])[entryId]);
 						} else {
-							childTypedData[entryId] = (parentTypedData as any)[entryId];
+							childTypedData[entryId] = parentTypedData[entryId];
 						}
 					} else if (childTypedData[entryId]?.inherit) {
 						// {inherit: true} can be used to modify only parts of the parent data,

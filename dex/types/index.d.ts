@@ -86,12 +86,12 @@ export interface ItemData extends EffectData {
 }
 
 interface MoveFlags {
-  authentic?: 1 | 0;
+  bypasssub?: 1 | 0;
   charge?: 1 | 0;
   contact?: 1 | 0;
   defrost?: 1 | 0;
   mirror?: 1 | 0;
-  mystery?: 1 | 0;
+  allyanim?: 1 | 0;
   recharge?: 1 | 0;
   protect?: 1 | 0;
   bite?: 1 | 0;
