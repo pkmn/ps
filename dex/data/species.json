@@ -20947,6 +20947,7 @@
       "weightkg": 18.5,
       "prevo": "Fomantis",
       "evoLevel": 34,
+      "evoCondition": "during the day",
       "eggGroups": ["Grass"],
       "otherFormes": ["Lurantis-Totem"],
       "formeOrder": ["Lurantis", "Lurantis-Totem"]

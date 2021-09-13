@@ -1302,6 +1302,16 @@
       "inherit": true,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1, "bypasssub": 1}
     },
+    "uproar": {
+      "inherit": true,
+      "condition": {
+        "onResidualOrder": 10,
+        "onResidualSubOrder": 11,
+        "onLockMove": "uproar"
+      },
+      "desc": "The user spends two to five turns locked into this move. This move targets an opposing Pokemon at random on each turn. During effect, no active Pokemon can fall asleep by any means, and Pokemon that are already asleep wake up as their turn starts or at the end of each turn, including the last one. If the user is prevented from moving or the attack is not successful against the target during one of the turns, the effect ends.",
+      "shortDesc": "Lasts 2-5 turns. Active Pokemon cannot sleep."
+    },
     "vinewhip": {"inherit": true, "pp": 10},
     "vitalthrow": {"inherit": true, "accuracy": 100, "ignoreAccuracy": true},
     "volttackle": {
@@ -1596,11 +1606,6 @@
     "twineedle": {
       "inherit": true,
       "desc": "Hits twice, with each hit having a 20% chance to poison the target. If the first hit breaks the target's substitute, it will take damage for the second hit."
-    },
-    "uproar": {
-      "inherit": true,
-      "desc": "The user spends three to five turns locked into this move. This move targets an opposing Pokemon at random on each turn. During effect, no active Pokemon can fall asleep by any means, and Pokemon that are already asleep wake up as their turn starts or at the end of each turn, including the last one. If the user is prevented from moving or the attack is not successful against the target during one of the turns, the effect ends.",
-      "shortDesc": "Lasts 3-5 turns. Active Pokemon cannot sleep."
     },
     "whirlpool": {
       "inherit": true,
@@ -2219,7 +2224,6 @@
       "inherit": true,
       "basePower": 50,
       "condition": {
-        "duration": 3,
         "onResidualOrder": 10,
         "onResidualSubOrder": 11,
         "onLockMove": "uproar"
