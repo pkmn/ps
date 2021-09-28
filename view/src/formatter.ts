@@ -600,6 +600,7 @@ class Handler implements Protocol.Handler<string> {
     if (kwArgs.damage) templateId = 'activate';
     if (kwArgs.block) templateId = 'block';
     if (kwArgs.upkeep) templateId = 'upkeep';
+    if (id === 'mist' && this.parser.gen <= 2) templateId = 'startGen' + this.parser.gen;
     if (id === 'reflect' || id === 'lightscreen') templateId = 'startGen1';
     if (templateId === 'start' && kwArgs.from?.startsWith('item:')) {
       templateId += 'FromItem';
@@ -1194,7 +1195,10 @@ class Handler implements Protocol.Handler<string> {
   '|-block|'(args: Args['|-block|'], kwArgs: KWArgs['|-block|']) {
     const [, pokemon, effect, move, attacker] = args;
     const line1 = this.parser.maybeAbility(effect, kwArgs.of || pokemon);
-    const template = this.parser.template('block', effect);
+    const id = LogFormatter.effectId(effect);
+    let templateId = 'block';
+    if (id === 'mist' && this.parser.gen <= 2) templateId = 'blockGen' + this.parser.gen;
+    const template = this.parser.template(templateId, effect);
     return (line1 + template
       .replace('[POKEMON]', this.parser.pokemon(pokemon))
       .replace('[SOURCE]', this.parser.pokemon((attacker || kwArgs.of) as PokemonIdent))

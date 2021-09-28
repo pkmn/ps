@@ -143,6 +143,7 @@
       "desc": "If this Pokemon is not the target of a single-target Electric-type move used by another Pokemon, this Pokemon redirects that move to itself.",
       "shortDesc": "This Pokemon draws single-target Electric moves to itself."
     },
+    "liquidooze": {"inherit": true},
     "magicguard": {
       "name": "Magic Guard",
       "num": 98,

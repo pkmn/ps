@@ -25318,6 +25318,9 @@
       },
       "abilities": {"0": "Frisk", "1": "Limber", "H": "Iron Fist"},
       "weightkg": 51,
+      "prevo": "Nohface",
+      "evoType": "trade",
+      "evoItem": "Metal Coat",
       "eggGroups": ["Field"],
       "gen": 4
     },
@@ -25335,13 +25338,15 @@
       },
       "abilities": {"0": "Shield Dust", "1": "Static", "H": "Damp"},
       "weightkg": 59,
+      "prevo": "Duohm",
+      "evoLevel": 43,
       "eggGroups": ["Dragon", "Monster"],
       "gen": 4
     },
     "colossoil": {
       "num": -16,
       "name": "Colossoil",
-      "types": ["Dark", "Ground"],
+      "types": ["Ground", "Dark"],
       "baseStats": {
         "hp": 133,
         "atk": 122,
@@ -25352,6 +25357,8 @@
       },
       "abilities": {"0": "Rebound", "1": "Guts", "H": "Unnerve"},
       "weightkg": 683.6,
+      "prevo": "Dorsoil",
+      "evoLevel": 39,
       "eggGroups": ["Water 2", "Field"],
       "gen": 4
     },
@@ -25369,6 +25376,8 @@
       },
       "abilities": {"0": "Trace", "1": "Magic Guard", "H": "Minus"},
       "weightkg": 10.6,
+      "prevo": "Protowatt",
+      "evoLevel": 15,
       "eggGroups": ["Water 1", "Fairy"],
       "gen": 4
     },
@@ -26236,6 +26245,98 @@
       "weightkg": 215,
       "eggGroups": ["Undiscovered"],
       "gen": 8
+    },
+    "nohface": {
+      "num": -61,
+      "name": "Nohface",
+      "types": ["Ghost"],
+      "baseStats": {
+        "hp": 50,
+        "atk": 73,
+        "def": 50,
+        "spa": 30,
+        "spd": 50,
+        "spe": 80
+      },
+      "abilities": {"0": "Frisk", "1": "Limber", "H": "Unnerve"},
+      "weightkg": 5.9,
+      "evos": ["Kitsunoh"],
+      "eggGroups": ["Field"],
+      "gen": 4
+    },
+    "monohm": {
+      "num": -62,
+      "name": "Monohm",
+      "types": ["Electric"],
+      "baseStats": {
+        "hp": 53,
+        "atk": 40,
+        "def": 58,
+        "spa": 67,
+        "spd": 55,
+        "spe": 55
+      },
+      "abilities": {"0": "Shield Dust", "1": "Static", "H": "Damp"},
+      "weightkg": 4.1,
+      "evos": ["Duohm"],
+      "eggGroups": ["Dragon", "Monster"],
+      "gen": 4
+    },
+    "duohm": {
+      "num": -63,
+      "name": "Duohm",
+      "types": ["Electric", "Dragon"],
+      "baseStats": {
+        "hp": 88,
+        "atk": 40,
+        "def": 103,
+        "spa": 77,
+        "spd": 60,
+        "spe": 60
+      },
+      "abilities": {"0": "Shield Dust", "1": "Static", "H": "Damp"},
+      "weightkg": 19.2,
+      "prevo": "Monohm",
+      "evoLevel": 32,
+      "evos": ["Cyclohm"],
+      "eggGroups": ["Dragon", "Monster"],
+      "gen": 4
+    },
+    "dorsoil": {
+      "num": -64,
+      "name": "Dorsoil",
+      "types": ["Ground"],
+      "baseStats": {
+        "hp": 103,
+        "atk": 72,
+        "def": 52,
+        "spa": 61,
+        "spd": 52,
+        "spe": 65
+      },
+      "abilities": {"0": "Oblivious", "1": "Guts", "H": "Unnerve"},
+      "weightkg": 145,
+      "evos": ["Colossoil"],
+      "eggGroups": ["Water 2", "Field"],
+      "gen": 4
+    },
+    "protowatt": {
+      "num": -65,
+      "name": "Protowatt",
+      "types": ["Electric", "Water"],
+      "baseStats": {
+        "hp": 51,
+        "atk": 44,
+        "def": 33,
+        "spa": 43,
+        "spd": 34,
+        "spe": 65
+      },
+      "abilities": {"0": "Trace", "1": "Magic Guard", "H": "Minus"},
+      "weightkg": 0.1,
+      "evos": ["Krilowatt"],
+      "eggGroups": ["Water 1", "Fairy"],
+      "gen": 4
     },
     "pokestarsmeargle": {
       "num": -5000,

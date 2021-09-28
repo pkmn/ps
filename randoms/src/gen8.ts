@@ -110,7 +110,9 @@ export class RandomTeams {
 
 		const ruleTable = this.dex.formats.getRuleTable(format);
 		this.maxTeamSize = ruleTable.maxTeamSize;
-		this.forceMonotype = ruleTable.valueRules.get('forcemonotype');
+		const forceMonotype = ruleTable.valueRules.get('forcemonotype');
+		this.forceMonotype = forceMonotype && this.dex.types.get(forceMonotype).exists ?
+			this.dex.types.get(forceMonotype).name : undefined;
 
 		this.factoryTier = '';
 		this.format = format;
@@ -956,7 +958,8 @@ export class RandomTeams {
 			return {cull: (
 				!!counter.get('speedsetup') ||
 				(counter.setupType && !bugSwordsDanceCase) ||
-				(isDoubles && moves.has('leechlife'))
+				(isDoubles && moves.has('leechlife')) ||
+				moves.has('shiftgear')
 			)};
 
 		/**
@@ -1124,7 +1127,8 @@ export class RandomTeams {
 			const gutsCullCondition = abilities.has('Guts') && (!moves.has('dynamicpunch') || moves.has('spikes'));
 			const rockSlidePlusStatusPossible = counter.get('Status') && movePool.includes('rockslide');
 			const otherRockMove = moves.has('rockblast') || moves.has('rockslide');
-			return {cull: gutsCullCondition || (!isDoubles && rockSlidePlusStatusPossible) || otherRockMove};
+			const lucarioCull = species.id === 'lucario' && !!counter.setupType;
+			return {cull: gutsCullCondition || (!isDoubles && rockSlidePlusStatusPossible) || otherRockMove || lucarioCull};
 		case 'poltergeist':
 			// Special case for Dhelmise in Doubles, which doesn't want both
 			return {cull: moves.has('knockoff')};
@@ -1204,8 +1208,8 @@ export class RandomTeams {
 			// Special case for Raichu and Heliolisk
 			return {cull: moves.has('surf')};
 		case 'icepunch':
-			// Special cases for Marshadow and Lucario, respectively
-			return {cull: moves.has('rocktomb') || (species.id === 'lucario' && !!counter.setupType)};
+			// Special case for Marshadow
+			return {cull: moves.has('rocktomb')};
 		case 'leechseed':
 			// Special case for Calyrex to prevent Leech Seed + Calm Mind
 			return {cull: !!counter.setupType};
@@ -1455,6 +1459,7 @@ export class RandomTeams {
 		if (species.name === 'Pincurchin') return 'Shuca Berry';
 		if (species.name === 'Wobbuffet' && moves.has('destinybond')) return 'Custap Berry';
 		if (species.name === 'Scyther' && counter.damagingMoves.size > 3) return 'Choice Band';
+		if (species.name === 'Cinccino' && !moves.has('uturn')) return 'Life Orb';
 		if (moves.has('bellydrum') && moves.has('substitute')) return 'Salac Berry';
 
 		// Misc item generation logic
@@ -1566,8 +1571,7 @@ export class RandomTeams {
 		// Choice items
 		if (
 			!isDoubles && counter.get('Physical') >= 4 && ability !== 'Serene Grace' &&
-			['fakeout', 'flamecharge', 'rapidspin'].every(m => !moves.has(m)) &&
-			(!moves.has('tailslap') || moves.has('uturn'))
+			['fakeout', 'flamecharge', 'rapidspin'].every(m => !moves.has(m))
 		) {
 			const scarfReqs = (
 				(species.baseStats.atk >= 100 || ability === 'Huge Power') &&
@@ -1643,7 +1647,8 @@ export class RandomTeams {
 		if (
 			isLead && !isDoubles &&
 			!['Disguise', 'Sturdy'].includes(ability) && !moves.has('substitute') &&
-			!counter.get('drain') && !counter.get('recoil') && !counter.get('recovery') && defensiveStatTotal < 255
+			!counter.get('drain') && !counter.get('recoil') && !counter.get('recovery') &&
+			((defensiveStatTotal <= 250 && counter.get('hazards')) || defensiveStatTotal <= 210)
 		) return 'Focus Sash';
 		if (!isDoubles && ability === 'Water Bubble') return 'Mystic Water';
 		if (

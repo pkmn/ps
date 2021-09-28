@@ -218,6 +218,11 @@
       "inherit": true,
       "desc": "The user uses the last move used by the target. Fails if the target has not made a move, or if the last move used was Mirror Move."
     },
+    "mist": {
+      "inherit": true,
+      "condition": {},
+      "desc": "While the user remains active, it is protected from having its stat stages lowered by other Pokemon, unless caused by the secondary effect of a move. Fails if the user already has the effect. If any Pokemon uses Haze, this effect ends."
+    },
     "nightshade": {
       "inherit": true,
       "ignoreImmunity": true,
@@ -456,10 +461,6 @@
       "inherit": true,
       "desc": "Raises the user's evasiveness by 1 stage."
     },
-    "mist": {
-      "inherit": true,
-      "desc": "While the user remains active, it is protected from having its stat stages lowered by other Pokemon, unless caused by the secondary effect of a move. Fails if the user already has the effect. If any Pokemon uses Haze, this effect ends."
-    },
     "petaldance": {
       "inherit": true,
       "desc": "Whether or not this move is successful, the user spends three or four turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. During the effect, this move's accuracy is overwritten every turn with the current calculated accuracy including stat stage changes, but not to less than 1/256 or more than 255/256.",
@@ -684,6 +685,23 @@
       "inherit": true,
       "noSketch": true,
       "desc": "The user uses the last move used by the target. Fails if the target has not made a move, or if the last move used was Metronome, Mimic, Mirror Move, Sketch, Sleep Talk, Transform, or any move the user knows."
+    },
+    "mist": {
+      "num": 54,
+      "accuracy": true,
+      "basePower": 0,
+      "category": "Status",
+      "name": "Mist",
+      "pp": 30,
+      "priority": 0,
+      "flags": {},
+      "volatileStatus": "mist",
+      "condition": {},
+      "secondary": null,
+      "target": "self",
+      "type": "Ice",
+      "desc": "While the user remains active, it is protected from having its stat stages lowered by other Pokemon. Fails if the user already has the effect. Baton Pass can be used to transfer this effect to an ally.",
+      "shortDesc": "While active, user is protected from stat drops."
     },
     "moonlight": {
       "inherit": true,
@@ -926,11 +944,6 @@
     "minimize": {
       "inherit": true,
       "desc": "Raises the user's evasiveness by 1 stage. Whether or not the user's evasiveness was changed, Stomp will have its power doubled if used against the user while it is active. Baton Pass can be used to transfer this effect to an ally."
-    },
-    "mist": {
-      "inherit": true,
-      "desc": "While the user remains active, it is protected from having its stat stages lowered by other Pokemon. Fails if the user already has the effect. Baton Pass can be used to transfer this effect to an ally.",
-      "shortDesc": "While active, user is protected from stat drops."
     },
     "powdersnow": {
       "inherit": true,

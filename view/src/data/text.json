@@ -948,7 +948,8 @@
   "happyhour": {"activate": "  Everyone is caught up in the happy atmosphere!"},
   "haze": {
     "descGen1": "Resets the stat stages of both Pokemon to 0 and removes stat reductions due to burn and paralysis. Resets Toxic counters to 0 and removes the effect of confusion, Disable, Focus Energy, Leech Seed, Light Screen, Mist, and Reflect from both Pokemon. Removes the opponent's non-volatile status condition.",
-    "shortDescGen1": "Resets all stat changes. Removes foe's status."
+    "shortDescGen1": "Resets all stat changes. Removes foe's status.",
+    "activate": "  All STATUS changes are eliminated!"
   },
   "headsmash": {
     "descGen4": "If the target lost HP, the user takes recoil damage equal to 1/2 the HP lost by the target, rounded down, but not less than 1 HP."
@@ -1251,7 +1252,11 @@
   "mist": {
     "descGen2": "While the user remains active, it is protected from having its stat stages lowered by other Pokemon. Fails if the user already has the effect. Baton Pass can be used to transfer this effect to an ally.",
     "shortDescGen2": "While active, user is protected from stat drops.",
+    "startGen2": "  [POKEMON]'s shrouded in MIST!",
+    "blockGen2": "  [POKEMON]'s protected by MIST.",
     "descGen1": "While the user remains active, it is protected from having its stat stages lowered by other Pokemon, unless caused by the secondary effect of a move. Fails if the user already has the effect. If any Pokemon uses Haze, this effect ends.",
+    "startGen1": "  [POKEMON]'s shrouded in mist!",
+    "blockGen1": "  But, it failed!",
     "start": "  [TEAM] became shrouded in mist!",
     "end": "  [TEAM] is no longer protected by mist!",
     "block": "  [POKEMON] is protected by the mist!"
