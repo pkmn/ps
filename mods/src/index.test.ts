@@ -35,6 +35,35 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.gen).toBe(2);
       });
 
+      it('gen4pt', async () => {
+        const dex =
+          new ModdedDex(Dex.mod('gen4pt' as ID, await import('./gen4pt') as ModData));
+        expect(dex.gen).toBe(4);
+        expect(dex.species.get('Pichu-Spiky-Eared').isNonstandard).toEqual('Future');
+        expect((await dex.learnsets.get('hooh')).learnset!['bravebird']).toBeUndefined();
+      });
+
+      it('gen5bw1', async () => {
+        const dex =
+          new ModdedDex(Dex.mod('gen5bw1' as ID, await import('./gen5bw1') as ModData));
+        expect(dex.gen).toBe(5);
+        expect(dex.species.get('Kyurem-Black').isNonstandard).toEqual('Future');
+        expect(dex.species.get('beedrill').unreleasedHidden).toBe(true);
+        expect(dex.items.get('Custap Berry').isNonstandard).toEqual('Unobtainable');
+        expect((await dex.learnsets.get('growlithe')).learnset!['outrage']).toBeUndefined();
+      });
+
+      it('gen6xy', async () => {
+        const dex =
+          new ModdedDex(Dex.mod('gen6xy' as ID, await import('./gen6xy') as ModData));
+        expect(dex.gen).toBe(6);
+        expect(dex.species.get('Beedrill-Mega').isNonstandard).toEqual('Future');
+        expect(dex.species.get('articuno').unreleasedHidden).toBe(true);
+        expect(dex.items.get('red orb').isNonstandard).toBe('Future');
+        expect(dex.moves.get('Hyperspace Fury').isNonstandard).toBe('Future');
+        expect((await dex.learnsets.get('groudon')).learnset!['precipiceblades']).toBeUndefined();
+      });
+
       it('gen7letsgo', async () => {
         const dex =
           new ModdedDex(Dex.mod('gen7letsgo' as ID, await import('./gen7letsgo') as ModData));

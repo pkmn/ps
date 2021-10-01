@@ -515,7 +515,9 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       if (!ngasActive && move.id !== 'stickyweb') {
         const foeTargets = [];
 
-        const singles = ['self', 'allies', 'allySide', 'adjacentAlly', 'adjacentAllyOrSelf'];
+        const singles = [
+          'self', 'allies', 'allySide', 'adjacentAlly', 'adjacentAllyOrSelf', 'allyTeam',
+        ];
         const ffa = ['all', 'allAdjacent', 'allAdjacentFoes', 'foeSide'];
         if (!target && this.side.battle.gameType === 'singles' && !singles.includes(move.target!)) {
           // Hardcode for moves without a target in singles
