@@ -21,7 +21,7 @@ describe('Actions', () => {
     });
     expectAction(register, 'act=register&username=Foo&password=BAR&' +
         'cpassword=bar&captcha=Sandshrew&challstr=4%7Cbaz', false);
-    expect(register.url).toEqual('https://play.pkmn.cc/~~pocketmon/action.php');
+    expect(register.url).toBe('https://play.pkmn.cc/~~pocketmon/action.php');
     expectOnRegisterResponse(register, 'Foo', '|/trn Foo,0,token');
   });
 
@@ -41,7 +41,7 @@ describe('Actions', () => {
       serverid: 'pocketmon',
     });
     expectAction(login, 'act=login&name=Foo&pass=BAR&challstr=4%7Cbaz', false);
-    expect(login.url).toEqual('https://play.pkmn.cc/~~pocketmon/action.php');
+    expect(login.url).toBe('https://play.pkmn.cc/~~pocketmon/action.php');
     expectOnLoginResponse(login, 'Foo', '|/trn Foo,0,token');
   });
 
@@ -58,7 +58,7 @@ describe('Actions', () => {
       serverid: 'pocketmon',
     });
     expectAction(upkeep, 'act=upkeep&challstr=4%7Cbaz', false);
-    expect(upkeep.url).toEqual('https://play.pkmn.cc/~~pocketmon/action.php');
+    expect(upkeep.url).toBe('https://play.pkmn.cc/~~pocketmon/action.php');
     expectOnUpkeepResponse(upkeep, 'foo');
   });
 
@@ -77,14 +77,14 @@ describe('Actions', () => {
       serverid: 'pocketmon',
     });
     expectAction(rename, 'act=getassertion&userid=foo&challstr=4%7Cbaz', false);
-    expect(rename.url).toEqual('https://play.pkmn.cc/~~pocketmon/action.php');
+    expect(rename.url).toBe('https://play.pkmn.cc/~~pocketmon/action.php');
     expectOnRenameResponse(rename, 'Foo');
   });
 
   it('logout', () => {
     let logout = Actions.logout({username: 'User Name'});
     expectAction(logout, 'act=logout&userid=username');
-    expect(logout.onResponse('foo')).toEqual('|/logout');
+    expect(logout.onResponse('foo')).toBe('|/logout');
 
     logout = Actions.logout({
       username: 'User Name',
@@ -92,8 +92,8 @@ describe('Actions', () => {
       serverid: 'pocketmon',
     });
     expectAction(logout, 'act=logout&userid=username', false);
-    expect(logout.url).toEqual('https://play.pkmn.cc/~~pocketmon/action.php');
-    expect(logout.onResponse('bar')).toEqual('|/logout');
+    expect(logout.url).toBe('https://play.pkmn.cc/~~pocketmon/action.php');
+    expect(logout.onResponse('bar')).toBe('|/logout');
   });
 });
 
@@ -101,10 +101,10 @@ function expectAction(action: Action, data: string, url = true) {
   expect(action.data).toEqual(data);
   expect(action.method).toBe('POST');
   expect(action.headers['Content-Type'])
-    .toEqual('application/x-www-form-urlencoded; encoding=UTF-8');
+    .toBe('application/x-www-form-urlencoded; encoding=UTF-8');
   expect(action.headers['Content-Length']).toEqual(data.length);
   expect(action.responseType).toBe('text');
-  if (url) expect(action.url).toEqual('https://play.pokemonshowdown.com/~~showdown/action.php');
+  if (url) expect(action.url).toBe('https://play.pokemonshowdown.com/~~showdown/action.php');
 }
 
 function expectOnRegisterResponse(action: Action, username: string, next: string) {

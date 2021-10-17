@@ -28,8 +28,8 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
     });
 
     test('toString', () => {
-      expect(Gen(2).toString()).toEqual('[Generation:2]');
-      expect(JSON.stringify(Gen(4).toString())).toEqual('"[Generation:4]"');
+      expect(Gen(2).toString()).toBe('[Generation:2]');
+      expect(JSON.stringify(Gen(4).toString())).toBe('"[Generation:4]"');
     });
 
     describe('Abilities', () => {
@@ -50,7 +50,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(7).abilities.get('Sturdy')!.shortDesc) // eslint-disable-next-line
           .toEqual('If this Pokemon is at full HP, it survives one hit with at least 1 HP. Immune to OHKO.');
         expect(Gen(3).abilities.get('s turdy')!.shortDesc)
-          .toEqual('OHKO moves fail when used against this Pokemon.');
+          .toBe('OHKO moves fail when used against this Pokemon.');
       });
 
       it('counts', () => {
@@ -72,13 +72,13 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('toString', () => {
-        expect(Gen(6).abilities.get('Mummy')!.toString()).toEqual('Mummy');
+        expect(Gen(6).abilities.get('Mummy')!.toString()).toBe('Mummy');
       });
     });
 
     describe('Items', () => {
       it('#get', () => {
-        expect(Gen(7).items.get('Aerodactylite')!.megaEvolves).toEqual('Aerodactyl');
+        expect(Gen(7).items.get('Aerodactylite')!.megaEvolves).toBe('Aerodactyl');
 
         expect(Gen(3).items.get('Berry')).toBeUndefined();
         expect(Gen(3).items.get('Gold Berry')).toBeUndefined();
@@ -134,7 +134,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('toString', () => {
-        expect(Gen(6).items.get('Choice Band')!.toString()).toEqual('Choice Band');
+        expect(Gen(6).items.get('Choice Band')!.toString()).toBe('Choice Band');
       });
     });
 
@@ -142,12 +142,12 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       it('#get', () => {
         expect(Gen(7).moves.get('foo')).toBeUndefined();
         expect(Gen(1).moves.get('Thunderbolt')).toBeDefined();
-        expect(Gen(7).moves.get('Draco Meteor')!.basePower).toEqual(130);
+        expect(Gen(7).moves.get('Draco Meteor')!.basePower).toBe(130);
         expect(Gen(6).moves.get('eq')).toEqual(Gen(6).moves.get('Earthquake'));
-        expect(Gen(4).moves.get('DracoMeteor')!.basePower).toEqual(140);
-        expect(Gen(7).moves.get('Crunch')!.category).toEqual('Physical');
-        expect(Gen(2).moves.get('CRUNCH')!.category).toEqual('Special');
-        expect(Gen(7).moves.get('Hidden Power [Bug]')!.name).toEqual('Hidden Power Bug');
+        expect(Gen(4).moves.get('DracoMeteor')!.basePower).toBe(140);
+        expect(Gen(7).moves.get('Crunch')!.category).toBe('Physical');
+        expect(Gen(2).moves.get('CRUNCH')!.category).toBe('Special');
+        expect(Gen(7).moves.get('Hidden Power [Bug]')!.name).toBe('Hidden Power Bug');
       });
 
       it('fields', () => {
@@ -163,7 +163,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(3).moves.get('Psychic')!.category).toBe('Special');
         expect(Gen(7).moves.get('Rock Slide')!.target).toBe('allAdjacentFoes');
         expect(Gen(4).moves.get('Psychic')!.category).toBe('Special');
-        expect(Gen(5).moves.get('Psychic')!.defensiveCategory).not.toBeDefined();
+        expect(Gen(5).moves.get('Psychic')!.defensiveCategory).toBeUndefined();
         expect(Gen(5).moves.get('Psyshock')!.defensiveCategory).toBe('Physical');
         expect(Gen(7).moves.get('Rock Slide')!.target).toBe('allAdjacentFoes');
         expect(Gen(7).moves.get('Extreme Speed')!.priority).toBe(2);
@@ -228,7 +228,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('toString', () => {
-        expect(Gen(6).moves.get('Earthquake')!.toString()).toEqual('Earthquake');
+        expect(Gen(6).moves.get('Earthquake')!.toString()).toBe('Earthquake');
       });
     });
 
@@ -335,13 +335,13 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(7).species.get('Clefable')!.types).toEqual(['Fairy']);
         expect(Gen(3).species.get('Clefable')!.types).toEqual(['Normal']);
         expect(Gen(7).species.get('Gengar')!.types[1]).toBe('Poison');
-        expect(Gen(7).species.get('Pikachu')!.types[1]).not.toBeDefined();
+        expect(Gen(7).species.get('Pikachu')!.types[1]).toBeUndefined();
         expect(Gen(7).species.get('Mew')!.baseStats)
           .toEqual({hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100});
         expect(Gen(1).species.get('Tauros')!.baseStats)
           .toEqual({hp: 75, atk: 100, def: 95, spa: 70, spd: 70, spe: 110});
-        expect(Gen(6).species.get('Pelipper')!.baseStats.spa).toEqual(85);
-        expect(Gen(7).species.get('Pelipper')!.baseStats.spa).toEqual(95);
+        expect(Gen(6).species.get('Pelipper')!.baseStats.spa).toBe(85);
+        expect(Gen(7).species.get('Pelipper')!.baseStats.spa).toBe(95);
         expect(Gen(6).species.get('Greninja')!.abilities).toEqual({'0': 'Torrent', 'H': 'Protean'});
         expect(Gen(7).species.get('Greninja')!.abilities)
           .toEqual({'0': 'Torrent', 'H': 'Protean', 'S': 'Battle Bond'});
@@ -362,7 +362,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(7).species.get('Shaymin')!.otherFormes).toEqual(['Shaymin-Sky']);
         expect(Gen(7).species.get('Gastrodon')!.cosmeticFormes).toEqual(['Gastrodon-East']);
         expect(Gen(7).species.get('Garchomp-Mega')!.isMega).toBe(true);
-        expect(Gen(7).species.get('Yanmega')!.isMega).not.toBeDefined();
+        expect(Gen(7).species.get('Yanmega')!.isMega).toBeUndefined();
         expect(Gen(7).species.get('Kyogre-Primal')!.isPrimal).toBe(true);
         expect(Gen(1).species.get('Charizard')!.otherFormes).toBeUndefined();
         expect(Gen(7).species.get('Charizard')!.otherFormes)
@@ -370,7 +370,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(3).species.get('Nosepass')!.evos).toBeUndefined();
         expect(Gen(4).species.get('Nosepass')!.evos).toEqual(['Probopass']);
         expect(Gen(3).species.get('Chansey')!.prevo).toBeUndefined();
-        expect(Gen(4).species.get('Chansey')!.prevo).toEqual('Happiny');
+        expect(Gen(4).species.get('Chansey')!.prevo).toBe('Happiny');
       });
 
       it('cached', () => {
@@ -384,7 +384,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('toString', () => {
-        expect(Gen(6).species.get('Gengar')!.toString()).toEqual('Gengar');
+        expect(Gen(6).species.get('Gengar')!.toString()).toBe('Gengar');
         expect(JSON.stringify(Gen(6).species.get('Gengar')).length).toBeLessThan(2000);
       });
     });
@@ -411,7 +411,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(learnset.effectType).toBe('Learnset');
         expect(learnset.eventOnly).toBe(true);
         expect(learnset.eventData).toContainEqual({generation: 1, level: 5, moves: ['pound']});
-        expect(learnset.encounters).not.toBeDefined();
+        expect(learnset.encounters).toBeUndefined();
         expect(learnset.learnset!.reflect).toEqual(['1M']);
 
         expect((await Gen(8).learnsets.get('bulbasaur'))!.learnset!.leafstorm)
@@ -483,8 +483,8 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
 
         const serious = Gen(4).natures.get('serious')!;
         expect(serious.name).toBe('Serious');
-        expect(serious.plus).not.toBeDefined();
-        expect(serious.minus).not.toBeDefined();
+        expect(serious.plus).toBeUndefined();
+        expect(serious.minus).toBeUndefined();
 
         expect(Gen(8).natures.get('foo')).toBeUndefined();
       });
@@ -494,7 +494,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('toString', () => {
-        expect(Gen(6).natures.get('serious')!.toString()).toEqual('Serious');
+        expect(Gen(6).natures.get('serious')!.toString()).toBe('Serious');
       });
     });
 
@@ -504,11 +504,11 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(gen.types.get('Fairy')).toBeDefined();
         expect(Gen(5).types.get('Fairy')).toBeUndefined();
         expect(Gen(1).types.get('steel')).toBeUndefined();
-        expect(Gen(1).types.get('Ghost')!.effectiveness['Psychic']).toEqual(0);
-        expect(gen.types.get('Ghost')!.effectiveness['Psychic']).toEqual(2);
-        expect(gen.types.get('Water')!.effectiveness['Fire']).toEqual(2);
-        expect(gen.types.get('Fire')!.effectiveness['Water']).toEqual(0.5);
-        expect(gen.types.get('Electric')!.effectiveness['Ground']).toEqual(0);
+        expect(Gen(1).types.get('Ghost')!.effectiveness['Psychic']).toBe(0);
+        expect(gen.types.get('Ghost')!.effectiveness['Psychic']).toBe(2);
+        expect(gen.types.get('Water')!.effectiveness['Fire']).toBe(2);
+        expect(gen.types.get('Fire')!.effectiveness['Water']).toBe(0.5);
+        expect(gen.types.get('Electric')!.effectiveness['Ground']).toBe(0);
 
         expect(gen.types.get('Ice')!.HPdvs).toEqual({'def': 13});
         expect(gen.types.get('Flying')!.HPdvs).toEqual({'atk': 12, 'def': 13});
@@ -554,7 +554,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('toString', () => {
-        expect(Gen(6).types.get('Fairy')!.toString()).toEqual('Fairy');
+        expect(Gen(6).types.get('Fairy')!.toString()).toBe('Fairy');
         expect(JSON.stringify(Gen(6).types.get('Fairy')).length).toBeLessThan(2000);
       });
     });
@@ -580,7 +580,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
 
       it('get', () => {
         const gen = Gen(8);
-        expect(gen.stats.get('foo')).not.toBeDefined();
+        expect(gen.stats.get('foo')).toBeUndefined();
         expect(gen.stats.get('Atk')).toBe('atk');
         expect(gen.stats.get('Spc')).toBe('spa');
         expect(gen.stats.get('SpDef')).toBe('spd');
@@ -699,11 +699,11 @@ describe('Bundle', () => {
       const gens = new window.Generations(window.Dex);
       expect(gens.get(2).species.get('kabigon')!.tier).toBe('OU');
       expect(gens.get(1).moves.get('thunderbolt')).toBeDefined();
-      expect(gens.get(1).types.get('Ghost')!.effectiveness['Psychic']).toEqual(0);
+      expect(gens.get(1).types.get('Ghost')!.effectiveness['Psychic']).toBe(0);
       expect((await gens.get(8).learnsets.get('bulbasaur'))!.learnset!.leafstorm)
         .toEqual(['8M', '7E', '6E', '5E', '4E']);
       expect(gens.get(3).abilities.get('s turdy')!.shortDesc)
-        .toEqual('OHKO moves fail when used against this Pokemon.');
+        .toBe('OHKO moves fail when used against this Pokemon.');
     }
   });
 });

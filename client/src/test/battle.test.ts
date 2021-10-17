@@ -15,46 +15,46 @@ describe('Battle', () => {
     const battle = new Battle(GENS);
 
     let p = battle.parsePokemonId('p1');
-    expect(p.name).toEqual('');
-    expect(p.siden).toEqual(0);
+    expect(p.name).toBe('');
+    expect(p.siden).toBe(0);
     expect(p.slot).toEqual(-1);
-    expect(p.pokemonid).toEqual('p1');
+    expect(p.pokemonid).toBe('p1');
 
     p = battle.parsePokemonId('p2');
-    expect(p.name).toEqual('');
-    expect(p.siden).toEqual(1);
+    expect(p.name).toBe('');
+    expect(p.siden).toBe(1);
     expect(p.slot).toEqual(-1);
-    expect(p.pokemonid).toEqual('p2');
+    expect(p.pokemonid).toBe('p2');
 
     p = battle.parsePokemonId('p1: Gengar' as PokemonIdent);
-    expect(p.name).toEqual('Gengar');
-    expect(p.siden).toEqual(0);
+    expect(p.name).toBe('Gengar');
+    expect(p.siden).toBe(0);
     expect(p.slot).toEqual(-1);
-    expect(p.pokemonid).toEqual('p1: Gengar');
+    expect(p.pokemonid).toBe('p1: Gengar');
 
     p = battle.parsePokemonId('p2: Mew' as PokemonIdent);
-    expect(p.name).toEqual('Mew');
-    expect(p.siden).toEqual(1);
+    expect(p.name).toBe('Mew');
+    expect(p.siden).toBe(1);
     expect(p.slot).toEqual(-1);
-    expect(p.pokemonid).toEqual('p2: Mew');
+    expect(p.pokemonid).toBe('p2: Mew');
 
     p = battle.parsePokemonId('p1c: Rapidash' as PokemonIdent);
-    expect(p.name).toEqual('Rapidash');
-    expect(p.siden).toEqual(0);
-    expect(p.slot).toEqual(2);
-    expect(p.pokemonid).toEqual('p1: Rapidash');
+    expect(p.name).toBe('Rapidash');
+    expect(p.siden).toBe(0);
+    expect(p.slot).toBe(2);
+    expect(p.pokemonid).toBe('p1: Rapidash');
 
     p = battle.parsePokemonId('p2x: Arcanine' as PokemonIdent);
-    expect(p.name).toEqual('p2x: Arcanine');
+    expect(p.name).toBe('p2x: Arcanine');
     expect(p.siden).toEqual(-1);
     expect(p.slot).toEqual(-1);
-    expect(p.pokemonid).toEqual('p2x: Arcanine');
+    expect(p.pokemonid).toBe('p2x: Arcanine');
 
     p = battle.parsePokemonId('p3: Foo' as PokemonIdent);
-    expect(p.name).toEqual('Foo');
-    expect(p.siden).toEqual(2);
+    expect(p.name).toBe('Foo');
+    expect(p.siden).toBe(2);
     expect(p.slot).toEqual(-1);
-    expect(p.pokemonid).toEqual('p3: Foo');
+    expect(p.pokemonid).toBe('p3: Foo');
   });
 
   it.todo('#getSwitchedPokemon');

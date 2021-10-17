@@ -197,11 +197,11 @@ describe('Pokemon', () => {
 
     pokemon.addVolatile('typeadd' as ID, {type: 'Grass'});
     expect(pokemon.types).toEqual(['Normal']);
-    expect(pokemon.addedType).toEqual('Grass');
+    expect(pokemon.addedType).toBe('Grass');
 
     pokemon.addVolatile('typechange' as ID, {apparentType: 'Dragon/Fire'});
     expect(pokemon.types).toEqual(['Dragon', 'Fire']);
-    expect(pokemon.addedType).toEqual('Grass');
+    expect(pokemon.addedType).toBe('Grass');
 
     const copy = new Pokemon(
       {battle: {gen}} as unknown as Side,
@@ -212,7 +212,7 @@ describe('Pokemon', () => {
 
     copy.copyTypesFrom(pokemon);
     expect(copy.types).toEqual(['Dragon', 'Fire']);
-    expect(copy.addedType).toEqual('Grass');
+    expect(copy.addedType).toBe('Grass');
   });
 
   it.todo('#isGrounded');
@@ -223,18 +223,18 @@ describe('Pokemon', () => {
       {speciesForme: 'Greninja'} as DetailedPokemon
     );
 
-    expect(pokemon.baseSpecies.name).toEqual('Greninja');
-    expect(pokemon.species.name).toEqual('Greninja');
+    expect(pokemon.baseSpecies.name).toBe('Greninja');
+    expect(pokemon.species.name).toBe('Greninja');
     pokemon.speciesForme = 'Greninja-Ash';
-    expect(pokemon.species.name).toEqual('Greninja-Ash');
+    expect(pokemon.species.name).toBe('Greninja-Ash');
 
     pokemon.addVolatile('formechange' as ID, {speciesForme: 'Gengar' as SpeciesName});
 
     pokemon.speciesForme = 'Greninja';
-    expect(pokemon.baseSpecies.name).toEqual('Greninja');
-    expect(pokemon.species.name).toEqual('Gengar');
+    expect(pokemon.baseSpecies.name).toBe('Greninja');
+    expect(pokemon.species.name).toBe('Gengar');
     pokemon.speciesForme = 'Greninja-Ash';
-    expect(pokemon.species.name).toEqual('Gengar');
+    expect(pokemon.species.name).toBe('Gengar');
   });
 
   it('#getDamageRange', () => {
@@ -262,12 +262,12 @@ describe('Pokemon', () => {
   });
 
   it('#getFormattedRange', () => {
-    expect(Pokemon.getFormattedRange([0, 0], 0, '-')).toEqual('0%');
-    expect(Pokemon.getFormattedRange([0.25, 0.50], 0, '_')).toEqual('25_50%');
-    expect(Pokemon.getFormattedRange([0.1, 0.1], 2, 'F')).toEqual('10%');
-    expect(Pokemon.getFormattedRange([0.123, 0.123], 2, 'F')).toEqual('12.30%');
-    expect(Pokemon.getFormattedRange([0.12, 0.123], 0, '-')).toEqual('12-13%');
-    expect(Pokemon.getFormattedRange([0.12, 0.123], 1, '-')).toEqual('12.0-12.3%');
+    expect(Pokemon.getFormattedRange([0, 0], 0, '-')).toBe('0%');
+    expect(Pokemon.getFormattedRange([0.25, 0.50], 0, '_')).toBe('25_50%');
+    expect(Pokemon.getFormattedRange([0.1, 0.1], 2, 'F')).toBe('10%');
+    expect(Pokemon.getFormattedRange([0.123, 0.123], 2, 'F')).toBe('12.30%');
+    expect(Pokemon.getFormattedRange([0.12, 0.123], 0, '-')).toBe('12-13%');
+    expect(Pokemon.getFormattedRange([0.12, 0.123], 1, '-')).toBe('12.0-12.3%');
   });
 
   it('#reset', () => {
@@ -281,7 +281,7 @@ describe('Pokemon', () => {
 
     pokemon.reset();
 
-    expect(pokemon.hp).toEqual(105);
+    expect(pokemon.hp).toBe(105);
     expect(pokemon.status).toBeUndefined();
     expect(pokemon.name).toBe('Gengar');
     expect(pokemon.statusStage).toBe(0);

@@ -133,7 +133,7 @@ describe('Sprites', () => {
     expect(pokemon.pixelated).toBe(true);
 
     pokemon = Sprites.getDexPokemon('RAIKOU', {gen: 'gen2g', domain: 'pkmn.cc'});
-    expect(pokemon.url).toEqual('https://pkmn.cc/sprites/gen2g/raikou.png');
+    expect(pokemon.url).toBe('https://pkmn.cc/sprites/gen2g/raikou.png');
     expect(pokemon.gen).toBe(2);
     expect(pokemon.w).toBe(96);
     expect(pokemon.h).toBe(96);
@@ -167,9 +167,9 @@ describe('Sprites', () => {
   it('#getSubstitute', () => {
     // TODO test innerWith/innerHeight
     let sub = Sprites.getSubstitute();
-    expect(sub.gen).toEqual(5);
-    expect(sub.w).toEqual(96);
-    expect(sub.h).toEqual(96);
+    expect(sub.gen).toBe(5);
+    expect(sub.w).toBe(96);
+    expect(sub.h).toBe(96);
     expect(sub.url).toEqual(`${URL}/sprites/substitutes/gen5/substitute.png`);
     expect(sub.pixelated).toBe(true);
 
@@ -177,7 +177,7 @@ describe('Sprites', () => {
     expect(sub.url).toEqual(`http://${DOMAIN}/sprites/substitutes/gen5-back/substitute.png`);
 
     sub = Sprites.getSubstitute({gen: 2, side: 'p2', domain: 'pkmn.cc'});
-    expect(sub.url).toEqual('https://pkmn.cc/sprites/substitutes/gen1/substitute.png');
+    expect(sub.url).toBe('https://pkmn.cc/sprites/substitutes/gen1/substitute.png');
 
     sub = Sprites.getSubstitute({gen: 3, side: 'p1'});
     expect(sub.url).toEqual(`${URL}/sprites/substitutes/gen3-back/substitute.png`);
@@ -188,7 +188,7 @@ describe('Sprites', () => {
 
   it('#getAvatar', () => {
     expect(Sprites.getAvatar(277, {domain: 'pkmn.cc'}))
-      .toEqual('https://pkmn.cc/sprites/trainers/cheren-gen5bw2.png');
+      .toBe('https://pkmn.cc/sprites/trainers/cheren-gen5bw2.png');
     expect(Sprites.getAvatar('#bw2elesa'))
       .toEqual(`${URL}/sprites/trainers/elesa-gen5bw2.png`);
     expect(Sprites.getAvatar('breederf'))
@@ -217,7 +217,7 @@ describe('Icons', () => {
     expect(pokemon.top).toEqual(-0);
 
     pokemon = Icons.getPokemon('Lucario-Mega', {domain: 'pkmn.cc', gender: 'F'});
-    expect(pokemon.url).toEqual('https://pkmn.cc/sprites/pokemonicons-sheet.png');
+    expect(pokemon.url).toBe('https://pkmn.cc/sprites/pokemonicons-sheet.png');
     expect(pokemon.left).toEqual(-360);
     expect(pokemon.top).toEqual(-2880);
 
@@ -242,12 +242,12 @@ describe('Icons', () => {
 
     let pokeball = Icons.getPokeball('pokeball')!;
     expect(pokeball.url).toEqual(`${URL}/sprites/pokemonicons-pokeball-sheet.png`);
-    expect(pokeball.left).toEqual(0);
-    expect(pokeball.top).toEqual(4);
+    expect(pokeball.left).toBe(0);
+    expect(pokeball.top).toBe(4);
 
     pokeball = Icons.getPokeball('pokeball-statused')!;
     expect(pokeball.left).toEqual(-40);
-    expect(pokeball.top).toEqual(4);
+    expect(pokeball.top).toBe(4);
 
     pokeball = Icons.getPokeball('pokeball-fainted')!;
     expect(pokeball.style).toEqual(
@@ -258,8 +258,8 @@ describe('Icons', () => {
 
     pokeball = Icons.getPokeball('pokeball-none', {protocol: 'http', domain: 'pkmn.cc'})!;
     expect(pokeball.left).toEqual(-80);
-    expect(pokeball.top).toEqual(4);
-    expect(pokeball.url).toEqual('http://pkmn.cc/sprites/pokemonicons-pokeball-sheet.png');
+    expect(pokeball.top).toBe(4);
+    expect(pokeball.url).toBe('http://pkmn.cc/sprites/pokemonicons-pokeball-sheet.png');
   });
 
   it('#getItem', () => {
@@ -286,7 +286,7 @@ describe('Icons', () => {
     expect(Icons.getType('BIRD', {protocol: 'http'}).url)
       .toEqual(`http://${DOMAIN}/sprites/types/Bird.png`);
     expect(Icons.getType('water', {domain: 'pkmn.cc'}).url)
-      .toEqual('https://pkmn.cc/sprites/types/Water.png');
+      .toBe('https://pkmn.cc/sprites/types/Water.png');
   });
 });
 

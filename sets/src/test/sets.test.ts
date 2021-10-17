@@ -112,7 +112,7 @@ describe('Sets', () => {
     });
 
     it('nothing', () => {
-      expect(Sets.importSet('')).not.toBeDefined();
+      expect(Sets.importSet('')).toBeUndefined();
     });
   });
 
@@ -251,31 +251,31 @@ describe('Sets', () => {
 
     it('partial', () => {
       let p = '';
-      expect(Sets.unpack(p)).not.toBeDefined();
+      expect(Sets.unpack(p)).toBeUndefined();
       p += 'Tangrowth';
-      expect(Sets.unpack(p)).not.toBeDefined();
+      expect(Sets.unpack(p)).toBeUndefined();
       p += '|';
-      expect(Sets.unpack(p)).not.toBeDefined();
+      expect(Sets.unpack(p)).toBeUndefined();
       p += '|AssaultVest';
-      expect(Sets.unpack(p)).not.toBeDefined();
+      expect(Sets.unpack(p)).toBeUndefined();
       p += '|Regenerator';
-      expect(Sets.unpack(p)).not.toBeDefined();
+      expect(Sets.unpack(p)).toBeUndefined();
       p += '|GigaDrain,KnockOff,PowerWhip,Earthquake';
-      expect(Sets.unpack(p)).not.toBeDefined();
+      expect(Sets.unpack(p)).toBeUndefined();
       p += '|Sassy';
-      expect(Sets.unpack(p)).not.toBeDefined();
+      expect(Sets.unpack(p)).toBeUndefined();
       p += '|248';
-      expect(Sets.unpack(p + '|')).not.toBeDefined();
+      expect(Sets.unpack(p + '|')).toBeUndefined();
       p += ',,8,,252,';
-      expect(Sets.unpack(p)).not.toBeDefined();
+      expect(Sets.unpack(p)).toBeUndefined();
       p += '|';
-      expect(Sets.unpack(p)).not.toBeDefined();
+      expect(Sets.unpack(p)).toBeUndefined();
       p += '|,30,30,,,';
-      expect(Sets.unpack(p)).not.toBeDefined();
+      expect(Sets.unpack(p)).toBeUndefined();
       p += '|';
-      expect(Sets.unpack(p)).not.toBeDefined();
+      expect(Sets.unpack(p)).toBeUndefined();
       p += '|';
-      expect(Sets.unpack(p)).not.toBeDefined();
+      expect(Sets.unpack(p)).toBeUndefined();
       p += '|,Ice,';
       expect(Sets.unpack(p)).toBeDefined();
     });
@@ -337,6 +337,6 @@ describe('Sets', () => {
         Sets.fromJSON(Sets.toJSON(Sets.importSet(imported(malakazam))!))!;
     expect(Sets.exportSet(fj)).toEqual(exported(malakazam));
 
-    expect(Sets.fromJSON('foo')).not.toBeDefined();
+    expect(Sets.fromJSON('foo')).toBeUndefined();
   });
 });

@@ -29,7 +29,7 @@ describe('Team', () => {
     const fj = Team.unpack(Team.import(TEAM)!.toJSON())!;
     expect(fj.export()).toEqual(TEAM);
 
-    expect(Team.fromJSON('{"foo": "bar"}')).not.toBeDefined();
+    expect(Team.fromJSON('{"foo": "bar"}')).toBeUndefined();
   });
 });
 
@@ -51,14 +51,14 @@ describe('Teams', () => {
 
     expect(Teams.toString(imported))
       .toEqual(TEAMS.replace(/\[ou\]/, '[gen6ou]'));
-    expect(Teams.importTeam('')).not.toBeDefined();
+    expect(Teams.importTeam('')).toBeUndefined();
 
     expect(Teams.importTeam(TEAMS, GEN[8])).toEqual(imported[0]);
   });
 
   it('unpack', () => {
-    expect(Teams.unpackTeam('')).not.toBeDefined();
-    expect(Teams.unpackTeam('foo')).not.toBeDefined();
+    expect(Teams.unpackTeam('')).toBeUndefined();
+    expect(Teams.unpackTeam('foo')).toBeUndefined();
     expect(Teams.importTeams('|\n\n\n')).toEqual([]);
   });
 

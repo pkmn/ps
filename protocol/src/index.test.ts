@@ -192,8 +192,8 @@ const REQUEST = {
 // NOTE: tested exhaustively in integration/src/test/sim.js
 describe('Protocol', () => {
   it('#key', () => {
-    expect(Protocol.key(['init', 'chat'])).toEqual('|init|');
-    expect(Protocol.key(['tournament', 'updateEnd'])).toEqual('|tournament|updateEnd|');
+    expect(Protocol.key(['init', 'chat'])).toBe('|init|');
+    expect(Protocol.key(['tournament', 'updateEnd'])).toBe('|tournament|updateEnd|');
     expect(Protocol.key(['foo', 'bar'] as unknown as Protocol.ArgType)).toBeUndefined();
   });
 
@@ -206,39 +206,39 @@ describe('Protocol', () => {
 
         let message = `${pokemon.player}'s ${pokemon.name}'s ${stat} stat was boosted by ${num}`;
         if (kwArgs.from) message += ` from ${Protocol.parseEffect(kwArgs.from).name}`;
-        expect(message).toEqual('p2\'s Diancie\'s atk stat was boosted by 2');
+        expect(message).toBe('p2\'s Diancie\'s atk stat was boosted by 2');
       }
     }
     const handler = new BoostHandler();
     const chunk = '>battle-1\n|-boost|p2b: Diancie|atk|2\n|-unboost|p2a: Salamence|def|1';
     const count = {called: 0, looped: 0};
     for (const {roomid, args, kwArgs} of Protocol.parse(chunk)) {
-      expect(roomid).toEqual('battle-1');
+      expect(roomid).toBe('battle-1');
       if (args[0] === '-boost') {
         handler['|-boost|'](args, kwArgs as KWArgs['|-boost|']);
         count.called++;
       }
       count.looped++;
     }
-    expect(count.called).toEqual(1);
-    expect(count.looped).toEqual(2);
+    expect(count.called).toBe(1);
+    expect(count.looped).toBe(2);
   });
 
   it('#parsePokemonIdent', () => {
     let parts = Protocol.parsePokemonIdent('p1a: Squirtle' as Protocol.PokemonIdent);
-    expect(parts.player).toEqual('p1');
-    expect(parts.position).toEqual('a');
-    expect(parts.name).toEqual('Squirtle');
+    expect(parts.player).toBe('p1');
+    expect(parts.position).toBe('a');
+    expect(parts.name).toBe('Squirtle');
 
     parts = Protocol.parsePokemonIdent('p2b: Bulbasaur' as Protocol.PokemonIdent);
-    expect(parts.player).toEqual('p2');
-    expect(parts.position).toEqual('b');
-    expect(parts.name).toEqual('Bulbasaur');
+    expect(parts.player).toBe('p2');
+    expect(parts.position).toBe('b');
+    expect(parts.name).toBe('Bulbasaur');
 
     parts = Protocol.parsePokemonIdent('p2: Charmander' as Protocol.PokemonIdent);
-    expect(parts.player).toEqual('p2');
+    expect(parts.player).toBe('p2');
     expect(parts.position).toBeNull();
-    expect(parts.name).toEqual('Charmander');
+    expect(parts.name).toBe('Charmander');
   });
 
   it('#parseDetails', () => {
@@ -247,39 +247,39 @@ describe('Protocol', () => {
       '' as Protocol.PokemonIdent,
       'Arceus-*' as Protocol.PokemonDetails
     );
-    expect(details.name).toEqual('');
-    expect(details.speciesForme).toEqual('Arceus-*');
-    expect(details.level).toEqual(100);
-    expect(details.shiny).toEqual(false);
+    expect(details.name).toBe('');
+    expect(details.speciesForme).toBe('Arceus-*');
+    expect(details.level).toBe(100);
+    expect(details.shiny).toBe(false);
     expect(details.gender).toBeUndefined();
-    expect(details.ident).toEqual('');
-    expect(details.searchid).toEqual('');
+    expect(details.ident).toBe('');
+    expect(details.searchid).toBe('');
 
     details = Protocol.parseDetails(
       'Deoxys-Speed',
       'p1a: Deoxys-Speed' as Protocol.PokemonIdent,
       'Deoxys-Speed' as Protocol.PokemonDetails
     );
-    expect(details.name).toEqual('Deoxys-Speed');
-    expect(details.speciesForme).toEqual('Deoxys-Speed');
-    expect(details.level).toEqual(100);
-    expect(details.shiny).toEqual(false);
+    expect(details.name).toBe('Deoxys-Speed');
+    expect(details.speciesForme).toBe('Deoxys-Speed');
+    expect(details.level).toBe(100);
+    expect(details.shiny).toBe(false);
     expect(details.gender).toBeUndefined();
-    expect(details.ident).toEqual('p1a: Deoxys-Speed');
-    expect(details.searchid).toEqual('p1a: Deoxys-Speed|Deoxys-Speed');
+    expect(details.ident).toBe('p1a: Deoxys-Speed');
+    expect(details.searchid).toBe('p1a: Deoxys-Speed|Deoxys-Speed');
 
     details = Protocol.parseDetails(
       'Sawsbuck',
       'p2b: Sawsbuck' as Protocol.PokemonIdent,
       'Sawsbuck, L50, F, shiny' as Protocol.PokemonDetails
     );
-    expect(details.name).toEqual('Sawsbuck');
-    expect(details.speciesForme).toEqual('Sawsbuck');
-    expect(details.level).toEqual(50);
-    expect(details.shiny).toEqual(true);
-    expect(details.gender).toEqual('F');
-    expect(details.ident).toEqual('p2b: Sawsbuck');
-    expect(details.searchid).toEqual('p2b: Sawsbuck|Sawsbuck, L50, F, shiny');
+    expect(details.name).toBe('Sawsbuck');
+    expect(details.speciesForme).toBe('Sawsbuck');
+    expect(details.level).toBe(50);
+    expect(details.shiny).toBe(true);
+    expect(details.gender).toBe('F');
+    expect(details.ident).toBe('p2b: Sawsbuck');
+    expect(details.searchid).toBe('p2b: Sawsbuck|Sawsbuck, L50, F, shiny');
   });
 
   it('#parseHealth', () => {
@@ -308,64 +308,64 @@ describe('Protocol', () => {
 
   it('#parseEffect', () => {
     let parts = Protocol.parseEffect();
-    expect(parts.name).toEqual('');
+    expect(parts.name).toBe('');
     expect(parts.type).toBeUndefined();
 
     parts = Protocol.parseEffect('Foo ');
-    expect(parts.name).toEqual('Foo');
+    expect(parts.name).toBe('Foo');
     expect(parts.type).toBeUndefined();
 
     parts = Protocol.parseEffect('item: Leftovers', x => x.toUpperCase());
-    expect(parts.name).toEqual(' LEFTOVERS');
-    expect(parts.type).toEqual('item');
+    expect(parts.name).toBe(' LEFTOVERS');
+    expect(parts.type).toBe('item');
 
     parts = Protocol.parseEffect('move: Tackle');
-    expect(parts.name).toEqual('Tackle');
-    expect(parts.type).toEqual('move');
+    expect(parts.name).toBe('Tackle');
+    expect(parts.type).toBe('move');
 
     parts = Protocol.parseEffect('foo: Bar');
-    expect(parts.name).toEqual('foo: Bar');
+    expect(parts.name).toBe('foo: Bar');
     expect(parts.type).toBeUndefined();
 
     parts = Protocol.parseEffect('ability: Magic Guard');
-    expect(parts.name).toEqual('Magic Guard');
-    expect(parts.type).toEqual('ability');
+    expect(parts.name).toBe('Magic Guard');
+    expect(parts.type).toBe('ability');
   });
 
   it('#parseRequest', () => {
     const request = Protocol.parseRequest(JSON.stringify(REQUEST) as Protocol.RequestJSON);
-    expect(request.requestType).toEqual('move');
+    expect(request.requestType).toBe('move');
     const moveRequest = request as Protocol.MoveRequest;
-    expect(moveRequest.rqid).toEqual(3);
-    expect(moveRequest.side.pokemon[2].level).toEqual(83);
-    expect(moveRequest.active[0]!.moves[0].id).toEqual('lightscreen');
+    expect(moveRequest.rqid).toBe(3);
+    expect(moveRequest.side.pokemon[2].level).toBe(83);
+    expect(moveRequest.active[0]!.moves[0].id).toBe('lightscreen');
     expect(moveRequest.noCancel).toBeUndefined();
   });
 
   it('#parseNameParts', () => {
     let parts = Protocol.parseNameParts('pre');
-    expect(parts.group).toEqual('');
-    expect(parts.name).toEqual('pre');
-    expect(parts.away).toEqual(false);
-    expect(parts.status).toEqual('');
+    expect(parts.group).toBe('');
+    expect(parts.name).toBe('pre');
+    expect(parts.away).toBe(false);
+    expect(parts.status).toBe('');
 
     parts = Protocol.parseNameParts('+pre@!');
-    expect(parts.group).toEqual('+');
-    expect(parts.name).toEqual('pre');
-    expect(parts.away).toEqual(true);
-    expect(parts.status).toEqual('');
+    expect(parts.group).toBe('+');
+    expect(parts.name).toBe('pre');
+    expect(parts.away).toBe(true);
+    expect(parts.status).toBe('');
 
     parts = Protocol.parseNameParts('~pre@!Away');
-    expect(parts.group).toEqual('~');
-    expect(parts.name).toEqual('pre');
-    expect(parts.away).toEqual(true);
-    expect(parts.status).toEqual('Away');
+    expect(parts.group).toBe('~');
+    expect(parts.name).toBe('pre');
+    expect(parts.away).toBe(true);
+    expect(parts.status).toBe('Away');
 
     parts = Protocol.parseNameParts('!pre@Status');
-    expect(parts.group).toEqual('!');
-    expect(parts.name).toEqual('pre');
-    expect(parts.away).toEqual(false);
-    expect(parts.status).toEqual('Status');
+    expect(parts.group).toBe('!');
+    expect(parts.name).toBe('pre');
+    expect(parts.away).toBe(false);
+    expect(parts.status).toBe('Status');
   });
 });
 
@@ -376,10 +376,10 @@ describe('Bundle', () => {
       // eslint-disable-next-line no-eval
       eval(fs.readFileSync(path.resolve(__dirname, '../build/production.min.js'), 'utf8'));
 
-      expect(window.Protocol.key(['init', 'chat'])).toEqual('|init|');
+      expect(window.Protocol.key(['init', 'chat'])).toBe('|init|');
       const parts = Protocol.parseEffect('move: Tackle');
-      expect(parts.name).toEqual('Tackle');
-      expect(parts.type).toEqual('move');
+      expect(parts.name).toBe('Tackle');
+      expect(parts.type).toBe('move');
     }
   });
 });

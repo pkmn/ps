@@ -203,26 +203,26 @@ describe('ChoiceBuilder', () => {
   it('requestLength', () => {
     expect(new ChoiceBuilder(
       {requestType: 'move', active: [{}, {}]} as Protocol.Request
-    ).requestLength()).toEqual(2);
+    ).requestLength()).toBe(2);
     expect(new ChoiceBuilder(
       {requestType: 'switch', forceSwitch: [null]} as unknown as Protocol.Request
-    ).requestLength()).toEqual(1);
-    expect(new ChoiceBuilder({requestType: 'team'} as Protocol.Request).requestLength()).toEqual(1);
+    ).requestLength()).toBe(1);
+    expect(new ChoiceBuilder({requestType: 'team'} as Protocol.Request).requestLength()).toBe(1);
     expect(new ChoiceBuilder(
       {requestType: 'team', maxTeamSize: 6} as Protocol.Request
     ).requestLength()).toBe(6);
-    expect(new ChoiceBuilder({requestType: 'wait'} as Protocol.Request).requestLength()).toEqual(0);
+    expect(new ChoiceBuilder({requestType: 'wait'} as Protocol.Request).requestLength()).toBe(0);
   });
 
   it('index', () => {
     expect(new ChoiceBuilder(
       {requestType: 'move', active: [{}, null]} as Protocol.Request
-    ).index()).toEqual(0);
+    ).index()).toBe(0);
     expect(new ChoiceBuilder(
       {requestType: 'switch', forceSwitch: [null]} as unknown as Protocol.Request
-    ).index()).toEqual(1);
-    expect(new ChoiceBuilder({requestType: 'team'} as Protocol.Request).index()).toEqual(0);
-    expect(new ChoiceBuilder({requestType: 'wait'} as Protocol.Request).index()).toEqual(0);
+    ).index()).toBe(1);
+    expect(new ChoiceBuilder({requestType: 'team'} as Protocol.Request).index()).toBe(0);
+    expect(new ChoiceBuilder({requestType: 'wait'} as Protocol.Request).index()).toBe(0);
   });
 
   it('isDone', () => {
@@ -254,7 +254,7 @@ describe('ChoiceBuilder', () => {
 
   it('addChoice', () => {
     let b = new ChoiceBuilder({requestType: 'wait'} as Protocol.Request);
-    expect(b.addChoice('move 1')).toEqual('It\'s not your turn to choose anything');
+    expect(b.addChoice('move 1')).toBe('It\'s not your turn to choose anything');
 
     b = new ChoiceBuilder(REQUEST);
     expect(b.addChoice('shift')).toBeUndefined(); // BUG
@@ -262,19 +262,19 @@ describe('ChoiceBuilder', () => {
     b = new ChoiceBuilder(
       {requestType: 'switch', forceSwitch: [null, {}, null]} as unknown as Protocol.Request
     );
-    expect(b.addChoice('move 1')).toEqual('You must switch in a Pokémon, not move');
+    expect(b.addChoice('move 1')).toBe('You must switch in a Pokémon, not move');
 
     b = new ChoiceBuilder(REQUEST);
-    expect(b.addChoice('foobar')).toEqual('Unrecognized choice \'foobar\'');
+    expect(b.addChoice('foobar')).toBe('Unrecognized choice \'foobar\'');
 
     b = new ChoiceBuilder(REQUEST);
-    expect(b.addChoice('pass')).toEqual('The client handles passes for you automatically already');
+    expect(b.addChoice('pass')).toBe('The client handles passes for you automatically already');
 
     b = new ChoiceBuilder(REQUEST);
     expect(b.addChoice('move 1 dynamax')).toBeUndefined(); // BUG
 
     b = new ChoiceBuilder(REQUEST);
-    expect(b.addChoice('move 1 2 3')).toEqual('Move choice has multiple targets');
+    expect(b.addChoice('move 1 2 3')).toBe('Move choice has multiple targets');
 
     b = new ChoiceBuilder(REQUEST);
     expect(b.addChoice('move Hidden Power Bug')).toBeUndefined(); // BUG
@@ -283,7 +283,7 @@ describe('ChoiceBuilder', () => {
     expect(b.addChoice('move kno ck Off')).toBeUndefined();
 
     b = new ChoiceBuilder(REQUEST);
-    expect(b.addChoice('team 1')).toEqual('That Pokémon is already in battle!');
+    expect(b.addChoice('team 1')).toBe('That Pokémon is already in battle!');
 
     b = new ChoiceBuilder(REQUEST);
     expect(b.addChoice('team 6')).toBeUndefined(); // BUG
@@ -295,21 +295,21 @@ describe('ChoiceBuilder', () => {
     expect(b.addChoice('switch H E A T M O R')).toBeUndefined();
 
     b = new ChoiceBuilder(REQUEST);
-    expect(b.addChoice('switch foobar')).toEqual('Couldn\'t find Pokémon \'foobar\' to switch to');
+    expect(b.addChoice('switch foobar')).toBe('Couldn\'t find Pokémon \'foobar\' to switch to');
 
     REQUEST.side.pokemon[2].fainted = true;
     b = new ChoiceBuilder(REQUEST);
-    expect(b.addChoice('switch 3')).toEqual('Heatmor is fainted and cannot battle!');
+    expect(b.addChoice('switch 3')).toBe('Heatmor is fainted and cannot battle!');
   });
 
   it('toString', () => {
     let b = new ChoiceBuilder(REQUEST);
     b.addChoice('move Knock Off 2 dynamax');
-    expect(b.toString()).toEqual('move 3 +2');
+    expect(b.toString()).toBe('move 3 +2');
 
     b = new ChoiceBuilder(REQUEST);
     b.addChoice('switch Gligar');
-    expect(b.toString()).toEqual('switch 6');
+    expect(b.toString()).toBe('switch 6');
 
     b = new ChoiceBuilder({
       requestType: 'team',
@@ -320,6 +320,6 @@ describe('ChoiceBuilder', () => {
     } as Protocol.Request);
     b.addChoice('team 4');
     b.addChoice('team 2');
-    expect(b.toString()).toEqual('team 4, 2');
+    expect(b.toString()).toBe('team 4, 2');
   });
 });

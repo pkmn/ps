@@ -92,11 +92,11 @@ describe('LogFormatter', () => {
     const pokemon = (i: string, p: SideID = 'p1') =>
       new LogFormatter(p).pokemon(i as PokemonIdent);
 
-    expect(pokemon('')).toEqual('');
-    expect(pokemon('p5: Bar')).toEqual('???pokemon:p5: Bar???');
-    expect(pokemon('p1: Foo')).toEqual('Foo');
-    expect(pokemon('p1: Foo', 'p2')).toEqual('the opposing Foo');
-    expect(pokemon('p2a: Foo', 'p2')).toEqual('Foo');
+    expect(pokemon('')).toBe('');
+    expect(pokemon('p5: Bar')).toBe('???pokemon:p5: Bar???');
+    expect(pokemon('p1: Foo')).toBe('Foo');
+    expect(pokemon('p1: Foo', 'p2')).toBe('the opposing Foo');
+    expect(pokemon('p2a: Foo', 'p2')).toBe('Foo');
   });
 
   it('pokemonFull', () => {
@@ -111,7 +111,7 @@ describe('LogFormatter', () => {
 
   it('escapeRegExp', () => {
     expect(LogFormatter.escapeRegExp('^([a-z]+|b)?.*c{0,3}&'))
-      .toEqual('\\^\\(\\[a-z\\]\\+\\|b\\)\\?\\.\\*c\\{0,3\\}&');
+      .toBe('\\^\\(\\[a-z\\]\\+\\|b\\)\\?\\.\\*c\\{0,3\\}&');
   });
 
   /* eslint-disable @typescript-eslint/quotes */

@@ -26,7 +26,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
           new ModdedDex(Dex.mod('gen1stadium' as ID, await import('./gen1stadium') as ModData));
         expect(dex.gen).toBe(1);
         expect(dex.moves.get('highjumpkick').desc)
-          .toEqual('If this attack misses the target, the user takes 1 HP of damage.');
+          .toBe('If this attack misses the target, the user takes 1 HP of damage.');
       });
 
       it('gen2stadium2', async () => {
@@ -39,7 +39,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         const dex =
           new ModdedDex(Dex.mod('gen4pt' as ID, await import('./gen4pt') as ModData));
         expect(dex.gen).toBe(4);
-        expect(dex.species.get('Pichu-Spiky-Eared').isNonstandard).toEqual('Future');
+        expect(dex.species.get('Pichu-Spiky-Eared').isNonstandard).toBe('Future');
         expect((await dex.learnsets.get('hooh')).learnset!['bravebird']).toBeUndefined();
       });
 
@@ -47,9 +47,9 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         const dex =
           new ModdedDex(Dex.mod('gen5bw1' as ID, await import('./gen5bw1') as ModData));
         expect(dex.gen).toBe(5);
-        expect(dex.species.get('Kyurem-Black').isNonstandard).toEqual('Future');
+        expect(dex.species.get('Kyurem-Black').isNonstandard).toBe('Future');
         expect(dex.species.get('beedrill').unreleasedHidden).toBe(true);
-        expect(dex.items.get('Custap Berry').isNonstandard).toEqual('Unobtainable');
+        expect(dex.items.get('Custap Berry').isNonstandard).toBe('Unobtainable');
         expect((await dex.learnsets.get('growlithe')).learnset!['outrage']).toBeUndefined();
       });
 
@@ -57,7 +57,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         const dex =
           new ModdedDex(Dex.mod('gen6xy' as ID, await import('./gen6xy') as ModData));
         expect(dex.gen).toBe(6);
-        expect(dex.species.get('Beedrill-Mega').isNonstandard).toEqual('Future');
+        expect(dex.species.get('Beedrill-Mega').isNonstandard).toBe('Future');
         expect(dex.species.get('articuno').unreleasedHidden).toBe(true);
         expect(dex.items.get('red orb').isNonstandard).toBe('Future');
         expect(dex.moves.get('Hyperspace Fury').isNonstandard).toBe('Future');
