@@ -75,7 +75,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'Standard NatDex',
 		desc: "The standard ruleset for all National Dex tiers",
 		ruleset: [
-			'Obtainable', '+Unobtainable', '+Past', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
+			'Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
 		],
 		onValidateSet(set) {
 			// These Pokemon are still unobtainable
@@ -280,9 +280,25 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 	},
-	alolapokedex: {
+	oldalolapokedex: {
 		effectType: 'ValidatorRule',
-		name: 'Alola Pokedex',
+		name: 'Old Alola Pokedex',
+		desc: "Only allows Pok&eacute;mon native to the Alola region (SUMO)",
+		banlist: ['Pikachu-Partner', 'Marowak-Alola-Totem', 'Ribombee-Totem', 'Araquanid-Totem', 'Lycanroc-Dusk', 'Necrozma-Dusk-Mane', 'Necrozma-Dawn-Wings'],
+		onValidateSet(set, format) {
+			const alolaDex = [
+				"Rowlet", "Dartrix", "Decidueye", "Litten", "Torracat", "Incineroar", "Popplio", "Brionne", "Primarina", "Pikipek", "Trumbeak", "Toucannon", "Yungoos", "Gumshoos", "Rattata-Alola", "Raticate-Alola", "Caterpie", "Metapod", "Butterfree", "Ledyba", "Ledian", "Spinarak", "Ariados", "Pichu", "Pikachu", "Raichu-Alola", "Grubbin", "Charjabug", "Vikavolt", "Bonsly", "Sudowoodo", "Happiny", "Chansey", "Blissey", "Munchlax", "Snorlax", "Slowpoke", "Slowbro", "Slowking", "Wingull", "Pelipper", "Abra", "Kadabra", "Alakazam", "Meowth-Alola", "Persian-Alola", "Magnemite", "Magneton", "Magnezone", "Grimer-Alola", "Muk-Alola", "Growlithe", "Arcanine", "Drowzee", "Hypno", "Makuhita", "Hariyama", "Smeargle", "Crabrawler", "Crabominable", "Gastly", "Haunter", "Gengar", "Drifloon", "Drifblim", "Misdreavus", "Mismagius", "Zubat", "Golbat", "Crobat", "Diglett-Alola", "Dugtrio-Alola", "Spearow", "Fearow", "Rufflet", "Braviary", "Vullaby", "Mandibuzz", "Mankey", "Primeape", "Delibird", "Oricorio", "Cutiefly", "Ribombee", "Petilil", "Lilligant", "Cottonee", "Whimsicott", "Psyduck", "Golduck", "Magikarp", "Gyarados", "Barboach", "Whiscash", "Machop", "Machoke", "Machamp", "Roggenrola", "Boldore", "Gigalith", "Carbink", "Sableye", "Rockruff", "Lycanroc", "Spinda", "Tentacool", "Tentacruel", "Finneon", "Lumineon", "Wishiwashi", "Luvdisc", "Corsola", "Mareanie", "Toxapex", "Shellder", "Cloyster", "Bagon", "Shelgon", "Salamence", "Lillipup", "Herdier", "Stoutland", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Espeon", "Umbreon", "Leafeon", "Glaceon", "Sylveon", "Mudbray", "Mudsdale", "Igglybuff", "Jigglypuff", "Wigglytuff", "Tauros", "Miltank", "Surskit", "Masquerain", "Dewpider", "Araquanid", "Fomantis", "Lurantis", "Morelull", "Shiinotic", "Paras", "Parasect", "Poliwag", "Poliwhirl", "Poliwrath", "Politoed", "Goldeen", "Seaking", "Feebas", "Milotic", "Alomomola", "Fletchling", "Fletchinder", "Talonflame", "Salandit", "Salazzle", "Cubone", "Marowak-Alola", "Kangaskhan", "Magby", "Magmar", "Magmortar", "Stufful", "Bewear", "Bounsweet", "Steenee", "Tsareena", "Comfey", "Pinsir", "Oranguru", "Passimian", "Goomy", "Sliggoo", "Goodra", "Castform", "Wimpod", "Golisopod", "Staryu", "Starmie", "Sandygast", "Palossand", "Cranidos", "Rampardos", "Shieldon", "Bastiodon", "Archen", "Archeops", "Tirtouga", "Carracosta", "Phantump", "Trevenant", "Nosepass", "Probopass", "Pyukumuku", "Chinchou", "Lanturn", "Type: Null", "Silvally", "Zygarde", "Trubbish", "Garbodor", "Skarmory", "Ditto", "Cleffa", "Clefairy", "Clefable", "Minior", "Beldum", "Metang", "Metagross", "Porygon", "Porygon2", "Porygon-Z", "Pancham", "Pangoro", "Komala", "Torkoal", "Turtonator", "Togedemaru", "Elekid", "Electabuzz", "Electivire", "Geodude-Alola", "Graveler-Alola", "Golem-Alola", "Sandile", "Krokorok", "Krookodile", "Trapinch", "Vibrava", "Flygon", "Gible", "Gabite", "Garchomp", "Klefki", "Mimikyu", "Bruxish", "Drampa", "Absol", "Snorunt", "Glalie", "Froslass", "Sneasel", "Weavile", "Sandshrew-Alola", "Sandslash-Alola", "Vulpix-Alola", "Ninetales-Alola", "Vanillite", "Vanillish", "Vanilluxe", "Snubbull", "Granbull", "Shellos", "Gastrodon", "Relicanth", "Dhelmise", "Carvanha", "Sharpedo", "Wailmer", "Wailord", "Lapras", "Exeggcute", "Exeggutor-Alola", "Jangmo-o", "Hakamo-o", "Kommo-o", "Emolga", "Scyther", "Scizor", "Murkrow", "Honchkrow", "Riolu", "Lucario", "Dratini", "Dragonair", "Dragonite", "Aerodactyl", "Tapu Koko", "Tapu Lele", "Tapu Bulu", "Tapu Fini", "Cosmog", "Cosmoem", "Solgaleo", "Lunala", "Nihilego", "Buzzwole", "Pheromosa", "Xurkitree", "Celesteela", "Kartana", "Guzzlord", "Necrozma", "Magearna", "Marshadow",
+			];
+			const species = this.dex.species.get(set.species || set.name);
+			if (!alolaDex.includes(species.baseSpecies) && !alolaDex.includes(species.name) &&
+				!this.ruleTable.has('+' + species.id)) {
+				return [`${species.baseSpecies} is not in the Old Alola Pokédex.`];
+			}
+		},
+	},
+	newalolapokedex: {
+		effectType: 'ValidatorRule',
+		name: 'New Alola Pokedex',
 		desc: "Only allows Pok&eacute;mon native to the Alola region (US/UM)",
 		onValidateSet(set, format) {
 			const alolaDex = [
@@ -291,7 +307,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			const species = this.dex.species.get(set.species || set.name);
 			if (!alolaDex.includes(species.baseSpecies) && !alolaDex.includes(species.name) &&
 				!this.ruleTable.has('+' + species.id)) {
-				return [`${species.baseSpecies} is not in the Alola Pokédex.`];
+				return [`${species.baseSpecies} is not in the New Alola Pokédex.`];
 			}
 		},
 	},
@@ -550,6 +566,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			this.add('rule', '2 Ability Clause: Limit two of each ability');
 		},
 		onValidateTeam(team) {
+			if (this.format.id === 'gen8multibility') return;
 			const abilityTable = new Map<string, number>();
 			const base: {[k: string]: string} = {
 				airlock: 'cloudnine',
@@ -960,16 +977,14 @@ export const Rulesets: {[k: string]: FormatData} = {
 				} else {
 					typeTable = typeTable.filter(type => species.types.includes(type));
 				}
-				if (this.gen >= 7) {
-					const item = this.dex.items.get(set.item);
-					if (item.megaStone && species.baseSpecies === item.megaEvolves) {
-						species = this.dex.species.get(item.megaStone);
-						typeTable = typeTable.filter(type => species.types.includes(type));
-					}
-					if (item.id === "ultranecroziumz" && species.baseSpecies === "Necrozma") {
-						species = this.dex.species.get("Necrozma-Ultra");
-						typeTable = typeTable.filter(type => species.types.includes(type));
-					}
+				const item = this.dex.items.get(set.item);
+				if (item.megaStone && species.baseSpecies === item.megaEvolves) {
+					species = this.dex.species.get(item.megaStone);
+					typeTable = typeTable.filter(type => species.types.includes(type));
+				}
+				if (item.id === "ultranecroziumz" && species.baseSpecies === "Necrozma") {
+					species = this.dex.species.get("Necrozma-Ultra");
+					typeTable = typeTable.filter(type => species.types.includes(type));
 				}
 				if (!typeTable.length) return [`Your team must share a type.`];
 			}
@@ -1188,6 +1203,12 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 	},
+	'sketchgen8moves': {
+		effectType: 'ValidatorRule',
+		name: 'Sketch Gen 8 Moves',
+		desc: "Allows Pokémon who learn Sketch to learn any Gen 8 move (normally, Sketch is not usable in Gen 8).",
+		// Implemented in sim/team-validator.ts
+	},
 	mimicglitch: {
 		effectType: 'ValidatorRule',
 		name: 'Mimic Glitch',
@@ -1371,7 +1392,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		hasValue: 'positive-integer',
 		// hardcoded in sim/side
 		onValidateRule() {
-			if (!this.ruleTable.has('teampreview')) {
+			if (!(this.ruleTable.has('teampreview') || this.ruleTable.has('teamtypepreview'))) {
 				throw new Error(`The "Picked Team Size" rule${this.ruleTable.blame('pickedteamsize')} requires Team Preview.`);
 			}
 		},

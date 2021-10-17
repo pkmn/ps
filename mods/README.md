@@ -24,11 +24,11 @@ This package contains data and logic for several mods:
 - `gen4pt`: A mod on top of Generation 4 which contains data from just Diamond, Pearl, and Platinum
 - `gen5bw1`: A mod on top of Generation 5 which contains data from just Black & White
 - `gen6xy`: A mod on top of Generation 6 which contains data from just X & Y
+- `gen7sm`: A mod on top of Generation 7 which contains Pokémon Sun & Moon data (as opposed to Ultra
+  Sun and Ultra Moon)
 - `gen7letsgo`: A mod on top of Generation 7 which implements Let's Go Pikachu and Let's Go Eevee
 - `gen8dlc1`: A mod on top of Generation 8 which contains data from just Pokémon Sword and Shield
    and the Isle of Armor DLC (ie. Generation 8 **without** the data from the Crown Tundra DLC)
-- `vgc17`: A mod on top of Generation 7 which contains Pokémon Sun & Moon data (as opposed to Ultra
-  Sun and Ultra Moon)
 
 These mods can be applied to a `Dex` implementation by passing the data as an argument to the `mod`
 method. Because of type inconsistencies between `@pkmn/sim` and `@pkmn/dex`, to typecheck **the
@@ -38,7 +38,7 @@ in slightly less ergonomic usage than would be desirable.
 ```ts
 import {Dex, ID, ModData} from '@pkmn/dex'; // '@pkmn/sim'
 
-const dex = Dex.mod('vgc17' as ID, await import('@pkmn/mods/vgc17') as ModData);
+const dex = Dex.mod('gen7sm' as ID, await import('@pkmn/mods/gen7sm') as ModData);
 ```
 
 The TypeScript compiler may require special configuration to be able to directly import a

@@ -4157,7 +4157,7 @@
     "aerodactyl": {"tier": "NU", "doublesTier": "(DUU)"},
     "aerodactylmega": {"isNonstandard": "Past", "tier": "Illegal"},
     "munchlax": {"tier": "LC"},
-    "snorlax": {"tier": "NU", "doublesTier": "(DUU)"},
+    "snorlax": {"tier": "NUBL", "doublesTier": "(DUU)"},
     "snorlaxgmax": {
       "isNonstandard": "Gigantamax",
       "tier": "AG",
@@ -5142,7 +5142,7 @@
     "zarude": {"tier": "UU", "doublesTier": "(DUU)"},
     "zarudedada": {},
     "regieleki": {"tier": "UU", "doublesTier": "DOU"},
-    "regidrago": {"tier": "NU", "doublesTier": "DUU"},
+    "regidrago": {"tier": "NUBL", "doublesTier": "DUU"},
     "glastrier": {"tier": "NU", "doublesTier": "DUU"},
     "spectrier": {"tier": "Uber", "doublesTier": "DUU"},
     "calyrex": {"tier": "(PU)", "doublesTier": "(DUU)"},

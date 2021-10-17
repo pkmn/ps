@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/mods",
-  "version": "0.4.19",
+  "version": "0.4.20",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "exports": {
@@ -12,8 +12,8 @@
     "./gen5bw1": "./build/gen5bw1/index.js",
     "./gen6xy": "./build/gen6xy/index.js",
     "./gen7letsgo": "./build/gen7letsgo/index.js",
-    "./gen8dlc1": "./build/gen8dlc1/index.js",
-    "./vgc17": "./build/vgc17/index.js"
+    "./gen7sm": "./build/gen7sm/index.js",
+    "./gen8dlc1": "./build/gen8dlc1/index.js"
   },
   "description": "Support for non-standard mods to @pkmn/sim and @pkmn/dex",
   "repository": "github:pkmn/ps",
@@ -33,11 +33,11 @@
     "!src/*.test.*"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.4.19"
+    "@pkmn/dex-types": "^0.4.20"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.4.19",
-    "@pkmn/sim": "^0.4.19"
+    "@pkmn/dex": "^0.4.20",
+    "@pkmn/sim": "^0.4.20"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
@@ -68,8 +68,8 @@
           "./src/gen5bw1/*.ts",
           "./src/gen6xy/*.ts",
           "./src/gen7letsgo/*.ts",
-          "./src/gen8dlc1/*.ts",
-          "./src/vgc17/*.ts"
+          "./src/gen7sm/*.ts",
+          "./src/gen8dlc1/*.ts"
         ],
         "rules": {
           "@typescript-eslint/quotes": "off",

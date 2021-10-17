@@ -64,6 +64,16 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect((await dex.learnsets.get('groudon')).learnset!['precipiceblades']).toBeUndefined();
       });
 
+      it('gen7sm', async () => {
+        const dex = new ModdedDex(Dex.mod('gen7sm' as ID, await import('./gen7sm') as ModData));
+        expect(dex.gen).toBe(7);
+        expect(dex.species.get('naganadel').isNonstandard).toBe('Future');
+        expect(dex.items.get('kommoniumz').isNonstandard).toBe('Future');
+        expect((await dex.learnsets.get('swirlix')).learnset!['stickyweb']).toBeUndefined();
+        expect(dex.species.get('incineroar').unreleasedHidden).toBe(true);
+        expect((await dex.learnsets.get('sandslashalola')).learnset!['iceshard']).toBeUndefined();
+      });
+
       it('gen7letsgo', async () => {
         const dex =
           new ModdedDex(Dex.mod('gen7letsgo' as ID, await import('./gen7letsgo') as ModData));
@@ -85,16 +95,6 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.species.get('dracozolt').unreleasedHidden).toBe(true);
         expect(dex.abilities.get('Curious Medicine').isNonstandard).toBe('Unobtainable');
         expect(dex.moves.get('Dragon Ascent').isNonstandard).toBe('Unobtainable');
-      });
-
-      it('vgc17', async () => {
-        const dex = new ModdedDex(Dex.mod('vgc17' as ID, await import('./vgc17') as ModData));
-        expect(dex.gen).toBe(7);
-        expect(dex.species.get('naganadel').tier).toBe('Unreleased');
-        expect(dex.items.get('kommoniumz').isNonstandard).toBe('Unobtainable');
-        expect((await dex.learnsets.get('swirlix')).learnset!['stickyweb']).toBeUndefined();
-        expect(dex.species.get('incineroar').unreleasedHidden).toBe(true);
-        expect((await dex.learnsets.get('sandslashalola')).learnset!['iceshard']).toBeUndefined();
       });
     });
 

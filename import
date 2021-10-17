@@ -183,7 +183,14 @@ const MOD_IMPORTS = {
   'data/mods/gen6xy/pokedex.ts': ['ModdedSpeciesData'],
   'data/mods/gen6xy/scripts.ts': ['ModdedBattleScriptsData'],
 
-      // gen7letsgo
+  // gen7sm
+  'data/mods/gen7sm/formats-data.ts': ['ModdedSpeciesFormatsData'],
+  'data/mods/gen7sm/items.ts': ['ModdedItemData'],
+  'data/mods/gen7sm/learnsets.ts': ['ModdedLearnsetData'],
+  'data/mods/gen7sm/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/gen7sm/scripts.ts': ['ModdedBattleScriptsData'],
+
+  // gen7letsgo
   'data/mods/gen7letsgo/formats-data.ts': ['ModdedSpeciesFormatsData'],
   'data/mods/gen7letsgo/learnsets.ts': ['ModdedLearnsetData'],
   'data/mods/gen7letsgo/moves.ts': ['ModdedMoveData'],
@@ -198,14 +205,6 @@ const MOD_IMPORTS = {
   'data/mods/gen8dlc1/moves.ts': ['ModdedMoveData'],
   'data/mods/gen8dlc1/pokedex.ts': ['ModdedSpeciesData'],
   'data/mods/gen8dlc1/scripts.ts': ['ModdedBattleScriptsData'],
-
-  // vgc17
-  'data/mods/vgc17/formats-data.ts': ['ModdedSpeciesFormatsData'],
-  'data/mods/vgc17/items.ts': ['ModdedItemData'],
-  'data/mods/vgc17/learnsets.ts': ['ModdedLearnsetData'],
-  'data/mods/vgc17/pokedex.ts': ['ModdedSpeciesData'],
-  'data/mods/vgc17/rulesets.ts': ['ModdedFormatData'],
-  'data/mods/vgc17/scripts.ts': ['ModdedBattleScriptsData'],
 };
 const RANDOMS_IMPORTS = {
   'data/random-teams.ts': [
@@ -220,11 +219,11 @@ const RANDOMS_IMPORTS = {
     [['Utils'], './utils'],
     [[
       'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed',
-      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'Move',
+      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'Move', 'StatsTable',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen6/random-teams.ts': [
-    [['RandomGen7Teams'], './gen7'],
+    [['RandomGen7Teams', 'BattleFactorySpecies'], './gen7'],
     [['MoveCounter', 'TeamData'], './gen8'],
     [['Utils'], './utils'],
     [[
@@ -399,7 +398,7 @@ const MOD_OVERRIDDEN = new Set([
   'data/mods/gen8dlc1/index.ts',
   'data/mods/index.test.ts',
   'data/mods/index.ts',
-  'data/mods/vgc17/index.ts',
+  'data/mods/gen7sm/index.ts',
 ]);
 const SKIP_TESTS = new Set([
   'test/sim/data.js',

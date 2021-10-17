@@ -1,4 +1,4 @@
-import {RandomGen7Teams} from './gen7';
+import {BattleFactorySpecies, RandomGen7Teams} from './gen7';
 import {MoveCounter, TeamData} from './gen8';
 import {Utils} from './utils';
 import {
@@ -781,7 +781,7 @@ export class RandomGen6Teams extends RandomGen7Teams {
 			forme = this.sample([species.name].concat(species.cosmeticFormes));
 		}
 
-		const movePool = (species.randomBattleMoves || Object.keys(this.dex.data.Learnsets[species.id]!.learnset!)).slice();
+		const movePool = (species.randomBattleMoves || Object.keys(this.dex.species.getLearnset(species.id)!)).slice();
 		const rejectedPool = [];
 		let ability = '';
 
@@ -1112,7 +1112,7 @@ export class RandomGen6Teams extends RandomGen7Teams {
 		};
 	}
 
-	randomFactorySets: AnyObject = {};
+	randomFactorySets: {[format: string]: {[species: string]: BattleFactorySpecies}} = {};
 
 	randomFactorySet(
 		species: Species,
@@ -1214,7 +1214,7 @@ export class RandomGen6Teams extends RandomGen7Teams {
 		const pokemonPool = Object.keys(this.randomFactorySets[chosenTier]);
 
 		const teamData: TeamData = {
-			typeCount: {}, typeComboCount: {}, baseFormes: {}, megaCount: 0, has: {}, forceResult: forceResult,
+			typeCount: {}, typeComboCount: {}, baseFormes: {}, megaCount: 0, has: {}, forceResult,
 			weaknesses: {}, resistances: {},
 		};
 		const requiredMoveFamilies = ['hazardSet', 'hazardClear'];
