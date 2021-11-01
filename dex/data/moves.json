@@ -3581,6 +3581,16 @@
       "shortDesc": "-1 evasion; clears user and target side's hazards."
     },
     "devastatingdrake": {"inherit": true, "isNonstandard": null},
+    "dive": {
+      "inherit": true,
+      "flags": {
+        "contact": 1,
+        "charge": 1,
+        "protect": 1,
+        "mirror": 1,
+        "nonsky": 1
+      }
+    },
     "dizzypunch": {"inherit": true, "isNonstandard": null},
     "doubleironbash": {"inherit": true, "isNonstandard": "LGPE"},
     "doubleslap": {"inherit": true, "isNonstandard": null},
@@ -3791,6 +3801,10 @@
     "oceanicoperetta": {"inherit": true, "isNonstandard": null},
     "odorsleuth": {"inherit": true, "isNonstandard": null},
     "ominouswind": {"inherit": true, "isNonstandard": null},
+    "pollenpuff": {
+      "inherit": true,
+      "flags": {"bullet": 1, "protect": 1, "mirror": 1}
+    },
     "powder": {"inherit": true, "isNonstandard": null},
     "precipiceblades": {"inherit": true, "isNonstandard": null},
     "psychicterrain": {
@@ -5838,7 +5852,7 @@
       "name": "Coaching",
       "pp": 10,
       "priority": 0,
-      "flags": {"bypasssub": 1},
+      "flags": {"bypasssub": 1, "allyanim": 1},
       "secondary": null,
       "boosts": {"atk": 1, "def": 1},
       "target": "adjacentAlly",
@@ -6594,7 +6608,8 @@
         "charge": 1,
         "protect": 1,
         "mirror": 1,
-        "nonsky": 1
+        "nonsky": 1,
+        "allyanim": 1
       },
       "condition": {"duration": 2},
       "secondary": null,
@@ -9358,7 +9373,7 @@
       "name": "Grassy Glide",
       "pp": 20,
       "priority": 0,
-      "flags": {"contact": 1, "protect": 1, "allyanim": 1},
+      "flags": {"contact": 1, "protect": 1},
       "secondary": null,
       "target": "normal",
       "type": "Grass",
@@ -13520,7 +13535,7 @@
       "name": "Pollen Puff",
       "pp": 15,
       "priority": 0,
-      "flags": {"bullet": 1, "protect": 1, "mirror": 1},
+      "flags": {"bullet": 1, "protect": 1, "mirror": 1, "allyanim": 1},
       "secondary": null,
       "target": "normal",
       "type": "Bug",
