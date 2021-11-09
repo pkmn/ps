@@ -1,11 +1,14 @@
 <p align="center">
   <img alt="pkmn/ps" width="192" height="192" src="https://pkmn.cc/pokeball.png" />
+  <br />
+  <br />
+  <a href="https://github.com/pkmn/ps/actions/workflows/test.yml">
+    <img alt="Test Status" src="https://github.com/pkmn/ps/workflows/Tests/badge.svg" />
+  </a>
+  <a href="https://github.com/pkmn/ps/blob/master/LICENSE">
+    <img alt="License" src="https://img.shields.io/badge/License-MIT-blue.svg" />
+  </a>
 </p>
-
-# `pkmn/ps`
-
-![Test Status](https://github.com/pkmn/ps/workflows/Tests/badge.svg)
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 > [Pokémon Showdown](https://pokemonshowdown.com), [modularized into
 > packages](https://pkmn.cc/modular-ps).
