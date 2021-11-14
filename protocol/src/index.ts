@@ -79,7 +79,7 @@ export namespace Protocol {
    */
   export type PokemonDetails = string & As<'PokemonDetails'>;
   /** `` `${ident}|${details}` ``. Tracked for ease of searching. */
-  export type PokemonSearchID= string & As<'PokemonSearchID'>;
+  export type PokemonSearchID = string & As<'PokemonSearchID'>;
   /**
    * The switched Pokémon has HP `HP`, and status `STATUS`. `HP` is specified as a fraction; if it
    * is your own Pokémon then it will be `CURRENT/MAX`, if not, it will be `/100` if HP Percentage
@@ -1254,7 +1254,7 @@ export namespace Protocol {
      */
     '|-sideend|': readonly ['-sideend', Side, SideCondition];
     /**
-     * `|-sswapsideconditions`
+     * `|-swapsideconditions`
      *
      * Swaps side conditions between sides. Used for Court Change.
      */
