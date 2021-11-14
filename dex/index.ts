@@ -375,7 +375,10 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly basePowerModifier?: number;
   readonly critModifier?: number;
   readonly critRatio?: number;
-  readonly defensiveCategory?: T.MoveCategory;
+  readonly overrideOffensivePokemon?: 'target' | 'source';
+  readonly overrideOffensiveStat?: Exclude<T.StatID, 'hp'>;
+  readonly overrideDefensivePokemon?: 'target' | 'source';
+  readonly overrideDefensiveStat?: Exclude<T.StatID, 'hp'>;
   readonly forceSTAB?: boolean;
   readonly ignoreAbility?: boolean;
   readonly ignoreAccuracy?: boolean;
@@ -398,8 +401,6 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly smartTarget?: boolean;
   readonly spreadModifier?: number;
   readonly tracksTarget?: boolean;
-  readonly useSourceDefensiveAsOffensive?: boolean;
-  readonly useTargetOffensive?: boolean;
   readonly willCrit?: boolean;
 
   readonly hasCrashDamage?: boolean;

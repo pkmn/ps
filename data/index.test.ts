@@ -163,8 +163,12 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(3).moves.get('Psychic')!.category).toBe('Special');
         expect(Gen(7).moves.get('Rock Slide')!.target).toBe('allAdjacentFoes');
         expect(Gen(4).moves.get('Psychic')!.category).toBe('Special');
-        expect(Gen(5).moves.get('Psychic')!.defensiveCategory).toBeUndefined();
-        expect(Gen(5).moves.get('Psyshock')!.defensiveCategory).toBe('Physical');
+        expect(Gen(5).moves.get('Psychic')!.overrideOffensivePokemon).toBeUndefined();
+        expect(Gen(5).moves.get('Foul Play')!.overrideOffensivePokemon).toBe('target');
+        expect(Gen(1).moves.get('Surf')!.overrideOffensiveStat).toBeUndefined();
+        expect(Gen(8).moves.get('Body Press')!.overrideOffensiveStat).toBe('def');
+        expect(Gen(5).moves.get('Grass Knot')!.overrideDefensiveStat).toBeUndefined();
+        expect(Gen(6).moves.get('Psyshock')!.overrideDefensiveStat).toBe('def');
         expect(Gen(7).moves.get('Rock Slide')!.target).toBe('allAdjacentFoes');
         expect(Gen(7).moves.get('Extreme Speed')!.priority).toBe(2);
         // FIXME expect(Gen(1).moves.get('Acid Armor')!.flags).toEqual({});

@@ -11,8 +11,6 @@ const config = {
     ['@babel/plugin-transform-typescript', {'isTSX': true, "allowDeclareFields": true}],
     ['@babel/plugin-proposal-class-properties', {'loose': true}],
     "remove-import-export",
-		"@babel/plugin-proposal-logical-assignment-operators",
-		["@babel/plugin-proposal-nullish-coalescing-operator", {"loose": true}],
     ['@babel/plugin-proposal-optional-chaining', {'loose': true}],
     ['@babel/plugin-proposal-object-rest-spread', {'loose': true, 'useBuiltIns': true}],
     '@babel/plugin-proposal-optional-catch-binding',

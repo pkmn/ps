@@ -177,7 +177,10 @@ export interface MoveData extends EffectData, HitEffect {
   basePowerModifier?: number;
   critModifier?: number;
   critRatio?: number;
-  defensiveCategory?: MoveCategory;
+  overrideOffensivePokemon?: 'target' | 'source';
+  overrideOffensiveStat?: Exclude<StatID, 'hp'>;
+  overrideDefensivePokemon?: 'target' | 'source';
+  overrideDefensiveStat?: Exclude<StatID, 'hp'>;
   forceSTAB?: boolean;
   ignoreAbility?: boolean;
   ignoreAccuracy?: boolean;
@@ -200,8 +203,6 @@ export interface MoveData extends EffectData, HitEffect {
   smartTarget?: boolean;
   spreadModifier?: number;
   tracksTarget?: boolean;
-  useSourceDefensiveAsOffensive?: boolean;
-  useTargetOffensive?: boolean;
   willCrit?: boolean;
 
   hasCrashDamage?: boolean;

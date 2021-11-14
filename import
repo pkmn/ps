@@ -116,7 +116,7 @@ const IMPORTS = {
   ],
   'sim/dex-moves.ts': [
     'AnyObject', 'ID', 'SparseBoostsTable', 'Pokemon', 'Ability', 'ConditionData', 'CommonHandlers',
-    'EffectData', 'Battle', 'Side', 'Effect', 'ModdedDex',
+    'EffectData', 'Battle', 'Side', 'Effect', 'ModdedDex', 'StatIDExceptHP',
   ],
   'sim/field.ts': ['Effect', 'Condition', 'Pokemon', 'Battle', 'Side', 'AnyObject', 'ID'],
   'sim/pokemon.ts': [

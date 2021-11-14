@@ -8,13 +8,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	pikachu: {
 		inherit: true,
 		prevo: '',
-		evos: ["raichu"],
-		evoLevel: undefined,
+		evos: ["Raichu"],
 	},
 	raichualola: {
 		inherit: true,
 		prevo: '',
-		evoLevel: undefined,
 	},
 	cleffa: {
 		inherit: true,
@@ -23,7 +21,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	clefairy: {
 		inherit: true,
 		prevo: '',
-		evoLevel: undefined,
 	},
 	igglybuff: {
 		inherit: true,
@@ -32,7 +29,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	jigglypuff: {
 		inherit: true,
 		prevo: '',
-		evoLevel: undefined,
 	},
 	golbat: {
 		inherit: true,
@@ -40,15 +36,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	gloom: {
 		inherit: true,
-		evos: ["vileplume"],
+		evos: ["Vileplume"],
 	},
 	poliwhirl: {
 		inherit: true,
-		evos: ["poliwrath"],
+		evos: ["Poliwrath"],
 	},
 	slowpoke: {
 		inherit: true,
-		evos: ["slowbro"],
+		evos: ["Slowbro"],
 	},
 	magneton: {
 		inherit: true,
@@ -60,25 +56,23 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	exeggcute: {
 		inherit: true,
-		evos: ["exeggutor"],
+		evos: ["Exeggutor"],
 	},
 	exeggutoralola: {
 		inherit: true,
 		prevo: '',
-		evoLevel: undefined,
 	},
 	cubone: {
 		inherit: true,
-		evos: ["marowak"],
+		evos: ["Marowak"],
 	},
 	marowakalola: {
 		inherit: true,
 		prevo: '',
-		evoLevel: undefined,
 	},
 	tyrogue: {
 		inherit: true,
-		evos: ["hitmontop"],
+		evos: ["Hitmontop"],
 	},
 	hitmonlee: {
 		inherit: true,
@@ -104,7 +98,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		prevo: '',
 		evos: [],
-		evoLevel: undefined,
 	},
 	tangela: {
 		inherit: true,
@@ -121,8 +114,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	mrmime: {
 		inherit: true,
 		prevo: '',
-		evoLevel: undefined,
-		evoMove: '',
 	},
 	scyther: {
 		inherit: true,
@@ -135,7 +126,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	jynx: {
 		inherit: true,
 		prevo: '',
-		evoLevel: undefined,
 	},
 	elekid: {
 		inherit: true,
@@ -145,7 +135,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		prevo: '',
 		evos: [],
-		evoLevel: undefined,
 	},
 	magby: {
 		inherit: true,
@@ -155,11 +144,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		prevo: '',
 		evos: [],
-		evoLevel: undefined,
 	},
 	eevee: {
 		inherit: true,
-		evos: ["jolteon", "flareon", "vaporeon"],
+		evos: ["Vaporeon", "Jolteon", "Flareon"],
 	},
 	porygon: {
 		inherit: true,
@@ -172,6 +160,5 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	snorlax: {
 		inherit: true,
 		prevo: '',
-		evoLevel: undefined,
 	},
 };
