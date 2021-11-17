@@ -45,6 +45,7 @@
   "subPackages": [
     "types",
     "sets",
+    "streams",
     "sim",
     "randoms",
     "protocol",

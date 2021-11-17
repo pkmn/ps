@@ -1,0 +1,46 @@
+{
+  "name": "@pkmn/streams",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "description": "An automatically generated extraction of Pokémon Showdown's streams library",
+  "repository": "github:pkmn/ps",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "build",
+    "index.ts"
+  ],
+  "scripts": {
+    "lint": "eslint --cache *.ts",
+    "fix": "eslint --fix *.ts",
+    "compile": "tsc -p .",
+    "build": "npm run compile",
+    "pretest": "npm run build",
+    "test": "npm run lint"
+  },
+  "eslintConfig": {
+    "extends": "@pkmn",
+    "rules": {
+      "@typescript-eslint/quotes": "off",
+      "@typescript-eslint/indent": [
+        "error",
+        "tab",
+        {
+          "flatTernaryExpressions": true
+        }
+      ],
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/member-delimiter-style": "off",
+      "@typescript-eslint/no-floating-promises": [
+        "error",
+        {
+          "ignoreVoid": true
+        }
+      ],
+      "max-len": "off"
+    }
+  }
+}

@@ -78,6 +78,7 @@ const dex = path.resolve(__dirname, 'dex');
 const view = path.resolve(__dirname, 'view');
 const mods = path.resolve(__dirname, 'mods');
 const randoms = path.resolve(__dirname, 'randoms');
+const streams = path.resolve(__dirname, 'streams');
 
 // > fucking hell zarle, friends don't let friends use globals :(
 //
@@ -374,6 +375,7 @@ const OVERRIDDEN = new Set([
   'data/mods/gen6/index.ts',
   'data/mods/gen7/index.ts',
   'lib/index.ts',
+  'lib/streams.ts',
   'package-lock.json', // double sigh...
   'package.json',
   'pnpm-debug.log', // sigh...
@@ -576,6 +578,14 @@ const changes = async (where, last, now, repo) => ({
       }
     }
 
+    const index = fs.readFileSync(path.resolve(ps, 'lib/streams.ts'), 'utf8').replace(
+      'Documented in STREAMS.md.', 'Documentation can be found at\n' +
+      ' * https://github.com/smogon/pokemon-showdown/blob/master/lib/STREAMS.md');
+    // double fuck you zarle, AnyObject is a dreadful hack to begin with, feel ashamed
+    fs.writeFileSync(path.resolve(streams, 'index.ts'),
+      `interface AnyObject {[k: string]: any}\n${index}`);
+    fs.writeFileSync(path.resolve(sim, 'lib/streams.ts'), `export * from "@pkmn/streams";\n`);
+
     // Copy the files over, generating an 'import' statement for those that need it
     for (const file of COPIED) {
       if (IMPORTS[file]) {
@@ -589,11 +599,6 @@ const changes = async (where, last, now, repo) => ({
           : original;
         fs.writeFileSync(path.resolve(sim, file),
           `${imports(IMPORTS[file], prefix + '/exported-global-types')}${rewritten}`);
-      } else if (file === 'lib/streams.ts') {
-        const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
-        // double fuck you zarle, AnyObject is a dreadful hack to begin with, feel ashamed
-        fs.writeFileSync(path.resolve(sim, file),
-          `import {AnyObject} from '../sim/exported-global-types';\n${original}`);
       } else {
         fs.copyFileSync(path.resolve(ps, file), path.resolve(sim, file));
       }

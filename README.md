@@ -38,6 +38,8 @@ This is the top level of [`@pkmn`](https://pkmn.cc/@pkmn/)'s Pokémon Showdown c
 - [`@pkmn/login`](login): logic for authenticating with Pokémon Showdown
 - [`@pkmn/randoms`](randoms): random team generation logic for Pokémon Showdown's Random Battle
   formats, for use with [`@pkmn/sim`](sim)
+- [`@pkmn/streams`](streams): an automatically generated extraction of Pokémon Showdown's streams
+  library
 
 Everything in this repository is distributed under the terms of the [MIT License](LICENSE). For
 some packages, substantial amounts of the code have been either derived or generated from the
