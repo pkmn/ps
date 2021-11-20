@@ -184,6 +184,13 @@ const MOD_IMPORTS = {
   'data/mods/gen6xy/pokedex.ts': ['ModdedSpeciesData'],
   'data/mods/gen6xy/scripts.ts': ['ModdedBattleScriptsData'],
 
+  // gen7letsgo
+  'data/mods/gen7letsgo/formats-data.ts': ['ModdedSpeciesFormatsData'],
+  'data/mods/gen7letsgo/learnsets.ts': ['ModdedLearnsetData'],
+  'data/mods/gen7letsgo/moves.ts': ['ModdedMoveData'],
+  'data/mods/gen7letsgo/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/gen7letsgo/scripts.ts': ['ModdedBattleScriptsData', 'StatsTable', 'StatID'],
+
   // gen7sm
   'data/mods/gen7sm/formats-data.ts': ['ModdedSpeciesFormatsData'],
   'data/mods/gen7sm/items.ts': ['ModdedItemData'],
@@ -191,12 +198,15 @@ const MOD_IMPORTS = {
   'data/mods/gen7sm/pokedex.ts': ['ModdedSpeciesData'],
   'data/mods/gen7sm/scripts.ts': ['ModdedBattleScriptsData'],
 
-  // gen7letsgo
-  'data/mods/gen7letsgo/formats-data.ts': ['ModdedSpeciesFormatsData'],
-  'data/mods/gen7letsgo/learnsets.ts': ['ModdedLearnsetData'],
-  'data/mods/gen7letsgo/moves.ts': ['ModdedMoveData'],
-  'data/mods/gen7letsgo/pokedex.ts': ['ModdedSpeciesData'],
-  'data/mods/gen7letsgo/scripts.ts': ['ModdedBattleScriptsData', 'StatsTable', 'StatID'],
+
+  // gen8bdsp
+  'data/mods/gen8bdsp/formats-data.ts': ['ModdedSpeciesFormatsData'],
+  'data/mods/gen8bdsp/items.ts': ['ModdedItemData'],
+  'data/mods/gen8bdsp/learnsets.ts': ['ModdedLearnsetData'],
+  'data/mods/gen8bdsp/moves.ts': ['ModdedMoveData'],
+  'data/mods/gen8bdsp/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/gen8bdsp/rulesets.ts': ['ModdedFormatData'],
+  'data/mods/gen8bdsp/scripts.ts': ['ModdedBattleScriptsData'],
 
   // gen8dlc1
   'data/mods/gen8dlc1/abilities.ts': ['ModdedAbilityData'],
@@ -397,10 +407,11 @@ const MOD_OVERRIDDEN = new Set([
   'data/mods/gen5bw1/index.ts',
   'data/mods/gen6xy/index.ts',
   'data/mods/gen7letsgo/index.ts',
+  'data/mods/gen7sm/index.ts',
+  'data/mods/gen8bdsp/index.ts',
   'data/mods/gen8dlc1/index.ts',
   'data/mods/index.test.ts',
   'data/mods/index.ts',
-  'data/mods/gen7sm/index.ts',
 ]);
 const SKIP_TESTS = new Set([
   'test/sim/data.js',

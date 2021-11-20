@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/mods",
-  "version": "0.4.22",
+  "version": "0.4.23",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "exports": {
@@ -13,6 +13,7 @@
     "./gen6xy": "./build/gen6xy/index.js",
     "./gen7letsgo": "./build/gen7letsgo/index.js",
     "./gen7sm": "./build/gen7sm/index.js",
+    "./gen8bdsp": "./build/gen8bdsp/index.js",
     "./gen8dlc1": "./build/gen8dlc1/index.js"
   },
   "description": "Support for non-standard mods to @pkmn/sim and @pkmn/dex",
@@ -33,11 +34,11 @@
     "!src/*.test.*"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.4.22"
+    "@pkmn/dex-types": "^0.4.23"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.4.22",
-    "@pkmn/sim": "^0.4.22"
+    "@pkmn/dex": "^0.4.23",
+    "@pkmn/sim": "^0.4.23"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
@@ -69,6 +70,7 @@
           "./src/gen6xy/*.ts",
           "./src/gen7letsgo/*.ts",
           "./src/gen7sm/*.ts",
+          "./src/gen8bdsp/*.ts",
           "./src/gen8dlc1/*.ts"
         ],
         "rules": {
