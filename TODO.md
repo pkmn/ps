@@ -31,13 +31,6 @@ Once a stable format has been obtained, the team can be packed and then hashed, 
 hash can be shared to verify teams have not be changed (ie. **team lock**). Need to include a
 version number in case set import changes.
 
-## `@pkmn/data`
-
-- support O(1) lookup of data kinds by stable ID (requires efficient lookup to be implement in
-  `@pkmn/sim` and `@pkmn/dex`)
-- support iteration in stable ID order and avoid iterating over elements out of range (ie. only
-  iterate over 151 objects for Gen 1 `Species` and then complete)
-
 ## `@pkmn/img`
 
 - redo API to use better identifiers than `gen2g` (`gen: 2` = `release: 'Crystal'` > `'gen2'`)
