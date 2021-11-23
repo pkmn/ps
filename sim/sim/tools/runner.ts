@@ -1,3 +1,5 @@
+import {PokemonSet} from '../exported-global-types';
+
 /**
  * Battle Simulator runner.
  * Pokemon Showdown - http://pokemonshowdown.com/

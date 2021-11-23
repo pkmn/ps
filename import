@@ -137,6 +137,7 @@ const IMPORTS = {
     'EventInfo', 'PokemonSet', 'Ability', 'Item', 'ID', 'ModdedDex', 'Nature',
   ],
   'sim/tools/random-player-ai.ts': ['AnyObject'],
+  'sim/tools/runner.ts': ['PokemonSet'],
 };
 const MOD_IMPORTS = {
   // gen1jpn
