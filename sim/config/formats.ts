@@ -140,7 +140,8 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		ruleset: ['[Gen 8] RU'],
-		banlist: ['RU', 'NUBL', 'Drizzle', 'Drought', 'Snow Warning'],
+		banlist: ['RU', 'NUBL', 'Drizzle', 'Drought'],
+		unbanlist: ['Indeedee'],
 	},
 	{
 		name: "[Gen 8] PU",
@@ -151,7 +152,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		ruleset: ['[Gen 8] NU'],
-		banlist: ['NU', 'PUBL'],
+		banlist: ['NU', 'PUBL', 'Indeedee'],
 	},
 	{
 		name: "[Gen 8] LC",
@@ -642,10 +643,10 @@ export const Formats: FormatList = [
 		ruleset: ['[Gen 8] Doubles OU', 'Sleep Clause Mod', '2 Ability Clause', '!Obtainable Abilities'],
 		banlist: [
 			'Kyurem-Black', 'Regigigas', 'Shedinja', 'Urshifu-Rapid-Strike', 'Zygarde-Base', 'Anger Point', 'Arena Trap', 'Comatose', 'Contrary',
-			'Desolate Land', 'Fluffy', 'Fur Coat', 'Gorilla Tactics', 'Huge Power', 'Ice Scales', 'Illusion', 'Imposter', 'Innards Out', 'Intrepid Sword',
-			'Libero', 'Moody', 'Neutralizing Gas', 'Parental Bond', 'Prankster', 'Primordial Sea', 'Protean', 'Pure Power', 'Rattled', 'Serene Grace',
-			'Simple', 'Soul-Heart', 'Stakeout', 'Steam Engine', 'Speed Boost', 'Water Bubble', 'Water Compaction', 'Wonder Guard', 'King\'s Rock',
-			'Weakness Policy', 'Beat Up', 'Stored Power',
+			'Dancer', 'Desolate Land', 'Fluffy', 'Fur Coat', 'Gorilla Tactics', 'Huge Power', 'Ice Scales', 'Illusion', 'Imposter', 'Innards Out',
+			'Intrepid Sword', 'Libero', 'Moody', 'Neutralizing Gas', 'Parental Bond', 'Prankster', 'Primordial Sea', 'Protean', 'Pure Power',
+			'Rattled', 'Serene Grace', 'Simple', 'Soul-Heart', 'Stakeout', 'Steam Engine', 'Speed Boost', 'Water Bubble', 'Water Compaction',
+			'Wonder Guard', 'King\'s Rock', 'Weakness Policy', 'Beat Up', 'Stored Power',
 		],
 	},
 
@@ -849,10 +850,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8bdsp',
 		team: 'random',
-		searchShow: false,
-		challengeShow: false,
-		tournamentShow: false,
-		ruleset: ['[Gen 8] Random Battle'],
+		ruleset: ['[Gen 8] Random Battle', '!PotD'],
 	},
 	{
 		name: "[Gen 8 BDSP] OU",
@@ -867,12 +865,15 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8 BDSP] Doubles OU",
+		threads: [
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3693891/">BDSP Doubles OU</a>`,
+		],
 
 		mod: 'gen8bdsp',
 		gameType: 'doubles',
 		searchShow: false,
 		ruleset: ['Standard Doubles'],
-		banlist: ['DUber'],
+		banlist: ['DUber', 'Swagger'],
 	},
 	{
 		name: "[Gen 8 BDSP] Battle Festival Doubles",
@@ -880,13 +881,13 @@ export const Formats: FormatList = [
 		mod: 'gen8bdsp',
 		gameType: 'doubles',
 		// VGC Timer is temporary
-		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8', 'VGC Timer'],
+		ruleset: ['Flat Rules', 'Min Source Gen = 8', 'VGC Timer'],
 	},
 	{
 		name: "[Gen 8 BDSP] Pure Hackmons",
 		desc: `Anything that can be hacked in-game and is usable in local battles is allowed.`,
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3656851/">Pure Hackmons</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3693868/">Pure Hackmons</a>`,
 		],
 
 		mod: 'gen8bdsp',

@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/mods",
-  "version": "0.4.23",
+  "version": "0.4.24",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "exports": {
@@ -34,11 +34,11 @@
     "!src/*.test.*"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.4.23"
+    "@pkmn/dex-types": "^0.4.24"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.4.23",
-    "@pkmn/sim": "^0.4.23"
+    "@pkmn/dex": "^0.4.24",
+    "@pkmn/sim": "^0.4.24"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",

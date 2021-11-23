@@ -5110,7 +5110,7 @@
     "dracozolt": {"tier": "UUBL", "doublesTier": "DUU"},
     "arctozolt": {"tier": "UUBL", "doublesTier": "(DUU)"},
     "dracovish": {"tier": "Uber", "doublesTier": "DOU"},
-    "arctovish": {"tier": "(PU)", "doublesTier": "(DUU)"},
+    "arctovish": {"tier": "NUBL", "doublesTier": "(DUU)"},
     "duraludon": {"tier": "PUBL", "doublesTier": "(DUU)"},
     "duraludongmax": {
       "isNonstandard": "Gigantamax",
