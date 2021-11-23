@@ -22,7 +22,7 @@ if (argv._[0] === 'sim') {
   (async () => process.exit(await new MultiRandomRunner(options).run()))();
 } else if (argv._[0] === 'client') {
   if (!!argv.compile) shell('node build-client');
-  const {ExhaustiveRunner} = require('./src/test/client');
+  const {ExhaustiveRunner, STATS} = require('./src/test/client');
 
   let formats;
   if (argv.formats) {
@@ -53,6 +53,14 @@ if (argv._[0] === 'sim') {
         if (failures >= maxFailures) break;
       }
     } while (forever);
+
+    for (const format in STATS) {
+      for (const key of Object.keys(STATS[format]).sort()) {
+        const kws = Object.keys(STATS[format][key]).sort();
+        console.log(`${key}${kws.length ? `: ${kws.join(', ')}` : ''}`);
+      }
+    }
+
     process.exit(failures);
   })();
 } else {

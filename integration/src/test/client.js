@@ -37,6 +37,8 @@ const window = global;
   require(`${PSC}/js/battle.js`);
 }
 
+const STATS = {};
+
 // PS does not call scene.log.add for certain message types (sigh) - this usually would not be too
 // important because they don't show up in the log, but this can effect the curLineSection (log
 // processing is unfortunately stateful) and result in different output.
@@ -122,7 +124,15 @@ class Runner {
         ps.battle.seeking = Infinity;
         ps.battle.add(line);
 
+
         const {args, kwArgs} = Protocol.parseBattleLine(line);
+        // TODO track shape of args?
+        STATS[this.format] = STATS[this.format] || {};
+        STATS[this.format][args[0]] = STATS[this.format][args[0]] || {};
+        for (const k in kwArgs) {
+          STATS[this.format][args[0]][k] = 1;
+        }
+
         if (!UNLOGGED.has(args[0])) pkmn.log += pkmn.formatter.formatText(args, kwArgs);
         battle.add(args, kwArgs);
       }
@@ -178,5 +188,6 @@ class ClientExhaustiveRunner extends ExhaustiveRunner {
   }
 }
 
+exports.STATS = STATS;
 exports.ExhaustiveRunner = ClientExhaustiveRunner;
 exports.UNLOGGED = UNLOGGED;
