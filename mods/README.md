@@ -29,6 +29,7 @@ This package contains data and logic for several mods:
 - `gen7letsgo`: A mod on top of Generation 7 which implements Let's Go Pikachu and Let's Go Eevee
 - `gen8dlc1`: A mod on top of Generation 8 which contains data from just Pokémon Sword and Shield
    and the Isle of Armor DLC (ie. Generation 8 **without** the data from the Crown Tundra DLC)
+- `gen8bdsp`: A mod on top of Generation 8 which implements Brilliant Diamond and Shining Pearl
 
 These mods can be applied to a `Dex` implementation by passing the data as an argument to the `mod`
 method. Because of type inconsistencies between `@pkmn/sim` and `@pkmn/dex`, to typecheck **the
