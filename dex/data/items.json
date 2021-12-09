@@ -5229,6 +5229,17 @@
       "gen": 6,
       "isNonstandard": "CAP",
       "desc": "If held by a Crucibelle, this item allows it to Mega Evolve in battle."
+    },
+    "vilevial": {
+      "name": "Vile Vial",
+      "fling": {"basePower": 60},
+      "onBasePowerPriority": 15,
+      "forcedForme": "Venomicon-Epilogue",
+      "itemUser": ["Venomicon-Epilogue"],
+      "num": 112,
+      "gen": 8,
+      "isNonstandard": "CAP",
+      "desc": "If held by a Venomicon, its Poison- and Flying-type attacks have 1.2x power."
     }
   }
 }

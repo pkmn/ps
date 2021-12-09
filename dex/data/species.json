@@ -26338,6 +26338,49 @@
       "eggGroups": ["Water 1", "Fairy"],
       "gen": 4
     },
+    "venomicon": {
+      "num": -67,
+      "name": "Venomicon",
+      "baseForme": "Prologue",
+      "types": ["Poison", "Flying"],
+      "gender": "N",
+      "baseStats": {
+        "hp": 85,
+        "atk": 70,
+        "def": 113,
+        "spa": 118,
+        "spd": 90,
+        "spe": 64
+      },
+      "abilities": {"0": "Stamina"},
+      "weightkg": 11.5,
+      "eggGroups": ["Undiscovered"],
+      "otherFormes": ["Venomicon-Epilogue"],
+      "formeOrder": ["Venomicon", "Venomicon-Epilogue"],
+      "gen": 8
+    },
+    "venomiconepilogue": {
+      "num": -67,
+      "name": "Venomicon-Epilogue",
+      "baseSpecies": "Venomicon",
+      "forme": "Epilogue",
+      "types": ["Poison", "Flying"],
+      "gender": "N",
+      "baseStats": {
+        "hp": 85,
+        "atk": 110,
+        "def": 85,
+        "spa": 55,
+        "spd": 85,
+        "spe": 120
+      },
+      "abilities": {"0": "Tinted Lens"},
+      "weightkg": 12.4,
+      "eggGroups": ["Undiscovered"],
+      "requiredItem": "Vile Vial",
+      "changesFrom": "Venomicon",
+      "gen": 8
+    },
     "pokestarsmeargle": {
       "num": -5000,
       "name": "Pokestar Smeargle",
