@@ -55,9 +55,9 @@ a couple of Pokémon Showdown quirks. While this interface is far from the
 
 - data returned from a `Generation`s methods are constrained to the generation in question. Data
   which does not exist, only exists in later gens, or is illegal or non standard will not be
-  returned which means you do not need filter data before using it. This allows you to define the
-  legality requirements for your data set up front across all data types and then forget about it,
-  as opposed to having to filter at each call site.
+  returned which means you do not need filter data before using it. This allows you to [define the
+  legality requirements for your data set up front](#existsfn) across all data types and then forget
+  about it, as opposed to having to filter at each call site.
 - `undefined` is returned from functions as opposed to an object with its `exists` field set to
   `false`. `undefined` fails loudly, can be checked statically by Typescript and allows for more
   efficient implementation under the hood.
@@ -98,6 +98,60 @@ assert(await gens.get(4).learnsets.canLearn('Ursaring', 'Rock Climb'));
 ```
 
 Please see the [unit tests](index.test.ts) for more comprehensive usage examples.
+
+#### `ExistsFn`
+
+Pokémon Showdown includes a lot of [nonstandard
+information](https://github.com/smogon/pokemon-showdown/blob/master/sim/NONSTANDARD.md) in its data
+files and expects developers to check the data returned by each API to ensure it is satisfactory for
+your use case. Checking at every callsite is error prone and redundant - with `@pkmn/data`, the
+filter function is configured up front on the `Generations` instance and is applied automatically on
+every API.
+
+By default, `Generations` uses an existence filter that ensures only data that exists in the latest
+official release of a given Pokémon generation is returned. This is usually what you want, and as
+such the most of the time you don't need to worry about existence at all. However, there are certain
+circumstances where you might want to loosen the restrictions of the default existence function, eg.
+to allow for Pokémon which have canonically existed but have not been included in the latest
+release. This can be accomplished by passing an `ExistsFn` implementation as the second argument to
+the `Generations` constructor:
+
+```ts
+// These species are unobtainable outside of their own generations, but this data gets lost in the 
+// Pokémon Showdown data files because isNonstandard is a scalar value and isNonstandard = 'Past'
+// overwrites the isNonstandard = 'Unobtainable' designation
+const NATDEX_UNOBTAINABLE_SPECIES = [
+  'Eevee-Starter', 'Floette-Eternal', 'Pichu-Spiky-eared', 'Pikachu-Belle', 'Pikachu-Cosplay',
+  'Pikachu-Libre', 'Pikachu-PhD', 'Pikachu-Pop-Star', 'Pikachu-Rock-Star', 'Pikachu-Starter',
+  'Eternatus-Eternamax',
+];
+
+const NATDEX_EXISTS = (g: GenerationNum, d: Data) => {
+  // The "National Dex" rules only apply to gen 8, but this ExistsFn gets called on all generations
+  if (g !== 8) return Generations.DEFAULT_EXISTS(g, d);
+  // These checks remain unchanged from the default existence filter
+  if (!d.exists) return false;
+  if (d.kind === 'Ability' && d.id === 'noability') return false;
+  // "National Dex" rules allows for data from the past, but not other forms of nonstandard-ness
+  if ('isNonstandard' in d && d.isNonstandard && d.isNonstandard !== 'Past') return false;
+  // Unlike the check in the default existence function we don't want to filter out the 'Illegal' tier
+  if ('tier' in d && d.tier === 'Unreleased') return false;
+  // Filter out the unobtainable species
+  if (d.kind === 'Species' && NATDEX_UNOBTAINABLE_SPECIES.includes(d.name)) return false;
+  // Nonstandard items other than Z-Crystals and Pokémon-specific items should be filtered
+  return !(d.kind === 'Item' && ['Past', 'Unobtainable'].includes(d.isNonstandard!) &&
+    !d.zMove && !d.itemUser && !d.forcedForme);
+};
+```
+
+The above example showcases an existence filter which includes data legal in Pokémon Showdown's
+"National Dex" metagames. This is a particularly hairy existence filter due to how the [`'Standard
+NatDex'` ruleset is
+defined](https://github.com/smogon/pokemon-showdown/blob/master/data/rulesets.ts) and is subject to
+change at the whims of the Pokémon Showdown developers. Alternative `ExistsFn` implementations can
+be used to include Pokémon from [Smogon's Create-A-Pokémon Project](https://www.smogon.com/cap/),
+unreleased data, Pokéstart Pokémon, etc. Note that as covered above, the `ExistsFn` only gets
+applied at the object-level, **field-level existence still must be handled manually**.
 
 #### Mods
 

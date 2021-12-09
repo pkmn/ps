@@ -27,7 +27,7 @@ import {
   TypeName,
 } from '@pkmn/dex-types';
 
-const DEFAULT_EXISTS = (d: Data) => {
+const DEFAULT_EXISTS = (g: GenerationNum, d: Data) => {
   if (!d.exists) return false;
   if ('isNonstandard' in d && d.isNonstandard) return false;
   if (d.kind === 'Ability' && d.id === 'noability') return false;
@@ -36,7 +36,8 @@ const DEFAULT_EXISTS = (d: Data) => {
 
 const tr = (num: number, bits = 0) => bits ? (num >>> 0) % (2 ** bits) : num >>> 0;
 
-type ExistsFn = typeof DEFAULT_EXISTS;
+export type ExistsFn = (g: GenerationNum, d: Data) => boolean;
+type BoundExistsFn = (d: Data) => boolean;
 
 function assignWithout(a: {[key: string]: any}, b: {[key: string]: any}, exclude: Set<string>) {
   for (const key in b) {
@@ -59,14 +60,16 @@ export class Generations {
   private readonly dex: Dex;
   private readonly exists: ExistsFn;
 
-  constructor(dex: Dex, exists = DEFAULT_EXISTS) {
+  static DEFAULT_EXISTS = DEFAULT_EXISTS;
+
+  constructor(dex: Dex, exists = Generations.DEFAULT_EXISTS) {
     this.dex = dex;
     this.exists = exists;
   }
 
   get(gen: GenerationNum) {
     if (this.cache[gen]) return this.cache[gen];
-    return (this.cache[gen] = new Generation(this.dex.forGen(gen), this.exists));
+    return (this.cache[gen] = new Generation(this.dex.forGen(gen), d => this.exists(gen, d)));
   }
 
   *[Symbol.iterator]() {
@@ -89,9 +92,9 @@ export class Generation {
 
   readonly dex: Dex;
 
-  private readonly exists: ExistsFn;
+  private readonly exists: BoundExistsFn;
 
-  constructor(dex: Dex, exists: ExistsFn) {
+  constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
     this.exists = exists;
 
@@ -121,9 +124,9 @@ export class Generation {
 
 export class Abilities {
   private readonly dex: Dex;
-  private readonly exists: ExistsFn;
+  private readonly exists: BoundExistsFn;
 
-  constructor(dex: Dex, exists: ExistsFn) {
+  constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
     this.exists = exists;
   }
@@ -143,9 +146,9 @@ export class Abilities {
 
 export class Items {
   private readonly dex: Dex;
-  private readonly exists: ExistsFn;
+  private readonly exists: BoundExistsFn;
 
-  constructor(dex: Dex, exists: ExistsFn) {
+  constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
     this.exists = exists;
   }
@@ -165,9 +168,9 @@ export class Items {
 
 export class Moves {
   private readonly dex: Dex;
-  private readonly exists: ExistsFn;
+  private readonly exists: BoundExistsFn;
 
-  constructor(dex: Dex, exists: ExistsFn) {
+  constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
     this.exists = exists;
   }
@@ -189,9 +192,9 @@ export class Species {
   private readonly cache = Object.create(null) as { [id: string]: Specie };
 
   private readonly dex: Dex;
-  private readonly exists: ExistsFn;
+  private readonly exists: BoundExistsFn;
 
-  constructor(dex: Dex, exists: ExistsFn) {
+  constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
     this.exists = exists;
   }
@@ -283,7 +286,7 @@ export class Specie implements DexSpecies {
     'prevo',
   ]);
 
-  constructor(dex: Dex, exists: ExistsFn, species: DexSpecies) {
+  constructor(dex: Dex, exists: BoundExistsFn, species: DexSpecies) {
     assignWithout(this, species, Specie.EXCLUDE);
     this.dex = dex;
     if (this.dex.gen >= 2) {
@@ -337,9 +340,9 @@ export class Specie implements DexSpecies {
 
 export class Conditions {
   private readonly dex: Dex;
-  private readonly exists: ExistsFn;
+  private readonly exists: BoundExistsFn;
 
-  constructor(dex: Dex, exists: ExistsFn) {
+  constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
     this.exists = exists;
   }
@@ -352,9 +355,9 @@ export class Conditions {
 
 export class Natures {
   private readonly dex: Dex;
-  private readonly exists: ExistsFn;
+  private readonly exists: BoundExistsFn;
 
-  constructor(dex: Dex, exists: ExistsFn) {
+  constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
     this.exists = exists;
   }
@@ -388,9 +391,9 @@ export class Types {
 
   private readonly unknown: Type;
   private readonly dex: Dex;
-  private readonly exists: ExistsFn;
+  private readonly exists: BoundExistsFn;
 
-  constructor(dex: Dex, exists: ExistsFn) {
+  constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
     this.exists = exists;
     // PS doesn't contain data for the '???' type
@@ -510,9 +513,9 @@ export class Learnsets {
 
   private readonly gen: Generation;
   private readonly dex: Dex;
-  private readonly exists: ExistsFn;
+  private readonly exists: BoundExistsFn;
 
-  constructor(gen: Generation, dex: Dex, exists: ExistsFn) {
+  constructor(gen: Generation, dex: Dex, exists: BoundExistsFn) {
     this.gen = gen;
     this.dex = dex;
     this.exists = exists;
