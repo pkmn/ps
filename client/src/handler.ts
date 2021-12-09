@@ -1,8 +1,10 @@
 import {
+  Ability,
   BoostID,
   Effect,
   ID,
   Item,
+  Move,
   MoveName,
   Specie,
   SpeciesName,
@@ -10,7 +12,6 @@ import {
   toID,
   TypeName,
 } from '@pkmn/data';
-import {Ability, Move} from '@pkmn/dex';
 import {Protocol, Args, KWArgs, PokemonSearchID, PokemonIdent} from '@pkmn/protocol';
 
 import {Battle, NULL, NA} from './battle';
