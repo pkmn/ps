@@ -99,6 +99,25 @@ assert(await gens.get(4).learnsets.canLearn('Ursaring', 'Rock Climb'));
 
 Please see the [unit tests](index.test.ts) for more comprehensive usage examples.
 
+#### Mods
+
+`Generations` can be used with `Dex` objects that have been modified by the `Dex.mod` API, though it
+first requires that the modded `Dex` be wrapped by the `ModdedDex` abstraction provided by
+[`@pkmn/mods`](../mods):
+
+```ts
+import {Dex, ID, ModData} from '@pkmn/dex';
+import {ModdexDex} from '@pkmn/mods';
+
+const dex = Dex.mod('gen8bdsp' as ID, await import('@pkmn/mods/gen8bdsp') as ModData);
+const gens = new Generations(new ModdedDex(dex));
+```
+
+Wrapping a modded `Dex` in `ModdedDex` is already the recommended practice to allow for better
+typechecking, but in the case of `@pkmn/data` the wrapper is required as `Generations` calls
+`Dex.forGen` under the hood which will default to an unmodded `Dex` (`ModdedDex` overrides
+`Dex.forGen` to return the modded `Dex` for the generation that was modded).
+
 ### Browser
 
 The recommended way of using `@pkmn/data` in a web browser is to **configure your bundler**

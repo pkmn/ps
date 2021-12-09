@@ -1,6 +1,8 @@
 import {GenerationNum, Generations, StatsTable, Dex as DexT, ItemName} from './index';
 
 import {calculate, Pokemon, Move} from '@smogon/calc/adaptable';
+import {ID, ModData} from '@pkmn/dex-types';
+import {ModdedDex} from '@pkmn/mods';
 import * as dex from '@pkmn/dex';
 import * as sim from '@pkmn/sim';
 
@@ -684,6 +686,20 @@ describe('Data', () => {
     }
   });
 });
+
+for (const [pkg, Dex] of Object.entries(DATA)) {
+  describe(`@pkmn/mods (${pkg})`, () => {
+    it('usage', async () => {
+      const modded = new ModdedDex(
+        Dex.mod('gen8bdsp' as ID, await import('@pkmn/mods/gen8bdsp') as ModData)
+      );
+      expect((await (new Generations(Dex).get(8).learnsets.canLearn('Weavile', 'Knock Off'))))
+        .toBe(true);
+      expect((await (new Generations(modded).get(8).learnsets.canLearn('Weavile', 'Knock Off'))))
+        .toBe(false);
+    });
+  });
+}
 
 describe('Bundle', () => {
   it('usage', async () => {

@@ -130,6 +130,7 @@ export class ModdedDex<
   }
 
   forGen(gen: number) {
+    if (this.dex.gen === gen) return this.dex;
     return this.dex.forGen(gen);
   }
 

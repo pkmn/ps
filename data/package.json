@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@pkmn/dex": "^0.4.25",
+    "@pkmn/mods": "^0.4.25",
     "@pkmn/sim": "^0.4.25",
     "@smogon/calc": "^0.6.0"
   },
@@ -41,7 +42,8 @@
       "build/"
     ],
     "moduleNameMapper": {
-      "^@smogon/calc/(.*)$": "<rootDir>/node_modules/@smogon/calc/dist/$1"
+      "^@smogon/calc/(.*)$": "<rootDir>/node_modules/@smogon/calc/dist/$1",
+      "^@pkmn/mods/(.*)$": "<rootDir>/node_modules/@pkmn/mods/build/$1"
     }
   }
 }
