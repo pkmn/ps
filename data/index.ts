@@ -27,7 +27,7 @@ import {
   TypeName,
 } from '@pkmn/dex-types';
 
-const DEFAULT_EXISTS = (g: GenerationNum, d: Data) => {
+const DEFAULT_EXISTS = (d: Data) => {
   if (!d.exists) return false;
   if ('isNonstandard' in d && d.isNonstandard) return false;
   if (d.kind === 'Ability' && d.id === 'noability') return false;
@@ -36,7 +36,7 @@ const DEFAULT_EXISTS = (g: GenerationNum, d: Data) => {
 
 const tr = (num: number, bits = 0) => bits ? (num >>> 0) % (2 ** bits) : num >>> 0;
 
-export type ExistsFn = (g: GenerationNum, d: Data) => boolean;
+export type ExistsFn = (d: Data, g: GenerationNum) => boolean;
 type BoundExistsFn = (d: Data) => boolean;
 
 function assignWithout(a: {[key: string]: any}, b: {[key: string]: any}, exclude: Set<string>) {
@@ -69,7 +69,7 @@ export class Generations {
 
   get(gen: GenerationNum) {
     if (this.cache[gen]) return this.cache[gen];
-    return (this.cache[gen] = new Generation(this.dex.forGen(gen), d => this.exists(gen, d)));
+    return (this.cache[gen] = new Generation(this.dex.forGen(gen), d => this.exists(d, gen)));
   }
 
   *[Symbol.iterator]() {

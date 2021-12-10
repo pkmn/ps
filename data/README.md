@@ -126,9 +126,9 @@ const NATDEX_UNOBTAINABLE_SPECIES = [
   'Eternatus-Eternamax',
 ];
 
-const NATDEX_EXISTS = (g: GenerationNum, d: Data) => {
+const NATDEX_EXISTS = (d: Data, g: GenerationNum) => {
   // The "National Dex" rules only apply to gen 8, but this ExistsFn gets called on all generations
-  if (g !== 8) return Generations.DEFAULT_EXISTS(g, d);
+  if (g !== 8) return Generations.DEFAULT_EXISTS(d, g);
   // These checks remain unchanged from the default existence filter
   if (!d.exists) return false;
   if (d.kind === 'Ability' && d.id === 'noability') return false;
@@ -142,6 +142,8 @@ const NATDEX_EXISTS = (g: GenerationNum, d: Data) => {
   return !(d.kind === 'Item' && ['Past', 'Unobtainable'].includes(d.isNonstandard!) &&
     !d.zMove && !d.itemUser && !d.forcedForme);
 };
+
+const gens = new Generations(Dex, NATDEX_EXISTS);
 ```
 
 The above example showcases an existence filter which includes data legal in Pokémon Showdown's
