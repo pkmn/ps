@@ -477,6 +477,8 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(await Gen(4).learnsets.canLearn('Pikachu', 'Fly')).toBe(false);
         expect(await Gen(4).learnsets.canLearn('Ursaring', 'Rock Climb')).toBe(true);
         expect(await Gen(5).learnsets.canLearn('Ursaring', 'Rock Climb')).toBe(false);
+        expect(await Gen(2).learnsets.canLearn('Charizard', 'Surf')).toBe(false);
+        expect(await Gen(1).learnsets.canLearn('Blastoise', 'Surf')).toBe(true);
       });
     });
 

@@ -582,7 +582,7 @@ export class Learnsets {
           const move = this.gen.moves.get(moveid);
           if (move) {
             const sources = learnset.learnset[moveid];
-            if (Learnsets.isLegal(move, sources, restriction || this.gen)) {
+            if (this.isLegal(move, sources, restriction || this.gen)) {
               moves[move.id] = sources.filter(s => +s.charAt(0) <= this.gen.num);
             }
           }
@@ -602,7 +602,7 @@ export class Learnsets {
     if (typeof move === 'string') return false;
 
     for await (const learnset of this.all(species)) {
-      if (Learnsets.isLegal(move, learnset.learnset?.[move.id], restriction || this.gen)) {
+      if (this.isLegal(move, learnset.learnset?.[move.id], restriction || this.gen)) {
         return true;
       }
     }
@@ -610,7 +610,7 @@ export class Learnsets {
     return false;
   }
 
-  static isLegal(move: Move, sources: MoveSource[] | undefined, gen: Generation | Restriction) {
+  isLegal(move: Move, sources: MoveSource[] | undefined, gen: Generation | Restriction) {
     if (!sources) return undefined;
 
     const gens = sources.map(x => Number(x[0]));
@@ -624,7 +624,7 @@ export class Learnsets {
     if (gen === 'Plus') return gens.includes(7) && !vcOnly;
     if (gen === 'Galar') return gens.includes(8) && !vcOnly;
 
-    if (minGen <= 4 && (GEN3_HMS.has(move.id) || GEN4_HMS.has(move.id))) {
+    if (this.gen.num >= 3 && minGen <= 4 && (GEN3_HMS.has(move.id) || GEN4_HMS.has(move.id))) {
       let legalGens = '';
       let available = false;
 
