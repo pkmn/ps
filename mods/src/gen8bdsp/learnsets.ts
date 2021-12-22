@@ -25512,6 +25512,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			torment: ["8M"],
 			toxic: ["8L46"],
 			toxicspikes: ["8L20"],
+			trickroom: ["8M"],
 			uturn: ["8M"],
 			whirlwind: ["8L32"],
 			wideguard: ["8L12"],
