@@ -10,123 +10,123 @@ const URL = `${PROTOCOL}://${DOMAIN}`;
 describe('Sprites', () => {
   it('#getPokemon', () => {
     let pokemon = Sprites.getPokemon('foobar', {gen: 4});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen5/0.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen5/0.png`);
     expect(pokemon.gen).toBe(5);
     expect(pokemon.w).toBe(96);
     expect(pokemon.h).toBe(96);
     expect(pokemon.pixelated).toBe(true);
 
     pokemon = Sprites.getPokemon('gengar', {gen: 'gen4dp'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen4dp/gengar.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen4dp/gengar.png`);
     expect(pokemon.gen).toBe(4);
     expect(pokemon.w).toBe(96);
     expect(pokemon.h).toBe(96);
     expect(pokemon.pixelated).toBe(true);
 
     pokemon = Sprites.getPokemon('Charizard', {side: 'p1', shiny: true, gender: 'F'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/ani-back-shiny/charizard.gif`);
+    expect(pokemon.url).toBe(`${URL}/sprites/ani-back-shiny/charizard.gif`);
     expect(pokemon.gen).toBe(8);
     expect(pokemon.w).toBe(172);
     expect(pokemon.h).toBe(166);
     expect(pokemon.pixelated).toBe(false);
 
     pokemon = Sprites.getPokemon('butterfree', {gen: 6, side: 'p1', gender: 'F'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/ani-back/butterfree-f.gif`);
+    expect(pokemon.url).toBe(`${URL}/sprites/ani-back/butterfree-f.gif`);
     expect(pokemon.gen).toBe(6);
     expect(pokemon.w).toBe(103);
     expect(pokemon.h).toBe(103);
     expect(pokemon.pixelated).toBe(false);
 
     pokemon = Sprites.getPokemon('corviknight', {gen: 'gen5ani', protocol: 'http'});
-    expect(pokemon.url).toEqual(`http://${DOMAIN}/sprites/gen5ani/corviknight.gif`);
+    expect(pokemon.url).toBe(`http://${DOMAIN}/sprites/gen5ani/corviknight.gif`);
     pokemon = Sprites.getPokemon('corviknight', {gen: 'gen5ani', protocol: 'http'});
-    expect(pokemon.url).toEqual(`http://${DOMAIN}/sprites/gen5ani/corviknight.gif`);
+    expect(pokemon.url).toBe(`http://${DOMAIN}/sprites/gen5ani/corviknight.gif`);
     pokemon = Sprites.getPokemon('tyranitar', {gen: 'gen1rb'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen2/tyranitar.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen2/tyranitar.png`);
     pokemon = Sprites.getPokemon('greninja', {gen: 'gen2g'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen5/greninja.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen5/greninja.png`);
     pokemon = Sprites.getPokemon('snorlax', {gen: 'gen1rb', shiny: true});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen1rb/snorlax.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen1rb/snorlax.png`);
     pokemon = Sprites.getPokemon('butterfree', {gen: 3, side: 'p1', gender: 'F'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen3-back/butterfree.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen3-back/butterfree.png`);
 
     pokemon = Sprites.getPokemon('Froslass', {gen: 'gen4dp-2', shiny: true});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen4dp-2-shiny/froslass.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen4dp-2-shiny/froslass.png`);
     pokemon = Sprites.getPokemon('Chansey', {gen: 'gen1rb', side: 'p1'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen1-back/chansey.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen1-back/chansey.png`);
     pokemon = Sprites.getPokemon('Mew', {gen: 'gen1rg', side: 'p1'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen1-back/mew.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen1-back/mew.png`);
     pokemon = Sprites.getPokemon('Mew', {gen: 'gen2g', shiny: true, side: 'p1'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen2-back-shiny/mew.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen2-back-shiny/mew.png`);
     pokemon = Sprites.getPokemon('Suicune', {gen: 'gen2s', side: 'p1'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen2-back/suicune.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen2-back/suicune.png`);
     pokemon = Sprites.getPokemon('Metagross', {gen: 'gen3rs', shiny: true, side: 'p1'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen3-back-shiny/metagross.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen3-back-shiny/metagross.png`);
     pokemon = Sprites.getPokemon('Suicune', {gen: 'gen3frlg', side: 'p1'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen3-back/suicune.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen3-back/suicune.png`);
     pokemon = Sprites.getPokemon('Froslass', {gen: 'gen4dp', side: 'p1'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen4-back/froslass.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen4-back/froslass.png`);
 
     pokemon = Sprites.getPokemon('Squirtle', {gen: 'gen3frlg', shiny: true});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen3frlg-shiny/squirtle.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen3frlg-shiny/squirtle.png`);
     pokemon = Sprites.getPokemon('Deoxys-Attack', {gen: 'gen3frlg'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen3frlg/deoxys-attack.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen3frlg/deoxys-attack.png`);
     pokemon = Sprites.getPokemon('Teddiursa', {gen: 'gen3frlg'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen3frlg/teddiursa.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen3frlg/teddiursa.png`);
     pokemon = Sprites.getPokemon('Blaziken', {gen: 'gen3frlg', shiny: true});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen3-shiny/blaziken.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen3-shiny/blaziken.png`);
 
     pokemon = Sprites.getPokemon('Unown-B', {gen: 3});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen3/unown-b.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen3/unown-b.png`);
     pokemon = Sprites.getPokemon('Arceus-Bug', {gen: 'gen5ani', shiny: true});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen5ani-shiny/arceus-bug.gif`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen5ani-shiny/arceus-bug.gif`);
     pokemon = Sprites.getPokemon('Toxtricity-Low-Key-Gmax');
-    expect(pokemon.url).toEqual(`${URL}/sprites/ani/toxtricity-gmax.gif`);
+    expect(pokemon.url).toBe(`${URL}/sprites/ani/toxtricity-gmax.gif`);
     pokemon = Sprites.getPokemon('Flabébé', {gen: 'ani'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/ani/flabebe.gif`);
+    expect(pokemon.url).toBe(`${URL}/sprites/ani/flabebe.gif`);
 
     pokemon = Sprites.getPokemon('missi ngno', {gen: 'gen1rb'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen1rb/missingno.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen1rb/missingno.png`);
     pokemon = Sprites.getPokemon('MissingNo.', {gen: 'ani', shiny: true, side: 'p1'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen1-back/missingno.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen1-back/missingno.png`);
 
     pokemon = Sprites.getPokemon('Chesnaught', {gen: 'gen5ani'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen5ani/chesnaught.gif`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen5ani/chesnaught.gif`);
     pokemon = Sprites.getPokemon('Chesnaught', {gen: 'gen5ani', shiny: true});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen5-shiny/chesnaught.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen5-shiny/chesnaught.png`);
     pokemon = Sprites.getPokemon('Pikachu-Original', {shiny: true});
-    expect(pokemon.url).toEqual(`${URL}/sprites/ani/pikachu-original.gif`);
+    expect(pokemon.url).toBe(`${URL}/sprites/ani/pikachu-original.gif`);
     pokemon = Sprites.getPokemon('Rotom-Heat', {gen: 'gen4dp-2'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen4/rotom-heat.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen4/rotom-heat.png`);
 
     pokemon = Sprites.getPokemon('Buizel', {shiny: true, side: 'p1', gender: 'F'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen5-back-shiny/buizel-f.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen5-back-shiny/buizel-f.png`);
     pokemon = Sprites.getPokemon('Buizel', {side: 'p1', gender: 'F'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/ani-back/buizel-f.gif`);
+    expect(pokemon.url).toBe(`${URL}/sprites/ani-back/buizel-f.gif`);
     pokemon = Sprites.getPokemon('Snover', {shiny: true, side: 'p1', gender: 'F'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen5-back-shiny/snover-f.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen5-back-shiny/snover-f.png`);
     pokemon = Sprites.getPokemon('Snover', {side: 'p1'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/ani-back/snover.gif`);
+    expect(pokemon.url).toBe(`${URL}/sprites/ani-back/snover.gif`);
     pokemon = Sprites.getPokemon('Unown-F', {shiny: true, side: 'p1'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen5-back-shiny/unown-f.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen5-back-shiny/unown-f.png`);
     pokemon = Sprites.getPokemon('Unown-F', {side: 'p1'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/ani-back/unown-f.gif`);
+    expect(pokemon.url).toBe(`${URL}/sprites/ani-back/unown-f.gif`);
     pokemon = Sprites.getPokemon('Unown-P', {shiny: true, side: 'p1'});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen5-back-shiny/unown-p.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen5-back-shiny/unown-p.png`);
     pokemon = Sprites.getPokemon('Unown-P', {shiny: true});
-    expect(pokemon.url).toEqual(`${URL}/sprites/ani-shiny/unown-p.gif`);
+    expect(pokemon.url).toBe(`${URL}/sprites/ani-shiny/unown-p.gif`);
   });
 
   it('#getDexPokemon', () => {
     let pokemon = Sprites.getDexPokemon('foobar', {gen: 4});
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen5/0.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen5/0.png`);
     expect(pokemon.gen).toBe(5);
     expect(pokemon.w).toBe(96);
     expect(pokemon.h).toBe(96);
     expect(pokemon.pixelated).toBe(true);
 
     pokemon = Sprites.getDexPokemon('Blissey', {gen: 4, shiny: true, protocol: 'http'});
-    expect(pokemon.url).toEqual(`http://${DOMAIN}/sprites/gen4-shiny/blissey.png`);
+    expect(pokemon.url).toBe(`http://${DOMAIN}/sprites/gen4-shiny/blissey.png`);
     expect(pokemon.gen).toBe(4);
     expect(pokemon.w).toBe(96);
     expect(pokemon.h).toBe(96);
@@ -140,28 +140,28 @@ describe('Sprites', () => {
     expect(pokemon.pixelated).toBe(true);
 
     pokemon = Sprites.getDexPokemon('melmetal', {gen: 8});
-    expect(pokemon.url).toEqual(`${URL}/sprites/dex/melmetal.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/dex/melmetal.png`);
     expect(pokemon.gen).toBe(7);
     expect(pokemon.w).toBe(128);
     expect(pokemon.h).toBe(128);
 
     pokemon = Sprites.getDexPokemon('fidgit');
-    expect(pokemon.url).toEqual(`${URL}/sprites/dex/fidgit.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/dex/fidgit.png`);
     expect(pokemon.gen).toBe(6);
     expect(pokemon.w).toBe(120);
     expect(pokemon.h).toBe(120);
 
     pokemon = Sprites.getDexPokemon('MissingNo.');
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen1/missingno.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen1/missingno.png`);
 
     pokemon = Sprites.getDexPokemon('vivillonsun');
-    expect(pokemon.url).toEqual(`${URL}/sprites/dex/vivillon-sun.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/dex/vivillon-sun.png`);
 
     pokemon = Sprites.getDexPokemon('Centiskorch');
-    expect(pokemon.url).toEqual(`${URL}/sprites/gen5/centiskorch.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/gen5/centiskorch.png`);
 
     pokemon = Sprites.getDexPokemon('Delphox', {shiny: true});
-    expect(pokemon.url).toEqual(`${URL}/sprites/dex-shiny/delphox.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/dex-shiny/delphox.png`);
   });
 
   it('#getSubstitute', () => {
@@ -170,49 +170,49 @@ describe('Sprites', () => {
     expect(sub.gen).toBe(5);
     expect(sub.w).toBe(96);
     expect(sub.h).toBe(96);
-    expect(sub.url).toEqual(`${URL}/sprites/substitutes/gen5/substitute.png`);
+    expect(sub.url).toBe(`${URL}/sprites/substitutes/gen5/substitute.png`);
     expect(sub.pixelated).toBe(true);
 
     sub = Sprites.getSubstitute({gen: 'gen5ani', side: 'p1', protocol: 'http'});
-    expect(sub.url).toEqual(`http://${DOMAIN}/sprites/substitutes/gen5-back/substitute.png`);
+    expect(sub.url).toBe(`http://${DOMAIN}/sprites/substitutes/gen5-back/substitute.png`);
 
     sub = Sprites.getSubstitute({gen: 2, side: 'p2', domain: 'pkmn.cc'});
     expect(sub.url).toBe('https://pkmn.cc/sprites/substitutes/gen1/substitute.png');
 
     sub = Sprites.getSubstitute({gen: 3, side: 'p1'});
-    expect(sub.url).toEqual(`${URL}/sprites/substitutes/gen3-back/substitute.png`);
+    expect(sub.url).toBe(`${URL}/sprites/substitutes/gen3-back/substitute.png`);
 
     sub = Sprites.getSubstitute({gen: 'gen4dp'});
-    expect(sub.url).toEqual(`${URL}/sprites/substitutes/gen4/substitute.png`);
+    expect(sub.url).toBe(`${URL}/sprites/substitutes/gen4/substitute.png`);
   });
 
   it('#getAvatar', () => {
     expect(Sprites.getAvatar(277, {domain: 'pkmn.cc'}))
       .toBe('https://pkmn.cc/sprites/trainers/cheren-gen5bw2.png');
     expect(Sprites.getAvatar('#bw2elesa'))
-      .toEqual(`${URL}/sprites/trainers/elesa-gen5bw2.png`);
+      .toBe(`${URL}/sprites/trainers/elesa-gen5bw2.png`);
     expect(Sprites.getAvatar('breederf'))
-      .toEqual(`${URL}/sprites/trainers/pokemonbreederf.png`);
+      .toBe(`${URL}/sprites/trainers/pokemonbreederf.png`);
     expect(Sprites.getAvatar('#pre'))
-      .toEqual(`${URL}/sprites/trainers-custom/pre.png`);
+      .toBe(`${URL}/sprites/trainers-custom/pre.png`);
     expect(Sprites.getAvatar(''))
-      .toEqual(`${URL}/sprites/trainers/unknown.png`);
+      .toBe(`${URL}/sprites/trainers/unknown.png`);
     expect(Sprites.getAvatar('<pre>'))
-      .toEqual(`${URL}/sprites/trainers/&lt;pre&gt;.png`);
+      .toBe(`${URL}/sprites/trainers/&lt;pre&gt;.png`);
     expect(Sprites.getAvatar('1010', {protocol: 'http'}))
-      .toEqual(`http://${DOMAIN}/sprites/trainers-custom/1010.png`);
+      .toBe(`http://${DOMAIN}/sprites/trainers-custom/1010.png`);
   });
 });
 
 describe('Icons', () => {
   it('#getPokemon', () => {
     let pokemon = Icons.getPokemon('foobar');
-    expect(pokemon.url).toEqual(`${URL}/sprites/pokemonicons-sheet.png`);
+    expect(pokemon.url).toBe(`${URL}/sprites/pokemonicons-sheet.png`);
     expect(pokemon.left).toEqual(-0);
     expect(pokemon.top).toEqual(-0);
 
     pokemon = Icons.getPokemon('Charizard', {protocol: 'http'});
-    expect(pokemon.url).toEqual(`http://${DOMAIN}/sprites/pokemonicons-sheet.png`);
+    expect(pokemon.url).toBe(`http://${DOMAIN}/sprites/pokemonicons-sheet.png`);
     expect(pokemon.left).toEqual(-240);
     expect(pokemon.top).toEqual(-0);
 
@@ -241,7 +241,7 @@ describe('Icons', () => {
     expect(Icons.getPokeball('foo')).toBeUndefined();
 
     let pokeball = Icons.getPokeball('pokeball')!;
-    expect(pokeball.url).toEqual(`${URL}/sprites/pokemonicons-pokeball-sheet.png`);
+    expect(pokeball.url).toBe(`${URL}/sprites/pokemonicons-pokeball-sheet.png`);
     expect(pokeball.left).toBe(0);
     expect(pokeball.top).toBe(4);
 
@@ -264,12 +264,12 @@ describe('Icons', () => {
 
   it('#getItem', () => {
     let item = Icons.getItem('foobar');
-    expect(item.url).toEqual(`${URL}/sprites/itemicons-sheet.png`);
+    expect(item.url).toBe(`${URL}/sprites/itemicons-sheet.png`);
     expect(item.left).toEqual(-0);
     expect(item.top).toEqual(-0);
 
     item = Icons.getItem('Choice Band');
-    expect(item.url).toEqual(`${URL}/sprites/itemicons-sheet.png`);
+    expect(item.url).toBe(`${URL}/sprites/itemicons-sheet.png`);
     expect(item.left).toEqual(-96);
     expect(item.top).toEqual(-96);
 
@@ -282,9 +282,9 @@ describe('Icons', () => {
   });
 
   it('#getType', () => {
-    expect(Icons.getType('???').url).toEqual(`${URL}/sprites/types/%3f%3f%3f.png`);
+    expect(Icons.getType('???').url).toBe(`${URL}/sprites/types/%3f%3f%3f.png`);
     expect(Icons.getType('BIRD', {protocol: 'http'}).url)
-      .toEqual(`http://${DOMAIN}/sprites/types/Bird.png`);
+      .toBe(`http://${DOMAIN}/sprites/types/Bird.png`);
     expect(Icons.getType('water', {domain: 'pkmn.cc'}).url)
       .toBe('https://pkmn.cc/sprites/types/Water.png');
   });
@@ -297,10 +297,10 @@ describe('Bundle', () => {
       // eslint-disable-next-line no-eval
       eval(fs.readFileSync(path.resolve(__dirname, '../../build/production.min.js'), 'utf8'));
       expect(window.PokemonSprites.getPokemon('Charizard').url)
-        .toEqual(`${URL}/sprites/ani/charizard.gif`);
+        .toBe(`${URL}/sprites/ani/charizard.gif`);
 
       const icon = window.PokemonIcons.getPokemon('Charizard', {protocol: 'http'});
-      expect(icon.url).toEqual(`http://${DOMAIN}/sprites/pokemonicons-sheet.png`);
+      expect(icon.url).toBe(`http://${DOMAIN}/sprites/pokemonicons-sheet.png`);
       expect(icon.left).toEqual(-240);
       expect(icon.top).toEqual(-0);
     }

@@ -117,8 +117,8 @@ describe('LogFormatter', () => {
   /* eslint-disable @typescript-eslint/quotes */
   it('escapeHTML', () => {
     expect(LogFormatter.escapeHTML(`<html>"a & b"'\\n'</html>`))
-      .toEqual(`&lt;html&gt;&quot;a &amp; b&quot;'\\n'&lt;/html&gt;`);
+      .toBe(`&lt;html&gt;&quot;a &amp; b&quot;'\\n'&lt;/html&gt;`);
     expect(LogFormatter.escapeHTML(`<html>"a & b"'\\n'</html>`, true))
-      .toEqual(`&lt;html&gt;&quot;a &amp; b&quot;\\'\\\\n\\'&lt;/html&gt;`);
+      .toBe(`&lt;html&gt;&quot;a &amp; b&quot;\\'\\\\n\\'&lt;/html&gt;`);
   });
 });

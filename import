@@ -199,8 +199,8 @@ const MOD_IMPORTS = {
   'data/mods/gen7sm/pokedex.ts': ['ModdedSpeciesData'],
   'data/mods/gen7sm/scripts.ts': ['ModdedBattleScriptsData'],
 
-
   // gen8bdsp
+  'data/mods/gen8bdsp/abilities.ts': ['ModdedAbilityData'],
   'data/mods/gen8bdsp/formats-data.ts': ['ModdedSpeciesFormatsData'],
   'data/mods/gen8bdsp/items.ts': ['ModdedItemData'],
   'data/mods/gen8bdsp/learnsets.ts': ['ModdedLearnsetData'],

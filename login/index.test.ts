@@ -153,7 +153,7 @@ function expectOnUpkeepResponse(upkeep: Action, username: string) {
   expect(upkeep.onResponse(']{"foo": "bar"}')).toBeUndefined();
 
   const response = `]{"username": "${username}", "assertion": "<!DOCTYPE html foo bar>token"}`;
-  expect(upkeep.onResponse(response)).toEqual(`|/trn ${username},0,token`);
+  expect(upkeep.onResponse(response)).toBe(`|/trn ${username},0,token`);
 }
 
 function expectOnRenameResponse(rename: Action, username: string) {
@@ -168,7 +168,7 @@ function expectOnRenameResponse(rename: Action, username: string) {
   expect(() => rename.onResponse(''))
     .toThrow('Something appears to be interfering with the connection');
 
-  expect(rename.onResponse('<!DOCTYPE html foo bar>token')).toEqual(`|/trn ${username},0,token`);
+  expect(rename.onResponse('<!DOCTYPE html foo bar>token')).toBe(`|/trn ${username},0,token`);
 }
 
 describe('Bundle', () => {

@@ -107,6 +107,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(!dex.items.get('spookyplate').isNonstandard).toBe(true);
         expect(!dex.moves.get('Hidden Power').isNonstandard).toBe(true);
         expect(dex.moves.get('flipturn').isNonstandard).toBe('Past');
+        expect(dex.abilities.get('Quick Draw').isNonstandard).toBe('Past');
         expect((await dex.learnsets.get('Zapdos')).learnset!['heatwave']).toBeUndefined();
         expect((await dex.learnsets.get('Manaphy')).learnset!['watergun']).toEqual(['8L1', '8S0']);
         expect((await dex.forGen(8).learnsets.get('Weavile')).learnset!['knockoff'])

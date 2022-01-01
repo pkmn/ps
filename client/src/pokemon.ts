@@ -482,21 +482,28 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     if (move.id === 'focuspunch') this.removeVolatile('focuspunch' as ID);
     if (fromeffect?.id === 'sleeptalk') {
       this.rememberMove(move.name, 0);
-    } else if (!fromeffect?.id || fromeffect.id === 'pursuit') {
+    }
+    let callerMoveForPressure = null;
+    // will not include effects that are conditions named after moves like Magic Coat and Snatch
+    if (fromeffect.id && from!.startsWith('move:')) {
+      callerMoveForPressure = fromeffect as Move;
+    }
+    if (!fromeffect.id || callerMoveForPressure || fromeffect.id === 'pursuit') {
       let moveName = move.name;
-      if (move.isZ) {
-        const isZ = move.isZ as ID;
-        this.item = isZ;
-        const item = this.side.battle.gen.items.get(isZ);
-        if (item?.zMoveFrom) moveName = item.zMoveFrom;
-      } else if (move.name.slice(0, 2) === 'Z-') {
-        moveName = moveName.slice(2) as MoveName;
-        move = this.side.battle.get('moves', moveName) as Partial<Move> & NA;
-        // TODO: use a cached lookup table instead of looping...
-        for (const item of this.side.battle.gen.items) {
-          if (item.zMoveType === move.type) {
-            this.item = item.id;
-            break;
+      if (!callerMoveForPressure) {
+        if (move.isZ) {
+          const isZ = move.isZ as ID;
+          this.item = isZ;
+          const item = this.side.battle.gen.items.get(isZ);
+          if (item?.zMoveFrom) moveName = item.zMoveFrom;
+        } else if (move.name.slice(0, 2) === 'Z-') {
+          moveName = moveName.slice(2) as MoveName;
+          move = this.side.battle.get('moves', moveName) as Partial<Move> & NA;
+          for (const item of this.side.battle.gen.items) {
+            if (item.zMoveType === move.type) {
+              this.item = item.id;
+              break;
+            }
           }
         }
       }
@@ -511,18 +518,17 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
           }
         }
       }
-      // Sticky Web is never affected by pressure
-      if (!ngasActive && move.id !== 'stickyweb') {
+      if (!ngasActive) {
         const foeTargets = [];
-
+        const moveTarget = (move.pressureTarget || move.target)!;
         const singles = [
           'self', 'allies', 'allySide', 'adjacentAlly', 'adjacentAllyOrSelf', 'allyTeam',
         ];
         const ffa = ['all', 'allAdjacent', 'allAdjacentFoes', 'foeSide'];
-        if (!target && this.side.battle.gameType === 'singles' && !singles.includes(move.target!)) {
+        if (!target && this.side.battle.gameType === 'singles' && !singles.includes(moveTarget)) {
           // Hardcode for moves without a target in singles
           foeTargets.push(this.side.foe.active[0]);
-        } else if (ffa.includes(move.target!)) {
+        } else if (ffa.includes(moveTarget)) {
           // We loop through all sides here for FFA
           for (const side of this.side.battle.sides) {
             if (side === this.side || side === this.side.ally) continue;
@@ -541,7 +547,12 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
           }
         }
       }
-      this.rememberMove(moveName, pp);
+      if (!callerMoveForPressure) {
+        this.rememberMove(moveName, pp);
+      } else {
+        // 1 pp was already deducted from using the move itself
+        this.rememberMove(callerMoveForPressure.name, pp - 1);
+      }
     }
     this.lastMove = move.id;
     this.lastMoveTargetLoc = target
