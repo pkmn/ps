@@ -2152,6 +2152,11 @@
       "inherit": true,
       "desc": "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not asleep. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Assist, Bide, Chatter, Copycat, Focus Punch, Me First, Metronome, Mirror Move, Sleep Talk, Uproar, or any two-turn move."
     },
+    "snatch": {
+      "inherit": true,
+      "condition": {"duration": 1, "onAnyPrepareHitPriority": -1},
+      "desc": "If another Pokemon uses certain non-damaging moves this turn, the user steals that move to use itself. If multiple Pokemon use this move this turn, the applicable moves are stolen by each of those Pokemon in turn order, and only the last user in turn order will gain the effects."
+    },
     "spikes": {"inherit": true, "flags": {}},
     "spite": {
       "inherit": true,
@@ -2528,10 +2533,6 @@
     "smellingsalts": {
       "inherit": true,
       "desc": "Power doubles if the target is paralyzed. If this move is successful, the target is cured of paralysis."
-    },
-    "snatch": {
-      "inherit": true,
-      "desc": "If another Pokemon uses certain non-damaging moves this turn, the user steals that move to use itself. If multiple Pokemon use this move this turn, the applicable moves are stolen by each of those Pokemon in turn order, and only the last user in turn order will gain the effects."
     },
     "softboiled": {
       "inherit": true,
@@ -3610,6 +3611,7 @@
     "feintattack": {"inherit": true, "isNonstandard": null},
     "flameburst": {"inherit": true, "isNonstandard": null},
     "flash": {"inherit": true, "isNonstandard": null},
+    "floralhealing": {"inherit": true},
     "foresight": {"inherit": true, "isNonstandard": null},
     "freezyfrost": {
       "inherit": true,
@@ -3651,6 +3653,7 @@
       "shortDesc": "User faints. Replacement is fully healed."
     },
     "healorder": {"inherit": true, "isNonstandard": null},
+    "healpulse": {"inherit": true},
     "heartstamp": {"inherit": true, "isNonstandard": null},
     "heartswap": {"inherit": true, "isNonstandard": null},
     "heatcrash": {"inherit": true},
@@ -3791,6 +3794,14 @@
     "miracleeye": {"inherit": true, "isNonstandard": null},
     "mirrormove": {"inherit": true, "isNonstandard": null},
     "mirrorshot": {"inherit": true, "isNonstandard": null},
+    "moonlight": {
+      "inherit": true,
+      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down."
+    },
+    "morningsun": {
+      "inherit": true,
+      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down."
+    },
     "mudbomb": {"inherit": true, "isNonstandard": null},
     "mudsport": {"inherit": true, "isNonstandard": null},
     "multiattack": {"inherit": true, "basePower": 90},
@@ -3821,6 +3832,7 @@
     "psywave": {"inherit": true, "isNonstandard": null},
     "pulverizingpancake": {"inherit": true, "isNonstandard": null},
     "punishment": {"inherit": true, "isNonstandard": null},
+    "purify": {"inherit": true},
     "pursuit": {
       "inherit": true,
       "isNonstandard": null,
@@ -3850,6 +3862,7 @@
     "seedflare": {"inherit": true, "isNonstandard": null},
     "sharpen": {"inherit": true, "isNonstandard": null},
     "shatteredpsyche": {"inherit": true, "isNonstandard": null},
+    "shoreup": {"inherit": true},
     "signalbeam": {"inherit": true, "isNonstandard": null},
     "silverwind": {"inherit": true, "isNonstandard": null},
     "sinisterarrowraid": {"inherit": true, "isNonstandard": null},
@@ -3879,8 +3892,13 @@
     "stokedsparksurfer": {"inherit": true, "isNonstandard": null},
     "subzeroslammer": {"inherit": true, "isNonstandard": null},
     "supersonicskystrike": {"inherit": true, "isNonstandard": null},
+    "swallow": {"inherit": true},
     "switcheroo": {"inherit": true},
     "synchronoise": {"inherit": true, "isNonstandard": null},
+    "synthesis": {
+      "inherit": true,
+      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down."
+    },
     "tailglow": {"inherit": true, "isNonstandard": null},
     "tectonicrage": {"inherit": true, "isNonstandard": null},
     "telekinesis": {"inherit": true, "isNonstandard": null},
@@ -4009,14 +4027,6 @@
       "inherit": true,
       "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Parting Shot, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field."
     },
-    "moonlight": {
-      "inherit": true,
-      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down."
-    },
-    "morningsun": {
-      "inherit": true,
-      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down."
-    },
     "protect": {
       "inherit": true,
       "desc": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn."
@@ -4064,10 +4074,6 @@
     "spiritshackle": {
       "inherit": true,
       "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Parting Shot, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field."
-    },
-    "synthesis": {
-      "inherit": true,
-      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down."
     },
     "taunt": {
       "inherit": true,
