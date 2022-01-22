@@ -31,11 +31,13 @@ text from the perspective of either side.
 
 ```ts
 import {Dex} from '@pkmn/dex';
+import {Generations} from ('@pkmn/data');
 import {Battle} from '@pkmn/client';
 import {Protocol} from '@pkmn/protocol';
 import {LogFormatter} from '@pkmn/view';
 
-const battle = new Battle(Dex);
+const gens = new Generations(Dex);
+const battle = new Battle(gens);
 const formatter = new LogFormatter(0 /* perspective */, battle);
 
 for (const {args, kwArgs} of Protocol.parse(chunk)) {
