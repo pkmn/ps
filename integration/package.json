@@ -12,17 +12,17 @@
     "@pkmn/sets": "file:../sets",
     "@pkmn/sim": "file:../sim",
     "@pkmn/view": "file:../view",
-    "@typescript-eslint/eslint-plugin": "^5.9.0",
-    "@typescript-eslint/parser": "^5.9.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
     "cssnano": "^5.0.15",
-    "eslint": "^8.6.0",
+    "eslint": "^8.7.0",
     "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jest": "^25.3.4",
+    "eslint-plugin-jest": "^25.7.0",
     "jest": "^27.4.7",
     "minimist": "^1.2.5",
-    "parcel": "^2.1.1",
+    "parcel": "^2.2.1",
     "source-map-support": "^0.5.21",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.5"
   },
   "scripts": {
     "lint": "eslint --cache src --ext js,ts",

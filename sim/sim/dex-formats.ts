@@ -340,6 +340,10 @@ export class RuleTable extends Map<string, string> {
 			throw new Error(`maxForcedLevel is now a rule: "Adjust Level Down = NUMBER"`);
 		}
 	}
+
+	hasComplexBans() {
+		return (this.complexBans?.length > 0) || (this.complexTeamBans?.length > 0);
+	}
 }
 
 export class Format extends BasicEffect implements Readonly<BasicEffect> {
@@ -799,7 +803,6 @@ export class DexFormats {
 		case '-':
 		case '*':
 		case '+':
-			if (format?.team) throw new Error(`We don't currently support bans in generated teams`);
 			if (rule.slice(1).includes('>') || rule.slice(1).includes('+')) {
 				let buf = rule.slice(1);
 				const gtIndex = buf.lastIndexOf('>');

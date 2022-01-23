@@ -89,6 +89,7 @@ const streams = path.resolve(__dirname, 'streams');
 // files depending on global types - the `data/` files are currently not required to have
 // ///-references to work).
 const IMPORTS = {
+  'data/tags.ts': ['Species', 'Move', 'Item', 'Ability'],
   'sim/battle-actions.ts': [
     'Battle', 'ModdedDex', 'Pokemon', 'Effect', 'Move', 'ActiveMove',
     'Side', 'SpreadMoveTargets', 'SpreadMoveDamage', 'ZMoveOptions',
@@ -223,7 +224,8 @@ const RANDOMS_IMPORTS = {
     [['Utils'], './utils'],
     [[
       'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatID',
-      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ModdedDex', 'Move', 'ID',
+      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ModdedDex', 'Move', 'BasicEffect',
+      'Dex', 'Tags', 'Item', 'Ability', 'Nature',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen7/random-teams.ts': [
@@ -343,6 +345,10 @@ const REWRITES = {
   'sim/battle-stream.ts': {
     '\t\tvoid this._listen();': undefined,
     '\tasync _listen() {': '\tasync start() {',
+  },
+  'sim/team-validator.ts': {
+    '\t\t\t\ttestTeamGenerator.getTeam(options); // Throws error if generation fails':
+      '\t\t\t\ttestTeamGenerator.getTeam(options as any); // Throws error if generation fails',
   },
 };
 
@@ -602,8 +608,11 @@ const changes = async (where, last, now, repo) => ({
     for (const file of COPIED) {
       if (IMPORTS[file]) {
         // Handling arbitrary relative imports is overkill right now, bail
-        if (!file.startsWith('sim/')) throw new Error('Unsupported import location');
-        const prefix = file.startsWith('sim/tools/') ? '..' : '.';
+        if (!file.startsWith('sim/') && file !== 'data/tags.ts') {
+          throw new Error('Unsupported import location');
+        }
+        const prefix = file.startsWith('data') ? '../sim' :
+          file.startsWith('sim/tools/') ? '..' : '.';
         const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
         const changes = REWRITES[file];
         const rewritten = changes
@@ -656,6 +665,9 @@ const changes = async (where, last, now, repo) => ({
           return undefined;
         } else if (line === '\t\tthis.dex = Dex.forFormat(format);') {
           return '\t\tthis.dex = dex;';
+        } else if (line.endsWith('ruleTable?: RuleTable) {')) {
+          return '\trandomNPokemon(n: number, requiredType?: string, minSourceGen?: number, ' +
+            'ruleTable?: Dex.RuleTable) {';
         }
         return line.replace(/Dex\./g, 'this.dex.');
       });

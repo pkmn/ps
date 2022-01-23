@@ -814,8 +814,8 @@
       "isBreakable": true,
       "name": "Dazzling",
       "num": 219,
-      "desc": "While this Pokemon is active, priority moves from opposing Pokemon targeted at allies are prevented from having an effect.",
-      "shortDesc": "While this Pokemon is active, allies are protected from opposing priority moves."
+      "desc": "Priority moves used by opposing Pokemon targeting this Pokemon or its allies are prevented from having an effect.",
+      "shortDesc": "This Pokemon and its allies are protected from opposing priority moves."
     },
     "defeatist": {
       "onModifyAtkPriority": 5,
@@ -1624,8 +1624,8 @@
       "isBreakable": true,
       "name": "Queenly Majesty",
       "num": 214,
-      "desc": "While this Pokemon is active, priority moves from opposing Pokemon targeted at allies are prevented from having an effect.",
-      "shortDesc": "While this Pokemon is active, allies are protected from opposing priority moves."
+      "desc": "Priority moves used by opposing Pokemon targeting this Pokemon or its allies are prevented from having an effect.",
+      "shortDesc": "This Pokemon and its allies are protected from opposing priority moves."
     },
     "quickdraw": {
       "onFractionalPriorityPriority": -1,

@@ -26352,7 +26352,7 @@
         "spd": 90,
         "spe": 64
       },
-      "abilities": {"0": "Stamina"},
+      "abilities": {"0": "Stamina", "H": "Power of Alchemy"},
       "weightkg": 11.5,
       "eggGroups": ["Undiscovered"],
       "otherFormes": ["Venomicon-Epilogue"],

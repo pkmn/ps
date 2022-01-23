@@ -9,5 +9,6 @@ export {RandomPlayerAI} from './tools/random-player-ai';
 export {Side} from './side';
 export {Teams} from './teams';
 export {TeamValidator} from './team-validator';
+export {Tags} from '../data/tags';
 
 export * from './exported-global-types';

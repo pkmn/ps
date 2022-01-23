@@ -11665,7 +11665,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Flying",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Speed of each Pokemon on the user's side is raised by 1 stage, even if they have a substitute.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Speed of each Pokemon on the user's side is raised by 1 stage, even if they have a substitute. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Allies: +1 Speed."
     },
     "maxdarkness": {
@@ -11681,7 +11681,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Dark",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Special Defense of each Pokemon on the opposing side is lowered by 1 stage, even if they have a substitute.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Special Defense of each Pokemon on the opposing side is lowered by 1 stage, even if they have a substitute. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Foes: -1 Sp. Def."
     },
     "maxflare": {
@@ -11697,7 +11697,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Fire",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Sunny Day begins.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Sunny Day begins. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Starts Sunny Day."
     },
     "maxflutterby": {
@@ -11713,7 +11713,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Bug",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Special Attack of each Pokemon on the opposing side is lowered by 1 stage, even if they have a substitute.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Special Attack of each Pokemon on the opposing side is lowered by 1 stage, even if they have a substitute. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Foes: -1 Sp. Atk."
     },
     "maxgeyser": {
@@ -11729,7 +11729,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Water",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Rain Dance begins.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Rain Dance begins. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Starts Rain Dance."
     },
     "maxguard": {
@@ -11764,7 +11764,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Ice",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Hail begins.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Hail begins. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Starts Hail."
     },
     "maxknuckle": {
@@ -11780,7 +11780,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Fighting",
-      "desc": "Boosts the user and its allies' Attack by 1 stage. BP scales with the base move's BP.",
+      "desc": "Boosts the user and its allies' Attack by 1 stage. BP scales with the base move's BP. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Allies: +1 Attack."
     },
     "maxlightning": {
@@ -11796,7 +11796,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Electric",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Electric Terrain begins.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Electric Terrain begins. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Starts Electric Terrain."
     },
     "maxmindstorm": {
@@ -11812,7 +11812,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Psychic",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Psychic Terrain begins.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Psychic Terrain begins. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Starts Psychic Terrain."
     },
     "maxooze": {
@@ -11828,7 +11828,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Poison",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Special Attack of each Pokemon on the user's side is raised by 1 stage, even if they have a substitute.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Special Attack of each Pokemon on the user's side is raised by 1 stage, even if they have a substitute. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Allies: +1 Sp. Atk."
     },
     "maxovergrowth": {
@@ -11844,7 +11844,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Grass",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Grassy Terrain begins.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Grassy Terrain begins. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Starts Grassy Terrain."
     },
     "maxphantasm": {
@@ -11860,7 +11860,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Ghost",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Defense of each Pokemon on the opposing side is lowered by 1 stage, even if they have a substitute.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Defense of each Pokemon on the opposing side is lowered by 1 stage, even if they have a substitute. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Foes: -1 Defense."
     },
     "maxquake": {
@@ -11876,7 +11876,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Ground",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Special Defense of each Pokemon on the user's side is raised by 1 stage, even if they have a substitute.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Special Defense of each Pokemon on the user's side is raised by 1 stage, even if they have a substitute. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Allies: +1 Sp. Def."
     },
     "maxrockfall": {
@@ -11892,7 +11892,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Rock",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Sandstorm begins.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Sandstorm begins. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Starts Sandstorm."
     },
     "maxstarfall": {
@@ -11908,7 +11908,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Fairy",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Misty Terrain begins.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the effect of Misty Terrain begins. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Starts Misty Terrain."
     },
     "maxsteelspike": {
@@ -11924,7 +11924,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Steel",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Defense of each Pokemon on the user's side is raised by 1 stage, even if they have a substitute.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Defense of each Pokemon on the user's side is raised by 1 stage, even if they have a substitute. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Allies: +1 Defense."
     },
     "maxstrike": {
@@ -11940,7 +11940,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Normal",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Speed of each Pokemon on the opposing side is lowered by 1 stage, even if they have a substitute.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Speed of each Pokemon on the opposing side is lowered by 1 stage, even if they have a substitute. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Foes: -1 Speed."
     },
     "maxwyrmwind": {
@@ -11956,7 +11956,7 @@
       "self": {},
       "target": "adjacentFoe",
       "type": "Dragon",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Attack of each Pokemon on the opposing side is lowered by 1 stage, even if they have a substitute.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, the Attack of each Pokemon on the opposing side is lowered by 1 stage, even if they have a substitute. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0.",
       "shortDesc": "Base move affects power. Foes: -1 Attack."
     },
     "meanlook": {
