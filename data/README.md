@@ -72,7 +72,8 @@ a couple of Pokémon Showdown quirks. While this interface is far from the
   `Dex#stats` which just provides some lists of names).
 - a usable `Learnsets` API which allows you to easily determine which moves a Pokémon can legally
   learn (though validating combinations of moves or other features requires `@pkmn/sim`'s
-  `TeamValidator`).
+  `TeamValidator` - something as seemingly simple as determing Galar move legality cannot be
+  generally solved without the full power of the `TeamValidator`).
 
 **`Generations` handles existence at the field level slightly differently than at the object level**
 \- references in fields which point to objects that do not exist in the generation will be updated

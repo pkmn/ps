@@ -1697,7 +1697,7 @@ export class RandomTeams {
 			this.dex.getEffectiveness('Rock', species) >= 2 &&
 			!isDoubles
 		);
-		if (species.evos.length && !HDBBetterThanEviolite) return 'Eviolite';
+		if (species.nfe && !HDBBetterThanEviolite) return 'Eviolite';
 
 		// Ability based logic and miscellaneous logic
 		if (species.name === 'Wobbuffet' || ['Cheek Pouch', 'Harvest', 'Ripen'].includes(ability)) return 'Sitrus Berry';
@@ -2303,7 +2303,7 @@ export class RandomTeams {
 		// Minimize confusion damage
 		const noAttackStatMoves = [...moves].every(m => {
 			const move = this.dex.moves.get(m);
-			if (move.damageCallback || move.damage) return false;
+			if (move.damageCallback || move.damage) return true;
 			return move.category !== 'Physical' || move.id === 'bodypress';
 		});
 		if (noAttackStatMoves && !moves.has('transform') && (!moves.has('shellsidearm') || !counter.get('Status'))) {

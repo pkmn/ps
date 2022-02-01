@@ -565,6 +565,8 @@ export class Learnsets {
     }
   }
 
+  // BUG: this only covers what Pokémon Showdown deems "teambuilder legality" - proper legality
+  // checks/restriction enforcement requires @pkmn/sim's TeamValidator.
   async learnable(name: string, restriction?: Restriction) {
     const species = this.gen.species.get(name);
     if (!species) return undefined;
@@ -594,6 +596,8 @@ export class Learnsets {
     return moves;
   }
 
+  // BUG: this only covers what Pokémon Showdown deems "teambuilder legality" - proper legality
+  // checks/restriction enforcement requires @pkmn/sim's TeamValidator.
   async canLearn(name: string, move: Move | string, restriction?: Restriction) {
     const species = this.gen.species.get(name);
     if (!species) return false;
@@ -610,6 +614,8 @@ export class Learnsets {
     return false;
   }
 
+  // BUG: this only covers what Pokémon Showdown deems "teambuilder legality" - proper legality
+  // checks/restriction enforcement requires @pkmn/sim's TeamValidator.
   isLegal(move: Move, sources: MoveSource[] | undefined, gen: Generation | Restriction) {
     if (!sources) return undefined;
 
