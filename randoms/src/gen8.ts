@@ -2033,7 +2033,7 @@ export class RandomTeams {
 				// Genesect-Douse should never reject Techno Blast
 				const moveIsRejectable = !(species.id === 'genesectdouse' && move.id === 'technoblast') && (
 					move.category === 'Status' ||
-					!types.has(move.type) ||
+					(!types.has(move.type) && move.id !== 'judgment') ||
 					(isLowBP && !move.multihit && !abilities.has('Technician'))
 				);
 				// Setup-supported moves should only be rejected under specific circumstances
@@ -2043,6 +2043,7 @@ export class RandomTeams {
 					(counter.get(counter.setupType) + counter.get('Status') > 3 && !counter.get('hazards')) ||
 					(move.category !== counter.setupType && move.category !== 'Status')
 				);
+
 				if (moveIsRejectable && (
 					!cull && !isSetup && !move.weather && !move.stallingMove && notImportantSetup && !move.damage &&
 					(isDoubles ? this.unrejectableMovesInDoubles(move) : this.unrejectableMovesInSingles(move))
@@ -2085,7 +2086,6 @@ export class RandomTeams {
 						}
 					}
 				}
-
 
 				// Remove rejected moves from the move list
 				if (cull && movePool.length) {
@@ -2261,7 +2261,7 @@ export class RandomTeams {
 				PUBL: 87,
 				PU: 88, "(PU)": 88, NFE: 88,
 			};
-			const customScale: {[k: string]: number} = {};
+			const customScale: {[k: string]: number} = {delibird: 100, luvdisc: 100, spinda: 100, unown: 100};
 
 			level = customScale[species.id] || tierScale[species.tier] || 80;
 		// Arbitrary levelling base on data files (typically winrate-influenced)
