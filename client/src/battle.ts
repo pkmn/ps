@@ -585,6 +585,36 @@ export class Battle {
     return this.field.weatherState.id;
   }
 
+  ngasActive() {
+    for (const side of this.sides) {
+      for (const active of side.active) {
+        if (active && !active.fainted &&
+          active.ability === 'neutralizinggas' &&
+          !active.volatiles['gastroacid']) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  abilityActive(abilities: ID[]) {
+    if (this.ngasActive()) {
+      abilities = abilities.filter(a => this.gen.abilities.get(a)?.isPermanent);
+      if (!abilities.length) return false;
+    }
+    for (const side of this.sides) {
+      for (const active of side.active) {
+        if (active && !active.fainted &&
+          abilities.includes(active.ability) &&
+          !active.volatiles['gastroacid']) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
   reset() {
     this.turn = 0;
     this.field.reset();

@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/data",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "unpkg": "build/production.min.js",
@@ -16,12 +16,12 @@
     "index.ts"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.5.7"
+    "@pkmn/dex-types": "^0.5.8"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.5.7",
-    "@pkmn/mods": "^0.5.7",
-    "@pkmn/sim": "^0.5.7",
+    "@pkmn/dex": "^0.5.8",
+    "@pkmn/mods": "^0.5.8",
+    "@pkmn/sim": "^0.5.8",
     "@smogon/calc": "^0.6.0"
   },
   "scripts": {

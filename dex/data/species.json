@@ -2779,6 +2779,10 @@
     "tapulele": {"inherit": true, "abilities": {"0": "Psychic Surge"}},
     "tapubulu": {"inherit": true, "abilities": {"0": "Grassy Surge"}},
     "tapufini": {"inherit": true, "abilities": {"0": "Misty Surge"}},
+    "pyroak": {
+      "inherit": true,
+      "abilities": {"0": "Rock Head", "1": "Battle Armor", "H": "White Smoke"}
+    },
     "voodoom": {
       "inherit": true,
       "baseStats": {
@@ -25776,7 +25780,7 @@
         "spd": 90,
         "spe": 60
       },
-      "abilities": {"0": "Rock Head", "1": "Battle Armor", "H": "White Smoke"},
+      "abilities": {"0": "Rock Head", "1": "Battle Armor", "H": "Contrary"},
       "weightkg": 168,
       "prevo": "Flarelm",
       "evoLevel": 38,

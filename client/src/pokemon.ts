@@ -508,17 +508,8 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
         }
       }
       let pp = 1;
-      let ngasActive = false;
-      for (const side of this.side.battle.sides) {
-        for (const active of side.active) {
-          if (active && !active.fainted &&
-              toID(active.ability) === 'neutralizinggas' && !active.volatiles['gastroacid']) {
-            ngasActive = true;
-            break;
-          }
-        }
-      }
-      if (!ngasActive) {
+      // Sticky Web is never affected by pressure
+      if (this.side.battle.abilityActive(['pressure'] as ID[]) && move.id !== 'stickyweb') {
         const foeTargets = [];
         const moveTarget = (move.pressureTarget || move.target)!;
         const singles = [
@@ -541,8 +532,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
         }
 
         for (const foe of foeTargets) {
-          if (foe && !foe.fainted && toID(foe.ability) === 'pressure' &&
-            !foe.volatiles['gastroacid']) {
+          if (foe && !foe.fainted && foe.effectiveAbility() === 'pressure') {
             pp += 1;
           }
         }
@@ -597,6 +587,13 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.rememberAbility(effectOrName, isNotBase);
   }
 
+  effectiveAbility() {
+    if (this.fainted || this.volatiles['gastroacid']) return '' as ID;
+    const ability = this.side.battle.gen.abilities.get(this.ability || this.baseAbility || '');
+    if (this.side.battle.ngasActive() && !ability?.isPermanent) return '' as ID;
+    return ability?.id || '' as ID;
+  }
+
   rememberAbility(ability: string, isNotBase?: boolean) {
     this.ability = this.side.battle.get('abilities', ability).id;
     if (!this.baseAbility && !isNotBase) {
@@ -624,7 +621,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     }
 
     let item = this.item;
-    const ability = this.ability;
+    const ability = this.effectiveAbility();
     if (battle.field.hasPseudoWeather('magicroom' as ID) ||
       this.volatiles['embargo'] ||
       ability === 'klutz'

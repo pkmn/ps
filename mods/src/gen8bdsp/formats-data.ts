@@ -400,7 +400,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	gengar: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DUU",
 		randomBattleMoves: ["focusblast", "nastyplot", "shadowball", "sludgebomb", "thunderbolt"],
 	},

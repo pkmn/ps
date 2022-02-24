@@ -600,6 +600,7 @@
       "condition": {},
       "desc": "As long as the target remains active, if its evasiveness stat stage is greater than the attacker's accuracy stat stage, both are ignored during accuracy checks, and Normal- and Fighting-type attacks can hit the target if it is a Ghost type. If the target leaves the field using Baton Pass, the replacement will remain under this effect. Fails if the target is already affected."
     },
+    "frustration": {"inherit": true},
     "healbell": {
       "inherit": true,
       "desc": "Every Pokemon in the user's party is cured of its non-volatile status condition."
@@ -773,6 +774,7 @@
       "secondary": null,
       "desc": "The user falls asleep for the next two turns and restores all of its HP, curing itself of any non-volatile status condition in the process, even if it was already asleep. Fails if the user has full HP."
     },
+    "return": {"inherit": true},
     "reversal": {
       "inherit": true,
       "noDamageVariance": true,
