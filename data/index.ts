@@ -377,11 +377,13 @@ export class Natures {
 }
 
 const EFFECTIVENESS = {
+  '-3': 0.125,
   '-2': 0.25,
   '-1': 0.5,
   '0': 1,
   '1': 2,
   '2': 4,
+  '3': 8,
 };
 
 type TypeTarget = { getTypes: () => TypeName[] } | { types: TypeName[] } | TypeName[] | TypeName;
