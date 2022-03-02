@@ -9,7 +9,7 @@ let bundled = `(() => {
 const exports = {};
 `;
 bundled += `const DATA = ${bundler.read('data/data.json')};\n`;
-bundled += bundler.read('data/index.js', 24, 1);
+bundled += bundler.read('data/index.js', 28, 1);
 bundled += bundler.read('adaptable.js', 3, 1);
 bundled += `
 // EXPORTS

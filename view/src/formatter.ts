@@ -462,9 +462,9 @@ class Handler implements Protocol.Handler<string> {
     let newSpecies = '' as SpeciesName;
     switch (cmd) {
     case 'detailschange': newSpecies = arg2.split(',')[0].trim() as SpeciesName; break;
-    case '-formechange': newSpecies = arg2 as SpeciesName; break;
+    case '-formechange': newSpecies = arg2; break;
     case '-transform':
-      newSpecies = this.tracker.getPokemonSpeciesForme(arg2 as PokemonIdent) || newSpecies;
+      newSpecies = this.tracker.getPokemonSpeciesForme(arg2) || newSpecies;
       break;
     }
     const newSpeciesId = toID(newSpecies);
@@ -1301,7 +1301,7 @@ class Handler implements Protocol.Handler<string> {
     const pokemonName = this.parser.pokemon(pokemon);
     if (cmd === '-mega') {
       const template2 = this.parser.template('transformMega');
-      template += template2.replace('[POKEMON]', pokemonName).replace('[SPECIES]', species!);
+      template += template2.replace('[POKEMON]', pokemonName).replace('[SPECIES]', species);
     }
     return (template
       .replace('[POKEMON]', pokemonName)
