@@ -1,0 +1,74 @@
+-ability: _, fail, from, of
+-activate: _, ability, ability2, broken, consumed, damage, item, move, number, of
+-anim: _, miss, spread
+-block: _, of
+-boost: _, from, zeffect
+-clearallboost: _
+-clearboost: _
+-clearnegativeboost: silent, zeffect
+-clearpositiveboost: _
+-copyboost: from
+-crit: _
+-curestatus: from, msg
+-damage: _, from, of, partiallytrapped, silent
+-end: _, from, interrupt, of, partiallytrapped, silent
+-endability: _, from
+-enditem: _, eat, from, move, of, silent, weaken
+-fail: _, from, heavy, msg, of, weak
+-fieldactivate: _
+-fieldend: _, of
+-fieldstart: _, from, of
+-formechange: _, from, msg, silent
+-heal: _, from, of, silent, wisher, zeffect
+-hint: _
+-hitcount: _
+-immune: _, from, ohko
+-invertboost: from
+-item: _, from, identify, of
+-mega: _
+-miss: _
+-mustrecharge: _
+-ohko: _
+-prepare: _
+-primal: _
+-resisted: _
+-setboost: from
+-sethp: from, silent
+-sideend: _, from, of
+-sidestart: _
+-singlemove: _, of
+-singleturn: _, of
+-start: _, fatigue, from, of, silent, upkeep, zeffect
+-status: _, from, of
+-supereffective: _
+-swapboost: from
+-transform: _, from
+-unboost: _, from
+-weather: _, from, of, upkeep
+-zbroken: _
+-zpower: _
+cant: _
+clearpoke: _
+debug: _
+detailschange: _
+done: _
+drag: _
+error: _
+faint: _
+gametype: _
+gen: _
+move: _, anim, from, miss, notarget, spread, still, zeffect
+player: _
+poke: _
+replace: _
+request: _
+start: _
+swap: from
+switch: _, from
+t:: _
+teampreview: _
+teamsize: _
+tier: _
+turn: _
+upkeep: _
+win: _

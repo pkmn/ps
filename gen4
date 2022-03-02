@@ -1,0 +1,66 @@
+-ability: _, from, of
+-activate: _, ability, ability2, broken, consumed, damage, move, number, of
+-anim: _, miss, spread
+-block: _
+-boost: _, from
+-clearallboost: _
+-clearnegativeboost: silent
+-copyboost: from
+-crit: _
+-curestatus: from, msg, silent
+-cureteam: from
+-damage: _, from, of, partiallytrapped
+-end: _, from, of, partiallytrapped, silent
+-endability: _, from
+-enditem: _, eat, from, move, of, silent, weaken
+-fail: _, from, msg, of, weak
+-fieldactivate: _
+-fieldend: _
+-fieldstart: _, of
+-formechange: _, from, msg
+-heal: _, from, of, silent, wisher
+-hint: _
+-hitcount: _
+-immune: _, from, ohko
+-item: from, of
+-message: _
+-miss: _
+-mustrecharge: _
+-notarget: _
+-ohko: _
+-prepare: _
+-resisted: _
+-setboost: from
+-sethp: from, silent
+-sideend: _, from, of
+-sidestart: _
+-singlemove: _, of
+-singleturn: _, of
+-start: _, fatigue, from, of, silent, upkeep
+-status: _, from, of
+-supereffective: _
+-swapboost: from
+-transform: _
+-unboost: _
+-weather: _, from, of, upkeep
+cant: _
+debug: _
+detailschange: _
+done: _
+drag: _
+error: _
+faint: _
+gametype: _
+gen: _
+move: _, from, miss, notarget, spread, still
+player: _
+request: _
+start: _
+switch: _, from
+t:: _
+teamsize: _
+tie: _
+tier: _
+turn: _
+upkeep: _
+win: _
