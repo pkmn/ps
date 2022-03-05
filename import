@@ -722,13 +722,14 @@ const changes = async (where, last, now, repo) => ({
           TEXT[id] = TEXT[id] || {};
           if (key.startsWith('gen')) {
             for (const modKey in entry[key]) {
-              if (['desc', 'shortDesc'].includes(key)) continue;
+              if (['desc', 'shortDesc'].includes(modKey)) continue;
               TEXT[id][modKey + 'Gen' + key.charAt(3)] = entry[key][modKey];
             }
           } else {
             TEXT[id][key] = entry[key];
           }
         }
+        if (TEXT[id] && !Object.keys(TEXT[id]).length) delete TEXT[id];
       }
     }
     fs.writeFileSync(path.join(view, 'src/data/text.json'), stringify(TEXT));
