@@ -126,6 +126,8 @@ class Runner {
 
 
         const {args, kwArgs} = Protocol.parseBattleLine(line);
+        if (args[0] != 'request') console.log(line);
+        // if (['-block'].includes(args[0])) console.log(line);
         // TODO track shape of args?
         STATS[this.format] = STATS[this.format] || {};
         STATS[this.format][args[0]] = STATS[this.format][args[0]] || {};

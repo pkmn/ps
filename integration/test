@@ -41,7 +41,7 @@ if (argv._[0] === 'sim') {
   const maxFailures =
     argv.maxFailures || argv.failures || (formats.length > 1 ? ExhaustiveRunner.MAX_FAILURES : 1);
   const prng = argv.seed && argv.seed.split(',').map(s => Number(s));
-  const log = true;
+  const log = false;
   const cmd = (cycles, format, seed) =>
     `node integration/test ${argv._[0]} --cycles=${cycles} --format=${format} --seed=${seed}`;
   (async () => {
@@ -54,12 +54,12 @@ if (argv._[0] === 'sim') {
       }
     } while (forever);
 
-    for (const format in STATS) {
-      for (const key of Object.keys(STATS[format]).sort()) {
-        const kws = Object.keys(STATS[format][key]).sort();
-        console.log(`${key}${kws.length ? `: ${kws.join(', ')}` : ''}`);
-      }
-    }
+    // for (const format in STATS) {
+    //   for (const key of Object.keys(STATS[format]).sort()) {
+    //     const kws = Object.keys(STATS[format][key]).sort();
+    //     console.log(`${key}${kws.length ? `: ${kws.join(', ')}` : ''}`);
+    //   }
+    // }
 
     process.exit(failures);
   })();
