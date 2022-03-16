@@ -772,17 +772,23 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-formechange|'(args: Args['|-formechange|'], kwArgs: KWArgs['|-formechange|']) {
-    const c = this.context = {poke: this.battle.getPokemon(args[1])!} as Context['|-formechange|'];
-    c.poke.removeVolatile('typeadd' as ID);
-    c.poke.removeVolatile('typechange' as ID);
-    if (this.battle.gen.num >= 7) c.poke.removeVolatile('autotomize' as ID);
+    const c = this.context = {
+      poke: this.battle.getPokemon(args[1])!,
+      species: this.battle.get('species', args[2]),
+    } as Context['|-formechange|'];
+
+    const speciesForme = c.species.name as SpeciesName;
+    if (!speciesForme.endsWith('-Gmax') && !c.species.name.endsWith('-Gmax')) {
+      c.poke.removeVolatile('typeadd' as ID);
+      c.poke.removeVolatile('typechange' as ID);
+      if (this.battle.gen.num >= 6) c.poke.removeVolatile('autotomize' as ID);
+    }
 
     if (!kwArgs.silent && kwArgs.from) {
       c.poke.activateAbility(this.battle.get('conditions', kwArgs.from));
     }
+
     // the formechange volatile reminds us to revert the sprite change on switch-out
-    c.species = this.battle.get('species', args[2]);
-    const speciesForme = c.species.name as SpeciesName;
     c.poke.addVolatile('formechange' as ID, {speciesForme});
   }
 

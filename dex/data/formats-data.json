@@ -4146,7 +4146,7 @@
     "vaporeon": {"tier": "NU", "doublesTier": "(DUU)"},
     "jolteon": {"tier": "PU", "doublesTier": "(DUU)"},
     "flareon": {"tier": "(PU)", "doublesTier": "(DUU)"},
-    "espeon": {"tier": "PU", "doublesTier": "(DUU)"},
+    "espeon": {"tier": "PUBL", "doublesTier": "(DUU)"},
     "umbreon": {"tier": "RU", "doublesTier": "(DUU)"},
     "leafeon": {"tier": "(PU)", "doublesTier": "(DUU)"},
     "glaceon": {"tier": "(PU)", "doublesTier": "(DUU)"},
