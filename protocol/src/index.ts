@@ -1269,7 +1269,8 @@ export namespace Protocol {
     '|-start|':
     | readonly ['-start', PokemonIdent, EffectName | MoveName]
     | readonly ['-start', PokemonIdent, EffectName, Types]
-    | readonly ['-start', PokemonIdent, EffectName, MoveName];
+    | readonly ['-start', PokemonIdent, EffectName, MoveName]
+    | readonly ['-start', PokemonIdent, 'Dynamax', 'Gmax' | ''];
     /**
      * `|-end|POKEMON|EFFECT`
      *
