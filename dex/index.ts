@@ -93,13 +93,17 @@ class DexConditions implements T.DexTable<Condition> {
 
   get(name: string): Condition {
     // This treatment of 'item:id' and 'ability:id' is kind of repugnant but regrettably exists
-    // for loose compatibility with Pokémon Showdown's Dex API
+    // for loose compatibility with Pokémon Showdown's Dex API. 'move:id' also needs to be handled
+    // for the client to work correctly.
     if (name.startsWith('item:')) {
       const item = this.dex.items.get(name.slice(5));
       return item as any as Condition;
     } else if (name.startsWith('ability:')) {
       const ability = this.dex.abilities.get(name.slice(8));
       return ability as any as Condition;
+    } else if (name.startsWith('move:')) {
+      const move = this.dex.moves.get(name.slice(5));
+      return move as any as Condition;
     }
     return this.getByID(toID(name));
   }

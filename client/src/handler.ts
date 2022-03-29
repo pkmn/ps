@@ -877,6 +877,7 @@ export class Handler implements Protocol.Handler {
       poke: this.battle.getPokemon(args[1])!,
       effect: this.battle.get('conditions', args[2]),
     } as Context['|-singleturn|'];
+    if (c.effect.id === 'roost' && !c.poke.types.includes('Flying')) return;
     c.poke.addVolatile(c.effect.id, {duration: 'turn'});
     if (c.effect.id === 'focuspunch' || c.effect.id === 'shelltrap') {
       c.poke.rememberMove(c.effect.name as MoveName, 0);

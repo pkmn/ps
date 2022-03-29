@@ -116,6 +116,11 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
   added** for what Pokémon Showdown calls `Pokedex` and `TypeChart` respectively. However, it is
   important to **note that the types in `@pkmn/sim` do not match the stricter `@pkmn/dex-types`**
   directly, you must simply cast the `@pkmn/sim` `Dex` and trust that it will work.
+- **`DexConditions` has been modified to behave like the client (and `@pkmn/dex`)**. If an effect
+  is prefixed with a type (e.g. `'move: ...'`) then the type will be used to determine which API
+  to search. The two differences with Pokémon Showdown's simulator is that the input is more lenient
+  (the simulator expects `'move:<ID>'`, where the client allows for `'move: <Name>'`) and the
+  returned object's ID is actually a legal ID (the simulator returns `'move:<ID>' as ID`).
 
 ## License
 

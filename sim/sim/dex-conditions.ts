@@ -659,7 +659,10 @@ export class DexConditions {
 		if (!name) return EMPTY_CONDITION;
 		if (typeof name !== 'string') return name as Condition;
 
-		return this.getByID(name.startsWith('item:') || name.startsWith('ability:') ? name as ID : toID(name));
+		const special = name.startsWith('item:') ? `item:${toID(name.slice(5))}` as ID :
+			name.startsWith('ability:') ? `ability:${toID(name.slice(8))}` as ID :
+			name.startsWith('move:') ? `move:${toID(name.slice(5))}` as ID : undefined;
+		return this.getByID(special || toID(name));
 	}
 
 	getByID(id: ID): Condition {
@@ -671,10 +674,13 @@ export class DexConditions {
 		let found;
 		if (id.startsWith('item:')) {
 			const item = this.dex.items.getByID(id.slice(5) as ID);
-			condition = {...item, id: 'item:' + item.id as ID} as any as Condition;
+			condition = item as any as Condition;
 		} else if (id.startsWith('ability:')) {
 			const ability = this.dex.abilities.getByID(id.slice(8) as ID);
-			condition = {...ability, id: 'ability:' + ability.id as ID} as any as Condition;
+			condition = ability as any as Condition;
+		} else if (id.startsWith('move:')) {
+			const move = this.dex.moves.getByID(id.slice(5) as ID);
+			condition = move as any as Condition;
 		} else if (this.dex.data.Rulesets.hasOwnProperty(id)) {
 			condition = this.dex.formats.get(id) as any as Condition;
 		} else if (this.dex.data.Conditions.hasOwnProperty(id)) {

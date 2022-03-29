@@ -35,15 +35,15 @@ const Text = TextJSON as {
  * be fed into the `LogFormatter` **before** the `@pkmn/client`'s `Handler`.
  *
  * smogon/pokemon-showdown-client's `BattleTextParser` receives the protocol *after* the `Battle`
- * state has been updated, but PS mutates the protocol to encode to pre-updated state for the
+ * state has been updated, but PS mutates the protocol to encode the pre-updated state for the
  * logs.
  */
 export interface Tracker {
   /** Pokemon at the provided slot for a side *before* any |swap| is applied */
   pokemonAt(side: SideID, slot: number): PokemonIdent | undefined;
-  /** Percentage damage of applying the health to the ident (ie. before |-damage| is applied) */
+  /** Percentage damage of applying the health to the ident (ie. *before& |-damage| is applied) */
   damagePercentage(ident: PokemonIdent, health: PokemonHPStatus): string | undefined;
-  /** Weather (*before() |-weather| is applied) */
+  /** Weather (*before* |-weather| is applied) */
   currentWeather(): ID | undefined;
   /** The Pokémon corresponding to ident and details which was switched out from |switch| */
   getSwitchedOutPokemon(

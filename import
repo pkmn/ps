@@ -300,6 +300,13 @@ const imports = (types, where, typeOnly = false) => {
   return `${importStatement} {\n\t${types.join(',\n\t')},\n} from '${where}';\n\n`;
 };
 
+const KEY = `\t\treturn this.getByID(name.startsWith('item:') || ` +
+  `name.startsWith('ability:') ? name as ID : toID(name));`;
+const VALUE =
+  "\t\tconst special = name.startsWith('item:') ? `item:${toID(name.slice(5))}` as ID :\n" +
+  "\t\t\tname.startsWith('ability:') ? `ability:${toID(name.slice(8))}` as ID :\n" +
+  "\t\t\tname.startsWith('move:') ? `move:${toID(name.slice(5))}` as ID : undefined;\n" +
+  "\t\treturn this.getByID(special || toID(name));";
 const REWRITES = {
   'sim/side.ts': {
     '\tgetRequestData() {':
@@ -315,6 +322,18 @@ const REWRITES = {
     '\t\tif (ability.exists) this.abilityCache.set(id, ability);':
       `\t\t(ability as any).kind = 'Ability';\n` +
       '\t\tif (ability.exists) this.abilityCache.set(id, ability);'
+  },
+  'sim/dex-conditions.ts': {
+    '\t\t} else if (this.dex.data.Rulesets.hasOwnProperty(id)) {':
+      `\t\t} else if (id.startsWith('move:')) {\n` +
+      '\t\t\tconst move = this.dex.moves.getByID(id.slice(5) as ID);\n' +
+      `\t\t\tcondition = move as any as Condition;\n` +
+      '\t\t} else if (this.dex.data.Rulesets.hasOwnProperty(id)) {',
+    "\t\t\tcondition = {...item, id: 'item:' + item.id as ID} as any as Condition;":
+      '\t\t\tcondition = item as any as Condition;',
+    "\t\t\tcondition = {...ability, id: 'ability:' + ability.id as ID} as any as Condition;":
+      '\t\t\tcondition = ability as any as Condition;',
+     [KEY]: VALUE,
   },
   'sim/dex-items.ts': {
     '\t\tif (item.exists) this.itemCache.set(id, item);':
