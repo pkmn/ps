@@ -294,7 +294,11 @@ export class Handler implements Protocol.Handler {
       poke2: this.battle.getPokemon(args[3]),
     } as Context['|move|'];
     this.battle.checkActive(c.poke);
-    c.poke.useMove(c.move as Partial<Move> & NA, c.poke2, kwArgs.from);
+    c.poke.useMove(
+      c.move as Partial<Move> & NA,
+      c.poke2,
+      kwArgs.from as Protocol.EffectName | MoveName
+    );
   }
 
   '|cant|'(args: Args['|cant|']) {

@@ -8,6 +8,7 @@ const ps = {
   RandomPlayerAI:
     require('../../../vendor/pokemon-showdown/.sim-dist/tools/random-player-ai').RandomPlayerAI,
 };
+const {Generations} = require('@pkmn/data');
 const pkmn = require('@pkmn/sim');
 
 const {Verifier} = require('@pkmn/protocol/verifier');
@@ -23,6 +24,7 @@ const FORMATS = [
 
 class MultiRandomRunner {
   constructor(options) {
+    this.gens = new Generations(pkmn.Dex, Verifier.EXISTS);
     this.options = Object.assign({}, options);
 
     this.totalGames = options.totalGames;
@@ -50,7 +52,7 @@ class MultiRandomRunner {
       }
 
       const seed = this.prng.seed;
-      const game = new Runner(Object.assign({format}, this.options)).run().catch(err => {
+      const game = new Runner(this.gens, Object.assign({format}, this.options)).run().catch(err => {
         failures++;
         console.error(
           `Run \`node integration/test sim 1 --format=${format} --seed=${seed.join()}\` ` +
@@ -92,7 +94,8 @@ class MultiRandomRunner {
 }
 
 class Runner {
-  constructor(options) {
+  constructor(gens, options) {
+    this.gens = gens;
     this.format = options.format;
 
     this.prng = (options.prng && !Array.isArray(options.prng))
@@ -120,8 +123,9 @@ class Runner {
     const psStreams = ps.BattleStreams.getPlayerStreams(psStream);
     const pkmnStreams = pkmn.BattleStreams.getPlayerStreams(pkmnStream);
 
+    const gen = this.gens.get(+format[3]);
     const formatid =
-      format.slice(0, 4) + format.includes('doubles') ? 'doublescustomgame' : 'customgame';
+      format.slice(0, 4) + (format.includes('doubles') ? 'doublescustomgame' : 'customgame');
     const spec = {formatid, seed: this.prng.seed};
 
     const teamSeed1 = this.newSeed();
@@ -154,13 +158,14 @@ class Runner {
     const psStart = psStreams.omniscient.write(start);
     const pkmnStart = pkmnStreams.omniscient.write(start);
     const streams = new AsyncIterableStreams(psStreams.omniscient, pkmnStreams.omniscient);
+    const verifier = new Verifier(gen);
 
     for await (const [psChunk, pkmnChunk] of streams) {
       if (this.output) console.log(psChunk);
       assert.deepStrictEqual(pkmn.State.normalizeLog(pkmnChunk), pkmn.State.normalizeLog(psChunk));
 
       for (const line of psChunk.split('\n')) {
-        const v = Verifier.verifyLine(line);
+        const v = verifier.verifyLine(line);
         assert(!v, `Invalid protocol: '${line}'`);
       }
     }

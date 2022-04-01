@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/protocol",
-  "version": "0.3.5",
+  "version": "0.4.0",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "unpkg": "build/production.min.js",
@@ -26,6 +26,10 @@
   ],
   "dependencies": {
     "@pkmn/types": "^2.0.0"
+  },
+  "devDependencies": {
+    "@pkmn/dex": "^0.5.11",
+    "@pkmn/data": "^0.5.11"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",

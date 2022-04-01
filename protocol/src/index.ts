@@ -10,10 +10,11 @@ import {
   MoveTarget,
   Player,
   SideCondition,
+  SideID,
   StatsTable,
   StatusName,
+  TypeName,
   Weather,
-  SideID,
 } from '@pkmn/types';
 
 export {ID} from '@pkmn/types';
@@ -106,11 +107,13 @@ export namespace Protocol {
   /**
    * The name of an 'effect' (move, ability, item, status, etc).
    *
-   * Effects which are moves, abilities or items are prefixed by `move: `, `ability: ` and `item: `
-   * respectively, whereas all other effects are unprefixed. For example, `move: Spectral Thief` or
-   * `confusion`.
+   * Effects which are pokemon, moves, abilities or items are prefixed by `pokemon: `, ß`move: `,
+   * `ability: ` and `item: ` respectively, whereas all other effects are unprefixed. For example,
+   * `move: Spectral Thief` or `confusion`.
    */
-  export type EffectName = string & As<'EffectName'>;
+  export type EffectName = string & As<'EffectName'> | MoveEffectName;
+  /** The name of a move 'effect', prefixed with `move: `. */
+  export type MoveEffectName = string & As<'MoveEffectName'>;
   /** The name of a Pokemon species (unprefixed). */
   export type SpeciesName = string & As<'SpeciesName'>;
   /** The name of an ability (unprefixed). */
@@ -119,6 +122,8 @@ export namespace Protocol {
   export type ItemName = string & As<'ItemName'>;
   /** The name of a move (unprefixed). */
   export type MoveName = string & As<'MoveName'>;
+  /** The name of an animation (unprefixed). */
+  export type AnimationName = (string & As<'AnimationName'>) | MoveName;
 
   /** An arbitrary message to be displayed as is. */
   export type Message = string & As<'Message'>;
@@ -1090,7 +1095,7 @@ export namespace Protocol {
      */
     '|-block|':
     | readonly ['-block', PokemonIdent, EffectName]
-    | readonly ['-block', PokemonIdent, EffectName, MoveName | '']
+    | readonly ['-block', PokemonIdent, EffectName | MoveName, MoveName | '']
     | readonly ['-block', PokemonIdent, EffectName, MoveName, PokemonIdent | ''];
     /**
      * `|-notarget|POKEMON`
@@ -1233,26 +1238,26 @@ export namespace Protocol {
      * The field condition `CONDITION` has started. Field conditions are all effects that affect the
      * entire field and aren't a weather. (For example: Trick Room, Grassy Terrain).
      */
-    '|-fieldstart|': readonly ['-fieldstart', FieldCondition];
+    '|-fieldstart|': readonly ['-fieldstart', MoveEffectName | FieldCondition];
     /**
      * `|-fieldend|CONDITION`
      *
      * Indicates that the field condition `CONDITION` has ended.
      */
-    '|-fieldend|': readonly ['-fieldend', FieldCondition];
+    '|-fieldend|': readonly ['-fieldend', MoveEffectName | FieldCondition];
     /**
      * `|-sidestart|SIDE|CONDITION`
      *
      * A side condition `CONDITION` has started on `SIDE`. Side conditions are all effects that
      * affect one side of the field. (For example: Tailwind, Stealth Rock, Reflect).
      */
-    '|-sidestart|': readonly ['-sidestart', Side, SideCondition];
+    '|-sidestart|': readonly ['-sidestart', Side, MoveEffectName | SideCondition];
     /**
      * `|-sideend|SIDE|CONDITION`
      *
      * Indicates that the side condition `CONDITION` ended for the given `SIDE`.
      */
-    '|-sideend|': readonly ['-sideend', Side, SideCondition];
+    '|-sideend|': readonly ['-sideend', Side, MoveEffectName | SideCondition];
     /**
      * `|-swapsideconditions`
      *
@@ -1267,16 +1272,18 @@ export namespace Protocol {
      * on the `POKEMON` Pokémon by `EFFECT`. (For example: confusion, Taunt, Substitute).
      */
     '|-start|':
+    | readonly ['-start', PokemonIdent, 'Dynamax']
+    | readonly ['-start', PokemonIdent, 'Dynamax', 'Gmax' | '']
     | readonly ['-start', PokemonIdent, EffectName | MoveName]
-    | readonly ['-start', PokemonIdent, EffectName, Types]
     | readonly ['-start', PokemonIdent, EffectName, MoveName]
-    | readonly ['-start', PokemonIdent, 'Dynamax', 'Gmax' | ''];
+    | readonly ['-start', PokemonIdent, 'typechange', Types?]
+    | readonly ['-start', PokemonIdent, 'typeadd', TypeName];
     /**
      * `|-end|POKEMON|EFFECT`
      *
      * The volatile status from `EFFECT` inflicted on the `POKEMON` Pokémon has ended.
      */
-    '|-end|': readonly ['-end', PokemonIdent, EffectName | MoveName];
+    '|-end|': readonly ['-end', PokemonIdent, EffectName | MoveName | AbilityName];
     /**
      * `|-crit|POKEMON`
      *
@@ -1489,8 +1496,8 @@ export namespace Protocol {
      * The Pokémon `POKEMON` used move `MOVE` which causes a temporary effect lasting the duration
      * of the turn. (For example: Protect, Focus Punch, Roost).
      */
-    '|-singleturn|': readonly ['-singleturn', PokemonIdent, MoveName];
-    '|-anim|': readonly ['-anim', PokemonIdent, MoveName, PokemonIdent];
+    '|-singleturn|': readonly ['-singleturn', PokemonIdent, MoveEffectName | MoveName];
+    '|-anim|': readonly ['-anim', PokemonIdent, AnimationName, PokemonIdent];
     '|-ohko|': readonly ['-ohko'];
     '|-candynamax|': readonly ['-candynamax', Player];
   }
@@ -1528,7 +1535,7 @@ export namespace Protocol {
     'fatigue': true;
     'forme': true;
     /** `[from] EFFECT` */
-    'from': EffectName | MoveName;
+    'from': EffectName | MoveName | AbilityName;
     'heavy': true;
     'item': ItemName;
     /**
@@ -1566,7 +1573,7 @@ export namespace Protocol {
     'zeffect': true;
   } & {
     'already': true;
-    'anim': 'prepare';
+    'anim': AnimationName | 'prepare';
     'identify': true;
     'interrupt': true;
     'multiple': true;
@@ -2219,9 +2226,7 @@ function upgradeBattleArgs({args, kwArgs}: {
 
     if (id === 'charge') {
       return {
-        args: [
-          '-singlemove', pokemon as Protocol.PokemonIdent, effect as unknown as Protocol.MoveName,
-        ],
+        args: ['-singlemove', pokemon as Protocol.PokemonIdent, 'Charge' as Protocol.MoveName],
         kwArgs: {of: target || undefined},
       };
     }

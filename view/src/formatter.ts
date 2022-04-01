@@ -862,7 +862,7 @@ class Handler implements Protocol.Handler<string> {
 
   '|-weather|'(args: Args['|-weather|'], kwArgs: KWArgs['|-weather|']) {
     const [, weather] = args;
-    let from: EffectName | MoveName | ID | undefined = kwArgs.from;
+    let from = kwArgs.from as EffectName | MoveName | ID | undefined;
     if (!weather || weather === 'none') {
       from = WEATHERS[this.tracker.currentWeather()!];
       const template = this.parser.template('end', from, 'NODEFAULT');

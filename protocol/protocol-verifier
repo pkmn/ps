@@ -7,16 +7,40 @@ try {
   if (err.code !== 'MODULE_NOT_FOUND') throw err;
 }
 
+const packages = [];
+for (const dep of ['@pkmn/sim', '@pkmn/data']) {
+  try {
+    require.resolve(dep);
+  } catch (err) {
+    if (err.code !== 'MODULE_NOT_FOUND') throw err;
+    packages.push(dep);
+  }
+}
+if (packages.length) {
+  require('child_process').execSync(`npm install ${packages.join(' ')} --no-audit --no-save`, {
+    stdio: 'inherit',
+    cwd: __dirname,
+  });
+  console.error('Please rerun now that dependencies have been resolved.');
+  process.exit(1);
+}
+
 const readline = require('readline');
 
+const {Dex} = require('@pkmn/sim');
+const {Generations} = require('@pkmn/data');
+
 const {Verifier} = require('./build/verifier');
+
+const gens = new Generations(Dex, Verifier.EXISTS);
+const verifier = new Verifier(gens.get(process.argv[2] ? +process.argv[2] : 8));
 
 readline.createInterface({
   input: process.stdin,
   output: process.stdout,
   terminal: false
 }).on('line', line => {
-  const result = Verifier.verifyLine(line);
+  const result = verifier.verifyLine(line);
   if (result) {
     console.error(result);
     process.exit(1);

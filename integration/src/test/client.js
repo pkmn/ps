@@ -106,7 +106,7 @@ class Runner {
       },
     };
 
-    const gens = new Generations(sim.Dex);
+    const gens = new Generations(sim.Dex, Verifier.EXISTS);
     const battle = new client.Battle(gens);
     const formatter = new view.LogFormatter(perspective, battle);
     const pkmn = {battle, formatter, log: ''};
@@ -115,7 +115,7 @@ class Runner {
       if (output) output.push(chunk);
 
       for (const line of chunk.split('\n')) {
-        const v = Verifier.verifyLine(line);
+        const v = new Verifier(battle.gen).verifyLine(line);
         assert(!v, `Invalid protocol: '${line}'`);
 
         // FIXME: workaround for crash in smogon/pokemon-showdown-client's animateMove...
