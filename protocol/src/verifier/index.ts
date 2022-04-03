@@ -91,7 +91,7 @@ function verifyType(name: TypeName, gen?: Generation) {
 
 function verifyTypes(types: Protocol.Types, gen?: Generation) {
   if (!gen) return verifyName(types);
-  const [type1, type2] = types.split(',');
+  const [type1, type2] = types.split('/');
   return verifyType(type1 as TypeName, gen) &&
     (!type2 || verifyType(type2 as TypeName, gen));
 }

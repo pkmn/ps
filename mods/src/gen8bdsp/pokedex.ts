@@ -44,6 +44,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	arceusfairy: {
 		inherit: true,
 		requiredItems: ["Pixie Plate"],
+		gen: 4,
 	},
 	arceusfighting: {
 		inherit: true,

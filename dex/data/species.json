@@ -25562,7 +25562,7 @@
       "weightkg": 110,
       "prevo": "Basculin-White-Striped",
       "evoType": "other",
-      "evoCondition": "Receive 294+ recoil from one move without fainting",
+      "evoCondition": "Receive 294+ recoil without fainting",
       "eggGroups": ["Water 2"],
       "otherFormes": ["Basculegion-F"],
       "formeOrder": ["Basculegion", "Basculegion-F"]
@@ -25586,7 +25586,7 @@
       "weightkg": 110,
       "prevo": "Basculin-White-Striped",
       "evoType": "other",
-      "evoCondition": "Receive 294+ recoil from one move without fainting",
+      "evoCondition": "Receive 294+ recoil without fainting",
       "eggGroups": ["Water 2"]
     },
     "sneasler": {

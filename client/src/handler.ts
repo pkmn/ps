@@ -848,7 +848,7 @@ export class Handler implements Protocol.Handler {
       c.poke.addVolatile('typeadd' as ID, {type: sanitizeName(args[3]) as TypeName});
       break;
     case 'dynamax':
-      c.poke.addVolatile('dynamax' as ID);
+      c.poke.addVolatile('dynamax' as ID, args[3] ? {} : undefined);
       break;
     case 'autotomize':
       if (c.poke.volatiles.autotomize) {

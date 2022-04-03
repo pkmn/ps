@@ -366,7 +366,7 @@ export class RandomGen3Teams extends RandomGen4Teams {
 
 		do {
 			// Choose next 4 moves from learnset/viable moves and add them to moves list:
-			while (moves.size < 4 && movePool.length) {
+			while (moves.size < this.maxMoveCount && movePool.length) {
 				const moveid = this.sampleNoReplace(movePool);
 				if (moveid.startsWith('hiddenpower')) {
 					availableHP--;
@@ -376,7 +376,7 @@ export class RandomGen3Teams extends RandomGen4Teams {
 				moves.add(moveid);
 			}
 
-			while (moves.size < 4 && rejectedPool.length) {
+			while (moves.size < this.maxMoveCount && rejectedPool.length) {
 				const moveid = this.sampleNoReplace(rejectedPool);
 				if (moveid.startsWith('hiddenpower')) {
 					if (hasHiddenPower) continue;
@@ -491,7 +491,7 @@ export class RandomGen3Teams extends RandomGen4Teams {
 					break;
 				}
 			}
-		} while (moves.size < 4 && (movePool.length || rejectedPool.length));
+		} while (moves.size < this.maxMoveCount && (movePool.length || rejectedPool.length));
 
 		if (hasHiddenPower) {
 			let hpType;
@@ -545,8 +545,7 @@ export class RandomGen3Teams extends RandomGen4Teams {
 			Ditto: 99, Unown: 99,
 		};
 		const tier = species.tier;
-		let level = levelScale[tier] || (species.nfe ? 90 : 80);
-		if (customScale[species.name]) level = customScale[species.name];
+		const level = this.adjustLevel || customScale[species.name] || levelScale[tier] || (species.nfe ? 90 : 80);
 
 		// Prepare optimal HP
 		let hp = Math.floor(Math.floor(2 * species.baseStats.hp + ivs.hp + Math.floor(evs.hp / 4) + 100) * level / 100 + 10);

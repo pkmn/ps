@@ -325,6 +325,7 @@
   "celebrate": {"activate": "  Congratulations, [TRAINER]!"},
   "charge": {"start": "  [POKEMON] began charging power!"},
   "clamp": {"start": "  [SOURCE] clamped down on [POKEMON]!", "move": "#wrap"},
+  "conversion": {"typeChange": "  Converted type to [SOURCE]'s!"},
   "corrosivegas": {
     "fail": "#healblock",
     "removeItem": "  [SOURCE] corroded [POKEMON]'s [ITEM]!"

@@ -75,8 +75,6 @@
     },
     "conversion": {
       "inherit": true,
-      "volatileStatus": "conversion",
-      "accuracy": true,
       "target": "normal",
       "desc": "Causes the user's types to become the same as the current types of the target.",
       "shortDesc": "User becomes the same type as the target."
