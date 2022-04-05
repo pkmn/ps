@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-this-alias */
 import * as T from '@pkmn/dex-types';
 
 import * as AbilitiesJSON from './data/abilities.json';
