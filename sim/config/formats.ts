@@ -167,7 +167,7 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		ruleset: ['Little Cup', 'Standard', 'Dynamax Clause'],
 		banlist: [
-			'Corsola-Galar', 'Drifloon', 'Rufflet', 'Scraggy', 'Scyther', 'Sneasel', 'Swirlix', 'Tangela', 'Vulpix-Alola', 'Woobat', 'Zigzagoon-Base',
+			'Corsola-Galar', 'Cutiefly', 'Drifloon', 'Gastly', 'Gothita', 'Rufflet', 'Scraggy', 'Scyther', 'Sneasel', 'Swirlix', 'Tangela', 'Vullaby', 'Vulpix-Alola', 'Woobat', 'Zigzagoon-Base',
 			'Chlorophyll', 'Moody', 'Baton Pass', 'Sticky Web',
 		],
 	},
@@ -358,7 +358,7 @@ export const Formats: FormatList = [
 		gameType: 'doubles',
 		searchShow: false,
 		ruleset: ['Standard Doubles', 'Little Cup', 'Dynamax Clause', 'Swagger Clause', 'Sleep Clause Mod'],
-		banlist: ['Corsola-Galar', 'Cutiefly', 'Ponyta-Base', 'Scyther', 'Sneasel', 'Swirlix', 'Tangela', 'Vulpix', 'Vulpix-Alola'],
+		banlist: ['Corsola-Galar', 'Cutiefly', 'Ponyta-Base', 'Scyther', 'Sneasel', 'Swirlix', 'Tangela', 'Vulpix', 'Vulpix-Alola', 'Ally Switch'],
 	},
 	{
 		name: "[Gen 8] VGC 2022",
@@ -651,7 +651,7 @@ export const Formats: FormatList = [
 			'Calyrex-Ice', 'Calyrex-Shadow', 'Cinderace', 'Darmanitan-Galar', 'Dialga', 'Dracovish', 'Dragapult', 'Eternatus', 'Genesect', 'Giratina',
 			'Giratina-Origin', 'Groudon', 'Hawlucha', 'Ho-Oh', 'Kartana', 'Kyogre', 'Kyurem-Black', 'Kyurem-White', 'Landorus-Base', 'Lugia', 'Lunala',
 			'Marshadow', 'Mewtwo', 'Naganadel', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Palkia', 'Porygon-Z', 'Pheromosa', 'Rayquaza', 'Regieleki',
-			'Reshiram', 'Rillaboom', 'Shedinja', 'Solgaleo', 'Spectrier', 'Swoobat', 'Urshifu-Base', 'Xerneas', 'Yveltal', 'Zacian', 'Zacian-Crowned',
+			'Reshiram', 'Rillaboom', 'Shedinja', 'Solgaleo', 'Spectrier', 'Swoobat', 'Tapu Bulu', 'Urshifu-Base', 'Xerneas', 'Yveltal', 'Zacian', 'Zacian-Crowned',
 			'Zamazenta', 'Zamazenta-Crowned', 'Zekrom', 'Zeraora', 'Zygarde-Base', 'Arena Trap', 'Magnet Pull', 'Moody', 'Power Construct', 'Sand Rush',
 			'Shadow Tag', 'King\'s Rock', 'Baton Pass',
 		],
@@ -672,9 +672,9 @@ export const Formats: FormatList = [
 		ruleset: ['Standard', 'Flipped Mod', 'Dynamax Clause'],
 		banlist: [
 			'Azumarill', 'Blissey', 'Calyrex-Ice', 'Calyrex-Shadow', 'Dialga', 'Eternatus', 'Giratina', 'Giratina-Origin', 'Groudon', 'Ho-Oh', 'Kyogre',
-			'Kyurem-Black', 'Kyurem-White', 'Lugia', 'Lunala', 'Marshadow', 'Mewtwo', 'Necrozma-Dawn Wings', 'Necrozma-Dusk Mane', 'Palkia', 'Rayquaza',
-			'Reshiram', 'Solgaleo', 'Steelix', 'Xerneas', 'Yveltal', 'Zacian', 'Zacian-Crowned', 'Zamazenta', 'Zamazenta-Crowned', 'Zekrom', 'Zygarde-Base',
-			'Psychic Surge', 'Psychic Terrain', 'Shell Smash',
+			'Kyurem-Black', 'Kyurem-White', 'Lugia', 'Lunala', 'Marshadow', 'Melmetal', 'Mewtwo', 'Necrozma-Dawn Wings', 'Necrozma-Dusk Mane', 'Palkia',
+			'Rayquaza', 'Reshiram', 'Solgaleo', 'Steelix', 'Xerneas', 'Yveltal', 'Zacian', 'Zacian-Crowned', 'Zamazenta', 'Zamazenta-Crowned', 'Zekrom',
+			'Zygarde-Base', 'Arena Trap', 'Moody', 'Power Construct', 'Psychic Surge', 'Shadow Tag', 'Baton Pass', 'Psychic Terrain', 'Shell Smash',
 		],
 	},
 
@@ -1023,6 +1023,16 @@ export const Formats: FormatList = [
 		banlist: ['RU', 'NUBL', 'Damp Rock', 'Heat Rock'],
 	},
 	{
+		name: "[Gen 8 BDSP] PU",
+		threads: [
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3700009/">BDSP PU</a>`,
+		],
+
+		mod: 'gen8bdsp',
+		ruleset: ['[Gen 8 BDSP] NU'],
+		banlist: ['NU', 'PUBL'],
+	},
+	{
 		name: "[Gen 8 BDSP] LC",
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3696004/">BDSP LC</a>`,
@@ -1074,7 +1084,7 @@ export const Formats: FormatList = [
 		mod: 'gen8bdsp',
 		gameType: 'doubles',
 		ruleset: ['Standard Doubles'],
-		banlist: ['DUber'],
+		banlist: ['DUber', 'Dark Void'],
 	},
 	{
 		name: "[Gen 8 BDSP] Battle Festival Doubles",
@@ -2514,7 +2524,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen3',
 		ruleset: ['Standard', 'One Boost Passer Clause'],
-		banlist: ['Uber', 'Sand Veil', 'Assist', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Smeargle + Ingrain'],
+		banlist: ['Uber', 'Sand Veil', 'Soundproof', 'Assist', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Smeargle + Ingrain'],
 	},
 	{
 		name: "[Gen 2] OU",
@@ -3617,7 +3627,7 @@ export const Formats: FormatList = [
 		searchShow: false,
 		ruleset: ['Standard', 'NFE Clause'],
 		banlist: ['Uber', 'OU', 'UUBL', 'Smeargle + Ingrain', 'Baton Pass'],
-		unbanlist: ['Scyther', 'Sand Veil'],
+		unbanlist: ['Scyther'],
 	},
 	{
 		name: "[Gen 3] NU",

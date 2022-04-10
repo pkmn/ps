@@ -46,6 +46,8 @@ export class RandomGen7Teams extends RandomTeams {
 	constructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {
 		super(dex, format, prng);
 
+		this.noStab = [...this.noStab, 'voltswitch'];
+
 		this.moveEnforcementCheckers = {
 			Bug: movePool => movePool.includes('megahorn') || movePool.includes('pinmissile'),
 			Dark: (movePool, moves, abilities, types, counter, species) => (
@@ -59,7 +61,7 @@ export class RandomGen7Teams extends RandomTeams {
 			),
 			Electric: (movePool, moves, abilities, types, counter) => !counter.get('Electric') || movePool.includes('thunder'),
 			Fairy: (movePool, moves, abilities, types, counter) => (
-				!counter.get('Fairy') && !types.has('Flying') && !abilities.has('Pixilate')
+				(!counter.get('Fairy') && !types.has('Flying') && !abilities.has('Pixilate'))
 			),
 			Fighting: (movePool, moves, abilities, types, counter) => !counter.get('Fighting') || !counter.get('stab'),
 			Fire: (movePool, moves, abilities, types, counter) => (
@@ -344,7 +346,7 @@ export class RandomGen7Teams extends RandomTeams {
 				(moves.has('clangingscales') && !teamDetails.zMove)
 			)};
 		case 'thunderbolt':
-			return {cull: moves.has('discharge') || (moves.has('voltswitch') && moves.has('wildcharge'))};
+			return {cull: ['discharge', 'voltswitch', 'wildcharge'].some(m => moves.has(m))};
 		case 'moonblast':
 			return {cull: isDoubles && moves.has('dazzlinggleam')};
 		case 'aurasphere': case 'focusblast':
@@ -458,7 +460,12 @@ export class RandomGen7Teams extends RandomTeams {
 		case 'facade':
 			return {cull: moves.has('bulkup') || hasRestTalk};
 		case 'hiddenpower':
-			return {cull: moves.has('rest') || !counter.get('stab') && counter.damagingMoves.size < 2};
+			return {cull: (
+				moves.has('rest') ||
+				(!counter.get('stab') && counter.damagingMoves.size < 2) ||
+				// Force Moonblast on Special-setup Fairies
+				(counter.setupType === 'Special' && types.has('Fairy') && movePool.includes('moonblast'))
+			)};
 		case 'hypervoice':
 			return {cull: moves.has('blizzard')};
 		case 'judgment':

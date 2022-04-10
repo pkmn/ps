@@ -117,6 +117,7 @@ export class BasicEffect implements EffectData {
 
 	constructor(data: AnyObject) {
 		this.exists = true;
+		// eslint-disable-next-line @typescript-eslint/no-this-alias
 		Object.assign(this, data);
 
 		this.name = Utils.getString(data.name).trim();
@@ -148,6 +149,7 @@ export class Nature extends BasicEffect implements Readonly<BasicEffect & Nature
 	readonly minus?: StatIDExceptHP;
 	constructor(data: AnyObject) {
 		super(data);
+		// eslint-disable-next-line @typescript-eslint/no-this-alias
 		data = this;
 
 		this.fullname = `nature: ${this.name}`;

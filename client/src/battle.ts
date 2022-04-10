@@ -80,6 +80,7 @@ export class Battle {
 
   gameType: GameType;
   rated: boolean | Message;
+  rules: {[ruleName: string]: 1 | 0} = {};
   tier: FormatName | '';
   teamPreviewCount: number;
   speciesClause: boolean;

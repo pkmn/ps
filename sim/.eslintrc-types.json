@@ -16,8 +16,6 @@
         "./.eslintrc-no-types.json"
       ],
       "rules": {
-        // TODO: fix when PS updates
-        "@typescript-eslint/no-this-alias": "off",
         // TODO investigate
         "@typescript-eslint/restrict-plus-operands": "off",
         // "@typescript-eslint/restrict-plus-operands": ["error", {"checkCompoundAssignments": true}],

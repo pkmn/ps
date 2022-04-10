@@ -170,6 +170,7 @@ export class Handler implements Protocol.Handler {
   '|rule|'(args: Args['|rule|']) {
     const ruleName = args[1].split(': ')[0];
     if (ruleName === 'Species Clause') this.battle.speciesClause = true;
+    this.battle.rules[ruleName] = 1;
   }
 
   '|rated|'(args: Args['|rated|']) {
@@ -768,7 +769,8 @@ export class Handler implements Protocol.Handler {
     const pokemon = c.poke2;
     const shiny = c.poke2.shiny;
     const gender = c.poke2.gender;
-    c.poke.addVolatile('transform' as ID, {pokemon, shiny, gender});
+    const level = c.poke.level;
+    c.poke.addVolatile('transform' as ID, {pokemon, shiny, gender, level});
     c.poke.addVolatile('formechange' as ID, {speciesForme});
     for (const moveSlot of c.poke2.moveSlots) {
       c.poke.rememberMove(moveSlot.name, 0);

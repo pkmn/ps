@@ -540,7 +540,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 				return ["Uber", "OU", "UU", "NFE", "LC"];
 			}
 			if (isBDSP && !isDoubles) {
-				return ["CAP", "CAP NFE", "CAP LC", "Uber", "(Uber)", "OU", "UUBL", "UU", "RUBL", "RU", "NUBL", "NU", "NFE", "LC", "Unreleased"];
+				return ["CAP", "CAP NFE", "CAP LC", "Uber", "(Uber)", "OU", "UUBL", "UU", "RUBL", "RU", "NUBL", "NU", "PUBL", "PU", "(PU)", "NFE", "LC", "Unreleased"];
 			}
 			if (isVGC) {
 				return ["Mythical", "Restricted Legendary", "Regular", "NFE", "LC"];
@@ -740,6 +740,9 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			case 'bottlecap':
 			case 'goldbottlecap':
 			case 'galaricacuff':
+			case 'chippedpot':
+			case 'crackedpot':
+			case 'galaricawreath':
 				badItems.push(id);
 				break;
 			// outclassed items
