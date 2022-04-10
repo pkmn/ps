@@ -4,9 +4,9 @@ import {_import, _unpack, Sets, Data} from './sets';
 
 const CURRENT = 8;
 
-export class Team {
+export class Team<S = PokemonSet | Partial<PokemonSet>> {
   constructor(
-    readonly team: Readonly<PokemonSet[]>,
+    readonly team: Readonly<S[]>,
     readonly data?: Data,
     readonly format?: string,
     readonly name?: string,
@@ -64,18 +64,18 @@ export class Team {
     return JSON.stringify(this.team);
   }
 
-  static fromJSON(json: string): Team|undefined {
+  static fromJSON(json: string): Team<PokemonSet>|undefined {
     if (json.charAt(0) !== '[' || json.charAt(json.length - 1) !== ']') {
       return undefined;
     }
     // BUG: this is completely unvalidated...
     const team: PokemonSet[] = JSON.parse(json);
-    return new Team(team);
+    return new Team<PokemonSet>(team);
   }
 }
 
 export const Teams = new class {
-  packTeam(team: Team): string {
+  packTeam<S>(team: Team<S>): string {
     let buf = '';
     for (const s of team.team) {
       if (buf) buf += ']';
@@ -84,7 +84,7 @@ export const Teams = new class {
     return buf;
   }
 
-  unpackTeam(buf: string, data?: Data): Team | undefined {
+  unpackTeam(buf: string, data?: Data): Team<PokemonSet> | undefined {
     if (!buf) return undefined;
     if (buf.charAt(0) === '[' && buf.charAt(buf.length - 1) === ']') {
       return Team.fromJSON(buf);
@@ -105,7 +105,7 @@ export const Teams = new class {
       i = j + 1;
     }
 
-    return new Team(team, data);
+    return new Team<PokemonSet>(team, data);
   }
 
   importTeam(buf: string, data?: Data): Team|undefined {
@@ -113,17 +113,17 @@ export const Teams = new class {
     return teams.length ? teams[0] : undefined;
   }
 
-  importTeams(buf: string, data?: Data, one?: boolean): Readonly<Team[]> {
+  importTeams(buf: string, data?: Data, one?: boolean): Readonly<Team<Partial<PokemonSet>>[]> {
     const lines = buf.split('\n');
     if (lines.length === 1 || (lines.length === 2 && !lines[1])) {
-      const team: Team|undefined = Teams.unpackTeam(lines[0], data);
+      const team: Team<PokemonSet>|undefined = Teams.unpackTeam(lines[0], data);
       return team ? [team] : [];
     }
 
-    const teams: Team[] = [];
+    const teams: Team<Partial<PokemonSet>>[] = [];
 
     let setLine = -1;
-    let team: PokemonSet[] = [];
+    let team: Partial<PokemonSet>[] = [];
     for (let i = 0; i < lines.length; i++) {
       let line = lines[i].trim();
 
@@ -145,7 +145,7 @@ export const Teams = new class {
           line = line.slice(slashIndex + 1);
         }
 
-        teams.push(new Team(team, data, format, line, folder));
+        teams.push(new Team<Partial<PokemonSet>>(team, data, format, line, folder));
       } else if (line.includes('|')) {
         // packed format
         const t = unpackLine(line, data);
@@ -165,13 +165,13 @@ export const Teams = new class {
     // If we made it here we read in some sets but there was no '===' marker
     // in the file so we assume only one (unnamed) team.
     if (team.length && !teams.length) {
-      teams.push(new Team(team, data));
+      teams.push(new Team<Partial<PokemonSet>>(team, data));
     }
 
     return teams;
   }
 
-  exportTeams(teams: Readonly<Team[]>, data?: Data): string {
+  exportTeams<S>(teams: Readonly<Team<S>[]>, data?: Data): string {
     let buf = '';
 
     let i = 0;
@@ -185,17 +185,16 @@ export const Teams = new class {
     return buf;
   }
 
-  toString(teams: Readonly<Team[]>, data?: Data):
-  string {
+  toString<S>(teams: Readonly<Team<S>[]>, data?: Data): string {
     return Teams.exportTeams(teams, data);
   }
 
-  fromString(str: string, data?: Data): Readonly<Team[]> {
+  fromString(str: string, data?: Data): Readonly<Team<Partial<PokemonSet>>[]> {
     return Teams.importTeams(str, data);
   }
 };
 
-function unpackLine(line: string, data?: Data): Team | undefined {
+function unpackLine(line: string, data?: Data): Team<PokemonSet> | undefined {
   const pipeIndex = line.indexOf('|');
   if (pipeIndex < 0) return undefined;
 
@@ -210,7 +209,7 @@ function unpackLine(line: string, data?: Data): Team | undefined {
   const team = Teams.unpackTeam(line.slice(pipeIndex + 1), data);
   return !team
     ? team
-    : new Team(
+    : new Team<PokemonSet>(
       team.team,
       data,
       format,

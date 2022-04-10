@@ -74,11 +74,11 @@ const DECODE_STAT: Readonly<{[name: string]: StatID}> = {
 export {PokemonSet} from '@pkmn/types';
 
 export const Sets = new class {
-  pack(s: PokemonSet) {
+  pack(s: Partial<PokemonSet>) {
     return Sets.packSet(s);
   }
 
-  packSet(s: PokemonSet) {
+  packSet(s: Partial<PokemonSet>) {
     let buf = '';
     // name
     buf += s.name || s.species;
@@ -135,7 +135,9 @@ export const Sets = new class {
     }
 
     const getIV = (stat: StatID) =>
-      s.ivs[stat] === 31 || s.ivs[stat] === undefined ? '' : s.ivs[stat].toString();
+      !('ivs' in s) || s.ivs![stat] === 31 || s.ivs![stat] === undefined
+        ? ''
+        : s.ivs![stat].toString();
 
     // ivs
     let ivs = '|';
@@ -184,9 +186,9 @@ export const Sets = new class {
     return buf;
   }
 
-  exportSet(s: PokemonSet, data?: Data) {
+  exportSet(s: Partial<PokemonSet>, data?: Data) {
     let buf = '';
-    let species = s.species || s.name;
+    let species = s.species || s.name || '';
     species = data?.species.get(species)?.name || species;
     if (s.name && s.name !== species) {
       buf += '' + s.name + ' (' + species + ')';
@@ -326,7 +328,7 @@ export const Sets = new class {
     return JSON.parse(json) as PokemonSet;
   }
 
-  toString(s: PokemonSet, data?: Data) {
+  toString(s: Partial<PokemonSet>, data?: Data) {
     return Sets.exportSet(s, data);
   }
 
@@ -573,7 +575,7 @@ export function _import(lines: string[], i = 0, data?: Data) {
     }
   }
 
-  return {set: s as PokemonSet, line: i + 1};
+  return {set: s!, line: i + 1};
 }
 
 function getHiddenPowerType(move: string) {

@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.0
+
+- Importing sets has always actually only returned a `Partial<PokemonSet>` but has claimed to return
+  a `PokemonSet`. Rectifying this is technically a 'bug fix', but has major implications to the APIs
+  and as a result the major version has been bumped.
+
 ## 2.0.0
 
 - Pokémon Showdown changed its `Dex` interface, impacting the `Data` interface optionally used by

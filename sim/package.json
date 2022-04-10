@@ -27,7 +27,7 @@
     "sim"
   ],
   "dependencies": {
-    "@pkmn/sets": "^2.0.0",
+    "@pkmn/sets": "^3.0.0",
     "@pkmn/streams": "^1.0.0"
   },
   "devDependencies": {

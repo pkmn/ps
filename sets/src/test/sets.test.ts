@@ -334,7 +334,7 @@ describe('Sets', () => {
       - Recover`;
 
     const fj =
-        Sets.fromJSON(Sets.toJSON(Sets.importSet(imported(malakazam))!))!;
+        Sets.fromJSON(Sets.toJSON(Sets.importSet(imported(malakazam))! as PokemonSet))!;
     expect(Sets.exportSet(fj)).toEqual(exported(malakazam));
 
     expect(Sets.fromJSON('foo')).toBeUndefined();
