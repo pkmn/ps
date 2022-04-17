@@ -17240,7 +17240,6 @@
       "priority": -6,
       "flags": {},
       "selfSwitch": true,
-      "onTryHit": true,
       "secondary": null,
       "target": "self",
       "type": "Psychic",

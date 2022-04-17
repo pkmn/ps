@@ -117,7 +117,6 @@ export class BasicEffect implements EffectData {
 
 	constructor(data: AnyObject) {
 		this.exists = true;
-		// eslint-disable-next-line @typescript-eslint/no-this-alias
 		Object.assign(this, data);
 
 		this.name = Utils.getString(data.name).trim();
