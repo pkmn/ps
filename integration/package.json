@@ -24,6 +24,10 @@
     "source-map-support": "^0.5.21",
     "typescript": "^4.6.4"
   },
+  "alias": {
+    "process": false,
+    "buffer": false
+  },
   "scripts": {
     "lint": "eslint --cache src --ext js,ts",
     "fix": "eslint --fix src --ext js,ts",
