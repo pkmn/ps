@@ -25,6 +25,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		isNonstandard: "Past",
 	},
+	beastball: {
+		inherit: true,
+		isNonstandard: "Past",
+	},
 	blunderpolicy: {
 		inherit: true,
 		isNonstandard: "Past",
@@ -80,6 +84,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 	dreadplate: {
 		inherit: true,
 		isNonstandard: null,
+	},
+	dreamball: {
+		inherit: true,
+		isNonstandard: "Past",
 	},
 	earthplate: {
 		inherit: true,
@@ -311,6 +319,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 		isNonstandard: "Past",
 	},
 	sachet: {
+		inherit: true,
+		isNonstandard: "Past",
+	},
+	safariball: {
 		inherit: true,
 		isNonstandard: "Past",
 	},

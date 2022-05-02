@@ -348,7 +348,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "LC",
 	},
 	magneton: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "NFE",
 	},
 	magnezone: {
@@ -622,7 +622,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		randomBattleMoves: ["blizzard", "freezedry", "surf", "thunderbolt"],
 	},
 	ditto: {
-		tier: "RU",
+		tier: "NU",
 		doublesTier: "DUU",
 		randomBattleMoves: ["transform"],
 	},
@@ -1697,7 +1697,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	deoxys: {
 		isNonstandard: "Unobtainable",
 		tier: "Unreleased",
-		randomBattleMoves: ["superpower", "icebeam", "knockoff", "psychoboost", "stealthrock", "toxicspikes"],
+		randomBattleMoves: ["superpower", "icebeam", "knockoff", "psychoboost", "stealthrock", "toxicspikes", "extremespeed"],
 	},
 	deoxysattack: {
 		isNonstandard: "Unobtainable",
@@ -1971,7 +1971,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "LC",
 	},
 	abomasnow: {
-		tier: "RU",
+		tier: "NU",
 		doublesTier: "DOU",
 		randomBattleMoves: ["auroraveil", "blizzard", "earthquake", "iceshard", "woodhammer"],
 	},
@@ -2131,7 +2131,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		randomBattleMoves: ["earthquake", "extremespeed", "recover", "stoneedge", "swordsdance"],
 	},
 	arceussteel: {
-		randomBattleMoves: ["defog", "judgment", "recover", "roar", "stealthrock", "surf", "willowisp"],
+		randomBattleMoves: ["defog", "judgment", "recover", "roar", "stealthrock", "earthpower", "willowisp"],
 	},
 	arceuswater: {
 		randomBattleMoves: ["defog", "icebeam", "judgment", "recover", "roar"],

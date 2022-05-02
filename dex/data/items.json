@@ -13,23 +13,28 @@
       "inherit": true,
       "desc": "Holder's Dragon-type attacks have 1.1x power. Evolves Seadra (trade)."
     },
+    "fastball": {"inherit": true, "isNonstandard": null},
     "focusband": {
       "inherit": true,
       "desc": "Holder has a ~11.7% chance to survive an attack that would KO it with 1 HP."
     },
     "hardstone": {"inherit": true},
+    "heavyball": {"inherit": true, "isNonstandard": null},
     "kingsrock": {"inherit": true},
     "leftovers": {
       "inherit": true,
       "onResidualOrder": 5,
       "onResidualSubOrder": 1
     },
+    "levelball": {"inherit": true, "isNonstandard": null},
     "lightball": {"inherit": true},
+    "loveball": {"inherit": true, "isNonstandard": null},
     "luckypunch": {
       "inherit": true,
       "onModifyCritRatioPriority": -1,
       "desc": "If held by a Chansey, its critical hit ratio is always at stage 2. (25% crit rate)"
     },
+    "lureball": {"inherit": true, "isNonstandard": null},
     "magnet": {"inherit": true},
     "metalcoat": {"inherit": true},
     "metalpowder": {
@@ -37,6 +42,7 @@
       "desc": "If held by a Ditto, its Defense and Sp. Def are 1.5x, even while Transformed."
     },
     "miracleseed": {"inherit": true},
+    "moonball": {"inherit": true, "isNonstandard": null},
     "mysticwater": {"inherit": true},
     "nevermeltice": {"inherit": true},
     "poisonbarb": {"inherit": true},
@@ -44,6 +50,7 @@
     "silverpowder": {"inherit": true},
     "softsand": {"inherit": true},
     "spelltag": {"inherit": true},
+    "sportball": {"inherit": true, "isNonstandard": null},
     "stick": {
       "inherit": true,
       "onModifyCritRatioPriority": -1,
@@ -114,6 +121,7 @@
       "isNonstandard": "Unobtainable",
       "desc": "No competitive use."
     },
+    "fastball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "figyberry": {
       "inherit": true,
       "onResidualOrder": 10,
@@ -129,6 +137,7 @@
       "onModifyAtkPriority": 1,
       "desc": "Holder's Rock-type attacks have 1.1x power."
     },
+    "heavyball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "iapapaberry": {
       "inherit": true,
       "onResidualOrder": 10,
@@ -144,6 +153,7 @@
       "inherit": true,
       "desc": "The accuracy of attacks against the holder is 0.95x."
     },
+    "levelball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "liechiberry": {
       "inherit": true,
       "onResidualOrder": 10,
@@ -153,6 +163,8 @@
       "inherit": true,
       "desc": "If held by a Pikachu, its Special Attack is doubled."
     },
+    "loveball": {"inherit": true, "isNonstandard": "Unobtainable"},
+    "lureball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "magnet": {
       "inherit": true,
       "onModifySpAPriority": 1,
@@ -174,6 +186,7 @@
       "onModifySpAPriority": 1,
       "desc": "Holder's Grass-type attacks have 1.1x power."
     },
+    "moonball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "mysticwater": {
       "inherit": true,
       "onModifySpAPriority": 1,
@@ -241,6 +254,7 @@
       "onModifyAtkPriority": 1,
       "desc": "Holder's Ghost-type attacks have 1.1x power."
     },
+    "sportball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "starfberry": {
       "inherit": true,
       "onResidualOrder": 10,
@@ -273,6 +287,7 @@
     "custapberry": {"inherit": true},
     "deepseascale": {"inherit": true},
     "deepseatooth": {"inherit": true},
+    "fastball": {"inherit": true, "isNonstandard": null},
     "flameorb": {
       "inherit": true,
       "onResidualOrder": 10,
@@ -287,6 +302,7 @@
       "inherit": true,
       "desc": "Can only be held by Giratina. Its Ghost- & Dragon-type attacks have 1.2x power."
     },
+    "heavyball": {"inherit": true, "isNonstandard": null},
     "ironball": {
       "inherit": true,
       "desc": "Holder's Speed is halved and it becomes grounded."
@@ -298,12 +314,15 @@
       "onResidualOrder": 10,
       "onResidualSubOrder": 4
     },
+    "levelball": {"inherit": true, "isNonstandard": null},
     "lifeorb": {"inherit": true, "condition": {"duration": 1}},
     "lightball": {
       "inherit": true,
       "desc": "If held by a Pikachu, its attacks have their power doubled."
     },
+    "loveball": {"inherit": true, "isNonstandard": null},
     "luckypunch": {"inherit": true},
+    "lureball": {"inherit": true, "isNonstandard": null},
     "lustrousorb": {"inherit": true},
     "mentalherb": {
       "inherit": true,
@@ -319,7 +338,9 @@
       "inherit": true,
       "condition": {"duration": 2, "onSourceModifyAccuracyPriority": 3}
     },
+    "moonball": {"inherit": true, "isNonstandard": null},
     "razorfang": {"inherit": true},
+    "sportball": {"inherit": true, "isNonstandard": null},
     "stick": {"inherit": true},
     "stickybarb": {
       "inherit": true,
@@ -536,11 +557,6 @@
       "inherit": true,
       "naturalGift": {"basePower": 70, "type": "Dragon"}
     },
-    "normalgem": {
-      "inherit": true,
-      "isNonstandard": null,
-      "desc": "Holder's first successful Normal-type attack will have 1.5x power. Single use."
-    },
     "occaberry": {
       "inherit": true,
       "naturalGift": {"basePower": 60, "type": "Fire"}
@@ -677,6 +693,10 @@
     "yacheberry": {
       "inherit": true,
       "naturalGift": {"basePower": 60, "type": "Ice"}
+    },
+    "normalgem": {
+      "inherit": true,
+      "desc": "Holder's first successful Normal-type attack will have 1.5x power. Single use."
     }
   },
   "6": {
@@ -687,22 +707,28 @@
     "belueberry": {"inherit": true, "isNonstandard": null},
     "cornnberry": {"inherit": true, "isNonstandard": null},
     "durinberry": {"inherit": true, "isNonstandard": null},
+    "fastball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "figyberry": {
       "inherit": true,
       "desc": "Restores 1/8 max HP at 1/2 max HP or less; confuses if -Atk Nature. Single use."
     },
+    "heavyball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "iapapaberry": {
       "inherit": true,
       "desc": "Restores 1/8 max HP at 1/2 max HP or less; confuses if -Def Nature. Single use."
     },
     "jabocaberry": {"inherit": true},
+    "levelball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "lifeorb": {"inherit": true},
+    "loveball": {"inherit": true, "isNonstandard": "Unobtainable"},
+    "lureball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "machobrace": {"inherit": true, "isNonstandard": null},
     "magoberry": {
       "inherit": true,
       "desc": "Restores 1/8 max HP at 1/2 max HP or less; confuses if -Spe Nature. Single use."
     },
     "magostberry": {"inherit": true, "isNonstandard": null},
+    "moonball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "nanabberry": {"inherit": true, "isNonstandard": null},
     "nomelberry": {"inherit": true, "isNonstandard": null},
     "oldamber": {"inherit": true, "isNonstandard": null},
@@ -775,6 +801,11 @@
     "dragongem": {"inherit": true, "isNonstandard": "Unobtainable"},
     "dragoniumz": {"inherit": true, "isNonstandard": null},
     "dreadplate": {"inherit": true, "isNonstandard": null},
+    "dreamball": {
+      "inherit": true,
+      "isNonstandard": "Unobtainable",
+      "desc": "A special Poke Ball that appears out of nowhere in a bag at the Entree Forest."
+    },
     "durinberry": {"inherit": true, "isNonstandard": "Unobtainable"},
     "earthplate": {"inherit": true, "isNonstandard": null},
     "eeviumz": {"inherit": true, "isNonstandard": null},
@@ -869,6 +900,7 @@
     "rockiumz": {"inherit": true, "isNonstandard": null},
     "rootfossil": {"inherit": true, "isNonstandard": null},
     "sablenite": {"inherit": true, "isNonstandard": null},
+    "safariball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "sailfossil": {"inherit": true, "isNonstandard": null},
     "salamencite": {"inherit": true, "isNonstandard": null},
     "sceptilite": {"inherit": true, "isNonstandard": null},
@@ -882,6 +914,7 @@
     "spelonberry": {"inherit": true, "isNonstandard": "Unobtainable"},
     "splashplate": {"inherit": true, "isNonstandard": null},
     "spookyplate": {"inherit": true, "isNonstandard": null},
+    "sportball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "steelgem": {"inherit": true, "isNonstandard": "Unobtainable"},
     "steeliumz": {"inherit": true, "isNonstandard": null},
     "steelixite": {"inherit": true, "isNonstandard": null},
@@ -903,10 +936,6 @@
       "desc": "Restores 1/2 max HP at 1/4 max HP or less; confuses if -SpA Nature. Single use."
     },
     "zapplate": {"inherit": true, "isNonstandard": null},
-    "dreamball": {
-      "inherit": true,
-      "desc": "A special Poke Ball that appears out of nowhere in a bag at the Entree Forest."
-    },
     "icestone": {
       "inherit": true,
       "desc": "Evolves Alolan Sandshrew into Alolan Sandslash and Alolan Vulpix into Alolan Ninetales when used."
@@ -1348,6 +1377,7 @@
       "num": 16,
       "gen": 4,
       "isPokeball": true,
+      "isNonstandard": "Unobtainable",
       "desc": "A rare Poke Ball that has been crafted to commemorate an occasion."
     },
     "chestoberry": {
@@ -3151,6 +3181,7 @@
       "num": 500,
       "gen": 4,
       "isPokeball": true,
+      "isNonstandard": "Unobtainable",
       "desc": "A special Poke Ball for the Pal Park."
     },
     "passhoberry": {

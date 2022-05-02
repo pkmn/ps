@@ -62,7 +62,8 @@ type MoveSlot = {
 };
 
 export type ItemEffect =
-   'found' | 'frisked' | 'stolen' | 'harvested' | 'bestowed' | 'tricked' | 'disturbed';
+   'found' | 'frisked' | 'knocked off' | 'stolen' |
+   'harvested' | 'bestowed' | 'tricked' | 'disturbed';
 export type LastItemEffect =
    'eaten' | 'flung' | 'knocked off' | 'stolen' | 'consumed' | 'incinerated' | 'popped' | 'held up';
 

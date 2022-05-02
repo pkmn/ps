@@ -185,7 +185,6 @@
     "dynamax": {
       "name": "Dynamax",
       "noCopy": true,
-      "duration": 3,
       "onBeforeSwitchOutPriority": -1,
       "onDragOutPriority": 2,
       "onResidualPriority": -100

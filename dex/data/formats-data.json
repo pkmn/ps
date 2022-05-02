@@ -4144,7 +4144,7 @@
       "doublesTier": "(DUber)"
     },
     "vaporeon": {"tier": "NU", "doublesTier": "(DUU)"},
-    "jolteon": {"tier": "PU", "doublesTier": "DUU"},
+    "jolteon": {"tier": "PU", "doublesTier": "(DUU)"},
     "flareon": {"tier": "(PU)", "doublesTier": "(DUU)"},
     "espeon": {"tier": "PUBL", "doublesTier": "(DUU)"},
     "umbreon": {"tier": "RU", "doublesTier": "(DUU)"},
@@ -4300,7 +4300,7 @@
     "zigzagoongalar": {"tier": "LC"},
     "linoone": {"tier": "NUBL", "doublesTier": "(DUU)"},
     "linoonegalar": {"tier": "NFE"},
-    "obstagoon": {"tier": "RU", "doublesTier": "(DUU)"},
+    "obstagoon": {"tier": "RUBL", "doublesTier": "(DUU)"},
     "wurmple": {"isNonstandard": "Past", "tier": "Illegal"},
     "silcoon": {"isNonstandard": "Past", "tier": "Illegal"},
     "beautifly": {"isNonstandard": "Past", "tier": "Illegal"},

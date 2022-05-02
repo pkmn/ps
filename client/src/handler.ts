@@ -639,10 +639,12 @@ export class Handler implements Protocol.Handler {
       fromEffect: this.battle.get('conditions', kwArgs.from),
     } as Context['|-enditem|'];
 
-    c.poke.item = '';
-    c.poke.itemEffect = '';
-    c.poke.lastItem = c.item.id;
-    c.poke.lastItemEffect = '';
+    if (this.battle.gen.num > 4 || c.fromEffect.id !== 'knockoff') {
+      c.poke.item = '';
+      c.poke.itemEffect = '';
+      c.poke.lastItem = c.item.id;
+      c.poke.lastItemEffect = '';
+    }
 
     c.poke.removeVolatile('airballoon' as ID);
     c.poke.addVolatile('itemremoved' as ID);
@@ -656,7 +658,14 @@ export class Handler implements Protocol.Handler {
     } else if (c.fromEffect.id) {
       switch (c.fromEffect.id) {
       case 'fling': return void (c.poke.lastItemEffect = 'flung');
-      case 'knockoff': return void (c.poke.lastItemEffect = 'knocked off');
+      case 'knockoff': {
+        if (this.battle.gen.num <= 4) {
+          c.poke.itemEffect = 'knocked off';
+        } else {
+          c.poke.lastItemEffect = 'knocked off';
+        }
+        return;
+      }
       case 'stealeat': return void (c.poke.lastItemEffect = 'stolen');
       case 'gem': return void (c.poke.lastItemEffect = 'consumed');
       case 'incinerate': return void (c.poke.lastItemEffect = 'incinerated');
