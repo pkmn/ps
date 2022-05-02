@@ -114,7 +114,7 @@ There are several reasons as to why you may wish to use a package in this reposi
 
 You should consider **not** using a package in this repository and instead vendoring
 `smogon/pokemon-showdown` (eg. as a
-[Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) if none of the above applies
+[Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)) if none of the above applies
 and you need to be on the bleeding edge (though note that several projects in this repository add
 functionality above and beyond what is offered by `smogon/pokemon-showdown` or
 `smogon/pokemon-showdown-client`).
