@@ -1218,5 +1218,14 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
 console.log("DONE");
 
 process.stdout.write("Building smogon/pokemon-showdown-client update... ");
-child_process.execSync('node build', {cwd: '../vendor/pokemon-showdown-client'});
+// FIXME: workaround for broken update script
+const babelrc = fs.readFileSync(path.join(psc, '.babelrc'), 'utf8');
+try {
+	const overwritten = babelrc.replace('"sourceMaps": true', '"sourceMaps": false');
+	fs.writeFileSync(path.join(psc, '.babelrc'), overwritten);
+	child_process.execSync('node build', {cwd: '../vendor/pokemon-showdown-client'});
+} finally {
+	fs.writeFileSync(path.join(psc, '.babelrc'), babelrc);
+}
+
 console.log("DONE");
