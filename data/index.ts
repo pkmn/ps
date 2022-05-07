@@ -259,7 +259,9 @@ export class Specie implements DexSpecies {
   readonly isMega?: boolean;
   readonly isPrimal?: boolean;
   readonly battleOnly?: SpeciesName | SpeciesName[];
-  readonly isGigantamax?: MoveName;
+  readonly canGigantamax?: MoveName;
+  readonly gmaxUnreleased?: boolean;
+  readonly cannotDynamax?: boolean;
   readonly requiredAbility?: AbilityName;
   readonly requiredItem?: ItemName;
   readonly requiredItems?: ItemName[];
@@ -316,7 +318,8 @@ export class Specie implements DexSpecies {
     if (!this.otherFormes?.length) this.otherFormes = undefined;
     this.formeOrder = species.formeOrder?.filter(s => exists(this.dex.species.get(s)));
     if (!this.formeOrder?.length) this.formeOrder = undefined;
-    this.formes = this.formeOrder?.filter(s => !this.dex.species.get(s).isGigantamax);
+    this.formes = this.formeOrder?.filter(s =>
+      this.dex.species.get(s).isNonstandard !== 'Gigantamax');
     this.prevo =
       species.prevo && exists(this.dex.species.get(species.prevo)) ? species.prevo : undefined;
   }
@@ -325,7 +328,7 @@ export class Specie implements DexSpecies {
     return (this.baseSpecies === this.name
       ? this.formeOrder ? this.formeOrder.findIndex(name => name === this.name) : 0
       : this.dex.species.get(this.baseSpecies).formeOrder!.findIndex(
-        name => name === (this.isGigantamax ? this.baseSpecies : this.name)
+        name => name === (this.isNonstandard === 'Gigantamax' ? this.baseSpecies : this.name)
       ));
   }
 

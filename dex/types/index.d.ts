@@ -251,7 +251,9 @@ export interface SpeciesData {
   requiredItems?: string[];
   requiredMove?: string;
   battleOnly?: string | string[];
-  isGigantamax?: string;
+  canGigantamax?: string;
+  gmaxUnreleased?: boolean;
+  cannotDynamax?: boolean;
   changesFrom?: string;
   tier?: Tier.Singles | Tier.Other;
   inherit?: boolean;
