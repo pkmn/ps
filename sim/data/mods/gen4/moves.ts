@@ -448,9 +448,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 				this.effectState.move = target.lastMove.id;
 				this.add('-start', target, 'Encore');
-				if (!this.queue.willMove(target)) {
-					this.effectState.duration++;
-				}
 			},
 			onOverrideAction(pokemon) {
 				return this.effectState.move;
@@ -835,8 +832,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		onAfterHit(target, source, move) {
 			if (!target.item || target.itemState.knockedOff) return;
+			if (target.ability === 'multitype') return;
 			const item = target.getItem();
-			if (this.singleEvent('TakeItem', item, target.itemState, target, target, move, item)) {
+			if (this.runEvent('TakeItem', target, source, move, item)) {
 				target.itemState.knockedOff = true;
 				this.add('-enditem', target, item.name, '[from] move: Knock Off');
 				this.hint("In Gens 3-4, Knock Off only makes the target's item unusable; it cannot obtain a new item.", true);

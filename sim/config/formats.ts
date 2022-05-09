@@ -626,11 +626,12 @@ export const Formats: FormatList = [
 		ruleset: ['Standard', 'Crazyhouse Rule', 'Dynamax Clause', 'Sleep Moves Clause', 'Evasion Abilities Clause', '!Sleep Clause Mod'],
 		banlist: [
 			'Calyrex-Ice', 'Calyrex-Shadow', 'Cinderace', 'Darmanitan-Galar', 'Dialga', 'Dracovish', 'Eternatus', 'Genesect', 'Giratina',
-			'Giratina-Origin', 'Groudon', 'Ho-Oh', 'Kyogre', 'Kyurem-Black', 'Kyurem-White', 'Landorus-Base', 'Lugia', 'Lunala', 'Magearna',
-			'Marshadow', 'Mewtwo', 'Naganadel', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Palkia', 'Pheromosa', 'Rayquaza', 'Reshiram',
-			'Solgaleo', 'Spectrier', 'Urshifu-Base', 'Xerneas', 'Yveltal', 'Zacian', 'Zacian-Crowned', 'Zamazenta', 'Zamazenta-Crowned',
-			'Zekrom', 'Zygarde-Base', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'Bright Powder', 'King\'s Rock', 'Lax Incense',
-			'Baton Pass', 'Explosion', 'Final Gambit', 'Misty Explosion', 'Self-Destruct',
+			'Giratina-Origin', 'Groudon', 'Hawlucha', 'Ho-Oh', 'Kyogre', 'Kyurem', 'Kyurem-Black', 'Kyurem-White', 'Landorus-Base', 'Lugia',
+			'Lunala', 'Magearna', 'Marshadow', 'Mewtwo', 'Naganadel', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Palkia', 'Pheromosa',
+			'Rayquaza', 'Reshiram', 'Solgaleo', 'Spectrier', 'Urshifu-Base', 'Xerneas', 'Yveltal', 'Zacian', 'Zacian-Crowned', 'Zamazenta',
+			'Zamazenta-Crowned', 'Zekrom', 'Zygarde-Base', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'Bright Powder',
+			'King\'s Rock', 'Lax Incense', 'Baton Pass', 'Explosion', 'Final Gambit', 'Healing Wish', 'Lunar Dance', 'Memento',
+			'Misty Explosion', 'Self-Destruct',
 		],
 	},
 	{
@@ -643,17 +644,17 @@ export const Formats: FormatList = [
 		mod: 'pokebilities',
 		ruleset: ['[Gen 8] Pokebilities', '!Obtainable Abilities', 'AAA Restricted Abilities', '2 Ability Clause', 'Sleep Moves Clause', '!Sleep Clause Mod'],
 		banlist: [
-			'Blacephalon', 'Buzzwole', 'Clefable', 'Dragapult', 'Dragonite', 'Kartana', 'Melmetal', 'Noivern', 'Pangoro', 'Perrserker', 'Rillaboom',
-			'Tapu Lele', 'Urshifu', 'Urshifu-Rapid-Strike', 'Victini', 'Zamazenta-Crowned', 'Arena Trap', 'Moody', 'Shadow Tag', 'Wonder Guard',
-			'Chlorophyll + Desolate Land', 'Chlorophyll + Drought', 'Regenerator + Emergency Exit', 'Regenerator + Multiscale', 'Regenerator + Shadow Shield',
-			'Regenerator + Wimp Out', 'Sand Rush + Sand Stream', 'Slush Rush + Snow Warning', 'Swift Swim + Drizzle', 'Swift Swim + Primordial Sea',
-			'Regenerator > 2',
+			'Blacephalon', 'Buzzwole', 'Clefable', 'Dragapult', 'Dragonite', 'Kartana', 'Keldeo', 'Kyurem', 'Melmetal', 'Mienshao',
+			'Obstagoon', 'Noivern', 'Pangoro', 'Perrserker', 'Rillaboom', 'Tapu Bulu', 'Tapu Lele', 'Urshifu', 'Urshifu-Rapid-Strike',
+			'Victini', 'Weavile', 'Zamazenta-Crowned', 'Arena Trap', 'Moody', 'Shadow Tag', 'Wonder Guard', 'Chlorophyll + Desolate Land',
+			'Chlorophyll + Drought', 'Electric Surge + Surge Surfer', 'Regenerator + Emergency Exit', 'Regenerator + Multiscale',
+			'Regenerator + Shadow Shield', 'Regenerator + Wimp Out', 'Sand Rush + Sand Stream', 'Slush Rush + Snow Warning', 'Swift Swim + Drizzle',
+			'Swift Swim + Primordial Sea', 'Regenerator > 2',
 		],
-		unbanlist: ['Dracozolt'],
 		restricted: [
 			'Comatose', 'Contrary', 'Fluffy', 'Fur Coat', 'Gorilla Tactics', 'Huge Power', 'Ice Scales', 'Illusion', 'Imposter', 'Innards Out',
-			'Intrepid Sword', 'Libero', 'Neutralizing Gas', 'Parental Bond', 'Poison Heal', 'Prankster', 'Protean', 'Pure Power', 'Simple', 'Stakeout',
-			'Speed Boost', 'Tinted Lens', 'Water Bubble',
+			'Intrepid Sword', 'Libero', 'Magnet Pull', 'Neutralizing Gas', 'Parental Bond', 'Poison Heal', 'Prankster', 'Protean',
+			'Pure Power', 'Simple', 'Stakeout', 'Stench', 'Speed Boost', 'Tinted Lens', 'Unburden', 'Water Bubble',
 		],
 	},
 
@@ -2639,7 +2640,7 @@ export const Formats: FormatList = [
 		name: "[Gen 6] Pure Hackmons",
 		desc: `Anything that can be hacked in-game and is usable in local battles is allowed.`,
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/posts/8111004/">ORAS Pure Hackmons</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/posts/9029427/">ORAS Pure Hackmons</a>`,
 		],
 
 		mod: 'gen6',

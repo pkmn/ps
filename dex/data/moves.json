@@ -7712,7 +7712,6 @@
       "pp": 5,
       "priority": 0,
       "flags": {"protect": 1},
-      "selfdestruct": "ifHit",
       "secondary": null,
       "target": "normal",
       "type": "Fighting",

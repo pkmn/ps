@@ -4172,7 +4172,7 @@
     "zapdos": {"tier": "OU", "doublesTier": "DOU"},
     "zapdosgalar": {"tier": "OU", "doublesTier": "DUU"},
     "moltres": {"tier": "UU", "doublesTier": "(DUU)"},
-    "moltresgalar": {"tier": "UU", "doublesTier": "DUU"},
+    "moltresgalar": {"tier": "UUBL", "doublesTier": "DUU"},
     "dratini": {"tier": "LC"},
     "dragonair": {"tier": "NFE"},
     "dragonite": {"tier": "OU", "doublesTier": "(DUU)"},
