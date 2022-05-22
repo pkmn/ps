@@ -19,8 +19,16 @@ export interface ExhaustiveRunnerOptions {
 	maxGames?: number;
 	maxFailures?: number;
 	dual?: boolean | 'debug';
+	possible?: ExhaustiveRunnerPossibilites;
 	runner?: (options: RunnerOptions) => Promise<void>;
 	cmd?: (cycles: number, format: string, seed: string) => string;
+}
+
+export interface ExhaustiveRunnerPossibilites {
+	pokemon?: ID[];
+	items?: ID[];
+	abilities?: ID[];
+	moves?: ID[];
 }
 
 export class ExhaustiveRunner {
@@ -46,6 +54,7 @@ export class ExhaustiveRunner {
 	private readonly maxGames?: number;
 	private readonly maxFailures?: number;
 	private readonly dual: boolean | 'debug';
+	private readonly possible?: ExhaustiveRunnerPossibilites;
 
 	private readonly runner: (options: RunnerOptions) => Promise<void>;
 	private readonly cmd: (cycles: number, format: string, seed: string) => string;
@@ -63,6 +72,7 @@ export class ExhaustiveRunner {
 		this.maxFailures = options.maxFailures || ExhaustiveRunner.MAX_FAILURES;
 		this.dual = options.dual || false;
 		this.runner = options.runner || ((o: RunnerOptions) => new Runner(o).run());
+		this.possible = options.possible;
 		this.cmd = options.cmd || ((cycles: number, format: string, seed: string) =>
 			`node tools/simulate exhaustive --cycles=${cycles} --format=${format} --seed=${seed}`);
 
@@ -93,7 +103,7 @@ export class ExhaustiveRunner {
 					error: true,
 				});
 
-				if (this.log) this.logProgress(pools);
+				if (this.log) this.logProgress(dex, pools);
 			} catch (err) {
 				this.failures++;
 				console.error(
@@ -110,23 +120,31 @@ export class ExhaustiveRunner {
 
 	private createPools(dex: typeof Dex): Pools {
 		return {
-			pokemon: new Pool(ExhaustiveRunner.onlyValid(dex.gen, dex.data.Pokedex, p => dex.species.get(p),
-				(_, p) => (p.name !== 'Pichu-Spiky-eared' && p.name.substr(0, 8) !== 'Pikachu-')), this.prng),
-			items: new Pool(ExhaustiveRunner.onlyValid(dex.gen, dex.data.Items, i => dex.items.get(i)), this.prng),
-			abilities: new Pool(ExhaustiveRunner.onlyValid(dex.gen, dex.data.Abilities, a => dex.abilities.get(a)), this.prng),
-			moves: new Pool(ExhaustiveRunner.onlyValid(dex.gen, dex.data.Moves, m => dex.moves.get(m),
-				m => (m !== 'struggle' && (m === 'hiddenpower' || m.substr(0, 11) !== 'hiddenpower'))), this.prng),
+			pokemon: new Pool(this.possible?.pokemon ??
+				ExhaustiveRunner.onlyValid(dex.gen, dex.data.Pokedex, p => dex.species.get(p), (_, p) =>
+					(p.name !== 'Pichu-Spiky-eared' && p.name.substr(0, 8) !== 'Pikachu-')), this.prng),
+			items: new Pool(this.possible?.items ??
+				ExhaustiveRunner.onlyValid(dex.gen, dex.data.Items, i => dex.items.get(i)), this.prng),
+			abilities: new Pool(this.possible?.abilities ??
+				ExhaustiveRunner.onlyValid(dex.gen, dex.data.Abilities, a => dex.abilities.get(a)), this.prng),
+			moves: new Pool(this.possible?.moves ??
+				ExhaustiveRunner.onlyValid(dex.gen, dex.data.Moves, m => dex.moves.get(m), m =>
+					(m !== 'struggle' && (m === 'hiddenpower' || m.substr(0, 11) !== 'hiddenpower'))), this.prng),
 		};
 	}
 
-	private logProgress(p: Pools) {
+	private logProgress(dex: typeof Dex, p: Pools) {
 		// `\r` = return to the beginning of the line
 		// `\x1b[k` (`\e[K`) = clear all characters from cursor position to EOL
 		if (this.games) process.stdout.write('\r\x1b[K');
+
+		const msg = [`[${this.format}] P:${p.pokemon}`];
+		if (dex.gen >= 2) msg.push(`I:${p.items}`);
+		if (dex.gen >= 3) msg.push(`A:${p.abilities}`);
+		msg.push(`M:${p.moves} = ${this.games}`);
+
 		// Deliberately don't print a `\n` character so that we can overwrite
-		process.stdout.write(
-			`[${this.format}] P:${p.pokemon} I:${p.items} A:${p.abilities} M:${p.moves} = ${this.games}`
-		);
+		process.stdout.write(msg.join(' '));
 	}
 
 	private static getSignatures(dex: typeof Dex, pools: Pools): Map<string, {item: string, move?: string}[]> {
