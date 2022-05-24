@@ -392,6 +392,7 @@
   },
   "flameburst": {"damage": "  The bursting flame hit [POKEMON]!"},
   "fling": {"removeItem": "  [POKEMON] flung its [ITEM]!"},
+  "flipturn": {"switchOut": "#uturn"},
   "fly": {"prepare": "[POKEMON] flew up high!"},
   "focusenergy": {
     "start": "  [POKEMON] is getting pumped!",
@@ -540,7 +541,7 @@
     "start": "  [POKEMON] can no longer escape because of Octolock!"
   },
   "painsplit": {"activate": "  The battlers shared their pain!"},
-  "partingshot": {"heal": "#memento"},
+  "partingshot": {"heal": "#memento", "switchOut": "#uturn"},
   "payday": {"activate": "  Coins were scattered everywhere!"},
   "perishsong": {
     "start": "  All Pokémon that heard the song will faint in three turns!",
@@ -825,6 +826,7 @@
     "activate": "  [POKEMON] can act faster than normal, thanks to its Custap Berry!"
   },
   "ejectbutton": {"end": "  [POKEMON] is switched out with the Eject Button!"},
+  "ejectpack": {"end": "  [POKEMON] is switched out by the Eject Pack!"},
   "focusband": {"activate": "  [POKEMON] hung on using its Focus Band!"},
   "focussash": {"end": "  [POKEMON] hung on using its Focus Sash!"},
   "leftovers": {

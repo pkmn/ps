@@ -3708,7 +3708,6 @@
     },
     "rustedshield": {
       "name": "Rusted Shield",
-      "forcedForme": "Zamazenta-Crowned",
       "itemUser": ["Zamazenta-Crowned"],
       "num": 1104,
       "gen": 8,
@@ -3716,7 +3715,6 @@
     },
     "rustedsword": {
       "name": "Rusted Sword",
-      "forcedForme": "Zacian-Crowned",
       "itemUser": ["Zacian-Crowned"],
       "num": 1103,
       "gen": 8,

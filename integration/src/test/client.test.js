@@ -43,7 +43,12 @@ describe('client', () => {
           battle.add(args, kwArgs);
         }
       }
-      expect(actual).toEqual(expected);
+      try {
+        expect(actual).toEqual(expected);
+      } catch (e) {
+        console.error(name);
+        throw e;
+      }
     }
   });
 });

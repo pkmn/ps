@@ -108,7 +108,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		randomBattleMoves: ["grassknot", "surf", "voltswitch", "volttackle"],
 	},
 	raichu: {
-		tier: "PU",
+		tier: "PUBL",
 		doublesTier: "DOU",
 		randomBattleMoves: ["focusblast", "grassknot", "nastyplot", "surf", "thunderbolt"],
 	},
@@ -705,7 +705,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		randomBattleMoves: ["bodyslam", "curse", "rest", "sleeptalk"],
 	},
 	articuno: {
-		tier: "(Uber)",
+		tier: "RU",
 		doublesTier: "DUU",
 		randomBattleMoves: ["defog", "icebeam", "roost", "uturn"],
 	},
@@ -985,7 +985,8 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		randomBattleMoves: ["closecombat", "facade", "megahorn", "stoneedge", "throatchop"],
 	},
 	sneasel: {
-		tier: "NFE",
+		tier: "PUBL",
+		doublesTier: "NFE",
 	},
 	weavile: {
 		tier: "OU",
@@ -1072,7 +1073,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		randomBattleMoves: ["doubleedge", "earthquake", "megahorn", "zenheadbutt"],
 	},
 	smeargle: {
-		tier: "PU",
+		tier: "PUBL",
 		doublesTier: "DUber",
 		randomBattleMoves: ["spikes", "spore", "stealthrock", "stickyweb", "toxicspikes", "whirlwind"],
 	},
@@ -1118,8 +1119,8 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		randomBattleMoves: ["earthquake", "roost", "sacredfire", "substitute", "thunderwave"],
 	},
 	celebi: {
-		isNonstandard: "Unobtainable",
-		tier: "Unreleased",
+		tier: "OU",
+		doublesTier: "DOU",
 		randomBattleMoves: ["dazzlinggleam", "gigadrain", "leafstorm", "nastyplot", "psychic", "recover", "uturn"],
 	},
 	treecko: {
@@ -1608,7 +1609,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "LC",
 	},
 	huntail: {
-		tier: "PU",
+		tier: "PUBL",
 		doublesTier: "DUU",
 		randomBattleMoves: ["crunch", "icebeam", "shellsmash", "waterfall"],
 	},
@@ -1695,23 +1696,23 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		randomBattleMoves: ["healingwish", "stealthrock", "thunderwave", "uturn", "zenheadbutt"],
 	},
 	deoxys: {
-		isNonstandard: "Unobtainable",
-		tier: "Unreleased",
+		tier: "Uber",
+		doublesTier: "DUber",
 		randomBattleMoves: ["superpower", "icebeam", "knockoff", "psychoboost", "stealthrock", "toxicspikes", "extremespeed"],
 	},
 	deoxysattack: {
-		isNonstandard: "Unobtainable",
-		tier: "Unreleased",
+		tier: "Uber",
+		doublesTier: "DUber",
 		randomBattleMoves: ["extremespeed", "icebeam", "knockoff", "psychoboost", "superpower"],
 	},
 	deoxysdefense: {
-		isNonstandard: "Unobtainable",
-		tier: "Unreleased",
+		tier: "Uber",
+		doublesTier: "DUber",
 		randomBattleMoves: ["knockoff", "nightshade", "recover", "stealthrock", "taunt", "teleport", "toxicspikes"],
 	},
 	deoxysspeed: {
-		isNonstandard: "Unobtainable",
-		tier: "Unreleased",
+		tier: "Uber",
+		doublesTier: "DUber",
 		randomBattleMoves: ["knockoff", "psychic", "stealthrock", "taunt", "toxicspikes"],
 	},
 	turtwig: {

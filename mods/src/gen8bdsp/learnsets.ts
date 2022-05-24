@@ -7138,7 +7138,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, isHidden: true, moves: ['sheercold', 'blizzard', 'mindreader', 'hurricane']},
 		],
-		eventOnly: true,
 	},
 	zapdos: {
 		learnset: {
@@ -7187,7 +7186,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, isHidden: true, moves: ['zapcannon', 'magneticflux', 'detect', 'thunder']},
 		],
-		eventOnly: true,
 	},
 	moltres: {
 		learnset: {
@@ -7235,7 +7233,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, isHidden: true, moves: ['skyattack', 'burnup', 'endure', 'hurricane']},
 		],
-		eventOnly: true,
 	},
 	dratini: {
 		learnset: {
@@ -7483,7 +7480,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, isHidden: true, moves: ['mist', 'guardswap', 'powerswap', 'psychic']},
 		],
-		eventOnly: true,
 	},
 	mew: {
 		learnset: {
@@ -7601,7 +7597,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 1, moves: ['pound', 'reflecttype']},
 		],
-		eventOnly: true,
 	},
 	chikorita: {
 		learnset: {
@@ -12282,7 +12277,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, isHidden: true, moves: ['raindance', 'reflect', 'discharge', 'extrasensory']},
 		],
-		eventOnly: true,
 	},
 	entei: {
 		learnset: {
@@ -12337,7 +12331,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, isHidden: true, moves: ['sunnyday', 'swagger', 'lavaplume', 'extrasensory']},
 		],
-		eventOnly: true,
 	},
 	suicune: {
 		learnset: {
@@ -12392,7 +12385,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, isHidden: true, moves: ['raindance', 'mirrorcoat', 'surf', 'extrasensory']},
 		],
-		eventOnly: true,
 	},
 	larvitar: {
 		learnset: {
@@ -12624,7 +12616,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, isHidden: true, moves: ['raindance', 'aeroblast', 'recover', 'extrasensory']},
 		],
-		eventOnly: true,
 	},
 	hooh: {
 		learnset: {
@@ -12687,7 +12678,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, isHidden: true, moves: ['sunnyday', 'sacredfire', 'recover', 'extrasensory']},
 		],
-		eventOnly: true,
 	},
 	celebi: {
 		learnset: {
@@ -19004,7 +18994,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, isHidden: true, moves: ['zapcannon', 'lockon', 'superpower', 'stoneedge']},
 		],
-		eventOnly: true,
 	},
 	regice: {
 		learnset: {
@@ -19057,7 +19046,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, isHidden: true, moves: ['zapcannon', 'lockon', 'superpower', 'blizzard']},
 		],
-		eventOnly: true,
 	},
 	registeel: {
 		learnset: {
@@ -19114,7 +19102,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, isHidden: true, moves: ['zapcannon', 'lockon', 'superpower', 'heavyslam']},
 		],
-		eventOnly: true,
 	},
 	latias: {
 		learnset: {
@@ -19185,7 +19172,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, moves: ['healingwish', 'guardsplit', 'psychic', 'reflecttype']},
 		],
-		eventOnly: true,
 	},
 	latios: {
 		learnset: {
@@ -19256,7 +19242,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, moves: ['memento', 'powersplit', 'psychic', 'simplebeam']},
 		],
-		eventOnly: true,
 	},
 	kyogre: {
 		learnset: {
@@ -19310,7 +19295,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, moves: ['originpulse', 'aquaring', 'sheercold', 'icebeam']},
 		],
-		eventOnly: true,
 	},
 	groudon: {
 		learnset: {
@@ -19372,7 +19356,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, moves: ['precipiceblades', 'rest', 'fissure', 'hammerarm']},
 		],
-		eventOnly: true,
 	},
 	rayquaza: {
 		learnset: {
@@ -19441,7 +19424,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, moves: ['fly', 'rest', 'hypervoice', 'dragonpulse']},
 		],
-		eventOnly: true,
 	},
 	jirachi: {
 		learnset: {
@@ -19503,7 +19485,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 5, moves: ['confusion', 'wish']},
 		],
-		eventOnly: true,
 	},
 	deoxys: {
 		learnset: {
@@ -24498,7 +24479,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 50, shiny: 1, moves: ['psychic', 'amnesia', 'extrasensory', 'imprison']},
 		],
-		eventOnly: true,
 	},
 	mesprit: {
 		learnset: {
@@ -24558,7 +24538,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 50, shiny: 1, moves: ['psychic', 'charm', 'extrasensory', 'imprison']},
 		],
-		eventOnly: true,
 	},
 	azelf: {
 		learnset: {
@@ -24621,7 +24600,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 50, shiny: 1, moves: ['psychic', 'nastyplot', 'extrasensory', 'imprison']},
 		],
-		eventOnly: true,
 	},
 	dialga: {
 		learnset: {
@@ -24684,7 +24662,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 47, shiny: 1, moves: ['roaroftime', 'flashcannon', 'slash', 'ancientpower']},
 		],
-		eventOnly: true,
 	},
 	palkia: {
 		learnset: {
@@ -24751,7 +24728,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 47, shiny: 1, moves: ['spacialrend', 'aquaring', 'slash', 'ancientpower']},
 		],
-		eventOnly: true,
 	},
 	heatran: {
 		learnset: {
@@ -24807,7 +24783,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, moves: ['stoneedge', 'heatwave', 'earthpower', 'metalsound']},
 		],
-		eventOnly: true,
 	},
 	regigigas: {
 		learnset: {
@@ -24862,7 +24837,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, moves: ['crushgrip', 'gigaimpact', 'hammerarm', 'heavyslam']},
 		],
-		eventOnly: true,
 	},
 	giratina: {
 		learnset: {
@@ -24925,7 +24899,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 70, shiny: 1, moves: ['dragonclaw', 'aurasphere', 'painsplit', 'shadowforce']},
 		],
-		eventOnly: true,
 	},
 	cresselia: {
 		learnset: {
@@ -24975,7 +24948,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, level: 50, shiny: 1, moves: ['safeguard', 'moonlight', 'psychocut', 'slash']},
 		],
-		eventOnly: true,
 	},
 	phione: {
 		learnset: {
@@ -25061,7 +25033,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		eventData: [
 			{generation: 8, moves: ['tailglow', 'watergun'], pokeball: 'pokeball'},
 		],
-		eventOnly: true,
 	},
 	darkrai: {
 		learnset: {
@@ -25125,9 +25096,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			xscissor: ["8M"],
 		},
 		eventData: [
-			{generation: 8, level: 50, shiny: 1, perfectIVs: 3, moves: ["hypnosis", "suckerpunch", "foulplay", "doubleteam"]},
+			{generation: 8, level: 50, shiny: 1, moves: ["hypnosis", "suckerpunch", "foulplay", "doubleteam"]},
 		],
-		eventOnly: true,
 	},
 	shaymin: {
 		learnset: {
@@ -25168,12 +25138,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			worryseed: ["8L55"],
 		},
 		eventData: [
-			{generation: 8, level: 30, shiny: 1, perfectIVs: 3, moves: ["growth", "magicalleaf", "leechseed", "synthesis"]},
+			{generation: 8, level: 30, shiny: 1, moves: ["growth", "magicalleaf", "leechseed", "synthesis"]},
 		],
-		eventOnly: true,
 	},
 	shayminsky: {
-		eventOnly: true,
 	},
 	arceus: {
 		learnset: {
@@ -25266,9 +25234,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			xscissor: ["8M"],
 		},
 		eventData: [
-			{generation: 8, level: 80, shiny: 1, perfectIVs: 3, moves: ["healingwish", "futuresight", "recover", "hyperbeam"]},
+			{generation: 8, level: 80, shiny: 1, moves: ["healingwish", "futuresight", "recover", "hyperbeam"]},
 		],
-		eventOnly: true,
 	},
 	syclar: {
 		learnset: {
