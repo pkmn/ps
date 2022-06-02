@@ -231,7 +231,7 @@
 |
 |t:|1603471203
 |-weather|none
-|switch|p1a: Exeggcute|Exeggcute, L86, F|71/221
+|switch|p1a: Exeggcute|Exeggcute, L86, F|71/221|[from]move: Baton Pass
 |
 |upkeep
 |turn|9
@@ -454,7 +454,7 @@
 |
 |t:|1603471203
 |-weather|none
-|switch|p1a: Dugtrio|Dugtrio-Alola, L92, M|201/201
+|switch|p1a: Dugtrio|Dugtrio-Alola, L92, M|201/201|[from]move: Baton Pass
 |move|p1b: Exeggcute|Icicle Spear|p2a: Thievul
 |-start|p1b: Exeggcute|typechange|Ice|[from] ability: Protean
 |-damage|p2a: Thievul|210/250

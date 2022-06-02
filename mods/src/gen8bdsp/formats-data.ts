@@ -348,7 +348,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "LC",
 	},
 	magneton: {
-		tier: "RU",
+		tier: "NU",
 		doublesTier: "NFE",
 	},
 	magnezone: {
@@ -705,7 +705,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		randomBattleMoves: ["bodyslam", "curse", "rest", "sleeptalk"],
 	},
 	articuno: {
-		tier: "RU",
+		tier: "NU",
 		doublesTier: "DUU",
 		randomBattleMoves: ["defog", "icebeam", "roost", "uturn"],
 	},
@@ -1249,7 +1249,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "LC",
 	},
 	masquerain: {
-		tier: "NU",
+		tier: "PU",
 		doublesTier: "DUU",
 		randomBattleMoves: ["airslash", "bugbuzz", "quiverdance", "scald", "stickyweb"],
 	},
@@ -1369,7 +1369,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		randomBattleMoves: ["grassknot", "nastyplot", "nuzzle", "switcheroo", "thunderbolt", "voltswitch"],
 	},
 	volbeat: {
-		tier: "RU",
+		tier: "NU",
 		doublesTier: "DUU",
 		randomBattleMoves: ["encore", "roost", "thunderwave", "uturn"],
 	},
@@ -1697,22 +1697,22 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	},
 	deoxys: {
 		tier: "Uber",
-		doublesTier: "DUber",
+		doublesTier: "DOU",
 		randomBattleMoves: ["superpower", "icebeam", "knockoff", "psychoboost", "stealthrock", "toxicspikes", "extremespeed"],
 	},
 	deoxysattack: {
 		tier: "Uber",
-		doublesTier: "DUber",
+		doublesTier: "DOU",
 		randomBattleMoves: ["extremespeed", "icebeam", "knockoff", "psychoboost", "superpower"],
 	},
 	deoxysdefense: {
 		tier: "Uber",
-		doublesTier: "DUber",
+		doublesTier: "DOU",
 		randomBattleMoves: ["knockoff", "nightshade", "recover", "stealthrock", "taunt", "teleport", "toxicspikes"],
 	},
 	deoxysspeed: {
 		tier: "Uber",
-		doublesTier: "DUber",
+		doublesTier: "DOU",
 		randomBattleMoves: ["knockoff", "psychic", "stealthrock", "taunt", "toxicspikes"],
 	},
 	turtwig: {

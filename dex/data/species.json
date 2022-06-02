@@ -3440,6 +3440,7 @@
       "weightkg": 25.5,
       "prevo": "Rattata-Alola",
       "evoLevel": 20,
+      "evoCondition": "at night",
       "eggGroups": ["Field"]
     },
     "raticatealolatotem": {
@@ -6102,6 +6103,7 @@
       "weightkg": 34,
       "prevo": "Cubone",
       "evoLevel": 28,
+      "evoCondition": "at night",
       "eggGroups": ["Monster"]
     },
     "marowakalolatotem": {
@@ -14024,6 +14026,7 @@
       "prevo": "Sneasel",
       "evoType": "levelHold",
       "evoItem": "Razor Claw",
+      "evoCondition": "at night",
       "eggGroups": ["Field"]
     },
     "magnezone": {
@@ -19807,6 +19810,7 @@
       "weightkg": 270,
       "prevo": "Tyrunt",
       "evoLevel": 39,
+      "evoCondition": "during the day",
       "eggGroups": ["Monster", "Dragon"]
     },
     "amaura": {
@@ -19844,6 +19848,7 @@
       "weightkg": 225,
       "prevo": "Amaura",
       "evoLevel": 39,
+      "evoCondition": "at night",
       "eggGroups": ["Monster"]
     },
     "sylveon": {
@@ -20833,6 +20838,7 @@
       "weightkg": 14.2,
       "prevo": "Yungoos",
       "evoLevel": 20,
+      "evoCondition": "during the day",
       "eggGroups": ["Field"],
       "otherFormes": ["Gumshoos-Totem"],
       "formeOrder": ["Gumshoos", "Gumshoos-Totem"]
@@ -21170,7 +21176,7 @@
       "weightkg": 25,
       "prevo": "Rockruff",
       "evoLevel": 25,
-      "evoCondition": "during the night",
+      "evoCondition": "at night",
       "eggGroups": ["Field"]
     },
     "lycanrocdusk": {
@@ -25606,6 +25612,7 @@
       "prevo": "Sneasel-Hisui",
       "evoType": "useItem",
       "evoItem": "Razor Claw",
+      "evoCondition": "during the day",
       "eggGroups": ["Field"]
     },
     "overqwil": {

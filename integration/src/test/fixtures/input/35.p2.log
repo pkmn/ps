@@ -163,7 +163,7 @@
 |
 |t:|1603471189
 |-weather|none
-|switch|p2b: Eiscue|Eiscue-Noice, L64, M|219/219
+|switch|p2b: Eiscue|Eiscue-Noice, L64, M|219/219|[from]move: Volt Switch
 |
 |upkeep
 |turn|7
@@ -334,7 +334,7 @@
 |switch|p2b: Golett|Golett, L75|208/221
 |move|p1b: Drapion|Minimize|p1b: Drapion
 |-boost|p1b: Drapion|evasion|2
-|move|p1a: Bonsly|Poison Gas|p2b: Golett|[spread] 
+|move|p1a: Bonsly|Poison Gas|p2b: Golett|[spread]
 |-block|p2a: Seismitoad|ability: Pastel Veil|[of] p2b: Golett
 |debug|set status [psn] interrupted
 |-block|p2b: Golett|ability: Pastel Veil|[of] p2b: Golett

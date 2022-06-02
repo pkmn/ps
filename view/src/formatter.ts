@@ -403,18 +403,16 @@ class Handler implements Protocol.Handler<string> {
     return this.parser.template('winBattle').replace('[TRAINER]', name);
   }
 
-  '|switch|'(args: Args['|switch|']) {
+  '|switch|'(args: Args['|switch|'], kwArgs: KWArgs['|switch|']) {
     const [, pokemon, details] = args;
 
     let buf = '';
     const switchedOut = this.tracker.getSwitchedOutPokemon(pokemon, details);
     if (switchedOut) {
       const ident = switchedOut.illusion?.ident || switchedOut.ident;
-      // BUG: Missing Flip Turn / Parting Shot / etc. smogon/pokemon-showdown-client#1974
-      if (switchedOut.lastMove === 'uturn' || switchedOut.lastMove === 'voltswitch') {
-        buf = this.switchout(ident, switchedOut.lastMove);
-      } else if (switchedOut.lastMove !== 'batonpass' && switchedOut.lastMove !== 'zbatonpass') {
-        buf = this.switchout(ident);
+      const from = LogFormatter.effectId(kwArgs.from);
+      if (!['batonpass', 'zbatonpass', 'teleport'].includes(from)) {
+        buf = this.switchout(ident, from);
       }
     }
 

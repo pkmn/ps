@@ -587,7 +587,7 @@
 
 |
 |t:|1603471197
-|switch|p2a: Stoutland|Stoutland, L82, M|170/227
+|switch|p2a: Stoutland|Stoutland, L82, M|170/227|[from]move: U-turn
 |move|p1b: Solgaleo|Fire Pledge|p2a: Stoutland
 |-supereffective|p2a: Stoutland
 |-damage|p2a: Stoutland|130/227
@@ -675,7 +675,7 @@
 
 |
 |t:|1603471197
-|switch|p2b: Kubfu|Kubfu, L62, M|151/171
+|switch|p2b: Kubfu|Kubfu, L62, M|151/171|[from]move: U-turn
 |
 |upkeep
 |turn|35

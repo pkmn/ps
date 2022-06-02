@@ -25,8 +25,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         const dex =
           new ModdedDex(Dex.mod('gen1stadium' as ID, await import('./gen1stadium') as ModData));
         expect(dex.gen).toBe(1);
-        expect(dex.moves.get('highjumpkick').desc)
-          .toBe('If this attack misses the target, the user takes 1 HP of damage.');
+        expect(dex.moves.get('counter').ignoreImmunity).toBe(true);
       });
 
       it('gen2stadium2', async () => {
