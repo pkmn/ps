@@ -6,7 +6,12 @@
       "onAfterMoveSelfPriority": 2
     },
     "par": {"name": "par", "effectType": "Status", "onBeforeMovePriority": 2},
-    "slp": {"name": "slp", "effectType": "Status", "onBeforeMovePriority": 10},
+    "slp": {
+      "name": "slp",
+      "effectType": "Status",
+      "onBeforeMovePriority": 10,
+      "onAfterMoveSelfPriority": 3
+    },
     "frz": {"name": "frz", "effectType": "Status", "onBeforeMovePriority": 12},
     "psn": {
       "name": "psn",

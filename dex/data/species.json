@@ -27013,6 +27013,23 @@
       "changesFrom": "Venomicon",
       "gen": 8
     },
+    "saharaja": {
+      "num": -68,
+      "name": "Saharaja",
+      "types": ["Ground"],
+      "baseStats": {
+        "hp": 70,
+        "atk": 120,
+        "def": 105,
+        "spa": 65,
+        "spd": 130,
+        "spe": 90
+      },
+      "abilities": {"0": "Water Absorb", "1": "Serene Grace"},
+      "weightkg": 303.9,
+      "eggGroups": ["Undiscovered"],
+      "gen": 8
+    },
     "pokestarsmeargle": {
       "num": -5000,
       "name": "Pokestar Smeargle",

@@ -78,6 +78,7 @@ export const Conditions: {[id: string]: ModdedConditionData} = {
 			pokemon.lastMove = null;
 			return false;
 		},
+		onAfterMoveSelfPriority: 3,
 		onAfterMoveSelf(pokemon) {
 			if (pokemon.statusState.time <= 0) pokemon.cureStatus();
 		},
@@ -164,6 +165,9 @@ export const Conditions: {[id: string]: ModdedConditionData} = {
 	flinch: {
 		name: 'flinch',
 		duration: 1,
+		onStart(target) {
+			target.removeVolatile('mustrecharge');
+		},
 		onBeforeMovePriority: 4,
 		onBeforeMove(pokemon) {
 			if (!this.runEvent('Flinch', pokemon)) {
