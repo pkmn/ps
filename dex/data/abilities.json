@@ -438,6 +438,8 @@
       "desc": "If this Pokemon is a Mimikyu, the first hit it takes in battle deals 0 neutral damage. Its disguise is then broken and it changes to Busted Form. Confusion damage also breaks the disguise.",
       "shortDesc": "(Mimikyu only) First hit deals 0 damage, breaks disguise."
     },
+    "darkaura": {"inherit": true, "isBreakable": true},
+    "fairyaura": {"inherit": true, "isBreakable": true},
     "innerfocus": {
       "inherit": true,
       "shortDesc": "This Pokemon cannot be made to flinch."
@@ -811,7 +813,6 @@
     },
     "darkaura": {
       "onAnyBasePowerPriority": 20,
-      "isBreakable": true,
       "name": "Dark Aura",
       "num": 186,
       "desc": "While this Pokemon is active, the power of Dark-type moves used by active Pokemon is multiplied by 1.33.",
@@ -919,7 +920,6 @@
     },
     "fairyaura": {
       "onAnyBasePowerPriority": 20,
-      "isBreakable": true,
       "name": "Fairy Aura",
       "num": 187,
       "desc": "While this Pokemon is active, the power of Fairy-type moves used by active Pokemon is multiplied by 1.33.",

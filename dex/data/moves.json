@@ -2140,6 +2140,12 @@
       "shortDesc": "Traps and damages the target for 2-5 turns."
     },
     "scaryface": {"inherit": true, "accuracy": 90},
+    "secretpower": {
+      "inherit": true,
+      "secondary": {"chance": 30, "status": "par"},
+      "desc": "Has a 30% chance to cause a secondary effect on the target based on the battle terrain. Causes paralysis on the regular Wi-Fi terrain.",
+      "shortDesc": "Effect varies with terrain. (30% paralysis chance)"
+    },
     "sketch": {"inherit": true},
     "skillswap": {
       "inherit": true,
@@ -2507,11 +2513,6 @@
     "sandstorm": {
       "inherit": true,
       "desc": "For 5 turns, the weather becomes Sandstorm. At the end of each turn except the last, all active Pokemon lose 1/16 of their maximum HP, rounded down, unless they are a Ground, Rock, or Steel type, or have the Magic Guard or Sand Veil Abilities. During the effect, the Special Defense of Rock-type Pokemon is multiplied by 1.5 when taking damage from a special attack. Lasts for 8 turns if the user is holding Smooth Rock. Fails if the current weather is Sandstorm."
-    },
-    "secretpower": {
-      "inherit": true,
-      "desc": "Has a 30% chance to cause a secondary effect on the target based on the battle terrain. Causes paralysis on the regular Wi-Fi terrain.",
-      "shortDesc": "Effect varies with terrain. (30% paralysis chance)"
     },
     "selfdestruct": {
       "inherit": true,
@@ -2919,7 +2920,7 @@
     },
     "secretpower": {
       "inherit": true,
-      "condition": {"duration": 1},
+      "secondary": {"chance": 30, "boosts": {"accuracy": -1}},
       "desc": "Has a 30% chance to cause a secondary effect on the target based on the battle terrain. Lowers accuracy by 1 stage on the regular Wi-Fi terrain. The secondary effect chance is not affected by the Serene Grace Ability.",
       "shortDesc": "Effect varies with terrain. (30% chance acc -1)"
     },

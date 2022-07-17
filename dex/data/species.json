@@ -2104,6 +2104,12 @@
         "spe": 80
       }
     },
+    "pansage": {"inherit": true, "maleOnlyHidden": true},
+    "simisage": {"inherit": true, "maleOnlyHidden": true},
+    "pansear": {"inherit": true, "maleOnlyHidden": true},
+    "simisear": {"inherit": true, "maleOnlyHidden": true},
+    "panpour": {"inherit": true, "maleOnlyHidden": true},
+    "simipour": {"inherit": true, "maleOnlyHidden": true},
     "unfezant": {
       "inherit": true,
       "baseStats": {

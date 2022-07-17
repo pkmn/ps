@@ -4719,7 +4719,7 @@
     "rufflet": {"tier": "NFE"},
     "braviary": {"tier": "NU", "doublesTier": "(DUU)"},
     "braviaryhisui": {"isNonstandard": "Future", "tier": "Illegal"},
-    "vullaby": {"tier": "LC"},
+    "vullaby": {"tier": "NFE"},
     "mandibuzz": {"tier": "UU", "doublesTier": "(DUU)"},
     "heatmor": {"tier": "(PU)", "doublesTier": "(DUU)"},
     "durant": {"tier": "RUBL", "doublesTier": "(DUU)"},
@@ -4993,7 +4993,7 @@
     },
     "sobble": {"tier": "LC"},
     "drizzile": {"tier": "NFE"},
-    "inteleon": {"tier": "PU", "doublesTier": "(DUU)"},
+    "inteleon": {"tier": "PUBL", "doublesTier": "(DUU)"},
     "inteleongmax": {
       "isNonstandard": "Gigantamax",
       "tier": "AG",
