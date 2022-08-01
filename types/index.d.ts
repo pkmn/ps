@@ -81,5 +81,6 @@ export interface PokemonSet<T = string> {
   happiness?: number;
   pokeball?: T;
   hpType?: string;
+  dynamaxLevel?: number;
   gigantamax?: boolean;
 }

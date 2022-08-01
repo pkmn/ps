@@ -25,11 +25,11 @@
     "!src/*.test.*"
   ],
   "dependencies": {
-    "@pkmn/types": "^2.0.0"
+    "@pkmn/types": "^2.1.0"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.5.22",
-    "@pkmn/data": "^0.5.22"
+    "@pkmn/dex": "^0.5.23",
+    "@pkmn/data": "^0.5.23"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",

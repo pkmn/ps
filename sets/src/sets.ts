@@ -177,10 +177,12 @@ export const Sets = new class {
       buf += '|';
     }
 
-    if (s.pokeball || (s.hpType && packName(s.hpType) !== hasHP) || s.gigantamax) {
+    const dynamax = s.dynamaxLevel !== undefined && s.dynamaxLevel !== 10;
+    if (s.pokeball || (s.hpType && packName(s.hpType) !== hasHP) || s.gigantamax || dynamax) {
       buf += ',' + (s.hpType || '');
       buf += ',' + packName(s.pokeball || '');
       buf += ',' + (s.gigantamax ? 'G' : '');
+      buf += ',' + (dynamax ? s.dynamaxLevel : '');
     }
 
     return buf;
@@ -223,6 +225,9 @@ export const Sets = new class {
     }
     if (s.hpType) {
       buf += 'Hidden Power: ' + s.hpType + '  \n';
+    }
+    if (typeof s.dynamaxLevel === 'number' && s.dynamaxLevel !== 10 && !isNaN(s.dynamaxLevel)) {
+      buf += 'Dynamax Level: ' + s.dynamaxLevel + '  \n';
     }
     if (s.gigantamax) {
       buf += 'Gigantamax: Yes  \n';
@@ -457,6 +462,7 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
     s.hpType = misc[1] || '';
     s.pokeball = unpackName(misc[2] || '', data?.items);
     s.gigantamax = !!misc[3];
+    s.dynamaxLevel = (misc[4] ? Number(misc[4]) : 10);
   }
 
   return {set: s as PokemonSet, i, j};
@@ -518,6 +524,9 @@ export function _import(lines: string[], i = 0, data?: Data) {
     } else if (line.substr(0, 14) === 'Hidden Power: ') {
       line = line.substr(14);
       s.hpType = line;
+    } else if (line.substr(0, 15) === 'Dynamax Level: ') {
+      line = line.substr(15);
+      s.dynamaxLevel = +line;
     } else if (line === 'Gigantamax: Yes') {
       s.gigantamax = true;
     } else if (line.substr(0, 5) === 'EVs: ') {

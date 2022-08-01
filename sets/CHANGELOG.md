@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.0
+
+- Pokémon Showdown added support for an optional `dynamicLevel` field which defaults to 10.
+
 ## 3.0.0
 
 - Importing sets has always actually only returned a `Partial<PokemonSet>` but has claimed to return
