@@ -590,7 +590,8 @@ export class Learnsets {
           if (move) {
             const sources = learnset.learnset[moveid];
             if (this.isLegal(move, sources, restriction || this.gen)) {
-              moves[move.id] = sources.filter(s => +s.charAt(0) <= this.gen.num);
+              const filtered = sources.filter(s => +s.charAt(0) <= this.gen.num);
+              moves[move.id] = [...new Set([...moves[move.id] ?? [], ...filtered])];
             }
           }
         }
