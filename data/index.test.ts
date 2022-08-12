@@ -455,6 +455,8 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
           .toEqual(['4M']);
         expect((await Gen(5).learnsets.learnable('Ursaring'))!['rockclimb'])
           .toBeUndefined();
+        expect((await Gen(4).learnsets.learnable('Hitmonlee'))!['megakick'])
+          .toEqual(['4L49', '3T', '3L46', '3S0']);
       });
 
       it('#canLearn', async () => {
