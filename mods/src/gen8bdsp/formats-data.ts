@@ -20,7 +20,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	charizard: {
-		tier: "PU",
+		tier: "PUBL",
 		doublesTier: "DUU",
 		randomBattleMoves: ["airslash", "earthquake", "fireblast", "focusblast", "roost"],
 	},
@@ -1577,7 +1577,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		randomBattleMoves: ["healingwish", "lightscreen", "psychic", "recover", "reflect", "thunderwave"],
 	},
 	absol: {
-		tier: "NU",
+		tier: "NUBL",
 		doublesTier: "DUU",
 		randomBattleMoves: ["knockoff", "playrough", "suckerpunch", "swordsdance"],
 	},

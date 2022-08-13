@@ -25797,8 +25797,8 @@
         "hp": 120,
         "atk": 70,
         "def": 105,
-        "spa": 75,
-        "spd": 90,
+        "spa": 70,
+        "spd": 65,
         "spe": 60
       },
       "abilities": {"0": "Rock Head", "1": "Battle Armor", "H": "Contrary"},
