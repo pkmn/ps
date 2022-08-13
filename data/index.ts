@@ -591,7 +591,29 @@ export class Learnsets {
             const sources = learnset.learnset[moveid];
             if (this.isLegal(move, sources, restriction || this.gen)) {
               const filtered = sources.filter(s => +s.charAt(0) <= this.gen.num);
-              moves[move.id] = [...new Set([...moves[move.id] ?? [], ...filtered])];
+              if (!filtered.length) continue;
+              if (moves[move.id]) {
+                // If we simply add filtered to moves[move.id] we may end up with some duplicates or
+                // situations where we have mixed learnset information. We assume that while
+                // moves[move.id] and filtered are already deduped, their union might not be, and
+                // thus iterate through looking for unique prefixes. For efficiency, instead of
+                // appending each deduped source from filtered to moves[move.id] immediately and
+                // making each subsequent iteration longer we make a list of the unique sources to
+                // add at the end. This is only safe given our assumption that filtered is unique
+                // internally to begin with.
+                const unique = [];
+                // These lists are all expected to be short arrays so this O(n^2) linear searching
+                // is still expected to be faster runtime-wise than a more sophisticated approach
+                loop: for (const source of filtered) {
+                  const prefix = source.slice(0, 2);
+                  // sadly Babel chokes on using an .every(...) here due to throwIfClosureRequired
+                  for (const s of moves[move.id]) if (s.startsWith(prefix)) continue loop;
+                  unique.push(source);
+                }
+                moves[move.id].push(...unique);
+              } else {
+                moves[move.id] = filtered;
+              }
             }
           }
         }
