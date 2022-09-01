@@ -5,7 +5,7 @@
   "dependencies": {
     "@pkmn/client": "file:../client",
     "@pkmn/data": "file:../data",
-    "@pkmn/eslint-config": "^2.9.0",
+    "@pkmn/eslint-config": "^2.10.0",
     "@pkmn/img": "file:../img",
     "@pkmn/protocol": "file:../protocol",
     "@pkmn/randoms": "file:../randoms",
@@ -54,6 +54,10 @@
   },
   "eslintConfig": {
     "extends": "@pkmn",
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": ["./tsconfig.json"]
+    },
     "root": true,
     "overrides": [
       {
