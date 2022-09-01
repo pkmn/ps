@@ -4,7 +4,7 @@ import {_import, _unpack, Sets, Data} from './sets';
 
 const CURRENT = 8;
 
-export class Team<S = PokemonSet | Partial<PokemonSet>> {
+export class Team<S extends Partial<PokemonSet> = PokemonSet | Partial<PokemonSet>> {
   constructor(
     readonly team: Readonly<S[]>,
     readonly data?: Data,
@@ -75,7 +75,7 @@ export class Team<S = PokemonSet | Partial<PokemonSet>> {
 }
 
 export const Teams = new class {
-  packTeam<S>(team: Team<S>): string {
+  packTeam<S extends Partial<PokemonSet>>(team: Team<S>): string {
     let buf = '';
     for (const s of team.team) {
       if (buf) buf += ']';
@@ -171,7 +171,7 @@ export const Teams = new class {
     return teams;
   }
 
-  exportTeams<S>(teams: Readonly<Team<S>[]>, data?: Data): string {
+  exportTeams<S extends Partial<PokemonSet>>(teams: Readonly<Team<S>[]>, data?: Data): string {
     let buf = '';
 
     let i = 0;
@@ -185,7 +185,7 @@ export const Teams = new class {
     return buf;
   }
 
-  toString<S>(teams: Readonly<Team<S>[]>, data?: Data): string {
+  toString<S extends Partial<PokemonSet>>(teams: Readonly<Team<S>[]>, data?: Data): string {
     return Teams.exportTeams(teams, data);
   }
 

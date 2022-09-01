@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.1.1
+
+- Add the previously implicit `extends Partial<PokemonSet>` constraint to several functions to
+  appease the latest TypeScript compiler.
+
 ## 3.1.0
 
 - Pokémon Showdown added support for an optional `dynamicLevel` field which defaults to 10.

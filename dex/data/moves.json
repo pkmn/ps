@@ -527,7 +527,6 @@
       "desc": "The user spends two or three turns locked into this move and then, on the second or third turn after using this move, the user attacks the opponent, inflicting double the damage in HP it lost during those turns. If the user is prevented from moving during this move's use, the effect ends. This move does not ignore type immunity.",
       "shortDesc": "Waits 2-3 turns; deals double the damage taken."
     },
-    "block": {"inherit": true, "accuracy": true, "ignoreAccuracy": false},
     "counter": {
       "inherit": true,
       "condition": {},
