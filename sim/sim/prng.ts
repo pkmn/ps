@@ -15,6 +15,11 @@
 /** 64-bit big-endian [high -> low] int */
 export type PRNGSeed = [number, number, number, number];
 
+ // DEBUG
+const ROOT = require('path').resolve(__dirname, '..', '..', '..') + '/';
+const shorten = (s: string) =>  s.replaceAll('at ', '@ ').replaceAll(ROOT, '');
+// DEBUG
+
 /**
  * A PRNG intended to emulate the on-cartridge PRNG for Gen 5 with a 64-bit
  * initial seed.
@@ -58,6 +63,7 @@ export class PRNG {
 	next(from?: number, to?: number): number {
 		this.seed = this.nextFrame(this.seed); // Advance the RNG
 		let result = (this.seed[0] << 16 >>> 0) + this.seed[1]; // Use the upper 32 bits
+		const original = `0x${(result).toString(16).padStart(8, '0').toUpperCase()}`; // DEBUG
 		if (from) from = Math.floor(from);
 		if (to) to = Math.floor(to);
 		if (from === undefined) {
@@ -67,6 +73,23 @@ export class PRNG {
 		} else {
 			result = Math.floor(result * (to - from) / 0x100000000) + from;
 		}
+		// DEBUG
+		// @ts-ignore
+		global.original = original;
+		const stack = new Error().stack!;
+		if (!stack.includes('random-player-ai') && !stack.includes('exhaustive-runner') && !(stack.includes('PRNG.randomChance') || stack.includes('FixedRNG.randomChance'))) {
+			for (const line of stack.split('\n').slice(1)) {
+				const l = line.trim();
+				if (l.startsWith('at PRNG') || l.startsWith('at FixedRNG') || /^at Battle\.(random|sample)/.test(l)) continue;
+				const fn = from === undefined ? '\x1b[35mnext()' :
+									to === undefined ? `\x1b[35mnext(\x1b[33m${from}\x1b[35m)` :
+									`\x1b[35mnext(\x1b[33m${from}\x1b[35m,\x1b[33m ${to}\x1b[35m)`;
+				console.debug(`${where()}${fn} = \x1b[33m${original}\x1b[35m (\x1b[33m${result}\x1b[35m)\x1b[0m \x1b[2m${shorten(l)}\x1b[0m`);
+				break;
+			}
+		}
+		// DEBUG
+
 		return result;
 	}
 
@@ -81,7 +104,21 @@ export class PRNG {
 	 * The denominator must be a positive integer (`> 0`).
 	 */
 	randomChance(numerator: number, denominator: number): boolean {
-		return this.next(denominator) < numerator;
+		const result = this.next(denominator);
+		// DEBUG
+		// @ts-ignore
+		const original = global.original;
+		const stack = new Error().stack!;
+		if (!stack.includes('random-player-ai') && !stack.includes('exhaustive-runner')) {
+			for (const line of stack.split('\n').slice(1)) {
+				const l = line.trim();
+				if (l.startsWith('at PRNG') || l.startsWith('at FixedRNG') || /^at Battle\.(random|sample)/.test(l)) continue;
+				console.debug(`${where()}\x1b[35mrandomChance(\x1b[33m${numerator}\x1b[35m,\x1b[33m ${denominator}\x1b[35m) = \x1b[33m${original}\x1b[35m (\x1b[33m${result}\x1b[35m)\x1b[0m \x1b[2m${shorten(l)}\x1b[0m`);
+				break;
+			}
+		}
+		// DEBUG
+		return result < numerator;
 	}
 
 	/**
@@ -196,3 +233,71 @@ random(m: number, n: number) {
 	return (m ? (n ? (result % (n - m)) + m : result % m) : result / 0x10000)
 }
 */
+
+// DEBUG
+
+const METHOD = /^ {4}at ((?:\w|\.)+) /;
+const NON_TERMINAL = new Set([
+	'PRNG.next', 'PRNG.randomChance', 'PRNG.sample', 'PRNG.shuffle',
+  'FixedRNG.next', 'FixedRNG.randomChance', 'FixedRNG.sample', 'FixedRNG.shuffle',
+  'Battle.random', 'Battle.randomChance', 'Battle.sample', 'locations', 'where',
+]);
+
+function locations() {
+  const results = [];
+  let last = undefined;
+  for (const line of new Error().stack!.split('\n').slice(1)) {
+    const match = METHOD.exec(line);
+    if (!match) continue;
+    const m = match[1];
+    if (NON_TERMINAL.has(m)) {
+      last = m;
+      continue;
+    }
+
+    if (!results.length && last) results.push(last);
+    results.push(m);
+  }
+  return results;
+}
+
+const ROLLS = {
+	HIT_MISS: [
+		'Battle.randomChance, BattleActions.tryMoveHit, BattleActions.useMove, BattleActions.runMove',
+		'Battle.randomChance, BattleActions.tryMoveHit, BattleActions.useMove, Battle.onHit, Battle.singleEvent, BattleActions.moveHit', // MM
+		'Battle.randomChance, BattleActions.tryMoveHit, BattleActions.useMoveInner, BattleActions.useMove',
+	],
+	CRITICAL: [
+		'Battle.randomChance, BattleActions.getDamage, Battle.onTryHit, Battle.runEvent',
+		'Battle.randomChance, BattleActions.getDamage, BattleActions.moveHit, BattleActions.tryMoveHit'
+	],
+	DAMAGE: [
+		'Battle.random, BattleActions.getDamage, Battle.onTryHit, Battle.runEvent',
+		'Battle.random, BattleActions.getDamage, BattleActions.moveHit, BattleActions.tryMoveHit',
+	],
+	SRF_RES: 'Battle.sample, Side.randomFoe, Battle.getRandomTarget, BattleQueue.resolveAction',
+	SRF_RUN: 'Battle.sample, Side.randomFoe, Battle.getRandomTarget, Battle.getTarget, BattleActions.runMove',
+	SRF_USE: 'Battle.sample, Side.randomFoe, Battle.getRandomTarget, BattleActions.useMove, Battle.onHit',
+	SS_MOD: 'Battle.speedSort, Battle.runEvent, Pokemon.setStatus, BattleActions.moveHit, BattleActions.tryMoveHit',
+	SS_RES: 'Battle.speedSort, Battle.residualEvent, Battle.runAction, Battle.go',
+	SS_RUN: 'Battle.speedSort, Battle.runEvent, BattleActions.runMove, Battle.runAction',
+	SS_EACH: 'Battle.speedSort, Battle.eachEvent, Battle.runAction, Battle.go',
+	INS: 'Battle.random, BattleQueue.insertChoice, BattleActions.switchIn, Battle.runAction',
+	TIE: 'Battle.speedSort, BattleQueue.sort, Battle.commitDecisions, Battle.makeChoices',
+	GLM: 'Battle.speedSort, Battle.runEvent, Pokemon.getLockedMove',
+	QKC: 'Battle.randomChance, Battle.nextTurn, Battle.go',
+	GMF: 'Battle.random, new, new, Battle.setPlayer, startBattle',
+};
+
+function where() {
+	const locs = locations().join(', ');
+	for (const name in ROLLS) {
+		const rolls = ROLLS[name as keyof typeof ROLLS];
+		const match = Array.isArray(rolls) ? rolls.some((roll: string) => locs.includes(roll)) : locs.includes(rolls);
+		if (match) return `\x1b[1m\x1b[35m${name}\x1b[0m `;
+	}
+	const stack = new Error().stack!.split('\n').slice(4).join('\n');
+	console.debug(`\x1b[35m(${locs})\n${shorten(stack)}\x1b[0m`);
+	return '';
+}
+// DEBUG

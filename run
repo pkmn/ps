@@ -1,0 +1,145 @@
+#!/usr/bin/env node
+'use strict';
+
+try {
+  require('source-map-support').install();
+} catch (err) {
+  if (err.code !== 'MODULE_NOT_FOUND') throw err;
+}
+
+const util = require('util');
+global.DEBUG = (s) =>
+	console.debug(`\x1b[41m${util.inspect(s, {colors: false}).replaceAll('\n', '\x1b[K\n')}\x1b[K\x1b[0m`);
+
+const {Battle} = require('./sim');
+const {Generations} = require('./data');
+const {Dex} = require('./dex');
+const {ModdedDex} = require('./mods');
+const {FixedRNG} = require('./prng.js');
+
+const gens = new Generations(Dex);
+
+const seed = process.argv[2] ? (process.argv[2].split(',').map(s => Number(s))) : [1, 2, 3, 4];
+
+const evs = {hp: 255, atk: 255, def: 255, spa: 255, spd: 255, spe: 255};
+const MODS = {
+  1: ['Endless Battle Clause', 'Sleep Clause Mod', 'Freeze Clause Mod'],
+	2: ['Endless Battle Clause', 'Sleep Clause Mod', 'Freeze Clause Mod'],
+};
+
+const MIN = 0;
+const MAX = 0xFFFFFFFF;
+const NOP = 42;
+
+const HIT = {name: 'HIT', key: 'BattleActions.tryMoveHit', value: MIN};
+const MISS = {name: 'MISS', key: 'BattleActions.tryMoveHit', value: MAX};
+const CRIT = {name: 'CRIT', key: ['Battle.randomChance', 'BattleActions.getDamage'], value: MIN};
+const NO_CRIT = {name: 'NO_CRIT', key: ['Battle.randomChance', 'BattleActions.getDamage'], value: MAX};
+const MIN_DMG = {name: 'MIN_DMG', key: ['Battle.random', 'BattleActions.getDamage'], value: MIN};
+const MAX_DMG = {name: 'MAX_DMG', key: ['Battle.random', 'BattleActions.getDamage'], value: MAX};
+
+const SRF_RES =
+  {name: 'SRF_RES', key: ['Side.randomFoe', 'BattleQueue.resolveAction'], value: NOP};
+const SRF_RUN = {name: 'SRF_RUN', key: ['Side.randomFoe', 'BattleActions.runMove'], value: NOP};
+const SRF_USE = {name: 'SRF_RUN', key: ['Side.randomFoe', 'BattleActions.useMove'], value: NOP};
+const SS_MOD = {name: 'SS_MOD', key: ['Battle.speedSort', 'Pokemon.setStatus'], value: NOP};
+const SS_RES = {name: 'SS_RES', key: ['Battle.speedSort', 'Battle.residualEvent'], value: NOP};
+const SS_RUN = {name: 'SS_RUN', key: ['Battle.speedSort', 'Battle.runEvent'], value: NOP};
+const SS_EACH = {name: 'SS_EACH', key: ['Battle.speedSort', 'Battle.eachEvent'], value: NOP};
+const INS = {name: 'INS', key: ['BattleQueue.insertChoice', 'BattleActions.switchIn'], value: NOP};
+const GLM = {name: 'GLM', key: 'Pokemon.getLockedMove', value: NOP};
+
+const QKC = {name: 'QKC', key: ['Battle.randomChance', 'Battle.nextTurn'], value: MIN};
+
+const ranged = (n, d) => n * Math.floor(0x100000000 / d);
+
+const TIE = (n) =>
+	({name: `TIE(${n})`, key: ['Battle.speedSort', 'BattleQueue.sort'], value: ranged(n, 2) - 1});
+const SLP = (n) =>
+  ({name: `SLP(${n})`, key: ['Battle.random', 'Pokemon.setStatus'], value: ranged(n, 8 - 1)});
+
+const DISABLE_DURATION = (n) => ({
+	name: `DISABLE_DURATION(${n})`,
+	key: ['Pokemon.addVolatile'],
+	value: ranged(n, 9 - 1) - 1,
+});
+const DISABLE_MOVE = (m, n = 4) => ({
+	name: `DISABLE_MOVE(${n})`,
+	key: ['Pokemon.addVolatile'],
+	value: ranged(m, n) - 1,
+});
+const MIMIC = (m, n = 4) => ({
+	name: `MIMIC(${n})`,
+	key: ['Battle.sample', 'Battle.singleEvent'],
+	value: ranged(m, n) - 1,
+});
+const FRZ = {name: 'FRZ', key: HIT.key, value: ranged(26, 256) - 1};
+const NO_BRN = {name: 'NO_BRN', key: FRZ.key, value: FRZ.value + 1};
+const NO_PAR = {name: 'NO_PAR', key: HIT.key, value: ranged(26, 256)};
+const PAR_CANT = {name: 'PAR_CANT', key: 'Battle.onBeforeMove', value: ranged(63, 256) - 1};
+const PAR_CAN = {name: 'PAR_CAN', key: 'Battle.onBeforeMove', value: PAR_CANT.value + 1};
+
+const gen = gens.get(1);
+const startBattle = (rolls, p1, p2, fn) => {
+	const formatid = `gen${gen.num}customgame@@@${MODS[gen.num].join(',')}`;
+	const battle = new Battle({formatid, strictChoices: true});
+	battle.debugMode = true;
+	battle.prng = new FixedRNG(battle.prng, rolls);
+	if (fn) battle.started = true;
+	battle.setPlayer('p1', {team: p1});
+	battle.setPlayer('p2', {team: p2});
+	if (fn) {
+		fn(battle);
+		battle.started = false;
+		battle.start();
+	} else {
+		battle.log = [];
+	}
+	return battle;
+};
+
+// ------------------------------------------------------------------
+
+// const proc = {key: HIT.key, value: ranged(85, 256) - 1};
+
+
+const CFZ = (n) =>
+  ({key: ['Battle.onStart', 'Pokemon.addVolatile'], value: ranged(n - 1, 6 - 2) - 1});
+const CFZ_CAN = {name: 'CFZ_CAN', key: 'Battle.onBeforeMove', value: ranged(128, 256) - 1};
+const CFZ_CANT = {name: 'CFZ_CANT', key: 'Battle.onBeforeMove', value: CFZ_CAN.value + 1};
+const THRASH = (n) =>
+  ({key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: ranged(n - 2, 5 - 3) - 1});
+const hit = (n) => ({key: HIT.key, value: ranged(n, 256) - 1});
+const miss = (n) => ({key: HIT.key, value: hit(n).value + 1});
+const BIDE = (n) =>
+	({key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: ranged(n - 2, 5 - 3)});
+// const proc = {key: HIT.key, value: ranged(52, 256) - 1};
+// const no_proc = {key: HIT.key, value: proc.value + 1};
+
+const METRONOME = move => {
+	const moves = Array.from(gen.moves)
+		.sort((a, b) => a.num - b.num)
+		.map(m => m.name)
+		.filter(m => !['Struggle', 'Metronome'].includes(m));
+	const value = ranged(moves.indexOf(move) + 1, moves.length) - 1;
+	return {name: `METRONOME(${move})`, key: ['Battle.sample', 'Battle.singleEvent'], value};
+};
+
+const wrap = {key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: MIN};
+
+const battle = startBattle([
+	SRF_RES, SRF_RES, HIT, SS_MOD, SLP(0),
+	SRF_RES, SRF_RES
+
+], [
+  {species: 'Venusaur', evs, moves: ['Solar Beam', 'Tackle']},
+], [
+  {species: 'Snorlax', evs, moves: ['Lovely Kiss', 'Teleport']},
+]);
+
+
+battle.makeChoices('move 1', 'move 1');
+battle.makeChoices('move 1', 'move 2');
+battle.makeChoices('move 2', 'move 2');
+
+

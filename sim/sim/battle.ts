@@ -599,6 +599,7 @@ export class Battle {
 		const args = [target, source, sourceEffect];
 		if (hasRelayVar) args.unshift(relayVar);
 
+		// console.debug(`\x1b[36m${customCallback ? `on${eventid} (custom)` : `on${eventid}`}\x1b[0m`);
 		let returnVal;
 		if (typeof callback === 'function') {
 			returnVal = callback.apply(this, args);
@@ -854,6 +855,7 @@ export class Battle {
 				continue;
 			}
 			let returnVal;
+			// console.debug(`\x1b[34mon${eventid}\x1b[0m`);
 			if (typeof handler.callback === 'function') {
 				const parentEffect = this.effect;
 				const parentEffectState = this.effectState;
@@ -1237,6 +1239,7 @@ export class Battle {
 
 		const requests = this.getRequests(type);
 		for (let i = 0; i < this.sides.length; i++) {
+			console.debug(`\x1b[2m|request|p${i}|...\x1b[0m`);
 			this.sides[i].emitRequest(requests[i]);
 		}
 
@@ -2488,6 +2491,8 @@ export class Battle {
 	}
 
 	runAction(action: Action) {
+		// console.debug(`\x1b[36mrunAction: ${action.choice}\x1b[0m`);
+
 		const pokemonOriginalHP = action.pokemon?.hp;
 		let residualPokemon: (readonly [Pokemon, number])[] = [];
 		// returns whether or not we ended in a callback
@@ -2814,6 +2819,7 @@ export class Battle {
 	choose(sideid: SideID, input: string) {
 		const side = this.getSide(sideid);
 
+		console.debug(`\x1b[1m\x1b[34m>${sideid} ${input}\x1b[0m`);
 		if (!side.choose(input)) return false;
 
 		if (!side.isChoiceDone()) {
@@ -2830,7 +2836,10 @@ export class Battle {
 	makeChoices(...inputs: string[]) {
 		if (inputs.length) {
 			for (const [i, input] of inputs.entries()) {
-				if (input) this.sides[i].choose(input);
+				if (input) {
+					console.debug(`\x1b[1m\x1b[34m>p${i+1} ${input}\x1b[0m`);
+					this.sides[i].choose(input);
+				}
 			}
 		} else {
 			for (const side of this.sides) {
@@ -2852,12 +2861,15 @@ export class Battle {
 			if (choice) this.inputLog.push(`>${side.id} ${choice}`);
 		}
 		for (const side of this.sides) {
+			// console.debug(`\x1b[36madd choice(s): ${side.choice.actions.map(c => c.choice)}\x1b[0m`);
 			this.queue.addChoice(side.choice.actions);
 		}
 		this.clearRequest();
 
+		const before = this.queue.list.map(c => (('pokemon' in c) && c.pokemon?.side.id) || '*');
 		this.queue.sort();
 		this.queue.list.push(...oldQueue);
+		// console.debug(`\x1b[36msorted queue = before: [${before}], after: [${this.queue.list.map(c => (('pokemon' in c) && c.pokemon?.side.id) || '*')}]\x1b[0m`);
 
 		this.requestState = '';
 		for (const side of this.sides) {
@@ -2908,17 +2920,20 @@ export class Battle {
 
 	addSplit(side: SideID, secret: Part[], shared?: Part[]) {
 		this.log.push(`|split|${side}`);
+		console.debug(`|split|${side}`);
 		this.add(...secret);
 		if (shared) {
 			this.add(...shared);
 		} else {
 			this.log.push('');
+			console.debug('');
 		}
 	}
 
 	add(...parts: (Part | (() => {side: SideID, secret: string, shared: string}))[]) {
 		if (!parts.some(part => typeof part === 'function')) {
 			this.log.push(`|${parts.join('|')}`);
+			console.debug(`|${parts.join('|')}`);
 			return;
 		}
 
@@ -2944,11 +2959,13 @@ export class Battle {
 	addMove(...args: (string | number | Function | AnyObject)[]) {
 		this.lastMoveLine = this.log.length;
 		this.log.push(`|${args.join('|')}`);
+		console.debug(`|${args.join('|')}`);
 	}
 
 	// eslint-disable-next-line @typescript-eslint/ban-types
 	attrLastMove(...args: (string | number | Function | AnyObject)[]) {
 		if (this.lastMoveLine < 0) return;
+		console.debug(`+${args.join('\n+')}`);
 		if (this.log[this.lastMoveLine].startsWith('|-anim|')) {
 			if (args.includes('[still]')) {
 				this.log.splice(this.lastMoveLine, 1);
