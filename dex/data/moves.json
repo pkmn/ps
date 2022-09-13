@@ -95,8 +95,19 @@
       "desc": "This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks other than Bide, Swift, and Transform. If the user is fully paralyzed on the second turn, it continues avoiding attacks until it switches out or successfully executes the second turn of this move or Fly."
     },
     "disable": {
-      "inherit": true,
-      "condition": {"duration": 4, "onResidualOrder": 14},
+      "num": 50,
+      "accuracy": 55,
+      "basePower": 0,
+      "category": "Status",
+      "name": "Disable",
+      "pp": 20,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1, "bypasssub": 1},
+      "volatileStatus": "disable",
+      "condition": {"onBeforeMovePriority": 7},
+      "secondary": null,
+      "target": "normal",
+      "type": "Normal",
       "desc": "For 0 to 7 turns, one of the target's known moves that has at least 1 PP remaining becomes disabled, at random. Fails if one of the target's moves is already disabled, or if none of the target's moves have PP remaining. If any Pokemon uses Haze, this effect ends. Whether or not this move was successful, it counts as a hit for the purposes of the opponent's use of Rage.",
       "shortDesc": "For 0-7 turns, disables one of the target's moves."
     },

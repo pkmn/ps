@@ -2808,22 +2808,8 @@
         "spe": 110
       }
     },
-    "justyke": {
-      "inherit": true,
-      "abilities": {"0": "Levitate", "1": "Bulletproof", "H": "Justified"}
-    },
-    "equilibra": {
-      "inherit": true,
-      "baseStats": {
-        "hp": 102,
-        "atk": 50,
-        "def": 96,
-        "spa": 133,
-        "spd": 118,
-        "spe": 60
-      },
-      "abilities": {"0": "Levitate", "1": "Bulletproof", "H": "Justified"}
-    }
+    "mumbao": {"inherit": true, "unreleasedHidden": true},
+    "jumbao": {"inherit": true, "unreleasedHidden": true}
   },
   "8": {
     "bulbasaur": {
@@ -26539,8 +26525,8 @@
         "spd": 73,
         "spe": 66
       },
-      "abilities": {"0": "Solar Power", "1": "Trace", "H": "Overcoat"},
-      "weightkg": 250,
+      "abilities": {"0": "Trace", "1": "Overcoat", "H": "Solar Power"},
+      "weightkg": 83,
       "evos": ["Jumbao"],
       "eggGroups": ["Grass"],
       "gen": 7
@@ -26557,8 +26543,8 @@
         "spd": 104,
         "spe": 96
       },
-      "abilities": {"0": "Drought", "1": "Trace", "H": "Overcoat"},
-      "weightkg": 600,
+      "abilities": {"0": "Trace", "1": "Overcoat", "H": "Drought"},
+      "weightkg": 200,
       "prevo": "Mumbao",
       "evoType": "levelFriendship",
       "evoCondition": "during the day",
@@ -26758,7 +26744,7 @@
         "spd": 68,
         "spe": 30
       },
-      "abilities": {"0": "Levitate", "1": "Stalwart", "H": "Justified"},
+      "abilities": {"0": "Levitate", "1": "Bulletproof", "H": "Justified"},
       "weightkg": 36.5,
       "evos": ["Equilibra"],
       "eggGroups": ["Mineral"],
@@ -26773,11 +26759,11 @@
         "hp": 102,
         "atk": 50,
         "def": 96,
-        "spa": 121,
+        "spa": 133,
         "spd": 118,
         "spe": 60
       },
-      "abilities": {"0": "Levitate", "1": "Stalwart", "H": "Justified"},
+      "abilities": {"0": "Levitate", "1": "Bulletproof", "H": "Justified"},
       "weightkg": 51.3,
       "prevo": "Justyke",
       "evoLevel": 32,
