@@ -125,21 +125,22 @@ const METRONOME = move => {
 	return {name: `METRONOME(${move})`, key: ['Battle.sample', 'Battle.singleEvent'], value};
 };
 
-const wrap = {key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: MIN};
-
+const MAX_WRAP = {key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: MAX};
 const battle = startBattle([
-	SRF_RES, SRF_RES, HIT, SS_MOD, SLP(0),
-	SRF_RES, SRF_RES
-
+	SRF_RES, HIT, DISABLE_MOVE(2), DISABLE_DURATION(5), METRONOME('Wrap'), SRF_USE, HIT, NO_CRIT, MIN_DMG, MAX_WRAP
 ], [
-  {species: 'Venusaur', evs, moves: ['Solar Beam', 'Tackle']},
+	{species: 'Voltorb', evs, moves: ['Disable', 'Teleport']},
 ], [
-  {species: 'Snorlax', evs, moves: ['Lovely Kiss', 'Teleport']},
+	{species: 'Goldeen', evs, moves: ['Teleport', 'Wrap', 'Metronome']},
 ]);
 
 
-battle.makeChoices('move 1', 'move 1');
-battle.makeChoices('move 1', 'move 2');
-battle.makeChoices('move 2', 'move 2');
 
+battle.makeChoices('move 1', 'move 1');
+DEBUG(JSON.stringify(battle.p2.activeRequest));
+
+battle.makeChoices('move 2', 'move 3');
+DEBUG(JSON.stringify(battle.p2.activeRequest));
+
+// battle.makeChoices('move struggle', 'move 1');
 
