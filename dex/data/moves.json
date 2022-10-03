@@ -646,7 +646,6 @@
     "meanlook": {
       "inherit": true,
       "accuracy": true,
-      "ignoreAccuracy": false,
       "flags": {"reflectable": 1, "mirror": 1}
     },
     "metronome": {
@@ -671,7 +670,6 @@
     "mimic": {
       "inherit": true,
       "accuracy": true,
-      "ignoreAccuracy": false,
       "noSketch": true,
       "desc": "While the user remains active, this move is replaced by the last move used by the target. The copied move has 5 PP. Fails if the target has not made a move, if the user already knows the move, or if the move is Struggle."
     },
@@ -725,7 +723,7 @@
       "inherit": true,
       "desc": "Whether or not this move is successful, the user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user."
     },
-    "painsplit": {"inherit": true, "accuracy": true, "ignoreAccuracy": false},
+    "painsplit": {"inherit": true, "accuracy": true},
     "perishsong": {
       "inherit": true,
       "condition": {"duration": 4, "onResidualOrder": 4}
@@ -827,7 +825,6 @@
     "spiderweb": {
       "inherit": true,
       "accuracy": true,
-      "ignoreAccuracy": false,
       "flags": {"reflectable": 1, "mirror": 1}
     },
     "spikes": {
@@ -876,7 +873,7 @@
       "desc": "Hits one to three times, at random. Power increases to 20 for the second hit and 30 for the third.",
       "shortDesc": "Hits 1-3 times. Power rises with each hit."
     },
-    "vitalthrow": {"inherit": true, "accuracy": true, "ignoreAccuracy": false},
+    "vitalthrow": {"inherit": true, "accuracy": true},
     "whirlwind": {
       "inherit": true,
       "priority": -1,
@@ -1090,6 +1087,7 @@
       "inherit": true,
       "accuracy": 100,
       "ignoreAccuracy": true,
+      "ignoreEvasion": true,
       "desc": "Prevents the target from switching out. The target can still switch out if it uses Baton Pass. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field, unless it uses Baton Pass, in which case the target will remain trapped."
     },
     "brickbreak": {
@@ -1204,6 +1202,7 @@
       "inherit": true,
       "accuracy": 100,
       "ignoreAccuracy": true,
+      "ignoreEvasion": true,
       "desc": "Prevents the target from switching out. The target can still switch out if it uses Baton Pass. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field, unless it uses Baton Pass, in which case the target will remain trapped."
     },
     "megadrain": {
@@ -1215,6 +1214,7 @@
       "inherit": true,
       "accuracy": 100,
       "ignoreAccuracy": true,
+      "ignoreEvasion": true,
       "desc": "While the user remains active, this move is replaced by the last move used by the target. The copied move has 5 PP. Fails if the target has not made a move, if the user has Transformed, if the user already knows the move, or if the move is Metronome, Mimic, Sketch, or Struggle."
     },
     "mirrorcoat": {
@@ -1251,7 +1251,12 @@
       "inherit": true,
       "flags": {"contact": 1, "protect": 1, "mirror": 1}
     },
-    "painsplit": {"inherit": true, "accuracy": 100, "ignoreAccuracy": true},
+    "painsplit": {
+      "inherit": true,
+      "accuracy": 100,
+      "ignoreAccuracy": true,
+      "ignoreEvasion": true
+    },
     "petaldance": {
       "inherit": true,
       "basePower": 70,
@@ -1263,12 +1268,14 @@
       "inherit": true,
       "accuracy": 100,
       "ignoreAccuracy": true,
+      "ignoreEvasion": true,
       "desc": "The user's Ability changes to match the target's Ability. Fails if the target's Ability is Wonder Guard."
     },
     "skillswap": {
       "inherit": true,
       "accuracy": 100,
       "ignoreAccuracy": true,
+      "ignoreEvasion": true,
       "desc": "The user swaps its Ability with the target's Ability. Fails if either the user or the target's Ability is Wonder Guard."
     },
     "sleeptalk": {
@@ -1279,6 +1286,7 @@
       "inherit": true,
       "accuracy": 100,
       "ignoreAccuracy": true,
+      "ignoreEvasion": true,
       "desc": "Prevents the target from switching out. The target can still switch out if it uses Baton Pass. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field, unless it uses Baton Pass, in which case the target will remain trapped."
     },
     "spite": {
@@ -1333,7 +1341,12 @@
       "shortDesc": "Lasts 2-5 turns. Active Pokemon cannot sleep."
     },
     "vinewhip": {"inherit": true, "pp": 10},
-    "vitalthrow": {"inherit": true, "accuracy": 100, "ignoreAccuracy": true},
+    "vitalthrow": {
+      "inherit": true,
+      "accuracy": 100,
+      "ignoreAccuracy": true,
+      "ignoreEvasion": true
+    },
     "volttackle": {
       "inherit": true,
       "secondary": null,
@@ -1351,7 +1364,12 @@
       "desc": "Damage doubles if a weather condition is active, and this move's type changes to match. Ice type during Hail, Water type during Rain Dance, Rock type during Sandstorm, and Fire type during Sunny Day.",
       "shortDesc": "Damage doubles and type varies during weather."
     },
-    "yawn": {"inherit": true, "accuracy": 100, "ignoreAccuracy": true},
+    "yawn": {
+      "inherit": true,
+      "accuracy": 100,
+      "ignoreAccuracy": true,
+      "ignoreEvasion": true
+    },
     "zapcannon": {"inherit": true, "basePower": 100},
     "armthrust": {
       "inherit": true,
@@ -3696,7 +3714,11 @@
     "hyperfang": {"inherit": true, "isNonstandard": null},
     "hyperspacefury": {"inherit": true, "isNonstandard": null},
     "hyperspacehole": {"inherit": true, "isNonstandard": null},
-    "iceball": {"inherit": true, "isNonstandard": null},
+    "iceball": {
+      "inherit": true,
+      "isNonstandard": null,
+      "desc": "If this move is successful, the user is locked into this move and cannot make another move until it misses, 5 turns have passed, or the attack cannot be used. Power doubles with each successful hit of this move and doubles again if Defense Curl was used previously by the user. If this move is called by Sleep Talk, the move is used for one turn. If this move hits an active Disguise during the effect, the power multiplier is paused but the turn counter is not, potentially allowing the multiplier to be used on the user's next move after this effect ends."
+    },
     "icehammer": {"inherit": true, "isNonstandard": null},
     "infernooverdrive": {"inherit": true, "isNonstandard": null},
     "iondeluge": {"inherit": true, "isNonstandard": null},
@@ -4051,6 +4073,10 @@
     "roleplay": {
       "inherit": true,
       "desc": "The user's Ability changes to match the target's Ability. Fails if the user's Ability is Battle Bond, Comatose, Disguise, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, Zen Mode, or already matches the target, or if the target's Ability is Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Illusion, Imposter, Multitype, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, Wonder Guard, or Zen Mode."
+    },
+    "rollout": {
+      "inherit": true,
+      "desc": "If this move is successful, the user is locked into this move and cannot make another move until it misses, 5 turns have passed, or the attack cannot be used. Power doubles with each successful hit of this move and doubles again if Defense Curl was used previously by the user. If this move is called by Sleep Talk, the move is used for one turn. If this move hits an active Disguise during the effect, the power multiplier is paused but the turn counter is not, potentially allowing the multiplier to be used on the user's next move after this effect ends."
     },
     "sandtomb": {
       "inherit": true,
@@ -10543,7 +10569,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Ice",
-      "desc": "If this move is successful, the user is locked into this move and cannot make another move until it misses, 5 turns have passed, or the attack cannot be used. Power doubles with each successful hit of this move and doubles again if Defense Curl was used previously by the user. If this move is called by Sleep Talk, the move is used for one turn. If this move hits an active Disguise during the effect, the power multiplier is paused but the turn counter is not, potentially allowing the multiplier to be used on the user's next move after this effect ends.",
+      "desc": "If this move is successful, the user is locked into this move and cannot make another move until it misses, 5 turns have passed, or the attack cannot be used. Power doubles with each successful hit of this move and doubles again if Defense Curl was used previously by the user. If this move is called by Sleep Talk, the move is used for one turn.",
       "shortDesc": "Power doubles with each hit. Repeats for 5 turns."
     },
     "icebeam": {
@@ -14672,7 +14698,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Rock",
-      "desc": "If this move is successful, the user is locked into this move and cannot make another move until it misses, 5 turns have passed, or the attack cannot be used. Power doubles with each successful hit of this move and doubles again if Defense Curl was used previously by the user. If this move is called by Sleep Talk, the move is used for one turn. If this move hits an active Disguise during the effect, the power multiplier is paused but the turn counter is not, potentially allowing the multiplier to be used on the user's next move after this effect ends.",
+      "desc": "If this move is successful, the user is locked into this move and cannot make another move until it misses, 5 turns have passed, or the attack cannot be used. Power doubles with each successful hit of this move and doubles again if Defense Curl was used previously by the user. If this move is called by Sleep Talk, the move is used for one turn.",
       "shortDesc": "Power doubles with each hit. Repeats for 5 turns."
     },
     "roost": {
