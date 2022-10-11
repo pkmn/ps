@@ -208,26 +208,26 @@ describe('Icons', () => {
   it('#getPokemon', () => {
     let pokemon = Icons.getPokemon('foobar');
     expect(pokemon.url).toBe(`${URL}/sprites/pokemonicons-sheet.png`);
-    expect(pokemon.left).toEqual(-0);
-    expect(pokemon.top).toEqual(-0);
+    expect(pokemon.left).toBe(-0);
+    expect(pokemon.top).toBe(-0);
 
     pokemon = Icons.getPokemon('Charizard', {protocol: 'http'});
     expect(pokemon.url).toBe(`http://${DOMAIN}/sprites/pokemonicons-sheet.png`);
-    expect(pokemon.left).toEqual(-240);
-    expect(pokemon.top).toEqual(-0);
+    expect(pokemon.left).toBe(-240);
+    expect(pokemon.top).toBe(-0);
 
     pokemon = Icons.getPokemon('Lucario-Mega', {domain: 'pkmn.cc', gender: 'F'});
     expect(pokemon.url).toBe('https://pkmn.cc/sprites/pokemonicons-sheet.png');
-    expect(pokemon.left).toEqual(-360);
-    expect(pokemon.top).toEqual(-2880);
+    expect(pokemon.left).toBe(-360);
+    expect(pokemon.top).toBe(-2880);
 
     pokemon = Icons.getPokemon('Pyroar', {gender: 'F'});
-    expect(pokemon.left).toEqual(-320);
-    expect(pokemon.top).toEqual(-2460);
+    expect(pokemon.left).toBe(-320);
+    expect(pokemon.top).toBe(-2460);
 
     pokemon = Icons.getPokemon('Kingler', {side: 'p1'});
-    expect(pokemon.left).toEqual(-400);
-    expect(pokemon.top).toEqual(-3000);
+    expect(pokemon.left).toBe(-400);
+    expect(pokemon.top).toBe(-3000);
 
     pokemon = Icons.getPokemon('Kingler', {side: 'p2', fainted: true});
     expect(pokemon.style).toEqual(
@@ -246,7 +246,7 @@ describe('Icons', () => {
     expect(pokeball.top).toBe(4);
 
     pokeball = Icons.getPokeball('pokeball-statused')!;
-    expect(pokeball.left).toEqual(-40);
+    expect(pokeball.left).toBe(-40);
     expect(pokeball.top).toBe(4);
 
     pokeball = Icons.getPokeball('pokeball-fainted')!;
@@ -257,7 +257,7 @@ describe('Icons', () => {
     );
 
     pokeball = Icons.getPokeball('pokeball-none', {protocol: 'http', domain: 'pkmn.cc'})!;
-    expect(pokeball.left).toEqual(-80);
+    expect(pokeball.left).toBe(-80);
     expect(pokeball.top).toBe(4);
     expect(pokeball.url).toBe('http://pkmn.cc/sprites/pokemonicons-pokeball-sheet.png');
   });
@@ -265,13 +265,13 @@ describe('Icons', () => {
   it('#getItem', () => {
     let item = Icons.getItem('foobar');
     expect(item.url).toBe(`${URL}/sprites/itemicons-sheet.png`);
-    expect(item.left).toEqual(-0);
-    expect(item.top).toEqual(-0);
+    expect(item.left).toBe(-0);
+    expect(item.top).toBe(-0);
 
     item = Icons.getItem('Choice Band');
     expect(item.url).toBe(`${URL}/sprites/itemicons-sheet.png`);
-    expect(item.left).toEqual(-96);
-    expect(item.top).toEqual(-96);
+    expect(item.left).toBe(-96);
+    expect(item.top).toBe(-96);
 
     item = Icons.getItem('focus Band', {protocol: 'http', domain: 'pkmn.cc'});
     expect(item.style).toEqual(
@@ -301,8 +301,8 @@ describe('Bundle', () => {
 
       const icon = window.PokemonIcons.getPokemon('Charizard', {protocol: 'http'});
       expect(icon.url).toBe(`http://${DOMAIN}/sprites/pokemonicons-sheet.png`);
-      expect(icon.left).toEqual(-240);
-      expect(icon.top).toEqual(-0);
+      expect(icon.left).toBe(-240);
+      expect(icon.top).toBe(-0);
     }
   });
 });
