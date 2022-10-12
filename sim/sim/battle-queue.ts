@@ -359,7 +359,7 @@ export class BattleQueue {
 			return;
 		}
 		const choice = choices;
-		// console.debug(`\x1b[36minsertChoice: ${choice.choice}\x1b[0m`);
+		console.debug(`\x1b[36minsertChoice: ${choice.choice}\x1b[0m`);
 
 		if (choice.pokemon) {
 			choice.pokemon.updateSpeed();

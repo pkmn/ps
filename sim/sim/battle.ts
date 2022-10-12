@@ -599,7 +599,7 @@ export class Battle {
 		const args = [target, source, sourceEffect];
 		if (hasRelayVar) args.unshift(relayVar);
 
-		// console.debug(`\x1b[36m${customCallback ? `on${eventid} (custom)` : `on${eventid}`}\x1b[0m`);
+		console.debug(`\x1b[36m${customCallback ? `on${eventid} (custom)` : `on${eventid}`}\x1b[0m`);
 		let returnVal;
 		if (typeof callback === 'function') {
 			returnVal = callback.apply(this, args);
@@ -855,7 +855,7 @@ export class Battle {
 				continue;
 			}
 			let returnVal;
-			// console.debug(`\x1b[34mon${eventid}\x1b[0m`);
+			console.debug(`\x1b[34mon${eventid}\x1b[0m`);
 			if (typeof handler.callback === 'function') {
 				const parentEffect = this.effect;
 				const parentEffectState = this.effectState;
@@ -2282,7 +2282,7 @@ export class Battle {
 			return originalTarget;
 		}
 
-		// banning Dragon Darts from directly targeting itself is done in side.ts, but
+	// banning Dragon Darts from directly targeting itself is done in side.ts, but
 		// Dragon Darts can target itself if Ally Switch is used afterwards
 		if (move.smartTarget) {
 			const curTarget = pokemon.getAtLoc(targetLoc);
@@ -2491,7 +2491,7 @@ export class Battle {
 	}
 
 	runAction(action: Action) {
-		// console.debug(`\x1b[36mrunAction: ${action.choice}\x1b[0m`);
+		console.debug(`\x1b[36mrunAction: ${action.choice}\x1b[0m`);
 
 		const pokemonOriginalHP = action.pokemon?.hp;
 		let residualPokemon: (readonly [Pokemon, number])[] = [];
@@ -2861,7 +2861,7 @@ export class Battle {
 			if (choice) this.inputLog.push(`>${side.id} ${choice}`);
 		}
 		for (const side of this.sides) {
-			// console.debug(`\x1b[36madd choice(s): ${side.choice.actions.map(c => c.choice)}\x1b[0m`);
+			console.debug(`\x1b[36madd choice(s): ${side.choice.actions.map(c => c.choice)}\x1b[0m`);
 			this.queue.addChoice(side.choice.actions);
 		}
 		this.clearRequest();
@@ -2869,7 +2869,7 @@ export class Battle {
 		const before = this.queue.list.map(c => (('pokemon' in c) && c.pokemon?.side.id) || '*');
 		this.queue.sort();
 		this.queue.list.push(...oldQueue);
-		// console.debug(`\x1b[36msorted queue = before: [${before}], after: [${this.queue.list.map(c => (('pokemon' in c) && c.pokemon?.side.id) || '*')}]\x1b[0m`);
+		console.debug(`\x1b[36msorted queue = before: [${before}], after: [${this.queue.list.map(c => (('pokemon' in c) && c.pokemon?.side.id) || '*')}]\x1b[0m`);
 
 		this.requestState = '';
 		for (const side of this.sides) {

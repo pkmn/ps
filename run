@@ -41,7 +41,7 @@ const MAX_DMG = {name: 'MAX_DMG', key: ['Battle.random', 'BattleActions.getDamag
 const SRF_RES =
   {name: 'SRF_RES', key: ['Side.randomFoe', 'BattleQueue.resolveAction'], value: NOP};
 const SRF_RUN = {name: 'SRF_RUN', key: ['Side.randomFoe', 'BattleActions.runMove'], value: NOP};
-const SRF_USE = {name: 'SRF_RUN', key: ['Side.randomFoe', 'BattleActions.useMove'], value: NOP};
+const SRF_USE = {name: 'SRF_USE', key: ['Side.randomFoe', 'BattleActions.useMove'], value: NOP};
 const SS_MOD = {name: 'SS_MOD', key: ['Battle.speedSort', 'Pokemon.setStatus'], value: NOP};
 const SS_RES = {name: 'SS_RES', key: ['Battle.speedSort', 'Battle.residualEvent'], value: NOP};
 const SS_RUN = {name: 'SS_RUN', key: ['Battle.speedSort', 'Battle.runEvent'], value: NOP};
@@ -125,22 +125,24 @@ const METRONOME = move => {
 	return {name: `METRONOME(${move})`, key: ['Battle.sample', 'Battle.singleEvent'], value};
 };
 
-const MAX_WRAP = {key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: MAX};
 const battle = startBattle([
-	SRF_RES, HIT, DISABLE_MOVE(2), DISABLE_DURATION(5), METRONOME('Wrap'), SRF_USE, HIT, NO_CRIT, MIN_DMG, MAX_WRAP
+	INS, INS, SS_EACH, SS_EACH, SS_EACH, SS_EACH, SS_EACH,
+	TIE(2),
+	// TIE(2), SS_EACH, SS_EACH, METRONOME('Fly'), SRF_USE, SS_EACH,
+	// METRONOME('Dig'), SRF_USE, SS_EACH, SS_RES, SS_RES, SS_RES, SS_EACH, GLM, GLM,
+	// GLM, GLM, GLM, GLM, TIE(1), SS_EACH, SS_EACH, SS_RUN, SS_EACH,
+	// SS_RUN, HIT, NO_CRIT, MIN_DMG, SS_EACH, SS_RES, SS_EACH,
+	// SRF_RES, SS_EACH, SS_EACH, HIT, NO_CRIT, MIN_DMG, SS_EACH,
+	// METRONOME('Swift'), SRF_USE, NO_CRIT, MIN_DMG, SS_EACH, SS_EACH,
+	// SS_EACH, SS_EACH, SS_EACH, SS_EACH, SS_EACH, METRONOME('Petal Dance'),
+	// SRF_USE, HIT, NO_CRIT, MIN_DMG, THRASH(3), SS_EACH, SS_EACH,
 ], [
-	{species: 'Voltorb', evs, moves: ['Disable', 'Teleport']},
+	{species: 'Clefable', evs, moves: ['Metronome', 'Quick Attack']},
+	{species: 'Clefable', evs, moves: ['Metronome', 'Quick Attack']},
 ], [
-	{species: 'Goldeen', evs, moves: ['Teleport', 'Wrap', 'Metronome']},
+	{species: 'Clefable', evs, moves: ['Metronome']},
+	{species: 'Clefable', evs, moves: ['Metronome', 'Quick Attack']},
 ]);
 
 
-
-battle.makeChoices('move 1', 'move 1');
-DEBUG(JSON.stringify(battle.p2.activeRequest));
-
-battle.makeChoices('move 2', 'move 3');
-DEBUG(JSON.stringify(battle.p2.activeRequest));
-
-// battle.makeChoices('move struggle', 'move 1');
-
+battle.makeChoices('switch 2', 'switch 2');
