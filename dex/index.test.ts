@@ -1,4 +1,3 @@
-import {GenerationNum} from '@pkmn/dex-types';
 import {Dex} from './index';
 
 import * as fs from 'fs';
@@ -45,7 +44,7 @@ describe('Dex', () => {
     });
 
     it('counts', () => {
-      const counts = (gen: GenerationNum) => {
+      const counts = (gen: number) => {
         const dex = Dex.forGen(gen);
         let count = 0;
         for (const id in dex.data.Abilities) {
@@ -59,7 +58,7 @@ describe('Dex', () => {
       const COUNTS = [0, 0, 76, 47, 41, 27, 42, 34];
       let total = 0;
       for (let gen = 1; gen <= 8; gen++) {
-        expect(counts(gen as GenerationNum)).toEqual(total += COUNTS[gen - 1]);
+        expect(counts(gen)).toEqual(total += COUNTS[gen - 1]);
       }
     });
 
@@ -209,7 +208,7 @@ describe('Dex', () => {
     });
 
     it('counts', () => {
-      const counts = (gen: GenerationNum) => {
+      const counts = (gen: number) => {
         const dex = Dex.forGen(gen);
         let count = 0;
         for (const id in dex.data.Moves) {
@@ -223,7 +222,7 @@ describe('Dex', () => {
       const COUNTS = [165, 86 + 16, 103, 113, 92, 59, 105 - 14];
       let total = 0;
       for (let gen = 1; gen <= 7; gen++) {
-        expect(counts(gen as GenerationNum)).toEqual(total += COUNTS[gen - 1]);
+        expect(counts(gen)).toEqual(total += COUNTS[gen - 1]);
       }
       expect(counts(8)).toBe(623 + 41 + 34 - /* GMax */ 33);
     });
@@ -263,7 +262,7 @@ describe('Dex', () => {
       // FIXME expect(Dex.species.get('Rockruff-Dusk').name).toBe('Rockruff-Dusk');
     });
     it('counts', () => {
-      const counts = (gen: GenerationNum) => {
+      const counts = (gen: number) => {
         const dex = Dex.forGen(gen);
         const count = {species: 0, formes: 0};
         for (const id in dex.data.Species) {

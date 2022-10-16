@@ -94,8 +94,9 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
   with Pokémon Showdown, but after that only the canconical `genN` mods are supported (no Stadium,
   Let's Go, or pet mods). However, the [`@pkmn/mods`](../mods) package provides the information
   required for additional formats, and support for Other Metagames can be acheived with the modified
-  `Dex#mod` method. The `Dex#mod` method will `throw` if an unsupported mod is requested.  A
-  `Dex#modid` method has also been added which returns the current mod applied to the `Dex`.
+  `Dex#mod` method. The `Dex#mod` and `Dex.forGen` methods will `throw` if an unsupported mod/gen is
+  requested.  A `Dex#modid` method has also been added which returns the current mod applied to the
+  `Dex`.
 - **random battles are not supported by the `@pkmn/sim` package**. All team generation logic and
   data has been removed from the package and are instead to be provided by the
   [`@pkmn/randoms`](../randoms) package which exports a generator factory that can be configured

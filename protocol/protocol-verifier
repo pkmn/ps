@@ -28,12 +28,11 @@ if (packages.length) {
 const readline = require('readline');
 
 const {Dex} = require('@pkmn/sim');
-const {Generations} = require('@pkmn/data');
+const {Generation} = require('@pkmn/data');
 
 const {Verifier} = require('./build/verifier');
 
-const gens = new Generations(Dex, Verifier.EXISTS);
-const verifier = new Verifier(gens.get(process.argv[2] ? +process.argv[2] : 8));
+const verifier = new Verifier(Generation.get(Dex, process.argv[2] || 8, Verifier.EXISTS));
 
 readline.createInterface({
   input: process.stdin,

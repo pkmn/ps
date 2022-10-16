@@ -1,4 +1,4 @@
-import {GenerationNum, Generations, StatsTable, Dex as DexT, ItemName} from './index';
+import {Generations, StatsTable, Dex as DexT, ItemName} from './index';
 
 import {calculate, Pokemon, Move} from '@smogon/calc/adaptable';
 import {ID, ModData} from '@pkmn/dex-types';
@@ -17,7 +17,7 @@ const DATA = {
 for (const [pkg, Dex] of Object.entries(DATA)) {
   describe(`Generations (${pkg})`, () => {
     const gens = new Generations(Dex);
-    const Gen = (num: GenerationNum) => gens.get(num);
+    const Gen = (num: number) => gens.get(num);
 
     test('exists', () => {
       const gens2 = new Generations(Dex, e => !!e.exists && (!('num' in e) || e.num < 10));
@@ -265,7 +265,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('counts', () => {
-        const counts = (num: GenerationNum) => {
+        const counts = (num: number) => {
           const gen = Gen(num);
           const ss = [];
           const count = {species: 0, formes: 0};
@@ -556,7 +556,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       it('#getHiddenPower', () => {
         let ivs = {hp: 31, atk: 31, def: 31, spe: 31, spa: 31, spd: 31};
         for (let num = 3; num <= 7; num++) {
-          const gen = Gen(num as GenerationNum);
+          const gen = Gen(num);
           for (const type of gen.types) {
             if (['Normal', 'Fairy', '???'].includes(type.name)) continue;
             expect(gen.types.getHiddenPower({...ivs, ...type.HPivs}))
@@ -668,8 +668,8 @@ describe('@smogon/calc', () => {
 describe('Data', () => {
   it('descriptions', () => {
     for (let gen = 1; gen <= 8; gen++) {
-      const dexDex = DATA.dex.forGen(gen as GenerationNum);
-      const simDex = DATA.sim.forGen(gen as GenerationNum);
+      const dexDex = DATA.dex.forGen(gen);
+      const simDex = DATA.sim.forGen(gen);
 
       for (const id in dexDex.data.Abilities) {
         const d = dexDex.abilities.get(id);

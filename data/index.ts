@@ -67,7 +67,9 @@ export class Generations {
     this.exists = exists;
   }
 
-  get(gen: GenerationNum) {
+  get(g: string | number) {
+    if (isNaN(+g)) throw new Error(`Invalid gen ${g}`);
+    const gen = g as GenerationNum; // validated by forGen
     if (this.cache[gen]) return this.cache[gen];
     return (this.cache[gen] = new Generation(this.dex.forGen(gen), d => this.exists(d, gen)));
   }
@@ -93,6 +95,10 @@ export class Generation {
   readonly dex: Dex;
 
   private readonly exists: BoundExistsFn;
+
+  static get(dex: Dex, g: string | number, exists = DEFAULT_EXISTS) {
+    return new Generations(dex, exists).get(g);
+  }
 
   constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;

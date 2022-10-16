@@ -1244,7 +1244,7 @@ export class ModdedDex implements T.Dex {
   }
 
   forGen(gen: number) {
-    if (!gen) return this;
+    if (gen < 1 || gen > 8) throw new Error(`Unsupported gen ${gen}`);
     return this.mod(`gen${gen}` as GenID);
   }
 

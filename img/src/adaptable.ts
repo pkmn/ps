@@ -35,7 +35,7 @@ const GENS = {
   'gen5ani': 5,
   // 'noani': 6,
   'ani': 6,
-};
+} as const;
 
 export type GraphicsGen = keyof typeof GENS;
 
