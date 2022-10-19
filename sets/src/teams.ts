@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-parameter-properties */
-import {PokemonSet, GenerationNum} from '@pkmn/types';
+import {PokemonSet, GenerationNum, ID} from '@pkmn/types';
 import {_import, _unpack, Sets, Data} from './sets';
 
 const CURRENT = 8;
@@ -71,6 +71,20 @@ export class Team<S extends Partial<PokemonSet> = PokemonSet | Partial<PokemonSe
     // BUG: this is completely unvalidated...
     const team: PokemonSet[] = JSON.parse(json);
     return new Team<PokemonSet>(team);
+  }
+
+  static canonicalize(team: Partial<PokemonSet>[], data: Data) {
+    let lead: Partial<PokemonSet> | undefined = undefined;
+    const rest: Array<[ID, Partial<PokemonSet>]> = [];
+    for (const s of team) {
+      const set = Sets.canonicalize(s, data);
+      if (lead) {
+        rest.push([set.species as ID, set]);
+      } else {
+        lead = set;
+      }
+    }
+    return [lead!, ...rest.sort((a, b) => a[0].localeCompare(b[0])).map(([, set]) => set)];
   }
 }
 

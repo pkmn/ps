@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0
+
+- Adds `Sets.canonicalize` and `Team.canonicalize` which always require `Data` but which can be used
+  to canonicalize a `PokemonSet` or team. Note that this is **not** sufficient for all deduping
+  purposes (you must compare computed stats, not sets).
+
 ## 3.1.1
 
 - Add the previously implicit `extends Partial<PokemonSet>` constraint to several functions to

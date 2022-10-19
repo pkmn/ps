@@ -14,22 +14,6 @@
 
 - consider rewriting based on
   [Pokémon Showdown](https://github.com/smogon/pokemon-showdown-client/blob/master/src/panel-teamdropdown.tsx)
-- a `canonicalize` method needs to be added to convert a `PokemonSet` into a canonical form. This
-  includes (but is not limited to):
-  - turning battle only formes into their base forme (with some more sophisticated logic for
-    hackmons?)
-  - removing EVs (and IVs?) which dont contribute additional stat points (note: this is more complex
-    than just rounding to nearest 4)
-  - encoding all IVs and EVs (including Gen 2 Marowak with Swords Dance and Thick Club, Hidden Power
-    HP DVs, gender, shiny etc)
-  - encoding happiness (handling Return/Frustration etc)
-  - removing nicknames
-  - moves sorted by ID
-  - team members sorted by ID (how to handle formats without Species Clause?)
-
-Once a stable format has been obtained, the team can be packed and then hashed, and then just the
-hash can be shared to verify teams have not be changed (ie. **team lock**). Need to include a
-version number in case set import changes.
 
 ## `@pkmn/img`
 

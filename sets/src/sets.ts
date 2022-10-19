@@ -11,6 +11,12 @@ export interface DataTable<T> {
   get(name: string): Readonly<T> | undefined;
 }
 
+interface Nature {
+  name: string;
+  plus?: Exclude<StatID, 'hp'>;
+  minus?: Exclude<StatID, 'hp'>;
+}
+
 export interface Data {
   forGen?(gen: GenerationNum): Data;
 
@@ -19,10 +25,13 @@ export interface Data {
   readonly abilities: DataTable<{name: string}>;
   readonly items: DataTable<{name: string}>;
   readonly moves: DataTable<{name: string}>;
-  readonly natures: DataTable<{name: string}>;
+  readonly natures: DataTable<Nature>;
   readonly species: DataTable<{
     name: string;
-    baseSpecies?: string;
+    baseSpecies: string;
+    baseStats: StatsTable;
+    gender?: string;
+    battleOnly?: string | string[];
     abilities?: {0: string; 1?: string; H?: string; S?: string};
   }>;
 }
@@ -340,6 +349,116 @@ export const Sets = new class {
   fromString(str: string) {
     return Sets.importSet(str);
   }
+
+  // NOTE: to properly dedupe you still must compare computed stats
+  canonicalize(s: Partial<PokemonSet>, data: Data) {
+    const species = data.species.get(s.species!)!;
+    s.species = toID(species.battleOnly ? species.baseSpecies : species.name);
+    s.name = s.species;
+
+    s.item = data.gen >= 2 && s.item ? toID(s.item) : undefined;
+    s.ability =
+      data.gen >= 3 ? toID(s.ability ? s.ability : species.abilities![0]) : undefined;
+    s.gender = data.gen >= 2 && s.gender !== species.gender ? s.gender : undefined;
+    s.level = s.level || 100;
+
+    let maxed = true;
+    if (!s.ivs) {
+      s.ivs = {hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31};
+    } else {
+      for (const stat of STATS) {
+        s.ivs[stat] = s.ivs[stat] ?? 31;
+        if (data.gen < 3) s.ivs[stat] = toIV(toDV(s.ivs[stat]));
+        if (s.ivs[stat] !== 31) maxed = false;
+      }
+    }
+
+    const nature = data.gen < 3 ? data.natures.get(s.nature || 'serious') : undefined;
+    s.nature = nature && toID(nature.name);
+
+    let hpType = s.hpType as HPTypeName | undefined;
+    let happiness = '';
+    let swordsdance = false;
+    const moves = [];
+    for (const move of s.moves!) {
+      let id = toID(move);
+      if (id === 'return' || id === 'frustration') {
+        happiness = id;
+      } else if (id === 'swordsdance') {
+        swordsdance = true;
+      } else if (id.startsWith('hiddenpower')) {
+        if (id === 'hiddenpower') {
+          const type = s.hpType || getHiddenPower(data.gen, s.ivs)!.type;
+          id = `${id}${type}` as ID;
+        } else {
+          hpType = (id.substr(11, 1).toUpperCase() + id.substr(12)) as HPTypeName;
+        }
+      }
+      moves.push(id);
+    }
+    s.moves = moves.sort((a, b) => a.localeCompare(b));
+
+    const base = data.species.get(s.species)!.baseStats;
+    s.evs = s.evs || {} as any as StatsTable;
+    for (const stat of STATS) {
+      if (data.gen < 3) {
+        s.evs[stat] = s.evs[stat] ?? 252;
+      } else {
+        if (!s.evs[stat]) {
+          s.evs[stat] = 0;
+        } else {
+          const val = calc(data.gen, stat, base[stat], s.ivs[stat], s.evs[stat], s.level, nature);
+          if (stat === 'hp') {
+            s.evs[stat] = base[stat] === 1 ? 0
+              : Math.max(0, (Math.ceil(((val - s.level - 10) * 100) / s.level) -
+                2 * base[stat] - s.ivs[stat]) * 4);
+          } else {
+            const n = !nature ? 1 : nature.plus === stat ? 1.1 : nature.minus === stat ? 0.9 : 1;
+            s.evs[stat] = Math.max(0, (Math.ceil(((Math.ceil(val / n) - 5) * 100) / s.level) -
+              2 * base[stat] - s.ivs[stat]) * 4);
+          }
+        }
+      }
+    }
+
+    if (data.gen === 2 && s.species === 'marowak' && s.item === 'thickclub' &&
+      swordsdance && s.level === 100) {
+      const iv = Math.floor(s.ivs.atk / 2) * 2;
+      while (s.evs.atk > 0 && 2 * 80 + iv + Math.floor(s.evs.atk / 4) + 5 > 255) {
+        s.evs.atk -= 4;
+      }
+    }
+
+    const canBottle = data.gen >= 7 && s.level === 100;
+    if (hpType && maxed) {
+      const ivs = data.gen === 2 ? HP[hpType].dvs : HP[hpType].ivs;
+      for (const stat of STATS) {
+        if (data.gen === 2) {
+          s.ivs[stat] = stat in ivs ? toIV(ivs[stat]!) : 31;
+        } else if (!canBottle) {
+          s.ivs[stat] = ivs[stat] ?? 31;
+        }
+      }
+      if (data.gen === 2) s.ivs.hp = toIV(getHPDV(s.ivs));
+    }
+
+    s.hpType = hpType && canBottle ? hpType : undefined;
+
+    if (happiness === 'return') {
+      s.happiness = 255;
+    } else if (happiness === 'frustration') {
+      s.happiness = 0;
+    } else {
+      s.happiness = undefined;
+    }
+
+    s.shiny = data.gen >= 2 && s.shiny ? s.shiny : undefined;
+    s.pokeball = undefined;
+    s.dynamaxLevel = data.gen === 8 ? s.dynamaxLevel : undefined;
+    s.gigantamax = data.gen === 8 && s.gigantamax ? s.gigantamax : undefined;
+
+    return s;
+  }
 };
 
 const ABILITY = ['', '0', '1', 'H', 'S'];
@@ -653,6 +772,51 @@ const HP: {[type in HPTypeName]: {ivs: Partial<StatsTable>; dvs: Partial<StatsTa
   Water: {ivs: {atk: 30, def: 30, spa: 30}, dvs: {atk: 14, def: 13}},
 };
 
+const HP_TYPES: HPTypeName[] = [
+  'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel',
+  'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark',
+];
+
+function getHiddenPower(gen: GenerationNum, ivs: StatsTable) {
+  const tr = (num: number, bits = 0) => {
+    if (bits) return (num >>> 0) % (2 ** bits);
+    return num >>> 0;
+  };
+  const stats = {hp: 31, atk: 31, def: 31, spe: 31, spa: 31, spd: 31};
+  if (gen <= 2) {
+    // Gen 2 specific Hidden Power check. IVs are still treated 0-31 so we get them 0-15
+    const atkDV = tr(ivs.atk / 2);
+    const defDV = tr(ivs.def / 2);
+    const speDV = tr(ivs.spe / 2);
+    const spcDV = tr(ivs.spa / 2);
+    return {
+      type: HP_TYPES[4 * (atkDV % 4) + (defDV % 4)],
+      power: tr(
+        (5 * ((spcDV >> 3) +
+          (2 * (speDV >> 3)) +
+          (4 * (defDV >> 3)) +
+          (8 * (atkDV >> 3))) +
+          (spcDV % 4)) / 2 + 31
+      ),
+    };
+  } else {
+    // Hidden Power check for Gen 3 onwards
+    let hpTypeX = 0;
+    let hpPowerX = 0;
+    let i = 1;
+    for (const s in stats) {
+      hpTypeX += i * (ivs[s as StatID] % 2);
+      hpPowerX += i * (tr(ivs[s as StatID] / 2) % 2);
+      i *= 2;
+    }
+    return {
+      type: HP_TYPES[tr(hpTypeX * 15 / 63)],
+      // After Gen 6, Hidden Power is always 60 base power
+      power: (gen < 6) ? tr(hpPowerX * 40 / 63) + 30 : 60,
+    };
+  }
+}
+
 function getHiddenPowerIVs(hpType: HPTypeName, data?: Data) {
   const hp = HP[hpType];
   if (!hp) return undefined;
@@ -662,8 +826,51 @@ function getHiddenPowerIVs(hpType: HPTypeName, data?: Data) {
 function DVsToIVs(dvs: Readonly<Partial<StatsTable>>) {
   const ivs: Partial<StatsTable> = {};
   let dv: StatID;
-  for (dv in dvs) {
-    ivs[dv] = dvs[dv]! * 2;
-  }
+  for (dv in dvs) ivs[dv] = toIV(dvs[dv]!);
   return ivs;
+}
+
+function toDV(iv: number) {
+  return Math.floor(iv / 2);
+}
+
+function toIV(dv: number) {
+  return dv * 2 + 1;
+}
+
+function getHPDV(ivs: Partial<StatsTable>) {
+  return (
+    (toDV(ivs.atk === undefined ? 31 : ivs.atk) % 2) * 8 +
+    (toDV(ivs.def === undefined ? 31 : ivs.def) % 2) * 4 +
+    (toDV(ivs.spe === undefined ? 31 : ivs.spe) % 2) * 2 +
+    (toDV(ivs.spa === undefined ? 31 : ivs.spa) % 2)
+  );
+}
+
+const tr = (num: number, bits = 0) => bits ? (num >>> 0) % (2 ** bits) : num >>> 0;
+
+function calc(
+  gen: GenerationNum,
+  stat: StatID,
+  base: number,
+  iv = 31,
+  ev?: number,
+  level = 100,
+  nature?: Nature
+) {
+  if (ev === undefined) ev = gen < 3 ? 252 : 0;
+  if (gen < 3) {
+    iv = toDV(iv) * 2;
+    nature = undefined;
+  }
+  if (stat === 'hp') {
+    return base === 1 ? base : tr(tr(2 * base + iv + tr(ev / 4) + 100) * level / 100 + 10);
+  } else {
+    const val = tr(tr(2 * base + iv + tr(ev / 4)) * level / 100 + 5);
+    if (nature !== undefined) {
+      if (nature.plus === stat) return tr(tr(val * 110, 16) / 100);
+      if (nature.minus === stat) return tr(tr(val * 90, 16) / 100);
+    }
+    return val;
+  }
 }

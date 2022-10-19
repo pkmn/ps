@@ -1,5 +1,5 @@
 
-import {GenerationNum} from '@pkmn/types';
+import {GenerationNum, StatsTable} from '@pkmn/types';
 import {Data, toID} from '../sets';
 
 const ABILITIES: {[id: string]: string} = {
@@ -83,25 +83,88 @@ const MOVES: {[id: string]: string} = {
   zenheadbutt: 'Zen Headbutt',
 };
 
-const SPECIES: {[id: string]: string} = {
-  alakazammega: 'Alakazam-Mega',
-  blissey: 'Blissey',
-  chansey: 'Chansey',
-  clefable: 'Clefable',
-  cloyster: 'Cloyster',
-  exeggutor: 'Exeggutor',
-  garchomp: 'Garchomp',
-  gliscor: 'Gliscor',
-  keldeo: 'Keldeo',
-  latios: 'Latios',
-  magearna: 'Magearna',
-  magnezone: 'Magnezone',
-  marowak: 'Marowak',
-  metagrossmega: 'Metagross-Mega',
-  snorlax: 'Snorlax',
-  tangrowth: 'Tangrowth',
-  tauros: 'Tauros',
-  tornadustherian: 'Tornadus-Therian',
+// NOTE: baseStats here is incorrect as its always the Gen 8 stats, that's fine for tests
+const SPECIES: {[id: string]: {name: string; baseStats: StatsTable}} = {
+  alakazam: {
+    name: 'Alakazam',
+    baseStats: {hp: 55, atk: 50, def: 45, spa: 135, spd: 95, spe: 120},
+  },
+  alakazammega: {
+    name: 'Alakazam-Mega',
+    baseStats: {hp: 55, atk: 50, def: 65, spa: 175, spd: 105, spe: 150},
+  },
+  blissey: {
+    name: 'Blissey',
+    baseStats: {hp: 255, atk: 10, def: 10, spa: 75, spd: 135, spe: 55},
+  },
+  chansey: {
+    name: 'Chansey',
+    baseStats: {hp: 250, atk: 5, def: 5, spa: 35, spd: 105, spe: 50},
+  },
+  clefable: {
+    name: 'Clefable',
+    baseStats: {hp: 95, atk: 70, def: 73, spa: 95, spd: 90, spe: 60},
+  },
+  cloyster: {
+    name: 'Cloyster',
+    baseStats: {hp: 50, atk: 95, def: 180, spa: 85, spd: 45, spe: 70},
+  },
+  exeggutor: {
+    name: 'Exeggutor',
+    baseStats: {hp: 95, atk: 95, def: 85, spa: 125, spd: 75, spe: 55},
+  },
+  garchomp: {
+    name: 'Garchomp',
+    baseStats: {hp: 108, atk: 130, def: 95, spa: 80, spd: 85, spe: 102},
+  },
+  gliscor: {
+    name: 'Gliscor',
+    baseStats: {hp: 75, atk: 95, def: 125, spa: 45, spd: 75, spe: 95},
+  },
+  keldeo: {
+    name: 'Keldeo',
+    baseStats: {hp: 91, atk: 72, def: 90, spa: 129, spd: 90, spe: 108},
+  },
+  latios: {
+    name: 'Latios',
+    baseStats: {hp: 80, atk: 90, def: 80, spa: 130, spd: 110, spe: 110},
+  },
+  magearna: {
+    name: 'Magearna',
+    baseStats: {hp: 80, atk: 95, def: 115, spa: 130, spd: 115, spe: 65},
+  },
+  magnezone: {
+    name: 'Magnezone',
+    baseStats: {hp: 70, atk: 70, def: 115, spa: 130, spd: 90, spe: 60},
+  },
+  marowak: {
+    name: 'Marowak',
+    baseStats: {hp: 60, atk: 80, def: 110, spa: 50, spd: 80, spe: 45},
+  },
+  metagross: {
+    name: 'Metagross',
+    baseStats: {hp: 80, atk: 135, def: 130, spa: 95, spd: 90, spe: 70},
+  },
+  metagrossmega: {
+    name: 'Metagross-Mega',
+    baseStats: {hp: 80, atk: 145, def: 150, spa: 105, spd: 110, spe: 110},
+  },
+  snorlax: {
+    name: 'Snorlax',
+    baseStats: {hp: 160, atk: 110, def: 65, spa: 65, spd: 110, spe: 30},
+  },
+  tangrowth: {
+    name: 'Tangrowth',
+    baseStats: {hp: 100, atk: 100, def: 125, spa: 110, spd: 50, spe: 50},
+  },
+  tauros: {
+    name: 'Tauros',
+    baseStats: {hp: 75, atk: 100, def: 95, spa: 40, spd: 70, spe: 110},
+  },
+  tornadustherian: {
+    name: 'Tornadus-Therian',
+    baseStats: {hp: 79, atk: 100, def: 80, spa: 110, spd: 90, spe: 121},
+  },
 };
 
 export const GEN: {[n: number]: Data} = {};
@@ -125,11 +188,14 @@ for (let gen = 1; gen <= 8; gen++) {
     },
     species: {
       get(name: string) {
-        const s: {name: string; abilities?: any} = {name: SPECIES[toID(name)]};
+        const s = SPECIES[toID(name)];
+        (s as any).baseSpecies = s.name;
         if (s.name === 'Tangrowth') {
-          s.abilities = {0: 'Chlorophyll', 1: 'Leaf Guard', H: 'Regenerator'};
+          (s as any).abilities = {0: 'Chlorophyll', 1: 'Leaf Guard', H: 'Regenerator'};
+        } else if (s.name.endsWith('Mega')) {
+          (s as any).baseSpecies = (s as any).battleOnly = s.name.slice(0, s.name.length - 5);
         }
-        return s;
+        return s as {name: string; baseSpecies: string; baseStats: StatsTable};
       },
     },
     natures: {

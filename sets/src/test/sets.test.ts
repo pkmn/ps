@@ -43,7 +43,7 @@ describe('Sets', () => {
       const marowakOut = exported(`
         Marowak (M) @ Thick Club
         Happiness: 0
-        IVs: 26 Atk / 26 Def
+        IVs: 27 Atk / 27 Def
         - Earthquake
         - Hidden Power [Bug]
         - Frustration
@@ -339,4 +339,6 @@ describe('Sets', () => {
 
     expect(Sets.fromJSON('foo')).toBeUndefined();
   });
+
+  it.todo('canonicalize');
 });

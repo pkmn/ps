@@ -1175,7 +1175,7 @@ const DATA = {
   FormatsData: FormatsDataJSON as Data<FormatData>,
 };
 
-const HP_TYPES = [
+const HP_TYPES: T.HPTypeName[] = [
   'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel',
   'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark',
 ];
@@ -1303,7 +1303,7 @@ export class ModdedDex implements T.Dex {
       const speDV = tr(ivs.spe / 2);
       const spcDV = tr(ivs.spa / 2);
       return {
-        type: HP_TYPES[4 * (atkDV % 4) + (defDV % 4)] as T.TypeName,
+        type: HP_TYPES[4 * (atkDV % 4) + (defDV % 4)],
         power: tr(
           (5 * ((spcDV >> 3) +
             (2 * (speDV >> 3)) +
@@ -1323,7 +1323,7 @@ export class ModdedDex implements T.Dex {
         i *= 2;
       }
       return {
-        type: HP_TYPES[tr(hpTypeX * 15 / 63)] as T.TypeName,
+        type: HP_TYPES[tr(hpTypeX * 15 / 63)],
         // After Gen 6, Hidden Power is always 60 base power
         power: (this.gen && this.gen < 6) ? tr(hpPowerX * 40 / 63) + 30 : 60,
       };

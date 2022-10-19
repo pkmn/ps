@@ -1,5 +1,7 @@
 import * as fs from 'fs';
 
+import {PokemonSet} from '@pkmn/types';
+
 import {Team, Teams} from '../teams';
 import {GEN} from './data';
 
@@ -30,6 +32,25 @@ describe('Team', () => {
     expect(fj.export()).toEqual(TEAM);
 
     expect(Team.fromJSON('{"foo": "bar"}')).toBeUndefined();
+  });
+
+  it('canonicalize', () => {
+    const team = Team.import(TEAM)!.team as Partial<PokemonSet>[];
+
+    const alakazam = team[0];
+    const magnezone = team[0] = team[3];
+    team[3] = alakazam;
+
+    const canon = Team.canonicalize(team, GEN[8]);
+    expect(canon.map(s => s.name)).toEqual([
+      'magnezone', 'alakazam', 'gliscor', 'magearna', 'tangrowth', 'tornadustherian',
+    ]);
+    expect(alakazam.name).toBe('alakazam');
+    expect(alakazam.level).toBe(100);
+    expect(alakazam.ivs!.atk).toBe(0);
+    expect(alakazam.moves).toEqual(['focusblast', 'psychic', 'recover', 'shadowball']);
+    expect(magnezone.ivs).toEqual({hp: 31, atk: 0, def: 31, spa: 31, spd: 31, spe: 31});
+    expect(magnezone.hpType).toBe('Fire');
   });
 });
 
