@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/randoms",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "description": "Random team generation logic for Pokémon Showdown's Random Battle formats",
@@ -16,7 +16,7 @@
     "!src/test"
   ],
   "dependencies": {
-    "@pkmn/sim": "^0.6.0"
+    "@pkmn/sim": "^0.6.1"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",

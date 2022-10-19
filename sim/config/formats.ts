@@ -289,24 +289,6 @@ export const Formats: FormatList = [
 		unbanlist: ['Mythical', 'Restricted Legendary'],
 	},
 	{
-		name: "[Gen 8] Champion League",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3707533/">Champion League Discussion</a>`,
-		],
-
-		mod: 'gen8',
-		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8'],
-		banlist: ['All Pokemon'],
-		unbanlist: [
-			'Venusaur', 'Charizard', 'Blastoise', 'Sandslash-Base', 'Ninetales-Base', 'Arcanine', 'Alakazam', 'Tentacruel', 'Magneton', 'Cloyster',
-			'Exeggutor-Base', 'Rhydon', 'Gyarados', 'Lapras', 'Vaporeon', 'Jolteon', 'Flareon', 'Aerodactyl', 'Dragonite', 'Heracross', 'Skarmory',
-			'Tyranitar', 'Ludicolo', 'Gardevoir', 'Aggron', 'Wailord', 'Altaria', 'Whiscash', 'Claydol', 'Cradily', 'Armaldo', 'Milotic', 'Salamence',
-			'Metagross', 'Roserade', 'Gastrodon', 'Spiritomb', 'Garchomp', 'Lucario', 'Rhyperior', 'Togekiss', 'Seismitoad', 'Archeops',
-			'Vanilluxe', 'Escavalier', 'Haxorus', 'Accelgor', 'Druddigon', 'Bouffalant', 'Hydreigon', 'Volcarona', 'Aegislash', 'Tyrantrum',
-			'Aurorus', 'Hawlucha', 'Carbink', 'Goodra', 'Gourgeist', 'Rillaboom', 'Cinderace', 'Inteleon', 'Mr. Rime', 'Dragapult',
-		],
-	},
-	{
 		name: "[Gen 8] Custom Game",
 
 		mod: 'gen8',
@@ -399,6 +381,16 @@ export const Formats: FormatList = [
 		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8', 'VGC Timer'],
 		banlist: ['Eternatus-Eternamax'],
 		unbanlist: ['Mythical', 'Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] Ultimate Finale",
+		threads: [
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3709248/">Ultimate Finale Discussion</a>`,
+		],
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		ruleset: ['Obtainable', 'Team Preview', 'Nickname Clause', 'Adjust Level = 100', 'Cancel Mod', 'Min Source Gen = 8'],
 	},
 	{
 		name: "[Gen 8] Spikemuth Cup",
@@ -3878,7 +3870,7 @@ export const Formats: FormatList = [
 		mod: 'gen2',
 		searchShow: false,
 		ruleset: ['[Gen 2] OU'],
-		banlist: ['OU', 'UUBL'],
+		banlist: ['OU', 'UUBL', 'Agility + Baton Pass'],
 		unbanlist: ['Mean Look + Baton Pass', 'Spider Web + Baton Pass'],
 	},
 	{
@@ -3889,6 +3881,7 @@ export const Formats: FormatList = [
 		searchShow: false,
 		ruleset: ['[Gen 2] UU'],
 		banlist: ['UU', 'NUBL'],
+		unbanlist: ['Agility + Baton Pass'],
 	},
 	{
 		name: "[Gen 2] 1v1",
