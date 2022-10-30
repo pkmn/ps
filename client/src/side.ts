@@ -64,10 +64,6 @@ export class Side {
     this.wisher = null;
   }
 
-  get pokemon() {
-    return this.active[this.focus] || undefined;
-  }
-
   setAvatar(avatar: AvatarIdent) {
     this.avatar = avatar;
   }

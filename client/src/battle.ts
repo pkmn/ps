@@ -1,32 +1,13 @@
 import {
-  DataKind,
-  GameType,
-  Generation,
-  Generations,
-  HPColor,
-  ID,
-  PokemonSet,
-  SideID,
-  StatsTable,
-  toID,
+  DataKind, GameType, Generation, Generations, HPColor, ID, PokemonSet, SideID, toID,
 } from '@pkmn/data';
 import {
-  ArgName,
-  ArgType,
-  BattleArgsKWArgType,
-  FormatName,
-  Message,
-  PokemonDetails,
-  PokemonHealth,
-  PokemonHPStatus,
-  PokemonIdent,
-  PokemonSearchID,
-  Protocol,
-  SpeciesName,
+  ArgType, BattleArgsKWArgType, FormatName, Message, PokemonDetails, PokemonHealth,
+  PokemonHPStatus, PokemonIdent, PokemonSearchID, Protocol, SpeciesName,
 } from '@pkmn/protocol';
 
 import {Field} from './field';
-import {Handler, Context as HandlerContext} from './handler';
+import {Handler} from './handler';
 import {Side} from './side';
 import {Pokemon} from './pokemon';
 
@@ -35,34 +16,11 @@ const SLOTS: { [slot: string]: number } = {a: 0, b: 1, c: 2, d: 3, e: 4, f: 5};
 export const NULL = {name: '', id: '' as ID, kind: 'Condition' as DataKind};
 export type NA = typeof NULL;
 
-const GROUP: Set<Protocol.ArgName> = new Set([
-  '|move|', '|switch|', '|drag|', '|replace|', '|swap|',
-  '|cant|', '|detailschange|', '|done|', '|upkeep|',
-]);
-const BREAK: Set<Protocol.ArgName> = new Set([
-  ...GROUP, '|start|', '|turn|', '|win|', '|tie|',
-]);
-
 const SIDE_CONDITIONS = [
   'mist', 'lightscreen', 'reflect', 'spikes', 'safeguard', 'tailwind', 'toxicspikes', 'stealthrock',
   'waterpledge', 'firepledge', 'grasspledge', 'stickyweb', 'auroraveil', 'gmaxsteelsurge',
   'gmaxcannonade', 'gmaxvinelash', 'gmaxwildfire',
 ];
-
-export type Context<T extends keyof HandlerContext> = [
-  {
-    context: HandlerContext[T];
-    args: ArgType;
-    kwArgs: BattleArgsKWArgType;
-  },
-  ...Array<{
-    context: HandlerContext[keyof HandlerContext] | {[k: string]: unknown};
-    args: ArgType;
-    kwArgs: BattleArgsKWArgType;
-  }>,
-];
-
-export type ContextHandler = {[type in keyof HandlerContext]?: (c: Context<type>) => void};
 
 export class Battle {
   readonly gens: Generations;
@@ -94,13 +52,6 @@ export class Battle {
   request?: Protocol.Request;
   requestStatus: 'inapplicable' | 'received' | 'applicable' | 'applied';
 
-  private context: Array<{
-    type: ArgName;
-    context: HandlerContext[keyof HandlerContext] | {[k: string]: unknown};
-    args: ArgType;
-    kwArgs: BattleArgsKWArgType;
-  }>;
-  protected readonly contextHandler: ContextHandler;
   private readonly handler: Handler;
 
   private readonly createSide: (n: 0 | 1 | 2 | 3) => Side;
@@ -140,8 +91,6 @@ export class Battle {
     this.request = undefined;
     this.requestStatus = 'inapplicable';
 
-    this.context = [];
-    this.contextHandler = {};
     this.handler = new Handler(this, player);
 
     this.reset();
@@ -155,29 +104,6 @@ export class Battle {
     const key = Protocol.key(args);
     if (!key) return;
     if (key in this.handler) (this.handler as any)[key](args, kwArgs);
-    this.buildContext(key, args, kwArgs);
-    this.handler.context = {};
-  }
-
-  private buildContext(type: ArgName, args: ArgType, kwArgs: BattleArgsKWArgType) {
-    const context = this.handler.context as HandlerContext[keyof HandlerContext];
-    if (BREAK.has(type)) {
-      if (this.context.length) {
-        const end = this.context[0].type === '|done|' || this.context[0].type === '|upkeep|';
-        if (GROUP.has(this.context[0].type) &&
-            this.context[0].type in this.contextHandler &&
-            (!end || this.context.length > 1)) {
-          if (end && type === '|upkeep|') {
-            this.context[0] = {type, context, args, kwArgs};
-          }
-          this.contextHandler[this.context[0].type as keyof HandlerContext]!(this.context as any);
-        }
-        this.context = [];
-      }
-      this.context.push({type, context, args, kwArgs});
-    } else if (args[0].startsWith('-') || type === '|faint|') {
-      this.context.push({type, context, args, kwArgs});
-    }
   }
 
   update() {
@@ -221,7 +147,6 @@ export class Battle {
           for (const move of p.moves) {
             pokemon.rememberMove(move, 0);
           }
-          p.stats = {hp: pokemon.maxhp, ...pokemon.stats} as StatsTable;
           if (side.sets) {
             if (!pokemon.set || (pokemon.set.name || pokemon.set.species) !== p.name) {
               (pokemon as any).set = side.sets.find(s => (s.name || s.species) === p.name);

@@ -1,31 +1,10 @@
 import {
-  BoostsTable,
-  DataKind,
-  Effect,
-  GenderName,
-  HPColor,
-  HPTypeName,
-  ID,
-  Move,
-  MoveTarget,
-  NatureName,
-  PokemonSet,
-  SpeciesName,
-  StatsTable,
-  StatusName,
-  toID,
-  TypeName,
+  BoostsTable, DataKind, Effect, GenderName, HPColor, HPTypeName, ID, Move,
+  MoveTarget, NatureName, PokemonSet, SpeciesName, StatusName, toID, TypeName,
 } from '@pkmn/data';
 import {
-  DetailedPokemon,
-  EffectName,
-  MoveName,
-  PokemonDetails,
-  PokemonHealth,
-  PokemonHPStatus,
-  PokemonIdent,
-  PokemonSearchID,
-  Protocol,
+  DetailedPokemon, EffectName, MoveName, PokemonDetails, PokemonHealth,
+  PokemonHPStatus, PokemonIdent, PokemonSearchID, Protocol,
 } from '@pkmn/protocol';
 
 import {NA} from './battle';
@@ -96,14 +75,19 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   boosts: Partial<BoostsTable>;
   volatiles: EffectTable;
 
+  ability: ID;
   baseAbility: ID;
   illusion?: Pokemon;
   revealedDetails?: PokemonDetails;
 
+  item: ID;
   itemEffect: ItemEffect | '';
   lastItem: ID;
   lastItemEffect: LastItemEffect | '';
   teamPreviewItem: boolean;
+
+  nature?: NatureName;
+  hpType?: HPTypeName;
 
   moveSlots: MoveSlot[];
   maxMoves?: Array<{
@@ -130,14 +114,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   moveThisTurn: ID | boolean;
   hurtThisTurn: boolean;
   movesUsedWhileActive: ID[];
-
-  readonly computed: {
-    ability: ID;
-    item: ID;
-    stats?: StatsTable;
-    nature?: NatureName;
-    hpType?: HPTypeName;
-  };
 
   constructor(side: Side, details: DetailedPokemon, set?: PokemonSet) {
     this.side = side;
@@ -169,14 +145,21 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.boosts = {};
     this.volatiles = {};
 
+    this.ability = set?.ability ? toID(set.ability) : '';
     this.baseAbility = '';
     this.illusion = undefined;
     this.revealedDetails = undefined;
 
+    this.item = set?.item ? toID(set.item) : '';
     this.itemEffect = '';
     this.lastItem = '';
     this.lastItemEffect = '';
     this.teamPreviewItem = false;
+
+    this.nature = set?.nature ? this.side.battle.gen.natures.get(set.nature)?.name : undefined;
+    this.hpType = set?.hpType
+      ? this.side.battle.gen.types.get(set.hpType)?.name as HPTypeName
+      : undefined;
 
     this.moveSlots = [];
     this.maxMoves = undefined;
@@ -195,42 +178,12 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.moveThisTurn = '';
     this.hurtThisTurn = false;
     this.movesUsedWhileActive = [];
-
-    this.computed = {
-      stats: undefined,
-      ability: set?.ability ? toID(set.ability) : '',
-      item: set?.item ? toID(set.item) : '',
-      nature: set?.nature ? this.side.battle.gen.natures.get(set.nature)?.name : undefined,
-      hpType: set?.hpType
-        ? this.side.battle.gen.types.get(set.nature)?.name as HPTypeName
-        : undefined,
-    };
   }
 
   toString(): string {
     const ident = this.side.active.includes(this) ? this.ident : this.originalIdent;
     const s = `${ident}|${this.details}`;
     return this.illusion ? `${this.illusion.toString()} (${s})` : s;
-  }
-
-  get ability() {
-    return this.computed.ability;
-  }
-
-  set ability(ability: ID) {
-    this.computed.ability = ability;
-  }
-
-  get item() {
-    return this.computed.item;
-  }
-
-  set item(item: ID) {
-    this.computed.item = item;
-  }
-
-  get nature() {
-    return this.computed.nature;
   }
 
   get ivs() {
@@ -243,18 +196,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   get happiness() {
     return this.set?.happiness;
-  }
-
-  get hpType() {
-    return this.computed.hpType;
-  }
-
-  get stats() {
-    return this.computed.stats;
-  }
-
-  set stats(stats: StatsTable | undefined) {
-    this.computed.stats = stats;
   }
 
   get ident() {
