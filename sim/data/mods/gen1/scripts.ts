@@ -18,7 +18,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		getStat(statName, unmodified) {
 			// @ts-ignore - type checking prevents 'hp' from being passed, but we're paranoid
 			if (statName === 'hp') throw new Error("Please read `maxhp` directly");
-			if (unmodified) return this.storedStats[statName];
+			if (unmodified) return this.baseStoredStats[statName];
 			return this.modifiedStats![statName];
 		},
 		// Gen 1 function to apply a stat modification that is only active until the stat is recalculated or mon switched.
@@ -46,9 +46,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				changed = true;
 				// Recalculate the modified stat
 				if (i === 'evasion' || i === 'accuracy') continue;
-				let stat = this.species.baseStats[i];
-				stat = Math.floor(Math.floor(2 * stat + this.set.ivs[i] + Math.floor(this.set.evs[i] / 4)) * this.level / 100 + 5);
-				this.modifiedStats![i] = this.storedStats[i] = Math.floor(stat);
+				this.modifiedStats![i] = this.storedStats[i];
 				if (this.boosts[i] >= 0) {
 					this.modifyStat!(i, [1, 1.5, 2, 2.5, 3, 3.5, 4][this.boosts[i]]);
 				} else {
@@ -63,9 +61,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				this.boosts[i] = 0;
 				// Recalculate the modified stat
 				if (i === 'evasion' || i === 'accuracy') continue;
-				let stat = this.species.baseStats[i];
-				stat = Math.floor(Math.floor(2 * stat + this.set.ivs[i] + Math.floor(this.set.evs[i] / 4)) * this.level / 100 + 5);
-				this.modifiedStats![i] = this.storedStats[i] = Math.floor(stat);
+				this.modifiedStats![i] = this.storedStats[i];
 			}
 		},
 	},
@@ -334,6 +330,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					let i: number;
 					for (i = 0; i < hits && target.hp && pokemon.hp; i++) {
 						move.hit = i + 1;
+						if (move.hit === hits) move.lastHit = true;
 						moveDamage = this.moveHit(target, pokemon, move);
 						if (moveDamage === false) break;
 						damage = (moveDamage || 0);
@@ -573,13 +570,16 @@ export const Scripts: ModdedBattleScriptsData = {
 			// Apply move secondaries.
 			if (moveData.secondaries) {
 				for (const secondary of moveData.secondaries) {
-					// We check here whether to negate the probable secondary status if it's para, burn, or freeze.
-					// In the game, this is checked and if true, the random number generator is not called.
-					// That means that a move that does not share the type of the target can status it.
-					// If a move that was not fire-type would exist on Gen 1, it could burn a Pokémon.
-					if (!(secondary.status && ['par', 'brn', 'frz'].includes(secondary.status) && target && target.hasType(move.type))) {
-						if (secondary.chance === undefined || this.battle.randomChance(Math.ceil(secondary.chance * 256 / 100), 256)) {
-							this.moveHit(target, pokemon, move, secondary, true, isSelf);
+					// Multi-hit moves only roll for status once
+					if (!move.multihit || move.lastHit) {
+						// We check here whether to negate the probable secondary status if it's para, burn, or freeze.
+						// In the game, this is checked and if true, the random number generator is not called.
+						// That means that a move that does not share the type of the target can status it.
+						// If a move that was not fire-type would exist on Gen 1, it could burn a Pokémon.
+						if (!(secondary.status && ['par', 'brn', 'frz'].includes(secondary.status) && target && target.hasType(move.type))) {
+							if (secondary.chance === undefined || this.battle.randomChance(Math.ceil(secondary.chance * 256 / 100), 256)) {
+								this.moveHit(target, pokemon, move, secondary, true, isSelf);
+							}
 						}
 					}
 				}

@@ -373,7 +373,6 @@
       "desc": "Has a 10% chance to paralyze the target.",
       "shortDesc": "10% chance to paralyze the target."
     },
-    "thunderwave": {"inherit": true, "accuracy": 100},
     "triattack": {
       "inherit": true,
       "secondary": null,
@@ -669,7 +668,6 @@
     },
     "mimic": {
       "inherit": true,
-      "accuracy": true,
       "noSketch": true,
       "desc": "While the user remains active, this move is replaced by the last move used by the target. The copied move has 5 PP. Fails if the target has not made a move, if the user already knows the move, or if the move is Struggle."
     },
@@ -10565,7 +10563,7 @@
       "pp": 20,
       "priority": 0,
       "flags": {"bullet": 1, "contact": 1, "protect": 1, "mirror": 1},
-      "condition": {"duration": 2, "onLockMove": "iceball"},
+      "condition": {"duration": 1, "onLockMove": "iceball"},
       "secondary": null,
       "target": "normal",
       "type": "Ice",
@@ -14694,7 +14692,7 @@
       "pp": 20,
       "priority": 0,
       "flags": {"contact": 1, "protect": 1, "mirror": 1},
-      "condition": {"duration": 2, "onLockMove": "rollout"},
+      "condition": {"duration": 1, "onLockMove": "rollout"},
       "secondary": null,
       "target": "normal",
       "type": "Rock",

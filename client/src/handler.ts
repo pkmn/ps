@@ -265,6 +265,8 @@ export class Handler implements Protocol.Handler {
     }
     this.battle.lastMove = 'healing-wish';
     poke.side.wisher = null;
+    poke.statusState.sleepTurns = 0;
+    poke.statusState.toxicTurns = 0;
   }
 
   '|-sethp|'(args: Args['|-sethp|']) {

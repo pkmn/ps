@@ -687,7 +687,7 @@ export class TeamValidator {
 			const {species: eventSpecies, eventData} = eventOnlyData;
 			let legal = false;
 			for (const event of eventData) {
-				if (this.validateEvent(set, event, eventSpecies)) continue;
+				if (this.validateEvent(set, setSources, event, eventSpecies)) continue;
 				legal = true;
 				break;
 			}
@@ -698,20 +698,19 @@ export class TeamValidator {
 				if (eventData.length === 1) {
 					problems.push(`${species.name} is only obtainable from an event - it needs to match its event:`);
 				} else {
-					problems.push(`${species.name} is only obtainable from events - it needs to match one of its events, such as:`);
+					problems.push(`${species.name} is only obtainable from events - it needs to match one of its events:`);
 				}
-				let eventInfo = eventData[0];
-				let eventNum = 1;
 				for (const [i, event] of eventData.entries()) {
 					if (event.generation <= dex.gen && event.generation >= this.minSourceGen) {
-						eventInfo = event;
-						eventNum = i + 1;
-						break;
+						const eventInfo = event;
+						const eventNum = i + 1;
+						const eventName = eventData.length > 1 ? ` #${eventNum}` : ``;
+						const eventProblems = this.validateEvent(
+							set, setSources, eventInfo, eventSpecies, ` to be`, `from its event${eventName}`
+						);
+						if (eventProblems) problems.push(...eventProblems);
 					}
 				}
-				const eventName = eventData.length > 1 ? ` #${eventNum}` : ``;
-				const eventProblems = this.validateEvent(set, eventInfo, eventSpecies, ` to be`, `from its event${eventName}`);
-				if (eventProblems) problems.push(...eventProblems);
 			}
 		}
 
@@ -1102,7 +1101,7 @@ export class TeamValidator {
 		}
 
 		// complicated fancy return signature
-		return this.validateEvent(set, eventData, eventSpecies, because as any) as any;
+		return this.validateEvent(set, setSources, eventData, eventSpecies, because as any) as any;
 	}
 
 	findEggMoveFathers(source: PokemonSource, species: Species, setSources: PokemonSources): boolean;
@@ -1674,16 +1673,22 @@ export class TeamValidator {
 		return null;
 	}
 
-	validateEvent(set: PokemonSet, eventData: EventInfo, eventSpecies: Species): true | undefined;
 	validateEvent(
-		set: PokemonSet, eventData: EventInfo, eventSpecies: Species, because: string, from?: string
+		set: PokemonSet, setSources: PokemonSources, eventData: EventInfo, eventSpecies: Species
+	): true | undefined;
+	validateEvent(
+		set: PokemonSet, setSources: PokemonSources, eventData: EventInfo, eventSpecies: Species,
+		because: string, from?: string
 	): string[] | undefined;
 	/**
 	 * Returns array of error messages if invalid, undefined if valid
 	 *
 	 * If `because` is not passed, instead returns true if invalid.
 	 */
-	validateEvent(set: PokemonSet, eventData: EventInfo, eventSpecies: Species, because = ``, from = `from an event`) {
+	validateEvent(
+		set: PokemonSet, setSources: PokemonSources, eventData: EventInfo, eventSpecies: Species,
+		because = ``, from = `from an event`
+	) {
 		const dex = this.dex;
 		let name = set.species;
 		const species = dex.species.get(set.species);
@@ -1784,8 +1789,15 @@ export class TeamValidator {
 				problems.push(`${name} can only use Hidden Power Dark/Dragon/Electric/Steel/Ice because it must have at least 5 perfect IVs${etc}.`);
 			}
 		}
-		// Event-related ability restrictions only matter if we care about illegal abilities
 		const ruleTable = this.ruleTable;
+		if (ruleTable.has('obtainablemoves')) {
+			const ssMaxSourceGen = setSources.maxSourceGen();
+			const tradebackEligible = dex.gen === 2 && species.gen === 1;
+			if (ssMaxSourceGen && eventData.generation > ssMaxSourceGen && !tradebackEligible) {
+				if (fastReturn) return true;
+				problems.push(`${name} must not have moves only learnable in gen ${ssMaxSourceGen}${etc}.`);
+			}
+		}
 		if (ruleTable.has('obtainableabilities')) {
 			if (dex.gen <= 5 && eventData.abilities && eventData.abilities.length === 1 && !eventData.isHidden) {
 				if (species.name === eventSpecies.name) {

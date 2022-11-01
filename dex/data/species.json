@@ -26855,7 +26855,7 @@
     "chromera": {
       "num": -60,
       "name": "Chromera",
-      "types": ["Dark", "Poison"],
+      "types": ["Dark", "Normal"],
       "gender": "N",
       "baseStats": {
         "hp": 85,
