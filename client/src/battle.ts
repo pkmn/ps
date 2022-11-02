@@ -188,6 +188,7 @@ export class Battle {
             mpoke.moveSlots.push({ppUsed: move.maxpp - move.pp, ...move});
           }
           poke.maxMoves = active.maxMoves;
+          poke.zMoves = active.zMoves;
           poke.canDynamax = active.canDynamax;
           poke.canGigantamax = active.canGigantamax;
           poke.canMegaEvo = active.canMegaEvo;
