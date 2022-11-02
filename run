@@ -125,24 +125,21 @@ const METRONOME = move => {
 	return {name: `METRONOME(${move})`, key: ['Battle.sample', 'Battle.singleEvent'], value};
 };
 
+const MIN_WRAP = {key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: MIN};
+const MAX_WRAP = {key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: MAX};
+const REWRAP = {key: ['Battle.sample', 'BattleActions.runMove'], value: MIN};
 const battle = startBattle([
-	INS, INS, SS_EACH, SS_EACH, SS_EACH, SS_EACH, SS_EACH,
-	TIE(2),
-	// TIE(2), SS_EACH, SS_EACH, METRONOME('Fly'), SRF_USE, SS_EACH,
-	// METRONOME('Dig'), SRF_USE, SS_EACH, SS_RES, SS_RES, SS_RES, SS_EACH, GLM, GLM,
-	// GLM, GLM, GLM, GLM, TIE(1), SS_EACH, SS_EACH, SS_RUN, SS_EACH,
-	// SS_RUN, HIT, NO_CRIT, MIN_DMG, SS_EACH, SS_RES, SS_EACH,
-	// SRF_RES, SS_EACH, SS_EACH, HIT, NO_CRIT, MIN_DMG, SS_EACH,
-	// METRONOME('Swift'), SRF_USE, NO_CRIT, MIN_DMG, SS_EACH, SS_EACH,
-	// SS_EACH, SS_EACH, SS_EACH, SS_EACH, SS_EACH, METRONOME('Petal Dance'),
-	// SRF_USE, HIT, NO_CRIT, MIN_DMG, THRASH(3), SS_EACH, SS_EACH,
+	METRONOME('Wrap'), HIT, NO_CRIT, MIN_DMG, MIN_WRAP, HIT, NO_CRIT, MIN_DMG, REWRAP
 ], [
-	{species: 'Clefable', evs, moves: ['Metronome', 'Quick Attack']},
-	{species: 'Clefable', evs, moves: ['Metronome', 'Quick Attack']},
+	{species: 'Victreebel', evs, moves: ['Metronome', 'Vine Whip']},
+	{species: 'Seel', evs, moves: ['Bubble']},
 ], [
-	{species: 'Clefable', evs, moves: ['Metronome']},
-	{species: 'Clefable', evs, moves: ['Metronome', 'Quick Attack']},
-]);
+	{species: 'Kadabra', evs, moves: ['Teleport']},
+	{species: 'Mr. Mime', evs, moves: ['Teleport']},
+], b => {
+	b.p1.pokemon[0].moveSlots[0].pp = 1;
+});
 
+battle.makeChoices('move 1', 'move 1');
 
-battle.makeChoices('switch 2', 'switch 2');
+battle.makeChoices('move 1', 'switch 2');
