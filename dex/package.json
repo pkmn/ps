@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/dex",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "unpkg": "build/production.min.js",
@@ -16,7 +16,7 @@
     "index.ts"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.6.2"
+    "@pkmn/dex-types": "^0.6.3"
   },
   "scripts": {
     "lint": "eslint --cache *.ts",
