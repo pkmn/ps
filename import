@@ -148,7 +148,7 @@ const MOD_IMPORTS = {
 
   // gen1stadium
   'data/mods/gen1stadium/conditions.ts': ['ModdedConditionData'],
-  'data/mods/gen1stadium/moves.ts': ['ModdedMoveData'],
+  'data/mods/gen1stadium/moves.ts': ['ModdedMoveData', 'ActiveMove'],
   'data/mods/gen1stadium/rulesets.ts': ['ModdedFormatData'],
   'data/mods/gen1stadium/scripts.ts': [
     'ModdedBattleScriptsData', 'StatIDExceptHP', 'BoostID', 'ActiveMove'

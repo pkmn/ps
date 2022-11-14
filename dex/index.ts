@@ -688,7 +688,6 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly tier: T.Tier.Singles | T.Tier.Other | 'Illegal';
   readonly doublesTier: T.Tier.Doubles | 'Illegal';
 
-  readonly evoMove?: T.MoveName;
   readonly cosmeticFormes?: T.SpeciesName[];
   readonly otherFormes?: T.SpeciesName[];
   readonly genderRatio: { M: number; F: number };
@@ -704,9 +703,11 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly requiredMove?: T.MoveName;
   readonly gender?: T.GenderName;
   readonly maxHP?: number;
+  readonly evoMove?: T.MoveName;
+  readonly evoItem?: string;
+  readonly evoRegion?: 'Alola' | 'Galar';
   readonly evoLevel?: number;
   readonly evoCondition?: string;
-  readonly evoItem?: string;
   readonly evoType?: T.EvoType;
   readonly condition?: Partial<Condition>;
 

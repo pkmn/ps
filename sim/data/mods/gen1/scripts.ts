@@ -242,13 +242,13 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 			damage = this.tryMoveHit(target, pokemon, move);
 
-			// Store 0 damage for last damage if move failed or dealt 0 damage.
+			// Store 0 damage for last damage if move failed.
 			// This only happens on moves that don't deal damage but call GetDamageVarsForPlayerAttack (disassembly).
 			const neverDamageMoves = [
 				'conversion', 'haze', 'mist', 'focusenergy', 'confuseray', 'supersonic', 'transform', 'lightscreen', 'reflect', 'substitute', 'mimic', 'leechseed', 'splash', 'softboiled', 'recover', 'rest',
 			];
 			if (
-				!damage &&
+				!damage && damage !== 0 &&
 				(move.category !== 'Status' || (move.status && !['psn', 'tox', 'par'].includes(move.status))) &&
 				!neverDamageMoves.includes(move.id)
 			) {
@@ -425,7 +425,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			// We get the sub to the target to see if it existed
 			const targetSub = (target) ? target.volatiles['substitute'] : false;
 			const targetHadSub = (targetSub !== null && targetSub !== false && (typeof targetSub !== 'undefined'));
-			let targetHasSub: boolean;
+			let targetHasSub: boolean | undefined = undefined;
 
 			if (target) {
 				hitResult = this.battle.singleEvent('TryHit', moveData, {}, target, pokemon, move);
@@ -588,7 +588,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					return false;
 				}
 			}
-			targetHasSub ??= !!(target?.volatiles['substitute']);
+			if (targetHasSub === undefined) targetHasSub = !!(target?.volatiles['substitute']);
 
 			// Here's where self effects are applied.
 			const doSelf = (targetHadSub && targetHasSub) || !targetHadSub;

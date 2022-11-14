@@ -18,7 +18,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			duration: 2,
 			onLockMove: 'dig',
 			onInvulnerability(target, source, move) {
-				if (move.id === 'swift' && target.volatiles['substitute']) return true;
+				if ((move.id === 'swift' && target.volatiles['substitute']) || move.id === 'transform') return true;
 				this.add('-message', `The foe ${target.name} can't be hit underground!`);
 				return false;
 			},
@@ -38,7 +38,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			duration: 2,
 			onLockMove: 'fly',
 			onInvulnerability(target, source, move) {
-				if (move.id === 'swift' && target.volatiles['substitute']) return true;
+				if ((move.id === 'swift' && target.volatiles['substitute']) || move.id === 'transform') return true;
 				this.add('-message', `The foe ${target.name} can't be hit while flying!`);
 				return false;
 			},
@@ -86,6 +86,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				uncappedDamage = this.runEvent('SubDamage', target, source, move, uncappedDamage);
 				if (!uncappedDamage) return uncappedDamage;
 				source.lastDamage = uncappedDamage;
+				this.lastDamage = uncappedDamage;
 				target.volatiles['substitute'].hp -= uncappedDamage > target.volatiles['substitute'].hp ?
 					target.volatiles['substitute'].hp : uncappedDamage;
 				if (target.volatiles['substitute'].hp <= 0) {

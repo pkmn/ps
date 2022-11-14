@@ -3940,6 +3940,7 @@
       "prevo": "Pikachu",
       "evoType": "useItem",
       "evoItem": "Thunder Stone",
+      "evoRegion": "Alola",
       "eggGroups": ["Field", "Fairy"]
     },
     "sandshrew": {
@@ -6030,6 +6031,7 @@
       "prevo": "Exeggcute",
       "evoType": "useItem",
       "evoItem": "Leaf Stone",
+      "evoRegion": "Alola",
       "eggGroups": ["Grass"]
     },
     "cubone": {
@@ -6096,6 +6098,7 @@
       "prevo": "Cubone",
       "evoLevel": 28,
       "evoCondition": "at night",
+      "evoRegion": "Alola",
       "eggGroups": ["Monster"]
     },
     "marowakalolatotem": {
@@ -6232,6 +6235,7 @@
       "weightkg": 16,
       "prevo": "Koffing",
       "evoLevel": 35,
+      "evoRegion": "Galar",
       "eggGroups": ["Amorphous"]
     },
     "rhyhorn": {
@@ -6503,6 +6507,7 @@
       "prevo": "Mime Jr.",
       "evoType": "levelMove",
       "evoMove": "Mimic",
+      "evoRegion": "Galar",
       "evos": ["Mr. Rime"],
       "eggGroups": ["Human-Like"],
       "canHatch": true

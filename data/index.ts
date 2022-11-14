@@ -255,7 +255,6 @@ export class Specie implements DexSpecies {
   readonly tier!: Tier.Singles | Tier.Other;
   readonly doublesTier!: Tier.Doubles;
 
-  readonly evoMove?: MoveName;
   readonly changesFrom?: SpeciesName;
   readonly cosmeticFormes?: SpeciesName[];
   readonly otherFormes?: SpeciesName[];
@@ -274,9 +273,11 @@ export class Specie implements DexSpecies {
   readonly requiredMove?: MoveName;
   readonly gender?: GenderName;
   readonly maxHP?: number;
+  readonly evoMove?: MoveName;
+  readonly evoItem?: string;
+  readonly evoRegion?: 'Alola' | 'Galar';
   readonly evoLevel?: number;
   readonly evoCondition?: string;
-  readonly evoItem?: string;
   readonly evoType?: EvoType;
   readonly condition?: Partial<Condition>;
   readonly canHatch!: boolean;
