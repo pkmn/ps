@@ -249,7 +249,7 @@ export class LogFormatter {
 
   stat(stat: StatID | 'spc') {
     const entry = Text[stat || 'stats'];
-    if (!entry || !entry.statName) return `???stat:${stat}???`;
+    if (!entry?.statName) return `???stat:${stat}???`;
     return entry.statName;
   }
 

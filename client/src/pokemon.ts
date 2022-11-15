@@ -279,7 +279,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     hpstring: string,
     output: PokemonHealth = {hp: 0, maxhp: 0, hpcolor: ''}
   ): [delta: number, denominator: number, oldnum: number, oldcolor: HPColor | ''] | null {
-    if (!hpstring || !hpstring.length) return null;
+    if (!hpstring?.length) return null;
 
     let oldhp = output.fainted ? 0 : (output.hp || 1);
     let oldmaxhp = output.maxhp;

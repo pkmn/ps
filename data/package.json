@@ -22,7 +22,7 @@
     "@pkmn/dex": "^0.6.4",
     "@pkmn/mods": "^0.6.4",
     "@pkmn/sim": "^0.6.4",
-    "@smogon/calc": "^0.6.0"
+    "@smogon/calc": "^0.7.0"
   },
   "scripts": {
     "lint": "eslint --cache *.ts",
