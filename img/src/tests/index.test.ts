@@ -293,13 +293,13 @@ describe('Icons', () => {
 describe('Bundle', () => {
   it('usage', () => {
     {
-      const window = {} as { PokemonSprites: typeof Sprites; PokemonIcons: typeof Icons };
+      const window = {} as {pkmn: {img: {Sprites: typeof Sprites; Icons: typeof Icons}}};
       // eslint-disable-next-line no-eval
-      eval(fs.readFileSync(path.resolve(__dirname, '../../build/production.min.js'), 'utf8'));
-      expect(window.PokemonSprites.getPokemon('Charizard').url)
+      eval(fs.readFileSync(path.resolve(__dirname, '../../build/index.min.js'), 'utf8'));
+      expect(window.pkmn.img.Sprites.getPokemon('Charizard').url)
         .toBe(`${URL}/sprites/ani/charizard.gif`);
 
-      const icon = window.PokemonIcons.getPokemon('Charizard', {protocol: 'http'});
+      const icon = window.pkmn.img.Icons.getPokemon('Charizard', {protocol: 'http'});
       expect(icon.url).toBe(`http://${DOMAIN}/sprites/pokemonicons-sheet.png`);
       expect(icon.left).toBe(-240);
       expect(icon.top).toBe(-0);

@@ -984,22 +984,12 @@ class DexLearnsets {
     if (learnset) return learnset;
 
     if (!DATA.Learnsets) {
-      const isNode =
-        typeof process !== 'undefined' &&
-        process.versions !== null &&
-        process.versions.node !== null;
-      if (isNode) {
-        DATA.Learnsets = require('./data/learnsets.json');
-      } else {
-        try {
-          // Cast required since Typescript thinks asynchronously imported JSON have default exports
-          DATA.Learnsets =
-            (await import('./data/learnsets.json')) as unknown as Data<T.LearnsetData>;
-        } catch (err) {
-          // @ts-ignore If we're being used via a <script> tag we depend on Learnsets being required
-          DATA.Learnsets = (window as any).DexLearnsets as Data<T.LearnsetData>;
-          if (!DATA.Learnsets) throw new Error('Learnsets have not been included!');
-        }
+      try {
+        DATA.Learnsets = (await import('./data/learnsets.json')).default as Data<T.LearnsetData>;
+      } catch (err) {
+        // @ts-ignore If we're being used via a <script> tag we depend on Learnsets being required
+        DATA.Learnsets = (window as any).pkmn?.learnsets as Data<T.LearnsetData>;
+        if (!DATA.Learnsets) throw new Error('Learnsets have not been included!');
       }
     }
     this.dex.load('Learnsets', this.dex.modData);
@@ -1425,7 +1415,7 @@ function deepClone(obj: any): any {
 dexes[CURRENT_GEN_ID] = new ModdedDex(CURRENT_GEN_ID);
 export const Dex = dexes[CURRENT_GEN_ID];
 
-export {
+export type {
   ID,
   As,
   Weather,

@@ -10,3 +10,5 @@ Thumbs.db
 .cache/
 dist/
 .parcel-cache
+tsconfig.cjs.json
+tsconfig.esm.json

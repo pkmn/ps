@@ -17,7 +17,7 @@ import {
   Weather,
 } from '@pkmn/types';
 
-export {ID} from '@pkmn/types';
+export type {ID} from '@pkmn/types';
 
 export namespace Protocol {
   export type PositionLetter = 'a' | 'b' | 'c';

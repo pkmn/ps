@@ -175,12 +175,12 @@ describe('Bundle', () => {
   // eslint-disable-next-line jest/expect-expect
   it('usage', () => {
     {
-      const window = {} as {LoginTools: typeof Actions};
+      const window = {} as {pkmn: {login: typeof Actions}};
       // eslint-disable-next-line no-eval
-      eval(fs.readFileSync(path.resolve(__dirname, './build/production.min.js'), 'utf8'));
+      eval(fs.readFileSync(path.resolve(__dirname, './build/index.min.js'), 'utf8'));
 
       const login =
-        window.LoginTools.login({username: 'User', password: 'password', challstr: '4|foo'});
+        window.pkmn.login.login({username: 'User', password: 'password', challstr: '4|foo'});
       expectAction(login, 'act=login&name=User&pass=password&challstr=4%7Cfoo');
       expectOnLoginResponse(login, 'User', '|/trn User,0,token');
     }

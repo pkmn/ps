@@ -130,7 +130,7 @@ within browsers along with `@pkmn/login` to authenticate:
   ...
 
   async function onChallstr() {
-    const action = LoginTools.login({username: 'User Name', password: 'password', challstr});
+    const action = pkmn.login.login({username: 'User Name', password: 'password', challstr});
     return new Promise((resolve, reject) => {
       const request = new XMLHttpRequest();
       request.addEventListener('load', () => {
@@ -206,7 +206,7 @@ async function onChallstr() {
   ...
 
   async function onChallstr() {
-    const action = LoginTools.login({username: 'User Name', password: 'password', challstr});
+    const action = pkmn.login.login({username: 'User Name', password: 'password', challstr});
     $.ajax(action.url, {
       method: action.method,
       headers: action.headers,
@@ -226,9 +226,9 @@ async function onChallstr() {
 The recommended way of using `@pkmn/login` in a web browser is to **configure your bundler**
 ([Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/),
 [Parcel](https://parceljs.org/), etc) to minimize it and package it with the rest of your
-application. If you do not use a bundler, a convenience `production.min.js` is included in the
-package. You simply need to depend on `./node_modules/@pkmn/login/build/production.min.js` in a
-`script` tag (which is what the unpkg shortcut above is doing), after which **`LoginTools` will be
+application. If you do not use a bundler, a convenience `index.min.js` is included in the
+package. You simply need to depend on `./node_modules/@pkmn/login/build/index.min.js` in a
+`script` tag (which is what the unpkg shortcut above is doing), after which **`pkmn.login` will be
 accessible as a global.**
 
 ## License

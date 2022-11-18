@@ -10,7 +10,6 @@
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": false,
     "noImplicitReturns": false,
-    "outDir": "build",
     "tsBuildInfoFile": ".tsbuildinfo"
   },
   "exclude": ["test", "build"]

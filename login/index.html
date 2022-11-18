@@ -75,7 +75,7 @@
       e.preventDefault();
       const username = form.elements[0].value;
       const password = form.elements[1].value || undefined;
-      const action = LoginTools.login({username, password, challstr});
+      const action = pkmn.login.login({username, password, challstr});
       const response = await (await fetch(BYPASS_CORS + action.url, {
         method: action.method,
         headers: action.headers,

@@ -1,8 +1,8 @@
 'use strict';
 
 const assert = require('assert').strict;
-const TeamValidator = require('../../build/sim/team-validator').TeamValidator;
-const Teams = require('../../build/sim/teams').Teams;
+const TeamValidator = require('../../build/cjs/sim/team-validator').TeamValidator;
+const Teams = require('../../build/cjs/sim/teams').Teams;
 
 describe('Team Validator', function () {
 	it('should have valid formats to work with', function () {

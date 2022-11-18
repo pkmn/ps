@@ -180,10 +180,10 @@ typechecking, but in the case of `@pkmn/data` the wrapper is required as `Genera
 The recommended way of using `@pkmn/data` in a web browser is to **configure your bundler**
 ([Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/),
 [Parcel](https://parceljs.org/), etc) to minimize it and package it with the rest of your
-application. If you do not use a bundler, a convenience `production.min.js` is included in the
-package. You simply need to depend on `./node_modules/@pkmn/data/build/production.min.js` in a
-`script` tag (which is what the unpkg shortcut above is doing), after which **`Generations` will be
-accessible as a global.**
+application. If you do not use a bundler, a convenience `index.min.js` is included in the package.
+You simply need to depend on `./node_modules/@pkmn/data/build/index.min.js` in a `script` tag (which
+is what the unpkg shortcut above is doing), after which **`pkmn.data` will be accessible as a
+global.**
 
 ## Limitations
 

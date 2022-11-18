@@ -1,0 +1,156 @@
+#!/usr/bin/env node
+'use strict';
+
+const child_process = require('child_process');
+const fs = require('fs');
+const path = require('path');
+
+const esbuild = require('esbuild');
+const tsup = require('tsup');
+const minimist = require('minimist');
+
+const argv = minimist(process.argv.slice(2), {default: {minify: false}});
+const cwd = process.cwd();
+
+const preamble = `"use strict";window.pkmn=window.pkmn||{};window.pkmn.`;
+const learnsets = `import * as LearnsetsJSON from './data/learnsets.json'; export {LearnsetsJSON};`;
+
+const rewrite = async (result, name, pkg, suffix = '') => {
+  const files = (await result).outputFiles;
+  if (files.length !== 1) throw new Error(`Output unexpectedly has ${files.length} files`);
+  const minified = files[0];
+  const decoded = new TextDecoder().decode(minified.contents);
+  const start = `"use strict";var ${name}=`;
+  if (!decoded.startsWith(start)) {
+    throw new Error(`Output unexpectedly starts with: ${decoded.slice(0, 100)}`);
+  }
+  return fs.writeFileSync(minified.path,
+    `${preamble}${pkg}=${decoded.slice(start.length, -2)}${suffix};`);
+};
+
+const sh = (cmd, args) => child_process.execFileSync(cmd, args, {encoding: 'utf8', cwd});
+
+const mkconfig = (tsconfig, format) => {
+  tsconfig.compilerOptions.noEmit = false;
+  tsconfig.compilerOptions.outDir = `build/${format}`;
+  tsconfig.compilerOptions.incremental = false;
+  tsconfig.compilerOptions.tsBuildInfoFile = null;
+  tsconfig.compilerOptions.module = format === 'cjs' ? 'CommonJS' : 'ESNext';
+  return tsconfig;
+};
+
+const tree = root => {
+  const leaves = [];
+  for (const child of fs.readdirSync(root)) {
+    if (['build', 'node_modules'].includes(child)) continue;
+    const p = path.join(root, child);
+    leaves.push(...(fs.lstatSync(p).isDirectory() ? tree(p) : [p]));
+  }
+  return leaves;
+};
+
+(async () => {
+  const pkg = path.basename(cwd);
+
+  // Oh boy, what fun! We need to use Typescript for this mess because things just won't bundle
+  if (!argv._.length) {
+    const time = process.hrtime.bigint();
+    const tsconfig = require(path.join(cwd, 'tsconfig.json'));
+    const cjs = path.join(cwd, 'tsconfig.cjs.json');
+    const running = cmd =>
+      console.log(`Running \x1b[96m${cmd}\x1b[0m for \x1b[34m@pkmn/${pkg}\x1b[0m...`);
+    try {
+      fs.writeFileSync(cjs, JSON.stringify(mkconfig(tsconfig, 'cjs')));
+      running('tsc -p tsconfig.cjs.json');
+      sh('npx', ['tsc', '-p', 'tsconfig.cjs.json']);
+    } finally {
+      try { fs.unlinkSync(cjs) } catch {}
+    }
+    const esm = path.join(cwd, 'tsconfig.esm.json');
+    try {
+      fs.writeFileSync(esm, JSON.stringify(mkconfig(tsconfig, 'esm')));
+      running('tsc -p tsconfig.esm.json');
+      sh('npx', ['tsc', '-p', 'tsconfig.esm.json']);
+    } finally {
+      try { fs.unlinkSync(esm) } catch {}
+    }
+    running('cp -a build/{cjs,types}');
+    fs.cpSync(path.join(cwd, 'build/cjs'), path.join(cwd, 'build/types'), {recursive: true});
+
+    console.log(`Cleaning up build output for \x1b[34m@pkmn/${pkg}\x1b[0m...`);
+    for (const format of ['cjs', 'esm', 'types']) {
+      for (const file of tree(path.join(cwd, 'build', format))) {
+        if (file.endsWith('.d.ts')) {
+          if (format !== 'types') fs.unlinkSync(file);
+        } else {
+          if (format === 'types') {
+            fs.unlinkSync(file);
+          } else if (format === 'esm') {
+            if (file.endsWith('.js')) {
+              fs.renameSync(file, `${file.slice(0, -3)}.mjs`);
+            } if (file.endsWith('.js.map')) {
+              fs.renameSync(file, `${file.slice(0, -7)}.mjs.map`);
+            }
+          }
+        }
+      }
+    }
+
+    const millis = Math.round(Number((process.hrtime.bigint() - time) / 1_000_000n));
+    console.log(`\nFinished after \x1b[93m${millis}ms\x1b[0m`);
+
+    process.exit(0);
+  }
+
+  // We need to call esbuild/rollup through tsup to get declaration files
+  await tsup.build({
+    entry: argv._,
+    outDir: 'build',
+    format: ['cjs', 'esm'],
+    sourcemap: true,
+    splitting: true,
+    dts: true
+  });
+
+  // Use esbuild directly for minified IIFE build to be able to rewrite
+  if (argv.minify) {
+    const globalName = `pkmn_${pkg}`;
+
+    const outfile = 'build/index.min.js';
+    console.log(`\nProducing \x1b[96m${outfile}\x1b[0m for \x1b[34m@pkmn/${pkg}\x1b[0m...`);
+    await rewrite(esbuild.build({
+      entryPoints: [argv._[0]],
+      bundle: true,
+      write: false,
+      external: pkg === 'dex' ? ['@pkmn/*', `./data/learnsets.json`] : ['@pkmn/*'],
+      // This required the build directory already exists which is why we wait for tsup
+      outfile,
+      format: 'iife',
+      minify: true,
+      globalName,
+    }), globalName, pkg);
+
+    if (pkg === 'dex') {
+      const tmp = path.join(cwd, 'learnsets.ts');
+      const outfile = 'build/learnsets.min.js';
+      console.log(`Producing \x1b[96m${outfile}\x1b[0m for \x1b[34m@pkmn/${pkg}\x1b[0m...`);
+      try {
+        fs.writeFileSync(tmp, learnsets);
+        await rewrite(esbuild.build({
+          entryPoints: [tmp],
+          bundle: true,
+          write: false,
+          outfile,
+          format: 'iife',
+          minify: true,
+          globalName: 'pkmn_learnsets',
+        }), 'pkmn_learnsets', 'learnsets', '.LearnsetsJSON');
+      } finally {
+        try { fs.unlinkSync(tmp) } catch {}
+      }
+    }
+  }
+})().catch(err => {
+  console.log(err);
+  process.exit(1);
+});

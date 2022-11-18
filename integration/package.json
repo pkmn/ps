@@ -49,7 +49,7 @@
     ],
     "moduleNameMapper": {
       "^@pkmn/protocol/(.*)$": "<rootDir>/node_modules/@pkmn/protocol/build/$1",
-      "^@pkmn/sim/(.*)$": "<rootDir>/node_modules/@pkmn/sim/build/sim/$1"
+      "^@pkmn/sim/(.*)$": "<rootDir>/node_modules/@pkmn/sim/build/cjs/sim/$1"
     }
   },
   "eslintConfig": {

@@ -1,23 +1,24 @@
 {
   "name": "@pkmn/streams",
-  "version": "1.0.0",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "version": "1.1.0",
   "description": "An automatically generated extraction of Pokémon Showdown's streams library",
   "repository": "github:pkmn/ps",
   "license": "MIT",
+  "sideEffects": false,
+  "main": "build/index.js",
+  "module": "build/index.mjs",
+  "types": "build/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
   "files": [
-    "build",
-    "index.ts"
+    "build"
   ],
   "scripts": {
     "lint": "eslint --cache *.ts",
     "fix": "eslint --fix *.ts",
     "compile": "tsc -p .",
-    "build": "npm run compile",
+    "build": "npm run compile && node ../build index.ts",
     "pretest": "npm run build",
     "test": "npm run lint"
   },

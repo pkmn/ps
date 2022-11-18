@@ -1,35 +1,34 @@
 {
   "name": "@pkmn/data",
-  "version": "0.6.4",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
-  "unpkg": "build/production.min.js",
+  "version": "0.7.0",
   "description": "A forked implementation of the Pokémon Showdown client's data layer",
   "repository": "github:pkmn/ps",
   "license": "MIT",
+  "sideEffects": false,
+  "main": "build/index.js",
+  "module": "build/index.mjs",
+  "types": "build/index.d.ts",
+  "unpkg": "build/index.min.js",
   "publishConfig": {
     "access": "public"
   },
   "files": [
-    "build",
-    "!build/*.test.*",
-    "index.ts"
+    "build"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.6.4"
+    "@pkmn/dex-types": "^0.7.0"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.6.4",
-    "@pkmn/mods": "^0.6.4",
-    "@pkmn/sim": "^0.6.4",
+    "@pkmn/dex": "^0.7.0",
+    "@pkmn/mods": "^0.7.0",
+    "@pkmn/sim": "^0.7.0",
     "@smogon/calc": "^0.7.0"
   },
   "scripts": {
     "lint": "eslint --cache *.ts",
     "fix": "eslint --fix *.ts",
     "compile": "tsc -p .",
-    "bundle": "node bundle",
-    "build": "npm run compile && npm run bundle",
+    "build": "npm run compile && node ../build index.ts --minify",
     "test": "jest",
     "pretest": "npm run build",
     "posttest": "npm run lint"

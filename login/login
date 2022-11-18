@@ -31,7 +31,7 @@ const readline = require('readline');
 const {Protocol} = require('@pkmn/protocol');
 const WebSocket = require('ws');
 
-const {Actions} = require('./build');
+const {Actions} = require('.');
 
 const server = 'sim.smogon.com';
 const serverport = 8000;

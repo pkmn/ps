@@ -29,7 +29,7 @@ export class ModdedDex<
   AD extends AbilityData = AbilityData,
   C extends Condition = Condition,
   I extends Item = Item,
-  ID extends ItemData = ItemData,
+  ITD extends ItemData = ItemData,
   L extends Learnset = Learnset,
   LD extends LearnsetData = LearnsetData,
   M extends Move = Move,
@@ -114,7 +114,7 @@ export class ModdedDex<
     return this.dex.data as {
       Abilities: { [id: string]: AD };
       Aliases: { [id: string]: string };
-      Items: { [id: string]: ID };
+      Items: { [id: string]: ITD };
       Moves: { [id: string]: MD };
       Species: { [id: string]: SD };
       Natures: { [id: string]: NatureData };

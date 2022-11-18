@@ -45,7 +45,7 @@ Alternatively, this library can be used with any implementation of the
 
 ```ts
 import {Icons, Sprites} from '@pkmn/img/adaptable';
-import {Data} from '@pkmn/img/data/interface';
+import type {Data} from '@pkmn/img/data/interface';
 
 class MyData implements Data {
   ...
@@ -58,9 +58,37 @@ const MySprites = new Sprites(data);
 ```
 
 This option is primarily useful for either migration purposes, to modify the APIs to make data
-loading **asynchronous** (though see [`@pkmn/img/async`](src/async.ts)), or if you want to avoid
-duplicating data that already exists in your application (though the only overlap is likely to be
-the `gen` and `num` fields which are quite small).
+loading **asynchronous**, or if you want to avoid duplicating data that already exists in your
+application (though the only overlap is likely to be the `gen` and `num` fields which are quite
+small).
+
+```ts
+import * as A from '@pkmn/img/adaptable';;
+import type {Data} from '@pkmn/img/data/interface';
+
+const data = import('./data');
+let DATA: Data | null;
+
+export const Sprites = new class {
+  sprites!: A.Sprites;
+
+  async get() {
+    if (this.sprites) return this.sprites;
+    if (DATA) return (this.sprites = new A.Sprites(DATA));
+    return (this.sprites = new A.Sprites(DATA = (await data).Data));
+  }
+};
+
+export const Icons = new class {
+  icons!: A.Icons;
+
+  async get() {
+    if (this.icons) return this.icons;
+    if (DATA) return (this.icons = new A.Icons(DATA));
+    return (this.icons = new A.Icons(DATA = (await data).Data));
+  }
+};
+```
 
 All methods take `protocol` and `domain` arguments in their `options` to facilitate easily **hosting
 your own sprites** (which you are strongly encouraged to do to avoid driving up Pokémon Showdown's
@@ -73,11 +101,10 @@ bandwidth costs). You should be able to easily copy the sprites from Pokémon Sh
 The recommended way of using `@pkmn/img` in a web browser is to **configure your bundler**
 ([Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/),
 [Parcel](https://parceljs.org/), etc) to minimize it and package it with the rest of your
-application. If you do not use a bundler, a convenience `production.min.js` is included in the
+application. If you do not use a bundler, a convenience `index.min.js` is included in the
 package (and used in the [`index.html`](index.html) example code). You simply need to depend on
-`./node_modules/@pkmn/img/build/production.min.js` in a `script` tag (which is what the unpkg
-shortcut above is doing), after which **`PokemonSprites` and `PokemonIcons` will be accessible as
-globals.**
+`./node_modules/@pkmn/img/build/index.min.js` in a `script` tag (which is what the unpkg
+shortcut above is doing), after which **`pkmn.img` will be accessible as a global.**
 
 ## Performance
 

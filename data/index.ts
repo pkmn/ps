@@ -778,7 +778,7 @@ export class Stats {
   }
 }
 
-export {
+export type {
   ID,
   As,
   Weather,

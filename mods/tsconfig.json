@@ -8,7 +8,7 @@
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": false,
     "noImplicitReturns": false,
-    "outDir": "build",
+    "resolveJsonModule": true,
     "tsBuildInfoFile": ".tsbuildinfo"
   },
   "include": ["src"]

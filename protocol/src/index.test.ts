@@ -372,12 +372,12 @@ describe('Protocol', () => {
 describe('Bundle', () => {
   it('usage', () => {
     {
-      const window = {} as {Protocol: typeof Protocol};
+      const window = {} as {pkmn: {protocol: {Protocol: typeof Protocol}}};
       // eslint-disable-next-line no-eval
-      eval(fs.readFileSync(path.resolve(__dirname, '../build/production.min.js'), 'utf8'));
+      eval(fs.readFileSync(path.resolve(__dirname, '../build/index.min.js'), 'utf8'));
 
-      expect(window.Protocol.key(['init', 'chat'])).toBe('|init|');
-      const parts = Protocol.parseEffect('move: Tackle');
+      expect(window.pkmn.protocol.Protocol.key(['init', 'chat'])).toBe('|init|');
+      const parts = window.pkmn.protocol.Protocol.parseEffect('move: Tackle');
       expect(parts.name).toBe('Tackle');
       expect(parts.type).toBe('move');
     }

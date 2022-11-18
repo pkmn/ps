@@ -1,5 +1,10 @@
 # Changelog
 
+### 5.0.0
+
+- Adds support for ESM and changes global exports from `PokemonSets` and `PokemonTeams` to
+  `pkmn.sets` which contains both `Sets` and `Teams`.
+
 ## 4.0.0
 
 - Adds `Sets.canonicalize` and `Team.canonicalize` which always require `Data` but which can be used

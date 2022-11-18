@@ -97,10 +97,11 @@
 <body>
   <div id="root"></div>
   <script src="./data/index.js"></script>
-  <script src="./build/production.min.js"></script>
+  <script src="./build/index.min.js"></script>
   <script>
+    const {Sprites, Icons} = pkmn.img;
     const ROOT = document.getElementById('root');
-    const GENS = Object.keys(PokemonSprites.GENS);
+    const GENS = Object.keys(Sprites.GENS);
     GENS.splice(GENS.length-1, 0, 'dex');
     const PAGE_SIZE = 10;
     const PAGES = Math.ceil(SPECIES.length / PAGE_SIZE);
@@ -137,9 +138,9 @@
 
     function picons(name) {
       const styles = new Set([
-        PokemonIcons.getPokemon(name, {side: 'p1'}).style,
-        PokemonIcons.getPokemon(name, {side: 'p1', gender: 'F'}).style,
-        PokemonIcons.getPokemon(name, {side: 'p2'}).style,
+        Icons.getPokemon(name, {side: 'p1'}).style,
+        Icons.getPokemon(name, {side: 'p1', gender: 'F'}).style,
+        Icons.getPokemon(name, {side: 'p2'}).style,
       ]);
 
       const icons = [];
@@ -161,7 +162,7 @@
         // no gender or back sprites
         for (const shiny of [false, true]) {
           if (name.endsWith('-Starter') && shiny === true) continue;
-          const {url, w, h, pixelated} = PokemonSprites.getDexPokemon(name, {gen, shiny});
+          const {url, w, h, pixelated} = Sprites.getDexPokemon(name, {gen, shiny});
           const img = e('img');
           img.src = url;
           img.alt = alt(url);
@@ -174,13 +175,13 @@
       }
 
       const genders =
-        (PokemonSprites.GENS[gen] < 4 || !namestar.endsWith('*')) ? [undefined] : ['M', 'F'];
+        (Sprites.GENS[gen] < 4 || !namestar.endsWith('*')) ? [undefined] : ['M', 'F'];
       for (const shiny of (gen.startsWith('gen1') ? [false] :  [false, true])) {
         if (name.endsWith('-Starter') && shiny === true) continue;
         for (const side of ['p2', 'p1']) {
           for (const gender of genders) {
             const {url, w, h, pixelated} =
-              PokemonSprites.getPokemon(name, {gen, side, shiny, gender});
+              Sprites.getPokemon(name, {gen, side, shiny, gender});
             const img = e('img');
             img.src = url;
             img.alt = alt(url);

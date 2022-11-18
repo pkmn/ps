@@ -32,7 +32,7 @@ const {Dex} = require('@pkmn/dex');
 const {Generations} = require('@pkmn/data');
 const {Protocol} = require('@pkmn/protocol');
 
-const {LogFormatter} = require('./build');
+const {LogFormatter} = require('.');
 
 const gens = new Generations(Dex);
 const battle = new Battle(gens);

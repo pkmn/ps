@@ -5,7 +5,7 @@ Please read through the index [README](README.md), the READMEs the index links t
 [pkmn.cc/@pkmn](https://pkmn.cc/@pkmn/) for general information about `@pkmn/ps` about development
 on `@pkmn` projects respectively. When opening issues or pull requests, please use one of the
 existing templates and fill them out to the best of your ability. Pull requests are unlikely to be
-merged without [tests](#Tests), but it is fine to open a pull request without tests for feedback or
+merged without [tests](#tests), but it is fine to open a pull request without tests for feedback or
 to ask for help with testing. :)
 
 Contributing to this project is relatively difficult as it depends on having a strong working
@@ -80,18 +80,6 @@ script's header:
 An important part of running the `import` script is examining all of the changes from Pokémon
 Showdown and updating any and all packages (generated or otherwise) that may require changes due to
 changes upstream.
-
-### `bundler.js`
-
-To simplify use in the browser, several packages offer a 'bundled' version of their code. Ideally,
-something like [`microbundle`](https://github.com/developit/microbundle) would provide a turn-key
-solution here, but due to various limitations `pkmn/ps` currently relies on a fragile form of bundle
-generation which involves handwritten `bundle` scripts. These scripts depend on
-[`bunder.js`](bundler.js) which ultimately calls [Babel](https://babeljs.io/) and
-[`terser`](https://github.com/terser/terser) on the manually concatenated bundle. Tests exist to
-confirm the bundled logic works as expected, but given that the bundling logic heavily
-depends on TypeScript's compiled output, anytime a change occurs the various `bundle` scripts
-will likely require adjustment.
 
 ### `publish`
 

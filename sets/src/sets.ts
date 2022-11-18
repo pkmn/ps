@@ -80,7 +80,7 @@ const DECODE_STAT: Readonly<{[name: string]: StatID}> = {
   spe: 'spe',
 };
 
-export {PokemonSet} from '@pkmn/types';
+export type {PokemonSet} from '@pkmn/types';
 
 export const Sets = new class {
   pack(s: Partial<PokemonSet>) {

@@ -2,8 +2,8 @@
 
 const assert = require('./../../assert');
 const common = require('./../../common');
-const Battle = require('./../../../build/sim/battle').Battle;
-const State = require('./../../../build/sim/state').State;
+const Battle = require('./../../../build/cjs/sim/battle').Battle;
+const State = require('./../../../build/cjs/sim/state').State;
 
 const TEAMS = [[
 	{species: 'Mew', ability: 'synchronize', item: 'assaultvest', moves: ['psychic']},
