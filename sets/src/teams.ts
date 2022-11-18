@@ -2,11 +2,11 @@
 import {PokemonSet, GenerationNum, ID} from '@pkmn/types';
 import {_import, _unpack, Sets, Data} from './sets';
 
-const CURRENT = 8;
+const CURRENT = 9;
 
 export class Team<S extends Partial<PokemonSet> = PokemonSet | Partial<PokemonSet>> {
   constructor(
-    readonly team: Readonly<S[]>,
+    readonly team: S[],
     readonly data?: Data,
     readonly format?: string,
     readonly name?: string,

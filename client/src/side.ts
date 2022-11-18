@@ -199,9 +199,9 @@ export class Side {
     pokemon.clearVolatile();
     pokemon.lastMove = '';
     this.battle.lastMove = 'switch-in';
-    // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-    if (['batonpass', 'zbatonpass'].includes(this.lastPokemon?.lastMove!)) {
-      pokemon.copyVolatileFrom(this.lastPokemon!);
+    if (['batonpass', 'zbatonpass', 'shedtail'].includes(this.lastPokemon?.lastMove || '')) {
+      const source = this.lastPokemon!.lastMove === 'shedtail' ? 'shedtail' : 'batonpass';
+      pokemon.copyVolatileFrom(this.lastPokemon!, source);
     }
   }
 
@@ -253,7 +253,7 @@ export class Side {
   }
 
   switchOut(pokemon: Pokemon, slot = pokemon.slot) {
-    if (pokemon.lastMove !== 'batonpass' && pokemon.lastMove !== 'zbatonpass') {
+    if (!['batonpass', 'zbatonpass', 'shedtail'].includes(pokemon.lastMove)) {
       pokemon.clearVolatile();
     } else {
       pokemon.removeVolatile('transform' as ID);

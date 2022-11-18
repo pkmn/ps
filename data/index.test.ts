@@ -1,6 +1,7 @@
 import {Generations, StatsTable, Dex as DexT, ItemName} from './index';
 
 import {calculate, Pokemon, Move} from '@smogon/calc/adaptable';
+import * as D from '@smogon/calc/data/interface';
 import {ID, ModData} from '@pkmn/dex-types';
 import {ModdedDex} from '@pkmn/mods';
 import * as dex from '@pkmn/dex';
@@ -56,7 +57,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('counts', () => {
-        const COUNTS = [0, 0, 76, 47, 41, 27, 42, 34];
+        const COUNTS = [0, 0, 76, 47, 41, 27, 42, 34, 31];
         let total = 0;
         for (const gen of gens) {
           expect(Array.from(gen.abilities)).toHaveLength(total += COUNTS[gen.num - 1]);
@@ -219,7 +220,9 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         let total = 0;
         for (const gen of gens) {
           expect(Array.from(gen.moves))
-            .toHaveLength(gen.num === 8 ? 623 + 41 + 34 - 33 : (total += COUNTS[gen.num - 1]));
+            .toHaveLength(gen.num === 9 ? 631
+            : gen.num === 8 ? 623 + 41 + 34 - 33
+            : (total += COUNTS[gen.num - 1]));
         }
       });
 
@@ -318,6 +321,12 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
           1 + 1 + 1 + 2 + 1 + 2 + 2 + 2 + 1 + 1 + 2 + 2 + 1 +
           (4 + 1 + 1 + 1 + 1 + 2 + (1 + 1)) + (1 + 3 + 4 + 2 + 3 + 1 + 2) - 1; // FIXME Rockruff
         expect(counts(8)).toEqual({species: 664, formes});
+        // Galar (1) + Paldea (4) + Rotom (5) + Basculin (1) + Vivillon (1) + Oricorio (3) +
+        // Lycanroc (2) + Mimikyu (1) + Toxtricity (1) + Eiscue (1) + Indeedee (1) + Oinkologne (1)
+        // + Dudunsparce (1) + Palafin (1) + Maushold (1) + Squawkabilly (3) + Sinistea-Antique (1)
+        // + Polteageist-Antique (1)
+        formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 1 + 1;
+        expect(counts(9)).toEqual({species: 400, formes});
       });
 
       it('formeNum', () => {
@@ -644,7 +653,8 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
 
 describe('@smogon/calc', () => {
   it('usage', () => {
-    const gen = new Generations(dex.Dex).get(5);
+    // TODO: remove assert when @smogon/calc supports Generation 9
+    const gen = new Generations(dex.Dex).get(5) as D.Generation;
     const result = calculate(
       gen,
       new Pokemon(gen, 'Gengar', {

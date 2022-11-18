@@ -83,7 +83,7 @@ const MOVES: {[id: string]: string} = {
   zenheadbutt: 'Zen Headbutt',
 };
 
-// NOTE: baseStats here is incorrect as its always the Gen 8 stats, that's fine for tests
+// NOTE: baseStats here is incorrect as its always the modern gen stats, that's fine for tests
 const SPECIES: {[id: string]: {name: string; baseStats: StatsTable}} = {
   alakazam: {
     name: 'Alakazam',
@@ -168,7 +168,7 @@ const SPECIES: {[id: string]: {name: string; baseStats: StatsTable}} = {
 };
 
 export const GEN: {[n: number]: Data} = {};
-for (let gen = 1; gen <= 8; gen++) {
+for (let gen = 1; gen <= 9; gen++) {
   GEN[gen] = {
     gen: gen as GenerationNum,
     abilities: {

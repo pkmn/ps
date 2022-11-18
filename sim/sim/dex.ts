@@ -32,7 +32,8 @@ import * as gen4 from '../data/mods/gen4';
 import * as gen5 from '../data/mods/gen5';
 import * as gen6 from '../data/mods/gen6';
 import * as gen7 from '../data/mods/gen7';
-import * as gen8 from '../data';
+import * as gen8 from '../data/mods/gen8';
+import * as gen9 from '../data';
 
 import {AbilitiesText} from '../data/text/abilities';
 import {ItemsText} from '../data/text/items';
@@ -42,9 +43,9 @@ import {DefaultText} from '../data/text/default';
 
 import * as Data from './dex-data';
 
-const BASE_MOD = 'gen8' as ID;
+const BASE_MOD = 'gen9' as ID;
 
-const dexData = {gen1, gen2, gen3, gen4, gen5, gen6, gen7, gen8};
+const dexData = {gen1, gen2, gen3, gen4, gen5, gen6, gen7, gen8, gen9};
 const dexes: {[mod: string]: ModdedDex} = Object.create(null);
 
 type DataType =
@@ -176,7 +177,7 @@ export class ModdedDex {
 	}
 
 	forGen(gen: number) {
-		if (gen < 1 || gen > 8) throw new Error(`Unsupported gen ${gen}`);
+		if (gen < 1 || gen > 9) throw new Error(`Unsupported gen ${gen}`);
 		return this.mod(`gen${gen}`);
 	}
 
@@ -372,7 +373,7 @@ export class ModdedDex {
 
 	loadDataFile(mod: string, dataType: DataType | 'Aliases', modData?: DeepPartial<ModdedDex['data']>): AnyObject {
 		if (modData) return modData[dataType] || {};
-		return (dexData as any)[mod === 'base' ? 'gen8' : mod][dataType] || {};
+		return (dexData as any)[mod === 'base' ? BASE_MOD : mod][dataType] || {};
 	}
 
 	includeMods(): this {
@@ -485,8 +486,9 @@ dexes['gen4'] = new ModdedDex('gen4');
 dexes['gen5'] = new ModdedDex('gen5');
 dexes['gen6'] = new ModdedDex('gen6');
 dexes['gen7'] = new ModdedDex('gen7');
+dexes['gen8'] = new ModdedDex('gen8');
 
-// "gen8" is an alias for the current base data
+// "gen9" is an alias for the current base data
 dexes[BASE_MOD] = dexes['base'];
 dexes['base'].includeModData();
 

@@ -131,7 +131,7 @@ export type ModdedEffectData = EffectData | Partial<EffectData> & {inherit: true
 
 export type EffectType =
 	'Condition' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Format' |
-	'Nature' | 'Ruleset' | 'Weather' | 'Status' | 'Rule' | 'ValidatorRule';
+	'Nature' | 'Ruleset' | 'Weather' | 'Status' | 'Terastal' | 'Rule' | 'ValidatorRule';
 
 export interface BasicEffect extends EffectData {
 	id: ID;
@@ -434,6 +434,7 @@ export interface TextFile extends TextObject {
 	gen5?: ModdedTextObject;
 	gen6?: ModdedTextObject;
 	gen7?: ModdedTextObject;
+	gen8?: ModdedTextObject;
 }
 
 export interface MovePlines extends Plines {
@@ -457,6 +458,7 @@ export interface MovePlines extends Plines {
 }
 
 export interface AbilityText extends TextFile, Plines {
+	activateFromItem?: string;
 	activateNoTarget?: string;
 	transformEnd?: string;
 }

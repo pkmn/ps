@@ -143,7 +143,7 @@ export class Sprites {
 
     const max = typeof options?.gen === 'string'
       ? this.GENS[options.gen] as GenerationNum
-      : options?.gen || 8;
+      : options?.gen || 9;
     // Regardless of the generation context, we can only go back to the first generation
     // the Pokemon existed in (or BW, because the Smogon Sprite Project guarantees BW sprites).
     const min = Math.min(data.gen, 5) as GenerationNum;
@@ -275,7 +275,7 @@ export class Sprites {
    *
    * @param options - options controlling which Substitute sprite is chosen:
    *
-   *   - `gen`: the preferred graphics or generation to use, defaults to `8`
+   *   - `gen`: the preferred graphics or generation to use, defaults to `9`
    *   - `side`: which side the Substitute is on. Defaults to `'p2'` which is a front sprite, `'p1'`
    *             will select a back sprite
    *   - `protocol`: URL protocol, defaults to `'https'`, but `'http'` is also allowed
@@ -296,7 +296,7 @@ export class Sprites {
     const iw = 0; // TODO innerWidth
     const ih = 0; // TODO innerHeight
 
-    let gen: GraphicsGen | GenerationNum = options?.gen || 8;
+    let gen: GraphicsGen | GenerationNum = options?.gen || 9;
     if (typeof gen === 'string') gen = GENS[gen] as GenerationNum;
     if (gen < 3) {
       dir = 'gen1';
@@ -367,7 +367,7 @@ export class Icons {
     const data = this.data.getPokemon(name);
 
     let num = data?.num ?? 0;
-    if (num < 0 || num > 898) num = 0;
+    if (num < 0 || num > 1010) num = 0;
     if (data?.icon) num = data.icon;
     if (options?.gender === 'F') num = data?.iconf ?? num;
     if (options?.side !== 'p2') num = data?.iconl ?? num;

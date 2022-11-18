@@ -187,11 +187,12 @@ export const Sets = new class {
     }
 
     const dynamax = s.dynamaxLevel !== undefined && s.dynamaxLevel !== 10;
-    if (s.pokeball || (s.hpType && packName(s.hpType) !== hasHP) || s.gigantamax || dynamax) {
+    if (s.pokeball || (s.hpType && !hasHP) || s.gigantamax || dynamax || s.teraType) {
       buf += ',' + (s.hpType || '');
       buf += ',' + packName(s.pokeball || '');
       buf += ',' + (s.gigantamax ? 'G' : '');
       buf += ',' + (dynamax ? s.dynamaxLevel : '');
+      buf += ',' + (s.teraType || '');
     }
 
     return buf;
@@ -240,6 +241,9 @@ export const Sets = new class {
     }
     if (s.gigantamax) {
       buf += 'Gigantamax: Yes  \n';
+    }
+    if (s.teraType) {
+      buf += 'Tera Type: ' + s.teraType + '  \n';
     }
     let first = true;
     if (s.evs && (!data || data.gen >= 3)) {
@@ -456,6 +460,7 @@ export const Sets = new class {
     s.pokeball = undefined;
     s.dynamaxLevel = data.gen === 8 ? s.dynamaxLevel : undefined;
     s.gigantamax = data.gen === 8 && s.gigantamax ? s.gigantamax : undefined;
+    s.teraType = data.gen === 9 ? s.teraType : undefined;
 
     return s;
   }
@@ -571,9 +576,9 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   j = buf.indexOf(']', i);
   let misc;
   if (j < 0) {
-    if (i < buf.length) misc = buf.substring(i).split(',', 4);
+    if (i < buf.length) misc = buf.substring(i).split(',', 6);
   } else {
-    if (i !== j) misc = buf.substring(i, j).split(',', 4);
+    if (i !== j) misc = buf.substring(i, j).split(',', 6);
   }
 
   if (misc) {
@@ -582,6 +587,7 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
     s.pokeball = unpackName(misc[2] || '', data?.items);
     s.gigantamax = !!misc[3];
     s.dynamaxLevel = (misc[4] ? Number(misc[4]) : 10);
+    s.teraType = misc[5] || '';
   }
 
   return {set: s as PokemonSet, i, j};
@@ -643,6 +649,9 @@ export function _import(lines: string[], i = 0, data?: Data) {
     } else if (line.substr(0, 14) === 'Hidden Power: ') {
       line = line.substr(14);
       s.hpType = line;
+    } else if (line.substr(0, 11) === 'Tera Type: ') {
+      line = line.substr(11);
+      s.teraType = line;
     } else if (line.substr(0, 15) === 'Dynamax Level: ') {
       line = line.substr(15);
       s.dynamaxLevel = +line;

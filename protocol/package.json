@@ -37,7 +37,7 @@
     "build"
   ],
   "dependencies": {
-    "@pkmn/types": "^2.1.0"
+    "@pkmn/types": "^3.0.0"
   },
   "devDependencies": {
     "@pkmn/dex": "^0.7.0",

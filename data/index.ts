@@ -75,7 +75,7 @@ export class Generations {
   }
 
   *[Symbol.iterator]() {
-    for (let gen = 1; gen <= 8; gen++) {
+    for (let gen = 1; gen <= 9; gen++) {
       yield this.get(gen as GenerationNum);
     }
   }
@@ -516,7 +516,7 @@ const GEN3_HMS =
 const GEN4_HMS =
   new Set(['cut', 'fly', 'surf', 'strength', 'rocksmash', 'waterfall', 'rockclimb'] as ID[]);
 
-type Restriction = 'Pentagon' | 'Plus' | 'Galar';
+type Restriction = 'Pentagon' | 'Plus' | 'Galar' | 'Paldea';
 
 export class Learnsets {
   private readonly cache = Object.create(null) as {
@@ -664,6 +664,7 @@ export class Learnsets {
     if (gen === 'Pentagon') return gens.includes(6);
     if (gen === 'Plus') return gens.includes(7) && !vcOnly;
     if (gen === 'Galar') return gens.includes(8) && !vcOnly;
+    if (gen === 'Paldea') return gens.includes(9);
 
     if (this.gen.num >= 3 && minGen <= 4 && (GEN3_HMS.has(move.id) || GEN4_HMS.has(move.id))) {
       let legalGens = '';
@@ -682,10 +683,10 @@ export class Learnsets {
       if (available) available = !GEN4_HMS.has(move.id);
 
       const minUpperGen = available ? 5 : Math.min(...gens.filter(g => g > 4));
-      legalGens += '012345678'.slice(minUpperGen);
+      legalGens += '0123456789'.slice(minUpperGen);
       return legalGens.includes(`${gen.num}`);
     } else {
-      return '012345678'.slice(minGen).includes(`${gen.num}`);
+      return '0123456789'.slice(minGen).includes(`${gen.num}`);
     }
   }
 }

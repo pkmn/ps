@@ -2,8 +2,10 @@
 
 ### 5.0.0
 
+- Generation 9 was released and `PokemonSet` now has a `teraType` field.
 - Adds support for ESM and changes global exports from `PokemonSets` and `PokemonTeams` to
   `pkmn.sets` which contains both `Sets` and `Teams`.
+- `Team.team` is no longer `Readonly`.
 
 ## 4.0.0
 

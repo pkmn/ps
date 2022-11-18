@@ -25,7 +25,7 @@ describe('Sprites', () => {
 
     pokemon = Sprites.getPokemon('Charizard', {side: 'p1', shiny: true, gender: 'F'});
     expect(pokemon.url).toBe(`${URL}/sprites/ani-back-shiny/charizard.gif`);
-    expect(pokemon.gen).toBe(8);
+    expect(pokemon.gen).toBe(9);
     expect(pokemon.w).toBe(172);
     expect(pokemon.h).toBe(166);
     expect(pokemon.pixelated).toBe(false);
@@ -219,15 +219,15 @@ describe('Icons', () => {
     pokemon = Icons.getPokemon('Lucario-Mega', {domain: 'pkmn.cc', gender: 'F'});
     expect(pokemon.url).toBe('https://pkmn.cc/sprites/pokemonicons-sheet.png');
     expect(pokemon.left).toBe(-360);
-    expect(pokemon.top).toBe(-2880);
+    expect(pokemon.top).toBe(-3240);
 
     pokemon = Icons.getPokemon('Pyroar', {gender: 'F'});
     expect(pokemon.left).toBe(-320);
-    expect(pokemon.top).toBe(-2460);
+    expect(pokemon.top).toBe(-2760);
 
     pokemon = Icons.getPokemon('Kingler', {side: 'p1'});
     expect(pokemon.left).toBe(-400);
-    expect(pokemon.top).toBe(-3000);
+    expect(pokemon.top).toBe(-3360);
 
     pokemon = Icons.getPokemon('Kingler', {side: 'p2', fainted: true});
     expect(pokemon.style).toEqual(

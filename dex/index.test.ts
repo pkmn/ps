@@ -55,9 +55,9 @@ describe('Dex', () => {
         return count;
       };
 
-      const COUNTS = [0, 0, 76, 47, 41, 27, 42, 34];
+      const COUNTS = [0, 0, 76, 47, 41, 27, 42, 34, 31];
       let total = 0;
-      for (let gen = 1; gen <= 8; gen++) {
+      for (let gen = 1; gen <= 9; gen++) {
         expect(counts(gen)).toEqual(total += COUNTS[gen - 1]);
       }
     });
@@ -225,6 +225,7 @@ describe('Dex', () => {
         expect(counts(gen)).toEqual(total += COUNTS[gen - 1]);
       }
       expect(counts(8)).toBe(623 + 41 + 34 - /* GMax */ 33);
+      expect(counts(9)).toBe(631);
     });
 
     it('cached', () => {
@@ -315,6 +316,12 @@ describe('Dex', () => {
         1 + 1 + 1 + 2 + 1 + 2 + 2 + 2 + 1 + 1 + 2 + 2 + 1 +
         (4 + 1 + 1 + 1 + 1 + 2 + (1 + 1)) + (1 + 3 + 4 + 2 + 3 + 1 + 2) - 1; // FIXME Rockruff
       expect(counts(8)).toEqual({species: 664, formes});
+      // Galar (1) + Paldea (4) + Rotom (5) + Basculin (1) + Vivillon (1) + Oricorio (3) +
+      // Lycanroc (2) + Mimikyu (1) + Toxtricity (1) + Eiscue (1) + Indeedee (1) + Oinkologne (1) +
+      // Dudunsparce (1) + Palafin (1) + Maushold (1) + Squawkabilly (3) + Sinistea-Antique (1) +
+      // Polteageist-Antique (1)
+      formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 1 + 1;
+      expect(counts(9)).toEqual({species: 400, formes});
     });
 
 

@@ -320,7 +320,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					if (Array.isArray(hits)) {
 						// Yes, it's hardcoded... meh
 						if (hits[0] === 2 && hits[1] === 5) {
-							hits = this.battle.sample([2, 2, 3, 3, 4, 5]);
+							hits = this.battle.sample([2, 2, 2, 3, 3, 3, 4, 5]);
 						} else {
 							hits = this.battle.random(hits[0], hits[1] + 1);
 						}
@@ -391,6 +391,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				const targetHadSub = !!target.volatiles['substitute'];
 				if (targetHadSub && moveData.volatileStatus && moveData.volatileStatus === 'partiallytrapped') {
 					target.addVolatile(moveData.volatileStatus, pokemon, move);
+					if (!pokemon.volatiles['partialtrappinglock'] || pokemon.volatiles['partialtrappinglock'].duration > 1) {
+						target.volatiles[moveData.volatileStatus].duration = 2;
+					}
 				}
 
 				if (!hitResult) {
@@ -523,7 +526,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				}
 			}
 			if (move.selfSwitch && pokemon.hp) {
-				pokemon.switchFlag = move.selfSwitch;
+				pokemon.switchFlag = move.selfSwitch === true ? true : this.dex.toID(move.selfSwitch);
 			}
 
 			return damage;

@@ -53,7 +53,7 @@ const replace = async (file, replacements) => {
   if (stats.isSymbolicLink()) return;
   if (stats.isFile()) {
     if (!file.endsWith('.js')) return;
-    let text = await fs.promises.readFile(file, "utf-8");
+    let text = await fs.promises.readFile(file, "utf8");
     let anyMatch = false;
     for (var i = 0; i < replacements.length; i++) {
       anyMatch = anyMatch || text.match(replacements[i].regex);
@@ -228,8 +228,13 @@ const RANDOMS_IMPORTS = {
       'Dex', 'Tags', 'Item', 'Ability', 'Nature',
     ], '@pkmn/sim'],
   ],
+  'data/mods/gen8/random-teams.ts': [
+    [['RandomTeams'], './gen9'],
+    [['ModdedDex', 'Format', 'PRNG', 'PRNGSeed'], '@pkmn/sim'],
+  ],
   'data/mods/gen7/random-teams.ts': [
-    [['MoveCounter', 'RandomTeams', 'TeamData'], './gen8'],
+    [['RandomGen8Teams'], './gen8'],
+    [['MoveCounter', 'TeamData'], './gen9'],
     [['Utils'], './utils'],
     [[
       'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'StatID',
@@ -238,7 +243,7 @@ const RANDOMS_IMPORTS = {
   ],
   'data/mods/gen6/random-teams.ts': [
     [['RandomGen7Teams', 'BattleFactorySpecies'], './gen7'],
-    [['MoveCounter', 'TeamData'], './gen8'],
+    [['MoveCounter', 'TeamData'], './gen9'],
     [['Utils'], './utils'],
     [[
       'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'Move',
@@ -246,7 +251,7 @@ const RANDOMS_IMPORTS = {
     ], '@pkmn/sim'],
   ],
   'data/mods/gen5/random-teams.ts': [
-    [['MoveCounter'], './gen8'],
+    [['MoveCounter'], './gen9'],
     [['RandomGen6Teams'], './gen6'],
     [['Utils'], './utils'],
     [[
@@ -255,7 +260,7 @@ const RANDOMS_IMPORTS = {
     ], '@pkmn/sim'],
   ],
   'data/mods/gen4/random-teams.ts': [
-    [['MoveCounter'], './gen8'],
+    [['MoveCounter'], './gen9'],
     [['RandomGen5Teams'], './gen5'],
     [['Utils'], './utils'],
     [[
@@ -264,7 +269,7 @@ const RANDOMS_IMPORTS = {
     ], '@pkmn/sim'],
   ],
   'data/mods/gen3/random-teams.ts': [
-    [['MoveCounter'], './gen8'],
+    [['MoveCounter'], './gen9'],
     [['RandomGen4Teams'], './gen4'],
     [['Utils'], './utils'],
     [[
@@ -272,18 +277,18 @@ const RANDOMS_IMPORTS = {
     ], '@pkmn/sim'],
   ],
   'data/mods/gen2/random-teams.ts': [
-    [['MoveCounter'], './gen8'],
+    [['MoveCounter'], './gen9'],
     [['RandomGen3Teams'], './gen3'],
     [[
       'ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes', 'Move',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen1/random-teams.ts': [
-    [['MoveCounter'], './gen8'],
+    [['MoveCounter'], './gen9'],
     [['RandomGen2Teams'], './gen2'],
     [['Utils'], './utils'],
     [[
-      'ID', 'Species', 'RandomTeamsTypes', 'Move', 'StatsTable', 'StatID', 'PokemonSet',
+      'Species', 'RandomTeamsTypes', 'Move', 'StatsTable', 'StatID', 'PokemonSet',
     ], '@pkmn/sim'],
   ],
 };
@@ -410,6 +415,7 @@ const OVERRIDDEN = new Set([
   'data/mods/gen5/index.ts',
   'data/mods/gen6/index.ts',
   'data/mods/gen7/index.ts',
+  'data/mods/gen8/index.ts',
   'lib/index.ts',
   'lib/streams.ts',
   'package-lock.json', // double sigh...
@@ -483,7 +489,8 @@ const removeFields = (data, fields) => {
 };
 
 const RANDOMS_FILES = {
-  'data/random-teams.ts': 'src/gen8.ts',
+  'data/random-teams.ts': 'src/gen9.ts',
+  'data/mods/gen8/random-teams.ts': 'src/gen8.ts',
   'data/mods/gen7/random-teams.ts': 'src/gen7.ts',
   'data/mods/gen6/random-teams.ts': 'src/gen6.ts',
   'data/mods/gen5/random-teams.ts': 'src/gen5.ts',
@@ -515,9 +522,9 @@ const DATA = {
       // patched to paper over the difference.
       if (gen === 4) {
         d['hydration'].desc = data[7]['hydration'].desc;
-        d['hydration'].shortDesc = data[8]['hydration'].shortDesc;
+        d['hydration'].shortDesc = data[9]['hydration'].shortDesc;
         d['simple'].desc = data[6]['simple'].desc;
-        d['thickfat'].desc = data[8]['thickfat'].desc;
+        d['thickfat'].desc = data[9]['thickfat'].desc;
       }
     }
   ],
@@ -544,14 +551,14 @@ const DATA = {
 
 const fillDescs = (text, gen, contents) => {
   for (const id in text) {
-    if (!contents[id] && gen === 8) continue;
-    const d = gen === 8 ? text[id] : text[id][`gen${gen}`];
+    if (!contents[id] && gen === 9) continue;
+    const d = gen === 9 ? text[id] : text[id][`gen${gen}`];
     const desc = d && d.desc;
     if (desc) {
       contents[id] = contents[id] || {inherit: true};
       contents[id].desc = desc;
     }
-    const sd = gen === 8 ? text[id] : text[id][`gen${gen}`];
+    const sd = gen === 9 ? text[id] : text[id][`gen${gen}`];
     const shortDesc = sd && sd.shortDesc;
     if (shortDesc) {
       contents[id] = contents[id] || {inherit: true};
@@ -707,9 +714,9 @@ const changes = async (where, last, now, repo) => ({
     };
 
     const DEX = {};
-    for (let gen = 8; gen >= 1; gen--) {
+    for (let gen = 9; gen >= 1; gen--) {
       let dir = path.join(ps, '.data-dist');
-      if (gen !== 8) dir = path.join(dir, `mods/gen${gen}`);
+      if (gen !== 9) dir = path.join(dir, `mods/gen${gen}`);
       for (const file of fs.readdirSync(dir)) {
         let fn = DATA[path.basename(file)];
         if (fn) {
@@ -754,7 +761,7 @@ const changes = async (where, last, now, repo) => ({
     fs.writeFileSync(path.join(view, 'src/data/text.json'), stringify(TEXT));
 
     for (const basename in DEX) {
-      const data = basename === 'aliases.json' ? DEX[basename][8] : DEX[basename];
+      const data = basename === 'aliases.json' ? DEX[basename][9] : DEX[basename];
       fs.writeFileSync(path.join(dex, 'data', basename), stringify(data));
     }
 

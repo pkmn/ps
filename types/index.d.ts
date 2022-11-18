@@ -7,7 +7,7 @@ export type Weather = string & As<'Weather'>;
 export type FieldCondition = string & As<'FieldCondition'>;
 export type SideCondition = string & As<'SideCondition'>;
 
-export type GenerationNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+export type GenerationNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
 export type GenderName = 'M' | 'F' | 'N';
 
@@ -83,4 +83,5 @@ export interface PokemonSet<T = string> {
   hpType?: string;
   dynamaxLevel?: number;
   gigantamax?: boolean;
+  teraType?: string;
 }

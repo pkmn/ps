@@ -1,6 +1,6 @@
 import {
   BoostsTable, DataKind, Effect, GenderName, HPColor, HPTypeName, ID, Move,
-  MoveTarget, NatureName, PokemonSet, SpeciesName, StatusName, toID, TypeName,
+  MoveTarget, NatureName, PokemonSet, SpeciesName, StatID, StatusName, toID, TypeName,
 } from '@pkmn/data';
 import {
   DetailedPokemon, EffectName, MoveName, PokemonDetails, PokemonHealth,
@@ -15,6 +15,7 @@ interface EffectState {
   level?: number;
   apparentType?: string;
   type?: TypeName;
+  stat?: StatID;
   speciesForme?: SpeciesName;
   pokemon?: Pokemon;
   shiny?: boolean;
@@ -45,6 +46,7 @@ export type ItemEffect =
    'harvested' | 'bestowed' | 'tricked' | 'disturbed';
 export type LastItemEffect =
    'eaten' | 'flung' | 'knocked off' | 'stolen' | 'consumed' | 'incinerated' | 'popped' | 'held up';
+export type CopySource = 'batonpass' | 'illusion' | 'shedtail';
 
 export class Pokemon implements DetailedPokemon, PokemonHealth {
   readonly side: Side;
@@ -88,6 +90,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   nature?: NatureName;
   hpType?: HPTypeName;
+  teraType?: TypeName;
 
   moveSlots: MoveSlot[];
   maxMoves?: Array<{
@@ -360,11 +363,11 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     if (this.side.battle.gen.num === 5) this.statusState.sleepTurns = 0;
   }
 
-  copyVolatileFrom(pokemon: Pokemon, copyAll: 'batonpass' | 'illusion' = 'batonpass') {
+  copyVolatileFrom(pokemon: Pokemon, copySource: CopySource = 'batonpass') {
     this.boosts = pokemon.boosts;
     this.volatiles = pokemon.volatiles;
     // this.lastMove = pokemon.lastMove; // I think
-    if (copyAll === 'batonpass') {
+    if (copySource === 'batonpass') {
       delete this.volatiles['airballoon'];
       delete this.volatiles['attract'];
       delete this.volatiles['autotomize'];
@@ -383,9 +386,16 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       delete this.volatiles['typeadd'];
       delete this.volatiles['typechange'];
       delete this.volatiles['yawn'];
+    } else if (copySource === 'shedtail') {
+      for (const i in this.volatiles) {
+        if (i === 'substitute') continue;
+        delete this.volatiles[i];
+      }
+      this.boosts = {};
     }
     delete this.volatiles['transform'];
     delete this.volatiles['formechange'];
+    delete this.volatiles['terastallize'];
 
     pokemon.boosts = {};
     pokemon.volatiles = {};

@@ -427,6 +427,10 @@ export class TeamValidator {
 			name = `${set.name} (${set.species})`;
 		}
 
+		if (!set.teraType && this.gen === 9) {
+			set.teraType = species.types[0];
+		}
+
 		if (!set.level) set.level = ruleTable.defaultLevel;
 
 		let adjustLevel = ruleTable.adjustLevel;
@@ -477,7 +481,7 @@ export class TeamValidator {
 		let outOfBattleSpecies = species;
 		let tierSpecies = species;
 		if (ability.id === 'battlebond' && species.id === 'greninja') {
-			outOfBattleSpecies = dex.species.get('greninjaash');
+			if (this.gen < 9) outOfBattleSpecies = dex.species.get('greninjaash');
 			if (ruleTable.has('obtainableformes')) {
 				tierSpecies = outOfBattleSpecies;
 			}
@@ -529,6 +533,14 @@ export class TeamValidator {
 				problems.push(`${name}'s Hidden Power type (${set.hpType}) is invalid.`);
 			} else {
 				set.hpType = type.name;
+			}
+		}
+		if (set.teraType) {
+			const type = dex.types.get(set.teraType);
+			if (!type.exists) {
+				problems.push(`${name}'s Terastal type (${set.teraType}) is invalid.`);
+			} else {
+				set.teraType = type.name;
 			}
 		}
 
@@ -1335,6 +1347,11 @@ export class TeamValidator {
 				set.moves[behemothMove] = 'ironhead';
 			}
 		}
+
+		// Temporary backwards compatability until Pokemon HOME update
+		if (species.baseSpecies === 'Vivillon' && species.forme !== 'Fancy' && dex.gen === 9) {
+			set.species = 'Vivillon-Fancy';
+		}
 		return problems;
 	}
 
@@ -1580,6 +1597,9 @@ export class TeamValidator {
 				return `${set.name}'s move ${move.name} does not exist in this game.`;
 			}
 			if (banReason === '') return null;
+		}
+		if (move.id === 'revivalblessing') {
+			return "Revival Blessing is currently not implemented. It won't be usable until it is.";
 		}
 
 		return null;
@@ -1984,7 +2004,7 @@ export class TeamValidator {
 		while (species?.name && !alreadyChecked[species.id]) {
 			alreadyChecked[species.id] = true;
 			if (dex.gen <= 2 && species.gen === 1) tradebackEligible = true;
-			const learnset = dex.species.getLearnset(species.id);
+			let learnset = dex.species.getLearnset(species.id);
 			if (!learnset) {
 				if ((species.changesFrom || species.baseSpecies) !== species.name) {
 					// forme without its own learnset
@@ -1999,6 +2019,10 @@ export class TeamValidator {
 					// Formats should replace the `Obtainable Moves` rule if they want to
 					// allow pokemon without learnsets.
 					return ` can't learn any moves at all.`;
+				}
+				if (species.prevo && dex.species.getLearnset(toID(species.prevo))) {
+					learnset = dex.species.getLearnset(toID(species.prevo));
+					continue;
 				}
 				// should never happen
 				throw new Error(`Species with no learnset data: ${species.id}`);

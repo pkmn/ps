@@ -90,7 +90,7 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
   fairly convoluted - because of global definitions there is quite a bit of merging going on and
   with explicit `import` and `export` statements the TypeScript compiler better able to detect type
   errors. `index.ts` files have been added to each of the generations in `data/`.
-- **only Gens 1 - 8 are supported, no other mods**. Generation 8 as the `base` mod is supported as
+- **only Gens 1 - 9 are supported, no other mods**. Generation 9 as the `base` mod is supported as
   with Pokémon Showdown, but after that only the canconical `genN` mods are supported (no Stadium,
   Let's Go, or pet mods). However, the [`@pkmn/mods`](../mods) package provides the information
   required for additional formats, and support for Other Metagames can be acheived with the modified

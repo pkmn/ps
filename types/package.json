@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/types",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "types": "index.d.ts",
   "description": "Type definitions common across Pokemon Showdown",
   "repository": "github:pkmn/ps",
@@ -9,7 +9,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": ["index.d.ts"],
+  "files": [
+    "index.d.ts"
+  ],
   "scripts": {
     "compile": "tsc -p .",
     "build": "npm run compile",

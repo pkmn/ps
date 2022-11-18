@@ -391,6 +391,7 @@ export namespace Protocol {
       canGigantamax?: boolean;
       canMegaEvo?: boolean;
       canUltraBurst?: boolean;
+      canTerastallize?: boolean;
       trapped?: boolean;
       maybeTrapped?: boolean;
       maybeDisabled?: boolean;
@@ -1500,6 +1501,7 @@ export namespace Protocol {
     '|-anim|': readonly ['-anim', PokemonIdent, AnimationName, PokemonIdent];
     '|-ohko|': readonly ['-ohko'];
     '|-candynamax|': readonly ['-candynamax', Player];
+    '|-terastallize|': readonly ['-terastallize', PokemonIdent, TypeName];
   }
 
   export type BattleMinorArgName = keyof BattleMinorArgs;
@@ -1536,6 +1538,7 @@ export namespace Protocol {
     'forme': true;
     /** `[from] EFFECT` */
     'from': EffectName | MoveName | AbilityName;
+    'fromitem': true;
     'heavy': true;
     'item': ItemName;
     /**
@@ -1591,7 +1594,7 @@ export namespace Protocol {
     '|switch|': GeneralKWArgNames;
     '|-activate|': GeneralKWArgNames
     | 'ability' | 'ability2' | 'block' | 'broken' | 'damage'
-    | 'item' | 'move' | 'number'| 'consumed' | 'name';
+    | 'item' | 'move' | 'number'| 'consumed' | 'name' | 'fromitem';
     '|-ability|': GeneralKWArgNames | 'move' | 'weaken' | 'fail';
     '|-block|': GeneralKWArgNames;
     '|-boost|': GeneralKWArgNames | 'multiple' | 'zeffect';
@@ -1860,7 +1863,7 @@ export const Protocol = new class {
     '|-fieldactivate|': 1, '|-hint|': 1, '|-center|': 1, '|-message|': 1, '|-combine|': 1,
     '|-waiting|': 1, '|-prepare|': 1, '|-mustrecharge|': 1, '|-hitcount|': 1, '|-singlemove|': 1,
     '|-singleturn|': 1, '|-anim|': 1, '|warning|': 1, '|-candynamax|': 1, '|updatepoke|': 1,
-    '|-swapsideconditions|': 1,
+    '|-swapsideconditions|': 1, '|-terastallize|': 1,
   };
   ARGS_WITH_KWARGS: {[k in Protocol.ArgsWithKWArgName]: 1} = {
     '|move|': 1, '|detailschange|': 1, '|cant|': 1, '|-formechange|': 1, '|-fail|': 1,

@@ -64,7 +64,7 @@ The most important breaking change is that **`learnsets` have been made `async`*
 been changed to be more generally useful. In [an ideal api](#limitations) we wouldn't fetch data
 we don't need during startup, but to maximize compatibility with Pokémon Showdown only the
 `getLearnsets` method call from `Dex` has been made async. Compressed, all of the data files without
-learnsets to ~287KB, while **`data/learnsets.json` takes up ~384KB just on its own**. Only loading
+learnsets to ~344KB, while **`data/learnsets.json` takes up ~475KB just on its own**. Only loading
 this data on demand helps make the loading experience more reasonable given the constraints of this
 package.
 
@@ -89,7 +89,7 @@ import {Generations} from '@pkmn/data';
 
 const gens = new Generations(Dex);
 assert(gens.get(1).types.get('Ghost').effectiveness['Psychic'] === 0);
-assert(gens.get(8).types.totalEffectiveness('Dark', ['Ghost', 'Psychic']) === 4);
+assert(gens.get(9).types.totalEffectiveness('Dark', ['Ghost', 'Psychic']) === 4);
 assert(gens.get(5).species.get('Dragapult') === undefined);
 assert(gens.get(3).species.get('Chansey').prevo === undefined);
 assert(Array.from(gens.get(1).species).length === 151);
@@ -110,14 +110,14 @@ eventually fully bridge the gap ("`@pkmn/data` - what Pokémon Showdown's data l
 The recommended way of using `@pkmn/dex` in a web browser is to **configure your bundler**
 ([Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/),
 [Parcel](https://parceljs.org/), etc)  to minimize it and package it with the rest of your
-application. If you do not use a bundler, a convenience `production.min.js` is included in the
-package. You simply need to depend on `./node_modules/@pkmn/dex/build/production.min.js` in a
-`script` tag (which is what the unpkg shortcut above is doing), after which **`Dex` will be
+application. If you do not use a bundler, a convenience `index.min.js` is included in the
+package. You simply need to depend on `./node_modules/@pkmn/dex/build/index.min.js` in a
+`script` tag (which is what the unpkg shortcut above is doing), after which **`pkmn.dex` will be
 accessible as a global.**
 
 `Dex#getLearnsets` does not play nicely in the browser because it is an asynchronous API. As such,
 you must first depend on `./node_modules/@pkmn/dex/build/learnsets.min.js` which makes
-**`DexLearnsets` accessible as a global** before calling `Dex#getLearnsets`. If you are using
+**`pkmn.learnsets` accessible as a global** before calling `Dex#getLearnsets`. If you are using
 `unpkg` this looks like:
 
 ```html
@@ -126,8 +126,8 @@ you must first depend on `./node_modules/@pkmn/dex/build/learnsets.min.js` which
 ```
 
 Note that `unpkg.com/@pkmn/dex` is configured to point at
-`unpkg.com/@pkmn/dex/build/production.min.js` already. The ordering of the `<script>` tags does not
-matter as long as the `learnsets.min.js` script has loaded and populated the `DexLearnsets` global
+`unpkg.com/@pkmn/dex/build/index.min.js` already. The ordering of the `<script>` tags does not
+matter as long as the `learnsets.min.js` script has loaded and populated the `pkmn.learnsets` global
 before `Dex#getLearnsets` is called.
 
 ## Limitations

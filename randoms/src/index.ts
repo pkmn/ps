@@ -15,7 +15,8 @@ import {RandomGen4Teams} from './gen4';
 import {RandomGen5Teams} from './gen5';
 import {RandomGen6Teams} from './gen6';
 import {RandomGen7Teams} from './gen7';
-import {RandomTeams} from './gen8';
+import {RandomGen8Teams} from './gen8';
+import {RandomTeams} from './gen9';
 
 const GENERATORS: {[mod: string]: new(dex: ModdedDex, format: Format, seed: PRNG | PRNGSeed | null) => TeamGenerator} = {
 	gen1: RandomGen1Teams,
@@ -25,7 +26,8 @@ const GENERATORS: {[mod: string]: new(dex: ModdedDex, format: Format, seed: PRNG
 	gen5: RandomGen5Teams,
 	gen6: RandomGen6Teams,
 	gen7: RandomGen7Teams,
-	gen8: RandomTeams,
+	gen8: RandomGen8Teams,
+	gen9: RandomTeams,
 };
 
 interface TeamGenerator {

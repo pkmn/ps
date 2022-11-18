@@ -23,7 +23,7 @@ describe('Team', () => {
   });
 
   it('bad format', () => {
-    const t = new Team([], GEN[8], 'uu');
+    const t = new Team([], GEN[9], 'uu');
     expect(t.gen).toBe(6);
   });
 
@@ -41,7 +41,7 @@ describe('Team', () => {
     const magnezone = team[0] = team[3];
     team[3] = alakazam;
 
-    const canon = Team.canonicalize(team, GEN[8]);
+    const canon = Team.canonicalize(team, GEN[9]);
     expect(canon.map(s => s.name)).toEqual([
       'magnezone', 'alakazam', 'gliscor', 'magearna', 'tangrowth', 'tornadustherian',
     ]);
@@ -56,10 +56,10 @@ describe('Team', () => {
 
 describe('Teams', () => {
   it('importTeams + exportTeams', () => {
-    let imported = Teams.fromString(TEAMS.replace(/\[ou\]/, ''), GEN[8])!;
-    expect(imported[0].gen).toBe(8);
+    let imported = Teams.fromString(TEAMS.replace(/\[ou\]/, ''), GEN[9])!;
+    expect(imported[0].gen).toBe(9);
 
-    imported = Teams.fromString(TEAMS, GEN[8])!;
+    imported = Teams.fromString(TEAMS, GEN[9])!;
     expect(imported).toHaveLength(2);
 
     expect(imported[0].gen).toBe(6);
@@ -74,7 +74,7 @@ describe('Teams', () => {
       .toEqual(TEAMS.replace(/\[ou\]/, '[gen6ou]'));
     expect(Teams.importTeam('')).toBeUndefined();
 
-    expect(Teams.importTeam(TEAMS, GEN[8])).toEqual(imported[0]);
+    expect(Teams.importTeam(TEAMS, GEN[9])).toEqual(imported[0]);
   });
 
   it('unpack', () => {
@@ -89,12 +89,12 @@ describe('Teams', () => {
     const team = Team.import(TEAM)!;
     let both = 'ou]RBY/Cloyster|' + (teams[1].pack()) + '\n' +
         Teams.exportTeams([teams[0]]) + '|' + team.pack();
-    let imported = Teams.importTeams(both, GEN[8]);
+    let imported = Teams.importTeams(both, GEN[9]);
     expect(imported[0].gen).toBe(6);
 
     both = 'gen1ou]RBY/Cloyster|' + (teams[1].pack()) + '\n' +
         Teams.exportTeams([teams[0]]) + '|' + team.pack();
-    imported = Teams.importTeams(both, GEN[8]);
+    imported = Teams.importTeams(both, GEN[9]);
     expect(imported).toHaveLength(3);
 
     expect(imported[0].team).toHaveLength(6);
@@ -105,9 +105,9 @@ describe('Teams', () => {
     expect(imported[0].name).toBe('Cloyster');
     expect(imported[0].folder).toBe('RBY');
 
-    expect(imported[2].export(GEN[8])).toBe(TEAM);
+    expect(imported[2].export(GEN[9])).toBe(TEAM);
 
     const again = Teams.importTeams(team.pack());
-    expect(again[0].export(GEN[8])).toBe(TEAM);
+    expect(again[0].export(GEN[9])).toBe(TEAM);
   });
 });

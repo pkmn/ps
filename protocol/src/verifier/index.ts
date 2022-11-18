@@ -45,7 +45,8 @@ const NAME_KWARGS: Protocol.BattleArgsWithKWArgType[] = ['name', 'wisher'];
 const BARE_EFFECTS = ['Dynamax', 'Recoil'] as Protocol.EffectName[];
 const POKE_ITEMS = ['item', 'mail', ''] as const;
 const WEATHER = [
-  'RainDance', 'Hail', 'Sandstorm', 'SunnyDay', 'PrimordialSea', 'DesolateLand', 'DeltaStream',
+  'RainDance', 'Hail', 'Sandstorm', 'SunnyDay',
+  'PrimordialSea', 'DesolateLand', 'DeltaStream', 'Snow',
 ];
 const FIELD_CONDITIONS = ['Misty Terrain'];
 const SIDE_CONDTIONS = [
@@ -159,11 +160,11 @@ function verifyNum(num: Protocol.Num) {
 }
 
 function verifyPokemonIdent(ident: Protocol.PokemonIdent) {
-  return /^p[1234][abc]?: [^|]{1,22}$/.test(ident);
+  return /^p[1234][abc]?: [^|]{1,25}$/.test(ident);
 }
 
 function verifyPokemonDetails(details: Protocol.PokemonDetails, gen?: Generation) {
-  const m = /^([^|]{1,22}?)(, L\d{0,3})?(, [MF])?(, shiny)?$/.exec(details);
+  const m = /^([^|]{1,25}?)(, L\d{0,3})?(, [MF])?(, shiny)?$/.exec(details);
   if (!m) return false;
   return !gen || !!gen.species.get(m[1]);
 }
@@ -177,7 +178,7 @@ function verifyPlayer(player: Player) {
 }
 
 function verifySide(side: Protocol.Side) {
-  return /^p[1234]: [^|]{1,22}$/.test(side);
+  return /^p[1234]: [^|]{1,25}$/.test(side);
 }
 
 function verifyStatusName(status: StatusName) {
@@ -534,7 +535,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
 
   '|gen|'(args: Args['|gen|']) {
     const gen = +args[1];
-    return args.length === 2 && gen >= 1 && gen <= 8;
+    return args.length === 2 && gen >= 1 && gen <= 9;
   }
 
   '|tier|'(args: Args['|tier|']) {
@@ -839,6 +840,10 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 2 && verifyPlayer(args[1]);
   }
 
+  '|-terastallize|'(args: Args['|-terastallize|']) {
+    return args.length === 3 && verifyPokemonIdent(args[1]) && verifyType(args[2]);
+  }
+
   '|-clearnegativeboost|'(
     args: Args['|-clearnegativeboost|'], kwArgs: KWArgs['|-clearnegativeboost|']
   ) {
@@ -1016,8 +1021,8 @@ class Handler implements Required<Protocol.Handler<boolean>> {
 
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
     const keys: Protocol.BattleArgsWithKWArgType[] = [
-      ...KWARGS, 'ability', 'ability2', 'block', 'broken',
-      'damage', 'item', 'move', 'number', 'consumed', 'name',
+      ...KWARGS, 'ability', 'ability2', 'block', 'broken', 'damage',
+      'item', 'move', 'number', 'consumed', 'name', 'fromitem',
     ];
     if (!verifyKWArgs(kwArgs, keys, this.gen)) return false;
     if (!(args[1] === '' || verifyPokemonIdent(args[1]))) return false;

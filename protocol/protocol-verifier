@@ -32,7 +32,7 @@ const {Generation} = require('@pkmn/data');
 
 const {Verifier} = require('./build/verifier');
 
-const verifier = new Verifier(Generation.get(Dex, process.argv[2] || 8, Verifier.EXISTS));
+const verifier = new Verifier(Generation.get(Dex, process.argv[2] || 9, Verifier.EXISTS));
 
 readline.createInterface({
   input: process.stdin,

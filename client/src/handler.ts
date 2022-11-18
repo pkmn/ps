@@ -1,6 +1,6 @@
 import {
   BoostID, Effect, ID, Move, MoveName,
-  Specie, SpeciesName, toID, TypeName,
+  Specie, SpeciesName, StatID, toID, TypeName,
 } from '@pkmn/data';
 import {Protocol, Args, KWArgs, PokemonSearchID, PokemonIdent} from '@pkmn/protocol';
 
@@ -689,6 +689,10 @@ export class Handler implements Protocol.Handler {
     }
   }
 
+  '|-terastallize|'(args: Args['|-terastallize|']) {
+    this.battle.getPokemon(args[1])!.teraType = sanitizeName(args[2]) as TypeName;
+  }
+
   '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {
     const poke = this.battle.getPokemon(args[1])!;
     const effect = this.battle.get('conditions', args[2]);
@@ -700,6 +704,12 @@ export class Handler implements Protocol.Handler {
 
     if (effect.id.startsWith('stockpile')) {
       poke.addVolatile('stockpile' as ID, {level: +effect.id.charAt(effect.id.length - 1)});
+      return;
+    } else if (effect.id.startsWith('protosynthesis')) {
+      poke.addVolatile('protosynthesis' as ID, {stat: effect.id.slice(-3) as StatID});
+      return;
+    } else if (effect.id.startsWith('quarkdrive')) {
+      poke.addVolatile('protosynthesis' as ID, {stat: effect.id.slice(-3) as StatID});
       return;
     } else if (effect.id.startsWith('perish')) {
       poke.addVolatile('perishsong' as ID, {
@@ -823,7 +833,11 @@ export class Handler implements Protocol.Handler {
       }
       break;
 
-      // ability activations
+    // ability activations
+    case 'electromorphosis':
+    case 'windpower':
+      poke!.addVolatile('charge' as ID, {duration: 'move'});
+      break;
     case 'forewarn':
       if (poke2) {
         poke2.rememberMove(kwArgs.move!, 0);
@@ -835,12 +849,13 @@ export class Handler implements Protocol.Handler {
         if (foeActive.length === 1) foeActive[0].rememberMove(kwArgs.move!, 0);
       }
       break;
+    case 'lingeringaroma':
     case 'mummy':
       if (!kwArgs.ability) break; // if Mummy activated but failed, no ability will have been sent
       const ability = this.battle.get('abilities', kwArgs.ability);
       poke2!.activateAbility(ability.name);
-      if (poke) poke.activateAbility('Mummy');
-      poke2!.activateAbility('Mummy', true);
+      if (poke) poke.activateAbility(effect.name);
+      poke2!.activateAbility(effect.name, true);
       break;
 
       // item activations

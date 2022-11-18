@@ -24,7 +24,8 @@ export type SpeciesName = string & As<'SpeciesName'>;
 export type FormeName = string & As<'FormeName'>;
 
 export type EffectType =
-  'Condition' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Nature' | 'Weather' | 'Status';
+  'Condition' | 'Pokemon' | 'Move' | 'Item' | 'Ability' |
+  'Nature' | 'Weather' | 'Status' | 'Terastal';
 export type Effect = Ability | Item | Move | Condition;
 
 export type DataKind =
@@ -161,7 +162,7 @@ export interface MoveData extends EffectData, HitEffect {
   thawsTarget?: boolean;
   heal?: number[] | null;
   forceSwitch?: boolean;
-  selfSwitch?: boolean | 'copyvolatile';
+  selfSwitch?: 'copyvolatile' | 'shedtail' | boolean;
   selfBoost?: { boosts?: Partial<BoostsTable> };
   selfdestruct?: boolean | 'ifHit' | 'always';
   breaksProtect?: boolean;
@@ -317,7 +318,7 @@ export interface BasicEffect<NameT extends string = string> extends Readonly<Eff
 }
 
 export interface Condition extends Readonly<BasicEffect> {
-  readonly effectType: 'Condition' | 'Weather' | 'Status';
+  readonly effectType: 'Condition' | 'Weather' | 'Status' | 'Terastal';
   readonly kind: 'Condition';
 }
 
@@ -439,7 +440,7 @@ export interface Nature extends NatureData {
   readonly exists?: boolean;
 }
 
-export type GenID = 'gen1' | 'gen2' | 'gen3' | 'gen4' | 'gen5' | 'gen6' | 'gen7' | 'gen8';
+export type GenID = 'gen1' | 'gen2' | 'gen3' | 'gen4' | 'gen5' | 'gen6' | 'gen7' | 'gen8' | 'gen9';
 export type ModData = DeepPartial<Dex['data'] & {Scripts: {inherit: GenID}}>;
 
 export interface DexTable<T> {

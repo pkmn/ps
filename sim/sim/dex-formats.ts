@@ -26,7 +26,7 @@ import {Tags} from '../data/tags';
 
 import {Formats} from '../config/formats';
 
-const DEFAULT_MOD = 'gen8';
+const DEFAULT_MOD = 'gen9';
 
 export interface FormatData extends Partial<Format>, EventMethods {
 	name: string;
@@ -438,7 +438,7 @@ export class Format extends BasicEffect implements Readonly<BasicEffect> {
 		// eslint-disable-next-line @typescript-eslint/no-this-alias
 		data = this;
 
-		this.mod = Utils.getString(data.mod) || 'gen8';
+		this.mod = Utils.getString(data.mod) || DEFAULT_MOD;
 		this.effectType = Utils.getString(data.effectType) as FormatEffectType || 'Format';
 		this.debug = !!data.debug;
 		this.rated = (typeof data.rated === 'string' ? data.rated : data.rated !== false);
@@ -493,7 +493,7 @@ export class DexFormats {
 			if (format.challengeShow === undefined) format.challengeShow = true;
 			if (format.searchShow === undefined) format.searchShow = true;
 			if (format.tournamentShow === undefined) format.tournamentShow = true;
-			if (format.mod === undefined) format.mod = 'gen8';
+			if (format.mod === undefined) format.mod = DEFAULT_MOD;
 			if (!this.dex.dexes[format.mod]) format.exists = false;
 
 			const ruleset = new Format(format);

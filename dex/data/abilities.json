@@ -765,6 +765,41 @@
     }
   },
   "8": {
+    "battlebond": {"inherit": true, "onModifyMovePriority": -1},
+    "dauntlessshield": {"inherit": true},
+    "intrepidsword": {"inherit": true},
+    "libero": {"inherit": true},
+    "protean": {"inherit": true},
+    "snowwarning": {
+      "inherit": true,
+      "shortDesc": "On switch-in, this Pokemon summons Hail."
+    },
+    "icebody": {
+      "inherit": true,
+      "desc": "If Hail is active, this Pokemon restores 1/16 of its maximum HP, rounded down, at the end of each turn. This Pokemon takes no damage from Hail.",
+      "shortDesc": "If Hail is active, this Pokemon heals 1/16 of its max HP each turn; immunity to Hail."
+    },
+    "iceface": {
+      "inherit": true,
+      "desc": "If this Pokemon is an Eiscue, the first physical hit it takes in battle deals 0 neutral damage. Its ice face is then broken and it changes forme to Noice Face. Eiscue regains its Ice Face forme when Hail begins or when Eiscue switches in while Hail is active. Confusion damage also breaks the ice face.",
+      "shortDesc": "If Eiscue, the first physical hit it takes deals 0 damage. This effect is restored in Hail."
+    },
+    "overcoat": {
+      "inherit": true,
+      "desc": "This Pokemon is immune to powder moves, damage from Sandstorm or Hail, and the effects of Rage Powder and the Effect Spore Ability.",
+      "shortDesc": "This Pokemon is immune to powder moves, Sandstorm or Hail damage, Effect Spore."
+    },
+    "slushrush": {
+      "inherit": true,
+      "shortDesc": "If Hail is active, this Pokemon's Speed is doubled."
+    },
+    "snowcloak": {
+      "inherit": true,
+      "desc": "If Hail is active, the accuracy of moves used against this Pokemon is multiplied by 0.8. This Pokemon takes no damage from Hail.",
+      "shortDesc": "If Hail is active, this Pokemon's evasiveness is 1.25x; immunity to Hail."
+    }
+  },
+  "9": {
     "noability": {
       "isNonstandard": "Past",
       "name": "No Ability",
@@ -811,6 +846,12 @@
       "desc": "If this Pokemon, but not its substitute, is struck by a critical hit, its Attack is raised by 12 stages.",
       "shortDesc": "If this Pokemon (not its substitute) takes a critical hit, its Attack is raised 12 stages."
     },
+    "angershell": {
+      "name": "Anger Shell",
+      "num": 271,
+      "desc": "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack, Special Attack, and Speed are raised by 1 stage, and its Defense and Speed are lowered by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
+      "shortDesc": "When this Pokemon reaches 1/2 or less of its max HP: +1 Atk, Sp. Atk, and Spe; -1 Def and Sp. Def."
+    },
     "anticipation": {
       "name": "Anticipation",
       "num": 107,
@@ -822,6 +863,13 @@
       "num": 71,
       "desc": "Prevents opposing Pokemon from choosing to switch out unless they are airborne, are holding a Shed Shell, or are a Ghost type.",
       "shortDesc": "Prevents opposing Pokemon from choosing to switch out unless they are airborne."
+    },
+    "armortail": {
+      "isBreakable": true,
+      "name": "Armor Tail",
+      "num": 296,
+      "desc": "While this Pokemon is active, priority moves from opposing Pokemon that target this Pokemon or its allies are prevented from having an effect.",
+      "shortDesc": "This Pokemon and its allies are protected from opposing priority moves."
     },
     "aromaveil": {
       "isBreakable": true,
@@ -876,12 +924,16 @@
       "shortDesc": "This Pokemon cannot be struck by a critical hit."
     },
     "battlebond": {
-      "onModifyMovePriority": -1,
       "isPermanent": true,
       "name": "Battle Bond",
       "num": 210,
       "desc": "If this Pokemon is a Greninja, it transforms into Ash-Greninja if it attacks and knocks out another Pokemon. If this Pokemon is an Ash-Greninja, its Water Shuriken has 20 power and always hits three times.",
       "shortDesc": "After KOing a Pokemon: becomes Ash-Greninja, Water Shuriken: 20 power, hits 3x."
+    },
+    "beadsofruin": {
+      "name": "Beads of Ruin",
+      "num": 284,
+      "shortDesc": "The Sp. Def stat of all other active Pokemon is reduced by 25%."
     },
     "beastboost": {
       "name": "Beast Boost",
@@ -958,6 +1010,12 @@
       "desc": "This Pokemon is considered to be asleep and cannot become affected by a non-volatile status condition or Yawn.",
       "shortDesc": "This Pokemon cannot be statused, and is considered to be asleep."
     },
+    "commander": {
+      "name": "Commander",
+      "num": 279,
+      "desc": "If this Pokemon is Tatsugiri and Dondozo is an active ally, Dondozo will swallow this Pokemon. This prevents this Pokemon from acting and boosts all of Dondozo's stats by 2 stages. Attacks targeted at this Pokemon will fail if it has been swallowed. Tatsugiri can still take indirect damage while swallowed.",
+      "shortDesc": "If ally is Dondozo: this Pokemon cannot act or be hit, +2 to all Dondozo's stats."
+    },
     "competitive": {
       "name": "Competitive",
       "num": 172,
@@ -981,11 +1039,23 @@
       "num": 212,
       "shortDesc": "This Pokemon can poison or badly poison a Pokemon regardless of its typing."
     },
+    "costar": {
+      "name": "Costar",
+      "num": 294,
+      "shortDesc": "On switch-in, this Pokemon copies an ally's stat changes."
+    },
     "cottondown": {
       "name": "Cotton Down",
       "num": 238,
       "desc": "When this Pokemon is hit by an attack, the Speed of all other Pokemon on the field is lowered by 1 stage.",
       "shortDesc": "If this Pokemon is hit, it lowers the Speed of all other Pokemon on the field 1 stage."
+    },
+    "cudchew": {
+      "condition": {"noCopy": true, "duration": 2},
+      "name": "Cud Chew",
+      "num": 291,
+      "desc": "When this Pokemon consumes a berry, it will consume the berry again at the end of the following turn.",
+      "shortDesc": "If this Pokemon eats a berry, it will consume the berry again at the end of next turn."
     },
     "curiousmedicine": {
       "name": "Curious Medicine",
@@ -1102,6 +1172,13 @@
       "desc": "This Pokemon is immune to Water-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Water-type move. The power of Fire-type moves is multiplied by 1.25 when used on this Pokemon. At the end of each turn, this Pokemon restores 1/8 of its maximum HP, rounded down, if the weather is Rain Dance, and loses 1/8 of its maximum HP, rounded down, if the weather is Sunny Day. The weather effects are prevented if this Pokemon is holding a Utility Umbrella.",
       "shortDesc": "This Pokemon is healed 1/4 by Water, 1/8 by Rain; is hurt 1.25x by Fire, 1/8 by Sun."
     },
+    "eartheater": {
+      "isBreakable": true,
+      "name": "Earth Eater",
+      "num": 297,
+      "desc": "This Pokemon is immune to Ground-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Ground-type move.",
+      "shortDesc": "This Pokemon heals 1/4 of its max HP when hit by Ground moves; Ground immunity."
+    },
     "earlybird": {
       "name": "Early Bird",
       "num": 48,
@@ -1117,6 +1194,12 @@
       "name": "Electric Surge",
       "num": 226,
       "shortDesc": "On switch-in, this Pokemon summons Electric Terrain."
+    },
+    "electromorphosis": {
+      "name": "Electromorphosis",
+      "num": 280,
+      "desc": "This Pokemon's next Electric-type move has its damage boosted if it takes direct damage.",
+      "shortDesc": "This Pokemon becomes charged if it takes direct damage."
     },
     "emergencyexit": {
       "name": "Emergency Exit",
@@ -1238,6 +1321,12 @@
       "desc": "When this Pokemon is holding a Berry that usually activates with 1/4 or less of its maximum HP, it is eaten at 1/2 or less of its maximum HP instead.",
       "shortDesc": "This Pokemon eats Berries at 1/2 max HP or less instead of their usual 1/4 max HP."
     },
+    "goodasgold": {
+      "isBreakable": true,
+      "name": "Good as Gold",
+      "num": 283,
+      "shortDesc": "This Pokemon is immune to Status moves."
+    },
     "gooey": {
       "name": "Gooey",
       "num": 183,
@@ -1268,6 +1357,12 @@
       "desc": "This Pokemon's Special Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
       "shortDesc": "This Pokemon's Sp. Atk is raised by 1 stage if it attacks and KOes another Pokemon."
     },
+    "guarddog": {
+      "onDragOutPriority": 1,
+      "name": "Guard Dog",
+      "num": 275,
+      "shortDesc": "Immune to Intimidate. Intimidated: +1 Attack. Cannot be forced to switch out."
+    },
     "gulpmissile": {
       "isPermanent": true,
       "name": "Gulp Missile",
@@ -1281,6 +1376,12 @@
       "num": 62,
       "desc": "If this Pokemon has a non-volatile status condition, its Attack is multiplied by 1.5. This Pokemon's physical attacks ignore the burn effect of halving damage.",
       "shortDesc": "If this Pokemon is statused, its Attack is 1.5x; ignores burn halving physical damage."
+    },
+    "hadronengine": {
+      "onModifySpAPriority": 5,
+      "name": "Hadron Engine",
+      "num": 289,
+      "shortDesc": "On switch-in, summons Electric Terrain. Sp. Atk is boosted by 30% in Electric Terrain."
     },
     "harvest": {
       "name": "Harvest",
@@ -1357,8 +1458,8 @@
     "icebody": {
       "name": "Ice Body",
       "num": 115,
-      "desc": "If Hail is active, this Pokemon restores 1/16 of its maximum HP, rounded down, at the end of each turn. This Pokemon takes no damage from Hail.",
-      "shortDesc": "If Hail is active, this Pokemon heals 1/16 of its max HP each turn; immunity to Hail."
+      "desc": "If Snow is active, this Pokemon restores 1/16 of its maximum HP, rounded down, at the end of each turn.",
+      "shortDesc": "If Snow is active, this Pokemon heals 1/16 of its max HP each turn."
     },
     "iceface": {
       "onDamagePriority": 1,
@@ -1366,8 +1467,8 @@
       "isPermanent": true,
       "name": "Ice Face",
       "num": 248,
-      "desc": "If this Pokemon is an Eiscue, the first physical hit it takes in battle deals 0 neutral damage. Its ice face is then broken and it changes forme to Noice Face. Eiscue regains its Ice Face forme when Hail begins or when Eiscue switches in while Hail is active. Confusion damage also breaks the ice face.",
-      "shortDesc": "If Eiscue, the first physical hit it takes deals 0 damage. This effect is restored in Hail."
+      "desc": "If this Pokemon is an Eiscue, the first physical hit it takes in battle deals 0 neutral damage. Its ice face is then broken and it changes forme to Noice Face. Eiscue regains its Ice Face forme when Snow begins or when Eiscue switches in while Snow is active. Confusion damage also breaks the ice face.",
+      "shortDesc": "If Eiscue, the first physical hit it takes deals 0 damage. This effect is restored in Snow."
     },
     "icescales": {
       "isBreakable": true,
@@ -1500,6 +1601,12 @@
       "num": 31,
       "desc": "This Pokemon is immune to Electric-type moves and raises its Special Attack by 1 stage when hit by an Electric-type move. If this Pokemon is not the target of a single-target Electric-type move used by another Pokemon, this Pokemon redirects that move to itself if it is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer.",
       "shortDesc": "This Pokemon draws Electric moves to itself to raise Sp. Atk by 1; Electric immunity."
+    },
+    "lingeringaroma": {
+      "name": "Lingering Aroma",
+      "num": 268,
+      "desc": "Pokemon making contact with this Pokemon have their Ability changed to Lingering Aroma. Does not affect Pokemon with the As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Mummy, Power Construct, RKS System, Schooling, Shields Down, Stance Change, or Zen Mode Abilities.",
+      "shortDesc": "Pokemon making contact with this Pokemon have their Ability changed to Lingering Aroma."
     },
     "limber": {
       "isBreakable": true,
@@ -1647,6 +1754,11 @@
       "desc": "Pokemon making contact with this Pokemon have their Ability changed to Mummy. Does not affect Pokemon with the As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Mummy, Power Construct, RKS System, Schooling, Shields Down, Stance Change, or Zen Mode Abilities.",
       "shortDesc": "Pokemon making contact with this Pokemon have their Ability changed to Mummy."
     },
+    "myceliummight": {
+      "name": "Mycelium Might",
+      "num": 298,
+      "shortDesc": "This Pokemon's Status moves have lowered priority and ignore their targets' Abilities."
+    },
     "naturalcure": {
       "name": "Natural Cure",
       "num": 30,
@@ -1685,13 +1797,24 @@
       "desc": "This Pokemon cannot be infatuated or taunted. Gaining this Ability while infatuated or taunted cures it. This Pokemon is immune to the effect of the Intimidate Ability.",
       "shortDesc": "This Pokemon cannot be infatuated or taunted. Immune to Intimidate."
     },
+    "opportunist": {
+      "name": "Opportunist",
+      "num": 290,
+      "shortDesc": "When an opposing Pokemon recieves stat boosts, this Pokemon gets the same boosts."
+    },
+    "orichalcumpulse": {
+      "onModifyAtkPriority": 5,
+      "name": "Orichalcum Pulse",
+      "num": 288,
+      "shortDesc": "On switch-in, summons Sunny Day. Attack is boosted by 30% in Sunny Day."
+    },
     "overcoat": {
       "onTryHitPriority": 1,
       "isBreakable": true,
       "name": "Overcoat",
       "num": 142,
-      "desc": "This Pokemon is immune to powder moves, damage from Sandstorm or Hail, and the effects of Rage Powder and the Effect Spore Ability.",
-      "shortDesc": "This Pokemon is immune to powder moves, Sandstorm or Hail damage, Effect Spore."
+      "desc": "This Pokemon is immune to powder moves, damage from Sandstorm, and the effects of Rage Powder and the Effect Spore Ability.",
+      "shortDesc": "This Pokemon is immune to powder moves, Sandstorm damage, and Effect Spore."
     },
     "overgrow": {
       "onModifyAtkPriority": 5,
@@ -1829,6 +1952,19 @@
       "desc": "This Pokemon's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type.",
       "shortDesc": "This Pokemon's type changes to match the type of the move it is about to use."
     },
+    "protosynthesis": {
+      "condition": {
+        "noCopy": true,
+        "onModifyAtkPriority": 5,
+        "onModifyDefPriority": 6,
+        "onModifySpAPriority": 5,
+        "onModifySpDPriority": 6
+      },
+      "name": "Protosynthesis",
+      "num": 281,
+      "desc": "If Sunny Day is active, or this Pokemon is holding Booster Energy, this Pokemon's highest stat is boosted by 50%.",
+      "shortDesc": "If Sunny Day is active or Booster Energy held, the highest stat is 1.5x."
+    },
     "psychicsurge": {
       "name": "Psychic Surge",
       "num": 227,
@@ -1847,6 +1983,28 @@
       "name": "Pure Power",
       "num": 74,
       "shortDesc": "This Pokemon's Attack is doubled."
+    },
+    "purifyingsalt": {
+      "onSourceModifyAtkPriority": 6,
+      "onSourceModifySpAPriority": 5,
+      "isBreakable": true,
+      "name": "Purifying Salt",
+      "num": 272,
+      "desc": "This Pokemon cannot become affected by a status condition or Yawn. If a Pokemon uses a Ghost-type attack against this Pokemon, that Pokemon's offensive stat is halved when calculating the damage to this Pokemon.",
+      "shortDesc": "This Pokemon cannot be statused; Ghost power against it is halved."
+    },
+    "quarkdrive": {
+      "condition": {
+        "noCopy": true,
+        "onModifyAtkPriority": 5,
+        "onModifyDefPriority": 6,
+        "onModifySpAPriority": 5,
+        "onModifySpDPriority": 6
+      },
+      "name": "Quark Drive",
+      "num": 282,
+      "desc": "If Electric Terrain is active, or this Pokemon is holding Booster Energy, this Pokemon's highest stat is boosted by 50%.",
+      "shortDesc": "If Electric Terrain is active or Booster Energy held, the highest stat is 1.5x."
     },
     "queenlymajesty": {
       "isBreakable": true,
@@ -1932,6 +2090,13 @@
       "desc": "This Pokemon does not take recoil damage, except Struggle. Does not affect Life Orb damage or crash damage.",
       "shortDesc": "This Pokemon does not take recoil damage besides Struggle/Life Orb/crash damage."
     },
+    "rockypayload": {
+      "onModifyAtkPriority": 5,
+      "onModifySpAPriority": 5,
+      "name": "Rocky Payload",
+      "num": 276,
+      "shortDesc": "This Pokemon's offensive stat is multiplied by 1.5 while using a Rock-type attack."
+    },
     "roughskin": {
       "onDamagingHitOrder": 1,
       "name": "Rough Skin",
@@ -2004,6 +2169,12 @@
       "num": 251,
       "shortDesc": "On switch-in, the effects of Aurora Veil, Light Screen, and Reflect end for both sides."
     },
+    "seedsower": {
+      "name": "Seed Sower",
+      "num": 269,
+      "desc": "When this Pokemon is hit by an attack, the effect of Grassy Terrain begins.",
+      "shortDesc": "When this Pokemon is hit by an attack, the effect of Grassy Terrain begins."
+    },
     "serenegrace": {
       "onModifyMovePriority": -2,
       "name": "Serene Grace",
@@ -2021,6 +2192,13 @@
       "num": 23,
       "desc": "Prevents opposing Pokemon from choosing to switch out, unless they are holding a Shed Shell, are a Ghost type, or also have this Ability.",
       "shortDesc": "Prevents foes from choosing to switch unless they also have this Ability."
+    },
+    "sharpness": {
+      "onBasePowerPriority": 19,
+      "name": "Sharpness",
+      "num": 292,
+      "desc": "This Pokemon's slicing attacks have their power multiplied by 1.5.",
+      "shortDesc": "This Pokemon's slicing attacks have 1.5x power."
     },
     "shedskin": {
       "onResidualOrder": 5,
@@ -2084,7 +2262,7 @@
     "slushrush": {
       "name": "Slush Rush",
       "num": 202,
-      "shortDesc": "If Hail is active, this Pokemon's Speed is doubled."
+      "shortDesc": "If Snow is active, this Pokemon's Speed is doubled."
     },
     "sniper": {
       "name": "Sniper",
@@ -2096,13 +2274,13 @@
       "isBreakable": true,
       "name": "Snow Cloak",
       "num": 81,
-      "desc": "If Hail is active, the accuracy of moves used against this Pokemon is multiplied by 0.8. This Pokemon takes no damage from Hail.",
-      "shortDesc": "If Hail is active, this Pokemon's evasiveness is 1.25x; immunity to Hail."
+      "desc": "If Snow is active, the accuracy of moves used against this Pokemon is multiplied by 0.8.",
+      "shortDesc": "If Snow is active, this Pokemon's evasiveness is 1.25x."
     },
     "snowwarning": {
       "name": "Snow Warning",
       "num": 117,
-      "shortDesc": "On switch-in, this Pokemon summons Hail."
+      "shortDesc": "On switch-in, this Pokemon summons Snow."
     },
     "solarpower": {
       "onModifySpAPriority": 5,
@@ -2247,6 +2425,12 @@
       "num": 105,
       "shortDesc": "This Pokemon's critical hit ratio is raised by 1 stage."
     },
+    "supremeoverlord": {
+      "name": "Supreme Overlord",
+      "num": 293,
+      "desc": "This Pokemon's Attack and Special Attack stats are increased by 10% for each fainted teammate.",
+      "shortDesc": "This Pokemon's Attack and Special Attack raise by 10% per fainted teammate."
+    },
     "surgesurfer": {
       "name": "Surge Surfer",
       "num": 207,
@@ -2285,6 +2469,16 @@
       "desc": "If another Pokemon burns, paralyzes, poisons, or badly poisons this Pokemon, that Pokemon receives the same non-volatile status condition.",
       "shortDesc": "If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status."
     },
+    "swordofruin": {
+      "name": "Sword of Ruin",
+      "num": 285,
+      "shortDesc": "The Defense stat of all other active Pokemon is reduced by 25%."
+    },
+    "tabletsofruin": {
+      "name": "Tablets of Ruin",
+      "num": 284,
+      "shortDesc": "The Attack stat of all other active Pokemon is reduced by 25%."
+    },
     "tangledfeet": {
       "onModifyAccuracyPriority": -1,
       "isBreakable": true,
@@ -2315,6 +2509,12 @@
       "num": 164,
       "desc": "This Pokemon's moves and their effects ignore certain Abilities of other Pokemon. The Abilities that can be negated are Aroma Veil, Aura Break, Battle Armor, Big Pecks, Bulletproof, Clear Body, Contrary, Damp, Dazzling, Disguise, Dry Skin, Filter, Flash Fire, Flower Gift, Flower Veil, Fluffy, Friend Guard, Fur Coat, Grass Pelt, Heatproof, Heavy Metal, Hyper Cutter, Ice Face, Ice Scales, Immunity, Inner Focus, Insomnia, Keen Eye, Leaf Guard, Levitate, Light Metal, Lightning Rod, Limber, Magic Bounce, Magma Armor, Marvel Scale, Mirror Armor, Motor Drive, Multiscale, Oblivious, Overcoat, Own Tempo, Pastel Veil, Punk Rock, Queenly Majesty, Sand Veil, Sap Sipper, Shell Armor, Shield Dust, Simple, Snow Cloak, Solid Rock, Soundproof, Sticky Hold, Storm Drain, Sturdy, Suction Cups, Sweet Veil, Tangled Feet, Telepathy, Thick Fat, Unaware, Vital Spirit, Volt Absorb, Water Absorb, Water Bubble, Water Veil, White Smoke, Wonder Guard, and Wonder Skin. This affects every other Pokemon on the field, whether or not it is a target of this Pokemon's move, and whether or not their Ability is beneficial to this Pokemon.",
       "shortDesc": "This Pokemon's moves and their effects ignore the Abilities of other Pokemon."
+    },
+    "thermalexchange": {
+      "name": "Thermal Exchange",
+      "num": 270,
+      "desc": "This Pokemon's Attack is raised 1 stage after it is damaged by a Fire-type move. This Pokemon cannot be burned.",
+      "shortDesc": "This Pokemon's Attack is raised by 1 stage when hit by Fire moves; it can't be burned."
     },
     "thickfat": {
       "onSourceModifyAtkPriority": 6,
@@ -2350,6 +2550,12 @@
       "num": 137,
       "desc": "While this Pokemon is poisoned, the power of its physical attacks is multiplied by 1.5.",
       "shortDesc": "While this Pokemon is poisoned, its physical attacks have 1.5x power."
+    },
+    "toxicdebris": {
+      "name": "Toxic Debris",
+      "num": 295,
+      "desc": "When this Pokemon is hit by a physical attack, Toxic Spikes are set on the opposing side of the field.",
+      "shortDesc": "When this Pokemon is hit by a physical attack, Toxic Spikes are set around the attacker."
     },
     "trace": {
       "name": "Trace",
@@ -2406,6 +2612,11 @@
       "name": "Unseen Fist",
       "num": 260,
       "shortDesc": "This Pokemon's contact moves ignore the target's protection, except Max Guard."
+    },
+    "vesselofruin": {
+      "name": "Vessel of Ruin",
+      "num": 284,
+      "shortDesc": "The Sp. Atk stat of all other active Pokemon is reduced by 25%."
     },
     "victorystar": {
       "onAnyModifyAccuracyPriority": -1,
@@ -2465,6 +2676,12 @@
       "desc": "If a physical attack hits this Pokemon, its Defense is lowered by 1 stage and its Speed is raised by 2 stages.",
       "shortDesc": "If a physical attack hits this Pokemon, Defense is lowered by 1, Speed is raised by 2."
     },
+    "wellbakedbody": {
+      "name": "Well-Baked Body",
+      "num": 273,
+      "desc": "This Pokemon is immune to Fire-type moves and raises its Defense by 2 stages when hit by a Fire-type move.",
+      "shortDesc": "This Pokemon's Defense is raised 2 stages if hit by a Fire move; Fire immunity."
+    },
     "whitesmoke": {
       "isBreakable": true,
       "name": "White Smoke",
@@ -2476,6 +2693,17 @@
       "num": 193,
       "desc": "When this Pokemon has more than 1/2 its maximum HP and takes damage bringing it to 1/2 or less of its maximum HP, it immediately switches out to a chosen ally. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability. This effect applies to both direct and indirect damage, except Curse and Substitute on use, Belly Drum, Pain Split, and confusion damage.",
       "shortDesc": "This Pokemon switches out when it reaches 1/2 or less of its maximum HP."
+    },
+    "windpower": {
+      "name": "Wind Power",
+      "num": 277,
+      "shortDesc": "If this Pokemon is hit by a wind move or Tailwind begins, it becomes charged."
+    },
+    "windrider": {
+      "name": "Wind Rider",
+      "num": 274,
+      "desc": "This Pokemon is immune to wind moves and raises its Attack by 1 stage when hit by a wind move. Attack is also raised when Tailwind begins on this Pokemon's side.",
+      "shortDesc": "If hit by a wind move or Tailwind begins: +1 Attack. Wind move immunity."
     },
     "wonderguard": {
       "isBreakable": true,
@@ -2499,6 +2727,11 @@
       "num": 161,
       "desc": "If this Pokemon is a Darmanitan or Galarian Darmanitan, it changes to Zen Mode if it has 1/2 or less of its maximum HP at the end of a turn. If Darmanitan's HP is above 1/2 of its maximum HP at the end of a turn, it changes back to Standard Mode.",
       "shortDesc": "If Darmanitan, at end of turn changes Mode to Standard if > 1/2 max HP, else Zen."
+    },
+    "zerotohero": {
+      "name": "Zero to Hero",
+      "num": 278,
+      "shortDesc": "If this Pokemon is Palafin, it changes to Hero Mode when it switches out."
     },
     "mountaineer": {
       "isNonstandard": "CAP",

@@ -242,6 +242,7 @@ export class Pokemon {
 	hurtThisTurn: number | null;
 	lastDamage: number;
 	attackedBy: Attacker[];
+	timesAttacked: number;
 
 	isActive: boolean;
 	activeTurns: number;
@@ -270,6 +271,10 @@ export class Pokemon {
 	canMegaEvo: string | null | undefined;
 	canUltraBurst: string | null | undefined;
 	readonly canGigantamax: string | null;
+	canTerastallize: string | null;
+	teraType: string;
+	baseTypes: string[];
+	terastallized?: string;
 
 	/** A Pokemon's currently 'staleness' with respect to the Endless Battle Clause. */
 	staleness?: 'internal' | 'external';
@@ -424,9 +429,12 @@ export class Pokemon {
 		this.subFainted = null;
 
 		this.types = this.baseSpecies.types;
+		this.baseTypes = this.types;
 		this.addedType = '';
 		this.knownType = true;
 		this.apparentType = this.baseSpecies.types.join('/');
+		// Every Pokemon has a Terastal type
+		this.teraType = this.set.teraType || this.types[0];
 
 		this.switchFlag = false;
 		this.forceSwitchFlag = false;
@@ -443,6 +451,7 @@ export class Pokemon {
 		this.hurtThisTurn = null;
 		this.lastDamage = 0;
 		this.attackedBy = [];
+		this.timesAttacked = 0;
 
 		this.isActive = false;
 		this.activeTurns = 0;
@@ -464,6 +473,7 @@ export class Pokemon {
 		this.canMegaEvo = this.battle.actions.canMegaEvo(this);
 		this.canUltraBurst = this.battle.actions.canUltraBurst(this);
 		this.canGigantamax = this.baseSpecies.canGigantamax || null;
+		this.canTerastallize = this.battle.actions.canTerastallize(this);
 
 		// This is used in gen 1 only, here to avoid code repetition.
 		// Only declared if gen 1 to avoid declaring an object we aren't going to need.
@@ -598,6 +608,25 @@ export class Pokemon {
 			speed = 10000 - speed;
 		}
 		return this.battle.trunc(speed, 13);
+	}
+
+	/**
+	 * Gets the Pokemon's best storedStat.
+	 * Moved to its own method due to frequent use of the same code.
+	 * Used by Beast Boost, Quark Drive, and Protosynthesis.
+	 */
+	getBestStoredStat(): StatIDExceptHP {
+		let statName: StatIDExceptHP = 'atk';
+		let bestStat = 0;
+		let s: StatIDExceptHP;
+		for (s in this.storedStats) {
+			if (this.storedStats[s] > bestStat) {
+				statName = s;
+				bestStat = this.storedStats[s];
+			}
+		}
+
+		return statName;
 	}
 
 	/* Commented out for now until a use for Combat Power is found in Let's Go
@@ -1014,6 +1043,7 @@ export class Pokemon {
 			canZMove?: AnyObject | null,
 			canDynamax?: boolean,
 			maxMoves?: DynamaxOptions,
+			canTerastallize?: string,
 		} = {
 			moves,
 		};
@@ -1042,6 +1072,7 @@ export class Pokemon {
 
 			if (this.getDynamaxRequest()) data.canDynamax = true;
 			if (data.canDynamax || this.volatiles['dynamax']) data.maxMoves = this.getDynamaxRequest(true);
+			if (this.canTerastallize) data.canTerastallize = this.canTerastallize;
 		}
 
 		return data;
@@ -1072,6 +1103,7 @@ export class Pokemon {
 			}),
 			baseAbility: this.baseAbility,
 			item: this.item,
+			commanding: !!this.volatiles['commanding'] && !this.fainted,
 			pokeball: this.pokeball,
 		};
 		if (this.battle.gen > 6) entry.ability = this.ability;
@@ -1128,10 +1160,11 @@ export class Pokemon {
 		}
 	}
 
-	copyVolatileFrom(pokemon: Pokemon) {
+	copyVolatileFrom(pokemon: Pokemon, switchCause?: string | boolean) {
 		this.clearVolatile();
-		this.boosts = pokemon.boosts;
+		if (switchCause !== 'shedtail') this.boosts = pokemon.boosts;
 		for (const i in pokemon.volatiles) {
+			if (switchCause === 'shedtail' && i !== 'substitute') continue;
 			if (this.battle.dex.conditions.getByID(i as ID).noCopy) continue;
 			// shallow clones
 			this.volatiles[i] = {...pokemon.volatiles[i]};
@@ -1330,6 +1363,8 @@ export class Pokemon {
 			} else if (source.effectType === 'Status') {
 				// Shaymin-Sky -> Shaymin
 				this.battle.add('-formechange', this, species.name, message);
+			} else if (source.effectType === 'Terastal') {
+				this.battle.add('-terastallize', this, this.teraType);
 			}
 		} else {
 			if (source.effectType === 'Ability') {
@@ -1970,7 +2005,7 @@ export class Pokemon {
 		return !!(
 			this.volatiles['protect'] || this.volatiles['detect'] || this.volatiles['maxguard'] ||
 			this.volatiles['kingsshield'] || this.volatiles['spikyshield'] || this.volatiles['banefulbunker'] ||
-			this.volatiles['obstruct']
+			this.volatiles['obstruct'] || this.volatiles['silktrap']
 		);
 	}
 

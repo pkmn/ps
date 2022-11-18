@@ -13,7 +13,7 @@ node img/import-data
 npx subpkg build img
 
 mkdir $TMP/img
-cp img/index.html img/build/production.min.js img/data/index.js $TMP/img
+cp img/index.html img/build/index.min.js img/data/index.js $TMP/img
 
 rm -rf integration/dist
 npm -C integration run gh-pages
@@ -28,7 +28,7 @@ git checkout gh-pages
 # Copy
 
 cp $TMP/img/index.html img/
-cp $TMP/img/production.min.js img/build/production.min.js
+cp $TMP/img/index.min.js img/build/index.min.js
 cp $TMP/img/index.js img/data/index.js
 
 rm -f integration/index.html integration/index.*.js

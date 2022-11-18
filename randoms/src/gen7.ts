@@ -1,4 +1,5 @@
-import {MoveCounter, RandomTeams, TeamData} from './gen8';
+import {RandomGen8Teams} from './gen8';
+import {MoveCounter, TeamData} from './gen9';
 import {Utils} from './utils';
 import {
 	AnyObject,
@@ -42,7 +43,7 @@ const ZeroAttackHPIVs: {[k: string]: SparseStatsTable} = {
 	rock: {def: 30, spd: 30, spe: 30},
 };
 
-export class RandomGen7Teams extends RandomTeams {
+export class RandomGen7Teams extends RandomGen8Teams {
 	constructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {
 		super(dex, format, prng);
 

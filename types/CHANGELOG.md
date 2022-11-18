@@ -1,5 +1,9 @@
 # Changelog
 
+### 3.0.0
+
+- Generation 9 was released and `PokemonSet` now has a `teraType` field.
+
 ## 2.0.0
 
 - Pokémon Showdown renamed `GameType` `free-for-all` ->`freeforall` in addition to renaming

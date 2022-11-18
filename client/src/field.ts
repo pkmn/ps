@@ -6,7 +6,7 @@ import {Pokemon} from './pokemon';
 export type WeatherState<T = ID> = [T, number, number];
 
 export type WeatherName =
-  'Sand' | 'Sun' | 'Rain' | 'Hail' |
+  'Sand' | 'Sun' | 'Rain' | 'Hail' | 'Snow' |
   'Harsh Sunshine' | 'Heavy Rain' | 'Strong Winds';
 
 const WEATHERS: {[id: string]: WeatherName} = {
@@ -14,6 +14,7 @@ const WEATHERS: {[id: string]: WeatherName} = {
   sunnyday: 'Sun',
   raindance: 'Rain',
   hail: 'Hail',
+  snow: 'Snow',
   desolateland: 'Harsh Sunshine',
   primordialsea: 'Heavy Rain',
   deltastream: 'Strong Winds',

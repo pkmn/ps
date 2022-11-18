@@ -9,10 +9,11 @@ import {Generations, GenerationNum} from '@pkmn/data';
 
 import fs from 'fs';
 
-const TEAM_A = fs.readFileSync(__dirname + '/teams/a.txt', 'utf-8');
-const TEAM_B = fs.readFileSync(__dirname + '/teams/b.txt', 'utf-8');
+const TEAM_A = fs.readFileSync(__dirname + '/teams/a.txt', 'utf8');
+const TEAM_B = fs.readFileSync(__dirname + '/teams/b.txt', 'utf8');
 
 const FIXED = window.location.href.includes('fixed');
+// TODO: add gen9{,doubles,monotype}randombattle once available
 const FORMATS = [
   'gen1randombattle', 'gen2randombattle', 'gen3randombattle', 'gen4randombattle',
   'gen5randombattle', 'gen6randombattle', 'gen7randombattle', 'gen8randombattle',
@@ -42,6 +43,7 @@ const SPRITES: {[gen in GenerationNum]: GraphicsGen[]} = {
   6: ['ani'],
   7: ['ani'],
   8: ['ani'],
+  9: ['ani'],
 };
 const GEN = +FORMAT.charAt(3) as GenerationNum;
 const GRAPHICS = prng.sample(SPRITES[GEN]);

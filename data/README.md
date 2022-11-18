@@ -90,7 +90,7 @@ import {Generations} from '@pkmn/data';
 
 const gens = new Generations(Dex);
 assert(gens.get(1).types.get('Ghost').effectiveness['Psychic'] === 0);
-assert(gens.get(8).types.totalEffectiveness('Dark', ['Ghost', 'Psychic']) === 4);
+assert(gens.get(9).types.totalEffectiveness('Dark', ['Ghost', 'Psychic']) === 4);
 assert(gens.get(5).species.get('Dragapult') === undefined);
 assert(gens.get(3).species.get('Chansey').prevo === undefined);
 assert(Array.from(gens.get(1).species).length === 151);
@@ -118,9 +118,9 @@ release. This can be accomplished by passing an `ExistsFn` implementation as the
 the `Generations` constructor:
 
 ```ts
-// These species are unobtainable outside of their own generations, but this data gets lost in the 
-// Pokémon Showdown data files because isNonstandard is a scalar value and isNonstandard = 'Past'
-// overwrites the isNonstandard = 'Unobtainable' designation
+// These species are unobtainable outside of their own generations, but @pkmn/dex doesn't contain
+// the artificial 'natDexTier' field which allows Pokémon Showdown to track this so we harcode it.
+// If using @pkmn/sim instead, this list can be replaced with a `d.natDexTier !== 'Illegal'` check.
 const NATDEX_UNOBTAINABLE_SPECIES = [
   'Eevee-Starter', 'Floette-Eternal', 'Pichu-Spiky-eared', 'Pikachu-Belle', 'Pikachu-Cosplay',
   'Pikachu-Libre', 'Pikachu-PhD', 'Pikachu-Pop-Star', 'Pikachu-Rock-Star', 'Pikachu-Starter',
@@ -128,14 +128,14 @@ const NATDEX_UNOBTAINABLE_SPECIES = [
 ];
 
 const NATDEX_EXISTS = (d: Data, g: GenerationNum) => {
-  // The "National Dex" rules only apply to gen 8, but this ExistsFn gets called on all generations
-  if (g !== 8) return Generations.DEFAULT_EXISTS(d, g);
+  // The "National Dex" rules only apply to gen 8+, but this ExistsFn gets called on all generations
+  if (g < 8) return Generations.DEFAULT_EXISTS(d, g);
   // These checks remain unchanged from the default existence filter
   if (!d.exists) return false;
   if (d.kind === 'Ability' && d.id === 'noability') return false;
   // "National Dex" rules allows for data from the past, but not other forms of nonstandard-ness
   if ('isNonstandard' in d && d.isNonstandard && d.isNonstandard !== 'Past') return false;
-  // Unlike the check in the default existence function we don't want to filter out the 'Illegal' tier
+  // Unlike the check in the default existence function we don't want to filter the 'Illegal' tier
   if ('tier' in d && d.tier === 'Unreleased') return false;
   // Filter out the unobtainable species
   if (d.kind === 'Species' && NATDEX_UNOBTAINABLE_SPECIES.includes(d.name)) return false;

@@ -30,6 +30,7 @@
     "primal": "[POKEMON]'s Primal Reversion! It reverted to its primal state!",
     "zPower": "  [POKEMON] surrounded itself with its Z-Power!",
     "zBroken": "  [POKEMON] couldn't fully protect itself and got hurt!",
+    "terastallize": "  [POKEMON] has Terastallized into the [TYPE]-type!",
     "cant": "[POKEMON] can't use [MOVE]!",
     "cantNoMove": "[POKEMON] can't move!",
     "fail": "  But it failed!",
@@ -219,6 +220,12 @@
     "upkeep": "  (The hail is crashing down.)",
     "damage": "  [POKEMON] is buffeted by the hail!"
   },
+  "snow": {
+    "weatherName": "Snow",
+    "start": "  It started to snow!",
+    "end": "  The snow stopped.",
+    "upkeep": "  (The snow is falling down.)"
+  },
   "desolateland": {
     "weatherName": "Harsh Sunshine",
     "start": "  The sunlight turned extremely harsh!",
@@ -306,6 +313,7 @@
     "end": "  [TEAM]'s Aurora Veil wore off!"
   },
   "autotomize": {"start": "  [POKEMON] became nimble!"},
+  "axekick": {"damage": "#crash"},
   "beakblast": {"start": "  [POKEMON] started heating up its beak!"},
   "beatup": {"activate": "  [NAME]'s attack!"},
   "bellydrum": {
@@ -324,6 +332,7 @@
   "burnup": {"typeChange": "  [POKEMON] burned itself out!"},
   "celebrate": {"activate": "  Congratulations, [TRAINER]!"},
   "charge": {"start": "  [POKEMON] began charging power!"},
+  "chloroblast": {"damage": "#mindblown"},
   "clamp": {"start": "  [SOURCE] clamped down on [POKEMON]!", "move": "#wrap"},
   "conversion": {"typeChange": "  Converted type to [SOURCE]'s!"},
   "corrosivegas": {
@@ -359,6 +368,7 @@
     "start": "  [POKEMON] chose Doom Desire as its destiny!",
     "activate": "  [TARGET] took the Doom Desire attack!"
   },
+  "doubleshock": {"typeChange": "  [POKEMON] used up all of its electricity!"},
   "dragonascent": {
     "megaNoItem": "  [TRAINER]'s fervent wish has reached [POKEMON]!"
   },
@@ -557,6 +567,10 @@
     "activate": "  When the flame touched the powder on the Pokémon, it exploded!"
   },
   "powersplit": {"activate": "  [POKEMON] shared its power with the target!"},
+  "powershift": {
+    "start": "  [POKEMON] swapped its offensive stats with its defensive stats!",
+    "end": "#.start"
+  },
   "powertrick": {
     "start": "  [POKEMON] switched its Attack and Defense!",
     "end": "#.start"
@@ -572,6 +586,7 @@
     "block": "  Quick Guard protected [POKEMON]!"
   },
   "ragepowder": {"start": "#followme", "startFromZEffect": "#followme"},
+  "ragingbull": {"activate": "  [POKEMON] shattered [TEAM]'s protections!"},
   "razorwind": {"prepare": "  [POKEMON] whipped up a whirlwind!"},
   "recycle": {"addItem": "  [POKEMON] found one [ITEM]!"},
   "reflect": {
@@ -591,6 +606,7 @@
     "end": "  [TEAM] is no longer protected by Safeguard!",
     "block": "  [POKEMON] is protected by Safeguard!"
   },
+  "saltcure": {"start": "  [POKEMON] became covered in salt!"},
   "sandtomb": {"start": "  [POKEMON] became trapped by the quicksand!"},
   "shadowforce": {
     "activate": "  It broke through [TARGET]'s protection!",
@@ -639,6 +655,7 @@
     "end": "  The pointed stones disappeared from around [TEAM]!",
     "damage": "  Pointed stones dug into [POKEMON]!"
   },
+  "steelbeam": {"damage": "#mindblown"},
   "stickyweb": {
     "start": "  A sticky web has been laid out on the ground around [TEAM]!",
     "end": "  The sticky web has disappeared from the ground around [TEAM]!",
@@ -674,6 +691,7 @@
     "cant": "The effects of Throat Chop prevent [POKEMON] from using certain moves!"
   },
   "thundercage": {"start": "  [SOURCE] trapped [POKEMON]!"},
+  "tidyup": {"activate": "  Tidying up complete!"},
   "torment": {
     "start": "  [POKEMON] was subjected to torment!",
     "end": "  [POKEMON] is no longer tormented!"
@@ -716,6 +734,7 @@
   "airlock": {"start": "  The effects of the weather disappeared."},
   "angerpoint": {"boost": "  [POKEMON] maxed its Attack!"},
   "anticipation": {"activate": "  [POKEMON] shuddered!"},
+  "armortail": {"block": "#damp"},
   "aromaveil": {"block": "  [POKEMON] is protected by an aromatic veil!"},
   "asone": {"start": "  [POKEMON] has two Abilities!"},
   "aurabreak": {"start": "  [POKEMON] reversed all other Pokémon's auras!"},
@@ -723,6 +742,9 @@
   "battlebond": {
     "activate": "  [POKEMON] became fully charged due to its bond with its Trainer!",
     "transform": "[POKEMON] became Ash-Greninja!"
+  },
+  "beadsofruin": {
+    "start": "  [POKEMON]'s Beads of Ruin weakened the Sp. Def of all surrounding Pokémon!"
   },
   "cloudnine": {"start": "#airlock"},
   "comatose": {"start": "  [POKEMON] is drowsing!"},
@@ -734,6 +756,9 @@
     "transform": "[POKEMON]'s disguise was busted!"
   },
   "dryskin": {"damage": "  ([POKEMON] was hurt by its Dry Skin.)"},
+  "electromorphosis": {
+    "activate": "  Being hit by [MOVE] charged [POKEMON] with power!"
+  },
   "fairyaura": {"start": "  [POKEMON] is radiating a fairy aura!"},
   "flashfire": {"start": "  The power of [POKEMON]'s Fire-type moves rose!"},
   "flowerveil": {
@@ -747,11 +772,18 @@
     "activate": "  [POKEMON] frisked [TARGET] and found its [ITEM]!",
     "activateNoTarget": "  [POKEMON] frisked its target and found one [ITEM]!"
   },
+  "hadronengine": {
+    "start": "  [POKEMON] turned the ground into Electric Terrain, energizing its futuristic engine!",
+    "activate": "  [POKEMON] used the Electric Terrain to energize its futuristic engine!"
+  },
   "harvest": {"addItem": "  [POKEMON] harvested one [ITEM]!"},
   "illusion": {"end": "  [POKEMON]'s illusion wore off!"},
   "innardsout": {"damage": "#aftermath"},
   "ironbarbs": {"damage": "#roughskin"},
   "lightningrod": {"activate": "  [POKEMON] took the attack!"},
+  "lingeringaroma": {
+    "changeAbility": "  A lingering aroma clings to [TARGET]!"
+  },
   "liquidooze": {"damage": "  [POKEMON] sucked up the liquid ooze!"},
   "magicbounce": {"move": "#magiccoat"},
   "mimicry": {"activate": "  [POKEMON] returned to its original type!"},
@@ -762,6 +794,10 @@
     "start": "  Neutralizing gas filled the area!",
     "end": "  The effects of the neutralizing gas wore off!"
   },
+  "orichalcumpulse": {
+    "start": "  [POKEMON] turned the sunlight harsh, sending its ancient pulse into a frenzy!",
+    "activate": "  [POKEMON] basked in the sunlight, sending its ancient pulse into a frenzy!"
+  },
   "perishbody": {"start": "  Both Pokémon will faint in three turns!"},
   "pickup": {"addItem": "#recycle"},
   "powerconstruct": {
@@ -770,6 +806,18 @@
   },
   "powerofalchemy": {"changeAbility": "#receiver"},
   "pressure": {"start": "  [POKEMON] is exerting its pressure!"},
+  "protosynthesis": {
+    "activate": "  The harsh sunlight activated [POKEMON]'s Protosynthesis!",
+    "activateFromItem": "  [POKEMON] used its Booster Energy to activate Protosynthesis!",
+    "start": "  [POKEMON]'s [STAT] was heightened!",
+    "end": "  The effects of [POKEMON]'s Protosynthesis wore off!"
+  },
+  "quarkdrive": {
+    "activate": "  The Electric Terrain activated [POKEMON]'s Quark Drive!",
+    "activateFromItem": "  [POKEMON] used its Booster Energy to activate its Quark Drive!",
+    "start": "  [POKEMON]'s [STAT] was heightened!",
+    "end": "  The effects of [POKEMON]'s Quark Drive wore off!"
+  },
   "queenlymajesty": {"block": "#damp"},
   "quickdraw": {"activate": "  Quick Draw made [POKEMON] move faster!"},
   "receiver": {"changeAbility": "  [SOURCE]'s [ABILITY] was taken over!"},
@@ -796,10 +844,20 @@
   "suctioncups": {
     "block": "  [POKEMON] is anchored in place with its suction cups!"
   },
+  "supremeoverlord": {
+    "start": "  [POKEMON] gained strength from the fallen!",
+    "activate": "  [POKEMON] gained strength from the fallen!"
+  },
   "sweetveil": {
     "block": "  [POKEMON] can't fall asleep due to a veil of sweetness!"
   },
+  "swordofruin": {
+    "start": "  [POKEMON]'s Sword of Ruin weakened the Defense of all surrounding Pokémon!"
+  },
   "symbiosis": {"activate": "  [POKEMON] shared its [ITEM] with [TARGET]!"},
+  "tabletsofruin": {
+    "start": "  [POKEMON]'s Tablets of Ruin weakened the Attack of all surrounding Pokémon!"
+  },
   "telepathy": {
     "block": "  [POKEMON] can't be hit by attacks from its ally Pokémon!"
   },
@@ -808,19 +866,30 @@
   "truant": {"cant": "[POKEMON] is loafing around!"},
   "turboblaze": {"start": "  [POKEMON] is radiating a blazing aura!"},
   "unnerve": {"start": "  [TEAM] is too nervous to eat Berries!"},
+  "vesselofruin": {
+    "start": "  [POKEMON]'s Vessel of Ruin weakened the Sp. Atk of all surrounding Pokémon!"
+  },
   "wanderingspirit": {"activate": "#skillswap"},
+  "windpower": {"activate": "#electromorphosis"},
   "zenmode": {
     "transform": "Zen Mode triggered!",
     "transformEnd": "Zen Mode ended!"
   },
+  "zerotohero": {"activate": "  [POKEMON] underwent a heroic transformation!"},
   "rebound": {"move": "#magiccoat"},
   "persistent": {"activate": "  [POKEMON] extends [MOVE] by 2 turns!"},
+  "abilityshield": {
+    "block": "  [POKEMON]'s Ability is protected by the effects of its Ability Shield!"
+  },
   "airballoon": {
     "start": "  [POKEMON] floats in the air with its Air Balloon!",
     "end": "  [POKEMON]'s Air Balloon popped!"
   },
   "blacksludge": {
     "heal": "  [POKEMON] restored a little HP using its Black Sludge!"
+  },
+  "clearamulet": {
+    "block": "  The effects of [POKEMON]'s Clear Amulet prevent its stats from being lowered!"
   },
   "custapberry": {
     "activate": "  [POKEMON] can act faster than normal, thanks to its Custap Berry!"
@@ -836,6 +905,9 @@
     "activate": "  [POKEMON] restored PP to its move [MOVE] using its Leppa Berry!"
   },
   "lifeorb": {"damage": "  [POKEMON] lost some of its HP!"},
+  "mirrorherb": {
+    "activate": "  [POKEMON] used its Mirror Herb to mirror its opponent's stat changes!"
+  },
   "powerherb": {
     "end": "  [POKEMON] became fully charged due to its Power Herb!"
   },

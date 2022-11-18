@@ -70,7 +70,7 @@ export class BasicEffect<NameT extends string = string> implements T.BasicEffect
 }
 
 export class Condition extends BasicEffect implements T.Condition {
-  readonly effectType: 'Condition' | 'Weather' | 'Status';
+  readonly effectType: 'Condition' | 'Weather' | 'Status' | 'Terastal';
   readonly kind: 'Condition';
 
   constructor(data: AnyObject) {
@@ -155,7 +155,9 @@ export class Ability extends BasicEffect<T.AbilityName> implements T.Ability {
     this.kind = 'Ability';
 
     if (!this.gen) {
-      if (this.num >= 234) {
+      if (this.num >= 268) {
+        this.gen = 9;
+      } else if (this.num >= 234) {
         this.gen = 8;
       } else if (this.num >= 192) {
         this.gen = 7;
@@ -250,7 +252,11 @@ export class Item extends BasicEffect<T.ItemName> implements T.Item {
     this.kind = 'Item';
 
     if (!this.gen) {
-      if (this.num >= 689) {
+      if (this.num >= 1124) {
+        this.gen = 9;
+      } else if (this.num >= 927) {
+        this.gen = 8;
+      } else if (this.num >= 689) {
         this.gen = 7;
       } else if (this.num >= 577) {
         this.gen = 6;
@@ -363,7 +369,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly thawsTarget?: boolean;
   readonly heal?: number[] | null;
   readonly forceSwitch?: boolean;
-  readonly selfSwitch?: boolean | 'copyvolatile';
+  readonly selfSwitch?: 'copyvolatile' | 'shedtail' | boolean;
   readonly selfBoost?: { boosts?: Partial<T.BoostsTable> };
   readonly selfdestruct?: boolean | 'ifHit' | 'always';
   readonly breaksProtect?: boolean;
@@ -424,7 +430,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
     this.kind = 'Move';
 
     this.type = getString(data.type) as T.TypeName;
-    this.basePower = Number(data.basePower!);
+    this.basePower = Number(data.basePower);
     this.critRatio = Number(data.critRatio) || 1;
     this.secondary = data.secondary || null;
     this.secondaries = data.secondaries?.length
@@ -434,13 +440,13 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
     this.priority = Number(data.priority) || 0;
     this.ignoreImmunity =
       (data.ignoreImmunity !== undefined ? data.ignoreImmunity : data.category === 'Status');
-    this.pp = Number(data.pp!);
+    this.pp = Number(data.pp);
     this.isZ = data.isZ || false;
     this.isMax = data.isMax || false;
     this.flags = data.flags || {};
     this.selfSwitch =
       (typeof data.selfSwitch === 'string'
-        ? (data.selfSwitch as T.ID)
+        ? (data.selfSwitch as 'copyvolatile' | 'shedtail')
         : data.selfSwitch) ||
       undefined;
     this.pressureTarget = data.pressureTarget || undefined;
@@ -519,7 +525,9 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
       }
     }
     if (!this.gen) {
-      if (this.num >= 743) {
+      if (this.num >= 827) {
+        this.gen = 9;
+      } else if (this.num >= 743) {
         this.gen = 8;
       } else if (this.num >= 622) {
         this.gen = 7;
@@ -757,7 +765,9 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     if (Array.isArray(data.changesFrom)) this.changesFrom = data.changesFrom[0]; // BUG
 
     if (!this.gen && data.num >= 1) {
-      if (data.num >= 810 || ['Gmax', 'Galar', 'Galar-Zen'].includes(this.forme)) {
+      if (this.num >= 906 || this.forme.includes('Paldea')) {
+        this.gen = 9;
+      } else if (this.num >= 810 || ['Gmax', 'Galar', 'Galar-Zen', 'Hisui'].includes(this.forme)) {
         this.gen = 8;
       } else if (data.num >= 722 || this.forme.startsWith('Alola') || this.forme === 'Starter') {
         this.gen = 7;
@@ -853,6 +863,8 @@ class DexSpecies implements T.DexTable<Species> {
       const formeNames: {[k: string]: string[]} = {
         alola: ['a', 'alola', 'alolan'],
         galar: ['g', 'galar', 'galarian'],
+        hisui: ['h', 'hisui', 'hisuian'],
+        paldea: ['p', 'paldea', 'paldean'],
         mega: ['m', 'mega'],
         primal: ['p', 'primal'],
       };
@@ -1149,8 +1161,8 @@ class DexStats {
 
 // #region Dex
 
-type Data<T> = { 8: { [id: string]: T } } & {
-  [num in Exclude<T.GenerationNum, 8>]?: { [id: string]: { inherit?: boolean } & T.DeepPartial<T> }
+type Data<T> = { 9: { [id: string]: T } } & {
+  [num in Exclude<T.GenerationNum, 9>]?: { [id: string]: { inherit?: boolean } & T.DeepPartial<T> }
 };
 
 const DATA = {
@@ -1171,9 +1183,9 @@ const HP_TYPES: T.HPTypeName[] = [
   'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark',
 ];
 
-const GEN_IDS = ['gen1', 'gen2', 'gen3', 'gen4', 'gen5', 'gen6', 'gen7', 'gen8'] as const;
+const GEN_IDS = ['gen1', 'gen2', 'gen3', 'gen4', 'gen5', 'gen6', 'gen7', 'gen8', 'gen9'] as const;
 type GenID = typeof GEN_IDS[number];
-const CURRENT_GEN_ID: GenID = GEN_IDS[7];
+const CURRENT_GEN_ID: GenID = GEN_IDS[8];
 
 const dexes: { [mod: string]: ModdedDex } = Object.create(null);
 
@@ -1213,7 +1225,7 @@ export class ModdedDex implements T.Dex {
     const isGen = (GEN_IDS as unknown as Array<GenID | T.ID>).includes(modid);
     if (!isGen && !modData) throw new Error(`Must provide mod data with mod '${modid}'`);
     this.modid = modid as T.ID;
-    this.gen = parseInt((modData?.Scripts?.inherit ?? modid).slice(3)) as T.GenerationNum || 8;
+    this.gen = parseInt((modData?.Scripts?.inherit ?? modid).slice(3)) as T.GenerationNum || 9;
     this.loadData(modData);
 
     this.abilities = new DexAbilities(this);
@@ -1235,7 +1247,7 @@ export class ModdedDex implements T.Dex {
   }
 
   forGen(gen: number) {
-    if (gen < 1 || gen > 8) throw new Error(`Unsupported gen ${gen}`);
+    if (gen < 1 || gen > 9) throw new Error(`Unsupported gen ${gen}`);
     return this.mod(`gen${gen}` as GenID);
   }
 

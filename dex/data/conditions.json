@@ -107,7 +107,7 @@
     "confusion": {"inherit": true},
     "choicelock": {"inherit": true}
   },
-  "8": {
+  "9": {
     "brn": {"name": "brn", "effectType": "Status", "onResidualOrder": 10},
     "par": {"name": "par", "effectType": "Status", "onBeforeMovePriority": 1},
     "slp": {"name": "slp", "effectType": "Status", "onBeforeMovePriority": 10},
@@ -180,6 +180,13 @@
       "duration": 5,
       "onFieldResidualOrder": 1
     },
+    "snow": {
+      "name": "Snow",
+      "effectType": "Weather",
+      "duration": 5,
+      "onModifyDefPriority": 10,
+      "onFieldResidualOrder": 1
+    },
     "deltastream": {
       "name": "DeltaStream",
       "effectType": "Weather",
@@ -194,7 +201,25 @@
       "onDragOutPriority": 2,
       "onResidualPriority": -100
     },
+    "terastal": {
+      "name": "Terastal",
+      "effectType": "Terastal",
+      "noCopy": true,
+      "duration": 1
+    },
+    "commanded": {
+      "name": "Commanded",
+      "noCopy": true,
+      "onTrapPokemonPriority": -11
+    },
+    "commanding": {
+      "name": "Commanding",
+      "noCopy": true,
+      "onTrapPokemonPriority": -11,
+      "onInvulnerabilityPriority": 2
+    },
     "arceus": {"name": "Arceus", "onTypePriority": 1},
-    "silvally": {"name": "Silvally", "onTypePriority": 1}
+    "silvally": {"name": "Silvally", "onTypePriority": 1},
+    "rolloutstorage": {"name": "rolloutstorage", "duration": 2}
   }
 }

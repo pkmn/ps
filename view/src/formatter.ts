@@ -68,6 +68,7 @@ const WEATHERS: {[id: string]: ID} = {
   harshsunshine: 'desolateland' as ID,
   heavyrain: 'primordialsea' as ID,
   strongwinds: 'deltastream' as ID,
+  snow: 'snow' as ID,
 };
 
 const NOOP = () => undefined;
@@ -111,7 +112,7 @@ export class LogFormatter {
     this.p2 = 'Player 2' as Username;
     this.p3 = 'Player 3' as Username;
     this.p4 = 'Player 4' as Username;
-    this.gen = 8;
+    this.gen = 9;
     this.turn = 0;
 
     this.activeMoveIsSpread = undefined;
@@ -259,7 +260,7 @@ export class LogFormatter {
     case 'done': case 'turn':
       return 'break';
     case 'move': case 'cant': case 'switch': case 'drag':
-    case 'upkeep': case 'start': case '-mega': case '-candynamax':
+    case 'upkeep': case 'start': case '-mega': case '-candynamax': case '-terastallize':
       return 'major';
     case 'faint':
       return 'preMajor';
@@ -411,7 +412,7 @@ class Handler implements Protocol.Handler<string> {
     if (switchedOut) {
       const ident = switchedOut.illusion?.ident || switchedOut.ident;
       const from = LogFormatter.effectId(kwArgs.from);
-      if (!['batonpass', 'zbatonpass', 'teleport'].includes(from)) {
+      if (!['batonpass', 'zbatonpass', 'shedtail', 'teleport'].includes(from)) {
         buf = this.switchout(ident, from);
       }
     }
@@ -591,6 +592,12 @@ class Handler implements Protocol.Handler<string> {
       return (line1 + template
         .replace('[POKEMON]', this.parser.pokemon(pokemon))
         .replace('[NUMBER]', num));
+    }
+    if (id.startsWith('protosynthesis') || id.startsWith('quarkdrive')) {
+      const stat = id.slice(-3) as StatID;
+      const template = this.parser.template('start', id.slice(0, id.length - 3));
+      return line1 + template.replace('[POKEMON]',
+        this.parser.pokemon(pokemon)).replace('[STAT]', this.parser.stat(stat));
     }
     let templateId = 'start';
     if (kwArgs.already) templateId = 'alreadyStarted';
@@ -875,6 +882,10 @@ class Handler implements Protocol.Handler<string> {
       return this.parser.template('upkeep', weather, 'NODEFAULT');
     }
     const line1 = this.parser.maybeAbility(from, kwArgs.of!);
+    if (LogFormatter.effectId(kwArgs.from) === 'orichalcumpulse') {
+      return (line1 + this.parser.template('start', 'orichalcumpulse')
+        .replace('[POKEMON]', this.parser.pokemon(kwArgs.of!)));
+    }
     let template = this.parser.template('start', weather, 'NODEFAULT');
     if (!template) {
       template =
@@ -897,6 +908,10 @@ class Handler implements Protocol.Handler<string> {
   ) {
     const [cmd, effect] = args;
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of!);
+    if (LogFormatter.effectId(kwArgs.from) === 'hadronengine') {
+      return (line1 + this.parser.template('start', 'hadronengine')
+        .replace('[POKEMON]', this.parser.pokemon(kwArgs.of!)));
+    }
     let templateId = cmd.slice(6);
     if (LogFormatter.effectId(effect) === 'perishsong') templateId = 'start';
     let template = this.parser.template(templateId, effect, 'NODEFAULT');
@@ -954,17 +969,20 @@ class Handler implements Protocol.Handler<string> {
         .replace('[SOURCE]', this.parser.pokemon(pokemon)));
     }
 
-    if (id === 'mummy' && kwArgs.ability) {
+    if ((id === 'mummy' || id === 'lingeringaroma') && kwArgs.ability) {
       const targetPokemon = target as PokemonIdent;
       line1 += this.parser.ability(kwArgs.ability, targetPokemon);
-      line1 += this.parser.ability('Mummy', targetPokemon);
-      const template = this.parser.template('changeAbility', 'mummy');
+      line1 += this.parser.ability(id === 'mummy' ? 'Mummy' : 'Lingering Aroma', targetPokemon);
+      const template = this.parser.template('changeAbility', id);
       return line1 + template.replace('[TARGET]', this.parser.pokemon(targetPokemon));
     }
 
     let templateId = 'activate';
     if (id === 'forewarn' && pokemon === target) {
       templateId = 'activateNoTarget';
+    }
+    if ((id === 'protosynthesis' || id === 'quarkdrive') && kwArgs.fromitem) {
+      templateId = 'activateFromItem';
     }
     let template = this.parser.template(templateId, effect, 'NODEFAULT');
     if (!template) {
@@ -1211,7 +1229,7 @@ class Handler implements Protocol.Handler<string> {
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     let templateId = 'block';
     if (['desolateland', 'primordialsea'].includes(blocker) &&
-      !['sunnyday', 'raindance', 'sandstorm', 'hail'].includes(id)) {
+      !['sunnyday', 'raindance', 'sandstorm', 'hail', 'snow'].includes(id)) {
       templateId = 'blockMove';
     } else if (blocker === 'uproar' && kwArgs.msg) {
       templateId = 'blockSelf';
@@ -1306,6 +1324,13 @@ class Handler implements Protocol.Handler<string> {
       .replace('[POKEMON]', pokemonName)
       .replace('[ITEM]', item!)
       .replace('[TRAINER]', this.parser.trainer(side)));
+  }
+
+  '|-terastallize|'(args: Args['|-terastallize|']) {
+    const [, pokemon, type] = args;
+    const template = this.parser.template('terastallize', '');
+    const pokemonName = this.parser.pokemon(pokemon);
+    return template.replace('[POKEMON]', pokemonName).replace('[TYPE]', type);
   }
 
   '|-zpower|'(args: Args['|-zpower|']) {

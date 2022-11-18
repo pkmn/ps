@@ -1,5 +1,5 @@
 import * as pkmn from '@pkmn/sets';
-export {PokemonSet} from '@pkmn/sets';
+import {PokemonSet} from '@pkmn/sets';
 import {PRNG, PRNGSeed} from './prng';
 import {Format, PlayerOptions} from './exported-global-types';
 import {Dex} from './dex';
@@ -55,5 +55,7 @@ export const Teams = new class Teams {
 		return this.getGenerator(format, options?.seed).getTeam(options || undefined);
 	}
 };
+
+export {PokemonSet} from '@pkmn/sets';
 
 export default Teams;

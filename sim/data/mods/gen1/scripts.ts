@@ -255,6 +255,11 @@ export const Scripts: ModdedBattleScriptsData = {
 				this.battle.lastDamage = 0;
 			}
 
+			// Disable and Selfdestruct/Explosion boost rage, regardless of whether they miss/fail.
+			if (target.boosts.atk < 6 && (move.selfdestruct || move.id === 'disable') && target.volatiles['rage']) {
+				this.battle.boost({atk: 1}, target, pokemon, this.dex.conditions.get('rage'));
+			}
+
 			// Go ahead with results of the used move.
 			if (damage === false) {
 				this.battle.singleEvent('MoveFail', move, null, target, pokemon, move);
@@ -351,7 +356,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					if (Array.isArray(hits)) {
 						// Yes, it's hardcoded... meh
 						if (hits[0] === 2 && hits[1] === 5) {
-							hits = this.battle.sample([2, 2, 3, 3, 4, 5]);
+							hits = this.battle.sample([2, 2, 2, 3, 3, 3, 4, 5]);
 						} else {
 							hits = this.battle.random(hits[0], hits[1] + 1);
 						}
@@ -394,7 +399,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 
 			// The move missed.
-			if (!damage && damage !== 0) {
+			if (damage === false) {
 				// Delete the partial trap lock if necessary.
 				delete pokemon.volatiles['partialtrappinglock'];
 				return false;
@@ -433,6 +438,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				// Handle here the applying of partial trapping moves to Pokémon with Substitute
 				if (targetSub && moveData.volatileStatus && moveData.volatileStatus === 'partiallytrapped') {
 					target.addVolatile(moveData.volatileStatus, pokemon, move);
+					if (!pokemon.volatiles['partialtrappinglock'] || pokemon.volatiles['partialtrappinglock'].duration > 1) {
+						target.volatiles[moveData.volatileStatus].duration = 2;
+					}
 				}
 
 				if (!hitResult) {
@@ -592,7 +600,7 @@ export const Scripts: ModdedBattleScriptsData = {
 
 			// Here's where self effects are applied.
 			const doSelf = (targetHadSub && targetHasSub) || !targetHadSub;
-			if (moveData.self && (doSelf || (moveData.self !== true && moveData.self.volatileStatus === 'partialtrappinglock'))) {
+			if (moveData.self && (doSelf || moveData.self.volatileStatus === 'partialtrappinglock')) {
 				this.moveHit(pokemon, pokemon, move, moveData.self, isSecondary, true);
 			}
 
@@ -619,7 +627,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				}
 			}
 			if (move.selfSwitch && pokemon.hp) {
-				pokemon.switchFlag = move.selfSwitch;
+				pokemon.switchFlag = move.selfSwitch === true ? true : this.dex.toID(move.selfSwitch);
 			}
 
 			return damage;
