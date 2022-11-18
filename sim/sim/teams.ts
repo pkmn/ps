@@ -2,6 +2,7 @@ import * as pkmn from '@pkmn/sets';
 export {PokemonSet} from '@pkmn/sets';
 import {PRNG, PRNGSeed} from './prng';
 import {Format, PlayerOptions} from './exported-global-types';
+import {Dex} from './dex';
 
 interface TeamGenerator {
 	prng: PRNG;
@@ -29,8 +30,12 @@ export const Teams = new class Teams {
 		return new pkmn.Team(team).export();
 	}
 
-	exportSet(set: pkmn.PokemonSet, {hideStats}: {hideStats?: boolean} = {}) {
+	exportSet(set: pkmn.PokemonSet) {
 		return pkmn.Sets.exportSet(set);
+	}
+
+	import(buf: string): PokemonSet[] | null {
+		return pkmn.Teams.importTeam(buf, Dex as any)?.team as PokemonSet[] || null;
 	}
 
 	// BUG: SSB3's Easter egg requires we return any here instead of TeamGenerator. *sigh* :(
