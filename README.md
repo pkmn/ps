@@ -5,7 +5,7 @@
   <a href="https://github.com/pkmn/ps/actions/workflows/test.yml">
     <img alt="Test Status" src="https://github.com/pkmn/ps/workflows/Tests/badge.svg" />
   </a>
-  <a href="https://github.com/pkmn/ps/blob/master/LICENSE">
+  <a href="https://github.com/pkmn/ps/blob/main/LICENSE">
     <img alt="License" src="https://img.shields.io/badge/License-MIT-blue.svg" />
   </a>
 </p>

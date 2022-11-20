@@ -21,7 +21,7 @@ npm -C integration run gh-pages
 mkdir $TMP/integration
 cp integration/dist/index.html integration/dist/index.*.js $TMP/integration
 
-# Checkout: master -> gh-pages
+# Checkout: main -> gh-pages
 
 git checkout gh-pages
 
@@ -41,6 +41,6 @@ git add -f integration/index.html integration/index.*.js
 git commit -m "Publish: '${rev}'"
 git push origin --force gh-pages
 
-# Checkout: gh-pages -> master
+# Checkout: gh-pages -> main
 
 git checkout -

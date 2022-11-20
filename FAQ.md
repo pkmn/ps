@@ -6,7 +6,7 @@ Yes.
 
 You should be able to judge the activity level of this project by looking at how recently a
 [package has been released](https://www.npmjs.com/package/@pkmn/sim), the
-[commit activity on this repository](https://github.com/pkmn/ps/commits/master) and the activity
+[commit activity on this repository](https://github.com/pkmn/ps/commits/main) and the activity
 from the [pkmn organization in general](https://github.com/pkmn). If at any point this package
 is no longer being maintained the documentation will be updated to reflect that (and NPM will
 warn about it) and the repository itself will be [archived](https://github.com/pkmn-archive).
@@ -34,7 +34,7 @@ Each released package should contain:
 
 If a package does not contain these things it is possible that it is only intended for internal or
 advanced usage and you are perhaps depending on it erroneously. There are
-[integration tests](https://github.com/pkmn/ps/blob/master/integration) which consist of very
+[integration tests](https://github.com/pkmn/ps/blob/main/integration) which consist of very
 comprehensive worked examples integrating multiple packages at once. Furthermore, other projects
 from the [pkmn organization in general](https://github.com/pkmn) demonstrate non-trivial
 usecases for the packages in this repository.

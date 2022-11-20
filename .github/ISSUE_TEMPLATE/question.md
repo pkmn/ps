@@ -21,4 +21,4 @@ If your question is relatively simple, you may prefer asking on Discord instead:
 
 If applicable, add a test case / code sample to help explain your problem.
 
-[1]: https://github.com/pkmn/ps/blob/master/FAQ.md
+[1]: https://github.com/pkmn/ps/blob/main/FAQ.md
