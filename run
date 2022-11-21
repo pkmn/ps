@@ -126,20 +126,42 @@ const METRONOME = move => {
 };
 
 const MIN_WRAP = {key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: MIN};
-const MAX_WRAP = {key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: MAX};
 const REWRAP = {key: ['Battle.sample', 'BattleActions.runMove'], value: MIN};
+
+const proc = {key: HIT.key, value: MIN};
 const battle = startBattle([
-	METRONOME('Wrap'), HIT, NO_CRIT, MIN_DMG, MIN_WRAP, HIT, NO_CRIT, MIN_DMG, REWRAP
+	HIT, NO_CRIT, MIN_DMG, proc, SS_MOD, HIT, NO_CRIT, MIN_DMG, MIN_WRAP,
+	HIT, MISS, HIT, NO_CRIT, MIN_DMG, proc, SS_MOD, MISS,
+	HIT, NO_CRIT, MIN_DMG, MIN_WRAP,
+	HIT, NO_CRIT, MIN_DMG, MIN_WRAP,
 ], [
-	{species: 'Victreebel', evs, moves: ['Metronome', 'Vine Whip']},
-	{species: 'Seel', evs, moves: ['Bubble']},
+	{species: 'Dragonair', evs, moves: ['Wrap']},
+	{species: 'Dragonite', evs, moves: ['Dragon Rage', 'Ember', 'Wrap']},
 ], [
-	{species: 'Kadabra', evs, moves: ['Teleport']},
-	{species: 'Mr. Mime', evs, moves: ['Teleport']},
-], b => {
-	b.p1.pokemon[0].moveSlots[0].pp = 1;
-});
+	{species: 'Beedrill', evs, moves: ['Poison Sting']},
+	{species: 'Kakuna', evs, moves: ['Harden']},
+]);
+
+battle.p1.pokemon[0].hp = 21;
+    battle.p2.pokemon[0].hp = 210;
+
 
 battle.makeChoices('move 1', 'move 1');
 
-battle.makeChoices('move 1', 'switch 2');
+
+battle.makeChoices('switch 2', '');
+
+battle.makeChoices('move 1', 'move 1');
+
+
+battle.makeChoices('move 2', 'move 1');
+
+
+battle.makeChoices('move 3', 'move 1');
+
+
+battle.makeChoices('', 'switch 2');
+
+
+battle.makeChoices('move 3', 'move 1');
+
