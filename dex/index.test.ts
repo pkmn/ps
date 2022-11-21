@@ -140,6 +140,7 @@ describe('Dex', () => {
       expect(Dex.moves.get('Crunch').category).toBe('Physical');
       expect(Dex.forGen(2).moves.get('CRUNCH').category).toBe('Special');
       expect(Dex.moves.get('Hidden Power [Bug]').name).toBe('Hidden Power Bug');
+      expect(Dex.forGen(8).moves.get('G-Max Befuddle').exists).toBe(true);
     });
 
     it('fields', () => {
@@ -189,6 +190,7 @@ describe('Dex', () => {
       expect(Dex.moves.get('Feint').breaksProtect).toBe(true);
       expect(Dex.moves.get('Sacred Sword').ignoreDefensive).toBe(true);
       expect(Dex.moves.get('Fissure').ohko).toBe(true);
+      expect(Dex.forGen(8).moves.get('G-Max Befuddle').isNonstandard).toBe('Gigantamax');
 
       // self
       expect(Dex.moves.get('Petal Dance').self!.volatileStatus).toBe('lockedmove');
