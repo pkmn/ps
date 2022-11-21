@@ -525,7 +525,8 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
       }
     }
     if (!this.gen) {
-      if (this.num >= 827) {
+      // special handling for gen8 gmax moves (all of them have num 1000 but they are part of gen8)
+      if (this.num >= 827 && !this.isMax) {
         this.gen = 9;
       } else if (this.num >= 743) {
         this.gen = 8;
