@@ -26762,7 +26762,7 @@
         "spd": 40,
         "spe": 43
       },
-      "abilities": {"0": "Thick Fat", "1": "Slush Rush", "H": "Sheer Force"},
+      "abilities": {"0": "Thick Fat", "1": "Snow Cloak", "H": "Sheer Force"},
       "weightkg": 45,
       "evos": ["Cetitan"],
       "eggGroups": ["Field"]
@@ -27895,7 +27895,7 @@
       "weightkg": 120,
       "prevo": "Bisharp",
       "evoType": "other",
-      "evoCondition": "Defeat 3 Bisharp holding Leader's Crest while holding Leader's Crest",
+      "evoCondition": "Defeat 3 Bisharp leading Pawniard and level-up",
       "eggGroups": ["Human-Like"]
     },
     "clodsire": {
@@ -27932,7 +27932,7 @@
       "weightkg": 56,
       "prevo": "Primeape",
       "evoType": "other",
-      "evoCondition": "Use Rage Fist 20 times",
+      "evoCondition": "Use Rage Fist 20 times and level-up",
       "eggGroups": ["Field"]
     },
     "missingno": {

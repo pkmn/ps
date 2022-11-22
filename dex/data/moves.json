@@ -15871,7 +15871,7 @@
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1},
       "volatileStatus": "saltcure",
-      "condition": {"duration": 0, "onResidualOrder": 13},
+      "condition": {"onResidualOrder": 13},
       "secondary": null,
       "target": "normal",
       "type": "Rock",

@@ -56,7 +56,7 @@ describe('Side', () => {
     pokemon.addVolatile('bar' as ID, {level: 1});
 
     pokemon = side.addPokemon({} as DetailedPokemon);
-    side.switchIn(pokemon, 2);
+    side.switchIn(pokemon, {id: 'batonpass' as ID}, 2);
 
     expect(side.active[2]).toBe(pokemon);
     expect(pokemon.lastMove).toBe('');

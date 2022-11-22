@@ -158,8 +158,8 @@ export class Handler implements Protocol.Handler {
     }
   }
 
-  '|switch|'(args: Args['|switch|']) {
-    this.switch(args);
+  '|switch|'(args: Args['|switch|'], kwArgs: KWArgs['|switch|']) {
+    this.switch(args, kwArgs);
   }
 
   '|drag|'(args: Args['|drag|']) {
@@ -170,16 +170,17 @@ export class Handler implements Protocol.Handler {
     this.switch(args);
   }
 
-  switch(args: Args['|switch|' | '|drag|' | '|replace|']) {
+  switch(args: Args['|switch|' | '|drag|' | '|replace|'], kwArgs?: KWArgs['|switch|']) {
     const poke = this.battle.getSwitchedPokemon(args[1], args[2])!;
     const slot = poke.slot;
     if (args[3]) poke.healthParse(args[3]);
     poke.removeVolatile('itemremoved' as ID);
     if (args[0] === 'switch') {
+      const from = this.battle.get('conditions', kwArgs?.from);
       if (poke.side.active[slot]) {
-        poke.side.switchOut(poke.side.active[slot]!);
+        poke.side.switchOut(poke.side.active[slot]!, from);
       }
-      poke.side.switchIn(poke);
+      poke.side.switchIn(poke, from);
     } else if (args[0] === 'replace') {
       poke.side.replace(poke);
     } else {
@@ -344,16 +345,17 @@ export class Handler implements Protocol.Handler {
     }
   }
 
-  '|-copyboost|'(args: Args['|-copyboost|']) {
+  '|-copyboost|'(args: Args['|-copyboost|'], kwArgs: KWArgs['|-copyboost|']) {
     const poke = this.battle.getPokemon(args[1])!;
     const poke2 = this.battle.getPokemon(args[2])!;
+    const effect = this.battle.get('conditions', kwArgs.from);
     const boosts = args[3] ? args[3].split(', ') as BoostID[] : BOOSTS;
     for (const boost of boosts) {
       poke.boosts[boost] = poke2.boosts[boost];
       if (!poke.boosts[boost]) delete poke.boosts[boost];
     }
-    if (this.battle.gen.num >= 6) {
-      const volatilesToCopy = ['focusenergy', 'laserfocus'];
+    if (this.battle.gen.num >= 6 && effect.id === 'psychup') {
+      const volatilesToCopy = ['focusenergy', 'gmaxchistrike', 'laserfocus'];
       for (const volatile of volatilesToCopy) {
         if (poke2.volatiles[volatile]) {
           poke.addVolatile(volatile as ID);

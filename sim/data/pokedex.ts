@@ -17137,7 +17137,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Cetoddle",
 		types: ["Ice"],
 		baseStats: {hp: 108, atk: 68, def: 45, spa: 30, spd: 40, spe: 43},
-		abilities: {0: "Thick Fat", 1: "Slush Rush", H: "Sheer Force"},
+		abilities: {0: "Thick Fat", 1: "Snow Cloak", H: "Sheer Force"},
 		heightm: 1.2,
 		weightkg: 45,
 		color: "White",
@@ -17976,7 +17976,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Black",
 		prevo: "Bisharp",
 		evoType: "other",
-		evoCondition: "Defeat 3 Bisharp holding Leader's Crest while holding Leader's Crest",
+		evoCondition: "Defeat 3 Bisharp leading Pawniard and level-up",
 		eggGroups: ["Human-Like"],
 	},
 	clodsire: {
@@ -18003,7 +18003,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Gray",
 		prevo: "Primeape",
 		evoType: "other",
-		evoCondition: "Use Rage Fist 20 times",
+		evoCondition: "Use Rage Fist 20 times and level-up",
 		eggGroups: ["Field"],
 	},
 	missingno: {

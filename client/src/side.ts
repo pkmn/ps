@@ -193,14 +193,14 @@ export class Side {
     return poke;
   }
 
-  switchIn(pokemon: Pokemon, slot = pokemon.slot) {
+  switchIn(pokemon: Pokemon, from?: {id: ID}, slot = pokemon.slot) {
     this.active[slot] = pokemon;
     pokemon.slot = slot;
     pokemon.clearVolatile();
     pokemon.lastMove = '';
     this.battle.lastMove = 'switch-in';
-    if (['batonpass', 'zbatonpass', 'shedtail'].includes(this.lastPokemon?.lastMove || '')) {
-      const source = this.lastPokemon!.lastMove === 'shedtail' ? 'shedtail' : 'batonpass';
+    if (from && ['batonpass', 'zbatonpass', 'shedtail'].includes(from.id)) {
+      const source = from.id === 'shedtail' ? 'shedtail' : 'batonpass';
       pokemon.copyVolatileFrom(this.lastPokemon!, source);
     }
   }
@@ -252,8 +252,8 @@ export class Side {
     pokemon.slot = slot;
   }
 
-  switchOut(pokemon: Pokemon, slot = pokemon.slot) {
-    if (!['batonpass', 'zbatonpass', 'shedtail'].includes(pokemon.lastMove)) {
+  switchOut(pokemon: Pokemon, from?: {id: ID}, slot = pokemon.slot) {
+    if (!['batonpass', 'zbatonpass', 'shedtail'].includes(from?.id || '')) {
       pokemon.clearVolatile();
     } else {
       pokemon.removeVolatile('transform' as ID);

@@ -460,6 +460,7 @@ export interface MovePlines extends Plines {
 export interface AbilityText extends TextFile, Plines {
 	activateFromItem?: string;
 	activateNoTarget?: string;
+	copyBoost?: string;
 	transformEnd?: string;
 }
 

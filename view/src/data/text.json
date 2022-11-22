@@ -606,7 +606,10 @@
     "end": "  [TEAM] is no longer protected by Safeguard!",
     "block": "  [POKEMON] is protected by Safeguard!"
   },
-  "saltcure": {"start": "  [POKEMON] became covered in salt!"},
+  "saltcure": {
+    "start": "  [POKEMON] is being salt cured!",
+    "damage": "  [POKEMON] is hurt by Salt Cure!"
+  },
   "sandtomb": {"start": "  [POKEMON] became trapped by the quicksand!"},
   "shadowforce": {
     "activate": "  It broke through [TARGET]'s protection!",
@@ -748,6 +751,7 @@
   },
   "cloudnine": {"start": "#airlock"},
   "comatose": {"start": "  [POKEMON] is drowsing!"},
+  "costar": {"copyBoost": "  [POKEMON] copied its ally's stat changes!"},
   "damp": {"block": "  [SOURCE] cannot use [MOVE]!"},
   "darkaura": {"start": "  [POKEMON] is radiating a dark aura!"},
   "dazzling": {"block": "#damp"},

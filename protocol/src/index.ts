@@ -2175,11 +2175,14 @@ function upgradeArgs<T extends Protocol.ArgType>(args: [string, ...string[]]): T
   return args as T;
 }
 
-const BLOCKABLE = new Set([
+const ACTIVATE_BLOCKABLE = new Set([
   'ingrain', 'quickguard', 'wideguard', 'craftyshield', 'matblock',
   'protect', 'mist', 'safeguard', 'electricterrain', 'mistyterrain',
   'psychicterrain', 'telepathy', 'stickyhold', 'suctioncups', 'aromaveil',
   'flowerveil', 'sweetveil', 'disguise', 'safetygoggles', 'protectivepads',
+]);
+const CANT_BLOCKABLE = new Set([
+  'ability: Damp', 'ability: Dazzling', 'ability: Queenly Majesty', 'ability: Armor Tail',
 ]);
 const STARTABLE = new Set([
   'thundercage', 'clamp', 'whirlpool', 'firespin', 'magmastorm',
@@ -2216,7 +2219,7 @@ function upgradeBattleArgs({args, kwArgs}: {
     if (id === 'beatup' && kwArgs.of) {
       return {args, kwArgs: {name: kwArgs.of as Protocol.Nickname}};
     }
-    if (BLOCKABLE.has(id)) {
+    if (ACTIVATE_BLOCKABLE.has(id)) {
       if (target) {
         kwArgs.of = pokemon;
         return {args: ['-block', target, effect, arg3 as Protocol.MoveName || ''], kwArgs};
@@ -2289,8 +2292,7 @@ function upgradeBattleArgs({args, kwArgs}: {
   }
   case 'cant': {
     const [, pokemon, effect, move] = args;
-    const abilities = ['ability: Queenly Majesty', 'ability: Damp', 'ability: Dazzling'];
-    if (abilities.includes(effect as Protocol.EffectName)) {
+    if (CANT_BLOCKABLE.has(effect as Protocol.EffectName)) {
       return {
         args: [
           '-block',
