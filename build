@@ -87,7 +87,13 @@ const tree = root => {
             fs.unlinkSync(file);
           } else if (format === 'esm') {
             if (file.endsWith('.js')) {
-              fs.renameSync(file, `${file.slice(0, -3)}.mjs`);
+              const contents = fs.readFileSync(file, 'utf8');
+              if (!contents.endsWith('.js.map')) {
+                throw new Error(`Output unexpectedly ends with: ${contents.slice(-100)}`);
+              }
+              const relinked = `${contents.slice(0, -('.js.map'.length))}.mjs.map`;
+              fs.writeFileSync(`${file.slice(0, -3)}.mjs`, relinked);
+              fs.unlinkSync(file);
             } if (file.endsWith('.js.map')) {
               fs.renameSync(file, `${file.slice(0, -7)}.mjs.map`);
             }
