@@ -55,12 +55,12 @@ const tree = root => {
 const jsonPlugin = {
   name: 'json',
   setup(build) {
-    build.onLoad({ filter: /\.json$/ }, async (args) => {
+    build.onLoad({filter: /\.json$/}, async (args) => {
       const raw = await fs.promises.readFile(args.path, 'utf8');
       const contents = `export default JSON.parse(${JSON.stringify(
         JSON.stringify(JSON.parse(raw))
       )})`;
-      return { contents, loader: 'ts' };
+      return {contents, loader: 'ts'};
     });
   },
 };
@@ -80,7 +80,7 @@ const jsonPlugin = {
       running('tsc -p tsconfig.cjs.json');
       sh('npx', ['tsc', '-p', 'tsconfig.cjs.json']);
     } finally {
-      try { fs.unlinkSync(cjs) } catch {}
+      try { fs.unlinkSync(cjs); } catch {}
     }
     const esm = path.join(cwd, 'tsconfig.esm.json');
     try {
@@ -88,7 +88,7 @@ const jsonPlugin = {
       running('tsc -p tsconfig.esm.json');
       sh('npx', ['tsc', '-p', 'tsconfig.esm.json']);
     } finally {
-      try { fs.unlinkSync(esm) } catch {}
+      try { fs.unlinkSync(esm); } catch {}
     }
     running('cp -a build/{cjs,types}');
     fs.cpSync(path.join(cwd, 'build/cjs'), path.join(cwd, 'build/types'), {recursive: true});
@@ -118,7 +118,7 @@ const jsonPlugin = {
       }
     }
 
-    const millis = Math.round(Number((process.hrtime.bigint() - time) / 1_000_000n));
+    const millis = Math.round(Number((process.hrtime.bigint() - time) / BigInt(1e6)));
     console.log(`\nFinished after \x1b[93m${millis}ms\x1b[0m`);
 
     process.exit(0);
@@ -139,7 +139,7 @@ const jsonPlugin = {
   if (argv.minify) {
     const globalName = `pkmn_${pkg}`;
 
-    const outfile = 'build/index.min.js';
+    let outfile = 'build/index.min.js';
     console.log(`\nProducing \x1b[96m${outfile}\x1b[0m for \x1b[34m@pkmn/${pkg}\x1b[0m...`);
     await rewrite(esbuild.build({
       entryPoints: [argv._[0]],
@@ -155,7 +155,7 @@ const jsonPlugin = {
 
     if (pkg === 'dex') {
       const tmp = path.join(cwd, 'learnsets.ts');
-      const outfile = 'build/learnsets.min.js';
+      outfile = 'build/learnsets.min.js';
       console.log(`Producing \x1b[96m${outfile}\x1b[0m for \x1b[34m@pkmn/${pkg}\x1b[0m...`);
       try {
         fs.writeFileSync(tmp, learnsets);
@@ -169,7 +169,7 @@ const jsonPlugin = {
           globalName: 'pkmn_learnsets',
         }), 'pkmn_learnsets', 'learnsets', '.LearnsetsJSON');
       } finally {
-        try { fs.unlinkSync(tmp) } catch {}
+        try { fs.unlinkSync(tmp); } catch {}
       }
     }
   }

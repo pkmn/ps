@@ -21,13 +21,11 @@ const path = require('path');
 
 const stringify = require('json-stringify-pretty-compact');
 
-const exec = async (cmd, cwd = __dirname) => {
-  return new Promise(resolve => {
-    child_process.exec(cmd, { cwd }, (error, stdout, stderr) => {
-      resolve([error ? error.code : 0, stdout, stderr]);
-    });
+const exec = async (cmd, cwd = __dirname) => new Promise(resolve => {
+  child_process.exec(cmd, {cwd}, (error, stdout, stderr) => {
+    resolve([error ? error.code : 0, stdout, stderr]);
   });
-};
+});
 
 const IGNORE_STDERR = true;
 const execOrDie = async (cmd, cwd = __dirname, ignoreStderr = !IGNORE_STDERR) => {
@@ -55,7 +53,7 @@ const replace = async (file, replacements) => {
     if (!file.endsWith('.js')) return;
     let text = await fs.promises.readFile(file, "utf8");
     let anyMatch = false;
-    for (var i = 0; i < replacements.length; i++) {
+    for (let i = 0; i < replacements.length; i++) {
       anyMatch = anyMatch || text.match(replacements[i].regex);
       if (anyMatch) text = text.replace(replacements[i].regex, replacements[i].replace);
     }
@@ -64,7 +62,7 @@ const replace = async (file, replacements) => {
   } else if (stats.isDirectory()) {
     const files = await fs.promises.readdir(file);
     const all = [];
-    for (var i = 0; i < files.length; i++) {
+    for (let i = 0; i < files.length; i++) {
       all.push(replace(path.join(file, files[i]), replacements));
     }
     await Promise.all(all);
@@ -113,7 +111,7 @@ const IMPORTS = {
     'EffectData', 'StatIDExceptHP', 'ModdedDex', 'StatID',
   ],
   'sim/dex-items.ts': [
-    'AnyObject', 'Battle', 'Pokemon', 'SparseBoostsTable', 'ConditionData',  'CommonHandlers',
+    'AnyObject', 'Battle', 'Pokemon', 'SparseBoostsTable', 'ConditionData', 'CommonHandlers',
     'ModdedDex', 'ID',
   ],
   'sim/dex-moves.ts': [
@@ -151,7 +149,7 @@ const MOD_IMPORTS = {
   'data/mods/gen1stadium/moves.ts': ['ModdedMoveData', 'ActiveMove'],
   'data/mods/gen1stadium/rulesets.ts': ['ModdedFormatData'],
   'data/mods/gen1stadium/scripts.ts': [
-    'ModdedBattleScriptsData', 'StatIDExceptHP', 'BoostID', 'ActiveMove'
+    'ModdedBattleScriptsData', 'StatIDExceptHP', 'BoostID', 'ActiveMove',
   ],
 
   // gen2stadium2
@@ -294,19 +292,20 @@ const RANDOMS_IMPORTS = {
 };
 
 const TYPES = new Set([
-  'Normal' , 'Fighting' , 'Flying' , 'Poison' , 'Ground' , 'Rock' , 'Bug' , 'Ghost' , 'Steel' ,
-  'Fire' , 'Water' , 'Grass' , 'Electric' , 'Psychic' , 'Ice' , 'Dragon' , 'Dark' , 'Fairy',
+  'Normal', 'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel',
+  'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark', 'Fairy',
 ]);
 
 const imports = (types, where, typeOnly = false) => {
   types.sort();
   const importStatement = typeOnly ? 'import type' : 'import';
-  if (types.length <= 5) return`${importStatement} {${types.join(', ')}} from '${where}';\n\n`;
+  if (types.length <= 5) return `${importStatement} {${types.join(', ')}} from '${where}';\n\n`;
   return `${importStatement} {\n\t${types.join(',\n\t')},\n} from '${where}';\n\n`;
 };
 
 const KEY = `\t\treturn this.getByID(name.startsWith('item:') || ` +
   `name.startsWith('ability:') ? name as ID : toID(name));`;
+/* eslint-disable no-template-curly-in-string */
 const VALUE =
   "\t\tconst special = name.startsWith('item:') ? `item:${toID(name.slice(5))}` as ID :\n" +
   "\t\t\tname.startsWith('ability:') ? `ability:${toID(name.slice(8))}` as ID :\n" +
@@ -326,7 +325,7 @@ const REWRITES = {
   'sim/dex-abilities.ts': {
     '\t\tif (ability.exists) this.abilityCache.set(id, ability);':
       `\t\t(ability as any).kind = 'Ability';\n` +
-      '\t\tif (ability.exists) this.abilityCache.set(id, ability);'
+      '\t\tif (ability.exists) this.abilityCache.set(id, ability);',
   },
   'sim/dex-conditions.ts': {
     '\t\t} else if (this.dex.data.Rulesets.hasOwnProperty(id)) {':
@@ -338,17 +337,17 @@ const REWRITES = {
       '\t\t\tcondition = item as any as Condition;',
     "\t\t\tcondition = {...ability, id: 'ability:' + ability.id as ID} as any as Condition;":
       '\t\t\tcondition = ability as any as Condition;',
-     [KEY]: VALUE,
+    [KEY]: VALUE,
   },
   'sim/dex-items.ts': {
     '\t\tif (item.exists) this.itemCache.set(id, item);':
       `\t\t(item as any).kind = 'Item';\n` +
-      '\t\tif (item.exists) this.itemCache.set(id, item);'
+      '\t\tif (item.exists) this.itemCache.set(id, item);',
   },
   'sim/dex-moves.ts': {
     '\t\tif (move.exists) this.moveCache.set(id, move);':
       `\t\t(move as any).kind = 'Move';\n` +
-      '\t\tif (move.exists) this.moveCache.set(id, move);'
+      '\t\tif (move.exists) this.moveCache.set(id, move);',
   },
   'sim/dex-data.ts': {
     '\t\tif (nature.exists) this.natureCache.set(id, nature);':
@@ -356,7 +355,7 @@ const REWRITES = {
       '\t\tif (nature.exists) this.natureCache.set(id, nature);',
     '\t\tif (type.exists) this.typeCache.set(id, type);':
       `\t\t(type as any).kind = 'Type';\n` +
-      '\t\tif (type.exists) this.typeCache.set(id, type);'
+      '\t\tif (type.exists) this.typeCache.set(id, type);',
   },
   'sim/battle.ts': {
     '\tgetCategory(move: string | Move) {':
@@ -512,7 +511,7 @@ const RANDOMS_FIELDS = [
   'randomSets',
 ];
 
-const INLINE_REQUIRE = /^(.*) = require\(.*\);$/
+const INLINE_REQUIRE = /^(.*) = require\(.*\);$/;
 
 const DATA = {
   'abilities.js': code => [
@@ -526,7 +525,7 @@ const DATA = {
         d['simple'].desc = data[6]['simple'].desc;
         d['thickfat'].desc = data[9]['thickfat'].desc;
       }
-    }
+    },
   ],
   'aliases.js': code => [code.Aliases, 'aliases.json'],
   'conditions.js': code => [code.Conditions, 'conditions.json'],
@@ -545,7 +544,7 @@ const DATA = {
         }
       }
     }
-    return [code.TypeChart, 'types.json']
+    return [code.TypeChart, 'types.json'];
   },
 };
 
@@ -588,16 +587,16 @@ const changes = async (where, last, now, repo) => ({
 });
 
 (async () => {
-  const last = { ps: await HEAD(ps), psc: await HEAD(psc) };
+  const last = {ps: await HEAD(ps), psc: await HEAD(psc)};
   try {
     // `git -C vendor/pokemon-showdown pull origin master` etc works for individual submodules, but
     // this command will update both repositories at once
     await execOrDie('git submodule update --remote --rebase', __dirname, IGNORE_STDERR);
-    const now = { ps: await HEAD(ps), psc: await HEAD(psc) };
+    const now = {ps: await HEAD(ps), psc: await HEAD(psc)};
 
     const changed = {
       ps: await changes(ps, last.ps, now.ps, 'pokemon-showdown'),
-      psc: await changes(psc, last.psc, now.psc, 'pokemon-showdown-client')
+      psc: await changes(psc, last.psc, now.psc, 'pokemon-showdown-client'),
     };
 
     console.log(`\n${changed.ps.url}\n`);
@@ -624,7 +623,8 @@ const changes = async (where, last, now, repo) => ({
 
     const index = fs.readFileSync(path.resolve(ps, 'lib/streams.ts'), 'utf8').replace(
       'Documented in STREAMS.md.', 'Documentation can be found at\n' +
-      ' * https://github.com/smogon/pokemon-showdown/blob/master/lib/STREAMS.md');
+      ' * https://github.com/smogon/pokemon-showdown/blob/master/lib/STREAMS.md'
+    );
     // double fuck you zarle, AnyObject is a dreadful hack to begin with, feel ashamed
     fs.writeFileSync(path.resolve(streams, 'index.ts'),
       `interface AnyObject {[k: string]: any}\n${index}`);
@@ -637,12 +637,11 @@ const changes = async (where, last, now, repo) => ({
         if (!file.startsWith('sim/') && file !== 'data/tags.ts') {
           throw new Error('Unsupported import location');
         }
-        const prefix = file.startsWith('data') ? '../sim' :
-          file.startsWith('sim/tools/') ? '..' : '.';
+        const prefix = file.startsWith('data') ? '../sim'
+          : file.startsWith('sim/tools/') ? '..' : '.';
         const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
-        const changes = REWRITES[file];
-        const rewritten = changes
-          ? rewrite(original, line => line in changes ? changes[line] : line)
+        const rewritten = REWRITES[file]
+          ? rewrite(original, line => line in REWRITES[file] ? REWRITES[file][line] : line)
           : original;
         fs.writeFileSync(path.resolve(sim, file),
           `${imports(IMPORTS[file], prefix + '/exported-global-types')}${rewritten}`);
@@ -664,7 +663,8 @@ const changes = async (where, last, now, repo) => ({
           `${imports(MOD_IMPORTS[file], '@pkmn/sim', true)}${original}`);
       } else {
         fs.copyFileSync(
-          path.resolve(ps, file), path.resolve(mods, file.replace('data/mods', 'src')));
+          path.resolve(ps, file), path.resolve(mods, file.replace('data/mods', 'src'))
+        );
       }
     }
 
@@ -700,7 +700,8 @@ const changes = async (where, last, now, repo) => ({
 
       fs.writeFileSync(
         path.resolve(randoms, RANDOMS_FILES[file]),
-        `${header.join('\n')}\n${rewritten}`);
+        `${header.join('\n')}\n${rewritten}`
+      );
     }
 
     // The data files are Typescript, so we need to build to convert them to JS before requiring
@@ -718,7 +719,7 @@ const changes = async (where, last, now, repo) => ({
       let dir = path.join(ps, '.data-dist');
       if (gen !== 9) dir = path.join(dir, `mods/gen${gen}`);
       for (const file of fs.readdirSync(dir)) {
-        let fn = DATA[path.basename(file)];
+        const fn = DATA[path.basename(file)];
         if (fn) {
           const [contents, basename, patch] = fn(require(path.resolve(dir, file)));
           DEX[basename] = DEX[basename] || {};
@@ -735,7 +736,7 @@ const changes = async (where, last, now, repo) => ({
       if (key === 'sandstorm') {
         DefaultText[key].weatherName = 'Sand';
       } else if (key === 'desolateland') {
-        DefaultText[key].weatherName  = 'Harsh Sunshine';
+        DefaultText[key].weatherName = 'Harsh Sunshine';
       }
 
       TEXT[key === 'default' ? '_' : key] = DefaultText[key];
@@ -778,8 +779,9 @@ const changes = async (where, last, now, repo) => ({
 
     // The test files require paths are made with PS's build layout in mind - correct that here
     await replace(path.join(sim, 'test'), [{
-      regex: new RegExp(`(require\\\(.*?)((?<!build\\\/)sim)(.*?\\\))`, 'g'),
-      replace: `$1build/cjs/sim$3`
+      // eslint-disable-next-line no-useless-escape
+      regex: new RegExp(`(require\(.*?)((?<!build/)sim)(.*?\))`, 'g'),
+      replace: `$1build/cjs/sim$3`,
     }]);
 
     const messages =

@@ -39,8 +39,8 @@
     "login"
   ],
   "scripts": {
-    "lint": "subpkg run lint",
-    "fix": "subpkg run fix",
+    "lint": "subpkg run lint && eslint build import",
+    "fix": "subpkg run fix && eslint --fix build import",
     "compile": "subpkg run compile",
     "build": "subpkg run build",
     "start": "subpkg run start",
