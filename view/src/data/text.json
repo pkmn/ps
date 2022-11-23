@@ -332,6 +332,9 @@
   "burnup": {"typeChange": "  [POKEMON] burned itself out!"},
   "celebrate": {"activate": "  Congratulations, [TRAINER]!"},
   "charge": {"start": "  [POKEMON] began charging power!"},
+  "chillyreception": {
+    "activate": "  [POKEMON] is preparing to tell a chillingly bad joke!"
+  },
   "chloroblast": {"damage": "#mindblown"},
   "clamp": {"start": "  [SOURCE] clamped down on [POKEMON]!", "move": "#wrap"},
   "conversion": {"typeChange": "  Converted type to [SOURCE]'s!"},
@@ -518,6 +521,7 @@
     "end": "  [POKEMON]'s electromagnetism wore off!"
   },
   "magnitude": {"activate": "  Magnitude [NUMBER]!"},
+  "makeitrain": {"activate": "#payday"},
   "matblock": {
     "start": "  [POKEMON] intends to flip up a mat and block incoming attacks!",
     "block": "  [MOVE] was blocked by the kicked-up mat!"
@@ -615,6 +619,7 @@
     "activate": "  It broke through [TARGET]'s protection!",
     "prepare": "[POKEMON] vanished instantly!"
   },
+  "shedtail": {"alreadyStarted": "#substitute", "fail": "#substitute"},
   "shelltrap": {
     "start": "  [POKEMON] set a shell trap!",
     "prepare": "  [POKEMON] set a shell trap!",

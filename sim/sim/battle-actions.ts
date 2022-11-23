@@ -148,10 +148,9 @@ export class BattleActions {
 			moveSlot.used = false;
 		}
 		this.battle.runEvent('BeforeSwitchIn', pokemon);
-		this.battle.add(isDrag ? 'drag' : 'switch', pokemon, pokemon.getDetails);
+		this.battle.add(isDrag ? 'drag' : 'switch', pokemon, pokemon.getDetails, sourceEffect ? '[from] ' + sourceEffect : '');
 		pokemon.abilityOrder = this.battle.abilityOrder++;
 		if (isDrag && this.battle.gen === 2) pokemon.draggedIn = this.battle.turn;
-		if (sourceEffect) this.battle.log[this.battle.log.length - 1] += `|[from]${sourceEffect.fullname}`;
 		pokemon.previouslySwitchedIn++;
 
 		if (isDrag && this.battle.gen >= 5) {
@@ -408,7 +407,7 @@ export class BattleActions {
 		}
 		if (sourceEffect) {
 			move.sourceEffect = sourceEffect.id;
-			move.ignoreAbility = false;
+			move.ignoreAbility = (sourceEffect as ActiveMove).ignoreAbility;
 		}
 		let moveResult = false;
 
@@ -1708,7 +1707,7 @@ export class BattleActions {
 		}
 
 		// just guessing placement
-		if (pokemon.baseTypes.includes(move.type) && pokemon.terastallized) {
+		if (pokemon.getTypes(false, true).includes(move.type) && pokemon.terastallized) {
 			if (move.type === pokemon.teraType) {
 				baseDamage = this.battle.modify(baseDamage, 4 / 3);
 			} else {
@@ -1844,16 +1843,14 @@ export class BattleActions {
 	terastallize(pokemon: Pokemon) {
 		const type = pokemon.teraType;
 
-		const newSpecies = this.dex.deepClone(pokemon.species);
-		newSpecies.types = [type];
-		pokemon.setSpecies(newSpecies, this.dex.conditions.get('terastal'));
-		pokemon.baseSpecies = newSpecies;
 		this.battle.add('-terastallize', pokemon, type);
 		pokemon.terastallized = type;
 		for (const ally of pokemon.side.pokemon) {
 			ally.canTerastallize = null;
 		}
-		this.battle.add('-start', pokemon, 'typechange', pokemon.getTypes().join('/'), '[silent]');
+		this.battle.add('-start', pokemon, 'typechange', type, '[silent]');
+		pokemon.knownType = true;
+		pokemon.apparentType = type;
 		this.battle.runEvent('AfterTerastallization', pokemon);
 	}
 

@@ -385,10 +385,8 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-clearallboost|'() {
-    for (const side of this.battle.sides) {
-      for (const active of side.active) {
-        if (active) active.boosts = {};
-      }
+    for (const active of this.battle.getAllActive()) {
+      active.boosts = {};
     }
   }
 

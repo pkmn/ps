@@ -512,31 +512,38 @@ export class Battle {
     return this.field.weatherState.id;
   }
 
-  ngasActive() {
-    for (const side of this.sides) {
+  getAllActive() {
+    const pokemonList = [];
+    // Sides 3 and 4 are synced with sides 1 and 2, so they don't need to be checked
+    for (let i = 0; i < 2; i++) {
+      const side = this.sides[i];
       for (const active of side.active) {
-        if (active && !active.fainted &&
-          active.ability === 'neutralizinggas' &&
-          !active.volatiles['gastroacid']) {
-          return true;
+        if (active && !active.fainted) {
+          pokemonList.push(active);
         }
+      }
+    }
+    return pokemonList;
+  }
+
+  ngasActive() {
+    for (const active of this.getAllActive()) {
+      if (active.ability === 'neutralizinggas' && !active.volatiles['gastroacid']) {
+        return true;
       }
     }
     return false;
   }
 
-  abilityActive(abilities: ID[]) {
+  abilityActive(abilities: ID[], excludePokemon?: Pokemon | null) {
     if (this.ngasActive()) {
       abilities = abilities.filter(a => this.gen.abilities.get(a)?.isPermanent);
       if (!abilities.length) return false;
     }
-    for (const side of this.sides) {
-      for (const active of side.active) {
-        if (active && !active.fainted &&
-          abilities.includes(active.ability) &&
-          !active.volatiles['gastroacid']) {
-          return true;
-        }
+    for (const active of this.getAllActive()) {
+      if (active === excludePokemon) continue;
+      if (abilities.includes(active.ability) && !active.volatiles['gastroacid']) {
+        return true;
       }
     }
     return false;

@@ -846,8 +846,11 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	chillyreception: {
 		name: "Chilly Reception",
-		desc: "Snow begins. If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
-		shortDesc: "Snowscape begins. User switches out.",
+		desc: "Starts Snow. The user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+		shortDesc: "Starts Snow. User switches out.",
+
+		// TODO needs to be implemented
+		activate: "  [POKEMON] is preparing to tell a chillingly bad joke!",
 	},
 	chipaway: {
 		name: "Chip Away",
@@ -3671,7 +3674,9 @@ export const MovesText: {[k: string]: MoveText} = {
 	makeitrain: {
 		name: "Make It Rain",
 		desc: "Lowers the user's Special Attack by 1 stage.",
-		shortDesc: "Lowers the user's Sp. Atk by 1.",
+		shortDesc: "Lowers the user's Sp. Atk by 1. Scatters coins.",
+
+		activate: "#payday",
 	},
 	maliciousmoonsault: {
 		name: "Malicious Moonsault",
@@ -5463,6 +5468,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		name: "Shed Tail",
 		desc: "The user takes 1/2 of its maximum HP, rounded down, and creates a substitute. The user then switches out, passing the substitute to whichever Pokemon is switched in.",
 		shortDesc: "User takes 1/2 its max HP to pass a substitute.",
+
+		alreadyStarted: "#substitute",
+		fail: "#substitute",
 	},
 	sheercold: {
 		name: "Sheer Cold",

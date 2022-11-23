@@ -2877,7 +2877,7 @@
     },
     "decidueyehisui": {
       "inherit": true,
-      "abilities": {"0": "Overgrow", "H": "Scrappy"}
+      "abilities": {"0": "Overgrow", "H": "Long Reach"}
     },
     "zacian": {
       "inherit": true,
@@ -20866,7 +20866,7 @@
         "spd": 95,
         "spe": 60
       },
-      "abilities": {"0": "Overgrow", "H": "Long Reach"},
+      "abilities": {"0": "Overgrow", "H": "Scrappy"},
       "weightkg": 37,
       "prevo": "Dartrix",
       "evoLevel": 36,
@@ -27409,7 +27409,7 @@
       "types": ["Grass", "Dark"],
       "gender": "N",
       "baseStats": {
-        "hp": 115,
+        "hp": 111,
         "atk": 127,
         "def": 99,
         "spa": 79,
@@ -27632,8 +27632,8 @@
       "baseStats": {
         "hp": 155,
         "atk": 110,
-        "def": 130,
-        "spa": 50,
+        "def": 125,
+        "spa": 55,
         "spd": 80,
         "spe": 45
       },

@@ -6109,13 +6109,13 @@
       "pp": 10,
       "priority": 0,
       "flags": {},
-      "selfSwitch": true,
       "weather": "snow",
+      "selfSwitch": true,
       "secondary": null,
       "target": "all",
       "type": "Ice",
-      "desc": "Snow begins. If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
-      "shortDesc": "Snowscape begins. User switches out."
+      "desc": "Starts Snow. The user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+      "shortDesc": "Starts Snow. User switches out."
     },
     "chipaway": {
       "num": 498,
@@ -12412,7 +12412,7 @@
       "target": "allAdjacentFoes",
       "type": "Steel",
       "desc": "Lowers the user's Special Attack by 1 stage.",
-      "shortDesc": "Lowers the user's Sp. Atk by 1."
+      "shortDesc": "Lowers the user's Sp. Atk by 1. Scatters coins."
     },
     "maliciousmoonsault": {
       "num": 696,

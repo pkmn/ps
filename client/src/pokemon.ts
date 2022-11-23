@@ -472,10 +472,11 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
           // Hardcode for moves without a target in singles
           foeTargets.push(this.side.foe.active[0]);
         } else if (ffa.includes(moveTarget)) {
-          // We loop through all sides here for FFA
-          for (const side of this.side.battle.sides) {
-            if (side === this.side || side === this.side.ally) continue;
-            for (const active of side.active) {
+          for (const active of this.side.battle.getAllActive()) {
+            if (active === this) continue;
+            // Pressure affects allies in gen 3 and 4
+            if (this.side.battle.gen.num <= 4 ||
+                (active.side !== this.side && active.side.ally !== this.side)) {
               foeTargets.push(active);
             }
           }
