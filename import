@@ -780,7 +780,7 @@ const changes = async (where, last, now, repo) => ({
     // The test files require paths are made with PS's build layout in mind - correct that here
     await replace(path.join(sim, 'test'), [{
       // eslint-disable-next-line no-useless-escape
-      regex: new RegExp(`(require\(.*?)((?<!build/)sim)(.*?\))`, 'g'),
+      regex: new RegExp(`(require\\\(.*?)((?<!build\\\/)sim)(.*?\\\))`, 'g'),
       replace: `$1build/cjs/sim$3`,
     }]);
 
