@@ -49,6 +49,22 @@ const tree = root => {
   return leaves;
 };
 
+// https://github.com/GoogleChromeLabs/json-parse-benchmark
+// https://vitejs.dev/config/shared-options.html#json-stringify
+// https://github.com/vitejs/vite/blob/7d24b5f5/packages/vite/src/node/plugins/json.ts#L52-L59
+const jsonPlugin = {
+  name: 'json',
+  setup(build) {
+    build.onLoad({ filter: /\.json$/ }, async (args) => {
+      const raw = await fs.promises.readFile(args.path, 'utf8');
+      const contents = `export default JSON.parse(${JSON.stringify(
+        JSON.stringify(JSON.parse(raw))
+      )})`;
+      return { contents, loader: 'ts' };
+    });
+  },
+};
+
 (async () => {
   const pkg = path.basename(cwd);
 
@@ -115,7 +131,8 @@ const tree = root => {
     format: ['cjs', 'esm'],
     sourcemap: true,
     splitting: true,
-    dts: true
+    dts: true,
+    esbuildPlugins: [jsonPlugin],
   });
 
   // Use esbuild directly for minified IIFE build to be able to rewrite
