@@ -258,6 +258,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			// Disable and Selfdestruct/Explosion boost rage, regardless of whether they miss/fail.
 			if (target.boosts.atk < 6 && (move.selfdestruct || move.id === 'disable') && target.volatiles['rage']) {
 				this.battle.boost({atk: 1}, target, pokemon, this.dex.conditions.get('rage'));
+				this.battle.hint(`In Gen 1, using ${move.name} causes the target to build Rage, ` +
+				`even if it misses or fails`, true);
 			}
 
 			// Go ahead with results of the used move.
@@ -282,6 +284,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			if (hitResult === false) {
 				this.battle.attrLastMove('[miss]');
 				this.battle.add('-miss', pokemon);
+				if (move.selfdestruct) {
+					this.battle.faint(pokemon, pokemon, move);
+				}
 				return false;
 			}
 
@@ -619,8 +624,15 @@ export const Scripts: ModdedBattleScriptsData = {
 						// That means that a move that does not share the type of the target can status it.
 						// If a move that was not fire-type would exist on Gen 1, it could burn a Pokémon.
 						if (!(secondary.status && ['par', 'brn', 'frz'].includes(secondary.status) && target && target.hasType(move.type))) {
-							if (secondary.chance === undefined || this.battle.randomChance(Math.ceil(secondary.chance * 256 / 100), 256)) {
+							if (secondary.chance === undefined) {
 								this.moveHit(target, pokemon, move, secondary, true, isSelf);
+							} else {
+								let secondaryChance = Math.ceil(secondary.chance * 256 / 100);
+								// If the secondary effect is confusion, the numerator should be decreased by 1 (10% = 25/256 not 26/256).
+								if (secondary?.volatileStatus === 'confusion') secondaryChance--;
+								if (this.battle.randomChance(secondaryChance, 256)) {
+									this.moveHit(target, pokemon, move, secondary, true, isSelf);
+								}
 							}
 						}
 					}

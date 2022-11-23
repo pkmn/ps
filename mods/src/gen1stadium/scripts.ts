@@ -132,6 +132,7 @@ export const Scripts: ModdedBattleScriptsData = {
 
 					// If target fainted
 					if (target && target.hp <= 0) {
+						delete pokemon.volatiles['partialtrappinglock'];
 						// We remove screens
 						target.side.removeSideCondition('reflect');
 						target.side.removeSideCondition('lightscreen');
@@ -248,6 +249,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			if (hitResult === false) {
 				this.battle.attrLastMove('[miss]');
 				this.battle.add('-miss', pokemon);
+				if (move.selfdestruct) {
+					this.battle.faint(pokemon, pokemon, move);
+				}
 				return false;
 			}
 

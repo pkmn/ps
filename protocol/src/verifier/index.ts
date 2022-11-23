@@ -36,7 +36,7 @@ const REASONS: Protocol.Reason[] = [...STATUSES, 'partiallytrapped', 'flinch', '
 const BOOL_KWARGS = new Set<Protocol.BattleArgsWithKWArgType>([
   'broken', 'consumed', 'damage', 'eat', 'fail', 'fatigue', 'forme', 'heavy', 'miss', 'msg',
   'notarget', 'ohko', 'silent', 'still', 'thaw', 'upkeep', 'weak', 'weaken', 'zeffect', 'already',
-  'identify', 'interrupt', 'multiple', 'partiallytrapped', 'prepare',
+  'identify', 'interrupt', 'multiple', 'partiallytrapped', 'prepare', 'fromitem',
 ]);
 const ABILITY_KWARGS: Protocol.BattleArgsWithKWArgType[] = ['ability', 'ability2'];
 const MOVE_KWARGS: Protocol.BattleArgsWithKWArgType[] = ['block'];
