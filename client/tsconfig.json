@@ -1,7 +1,6 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "resolveJsonModule": true,
     "noFallthroughCasesInSwitch": false,
     "tsBuildInfoFile": ".tsbuildinfo",
     "lib": ["es6", "es2016.array.include", "es2017.object"]
