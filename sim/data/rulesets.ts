@@ -15,15 +15,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			'Min Source Gen = 9',
 		],
 	},
-	standardnext: {
-		effectType: 'ValidatorRule',
-		name: 'Standard NEXT',
-		desc: "The standard ruleset for the NEXT mod",
-		ruleset: [
-			'+Unreleased', 'Sleep Clause Mod', 'Species Clause', 'Nickname Clause', 'OHKO Clause', 'HP Percentage Mod', 'Cancel Mod',
-		],
-		banlist: ['Soul Dew'],
-	},
 	flatrules: {
 		effectType: 'ValidatorRule',
 		name: 'Flat Rules',
@@ -70,15 +61,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			'Min Source Gen = 9',
 		],
 	},
-	standardoms: {
-		effectType: 'ValidatorRule',
-		name: 'Standard OMs',
-		desc: "The standard ruleset for all Smogon OMs (Almost Any Ability, STABmons, etc.)",
-		ruleset: [
-			'Obtainable', 'Team Preview', 'Species Clause', 'Nickname Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Endless Battle Clause', 'HP Percentage Mod', 'Cancel Mod', 'Overflow Stat Mod',
-			// 'Min Source Gen = 9', - crashes for some reason
-		],
-	},
 	standardnatdex: {
 		effectType: 'ValidatorRule',
 		name: 'Standard NatDex',
@@ -108,15 +90,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 				return [`${set.name}'s item ${item.name} does not exist in Gen ${this.dex.gen}.`];
 			}
 		},
-	},
-	draft: {
-		effectType: 'ValidatorRule',
-		name: 'Draft',
-		desc: "The custom Draft League ruleset",
-		ruleset: [
-			'Obtainable', '+Unreleased', '+CAP', 'Team Preview', 'Sleep Clause Mod', 'OHKO Clause', 'Evasion Moves Clause', 'Endless Battle Clause', 'HP Percentage Mod', 'Cancel Mod',
-		],
-		// timer: {starting: 60 * 60, grace: 0, addPerTurn: 10, maxPerTurn: 100, timeoutAutoChoose: true},
 	},
 	obtainable: {
 		effectType: 'ValidatorRule',
@@ -494,32 +467,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 	},
-	doubleitemclause: {
-		effectType: 'ValidatorRule',
-		name: 'Double Item Clause',
-		desc: "Prevents teams from having more than two Pok&eacute;mon with the same item",
-		onBegin() {
-			this.add('rule', 'Double Item Clause: Limit two of each item');
-		},
-		onValidateTeam(team) {
-			const itemTable: {[k: string]: number} = {};
-			for (const set of team) {
-				const item = this.toID(set.item);
-				if (!item) continue;
-				if (item in itemTable) {
-					if (itemTable[item] >= 2) {
-						return [
-							`You are limited to two of each item by Double Item Clause.`,
-							`(You have more than two ${this.dex.items.get(item).name})`,
-						];
-					}
-					itemTable[item]++;
-				} else {
-					itemTable[item] = 1;
-				}
-			}
-		},
-	},
 	abilityclause: {
 		effectType: 'ValidatorRule',
 		name: 'Ability Clause',
@@ -843,29 +790,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			this.add('rule', 'CFZ Clause: Crystal-free Z-Moves are banned');
 		},
 	},
-	zmoveclause: {
-		effectType: 'ValidatorRule',
-		name: 'Z-Move Clause',
-		desc: "Bans Pok&eacute;mon from holding Z-Crystals",
-		onValidateSet(set) {
-			const item = this.dex.items.get(set.item);
-			if (item.zMove) return [`${set.name || set.species}'s item ${item.name} is banned by Z-Move Clause.`];
-		},
-		onBegin() {
-			this.add('rule', 'Z-Move Clause: Z-Moves are banned');
-		},
-	},
-	notfullyevolved: {
-		effectType: 'ValidatorRule',
-		name: 'Not Fully Evolved',
-		desc: "Bans Pok&eacute;mon that are fully evolved or can't evolve",
-		onValidateSet(set) {
-			const species = this.dex.species.get(set.species);
-			if (!species.nfe) {
-				return [set.species + " cannot evolve."];
-			}
-		},
-	},
 	hppercentagemod: {
 		effectType: 'Rule',
 		name: 'HP Percentage Mod',
@@ -1097,23 +1021,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 	},
-	inversemod: {
-		effectType: 'Rule',
-		name: 'Inverse Mod',
-		desc: "The mod for Inverse Battle which inverts the type effectiveness chart; weaknesses become resistances, while resistances and immunities become weaknesses",
-		onNegateImmunity: false,
-		onBegin() {
-			this.add('rule', 'Inverse Mod: Weaknesses become resistances, while resistances and immunities become weaknesses.');
-		},
-		onEffectivenessPriority: 1,
-		onEffectiveness(typeMod, target, type, move) {
-			// The effectiveness of Freeze Dry on Water isn't reverted
-			if (move && move.id === 'freezedry' && type === 'Water') return;
-			if (move && !this.dex.getImmunity(move, type)) return 1;
-			return -typeMod;
-		},
-	},
-
 	minsourcegen: {
 		effectType: 'ValidatorRule',
 		name: "Min Source Gen",
@@ -1127,7 +1034,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 	},
-
 	stabmonsmovelegality: {
 		effectType: 'ValidatorRule',
 		name: 'STABmons Move Legality',
@@ -1175,27 +1081,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 				if (moveTypes.some(m => speciesTypes.includes(m))) return null;
 			}
 			return this.checkCanLearn(move, species, setSources, set);
-		},
-	},
-	camomonsmod: {
-		effectType: 'Rule',
-		name: 'Camomons Mod',
-		desc: `Pok&eacute;mon have their types set to match their first two moves.`,
-		onBegin() {
-			this.add('rule', 'Camomons Mod: Pok\u00e9mon have their types set to match their first two moves.');
-		},
-		onModifySpeciesPriority: 2,
-		onModifySpecies(species, target, source, effect) {
-			if (!target) return; // Chat command
-			if (effect && ['imposter', 'transform'].includes(effect.id)) return;
-			const types = [...new Set(target.baseMoveSlots.slice(0, 2).map(move => this.dex.moves.get(move.id).type))];
-			return {...species, types: types};
-		},
-		onSwitchIn(pokemon) {
-			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
-		},
-		onAfterMega(pokemon) {
-			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
 		},
 	},
 	allowtradeback: {
@@ -1263,52 +1148,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 				}
 				formeTable.add(species.name);
 			}
-		},
-	},
-	scalemonsmod: {
-		effectType: 'Rule',
-		name: 'Scalemons Mod',
-		desc: "Every Pok&eacute;mon's stats, barring HP, are scaled to give them a BST as close to 600 as possible",
-		onBegin() {
-			this.add('rule', 'Scalemons Mod: Every Pokemon\'s stats, barring HP, are scaled to come as close to a BST of 600 as possible');
-		},
-		onModifySpeciesPriority: 1,
-		onModifySpecies(species) {
-			const newSpecies = this.dex.deepClone(species);
-			const bstWithoutHp: number = newSpecies.bst - newSpecies.baseStats['hp'];
-			const scale = 600 - newSpecies.baseStats['hp'];
-			newSpecies.bst = newSpecies.baseStats['hp'];
-			for (const stat in newSpecies.baseStats) {
-				if (stat === 'hp') continue;
-				newSpecies.baseStats[stat] = this.clampIntRange(newSpecies.baseStats[stat] * scale / bstWithoutHp, 1, 255);
-				newSpecies.bst += newSpecies.baseStats[stat];
-			}
-			return newSpecies;
-		},
-	},
-	teamtypepreview: {
-		effectType: 'Rule',
-		name: 'Team Type Preview',
-		desc: "Allows each player to see the Pok&eacute;mon on their opponent's team and those Pok&eacute;mon's types before they choose their lead Pok&eacute;mon",
-		onTeamPreview() {
-			this.add('clearpoke');
-			for (const side of this.sides) {
-				for (const pokemon of side.pokemon) {
-					const details = pokemon.details.replace(', shiny', '')
-						.replace(/(Arceus|Gourgeist|Pumpkaboo|Silvally|Urshifu)(-[a-zA-Z?-]+)?/g, '$1-*');
-					this.add('poke', pokemon.side.id, details, '');
-				}
-				let buf = 'raw|';
-				for (const pokemon of side.pokemon) {
-					if (!buf.endsWith('|')) buf += '/</span>&#8203;';
-					buf += `<span style="white-space:nowrap"><psicon pokemon="${pokemon.species.id}" />`;
-					for (const type of pokemon.species.types) {
-						buf += `<psicon type="${type}" /> `;
-					}
-				}
-				this.add(`${buf}</span>`);
-			}
-			this.makeRequest('teampreview');
 		},
 	},
 	aaarestrictedabilities: {
@@ -1515,64 +1354,5 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: "Nintendo Cup 1997 Move Legality",
 		desc: "Bans move combinations on Pok\u00e9mon that weren't legal in Nintendo Cup 1997.",
 		// Implemented in mods/gen1jpn/rulesets.ts
-	},
-	godlygiftmod: {
-		effectType: 'Rule',
-		name: "Godly Gift Mod",
-		onValidateTeam(team) {
-			const gods = new Set<string>();
-			for (const set of team) {
-				let species = this.dex.species.get(set.species);
-				if (typeof species.battleOnly === 'string') species = this.dex.species.get(species.battleOnly);
-				if (set.item && this.dex.items.get(set.item).megaStone) {
-					const item = this.dex.items.get(set.item);
-					if (item.megaEvolves === species.baseSpecies) {
-						species = this.dex.species.get(item.megaStone);
-					}
-				}
-				if (
-					['ag', 'uber'].includes(this.toID(this.ruleTable.has('standardnatdex') ? species.natDexTier : species.tier)) ||
-					this.toID(set.ability) === 'powerconstruct'
-				) {
-					gods.add(species.name);
-				}
-			}
-			if (gods.size > 1) {
-				return [`You have too many Gods.`, `(${Array.from(gods).join(', ')} are Gods.)`];
-			}
-		},
-		onModifySpeciesPriority: 3,
-		onModifySpecies(species, target, source) {
-			if (source || !target?.side) return;
-			const god = target.side.team.find(set => {
-				let godSpecies = this.dex.species.get(set.species);
-				const isNatDex = this.format.ruleTable?.has('standardnatdex');
-				const validator = this.dex.formats.getRuleTable(
-					this.dex.formats.get(`gen${this.gen}${isNatDex && this.gen >= 8 ? 'nationaldex' : 'ou'}`)
-				);
-				if (this.toID(set.ability) === 'powerconstruct') {
-					return true;
-				}
-				if (set.item) {
-					const item = this.dex.items.get(set.item);
-					if (item.megaEvolves === set.species) godSpecies = this.dex.species.get(item.megaStone);
-				}
-				const isBanned = validator.isBannedSpecies(godSpecies);
-				return isBanned;
-			}) || target.side.team[0];
-			const stat = Dex.stats.ids()[target.side.team.indexOf(target.set)];
-			const newSpecies = this.dex.deepClone(species);
-			let godSpecies = this.dex.species.get(god.species);
-			if (typeof godSpecies.battleOnly === 'string') {
-				godSpecies = this.dex.species.get(godSpecies.battleOnly);
-			}
-			newSpecies.bst -= newSpecies.baseStats[stat];
-			newSpecies.baseStats[stat] = godSpecies.baseStats[stat];
-			if (this.gen === 1 && (stat === 'spa' || stat === 'spd')) {
-				newSpecies.baseStats['spa'] = newSpecies.baseStats['spd'] = godSpecies.baseStats[stat];
-			}
-			newSpecies.bst += newSpecies.baseStats[stat];
-			return newSpecies;
-		},
 	},
 };

@@ -10,7 +10,8 @@
   "ignorePatterns": [
     "node_modules/",
     "build/",
-    "sim/global-variables.d.ts"
+    "sim/global-variables.d.ts",
+    "config/formats.ts"
  ],
   "env": {
     "es6": true,

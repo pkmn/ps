@@ -1,6 +1,6 @@
 'use strict';
 
-const assert = require('./../assert');
+const assert = require('../assert');
 
 describe('Rulesets', function () {
 	it('should not contain unused rules', function () {

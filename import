@@ -18,6 +18,7 @@
 const child_process = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const util = require('util');
 
 const stringify = require('json-stringify-pretty-compact');
 
@@ -408,9 +409,8 @@ const OVERRIDDEN = new Set([
   '.eslintrc-types.json',
   '.eslintrc',
   '.tsbuildinfo',
+  'config/formats.ts',
   'data/index.ts',
-  'data/rulesets.ts',
-  'data/mods/gen1/rulesets.ts',
   'data/mods/gen1/index.ts',
   'data/mods/gen2/index.ts',
   'data/mods/gen3/index.ts',
@@ -419,6 +419,9 @@ const OVERRIDDEN = new Set([
   'data/mods/gen6/index.ts',
   'data/mods/gen7/index.ts',
   'data/mods/gen8/index.ts',
+  'data/rulesets.ts',
+  'data/mods/gen1/rulesets.ts',
+  'data/mods/gen8/rulesets.ts',
   'lib/index.ts',
   'lib/streams.ts',
   'package-lock.json', // double sigh...
@@ -432,7 +435,7 @@ const OVERRIDDEN = new Set([
   'sim/teams.ts',
   'sim/dex-formats.ts',
   'test/main.js',
-  'test/sim/rules.js',
+  'test/sim/rulesets.js',
   'test/sim/team-validator.js',
   'tsconfig.json',
 ]);
@@ -459,6 +462,7 @@ const SKIP_TESTS = new Set([
   'test/sim/prng.js',
   'test/sim/state.js',
   'test/sim/tools/multi-random-runner.js',
+  'test/sim/misc/inversebattle.js',
 ]);
 // Any file that hasn't been 'OVERRIDDEN' we need to copy over from PS
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));
@@ -771,6 +775,32 @@ const changes = async (where, last, now, repo) => ({
       const data = basename === 'aliases.json' ? DEX[basename][9] : DEX[basename];
       fs.writeFileSync(path.join(dex, 'data', basename), stringify(data));
     }
+
+    // Prune config/formats.ts
+    const formats = [];
+    const remove = ['rated', 'challengeShow', 'searchShow', 'tournamentShow', 'threads', 'desc'];
+    for (const format of require(path.resolve(ps, '.config-dist/formats.js')).Formats) {
+      if (!(format.mod && /^gen\d/.test(format.mod))) continue;
+      if (format.ruleset.some(r => r.includes('Draft')) ||
+        format.ruleset.includes('Standard OMs')) {
+        continue;
+      }
+      if (Object.values(format).some(v => typeof v === 'function')) continue;
+      if (format.battle && !format.name.includes('Custom Game')) continue;
+      for (const field of remove) delete format[field];
+      formats.push(format);
+    }
+    fs.writeFileSync(path.resolve(sim, 'config/formats.ts'),
+      `export const Formats: FormatList = ${util.inspect(formats, {
+        colors: false,
+        depth: Infinity,
+        maxArrayLength: Infinity,
+        maxStringLength: Infinity,
+        breakLength: 100,
+      }).replaceAll(
+        'trunc: [Function: trunc]',
+        'trunc: Math.trunc'
+      )};`);
 
     // Mirror `sim/global-types.ts` to export all of its types (making it a module). Its possible
     // that ///-references could also be added to the data/ files and *nothing* then relies on
