@@ -409,6 +409,8 @@ const OVERRIDDEN = new Set([
   '.eslintrc',
   '.tsbuildinfo',
   'data/index.ts',
+  'data/rulesets.ts',
+  'data/mods/gen1/rulesets.ts',
   'data/mods/gen1/index.ts',
   'data/mods/gen2/index.ts',
   'data/mods/gen3/index.ts',
@@ -430,6 +432,7 @@ const OVERRIDDEN = new Set([
   'sim/teams.ts',
   'sim/dex-formats.ts',
   'test/main.js',
+  'test/sim/rules.js',
   'test/sim/team-validator.js',
   'tsconfig.json',
 ]);
