@@ -30,7 +30,7 @@
   "scripts": {
     "compile": "tsc -p .",
     "build": "npm run compile && node ../build",
-    "test": "mocha test/main.js test/sim/**/*.js -R dot -u bdd --exit",
+    "test": "mocha test/main.js test/sim/*.js test/sim/**/*.js -R dot -u bdd --exit",
     "lint": "eslint . --cache --ext .js,.ts",
     "pretest": "npm run build",
     "posttest": "npm run lint"

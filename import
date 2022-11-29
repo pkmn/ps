@@ -21,6 +21,8 @@ const path = require('path');
 
 const stringify = require('json-stringify-pretty-compact');
 
+const debug = process.argv[2] === '--debug';
+
 const exec = async (cmd, cwd = __dirname) => new Promise(resolve => {
   child_process.exec(cmd, {cwd}, (error, stdout, stderr) => {
     resolve([error ? error.code : 0, stdout, stderr]);
@@ -46,16 +48,16 @@ const tree = root => {
   return leaves;
 };
 
-const replace = async (file, replacements) => {
+const replace = async (file, replacements, ignore) => {
   const stats = await fs.promises.lstat(file);
   if (stats.isSymbolicLink()) return;
   if (stats.isFile()) {
-    if (!file.endsWith('.js')) return;
+    if (!file.endsWith('.js') || ignore.has(file)) return;
     let text = await fs.promises.readFile(file, "utf8");
     let anyMatch = false;
     for (let i = 0; i < replacements.length; i++) {
       anyMatch = anyMatch || text.match(replacements[i].regex);
-      if (anyMatch) text = text.replace(replacements[i].regex, replacements[i].replace);
+      if (anyMatch) text = text.replace(replacements[i].regex, replacements[i].replace, ignore);
     }
     if (!anyMatch) return;
     await fs.promises.writeFile(file, text);
@@ -63,7 +65,7 @@ const replace = async (file, replacements) => {
     const files = await fs.promises.readdir(file);
     const all = [];
     for (let i = 0; i < files.length; i++) {
-      all.push(replace(path.join(file, files[i]), replacements));
+      all.push(replace(path.join(file, files[i]), replacements, ignore));
     }
     await Promise.all(all);
   }
@@ -428,6 +430,7 @@ const OVERRIDDEN = new Set([
   'sim/teams.ts',
   'sim/dex-formats.ts',
   'test/main.js',
+  'test/sim/team-validator.js',
   'tsconfig.json',
 ]);
 const MOD_OVERRIDDEN = new Set([
@@ -591,7 +594,7 @@ const changes = async (where, last, now, repo) => ({
   try {
     // `git -C vendor/pokemon-showdown pull origin master` etc works for individual submodules, but
     // this command will update both repositories at once
-    await execOrDie('git submodule update --remote --rebase', __dirname, IGNORE_STDERR);
+    if (!debug) await execOrDie('git submodule update --remote --rebase', __dirname, IGNORE_STDERR);
     const now = {ps: await HEAD(ps), psc: await HEAD(psc)};
 
     const changed = {
@@ -651,7 +654,7 @@ const changes = async (where, last, now, repo) => ({
     }
 
     for (const file of tree(path.join(ps, 'test/sim')).map(f => f.slice(ps.length + 1))) {
-      if (SKIP_TESTS.has(file)) continue;
+      if (OVERRIDDEN.has(file) || SKIP_TESTS.has(file)) continue;
       fs.copyFileSync(path.resolve(ps, file), path.resolve(sim, file));
     }
 
@@ -778,11 +781,16 @@ const changes = async (where, last, now, repo) => ({
     fs.writeFileSync(path.resolve(sim, 'sim/exported-global-types.ts'), exported.join('\n'));
 
     // The test files require paths are made with PS's build layout in mind - correct that here
+    const ignore = new Set([...Array.from(OVERRIDDEN).map(f => path.join(sim, f))]);
     await replace(path.join(sim, 'test'), [{
       // eslint-disable-next-line no-useless-escape
       regex: new RegExp(`(require\\\(.*?)((?<!build\\\/)sim)(.*?\\\))`, 'g'),
       replace: `$1build/cjs/sim$3`,
-    }]);
+    }, {
+      // eslint-disable-next-line no-useless-escape
+      regex: new RegExp(`(require\\\(.*?)((?<!build\\\/)lib)(.*?\\\))`, 'g'),
+      replace: `$1build/cjs/lib$3`,
+    }], ignore);
 
     const messages =
       `-m "Import smogon/pokemon-showdown@${now.ps}" ` +
