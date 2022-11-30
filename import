@@ -809,7 +809,7 @@ const changes = async (where, last, now, repo) => ({
       `export const Formats: FormatList = ${inspect(formats).replaceAll(
         'trunc: [Function: trunc]',
         'trunc: Math.trunc'
-      )};`);
+      )};\n`);
 
     // Decompose learnsets into learnsets.ts with just the learnset and legality.ts with the rest
     for (const dir of ['mods/gen2/', 'mods/gen6/', '/']) {
@@ -824,9 +824,9 @@ const changes = async (where, last, now, repo) => ({
         }
       }
       fs.writeFileSync(path.resolve(sim, `data/${dir}learnsets.ts`),
-        `export const Learnsets: {[k: string]: ModdedLearnsetData} = ${inspect(learnsets)};`);
+        `export const Learnsets: {[k: string]: ModdedLearnsetData} = ${inspect(learnsets)};\n`);
       fs.writeFileSync(path.resolve(sim, `data/${dir}legality.ts`),
-        `export const Legality: {[k: string]: ModdedLearnsetData} = ${inspect(legality)};`);
+        `export const Legality: {[k: string]: ModdedLearnsetData} = ${inspect(legality)};\n`);
     }
 
     // Mirror `sim/global-types.ts` to export all of its types (making it a module). Its possible
