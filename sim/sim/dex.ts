@@ -35,6 +35,12 @@ import * as gen7 from '../data/mods/gen7';
 import * as gen8 from '../data/mods/gen8';
 import * as gen9 from '../data';
 
+import * as formats9 from '../data/formats-data';
+
+import * as learn2 from '../data/mods/gen2/learnsets';
+import * as learn6 from '../data/mods/gen6/learnsets';
+import * as learn9 from '../data/learnsets';
+
 import {AbilitiesText} from '../data/text/abilities';
 import {ItemsText} from '../data/text/items';
 import {MovesText} from '../data/text/moves';
@@ -45,7 +51,12 @@ import * as Data from './dex-data';
 
 const BASE_MOD = 'gen9' as ID;
 
-const dexData = {gen1, gen2, gen3, gen4, gen5, gen6, gen7, gen8, gen9};
+const dexData = {
+	gen1, gen2: {...gen2, ...learn2}, gen3,
+	gen4, gen5, gen6: {...gen6, ...learn6},
+	gen7, gen8, gen9: {...gen9, ...formats9, ...learn9},
+};
+
 const dexes: {[mod: string]: ModdedDex} = Object.create(null);
 
 type DataType =
