@@ -17,6 +17,7 @@ import {
 	ItemText,
 	LearnsetData,
 	ModdedBattleScriptsData,
+	ModdedLearnsetData,
 	Move,
 	MoveData,
 	MoveText,
@@ -41,6 +42,10 @@ import * as learn2 from '../data/mods/gen2/learnsets';
 import * as learn6 from '../data/mods/gen6/learnsets';
 import * as learn9 from '../data/learnsets';
 
+import * as legality2 from '../data/mods/gen2/legality';
+import * as legality6 from '../data/mods/gen6/legality';
+import * as legality9 from '../data/legality';
+
 import {AbilitiesText} from '../data/text/abilities';
 import {ItemsText} from '../data/text/items';
 import {MovesText} from '../data/text/moves';
@@ -51,10 +56,19 @@ import * as Data from './dex-data';
 
 const BASE_MOD = 'gen9' as ID;
 
+function merge(learnsets: {Learnsets: ModdedLearnsetData}, legality: {Legality: ModdedLearnsetData}) {
+	const merged: {Learnsets: ModdedLearnsetData} = {...learnsets};
+	for (const id in legality.Legality) {
+		// @ts-ignore
+		merged.Learnsets[id] = {...merged.Learnsets[id], ...legality.Legality[id]};
+	}
+	return merged;
+}
+
 const dexData = {
-	gen1, gen2: {...gen2, ...learn2}, gen3,
-	gen4, gen5, gen6: {...gen6, ...learn6},
-	gen7, gen8, gen9: {...gen9, ...formats9, ...learn9},
+	gen1, gen2: {...gen2, ...merge(learn2, legality2)}, gen3,
+	gen4, gen5, gen6: {...gen6, ...merge(learn6, legality6)},
+	gen7, gen8, gen9: {...gen9, ...formats9, ...merge(learn9, legality9)},
 };
 
 const dexes: {[mod: string]: ModdedDex} = Object.create(null);

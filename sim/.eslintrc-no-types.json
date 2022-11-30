@@ -11,7 +11,9 @@
     "node_modules/",
     "build/",
     "sim/global-variables.d.ts",
-    "config/formats.ts"
+    "config/formats.ts",
+    "learnsets.ts",
+    "legality.ts"
  ],
   "env": {
     "es6": true,

@@ -380,8 +380,8 @@ const REWRITES = {
 
 // All the files in our sim/ directory, excluding build/ & node_modules/ & test/sim/
 const FILES = new Set(tree(sim)
-  .filter(f => !f.startsWith('test/sim'))
-  .map(m => m.slice(sim.length + 1)));
+    .map(m => m.slice(sim.length + 1))
+    .filter(f => !f.startsWith('test/sim')));
 const MOD_FILES =
   new Set(tree(path.join(mods, 'src')).map(m => `data/mods/${m.slice(mods.length + 5)}`));
 
@@ -422,6 +422,12 @@ const OVERRIDDEN = new Set([
   'data/rulesets.ts',
   'data/mods/gen1/rulesets.ts',
   'data/mods/gen8/rulesets.ts',
+  'data/learnsets.ts',
+  'data/mods/gen2/learnsets.ts',
+  'data/mods/gen6/learnsets.ts',
+  'data/legality.ts',
+  'data/mods/gen2/legality.ts',
+  'data/mods/gen6/legality.ts',
   'lib/index.ts',
   'lib/streams.ts',
   'package-lock.json', // double sigh...
@@ -776,6 +782,15 @@ const changes = async (where, last, now, repo) => ({
       fs.writeFileSync(path.join(dex, 'data', basename), stringify(data));
     }
 
+    const inspect = s =>
+      util.inspect(s, {
+        colors: false,
+        depth: Infinity,
+        maxArrayLength: Infinity,
+        maxStringLength: Infinity,
+        breakLength: 100,
+      });
+
     // Prune config/formats.ts
     const formats = [];
     const remove = ['rated', 'challengeShow', 'searchShow', 'tournamentShow', 'threads', 'desc'];
@@ -791,16 +806,28 @@ const changes = async (where, last, now, repo) => ({
       formats.push(format);
     }
     fs.writeFileSync(path.resolve(sim, 'config/formats.ts'),
-      `export const Formats: FormatList = ${util.inspect(formats, {
-        colors: false,
-        depth: Infinity,
-        maxArrayLength: Infinity,
-        maxStringLength: Infinity,
-        breakLength: 100,
-      }).replaceAll(
+      `export const Formats: FormatList = ${inspect(formats).replaceAll(
         'trunc: [Function: trunc]',
         'trunc: Math.trunc'
       )};`);
+
+    // Decompose learnsets into learnsets.ts with just the learnset and legality.ts with the rest
+    for (const dir of ['mods/gen2/', 'mods/gen6/', '/']) {
+      const original = require(path.resolve(ps, `.data-dist/${dir}learnsets.js`)).Learnsets;
+      const learnsets = {};
+      const legality = {};
+      for (const id in original) {
+        for (const key in original[id]) {
+          const obj = key === 'learnset' ? learnsets : legality;
+          obj[id] = obj[id] || {};
+          obj[id][key] = original[id][key];
+        }
+      }
+      fs.writeFileSync(path.resolve(sim, `data/${dir}learnsets.ts`),
+        `export const Learnsets: {[k: string]: ModdedLearnsetData} = ${inspect(learnsets)};`);
+      fs.writeFileSync(path.resolve(sim, `data/${dir}legality.ts`),
+        `export const Legality: {[k: string]: ModdedLearnsetData} = ${inspect(legality)};`);
+    }
 
     // Mirror `sim/global-types.ts` to export all of its types (making it a module). Its possible
     // that ///-references could also be added to the data/ files and *nothing* then relies on
