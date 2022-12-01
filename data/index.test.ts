@@ -220,7 +220,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         let total = 0;
         for (const gen of gens) {
           expect(Array.from(gen.moves))
-            .toHaveLength(gen.num === 9 ? 631
+            .toHaveLength(gen.num === 9 ? 607
             : gen.num === 8 ? 623 + 41 + 34 - 33
             : (total += COUNTS[gen.num - 1]));
         }
@@ -326,7 +326,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         // + Dudunsparce (1) + Palafin (1) + Maushold (1) + Squawkabilly (3) + Sinistea-Antique (1)
         // + Polteageist-Antique (1)
         formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 1 + 1;
-        expect(counts(9)).toEqual({species: 400, formes});
+        expect(counts(9)).toEqual({species: 400 + 3, formes});
       });
 
       it('formeNum', () => {

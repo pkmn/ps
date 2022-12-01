@@ -883,6 +883,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         isHidden: true,
         moves: [ 'sing', 'encore', 'celebrate', 'electroball' ],
         pokeball: 'cherishball'
+      },
+      {
+        generation: 9,
+        level: 5,
+        gender: 'M',
+        moves: [ 'fly', 'tailwhip', 'thundershock', 'quickattack' ],
+        pokeball: 'pokeball'
       }
     ],
     encounters: [
@@ -10952,6 +10959,46 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         generation: 8,
         level: 80,
         moves: [ 'astralbarrage', 'psychic', 'agility', 'gigadrain' ]
+      }
+    ],
+    eventOnly: true
+  },
+  koraidon: {
+    eventData: [
+      {
+        generation: 9,
+        level: 68,
+        nature: 'Quirky',
+        ivs: { hp: 31, atk: 31, def: 28, spa: 31, spd: 28, spe: 31 },
+        moves: [ 'flamethrower', 'collisioncourse', 'endure', 'terablast' ],
+        pokeball: 'pokeball'
+      },
+      {
+        generation: 9,
+        level: 72,
+        nature: 'Adamant',
+        ivs: { hp: 25, atk: 31, def: 25, spa: 31, spd: 25, spe: 31 },
+        moves: [ 'gigaimpact', 'bulkup', 'collisioncourse', 'flamethrower' ]
+      }
+    ],
+    eventOnly: true
+  },
+  miraidon: {
+    eventData: [
+      {
+        generation: 9,
+        level: 68,
+        nature: 'Quirky',
+        ivs: { hp: 31, atk: 31, def: 28, spa: 31, spd: 28, spe: 31 },
+        moves: [ 'powergem', 'electrodrift', 'endure', 'terablast' ],
+        pokeball: 'pokeball'
+      },
+      {
+        generation: 9,
+        level: 72,
+        nature: 'Modest',
+        ivs: { hp: 25, atk: 31, def: 25, spa: 31, spd: 25, spe: 31 },
+        moves: [ 'hyperbeam', 'charge', 'electrodrift', 'powergem' ]
       }
     ],
     eventOnly: true

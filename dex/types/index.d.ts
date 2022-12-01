@@ -89,26 +89,28 @@ export interface ItemData extends EffectData {
 
 interface MoveFlags {
   bypasssub?: 1 | 0;
+  bite?: 1 | 0;
+  bullet?: 1 | 0;
   charge?: 1 | 0;
   contact?: 1 | 0;
+  dance?: 1 | 0;
   defrost?: 1 | 0;
-  mirror?: 1 | 0;
-  allyanim?: 1 | 0;
-  recharge?: 1 | 0;
-  protect?: 1 | 0;
-  bite?: 1 | 0;
-  reflectable?: 1 | 0;
-  snatch?: 1 | 0;
-  sound?: 1 | 0;
+  distance?: 1 | 0;
   gravity?: 1 | 0;
   heal?: 1 | 0;
-  punch?: 1 | 0;
-  distance?: 1 | 0;
-  powder?: 1 | 0;
-  bullet?: 1 | 0;
+  mirror?: 1 | 0;
+  allyanim?: 1 | 0;
   nonsky?: 1 | 0;
+  powder?: 1 | 0;
+  protect?: 1 | 0;
   pulse?: 1 | 0;
-  dance?: 1 | 0;
+  punch?: 1 | 0;
+  recharge?: 1 | 0;
+  reflectable?: 1 | 0;
+  slicing?: 1 | 0;
+  snatch?: 1 | 0;
+  sound?: 1 | 0;
+  wind?: 1 | 0;
 }
 
 export interface HitEffect {

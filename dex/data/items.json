@@ -949,9 +949,21 @@
       "desc": "Evolves Pikachu into Raichu or Alolan Raichu, Eevee into Jolteon, and Eelektrik into Eelektross when used."
     }
   },
+  "8": {
+    "berryjuice": {"inherit": true, "isNonstandard": null},
+    "custapberry": {"inherit": true, "isNonstandard": null},
+    "enigmaberry": {"inherit": true, "isNonstandard": null},
+    "jabocaberry": {"inherit": true, "isNonstandard": null},
+    "keeberry": {"inherit": true, "isNonstandard": null},
+    "marangaberry": {"inherit": true, "isNonstandard": null},
+    "micleberry": {"inherit": true, "isNonstandard": null},
+    "pixieplate": {"inherit": true, "isNonstandard": null},
+    "rowapberry": {"inherit": true, "isNonstandard": null}
+  },
   "9": {
     "abilityshield": {
       "name": "Ability Shield",
+      "ignoreKlutz": true,
       "num": 1881,
       "gen": 9,
       "desc": "Holder's Ability cannot be changed by another Pokemon."
@@ -1171,6 +1183,7 @@
       "fling": {"basePower": 30},
       "num": 43,
       "gen": 2,
+      "isNonstandard": "Past",
       "desc": "Restores 20 HP when at 1/2 max HP or less. Single use."
     },
     "berrysweet": {
@@ -1535,6 +1548,7 @@
       "onFractionalPriorityPriority": -2,
       "num": 210,
       "gen": 4,
+      "isNonstandard": "Unobtainable",
       "desc": "Holder moves first in its priority bracket when at 1/4 max HP or less. Single use."
     },
     "damprock": {
@@ -1850,6 +1864,7 @@
       "naturalGift": {"basePower": 100, "type": "Bug"},
       "num": 208,
       "gen": 3,
+      "isNonstandard": "Unobtainable",
       "desc": "Restores 1/4 max HP after holder is hit by a supereffective move. Single use."
     },
     "eviolite": {
@@ -2513,6 +2528,7 @@
       "naturalGift": {"basePower": 100, "type": "Dragon"},
       "num": 211,
       "gen": 4,
+      "isNonstandard": "Unobtainable",
       "desc": "If holder is hit by a physical move, attacker loses 1/8 of its max HP. Single use."
     },
     "jawfossil": {
@@ -2545,6 +2561,7 @@
       "naturalGift": {"basePower": 100, "type": "Fairy"},
       "num": 687,
       "gen": 6,
+      "isNonstandard": "Unobtainable",
       "desc": "Raises holder's Defense by 1 stage after it is hit by a physical attack. Single use."
     },
     "kelpsyberry": {
@@ -2895,6 +2912,7 @@
       "naturalGift": {"basePower": 100, "type": "Dark"},
       "num": 688,
       "gen": 6,
+      "isNonstandard": "Unobtainable",
       "desc": "Raises holder's Sp. Def by 1 stage after it is hit by a special attack. Single use."
     },
     "marshadiumz": {
@@ -3026,6 +3044,7 @@
       "condition": {"duration": 2},
       "num": 209,
       "gen": 4,
+      "isNonstandard": "Unobtainable",
       "desc": "Holder's next move has 1.2x accuracy when at 1/4 max HP or less. Single use."
     },
     "mimikiumz": {
@@ -3330,6 +3349,7 @@
       "forcedForme": "Arceus-Fairy",
       "num": 644,
       "gen": 6,
+      "isNonstandard": "Unobtainable",
       "desc": "Holder's Fairy-type attacks have 1.2x power. Judgment is Fairy type."
     },
     "plumefossil": {
@@ -3751,6 +3771,7 @@
       "naturalGift": {"basePower": 100, "type": "Dark"},
       "num": 212,
       "gen": 4,
+      "isNonstandard": "Unobtainable",
       "desc": "If holder is hit by a special move, attacker loses 1/8 of its max HP. Single use."
     },
     "rustedshield": {

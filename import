@@ -442,7 +442,8 @@ const OVERRIDDEN = new Set([
   'sim/dex-formats.ts',
   'test/main.js',
   'test/sim/rulesets.js',
-  'test/sim/team-validator.js',
+  'test/sim/team-validator/basic.js',
+  'test/sim/team-validator/formes.js',
   'tsconfig.json',
 ]);
 const MOD_OVERRIDDEN = new Set([

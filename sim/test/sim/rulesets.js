@@ -9,7 +9,7 @@ describe('Rulesets', function () {
 			'Galar Pokedex', 'Hoenn Pokedex', 'Isle of Armor Pokedex', 'Limit One Restricted',
 			'Min Team Size', 'New Alola Pokedex', 'New Unova Pokedex', 'Obtainable Abilities',
 			'Obtainable Formes', 'Obtainable Misc', 'Obtainable Moves', 'Overflow Stat Mod',
-			'Sinnoh Pokedex', 'Sketch Gen 8 Moves', 'Stadium Items Clause',
+			'Sinnoh Pokedex', 'Sketch Post-Gen 7 Moves', 'Stadium Items Clause',
 		]);
 
 		for (const format of Dex.formats.formatsListCache) {

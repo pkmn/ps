@@ -601,6 +601,9 @@
   "reflecttype": {
     "typeChange": "  [POKEMON]'s type became the same as [SOURCE]'s type!"
   },
+  "revivalblessing": {
+    "heal": "  [POKEMON] was revived and is ready to fight again!"
+  },
   "roleplay": {
     "changeAbility": "  [POKEMON] copied [SOURCE]'s [ABILITY] Ability!"
   },
@@ -854,7 +857,6 @@
     "block": "  [POKEMON] is anchored in place with its suction cups!"
   },
   "supremeoverlord": {
-    "start": "  [POKEMON] gained strength from the fallen!",
     "activate": "  [POKEMON] gained strength from the fallen!"
   },
   "sweetveil": {

@@ -257,6 +257,16 @@ export class Handler implements Protocol.Handler {
         poke.lastItem !== fromEffect.id) {
         poke.item = fromEffect.id;
       }
+      if (fromEffect.id === 'revivalblessing') {
+        const {siden} = this.battle.parsePokemonId(args[1]);
+        const side = this.battle.sides[siden];
+        poke.fainted = false;
+        poke.status = undefined;
+        // Revived while still on the field
+        if (!side.active[poke.slot]) {
+          poke.side.replace(poke);
+        }
+      }
       if (fromEffect.id !== 'lunardance' || fromEffect.id !== 'healingwish') return;
       if (fromEffect.id === 'lunardance') {
         for (const moveSlot of poke.moveSlots) {

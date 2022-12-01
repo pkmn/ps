@@ -227,7 +227,7 @@ describe('Dex', () => {
         expect(counts(gen)).toEqual(total += COUNTS[gen - 1]);
       }
       expect(counts(8)).toBe(623 + 41 + 34 - /* GMax */ 33);
-      expect(counts(9)).toBe(631);
+      expect(counts(9)).toBe(607);
     });
 
     it('cached', () => {
@@ -323,7 +323,7 @@ describe('Dex', () => {
       // Dudunsparce (1) + Palafin (1) + Maushold (1) + Squawkabilly (3) + Sinistea-Antique (1) +
       // Polteageist-Antique (1)
       formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 1 + 1;
-      expect(counts(9)).toEqual({species: 400, formes});
+      expect(counts(9)).toEqual({species: 400 + 3, formes});
     });
 
 

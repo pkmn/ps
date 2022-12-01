@@ -26165,7 +26165,8 @@
       "abilities": {"0": "Serene Grace", "1": "Run Away", "H": "Rattled"},
       "weightkg": 39.2,
       "prevo": "Dunsparce",
-      "evoLevel": 18,
+      "evoType": "levelMove",
+      "evoMove": "Hyper Drill",
       "otherFormes": ["Dudunsparce-Three-Segment"],
       "formeOrder": ["Dudunsparce", "Dudunsparce-Three-Segment"],
       "eggGroups": ["Field"]
@@ -26187,7 +26188,8 @@
       "abilities": {"0": "Serene Grace", "1": "Run Away", "H": "Rattled"},
       "weightkg": 47.4,
       "prevo": "Dunsparce",
-      "evoLevel": 18,
+      "evoType": "levelMove",
+      "evoMove": "Hyper Drill",
       "eggGroups": ["Field"]
     },
     "tarountula": {
@@ -27076,7 +27078,7 @@
         "spe": 90
       },
       "abilities": {"0": "Scrappy", "1": "Tangled Feet", "H": "Costar"},
-      "weightkg": 379,
+      "weightkg": 37,
       "eggGroups": ["Flying"]
     },
     "klawf": {
@@ -27248,7 +27250,7 @@
         "spd": 80,
         "spe": 95
       },
-      "abilities": {"0": "Well-Baked Body"},
+      "abilities": {"0": "Well-Baked Body", "H": "Aroma Veil"},
       "weightkg": 14.9,
       "prevo": "Fidough",
       "evoLevel": 26,
@@ -27369,7 +27371,7 @@
     "gholdengo": {
       "num": 977,
       "name": "Gholdengo",
-      "types": ["Ghost", "Steel"],
+      "types": ["Steel", "Ghost"],
       "gender": "N",
       "baseStats": {
         "hp": 87,
@@ -27401,6 +27403,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 320,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "brutebonnet": {
@@ -27418,6 +27421,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 21,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "sandyshocks": {
@@ -27435,6 +27439,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 60,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "screamtail": {
@@ -27452,6 +27457,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 8,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "fluttermane": {
@@ -27469,6 +27475,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 4,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "slitherwing": {
@@ -27486,6 +27493,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 92,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "roaringmoon": {
@@ -27503,6 +27511,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 380,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "irontreads": {
@@ -27520,6 +27529,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 240,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "ironmoth": {
@@ -27537,6 +27547,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 36,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "ironhands": {
@@ -27554,6 +27565,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 380.7,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "ironjugulis": {
@@ -27571,6 +27583,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 111,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "ironthorns": {
@@ -27588,6 +27601,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 303,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "ironbundle": {
@@ -27605,6 +27619,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 11,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "ironvaliant": {
@@ -27622,6 +27637,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 35,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "tinglu": {
@@ -27799,7 +27815,7 @@
         "def": 40,
         "spa": 50,
         "spd": 40,
-        "spe": 30
+        "spe": 35
       },
       "abilities": {"0": "Flash Fire", "H": "Flame Body"},
       "weightkg": 10.5,
@@ -27822,7 +27838,7 @@
       "weightkg": 85,
       "prevo": "Charcadet",
       "evoType": "useItem",
-      "evoItem": "Malicious Armor",
+      "evoItem": "Auspicious Armor",
       "eggGroups": ["Human-Like"]
     },
     "ceruledge": {
@@ -27841,7 +27857,7 @@
       "weightkg": 62,
       "prevo": "Charcadet",
       "evoType": "useItem",
-      "evoItem": "Auspicious Armor",
+      "evoItem": "Malicious Armor",
       "eggGroups": ["Human-Like"]
     },
     "toedscool": {

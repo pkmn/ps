@@ -201,20 +201,16 @@
       "onDragOutPriority": 2,
       "onResidualPriority": -100
     },
-    "terastal": {
-      "name": "Terastal",
-      "effectType": "Terastal",
-      "noCopy": true,
-      "duration": 1
-    },
     "commanded": {
       "name": "Commanded",
       "noCopy": true,
+      "onDragOutPriority": 2,
       "onTrapPokemonPriority": -11
     },
     "commanding": {
       "name": "Commanding",
       "noCopy": true,
+      "onDragOutPriority": 2,
       "onTrapPokemonPriority": -11,
       "onInvulnerabilityPriority": 2
     },

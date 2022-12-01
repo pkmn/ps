@@ -1035,7 +1035,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	myceliummight: {
 		name: "Mycelium Might",
-		shortDesc: "This Pokemon's Status moves have lowered priority and ignore their targets' Abilities.",
+		shortDesc: "This Pokemon's Status moves go last in their priority bracket and ignore Abilities.",
 	},
 	naturalcure: {
 		name: "Natural Cure",
@@ -1759,7 +1759,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "This Pokemon's Attack and Special Attack stats are increased by 10% for each fainted teammate.",
 		shortDesc: "This Pokemon's Attack and Special Attack raise by 10% per fainted teammate.",
 
-		start: "  [POKEMON] gained strength from the fallen!",
 		activate: "  [POKEMON] gained strength from the fallen!",
 	},
 	surgesurfer: {

@@ -168,7 +168,7 @@ export class BattleActions {
 
 		// Placeholder until we have proper support
 		if (pokemon.terastallized) {
-			this.battle.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
+			this.battle.add('-start', pokemon, 'typechange', pokemon.terastallized, '[silent]');
 		}
 
 		return true;
@@ -976,7 +976,9 @@ export class BattleActions {
 		for (const [i, target] of targetsCopy.entries()) {
 			if (target && pokemon !== target) {
 				target.gotAttacked(move, moveDamage[i] as number | false | undefined, pokemon);
-				target.timesAttacked += hit - 1;
+				if (move.category !== 'Status') {
+					target.timesAttacked += hit - 1;
+				}
 			}
 		}
 
