@@ -109,7 +109,13 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
   data objects), but lazy loading only works on web with asynchronous APIs which Pokémon Showdown
   does not support. `Dex#includeMods` is a no-op.
 - **`Teams` methods delegate to [`@pkmn/sets`](../sets)**. In Pokémon Showdown this logic is copied
-  between the client and server, but in `@pkmn` has been extracted into a module.
+  between the client and server, but in `@pkmn` has been extracted into a module. However, the
+  `Teams` methods have slightly divergent behavior to Pokémon Showdown's `Teams` because of this,
+  most notably around defaults and parsing past genrations (eg. Pokémon Showdown will simply leave
+  `evs` absent when not present whereas `@pkmn/sets` will default to 0 or 252 depending on the
+  generation, but since the `Teams` API does not support a generation `evs` will always default to
+  0). Using `@pkmn/sets` directly and with the generation provided is the recommended approach to
+  avoid any inconsistencies.
 - **`dataDir` and `dataSearch`  have been removed**.
 - in order to be [`@pkmn/dex-types`](../dex/types) compatible, the **asynchronous `learnsets` API
   has been added** (though unlike like with [`@pkmn/dex`](../dex), the learnsets data is loaded at
