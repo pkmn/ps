@@ -674,10 +674,10 @@ describe('@smogon/calc', () => {
   });
 });
 
-// NOTE: this is not actually a @pkmn/data test but instead an integration test for the data layer
+// NOTE: these are not actually @pkmn/data tests but instead integration tests for the data layer
 describe('Data', () => {
   it('descriptions', () => {
-    for (let gen = 1; gen <= 8; gen++) {
+    for (let gen = 1; gen <= 9; gen++) {
       const dexDex = DATA.dex.forGen(gen);
       const simDex = DATA.sim.forGen(gen);
 
@@ -700,6 +700,27 @@ describe('Data', () => {
         const s = simDex.moves.get(id);
         expect(d.desc).toEqual(s.desc);
         expect(d.shortDesc).toEqual(s.shortDesc);
+      }
+    }
+  });
+
+  it('learnsets', async () => {
+    for (let gen = 1; gen <= 9; gen++) {
+      const dexDex = DATA.dex.forGen(gen);
+      const simDex = DATA.sim.forGen(gen);
+
+      expect(dexDex.data.Learnsets).not.toBeNull();
+      expect(simDex.data.Learnsets).not.toBeNull();
+
+      for (const id in dexDex.data.Learnsets) {
+        const d = await dexDex.learnsets.get(id);
+        const s = await simDex.learnsets.get(id);
+
+        expect(d.learnset).toEqual(s.learnset);
+        expect(d.eventData).toEqual(s.eventData);
+        expect(d.eventOnly).toEqual(s.eventOnly);
+        expect(d.encounters).toEqual(s.encounters);
+        expect(d.exists).toEqual(s.exists);
       }
     }
   });

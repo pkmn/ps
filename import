@@ -425,6 +425,7 @@ const OVERRIDDEN = new Set([
   'data/learnsets.ts',
   'data/mods/gen2/learnsets.ts',
   'data/mods/gen6/learnsets.ts',
+  'data/mods/gen8/learnsets.ts',
   'data/legality.ts',
   'data/mods/gen2/legality.ts',
   'data/mods/gen6/legality.ts',
@@ -813,7 +814,7 @@ const changes = async (where, last, now, repo) => ({
       )};\n`);
 
     // Decompose learnsets into learnsets.ts with just the learnset and legality.ts with the rest
-    for (const dir of ['mods/gen2/', 'mods/gen6/', '/']) {
+    for (const dir of ['mods/gen2/', 'mods/gen6/', 'mods/gen8/', '/']) {
       const original = require(path.resolve(ps, `.data-dist/${dir}learnsets.js`)).Learnsets;
       const learnsets = {};
       const legality = {};

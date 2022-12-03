@@ -40,10 +40,12 @@ import * as formats9 from '../data/formats-data';
 
 import * as learn2 from '../data/mods/gen2/learnsets';
 import * as learn6 from '../data/mods/gen6/learnsets';
+import * as learn8 from '../data/mods/gen8/learnsets';
 import * as learn9 from '../data/learnsets';
 
 import * as legality2 from '../data/mods/gen2/legality';
 import * as legality6 from '../data/mods/gen6/legality';
+import * as legality8 from '../data/mods/gen8/legality';
 import * as legality9 from '../data/legality';
 
 import {AbilitiesText} from '../data/text/abilities';
@@ -68,7 +70,8 @@ function merge(learnsets: {Learnsets: ModdedLearnsetData}, legality: {Legality: 
 const dexData = {
 	gen1, gen2: {...gen2, ...merge(learn2, legality2)}, gen3,
 	gen4, gen5, gen6: {...gen6, ...merge(learn6, legality6)},
-	gen7, gen8, gen9: {...gen9, ...formats9, ...merge(learn9, legality9)},
+	gen7, gen8: {...gen8, ...merge(learn8, legality8)},
+	gen9: {...gen9, ...formats9, ...merge(learn9, legality9)},
 };
 
 const dexes: {[mod: string]: ModdedDex} = Object.create(null);
