@@ -58,11 +58,31 @@ import * as Data from './dex-data';
 
 const BASE_MOD = 'gen9' as ID;
 
-function merge(learnsets: {Learnsets: ModdedLearnsetData}, legality: {Legality: ModdedLearnsetData}) {
-	const merged: {Learnsets: ModdedLearnsetData} = {...learnsets};
+const LEARN_ORDER = 'MTLREVDSC';
+interface Learnsets {[k: string]: ModdedLearnsetData}
+function merge(learnsets: {Learnsets: Learnsets}, legality: {Legality: Learnsets}) {
+	const merged: {Learnsets: Learnsets} = {...learnsets};
 	for (const id in legality.Legality) {
-		// @ts-ignore
-		merged.Learnsets[id] = {...merged.Learnsets[id], ...legality.Legality[id]};
+		for (const key in legality.Legality[id]) {
+			if (key === 'learnset') {
+				for (const moveid in legality.Legality[id][key]) {
+					const special = legality.Legality[id][key]![moveid];
+					// import guarantees {id: {learnsets: {}}} exists in learnsets iff it exists in legality
+					const existing = merged.Learnsets[id][key]!;
+					if (existing[moveid]) {
+						existing[moveid].push(...special);
+						existing[moveid].sort((a, b) =>
+							+b.charAt(0) - +a.charAt(0) ||
+							LEARN_ORDER.indexOf(a.charAt(1)) - LEARN_ORDER.indexOf(b.charAt(1)));
+					} else {
+						existing[moveid] = special;
+					}
+				}
+			} else {
+				// @ts-ignore
+				merged.Learnsets[id][key] = legality.Legality[id][key];
+			}
+		}
 	}
 	return merged;
 }

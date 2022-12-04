@@ -716,11 +716,16 @@ describe('Data', () => {
         const d = await dexDex.learnsets.get(id);
         const s = await simDex.learnsets.get(id);
 
-        expect(d.learnset).toEqual(s.learnset);
-        expect(d.eventData).toEqual(s.eventData);
-        expect(d.eventOnly).toEqual(s.eventOnly);
-        expect(d.encounters).toEqual(s.encounters);
-        expect(d.exists).toEqual(s.exists);
+        try {
+          expect(d.learnset).toEqual(s.learnset);
+          expect(d.eventData).toEqual(s.eventData);
+          expect(d.eventOnly).toEqual(s.eventOnly);
+          expect(d.encounters).toEqual(s.encounters);
+          expect(d.exists).toEqual(s.exists);
+        } catch (err) {
+          console.error(gen, id, d, s);
+          throw err;
+        }
       }
     }
   });

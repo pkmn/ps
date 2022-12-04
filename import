@@ -429,6 +429,7 @@ const OVERRIDDEN = new Set([
   'data/legality.ts',
   'data/mods/gen2/legality.ts',
   'data/mods/gen6/legality.ts',
+  'data/mods/gen8/legality.ts',
   'lib/index.ts',
   'lib/streams.ts',
   'package-lock.json', // double sigh...
@@ -820,9 +821,33 @@ const changes = async (where, last, now, repo) => ({
       const legality = {};
       for (const id in original) {
         for (const key in original[id]) {
-          const obj = key === 'learnset' ? learnsets : legality;
-          obj[id] = obj[id] || {};
-          obj[id][key] = original[id][key];
+          if (key === 'learnset') {
+            const regular = {};
+            const special = {};
+            for (const move in original[id][key]) {
+              for (const source of original[id][key][move]) {
+                if (source.includes('S')) {
+                  special[move] = special[move] || [];
+                  special[move].push(source);
+                } else {
+                  regular[move] = regular[move] || [];
+                  regular[move].push(source);
+                }
+              }
+            }
+            // Simplify our merge algorithm by including every id from the original regardless
+            learnsets[id] = learnsets[id] || {};
+            learnsets[id][key] = regular;
+            // Only a subset of Pokémon have event movepools
+            if (Object.keys(special).length) {
+              legality[id] = legality[id] || {};
+              legality[id][key] = special;
+            }
+          } else {
+            learnsets[id] = learnsets[id] || {};
+            legality[id] = legality[id] || {};
+            legality[id][key] = original[id][key];
+          }
         }
       }
       fs.writeFileSync(path.resolve(sim, `data/${dir}learnsets.ts`),

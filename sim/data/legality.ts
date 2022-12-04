@@ -1,5 +1,21 @@
 export const Legality: {[k: string]: ModdedLearnsetData} = {
   bulbasaur: {
+    learnset: {
+      block: [ '5S3' ],
+      celebrate: [ '6S5' ],
+      falseswipe: [ '5S3' ],
+      frenzyplant: [ '5S3' ],
+      growl: [ '6S4', '6S5', '5S2', '3S1' ],
+      growth: [ '3S0' ],
+      leechseed: [ '6S4', '5S2', '3S1' ],
+      poisonpowder: [ '6S4' ],
+      solarbeam: [ '3S0' ],
+      sweetscent: [ '3S0' ],
+      synthesis: [ '3S0' ],
+      tackle: [ '6S5', '5S2', '3S1' ],
+      vinewhip: [ '6S4', '5S2', '3S1' ],
+      weatherball: [ '5S3' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -46,6 +62,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 5 } ]
   },
   venusaur: {
+    learnset: {
+      frenzyplant: [ '6S0' ],
+      grasspledge: [ '6S0' ],
+      solarbeam: [ '6S0' ],
+      synthesis: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -57,6 +79,22 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   charmander: {
+    learnset: {
+      acrobatics: [ '5S6' ],
+      blastburn: [ '5S6' ],
+      block: [ '5S6' ],
+      celebrate: [ '6S8' ],
+      dragonrage: [ '6S7' ],
+      ember: [ '6S7', '5S4', '3S0' ],
+      falseswipe: [ '5S6' ],
+      growl: [ '6S7', '6S8', '5S4', '3S0' ],
+      hiddenpower: [ '4S1', '4S2', '4S3', '4S5' ],
+      howl: [ '4S1', '4S2', '4S3', '4S5' ],
+      quickattack: [ '4S1', '4S2', '4S3', '4S5' ],
+      return: [ '4S1', '4S2', '4S3', '4S5' ],
+      scratch: [ '6S8', '5S4', '3S0' ],
+      smokescreen: [ '6S7', '5S4' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -129,6 +167,32 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 5 } ]
   },
   charizard: {
+    learnset: {
+      airslash: [ '6S1', '6S2' ],
+      blastburn: [ '6S4' ],
+      dragonclaw: [ '7S6', '7S7', '6S2' ],
+      dragondance: [ '7S9' ],
+      dragonrage: [ '7S6', '7S7', '7S8', '6S2', '3S0' ],
+      dragontail: [ '8S10' ],
+      earthquake: [ '7S9' ],
+      ember: [ '6S5' ],
+      firefang: [ '6S1', '6S2' ],
+      firepledge: [ '6S4' ],
+      firespin: [ '6S5', '3S0' ],
+      flameburst: [ '6S1', '6S5' ],
+      flamethrower: [ '8S10', '7S8', '6S5' ],
+      flareblitz: [ '7S6', '7S7', '7S9', '6S4' ],
+      fly: [ '7S6', '7S7', '7S9' ],
+      focusblast: [ '6S3' ],
+      holdhands: [ '6S3' ],
+      inferno: [ '6S1' ],
+      overheat: [ '6S3' ],
+      scaryface: [ '6S4' ],
+      seismictoss: [ '8S10', '7S8' ],
+      slash: [ '8S10', '7S8', '3S0' ],
+      solarbeam: [ '6S3' ],
+      wingattack: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -213,6 +277,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   squirtle: {
+    learnset: {
+      block: [ '5S2' ],
+      bubble: [ '6S3', '5S1', '3S0' ],
+      celebrate: [ '6S4' ],
+      falseswipe: [ '5S2' ],
+      followme: [ '5S2' ],
+      hydrocannon: [ '5S2' ],
+      tackle: [ '6S4', '5S1', '3S0' ],
+      tailwhip: [ '6S3', '6S4', '5S1', '3S0' ],
+      watergun: [ '6S3' ],
+      withdraw: [ '6S3', '5S1', '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -253,6 +329,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 5 } ]
   },
   blastoise: {
+    learnset: {
+      hydrocannon: [ '6S1' ],
+      hydropump: [ '6S1', '3S0' ],
+      irondefense: [ '6S1' ],
+      protect: [ '3S0' ],
+      raindance: [ '3S0' ],
+      skullbash: [ '3S0' ],
+      waterpledge: [ '6S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -287,6 +372,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   butterfree: {
+    learnset: {
+      aerialace: [ '3S0' ],
+      morningsun: [ '3S0' ],
+      psychic: [ '3S0' ],
+      sleeppowder: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -318,6 +409,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   beedrill: {
+    learnset: {
+      batonpass: [ '3S0' ],
+      sludgebomb: [ '3S0' ],
+      swordsdance: [ '3S0' ],
+      twineedle: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -335,6 +432,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   pidgeotto: {
+    learnset: {
+      featherdance: [ '3S0' ],
+      refresh: [ '3S0' ],
+      steelwing: [ '3S0' ],
+      wingattack: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -351,6 +454,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   pidgeot: {
+    learnset: {
+      mirrormove: [ '5S0' ],
+      skyattack: [ '5S0' ],
+      whirlwind: [ '5S0' ],
+      wingattack: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -373,6 +482,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   raticate: {
+    learnset: {
+      hyperfang: [ '3S0' ],
+      refresh: [ '3S0' ],
+      scaryface: [ '3S0' ],
+      superfang: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -388,6 +503,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   raticatealola: { encounters: [ { generation: 7, level: 17 } ] },
   raticatealolatotem: {
+    learnset: { assurance: [ '7S0' ], bite: [ '7S0' ], hyperfang: [ '7S0' ], pursuit: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -400,6 +516,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   spearow: {
+    learnset: { aerialace: [ '3S0' ], batonpass: [ '3S0' ], falseswipe: [ '3S0' ], leer: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -421,6 +538,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   ekans: {
+    learnset: {
+      bite: [ '3S0' ],
+      leer: [ '3S0', '3S1' ],
+      poisonsting: [ '3S0', '3S1' ],
+      wrap: [ '3S0', '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -443,10 +566,26 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 6 }, { generation: 2, level: 4 } ]
   },
   arbok: {
+    learnset: { bite: [ '3S0' ], glare: [ '3S0' ], refresh: [ '3S0' ], sludgebomb: [ '3S0' ] },
     eventData: [ { generation: 3, level: 33, moves: [ 'refresh', 'sludgebomb', 'glare', 'bite' ] } ],
     encounters: [ { generation: 2, level: 10 }, { generation: 4, level: 10 } ]
   },
   pichu: {
+    learnset: {
+      charge: [ '4S5' ],
+      charm: [ '3S0', '3S1', '3S2', '3S3' ],
+      endeavor: [ '4S5' ],
+      endure: [ '4S5' ],
+      followme: [ '3S3' ],
+      grassknot: [ '4S4' ],
+      return: [ '4S4' ],
+      surf: [ '3S0' ],
+      teeterdance: [ '3S2' ],
+      thunderbolt: [ '4S4' ],
+      thundershock: [ '3S0', '3S1', '3S2', '3S3' ],
+      volttackle: [ '4S4', '4S5' ],
+      wish: [ '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -494,6 +633,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   pichuspikyeared: {
+    learnset: {
+      helpinghand: [ '4S0' ],
+      painsplit: [ '4S0' ],
+      swagger: [ '4S0' ],
+      volttackle: [ '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -507,6 +652,133 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   pikachu: {
+    learnset: {
+      agility: [ '6S41', '3S0', '3S8' ],
+      bestow: [ '7S44', '6S42' ],
+      brickbreak: [ '5S26' ],
+      celebrate: [
+        '8S50', '8S51',
+        '8S52', '7S43',
+        '7S48', '6S31',
+        '6S41'
+      ],
+      charm: [ '6S36' ],
+      counter: [ '7S48' ],
+      discharge: [ '7S47' ],
+      doubleteam: [ '6S32', '4S13' ],
+      electroball: [ '8S52', '6S32', '6S37', '5S23', '5S24', '5S30' ],
+      encore: [ '8S52', '6S39', '5S23' ],
+      endeavor: [ '6S39' ],
+      extremespeed: [ '5S26' ],
+      fakeout: [ '6S39' ],
+      feint: [ '5S29' ],
+      flash: [ '6S40', '4S13' ],
+      fly: [
+        '9S53', '7S49',
+        '6S41', '5S24',
+        '5S27', '3S2',
+        '3S4',  '3S6'
+      ],
+      grassknot: [ '5S25', '5S26', '5S27', '4S13' ],
+      growl: [
+        '7S43', '7S46',
+        '6S31', '3S1',
+        '3S2',  '3S3',
+        '3S4',  '3S5',
+        '3S10'
+      ],
+      happyhour: [ '7S45', '7S46', '6S40' ],
+      headbutt: [ '5S28' ],
+      heartstamp: [ '6S34' ],
+      holdhands: [
+        '7S44', '7S45',
+        '6S33', '6S34',
+        '6S35', '6S40',
+        '6S42'
+      ],
+      irontail: [ '6S37', '5S24', '5S30', '4S21' ],
+      lastresort: [ '4S18' ],
+      lightscreen: [ '4S11', '3S0', '3S6', '3S7', '3S8' ],
+      megakick: [ '6S32' ],
+      nuzzle: [ '7S47', '6S36', '6S38' ],
+      playnice: [
+        '8S50', '7S43',
+        '7S44', '7S45',
+        '6S31', '6S35',
+        '6S36', '6S38',
+        '6S40', '6S42'
+      ],
+      present: [ '4S12', '4S15', '4S17', '4S18', '4S20', '4S22' ],
+      protect: [ '5S27', '4S14', '4S16' ],
+      quickattack: [
+        '9S53', '8S50', '7S43',
+        '7S46', '7S49', '6S31',
+        '6S32', '6S33', '6S34',
+        '6S37', '5S24', '5S25',
+        '5S29', '5S30', '4S11',
+        '4S12', '4S15', '4S17',
+        '4S18', '4S20', '4S21',
+        '4S22'
+      ],
+      refresh: [ '7S48' ],
+      rest: [ '4S19' ],
+      return: [ '7S44', '6S42' ],
+      sing: [ '8S52', '5S23' ],
+      slam: [ '7S47' ],
+      sleeptalk: [ '4S19' ],
+      snore: [ '4S19' ],
+      substitute: [ '6S35' ],
+      surf: [
+        '7S47', '7S49', '6S33',
+        '6S41', '4S9',  '4S11',
+        '4S14', '4S16', '3S3',
+        '3S5',  '3S7'
+      ],
+      sweetkiss: [ '6S36' ],
+      sweetscent: [ '7S48' ],
+      swift: [ '8S51' ],
+      tailwhip: [
+        '9S53', '6S38', '5S28',
+        '4S9',  '4S12', '4S15',
+        '4S17', '4S20', '4S22',
+        '3S1',  '3S2',  '3S3',
+        '3S4',  '3S10'
+      ],
+      teeterdance: [ '7S45', '6S38', '5S23' ],
+      thunder: [
+        '6S35', '5S25',
+        '4S14', '4S16',
+        '3S0',  '3S6',
+        '3S7',  '3S8'
+      ],
+      thunderbolt: [
+        '8S51', '7S49', '6S33',
+        '6S34', '6S37', '5S26',
+        '5S27', '5S30', '4S11',
+        '4S13', '4S18', '4S21',
+        '3S0',  '3S6',  '3S7',
+        '3S8'
+      ],
+      thundershock: [
+        '9S53', '8S50',
+        '7S46', '5S28',
+        '4S12', '4S15',
+        '4S20', '4S22',
+        '3S1',  '3S5',
+        '3S10'
+      ],
+      thunderwave: [
+        '5S28', '4S9',
+        '4S17', '3S1',
+        '3S2',  '3S3',
+        '3S4',  '3S5',
+        '3S10'
+      ],
+      voltswitch: [ '5S29' ],
+      volttackle: [ '6S39', '5S25', '5S29', '4S9', '4S21' ],
+      wish: [ '8S51' ],
+      yawn: [ '4S19' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -899,6 +1171,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   pikachucosplay: {
+    learnset: {
+      electroball: [ '6S0' ],
+      quickattack: [ '6S0' ],
+      thundershock: [ '6S0' ],
+      thunderwave: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -916,6 +1194,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   pikachuphd: { eventOnly: true },
   pikachulibre: { eventOnly: true },
   pikachuoriginal: {
+    learnset: {
+      agility: [ '7S0' ],
+      electroweb: [ '8S1' ],
+      irontail: [ '8S1' ],
+      quickattack: [ '8S1', '7S0' ],
+      thunder: [ '7S0' ],
+      thunderbolt: [ '8S1', '7S0' ],
+      volttackle: [ '8S1' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -936,6 +1223,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   pikachuhoenn: {
+    learnset: {
+      electroweb: [ '8S1' ],
+      irontail: [ '8S1', '7S0' ],
+      quickattack: [ '8S1', '7S0' ],
+      thunder: [ '7S0' ],
+      thunderbolt: [ '8S1', '7S0' ],
+      volttackle: [ '8S1' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -956,6 +1251,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   pikachusinnoh: {
+    learnset: {
+      electroweb: [ '8S1' ],
+      irontail: [ '8S1', '7S0' ],
+      quickattack: [ '8S1', '7S0' ],
+      thunderbolt: [ '8S1', '7S0' ],
+      volttackle: [ '8S1', '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -976,6 +1278,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   pikachuunova: {
+    learnset: {
+      electroweb: [ '8S1' ],
+      irontail: [ '8S1', '7S0' ],
+      quickattack: [ '8S1', '7S0' ],
+      thunderbolt: [ '8S1', '7S0' ],
+      volttackle: [ '8S1', '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -996,6 +1305,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   pikachukalos: {
+    learnset: {
+      electroball: [ '7S0' ],
+      electroweb: [ '8S1' ],
+      irontail: [ '8S1', '7S0' ],
+      quickattack: [ '8S1', '7S0' ],
+      thunderbolt: [ '8S1', '7S0' ],
+      volttackle: [ '8S1' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -1016,6 +1333,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   pikachualola: {
+    learnset: {
+      electroball: [ '7S0' ],
+      electroweb: [ '8S1' ],
+      irontail: [ '8S1', '7S0' ],
+      quickattack: [ '8S1', '7S0' ],
+      thunderbolt: [ '8S1', '7S0' ],
+      volttackle: [ '8S1' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -1036,6 +1361,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   pikachupartner: {
+    learnset: {
+      electroweb: [ '8S1' ],
+      irontail: [ '8S1', '7S0' ],
+      quickattack: [ '8S1', '7S0' ],
+      thunder: [ '7S0' ],
+      thunderbolt: [ '8S1', '7S0' ],
+      volttackle: [ '8S1' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -1057,6 +1390,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   pikachustarter: {
+    learnset: { growl: [ '7S0' ], tailwhip: [ '7S0' ], thundershock: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -1069,6 +1403,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   pikachuworld: {
+    learnset: {
+      electroweb: [ '8S1', '8S0' ],
+      irontail: [ '8S1', '8S0' ],
+      quickattack: [ '8S1', '8S0' ],
+      thunderbolt: [ '8S1', '8S0' ],
+      volttackle: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -1089,6 +1430,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   sandshrew: {
+    learnset: {
+      defensecurl: [ '3S0' ],
+      poisonsting: [ '3S0' ],
+      sandattack: [ '3S0' ],
+      scratch: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1103,6 +1450,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 6 } ]
   },
   sandshrewalola: {
+    learnset: { bide: [ '7S0' ], iceball: [ '7S0' ], powdersnow: [ '7S0' ], rapidspin: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -1116,6 +1464,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   nidoranf: { encounters: [ { generation: 1, level: 2 } ] },
   nidorina: { encounters: [ { generation: 4, level: 15, pokeball: 'safariball' } ] },
   nidoqueen: {
+    learnset: {
+      bodyslam: [ '6S0' ],
+      doublekick: [ '6S0' ],
+      poisonsting: [ '6S0' ],
+      tailwhip: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -1130,6 +1484,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   nidoranm: { encounters: [ { generation: 1, level: 2 } ] },
   nidorino: { encounters: [ { generation: 4, level: 15, pokeball: 'safariball' } ] },
   nidoking: {
+    learnset: {
+      aquatail: [ '7S0' ],
+      earthquake: [ '7S0' ],
+      poisonjab: [ '7S0' ],
+      throatchop: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -1141,6 +1501,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   clefairy: {
+    learnset: {
+      followme: [ '8S0' ],
+      helpinghand: [ '8S0' ],
+      icywind: [ '8S0' ],
+      metronome: [ '8S1' ],
+      moonblast: [ '8S1' ],
+      moonlight: [ '8S1' ],
+      protect: [ '8S0' ],
+      zenheadbutt: [ '8S1' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -1166,6 +1536,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 8 } ]
   },
   vulpix: {
+    learnset: {
+      charm: [ '3S1' ],
+      dig: [ '3S1' ],
+      ember: [ '3S1' ],
+      heatwave: [ '3S1' ],
+      quickattack: [ '3S0' ],
+      roar: [ '3S0' ],
+      tailwhip: [ '3S0' ],
+      willowisp: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1181,6 +1561,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 18 } ]
   },
   vulpixalola: {
+    learnset: {
+      babydolleyes: [ '7S0' ],
+      celebrate: [ '7S0' ],
+      iceshard: [ '7S0' ],
+      powdersnow: [ '7S1' ],
+      tailwhip: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -1199,6 +1586,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   ninetales: {
+    learnset: {
+      heatwave: [ '5S0' ],
+      psyshock: [ '5S0' ],
+      solarbeam: [ '5S0' ],
+      willowisp: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -1213,6 +1606,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   igglybuff: {
+    learnset: { charm: [ '3S0' ], defensecurl: [ '3S0' ], sing: [ '3S0' ], tickle: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -1243,6 +1637,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   crobat: {
+    learnset: {
+      airslash: [ '7S1', '4S0' ],
+      darkpulse: [ '7S1' ],
+      heatwave: [ '4S0' ],
+      sludgebomb: [ '7S1', '4S0' ],
+      superfang: [ '4S0' ],
+      toxic: [ '7S1' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -1262,6 +1664,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   oddish: {
+    learnset: {
+      absorb: [ '3S1' ],
+      acid: [ '3S0' ],
+      leechseed: [ '3S1' ],
+      poisonpowder: [ '3S0' ],
+      sleeppowder: [ '3S0' ],
+      stunspore: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1283,6 +1693,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 12 } ]
   },
   gloom: {
+    learnset: {
+      acid: [ '3S0' ],
+      moonlight: [ '3S0' ],
+      petaldance: [ '3S0' ],
+      sleeppowder: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1298,6 +1714,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   paras: {
+    learnset: { falseswipe: [ '3S0' ], refresh: [ '3S0' ], slash: [ '3S0' ], spore: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -1311,6 +1728,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   parasect: { encounters: [ { generation: 1, level: 13 }, { generation: 2, level: 5 } ] },
   venonat: { encounters: [ { generation: 1, level: 13 } ] },
   venomoth: {
+    learnset: {
+      psychic: [ '3S0' ],
+      refresh: [ '3S0' ],
+      silverwind: [ '3S0' ],
+      substitute: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1328,6 +1751,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   diglett: { encounters: [ { generation: 1, level: 15 }, { generation: 2, level: 2 } ] },
   diglettalola: {
+    learnset: { astonish: [ '7S0' ], growl: [ '7S0' ], metalclaw: [ '7S0' ], mudslap: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -1339,6 +1763,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   dugtrio: {
+    learnset: { charm: [ '3S0' ], earthquake: [ '3S0' ], sandstorm: [ '3S0' ], triattack: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -1353,6 +1778,22 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   meowth: {
+    learnset: {
+      assist: [ '4S5' ],
+      bite: [ '6S7', '4S4', '3S2', '3S3' ],
+      fakeout: [ '6S7', '4S4', '4S5' ],
+      furyswipes: [ '5S6', '4S4' ],
+      growl: [ '3S0', '3S1', '3S2' ],
+      happyhour: [ '6S7' ],
+      nastyplot: [ '5S6' ],
+      payday: [ '4S5', '3S3' ],
+      petaldance: [ '3S0' ],
+      scratch: [ '4S5', '3S0', '3S1', '3S2' ],
+      screech: [ '6S7', '4S4' ],
+      sing: [ '5S6', '3S3' ],
+      slash: [ '3S3' ],
+      snatch: [ '5S6' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1418,6 +1859,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   meowthgalar: {
+    learnset: { fakeout: [ '8S0' ], growl: [ '8S0' ], honeclaws: [ '8S0' ], payday: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
@@ -1430,6 +1872,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   persian: { encounters: [ { generation: 2, level: 18 }, { generation: 4, level: 19 } ] },
   psyduck: {
+    learnset: {
+      confusion: [ '3S0' ],
+      disable: [ '3S0' ],
+      mudsport: [ '3S1' ],
+      scratch: [ '3S1' ],
+      screech: [ '3S0' ],
+      tailwhip: [ '3S0', '3S1' ],
+      watersport: [ '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1452,6 +1903,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 15 } ]
   },
   golduck: {
+    learnset: {
+      brickbreak: [ '3S0' ],
+      charm: [ '3S0' ],
+      encore: [ '7S1' ],
+      hydropump: [ '7S1' ],
+      protect: [ '7S1' ],
+      psychup: [ '3S0' ],
+      scald: [ '7S1' ],
+      waterfall: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1478,6 +1939,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   mankey: { encounters: [ { generation: 1, level: 3 }, { generation: 3, level: 2 } ] },
   primeape: {
+    learnset: {
+      crosschop: [ '3S0' ],
+      focusenergy: [ '3S0' ],
+      helpinghand: [ '3S0' ],
+      reversal: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1489,6 +1956,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 2, level: 15 }, { generation: 4, level: 15 } ]
   },
   growlithe: {
+    learnset: {
+      bite: [ '3S1', '3S2' ],
+      charm: [ '3S2' ],
+      ember: [ '3S1' ],
+      flamethrower: [ '3S2' ],
+      flamewheel: [ '3S0' ],
+      leer: [ '3S0' ],
+      odorsleuth: [ '3S0' ],
+      roar: [ '3S1' ],
+      takedown: [ '3S0', '3S2' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1512,6 +1990,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 15 } ]
   },
   arcanine: {
+    learnset: {
+      crunch: [ '4S0' ],
+      extremespeed: [ '7S1', '4S0' ],
+      flareblitz: [ '7S1', '4S0' ],
+      protect: [ '7S1' ],
+      thunderfang: [ '4S0' ],
+      willowisp: [ '7S1' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -1530,6 +2016,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   poliwag: {
+    learnset: { bubble: [ '3S0' ], sweetkiss: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -1559,6 +2046,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   poliwrath: {
+    learnset: {
+      brickbreak: [ '3S0' ],
+      helpinghand: [ '3S0' ],
+      hydropump: [ '3S0' ],
+      raindance: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1568,6 +2061,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   politoed: {
+    learnset: { icebeam: [ '5S0' ], perishsong: [ '5S0' ], protect: [ '5S0' ], scald: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -1590,6 +2084,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   alakazam: {
+    learnset: { calmmind: [ '3S0' ], futuresight: [ '3S0' ], psychic: [ '3S0' ], trick: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -1601,6 +2096,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   machop: { encounters: [ { generation: 1, level: 15 } ] },
   machoke: {
+    learnset: {
+      foresight: [ '5S0' ],
+      lowsweep: [ '5S0' ],
+      revenge: [ '5S0' ],
+      seismictoss: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -1612,6 +2113,22 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 2, level: 14 }, { generation: 4, level: 14 } ]
   },
   machamp: {
+    learnset: {
+      bulkup: [ '7S3' ],
+      dig: [ '6S2' ],
+      doubleedge: [ '7S3' ],
+      dynamicpunch: [ '6S1', '6S2' ],
+      focusenergy: [ '6S2' ],
+      foresight: [ '3S0' ],
+      knockoff: [ '6S1' ],
+      quickguard: [ '7S3' ],
+      revenge: [ '3S0' ],
+      seismictoss: [ '6S2', '3S0' ],
+      stoneedge: [ '6S1' ],
+      strength: [ '7S3' ],
+      vitalthrow: [ '3S0' ],
+      wideguard: [ '6S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1657,6 +2174,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 16 }, { generation: 2, level: 5 } ]
   },
   bellsprout: {
+    learnset: { growth: [ '3S1' ], teeterdance: [ '3S0' ], vinewhip: [ '3S0', '3S1' ] },
     eventData: [
       {
         generation: 3,
@@ -1676,6 +2194,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 12 }, { generation: 2, level: 3 } ]
   },
   weepinbell: {
+    learnset: {
+      magicalleaf: [ '3S0' ],
+      morningsun: [ '3S0' ],
+      sludgebomb: [ '3S0' ],
+      sweetscent: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1705,6 +2229,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   ponyta: { encounters: [ { generation: 1, level: 28 } ] },
   ponytagalar: {
+    learnset: { confusion: [ '8S0' ], fairywind: [ '8S0' ], growl: [ '8S0' ], tackle: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
@@ -1716,6 +2241,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   rapidash: {
+    learnset: {
+      batonpass: [ '3S0' ],
+      flamethrower: [ '3S0' ],
+      solarbeam: [ '3S0' ],
+      sunnyday: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1726,6 +2257,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 2, level: 14, gender: 'M' }, { generation: 3, level: 37 } ]
   },
   slowpoke: {
+    learnset: {
+      confusion: [ '5S2', '3S0' ],
+      curse: [ '3S1' ],
+      disable: [ '5S2', '3S0' ],
+      growl: [ '3S1' ],
+      headbutt: [ '5S2', '3S0' ],
+      tackle: [ '3S1' ],
+      watergun: [ '3S0' ],
+      waterpulse: [ '5S2' ],
+      yawn: [ '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1754,6 +2296,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 15 } ]
   },
   slowbro: {
+    learnset: { irontail: [ '6S0' ], scald: [ '6S0' ], slackoff: [ '6S0' ], trickroom: [ '6S0' ] },
     eventData: [
       {
         generation: 6,
@@ -1776,6 +2319,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   magnemite: { encounters: [ { generation: 1, level: 16 } ] },
   magneton: {
+    learnset: { doubleedge: [ '3S0' ], raindance: [ '3S0' ], refresh: [ '3S0' ], thunder: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -1790,6 +2334,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   farfetchd: {
+    learnset: {
+      aerialace: [ '3S1' ],
+      batonpass: [ '3S1' ],
+      slash: [ '3S1' ],
+      swordsdance: [ '3S1' ],
+      wish: [ '3S0' ],
+      yawn: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1818,6 +2370,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   sirfetchd: {
+    learnset: {
+      brutalswing: [ '8S0' ],
+      detect: [ '8S0' ],
+      furycutter: [ '8S0' ],
+      meteorassault: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -1833,6 +2391,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   doduo: { encounters: [ { generation: 1, level: 18 }, { generation: 2, level: 4 } ] },
   dodrio: {
+    learnset: {
+      agility: [ '3S0' ],
+      batonpass: [ '3S0' ],
+      drillpeck: [ '3S0' ],
+      triattack: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1857,6 +2421,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   seel: {
+    learnset: { helpinghand: [ '3S0' ], icebeam: [ '3S0' ], safeguard: [ '3S0' ], surf: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -1877,6 +2442,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   grimer: {
+    learnset: {
+      helpinghand: [ '3S0' ],
+      minimize: [ '3S0' ],
+      shadowpunch: [ '3S0' ],
+      sludgebomb: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1887,6 +2458,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 23 } ]
   },
   grimeralola: {
+    learnset: { bite: [ '7S0' ], harden: [ '7S0' ], poisongas: [ '7S0' ], pound: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -1909,6 +2481,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   shellder: {
+    learnset: {
+      aurorabeam: [ '3S0', '3S2' ],
+      iciclespear: [ '3S0', '3S1' ],
+      refresh: [ '3S2' ],
+      supersonic: [ '3S0' ],
+      surf: [ '3S2' ],
+      tackle: [ '3S1' ],
+      takedown: [ '3S2' ],
+      withdraw: [ '3S0', '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -1938,6 +2520,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 10 } ]
   },
   cloyster: {
+    learnset: {
+      hiddenpower: [ '5S0' ],
+      iciclespear: [ '5S0' ],
+      razorshell: [ '5S0' ],
+      rockblast: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -1952,6 +2540,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   gastly: { encounters: [ { generation: 1, level: 18 } ] },
   haunter: {
+    learnset: {
+      confuseray: [ '5S0' ],
+      payback: [ '5S0' ],
+      shadowpunch: [ '5S0' ],
+      suckerpunch: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -1968,6 +2562,25 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   gengar: {
+    learnset: {
+      astonish: [ '6S4' ],
+      confuseray: [ '6S1', '6S2', '6S4', '3S0' ],
+      curse: [ '3S0' ],
+      dazzlinggleam: [ '8S7' ],
+      destinybond: [ '6S3' ],
+      hyperbeam: [ '6S5', '6S6' ],
+      hypnosis: [ '6S5', '6S6' ],
+      meanlook: [ '6S5', '6S6' ],
+      nightshade: [ '6S2', '3S0' ],
+      psychic: [ '6S1', '6S5', '6S6' ],
+      shadowball: [ '8S7', '6S3', '6S4' ],
+      shadowpunch: [ '6S1', '6S2' ],
+      sludgebomb: [ '8S7', '6S3' ],
+      sludgewave: [ '6S4' ],
+      spite: [ '3S0' ],
+      suckerpunch: [ '6S1', '6S2' ],
+      willowisp: [ '8S7', '6S3' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2032,6 +2645,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   onix: { encounters: [ { generation: 1, level: 13 } ] },
   drowzee: {
+    learnset: { bellydrum: [ '3S0' ], wish: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -2045,6 +2659,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 9 } ]
   },
   hypno: {
+    learnset: {
+      batonpass: [ '3S0' ],
+      meditate: [ '3S0' ],
+      psychic: [ '3S0' ],
+      shadowball: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2064,6 +2684,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   voltorb: {
+    learnset: { mirrorcoat: [ '3S0' ], refresh: [ '3S0' ], spark: [ '3S0' ], swift: [ '3S0' ] },
     eventData: [ { generation: 3, level: 19, moves: [ 'refresh', 'mirrorcoat', 'spark', 'swift' ] } ],
     encounters: [ { generation: 1, level: 14 }, { generation: 1, level: 40 } ]
   },
@@ -2083,6 +2704,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   exeggcute: {
+    learnset: { sweetscent: [ '3S0' ], wish: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -2095,6 +2717,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 20 } ]
   },
   exeggutor: {
+    learnset: {
+      ancientpower: [ '3S0' ],
+      hypnosis: [ '3S0' ],
+      psychic: [ '3S0' ],
+      refresh: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2104,6 +2732,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   exeggutoralola: {
+    learnset: {
+      celebrate: [ '7S0' ],
+      dracometeor: [ '7S0' ],
+      leafstorm: [ '7S0' ],
+      powerswap: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -2118,6 +2752,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   cubone: { encounters: [ { generation: 1, level: 16 } ] },
   marowak: {
+    learnset: {
+      earthquake: [ '3S0' ],
+      rockslide: [ '3S0' ],
+      sing: [ '3S0' ],
+      swordsdance: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2132,6 +2772,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   marowakalolatotem: {
+    learnset: { bonemerang: [ '7S0' ], hex: [ '7S0' ], leer: [ '7S0' ], willowisp: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -2144,6 +2785,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   hitmonlee: {
+    learnset: {
+      highjumpkick: [ '3S0' ],
+      megakick: [ '3S0' ],
+      mindreader: [ '3S0' ],
+      refresh: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2155,6 +2802,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 30 } ]
   },
   hitmonchan: {
+    learnset: {
+      helpinghand: [ '3S0' ],
+      megapunch: [ '3S0' ],
+      mindreader: [ '3S0' ],
+      skyuppercut: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2166,6 +2819,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 30 } ]
   },
   hitmontop: {
+    learnset: {
+      closecombat: [ '5S0' ],
+      fakeout: [ '5S0' ],
+      helpinghand: [ '5S0' ],
+      suckerpunch: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -2178,6 +2837,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   lickitung: {
+    learnset: {
+      defensecurl: [ '3S1' ],
+      doubleedge: [ '3S1' ],
+      healbell: [ '3S0' ],
+      helpinghand: [ '3S1' ],
+      rollout: [ '3S1' ],
+      wish: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2204,6 +2871,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   rhyhorn: { encounters: [ { generation: 1, level: 20 } ] },
   rhydon: {
+    learnset: {
+      earthquake: [ '3S0' ],
+      helpinghand: [ '3S0' ],
+      megahorn: [ '3S0' ],
+      scaryface: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2219,6 +2892,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   chansey: {
+    learnset: {
+      charm: [ '8S3' ],
+      growl: [ '3S1' ],
+      pound: [ '3S1' ],
+      present: [ '8S3' ],
+      refresh: [ '3S1' ],
+      skillswap: [ '3S2' ],
+      softboiled: [ '8S3', '3S2' ],
+      sweetkiss: [ '8S3', '3S2' ],
+      sweetscent: [ '3S0' ],
+      tailwhip: [ '3S1' ],
+      thunderbolt: [ '3S2' ],
+      wish: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2248,6 +2935,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 7 } ]
   },
   blissey: {
+    learnset: { growl: [ '5S0' ], pound: [ '5S0' ], refresh: [ '5S0' ], tailwhip: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -2258,6 +2946,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   tangela: {
+    learnset: {
+      ingrain: [ '3S0' ],
+      morningsun: [ '3S0' ],
+      solarbeam: [ '3S0' ],
+      sunnyday: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2269,6 +2963,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 13 } ]
   },
   tangrowth: {
+    learnset: {
+      ancientpower: [ '4S0' ],
+      morningsun: [ '4S0' ],
+      naturalgift: [ '4S0' ],
+      sunnyday: [ '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -2281,6 +2981,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   kangaskhan: {
+    learnset: {
+      bite: [ '3S1' ],
+      cometpunch: [ '3S1' ],
+      dizzypunch: [ '3S2' ],
+      earthquake: [ '6S3', '3S2' ],
+      fakeout: [ '6S3' ],
+      leer: [ '3S1' ],
+      return: [ '6S3' ],
+      sing: [ '3S2' ],
+      suckerpunch: [ '6S3' ],
+      tailwhip: [ '3S2' ],
+      wish: [ '3S0' ],
+      yawn: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2314,10 +3028,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 25 } ]
   },
   horsea: {
+    learnset: { bubble: [ '5S0' ] },
     eventData: [ { generation: 5, level: 1, shiny: true, moves: [ 'bubble' ], pokeball: 'pokeball' } ],
     encounters: [ { generation: 1, level: 5 } ]
   },
   seadra: {
+    learnset: { agility: [ '3S0' ], leer: [ '3S0' ], twister: [ '3S0' ], watergun: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -2335,6 +3051,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   kingdra: {
+    learnset: {
+      agility: [ '3S0' ],
+      dracometeor: [ '5S1' ],
+      dragonpulse: [ '5S1' ],
+      leer: [ '3S0' ],
+      muddywater: [ '5S1' ],
+      protect: [ '5S1' ],
+      twister: [ '3S0' ],
+      watergun: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2367,6 +3093,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   staryu: {
+    learnset: {
+      cosmicpower: [ '3S0' ],
+      harden: [ '3S1' ],
+      hydropump: [ '3S0' ],
+      lightscreen: [ '3S0' ],
+      minimize: [ '3S0' ],
+      rapidspin: [ '3S1' ],
+      recover: [ '3S1' ],
+      watergun: [ '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2387,11 +3123,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 5 } ]
   },
   starmie: {
+    learnset: { icebeam: [ '3S0' ], recover: [ '3S0' ], refresh: [ '3S0' ], waterfall: [ '3S0' ] },
     eventData: [
       { generation: 3, level: 41, moves: [ 'refresh', 'waterfall', 'icebeam', 'recover' ] }
     ]
   },
   mrmime: {
+    learnset: { encore: [ '3S0' ], followme: [ '3S0' ], psychic: [ '3S0' ], thunderpunch: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -2403,6 +3141,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 6 } ]
   },
   mrmimegalar: {
+    learnset: { confusion: [ '8S0' ], copycat: [ '8S0' ], encore: [ '8S0' ], iceshard: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
@@ -2414,6 +3153,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   scyther: {
+    learnset: {
+      agility: [ '5S2' ],
+      focusenergy: [ '3S0' ],
+      furycutter: [ '5S2' ],
+      leer: [ '3S0' ],
+      morningsun: [ '3S1' ],
+      quickattack: [ '3S0' ],
+      razorwind: [ '3S1' ],
+      silverwind: [ '3S1' ],
+      slash: [ '5S2', '3S1' ],
+      wingattack: [ '5S2' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2439,6 +3190,28 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 15 }, { generation: 1, level: 25 } ]
   },
   scizor: {
+    learnset: {
+      aerialace: [ '6S5' ],
+      agility: [ '6S5', '6S6', '4S1' ],
+      bugbite: [ '5S2' ],
+      bulletpunch: [ '6S7', '5S2' ],
+      doublehit: [ '6S4' ],
+      falseswipe: [ '6S5', '6S6' ],
+      focusenergy: [ '5S3' ],
+      furycutter: [ '6S5', '6S6', '3S0' ],
+      irondefense: [ '4S1' ],
+      ironhead: [ '6S4' ],
+      leer: [ '5S3' ],
+      metalclaw: [ '6S6', '3S0' ],
+      nightslash: [ '6S4' ],
+      pursuit: [ '5S3' ],
+      roost: [ '6S7', '5S2' ],
+      slash: [ '3S0' ],
+      steelwing: [ '5S3' ],
+      swordsdance: [ '6S7', '5S2', '4S1', '3S0' ],
+      uturn: [ '6S7' ],
+      xscissor: [ '6S4', '4S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2519,6 +3292,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   elekid: {
+    learnset: {
+      crosschop: [ '3S0' ],
+      firepunch: [ '3S0' ],
+      icepunch: [ '3S0' ],
+      thunderpunch: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2529,6 +3308,19 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   electabuzz: {
+    learnset: {
+      crosschop: [ '3S1' ],
+      followme: [ '3S1' ],
+      leer: [ '3S0' ],
+      lightscreen: [ '6S4', '5S3', '4S2' ],
+      lowkick: [ '6S4', '5S3', '4S2' ],
+      quickattack: [ '3S0' ],
+      shockwave: [ '6S4', '5S3', '4S2' ],
+      swift: [ '5S3' ],
+      thunderbolt: [ '3S1' ],
+      thunderpunch: [ '6S4', '4S2', '3S0' ],
+      thunderwave: [ '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2573,6 +3365,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   electivire: {
+    learnset: {
+      crosschop: [ '4S0' ],
+      discharge: [ '4S1' ],
+      earthquake: [ '4S0' ],
+      icepunch: [ '4S0' ],
+      lightscreen: [ '4S1' ],
+      thunderbolt: [ '4S1' ],
+      thunderpunch: [ '4S0', '4S1' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -2593,6 +3394,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   magmar: {
+    learnset: {
+      confuseray: [ '6S4', '5S3', '4S2' ],
+      crosschop: [ '3S1' ],
+      ember: [ '3S0' ],
+      feintattack: [ '5S3' ],
+      fireblast: [ '3S1' ],
+      firepunch: [ '6S4', '4S2', '3S0' ],
+      firespin: [ '6S4', '5S3', '4S2' ],
+      followme: [ '3S1' ],
+      leer: [ '3S0' ],
+      smog: [ '3S0' ],
+      smokescreen: [ '6S4', '5S3', '4S2' ],
+      thunderpunch: [ '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2637,6 +3452,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   magmortar: {
+    learnset: {
+      confuseray: [ '4S1' ],
+      firepunch: [ '4S1' ],
+      flamethrower: [ '4S0', '4S1' ],
+      hyperbeam: [ '4S0' ],
+      lavaplume: [ '4S1' ],
+      psychic: [ '4S0' ],
+      solarbeam: [ '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -2657,6 +3481,19 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   pinsir: {
+    learnset: {
+      earthquake: [ '6S1', '6S2' ],
+      falseswipe: [ '3S0' ],
+      feint: [ '6S2' ],
+      guillotine: [ '3S0' ],
+      helpinghand: [ '3S0' ],
+      quickattack: [ '6S2' ],
+      return: [ '6S1' ],
+      stoneedge: [ '6S1' ],
+      submission: [ '3S0' ],
+      swordsdance: [ '6S2' ],
+      xscissor: [ '6S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2684,6 +3521,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 15 }, { generation: 1, level: 20 } ]
   },
   tauros: {
+    learnset: {
+      bodyslam: [ '3S2' ],
+      earthquake: [ '3S2' ],
+      hornattack: [ '3S0', '3S1' ],
+      pursuit: [ '3S0' ],
+      rage: [ '3S0', '3S1' ],
+      refresh: [ '3S2' ],
+      scaryface: [ '3S0' ],
+      tackle: [ '3S1' ],
+      tailwhip: [ '3S1', '3S2' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2711,6 +3559,19 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 21 } ]
   },
   magikarp: {
+    learnset: {
+      bounce: [ '7S7', '5S5' ],
+      celebrate: [ '6S6' ],
+      flail: [ '5S5' ],
+      happyhour: [ '6S6' ],
+      hydropump: [ '5S5' ],
+      splash: [
+        '7S7', '6S6',
+        '5S5', '4S0',
+        '4S1', '4S2',
+        '4S3', '4S4'
+      ]
+    },
     eventData: [
       {
         generation: 4,
@@ -2778,6 +3639,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 5 } ]
   },
   gyarados: {
+    learnset: {
+      bite: [ '6S1' ],
+      dragondance: [ '6S0' ],
+      earthquake: [ '6S0' ],
+      icefang: [ '6S0', '6S1' ],
+      ironhead: [ '6S1' ],
+      waterfall: [ '6S0', '6S1' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -2803,6 +3672,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   lapras: {
+    learnset: {
+      blizzard: [ '3S0' ],
+      healbell: [ '3S0' ],
+      hydropump: [ '3S0' ],
+      raindance: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -2813,6 +3688,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 15 } ]
   },
   ditto: {
+    learnset: { transform: [ '7S0' ] },
     eventData: [ { generation: 7, level: 10, moves: [ 'transform' ], pokeball: 'cherishball' } ],
     encounters: [
       { generation: 1, level: 12 },
@@ -2825,6 +3701,24 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   eevee: {
+    learnset: {
+      attract: [ '5S2', '4S0' ],
+      babydolleyes: [ '7S5', '6S3', '6S4' ],
+      bite: [ '4S0' ],
+      celebrate: [ '8S6', '7S5', '6S3' ],
+      covet: [ '8S6', '4S0' ],
+      echoedvoice: [ '5S2' ],
+      flail: [ '4S1' ],
+      helpinghand: [ '8S6', '6S4', '4S0' ],
+      irontail: [ '4S1' ],
+      quickattack: [ '6S4', '4S1' ],
+      return: [ '5S2' ],
+      sandattack: [ '7S5', '6S3' ],
+      sing: [ '5S2' ],
+      swift: [ '6S3', '6S4' ],
+      tackle: [ '8S6' ],
+      trumpcard: [ '4S1' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -2888,6 +3782,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 25 } ]
   },
   eeveestarter: {
+    learnset: { growl: [ '7S0' ], tackle: [ '7S0' ], tailwhip: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -2900,6 +3795,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   vaporeon: {
+    learnset: {
+      celebrate: [ '6S1' ],
+      helpinghand: [ '5S0' ],
+      icebeam: [ '7S2' ],
+      raindance: [ '7S2' ],
+      rest: [ '7S2' ],
+      sandattack: [ '6S1', '5S0' ],
+      scald: [ '7S2' ],
+      tackle: [ '5S0' ],
+      tailwhip: [ '6S1', '5S0' ],
+      watergun: [ '6S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -2925,6 +3832,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   jolteon: {
+    learnset: {
+      celebrate: [ '6S1' ],
+      helpinghand: [ '5S0' ],
+      lightscreen: [ '7S2' ],
+      sandattack: [ '6S1', '5S0' ],
+      shadowball: [ '7S2' ],
+      tackle: [ '5S0' ],
+      tailwhip: [ '6S1', '5S0' ],
+      thunderbolt: [ '7S2' ],
+      thundershock: [ '6S1' ],
+      voltswitch: [ '7S2' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -2949,6 +3868,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   flareon: {
+    learnset: {
+      celebrate: [ '6S1' ],
+      ember: [ '6S1' ],
+      facade: [ '7S2' ],
+      flareblitz: [ '7S2' ],
+      helpinghand: [ '5S0' ],
+      quickattack: [ '7S2' ],
+      sandattack: [ '6S1', '5S0' ],
+      tackle: [ '5S0' ],
+      tailwhip: [ '6S1', '5S0' ],
+      willowisp: [ '7S2' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -2974,6 +3905,21 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   espeon: {
+    learnset: {
+      celebrate: [ '6S2' ],
+      confusion: [ '6S2' ],
+      dazzlinggleam: [ '7S3' ],
+      helpinghand: [ '5S1' ],
+      morningsun: [ '3S0' ],
+      psybeam: [ '3S0' ],
+      psychic: [ '7S3', '3S0' ],
+      psychup: [ '3S0' ],
+      reflect: [ '7S3' ],
+      sandattack: [ '6S2', '5S1' ],
+      shadowball: [ '7S3' ],
+      tackle: [ '5S1' ],
+      tailwhip: [ '6S2', '5S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3005,6 +3951,21 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   umbreon: {
+    learnset: {
+      celebrate: [ '6S2' ],
+      feintattack: [ '3S0' ],
+      helpinghand: [ '5S1' ],
+      meanlook: [ '3S0' ],
+      moonlight: [ '7S3', '3S0' ],
+      protect: [ '7S3' ],
+      pursuit: [ '6S2' ],
+      sandattack: [ '6S2', '5S1' ],
+      screech: [ '3S0' ],
+      snarl: [ '7S3' ],
+      tackle: [ '5S1' ],
+      tailwhip: [ '6S2', '5S1' ],
+      toxic: [ '7S3' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3035,6 +3996,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   leafeon: {
+    learnset: {
+      celebrate: [ '6S1' ],
+      helpinghand: [ '5S0' ],
+      leafblade: [ '7S2' ],
+      razorleaf: [ '6S1' ],
+      sandattack: [ '6S1', '5S0' ],
+      sunnyday: [ '7S2' ],
+      swordsdance: [ '7S2' ],
+      synthesis: [ '7S2' ],
+      tackle: [ '5S0' ],
+      tailwhip: [ '6S1', '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -3060,6 +4033,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   glaceon: {
+    learnset: {
+      auroraveil: [ '7S2' ],
+      blizzard: [ '7S2' ],
+      celebrate: [ '6S1' ],
+      hail: [ '7S2' ],
+      helpinghand: [ '5S0' ],
+      icywind: [ '6S1' ],
+      sandattack: [ '6S1', '5S0' ],
+      shadowball: [ '7S2' ],
+      tackle: [ '5S0' ],
+      tailwhip: [ '6S1', '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -3084,6 +4069,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   porygon: {
+    learnset: {
+      conversion2: [ '8S1' ],
+      conversion: [ '5S0' ],
+      magnetrise: [ '8S1' ],
+      psybeam: [ '8S1', '5S0' ],
+      sharpen: [ '5S0' ],
+      tackle: [ '5S0' ],
+      thundershock: [ '8S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -3102,6 +4096,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 18 } ]
   },
   porygon2: {
+    learnset: {
+      icebeam: [ '8S0' ],
+      recover: [ '8S0' ],
+      thunderbolt: [ '8S0' ],
+      trickroom: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -3115,6 +4115,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   omanyte: {
+    learnset: { bite: [ '5S0' ], bubblebeam: [ '5S0' ], supersonic: [ '5S0' ], withdraw: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -3128,6 +4129,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 30 } ]
   },
   kabuto: {
+    learnset: { confuseray: [ '5S0' ], dig: [ '5S0' ], harden: [ '5S0' ], scratch: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -3141,6 +4143,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 30 } ]
   },
   aerodactyl: {
+    learnset: {
+      ancientpower: [ '7S1' ],
+      celebrate: [ '7S1' ],
+      firefang: [ '5S0' ],
+      icefang: [ '5S0' ],
+      rockpolish: [ '7S1' ],
+      steelwing: [ '5S0' ],
+      thunderfang: [ '5S0' ],
+      wideguard: [ '7S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -3161,6 +4173,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 30 } ]
   },
   munchlax: {
+    learnset: {
+      curse: [ '4S1' ],
+      defensecurl: [ '4S0' ],
+      happyhour: [ '7S2' ],
+      holdback: [ '7S2' ],
+      metronome: [ '7S2', '4S0', '4S1' ],
+      odorsleuth: [ '4S1' ],
+      selfdestruct: [ '4S0' ],
+      tackle: [ '7S2', '4S0', '4S1' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -3186,6 +4208,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   snorlax: {
+    learnset: {
+      block: [ '7S1' ],
+      bodyslam: [ '7S1', '3S0' ],
+      celebrate: [ '7S1' ],
+      curse: [ '3S0' ],
+      fissure: [ '3S0' ],
+      refresh: [ '3S0' ],
+      sunnyday: [ '7S1' ]
+    },
     eventData: [
       { generation: 3, level: 43, moves: [ 'refresh', 'fissure', 'curse', 'bodyslam' ] },
       {
@@ -3199,6 +4230,27 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 1, level: 30 } ]
   },
   articuno: {
+    learnset: {
+      agility: [ '4S3', '4S4', '3S0', '3S1' ],
+      ancientpower: [ '7S7' ],
+      extrasensory: [ '3S2' ],
+      freezedry: [ '8S8', '7S7', '6S6' ],
+      hail: [ '7S7', '6S5', '6S6' ],
+      haze: [ '3S2' ],
+      healbell: [ '3S2' ],
+      hurricane: [ '8S8' ],
+      icebeam: [
+        '8S8', '6S5',
+        '6S6', '4S3',
+        '4S4', '3S0',
+        '3S1', '3S2'
+      ],
+      mindreader: [ '4S4', '3S0', '3S1' ],
+      mist: [ '8S8', '4S4', '3S0' ],
+      reflect: [ '7S7', '6S5', '6S6', '4S3', '3S1' ],
+      roost: [ '4S3' ],
+      tailwind: [ '6S5' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3254,6 +4306,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   articunogalar: {
+    learnset: {
+      freezingglare: [ '8S0', '8S1' ],
+      hurricane: [ '8S0', '8S1' ],
+      psychocut: [ '8S0', '8S1' ],
+      psychoshift: [ '8S0', '8S1' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -3271,6 +4329,31 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   zapdos: {
+    learnset: {
+      agility: [
+        '8S8', '6S5',
+        '6S6', '4S3',
+        '4S4', '3S0',
+        '3S1'
+      ],
+      ancientpower: [ '7S7' ],
+      batonpass: [ '3S2' ],
+      bravebird: [ '8S8' ],
+      charge: [ '4S3', '3S1' ],
+      detect: [ '4S4', '3S0', '3S1' ],
+      discharge: [ '7S7', '6S5', '6S6', '4S3' ],
+      drillpeck: [ '8S8', '4S4', '3S0', '3S1' ],
+      extrasensory: [ '3S2' ],
+      lightscreen: [ '6S5' ],
+      metalsound: [ '3S2' ],
+      pluck: [ '7S7' ],
+      raindance: [ '7S7', '6S5', '6S6' ],
+      roost: [ '4S3' ],
+      thunder: [ '8S8' ],
+      thunderbolt: [ '3S2' ],
+      thundershock: [ '6S6' ],
+      thunderwave: [ '4S4', '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3330,6 +4413,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   zapdosgalar: {
+    learnset: {
+      drillpeck: [ '8S0', '8S1' ],
+      focusenergy: [ '8S0', '8S1' ],
+      reversal: [ '8S0', '8S1' ],
+      thunderouskick: [ '8S0', '8S1' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -3347,6 +4436,24 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   moltres: {
+    learnset: {
+      agility: [ '4S4', '3S0', '3S1' ],
+      airslash: [ '7S7', '6S5', '4S3' ],
+      ancientpower: [ '7S7' ],
+      endure: [ '4S4', '3S0', '3S1' ],
+      extrasensory: [ '3S2' ],
+      firespin: [ '8S8', '4S4', '3S0' ],
+      flamethrower: [ '7S7', '4S3', '4S4', '3S0', '3S1', '3S2' ],
+      heatwave: [ '8S8', '6S5', '6S6' ],
+      leer: [ '8S8' ],
+      morningsun: [ '3S2' ],
+      roost: [ '4S3' ],
+      safeguard: [ '6S5', '6S6', '4S3', '3S1' ],
+      skyattack: [ '6S6' ],
+      sunnyday: [ '7S7', '6S5', '6S6' ],
+      willowisp: [ '3S2' ],
+      wingattack: [ '8S8' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3406,6 +4513,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   moltresgalar: {
+    learnset: {
+      fierywrath: [ '8S0', '8S1' ],
+      hurricane: [ '8S0', '8S1' ],
+      nastyplot: [ '8S0', '8S1' ],
+      suckerpunch: [ '8S0', '8S1' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -3433,6 +4546,27 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   dragonite: {
+    learnset: {
+      agility: [ '6S8', '3S0' ],
+      barrier: [ '6S8' ],
+      dracometeor: [ '8S9', '4S2' ],
+      dragonclaw: [ '8S9' ],
+      dragondance: [ '8S9', '6S7', '5S3', '4S2', '3S1' ],
+      dragonrush: [ '5S4', '5S5' ],
+      earthquake: [ '3S1' ],
+      extremespeed: [ '6S7', '5S3', '5S5' ],
+      fireblast: [ '5S6' ],
+      firepunch: [ '5S3' ],
+      healbell: [ '3S1' ],
+      hurricane: [ '8S9', '6S7' ],
+      hyperbeam: [ '6S8', '5S6', '3S1' ],
+      outrage: [ '6S7', '5S3', '5S6', '4S2', '3S0' ],
+      safeguard: [ '5S4', '5S5', '5S6', '3S0' ],
+      slam: [ '6S8' ],
+      thunderbolt: [ '4S2' ],
+      thunderpunch: [ '5S4' ],
+      wingattack: [ '5S4', '5S5', '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3514,6 +4648,26 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 5, level: 50 }, { generation: 7, level: 10 } ]
   },
   mewtwo: {
+    learnset: {
+      amnesia: [ '4S1' ],
+      aurasphere: [ '6S4', '6S5', '5S2' ],
+      barrier: [ '6S4' ],
+      blizzard: [ '8S7' ],
+      disable: [ '8S7' ],
+      electroball: [ '5S2' ],
+      guardswap: [ '4S1' ],
+      healpulse: [ '5S3' ],
+      hurricane: [ '5S3' ],
+      icebeam: [ '5S3' ],
+      powerswap: [ '4S1' ],
+      psychic: [ '8S7', '7S6', '6S4', '6S5', '3S0' ],
+      psychocut: [ '7S6', '4S1' ],
+      psystrike: [ '6S5', '5S2', '5S3' ],
+      recover: [ '8S7', '7S6', '6S4', '6S5', '3S0' ],
+      safeguard: [ '3S0' ],
+      shadowball: [ '5S2' ],
+      swift: [ '7S6', '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3572,6 +4726,36 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   mew: {
+    learnset: {
+      amnesia: [ '4S17' ],
+      ancientpower: [ '4S14' ],
+      aurasphere: [ '4S14', '4S15', '4S16', '4S17', '4S18', '4S19' ],
+      barrier: [ '7S24', '4S15' ],
+      fakeout: [ '3S2', '3S3' ],
+      feintattack: [ '3S4', '3S5' ],
+      hypnosis: [ '4S20', '3S6', '3S7' ],
+      megapunch: [ '4S16', '3S0' ],
+      metronome: [
+        '7S24', '4S14',
+        '4S15', '4S16',
+        '4S17', '4S18',
+        '4S19', '3S0'
+      ],
+      nightshade: [ '3S8', '3S9' ],
+      pound: [ '8S25', '7S23', '6S22', '4S21', '3S0', '3S1' ],
+      psychic: [ '7S24', '4S19' ],
+      return: [ '4S20' ],
+      roleplay: [ '3S10', '3S11' ],
+      synthesis: [ '4S20' ],
+      teleport: [
+        '4S14', '4S15',
+        '4S16', '4S17',
+        '4S18', '4S19',
+        '4S20'
+      ],
+      transform: [ '7S24', '4S18', '3S0', '3S1' ],
+      zapcannon: [ '3S12', '3S13' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3648,6 +4832,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   chikorita: {
+    learnset: {
+      ancientpower: [ '3S1' ],
+      frenzyplant: [ '3S1' ],
+      growl: [ '6S2', '3S0', '3S1' ],
+      razorleaf: [ '3S0' ],
+      tackle: [ '6S2', '3S0', '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3666,6 +4857,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   meganium: {
+    learnset: {
+      bodyslam: [ '6S0' ],
+      solarbeam: [ '6S0' ],
+      sunnyday: [ '6S0' ],
+      synthesis: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -3677,6 +4874,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   cyndaquil: {
+    learnset: {
+      blastburn: [ '3S1' ],
+      leer: [ '6S2', '3S0', '3S1' ],
+      reversal: [ '3S1' ],
+      smokescreen: [ '3S0' ],
+      tackle: [ '6S2', '3S0', '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3695,6 +4899,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   typhlosion: {
+    learnset: {
+      flamecharge: [ '6S1' ],
+      flamethrower: [ '3S0' ],
+      flamewheel: [ '6S1', '3S0' ],
+      overheat: [ '6S1' ],
+      quickattack: [ '3S0' ],
+      swift: [ '6S1', '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3712,6 +4924,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   totodile: {
+    learnset: {
+      crunch: [ '3S1' ],
+      hydrocannon: [ '3S1' ],
+      leer: [ '6S2', '3S0', '3S1' ],
+      rage: [ '3S0' ],
+      scratch: [ '6S2', '3S0', '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3730,6 +4949,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   feraligatr: {
+    learnset: { crunch: [ '6S0' ], icepunch: [ '6S0' ], screech: [ '6S0' ], waterfall: [ '6S0' ] },
     eventData: [
       {
         generation: 6,
@@ -3743,6 +4963,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   sentret: { encounters: [ { generation: 2, level: 2 } ] },
   furret: { encounters: [ { generation: 2, level: 6 }, { generation: 4, level: 6 } ] },
   hoothoot: {
+    learnset: { foresight: [ '3S0' ], growl: [ '3S0' ], tackle: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -3762,6 +4983,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   ledyba: {
+    learnset: { aerialace: [ '3S0' ], psybeam: [ '3S0' ], refresh: [ '3S0' ], supersonic: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -3773,6 +4995,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   ledian: { encounters: [ { generation: 2, level: 7 }, { generation: 4, level: 5 } ] },
   spinarak: {
+    learnset: { dig: [ '3S0' ], nightshade: [ '3S0' ], refresh: [ '3S0' ], signalbeam: [ '3S0' ] },
     eventData: [
       { generation: 3, level: 14, moves: [ 'refresh', 'dig', 'signalbeam', 'nightshade' ] }
     ],
@@ -3793,6 +5016,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   togepi: {
+    learnset: {
+      ancientpower: [ '3S1' ],
+      charm: [ '3S0' ],
+      followme: [ '3S1' ],
+      helpinghand: [ '3S1' ],
+      metronome: [ '3S0' ],
+      sweetkiss: [ '3S0' ],
+      triattack: [ '3S1' ],
+      yawn: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3810,6 +5043,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   togekiss: {
+    learnset: {
+      airslash: [ '5S0' ],
+      aurasphere: [ '5S0' ],
+      extremespeed: [ '5S0' ],
+      present: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -3821,6 +5060,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   natu: {
+    learnset: {
+      aerialace: [ '3S0' ],
+      batonpass: [ '3S0' ],
+      futuresight: [ '3S0' ],
+      nightshade: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3846,6 +5091,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   mareep: {
+    learnset: {
+      bodyslam: [ '3S2' ],
+      cottonspore: [ '3S0' ],
+      growl: [ '3S1' ],
+      healbell: [ '3S2' ],
+      holdback: [ '6S3' ],
+      tackle: [ '6S3', '3S1' ],
+      thunder: [ '3S0' ],
+      thundershock: [ '6S3', '3S0', '3S1', '3S2' ],
+      thunderwave: [ '6S3', '3S0', '3S2' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -3881,6 +5137,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   hoppip: { encounters: [ { generation: 2, level: 3 } ] },
   skiploom: { encounters: [ { generation: 4, level: 12 } ] },
   jumpluff: {
+    learnset: {
+      bulletseed: [ '5S0' ],
+      falseswipe: [ '5S0' ],
+      leechseed: [ '5S0' ],
+      sleeppowder: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -3892,6 +5154,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   aipom: {
+    learnset: { sandattack: [ '3S0' ], scratch: [ '3S0' ], tailwhip: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -3903,6 +5166,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   sunkern: {
+    learnset: { absorb: [ '3S0' ], growth: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -3917,6 +5181,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   wooper: { encounters: [ { generation: 2, level: 4 } ] },
   quagsire: { encounters: [ { generation: 2, level: 15 }, { generation: 4, level: 10 } ] },
   murkrow: {
+    learnset: { astonish: [ '3S0' ], peck: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -3929,6 +5194,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   honchkrow: {
+    learnset: {
+      heatwave: [ '7S0' ],
+      icywind: [ '7S0' ],
+      nightslash: [ '7S0' ],
+      skyattack: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -3941,6 +5212,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   misdreavus: {
+    learnset: { growl: [ '3S0' ], psywave: [ '3S0' ], spite: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -3960,6 +5232,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   wynaut: {
+    learnset: { charm: [ '3S0' ], encore: [ '3S0' ], splash: [ '3S0' ], tickle: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -3971,6 +5244,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   wobbuffet: {
+    learnset: {
+      counter: [ '6S2', '6S3', '3S0', '3S1' ],
+      destinybond: [ '3S0', '3S1' ],
+      mirrorcoat: [ '6S3', '3S0', '3S1' ],
+      safeguard: [ '3S0', '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4003,6 +5282,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 2, level: 5 }, { generation: 4, level: 3 } ]
   },
   pineco: {
+    learnset: {
+      counter: [ '3S1' ],
+      pinmissile: [ '3S1' ],
+      protect: [ '3S0' ],
+      refresh: [ '3S1' ],
+      selfdestruct: [ '3S0' ],
+      spikes: [ '3S1' ],
+      tackle: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4016,6 +5304,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   forretress: { encounters: [ { generation: 6, level: 30 } ] },
   gligar: {
+    learnset: { poisonsting: [ '3S0' ], sandattack: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -4027,6 +5316,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   snubbull: {
+    learnset: { charm: [ '3S0' ], scaryface: [ '3S0' ], tackle: [ '3S0' ], tailwhip: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -4039,6 +5329,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   granbull: { encounters: [ { generation: 2, level: 15 } ] },
   qwilfish: {
+    learnset: { harden: [ '3S0' ], minimize: [ '3S0' ], poisonsting: [ '3S0' ], tackle: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -4050,6 +5341,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   shuckle: {
+    learnset: {
+      constrict: [ '3S0' ],
+      encore: [ '3S1' ],
+      sludgebomb: [ '3S1' ],
+      substitute: [ '3S1' ],
+      toxic: [ '3S1' ],
+      withdraw: [ '3S0' ],
+      wrap: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4069,6 +5369,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   heracross: {
+    learnset: {
+      bulletseed: [ '6S0', '6S1' ],
+      closecombat: [ '6S0' ],
+      earthquake: [ '6S1' ],
+      megahorn: [ '6S0' ],
+      pinmissile: [ '6S0', '6S1' ],
+      rockblast: [ '6S1' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -4089,6 +5397,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   sneasel: {
+    learnset: { leer: [ '3S0' ], quickattack: [ '3S0' ], scratch: [ '3S0' ], taunt: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -4100,6 +5409,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   weavile: {
+    learnset: {
+      brickbreak: [ '6S1', '4S0' ],
+      fakeout: [ '4S0' ],
+      icepunch: [ '6S1' ],
+      iceshard: [ '4S0' ],
+      nightslash: [ '6S1', '4S0' ],
+      xscissor: [ '6S1' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -4120,6 +5437,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   teddiursa: {
+    learnset: {
+      leer: [ '3S0' ],
+      lick: [ '3S0', '3S1' ],
+      metalclaw: [ '3S1' ],
+      refresh: [ '3S1' ],
+      return: [ '3S1' ],
+      scratch: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4140,6 +5465,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   ursaring: { encounters: [ { generation: 2, level: 25 } ] },
   magcargo: {
+    learnset: {
+      earthquake: [ '3S0' ],
+      flamethrower: [ '3S0' ],
+      heatwave: [ '3S0' ],
+      refresh: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4150,6 +5481,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 3, level: 25 }, { generation: 6, level: 30 } ]
   },
   swinub: {
+    learnset: { ancientpower: [ '3S0' ], charm: [ '3S0' ], mist: [ '3S0' ], mudshot: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -4161,6 +5493,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   piloswine: { encounters: [ { generation: 6, level: 30 } ] },
   mamoswine: {
+    learnset: {
+      doublehit: [ '5S0' ],
+      earthquake: [ '6S1' ],
+      hail: [ '5S0' ],
+      icefang: [ '5S0' ],
+      iciclecrash: [ '6S1' ],
+      iciclespear: [ '6S1' ],
+      rockslide: [ '6S1' ],
+      takedown: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -4182,6 +5524,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   corsola: {
+    learnset: { mudsport: [ '3S0' ], powergem: [ '7S1' ], tackle: [ '7S1', '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -4202,6 +5545,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   corsolagalar: {
+    learnset: { astonish: [ '8S0' ], disable: [ '8S0' ], spite: [ '8S0' ], tackle: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
@@ -4213,6 +5557,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   octillery: {
+    learnset: {
+      hyperbeam: [ '4S0' ],
+      icebeam: [ '4S0' ],
+      octazooka: [ '4S0' ],
+      signalbeam: [ '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -4227,6 +5577,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 4, level: 19 }, { generation: 7, level: 10 } ]
   },
   delibird: {
+    learnset: { happyhour: [ '6S1' ], present: [ '6S1', '3S0' ] },
     eventData: [
       { generation: 3, level: 10, gender: 'M', moves: [ 'present' ], pokeball: 'pokeball' },
       {
@@ -4239,6 +5590,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   mantine: {
+    learnset: { bubble: [ '3S0' ], supersonic: [ '3S0' ], tackle: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -4250,6 +5602,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   houndour: {
+    learnset: {
+      charm: [ '3S1' ],
+      ember: [ '3S0', '3S1' ],
+      feintattack: [ '3S1' ],
+      howl: [ '3S0' ],
+      leer: [ '3S0' ],
+      roar: [ '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4262,6 +5622,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   houndoom: {
+    learnset: {
+      darkpulse: [ '6S0' ],
+      flamethrower: [ '6S0' ],
+      sludgebomb: [ '6S0' ],
+      solarbeam: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -4277,6 +5643,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   phanpy: { encounters: [ { generation: 2, level: 2 } ] },
   donphan: { encounters: [ { generation: 6, level: 24, maxEggMoves: 1 } ] },
   stantler: {
+    learnset: { leer: [ '3S0' ], tackle: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -4289,6 +5656,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   smeargle: {
+    learnset: {
+      falseswipe: [ '5S1' ],
+      flamethrower: [ '6S2' ],
+      furyswipes: [ '6S2' ],
+      meanlook: [ '5S1' ],
+      odorsleuth: [ '5S1' ],
+      seismictoss: [ '6S2' ],
+      sketch: [ '6S2', '3S0' ],
+      spore: [ '5S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4320,6 +5697,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   miltank: {
+    learnset: { attract: [ '6S0' ], milkdrink: [ '6S0' ], rollout: [ '6S0' ], stomp: [ '6S0' ] },
     eventData: [
       {
         generation: 6,
@@ -4332,6 +5710,25 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   raikou: {
+    learnset: {
+      aurasphere: [ '4S3' ],
+      calmmind: [ '7S7' ],
+      crunch: [ '7S5', '7S6', '6S4', '3S1' ],
+      discharge: [ '7S5', '7S6' ],
+      extrasensory: [ '7S7' ],
+      extremespeed: [ '8S8', '4S3' ],
+      howl: [ '8S8' ],
+      quickattack: [ '4S2', '3S0', '3S1' ],
+      reflect: [ '7S5', '7S6', '6S4', '4S2', '3S1' ],
+      roar: [ '4S2', '3S0' ],
+      spark: [ '6S4', '4S2', '3S0', '3S1' ],
+      thunderbolt: [ '8S8', '7S7' ],
+      thunderfang: [ '7S5', '7S6', '6S4' ],
+      thundershock: [ '3S0' ],
+      voltswitch: [ '7S7' ],
+      weatherball: [ '8S8', '4S3' ],
+      zapcannon: [ '4S3' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4394,6 +5791,27 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   entei: {
+    learnset: {
+      bite: [ '7S5', '7S6' ],
+      crunch: [ '8S8' ],
+      crushclaw: [ '4S3' ],
+      ember: [ '3S0' ],
+      extremespeed: [ '8S8', '4S3' ],
+      firefang: [ '6S4' ],
+      firespin: [ '4S2', '3S0', '3S1' ],
+      flamecharge: [ '7S7' ],
+      flamethrower: [ '8S8', '6S4', '4S2', '3S1' ],
+      flareblitz: [ '4S3' ],
+      howl: [ '4S3' ],
+      ironhead: [ '7S7' ],
+      lavaplume: [ '7S5', '7S6' ],
+      roar: [ '4S2', '3S0' ],
+      sacredfire: [ '7S7' ],
+      scaryface: [ '8S8' ],
+      stomp: [ '7S5', '7S6', '6S4', '4S2', '3S0', '3S1' ],
+      stoneedge: [ '7S7' ],
+      swagger: [ '7S5', '7S6', '6S4', '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4456,6 +5874,22 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   suicune: {
+    learnset: {
+      airslash: [ '4S3' ],
+      aquaring: [ '4S3' ],
+      aurorabeam: [ '7S5', '6S4', '4S2', '3S0', '3S1' ],
+      bubblebeam: [ '7S5', '3S0' ],
+      calmmind: [ '8S6' ],
+      extrasensory: [ '8S6' ],
+      extremespeed: [ '8S6', '4S3' ],
+      gust: [ '4S2', '3S0', '3S1' ],
+      icefang: [ '6S4' ],
+      liquidation: [ '8S6' ],
+      mirrorcoat: [ '6S4', '3S1' ],
+      mist: [ '7S5', '6S4', '4S2', '3S1' ],
+      raindance: [ '7S5', '4S2', '3S0' ],
+      sheercold: [ '4S3' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4506,6 +5940,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   larvitar: {
+    learnset: {
+      bite: [ '5S1', '3S0' ],
+      dragondance: [ '3S0' ],
+      leer: [ '5S1' ],
+      outrage: [ '3S0' ],
+      sandstorm: [ '5S1', '3S0' ],
+      superpower: [ '5S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4524,6 +5966,26 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   tyranitar: {
+    learnset: {
+      crunch: [
+        '6S3', '6S4',
+        '6S5', '6S6',
+        '5S1', '5S2',
+        '3S0'
+      ],
+      earthquake: [ '6S3', '6S4', '5S2', '3S0' ],
+      fireblast: [ '5S1' ],
+      icebeam: [ '5S1' ],
+      icepunch: [ '6S3', '6S6' ],
+      lowkick: [ '6S5', '6S6' ],
+      payback: [ '5S2' ],
+      protect: [ '6S5' ],
+      rockslide: [ '6S4', '6S5', '6S6' ],
+      scaryface: [ '3S0' ],
+      seismictoss: [ '5S2' ],
+      stoneedge: [ '6S3', '6S4', '5S1' ],
+      thrash: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4577,6 +6039,37 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 5, level: 50 } ]
   },
   lugia: {
+    learnset: {
+      aeroblast: [
+        '7S7', '7S8',
+        '7S9', '7S10',
+        '6S5', '6S6',
+        '4S2', '4S3'
+      ],
+      ancientpower: [ '8S11', '7S7', '7S9', '4S3' ],
+      defog: [ '7S8' ],
+      dragonpulse: [ '8S11' ],
+      dragonrush: [ '6S6' ],
+      earthpower: [ '7S10' ],
+      earthquake: [ '3S1' ],
+      extrasensory: [ '8S11', '7S7', '7S9', '4S2' ],
+      featherdance: [ '3S1' ],
+      hurricane: [ '7S8' ],
+      hydropump: [ '6S5', '6S6', '4S2', '3S0', '3S1' ],
+      icebeam: [ '6S6' ],
+      psychic: [ '7S10' ],
+      psychoboost: [ '3S1' ],
+      punishment: [ '6S5', '4S3' ],
+      raindance: [ '6S5', '4S2', '3S0' ],
+      recover: [ '3S0' ],
+      safeguard: [ '4S3' ],
+      skillswap: [ '7S7', '7S9' ],
+      swift: [ '3S0' ],
+      tailwind: [ '7S8', '7S10' ],
+      weatherball: [ '5S4' ],
+      whirlpool: [ '8S11' ],
+      whirlwind: [ '5S4' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4657,6 +6150,30 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   hooh: {
+    learnset: {
+      ancientpower: [ '8S10', '7S7', '7S8', '4S2' ],
+      bravebird: [ '7S6', '7S9', '6S5' ],
+      burnup: [ '7S7', '7S8' ],
+      celebrate: [ '6S5' ],
+      earthquake: [ '7S9' ],
+      extrasensory: [ '8S10', '7S7', '7S8', '4S1' ],
+      fireblast: [ '6S4', '4S1', '3S0' ],
+      flareblitz: [ '8S10' ],
+      punishment: [ '6S4', '4S2' ],
+      recover: [ '7S6', '6S5', '3S0' ],
+      sacredfire: [
+        '7S6', '7S7',
+        '7S8', '7S9',
+        '6S4', '6S5',
+        '4S1', '4S2'
+      ],
+      safeguard: [ '7S6', '4S2' ],
+      sunnyday: [ '8S10', '6S4', '4S1', '3S0' ],
+      swift: [ '3S0' ],
+      tailwind: [ '7S9' ],
+      weatherball: [ '5S3' ],
+      whirlwind: [ '5S3' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4731,6 +6248,28 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   celebi: {
+    learnset: {
+      ancientpower: [ '7S7', '3S1', '3S3' ],
+      batonpass: [ '3S1' ],
+      confusion: [ '6S6', '3S0' ],
+      futuresight: [ '8S8', '7S7', '3S1', '3S3' ],
+      healbell: [
+        '8S8', '7S7',
+        '6S5', '6S6',
+        '3S0', '3S2',
+        '3S3'
+      ],
+      healingwish: [ '4S4' ],
+      holdback: [ '6S5' ],
+      leafstorm: [ '4S4' ],
+      leechseed: [ '3S2' ],
+      lifedew: [ '8S8' ],
+      magicalleaf: [ '8S8' ],
+      nastyplot: [ '4S4' ],
+      perishsong: [ '3S1' ],
+      recover: [ '6S5', '6S6', '4S4', '3S0', '3S2' ],
+      safeguard: [ '7S7', '6S5', '6S6', '3S0', '3S2', '3S3' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4793,6 +6332,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   treecko: {
+    learnset: { absorb: [ '5S1', '3S0' ], leer: [ '5S1', '3S0' ], pound: [ '5S1', '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -4811,6 +6351,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   sceptile: {
+    learnset: {
+      dragonpulse: [ '5S0' ],
+      focusblast: [ '5S0' ],
+      leafstorm: [ '5S0' ],
+      rockslide: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -4822,6 +6368,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   torchic: {
+    learnset: {
+      ember: [ '6S2', '5S1', '5S2', '3S0' ],
+      focusenergy: [ '6S2', '5S1', '5S2', '3S0' ],
+      growl: [ '6S2', '5S1', '5S2', '3S0' ],
+      scratch: [ '6S2', '5S1', '5S2', '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4848,6 +6400,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   blaziken: {
+    learnset: {
+      blazekick: [ '3S0' ],
+      flareblitz: [ '5S1' ],
+      highjumpkick: [ '5S1' ],
+      mirrormove: [ '3S0' ],
+      skyuppercut: [ '3S0' ],
+      slash: [ '3S0' ],
+      stoneedge: [ '5S1' ],
+      thunderpunch: [ '5S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4865,6 +6427,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   mudkip: {
+    learnset: {
+      growl: [ '5S1', '3S0' ],
+      mudslap: [ '5S1', '3S0' ],
+      tackle: [ '5S1', '3S0' ],
+      watergun: [ '5S1', '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4883,6 +6451,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   swampert: {
+    learnset: {
+      earthquake: [ '5S0' ],
+      hammerarm: [ '5S0' ],
+      hydropump: [ '5S0' ],
+      icebeam: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -4894,6 +6468,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   poochyena: {
+    learnset: { dig: [ '3S0' ], healbell: [ '3S0' ], howl: [ '3S0' ], poisonfang: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -4905,6 +6480,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 3, level: 2 } ]
   },
   mightyena: {
+    learnset: { crunch: [ '7S0' ], firefang: [ '7S0' ], icefang: [ '7S0' ], thunderfang: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -4917,6 +6493,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   zigzagoon: {
+    learnset: {
+      extremespeed: [ '3S1' ],
+      growl: [ '3S0', '3S1' ],
+      tackle: [ '3S0', '3S1' ],
+      tailwhip: [ '3S0', '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -4938,6 +6520,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 3, level: 2 } ]
   },
   linoone: {
+    learnset: {
+      babydolleyes: [ '6S0' ],
+      extremespeed: [ '6S0' ],
+      helpinghand: [ '6S0' ],
+      protect: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -4964,6 +6552,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   lotad: {
+    learnset: { absorb: [ '3S0' ], astonish: [ '3S0' ], growl: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -4977,6 +6566,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   lombre: { encounters: [ { generation: 6, level: 13, maxEggMoves: 1 } ] },
   ludicolo: {
+    learnset: {
+      fakeout: [ '5S0' ],
+      gigadrain: [ '5S0', '5S1' ],
+      hydropump: [ '5S0' ],
+      icebeam: [ '5S0', '5S1' ],
+      scald: [ '5S1' ],
+      sunnyday: [ '5S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -4998,6 +6595,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   seedot: {
+    learnset: {
+      bide: [ '3S0' ],
+      bulletseed: [ '3S1' ],
+      gigadrain: [ '3S1' ],
+      growth: [ '3S0' ],
+      harden: [ '3S0' ],
+      refresh: [ '3S1' ],
+      secretpower: [ '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5016,6 +6622,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   nuzleaf: { encounters: [ { generation: 6, level: 13, maxEggMoves: 1 } ] },
   taillow: {
+    learnset: { featherdance: [ '3S0' ], focusenergy: [ '3S0' ], growl: [ '3S0' ], peck: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -5028,6 +6635,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 3, level: 4 } ]
   },
   swellow: {
+    learnset: { agility: [ '3S0' ], batonpass: [ '3S0' ], facade: [ '3S0' ], skyattack: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -5042,6 +6650,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 4, level: 15 }, { generation: 6, level: 18, maxEggMoves: 1 } ]
   },
   ralts: {
+    learnset: {
+      charm: [ '3S1' ],
+      confusion: [ '3S2' ],
+      encore: [ '6S3' ],
+      growl: [ '6S3', '3S0', '3S1' ],
+      reflect: [ '3S2' ],
+      shockwave: [ '3S2' ],
+      sing: [ '3S2' ],
+      wish: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5070,6 +6688,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   kirlia: { encounters: [ { generation: 4, level: 6 } ] },
   gardevoir: {
+    learnset: {
+      calmmind: [ '6S1' ],
+      dazzlinggleam: [ '6S1' ],
+      focusblast: [ '5S0' ],
+      hypnosis: [ '5S0' ],
+      moonblast: [ '6S1' ],
+      psychic: [ '5S0' ],
+      storedpower: [ '6S1' ],
+      thunderbolt: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -5091,6 +6719,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   surskit: {
+    learnset: { bubble: [ '3S0', '3S1' ], mudsport: [ '3S0' ], quickattack: [ '3S1' ] },
     eventData: [
       {
         generation: 3,
@@ -5111,6 +6740,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   masquerain: { encounters: [ { generation: 6, level: 21, maxEggMoves: 1 } ] },
   shroomish: {
+    learnset: {
+      falseswipe: [ '3S0' ],
+      megadrain: [ '3S0' ],
+      refresh: [ '3S0' ],
+      stunspore: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5121,6 +6756,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   slaking: {
+    learnset: {
+      aerialace: [ '4S0' ],
+      gigaimpact: [ '4S0' ],
+      return: [ '4S0' ],
+      shadowclaw: [ '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -5133,6 +6774,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   shedinja: {
+    learnset: { confuseray: [ '3S0' ], grudge: [ '3S0' ], shadowball: [ '3S0' ], spite: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -5143,6 +6785,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   whismur: {
+    learnset: { pound: [ '3S0' ], teeterdance: [ '3S0' ], uproar: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -5155,6 +6798,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   loudred: { encounters: [ { generation: 6, level: 16, maxEggMoves: 1 } ] },
   exploud: {
+    learnset: {
+      hyperbeam: [ '3S1' ],
+      hypervoice: [ '3S0' ],
+      rest: [ '3S0' ],
+      roar: [ '3S0', '3S1' ],
+      screech: [ '3S1' ],
+      sleeptalk: [ '3S0' ],
+      stomp: [ '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5171,6 +6823,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   makuhita: {
+    learnset: {
+      armthrust: [ '3S0' ],
+      brickbreak: [ '3S0' ],
+      refresh: [ '3S0' ],
+      rocktomb: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5181,6 +6839,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   hariyama: { encounters: [ { generation: 6, level: 22 } ] },
   nosepass: {
+    learnset: {
+      helpinghand: [ '3S0' ],
+      rockslide: [ '3S0' ],
+      thunderbolt: [ '3S0' ],
+      thunderwave: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5190,6 +6854,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   skitty: {
+    learnset: {
+      attract: [ '3S2' ],
+      growl: [ '3S0', '3S1', '3S2' ],
+      payday: [ '3S0' ],
+      rollout: [ '3S1' ],
+      tackle: [ '3S0', '3S1', '3S2' ],
+      tailwhip: [ '3S0', '3S1', '3S2' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5228,6 +6900,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   delcatty: {
+    learnset: {
+      attract: [ '3S0' ],
+      secretpower: [ '3S0' ],
+      shockwave: [ '3S0' ],
+      sweetkiss: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5238,6 +6916,24 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   sableye: {
+    learnset: {
+      calmmind: [ '6S3' ],
+      feintattack: [ '3S1' ],
+      foresight: [ '3S0' ],
+      foulplay: [ '5S2' ],
+      helpinghand: [ '3S1' ],
+      leer: [ '3S0' ],
+      nightshade: [ '3S0' ],
+      octazooka: [ '5S2' ],
+      recover: [ '6S3', '6S4', '3S1' ],
+      scratch: [ '3S0' ],
+      shadowball: [ '6S3', '3S1' ],
+      shockwave: [ '6S4' ],
+      taunt: [ '6S4' ],
+      tickle: [ '5S2' ],
+      trick: [ '5S2' ],
+      willowisp: [ '6S3', '6S4' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5281,6 +6977,19 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   mawile: {
+    learnset: {
+      astonish: [ '3S0' ],
+      faketears: [ '3S0' ],
+      falseswipe: [ '3S1' ],
+      firefang: [ '6S2' ],
+      irondefense: [ '3S1' ],
+      ironhead: [ '6S2', '6S3' ],
+      playrough: [ '6S2', '6S3' ],
+      protect: [ '6S3' ],
+      sing: [ '3S1' ],
+      suckerpunch: [ '6S2', '6S3' ],
+      visegrip: [ '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5311,6 +7020,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   aggron: {
+    learnset: {
+      doubleedge: [ '3S0' ],
+      earthquake: [ '6S2' ],
+      headsmash: [ '6S2' ],
+      ironhead: [ '6S2' ],
+      irontail: [ '3S0', '3S1' ],
+      metalsound: [ '3S0', '3S1' ],
+      protect: [ '3S0', '3S1' ],
+      rockslide: [ '6S2' ],
+      takedown: [ '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5335,6 +7055,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   meditite: {
+    learnset: {
+      bide: [ '3S0' ],
+      confusion: [ '3S0', '3S1' ],
+      detect: [ '3S1' ],
+      dynamicpunch: [ '3S1' ],
+      meditate: [ '3S0' ],
+      shadowball: [ '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5355,6 +7083,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 4, level: 35 }, { generation: 6, level: 34, maxEggMoves: 1 } ]
   },
   manectric: {
+    learnset: {
+      bite: [ '3S0' ],
+      overheat: [ '6S1' ],
+      protect: [ '6S1' ],
+      raindance: [ '3S0' ],
+      refresh: [ '3S0' ],
+      thunder: [ '3S0' ],
+      thunderbolt: [ '6S1' ],
+      voltswitch: [ '6S1' ]
+    },
     eventData: [
       { generation: 3, level: 44, moves: [ 'refresh', 'thunder', 'raindance', 'bite' ] },
       {
@@ -5368,6 +7106,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   plusle: {
+    learnset: {
+      growl: [ '3S0', '3S1' ],
+      quickattack: [ '3S1' ],
+      thunderwave: [ '3S0', '3S1' ],
+      watersport: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5386,6 +7130,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   minun: {
+    learnset: {
+      growl: [ '3S0', '3S1' ],
+      mudsport: [ '3S0' ],
+      quickattack: [ '3S1' ],
+      thunderwave: [ '3S0', '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5404,6 +7154,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   roselia: {
+    learnset: {
+      absorb: [ '3S0' ],
+      grasswhistle: [ '3S1' ],
+      growth: [ '3S0' ],
+      leechseed: [ '3S1' ],
+      magicalleaf: [ '3S1' ],
+      poisonsting: [ '3S0' ],
+      sweetkiss: [ '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5420,9 +7179,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   gulpin: {
+    learnset: { shockwave: [ '3S0' ], sing: [ '3S0' ], sludge: [ '3S0' ], toxic: [ '3S0' ] },
     eventData: [ { generation: 3, level: 17, moves: [ 'sing', 'shockwave', 'sludge', 'toxic' ] } ]
   },
   carvanha: {
+    learnset: {
+      bite: [ '6S1', '3S0' ],
+      hydropump: [ '6S1' ],
+      leer: [ '6S1' ],
+      refresh: [ '3S0' ],
+      scaryface: [ '3S0' ],
+      waterpulse: [ '3S0' ]
+    },
     eventData: [
       { generation: 3, level: 15, moves: [ 'refresh', 'waterpulse', 'bite', 'scaryface' ] },
       {
@@ -5435,6 +7203,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   sharpedo: {
+    learnset: {
+      aquajet: [ '6S0' ],
+      crunch: [ '6S0', '6S1' ],
+      destinybond: [ '6S0' ],
+      icefang: [ '6S0' ],
+      poisonfang: [ '6S1' ],
+      scaryface: [ '6S1' ],
+      slash: [ '6S1' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -5456,6 +7233,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 7, level: 10 } ]
   },
   wailord: {
+    learnset: {
+      amnesia: [ '3S0' ],
+      hydropump: [ '3S0' ],
+      mist: [ '3S1' ],
+      rest: [ '3S0', '3S1' ],
+      waterpulse: [ '3S1' ],
+      waterspout: [ '3S0', '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5478,6 +7263,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   numel: {
+    learnset: {
+      charm: [ '3S0' ],
+      dig: [ '3S0' ],
+      ember: [ '3S0' ],
+      growl: [ '6S1' ],
+      ironhead: [ '6S1' ],
+      tackle: [ '6S1' ],
+      takedown: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5494,6 +7288,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   camerupt: {
+    learnset: { curse: [ '6S0' ], rockslide: [ '6S0' ], takedown: [ '6S0' ], yawn: [ '6S0' ] },
     eventData: [
       {
         generation: 6,
@@ -5508,6 +7303,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 6, level: 30 } ]
   },
   torkoal: {
+    learnset: {
+      bodypress: [ '8S0' ],
+      burningjealousy: [ '8S0' ],
+      protect: [ '8S0' ],
+      yawn: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -5522,6 +7323,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   spoink: {
+    learnset: { splash: [ '3S0' ], uproar: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -5535,6 +7337,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   grumpig: { encounters: [ { generation: 6, level: 30 } ] },
   spinda: {
+    learnset: { sing: [ '3S0' ], tackle: [ '3S0' ], uproar: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -5546,9 +7349,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   trapinch: {
+    learnset: { bite: [ '5S0' ] },
     eventData: [ { generation: 5, level: 1, shiny: true, moves: [ 'bite' ], pokeball: 'pokeball' } ]
   },
   flygon: {
+    learnset: {
+      crunch: [ '3S0' ],
+      dracometeor: [ '4S1' ],
+      dragonbreath: [ '3S0' ],
+      dragonclaw: [ '4S1' ],
+      earthquake: [ '4S1' ],
+      sandtomb: [ '3S0' ],
+      screech: [ '3S0' ],
+      uturn: [ '4S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5567,6 +7381,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   cacnea: {
+    learnset: { absorb: [ '3S0' ], encore: [ '3S0' ], leer: [ '3S0' ], poisonsting: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -5578,6 +7393,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   cacturne: {
+    learnset: { feintattack: [ '3S0' ], ingrain: [ '3S0' ], needlearm: [ '3S0' ], spikes: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -5589,6 +7405,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 6, level: 30 } ]
   },
   swablu: {
+    learnset: {
+      falseswipe: [ '3S0' ],
+      growl: [ '6S2', '5S1', '3S0' ],
+      hypervoice: [ '6S2' ],
+      peck: [ '6S2', '5S1', '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5614,6 +7436,21 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   altaria: {
+    learnset: {
+      aerialace: [ '3S1' ],
+      agility: [ '6S3' ],
+      dragonbreath: [ '5S2', '3S0', '3S1' ],
+      dragondance: [ '3S0' ],
+      falseswipe: [ '5S2' ],
+      fireblast: [ '6S3' ],
+      healbell: [ '3S1' ],
+      hypervoice: [ '6S3' ],
+      naturalgift: [ '5S2' ],
+      protect: [ '6S3' ],
+      refresh: [ '3S0' ],
+      solarbeam: [ '3S1' ],
+      takedown: [ '5S2', '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5644,6 +7481,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   zangoose: {
+    learnset: {
+      brickbreak: [ '3S2' ],
+      counter: [ '3S2' ],
+      crushclaw: [ '3S2' ],
+      furycutter: [ '3S0' ],
+      leer: [ '3S0', '3S1' ],
+      quickattack: [ '3S0', '3S1' ],
+      refresh: [ '3S2' ],
+      scratch: [ '3S1' ],
+      swordsdance: [ '3S0', '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5666,6 +7514,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   seviper: {
+    learnset: {
+      bite: [ '3S0', '3S2' ],
+      crunch: [ '3S1' ],
+      glare: [ '3S1' ],
+      lick: [ '3S0', '3S2' ],
+      poisontail: [ '3S0', '3S1' ],
+      screech: [ '3S1' ],
+      wrap: [ '3S0', '3S2' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5689,6 +7546,19 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   lunatone: {
+    learnset: {
+      batonpass: [ '3S1' ],
+      confusion: [ '3S0' ],
+      cosmicpower: [ '7S2' ],
+      harden: [ '3S0' ],
+      hiddenpower: [ '7S2' ],
+      moonblast: [ '7S2' ],
+      powergem: [ '7S2' ],
+      psychic: [ '3S1' ],
+      raindance: [ '3S1' ],
+      rocktomb: [ '3S1' ],
+      tackle: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5710,6 +7580,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   solrock: {
+    learnset: {
+      batonpass: [ '3S1' ],
+      confusion: [ '3S0' ],
+      cosmicpower: [ '7S2', '3S1' ],
+      harden: [ '3S0' ],
+      hiddenpower: [ '7S2' ],
+      psychic: [ '3S1' ],
+      solarbeam: [ '7S2' ],
+      stoneedge: [ '7S2' ],
+      sunnyday: [ '3S1' ],
+      tackle: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5731,6 +7613,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   whiscash: {
+    learnset: {
+      aquatail: [ '4S0' ],
+      earthquake: [ '4S0' ],
+      gigaimpact: [ '4S0' ],
+      zenheadbutt: [ '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -5745,6 +7633,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 4, level: 10 }, { generation: 7, level: 10 } ]
   },
   corphish: {
+    learnset: { bubble: [ '3S0' ], watersport: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -5756,6 +7645,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   crawdaunt: {
+    learnset: {
+      crabhammer: [ '3S0', '3S1' ],
+      guillotine: [ '3S0' ],
+      knockoff: [ '3S1' ],
+      swordsdance: [ '3S0', '3S1' ],
+      taunt: [ '3S0', '3S1' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5773,11 +7669,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 7, level: 10 } ]
   },
   baltoy: {
+    learnset: { mudslap: [ '3S0' ], psybeam: [ '3S0' ], refresh: [ '3S0' ], rocktomb: [ '3S0' ] },
     eventData: [
       { generation: 3, level: 17, moves: [ 'refresh', 'rocktomb', 'mudslap', 'psybeam' ] }
     ]
   },
   lileep: {
+    learnset: { acid: [ '5S0' ], constrict: [ '5S0' ], recover: [ '5S0' ], rockslide: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -5789,6 +7687,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   anorith: {
+    learnset: { crosspoison: [ '5S0' ], harden: [ '5S0' ], mudsport: [ '5S0' ], watergun: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -5800,6 +7699,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   feebas: {
+    learnset: { mirrorcoat: [ '4S0' ], splash: [ '4S0' ] },
     eventData: [
       {
         generation: 4,
@@ -5812,6 +7712,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   milotic: {
+    learnset: {
+      hydropump: [ '5S3', '4S1', '4S2' ],
+      icebeam: [ '5S3', '5S4', '4S1' ],
+      icywind: [ '4S2' ],
+      mirrorcoat: [ '5S3' ],
+      raindance: [ '4S1', '4S2', '3S0' ],
+      recover: [ '5S3', '5S4', '4S1', '4S2', '3S0' ],
+      surf: [ '5S4' ],
+      toxic: [ '5S4' ],
+      twister: [ '3S0' ],
+      waterpulse: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5855,6 +7767,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   shuppet: {
+    learnset: {
+      feintattack: [ '3S0' ],
+      shadowball: [ '3S0' ],
+      spite: [ '3S0' ],
+      willowisp: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5866,6 +7784,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   banette: {
+    learnset: {
+      cottonguard: [ '5S1' ],
+      curse: [ '3S0' ],
+      feintattack: [ '5S1', '3S0' ],
+      helpinghand: [ '3S0' ],
+      hex: [ '5S1' ],
+      shadowball: [ '5S1', '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5884,6 +7810,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 5, level: 32 } ]
   },
   duskull: {
+    learnset: {
+      astonish: [ '3S1' ],
+      confuseray: [ '3S1' ],
+      curse: [ '3S0' ],
+      helpinghand: [ '3S1' ],
+      meanlook: [ '3S0' ],
+      pursuit: [ '3S0' ],
+      shadowball: [ '3S1' ],
+      willowisp: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5900,6 +7836,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   dusclops: { encounters: [ { generation: 4, level: 16 }, { generation: 6, level: 30 } ] },
   tropius: {
+    learnset: {
+      airslash: [ '4S0' ],
+      solarbeam: [ '4S0' ],
+      sunnyday: [ '4S0' ],
+      synthesis: [ '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -5913,6 +7855,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   chimecho: {
+    learnset: { astonish: [ '3S0' ], growl: [ '3S0' ], wrap: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -5924,6 +7867,19 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   absol: {
+    learnset: {
+      bite: [ '3S2' ],
+      doubleteam: [ '3S3' ],
+      futuresight: [ '3S3' ],
+      leer: [ '3S0', '3S1' ],
+      perishsong: [ '3S3' ],
+      razorwind: [ '3S2' ],
+      scratch: [ '3S0', '3S1' ],
+      slash: [ '3S3' ],
+      spite: [ '3S1', '3S2' ],
+      swordsdance: [ '3S2' ],
+      wish: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -5958,6 +7914,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   snorunt: {
+    learnset: { bite: [ '3S0' ], icywind: [ '3S0' ], sing: [ '3S0' ], waterpulse: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -5968,6 +7925,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   spheal: {
+    learnset: { aurorabeam: [ '3S0' ], charm: [ '3S0' ], mudslap: [ '3S0' ], watergun: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -5981,6 +7939,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 4, level: 25 }, { generation: 6, level: 28, maxEggMoves: 1 } ]
   },
   walrein: {
+    learnset: { brine: [ '5S0' ], hail: [ '5S0' ], icebeam: [ '5S0' ], sheercold: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -5993,6 +7952,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 5, level: 30 } ]
   },
   bagon: {
+    learnset: {
+      bite: [ '3S0', '3S1' ],
+      irondefense: [ '3S1' ],
+      rage: [ '6S3', '5S2', '3S0', '3S1' ],
+      thrash: [ '6S3' ],
+      wish: [ '3S0' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -6014,6 +7980,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   shelgon: { encounters: [ { generation: 7, level: 15 } ] },
   salamence: {
+    learnset: {
+      aerialace: [ '5S3', '3S1' ],
+      dragonbreath: [ '3S0' ],
+      dragonclaw: [ '5S3', '4S2', '3S1' ],
+      dragondance: [ '5S3', '3S1' ],
+      fireblast: [ '4S2' ],
+      fly: [ '3S0' ],
+      hydropump: [ '4S2' ],
+      outrage: [ '5S3' ],
+      protect: [ '3S0' ],
+      refresh: [ '3S1' ],
+      scaryface: [ '3S0' ],
+      stoneedge: [ '4S2' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -6045,6 +8025,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 7, level: 9 } ]
   },
   beldum: {
+    learnset: {
+      holdback: [ '6S0' ],
+      irondefense: [ '6S0' ],
+      ironhead: [ '6S0' ],
+      zenheadbutt: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -6056,6 +8042,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   metang: {
+    learnset: { confusion: [ '3S0' ], metalclaw: [ '3S0' ], refresh: [ '3S0' ], takedown: [ '3S0' ] },
     eventData: [
       {
         generation: 3,
@@ -6066,6 +8053,22 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   metagross: {
+    learnset: {
+      agility: [ '5S4' ],
+      bulletpunch: [ '7S7', '5S1', '5S2', '4S0' ],
+      doubleedge: [ '5S4', '5S5' ],
+      earthquake: [ '5S1', '5S3', '5S6' ],
+      hammerarm: [ '5S1', '5S2', '5S4', '5S5', '4S0' ],
+      hyperbeam: [ '5S6' ],
+      icepunch: [ '7S7', '5S2' ],
+      irondefense: [ '5S4' ],
+      ironhead: [ '7S7' ],
+      meteormash: [ '5S1', '5S3', '5S5', '5S6', '4S0' ],
+      protect: [ '5S3' ],
+      psychic: [ '5S5', '5S6' ],
+      stompingtantrum: [ '7S7' ],
+      zenheadbutt: [ '5S2', '5S3', '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -6125,6 +8128,23 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   regirock: {
+    learnset: {
+      ancientpower: [ '6S4', '3S0', '3S1' ],
+      bulldoze: [ '6S4' ],
+      chargebeam: [ '5S3' ],
+      curse: [ '8S7', '6S4', '4S2', '3S0', '3S1' ],
+      explosion: [ '6S5' ],
+      hammerarm: [ '8S7', '7S6', '6S5' ],
+      hyperbeam: [ '3S1' ],
+      icepunch: [ '6S5' ],
+      irondefense: [ '6S4', '5S3' ],
+      lockon: [ '7S6', '5S3' ],
+      rockthrow: [ '4S2', '3S0' ],
+      stomp: [ '4S2' ],
+      stoneedge: [ '8S7', '7S6', '6S5' ],
+      superpower: [ '8S7', '4S2', '3S0', '3S1' ],
+      zapcannon: [ '7S6', '5S3' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -6179,6 +8199,23 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   regice: {
+    learnset: {
+      amnesia: [ '8S7', '6S4', '6S5', '5S3' ],
+      ancientpower: [ '6S4', '3S0', '3S1' ],
+      bulldoze: [ '6S4' ],
+      chargebeam: [ '5S3' ],
+      curse: [ '6S4', '4S2', '3S0', '3S1' ],
+      hail: [ '6S5' ],
+      hammerarm: [ '7S6' ],
+      hyperbeam: [ '3S1' ],
+      icebeam: [ '8S7', '7S6', '6S5' ],
+      icywind: [ '8S7', '4S2', '3S0' ],
+      lockon: [ '7S6', '5S3' ],
+      stomp: [ '4S2' ],
+      superpower: [ '4S2', '3S0', '3S1' ],
+      thunderbolt: [ '6S5' ],
+      zapcannon: [ '8S7', '7S6', '5S3' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -6233,6 +8270,25 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   registeel: {
+    learnset: {
+      amnesia: [ '6S4', '5S3' ],
+      ancientpower: [ '6S4', '3S0', '3S1' ],
+      chargebeam: [ '8S7', '5S3' ],
+      curse: [ '6S4', '4S2', '3S0', '3S1' ],
+      flashcannon: [ '8S7', '7S6' ],
+      gravity: [ '6S5' ],
+      hammerarm: [ '7S6' ],
+      heavyslam: [ '8S7' ],
+      hyperbeam: [ '3S1' ],
+      irondefense: [ '8S7', '6S4', '6S5' ],
+      ironhead: [ '6S5' ],
+      lockon: [ '7S6', '5S3' ],
+      metalclaw: [ '4S2', '3S0' ],
+      rockslide: [ '6S5' ],
+      stomp: [ '4S2' ],
+      superpower: [ '4S2', '3S0', '3S1' ],
+      zapcannon: [ '7S6', '5S3' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -6287,6 +8343,32 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   latias: {
+    learnset: {
+      charm: [ '5S5', '3S1', '3S2' ],
+      dive: [ '8S11' ],
+      dracometeor: [ '7S9' ],
+      dragonbreath: [ '8S10', '6S6', '4S3' ],
+      dragonpulse: [ '8S11', '7S7', '7S8' ],
+      healpulse: [ '6S6', '5S5' ],
+      mistball: [
+        '8S11', '7S7',
+        '7S8',  '7S9',
+        '6S6',  '4S3',
+        '4S4',  '3S0',
+        '3S1',  '3S2'
+      ],
+      psychic: [ '7S9', '5S5', '3S0', '3S1', '3S2' ],
+      psychoshift: [ '7S7', '7S8', '6S6', '5S5' ],
+      recover: [ '3S1', '3S2' ],
+      reflecttype: [ '8S10' ],
+      refresh: [ '4S3', '4S4', '3S0' ],
+      surf: [ '8S10' ],
+      sweetkiss: [ '8S11' ],
+      tailwind: [ '7S9' ],
+      watersport: [ '4S3', '4S4', '3S0' ],
+      wish: [ '7S7', '7S8' ],
+      zenheadbutt: [ '8S10', '4S4' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -6365,6 +8447,28 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   latios: {
+    learnset: {
+      aurasphere: [ '8S11' ],
+      dracometeor: [ '7S10' ],
+      dragonbreath: [ '7S8', '7S9', '6S6', '4S3' ],
+      dragondance: [ '8S11', '5S5', '3S1', '3S2' ],
+      dragonpulse: [ '8S11', '7S8', '7S9', '6S7' ],
+      healpulse: [ '6S6', '6S7', '5S5' ],
+      lusterpurge: [
+        '7S8',  '7S9',
+        '7S10', '6S6',
+        '6S7',  '4S3',
+        '4S4',  '3S0',
+        '3S1',  '3S2'
+      ],
+      protect: [ '4S3', '4S4', '3S0' ],
+      psychic: [ '7S10', '6S7', '5S5', '3S0', '3S1', '3S2' ],
+      psychoshift: [ '7S8', '7S9', '6S6', '5S5' ],
+      recover: [ '3S1', '3S2' ],
+      refresh: [ '4S3', '4S4', '3S0' ],
+      tailwind: [ '7S10' ],
+      zenheadbutt: [ '8S11', '4S4' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -6443,6 +8547,28 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   kyogre: {
+    learnset: {
+      ancientpower: [ '5S3', '4S2' ],
+      aquaring: [ '8S11', '6S5', '4S2' ],
+      bodyslam: [ '8S11', '6S5', '3S0' ],
+      calmmind: [ '7S7', '7S8', '7S9', '7S10', '3S0' ],
+      doubleedge: [ '3S1' ],
+      hydropump: [ '3S0', '3S1' ],
+      icebeam: [
+        '7S7', '7S8',
+        '7S9', '7S10',
+        '6S5', '6S6',
+        '5S3', '5S4',
+        '4S2', '3S0'
+      ],
+      muddywater: [ '7S7', '7S8', '7S9' ],
+      originpulse: [ '7S7', '7S8', '7S9', '7S10', '6S5' ],
+      rest: [ '3S1' ],
+      sheercold: [ '6S6', '5S4', '3S1' ],
+      surf: [ '8S11' ],
+      thunder: [ '8S11', '6S6', '5S3', '5S4' ],
+      waterspout: [ '7S10', '6S6', '5S3', '5S4', '4S2' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -6522,6 +8648,35 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   groudon: {
+    learnset: {
+      ancientpower: [ '5S3', '4S2' ],
+      bulkup: [ '7S7', '7S8', '7S9', '3S0' ],
+      earthpower: [ '7S10', '5S4' ],
+      earthquake: [
+        '8S11', '7S7',
+        '7S8',  '7S9',
+        '6S5',  '5S3',
+        '4S2',  '3S0'
+      ],
+      eruption: [ '5S3', '5S4', '4S2' ],
+      fireblast: [ '3S0', '3S1' ],
+      firepunch: [ '7S10', '6S6' ],
+      fissure: [ '3S1' ],
+      hammerarm: [ '8S11', '6S6', '5S4' ],
+      lavaplume: [ '8S11', '6S5' ],
+      precipiceblades: [ '7S7', '7S8', '7S9', '7S10', '6S5' ],
+      rest: [ '6S5', '4S2', '3S1' ],
+      rockslide: [ '6S6' ],
+      scaryface: [ '8S11' ],
+      slash: [ '3S0' ],
+      solarbeam: [
+        '7S7', '7S8',
+        '7S9', '6S6',
+        '5S3', '5S4',
+        '3S1'
+      ],
+      swordsdance: [ '7S10' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -6601,6 +8756,30 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   rayquaza: {
+    learnset: {
+      airslash: [ '4S1' ],
+      ancientpower: [ '5S2', '4S1' ],
+      brutalswing: [ '8S9' ],
+      celebrate: [ '6S7' ],
+      dracometeor: [ '6S7' ],
+      dragonascent: [ '8S9', '6S4', '6S6', '6S7' ],
+      dragonclaw: [ '6S6' ],
+      dragondance: [ '7S8', '6S4', '6S6', '5S2' ],
+      dragonpulse: [ '7S8', '6S4', '6S5', '5S2', '5S3' ],
+      extremespeed: [
+        '8S9', '7S8',
+        '6S4', '6S5',
+        '6S6', '5S3',
+        '3S0'
+      ],
+      fly: [ '6S7', '3S0' ],
+      hyperbeam: [ '5S3' ],
+      outrage: [ '5S2', '4S1', '3S0' ],
+      rest: [ '7S8', '4S1', '3S0' ],
+      thunder: [ '6S5' ],
+      twister: [ '8S9', '6S5' ],
+      vcreate: [ '5S3' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -6669,6 +8848,45 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   jirachi: {
+    learnset: {
+      confusion: [
+        '6S18', '6S20', '6S21',
+        '4S11', '4S12', '3S0',
+        '3S1',  '3S2',  '3S3',
+        '3S4',  '3S5',  '3S6',
+        '3S7',  '3S8',  '3S9'
+      ],
+      cosmicpower: [ '6S19', '5S15' ],
+      dracometeor: [ '5S14', '4S12' ],
+      followme: [ '5S14' ],
+      happyhour: [ '6S20' ],
+      healingwish: [ '7S22', '6S17', '5S13', '5S15', '5S16' ],
+      heartstamp: [ '6S19' ],
+      helpinghand: [ '6S18', '3S10' ],
+      meteormash: [ '8S23', '5S13', '5S14', '5S15' ],
+      moonblast: [ '6S17' ],
+      playrough: [ '6S19' ],
+      psychic: [ '8S23', '5S13', '3S10' ],
+      refresh: [ '3S10' ],
+      rest: [
+        '8S23', '7S22', '6S21',
+        '4S11', '4S12', '3S0',
+        '3S1',  '3S2',  '3S3',
+        '3S4',  '3S5',  '3S6',
+        '3S7',  '3S8',  '3S9',
+        '3S10'
+      ],
+      return: [ '6S18', '5S16' ],
+      swift: [ '7S22', '6S17', '6S20', '5S13', '5S16' ],
+      wish: [
+        '8S23', '7S22', '6S17', '6S18',
+        '6S19', '6S20', '6S21', '5S14',
+        '5S15', '5S16', '4S11', '4S12',
+        '3S0',  '3S1',  '3S2',  '3S3',
+        '3S4',  '3S5',  '3S6',  '3S7',
+        '3S8',  '3S9'
+      ]
+    },
     eventData: [
       {
         generation: 3,
@@ -6849,6 +9067,38 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   deoxys: {
+    learnset: {
+      cosmicpower: [ '6S10', '3S3' ],
+      counter: [ '4S6' ],
+      darkpulse: [ '5S9' ],
+      detect: [ '4S6' ],
+      doubleteam: [ '4S5' ],
+      extremespeed: [ '4S4', '4S5' ],
+      hyperbeam: [ '6S10', '4S7', '3S3' ],
+      irondefense: [ '4S4' ],
+      knockoff: [ '3S1', '3S2' ],
+      leer: [ '4S8' ],
+      meteormash: [ '4S7' ],
+      mirrorcoat: [ '4S6' ],
+      nastyplot: [ '5S9' ],
+      nightshade: [ '4S8' ],
+      psychic: [ '3S0', '3S1', '3S2' ],
+      psychoboost: [
+        '6S10', '5S9',
+        '4S4',  '4S5',
+        '4S6',  '4S7',
+        '4S8',  '3S3'
+      ],
+      pursuit: [ '3S0', '3S2' ],
+      recover: [ '6S10', '5S9', '3S3' ],
+      snatch: [ '3S1' ],
+      spikes: [ '3S1' ],
+      superpower: [ '4S7', '3S0' ],
+      swift: [ '4S5', '3S2' ],
+      taunt: [ '3S0' ],
+      wrap: [ '4S8' ],
+      zapcannon: [ '4S4' ]
+    },
     eventData: [
       {
         generation: 3,
@@ -6922,6 +9172,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   deoxysdefense: { eventOnly: true },
   deoxysspeed: { eventOnly: true },
   turtwig: {
+    learnset: {
+      absorb: [ '5S0', '5S1' ],
+      stockpile: [ '5S1' ],
+      tackle: [ '5S0', '5S1' ],
+      withdraw: [ '5S0', '5S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -6940,6 +9196,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   torterra: {
+    learnset: {
+      earthquake: [ '5S0' ],
+      outrage: [ '5S0' ],
+      stoneedge: [ '5S0' ],
+      woodhammer: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -6951,6 +9213,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   chimchar: {
+    learnset: {
+      ember: [ '5S1', '5S3' ],
+      fakeout: [ '5S3' ],
+      flamethrower: [ '4S0', '4S2' ],
+      grassknot: [ '4S0', '4S2' ],
+      helpinghand: [ '4S0', '4S2' ],
+      leer: [ '5S1', '5S3' ],
+      scratch: [ '5S1' ],
+      taunt: [ '5S1', '5S3' ],
+      thunderpunch: [ '4S0', '4S2' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -6985,6 +9258,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   infernape: {
+    learnset: {
+      closecombat: [ '6S1', '5S0' ],
+      fireblast: [ '6S1', '5S0' ],
+      firepunch: [ '6S1' ],
+      focuspunch: [ '6S1' ],
+      grassknot: [ '5S0' ],
+      uturn: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -7003,6 +9284,21 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   piplup: {
+    learnset: {
+      bubble: [ '5S0', '5S3' ],
+      bubblebeam: [ '7S5' ],
+      drillpeck: [ '7S5' ],
+      featherdance: [ '5S1', '5S2', '5S3' ],
+      growl: [ '6S4', '5S0', '5S3' ],
+      hydropump: [ '7S5', '5S1' ],
+      peck: [ '5S1', '5S2' ],
+      pound: [ '6S4', '5S0', '5S3' ],
+      return: [ '6S4' ],
+      round: [ '5S2' ],
+      sing: [ '5S2' ],
+      watersport: [ '5S1' ],
+      whirlpool: [ '7S5' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -7049,6 +9345,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   empoleon: {
+    learnset: { aquajet: [ '5S0' ], grassknot: [ '5S0' ], hydropump: [ '5S0' ], icebeam: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -7060,6 +9357,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   starly: {
+    learnset: { growl: [ '4S0' ], tackle: [ '4S0' ] },
     eventData: [
       {
         generation: 4,
@@ -7073,6 +9371,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   staravia: { encounters: [ { generation: 4, level: 4 } ] },
   bidoof: {
+    learnset: { tackle: [ '4S0' ] },
     eventData: [
       {
         generation: 4,
@@ -7087,6 +9386,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   bibarel: { encounters: [ { generation: 4, level: 4 } ] },
   cranidos: {
+    learnset: { crunch: [ '5S0' ], headbutt: [ '5S0' ], pursuit: [ '5S0' ], takedown: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -7098,6 +9398,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   shieldon: {
+    learnset: { bodyslam: [ '5S0' ], metalsound: [ '5S0' ], protect: [ '5S0' ], takedown: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -7109,6 +9410,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   pachirisu: {
+    learnset: { followme: [ '6S0' ], nuzzle: [ '6S0' ], protect: [ '6S0' ], superfang: [ '6S0' ] },
     eventData: [
       {
         generation: 6,
@@ -7123,6 +9425,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   floatzel: { encounters: [ { generation: 4, level: 22 }, { generation: 5, level: 10 } ] },
   gastrodon: {
+    learnset: { earthpower: [ '7S0' ], icebeam: [ '7S0' ], protect: [ '7S0' ], recover: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -7138,6 +9441,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 4, level: 20 } ]
   },
   gastrodoneast: {
+    learnset: {
+      earthpower: [ '8S1', '8S0' ],
+      icebeam: [ '8S1', '8S0' ],
+      protect: [ '8S1', '8S0' ],
+      surf: [ '8S0' ],
+      yawn: [ '8S1' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -7167,6 +9477,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   skuntank: { encounters: [ { generation: 4, level: 29 } ] },
   bronzong: { encounters: [ { generation: 6, level: 30 } ] },
   chatot: {
+    learnset: { chatter: [ '4S0' ], furyattack: [ '4S0' ], mirrormove: [ '4S0' ], taunt: [ '4S0' ] },
     eventData: [
       {
         generation: 4,
@@ -7179,6 +9490,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   spiritomb: {
+    learnset: { darkpulse: [ '5S0' ], embargo: [ '5S0' ], psychic: [ '5S0' ], silverwind: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -7192,6 +9504,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   garchomp: {
+    learnset: {
+      brickbreak: [ '6S4' ],
+      crunch: [ '6S2', '6S3', '5S1' ],
+      dig: [ '6S2', '6S3', '5S1' ],
+      dracometeor: [ '6S2' ],
+      dragonclaw: [ '6S2', '6S3', '5S1' ],
+      dragonrush: [ '6S4' ],
+      earthquake: [ '6S4', '5S0' ],
+      gigaimpact: [ '6S4' ],
+      outrage: [ '5S0', '5S1' ],
+      slash: [ '6S3' ],
+      stoneedge: [ '5S0' ],
+      swordsdance: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -7232,6 +9558,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   riolu: {
+    learnset: {
+      aurasphere: [ '4S0' ],
+      bulletpunch: [ '4S0' ],
+      drainpunch: [ '4S0' ],
+      shadowclaw: [ '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -7245,6 +9577,29 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   lucario: {
+    learnset: {
+      aurasphere: [ '8S6', '7S5', '6S4', '4S0' ],
+      blazekick: [ '4S1' ],
+      bonerush: [ '4S1' ],
+      bulletpunch: [ '8S6', '5S2', '5S3' ],
+      closecombat: [ '6S4', '5S3' ],
+      counter: [ '5S2' ],
+      darkpulse: [ '4S0' ],
+      detect: [ '5S2' ],
+      dragonpulse: [ '7S5', '4S0' ],
+      extremespeed: [ '7S5' ],
+      flashcannon: [ '6S4' ],
+      forcepalm: [ '4S1' ],
+      highjumpkick: [ '7S5' ],
+      metalclaw: [ '5S2' ],
+      quickattack: [ '6S4' ],
+      reversal: [ '8S6' ],
+      shadowclaw: [ '5S3' ],
+      steelbeam: [ '8S6' ],
+      stoneedge: [ '5S3' ],
+      sunnyday: [ '4S1' ],
+      waterpulse: [ '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -7314,6 +9669,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 4, level: 22, pokeball: 'safariball' }, { generation: 6, level: 30 } ]
   },
   croagunk: {
+    learnset: {
+      astonish: [ '5S0' ],
+      mudslap: [ '5S0', '5S1' ],
+      poisonjab: [ '5S1' ],
+      poisonsting: [ '5S0', '5S1' ],
+      taunt: [ '5S0', '5S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -7337,6 +9699,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   lumineon: { encounters: [ { generation: 4, level: 20 } ] },
   abomasnow: { encounters: [ { generation: 4, level: 38 } ] },
   rotom: {
+    learnset: {
+      astonish: [ '6S1', '5S0' ],
+      confide: [ '7S2' ],
+      disarmingvoice: [ '7S2' ],
+      shockwave: [ '6S1' ],
+      thundershock: [ '5S0' ],
+      thunderwave: [ '6S1' ],
+      trick: [ '6S1', '5S0' ],
+      uproar: [ '7S2', '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -7361,6 +9733,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   uxie: {
+    learnset: {
+      amnesia: [ '7S4', '6S3', '5S2', '4S0', '4S1' ],
+      confusion: [ '4S0' ],
+      extrasensory: [ '7S4', '6S3', '5S2' ],
+      flail: [ '5S2' ],
+      futuresight: [ '8S5', '6S3', '5S2', '4S0', '4S1' ],
+      magicroom: [ '8S5' ],
+      psychic: [ '8S5' ],
+      shadowball: [ '8S5' ],
+      swift: [ '7S4', '4S1' ],
+      yawn: [ '7S4', '6S3', '4S0', '4S1' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -7402,6 +9786,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   mesprit: {
+    learnset: {
+      charm: [ '8S5', '7S4', '6S3', '5S2', '4S0', '4S1' ],
+      confusion: [ '4S0' ],
+      copycat: [ '5S2' ],
+      drainingkiss: [ '8S5' ],
+      extrasensory: [ '7S4', '6S3', '5S2' ],
+      futuresight: [ '7S4', '6S3', '5S2', '4S0', '4S1' ],
+      luckychant: [ '6S3', '4S0', '4S1' ],
+      psychic: [ '8S5' ],
+      swift: [ '7S4', '4S1' ],
+      triattack: [ '8S5' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -7443,6 +9839,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   azelf: {
+    learnset: {
+      confusion: [ '4S0' ],
+      dazzlinggleam: [ '8S5' ],
+      extrasensory: [ '7S4', '6S3', '5S2' ],
+      facade: [ '8S5' ],
+      futuresight: [ '6S3', '5S2', '4S0', '4S1' ],
+      lastresort: [ '5S2' ],
+      nastyplot: [ '8S5', '7S4', '6S3', '5S2', '4S0', '4S1' ],
+      psychic: [ '8S5' ],
+      swift: [ '7S4', '4S1' ],
+      uproar: [ '7S4', '6S3', '4S0', '4S1' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -7484,6 +9892,35 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   dialga: {
+    learnset: {
+      ancientpower: [ '8S11', '4S0' ],
+      aurasphere: [ '7S7', '7S8', '7S9', '7S10', '6S5', '5S4' ],
+      dracometeor: [ '7S9', '7S10', '5S4' ],
+      dragonbreath: [ '5S3', '4S2' ],
+      dragonclaw: [ '8S11', '4S0' ],
+      dragonpulse: [ '5S4' ],
+      earthpower: [ '4S1' ],
+      flashcannon: [
+        '8S12', '8S11',
+        '7S7',  '7S8',
+        '7S9',  '7S10',
+        '6S5',  '6S6'
+      ],
+      healblock: [ '4S1' ],
+      irontail: [ '7S7', '7S8', '6S5' ],
+      metalburst: [ '8S12', '6S6' ],
+      metalclaw: [ '4S0' ],
+      overheat: [ '8S12', '6S6' ],
+      roaroftime: [
+        '8S12', '7S7',
+        '7S8',  '7S9',
+        '7S10', '6S5',
+        '6S6',  '5S4',
+        '4S0',  '4S1'
+      ],
+      scaryface: [ '5S3', '4S2' ],
+      slash: [ '8S11', '4S1' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -7569,6 +10006,38 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   dialgaorigin: { eventOnly: true },
   palkia: {
+    learnset: {
+      ancientpower: [ '8S11', '4S0' ],
+      aquatail: [ '7S7', '7S8' ],
+      aurasphere: [
+        '8S12', '7S7',
+        '7S8',  '7S9',
+        '7S10', '6S5',
+        '6S6',  '5S4'
+      ],
+      dracometeor: [ '7S9', '7S10', '5S4' ],
+      dragonbreath: [ '5S3', '4S2' ],
+      dragonclaw: [ '8S11', '4S0' ],
+      earthpower: [ '8S12', '6S5', '6S6', '4S1' ],
+      healblock: [ '4S1' ],
+      hydropump: [
+        '8S12', '7S7',
+        '7S8',  '7S9',
+        '7S10', '6S5',
+        '6S6',  '5S4'
+      ],
+      scaryface: [ '5S3', '4S2' ],
+      slash: [ '8S11', '4S1' ],
+      spacialrend: [
+        '8S12', '7S7',
+        '7S8',  '7S9',
+        '7S10', '6S5',
+        '6S6',  '5S4',
+        '4S0',  '4S1'
+      ],
+      surf: [ '8S11' ],
+      waterpulse: [ '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -7654,6 +10123,25 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   palkiaorigin: { eventOnly: true },
   heatran: {
+    learnset: {
+      ancientpower: [ '4S2' ],
+      crunch: [ '8S8', '7S5', '7S6', '6S4', '4S1' ],
+      earthpower: [ '7S7', '4S2' ],
+      eruption: [ '4S2' ],
+      firespin: [ '7S5', '7S6', '5S3', '4S0' ],
+      flashcannon: [ '7S7' ],
+      heatwave: [ '7S7' ],
+      ironhead: [ '8S8', '5S3', '4S0' ],
+      lavaplume: [
+        '8S8', '7S5',
+        '7S6', '6S4',
+        '5S3', '4S0',
+        '4S1'
+      ],
+      magmastorm: [ '7S7', '4S2' ],
+      metalsound: [ '8S8', '6S4', '4S1' ],
+      scaryface: [ '7S5', '7S6', '6S4', '5S3', '4S0', '4S1' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -7715,6 +10203,31 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   regigigas: {
+    learnset: {
+      confuseray: [ '7S5', '7S6', '4S0', '4S1' ],
+      crushgrip: [ '8S8', '7S7', '4S2' ],
+      dizzypunch: [ '7S5', '7S6', '4S1' ],
+      drainpunch: [ '7S7' ],
+      foresight: [ '6S4', '4S1' ],
+      gigaimpact: [ '8S8' ],
+      hammerarm: [ '8S8' ],
+      heavyslam: [ '7S7' ],
+      icywind: [ '4S2' ],
+      ironhead: [ '4S2' ],
+      knockoff: [ '4S1' ],
+      payback: [ '5S3' ],
+      revenge: [ '7S5', '7S6', '6S4', '5S3' ],
+      rockslide: [ '4S2' ],
+      stomp: [ '4S0' ],
+      superpower: [ '4S0' ],
+      wideguard: [ '6S4', '5S3' ],
+      zenheadbutt: [
+        '8S8', '7S5',
+        '7S6', '7S7',
+        '6S4', '5S3',
+        '4S0'
+      ]
+    },
     eventData: [
       {
         generation: 4,
@@ -7774,6 +10287,24 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   giratina: {
+    learnset: {
+      ancientpower: [ '8S8', '4S1' ],
+      aurasphere: [ '7S7', '6S5', '6S6', '5S4' ],
+      dracometeor: [ '6S6' ],
+      dragonbreath: [ '5S3', '4S2' ],
+      dragonclaw: [ '8S8', '7S7', '5S4', '4S1' ],
+      dragonpulse: [ '5S4' ],
+      earthpower: [ '7S7', '4S0' ],
+      healblock: [ '4S0' ],
+      hex: [ '6S5' ],
+      ironhead: [ '6S6' ],
+      ominouswind: [ '4S1' ],
+      scaryface: [ '8S8', '5S3', '4S2' ],
+      shadowball: [ '8S8' ],
+      shadowclaw: [ '6S5' ],
+      shadowforce: [ '7S7', '6S5', '6S6', '5S4', '4S0', '4S1' ],
+      slash: [ '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -7833,6 +10364,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   giratinaorigin: { eventOnly: true },
   cresselia: {
+    learnset: {
+      aurorabeam: [ '7S4', '6S3', '4S0' ],
+      energyball: [ '5S2' ],
+      futuresight: [ '7S4', '6S3', '5S1', '4S0' ],
+      hiddenpower: [ '5S2' ],
+      icebeam: [ '5S2' ],
+      icywind: [ '8S5' ],
+      mist: [ '6S3', '4S0' ],
+      moonblast: [ '8S5' ],
+      moonlight: [ '7S4', '5S1' ],
+      psychocut: [ '8S5', '5S1' ],
+      psyshock: [ '8S5', '5S2' ],
+      slash: [ '7S4', '6S3', '5S1', '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -7874,6 +10419,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   phione: {
+    learnset: { grassknot: [ '4S0' ], raindance: [ '4S0' ], rest: [ '4S0' ], surf: [ '4S0' ] },
     eventData: [
       {
         generation: 4,
@@ -7884,6 +10430,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   manaphy: {
+    learnset: {
+      acidarmor: [ '4S2' ],
+      aquaring: [ '7S6', '4S3' ],
+      bubble: [ '6S4', '6S5', '4S0', '4S1' ],
+      heartswap: [ '7S6', '6S4', '4S2', '4S3' ],
+      tailglow: [ '7S6', '6S4', '6S5', '4S0', '4S1' ],
+      waterpulse: [ '7S6', '4S2', '4S3' ],
+      watersport: [ '6S4', '6S5', '4S0', '4S1', '4S3' ],
+      whirlpool: [ '4S2' ]
+    },
     eventData: [
       { generation: 4, level: 5, moves: [ 'tailglow', 'bubble', 'watersport' ] },
       {
@@ -7928,6 +10484,22 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   darkrai: {
+    learnset: {
+      darkpulse: [ '6S5', '4S2' ],
+      darkvoid: [ '7S7', '6S5', '6S6', '5S4', '4S2' ],
+      doubleteam: [ '4S2', '4S3' ],
+      dreameater: [ '6S5' ],
+      feintattack: [ '7S7', '6S6', '5S4', '4S3' ],
+      hypnosis: [ '4S0', '4S1', '4S3' ],
+      nightmare: [ '7S7', '6S6', '5S4', '4S0', '4S1', '4S3' ],
+      ominouswind: [ '7S7', '6S6', '5S4' ],
+      phantomforce: [ '6S5' ],
+      pursuit: [ '4S0' ],
+      quickattack: [ '4S0' ],
+      roaroftime: [ '4S1' ],
+      shadowball: [ '4S2' ],
+      spacialrend: [ '4S1' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -7981,6 +10553,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   shaymin: {
+    learnset: {
+      airslash: [ '6S3' ],
+      aromatherapy: [ '6S4', '4S0' ],
+      celebrate: [ '7S5' ],
+      energyball: [ '6S4', '4S0' ],
+      growth: [ '7S5', '6S3', '4S1' ],
+      leechseed: [ '5S2', '4S1' ],
+      magicalleaf: [ '6S3', '4S1' ],
+      return: [ '7S5' ],
+      seedflare: [ '7S5', '6S3', '6S4', '5S2', '4S0' ],
+      substitute: [ '6S4', '4S0' ],
+      sweetscent: [ '5S2' ],
+      synthesis: [ '5S2', '4S1' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -8024,6 +10610,19 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   shayminsky: { eventOnly: true },
   arceus: {
+    learnset: {
+      blastburn: [ '6S2' ],
+      earthpower: [ '6S2' ],
+      extremespeed: [ '7S4' ],
+      hydrocannon: [ '6S2' ],
+      hyperbeam: [ '7S4', '6S3', '5S1' ],
+      judgment: [ '7S4', '6S2', '6S3', '5S1', '4S0' ],
+      perishsong: [ '6S3', '5S1' ],
+      recover: [ '7S4', '6S3', '5S1' ],
+      roaroftime: [ '4S0' ],
+      shadowforce: [ '4S0' ],
+      spacialrend: [ '4S0' ]
+    },
     eventData: [
       {
         generation: 4,
@@ -8076,6 +10675,26 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   arceussteel: { eventOnly: true },
   arceuswater: { eventOnly: true },
   victini: {
+    learnset: {
+      blueflare: [ '5S2' ],
+      boltstrike: [ '5S2' ],
+      celebrate: [ '7S6' ],
+      confusion: [ '6S3', '6S4', '5S0' ],
+      endure: [ '6S4', '5S0' ],
+      flamecharge: [ '8S7' ],
+      fusionbolt: [ '5S1' ],
+      fusionflare: [ '5S1' ],
+      glaciate: [ '5S2' ],
+      incinerate: [ '6S4', '5S0' ],
+      quickattack: [ '6S3', '6S4', '6S5', '5S0' ],
+      reversal: [ '7S6' ],
+      searingshot: [ '6S3', '5S1' ],
+      storedpower: [ '7S6' ],
+      swagger: [ '6S5' ],
+      vcreate: [ '8S7', '7S6', '6S3', '6S5', '5S1', '5S2' ],
+      workup: [ '8S7' ],
+      zenheadbutt: [ '8S7' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8130,6 +10749,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   snivy: {
+    learnset: {
+      aromatherapy: [ '5S0' ],
+      energyball: [ '5S0' ],
+      growth: [ '5S0' ],
+      synthesis: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8142,6 +10767,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   serperior: {
+    learnset: {
+      gigadrain: [ '6S1', '5S0' ],
+      holdback: [ '6S1' ],
+      leafstorm: [ '6S1', '5S0' ],
+      leechseed: [ '5S0' ],
+      substitute: [ '5S0' ],
+      wringout: [ '6S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8160,6 +10793,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   emboar: {
+    learnset: {
+      flareblitz: [ '6S1', '5S0' ],
+      hammerarm: [ '5S0' ],
+      headsmash: [ '6S1', '5S0' ],
+      holdback: [ '6S1' ],
+      takedown: [ '6S1' ],
+      wildcharge: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8178,6 +10819,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   samurott: {
+    learnset: {
+      confide: [ '6S1' ],
+      holdback: [ '6S1' ],
+      hydropump: [ '6S1', '5S0' ],
+      icebeam: [ '5S0' ],
+      megahorn: [ '5S0' ],
+      razorshell: [ '6S1' ],
+      superpower: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8198,6 +10848,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   herdier: { encounters: [ { generation: 5, level: 20, isHidden: true } ] },
   stoutland: { encounters: [ { generation: 5, level: 23 } ] },
   liepard: {
+    learnset: { encore: [ '5S0' ], fakeout: [ '5S0' ], foulplay: [ '5S0' ], swagger: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -8210,6 +10861,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   pansage: {
+    learnset: {
+      bite: [ '5S0' ],
+      bulletseed: [ '5S0' ],
+      dig: [ '5S0', '5S2' ],
+      leafstorm: [ '5S1' ],
+      leer: [ '5S1' ],
+      lick: [ '5S1' ],
+      rocktomb: [ '5S2' ],
+      seedbomb: [ '5S2' ],
+      solarbeam: [ '5S0', '5S2' ],
+      vinewhip: [ '5S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8239,6 +10902,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   pansear: {
+    learnset: { heatwave: [ '5S0' ], incinerate: [ '5S0' ], leer: [ '5S0' ], lick: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -8250,6 +10914,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   simisear: {
+    learnset: {
+      gigaimpact: [ '6S0' ],
+      honeclaws: [ '6S0' ],
+      poweruppunch: [ '6S0' ],
+      workup: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -8261,6 +10931,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   panpour: {
+    learnset: { hydropump: [ '5S0' ], leer: [ '5S0' ], lick: [ '5S0' ], watergun: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -8272,6 +10943,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   munna: {
+    learnset: { dreameater: [ '7S0' ], hypnosis: [ '7S0' ], rest: [ '7S0' ], sleeptalk: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -8284,6 +10956,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   musharna: {
+    learnset: {
+      defensecurl: [ '5S0' ],
+      hypnosis: [ '5S0' ],
+      luckychant: [ '5S0' ],
+      psybeam: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8294,6 +10972,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   pidove: {
+    learnset: { aircutter: [ '5S0' ], gust: [ '5S0' ], quickattack: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -8312,6 +10991,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   boldore: { encounters: [ { generation: 5, level: 24 } ] },
   excadrill: { encounters: [ { generation: 6, level: 30 } ] },
   audino: {
+    learnset: {
+      doubleslap: [ '5S0' ],
+      healpulse: [ '6S3', '5S0', '5S1', '5S2' ],
+      helpinghand: [ '5S0', '5S1', '5S2' ],
+      present: [ '5S1', '5S2' ],
+      refresh: [ '5S0', '5S1', '5S2' ],
+      simplebeam: [ '6S3' ],
+      thunderbolt: [ '6S3' ],
+      trickroom: [ '6S3' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8354,6 +11043,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   swadloon: { encounters: [ { generation: 5, level: 19 } ] },
   leavanny: { encounters: [ { generation: 5, level: 20, isHidden: true } ] },
   whimsicott: {
+    learnset: { beatup: [ '5S0' ], gigadrain: [ '5S0' ], helpinghand: [ '5S0' ], swagger: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -8368,6 +11058,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   darmanitan: {
+    learnset: {
+      bellydrum: [ '6S1', '5S0' ],
+      flareblitz: [ '6S1', '5S0' ],
+      hammerarm: [ '6S1', '5S0' ],
+      thrash: [ '6S1', '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8390,6 +11086,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   crustle: { encounters: [ { generation: 6, level: 33, maxEggMoves: 1 } ] },
   scraggy: {
+    learnset: { headbutt: [ '5S0' ], highjumpkick: [ '5S0' ], leer: [ '5S0' ], lowkick: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -8403,6 +11100,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   scrafty: {
+    learnset: {
+      drainpunch: [ '5S0' ],
+      firepunch: [ '5S0' ],
+      payback: [ '5S0' ],
+      substitute: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8416,6 +11119,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   cofagrigus: {
+    learnset: {
+      darkpulse: [ '7S0' ],
+      powersplit: [ '7S0' ],
+      shadowball: [ '7S0' ],
+      willowisp: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -8428,6 +11137,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 6, level: 32, maxEggMoves: 1 } ]
   },
   tirtouga: {
+    learnset: { aquajet: [ '5S0' ], bite: [ '5S0' ], bodyslam: [ '5S0' ], protect: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -8440,6 +11150,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   archen: {
+    learnset: {
+      doubleteam: [ '5S0' ],
+      headsmash: [ '5S0' ],
+      scaryface: [ '5S0' ],
+      wingattack: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8458,6 +11174,19 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   zoroark: {
+    learnset: {
+      agility: [ '5S0' ],
+      darkpulse: [ '6S1' ],
+      embargo: [ '5S0' ],
+      flamethrower: [ '6S1' ],
+      furyswipes: [ '6S2' ],
+      nastyplot: [ '6S2' ],
+      punishment: [ '6S2', '5S0' ],
+      scaryface: [ '6S2' ],
+      sludgebomb: [ '6S1' ],
+      snarl: [ '5S0' ],
+      suckerpunch: [ '6S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8485,6 +11214,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 5, level: 25 } ]
   },
   gothorita: {
+    learnset: {
+      flatter: [ '5S0', '5S1' ],
+      futuresight: [ '5S0', '5S1' ],
+      imprison: [ '5S1' ],
+      mirrorcoat: [ '5S0' ],
+      psyshock: [ '5S0', '5S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8508,6 +11244,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   reuniclus: { encounters: [ { generation: 5, level: 34 } ] },
   swanna: { encounters: [ { generation: 6, level: 30 } ] },
   deerling: {
+    learnset: {
+      aromatherapy: [ '5S0' ],
+      feintattack: [ '5S0' ],
+      jumpkick: [ '5S0' ],
+      takedown: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8520,6 +11262,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   sawsbuck: { encounters: [ { generation: 6, level: 30 } ] },
   karrablast: {
+    learnset: {
+      bugbuzz: [ '5S0' ],
+      falseswipe: [ '5S0' ],
+      flail: [ '5S1' ],
+      furyattack: [ '5S0' ],
+      headbutt: [ '5S0' ],
+      megahorn: [ '5S1' ],
+      takedown: [ '5S1' ],
+      xscissor: [ '5S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8536,6 +11288,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   amoonguss: {
+    learnset: { clearsmog: [ '8S0' ], protect: [ '8S0' ], ragepowder: [ '8S0' ], spore: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
@@ -8552,6 +11305,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 5, level: 37 }, { generation: 5, level: 35, isHidden: true } ]
   },
   jellicent: {
+    learnset: {
+      brine: [ '5S0' ],
+      ominouswind: [ '5S0' ],
+      raindance: [ '5S0' ],
+      waterpulse: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8566,6 +11325,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   klang: { encounters: [ { generation: 6, level: 30 } ] },
   lampent: { encounters: [ { generation: 6, level: 30 } ] },
   chandelure: {
+    learnset: {
+      energyball: [ '5S0' ],
+      heatwave: [ '5S0' ],
+      psychic: [ '5S0' ],
+      shadowball: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8580,6 +11345,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   axew: {
+    learnset: {
+      dragonclaw: [ '5S1' ],
+      dragonrage: [ '5S0', '5S1', '5S2' ],
+      endure: [ '5S1' ],
+      gigaimpact: [ '5S2' ],
+      outrage: [ '5S2' ],
+      return: [ '5S1' ],
+      scratch: [ '5S0', '5S2' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8613,6 +11387,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   fraxure: { encounters: [ { generation: 6, level: 30 } ] },
   haxorus: {
+    learnset: {
+      dragondance: [ '5S0' ],
+      dualchop: [ '5S0' ],
+      earthquake: [ '5S0' ],
+      xscissor: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8627,6 +11407,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   cubchoo: {
+    learnset: { bide: [ '5S0' ], growl: [ '5S0' ], icywind: [ '5S0' ], powdersnow: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -8638,6 +11419,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   beartic: { encounters: [ { generation: 6, level: 30 } ] },
   shelmet: {
+    learnset: {
+      bodyslam: [ '5S1' ],
+      bugbuzz: [ '5S1' ],
+      encore: [ '5S1' ],
+      gigadrain: [ '5S1' ],
+      megadrain: [ '5S0' ],
+      protect: [ '5S0' ],
+      strugglebug: [ '5S0' ],
+      yawn: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8654,6 +11445,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   mienshao: {
+    learnset: { dualchop: [ '7S0' ], fakeout: [ '7S0' ], highjumpkick: [ '7S0' ], uturn: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -8666,6 +11458,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   druddigon: {
+    learnset: { leer: [ '5S0' ], scratch: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -8677,6 +11470,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   golurk: {
+    learnset: {
+      gyroball: [ '5S0' ],
+      hammerarm: [ '5S0' ],
+      hyperbeam: [ '5S0' ],
+      shadowpunch: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8691,6 +11490,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   bisharp: { encounters: [ { generation: 7, level: 33 } ] },
   bouffalant: {
+    learnset: {
+      earthquake: [ '6S0' ],
+      facade: [ '6S0' ],
+      headcharge: [ '6S0' ],
+      rockslide: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -8704,6 +11509,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   braviary: {
+    learnset: {
+      aerialace: [ '5S0' ],
+      honeclaws: [ '5S0' ],
+      scaryface: [ '5S0' ],
+      wingattack: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8716,6 +11527,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 6, level: 45 } ]
   },
   mandibuzz: {
+    learnset: { feintattack: [ '5S0' ], flatter: [ '5S0' ], nastyplot: [ '5S0' ], pluck: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -8727,6 +11539,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   deino: {
+    learnset: { dragonrage: [ '5S0' ], tackle: [ '5S0' ] },
     eventData: [
       {
         generation: 5,
@@ -8739,6 +11552,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   zweilous: { encounters: [ { generation: 5, level: 49 } ] },
   hydreigon: {
+    learnset: {
+      crunch: [ '6S1' ],
+      dragonbreath: [ '5S0' ],
+      dragonrush: [ '6S1' ],
+      flamethrower: [ '5S0' ],
+      focusblast: [ '5S0' ],
+      frustration: [ '6S1' ],
+      hypervoice: [ '5S0' ],
+      rockslide: [ '6S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8760,6 +11583,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 6, level: 59 } ]
   },
   volcarona: {
+    learnset: {
+      bugbuzz: [ '5S1' ],
+      firespin: [ '5S0' ],
+      gust: [ '5S0' ],
+      hyperbeam: [ '5S1' ],
+      leechlife: [ '5S0' ],
+      overheat: [ '5S1' ],
+      quiverdance: [ '5S1' ],
+      stringshot: [ '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8779,6 +11612,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 7, level: 41 } ]
   },
   cobalion: {
+    learnset: {
+      closecombat: [ '8S5' ],
+      helpinghand: [ '5S0', '5S1' ],
+      ironhead: [ '8S5', '7S4', '6S3', '5S0', '5S1' ],
+      quickattack: [ '7S4' ],
+      quickguard: [ '5S2' ],
+      retaliate: [ '6S3', '5S0', '5S1' ],
+      sacredsword: [ '8S5', '7S4', '6S3', '5S0', '5S1', '5S2' ],
+      swordsdance: [ '8S5', '7S4', '6S3', '5S2' ],
+      workup: [ '5S2' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8820,6 +11664,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   terrakion: {
+    learnset: {
+      closecombat: [ '8S5' ],
+      helpinghand: [ '5S0', '5S1' ],
+      quickguard: [ '5S2' ],
+      retaliate: [ '6S3', '5S0', '5S1' ],
+      rockslide: [ '7S4', '6S3', '5S0', '5S1' ],
+      sacredsword: [ '8S5', '7S4', '6S3', '5S0', '5S1', '5S2' ],
+      stoneedge: [ '8S5', '7S4' ],
+      swordsdance: [ '8S5', '7S4', '6S3', '5S2' ],
+      workup: [ '5S2' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8861,6 +11716,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   virizion: {
+    learnset: {
+      closecombat: [ '8S5' ],
+      gigadrain: [ '7S4', '6S3', '5S0', '5S1' ],
+      helpinghand: [ '5S0', '5S1' ],
+      leafblade: [ '8S5', '7S4' ],
+      quickguard: [ '5S2' ],
+      retaliate: [ '6S3', '5S0', '5S1' ],
+      sacredsword: [ '8S5', '7S4', '6S3', '5S0', '5S1', '5S2' ],
+      swordsdance: [ '8S5', '7S4', '6S3', '5S2' ],
+      workup: [ '5S2' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8902,6 +11768,25 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   tornadus: {
+    learnset: {
+      agility: [ '8S7', '6S3', '5S0' ],
+      aircutter: [ '5S0' ],
+      airslash: [ '7S4', '7S5', '6S3', '5S2' ],
+      astonish: [ '5S1' ],
+      crunch: [ '7S4', '7S5', '6S3' ],
+      extrasensory: [ '6S3', '5S0' ],
+      grassknot: [ '7S6' ],
+      gust: [ '5S1' ],
+      hammerarm: [ '5S2' ],
+      heatwave: [ '8S7', '7S6' ],
+      hiddenpower: [ '5S2' ],
+      hurricane: [ '8S7', '7S6', '5S2' ],
+      icywind: [ '8S7' ],
+      raindance: [ '7S4', '7S5' ],
+      revenge: [ '5S0' ],
+      tailwind: [ '7S4', '7S5', '7S6' ],
+      uproar: [ '5S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -8957,6 +11842,28 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   tornadustherian: { eventOnly: true },
   thundurus: {
+    learnset: {
+      agility: [ '6S3', '5S0' ],
+      astonish: [ '5S1' ],
+      charge: [ '7S4', '7S5' ],
+      crunch: [ '7S4', '7S5', '6S3' ],
+      discharge: [ '7S4', '7S5', '6S3' ],
+      focusblast: [ '7S6', '5S2' ],
+      grassknot: [ '7S6' ],
+      hammerarm: [ '5S2' ],
+      healblock: [ '6S3', '5S0' ],
+      nastyplot: [ '7S4', '7S5', '7S6' ],
+      raindance: [ '8S7' ],
+      revenge: [ '5S0' ],
+      shockwave: [ '5S0' ],
+      sludgewave: [ '8S7' ],
+      thunder: [ '8S7', '5S2' ],
+      thunderbolt: [ '7S6' ],
+      thundershock: [ '5S1' ],
+      uproar: [ '5S1' ],
+      weatherball: [ '8S7' ],
+      wildcharge: [ '5S2' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -9012,6 +11919,25 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   thundurustherian: { eventOnly: true },
   reshiram: {
+    learnset: {
+      blueflare: [ '7S6', '5S2' ],
+      dracometeor: [ '7S6', '5S2' ],
+      dragonbreath: [ '6S3', '5S0' ],
+      dragonclaw: [ '8S7' ],
+      dragonpulse: [ '7S4', '7S5', '5S1' ],
+      earthpower: [ '7S6' ],
+      extrasensory: [ '8S7', '7S4', '7S5', '6S3', '5S0', '5S1' ],
+      fusionflare: [
+        '8S7', '7S4',
+        '7S5', '7S6',
+        '6S3', '5S0',
+        '5S1', '5S2'
+      ],
+      imprison: [ '5S1' ],
+      mist: [ '5S2' ],
+      nobleroar: [ '8S7' ],
+      slash: [ '7S4', '7S5', '6S3', '5S0' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -9063,6 +11989,24 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   zekrom: {
+    learnset: {
+      boltstrike: [ '7S6', '5S2' ],
+      dragonbreath: [ '6S3', '5S0' ],
+      dragonclaw: [ '8S7', '7S4', '7S5', '5S1' ],
+      fusionbolt: [
+        '8S7', '7S4',
+        '7S5', '7S6',
+        '6S3', '5S0',
+        '5S1', '5S2'
+      ],
+      haze: [ '5S2' ],
+      imprison: [ '5S1' ],
+      nobleroar: [ '8S7' ],
+      outrage: [ '7S6', '5S2' ],
+      slash: [ '8S7', '7S4', '7S5', '6S3', '5S0' ],
+      stoneedge: [ '7S6' ],
+      zenheadbutt: [ '7S4', '7S5', '6S3', '5S0', '5S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -9114,6 +12058,23 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   landorus: {
+    learnset: {
+      block: [ '5S1' ],
+      bulldoze: [ '8S5' ],
+      earthpower: [ '7S4', '6S2' ],
+      earthquake: [ '7S4', '6S3', '5S0' ],
+      extrasensory: [ '6S2' ],
+      fissure: [ '5S0' ],
+      focusblast: [ '8S5' ],
+      knockoff: [ '6S3' ],
+      mudshot: [ '5S1' ],
+      rockslide: [ '8S5', '7S4', '6S2', '5S0' ],
+      rocktomb: [ '6S3', '5S1' ],
+      sandstorm: [ '7S4', '5S0' ],
+      sandtomb: [ '8S5' ],
+      swordsdance: [ '6S2' ],
+      uturn: [ '6S3' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -9159,6 +12120,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   landorustherian: { eventOnly: true },
   kyurem: {
+    learnset: {
+      dracometeor: [ '6S3' ],
+      dragonbreath: [ '6S2' ],
+      dragonpulse: [ '7S4', '5S0', '5S1' ],
+      endeavor: [ '5S0' ],
+      glaciate: [ '7S4', '6S2', '6S3', '5S0', '5S1' ],
+      hypervoice: [ '8S5' ],
+      icebeam: [ '8S5' ],
+      imprison: [ '5S0', '5S1' ],
+      ironhead: [ '6S3' ],
+      scaryface: [ '8S5', '7S4', '6S2', '6S3', '5S1' ],
+      shadowball: [ '8S5' ],
+      slash: [ '7S4', '6S2' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -9200,6 +12175,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   kyuremblack: {
+    learnset: {
+      dracometeor: [ '6S3' ],
+      dragonbreath: [ '6S2' ],
+      dragonpulse: [ '7S4', '5S0', '5S1' ],
+      endeavor: [ '5S0' ],
+      freezeshock: [ '7S4', '6S2', '6S3', '5S0', '5S1' ],
+      fusionbolt: [ '8S5', '7S4', '6S2', '6S3', '5S1' ],
+      hypervoice: [ '8S5' ],
+      icebeam: [ '8S5' ],
+      imprison: [ '5S0', '5S1' ],
+      ironhead: [ '6S3' ],
+      shadowball: [ '8S5' ],
+      slash: [ '7S4', '6S2' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -9241,6 +12230,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   kyuremwhite: {
+    learnset: {
+      dracometeor: [ '6S3' ],
+      dragonbreath: [ '6S2' ],
+      dragonpulse: [ '7S4', '5S0', '5S1' ],
+      endeavor: [ '5S0' ],
+      fusionflare: [ '8S5', '7S4', '6S2', '6S3', '5S1' ],
+      hypervoice: [ '8S5' ],
+      icebeam: [ '8S5' ],
+      iceburn: [ '7S4', '6S2', '6S3', '5S0', '5S1' ],
+      imprison: [ '5S0', '5S1' ],
+      ironhead: [ '6S3' ],
+      shadowball: [ '8S5' ],
+      slash: [ '7S4', '6S2' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -9282,6 +12285,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   keldeo: {
+    learnset: {
+      aquajet: [ '6S2', '6S3', '5S0', '5S1' ],
+      bubblebeam: [ '6S3', '5S0' ],
+      doublekick: [ '6S2', '6S3', '5S0' ],
+      hydropump: [ '8S4', '6S2', '5S1' ],
+      leer: [ '6S2', '6S3', '5S0' ],
+      sacredsword: [ '8S4', '5S1' ],
+      secretsword: [ '8S4' ],
+      swordsdance: [ '8S4', '5S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -9317,6 +12330,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   keldeoresolute: { eventOnly: true },
   meloetta: {
+    learnset: {
+      celebrate: [ '7S3' ],
+      closecombat: [ '7S2', '5S1' ],
+      confusion: [ '5S0' ],
+      psychic: [ '7S2', '5S1' ],
+      quickattack: [ '5S0' ],
+      relicsong: [ '7S3' ],
+      round: [ '7S3', '5S0', '5S1' ],
+      sing: [ '7S2', '7S3' ],
+      teeterdance: [ '5S1' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -9346,6 +12370,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   genesect: {
+    learnset: {
+      blazekick: [ '5S2' ],
+      extremespeed: [ '5S2' ],
+      fellstinger: [ '8S4' ],
+      magnetbomb: [ '6S3', '5S0', '5S1' ],
+      metalclaw: [ '8S4' ],
+      shiftgear: [ '5S2' ],
+      signalbeam: [ '6S3', '5S0', '5S1' ],
+      solarbeam: [ '6S3', '5S0', '5S1' ],
+      technoblast: [ '8S4', '6S3', '5S0', '5S1', '5S2' ],
+      xscissor: [ '8S4' ]
+    },
     eventData: [
       {
         generation: 5,
@@ -9388,6 +12424,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   genesectdouse: { eventOnly: true },
   genesectshock: { eventOnly: true },
   fennekin: {
+    learnset: { flamethrower: [ '6S0' ], hiddenpower: [ '6S0' ], scratch: [ '6S0' ] },
     eventData: [
       {
         generation: 6,
@@ -9400,6 +12437,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   froakie: {
+    learnset: { bubble: [ '6S0' ], growl: [ '6S0' ], pound: [ '6S0' ], return: [ '6S0' ] },
     eventData: [
       {
         generation: 6,
@@ -9410,6 +12448,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   greninja: {
+    learnset: {
+      gunkshot: [ '6S1' ],
+      happyhour: [ '6S1' ],
+      hydrocannon: [ '6S1' ],
+      hydropump: [ '6S0' ],
+      matblock: [ '6S1' ],
+      shadowsneak: [ '6S0' ],
+      substitute: [ '6S0' ],
+      watershuriken: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9429,6 +12477,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   greninjaash: {
+    learnset: {
+      aerialace: [ '7S0' ],
+      doubleteam: [ '7S0' ],
+      nightslash: [ '7S0' ],
+      watershuriken: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -9442,6 +12496,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   fletchinder: { encounters: [ { generation: 7, level: 16 } ] },
   vivillonfancy: {
+    learnset: {
+      gust: [ '6S0' ],
+      holdhands: [ '6S0' ],
+      lightscreen: [ '6S0' ],
+      strugglebug: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9452,6 +12512,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   vivillonpokeball: {
+    learnset: {
+      gust: [ '6S0' ],
+      lightscreen: [ '6S0' ],
+      strugglebug: [ '6S0' ],
+      stunspore: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9463,6 +12529,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   pyroar: {
+    learnset: { darkpulse: [ '6S0' ], fireblast: [ '6S0' ], hypervoice: [ '6S0' ] },
     eventData: [
       {
         generation: 6,
@@ -9478,6 +12545,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   gogoat: { encounters: [ { generation: 6, level: 30 } ] },
   pancham: {
+    learnset: { armthrust: [ '6S0' ], darkpulse: [ '6S0' ], stoneedge: [ '6S0' ] },
     eventData: [
       {
         generation: 6,
@@ -9492,6 +12560,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   pangoro: { encounters: [ { generation: 7, level: 24 } ] },
   aegislash: {
+    learnset: {
+      flashcannon: [ '6S0' ],
+      kingsshield: [ '6S0' ],
+      shadowball: [ '6S0' ],
+      wideguard: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9504,6 +12578,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   aromatisse: {
+    learnset: {
+      disable: [ '6S0' ],
+      healpulse: [ '6S0' ],
+      moonblast: [ '6S0' ],
+      trickroom: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9516,6 +12596,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   inkay: {
+    learnset: {
+      foulplay: [ '6S0' ],
+      happyhour: [ '6S0' ],
+      hypnosis: [ '6S0' ],
+      topsyturvy: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9526,6 +12612,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   malamar: {
+    learnset: { facade: [ '6S0' ], knockoff: [ '6S0' ], rockslide: [ '6S0' ], superpower: [ '6S0' ] },
     eventData: [
       {
         generation: 6,
@@ -9542,6 +12629,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   dragalge: { encounters: [ { generation: 6, level: 35 } ] },
   clawitzer: { encounters: [ { generation: 6, level: 35 } ] },
   tyrunt: {
+    learnset: { roar: [ '6S0' ], stomp: [ '6S0' ], tackle: [ '6S0' ], tailwhip: [ '6S0' ] },
     eventData: [
       {
         generation: 6,
@@ -9553,6 +12641,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   amaura: {
+    learnset: {
+      growl: [ '6S0' ],
+      powdersnow: [ '6S0' ],
+      rockthrow: [ '6S0' ],
+      thunderwave: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9564,6 +12658,19 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   sylveon: {
+    learnset: {
+      babydolleyes: [ '6S1' ],
+      calmmind: [ '7S2' ],
+      celebrate: [ '6S0' ],
+      disarmingvoice: [ '6S1' ],
+      drainingkiss: [ '7S2', '6S1' ],
+      fairywind: [ '6S0' ],
+      helpinghand: [ '6S0' ],
+      hyperbeam: [ '7S2' ],
+      psyshock: [ '7S2' ],
+      quickattack: [ '6S1' ],
+      sandattack: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9589,6 +12696,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   goomy: {
+    learnset: { bodyslam: [ '7S0' ], counter: [ '7S0' ], dragonpulse: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -9602,6 +12710,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   sliggoo: { encounters: [ { generation: 6, level: 30 } ] },
   pumpkaboosuper: {
+    learnset: {
+      astonish: [ '6S0' ],
+      scaryface: [ '6S0' ],
+      shadowsneak: [ '6S0' ],
+      trickortreat: [ '6S0' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9612,6 +12726,19 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   xerneas: {
+    learnset: {
+      aromatherapy: [ '6S1' ],
+      dazzlinggleam: [ '8S5' ],
+      focusblast: [ '7S4', '6S1' ],
+      geomancy: [ '7S2', '7S3', '7S4', '6S0', '6S1' ],
+      grassknot: [ '7S4' ],
+      gravity: [ '6S0' ],
+      hornleech: [ '8S5', '7S2', '7S3' ],
+      ingrain: [ '8S5' ],
+      megahorn: [ '6S0' ],
+      moonblast: [ '8S5', '7S2', '7S3', '7S4', '6S0', '6S1' ],
+      nightslash: [ '7S2', '7S3' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9653,6 +12780,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   yveltal: {
+    learnset: {
+      darkpulse: [ '7S2', '7S3', '7S4', '6S0', '6S1' ],
+      disable: [ '6S0' ],
+      dragonrush: [ '8S5' ],
+      foulplay: [ '6S1' ],
+      heatwave: [ '7S4' ],
+      oblivionwing: [ '8S5', '7S2', '7S3', '7S4', '6S0', '6S1' ],
+      phantomforce: [ '7S2', '7S3' ],
+      psychic: [ '7S2', '7S3' ],
+      snarl: [ '6S0' ],
+      suckerpunch: [ '8S5', '6S1' ],
+      tailwind: [ '7S4' ],
+      taunt: [ '8S5' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9694,6 +12835,29 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   zygarde: {
+    learnset: {
+      bind: [ '8S9', '7S2', '7S3', '7S4' ],
+      camouflage: [ '6S0' ],
+      crunch: [ '6S0' ],
+      dig: [ '7S2' ],
+      dragonbreath: [ '7S5', '7S6' ],
+      dragondance: [ '7S7', '7S8' ],
+      dragonpulse: [ '8S9', '6S0' ],
+      earthquake: [ '6S0' ],
+      extremespeed: [ '7S7', '7S8', '6S1' ],
+      glare: [ '7S5', '7S6', '6S1' ],
+      haze: [ '7S3', '7S4' ],
+      landswrath: [
+        '8S9', '7S2',
+        '7S3', '7S4',
+        '7S5', '7S6',
+        '6S1'
+      ],
+      outrage: [ '7S7', '7S8', '6S1' ],
+      safeguard: [ '7S2', '7S5', '7S6' ],
+      sandstorm: [ '7S3', '7S4' ],
+      thousandarrows: [ '8S9', '7S7', '7S8' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9755,6 +12919,21 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   zygarde10: {
+    learnset: {
+      bind: [ '8S5', '7S0', '7S1', '7S2' ],
+      dig: [ '7S0', '7S2' ],
+      dragonbreath: [ '7S3' ],
+      dragondance: [ '7S4' ],
+      dragonpulse: [ '8S5' ],
+      extremespeed: [ '7S4' ],
+      glare: [ '7S3' ],
+      haze: [ '7S1' ],
+      landswrath: [ '8S5', '7S0', '7S1', '7S2', '7S3' ],
+      outrage: [ '7S4' ],
+      safeguard: [ '7S0', '7S2', '7S3' ],
+      sandstorm: [ '7S1' ],
+      thousandarrows: [ '8S5', '7S4' ]
+    },
     eventData: [
       { generation: 7, level: 30, moves: [ 'safeguard', 'dig', 'bind', 'landswrath' ] },
       {
@@ -9796,6 +12975,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   diancie: {
+    learnset: {
+      diamondstorm: [ '6S0', '6S1' ],
+      moonblast: [ '6S0', '6S1' ],
+      reflect: [ '6S0', '6S1' ],
+      return: [ '6S0', '6S1' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9814,6 +12999,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   hoopa: {
+    learnset: {
+      astonish: [ '6S0' ],
+      hyperspacehole: [ '7S1', '6S0' ],
+      nastyplot: [ '7S1', '6S0' ],
+      psychic: [ '7S1', '6S0' ],
+      shadowball: [ '7S1' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9832,6 +13024,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   hoopaunbound: { eventOnly: true },
   volcanion: {
+    learnset: {
+      explosion: [ '6S1' ],
+      flamethrower: [ '6S1' ],
+      flareblitz: [ '8S2' ],
+      haze: [ '8S2' ],
+      hydropump: [ '6S0', '6S1' ],
+      incinerate: [ '8S2' ],
+      mist: [ '6S0' ],
+      overheat: [ '6S0' ],
+      steameruption: [ '8S2', '6S0', '6S1' ]
+    },
     eventData: [
       {
         generation: 6,
@@ -9855,6 +13058,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   decidueye: {
+    learnset: {
+      bravebird: [ '7S0' ],
+      leafblade: [ '7S0' ],
+      phantomforce: [ '7S0' ],
+      shadowsneak: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -9866,6 +13075,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   incineroar: {
+    learnset: {
+      darkestlariat: [ '7S0' ],
+      fakeout: [ '7S0' ],
+      flareblitz: [ '7S0' ],
+      uturn: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -9877,6 +13092,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   primarina: {
+    learnset: {
+      hypervoice: [ '7S0' ],
+      icywind: [ '7S0' ],
+      moonblast: [ '7S0' ],
+      perishsong: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -9890,6 +13111,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   toucannon: { encounters: [ { generation: 7, level: 26 } ] },
   gumshoos: { encounters: [ { generation: 7, level: 17 } ] },
   gumshoostotem: {
+    learnset: { bide: [ '7S0' ], bite: [ '7S0' ], odorsleuth: [ '7S0' ], sandattack: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -9902,6 +13124,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   vikavolttotem: {
+    learnset: { acrobatics: [ '7S0' ], bugbuzz: [ '7S0' ], guillotine: [ '7S0' ], spark: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -9914,6 +13137,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   ribombeetotem: {
+    learnset: {
+      aromatherapy: [ '7S0' ],
+      bugbuzz: [ '7S0' ],
+      dazzlinggleam: [ '7S0' ],
+      quiverdance: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -9926,6 +13155,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   rockruffdusk: {
+    learnset: {
+      bite: [ '7S1', '7S0' ],
+      firefang: [ '7S0' ],
+      happyhour: [ '7S1', '7S0' ],
+      tackle: [ '7S1', '7S0' ],
+      thunderfang: [ '7S1' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -9942,6 +13178,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   lycanrocmidnight: {
+    learnset: {
+      firefang: [ '7S0' ],
+      stoneedge: [ '7S0' ],
+      suckerpunch: [ '7S0' ],
+      swordsdance: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -9953,6 +13195,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   mareanie: {
+    learnset: { stockpile: [ '7S0' ], swallow: [ '7S0' ], toxic: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -9966,6 +13209,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   mudsdale: { encounters: [ { generation: 7, level: 29 } ] },
   araquanidtotem: {
+    learnset: { bite: [ '7S0' ], bubblebeam: [ '7S0' ], bugbite: [ '7S0' ], spiderweb: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -9978,6 +13222,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   lurantistotem: {
+    learnset: { growth: [ '7S0' ], ingrain: [ '7S0' ], leafblade: [ '7S0' ], synthesis: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -9990,6 +13235,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   salazzle: {
+    learnset: {
+      fakeout: [ '7S0' ],
+      flamethrower: [ '7S0' ],
+      sludgebomb: [ '7S0' ],
+      toxic: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10001,6 +13252,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 7, level: 16 } ]
   },
   salazzletotem: {
+    learnset: { doubleslap: [ '7S0' ], flameburst: [ '7S0' ], smog: [ '7S0' ], toxic: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -10013,6 +13265,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   bewear: {
+    learnset: {
+      babydolleyes: [ '7S0' ],
+      bind: [ '7S0' ],
+      brutalswing: [ '7S0' ],
+      superpower: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10025,6 +13283,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   steenee: {
+    learnset: { doubleslap: [ '7S0' ], magicalleaf: [ '7S0' ], sweetscent: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -10037,6 +13296,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   comfey: {
+    learnset: {
+      celebrate: [ '7S0' ],
+      drainingkiss: [ '7S0' ],
+      leechseed: [ '7S0' ],
+      magicalleaf: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10048,6 +13313,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   oranguru: {
+    learnset: {
+      allyswitch: [ '7S1' ],
+      foulplay: [ '7S1' ],
+      instruct: [ '7S0', '7S1' ],
+      psychic: [ '7S0' ],
+      psychicterrain: [ '7S0' ],
+      trickroom: [ '7S1' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10067,6 +13340,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   passimian: {
+    learnset: {
+      bestow: [ '7S0' ],
+      closecombat: [ '7S1' ],
+      feint: [ '7S0' ],
+      fling: [ '7S0' ],
+      gunkshot: [ '7S1' ],
+      knockoff: [ '7S1' ],
+      uturn: [ '7S1' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10085,6 +13367,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   typenull: {
+    learnset: {
+      airslash: [ '7S1' ],
+      crushclaw: [ '7S0' ],
+      doublehit: [ '7S1' ],
+      ironhead: [ '8S2', '7S1' ],
+      metalsound: [ '7S1' ],
+      scaryface: [ '7S0' ],
+      takedown: [ '8S2', '7S0' ],
+      triattack: [ '8S2' ],
+      xscissor: [ '8S2', '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10114,6 +13407,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   silvally: {
+    learnset: {
+      multiattack: [ '7S0' ],
+      partingshot: [ '7S0' ],
+      punishment: [ '7S0' ],
+      scaryface: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10125,6 +13424,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   turtonator: {
+    learnset: {
+      bodyslam: [ '7S0' ],
+      dragontail: [ '7S1' ],
+      flamethrower: [ '7S0', '7S1' ],
+      shelltrap: [ '7S1' ],
+      wideguard: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10144,6 +13450,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   togedemarutotem: {
+    learnset: { discharge: [ '7S0' ], magnetrise: [ '7S0' ], nuzzle: [ '7S0' ], zingzap: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -10156,6 +13463,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   mimikyu: {
+    learnset: {
+      astonish: [ '7S0', '7S1' ],
+      babydolleyes: [ '7S0' ],
+      copycat: [ '7S0', '7S1' ],
+      destinybond: [ '7S2' ],
+      mimic: [ '7S2' ],
+      playrough: [ '7S1' ],
+      snatch: [ '7S2' ],
+      splash: [ '7S0' ],
+      substitute: [ '7S1' ],
+      trick: [ '7S2' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10180,6 +13499,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   mimikyutotem: {
+    learnset: { charm: [ '7S0' ], feintattack: [ '7S0' ], shadowclaw: [ '7S0' ], slash: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -10192,6 +13512,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   drampa: {
+    learnset: { echoedvoice: [ '7S0' ], hurricane: [ '7S0' ], playnice: [ '7S0' ] },
     eventData: [
       {
         generation: 7,
@@ -10205,6 +13526,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   kommoo: { encounters: [ { generation: 7, level: 41 } ] },
   kommoototem: {
+    learnset: {
+      dragonclaw: [ '7S0' ],
+      irondefense: [ '7S0' ],
+      screech: [ '7S0' ],
+      workup: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10217,6 +13544,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   tapukoko: {
+    learnset: {
+      agility: [ '7S0', '7S1' ],
+      bravebird: [ '8S3' ],
+      dazzlinggleam: [ '7S2' ],
+      discharge: [ '7S0', '7S1' ],
+      electroball: [ '7S0', '7S1' ],
+      naturesmadness: [ '7S0', '7S1', '7S2' ],
+      quickattack: [ '8S3' ],
+      taunt: [ '8S3' ],
+      thunderbolt: [ '8S3', '7S2' ],
+      voltswitch: [ '7S2' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10248,6 +13587,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   tapulele: {
+    learnset: {
+      charm: [ '8S2' ],
+      extrasensory: [ '7S0', '7S1' ],
+      flatter: [ '7S0', '7S1' ],
+      magicroom: [ '8S2' ],
+      moonblast: [ '7S0', '7S1' ],
+      naturesmadness: [ '7S0', '7S1' ],
+      playrough: [ '8S2' ],
+      psychic: [ '8S2' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10271,6 +13620,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   tapubulu: {
+    learnset: {
+      megahorn: [ '8S2', '7S0', '7S1' ],
+      naturesmadness: [ '7S0', '7S1' ],
+      scaryface: [ '8S2' ],
+      skullbash: [ '7S0', '7S1' ],
+      superpower: [ '8S2' ],
+      woodhammer: [ '8S2' ],
+      zenheadbutt: [ '7S0', '7S1' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10294,6 +13652,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   tapufini: {
+    learnset: {
+      aquaring: [ '7S0', '7S1' ],
+      brine: [ '8S2' ],
+      hydropump: [ '7S0', '7S1' ],
+      moonblast: [ '8S2' ],
+      muddywater: [ '7S0', '7S1' ],
+      naturesmadness: [ '7S0', '7S1' ],
+      waterpulse: [ '8S2' ],
+      whirlpool: [ '8S2' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10317,6 +13685,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   cosmog: {
+    learnset: { splash: [ '8S1', '7S0' ], teleport: [ '8S1' ] },
     eventData: [
       { generation: 7, level: 5, moves: [ 'splash' ] },
       { generation: 8, level: 5, moves: [ 'splash', 'teleport' ], pokeball: 'pokeball' }
@@ -10324,6 +13693,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   solgaleo: {
+    learnset: {
+      cosmicpower: [ '7S0', '7S1' ],
+      crunch: [ '7S0', '7S1' ],
+      firespin: [ '8S3' ],
+      irontail: [ '8S3' ],
+      morningsun: [ '7S2' ],
+      nobleroar: [ '8S3', '7S2' ],
+      sunsteelstrike: [ '7S0', '7S1', '7S2' ],
+      zenheadbutt: [ '8S3', '7S0', '7S1', '7S2' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10351,6 +13730,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   lunala: {
+    learnset: {
+      cosmicpower: [ '7S0', '7S1' ],
+      magiccoat: [ '8S3' ],
+      moonblast: [ '8S3', '7S2' ],
+      moongeistbeam: [ '7S0', '7S1', '7S2' ],
+      moonlight: [ '7S2' ],
+      nightdaze: [ '7S0', '7S1' ],
+      psyshock: [ '7S2' ],
+      shadowball: [ '8S3', '7S0', '7S1' ],
+      swift: [ '8S3' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10378,6 +13768,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   nihilego: {
+    learnset: {
+      acidspray: [ '8S2', '7S0', '7S1' ],
+      brutalswing: [ '8S2' ],
+      mirrorcoat: [ '7S0', '7S1' ],
+      powergem: [ '7S0', '7S1' ],
+      sludgewave: [ '8S2' ],
+      stealthrock: [ '7S1' ],
+      venomdrench: [ '7S0' ],
+      wonderroom: [ '8S2' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10400,6 +13800,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   buzzwole: {
+    learnset: {
+      counter: [ '7S0', '7S1' ],
+      dynamicpunch: [ '8S2', '7S0', '7S1' ],
+      hammerarm: [ '7S0', '7S1' ],
+      leechlife: [ '8S2' ],
+      lunge: [ '7S0', '7S1' ],
+      poweruppunch: [ '8S2' ],
+      taunt: [ '8S2' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10422,6 +13831,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   pheromosa: {
+    learnset: {
+      bugbuzz: [ '7S0', '7S1' ],
+      highjumpkick: [ '8S2' ],
+      lunge: [ '8S2', '7S0', '7S1' ],
+      mefirst: [ '7S0', '7S1' ],
+      swift: [ '8S2' ],
+      throatchop: [ '8S2' ],
+      triplekick: [ '7S0', '7S1' ]
+    },
     eventData: [
       { generation: 7, level: 60, moves: [ 'triplekick', 'lunge', 'bugbuzz', 'mefirst' ] },
       {
@@ -10440,6 +13858,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   xurkitree: {
+    learnset: {
+      brutalswing: [ '8S2' ],
+      discharge: [ '8S2', '7S0', '7S1' ],
+      eerieimpulse: [ '8S2' ],
+      electricterrain: [ '7S0', '7S1' ],
+      hypnosis: [ '7S0', '7S1' ],
+      powerwhip: [ '8S2', '7S0', '7S1' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10462,6 +13888,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   celesteela: {
+    learnset: {
+      autotomize: [ '7S0', '7S1' ],
+      earthquake: [ '8S2' ],
+      gyroball: [ '8S2' ],
+      irondefense: [ '7S0', '7S1' ],
+      leechseed: [ '8S2' ],
+      seedbomb: [ '7S0', '7S1' ],
+      skullbash: [ '7S0', '7S1' ],
+      smackdown: [ '8S2' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10484,6 +13920,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   kartana: {
+    learnset: {
+      aircutter: [ '8S2' ],
+      airslash: [ '7S0', '7S1' ],
+      detect: [ '7S0', '7S1' ],
+      leafblade: [ '8S2', '7S0', '7S1' ],
+      swordsdance: [ '8S2' ],
+      vacuumwave: [ '8S2' ],
+      xscissor: [ '7S0', '7S1' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10506,6 +13951,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   guzzlord: {
+    learnset: {
+      brutalswing: [ '8S2' ],
+      dragonrush: [ '8S2' ],
+      gastroacid: [ '7S0', '7S1' ],
+      hammerarm: [ '7S1' ],
+      heavyslam: [ '7S0', '7S1' ],
+      megapunch: [ '8S2' ],
+      stompingtantrum: [ '8S2' ],
+      thrash: [ '7S0', '7S1' ],
+      wringout: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10528,6 +13984,21 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   necrozma: {
+    learnset: {
+      autotomize: [ '8S3' ],
+      chargebeam: [ '8S3' ],
+      irondefense: [ '7S0', '7S1' ],
+      lightscreen: [ '7S2' ],
+      moonlight: [ '7S2' ],
+      nightslash: [ '7S1' ],
+      photongeyser: [ '7S1' ],
+      powergem: [ '8S3', '7S1' ],
+      prismaticlaser: [ '7S0' ],
+      psychocut: [ '8S3' ],
+      stealthrock: [ '7S0' ],
+      substitute: [ '7S2' ],
+      wringout: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10558,6 +14029,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   necrozmaduskmane: { eventOnly: true },
   necrozmadawnwings: { eventOnly: true },
   magearna: {
+    learnset: {
+      flashcannon: [ '7S0' ],
+      fleurcannon: [ '7S0' ],
+      helpinghand: [ '7S0' ],
+      luckychant: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10569,6 +14046,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   magearnaoriginal: {
+    learnset: {
+      defensecurl: [ '8S0' ],
+      flashcannon: [ '8S0' ],
+      fleurcannon: [ '8S0' ],
+      rest: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10582,6 +14065,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   marshadow: {
+    learnset: {
+      closecombat: [ '7S0' ],
+      drainpunch: [ '8S1' ],
+      forcepalm: [ '8S1', '7S0' ],
+      shadowball: [ '7S0' ],
+      shadowsneak: [ '8S1' ],
+      spectralthief: [ '8S1', '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10599,6 +14090,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   poipole: {
+    learnset: {
+      acid: [ '8S2' ],
+      charm: [ '7S0' ],
+      dragonpulse: [ '7S1' ],
+      fellstinger: [ '8S2' ],
+      furyattack: [ '8S2' ],
+      helpinghand: [ '8S2' ],
+      nastyplot: [ '7S0', '7S1' ],
+      poisonjab: [ '7S0', '7S1' ],
+      venomdrench: [ '7S0', '7S1' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10627,6 +14129,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   stakataka: {
+    learnset: {
+      autotomize: [ '8S1' ],
+      brutalswing: [ '8S1' ],
+      doubleedge: [ '8S1' ],
+      irondefense: [ '7S0' ],
+      ironhead: [ '7S0' ],
+      rockblast: [ '7S0' ],
+      rockslide: [ '8S1' ],
+      wideguard: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10644,6 +14156,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   blacephalon: {
+    learnset: {
+      fireblast: [ '8S1', '7S0' ],
+      mindblown: [ '7S0' ],
+      shadowball: [ '7S0' ],
+      shadowclaw: [ '8S1' ],
+      taunt: [ '8S1' ],
+      trick: [ '7S0' ],
+      zenheadbutt: [ '8S1' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10661,6 +14182,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   zeraora: {
+    learnset: {
+      blazekick: [ '8S1' ],
+      closecombat: [ '8S1', '7S0' ],
+      outrage: [ '8S1' ],
+      plasmafists: [ '8S1', '7S0' ],
+      thunder: [ '7S0' ],
+      thunderpunch: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -10681,6 +14210,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   melmetal: {
+    learnset: {
+      doubleironbash: [ '8S0' ],
+      dynamicpunch: [ '8S0' ],
+      hyperbeam: [ '8S0' ],
+      thunderpunch: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10693,6 +14228,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   toxel: {
+    learnset: { acid: [ '8S0' ], flail: [ '8S0' ], growl: [ '8S0' ], nuzzle: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
@@ -10704,6 +14240,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   toxtricity: {
+    learnset: {
+      boomburst: [ '8S0' ],
+      overdrive: [ '8S0' ],
+      risingvoltage: [ '8S0' ],
+      sludgewave: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10717,6 +14259,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   sinisteaantique: {
+    learnset: {
+      aromatherapy: [ '8S0' ],
+      celebrate: [ '8S0' ],
+      memento: [ '8S0' ],
+      metronome: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10728,6 +14276,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   milcery: {
+    learnset: {
+      attract: [ '8S0' ],
+      celebrate: [ '8S0' ],
+      entrainment: [ '8S0' ],
+      lastresort: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10740,6 +14294,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   dracozolt: {
+    learnset: { charge: [ '8S0' ], tackle: [ '8S0' ], thundershock: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
@@ -10753,6 +14308,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   arctozolt: {
+    learnset: { charge: [ '8S0' ], powdersnow: [ '8S0' ], thundershock: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
@@ -10766,6 +14322,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   dracovish: {
+    learnset: {
+      dragonrush: [ '8S1' ],
+      fishiousrend: [ '8S1' ],
+      icefang: [ '8S1' ],
+      protect: [ '8S0' ],
+      tackle: [ '8S0' ],
+      watergun: [ '8S1', '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10788,6 +14352,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   arctovish: {
+    learnset: { powdersnow: [ '8S0' ], protect: [ '8S0' ], watergun: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
@@ -10801,6 +14366,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   zacian: {
+    learnset: {
+      crunch: [ '8S0' ],
+      ironhead: [ '8S0', '8S1' ],
+      playrough: [ '8S1' ],
+      sacredsword: [ '8S0', '8S1' ],
+      swordsdance: [ '8S0', '8S1' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10822,6 +14394,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   zaciancrowned: { eventOnly: true },
   zamazenta: {
+    learnset: {
+      closecombat: [ '8S1' ],
+      crunch: [ '8S0' ],
+      irondefense: [ '8S0', '8S1' ],
+      ironhead: [ '8S0', '8S1' ],
+      slash: [ '8S0' ],
+      wideguard: [ '8S1' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10843,6 +14423,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   zamazentacrowned: { eventOnly: true },
   eternatus: {
+    learnset: {
+      crosspoison: [ '8S0' ],
+      dragonpulse: [ '8S0' ],
+      dynamaxcannon: [ '8S1', '8S0' ],
+      eternabeam: [ '8S1' ],
+      flamethrower: [ '8S1', '8S0' ],
+      sludgebomb: [ '8S1' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10863,6 +14451,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   kubfu: {
+    learnset: { endure: [ '8S0' ], focusenergy: [ '8S0' ], leer: [ '8S0' ], rocksmash: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
@@ -10874,6 +14463,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   zarude: {
+    learnset: { closecombat: [ '8S0' ], powerwhip: [ '8S0' ], snarl: [ '8S0' ], swagger: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
@@ -10886,6 +14476,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   zarudedada: {
+    learnset: {
+      energyball: [ '8S0' ],
+      hammerarm: [ '8S0' ],
+      junglehealing: [ '8S0' ],
+      powerwhip: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10898,6 +14494,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   regieleki: {
+    learnset: { lockon: [ '8S0' ], thrash: [ '8S0' ], thundercage: [ '8S0' ], zapcannon: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
@@ -10909,6 +14506,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   regidrago: {
+    learnset: {
+      dragonclaw: [ '8S0' ],
+      dragonenergy: [ '8S0' ],
+      hammerarm: [ '8S0' ],
+      laserfocus: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10920,6 +14523,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   glastrier: {
+    learnset: {
+      doubleedge: [ '8S0' ],
+      iciclecrash: [ '8S0' ],
+      swordsdance: [ '8S0' ],
+      taunt: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10930,6 +14539,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   spectrier: {
+    learnset: { disable: [ '8S0' ], doubleedge: [ '8S0' ], nastyplot: [ '8S0' ], thrash: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
@@ -10940,10 +14550,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   calyrex: {
+    learnset: { gigadrain: [ '8S0' ], psychic: [ '8S0' ] },
     eventData: [ { generation: 8, level: 80, moves: [ 'psychic', 'gigadrain' ] } ],
     eventOnly: true
   },
   calyrexice: {
+    learnset: {
+      gigadrain: [ '8S0' ],
+      glaciallance: [ '8S0' ],
+      irondefense: [ '8S0' ],
+      psychic: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10954,6 +14571,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   calyrexshadow: {
+    learnset: {
+      agility: [ '8S0' ],
+      astralbarrage: [ '8S0' ],
+      gigadrain: [ '8S0' ],
+      psychic: [ '8S0' ]
+    },
     eventData: [
       {
         generation: 8,
@@ -10964,6 +14587,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   koraidon: {
+    learnset: {
+      bulkup: [ '9S1' ],
+      collisioncourse: [ '9S0', '9S1' ],
+      endure: [ '9S0' ],
+      flamethrower: [ '9S0', '9S1' ],
+      gigaimpact: [ '9S1' ],
+      terablast: [ '9S0' ]
+    },
     eventData: [
       {
         generation: 9,
@@ -10984,6 +14615,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   miraidon: {
+    learnset: {
+      charge: [ '9S1' ],
+      electrodrift: [ '9S0', '9S1' ],
+      endure: [ '9S0' ],
+      hyperbeam: [ '9S1' ],
+      powergem: [ '9S0', '9S1' ],
+      terablast: [ '9S0' ]
+    },
     eventData: [
       {
         generation: 9,
@@ -11004,6 +14643,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     eventOnly: true
   },
   kerfluffle: {
+    learnset: { celebrate: [ '6S0' ], fly: [ '6S0' ], holdhands: [ '6S0' ], metronome: [ '6S0' ] },
     eventData: [
       {
         generation: 6,
@@ -11015,6 +14655,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   caribolt: {
+    learnset: {
+      celebrate: [ '7S0' ],
+      hornleech: [ '7S0' ],
+      metronome: [ '7S0' ],
+      wildcharge: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -11025,6 +14671,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   smokomodo: {
+    learnset: {
+      camouflage: [ '7S0' ],
+      celebrate: [ '7S0' ],
+      eruption: [ '7S0' ],
+      magnitude: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -11035,6 +14687,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   snaelstrom: {
+    learnset: {
+      celebrate: [ '7S0' ],
+      leechlife: [ '7S0' ],
+      liquidation: [ '7S0' ],
+      metronome: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -11045,6 +14703,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   chromera: {
+    learnset: { belch: [ '8S0' ], darkpulse: [ '8S0' ], recover: [ '8S0' ], switcheroo: [ '8S0' ] },
     eventData: [
       {
         generation: 8,

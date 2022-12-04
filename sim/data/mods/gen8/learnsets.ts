@@ -1,1 +1,1 @@
-export const Learnsets: {[k: string]: ModdedLearnsetData} = {};
+export const Learnsets: {[k: string]: ModdedLearnsetData} = { vivillonfancy: {} };
