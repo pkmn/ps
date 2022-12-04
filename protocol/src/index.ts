@@ -408,6 +408,8 @@ export namespace Protocol {
       item: ID;
       moves: ID[];
       stats: Omit<StatsTable, 'hp'>;
+      commanding?: boolean;
+      reviving?: boolean;
     }
   }
 
