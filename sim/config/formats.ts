@@ -96,6 +96,13 @@ export const Formats: FormatList = [
     banlist: [ 'Sub-Legendary' ]
   },
   {
+    name: '[Gen 9] Hackmons Cup',
+    mod: 'gen9',
+    team: 'randomHC',
+    ruleset: [ 'HP Percentage Mod', 'Cancel Mod' ],
+    banlist: [ 'Nonexistent' ]
+  },
+  {
     name: '[Gen 9] Custom Game',
     mod: 'gen9',
     debug: true,
@@ -151,6 +158,7 @@ export const Formats: FormatList = [
       "King's Rock",
       'Ally Switch',
       'Final Gambit',
+      'Moody',
       'Perish Song',
       'Swagger'
     ]
@@ -248,12 +256,6 @@ export const Formats: FormatList = [
     ]
   },
   { name: '[Gen 9] National Dex AG', mod: 'gen9', ruleset: [ 'Standard NatDex' ] },
-  {
-    name: '[Gen 8] National Dex UU',
-    mod: 'gen8',
-    ruleset: [ '[Gen 8] National Dex' ],
-    banlist: [ 'ND OU', 'ND UUBL', 'Drizzle', 'Drought', 'Light Clay', 'Slowbronite' ]
-  },
   { name: '[Gen 8] National Dex AG', mod: 'gen8', ruleset: [ 'Standard NatDex' ] },
   {
     name: '[Gen 9] Balanced Hackmons',
@@ -353,35 +355,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 7] Balanced Hackmons',
-    mod: 'gen7',
-    ruleset: [
-      '-Nonexistent',
-      'Ability Clause = 2',
-      'OHKO Clause',
-      'Evasion Moves Clause',
-      'Forme Clause',
-      'CFZ Clause',
-      'Team Preview',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Sleep Clause Mod',
-      'Endless Battle Clause'
-    ],
-    banlist: [
-      'Groudon-Primal', 'Rayquaza-Mega',
-      'Gengarite',      'Comatose + Sleep Talk',
-      'Chatter',        'Arena Trap',
-      'Contrary',       'Huge Power',
-      'Illusion',       'Innards Out',
-      'Magnet Pull',    'Moody',
-      'Parental Bond',  'Protean',
-      'Psychic Surge',  'Pure Power',
-      'Shadow Tag',     'Stakeout',
-      'Water Bubble',   'Wonder Guard'
-    ]
-  },
-  {
     name: '[Gen 7] STABmons',
     mod: 'gen7',
     ruleset: [ '[Gen 7] OU', 'STABmons Move Legality' ],
@@ -458,117 +431,6 @@ export const Formats: FormatList = [
       'EV limit = 510'
     ]
   },
-  {
-    name: '[Gen 7] Ubers',
-    mod: 'gen7',
-    ruleset: [ 'Standard', 'Mega Rayquaza Clause' ],
-    banlist: [ 'Baton Pass' ]
-  },
-  {
-    name: '[Gen 1] UU',
-    mod: 'gen1',
-    ruleset: [ '[Gen 1] OU', 'APT Clause', 'Sleep Moves Clause' ],
-    banlist: [ 'OU', 'UUBL' ]
-  },
-  {
-    name: '[Gen 6] Doubles OU',
-    mod: 'gen6',
-    gameType: 'doubles',
-    ruleset: [ 'Standard Doubles', 'Swagger Clause' ],
-    banlist: [ 'DUber', 'Soul Dew', 'Dark Void' ]
-  },
-  {
-    name: '[Gen 8] OU',
-    mod: 'gen8',
-    ruleset: [ 'Standard', 'Dynamax Clause' ],
-    banlist: [
-      'Uber',
-      'AG',
-      'Arena Trap',
-      'Moody',
-      'Power Construct',
-      'Sand Veil',
-      'Shadow Tag',
-      'Snow Cloak',
-      "King's Rock",
-      'Baton Pass'
-    ]
-  },
-  {
-    name: '[Gen 7] OU',
-    mod: 'gen7',
-    ruleset: [ 'Standard' ],
-    banlist: [ 'Uber', 'Arena Trap', 'Power Construct', 'Shadow Tag', 'Baton Pass' ]
-  },
-  {
-    name: '[Gen 6] OU',
-    mod: 'gen6',
-    ruleset: [ 'Standard', 'Swagger Clause' ],
-    banlist: [ 'Uber', 'Arena Trap', 'Shadow Tag', 'Soul Dew', 'Baton Pass' ]
-  },
-  {
-    name: '[Gen 5] OU',
-    mod: 'gen5',
-    ruleset: [
-      'Standard',
-      'Evasion Abilities Clause',
-      'Sleep Moves Clause',
-      'Swagger Clause',
-      'Gems Clause'
-    ],
-    banlist: [
-      'Uber',
-      'Arena Trap',
-      'Drizzle ++ Swift Swim',
-      'Drought ++ Chlorophyll',
-      'Sand Rush',
-      'Shadow Tag',
-      "King's Rock",
-      'Razor Fang',
-      'Soul Dew',
-      'Assist',
-      'Baton Pass'
-    ]
-  },
-  {
-    name: '[Gen 4] OU',
-    mod: 'gen4',
-    ruleset: [ 'Standard', 'Freeze Clause Mod' ],
-    banlist: [
-      'AG',
-      'Uber',
-      'Arena Trap',
-      'Sand Veil',
-      'Swinub + Snow Cloak',
-      'Piloswine + Snow Cloak',
-      'Mamoswine + Snow Cloak',
-      'Soul Dew',
-      'Baton Pass',
-      'Swagger'
-    ]
-  },
-  {
-    name: '[Gen 3] OU',
-    mod: 'gen3',
-    ruleset: [ 'Standard', 'One Boost Passer Clause', 'Freeze Clause Mod' ],
-    banlist: [
-      'Uber',
-      'Sand Veil',
-      'Soundproof',
-      'Assist',
-      'Baton Pass + Block',
-      'Baton Pass + Mean Look',
-      'Baton Pass + Spider Web',
-      'Smeargle + Ingrain'
-    ]
-  },
-  {
-    name: '[Gen 2] OU',
-    mod: 'gen2',
-    ruleset: [ 'Standard' ],
-    banlist: [ 'Uber', 'Mean Look + Baton Pass', 'Spider Web + Baton Pass' ]
-  },
-  { name: '[Gen 1] OU', mod: 'gen1', ruleset: [ 'Standard' ], banlist: [ 'Uber' ] },
   {
     name: '[Gen 1] Random Battle (Blitz)',
     mod: 'gen1',
@@ -812,6 +674,160 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 7] Ubers',
+    mod: 'gen7',
+    ruleset: [ 'Standard', 'Mega Rayquaza Clause' ],
+    banlist: [ 'Baton Pass' ]
+  },
+  {
+    name: '[Gen 1] UU',
+    mod: 'gen1',
+    ruleset: [ '[Gen 1] OU', 'APT Clause', 'Sleep Moves Clause' ],
+    banlist: [ 'OU', 'UUBL' ]
+  },
+  {
+    name: '[Gen 6] Doubles OU',
+    mod: 'gen6',
+    gameType: 'doubles',
+    ruleset: [ 'Standard Doubles', 'Swagger Clause' ],
+    banlist: [ 'DUber', 'Soul Dew', 'Dark Void' ]
+  },
+  {
+    name: '[Gen 8] OU',
+    mod: 'gen8',
+    ruleset: [ 'Standard', 'Dynamax Clause' ],
+    banlist: [
+      'Uber',
+      'AG',
+      'Arena Trap',
+      'Moody',
+      'Power Construct',
+      'Sand Veil',
+      'Shadow Tag',
+      'Snow Cloak',
+      "King's Rock",
+      'Baton Pass'
+    ]
+  },
+  {
+    name: '[Gen 7] OU',
+    mod: 'gen7',
+    ruleset: [ 'Standard' ],
+    banlist: [ 'Uber', 'Arena Trap', 'Power Construct', 'Shadow Tag', 'Baton Pass' ]
+  },
+  {
+    name: '[Gen 6] OU',
+    mod: 'gen6',
+    ruleset: [ 'Standard', 'Swagger Clause' ],
+    banlist: [ 'Uber', 'Arena Trap', 'Shadow Tag', 'Soul Dew', 'Baton Pass' ]
+  },
+  {
+    name: '[Gen 5] OU',
+    mod: 'gen5',
+    ruleset: [
+      'Standard',
+      'Evasion Abilities Clause',
+      'Sleep Moves Clause',
+      'Swagger Clause',
+      'Gems Clause'
+    ],
+    banlist: [
+      'Uber',
+      'Arena Trap',
+      'Drizzle ++ Swift Swim',
+      'Drought ++ Chlorophyll',
+      'Sand Rush',
+      'Shadow Tag',
+      "King's Rock",
+      'Razor Fang',
+      'Soul Dew',
+      'Assist',
+      'Baton Pass'
+    ]
+  },
+  {
+    name: '[Gen 4] OU',
+    mod: 'gen4',
+    ruleset: [ 'Standard', 'Freeze Clause Mod' ],
+    banlist: [
+      'AG',
+      'Uber',
+      'Arena Trap',
+      'Sand Veil',
+      'Swinub + Snow Cloak',
+      'Piloswine + Snow Cloak',
+      'Mamoswine + Snow Cloak',
+      'Soul Dew',
+      'Baton Pass',
+      'Swagger'
+    ]
+  },
+  {
+    name: '[Gen 3] OU',
+    mod: 'gen3',
+    ruleset: [ 'Standard', 'One Boost Passer Clause', 'Freeze Clause Mod' ],
+    banlist: [
+      'Uber',
+      'Sand Veil',
+      'Soundproof',
+      'Assist',
+      'Baton Pass + Block',
+      'Baton Pass + Mean Look',
+      'Baton Pass + Spider Web',
+      'Smeargle + Ingrain'
+    ]
+  },
+  {
+    name: '[Gen 2] OU',
+    mod: 'gen2',
+    ruleset: [ 'Standard' ],
+    banlist: [ 'Uber', 'Mean Look + Baton Pass', 'Spider Web + Baton Pass' ]
+  },
+  { name: '[Gen 1] OU', mod: 'gen1', ruleset: [ 'Standard' ], banlist: [ 'Uber' ] },
+  {
+    name: '[Gen 8] Doubles OU',
+    mod: 'gen8',
+    gameType: 'doubles',
+    ruleset: [ 'Standard Doubles', 'Dynamax Clause', 'Swagger Clause' ],
+    banlist: [ 'DUber', 'Power Construct', 'Shadow Tag' ]
+  },
+  {
+    name: '[Gen 7] Doubles OU',
+    mod: 'gen7',
+    gameType: 'doubles',
+    ruleset: [ 'Standard Doubles', 'Swagger Clause' ],
+    banlist: [ 'DUber', 'Power Construct', 'Eevium Z', 'Dark Void' ]
+  },
+  {
+    name: '[Gen 5] Doubles OU',
+    mod: 'gen5',
+    gameType: 'doubles',
+    ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Swagger Clause', 'Sleep Clause Mod' ],
+    banlist: [ 'DUber', 'Soul Dew', 'Dark Void', 'Gravity' ]
+  },
+  {
+    name: '[Gen 4] Doubles OU',
+    mod: 'gen4',
+    gameType: 'doubles',
+    ruleset: [ '[Gen 4] OU', '!Freeze Clause Mod' ],
+    banlist: [ 'Explosion' ],
+    unbanlist: [
+      'Garchomp',  'Latias',
+      'Latios',    'Manaphy',
+      'Mew',       'Salamence',
+      'Wobbuffet', 'Wynaut',
+      'Swagger'
+    ]
+  },
+  {
+    name: '[Gen 3] Doubles OU',
+    mod: 'gen3',
+    gameType: 'doubles',
+    ruleset: [ 'Standard', '!Switch Priority Clause Mod' ],
+    banlist: [ 'Uber', 'Soul Dew', 'Swagger' ],
+    unbanlist: [ 'Deoxys-Defense', 'Latias', 'Wobbuffet', 'Wynaut' ]
+  },
+  {
     name: '[Gen 8] Ubers',
     mod: 'gen8',
     ruleset: [ 'Standard', 'Dynamax Clause' ],
@@ -971,6 +987,12 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 8] National Dex UU',
+    mod: 'gen8',
+    ruleset: [ '[Gen 8] National Dex' ],
+    banlist: [ 'ND OU', 'ND UUBL', 'Drizzle', 'Drought', 'Light Clay', 'Slowbronite' ]
+  },
+  {
     name: '[Gen 8] Free-For-All',
     mod: 'gen8',
     gameType: 'freeforall',
@@ -1038,13 +1060,6 @@ export const Formats: FormatList = [
     gameType: 'doubles',
     team: 'random',
     ruleset: [ 'PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod' ]
-  },
-  {
-    name: '[Gen 8] Doubles OU',
-    mod: 'gen8',
-    gameType: 'doubles',
-    ruleset: [ 'Standard Doubles', 'Dynamax Clause', 'Swagger Clause' ],
-    banlist: [ 'DUber', 'Power Construct', 'Shadow Tag' ]
   },
   {
     name: '[Gen 8] Doubles Ubers',
@@ -1291,13 +1306,6 @@ export const Formats: FormatList = [
       'Max Level = 9999',
       'Default Level = 100'
     ]
-  },
-  {
-    name: '[Gen 7] Doubles OU',
-    mod: 'gen7',
-    gameType: 'doubles',
-    ruleset: [ 'Standard Doubles', 'Swagger Clause' ],
-    banlist: [ 'DUber', 'Power Construct', 'Eevium Z', 'Dark Void' ]
   },
   {
     name: '[Gen 7] Doubles UU',
@@ -1714,13 +1722,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 5] Doubles OU',
-    mod: 'gen5',
-    gameType: 'doubles',
-    ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Swagger Clause', 'Sleep Clause Mod' ],
-    banlist: [ 'DUber', 'Soul Dew', 'Dark Void', 'Gravity' ]
-  },
-  {
     name: '[Gen 5] VGC 2013',
     mod: 'gen5',
     gameType: 'doubles',
@@ -1873,7 +1874,7 @@ export const Formats: FormatList = [
       'Rhydon',    'Scyther',    'Sneasel',
       'Snover',    'Solrock',    'Tangela',
       'Torkoal',   'Victreebel', 'Xatu',
-      'Zangoose',  'Damp Rock'
+      'Walrein',   'Zangoose',   'Damp Rock'
     ]
   },
   {
@@ -1887,20 +1888,6 @@ export const Formats: FormatList = [
       'Max Move Count = 24',
       'Max Level = 9999',
       'Default Level = 100'
-    ]
-  },
-  {
-    name: '[Gen 4] Doubles OU',
-    mod: 'gen4',
-    gameType: 'doubles',
-    ruleset: [ '[Gen 4] OU', '!Freeze Clause Mod' ],
-    banlist: [ 'Explosion' ],
-    unbanlist: [
-      'Garchomp',  'Latias',
-      'Latios',    'Manaphy',
-      'Mew',       'Salamence',
-      'Wobbuffet', 'Wynaut',
-      'Swagger'
     ]
   },
   {
@@ -1949,14 +1936,6 @@ export const Formats: FormatList = [
     mod: 'gen3',
     ruleset: [ 'Standard' ],
     banlist: [ 'Uber', 'OU', 'UUBL', 'UU', 'Smeargle + Ingrain' ]
-  },
-  {
-    name: '[Gen 3] Doubles OU',
-    mod: 'gen3',
-    gameType: 'doubles',
-    ruleset: [ 'Standard', '!Switch Priority Clause Mod' ],
-    banlist: [ 'Uber', 'Soul Dew', 'Swagger' ],
-    unbanlist: [ 'Deoxys-Defense', 'Latias', 'Wobbuffet', 'Wynaut' ]
   },
   {
     name: '[Gen 3] 1v1',

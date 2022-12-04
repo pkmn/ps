@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-useless-escape */
 'use strict';
 
 // This script syncs the vendored submodules of smogon/pokemon-showdown and
@@ -366,6 +367,19 @@ const REWRITES = {
     '\t\t\tconst entry = this.dex.data.Scripts[i];':
       '\t\t\tconst entry = (this.dex.data.Scripts as any)[i];',
     '\t\treturn team as PokemonSet[];': '\t\treturn team;',
+    // kids don't understand how the fucking engine is supposed to fucking work
+    "\t\t\treturn data.replace(/\\n\\|split\\|p[1234]\\n([^\\n]*)\\n(?:[^\\n]*)/g, '\\n$1');":
+      "\t\t\treturn data.replace(/\\|split\\|p[1234]\\n([^\\n]*)\\n(?:[^\\n]*)/g, '$1');",
+    "\t\tcase 'p1': data = data.replace(/\\n\\|split\\|p1\\n([^\\n]*)\\n(?:[^\\n]*)/g, '\\n$1'); break;":
+      "\t\tcase 'p1': data = data.replace(/\\|split\\|p1\\n([^\\n]*)\\n(?:[^\\n]*)/g, '$1'); break;",
+    "\t\tcase 'p2': data = data.replace(/\\n\\|split\\|p2\\n([^\\n]*)\\n(?:[^\\n]*)/g, '\\n$1'); break;":
+      "\t\tcase 'p2': data = data.replace(/\\|split\\|p2\\n([^\\n]*)\\n(?:[^\\n]*)/g, '$1'); break;",
+    "\t\tcase 'p3': data = data.replace(/\\n\\|split\\|p3\\n([^\\n]*)\\n(?:[^\\n]*)/g, '\\n$1'); break;":
+      "\t\tcase 'p3': data = data.replace(/\\|split\\|p3\\n([^\\n]*)\\n(?:[^\\n]*)/g, '$1'); break;",
+    "\t\tcase 'p4': data = data.replace(/\\n\\|split\\|p4\\n([^\\n]*)\\n(?:[^\\n]*)/g, '\\n$1'); break;":
+      "\t\tcase 'p4': data = data.replace(/\\|split\\|p4\\n([^\\n]*)\\n(?:[^\\n]*)/g, '$1'); break;",
+    "\t\treturn data.replace(/\\n\\|split\\|(?:[^\\n]*)\\n(?:[^\\n]*)\\n\\n?/g, '\\n');":
+      "\t\treturn data.replace(/\\|split\\|(?:[^\\n]*)\\n(?:[^\\n]*)\\n\\n?/g, '');",
   },
   // smfh Zarle, please learn how Promises work
   'sim/battle-stream.ts': {
@@ -380,8 +394,8 @@ const REWRITES = {
 
 // All the files in our sim/ directory, excluding build/ & node_modules/ & test/sim/
 const FILES = new Set(tree(sim)
-    .map(m => m.slice(sim.length + 1))
-    .filter(f => !f.startsWith('test/sim')));
+  .map(m => m.slice(sim.length + 1))
+  .filter(f => !f.startsWith('test/sim')));
 const MOD_FILES =
   new Set(tree(path.join(mods, 'src')).map(m => `data/mods/${m.slice(mods.length + 5)}`));
 
@@ -870,11 +884,9 @@ const changes = async (where, last, now, repo) => ({
     // The test files require paths are made with PS's build layout in mind - correct that here
     const ignore = new Set([...Array.from(OVERRIDDEN).map(f => path.join(sim, f))]);
     await replace(path.join(sim, 'test'), [{
-      // eslint-disable-next-line no-useless-escape
       regex: new RegExp(`(require\\\(.*?)((?<!build\\\/)sim)(.*?\\\))`, 'g'),
       replace: `$1build/cjs/sim$3`,
     }, {
-      // eslint-disable-next-line no-useless-escape
       regex: new RegExp(`(require\\\(.*?)((?<!build\\\/)lib)(.*?\\\))`, 'g'),
       replace: `$1build/cjs/lib$3`,
     }], ignore);

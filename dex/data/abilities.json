@@ -1196,9 +1196,10 @@
       "shortDesc": "On switch-in, this Pokemon summons Electric Terrain."
     },
     "electromorphosis": {
+      "onDamagingHitOrder": 1,
       "name": "Electromorphosis",
       "num": 280,
-      "desc": "This Pokemon's next Electric-type move has its damage boosted if it takes direct damage.",
+      "desc": "This Pokemon's next Electric-type attack will have its power doubled if it takes direct damage.",
       "shortDesc": "This Pokemon becomes charged if it takes direct damage."
     },
     "emergencyexit": {
@@ -1684,7 +1685,6 @@
       "shortDesc": "This Pokemon's attacks are critical hits if the target is poisoned."
     },
     "mimicry": {
-      "condition": {},
       "name": "Mimicry",
       "num": 250,
       "desc": "This Pokemon's types change to match the active Terrain when this Pokemon acquires this Ability, or whenever a Terrain begins. Electric type during Electric Terrain, Grass type during Grassy Terrain, Fairy type during Misty Terrain, and Psychic type during Psychic Terrain. If this Ability is acquired without an active Terrain, or a Terrain ends, this Pokemon's types become the original types for its species.",
@@ -2429,6 +2429,7 @@
       "shortDesc": "This Pokemon's critical hit ratio is raised by 1 stage."
     },
     "supremeoverlord": {
+      "onBasePowerPriority": 21,
       "name": "Supreme Overlord",
       "num": 293,
       "desc": "This Pokemon's Attack and Special Attack stats are increased by 10% for each fainted teammate.",
@@ -2699,9 +2700,11 @@
       "shortDesc": "This Pokemon switches out when it reaches 1/2 or less of its maximum HP."
     },
     "windpower": {
+      "onDamagingHitOrder": 1,
       "name": "Wind Power",
       "num": 277,
-      "shortDesc": "If this Pokemon is hit by a wind move or Tailwind begins, it becomes charged."
+      "desc": "This Pokemon's next Electric-type attack will have its power doubled if it is hit by a wind move or Tailwind begins.",
+      "shortDesc": "This Pokemon becomes charged if it is hit by a wind move or Tailwind begins."
     },
     "windrider": {
       "name": "Wind Rider",

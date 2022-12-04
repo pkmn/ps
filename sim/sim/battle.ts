@@ -435,7 +435,7 @@ export class Battle {
 	/**
 	 * Runs an event with no source on each Pokémon on the field, in Speed order.
 	 */
-	eachEvent(eventid: string, effect?: Effect, relayVar?: boolean) {
+	eachEvent(eventid: string, effect?: Effect | null, relayVar?: boolean) {
 		const actives = this.getAllActive();
 		if (!effect && this.effect) effect = this.effect;
 		this.speedSort(actives, (a, b) => b.speed - a.speed);
@@ -2325,6 +2325,7 @@ export class Battle {
 					this.runEvent('BeforeFaint', pokemon, faintData.source, faintData.effect)) {
 				this.add('faint', pokemon);
 				if (pokemon.side.pokemonLeft) pokemon.side.pokemonLeft--;
+				if (pokemon.side.totalFainted < 100) pokemon.side.totalFainted++;
 				this.runEvent('Faint', pokemon, faintData.source, faintData.effect);
 				this.singleEvent('End', pokemon.getAbility(), pokemon.abilityState, pokemon);
 				pokemon.clearVolatile(false);
@@ -2332,6 +2333,7 @@ export class Battle {
 				pokemon.illusion = null;
 				pokemon.isActive = false;
 				pokemon.isStarted = false;
+				delete pokemon.terastallized;
 				pokemon.side.faintedThisTurn = pokemon;
 				if (this.faintQueue.length >= faintQueueLeft) checkWin = true;
 			}
@@ -2897,20 +2899,20 @@ export class Battle {
 	static extractUpdateForSide(data: string, side: SideID | 'spectator' | 'omniscient' = 'spectator') {
 		if (side === 'omniscient') {
 			// Grab all secret data
-			return data.replace(/\n\|split\|p[1234]\n([^\n]*)\n(?:[^\n]*)/g, '\n$1');
+			return data.replace(/\|split\|p[1234]\n([^\n]*)\n(?:[^\n]*)/g, '$1');
 		}
 
 		// Grab secret data side has access to
 		switch (side) {
-		case 'p1': data = data.replace(/\n\|split\|p1\n([^\n]*)\n(?:[^\n]*)/g, '\n$1'); break;
-		case 'p2': data = data.replace(/\n\|split\|p2\n([^\n]*)\n(?:[^\n]*)/g, '\n$1'); break;
-		case 'p3': data = data.replace(/\n\|split\|p3\n([^\n]*)\n(?:[^\n]*)/g, '\n$1'); break;
-		case 'p4': data = data.replace(/\n\|split\|p4\n([^\n]*)\n(?:[^\n]*)/g, '\n$1'); break;
+		case 'p1': data = data.replace(/\|split\|p1\n([^\n]*)\n(?:[^\n]*)/g, '$1'); break;
+		case 'p2': data = data.replace(/\|split\|p2\n([^\n]*)\n(?:[^\n]*)/g, '$1'); break;
+		case 'p3': data = data.replace(/\|split\|p3\n([^\n]*)\n(?:[^\n]*)/g, '$1'); break;
+		case 'p4': data = data.replace(/\|split\|p4\n([^\n]*)\n(?:[^\n]*)/g, '$1'); break;
 		}
 
 		// Discard remaining secret data
 		// Note: the last \n? is for secret data that are empty when shared
-		return data.replace(/\n\|split\|(?:[^\n]*)\n(?:[^\n]*)\n\n?/g, '\n');
+		return data.replace(/\|split\|(?:[^\n]*)\n(?:[^\n]*)\n\n?/g, '');
 	}
 
 	getDebugLog() {

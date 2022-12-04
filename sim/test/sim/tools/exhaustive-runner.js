@@ -6,7 +6,6 @@ const {ExhaustiveRunner} = require('../../../build/cjs/sim/tools/exhaustive-runn
 
 describe('ExhaustiveRunner (slow)', async function () {
 	it('should run successfully', async function () {
-		throw new Error('TODO');
 		this.timeout(0);
 		const opts = {prng: [1, 2, 3, 4]};
 		for (const format of ExhaustiveRunner.FORMATS) {

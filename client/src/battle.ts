@@ -435,7 +435,7 @@ export class Battle {
     }
   }
 
-  getPokemon(pokemonid?: '' | 'null' | PokemonIdent | SideID) {
+  getPokemon(pokemonid?: '' | 'null' | PokemonIdent | SideID, revival = false) {
     if (!pokemonid || pokemonid === '??' || pokemonid === 'null' || pokemonid === 'false') {
       return null;
     }
@@ -443,7 +443,7 @@ export class Battle {
     pokemonid = parsedPokemonid;
 
     // if true, don't match an active pokemon
-    const isInactive = (slot < 0);
+    const isInactive = (slot < 0) && !revival;
     const side = this.sides[siden];
 
     // search player's pokemon
@@ -538,15 +538,17 @@ export class Battle {
   abilityActive(abilities: ID[], excludePokemon?: Pokemon | null) {
     if (this.ngasActive()) {
       abilities = abilities.filter(a => this.gen.abilities.get(a)?.isPermanent);
-      if (!abilities.length) return false;
+      if (!abilities.length) return 0;
     }
+    let count = 0;
     for (const active of this.getAllActive()) {
-      if (active === excludePokemon) continue;
+      if (active === excludePokemon) return 1;
       if (abilities.includes(active.ability) && !active.volatiles['gastroacid']) {
-        return true;
+        if (!excludePokemon) return 1;
+        count++;
       }
     }
-    return false;
+    return count;
   }
 
   reset() {

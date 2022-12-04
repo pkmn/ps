@@ -210,6 +210,7 @@ export interface MoveData extends EffectData, HitEffect {
   willCrit?: boolean;
 
   hasCrashDamage?: boolean;
+  hasSheerForce?: boolean;
   isConfusionSelfHit?: boolean;
   isFutureMove?: boolean;
   noMetronome?: string[];
@@ -217,7 +218,7 @@ export interface MoveData extends EffectData, HitEffect {
   stallingMove?: boolean;
 }
 
-export type SpeciesTag = 'Mythical' | 'Restricted Legendary' | 'Sub-Legendary';
+export type SpeciesTag = 'Mythical' | 'Restricted Legendary' | 'Sub-Legendary' | 'Paradox';
 export interface SpeciesAbility<A = string> { 0: A; 1?: A; H?: A; S?: A }
 
 export interface SpeciesData {

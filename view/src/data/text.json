@@ -759,7 +759,6 @@
   },
   "cloudnine": {"start": "#airlock"},
   "comatose": {"start": "  [POKEMON] is drowsing!"},
-  "costar": {"copyBoost": "  [POKEMON] copied its ally's stat changes!"},
   "damp": {"block": "  [SOURCE] cannot use [MOVE]!"},
   "darkaura": {"start": "  [POKEMON] is radiating a dark aura!"},
   "dazzling": {"block": "#damp"},
@@ -769,7 +768,7 @@
   },
   "dryskin": {"damage": "  ([POKEMON] was hurt by its Dry Skin.)"},
   "electromorphosis": {
-    "activate": "  Being hit by [MOVE] charged [POKEMON] with power!"
+    "start": "  Being hit by [MOVE] charged [POKEMON] with power!"
   },
   "fairyaura": {"start": "  [POKEMON] is radiating a fairy aura!"},
   "flashfire": {"start": "  The power of [POKEMON]'s Fire-type moves rose!"},
@@ -881,7 +880,7 @@
     "start": "  [POKEMON]'s Vessel of Ruin weakened the Sp. Atk of all surrounding Pokémon!"
   },
   "wanderingspirit": {"activate": "#skillswap"},
-  "windpower": {"activate": "#electromorphosis"},
+  "windpower": {"start": "#electromorphosis"},
   "zenmode": {
     "transform": "Zen Mode triggered!",
     "transformEnd": "Zen Mode ended!"

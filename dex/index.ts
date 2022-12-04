@@ -415,6 +415,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly willCrit?: boolean;
 
   readonly hasCrashDamage?: boolean;
+  readonly hasSheerForce?: boolean;
   readonly isConfusionSelfHit?: boolean;
   readonly isFutureMove?: boolean;
   readonly noMetronome?: T.MoveName[];
@@ -437,6 +438,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
       ? data.secondaries : this.secondary
         ? [this.secondary]
         : null;
+    this.hasSheerForce = !!(data.hasSheerForce && !this.secondaries);
     this.priority = Number(data.priority) || 0;
     this.ignoreImmunity =
       (data.ignoreImmunity !== undefined ? data.ignoreImmunity : data.category === 'Status');

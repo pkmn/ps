@@ -1058,8 +1058,6 @@ export namespace Protocol {
      */
     '|faint|': readonly ['faint', PokemonIdent];
     '|message|': readonly ['message', Message];
-    // NOTE: |split| occurring in the protocol stream is almost certainly a simulator bug...
-    '|split|': readonly ['split', Player];
   }
 
   export type BattleMajorArgName = keyof BattleMajorArgs;
@@ -1849,7 +1847,7 @@ export const Protocol = new class {
     '|tournament|disqualify|': 1, '|tournament|battlestart|': 1, '|tournament|battleend|': 1,
     '|tournament|end|': 1, '|tournament|scouting|': 1, '|tournament|autostart|': 1,
     '|tournament|autodq|': 1, '|player|': 1, '|teamsize|': 1, '|gametype|': 1, '|gen|': 1,
-    '|tier|': 1, '|rated|': 1, '|seed|': 1, '|rule|': 1, '|split|': 1, '|teampreview|': 1,
+    '|tier|': 1, '|rated|': 1, '|seed|': 1, '|rule|': 1, '|teampreview|': 1,
     '|clearpoke|': 1, '|poke|': 1, '|start|': 1, '|done|': 1, '|request|': 1, '|inactive|': 1,
     '|inactiveoff|': 1, '|upkeep|': 1, '|turn|': 1, '|win|': 1, '|tie|': 1, '|move|': 1,
     '|switch|': 1, '|drag|': 1, '|detailschange|': 1, '|replace|': 1, '|swap|': 1, '|cant|': 1,

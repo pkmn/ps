@@ -4188,6 +4188,12 @@
     "boltbeak": {"inherit": true, "isNonstandard": null},
     "boltstrike": {"inherit": true, "isNonstandard": null},
     "bonemerang": {"inherit": true, "isNonstandard": null},
+    "charge": {
+      "inherit": true,
+      "condition": {"onBasePowerPriority": 9},
+      "desc": "Raises the user's Special Defense by 1 stage. If the user uses an Electric-type attack on the next turn, its power will be doubled.",
+      "shortDesc": "+1 SpD, user's Electric move next turn 2x power."
+    },
     "clangingscales": {"inherit": true, "isNonstandard": null},
     "clangoroussoul": {"inherit": true, "isNonstandard": null},
     "conversion": {"inherit": true, "isNonstandard": null},
@@ -5997,11 +6003,12 @@
       "pp": 15,
       "priority": 0,
       "flags": {"contact": 1, "protect": 1, "mirror": 1, "slicing": 1},
-      "secondary": {"chance": 100, "sideCondition": "spikes"},
+      "self": {},
+      "secondary": {},
       "target": "normal",
       "type": "Dark",
-      "desc": "Has a higher chance for a critical hit. If this move is successful, it sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. Can be set up to three times before failing. Opponents lose 1/8 of their maximum HP with one layer, 1/6 of their maximum HP with two layers, and 1/4 of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any opposing Pokemon uses Rapid Spin or Defog successfully, or is hit by Defog.",
-      "shortDesc": "High critical hit ratio. Foes: Spikes."
+      "desc": "If this move is successful, it sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. Can be set up to three times before failing. Opponents lose 1/8 of their maximum HP with one layer, 1/6 of their maximum HP with two layers, and 1/4 of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any opposing Pokemon uses Rapid Spin or Defog successfully, or is hit by Defog.",
+      "shortDesc": "Sets a layer of Spikes on the target's side."
     },
     "celebrate": {
       "num": 606,
@@ -6028,14 +6035,14 @@
       "priority": 0,
       "flags": {"snatch": 1},
       "volatileStatus": "charge",
-      "condition": {"duration": 2, "onBasePowerPriority": 9},
+      "condition": {"onBasePowerPriority": 9},
       "boosts": {"spd": 1},
       "secondary": null,
       "target": "self",
       "type": "Electric",
       "zMove": {"boost": {"spd": 1}},
-      "desc": "Raises the user's Special Defense by 1 stage. If the user uses an Electric-type attack on the next turn, its power will be doubled.",
-      "shortDesc": "+1 SpD, user's Electric move next turn 2x power."
+      "desc": "Raises the user's Special Defense by 1 stage. The user's next Electric-type attack will have its power doubled.",
+      "shortDesc": "+1 SpD, user's next Electric move 2x power."
     },
     "chargebeam": {
       "num": 451,
@@ -7091,8 +7098,8 @@
       "secondary": {"chance": 50},
       "target": "normal",
       "type": "Poison",
-      "desc": "Has a higher chance for a critical hit. Has a 50% chance to cause the target to either fall asleep, become poisoned, or become paralyzed.",
-      "shortDesc": "High critical hit ratio. 50% chance to slp/psn/par target."
+      "desc": "Has a 50% chance to cause the target to either fall asleep, become poisoned, or become paralyzed.",
+      "shortDesc": "50% chance to sleep, poison, or paralyze target."
     },
     "dive": {
       "num": 291,
@@ -11585,6 +11592,7 @@
       "priority": 1,
       "flags": {"contact": 1, "protect": 1, "mirror": 1, "punch": 1},
       "secondary": null,
+      "hasSheerForce": true,
       "target": "normal",
       "type": "Water",
       "desc": "No additional effect.",
@@ -15888,9 +15896,8 @@
       "pp": 15,
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1},
-      "volatileStatus": "saltcure",
       "condition": {"onResidualOrder": 13},
-      "secondary": null,
+      "secondary": {"chance": 100, "volatileStatus": "saltcure"},
       "target": "normal",
       "type": "Rock",
       "shortDesc": "Deals 1/8 max HP every turn; 1/4 if Steel or Water."
@@ -17734,11 +17741,12 @@
       "pp": 15,
       "priority": 0,
       "flags": {"contact": 1, "protect": 1, "mirror": 1, "slicing": 1},
-      "secondary": {"chance": 100, "sideCondition": "stealthrock"},
+      "self": {},
+      "secondary": {},
       "target": "normal",
       "type": "Rock",
-      "desc": "Has a higher chance for a critical hit. If this move is successful, it sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Rock type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. Can be removed from the opposing side if any opposing Pokemon uses Rapid Spin or Defog successfully, or is hit by Defog.",
-      "shortDesc": "High critical hit ratio. Foes: Stealth Rock."
+      "desc": "If this move is successful, it sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Rock type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. Can be removed from the opposing side if any opposing Pokemon uses Rapid Spin or Defog successfully, or is hit by Defog.",
+      "shortDesc": "Sets Stealth Rock on the target's side."
     },
     "stoneedge": {
       "num": 444,
@@ -19056,8 +19064,8 @@
       ],
       "target": "normal",
       "type": "Fighting",
-      "desc": "Has a higher chance for a critical hit. Has a 50% chance to lower the target's Defense by 1 stage and a 10% chance to make it flinch.",
-      "shortDesc": "High critical hit ratio. 50% -1 Def. 10% to flinch."
+      "desc": "Has a 50% chance to lower the target's Defense by 1 stage, a 30% chance to make it flinch, and a higher chance for a critical hit.",
+      "shortDesc": "High critical hit ratio. 50% -1 Def. 30% flinch."
     },
     "tripleaxel": {
       "num": 813,

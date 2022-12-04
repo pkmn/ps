@@ -673,10 +673,6 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 2 && verifyPokemonIdent(args[1]);
   }
 
-  '|split|'(args: Args['|split|']) {
-    return args.length === 2 && verifyPlayer(args[1]);
-  }
-
   '|-formechange|'(args: Args['|-formechange|'], kwArgs: KWArgs['|-formechange|']) {
     if (!(verifyPokemonIdent(args[1]) &&
       verifySpeciesName(args[2], this.gen) &&

@@ -117,6 +117,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   moveThisTurn: ID | boolean;
   hurtThisTurn: boolean;
   movesUsedWhileActive: ID[];
+  timesAttacked: number;
 
   constructor(side: Side, details: DetailedPokemon, set?: PokemonSet) {
     this.side = side;
@@ -181,6 +182,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.moveThisTurn = '';
     this.hurtThisTurn = false;
     this.movesUsedWhileActive = [];
+    this.timesAttacked = 0;
   }
 
   toString(): string {

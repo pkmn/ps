@@ -241,23 +241,26 @@ export class Handler implements Protocol.Handler {
           itemPoke.item = fromEffect.id;
         }
       }
+    } else {
+      poke.timesAttacked += 1;
     }
   }
 
   '|-heal|'(args: Args['|-heal|'], kwArgs: KWArgs['|-heal|']) {
-    const poke = this.battle.getPokemon(args[1])!;
+    const fromEffect = kwArgs.from && this.battle.get('conditions', kwArgs.from);
+    const revival = fromEffect?.id === 'revivalblessing';
+    const poke = this.battle.getPokemon(args[1], revival)!;
     const damage = poke.healthParse(args[2]);
     if (damage === null) return;
 
-    if (kwArgs.from) {
-      const fromEffect = this.battle.get('conditions', kwArgs.from);
+    if (fromEffect) {
       poke.activateAbility(fromEffect);
       if (fromEffect.kind === 'Item' &&
         !CONSUMED.includes(poke.lastItemEffect as LastItemEffect) &&
         poke.lastItem !== fromEffect.id) {
         poke.item = fromEffect.id;
       }
-      if (fromEffect.id === 'revivalblessing') {
+      if (revival) {
         const {siden} = this.battle.parsePokemonId(args[1]);
         const side = this.battle.sides[siden];
         poke.fainted = false;
@@ -355,16 +358,15 @@ export class Handler implements Protocol.Handler {
     }
   }
 
-  '|-copyboost|'(args: Args['|-copyboost|'], kwArgs: KWArgs['|-copyboost|']) {
+  '|-copyboost|'(args: Args['|-copyboost|']) {
     const poke = this.battle.getPokemon(args[1])!;
     const poke2 = this.battle.getPokemon(args[2])!;
-    const effect = this.battle.get('conditions', kwArgs.from);
     const boosts = args[3] ? args[3].split(', ') as BoostID[] : BOOSTS;
     for (const boost of boosts) {
       poke.boosts[boost] = poke2.boosts[boost];
       if (!poke.boosts[boost]) delete poke.boosts[boost];
     }
-    if (this.battle.gen.num >= 6 && effect.id === 'psychup') {
+    if (this.battle.gen.num >= 6) {
       const volatilesToCopy = ['focusenergy', 'gmaxchistrike', 'laserfocus'];
       for (const volatile of volatilesToCopy) {
         if (poke2.volatiles[volatile]) {
@@ -653,6 +655,7 @@ export class Handler implements Protocol.Handler {
     poke.boosts = {...poke2.boosts};
     poke.copyTypesFrom(poke2);
     poke.ability = poke2.ability;
+    poke.timesAttacked = poke2.timesAttacked;
     const speciesForme = poke2.speciesForme as SpeciesName;
     const pokemon = poke2;
     const shiny = poke2.shiny;

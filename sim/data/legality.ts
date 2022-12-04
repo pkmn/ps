@@ -14293,6 +14293,23 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       }
     ]
   },
+  indeedeef: {
+    learnset: {
+      hypervoice: [ '9S0' ],
+      psychic: [ '9S0' ],
+      shadowball: [ '9S0' ],
+      trickroom: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 75,
+        shiny: 1,
+        perfectIVs: 4,
+        moves: [ 'psychic', 'hypervoice', 'shadowball', 'trickroom' ]
+      }
+    ]
+  },
   dracozolt: {
     learnset: { charge: [ '8S0' ], tackle: [ '8S0' ], thundershock: [ '8S0' ] },
     eventData: [

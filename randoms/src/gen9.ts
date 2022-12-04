@@ -872,7 +872,7 @@ export class RandomTeams {
 			// Random shininess
 			const shiny = this.randomChance(1, 1024);
 
-			team.push({
+			const set: PokemonSet = {
 				name: species.baseSpecies,
 				species: species.name,
 				gender: species.gender,
@@ -885,7 +885,12 @@ export class RandomTeams {
 				level,
 				happiness,
 				shiny,
-			});
+			};
+			if (this.gen === 9) {
+				// Random Tera type
+				set.teraType = this.sample(this.dex.types.all()).name;
+			}
+			team.push(set);
 		}
 
 		return team;
