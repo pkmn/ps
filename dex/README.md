@@ -93,7 +93,7 @@ assert(gens.get(9).types.totalEffectiveness('Dark', ['Ghost', 'Psychic']) === 4)
 assert(gens.get(5).species.get('Dragapult') === undefined);
 assert(gens.get(3).species.get('Chansey').prevo === undefined);
 assert(Array.from(gens.get(1).species).length === 151);
-assert(gen.stats.calc('atk', 100, 31, 252, 100, gen.natures.get('adamant')) === 328);
+assert(gens.get(6).stats.calc('atk', 100, 31, 252, 100, gen.natures.get('adamant')) === 328);
 assert(await gens.get(4).learnsets.canLearn('Ursaring', 'Rock Climb'));
 ```
 
