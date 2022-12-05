@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/sim",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "An automatically generated extraction of just the simulator portion of Pokémon Showdown",
   "repository": "github:pkmn/ps",
   "homepage": "https://psim.us",
@@ -14,16 +14,6 @@
   "main": "build/cjs/sim/index.js",
   "module": "build/esm/sim/index.mjs",
   "types": "build/types/sim/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./build/cjs/sim/index.js",
-      "import": "./build/esm/sim/index.mjs"
-    },
-    "./tools": {
-      "require": "./build/cjs/sim/tools/index.js",
-      "import": "./build/esm/sim/tools/index.mjs"
-    }
-  },
   "publishConfig": {
     "access": "public"
   },
