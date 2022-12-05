@@ -131,7 +131,8 @@ export class ExhaustiveRunner {
 				ExhaustiveRunner.onlyValid(dex.gen, dex.data.Abilities, a => dex.abilities.get(a)), this.prng),
 			moves: new Pool(this.possible?.moves ??
 				ExhaustiveRunner.onlyValid(dex.gen, dex.data.Moves, m => dex.moves.get(m), m =>
-					(m !== 'struggle' && (m === 'hiddenpower' || m.substr(0, 11) !== 'hiddenpower'))), this.prng),
+					(!['struggle', 'revivalblessing'].includes(m) &&
+						(m === 'hiddenpower' || m.substr(0, 11) !== 'hiddenpower'))), this.prng),
 		};
 	}
 
