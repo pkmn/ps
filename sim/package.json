@@ -39,10 +39,10 @@
   },
   "scripts": {
     "compile": "tsc -p .",
-    "build": "npm run compile && node ../build",
+    "build": "node ../build",
     "test": "mocha test/main.js test/sim/*.js test/sim/**/*.js -R dot -u bdd --exit",
     "lint": "eslint . --cache --ext .js,.ts",
-    "pretest": "npm run build",
+    "pretest": "npm run build -- --cjs",
     "posttest": "npm run lint"
   }
 }

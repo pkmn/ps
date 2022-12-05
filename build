@@ -66,19 +66,22 @@ const tree = root => {
     } finally {
       try { fs.unlinkSync(cjs); } catch {}
     }
-    const esm = path.join(cwd, 'tsconfig.esm.json');
-    try {
-      fs.writeFileSync(esm, JSON.stringify(mkconfig(tsconfig, 'esm')));
-      running('tsc -p tsconfig.esm.json');
-      sh('npx', ['tsc', '-p', 'tsconfig.esm.json']);
-    } finally {
-      try { fs.unlinkSync(esm); } catch {}
+    if (!argv.cjs) {
+      const esm = path.join(cwd, 'tsconfig.esm.json');
+      try {
+        fs.writeFileSync(esm, JSON.stringify(mkconfig(tsconfig, 'esm')));
+        running('tsc -p tsconfig.esm.json');
+        sh('npx', ['tsc', '-p', 'tsconfig.esm.json']);
+      } finally {
+        try { fs.unlinkSync(esm); } catch {}
+      }
     }
     running('cp -a build/{cjs,types}');
     fs.cpSync(path.join(cwd, 'build/cjs'), path.join(cwd, 'build/types'), {recursive: true});
 
     console.log(`Cleaning up build output for \x1b[34m@pkmn/${pkg}\x1b[0m...`);
     for (const format of ['cjs', 'esm', 'types']) {
+      if (argv.cjs && format === 'esm') continue;
       for (const file of tree(path.join(cwd, 'build', format))) {
         if (file.endsWith('.d.ts')) {
           if (format !== 'types') fs.unlinkSync(file);
