@@ -32,6 +32,7 @@
     "build": "node ../build",
     "test": "mocha test/main.js test/sim/*.js test/sim/**/*.js -R dot -u bdd --exit",
     "lint": "eslint . --cache --ext .js,.ts",
+    "prepare": "npm run build",
     "pretest": "npm run build -- --cjs",
     "posttest": "npm run lint"
   }
