@@ -76,6 +76,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Dialga"],
 		num: 135,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	adrenalineorb: {
 		name: "Adrenaline Orb",
@@ -140,7 +141,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Dragon",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
 				pokemon.eatItem();
 			}
 		},
@@ -248,7 +250,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Ground",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
 				pokemon.eatItem();
 			}
 		},
@@ -649,6 +652,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Bug"],
 		num: 909,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	buginiumz: {
 		name: "Buginium Z",
@@ -676,6 +680,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Genesect-Burn"],
 		num: 118,
 		gen: 5,
+		isNonstandard: "Past",
 	},
 	cameruptite: {
 		name: "Cameruptite",
@@ -863,6 +868,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Genesect-Chill"],
 		num: 119,
 		gen: 5,
+		isNonstandard: "Past",
 	},
 	chippedpot: {
 		name: "Chipped Pot",
@@ -1112,7 +1118,8 @@ export const Items: {[itemid: string]: ItemData} = {
 		onFractionalPriority(priority, pokemon) {
 			if (
 				priority <= 0 &&
-				(pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony')))
+				(pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+				pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony))
 			) {
 				if (pokemon.eatItem()) {
 					this.add('-activate', pokemon, 'item: Custap Berry', '[consumed]');
@@ -1162,6 +1169,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Dark"],
 		num: 919,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	darkiniumz: {
 		name: "Darkinium Z",
@@ -1210,6 +1218,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Clamperl"],
 		num: 227,
 		gen: 3,
+		isNonstandard: "Past",
 	},
 	deepseatooth: {
 		name: "Deep Sea Tooth",
@@ -1226,6 +1235,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Clamperl"],
 		num: 226,
 		gen: 3,
+		isNonstandard: "Past",
 	},
 	destinyknot: {
 		name: "Destiny Knot",
@@ -1287,6 +1297,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Genesect-Douse"],
 		num: 116,
 		gen: 5,
+		isNonstandard: "Past",
 	},
 	dracoplate: {
 		name: "Draco Plate",
@@ -1352,6 +1363,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Dragon"],
 		num: 918,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	dragonscale: {
 		name: "Dragon Scale",
@@ -1361,6 +1373,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 235,
 		gen: 2,
+		isNonstandard: "Past",
 	},
 	dragoniumz: {
 		name: "Dragonium Z",
@@ -1410,6 +1423,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 324,
 		gen: 4,
+		isNonstandard: "Past",
 	},
 	durinberry: {
 		name: "Durin Berry",
@@ -1482,6 +1496,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onAfterMoveSecondary(target, source, move) {
 			if (source && source !== target && target.hp && move && move.category !== 'Status' && !move.isFutureMove) {
 				if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.beingCalledBack || target.isSkyDropped()) return;
+				if (target.volatiles['commanding'] || target.volatiles['commanded']) return;
 				for (const pokemon of this.getAllActive()) {
 					if (pokemon.switchFlag === true) return;
 				}
@@ -1514,6 +1529,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			if (eject) {
 				if (target.hp) {
 					if (!this.canSwitch(target.side)) return;
+					if (target.volatiles['commanding'] || target.volatiles['commanded']) return;
 					for (const pokemon of this.getAllActive()) {
 						if (pokemon.switchFlag === true) return;
 					}
@@ -1532,6 +1548,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 322,
 		gen: 4,
+		isNonstandard: "Past",
 	},
 	electricgem: {
 		name: "Electric Gem",
@@ -1562,6 +1579,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Electric"],
 		num: 915,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	electricseed: {
 		name: "Electric Seed",
@@ -1704,6 +1722,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Fairy"],
 		num: 920,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	fastball: {
 		name: "Fast Ball",
@@ -1740,6 +1759,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Fighting"],
 		num: 904,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	fightiniumz: {
 		name: "Fightinium Z",
@@ -1762,7 +1782,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Bug",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
 				pokemon.eatItem();
 			}
 		},
@@ -1807,6 +1828,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Fire"],
 		num: 912,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	firestone: {
 		name: "Fire Stone",
@@ -1935,6 +1957,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Flying"],
 		num: 905,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	flyiniumz: {
 		name: "Flyinium Z",
@@ -1989,6 +2012,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 1105,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	fossilizeddino: {
 		name: "Fossilized Dino",
@@ -1998,6 +2022,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 1108,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	fossilizeddrake: {
 		name: "Fossilized Drake",
@@ -2007,6 +2032,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 1107,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	fossilizedfish: {
 		name: "Fossilized Fish",
@@ -2016,6 +2042,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 1106,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	friendball: {
 		name: "Friend Ball",
@@ -2033,6 +2060,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onFractionalPriority: -0.1,
 		num: 316,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	galaricacuff: {
 		name: "Galarica Cuff",
@@ -2042,6 +2070,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 1582,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	galaricawreath: {
 		name: "Galarica Wreath",
@@ -2051,6 +2080,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 1592,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	galladite: {
 		name: "Galladite",
@@ -2075,7 +2105,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Ice",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
 				pokemon.eatItem();
 			}
 		},
@@ -2155,6 +2186,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Ghost"],
 		num: 910,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	ghostiumz: {
 		name: "Ghostium Z",
@@ -2220,6 +2252,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Grass"],
 		num: 914,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	grassiumz: {
 		name: "Grassium Z",
@@ -2306,6 +2339,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Giratina-Origin"],
 		num: 112,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	groundgem: {
 		name: "Ground Gem",
@@ -2335,6 +2369,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Ground"],
 		num: 907,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	groundiumz: {
 		name: "Groundium Z",
@@ -2493,7 +2528,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Dark",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
 				pokemon.eatItem();
 			}
 		},
@@ -2537,6 +2573,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Ice"],
 		num: 917,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	icestone: {
 		name: "Ice Stone",
@@ -2838,7 +2875,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Flying",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
 				pokemon.eatItem();
 			}
 		},
@@ -2890,6 +2928,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 255,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	leafstone: {
 		name: "Leaf Stone",
@@ -2914,6 +2953,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Farfetch\u2019d", "Farfetch\u2019d-Galar", "Sirfetch\u2019d"],
 		num: 259,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	leftovers: {
 		name: "Leftovers",
@@ -2970,7 +3010,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Grass",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
 				pokemon.eatItem();
 			}
 		},
@@ -3176,6 +3217,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Palkia"],
 		num: 136,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	luxuryball: {
 		name: "Luxury Ball",
@@ -3241,7 +3283,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Ghost",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
 				pokemon.eatItem();
 			}
 		},
@@ -3562,7 +3605,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Rock",
 		},
 		onResidual(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
 				pokemon.eatItem();
 			}
 		},
@@ -3842,6 +3886,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 314,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	oldamber: {
 		name: "Old Amber",
@@ -4002,7 +4047,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Poison",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
 				pokemon.eatItem();
 			}
 		},
@@ -4149,6 +4195,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Poison"],
 		num: 906,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	poisoniumz: {
 		name: "Poisonium Z",
@@ -4302,6 +4349,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 537,
 		gen: 5,
+		isNonstandard: "Past",
 	},
 	protectivepads: {
 		name: "Protective Pads",
@@ -4321,6 +4369,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 321,
 		gen: 4,
+		isNonstandard: "Past",
 	},
 	psychicgem: {
 		name: "Psychic Gem",
@@ -4350,6 +4399,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Psychic"],
 		num: 916,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	psychicseed: {
 		name: "Psychic Seed",
@@ -4551,6 +4601,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 325,
 		gen: 4,
+		isNonstandard: "Past",
 	},
 	redcard: {
 		name: "Red Card",
@@ -4672,6 +4723,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 315,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	rockmemory: {
 		name: "Rock Memory",
@@ -4687,6 +4739,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Rock"],
 		num: 908,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	rockiumz: {
 		name: "Rockium Z",
@@ -4762,6 +4815,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 318,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	roseliberry: {
 		name: "Roseli Berry",
@@ -4819,6 +4873,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Zamazenta-Crowned"],
 		num: 1104,
 		gen: 8,
+		isNonstandard: "Unobtainable",
 	},
 	rustedsword: {
 		name: "Rusted Sword",
@@ -4832,6 +4887,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Zacian-Crowned"],
 		num: 1103,
 		gen: 8,
+		isNonstandard: "Unobtainable",
 	},
 	sablenite: {
 		name: "Sablenite",
@@ -4855,6 +4911,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 647,
 		gen: 6,
+		isNonstandard: "Past",
 	},
 	safariball: {
 		name: "Safari Ball",
@@ -4900,7 +4957,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Fighting",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
 				pokemon.eatItem();
 			}
 		},
@@ -4978,6 +5036,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 254,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	sharpbeak: {
 		name: "Sharp Beak",
@@ -5059,6 +5118,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Genesect-Shock"],
 		num: 117,
 		gen: 5,
+		isNonstandard: "Past",
 	},
 	shucaberry: {
 		name: "Shuca Berry",
@@ -5262,6 +5322,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Latios", "Latias"],
 		num: 225,
 		gen: 3,
+		isNonstandard: "Past",
 	},
 	spelltag: {
 		name: "Spell Tag",
@@ -5349,7 +5410,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Psychic",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
 				pokemon.eatItem();
 			}
 		},
@@ -5422,6 +5484,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Steel"],
 		num: 911,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	steeliumz: {
 		name: "Steelium Z",
@@ -5615,6 +5678,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Marowak", "Marowak-Alola", "Marowak-Alola-Totem", "Cubone"],
 		num: 258,
 		gen: 2,
+		isNonstandard: "Past",
 	},
 	throatspray: {
 		name: "Throat Spray",
@@ -5693,6 +5757,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 721,
 		num: 1130,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr01: {
 		name: "TR01",
@@ -5702,6 +5767,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 721,
 		num: 1131,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr02: {
 		name: "TR02",
@@ -5711,6 +5777,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 730,
 		num: 1132,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr03: {
 		name: "TR03",
@@ -5720,6 +5787,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 731,
 		num: 1133,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr04: {
 		name: "TR04",
@@ -5729,6 +5797,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 731,
 		num: 1134,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr05: {
 		name: "TR05",
@@ -5738,6 +5807,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 735,
 		num: 1135,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr06: {
 		name: "TR06",
@@ -5747,6 +5817,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 735,
 		num: 1136,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr07: {
 		name: "TR07",
@@ -5756,6 +5827,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 722,
 		num: 1137,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr08: {
 		name: "TR08",
@@ -5765,6 +5837,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 733,
 		num: 1138,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr09: {
 		name: "TR09",
@@ -5774,6 +5847,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 733,
 		num: 1139,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr10: {
 		name: "TR10",
@@ -5783,6 +5857,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 725,
 		num: 1140,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr11: {
 		name: "TR11",
@@ -5792,6 +5867,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 734,
 		num: 1141,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr12: {
 		name: "TR12",
@@ -5801,6 +5877,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 734,
 		num: 1142,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr13: {
 		name: "TR13",
@@ -5810,6 +5887,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 721,
 		num: 1143,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr14: {
 		name: "TR14",
@@ -5819,6 +5897,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 721,
 		num: 1144,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr15: {
 		name: "TR15",
@@ -5828,6 +5907,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 730,
 		num: 1145,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr16: {
 		name: "TR16",
@@ -5837,6 +5917,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 731,
 		num: 1146,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr17: {
 		name: "TR17",
@@ -5846,6 +5927,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 734,
 		num: 1147,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr18: {
 		name: "TR18",
@@ -5855,6 +5937,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 727,
 		num: 1148,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr19: {
 		name: "TR19",
@@ -5864,6 +5947,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 721,
 		num: 1149,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr20: {
 		name: "TR20",
@@ -5873,6 +5957,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 721,
 		num: 1150,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr21: {
 		name: "TR21",
@@ -5882,6 +5967,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 722,
 		num: 1151,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr22: {
 		name: "TR22",
@@ -5891,6 +5977,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 724,
 		num: 1152,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr23: {
 		name: "TR23",
@@ -5900,6 +5987,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 725,
 		num: 1153,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr24: {
 		name: "TR24",
@@ -5909,6 +5997,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 736,
 		num: 1154,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr25: {
 		name: "TR25",
@@ -5918,6 +6007,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 734,
 		num: 1155,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr26: {
 		name: "TR26",
@@ -5927,6 +6017,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 721,
 		num: 1156,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr27: {
 		name: "TR27",
@@ -5936,6 +6027,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 721,
 		num: 1157,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr28: {
 		name: "TR28",
@@ -5945,6 +6037,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 727,
 		num: 1158,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr29: {
 		name: "TR29",
@@ -5954,6 +6047,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 721,
 		num: 1159,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr30: {
 		name: "TR30",
@@ -5963,6 +6057,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 721,
 		num: 1160,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr31: {
 		name: "TR31",
@@ -5972,6 +6067,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 729,
 		num: 1161,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr32: {
 		name: "TR32",
@@ -5981,6 +6077,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 737,
 		num: 1162,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr33: {
 		name: "TR33",
@@ -5990,6 +6087,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 728,
 		num: 1163,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr34: {
 		name: "TR34",
@@ -5999,6 +6097,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 734,
 		num: 1164,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr35: {
 		name: "TR35",
@@ -6008,6 +6107,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 721,
 		num: 1165,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr36: {
 		name: "TR36",
@@ -6017,6 +6117,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 730,
 		num: 1166,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr37: {
 		name: "TR37",
@@ -6026,6 +6127,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 737,
 		num: 1167,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr38: {
 		name: "TR38",
@@ -6035,6 +6137,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 734,
 		num: 1168,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr39: {
 		name: "TR39",
@@ -6044,6 +6147,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 722,
 		num: 1169,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr40: {
 		name: "TR40",
@@ -6053,6 +6157,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 734,
 		num: 1170,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr41: {
 		name: "TR41",
@@ -6062,6 +6167,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 730,
 		num: 1171,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr42: {
 		name: "TR42",
@@ -6071,6 +6177,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 721,
 		num: 1172,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr43: {
 		name: "TR43",
@@ -6080,6 +6187,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 730,
 		num: 1173,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr44: {
 		name: "TR44",
@@ -6089,6 +6197,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 734,
 		num: 1174,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr45: {
 		name: "TR45",
@@ -6098,6 +6207,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 731,
 		num: 1175,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr46: {
 		name: "TR46",
@@ -6107,6 +6217,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 729,
 		num: 1176,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr47: {
 		name: "TR47",
@@ -6116,6 +6227,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 736,
 		num: 1177,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr48: {
 		name: "TR48",
@@ -6125,6 +6237,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 722,
 		num: 1178,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr49: {
 		name: "TR49",
@@ -6134,6 +6247,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 734,
 		num: 1179,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr50: {
 		name: "TR50",
@@ -6143,6 +6257,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 732,
 		num: 1180,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr51: {
 		name: "TR51",
@@ -6152,6 +6267,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 736,
 		num: 1181,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr52: {
 		name: "TR52",
@@ -6161,6 +6277,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 729,
 		num: 1182,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr53: {
 		name: "TR53",
@@ -6170,6 +6287,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 722,
 		num: 1183,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr54: {
 		name: "TR54",
@@ -6179,6 +6297,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 724,
 		num: 1184,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr55: {
 		name: "TR55",
@@ -6188,6 +6307,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 730,
 		num: 1185,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr56: {
 		name: "TR56",
@@ -6197,6 +6317,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 722,
 		num: 1186,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr57: {
 		name: "TR57",
@@ -6206,6 +6327,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 724,
 		num: 1187,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr58: {
 		name: "TR58",
@@ -6215,6 +6337,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 737,
 		num: 1188,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr59: {
 		name: "TR59",
@@ -6224,6 +6347,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 732,
 		num: 1189,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr60: {
 		name: "TR60",
@@ -6233,6 +6357,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 727,
 		num: 1190,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr61: {
 		name: "TR61",
@@ -6242,6 +6367,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 727,
 		num: 1191,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr62: {
 		name: "TR62",
@@ -6251,6 +6377,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 736,
 		num: 1192,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr63: {
 		name: "TR63",
@@ -6260,6 +6387,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 726,
 		num: 1193,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr64: {
 		name: "TR64",
@@ -6269,6 +6397,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 722,
 		num: 1194,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr65: {
 		name: "TR65",
@@ -6278,6 +6407,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 732,
 		num: 1195,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr66: {
 		name: "TR66",
@@ -6287,6 +6417,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 723,
 		num: 1196,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr67: {
 		name: "TR67",
@@ -6296,6 +6427,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 725,
 		num: 1197,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr68: {
 		name: "TR68",
@@ -6305,6 +6437,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 737,
 		num: 1198,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr69: {
 		name: "TR69",
@@ -6314,6 +6447,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 734,
 		num: 1199,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr70: {
 		name: "TR70",
@@ -6323,6 +6457,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 729,
 		num: 1200,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr71: {
 		name: "TR71",
@@ -6332,6 +6467,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 732,
 		num: 1201,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr72: {
 		name: "TR72",
@@ -6341,6 +6477,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 732,
 		num: 1202,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr73: {
 		name: "TR73",
@@ -6350,6 +6487,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 724,
 		num: 1203,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr74: {
 		name: "TR74",
@@ -6359,6 +6497,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 729,
 		num: 1204,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr75: {
 		name: "TR75",
@@ -6368,6 +6507,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 726,
 		num: 1205,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr76: {
 		name: "TR76",
@@ -6377,6 +6517,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 726,
 		num: 1206,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr77: {
 		name: "TR77",
@@ -6386,6 +6527,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 732,
 		num: 1207,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr78: {
 		name: "TR78",
@@ -6395,6 +6537,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 724,
 		num: 1208,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr79: {
 		name: "TR79",
@@ -6404,6 +6547,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 729,
 		num: 1209,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr80: {
 		name: "TR80",
@@ -6413,6 +6557,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 733,
 		num: 1210,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr81: {
 		name: "TR81",
@@ -6422,6 +6567,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 737,
 		num: 1211,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr82: {
 		name: "TR82",
@@ -6431,6 +6577,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 734,
 		num: 1212,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr83: {
 		name: "TR83",
@@ -6440,6 +6587,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 734,
 		num: 1213,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr84: {
 		name: "TR84",
@@ -6449,6 +6597,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 731,
 		num: 1214,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr85: {
 		name: "TR85",
@@ -6458,6 +6607,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 721,
 		num: 1215,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr86: {
 		name: "TR86",
@@ -6467,6 +6617,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 733,
 		num: 1216,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr87: {
 		name: "TR87",
@@ -6476,6 +6627,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 725,
 		num: 1217,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr88: {
 		name: "TR88",
@@ -6485,6 +6637,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 730,
 		num: 1218,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr89: {
 		name: "TR89",
@@ -6494,6 +6647,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 723,
 		num: 1219,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr90: {
 		name: "TR90",
@@ -6503,6 +6657,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 738,
 		num: 1220,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr91: {
 		name: "TR91",
@@ -6512,6 +6667,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 724,
 		num: 1221,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr92: {
 		name: "TR92",
@@ -6521,6 +6677,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 738,
 		num: 1222,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr93: {
 		name: "TR93",
@@ -6530,6 +6687,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 737,
 		num: 1223,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr94: {
 		name: "TR94",
@@ -6539,6 +6697,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 725,
 		num: 1224,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr95: {
 		name: "TR95",
@@ -6548,6 +6707,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 737,
 		num: 1225,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr96: {
 		name: "TR96",
@@ -6557,6 +6717,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 727,
 		num: 1226,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr97: {
 		name: "TR97",
@@ -6566,6 +6727,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 734,
 		num: 1227,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr98: {
 		name: "TR98",
@@ -6575,6 +6737,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 731,
 		num: 1228,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	tr99: {
 		name: "TR99",
@@ -6584,6 +6747,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 722,
 		num: 1229,
 		gen: 8,
+		isNonstandard: "Past",
 	},
 	twistedspoon: {
 		name: "Twisted Spoon",
@@ -6640,6 +6804,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 252,
 		gen: 2,
+		isNonstandard: "Past",
 	},
 	utilityumbrella: {
 		name: "Utility Umbrella",
@@ -6649,36 +6814,23 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		// Partially implemented in Pokemon.effectiveWeather() in sim/pokemon.ts
 		onStart(pokemon) {
-			pokemon.addVolatile('utilityumbrella');
+			if (!pokemon.ignoringItem()) return;
+			if (['sunnyday', 'raindance', 'desolateland', 'primordialsea'].includes(this.field.effectiveWeather())) {
+				this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
+			}
 		},
-		condition: {
-			onStart(pokemon) {
-				if (!pokemon.ignoringItem() &&
-					['sunnyday', 'raindance', 'desolateland', 'primordialsea'].includes(this.field.effectiveWeather())) {
-					this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
-				}
-			},
-			onUpdate(pokemon) {
-				// could break in OMs with bonus items
-				if (pokemon.item !== 'utilityumbrella') {
-					pokemon.removeVolatile('utilityumbrella');
-					return;
-				}
-				if (!['sunnyday', 'raindance', 'desolateland', 'primordialsea'].includes(this.field.effectiveWeather())) return;
-				if (pokemon.ignoringItem() && !this.effectState.inactive) {
-					this.effectState.inactive = true;
-					this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
-				} else if (!pokemon.ignoringItem() && this.effectState.inactive) {
-					this.effectState.inactive = false;
-					this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
-				}
-			},
-			onEnd(pokemon) {
-				if (!this.effectState.inactive &&
-					['sunnyday', 'raindance', 'desolateland', 'primordialsea'].includes(this.field.effectiveWeather())) {
-					this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
-				}
-			},
+		onUpdate(pokemon) {
+			if (!this.effectState.inactive) return;
+			this.effectState.inactive = false;
+			if (['sunnyday', 'raindance', 'desolateland', 'primordialsea'].includes(this.field.effectiveWeather())) {
+				this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
+			}
+		},
+		onEnd(pokemon) {
+			if (['sunnyday', 'raindance', 'desolateland', 'primordialsea'].includes(this.field.effectiveWeather())) {
+				this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
+			}
+			this.effectState.inactive = true;
 		},
 		num: 1123,
 		gen: 8,
@@ -6749,6 +6901,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Silvally-Water"],
 		num: 913,
 		gen: 7,
+		isNonstandard: "Past",
 	},
 	waterstone: {
 		name: "Water Stone",
@@ -6798,6 +6951,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 317,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	weaknesspolicy: {
 		name: "Weakness Policy",
@@ -6838,6 +6992,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 646,
 		gen: 6,
+		isNonstandard: "Past",
 	},
 	whiteherb: {
 		name: "White Herb",
@@ -6902,7 +7057,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Rock",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
+					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
 				pokemon.eatItem();
 			}
 		},

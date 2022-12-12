@@ -285,14 +285,8 @@ export class Specie implements DexSpecies {
   private readonly dex: Dex;
 
   private static readonly EXCLUDE = new Set([
-    'abilities',
-    'cosmeticFormes',
-    'evos',
-    'gender',
-    'genderRatio',
-    'nfe',
-    'otherFormes',
-    'prevo',
+    'abilities', 'cosmeticFormes', 'evos', 'formeOrder',
+    'gender', 'genderRatio', 'nfe', 'otherFormes', 'prevo',
   ]);
 
   constructor(dex: Dex, exists: BoundExistsFn, species: DexSpecies) {
@@ -324,7 +318,7 @@ export class Specie implements DexSpecies {
     this.otherFormes = species.otherFormes?.filter(s => exists(this.dex.species.get(s)));
     if (!this.otherFormes?.length) this.otherFormes = undefined;
     this.formeOrder = species.formeOrder?.filter(s => exists(this.dex.species.get(s)));
-    if (!this.formeOrder?.length) this.formeOrder = undefined;
+    if (!this.formeOrder || this.formeOrder.length <= 1) this.formeOrder = undefined;
     this.formes = this.formeOrder?.filter(s =>
       this.dex.species.get(s).isNonstandard !== 'Gigantamax');
     this.prevo =

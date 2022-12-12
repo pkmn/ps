@@ -701,6 +701,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
 
   readonly cosmeticFormes?: T.SpeciesName[];
   readonly otherFormes?: T.SpeciesName[];
+  readonly formeOrder?: T.SpeciesName[];
   readonly genderRatio: { M: number; F: number };
   readonly isMega?: boolean;
   readonly isPrimal?: boolean;
@@ -746,7 +747,6 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
       : this.gender === 'F' ? {M: 0, F: 1}
       : this.gender === 'N' ? {M: 0, F: 0}
       : {M: 0.5, F: 0.5});
-    this.requiredItem = data.requiredItem || undefined;
     this.requiredItems =
       this.requiredItems || (this.requiredItem ? [this.requiredItem] : undefined);
     this.baseStats = data.baseStats || {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0};
@@ -757,9 +757,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     this.tags = data.tags || [];
     this.unreleasedHidden = data.unreleasedHidden || false;
     this.maleOnlyHidden = !!data.maleOnlyHidden;
-    this.maxHP = data.maxHP || undefined;
     this.isMega = !!(this.forme && ['Mega', 'Mega-X', 'Mega-Y'].includes(this.forme)) || undefined;
-    this.canGigantamax = data.canGigantamax || undefined;
     this.gmaxUnreleased = !!data.gmaxUnreleased;
     this.cannotDynamax = !!data.cannotDynamax;
     this.battleOnly = data.battleOnly || (this.isMega ? this.baseSpecies : undefined);

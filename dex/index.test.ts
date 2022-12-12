@@ -91,7 +91,7 @@ describe('Dex', () => {
 
       expect(Dex.items.get('foo').exists).toBe(false);
 
-      expect(Dex.forGen(2).items.get('Thick Club')).toEqual(Dex.items.get('Thick Club'));
+      expect(Dex.forGen(2).items.get('Thick Club')).toEqual(Dex.forGen(7).items.get('Thick Club'));
       expect(Dex.forGen(3).items.get('Sitrus Berry'))
         .not.toEqual(Dex.forGen(4).items.get('Sitrus Berry'));
 
@@ -364,6 +364,8 @@ describe('Dex', () => {
       expect(Dex.species.get('Shaymin').otherFormes).toEqual(['Shaymin-Sky']);
       expect(Dex.forGen(7).species.get('Charizard').otherFormes)
         .toEqual(['Charizard-Mega-X', 'Charizard-Mega-Y']);
+      expect(Dex.forGen(2).species.get('Venusaur')!.formeOrder)
+        .toEqual(['Venusaur', 'Venusaur-Mega']);
       expect(Dex.species.get('Gastrodon').cosmeticFormes).toEqual(['Gastrodon-East']);
       expect(Dex.species.get('Garchomp-Mega').isMega).toBe(true);
       expect(Dex.species.get('Yanmega').isMega).toBeUndefined();

@@ -382,6 +382,8 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(1).species.get('Charizard')!.otherFormes).toBeUndefined();
         expect(Gen(7).species.get('Charizard')!.otherFormes)
           .toEqual(['Charizard-Mega-X', 'Charizard-Mega-Y']);
+        expect(Gen(2).species.get('Venusaur')!.formes).toBeUndefined();
+        expect(Gen(2).species.get('Venusaur')!.formeOrder).toBeUndefined();
         expect(Gen(3).species.get('Nosepass')!.evos).toBeUndefined();
         expect(Gen(4).species.get('Nosepass')!.evos).toEqual(['Probopass']);
         expect(Gen(3).species.get('Chansey')!.prevo).toBeUndefined();

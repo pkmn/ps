@@ -806,6 +806,7 @@ export class Handler implements Protocol.Handler {
       poke2!.side.removeSideCondition('reflect' as ID);
       poke2!.side.removeSideCondition('lightscreen' as ID);
       break;
+    case 'hyperdrill':
     case 'hyperspacefury':
     case 'hyperspacehole':
     case 'phantomforce':

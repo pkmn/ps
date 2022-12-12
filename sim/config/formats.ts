@@ -27,13 +27,10 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ 'Little Cup', 'Standard' ],
     banlist: [
-      'Dunsparce',
-      'Meditite',
-      'Misdreavus',
-      'Murkrow',
-      'Scyther',
-      'Sneasel',
-      'Moody',
+      'Dunsparce',  'Flittle',
+      'Meditite',   'Misdreavus',
+      'Murkrow',    'Scyther',
+      'Sneasel',    'Moody',
       'Baton Pass'
     ]
   },
@@ -101,6 +98,13 @@ export const Formats: FormatList = [
     team: 'randomHC',
     ruleset: [ 'HP Percentage Mod', 'Cancel Mod' ],
     banlist: [ 'Nonexistent' ]
+  },
+  {
+    name: '[Gen 9] Doubles Hackmons Cup',
+    mod: 'gen9',
+    team: 'randomHC',
+    gameType: 'doubles',
+    ruleset: [ '[Gen 9] Hackmons Cup' ]
   },
   {
     name: '[Gen 9] Challenge Cup 1v1',
@@ -236,6 +240,7 @@ export const Formats: FormatList = [
       "King's Rock",
       'Quick Claw',
       'Razor Fang',
+      'Assist',
       'Baton Pass'
     ]
   },
@@ -298,15 +303,28 @@ export const Formats: FormatList = [
       'Endless Battle Clause'
     ],
     banlist: [
-      'Arena Trap',            'Huge Power',
-      'Illusion',              'Innards Out',
-      'Magnet Pull',           'Neutralizing Gas',
-      'Parental Bond',         'Pure Power',
-      'Shadow Tag',            'Stakeout',
-      'Water Bubble',          'Wonder Guard',
-      'Comatose + Sleep Talk', 'Belly Drum',
-      'Last Respects',         'Shed Tail',
-      'Shell Smash',           'Rage Fist'
+      'Calyrex-Shadow',   'Slaking',
+      'Arena Trap',       'Contrary',
+      'Huge Power',       'Illusion',
+      'Innards Out',      'Magnet Pull',
+      'Neutralizing Gas', 'Parental Bond',
+      'Pure Power',       'Shadow Tag',
+      'Stakeout',         'Water Bubble',
+      'Wonder Guard',     'Comatose + Sleep Talk',
+      'Belly Drum',       'Last Respects',
+      'Revival Blessing', 'Shed Tail',
+      'Shell Smash',      'Rage Fist'
+    ]
+  },
+  {
+    name: '[Gen 9] Pure Hackmons',
+    mod: 'gen9',
+    ruleset: [
+      '-Nonexistent',
+      'Team Preview',
+      'HP Percentage Mod',
+      'Cancel Mod',
+      'Endless Battle Clause'
     ]
   },
   {
@@ -755,7 +773,8 @@ export const Formats: FormatList = [
       'Evasion Abilities Clause',
       'Sleep Moves Clause',
       'Swagger Clause',
-      'Gems Clause'
+      'Gems Clause',
+      'Baton Pass Stat Clause'
     ],
     banlist: [
       'Uber',
@@ -767,8 +786,7 @@ export const Formats: FormatList = [
       "King's Rock",
       'Razor Fang',
       'Soul Dew',
-      'Assist',
-      'Baton Pass'
+      'Assist'
     ]
   },
   {

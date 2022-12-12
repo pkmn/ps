@@ -953,7 +953,8 @@ class Handler implements Protocol.Handler<string> {
       return (this.parser.template('activate', 'celebrate')
         .replace('[TRAINER]', this.parser.trainer(pokemon.slice(0, 2))));
     }
-    const breaks = ['hyperspacefury', 'hyperspacehole', 'phantomforce', 'shadowforce', 'feint'];
+    const breaks =
+      ['hyperdrill', 'hyperspacefury', 'hyperspacehole', 'phantomforce', 'shadowforce', 'feint'];
     if (!target && breaks.includes(id)) {
       [pokemon, target] = [kwArgs.of!, pokemon];
       if (!pokemon) pokemon = target;

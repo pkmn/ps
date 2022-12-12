@@ -33,6 +33,7 @@ export class Side {
   };
 
   wisher: Pokemon | null;
+  faints: number;
 
   private readonly provider: (s: Side, d: DetailedPokemon, p?: PokemonSet) => Pokemon;
 
@@ -62,6 +63,7 @@ export class Side {
     this.sideConditions = {};
 
     this.wisher = null;
+    this.faints = 0;
   }
 
   setAvatar(avatar: AvatarIdent) {
@@ -304,6 +306,7 @@ export class Side {
 
     pokemon.fainted = true;
     pokemon.hp = 0;
+    if (pokemon.side.faints < 100) pokemon.side.faints++;
   }
 
   clearPokemon() {

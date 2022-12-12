@@ -334,6 +334,7 @@
     "sonicboom": {
       "inherit": true,
       "ignoreImmunity": true,
+      "basePower": 1,
       "desc": "Deals 20 HP of damage to the target. This move ignores type immunity."
     },
     "softboiled": {
@@ -606,7 +607,6 @@
     },
     "foresight": {
       "inherit": true,
-      "accuracy": 100,
       "condition": {},
       "desc": "As long as the target remains active, if its evasiveness stat stage is greater than the attacker's accuracy stat stage, both are ignored during accuracy checks, and Normal- and Fighting-type attacks can hit the target if it is a Ghost type. If the target leaves the field using Baton Pass, the replacement will remain under this effect. Fails if the target is already affected."
     },
@@ -635,7 +635,6 @@
     },
     "lockon": {
       "inherit": true,
-      "accuracy": true,
       "condition": {"duration": 2},
       "desc": "The next accuracy check against the target succeeds. The target will still avoid Earthquake, Fissure, and Magnitude if it is using Fly. If the target leaves the field using Baton Pass, the replacement remains under this effect. This effect ends when the target leaves the field or an accuracy check is done against it.",
       "shortDesc": "The next move will not miss the target."
@@ -648,11 +647,7 @@
       "desc": "Has a 30% chance to make the target flinch.",
       "shortDesc": "30% chance to make the target flinch."
     },
-    "meanlook": {
-      "inherit": true,
-      "accuracy": true,
-      "flags": {"reflectable": 1, "mirror": 1}
-    },
+    "meanlook": {"inherit": true, "flags": {"reflectable": 1, "mirror": 1}},
     "metronome": {
       "inherit": true,
       "noMetronome": [
@@ -674,12 +669,12 @@
     },
     "mimic": {
       "inherit": true,
+      "accuracy": 100,
       "noSketch": true,
       "desc": "While the user remains active, this move is replaced by the last move used by the target. The copied move has 5 PP. Fails if the target has not made a move, if the user already knows the move, or if the move is Struggle."
     },
     "mindreader": {
       "inherit": true,
-      "accuracy": 100,
       "desc": "The next accuracy check against the target succeeds. The target will still avoid Earthquake, Fissure, and Magnitude if it is using Fly. If the target leaves the field using Baton Pass, the replacement remains under this effect. This effect ends when the target leaves the field or an accuracy check is done against it.",
       "shortDesc": "The next move will not miss the target."
     },
@@ -727,7 +722,7 @@
       "inherit": true,
       "desc": "Whether or not this move is successful, the user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user."
     },
-    "painsplit": {"inherit": true, "accuracy": true},
+    "painsplit": {"inherit": true, "accuracy": 100},
     "perishsong": {
       "inherit": true,
       "condition": {"duration": 4, "onResidualOrder": 4}
@@ -826,11 +821,7 @@
       "inherit": true,
       "desc": "This attack charges on the first turn and executes on the second. Damage is halved if the weather is Rain Dance. If the weather is Sunny Day, the move completes in one turn."
     },
-    "spiderweb": {
-      "inherit": true,
-      "accuracy": true,
-      "flags": {"reflectable": 1, "mirror": 1}
-    },
+    "spiderweb": {"inherit": true, "flags": {"reflectable": 1, "mirror": 1}},
     "spikes": {
       "inherit": true,
       "condition": {},
@@ -877,7 +868,6 @@
       "desc": "Hits one to three times, at random. Power increases to 20 for the second hit and 30 for the third.",
       "shortDesc": "Hits 1-3 times. Power rises with each hit."
     },
-    "vitalthrow": {"inherit": true, "accuracy": true},
     "whirlwind": {
       "inherit": true,
       "priority": -1,
@@ -1092,13 +1082,6 @@
       "desc": "Has a 10% chance to freeze the target.",
       "shortDesc": "10% chance to freeze foe(s)."
     },
-    "block": {
-      "inherit": true,
-      "accuracy": 100,
-      "ignoreAccuracy": true,
-      "ignoreEvasion": true,
-      "desc": "Prevents the target from switching out. The target can still switch out if it uses Baton Pass. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field, unless it uses Baton Pass, in which case the target will remain trapped."
-    },
     "brickbreak": {
       "inherit": true,
       "desc": "If this attack does not miss and whether or not the target is immune, the effects of Reflect and Light Screen end for the opponent's side of the field before damage is calculated."
@@ -1180,6 +1163,11 @@
       "condition": {"duration": 1, "onFoeRedirectTargetPriority": 1},
       "desc": "Until the end of the turn, all single-target attacks from the opposing side are redirected to the user. Such attacks are redirected to the user before they can be reflected by Magic Coat, or drawn in by the Lightning Rod Ability. This effect remains active even if the user leaves the field. Fails if it is not a Double Battle."
     },
+    "foresight": {
+      "inherit": true,
+      "accuracy": 100,
+      "desc": "As long as the target remains active, its evasiveness stat stage is ignored during accuracy checks against it, and Normal- and Fighting-type attacks can hit the target if it is a Ghost type."
+    },
     "furycutter": {"inherit": true},
     "gigadrain": {
       "inherit": true,
@@ -1207,25 +1195,17 @@
     },
     "leafblade": {"inherit": true, "basePower": 70},
     "lockon": {"inherit": true, "accuracy": 100},
-    "meanlook": {
-      "inherit": true,
-      "accuracy": 100,
-      "ignoreAccuracy": true,
-      "ignoreEvasion": true,
-      "desc": "Prevents the target from switching out. The target can still switch out if it uses Baton Pass. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field, unless it uses Baton Pass, in which case the target will remain trapped."
-    },
     "megadrain": {
       "inherit": true,
       "pp": 10,
       "desc": "The user recovers 1/2 the HP lost by the target, rounded down."
     },
-    "mimic": {
+    "memento": {
       "inherit": true,
-      "accuracy": 100,
-      "ignoreAccuracy": true,
-      "ignoreEvasion": true,
-      "desc": "While the user remains active, this move is replaced by the last move used by the target. The copied move has 5 PP. Fails if the target has not made a move, if the user has Transformed, if the user already knows the move, or if the move is Metronome, Mimic, Sketch, or Struggle."
+      "accuracy": true,
+      "desc": "Lowers the target's Attack and Special Attack by 2 stages. The user faints. This move does not check accuracy, and can hit targets in the middle of a two-turn move. Fails entirely if the target's Attack and Special Attack stat stages are both -6."
     },
+    "mindreader": {"inherit": true, "accuracy": 100},
     "mirrorcoat": {
       "inherit": true,
       "condition": {
@@ -1251,6 +1231,12 @@
       "inherit": true,
       "desc": "Has a 30% chance to make the target flinch. Damage doubles if the target has used Minimize while active."
     },
+    "nightmare": {"inherit": true, "accuracy": true},
+    "odorsleuth": {
+      "inherit": true,
+      "accuracy": 100,
+      "desc": "As long as the target remains active, its evasiveness stat stage is ignored during accuracy checks against it, and Normal- and Fighting-type attacks can hit the target if it is a Ghost type."
+    },
     "outrage": {
       "inherit": true,
       "basePower": 90,
@@ -1260,12 +1246,6 @@
       "inherit": true,
       "flags": {"contact": 1, "protect": 1, "mirror": 1}
     },
-    "painsplit": {
-      "inherit": true,
-      "accuracy": 100,
-      "ignoreAccuracy": true,
-      "ignoreEvasion": true
-    },
     "petaldance": {
       "inherit": true,
       "basePower": 70,
@@ -1273,30 +1253,9 @@
     },
     "recover": {"inherit": true, "pp": 20},
     "rocksmash": {"inherit": true, "basePower": 20},
-    "roleplay": {
-      "inherit": true,
-      "accuracy": 100,
-      "ignoreAccuracy": true,
-      "ignoreEvasion": true,
-      "desc": "The user's Ability changes to match the target's Ability. Fails if the target's Ability is Wonder Guard."
-    },
-    "skillswap": {
-      "inherit": true,
-      "accuracy": 100,
-      "ignoreAccuracy": true,
-      "ignoreEvasion": true,
-      "desc": "The user swaps its Ability with the target's Ability. Fails if either the user or the target's Ability is Wonder Guard."
-    },
     "sleeptalk": {
       "inherit": true,
       "desc": "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not asleep. The selected move does not have PP deducted from it, but if it currently has 0 PP it will fail to be used. This move cannot select Assist, Bide, Focus Punch, Metronome, Mirror Move, Sleep Talk, Uproar, or any two-turn move."
-    },
-    "spiderweb": {
-      "inherit": true,
-      "accuracy": 100,
-      "ignoreAccuracy": true,
-      "ignoreEvasion": true,
-      "desc": "Prevents the target from switching out. The target can still switch out if it uses Baton Pass. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field, unless it uses Baton Pass, in which case the target will remain trapped."
     },
     "spite": {
       "inherit": true,
@@ -1350,12 +1309,6 @@
       "shortDesc": "Lasts 2-5 turns. Active Pokemon cannot sleep."
     },
     "vinewhip": {"inherit": true, "pp": 10},
-    "vitalthrow": {
-      "inherit": true,
-      "accuracy": 100,
-      "ignoreAccuracy": true,
-      "ignoreEvasion": true
-    },
     "volttackle": {
       "inherit": true,
       "secondary": null,
@@ -1372,12 +1325,6 @@
       "inherit": true,
       "desc": "Damage doubles if a weather condition is active, and this move's type changes to match. Ice type during Hail, Water type during Rain Dance, Rock type during Sandstorm, and Fire type during Sunny Day.",
       "shortDesc": "Damage doubles and type varies during weather."
-    },
-    "yawn": {
-      "inherit": true,
-      "accuracy": 100,
-      "ignoreAccuracy": true,
-      "ignoreEvasion": true
     },
     "zapcannon": {"inherit": true, "basePower": 100},
     "armthrust": {
@@ -1400,6 +1347,10 @@
     "bind": {
       "inherit": true,
       "desc": "Prevents the target from switching for two to five turns. Causes damage to the target equal to 1/16 of its maximum HP, rounded down, at the end of each turn during effect. The target can still switch out if it uses Baton Pass. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move."
+    },
+    "block": {
+      "inherit": true,
+      "desc": "Prevents the target from switching out. The target can still switch out if it uses Baton Pass. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field, unless it uses Baton Pass, in which case the target will remain trapped."
     },
     "bonemerang": {
       "inherit": true,
@@ -1465,10 +1416,6 @@
       "inherit": true,
       "desc": "The power of this move is 20 if X is 33 to 48, 40 if X is 17 to 32, 80 if X is 10 to 16, 100 if X is 5 to 9, 150 if X is 2 to 4, and 200 if X is 0 or 1, where X is equal to (user's current HP * 48 / user's maximum HP), rounded down."
     },
-    "foresight": {
-      "inherit": true,
-      "desc": "As long as the target remains active, its evasiveness stat stage is ignored during accuracy checks against it, and Normal- and Fighting-type attacks can hit the target if it is a Ghost type."
-    },
     "furyattack": {
       "inherit": true,
       "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits."
@@ -1510,13 +1457,17 @@
       "inherit": true,
       "desc": "The user is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. If the move targets both opposing Pokemon and the Pokemon under this effect is on the left side, it will reflect the move targeting both opposing Pokemon and its ally will not be affected by the original move; otherwise, if the Pokemon under this effect is on the right side, its ally will be affected by the original move and this Pokemon will reflect the move only targeting the original user. The effect ends once a move is reflected or at the end of the turn. Moves reflected in this way can be reflected again by another Pokemon under this effect. If the user has the Soundproof Ability, it nullifies sound-based moves before this effect happens. The Lightning Rod Ability redirects Electric moves before this move takes effect."
     },
-    "memento": {
+    "meanlook": {
       "inherit": true,
-      "desc": "Lowers the target's Attack and Special Attack by 2 stages. The user faints. This move does not check accuracy, and can hit targets in the middle of a two-turn move. Fails entirely if the target's Attack and Special Attack stat stages are both -6."
+      "desc": "Prevents the target from switching out. The target can still switch out if it uses Baton Pass. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field, unless it uses Baton Pass, in which case the target will remain trapped."
     },
     "metronome": {
       "inherit": true,
       "desc": "A random move is selected for use, other than Counter, Covet, Destiny Bond, Detect, Endure, Focus Punch, Follow Me, Helping Hand, Metronome, Mimic, Mirror Coat, Protect, Sketch, Sleep Talk, Snatch, Struggle, Thief, or Trick."
+    },
+    "mimic": {
+      "inherit": true,
+      "desc": "While the user remains active, this move is replaced by the last move used by the target. The copied move has 5 PP. Fails if the target has not made a move, if the user has Transformed, if the user already knows the move, or if the move is Metronome, Mimic, Sketch, or Struggle."
     },
     "minimize": {
       "inherit": true,
@@ -1525,10 +1476,6 @@
     "mortalspin": {
       "inherit": true,
       "desc": "If this move is successful, the effects of Leech Seed and binding moves end for the user, and Spikes are removed from the user's side of the field."
-    },
-    "odorsleuth": {
-      "inherit": true,
-      "desc": "As long as the target remains active, its evasiveness stat stage is ignored during accuracy checks against it, and Normal- and Fighting-type attacks can hit the target if it is a Ghost type."
     },
     "pinmissile": {
       "inherit": true,
@@ -1577,6 +1524,10 @@
       "inherit": true,
       "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits."
     },
+    "roleplay": {
+      "inherit": true,
+      "desc": "The user's Ability changes to match the target's Ability. Fails if the target's Ability is Wonder Guard."
+    },
     "safeguard": {
       "inherit": true,
       "desc": "For 5 turns, the user and its party members cannot have non-volatile status conditions or confusion inflicted on them by other Pokemon. Pokemon on the user's side cannot become affected by Yawn but can fall asleep from its effect. Fails if the effect is already active on the user's side."
@@ -1598,6 +1549,10 @@
       "inherit": true,
       "desc": "This move is permanently replaced by the last move used by the target. The copied move has the maximum PP for that move. Fails if the target has not made a move, if the user has Transformed, or if the move is Sketch, Struggle, or any move the user knows."
     },
+    "skillswap": {
+      "inherit": true,
+      "desc": "The user swaps its Ability with the target's Ability. Fails if either the user or the target's Ability is Wonder Guard."
+    },
     "skullbash": {
       "inherit": true,
       "desc": "This attack charges on the first turn and executes on the second. Raises the user's Defense by 1 stage on the first turn."
@@ -1614,6 +1569,10 @@
     "solarbeam": {
       "inherit": true,
       "desc": "This attack charges on the first turn and executes on the second. Damage is halved if the weather is Hail, Rain Dance, or Sandstorm. If the weather is Sunny Day, the move completes in one turn."
+    },
+    "spiderweb": {
+      "inherit": true,
+      "desc": "Prevents the target from switching out. The target can still switch out if it uses Baton Pass. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field, unless it uses Baton Pass, in which case the target will remain trapped."
     },
     "spikecannon": {
       "inherit": true,
@@ -4311,7 +4270,11 @@
     "triplekick": {"inherit": true, "isNonstandard": null},
     "venomdrench": {"inherit": true, "isNonstandard": null},
     "vitalthrow": {"inherit": true, "isNonstandard": null},
-    "wickedblow": {"inherit": true, "basePower": 80}
+    "wickedblow": {"inherit": true, "basePower": 80},
+    "metronome": {
+      "inherit": true,
+      "desc": "A random move is selected for use, other than After You, Apple Acid, Assist, Astral Barrage, Aura Wheel, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Body Press, Branch Poke, Breaking Swipe, Celebrate, Chatter, Clangorous Soul, Copycat, Counter, Covet, Crafty Shield, Decorate, Destiny Bond, Detect, Diamond Storm, Double Iron Bash, Dragon Ascent, Dragon Energy, Dragon Hammer, Drum Beating, Dynamax Cannon, Endure, Eternabeam, False Surrender, Feint, Fiery Wrath, Fleur Cannon, Focus Punch, Follow Me, Freeze Shock, Freezing Glare, Glacial Lance, Grav Apple, Helping Hand, Hold Hands, Hyperspace Fury, Hyperspace Hole, Ice Burn, Instruct, Jungle Healing, King's Shield, Life Dew, Light of Ruin, Mat Block, Me First, Meteor Assault, Metronome, Mimic, Mind Blown, Mirror Coat, Mirror Move, Moongeist Beam, Nature Power, Nature's Madness, Obstruct, Origin Pulse, Overdrive, Photon Geyser, Plasma Fists, Precipice Blades, Protect, Pyro Ball, Quash, Quick Guard, Rage Powder, Relic Song, Secret Sword, Shell Trap, Sketch, Sleep Talk, Snap Trap, Snarl, Snatch, Snore, Spectral Thief, Spiky Shield, Spirit Break, Spotlight, Steam Eruption, Steel Beam, Strange Steam, Struggle, Sunsteel Strike, Surging Strikes, Switcheroo, Techno Blast, Thief, Thousand Arrows, Thousand Waves, Thunder Cage, Thunderous Kick, Transform, Trick, V-create, Wicked Blow, or Wide Guard."
+    }
   },
   "9": {
     "10000000voltthunderbolt": {
@@ -13093,7 +13056,6 @@
         "Double Shock",
         "Dragon Ascent",
         "Dragon Energy",
-        "Dragon Hammer",
         "Drum Beating",
         "Dynamax Cannon",
         "Electro Drift",
@@ -13137,6 +13099,7 @@
         "Nature's Madness",
         "Noxious Torque",
         "Obstruct",
+        "Order Up",
         "Origin Pulse",
         "Overdrive",
         "Photon Geyser",
@@ -13183,11 +13146,11 @@
         "Switcheroo",
         "Techno Blast",
         "Thief",
-        "Tidy Up",
         "Thousand Arrows",
         "Thousand Waves",
         "Thunder Cage",
         "Thunderous Kick",
+        "Tidy Up",
         "Trailblaze",
         "Transform",
         "Trick",
@@ -13200,7 +13163,7 @@
       "secondary": null,
       "target": "self",
       "type": "Normal",
-      "desc": "A random move is selected for use, other than After You, Apple Acid, Assist, Astral Barrage, Aura Wheel, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Body Press, Branch Poke, Breaking Swipe, Celebrate, Chatter, Clangorous Soul, Copycat, Counter, Covet, Crafty Shield, Decorate, Destiny Bond, Detect, Diamond Storm, Double Iron Bash, Dragon Ascent, Dragon Energy, Dragon Hammer, Drum Beating, Dynamax Cannon, Endure, Eternabeam, False Surrender, Feint, Fiery Wrath, Fleur Cannon, Focus Punch, Follow Me, Freeze Shock, Freezing Glare, Glacial Lance, Grav Apple, Helping Hand, Hold Hands, Hyperspace Fury, Hyperspace Hole, Ice Burn, Instruct, Jungle Healing, King's Shield, Life Dew, Light of Ruin, Mat Block, Me First, Meteor Assault, Metronome, Mimic, Mind Blown, Mirror Coat, Mirror Move, Moongeist Beam, Nature Power, Nature's Madness, Obstruct, Origin Pulse, Overdrive, Photon Geyser, Plasma Fists, Precipice Blades, Protect, Pyro Ball, Quash, Quick Guard, Rage Powder, Relic Song, Secret Sword, Shell Trap, Sketch, Sleep Talk, Snap Trap, Snarl, Snatch, Snore, Spectral Thief, Spiky Shield, Spirit Break, Spotlight, Steam Eruption, Steel Beam, Strange Steam, Struggle, Sunsteel Strike, Surging Strikes, Switcheroo, Techno Blast, Thief, Thousand Arrows, Thousand Waves, Thunder Cage, Thunderous Kick, Transform, Trick, V-create, Wicked Blow, or Wide Guard.",
+      "desc": "A random move is selected for use, other than After You, Apple Acid, Armor Cannon, Assist, Astral Barrage, Aura Wheel, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Blazing Torque, Body Press, Branch Poke, Breaking Swipe, Celebrate, Chatter, Chilling Water, Chilly Reception, Clangorous Soul, Collision Course, Combat Torque, Comeuppance, Copycat, Counter, Covet, Crafty Shield, Decorate, Destiny Bond, Detect, Diamond Storm, Doodle, Double Iron Bash, Double Shock, Dragon Ascent, Dragon Energy, Drum Beating, Dynamax Cannon, Electro Drift, Endure, Eternabeam, False Surrender, Feint, Fiery Wrath, Fillet Away, Fleur Cannon, Focus Punch, Follow Me, Freeze Shock, Freezing Glare, Glacial Lance, Grav Apple, Helping Hand, Hold Hands, Hyper Drill, Hyperspace Fury, Hyperspace Hole, Ice Burn, Instruct, Jet Punch, Jungle Healing, King's Shield, Life Dew, Light of Ruin, Magical Torque, Make It Rain, Mat Block, Me First, Meteor Assault, Metronome, Mimic, Mind Blown, Mirror Coat, Mirror Move, Moongeist Beam, Nature Power, Nature's Madness, Noxious Torque, Obstruct, Order Up, Origin Pulse, Overdrive, Photon Geyser, Plasma Fists, Population Bomb, Pounce, Power Shift, Precipice Blades, Protect, Pyro Ball, Quash, Quick Guard, Rage Fist, Rage Powder, Raging Bull, Raging Fury, Relic Song, Revival Blessing, Ruination, Salt Cure, Secret Sword, Shed Tail, Shell Trap, Silk Trap, Sketch, Sleep Talk, Snap Trap, Snarl, Snatch, Snore, Snowscape, Spectral Thief, Spicy Extract, Spiky Shield, Spirit Break, Spotlight, Springtide Storm, Steam Eruption, Steel Beam, Strange Steam, Struggle, Sunsteel Strike, Surging Strikes, Switcheroo, Techno Blast, Thief, Thousand Arrows, Thousand Waves, Thunder Cage, Thunderous Kick, Tidy Up, Trailblaze, Transform, Trick, Twin Beam, V-create, Wicked Blow, Wicked Torque, or Wide Guard.",
       "shortDesc": "Picks a random move."
     },
     "milkdrink": {
@@ -15186,7 +15149,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Ghost",
-      "desc": "Power increases by 50 each time the user is hit, including the user hitting itself in confusion. This does not reset upon switching out or fainting.",
+      "desc": "Power increases by 50 each time the user is hit by a damaging attack. This does not reset upon switching out or fainting.",
       "shortDesc": "Power increases by 50 each time user is hit."
     },
     "ragepowder": {

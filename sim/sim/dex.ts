@@ -4,7 +4,7 @@ import {DataMove, DexMoves} from './dex-moves';
 import {Item, DexItems} from './dex-items';
 import {Ability, DexAbilities} from './dex-abilities';
 import {Species, DexSpecies, DexLearnsets} from './dex-species';
-import {Format, DexFormats} from './dex-formats';
+import {Format, DexFormats, RuleTable} from './dex-formats';
 import {
 	AbilityData,
 	AbilityText,
@@ -551,3 +551,4 @@ export namespace Dex {
 	export type SecondaryEffect = import('./dex-moves').SecondaryEffect;
 	export type RuleTable = import('./dex-formats').RuleTable;
 }
+export {RuleTable};

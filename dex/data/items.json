@@ -950,15 +950,168 @@
     }
   },
   "8": {
+    "adamantorb": {"inherit": true, "isNonstandard": null},
     "berryjuice": {"inherit": true, "isNonstandard": null},
+    "bugmemory": {"inherit": true, "isNonstandard": null},
+    "burndrive": {"inherit": true, "isNonstandard": null},
+    "chilldrive": {"inherit": true, "isNonstandard": null},
     "custapberry": {"inherit": true, "isNonstandard": null},
+    "darkmemory": {"inherit": true, "isNonstandard": null},
+    "deepseascale": {"inherit": true, "isNonstandard": null},
+    "deepseatooth": {"inherit": true, "isNonstandard": null},
+    "dousedrive": {"inherit": true, "isNonstandard": null},
+    "dragonmemory": {"inherit": true, "isNonstandard": null},
+    "dragonscale": {"inherit": true, "isNonstandard": null},
+    "dubiousdisc": {"inherit": true, "isNonstandard": null},
+    "electirizer": {"inherit": true, "isNonstandard": null},
+    "electricmemory": {"inherit": true, "isNonstandard": null},
     "enigmaberry": {"inherit": true, "isNonstandard": null},
+    "fairymemory": {"inherit": true, "isNonstandard": null},
+    "fightingmemory": {"inherit": true, "isNonstandard": null},
+    "firememory": {"inherit": true, "isNonstandard": null},
+    "flyingmemory": {"inherit": true, "isNonstandard": null},
+    "fossilizedbird": {"inherit": true, "isNonstandard": null},
+    "fossilizeddino": {"inherit": true, "isNonstandard": null},
+    "fossilizeddrake": {"inherit": true, "isNonstandard": null},
+    "fossilizedfish": {"inherit": true, "isNonstandard": null},
+    "fullincense": {"inherit": true, "isNonstandard": null},
+    "galaricacuff": {"inherit": true, "isNonstandard": null},
+    "galaricawreath": {"inherit": true, "isNonstandard": null},
+    "ghostmemory": {"inherit": true, "isNonstandard": null},
+    "grassmemory": {"inherit": true, "isNonstandard": null},
+    "griseousorb": {"inherit": true, "isNonstandard": null},
+    "groundmemory": {"inherit": true, "isNonstandard": null},
+    "icememory": {"inherit": true, "isNonstandard": null},
     "jabocaberry": {"inherit": true, "isNonstandard": null},
     "keeberry": {"inherit": true, "isNonstandard": null},
+    "laxincense": {"inherit": true, "isNonstandard": null},
+    "leek": {"inherit": true, "isNonstandard": null},
+    "lustrousorb": {"inherit": true, "isNonstandard": null},
     "marangaberry": {"inherit": true, "isNonstandard": null},
     "micleberry": {"inherit": true, "isNonstandard": null},
+    "oddincense": {"inherit": true, "isNonstandard": null},
     "pixieplate": {"inherit": true, "isNonstandard": null},
-    "rowapberry": {"inherit": true, "isNonstandard": null}
+    "poisonmemory": {"inherit": true, "isNonstandard": null},
+    "prismscale": {"inherit": true, "isNonstandard": null},
+    "protector": {"inherit": true, "isNonstandard": null},
+    "psychicmemory": {"inherit": true, "isNonstandard": null},
+    "reapercloth": {"inherit": true, "isNonstandard": null},
+    "rockincense": {"inherit": true, "isNonstandard": null},
+    "rockmemory": {"inherit": true, "isNonstandard": null},
+    "roseincense": {"inherit": true, "isNonstandard": null},
+    "rowapberry": {"inherit": true, "isNonstandard": null},
+    "rustedshield": {"inherit": true, "isNonstandard": null},
+    "rustedsword": {"inherit": true, "isNonstandard": null},
+    "sachet": {"inherit": true, "isNonstandard": null},
+    "seaincense": {"inherit": true, "isNonstandard": null},
+    "shockdrive": {"inherit": true, "isNonstandard": null},
+    "souldew": {"inherit": true, "isNonstandard": null},
+    "steelmemory": {"inherit": true, "isNonstandard": null},
+    "thickclub": {"inherit": true, "isNonstandard": null},
+    "tr00": {"inherit": true, "isNonstandard": null},
+    "tr01": {"inherit": true, "isNonstandard": null},
+    "tr02": {"inherit": true, "isNonstandard": null},
+    "tr03": {"inherit": true, "isNonstandard": null},
+    "tr04": {"inherit": true, "isNonstandard": null},
+    "tr05": {"inherit": true, "isNonstandard": null},
+    "tr06": {"inherit": true, "isNonstandard": null},
+    "tr07": {"inherit": true, "isNonstandard": null},
+    "tr08": {"inherit": true, "isNonstandard": null},
+    "tr09": {"inherit": true, "isNonstandard": null},
+    "tr10": {"inherit": true, "isNonstandard": null},
+    "tr11": {"inherit": true, "isNonstandard": null},
+    "tr12": {"inherit": true, "isNonstandard": null},
+    "tr13": {"inherit": true, "isNonstandard": null},
+    "tr14": {"inherit": true, "isNonstandard": null},
+    "tr15": {"inherit": true, "isNonstandard": null},
+    "tr16": {"inherit": true, "isNonstandard": null},
+    "tr17": {"inherit": true, "isNonstandard": null},
+    "tr18": {"inherit": true, "isNonstandard": null},
+    "tr19": {"inherit": true, "isNonstandard": null},
+    "tr20": {"inherit": true, "isNonstandard": null},
+    "tr21": {"inherit": true, "isNonstandard": null},
+    "tr22": {"inherit": true, "isNonstandard": null},
+    "tr23": {"inherit": true, "isNonstandard": null},
+    "tr24": {"inherit": true, "isNonstandard": null},
+    "tr25": {"inherit": true, "isNonstandard": null},
+    "tr26": {"inherit": true, "isNonstandard": null},
+    "tr27": {"inherit": true, "isNonstandard": null},
+    "tr28": {"inherit": true, "isNonstandard": null},
+    "tr29": {"inherit": true, "isNonstandard": null},
+    "tr30": {"inherit": true, "isNonstandard": null},
+    "tr31": {"inherit": true, "isNonstandard": null},
+    "tr32": {"inherit": true, "isNonstandard": null},
+    "tr33": {"inherit": true, "isNonstandard": null},
+    "tr34": {"inherit": true, "isNonstandard": null},
+    "tr35": {"inherit": true, "isNonstandard": null},
+    "tr36": {"inherit": true, "isNonstandard": null},
+    "tr37": {"inherit": true, "isNonstandard": null},
+    "tr38": {"inherit": true, "isNonstandard": null},
+    "tr39": {"inherit": true, "isNonstandard": null},
+    "tr40": {"inherit": true, "isNonstandard": null},
+    "tr41": {"inherit": true, "isNonstandard": null},
+    "tr42": {"inherit": true, "isNonstandard": null},
+    "tr43": {"inherit": true, "isNonstandard": null},
+    "tr44": {"inherit": true, "isNonstandard": null},
+    "tr45": {"inherit": true, "isNonstandard": null},
+    "tr46": {"inherit": true, "isNonstandard": null},
+    "tr47": {"inherit": true, "isNonstandard": null},
+    "tr48": {"inherit": true, "isNonstandard": null},
+    "tr49": {"inherit": true, "isNonstandard": null},
+    "tr50": {"inherit": true, "isNonstandard": null},
+    "tr51": {"inherit": true, "isNonstandard": null},
+    "tr52": {"inherit": true, "isNonstandard": null},
+    "tr53": {"inherit": true, "isNonstandard": null},
+    "tr54": {"inherit": true, "isNonstandard": null},
+    "tr55": {"inherit": true, "isNonstandard": null},
+    "tr56": {"inherit": true, "isNonstandard": null},
+    "tr57": {"inherit": true, "isNonstandard": null},
+    "tr58": {"inherit": true, "isNonstandard": null},
+    "tr59": {"inherit": true, "isNonstandard": null},
+    "tr60": {"inherit": true, "isNonstandard": null},
+    "tr61": {"inherit": true, "isNonstandard": null},
+    "tr62": {"inherit": true, "isNonstandard": null},
+    "tr63": {"inherit": true, "isNonstandard": null},
+    "tr64": {"inherit": true, "isNonstandard": null},
+    "tr65": {"inherit": true, "isNonstandard": null},
+    "tr66": {"inherit": true, "isNonstandard": null},
+    "tr67": {"inherit": true, "isNonstandard": null},
+    "tr68": {"inherit": true, "isNonstandard": null},
+    "tr69": {"inherit": true, "isNonstandard": null},
+    "tr70": {"inherit": true, "isNonstandard": null},
+    "tr71": {"inherit": true, "isNonstandard": null},
+    "tr72": {"inherit": true, "isNonstandard": null},
+    "tr73": {"inherit": true, "isNonstandard": null},
+    "tr74": {"inherit": true, "isNonstandard": null},
+    "tr75": {"inherit": true, "isNonstandard": null},
+    "tr76": {"inherit": true, "isNonstandard": null},
+    "tr77": {"inherit": true, "isNonstandard": null},
+    "tr78": {"inherit": true, "isNonstandard": null},
+    "tr79": {"inherit": true, "isNonstandard": null},
+    "tr80": {"inherit": true, "isNonstandard": null},
+    "tr81": {"inherit": true, "isNonstandard": null},
+    "tr82": {"inherit": true, "isNonstandard": null},
+    "tr83": {"inherit": true, "isNonstandard": null},
+    "tr84": {"inherit": true, "isNonstandard": null},
+    "tr85": {"inherit": true, "isNonstandard": null},
+    "tr86": {"inherit": true, "isNonstandard": null},
+    "tr87": {"inherit": true, "isNonstandard": null},
+    "tr88": {"inherit": true, "isNonstandard": null},
+    "tr89": {"inherit": true, "isNonstandard": null},
+    "tr90": {"inherit": true, "isNonstandard": null},
+    "tr91": {"inherit": true, "isNonstandard": null},
+    "tr92": {"inherit": true, "isNonstandard": null},
+    "tr93": {"inherit": true, "isNonstandard": null},
+    "tr94": {"inherit": true, "isNonstandard": null},
+    "tr95": {"inherit": true, "isNonstandard": null},
+    "tr96": {"inherit": true, "isNonstandard": null},
+    "tr97": {"inherit": true, "isNonstandard": null},
+    "tr98": {"inherit": true, "isNonstandard": null},
+    "tr99": {"inherit": true, "isNonstandard": null},
+    "upgrade": {"inherit": true, "isNonstandard": null},
+    "watermemory": {"inherit": true, "isNonstandard": null},
+    "waveincense": {"inherit": true, "isNonstandard": null},
+    "whippeddream": {"inherit": true, "isNonstandard": null}
   },
   "9": {
     "abilityshield": {
@@ -1003,6 +1156,7 @@
       "itemUser": ["Dialga"],
       "num": 135,
       "gen": 4,
+      "isNonstandard": "Unobtainable",
       "desc": "If held by a Dialga, its Steel- and Dragon-type attacks have 1.2x power."
     },
     "adrenalineorb": {
@@ -1313,6 +1467,7 @@
       "itemUser": ["Silvally-Bug"],
       "num": 909,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Bug type."
     },
     "buginiumz": {
@@ -1334,6 +1489,7 @@
       "itemUser": ["Genesect-Burn"],
       "num": 118,
       "gen": 5,
+      "isNonstandard": "Past",
       "desc": "Holder's Techno Blast is Fire type."
     },
     "cameruptite": {
@@ -1429,6 +1585,7 @@
       "itemUser": ["Genesect-Chill"],
       "num": 119,
       "gen": 5,
+      "isNonstandard": "Past",
       "desc": "Holder's Techno Blast is Ice type."
     },
     "chippedpot": {
@@ -1573,6 +1730,7 @@
       "itemUser": ["Silvally-Dark"],
       "num": 919,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Dark type."
     },
     "darkiniumz": {
@@ -1613,6 +1771,7 @@
       "itemUser": ["Clamperl"],
       "num": 227,
       "gen": 3,
+      "isNonstandard": "Past",
       "desc": "If held by a Clamperl, its Sp. Def is doubled. Evolves Clamperl into Gorebyss when traded.",
       "shortDesc": "If held by a Clamperl, its Sp. Def is doubled."
     },
@@ -1623,6 +1782,7 @@
       "itemUser": ["Clamperl"],
       "num": 226,
       "gen": 3,
+      "isNonstandard": "Past",
       "desc": "If held by a Clamperl, its Sp. Atk is doubled. Evolves Clamperl into Huntail when traded.",
       "shortDesc": "If held by a Clamperl, its Sp. Atk is doubled."
     },
@@ -1666,6 +1826,7 @@
       "itemUser": ["Genesect-Douse"],
       "num": 116,
       "gen": 5,
+      "isNonstandard": "Past",
       "desc": "Holder's Techno Blast is Water type."
     },
     "dracoplate": {
@@ -1701,6 +1862,7 @@
       "itemUser": ["Silvally-Dragon"],
       "num": 918,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Dragon type."
     },
     "dragonscale": {
@@ -1708,6 +1870,7 @@
       "fling": {"basePower": 30},
       "num": 235,
       "gen": 2,
+      "isNonstandard": "Past",
       "desc": "Evolves Seadra into Kingdra when traded."
     },
     "dragoniumz": {
@@ -1744,6 +1907,7 @@
       "fling": {"basePower": 50},
       "num": 324,
       "gen": 4,
+      "isNonstandard": "Past",
       "desc": "Evolves Porygon2 into Porygon-Z when traded."
     },
     "durinberry": {
@@ -1812,6 +1976,7 @@
       "fling": {"basePower": 80},
       "num": 322,
       "gen": 4,
+      "isNonstandard": "Past",
       "desc": "Evolves Electabuzz into Electivire when traded."
     },
     "electricgem": {
@@ -1829,6 +1994,7 @@
       "itemUser": ["Silvally-Electric"],
       "num": 915,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Electric type."
     },
     "electricseed": {
@@ -1910,6 +2076,7 @@
       "itemUser": ["Silvally-Fairy"],
       "num": 920,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Fairy type."
     },
     "fastball": {
@@ -1934,6 +2101,7 @@
       "itemUser": ["Silvally-Fighting"],
       "num": 904,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Fighting type."
     },
     "fightiniumz": {
@@ -1971,6 +2139,7 @@
       "itemUser": ["Silvally-Fire"],
       "num": 912,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Fire type."
     },
     "firestone": {
@@ -2051,6 +2220,7 @@
       "itemUser": ["Silvally-Flying"],
       "num": 905,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Flying type."
     },
     "flyiniumz": {
@@ -2086,6 +2256,7 @@
       "fling": {"basePower": 100},
       "num": 1105,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Can revive into Dracozolt with Fossilized Drake or Arctozolt with Fossilized Dino."
     },
     "fossilizeddino": {
@@ -2093,6 +2264,7 @@
       "fling": {"basePower": 100},
       "num": 1108,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Can revive into Arctovish with Fossilized Fish or Arctozolt with Fossilized Bird."
     },
     "fossilizeddrake": {
@@ -2100,6 +2272,7 @@
       "fling": {"basePower": 100},
       "num": 1107,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Can revive into Dracozolt with Fossilized Bird or Dracovish with Fossilized Fish."
     },
     "fossilizedfish": {
@@ -2107,6 +2280,7 @@
       "fling": {"basePower": 100},
       "num": 1106,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Can revive into Dracovish with Fossilized Drake or Arctovish with Fossilized Dino."
     },
     "friendball": {
@@ -2122,6 +2296,7 @@
       "onFractionalPriority": -0.1,
       "num": 316,
       "gen": 4,
+      "isNonstandard": "Unobtainable",
       "desc": "Holder moves last in its priority bracket."
     },
     "galaricacuff": {
@@ -2129,6 +2304,7 @@
       "fling": {"basePower": 30},
       "num": 1582,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Evolves Galarian Slowpoke into Galarian Slowbro when used."
     },
     "galaricawreath": {
@@ -2136,6 +2312,7 @@
       "fling": {"basePower": 30},
       "num": 1592,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Evolves Galarian Slowpoke into Galarian Slowking when used."
     },
     "galladite": {
@@ -2201,6 +2378,7 @@
       "itemUser": ["Silvally-Ghost"],
       "num": 910,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Ghost type."
     },
     "ghostiumz": {
@@ -2247,6 +2425,7 @@
       "itemUser": ["Silvally-Grass"],
       "num": 914,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Grass type."
     },
     "grassiumz": {
@@ -2300,6 +2479,7 @@
       "itemUser": ["Giratina-Origin"],
       "num": 112,
       "gen": 4,
+      "isNonstandard": "Unobtainable",
       "desc": "If held by a Giratina, its Ghost- and Dragon-type attacks have 1.2x power."
     },
     "groundgem": {
@@ -2317,6 +2497,7 @@
       "itemUser": ["Silvally-Ground"],
       "num": 907,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Ground type."
     },
     "groundiumz": {
@@ -2445,6 +2626,7 @@
       "itemUser": ["Silvally-Ice"],
       "num": 917,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Ice type."
     },
     "icestone": {
@@ -2645,6 +2827,7 @@
       "onModifyAccuracyPriority": -2,
       "num": 255,
       "gen": 3,
+      "isNonstandard": "Unobtainable",
       "desc": "The accuracy of attacks against the holder is 0.9x."
     },
     "leafstone": {
@@ -2661,6 +2844,7 @@
       "itemUser": ["Farfetch’d", "Farfetch’d-Galar", "Sirfetch’d"],
       "num": 259,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "If held by a Farfetch’d or Sirfetch’d, its critical hit ratio is raised by 2 stages."
     },
     "leftovers": {
@@ -2827,6 +3011,7 @@
       "itemUser": ["Palkia"],
       "num": 136,
       "gen": 4,
+      "isNonstandard": "Unobtainable",
       "desc": "If held by a Palkia, its Water- and Dragon-type attacks have 1.2x power."
     },
     "luxuryball": {
@@ -3200,6 +3385,7 @@
       "onBasePowerPriority": 15,
       "num": 314,
       "gen": 4,
+      "isNonstandard": "Unobtainable",
       "desc": "Holder's Psychic-type attacks have 1.2x power."
     },
     "oldamber": {
@@ -3383,6 +3569,7 @@
       "itemUser": ["Silvally-Poison"],
       "num": 906,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Poison type."
     },
     "poisoniumz": {
@@ -3491,6 +3678,7 @@
       "fling": {"basePower": 30},
       "num": 537,
       "gen": 5,
+      "isNonstandard": "Past",
       "desc": "Evolves Feebas into Milotic when traded."
     },
     "protectivepads": {
@@ -3505,6 +3693,7 @@
       "fling": {"basePower": 80},
       "num": 321,
       "gen": 4,
+      "isNonstandard": "Past",
       "desc": "Evolves Rhydon into Rhyperior when traded."
     },
     "psychicgem": {
@@ -3522,6 +3711,7 @@
       "itemUser": ["Silvally-Psychic"],
       "num": 916,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Psychic type."
     },
     "psychicseed": {
@@ -3641,6 +3831,7 @@
       "fling": {"basePower": 10},
       "num": 325,
       "gen": 4,
+      "isNonstandard": "Past",
       "desc": "Evolves Dusclops into Dusknoir when traded."
     },
     "redcard": {
@@ -3702,6 +3893,7 @@
       "onBasePowerPriority": 15,
       "num": 315,
       "gen": 4,
+      "isNonstandard": "Unobtainable",
       "desc": "Holder's Rock-type attacks have 1.2x power."
     },
     "rockmemory": {
@@ -3711,6 +3903,7 @@
       "itemUser": ["Silvally-Rock"],
       "num": 908,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Rock type."
     },
     "rockiumz": {
@@ -3755,6 +3948,7 @@
       "onBasePowerPriority": 15,
       "num": 318,
       "gen": 4,
+      "isNonstandard": "Unobtainable",
       "desc": "Holder's Grass-type attacks have 1.2x power."
     },
     "roseliberry": {
@@ -3779,6 +3973,7 @@
       "itemUser": ["Zamazenta-Crowned"],
       "num": 1104,
       "gen": 8,
+      "isNonstandard": "Unobtainable",
       "desc": "If held by a Zamazenta, this item changes its forme to Crowned Shield."
     },
     "rustedsword": {
@@ -3786,6 +3981,7 @@
       "itemUser": ["Zacian-Crowned"],
       "num": 1103,
       "gen": 8,
+      "isNonstandard": "Unobtainable",
       "desc": "If held by a Zacian, this item changes its forme to Crowned Sword."
     },
     "sablenite": {
@@ -3803,6 +3999,7 @@
       "fling": {"basePower": 80},
       "num": 647,
       "gen": 6,
+      "isNonstandard": "Past",
       "desc": "Evolves Spritzee into Aromatisse when traded."
     },
     "safariball": {
@@ -3878,6 +4075,7 @@
       "onBasePowerPriority": 15,
       "num": 254,
       "gen": 3,
+      "isNonstandard": "Unobtainable",
       "desc": "Holder's Water-type attacks have 1.2x power."
     },
     "sharpbeak": {
@@ -3929,6 +4127,7 @@
       "itemUser": ["Genesect-Shock"],
       "num": 117,
       "gen": 5,
+      "isNonstandard": "Past",
       "desc": "Holder's Techno Blast is Electric type."
     },
     "shucaberry": {
@@ -4043,6 +4242,7 @@
       "itemUser": ["Latios", "Latias"],
       "num": 225,
       "gen": 3,
+      "isNonstandard": "Past",
       "desc": "If held by a Latias/Latios, its Dragon- and Psychic-type moves have 1.2x power."
     },
     "spelltag": {
@@ -4130,6 +4330,7 @@
       "itemUser": ["Silvally-Steel"],
       "num": 911,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Steel type."
     },
     "steeliumz": {
@@ -4253,6 +4454,7 @@
       "itemUser": ["Marowak", "Marowak-Alola", "Marowak-Alola-Totem", "Cubone"],
       "num": 258,
       "gen": 2,
+      "isNonstandard": "Past",
       "desc": "If held by a Cubone or a Marowak, its Attack is doubled."
     },
     "throatspray": {
@@ -4302,6 +4504,7 @@
       "fling": {"basePower": 10},
       "num": 1130,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Swords Dance. One use."
     },
     "tr01": {
@@ -4309,6 +4512,7 @@
       "fling": {"basePower": 85},
       "num": 1131,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Body Slam. One use."
     },
     "tr02": {
@@ -4316,6 +4520,7 @@
       "fling": {"basePower": 90},
       "num": 1132,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Flamethrower. One use."
     },
     "tr03": {
@@ -4323,6 +4528,7 @@
       "fling": {"basePower": 110},
       "num": 1133,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Hydro Pump. One use."
     },
     "tr04": {
@@ -4330,6 +4536,7 @@
       "fling": {"basePower": 90},
       "num": 1134,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Surf. One use."
     },
     "tr05": {
@@ -4337,6 +4544,7 @@
       "fling": {"basePower": 90},
       "num": 1135,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Ice Beam. One use."
     },
     "tr06": {
@@ -4344,6 +4552,7 @@
       "fling": {"basePower": 110},
       "num": 1136,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Blizzard. One use."
     },
     "tr07": {
@@ -4351,6 +4560,7 @@
       "fling": {"basePower": 10},
       "num": 1137,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Low Kick. One use."
     },
     "tr08": {
@@ -4358,6 +4568,7 @@
       "fling": {"basePower": 90},
       "num": 1138,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Thunderbolt. One use."
     },
     "tr09": {
@@ -4365,6 +4576,7 @@
       "fling": {"basePower": 110},
       "num": 1139,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Thunder. One use."
     },
     "tr10": {
@@ -4372,6 +4584,7 @@
       "fling": {"basePower": 100},
       "num": 1140,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Earthquake. One use."
     },
     "tr11": {
@@ -4379,6 +4592,7 @@
       "fling": {"basePower": 90},
       "num": 1141,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Psychic. One use."
     },
     "tr12": {
@@ -4386,6 +4600,7 @@
       "fling": {"basePower": 10},
       "num": 1142,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Agility. One use."
     },
     "tr13": {
@@ -4393,6 +4608,7 @@
       "fling": {"basePower": 10},
       "num": 1143,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Focus Energy. One use."
     },
     "tr14": {
@@ -4400,6 +4616,7 @@
       "fling": {"basePower": 10},
       "num": 1144,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Metronome. One use."
     },
     "tr15": {
@@ -4407,6 +4624,7 @@
       "fling": {"basePower": 110},
       "num": 1145,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Fire Blast. One use."
     },
     "tr16": {
@@ -4414,6 +4632,7 @@
       "fling": {"basePower": 80},
       "num": 1146,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Waterfall. One use."
     },
     "tr17": {
@@ -4421,6 +4640,7 @@
       "fling": {"basePower": 10},
       "num": 1147,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Amnesia. One use."
     },
     "tr18": {
@@ -4428,6 +4648,7 @@
       "fling": {"basePower": 80},
       "num": 1148,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Leech Life. One use."
     },
     "tr19": {
@@ -4435,6 +4656,7 @@
       "fling": {"basePower": 80},
       "num": 1149,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Tri Attack. One use."
     },
     "tr20": {
@@ -4442,6 +4664,7 @@
       "fling": {"basePower": 10},
       "num": 1150,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Substitute. One use."
     },
     "tr21": {
@@ -4449,6 +4672,7 @@
       "fling": {"basePower": 10},
       "num": 1151,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Reversal. One use."
     },
     "tr22": {
@@ -4456,6 +4680,7 @@
       "fling": {"basePower": 90},
       "num": 1152,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Sludge Bomb. One use."
     },
     "tr23": {
@@ -4463,6 +4688,7 @@
       "fling": {"basePower": 10},
       "num": 1153,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Spikes. One use."
     },
     "tr24": {
@@ -4470,6 +4696,7 @@
       "fling": {"basePower": 120},
       "num": 1154,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Outrage. One use."
     },
     "tr25": {
@@ -4477,6 +4704,7 @@
       "fling": {"basePower": 80},
       "num": 1155,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Psyshock. One use."
     },
     "tr26": {
@@ -4484,6 +4712,7 @@
       "fling": {"basePower": 10},
       "num": 1156,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Endure. One use."
     },
     "tr27": {
@@ -4491,6 +4720,7 @@
       "fling": {"basePower": 10},
       "num": 1157,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Sleep Talk. One use."
     },
     "tr28": {
@@ -4498,6 +4728,7 @@
       "fling": {"basePower": 120},
       "num": 1158,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Megahorn. One use."
     },
     "tr29": {
@@ -4505,6 +4736,7 @@
       "fling": {"basePower": 10},
       "num": 1159,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Baton Pass. One use."
     },
     "tr30": {
@@ -4512,6 +4744,7 @@
       "fling": {"basePower": 10},
       "num": 1160,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Encore. One use."
     },
     "tr31": {
@@ -4519,6 +4752,7 @@
       "fling": {"basePower": 100},
       "num": 1161,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Iron Tail. One use."
     },
     "tr32": {
@@ -4526,6 +4760,7 @@
       "fling": {"basePower": 80},
       "num": 1162,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Crunch. One use."
     },
     "tr33": {
@@ -4533,6 +4768,7 @@
       "fling": {"basePower": 80},
       "num": 1163,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Shadow Ball. One use."
     },
     "tr34": {
@@ -4540,6 +4776,7 @@
       "fling": {"basePower": 120},
       "num": 1164,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Future Sight. One use."
     },
     "tr35": {
@@ -4547,6 +4784,7 @@
       "fling": {"basePower": 90},
       "num": 1165,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Uproar. One use."
     },
     "tr36": {
@@ -4554,6 +4792,7 @@
       "fling": {"basePower": 95},
       "num": 1166,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Heat Wave. One use."
     },
     "tr37": {
@@ -4561,6 +4800,7 @@
       "fling": {"basePower": 10},
       "num": 1167,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Taunt. One use."
     },
     "tr38": {
@@ -4568,6 +4808,7 @@
       "fling": {"basePower": 10},
       "num": 1168,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Trick. One use."
     },
     "tr39": {
@@ -4575,6 +4816,7 @@
       "fling": {"basePower": 120},
       "num": 1169,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Superpower. One use."
     },
     "tr40": {
@@ -4582,6 +4824,7 @@
       "fling": {"basePower": 10},
       "num": 1170,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Skill Swap. One use."
     },
     "tr41": {
@@ -4589,6 +4832,7 @@
       "fling": {"basePower": 85},
       "num": 1171,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Blaze Kick. One use."
     },
     "tr42": {
@@ -4596,6 +4840,7 @@
       "fling": {"basePower": 90},
       "num": 1172,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Hyper Voice. One use."
     },
     "tr43": {
@@ -4603,6 +4848,7 @@
       "fling": {"basePower": 130},
       "num": 1173,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Overheat. One use."
     },
     "tr44": {
@@ -4610,6 +4856,7 @@
       "fling": {"basePower": 10},
       "num": 1174,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Cosmic Power. One use."
     },
     "tr45": {
@@ -4617,6 +4864,7 @@
       "fling": {"basePower": 90},
       "num": 1175,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Muddy Water. One use."
     },
     "tr46": {
@@ -4624,6 +4872,7 @@
       "fling": {"basePower": 10},
       "num": 1176,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Iron Defense. One use."
     },
     "tr47": {
@@ -4631,6 +4880,7 @@
       "fling": {"basePower": 80},
       "num": 1177,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Dragon Claw. One use."
     },
     "tr48": {
@@ -4638,6 +4888,7 @@
       "fling": {"basePower": 10},
       "num": 1178,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Bulk Up. One use."
     },
     "tr49": {
@@ -4645,6 +4896,7 @@
       "fling": {"basePower": 10},
       "num": 1179,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Calm Mind. One use."
     },
     "tr50": {
@@ -4652,6 +4904,7 @@
       "fling": {"basePower": 90},
       "num": 1180,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Leaf Blade. One use."
     },
     "tr51": {
@@ -4659,6 +4912,7 @@
       "fling": {"basePower": 10},
       "num": 1181,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Dragon Dance. One use."
     },
     "tr52": {
@@ -4666,6 +4920,7 @@
       "fling": {"basePower": 10},
       "num": 1182,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Gyro Ball. One use."
     },
     "tr53": {
@@ -4673,6 +4928,7 @@
       "fling": {"basePower": 120},
       "num": 1183,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Close Combat. One use."
     },
     "tr54": {
@@ -4680,6 +4936,7 @@
       "fling": {"basePower": 10},
       "num": 1184,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Toxic Spikes. One use."
     },
     "tr55": {
@@ -4687,6 +4944,7 @@
       "fling": {"basePower": 120},
       "num": 1185,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Flare Blitz. One use."
     },
     "tr56": {
@@ -4694,6 +4952,7 @@
       "fling": {"basePower": 80},
       "num": 1186,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Aura Sphere. One use."
     },
     "tr57": {
@@ -4701,6 +4960,7 @@
       "fling": {"basePower": 80},
       "num": 1187,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Poison Jab. One use."
     },
     "tr58": {
@@ -4708,6 +4968,7 @@
       "fling": {"basePower": 80},
       "num": 1188,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Dark Pulse. One use."
     },
     "tr59": {
@@ -4715,6 +4976,7 @@
       "fling": {"basePower": 80},
       "num": 1189,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Seed Bomb. One use."
     },
     "tr60": {
@@ -4722,6 +4984,7 @@
       "fling": {"basePower": 80},
       "num": 1190,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move X-Scissor. One use."
     },
     "tr61": {
@@ -4729,6 +4992,7 @@
       "fling": {"basePower": 90},
       "num": 1191,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Bug Buzz. One use."
     },
     "tr62": {
@@ -4736,6 +5000,7 @@
       "fling": {"basePower": 85},
       "num": 1192,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Dragon Pulse. One use."
     },
     "tr63": {
@@ -4743,6 +5008,7 @@
       "fling": {"basePower": 80},
       "num": 1193,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Power Gem. One use."
     },
     "tr64": {
@@ -4750,6 +5016,7 @@
       "fling": {"basePower": 120},
       "num": 1194,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Focus Blast. One use."
     },
     "tr65": {
@@ -4757,6 +5024,7 @@
       "fling": {"basePower": 90},
       "num": 1195,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Energy Ball. One use."
     },
     "tr66": {
@@ -4764,6 +5032,7 @@
       "fling": {"basePower": 120},
       "num": 1196,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Brave Bird. One use."
     },
     "tr67": {
@@ -4771,6 +5040,7 @@
       "fling": {"basePower": 90},
       "num": 1197,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Earth Power. One use."
     },
     "tr68": {
@@ -4778,6 +5048,7 @@
       "fling": {"basePower": 10},
       "num": 1198,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Nasty Plot. One use."
     },
     "tr69": {
@@ -4785,6 +5056,7 @@
       "fling": {"basePower": 80},
       "num": 1199,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Zen Headbutt. One use."
     },
     "tr70": {
@@ -4792,6 +5064,7 @@
       "fling": {"basePower": 80},
       "num": 1200,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Flash Cannon. One use."
     },
     "tr71": {
@@ -4799,6 +5072,7 @@
       "fling": {"basePower": 130},
       "num": 1201,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Leaf Storm. One use."
     },
     "tr72": {
@@ -4806,6 +5080,7 @@
       "fling": {"basePower": 120},
       "num": 1202,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Power Whip. One use."
     },
     "tr73": {
@@ -4813,6 +5088,7 @@
       "fling": {"basePower": 120},
       "num": 1203,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Gunk Shot. One use."
     },
     "tr74": {
@@ -4820,6 +5096,7 @@
       "fling": {"basePower": 80},
       "num": 1204,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Iron Head. One use."
     },
     "tr75": {
@@ -4827,6 +5104,7 @@
       "fling": {"basePower": 100},
       "num": 1205,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Stone Edge. One use."
     },
     "tr76": {
@@ -4834,6 +5112,7 @@
       "fling": {"basePower": 10},
       "num": 1206,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Stealth Rock. One use."
     },
     "tr77": {
@@ -4841,6 +5120,7 @@
       "fling": {"basePower": 10},
       "num": 1207,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Grass Knot. One use."
     },
     "tr78": {
@@ -4848,6 +5128,7 @@
       "fling": {"basePower": 95},
       "num": 1208,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Sludge Wave. One use."
     },
     "tr79": {
@@ -4855,6 +5136,7 @@
       "fling": {"basePower": 10},
       "num": 1209,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Heavy Slam. One use."
     },
     "tr80": {
@@ -4862,6 +5144,7 @@
       "fling": {"basePower": 10},
       "num": 1210,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Electro Ball. One use."
     },
     "tr81": {
@@ -4869,6 +5152,7 @@
       "fling": {"basePower": 95},
       "num": 1211,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Foul Play. One use."
     },
     "tr82": {
@@ -4876,6 +5160,7 @@
       "fling": {"basePower": 20},
       "num": 1212,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Stored Power. One use."
     },
     "tr83": {
@@ -4883,6 +5168,7 @@
       "fling": {"basePower": 10},
       "num": 1213,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Ally Switch. One use."
     },
     "tr84": {
@@ -4890,6 +5176,7 @@
       "fling": {"basePower": 80},
       "num": 1214,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Scald. One use."
     },
     "tr85": {
@@ -4897,6 +5184,7 @@
       "fling": {"basePower": 10},
       "num": 1215,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Work Up. One use."
     },
     "tr86": {
@@ -4904,6 +5192,7 @@
       "fling": {"basePower": 90},
       "num": 1216,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Wild Charge. One use."
     },
     "tr87": {
@@ -4911,6 +5200,7 @@
       "fling": {"basePower": 80},
       "num": 1217,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Drill Run. One use."
     },
     "tr88": {
@@ -4918,6 +5208,7 @@
       "fling": {"basePower": 10},
       "num": 1218,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Heat Crash. One use."
     },
     "tr89": {
@@ -4925,6 +5216,7 @@
       "fling": {"basePower": 110},
       "num": 1219,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Hurricane. One use."
     },
     "tr90": {
@@ -4932,6 +5224,7 @@
       "fling": {"basePower": 90},
       "num": 1220,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Play Rough. One use."
     },
     "tr91": {
@@ -4939,6 +5232,7 @@
       "fling": {"basePower": 10},
       "num": 1221,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Venom Drench. One use."
     },
     "tr92": {
@@ -4946,6 +5240,7 @@
       "fling": {"basePower": 80},
       "num": 1222,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Dazzling Gleam. One use."
     },
     "tr93": {
@@ -4953,6 +5248,7 @@
       "fling": {"basePower": 85},
       "num": 1223,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Darkest Lariat. One use."
     },
     "tr94": {
@@ -4960,6 +5256,7 @@
       "fling": {"basePower": 95},
       "num": 1224,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move High Horsepower. One use."
     },
     "tr95": {
@@ -4967,6 +5264,7 @@
       "fling": {"basePower": 80},
       "num": 1225,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Throat Chop. One use."
     },
     "tr96": {
@@ -4974,6 +5272,7 @@
       "fling": {"basePower": 90},
       "num": 1226,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Pollen Puff. One use."
     },
     "tr97": {
@@ -4981,6 +5280,7 @@
       "fling": {"basePower": 85},
       "num": 1227,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Psychic Fangs. One use."
     },
     "tr98": {
@@ -4988,6 +5288,7 @@
       "fling": {"basePower": 85},
       "num": 1228,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Liquidation. One use."
     },
     "tr99": {
@@ -4995,6 +5296,7 @@
       "fling": {"basePower": 80},
       "num": 1229,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Teaches certain Pokemon the move Body Press. One use."
     },
     "twistedspoon": {
@@ -5038,12 +5340,12 @@
       "fling": {"basePower": 30},
       "num": 252,
       "gen": 2,
+      "isNonstandard": "Past",
       "desc": "Evolves Porygon into Porygon2 when traded."
     },
     "utilityumbrella": {
       "name": "Utility Umbrella",
       "fling": {"basePower": 60},
-      "condition": {},
       "num": 1123,
       "gen": 8,
       "desc": "The holder ignores rain- and sun-based effects. Damage and accuracy calculations from attacks used by the holder are affected by rain and sun, but not attacks used against the holder.",
@@ -5082,6 +5384,7 @@
       "itemUser": ["Silvally-Water"],
       "num": 913,
       "gen": 7,
+      "isNonstandard": "Past",
       "desc": "Holder's Multi-Attack is Water type."
     },
     "waterstone": {
@@ -5120,6 +5423,7 @@
       "onBasePowerPriority": 15,
       "num": 317,
       "gen": 4,
+      "isNonstandard": "Unobtainable",
       "desc": "Holder's Water-type attacks have 1.2x power."
     },
     "weaknesspolicy": {
@@ -5145,6 +5449,7 @@
       "fling": {"basePower": 80},
       "num": 646,
       "gen": 6,
+      "isNonstandard": "Past",
       "desc": "Evolves Swirlix into Slurpuff when traded."
     },
     "whiteherb": {

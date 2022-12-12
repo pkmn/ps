@@ -223,11 +223,11 @@ const MOD_IMPORTS = {
 };
 const RANDOMS_IMPORTS = {
   'data/random-teams.ts': [
-    [['Utils'], './utils'],
+  [['Utils'], './utils'],
     [[
       'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatID',
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ModdedDex', 'Move', 'BasicEffect',
-      'Dex', 'Tags', 'Item', 'Ability', 'Nature',
+      'RuleTable', 'Tags', 'Item', 'Ability', 'Nature',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen8/random-teams.ts': [
