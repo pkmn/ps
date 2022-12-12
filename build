@@ -118,7 +118,8 @@ const tree = root => {
     format: ['cjs', 'esm'],
     sourcemap: true,
     splitting: true,
-    dts: true
+    dts: true,
+    clean: true,
   });
 
   // Use esbuild directly for minified IIFE build to be able to rewrite
