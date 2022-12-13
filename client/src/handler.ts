@@ -241,7 +241,7 @@ export class Handler implements Protocol.Handler {
           itemPoke.item = fromEffect.id;
         }
       }
-    } else {
+    } else if (this.battle.gen.moves.get(this.battle.lastMove)?.category !== 'Status') {
       poke.timesAttacked += 1;
     }
   }

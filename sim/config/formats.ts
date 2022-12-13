@@ -39,12 +39,14 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ 'Same Type Clause', 'Terastal Clause', 'Standard' ],
     banlist: [
-      'Houndstone',     'Koraidon',
-      'Miraidon',       'Palafin',
-      'Moody',          'Shadow Tag',
-      'Booster Energy', 'Damp Rock',
-      'Focus Band',     "King's Rock",
-      'Quick Claw',     'Baton Pass'
+      'Annihilape',  'Chi-Yu',
+      'Houndstone',  'Iron Bundle',
+      'Koraidon',    'Miraidon',
+      'Palafin',     'Moody',
+      'Shadow Tag',  'Booster Energy',
+      'Damp Rock',   'Focus Band',
+      "King's Rock", 'Quick Claw',
+      'Baton Pass'
     ]
   },
   {
@@ -152,6 +154,12 @@ export const Formats: FormatList = [
     gameType: 'doubles',
     ruleset: [ 'Standard Doubles' ],
     banlist: [ 'DUber', 'Shadow Tag' ]
+  },
+  {
+    name: '[Gen 9] Doubles Ubers',
+    mod: 'gen9',
+    gameType: 'doubles',
+    ruleset: [ 'Standard Doubles', '!Gravity Sleep Clause' ]
   },
   {
     name: '[Gen 9] Doubles UU',

@@ -1051,7 +1051,12 @@
       "shortDesc": "If this Pokemon is hit, it lowers the Speed of all other Pokemon on the field 1 stage."
     },
     "cudchew": {
-      "condition": {"noCopy": true, "duration": 2},
+      "condition": {
+        "noCopy": true,
+        "duration": 2,
+        "onResidualOrder": 28,
+        "onResidualSubOrder": 2
+      },
       "name": "Cud Chew",
       "num": 291,
       "desc": "When this Pokemon consumes a berry, it will consume the berry again at the end of the following turn.",

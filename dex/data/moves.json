@@ -2076,6 +2076,7 @@
       "inherit": true,
       "desc": "Power doubles if the user moves after the target this turn. Switching in counts as an action."
     },
+    "payday": {"inherit": true},
     "perishsong": {
       "inherit": true,
       "condition": {"duration": 4, "onResidualOrder": 12}

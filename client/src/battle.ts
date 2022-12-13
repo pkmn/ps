@@ -538,17 +538,15 @@ export class Battle {
   abilityActive(abilities: ID[], excludePokemon?: Pokemon | null) {
     if (this.ngasActive()) {
       abilities = abilities.filter(a => this.gen.abilities.get(a)?.isPermanent);
-      if (!abilities.length) return 0;
+      if (!abilities.length) return false;
     }
-    let count = 0;
     for (const active of this.getAllActive()) {
       if (active === excludePokemon) return 1;
       if (abilities.includes(active.ability) && !active.volatiles['gastroacid']) {
-        if (!excludePokemon) return 1;
-        count++;
+        if (!excludePokemon) return true;
       }
     }
-    return count;
+    return false;
   }
 
   reset() {
