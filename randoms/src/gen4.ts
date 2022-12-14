@@ -1,4 +1,4 @@
-import {MoveCounter} from './gen9';
+import {MoveCounter} from './gen8';
 import {RandomGen5Teams} from './gen5';
 import {Utils} from './utils';
 import {

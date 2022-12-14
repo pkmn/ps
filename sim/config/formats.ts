@@ -1,5 +1,18 @@
 export const Formats: FormatList = [
   {
+    name: '[Gen 9] Random Battle',
+    mod: 'gen9',
+    team: 'random',
+    ruleset: [
+      'PotD',
+      'Obtainable',
+      'Species Clause',
+      'HP Percentage Mod',
+      'Cancel Mod',
+      'Sleep Clause Mod'
+    ]
+  },
+  {
     name: '[Gen 9] OU',
     mod: 'gen9',
     ruleset: [ 'Standard' ],

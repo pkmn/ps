@@ -1,5 +1,4 @@
-import {RandomGen8Teams} from './gen8';
-import {MoveCounter, TeamData} from './gen9';
+import {MoveCounter, RandomGen8Teams, TeamData} from './gen8';
 import {Utils} from './utils';
 import {
 	AnyObject,

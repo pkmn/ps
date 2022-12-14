@@ -1,5 +1,5 @@
 import {BattleFactorySpecies, RandomGen7Teams} from './gen7';
-import {MoveCounter, TeamData} from './gen9';
+import {MoveCounter, TeamData} from './gen8';
 import {Utils} from './utils';
 import {
 	AnyObject,

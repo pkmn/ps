@@ -38,6 +38,7 @@ describe('TeamGenerators', () => {
 		'gen7randomdoublesbattle',
 		'gen8randomdoublesbattle',
 		'gen8monotyperandombattle',
+		'gen9randombattle',
 	]) {
 		// eslint-disable-next-line jest/expect-expect,jest/valid-title
 		it(format, () => {
