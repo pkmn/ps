@@ -52,6 +52,7 @@ export class Handler implements Protocol.Handler {
     switch (args[1]) {
     case 'multi':
     case 'freeforall':
+      this.battle.pokemonControlled = 1;
       // @ts-ignore readonly
       if (!this.battle.p3) this.battle.p3 = this.battle.createSide(3);
       // @ts-ignore readonly
@@ -82,6 +83,9 @@ export class Handler implements Protocol.Handler {
     default:
       for (const side of this.battle.sides) side.active = [null];
       break;
+    }
+    if (!this.battle.pokemonControlled) {
+      this.battle.pokemonControlled = this.battle.p1.active.length;
     }
   }
 

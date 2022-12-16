@@ -242,7 +242,7 @@ export const Sets = new class {
     if (s.gigantamax) {
       buf += 'Gigantamax: Yes  \n';
     }
-    if (s.teraType) {
+    if (s.teraType || (data && data.gen === 9)) {
       buf += 'Tera Type: ' + s.teraType + '  \n';
     }
     let first = true;

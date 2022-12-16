@@ -1,1 +1,1 @@
-export const Legality: {[k: string]: ModdedLearnsetData} = { tomohawk: { inherit: true }, aurumoth: { inherit: true } };
+export const Legality: {[k: string]: ModdedLearnsetData} = { tomohawk: { inherit: true } };

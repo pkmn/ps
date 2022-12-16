@@ -2632,10 +2632,6 @@
         "spe": 81
       }
     },
-    "aurumoth": {
-      "inherit": true,
-      "abilities": {"0": "Weak Armor", "1": "No Guard", "H": "Illusion"}
-    },
     "malaconda": {
       "inherit": true,
       "abilities": {"0": "Harvest", "1": "Infiltrator"}
@@ -29289,6 +29285,24 @@
       "changesFrom": "Venomicon",
       "gen": 8
     },
+    "saharascal": {
+      "num": -67,
+      "name": "Saharascal",
+      "types": ["Ground"],
+      "baseStats": {
+        "hp": 50,
+        "atk": 80,
+        "def": 65,
+        "spa": 45,
+        "spd": 90,
+        "spe": 70
+      },
+      "abilities": {"0": "Water Absorb", "1": "Pickpocket", "H": "Sand Spit"},
+      "weightkg": 48,
+      "evos": ["Saharaja"],
+      "eggGroups": ["Field"],
+      "gen": 8
+    },
     "saharaja": {
       "num": -68,
       "name": "Saharaja",
@@ -29301,9 +29315,12 @@
         "spd": 123,
         "spe": 78
       },
-      "abilities": {"0": "Water Absorb", "1": "Serene Grace"},
+      "abilities": {"0": "Water Absorb", "1": "Serene Grace", "H": "Sand Spit"},
       "weightkg": 303.9,
-      "eggGroups": ["Undiscovered"],
+      "prevo": "Saharascal",
+      "evoType": "useItem",
+      "evoItem": "Shiny Stone",
+      "eggGroups": ["Field"],
       "gen": 8
     },
     "pokestarsmeargle": {

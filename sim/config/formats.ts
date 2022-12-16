@@ -13,6 +13,24 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 9] Unrated Random Battle',
+    mod: 'gen9',
+    team: 'random',
+    ruleset: [
+      'Obtainable',
+      'Species Clause',
+      'HP Percentage Mod',
+      'Cancel Mod',
+      'Sleep Clause Mod'
+    ]
+  },
+  {
+    name: '[Gen 9] Random Battle (Blitz)',
+    mod: 'gen9',
+    team: 'random',
+    ruleset: [ '[Gen 9] Random Battle', 'Blitz' ]
+  },
+  {
     name: '[Gen 9] OU',
     mod: 'gen9',
     ruleset: [ 'Standard' ],
@@ -96,6 +114,12 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 9] CAP',
+    mod: 'gen9',
+    ruleset: [ '[Gen 9] OU', '+CAP' ],
+    banlist: [ 'Crucibellite' ]
+  },
+  {
     name: '[Gen 9] Battle Stadium Singles Series 1',
     mod: 'gen9',
     ruleset: [
@@ -106,46 +130,6 @@ export const Formats: FormatList = [
       'VGC Timer'
     ],
     banlist: [ 'Sub-Legendary' ]
-  },
-  {
-    name: '[Gen 9] Hackmons Cup',
-    mod: 'gen9',
-    team: 'randomHC',
-    ruleset: [ 'HP Percentage Mod', 'Cancel Mod' ],
-    banlist: [ 'Nonexistent' ]
-  },
-  {
-    name: '[Gen 9] Doubles Hackmons Cup',
-    mod: 'gen9',
-    team: 'randomHC',
-    gameType: 'doubles',
-    ruleset: [ '[Gen 9] Hackmons Cup' ]
-  },
-  {
-    name: '[Gen 9] Challenge Cup 1v1',
-    mod: 'gen9',
-    team: 'randomCC',
-    ruleset: [
-      'Obtainable',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Team Preview',
-      'Dynamax Clause',
-      'Picked Team Size = 1'
-    ]
-  },
-  {
-    name: '[Gen 9] Challenge Cup 2v2',
-    mod: 'gen9',
-    team: 'randomCC',
-    gameType: 'doubles',
-    ruleset: [ '[Gen 9] Challenge Cup 1v1', '!! Picked Team Size = 2' ]
-  },
-  {
-    name: '[Gen 9] Challenge Cup 6v6',
-    mod: 'gen9',
-    team: 'randomCC',
-    ruleset: [ '[Gen 9] Challenge Cup 1v1', '!Picked Team Size' ]
   },
   {
     name: '[Gen 9] Custom Game',
@@ -503,6 +487,70 @@ export const Formats: FormatList = [
     ruleset: [ '[Gen 1] Random Battle', 'Blitz' ]
   },
   {
+    name: '[Gen 9] Monotype Random Battle',
+    mod: 'gen9',
+    team: 'random',
+    ruleset: [
+      'Obtainable',
+      'Same Type Clause',
+      'HP Percentage Mod',
+      'Cancel Mod',
+      'Sleep Clause Mod'
+    ]
+  },
+  {
+    name: '[Gen 9] Computer-Generated Teams',
+    mod: 'gen9',
+    team: 'computerGenerated',
+    ruleset: [
+      'Obtainable',
+      'Species Clause',
+      'HP Percentage Mod',
+      'Cancel Mod',
+      'Sleep Clause Mod'
+    ]
+  },
+  {
+    name: '[Gen 9] Hackmons Cup',
+    mod: 'gen9',
+    team: 'randomHC',
+    ruleset: [ 'HP Percentage Mod', 'Cancel Mod' ],
+    banlist: [ 'Nonexistent' ]
+  },
+  {
+    name: '[Gen 9] Doubles Hackmons Cup',
+    mod: 'gen9',
+    team: 'randomHC',
+    gameType: 'doubles',
+    ruleset: [ '[Gen 9] Hackmons Cup' ]
+  },
+  {
+    name: '[Gen 9] Challenge Cup 1v1',
+    mod: 'gen9',
+    team: 'randomCC',
+    ruleset: [
+      'Obtainable',
+      'HP Percentage Mod',
+      'Cancel Mod',
+      'Team Preview',
+      'Dynamax Clause',
+      'Picked Team Size = 1'
+    ]
+  },
+  {
+    name: '[Gen 9] Challenge Cup 2v2',
+    mod: 'gen9',
+    team: 'randomCC',
+    gameType: 'doubles',
+    ruleset: [ '[Gen 9] Challenge Cup 1v1', '!! Picked Team Size = 2' ]
+  },
+  {
+    name: '[Gen 9] Challenge Cup 6v6',
+    mod: 'gen9',
+    team: 'randomCC',
+    ruleset: [ '[Gen 9] Challenge Cup 1v1', '!Picked Team Size' ]
+  },
+  {
     name: '[Gen 8] Random Battle',
     mod: 'gen8',
     team: 'random',
@@ -514,12 +562,6 @@ export const Formats: FormatList = [
       'Cancel Mod',
       'Sleep Clause Mod'
     ]
-  },
-  {
-    name: '[Gen 8] Random Battle (Blitz)',
-    mod: 'gen8',
-    team: 'random',
-    ruleset: [ '[Gen 8] Random Battle', 'Blitz' ]
   },
   {
     name: '[Gen 8] Free-For-All Random Battle',
@@ -549,18 +591,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 8] Monotype Random Battle',
-    mod: 'gen8',
-    team: 'random',
-    ruleset: [
-      'Obtainable',
-      'Same Type Clause',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Sleep Clause Mod'
-    ]
-  },
-  {
     name: '[Gen 8] Battle Factory',
     mod: 'gen8',
     team: 'randomFactory',
@@ -573,36 +603,8 @@ export const Formats: FormatList = [
     ruleset: [ 'Flat Rules' ]
   },
   {
-    name: '[Gen 8] Challenge Cup 1v1',
-    mod: 'gen8',
-    team: 'randomCC',
-    ruleset: [
-      'Obtainable',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Team Preview',
-      'Dynamax Clause',
-      'Picked Team Size = 1'
-    ]
-  },
-  {
-    name: '[Gen 8] Challenge Cup 2v2',
-    mod: 'gen8',
-    team: 'randomCC',
-    gameType: 'doubles',
-    ruleset: [ '[Gen 8] Challenge Cup 1v1', '!! Picked Team Size = 2' ]
-  },
-  {
     name: '[Gen 8] Hackmons Cup',
     mod: 'gen8',
-    team: 'randomHC',
-    ruleset: [ 'HP Percentage Mod', 'Cancel Mod' ],
-    banlist: [ 'Nonexistent' ]
-  },
-  {
-    name: '[Gen 8] Doubles Hackmons Cup',
-    mod: 'gen8',
-    gameType: 'doubles',
     team: 'randomHC',
     ruleset: [ 'HP Percentage Mod', 'Cancel Mod' ],
     banlist: [ 'Nonexistent' ]
@@ -659,12 +661,6 @@ export const Formats: FormatList = [
       'Cancel Mod',
       'Mega Rayquaza Clause'
     ]
-  },
-  {
-    name: '[Gen 7] Monotype Battle Factory',
-    mod: 'gen7',
-    team: 'randomFactory',
-    ruleset: [ '[Gen 7] Battle Factory', 'Same Type Clause' ]
   },
   {
     name: '[Gen 7] BSS Factory',
@@ -1578,7 +1574,7 @@ export const Formats: FormatList = [
     name: '[Gen 6] CAP',
     mod: 'gen6',
     ruleset: [ '[Gen 6] OU', '+CAP' ],
-    banlist: [ 'Aurumoth', 'Cawmodore' ]
+    banlist: [ 'Cawmodore' ]
   },
   {
     name: '[Gen 6] Battle Spot Singles',
@@ -1767,6 +1763,12 @@ export const Formats: FormatList = [
     unbanlist: [ 'Damp Rock' ]
   },
   {
+    name: '[Gen 5] CAP',
+    mod: 'gen5',
+    ruleset: [ '[Gen 5] OU', '+CAP' ],
+    banlist: [ 'Aurumoth', 'Cawmodore' ]
+  },
+  {
     name: '[Gen 5] GBU Singles',
     mod: 'gen5',
     ruleset: [ 'Flat Rules' ],
@@ -1942,6 +1944,7 @@ export const Formats: FormatList = [
       'Walrein',   'Zangoose',   'Damp Rock'
     ]
   },
+  { name: '[Gen 4] CAP', mod: 'gen4', ruleset: [ '[Gen 4] OU', '+CAP' ] },
   {
     name: '[Gen 4] Custom Game',
     mod: 'gen4',
@@ -2139,6 +2142,7 @@ export const Formats: FormatList = [
     ruleset: [ '[Gen 1] UU', '!APT Clause', '!Sleep Moves Clause' ],
     banlist: [ 'UU', 'NUBL' ]
   },
+  { name: '[Gen 1] PU', mod: 'gen1', ruleset: [ '[Gen 1] NU' ], banlist: [ 'NU', 'PUBL' ] },
   {
     name: '[Gen 1] 1v1',
     mod: 'gen1',

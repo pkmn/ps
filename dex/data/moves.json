@@ -14007,6 +14007,7 @@
       "priority": 0,
       "flags": {"protect": 1, "pulse": 1, "mirror": 1},
       "secondary": null,
+      "hasSheerForce": true,
       "target": "normal",
       "type": "Dragon",
       "shortDesc": "+1 to stat depending on Tatsugiri color."
@@ -16359,7 +16360,7 @@
       "target": "self",
       "type": "Normal",
       "zMove": {"effect": "clearnegativeboost"},
-      "desc": "The user takes 1/2 of its maximum HP, rounded down, and creates a substitute. The user then switches out, passing the substitute to whichever Pokemon is switched in.",
+      "desc": "The user takes 1/2 of its maximum HP, rounded up, and creates a substitute. The user then switches out, passing the substitute to whichever Pokemon is switched in.",
       "shortDesc": "User takes 1/2 its max HP to pass a substitute."
     },
     "sheercold": {

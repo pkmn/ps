@@ -6735,7 +6735,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onBeforeTurn() {
 				this.effectState.turnPassed = true;
 			},
-			onSourceAccuracy() {
+			onAccuracy() {
 				if (this.effectState.turnPassed) return true;
 			},
 			onSourceModifyDamage() {
@@ -13194,11 +13194,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, pulse: 1, mirror: 1},
-		onAfterMoveSecondarySelf(pokemon, target, move) {
-			if (!pokemon.volatiles['commanded']) return;
+		onUseMoveMessage(source, target, move) {
+			move.orderUpBoost = true;
+		},
+		onAfterMove(pokemon, target, move) {
+			if (!pokemon.volatiles['commanded'] || !move.orderUpBoost) return;
 			const tatsugiri = pokemon.volatiles['commanded'].source;
 			if (tatsugiri.baseSpecies.baseSpecies !== 'Tatsugiri') return; // Should never happen
-
 			switch (tatsugiri.baseSpecies.forme) {
 			case 'Droopy':
 				this.boost({def: 1}, pokemon, pokemon);
@@ -13212,6 +13214,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			}
 		},
 		secondary: null,
+		hasSheerForce: true,
 		target: "normal",
 		type: "Dragon",
 	},
@@ -16458,13 +16461,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 				this.add('-fail', source, 'move: Shed Tail');
 				return this.NOT_FAIL;
 			}
-			if (source.hp <= source.maxhp / 2 || source.maxhp === 1) { // Shedinja clause
+			if (source.hp <= Math.ceil(source.maxhp / 2)) {
 				this.add('-fail', source, 'move: Shed Tail', '[weak]');
 				return this.NOT_FAIL;
 			}
 		},
 		onHit(target) {
-			this.directDamage(target.maxhp / 2);
+			this.directDamage(Math.ceil(target.maxhp / 2));
 		},
 		self: {
 			onHit(source) {

@@ -37,8 +37,8 @@ describe('TeamGenerators', () => {
 		'gen8randombattle',
 		'gen7randomdoublesbattle',
 		'gen8randomdoublesbattle',
-		'gen8monotyperandombattle',
 		'gen9randombattle',
+		// 'gen9monotyperandombattle',
 	]) {
 		// eslint-disable-next-line jest/expect-expect,jest/valid-title
 		it(format, () => {
@@ -58,9 +58,8 @@ describe('TeamGenerators', () => {
 							if (!types.filter(t => species.types.includes(t)).length) {
 								throw new Error(`Team is not monotype: ${JSON.stringify(team)}`);
 							}
-						} else {
-							types = species.types;
 						}
+						types = species.types;
 					}
 				} catch (err: any) {
 					err.message += ` (seed ${seed})`;

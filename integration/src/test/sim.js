@@ -17,7 +17,8 @@ const {TeamGenerators} = require('@pkmn/randoms');
 pkmn.Teams.setGeneratorFactory(TeamGenerators);
 
 const FORMATS = [
-  'gen8randombattle', 'gen8randomdoublesbattle', 'gen8monotyperandombattle',
+  // TODO: 'gen9randombattle','gen9monotyperandombattle',
+  'gen8randombattle', 'gen8randomdoublesbattle',
   'gen7randombattle', 'gen7randomdoublesbattle', 'gen6randombattle', 'gen5randombattle',
   'gen4randombattle', 'gen3randombattle', 'gen2randombattle', 'gen1randombattle',
 ];

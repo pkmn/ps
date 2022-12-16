@@ -1,5 +1,9 @@
 # Changelog
 
+### 5.0.1
+
+- Export a `teraType` field in Generation 9 in all circumstances.
+
 ### 5.0.0
 
 - Generation 9 was released and `PokemonSet` now has a `teraType` field.

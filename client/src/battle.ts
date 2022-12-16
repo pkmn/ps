@@ -37,6 +37,7 @@ export class Battle {
   turn!: number;
 
   gameType: GameType;
+  pokemonControlled = 0;
   rated: boolean | Message;
   rules: {[ruleName: string]: 1 | 0} = {};
   tier: FormatName | '';
@@ -542,6 +543,10 @@ export class Battle {
     }
     for (const active of this.getAllActive()) {
       if (active === excludePokemon) return 1;
+      if (excludePokemon && this.pokemonControlled === 1 &&
+				active.ident.slice(0, 2) === excludePokemon.ident.slice(0, 2)) {
+        continue;
+      }
       if (abilities.includes(active.ability) && !active.volatiles['gastroacid']) {
         if (!excludePokemon) return true;
       }
