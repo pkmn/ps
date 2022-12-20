@@ -1,5 +1,9 @@
 # Changelog
 
+### 5.0.2
+
+- Reverts change which exports `teraType` field in Generation 9 in all circumstances.
+
 ### 5.0.1
 
 - Export a `teraType` field in Generation 9 in all circumstances.

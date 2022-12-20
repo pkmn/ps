@@ -21,7 +21,7 @@
     "build"
   ],
   "dependencies": {
-    "@pkmn/sets": "^5.0.1",
+    "@pkmn/sets": "^5.0.2",
     "@pkmn/streams": "^1.1.0"
   },
   "devDependencies": {
