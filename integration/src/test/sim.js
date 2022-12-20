@@ -144,6 +144,9 @@ class Runner {
     const p1spec = {name: 'Bot 1', ...this.p1options, team: pkmn.Teams.pack(pkmnTeam1)};
     const p2spec = {name: 'Bot 2', ...this.p2options, team: pkmn.Teams.pack(pkmnTeam2)};
 
+    // TODO: remove once PS implements Revival Blessing correctly
+    if (p1spec.team.includes('revivalblessing') || p2spec.team.includes('revivalblessing')) return;
+
     const p1options = {seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p1options};
     const p2options = {seed: this.newSeed(), move: 0.7, mega: 0.6, ...this.p2options};
 
