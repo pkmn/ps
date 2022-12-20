@@ -2772,6 +2772,11 @@
       "evoType": "levelExtra",
       "evoCondition": "near a special magnetic field"
     },
+    "crabominable": {
+      "inherit": true,
+      "evoType": "levelExtra",
+      "evoCondition": "at Mount Lanakila"
+    },
     "lycanroc": {"inherit": true, "evoCondition": "in Pokemon Sun/Ultra Sun"},
     "lycanrocmidnight": {
       "inherit": true,
@@ -2942,7 +2947,10 @@
     },
     "sneasler": {
       "inherit": true,
-      "abilities": {"0": "Pressure", "H": "Poison Touch"}
+      "abilities": {"0": "Pressure", "H": "Poison Touch"},
+      "evoType": "useItem",
+      "evoItem": "Razor Claw",
+      "evoCondition": "during the day"
     },
     "enamorus": {"inherit": true, "abilities": {"0": "Healer", "H": "Contrary"}}
   },
@@ -21199,8 +21207,8 @@
       "abilities": {"0": "Hyper Cutter", "1": "Iron Fist", "H": "Anger Point"},
       "weightkg": 180,
       "prevo": "Crabrawler",
-      "evoType": "levelExtra",
-      "evoCondition": "at Mount Lanakila",
+      "evoType": "useItem",
+      "evoItem": "Ice Stone",
       "eggGroups": ["Water 3"]
     },
     "oricorio": {
@@ -25849,7 +25857,7 @@
       "abilities": {"0": "Pressure", "1": "Unburden", "H": "Poison Touch"},
       "weightkg": 43,
       "prevo": "Sneasel-Hisui",
-      "evoType": "useItem",
+      "evoType": "levelHold",
       "evoItem": "Razor Claw",
       "evoCondition": "during the day",
       "eggGroups": ["Field"]
@@ -26873,7 +26881,6 @@
       "prevo": "Capsakid",
       "evoType": "useItem",
       "evoItem": "Fire Stone",
-      "evoLevel": 30,
       "eggGroups": ["Grass"]
     },
     "rellor": {
@@ -27800,7 +27807,7 @@
       "weightkg": 30,
       "prevo": "Gimmighoul",
       "evoType": "other",
-      "evoCondition": "Give 999 Coins",
+      "evoCondition": "Level up with 999 Coins in the bag",
       "eggGroups": ["Undiscovered"]
     },
     "wochien": {

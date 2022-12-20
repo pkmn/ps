@@ -1683,6 +1683,12 @@
       "desc": "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded down, but not less than 1 HP.",
       "shortDesc": "Has 1/3 recoil."
     },
+    "brickbreak": {
+      "inherit": true,
+      "ignoreImmunity": true,
+      "desc": "If this attack does not miss and whether or not the target is immune, the effects of Reflect and Light Screen end for the target's side of the field before damage is calculated.",
+      "shortDesc": "Destroys screens, even if the target is immune."
+    },
     "bulletseed": {
       "inherit": true,
       "basePower": 10,
@@ -2355,11 +2361,6 @@
     "bounce": {
       "inherit": true,
       "desc": "Has a 30% chance to paralyze the target. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks other than Gust, Sky Uppercut, Thunder, and Twister, and Gust and Twister have doubled power when used against it. If the user is holding a Power Herb, the move completes in one turn."
-    },
-    "brickbreak": {
-      "inherit": true,
-      "desc": "If this attack does not miss and whether or not the target is immune, the effects of Reflect and Light Screen end for the target's side of the field before damage is calculated.",
-      "shortDesc": "Destroys screens, even if the target is immune."
     },
     "bugbite": {
       "inherit": true,

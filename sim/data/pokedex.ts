@@ -13141,8 +13141,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 180,
 		color: "White",
 		prevo: "Crabrawler",
-		evoType: "levelExtra",
-		evoCondition: "at Mount Lanakila",
+		evoType: "useItem",
+		evoItem: "Ice Stone",
 		eggGroups: ["Water 3"],
 	},
 	oricorio: {
@@ -16475,7 +16475,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 43,
 		color: "Purple",
 		prevo: "Sneasel-Hisui",
-		evoType: "useItem",
+		evoType: "levelHold",
 		evoItem: "Razor Claw",
 		evoCondition: "during the day",
 		eggGroups: ["Field"],
@@ -17215,7 +17215,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Capsakid",
 		evoType: "useItem",
 		evoItem: "Fire Stone",
-		evoLevel: 30,
 		eggGroups: ["Grass"],
 	},
 	rellor: {
@@ -17887,7 +17886,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Yellow",
 		prevo: "Gimmighoul",
 		evoType: "other",
-		evoCondition: "Give 999 Coins",
+		evoCondition: "Level up with 999 Coins in the bag",
 		eggGroups: ["Undiscovered"],
 	},
 	wochien: {

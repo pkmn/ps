@@ -6089,7 +6089,7 @@
     "pawniard": {"tier": "LC"},
     "bisharp": {"tier": "NFE"},
     "bouffalant": {"isNonstandard": "Past", "tier": "Illegal"},
-    "rufflet": {"tier": "LC"},
+    "rufflet": {"tier": "NFE"},
     "braviary": {"tier": "UU", "doublesTier": "DUU"},
     "braviaryhisui": {"isNonstandard": "Unobtainable", "tier": "Unreleased"},
     "vullaby": {"isNonstandard": "Past", "tier": "Illegal"},
