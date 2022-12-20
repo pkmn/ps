@@ -730,23 +730,21 @@ const changes = async (where, last, now, repo) => ({
           return undefined;
         } else if (line === '\t\tthis.dex = Dex.forFormat(format);') {
           return '\t\tthis.dex = dex;';
-        } else if (line.endsWith('ruleTable?: RuleTable) {')) {
-          return '\trandomNPokemon(n: number, requiredType?: string, minSourceGen?: number, ' +
-            'ruleTable?: Dex.RuleTable) {';
         }
         return line.replace(/Dex\./g, 'this.dex.');
       });
-      const json = file === 'data/random-teams.ts'
-        ? `\nimport * as randomSetsJSON from './data/gen9.json';` : '';
-
+      let json = '';
+      if (file === 'data/random-teams.ts') {
+        const raw = fs.readFileSync(path.resolve(ps, 'data/random-sets.json'), 'utf8');
+        json = '\n\n/* eslint-disable */\n'+
+          `const randomSetsJSON = ${JSON.stringify(JSON.parse(raw))};\n` +
+          '/* eslint-enable */';
+      }
       fs.writeFileSync(
         path.resolve(randoms, RANDOMS_FILES[file]),
         `${header.join('\n')}${json}\n${rewritten}`
       );
     }
-    fs.copyFileSync(
-      path.resolve(ps, 'data/random-sets.json'),
-      path.resolve(randoms, 'src/data/gen9.json'));
 
     // The data files are Typescript, so we need to build to convert them to JS before requiring
     await execOrDie(`node build`, ps);
