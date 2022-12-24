@@ -942,7 +942,7 @@ function fetch(u) {
   const data = {};
 
   // we expect this to have been built...
-  const Dex = require('../vendor/pokemon-showdown/.sim-dist/dex.js').Dex;
+  const Dex = require('../vendor/pokemon-showdown/dist/sim/dex.js').Dex;
 
   // Reverse map from spriteid as calculated by `build-minidex` to [Species, sprite-id]
   const SPECIES = {};

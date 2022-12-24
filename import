@@ -750,15 +750,15 @@ const changes = async (where, last, now, repo) => ({
     await execOrDie(`node build`, ps);
 
     const TEXTS = {
-      'moves.json': require(path.resolve(ps, '.data-dist/text/moves.js')).MovesText,
-      'abilities.json': require(path.resolve(ps, '.data-dist/text/abilities.js')).AbilitiesText,
-      'items.json': require(path.resolve(ps, '.data-dist/text/items.js')).ItemsText,
-      // 'species.json': require(path.resolve(ps, '.data-dist/text/pokedex.js')).PokedexText,
+      'moves.json': require(path.resolve(ps, 'dist/data/text/moves.js')).MovesText,
+      'abilities.json': require(path.resolve(ps, 'dist/data/text/abilities.js')).AbilitiesText,
+      'items.json': require(path.resolve(ps, 'dist/data/text/items.js')).ItemsText,
+      // 'species.json': require(path.resolve(ps, 'dist/data/text/pokedex.js')).PokedexText,
     };
 
     const DEX = {};
     for (let gen = 9; gen >= 1; gen--) {
-      let dir = path.join(ps, '.data-dist');
+      let dir = path.join(ps, 'dist/data');
       if (gen !== 9) dir = path.join(dir, `mods/gen${gen}`);
       for (const file of fs.readdirSync(dir)) {
         const fn = DATA[path.basename(file)];
@@ -772,7 +772,7 @@ const changes = async (where, last, now, repo) => ({
       }
     }
 
-    const DefaultText = require(path.resolve(ps, '.data-dist/text/default.js')).DefaultText;
+    const DefaultText = require(path.resolve(ps, 'dist/data/text/default.js')).DefaultText;
     const TEXT = {};
     for (const key in DefaultText) {
       if (key === 'sandstorm') {
@@ -820,7 +820,7 @@ const changes = async (where, last, now, repo) => ({
     // Prune config/formats.ts
     const formats = [];
     const remove = ['rated', 'challengeShow', 'searchShow', 'tournamentShow', 'threads', 'desc'];
-    for (const format of require(path.resolve(ps, '.config-dist/formats.js')).Formats) {
+    for (const format of require(path.resolve(ps, 'dist/config/formats.js')).Formats) {
       if (!(format.mod && /^gen\d/.test(format.mod))) continue;
       if (format.ruleset.some(r => r.includes('Draft')) ||
         format.ruleset.includes('Standard OMs')) {
@@ -839,7 +839,7 @@ const changes = async (where, last, now, repo) => ({
 
     // Decompose learnsets into learnsets.ts with just the learnset and legality.ts with the rest
     for (const dir of ['mods/gen2/', 'mods/gen6/', 'mods/gen8/', '/']) {
-      const original = require(path.resolve(ps, `.data-dist/${dir}learnsets.js`)).Learnsets;
+      const original = require(path.resolve(ps, `dist/data/${dir}learnsets.js`)).Learnsets;
       const learnsets = {};
       const legality = {};
       for (const id in original) {
@@ -893,10 +893,10 @@ const changes = async (where, last, now, repo) => ({
     // The test files require paths are made with PS's build layout in mind - correct that here
     const ignore = new Set([...Array.from(OVERRIDDEN).map(f => path.join(sim, f))]);
     await replace(path.join(sim, 'test'), [{
-      regex: new RegExp(`(require\\\(.*?)((?<!build\\\/)sim)(.*?\\\))`, 'g'),
+      regex: new RegExp(`(require\\\(.*?)dist\\\/((?<!build\\\/)sim)(.*?\\\))`, 'g'),
       replace: `$1build/cjs/sim$3`,
     }, {
-      regex: new RegExp(`(require\\\(.*?)((?<!build\\\/)lib)(.*?\\\))`, 'g'),
+      regex: new RegExp(`(require\\\(.*?)dist\\\/((?<!build\\\/)lib)(.*?\\\))`, 'g'),
       replace: `$1build/cjs/lib$3`,
     }], ignore);
 

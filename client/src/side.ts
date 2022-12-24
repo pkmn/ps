@@ -76,7 +76,7 @@ export class Side {
     if (avatar) this.setAvatar(avatar);
   }
 
-  addSideCondition(effect: {name: string; id: ID}) {
+  addSideCondition(effect: {name: string; id: ID}, persist: boolean) {
     const id = effect.id;
     if (this.sideConditions[id]) {
       if (id === 'spikes' || id === 'toxicspikes') {
@@ -89,13 +89,17 @@ export class Side {
     switch (id) {
     case 'tailwind':
       return (this.sideConditions[id] =
-          {name, level: 1, minDuration: this.battle.gen.num >= 5 ? 4 : 3, maxDuration: 0});
+          {name, level: 1, minDuration: this.battle.gen.num >= 5
+            ? persist ? 6 : 4 : persist ? 5 : 3, maxDuration: 0});
     case 'reflect': case 'lightscreen':
       return (this.sideConditions[id] =
         {name, level: 1, minDuration: 5, maxDuration: this.battle.gen.num >= 4 ? 8 : 0});
     case 'auroraveil':
       return (this.sideConditions[id] = {name, level: 1, minDuration: 5, maxDuration: 8});
-    case 'safeguard': case 'mist': case 'luckychant':
+    case 'safeguard':
+      return (this.sideConditions[id] =
+        {name, level: 1, minDuration: persist ? 7 : 5, maxDuration: 0});
+    case 'mist': case 'luckychant':
       return (this.sideConditions[id] = {name, level: 1, minDuration: 5, maxDuration: 0});
     case 'quickguard': case 'wideguard': case 'craftyshield': case 'matblock':
       return (this.sideConditions[id] =
@@ -306,6 +310,7 @@ export class Side {
 
     pokemon.fainted = true;
     pokemon.hp = 0;
+    pokemon.isTerastallized = false;
     if (pokemon.side.faints < 100) pokemon.side.faints++;
   }
 

@@ -410,6 +410,8 @@ export namespace Protocol {
       stats: Omit<StatsTable, 'hp'>;
       commanding?: boolean;
       reviving?: boolean;
+      teraType?: TypeName;
+      terastallized?: TypeName;
     }
   }
 
@@ -1555,6 +1557,7 @@ export namespace Protocol {
     /** `[of] SOURCE` */
     'of': PokemonIdent | '';
     'ohko': true;
+    'persistent': true;
     /**
      * `[silent]`
      *
@@ -1611,7 +1614,7 @@ export namespace Protocol {
     '|-enditem|': GeneralKWArgNames | 'eat' | 'move' | 'weaken';
     '|-fail|': GeneralKWArgNames | 'forme' | 'heavy' | 'msg' | 'weak' | 'fail' | 'block';
     '|-fieldactivate|': GeneralKWArgNames;
-    '|-fieldstart|': GeneralKWArgNames;
+    '|-fieldstart|': GeneralKWArgNames | 'persistent';
     '|-fieldend|': GeneralKWArgNames;
     '|-formechange|': GeneralKWArgNames | 'msg';
     '|-heal|': GeneralKWArgNames | 'wisher' | 'zeffect';
@@ -1621,7 +1624,7 @@ export namespace Protocol {
     '|-miss|': GeneralKWArgNames;
     '|-setboost|': GeneralKWArgNames;
     '|-sethp|': GeneralKWArgNames;
-    '|-sidestart|': 'silent';
+    '|-sidestart|': 'silent' | 'persistent';
     '|-sideend|': GeneralKWArgNames;
     '|-singlemove|': GeneralKWArgNames | 'zeffect';
     '|-singleturn|': GeneralKWArgNames | 'zeffect';

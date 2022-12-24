@@ -65,11 +65,14 @@ export class Field {
     delete this.pseudoWeather[id];
   }
 
-  setTerrain(id?: ID) {
+  setTerrain(id?: ID, persist?: boolean) {
     if (id) {
       this.terrain = TERRAINS[id];
-      this.terrainState =
-        {id: toID(this.terrain), minDuration: 5, maxDuration: this.battle.gen.num > 6 ? 8 : 0};
+      this.terrainState = {
+        id: toID(this.terrain),
+        minDuration: 5 + (persist ? 2 : 0),
+        maxDuration: this.battle.gen.num > 6 ? 8 : 0,
+      };
     } else {
       this.terrain = undefined;
       this.terrainState = {id: '', minDuration: 0, maxDuration: 0};

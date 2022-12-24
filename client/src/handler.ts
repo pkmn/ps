@@ -265,14 +265,8 @@ export class Handler implements Protocol.Handler {
         poke.item = fromEffect.id;
       }
       if (revival) {
-        const {siden} = this.battle.parsePokemonId(args[1]);
-        const side = this.battle.sides[siden];
         poke.fainted = false;
         poke.status = undefined;
-        // Revived while still on the field
-        if (!side.active[poke.slot]) {
-          poke.side.replace(poke);
-        }
       }
       if (fromEffect.id !== 'lunardance' || fromEffect.id !== 'healingwish') return;
       if (fromEffect.id === 'lunardance') {
@@ -427,10 +421,9 @@ export class Handler implements Protocol.Handler {
     (ofPoke || poke).activateAbility(effect);
     switch (effect?.id) {
     case 'quickguard': case 'wideguard': case 'craftyshield': case 'matblock':
-      return void poke.side.addSideCondition(effect);
+      return void poke.side.addSideCondition(effect, false);
     case 'protect': return poke.addVolatile('protect' as ID, {duration: 'turn'});
-    case 'safetygoggles': return void (poke.item = 'safetygoggles' as ID);
-    case 'protectivepads': return void (poke.item = 'protectivepads' as ID);
+    case 'safetygoggles': case 'protectivepads': return void (poke.item = effect.id);
     }
   }
 
@@ -657,7 +650,7 @@ export class Handler implements Protocol.Handler {
     if (!kwArgs.silent) poke.activateAbility(fromEffect);
 
     poke.boosts = {...poke2.boosts};
-    poke.copyTypesFrom(poke2);
+    poke.copyTypesFrom(poke2, true);
     poke.ability = poke2.ability;
     poke.timesAttacked = poke2.timesAttacked;
     const speciesForme = poke2.speciesForme as SpeciesName;
@@ -707,7 +700,9 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-terastallize|'(args: Args['|-terastallize|']) {
-    this.battle.getPokemon(args[1])!.teraType = sanitizeName(args[2]) as TypeName;
+    const poke = this.battle.getPokemon(args[1])!;
+    poke.isTerastallized = !!args[2];
+    if (args[2]) poke.teraType = sanitizeName(args[2]) as TypeName;
   }
 
   '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {
@@ -737,6 +732,7 @@ export class Handler implements Protocol.Handler {
 
     switch (effect.id) {
     case 'typechange':
+      if (poke.isTerastallized) break;
       if (ofPoke && fromEffect?.id === 'reflecttype') {
         poke.copyTypesFrom(ofPoke);
       } else {
@@ -762,7 +758,9 @@ export class Handler implements Protocol.Handler {
       poke.removeVolatile('telekinesis' as ID);
       break;
     }
-    poke.addVolatile(effect.id);
+    if (!(effect.id === 'typechange' && poke.isTerastallized)) {
+      poke.addVolatile(effect.id);
+    }
   }
 
   '|-end|'(args: Args['|-end|'], kwArgs: KWArgs['|-end|']) {
@@ -881,16 +879,16 @@ export class Handler implements Protocol.Handler {
     case 'mysteryberry':
       poke!.rememberMove(kwArgs.move!, effect.id === 'leppaberry' ? -10 : -5);
       break;
-    case 'focusband':
-      poke!.item = 'focusband' as ID;
+    case 'focusband': case 'quickclaw': case 'abilityshield':
+      poke!.item = effect.id;
       break;
     }
   }
 
-  '|-sidestart|'(args: Args['|-sidestart|']) {
+  '|-sidestart|'(args: Args['|-sidestart|'], kwArgs: KWArgs['|-sidestart|']) {
     const side = this.battle.getSide(args[1]);
     const effect = this.battle.get('conditions', args[2]);
-    side.addSideCondition(effect);
+    side.addSideCondition(effect, !!kwArgs.persistent);
   }
 
   '|-sideend|'(args: Args['|-sideend|']) {
@@ -919,7 +917,7 @@ export class Handler implements Protocol.Handler {
     if (effect.id.endsWith('terrain')) {
       this.battle.field.setTerrain(effect.id);
     } else {
-      this.battle.field.addPseudoWeather(effect.id, 5, 0);
+      this.battle.field.addPseudoWeather(effect.id, 5 + (kwArgs.persistent ? 2 : 0), 0);
     }
   }
 

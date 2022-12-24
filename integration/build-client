@@ -17,7 +17,7 @@ console.log("DONE");
 
 const psc = path.resolve(__dirname, '../vendor/pokemon-showdown-client');
 
-const Dex = require('../vendor/pokemon-showdown/.sim-dist/dex').Dex;
+const Dex = require('../vendor/pokemon-showdown/dist/sim/dex').Dex;
 const toID = Dex.toID;
 process.stdout.write("Loading gen 6 data... ");
 Dex.includeData();
@@ -1061,7 +1061,7 @@ console.log("DONE");
 process.stdout.write("Building `data/pokedex.js`... ");
 
 {
-	const Pokedex = requireNoCache('../vendor/pokemon-showdown/.data-dist/pokedex.js').Pokedex;
+	const Pokedex = requireNoCache('../vendor/pokemon-showdown/dist/data/pokedex.js').Pokedex;
 	for (const id in Pokedex) {
 		const entry = Pokedex[id];
 		if (Dex.data.FormatsData[id]) {
@@ -1085,7 +1085,7 @@ console.log("DONE");
 process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.js`...");
 
 {
-	const Moves = requireNoCache('../vendor/pokemon-showdown/.data-dist/moves.js').Moves;
+	const Moves = requireNoCache('../vendor/pokemon-showdown/dist/data/moves.js').Moves;
 	for (const id in Moves) {
 		const move = Dex.moves.get(Moves[id].name);
 		if (move.desc) Moves[id].desc = move.desc;
@@ -1100,7 +1100,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
  *********************************************************/
 
 {
-	const Items = requireNoCache('../vendor/pokemon-showdown/.data-dist/items.js').Items;
+	const Items = requireNoCache('../vendor/pokemon-showdown/dist/data/items.js').Items;
 	for (const id in Items) {
 		const move = Dex.items.get(Items[id].name);
 		if (move.desc) Items[id].desc = move.desc;
@@ -1115,7 +1115,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
  *********************************************************/
 
 {
-	const Abilities = requireNoCache('../vendor/pokemon-showdown/.data-dist/abilities.js').Abilities;
+	const Abilities = requireNoCache('../vendor/pokemon-showdown/dist/data/abilities.js').Abilities;
 	for (const id in Abilities) {
 		const move = Dex.abilities.get(Abilities[id].name);
 		if (move.desc) Abilities[id].desc = move.desc;
@@ -1130,7 +1130,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
  *********************************************************/
 
 {
-	const TypeChart = requireNoCache('../vendor/pokemon-showdown/.data-dist/typechart.js').TypeChart;
+	const TypeChart = requireNoCache('../vendor/pokemon-showdown/dist/data/typechart.js').TypeChart;
 	const buf = 'exports.BattleTypeChart = ' + es3stringify(TypeChart) + ';';
 	fs.writeFileSync(path.join(psc, 'data/typechart.js'), buf);
 }
@@ -1140,7 +1140,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
  *********************************************************/
 
 {
-	const Aliases = requireNoCache('../vendor/pokemon-showdown/.data-dist/aliases.js').Aliases;
+	const Aliases = requireNoCache('../vendor/pokemon-showdown/dist/data/aliases.js').Aliases;
 	const buf = 'exports.BattleAliases = ' + es3stringify(Aliases) + ';';
 	fs.writeFileSync(path.join(psc, 'data/aliases.js'), buf);
 }
@@ -1150,7 +1150,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
  *********************************************************/
 
 {
-	const FormatsData = requireNoCache('../vendor/pokemon-showdown/.data-dist/formats-data.js').FormatsData;
+	const FormatsData = requireNoCache('../vendor/pokemon-showdown/dist/data/formats-data.js').FormatsData;
 	const buf = 'exports.BattleFormatsData = ' + es3stringify(FormatsData) + ';';
 	fs.writeFileSync(path.join(psc, 'data/formats-data.js'), buf);
 }
@@ -1160,7 +1160,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
  *********************************************************/
 
 {
-	const Formats = requireNoCache('../vendor/pokemon-showdown/.config-dist/formats.js').Formats;
+	const Formats = requireNoCache('../vendor/pokemon-showdown/dist/config/formats.js').Formats;
 	const buf = 'exports.Formats = ' + es3stringify(Formats) + ';';
 	fs.writeFileSync(path.join(psc, 'data/formats.js'), buf);
 }
@@ -1170,7 +1170,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
  *********************************************************/
 
 {
-	const Learnsets = requireNoCache('../vendor/pokemon-showdown/.data-dist/learnsets.js').Learnsets;
+	const Learnsets = requireNoCache('../vendor/pokemon-showdown/dist/data/learnsets.js').Learnsets;
 	const buf = 'exports.BattleLearnsets = ' + es3stringify(Learnsets) + ';';
 	fs.writeFileSync(path.join(psc, 'data/learnsets.js'), buf);
 }

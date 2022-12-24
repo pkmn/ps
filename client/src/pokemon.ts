@@ -91,6 +91,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   nature?: NatureName;
   hpType?: HPTypeName;
   teraType?: TypeName;
+  isTerastallized: boolean;
 
   moveSlots: MoveSlot[];
   maxMoves?: Array<{
@@ -164,6 +165,8 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.hpType = set?.hpType
       ? this.side.battle.gen.types.get(set.hpType)?.name as HPTypeName
       : undefined;
+    this.teraType = set?.teraType ? this.side.battle.gen.types.get(set?.teraType)?.name : undefined;
+    this.isTerastallized = false;
 
     this.moveSlots = [];
     this.maxMoves = undefined;
@@ -238,12 +241,18 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   get types() {
     let types: [TypeName] | [TypeName, TypeName];
-    if (this.volatiles.typechange) {
+    if (this.isTerastallized) {
+      types = [this.teraType!];
+    } else if (this.volatiles.typechange) {
       types =
         this.volatiles.typechange.apparentType!.split('/') as [TypeName] | [TypeName, TypeName];
     } else {
       types = this.species.types;
     }
+    return this.actualTypes(types);
+  }
+
+  actualTypes(types: [TypeName] | [TypeName, TypeName]) {
     if (this.hasVolatile('roost' as ID) && types.includes('Flying')) {
       types = types.filter(typeName => typeName !== 'Flying') as [TypeName] | [TypeName, TypeName];
       if (!types.length) types = ['Normal'];
@@ -556,8 +565,10 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     }
   }
 
-  copyTypesFrom(pokemon: Pokemon) {
-    this.addVolatile('typechange' as ID, {apparentType: pokemon.types.join('/')});
+  copyTypesFrom(pokemon: Pokemon, preterastallized = false) {
+    const apparentType =
+      (preterastallized ? pokemon.actualTypes(pokemon.species.types) : pokemon.types).join('/');
+    this.addVolatile('typechange' as ID, {apparentType});
     if (pokemon.addedType) {
       this.addVolatile('typeadd' as ID, {type: pokemon.addedType});
     } else {

@@ -98,7 +98,8 @@ export const Formats: FormatList = [
       'Focus Band',  'Focus Sash',
       "King's Rock", 'Quick Claw',
       'Acupressure', 'Hypnosis',
-      'Perish Song', 'Sing'
+      'Perish Song', 'Sing',
+      'Spore',       'Yawn'
     ]
   },
   {
@@ -308,17 +309,18 @@ export const Formats: FormatList = [
       'Endless Battle Clause'
     ],
     banlist: [
-      'Calyrex-Shadow',   'Slaking',
-      'Arena Trap',       'Contrary',
-      'Huge Power',       'Illusion',
-      'Innards Out',      'Magnet Pull',
-      'Neutralizing Gas', 'Parental Bond',
-      'Pure Power',       'Shadow Tag',
-      'Stakeout',         'Water Bubble',
-      'Wonder Guard',     'Comatose + Sleep Talk',
-      'Belly Drum',       'Last Respects',
-      'Revival Blessing', 'Shed Tail',
-      'Shell Smash',      'Rage Fist'
+      'Calyrex-Shadow',        'Slaking',
+      'Arena Trap',            'Contrary',
+      'Huge Power',            'Illusion',
+      'Innards Out',           'Magnet Pull',
+      'Moody',                 'Neutralizing Gas',
+      'Parental Bond',         'Pure Power',
+      'Shadow Tag',            'Stakeout',
+      'Water Bubble',          'Wonder Guard',
+      'Comatose + Sleep Talk', 'Belly Drum',
+      'Last Respects',         'Revival Blessing',
+      'Shed Tail',             'Shell Smash',
+      'Rage Fist'
     ]
   },
   {

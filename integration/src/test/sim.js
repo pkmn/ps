@@ -3,10 +3,10 @@
 const assert = require('assert').strict;
 
 const ps = {
-  BattleStreams: require('../../../vendor/pokemon-showdown/.sim-dist/battle-stream'),
-  Teams: require('../../../vendor/pokemon-showdown/.sim-dist').Teams,
+  BattleStreams: require('../../../vendor/pokemon-showdown/dist/sim/battle-stream'),
+  Teams: require('../../../vendor/pokemon-showdown/dist/sim').Teams,
   RandomPlayerAI:
-    require('../../../vendor/pokemon-showdown/.sim-dist/tools/random-player-ai').RandomPlayerAI,
+    require('../../../vendor/pokemon-showdown/dist/sim/tools/random-player-ai').RandomPlayerAI,
 };
 const {Generations} = require('@pkmn/data');
 const pkmn = require('@pkmn/sim');

@@ -4640,7 +4640,7 @@
     "dwebble": {"tier": "LC"},
     "crustle": {"tier": "(PU)", "doublesTier": "(DUU)"},
     "scraggy": {"tier": "NFE"},
-    "scrafty": {"tier": "PU", "doublesTier": "DUU"},
+    "scrafty": {"tier": "PUBL", "doublesTier": "DUU"},
     "sigilyph": {"tier": "NUBL", "doublesTier": "(DUU)"},
     "yamask": {"tier": "LC"},
     "yamaskgalar": {"tier": "LC"},

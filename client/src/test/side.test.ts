@@ -16,18 +16,18 @@ describe('Side', () => {
   it('#sideConditions', () => {
     const side = new Side({gen: {num: 8}} as Battle, 0);
 
-    side.addSideCondition({id: 'spikes', name: 'Spikes'} as unknown as Effect);
+    side.addSideCondition({id: 'spikes', name: 'Spikes'} as unknown as Effect, false);
     expect(side.sideConditions['spikes'])
       .toEqual({name: 'Spikes', level: 1, minDuration: 0, maxDuration: 0});
-    side.addSideCondition({id: 'spikes', name: 'Spikes'} as unknown as Effect);
+    side.addSideCondition({id: 'spikes', name: 'Spikes'} as unknown as Effect, false);
     expect(side.sideConditions['spikes'])
       .toEqual({name: 'Spikes', level: 2, minDuration: 0, maxDuration: 0});
 
-    side.addSideCondition({id: 'tailwind', name: 'Tailwind'} as unknown as Effect);
+    side.addSideCondition({id: 'tailwind', name: 'Tailwind'} as unknown as Effect, false);
     expect(side.sideConditions['tailwind'])
       .toEqual({name: 'Tailwind', level: 1, minDuration: 4, maxDuration: 0});
 
-    side.addSideCondition({id: 'lightscreen', name: 'Light Screen'} as unknown as Effect);
+    side.addSideCondition({id: 'lightscreen', name: 'Light Screen'} as unknown as Effect, false);
     expect(side.sideConditions['lightscreen'])
       .toEqual({name: 'Light Screen', level: 1, minDuration: 5, maxDuration: 8});
 
@@ -212,7 +212,7 @@ describe('Side', () => {
     expect(pokemon.side).toBe(side);
     side.active[0] = pokemon;
     side.lastPokemon = pokemon;
-    side.addSideCondition({id: 'tailwind', name: 'Tail Wind'} as Effect);
+    side.addSideCondition({id: 'tailwind', name: 'Tail Wind'} as Effect, false);
 
     side.reset();
 
@@ -232,7 +232,7 @@ describe('Side', () => {
     side.active[0] = pokemon;
     side.lastPokemon = pokemon;
     side.foe = foe;
-    side.addSideCondition({id: 'stealthrock', name: 'Stealth Rock'} as Effect);
+    side.addSideCondition({id: 'stealthrock', name: 'Stealth Rock'} as Effect, false);
 
     side.destroy();
 

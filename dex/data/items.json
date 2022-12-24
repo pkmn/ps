@@ -1119,7 +1119,7 @@
       "ignoreKlutz": true,
       "num": 1881,
       "gen": 9,
-      "desc": "Holder's Ability cannot be changed by another Pokemon."
+      "desc": "Holder's Ability cannot be changed by any effect."
     },
     "abomasite": {
       "name": "Abomasite",
@@ -1286,7 +1286,12 @@
       "isNonstandard": "Past",
       "desc": "If held by an Audino, this item allows it to Mega Evolve in battle."
     },
-    "auspiciousarmor": {"name": "Auspicious Armor", "num": 2344, "gen": 9},
+    "auspiciousarmor": {
+      "name": "Auspicious Armor",
+      "num": 2344,
+      "gen": 9,
+      "desc": "Evolves Charcadet into Armarouge when used."
+    },
     "babiriberry": {
       "name": "Babiri Berry",
       "isBerry": true,
@@ -1435,7 +1440,7 @@
       "name": "Booster Energy",
       "num": 1880,
       "gen": 9,
-      "desc": "Activates the Protosynthesis or Quark Drive abilities. Single use."
+      "desc": "Activates the Protosynthesis or Quark Drive Abilities. Single use."
     },
     "bottlecap": {
       "name": "Bottle Cap",
@@ -1641,7 +1646,7 @@
       "name": "Clear Amulet",
       "num": 1882,
       "gen": 9,
-      "desc": "Prevents other Pokemon from lowering this Pokemon's stat stages."
+      "desc": "Prevents other Pokemon from lowering the holder's stat stages."
     },
     "cloversweet": {
       "name": "Clover Sweet",
@@ -2924,7 +2929,7 @@
       "name": "Loaded Dice",
       "num": 1886,
       "gen": 9,
-      "desc": "Holder's 5 hit multi-hit attacks will always hit at least 4 times."
+      "desc": "Holder's moves that hit 2-5 times hit 4-5 times; Population Bomb hits 4-10 times."
     },
     "lopunnite": {
       "name": "Lopunnite",
@@ -3080,7 +3085,12 @@
       "isNonstandard": "Past",
       "desc": "Cannot be given to or taken from a Pokemon, except by Covet/Knock Off/Thief."
     },
-    "maliciousarmor": {"name": "Malicious Armor", "num": 1861, "gen": 9},
+    "maliciousarmor": {
+      "name": "Malicious Armor",
+      "num": 1861,
+      "gen": 9,
+      "desc": "Evolves Charcadet into Ceruledge when used."
+    },
     "manectite": {
       "name": "Manectite",
       "megaStone": "Manectric-Mega",
@@ -3271,7 +3281,7 @@
       "fling": {"basePower": 10},
       "num": 1883,
       "gen": 9,
-      "desc": "When an opposing Pokemon recieves stat boosts, those boosts are copied. Single use."
+      "desc": "When an opposing Pokemon raises a stat stage, the holder copies it. Single use."
     },
     "mistyseed": {
       "name": "Misty Seed",
@@ -3739,7 +3749,7 @@
       "onBasePowerPriority": 23,
       "num": 1884,
       "gen": 9,
-      "desc": "Holder's punch-based attacks do 1.1x damage and avoid adverse contact effects."
+      "desc": "Holder's punch-based attacks have 1.1x power and do not make contact."
     },
     "qualotberry": {
       "name": "Qualot Berry",
