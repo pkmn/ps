@@ -1377,11 +1377,6 @@ export class TeamValidator {
 				set.moves[behemothMove] = 'ironhead';
 			}
 		}
-
-		// Temporary backwards compatability until Pokemon HOME update
-		if (species.baseSpecies === 'Vivillon' && species.forme !== 'Fancy' && dex.gen === 9) {
-			set.species = 'Vivillon-Fancy';
-		}
 		return problems;
 	}
 

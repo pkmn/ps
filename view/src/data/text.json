@@ -622,7 +622,11 @@
     "activate": "  It broke through [TARGET]'s protection!",
     "prepare": "[POKEMON] vanished instantly!"
   },
-  "shedtail": {"alreadyStarted": "#substitute", "fail": "#substitute"},
+  "shedtail": {
+    "start": "  [POKEMON] shed its tail to create a decoy!",
+    "alreadyStarted": "#substitute",
+    "fail": "#substitute"
+  },
   "shelltrap": {
     "start": "  [POKEMON] set a shell trap!",
     "prepare": "  [POKEMON] set a shell trap!",

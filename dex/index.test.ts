@@ -323,7 +323,8 @@ describe('Dex', () => {
       // Dudunsparce (1) + Palafin (1) + Maushold (1) + Squawkabilly (3) + Sinistea-Antique (1) +
       // Polteageist-Antique (1)
       formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 1 + 1;
-      expect(counts(9)).toEqual({species: 400 + 3, formes});
+      // Charizard (3) + Cinderace (3)
+      expect(counts(9)).toEqual({species: 400 + 3 + 3, formes});
     });
 
 

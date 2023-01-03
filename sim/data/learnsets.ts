@@ -39854,7 +39854,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
       assurance: [
         '9L25', '8M',
         '8L25', '7L25',
-        '6L25', '5L43',
+        '6L25', '5L25',
         '4L43'
       ],
       attract: [
@@ -39875,7 +39875,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
         '9M',   '9L20',
         '8L20', '7L17',
         '7V',   '6L17',
-        '5L29', '4L29',
+        '5L17', '4L29',
         '3L30'
       ],
       copycat: [ '9L1', '8L1' ],
@@ -39903,7 +39903,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
         '3M'
       ],
       faketears: [ '9M', '8M' ],
-      feintattack: [ '7L20', '7V', '6L20', '5L36', '4L36', '3L36' ],
+      feintattack: [ '7L20', '7V', '6L20', '5L21', '4L36', '3L36' ],
       flash: [ '7V', '6M', '5M', '4M', '3M' ],
       focusenergy: [ '8M' ],
       foulplay: [ '9M', '8M', '7T', '6T', '5T' ],
@@ -39913,7 +39913,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
       guardswap: [
         '9L35', '8M',
         '8L35', '7L45',
-        '6L45', '5L78',
+        '6L45', '5L45',
         '4L78'
       ],
       headbutt: [ '7V', '4T' ],
@@ -39944,21 +39944,21 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
         '9L55', '8L55',
         '7T',   '7L41',
         '6T',   '6L41',
-        '5T',   '5L50',
+        '5T',   '5L41',
         '4T',   '4L50'
       ],
       lightscreen: [ '9M' ],
       meanlook: [
         '9L50', '8L50',
         '7L37', '7V',
-        '6L37', '5L57',
+        '6L37', '5L37',
         '4L57', '3L42'
       ],
       mimic: [ '3T' ],
       moonlight: [
         '9L30', '8L30',
         '7L33', '7V',
-        '6L33', '5L71',
+        '6L33', '5L33',
         '4L71', '3L52'
       ],
       mudslap: [ '7V', '4T', '3T' ],
@@ -39981,7 +39981,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
       quickattack: [
         '9L10', '8L10',
         '7L13', '7V',
-        '6L13', '5L22',
+        '6L13', '5L13',
         '4L22', '3L23'
       ],
       raindance: [
@@ -40009,7 +40009,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
         '9L45', '8M',
         '8L45', '7L29',
         '7V',   '6L29',
-        '5L64', '4L64',
+        '5L29', '4L64',
         '3L47'
       ],
       secretpower: [ '6M', '4M', '3M' ],

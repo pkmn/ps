@@ -30,7 +30,8 @@
     "partialtrappinglock": {"name": "partialtrappinglock"},
     "mustrecharge": {"inherit": true, "duration": 0},
     "lockedmove": {"inherit": true},
-    "stall": {"name": "stall", "duration": 2, "counterMax": 256}
+    "twoturnmove": {"name": "twoturnmove"},
+    "invulnerability": {"name": "invulnerability"}
   },
   "2": {
     "brn": {

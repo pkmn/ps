@@ -2833,6 +2833,7 @@
       "inherit": true,
       "abilities": {"0": "Steadfast", "H": "Justified"}
     },
+    "giratinaorigin": {"inherit": true, "requiredItem": "Griseous Orb"},
     "cresselia": {
       "inherit": true,
       "baseStats": {
@@ -14840,6 +14841,8 @@
       "abilities": {"0": "Pressure", "H": "Telepathy"},
       "weightkg": 850,
       "eggGroups": ["Undiscovered"],
+      "requiredItem": "Adamant Crystal",
+      "changesFrom": "Dialga",
       "gen": 8
     },
     "palkia": {
@@ -14880,6 +14883,8 @@
       "abilities": {"0": "Pressure", "H": "Telepathy"},
       "weightkg": 660,
       "eggGroups": ["Undiscovered"],
+      "requiredItem": "Lustrous Globe",
+      "changesFrom": "Palkia",
       "gen": 8
     },
     "heatran": {
@@ -14956,7 +14961,7 @@
       "abilities": {"0": "Levitate"},
       "weightkg": 650,
       "eggGroups": ["Undiscovered"],
-      "requiredItem": "Griseous Orb",
+      "requiredItem": "Griseous Core",
       "changesFrom": "Giratina"
     },
     "cresselia": {

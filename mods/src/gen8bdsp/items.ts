@@ -29,6 +29,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		isNonstandard: "Past",
 	},
+	blukberry: {
+		inherit: true,
+		isNonstandard: null,
+	},
 	blunderpolicy: {
 		inherit: true,
 		isNonstandard: "Past",
@@ -258,9 +262,17 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		isNonstandard: "Past",
 	},
+	nanabberry: {
+		inherit: true,
+		isNonstandard: null,
+	},
 	normalgem: {
 		inherit: true,
 		isNonstandard: "Past",
+	},
+	pinapberry: {
+		inherit: true,
+		isNonstandard: null,
 	},
 	plumefossil: {
 		inherit: true,
@@ -283,6 +295,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 		isNonstandard: "Past",
 	},
 	razorfang: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	razzberry: {
 		inherit: true,
 		isNonstandard: null,
 	},
@@ -363,6 +379,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 		isNonstandard: "Past",
 	},
 	stoneplate: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	strangeball: {
 		inherit: true,
 		isNonstandard: null,
 	},
@@ -801,6 +821,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 	weaknesspolicy: {
 		inherit: true,
 		isNonstandard: "Past",
+	},
+	wepearberry: {
+		inherit: true,
+		isNonstandard: null,
 	},
 	whippeddream: {
 		inherit: true,

@@ -90,7 +90,7 @@
     "dig": {
       "inherit": true,
       "basePower": 100,
-      "condition": {"duration": 2, "onLockMove": "dig"},
+      "condition": {},
       "desc": "This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks other than Bide, Swift, and Transform. If the user is fully paralyzed on the second turn, it continues avoiding attacks until it switches out or successfully executes the second turn of this move or Fly."
     },
     "disable": {
@@ -145,7 +145,7 @@
     },
     "fly": {
       "inherit": true,
-      "condition": {"duration": 2, "onLockMove": "fly"},
+      "condition": {},
       "desc": "This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks other than Bide, Swift, and Transform. If the user is fully paralyzed on the second turn, it continues avoiding attacks until it switches out or successfully executes the second turn of this move or Dig."
     },
     "focusenergy": {
@@ -323,12 +323,18 @@
       "desc": "This attack charges on the first turn and executes on the second.",
       "shortDesc": "Charges turn 1. Hits turn 2."
     },
+    "skyattack": {"inherit": true},
     "slash": {"inherit": true, "critRatio": 2},
     "sludge": {
       "inherit": true,
       "secondary": {"chance": 40, "status": "psn"},
       "desc": "Has a 40% chance to poison the target.",
       "shortDesc": "40% chance to poison the target."
+    },
+    "solarbeam": {
+      "inherit": true,
+      "desc": "This attack charges on the first turn and executes on the second.",
+      "shortDesc": "Charges turn 1. Hits turn 2."
     },
     "sonicboom": {
       "inherit": true,
@@ -479,11 +485,6 @@
     "pinmissile": {
       "inherit": true,
       "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
-    },
-    "solarbeam": {
-      "inherit": true,
-      "desc": "This attack charges on the first turn and executes on the second.",
-      "shortDesc": "Charges turn 1. Hits turn 2."
     },
     "spikecannon": {
       "inherit": true,
@@ -4136,6 +4137,7 @@
     "cosmicpower": {"inherit": true, "isNonstandard": null},
     "craftyshield": {"inherit": true, "isNonstandard": null},
     "crushgrip": {"inherit": true, "isNonstandard": null},
+    "curse": {"inherit": true, "target": "randomNormal"},
     "decorate": {"inherit": true, "isNonstandard": null},
     "doomdesire": {"inherit": true, "isNonstandard": null},
     "doubleironbash": {"inherit": true, "isNonstandard": null},
@@ -6846,7 +6848,7 @@
       "volatileStatus": "curse",
       "condition": {"onResidualOrder": 12},
       "secondary": null,
-      "target": "randomNormal",
+      "target": "normal",
       "nonGhostTarget": "self",
       "type": "Ghost",
       "zMove": {"effect": "curse"},
@@ -9291,6 +9293,7 @@
       "pp": 5,
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1},
+      "condition": {},
       "secondary": null,
       "target": "normal",
       "type": "Steel",
@@ -9353,12 +9356,12 @@
       "priority": 0,
       "flags": {"contact": 1, "protect": 1, "mirror": 1},
       "self": {"volatileStatus": "glaiverush"},
-      "condition": {"noCopy": true, "duration": 2},
+      "condition": {"noCopy": true, "onBeforeMovePriority": 100},
       "secondary": null,
       "target": "normal",
       "type": "Dragon",
-      "desc": "If this move is successful, moves targeted at the user deal double damage and do not check accuracy until the end of the next turn.",
-      "shortDesc": "Opp 2x damage, sure-hit until end of next turn."
+      "desc": "If this move is successful, moves targeted at the user deal double damage and do not check accuracy until the user's next turn.",
+      "shortDesc": "User takes sure-hit 2x damage until its next turn."
     },
     "glare": {
       "num": 137,
@@ -11168,7 +11171,6 @@
       "pp": 5,
       "priority": 0,
       "flags": {"contact": 1, "mirror": 1},
-      "breaksProtect": true,
       "secondary": null,
       "target": "normal",
       "type": "Normal",

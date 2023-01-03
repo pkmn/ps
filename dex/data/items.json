@@ -754,10 +754,6 @@
       "inherit": true,
       "desc": "Holder gains 1.3x HP from draining moves, Aqua Ring, Ingrain, and Leech Seed."
     },
-    "energypowder": {
-      "inherit": true,
-      "desc": "Restores 50 HP to one Pokemon but lowers Happiness."
-    },
     "lightclay": {
       "inherit": true,
       "desc": "Holder's use of Light Screen or Reflect lasts 8 turns instead of 5."
@@ -784,6 +780,7 @@
     "blastoisinite": {"inherit": true, "isNonstandard": null},
     "blazikenite": {"inherit": true, "isNonstandard": null},
     "blueorb": {"inherit": true, "isNonstandard": null},
+    "blukberry": {"inherit": true, "isNonstandard": "Unobtainable"},
     "buggem": {"inherit": true, "isNonstandard": "Unobtainable"},
     "buginiumz": {"inherit": true, "isNonstandard": null},
     "cameruptite": {"inherit": true, "isNonstandard": null},
@@ -885,6 +882,7 @@
     "pidgeotite": {"inherit": true, "isNonstandard": null},
     "pikaniumz": {"inherit": true, "isNonstandard": null},
     "pikashuniumz": {"inherit": true, "isNonstandard": null},
+    "pinapberry": {"inherit": true, "isNonstandard": "Unobtainable"},
     "pinsirite": {"inherit": true, "isNonstandard": null},
     "plumefossil": {"inherit": true, "isNonstandard": null},
     "poisongem": {"inherit": true, "isNonstandard": "Unobtainable"},
@@ -950,11 +948,14 @@
     }
   },
   "8": {
+    "adamantcrystal": {"inherit": true, "isNonstandard": "Future"},
     "adamantorb": {"inherit": true, "isNonstandard": null},
     "berryjuice": {"inherit": true, "isNonstandard": null},
+    "berrysweet": {"inherit": true, "isNonstandard": null},
     "bugmemory": {"inherit": true, "isNonstandard": null},
     "burndrive": {"inherit": true, "isNonstandard": null},
     "chilldrive": {"inherit": true, "isNonstandard": null},
+    "cloversweet": {"inherit": true, "isNonstandard": null},
     "custapberry": {"inherit": true, "isNonstandard": null},
     "darkmemory": {"inherit": true, "isNonstandard": null},
     "deepseascale": {"inherit": true, "isNonstandard": null},
@@ -969,6 +970,7 @@
     "fairymemory": {"inherit": true, "isNonstandard": null},
     "fightingmemory": {"inherit": true, "isNonstandard": null},
     "firememory": {"inherit": true, "isNonstandard": null},
+    "flowersweet": {"inherit": true, "isNonstandard": null},
     "flyingmemory": {"inherit": true, "isNonstandard": null},
     "fossilizedbird": {"inherit": true, "isNonstandard": null},
     "fossilizeddino": {"inherit": true, "isNonstandard": null},
@@ -979,15 +981,26 @@
     "galaricawreath": {"inherit": true, "isNonstandard": null},
     "ghostmemory": {"inherit": true, "isNonstandard": null},
     "grassmemory": {"inherit": true, "isNonstandard": null},
-    "griseousorb": {"inherit": true, "isNonstandard": null},
+    "griseouscore": {"inherit": true, "isNonstandard": "Future"},
+    "griseousorb": {
+      "inherit": true,
+      "isNonstandard": null,
+      "forcedForme": "Giratina-Origin",
+      "itemUser": ["Giratina-Origin"]
+    },
     "groundmemory": {"inherit": true, "isNonstandard": null},
     "icememory": {"inherit": true, "isNonstandard": null},
     "jabocaberry": {"inherit": true, "isNonstandard": null},
     "keeberry": {"inherit": true, "isNonstandard": null},
     "laxincense": {"inherit": true, "isNonstandard": null},
     "leek": {"inherit": true, "isNonstandard": null},
+    "lovesweet": {"inherit": true, "isNonstandard": null},
+    "lustrousglobe": {"inherit": true, "isNonstandard": "Future"},
     "lustrousorb": {"inherit": true, "isNonstandard": null},
+    "machobrace": {"inherit": true, "isNonstandard": null},
+    "magmarizer": {"inherit": true, "isNonstandard": null},
     "marangaberry": {"inherit": true, "isNonstandard": null},
+    "metalpowder": {"inherit": true, "isNonstandard": null},
     "micleberry": {"inherit": true, "isNonstandard": null},
     "oddincense": {"inherit": true, "isNonstandard": null},
     "pixieplate": {"inherit": true, "isNonstandard": null},
@@ -995,7 +1008,9 @@
     "prismscale": {"inherit": true, "isNonstandard": null},
     "protector": {"inherit": true, "isNonstandard": null},
     "psychicmemory": {"inherit": true, "isNonstandard": null},
+    "quickpowder": {"inherit": true, "isNonstandard": null},
     "reapercloth": {"inherit": true, "isNonstandard": null},
+    "ribbonsweet": {"inherit": true, "isNonstandard": null},
     "rockincense": {"inherit": true, "isNonstandard": null},
     "rockmemory": {"inherit": true, "isNonstandard": null},
     "roseincense": {"inherit": true, "isNonstandard": null},
@@ -1003,10 +1018,15 @@
     "rustedshield": {"inherit": true, "isNonstandard": null},
     "rustedsword": {"inherit": true, "isNonstandard": null},
     "sachet": {"inherit": true, "isNonstandard": null},
+    "safariball": {"inherit": true, "isNonstandard": null},
     "seaincense": {"inherit": true, "isNonstandard": null},
     "shockdrive": {"inherit": true, "isNonstandard": null},
     "souldew": {"inherit": true, "isNonstandard": null},
+    "sportball": {"inherit": true, "isNonstandard": null},
+    "starsweet": {"inherit": true, "isNonstandard": null},
+    "strawberrysweet": {"inherit": true, "isNonstandard": null},
     "steelmemory": {"inherit": true, "isNonstandard": null},
+    "strangeball": {"inherit": true, "isNonstandard": "Future"},
     "thickclub": {"inherit": true, "isNonstandard": null},
     "tr00": {"inherit": true, "isNonstandard": null},
     "tr01": {"inherit": true, "isNonstandard": null},
@@ -1148,6 +1168,16 @@
       "num": 545,
       "gen": 5,
       "desc": "Raises holder's Sp. Atk by 1 stage if hit by a Water-type attack. Single use."
+    },
+    "adamantcrystal": {
+      "name": "Adamant Crystal",
+      "onBasePowerPriority": 15,
+      "forcedForme": "Dialga-Origin",
+      "itemUser": ["Dialga-Origin"],
+      "num": 1777,
+      "gen": 8,
+      "isNonstandard": "Unobtainable",
+      "desc": "If held by a Dialga, its Steel- and Dragon-type attacks have 1.2x power."
     },
     "adamantorb": {
       "name": "Adamant Orb",
@@ -1350,6 +1380,7 @@
       "fling": {"basePower": 10},
       "num": 1111,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "bigroot": {
@@ -1427,6 +1458,7 @@
       "onEat": false,
       "num": 165,
       "gen": 3,
+      "isNonstandard": "Past",
       "desc": "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck."
     },
     "blunderpolicy": {
@@ -1653,6 +1685,7 @@
       "fling": {"basePower": 10},
       "num": 1112,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "cobaberry": {
@@ -2022,13 +2055,6 @@
       "isNonstandard": "Past",
       "desc": "If holder has an Electric move, this item allows it to use an Electric Z-Move."
     },
-    "energypowder": {
-      "name": "Energy Powder",
-      "fling": {"basePower": 30},
-      "num": 34,
-      "gen": 2,
-      "desc": "Restores 60 HP to one Pokemon."
-    },
     "enigmaberry": {
       "name": "Enigma Berry",
       "isBerry": true,
@@ -2208,6 +2234,7 @@
       "fling": {"basePower": 0},
       "num": 1113,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "flyinggem": {
@@ -2301,7 +2328,7 @@
       "onFractionalPriority": -0.1,
       "num": 316,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
+      "isNonstandard": "Past",
       "desc": "Holder moves last in its priority bracket."
     },
     "galaricacuff": {
@@ -2309,7 +2336,7 @@
       "fling": {"basePower": 30},
       "num": 1582,
       "gen": 8,
-      "isNonstandard": "Past",
+      "isNonstandard": "Unobtainable",
       "desc": "Evolves Galarian Slowpoke into Galarian Slowbro when used."
     },
     "galaricawreath": {
@@ -2317,7 +2344,7 @@
       "fling": {"basePower": 30},
       "num": 1592,
       "gen": 8,
-      "isNonstandard": "Past",
+      "isNonstandard": "Unobtainable",
       "desc": "Evolves Galarian Slowpoke into Galarian Slowking when used."
     },
     "galladite": {
@@ -2476,12 +2503,21 @@
       "gen": 4,
       "desc": "Holder's partial-trapping moves always last 7 turns."
     },
+    "griseouscore": {
+      "name": "Griseous Core",
+      "onBasePowerPriority": 15,
+      "forcedForme": "Giratina-Origin",
+      "itemUser": ["Giratina-Origin"],
+      "num": 1779,
+      "gen": 8,
+      "isNonstandard": "Unobtainable",
+      "desc": "If held by a Giratina, its Ghost- and Dragon-type attacks have 1.2x power."
+    },
     "griseousorb": {
       "name": "Griseous Orb",
       "fling": {"basePower": 60},
       "onBasePowerPriority": 15,
-      "forcedForme": "Giratina-Origin",
-      "itemUser": ["Giratina-Origin"],
+      "itemUser": ["Giratina"],
       "num": 112,
       "gen": 4,
       "isNonstandard": "Unobtainable",
@@ -2832,7 +2868,7 @@
       "onModifyAccuracyPriority": -2,
       "num": 255,
       "gen": 3,
-      "isNonstandard": "Unobtainable",
+      "isNonstandard": "Past",
       "desc": "The accuracy of attacks against the holder is 0.9x."
     },
     "leafstone": {
@@ -2953,6 +2989,7 @@
       "fling": {"basePower": 10},
       "num": 1110,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "lucarionite": {
@@ -3009,6 +3046,16 @@
       "isPokeball": true,
       "desc": "A Poke Ball for catching Pokemon hooked by a Rod when fishing."
     },
+    "lustrousglobe": {
+      "name": "Lustrous Globe",
+      "onBasePowerPriority": 15,
+      "forcedForme": "Palkia-Origin",
+      "itemUser": ["Palkia-Origin"],
+      "num": 1778,
+      "gen": 8,
+      "isNonstandard": "Unobtainable",
+      "desc": "If held by a Palkia, its Water- and Dragon-type attacks have 1.2x power."
+    },
     "lustrousorb": {
       "name": "Lustrous Orb",
       "fling": {"basePower": 60},
@@ -3043,6 +3090,7 @@
       "fling": {"basePower": 60},
       "num": 215,
       "gen": 3,
+      "isNonstandard": "Past",
       "desc": "Holder's Speed is halved. The Klutz Ability does not ignore this effect."
     },
     "magmarizer": {
@@ -3050,6 +3098,7 @@
       "fling": {"basePower": 80},
       "num": 323,
       "gen": 4,
+      "isNonstandard": "Past",
       "desc": "Evolves Magmar into Magmortar when traded."
     },
     "magnet": {
@@ -3191,6 +3240,7 @@
       "itemUser": ["Ditto"],
       "num": 257,
       "gen": 2,
+      "isNonstandard": "Past",
       "desc": "If held by a Ditto that hasn't Transformed, its Defense is doubled."
     },
     "metronome": {
@@ -3395,7 +3445,7 @@
       "onBasePowerPriority": 15,
       "num": 314,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
+      "isNonstandard": "Past",
       "desc": "Holder's Psychic-type attacks have 1.2x power."
     },
     "oldamber": {
@@ -3526,6 +3576,7 @@
       "onEat": false,
       "num": 168,
       "gen": 3,
+      "isNonstandard": "Past",
       "desc": "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck."
     },
     "pinsirite": {
@@ -3747,6 +3798,7 @@
     "punchingglove": {
       "name": "Punching Glove",
       "onBasePowerPriority": 23,
+      "onModifyMovePriority": 1,
       "num": 1884,
       "gen": 9,
       "desc": "Holder's punch-based attacks have 1.1x power and do not make contact."
@@ -3781,6 +3833,7 @@
       "itemUser": ["Ditto"],
       "num": 274,
       "gen": 4,
+      "isNonstandard": "Past",
       "desc": "If held by a Ditto that hasn't Transformed, its Speed is doubled."
     },
     "rabutaberry": {
@@ -3871,6 +3924,7 @@
       "fling": {"basePower": 10},
       "num": 1115,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "rindoberry": {
@@ -3903,7 +3957,7 @@
       "onBasePowerPriority": 15,
       "num": 315,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
+      "isNonstandard": "Past",
       "desc": "Holder's Rock-type attacks have 1.2x power."
     },
     "rockmemory": {
@@ -3958,7 +4012,7 @@
       "onBasePowerPriority": 15,
       "num": 318,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
+      "isNonstandard": "Past",
       "desc": "Holder's Grass-type attacks have 1.2x power."
     },
     "roseliberry": {
@@ -4017,6 +4071,7 @@
       "num": 5,
       "gen": 1,
       "isPokeball": true,
+      "isNonstandard": "Unobtainable",
       "desc": "A special Poke Ball that is used only in the Safari Zone and Great Marsh."
     },
     "safetygoggles": {
@@ -4085,7 +4140,7 @@
       "onBasePowerPriority": 15,
       "num": 254,
       "gen": 3,
-      "isNonstandard": "Unobtainable",
+      "isNonstandard": "Past",
       "desc": "Holder's Water-type attacks have 1.2x power."
     },
     "sharpbeak": {
@@ -4298,6 +4353,7 @@
       "num": 499,
       "gen": 2,
       "isPokeball": true,
+      "isNonstandard": "Unobtainable",
       "desc": "A special Poke Ball for the Bug-Catching Contest."
     },
     "starfberry": {
@@ -4313,6 +4369,7 @@
       "fling": {"basePower": 10},
       "num": 1114,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "steelixite": {
@@ -4383,11 +4440,19 @@
       "isNonstandard": "Unobtainable",
       "desc": "Holder's Rock-type attacks have 1.2x power. Judgment is Rock type."
     },
+    "strangeball": {
+      "name": "Strange Ball",
+      "num": 1785,
+      "gen": 8,
+      "isPokeball": true,
+      "isNonstandard": "Unobtainable"
+    },
     "strawberrysweet": {
       "name": "Strawberry Sweet",
       "fling": {"basePower": 10},
       "num": 1109,
       "gen": 8,
+      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "sunstone": {
@@ -5433,7 +5498,7 @@
       "onBasePowerPriority": 15,
       "num": 317,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
+      "isNonstandard": "Past",
       "desc": "Holder's Water-type attacks have 1.2x power."
     },
     "weaknesspolicy": {

@@ -2,7 +2,9 @@ import {
   BoostID, Effect, ID, Move, MoveName,
   Specie, SpeciesName, StatID, toID, TypeName,
 } from '@pkmn/data';
-import {Protocol, Args, KWArgs, PokemonSearchID, PokemonIdent} from '@pkmn/protocol';
+import {
+  Protocol, Args, KWArgs, PokemonSearchID, PokemonIdent, PokemonDetails,
+} from '@pkmn/protocol';
 
 import {Battle, NULL, NA} from './battle';
 import {LastItemEffect} from './pokemon';
@@ -356,9 +358,13 @@ export class Handler implements Protocol.Handler {
     }
   }
 
-  '|-copyboost|'(args: Args['|-copyboost|']) {
+  '|-copyboost|'(args: Args['|-copyboost|'], kwArgs: KWArgs['|-copyboost|']) {
     const poke = this.battle.getPokemon(args[1])!;
     const poke2 = this.battle.getPokemon(args[2])!;
+    if (!kwArgs.silent && kwArgs.from) {
+      const fromEffect = this.battle.get('conditions', kwArgs.from);
+      poke.activateAbility(fromEffect);
+    }
     const boosts = args[3] ? args[3].split(', ') as BoostID[] : BOOSTS;
     for (const boost of boosts) {
       poke.boosts[boost] = poke2.boosts[boost];
@@ -702,7 +708,12 @@ export class Handler implements Protocol.Handler {
   '|-terastallize|'(args: Args['|-terastallize|']) {
     const poke = this.battle.getPokemon(args[1])!;
     poke.isTerastallized = !!args[2];
-    if (args[2]) poke.teraType = sanitizeName(args[2]) as TypeName;
+    if (args[2]) {
+      const type = sanitizeName(args[2]) as TypeName;
+      poke.teraType = type;
+      poke.details = `${poke.details}, tera:${type}` as PokemonDetails;
+      poke.searchid = `${poke.searchid}, tera:${type}` as PokemonSearchID;
+    }
   }
 
   '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {

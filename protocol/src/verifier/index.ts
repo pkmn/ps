@@ -1042,7 +1042,8 @@ class Handler implements Required<Protocol.Handler<boolean>> {
 
   '|-fieldactivate|'(args: Args['|-fieldactivate|'], kwArgs: KWArgs['|-fieldactivate|']) {
     return args.length === 2 &&
-      verifyEffectName(args[1], this.gen) &&
+      // fucking gag me
+      (args[1] === 'Delta Stream' || verifyEffectName(args[1], this.gen)) &&
       verifyKWArgs(kwArgs, KWARGS, this.gen);
   }
 
