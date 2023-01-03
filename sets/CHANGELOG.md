@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.3
+
+- Disables strict mode for the minified production bundle.
+
 ## 5.0.2
 
 - Reverts change which exports `teraType` field in Generation 9 in all circumstances.

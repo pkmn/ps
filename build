@@ -12,7 +12,7 @@ const minimist = require('minimist');
 const argv = minimist(process.argv.slice(2), {default: {minify: false}});
 const cwd = process.cwd();
 
-const preamble = `"use strict";window.pkmn=window.pkmn||{};window.pkmn.`;
+const preamble = `window.pkmn=window.pkmn||{};window.pkmn.`;
 const learnsets = `import * as LearnsetsJSON from './data/learnsets.json'; export {LearnsetsJSON};`;
 
 const rewrite = async (result, name, pkg, suffix = '') => {
