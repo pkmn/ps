@@ -1,6 +1,6 @@
 # Changelog
 
-### 3.0.0
+## 3.0.0
 
 - Generation 9 was released and `PokemonSet` now has a `teraType` field.
 
