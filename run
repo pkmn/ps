@@ -10,6 +10,8 @@ try {
 const util = require('util');
 global.DEBUG = (s) =>
 	console.debug(`\x1b[41m${util.inspect(s, {colors: false}).replaceAll('\n', '\x1b[K\n')}\x1b[K\x1b[0m`);
+// global.VDEBUG = () => {};
+global.VDEBUG = console.debug;
 
 const {Battle} = require('./sim');
 const {Generations} = require('./data');
@@ -128,40 +130,12 @@ const METRONOME = move => {
 const MIN_WRAP = {key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: MIN};
 const REWRAP = {key: ['Battle.sample', 'BattleActions.runMove'], value: MIN};
 
-const proc = {key: HIT.key, value: MIN};
 const battle = startBattle([
-	HIT, NO_CRIT, MIN_DMG, proc, SS_MOD, HIT, NO_CRIT, MIN_DMG, MIN_WRAP,
-	HIT, MISS, HIT, NO_CRIT, MIN_DMG, proc, SS_MOD, MISS,
-	HIT, NO_CRIT, MIN_DMG, MIN_WRAP,
-	HIT, NO_CRIT, MIN_DMG, MIN_WRAP,
 ], [
-	{species: 'Dragonair', evs, moves: ['Wrap']},
-	{species: 'Dragonite', evs, moves: ['Dragon Rage', 'Ember', 'Wrap']},
+	{species: 'Chansey', evs, moves: ['Counter']},
 ], [
-	{species: 'Beedrill', evs, moves: ['Poison Sting']},
-	{species: 'Kakuna', evs, moves: ['Harden']},
+	{species: 'Chansey', evs, moves: ['Counter']},
 ]);
 
-battle.p1.pokemon[0].hp = 21;
-    battle.p2.pokemon[0].hp = 210;
-
-
 battle.makeChoices('move 1', 'move 1');
-
-
-battle.makeChoices('switch 2', '');
-
-battle.makeChoices('move 1', 'move 1');
-
-
-battle.makeChoices('move 2', 'move 1');
-
-
-battle.makeChoices('move 3', 'move 1');
-
-
-battle.makeChoices('', 'switch 2');
-
-
-battle.makeChoices('move 3', 'move 1');
 
