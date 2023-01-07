@@ -475,6 +475,7 @@ export class Battle {
 	 * Runs an event with no source on each Pokémon on the field, in Speed order.
 	 */
 	eachEvent(eventid: string, effect?: Effect | null, relayVar?: boolean) {
+		VDEBUG(`\x1b[34meachEvent(${eventid})\x1b[0m`);
 		const actives = this.getAllActive();
 		if (!effect && this.effect) effect = this.effect;
 		this.speedSort(actives, (a, b) => b.speed - a.speed);
@@ -2866,10 +2867,10 @@ export class Battle {
 		}
 		this.clearRequest();
 
-		const before = this.queue.list.map(c => (('pokemon' in c) && c.pokemon?.side.id) || '*');
+		const before = this.queue.debug();
 		this.queue.sort();
 		this.queue.list.push(...oldQueue);
-		VDEBUG(`\x1b[36msorted queue = before: [${before}], after: [${this.queue.list.map(c => (('pokemon' in c) && c.pokemon?.side.id) || '*')}]\x1b[0m`);
+		VDEBUG(`\x1b[36msorted queue = {\n${before}} -> {\n${this.queue.debug()}}\x1b[0m`);
 
 		this.requestState = '';
 		for (const side of this.sides) {

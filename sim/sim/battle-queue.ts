@@ -202,6 +202,7 @@ export class BattleQueue {
 		if (!midTurn) {
 			if (action.choice === 'move') {
 				if (!action.maxMove && !action.zmove && action.move.beforeTurnCallback) {
+					VDEBUG(`\x1b[36munshift: beforeTurnMove\x1b[0m`);
 					actions.unshift(...this.resolveAction({
 						choice: 'beforeTurnMove', pokemon: action.pokemon, move: action.move, targetLoc: action.targetLoc,
 					}));
@@ -358,8 +359,8 @@ export class BattleQueue {
 			}
 			return;
 		}
+		const before = this.debug();
 		const choice = choices;
-		VDEBUG(`\x1b[36minsertChoice: ${choice.choice}\x1b[0m`);
 
 		if (choice.pokemon) {
 			choice.pokemon.updateSpeed();
@@ -386,6 +387,7 @@ export class BattleQueue {
 			const index = firstIndex === lastIndex ? firstIndex : this.battle.random(firstIndex, lastIndex + 1);
 			this.list.splice(index, 0, ...actions);
 		}
+		VDEBUG(`\x1b[36minsertChoice: ${choice.choice} = {\n${before}} ->   {\n${this.debug()}}\x1b[0m`);
 	}
 
 	clear() {
@@ -394,7 +396,7 @@ export class BattleQueue {
 
 	debug(action?: any): string {
 		if (action) {
-			return `${action.order || ''}:${action.priority || ''}:${action.speed || ''}:${action.subOrder || ''} - ${action.choice}${action.pokemon ? ' ' + action.pokemon : ''}${action.move ? ' ' + action.move : ''}`;
+			return `  ${action.order || ''}:${action.priority || ''}:${action.speed || ''}:${action.subOrder || ''} - ${action.choice}${action.pokemon ? ' ' + action.pokemon : ''}${action.move ? ' ' + action.move : ''}`;
 		}
 		return this.list.map(
 			queueAction => this.debug(queueAction)
