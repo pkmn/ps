@@ -698,6 +698,10 @@
     "end": "  [POKEMON] shook off the taunt!",
     "cant": "[POKEMON] can't use [MOVE] after the taunt!"
   },
+  "teatime": {
+    "activate": "  It's teatime! Everyone dug in to their Berries!",
+    "fail": "  But nothing happened!"
+  },
   "telekinesis": {
     "start": "  [POKEMON] was hurled into the air!",
     "end": "  [POKEMON] was freed from the telekinesis!"

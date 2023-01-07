@@ -597,6 +597,13 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 8] Random Doubles Battle',
+    mod: 'gen8',
+    gameType: 'doubles',
+    team: 'random',
+    ruleset: [ 'PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod' ]
+  },
+  {
     name: '[Gen 8] Free-For-All Random Battle',
     mod: 'gen8',
     team: 'random',
@@ -1177,13 +1184,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 8] Random Doubles Battle',
-    mod: 'gen8',
-    gameType: 'doubles',
-    team: 'random',
-    ruleset: [ 'PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod' ]
-  },
-  {
     name: '[Gen 8] Doubles Ubers',
     mod: 'gen8',
     gameType: 'doubles',
@@ -1209,18 +1209,6 @@ export const Formats: FormatList = [
       'Limit Two Restricted'
     ],
     restricted: [ 'Restricted Legendary' ]
-  },
-  {
-    name: '[Gen 8] Spikemuth Cup',
-    mod: 'gen8',
-    gameType: 'doubles',
-    ruleset: [
-      'Flat Rules',
-      'Dynamax Clause',
-      '!! Adjust Level = 50',
-      'Min Source Gen = 8',
-      'VGC Timer'
-    ]
   },
   {
     name: '[Gen 8] VGC 2021',
