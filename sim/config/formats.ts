@@ -152,8 +152,7 @@ export const Formats: FormatList = [
     mod: 'gen9',
     gameType: 'doubles',
     ruleset: [ 'Standard Doubles' ],
-    banlist: [ 'DUber', 'Shadow Tag' ],
-    unbanlist: [ 'Flutter Mane' ]
+    banlist: [ 'DUber', 'Shadow Tag' ]
   },
   {
     name: '[Gen 9] Doubles Ubers',
@@ -166,7 +165,7 @@ export const Formats: FormatList = [
     mod: 'gen9',
     gameType: 'doubles',
     ruleset: [ '[Gen 9] Doubles OU' ],
-    banlist: [ 'DOU', 'DBL', 'Flutter Mane' ]
+    banlist: [ 'DOU', 'DBL' ]
   },
   {
     name: '[Gen 9] Doubles LC',
