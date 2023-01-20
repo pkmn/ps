@@ -109,6 +109,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   canGigantamax?: boolean;
   canMegaEvo?: boolean;
   canUltraBurst?: boolean;
+  canTerastallize?: boolean;
   trapped?: boolean;
   maybeTrapped?: boolean;
   maybeDisabled?: boolean;
@@ -176,6 +177,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.canGigantamax = undefined;
     this.canMegaEvo = undefined;
     this.canUltraBurst = undefined;
+    this.canTerastallize = undefined;
     this.trapped = undefined;
     this.maybeTrapped = undefined;
     this.maybeDisabled = undefined;

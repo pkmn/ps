@@ -194,6 +194,7 @@ export class Battle {
           poke.canGigantamax = active.canGigantamax;
           poke.canMegaEvo = active.canMegaEvo;
           poke.canUltraBurst = active.canUltraBurst;
+          poke.canTerastallize = active.canTerastallize;
           poke.trapped = active.trapped;
           poke.maybeTrapped = active.maybeTrapped;
           poke.maybeDisabled = active.maybeDisabled;
