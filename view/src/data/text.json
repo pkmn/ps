@@ -364,7 +364,8 @@
   "dig": {"prepare": "[POKEMON] burrowed its way under the ground!"},
   "disable": {
     "start": "  [POKEMON]'s [MOVE] was disabled!",
-    "end": "  [POKEMON]'s move is no longer disabled!"
+    "end": "  [POKEMON]'s move is no longer disabled!",
+    "cant": "[POKEMON]'s [MOVE] is disabled!"
   },
   "dive": {"prepare": "[POKEMON] hid underwater!"},
   "doomdesire": {
@@ -514,7 +515,6 @@
     "start": "  [POKEMON] shrouded itself with Magic Coat!",
     "move": "[POKEMON] bounced the [MOVE] back!"
   },
-  "magikarpsrevenge": {"fail": "#darkvoid"},
   "magmastorm": {"start": "  [POKEMON] became trapped by swirling magma!"},
   "magnetrise": {
     "start": "  [POKEMON] levitated with electromagnetism!",

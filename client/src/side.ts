@@ -1,5 +1,7 @@
 import {ID, toID, SideCondition, PokemonSet} from '@pkmn/data';
-import {AvatarIdent, DetailedPokemon, Username} from '@pkmn/protocol';
+import {
+  AvatarIdent, DetailedPokemon, PokemonDetails, PokemonSearchID, Username,
+} from '@pkmn/protocol';
 
 import {Battle} from './battle';
 import {Pokemon} from './pokemon';
@@ -245,6 +247,7 @@ export class Side {
       pokemon.maxhp = oldpokemon.maxhp;
       pokemon.hpcolor = oldpokemon.hpcolor;
       pokemon.status = oldpokemon.status;
+      pokemon.terastallized = oldpokemon.terastallized;
       pokemon.copyVolatileFrom(oldpokemon, 'illusion');
       pokemon.statusState = {...oldpokemon.statusState};
       // we don't know anything about the illusioned pokemon except that it's not fainted
@@ -252,6 +255,7 @@ export class Side {
       oldpokemon.fainted = false;
       oldpokemon.hp = oldpokemon.maxhp;
       oldpokemon.status = undefined; // '???';
+      oldpokemon.terastallized = undefined;
     }
 
     this.active[slot] = pokemon;
@@ -310,7 +314,9 @@ export class Side {
 
     pokemon.fainted = true;
     pokemon.hp = 0;
-    pokemon.isTerastallized = false;
+    pokemon.terastallized = undefined;
+    pokemon.details = pokemon.details.replace(/, tera:[a-z]+/i, '') as PokemonDetails;
+    pokemon.searchid = pokemon.searchid.replace(/, tera:[a-z]+/i, '') as PokemonSearchID;
     if (pokemon.side.faints < 100) pokemon.side.faints++;
   }
 

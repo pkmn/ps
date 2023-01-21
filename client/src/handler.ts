@@ -181,6 +181,7 @@ export class Handler implements Protocol.Handler {
     const slot = poke.slot;
     if (args[3]) poke.healthParse(args[3]);
     poke.removeVolatile('itemremoved' as ID);
+    poke.terastallized = (/tera:([a-z]+)$/i.exec(args[2]))?.[1] as TypeName || undefined;
     if (args[0] === 'switch') {
       const from = this.battle.get('conditions', kwArgs?.from);
       if (poke.side.active[slot]) {
@@ -417,7 +418,11 @@ export class Handler implements Protocol.Handler {
     const poke = this.battle.getPokemon(args[1])!;
     const fromEffect = this.battle.get('conditions', kwArgs.from);
     const ofPoke = this.battle.getPokemon(kwArgs.of);
-    (ofPoke || poke).activateAbility(fromEffect);
+    if (fromEffect.id === 'clearamulet') {
+      ofPoke!.item = fromEffect.id;
+    } else {
+      (ofPoke || poke).activateAbility(fromEffect);
+    }
   }
 
   '|-block|'(args: Args['|-block|'], kwArgs: KWArgs['|-block|']) {
@@ -429,7 +434,8 @@ export class Handler implements Protocol.Handler {
     case 'quickguard': case 'wideguard': case 'craftyshield': case 'matblock':
       return void poke.side.addSideCondition(effect, false);
     case 'protect': return poke.addVolatile('protect' as ID, {duration: 'turn'});
-    case 'safetygoggles': case 'protectivepads': return void (poke.item = effect.id);
+    case 'safetygoggles': case 'protectivepads': case 'abilityshield':
+      return void (poke.item = effect.id);
     }
   }
 
@@ -707,10 +713,9 @@ export class Handler implements Protocol.Handler {
 
   '|-terastallize|'(args: Args['|-terastallize|']) {
     const poke = this.battle.getPokemon(args[1])!;
-    poke.isTerastallized = !!args[2];
     if (args[2]) {
       const type = sanitizeName(args[2]) as TypeName;
-      poke.teraType = type;
+      poke.terastallized = type;
       poke.details = `${poke.details}, tera:${type}` as PokemonDetails;
       poke.searchid = `${poke.searchid}, tera:${type}` as PokemonSearchID;
     }

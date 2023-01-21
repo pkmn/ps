@@ -48,6 +48,12 @@ export type LastItemEffect =
    'eaten' | 'flung' | 'knocked off' | 'stolen' | 'consumed' | 'incinerated' | 'popped' | 'held up';
 export type CopySource = 'batonpass' | 'illusion' | 'shedtail';
 
+const VOLATILES = [
+  'airballoon', 'attract', 'autotomize', 'disable', 'encore', 'foresight', 'gmaxchistrike',
+  'imprison', 'laserfocus', 'mimic', 'miracleeye', 'nightmare', 'saltcure', 'smackdown',
+  'stockpile1', 'stockpile2', 'stockpile3', 'torment', 'typeadd', 'typechange', 'yawn',
+];
+
 export class Pokemon implements DetailedPokemon, PokemonHealth {
   readonly side: Side;
   readonly set?: PokemonSet;
@@ -60,6 +66,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   shiny: boolean;
   gender: GenderName;
   readonly originalIdent: PokemonIdent;
+  terastallized?: TypeName;
   searchid: PokemonSearchID;
 
   hp: number;
@@ -90,8 +97,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   nature?: NatureName;
   hpType?: HPTypeName;
-  teraType?: TypeName;
-  isTerastallized: boolean;
 
   moveSlots: MoveSlot[];
   maxMoves?: Array<{
@@ -166,8 +171,8 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.hpType = set?.hpType
       ? this.side.battle.gen.types.get(set.hpType)?.name as HPTypeName
       : undefined;
-    this.teraType = set?.teraType ? this.side.battle.gen.types.get(set?.teraType)?.name : undefined;
-    this.isTerastallized = false;
+    this.terastallized =
+      set?.teraType ? this.side.battle.gen.types.get(set?.teraType)?.name : undefined;
 
     this.moveSlots = [];
     this.maxMoves = undefined;
@@ -264,6 +269,14 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   get addedType() {
     return this.volatiles.typeadd?.type;
+  }
+
+  get teraType() {
+    return this.terastallized;
+  }
+
+  get isTerastallized() {
+    return !!this.terastallized;
   }
 
   get switching() {
@@ -381,24 +394,9 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.volatiles = pokemon.volatiles;
     // this.lastMove = pokemon.lastMove; // I think
     if (copySource === 'batonpass') {
-      delete this.volatiles['airballoon'];
-      delete this.volatiles['attract'];
-      delete this.volatiles['autotomize'];
-      delete this.volatiles['disable'];
-      delete this.volatiles['encore'];
-      delete this.volatiles['foresight'];
-      delete this.volatiles['gmaxchistrike'];
-      delete this.volatiles['imprison'];
-      delete this.volatiles['laserfocus'];
-      delete this.volatiles['mimic'];
-      delete this.volatiles['miracleeye'];
-      delete this.volatiles['nightmare'];
-      delete this.volatiles['smackdown'];
-      delete this.volatiles['stockpile'];
-      delete this.volatiles['torment'];
-      delete this.volatiles['typeadd'];
-      delete this.volatiles['typechange'];
-      delete this.volatiles['yawn'];
+      for (const volatile of VOLATILES) {
+        delete this.volatiles[volatile];
+      }
     } else if (copySource === 'shedtail') {
       for (const i in this.volatiles) {
         if (i === 'substitute') continue;

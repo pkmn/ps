@@ -221,7 +221,7 @@
     },
     "mirrormove": {
       "inherit": true,
-      "desc": "The user uses the last move used by the target. Fails if the target has not made a move, or if the last move used was Mirror Move."
+      "desc": "The user uses the last move used by the target. Fails if the target has not made a move since the user switched in, or if the last move used was Mirror Move."
     },
     "mist": {
       "inherit": true,
@@ -234,6 +234,11 @@
       "basePower": 1,
       "desc": "Deals damage to the target equal to the user's level. This move ignores type immunity.",
       "shortDesc": "Damage = user's level. Can hit Normal types."
+    },
+    "petaldance": {
+      "inherit": true,
+      "desc": "Whether or not this move is successful, the user spends three or four turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. During the effect, this move's accuracy is overwritten every turn with the current calculated accuracy including stat stage changes, but not to less than 1/256 or more than 255/256.",
+      "shortDesc": "Lasts 3-4 turns. Confuses the user afterwards."
     },
     "poisonsting": {
       "inherit": true,
@@ -251,7 +256,7 @@
     "rage": {
       "inherit": true,
       "self": {"volatileStatus": "rage"},
-      "condition": {"duration": 255, "onLockMove": "rage"},
+      "condition": {"onLockMove": "rage"},
       "desc": "Once this move is successfully used, the user automatically uses this move every turn and can no longer switch out. During the effect, the user's Attack is raised by 1 stage every time it is hit by the opposing Pokemon, and this move's accuracy is overwritten every turn with the current calculated accuracy including stat stage changes, but not to less than 1/256 or more than 255/256.",
       "shortDesc": "Lasts forever. Raises user's Attack by 1 when hit."
     },
@@ -378,6 +383,11 @@
       "desc": "Deals damage to the target equal to half of its current HP, rounded down, but not less than 1 HP. This move ignores type immunity.",
       "shortDesc": "Damage = 1/2 target's current HP. Hits Ghosts."
     },
+    "thrash": {
+      "inherit": true,
+      "desc": "Whether or not this move is successful, the user spends three or four turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. During the effect, this move's accuracy is overwritten every turn with the current calculated accuracy including stat stage changes, but not to less than 1/256 or more than 255/256.",
+      "shortDesc": "Lasts 3-4 turns. Confuses the user afterwards."
+    },
     "thunder": {
       "inherit": true,
       "secondary": {"chance": 10, "status": "par"},
@@ -477,11 +487,6 @@
       "inherit": true,
       "desc": "Raises the user's evasiveness by 1 stage."
     },
-    "petaldance": {
-      "inherit": true,
-      "desc": "Whether or not this move is successful, the user spends three or four turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. During the effect, this move's accuracy is overwritten every turn with the current calculated accuracy including stat stage changes, but not to less than 1/256 or more than 255/256.",
-      "shortDesc": "Lasts 3-4 turns. Confuses the user afterwards."
-    },
     "pinmissile": {
       "inherit": true,
       "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends."
@@ -507,11 +512,6 @@
     "takedown": {
       "inherit": true,
       "desc": "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not take any recoil damage."
-    },
-    "thrash": {
-      "inherit": true,
-      "desc": "Whether or not this move is successful, the user spends three or four turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. During the effect, this move's accuracy is overwritten every turn with the current calculated accuracy including stat stage changes, but not to less than 1/256 or more than 255/256.",
-      "shortDesc": "Lasts 3-4 turns. Confuses the user afterwards."
     },
     "transform": {
       "inherit": true,
@@ -682,7 +682,7 @@
     "mirrormove": {
       "inherit": true,
       "noSketch": true,
-      "desc": "The user uses the last move used by the target. Fails if the target has not made a move, or if the last move used was Metronome, Mimic, Mirror Move, Sketch, Sleep Talk, Transform, or any move the user knows."
+      "desc": "The user uses the last move used by the target. Fails if the target has not made a move since the user switched in, or if the last move used was Metronome, Mimic, Mirror Move, Sketch, Sleep Talk, Transform, or any move the user knows."
     },
     "mist": {
       "num": 54,
@@ -4059,11 +4059,11 @@
     },
     "solarbeam": {
       "inherit": true,
-      "desc": "This attack charges on the first turn and executes on the second. Power is halved if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn."
+      "desc": "This attack charges on the first turn and executes on the second. Power is halved if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn."
     },
     "solarblade": {
       "inherit": true,
-      "desc": "This attack charges on the first turn and executes on the second. Power is halved if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn."
+      "desc": "This attack charges on the first turn and executes on the second. Power is halved if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn."
     },
     "spikyshield": {
       "inherit": true,
@@ -4108,13 +4108,26 @@
   },
   "8": {
     "aeroblast": {"inherit": true, "isNonstandard": null},
-    "allyswitch": {"inherit": true, "stallingMove": false},
+    "allyswitch": {
+      "inherit": true,
+      "stallingMove": false,
+      "desc": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side.",
+      "shortDesc": "The user swaps positions with its ally."
+    },
     "anchorshot": {"inherit": true, "isNonstandard": null},
     "aromatherapy": {"inherit": true, "isNonstandard": null},
     "aurawheel": {"inherit": true, "isNonstandard": null},
-    "auroraveil": {"inherit": true},
+    "auroraveil": {
+      "inherit": true,
+      "desc": "For 5 turns, the user and its party members take 0.5x damage from physical and special attacks, or 0.66x damage if in a Double Battle; does not reduce damage further with Reflect or Light Screen. Critical hits ignore this protection. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Brick Break and Psychic Fangs remove the effect before damage is calculated. Lasts for 8 turns if the user is holding Light Clay. Fails unless the weather is Hail.",
+      "shortDesc": "For 5 turns, damage to allies is halved. Hail only."
+    },
     "autotomize": {"inherit": true, "isNonstandard": null},
-    "blizzard": {"inherit": true},
+    "blizzard": {
+      "inherit": true,
+      "desc": "Has a 10% chance to freeze the target. If the weather is Hail, this move does not check accuracy.",
+      "shortDesc": "10% chance to freeze foe(s). Can't miss in Hail."
+    },
     "blueflare": {"inherit": true, "isNonstandard": null},
     "boltbeak": {"inherit": true, "isNonstandard": null},
     "boltstrike": {"inherit": true, "isNonstandard": null},
@@ -4148,6 +4161,7 @@
     "fishiousrend": {"inherit": true, "isNonstandard": null},
     "floralhealing": {"inherit": true, "isNonstandard": null},
     "flowershield": {"inherit": true, "isNonstandard": null},
+    "fly": {"inherit": true},
     "forestscurse": {"inherit": true, "isNonstandard": null},
     "freezeshock": {"inherit": true, "isNonstandard": null},
     "fusionbolt": {"inherit": true, "isNonstandard": null},
@@ -4229,7 +4243,11 @@
     "revelationdance": {"inherit": true, "isNonstandard": "Past"},
     "revenge": {"inherit": true, "isNonstandard": null},
     "rockwrecker": {"inherit": true, "isNonstandard": null},
-    "roost": {"inherit": true, "pp": 10},
+    "roost": {
+      "inherit": true,
+      "pp": 10,
+      "desc": "The user restores 1/2 of its maximum HP, rounded half up. Until the end of the turn, Flying-type users lose their Flying type and pure Flying-type users become Normal type. Does nothing if the user's HP is full."
+    },
     "sacredfire": {"inherit": true, "isNonstandard": null},
     "searingshot": {"inherit": true, "isNonstandard": null},
     "secretsword": {"inherit": true, "isNonstandard": null},
@@ -4268,9 +4286,21 @@
       "inherit": true,
       "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon making contact with the user become poisoned. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn."
     },
+    "behemothbash": {
+      "inherit": true,
+      "shortDesc": "Damage doubles if the target is Dynamaxed."
+    },
+    "behemothblade": {
+      "inherit": true,
+      "shortDesc": "Damage doubles if the target is Dynamaxed."
+    },
     "bind": {
       "inherit": true,
       "desc": "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move."
+    },
+    "burnup": {
+      "inherit": true,
+      "desc": "Fails unless the user is a Fire type. If this move is successful, the user's Fire type becomes typeless as long as it remains active."
     },
     "clamp": {
       "inherit": true,
@@ -4279,6 +4309,10 @@
     "detect": {
       "inherit": true,
       "desc": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn."
+    },
+    "dynamaxcannon": {
+      "inherit": true,
+      "shortDesc": "Damage doubles if the target is Dynamaxed."
     },
     "endure": {
       "inherit": true,
@@ -4304,6 +4338,10 @@
       "inherit": true,
       "desc": "The Pokemon at the user's position steals 1/8 of the target's maximum HP, rounded down, at the end of each turn. If Big Root is held by the recipient, the HP recovered is 1.3x normal, rounded half down. If the target uses Baton Pass, the replacement will continue being leeched. If the target switches out or uses Rapid Spin successfully, the effect ends. Grass-type Pokemon are immune to this move on use, but not its effect."
     },
+    "magicpowder": {
+      "inherit": true,
+      "desc": "Causes the target to become a Psychic type. Fails if the target is an Arceus or a Silvally, or if the target is already purely Psychic type."
+    },
     "magmastorm": {
       "inherit": true,
       "desc": "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move."
@@ -4312,6 +4350,14 @@
       "inherit": true,
       "desc": "A random move is selected for use, other than After You, Apple Acid, Assist, Astral Barrage, Aura Wheel, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Body Press, Branch Poke, Breaking Swipe, Celebrate, Chatter, Clangorous Soul, Copycat, Counter, Covet, Crafty Shield, Decorate, Destiny Bond, Detect, Diamond Storm, Double Iron Bash, Dragon Ascent, Dragon Energy, Dragon Hammer, Drum Beating, Dynamax Cannon, Endure, Eternabeam, False Surrender, Feint, Fiery Wrath, Fleur Cannon, Focus Punch, Follow Me, Freeze Shock, Freezing Glare, Glacial Lance, Grav Apple, Helping Hand, Hold Hands, Hyperspace Fury, Hyperspace Hole, Ice Burn, Instruct, Jungle Healing, King's Shield, Life Dew, Light of Ruin, Mat Block, Me First, Meteor Assault, Metronome, Mimic, Mind Blown, Mirror Coat, Mirror Move, Moongeist Beam, Nature Power, Nature's Madness, Obstruct, Origin Pulse, Overdrive, Photon Geyser, Plasma Fists, Precipice Blades, Protect, Pyro Ball, Quash, Quick Guard, Rage Powder, Relic Song, Secret Sword, Shell Trap, Sketch, Sleep Talk, Snap Trap, Snarl, Snatch, Snore, Spectral Thief, Spiky Shield, Spirit Break, Spotlight, Steam Eruption, Steel Beam, Strange Steam, Struggle, Sunsteel Strike, Surging Strikes, Switcheroo, Techno Blast, Thief, Thousand Arrows, Thousand Waves, Thunder Cage, Thunderous Kick, Transform, Trick, V-create, Wicked Blow, or Wide Guard."
     },
+    "moonlight": {
+      "inherit": true,
+      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down."
+    },
+    "morningsun": {
+      "inherit": true,
+      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down."
+    },
     "protect": {
       "inherit": true,
       "desc": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn."
@@ -4319,6 +4365,10 @@
     "quickguard": {
       "inherit": true,
       "desc": "The user and its party members are protected from attacks with original or altered priority greater than 0 made by other Pokemon, including allies, during this turn. This move modifies the same 1/X chance of being successful used by other protection moves, where X starts at 1 and triples each time this move is successfully used, but does not use the chance to check for failure. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn or if this move is already in effect for the user's side."
+    },
+    "reflecttype": {
+      "inherit": true,
+      "desc": "Causes the user's types to become the same as the current types of the target. If the target's current types include typeless and a non-added type, typeless is ignored. If the target's current types include typeless and an added type from Forest's Curse or Trick-or-Treat, typeless is copied as the Normal type instead. Fails if the user is an Arceus or a Silvally, or if the target's current type is typeless alone."
     },
     "roleplay": {
       "inherit": true,
@@ -4331,6 +4381,18 @@
     "skillswap": {
       "inherit": true,
       "desc": "The user swaps its Ability with the target's Ability. Fails if either the user or the target's Ability is As One, Battle Bond, Comatose, Disguise, Gulp Missile, Hunger Switch, Ice Face, Illusion, Multitype, Neutralizing Gas, Power Construct, RKS System, Schooling, Shields Down, Stance Change, Wonder Guard, or Zen Mode."
+    },
+    "soak": {
+      "inherit": true,
+      "desc": "Causes the target to become a Water type. Fails if the target is an Arceus or a Silvally, or if the target is already purely Water type."
+    },
+    "solarbeam": {
+      "inherit": true,
+      "desc": "This attack charges on the first turn and executes on the second. Power is halved if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Desolate Land or Sunny Day, the move still requires a turn to charge."
+    },
+    "solarblade": {
+      "inherit": true,
+      "desc": "This attack charges on the first turn and executes on the second. Power is halved if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Desolate Land or Sunny Day, the move still requires a turn to charge."
     },
     "spikes": {
       "inherit": true,
@@ -4348,6 +4410,10 @@
       "inherit": true,
       "desc": "Sets up a hazard on the opposing side of the field, lowering the Speed by 1 stage of each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. Fails if the effect is already active on the opposing side. Can be removed from the opposing side if any opposing Pokemon uses Rapid Spin or Defog successfully, or is hit by Defog."
     },
+    "synthesis": {
+      "inherit": true,
+      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down."
+    },
     "thundercage": {
       "inherit": true,
       "desc": "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move."
@@ -4355,6 +4421,10 @@
     "toxicspikes": {
       "inherit": true,
       "desc": "Sets up a hazard on the opposing side of the field, poisoning each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. Can be used up to two times before failing. Opposing Pokemon become poisoned with one layer and badly poisoned with two layers. Can be removed from the opposing side if any opposing Pokemon uses Rapid Spin or Defog successfully, is hit by Defog, or a grounded Poison-type Pokemon switches in. Safeguard prevents the opposing party from being poisoned on switch-in, but a substitute does not."
+    },
+    "weatherball": {
+      "inherit": true,
+      "desc": "Power doubles if a weather condition other than Delta Stream is active, and this move's type changes to match. Ice type during Hail, Water type during Primordial Sea or Rain Dance, Rock type during Sandstorm, and Fire type during Desolate Land or Sunny Day. If the user is holding Utility Umbrella and uses Weather Ball during Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, this move remains Normal type and does not double in power."
     },
     "whirlpool": {
       "inherit": true,
@@ -4647,8 +4717,8 @@
       "target": "self",
       "type": "Psychic",
       "zMove": {"boost": {"spe": 2}},
-      "desc": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side.",
-      "shortDesc": "The user swaps positions with its ally."
+      "desc": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails or if the user's last move used is not Ally Switch.",
+      "shortDesc": "User and ally swap positions; using again can fail."
     },
     "amnesia": {
       "num": 133,
@@ -5025,7 +5095,7 @@
       "type": "Ice",
       "zMove": {"boost": {"spe": 1}},
       "desc": "For 5 turns, the user and its party members take 0.5x damage from physical and special attacks, or 0.66x damage if in a Double Battle; does not reduce damage further with Reflect or Light Screen. Critical hits ignore this protection. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Brick Break and Psychic Fangs remove the effect before damage is calculated. Lasts for 8 turns if the user is holding Light Clay. Fails unless the weather is Hail.",
-      "shortDesc": "For 5 turns, damage to allies is halved. Hail only."
+      "shortDesc": "For 5 turns, damage to allies halved. Snow only."
     },
     "autotomize": {
       "num": 475,
@@ -5242,7 +5312,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Steel",
-      "shortDesc": "Damage doubles if the target is Dynamaxed."
+      "shortDesc": "No additional effect."
     },
     "behemothblade": {
       "num": 781,
@@ -5256,7 +5326,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Steel",
-      "shortDesc": "Damage doubles if the target is Dynamaxed."
+      "shortDesc": "No additional effect."
     },
     "belch": {
       "num": 562,
@@ -5484,8 +5554,8 @@
       "secondary": {"chance": 10, "status": "frz"},
       "target": "allAdjacentFoes",
       "type": "Ice",
-      "desc": "Has a 10% chance to freeze the target. If the weather is Hail, this move does not check accuracy.",
-      "shortDesc": "10% chance to freeze foe(s). Can't miss in hail."
+      "desc": "Has a 10% chance to freeze the target. If the weather is Snow, this move does not check accuracy.",
+      "shortDesc": "10% chance to freeze foe(s). Can't miss in Snow."
     },
     "block": {
       "num": 335,
@@ -5966,7 +6036,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Fire",
-      "desc": "Fails unless the user is a Fire type. If this move is successful, the user's Fire type becomes typeless as long as it remains active.",
+      "desc": "Fails unless the user is a Fire type. If this move is successful and the user is not Terastallized, the user's Fire type becomes typeless as long as it remains active.",
       "shortDesc": "User's Fire type becomes typeless; must be Fire."
     },
     "buzzybuzz": {
@@ -6101,7 +6171,7 @@
       "target": "self",
       "type": "Electric",
       "zMove": {"boost": {"spd": 1}},
-      "desc": "Raises the user's Special Defense by 1 stage. The user's next Electric-type attack will have its power doubled.",
+      "desc": "Raises the user's Special Defense by 1 stage. The user's next Electric-type attack will have its power doubled; the effect ends when the user is no longer active, or after the user attempts to use any Electric-type move besides Charge, even if it is not successful.",
       "shortDesc": "+1 SpD, user's next Electric move 2x power."
     },
     "chargebeam": {
@@ -7316,7 +7386,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Electric",
-      "desc": "Fails unless the user is an Electric type. If this move is successful, the user's Electric type becomes typeless as long as it remains active.",
+      "desc": "Fails unless the user is an Electric type. If this move is successful and the user is not Terastallized, the user's Electric type becomes typeless as long as it remains active.",
       "shortDesc": "User's Electric type: typeless; must be Electric."
     },
     "doubleslap": {
@@ -7678,7 +7748,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Dragon",
-      "shortDesc": "Damage doubles if the target is Dynamaxed."
+      "shortDesc": "No additional effect."
     },
     "dynamicpunch": {
       "num": 223,
@@ -12373,7 +12443,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Psychic",
-      "desc": "Causes the target to become a Psychic type. Fails if the target is an Arceus or a Silvally, or if the target is already purely Psychic type.",
+      "desc": "Causes the target to become a Psychic type. Fails if the target is an Arceus or a Silvally, if the target is already purely Psychic type, or if the target is Terastallized.",
       "shortDesc": "Changes the target's type to Psychic."
     },
     "magicroom": {
@@ -13545,7 +13615,7 @@
       "target": "self",
       "type": "Fairy",
       "zMove": {"effect": "clearnegativeboost"},
-      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down.",
+      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow, all rounded half down.",
       "shortDesc": "Heals the user by a weather-dependent amount."
     },
     "morningsun": {
@@ -13561,7 +13631,7 @@
       "target": "self",
       "type": "Normal",
       "zMove": {"effect": "clearnegativeboost"},
-      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down.",
+      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow, all rounded half down.",
       "shortDesc": "Heals the user by a weather-dependent amount."
     },
     "mortalspin": {
@@ -15451,7 +15521,7 @@
       "target": "normal",
       "type": "Normal",
       "zMove": {"boost": {"spa": 1}},
-      "desc": "Causes the user's types to become the same as the current types of the target. If the target's current types include typeless and a non-added type, typeless is ignored. If the target's current types include typeless and an added type from Forest's Curse or Trick-or-Treat, typeless is copied as the Normal type instead. Fails if the user is an Arceus or a Silvally, or if the target's current type is typeless alone.",
+      "desc": "Causes the user's types to become the same as the current types of the target. If the target's current types include typeless and a non-added type, typeless is ignored. If the target's current types include typeless and an added type from Forest's Curse or Trick-or-Treat, typeless is copied as the Normal type instead. Fails if the user is an Arceus or a Silvally, if the user is Terastallized, or if the target's current type is typeless alone.",
       "shortDesc": "User becomes the same type as the target."
     },
     "refresh": {
@@ -15847,7 +15917,7 @@
       "target": "self",
       "type": "Flying",
       "zMove": {"effect": "clearnegativeboost"},
-      "desc": "The user restores 1/2 of its maximum HP, rounded half up. Until the end of the turn, Flying-type users lose their Flying type and pure Flying-type users become Normal type. Does nothing if the user's HP is full.",
+      "desc": "The user restores 1/2 of its maximum HP, rounded half up. If the user is not Terastallized, until the end of the turn Flying-type users lose their Flying type and pure Flying-type users become Normal type. Does nothing if the user's HP is full.",
       "shortDesc": "Heals 50% HP. Flying-type removed 'til turn ends."
     },
     "rototiller": {
@@ -15961,7 +16031,7 @@
       "pp": 15,
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1},
-      "condition": {"onResidualOrder": 13},
+      "condition": {"noCopy": true, "onResidualOrder": 13},
       "secondary": {"chance": 100, "volatileStatus": "saltcure"},
       "target": "normal",
       "type": "Rock",
@@ -17163,7 +17233,7 @@
       "target": "normal",
       "type": "Water",
       "zMove": {"boost": {"spa": 1}},
-      "desc": "Causes the target to become a Water type. Fails if the target is an Arceus or a Silvally, or if the target is already purely Water type.",
+      "desc": "Causes the target to become a Water type. Fails if the target is an Arceus or a Silvally, if the target is already purely Water type, or if the target is Terastallized.",
       "shortDesc": "Changes the target's type to Water."
     },
     "softboiled": {
@@ -17195,7 +17265,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Grass",
-      "desc": "This attack charges on the first turn and executes on the second. Power is halved if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Desolate Land or Sunny Day, the move still requires a turn to charge.",
+      "desc": "This attack charges on the first turn and executes on the second. Power is halved if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Desolate Land or Sunny Day, the move still requires a turn to charge.",
       "shortDesc": "Charges turn 1. Hits turn 2. No charge in sunlight."
     },
     "solarblade": {
@@ -18339,7 +18409,7 @@
       "target": "self",
       "type": "Grass",
       "zMove": {"effect": "clearnegativeboost"},
-      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down.",
+      "desc": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow, all rounded half down.",
       "shortDesc": "Heals the user by a weather-dependent amount."
     },
     "tackle": {
@@ -19662,7 +19732,7 @@
       "type": "Normal",
       "zMove": {"basePower": 160},
       "maxMove": {"basePower": 130},
-      "desc": "Power doubles if a weather condition other than Delta Stream is active, and this move's type changes to match. Ice type during Hail, Water type during Primordial Sea or Rain Dance, Rock type during Sandstorm, and Fire type during Desolate Land or Sunny Day. If the user is holding Utility Umbrella and uses Weather Ball during Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, the move is still Normal-type and does not have a base power boost.",
+      "desc": "Power doubles if a weather condition other than Delta Stream is active, and this move's type changes to match. Ice type during Snow, Water type during Primordial Sea or Rain Dance, Rock type during Sandstorm, and Fire type during Desolate Land or Sunny Day. If the user is holding Utility Umbrella and uses Weather Ball during Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, this move remains Normal type and does not double in power.",
       "shortDesc": "Power doubles and type varies in each weather."
     },
     "whirlpool": {

@@ -29,7 +29,7 @@
     },
     "partialtrappinglock": {"name": "partialtrappinglock"},
     "mustrecharge": {"inherit": true, "duration": 0},
-    "lockedmove": {"inherit": true},
+    "lockedmove": {"name": "lockedmove"},
     "twoturnmove": {"name": "twoturnmove"},
     "invulnerability": {"name": "invulnerability"}
   },

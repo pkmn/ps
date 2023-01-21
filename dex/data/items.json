@@ -1406,6 +1406,14 @@
       "gen": 2,
       "desc": "Holder's Fighting-type attacks have 1.2x power."
     },
+    "blackglasses": {
+      "name": "Black Glasses",
+      "fling": {"basePower": 30},
+      "onBasePowerPriority": 15,
+      "num": 240,
+      "gen": 2,
+      "desc": "Holder's Dark-type attacks have 1.2x power."
+    },
     "blacksludge": {
       "name": "Black Sludge",
       "fling": {"basePower": 30},
@@ -1414,14 +1422,6 @@
       "num": 281,
       "gen": 4,
       "desc": "Each turn, if holder is a Poison type, restores 1/16 max HP; loses 1/8 if not."
-    },
-    "blackglasses": {
-      "name": "Black Glasses",
-      "fling": {"basePower": 30},
-      "onBasePowerPriority": 15,
-      "num": 240,
-      "gen": 2,
-      "desc": "Holder's Dark-type attacks have 1.2x power."
     },
     "blastoisinite": {
       "name": "Blastoisinite",

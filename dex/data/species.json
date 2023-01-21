@@ -26933,7 +26933,7 @@
         "atk": 35,
         "def": 30,
         "spa": 55,
-        "spd": 40,
+        "spd": 30,
         "spe": 75
       },
       "abilities": {"0": "Anticipation", "1": "Frisk", "H": "Speed Boost"},
@@ -27499,7 +27499,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 320,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "screamtail": {
@@ -27517,7 +27517,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 8,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "brutebonnet": {
@@ -27535,7 +27535,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 21,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "fluttermane": {
@@ -27553,7 +27553,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 4,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "slitherwing": {
@@ -27571,7 +27571,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 92,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "sandyshocks": {
@@ -27589,7 +27589,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 60,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "irontreads": {
@@ -27607,7 +27607,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 240,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "ironbundle": {
@@ -27625,7 +27625,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 11,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "ironhands": {
@@ -27643,7 +27643,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 380.7,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "ironjugulis": {
@@ -27661,7 +27661,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 111,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "ironmoth": {
@@ -27679,7 +27679,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 36,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "ironthorns": {
@@ -27697,7 +27697,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 303,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "frigibax": {
@@ -27902,7 +27902,7 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 380,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "ironvaliant": {
@@ -27920,7 +27920,7 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 35,
-      "tags": ["Sub-Legendary", "Paradox"],
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "koraidon": {

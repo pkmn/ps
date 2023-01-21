@@ -14603,6 +14603,344 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ],
     eventOnly: true
   },
+  orthworm: {
+    learnset: { headbutt: [ '9S0' ], irontail: [ '9S0' ], sandstorm: [ '9S0' ], wrap: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 29,
+        gender: 'M',
+        nature: 'Quirky',
+        ivs: { hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30 },
+        moves: [ 'irontail', 'headbutt', 'wrap', 'sandstorm' ]
+      }
+    ]
+  },
+  tatsugiri: {
+    learnset: { dragonpulse: [ '9S0' ], icywind: [ '9S0' ], muddywater: [ '9S0' ], taunt: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 57,
+        gender: 'M',
+        nature: 'Quiet',
+        ivs: { hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30 },
+        moves: [ 'muddywater', 'icywind', 'taunt', 'dragonpulse' ]
+      }
+    ]
+  },
+  bombirdier: {
+    learnset: { pluck: [ '9S0' ], rockthrow: [ '9S0' ], torment: [ '9S0' ], wingattack: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 20,
+        gender: 'F',
+        nature: 'Jolly',
+        ivs: { hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30 },
+        isHidden: true,
+        moves: [ 'rockthrow', 'wingattack', 'pluck', 'torment' ]
+      }
+    ]
+  },
+  klawf: {
+    learnset: { block: [ '9S0' ], rocksmash: [ '9S0' ], rocktomb: [ '9S0' ], visegrip: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 16,
+        gender: 'F',
+        nature: 'Gentle',
+        ivs: { hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30 },
+        abilities: [ 'angershell' ],
+        moves: [ 'visegrip', 'rocksmash', 'block', 'rocktomb' ]
+      }
+    ]
+  },
+  gimmighoul: {
+    learnset: { astonish: [ '9S0' ], tackle: [ '9S0' ] },
+    eventData: [ { generation: 9, level: 5, moves: [ 'astonish', 'tackle' ] } ],
+    eventOnly: true
+  },
+  greattusk: {
+    learnset: {
+      brickbreak: [ '9S0' ],
+      earthquake: [ '9S1' ],
+      gigaimpact: [ '9S1' ],
+      knockoff: [ '9S0', '9S1' ],
+      rapidspin: [ '9S0' ],
+      stompingtantrum: [ '9S0', '9S1' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 45,
+        nature: 'Naughty',
+        ivs: { hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30 },
+        moves: [ 'rapidspin', 'brickbreak', 'knockoff', 'stompingtantrum' ]
+      },
+      {
+        generation: 9,
+        level: 57,
+        shiny: 1,
+        moves: [ 'stompingtantrum', 'knockoff', 'earthquake', 'gigaimpact' ]
+      }
+    ],
+    eventOnly: true
+  },
+  brutebonnet: {
+    learnset: { clearsmog: [ '9S0' ], gigadrain: [ '9S0' ], payback: [ '9S0' ], thrash: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 52,
+        shiny: 1,
+        moves: [ 'thrash', 'gigadrain', 'clearsmog', 'payback' ]
+      }
+    ],
+    eventOnly: true
+  },
+  sandyshocks: {
+    learnset: {
+      heavyslam: [ '9S0' ],
+      metalsound: [ '9S0' ],
+      screech: [ '9S0' ],
+      triattack: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 52,
+        shiny: 1,
+        moves: [ 'screech', 'heavyslam', 'metalsound', 'triattack' ]
+      }
+    ],
+    eventOnly: true
+  },
+  screamtail: {
+    learnset: { bodyslam: [ '9S0' ], hypervoice: [ '9S0' ], playrough: [ '9S0' ], rest: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 52,
+        shiny: 1,
+        moves: [ 'playrough', 'hypervoice', 'bodyslam', 'rest' ]
+      }
+    ],
+    eventOnly: true
+  },
+  fluttermane: {
+    learnset: {
+      dazzlinggleam: [ '9S0' ],
+      mysticalfire: [ '9S0' ],
+      shadowball: [ '9S0' ],
+      wish: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 52,
+        shiny: 1,
+        moves: [ 'shadowball', 'mysticalfire', 'wish', 'dazzlinggleam' ]
+      }
+    ],
+    eventOnly: true
+  },
+  slitherwing: {
+    learnset: { lowsweep: [ '9S0' ], lunge: [ '9S0' ], morningsun: [ '9S0' ], superpower: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 52,
+        shiny: 1,
+        moves: [ 'morningsun', 'lunge', 'superpower', 'lowsweep' ]
+      }
+    ],
+    eventOnly: true
+  },
+  roaringmoon: {
+    learnset: {
+      dragonclaw: [ '9S0' ],
+      flamethrower: [ '9S0' ],
+      nightslash: [ '9S0' ],
+      zenheadbutt: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 52,
+        shiny: 1,
+        moves: [ 'zenheadbutt', 'flamethrower', 'nightslash', 'dragonclaw' ]
+      }
+    ],
+    eventOnly: true
+  },
+  irontreads: {
+    learnset: {
+      earthquake: [ '9S1' ],
+      heavyslam: [ '9S1' ],
+      ironhead: [ '9S0' ],
+      knockoff: [ '9S0', '9S1' ],
+      rapidspin: [ '9S0' ],
+      stompingtantrum: [ '9S0', '9S1' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 45,
+        nature: 'Naughty',
+        ivs: { hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30 },
+        moves: [ 'rapidspin', 'ironhead', 'knockoff', 'stompingtantrum' ]
+      },
+      {
+        generation: 9,
+        level: 57,
+        shiny: 1,
+        moves: [ 'knockoff', 'earthquake', 'heavyslam', 'stompingtantrum' ]
+      }
+    ]
+  },
+  ironmoth: {
+    learnset: { discharge: [ '9S0' ], lunge: [ '9S0' ], screech: [ '9S0' ], sludgewave: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 52,
+        shiny: 1,
+        moves: [ 'screech', 'discharge', 'sludgewave', 'lunge' ]
+      }
+    ],
+    eventOnly: true
+  },
+  ironhands: {
+    learnset: { charge: [ '9S0' ], forcepalm: [ '9S0' ], seismictoss: [ '9S0' ], slam: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 52,
+        shiny: 1,
+        moves: [ 'forcepalm', 'seismictoss', 'charge', 'slam' ]
+      }
+    ],
+    eventOnly: true
+  },
+  ironjugulis: {
+    learnset: { crunch: [ '9S0' ], dragonbreath: [ '9S0' ], hypervoice: [ '9S0' ], snarl: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 52,
+        shiny: 1,
+        moves: [ 'snarl', 'crunch', 'hypervoice', 'dragonbreath' ]
+      }
+    ],
+    eventOnly: true
+  },
+  ironthorns: {
+    learnset: { bite: [ '9S0' ], charge: [ '9S0' ], rockslide: [ '9S0' ], sandstorm: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 52,
+        shiny: 1,
+        moves: [ 'charge', 'rockslide', 'sandstorm', 'bite' ]
+      }
+    ],
+    eventOnly: true
+  },
+  ironbundle: {
+    learnset: {
+      drillpeck: [ '9S0' ],
+      flipturn: [ '9S0' ],
+      freezedry: [ '9S0' ],
+      helpinghand: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 52,
+        shiny: 1,
+        moves: [ 'drillpeck', 'helpinghand', 'freezedry', 'flipturn' ]
+      }
+    ],
+    eventOnly: true
+  },
+  ironvaliant: {
+    learnset: {
+      dazzlinggleam: [ '9S0' ],
+      leafblade: [ '9S0' ],
+      nightslash: [ '9S0' ],
+      psychocut: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 52,
+        shiny: 1,
+        moves: [ 'psychocut', 'nightslash', 'leafblade', 'dazzlinggleam' ]
+      }
+    ],
+    eventOnly: true
+  },
+  tinglu: {
+    learnset: {
+      rockslide: [ '9S0' ],
+      ruination: [ '9S0' ],
+      stompingtantrum: [ '9S0' ],
+      throatchop: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 60,
+        moves: [ 'stompingtantrum', 'ruination', 'throatchop', 'rockslide' ]
+      }
+    ],
+    eventOnly: true
+  },
+  chienpao: {
+    learnset: {
+      iciclecrash: [ '9S0' ],
+      ruination: [ '9S0' ],
+      sacredsword: [ '9S0' ],
+      suckerpunch: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 60,
+        moves: [ 'iciclecrash', 'ruination', 'suckerpunch', 'sacredsword' ]
+      }
+    ],
+    eventOnly: true
+  },
+  wochien: {
+    learnset: {
+      foulplay: [ '9S0' ],
+      gigadrain: [ '9S0' ],
+      powerwhip: [ '9S0' ],
+      ruination: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 60,
+        moves: [ 'gigadrain', 'ruination', 'foulplay', 'powerwhip' ]
+      }
+    ],
+    eventOnly: true
+  },
+  chiyu: {
+    learnset: { bounce: [ '9S0' ], lavaplume: [ '9S0' ], ruination: [ '9S0' ], swagger: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 60,
+        moves: [ 'lavaplume', 'ruination', 'bounce', 'swagger' ]
+      }
+    ],
+    eventOnly: true
+  },
   koraidon: {
     learnset: {
       bulkup: [ '9S1' ],

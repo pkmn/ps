@@ -412,7 +412,6 @@ export namespace Protocol {
       commanding?: boolean;
       reviving?: boolean;
       teraType?: TypeName;
-      terastallized?: TypeName;
     }
   }
 
@@ -1827,6 +1826,7 @@ export interface DetailedPokemon {
   shiny: boolean;
   gender?: GenderName;
   ident: PokemonIdent;
+  terastallized?: TypeName;
   searchid: PokemonSearchID;
 }
 
@@ -1992,6 +1992,10 @@ export const Protocol = new class {
     output.searchid = (!isTeamPreview ? `${ident}|${details}` : '') as Protocol.PokemonSearchID;
 
     const splitDetails = details.split(', ');
+    if (splitDetails[splitDetails.length - 1].startsWith('tera:')) {
+      output.terastallized = splitDetails[splitDetails.length - 1].slice(5) as TypeName;
+      splitDetails.pop();
+    }
     if (splitDetails[splitDetails.length - 1] === 'shiny') {
       output.shiny = true;
       splitDetails.pop();
@@ -2252,7 +2256,7 @@ function upgradeBattleArgs({args, kwArgs}: {
       kwArgs.item = arg3;
     } else if (id === 'magnitude') {
       kwArgs.number = arg3;
-    } else if (id === 'skillswap' || id === 'mummy') {
+    } else if (id === 'skillswap' || id === 'mummy' || id === 'lingeringaroma') {
       kwArgs.ability = arg3;
       kwArgs.ability2 = arg4;
     } else if (id === 'wanderingspirit') {

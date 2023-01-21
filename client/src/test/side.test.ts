@@ -190,7 +190,7 @@ describe('Side', () => {
 
   it('#faint', () => {
     const side = new Side({gen: {num: 8}} as Battle, 0);
-    const pokemon = side.addPokemon({} as DetailedPokemon);
+    const pokemon = side.addPokemon({details: '', searchid: ''} as DetailedPokemon);
 
     pokemon.addVolatile('baz' as ID);
     pokemon.hp = 100;

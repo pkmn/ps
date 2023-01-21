@@ -1740,7 +1740,7 @@
     "regirock": {"tier": "NU", "doublesTier": "DUU"},
     "regice": {"tier": "NU", "doublesTier": "DUU"},
     "registeel": {"tier": "UU", "doublesTier": "DUU"},
-    "latias": {"tier": "OU", "doublesTier": "DUU"},
+    "latias": {"tier": "(OU)", "doublesTier": "DUU"},
     "latios": {"tier": "OU", "doublesTier": "DOU"},
     "kyogre": {"tier": "Uber", "doublesTier": "DUber"},
     "groudon": {"tier": "Uber", "doublesTier": "DUber"},

@@ -1229,8 +1229,8 @@ class Handler implements Protocol.Handler<string> {
     const blocker = LogFormatter.effectId(kwArgs.from);
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     let templateId = 'block';
-    if (['desolateland', 'primordialsea'].includes(blocker) &&
-      !['sunnyday', 'raindance', 'sandstorm', 'hail', 'snow'].includes(id)) {
+    const weather = ['sunnyday', 'raindance', 'sandstorm', 'hail', 'snowscape', 'chillyreception'];
+    if (['desolateland', 'primordialsea'].includes(blocker) && !weather.includes(id)) {
       templateId = 'blockMove';
     } else if (blocker === 'uproar' && kwArgs.msg) {
       templateId = 'blockSelf';

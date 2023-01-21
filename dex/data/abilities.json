@@ -1474,17 +1474,17 @@
       "desc": "This Pokemon is immune to Water-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Water-type move. The power of Fire-type moves is multiplied by 1.25 when used on this Pokemon. At the end of each turn, this Pokemon restores 1/8 of its maximum HP, rounded down, if the weather is Rain Dance, and loses 1/8 of its maximum HP, rounded down, if the weather is Sunny Day. The weather effects are prevented if this Pokemon is holding a Utility Umbrella.",
       "shortDesc": "This Pokemon is healed 1/4 by Water, 1/8 by Rain; is hurt 1.25x by Fire, 1/8 by Sun."
     },
+    "earlybird": {
+      "name": "Early Bird",
+      "num": 48,
+      "shortDesc": "This Pokemon's sleep counter drops by 2 instead of 1."
+    },
     "eartheater": {
       "isBreakable": true,
       "name": "Earth Eater",
       "num": 297,
       "desc": "This Pokemon is immune to Ground-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Ground-type move.",
       "shortDesc": "This Pokemon heals 1/4 of its max HP when hit by Ground moves; Ground immunity."
-    },
-    "earlybird": {
-      "name": "Early Bird",
-      "num": 48,
-      "shortDesc": "This Pokemon's sleep counter drops by 2 instead of 1."
     },
     "effectspore": {
       "name": "Effect Spore",
@@ -1888,7 +1888,7 @@
     "libero": {
       "name": "Libero",
       "num": 236,
-      "desc": "This Pokemon's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type. This effect can only happen once per switch-in.",
+      "desc": "This Pokemon's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type. This effect can only happen once per switch-in, and only if this Pokemon is not Terastallized.",
       "shortDesc": "This Pokemon's type changes to the type of the move it is using. Once per switch-in."
     },
     "lightmetal": {
@@ -1905,17 +1905,17 @@
       "desc": "This Pokemon is immune to Electric-type moves and raises its Special Attack by 1 stage when hit by an Electric-type move. If this Pokemon is not the target of a single-target Electric-type move used by another Pokemon, this Pokemon redirects that move to itself if it is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer.",
       "shortDesc": "This Pokemon draws Electric moves to itself to raise Sp. Atk by 1; Electric immunity."
     },
-    "lingeringaroma": {
-      "name": "Lingering Aroma",
-      "num": 268,
-      "desc": "Pokemon making contact with this Pokemon have their Ability changed to Lingering Aroma. Does not affect Pokemon with the As One, Battle Bond, Comatose, Commander, Disguise, Gulp Missile, Hadron Engine, Ice Face, Lingering Aroma, Multitype, Orichalcum Pulse, Power Construct, Protosynthesis, Quark Drive, RKS System, Schooling, Shields Down, Stance Change, Zen Mode, or Zero to Hero Abilities.",
-      "shortDesc": "Making contact with this Pokemon has the attacker's Ability become Lingering Aroma."
-    },
     "limber": {
       "isBreakable": true,
       "name": "Limber",
       "num": 7,
       "shortDesc": "This Pokemon cannot be paralyzed. Gaining this Ability while paralyzed cures it."
+    },
+    "lingeringaroma": {
+      "name": "Lingering Aroma",
+      "num": 268,
+      "desc": "Pokemon making contact with this Pokemon have their Ability changed to Lingering Aroma. Does not affect Pokemon with the As One, Battle Bond, Comatose, Commander, Disguise, Gulp Missile, Hadron Engine, Ice Face, Lingering Aroma, Multitype, Orichalcum Pulse, Power Construct, Protosynthesis, Quark Drive, RKS System, Schooling, Shields Down, Stance Change, Zen Mode, or Zero to Hero Abilities.",
+      "shortDesc": "Making contact with this Pokemon has the attacker's Ability become Lingering Aroma."
     },
     "liquidooze": {
       "name": "Liquid Ooze",
@@ -2253,7 +2253,7 @@
     "protean": {
       "name": "Protean",
       "num": 168,
-      "desc": "This Pokemon's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type. This effect can only happen once per switch-in.",
+      "desc": "This Pokemon's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type. This effect can only happen once per switch-in, and only if this Pokemon is not Terastallized.",
       "shortDesc": "This Pokemon's type changes to the type of the move it is using. Once per switch-in."
     },
     "protosynthesis": {
@@ -2295,8 +2295,8 @@
       "isBreakable": true,
       "name": "Purifying Salt",
       "num": 272,
-      "desc": "This Pokemon cannot become affected by a non-volatile status condition or Yawn. This Pokemon receives 1/2 damage from Ghost-type moves.",
-      "shortDesc": "This Pokemon takes 1/2 damage from Ghost moves and it cannot become statused."
+      "desc": "This Pokemon cannot become affected by a non-volatile status condition or Yawn. If a Pokemon uses a Ghost-type attack against this Pokemon, that Pokemon's offensive stat is halved when calculating the damage to this Pokemon.",
+      "shortDesc": "Ghost damage to this Pokemon dealt with a halved offensive stat; can't be statused."
     },
     "quarkdrive": {
       "condition": {
@@ -2733,7 +2733,7 @@
       "name": "Supreme Overlord",
       "num": 293,
       "desc": "This Pokemon's moves have their power multiplied by 1+(X*0.1), where X is the total number of times any Pokemon has fainted on the user's side when this Ability became active, and X cannot be greater than 5.",
-      "shortDesc": "This Pokemon's moves have 0.1x more power for each fainted ally, maximum 1.5x."
+      "shortDesc": "This Pokemon's moves have 10% more power for each fainted ally, up to 5 allies."
     },
     "surgesurfer": {
       "name": "Surge Surfer",
@@ -3035,6 +3035,7 @@
       "shortDesc": "If Darmanitan, at end of turn changes Mode to Standard if > 1/2 max HP, else Zen."
     },
     "zerotohero": {
+      "isPermanent": true,
       "name": "Zero to Hero",
       "num": 278,
       "shortDesc": "If this Pokemon is a Palafin in Zero Form, switching out has it change to Hero Form."

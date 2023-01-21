@@ -57,6 +57,7 @@ interface BattleOptions {
 	p3?: PlayerOptions; // Player 3 data
 	p4?: PlayerOptions; // Player 4 data
 	debug?: boolean; // show debug mode option
+	forceRandomChance?: boolean; // force Battle#randomChance to always return true or false (used in some tests)
 	deserialized?: boolean;
 	strictChoices?: boolean; // whether invalid choices should throw
 }
@@ -95,6 +96,7 @@ export type RequestState = 'teampreview' | 'move' | 'switch' | '';
 export class Battle {
 	readonly id: ID;
 	readonly debugMode: boolean;
+	readonly forceRandomChance: boolean | null;
 	readonly deserialized: boolean;
 	readonly strictChoices: boolean;
 	readonly format: Format;
@@ -192,6 +194,9 @@ export class Battle {
 
 		this.id = '';
 		this.debugMode = format.debug || !!options.debug;
+		// Require debug mode and explicitly passed true/false
+		this.forceRandomChance = (this.debugMode && typeof options.forceRandomChance === 'boolean') ?
+			options.forceRandomChance : null;
 		this.deserialized = !!options.deserialized;
 		this.strictChoices = !!options.strictChoices;
 		this.formatData = {id: format.id};
@@ -325,6 +330,7 @@ export class Battle {
 	}
 
 	randomChance(numerator: number, denominator: number) {
+		if (this.forceRandomChance !== null) return this.forceRandomChance;
 		return this.prng.randomChance(numerator, denominator);
 	}
 
