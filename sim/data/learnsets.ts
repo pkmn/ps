@@ -37842,7 +37842,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
       ]
     }
   },
-  taurospaldea: {
+  taurospaldeacombat: {
     learnset: {
       assurance: [ '9L15' ],
       bodypress: [ '9M' ],
@@ -37893,7 +37893,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
       zenheadbutt: [ '9M', '9L30' ]
     }
   },
-  taurospaldeafire: {
+  taurospaldeablaze: {
     learnset: {
       bodypress: [ '9M' ],
       bodyslam: [ '9M' ],
@@ -37948,7 +37948,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
       zenheadbutt: [ '9M', '9L30' ]
     }
   },
-  taurospaldeawater: {
+  taurospaldeaaqua: {
     learnset: {
       aquajet: [ '9L15' ],
       bodypress: [ '9M' ],

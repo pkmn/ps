@@ -6786,23 +6786,23 @@
       "abilities": {"0": "Intimidate", "1": "Anger Point", "H": "Sheer Force"},
       "weightkg": 88.4,
       "otherFormes": [
-        "Tauros-Paldea",
-        "Tauros-Paldea-Fire",
-        "Tauros-Paldea-Water"
+        "Tauros-Paldea-Combat",
+        "Tauros-Paldea-Blaze",
+        "Tauros-Paldea-Aqua"
       ],
       "formeOrder": [
         "Tauros",
-        "Tauros-Paldea",
-        "Tauros-Paldea-Fire",
-        "Tauros-Paldea-Water"
+        "Tauros-Paldea-Combat",
+        "Tauros-Paldea-Blaze",
+        "Tauros-Paldea-Aqua"
       ],
       "eggGroups": ["Field"]
     },
-    "taurospaldea": {
+    "taurospaldeacombat": {
       "num": 128,
-      "name": "Tauros-Paldea",
+      "name": "Tauros-Paldea-Combat",
       "baseSpecies": "Tauros",
-      "forme": "Paldea",
+      "forme": "Paldea-Combat",
       "types": ["Fighting"],
       "gender": "M",
       "baseStats": {
@@ -6817,11 +6817,11 @@
       "weightkg": 88.4,
       "eggGroups": ["Field"]
     },
-    "taurospaldeafire": {
+    "taurospaldeablaze": {
       "num": 128,
-      "name": "Tauros-Paldea-Fire",
+      "name": "Tauros-Paldea-Blaze",
       "baseSpecies": "Tauros",
-      "forme": "Paldea-Fire",
+      "forme": "Paldea-Blaze",
       "types": ["Fighting", "Fire"],
       "gender": "M",
       "baseStats": {
@@ -6836,11 +6836,11 @@
       "weightkg": 88.4,
       "eggGroups": ["Field"]
     },
-    "taurospaldeawater": {
+    "taurospaldeaaqua": {
       "num": 128,
-      "name": "Tauros-Paldea-Water",
+      "name": "Tauros-Paldea-Aqua",
       "baseSpecies": "Tauros",
-      "forme": "Paldea-Water",
+      "forme": "Paldea-Aqua",
       "types": ["Fighting", "Water"],
       "gender": "M",
       "baseStats": {
