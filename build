@@ -95,7 +95,14 @@ const tree = root => {
                 throw new Error(`Output unexpectedly ends with: ${contents.slice(-100)}`);
               }
               const relinked = `${contents.slice(0, -('.js.map'.length))}.mjs.map`;
-              fs.writeFileSync(`${file.slice(0, -3)}.mjs`, relinked);
+              const replaced = relinked.replaceAll(/from '(.*)';/g, (_, m) => {
+                if (!m.startsWith('.')) return `from '${m}';`;
+                const f = path.resolve(path.dirname(file), m);
+                if (fs.existsSync(`${f}.mjs`)) return `from '${m}.mjs';`;
+                if (fs.existsSync(`${f}/index.mjs`)) return `from '${m}/index.mjs';`;
+                throw new Error(`Cannot resolve import in ${file}: ${m}`);
+              });
+              fs.writeFileSync(`${file.slice(0, -3)}.mjs`, replaced);
               fs.unlinkSync(file);
             } if (file.endsWith('.js.map')) {
               fs.renameSync(file, `${file.slice(0, -7)}.mjs.map`);

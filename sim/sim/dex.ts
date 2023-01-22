@@ -51,7 +51,6 @@ import * as legality9 from '../data/legality';
 import {AbilitiesText} from '../data/text/abilities';
 import {ItemsText} from '../data/text/items';
 import {MovesText} from '../data/text/moves';
-// import {PokedexText} from '../data/text/pokedex';
 import {DefaultText} from '../data/text/default';
 
 import * as Data from './dex-data';
