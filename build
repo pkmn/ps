@@ -98,8 +98,12 @@ const tree = root => {
               const replaced = relinked.replaceAll(/from '(.*)';/g, (_, m) => {
                 if (!m.startsWith('.')) return `from '${m}';`;
                 const f = path.resolve(path.dirname(file), m);
-                if (fs.existsSync(`${f}.mjs`)) return `from '${m}.mjs';`;
-                if (fs.existsSync(`${f}/index.mjs`)) return `from '${m}/index.mjs';`;
+                if (fs.existsSync(`${f}.mjs`) || fs.existsSync(`${f}.js`)) {
+                  return `from '${m}.mjs';`;
+                }
+                if (fs.existsSync(`${f}/index.mjs`) || fs.existsSync(`${f}/index.js`)) {
+                  return `from '${m}/index.mjs';`;
+                }
                 throw new Error(`Cannot resolve import in ${file}: ${m}`);
               });
               fs.writeFileSync(`${file.slice(0, -3)}.mjs`, replaced);
