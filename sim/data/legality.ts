@@ -15058,12 +15058,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   chromera: {
-    learnset: { belch: [ '8S0' ], darkpulse: [ '8S0' ], recover: [ '8S0' ], switcheroo: [ '8S0' ] },
+    learnset: { belch: [ '8S0' ], calmmind: [ '8S0' ], darkpulse: [ '8S0' ], recover: [ '8S0' ] },
     eventData: [
       {
         generation: 8,
         level: 50,
-        moves: [ 'recover', 'switcheroo', 'darkpulse', 'belch' ],
+        moves: [ 'recover', 'calmmind', 'darkpulse', 'belch' ],
         pokeball: 'cherishball'
       }
     ]

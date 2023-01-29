@@ -122,6 +122,26 @@ export const Formats: FormatList = [
     banlist: [ 'Crucibellite' ]
   },
   {
+    name: '[Gen 9] Free-For-All',
+    mod: 'gen9',
+    gameType: 'freeforall',
+    ruleset: [ 'Standard', '!Evasion Items Clause' ],
+    banlist: [
+      'Annihilape',    'Flutter Mane',
+      'Houndstone',    'Koraidon',
+      'Iron Bundle',   'Miraidon',
+      'Palafin',       'Moody',
+      'Shadow Tag',    'Toxic Debris',
+      'Acupressure',   'Aromatic Mist',
+      'Baton Pass',    'Court Change',
+      'Final Gambit',  'Flatter',
+      'Follow Me',     'Heal Pulse',
+      'Poison Fang',   'Rage Powder',
+      'Spicy Extract', 'Swagger',
+      'Toxic',         'Toxic Spikes'
+    ]
+  },
+  {
     name: '[Gen 9] Battle Stadium Singles Series 2',
     mod: 'gen9',
     ruleset: [
@@ -1079,30 +1099,6 @@ export const Formats: FormatList = [
     banlist: [ 'ND OU', 'ND UUBL', 'Drizzle', 'Drought', 'Light Clay', 'Slowbronite' ]
   },
   {
-    name: '[Gen 8] Free-For-All',
-    mod: 'gen8',
-    gameType: 'freeforall',
-    ruleset: [ 'Standard Doubles', 'Sleep Clause Mod', 'Dynamax Clause', '!Gravity Sleep Clause' ],
-    banlist: [
-      'Calyrex-Ice',      'Calyrex-Shadow',      'Dialga',
-      'Dracovish',        'Eternatus',           'Giratina',
-      'Giratina-Origin',  'Groudon',             'Ho-Oh',
-      'Kyogre',           'Kyurem-White',        'Lugia',
-      'Lunala',           'Magearna',            'Marshadow',
-      'Mewtwo',           'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
-      'Palkia',           'Rayquaza',            'Reshiram',
-      'Solgaleo',         'Urshifu-Base',        'Xerneas',
-      'Yveltal',          'Zacian',              'Zacian-Crowned',
-      'Zamazenta',        'Zamazenta-Crowned',   'Zekrom',
-      'Zygarde-Complete', 'Moody',               'Power Construct',
-      'Shadow Tag',       'Acupressure',         'Aromatic Mist',
-      'Baton Pass',       'Coaching',            'Court Change',
-      'Decorate',         'Final Gambit',        'Flatter',
-      'Floral Healing',   'Flower Shield',       'Follow Me',
-      'Heal Pulse',       'Rage Powder',         'Swagger'
-    ]
-  },
-  {
     name: '[Gen 8 BDSP] OU',
     mod: 'gen8bdsp',
     ruleset: [ 'Standard' ],
@@ -1458,6 +1454,13 @@ export const Formats: FormatList = [
     banlist: [ 'Battle Bond' ]
   },
   {
+    name: "[Gen 7 Let's Go] Doubles OU",
+    mod: 'gen7letsgo',
+    gameType: 'doubles',
+    ruleset: [ 'Standard Doubles', 'Sleep Clause Mod' ],
+    banlist: [ 'Mewtwo' ]
+  },
+  {
     name: '[Gen 7] Doubles Custom Game',
     mod: 'gen7',
     gameType: 'doubles',
@@ -1533,22 +1536,23 @@ export const Formats: FormatList = [
       'Team Preview'
     ],
     banlist: [
-      'Arceus',          'Blaziken',
-      'Darkrai',         'Deoxys-Base',
-      'Deoxys-Attack',   'Deoxys-Defense',
-      'Dialga',          'Giratina',
-      'Giratina-Origin', 'Groudon',
-      'Ho-Oh',           'Kangaskhan-Mega',
-      'Kyogre',          'Kyurem-White',
-      'Lugia',           'Mewtwo',
-      'Palkia',          'Rayquaza',
-      'Reshiram',        'Salamence-Mega',
-      'Shaymin-Sky',     'Snorlax',
-      'Xerneas',         'Yveltal',
-      'Zekrom',          'Focus Sash',
-      'Soul Dew',        'Grass Whistle',
-      'Hypnosis',        'Perish Song',
-      'Sing',            'Yawn'
+      'Arceus',           'Blaziken',
+      'Charizard-Mega-Y', 'Darkrai',
+      'Deoxys-Base',      'Deoxys-Attack',
+      'Deoxys-Defense',   'Dialga',
+      'Giratina',         'Giratina-Origin',
+      'Groudon',          'Ho-Oh',
+      'Kangaskhan-Mega',  'Kyogre',
+      'Kyurem-White',     'Lugia',
+      'Mewtwo',           'Palkia',
+      'Rayquaza',         'Reshiram',
+      'Salamence-Mega',   'Shaymin-Sky',
+      'Snorlax',          'Xerneas',
+      'Yveltal',          'Zekrom',
+      'Focus Sash',       'Soul Dew',
+      'Grass Whistle',    'Hypnosis',
+      'Perish Song',      'Sing',
+      'Yawn'
     ]
   },
   {

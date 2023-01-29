@@ -55,7 +55,7 @@ describe('Dex', () => {
         return count;
       };
 
-      const COUNTS = [0, 0, 76, 47, 41, 27, 42, 34, 31];
+      const COUNTS = [0, 0, 76, 47, 41, 27, 42, 34, 30];
       let total = 0;
       for (let gen = 1; gen <= 9; gen++) {
         expect(counts(gen)).toEqual(total += COUNTS[gen - 1]);
@@ -323,8 +323,8 @@ describe('Dex', () => {
       // Dudunsparce (1) + Palafin (1) + Maushold (1) + Squawkabilly (3) + Sinistea-Antique (1) +
       // Polteageist-Antique (1)
       formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 1 + 1;
-      // Charizard (3) + Cinderace (3)
-      expect(counts(9)).toEqual({species: 400 + 3 + 3, formes});
+      // Charizard (3) + Cinderace (3) + Greninja (3)
+      expect(counts(9)).toEqual({species: 400 + 3 + 3 + 3, formes});
     });
 
 

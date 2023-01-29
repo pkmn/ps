@@ -28139,7 +28139,7 @@
       "abilities": {"0": "Levitate", "1": "Solid Rock", "H": "Sniper"},
       "weightkg": 7,
       "evos": ["Tactite"],
-      "eggGroups": ["Undiscovered"],
+      "eggGroups": ["Mineral"],
       "gen": 4
     },
     "tactite": {
@@ -28160,7 +28160,7 @@
       "prevo": "Rebble",
       "evoLevel": 28,
       "evos": ["Stratagem"],
-      "eggGroups": ["Undiscovered"],
+      "eggGroups": ["Mineral"],
       "gen": 4
     },
     "stratagem": {
@@ -28180,7 +28180,7 @@
       "weightkg": 45,
       "prevo": "Tactite",
       "evoType": "trade",
-      "eggGroups": ["Undiscovered"],
+      "eggGroups": ["Mineral"],
       "gen": 4
     },
     "privatyke": {
