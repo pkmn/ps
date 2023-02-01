@@ -72,8 +72,6 @@ export class RandomGen5Teams extends RandomGen6Teams {
 		const hasRestTalk = moves.has('rest') && moves.has('sleeptalk');
 		switch (move.id) {
 		// Not very useful without their supporting moves
-		case 'batonpass':
-			return {cull: !counter.setupType && !counter.get('speedsetup') && !moves.has('substitute') && !moves.has('wish')};
 		case 'endeavor':
 			return {cull: !isLead};
 		case 'focuspunch':
@@ -107,13 +105,11 @@ export class RandomGen5Teams extends RandomGen6Teams {
 		case 'bellydrum': case 'bulkup': case 'coil': case 'curse': case 'dragondance': case 'honeclaws': case 'swordsdance':
 			return {cull: (counter.setupType !== 'Physical' || counter.get('physicalsetup') > 1 || (
 				counter.get('Physical') + counter.get('physicalpool') < 2 &&
-				!moves.has('batonpass') &&
 				!hasRestTalk
 			)), isSetup: true};
 		case 'calmmind': case 'nastyplot': case 'tailglow':
 			return {cull: (counter.setupType !== 'Special' || counter.get('specialsetup') > 1 || (
 				counter.get('Special') + counter.get('specialpool') < 2 &&
-				!moves.has('batonpass') &&
 				!hasRestTalk
 			)), isSetup: true};
 		case 'growth': case 'shellsmash': case 'workup':
@@ -130,7 +126,7 @@ export class RandomGen5Teams extends RandomGen6Teams {
 		case 'agility': case 'autotomize': case 'rockpolish':
 			return {
 				cull: (
-					(counter.damagingMoves.size < 2 && !counter.setupType && !moves.has('batonpass')) ||
+					(counter.damagingMoves.size < 2 && !counter.setupType) ||
 					hasRestTalk
 				),
 				isSetup: !counter.setupType,
@@ -180,12 +176,12 @@ export class RandomGen5Teams extends RandomGen6Teams {
 		case 'uturn':
 			// Infernape doesn't want mixed sets with U-turn
 			const infernapeCase = species.id === 'infernape' && !!counter.get('Special');
-			return {cull: !!counter.setupType || !!counter.get('speedsetup') || moves.has('batonpass') || infernapeCase};
+			return {cull: !!counter.setupType || !!counter.get('speedsetup') || infernapeCase};
 		case 'voltswitch':
 			return {cull: (
 				!!counter.setupType ||
 				!!counter.get('speedsetup') ||
-				['batonpass', 'magnetrise', 'uturn'].some(m => moves.has(m))
+				['magnetrise', 'uturn'].some(m => moves.has(m))
 			)};
 
 		// Ineffective having both
@@ -210,7 +206,7 @@ export class RandomGen5Teams extends RandomGen6Teams {
 			return {cull: !!counter.setupType && moves.has('acrobatics')};
 		case 'gigadrain':
 			return {cull: (!counter.setupType && moves.has('leafstorm')) ||
-				['leafblade', 'petaldance', 'powerwhip'].some(m => moves.has(m))};
+				['petaldance', 'powerwhip'].some(m => moves.has(m))};
 		case 'solarbeam':
 			return {cull: (!abilities.has('Drought') && !moves.has('sunnyday')) || moves.has('gigadrain')};
 		case 'leafstorm':
@@ -261,7 +257,9 @@ export class RandomGen5Teams extends RandomGen6Teams {
 		case 'substitute':
 			return {cull: (
 				(moves.has('doubleedge') && !abilities.has('rockhead')) ||
-				['pursuit', 'rest', 'superpower', 'uturn', 'voltswitch'].some(m => moves.has(m))
+				['pursuit', 'rest', 'superpower', 'uturn', 'voltswitch'].some(m => moves.has(m)) ||
+				// Sceptile wants Swords Dance
+				(moves.has('acrobatics') && moves.has('earthquake'))
 			)};
 		case 'thunderwave':
 			return {cull: (
@@ -300,7 +298,7 @@ export class RandomGen5Teams extends RandomGen6Teams {
 		case 'Contrary': case 'Iron Fist': case 'Skill Link':
 			return !counter.get(toID(ability));
 		case 'Defiant': case 'Moxie':
-			return (!counter.get('Physical') && !moves.has('batonpass'));
+			return !counter.get('Physical');
 		case 'Flash Fire':
 			return abilities.has('Drought');
 		case 'Guts':
@@ -450,6 +448,7 @@ export class RandomGen5Teams extends RandomGen6Teams {
 
 		if (counter.setupType && moves.has('outrage')) return 'Lum Berry';
 		if (this.dex.getEffectiveness('Ground', species) >= 2 && ability !== 'Levitate') return 'Air Balloon';
+		if (counter.get('Dark') >= 3) return 'Black Glasses';
 		if (
 			types.has('Poison') ||
 			['bodyslam', 'dragontail', 'protect', 'scald', 'sleeptalk', 'substitute'].some(m => moves.has(m))
@@ -571,7 +570,6 @@ export class RandomGen5Teams extends RandomGen6Teams {
 					counter.setupType !== 'Mixed' &&
 					move.category !== counter.setupType &&
 					counter.get(counter.setupType) < 2 &&
-					!moves.has('batonpass') &&
 					(move.category !== 'Status' || !move.flags.heal) &&
 					moveid !== 'sleeptalk' && (
 						move.category !== 'Status' || (
@@ -776,7 +774,7 @@ export class RandomGen5Teams extends RandomGen6Teams {
 			'(PU)': 90,
 		};
 		const customScale: {[forme: string]: number} = {
-			Delibird: 100, 'Farfetch\u2019d': 100, Luvdisc: 100, Unown: 100,
+			'Castform-Rainy': 100, 'Castform-Sunny': 100, Delibird: 100, 'Farfetch\u2019d': 100, Luvdisc: 100, Unown: 100,
 		};
 		const level = this.adjustLevel || customScale[species.name] || levelScale[species.tier] || (species.nfe ? 90 : 80);
 
@@ -860,7 +858,10 @@ export class RandomGen5Teams extends RandomGen6Teams {
 				if (this.gen < 5 && this.randomChance(5, 6) && !isMonotype) continue;
 				break;
 			case 'Basculin': case 'Castform': case 'Meloetta':
-				if (this.randomChance(1, 2)) continue;
+				if (this.randomChance(1, 2) && this.gen === 5) continue;
+				break;
+			case 'Cherrim':
+				if (this.randomChance(1, 2) && this.gen === 4) continue;
 				break;
 			}
 

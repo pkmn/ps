@@ -133889,7 +133889,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
       safeguard: [ '8M', '7M', '5M' ],
       scratch: [ '9L1', '8L1', '7L4' ],
       secretpower: [ '7M' ],
-      shellsmash: [ '9E' ],
       skyattack: [ '9L61', '8L61', '7L55' ],
       skydrop: [ '7M', '7L49', '5M', '5L50' ],
       sleeptalk: [ '9M', '8M' ],
@@ -133980,6 +133979,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
         '5M', '5L44'
       ],
       shadowsneak: [ '9L4', '8L4', '7L4', '5L13' ],
+      shellsmash: [ '9E' ],
       sketch: [ '7E', '5E' ],
       skittersmack: [ '8T' ],
       sleeptalk: [ '9M', '8M', '7M' ],
@@ -135544,6 +135544,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
       partingshot: [ '9L21', '8L21', '6L24' ],
       playrough: [ '9M', '9L24', '8M', '8L24', '6L27' ],
       protect: [ '9M', '8M', '6M' ],
+      psychic: [ '9M' ],
       psychup: [ '6M' ],
       quickguard: [ '9E', '8E', '7E', '6E' ],
       rest: [ '9M', '9L27', '8M', '8L27', '6M', '6L31' ],
@@ -135624,6 +135625,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
       playrough: [ '9M', '9L24', '8M', '8L24', '7L37', '6L37' ],
       poweruppunch: [ '8L9', '7M', '6M' ],
       protect: [ '9M', '8M', '7M', '6M' ],
+      psychic: [ '9M' ],
       psychup: [ '7M', '6M' ],
       rest: [
         '9M', '9L27',

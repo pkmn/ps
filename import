@@ -482,6 +482,7 @@ const MOD_OVERRIDDEN = new Set([
 const SKIP_TESTS = new Set([
   'test/sim/data.js',
   'test/sim/misc/mixandmega.js',
+  'test/sim/misc/megaevolution.js',
   'test/sim/misc/random-teams.js',
   'test/sim/misc/statuses.js',
   'test/sim/moves/counter.js',

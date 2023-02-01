@@ -114,7 +114,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   canGigantamax?: boolean;
   canMegaEvo?: boolean;
   canUltraBurst?: boolean;
-  canTerastallize?: boolean;
+  canTerastallize?: string;
   trapped?: boolean;
   maybeTrapped?: boolean;
   maybeDisabled?: boolean;

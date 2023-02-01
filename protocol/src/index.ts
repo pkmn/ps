@@ -392,7 +392,7 @@ export namespace Protocol {
       canGigantamax?: boolean;
       canMegaEvo?: boolean;
       canUltraBurst?: boolean;
-      canTerastallize?: boolean;
+      canTerastallize?: string;
       trapped?: boolean;
       maybeTrapped?: boolean;
       maybeDisabled?: boolean;
@@ -1424,7 +1424,7 @@ export namespace Protocol {
     | readonly [
       '-activate',
       PokemonIdent,
-      EffectName | MoveName | '',
+      EffectName | AbilityName | MoveName | '',
       ItemName | MoveName | AbilityName | Num | PokemonIdent | ''
     ]
     | readonly ['-activate', PokemonIdent, EffectName, AbilityName | '', AbilityName | ''];
@@ -1564,6 +1564,7 @@ export namespace Protocol {
      * Suppress message.
      */
     'silent': true;
+    'source': true;
     'spread': Slots | true;
     /**
      * `[still]`
@@ -1596,8 +1597,8 @@ export namespace Protocol {
     '|swap|': GeneralKWArgNames;
     '|switch|': GeneralKWArgNames;
     '|-activate|': GeneralKWArgNames
-    | 'ability' | 'ability2' | 'block' | 'broken' | 'damage'
-    | 'item' | 'move' | 'number'| 'consumed' | 'name' | 'fromitem';
+    | 'ability' | 'ability2' | 'block' | 'broken' | 'damage' | 'item'
+    | 'move' | 'number'| 'consumed' | 'name' | 'fromitem' | 'source';
     '|-ability|': GeneralKWArgNames | 'move' | 'weaken' | 'fail';
     '|-block|': GeneralKWArgNames;
     '|-boost|': GeneralKWArgNames | 'multiple' | 'zeffect';

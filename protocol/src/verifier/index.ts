@@ -37,6 +37,7 @@ const BOOL_KWARGS = new Set<Protocol.BattleArgsWithKWArgType>([
   'broken', 'consumed', 'damage', 'eat', 'fail', 'fatigue', 'forme', 'heavy', 'miss', 'msg',
   'notarget', 'ohko', 'silent', 'still', 'thaw', 'upkeep', 'weak', 'weaken', 'zeffect', 'already',
   'identify', 'interrupt', 'multiple', 'partiallytrapped', 'prepare', 'fromitem', 'persistent',
+  'source',
 ]);
 const ABILITY_KWARGS: Protocol.BattleArgsWithKWArgType[] = ['ability', 'ability2'];
 const MOVE_KWARGS: Protocol.BattleArgsWithKWArgType[] = ['block'];
@@ -1018,11 +1019,12 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
     const keys: Protocol.BattleArgsWithKWArgType[] = [
       ...KWARGS, 'ability', 'ability2', 'block', 'broken', 'damage',
-      'item', 'move', 'number', 'consumed', 'name', 'fromitem',
+      'item', 'move', 'number', 'consumed', 'name', 'fromitem', 'source',
     ];
     if (!verifyKWArgs(kwArgs, keys, this.gen)) return false;
     if (!(args[1] === '' || verifyPokemonIdent(args[1]))) return false;
     if (!(verifyEffectName(args[2] as Protocol.EffectName, this.gen) ||
+      verifyAbilityName(args[2] as Protocol.AbilityName, this.gen) ||
       verifyMoveName(args[2] as Protocol.MoveName, this.gen))) {
       return false;
     }

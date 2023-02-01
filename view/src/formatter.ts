@@ -882,10 +882,6 @@ class Handler implements Protocol.Handler<string> {
       return this.parser.template('upkeep', weather, 'NODEFAULT');
     }
     const line1 = this.parser.maybeAbility(from, kwArgs.of!);
-    if (LogFormatter.effectId(kwArgs.from) === 'orichalcumpulse') {
-      return (line1 + this.parser.template('start', 'orichalcumpulse')
-        .replace('[POKEMON]', this.parser.pokemon(kwArgs.of!)));
-    }
     let template = this.parser.template('start', weather, 'NODEFAULT');
     if (!template) {
       template =
@@ -984,6 +980,9 @@ class Handler implements Protocol.Handler<string> {
     }
     if ((id === 'protosynthesis' || id === 'quarkdrive') && kwArgs.fromitem) {
       templateId = 'activateFromItem';
+    }
+    if (id === 'orichalcumpulse' && kwArgs.source) {
+      templateId = 'start';
     }
     let template = this.parser.template(templateId, effect, 'NODEFAULT');
     if (!template) {
