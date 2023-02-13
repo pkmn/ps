@@ -14173,7 +14173,7 @@
       "name": "Order Up",
       "pp": 10,
       "priority": 0,
-      "flags": {"protect": 1, "pulse": 1, "mirror": 1},
+      "flags": {"protect": 1},
       "secondary": null,
       "hasSheerForce": true,
       "target": "normal",

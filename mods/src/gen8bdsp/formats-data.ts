@@ -348,7 +348,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "LC",
 	},
 	magneton: {
-		tier: "PU",
+		tier: "PUBL",
 		doublesTier: "NFE",
 	},
 	magnezone: {
@@ -1992,7 +1992,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		randomBattleMoves: ["hydropump", "nastyplot", "thunderbolt", "trick", "voltswitch", "willowisp"],
 	},
 	rotomfrost: {
-		tier: "PU",
+		tier: "PUBL",
 		doublesTier: "DUU",
 		randomBattleMoves: ["blizzard", "nastyplot", "thunderbolt", "trick", "voltswitch", "willowisp"],
 	},

@@ -1159,7 +1159,6 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       {
         generation: 9,
         level: 5,
-        gender: 'M',
         moves: [ 'fly', 'tailwhip', 'thundershock', 'quickattack' ],
         pokeball: 'pokeball'
       }

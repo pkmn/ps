@@ -97,7 +97,8 @@ export const Formats: FormatList = [
     ],
     banlist: [
       'Chi-Yu',      'Cinderace',
-      'Dragonite',   'Koraidon',
+      'Dragonite',   'Flutter Mane',
+      'Gholdengo',   'Koraidon',
       'Mimikyu',     'Miraidon',
       'Scream Tail', 'Moody',
       'Focus Band',  'Focus Sash',
@@ -194,7 +195,7 @@ export const Formats: FormatList = [
     mod: 'gen9',
     gameType: 'doubles',
     ruleset: [ 'Standard Doubles', 'Little Cup', 'Sleep Clause Mod' ],
-    banlist: [ 'Murkrow', 'Scyther', 'Sneasel' ]
+    banlist: [ 'Dunsparce', 'Murkrow', 'Scyther', 'Sneasel' ]
   },
   {
     name: '[Gen 9] 2v2 Doubles',

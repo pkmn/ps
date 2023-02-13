@@ -1232,7 +1232,7 @@
     "beadsofruin": {
       "name": "Beads of Ruin",
       "num": 284,
-      "shortDesc": "The Special Defense stat of all other active Pokemon is multiplied by 0.75."
+      "shortDesc": "Active Pokemon without this Ability have their Special Defense multiplied by 0.75."
     },
     "beastboost": {
       "name": "Beast Boost",
@@ -2778,12 +2778,12 @@
     "swordofruin": {
       "name": "Sword of Ruin",
       "num": 285,
-      "shortDesc": "The Defense stat of all other active Pokemon is multiplied by 0.75."
+      "shortDesc": "Active Pokemon without this Ability have their Defense multiplied by 0.75."
     },
     "tabletsofruin": {
       "name": "Tablets of Ruin",
       "num": 284,
-      "shortDesc": "The Attack stat of all other active Pokemon is multiplied by 0.75."
+      "shortDesc": "Active Pokemon without this Ability have their Attack multiplied by 0.75."
     },
     "tangledfeet": {
       "onModifyAccuracyPriority": -1,
@@ -2921,7 +2921,7 @@
     "vesselofruin": {
       "name": "Vessel of Ruin",
       "num": 284,
-      "shortDesc": "The Special Attack stat of all other active Pokemon is multiplied by 0.75."
+      "shortDesc": "Active Pokemon without this Ability have their Special Attack multiplied by 0.75."
     },
     "victorystar": {
       "onAnyModifyAccuracyPriority": -1,
