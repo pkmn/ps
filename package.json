@@ -46,6 +46,6 @@
     "start": "subpkg run start",
     "test": "subpkg run test",
     "test:integration": "npm test && npm -C integration test",
-    "postinstall": "subpkg install && npm -C integration install"
+    "postinstall": "subpkg install && npm -C integration install --install-links=false"
   }
 }
