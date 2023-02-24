@@ -93,6 +93,10 @@ export class RandomGen6Teams extends RandomGen7Teams {
 			),
 			'Bad Dreams': movePool => movePool.includes('darkvoid'),
 			'Slow Start': movePool => movePool.includes('substitute'),
+			protect: movePool => movePool.includes('wish'),
+			wish: (movePool, moves, abilities, types, counter, species) => (
+				species.baseStats.hp < 110 && !abilities.has('Regenerator') && movePool.includes('protect')
+			),
 		};
 	}
 
@@ -205,7 +209,7 @@ export class RandomGen6Teams extends RandomGen7Teams {
 				counter.get('Dark') > 2 ||
 				moves.has('clearsmog') ||
 				restTalk ||
-				counter.damagingMoves.size - 1 === counter.get('priority')
+				(!!counter.get('priority') && counter.damagingMoves.size - 1 === counter.get('priority'))
 			)};
 		case 'haze': case 'spikes':
 			return {cull: !!counter.setupType || !!counter.get('speedsetup') || moves.has('trickroom')};
@@ -268,9 +272,12 @@ export class RandomGen6Teams extends RandomGen7Teams {
 		case 'voltswitch':
 			return {cull: !!counter.setupType || !!counter.get('speedsetup') || moves.has('raindance') || moves.has('uturn')};
 		case 'wish':
-			if (species.baseStats.hp >= 130) return {cull: false};
-			if (abilities.has('Regenerator')) return {cull: false};
-			return {cull: (!['ironhead', 'protect', 'spikyshield', 'uturn'].some(m => moves.has(m)))};
+			return {cull: (
+				species.baseStats.hp < 110 &&
+				!abilities.has('Regenerator') &&
+				!movePool.includes('protect') &&
+				!['ironhead', 'protect', 'spikyshield', 'uturn'].some(m => moves.has(m))
+			)};
 
 		// Bit redundant to have both
 		// Attacks:
@@ -393,7 +400,12 @@ export class RandomGen6Teams extends RandomGen7Teams {
 		case 'extremespeed':
 			return {cull: counter.setupType !== 'Physical' && moves.has('vacuumwave')};
 		case 'hiddenpower':
-			return {cull: moves.has('rest') || !counter.get('stab') && counter.damagingMoves.size < 2};
+			return {cull: (
+				moves.has('rest') ||
+				(!counter.get('stab') && counter.damagingMoves.size < 2) ||
+				// Force Moonblast on Special-setup Fairies
+				(counter.setupType === 'Special' && types.has('Fairy') && movePool.includes('moonblast'))
+			)};
 		case 'hypervoice':
 			return {cull: moves.has('blizzard') || moves.has('return')};
 		case 'judgment':
@@ -412,7 +424,10 @@ export class RandomGen6Teams extends RandomGen7Teams {
 		case 'psychic':
 			return {cull: moves.has('psyshock')};
 		case 'psychocut': case 'zenheadbutt':
-			return {cull: (moves.has('psychic') || moves.has('psyshock')) && counter.setupType !== 'Physical'};
+			return {cull: (
+				((moves.has('psychic') || moves.has('psyshock')) && counter.setupType !== 'Physical') ||
+				(abilities.has('Contrary') && !counter.setupType && !!counter.get('physicalpool'))
+			)};
 		case 'psyshock':
 			const psychic = movePool.indexOf('psychic');
 			if (psychic >= 0) this.fastPop(movePool, psychic);
@@ -474,14 +489,17 @@ export class RandomGen6Teams extends RandomGen7Teams {
 
 			return {cull};
 		case 'milkdrink': case 'moonlight': case 'painsplit': case 'recover': case 'roost': case 'synthesis':
-			return {cull: ['leechseed', 'rest'].some(m => moves.has(m) || moves.has('wish') && moves.has('protect'))};
+			return {cull: (
+				['leechseed', 'rest'].some(m => moves.has(m)) ||
+				(moves.has('wish') && (moves.has('protect') || movePool.includes('protect')))
+			)};
 		case 'safeguard':
 			return {cull: moves.has('destinybond')};
 		case 'substitute':
 			return {cull: (
 				['dracometeor', 'pursuit', 'rest', 'taunt', 'uturn', 'voltswitch', 'whirlwind'].some(m => moves.has(m)) ||
 				(moves.has('leafstorm') && !abilities.has('Contrary')) ||
-				movePool.includes('copycat')
+				movePool.includes('copycat') || movePool.includes('dragondance')
 			)};
 		}
 
@@ -760,6 +778,7 @@ export class RandomGen6Teams extends RandomGen7Teams {
 		if (species.name === 'Palkia' && (moves.has('dracometeor') || moves.has('spacialrend')) && moves.has('hydropump')) {
 			return 'Lustrous Orb';
 		}
+		if (species.types.includes('Normal') && moves.has('fakeout') && counter.get('Normal') >= 2) return 'Silk Scarf';
 		if (counter.damagingMoves.size >= 4) {
 			return (counter.get('Dragon') || moves.has('suckerpunch') || counter.get('Normal')) ? 'Life Orb' : 'Expert Belt';
 		}
@@ -925,7 +944,7 @@ export class RandomGen6Teams extends RandomGen7Teams {
 
 				// Pokemon should have moves that benefit their Type/Ability/Weather, as well as moves required by its forme
 				if (
-					!cull && !isSetup && !move.weather && !move.damage &&
+					!cull && !isSetup && !move.weather && !move.stallingMove && !move.damage &&
 					(move.category !== 'Status' || !move.flags.heal) &&
 					!['judgment', 'sleeptalk', 'toxic', 'lightscreen', 'reflect'].includes(moveid) &&
 					(counter.get('physicalsetup') + counter.get('specialsetup') < 2 && (
@@ -967,6 +986,11 @@ export class RandomGen6Teams extends RandomGen7Teams {
 						}
 						for (const abil of abilities) {
 							if (runEnforcementChecker(abil)) {
+								cull = true;
+							}
+						}
+						for (const m of moves) {
+							if (runEnforcementChecker(m)) {
 								cull = true;
 							}
 						}

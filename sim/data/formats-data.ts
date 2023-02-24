@@ -405,7 +405,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	venomoth: {
-		tier: "NU",
+		tier: "NUBL",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -4214,7 +4214,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Unreleased",
 	},
 	goodra: {
-		tier: "NU",
+		tier: "NUBL",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -4448,7 +4448,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	oricoriopompom: {
-		tier: "NU",
+		tier: "NUBL",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -5209,7 +5209,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	polteageist: {
 		tier: "UU",
 		doublesTier: "(DUU)",
-		natDexTier: "RU",
+		natDexTier: "RUBL",
 	},
 	hatenna: {
 		tier: "LC",
@@ -5540,7 +5540,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	espathra: {
 		tier: "Uber",
 		doublesTier: "DUU",
-		natDexTier: "UUBL",
+		natDexTier: "Uber",
 	},
 	wiglett: {
 		tier: "LC",
@@ -5809,7 +5809,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "UU",
 	},
 	ironhands: {
-		tier: "UU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 		natDexTier: "RU",
 	},

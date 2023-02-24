@@ -97,7 +97,6 @@ const IMPORTS = {
     'Side', 'SpreadMoveTargets', 'SpreadMoveDamage', 'ZMoveOptions',
   ],
   'sim/battle-queue.ts': ['Pokemon', 'ID', 'Move', 'Effect'],
-  'sim/battle-stream.ts': ['AnyObject'],
   'sim/battle.ts': [
     'Effect', 'Format', 'ID', 'PlayerOptions', 'AnyObject', 'ActiveMove', 'SideID', 'StatsTable',
     'SparseBoostsTable', 'SpreadMoveDamage', 'Move', 'PokemonSet', 'GameType', 'ModdedDex',
@@ -365,29 +364,13 @@ const REWRITES = {
       '\t\tif (type.exists) this.typeCache.set(id, type);',
   },
   'sim/battle.ts': {
+    'import {extractChannelMessages} from \'../server/sockets\';':
+      'import {extractChannelMessages} from \'./battle-stream\';',
     '\tgetCategory(move: string | Move) {':
       '\tgetCategory(move: string | Move): Move[\'category\'] {',
     '\t\t\tconst entry = this.dex.data.Scripts[i];':
       '\t\t\tconst entry = (this.dex.data.Scripts as any)[i];',
     '\t\treturn team as PokemonSet[];': '\t\treturn team;',
-    // kids don't understand how the fucking engine is supposed to fucking work
-    "\t\t\treturn data.replace(/\\n\\|split\\|p[1234]\\n([^\\n]*)\\n(?:[^\\n]*)/g, '\\n$1');":
-      "\t\t\treturn data.replace(/\\|split\\|p[1234]\\n([^\\n]*)\\n(?:[^\\n]*)/g, '$1');",
-    "\t\tcase 'p1': data = data.replace(/\\n\\|split\\|p1\\n([^\\n]*)\\n(?:[^\\n]*)/g, '\\n$1'); break;":
-      "\t\tcase 'p1': data = data.replace(/\\|split\\|p1\\n([^\\n]*)\\n(?:[^\\n]*)/g, '$1'); break;",
-    "\t\tcase 'p2': data = data.replace(/\\n\\|split\\|p2\\n([^\\n]*)\\n(?:[^\\n]*)/g, '\\n$1'); break;":
-      "\t\tcase 'p2': data = data.replace(/\\|split\\|p2\\n([^\\n]*)\\n(?:[^\\n]*)/g, '$1'); break;",
-    "\t\tcase 'p3': data = data.replace(/\\n\\|split\\|p3\\n([^\\n]*)\\n(?:[^\\n]*)/g, '\\n$1'); break;":
-      "\t\tcase 'p3': data = data.replace(/\\|split\\|p3\\n([^\\n]*)\\n(?:[^\\n]*)/g, '$1'); break;",
-    "\t\tcase 'p4': data = data.replace(/\\n\\|split\\|p4\\n([^\\n]*)\\n(?:[^\\n]*)/g, '\\n$1'); break;":
-      "\t\tcase 'p4': data = data.replace(/\\|split\\|p4\\n([^\\n]*)\\n(?:[^\\n]*)/g, '$1'); break;",
-    "\t\treturn data.replace(/\\n\\|split\\|(?:[^\\n]*)\\n(?:[^\\n]*)\\n\\n?/g, '\\n');":
-      "\t\treturn data.replace(/\\|split\\|(?:[^\\n]*)\\n(?:[^\\n]*)\\n\\n?/g, '');",
-  },
-  // smfh Zarle, please learn how Promises work
-  'sim/battle-stream.ts': {
-    '\t\tvoid this._listen();': undefined,
-    '\tasync _listen() {': '\tasync start() {',
   },
   'sim/team-validator.ts': {
     '\t\t\t\ttestTeamGenerator.getTeam(options); // Throws error if generation fails':
@@ -453,12 +436,13 @@ const OVERRIDDEN = new Set([
   'package.json',
   'pnpm-debug.log', // sigh...
   'README.md',
+  'sim/battle-stream.ts',
+  'sim/dex-formats.ts',
   'sim/exported-global-types.ts',
   'sim/index.ts',
+  'sim/teams.ts',
   'sim/tools/exhaustive-runner.ts',
   'sim/tools/index.ts',
-  'sim/teams.ts',
-  'sim/dex-formats.ts',
   'test/main.js',
   'test/sim/rulesets.js',
   'test/sim/team-validator/basic.js',
