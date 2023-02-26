@@ -1,4 +1,4 @@
-export {Battle} from './battle';
+export {Battle, extractChannelMessages} from './battle';
 export * as BattleStreams from './battle-stream';
 export * as Streams from '../lib/streams';
 export * from './state';

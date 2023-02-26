@@ -696,7 +696,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         '6S35', '6S40',
         '6S42'
       ],
-      irontail: [ '6S37', '5S24', '5S30', '4S21' ],
+      irontail: [ '9S54', '6S37', '5S24', '5S30', '4S21' ],
       lastresort: [ '4S18' ],
       lightscreen: [ '4S11', '3S0', '3S6', '3S7', '3S8' ],
       megakick: [ '6S32' ],
@@ -708,6 +708,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         '6S36', '6S38',
         '6S40', '6S42'
       ],
+      playrough: [ '9S54' ],
       present: [ '4S12', '4S15', '4S17', '4S18', '4S20', '4S22' ],
       protect: [ '5S27', '4S14', '4S16' ],
       quickattack: [
@@ -729,10 +730,10 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       snore: [ '4S19' ],
       substitute: [ '6S35' ],
       surf: [
-        '7S47', '7S49', '6S33',
-        '6S41', '4S9',  '4S11',
-        '4S14', '4S16', '3S3',
-        '3S5',  '3S7'
+        '9S54', '7S47', '7S49',
+        '6S33', '6S41', '4S9',
+        '4S11', '4S14', '4S16',
+        '3S3',  '3S5',  '3S7'
       ],
       sweetkiss: [ '6S36' ],
       sweetscent: [ '7S48' ],
@@ -746,10 +747,11 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       ],
       teeterdance: [ '7S45', '6S38', '5S23' ],
       thunder: [
-        '6S35', '5S25',
-        '4S14', '4S16',
-        '3S0',  '3S6',
-        '3S7',  '3S8'
+        '9S54', '6S35',
+        '5S25', '4S14',
+        '4S16', '3S0',
+        '3S6',  '3S7',
+        '3S8'
       ],
       thunderbolt: [
         '8S51', '7S49', '6S33',
@@ -1160,6 +1162,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         generation: 9,
         level: 5,
         moves: [ 'fly', 'tailwhip', 'thundershock', 'quickattack' ],
+        pokeball: 'pokeball'
+      },
+      {
+        generation: 9,
+        level: 100,
+        gender: 'M',
+        nature: 'Quiet',
+        perfectIVs: 6,
+        isHidden: true,
+        moves: [ 'thunder', 'surf', 'playrough', 'irontail' ],
         pokeball: 'pokeball'
       }
     ],
@@ -14653,6 +14665,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         ivs: { hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30 },
         abilities: [ 'angershell' ],
         moves: [ 'visegrip', 'rocksmash', 'block', 'rocktomb' ]
+      }
+    ]
+  },
+  garganacl: {
+    learnset: { protect: [ '9S0' ], recover: [ '9S0' ], saltcure: [ '9S0' ], wideguard: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 50,
+        gender: 'M',
+        nature: 'Careful',
+        ivs: { hp: 31, atk: 31, def: 31, spa: 22, spd: 31, spe: 31 },
+        moves: [ 'saltcure', 'recover', 'wideguard', 'protect' ],
+        pokeball: 'cherishball'
       }
     ]
   },

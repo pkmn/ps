@@ -97,6 +97,7 @@ const IMPORTS = {
     'Side', 'SpreadMoveTargets', 'SpreadMoveDamage', 'ZMoveOptions',
   ],
   'sim/battle-queue.ts': ['Pokemon', 'ID', 'Move', 'Effect'],
+  'sim/battle-stream.ts': ['AnyObject'],
   'sim/battle.ts': [
     'Effect', 'Format', 'ID', 'PlayerOptions', 'AnyObject', 'ActiveMove', 'SideID', 'StatsTable',
     'SparseBoostsTable', 'SpreadMoveDamage', 'Move', 'PokemonSet', 'GameType', 'ModdedDex',
@@ -364,13 +365,16 @@ const REWRITES = {
       '\t\tif (type.exists) this.typeCache.set(id, type);',
   },
   'sim/battle.ts': {
-    'import {extractChannelMessages} from \'../server/sockets\';':
-      'import {extractChannelMessages} from \'./battle-stream\';',
     '\tgetCategory(move: string | Move) {':
       '\tgetCategory(move: string | Move): Move[\'category\'] {',
     '\t\t\tconst entry = this.dex.data.Scripts[i];':
       '\t\t\tconst entry = (this.dex.data.Scripts as any)[i];',
     '\t\treturn team as PokemonSet[];': '\t\treturn team;',
+  },
+  // smfh Zarle, please learn how Promises work
+  'sim/battle-stream.ts': {
+    '\t\tvoid this._listen();': undefined,
+    '\tasync _listen() {': '\tasync start() {',
   },
   'sim/team-validator.ts': {
     '\t\t\t\ttestTeamGenerator.getTeam(options); // Throws error if generation fails':
@@ -436,7 +440,6 @@ const OVERRIDDEN = new Set([
   'package.json',
   'pnpm-debug.log', // sigh...
   'README.md',
-  'sim/battle-stream.ts',
   'sim/dex-formats.ts',
   'sim/exported-global-types.ts',
   'sim/index.ts',

@@ -13,39 +13,7 @@ import {AnyObject} from './exported-global-types';
 
 import {Streams, Utils} from '../lib';
 import {Teams} from './teams';
-import {Battle} from './battle';
-
-type ChannelID = 0 | 1 | 2 | 3 | 4;
-
-export type ChannelMessages<T extends ChannelID | -1> = Record<T, string[]>;
-
-const splitRegex = /^\|split\|p([1234])\n(.*)\n(.*)|.+/gm;
-
-export function extractChannelMessages<T extends ChannelID | -1>(message: string, channelIds: T[]): ChannelMessages<T> {
-	const channelIdSet = new Set(channelIds);
-	const channelMessages: ChannelMessages<ChannelID | -1> = {
-		[-1]: [],
-		0: [],
-		1: [],
-		2: [],
-		3: [],
-		4: [],
-	};
-
-	for (const [lineMatch, playerMatch, secretMessage, sharedMessage] of message.matchAll(splitRegex)) {
-		const player = playerMatch ? parseInt(playerMatch) : 0;
-		for (const channelId of channelIdSet) {
-			let line = lineMatch;
-			if (player) {
-				line = channelId === -1 || player === channelId ? secretMessage : sharedMessage;
-				if (!line) continue;
-			}
-			channelMessages[channelId].push(line);
-		}
-	}
-
-	return channelMessages;
-}
+import {Battle, extractChannelMessages} from './battle';
 
 /**
  * Like string.split(delimiter), but only recognizes the first `limit`
