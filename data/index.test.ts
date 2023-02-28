@@ -220,7 +220,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         let total = 0;
         for (const gen of gens) {
           expect(Array.from(gen.moves))
-            .toHaveLength(gen.num === 9 ? 607
+            .toHaveLength(gen.num === 9 ? 607 + 3
             : gen.num === 8 ? 623 + 41 + 34 - 33
             : (total += COUNTS[gen.num - 1]));
         }
@@ -321,13 +321,14 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
           1 + 1 + 1 + 2 + 1 + 2 + 2 + 2 + 1 + 1 + 2 + 2 + 1 +
           (4 + 1 + 1 + 1 + 1 + 2 + (1 + 1)) + (1 + 3 + 4 + 2 + 3 + 1 + 2) - 1; // FIXME Rockruff
         expect(counts(8)).toEqual({species: 664, formes});
-        // Galar (1) + Paldea (4) + Rotom (5) + Basculin (1) + Vivillon (1) + Oricorio (3) +
+        // Galar (1) + Paldea (4) + Rotom (5) + Basculin (1) + Vivillon-Fancy (1) + Oricorio (3) +
         // Lycanroc (2) + Mimikyu (1) + Toxtricity (1) + Eiscue (1) + Indeedee (1) + Oinkologne (1)
         // + Dudunsparce (1) + Palafin (1) + Maushold (1) + Squawkabilly (3) + Sinistea-Antique (1)
-        // + Polteageist-Antique (1)
-        formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 1 + 1;
-        // Charizard (3) + Cinderace (3) + Greninja (3)
-        expect(counts(9)).toEqual({species: 400 + 3 + 3 + 3, formes});
+        // + Polteageist-Antique (1) + Zorua-Hisui (1) + Zoroark-Hisui (1)
+        formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 1 + 1 + 1 + 1;
+        // Charizard (3) + Cinderace (3) + Greninja (3) + Vivillon (1) + Walking Wake (1) +
+        // Iron Leaves (1)
+        expect(counts(9)).toEqual({species: 400 + 3 + 3 + 3 + 3, formes});
       });
 
       it('formeNum', () => {

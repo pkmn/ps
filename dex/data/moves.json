@@ -5451,7 +5451,6 @@
       "accuracy": 100,
       "basePower": 75,
       "category": "Special",
-      "isNonstandard": "Unobtainable",
       "name": "Bitter Malice",
       "pp": 10,
       "priority": 0,
@@ -11200,6 +11199,20 @@
       "type": "Water",
       "shortDesc": "No additional effect."
     },
+    "hydrosteam": {
+      "num": 876,
+      "accuracy": 100,
+      "basePower": 80,
+      "category": "Special",
+      "name": "Hydro Steam",
+      "pp": 15,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1, "defrost": 1},
+      "thawsTarget": true,
+      "secondary": null,
+      "target": "normal",
+      "type": "Water"
+    },
     "hydrovortex": {
       "num": 642,
       "accuracy": true,
@@ -14955,6 +14968,19 @@
       "type": "Psychic",
       "desc": "Has a 10% chance to confuse the target.",
       "shortDesc": "10% chance to confuse the target."
+    },
+    "psyblade": {
+      "num": 875,
+      "accuracy": 100,
+      "basePower": 80,
+      "category": "Physical",
+      "name": "Psyblade",
+      "pp": 15,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1, "mirror": 1, "slicing": 1},
+      "secondary": null,
+      "target": "normal",
+      "type": "Psychic"
     },
     "psychup": {
       "num": 244,

@@ -11224,6 +11224,23 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ],
     encounters: [ { generation: 5, level: 25 } ]
   },
+  zoroarkhisui: {
+    learnset: {
+      bittermalice: [ '9S0' ],
+      happyhour: [ '9S0' ],
+      nastyplot: [ '9S0' ],
+      terablast: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 50,
+        perfectIVs: 3,
+        moves: [ 'happyhour', 'bittermalice', 'nastyplot', 'terablast' ],
+        pokeball: 'cherishball'
+      }
+    ]
+  },
   gothorita: {
     learnset: {
       flatter: [ '5S0', '5S1' ],
@@ -15018,6 +15035,40 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         nature: 'Modest',
         ivs: { hp: 25, atk: 31, def: 25, spa: 31, spd: 25, spe: 31 },
         moves: [ 'hyperbeam', 'charge', 'electrodrift', 'powergem' ]
+      }
+    ],
+    eventOnly: true
+  },
+  walkingwake: {
+    learnset: {
+      dragonpulse: [ '9S0' ],
+      flamethrower: [ '9S0' ],
+      hydrosteam: [ '9S0' ],
+      nobleroar: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 75,
+        perfectIVs: 3,
+        moves: [ 'hydrosteam', 'dragonpulse', 'nobleroar', 'flamethrower' ]
+      }
+    ],
+    eventOnly: true
+  },
+  ironleaves: {
+    learnset: {
+      leafblade: [ '9S0' ],
+      megahorn: [ '9S0' ],
+      psyblade: [ '9S0' ],
+      swordsdance: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 75,
+        perfectIVs: 3,
+        moves: [ 'psyblade', 'leafblade', 'megahorn', 'swordsdance' ]
       }
     ],
     eventOnly: true

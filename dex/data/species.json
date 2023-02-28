@@ -2849,17 +2849,6 @@
       "inherit": true,
       "abilities": {"0": "Torrent", "H": "Shell Armor"}
     },
-    "zoroarkhisui": {
-      "inherit": true,
-      "baseStats": {
-        "hp": 55,
-        "atk": 100,
-        "def": 60,
-        "spa": 125,
-        "spd": 60,
-        "spe": 110
-      }
-    },
     "braviaryhisui": {
       "inherit": true,
       "abilities": {"0": "Keen Eye", "1": "Sheer Force", "H": "Defiant"}
@@ -17196,12 +17185,12 @@
       "types": ["Normal", "Ghost"],
       "genderRatio": {"M": 0.875, "F": 0.125},
       "baseStats": {
-        "hp": 60,
-        "atk": 105,
+        "hp": 55,
+        "atk": 100,
         "def": 60,
-        "spa": 120,
+        "spa": 125,
         "spd": 60,
-        "spe": 105
+        "spe": 110
       },
       "abilities": {"0": "Illusion"},
       "weightkg": 73,
@@ -27957,6 +27946,42 @@
       "abilities": {"0": "Hadron Engine"},
       "weightkg": 240,
       "tags": ["Restricted Legendary"],
+      "eggGroups": ["Undiscovered"]
+    },
+    "walkingwake": {
+      "num": 1009,
+      "name": "Walking Wake",
+      "types": ["Water", "Dragon"],
+      "gender": "N",
+      "baseStats": {
+        "hp": 99,
+        "atk": 83,
+        "def": 91,
+        "spa": 125,
+        "spd": 83,
+        "spe": 109
+      },
+      "abilities": {"0": "Protosynthesis"},
+      "weightkg": 280,
+      "tags": ["Paradox"],
+      "eggGroups": ["Undiscovered"]
+    },
+    "ironleaves": {
+      "num": 1010,
+      "name": "Iron Leaves",
+      "types": ["Grass", "Psychic"],
+      "gender": "N",
+      "baseStats": {
+        "hp": 90,
+        "atk": 130,
+        "def": 88,
+        "spa": 70,
+        "spd": 108,
+        "spe": 104
+      },
+      "abilities": {"0": "Quark Drive"},
+      "weightkg": 125,
+      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "missingno": {
