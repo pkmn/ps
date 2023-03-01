@@ -11211,7 +11211,9 @@
       "thawsTarget": true,
       "secondary": null,
       "target": "normal",
-      "type": "Water"
+      "type": "Water",
+      "desc": "If the current weather is Sunny Day, this move's power is multiplied by 1.5 and is not weakened for being Water type.",
+      "shortDesc": "During Sunny Day: 1.5x power and not weakened."
     },
     "hydrovortex": {
       "num": 642,
@@ -14980,7 +14982,9 @@
       "flags": {"contact": 1, "protect": 1, "mirror": 1, "slicing": 1},
       "secondary": null,
       "target": "normal",
-      "type": "Psychic"
+      "type": "Psychic",
+      "desc": "If the current terrain is Electric Terrain, this move's power is multiplied by 1.5.",
+      "shortDesc": "During Electric Terain: 1.5x power."
     },
     "psychup": {
       "num": 244,

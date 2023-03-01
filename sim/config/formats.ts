@@ -60,6 +60,7 @@ export const Formats: FormatList = [
     banlist: [ 'UU', 'RUBL', 'Light Clay' ]
   },
   { name: '[Gen 9] NU', mod: 'gen9', ruleset: [ '[Gen 9] RU' ], banlist: [ 'RU', 'NUBL' ] },
+  { name: '[Gen 9] PU', mod: 'gen9', ruleset: [ '[Gen 9] NU' ], banlist: [ 'NU', 'PUBL' ] },
   {
     name: '[Gen 9] LC',
     mod: 'gen9',
@@ -135,18 +136,19 @@ export const Formats: FormatList = [
     gameType: 'freeforall',
     ruleset: [ 'Standard', '!Evasion Items Clause' ],
     banlist: [
-      'Annihilape',    'Flutter Mane',
-      'Houndstone',    'Koraidon',
-      'Iron Bundle',   'Miraidon',
-      'Palafin',       'Moody',
-      'Shadow Tag',    'Toxic Debris',
-      'Acupressure',   'Aromatic Mist',
-      'Baton Pass',    'Court Change',
-      'Final Gambit',  'Flatter',
-      'Follow Me',     'Heal Pulse',
-      'Poison Fang',   'Rage Powder',
-      'Spicy Extract', 'Swagger',
-      'Toxic',         'Toxic Spikes'
+      'Annihilape',    'Chi-Yu',
+      'Flutter Mane',  'Houndstone',
+      'Koraidon',      'Iron Bundle',
+      'Miraidon',      'Palafin',
+      'Moody',         'Shadow Tag',
+      'Toxic Debris',  'Acupressure',
+      'Aromatic Mist', 'Baton Pass',
+      'Court Change',  'Final Gambit',
+      'Flatter',       'Follow Me',
+      'Heal Pulse',    'Poison Fang',
+      'Rage Powder',   'Spicy Extract',
+      'Swagger',       'Toxic',
+      'Toxic Spikes'
     ]
   },
   {
@@ -241,6 +243,20 @@ export const Formats: FormatList = [
       'Open Team Sheets'
     ],
     banlist: [ 'Sub-Legendary' ]
+  },
+  {
+    name: '[Gen 9] Paldea Prologue',
+    mod: 'gen9',
+    gameType: 'doubles',
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Paldea Pokedex',
+      'Min Source Gen = 9',
+      'VGC Timer',
+      'Limit One Restricted'
+    ],
+    restricted: [ 'Restricted Legendary' ]
   },
   {
     name: '[Gen 9] Doubles Custom Game',
@@ -349,7 +365,6 @@ export const Formats: FormatList = [
     ]
   },
   { name: '[Gen 9] National Dex AG', mod: 'gen9', ruleset: [ 'Standard NatDex' ] },
-  { name: '[Gen 8] National Dex AG', mod: 'gen8', ruleset: [ 'Standard NatDex' ] },
   {
     name: '[Gen 8] JolteMons Random Battle',
     mod: 'gen8joltemons',
@@ -744,24 +759,31 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 3] UU',
-    mod: 'gen3',
-    ruleset: [ 'Standard' ],
-    banlist: [ 'Uber', 'OU', 'UUBL', 'Smeargle + Ingrain', 'Arena Trap', 'Baton Pass', 'Swagger' ]
-  },
-  {
-    name: '[Gen 5] RU',
-    mod: 'gen5',
-    ruleset: [ '[Gen 5] UU', 'Baton Pass Clause', '!Sleep Clause Mod', 'Sleep Moves Clause' ],
-    banlist: [ 'UU', 'RUBL', 'Shadow Tag', 'Shell Smash + Baton Pass' ],
-    unbanlist: [ 'Prankster + Assist', 'Prankster + Copycat', 'Baton Pass' ]
-  },
-  {
-    name: '[Gen 4] NU',
+    name: '[Gen 4] UU',
     mod: 'gen4',
-    ruleset: [ '[Gen 4] UU', 'Baton Pass Clause' ],
-    banlist: [ 'UU', 'NUBL' ],
-    unbanlist: [ 'Sand Veil', 'Baton Pass' ]
+    ruleset: [ '[Gen 4] OU', '!Freeze Clause Mod' ],
+    banlist: [ 'OU', 'UUBL' ],
+    unbanlist: [ 'Arena Trap', 'Swagger' ]
+  },
+  {
+    name: '[Gen 3] Challenge Cup',
+    mod: 'gen3',
+    team: 'randomCC',
+    ruleset: [ 'Obtainable', 'HP Percentage Mod', 'Cancel Mod' ]
+  },
+  {
+    name: '[Gen 5] ZU',
+    mod: 'gen5',
+    ruleset: [ '[Gen 5] PU' ],
+    banlist: [
+      'PU',         'Articuno',
+      'Dragonair',  'Glalie',
+      'Machoke',    'Marowak',
+      'Omanyte',    'Regigigas',
+      'Trubbish',   'Whirlipede',
+      'Baton Pass'
+    ],
+    unbanlist: [ 'Damp Rock' ]
   },
   {
     name: '[Gen 8] OU',
@@ -1673,6 +1695,13 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 5] RU',
+    mod: 'gen5',
+    ruleset: [ '[Gen 5] UU', 'Baton Pass Clause', '!Sleep Clause Mod', 'Sleep Moves Clause' ],
+    banlist: [ 'UU', 'RUBL', 'Shadow Tag', 'Shell Smash + Baton Pass' ],
+    unbanlist: [ 'Prankster + Assist', 'Prankster + Copycat', 'Baton Pass' ]
+  },
+  {
     name: '[Gen 5] NU',
     mod: 'gen5',
     ruleset: [ '[Gen 5] RU', '!Sleep Moves Clause', 'Sleep Clause Mod' ],
@@ -1728,20 +1757,6 @@ export const Formats: FormatList = [
       'Soul Dew',     'Perish Song'
     ],
     unbanlist: [ 'Genesect', 'Landorus', 'Manaphy', 'Thundurus', 'Tornadus-Therian' ]
-  },
-  {
-    name: '[Gen 5] ZU',
-    mod: 'gen5',
-    ruleset: [ '[Gen 5] PU' ],
-    banlist: [
-      'PU',         'Articuno',
-      'Dragonair',  'Glalie',
-      'Machoke',    'Marowak',
-      'Omanyte',    'Regigigas',
-      'Trubbish',   'Whirlipede',
-      'Baton Pass'
-    ],
-    unbanlist: [ 'Damp Rock' ]
   },
   {
     name: '[Gen 5] CAP',
@@ -1823,11 +1838,11 @@ export const Formats: FormatList = [
   },
   { name: '[Gen 4] Ubers', mod: 'gen4', ruleset: [ 'Standard' ], banlist: [ 'AG' ] },
   {
-    name: '[Gen 4] UU',
+    name: '[Gen 4] NU',
     mod: 'gen4',
-    ruleset: [ '[Gen 4] OU', '!Freeze Clause Mod' ],
-    banlist: [ 'OU', 'UUBL' ],
-    unbanlist: [ 'Arena Trap', 'Swagger' ]
+    ruleset: [ '[Gen 4] UU', 'Baton Pass Clause' ],
+    banlist: [ 'UU', 'NUBL' ],
+    unbanlist: [ 'Sand Veil', 'Baton Pass' ]
   },
   {
     name: '[Gen 4] PU',
@@ -1963,6 +1978,12 @@ export const Formats: FormatList = [
     mod: 'gen3',
     ruleset: [ 'Standard', 'Deoxys Camouflage Clause', 'One Baton Pass Clause' ],
     banlist: [ 'Wobbuffet + Leftovers' ]
+  },
+  {
+    name: '[Gen 3] UU',
+    mod: 'gen3',
+    ruleset: [ 'Standard' ],
+    banlist: [ 'Uber', 'OU', 'UUBL', 'Smeargle + Ingrain', 'Arena Trap', 'Baton Pass', 'Swagger' ]
   },
   {
     name: '[Gen 3] NU',

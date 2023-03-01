@@ -2914,17 +2914,8 @@
         "spe": 128
       }
     },
-    "kubfu": {"inherit": true, "abilities": {"0": "Inner Focus"}},
     "kleavor": {
       "inherit": true,
-      "baseStats": {
-        "hp": 70,
-        "atk": 135,
-        "def": 95,
-        "spa": 45,
-        "spd": 70,
-        "spe": 85
-      },
       "abilities": {"0": "Swarm", "1": "Sheer Force", "H": "Steadfast"}
     },
     "basculegion": {
@@ -25460,7 +25451,7 @@
         "spd": 50,
         "spe": 72
       },
-      "abilities": {"0": "Inner Focus", "H": "No Guard"},
+      "abilities": {"0": "Inner Focus"},
       "weightkg": 12,
       "tags": ["Sub-Legendary"],
       "evos": ["Urshifu", "Urshifu-Rapid-Strike"],
@@ -25751,10 +25742,10 @@
       "types": ["Bug", "Rock"],
       "baseStats": {
         "hp": 70,
-        "atk": 130,
+        "atk": 135,
         "def": 95,
         "spa": 45,
-        "spd": 75,
+        "spd": 70,
         "spe": 85
       },
       "abilities": {"0": "Swarm", "1": "Sheer Force", "H": "Sharpness"},

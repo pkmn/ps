@@ -196,7 +196,6 @@ export interface MoveData extends EffectData, HitEffect {
   ignorePositiveDefensive?: boolean;
   ignorePositiveEvasion?: boolean;
   infiltrates?: boolean;
-  orderUpBoost?: boolean;
   multiaccuracy?: boolean;
   multihit?: number | number[];
   noCopy?: boolean;

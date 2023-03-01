@@ -401,7 +401,6 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly ignorePositiveDefensive?: boolean;
   readonly ignorePositiveEvasion?: boolean;
   readonly infiltrates?: boolean;
-  readonly orderUpBoost?: boolean;
   readonly multiaccuracy?: boolean;
   readonly multihit?: number | number[];
   readonly noCopy?: boolean;
