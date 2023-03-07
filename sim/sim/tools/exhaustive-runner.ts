@@ -20,12 +20,12 @@ export interface ExhaustiveRunnerOptions {
 	maxGames?: number;
 	maxFailures?: number;
 	dual?: boolean | 'debug';
-	possible?: ExhaustiveRunnerPossibilites;
+	possible?: ExhaustiveRunnerPossibilities;
 	runner?: (options: RunnerOptions) => Promise<void>;
 	cmd?: (cycles: number, format: string, seed: string) => string;
 }
 
-export interface ExhaustiveRunnerPossibilites {
+export interface ExhaustiveRunnerPossibilities {
 	pokemon?: ID[];
 	items?: ID[];
 	abilities?: ID[];
@@ -56,7 +56,7 @@ export class ExhaustiveRunner {
 	private readonly maxGames?: number;
 	private readonly maxFailures?: number;
 	private readonly dual: boolean | 'debug';
-	private readonly possible?: ExhaustiveRunnerPossibilites;
+	private readonly possible?: ExhaustiveRunnerPossibilities;
 
 	private readonly runner: (options: RunnerOptions) => Promise<void>;
 	private readonly cmd: (cycles: number, format: string, seed: string) => string;
