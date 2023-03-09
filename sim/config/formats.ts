@@ -164,6 +164,17 @@ export const Formats: FormatList = [
     banlist: [ 'Sub-Legendary' ]
   },
   {
+    name: '[Gen 9] Battle Stadium Singles Regulation C',
+    mod: 'gen9',
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Paldea Pokedex',
+      'Min Source Gen = 9',
+      'VGC Timer'
+    ]
+  },
+  {
     name: '[Gen 9] Custom Game',
     mod: 'gen9',
     debug: true,
@@ -243,6 +254,19 @@ export const Formats: FormatList = [
       'Open Team Sheets'
     ],
     banlist: [ 'Sub-Legendary' ]
+  },
+  {
+    name: '[Gen 9] VGC 2023 Regulation C',
+    mod: 'gen9',
+    gameType: 'doubles',
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Paldea Pokedex',
+      'Min Source Gen = 9',
+      'VGC Timer',
+      'Open Team Sheets'
+    ]
   },
   {
     name: '[Gen 9] Paldea Prologue',
@@ -909,15 +933,9 @@ export const Formats: FormatList = [
     name: '[Gen 4] Doubles OU',
     mod: 'gen4',
     gameType: 'doubles',
-    ruleset: [ '[Gen 4] OU', '!Freeze Clause Mod' ],
-    banlist: [ 'Explosion' ],
-    unbanlist: [
-      'Garchomp',  'Latias',
-      'Latios',    'Manaphy',
-      'Mew',       'Salamence',
-      'Wobbuffet', 'Wynaut',
-      'Swagger'
-    ]
+    ruleset: [ 'Standard', '!Sleep Clause Mod' ],
+    banlist: [ 'AG', 'Uber', 'Soul Dew', 'Dark Void' ],
+    unbanlist: [ 'Garchomp', 'Latios', 'Manaphy', 'Mew', 'Salamence', 'Wobbuffet', 'Wynaut' ]
   },
   {
     name: '[Gen 3] Doubles OU',

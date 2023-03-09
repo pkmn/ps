@@ -235,11 +235,11 @@ const RANDOMS_IMPORTS = {
     [[
       'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatID',
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ModdedDex', 'Move', 'BasicEffect',
-      'RuleTable', 'Tags', 'Item', 'Ability', 'Nature',
+      'RuleTable', 'Tags', 'Item', 'Ability', 'Nature', 'ID',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen7/random-teams.ts': [
-    [['MoveCounter', 'RandomGen8Teams', 'TeamData'], './gen8'],
+    [['MoveCounter', 'RandomGen8Teams', 'TeamData', 'OldRandomBattleSpecies'], './gen8'],
     [['Utils'], './utils'],
     [[
       'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'StatID',
@@ -248,7 +248,7 @@ const RANDOMS_IMPORTS = {
   ],
   'data/mods/gen6/random-teams.ts': [
     [['RandomGen7Teams', 'BattleFactorySpecies'], './gen7'],
-    [['MoveCounter', 'TeamData'], './gen8'],
+    [['MoveCounter', 'TeamData', 'OldRandomBattleSpecies'], './gen8'],
     [['Utils'], './utils'],
     [[
       'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'Move',
@@ -256,7 +256,7 @@ const RANDOMS_IMPORTS = {
     ], '@pkmn/sim'],
   ],
   'data/mods/gen5/random-teams.ts': [
-    [['MoveCounter'], './gen8'],
+    [['MoveCounter', 'OldRandomBattleSpecies'], './gen8'],
     [['RandomGen6Teams'], './gen6'],
     [['Utils'], './utils'],
     [[
@@ -265,7 +265,7 @@ const RANDOMS_IMPORTS = {
     ], '@pkmn/sim'],
   ],
   'data/mods/gen4/random-teams.ts': [
-    [['MoveCounter'], './gen8'],
+    [['MoveCounter', 'OldRandomBattleSpecies'], './gen8'],
     [['RandomGen5Teams'], './gen5'],
     [['Utils'], './utils'],
     [[
@@ -274,7 +274,7 @@ const RANDOMS_IMPORTS = {
     ], '@pkmn/sim'],
   ],
   'data/mods/gen3/random-teams.ts': [
-    [['MoveCounter'], './gen8'],
+    [['MoveCounter', 'OldRandomBattleSpecies'], './gen8'],
     [['RandomGen4Teams'], './gen4'],
     [['Utils'], './utils'],
     [[
@@ -282,7 +282,7 @@ const RANDOMS_IMPORTS = {
     ], '@pkmn/sim'],
   ],
   'data/mods/gen2/random-teams.ts': [
-    [['MoveCounter'], './gen8'],
+    [['MoveCounter', 'OldRandomBattleSpecies'], './gen8'],
     [['RandomGen3Teams'], './gen3'],
     [[
       'ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes', 'Move',
@@ -293,7 +293,7 @@ const RANDOMS_IMPORTS = {
     [['RandomGen2Teams'], './gen2'],
     [['Utils'], './utils'],
     [[
-      'Species', 'RandomTeamsTypes', 'Move', 'StatsTable', 'StatID', 'PokemonSet',
+      'ID', 'Species', 'RandomTeamsTypes', 'Move', 'StatsTable', 'StatID', 'PokemonSet',
     ], '@pkmn/sim'],
   ],
 };
@@ -523,20 +523,9 @@ const RANDOMS_FILES = {
   'data/mods/gen1/random-teams.ts': 'src/gen1.ts',
 };
 
-const RANDOMS_FIELDS = [
-  'randomBattleLevel',
-  'randomBattleMoves',
-  'randomBattleNoDynamaxMoves',
-  'randomDoubleBattleMoves',
-  'randomDoubleBattleLevel',
-  'exclusiveMoves',
-  'comboMoves',
-  'essentialMove',
-  'randomSets',
-];
-
 const INLINE_REQUIRE = /^(.*)require\(.*\);.*$/;
 const RANDOM_SETS = /^(\trandom(?:Doubles)?Sets:.*=) require\('\.\/random-sets\.json'\);(.*)/;
+const RANDOM_DATA = /^(\trandomData:.*=) require\('\.\/random-data\.json'\);(.*)/;
 
 const DATA = {
   'abilities.js': code => [
@@ -554,8 +543,7 @@ const DATA = {
   ],
   'aliases.js': code => [code.Aliases, 'aliases.json'],
   'conditions.js': code => [code.Conditions, 'conditions.json'],
-  'formats-data.js': code =>
-    [removeFields(code.FormatsData, ['natDexTier', ...RANDOMS_FIELDS]), 'formats-data.json'],
+  'formats-data.js': code => [removeFields(code.FormatsData, ['natDexTier']), 'formats-data.json'],
   'items.js': code => [removeFields(code.Items, ['spritenum']), 'items.json'],
   'learnsets.js': code => [code.Learnsets, 'learnsets.json'],
   'moves.js': code => [removeFields(code.Moves, ['contestType']), 'moves.json'],
@@ -703,9 +691,12 @@ const changes = async (where, last, now, repo) => ({
           header.push(imports(type, where).trim());
         }
       }
+
       const rewritten = rewrite(original, line => {
         if (line.startsWith('import')) return undefined;
-        let m = RANDOM_SETS.exec(line);
+        let m = RANDOM_DATA.exec(line);
+        if (m) return `${m[1]} randomDataJSON;${m[2]}`;
+        m = RANDOM_SETS.exec(line);
         if (m) return `${m[1]} randomSetsJSON;${m[2]}`;
         m = INLINE_REQUIRE.exec(line);
         if (m) return `${m[1]}{};`;
@@ -721,13 +712,18 @@ const changes = async (where, last, now, repo) => ({
         }
         return line.replace(/Dex\./g, 'this.dex.');
       });
+
       let json = '';
-      if (file === 'data/random-teams.ts') {
-        const raw = fs.readFileSync(path.resolve(ps, 'data/random-sets.json'), 'utf8');
+      if (file.endsWith('random-teams.ts')) {
+        const sets = file === 'data/random-teams.ts';
+        const data =
+          path.resolve(path.join(ps, file), '..', `random-${sets ? 'sets' : 'data'}.json`);
+        const raw = fs.readFileSync(data, 'utf8');
         json = '\n\n/* eslint-disable */\n'+
-          `const randomSetsJSON = ${JSON.stringify(JSON.parse(raw))};\n` +
-          '/* eslint-enable */';
+          `const random${sets ? 'Sets' : 'Data'}JSON = ${JSON.stringify(JSON.parse(raw))}` +
+          ' as any;\n/* eslint-enable */';
       }
+
       fs.writeFileSync(
         path.resolve(randoms, RANDOMS_FILES[file]),
         `${header.join('\n')}${json}\n${rewritten}`

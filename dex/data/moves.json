@@ -9,7 +9,7 @@
     },
     "amnesia": {
       "inherit": true,
-      "boosts": {"spd": 2, "spa": 2},
+      "boosts": {"spa": 2, "spd": 2},
       "desc": "Raises the user's Special by 2 stages.",
       "shortDesc": "Raises the user's Special by 2."
     },
@@ -248,7 +248,7 @@
     },
     "psychic": {
       "inherit": true,
-      "secondary": {"chance": 33, "boosts": {"spd": -1, "spa": -1}},
+      "secondary": {"chance": 33, "boosts": {"spa": -1, "spd": -1}},
       "desc": "Has a 33% chance to lower the target's Special by 1 stage.",
       "shortDesc": "33% chance to lower the target's Special by 1."
     },
@@ -11212,8 +11212,8 @@
       "secondary": null,
       "target": "normal",
       "type": "Water",
-      "desc": "If the current weather is Sunny Day, this move's power is multiplied by 1.5 and is not weakened for being Water type.",
-      "shortDesc": "During Sunny Day: 1.5x power and not weakened."
+      "desc": "If the current weather is Sunny Day and the user is not holding Utility Umbrella, this move's damage is multiplied by 1.5 instead of halved for being Water type.",
+      "shortDesc": "During Sunny Day: 1.5x damage instead of half."
     },
     "hydrovortex": {
       "num": 642,
@@ -14984,7 +14984,7 @@
       "target": "normal",
       "type": "Psychic",
       "desc": "If the current terrain is Electric Terrain, this move's power is multiplied by 1.5.",
-      "shortDesc": "During Electric Terain: 1.5x power."
+      "shortDesc": "During Electric Terrain: 1.5x power."
     },
     "psychup": {
       "num": 244,
