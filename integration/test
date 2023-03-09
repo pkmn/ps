@@ -49,7 +49,6 @@ if (argv._[0] === 'sim') {
     do {
       for (let format of formats) {
         failures += await new ExhaustiveRunner({format, cycles, prng, maxFailures, log, cmd}).run();
-        process.stdout.write('\n');
         if (failures >= maxFailures) break;
       }
     } while (forever);

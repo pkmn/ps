@@ -63,6 +63,7 @@ export class ExhaustiveRunner {
 
 	private failures: number;
 	private games: number;
+	private needsClear: boolean;
 
 	constructor(options: ExhaustiveRunnerOptions) {
 		this.format = options.format;
@@ -80,6 +81,7 @@ export class ExhaustiveRunner {
 
 		this.failures = 0;
 		this.games = 0;
+		this.needsClear = false;
 	}
 
 	async run() {
@@ -91,33 +93,42 @@ export class ExhaustiveRunner {
 		const createAI = (s: ObjectReadWriteStream<string>, o: AIOptions) => new CoordinatedPlayerAI(s, o, pools);
 		const generator = new TeamGenerator(dex, this.prng, pools, ExhaustiveRunner.getSignatures(dex, pools));
 
-		do {
-			this.games++;
-			try {
-				// We run these sequentially instead of async so that the team generator
-				// and the AI can coordinate usage properly.
-				await this.runner({
-					prng: this.prng,
-					p1options: {team: generator.generate(), createAI},
-					p2options: {team: generator.generate(), createAI},
-					format: this.format,
-					dual: this.dual,
-					error: true,
-				});
+		try {
+			do {
+				this.games++;
+				try {
+					// We run these sequentially instead of async so that the team generator
+					// and the AI can coordinate usage properly.
+					await this.runner({
+						prng: this.prng,
+						p1options: {team: generator.generate(), createAI},
+						p2options: {team: generator.generate(), createAI},
+						format: this.format,
+						dual: this.dual,
+						error: true,
+					});
 
-				if (this.log) this.logProgress(dex, pools);
-			} catch (err) {
-				this.failures++;
-				console.error(
-					`\n\nRun \`${this.cmd(this.cycles, this.format, seed.join())}\`:\n`,
-					err
-				);
+					if (this.log) this.logProgress(dex, pools);
+				} catch (err) {
+					// Since we set `error: true` the runner will already have cleared the
+					// line before printing the input log
+					this.needsClear = false;
+					this.failures++;
+					console.error(
+						`Run \`${this.cmd(this.cycles, this.format, seed.join())}\`:\n`,	err, '\n',
+					);
+				}
+			} while ((!this.maxGames || this.games < this.maxGames) &&
+						(!this.maxFailures || this.failures < this.maxFailures) &&
+						generator.exhausted < this.cycles);
+
+			return this.failures;
+		} finally {
+			if (this.needsClear) {
+				process.stdout.write('\n');
+				this.needsClear = false;
 			}
-		} while ((!this.maxGames || this.games < this.maxGames) &&
-					(!this.maxFailures || this.failures < this.maxFailures) &&
-					generator.exhausted < this.cycles);
-
-		return this.failures;
+		}
 	}
 
 	private createPools(dex: typeof Dex): Pools {
@@ -139,15 +150,16 @@ export class ExhaustiveRunner {
 	private logProgress(dex: typeof Dex, p: Pools) {
 		// `\r` = return to the beginning of the line
 		// `\x1b[k` (`\e[K`) = clear all characters from cursor position to EOL
-		if (this.games) process.stdout.write('\r\x1b[K');
+		if (this.games > 1) process.stdout.write('\r\x1b[K');
 
-		const msg = [`[${this.format}] P:${p.pokemon}`];
+		const msg = [`\x1b[1m[${this.format}]\x1b[22m P:${p.pokemon}`];
 		if (dex.gen >= 2) msg.push(`I:${p.items}`);
 		if (dex.gen >= 3) msg.push(`A:${p.abilities}`);
 		msg.push(`M:${p.moves} = ${this.games}`);
 
 		// Deliberately don't print a `\n` character so that we can overwrite
-		process.stdout.write(msg.join(' '));
+		process.stdout.write(`\x1b[35m${msg.join(' ')}\x1b[0m`);
+		this.needsClear = true;
 	}
 
 	private static getSignatures(dex: typeof Dex, pools: Pools): Map<string, {item: string, move?: string}[]> {
