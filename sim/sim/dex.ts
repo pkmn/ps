@@ -55,6 +55,12 @@ import {DefaultText} from '../data/text/default';
 
 import * as Data from './dex-data';
 
+import * as util from 'util';
+global.DEBUG = (s) =>
+	console.debug(`\x1b[41m${util.inspect(s, {colors: false}).replaceAll('\n', '\x1b[K\n')}\x1b[K\x1b[0m`);
+// global.VDEBUG = () => {};
+global.VDEBUG = console.debug;
+
 const BASE_MOD = 'gen9' as ID;
 
 const LEARN_ORDER = 'MTLREVDSC';

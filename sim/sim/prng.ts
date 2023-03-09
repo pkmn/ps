@@ -18,6 +18,11 @@ export type PRNGSeed = [number, number, number, number];
  // DEBUG
 const ROOT = require('path').resolve(__dirname, '..', '..', '..') + '/';
 const shorten = (s: string) =>  s.replaceAll('at ', '@ ').replaceAll(ROOT, '');
+const serialize = (seed: PRNGSeed) => `0x${toBigInt(seed).toString(16).toUpperCase()}`;
+const toBigInt = (seed: PRNGSeed) =>
+  ((BigInt(seed[0]) << 48n) | (BigInt(seed[1]) << 32n) |
+   (BigInt(seed[2]) << 16n) | BigInt(seed[3]));
+
 // DEBUG
 
 /**
@@ -198,6 +203,7 @@ export class PRNG {
 	 * ````
 	 */
 	nextFrame(seed: PRNGSeed, framesToAdvance = 1): PRNGSeed {
+		const before = seed;
 		const a: PRNGSeed = [0x5D58, 0x8B65, 0x6C07, 0x8965];
 		const c: PRNGSeed = [0, 0, 0x26, 0x9EC3];
 
@@ -205,6 +211,9 @@ export class PRNG {
 			seed = this.multiplyAdd(seed, a, c);
 		}
 
+		if (!(new Error().stack)?.includes('PlayerAI')) {
+			DEBUG(`[${before.join(', ')}] (${serialize(before)}) -> [${seed.join(', ')}] (${serialize(seed)})`);
+		}
 		return seed;
 	}
 
