@@ -13,11 +13,11 @@ global.DEBUG = (s) =>
 // global.VDEBUG = () => {};
 global.VDEBUG = console.debug;
 
-const {Battle} = require('./sim');
+const {Battle, Dex} = require('./sim');
 const {Generations} = require('./data');
-const {Dex} = require('./dex');
 const {ModdedDex} = require('./mods');
 const {FixedRNG} = require('./prng.js');
+const {patch} = require('./patch.js');
 
 const gens = new Generations(Dex);
 
@@ -82,9 +82,11 @@ const PAR_CANT = {name: 'PAR_CANT', key: 'Battle.onBeforeMove', value: ranged(63
 const PAR_CAN = {name: 'PAR_CAN', key: 'Battle.onBeforeMove', value: PAR_CANT.value + 1};
 
 const gen = gens.get(1);
+patch.generation(gen);
 const startBattle = (rolls, p1, p2, fn) => {
 	const formatid = `gen${gen.num}customgame@@@${MODS[gen.num].join(',')}`;
 	const battle = new Battle({formatid, strictChoices: true});
+	patch.battle(battle);
 	battle.debugMode = true;
 	battle.prng = new FixedRNG(battle.prng, rolls);
 	if (fn) battle.started = true;
@@ -130,40 +132,12 @@ const METRONOME = move => {
 const MIN_WRAP = {key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: MIN};
 const REWRAP = {key: ['Battle.sample', 'BattleActions.runMove'], value: MIN};
 
-// const battle = startBattle([
-// 	// INS, INS, SS_EACH, SS_EACH, SS_EACH, SS_EACH, SS_EACH,
-// 	// TIE(1),
-// 	// SS_EACH, SS_EACH, HIT, NO_CRIT, MIN_DMG,
-// 	// SS_EACH, HIT, CRIT, MAX_DMG,
-// 	// // SS_EACH, SS_EACH, SS_EACH,
-// ], [
-// 	{species: 'Tauros', evs, moves: ['Counter']},
-// 	{species: 'Tauros', evs, moves: ['Teleport']},
-// ], [
-// 	{species: 'Tauros', evs, moves: ['Teleport']},
-// 	{species: 'Tauros', evs, moves: ['Teleport']},
-// ]);
-
-// const p2hp = battle.p2.pokemon[0].hp;
-
-// battle.makeChoices('move 1', 'move 1');
-
-const no_crit = {
-	...CRIT,
-	value: ranged(Math.floor(gen.species.get('Articuno').baseStats.spe / 2), 256),
-};
-const battle = startBattle([
+const battle = startBattle([TIE(2)], [
+	{species: 'Zapdos', evs, moves: ['Drill Peck']},
+	{species: 'Dodrio', evs, moves: ['Fury Attack']},
 ], [
-	{species: 'Mew', evs, moves: ['Toxic', 'Teleport']},
-], [
-	{species: 'Articuno', evs, moves: ['Agility', 'Fly', 'Peck']},
-	{species: 'Pikachu', evs, moves: ['Agility', 'Fly', 'Peck']},
+	{species: 'Raichu', evs, moves: ['Thunderbolt']},
+	{species: 'Mew', evs, moves: ['Psychic']},
 ]);
-const pp = battle.p1.pokemon[0].moveSlots[1].pp;
 
-let p1hp = battle.p1.pokemon[0].hp;
-let p2hp = battle.p2.pokemon[0].hp;
-
-battle.makeChoices('move 1', 'move 1');
-battle.makeChoices('move 2', 'switch 2');
-battle.makeChoices('move 2', 'switch 2');
+battle.makeChoices('switch 2', 'switch 2');

@@ -2867,10 +2867,10 @@ export class Battle {
 		}
 		this.clearRequest();
 
-		const before = this.queue.debug();
+		VDEBUG(`\x1b[36msorted queue = {\n${this.queue.debug()}} ->\x1b[0m {`);
 		this.queue.sort();
 		this.queue.list.push(...oldQueue);
-		VDEBUG(`\x1b[36msorted queue = {\n${before}} -> {\n${this.queue.debug()}}\x1b[0m`);
+		VDEBUG(`\x1b[36m${this.queue.debug()}}\x1b[0m`);
 
 		this.requestState = '';
 		for (const side of this.sides) {
