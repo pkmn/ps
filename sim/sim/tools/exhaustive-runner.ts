@@ -93,7 +93,19 @@ export class ExhaustiveRunner {
 		const createAI = (s: ObjectReadWriteStream<string>, o: AIOptions) => new CoordinatedPlayerAI(s, o, pools);
 		const generator = new TeamGenerator(dex, this.prng, pools, ExhaustiveRunner.getSignatures(dex, pools));
 
+		const log = console.log;
+		const error = console.error;
 		try {
+			// eslint-disable-next-line @typescript-eslint/no-this-alias
+			const self = this;
+			console.log = (...s) => {
+				self.maybeClear();
+				log(...s);
+			};
+			console.error = (...s) => {
+				self.maybeClear();
+				error(...s);
+			};
 			do {
 				this.games++;
 				try {
@@ -110,12 +122,9 @@ export class ExhaustiveRunner {
 
 					if (this.log) this.logProgress(dex, pools);
 				} catch (err) {
-					// Since we set `error: true` the runner will already have cleared the
-					// line before printing the input log
-					this.needsClear = false;
 					this.failures++;
 					console.error(
-						`Run \`${this.cmd(this.cycles, this.format, seed.join())}\`:\n`,	err, '\n',
+						`Run \`${this.cmd(this.cycles, this.format, seed.join())}\`:\n`,	err,
 					);
 				}
 			} while ((!this.maxGames || this.games < this.maxGames) &&
@@ -124,10 +133,16 @@ export class ExhaustiveRunner {
 
 			return this.failures;
 		} finally {
-			if (this.needsClear) {
-				process.stdout.write('\n');
-				this.needsClear = false;
-			}
+			console.log = log;
+			console.error = error;
+			this.maybeClear();
+		}
+	}
+
+	private maybeClear() {
+		if (this.needsClear) {
+			process.stdout.write('\n');
+			this.needsClear = false;
 		}
 	}
 
@@ -152,7 +167,8 @@ export class ExhaustiveRunner {
 		// `\x1b[k` (`\e[K`) = clear all characters from cursor position to EOL
 		if (this.games > 1) process.stdout.write('\r\x1b[K');
 
-		const msg = [`\x1b[1m[${this.format}]\x1b[22m P:${p.pokemon}`];
+		const name = this.format.slice(0, this.format.indexOf('customgame'));
+		const msg = [`\x1b[1m[${name}]\x1b[22m P:${p.pokemon}`];
 		if (dex.gen >= 2) msg.push(`I:${p.items}`);
 		if (dex.gen >= 3) msg.push(`A:${p.abilities}`);
 		msg.push(`M:${p.moves} = ${this.games}`);
