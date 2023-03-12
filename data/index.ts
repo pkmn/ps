@@ -55,10 +55,10 @@ export function toID(text: any): ID {
 }
 
 export class Generations {
-  private readonly cache = Object.create(null) as {[num: number]: Generation};
+  /* private */ readonly cache = Object.create(null) as {[num: number]: Generation};
 
-  private readonly dex: Dex;
-  private readonly exists: ExistsFn;
+  /* private */ readonly dex: Dex;
+  /* private */ readonly exists: ExistsFn;
 
   static DEFAULT_EXISTS = DEFAULT_EXISTS;
 
@@ -94,7 +94,7 @@ export class Generation {
 
   readonly dex: Dex;
 
-  private readonly exists: BoundExistsFn;
+  /* private */ readonly exists: BoundExistsFn;
 
   static get(dex: Dex, g: string | number, exists = DEFAULT_EXISTS) {
     return new Generations(dex, exists).get(g);
@@ -129,8 +129,8 @@ export class Generation {
 }
 
 export class Abilities {
-  private readonly dex: Dex;
-  private readonly exists: BoundExistsFn;
+  /* private */ readonly dex: Dex;
+  /* private */ readonly exists: BoundExistsFn;
 
   constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
@@ -151,8 +151,8 @@ export class Abilities {
 }
 
 export class Items {
-  private readonly dex: Dex;
-  private readonly exists: BoundExistsFn;
+  /* private */ readonly dex: Dex;
+  /* private */ readonly exists: BoundExistsFn;
 
   constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
@@ -173,8 +173,8 @@ export class Items {
 }
 
 export class Moves {
-  private readonly dex: Dex;
-  private readonly exists: BoundExistsFn;
+  /* private */ readonly dex: Dex;
+  /* private */ readonly exists: BoundExistsFn;
 
   constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
@@ -195,10 +195,10 @@ export class Moves {
 }
 
 export class Species {
-  private readonly cache = Object.create(null) as { [id: string]: Specie };
+  /* private */ readonly cache = Object.create(null) as { [id: string]: Specie };
 
-  private readonly dex: Dex;
-  private readonly exists: BoundExistsFn;
+  /* private */ readonly dex: Dex;
+  /* private */ readonly exists: BoundExistsFn;
 
   constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
@@ -282,9 +282,9 @@ export class Specie implements DexSpecies {
   readonly condition?: Partial<Condition>;
   readonly canHatch!: boolean;
 
-  private readonly dex: Dex;
+  /* private */ readonly dex: Dex;
 
-  private static readonly EXCLUDE = new Set([
+  /* private */ static readonly EXCLUDE = new Set([
     'abilities', 'cosmeticFormes', 'evos', 'formeOrder',
     'gender', 'genderRatio', 'nfe', 'otherFormes', 'prevo',
   ]);
@@ -343,8 +343,8 @@ export class Specie implements DexSpecies {
 }
 
 export class Conditions {
-  private readonly dex: Dex;
-  private readonly exists: BoundExistsFn;
+  /* private */ readonly dex: Dex;
+  /* private */ readonly exists: BoundExistsFn;
 
   constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
@@ -358,8 +358,8 @@ export class Conditions {
 }
 
 export class Natures {
-  private readonly dex: Dex;
-  private readonly exists: BoundExistsFn;
+  /* private */ readonly dex: Dex;
+  /* private */ readonly exists: BoundExistsFn;
 
   constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
@@ -393,11 +393,11 @@ const EFFECTIVENESS = {
 type TypeTarget = { getTypes: () => TypeName[] } | { types: TypeName[] } | TypeName[] | TypeName;
 
 export class Types {
-  private readonly cache = Object.create(null) as { [id: string]: Type };
+  /* private */ readonly cache = Object.create(null) as { [id: string]: Type };
 
-  private readonly unknown: Type;
-  private readonly dex: Dex;
-  private readonly exists: BoundExistsFn;
+  /* private */ readonly unknown: Type;
+  /* private */ readonly dex: Dex;
+  /* private */ readonly exists: BoundExistsFn;
 
   constructor(dex: Dex, exists: BoundExistsFn) {
     this.dex = dex;
@@ -472,7 +472,7 @@ export class Type {
   readonly HPdvs!: Partial<StatsTable>;
   readonly category?: Exclude<MoveCategory, 'Status'>;
 
-  private readonly types: Types;
+  /* private */ readonly types: Types;
 
   constructor(type: DexType, dex: Dex, types: Types) {
     Object.assign(this, type);
@@ -513,13 +513,13 @@ const GEN4_HMS =
 type Restriction = 'Pentagon' | 'Plus' | 'Galar' | 'Paldea';
 
 export class Learnsets {
-  private readonly cache = Object.create(null) as {
+  /* private */ readonly cache = Object.create(null) as {
     [speciesid: string]: {[moveid: string]: MoveSource[]};
   };
 
-  private readonly gen: Generation;
-  private readonly dex: Dex;
-  private readonly exists: BoundExistsFn;
+  /* private */ readonly gen: Generation;
+  /* private */ readonly dex: Dex;
+  /* private */ readonly exists: BoundExistsFn;
 
   constructor(gen: Generation, dex: Dex, exists: BoundExistsFn) {
     this.gen = gen;
@@ -708,7 +708,8 @@ const DISPLAY: Readonly<{ [stat: string]: Readonly<[string, string]> }> = {
 };
 
 export class Stats {
-  private readonly dex: Dex;
+  /* private */ readonly dex: Dex;
+
   constructor(dex: Dex) {
     this.dex = dex;
   }
