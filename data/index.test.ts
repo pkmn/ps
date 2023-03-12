@@ -20,6 +20,15 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
     const gens = new Generations(Dex);
     const Gen = (num: number) => gens.get(num);
 
+    test('get', () => {
+      expect(gens.get(5).num).toBe(5);
+      expect(gens.get('4').num).toBe(4);
+      expect(gens.get('ancd1ef').num).toBe(1);
+      expect(gens.get('gen8anythinggoes').num).toBe(8);
+      expect(() => gens.get('genfoo').num).toThrow('Invalid gen');
+      expect(() => gens.get('gen12ubers').num).toThrow('Unsupported gen');
+    });
+
     test('exists', () => {
       const gens2 = new Generations(Dex, e => !!e.exists && (!('num' in e) || e.num < 10));
       expect(gens2.get(5).species.get('Bulbasaur')).toBeDefined();
