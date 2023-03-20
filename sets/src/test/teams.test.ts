@@ -11,14 +11,14 @@ const TEAMS: string = readTeam('teams');
 
 describe('Team', () => {
   it('importTeam + exportTeam', () => {
-    const t = Team.fromString(TEAM)!;
-    expect(t.toString()).toEqual(TEAM);
+    const t = Team.import(TEAM)!;
+    expect(t.export()).toEqual(TEAM);
     expect(Teams.exportTeams([t]))
       .toEqual('=== Untitled 1 ===\n\n' + TEAM + '\n');
   });
 
   it('pack + unpack', () => {
-    const u = Team.import((Team.import(TEAM)!.pack()) + '\n')!;
+    const u = Team.unpack((Team.import(TEAM)!.pack()))!;
     expect(u.export(GEN[7])).toEqual(TEAM);
   });
 
@@ -52,14 +52,26 @@ describe('Team', () => {
     expect(magnezone.ivs).toEqual({hp: 31, atk: 0, def: 31, spa: 31, spd: 31, spe: 31});
     expect(magnezone.hpType).toBe('Fire');
   });
+
+  it('fromString', () => {
+    const s = 'gen9vgc2023series2]Team Name|Nickname|amoonguss||effectspore|||||||50|';
+    const t = Team.fromString(s)!;
+    expect(t.format).toBe('gen9vgc2023series2');
+    expect(t.name).toBe('Team Name');
+    const amoonguss = t.team[0];
+    expect(amoonguss.name).toBe('Nickname');
+    expect(amoonguss.species).toBe('amoonguss');
+    expect(amoonguss.ability).toBe('effectspore');
+    expect(amoonguss.level).toBe(50);
+  });
 });
 
 describe('Teams', () => {
   it('importTeams + exportTeams', () => {
-    let imported = Teams.fromString(TEAMS.replace(/\[ou\]/, ''), GEN[9])!;
+    let imported = Teams.importTeams(TEAMS.replace(/\[ou\]/, ''), GEN[9])!;
     expect(imported[0].gen).toBe(9);
 
-    imported = Teams.fromString(TEAMS, GEN[9])!;
+    imported = Teams.importTeams(TEAMS, GEN[9])!;
     expect(imported).toHaveLength(2);
 
     expect(imported[0].gen).toBe(6);

@@ -1,5 +1,10 @@
 # Changelog
 
+## 5.0.4
+
+- Fixes issue where `Team.fromString` did not properly parse the Pokémon Showdown teambuilder's
+  variation on the packed team format (#20).
+
 ## 5.0.3
 
 - Disables strict mode for the minified production bundle.
