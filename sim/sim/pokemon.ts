@@ -802,7 +802,7 @@ export class Pokemon {
 			} else {
 				targets.push(target);
 			}
-			if (target.fainted && !move.isFutureMove) {
+			if (target.fainted && !move.flags['futuremove']) {
 				return {targets: [], pressureTargets: []};
 			}
 			if (selectedTarget !== target) {
@@ -812,14 +812,11 @@ export class Pokemon {
 
 		// Resolve apparent targets for Pressure.
 		let pressureTargets = targets;
-		switch (move.pressureTarget) {
-		case 'foeSide':
-			pressureTargets = this.foes();
-			break;
-		case 'self':
+		if (move.target === 'foeSide') {
 			pressureTargets = [];
-			break;
-		// At the moment, there are no other supported targets.
+		}
+		if (move.flags['mustpressure']) {
+			pressureTargets = this.foes();
 		}
 
 		return {targets, pressureTargets};
@@ -1998,11 +1995,7 @@ export class Pokemon {
 
 	/** Removes any types added previously and adds another one. */
 	addType(newType: string) {
-		if (this.terastallized) {
-			// natdex behavior; type-adding effects are currently not in gen 9,
-			// but moves like Soak fail vs terastallized targets so these probably should too
-			return false;
-		}
+		if (this.terastallized) return false;
 		this.addedType = newType;
 		return true;
 	}

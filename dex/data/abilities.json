@@ -481,7 +481,7 @@
     },
     "parentalbond": {
       "inherit": true,
-      "desc": "This Pokemon's damaging moves become multi-hit moves that hit twice. The second hit has its damage halved. Does not affect multi-hit moves or moves that have multiple targets.",
+      "desc": "This Pokemon's damaging moves become multi-hit moves that hit twice. The second hit has its damage halved. Does not affect Doom Desire, Endeavor, Explosion, Final Gambit, Fling, Future Sight, Ice Ball, Rollout, Self-Destruct, any multi-hit move, any move that has multiple targets, or any two-turn move.",
       "shortDesc": "This Pokemon's damaging moves hit twice. The second hit has its damage halved."
     },
     "pixilate": {
@@ -715,6 +715,10 @@
       "inherit": true,
       "desc": "Pokemon making contact with this Pokemon have their Ability changed to Mummy. Does not affect Pokemon with the Battle Bond, Comatose, Disguise, Multitype, Mummy, Power Construct, RKS System, Schooling, Shields Down, Stance Change, or Zen Mode Abilities."
     },
+    "parentalbond": {
+      "inherit": true,
+      "desc": "This Pokemon's damaging moves become multi-hit moves that hit twice. The second hit has its damage quartered. Does not affect Doom Desire, Endeavor, Explosion, Final Gambit, Fling, Future Sight, Ice Ball, Rollout, Self-Destruct, any multi-hit move, any move that has multiple targets, any two-turn move, or any Z-Move."
+    },
     "powerofalchemy": {
       "inherit": true,
       "desc": "This Pokemon copies the Ability of an ally that faints. Abilities that cannot be copied are Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Illusion, Imposter, Multitype, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, Wonder Guard, and Zen Mode."
@@ -942,7 +946,10 @@
     },
     "overgrow": {"inherit": true},
     "owntempo": {"inherit": true},
-    "parentalbond": {"inherit": true},
+    "parentalbond": {
+      "inherit": true,
+      "desc": "This Pokemon's damaging moves become multi-hit moves that hit twice. The second hit has its damage quartered. Does not affect Doom Desire, Dragon Darts, Dynamax Cannon, Endeavor, Explosion, Final Gambit, Fling, Future Sight, Ice Ball, Rollout, Self-Destruct, any multi-hit move, any move that has multiple targets, any two-turn move, or any Max Move."
+    },
     "pastelveil": {"inherit": true},
     "perishbody": {"inherit": true},
     "pickpocket": {"inherit": true},
@@ -959,7 +966,10 @@
     },
     "powerspot": {"inherit": true},
     "prankster": {"inherit": true},
-    "pressure": {"inherit": true},
+    "pressure": {
+      "inherit": true,
+      "desc": "If this Pokemon is the target of an opposing Pokemon's move, that move loses one additional PP. Imprison and Snatch also lose one additional PP when used by an opposing Pokemon, but Sticky Web does not."
+    },
     "primordialsea": {"inherit": true},
     "prismarmor": {"inherit": true},
     "propellertail": {"inherit": true},
@@ -1005,7 +1015,10 @@
     "shadowshield": {"inherit": true},
     "shadowtag": {"inherit": true},
     "shedskin": {"inherit": true},
-    "sheerforce": {"inherit": true},
+    "sheerforce": {
+      "inherit": true,
+      "desc": "This Pokemon's attacks with secondary effects have their power multiplied by 1.3, but the secondary effects are removed. If a secondary effect was removed, it also removes the user's Life Orb recoil and Shell Bell recovery, and prevents the target's Berserk, Color Change, Emergency Exit, Pickpocket, Wimp Out, Red Card, Eject Button, Kee Berry, and Maranga Berry from activating."
+    },
     "shellarmor": {"inherit": true},
     "shielddust": {"inherit": true},
     "shieldsdown": {"inherit": true},
@@ -2140,7 +2153,7 @@
     "parentalbond": {
       "name": "Parental Bond",
       "num": 185,
-      "desc": "This Pokemon's damaging moves become multi-hit moves that hit twice. The second hit has its damage quartered. Does not affect multi-hit moves or moves that have multiple targets.",
+      "desc": "This Pokemon's damaging moves become multi-hit moves that hit twice. The second hit has its damage quartered. Does not affect Doom Desire, Dragon Darts, Dynamax Cannon, Endeavor, Explosion, Final Gambit, Fling, Future Sight, Ice Ball, Rollout, Self-Destruct, any multi-hit move, any move that has multiple targets, or any two-turn move.",
       "shortDesc": "This Pokemon's damaging moves hit twice. The second hit has its damage quartered."
     },
     "pastelveil": {
@@ -2232,7 +2245,7 @@
     "pressure": {
       "name": "Pressure",
       "num": 46,
-      "desc": "If this Pokemon is the target of an opposing Pokemon's move, that move loses one additional PP. Imprison and Snatch also lose one additional PP when used by an opposing Pokemon, but Sticky Web does not.",
+      "desc": "If this Pokemon is the target of an opposing Pokemon's move, that move loses one additional PP. Imprison, Snatch, and Tera Blast also lose one additional PP when used by an opposing Pokemon, but Sticky Web does not.",
       "shortDesc": "If this Pokemon is the target of a foe's move, that move loses one additional PP."
     },
     "primordialsea": {
@@ -2517,7 +2530,7 @@
       "onBasePowerPriority": 21,
       "name": "Sheer Force",
       "num": 125,
-      "desc": "This Pokemon's attacks with secondary effects have their power multiplied by 1.3, but the secondary effects are removed. If a secondary effect was removed, it also removes the user's Life Orb recoil and Shell Bell recovery, and prevents the target's Berserk, Color Change, Emergency Exit, Pickpocket, Wimp Out, Red Card, Eject Button, Kee Berry, and Maranga Berry from activating.",
+      "desc": "This Pokemon's attacks with secondary effects have their power multiplied by 1.3, but the secondary effects are removed. If a secondary effect was removed, it also removes the user's Life Orb recoil and Shell Bell recovery, and prevents the target's Anger Shell, Berserk, Color Change, Emergency Exit, Pickpocket, Wimp Out, Red Card, Eject Button, Kee Berry, and Maranga Berry from activating.",
       "shortDesc": "This Pokemon's attacks with secondary effects have 1.3x power; nullifies the effects."
     },
     "shellarmor": {

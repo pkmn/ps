@@ -417,7 +417,6 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly hasCrashDamage?: boolean;
   readonly hasSheerForce?: boolean;
   readonly isConfusionSelfHit?: boolean;
-  readonly isFutureMove?: boolean;
   readonly noMetronome?: T.MoveName[];
   readonly noSketch?: boolean;
   readonly stallingMove?: boolean;

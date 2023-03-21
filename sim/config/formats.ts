@@ -50,7 +50,7 @@ export const Formats: FormatList = [
     name: '[Gen 9] Ubers',
     mod: 'gen9',
     ruleset: [ 'Standard' ],
-    banlist: [ 'AG', "King's Rock", 'Baton Pass' ]
+    banlist: [ 'AG', 'Moody', "King's Rock", 'Baton Pass' ]
   },
   { name: '[Gen 9] UU', mod: 'gen9', ruleset: [ '[Gen 9] OU' ], banlist: [ 'OU', 'UUBL' ] },
   {
@@ -104,12 +104,13 @@ export const Formats: FormatList = [
     banlist: [
       'Chi-Yu',      'Cinderace',
       'Dragonite',   'Flutter Mane',
-      'Gholdengo',   'Koraidon',
-      'Mimikyu',     'Miraidon',
-      'Scream Tail', 'Moody',
-      'Focus Band',  'Focus Sash',
-      "King's Rock", 'Quick Claw',
-      'Acupressure', 'Perish Song'
+      'Gholdengo',   'Greninja',
+      'Koraidon',    'Mimikyu',
+      'Miraidon',    'Scream Tail',
+      'Moody',       'Focus Band',
+      'Focus Sash',  "King's Rock",
+      'Quick Claw',  'Acupressure',
+      'Perish Song'
     ]
   },
   {
@@ -269,20 +270,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 9] Paldea Prologue',
-    mod: 'gen9',
-    gameType: 'doubles',
-    ruleset: [
-      'Flat Rules',
-      '!! Adjust Level = 50',
-      'Paldea Pokedex',
-      'Min Source Gen = 9',
-      'VGC Timer',
-      'Limit One Restricted'
-    ],
-    restricted: [ 'Restricted Legendary' ]
-  },
-  {
     name: '[Gen 9] Doubles Custom Game',
     mod: 'gen9',
     gameType: 'doubles',
@@ -419,18 +406,19 @@ export const Formats: FormatList = [
       'Endless Battle Clause'
     ],
     banlist: [
-      'Calyrex-Shadow',        'Arena Trap',
-      'Contrary',              'Huge Power',
-      'Illusion',              'Innards Out',
-      'Magnet Pull',           'Moody',
-      'Neutralizing Gas',      'Parental Bond',
-      'Poison Heal',           'Pure Power',
-      'Shadow Tag',            'Stakeout',
-      'Water Bubble',          'Wonder Guard',
-      'Comatose + Sleep Talk', 'Belly Drum',
-      'Last Respects',         'Revival Blessing',
-      'Shed Tail',             'Shell Smash',
-      'Rage Fist'
+      'Calyrex-Shadow',   'Zacian-Crowned',
+      'Arena Trap',       'Contrary',
+      'Huge Power',       'Illusion',
+      'Innards Out',      'Magnet Pull',
+      'Moody',            'Neutralizing Gas',
+      'Parental Bond',    'Poison Heal',
+      'Pure Power',       'Shadow Tag',
+      'Stakeout',         'Water Bubble',
+      'Wonder Guard',     'Comatose + Sleep Talk',
+      'Belly Drum',       'Last Respects',
+      'Quiver Dance',     'Rage Fist',
+      'Revival Blessing', 'Shed Tail',
+      'Shell Smash'
     ]
   },
   {
@@ -934,8 +922,8 @@ export const Formats: FormatList = [
     mod: 'gen4',
     gameType: 'doubles',
     ruleset: [ 'Standard', '!Sleep Clause Mod' ],
-    banlist: [ 'AG', 'Uber', 'Soul Dew', 'Dark Void' ],
-    unbanlist: [ 'Garchomp', 'Latios', 'Manaphy', 'Mew', 'Salamence', 'Wobbuffet', 'Wynaut' ]
+    banlist: [ 'AG', 'Uber', 'Soul Dew', 'Dark Void', 'Sand Veil' ],
+    unbanlist: [ 'Latios', 'Manaphy', 'Mew', 'Salamence', 'Wobbuffet', 'Wynaut' ]
   },
   {
     name: '[Gen 3] Doubles OU',
@@ -943,7 +931,7 @@ export const Formats: FormatList = [
     gameType: 'doubles',
     ruleset: [ 'Standard', '!Switch Priority Clause Mod' ],
     banlist: [ 'Uber', 'Soul Dew', 'Swagger' ],
-    unbanlist: [ 'Deoxys-Defense', 'Latias', 'Wobbuffet', 'Wynaut' ]
+    unbanlist: [ 'Latias', 'Wobbuffet', 'Wynaut' ]
   },
   {
     name: '[Gen 8] Ubers',
