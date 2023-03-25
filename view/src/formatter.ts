@@ -974,6 +974,15 @@ class Handler implements Protocol.Handler<string> {
       return line1 + template.replace('[TARGET]', this.parser.pokemon(targetPokemon));
     }
 
+    if (id === 'commander') {
+      // Commander didn't have a message prior to v1.2.0 of SV
+      // so this is for backwards compatibility
+      if (target === pokemon) return line1;
+      const template = this.parser.template('activate', id);
+      return (line1 + template.replace('[POKEMON]', this.parser.pokemon(pokemon))
+        .replace(/\[TARGET\]/g, this.parser.pokemon(target as PokemonIdent)));
+    }
+
     let templateId = 'activate';
     if (id === 'forewarn' && pokemon === target) {
       templateId = 'activateNoTarget';

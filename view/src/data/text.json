@@ -767,6 +767,9 @@
   },
   "cloudnine": {"start": "#airlock"},
   "comatose": {"start": "  [POKEMON] is drowsing!"},
+  "commander": {
+    "activate": "  [POKEMON] was swallowed by [TARGET] and became [TARGET]'s commander!"
+  },
   "damp": {"block": "  [SOURCE] cannot use [MOVE]!"},
   "darkaura": {"start": "  [POKEMON] is radiating a dark aura!"},
   "dazzling": {"block": "#damp"},

@@ -129,7 +129,7 @@ export const Formats: FormatList = [
     name: '[Gen 9] CAP',
     mod: 'gen9',
     ruleset: [ '[Gen 9] OU', '+CAP' ],
-    banlist: [ 'Crucibellite' ]
+    banlist: [ 'Walking Wake', 'Crucibellite' ]
   },
   {
     name: '[Gen 9] Free-For-All',
@@ -921,7 +921,7 @@ export const Formats: FormatList = [
     name: '[Gen 4] Doubles OU',
     mod: 'gen4',
     gameType: 'doubles',
-    ruleset: [ 'Standard', '!Sleep Clause Mod' ],
+    ruleset: [ 'Standard' ],
     banlist: [ 'AG', 'Uber', 'Soul Dew', 'Dark Void', 'Sand Veil' ],
     unbanlist: [ 'Latios', 'Manaphy', 'Mew', 'Salamence', 'Wobbuffet', 'Wynaut' ]
   },
