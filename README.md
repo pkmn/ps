@@ -8,6 +8,9 @@
   <a href="https://github.com/pkmn/ps/blob/main/LICENSE">
     <img alt="License" src="https://img.shields.io/badge/License-MIT-blue.svg" />
   </a>
+  <a href="https://pkmn.cc/dev">
+    <img alt="Discord Chat" src="https://img.shields.io/discord/689316505560809576" />
+  </div>
 </p>
 <hr />
 
