@@ -1,13 +1,13 @@
-import {Dex, Teams as DTeams, TeamValidator, RandomPlayerAI, BattleStreams, PRNG} from '@pkmn/sim';
-import {Protocol, Handler, ArgName, ArgType, BattleArgsKWArgType} from '@pkmn/protocol';
-import {Teams, Data, PokemonSet} from '@pkmn/sets';
-import {Battle, Side, Pokemon} from '@pkmn/client';
-import {TeamGenerators} from '@pkmn/randoms';
-import {Sprites, Icons, GraphicsGen} from '@pkmn/img';
-import {LogFormatter} from '@pkmn/view';
-import {Generations, GenerationNum} from '@pkmn/data';
-
 import fs from 'fs';
+
+import {Battle, Pokemon, Side} from '@pkmn/client';
+import {GenerationNum, Generations} from '@pkmn/data';
+import {GraphicsGen, Icons, Sprites} from '@pkmn/img';
+import {ArgName, ArgType, BattleArgsKWArgType, Handler, Protocol} from '@pkmn/protocol';
+import {TeamGenerators} from '@pkmn/randoms';
+import {Data, PokemonSet, Teams} from '@pkmn/sets';
+import {BattleStreams, Teams as DTeams, Dex, PRNG, RandomPlayerAI, TeamValidator} from '@pkmn/sim';
+import {LogFormatter} from '@pkmn/view';
 
 const TEAM_A = fs.readFileSync(__dirname + '/teams/a.txt', 'utf8');
 const TEAM_B = fs.readFileSync(__dirname + '/teams/b.txt', 'utf8');

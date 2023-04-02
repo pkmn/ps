@@ -9,10 +9,9 @@ const ps = {
     require('../../../vendor/pokemon-showdown/dist/sim/tools/random-player-ai').RandomPlayerAI,
 };
 const {Generations} = require('@pkmn/data');
-const pkmn = require('@pkmn/sim');
-
 const {Verifier} = require('@pkmn/protocol/verifier');
 const {TeamGenerators} = require('@pkmn/randoms');
+const pkmn = require('@pkmn/sim');
 
 pkmn.Teams.setGeneratorFactory(TeamGenerators);
 
