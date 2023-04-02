@@ -503,55 +503,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 	},
-	abilityclause: {
-		effectType: 'ValidatorRule',
-		name: 'Ability Clause',
-		desc: "Prevents teams from having Pok&eacute;mon with the same ability than allowed",
-		hasValue: 'positive-integer',
-		onBegin() {
-			const num = this.ruleTable.valueRules.get('abilityclause');
-			this.add('rule', `${num} Ability Clause: Limit ${num} of each ability`);
-		},
-		onValidateRule(value) {
-			const allowedAbilities = parseInt(value);
-			if (allowedAbilities < 1) throw new Error(`Must allow at least 1 of each ability`);
-		},
-		onValidateTeam(team) {
-			if (this.format.id === 'gen8multibility') return;
-			const abilityTable = new Map<string, number>();
-			const base: {[k: string]: string} = {
-				airlock: 'cloudnine',
-				battlearmor: 'shellarmor',
-				clearbody: 'whitesmoke',
-				dazzling: 'queenlymajesty',
-				emergencyexit: 'wimpout',
-				filter: 'solidrock',
-				gooey: 'tanglinghair',
-				insomnia: 'vitalspirit',
-				ironbarbs: 'roughskin',
-				libero: 'protean',
-				minus: 'plus',
-				moxie: 'chillingneigh',
-				powerofalchemy: 'receiver',
-				propellertail: 'stalwart',
-				teravolt: 'moldbreaker',
-				turboblaze: 'moldbreaker',
-			};
-			const num = parseInt(this.ruleTable.valueRules.get('abilityclause')!);
-			for (const set of team) {
-				let ability = this.toID(set.ability);
-				if (!ability) continue;
-				if (ability in base) ability = base[ability] as ID;
-				if ((abilityTable.get(ability) || 0) >= num) {
-					return [
-						`You are limited to ${num} of each ability by Ability Clause.`,
-						`(You have more than ${num} ${this.dex.abilities.get(ability).name} variant${num === 1 ? '' : 's'})`,
-					];
-				}
-				abilityTable.set(ability, (abilityTable.get(ability) || 0) + 1);
-			}
-		},
-	},
 	ohkoclause: {
 		effectType: 'ValidatorRule',
 		name: 'OHKO Clause',
@@ -652,7 +603,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 				if (!hasOrbeetle && species.name === "Orbeetle-Gmax") hasOrbeetle = true;
 				for (const moveid of set.moves) {
 					const move = this.dex.moves.get(moveid);
-					if (move.status && move.status === 'slp' && move.accuracy < 100) hasSleepMove = true;
+					if (move.status && move.status === 'slp' && (move.accuracy as number) < 100) hasSleepMove = true;
 				}
 			}
 			if (hasOrbeetle && hasSleepMove) {
@@ -1081,55 +1032,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 	},
-	stabmonsmovelegality: {
-		effectType: 'ValidatorRule',
-		name: 'STABmons Move Legality',
-		desc: "Allows Pok&eacute;mon to use any move that they or a previous evolution/out-of-battle forme share a type with",
-		checkCanLearn(move, species, setSources, set) {
-			const nonstandard = move.isNonstandard === 'Past' && !this.ruleTable.has('standardnatdex');
-			if (!nonstandard && !move.isZ && !move.isMax && !this.ruleTable.isRestricted(`move:${move.id}`)) {
-				const speciesTypes: string[] = [];
-				const moveTypes: string[] = [];
-				// BDSP can't import Pokemon from Home, so it shouldn't grant moves from archaic species types
-				const minObtainableSpeciesGen = this.dex.currentMod === 'gen8bdsp' || this.dex.gen === 9 ?
-					this.dex.gen : species.gen;
-				for (let i = this.dex.gen; i >= minObtainableSpeciesGen && i >= move.gen; i--) {
-					const dex = this.dex.forGen(i);
-					moveTypes.push(dex.moves.get(move.name).type);
-
-					const pokemon = dex.species.get(species.name);
-					if (pokemon.forme || pokemon.otherFormes) {
-						const baseSpecies = dex.species.get(pokemon.baseSpecies);
-						const originalForme = dex.species.get(pokemon.changesFrom || pokemon.name);
-						speciesTypes.push(...originalForme.types);
-						if (baseSpecies.otherFormes) {
-							for (const formeName of baseSpecies.otherFormes) {
-								if (baseSpecies.prevo) {
-									const prevo = dex.species.get(baseSpecies.prevo);
-									if (prevo.evos.includes(formeName)) continue;
-								}
-								const forme = dex.species.get(formeName);
-								if (forme.changesFrom === originalForme.name && !forme.battleOnly) {
-									speciesTypes.push(...forme.types);
-								}
-							}
-						}
-					} else {
-						speciesTypes.push(...pokemon.types);
-					}
-
-					let prevo = pokemon.prevo;
-					while (prevo) {
-						const prevoSpecies = dex.species.get(prevo);
-						speciesTypes.push(...prevoSpecies.types);
-						prevo = prevoSpecies.prevo;
-					}
-				}
-				if (moveTypes.some(m => speciesTypes.includes(m))) return null;
-			}
-			return this.checkCanLearn(move, species, setSources, set);
-		},
-	},
 	allowtradeback: {
 		effectType: 'ValidatorRule',
 		name: 'Allow Tradeback',
@@ -1166,23 +1068,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'Overflow Stat Mod',
 		desc: "Caps stats at 654 after a positive nature, or 655 after a negative nature",
 		// Implemented in sim/battle.ts
-	},
-	aaarestrictedabilities: {
-		effectType: 'ValidatorRule',
-		name: 'AAA Restricted Abilities',
-		desc: "Allows validation for AAA formats to use restricted abilities instead of banned ones.",
-		onValidateSet(set) {
-			const ability = this.dex.abilities.get(set.ability);
-			if (this.ruleTable.isRestricted(`ability:${ability.id}`)) {
-				const species = this.dex.species.get(set.species);
-				if (!Object.values(species.abilities).includes(ability.name)) {
-					return [
-						`The Ability "${ability.name}" is restricted.`,
-						`(Only Pok\u00e9mon that get ${ability.name} naturally can use it.)`,
-					];
-				}
-			}
-		},
 	},
 	eventmovesclause: {
 		effectType: 'ValidatorRule',

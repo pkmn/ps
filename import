@@ -637,7 +637,7 @@ const changes = async (where, last, now, repo) => ({
     const index = fs.readFileSync(path.resolve(ps, 'lib/streams.ts'), 'utf8').replace(
       'Documented in STREAMS.md.', 'Documentation can be found at\n' +
       ' * https://github.com/smogon/pokemon-showdown/blob/master/lib/STREAMS.md'
-    );
+    ).replace('let options;', 'let options: any;');
     // double fuck you zarle, AnyObject is a dreadful hack to begin with, feel ashamed
     fs.writeFileSync(path.resolve(streams, 'index.ts'),
       `interface AnyObject {[k: string]: any}\n${index}`);
@@ -671,7 +671,11 @@ const changes = async (where, last, now, repo) => ({
     for (const file of MOD_COPIED) {
       if (MOD_IMPORTS[file]) {
         if (!file.startsWith('data/')) throw new Error('Unsupported import location');
-        const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
+        let original = fs.readFileSync(path.resolve(ps, file), 'utf8');
+        if (file === 'data/mods/gen1jpn/rulesets.ts') {
+          original = original.replace('} else if (set.level < legalityList[moveid]) {',
+            '} else if (set.level < (legalityList[moveid] as number)) {');
+        }
         fs.writeFileSync(path.resolve(mods, file.replace('data/mods', 'src')),
           `${imports(MOD_IMPORTS[file], '@pkmn/sim', true)}${original}`);
       } else {
