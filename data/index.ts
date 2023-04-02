@@ -3,6 +3,8 @@ import {
   Condition,
   Data,
   Dex,
+  Species as DexSpecies,
+  Type as DexType,
   EggGroup,
   EvoType,
   FormeName,
@@ -16,14 +18,12 @@ import {
   MoveSource,
   Nature,
   Nonstandard,
-  Species as DexSpecies,
   SpeciesAbility,
   SpeciesName,
   SpeciesTag,
   StatID,
   StatsTable,
   Tier,
-  Type as DexType,
   TypeName,
 } from '@pkmn/dex-types';
 

@@ -1,4 +1,4 @@
-import {Dex, PokemonSet, ID} from '@pkmn/sim';
+import {Dex, ID, PokemonSet} from '@pkmn/sim';
 
 import {TeamGenerators} from '../index';
 

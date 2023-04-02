@@ -1,5 +1,7 @@
 import {PokemonSet, StatsTable} from '@pkmn/types';
-import {_import, _unpack, Sets} from '../sets';
+
+import {Sets, _import, _unpack} from '../sets';
+
 import {GEN} from './data';
 
 function imported(s: string) {

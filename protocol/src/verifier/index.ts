@@ -10,7 +10,7 @@ import {
   Weather,
 } from '@pkmn/types';
 
-import {Protocol, Args, KWArgs, PokemonIdent} from '../index';
+import {Args, KWArgs, PokemonIdent, Protocol} from '../index';
 
 interface Generation {
   abilities: API;

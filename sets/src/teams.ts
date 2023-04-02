@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-parameter-properties */
-import {PokemonSet, GenerationNum, ID} from '@pkmn/types';
-import {_import, _unpack, Sets, Data} from './sets';
+import {GenerationNum, ID, PokemonSet} from '@pkmn/types';
+
+import {Data, Sets, _import, _unpack} from './sets';
 
 const CURRENT = 9;
 

@@ -1,7 +1,7 @@
-import {Dex} from '@pkmn/dex';
 import {Generations, ID} from '@pkmn/data';
+import {Dex} from '@pkmn/dex';
 
-import {Field, Battle, Pokemon} from '../index';
+import {Battle, Field, Pokemon} from '../index';
 
 const gens = new Generations(Dex);
 const gen = gens.get(8);

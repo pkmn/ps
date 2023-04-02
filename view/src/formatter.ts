@@ -1,10 +1,10 @@
 import {
   AbilityName,
-  Args,
   ArgType,
+  Args,
   EffectName,
-  KWArgs,
   KWArgType,
+  KWArgs,
   MoveName,
   Num,
   PokemonDetails,
@@ -14,7 +14,8 @@ import {
   SpeciesName,
   Username,
 } from '@pkmn/protocol';
-import {ID, StatID, GenerationNum, SideID, TypeName} from '@pkmn/types';
+import {GenerationNum, ID, SideID, StatID, TypeName} from '@pkmn/types';
+
 import {toID} from './common';
 import * as TextJSON from './data/text.json';
 

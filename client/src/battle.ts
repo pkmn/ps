@@ -2,14 +2,14 @@ import {
   DataKind, GameType, Generation, Generations, HPColor, ID, PokemonSet, SideID, toID,
 } from '@pkmn/data';
 import {
-  ArgType, BattleArgsKWArgType, FormatName, Message, PokemonDetails, PokemonHealth,
-  PokemonHPStatus, PokemonIdent, PokemonSearchID, Protocol, SpeciesName,
+  ArgType, BattleArgsKWArgType, FormatName, Message, PokemonDetails, PokemonHPStatus,
+  PokemonHealth, PokemonIdent, PokemonSearchID, Protocol, SpeciesName,
 } from '@pkmn/protocol';
 
 import {Field} from './field';
 import {Handler} from './handler';
-import {Side} from './side';
 import {Pokemon} from './pokemon';
+import {Side} from './side';
 
 const SLOTS: { [slot: string]: number } = {a: 0, b: 1, c: 2, d: 3, e: 4, f: 5};
 

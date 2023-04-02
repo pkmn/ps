@@ -1,7 +1,8 @@
-import {Actions, Action} from './index';
 
 import * as fs from 'fs';
 import * as path from 'path';
+
+import {Action, Actions} from './index';
 
 describe('Actions', () => {
   it('register', () => {

@@ -719,7 +719,7 @@ const changes = async (where, last, now, repo) => ({
         const data =
           path.resolve(path.join(ps, file), '..', `random-${sets ? 'sets' : 'data'}.json`);
         const raw = fs.readFileSync(data, 'utf8');
-        json = '\n\n/* eslint-disable */\n'+
+        json = '\n\n/* eslint-disable */\n' +
           `const random${sets ? 'Sets' : 'Data'}JSON = ${JSON.stringify(JSON.parse(raw))}` +
           ' as any;\n/* eslint-enable */';
       }

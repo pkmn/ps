@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-shadow */
-import {ModdedDex} from './index';
-import {Dex as DexT, ID, ModData, Ability, AbilityData} from '@pkmn/dex-types';
-
 import * as dex from '@pkmn/dex';
+import {Ability, AbilityData, Dex as DexT, ID, ModData} from '@pkmn/dex-types';
 import * as sim from '@pkmn/sim';
+
+import {ModdedDex} from './index';
 
 const DATA = {
   'dex': dex.Dex as DexT,

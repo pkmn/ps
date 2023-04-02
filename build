@@ -6,8 +6,8 @@ const fs = require('fs');
 const path = require('path');
 
 const esbuild = require('esbuild');
-const tsup = require('tsup');
 const minimist = require('minimist');
+const tsup = require('tsup');
 
 const argv = minimist(process.argv.slice(2), {default: {minify: false}});
 const cwd = process.cwd();

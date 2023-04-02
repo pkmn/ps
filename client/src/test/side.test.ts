@@ -1,7 +1,7 @@
 import {Effect, ID} from '@pkmn/dex';
 import {DetailedPokemon, Protocol} from '@pkmn/protocol';
 
-import {Side, Battle} from '../index';
+import {Battle, Side} from '../index';
 
 // NOTE: tested exhaustively in integration/src/test/client.js
 describe('Side', () => {

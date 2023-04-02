@@ -1,4 +1,4 @@
-import {ID, toID, SideCondition, PokemonSet} from '@pkmn/data';
+import {ID, PokemonSet, SideCondition, toID} from '@pkmn/data';
 import {
   AvatarIdent, DetailedPokemon, PokemonDetails, PokemonSearchID, Username,
 } from '@pkmn/protocol';

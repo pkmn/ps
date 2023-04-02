@@ -1,14 +1,15 @@
-import {Generations, StatsTable, Dex as DexT, ItemName} from './index';
-
-import {calculate, Pokemon, Move} from '@smogon/calc/adaptable';
-import * as D from '@smogon/calc/data/interface';
-import {ID, ModData} from '@pkmn/dex-types';
-import {ModdedDex} from '@pkmn/mods';
-import * as dex from '@pkmn/dex';
-import * as sim from '@pkmn/sim';
 
 import * as fs from 'fs';
 import * as path from 'path';
+
+import * as dex from '@pkmn/dex';
+import {ID, ModData} from '@pkmn/dex-types';
+import {ModdedDex} from '@pkmn/mods';
+import * as sim from '@pkmn/sim';
+import {Move, Pokemon, calculate} from '@smogon/calc/adaptable';
+import * as D from '@smogon/calc/data/interface';
+
+import {Dex as DexT, Generations, ItemName, StatsTable} from './index';
 
 const DATA = {
   'dex': dex.Dex as DexT,
@@ -336,8 +337,8 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         // + Polteageist-Antique (1) + Zorua-Hisui (1) + Zoroark-Hisui (1)
         formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 1 + 1 + 1 + 1;
         // Charizard (3) + Cinderace (3) + Greninja (3) + Vivillon (1) + Walking Wake (1) +
-        // Iron Leaves (1) + Decidueye (3)
-        expect(counts(9)).toEqual({species: 400 + 3 + 3 + 3 + 3 + 3, formes});
+        // Iron Leaves (1) + Decidueye (3) + Samurott (3)
+        expect(counts(9)).toEqual({species: 400 + 3 + 3 + 3 + 3 + 3 + 3, formes});
       });
 
       it('formeNum', () => {

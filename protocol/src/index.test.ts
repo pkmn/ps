@@ -1,7 +1,8 @@
-import {Protocol, PokemonHealth, Args, KWArgs} from './index';
 
 import * as fs from 'fs';
 import * as path from 'path';
+
+import {Args, KWArgs, PokemonHealth, Protocol} from './index';
 
 const REQUEST = {
   'active': [

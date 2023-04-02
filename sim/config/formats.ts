@@ -47,6 +47,11 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 9] OU (suspect)',
+    mod: 'gen9',
+    ruleset: [ '[Gen 9] OU', '!Species Clause' ]
+  },
+  {
     name: '[Gen 9] Ubers',
     mod: 'gen9',
     ruleset: [ 'Standard' ],
@@ -125,6 +130,7 @@ export const Formats: FormatList = [
       'Endless Battle Clause'
     ]
   },
+  { name: '[Gen 9] ZU', mod: 'gen9', ruleset: [ '[Gen 9] PU' ], banlist: [ 'PU' ] },
   {
     name: '[Gen 9] CAP',
     mod: 'gen9',
@@ -433,71 +439,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 7] STABmons',
-    mod: 'gen7',
-    ruleset: [ '[Gen 7] OU', 'STABmons Move Legality' ],
-    banlist: [
-      'Aerodactyl',        'Aerodactyl-Mega',
-      'Araquanid',         'Blacephalon',
-      'Kartana',           'Komala',
-      'Kyurem-Black',      'Porygon-Z',
-      'Silvally',          'Tapu Koko',
-      'Tapu Lele',         'Thundurus',
-      'Thundurus-Therian', "King's Rock",
-      'Razor Fang'
-    ],
-    restricted: [
-      'Acupressure',
-      'Belly Drum',
-      'Chatter',
-      'Extreme Speed',
-      'Geomancy',
-      'Lovely Kiss',
-      'Shell Smash',
-      'Shift Gear',
-      'Spore',
-      'Thousand Arrows'
-    ]
-  },
-  {
-    name: '[Gen 6] Almost Any Ability',
-    mod: 'gen6',
-    ruleset: [
-      '[Gen 6] OU',
-      'Ability Clause = 2',
-      'AAA Restricted Abilities',
-      '!Obtainable Abilities'
-    ],
-    banlist: [
-      'Archeops',   'Bisharp',
-      'Chatot',     'Dragonite',
-      'Keldeo',     'Kyurem-Black',
-      'Mamoswine',  'Regigigas',
-      'Shedinja',   'Slaking',
-      'Smeargle',   'Snorlax',
-      'Suicune',    'Terrakion',
-      'Weavile',    'Dynamic Punch',
-      'Zap Cannon'
-    ],
-    unbanlist: [
-      'Aegislash',
-      'Blaziken',
-      'Deoxys-Defense',
-      'Deoxys-Speed',
-      'Genesect',
-      'Greninja',
-      'Landorus'
-    ],
-    restricted: [
-      'Arena Trap',    'Contrary',
-      'Fur Coat',      'Huge Power',
-      'Illusion',      'Imposter',
-      'Parental Bond', 'Protean',
-      'Pure Power',    'Simple',
-      'Speed Boost',   'Wonder Guard'
-    ]
-  },
-  {
     name: '[Gen 6] Pure Hackmons',
     mod: 'gen6',
     ruleset: [
@@ -670,13 +611,7 @@ export const Formats: FormatList = [
     name: '[Gen 7] Random Battle',
     mod: 'gen7',
     team: 'random',
-    ruleset: [
-      'Obtainable',
-      'Sleep Clause Mod',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Mega Rayquaza Clause'
-    ]
+    ruleset: [ 'Obtainable', 'Sleep Clause Mod', 'HP Percentage Mod', 'Cancel Mod' ]
   },
   {
     name: '[Gen 7] Random Doubles Battle',
@@ -721,13 +656,7 @@ export const Formats: FormatList = [
     name: '[Gen 6] Random Battle',
     mod: 'gen6',
     team: 'random',
-    ruleset: [
-      'Obtainable',
-      'Sleep Clause Mod',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Mega Rayquaza Clause'
-    ]
+    ruleset: [ 'Obtainable', 'Sleep Clause Mod', 'HP Percentage Mod', 'Cancel Mod' ]
   },
   {
     name: '[Gen 6] Battle Factory',
@@ -771,32 +700,28 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 4] UU',
-    mod: 'gen4',
-    ruleset: [ '[Gen 4] OU', '!Freeze Clause Mod' ],
-    banlist: [ 'OU', 'UUBL' ],
-    unbanlist: [ 'Arena Trap', 'Swagger' ]
-  },
-  {
-    name: '[Gen 3] Challenge Cup',
-    mod: 'gen3',
-    team: 'randomCC',
-    ruleset: [ 'Obtainable', 'HP Percentage Mod', 'Cancel Mod' ]
-  },
-  {
-    name: '[Gen 5] ZU',
+    name: '[Gen 5] UU',
     mod: 'gen5',
-    ruleset: [ '[Gen 5] PU' ],
+    ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Swagger Clause', 'Sleep Clause Mod' ],
     banlist: [
-      'PU',         'Articuno',
-      'Dragonair',  'Glalie',
-      'Machoke',    'Marowak',
-      'Omanyte',    'Regigigas',
-      'Trubbish',   'Whirlipede',
+      'Uber',
+      'OU',
+      'UUBL',
+      'Arena Trap',
+      'Drought',
+      'Sand Stream',
+      'Snow Warning',
+      'Prankster + Assist',
+      'Prankster + Copycat',
       'Baton Pass'
-    ],
-    unbanlist: [ 'Damp Rock' ]
+    ]
   },
+  {
+    name: '[Gen 1] Tradebacks OU',
+    mod: 'gen1',
+    ruleset: [ '[Gen 1] OU', 'Allow Tradeback' ]
+  },
+  { name: '[Gen 6] RU', mod: 'gen6', ruleset: [ '[Gen 6] UU' ], banlist: [ 'UU', 'RUBL' ] },
   {
     name: '[Gen 8] OU',
     mod: 'gen8',
@@ -1486,7 +1411,6 @@ export const Formats: FormatList = [
     ruleset: [ '[Gen 6] OU' ],
     banlist: [ 'OU', 'UUBL', 'Drizzle', 'Drought' ]
   },
-  { name: '[Gen 6] RU', mod: 'gen6', ruleset: [ '[Gen 6] UU' ], banlist: [ 'UU', 'RUBL' ] },
   { name: '[Gen 6] NU', mod: 'gen6', ruleset: [ '[Gen 6] RU' ], banlist: [ 'RU', 'NUBL' ] },
   {
     name: '[Gen 6] PU',
@@ -1684,23 +1608,6 @@ export const Formats: FormatList = [
   },
   { name: '[Gen 5] Ubers', mod: 'gen5', ruleset: [ 'Standard', 'Sleep Clause Mod' ] },
   {
-    name: '[Gen 5] UU',
-    mod: 'gen5',
-    ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Swagger Clause', 'Sleep Clause Mod' ],
-    banlist: [
-      'Uber',
-      'OU',
-      'UUBL',
-      'Arena Trap',
-      'Drought',
-      'Sand Stream',
-      'Snow Warning',
-      'Prankster + Assist',
-      'Prankster + Copycat',
-      'Baton Pass'
-    ]
-  },
-  {
     name: '[Gen 5] RU',
     mod: 'gen5',
     ruleset: [ '[Gen 5] UU', 'Baton Pass Clause', '!Sleep Clause Mod', 'Sleep Moves Clause' ],
@@ -1763,6 +1670,20 @@ export const Formats: FormatList = [
       'Soul Dew',     'Perish Song'
     ],
     unbanlist: [ 'Genesect', 'Landorus', 'Manaphy', 'Thundurus', 'Tornadus-Therian' ]
+  },
+  {
+    name: '[Gen 5] ZU',
+    mod: 'gen5',
+    ruleset: [ '[Gen 5] PU' ],
+    banlist: [
+      'PU',         'Articuno',
+      'Dragonair',  'Glalie',
+      'Machoke',    'Marowak',
+      'Omanyte',    'Regigigas',
+      'Trubbish',   'Whirlipede',
+      'Baton Pass'
+    ],
+    unbanlist: [ 'Damp Rock' ]
   },
   {
     name: '[Gen 5] CAP',
@@ -1843,6 +1764,13 @@ export const Formats: FormatList = [
     ruleset: [ 'Team Preview', 'Cancel Mod' ]
   },
   { name: '[Gen 4] Ubers', mod: 'gen4', ruleset: [ 'Standard' ], banlist: [ 'AG' ] },
+  {
+    name: '[Gen 4] UU',
+    mod: 'gen4',
+    ruleset: [ '[Gen 4] OU', '!Freeze Clause Mod' ],
+    banlist: [ 'OU', 'UUBL' ],
+    unbanlist: [ 'Arena Trap', 'Swagger' ]
+  },
   {
     name: '[Gen 4] NU',
     mod: 'gen4',
@@ -2198,11 +2126,6 @@ export const Formats: FormatList = [
       'Jolteon + Focus Energy + Thunder Shock',
       'Flareon + Focus Energy + Ember'
     ]
-  },
-  {
-    name: '[Gen 1] Tradebacks OU',
-    mod: 'gen1',
-    ruleset: [ '[Gen 1] OU', 'Allow Tradeback' ]
   },
   {
     name: '[Gen 1] Custom Game',

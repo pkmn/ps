@@ -33,6 +33,7 @@
           "flatTernaryExpressions": true
         }
       ],
+      "@typescript-eslint/unbound-method": "off",
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/member-delimiter-style": "off",
       "@typescript-eslint/no-floating-promises": [

@@ -1,11 +1,11 @@
 import {
-	PlayerOptions,
-	PokemonSet,
-	PRNG,
-	PRNGSeed,
 	Dex,
 	Format,
 	ModdedDex,
+	PRNG,
+	PRNGSeed,
+	PlayerOptions,
+	PokemonSet,
 } from '@pkmn/sim';
 
 import {RandomGen1Teams} from './gen1';

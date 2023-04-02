@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import {PokemonSet} from '@pkmn/types';
 
 import {Team, Teams} from '../teams';
+
 import {GEN} from './data';
 
 const readTeam = (file: string) => fs.readFileSync(`${__dirname}/fixtures/${file}`, 'utf8');
@@ -94,7 +95,6 @@ describe('Teams', () => {
     expect(Teams.unpackTeam('foo')).toBeUndefined();
     expect(Teams.importTeams('|\n\n\n')).toEqual([]);
   });
-
 
   it('including packed', () => {
     const teams = Teams.importTeams(TEAMS);

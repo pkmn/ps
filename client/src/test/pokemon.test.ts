@@ -1,5 +1,5 @@
+import {Effect, Generations, ID, SpeciesName} from '@pkmn/data';
 import {Dex} from '@pkmn/dex';
-import {Generations, Effect, ID, SpeciesName} from '@pkmn/data';
 import {
   DetailedPokemon,
   PokemonDetails,
@@ -9,8 +9,8 @@ import {
   Protocol,
 } from '@pkmn/protocol';
 
-import {Pokemon, Side} from '../index';
 import {Battle} from '../battle';
+import {Pokemon, Side} from '../index';
 
 const gens = new Generations(Dex);
 const gen = gens.get(7);

@@ -4,12 +4,12 @@ import * as T from '@pkmn/dex-types';
 import * as AbilitiesJSON from './data/abilities.json';
 import * as AliasesJSON from './data/aliases.json';
 import * as ConditionsJSON from './data/conditions.json';
+import * as FormatsDataJSON from './data/formats-data.json';
 import * as ItemsJSON from './data/items.json';
 import * as MovesJSON from './data/moves.json';
 import * as NaturesJSON from './data/natures.json';
 import * as SpeciesJSON from './data/species.json';
 import * as TypesJSON from './data/types.json';
-import * as FormatsDataJSON from './data/formats-data.json';
 
 export function toID(text: any): T.ID {
   if (text?.id) text = text.id;
@@ -571,7 +571,6 @@ class DexMoves implements T.DexTable<Move> {
 
     let move = this.caches.get[id];
     if (move) return move;
-
 
     if (id.startsWith('hiddenpower')) {
       id = /([a-z]*)([0-9]*)/.exec(id)![1] as T.ID;

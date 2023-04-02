@@ -1,7 +1,8 @@
-import {Sprites, Icons} from '../index';
 
 import * as fs from 'fs';
 import * as path from 'path';
+
+import {Icons, Sprites} from '../index';
 
 const PROTOCOL = 'https';
 const DOMAIN = 'play.pokemonshowdown.com';

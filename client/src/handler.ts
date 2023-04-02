@@ -1,12 +1,12 @@
 import {
   BoostID, Effect, ID, Move, MoveName,
-  Specie, SpeciesName, StatID, toID, TypeName,
+  Specie, SpeciesName, StatID, TypeName, toID,
 } from '@pkmn/data';
 import {
-  Protocol, Args, KWArgs, PokemonSearchID, PokemonIdent, PokemonDetails,
+  Args, KWArgs, PokemonDetails, PokemonIdent, PokemonSearchID, Protocol,
 } from '@pkmn/protocol';
 
-import {Battle, NULL, NA} from './battle';
+import {Battle, NA, NULL} from './battle';
 import {LastItemEffect} from './pokemon';
 
 const BOOSTS: BoostID[] = ['atk', 'def', 'spa', 'spd', 'spe', 'accuracy', 'evasion'];

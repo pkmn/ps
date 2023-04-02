@@ -1,10 +1,10 @@
 import {
   BoostsTable, DataKind, Effect, GenderName, HPColor, HPTypeName, ID, Move,
-  MoveTarget, NatureName, PokemonSet, SpeciesName, StatID, StatusName, toID, TypeName,
+  MoveTarget, NatureName, PokemonSet, SpeciesName, StatID, StatusName, TypeName, toID,
 } from '@pkmn/data';
 import {
-  DetailedPokemon, EffectName, MoveName, PokemonDetails, PokemonHealth,
-  PokemonHPStatus, PokemonIdent, PokemonSearchID, Protocol,
+  DetailedPokemon, EffectName, MoveName, PokemonDetails, PokemonHPStatus,
+  PokemonHealth, PokemonIdent, PokemonSearchID, Protocol,
 } from '@pkmn/protocol';
 
 import {NA} from './battle';
