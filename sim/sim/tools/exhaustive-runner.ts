@@ -32,6 +32,13 @@ export interface ExhaustiveRunnerPossibilities {
 	moves?: ID[];
 }
 
+export interface ExhaustiveRunnerUsageTracker {
+	pokemon(id: ID): void;
+	item(id: ID): void;
+	ability(id: ID): void;
+	move(id: ID): void;
+}
+
 export class ExhaustiveRunner {
 	static readonly DEFAULT_CYCLES = 1;
 	static readonly MAX_FAILURES = 10;
@@ -90,6 +97,12 @@ export class ExhaustiveRunner {
 
 		const seed = this.prng.seed;
 		const pools = this.createPools(dex);
+		const usage: ExhaustiveRunnerUsageTracker = {
+			pokemon: id => pools.pokemon.markUsed(id),
+			item: id => pools.items.markUsed(id),
+			ability: id => pools.abilities.markUsed(id),
+			move: id => pools.moves.markUsed(id),
+		};
 		const createAI = (s: ObjectReadWriteStream<string>, o: AIOptions) => new CoordinatedPlayerAI(s, o, pools);
 		const generator = new TeamGenerator(dex, this.prng, pools, ExhaustiveRunner.getSignatures(dex, pools));
 
@@ -118,7 +131,8 @@ export class ExhaustiveRunner {
 						format: this.format,
 						dual: this.dual,
 						error: true,
-					});
+						usage,
+					} as any);
 
 					if (this.log) this.logProgress(dex, pools);
 				} catch (err) {
