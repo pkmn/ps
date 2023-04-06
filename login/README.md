@@ -51,7 +51,7 @@ to be less homogenous than WebSocket APIs), but a WebSocket is also required to 
 Pokémon Showdown. For example purposes, assume a WebSocket named `ws` has been set up as below:
 
 ```ts
-import * as WebSocket from 'websocket'
+import * as WebSocket from 'websocket';
 import {Protocol} from '@pkmn/protocol';
 
 const server = 'sim.smogon.com';
@@ -152,7 +152,7 @@ within browsers along with `@pkmn/login` to authenticate:
 #### `fetch`
 
 [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is the new browser API for
-HTTP requests (`node-fetch` provides an isomorphic API for use åon with Node.js):
+HTTP requests ([Node.js includes `fetch` as of v18](https://nodejs.org/dist/latest-v18.x/docs/api/globals.html#fetch)):
 
 ```ts
 import fetch from 'node-fetch';
