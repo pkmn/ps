@@ -128,39 +128,39 @@ for (const signal of ['SIGINT', 'SIGHUP', 'SIGTERM']) {
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 connection.open(data => {
   for (const {args} of Protocol.parse(data)) {
     switch (args[0]) {
-      case 'challstr': {
-        const challstr = args[1];
-        if (!process.argv[2]) {
-          rl.question('Username: ', username => {
-            rl.question('Password: ', password => {
-              user.login({username, challstr, password}).catch(err => {
-                console.error(err);
-                connection.close();
-                process.exit(1);
-              });
-              rl.close();
+    case 'challstr': {
+      const challstr = args[1];
+      if (!process.argv[2]) {
+        rl.question('Username: ', username => {
+          rl.question('Password: ', password => {
+            user.login({username, challstr, password}).catch(err => {
+              console.error(err);
+              connection.close();
+              process.exit(1);
             });
+            rl.close();
           });
-        } else {
-          user.upkeep({challstr}, process.argv[2]).catch(err => {
-            console.error(err);
-            connection.close();
-            process.exit(1);
-          });
-        }
-        break;
+        });
+      } else {
+        user.upkeep({challstr}, process.argv[2]).catch(err => {
+          console.error(err);
+          connection.close();
+          process.exit(1);
+        });
       }
-      case 'updateuser': {
-        user.username = args[1];
-        console.log(`Logged in as '${user.username.trim()}'`);
-        break;
-      }
+      break;
+    }
+    case 'updateuser': {
+      user.username = args[1];
+      console.log(`Logged in as '${user.username.trim()}'`);
+      break;
+    }
     }
   }
 });

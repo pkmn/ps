@@ -87,7 +87,7 @@
 
     const connection = new Connection();
     connection.open(async data => {
-      for (const {args} of Protocol.parse(data)) {
+      for (const {args} of pkmn.protocol.Protocol.parse(data)) {
         switch (args[0]) {
           case 'challstr': {
             challstr = args[1];
