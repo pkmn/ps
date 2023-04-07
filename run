@@ -133,8 +133,10 @@ const METRONOME = move => {
 const MIN_WRAP = {key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: MIN};
 const REWRAP = {key: ['Battle.sample', 'BattleActions.runMove'], value: MIN};
 
-const battle = startBattle([BIDE(3), HIT, DISABLE_MOVE(1, 2), DISABLE_DURATION(5)], [
-	{species: 'Voltorb', evs, moves: ['Teleport', 'Disable']},
+const battle = startBattle([
+	HIT, PAR_CAN, BIDE(3), HIT, DISABLE_MOVE(1, 2), DISABLE_DURATION(5), PAR_CAN, PAR_CANT,
+], [
+	{species: 'Voltorb', evs, moves: ['Glare', 'Disable', 'Teleport']},
 ], [
 	{species: 'Golem', evs, moves: ['Bide', 'Flash']},
 ]);
@@ -144,4 +146,7 @@ battle.makeChoices('move 1', 'move 1');
 battle.makeChoices('move 2', 'move 1');
 
 // Bide should not execute when Disabled
-battle.makeChoices('move 1', 'move 1');
+battle.makeChoices('move 3', 'move 1');
+
+// TODO
+battle.makeChoices('move 3', 'move 1');
