@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable */
 'use strict';
 
 try {
@@ -116,7 +117,7 @@ const THRASH = (n) =>
 const hit = (n) => ({key: HIT.key, value: ranged(n, 256) - 1});
 const miss = (n) => ({key: HIT.key, value: hit(n).value + 1});
 const BIDE = (n) =>
-	({key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: ranged(n - 2, 5 - 3)});
+	({key: 'Pokemon.addVolatile', value: ranged(n - 2, 5 - 3)});
 // const proc = {key: HIT.key, value: ranged(52, 256) - 1};
 // const no_proc = {key: HIT.key, value: proc.value + 1};
 
@@ -132,12 +133,15 @@ const METRONOME = move => {
 const MIN_WRAP = {key: ['Battle.durationCallback', 'Pokemon.addVolatile'], value: MIN};
 const REWRAP = {key: ['Battle.sample', 'BattleActions.runMove'], value: MIN};
 
-const battle = startBattle([TIE(2)], [
-	{species: 'Zapdos', evs, moves: ['Drill Peck']},
-	{species: 'Dodrio', evs, moves: ['Fury Attack']},
+const battle = startBattle([BIDE(3), HIT, DISABLE_MOVE(1, 2), DISABLE_DURATION(5)], [
+	{species: 'Voltorb', evs, moves: ['Teleport', 'Disable']},
 ], [
-	{species: 'Raichu', evs, moves: ['Thunderbolt']},
-	{species: 'Mew', evs, moves: ['Psychic']},
+	{species: 'Golem', evs, moves: ['Bide', 'Flash']},
 ]);
 
-battle.makeChoices('switch 2', 'switch 2');
+battle.makeChoices('move 1', 'move 1');
+
+battle.makeChoices('move 2', 'move 1');
+
+// Bide should not execute when Disabled
+battle.makeChoices('move 1', 'move 1');
