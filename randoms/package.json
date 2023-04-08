@@ -45,14 +45,16 @@
           "flatTernaryExpressions": true
         }
       ],
+      "@typescript-eslint/member-delimiter-style": "off",
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/prefer-optional-chain": "off",
       "@typescript-eslint/restrict-template-expressions": "off",
-      "@typescript-eslint/member-delimiter-style": "off",
-      "operator-linebreak": "off",
+      "import/order": "off",
+      "max-len": "off",
       "no-dupe-else-if": "off",
       "no-mixed-spaces-and-tabs": "off",
-      "max-len": "off"
+      "no-multiple-empty-lines": "off",
+      "operator-linebreak": "off"
     }
   }
 }
