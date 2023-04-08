@@ -47,11 +47,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 9] OU (suspect)',
-    mod: 'gen9',
-    ruleset: [ '[Gen 9] OU', '!Species Clause' ]
-  },
-  {
     name: '[Gen 9] Ubers',
     mod: 'gen9',
     ruleset: [ 'Standard' ],
@@ -412,19 +407,19 @@ export const Formats: FormatList = [
       'Endless Battle Clause'
     ],
     banlist: [
-      'Calyrex-Shadow',   'Zacian-Crowned',
-      'Arena Trap',       'Contrary',
-      'Huge Power',       'Illusion',
-      'Innards Out',      'Magnet Pull',
-      'Moody',            'Neutralizing Gas',
-      'Parental Bond',    'Poison Heal',
-      'Pure Power',       'Shadow Tag',
-      'Stakeout',         'Water Bubble',
-      'Wonder Guard',     'Comatose + Sleep Talk',
-      'Belly Drum',       'Last Respects',
-      'Quiver Dance',     'Rage Fist',
-      'Revival Blessing', 'Shed Tail',
-      'Shell Smash'
+      'Calyrex-Shadow',        'Zacian-Crowned',
+      'Arena Trap',            'Contrary',
+      'Gorilla Tactics',       'Huge Power',
+      'Illusion',              'Innards Out',
+      'Magnet Pull',           'Moody',
+      'Neutralizing Gas',      'Parental Bond',
+      'Poison Heal',           'Pure Power',
+      'Shadow Tag',            'Stakeout',
+      'Water Bubble',          'Wonder Guard',
+      'Comatose + Sleep Talk', 'Belly Drum',
+      'Last Respects',         'Quiver Dance',
+      'Rage Fist',             'Revival Blessing',
+      'Shed Tail',             'Shell Smash'
     ]
   },
   {
