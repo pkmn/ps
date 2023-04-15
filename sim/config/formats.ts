@@ -125,7 +125,12 @@ export const Formats: FormatList = [
       'Endless Battle Clause'
     ]
   },
-  { name: '[Gen 9] ZU', mod: 'gen9', ruleset: [ '[Gen 9] PU' ], banlist: [ 'PU' ] },
+  {
+    name: '[Gen 9] ZU',
+    mod: 'gen9',
+    ruleset: [ '[Gen 9] PU' ],
+    banlist: [ 'PU', 'Fraxure', 'Girafarig' ]
+  },
   {
     name: '[Gen 9] CAP',
     mod: 'gen9',
@@ -327,13 +332,13 @@ export const Formats: FormatList = [
     name: '[Gen 9] National Dex UU',
     mod: 'gen9',
     ruleset: [ '[Gen 9] National Dex' ],
-    banlist: [ 'ND OU', 'ND UUBL' ]
+    banlist: [ 'ND OU', 'ND UUBL', 'Battle Bond' ]
   },
   {
     name: '[Gen 9] National Dex RU',
     mod: 'gen9',
     ruleset: [ '[Gen 9] National Dex UU' ],
-    banlist: [ 'ND UU', 'ND RUBL', 'Drizzle', 'Light Clay' ]
+    banlist: [ 'ND UU', 'ND RUBL', 'Drizzle', 'Heat Rock', 'Light Clay' ]
   },
   {
     name: '[Gen 9] National Dex Monotype',
@@ -679,6 +684,12 @@ export const Formats: FormatList = [
     ruleset: [ 'Obtainable', 'Sleep Clause Mod', 'HP Percentage Mod', 'Cancel Mod' ]
   },
   { name: '[Gen 3] Random Battle', mod: 'gen3', team: 'random', ruleset: [ 'Standard' ] },
+  {
+    name: '[Gen 3] Challenge Cup',
+    mod: 'gen3',
+    team: 'randomCC',
+    ruleset: [ 'Obtainable', 'HP Percentage Mod', 'Cancel Mod' ]
+  },
   { name: '[Gen 2] Random Battle', mod: 'gen2', team: 'random', ruleset: [ 'Standard' ] },
   { name: '[Gen 1] Random Battle', mod: 'gen1', team: 'random', ruleset: [ 'Standard' ] },
   {

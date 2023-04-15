@@ -4,7 +4,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 	standard: {
 		effectType: 'ValidatorRule',
 		name: 'Standard',
-		ruleset: ['Obtainable', 'Desync Clause Mod', 'Sleep Clause Mod', 'Freeze Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Endless Battle Clause', 'HP Percentage Mod', 'Cancel Mod'],
+		ruleset: ['Obtainable', 'Desync Clause Mod', 'Sleep Clause Mod', 'Freeze Clause Mod', 'Species Clause', 'Nickname Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Endless Battle Clause', 'HP Percentage Mod', 'Cancel Mod'],
 		banlist: ['Dig', 'Fly'],
 	},
 	nintendocup1997movelegality: {
@@ -77,10 +77,11 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			const problems = [];
 			if (set.moves) {
 				for (const moveid of set.moves.map(this.toID)) {
-					if (legalityList[moveid]) {
-						if (legalityList[moveid] === 'illegal') {
+					const legality = legalityList[moveid];
+					if (legality) {
+						if (legality === 'illegal') {
 							problems.push(`${set.species} can't learn ${this.dex.moves.get(moveid).name} in 1997.`);
-						} else if (set.level < (legalityList[moveid] as number)) {
+						} else if (set.level < legality) {
 							problems.push(`${set.species} can't learn ${this.dex.moves.get(moveid).name} before level ${legalityList[moveid]} in 1997.`);
 						}
 					}

@@ -51,7 +51,7 @@ export class ReadStream {
 		});
 		this.awaitingPush = false;
 
-		let options: any;
+		let options: {[k: string]: any};
 		if (typeof optionsOrStreamLike === 'string') {
 			options = {buffer: optionsOrStreamLike};
 		} else if (optionsOrStreamLike instanceof Buffer) {
