@@ -20,15 +20,15 @@
     },
     "tox": {"inherit": true, "onAfterMoveSelfPriority": 2},
     "confusion": {"name": "confusion", "onBeforeMovePriority": 3},
-    "flinch": {"name": "flinch", "duration": 1, "onBeforeMovePriority": 4},
+    "flinch": {"name": "flinch", "duration": 1, "onBeforeMovePriority": 8},
     "trapped": {"name": "trapped", "noCopy": true},
     "partiallytrapped": {
       "name": "partiallytrapped",
       "duration": 2,
-      "onBeforeMovePriority": 4
+      "onBeforeMovePriority": 9
     },
     "partialtrappinglock": {"name": "partialtrappinglock"},
-    "mustrecharge": {"inherit": true, "duration": 0},
+    "mustrecharge": {"inherit": true, "duration": 0, "onBeforeMovePriority": 7},
     "lockedmove": {"name": "lockedmove"},
     "twoturnmove": {"name": "twoturnmove"},
     "invulnerability": {"name": "invulnerability"}

@@ -1948,7 +1948,7 @@ export class Battle {
 
 			if (this.gen <= 1) {
 				if (this.dex.currentMod === 'gen1stadium' ||
-					!['recoil', 'drain'].includes(effect.id) && effect.effectType !== 'Status') {
+					!['recoil', 'drain', 'leechseed'].includes(effect.id) && effect.effectType !== 'Status') {
 					this.lastDamage = targetDamage;
 				}
 			}

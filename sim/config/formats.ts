@@ -35,15 +35,11 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ 'Standard' ],
     banlist: [
-      'Uber',
-      'AG',
-      'Arena Trap',
-      'Moody',
-      'Sand Veil',
-      'Shadow Tag',
-      'Snow Cloak',
-      "King's Rock",
-      'Baton Pass'
+      'Uber',       'AG',
+      'Arena Trap', 'Moody',
+      'Sand Veil',  'Shadow Tag',
+      'Snow Cloak', "King's Rock",
+      'Baton Pass', 'Shed Tail'
     ]
   },
   {
@@ -129,7 +125,7 @@ export const Formats: FormatList = [
     name: '[Gen 9] ZU',
     mod: 'gen9',
     ruleset: [ '[Gen 9] PU' ],
-    banlist: [ 'PU', 'Fraxure', 'Girafarig' ]
+    banlist: [ 'PU', 'Beartic', 'Fraxure', 'Girafarig', 'Vigoroth' ]
   },
   {
     name: '[Gen 9] CAP',
@@ -236,15 +232,11 @@ export const Formats: FormatList = [
       'Evasion Items Clause'
     ],
     banlist: [
-      'Koraidon',
-      'Miraidon',
-      'Commander',
-      'Focus Sash',
-      "King's Rock",
-      'Ally Switch',
-      'Final Gambit',
-      'Moody',
-      'Perish Song',
+      'Chi-Yu',      'Koraidon',
+      'Miraidon',    'Commander',
+      'Focus Sash',  "King's Rock",
+      'Ally Switch', 'Final Gambit',
+      'Moody',       'Perish Song',
       'Swagger'
     ]
   },
@@ -311,7 +303,8 @@ export const Formats: FormatList = [
       'Quick Claw',
       'Razor Fang',
       'Assist',
-      'Baton Pass'
+      'Baton Pass',
+      'Shed Tail'
     ]
   },
   {
@@ -412,12 +405,13 @@ export const Formats: FormatList = [
       'Endless Battle Clause'
     ],
     banlist: [
-      'Calyrex-Shadow',        'Zacian-Crowned',
-      'Arena Trap',            'Contrary',
-      'Gorilla Tactics',       'Huge Power',
-      'Illusion',              'Innards Out',
-      'Magnet Pull',           'Moody',
-      'Neutralizing Gas',      'Parental Bond',
+      'Calyrex-Shadow',        'Miraidon',
+      'Zacian-Crowned',        'Arena Trap',
+      'Contrary',              'Gorilla Tactics',
+      'Huge Power',            'Illusion',
+      'Innards Out',           'Magnet Pull',
+      'Moody',                 'Neutralizing Gas',
+      'Orichalcum Pulse',      'Parental Bond',
       'Poison Heal',           'Pure Power',
       'Shadow Tag',            'Stakeout',
       'Water Bubble',          'Wonder Guard',

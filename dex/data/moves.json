@@ -103,7 +103,7 @@
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1, "bypasssub": 1},
       "volatileStatus": "disable",
-      "condition": {"onBeforeMovePriority": 7},
+      "condition": {"onBeforeMovePriority": 6},
       "secondary": null,
       "target": "normal",
       "type": "Normal",
