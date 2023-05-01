@@ -1697,6 +1697,7 @@
     },
     "hadronengine": {
       "onModifySpAPriority": 5,
+      "isPermanent": true,
       "name": "Hadron Engine",
       "num": 289,
       "shortDesc": "On switch-in, summons Electric Terrain. During Electric Terrain, Sp. Atk is 1.3333x."
@@ -2123,6 +2124,7 @@
     },
     "orichalcumpulse": {
       "onModifyAtkPriority": 5,
+      "isPermanent": true,
       "name": "Orichalcum Pulse",
       "num": 288,
       "shortDesc": "On switch-in, summons Sunny Day. During Sunny Day, Attack is 1.3333x."
