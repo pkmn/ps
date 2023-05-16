@@ -325,8 +325,9 @@ describe('Dex', () => {
       // Polteageist-Antique (1) + Zorua-Hisui (1) + Zoroark-Hisui (1)
       formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 1 + 1 + 1 + 1;
       // Charizard (3) + Cinderace (3) + Greninja (3) + Vivillon (1) + Walking Wake (1) +
-      // Iron Leaves (1) + Decidueye (3) + Samurott (3) + Typhlosion (3) + Inteleon (3)
-      expect(counts(9)).toEqual({species: 400 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3, formes});
+      // Iron Leaves (1) + Decidueye (3) + Samurott (3) + Typhlosion (3) + Inteleon (3) +
+      // Chesnaught (3)
+      expect(counts(9)).toEqual({species: 400 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3, formes});
     });
 
     it('fields', () => {

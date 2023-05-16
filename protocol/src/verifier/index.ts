@@ -998,7 +998,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|-primal|'(args: Args['|-primal|']) {
-    return args.length === 2 && verifyPokemonIdent(args[1]);
+    return args.length === 3 && verifyPokemonIdent(args[1]) && verifyItemName(args[2]);
   }
 
   '|-burst|'(args: Args['|-burst|']) {

@@ -1385,11 +1385,11 @@ export namespace Protocol {
      */
     '|-mega|': readonly ['-mega', PokemonIdent, SpeciesName, ItemName | ''];
     /**
-     * `|-primal|POKEMON`
+     * `|-primal|POKEMON|ITEM`
      *
-     * The Pokémon `POKEMON` has reverted to its primal forme.
+     * The Pokémon `POKEMON` has reverted to its primal forme via `ITEM`.
      */
-    '|-primal|': readonly ['-primal', PokemonIdent];
+    '|-primal|': readonly ['-primal', PokemonIdent, ItemName];
     /**
      * `|-burst|POKEMON|SPECIES|ITEM`
      *

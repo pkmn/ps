@@ -62,12 +62,13 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ 'Little Cup', 'Standard' ],
     banlist: [
-      'Dunsparce', 'Flittle',
-      'Gastly',    'Girafarig',
-      'Meditite',  'Misdreavus',
-      'Murkrow',   'Rufflet',
-      'Scyther',   'Sneasel',
-      'Moody',     'Baton Pass'
+      'Diglett',    'Dunsparce',
+      'Flittle',    'Gastly',
+      'Girafarig',  'Meditite',
+      'Misdreavus', 'Murkrow',
+      'Rufflet',    'Scyther',
+      'Sneasel',    'Moody',
+      'Baton Pass'
     ]
   },
   {
@@ -132,17 +133,16 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] LC' ],
     banlist: [
-      'Bramblin', 'Crabrawler',  'Cyndaquil',
-      'Diglett',  'Drifloon',    'Foongus',
-      'Fuecoco',  'Glimmet',     'Gothita',
-      'Greavard', 'Larvesta',    'Magnemite',
-      'Mankey',   'Mareanie',    'Meowth-Base',
-      'Mudbray',  'Numel',       'Nymble',
-      'Oshawott', 'Pawniard',    'Quaxly',
-      'Shellder', 'Shroodle',    'Stunky',
-      'Surskit',  'Tinkatink',   'Toedscool',
-      'Voltorb',  'Wattrel',     'Wingull',
-      'Zorua',    'Zorua-Hisui'
+      'Bramblin',  'Crabrawler',  'Diglett',
+      'Drifloon',  'Foongus',     'Fuecoco',
+      'Glimmet',   'Gothita',     'Greavard',
+      'Larvesta',  'Magnemite',   'Mankey',
+      'Mareanie',  'Meowth-Base', 'Mudbray',
+      'Numel',     'Nymble',      'Pawniard',
+      'Quaxly',    'Shellder',    'Shroodle',
+      'Stunky',    'Surskit',     'Tinkatink',
+      'Toedscool', 'Voltorb',     'Wattrel',
+      'Wingull',   'Zorua',       'Zorua-Hisui'
     ]
   },
   {
@@ -365,14 +365,15 @@ export const Formats: FormatList = [
     ],
     banlist: [
       'Annihilape',          'Arceus',             'Blastoise-Mega',
-      'Blaziken-Mega',       'Calyrex-Ice',        'Calyrex-Shadow',
-      'Chi-Yu',              'Chien-Pao',          'Darkrai',
-      'Deoxys-Base',         'Deoxys-Attack',      'Dialga',
-      'Dracovish',           'Dragapult',          'Eternatus',
-      'Flutter Mane',        'Genesect',           'Gengar-Mega',
-      'Giratina',            'Giratina-Origin',    'Groudon',
-      'Ho-Oh',               'Hoopa-Unbound',      'Houndstone',
-      'Iron Bundle',         'Kangaskhan-Mega',    'Kartana',
+      'Blaziken',            'Blaziken-Mega',      'Calyrex-Ice',
+      'Calyrex-Shadow',      'Chi-Yu',             'Chien-Pao',
+      'Darkrai',             'Deoxys-Base',        'Deoxys-Attack',
+      'Dialga',              'Dracovish',          'Dragapult',
+      'Espathra',            'Eternatus',          'Flutter Mane',
+      'Genesect',            'Gengar-Mega',        'Giratina',
+      'Giratina-Origin',     'Groudon',            'Ho-Oh',
+      'Hoopa-Unbound',       'Houndstone',         'Iron Bundle',
+      'Kangaskhan-Mega',     'Kartana',            'Kingambit',
       'Koraidon',            'Kyogre',             'Kyurem-Black',
       'Kyurem-White',        'Lucario-Mega',       'Lugia',
       'Lunala',              'Magearna',           'Marshadow',
