@@ -13,11 +13,11 @@ const TEAM_A = fs.readFileSync(__dirname + '/teams/a.txt', 'utf8');
 const TEAM_B = fs.readFileSync(__dirname + '/teams/b.txt', 'utf8');
 
 const FIXED = window.location.href.includes('fixed');
-// TODO: add gen9{,doubles,monotype}randombattle once available
+// TODO: add gen9doublesrandombattle once available
 const FORMATS = [
   'gen1randombattle', 'gen2randombattle', 'gen3randombattle', 'gen4randombattle',
   'gen5randombattle', 'gen6randombattle', 'gen7randombattle', 'gen8randombattle',
-  'gen7randomdoublesbattle', 'gen8randomdoublesbattle', 'gen8monotyperandombattle',
+  'gen7randomdoublesbattle', 'gen8randomdoublesbattle', 'gen9randombattle',
 ];
 const prng = new PRNG();
 const FORMAT = FIXED ? 'gen7anythinggoes' : prng.sample(FORMATS);
