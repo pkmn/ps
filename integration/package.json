@@ -38,7 +38,7 @@
     "test": "jest",
     "pretest": "npm run compile",
     "posttest": "npm run lint",
-    "postinstall": "npm -C ../vendor/pokemon-showdown install && npm -C ../vendor/pokemon-showdown-client install"
+    "postinstall": "npm -C ../vendor/pokemon-showdown install && npm -C ../vendor/pokemon-showdown-client install --no-save @babel/plugin-proposal-logical-assignment-operators @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-object-rest-spread @babel/plugin-proposal-optional-catch-binding"
   },
   "jest": {
     "preset": "ts-jest",
