@@ -1235,7 +1235,6 @@
       "shortDesc": "This Pokemon cannot be struck by a critical hit."
     },
     "battlebond": {
-      "isNonstandard": "Unobtainable",
       "isPermanent": true,
       "name": "Battle Bond",
       "num": 210,

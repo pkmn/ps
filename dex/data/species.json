@@ -2858,6 +2858,10 @@
       "inherit": true,
       "abilities": {"0": "Shield Dust", "1": "Compound Eyes"}
     },
+    "vivillonpokeball": {
+      "inherit": true,
+      "abilities": {"0": "Shield Dust", "1": "Compound Eyes"}
+    },
     "sliggoohisui": {
       "inherit": true,
       "abilities": {"0": "Sap Sipper", "1": "Overcoat", "H": "Gooey"}
@@ -19331,7 +19335,11 @@
         "spd": 50,
         "spe": 89
       },
-      "abilities": {"0": "Shield Dust", "1": "Compound Eyes"},
+      "abilities": {
+        "0": "Shield Dust",
+        "1": "Compound Eyes",
+        "H": "Friend Guard"
+      },
       "weightkg": 17,
       "eggGroups": ["Bug"]
     },
@@ -29350,6 +29358,23 @@
       "evoItem": "Shiny Stone",
       "eggGroups": ["Field"],
       "gen": 8
+    },
+    "hemogoblin": {
+      "num": -71,
+      "name": "Hemogoblin",
+      "types": ["Fairy", "Fire"],
+      "baseStats": {
+        "hp": 90,
+        "atk": 99,
+        "def": 89,
+        "spa": 99,
+        "spd": 97,
+        "spe": 55
+      },
+      "abilities": {"0": "Pixilate", "1": "Intimidate"},
+      "weightkg": 85,
+      "eggGroups": ["Undiscovered"],
+      "gen": 9
     },
     "pokestarsmeargle": {
       "num": -5000,

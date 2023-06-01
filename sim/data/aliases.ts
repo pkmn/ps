@@ -2,7 +2,7 @@ export const Aliases: {[alias: string]: string} = {
 	// formats
 	randbats: "[Gen 9] Random Battle",
 	uber: "[Gen 9] Ubers",
-	anythinggoes: "[Gen 8] Anything Goes",
+	anythinggoes: "[Gen 9] Anything Goes",
 	ubers: "[Gen 9] Ubers",
 	overused: "[Gen 9] OU",
 	underused: "[Gen 9] UU",
@@ -82,8 +82,8 @@ export const Aliases: {[alias: string]: string} = {
 	gen6ag: "[Gen 6] Anything Goes",
 	crossevo: "[Gen 9] Cross Evolution",
 	mayhem: "[Gen 9] Random Battle Mayhem",
-	omotm: "[Gen 9] Tier Shift",
-	lcotm: "[Gen 9] The Card Game",
+	omotm: "[Gen 9] Alphabet Cup",
+	lcotm: "[Gen 9] Trademarked",
 
 	// mega evos
 	fabio: "Ampharos-Mega",

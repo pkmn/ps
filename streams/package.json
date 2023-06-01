@@ -25,6 +25,7 @@
   "eslintConfig": {
     "extends": "@pkmn",
     "rules": {
+      "@typescript-eslint/no-unnecessary-type-assertion": "off",
       "@typescript-eslint/quotes": "off",
       "@typescript-eslint/indent": [
         "error",

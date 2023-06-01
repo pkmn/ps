@@ -67,7 +67,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('counts', () => {
-        const COUNTS = [0, 0, 76, 47, 41, 27, 42, 34, 30];
+        const COUNTS = [0, 0, 76, 47, 41, 27, 42, 34, 30 + 1];
         let total = 0;
         for (const gen of gens) {
           expect(Array.from(gen.abilities)).toHaveLength(total += COUNTS[gen.num - 1]);
@@ -230,7 +230,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         let total = 0;
         for (const gen of gens) {
           expect(Array.from(gen.moves))
-            .toHaveLength(gen.num === 9 ? 607 + 3
+            .toHaveLength(gen.num === 9 ? 607 + 3 + 22
             : gen.num === 8 ? 623 + 41 + 34 - 33
             : (total += COUNTS[gen.num - 1]));
         }
@@ -332,14 +332,19 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
           (4 + 1 + 1 + 1 + 1 + 2 + (1 + 1)) + (1 + 3 + 4 + 2 + 3 + 1 + 2) - 1; // FIXME Rockruff
         expect(counts(8)).toEqual({species: 664, formes});
         // Galar (1) + Paldea (4) + Rotom (5) + Basculin (1) + Vivillon-Fancy (1) + Oricorio (3) +
-        // Lycanroc (2) + Mimikyu (1) + Toxtricity (1) + Eiscue (1) + Indeedee (1) + Oinkologne (1)
-        // + Dudunsparce (1) + Palafin (1) + Maushold (1) + Squawkabilly (3) + Sinistea-Antique (1)
-        // + Polteageist-Antique (1) + Zorua-Hisui (1) + Zoroark-Hisui (1)
-        formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 1 + 1 + 1 + 1;
+        // Lycanroc (2) + Mimikyu (1) + Toxtricity (1) + Eiscue (1) + Indeedee (1) +
+        // Oinkologne (1) + Dudunsparce (1) + Palafin (1) + Maushold (1) + Squawkabilly (3) +
+        // *-Antique (2) + Hisui (2)
+        // {HOME} Pikachu (8) + *-Origin (3) + *-Therian (4) + Alola (7) + Galar (6) + Hisui (14) +
+        // Arceus (17) + Basculin (1) + Meloetta (1) + Vivillon (1) + Hoopa (1) +
+        // Magearna (1) + *-Crowned (2) + Urshifu (1) + Zarude (1) + Calyrex (2) +
+        // Gimmighoul (1) + Basculegion (1)
+        formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 2 + 2 +
+          (8 + 3 + 4 + 7 + 6 + 14 + 17 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 2 + 1 + 1);
         // Charizard (3) + Cinderace (3) + Greninja (3) + Vivillon (1) + Walking Wake (1) +
         // Iron Leaves (1) + Decidueye (3) + Samurott (3) + Typhlosion (3) + Inteleon (3) +
-        // Chesnaught (3)
-        expect(counts(9)).toEqual({species: 400 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3, formes});
+        // Chesnaught (3) + HOME (51)
+        expect(counts(9)).toEqual({species: 400 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 51, formes});
       });
 
       it('formeNum', () => {

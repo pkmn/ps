@@ -949,7 +949,6 @@
   },
   "8": {
     "adamantcrystal": {"inherit": true, "isNonstandard": "Future"},
-    "adamantorb": {"inherit": true, "isNonstandard": null},
     "berryjuice": {"inherit": true, "isNonstandard": null},
     "berrysweet": {"inherit": true, "isNonstandard": null},
     "bugmemory": {"inherit": true, "isNonstandard": null},
@@ -961,15 +960,20 @@
     "deepseascale": {"inherit": true, "isNonstandard": null},
     "deepseatooth": {"inherit": true, "isNonstandard": null},
     "dousedrive": {"inherit": true, "isNonstandard": null},
+    "dracoplate": {"inherit": true, "isNonstandard": "Past"},
     "dragonmemory": {"inherit": true, "isNonstandard": null},
     "dragonscale": {"inherit": true, "isNonstandard": null},
+    "dreadplate": {"inherit": true, "isNonstandard": "Past"},
     "dubiousdisc": {"inherit": true, "isNonstandard": null},
+    "earthplate": {"inherit": true, "isNonstandard": "Past"},
     "electirizer": {"inherit": true, "isNonstandard": null},
     "electricmemory": {"inherit": true, "isNonstandard": null},
     "enigmaberry": {"inherit": true, "isNonstandard": null},
     "fairymemory": {"inherit": true, "isNonstandard": null},
     "fightingmemory": {"inherit": true, "isNonstandard": null},
     "firememory": {"inherit": true, "isNonstandard": null},
+    "fistplate": {"inherit": true, "isNonstandard": "Past"},
+    "flameplate": {"inherit": true, "isNonstandard": "Past"},
     "flowersweet": {"inherit": true, "isNonstandard": null},
     "flyingmemory": {"inherit": true, "isNonstandard": null},
     "fossilizedbird": {"inherit": true, "isNonstandard": null},
@@ -984,26 +988,28 @@
     "griseouscore": {"inherit": true, "isNonstandard": "Future"},
     "griseousorb": {
       "inherit": true,
-      "isNonstandard": null,
       "forcedForme": "Giratina-Origin",
       "itemUser": ["Giratina-Origin"]
     },
     "groundmemory": {"inherit": true, "isNonstandard": null},
     "icememory": {"inherit": true, "isNonstandard": null},
+    "icicleplate": {"inherit": true, "isNonstandard": "Past"},
+    "insectplate": {"inherit": true, "isNonstandard": "Past"},
+    "ironplate": {"inherit": true, "isNonstandard": "Past"},
     "jabocaberry": {"inherit": true, "isNonstandard": null},
     "keeberry": {"inherit": true, "isNonstandard": null},
     "laxincense": {"inherit": true, "isNonstandard": null},
     "leek": {"inherit": true, "isNonstandard": null},
     "lovesweet": {"inherit": true, "isNonstandard": null},
     "lustrousglobe": {"inherit": true, "isNonstandard": "Future"},
-    "lustrousorb": {"inherit": true, "isNonstandard": null},
     "machobrace": {"inherit": true, "isNonstandard": null},
     "magmarizer": {"inherit": true, "isNonstandard": null},
     "marangaberry": {"inherit": true, "isNonstandard": null},
+    "meadowplate": {"inherit": true, "isNonstandard": "Past"},
     "metalpowder": {"inherit": true, "isNonstandard": null},
     "micleberry": {"inherit": true, "isNonstandard": null},
+    "mindplate": {"inherit": true, "isNonstandard": "Past"},
     "oddincense": {"inherit": true, "isNonstandard": null},
-    "pixieplate": {"inherit": true, "isNonstandard": null},
     "poisonmemory": {"inherit": true, "isNonstandard": null},
     "prismscale": {"inherit": true, "isNonstandard": null},
     "protector": {"inherit": true, "isNonstandard": null},
@@ -1015,19 +1021,22 @@
     "rockmemory": {"inherit": true, "isNonstandard": null},
     "roseincense": {"inherit": true, "isNonstandard": null},
     "rowapberry": {"inherit": true, "isNonstandard": null},
-    "rustedshield": {"inherit": true, "isNonstandard": null},
-    "rustedsword": {"inherit": true, "isNonstandard": null},
     "sachet": {"inherit": true, "isNonstandard": null},
     "safariball": {"inherit": true, "isNonstandard": null},
     "seaincense": {"inherit": true, "isNonstandard": null},
     "shockdrive": {"inherit": true, "isNonstandard": null},
+    "skyplate": {"inherit": true, "isNonstandard": "Past"},
     "souldew": {"inherit": true, "isNonstandard": null},
+    "splashplate": {"inherit": true, "isNonstandard": "Past"},
+    "spookyplate": {"inherit": true, "isNonstandard": "Past"},
     "sportball": {"inherit": true, "isNonstandard": null},
     "starsweet": {"inherit": true, "isNonstandard": null},
+    "stoneplate": {"inherit": true, "isNonstandard": "Past"},
     "strawberrysweet": {"inherit": true, "isNonstandard": null},
     "steelmemory": {"inherit": true, "isNonstandard": null},
     "strangeball": {"inherit": true, "isNonstandard": "Future"},
     "thickclub": {"inherit": true, "isNonstandard": null},
+    "toxicplate": {"inherit": true, "isNonstandard": "Past"},
     "tr00": {"inherit": true, "isNonstandard": null},
     "tr01": {"inherit": true, "isNonstandard": null},
     "tr02": {"inherit": true, "isNonstandard": null},
@@ -1131,7 +1140,8 @@
     "upgrade": {"inherit": true, "isNonstandard": null},
     "watermemory": {"inherit": true, "isNonstandard": null},
     "waveincense": {"inherit": true, "isNonstandard": null},
-    "whippeddream": {"inherit": true, "isNonstandard": null}
+    "whippeddream": {"inherit": true, "isNonstandard": null},
+    "zapplate": {"inherit": true, "isNonstandard": "Past"}
   },
   "9": {
     "abilityshield": {
@@ -1176,7 +1186,6 @@
       "itemUser": ["Dialga-Origin"],
       "num": 1777,
       "gen": 8,
-      "isNonstandard": "Unobtainable",
       "desc": "If held by a Dialga, its Steel- and Dragon-type attacks have 1.2x power."
     },
     "adamantorb": {
@@ -1186,7 +1195,6 @@
       "itemUser": ["Dialga"],
       "num": 135,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "If held by a Dialga, its Steel- and Dragon-type attacks have 1.2x power."
     },
     "adrenalineorb": {
@@ -1873,7 +1881,6 @@
       "forcedForme": "Arceus-Dragon",
       "num": 311,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Dragon-type attacks have 1.2x power. Judgment is Dragon type."
     },
     "dragonfang": {
@@ -1929,7 +1936,6 @@
       "forcedForme": "Arceus-Dark",
       "num": 312,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Dark-type attacks have 1.2x power. Judgment is Dark type."
     },
     "dreamball": {
@@ -1979,7 +1985,6 @@
       "forcedForme": "Arceus-Ground",
       "num": 305,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Ground-type attacks have 1.2x power. Judgment is Ground type."
     },
     "eeviumz": {
@@ -2199,7 +2204,6 @@
       "forcedForme": "Arceus-Fighting",
       "num": 303,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Fighting-type attacks have 1.2x power. Judgment is Fighting type."
     },
     "flameorb": {
@@ -2218,7 +2222,6 @@
       "forcedForme": "Arceus-Fire",
       "num": 298,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Fire-type attacks have 1.2x power. Judgment is Fire type."
     },
     "floatstone": {
@@ -2509,7 +2512,6 @@
       "itemUser": ["Giratina-Origin"],
       "num": 1779,
       "gen": 8,
-      "isNonstandard": "Unobtainable",
       "desc": "If held by a Giratina, its Ghost- and Dragon-type attacks have 1.2x power."
     },
     "griseousorb": {
@@ -2519,7 +2521,6 @@
       "itemUser": ["Giratina"],
       "num": 112,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "If held by a Giratina, its Ghost- and Dragon-type attacks have 1.2x power."
     },
     "groundgem": {
@@ -2684,7 +2685,6 @@
       "forcedForme": "Arceus-Ice",
       "num": 302,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Ice-type attacks have 1.2x power. Judgment is Ice type."
     },
     "iciumz": {
@@ -2724,7 +2724,6 @@
       "forcedForme": "Arceus-Bug",
       "num": 308,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Bug-type attacks have 1.2x power. Judgment is Bug type."
     },
     "ironball": {
@@ -2741,7 +2740,6 @@
       "forcedForme": "Arceus-Steel",
       "num": 313,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Steel-type attacks have 1.2x power. Judgment is Steel type."
     },
     "jabocaberry": {
@@ -3052,7 +3050,6 @@
       "itemUser": ["Palkia-Origin"],
       "num": 1778,
       "gen": 8,
-      "isNonstandard": "Unobtainable",
       "desc": "If held by a Palkia, its Water- and Dragon-type attacks have 1.2x power."
     },
     "lustrousorb": {
@@ -3062,7 +3059,6 @@
       "itemUser": ["Palkia"],
       "num": 136,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "If held by a Palkia, its Water- and Dragon-type attacks have 1.2x power."
     },
     "luxuryball": {
@@ -3193,7 +3189,6 @@
       "forcedForme": "Arceus-Grass",
       "num": 301,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Grass-type attacks have 1.2x power. Judgment is Grass type."
     },
     "medichamite": {
@@ -3314,7 +3309,6 @@
       "forcedForme": "Arceus-Psychic",
       "num": 307,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Psychic-type attacks have 1.2x power. Judgment is Psychic type."
     },
     "miracleseed": {
@@ -3595,7 +3589,6 @@
       "forcedForme": "Arceus-Fairy",
       "num": 644,
       "gen": 6,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Fairy-type attacks have 1.2x power. Judgment is Fairy type."
     },
     "plumefossil": {
@@ -4036,7 +4029,6 @@
       "itemUser": ["Zamazenta-Crowned"],
       "num": 1104,
       "gen": 8,
-      "isNonstandard": "Unobtainable",
       "desc": "If held by a Zamazenta, this item changes its forme to Crowned Shield."
     },
     "rustedsword": {
@@ -4044,7 +4036,6 @@
       "itemUser": ["Zacian-Crowned"],
       "num": 1103,
       "gen": 8,
-      "isNonstandard": "Unobtainable",
       "desc": "If held by a Zacian, this item changes its forme to Crowned Sword."
     },
     "sablenite": {
@@ -4241,7 +4232,6 @@
       "forcedForme": "Arceus-Flying",
       "num": 306,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Flying-type attacks have 1.2x power. Judgment is Flying type."
     },
     "slowbronite": {
@@ -4334,7 +4324,6 @@
       "forcedForme": "Arceus-Water",
       "num": 299,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Water-type attacks have 1.2x power. Judgment is Water type."
     },
     "spookyplate": {
@@ -4344,7 +4333,6 @@
       "forcedForme": "Arceus-Ghost",
       "num": 310,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Ghost-type attacks have 1.2x power. Judgment is Ghost type."
     },
     "sportball": {
@@ -4436,7 +4424,6 @@
       "forcedForme": "Arceus-Rock",
       "num": 309,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Rock-type attacks have 1.2x power. Judgment is Rock type."
     },
     "strangeball": {
@@ -4570,7 +4557,6 @@
       "forcedForme": "Arceus-Poison",
       "num": 304,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Poison-type attacks have 1.2x power. Judgment is Poison type."
     },
     "tr00": {
@@ -5572,7 +5558,6 @@
       "forcedForme": "Arceus-Electric",
       "num": 300,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's Electric-type attacks have 1.2x power. Judgment is Electric type."
     },
     "zoomlens": {
