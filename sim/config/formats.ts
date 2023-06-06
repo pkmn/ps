@@ -197,7 +197,7 @@ export const Formats: FormatList = [
     name: '[Gen 9] CAP',
     mod: 'gen9',
     ruleset: [ '[Gen 9] OU', '+CAP' ],
-    banlist: [ 'Hemogoblin', 'Crucibellite' ]
+    banlist: [ 'Crucibellite' ]
   },
   {
     name: '[Gen 9] Free-For-All',
@@ -223,18 +223,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 9] Battle Stadium Singles Series 2',
-    mod: 'gen9',
-    ruleset: [
-      'Flat Rules',
-      '!! Adjust Level = 50',
-      'Paldea Pokedex',
-      'Min Source Gen = 9',
-      'VGC Timer'
-    ],
-    banlist: [ 'Sub-Legendary' ]
-  },
-  {
     name: '[Gen 9] Battle Stadium Singles Regulation C',
     mod: 'gen9',
     ruleset: [
@@ -244,6 +232,12 @@ export const Formats: FormatList = [
       'Min Source Gen = 9',
       'VGC Timer'
     ]
+  },
+  {
+    name: '[Gen 9] Battle Stadium Singles Regulation D',
+    mod: 'gen9',
+    ruleset: [ 'Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 9', 'VGC Timer' ],
+    banlist: [ 'Walking Wake', 'Iron Leaves' ]
   },
   {
     name: '[Gen 9] Custom Game',
@@ -320,20 +314,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 9] VGC 2023 Series 2',
-    mod: 'gen9',
-    gameType: 'doubles',
-    ruleset: [
-      'Flat Rules',
-      '!! Adjust Level = 50',
-      'Paldea Pokedex',
-      'Min Source Gen = 9',
-      'VGC Timer',
-      'Open Team Sheets'
-    ],
-    banlist: [ 'Sub-Legendary' ]
-  },
-  {
     name: '[Gen 9] VGC 2023 Regulation C',
     mod: 'gen9',
     gameType: 'doubles',
@@ -345,6 +325,19 @@ export const Formats: FormatList = [
       'VGC Timer',
       'Open Team Sheets'
     ]
+  },
+  {
+    name: '[Gen 9] VGC 2023 Regulation D',
+    mod: 'gen9',
+    gameType: 'doubles',
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Min Source Gen = 9',
+      'VGC Timer',
+      'Open Team Sheets'
+    ],
+    banlist: [ 'Walking Wake', 'Iron Leaves' ]
   },
   {
     name: '[Gen 9] Doubles Custom Game',
@@ -463,24 +456,25 @@ export const Formats: FormatList = [
       'Gravity Sleep Clause'
     ],
     banlist: [
-      'Arceus',              'Calyrex-Ice',
-      'Calyrex-Shadow',      'Dialga',
-      'Dialga-Origin',       'Eternatus',
-      'Gengar-Mega',         'Giratina',
-      'Giratina-Origin',     'Groudon',
-      'Ho-Oh',               'Koraidon',
-      'Kyogre',              'Kyurem-White',
-      'Lugia',               'Lunala',
-      'Magearna',            'Melmetal',
-      'Mewtwo',              'Miraidon',
-      'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
-      'Palkia',              'Palkia-Origin',
-      'Rayquaza',            'Reshiram',
-      'Shedinja',            'Solgaleo',
-      'Xerneas',             'Yveltal',
-      'Zacian',              'Zacian-Crowned',
-      'Zamazenta-Crowned',   'Zekrom',
-      'Power Construct',     'Swagger'
+      'Arceus',             'Calyrex-Ice',
+      'Calyrex-Shadow',     'Dialga',
+      'Dialga-Origin',      'Eternatus',
+      'Genesect',           'Gengar-Mega',
+      'Giratina',           'Giratina-Origin',
+      'Groudon',            'Ho-Oh',
+      'Koraidon',           'Kyogre',
+      'Kyurem-White',       'Lugia',
+      'Lunala',             'Magearna',
+      'Melmetal',           'Mewtwo',
+      'Miraidon',           'Necrozma-Dawn-Wings',
+      'Necrozma-Dusk-Mane', 'Palkia',
+      'Palkia-Origin',      'Rayquaza',
+      'Reshiram',           'Shedinja',
+      'Solgaleo',           'Xerneas',
+      'Yveltal',            'Zacian',
+      'Zacian-Crowned',     'Zamazenta-Crowned',
+      'Zekrom',             'Commander',
+      'Power Construct',    'Swagger'
     ]
   },
   {
@@ -2000,6 +1994,22 @@ export const Formats: FormatList = [
     mod: 'gen3',
     ruleset: [ 'Standard' ],
     banlist: [ 'Uber', 'OU', 'UUBL', 'UU', 'NUBL', 'NU' ]
+  },
+  {
+    name: '[Gen 3] LC',
+    mod: 'gen3',
+    ruleset: [ 'Standard', 'Little Cup' ],
+    banlist: [
+      'Chansey',
+      'Meditite',
+      'Omanyte',
+      'Scyther',
+      'Wynaut',
+      'Zigzagoon',
+      'Agility + Baton Pass',
+      'Dragon Rage',
+      'Sonic Boom'
+    ]
   },
   {
     name: '[Gen 3] 1v1',

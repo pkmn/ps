@@ -1081,7 +1081,10 @@
       "inherit": true,
       "desc": "On switch-in, this Pokemon copies a random opposing Pokemon's Ability. Abilities that cannot be copied are As One, Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Gulp Missile, Hunger Switch, Ice Face, Illusion, Imposter, Multitype, Neutralizing Gas, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, and Zen Mode. If no opposing Pokemon has an Ability that can be copied, this Ability will activate as soon as one does."
     },
-    "transistor": {"inherit": true},
+    "transistor": {
+      "inherit": true,
+      "shortDesc": "This Pokemon's offensive stat is multiplied by 1.5 while using an Electric-type attack."
+    },
     "triage": {"inherit": true},
     "truant": {"inherit": true},
     "turboblaze": {"inherit": true},
@@ -2887,7 +2890,7 @@
       "onModifySpAPriority": 5,
       "name": "Transistor",
       "num": 262,
-      "shortDesc": "This Pokemon's offensive stat is multiplied by 1.5 while using an Electric-type attack."
+      "shortDesc": "This Pokemon's offensive stat is multiplied by 1.3 while using an Electric-type attack."
     },
     "triage": {
       "name": "Triage",
