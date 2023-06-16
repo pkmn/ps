@@ -25,10 +25,37 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 9] Free-For-All Random Battle',
+    mod: 'gen9',
+    team: 'random',
+    gameType: 'freeforall',
+    ruleset: [
+      'Obtainable',
+      'Species Clause',
+      'HP Percentage Mod',
+      'Cancel Mod',
+      'Sleep Clause Mod'
+    ]
+  },
+  {
     name: '[Gen 9] Random Battle (Blitz)',
     mod: 'gen9',
     team: 'random',
     ruleset: [ '[Gen 9] Random Battle', 'Blitz' ]
+  },
+  {
+    name: '[Gen 9] Multi Random Battle',
+    mod: 'gen9',
+    team: 'random',
+    gameType: 'multi',
+    ruleset: [
+      'Max Team Size = 3',
+      'Obtainable',
+      'Species Clause',
+      'HP Percentage Mod',
+      'Cancel Mod',
+      'Sleep Clause Mod'
+    ]
   },
   {
     name: '[Gen 9] OU',
@@ -87,23 +114,24 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Same Type Clause', 'Terastal Clause' ],
     banlist: [
-      'Annihilape',     'Arceus',
-      'Calyrex-Ice',    'Calyrex-Shadow',
-      'Chi-Yu',         'Dialga',
-      'Dialga-Origin',  'Eternatus',
-      'Giratina',       'Giratina-Origin',
-      'Groudon',        'Iron Bundle',
-      'Koraidon',       'Kyogre',
-      'Magearna',       'Mewtwo',
-      'Miraidon',       'Palafin',
-      'Palkia',         'Palkia-Origin',
-      'Rayquaza',       'Zacian',
-      'Zacian-Crowned', 'Zamazenta-Crowned',
-      'Moody',          'Shadow Tag',
-      'Booster Energy', 'Damp Rock',
-      'Focus Band',     "King's Rock",
-      'Quick Claw',     'Acupressure',
-      'Baton Pass',     'Last Respects'
+      'Annihilape',        'Arceus',
+      'Calyrex-Ice',       'Calyrex-Shadow',
+      'Chi-Yu',            'Dialga',
+      'Dialga-Origin',     'Eternatus',
+      'Giratina',          'Giratina-Origin',
+      'Groudon',           'Iron Bundle',
+      'Koraidon',          'Kyogre',
+      'Magearna',          'Mewtwo',
+      'Miraidon',          'Palafin',
+      'Palkia',            'Palkia-Origin',
+      'Rayquaza',          'Urshifu-Base',
+      'Zacian',            'Zacian-Crowned',
+      'Zamazenta-Crowned', 'Moody',
+      'Shadow Tag',        'Booster Energy',
+      'Damp Rock',         'Focus Band',
+      "King's Rock",       'Quick Claw',
+      'Acupressure',       'Baton Pass',
+      'Last Respects'
     ]
   },
   {
@@ -205,21 +233,22 @@ export const Formats: FormatList = [
     gameType: 'freeforall',
     ruleset: [ 'Standard', '!Evasion Items Clause' ],
     banlist: [
-      'Annihilape',      'Arceus',         'Calyrex-Ice',
-      'Calyrex-Shadow',  'Chi-Yu',         'Dialga',
-      'Dialga-Origin',   'Flutter Mane',   'Giratina',
-      'Giratina-Origin', 'Groudon',        'Iron Bundle',
-      'Koraidon',        'Kyogre',         'Landorus-Base',
-      'Magearna',        'Mewtwo',         'Miraidon',
-      'Palafin',         'Palkia',         'Palkia-Origin',
-      'Rayquaza',        'Spectrier',      'Urshifu-Base',
-      'Zacian',          'Zacian-Crowned', 'Moody',
-      'Shadow Tag',      'Toxic Debris',   'Acupressure',
-      'Aromatic Mist',   'Baton Pass',     'Court Change',
-      'Final Gambit',    'Flatter',        'Follow Me',
-      'Heal Pulse',      'Last Respects',  'Poison Fang',
-      'Rage Powder',     'Spicy Extract',  'Swagger',
-      'Toxic',           'Toxic Spikes'
+      'Annihilape',     'Arceus',          'Calyrex-Ice',
+      'Calyrex-Shadow', 'Chi-Yu',          'Dialga',
+      'Dialga-Origin',  'Eternatus',       'Flutter Mane',
+      'Giratina',       'Giratina-Origin', 'Groudon',
+      'Hoopa-Unbound',  'Iron Bundle',     'Koraidon',
+      'Kyogre',         'Landorus-Base',   'Magearna',
+      'Mewtwo',         'Miraidon',        'Palafin',
+      'Palkia',         'Palkia-Origin',   'Rayquaza',
+      'Spectrier',      'Ursaluna',        'Urshifu-Base',
+      'Zacian',         'Zacian-Crowned',  'Moody',
+      'Shadow Tag',     'Toxic Debris',    'Acupressure',
+      'Aromatic Mist',  'Baton Pass',      'Court Change',
+      'Final Gambit',   'Flatter',         'Follow Me',
+      'Heal Pulse',     'Last Respects',   'Poison Fang',
+      'Rage Powder',    'Spicy Extract',   'Swagger',
+      'Toxic',          'Toxic Spikes'
     ]
   },
   {
@@ -240,6 +269,12 @@ export const Formats: FormatList = [
     banlist: [ 'Walking Wake', 'Iron Leaves' ]
   },
   {
+    name: '[Gen 9] Freedom Cup',
+    mod: 'gen9',
+    ruleset: [ 'Flat Rules', '!Picked Team Size', '!! Adjust Level = 50', 'Min Source Gen = 9' ],
+    banlist: [ 'Walking Wake', 'Iron Leaves' ]
+  },
+  {
     name: '[Gen 9] Custom Game',
     mod: 'gen9',
     debug: true,
@@ -252,6 +287,13 @@ export const Formats: FormatList = [
       'Max Level = 9999',
       'Default Level = 100'
     ]
+  },
+  {
+    name: '[Gen 9] Random Doubles Battle',
+    mod: 'gen9',
+    gameType: 'doubles',
+    team: 'random',
+    ruleset: [ 'PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod' ]
   },
   {
     name: '[Gen 9] Doubles OU',

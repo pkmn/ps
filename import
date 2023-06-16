@@ -524,7 +524,9 @@ const RANDOMS_FILES = {
 };
 
 const INLINE_REQUIRE = /^(.*)require\(.*\);.*$/;
-const RANDOM_SETS = /^(\trandom(?:Doubles)?Sets:.*=) require\('\.\/random-sets\.json'\);(.*)/;
+const RANDOM_SETS = /^(\trandomSets:.*=) require\('\.\/random-sets\.json'\);(.*)/;
+const RANDOM_DOUBLES_SETS =
+  /^(\trandomDoublesSets:.*=) require\('\.\/random-doubles-sets\.json'\);(.*)/;
 const RANDOM_DATA = /^(\trandomData:.*=) require\('\.\/random-data\.json'\);(.*)/;
 
 const DATA = {
@@ -702,6 +704,8 @@ const changes = async (where, last, now, repo) => ({
         if (m) return `${m[1]} randomDataJSON;${m[2]}`;
         m = RANDOM_SETS.exec(line);
         if (m) return `${m[1]} randomSetsJSON;${m[2]}`;
+        m = RANDOM_DOUBLES_SETS.exec(line);
+        if (m) return `${m[1]} randomDoublesSetsJSON;${m[2]}`;
         m = INLINE_REQUIRE.exec(line);
         if (m) return `${m[1]}{};`;
         // Bless me, Father, for I have sinned...
@@ -717,20 +721,28 @@ const changes = async (where, last, now, repo) => ({
         return line.replace(/Dex\./g, 'this.dex.');
       });
 
-      let json = '';
+      let dataJson = '';
+      let doublesJson = '';
       if (file.endsWith('random-teams.ts')) {
         const sets = file === 'data/random-teams.ts';
-        const data =
+        let data =
           path.resolve(path.join(ps, file), '..', `random-${sets ? 'sets' : 'data'}.json`);
-        const raw = fs.readFileSync(data, 'utf8');
-        json = '\n\n/* eslint-disable */\n' +
+        let raw = fs.readFileSync(data, 'utf8');
+        dataJson = '\n\n/* eslint-disable */\n' +
           `const random${sets ? 'Sets' : 'Data'}JSON = ${JSON.stringify(JSON.parse(raw))}` +
           ' as any;\n/* eslint-enable */';
+        if (sets) {
+          data = path.resolve(path.join(ps, file), '..', `random-doubles-sets.json`);
+          raw = fs.readFileSync(data, 'utf8');
+          doublesJson = '\n\n/* eslint-disable */\n' +
+            `const randomDoublesSetsJSON = ${JSON.stringify(JSON.parse(raw))}` +
+            ' as any;\n/* eslint-enable */';
+        }
       }
 
       fs.writeFileSync(
         path.resolve(randoms, RANDOMS_FILES[file]),
-        `${header.join('\n')}${json}\n${rewritten}`
+        `${header.join('\n')}${dataJson}${doublesJson}\n${rewritten}`
       );
     }
 

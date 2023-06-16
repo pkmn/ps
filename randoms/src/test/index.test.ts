@@ -38,7 +38,8 @@ describe('TeamGenerators', () => {
 		'gen7randomdoublesbattle',
 		'gen8randomdoublesbattle',
 		'gen9randombattle',
-		// 'gen9monotyperandombattle',
+		'gen9randomdoublesbattle',
+		'gen9monotyperandombattle',
 	]) {
 		// eslint-disable-next-line jest/expect-expect,jest/valid-title
 		it(format, () => {

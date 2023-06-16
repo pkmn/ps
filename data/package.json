@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/data",
-  "version": "0.7.42",
+  "version": "0.7.43",
   "description": "A forked implementation of the Pokémon Showdown client's data layer",
   "repository": "github:pkmn/ps",
   "license": "MIT",
@@ -16,12 +16,12 @@
     "build"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.7.42"
+    "@pkmn/dex-types": "^0.7.43"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.7.42",
-    "@pkmn/mods": "^0.7.42",
-    "@pkmn/sim": "^0.7.42",
+    "@pkmn/dex": "^0.7.43",
+    "@pkmn/mods": "^0.7.43",
+    "@pkmn/sim": "^0.7.43",
     "@smogon/calc": "^0.7.0"
   },
   "scripts": {
