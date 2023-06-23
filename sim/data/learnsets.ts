@@ -108426,7 +108426,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
       workup: [ '7M' ]
     }
   },
-  greninjaash: {
+  greninjabond: {
     learnset: {
       acrobatics: [ '7M' ],
       aerialace: [ '9M', '9L33', '7M' ],

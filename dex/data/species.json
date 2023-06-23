@@ -19078,8 +19078,28 @@
       "prevo": "Frogadier",
       "evoLevel": 36,
       "eggGroups": ["Water 1"],
-      "otherFormes": ["Greninja-Ash"],
-      "formeOrder": ["Greninja", "Greninja", "Greninja-Ash"]
+      "otherFormes": ["Greninja-Bond", "Greninja-Ash"],
+      "formeOrder": ["Greninja", "Greninja-Bond", "Greninja-Ash"]
+    },
+    "greninjabond": {
+      "num": 658,
+      "name": "Greninja-Bond",
+      "baseSpecies": "Greninja",
+      "forme": "Bond",
+      "types": ["Water", "Dark"],
+      "gender": "M",
+      "baseStats": {
+        "hp": 72,
+        "atk": 95,
+        "def": 67,
+        "spa": 103,
+        "spd": 71,
+        "spe": 122
+      },
+      "abilities": {"0": "Battle Bond"},
+      "weightkg": 40,
+      "eggGroups": ["Undiscovered"],
+      "gen": 7
     },
     "greninjaash": {
       "num": 658,
@@ -19100,7 +19120,7 @@
       "weightkg": 40,
       "eggGroups": ["Undiscovered"],
       "requiredAbility": "Battle Bond",
-      "battleOnly": "Greninja",
+      "battleOnly": "Greninja-Bond",
       "gen": 7
     },
     "bunnelby": {

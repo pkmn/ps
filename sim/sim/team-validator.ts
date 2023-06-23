@@ -398,8 +398,8 @@ export class TeamValidator {
 
 		let outOfBattleSpecies = species;
 		let tierSpecies = species;
-		if (ability.id === 'battlebond' && species.id === 'greninja') {
-			outOfBattleSpecies = dex.species.get('greninjaash');
+		if (ability.id === 'battlebond' && toID(species.baseSpecies) === 'greninja') {
+			outOfBattleSpecies = dex.species.get('greninjabond');
 			if (ruleTable.has('obtainableformes')) {
 				tierSpecies = outOfBattleSpecies;
 			}
@@ -523,7 +523,7 @@ export class TeamValidator {
 		ability = dex.abilities.get(set.ability);
 
 		const [outOfBattleSpecies, tierSpecies] = this.getValidationSpecies(set);
-		if (ability.id === 'battlebond' && species.id === 'greninja') {
+		if (ability.id === 'battlebond' && toID(species.baseSpecies) === 'greninja') {
 			if (ruleTable.has('obtainablemisc')) {
 				if (set.gender && set.gender !== 'M') {
 					problems.push(`Battle Bond Greninja must be male.`);
@@ -1388,6 +1388,10 @@ export class TeamValidator {
 				problems.push(`In Generation 9, Hoopa-Unbound cannot run Hyperspace Hole because it gets replaced with Hyperspace Fury upon changing forme.`);
 			}
 		}
+
+		if (species.baseSpecies === "Greninja" && toID(set.ability) === 'battlebond') {
+			set.species = "Greninja-Bond";
+		}
 		return problems;
 	}
 
@@ -1419,6 +1423,9 @@ export class TeamValidator {
 		if (tierSpecies.canGigantamax && set.gigantamax) {
 			setHas['pokemon:' + tierSpecies.id + 'gmax'] = true;
 			isGmax = true;
+		}
+		if (tierSpecies.baseSpecies === 'Greninja' && toID(set.ability) === 'battlebond') {
+			setHas['pokemon:greninjabond'] = true;
 		}
 
 		const tier = tierSpecies.tier === '(PU)' ? 'ZU' : tierSpecies.tier === '(NU)' ? 'PU' : tierSpecies.tier;
@@ -2322,7 +2329,7 @@ export class TeamValidator {
 			return this.dex.species.get(species.baseSpecies);
 		} else if (species.name === 'Lycanroc-Dusk') {
 			return this.dex.species.get('Rockruff-Dusk');
-		} else if (species.name === 'Greninja-Ash') {
+		} else if (species.name === 'Greninja-Bond') {
 			return null;
 		} else if (species.prevo) {
 			// there used to be a check for Hidden Ability here, but apparently it's unnecessary

@@ -190,6 +190,8 @@ export const Formats: FormatList = [
       'Electrode',
       'Fraxure',
       'Girafarig',
+      'Grumpig',
+      'Leafeon',
       'Qwilfish-Hisui',
       'Sneasel-Hisui',
       'Vigoroth'

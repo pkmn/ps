@@ -225,15 +225,15 @@ describe('Pokemon', () => {
 
     expect(pokemon.baseSpecies.name).toBe('Greninja');
     expect(pokemon.species.name).toBe('Greninja');
-    pokemon.speciesForme = 'Greninja-Ash';
-    expect(pokemon.species.name).toBe('Greninja-Ash');
+    pokemon.speciesForme = 'Greninja-Bond';
+    expect(pokemon.species.name).toBe('Greninja-Bond');
 
     pokemon.addVolatile('formechange' as ID, {speciesForme: 'Gengar' as SpeciesName});
 
     pokemon.speciesForme = 'Greninja';
     expect(pokemon.baseSpecies.name).toBe('Greninja');
     expect(pokemon.species.name).toBe('Gengar');
-    pokemon.speciesForme = 'Greninja-Ash';
+    pokemon.speciesForme = 'Greninja-Bond';
     expect(pokemon.species.name).toBe('Gengar');
   });
 

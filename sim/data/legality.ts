@@ -12504,7 +12504,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       }
     ]
   },
-  greninjaash: {
+  greninjabond: {
     learnset: {
       aerialace: [ '7S0' ],
       doubleteam: [ '7S0' ],
@@ -14700,8 +14700,24 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ]
   },
   gimmighoul: {
-    learnset: { astonish: [ '9S0' ], tackle: [ '9S0' ] },
-    eventData: [ { generation: 9, level: 5, moves: [ 'astonish', 'tackle' ] } ],
+    learnset: {
+      astonish: [ '9S0' ],
+      hex: [ '9S1' ],
+      powergem: [ '9S1' ],
+      shadowball: [ '9S1' ],
+      tackle: [ '9S0' ],
+      takedown: [ '9S1' ]
+    },
+    eventData: [
+      { generation: 9, level: 5, moves: [ 'astonish', 'tackle' ] },
+      {
+        generation: 9,
+        level: 75,
+        shiny: 1,
+        perfectIVs: 4,
+        moves: [ 'takedown', 'shadowball', 'hex', 'powergem' ]
+      }
+    ],
     eventOnly: true
   },
   greattusk: {
