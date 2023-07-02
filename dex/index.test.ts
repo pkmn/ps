@@ -300,10 +300,10 @@ describe('Dex', () => {
       // Pikachu (6) + Mega (48) [Floette (1)]
       formes += 1 + 2 + 1 + 2 + 1 + 3 + 3 + 1 + 6 + 48;
       expect(counts(6)).toEqual({species: 721, formes});
-      // Alola (18) + Totem (12) + Pikachu (7) - Pikachu (6) + Greninja (1) + Zygarde (2) +
+      // Alola (18) + Totem (12) + Pikachu (7) - Pikachu (6) + Greninja (2) + Zygarde (2) +
       // Oricorio (3) + Rockruff (1) + Lycanroc (2) + Wishiwashi (1) + Silvally (17) + Minior (1)
       // Mimikyu (1) + Necrozma (3) [Magearna (1) + LGPE Starters/Meltan/Melmetal (4)]
-      formes += 18 + 12 + 7 - 6 + 1 + 2 + 3 + 1 + 2 + 1 + 17 + 1 + 1 + 3 - 1; // FIXME Rockruff
+      formes += 18 + 12 + 7 - 6 + 2 + 2 + 3 + 1 + 2 + 1 + 17 + 1 + 1 + 3 - 1; // FIXME Rockruff
       expect(counts(7)).toEqual({species: 807, formes});
       // Silvally (17) + Rotom (5) + Basculin (1) + Meowstic (1) +
       // Aegislash (1) + Pumpkaboo (3) + Gourgeist (3) + Pikachu (7) + Galar (14) +

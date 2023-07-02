@@ -29385,10 +29385,10 @@
       "types": ["Fairy", "Fire"],
       "baseStats": {
         "hp": 90,
-        "atk": 99,
-        "def": 89,
+        "atk": 96,
+        "def": 87,
         "spa": 99,
-        "spd": 97,
+        "spd": 89,
         "spe": 55
       },
       "abilities": {"0": "Pixilate", "1": "Intimidate"},

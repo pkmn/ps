@@ -90,23 +90,15 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ 'Little Cup', 'Standard' ],
     banlist: [
-      'Basculin-White-Striped',
-      'Diglett-Base',
-      'Dunsparce',
-      'Flittle',
-      'Gastly',
-      'Girafarig',
-      'Meditite',
-      'Misdreavus',
-      'Murkrow',
-      'Qwilfish-Hisui',
-      'Rufflet',
-      'Scyther',
-      'Sneasel',
-      'Sneasel-Hisui',
-      'Stantler',
-      'Moody',
-      'Baton Pass'
+      'Basculin-White-Striped', 'Diglett-Base',
+      'Dunsparce',              'Flittle',
+      'Gastly',                 'Girafarig',
+      'Growlithe-Hisui',        'Meditite',
+      'Misdreavus',             'Murkrow',
+      'Qwilfish-Hisui',         'Rufflet',
+      'Scyther',                'Sneasel',
+      'Sneasel-Hisui',          'Stantler',
+      'Moody',                  'Baton Pass'
     ]
   },
   {
@@ -147,24 +139,25 @@ export const Formats: FormatList = [
       '!Sleep Clause Mod'
     ],
     banlist: [
-      'Arceus',         'Calyrex-Ice',
-      'Calyrex-Shadow', 'Chi-Yu',
-      'Cinderace',      'Dialga',
-      'Dialga-Origin',  'Dragonite',
-      'Eternatus',      'Flutter Mane',
-      'Giratina',       'Giratina-Origin',
-      'Groudon',        'Koraidon',
-      'Kyogre',         'Magearna',
-      'Mew',            'Mewtwo',
-      'Mimikyu',        'Miraidon',
-      'Palkia',         'Palkia-Origin',
-      'Rayquaza',       'Scream Tail',
-      'Zacian',         'Zacian-Crowned',
-      'Zamazenta',      'Zamazenta-Crowned',
-      'Moody',          'Focus Band',
-      'Focus Sash',     "King's Rock",
-      'Quick Claw',     'Acupressure',
-      'Perish Song'
+      'Arceus',            'Calyrex-Ice',
+      'Calyrex-Shadow',    'Chi-Yu',
+      'Cinderace',         'Dialga',
+      'Dialga-Origin',     'Dragonite',
+      'Eternatus',         'Flutter Mane',
+      'Gholdengo',         'Giratina',
+      'Giratina-Origin',   'Groudon',
+      'Hoopa-Unbound',     'Koraidon',
+      'Kyogre',            'Magearna',
+      'Meloetta',          'Mew',
+      'Mewtwo',            'Mimikyu',
+      'Miraidon',          'Palkia',
+      'Palkia-Origin',     'Rayquaza',
+      'Scream Tail',       'Zacian',
+      'Zacian-Crowned',    'Zamazenta',
+      'Zamazenta-Crowned', 'Moody',
+      'Focus Band',        'Focus Sash',
+      "King's Rock",       'Quick Claw',
+      'Acupressure',       'Perish Song'
     ]
   },
   {
@@ -202,25 +195,20 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] LC' ],
     banlist: [
-      'Bramblin',           'Crabrawler',
-      'Diglett-Alola',      'Drifloon',
-      'Fennekin',           'Foongus',
-      'Gimmighoul-Roaming', 'Glimmet',
-      'Gothita',            'Greavard',
-      'Grimer-Alola',       'Grookey',
-      'Growlithe-Hisui',    'Larvesta',
-      'Magnemite',          'Mareanie',
-      'Meowth-Base',        'Meowth-Alola',
-      'Mudbray',            'Numel',
-      'Nymble',             'Pawniard',
-      'Quaxly',             'Sandile',
-      'Shellder',           'Shroodle',
-      'Slowpoke-Galar',     'Stunky',
-      'Surskit',            'Tinkatink',
-      'Toedscool',          'Voltorb',
-      'Voltorb-Hisui',      'Wattrel',
-      'Wingull',            'Zorua',
-      'Zorua-Hisui'
+      'Bramblin',      'Crabrawler',
+      'Diglett-Alola', 'Drifloon',
+      'Foongus',       'Glimmet',
+      'Gothita',       'Grimer-Alola',
+      'Grookey',       'Larvesta',
+      'Magnemite',     'Mareanie',
+      'Mudbray',       'Nymble',
+      'Pawniard',      'Quaxly',
+      'Shellder',      'Shroodle',
+      'Slowpoke-Base', 'Stunky',
+      'Surskit',       'Tinkatink',
+      'Toedscool',     'Voltorb',
+      'Voltorb-Hisui', 'Wattrel',
+      'Wingull',       'Zorua-Hisui'
     ]
   },
   {
@@ -500,25 +488,26 @@ export const Formats: FormatList = [
       'Gravity Sleep Clause'
     ],
     banlist: [
-      'Arceus',             'Calyrex-Ice',
-      'Calyrex-Shadow',     'Dialga',
-      'Dialga-Origin',      'Eternatus',
-      'Genesect',           'Gengar-Mega',
-      'Giratina',           'Giratina-Origin',
-      'Groudon',            'Ho-Oh',
-      'Koraidon',           'Kyogre',
-      'Kyurem-White',       'Lugia',
-      'Lunala',             'Magearna',
-      'Melmetal',           'Mewtwo',
-      'Miraidon',           'Necrozma-Dawn-Wings',
-      'Necrozma-Dusk-Mane', 'Palkia',
-      'Palkia-Origin',      'Rayquaza',
-      'Reshiram',           'Shedinja',
-      'Solgaleo',           'Xerneas',
-      'Yveltal',            'Zacian',
-      'Zacian-Crowned',     'Zamazenta-Crowned',
-      'Zekrom',             'Commander',
-      'Power Construct',    'Swagger'
+      'Annihilape',          'Arceus',
+      'Calyrex-Ice',         'Calyrex-Shadow',
+      'Dialga',              'Dialga-Origin',
+      'Eternatus',           'Genesect',
+      'Gengar-Mega',         'Giratina',
+      'Giratina-Origin',     'Groudon',
+      'Ho-Oh',               'Koraidon',
+      'Kyogre',              'Kyurem-White',
+      'Lugia',               'Lunala',
+      'Magearna',            'Melmetal',
+      'Mewtwo',              'Miraidon',
+      'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
+      'Palkia',              'Palkia-Origin',
+      'Rayquaza',            'Reshiram',
+      'Shedinja',            'Solgaleo',
+      'Urshifu-Base',        'Xerneas',
+      'Yveltal',             'Zacian',
+      'Zacian-Crowned',      'Zamazenta-Crowned',
+      'Zekrom',              'Commander',
+      'Power Construct',     'Swagger'
     ]
   },
   {
@@ -562,10 +551,11 @@ export const Formats: FormatList = [
       'Poison Heal',      'Pure Power',
       'Shadow Tag',       'Stakeout',
       'Water Bubble',     'Wonder Guard',
-      'Belly Drum',       'Ceaseless Edge',
-      'Last Respects',    'Quiver Dance',
-      'Rage Fist',        'Revival Blessing',
-      'Shed Tail',        'Shell Smash'
+      'Baton Pass',       'Belly Drum',
+      'Ceaseless Edge',   'Last Respects',
+      'Quiver Dance',     'Rage Fist',
+      'Revival Blessing', 'Shed Tail',
+      'Shell Smash'
     ]
   },
   {
@@ -809,26 +799,25 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 8 BDSP] OU',
-    mod: 'gen8bdsp',
-    ruleset: [ 'Standard', 'Evasion Abilities Clause' ],
+    name: '[Gen 1] Stadium OU',
+    mod: 'gen1stadium',
+    ruleset: [ 'Standard', 'Team Preview' ],
     banlist: [
       'Uber',
-      'Arena Trap',
-      'Drizzle',
-      'Moody',
-      'Shadow Tag',
-      "King's Rock",
-      'Razor Fang',
-      'Baton Pass'
+      'Nidoking + Fury Attack + Thrash',
+      'Exeggutor + Poison Powder + Stomp',
+      'Exeggutor + Sleep Powder + Stomp',
+      'Exeggutor + Stun Spore + Stomp',
+      'Jolteon + Focus Energy + Thunder Shock',
+      'Flareon + Focus Energy + Ember'
     ]
   },
-  { name: '[Gen 1] Ubers', mod: 'gen1', ruleset: [ 'Standard' ] },
+  { name: '[Gen 2] Ubers', mod: 'gen2', ruleset: [ 'Standard' ] },
   {
-    name: '[Gen 7] UU',
-    mod: 'gen7',
-    ruleset: [ '[Gen 7] OU' ],
-    banlist: [ 'OU', 'UUBL', 'Drizzle', 'Drought', 'Kommonium Z', 'Mewnium Z' ]
+    name: '[Gen 8] UU',
+    mod: 'gen8',
+    ruleset: [ '[Gen 8] OU' ],
+    banlist: [ 'OU', 'UUBL', 'Light Clay' ]
   },
   {
     name: '[Gen 8] OU',
@@ -971,12 +960,6 @@ export const Formats: FormatList = [
     mod: 'gen8',
     ruleset: [ 'Standard', 'Dynamax Clause' ],
     banlist: [ 'AG', 'Shadow Tag', 'Baton Pass' ]
-  },
-  {
-    name: '[Gen 8] UU',
-    mod: 'gen8',
-    ruleset: [ '[Gen 8] OU' ],
-    banlist: [ 'OU', 'UUBL', 'Light Clay' ]
   },
   { name: '[Gen 8] RU', mod: 'gen8', ruleset: [ '[Gen 8] UU' ], banlist: [ 'UU', 'RUBL' ] },
   {
@@ -1144,6 +1127,21 @@ export const Formats: FormatList = [
     restricted: [ 'Restricted Legendary' ]
   },
   {
+    name: '[Gen 8 BDSP] OU',
+    mod: 'gen8bdsp',
+    ruleset: [ 'Standard', 'Evasion Abilities Clause' ],
+    banlist: [
+      'Uber',
+      'Arena Trap',
+      'Drizzle',
+      'Moody',
+      'Shadow Tag',
+      "King's Rock",
+      'Razor Fang',
+      'Baton Pass'
+    ]
+  },
+  {
     name: '[Gen 8] Custom Game',
     mod: 'gen8',
     debug: true,
@@ -1229,6 +1227,12 @@ export const Formats: FormatList = [
     mod: 'gen7',
     ruleset: [ 'Standard', 'Mega Rayquaza Clause' ],
     banlist: [ 'Baton Pass' ]
+  },
+  {
+    name: '[Gen 7] UU',
+    mod: 'gen7',
+    ruleset: [ '[Gen 7] OU' ],
+    banlist: [ 'OU', 'UUBL', 'Drizzle', 'Drought', 'Kommonium Z', 'Mewnium Z' ]
   },
   {
     name: '[Gen 7] RU',
@@ -1581,7 +1585,7 @@ export const Formats: FormatList = [
       'Focus Sash',       'Soul Dew',
       'Grass Whistle',    'Hypnosis',
       'Perish Song',      'Sing',
-      'Yawn'
+      'Sleep Powder',     'Yawn'
     ]
   },
   {
@@ -1599,7 +1603,7 @@ export const Formats: FormatList = [
     name: '[Gen 6] ZU',
     mod: 'gen6',
     ruleset: [ '[Gen 6] PU' ],
-    banlist: [ 'PU', 'Fraxure', 'Regigigas', 'Simisear' ]
+    banlist: [ 'PU', 'Fraxure', 'Purugly', 'Regigigas', 'Simisear' ]
   },
   {
     name: '[Gen 6] CAP',
@@ -2042,7 +2046,7 @@ export const Formats: FormatList = [
   {
     name: '[Gen 3] LC',
     mod: 'gen3',
-    ruleset: [ 'Standard', 'Little Cup' ],
+    ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause' ],
     banlist: [
       'Chansey',
       'Meditite',
@@ -2106,7 +2110,6 @@ export const Formats: FormatList = [
       'Default Level = 100'
     ]
   },
-  { name: '[Gen 2] Ubers', mod: 'gen2', ruleset: [ 'Standard' ] },
   {
     name: '[Gen 2] UU',
     mod: 'gen2',
@@ -2185,6 +2188,7 @@ export const Formats: FormatList = [
       'Default Level = 100'
     ]
   },
+  { name: '[Gen 1] Ubers', mod: 'gen1', ruleset: [ 'Standard' ] },
   {
     name: '[Gen 1] UU',
     mod: 'gen1',
@@ -2240,20 +2244,6 @@ export const Formats: FormatList = [
       'Nintendo Cup 1997 Move Legality'
     ],
     banlist: [ 'Uber' ]
-  },
-  {
-    name: '[Gen 1] Stadium OU',
-    mod: 'gen1stadium',
-    ruleset: [ 'Standard', 'Team Preview' ],
-    banlist: [
-      'Uber',
-      'Nidoking + Fury Attack + Thrash',
-      'Exeggutor + Poison Powder + Stomp',
-      'Exeggutor + Sleep Powder + Stomp',
-      'Exeggutor + Stun Spore + Stomp',
-      'Jolteon + Focus Energy + Thunder Shock',
-      'Flareon + Focus Energy + Ember'
-    ]
   },
   {
     name: '[Gen 1] Custom Game',

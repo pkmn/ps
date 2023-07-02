@@ -26,7 +26,7 @@ function getString(str: any): string {
 export interface FormatData {
   tier?: string;
   doublesTier?: string;
-  isNonstandard?: T.Nonstandard;
+  isNonstandard?: T.Nonstandard | null;
   inherit?: boolean;
 }
 
