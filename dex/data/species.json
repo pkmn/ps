@@ -5610,7 +5610,7 @@
         "spe": 55
       },
       "abilities": {"0": "Steadfast", "H": "Scrappy"},
-      "weightkg": 15,
+      "weightkg": 42,
       "evos": ["Sirfetch’d"],
       "eggGroups": ["Flying", "Field"]
     },
@@ -6798,7 +6798,7 @@
         "spe": 100
       },
       "abilities": {"0": "Intimidate", "1": "Anger Point", "H": "Cud Chew"},
-      "weightkg": 88.4,
+      "weightkg": 115,
       "eggGroups": ["Field"]
     },
     "taurospaldeablaze": {
@@ -6817,7 +6817,7 @@
         "spe": 100
       },
       "abilities": {"0": "Intimidate", "1": "Anger Point", "H": "Cud Chew"},
-      "weightkg": 88.4,
+      "weightkg": 85,
       "eggGroups": ["Field"]
     },
     "taurospaldeaaqua": {
@@ -6836,7 +6836,7 @@
         "spe": 100
       },
       "abilities": {"0": "Intimidate", "1": "Anger Point", "H": "Cud Chew"},
-      "weightkg": 88.4,
+      "weightkg": 110,
       "eggGroups": ["Field"]
     },
     "magikarp": {
@@ -8365,7 +8365,7 @@
         "spe": 15
       },
       "abilities": {"0": "Poison Point", "1": "Water Absorb", "H": "Unaware"},
-      "weightkg": 8.5,
+      "weightkg": 11,
       "evos": ["Clodsire"],
       "eggGroups": ["Water 1", "Field"]
     },
@@ -25888,7 +25888,7 @@
         "spe": 85
       },
       "abilities": {"0": "Poison Point", "1": "Swift Swim", "H": "Intimidate"},
-      "weightkg": 3.9,
+      "weightkg": 60.5,
       "prevo": "Qwilfish-Hisui",
       "evoType": "other",
       "evoCondition": "Use Strong style Barb Barrage 20 times",

@@ -98,7 +98,8 @@ export const Formats: FormatList = [
       'Qwilfish-Hisui',         'Rufflet',
       'Scyther',                'Sneasel',
       'Sneasel-Hisui',          'Stantler',
-      'Moody',                  'Baton Pass'
+      'Moody',                  'Baton Pass',
+      'Sticky Web',             'Tinkatink + Knock Off'
     ]
   },
   {
@@ -182,6 +183,7 @@ export const Formats: FormatList = [
       'Beartic',
       'Electrode',
       'Fraxure',
+      'Frogadier',
       'Girafarig',
       'Grumpig',
       'Leafeon',
@@ -326,23 +328,23 @@ export const Formats: FormatList = [
       'Evasion Items Clause'
     ],
     banlist: [
-      'Arceus',               'Calyrex-Ice',
-      'Calyrex-Shadow',       'Chi-Yu',
-      'Dialga',               'Dialga-Origin',
-      'Eternatus',            'Giratina',
-      'Giratina-Origin',      'Groudon',
-      'Koraidon',             'Kyogre',
-      'Magearna',             'Mewtwo',
-      'Miraidon',             'Palkia',
-      'Palkia-Origin',        'Rayquaza',
-      'Tornadus',             'Urshifu',
-      'Urshifu-Rapid-Strike', 'Zacian',
-      'Zacian-Crowned',       'Zamazenta',
-      'Zamazenta-Crowned',    'Commander',
-      'Moody',                'Focus Sash',
-      "King's Rock",          'Ally Switch',
-      'Final Gambit',         'Perish Song',
-      'Swagger'
+      'Arceus',          'Calyrex-Ice',
+      'Calyrex-Shadow',  'Chi-Yu',
+      'Dialga',          'Dialga-Origin',
+      'Eternatus',       'Giratina',
+      'Giratina-Origin', 'Groudon',
+      'Iron Hands',      'Koraidon',
+      'Kyogre',          'Magearna',
+      'Mewtwo',          'Miraidon',
+      'Palkia',          'Palkia-Origin',
+      'Rayquaza',        'Tornadus',
+      'Urshifu',         'Urshifu-Rapid-Strike',
+      'Zacian',          'Zacian-Crowned',
+      'Zamazenta',       'Zamazenta-Crowned',
+      'Commander',       'Moody',
+      'Focus Sash',      "King's Rock",
+      'Ally Switch',     'Final Gambit',
+      'Perish Song',     'Swagger'
     ]
   },
   {
@@ -445,33 +447,33 @@ export const Formats: FormatList = [
       'Sleep Clause Mod'
     ],
     banlist: [
-      'Annihilape',         'Arceus',         'Blastoise-Mega',
-      'Blaziken',           'Blaziken-Mega',  'Calyrex-Ice',
-      'Calyrex-Shadow',     'Chi-Yu',         'Chien-Pao',
-      'Darkrai',            'Deoxys-Base',    'Deoxys-Attack',
-      'Dialga',             'Dracovish',      'Dragapult',
-      'Espathra',           'Eternatus',      'Flutter Mane',
-      'Genesect',           'Gengar-Mega',    'Giratina',
-      'Giratina-Origin',    'Groudon',        'Ho-Oh',
-      'Hoopa-Unbound',      'Iron Bundle',    'Kangaskhan-Mega',
-      'Kartana',            'Kingambit',      'Koraidon',
-      'Kyogre',             'Kyurem-Black',   'Kyurem-White',
-      'Lucario-Mega',       'Lugia',          'Lunala',
-      'Magearna',           'Marshadow',      'Mawile-Mega',
-      'Medicham-Mega',      'Metagross-Mega', 'Mewtwo',
-      'Miraidon',           'Naganadel',      'Necrozma-Dawn-Wings',
-      'Necrozma-Dusk-Mane', 'Palafin',        'Palkia',
-      'Pheromosa',          'Rayquaza',       'Reshiram',
-      'Salamence-Mega',     'Shaymin-Sky',    'Solgaleo',
-      'Urshifu-Base',       'Xerneas',        'Yveltal',
-      'Zacian',             'Zacian-Crowned', 'Zamazenta',
-      'Zamazenta-Crowned',  'Zekrom',         'Zygarde-Base',
-      'Zygarde-Complete',   'Moody',          'Shadow Tag',
-      'Power Construct',    'Booster Energy', 'Damp Rock',
-      'Focus Band',         'Icy Rock',       "King's Rock",
-      'Leppa Berry',        'Quick Claw',     'Smooth Rock',
-      'Terrain Extender',   'Acupressure',    'Baton Pass',
-      'Last Respects'
+      'Annihilape',         'Arceus',           'Blastoise-Mega',
+      'Blaziken',           'Blaziken-Mega',    'Calyrex-Ice',
+      'Calyrex-Shadow',     'Chi-Yu',           'Chien-Pao',
+      'Darkrai',            'Deoxys-Base',      'Deoxys-Attack',
+      'Dialga',             'Dracovish',        'Dragapult',
+      'Espathra',           'Eternatus',        'Flutter Mane',
+      'Genesect',           'Gengar-Mega',      'Giratina',
+      'Giratina-Origin',    'Groudon',          'Ho-Oh',
+      'Hoopa-Unbound',      'Iron Bundle',      'Kangaskhan-Mega',
+      'Kartana',            'Kingambit',        'Koraidon',
+      'Kyogre',             'Kyurem-Black',     'Kyurem-White',
+      'Lucario-Mega',       'Lugia',            'Lunala',
+      'Magearna',           'Marshadow',        'Mawile-Mega',
+      'Medicham-Mega',      'Metagross-Mega',   'Mewtwo',
+      'Miraidon',           'Naganadel',        'Necrozma-Dawn-Wings',
+      'Necrozma-Dusk-Mane', 'Palafin',          'Palkia',
+      'Pheromosa',          'Rayquaza',         'Reshiram',
+      'Salamence-Mega',     'Shaymin-Sky',      'Solgaleo',
+      'Urshifu-Base',       'Xerneas',          'Yveltal',
+      'Zacian',             'Zacian-Crowned',   'Zamazenta',
+      'Zamazenta-Crowned',  'Zekrom',           'Zygarde-Base',
+      'Zygarde-Complete',   'Moody',            'Shadow Tag',
+      'Power Construct',    'Booster Energy',   'Damp Rock',
+      'Focus Band',         'Icy Rock',         "King's Rock",
+      'Leppa Berry',        'Quick Claw',       'Razor Fang',
+      'Smooth Rock',        'Terrain Extender', 'Acupressure',
+      'Baton Pass',         'Last Respects'
     ]
   },
   { name: '[Gen 9] National Dex AG', mod: 'gen9', ruleset: [ 'Standard NatDex' ] },
@@ -507,7 +509,8 @@ export const Formats: FormatList = [
       'Yveltal',             'Zacian',
       'Zacian-Crowned',      'Zamazenta-Crowned',
       'Zekrom',              'Commander',
-      'Power Construct',     'Swagger'
+      'Power Construct',     'Assist',
+      'Swagger'
     ]
   },
   {
@@ -2040,8 +2043,13 @@ export const Formats: FormatList = [
   {
     name: '[Gen 3] PU',
     mod: 'gen3',
-    ruleset: [ 'Standard' ],
-    banlist: [ 'Uber', 'OU', 'UUBL', 'UU', 'NUBL', 'NU' ]
+    ruleset: [ 'Standard', 'Baton Pass Clause' ],
+    banlist: [
+      'Uber', 'OU',
+      'UUBL', 'UU',
+      'NUBL', 'NU',
+      'PUBL'
+    ]
   },
   {
     name: '[Gen 3] LC',

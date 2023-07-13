@@ -242,7 +242,7 @@ const RANDOMS_IMPORTS = {
     [['MoveCounter', 'RandomGen8Teams', 'TeamData', 'OldRandomBattleSpecies'], './gen8'],
     [['Utils'], './utils'],
     [[
-      'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'StatID',
+      'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'StatID', 'Ability',
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'Move', 'StatsTable', 'SparseStatsTable',
     ], '@pkmn/sim'],
   ],
@@ -252,7 +252,7 @@ const RANDOMS_IMPORTS = {
     [['Utils'], './utils'],
     [[
       'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'Move',
-      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'StatID',
+      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'StatID', 'Ability',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen5/random-teams.ts': [
@@ -261,7 +261,7 @@ const RANDOMS_IMPORTS = {
     [['Utils'], './utils'],
     [[
       'Species', 'StatID', 'SparseStatsTable', 'RandomTeamsTypes', 'toID',
-      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Move',
+      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Move', 'Ability',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen4/random-teams.ts': [
@@ -270,7 +270,7 @@ const RANDOMS_IMPORTS = {
     [['Utils'], './utils'],
     [[
       'Species', 'RandomTeamsTypes', 'toID', 'SparseStatsTable', 'StatID',
-      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Move',
+      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Move', 'Ability',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen3/random-teams.ts': [
@@ -279,6 +279,7 @@ const RANDOMS_IMPORTS = {
     [['Utils'], './utils'],
     [[
       'ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes', 'Move', 'StatID',
+      'Ability',
     ], '@pkmn/sim'],
   ],
   'data/mods/gen2/random-teams.ts': [
