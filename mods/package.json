@@ -92,7 +92,7 @@
         "./build/gen8dlc1/index.d.ts"
       ]
     }
-  },
+},
   "publishConfig": {
     "access": "public"
   },
@@ -150,6 +150,7 @@
           ],
           "@typescript-eslint/no-unused-vars": "off",
           "@typescript-eslint/prefer-optional-chain": "off",
+          "@typescript-eslint/no-base-to-string": "off",
           "max-len": "off",
           "operator-linebreak": "off"
         }

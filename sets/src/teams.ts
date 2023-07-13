@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-parameter-properties */
+/* eslint-disable @typescript-eslint/parameter-properties */
 import {GenerationNum, ID, PokemonSet} from '@pkmn/types';
 
 import {Data, Sets, _import, _unpack} from './sets';
@@ -19,7 +19,7 @@ export class Team<S extends Partial<PokemonSet> = PokemonSet | Partial<PokemonSe
     this.folder = folder;
 
     this.data = data;
-    if (format && data && data.forGen) {
+    if (format && data?.forGen) {
       if (format.slice(0, 3) === 'gen') {
         this.data = data.forGen(parseInt(format[3]) as GenerationNum);
       } else {
