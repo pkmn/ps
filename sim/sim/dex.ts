@@ -3,7 +3,7 @@ import {Condition, DexConditions} from './dex-conditions';
 import {DataMove, DexMoves} from './dex-moves';
 import {Item, DexItems} from './dex-items';
 import {Ability, DexAbilities} from './dex-abilities';
-import {Species, DexSpecies, DexLearnsets} from './dex-species';
+import {Species, DexSpecies, DexLearnsets, PokemonGoData} from './dex-species';
 import {Format, DexFormats, RuleTable} from './dex-formats';
 import {
 	AbilityData,
@@ -42,6 +42,8 @@ import * as learn2 from '../data/mods/gen2/learnsets';
 import * as learn6 from '../data/mods/gen6/learnsets';
 import * as learn8 from '../data/mods/gen8/learnsets';
 import * as learn9 from '../data/learnsets';
+
+import * as pokemongo from '../data/pokemongo';
 
 import * as legality2 from '../data/mods/gen2/legality';
 import * as legality6 from '../data/mods/gen6/legality';
@@ -90,17 +92,17 @@ const dexData = {
 	gen1, gen2: {...gen2, ...merge(learn2, legality2)}, gen3,
 	gen4, gen5, gen6: {...gen6, ...merge(learn6, legality6)},
 	gen7, gen8: {...gen8, ...merge(learn8, legality8)},
-	gen9: {...gen9, ...formats9, ...merge(learn9, legality9)},
+	gen9: {...gen9, ...formats9, ...pokemongo, ...merge(learn9, legality9)},
 };
 
 const dexes: {[mod: string]: ModdedDex} = Object.create(null);
 
 type DataType =
 	'Abilities' | 'Rulesets' | 'FormatsData' | 'Items' | 'Learnsets' | 'Moves' |
-	'Natures' | 'Pokedex' | 'Scripts' | 'Conditions' | 'TypeChart';
+	'Natures' | 'Pokedex' | 'Scripts' | 'Conditions' | 'TypeChart' | 'PokemonGoData';
 const DATA_TYPES: (DataType | 'Aliases')[] = [
 	'Abilities', 'Rulesets', 'FormatsData', 'Items', 'Learnsets', 'Moves',
-	'Natures', 'Pokedex', 'Scripts', 'Conditions', 'TypeChart',
+	'Natures', 'Pokedex', 'Scripts', 'Conditions', 'TypeChart', 'PokemonGoData',
 ];
 
 interface DexTable<T> {
@@ -117,6 +119,7 @@ interface DexTableData {
 	Moves: DexTable<MoveData>;
 	Natures: DexTable<NatureData>;
 	Pokedex: DexTable<SpeciesData>;
+	PokemonGoData: DexTable<PokemonGoData>;
 	TypeChart: DexTable<TypeData>;
 
 	Aliases: {[id: string]: string};

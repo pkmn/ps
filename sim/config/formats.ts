@@ -197,18 +197,18 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] LC' ],
     banlist: [
-      'Bramblin',      'Crabrawler',
-      'Diglett-Alola', 'Drifloon',
-      'Foongus',       'Glimmet',
-      'Gothita',       'Grimer-Alola',
-      'Grookey',       'Larvesta',
-      'Magnemite',     'Mareanie',
-      'Mudbray',       'Nymble',
-      'Pawniard',      'Quaxly',
-      'Shellder',      'Shroodle',
-      'Slowpoke-Base', 'Stunky',
-      'Surskit',       'Tinkatink',
-      'Toedscool',     'Voltorb',
+      'Crabrawler',    'Diglett-Alola',
+      'Drifloon',      'Foongus',
+      'Glimmet',       'Gothita',
+      'Grimer-Alola',  'Grookey',
+      'Larvesta',      'Magnemite',
+      'Mareanie',      'Meowth-Base',
+      'Mudbray',       'Numel',
+      'Nymble',        'Pawniard',
+      'Quaxly',        'Shellder',
+      'Shellos',       'Shroodle',
+      'Stunky',        'Surskit',
+      'Tinkatink',     'Toedscool',
       'Voltorb-Hisui', 'Wattrel',
       'Wingull',       'Zorua-Hisui'
     ]
@@ -261,12 +261,6 @@ export const Formats: FormatList = [
     banlist: [ 'Walking Wake', 'Iron Leaves' ]
   },
   {
-    name: '[Gen 9] Freedom Cup',
-    mod: 'gen9',
-    ruleset: [ 'Flat Rules', '!Picked Team Size', '!! Adjust Level = 50', 'Min Source Gen = 9' ],
-    banlist: [ 'Walking Wake', 'Iron Leaves' ]
-  },
-  {
     name: '[Gen 9] Custom Game',
     mod: 'gen9',
     debug: true,
@@ -312,7 +306,16 @@ export const Formats: FormatList = [
     mod: 'gen9',
     gameType: 'doubles',
     ruleset: [ 'Standard Doubles', 'Little Cup', 'Sleep Clause Mod' ],
-    banlist: [ 'Dunsparce', 'Murkrow', 'Qwilfish-Hisui', 'Scyther', 'Sneasel', 'Sneasel-Hisui' ]
+    banlist: [
+      'Basculin-White-Striped',
+      'Dunsparce',
+      'Murkrow',
+      'Qwilfish-Hisui',
+      'Scyther',
+      'Sneasel',
+      'Sneasel-Hisui',
+      'Tinkatink + Knock Off'
+    ]
   },
   {
     name: '[Gen 9] 2v2 Doubles',
@@ -426,13 +429,13 @@ export const Formats: FormatList = [
     name: '[Gen 9] National Dex UU',
     mod: 'gen9',
     ruleset: [ '[Gen 9] National Dex' ],
-    banlist: [ 'ND OU', 'ND UUBL', 'Battle Bond' ]
+    banlist: [ 'ND OU', 'ND UUBL', 'Battle Bond', 'Drizzle', 'Drought' ]
   },
   {
     name: '[Gen 9] National Dex RU',
     mod: 'gen9',
     ruleset: [ '[Gen 9] National Dex UU' ],
-    banlist: [ 'ND UU', 'ND RUBL', 'Drizzle', 'Heat Rock', 'Light Clay' ]
+    banlist: [ 'ND UU', 'ND RUBL', 'Heat Rock', 'Light Clay' ]
   },
   {
     name: '[Gen 9] National Dex Monotype',
@@ -447,33 +450,33 @@ export const Formats: FormatList = [
       'Sleep Clause Mod'
     ],
     banlist: [
-      'Annihilape',         'Arceus',           'Blastoise-Mega',
-      'Blaziken',           'Blaziken-Mega',    'Calyrex-Ice',
-      'Calyrex-Shadow',     'Chi-Yu',           'Chien-Pao',
-      'Darkrai',            'Deoxys-Base',      'Deoxys-Attack',
-      'Dialga',             'Dracovish',        'Dragapult',
-      'Espathra',           'Eternatus',        'Flutter Mane',
-      'Genesect',           'Gengar-Mega',      'Giratina',
-      'Giratina-Origin',    'Groudon',          'Ho-Oh',
-      'Hoopa-Unbound',      'Iron Bundle',      'Kangaskhan-Mega',
-      'Kartana',            'Kingambit',        'Koraidon',
-      'Kyogre',             'Kyurem-Black',     'Kyurem-White',
-      'Lucario-Mega',       'Lugia',            'Lunala',
-      'Magearna',           'Marshadow',        'Mawile-Mega',
-      'Medicham-Mega',      'Metagross-Mega',   'Mewtwo',
-      'Miraidon',           'Naganadel',        'Necrozma-Dawn-Wings',
-      'Necrozma-Dusk-Mane', 'Palafin',          'Palkia',
-      'Pheromosa',          'Rayquaza',         'Reshiram',
-      'Salamence-Mega',     'Shaymin-Sky',      'Solgaleo',
-      'Urshifu-Base',       'Xerneas',          'Yveltal',
-      'Zacian',             'Zacian-Crowned',   'Zamazenta',
-      'Zamazenta-Crowned',  'Zekrom',           'Zygarde-Base',
-      'Zygarde-Complete',   'Moody',            'Shadow Tag',
-      'Power Construct',    'Booster Energy',   'Damp Rock',
-      'Focus Band',         'Icy Rock',         "King's Rock",
-      'Leppa Berry',        'Quick Claw',       'Razor Fang',
-      'Smooth Rock',        'Terrain Extender', 'Acupressure',
-      'Baton Pass',         'Last Respects'
+      'Annihilape',         'Arceus',            'Blastoise-Mega',
+      'Blaziken',           'Blaziken-Mega',     'Calyrex-Ice',
+      'Calyrex-Shadow',     'Chi-Yu',            'Chien-Pao',
+      'Darkrai',            'Deoxys-Base',       'Deoxys-Attack',
+      'Dialga',             'Dracovish',         'Dragapult',
+      'Espathra',           'Eternatus',         'Flutter Mane',
+      'Genesect',           'Gengar-Mega',       'Giratina',
+      'Giratina-Origin',    'Groudon',           'Ho-Oh',
+      'Hoopa-Unbound',      'Iron Bundle',       'Kangaskhan-Mega',
+      'Kartana',            'Kingambit',         'Koraidon',
+      'Kyogre',             'Kyurem-Black',      'Kyurem-White',
+      'Lucario-Mega',       'Lugia',             'Lunala',
+      'Magearna',           'Marshadow',         'Mawile-Mega',
+      'Medicham-Mega',      'Metagross-Mega',    'Mewtwo',
+      'Miraidon',           'Naganadel',         'Necrozma-Dawn-Wings',
+      'Necrozma-Dusk-Mane', 'Palafin',           'Palkia',
+      'Pheromosa',          'Rayquaza',          'Reshiram',
+      'Salamence-Mega',     'Shaymin-Sky',       'Solgaleo',
+      'Spectrier',          'Urshifu-Base',      'Xerneas',
+      'Yveltal',            'Zacian',            'Zacian-Crowned',
+      'Zamazenta',          'Zamazenta-Crowned', 'Zekrom',
+      'Zygarde-Base',       'Zygarde-Complete',  'Moody',
+      'Shadow Tag',         'Power Construct',   'Booster Energy',
+      'Damp Rock',          'Focus Band',        'Icy Rock',
+      "King's Rock",        'Leppa Berry',       'Quick Claw',
+      'Razor Fang',         'Smooth Rock',       'Terrain Extender',
+      'Acupressure',        'Baton Pass',        'Last Respects'
     ]
   },
   { name: '[Gen 9] National Dex AG', mod: 'gen9', ruleset: [ 'Standard NatDex' ] },
@@ -532,6 +535,38 @@ export const Formats: FormatList = [
     name: '[Gen 9] Balanced Hackmons',
     mod: 'gen9',
     ruleset: [
+      'OHKO Clause',
+      'Evasion Clause',
+      'Species Clause',
+      'Team Preview',
+      'HP Percentage Mod',
+      'Cancel Mod',
+      'Sleep Moves Clause',
+      'Endless Battle Clause',
+      'Hackmons Forme Legality',
+      'Species Reveal Clause',
+      'Terastal Clause'
+    ],
+    banlist: [
+      'Calyrex-Shadow',   'Groudon-Primal',   'Rayquaza-Mega',
+      'Regigigas',        'Shedinja',         'Slaking',
+      'Arena Trap',       'Comatose',         'Contrary',
+      'Gorilla Tactics',  'Hadron Engine',    'Huge Power',
+      'Illusion',         'Innards Out',      'Magnet Pull',
+      'Moody',            'Neutralizing Gas', 'Orichalcum Pulse',
+      'Parental Bond',    'Poison Heal',      'Pure Power',
+      'Shadow Tag',       'Stakeout',         'Water Bubble',
+      'Wonder Guard',     'Baton Pass',       'Belly Drum',
+      'Ceaseless Edge',   'Dire Claw',        'Imprison',
+      'Last Respects',    'Quiver Dance',     'Rage Fist',
+      'Revival Blessing', 'Shed Tail',        'Substitute',
+      'Shell Smash'
+    ]
+  },
+  {
+    name: '[Gen 9] Pre-Full Dex BH',
+    mod: 'gen9',
+    ruleset: [
       '-Nonexistent',
       'OHKO Clause',
       'Evasion Clause',
@@ -540,35 +575,37 @@ export const Formats: FormatList = [
       'HP Percentage Mod',
       'Cancel Mod',
       'Sleep Moves Clause',
-      'Endless Battle Clause'
+      'Endless Battle Clause',
+      'Terastal Clause'
     ],
     banlist: [
-      'Calyrex-Shadow',   'Miraidon',
-      'Slaking',          'Zacian-Crowned',
-      'Arena Trap',       'Comatose',
-      'Contrary',         'Gorilla Tactics',
-      'Huge Power',       'Illusion',
-      'Innards Out',      'Magnet Pull',
-      'Moody',            'Neutralizing Gas',
-      'Orichalcum Pulse', 'Parental Bond',
-      'Poison Heal',      'Pure Power',
-      'Shadow Tag',       'Stakeout',
-      'Water Bubble',     'Wonder Guard',
-      'Baton Pass',       'Belly Drum',
-      'Ceaseless Edge',   'Last Respects',
+      'Calyrex-Shadow',   'Slaking',
+      'Zacian-Crowned',   'Arena Trap',
+      'Comatose',         'Contrary',
+      'Hadron Engine',    'Huge Power',
+      'Illusion',         'Innards Out',
+      'Magnet Pull',      'Moody',
+      'Neutralizing Gas', 'Orichalcum Pulse',
+      'Parental Bond',    'Poison Heal',
+      'Pure Power',       'Shadow Tag',
+      'Stakeout',         'Water Bubble',
+      'Wonder Guard',     'Baton Pass',
+      'Belly Drum',       'Ceaseless Edge',
+      'Imprison',         'Last Respects',
       'Quiver Dance',     'Rage Fist',
       'Revival Blessing', 'Shed Tail',
-      'Shell Smash'
+      'Substitute',       'Shell Smash'
     ]
   },
   {
     name: '[Gen 9] Pure Hackmons',
     mod: 'gen9',
     ruleset: [
-      '-Nonexistent',
       'Team Preview',
       'HP Percentage Mod',
       'Cancel Mod',
+      'Hackmons Forme Legality',
+      'Species Reveal Clause',
       'Endless Battle Clause'
     ]
   },
@@ -613,7 +650,21 @@ export const Formats: FormatList = [
     mod: 'gen9',
     team: 'randomHC',
     ruleset: [ 'HP Percentage Mod', 'Cancel Mod' ],
-    banlist: [ 'Nonexistent' ]
+    banlist: [
+      'CAP',                 'LGPE',
+      'MissingNo.',          'Pikachu-Cosplay',
+      'Pichu-Spiky-eared',   'Pokestar Smeargle',
+      'Pokestar UFO',        'Pokestar UFO-2',
+      'Pokestar Brycen-Man', 'Pokestar MT',
+      'Pokestar MT2',        'Pokestar Transport',
+      'Pokestar Giant',      'Pokestar Humanoid',
+      'Pokestar Monster',    'Pokestar F-00',
+      'Pokestar F-002',      'Pokestar Spirit',
+      'Pokestar Black Door', 'Pokestar White Door',
+      'Pokestar Black Belt', 'Pokestar UFO-PropU2',
+      'Xerneas-Base'
+    ],
+    unbanlist: [ 'All Pokemon' ]
   },
   {
     name: '[Gen 9] Doubles Hackmons Cup',
@@ -802,25 +853,43 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 1] Stadium OU',
-    mod: 'gen1stadium',
-    ruleset: [ 'Standard', 'Team Preview' ],
+    name: '[Gen 3] Ubers',
+    mod: 'gen3',
+    ruleset: [ 'Standard', 'Deoxys Camouflage Clause', 'One Baton Pass Clause' ],
+    banlist: [ 'Wobbuffet + Leftovers' ]
+  },
+  {
+    name: '[Gen 3] LC',
+    mod: 'gen3',
+    ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause' ],
     banlist: [
-      'Uber',
-      'Nidoking + Fury Attack + Thrash',
-      'Exeggutor + Poison Powder + Stomp',
-      'Exeggutor + Sleep Powder + Stomp',
-      'Exeggutor + Stun Spore + Stomp',
-      'Jolteon + Focus Energy + Thunder Shock',
-      'Flareon + Focus Energy + Ember'
+      'Chansey',
+      'Meditite',
+      'Omanyte',
+      'Scyther',
+      'Wynaut',
+      'Zigzagoon',
+      'Baton Pass',
+      'Dragon Rage',
+      'Sonic Boom'
     ]
   },
-  { name: '[Gen 2] Ubers', mod: 'gen2', ruleset: [ 'Standard' ] },
   {
-    name: '[Gen 8] UU',
-    mod: 'gen8',
-    ruleset: [ '[Gen 8] OU' ],
-    banlist: [ 'OU', 'UUBL', 'Light Clay' ]
+    name: "[Gen 7 Let's Go] OU",
+    mod: 'gen7letsgo',
+    ruleset: [
+      'Adjust Level = 50',
+      'Obtainable',
+      'Species Clause',
+      'Nickname Clause',
+      'OHKO Clause',
+      'Evasion Moves Clause',
+      'Team Preview',
+      'HP Percentage Mod',
+      'Cancel Mod',
+      'Sleep Clause Mod'
+    ],
+    banlist: [ 'Uber' ]
   },
   {
     name: '[Gen 8] OU',
@@ -887,6 +956,7 @@ export const Formats: FormatList = [
       'Swinub + Snow Cloak',
       'Piloswine + Snow Cloak',
       'Mamoswine + Snow Cloak',
+      'Quick Claw',
       'Soul Dew',
       'Baton Pass',
       'Swagger'
@@ -963,6 +1033,12 @@ export const Formats: FormatList = [
     mod: 'gen8',
     ruleset: [ 'Standard', 'Dynamax Clause' ],
     banlist: [ 'AG', 'Shadow Tag', 'Baton Pass' ]
+  },
+  {
+    name: '[Gen 8] UU',
+    mod: 'gen8',
+    ruleset: [ '[Gen 8] OU' ],
+    banlist: [ 'OU', 'UUBL', 'Light Clay' ]
   },
   { name: '[Gen 8] RU', mod: 'gen8', ruleset: [ '[Gen 8] UU' ], banlist: [ 'UU', 'RUBL' ] },
   {
@@ -1366,23 +1442,6 @@ export const Formats: FormatList = [
     mod: 'gen7',
     ruleset: [ 'Flat Rules', 'Min Source Gen = 6' ],
     banlist: [ 'Battle Bond' ]
-  },
-  {
-    name: "[Gen 7 Let's Go] OU",
-    mod: 'gen7letsgo',
-    ruleset: [
-      'Adjust Level = 50',
-      'Obtainable',
-      'Species Clause',
-      'Nickname Clause',
-      'OHKO Clause',
-      'Evasion Moves Clause',
-      'Team Preview',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Sleep Clause Mod'
-    ],
-    banlist: [ 'Uber' ]
   },
   {
     name: '[Gen 7] Custom Game',
@@ -1884,7 +1943,7 @@ export const Formats: FormatList = [
     mod: 'gen4',
     ruleset: [ '[Gen 4] OU', '!Freeze Clause Mod' ],
     banlist: [ 'OU', 'UUBL' ],
-    unbanlist: [ 'Arena Trap', 'Swagger' ]
+    unbanlist: [ 'Arena Trap', 'Quick Claw', 'Swagger' ]
   },
   {
     name: '[Gen 4] NU',
@@ -2023,12 +2082,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 3] Ubers',
-    mod: 'gen3',
-    ruleset: [ 'Standard', 'Deoxys Camouflage Clause', 'One Baton Pass Clause' ],
-    banlist: [ 'Wobbuffet + Leftovers' ]
-  },
-  {
     name: '[Gen 3] UU',
     mod: 'gen3',
     ruleset: [ 'Standard' ],
@@ -2049,22 +2102,6 @@ export const Formats: FormatList = [
       'UUBL', 'UU',
       'NUBL', 'NU',
       'PUBL'
-    ]
-  },
-  {
-    name: '[Gen 3] LC',
-    mod: 'gen3',
-    ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause' ],
-    banlist: [
-      'Chansey',
-      'Meditite',
-      'Omanyte',
-      'Scyther',
-      'Wynaut',
-      'Zigzagoon',
-      'Agility + Baton Pass',
-      'Dragon Rage',
-      'Sonic Boom'
     ]
   },
   {
@@ -2118,6 +2155,7 @@ export const Formats: FormatList = [
       'Default Level = 100'
     ]
   },
+  { name: '[Gen 2] Ubers', mod: 'gen2', ruleset: [ 'Standard' ] },
   {
     name: '[Gen 2] UU',
     mod: 'gen2',
@@ -2228,6 +2266,20 @@ export const Formats: FormatList = [
     mod: 'gen1jpn',
     ruleset: [ 'Standard' ],
     banlist: [ 'Uber' ]
+  },
+  {
+    name: '[Gen 1] Stadium OU',
+    mod: 'gen1stadium',
+    ruleset: [ 'Standard', 'Team Preview' ],
+    banlist: [
+      'Uber',
+      'Nidoking + Fury Attack + Thrash',
+      'Exeggutor + Poison Powder + Stomp',
+      'Exeggutor + Sleep Powder + Stomp',
+      'Exeggutor + Stun Spore + Stomp',
+      'Jolteon + Focus Energy + Thunder Shock',
+      'Flareon + Focus Energy + Ember'
+    ]
   },
   {
     name: '[Gen 1] Tradebacks OU',

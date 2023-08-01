@@ -168,6 +168,7 @@ export type ModdedSpeciesFormatsData = import('./dex-species').ModdedSpeciesForm
 export type LearnsetData = import('./dex-species').LearnsetData;
 export type ModdedLearnsetData = import('./dex-species').ModdedLearnsetData;
 export type Species = import('./dex-species').Species;
+export type PokemonGoData = import('./dex-species').PokemonGoData;
 
 export type FormatData = import('./dex-formats').FormatData;
 export type FormatList = import('./dex-formats').FormatList;
@@ -214,7 +215,7 @@ export interface BattleScriptsData {
 export interface ModdedBattleActions {
 	inherit?: true;
 	afterMoveSecondaryEvent?: (this: BattleActions, targets: Pokemon[], pokemon: Pokemon, move: ActiveMove) => undefined;
-	calcRecoilDamage?: (this: BattleActions, damageDealt: number, move: Move) => number;
+	calcRecoilDamage?: (this: BattleActions, damageDealt: number, move: Move, pokemon: Pokemon) => number;
 	canMegaEvo?: (this: BattleActions, pokemon: Pokemon) => string | undefined | null;
 	canUltraBurst?: (this: BattleActions, pokemon: Pokemon) => string | null;
 	canZMove?: (this: BattleActions, pokemon: Pokemon) => ZMoveOptions | void;

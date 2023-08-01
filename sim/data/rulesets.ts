@@ -1257,4 +1257,59 @@ export const Rulesets: {[k: string]: FormatData} = {
 		desc: "Bans move combinations on Pok\u00e9mon that weren't legal in Nintendo Cup 1997.",
 		// Implemented in mods/gen1jpn/rulesets.ts
 	},
+	hackmonsformelegality: {
+		effectType: 'ValidatorRule',
+		name: "Hackmons Forme Legality",
+		desc: `Enforces proper forme legality for hackmons-based metagames.`,
+		unbanlist: ['All Pokemon'],
+		banlist: ['CAP', 'LGPE', 'Future'],
+		onChangeSet(set, format, setHas, teamHas) {
+			let species = this.dex.species.get(set.species);
+			if (
+				(species.natDexTier === 'Illegal' || species.forme.includes('Totem')) &&
+				!['Floette-Eternal', 'Greninja-Ash', 'Xerneas-Neutral'].includes(species.name) &&
+				!this.ruleTable.has(`+pokemon:${species.id}`)
+			) {
+				return [`${species.name} is illegal.`];
+			}
+			const problemPokemon = this.dex.species.all().filter(s => (
+				(s.name === 'Xerneas' || s.battleOnly || s.forme === 'Eternamax') &&
+					!(s.isMega || s.isPrimal || ['Greninja-Ash', 'Necrozma-Ultra'].includes(s.name)) &&
+					!(this.ruleTable.has(`+pokemon:${s.id}`) || this.ruleTable.has(`+basepokemon:${this.toID(s.baseSpecies)}`))
+			));
+			if (problemPokemon.includes(species)) {
+				if (species.requiredItem && this.toID(set.item) !== this.toID(species.requiredItem)) {
+					return [`${set.name ? `${set.name} (${species.name})` : species.name} is required to hold ${species.requiredItem}.`];
+				}
+				if (species.requiredMove && !set.moves.map(this.toID).includes(this.toID(species.requiredMove))) {
+					return [`${set.name ? `${set.name} (${species.name})` : species.name} is required to have ${species.requiredMove}.`];
+				}
+				set.species = (species.id === 'xerneas' ? 'Xerneas-Neutral' :
+					species.id === 'zygardecomplete' ? 'Zygarde' : species.battleOnly) as string;
+				species = this.dex.species.get(set.species);
+			}
+			for (const moveid of set.moves) {
+				const move = this.dex.moves.get(moveid);
+				if (move.isNonstandard && move.isNonstandard !== 'Unobtainable' && !this.ruleTable.has(`+move:${move.id}`)) {
+					return [`${move.name} is illegal.`];
+				}
+			}
+			const item = this.dex.items.get(set.item);
+			if (item.isNonstandard && item.isNonstandard !== 'Unobtainable' && !this.ruleTable.has(`+item:${item.id}`)) {
+				return [`${item.name} is illegal.`];
+			}
+			if (species.baseSpecies === 'Xerneas' && this.toID(set.ability) !== 'fairyaura') {
+				return [`${set.name ? `${set.name} (${species.name})` : species.name} is ability-locked into Fairy Aura.`];
+			}
+		},
+	},
+	speciesrevealclause: {
+		effectType: 'Rule',
+		name: 'Species Reveal Clause',
+		desc: "Reveals a Pok&eacute;mon's true species in hackmons-based metagames.",
+		// Hardcoded into effect, cannot be disabled, ties into team preview
+		onBegin() {
+			this.add('rule', 'Species Reveal Clause: Reveals a Pok\u00e9mon\'s true species in hackmons-based metagames.');
+		},
+	},
 };

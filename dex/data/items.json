@@ -1146,6 +1146,7 @@
   "9": {
     "abilityshield": {
       "name": "Ability Shield",
+      "fling": {"basePower": 30},
       "ignoreKlutz": true,
       "num": 1881,
       "gen": 9,
@@ -1325,6 +1326,7 @@
     },
     "auspiciousarmor": {
       "name": "Auspicious Armor",
+      "fling": {"basePower": 30},
       "num": 2344,
       "gen": 9,
       "desc": "Evolves Charcadet into Armarouge when used."
@@ -1477,6 +1479,7 @@
     },
     "boosterenergy": {
       "name": "Booster Energy",
+      "fling": {"basePower": 30},
       "num": 1880,
       "gen": 9,
       "desc": "Activates the Protosynthesis or Quark Drive Abilities. Single use."
@@ -1683,6 +1686,7 @@
     },
     "clearamulet": {
       "name": "Clear Amulet",
+      "fling": {"basePower": 30},
       "num": 1882,
       "gen": 9,
       "desc": "Prevents other Pokemon from lowering the holder's stat stages."
@@ -1731,7 +1735,7 @@
     },
     "covertcloak": {
       "name": "Covert Cloak",
-      "fling": {"basePower": 10},
+      "fling": {"basePower": 30},
       "num": 1885,
       "gen": 9,
       "desc": "Holder is not affected by the secondary effect of another Pokemon's attack."
@@ -2960,6 +2964,7 @@
     },
     "loadeddice": {
       "name": "Loaded Dice",
+      "fling": {"basePower": 30},
       "num": 1886,
       "gen": 9,
       "desc": "Holder's moves that hit 2-5 times hit 4-5 times; Population Bomb hits 4-10 times."
@@ -3131,6 +3136,7 @@
     },
     "maliciousarmor": {
       "name": "Malicious Armor",
+      "fling": {"basePower": 30},
       "num": 1861,
       "gen": 9,
       "desc": "Evolves Charcadet into Ceruledge when used."
@@ -3321,7 +3327,7 @@
     },
     "mirrorherb": {
       "name": "Mirror Herb",
-      "fling": {"basePower": 10},
+      "fling": {"basePower": 30},
       "num": 1883,
       "gen": 9,
       "desc": "When an opposing Pokemon raises a stat stage, the holder copies it. Single use."
@@ -3789,6 +3795,7 @@
     },
     "punchingglove": {
       "name": "Punching Glove",
+      "fling": {"basePower": 30},
       "onBasePowerPriority": 23,
       "onModifyMovePriority": 1,
       "num": 1884,
