@@ -99,7 +99,7 @@ export const Formats: FormatList = [
       'Scyther',                'Sneasel',
       'Sneasel-Hisui',          'Stantler',
       'Moody',                  'Baton Pass',
-      'Sticky Web',             'Tinkatink + Knock Off'
+      'Sticky Web'
     ]
   },
   {
@@ -126,6 +126,11 @@ export const Formats: FormatList = [
       'Acupressure',       'Baton Pass',
       'Last Respects'
     ]
+  },
+  {
+    name: '[Gen 9] Monothreat Water',
+    mod: 'gen9',
+    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Water' ]
   },
   {
     name: '[Gen 9] 1v1',
@@ -185,10 +190,13 @@ export const Formats: FormatList = [
       'Fraxure',
       'Frogadier',
       'Girafarig',
+      'Glaceon',
+      'Golduck',
       'Grumpig',
       'Leafeon',
       'Qwilfish-Hisui',
       'Sneasel-Hisui',
+      'Squawkabilly',
       'Vigoroth'
     ]
   },
@@ -313,8 +321,7 @@ export const Formats: FormatList = [
       'Qwilfish-Hisui',
       'Scyther',
       'Sneasel',
-      'Sneasel-Hisui',
-      'Tinkatink + Knock Off'
+      'Sneasel-Hisui'
     ]
   },
   {
@@ -479,7 +486,6 @@ export const Formats: FormatList = [
       'Acupressure',        'Baton Pass',        'Last Respects'
     ]
   },
-  { name: '[Gen 9] National Dex AG', mod: 'gen9', ruleset: [ 'Standard NatDex' ] },
   {
     name: '[Gen 9] National Dex Doubles',
     mod: 'gen9',
@@ -513,7 +519,76 @@ export const Formats: FormatList = [
       'Zacian-Crowned',      'Zamazenta-Crowned',
       'Zekrom',              'Commander',
       'Power Construct',     'Assist',
-      'Swagger'
+      'Dark Void',           'Swagger'
+    ]
+  },
+  { name: '[Gen 9] National Dex AG', mod: 'gen9', ruleset: [ 'Standard NatDex' ] },
+  {
+    name: '[Gen 8] National Dex',
+    mod: 'gen8',
+    ruleset: [
+      'Standard NatDex',
+      'OHKO Clause',
+      'Evasion Clause',
+      'Species Clause',
+      'Dynamax Clause',
+      'Sleep Clause Mod'
+    ],
+    banlist: [
+      'ND Uber',
+      'Arena Trap',
+      'Moody',
+      'Power Construct',
+      'Shadow Tag',
+      "King's Rock",
+      'Razor Fang',
+      'Quick Claw',
+      'Baton Pass'
+    ]
+  },
+  {
+    name: '[Gen 8] National Dex UU',
+    mod: 'gen8',
+    ruleset: [ '[Gen 8] National Dex' ],
+    banlist: [ 'ND OU', 'ND UUBL', 'Drizzle', 'Drought', 'Light Clay', 'Slowbronite' ]
+  },
+  {
+    name: '[Gen 8] National Dex Monotype',
+    mod: 'gen8',
+    ruleset: [
+      'Standard NatDex',
+      'Same Type Clause',
+      'Species Clause',
+      'OHKO Clause',
+      'Evasion Moves Clause',
+      'Evasion Items Clause',
+      'Dynamax Clause',
+      'Sleep Clause Mod'
+    ],
+    banlist: [
+      'Arceus',          'Blastoise-Mega',      'Blaziken',
+      'Blaziken-Mega',   'Calyrex-Ice',         'Calyrex-Shadow',
+      'Darkrai',         'Deoxys-Base',         'Deoxys-Attack',
+      'Dialga',          'Dracovish',           'Dragapult',
+      'Eternatus',       'Genesect',            'Gengar-Mega',
+      'Giratina',        'Giratina-Origin',     'Greninja-Bond',
+      'Greninja-Ash',    'Groudon',             'Ho-Oh',
+      'Kangaskhan-Mega', 'Kartana',             'Kyogre',
+      'Kyurem-Black',    'Kyurem-White',        'Lucario-Mega',
+      'Lugia',           'Lunala',              'Magearna',
+      'Marshadow',       'Mawile-Mega',         'Medicham-Mega',
+      'Metagross-Mega',  'Mewtwo',              'Moltres-Galar',
+      'Naganadel',       'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
+      'Palkia',          'Pheromosa',           'Rayquaza',
+      'Reshiram',        'Salamence-Mega',      'Shaymin-Sky',
+      'Solgaleo',        'Spectrier',           'Urshifu-Base',
+      'Xerneas',         'Yveltal',             'Zacian',
+      'Zacian-Crowned',  'Zamazenta',           'Zamazenta-Crowned',
+      'Zekrom',          'Zygarde-Base',        'Zygarde-Complete',
+      'Battle Bond',     'Power Construct',     'Moody',
+      'Shadow Tag',      'Damp Rock',           'Focus Band',
+      "King's Rock",     'Quick Claw',          'Razor Fang',
+      'Smooth Rock',     'Terrain Extender',    'Baton Pass'
     ]
   },
   {
@@ -548,19 +623,19 @@ export const Formats: FormatList = [
       'Terastal Clause'
     ],
     banlist: [
-      'Calyrex-Shadow',   'Groudon-Primal',   'Rayquaza-Mega',
-      'Regigigas',        'Shedinja',         'Slaking',
-      'Arena Trap',       'Comatose',         'Contrary',
-      'Gorilla Tactics',  'Hadron Engine',    'Huge Power',
-      'Illusion',         'Innards Out',      'Magnet Pull',
-      'Moody',            'Neutralizing Gas', 'Orichalcum Pulse',
-      'Parental Bond',    'Poison Heal',      'Pure Power',
-      'Shadow Tag',       'Stakeout',         'Water Bubble',
-      'Wonder Guard',     'Baton Pass',       'Belly Drum',
-      'Ceaseless Edge',   'Dire Claw',        'Imprison',
-      'Last Respects',    'Quiver Dance',     'Rage Fist',
-      'Revival Blessing', 'Shed Tail',        'Substitute',
-      'Shell Smash'
+      'Calyrex-Shadow',   'Gengar-Mega',      'Groudon-Primal',
+      'Mewtwo-Mega-Y',    'Rayquaza-Mega',    'Regigigas',
+      'Shedinja',         'Slaking',          'Arena Trap',
+      'Comatose',         'Contrary',         'Gorilla Tactics',
+      'Hadron Engine',    'Huge Power',       'Illusion',
+      'Innards Out',      'Magnet Pull',      'Moody',
+      'Neutralizing Gas', 'Orichalcum Pulse', 'Parental Bond',
+      'Poison Heal',      'Pure Power',       'Shadow Tag',
+      'Stakeout',         'Water Bubble',     'Wonder Guard',
+      'Baton Pass',       'Belly Drum',       'Ceaseless Edge',
+      'Dire Claw',        'Imprison',         'Last Respects',
+      'Quiver Dance',     'Rage Fist',        'Revival Blessing',
+      'Shed Tail',        'Substitute',       'Shell Smash'
     ]
   },
   {
@@ -863,15 +938,11 @@ export const Formats: FormatList = [
     mod: 'gen3',
     ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause' ],
     banlist: [
-      'Chansey',
-      'Meditite',
-      'Omanyte',
-      'Scyther',
-      'Wynaut',
-      'Zigzagoon',
-      'Baton Pass',
-      'Dragon Rage',
-      'Sonic Boom'
+      'Chansey',    'Meditite',
+      'Omanyte',    'Scyther',
+      'Wynaut',     'Zigzagoon',
+      'Baton Pass', 'Dragon Rage',
+      'Sonic Boom', 'Swagger'
     ]
   },
   {
@@ -1163,35 +1234,6 @@ export const Formats: FormatList = [
     mod: 'gen8',
     ruleset: [ '[Gen 8] OU', '+CAP' ],
     banlist: [ 'Crucibellite' ]
-  },
-  {
-    name: '[Gen 8] National Dex',
-    mod: 'gen8',
-    ruleset: [
-      'Standard NatDex',
-      'OHKO Clause',
-      'Evasion Clause',
-      'Species Clause',
-      'Dynamax Clause',
-      'Sleep Clause Mod'
-    ],
-    banlist: [
-      'ND Uber',
-      'Arena Trap',
-      'Moody',
-      'Power Construct',
-      'Shadow Tag',
-      "King's Rock",
-      'Razor Fang',
-      'Quick Claw',
-      'Baton Pass'
-    ]
-  },
-  {
-    name: '[Gen 8] National Dex UU',
-    mod: 'gen8',
-    ruleset: [ '[Gen 8] National Dex' ],
-    banlist: [ 'ND OU', 'ND UUBL', 'Drizzle', 'Drought', 'Light Clay', 'Slowbronite' ]
   },
   {
     name: '[Gen 8] Battle Stadium Singles',

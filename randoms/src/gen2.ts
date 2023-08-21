@@ -127,9 +127,10 @@ export class RandomGen2Teams extends RandomGen3Teams {
 
 	getItem(
 		ability: string,
-		types: Set<string>,
+		types: string[],
 		moves: Set<string>,
 		counter: MoveCounter,
+		teamDetails: RandomTeamsTypes.TeamDetails,
 		species: Species,
 	) {
 		// First, the high-priority items
@@ -144,7 +145,7 @@ export class RandomGen2Teams extends RandomGen3Teams {
 		if (moves.has('rest') && !moves.has('sleeptalk')) return 'Mint Berry';
 		if (
 			(moves.has('bellydrum') || moves.has('swordsdance')) &&
-			species.baseStats.spe >= 60 && !types.has('Ground') &&
+			species.baseStats.spe >= 60 && !types.includes('Ground') &&
 			!moves.has('sleeptalk') && !moves.has('substitute') &&
 			this.randomChance(1, 2)
 		) {
@@ -312,7 +313,7 @@ export class RandomGen2Teams extends RandomGen3Teams {
 			ability: 'No Ability',
 			evs: {hp: 255, atk: 255, def: 255, spa: 255, spd: 255, spe: 255},
 			ivs,
-			item: this.getItem('None', types, moves, counter, species),
+			item: this.getItem('None', species.types, moves, counter, teamDetails, species),
 			level,
 			// No shiny chance because Gen 2 shinies have bad IVs
 			shiny: false,

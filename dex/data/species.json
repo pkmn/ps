@@ -29379,21 +29379,67 @@
       "eggGroups": ["Field"],
       "gen": 8
     },
+    "ababo": {
+      "num": -69,
+      "name": "Ababo",
+      "types": ["Fairy"],
+      "genderRatio": {"M": 0.75, "F": 0.25},
+      "baseStats": {
+        "hp": 42,
+        "atk": 35,
+        "def": 27,
+        "spa": 35,
+        "spd": 35,
+        "spe": 38
+      },
+      "abilities": {"0": "Pixilate", "1": "Rattled", "H": "Own Tempo"},
+      "weightkg": 3.5,
+      "evos": ["Scattervein"],
+      "eggGroups": ["Undiscovered"],
+      "canHatch": true,
+      "gen": 9
+    },
+    "scattervein": {
+      "num": -70,
+      "name": "Scattervein",
+      "types": ["Fairy"],
+      "genderRatio": {"M": 0.75, "F": 0.25},
+      "baseStats": {
+        "hp": 75,
+        "atk": 74,
+        "def": 87,
+        "spa": 62,
+        "spd": 89,
+        "spe": 63
+      },
+      "abilities": {"0": "Pixilate", "1": "Intimidate", "H": "Own Tempo"},
+      "weightkg": 25,
+      "prevo": "Ababo",
+      "evoType": "levelFriendship",
+      "evos": ["Hemogoblin"],
+      "eggGroups": ["Monster", "Fairy"],
+      "canHatch": true,
+      "gen": 9
+    },
     "hemogoblin": {
       "num": -71,
       "name": "Hemogoblin",
       "types": ["Fairy", "Fire"],
+      "genderRatio": {"M": 0.75, "F": 0.25},
       "baseStats": {
         "hp": 90,
         "atk": 96,
         "def": 87,
-        "spa": 99,
+        "spa": 96,
         "spd": 89,
         "spe": 55
       },
-      "abilities": {"0": "Pixilate", "1": "Intimidate"},
+      "abilities": {"0": "Pixilate", "1": "Intimidate", "H": "Own Tempo"},
       "weightkg": 85,
-      "eggGroups": ["Undiscovered"],
+      "prevo": "Scattervein",
+      "evoType": "useItem",
+      "evoItem": "Fire Stone",
+      "eggGroups": ["Monster", "Fairy"],
       "gen": 9
     },
     "pokestarsmeargle": {

@@ -2199,12 +2199,12 @@
       "condition": {"duration": 1, "onAnyPrepareHitPriority": -1},
       "desc": "If another Pokemon uses certain non-damaging moves this turn, the user steals that move to use itself. If multiple Pokemon use this move this turn, the applicable moves are stolen by each of those Pokemon in turn order, and only the last user in turn order will gain the effects."
     },
-    "spikes": {"inherit": true, "flags": {}},
+    "spikes": {"inherit": true, "flags": {"mustpressure": 1}},
     "spite": {
       "inherit": true,
       "flags": {"protect": 1, "mirror": 1, "bypasssub": 1}
     },
-    "stealthrock": {"inherit": true, "flags": {}},
+    "stealthrock": {"inherit": true, "flags": {"mustpressure": 1}},
     "struggle": {
       "inherit": true,
       "flags": {
@@ -2272,7 +2272,7 @@
     "toxic": {"inherit": true, "accuracy": 85},
     "toxicspikes": {
       "inherit": true,
-      "flags": {},
+      "flags": {"mustpressure": 1},
       "condition": {},
       "desc": "Sets up a hazard on the opposing side of the field, poisoning each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. Can be used up to two times before failing. Opposing Pokemon become poisoned with one layer and badly poisoned with two layers. Can be removed from the opposing side if any opposing Pokemon uses Rapid Spin successfully, is hit by Defog, or a grounded Poison-type Pokemon switches in. Safeguard prevents the opposing party from being poisoned on switch-in, as well as switching in with a substitute."
     },

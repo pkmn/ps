@@ -247,15 +247,17 @@ export class Side {
       pokemon.maxhp = oldpokemon.maxhp;
       pokemon.hpcolor = oldpokemon.hpcolor;
       pokemon.status = oldpokemon.status;
-      pokemon.terastallized = oldpokemon.terastallized;
       pokemon.copyVolatileFrom(oldpokemon, 'illusion');
       pokemon.statusState = {...oldpokemon.statusState};
+      if (oldpokemon.terastallized) {
+        pokemon.terastallized = oldpokemon.terastallized;
+        oldpokemon.terastallized = undefined;
+      }
       // we don't know anything about the illusioned pokemon except that it's not fainted
       // technically we also know its status but only at the end of the turn, not here
       oldpokemon.fainted = false;
       oldpokemon.hp = oldpokemon.maxhp;
       oldpokemon.status = undefined; // '???';
-      oldpokemon.terastallized = undefined;
     }
 
     this.active[slot] = pokemon;

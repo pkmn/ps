@@ -525,7 +525,6 @@ export class RandomGen4Teams extends RandomGen5Teams {
 		moves: Set<string>,
 		counter: MoveCounter,
 		species: Species,
-		isDoubles: boolean,
 		isLead: boolean
 	): string | undefined {
 		if (
@@ -844,7 +843,7 @@ export class RandomGen4Teams extends RandomGen5Teams {
 		ability = this.getAbility(types, moves, abilities, counter, movePool, teamDetails, species);
 
 		item = this.getHighPriorityItem(ability, types, moves, counter, teamDetails, species, isLead);
-		if (item === undefined) item = this.getMediumPriorityItem(ability, moves, counter, species, false, isLead);
+		if (item === undefined) item = this.getMediumPriorityItem(ability, moves, counter, species, isLead);
 		if (item === undefined) {
 			item = this.getLowPriorityItem(ability, types, moves, abilities, counter, teamDetails, species);
 		}
