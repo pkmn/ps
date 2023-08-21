@@ -16,7 +16,7 @@ const FIXED = window.location.href.includes('fixed');
 const FORMATS = [
   'gen1randombattle', 'gen2randombattle', 'gen3randombattle', 'gen4randombattle',
   'gen5randombattle', 'gen6randombattle', 'gen7randombattle', 'gen8randombattle',
-  'gen7randomdoublesbattle', 'gen8randomdoublesbattle', 'gen9randombattle',
+  /* 'gen7randomdoublesbattle', */ 'gen8randomdoublesbattle', 'gen9randombattle',
   'gen9randomdoublesbattle',
 ];
 const prng = new PRNG();

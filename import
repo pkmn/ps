@@ -225,7 +225,7 @@ const RANDOMS_IMPORTS = {
   'data/random-teams.ts': [
     [['Utils'], './utils'],
     [[
-      'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatID',
+      'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatID',
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ModdedDex', 'Move', 'BasicEffect',
       'RuleTable', 'Tags', 'Item', 'Ability', 'Nature',
     ], '@pkmn/sim'],
@@ -239,7 +239,7 @@ const RANDOMS_IMPORTS = {
     ], '@pkmn/sim'],
   ],
   'data/mods/gen7/random-teams.ts': [
-    [['MoveCounter', 'RandomGen8Teams', 'TeamData', 'OldRandomBattleSpecies'], './gen8'],
+    [['MoveCounter', 'RandomGen8Teams', 'TeamData'], './gen8'],
     [['Utils'], './utils'],
     [[
       'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'StatID', 'Ability',
@@ -725,14 +725,15 @@ const changes = async (where, last, now, repo) => ({
       let dataJson = '';
       let doublesJson = '';
       if (file.endsWith('random-teams.ts')) {
-        const sets = file === 'data/random-teams.ts';
+        const current = !file.includes('mods');
+        const sets = file === 'data/random-teams.ts' || file === 'data/mods/gen7/random-teams.ts';
         let data =
           path.resolve(path.join(ps, file), '..', `random-${sets ? 'sets' : 'data'}.json`);
         let raw = fs.readFileSync(data, 'utf8');
         dataJson = '\n\n/* eslint-disable */\n' +
           `const random${sets ? 'Sets' : 'Data'}JSON = ${JSON.stringify(JSON.parse(raw))}` +
           ' as any;\n/* eslint-enable */';
-        if (sets) {
+        if (sets && current) {
           data = path.resolve(path.join(ps, file), '..', `random-doubles-sets.json`);
           raw = fs.readFileSync(data, 'utf8');
           doublesJson = '\n\n/* eslint-disable */\n' +
