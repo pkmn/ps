@@ -777,6 +777,7 @@
     "banettite": {"inherit": true, "isNonstandard": null},
     "beedrillite": {"inherit": true, "isNonstandard": null},
     "belueberry": {"inherit": true, "isNonstandard": "Unobtainable"},
+    "bignugget": {"inherit": true, "fling": {"basePower": 30}},
     "blastoisinite": {"inherit": true, "isNonstandard": null},
     "blazikenite": {"inherit": true, "isNonstandard": null},
     "blueorb": {"inherit": true, "isNonstandard": null},
@@ -1391,6 +1392,13 @@
       "gen": 8,
       "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
+    },
+    "bignugget": {
+      "name": "Big Nugget",
+      "fling": {"basePower": 130},
+      "num": 581,
+      "gen": 5,
+      "desc": "A big nugget of pure gold that gives off a lustrous gleam."
     },
     "bigroot": {
       "name": "Big Root",

@@ -1678,6 +1678,7 @@
     },
     "guarddog": {
       "onDragOutPriority": 1,
+      "isBreakable": true,
       "name": "Guard Dog",
       "num": 275,
       "desc": "This Pokemon is immune to the effect of the Intimidate Ability and raises its Attack by 1 stage instead. This Pokemon cannot be forced to switch out by another Pokemon's attack or item.",
@@ -3025,6 +3026,7 @@
       "shortDesc": "This Pokemon gains the Charge effect when hit by a wind move or Tailwind begins."
     },
     "windrider": {
+      "isBreakable": true,
       "name": "Wind Rider",
       "num": 274,
       "desc": "This Pokemon is immune to wind moves and raises its Attack by 1 stage when hit by a wind move or when Tailwind begins on this Pokemon's side.",
