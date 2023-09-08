@@ -5893,8 +5893,8 @@
       "secondary": {"chance": 30, "boosts": {"spe": -1}},
       "target": "allAdjacentFoes",
       "type": "Flying",
-      "desc": "Has a 30% chance to lower the target's Speed by 1 stage.",
-      "shortDesc": "30% chance to lower the foe(s) Speed by 1."
+      "desc": "Has a 30% chance to lower the target's Speed by 1 stage. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 80%.",
+      "shortDesc": "30% to lower foe(s) Speed by 1. Rain: can't miss."
     },
     "blizzard": {
       "num": 59,
@@ -9800,8 +9800,7 @@
       "name": "Gigaton Hammer",
       "pp": 5,
       "priority": 0,
-      "flags": {"protect": 1, "mirror": 1},
-      "condition": {},
+      "flags": {"protect": 1, "mirror": 1, "cantusetwice": 1},
       "secondary": null,
       "target": "normal",
       "type": "Steel",
@@ -16634,8 +16633,8 @@
       "secondary": {"chance": 20, "status": "brn"},
       "target": "allAdjacentFoes",
       "type": "Ground",
-      "desc": "Has a 20% chance to burn the target.",
-      "shortDesc": "20% chance to burn foe(s)."
+      "desc": "Has a 20% chance to burn the target. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 80%.",
+      "shortDesc": "20% chance to burn foe(s). Can't miss in rain."
     },
     "sandstorm": {
       "num": 201,
@@ -20513,8 +20512,8 @@
       "secondary": {"chance": 20, "status": "par"},
       "target": "allAdjacentFoes",
       "type": "Electric",
-      "desc": "Has a 20% chance to paralyze the target.",
-      "shortDesc": "20% chance to paralyze foe(s)."
+      "desc": "Has a 20% chance to paralyze the target. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 80%.",
+      "shortDesc": "20% chance to paralyze foe(s). Rain: can't miss."
     },
     "wildcharge": {
       "num": 528,

@@ -247,8 +247,8 @@ const RANDOMS_IMPORTS = {
     ], '@pkmn/sim'],
   ],
   'data/mods/gen6/random-teams.ts': [
-    [['RandomGen7Teams', 'BattleFactorySpecies'], './gen7'],
-    [['MoveCounter', 'TeamData', 'OldRandomBattleSpecies'], './gen8'],
+    [['RandomGen7Teams', 'ZeroAttackHPIVs', 'BattleFactorySpecies'], './gen7'],
+    [['MoveCounter', 'TeamData'], './gen8'],
     [['Utils'], './utils'],
     [[
       'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'Move',
@@ -726,7 +726,9 @@ const changes = async (where, last, now, repo) => ({
       let doublesJson = '';
       if (file.endsWith('random-teams.ts')) {
         const current = !file.includes('mods');
-        const sets = file === 'data/random-teams.ts' || file === 'data/mods/gen7/random-teams.ts';
+        const sets = file === 'data/random-teams.ts' ||
+          file === 'data/mods/gen7/random-teams.ts' ||
+          file === 'data/mods/gen6/random-teams.ts';
         let data =
           path.resolve(path.join(ps, file), '..', `random-${sets ? 'sets' : 'data'}.json`);
         let raw = fs.readFileSync(data, 'utf8');

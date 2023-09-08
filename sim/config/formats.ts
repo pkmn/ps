@@ -128,9 +128,9 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 9] Monothreat Dark',
+    name: '[Gen 9] Monothreat Fairy',
     mod: 'gen9',
-    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Dark' ]
+    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Fairy' ]
   },
   {
     name: '[Gen 9] 1v1',
@@ -183,21 +183,14 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] PU' ],
     banlist: [
-      'PU',
-      'Basculin-White-Striped',
-      'Beartic',
-      'Electrode',
-      'Fraxure',
-      'Frogadier',
-      'Girafarig',
-      'Glaceon',
-      'Golduck',
-      'Grumpig',
-      'Leafeon',
-      'Qwilfish-Hisui',
-      'Sneasel-Hisui',
-      'Squawkabilly',
-      'Vigoroth'
+      'PU',           'Beartic',
+      'Electrode',    'Fraxure',
+      'Frogadier',    'Girafarig',
+      'Glaceon',      'Golduck',
+      'Grumpig',      'Indeedee-F',
+      'Leafeon',      'Qwilfish-Hisui',
+      'Sawsbuck',     'Sneasel-Hisui',
+      'Squawkabilly', 'Vigoroth'
     ]
   },
   {
@@ -205,20 +198,20 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] LC' ],
     banlist: [
-      'Axew',          'Crabrawler',
-      'Croagunk',      'Diglett-Alola',
-      'Drifloon',      'Foongus',
-      'Fuecoco',       'Glimmet',
-      'Gothita',       'Grimer-Alola',
-      'Grookey',       'Houndour',
-      'Mareanie',      'Meowth-Base',
-      'Mudbray',       'Numel',
-      'Nymble',        'Pawniard',
-      'Quaxly',        'Shellder',
-      'Shellos',       'Shroodle',
-      'Tinkatink',     'Toedscool',
-      'Voltorb-Hisui', 'Wattrel',
-      'Wingull',       'Zorua-Hisui'
+      'Axew',      'Crabrawler',
+      'Croagunk',  'Diglett-Alola',
+      'Drifloon',  'Foongus',
+      'Fuecoco',   'Glimmet',
+      'Gothita',   'Grimer-Alola',
+      'Grookey',   'Houndour',
+      'Mareanie',  'Meowth-Base',
+      'Mudbray',   'Numel',
+      'Nymble',    'Pawniard',
+      'Quaxly',    'Shellder',
+      'Shellos',   'Shroodle',
+      'Teddiursa', 'Tinkatink',
+      'Toedscool', 'Voltorb-Hisui',
+      'Wattrel',   'Zorua-Hisui'
     ]
   },
   {
@@ -655,40 +648,6 @@ export const Formats: FormatList = [
       'Last Respects',    'Quiver Dance',     'Rage Fist',
       'Revival Blessing', 'Shed Tail',        'Substitute',
       'Shell Smash'
-    ]
-  },
-  {
-    name: '[Gen 9] Pre-Full Dex BH',
-    mod: 'gen9',
-    ruleset: [
-      '-Nonexistent',
-      'OHKO Clause',
-      'Evasion Clause',
-      'Species Clause',
-      'Team Preview',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Sleep Moves Clause',
-      'Endless Battle Clause',
-      'Terastal Clause'
-    ],
-    banlist: [
-      'Calyrex-Shadow',   'Slaking',
-      'Zacian-Crowned',   'Arena Trap',
-      'Comatose',         'Contrary',
-      'Hadron Engine',    'Huge Power',
-      'Illusion',         'Innards Out',
-      'Magnet Pull',      'Moody',
-      'Neutralizing Gas', 'Orichalcum Pulse',
-      'Parental Bond',    'Poison Heal',
-      'Pure Power',       'Shadow Tag',
-      'Stakeout',         'Water Bubble',
-      'Wonder Guard',     'Baton Pass',
-      'Belly Drum',       'Ceaseless Edge',
-      'Imprison',         'Last Respects',
-      'Quiver Dance',     'Rage Fist',
-      'Revival Blessing', 'Shed Tail',
-      'Substitute',       'Shell Smash'
     ]
   },
   {
@@ -1148,7 +1107,7 @@ export const Formats: FormatList = [
   {
     name: '[Gen 8] Monotype',
     mod: 'gen8',
-    ruleset: [ 'Same Type Clause', 'Standard', 'Dynamax Clause' ],
+    ruleset: [ 'Same Type Clause', 'Standard', 'Evasion Abilities Clause', 'Dynamax Clause' ],
     banlist: [
       'Blaziken',        'Calyrex-Ice',         'Calyrex-Shadow',
       'Dialga',          'Dracovish',           'Eternatus',
@@ -1399,7 +1358,7 @@ export const Formats: FormatList = [
   {
     name: '[Gen 7] Monotype',
     mod: 'gen7',
-    ruleset: [ 'Same Type Clause', 'Standard', 'Swagger Clause' ],
+    ruleset: [ 'Same Type Clause', 'Standard', 'Evasion Abilities Clause', 'Swagger Clause' ],
     banlist: [
       'Aegislash',     'Arceus',              'Blaziken',
       'Darkrai',       'Deoxys-Base',         'Deoxys-Attack',
@@ -1660,7 +1619,7 @@ export const Formats: FormatList = [
   {
     name: '[Gen 6] Monotype',
     mod: 'gen6',
-    ruleset: [ 'Standard', 'Swagger Clause', 'Same Type Clause' ],
+    ruleset: [ 'Standard', 'Swagger Clause', 'Evasion Abilities Clause', 'Same Type Clause' ],
     banlist: [
       'Aegislash',       'Altaria-Mega',  'Arceus',
       'Blaziken',        'Darkrai',       'Deoxys-Base',

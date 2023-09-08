@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/dex-types",
-  "version": "0.7.49",
+  "version": "0.7.50",
   "types": "index.d.ts",
   "description": "Common Pokémon Showdown Dex types shared by @pkmn/dex and @pkmn/sim",
   "repository": "github:pkmn/ps",
