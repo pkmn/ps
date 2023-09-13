@@ -223,6 +223,7 @@ export class ModdedDex {
 		if (modData?.Species && !modData.Pokedex) modData.Pokedex = modData.Species;
 		const dex = (modid in dexes) && !modData ? dexes[modid] : new ModdedDex(modid);
 		dex.loadData(modData);
+		if (!(modid in dexes)) dexes[modid] = dex;
 		return dex;
 	}
 
