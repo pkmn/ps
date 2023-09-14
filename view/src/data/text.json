@@ -688,6 +688,7 @@
     "activate": "  The substitute took damage for [POKEMON]!"
   },
   "switcheroo": {"activate": "#trick"},
+  "syrupbomb": {"start": "  [POKEMON] got covered in sticky candy syrup!"},
   "tailwind": {
     "start": "  The Tailwind blew from behind [TEAM]!",
     "end": "  [TEAM]'s Tailwind petered out!"
@@ -799,6 +800,9 @@
     "activate": "  [POKEMON] used the Electric Terrain to energize its futuristic engine!"
   },
   "harvest": {"addItem": "  [POKEMON] harvested one [ITEM]!"},
+  "hospitality": {
+    "heal": "  [POKEMON] drank down all the matcha that [SOURCE] made!"
+  },
   "illusion": {"end": "  [POKEMON]'s illusion wore off!"},
   "innardsout": {"damage": "#aftermath"},
   "ironbarbs": {"damage": "#roughskin"},
@@ -865,6 +869,9 @@
   "sturdy": {"activate": "  [POKEMON] endured the hit!"},
   "suctioncups": {
     "block": "  [POKEMON] is anchored in place with its suction cups!"
+  },
+  "supersweetsyrup": {
+    "start": "  A supersweet aroma is wafting from the syrup covering [POKEMON]!"
   },
   "supremeoverlord": {
     "activate": "  [POKEMON] gained strength from the fallen!"

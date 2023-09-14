@@ -707,6 +707,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly canGigantamax?: T.MoveName;
   readonly gmaxUnreleased?: boolean;
   readonly cannotDynamax?: boolean;
+  readonly forceTeraType?: T.TypeName;
   readonly requiredAbility?: T.AbilityName;
   readonly requiredItem?: T.ItemName;
   readonly requiredItems?: T.ItemName[];
@@ -758,6 +759,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     this.isMega = !!(this.forme && ['Mega', 'Mega-X', 'Mega-Y'].includes(this.forme)) || undefined;
     this.gmaxUnreleased = !!data.gmaxUnreleased;
     this.cannotDynamax = !!data.cannotDynamax;
+    this.forceTeraType = data.forceTeraType;
     this.battleOnly = data.battleOnly || (this.isMega ? this.baseSpecies : undefined);
     this.changesFrom = data.changesFrom ||
       (this.battleOnly !== this.baseSpecies ? this.battleOnly : this.baseSpecies);

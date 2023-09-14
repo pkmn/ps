@@ -1263,7 +1263,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         generation: 8,
         level: 25,
         nature: 'Hardy',
-        isHidden: false,
+        isHidden: true,
         moves: [ 'thunderbolt', 'quickattack', 'irontail', 'electroweb', 'volttackle' ],
         pokeball: 'pokeball'
       }
@@ -1291,7 +1291,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         generation: 8,
         level: 25,
         nature: 'Hardy',
-        isHidden: false,
+        isHidden: true,
         moves: [ 'thunderbolt', 'quickattack', 'irontail', 'electroweb', 'volttackle' ],
         pokeball: 'pokeball'
       }
@@ -1318,7 +1318,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         generation: 8,
         level: 25,
         nature: 'Hardy',
-        isHidden: false,
+        isHidden: true,
         moves: [ 'thunderbolt', 'quickattack', 'irontail', 'electroweb', 'volttackle' ],
         pokeball: 'pokeball'
       }
@@ -1345,7 +1345,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         generation: 8,
         level: 25,
         nature: 'Hardy',
-        isHidden: false,
+        isHidden: true,
         moves: [ 'thunderbolt', 'quickattack', 'irontail', 'electroweb', 'volttackle' ],
         pokeball: 'pokeball'
       }
@@ -1373,7 +1373,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         generation: 8,
         level: 25,
         nature: 'Hardy',
-        isHidden: false,
+        isHidden: true,
         moves: [ 'thunderbolt', 'quickattack', 'irontail', 'electroweb', 'volttackle' ],
         pokeball: 'pokeball'
       }
@@ -1401,7 +1401,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         generation: 8,
         level: 25,
         nature: 'Hardy',
-        isHidden: false,
+        isHidden: true,
         moves: [ 'thunderbolt', 'quickattack', 'irontail', 'electroweb', 'volttackle' ],
         pokeball: 'pokeball'
       }
@@ -1430,7 +1430,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         generation: 8,
         level: 25,
         nature: 'Hardy',
-        isHidden: false,
+        isHidden: true,
         moves: [ 'thunderbolt', 'quickattack', 'irontail', 'electroweb', 'volttackle' ],
         pokeball: 'pokeball'
       }
@@ -4131,8 +4131,8 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   porygon: {
     learnset: {
-      conversion2: [ '8S1' ],
       conversion: [ '5S0' ],
+      conversion2: [ '8S1' ],
       magnetrise: [ '8S1' ],
       psybeam: [ '8S1', '5S0' ],
       sharpen: [ '5S0' ],
@@ -14408,7 +14408,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       {
         generation: 8,
         level: 1,
-        isHidden: false,
+        isHidden: true,
         moves: [ 'nuzzle', 'growl', 'flail', 'acid' ],
         pokeball: 'luxuryball'
       }
@@ -14482,7 +14482,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         generation: 8,
         level: 5,
         nature: 'Hardy',
-        isHidden: false,
+        isHidden: true,
         moves: [ 'celebrate', 'lastresort', 'entrainment', 'attract' ],
         pokeball: 'cherishball'
       }

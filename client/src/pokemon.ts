@@ -51,7 +51,7 @@ export type CopySource = 'batonpass' | 'illusion' | 'shedtail';
 const VOLATILES = [
   'airballoon', 'attract', 'autotomize', 'disable', 'encore', 'foresight', 'gmaxchistrike',
   'imprison', 'laserfocus', 'mimic', 'miracleeye', 'nightmare', 'saltcure', 'smackdown',
-  'stockpile1', 'stockpile2', 'stockpile3', 'torment', 'typeadd', 'typechange', 'yawn',
+  'stockpile1', 'stockpile2', 'stockpile3', 'syrupbomb', 'torment', 'typeadd', 'typechange', 'yawn',
 ];
 
 export class Pokemon implements DetailedPokemon, PokemonHealth {

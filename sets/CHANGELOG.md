@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.1.0
+
+- Support for Generation 9 DLC1's `forceTeraType`.
+
 ## 5.0.4
 
 - Fixes issue where `Team.fromString` did not properly parse the Pokémon Showdown teambuilder's

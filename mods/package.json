@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/mods",
-  "version": "0.7.50",
+  "version": "0.7.51",
   "description": "Support for non-standard mods to @pkmn/sim and @pkmn/dex",
   "repository": "github:pkmn/ps",
   "author": "Guangcong Luo <guangcongluo@gmail.com> (http://guangcongluo.com)",
@@ -57,6 +57,10 @@
     "./gen8dlc1": {
       "require": "./build/gen8dlc1/index.js",
       "import": "./build/gen8dlc1/index.mjs"
+    },
+    "./gen9predlc": {
+      "require": "./build/gen9predlc/index.js",
+      "import": "./build/gen9predlc/index.mjs"
     }
   },
   "typesVersions": {
@@ -90,6 +94,9 @@
       ],
       "gen8dlc1": [
         "./build/gen8dlc1/index.d.ts"
+      ],
+      "gen9predlc": [
+        "./build/gen9predlc/index.d.ts"
       ]
     }
   },
@@ -100,11 +107,11 @@
     "build"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.7.50"
+    "@pkmn/dex-types": "^0.7.51"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.7.50",
-    "@pkmn/sim": "^0.7.50"
+    "@pkmn/dex": "^0.7.51",
+    "@pkmn/sim": "^0.7.51"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
@@ -137,7 +144,8 @@
           "./src/gen7letsgo/*.ts",
           "./src/gen7sm/*.ts",
           "./src/gen8bdsp/*.ts",
-          "./src/gen8dlc1/*.ts"
+          "./src/gen8dlc1/*.ts",
+          "./src/gen9predlc/*.ts"
         ],
         "rules": {
           "@typescript-eslint/quotes": "off",

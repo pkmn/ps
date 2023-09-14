@@ -67,7 +67,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('counts', () => {
-        const COUNTS = [0, 0, 76, 47, 41, 27, 42, 34, 30 + 1];
+        const COUNTS = [0, 0, 76, 47, 41, 27, 42, 34, 30 + 1 + 8];
         let total = 0;
         for (const gen of gens) {
           expect(Array.from(gen.abilities)).toHaveLength(total += COUNTS[gen.num - 1]);
@@ -230,7 +230,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         let total = 0;
         for (const gen of gens) {
           expect(Array.from(gen.moves))
-            .toHaveLength(gen.num === 9 ? 607 + 3 + 22
+            .toHaveLength(gen.num === 9 ? 607 + 3 + 22 + 15
             : gen.num === 8 ? 623 + 41 + 34 - 33
             : (total += COUNTS[gen.num - 1]));
         }
@@ -339,12 +339,17 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         // Arceus (17) + Basculin (1) + Meloetta (1) + Greninja (1) + Vivillon (1) + Hoopa (1) +
         // Magearna (1) + *-Crowned (2) + Urshifu (1) + Zarude (1) + Calyrex (2) +
         // Gimmighoul (1) + Basculegion (1)
+        // {DLC1} Alola (8) + Shaymin (1) + Cramorant (2) + Morpeko (1) + Ursaluna (1) +
+        // *-Masterpiece (2) + Ogerpon (7)
         formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 2 + 2 +
-          (8 + 3 + 4 + 7 + 6 + 14 + 17 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 2 + 1 + 1);
+          (8 + 3 + 4 + 7 + 6 + 14 + 17 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 2 + 1 + 1) +
+          (8 + 1 + 2 + 1 + 1 + 2 + 7);
         // Charizard (3) + Cinderace (3) + Greninja (3) + Vivillon (1) + Walking Wake (1) +
         // Iron Leaves (1) + Decidueye (3) + Samurott (3) + Typhlosion (3) + Inteleon (3) +
-        // Chesnaught (3) + HOME (51)
-        expect(counts(9)).toEqual({species: 400 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 51, formes});
+        // Chesnaught (3) + HOME (51) + DLC1 (109)
+        expect(counts(9)).toEqual(
+          {species: 400 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 51 + 109, formes}
+        );
       });
 
       it('formeNum', () => {

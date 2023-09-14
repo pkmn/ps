@@ -1520,6 +1520,26 @@
       "num": 280,
       "shortDesc": "This Pokemon gains the Charge effect when it takes a hit from an attack."
     },
+    "embodyaspectcornerstone": {
+      "name": "Embody Aspect (Cornerstone)",
+      "num": 304,
+      "shortDesc": "On switch-in, this Pokemon's Defense is raised by 1 stage."
+    },
+    "embodyaspecthearthflame": {
+      "name": "Embody Aspect (Hearthflame)",
+      "num": 303,
+      "shortDesc": "On switch-in, this Pokemon's Attack is raised by 1 stage."
+    },
+    "embodyaspectteal": {
+      "name": "Embody Aspect (Teal)",
+      "num": 301,
+      "shortDesc": "On switch-in, this Pokemon's Speed is raised by 1 stage."
+    },
+    "embodyaspectwellspring": {
+      "name": "Embody Aspect (Wellspring)",
+      "num": 302,
+      "shortDesc": "On switch-in, this Pokemon's Special Defense is raised by 1 stage."
+    },
     "emergencyexit": {
       "name": "Emergency Exit",
       "num": 194,
@@ -1741,6 +1761,11 @@
       "name": "Honey Gather",
       "num": 118,
       "shortDesc": "No competitive use."
+    },
+    "hospitality": {
+      "name": "Hospitality",
+      "num": 299,
+      "shortDesc": "On switch-in, this Pokemon restores 1/4 of its ally's maximum HP, rounded down."
     },
     "hugepower": {
       "onModifyAtkPriority": 5,
@@ -2010,6 +2035,13 @@
       "num": 250,
       "desc": "This Pokemon's types change to match the active Terrain when this Pokemon acquires this Ability, or whenever a Terrain begins. Electric type during Electric Terrain, Grass type during Grassy Terrain, Fairy type during Misty Terrain, and Psychic type during Psychic Terrain. If this Ability is acquired without an active Terrain, or a Terrain ends, this Pokemon's types become the original types for its species.",
       "shortDesc": "This Pokemon's types change to match the Terrain. Type reverts when Terrain ends."
+    },
+    "mindseye": {
+      "onModifyMovePriority": -5,
+      "name": "Mind's Eye",
+      "num": 300,
+      "desc": "This Pokemon can hit Ghost types with Normal- and Fighting-type moves. Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage.",
+      "shortDesc": "Fighting, Normal moves hit Ghost. Accuracy can't be lowered, ignores evasiveness."
     },
     "minus": {
       "onModifySpAPriority": 5,
@@ -2748,6 +2780,11 @@
       "num": 105,
       "shortDesc": "This Pokemon's critical hit ratio is raised by 1 stage."
     },
+    "supersweetsyrup": {
+      "name": "Supersweet Syrup",
+      "num": 306,
+      "shortDesc": "On switch-in, this Pokemon lowers the evasiveness of opponents by 1 stage."
+    },
     "supremeoverlord": {
       "onBasePowerPriority": 21,
       "name": "Supreme Overlord",
@@ -2874,6 +2911,12 @@
       "num": 137,
       "desc": "While this Pokemon is poisoned, the power of its physical attacks is multiplied by 1.5.",
       "shortDesc": "While this Pokemon is poisoned, its physical attacks have 1.5x power."
+    },
+    "toxicchain": {
+      "name": "Toxic Chain",
+      "num": 305,
+      "desc": "This Pokemon's moves have a 30% chance of badly poisoning. This effect comes after a move's inherent secondary effect chance.",
+      "shortDesc": "This Pokemon's moves have a 30% chance of badly poisoning."
     },
     "toxicdebris": {
       "name": "Toxic Debris",

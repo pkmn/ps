@@ -268,6 +268,7 @@ export interface SpeciesData {
   canGigantamax?: string;
   gmaxUnreleased?: boolean;
   cannotDynamax?: boolean;
+  forceTeraType?: string;
   changesFrom?: string;
   tier?: Tier.Singles | Tier.Other;
   inherit?: boolean;

@@ -112,6 +112,17 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect((await dex.forGen(8).learnsets.get('Weavile')).learnset!['knockoff'])
           .toBeUndefined();
       });
+
+      it('gen9predlc', async () => {
+        const dex =
+          new ModdedDex(Dex.mod('gen9predlc' as ID, await import('./gen9predlc') as ModData));
+        expect(dex.gen).toBe(9);
+        expect(dex.species.get('Bulbasaur').tier).toBe('Illegal');
+        expect(dex.items.get('Syrupy Apple').isNonstandard).toBe('Future');
+        expect(dex.abilities.get('Hospitality').isNonstandard).toBe('Future');
+        expect(dex.moves.get('Blood Moon').isNonstandard).toBe('Future');
+        expect(dex.moves.get('Clanging Scales').isNonstandard).toBe('Past');
+      });
     });
 
     describe('types', () => {
