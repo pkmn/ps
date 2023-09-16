@@ -861,7 +861,12 @@
     "guts": {"inherit": true},
     "harvest": {"inherit": true},
     "healer": {"inherit": true},
-    "heatproof": {"inherit": true},
+    "heatproof": {
+      "inherit": true,
+      "onSourceBasePowerPriority": 18,
+      "desc": "The power of Fire-type attacks against this Pokemon is halved. This Pokemon takes half of the usual burn damage, rounded down.",
+      "shortDesc": "The power of Fire-type attacks against this Pokemon is halved; burn damage halved."
+    },
     "heavymetal": {"inherit": true},
     "honeygather": {"inherit": true},
     "hugepower": {"inherit": true},
@@ -1742,12 +1747,13 @@
       "shortDesc": "30% chance this Pokemon's ally has its status cured at the end of each turn."
     },
     "heatproof": {
-      "onSourceBasePowerPriority": 18,
+      "onSourceModifyAtkPriority": 6,
+      "onSourceModifySpAPriority": 5,
       "isBreakable": true,
       "name": "Heatproof",
       "num": 85,
-      "desc": "The power of Fire-type attacks against this Pokemon is halved. This Pokemon takes half of the usual burn damage, rounded down.",
-      "shortDesc": "The power of Fire-type attacks against this Pokemon is halved; burn damage halved."
+      "desc": "If a Pokemon uses a Fire-type attack against this Pokemon, that Pokemon's offensive stat is halved when calculating the damage to this Pokemon. This Pokemon takes half of the usual burn damage, rounded down.",
+      "shortDesc": "Fire damage against this Pokemon is dealt with 1/2 offensive stat; 1/2 burn damage."
     },
     "heavymetal": {
       "onModifyWeightPriority": 1,
@@ -2783,7 +2789,7 @@
     "supersweetsyrup": {
       "name": "Supersweet Syrup",
       "num": 306,
-      "shortDesc": "On switch-in, this Pokemon lowers the evasiveness of opponents by 1 stage."
+      "shortDesc": "On switch-in, this Pokemon lowers the evasiveness of opponents 1 stage. Once per battle."
     },
     "supremeoverlord": {
       "onBasePowerPriority": 21,

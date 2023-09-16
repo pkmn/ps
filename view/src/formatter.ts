@@ -1066,7 +1066,7 @@ class Handler implements Protocol.Handler<string> {
   '|-heal|'(args: Args['|-heal|'], kwArgs: KWArgs['|-heal|']) {
     const [, pokemon] = args;
     let template = this.parser.template('heal', kwArgs.from, 'NODEFAULT');
-    const line1 = this.parser.maybeAbility(kwArgs.from, pokemon);
+    const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     if (template) {
       return (line1 + template
         .replace('[POKEMON]', this.parser.pokemon(pokemon))
@@ -1119,7 +1119,7 @@ class Handler implements Protocol.Handler<string> {
     }
     const template = this.parser.template(templateId, kwArgs.from);
     return (line1 + template
-      .replace('[POKEMON]', this.parser.pokemon(pokemon))
+      .replace(/\[POKEMON\]/g, this.parser.pokemon(pokemon))
       .replace('[STAT]', this.parser.stat(stat)));
   }
 

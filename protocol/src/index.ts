@@ -2201,6 +2201,7 @@ const NUMBERABLE = new Set([
   'eeriespell', 'gmaxdepletion', 'spite', 'grudge',
   'forewarn', 'sketch', 'leppaberry', 'mysteryberry',
 ]);
+const HEALING = new Set(['dryskin', 'eartheater', 'voltabsorb', 'waterabsorb']);
 
 function upgradeBattleArgs({args, kwArgs}: {
   args: Protocol.BattleArgType;
@@ -2313,6 +2314,11 @@ function upgradeBattleArgs({args, kwArgs}: {
         kwArgs: {},
       };
     }
+    break;
+  }
+  case '-heal': {
+    const id = Protocol.parseEffect(kwArgs.from as string, toID).name;
+    if (HEALING.has(id)) kwArgs.of = '';
     break;
   }
   case 'gen': {

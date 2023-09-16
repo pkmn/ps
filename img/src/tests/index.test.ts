@@ -220,7 +220,7 @@ describe('Icons', () => {
     pokemon = Icons.getPokemon('Lucario-Mega', {domain: 'pkmn.cc', gender: 'F'});
     expect(pokemon.url).toBe('https://pkmn.cc/sprites/pokemonicons-sheet.png');
     expect(pokemon.left).toBe(-360);
-    expect(pokemon.top).toBe(-3240);
+    expect(pokemon.top).toBe(-3270);
 
     pokemon = Icons.getPokemon('Pyroar', {gender: 'F'});
     expect(pokemon.left).toBe(-320);
@@ -228,7 +228,7 @@ describe('Icons', () => {
 
     pokemon = Icons.getPokemon('Kingler', {side: 'p1'});
     expect(pokemon.left).toBe(-400);
-    expect(pokemon.top).toBe(-3360);
+    expect(pokemon.top).toBe(-3390);
 
     pokemon = Icons.getPokemon('Kingler', {side: 'p2', fainted: true});
     expect(pokemon.style).toEqual(

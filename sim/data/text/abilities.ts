@@ -438,18 +438,26 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	embodyaspectcornerstone: {
 		name: "Embody Aspect (Cornerstone)",
 		shortDesc: "On switch-in, this Pokemon's Defense is raised by 1 stage.",
+
+		boost: "  The Cornerstone Mask worn by [POKEMON] shone brilliantly, and [POKEMON]'s Defense rose!",
 	},
 	embodyaspecthearthflame: {
 		name: "Embody Aspect (Hearthflame)",
 		shortDesc: "On switch-in, this Pokemon's Attack is raised by 1 stage.",
+
+		boost: "  The Hearthflame Mask worn by [POKEMON] shone brilliantly, and [POKEMON]'s Attack rose!",
 	},
 	embodyaspectteal: {
 		name: "Embody Aspect (Teal)",
 		shortDesc: "On switch-in, this Pokemon's Speed is raised by 1 stage.",
+
+		boost: "  The Teal Mask worn by [POKEMON] shone brilliantly, and [POKEMON]'s Speed rose!",
 	},
 	embodyaspectwellspring: {
 		name: "Embody Aspect (Wellspring)",
 		shortDesc: "On switch-in, this Pokemon's Special Defense is raised by 1 stage.",
+
+		boost: "  The Wellspring Mask worn by [POKEMON] shone brilliantly, and [POKEMON]'s Sp. Def rose!",
 	},
 	emergencyexit: {
 		name: "Emergency Exit",
@@ -644,8 +652,12 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	heatproof: {
 		name: "Heatproof",
-		desc: "The power of Fire-type attacks against this Pokemon is halved. This Pokemon takes half of the usual burn damage, rounded down.",
-		shortDesc: "The power of Fire-type attacks against this Pokemon is halved; burn damage halved.",
+		desc: "If a Pokemon uses a Fire-type attack against this Pokemon, that Pokemon's offensive stat is halved when calculating the damage to this Pokemon. This Pokemon takes half of the usual burn damage, rounded down.",
+		shortDesc: "Fire damage against this Pokemon is dealt with 1/2 offensive stat; 1/2 burn damage.",
+		gen8: {
+			desc: "The power of Fire-type attacks against this Pokemon is halved. This Pokemon takes half of the usual burn damage, rounded down.",
+			shortDesc: "The power of Fire-type attacks against this Pokemon is halved; burn damage halved.",
+		},
 	},
 	heavymetal: {
 		name: "Heavy Metal",
@@ -1821,7 +1833,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	supersweetsyrup: {
 		name: "Supersweet Syrup",
-		shortDesc: "On switch-in, this Pokemon lowers the evasiveness of opponents by 1 stage.",
+		shortDesc: "On switch-in, this Pokemon lowers the evasiveness of opponents 1 stage. Once per battle.",
 
 		start: "  A supersweet aroma is wafting from the syrup covering [POKEMON]!",
 	},

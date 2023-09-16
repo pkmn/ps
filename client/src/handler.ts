@@ -261,7 +261,8 @@ export class Handler implements Protocol.Handler {
     if (damage === null) return;
 
     if (fromEffect) {
-      poke.activateAbility(fromEffect);
+      const ofpoke = this.battle.getPokemon(kwArgs.of);
+      (ofpoke || poke).activateAbility(fromEffect);
       if (fromEffect.kind === 'Item' &&
         !CONSUMED.includes(poke.lastItemEffect as LastItemEffect) &&
         poke.lastItem !== fromEffect.id) {

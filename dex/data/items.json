@@ -1725,11 +1725,13 @@
     },
     "cornerstonemask": {
       "name": "Cornerstone Mask",
+      "fling": {"basePower": 60},
+      "onBasePowerPriority": 15,
       "forcedForme": "Ogerpon-Cornerstone",
       "itemUser": ["Ogerpon-Cornerstone"],
       "num": 2406,
       "gen": 9,
-      "desc": "Ogerpon-Cornerstone can Terastallize to acquire Embody Aspect (Cornerstone)."
+      "desc": "Ogerpon-Cornerstone: 1.2x power attacks; Terastallize to gain Embody Aspect."
     },
     "cornnberry": {
       "name": "Cornn Berry",
@@ -1770,7 +1772,6 @@
       "onFractionalPriorityPriority": -2,
       "num": 210,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder moves first in its priority bracket when at 1/4 max HP or less. Single use."
     },
     "damprock": {
@@ -2085,7 +2086,6 @@
       "naturalGift": {"basePower": 100, "type": "Bug"},
       "num": 208,
       "gen": 3,
-      "isNonstandard": "Unobtainable",
       "desc": "Restores 1/4 max HP after holder is hit by a supereffective move. Single use."
     },
     "eviolite": {
@@ -2616,11 +2616,13 @@
     },
     "hearthflamemask": {
       "name": "Hearthflame Mask",
+      "fling": {"basePower": 60},
+      "onBasePowerPriority": 15,
       "forcedForme": "Ogerpon-Hearthflame",
       "itemUser": ["Ogerpon-Hearthflame"],
       "num": 2408,
       "gen": 9,
-      "desc": "Ogerpon-Hearthflame can Terastallize to acquire Embody Aspect (Hearthflame)."
+      "desc": "Ogerpon-Hearthflame: 1.2x power attacks; Terastallize to gain Embody Aspect."
     },
     "heatrock": {
       "name": "Heat Rock",
@@ -2784,7 +2786,6 @@
       "naturalGift": {"basePower": 100, "type": "Dragon"},
       "num": 211,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "If holder is hit by a physical move, attacker loses 1/8 of its max HP. Single use."
     },
     "jawfossil": {
@@ -2817,7 +2818,6 @@
       "naturalGift": {"basePower": 100, "type": "Fairy"},
       "num": 687,
       "gen": 6,
-      "isNonstandard": "Unobtainable",
       "desc": "Raises holder's Defense by 1 stage after it is hit by a physical attack. Single use."
     },
     "kelpsyberry": {
@@ -3189,7 +3189,6 @@
       "naturalGift": {"basePower": 100, "type": "Dark"},
       "num": 688,
       "gen": 6,
-      "isNonstandard": "Unobtainable",
       "desc": "Raises holder's Sp. Def by 1 stage after it is hit by a special attack. Single use."
     },
     "marshadiumz": {
@@ -3328,7 +3327,6 @@
       "condition": {"duration": 2},
       "num": 209,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "Holder's next move has 1.2x accuracy when at 1/4 max HP or less. Single use."
     },
     "mimikiumz": {
@@ -4067,7 +4065,6 @@
       "naturalGift": {"basePower": 100, "type": "Dark"},
       "num": 212,
       "gen": 4,
-      "isNonstandard": "Unobtainable",
       "desc": "If holder is hit by a special move, attacker loses 1/8 of its max HP. Single use."
     },
     "rustedshield": {
@@ -5556,11 +5553,13 @@
     },
     "wellspringmask": {
       "name": "Wellspring Mask",
+      "fling": {"basePower": 60},
+      "onBasePowerPriority": 15,
       "forcedForme": "Ogerpon-Wellspring",
       "itemUser": ["Ogerpon-Wellspring"],
       "num": 2407,
       "gen": 9,
-      "desc": "Ogerpon-Wellspring can Terastallize to acquire Embody Aspect (Wellspring)."
+      "desc": "Ogerpon-Wellspring: 1.2x power attacks; Terastallize to gain Embody Aspect."
     },
     "wepearberry": {
       "name": "Wepear Berry",

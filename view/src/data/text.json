@@ -782,6 +782,18 @@
   "electromorphosis": {
     "start": "  Being hit by [MOVE] charged [POKEMON] with power!"
   },
+  "embodyaspectcornerstone": {
+    "boost": "  The Cornerstone Mask worn by [POKEMON] shone brilliantly, and [POKEMON]'s Defense rose!"
+  },
+  "embodyaspecthearthflame": {
+    "boost": "  The Hearthflame Mask worn by [POKEMON] shone brilliantly, and [POKEMON]'s Attack rose!"
+  },
+  "embodyaspectteal": {
+    "boost": "  The Teal Mask worn by [POKEMON] shone brilliantly, and [POKEMON]'s Speed rose!"
+  },
+  "embodyaspectwellspring": {
+    "boost": "  The Wellspring Mask worn by [POKEMON] shone brilliantly, and [POKEMON]'s Sp. Def rose!"
+  },
   "fairyaura": {"start": "  [POKEMON] is radiating a fairy aura!"},
   "flashfire": {"start": "  The power of [POKEMON]'s Fire-type moves rose!"},
   "flowerveil": {

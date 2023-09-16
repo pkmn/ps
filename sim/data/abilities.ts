@@ -1107,7 +1107,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	embodyaspectcornerstone: {
 		onStart(pokemon) {
-			this.boost({def: 1}, pokemon);
+			if (pokemon.baseSpecies.name === 'Ogerpon-Cornerstone-Tera' && !pokemon.transformed) {
+				this.boost({def: 1}, pokemon);
+			}
 		},
 		name: "Embody Aspect (Cornerstone)",
 		rating: 3.5,
@@ -1115,7 +1117,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	embodyaspecthearthflame: {
 		onStart(pokemon) {
-			this.boost({atk: 1}, pokemon);
+			if (pokemon.baseSpecies.name === 'Ogerpon-Hearthflame-Tera' && !pokemon.transformed) {
+				this.boost({atk: 1}, pokemon);
+			}
 		},
 		name: "Embody Aspect (Hearthflame)",
 		rating: 3.5,
@@ -1123,7 +1127,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	embodyaspectteal: {
 		onStart(pokemon) {
-			this.boost({spe: 1}, pokemon);
+			if (pokemon.baseSpecies.name === 'Ogerpon-Teal-Tera' && !pokemon.transformed) {
+				this.boost({spe: 1}, pokemon);
+			}
 		},
 		name: "Embody Aspect (Teal)",
 		rating: 3.5,
@@ -1131,7 +1137,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	embodyaspectwellspring: {
 		onStart(pokemon) {
-			this.boost({spd: 1}, pokemon);
+			if (pokemon.baseSpecies.name === 'Ogerpon-Wellspring-Tera' && !pokemon.transformed) {
+				this.boost({spd: 1}, pokemon);
+			}
 		},
 		name: "Embody Aspect (Wellspring)",
 		rating: 3.5,
@@ -1683,9 +1691,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 131,
 	},
 	heatproof: {
-		onSourceBasePowerPriority: 18,
-		onSourceBasePower(basePower, attacker, defender, move) {
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Fire') {
+				this.debug('Heatproof Atk weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Heatproof SpA weaken');
 				return this.chainModify(0.5);
 			}
 		},
@@ -1736,7 +1752,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	hungerswitch: {
 		onResidualOrder: 29,
 		onResidual(pokemon) {
-			if (pokemon.species.baseSpecies !== 'Morpeko' || pokemon.transformed) return;
+			if (pokemon.species.baseSpecies !== 'Morpeko' || pokemon.transformed || pokemon.terastallized) return;
 			const targetForme = pokemon.species.name === 'Morpeko' ? 'Morpeko-Hangry' : 'Morpeko';
 			pokemon.formeChange(targetForme);
 		},
@@ -4369,6 +4385,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	supersweetsyrup: {
 		onStart(pokemon) {
+			if (pokemon.syrupTriggered) return;
+			pokemon.syrupTriggered = true;
 			this.add('-ability', pokemon, 'Supersweet Syrup');
 			let activated = false;
 			for (const target of pokemon.adjacentFoes()) {

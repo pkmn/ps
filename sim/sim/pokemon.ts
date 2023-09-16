@@ -265,6 +265,7 @@ export class Pokemon {
 	// Gen 9 only
 	swordBoost: boolean;
 	shieldBoost: boolean;
+	syrupTriggered: boolean;
 
 	/** Have this pokemon's Start events run yet? (Start events run every switch-in) */
 	isStarted: boolean;
@@ -277,7 +278,11 @@ export class Pokemon {
 	canMegaEvo: string | null | undefined;
 	canUltraBurst: string | null | undefined;
 	readonly canGigantamax: string | null;
-	canTerastallize: string | null;
+	/**
+	 * A Pokemon's Tera type if it can Terastallize, false if it is temporarily unable to tera and should have its
+	 * ability restored upon switching out, or null if its inability to tera is permanent.
+	 */
+	canTerastallize: string | false | null;
 	teraType: string;
 	baseTypes: string[];
 	terastallized?: string;
@@ -471,6 +476,7 @@ export class Pokemon {
 		this.truantTurn = false;
 		this.swordBoost = false;
 		this.shieldBoost = false;
+		this.syrupTriggered = false;
 		this.isStarted = false;
 		this.duringMove = false;
 
@@ -1214,7 +1220,8 @@ export class Pokemon {
 		const species = pokemon.species;
 		if (pokemon.fainted || this.illusion || pokemon.illusion || (pokemon.volatiles['substitute'] && this.battle.gen >= 5) ||
 			(pokemon.transformed && this.battle.gen >= 2) || (this.transformed && this.battle.gen >= 5) ||
-			species.name === 'Eternatus-Eternamax' || (species.baseSpecies === 'Ogerpon' && this.terastallized)) {
+			species.name === 'Eternatus-Eternamax' || (species.baseSpecies === 'Ogerpon' &&
+			(this.terastallized || pokemon.terastallized))) {
 			return false;
 		}
 
@@ -1307,6 +1314,10 @@ export class Pokemon {
 				}
 			}
 		}
+
+		// Pokemon transformed into Ogerpon cannot Terastallize
+		// restoring their ability to tera after they untransform is handled ELSEWHERE
+		if (this.species.baseSpecies === 'Ogerpon' && this.canTerastallize) this.canTerastallize = false;
 
 		return true;
 	}
@@ -1445,6 +1456,7 @@ export class Pokemon {
 		this.ability = this.baseAbility;
 		this.hpType = this.baseHpType;
 		this.hpPower = this.baseHpPower;
+		if (this.canTerastallize === false) this.canTerastallize = this.teraType;
 		for (const i in this.volatiles) {
 			if (this.volatiles[i].linkedStatus) {
 				this.removeLinkedVolatiles(this.volatiles[i].linkedStatus, this.volatiles[i].linkedPokemon);
