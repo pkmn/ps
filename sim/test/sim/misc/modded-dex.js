@@ -1,9 +1,7 @@
 'use strict';
 
 const assert = require('../../assert');
-const Sim = require('./../../../build/cjs/sim');
-const Dex = Sim.Dex;
-
+const {Battle, Dex} = require('./../../../build/cjs/sim');
 
 let battle;
 
@@ -12,14 +10,14 @@ describe('Modded Dex', function () {
 		battle.destroy();
 	});
 
-	const testmod = Dex.mod('testmod', {
-		Rulesets: {
-			testformat: {
+	const dex = Dex.mod('testmod', {
+		Formats: [
+			{
 				name: 'Test Format',
 				effectType: "Format",
 				mod: 'testmod',
 			},
-		},
+		],
 		Species: {
 			testpokemon: {
 				name: 'Test-Pokemon',
@@ -33,13 +31,14 @@ describe('Modded Dex', function () {
 
 	it(`should load modded dex data`, function () {
 		const battleOptions = {
-			format: testmod.formats.get('testformat'),
+			format: dex.formats.get('testformat'),
 			debug: true,
 		};
 
-		battle = new Sim.Battle(battleOptions);
+		battle = new Battle(battleOptions);
 
 		assert.equal(battle.format.name, 'Test Format');
+		assert(battle.format.exists);
 	});
 
 	it(`should load modded dex data from formatid`, function () {
@@ -48,18 +47,18 @@ describe('Modded Dex', function () {
 			debug: true,
 		};
 
-		battle = new Sim.Battle(battleOptions);
+		battle = new Battle(battleOptions, dex);
 
 		assert.equal(battle.format.name, 'Test Format');
 	});
 
 	it(`should create battle with modded pokemon species`, function () {
 		const battleOptions = {
-			format: testmod.formats.get('testformat'),
+			format: dex.formats.get('testformat'),
 			debug: true,
 		};
 
-		battle = new Sim.Battle(battleOptions);
+		battle = new Battle(battleOptions, dex);
 
 		battle.setPlayer('p1', {team: [
 			{species: "TestPokemon", moves: ['tackle']},
@@ -78,7 +77,7 @@ describe('Modded Dex', function () {
 			debug: true,
 		};
 
-		battle = new Sim.Battle(battleOptions);
+		battle = new Battle(battleOptions, dex);
 
 		battle.setPlayer('p1', {team: [
 			{species: "TestPokemon", moves: ['tackle']},
