@@ -120,10 +120,12 @@ export class Side {
   }
 
   addPokemon(details: DetailedPokemon, replaceSlot = -1) {
-    const oldItem = replaceSlot ? this.team[replaceSlot]?.item : undefined;
-    const set = replaceSlot
+    const oldItem = replaceSlot >= 0 ? this.team[replaceSlot]?.item : undefined;
+    const set = replaceSlot >= 0
       ? this.team[replaceSlot]?.set
-      : this.sets?.find(s => (s.name || s.species) === details.name);
+      : this.sets?.find(s => details.name
+        ? (s.name || s.species) === details.name
+        : s.species === details.speciesForme);
     const poke = this.provider(this, details, set);
     if (oldItem) poke.item = oldItem;
 
