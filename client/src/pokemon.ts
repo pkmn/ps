@@ -134,7 +134,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.baseSpeciesForme = details.speciesForme;
     this.details = details.details;
     this.name = details.name;
-    this.level = details.level;
+    this.level = set?.level ?? details.level;
     this.shiny = details.shiny;
     this.gender = details.gender || 'N';
     this.originalIdent = details.ident;
@@ -143,7 +143,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.hp = 0;
     this.maxhp = 0; // 1000
     this.baseMaxhp = this.maxhp;
-    this.level = 100;
     this.hpcolor = 'g';
     this.status = undefined;
     this.fainted = false;
