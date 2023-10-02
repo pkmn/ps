@@ -885,7 +885,7 @@
       "shortDesc": "If Eiscue, the first physical hit it takes deals 0 damage. This effect is restored in Hail."
     },
     "icescales": {"inherit": true},
-    "illuminate": {"inherit": true},
+    "illuminate": {"inherit": true, "shortDesc": "No competitive use."},
     "illusion": {"inherit": true},
     "immunity": {"inherit": true},
     "imposter": {"inherit": true},
@@ -1330,7 +1330,6 @@
       "shortDesc": "This Pokemon cannot be statused, and is considered to be asleep."
     },
     "commander": {
-      "isPermanent": true,
       "name": "Commander",
       "num": 279,
       "desc": "If this Pokemon is a Tatsugiri and a Dondozo is an active ally, this Pokemon goes into the Dondozo's mouth. The Dondozo has its Attack, Special Attack, Speed, Defense, and Special Defense raised by 2 stages. During the effect, the Dondozo cannot be switched out, this Pokemon cannot select an action, and attacks targeted at this Pokemon will be avoided but it will still take indirect damage. If this Pokemon faints during the effect, a Pokemon can be switched in as a replacement but the Dondozo remains unable to be switched out. If the Dondozo faints during the effect, this Pokemon regains the ability to select an action.",
@@ -1725,7 +1724,6 @@
     },
     "hadronengine": {
       "onModifySpAPriority": 5,
-      "isPermanent": true,
       "name": "Hadron Engine",
       "num": 289,
       "shortDesc": "On switch-in, summons Electric Terrain. During Electric Terrain, Sp. Atk is 1.3333x."
@@ -1830,9 +1828,11 @@
       "shortDesc": "This Pokemon receives 1/2 damage from special attacks."
     },
     "illuminate": {
+      "isBreakable": true,
       "name": "Illuminate",
       "num": 35,
-      "shortDesc": "No competitive use."
+      "desc": "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage.",
+      "shortDesc": "This Pokemon's accuracy can't be lowered by others; ignores their evasiveness stat."
     },
     "illusion": {
       "name": "Illusion",
@@ -2165,7 +2165,6 @@
     },
     "orichalcumpulse": {
       "onModifyAtkPriority": 5,
-      "isPermanent": true,
       "name": "Orichalcum Pulse",
       "num": 288,
       "shortDesc": "On switch-in, summons Sunny Day. During Sunny Day, Attack is 1.3333x."

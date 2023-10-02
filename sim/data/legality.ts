@@ -2039,6 +2039,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ],
     encounters: [ { generation: 1, level: 15 } ]
   },
+  growlithehisui: {
+    learnset: { bite: [ '9S0' ], ember: [ '9S0' ], flamewheel: [ '9S0' ], howl: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 15,
+        isHidden: true,
+        nature: 'Jolly',
+        ivs: { hp: 31, atk: 31, def: 20, spa: 20, spd: 20, spe: 31 },
+        moves: [ 'flamewheel', 'bite', 'howl', 'ember' ],
+        pokeball: 'pokeball'
+      }
+    ]
+  },
   arcanine: {
     learnset: {
       crunch: [ '4S0' ],
@@ -4239,10 +4253,11 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       defensecurl: [ '4S0' ],
       happyhour: [ '7S2' ],
       holdback: [ '7S2' ],
+      lick: [ '9S3' ],
       metronome: [ '7S2', '4S0', '4S1' ],
       odorsleuth: [ '4S1' ],
       selfdestruct: [ '4S0' ],
-      tackle: [ '7S2', '4S0', '4S1' ]
+      tackle: [ '9S3', '7S2', '4S0', '4S1' ]
     },
     eventData: [
       {
@@ -4265,6 +4280,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         abilities: [ 'thickfat' ],
         moves: [ 'tackle', 'metronome', 'holdback', 'happyhour' ],
         pokeball: 'cherishball'
+      },
+      {
+        generation: 9,
+        level: 1,
+        shiny: true,
+        gender: 'M',
+        isHidden: true,
+        nature: 'Impish',
+        moves: [ 'lick', 'tackle' ],
+        pokeball: 'pokeball'
       }
     ]
   },
@@ -5106,6 +5131,23 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 2, level: 3 } ]
   },
   ariados: {
+    learnset: {
+      crosspoison: [ '9S0' ],
+      poisonjab: [ '9S0' ],
+      stickyweb: [ '9S0' ],
+      toxicthread: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 65,
+        gender: 'M',
+        nature: 'Hardy',
+        abilities: [ 'swarm' ],
+        ivs: { hp: 20, atk: 20, def: 20, spa: 20, spd: 20, spe: 20 },
+        moves: [ 'toxicthread', 'stickyweb', 'crosspoison', 'poisonjab' ]
+      }
+    ],
     encounters: [
       { generation: 2, level: 7 },
       { generation: 4, level: 5 },
@@ -5569,6 +5611,19 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     encounters: [ { generation: 2, level: 2 } ]
   },
   ursaring: { encounters: [ { generation: 2, level: 25 } ] },
+  ursalunabloodmoon: {
+    learnset: { bloodmoon: [ '9S0' ], calmmind: [ '9S0' ], earthpower: [ '9S0' ], slash: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 70,
+        nature: 'Hardy',
+        perfectIVs: 3,
+        moves: [ 'bloodmoon', 'earthpower', 'slash', 'calmmind' ]
+      }
+    ],
+    eventOnly: true
+  },
   magcargo: {
     learnset: {
       earthquake: [ '3S0' ],
@@ -9294,7 +9349,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     learnset: {
       absorb: [ '5S0', '5S1' ],
       stockpile: [ '5S1' ],
-      tackle: [ '5S0', '5S1' ],
+      tackle: [ '9S2', '5S0', '5S1' ],
       withdraw: [ '5S0', '5S1' ]
     },
     eventData: [
@@ -9311,7 +9366,8 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         gender: 'M',
         isHidden: true,
         moves: [ 'tackle', 'withdraw', 'absorb', 'stockpile' ]
-      }
+      },
+      { generation: 9, level: 1, moves: [ 'tackle' ], pokeball: 'pokeball' }
     ]
   },
   torterra: {
@@ -9339,7 +9395,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       grassknot: [ '4S0', '4S2' ],
       helpinghand: [ '4S0', '4S2' ],
       leer: [ '5S1', '5S3' ],
-      scratch: [ '5S1' ],
+      scratch: [ '9S4', '5S1' ],
       taunt: [ '5S1', '5S3' ],
       thunderpunch: [ '4S0', '4S2' ]
     },
@@ -9373,7 +9429,8 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         gender: 'M',
         isHidden: true,
         moves: [ 'leer', 'ember', 'taunt', 'fakeout' ]
-      }
+      },
+      { generation: 9, level: 1, moves: [ 'scratch' ], pokeball: 'pokeball' }
     ]
   },
   infernape: {
@@ -9411,7 +9468,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       growl: [ '6S4', '5S0', '5S3' ],
       hydropump: [ '7S5', '5S1' ],
       peck: [ '5S1', '5S2' ],
-      pound: [ '6S4', '5S0', '5S3' ],
+      pound: [ '9S6', '6S4', '5S0', '5S3' ],
       return: [ '6S4' ],
       round: [ '5S2' ],
       sing: [ '5S2' ],
@@ -9460,7 +9517,8 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         nature: 'Hardy',
         moves: [ 'hydropump', 'bubblebeam', 'whirlpool', 'drillpeck' ],
         pokeball: 'pokeball'
-      }
+      },
+      { generation: 9, level: 1, moves: [ 'pound' ], pokeball: 'pokeball' }
     ]
   },
   empoleon: {
@@ -15299,6 +15357,73 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ],
     eventOnly: true
   },
+  okidogi: {
+    learnset: {
+      brutalswing: [ '9S0' ],
+      crunch: [ '9S0' ],
+      poisonjab: [ '9S0' ],
+      superpower: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 70,
+        moves: [ 'superpower', 'crunch', 'brutalswing', 'poisonjab' ]
+      }
+    ],
+    eventOnly: true
+  },
+  munkidori: {
+    learnset: {
+      futuresight: [ '9S0' ],
+      nastyplot: [ '9S0' ],
+      psychic: [ '9S0' ],
+      sludgewave: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 70,
+        moves: [ 'futuresight', 'nastyplot', 'sludgewave', 'psychic' ]
+      }
+    ],
+    eventOnly: true
+  },
+  fezandipiti: {
+    learnset: { beatup: [ '9S0' ], flatter: [ '9S0' ], roost: [ '9S0' ], swagger: [ '9S0' ] },
+    eventData: [ { generation: 9, level: 70, moves: [ 'roost', 'flatter', 'swagger', 'beatup' ] } ],
+    eventOnly: true
+  },
+  ogerpon: {
+    learnset: {
+      grassyterrain: [ '9S1' ],
+      growth: [ '9S0' ],
+      ivycudgel: [ '9S1', '9S0' ],
+      lowkick: [ '9S1' ],
+      slam: [ '9S1', '9S0' ],
+      vinewhip: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 20,
+        nature: 'Lonely',
+        ivs: { hp: 31, atk: 31, def: 20, spa: 20, spd: 20, spe: 31 },
+        moves: [ 'ivycudgel', 'slam', 'growth', 'vinewhip' ]
+      },
+      {
+        generation: 9,
+        level: 70,
+        nature: 'Lonely',
+        ivs: { hp: 31, atk: 31, def: 20, spa: 20, spd: 20, spe: 31 },
+        moves: [ 'ivycudgel', 'lowkick', 'slam', 'grassyterrain' ]
+      }
+    ],
+    eventOnly: true
+  },
+  ogerponhearthflame: { eventOnly: true },
+  ogerponwellspring: { eventOnly: true },
+  ogerponcornerstone: { eventOnly: true },
   kerfluffle: {
     learnset: { celebrate: [ '6S0' ], fly: [ '6S0' ], holdhands: [ '6S0' ], metronome: [ '6S0' ] },
     eventData: [

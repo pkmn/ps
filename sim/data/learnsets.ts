@@ -20222,9 +20222,9 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
       irondefense: [ '9M', '7T', '6T', '5T' ],
       magnitude: [ '7L12', '7V', '6L12', '5L15', '4L15', '3L16' ],
       megapunch: [
-        '9M', '9E', '7E',
-        '7V', '6E', '5E',
-        '4E', '3T', '3E'
+        '9E', '7E', '7V',
+        '6E', '5E', '4E',
+        '3T', '3E'
       ],
       metronome: [ '9M', '7V', '3T' ],
       mimic: [ '7V', '3T' ],
@@ -136833,6 +136833,9 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
       zenheadbutt: [ '9M' ]
     }
   },
+  ogerponhearthflame: {},
+  ogerponwellspring: {},
+  ogerponcornerstone: {},
   syclar: {
     learnset: {
       absorb: [ '9L1', '8L1', '7L1' ],

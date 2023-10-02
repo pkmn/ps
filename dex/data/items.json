@@ -1012,11 +1012,10 @@
     "mindplate": {"inherit": true, "isNonstandard": "Past"},
     "oddincense": {"inherit": true, "isNonstandard": null},
     "poisonmemory": {"inherit": true, "isNonstandard": null},
-    "prismscale": {"inherit": true, "isNonstandard": null},
     "protector": {"inherit": true, "isNonstandard": null},
     "psychicmemory": {"inherit": true, "isNonstandard": null},
     "quickpowder": {"inherit": true, "isNonstandard": null},
-    "reapercloth": {"inherit": true, "isNonstandard": null},
+    "razorfang": {"inherit": true, "isNonstandard": "Past"},
     "ribbonsweet": {"inherit": true, "isNonstandard": null},
     "rockincense": {"inherit": true, "isNonstandard": null},
     "rockmemory": {"inherit": true, "isNonstandard": null},
@@ -3774,7 +3773,6 @@
       "fling": {"basePower": 30},
       "num": 537,
       "gen": 5,
-      "isNonstandard": "Past",
       "desc": "Evolves Feebas into Milotic when traded."
     },
     "protectivepads": {
@@ -3911,7 +3909,6 @@
       "onModifyMovePriority": -1,
       "num": 327,
       "gen": 4,
-      "isNonstandard": "Past",
       "desc": "Holder's attacks without a chance to make the target flinch gain a 10% chance to make the target flinch. Evolves Gligar into Gliscor when held and leveled up during the night.",
       "shortDesc": "Holder's attacks without a chance to flinch gain a 10% chance to flinch."
     },
@@ -3930,7 +3927,6 @@
       "fling": {"basePower": 10},
       "num": 325,
       "gen": 4,
-      "isNonstandard": "Past",
       "desc": "Evolves Dusclops into Dusknoir when traded."
     },
     "redcard": {

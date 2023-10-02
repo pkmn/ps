@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/img",
-  "version": "0.2.17",
+  "version": "0.2.18",
   "description": "Logic for displaying Pokémon Showdown's sprite/icon resources",
   "repository": "github:pkmn/ps",
   "license": "MIT",
