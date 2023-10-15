@@ -19099,7 +19099,7 @@
       "pp": 10,
       "priority": 0,
       "flags": {"protect": 1, "mirror": 1, "bullet": 1},
-      "condition": {"noCopy": true, "duration": 3, "onResidualOrder": 14},
+      "condition": {"noCopy": true, "duration": 4, "onResidualOrder": 14},
       "secondary": {"chance": 100, "volatileStatus": "syrupbomb"},
       "target": "normal",
       "type": "Grass",

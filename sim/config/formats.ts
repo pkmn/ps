@@ -307,11 +307,14 @@ export const Formats: FormatList = [
     banlist: [
       'Basculin-White-Striped',
       'Dunsparce',
+      'Gligar',
       'Murkrow',
       'Qwilfish-Hisui',
       'Scyther',
       'Sneasel',
       'Sneasel-Hisui',
+      'Vulpix',
+      'Vulpix-Alola',
       'Yanma'
     ]
   },
@@ -388,6 +391,18 @@ export const Formats: FormatList = [
       'Best of = 3'
     ],
     banlist: [ 'Walking Wake', 'Iron Leaves' ]
+  },
+  {
+    name: '[Gen 9] Kitakami Prologue',
+    mod: 'gen9',
+    gameType: 'doubles',
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Kitakami Pokedex',
+      'Min Source Gen = 9',
+      'VGC Timer'
+    ]
   },
   {
     name: '[Gen 9] Doubles Custom Game',
@@ -1270,7 +1285,7 @@ export const Formats: FormatList = [
     gameType: 'doubles',
     ruleset: [ 'Standard' ],
     banlist: [ 'AG', 'Uber', 'Soul Dew', 'Dark Void', 'Sand Veil' ],
-    unbanlist: [ 'Latios', 'Manaphy', 'Mew', 'Salamence', 'Wobbuffet', 'Wynaut' ]
+    unbanlist: [ 'Manaphy', 'Mew', 'Salamence', 'Wobbuffet', 'Wynaut' ]
   },
   {
     name: '[Gen 3] Doubles OU',
@@ -1468,7 +1483,7 @@ export const Formats: FormatList = [
     name: '[Gen 8] Doubles UU',
     mod: 'gen8',
     gameType: 'doubles',
-    ruleset: [ '[Gen 8] Doubles OU' ],
+    ruleset: [ '[Gen 8] Doubles OU', 'Evasion Abilities Clause' ],
     banlist: [ 'DOU', 'DBL' ]
   },
   {
