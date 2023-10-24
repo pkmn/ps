@@ -27,8 +27,8 @@ if (packages.length) {
 
 const readline = require('readline');
 
-const {Dex} = require('@pkmn/sim');
 const {Generation} = require('@pkmn/data');
+const {Dex} = require('@pkmn/sim');
 
 const {Verifier} = require('./build/verifier');
 
@@ -37,7 +37,7 @@ const verifier = new Verifier(Generation.get(Dex, process.argv[2] || 9, Verifier
 readline.createInterface({
   input: process.stdin,
   output: process.stdout,
-  terminal: false
+  terminal: false,
 }).on('line', line => {
   const result = verifier.verifyLine(line);
   if (result) {

@@ -2,6 +2,7 @@ import {
   BoostID,
   FieldCondition,
   GameType,
+  GenerationNum,
   ID,
   Player,
   SideCondition,
@@ -13,6 +14,7 @@ import {
 import {Args, KWArgs, PokemonIdent, Protocol} from '../index';
 
 interface Generation {
+  num: GenerationNum;
   abilities: API;
   items: API;
   moves: API;
@@ -236,7 +238,7 @@ function verifyKWArg<T extends Protocol.BattleArgsWithKWArgName>(
 }
 
 class Handler implements Required<Protocol.Handler<boolean>> {
-  private readonly gen?: Generation; // TODO ?
+  private readonly gen?: Generation;
 
   constructor(gen?: Generation) {
     this.gen = gen;
@@ -1106,13 +1108,175 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 }
 
+// Skipped:
+//
+// - |done|
+// - |gametype|
+// - |gen|
+// - |inactive|
+// - |inactiveoff|
+// - |player|
+// - |rated|
+// - |rule|
+// - |seed|
+// - |start|
+// - |teamsize|
+// - |tier|
+// - |upkeep|
+// - |-hint|
+//
+// Common (when present):
+//
+// - |clearpoke|
+// - |drag|
+// - |faint|
+// - |poke|
+// - |replace|
+// - |request|
+// - |teampreview|
+// - |tie|
+// - |turn|
+// - |updatepoke|
+// - |win|
+// - |-burst|
+// - |-candynamax|
+// - |-center|
+// - |-crit|
+// - |-hitcount|
+// - |-mega|
+// - |-mustrecharge|
+// - |-notarget|
+// - |-ohko|
+// - |-primal|
+// - |-resisted|
+// - |-supereffective|
+// - |-swapsideconditions|
+// - |-terastallize|
+// - |-waiting|
+// - |-zbroken|
+// - |-zpower|
+//
+const HANDLERS: {[gen: number]: (gen: Generation) => Protocol.Handler<boolean>} = {
+  1: () => ({ // (gen) => ({
+    // '|move|'(args: Args['|move|'], kwArgs: KWArgs['|move|']) {
+    //   return false; // TODO
+    // },
+    // '|switch|'(args: Args['|switch|'], kwArgs: KWArgs['|switch|']) {
+    //   return false; // TODO
+    // },
+    // '|cant|'(args: Args['|cant|'], kwArgs: KWArgs['|cant|']) {
+    //   return false; // TODO
+    // },
+    // '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
+    //   return false; // TODO
+    // },
+    // '|-heal|'(args: Args['|-heal|'], kwArgs: KWArgs['|-heal|']) {
+    //   return false; // TODO
+    // },
+    // '|-status|'(args: Args['|-status|'], kwArgs: KWArgs['|-status|']) {
+    //   return false; // TODO
+    // },
+    // '|-curestatus|'(args: Args['|-curestatus|'], kwArgs: KWArgs['|-curestatus|']) {
+    //   return false; // TODO
+    // },
+    // '|-boost|'(args: Args['|-boost|'], kwArgs: KWArgs['|-boost|']) {
+    //   return false; // TODO
+    // },
+    // '|-unboost|'(args: Args['|-unboost|'], kwArgs: KWArgs['|-unboost|']) {
+    //   return false; // TODO
+    // },
+    // '|-clearallboost|'(args: Args['|-clearallboost|'], kwArgs: KWArgs['|-clearallboost|']) {
+    //   return false; // TODO
+    // },
+    // '|-fail|'(args: Args['|-fail|'], kwArgs: KWArgs['|-fail|']) {
+    //   return false; // TODO
+    // },
+    // '|-miss|'(args: Args['|-miss|'], kwArgs: KWArgs['|-miss|']) {
+    //   return false; // TODO
+    // },
+    // '|-prepare|'(args: Args['|-prepare|']) {
+    //   return false; // TODO
+    // },
+    // '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
+    //   return false; // TODO
+    // },
+    // '|-fieldactivate|'(args: Args['|-fieldactivate|'], kwArgs: KWArgs['|-fieldactivate|']) {
+    //   return false; // TODO
+    // },
+    // '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {
+    //   return false; // TODO
+    // },
+    // '|-end|'(args: Args['|-end|'], kwArgs: KWArgs['|-end|']) {
+    //   return false; // TODO
+    // },
+    // '|-immune|'(args: Args['|-immune|'], kwArgs: KWArgs['|-immune|']) {
+    //   return false; // TODO
+    // },
+    // '|-transform|'(args: Args['|-transform|'], kwArgs: KWArgs['|-transform|']) {
+    //   return false; // TODO
+    // },
+
+    '|drag|'() { return false; },
+    '|-item|'() { return false; },
+    '|-cureteam|'() { return false; },
+    '|-sethp|'() { return false; },
+    '|-enditem|'() { return false; },
+    '|-setboost|'() { return false; },
+    '|-copyboost|'() { return false; },
+    '|-sidestart|'() { return false; },
+    '|-sideend|'() { return false; },
+    '|-singlemove|'() { return false; },
+    '|-singleturn|'() { return false; },
+    '|-weather|'() { return false; },
+
+    '|-block|'() { return false; },
+    '|-ability|'() { return false; },
+    '|-endablity|'() { return false; },
+    '|-clearnegativeboost|'() { return false; },
+    '|-formechange|'() { return false; },
+    '|-notarget|'() { return false; },
+
+    '|-swapboost|'() { return false; },
+    '|-fieldstart|'() { return false; },
+    '|-fieldend|'() { return false; },
+    '|detailschange|'() { return false; },
+
+    '|clearpoke|'() { return false; },
+    '|poke|'() { return false; },
+    '|teampreview|'() { return false; },
+    '|-center|'() { return false; },
+    '|swap|'() { return false; },
+    '|-combine|'() { return false; },
+    '|-waiting|'() { return false; },
+    '|replace|'() { return false; },
+    '|-clearboost|'() { return false; },
+
+    '|-mega|'() { return false; },
+    '|-primal|'() { return false; },
+    '|-invertboost|'() { return false; },
+
+    '|-zbroken|'() { return false; },
+    '|-zpower|'() { return false; },
+    '|-burst|'() { return false; },
+    '|-clearpositiveboost|'() { return false; },
+
+    '|-candynamax|'() { return false; },
+    '|-swapsideconditions|'() { return false; },
+    '|updatepoke|'() { return false; },
+
+    '|-terastallize|'() { return false; },
+  }),
+};
+
 export class Verifier {
-  handler: Handler;
+  fallback: Required<Protocol.Handler<boolean>>;
+  strict?: Protocol.Handler<boolean>;
 
   static EXISTS = (d: {exists: boolean}) => d.exists;
 
-  constructor(gen?: Generation) {
-    this.handler = new Handler(gen);
+  constructor(gen?: Generation, strict = true) {
+    this.strict = strict && gen && HANDLERS[gen.num] ? HANDLERS[gen.num](gen) : undefined;
+    this.fallback = new Handler(gen);
   }
 
   verify(data: string) {
@@ -1131,9 +1295,9 @@ export class Verifier {
 
   dispatch(args: Protocol.ArgType, kwArgs: Protocol.BattleArgsKWArgType) {
     const key = Protocol.key(args);
-    if (!key || !this.handler[key]) return false;
+    if (!key || !this.fallback[key]) return false;
     if (Object.keys(kwArgs).length && !(key in Protocol.ARGS_WITH_KWARGS)) return false;
-    if (!((this.handler as any)[key](args, kwArgs))) return false;
-    return true;
+    if (this.strict && this.strict[key]) return (this.strict as any)[key](args, kwArgs);
+    return (this.fallback as any)[key](args, kwArgs);
   }
 }
