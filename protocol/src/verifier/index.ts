@@ -167,6 +167,7 @@ function verifyPokemonIdent(ident: Protocol.PokemonIdent) {
 }
 
 function verifyPokemonDetails(details: Protocol.PokemonDetails, gen?: Generation) {
+  // TODO: exclude gender and shiny if Gen 1?
   const m = /^([^|]{1,25}?)(, L\d{0,3})?(, [MF])?(, shiny)?$/.exec(details);
   if (!m) return false;
   return !gen || !!gen.species.get(m[1]);
@@ -1157,13 +1158,22 @@ class Handler implements Required<Protocol.Handler<boolean>> {
 // - |-zpower|
 //
 const HANDLERS: {[gen: number]: (gen: Generation) => Protocol.Handler<boolean>} = {
-  1: () => ({ // (gen) => ({
-    // '|move|'(args: Args['|move|'], kwArgs: KWArgs['|move|']) {
-    //   return false; // TODO
-    // },
-    // '|switch|'(args: Args['|switch|'], kwArgs: KWArgs['|switch|']) {
-    //   return false; // TODO
-    // },
+  1: (gen) => ({
+    '|move|'(args: Args['|move|'], kwArgs: KWArgs['|move|']) {
+      return args.length === 4 &&
+        verifyPokemonIdent(args[1]) &&
+        (args[2] === 'recharge' || verifyMoveName(args[2], gen)) &&
+        (args[3] === '' || (args[3] !== 'null' && verifyPokemonIdent(args[3]))) &&
+        verifyKWArgs(kwArgs, ['miss', 'still', 'from'], gen) &&
+        (!kwArgs.from || verifyMoveName(kwArgs.from as Protocol.MoveName, gen));
+    },
+    '|switch|'(args: Args['|switch|'], kwArgs: KWArgs['|switch|']) {
+      return args.length === 4 &&
+        verifyPokemonIdent(args[1]) &&
+        verifyPokemonDetails(args[2], gen) &&
+        verifyPokemonHPStatus(args[3]) &&
+        !Object.keys(kwArgs).length;
+    },
     // '|cant|'(args: Args['|cant|'], kwArgs: KWArgs['|cant|']) {
     //   return false; // TODO
     // },
@@ -1173,48 +1183,85 @@ const HANDLERS: {[gen: number]: (gen: Generation) => Protocol.Handler<boolean>} 
     // '|-heal|'(args: Args['|-heal|'], kwArgs: KWArgs['|-heal|']) {
     //   return false; // TODO
     // },
-    // '|-status|'(args: Args['|-status|'], kwArgs: KWArgs['|-status|']) {
-    //   return false; // TODO
-    // },
-    // '|-curestatus|'(args: Args['|-curestatus|'], kwArgs: KWArgs['|-curestatus|']) {
-    //   return false; // TODO
-    // },
-    // '|-boost|'(args: Args['|-boost|'], kwArgs: KWArgs['|-boost|']) {
-    //   return false; // TODO
-    // },
-    // '|-unboost|'(args: Args['|-unboost|'], kwArgs: KWArgs['|-unboost|']) {
-    //   return false; // TODO
-    // },
-    // '|-clearallboost|'(args: Args['|-clearallboost|'], kwArgs: KWArgs['|-clearallboost|']) {
-    //   return false; // TODO
-    // },
+    '|-status|'(args: Args['|-status|'], kwArgs: KWArgs['|-status|']) {
+      const valid = args.length === 3 &&
+        verifyPokemonIdent(args[1]) &&
+        verifyStatusName(args[2]) &&
+        verifyKWArgs(kwArgs, ['from', 'silent'], gen);
+      if (!valid) return false;
+      if (kwArgs.from) return args[2] === 'slp' && kwArgs.from.startsWith('move: ');
+      return !kwArgs.silent || args[2] === 'psn';
+    },
+    '|-curestatus|'(args: Args['|-curestatus|'], kwArgs: KWArgs['|-curestatus|']) {
+      const valid = args.length === 3 &&
+        verifyPokemonIdent(args[1]) &&
+        verifyStatusName(args[2]) &&
+        verifyKWArgs(kwArgs, ['msg', 'silent'], gen);
+      if (!valid) return false;
+      if (kwArgs.msg) return ['slp', 'frz'].includes(args[2]);
+      return !!kwArgs.silent;
+    },
+    '|-boost|'(args: Args['|-boost|'], kwArgs: KWArgs['|-boost|']) {
+      const valid = args.length === 4 &&
+        verifyPokemonIdent(args[1]) &&
+        verifyBoostID(args[2]) &&
+        verifyNum(args[3]) &&
+        verifyKWArgs(kwArgs, ['from'], gen);
+      if (!valid) return false;
+      if (kwArgs.from === 'Rage' && args[2] === 'atk') return true;
+      return !Object.keys(kwArgs).length;
+    },
+    '|-unboost|'(args: Args['|-unboost|'], kwArgs: KWArgs['|-unboost|']) {
+      return args.length === 4 &&
+        verifyPokemonIdent(args[1]) &&
+        verifyBoostID(args[2]) &&
+        verifyNum(args[3]) &&
+        !Object.keys(kwArgs).length;
+    },
+    '|-clearallboost|'(args: Args['|-clearallboost|'], kwArgs: KWArgs['|-clearallboost|']) {
+      return args.length === 1 && verifyKWArgs(kwArgs, ['silent'], gen) && kwArgs.silent === true;
+    },
     // '|-fail|'(args: Args['|-fail|'], kwArgs: KWArgs['|-fail|']) {
     //   return false; // TODO
     // },
-    // '|-miss|'(args: Args['|-miss|'], kwArgs: KWArgs['|-miss|']) {
-    //   return false; // TODO
-    // },
-    // '|-prepare|'(args: Args['|-prepare|']) {
-    //   return false; // TODO
-    // },
+    '|-miss|'(args: Args['|-miss|'], kwArgs: KWArgs['|-miss|']) {
+      return args.length === 2 && verifyPokemonIdent(args[1]) && !Object.keys(kwArgs).length;
+    },
+    '|-prepare|'(args: Args['|-prepare|']) {
+      return args.length === 3 && verifyPokemonIdent(args[1]) && verifyMoveName(args[2], gen);
+    },
     // '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
     //   return false; // TODO
     // },
-    // '|-fieldactivate|'(args: Args['|-fieldactivate|'], kwArgs: KWArgs['|-fieldactivate|']) {
-    //   return false; // TODO
-    // },
+    '|-fieldactivate|'(args: Args['|-fieldactivate|'], kwArgs: KWArgs['|-fieldactivate|']) {
+      return args.length === 2 && args[1] === 'move: Pay Day' && !Object.keys(kwArgs).length;
+    },
     // '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {
     //   return false; // TODO
     // },
-    // '|-end|'(args: Args['|-end|'], kwArgs: KWArgs['|-end|']) {
-    //   return false; // TODO
-    // },
-    // '|-immune|'(args: Args['|-immune|'], kwArgs: KWArgs['|-immune|']) {
-    //   return false; // TODO
-    // },
-    // '|-transform|'(args: Args['|-transform|'], kwArgs: KWArgs['|-transform|']) {
-    //   return false; // TODO
-    // },
+    '|-end|'(args: Args['|-end|'], kwArgs: KWArgs['|-end|']) {
+      const valid = args.length === 3 &&
+          verifyPokemonIdent(args[1]) &&
+          verifyKWArgs(kwArgs, ['silent'], gen);
+      if (!valid) return false;
+      return (kwArgs.silent ? [
+        'Disable', 'confusion', 'Mist', 'move: Focus Energy', 'move: Leech Seed',
+        'Toxic counter', 'Light Screen', 'Reflect', 'move: Bide',
+      ] : [
+        'Disable', 'confusion', 'Bide', 'Substitute',
+      ]).includes(args[2]);
+    },
+    '|-immune|'(args: Args['|-immune|'], kwArgs: KWArgs['|-immune|']) {
+      return args.length === 2 &&
+        verifyPokemonIdent(args[1]) &&
+        verifyKWArgs(kwArgs, ['ohko'], gen);
+    },
+    '|-transform|'(args: Args['|-transform|'], kwArgs: KWArgs['|-transform|']) {
+      return args.length === 3 &&
+        verifyPokemonIdent(args[1]) &&
+        verifyPokemonIdent(args[2]) &&
+        !Object.keys(kwArgs).length;
+    },
 
     '|drag|'() { return false; },
     '|-item|'() { return false; },
