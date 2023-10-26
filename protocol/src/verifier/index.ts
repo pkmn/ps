@@ -690,9 +690,15 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|cant|'(args: Args['|cant|'], kwArgs: KWArgs['|cant|']) {
-    // TODO gen 1
+    if (!verifyPokemonIdent(args[1])) return false;
+    if (this.gen?.num === 1) {
+      const reasons = ['Disable', 'flinch', 'slp', 'frz', 'par', 'partiallytrapped', 'recharge'];
+      if (!reasons.includes(args[2]) || Object.keys(kwArgs).length) return false;
+      return (args[2] === 'Disable'
+        ? (args.length === 4 && verifyMoveName(args[3] as Protocol.MoveName, this.gen))
+        : args.length === 3);
+    }
     return (args.length === 3 || args.length === 4) &&
-      verifyPokemonIdent(args[1]) &&
       (REASONS.includes(args[2] as Protocol.Reason) ||
         verifyEffectName(args[2] as Protocol.EffectName, this.gen) ||
         verifyAbilityName(args[2] as Protocol.AbilityName, this.gen) ||
@@ -729,7 +735,14 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|-fail|'(args: Args['|-fail|'], kwArgs: KWArgs['|-fail|']) {
-    // TODO gen 1
+    if (this.gen?.num === 1) {
+      const valid = verifyPokemonIdent(args[1]) && verifyKWArgs(kwArgs, ['weak'], this.gen);
+      if (!valid || args.length > 3) return false;
+      if (args.length === 2) return true;
+      const reasons = ['move: Substitute', 'par', 'psn', 'slp', 'tox'];
+      if (!reasons.includes(args[2])) return false;
+      return !kwArgs.weak || args[2] === 'move: Substitute';
+    }
     const keys: Protocol.BattleArgsWithKWArgType[] =
       [...KWARGS, 'forme', 'heavy', 'msg', 'weak', 'fail', 'block'];
     if (!verifyKWArgs(kwArgs, keys, this.gen)) {
@@ -750,7 +763,13 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|-block|'(args: Args['|-block|'], kwArgs: KWArgs['|-block|']) {
-    // if (this.gen && this.gen.num < 3) return false;
+    if (this.gen?.num === 1) {
+      return args.length === 4 &&
+        verifyPokemonIdent(args[1]) &&
+        !Object.keys(kwArgs).length &&
+        args[2] === 'move: Mist' &&
+        args[3] === '';
+    }
     if (!verifyKWArgs(kwArgs, KWARGS, this.gen)) return false;
     if (!(verifyPokemonIdent(args[1]) &&
       (verifyEffectName(args[2] as Protocol.EffectName, this.gen) ||
@@ -779,19 +798,28 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
-    // TODO gen 1
-    return args.length === 3 &&
-      verifyPokemonIdent(args[1]) &&
-      verifyPokemonHPStatus(args[2]) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'partiallytrapped'], this.gen);
+    const valid =
+      args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonHPStatus(args[2]);
+    if (!valid) return false;
+    if (this.gen?.num === 1) {
+      if (!verifyKWArgs(kwArgs, ['from', 'of'], this.gen)) return false;
+      return !kwArgs.from || (kwArgs.of
+        ? ['brn', 'psn', 'Leech Seed', 'Recoil']
+        : ['brn', 'psn', 'confusion']).includes(kwArgs.from);
+    }
+    return verifyKWArgs(kwArgs, [...KWARGS, 'partiallytrapped'], this.gen);
   }
 
   '|-heal|'(args: Args['|-heal|'], kwArgs: KWArgs['|-heal|']) {
-    // TODO gen 1
-    return args.length === 3 &&
-      verifyPokemonIdent(args[1]) &&
-      verifyPokemonHPStatus(args[2]) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'wisher', 'zeffect'], this.gen);
+    const valid =
+      args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonHPStatus(args[2]);
+    if (!valid) return false;
+    if (this.gen?.num === 1) {
+      if (!verifyKWArgs(kwArgs, ['from', 'of', 'silent'], this.gen)) return false;
+      if (!Object.keys(kwArgs).length) return true;
+      return kwArgs.silent ? !(kwArgs.from || kwArgs.of) : (kwArgs.from === 'drain' && !!kwArgs.of);
+    }
+    return verifyKWArgs(kwArgs, [...KWARGS, 'wisher', 'zeffect'], this.gen);
   }
 
   '|-sethp|'(args: Args['|-sethp|'], kwArgs: KWArgs['|-sethp|']) {
@@ -1038,11 +1066,30 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {
-    // TODO gen 1
+    if (!verifyPokemonIdent(args[1]) || args.length > 4) return false;
+    if (this.gen?.num === 1) {
+      if (args.length === 3) {
+        const reasons = [
+          'Bide', 'Light Screen', 'Mist', 'Reflect', 'Substitute',
+          'confusion', 'move: Focus Energy', 'move: Leech Seed',
+        ];
+        return reasons.includes(args[2]) &&
+          (!Object.keys(kwArgs).length || (!!kwArgs.silent && args[2] === 'confusion'));
+      } else if (args.length === 4) {
+        if (args[2] === 'typechange') {
+          return (verifyTypes(args[3] as Protocol.Types, this.gen) &&
+            verifyKWArgs(kwArgs, ['from', 'of'], this.gen) &&
+            kwArgs.from === 'move: Conversion');
+        } else {
+          return (['Disable', 'Mimic'].includes(args[2]) &&
+            !Object.keys(kwArgs).length &&
+            verifyMoveName(args[3] as Protocol.MoveName, this.gen));
+        }
+      }
+    }
     const keys: Protocol.BattleArgsWithKWArgType[] =
       [...KWARGS, 'already', 'damage', 'block', 'fatigue', 'upkeep', 'zeffect'];
     if (!verifyKWArgs(kwArgs, keys, this.gen)) return false;
-    if (!verifyPokemonIdent(args[1])) return false;
     if (args[2] === 'Dynamax') {
       return args.length === 3 || (args.length === 4 && (args[3] === 'Gmax' || args[3] === ''));
     }
@@ -1185,7 +1232,15 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
-    // TODO gen 1
+    if (this.gen?.num === 1) {
+      const valid = (args.length === 3 || (args.length === 4 && args[3] === '')) &&
+        verifyKWArgs(kwArgs, ['damage'], this.gen);
+      if (!valid) return false;
+      if (args[1] === '') return args[2] === 'move: Splash';
+      return verifyPokemonIdent(args[1]) && (kwArgs.damage
+        ? args[2] === 'Substitute'
+        : ['Bide', 'confusion', 'move: Haze', 'move: Mist', 'move: Struggle'].includes(args[2]));
+    }
     const keys: Protocol.BattleArgsWithKWArgType[] = [
       ...KWARGS, 'ability', 'ability2', 'block', 'broken', 'damage',
       'item', 'move', 'number', 'consumed', 'name', 'fromitem', 'source',
