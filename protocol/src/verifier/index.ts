@@ -821,12 +821,32 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     if (!valid) return false;
 
     switch (this.gen?.num || 0) {
-      case 1: {
+      case 1: case 2: {
         if (!verifyKWArgs(kwArgs, ['from', 'silent'], this.gen)) return false;
-        if (kwArgs.from) return args[2] === 'slp' && kwArgs.from.startsWith('move: ');
+        if (kwArgs.from) {
+          return !kwArgs.silent && args[2] === 'slp' && kwArgs.from.startsWith('move: ');
+        }
         return !kwArgs.silent || args[2] === 'psn';
       }
-
+      case 3: {
+        if (['frz', 'tox'].includes(args[2])) return !Object.keys(kwArgs).length;
+        if (!verifyKWArgs(kwArgs, ['from', 'of'], this.gen)) return false;
+        if (args[2] === 'slp') {
+          return !kwArgs.of && (!kwArgs.from || kwArgs.from?.startsWith('move: '));
+        }
+        return !kwArgs.from || (kwArgs.from.startsWith('ability: ') && !!kwArgs.of);
+      }
+      case 4: {
+        if (args[2] === 'frz') return !Object.keys(kwArgs).length;
+        if (!verifyKWArgs(kwArgs, ['from', 'of'], this.gen)) return false;
+        if (args[2] === 'slp') {
+          return !kwArgs.of && (!kwArgs.from || kwArgs.from?.startsWith('move: '));
+        }
+        if (kwArgs.from?.startsWith('item: ')) {
+          return ['brn', 'tox'].includes(args[2]) && !kwArgs.of;
+        }
+        return !kwArgs.from || (kwArgs.from.startsWith('ability: ') && !!kwArgs.of);
+      }
       default: return verifyKWArgs(kwArgs, KWARGS, this.gen);
     }
   }
@@ -834,12 +854,29 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   '|-curestatus|'(args: Args['|-curestatus|'], kwArgs: KWArgs['|-curestatus|']) {
     const valid = args.length === 3 && verifyPokemonIdent(args[1]) && verifyStatusName(args[2]);
     if (!valid) return false;
-    if (this.gen?.num === 1) {
-      if (!verifyKWArgs(kwArgs, ['msg', 'silent'], this.gen)) return false;
-      if (kwArgs.msg) return ['slp', 'frz'].includes(args[2]);
-      return !!kwArgs.silent;
+
+    switch (this.gen?.num || 0) {
+      case 1: {
+        if (!verifyKWArgs(kwArgs, ['msg', 'silent'], this.gen)) return false;
+        if (kwArgs.msg) return ['slp', 'frz'].includes(args[2]);
+        return !!kwArgs.silent;
+      }
+      case 2: return verifyKWArgs(kwArgs, ['msg'], this.gen) && !!kwArgs.msg;
+      case 3: case 4: {
+        if (!verifyKWArgs(kwArgs, ['msg', 'silent', 'from'], this.gen)) return false;
+        if (Object.keys(kwArgs).length > 1) return false;
+        if (!kwArgs.from) return true;
+        if (args[2] === 'frz') {
+          if (kwArgs.silent) return false;
+        } else {
+          return kwArgs.from === 'ability: Natural Cure';
+        }
+        const from = ['move: Flame Wheel', 'move: Sacred Fire', 'ability: Natural Cure'];
+        if (this.gen!.num === 4) from.push('move: Flare Blitz');
+        return from.includes(kwArgs.from);
+      }
+      default: return verifyKWArgs(kwArgs, [...KWARGS, 'thaw', 'msg'], this.gen);
     }
-    return verifyKWArgs(kwArgs, [...KWARGS, 'thaw', 'msg'], this.gen);
   }
 
   '|-cureteam|'(args: Args['|-cureteam|'], kwArgs: KWArgs['|-cureteam|']) {
