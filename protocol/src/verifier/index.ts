@@ -641,8 +641,19 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       verifyPokemonDetails(args[2], this.gen) &&
       verifyPokemonHPStatus(args[3]);
     if (!valid) return false;
-    if (this.gen?.num === 1) return !Object.keys(kwArgs).length;
-    return verifyKWArgs(kwArgs, KWARGS, this.gen);
+
+    switch (this.gen?.num || 0) {
+      case 1: return !Object.keys(kwArgs).length;
+      case 2: case 3: {
+        if (!verifyKWArgs(kwArgs, ['from'], this.gen)) return false;
+        return !kwArgs.from || kwArgs.from === 'Baton Pass';
+      }
+      case 4: {
+        if (!verifyKWArgs(kwArgs, ['from'], this.gen)) return false;
+        return !kwArgs.from || ['Baton Pass', 'U-turn'].includes(kwArgs.from);
+      }
+      default: return verifyKWArgs(kwArgs, KWARGS, this.gen);
+    }
   }
 
   '|drag|'(args: Args['|drag|']) {
@@ -655,10 +666,12 @@ class Handler implements Required<Protocol.Handler<boolean>> {
 
   '|detailschange|'(args: Args['|detailschange|'], kwArgs: KWArgs['|detailschange|']) {
     if (this.gen && this.gen.num < 4) return false;
-    return args.length === 3 &&
+    const valid = args.length === 3 &&
       verifyPokemonIdent(args[1]) &&
-      verifyPokemonDetails(args[2], this.gen) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'msg'], this.gen);
+      verifyPokemonDetails(args[2], this.gen);
+    if (!valid) return false;
+    if (this.gen?.num === 4) return !Object.keys(kwArgs).length;
+    return verifyKWArgs(kwArgs, [...KWARGS, 'msg'], this.gen);
   }
 
   '|replace|'(args: Args['|replace|']) {
@@ -696,12 +709,23 @@ class Handler implements Required<Protocol.Handler<boolean>> {
 
   '|-formechange|'(args: Args['|-formechange|'], kwArgs: KWArgs['|-formechange|']) {
     if (this.gen && this.gen.num < 3) return false;
-    if (!(verifyPokemonIdent(args[1]) &&
-      verifySpeciesName(args[2], this.gen) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'msg'], this.gen))) {
-      return false;
+    const valid = verifyPokemonIdent(args[1]) && verifySpeciesName(args[2], this.gen) &&
+      args.length === 3 || (args.length === 4 && args[3] === '');
+    if (!valid) return false;
+
+    switch (this.gen?.num || 0) {
+      case 3: {
+        return verifyKWArgs(kwArgs, ['msg', 'from'], this.gen) &&
+          !!kwArgs.msg && kwArgs.from === 'ability: Forecast';
+      }
+      case 4: {
+        return !Object.keys(kwArgs).length ||
+          (verifyKWArgs(kwArgs, ['msg', 'from'], this.gen) &&
+            !!kwArgs.msg && (kwArgs.from === 'ability: Forecast' ||
+              kwArgs.from === 'ability: Flower Gift'));
+      }
+      default: return verifyKWArgs(kwArgs, [...KWARGS, 'msg'], this.gen);
     }
-    return args.length === 3 || (args.length === 4 && args[3] === '');
   }
 
   '|-fail|'(args: Args['|-fail|'], kwArgs: KWArgs['|-fail|']) {
@@ -748,11 +772,9 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|-miss|'(args: Args['|-miss|'], kwArgs: KWArgs['|-miss|']) {
-    if (this.gen?.num === 1) {
-      return args.length === 2 && verifyPokemonIdent(args[1]) && !Object.keys(kwArgs).length;
-    }
-    if (!verifyKWArgs(kwArgs, KWARGS, this.gen)) return false;
+    if (Object.keys(kwArgs).length) return false;
     if (args.length === 2) return verifyPokemonIdent(args[1]);
+    if (this.gen?.num === 1) return false;
     return args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonIdent(args[2]);
   }
 
@@ -773,25 +795,40 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|-sethp|'(args: Args['|-sethp|'], kwArgs: KWArgs['|-sethp|']) {
-    if (this.gen && this.gen.num < 2) return false;
-    if (!verifyKWArgs(kwArgs, KWARGS, this.gen)) return false;
-    if (args.length === 3) return verifyPokemonIdent(args[1]) && verifyPokemonHPStatus(args[2]);
-    return args.length === 5 &&
-      verifyPokemonIdent(args[1]) &&
-      verifyNum(args[2]) &&
-      verifyPokemonIdent(args[3]) &&
-      verifyNum(args[4]);
+    const valid =
+      args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonHPStatus(args[2]);
+    switch (this.gen?.num || 0) {
+      case 1: return false;
+      case 2: case 3: case 4: {
+        if (!valid) return false;
+        if (!verifyKWArgs(kwArgs, ['from', 'silent'], this.gen)) return false;
+        return kwArgs.from === 'move: Pain Split';
+      }
+      default: {
+        if (!verifyKWArgs(kwArgs, KWARGS, this.gen)) return false;
+        if (valid) return true;
+        return args.length === 5 &&
+          verifyPokemonIdent(args[1]) &&
+          verifyNum(args[2]) &&
+          verifyPokemonIdent(args[3]) &&
+          verifyNum(args[4]);
+      }
+    }
   }
 
   '|-status|'(args: Args['|-status|'], kwArgs: KWArgs['|-status|']) {
     const valid = args.length === 3 && verifyPokemonIdent(args[1]) && verifyStatusName(args[2]);
     if (!valid) return false;
-    if (this.gen?.num === 1) {
-      if (!verifyKWArgs(kwArgs, ['from', 'silent'], this.gen)) return false;
-      if (kwArgs.from) return args[2] === 'slp' && kwArgs.from.startsWith('move: ');
-      return !kwArgs.silent || args[2] === 'psn';
+
+    switch (this.gen?.num || 0) {
+      case 1: {
+        if (!verifyKWArgs(kwArgs, ['from', 'silent'], this.gen)) return false;
+        if (kwArgs.from) return args[2] === 'slp' && kwArgs.from.startsWith('move: ');
+        return !kwArgs.silent || args[2] === 'psn';
+      }
+
+      default: return verifyKWArgs(kwArgs, KWARGS, this.gen);
     }
-    return verifyKWArgs(kwArgs, KWARGS, this.gen);
   }
 
   '|-curestatus|'(args: Args['|-curestatus|'], kwArgs: KWArgs['|-curestatus|']) {
