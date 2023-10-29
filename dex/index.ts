@@ -1287,10 +1287,10 @@ export class ModdedDex implements T.Dex {
     const typeData = this.types.get(targetTyping as Exclude<T.TypeName, '???'>);
     if (!typeData) return 0;
     switch (typeData.damageTaken[sourceType]) {
-    case 1: return 1; // super-effective
-    case 2: return -1; // resist
+      case 1: return 1; // super-effective
+      case 2: return -1; // resist
       // in case of weird situations like Gravity, immunity is handled elsewhere
-    default: return 0;
+      default: return 0;
     }
   }
 

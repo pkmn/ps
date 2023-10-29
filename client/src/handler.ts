@@ -52,39 +52,39 @@ export class Handler implements Protocol.Handler {
   '|gametype|'(args: Args['|gametype|']) {
     this.battle.gameType = args[1];
     switch (args[1]) {
-    case 'multi':
-    case 'freeforall':
-      this.battle.pokemonControlled = 1;
-      // @ts-ignore readonly
-      if (!this.battle.p3) this.battle.p3 = this.battle.createSide(3);
-      // @ts-ignore readonly
-      if (!this.battle.p4) this.battle.p4 = this.battle.createSide(4);
-      this.battle.p3.foe = this.battle.p2;
-      this.battle.p4.foe = this.battle.p1;
-      if (this.battle.gameType === 'multi') {
-        this.battle.p1.ally = this.battle.p3;
-        this.battle.p2.ally = this.battle.p4;
-        this.battle.p3.ally = this.battle.p1;
-        this.battle.p4.ally = this.battle.p2;
-      }
+      case 'multi':
+      case 'freeforall':
+        this.battle.pokemonControlled = 1;
+        // @ts-ignore readonly
+        if (!this.battle.p3) this.battle.p3 = this.battle.createSide(3);
+        // @ts-ignore readonly
+        if (!this.battle.p4) this.battle.p4 = this.battle.createSide(4);
+        this.battle.p3.foe = this.battle.p2;
+        this.battle.p4.foe = this.battle.p1;
+        if (this.battle.gameType === 'multi') {
+          this.battle.p1.ally = this.battle.p3;
+          this.battle.p2.ally = this.battle.p4;
+          this.battle.p3.ally = this.battle.p1;
+          this.battle.p4.ally = this.battle.p2;
+        }
 
-      this.battle.sides.push(this.battle.p3, this.battle.p4);
-      // intentionally sync p1/p3 and p2/p4's active arrays
-      this.battle.p1.active = this.battle.p3.active = [null, null];
-      this.battle.p2.active = this.battle.p4.active = [null, null];
-      break;
-    case 'doubles':
-      this.battle.p1.active = [null, null];
-      this.battle.p2.active = [null, null];
-      break;
-    case 'triples':
-    case 'rotation':
-      this.battle.p1.active = [null, null, null];
-      this.battle.p2.active = [null, null, null];
-      break;
-    default:
-      for (const side of this.battle.sides) side.active = [null];
-      break;
+        this.battle.sides.push(this.battle.p3, this.battle.p4);
+        // intentionally sync p1/p3 and p2/p4's active arrays
+        this.battle.p1.active = this.battle.p3.active = [null, null];
+        this.battle.p2.active = this.battle.p4.active = [null, null];
+        break;
+      case 'doubles':
+        this.battle.p1.active = [null, null];
+        this.battle.p2.active = [null, null];
+        break;
+      case 'triples':
+      case 'rotation':
+        this.battle.p1.active = [null, null, null];
+        this.battle.p2.active = [null, null, null];
+        break;
+      default:
+        for (const side of this.battle.sides) side.active = [null];
+        break;
     }
     if (!this.battle.pokemonControlled) {
       this.battle.pokemonControlled = this.battle.p1.active.length;
@@ -432,11 +432,11 @@ export class Handler implements Protocol.Handler {
     const ofPoke = this.battle.getPokemon(kwArgs.of);
     (ofPoke || poke).activateAbility(effect);
     switch (effect?.id) {
-    case 'quickguard': case 'wideguard': case 'craftyshield': case 'matblock':
-      return void poke.side.addSideCondition(effect, false);
-    case 'protect': return poke.addVolatile('protect' as ID, {duration: 'turn'});
-    case 'safetygoggles': case 'protectivepads': case 'abilityshield':
-      return void (poke.item = effect.id);
+      case 'quickguard': case 'wideguard': case 'craftyshield': case 'matblock':
+        return void poke.side.addSideCondition(effect, false);
+      case 'protect': return poke.addVolatile('protect' as ID, {duration: 'turn'});
+      case 'safetygoggles': case 'protectivepads': case 'abilityshield':
+        return void (poke.item = effect.id);
     }
   }
 
@@ -471,10 +471,10 @@ export class Handler implements Protocol.Handler {
     if (poke) {
       poke.status = undefined;
       switch (status) {
-      case 'brn': case 'par': case 'frz': break;
-      case 'tox': case 'psn': return void (poke.statusState.toxicTurns = 0);
-      case 'slp': return void (poke.statusState.sleepTurns = 0);
-      default: return poke.removeVolatile('confusion' as ID);
+        case 'brn': case 'par': case 'frz': break;
+        case 'tox': case 'psn': return void (poke.statusState.toxicTurns = 0);
+        case 'slp': return void (poke.statusState.sleepTurns = 0);
+        default: return poke.removeVolatile('confusion' as ID);
       }
     }
   }
@@ -501,34 +501,34 @@ export class Handler implements Protocol.Handler {
 
     if (fromEffect?.id) {
       switch (fromEffect.id) {
-      case 'pickup':
-        poke.activateAbility('Pickup');
+        case 'pickup':
+          poke.activateAbility('Pickup');
         // falls through
-      case 'recycle': return void (poke.itemEffect = 'found');
-      case 'frisk':
-        ofPoke!.activateAbility('Frisk');
-        if (poke && poke !== ofPoke) { // used for gen 6
-          poke.itemEffect = 'frisked';
-        }
-        return;
-      case 'magician':
-      case 'pickpocket':
-        poke.activateAbility(fromEffect.name);
+        case 'recycle': return void (poke.itemEffect = 'found');
+        case 'frisk':
+          ofPoke!.activateAbility('Frisk');
+          if (poke && poke !== ofPoke) { // used for gen 6
+            poke.itemEffect = 'frisked';
+          }
+          return;
+        case 'magician':
+        case 'pickpocket':
+          poke.activateAbility(fromEffect.name);
         // falls through
-      case 'thief':
-      case 'covet':
+        case 'thief':
+        case 'covet':
         // simulate the removal of the item from the ofpoke
-        ofPoke!.item = '';
-        ofPoke!.itemEffect = '';
-        ofPoke!.lastItem = item.id;
-        ofPoke!.lastItemEffect = 'stolen';
-        ofPoke!.addVolatile('itemremoved' as ID);
-        return void (poke.itemEffect = 'stolen');
-      case 'harvest':
-        poke.itemEffect = 'harvested';
-        return poke.activateAbility('Harvest');
-      case 'bestow': return void (poke.itemEffect = 'bestowed');
-      case 'switcheroo': case 'trick': return void (poke.itemEffect = 'tricked');
+          ofPoke!.item = '';
+          ofPoke!.itemEffect = '';
+          ofPoke!.lastItem = item.id;
+          ofPoke!.lastItemEffect = 'stolen';
+          ofPoke!.addVolatile('itemremoved' as ID);
+          return void (poke.itemEffect = 'stolen');
+        case 'harvest':
+          poke.itemEffect = 'harvested';
+          return poke.activateAbility('Harvest');
+        case 'bestow': return void (poke.itemEffect = 'bestowed');
+        case 'switcheroo': case 'trick': return void (poke.itemEffect = 'tricked');
       }
     }
   }
@@ -556,28 +556,28 @@ export class Handler implements Protocol.Handler {
       this.battle.lastMove = item.id;
     } else if (fromEffect.id) {
       switch (fromEffect.id) {
-      case 'fling': return void (poke.lastItemEffect = 'flung');
-      case 'knockoff': {
-        if (this.battle.gen.num <= 4) {
-          poke.itemEffect = 'knocked off';
-        } else {
-          poke.lastItemEffect = 'knocked off';
+        case 'fling': return void (poke.lastItemEffect = 'flung');
+        case 'knockoff': {
+          if (this.battle.gen.num <= 4) {
+            poke.itemEffect = 'knocked off';
+          } else {
+            poke.lastItemEffect = 'knocked off';
+          }
+          return;
         }
-        return;
-      }
-      case 'stealeat': return void (poke.lastItemEffect = 'stolen');
-      case 'gem': return void (poke.lastItemEffect = 'consumed');
-      case 'incinerate': return void (poke.lastItemEffect = 'incinerated');
+        case 'stealeat': return void (poke.lastItemEffect = 'stolen');
+        case 'gem': return void (poke.lastItemEffect = 'consumed');
+        case 'incinerate': return void (poke.lastItemEffect = 'incinerated');
       }
     } else {
       switch (item.id) {
-      case 'airballoon':
-        poke.lastItemEffect = 'popped';
-        poke.removeVolatile('airballoon' as ID);
-        return;
-      case 'focussash': return void (poke.lastItemEffect = 'consumed');
-      case 'redcard': return void (poke.lastItemEffect = 'held up');
-      default: return void (poke.lastItemEffect = 'consumed');
+        case 'airballoon':
+          poke.lastItemEffect = 'popped';
+          poke.removeVolatile('airballoon' as ID);
+          return;
+        case 'focussash': return void (poke.lastItemEffect = 'consumed');
+        case 'redcard': return void (poke.lastItemEffect = 'held up');
+        default: return void (poke.lastItemEffect = 'consumed');
       }
     }
   }
@@ -593,28 +593,28 @@ export class Handler implements Protocol.Handler {
     if (kwArgs.silent) return; // do nothing
 
     switch (fromEffect.id) {
-    case 'trace':
-      poke.activateAbility('Trace');
-      poke.activateAbility(ability.name, true);
-      ofPoke!.rememberAbility(ability.name);
-      break;
-    case 'powerofalchemy':
-    case 'receiver':
-      poke.activateAbility(fromEffect.name);
-      poke.activateAbility(ability.name, true);
-      ofPoke!.rememberAbility(ability.name);
-      break;
-    case 'roleplay':
-      poke.activateAbility(ability.name, true);
-      ofPoke!.rememberAbility(ability.name);
-      break;
-    case 'desolateland':
-    case 'primordialsea':
-    case 'deltastream':
-      if (kwArgs.fail) poke.activateAbility(ability.name);
-      break;
-    default:
-      poke.activateAbility(ability.name);
+      case 'trace':
+        poke.activateAbility('Trace');
+        poke.activateAbility(ability.name, true);
+        ofPoke!.rememberAbility(ability.name);
+        break;
+      case 'powerofalchemy':
+      case 'receiver':
+        poke.activateAbility(fromEffect.name);
+        poke.activateAbility(ability.name, true);
+        ofPoke!.rememberAbility(ability.name);
+        break;
+      case 'roleplay':
+        poke.activateAbility(ability.name, true);
+        ofPoke!.rememberAbility(ability.name);
+        break;
+      case 'desolateland':
+      case 'primordialsea':
+      case 'deltastream':
+        if (kwArgs.fail) poke.activateAbility(ability.name);
+        break;
+      default:
+        poke.activateAbility(ability.name);
     }
   }
 
@@ -748,32 +748,32 @@ export class Handler implements Protocol.Handler {
     }
 
     switch (effect.id) {
-    case 'typechange':
-      if (poke.isTerastallized) break;
-      if (ofPoke && fromEffect?.id === 'reflecttype') {
-        poke.copyTypesFrom(ofPoke);
-      } else {
-        poke.removeVolatile('typeadd' as ID);
-        poke.addVolatile('typechange' as ID, {apparentType: sanitizeName(args[3]) || '???'});
-      }
-      break;
-    case 'typeadd':
-      poke.addVolatile('typeadd' as ID, {type: sanitizeName(args[3]) as TypeName});
-      break;
-    case 'dynamax':
-      poke.addVolatile('dynamax' as ID, args[3] ? {} : undefined);
-      break;
-    case 'autotomize':
-      if (poke.volatiles.autotomize) {
-        poke.volatiles.autotomize.level!++;
-      } else {
-        poke.addVolatile('autotomize' as ID, {level: 1});
-      }
-      break;
-    case 'smackdown':
-      poke.removeVolatile('magnetrise' as ID);
-      poke.removeVolatile('telekinesis' as ID);
-      break;
+      case 'typechange':
+        if (poke.isTerastallized) break;
+        if (ofPoke && fromEffect?.id === 'reflecttype') {
+          poke.copyTypesFrom(ofPoke);
+        } else {
+          poke.removeVolatile('typeadd' as ID);
+          poke.addVolatile('typechange' as ID, {apparentType: sanitizeName(args[3]) || '???'});
+        }
+        break;
+      case 'typeadd':
+        poke.addVolatile('typeadd' as ID, {type: sanitizeName(args[3]) as TypeName});
+        break;
+      case 'dynamax':
+        poke.addVolatile('dynamax' as ID, args[3] ? {} : undefined);
+        break;
+      case 'autotomize':
+        if (poke.volatiles.autotomize) {
+          poke.volatiles.autotomize.level!++;
+        } else {
+          poke.addVolatile('autotomize' as ID, {level: 1});
+        }
+        break;
+      case 'smackdown':
+        poke.removeVolatile('magnetrise' as ID);
+        poke.removeVolatile('telekinesis' as ID);
+        break;
     }
     if (!(effect.id === 'typechange' && poke.isTerastallized)) {
       poke.addVolatile(effect.id);
@@ -812,93 +812,93 @@ export class Handler implements Protocol.Handler {
     if (poke) poke.activateAbility(effect);
 
     switch (effect.id) {
-    case 'poltergeist':
-      poke!.item = toID(kwArgs.item);
-      poke!.itemEffect = 'disturbed';
-      break;
-    case 'grudge':
-      poke!.rememberMove(kwArgs.move!, Infinity);
-      break;
+      case 'poltergeist':
+        poke!.item = toID(kwArgs.item);
+        poke!.itemEffect = 'disturbed';
+        break;
+      case 'grudge':
+        poke!.rememberMove(kwArgs.move!, Infinity);
+        break;
 
       // move activations
-    case 'brickbreak':
-      poke2!.side.removeSideCondition('reflect' as ID);
-      poke2!.side.removeSideCondition('lightscreen' as ID);
-      break;
-    case 'hyperdrill':
-    case 'hyperspacefury':
-    case 'hyperspacehole':
-    case 'phantomforce':
-    case 'shadowforce':
-    case 'feint':
-      poke!.removeVolatile('protect' as ID);
-      poke!.side.removeSideCondition('wideguard' as ID);
-      poke!.side.removeSideCondition('quickguard' as ID);
-      poke!.side.removeSideCondition('craftyshield' as ID);
-      poke!.side.removeSideCondition('matblock' as ID);
-      break;
-    case 'eeriespell':
-    case 'gmaxdepletion':
-    case 'spite':
-      const move = this.battle.get('moves', kwArgs.move).name as MoveName;
-      const pp = Number(kwArgs.number);
-      poke!.rememberMove(move, isNaN(pp) ? 4 : pp);
-      break;
-    case 'gravity':
-      poke!.removeVolatile('magnetrise' as ID);
-      poke!.removeVolatile('telekinesis' as ID);
-      break;
-    case 'skillswap': case 'wanderingspirit':
-      if (this.battle.gen.num <= 4) break;
-      const pokeability = toID(kwArgs.ability) || poke2!.ability;
-      const targetability = toID(kwArgs.ability2) || poke!.ability;
-      if (pokeability) {
-        poke!.ability = pokeability;
-        if (!poke2!.baseAbility) poke2!.baseAbility = pokeability as ID;
-      }
-      if (targetability) {
-        poke2!.ability = targetability;
-        if (!poke!.baseAbility) poke!.baseAbility = targetability as ID;
-      }
-      if (poke!.side !== poke2!.side) {
-        poke!.activateAbility(pokeability, true);
-        poke2!.activateAbility(targetability, true);
-      }
-      break;
-
-    // ability activations
-    case 'electromorphosis':
-    case 'windpower':
-      poke!.addVolatile('charge' as ID, {duration: 'move'});
-      break;
-    case 'forewarn':
-      if (poke2) {
-        poke2.rememberMove(kwArgs.move!, 0);
-      } else {
-        const foeActive = [];
-        for (const maybeTarget of poke!.side.foe.active) {
-          if (maybeTarget && !maybeTarget.fainted) foeActive.push(maybeTarget);
+      case 'brickbreak':
+        poke2!.side.removeSideCondition('reflect' as ID);
+        poke2!.side.removeSideCondition('lightscreen' as ID);
+        break;
+      case 'hyperdrill':
+      case 'hyperspacefury':
+      case 'hyperspacehole':
+      case 'phantomforce':
+      case 'shadowforce':
+      case 'feint':
+        poke!.removeVolatile('protect' as ID);
+        poke!.side.removeSideCondition('wideguard' as ID);
+        poke!.side.removeSideCondition('quickguard' as ID);
+        poke!.side.removeSideCondition('craftyshield' as ID);
+        poke!.side.removeSideCondition('matblock' as ID);
+        break;
+      case 'eeriespell':
+      case 'gmaxdepletion':
+      case 'spite':
+        const move = this.battle.get('moves', kwArgs.move).name as MoveName;
+        const pp = Number(kwArgs.number);
+        poke!.rememberMove(move, isNaN(pp) ? 4 : pp);
+        break;
+      case 'gravity':
+        poke!.removeVolatile('magnetrise' as ID);
+        poke!.removeVolatile('telekinesis' as ID);
+        break;
+      case 'skillswap': case 'wanderingspirit':
+        if (this.battle.gen.num <= 4) break;
+        const pokeability = toID(kwArgs.ability) || poke2!.ability;
+        const targetability = toID(kwArgs.ability2) || poke!.ability;
+        if (pokeability) {
+          poke!.ability = pokeability;
+          if (!poke2!.baseAbility) poke2!.baseAbility = pokeability as ID;
         }
-        if (foeActive.length === 1) foeActive[0].rememberMove(kwArgs.move!, 0);
-      }
-      break;
-    case 'lingeringaroma':
-    case 'mummy':
-      if (!kwArgs.ability) break; // if Mummy activated but failed, no ability will have been sent
-      const ability = this.battle.get('abilities', kwArgs.ability);
-      poke2!.activateAbility(ability.name);
-      if (poke) poke.activateAbility(effect.name);
-      poke2!.activateAbility(effect.name, true);
-      break;
+        if (targetability) {
+          poke2!.ability = targetability;
+          if (!poke!.baseAbility) poke!.baseAbility = targetability as ID;
+        }
+        if (poke!.side !== poke2!.side) {
+          poke!.activateAbility(pokeability, true);
+          poke2!.activateAbility(targetability, true);
+        }
+        break;
+
+        // ability activations
+      case 'electromorphosis':
+      case 'windpower':
+        poke!.addVolatile('charge' as ID, {duration: 'move'});
+        break;
+      case 'forewarn':
+        if (poke2) {
+          poke2.rememberMove(kwArgs.move!, 0);
+        } else {
+          const foeActive = [];
+          for (const maybeTarget of poke!.side.foe.active) {
+            if (maybeTarget && !maybeTarget.fainted) foeActive.push(maybeTarget);
+          }
+          if (foeActive.length === 1) foeActive[0].rememberMove(kwArgs.move!, 0);
+        }
+        break;
+      case 'lingeringaroma':
+      case 'mummy':
+        if (!kwArgs.ability) break; // if Mummy activated but failed, no ability will have been sent
+        const ability = this.battle.get('abilities', kwArgs.ability);
+        poke2!.activateAbility(ability.name);
+        if (poke) poke.activateAbility(effect.name);
+        poke2!.activateAbility(effect.name, true);
+        break;
 
       // item activations
-    case 'leppaberry':
-    case 'mysteryberry':
-      poke!.rememberMove(kwArgs.move!, effect.id === 'leppaberry' ? -10 : -5);
-      break;
-    case 'focusband': case 'quickclaw': case 'abilityshield':
-      poke!.item = effect.id;
-      break;
+      case 'leppaberry':
+      case 'mysteryberry':
+        poke!.rememberMove(kwArgs.move!, effect.id === 'leppaberry' ? -10 : -5);
+        break;
+      case 'focusband': case 'quickclaw': case 'abilityshield':
+        poke!.item = effect.id;
+        break;
     }
   }
 

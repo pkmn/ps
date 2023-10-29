@@ -258,36 +258,36 @@ export class LogFormatter {
   lineSection(args: ArgType | 'switchout', kwArgs: KWArgType) {
     const cmd = args[0];
     switch (cmd) {
-    case 'done': case 'turn':
-      return 'break';
-    case 'move': case 'cant': case 'switch': case 'drag':
-    case 'upkeep': case 'start': case '-mega': case '-candynamax': case '-terastallize':
-      return 'major';
-    case 'faint':
-      return 'preMajor';
-    // NOTE: switchout is a postMajor here compared to a preMajor upstream as lineSection gets
-    // called by switch (major) first followed by switchout (postMajor), even though the actual
-    // buffer gets the switchout before the switch. Effectively we're *attributing* switchout
-    // with the major and switch with the postmajor which should have the same *result* as
-    // switchout (premajor) and switch (major). Yes, this is ugly.
-    case '-zpower': case 'switchout':
-      return 'postMajor';
-    case '-damage': {
-      const id = LogFormatter.effectId((kwArgs as KWArgs['|-damage|']).from);
-      return id === 'confusion' ? 'major' : 'postMajor';
-    }
-    case '-curestatus': {
-      const id = LogFormatter.effectId((kwArgs as KWArgs['|-curestatus|']).from);
-      return id === 'naturalcure' ? 'preMajor' : 'postMajor';
-    }
-    case '-start': {
-      const id = LogFormatter.effectId((kwArgs as unknown as KWArgs['|-start|']).from);
-      return id === 'protean' ? 'preMajor' : 'postMajor';
-    }
-    case '-activate': {
-      const id = LogFormatter.effectId((args as Args['|-activate|'])[2]);
-      return id === 'confusion' || id === 'attract' ? 'preMajor' : 'postMajor';
-    }
+      case 'done': case 'turn':
+        return 'break';
+      case 'move': case 'cant': case 'switch': case 'drag':
+      case 'upkeep': case 'start': case '-mega': case '-candynamax': case '-terastallize':
+        return 'major';
+      case 'faint':
+        return 'preMajor';
+        // NOTE: switchout is a postMajor here compared to a preMajor upstream as lineSection gets
+        // called by switch (major) first followed by switchout (postMajor), even though the actual
+        // buffer gets the switchout before the switch. Effectively we're *attributing* switchout
+        // with the major and switch with the postmajor which should have the same *result* as
+        // switchout (premajor) and switch (major). Yes, this is ugly.
+      case '-zpower': case 'switchout':
+        return 'postMajor';
+      case '-damage': {
+        const id = LogFormatter.effectId((kwArgs as KWArgs['|-damage|']).from);
+        return id === 'confusion' ? 'major' : 'postMajor';
+      }
+      case '-curestatus': {
+        const id = LogFormatter.effectId((kwArgs as KWArgs['|-curestatus|']).from);
+        return id === 'naturalcure' ? 'preMajor' : 'postMajor';
+      }
+      case '-start': {
+        const id = LogFormatter.effectId((kwArgs as unknown as KWArgs['|-start|']).from);
+        return id === 'protean' ? 'preMajor' : 'postMajor';
+      }
+      case '-activate': {
+        const id = LogFormatter.effectId((args as Args['|-activate|'])[2]);
+        return id === 'confusion' || id === 'attract' ? 'preMajor' : 'postMajor';
+      }
     }
     return (cmd.charAt(0) === '-' ? 'postMajor' : '');
   }
@@ -298,13 +298,13 @@ export class LogFormatter {
     if (!curSection) return false;
     this.curLineSection = curSection;
     switch (curSection) {
-    case 'break':
-      return prevSection !== 'break';
-    case 'preMajor':
-    case 'major':
-      return prevSection === 'postMajor' || prevSection === 'major';
-    case 'postMajor':
-      return false;
+      case 'break':
+        return prevSection !== 'break';
+      case 'preMajor':
+      case 'major':
+        return prevSection === 'postMajor' || prevSection === 'major';
+      case 'postMajor':
+        return false;
     }
   }
 
@@ -462,33 +462,33 @@ class Handler implements Protocol.Handler<string> {
     const [cmd, pokemon, arg2] = args;
     let newSpecies = '' as SpeciesName;
     switch (cmd) {
-    case 'detailschange': newSpecies = arg2.split(',')[0].trim() as SpeciesName; break;
-    case '-formechange': newSpecies = arg2; break;
-    case '-transform':
-      newSpecies = this.tracker.getPokemonSpeciesForme(arg2) || newSpecies;
-      break;
+      case 'detailschange': newSpecies = arg2.split(',')[0].trim() as SpeciesName; break;
+      case '-formechange': newSpecies = arg2; break;
+      case '-transform':
+        newSpecies = this.tracker.getPokemonSpeciesForme(arg2) || newSpecies;
+        break;
     }
     const newSpeciesId = toID(newSpecies);
     let id = '';
     let templateName = 'transform';
     if (cmd !== '-transform') {
       switch (newSpeciesId) {
-      case 'greninjaash': id = 'battlebond'; break;
-      case 'mimikyubusted': id = 'disguise'; break;
-      case 'zygardecomplete': id = 'powerconstruct'; break;
-      case 'necrozmaultra': id = 'ultranecroziumz'; break;
-      case 'darmanitanzen': id = 'zenmode'; break;
-      case 'darmanitan': id = 'zenmode'; templateName = 'transformEnd'; break;
-      case 'darmanitangalarzen': id = 'zenmode'; break;
-      case 'darmanitangalar': id = 'zenmode'; templateName = 'transformEnd'; break;
-      case 'aegislashblade': id = 'stancechange'; break;
-      case 'aegislash': id = 'stancechange'; templateName = 'transformEnd'; break;
-      case 'wishiwashischool': id = 'schooling'; break;
-      case 'wishiwashi': id = 'schooling'; templateName = 'transformEnd'; break;
-      case 'miniormeteor': id = 'shieldsdown'; break;
-      case 'minior': id = 'shieldsdown'; templateName = 'transformEnd'; break;
-      case 'eiscuenoice': id = 'iceface'; break;
-      case 'eiscue': id = 'iceface'; templateName = 'transformEnd'; break;
+        case 'greninjaash': id = 'battlebond'; break;
+        case 'mimikyubusted': id = 'disguise'; break;
+        case 'zygardecomplete': id = 'powerconstruct'; break;
+        case 'necrozmaultra': id = 'ultranecroziumz'; break;
+        case 'darmanitanzen': id = 'zenmode'; break;
+        case 'darmanitan': id = 'zenmode'; templateName = 'transformEnd'; break;
+        case 'darmanitangalarzen': id = 'zenmode'; break;
+        case 'darmanitangalar': id = 'zenmode'; templateName = 'transformEnd'; break;
+        case 'aegislashblade': id = 'stancechange'; break;
+        case 'aegislash': id = 'stancechange'; templateName = 'transformEnd'; break;
+        case 'wishiwashischool': id = 'schooling'; break;
+        case 'wishiwashi': id = 'schooling'; templateName = 'transformEnd'; break;
+        case 'miniormeteor': id = 'shieldsdown'; break;
+        case 'minior': id = 'shieldsdown'; templateName = 'transformEnd'; break;
+        case 'eiscuenoice': id = 'iceface'; break;
+        case 'eiscue': id = 'iceface'; templateName = 'transformEnd'; break;
       }
     } else if (newSpecies) {
       id = 'transform';

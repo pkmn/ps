@@ -527,17 +527,17 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     this.activateAbility(effect);
     if (move?.id) this.rememberMove(move.name, 0);
     switch (effect.id) {
-    case 'slp': {
-      if (this.side.battle.gen.num === 1) this.lastMove = '';
-      return void this.statusState.sleepTurns++;
-    }
-    case 'frz': {
-      if (this.side.battle.gen.num === 1) this.lastMove = '';
-      return;
-    }
-    case 'focuspunch': return this.removeVolatile('focuspunch' as ID);
-    case 'shelltrap': return this.removeVolatile('shelltrap' as ID);
-    case 'flinch': return this.removeVolatile('focuspunch' as ID);
+      case 'slp': {
+        if (this.side.battle.gen.num === 1) this.lastMove = '';
+        return void this.statusState.sleepTurns++;
+      }
+      case 'frz': {
+        if (this.side.battle.gen.num === 1) this.lastMove = '';
+        return;
+      }
+      case 'focuspunch': return this.removeVolatile('focuspunch' as ID);
+      case 'shelltrap': return this.removeVolatile('shelltrap' as ID);
+      case 'flinch': return this.removeVolatile('focuspunch' as ID);
     }
   }
 

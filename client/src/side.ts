@@ -89,28 +89,28 @@ export class Side {
 
     const name = effect.name as SideCondition;
     switch (id) {
-    case 'tailwind':
-      return (this.sideConditions[id] =
+      case 'tailwind':
+        return (this.sideConditions[id] =
           {name, level: 1, minDuration: this.battle.gen.num >= 5
             ? persist ? 6 : 4 : persist ? 5 : 3, maxDuration: 0});
-    case 'reflect': case 'lightscreen':
-      return (this.sideConditions[id] =
+      case 'reflect': case 'lightscreen':
+        return (this.sideConditions[id] =
         {name, level: 1, minDuration: 5, maxDuration: this.battle.gen.num >= 4 ? 8 : 0});
-    case 'auroraveil':
-      return (this.sideConditions[id] = {name, level: 1, minDuration: 5, maxDuration: 8});
-    case 'safeguard':
-      return (this.sideConditions[id] =
+      case 'auroraveil':
+        return (this.sideConditions[id] = {name, level: 1, minDuration: 5, maxDuration: 8});
+      case 'safeguard':
+        return (this.sideConditions[id] =
         {name, level: 1, minDuration: persist ? 7 : 5, maxDuration: 0});
-    case 'mist': case 'luckychant':
-      return (this.sideConditions[id] = {name, level: 1, minDuration: 5, maxDuration: 0});
-    case 'quickguard': case 'wideguard': case 'craftyshield': case 'matblock':
-      return (this.sideConditions[id] =
+      case 'mist': case 'luckychant':
+        return (this.sideConditions[id] = {name, level: 1, minDuration: 5, maxDuration: 0});
+      case 'quickguard': case 'wideguard': case 'craftyshield': case 'matblock':
+        return (this.sideConditions[id] =
         {name, level: 1, minDuration: 1, maxDuration: 1, remove: true});
-    case 'gmaxwildfire': case 'gmaxvolcalith': case 'gmaxvinelash': case 'gmaxcannonade':
-    case 'grasspledge': case 'waterpledge': case 'firepledge':
-      return (this.sideConditions[id] = {name, level: 1, minDuration: 4, maxDuration: 0});
-    default:
-      return (this.sideConditions[id] = {name, level: 1, minDuration: 0, maxDuration: 0});
+      case 'gmaxwildfire': case 'gmaxvolcalith': case 'gmaxvinelash': case 'gmaxcannonade':
+      case 'grasspledge': case 'waterpledge': case 'firepledge':
+        return (this.sideConditions[id] = {name, level: 1, minDuration: 4, maxDuration: 0});
+      default:
+        return (this.sideConditions[id] = {name, level: 1, minDuration: 0, maxDuration: 0});
     }
   }
 

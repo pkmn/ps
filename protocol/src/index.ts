@@ -1909,25 +1909,25 @@ export const Protocol = new class {
     const index = line.indexOf('|', 1);
     const cmd = line.slice(1, index);
     switch (cmd) {
-    case 'chatmsg': case 'chatmsg-raw': case 'raw': case 'error': case 'html':
-    case 'inactive': case 'inactiveoff': case 'warning':
-    case 'fieldhtml': case 'controlshtml': case 'bigerror':
-    case 'debug': case 'tier': case 'challstr': case 'popup': case '':
-      return upgradeArgs([cmd, line.slice(index + 1)]);
-    case 'c': case 'chat': case 'uhtml': case 'uhtmlchange':
+      case 'chatmsg': case 'chatmsg-raw': case 'raw': case 'error': case 'html':
+      case 'inactive': case 'inactiveoff': case 'warning':
+      case 'fieldhtml': case 'controlshtml': case 'bigerror':
+      case 'debug': case 'tier': case 'challstr': case 'popup': case '':
+        return upgradeArgs([cmd, line.slice(index + 1)]);
+      case 'c': case 'chat': case 'uhtml': case 'uhtmlchange':
       // three parts
-      const index2a = line.indexOf('|', index + 1);
-      return upgradeArgs([cmd, line.slice(index + 1, index2a), line.slice(index2a + 1)]);
-    case 'c:': case 'pm':
+        const index2a = line.indexOf('|', index + 1);
+        return upgradeArgs([cmd, line.slice(index + 1, index2a), line.slice(index2a + 1)]);
+      case 'c:': case 'pm':
       // four parts
-      const index2b = line.indexOf('|', index + 1);
-      const index3b = line.indexOf('|', index2b + 1);
-      return upgradeArgs([
-        cmd,
-        line.slice(index + 1, index2b),
-        line.slice(index2b + 1, index3b),
-        line.slice(index3b + 1),
-      ]);
+        const index2b = line.indexOf('|', index + 1);
+        const index3b = line.indexOf('|', index2b + 1);
+        return upgradeArgs([
+          cmd,
+          line.slice(index + 1, index2b),
+          line.slice(index2b + 1, index3b),
+          line.slice(index3b + 1),
+        ]);
     }
     if (noDefault) return null;
     return upgradeArgs(line.slice(1).split('|') as [string, ...string[]]);
@@ -2160,26 +2160,26 @@ export const Protocol = new class {
 
 function upgradeArgs<T extends Protocol.ArgType>(args: [string, ...string[]]): T {
   switch (args[0]) {
-  case 'name': case 'n': case 'N': {
-    const [cmd, user, oldid] = args;
-    return ['name', user, oldid, cmd === 'N'] as const as T;
-  }
-  case 'chat': case 'c': {
-    const [, user, message] = args;
-    return ['chat', user, message] as const as T;
-  }
-  case 'join': case 'j': case 'J': {
-    const [cmd, user] = args;
-    return ['join', user, cmd === 'J'] as const as T;
-  }
-  case 'leave': case 'l': case 'L': {
-    const [cmd, user] = args;
-    return ['leave', user, cmd === 'L'] as const as T;
-  }
-  case 'battle': case 'b': {
-    const [, roomid, user1, user2] = args;
-    return ['battle', roomid, user1, user2] as const as T;
-  }
+    case 'name': case 'n': case 'N': {
+      const [cmd, user, oldid] = args;
+      return ['name', user, oldid, cmd === 'N'] as const as T;
+    }
+    case 'chat': case 'c': {
+      const [, user, message] = args;
+      return ['chat', user, message] as const as T;
+    }
+    case 'join': case 'j': case 'J': {
+      const [cmd, user] = args;
+      return ['join', user, cmd === 'J'] as const as T;
+    }
+    case 'leave': case 'l': case 'L': {
+      const [cmd, user] = args;
+      return ['leave', user, cmd === 'L'] as const as T;
+    }
+    case 'battle': case 'b': {
+      const [, roomid, user1, user2] = args;
+      return ['battle', roomid, user1, user2] as const as T;
+    }
   }
   return args as T;
 }
@@ -2208,131 +2208,133 @@ function upgradeBattleArgs({args, kwArgs}: {
   kwArgs: { [kw: string]: string | true | undefined };
 }): { args: Protocol.BattleArgType; kwArgs: Protocol.BattleArgsKWArgType } {
   switch (args[0]) {
-  case '-activate': {
-    if (kwArgs.item || kwArgs.move || kwArgs.number || kwArgs.ability) return {args, kwArgs};
-    const [, pokemon, e, arg3, arg4] = args;
-    const effect = e as Protocol.EffectName;
+    case '-activate': {
+      if (kwArgs.item || kwArgs.move || kwArgs.number || kwArgs.ability) return {args, kwArgs};
+      const [, pokemon, e, arg3, arg4] = args;
+      const effect = e as Protocol.EffectName;
 
-    const target = kwArgs.of as Protocol.PokemonIdent | '';
-    const id = Protocol.parseEffect(effect, toID).name;
+      const target = kwArgs.of as Protocol.PokemonIdent | '';
+      const id = Protocol.parseEffect(effect, toID).name;
 
-    if (kwArgs.block) return {args: ['-fail', pokemon as Protocol.PokemonIdent], kwArgs};
-    if (id === 'sturdy') {
-      return {args: ['-activate', pokemon, 'ability: Sturdy' as Protocol.EffectName], kwArgs};
-    }
-    if (id === 'wonderguard') {
-      return {
-        args: ['-immune', pokemon as Protocol.PokemonIdent],
-        kwArgs: {from: 'ability: Wonder Guard'} as Protocol.BattleArgsKWArgType,
-      };
-    }
-    if (id === 'beatup' && kwArgs.of) {
-      return {args, kwArgs: {name: kwArgs.of as Protocol.Nickname}};
-    }
-    if (ACTIVATE_BLOCKABLE.has(id)) {
-      if (target) {
-        kwArgs.of = pokemon;
-        return {args: ['-block', target, effect, arg3 as Protocol.MoveName || ''], kwArgs};
+      if (kwArgs.block) return {args: ['-fail', pokemon as Protocol.PokemonIdent], kwArgs};
+      if (id === 'sturdy') {
+        return {args: ['-activate', pokemon, 'ability: Sturdy' as Protocol.EffectName], kwArgs};
+      }
+      if (id === 'wonderguard') {
+        return {
+          args: ['-immune', pokemon as Protocol.PokemonIdent],
+          kwArgs: {from: 'ability: Wonder Guard'} as Protocol.BattleArgsKWArgType,
+        };
+      }
+      if (id === 'beatup' && kwArgs.of) {
+        return {args, kwArgs: {name: kwArgs.of as Protocol.Nickname}};
+      }
+      if (ACTIVATE_BLOCKABLE.has(id)) {
+        if (target) {
+          kwArgs.of = pokemon;
+          return {args: ['-block', target, effect, arg3 as Protocol.MoveName || ''], kwArgs};
+        }
+        return {
+          args: [
+            '-block', pokemon as Protocol.PokemonIdent, effect, arg3 as Protocol.MoveName || '',
+          ],
+          kwArgs,
+        };
+      }
+
+      if (id === 'charge') {
+        return {
+          args: ['-singlemove', pokemon as Protocol.PokemonIdent, 'Charge' as Protocol.MoveName],
+          kwArgs: {of: target || undefined},
+        };
+      }
+      if (STARTABLE.has(id)) {
+        return {
+          args: ['-start', pokemon as Protocol.PokemonIdent, effect],
+          kwArgs: {of: target as Protocol.PokemonIdent || ''} as Protocol.BattleArgsKWArgType,
+        };
+      }
+      if (id === 'fairylock') return {args: ['-fieldactivate', effect], kwArgs: {}};
+
+      if (id === 'symbiosis' || id === 'poltergeist') {
+        kwArgs.item = arg3;
+      } else if (id === 'magnitude') {
+        kwArgs.number = arg3;
+      } else if (id === 'skillswap' || id === 'mummy' || id === 'lingeringaroma') {
+        kwArgs.ability = arg3;
+        kwArgs.ability2 = arg4;
+      } else if (id === 'wanderingspirit') {
+      // FIXME: workaround for an interaction between Wandering Spirit and Protective Pads
+        if (arg3) {
+          kwArgs.ability = arg3;
+          kwArgs.ability2 = arg4;
+        } else {
+          return {
+            args: [
+              '-ability',
+              pokemon as Protocol.PokemonIdent,
+              'Wandering Spirit' as Protocol.AbilityName,
+            ],
+            kwArgs: {},
+          };
+        }
+      } else if (NUMBERABLE.has(id)) {
+        kwArgs.move = arg3;
+        kwArgs.number = arg4;
       }
       return {
-        args: ['-block', pokemon as Protocol.PokemonIdent, effect, arg3 as Protocol.MoveName || ''],
+        args: [
+          '-activate',
+          pokemon as Protocol.PokemonIdent,
+          effect,
+          target as Protocol.PokemonIdent || '',
+        ],
         kwArgs,
       };
     }
-
-    if (id === 'charge') {
-      return {
-        args: ['-singlemove', pokemon as Protocol.PokemonIdent, 'Charge' as Protocol.MoveName],
-        kwArgs: {of: target || undefined},
-      };
+    case '-start': {
+      if (kwArgs.from === 'Protean' || kwArgs.from === 'Color Change') {
+        kwArgs.from = 'ability:' + kwArgs.from;
+      }
+      break;
     }
-    if (STARTABLE.has(id)) {
-      return {
-        args: ['-start', pokemon as Protocol.PokemonIdent, effect],
-        kwArgs: {of: target as Protocol.PokemonIdent || ''} as Protocol.BattleArgsKWArgType,
-      };
+    case 'move': {
+      if (kwArgs.from === 'Magic Bounce') kwArgs.from = 'ability: Magic Bounce';
+      break;
     }
-    if (id === 'fairylock') return {args: ['-fieldactivate', effect], kwArgs: {}};
-
-    if (id === 'symbiosis' || id === 'poltergeist') {
-      kwArgs.item = arg3;
-    } else if (id === 'magnitude') {
-      kwArgs.number = arg3;
-    } else if (id === 'skillswap' || id === 'mummy' || id === 'lingeringaroma') {
-      kwArgs.ability = arg3;
-      kwArgs.ability2 = arg4;
-    } else if (id === 'wanderingspirit') {
-      // FIXME: workaround for an interaction between Wandering Spirit and Protective Pads
-      if (arg3) {
-        kwArgs.ability = arg3;
-        kwArgs.ability2 = arg4;
-      } else {
+    case 'cant': {
+      const [, pokemon, effect, move] = args;
+      if (CANT_BLOCKABLE.has(effect as Protocol.EffectName)) {
         return {
           args: [
-            '-ability',
-            pokemon as Protocol.PokemonIdent,
-            'Wandering Spirit' as Protocol.AbilityName,
+            '-block',
+            pokemon,
+            effect as Protocol.EffectName,
+            move as Protocol.MoveName,
+            kwArgs.of as Protocol.PokemonIdent || '',
           ],
           kwArgs: {},
         };
       }
-    } else if (NUMBERABLE.has(id)) {
-      kwArgs.move = arg3;
-      kwArgs.number = arg4;
+      break;
     }
-    return {
-      args: [
-        '-activate',
-        pokemon as Protocol.PokemonIdent,
-        effect,
-        target as Protocol.PokemonIdent || '',
-      ],
-      kwArgs,
-    };
-  }
-  case '-start': {
-    if (kwArgs.from === 'Protean' || kwArgs.from === 'Color Change') {
-      kwArgs.from = 'ability:' + kwArgs.from;
+    case '-heal': {
+      const id = Protocol.parseEffect(kwArgs.from as string, toID).name;
+      if (HEALING.has(id)) kwArgs.of = '';
+      break;
     }
-    break;
-  }
-  case 'move': {
-    if (kwArgs.from === 'Magic Bounce') kwArgs.from = 'ability: Magic Bounce';
-    break;
-  }
-  case 'cant': {
-    const [, pokemon, effect, move] = args;
-    if (CANT_BLOCKABLE.has(effect as Protocol.EffectName)) {
-      return {
-        args: [
-          '-block',
-          pokemon,
-          effect as Protocol.EffectName,
-          move as Protocol.MoveName,
-          kwArgs.of as Protocol.PokemonIdent || '',
-        ],
-        kwArgs: {},
-      };
+    case 'gen': {
+      const [, num] = args;
+      return {args: ['gen', Number(num) as GenerationNum], kwArgs: {}};
     }
-    break;
-  }
-  case '-heal': {
-    const id = Protocol.parseEffect(kwArgs.from as string, toID).name;
-    if (HEALING.has(id)) kwArgs.of = '';
-    break;
-  }
-  case 'gen': {
-    const [, num] = args;
-    return {args: ['gen', Number(num) as GenerationNum], kwArgs: {}};
-  }
-  // @ts-ignore
-  case '-nothing':
+    // @ts-ignore
+    case '-nothing':
     // OLD: |-nothing
     // NEW: |-activate||move:Splash
-    args = [
-      '-activate', '' as Protocol.PokemonIdent,
-      'move: Splash' as Protocol.EffectName,
-    ] as Protocol.Args['|-activate|'];
+      args = [
+        '-activate', '' as Protocol.PokemonIdent,
+        'move: Splash' as Protocol.EffectName,
+      ] as Protocol.Args['|-activate|'];
   }
 
   return {args, kwArgs};
