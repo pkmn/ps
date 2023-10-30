@@ -622,17 +622,43 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   '|move|'(args: Args['|move|'], kwArgs: KWArgs['|move|']) {
     if (!verifyPokemonIdent(args[1])) return false;
     if (!(args[2] === 'recharge' || verifyMoveName(args[2], this.gen))) return false;
-    if (this.gen?.num === 1) {
-      return args.length === 4 &&
-        (args[3] === '' || (args[3] !== 'null' && verifyPokemonIdent(args[3]))) &&
-        verifyKWArgs(kwArgs, ['miss', 'still', 'from'], this.gen) &&
-        (!kwArgs.from || verifyMoveName(kwArgs.from as Protocol.MoveName, this.gen));
+    switch (this.gen?.num || 0) {
+      case 1: case 2: {
+        return args.length === 4 &&
+          (args[3] === '' || (args[3] !== 'null' && verifyPokemonIdent(args[3]))) &&
+          verifyKWArgs(kwArgs, ['miss', 'still', 'from'], this.gen) &&
+          (!kwArgs.from || verifyMoveName(kwArgs.from as Protocol.MoveName, this.gen));
+      }
+      case 3: {
+        return args.length === 4 &&
+          (args[3] === '' || (args[3] === 'null'
+            ? ['Helping Hand'].includes(args[2])
+            : verifyPokemonIdent(args[3]))) &&
+          verifyKWArgs(kwArgs, ['miss', 'still', 'from', 'notarget'], this.gen) &&
+          (!kwArgs.from || kwArgs.from === 'lockedmove' ||
+            verifyMoveName(kwArgs.from as Protocol.MoveName, this.gen));
+      }
+      case 4: {
+        const from = [
+          'move: Metronome', 'move: Mirror Move', 'move: Sleep Talk', 'Snatch', 'move: Assist',
+          'move: Copycat', 'Magic Coat', 'lockedmove', 'move: Me First', 'move: Nature Power',
+          'Pursuit',
+        ];
+        return args.length === 4 &&
+          (args[3] === '' || (args[3] === 'null'
+            ? ['Helping Hand'].includes(args[2])
+            : verifyPokemonIdent(args[3]))) &&
+          verifyKWArgs(kwArgs, ['miss', 'still', 'from', 'notarget'], this.gen) &&
+          (!kwArgs.from || from.includes(kwArgs.from));
+      }
+      default: {
+        const keys: Protocol.BattleArgsWithKWArgType[] =
+          [...KWARGS, 'anim', 'miss', 'notarget', 'prepare', 'spread', 'zeffect'];
+        if (!verifyKWArgs(kwArgs, keys, this.gen)) return false;
+        return args.length === 3 || (args.length === 4 &&
+          (args[3] === '' || args[3] === 'null' || verifyPokemonIdent(args[3])));
+      }
     }
-    const keys: Protocol.BattleArgsWithKWArgType[] =
-      [...KWARGS, 'anim', 'miss', 'notarget', 'prepare', 'spread', 'zeffect'];
-    if (!verifyKWArgs(kwArgs, keys, this.gen)) return false;
-    return args.length === 3 || (args.length === 4 &&
-      (args[3] === '' || args[3] === 'null' || verifyPokemonIdent(args[3])));
   }
 
   '|switch|'(args: Args['|switch|'], kwArgs: KWArgs['|switch|']) {
