@@ -634,7 +634,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
           (args[3] === '' || (args[3] === 'null'
             ? ['Helping Hand'].includes(args[2])
             : verifyPokemonIdent(args[3]))) &&
-          verifyKWArgs(kwArgs, ['miss', 'still', 'from', 'notarget'], this.gen) &&
+          verifyKWArgs(kwArgs, ['miss', 'still', 'from', 'notarget', 'spread'], this.gen) &&
           (!kwArgs.from || kwArgs.from === 'lockedmove' ||
             verifyMoveName(kwArgs.from as Protocol.MoveName, this.gen));
       }
@@ -648,7 +648,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
           (args[3] === '' || (args[3] === 'null'
             ? ['Helping Hand'].includes(args[2])
             : verifyPokemonIdent(args[3]))) &&
-          verifyKWArgs(kwArgs, ['miss', 'still', 'from', 'notarget'], this.gen) &&
+          verifyKWArgs(kwArgs, ['miss', 'still', 'from', 'notarget', 'spread'], this.gen) &&
           (!kwArgs.from || from.includes(kwArgs.from));
       }
       default: {
@@ -1206,14 +1206,15 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     if (!verifyPokemonIdent(args[1])) return false;
     switch (this.gen?.num || 0) {
       case 1: return args.length === 2 && verifyKWArgs(kwArgs, ['ohko'], this.gen);
-      case 2: return args.length === 2 && !Object.keys(kwArgs).length;
+      case 2: return args.length === 2 && verifyKWArgs(kwArgs, ['ohko'], this.gen);
       case 3: case 4: {
         if (args.length === 3) {
           return args[2] === 'confusion' &&
             Object.keys(kwArgs).length === 1 &&
             kwArgs.from === 'ability: Own Tempo';
         }
-        if (!(args.length === 2 && verifyKWArgs(kwArgs, ['from'], this.gen))) return false;
+        if (!(args.length === 2 && verifyKWArgs(kwArgs, ['from', 'ohko'], this.gen))) return false;
+        if (Object.keys(kwArgs).length > 1) return false;
         return !kwArgs.from || (kwArgs.from.startsWith('ability: ') ||
           this.gen!.num === 4 && kwArgs.from === 'Oblivious');
       }
@@ -1420,9 +1421,14 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       case 1: return false;
       case 2: case 3: case 4: {
         const reasons = ['Protect', 'move: Endure'];
-        if (this.gen!.num >= 3) reasons.push('Snatch', 'move: Focus Punch');
+        if (this.gen!.num >= 3) {
+          reasons.push('Snatch', 'move: Focus Punch', 'move: Follow Me', 'Helping Hand');
+        }
         if (this.gen!.num >= 4) reasons.push('move: Roost');
-        return !Object.keys(kwArgs).length && reasons.includes(args[2]);
+        if (!reasons.includes(args[2])) return false;
+        if (this.gen!.num === 2 && Object.keys(kwArgs).length) return false;
+        if (!verifyKWArgs(kwArgs, ['of'], this.gen)) return false;
+        return !kwArgs.of || args[2] === 'Helping Hand';
       }
       default: {
         return (verifyMoveEffectName(args[2] as Protocol.MoveEffectName, this.gen) ||
