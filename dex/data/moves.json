@@ -6669,7 +6669,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Grass",
-      "desc": "Whether or not this move is successful and even if it would cause fainting, the user loses 1/2 of its maximum HP, rounded up, unless the user has the Magic Guard Ability.",
+      "desc": "If this move is successful, the user loses 1/2 of its maximum HP, rounded up, unless the user has the Magic Guard Ability.",
       "shortDesc": "User loses 50% max HP."
     },
     "circlethrow": {
@@ -16907,7 +16907,7 @@
       "name": "Secret Sword",
       "pp": 10,
       "priority": 0,
-      "flags": {"protect": 1, "mirror": 1},
+      "flags": {"protect": 1, "mirror": 1, "slicing": 1},
       "secondary": null,
       "target": "normal",
       "type": "Fighting",

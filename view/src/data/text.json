@@ -335,7 +335,6 @@
   "chillyreception": {
     "activate": "  [POKEMON] is preparing to tell a chillingly bad joke!"
   },
-  "chloroblast": {"damage": "#mindblown"},
   "clamp": {"start": "  [SOURCE] clamped down on [POKEMON]!", "move": "#wrap"},
   "conversion": {"typeChange": "  Converted type to [SOURCE]'s!"},
   "corrosivegas": {

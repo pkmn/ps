@@ -1296,4 +1296,13 @@ export const Rulesets: {[k: string]: FormatData} = {
 			this.add('rule', 'Species Reveal Clause: Reveals a Pok\u00e9mon\'s true species in hackmons-based metagames.');
 		},
 	},
+	illusionlevelmod: {
+		effectType: 'Rule',
+		name: "Illusion Level Mod",
+		desc: `Changes the Illusion ability to disguise the Pok&eacute;mon's level instead of leaking it.`,
+		onBegin() {
+			this.add('rule', "Illusion Level Mod: Illusion disguises the Pok\u00e9mon's true level");
+		},
+		// Implemented in Pokemon#getDetails
+	},
 };
