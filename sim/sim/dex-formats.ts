@@ -384,6 +384,7 @@ export class Format extends BasicEffect implements Readonly<BasicEffect> {
 	/** An optional function that runs at the start of a battle. */
 	readonly onBegin?: (this: Battle) => void;
 	readonly noLog: boolean;
+
 	/**
 	 * Only applies to rules, not formats
 	 */
@@ -405,32 +406,33 @@ export class Format extends BasicEffect implements Readonly<BasicEffect> {
 	 declare readonly timer?: Partial<GameTimerSettings>;
 	 declare readonly tournamentShow?: boolean;
 	 declare readonly checkCanLearn?: (
-		 this: TeamValidator, move: Move, species: Species, setSources: PokemonSources, set: PokemonSet
-	 ) => string | null;
-	 declare readonly getEvoFamily?: (this: Format, speciesid: string) => ID;
-	 declare readonly getSharedPower?: (this: Format, pokemon: Pokemon) => Set<string>;
-	 declare readonly onChangeSet?: (
-		 this: TeamValidator, set: PokemonSet, format: Format, setHas?: AnyObject, teamHas?: AnyObject
-	 ) => string[] | void;
-	 declare readonly onModifySpeciesPriority?: number;
-	 declare readonly onModifySpecies?: (
-		 this: Battle, species: Species, target?: Pokemon, source?: Pokemon, effect?: Effect
-	 ) => Species | void;
-	 declare readonly onBattleStart?: (this: Battle) => void;
-	 declare readonly onTeamPreview?: (this: Battle) => void;
-	 declare readonly onValidateSet?: (
-		 this: TeamValidator, set: PokemonSet, format: Format, setHas: AnyObject, teamHas: AnyObject
-	 ) => string[] | void;
-	 declare readonly onValidateTeam?: (
-		 this: TeamValidator, team: PokemonSet[], format: Format, teamHas: AnyObject
-	 ) => string[] | void;
-	 declare readonly validateSet?: (this: TeamValidator, set: PokemonSet, teamHas: AnyObject) => string[] | null;
-	 declare readonly validateTeam?: (this: TeamValidator, team: PokemonSet[], options?: {
-		 removeNicknames?: boolean,
-		 skipSets?: {[name: string]: {[key: string]: boolean}},
-	 }) => string[] | void;
-	 declare readonly section?: string;
-	 declare readonly column?: number;
+		this: TeamValidator, move: Move, species: Species, setSources: PokemonSources, set: PokemonSet
+	) => string | null;
+	declare readonly getEvoFamily?: (this: Format, speciesid: string) => ID;
+	declare readonly getSharedPower?: (this: Format, pokemon: Pokemon) => Set<string>;
+	declare readonly getSharedItems?: (this: Format, pokemon: Pokemon) => Set<string>;
+	declare readonly onChangeSet?: (
+		this: TeamValidator, set: PokemonSet, format: Format, setHas?: AnyObject, teamHas?: AnyObject
+	) => string[] | void;
+	declare readonly onModifySpeciesPriority?: number;
+	declare readonly onModifySpecies?: (
+		this: Battle, species: Species, target?: Pokemon, source?: Pokemon, effect?: Effect
+	) => Species | void;
+	declare readonly onBattleStart?: (this: Battle) => void;
+	declare readonly onTeamPreview?: (this: Battle) => void;
+	declare readonly onValidateSet?: (
+		this: TeamValidator, set: PokemonSet, format: Format, setHas: AnyObject, teamHas: AnyObject
+	) => string[] | void;
+	declare readonly onValidateTeam?: (
+		this: TeamValidator, team: PokemonSet[], format: Format, teamHas: AnyObject
+	) => string[] | void;
+	declare readonly validateSet?: (this: TeamValidator, set: PokemonSet, teamHas: AnyObject) => string[] | null;
+	declare readonly validateTeam?: (this: TeamValidator, team: PokemonSet[], options?: {
+		removeNicknames?: boolean,
+		skipSets?: {[name: string]: {[key: string]: boolean}},
+	}) => string[] | void;
+	declare readonly section?: string;
+	declare readonly column?: number;
 
 	constructor(data: AnyObject) {
 		super(data);
@@ -785,26 +787,6 @@ export class DexFormats {
 
 		if (!repeals) format.ruleTable = ruleTable;
 		return ruleTable;
-	}
-
-	getTagRules(ruleTable: RuleTable) {
-		const tagRules = [];
-		for (const ruleid of ruleTable.keys()) {
-			if (/^[+*-]pokemontag:/.test(ruleid)) {
-				const banid = ruleid.slice(12);
-				if (
-					banid === 'allpokemon' || banid === 'allitems' || banid === 'allmoves' ||
-					banid === 'allabilities' || banid === 'allnatures'
-				) {
-					// hardcoded and not a part of the ban rule system
-				} else {
-					tagRules.push(ruleid);
-				}
-			} else if ('+*-'.includes(ruleid.charAt(0)) && ruleid.slice(1) === 'nonexistent') {
-				tagRules.push(ruleid.charAt(0) + 'pokemontag:nonexistent');
-			}
-		}
-		ruleTable.tagRules = tagRules.reverse();
 	}
 
 	validateRule(rule: string, format: Format | null = null) {
