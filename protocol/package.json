@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/protocol",
-  "version": "0.6.16",
+  "version": "0.7.0",
   "description": "Parsing logic for Pokémon Showdown's PROTOCOL and SIM-PROTOCOL",
   "repository": "github:pkmn/ps",
   "license": "MIT",
