@@ -48,7 +48,7 @@ const NAME_KWARGS: Protocol.BattleArgsWithKWArgType[] = ['name', 'wisher'];
 const BARE_EFFECTS = ['Dynamax', 'Recoil'] as Protocol.EffectName[];
 const POKE_ITEMS = ['item', 'mail', ''] as const;
 const WEATHER = [
-  'RainDance', 'Hail', 'Sandstorm', 'SunnyDay',
+  'RainDance', 'Sandstorm', 'SunnyDay', 'Hail',
   'PrimordialSea', 'DesolateLand', 'DeltaStream', 'Snow',
 ];
 const FIELD_CONDITIONS = ['Misty Terrain'];
@@ -619,6 +619,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 1;
   }
 
+  // TODO
   '|move|'(args: Args['|move|'], kwArgs: KWArgs['|move|']) {
     if (!verifyPokemonIdent(args[1])) return false;
     if (!(args[2] === 'recharge' || verifyMoveName(args[2], this.gen))) return false;
@@ -666,20 +667,19 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       verifyPokemonIdent(args[1]) &&
       verifyPokemonDetails(args[2], this.gen) &&
       verifyPokemonHPStatus(args[3]);
-    if (!valid) return false;
 
-    switch (this.gen?.num || 0) {
-      case 1: return !Object.keys(kwArgs).length;
-      case 2: case 3: {
-        if (!verifyKWArgs(kwArgs, ['from'], this.gen)) return false;
-        return !kwArgs.from || kwArgs.from === 'Baton Pass';
-      }
-      case 4: {
-        if (!verifyKWArgs(kwArgs, ['from'], this.gen)) return false;
-        return !kwArgs.from || ['Baton Pass', 'U-turn'].includes(kwArgs.from);
-      }
-      default: return verifyKWArgs(kwArgs, KWARGS, this.gen);
-    }
+    if (!valid) return false;
+    if (!this.gen) return verifyKWArgs(kwArgs, KWARGS, this.gen);
+    if (this.gen.num === 1) return !Object.keys(kwArgs).length;
+
+    const from = [
+      'Baton Pass', 'U-turn', 'Volt Switch', 'Parting Shot',
+      'Flip Turn', 'Teleport', 'Chilly Reception', 'Shed Tail',
+    ];
+    const to = [0, 0, 1, 1, 2, 3, 4, 4, 6, 8];
+
+    if (!verifyKWArgs(kwArgs, ['from'], this.gen)) return false;
+    return !kwArgs.from || from.slice(0, to[this.gen.num]).includes(kwArgs.from);
   }
 
   '|drag|'(args: Args['|drag|']) {
@@ -690,14 +690,11 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       verifyPokemonHPStatus(args[3]);
   }
 
-  '|detailschange|'(args: Args['|detailschange|'], kwArgs: KWArgs['|detailschange|']) {
+  '|detailschange|'(args: Args['|detailschange|']) {
     if (this.gen && this.gen.num < 4) return false;
-    const valid = args.length === 3 &&
+    return args.length === 3 &&
       verifyPokemonIdent(args[1]) &&
       verifyPokemonDetails(args[2], this.gen);
-    if (!valid) return false;
-    if (this.gen?.num === 4) return !Object.keys(kwArgs).length;
-    return verifyKWArgs(kwArgs, [...KWARGS, 'msg'], this.gen);
   }
 
   '|replace|'(args: Args['|replace|']) {
@@ -710,12 +707,13 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   '|swap|'(args: Args['|swap|'], kwArgs: KWArgs['|swap|']) {
     if (this.gen && this.gen.num < 5) return false;
     return args.length === 3 &&
-      verifyKWArgs(kwArgs, KWARGS, this.gen) &&
+      verifyKWArgs(kwArgs, ['from'], this.gen) &&
       verifyPokemonIdent(args[1]) &&
-      (verifyNum(args[2] as Protocol.Num) || verifyPokemonIdent(args[2] as Protocol.PokemonIdent));
+      verifyNum(args[2] as Protocol.Num) &&
+      kwArgs.from === 'move: Ally Switch';
   }
 
-  // TODO gen 2/3/4
+  // TODO
   '|cant|'(args: Args['|cant|'], kwArgs: KWArgs['|cant|']) {
     if (!verifyPokemonIdent(args[1])) return false;
     if (this.gen?.num === 1) {
@@ -761,7 +759,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     }
   }
 
-  // TODO gen 2/3/4
+  // TODO
   '|-fail|'(args: Args['|-fail|'], kwArgs: KWArgs['|-fail|']) {
     if (this.gen?.num === 1) {
       const valid = verifyPokemonIdent(args[1]) && verifyKWArgs(kwArgs, ['weak'], this.gen);
@@ -790,7 +788,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
         verifyStatDisplayName(args[3] as Protocol.StatDisplayName));
   }
 
-  // TODO gen 2/3/4
+  // TODO DEBUG
   '|-block|'(args: Args['|-block|'], kwArgs: KWArgs['|-block|']) {
     if (this.gen?.num === 1) {
       return args.length === 4 &&
@@ -816,17 +814,18 @@ class Handler implements Required<Protocol.Handler<boolean>> {
 
   '|-notarget|'(args: Args['|-notarget|']) {
     if (this.gen && this.gen.num < 3) return false;
-    return args.length === 1 || (args.length === 2 && verifyPokemonIdent(args[1]));
+    if (args.length === 2 && verifyPokemonIdent(args[1])) return true;
+    // This shouldn't be possible because you can't be missing a target in singles...
+    return !this.gen && args.length === 1;
   }
 
-  '|-miss|'(args: Args['|-miss|'], kwArgs: KWArgs['|-miss|']) {
-    if (Object.keys(kwArgs).length) return false;
-    if (args.length === 2) return verifyPokemonIdent(args[1]);
-    if (this.gen?.num === 1) return false;
-    return args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonIdent(args[2]);
+  '|-miss|'(args: Args['|-miss|']) {
+    if (!verifyPokemonIdent(args[1])) return false;
+    if (args.length === 2) return !this.gen || this.gen.num <= 2;
+    return this.gen?.num !== 1 && args.length === 3 && verifyPokemonIdent(args[2]);
   }
 
-  // TODO gen 2/3/4
+  // TODO
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
     const valid =
       args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonHPStatus(args[2]);
@@ -840,7 +839,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return verifyKWArgs(kwArgs, [...KWARGS, 'partiallytrapped'], this.gen);
   }
 
-  // TODO gen 2/3/4
+  // TODO
   '|-heal|'(args: Args['|-heal|'], kwArgs: KWArgs['|-heal|']) {
     const valid =
       args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonHPStatus(args[2]);
@@ -854,27 +853,15 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|-sethp|'(args: Args['|-sethp|'], kwArgs: KWArgs['|-sethp|']) {
-    const valid =
-      args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonHPStatus(args[2]);
-    switch (this.gen?.num || 0) {
-      case 1: return false;
-      case 2: case 3: case 4: {
-        if (!valid) return false;
-        if (!verifyKWArgs(kwArgs, ['from', 'silent'], this.gen)) return false;
-        return kwArgs.from === 'move: Pain Split';
-      }
-      default: {
-        if (!verifyKWArgs(kwArgs, KWARGS, this.gen)) return false;
-        if (valid) return true;
-        return args.length === 5 &&
-          verifyPokemonIdent(args[1]) &&
-          verifyNum(args[2]) &&
-          verifyPokemonIdent(args[3]) &&
-          verifyNum(args[4]);
-      }
-    }
+    if (this.gen?.num === 1) return false;
+    return args.length === 3 &&
+      verifyPokemonIdent(args[1]) &&
+      verifyPokemonHPStatus(args[2]) &&
+      verifyKWArgs(kwArgs, ['from', 'silent'], this.gen) &&
+      kwArgs.from === 'move: Pain Split';
   }
 
+  // TODO
   '|-status|'(args: Args['|-status|'], kwArgs: KWArgs['|-status|']) {
     const valid = args.length === 3 && verifyPokemonIdent(args[1]) && verifyStatusName(args[2]);
     if (!valid) return false;
@@ -910,6 +897,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     }
   }
 
+  // TODO
   '|-curestatus|'(args: Args['|-curestatus|'], kwArgs: KWArgs['|-curestatus|']) {
     const valid = args.length === 3 && verifyPokemonIdent(args[1]) && verifyStatusName(args[2]);
     if (!valid) return false;
@@ -938,12 +926,14 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     }
   }
 
-  // TODO gen 2/3/4
   '|-cureteam|'(args: Args['|-cureteam|'], kwArgs: KWArgs['|-cureteam|']) {
-    if (this.gen && this.gen.num < 2) return false;
-    return args.length === 2 &&
+    if (this.gen && (this.gen.num < 2 || this.gen.num > 4)) return false;
+    const valid = args.length === 2 &&
       verifyPokemonIdent(args[1]) &&
-      verifyKWArgs(kwArgs, KWARGS, this.gen);
+      verifyKWArgs(kwArgs, ['from'], this.gen);
+    if (!valid) return false;
+    if (!this.gen) return true;
+    return kwArgs.from === (this.gen.num === 2 ? 'move: Heal Bell' : 'move: Aromatherapy');
   }
 
   // TODO gen 2/3/4
@@ -971,57 +961,60 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return verifyKWArgs(kwArgs, [...KWARGS, 'multiple', 'zeffect'], this.gen);
   }
 
-  // TODO gen 2/3/4
   '|-setboost|'(args: Args['|-setboost|'], kwArgs: KWArgs['|-setboost|']) {
     if (this.gen && this.gen.num < 2) return false;
+    const from =
+      this.gen?.num === 2 ? ['move: Belly Drum'] : ['move: Belly Drum', 'ability: Anger Point'];
     return args.length === 4 &&
       verifyPokemonIdent(args[1]) &&
-      verifyBoostID(args[2]) &&
+      args[2] === 'atk' &&
       verifyNum(args[3]) &&
-      verifyKWArgs(kwArgs, KWARGS, this.gen);
+      verifyKWArgs(kwArgs, ['from'], this.gen) &&
+      from.includes(kwArgs.from!);
   }
 
-  // TODO gen 2/3/4
   '|-swapboost|'(args: Args['|-swapboost|'], kwArgs: KWArgs['|-swapboost|']) {
-    if (this.gen && this.gen.num < 4) return false;
-    if (!verifyKWArgs(kwArgs, KWARGS, this.gen)) return false;
     if (!(verifyPokemonIdent(args[1]) && verifyPokemonIdent(args[2]))) return false;
-    return args.length === 3 || (args.length === 4 && verifyBoostIDs(args[3]));
+    if (!verifyKWArgs(kwArgs, ['from'], this.gen)) return false;
+    if (!this.gen) return args.length === 3 || (args.length === 4 && verifyBoostIDs(args[3]));
+    if (this.gen.num < 4) return false;
+    switch (kwArgs.from) {
+      case 'move: Heart Swap': return args.length === 3;
+      case 'move: Power Swap': return args.length === 4 && args[3] === 'atk, spa';
+      case 'move: Guard Swap': return args.length === 4 && args[3] === 'def, spd';
+      default: return false;
+    }
   }
 
   '|-invertboost|'(args: Args['|-invertboost|'], kwArgs: KWArgs['|-invertboost|']) {
     if (this.gen && this.gen.num < 6) return false;
     return args.length === 2 &&
       verifyPokemonIdent(args[1]) &&
-      verifyKWArgs(kwArgs, KWARGS, this.gen);
+      verifyKWArgs(kwArgs, ['from'], this.gen) &&
+      kwArgs.from === 'move: Topsy-Turvy';
   }
 
-  // TODO gen 2/3/4
   '|-clearboost|'(args: Args['|-clearboost|'], kwArgs: KWArgs['|-clearboost|']) {
-    if (this.gen && this.gen.num < 5) return false;
-    return args.length === 2 &&
-      verifyPokemonIdent(args[1]) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'zeffect'], this.gen);
+    if (!(args.length === 2 && verifyPokemonIdent(args[1]))) return false;
+    if (!this.gen) return verifyKWArgs(kwArgs, [...KWARGS], this.gen);
+    if (this.gen.num < 5) return false;
+    if (this.gen.num < 8) return !Object.keys(kwArgs).length;
+    return verifyKWArgs(kwArgs, ['from', 'of'], this.gen) &&
+      !kwArgs.from || (kwArgs.from === 'ability: Curious Medicine' && !!kwArgs.of);
   }
 
-  // TODO gen 2/3/4
   '|-clearallboost|'(args: Args['|-clearallboost|'], kwArgs: KWArgs['|-clearallboost|']) {
-    if (args.length !== 1) return false;
-    if (this.gen?.num === 1) {
-      return verifyKWArgs(kwArgs, ['silent'], this.gen) && kwArgs.silent === true;
-    }
-    return verifyKWArgs(kwArgs, [...KWARGS, 'zeffect'], this.gen);
+    if (args.length !== 1 || !verifyKWArgs(kwArgs, ['silent'], this.gen)) return false;
+    if (!this.gen) return true;
+    return this.gen.num === 1 ? kwArgs.silent === true : !Object.keys(kwArgs).length;
   }
 
-  '|-clearpositiveboost|'(
-    args: Args['|-clearpositiveboost|'], kwArgs: KWArgs['|-clearpositiveboost|']
-  ) {
+  '|-clearpositiveboost|'(args: Args['|-clearpositiveboost|']) {
     if (this.gen && this.gen.num < 7) return false;
     return args.length === 4 &&
       verifyPokemonIdent(args[1]) &&
       verifyPokemonIdent(args[2]) &&
-      verifyEffectName(args[3], this.gen) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'zeffect'], this.gen);
+      args[3] === 'move: Spectral Thief';
   }
 
   '|-ohko|'(args: Args['|-ohko|']) {
@@ -1038,36 +1031,59 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 3 && verifyPokemonIdent(args[1]) && verifyType(args[2]);
   }
 
-  // TODO gen 2/3/4
   '|-clearnegativeboost|'(
     args: Args['|-clearnegativeboost|'], kwArgs: KWArgs['|-clearnegativeboost|']
   ) {
     if (this.gen && this.gen.num < 3) return false;
     return args.length === 2 &&
       verifyPokemonIdent(args[1]) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'zeffect'], this.gen);
+      verifyKWArgs(kwArgs, ['silent', 'zeffect'], this.gen) &&
+      Object.keys(kwArgs).length === 1;
   }
 
-  // TODO gen 2/3/4
   '|-copyboost|'(args: Args['|-copyboost|'], kwArgs: KWArgs['|-copyboost|']) {
     if (this.gen && this.gen.num < 2) return false;
-    if (!(verifyPokemonIdent(args[1]) &&
+    const from =
+      this.gen?.num === 2 ? ['move: Psych Up'] : ['move: Psych Up', 'ability: Costar'];
+    return args.length === 3 &&
+      verifyPokemonIdent(args[1]) &&
       verifyPokemonIdent(args[2]) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'zeffect'], this.gen))) {
-      return false;
-    }
-    return args.length === 3 || (args.length === 4) && verifyBoostIDs(args[3]);
+      verifyKWArgs(kwArgs, ['from'], this.gen) &&
+      from.includes(kwArgs.from!);
   }
 
-  // TODO gen 2/3/4
   '|-weather|'(args: Args['|-weather|'], kwArgs: KWArgs['|-weather|']) {
-    if (this.gen && this.gen.num < 2) return false;
-    return args.length === 2 &&
-      (args[1] === 'none' || verifyWeather(args[1])) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'upkeep'], this.gen);
+    if (args.length !== 2) return false;
+    if (args[1] === 'none') return !Object.keys(kwArgs).length;
+
+    const weather = [0, 0, 3, 4, 4, 4, 7, 7, 7, 8];
+    const to = [0, 0, 0, 3, 4, 4, 7, 7, 8, 9];
+    const abilities = [
+      'ability: Drizzle', 'ability: Sand Stream', 'ability: Drought', 'ability: Snow Warning',
+      'ability: Primordial Sea', 'ability: Desolate Land', 'ability: Delta Stream',
+      'ability: Sand Spit', 'ability: Orichalcum Pulse'
+    ];
+
+    switch (this.gen?.num || 0) {
+      case 1: return false;
+      case 2: {
+        return WEATHER.slice(0, 3).includes(args[1]) && verifyKWArgs(kwArgs, ['upkeep'], this.gen);
+      }
+      case 3: case 4: case 5: case 6: case 7: case 8: case 9: {
+        if (!WEATHER.slice(0, weather[this.gen!.num]).includes(args[1])) return false;
+        if (this.gen!.num == 9 && args[1] === 'Hail') return false;
+        if (!verifyKWArgs(kwArgs, ['upkeep', 'from', 'of'], this.gen)) return false;
+        if (!Object.keys(kwArgs).length) return true;
+        if (kwArgs.upkeep) return Object.keys(kwArgs).length === 1;
+        return !!kwArgs.of && abilities.slice(0, to[this.gen!.num]).includes(kwArgs.from!);
+      }
+      default: {
+        return verifyWeather(args[1]) && verifyKWArgs(kwArgs, [...KWARGS, 'upkeep'], this.gen);
+      }
+    }
   }
 
-  // TODO gen 2/3/4
+  // TODO DEBUG
   '|-fieldstart|'(args: Args['|-fieldstart|'], kwArgs: KWArgs['|-fieldstart|']) {
     if (this.gen && this.gen.num < 4) return false;
     return args.length === 2 &&
@@ -1076,7 +1092,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       verifyKWArgs(kwArgs, KWARGS, this.gen);
   }
 
-  // TODO gen 2/3/4
+  // TODO DEBUG
   '|-fieldend|'(args: Args['|-fieldend|'], kwArgs: KWArgs['|-fieldend|']) {
     if (this.gen && this.gen.num < 4) return false;
     return args.length === 2 &&
@@ -1086,31 +1102,42 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|-sidestart|'(args: Args['|-sidestart|'], kwArgs: KWArgs['|-sidestart|']) {
-    if (!(args.length === 3 && verifySide(args[1]))) return false;
+    const valid = args.length === 3 && verifySide(args[1]) && (!this.gen || this.gen.num >= 8
+      ? verifyKWArgs(kwArgs, ['silent'], this.gen)
+      : !Object.keys(kwArgs).length);
+    if (!valid) return false;
+
+    const modern = [
+      'Reflect', 'Safeguard', 'move: Light Screen', 'Spikes', 'Mist',
+      'move: Lucky Chant', 'move: Stealth Rock', 'move: Tailwind', 'move: Toxic Spikes',
+      'Grass Pledge', 'Fire Pledge', 'Water Pledge', 'move: Sticky Web', 'move: Aurora Veil'
+    ];
+    const classic =  modern.slice(0, 9);
+    classic[2] = 'Light Screen';
+    const dexit = modern.slice(0);
+    dexit.splice(5, 1); // Lucky Chant
+    const gen8 = [...dexit,
+      'G-Max Volcalith', 'G-Max Wildfire', 'G-Max Cannonade', 'G-Max Steelsurge','G-Max Vine Lash'
+    ];
+
     switch (this.gen?.num || 0) {
       case 1: return false;
-      case 2: {
-        const conditions = ['Reflect', 'Safeguard', 'move: Light Screen', 'Spikes'];
-        return !Object.keys(kwArgs).length && conditions.includes(args[2]);
-      }
-      case 3: case 4: {
-        const conditions = ['Reflect', 'Safeguard', 'Light Screen', 'Spikes', 'Mist'];
-        if (this.gen!.num === 4) {
-          const more =
-            ['move: Lucky Chant', 'move: Stealth Rock', 'move: Tailwind', 'move: Toxic Spikes'];
-          conditions.push(...more);
-        }
-        return !Object.keys(kwArgs).length && conditions.includes(args[2]);
-      }
+      case 2: return modern.slice(0, 4).includes(args[2]); // NB: modern
+      case 3: return classic.slice(0, 5).includes(args[2]);
+      case 4: return classic.includes(args[2]);
+      case 5: return modern.slice(0, 12).includes(args[2]);
+      case 6: return modern.slice(0, 13).includes(args[2]);
+      case 7: return modern.includes(args[2]);
+      case 8: return gen8.includes(args[2]);
+      case 9: return dexit.includes(args[2]);
       default: {
         return (verifyMoveEffectName(args[2] as Protocol.MoveEffectName, this.gen) ||
-            verifySideCondition(args[2] as SideCondition)) &&
-          verifyKWArgs(kwArgs, ['silent'], this.gen);
+            verifySideCondition(args[2] as SideCondition));
       }
     }
   }
 
-  // TODO gen 2/3/4
+  // TODO
   '|-sideend|'(args: Args['|-sideend|'], kwArgs: KWArgs['|-sideend|']) {
     if (this.gen && this.gen.num < 2) return false;
     return args.length === 3 &&
@@ -1125,7 +1152,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 1;
   }
 
-  // TODO gen 2/3/4
+  // TODO
   '|-start|'(args: Args['|-start|'], kwArgs: KWArgs['|-start|']) {
     if (!verifyPokemonIdent(args[1]) || args.length > 4) return false;
     if (this.gen?.num === 1) {
@@ -1168,7 +1195,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 3 || verifyMoveName(args[3] as Protocol.MoveName, this.gen);
   }
 
-  // TODO gen 2/3/4
+  // TODO
   '|-end|'(args: Args['|-end|'], kwArgs: KWArgs['|-end|']) {
     if (this.gen?.num === 1) {
       const valid = args.length === 3 &&
@@ -1202,6 +1229,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 2 && verifyPokemonIdent(args[1]);
   }
 
+  // TODO DEBUG
   '|-immune|'(args: Args['|-immune|'], kwArgs: KWArgs['|-immune|']) {
     if (!verifyPokemonIdent(args[1])) return false;
     switch (this.gen?.num || 0) {
@@ -1225,7 +1253,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     }
   }
 
-  // TODO gen 2/3/4
+  // TODO
   '|-item|'(args: Args['|-item|'], kwArgs: KWArgs['|-item|']) {
     if (this.gen && this.gen.num < 2) return false;
     return args.length === 3 &&
@@ -1234,7 +1262,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       verifyKWArgs(kwArgs, [...KWARGS, 'identify'], this.gen);
   }
 
-  // TODO gen 2/3/4
+  // TODO
   '|-enditem|'(args: Args['|-enditem|'], kwArgs: KWArgs['|-enditem|']) {
     if (this.gen && this.gen.num < 2) return false;
     return args.length === 3 &&
@@ -1243,7 +1271,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       verifyKWArgs(kwArgs, [...KWARGS, 'eat', 'move', 'weaken'], this.gen);
   }
 
-  // TODO gen 2/3/4
+  // TODO
   '|-ability|'(args: Args['|-ability|'], kwArgs: KWArgs['|-ability|']) {
     if (this.gen && this.gen.num < 3) return false;
     if (!verifyKWArgs(kwArgs, [...KWARGS, 'move', 'weaken', 'fail'], this.gen)) return false;
@@ -1259,7 +1287,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       verifyPokemonIdent(args[4]);
   }
 
-  // TODO gen 2/3/4
+  // TODO
   '|-endability|'(args: Args['|-endability|'], kwArgs: KWArgs['|-endability|']) {
     if (this.gen && this.gen.num < 3) return false;
     if (!verifyKWArgs(kwArgs, KWARGS, this.gen)) return false;
@@ -1274,11 +1302,12 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       verifyPokemonIdent(args[2]);
     if (!valid) return false;
     if (this.gen && this.gen.num < 5) return !Object.keys(kwArgs).length;
-    return verifyKWArgs(kwArgs, [...KWARGS, 'msg'], this.gen);
+    return verifyKWArgs(kwArgs, ['from'], this.gen) &&
+      (!kwArgs.from || kwArgs.from == 'ability: Imposter');
   }
 
   '|-mega|'(args: Args['|-mega|']) {
-    if (this.gen && this.gen.num < 6) return false;
+    if (this.gen && (this.gen.num < 6 || this.gen.num > 7)) return false;
     return args.length === 4 &&
       verifyPokemonIdent(args[1]) &&
       verifySpeciesName(args[2], this.gen) &&
@@ -1287,7 +1316,9 @@ class Handler implements Required<Protocol.Handler<boolean>> {
 
   '|-primal|'(args: Args['|-primal|']) {
     if (this.gen && this.gen.num < 6) return false;
-    return args.length === 3 && verifyPokemonIdent(args[1]) && verifyItemName(args[2]);
+    return args.length === 3 &&
+      verifyPokemonIdent(args[1]) &&
+      ['Blue Orb', 'Red Orb'].includes(args[2]);
   }
 
   '|-burst|'(args: Args['|-burst|']) {
@@ -1308,7 +1339,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 2 && verifyPokemonIdent(args[1]);
   }
 
-  // TODO gen 2/3/4
+  // TODO
   '|-activate|'(args: Args['|-activate|'], kwArgs: KWArgs['|-activate|']) {
     if (this.gen?.num === 1) {
       const valid = (args.length === 3 || (args.length === 4 && args[3] === '')) &&
@@ -1344,20 +1375,17 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       (args[4] === '' || verifyAbilityName(args[4], this.gen));
   }
 
-  '|-fieldactivate|'(args: Args['|-fieldactivate|'], kwArgs: KWArgs['|-fieldactivate|']) {
+  '|-fieldactivate|'(args: Args['|-fieldactivate|']) {
     if (args.length !== 2) return false;
-    switch (this.gen?.num || 0) {
-      case 1: return args[1] === 'move: Pay Day' && !Object.keys(kwArgs).length;
-      case 2: case 3: case 4: {
-        return ['move: Pay Day', 'move: Perish Song'].includes(args[1]) &&
-          !Object.keys(kwArgs).length;
-      }
-      default: {
-        // fucking gag me
-        return (args[1] === 'Delta Stream' || verifyEffectName(args[1], this.gen)) &&
-          verifyKWArgs(kwArgs, KWARGS, this.gen);
-      }
-    }
+    if (!this.gen) return args[1] === 'Delta Stream' || verifyEffectName(args[1], this.gen);
+
+    const effects = [
+      'move: Pay Day', 'move: Perish Song', 'move: Fairy Lock',
+      'move: Ion Deluge', 'Delta Stream', 'move: Teatime',
+    ];
+    const to = [0, 1, 2, 2, 2, 2, 5, 5, 6, 6];
+
+    return effects.slice(this.gen.num >= 5 ? 1 : 0, to[this.gen.num]).includes(args[1]);
   }
 
   '|-hint|'(args: Args['|-hint|']) {
@@ -1386,7 +1414,9 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   '|-prepare|'(args: Args['|-prepare|']) {
     if (!(verifyPokemonIdent(args[1]) && verifyMoveName(args[2], this.gen))) return false;
     if (this.gen && this.gen.num < 5) return args.length === 3;
-    return args.length === 3 || (args.length === 4 && verifyPokemonIdent(args[3]));
+    return (args[2] === 'Sky Drop'
+      ? args.length === 4 && verifyPokemonIdent(args[3])
+      : args.length === 3);
   }
 
   '|-mustrecharge|'(args: Args['|-mustrecharge|']) {
@@ -1402,18 +1432,31 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     if (!valid) return false;
     switch (this.gen?.num || 0) {
       case 1: return false;
-      case 2: case 3: case 4: {
+      case 2: case 3: case 4: case 5: case 6: case 7: {
         const reasons = ['Destiny Bond', 'Rage'];
         if (this.gen!.num >= 3) reasons.push('Grudge');
         return !Object.keys(kwArgs).length && reasons.includes(args[2]);
       }
+      case 8: {
+        const reasons = ['Destiny Bond', 'Grudge'];
+        return !Object.keys(kwArgs).length && reasons.includes(args[2]);
+      }
+      case 9: {
+        const reasons = ['Destiny Bond', 'move: Glaive Rush'];
+        return (Object.keys(kwArgs).length
+          ? args[2] === 'Glaive Rush' &&
+            verifyKWArgs(kwArgs, ['silent'], this.gen) &&
+            kwArgs.silent === true
+          : args[2] === 'Destiny Bond' && !Object.keys(kwArgs).length);
+      }
       default: {
         return verifyMoveName(args[2], this.gen) &&
-          verifyKWArgs(kwArgs, [...KWARGS, 'zeffect'], this.gen);
+          verifyKWArgs(kwArgs, ['silent'], this.gen);
       }
     }
   }
 
+  // TODO DEBUG
   '|-singleturn|'(args: Args['|-singleturn|'], kwArgs: KWArgs['|-singleturn|']) {
     const valid = args.length === 3 && verifyPokemonIdent(args[1]);
     if (!valid) return false;

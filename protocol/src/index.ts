@@ -1592,7 +1592,6 @@ export namespace Protocol {
 
   export interface BattleArgsWithKWArgs {
     '|cant|': GeneralKWArgNames;
-    '|detailschange|': GeneralKWArgNames | 'msg';
     '|move|': GeneralKWArgNames | 'anim' | 'miss' | 'notarget' | 'prepare' | 'spread' | 'zeffect';
     '|swap|': GeneralKWArgNames;
     '|switch|': GeneralKWArgNames;
@@ -1603,9 +1602,8 @@ export namespace Protocol {
     '|-block|': GeneralKWArgNames;
     '|-boost|': GeneralKWArgNames | 'multiple' | 'zeffect';
     '|-copyboost|': GeneralKWArgNames | 'zeffect';
-    '|-clearboost|': GeneralKWArgNames | 'zeffect';
+    '|-clearboost|': GeneralKWArgNames;
     '|-clearallboost|': GeneralKWArgNames | 'zeffect';
-    '|-clearpositiveboost|': GeneralKWArgNames | 'zeffect';
     '|-clearnegativeboost|': GeneralKWArgNames | 'zeffect';
     '|-curestatus|': GeneralKWArgNames| 'thaw' | 'msg';
     '|-cureteam|': GeneralKWArgNames;
@@ -1614,7 +1612,6 @@ export namespace Protocol {
     '|-endability|': GeneralKWArgNames;
     '|-enditem|': GeneralKWArgNames | 'eat' | 'move' | 'weaken';
     '|-fail|': GeneralKWArgNames | 'forme' | 'heavy' | 'msg' | 'weak' | 'fail' | 'block';
-    '|-fieldactivate|': GeneralKWArgNames;
     '|-fieldstart|': GeneralKWArgNames | 'persistent';
     '|-fieldend|': GeneralKWArgNames;
     '|-formechange|': GeneralKWArgNames | 'msg';
@@ -1622,7 +1619,6 @@ export namespace Protocol {
     '|-immune|': GeneralKWArgNames | 'ohko';
     '|-invertboost|': GeneralKWArgNames;
     '|-item|': GeneralKWArgNames | 'identify';
-    '|-miss|': GeneralKWArgNames;
     '|-setboost|': GeneralKWArgNames;
     '|-sethp|': GeneralKWArgNames;
     '|-sidestart|': 'silent' | 'persistent';
@@ -1871,15 +1867,14 @@ export const Protocol = new class {
     '|-swapsideconditions|': 1, '|-terastallize|': 1,
   };
   ARGS_WITH_KWARGS: {[k in Protocol.ArgsWithKWArgName]: 1} = {
-    '|move|': 1, '|detailschange|': 1, '|cant|': 1, '|-formechange|': 1, '|-fail|': 1,
+    '|move|': 1, '|switch|': 1, '|cant|': 1, '|-formechange|': 1, '|-fail|': 1,
     '|-block|': 1, '|-damage|': 1, '|-heal|': 1, '|-sethp|': 1, '|-status|': 1, '|swap|': 1,
     '|-curestatus|': 1, '|-cureteam|': 1, '|-boost|': 1, '|-unboost|': 1, '|-setboost|': 1,
     '|-swapboost|': 1, '|-invertboost|': 1, '|-clearnegativeboost|': 1, '|-weather|': 1,
-    '|-fieldactivate|': 1, '|-fieldstart|': 1, '|-fieldend|': 1, '|-sidestart|': 1,
+    '|-fieldstart|': 1, '|-fieldend|': 1, '|-sidestart|': 1, '|-singlemove|': 1,
     '|-sideend|': 1, '|-start|': 1, '|-end|': 1, '|-immune|': 1, '|-item|': 1, '|-enditem|': 1,
     '|-ability|': 1, '|-endability|': 1, '|-transform|': 1, '|-activate|': 1, '|-singleturn|': 1,
-    '|-miss|': 1, '|-clearallboost|': 1, '|-anim|': 1, '|-copyboost|': 1, '|-clearboost|': 1,
-    '|-clearpositiveboost|': 1, '|-singlemove|': 1, '|switch|': 1,
+    '|-clearallboost|': 1, '|-anim|': 1, '|-copyboost|': 1, '|-clearboost|': 1,
   };
 
   *parse(data: string) {
