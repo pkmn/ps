@@ -1891,11 +1891,11 @@ export const Protocol = new class {
     }
   }
 
-  key(args: Protocol.ArgType): Protocol.ArgName | undefined {
+  key(args: Protocol.ArgType, raw = false): Protocol.ArgName | undefined {
     const key = (args[0] === 'tournament'
       ? `|${args[0]}|${args[1]}|`
       : `|${args[0]}|`) as Protocol.ArgName;
-    return key in this.ARGS ? key : undefined;
+    return (raw || key in this.ARGS) ? key : undefined;
   }
 
   parseLine(line: string, noDefault?: boolean): Protocol.ArgType | null {

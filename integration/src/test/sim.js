@@ -161,7 +161,7 @@ class Runner {
     const psStart = psStreams.omniscient.write(start);
     const pkmnStart = pkmnStreams.omniscient.write(start);
     const streams = new AsyncIterableStreams(psStreams.omniscient, pkmnStreams.omniscient);
-    const verifier = new Verifier(gen);
+    const verifier = new Verifier(gen, true);
 
     for await (const [psChunk, pkmnChunk] of streams) {
       if (this.output) console.log(psChunk);

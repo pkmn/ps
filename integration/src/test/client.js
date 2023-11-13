@@ -114,7 +114,7 @@ class Runner {
       if (output) output.push(chunk);
 
       for (const line of chunk.split('\n')) {
-        const v = new Verifier(battle.gen).verifyLine(line);
+        const v = new Verifier(battle.gen, true).verifyLine(line);
         assert(!v, `Invalid protocol: '${line}'`);
 
         // FIXME: workaround for crash in smogon/pokemon-showdown-client's animateMove...

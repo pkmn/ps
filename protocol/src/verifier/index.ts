@@ -240,9 +240,11 @@ function verifyKWArg<T extends Protocol.BattleArgsWithKWArgName>(
 
 class Handler implements Required<Protocol.Handler<boolean>> {
   private readonly gen?: Generation;
+  private readonly raw: boolean;
 
-  constructor(gen?: Generation) {
+  constructor(gen?: Generation, raw?: boolean) {
     this.gen = gen;
+    this.raw = !!raw;
   }
 
   '|init|'(args: Args['|init|']) {
@@ -788,8 +790,10 @@ class Handler implements Required<Protocol.Handler<boolean>> {
         verifyStatDisplayName(args[3] as Protocol.StatDisplayName));
   }
 
-  // TODO DEBUG
+  // TODO FIXME
   '|-block|'(args: Args['|-block|'], kwArgs: KWArgs['|-block|']) {
+    // NB: before upgrading only Aroma Veil (gen 6+), Flower Veil (gen 6+), and
+    // Ability Shield (gen 9+) use |-block|
     if (this.gen?.num === 1) {
       return args.length === 4 &&
         verifyPokemonIdent(args[1]) &&
@@ -1061,7 +1065,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     const abilities = [
       'ability: Drizzle', 'ability: Sand Stream', 'ability: Drought', 'ability: Snow Warning',
       'ability: Primordial Sea', 'ability: Desolate Land', 'ability: Delta Stream',
-      'ability: Sand Spit', 'ability: Orichalcum Pulse'
+      'ability: Sand Spit', 'ability: Orichalcum Pulse',
     ];
 
     switch (this.gen?.num || 0) {
@@ -1071,7 +1075,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       }
       case 3: case 4: case 5: case 6: case 7: case 8: case 9: {
         if (!WEATHER.slice(0, weather[this.gen!.num]).includes(args[1])) return false;
-        if (this.gen!.num == 9 && args[1] === 'Hail') return false;
+        if (this.gen!.num === 9 && args[1] === 'Hail') return false;
         if (!verifyKWArgs(kwArgs, ['upkeep', 'from', 'of'], this.gen)) return false;
         if (!Object.keys(kwArgs).length) return true;
         if (kwArgs.upkeep) return Object.keys(kwArgs).length === 1;
@@ -1110,14 +1114,14 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     const modern = [
       'Reflect', 'Safeguard', 'move: Light Screen', 'Spikes', 'Mist',
       'move: Lucky Chant', 'move: Stealth Rock', 'move: Tailwind', 'move: Toxic Spikes',
-      'Grass Pledge', 'Fire Pledge', 'Water Pledge', 'move: Sticky Web', 'move: Aurora Veil'
+      'Grass Pledge', 'Fire Pledge', 'Water Pledge', 'move: Sticky Web', 'move: Aurora Veil',
     ];
-    const classic =  modern.slice(0, 9);
+    const classic = modern.slice(0, 9);
     classic[2] = 'Light Screen';
     const dexit = modern.slice(0);
     dexit.splice(5, 1); // Lucky Chant
     const gen8 = [...dexit,
-      'G-Max Volcalith', 'G-Max Wildfire', 'G-Max Cannonade', 'G-Max Steelsurge','G-Max Vine Lash'
+      'G-Max Volcalith', 'G-Max Wildfire', 'G-Max Cannonade', 'G-Max Steelsurge', 'G-Max Vine Lash',
     ];
 
     switch (this.gen?.num || 0) {
@@ -1303,7 +1307,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     if (!valid) return false;
     if (this.gen && this.gen.num < 5) return !Object.keys(kwArgs).length;
     return verifyKWArgs(kwArgs, ['from'], this.gen) &&
-      (!kwArgs.from || kwArgs.from == 'ability: Imposter');
+      (!kwArgs.from || kwArgs.from === 'ability: Imposter');
   }
 
   '|-mega|'(args: Args['|-mega|']) {
@@ -1442,7 +1446,6 @@ class Handler implements Required<Protocol.Handler<boolean>> {
         return !Object.keys(kwArgs).length && reasons.includes(args[2]);
       }
       case 9: {
-        const reasons = ['Destiny Bond', 'move: Glaive Rush'];
         return (Object.keys(kwArgs).length
           ? args[2] === 'Glaive Rush' &&
             verifyKWArgs(kwArgs, ['silent'], this.gen) &&
@@ -1488,35 +1491,118 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       verifyPokemonIdent(args[3]) &&
       verifyKWArgs(kwArgs, [...KWARGS, 'spread', 'miss', 'notarget'], this.gen);
   }
+
+  '|-nothing|'(args: string[]) {
+    if (!this.raw) throw new Error('Encountered non-upgraded |-nothing arg');
+    return args.length === 1;
+  }
 }
 
 export class Verifier {
   handler: Handler;
+  raw?: Handler;
 
   static EXISTS = (d: {exists: boolean}) => d.exists;
 
-  constructor(gen?: Generation) {
+  constructor(gen?: Generation, raw?: boolean) {
     this.handler = new Handler(gen);
+    if (raw) this.raw = new Handler(gen, raw);
   }
 
   verify(data: string) {
     for (const {roomid, args, kwArgs} of Protocol.parse(data)) {
       if (!verifyRoomID(roomid)) return data;
-      if (!this.dispatch(args, kwArgs)) return data;
+      if (!this.dispatch(args, kwArgs, false)) return data;
     }
+    // TODO
+    // if (this.raw) {
+    //   for (const {roomid, args, kwArgs} of parseRaw(data)) {
+    //     if (!verifyRoomID(roomid as Protocol.RoomID)) return data;
+    //     if (!this.dispatch(args as any, kwArgs as any, true)) return data;
+    //   }
+    // }
     return undefined;
   }
 
   verifyLine(line: string) {
     const parsed = Protocol.parseBattleLine(line);
-    const {args, kwArgs} = parsed;
-    return this.dispatch(args, kwArgs) ? undefined : parsed;
+    if (!this.dispatch(parsed.args, parsed.kwArgs, false)) return parsed;
+    // TODO
+    // if (this.raw) {
+    //   const raw = parseRawBattleLine(line);
+    //   if (!this.dispatch(raw.args as any, raw.kwArgs as any, true)) return raw;
+    // }
+    return undefined;
   }
 
-  dispatch(args: Protocol.ArgType, kwArgs: Protocol.BattleArgsKWArgType) {
-    const key = Protocol.key(args);
-    if (!key || !this.handler[key]) return false;
+  dispatch(args: Protocol.ArgType, kwArgs: Protocol.BattleArgsKWArgType, raw = false) {
+    const handler = raw && this.raw ? this.raw : this.handler;
+    const key = Protocol.key(args, raw);
+    if (!key || !handler[key]) return false;
     if (Object.keys(kwArgs).length && !(key in Protocol.ARGS_WITH_KWARGS)) return false;
-    return (this.handler as any)[key](args, kwArgs);
+    return (handler as any)[key](args, kwArgs);
   }
+}
+
+function *parseRaw(data: string) {
+  const lines = data.split('\n');
+  let roomid = '';
+  for (const [i, line] of lines.entries()) {
+    if (i === 0 && line[0] === '>') {
+      roomid = line.slice(1);
+      continue;
+    } else if (line) {
+      const {args, kwArgs} = parseRawBattleLine(line);
+      yield {roomid, args, kwArgs};
+    }
+  }
+}
+
+function parseRawBattleLine(line: string) {
+  let args = parseRawLine(line, true) as [string, ...string[]];
+  if (args) return {args, kwArgs: {}};
+
+  args = line.slice(1).split('|') as [string, ...string[]];
+  const kwArgs: { [kw: string]: string | true } = {};
+  while (args.length > 1) {
+    const lastArg = args[args.length - 1];
+    if (lastArg.charAt(0) !== '[') break;
+    const bracketPos = lastArg.indexOf(']');
+    if (bracketPos <= 0) break;
+    // default to '.' so it evaluates to boolean true
+    kwArgs[lastArg.slice(1, bracketPos)] = lastArg.slice(bracketPos + 1).trim() || true;
+    args.pop();
+  }
+
+  return {args, kwArgs};
+}
+
+function parseRawLine(line: string, noDefault?: boolean): string[] | null {
+  if (!line.startsWith('|')) return ['', line];
+  if (line === '|') return ['done'];
+  const index = line.indexOf('|', 1);
+  const cmd = line.slice(1, index);
+  switch (cmd) {
+    case 'chatmsg': case 'chatmsg-raw': case 'raw': case 'error': case 'html':
+    case 'inactive': case 'inactiveoff': case 'warning':
+    case 'fieldhtml': case 'controlshtml': case 'bigerror':
+    case 'debug': case 'tier': case 'challstr': case 'popup': case '':
+      return [cmd, line.slice(index + 1)];
+    case 'c': case 'chat': case 'uhtml': case 'uhtmlchange':
+    // three parts
+      const index2a = line.indexOf('|', index + 1);
+      return [cmd, line.slice(index + 1, index2a), line.slice(index2a + 1)];
+    case 'c:': case 'pm':
+    // four parts
+      const index2b = line.indexOf('|', index + 1);
+      const index3b = line.indexOf('|', index2b + 1);
+      return [
+        cmd,
+        line.slice(index + 1, index2b),
+        line.slice(index2b + 1, index3b),
+        line.slice(index3b + 1),
+      ];
+  }
+  if (noDefault) return null;
+  return line.slice(1).split('|');
 }

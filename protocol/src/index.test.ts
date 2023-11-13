@@ -196,6 +196,7 @@ describe('Protocol', () => {
     expect(Protocol.key(['init', 'chat'])).toBe('|init|');
     expect(Protocol.key(['tournament', 'updateEnd'])).toBe('|tournament|updateEnd|');
     expect(Protocol.key(['foo', 'bar'] as unknown as Protocol.ArgType)).toBeUndefined();
+    expect(Protocol.key(['foo', 'bar'] as unknown as Protocol.ArgType, true)).toBe('|foo|');
   });
 
   it('#parse', () => {
