@@ -1544,6 +1544,7 @@ export class Verifier {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function *parseRaw(data: string) {
   const lines = data.split('\n');
   let roomid = '';

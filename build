@@ -49,6 +49,14 @@ const tree = root => {
   return leaves;
 };
 
+const cjs = path.join(cwd, 'tsconfig.cjs.json');
+const esm = path.join(cwd, 'tsconfig.esm.json');
+
+process.on('exit', () => {
+  try { fs.unlinkSync(cjs); } catch {}
+  try { fs.unlinkSync(esm); } catch {}
+});
+
 (async () => {
   const pkg = path.basename(cwd);
 
@@ -56,26 +64,19 @@ const tree = root => {
   if (!argv._.length) {
     const time = process.hrtime.bigint();
     const tsconfig = require(path.join(cwd, 'tsconfig.json'));
-    const cjs = path.join(cwd, 'tsconfig.cjs.json');
     const running = cmd =>
       console.log(`Running \x1b[96m${cmd}\x1b[0m for \x1b[34m@pkmn/${pkg}\x1b[0m...`);
-    try {
-      fs.writeFileSync(cjs, JSON.stringify(mkconfig(tsconfig, 'cjs')));
-      running('tsc -p tsconfig.cjs.json');
-      sh('npx', ['tsc', '-p', 'tsconfig.cjs.json']);
-    } finally {
-      try { fs.unlinkSync(cjs); } catch {}
-    }
+
+    fs.writeFileSync(cjs, JSON.stringify(mkconfig(tsconfig, 'cjs')));
+    running('tsc -p tsconfig.cjs.json');
+    sh('npx', ['tsc', '-p', 'tsconfig.cjs.json']);
+
     if (!argv.cjs) {
-      const esm = path.join(cwd, 'tsconfig.esm.json');
-      try {
-        fs.writeFileSync(esm, JSON.stringify(mkconfig(tsconfig, 'esm')));
-        running('tsc -p tsconfig.esm.json');
-        sh('npx', ['tsc', '-p', 'tsconfig.esm.json']);
-      } finally {
-        try { fs.unlinkSync(esm); } catch {}
-      }
+      fs.writeFileSync(esm, JSON.stringify(mkconfig(tsconfig, 'esm')));
+      running('tsc -p tsconfig.esm.json');
+      sh('npx', ['tsc', '-p', 'tsconfig.esm.json']);
     }
+
     running('cp -a build/{cjs,types}');
     fs.cpSync(path.join(cwd, 'build/cjs'), path.join(cwd, 'build/types'), {recursive: true});
 

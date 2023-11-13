@@ -443,8 +443,8 @@ class Handler implements Protocol.Handler<string> {
       .replace('[FULLNAME]', fullname);
   }
 
-  '|detailschange|'(args: Args['|detailschange|'], kwArgs: KWArgs['|detailschange|']) {
-    return this.formechange(args, kwArgs);
+  '|detailschange|'(args: Args['|detailschange|']) {
+    return this.formechange(args, {});
   }
 
   '|-transform|'(args: Args['|-transform|'], kwArgs: KWArgs['|-transform|']) {
@@ -457,7 +457,7 @@ class Handler implements Protocol.Handler<string> {
 
   private formechange(
     args: Args['|detailschange|' | '|-formechange|' | '|-transform|'],
-    kwArgs: KWArgs['|detailschange|' | '|-formechange|' | '|-transform|']
+    kwArgs: KWArgs[| '|-formechange|' | '|-transform|']
   ) {
     const [cmd, pokemon, arg2] = args;
     let newSpecies = '' as SpeciesName;
@@ -895,13 +895,13 @@ class Handler implements Protocol.Handler<string> {
     return this.fieldbegin(args, kwArgs);
   }
 
-  '|-fieldactivate|'(args: Args['|-fieldactivate|'], kwArgs: KWArgs['|-fieldactivate|']) {
-    return this.fieldbegin(args, kwArgs);
+  '|-fieldactivate|'(args: Args['|-fieldactivate|']) {
+    return this.fieldbegin(args, {});
   }
 
   private fieldbegin(
     args: Args['|-fieldstart|' | '|-fieldactivate|'],
-    kwArgs: KWArgs['|-fieldstart|' | '|-fieldactivate|']
+    kwArgs: KWArgs['|-fieldstart|']
   ) {
     const [cmd, effect] = args;
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of!);
@@ -1157,11 +1157,8 @@ class Handler implements Protocol.Handler<string> {
     return this.clearboost(args, kwArgs);
   }
 
-  '|-clearpositiveboost|'(
-    args: Args['|-clearpositiveboost|'],
-    kwArgs: KWArgs['|-clearpositiveboost|']
-  ) {
-    return this.clearboost(args, kwArgs);
+  '|-clearpositiveboost|'(args: Args['|-clearpositiveboost|']) {
+    return this.clearboost(args, {});
   }
 
   '|-clearnegativeboost|'(
@@ -1173,7 +1170,7 @@ class Handler implements Protocol.Handler<string> {
 
   private clearboost(
     args: Args['|-clearboost|' | '|-clearpositiveboost|' | '|-clearnegativeboost|'],
-    kwArgs: KWArgs['|-clearboost|' | '|-clearpositiveboost|' | '|-clearnegativeboost|']
+    kwArgs: KWArgs['|-clearboost|' | '|-clearnegativeboost|']
   ) {
     const [, pokemon, source] = args;
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);

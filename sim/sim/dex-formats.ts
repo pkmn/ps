@@ -402,6 +402,7 @@ export class Format extends BasicEffect implements Readonly<BasicEffect> {
 	 declare readonly actions?: ModdedBattleActions;
 	 declare readonly challengeShow?: boolean;
 	 declare readonly searchShow?: boolean;
+	 declare readonly bestOfDefault?: boolean;
 	 declare readonly threads?: string[];
 	 declare readonly timer?: Partial<GameTimerSettings>;
 	 declare readonly tournamentShow?: boolean;
@@ -494,6 +495,7 @@ export class DexFormats {
 			if (format.challengeShow === undefined) format.challengeShow = true;
 			if (format.searchShow === undefined) format.searchShow = true;
 			if (format.tournamentShow === undefined) format.tournamentShow = true;
+			if (format.bestOfDefault === undefined) format.bestOfDefault = false;
 			if (format.mod === undefined) format.mod = DEFAULT_MOD;
 			if (!this.dex.dexes[format.mod]) format.exists = false;
 

@@ -1619,6 +1619,7 @@ export namespace Protocol {
     '|-immune|': GeneralKWArgNames | 'ohko';
     '|-invertboost|': GeneralKWArgNames;
     '|-item|': GeneralKWArgNames | 'identify';
+    '|-miss|': GeneralKWArgNames; // FIXME
     '|-setboost|': GeneralKWArgNames;
     '|-sethp|': GeneralKWArgNames;
     '|-sidestart|': 'silent' | 'persistent';
@@ -1874,7 +1875,7 @@ export const Protocol = new class {
     '|-fieldstart|': 1, '|-fieldend|': 1, '|-sidestart|': 1, '|-singlemove|': 1,
     '|-sideend|': 1, '|-start|': 1, '|-end|': 1, '|-immune|': 1, '|-item|': 1, '|-enditem|': 1,
     '|-ability|': 1, '|-endability|': 1, '|-transform|': 1, '|-activate|': 1, '|-singleturn|': 1,
-    '|-clearallboost|': 1, '|-anim|': 1, '|-copyboost|': 1, '|-clearboost|': 1,
+    '|-clearallboost|': 1, '|-anim|': 1, '|-copyboost|': 1, '|-clearboost|': 1, '|-miss|': 1,
   };
 
   *parse(data: string) {
@@ -2321,6 +2322,12 @@ function upgradeBattleArgs({args, kwArgs}: {
     case 'gen': {
       const [, num] = args;
       return {args: ['gen', Number(num) as GenerationNum], kwArgs: {}};
+    }
+    // @ts-ignore
+    case '-restoreboost': {
+      // @ts-ignore
+      args[0] = '-clearnegativeboost';
+      break;
     }
     // @ts-ignore
     case '-nothing':

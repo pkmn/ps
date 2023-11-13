@@ -114,24 +114,25 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Same Type Clause', 'Terastal Clause' ],
     banlist: [
-      'Annihilape',        'Arceus',
-      'Calyrex-Ice',       'Calyrex-Shadow',
-      'Chi-Yu',            'Dialga',
-      'Dialga-Origin',     'Eternatus',
-      'Giratina',          'Giratina-Origin',
-      'Groudon',           'Iron Bundle',
-      'Koraidon',          'Kyogre',
-      'Magearna',          'Mewtwo',
-      'Miraidon',          'Palafin',
-      'Palkia',            'Palkia-Origin',
-      'Rayquaza',          'Shaymin-Sky',
-      'Zacian',            'Zacian-Crowned',
-      'Zamazenta-Crowned', 'Moody',
-      'Shadow Tag',        'Booster Energy',
-      'Damp Rock',         'Focus Band',
-      "King's Rock",       'Razor Fang',
-      'Quick Claw',        'Acupressure',
-      'Baton Pass',        'Last Respects'
+      'Annihilape',     'Arceus',
+      'Calyrex-Ice',    'Calyrex-Shadow',
+      'Chi-Yu',         'Dialga',
+      'Dialga-Origin',  'Eternatus',
+      'Giratina',       'Giratina-Origin',
+      'Groudon',        'Iron Bundle',
+      'Koraidon',       'Kyogre',
+      'Magearna',       'Mewtwo',
+      'Miraidon',       'Palafin',
+      'Palkia',         'Palkia-Origin',
+      'Rayquaza',       'Shaymin-Sky',
+      'Urshifu-Base',   'Zacian',
+      'Zacian-Crowned', 'Zamazenta-Crowned',
+      'Moody',          'Shadow Tag',
+      'Booster Energy', 'Damp Rock',
+      'Focus Band',     "King's Rock",
+      'Razor Fang',     'Quick Claw',
+      'Acupressure',    'Baton Pass',
+      'Last Respects'
     ]
   },
   {
@@ -181,7 +182,12 @@ export const Formats: FormatList = [
       'Endless Battle Clause'
     ]
   },
-  { name: '[Gen 9] ZU', mod: 'gen9', ruleset: [ '[Gen 9] PU' ], banlist: [ 'PU' ] },
+  {
+    name: '[Gen 9] ZU',
+    mod: 'gen9',
+    ruleset: [ '[Gen 9] PU' ],
+    banlist: [ 'PU', 'Crabominable', 'Raichu-Base', 'Zangoose' ]
+  },
   {
     name: '[Gen 9] LC UU',
     mod: 'gen9',
@@ -363,6 +369,7 @@ export const Formats: FormatList = [
     name: '[Gen 9] VGC 2023 Regulation D',
     mod: 'gen9predlc',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [
       'Flat Rules',
       '!! Adjust Level = 50',
@@ -376,6 +383,7 @@ export const Formats: FormatList = [
     name: '[Gen 9] VGC 2023 Regulation E',
     mod: 'gen9',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [
       'Flat Rules',
       '!! Adjust Level = 50',
@@ -554,33 +562,34 @@ export const Formats: FormatList = [
       'Sleep Clause Mod'
     ],
     banlist: [
-      'Annihilape',         'Arceus',            'Blastoise-Mega',
-      'Blaziken',           'Blaziken-Mega',     'Calyrex-Ice',
-      'Calyrex-Shadow',     'Chi-Yu',            'Chien-Pao',
-      'Darkrai',            'Deoxys-Base',       'Deoxys-Attack',
-      'Dialga',             'Dracovish',         'Dragapult',
-      'Espathra',           'Eternatus',         'Flutter Mane',
-      'Genesect',           'Gengar-Mega',       'Giratina',
-      'Giratina-Origin',    'Groudon',           'Ho-Oh',
-      'Hoopa-Unbound',      'Iron Bundle',       'Kangaskhan-Mega',
-      'Kartana',            'Kingambit',         'Koraidon',
-      'Kyogre',             'Kyurem-Black',      'Kyurem-White',
-      'Lucario-Mega',       'Lugia',             'Lunala',
-      'Magearna',           'Marshadow',         'Mawile-Mega',
-      'Medicham-Mega',      'Metagross-Mega',    'Mewtwo',
-      'Miraidon',           'Naganadel',         'Necrozma-Dawn-Wings',
-      'Necrozma-Dusk-Mane', 'Palafin',           'Palkia',
-      'Pheromosa',          'Rayquaza',          'Reshiram',
-      'Salamence-Mega',     'Shaymin-Sky',       'Solgaleo',
-      'Spectrier',          'Urshifu-Base',      'Xerneas',
-      'Yveltal',            'Zacian',            'Zacian-Crowned',
-      'Zamazenta',          'Zamazenta-Crowned', 'Zekrom',
-      'Zygarde-Base',       'Zygarde-Complete',  'Moody',
-      'Shadow Tag',         'Power Construct',   'Booster Energy',
-      'Damp Rock',          'Focus Band',        'Icy Rock',
-      "King's Rock",        'Leppa Berry',       'Quick Claw',
-      'Razor Fang',         'Smooth Rock',       'Terrain Extender',
-      'Acupressure',        'Baton Pass',        'Last Respects'
+      'Annihilape',          'Arceus',             'Baxcalibur',
+      'Blastoise-Mega',      'Blaziken',           'Blaziken-Mega',
+      'Calyrex-Ice',         'Calyrex-Shadow',     'Chi-Yu',
+      'Chien-Pao',           'Darkrai',            'Deoxys-Base',
+      'Deoxys-Attack',       'Dialga',             'Dracovish',
+      'Dragapult',           'Espathra',           'Eternatus',
+      'Flutter Mane',        'Genesect',           'Gengar-Mega',
+      'Giratina',            'Giratina-Origin',    'Groudon',
+      'Ho-Oh',               'Hoopa-Unbound',      'Iron Bundle',
+      'Kangaskhan-Mega',     'Kartana',            'Kingambit',
+      'Koraidon',            'Kyogre',             'Kyurem-Black',
+      'Kyurem-White',        'Lucario-Mega',       'Lugia',
+      'Lunala',              'Magearna',           'Marshadow',
+      'Mawile-Mega',         'Medicham-Mega',      'Metagross-Mega',
+      'Mewtwo',              'Miraidon',           'Naganadel',
+      'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Palafin',
+      'Palkia',              'Pheromosa',          'Rayquaza',
+      'Reshiram',            'Salamence-Mega',     'Shaymin-Sky',
+      'Solgaleo',            'Spectrier',          'Urshifu-Base',
+      'Xerneas',             'Yveltal',            'Zacian',
+      'Zacian-Crowned',      'Zamazenta',          'Zamazenta-Crowned',
+      'Zekrom',              'Zygarde-Base',       'Zygarde-Complete',
+      'Moody',               'Shadow Tag',         'Power Construct',
+      'Booster Energy',      'Damp Rock',          'Focus Band',
+      'Icy Rock',            "King's Rock",        'Leppa Berry',
+      'Quick Claw',          'Razor Fang',         'Smooth Rock',
+      'Terrain Extender',    'Acupressure',        'Baton Pass',
+      'Last Respects'
     ]
   },
   {
@@ -957,7 +966,7 @@ export const Formats: FormatList = [
   {
     name: '[Gen 3] ZU',
     mod: 'gen3',
-    ruleset: [ 'Standard', 'Baton Pass Clause' ],
+    ruleset: [ 'Standard', 'Baton Pass Stat Clause' ],
     banlist: [
       'Uber', 'OU',
       'UUBL', 'UU',
@@ -1310,6 +1319,7 @@ export const Formats: FormatList = [
     name: '[Gen 8] VGC 2022',
     mod: 'gen8',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [
       'Flat Rules',
       '!! Adjust Level = 50',
@@ -1323,12 +1333,14 @@ export const Formats: FormatList = [
     name: '[Gen 8] VGC 2021',
     mod: 'gen8',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8', 'VGC Timer' ]
   },
   {
     name: '[Gen 8] VGC 2020',
     mod: 'gen8dlc1',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8', 'VGC Timer' ]
   },
   {
@@ -1543,6 +1555,7 @@ export const Formats: FormatList = [
     name: '[Gen 7] VGC 2019',
     mod: 'gen7',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [
       'Flat Rules',
       '!! Adjust Level = 50',
@@ -1557,6 +1570,7 @@ export const Formats: FormatList = [
     name: '[Gen 7] VGC 2018',
     mod: 'gen7',
     gameType: 'doubles',
+    bestOfDefault: true,
     timer: {
       starting: 300,
       addPerTurn: 0,
@@ -1583,6 +1597,7 @@ export const Formats: FormatList = [
     name: '[Gen 7] VGC 2017',
     mod: 'gen7sm',
     gameType: 'doubles',
+    bestOfDefault: true,
     timer: {
       starting: 900,
       addPerTurn: 0,
@@ -1767,6 +1782,7 @@ export const Formats: FormatList = [
     name: '[Gen 6] VGC 2016',
     mod: 'gen6',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules', 'Min Source Gen = 6', 'Limit Two Restricted' ],
     restricted: [ 'Restricted Legendary' ],
     banlist: [ 'Soul Dew' ]
@@ -1775,6 +1791,7 @@ export const Formats: FormatList = [
     name: '[Gen 6] VGC 2015',
     mod: 'gen6',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules', 'Min Source Gen = 6' ],
     banlist: [
       'Soul Dew',
@@ -1788,6 +1805,7 @@ export const Formats: FormatList = [
     name: '[Gen 6] VGC 2014',
     mod: 'gen6xy',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules', 'Kalos Pokedex', 'Min Source Gen = 6' ]
   },
   {
@@ -1959,6 +1977,7 @@ export const Formats: FormatList = [
     name: '[Gen 5] VGC 2013',
     mod: 'gen5',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules' ],
     banlist: [ 'Chatot', 'Dark Void', 'Sky Drop', 'Soul Dew' ]
   },
@@ -1966,6 +1985,7 @@ export const Formats: FormatList = [
     name: '[Gen 5] VGC 2012',
     mod: 'gen5bw1',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules' ],
     banlist: [ 'Dark Void', 'Sky Drop' ]
   },
@@ -1973,6 +1993,7 @@ export const Formats: FormatList = [
     name: '[Gen 5] VGC 2011',
     mod: 'gen5bw1',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules', 'Old Unova Pokedex' ],
     banlist: [
       'Sky Drop',
