@@ -1,5 +1,4 @@
 const URL = 'https://play.pokemonshowdown.com/';
-const SERVERID = 'showdown';
 const CAPTCHA = 'Pikachu';
 const CONTENT_TYPE = 'application/x-www-form-urlencoded; encoding=UTF-8';
 
@@ -44,8 +43,8 @@ type ID = (string & { __brand: 'ID'}) | (string & { __isID: true }) | '';
 /** Register with the server. */
 export function register(details: RegistrationDetails): Action {
   return {
-    ...action(details, querystring({
-      act: 'register',
+    ...action('register', details, querystring({
+      serverid: details.serverid,
       username: details.username,
       password: details.password,
       cpassword: details.cpassword ?? details.password,
@@ -67,8 +66,8 @@ export function register(details: RegistrationDetails): Action {
 export function login(details: LoginDetails): Action {
   if (!details.password) return rename(details);
   return {
-    ...action(details, querystring({
-      act: 'login',
+    ...action('login', details, querystring({
+      serverid: details.serverid,
       name: details.username,
       pass: details.password,
       challstr: details.challstr,
@@ -87,7 +86,10 @@ export function login(details: LoginDetails): Action {
 /** Attempts to upkeep an existing session with the server (requires cookies). */
 export function upkeep(details: LoginDetails): Action {
   return {
-    ...action(details, querystring({act: 'upkeep', challstr: details.challstr})),
+    ...action('upkeep', details, querystring({
+      serverid: details.serverid,
+      challstr: details.challstr,
+    })),
     onResponse: (data?: string) => {
       const response = safeJSON(data) as {username?: string; assertion: string};
       if (!response.username) return undefined;
@@ -100,8 +102,8 @@ export function upkeep(details: LoginDetails): Action {
 export function rename(details: LoginDetails): Action {
   if (details.password) return login(details);
   return {
-    ...action(details, querystring({
-      act: 'getassertion',
+    ...action('getassertion', details, querystring({
+      serverid: details.serverid,
       userid: toID(details.username),
       challstr: details.challstr,
     })),
@@ -112,17 +114,22 @@ export function rename(details: LoginDetails): Action {
 /** Log out from the server (but remain connected as a guest). */
 export function logout(details: Omit<LoginDetails, 'challstr'>): Action {
   return {
-    ...action(details, querystring({act: 'logout', userid: toID(details.username)})),
+    ...action('logout', details, querystring({
+      serverid: details.serverid,
+      userid: toID(details.username),
+    })),
     onResponse: () => '|/logout',
   };
 }
 
 function action(
-  details: {url?: string; serverid?: string}, data: string
+  api: 'register' | 'login' | 'upkeep' | 'getassertion' | 'logout',
+  details: {url?: string},
+  data: string
 ): Omit<Action, 'onResponse'> {
   return {
     method: 'POST',
-    url: `${(details?.url || URL)}~~${details?.serverid || SERVERID}/action.php`,
+    url: `${(details?.url || URL)}api/${api}`,
     headers: {
       'Content-Type': CONTENT_TYPE,
       'Content-Length': data.length,
@@ -132,12 +139,13 @@ function action(
   };
 }
 
-function querystring(data: {[key: string]: string}) {
+function querystring(data: {[key: string]: string | undefined}) {
   // This naive approach is only safe because it is only intended for use for a very narrow range
   // of values we need to deal with when dealing with the Pokémon Showdown login server.
   const buf = [];
   for (const key in data) {
-    buf.push(`${key}=${encodeURIComponent(data[key])}`);
+    if (data[key] === undefined) continue;
+    buf.push(`${key}=${encodeURIComponent(data[key]!)}`);
   }
   return buf.join('&');
 }

@@ -42,7 +42,7 @@ function fetch(action, cookie) {
     let buf = '';
     const req = https.request(action.url, {method: action.method, headers}, res => {
       if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode}`));
-      const sid = res.headers['set-cookie'].find(c => c.startsWith('sid='));
+      const sid = res.headers['set-cookie']?.find(c => c.startsWith('sid='));
       // username,session,rawsid
       if (sid) console.log('SID:', decodeURIComponent(sid.split(';')[0].slice(4)));
       res.on('data', d => {

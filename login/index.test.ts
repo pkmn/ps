@@ -7,7 +7,8 @@ import {Action, Actions} from './index';
 describe('Actions', () => {
   it('register', () => {
     let register = Actions.register({username: 'User', password: 'password', challstr: '4|foo'});
-    expectAction(register, 'act=register&username=User&password=password&' +
+    expect(register.url).toBe('https://play.pokemonshowdown.com/api/register');
+    expectAction(register, 'username=User&password=password&' +
       'cpassword=password&captcha=Pikachu&challstr=4%7Cfoo');
     expectOnRegisterResponse(register, 'User', '|/trn User,0,token');
 
@@ -20,18 +21,20 @@ describe('Actions', () => {
       url: 'https://play.pkmn.cc/',
       serverid: 'pocketmon',
     });
-    expectAction(register, 'act=register&username=Foo&password=BAR&' +
-        'cpassword=bar&captcha=Sandshrew&challstr=4%7Cbaz', false);
-    expect(register.url).toBe('https://play.pkmn.cc/~~pocketmon/action.php');
+    expect(register.url).toBe('https://play.pkmn.cc/api/register');
+    expectAction(register, 'serverid=pocketmon&username=Foo&password=BAR&' +
+        'cpassword=bar&captcha=Sandshrew&challstr=4%7Cbaz');
     expectOnRegisterResponse(register, 'Foo', '|/trn Foo,0,token');
   });
 
   it('login', () => {
     const rename = Actions.login({username: 'User', challstr: '3|foo'});
-    expectAction(rename, 'act=getassertion&userid=user&challstr=3%7Cfoo');
+    expect(rename.url).toBe('https://play.pokemonshowdown.com/api/getassertion');
+    expectAction(rename, 'userid=user&challstr=3%7Cfoo');
 
     let login = Actions.login({username: 'User', password: 'password', challstr: '4|foo'});
-    expectAction(login, 'act=login&name=User&pass=password&challstr=4%7Cfoo');
+    expect(login.url).toBe('https://play.pokemonshowdown.com/api/login');
+    expectAction(login, 'name=User&pass=password&challstr=4%7Cfoo');
     expectOnLoginResponse(login, 'User', '|/trn User,0,token');
 
     login = Actions.login({
@@ -41,14 +44,16 @@ describe('Actions', () => {
       url: 'https://play.pkmn.cc/',
       serverid: 'pocketmon',
     });
-    expectAction(login, 'act=login&name=Foo&pass=BAR&challstr=4%7Cbaz', false);
-    expect(login.url).toBe('https://play.pkmn.cc/~~pocketmon/action.php');
+    expect(login.url).toBe('https://play.pkmn.cc/api/login');
+    expectAction(login, 'serverid=pocketmon&name=Foo&pass=BAR&challstr=4%7Cbaz');
+
     expectOnLoginResponse(login, 'Foo', '|/trn Foo,0,token');
   });
 
   it('upkeep', () => {
     let upkeep = Actions.upkeep({username: 'User', challstr: '4|foo'});
-    expectAction(upkeep, 'act=upkeep&challstr=4%7Cfoo');
+    expect(upkeep.url).toBe('https://play.pokemonshowdown.com/api/upkeep');
+    expectAction(upkeep, 'challstr=4%7Cfoo');
     expectOnUpkeepResponse(upkeep, 'USER');
 
     upkeep = Actions.upkeep({
@@ -58,17 +63,20 @@ describe('Actions', () => {
       url: 'https://play.pkmn.cc/',
       serverid: 'pocketmon',
     });
-    expectAction(upkeep, 'act=upkeep&challstr=4%7Cbaz', false);
-    expect(upkeep.url).toBe('https://play.pkmn.cc/~~pocketmon/action.php');
+    expect(upkeep.url).toBe('https://play.pkmn.cc/api/upkeep');
+    expectAction(upkeep, 'serverid=pocketmon&challstr=4%7Cbaz');
+
     expectOnUpkeepResponse(upkeep, 'foo');
   });
 
   it('rename', () => {
     const login = Actions.rename({username: 'User', password: 'pass', challstr: '3|foo'});
-    expectAction(login, 'act=login&name=User&pass=pass&challstr=3%7Cfoo');
+    expect(login.url).toBe('https://play.pokemonshowdown.com/api/login');
+    expectAction(login, 'name=User&pass=pass&challstr=3%7Cfoo');
 
     let rename = Actions.rename({username: 'User', challstr: '4|foo'});
-    expectAction(rename, 'act=getassertion&userid=user&challstr=4%7Cfoo');
+    expect(rename.url).toBe('https://play.pokemonshowdown.com/api/getassertion');
+    expectAction(rename, 'userid=user&challstr=4%7Cfoo');
     expectOnRenameResponse(rename, 'User');
 
     rename = Actions.rename({
@@ -77,14 +85,15 @@ describe('Actions', () => {
       url: 'https://play.pkmn.cc/',
       serverid: 'pocketmon',
     });
-    expectAction(rename, 'act=getassertion&userid=foo&challstr=4%7Cbaz', false);
-    expect(rename.url).toBe('https://play.pkmn.cc/~~pocketmon/action.php');
+    expect(rename.url).toBe('https://play.pkmn.cc/api/getassertion');
+    expectAction(rename, 'serverid=pocketmon&userid=foo&challstr=4%7Cbaz');
     expectOnRenameResponse(rename, 'Foo');
   });
 
   it('logout', () => {
     let logout = Actions.logout({username: 'User Name'});
-    expectAction(logout, 'act=logout&userid=username');
+    expect(logout.url).toBe('https://play.pokemonshowdown.com/api/logout');
+    expectAction(logout, 'userid=username');
     expect(logout.onResponse('foo')).toBe('|/logout');
 
     logout = Actions.logout({
@@ -92,20 +101,19 @@ describe('Actions', () => {
       url: 'https://play.pkmn.cc/',
       serverid: 'pocketmon',
     });
-    expectAction(logout, 'act=logout&userid=username', false);
-    expect(logout.url).toBe('https://play.pkmn.cc/~~pocketmon/action.php');
+    expect(logout.url).toBe('https://play.pkmn.cc/api/logout');
+    expectAction(logout, 'serverid=pocketmon&userid=username');
     expect(logout.onResponse('bar')).toBe('|/logout');
   });
 });
 
-function expectAction(action: Action, data: string, url = true) {
+function expectAction(action: Action, data: string) {
   expect(action.data).toEqual(data);
   expect(action.method).toBe('POST');
   expect(action.headers['Content-Type'])
     .toBe('application/x-www-form-urlencoded; encoding=UTF-8');
   expect(action.headers['Content-Length']).toEqual(data.length);
   expect(action.responseType).toBe('text');
-  if (url) expect(action.url).toBe('https://play.pokemonshowdown.com/~~showdown/action.php');
 }
 
 function expectOnRegisterResponse(action: Action, username: string, next: string) {
@@ -182,7 +190,8 @@ describe('Bundle', () => {
 
       const login =
         window.pkmn.login.login({username: 'User', password: 'password', challstr: '4|foo'});
-      expectAction(login, 'act=login&name=User&pass=password&challstr=4%7Cfoo');
+      expect(login.url).toBe('https://play.pokemonshowdown.com/api/login');
+      expectAction(login, 'name=User&pass=password&challstr=4%7Cfoo');
       expectOnLoginResponse(login, 'User', '|/trn User,0,token');
     }
   });
