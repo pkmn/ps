@@ -14,7 +14,7 @@ const view = require('@pkmn/view');
 // smogon/pokemon-showdown, tramples all over the global namespace. As such, both projects cannot
 // be loaded together (eg. both assign `globals.Dex` to different objects which do not have
 // compatible interfaces).
-const PSC = '../../../vendor/pokemon-showdown-client';
+const PSC = '../../../vendor/pokemon-showdown-client/play.pokemonshowdown.com';
 
 /* global Battle, BattleTextParser */
 const window = global;

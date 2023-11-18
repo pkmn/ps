@@ -25582,7 +25582,7 @@
         "spe": 97
       },
       "abilities": {"0": "Unseen Fist"},
-      "weightkg": 105,
+      "weightkg": 0,
       "eggGroups": ["Undiscovered"],
       "battleOnly": "Urshifu-Rapid-Strike",
       "changesFrom": "Urshifu-Rapid-Strike"

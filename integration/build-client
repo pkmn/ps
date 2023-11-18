@@ -281,7 +281,7 @@ function requireNoCache(pathSpec) {
 
 	buf += 'exports.BattleArticleTitles = ' + JSON.stringify(BattleArticleTitles) + ';\n\n';
 
-	fs.writeFileSync(path.join(psc, 'data/search-index.js'), buf);
+	fs.writeFileSync(path.join(psc, 'play.pokemonshowdown.com/data/search-index.js'), buf);
 }
 
 console.log("DONE");
@@ -443,7 +443,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			if (!tierTable[tier]) tierTable[tier] = [];
 			tierTable[tier].push(id);
 
-			if (genNum >= 5) {
+			if (genNum === 9) {
 				const zu = Dex.formats.get(gen + 'zu');
 				if (zu.exists && Dex.formats.getRuleTable(zu).isBannedSpecies(species) &&
 					["(PU)", "NFE", "LC"].includes(species.tier)) {
@@ -559,7 +559,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 				let usedTier = tier;
 				if (usedTier === "(UU)") usedTier = "RU";
 				if (usedTier === "(NU)") usedTier = "PU";
-				if (usedTier === "(PU)" && genNum !== 3) usedTier = "ZU";
+				if (usedTier === "(PU)" && genNum === 9) usedTier = "ZU";
 				if (usedTier === "(DUU)") usedTier = "DNU";
 				formatSlices[usedTier] = tiers.length;
 			}
@@ -1125,7 +1125,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 
 	buf += `exports.BattleTeambuilderTable = JSON.parse('${JSON.stringify(BattleTeambuilderTable).replace(/['\\]/g, "\\$&")}');\n\n`;
 
-	fs.writeFileSync(path.join(psc, 'data/teambuilder-tables.js'), buf);
+	fs.writeFileSync(path.join(psc, 'play.pokemonshowdown.com/data/teambuilder-tables.js'), buf);
 }
 
 console.log("DONE");
@@ -1149,7 +1149,7 @@ process.stdout.write("Building `data/pokedex.js`... ");
 		}
 	}
 	const buf = 'exports.BattlePokedex = ' + es3stringify(Pokedex) + ';';
-	fs.writeFileSync(path.join(psc, 'data/pokedex.js'), buf);
+	fs.writeFileSync(path.join(psc, 'play.pokemonshowdown.com/data/pokedex.js'), buf);
 }
 
 console.log("DONE");
@@ -1168,7 +1168,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
 		if (move.shortDesc) Moves[id].shortDesc = move.shortDesc;
 	}
 	const buf = 'exports.BattleMovedex = ' + es3stringify(Moves) + ';';
-	fs.writeFileSync(path.join(psc, 'data/moves.js'), buf);
+	fs.writeFileSync(path.join(psc, 'play.pokemonshowdown.com/data/moves.js'), buf);
 }
 
 /*********************************************************
@@ -1183,7 +1183,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
 		if (move.shortDesc) Items[id].shortDesc = move.shortDesc;
 	}
 	const buf = 'exports.BattleItems = ' + es3stringify(Items) + ';';
-	fs.writeFileSync(path.join(psc, 'data/items.js'), buf);
+	fs.writeFileSync(path.join(psc, 'play.pokemonshowdown.com/data/items.js'), buf);
 }
 
 /*********************************************************
@@ -1198,7 +1198,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
 		if (move.shortDesc) Abilities[id].shortDesc = move.shortDesc;
 	}
 	const buf = 'exports.BattleAbilities = ' + es3stringify(Abilities) + ';';
-	fs.writeFileSync(path.join(psc, 'data/abilities.js'), buf);
+	fs.writeFileSync(path.join(psc, 'play.pokemonshowdown.com/data/abilities.js'), buf);
 }
 
 /*********************************************************
@@ -1208,7 +1208,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
 {
 	const TypeChart = requireNoCache('../vendor/pokemon-showdown/dist/data/typechart.js').TypeChart;
 	const buf = 'exports.BattleTypeChart = ' + es3stringify(TypeChart) + ';';
-	fs.writeFileSync(path.join(psc, 'data/typechart.js'), buf);
+	fs.writeFileSync(path.join(psc, 'play.pokemonshowdown.com/data/typechart.js'), buf);
 }
 
 /*********************************************************
@@ -1218,7 +1218,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
 {
 	const Aliases = requireNoCache('../vendor/pokemon-showdown/dist/data/aliases.js').Aliases;
 	const buf = 'exports.BattleAliases = ' + es3stringify(Aliases) + ';';
-	fs.writeFileSync(path.join(psc, 'data/aliases.js'), buf);
+	fs.writeFileSync(path.join(psc, 'play.pokemonshowdown.com/data/aliases.js'), buf);
 }
 
 /*********************************************************
@@ -1228,7 +1228,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
 {
 	const FormatsData = requireNoCache('../vendor/pokemon-showdown/dist/data/formats-data.js').FormatsData;
 	const buf = 'exports.BattleFormatsData = ' + es3stringify(FormatsData) + ';';
-	fs.writeFileSync(path.join(psc, 'data/formats-data.js'), buf);
+	fs.writeFileSync(path.join(psc, 'play.pokemonshowdown.com/data/formats-data.js'), buf);
 }
 
 /*********************************************************
@@ -1238,7 +1238,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
 {
 	const Formats = requireNoCache('../vendor/pokemon-showdown/dist/config/formats.js').Formats;
 	const buf = 'exports.Formats = ' + es3stringify(Formats) + ';';
-	fs.writeFileSync(path.join(psc, 'data/formats.js'), buf);
+	fs.writeFileSync(path.join(psc, 'play.pokemonshowdown.com/data/formats.js'), buf);
 }
 
 /*********************************************************
@@ -1248,7 +1248,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
 {
 	const Learnsets = requireNoCache('../vendor/pokemon-showdown/dist/data/learnsets.js').Learnsets;
 	const buf = 'exports.BattleLearnsets = ' + es3stringify(Learnsets) + ';';
-	fs.writeFileSync(path.join(psc, 'data/learnsets.js'), buf);
+	fs.writeFileSync(path.join(psc, 'play.pokemonshowdown.com/data/learnsets.js'), buf);
 }
 
 /*********************************************************
@@ -1279,7 +1279,7 @@ process.stdout.write("Building `data/moves,items,abilities,typechart,learnsets.j
 	for (const id in textData.Items) assignData(id, textData.Items[id]);
 
 	const buf = 'exports.BattleText = ' + es3stringify(Text) + ';';
-	fs.writeFileSync(path.join(psc, 'data/text.js'), buf);
+	fs.writeFileSync(path.join(psc, 'play.pokemonshowdown.com/data/text.js'), buf);
 }
 
 console.log("DONE");

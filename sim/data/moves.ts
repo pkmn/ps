@@ -4746,7 +4746,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onResidualOrder: 16,
 			onResidual(target) {
-				if (target.moves.includes(this.effectState.move) &&
+				if (!target.moves.includes(this.effectState.move) ||
 					target.moveSlots[target.moves.indexOf(this.effectState.move)].pp <= 0) {
 					// early termination if you run out of PP
 					target.removeVolatile('encore');
@@ -9889,6 +9889,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		critRatio: 2,
+		onPrepareHit(target, source, move) {
+			if (move.type !== "Grass") {
+				this.attrLastMove('[anim] Ivy Cudgel ' + move.type);
+			}
+		},
 		onModifyType(move, pokemon) {
 			switch (pokemon.species.name) {
 			case 'Ogerpon-Wellspring': case 'Ogerpon-Wellspring-Tera':
@@ -19418,6 +19423,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		volatileStatus: 'tarshot',
 		condition: {
 			onStart(pokemon) {
+				if (pokemon.terastallized) return false;
 				this.add('-start', pokemon, 'Tar Shot');
 			},
 			onEffectivenessPriority: -2,

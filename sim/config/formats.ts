@@ -88,7 +88,12 @@ export const Formats: FormatList = [
     banlist: [ 'UU', 'RUBL', 'Light Clay' ]
   },
   { name: '[Gen 9] NU', mod: 'gen9', ruleset: [ '[Gen 9] RU' ], banlist: [ 'RU', 'NUBL' ] },
-  { name: '[Gen 9] PU', mod: 'gen9', ruleset: [ '[Gen 9] NU' ], banlist: [ 'NU', 'PUBL' ] },
+  {
+    name: '[Gen 9] PU',
+    mod: 'gen9',
+    ruleset: [ '[Gen 9] NU' ],
+    banlist: [ 'NU', 'PUBL', 'Damp Rock', 'Heat Rock' ]
+  },
   {
     name: '[Gen 9] LC',
     mod: 'gen9',
@@ -136,133 +141,24 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 9] Monothreat Fairy',
-    mod: 'gen9',
-    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Fairy' ]
-  },
-  {
-    name: '[Gen 9] 1v1',
-    mod: 'gen9',
-    ruleset: [
-      'Picked Team Size = 1',
-      'Max Team Size = 3',
-      'Standard',
-      'Terastal Clause',
-      'Sleep Moves Clause',
-      'Accuracy Moves Clause',
-      '!Sleep Clause Mod'
-    ],
-    banlist: [
-      'Arceus',              'Calyrex-Ice',       'Calyrex-Shadow',
-      'Chi-Yu',              'Cinderace',         'Dialga',
-      'Dialga-Origin',       'Dragonite',         'Eternatus',
-      'Flutter Mane',        'Gholdengo',         'Giratina',
-      'Giratina-Origin',     'Groudon',           'Hoopa-Unbound',
-      'Jirachi',             'Koraidon',          'Kyogre',
-      'Magearna',            'Meloetta',          'Mew',
-      'Mewtwo',              'Mimikyu',           'Miraidon',
-      'Ogerpon-Cornerstone', 'Palkia',            'Palkia-Origin',
-      'Rayquaza',            'Scream Tail',       'Shaymin-Sky',
-      'Snorlax',             'Zacian',            'Zacian-Crowned',
-      'Zamazenta',           'Zamazenta-Crowned', 'Moody',
-      'Focus Band',          'Focus Sash',        "King's Rock",
-      'Razor Fang',          'Quick Claw',        'Acupressure',
-      'Perish Song'
-    ]
-  },
-  {
-    name: '[Gen 9] Anything Goes',
-    mod: 'gen9',
-    ruleset: [
-      'Min Source Gen = 9',
-      'Obtainable',
-      'Team Preview',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Endless Battle Clause'
-    ]
-  },
-  {
-    name: '[Gen 9] ZU',
-    mod: 'gen9',
-    ruleset: [ '[Gen 9] PU' ],
-    banlist: [ 'PU', 'Crabominable', 'Raichu-Base', 'Zangoose' ]
-  },
-  {
-    name: '[Gen 9] LC UU',
-    mod: 'gen9',
-    ruleset: [ '[Gen 9] LC' ],
-    banlist: [
-      'Corphish',     'Diglett-Alola',
-      'Drifloon',     'Foongus',
-      'Glimmet',      'Gothita',
-      'Grimer-Alola', 'Grookey',
-      'Impidimp',     'Koffing',
-      'Larvesta',     'Magnemite',
-      'Mienfoo',      'Mudbray',
-      'Numel',        'Pawniard',
-      'Sandshrew',    'Sandshrew-Alola',
-      'Shellder',     'Shroodle',
-      'Snover',       'Stunky',
-      'Timburr',      'Tinkatink',
-      'Toedscool',    'Voltorb-Hisui',
-      'Vullaby',      'Wattrel',
-      'Zorua-Hisui'
-    ]
-  },
-  {
     name: '[Gen 9] CAP',
     mod: 'gen9',
     ruleset: [ '[Gen 9] OU', '+CAP' ],
     banlist: [ 'Crucibellite' ]
   },
   {
-    name: '[Gen 9] Free-For-All',
-    mod: 'gen9',
-    gameType: 'freeforall',
-    ruleset: [ 'Standard', '!Evasion Items Clause' ],
-    banlist: [
-      'Annihilape',     'Arceus',             'Calyrex-Ice',
-      'Calyrex-Shadow', 'Chi-Yu',             'Darkrai',
-      'Dialga',         'Dialga-Origin',      'Eternatus',
-      'Flutter Mane',   'Giratina',           'Giratina-Origin',
-      'Groudon',        'Hoopa-Unbound',      'Iron Bundle',
-      'Koraidon',       'Kyogre',             'Landorus-Base',
-      'Magearna',       'Mewtwo',             'Miraidon',
-      'Palafin',        'Palkia',             'Palkia-Origin',
-      'Rayquaza',       'Shaymin-Sky',        'Spectrier',
-      'Ursaluna',       'Ursaluna-Bloodmoon', 'Urshifu-Base',
-      'Zacian',         'Zacian-Crowned',     'Moody',
-      'Shadow Tag',     'Toxic Chain',        'Toxic Debris',
-      'Acupressure',    'Aromatic Mist',      'Baton Pass',
-      'Court Change',   'Final Gambit',       'Flatter',
-      'Follow Me',      'Heal Pulse',         'Last Respects',
-      'Poison Fang',    'Rage Powder',        'Spicy Extract',
-      'Swagger',        'Toxic',              'Toxic Spikes'
-    ]
-  },
-  {
     name: '[Gen 9] Battle Stadium Singles Regulation D',
     mod: 'gen9predlc',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 9', 'VGC Timer' ],
     banlist: [ 'Walking Wake', 'Iron Leaves' ]
   },
   {
     name: '[Gen 9] Battle Stadium Singles Regulation E',
     mod: 'gen9',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 9', 'VGC Timer' ],
     banlist: [ 'Walking Wake', 'Iron Leaves' ]
-  },
-  {
-    name: '[Gen 9] Trick Magic',
-    mod: 'gen9',
-    ruleset: [
-      'Flat Rules',
-      '!! Adjust Level = 50',
-      'Force Monotype = Ghost',
-      'Min Source Gen = 9',
-      'VGC Timer'
-    ]
   },
   {
     name: '[Gen 9] Custom Game',
@@ -332,40 +228,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 9] 2v2 Doubles',
-    mod: 'gen9',
-    gameType: 'doubles',
-    ruleset: [
-      'Picked Team Size = 2',
-      'Max Team Size = 4',
-      'Standard Doubles',
-      'Accuracy Moves Clause',
-      'Terastal Clause',
-      'Sleep Clause Mod',
-      'Evasion Items Clause'
-    ],
-    banlist: [
-      'Arceus',          'Calyrex-Ice',
-      'Calyrex-Shadow',  'Chi-Yu',
-      'Dialga',          'Dialga-Origin',
-      'Eternatus',       'Giratina',
-      'Giratina-Origin', 'Groudon',
-      'Iron Hands',      'Koraidon',
-      'Kyogre',          'Magearna',
-      'Mewtwo',          'Miraidon',
-      'Palkia',          'Palkia-Origin',
-      'Rayquaza',        'Tornadus-Base',
-      'Urshifu',         'Urshifu-Rapid-Strike',
-      'Zacian',          'Zacian-Crowned',
-      'Zamazenta',       'Zamazenta-Crowned',
-      'Commander',       'Moody',
-      'Focus Sash',      "King's Rock",
-      'Razor Fang',      'Ally Switch',
-      'Final Gambit',    'Perish Song',
-      'Swagger'
-    ]
-  },
-  {
     name: '[Gen 9] VGC 2023 Regulation D',
     mod: 'gen9predlc',
     gameType: 'doubles',
@@ -421,6 +283,153 @@ export const Formats: FormatList = [
       'Max Level = 9999',
       'Default Level = 100'
     ]
+  },
+  {
+    name: '[Gen 9] 1v1',
+    mod: 'gen9',
+    ruleset: [
+      'Picked Team Size = 1',
+      'Max Team Size = 3',
+      'Standard',
+      'Terastal Clause',
+      'Sleep Moves Clause',
+      'Accuracy Moves Clause',
+      '!Sleep Clause Mod'
+    ],
+    banlist: [
+      'Arceus',              'Calyrex-Ice',       'Calyrex-Shadow',
+      'Chi-Yu',              'Cinderace',         'Dialga',
+      'Dialga-Origin',       'Dragonite',         'Eternatus',
+      'Flutter Mane',        'Gholdengo',         'Giratina',
+      'Giratina-Origin',     'Groudon',           'Hoopa-Unbound',
+      'Jirachi',             'Koraidon',          'Kyogre',
+      'Magearna',            'Meloetta',          'Mew',
+      'Mewtwo',              'Mimikyu',           'Miraidon',
+      'Ogerpon-Cornerstone', 'Palkia',            'Palkia-Origin',
+      'Rayquaza',            'Scream Tail',       'Shaymin-Sky',
+      'Snorlax',             'Zacian',            'Zacian-Crowned',
+      'Zamazenta',           'Zamazenta-Crowned', 'Moody',
+      'Focus Band',          'Focus Sash',        "King's Rock",
+      'Razor Fang',          'Quick Claw',        'Acupressure',
+      'Perish Song'
+    ]
+  },
+  {
+    name: '[Gen 9] 2v2 Doubles',
+    mod: 'gen9',
+    gameType: 'doubles',
+    ruleset: [
+      'Picked Team Size = 2',
+      'Max Team Size = 4',
+      'Standard Doubles',
+      'Accuracy Moves Clause',
+      'Terastal Clause',
+      'Sleep Clause Mod',
+      'Evasion Items Clause'
+    ],
+    banlist: [
+      'Arceus',          'Calyrex-Ice',
+      'Calyrex-Shadow',  'Chi-Yu',
+      'Dialga',          'Dialga-Origin',
+      'Eternatus',       'Giratina',
+      'Giratina-Origin', 'Groudon',
+      'Iron Hands',      'Koraidon',
+      'Kyogre',          'Magearna',
+      'Mewtwo',          'Miraidon',
+      'Palkia',          'Palkia-Origin',
+      'Rayquaza',        'Tornadus-Base',
+      'Urshifu',         'Urshifu-Rapid-Strike',
+      'Zacian',          'Zacian-Crowned',
+      'Zamazenta',       'Zamazenta-Crowned',
+      'Commander',       'Moody',
+      'Focus Sash',      "King's Rock",
+      'Razor Fang',      'Ally Switch',
+      'Final Gambit',    'Perish Song',
+      'Swagger'
+    ]
+  },
+  {
+    name: '[Gen 9] Anything Goes',
+    mod: 'gen9',
+    ruleset: [
+      'Min Source Gen = 9',
+      'Obtainable',
+      'Team Preview',
+      'HP Percentage Mod',
+      'Cancel Mod',
+      'Endless Battle Clause'
+    ]
+  },
+  {
+    name: '[Gen 9] Free-For-All',
+    mod: 'gen9',
+    gameType: 'freeforall',
+    ruleset: [ 'Standard', '!Evasion Items Clause' ],
+    banlist: [
+      'Annihilape',     'Arceus',             'Calyrex-Ice',
+      'Calyrex-Shadow', 'Chi-Yu',             'Darkrai',
+      'Dialga',         'Dialga-Origin',      'Eternatus',
+      'Flutter Mane',   'Giratina',           'Giratina-Origin',
+      'Groudon',        'Hoopa-Unbound',      'Iron Bundle',
+      'Koraidon',       'Kyogre',             'Landorus-Base',
+      'Magearna',       'Mewtwo',             'Miraidon',
+      'Palafin',        'Palkia',             'Palkia-Origin',
+      'Rayquaza',       'Shaymin-Sky',        'Spectrier',
+      'Ursaluna',       'Ursaluna-Bloodmoon', 'Urshifu-Base',
+      'Zacian',         'Zacian-Crowned',     'Moody',
+      'Shadow Tag',     'Toxic Chain',        'Toxic Debris',
+      'Acupressure',    'Aromatic Mist',      'Baton Pass',
+      'Court Change',   'Final Gambit',       'Flatter',
+      'Follow Me',      'Heal Pulse',         'Last Respects',
+      'Poison Fang',    'Rage Powder',        'Spicy Extract',
+      'Swagger',        'Toxic',              'Toxic Spikes'
+    ]
+  },
+  {
+    name: '[Gen 9] LC UU',
+    mod: 'gen9',
+    ruleset: [ '[Gen 9] LC' ],
+    banlist: [
+      'Corphish',     'Diglett-Alola',
+      'Drifloon',     'Foongus',
+      'Glimmet',      'Gothita',
+      'Grimer-Alola', 'Grookey',
+      'Impidimp',     'Koffing',
+      'Larvesta',     'Magnemite',
+      'Mienfoo',      'Mudbray',
+      'Numel',        'Pawniard',
+      'Sandshrew',    'Sandshrew-Alola',
+      'Shellder',     'Shroodle',
+      'Snover',       'Stunky',
+      'Timburr',      'Tinkatink',
+      'Toedscool',    'Voltorb-Hisui',
+      'Vullaby',      'Wattrel',
+      'Zorua-Hisui'
+    ]
+  },
+  {
+    name: '[Gen 9] Monothreat Fairy',
+    mod: 'gen9',
+    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Fairy' ]
+  },
+  {
+    name: '[Gen 9] Monotype CAP',
+    mod: 'gen9',
+    ruleset: [ '[Gen 9] Monotype', '+CAP' ],
+    banlist: [ 'Cawmodore', 'Fidgit', 'Hemogoblin', 'Heat Rock' ]
+  },
+  {
+    name: '[Gen 9] Monotype LC',
+    mod: 'gen9',
+    ruleset: [ 'Standard', 'Same Type Clause', 'Little Cup', 'Terastal Clause' ],
+    banlist: [ 'Damp Rock', 'Focus Band', 'Heat Rock', 'Icy Rock', 'Quick Claw' ],
+    unbanlist: [ 'Diglett', 'Growlithe-Hisui', 'Vulpix', 'Vulpix-Alola' ]
+  },
+  {
+    name: '[Gen 9] ZU',
+    mod: 'gen9',
+    ruleset: [ '[Gen 9] PU' ],
+    banlist: [ 'PU', 'Crabominable', 'Raichu-Base', 'Zangoose' ]
   },
   {
     name: '[Gen 3] Hoenn Gaiden',
@@ -1238,21 +1247,7 @@ export const Formats: FormatList = [
     name: '[Gen 8] ZU',
     mod: 'gen8',
     ruleset: [ '[Gen 8] PU' ],
-    banlist: [
-      'PU',              'Arctovish',
-      'Aurorus',         'Basculin',
-      'Centiskorch',     'Drampa',
-      'Exeggutor-Alola', 'Gallade',
-      'Glastrier',       'Haunter',
-      'Magmortar',       'Magneton',
-      'Malamar',         'Ninjask',
-      'Omastar',         'Perrserker',
-      'Rotom-Frost',     'Turtonator',
-      'Vanilluxe',       'Vikavolt',
-      'Silvally-Dragon', 'Silvally-Ground',
-      'Sneasel',         'Damp Rock',
-      'Grassy Seed'
-    ]
+    banlist: [ 'PU', 'ZUBL', 'Damp Rock', 'Grassy Seed' ]
   },
   {
     name: '[Gen 8] CAP',
@@ -1263,6 +1258,7 @@ export const Formats: FormatList = [
   {
     name: '[Gen 8] Battle Stadium Singles',
     mod: 'gen8',
+    bestOfDefault: true,
     ruleset: [
       'Flat Rules',
       '!! Adjust Level = 50',
@@ -1492,24 +1488,12 @@ export const Formats: FormatList = [
       'Endless Battle Clause'
     ]
   },
-  {
-    name: '[Gen 7] ZU',
-    mod: 'gen7',
-    ruleset: [ '[Gen 7] PU' ],
-    banlist: [
-      'PU',             'Carracosta',
-      'Crabominable',   'Exeggutor-Base',
-      'Gorebyss',       'Jynx',
-      'Raticate-Alola', 'Shiftry',
-      'Throh',          'Turtonator',
-      'Type: Null',     'Ursaring',
-      'Victreebel'
-    ]
-  },
+  { name: '[Gen 7] ZU', mod: 'gen7', ruleset: [ '[Gen 7] PU' ], banlist: [ 'PU', 'ZUBL' ] },
   { name: '[Gen 7] CAP', mod: 'gen7', ruleset: [ '[Gen 7] OU', '+CAP' ] },
   {
     name: '[Gen 7] Battle Spot Singles',
     mod: 'gen7',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules', 'Min Source Gen = 6' ],
     banlist: [ 'Battle Bond' ]
   },
@@ -1621,6 +1605,7 @@ export const Formats: FormatList = [
     name: '[Gen 7] Battle Spot Doubles',
     mod: 'gen7',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules', 'Min Source Gen = 6' ],
     banlist: [ 'Battle Bond' ]
   },
@@ -1746,12 +1731,7 @@ export const Formats: FormatList = [
       'Cancel Mod'
     ]
   },
-  {
-    name: '[Gen 6] ZU',
-    mod: 'gen6',
-    ruleset: [ '[Gen 6] PU' ],
-    banlist: [ 'PU', 'Fraxure', 'Purugly', 'Regigigas', 'Simisear' ]
-  },
+  { name: '[Gen 6] ZU', mod: 'gen6', ruleset: [ '[Gen 6] PU' ], banlist: [ 'PU', 'ZUBL' ] },
   {
     name: '[Gen 6] CAP',
     mod: 'gen6',
@@ -1761,6 +1741,7 @@ export const Formats: FormatList = [
   {
     name: '[Gen 6] Battle Spot Singles',
     mod: 'gen6',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules', 'Min Source Gen = 6' ],
     banlist: [ 'Soul Dew' ]
   },
@@ -1812,6 +1793,7 @@ export const Formats: FormatList = [
     name: '[Gen 6] Battle Spot Doubles',
     mod: 'gen6',
     gameType: 'doubles',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules', 'Min Source Gen = 6' ],
     banlist: [ 'Soul Dew' ]
   },
@@ -1937,14 +1919,7 @@ export const Formats: FormatList = [
     name: '[Gen 5] ZU',
     mod: 'gen5',
     ruleset: [ '[Gen 5] PU' ],
-    banlist: [
-      'PU',         'Articuno',
-      'Dragonair',  'Glalie',
-      'Machoke',    'Marowak',
-      'Omanyte',    'Regigigas',
-      'Trubbish',   'Whirlipede',
-      'Baton Pass'
-    ],
+    banlist: [ 'PU', 'ZUBL', 'Baton Pass' ],
     unbanlist: [ 'Damp Rock' ]
   },
   {
@@ -1956,6 +1931,7 @@ export const Formats: FormatList = [
   {
     name: '[Gen 5] GBU Singles',
     mod: 'gen5',
+    bestOfDefault: true,
     ruleset: [ 'Flat Rules' ],
     banlist: [ 'Dark Void', 'Sky Drop', 'Soul Dew' ]
   },
