@@ -13,7 +13,6 @@
   "sideEffects": false,
   "main": "build/cjs/sim/index.js",
   "module": "build/esm/sim/index.mjs",
-  "types": "build/types/sim/index.d.ts",
   "exports": {
     ".": {
       "require": "./build/cjs/sim/index.js",

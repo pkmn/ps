@@ -32,6 +32,7 @@ const sh = (cmd, args) => child_process.execFileSync(cmd, args, {encoding: 'utf8
 
 const mkconfig = (tsconfig, format) => {
   tsconfig.compilerOptions.noEmit = false;
+  tsconfig.compilerOptions.skipLibCheck = true;
   tsconfig.compilerOptions.outDir = `build/${format}`;
   tsconfig.compilerOptions.incremental = false;
   tsconfig.compilerOptions.tsBuildInfoFile = null;
@@ -75,43 +76,33 @@ process.on('exit', () => {
       fs.writeFileSync(esm, JSON.stringify(mkconfig(tsconfig, 'esm')));
       running('tsc -p tsconfig.esm.json');
       sh('npx', ['tsc', '-p', 'tsconfig.esm.json']);
-    }
 
-    running('cp -a build/{cjs,types}');
-    fs.cpSync(path.join(cwd, 'build/cjs'), path.join(cwd, 'build/types'), {recursive: true});
-
-    console.log(`Cleaning up build output for \x1b[34m@pkmn/${pkg}\x1b[0m...`);
-    for (const format of ['cjs', 'esm', 'types']) {
-      if (argv.cjs && format === 'esm') continue;
-      for (const file of tree(path.join(cwd, 'build', format))) {
+      console.log(`Cleaning up build output for \x1b[34m@pkmn/${pkg}\x1b[0m...`);
+      for (const file of tree(path.join(cwd, 'build', 'esm'))) {
         if (file.endsWith('.d.ts')) {
-          if (format !== 'types') fs.unlinkSync(file);
+          fs.renameSync(file, `${file.slice(0, -3)}.mts`);
         } else {
-          if (format === 'types') {
-            fs.unlinkSync(file);
-          } else if (format === 'esm') {
-            if (file.endsWith('.js')) {
-              const contents = fs.readFileSync(file, 'utf8');
-              if (!contents.endsWith('.js.map')) {
-                throw new Error(`Output unexpectedly ends with: ${contents.slice(-100)}`);
-              }
-              const relinked = `${contents.slice(0, -('.js.map'.length))}.mjs.map`;
-              const replaced = relinked.replaceAll(/from '(.*)';/g, (_, m) => {
-                if (!m.startsWith('.')) return `from '${m}';`;
-                const f = path.resolve(path.dirname(file), m);
-                if (fs.existsSync(`${f}.mjs`) || fs.existsSync(`${f}.js`)) {
-                  return `from '${m}.mjs';`;
-                }
-                if (fs.existsSync(`${f}/index.mjs`) || fs.existsSync(`${f}/index.js`)) {
-                  return `from '${m}/index.mjs';`;
-                }
-                throw new Error(`Cannot resolve import in ${file}: ${m}`);
-              });
-              fs.writeFileSync(`${file.slice(0, -3)}.mjs`, replaced);
-              fs.unlinkSync(file);
-            } if (file.endsWith('.js.map')) {
-              fs.renameSync(file, `${file.slice(0, -7)}.mjs.map`);
+          if (file.endsWith('.js')) {
+            const contents = fs.readFileSync(file, 'utf8');
+            if (!contents.endsWith('.js.map')) {
+              throw new Error(`Output unexpectedly ends with: ${contents.slice(-100)}`);
             }
+            const relinked = `${contents.slice(0, -('.js.map'.length))}.mjs.map`;
+            const replaced = relinked.replaceAll(/from '(.*)';/g, (_, m) => {
+              if (!m.startsWith('.')) return `from '${m}';`;
+              const f = path.resolve(path.dirname(file), m);
+              if (fs.existsSync(`${f}.mjs`) || fs.existsSync(`${f}.js`)) {
+                return `from '${m}.mjs';`;
+              }
+              if (fs.existsSync(`${f}/index.mjs`) || fs.existsSync(`${f}/index.js`)) {
+                return `from '${m}/index.mjs';`;
+              }
+              throw new Error(`Cannot resolve import in ${file}: ${m}`);
+            });
+            fs.writeFileSync(`${file.slice(0, -3)}.mjs`, replaced);
+            fs.unlinkSync(file);
+          } if (file.endsWith('.js.map')) {
+            fs.renameSync(file, `${file.slice(0, -7)}.mjs.map`);
           }
         }
       }
