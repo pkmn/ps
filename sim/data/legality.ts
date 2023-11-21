@@ -15424,6 +15424,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   ogerponhearthflame: { eventOnly: true },
   ogerponwellspring: { eventOnly: true },
   ogerponcornerstone: { eventOnly: true },
+  krilowatt: {
+    learnset: { heartswap: [ '9S0' ], icebeam: [ '9S0' ], surf: [ '9S0' ], thunderbolt: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 50,
+        moves: [ 'surf', 'thunderbolt', 'icebeam', 'heartswap' ],
+        pokeball: 'pokeball'
+      }
+    ]
+  },
   kerfluffle: {
     learnset: { celebrate: [ '6S0' ], fly: [ '6S0' ], holdhands: [ '6S0' ], metronome: [ '6S0' ] },
     eventData: [
@@ -15481,6 +15492,22 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         level: 50,
         moves: [ 'celebrate', 'liquidation', 'leechlife', 'metronome' ],
         pokeball: 'cherishball'
+      }
+    ]
+  },
+  equilibra: {
+    learnset: {
+      doomdesire: [ '9S0' ],
+      earthpower: [ '9S0' ],
+      flashcannon: [ '9S0' ],
+      rapidspin: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 50,
+        moves: [ 'doomdesire', 'flashcannon', 'earthpower', 'rapidspin' ],
+        pokeball: 'pokeball'
       }
     ]
   },

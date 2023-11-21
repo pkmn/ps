@@ -2657,7 +2657,7 @@
     },
     "revenankh": {
       "inherit": true,
-      "abilities": {"0": "Shed Skin", "1": "Air Lock"}
+      "abilities": {"0": "Air Lock", "H": "Shed Skin"}
     },
     "pyroak": {
       "inherit": true,
@@ -28454,7 +28454,7 @@
         "spd": 110,
         "spe": 65
       },
-      "abilities": {"0": "Shed Skin", "1": "Air Lock", "H": "Triage"},
+      "abilities": {"0": "Air Lock", "1": "Triage", "H": "Shed Skin"},
       "weightkg": 44,
       "eggGroups": ["Amorphous", "Human-Like"],
       "gen": 4
@@ -29826,6 +29826,23 @@
       "evoType": "useItem",
       "evoItem": "Fire Stone",
       "eggGroups": ["Monster", "Fairy"],
+      "gen": 9
+    },
+    "cresceidon": {
+      "num": -72,
+      "name": "Cresceidon",
+      "types": ["Water", "Fairy"],
+      "baseStats": {
+        "hp": 80,
+        "atk": 32,
+        "def": 111,
+        "spa": 88,
+        "spd": 99,
+        "spe": 125
+      },
+      "abilities": {"0": "Multiscale", "1": "Rough Skin"},
+      "weightkg": 999.9,
+      "eggGroups": ["Undiscovered"],
       "gen": 9
     },
     "pokestarsmeargle": {

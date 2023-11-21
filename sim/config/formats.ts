@@ -408,9 +408,9 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 9] Monothreat Fairy',
+    name: '[Gen 9] Monothreat Poison',
     mod: 'gen9',
-    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Fairy' ]
+    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Poison' ]
   },
   {
     name: '[Gen 9] Monotype CAP',
@@ -429,7 +429,7 @@ export const Formats: FormatList = [
     name: '[Gen 9] ZU',
     mod: 'gen9',
     ruleset: [ '[Gen 9] PU' ],
-    banlist: [ 'PU', 'Crabominable', 'Raichu-Base', 'Zangoose' ]
+    banlist: [ 'PU', 'Crabominable', 'Falinks', 'Lycanroc-Midnight', 'Raichu-Base', 'Zangoose' ]
   },
   {
     name: '[Gen 3] Hoenn Gaiden',
@@ -1926,7 +1926,7 @@ export const Formats: FormatList = [
     name: '[Gen 5] CAP',
     mod: 'gen5',
     ruleset: [ '[Gen 5] OU', '+CAP' ],
-    banlist: [ 'Aurumoth', 'Cawmodore' ]
+    banlist: [ 'Cawmodore' ]
   },
   {
     name: '[Gen 5] GBU Singles',

@@ -1566,7 +1566,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "UUBL",
 	},
 	sneasler: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
@@ -3232,7 +3232,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		natDexTier: "RU",
 	},
 	lilliganthisui: {
-		tier: "RU",
+		tier: "RUBL",
 		doublesTier: "(DUU)",
 		natDexTier: "RUBL",
 	},
@@ -6058,6 +6058,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "CAP NFE",
 	},
 	hemogoblin: {
+		isNonstandard: "CAP",
+		tier: "CAP",
+	},
+	cresceidon: {
 		isNonstandard: "CAP",
 		tier: "CAP",
 	},
