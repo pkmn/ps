@@ -2158,23 +2158,23 @@ function upgradeArgs<T extends Protocol.ArgType>(args: [string, ...string[]]): T
   switch (args[0]) {
     case 'name': case 'n': case 'N': {
       const [cmd, user, oldid] = args;
-      return ['name', user, oldid, cmd === 'N'] as const as T;
+      return ['name', user, oldid, cmd === 'N'] as const as unknown as T;
     }
     case 'chat': case 'c': {
       const [, user, message] = args;
-      return ['chat', user, message] as const as T;
+      return ['chat', user, message] as const as unknown as T;
     }
     case 'join': case 'j': case 'J': {
       const [cmd, user] = args;
-      return ['join', user, cmd === 'J'] as const as T;
+      return ['join', user, cmd === 'J'] as const as unknown as T;
     }
     case 'leave': case 'l': case 'L': {
       const [cmd, user] = args;
-      return ['leave', user, cmd === 'L'] as const as T;
+      return ['leave', user, cmd === 'L'] as const as unknown as T;
     }
     case 'battle': case 'b': {
       const [, roomid, user1, user2] = args;
-      return ['battle', roomid, user1, user2] as const as T;
+      return ['battle', roomid, user1, user2] as const as unknown as T;
     }
   }
   return args as T;
