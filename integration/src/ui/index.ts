@@ -24,7 +24,7 @@ const FORMAT = FIXED ? 'gen7anythinggoes' : prng.sample(FORMATS);
 const validator = new TeamValidator(FORMAT);
 
 const dex = Dex.forFormat(FORMAT);
-DTeams.setGeneratorFactory(TeamGenerators);
+DTeams.setGeneratorFactory(TeamGenerators as any);
 const gens = new Generations(Dex as any);
 
 const importTeam = (t: string, name: 'A' | 'B') => {

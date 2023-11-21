@@ -11,7 +11,7 @@ interface TeamGenerator {
 }
 
 interface TeamGeneratorFactory {
-	getTeamGenerator(format: Format | string, seed: PRNG | PRNGSeed | null): TeamGenerator;
+	getTeamGenerator(format: Format | string, seed?: PRNG | PRNGSeed | null): TeamGenerator;
 }
 
 // eslint-disable-next-line no-var
