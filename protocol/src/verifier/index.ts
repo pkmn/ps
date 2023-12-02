@@ -59,6 +59,7 @@ const SIDE_CONDITIONS = [
 ];
 const STAT_DISPLAY_NAMES = ['Attack', 'Defense'];
 const SSA = ['Shell Side Arm Physical', 'Shell Side Arm Special'];
+const IVY_CUDGEL = ['Ivy Cudgel Water', 'Ivy Cudgel Fire', 'Ivy Cudgel Rock'];
 
 function verifyRoomID(roomid: Protocol.RoomID) {
   return /^[-a-z0-9]+$/.test(roomid);
@@ -116,6 +117,7 @@ function verifyMoveName(name: Protocol.MoveName, gen?: Generation): boolean {
 
 function verifyAnimationName(name: Protocol.AnimationName, gen?: Generation): boolean {
   return verifyName(name) && (!gen ||
+    IVY_CUDGEL.includes(name) ||
     SSA.includes(name) ||
     verifyMoveName(name as Protocol.MoveName, gen));
 }

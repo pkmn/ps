@@ -361,6 +361,35 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 9] Ubers UU',
+    mod: 'gen9',
+    ruleset: [ '[Gen 9] Ubers' ],
+    banlist: [
+      'Annihilape',          'Arceus-Base',
+      'Arceus-Fairy',        'Arceus-Ground',
+      'Basculegion',         'Calyrex-Ice',
+      'Chien-Pao',           'Clodsire',
+      'Ditto',               'Eternatus',
+      'Flutter Mane',        'Glimmora',
+      'Gliscor',             'Giratina-Origin',
+      'Great Tusk',          'Grimmsnarl',
+      'Groudon',             'Hatterene',
+      'Iron Bundle',         'Iron Treads',
+      'Kingambit',           'Koraidon',
+      'Kyogre',              'Landorus-Therian',
+      'Mewtwo',              'Miraidon',
+      'Ogerpon-Hearthflame', 'Rayquaza',
+      'Regieleki',           'Ribombee',
+      'Skeledirge',          'Ting-Lu',
+      'Toxapex',             'Zacian-Crowned',
+      'Arceus-Electric',     'Arceus-Flying',
+      'Arceus-Ghost',        'Arceus-Steel',
+      'Arceus-Water',        'Basculegion-F',
+      'Shaymin-Sky'
+    ]
+  },
+  { name: '[Gen 9] ZU', mod: 'gen9', ruleset: [ '[Gen 9] PU' ], banlist: [ 'PU', 'ZUBL' ] },
+  {
     name: '[Gen 9] Free-For-All',
     mod: 'gen9',
     gameType: 'freeforall',
@@ -390,27 +419,26 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] LC' ],
     banlist: [
-      'Corphish',     'Diglett-Alola',
-      'Drifloon',     'Foongus',
-      'Glimmet',      'Gothita',
-      'Grimer-Alola', 'Grookey',
-      'Impidimp',     'Koffing',
-      'Larvesta',     'Magnemite',
-      'Mienfoo',      'Mudbray',
-      'Numel',        'Pawniard',
-      'Sandshrew',    'Sandshrew-Alola',
-      'Shellder',     'Shroodle',
-      'Snover',       'Stunky',
-      'Timburr',      'Tinkatink',
-      'Toedscool',    'Voltorb-Hisui',
-      'Vullaby',      'Wattrel',
-      'Zorua-Hisui'
+      'Corphish',        'Diglett-Alola',
+      'Drifloon',        'Foongus',
+      'Glimmet',         'Gothita',
+      'Grimer-Alola',    'Grookey',
+      'Impidimp',        'Koffing',
+      'Larvesta',        'Magnemite',
+      'Mienfoo',         'Mudbray',
+      'Numel',           'Pawniard',
+      'Sandshrew-Alola', 'Shellder',
+      'Shroodle',        'Snover',
+      'Stunky',          'Timburr',
+      'Tinkatink',       'Toedscool',
+      'Voltorb-Hisui',   'Vullaby',
+      'Wattrel',         'Zorua-Hisui'
     ]
   },
   {
-    name: '[Gen 9] Monothreat Poison',
+    name: '[Gen 9] Monothreat Steel',
     mod: 'gen9',
-    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Poison' ]
+    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Steel' ]
   },
   {
     name: '[Gen 9] Monotype CAP',
@@ -421,15 +449,9 @@ export const Formats: FormatList = [
   {
     name: '[Gen 9] Monotype LC',
     mod: 'gen9',
-    ruleset: [ 'Standard', 'Same Type Clause', 'Little Cup', 'Terastal Clause' ],
+    ruleset: [ '[Gen 9] LC', 'Same Type Clause', 'Terastal Clause' ],
     banlist: [ 'Damp Rock', 'Focus Band', 'Heat Rock', 'Icy Rock', 'Quick Claw' ],
     unbanlist: [ 'Diglett', 'Growlithe-Hisui', 'Vulpix', 'Vulpix-Alola' ]
-  },
-  {
-    name: '[Gen 9] ZU',
-    mod: 'gen9',
-    ruleset: [ '[Gen 9] PU' ],
-    banlist: [ 'PU', 'Crabominable', 'Falinks', 'Lycanroc-Midnight', 'Raichu-Base', 'Zangoose' ]
   },
   {
     name: '[Gen 3] Hoenn Gaiden',
@@ -550,13 +572,13 @@ export const Formats: FormatList = [
     name: '[Gen 9] National Dex UU',
     mod: 'gen9',
     ruleset: [ '[Gen 9] National Dex', 'Terastal Clause' ],
-    banlist: [ 'ND OU', 'ND UUBL', 'Battle Bond', 'Drizzle', 'Drought' ]
+    banlist: [ 'ND OU', 'ND UUBL', 'Battle Bond', 'Drizzle', 'Drought', 'Light Clay' ]
   },
   {
     name: '[Gen 9] National Dex RU',
     mod: 'gen9',
     ruleset: [ '[Gen 9] National Dex UU' ],
-    banlist: [ 'ND UU', 'ND RUBL', 'Heat Rock', 'Light Clay' ]
+    banlist: [ 'ND UU', 'ND RUBL', 'Slowbro-Base + Slowbronite', 'Heat Rock' ]
   },
   {
     name: '[Gen 9] National Dex Monotype',
@@ -968,33 +990,24 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 6] Ubers',
-    mod: 'gen6',
-    ruleset: [ 'Standard', 'Swagger Clause', 'Mega Rayquaza Clause' ]
+    name: '[Gen 7] Ubers',
+    mod: 'gen7',
+    ruleset: [ 'Standard', 'Mega Rayquaza Clause' ],
+    banlist: [ 'Baton Pass' ]
   },
   {
-    name: '[Gen 3] ZU',
-    mod: 'gen3',
-    ruleset: [ 'Standard', 'Baton Pass Stat Clause' ],
-    banlist: [
-      'Uber', 'OU',
-      'UUBL', 'UU',
-      'NUBL', 'NU',
-      'PUBL', 'PU',
-      'ZUBL'
-    ]
+    name: '[Gen 1] UU',
+    mod: 'gen1',
+    ruleset: [ '[Gen 1] OU', 'APT Clause' ],
+    banlist: [ 'OU', 'UUBL' ]
   },
   {
-    name: '[Gen 3] LC',
-    mod: 'gen3',
-    ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause' ],
-    banlist: [
-      'Chansey',    'Meditite',
-      'Omanyte',    'Scyther',
-      'Wynaut',     'Zigzagoon',
-      'Baton Pass', 'Dragon Rage',
-      'Sonic Boom', 'Swagger'
-    ]
+    name: '[Gen 4] Doubles OU',
+    mod: 'gen4',
+    gameType: 'doubles',
+    ruleset: [ 'Standard' ],
+    banlist: [ 'AG', 'Uber', 'Soul Dew', 'Dark Void', 'Sand Veil' ],
+    unbanlist: [ 'Manaphy', 'Mew', 'Salamence', 'Wobbuffet', 'Wynaut' ]
   },
   {
     name: '[Gen 8] OU',
@@ -1116,14 +1129,6 @@ export const Formats: FormatList = [
     gameType: 'doubles',
     ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Swagger Clause', 'Sleep Clause Mod' ],
     banlist: [ 'DUber', 'Soul Dew', 'Dark Void', 'Gravity' ]
-  },
-  {
-    name: '[Gen 4] Doubles OU',
-    mod: 'gen4',
-    gameType: 'doubles',
-    ruleset: [ 'Standard' ],
-    banlist: [ 'AG', 'Uber', 'Soul Dew', 'Dark Void', 'Sand Veil' ],
-    unbanlist: [ 'Manaphy', 'Mew', 'Salamence', 'Wobbuffet', 'Wynaut' ]
   },
   {
     name: '[Gen 3] Doubles OU',
@@ -1366,12 +1371,6 @@ export const Formats: FormatList = [
       'Max Level = 9999',
       'Default Level = 100'
     ]
-  },
-  {
-    name: '[Gen 7] Ubers',
-    mod: 'gen7',
-    ruleset: [ 'Standard', 'Mega Rayquaza Clause' ],
-    banlist: [ 'Baton Pass' ]
   },
   {
     name: '[Gen 7] UU',
@@ -1636,6 +1635,11 @@ export const Formats: FormatList = [
     mod: 'gen6',
     ruleset: [ '[Gen 6] OU' ],
     banlist: [ 'OU', 'UUBL', 'Drizzle', 'Drought' ]
+  },
+  {
+    name: '[Gen 6] Ubers',
+    mod: 'gen6',
+    ruleset: [ 'Standard', 'Swagger Clause', 'Mega Rayquaza Clause' ]
   },
   { name: '[Gen 6] RU', mod: 'gen6', ruleset: [ '[Gen 6] UU' ], banlist: [ 'UU', 'RUBL' ] },
   { name: '[Gen 6] NU', mod: 'gen6', ruleset: [ '[Gen 6] RU' ], banlist: [ 'RU', 'NUBL' ] },
@@ -2178,6 +2182,30 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 3] ZU',
+    mod: 'gen3',
+    ruleset: [ 'Standard', 'Baton Pass Stat Clause' ],
+    banlist: [
+      'Uber', 'OU',
+      'UUBL', 'UU',
+      'NUBL', 'NU',
+      'PUBL', 'PU',
+      'ZUBL'
+    ]
+  },
+  {
+    name: '[Gen 3] LC',
+    mod: 'gen3',
+    ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause' ],
+    banlist: [
+      'Chansey',    'Meditite',
+      'Omanyte',    'Scyther',
+      'Wynaut',     'Zigzagoon',
+      'Baton Pass', 'Dragon Rage',
+      'Sonic Boom', 'Swagger'
+    ]
+  },
+  {
     name: '[Gen 3] 1v1',
     mod: 'gen3',
     ruleset: [
@@ -2308,12 +2336,6 @@ export const Formats: FormatList = [
     ]
   },
   { name: '[Gen 1] Ubers', mod: 'gen1', ruleset: [ 'Standard' ] },
-  {
-    name: '[Gen 1] UU',
-    mod: 'gen1',
-    ruleset: [ '[Gen 1] OU', 'APT Clause' ],
-    banlist: [ 'OU', 'UUBL' ]
-  },
   {
     name: '[Gen 1] NU',
     mod: 'gen1',
