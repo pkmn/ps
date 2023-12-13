@@ -367,7 +367,7 @@ export const Formats: FormatList = [
     banlist: [
       'Annihilape',          'Arceus-Base',
       'Arceus-Fairy',        'Arceus-Ground',
-      'Basculegion',         'Calyrex-Ice',
+      'Basculegion-Base',    'Calyrex-Ice',
       'Chien-Pao',           'Clodsire',
       'Ditto',               'Eternatus',
       'Flutter Mane',        'Glimmora',
@@ -384,8 +384,8 @@ export const Formats: FormatList = [
       'Toxapex',             'Zacian-Crowned',
       'Arceus-Electric',     'Arceus-Flying',
       'Arceus-Ghost',        'Arceus-Steel',
-      'Arceus-Water',        'Basculegion-F',
-      'Shaymin-Sky'
+      'Arceus-Water',        'Shaymin-Sky',
+      'Last Respects'
     ]
   },
   { name: '[Gen 9] ZU', mod: 'gen9', ruleset: [ '[Gen 9] PU' ], banlist: [ 'PU', 'ZUBL' ] },
@@ -436,9 +436,9 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 9] Monothreat Steel',
+    name: '[Gen 9] Monothreat Fire',
     mod: 'gen9',
-    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Steel' ]
+    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Fire' ]
   },
   {
     name: '[Gen 9] Monotype CAP',
@@ -451,30 +451,7 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] LC', 'Same Type Clause', 'Terastal Clause' ],
     banlist: [ 'Damp Rock', 'Focus Band', 'Heat Rock', 'Icy Rock', 'Quick Claw' ],
-    unbanlist: [ 'Diglett', 'Growlithe-Hisui', 'Vulpix', 'Vulpix-Alola' ]
-  },
-  {
-    name: '[Gen 3] Hoenn Gaiden',
-    mod: 'gen3hoenngaiden',
-    ruleset: [ 'HG Standard', 'Freeze Clause Mod' ],
-    banlist: [ 'Uber' ],
-    unbanlist: [ 'Sand Veil' ]
-  },
-  {
-    name: '[Gen 8] JolteMons Random Battle',
-    mod: 'gen8joltemons',
-    team: 'random',
-    ruleset: [
-      'Dynamax Clause',
-      'Obtainable',
-      'Species Clause',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Sleep Clause Mod',
-      'Mega Data Mod',
-      'Z-Move Clause',
-      'Illusion Level Mod'
-    ]
+    unbanlist: [ 'Diglett-Base', 'Growlithe-Hisui', 'Vulpix', 'Vulpix-Alola', 'Sticky Web' ]
   },
   {
     name: '[Gen 9] Balanced Hackmons',
@@ -608,19 +585,19 @@ export const Formats: FormatList = [
       'Lunala',              'Magearna',           'Marshadow',
       'Mawile-Mega',         'Medicham-Mega',      'Metagross-Mega',
       'Mewtwo',              'Miraidon',           'Naganadel',
-      'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Palafin',
-      'Palkia',              'Pheromosa',          'Rayquaza',
-      'Reshiram',            'Salamence-Mega',     'Shaymin-Sky',
-      'Solgaleo',            'Spectrier',          'Urshifu-Base',
-      'Xerneas',             'Yveltal',            'Zacian',
-      'Zacian-Crowned',      'Zamazenta',          'Zamazenta-Crowned',
-      'Zekrom',              'Zygarde-Base',       'Zygarde-Complete',
-      'Moody',               'Shadow Tag',         'Power Construct',
-      'Booster Energy',      'Damp Rock',          'Focus Band',
-      'Icy Rock',            "King's Rock",        'Leppa Berry',
-      'Quick Claw',          'Razor Fang',         'Smooth Rock',
-      'Terrain Extender',    'Acupressure',        'Baton Pass',
-      'Last Respects'
+      'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Ogerpon-Hearthflame',
+      'Palafin',             'Palkia',             'Pheromosa',
+      'Rayquaza',            'Reshiram',           'Salamence-Mega',
+      'Shaymin-Sky',         'Solgaleo',           'Spectrier',
+      'Urshifu-Base',        'Xerneas',            'Yveltal',
+      'Zacian',              'Zacian-Crowned',     'Zamazenta',
+      'Zamazenta-Crowned',   'Zekrom',             'Zygarde-Base',
+      'Zygarde-Complete',    'Moody',              'Shadow Tag',
+      'Power Construct',     'Booster Energy',     'Damp Rock',
+      'Focus Band',          'Icy Rock',           "King's Rock",
+      'Leppa Berry',         'Quick Claw',         'Razor Fang',
+      'Smooth Rock',         'Terrain Extender',   'Acupressure',
+      'Baton Pass',          'Last Respects'
     ]
   },
   {
@@ -2081,12 +2058,12 @@ export const Formats: FormatList = [
       '!Freeze Clause Mod'
     ],
     banlist: [
-      'Latias',        'Machamp',
-      'Porygon-Z',     'Shaymin',
-      'Snorlax',       'Togekiss',
-      'Focus Sash',    'Destiny Bond',
-      'Explosion',     'Perish Song',
-      'Self-Destruct'
+      'Jirachi',      'Latias',
+      'Machamp',      'Porygon-Z',
+      'Shaymin',      'Snorlax',
+      'Togekiss',     'Focus Sash',
+      'Destiny Bond', 'Explosion',
+      'Perish Song',  'Self-Destruct'
     ],
     unbanlist: [ 'Wobbuffet', 'Wynaut', 'Sand Veil', 'Swagger' ]
   },

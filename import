@@ -340,9 +340,9 @@ const REWRITES = {
       '\tgetDetails = (): {side: SideID, secret: string, shared: string} => {',
   },
   'sim/dex-abilities.ts': {
-    '\t\tif (ability.exists) this.abilityCache.set(id, ability);':
-      `\t\t(ability as any).kind = 'Ability';\n` +
-      '\t\tif (ability.exists) this.abilityCache.set(id, ability);',
+    '\t\tif (ability.exists) this.abilityCache.set(id, this.dex.deepFreeze(ability));':
+      `\t\tif (!(ability as any).kind) (ability as any).kind = 'Ability';\n` +
+      '\t\tif (ability.exists) this.abilityCache.set(id, this.dex.deepFreeze(ability));',
   },
   'sim/dex-conditions.ts': {
     '\t\t} else if (this.dex.data.Rulesets.hasOwnProperty(id)) {':
@@ -357,22 +357,22 @@ const REWRITES = {
     [KEY]: VALUE,
   },
   'sim/dex-items.ts': {
-    '\t\tif (item.exists) this.itemCache.set(id, item);':
+    '\t\tif (item.exists) this.itemCache.set(id, this.dex.deepFreeze(item));':
       `\t\t(item as any).kind = 'Item';\n` +
-      '\t\tif (item.exists) this.itemCache.set(id, item);',
+      '\t\tif (item.exists) this.itemCache.set(id, this.dex.deepFreeze(item));',
   },
   'sim/dex-moves.ts': {
-    '\t\tif (move.exists) this.moveCache.set(id, move);':
+    '\t\tif (move.exists) this.moveCache.set(id, this.dex.deepFreeze(move));':
       `\t\t(move as any).kind = 'Move';\n` +
-      '\t\tif (move.exists) this.moveCache.set(id, move);',
+      '\t\tif (move.exists) this.moveCache.set(id, this.dex.deepFreeze(move));',
   },
   'sim/dex-data.ts': {
-    '\t\tif (nature.exists) this.natureCache.set(id, nature);':
+    '\t\tif (nature.exists) this.natureCache.set(id, this.dex.deepFreeze(nature));':
       `\t\t(nature as any).kind = 'Nature';\n` +
-      '\t\tif (nature.exists) this.natureCache.set(id, nature);',
-    '\t\tif (type.exists) this.typeCache.set(id, type);':
+      '\t\tif (nature.exists) this.natureCache.set(id, this.dex.deepFreeze(nature));',
+    '\t\tif (type.exists) this.typeCache.set(id, this.dex.deepFreeze(type));':
       `\t\t(type as any).kind = 'Type';\n` +
-      '\t\tif (type.exists) this.typeCache.set(id, type);',
+      '\t\tif (type.exists) this.typeCache.set(id, this.dex.deepFreeze(type));',
   },
   'sim/battle.ts': {
     '\tgetCategory(move: string | Move) {':

@@ -1,4 +1,4 @@
-import {Utils} from '../lib/utils';
+import * as Utils from '../lib/utils';
 import {Condition, DexConditions} from './dex-conditions';
 import {DataMove, DexMoves} from './dex-moves';
 import {Item, DexItems} from './dex-items';
@@ -185,6 +185,7 @@ export class ModdedDex {
 	dataCache: DexTableData | null;
 
 	deepClone = Utils.deepClone;
+	deepFreeze = Utils.deepFreeze;
 
 	constructor(mod = 'base') {
 		this.isBase = (mod === 'base');

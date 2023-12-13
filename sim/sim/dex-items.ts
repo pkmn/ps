@@ -214,7 +214,7 @@ export class DexItems {
 		}
 
 		(item as any).kind = 'Item';
-		if (item.exists) this.itemCache.set(id, item);
+		if (item.exists) this.itemCache.set(id, this.dex.deepFreeze(item));
 		return item;
 	}
 
@@ -224,7 +224,7 @@ export class DexItems {
 		for (const id in this.dex.data.Items) {
 			items.push(this.getByID(id as ID));
 		}
-		this.allCache = items;
+		this.allCache = Object.freeze(items);
 		return this.allCache;
 	}
 }

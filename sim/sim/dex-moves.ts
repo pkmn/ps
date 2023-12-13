@@ -671,7 +671,7 @@ export class DexMoves {
 			});
 		}
 		(move as any).kind = 'Move';
-		if (move.exists) this.moveCache.set(id, move);
+		if (move.exists) this.moveCache.set(id, this.dex.deepFreeze(move));
 		return move;
 	}
 
@@ -681,7 +681,7 @@ export class DexMoves {
 		for (const id in this.dex.data.Moves) {
 			moves.push(this.getByID(id as ID));
 		}
-		this.allCache = moves;
+		this.allCache = Object.freeze(moves);
 		return this.allCache;
 	}
 }

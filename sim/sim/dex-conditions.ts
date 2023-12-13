@@ -678,6 +678,9 @@ export class DexConditions {
 			condition = move as any as Condition;
 		} else if (this.dex.data.Rulesets.hasOwnProperty(id)) {
 			condition = this.dex.formats.get(id) as any as Condition;
+			// formats can't be frozen if they don't have a ruleTable
+			this.conditionCache.set(id, condition);
+			return condition;
 		} else if (this.dex.data.Conditions.hasOwnProperty(id)) {
 			condition = new Condition({name: id, ...this.dex.data.Conditions[id]});
 		} else if (
@@ -694,7 +697,7 @@ export class DexConditions {
 			condition = new Condition({name: id, exists: false});
 		}
 
-		this.conditionCache.set(id, condition);
+		this.conditionCache.set(id, this.dex.deepFreeze(condition));
 		return condition;
 	}
 }
