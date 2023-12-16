@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.0
+
+- Generation 9 Indigo Disk DLC released with a new `Stellar` type.
+
 ## 3.0.0
 
 - Generation 9 was released and `PokemonSet` now has a `teraType` field.

@@ -375,8 +375,10 @@
   "dragonascent": {
     "megaNoItem": "  [TRAINER]'s fervent wish has reached [POKEMON]!"
   },
+  "dragoncheer": {"start": "#focusenergy"},
   "eeriespell": {"activate": "#spite"},
   "electrify": {"start": "  [POKEMON]'s moves have been electrified!"},
+  "electroshot": {"prepare": "[POKEMON] absorbed electricity!"},
   "embargo": {
     "start": "  [POKEMON] can't use items anymore!",
     "end": "  [POKEMON] can use items again!"
@@ -393,6 +395,7 @@
     "activate": "  No one will be able to run away during the next turn!"
   },
   "feint": {"activate": "  [TARGET] fell for the feint!"},
+  "ficklebeam": {"activate": "  [POKEMON] is going all out for this attack!"},
   "firepledge": {
     "activate": "#waterpledge",
     "start": "  A sea of fire enveloped [TEAM]!",
@@ -686,6 +689,7 @@
     "fail": "  But it does not have enough HP left to make a substitute!",
     "activate": "  The substitute took damage for [POKEMON]!"
   },
+  "supercellslam": {"damage": "#crash"},
   "switcheroo": {"activate": "#trick"},
   "syrupbomb": {"start": "  [POKEMON] got covered in sticky candy syrup!"},
   "tailwind": {
@@ -900,6 +904,10 @@
   "telepathy": {
     "block": "  [POKEMON] can't be hit by attacks from its ally Pokémon!"
   },
+  "terashell": {
+    "activate": "  [POKEMON] made its shell gleam! It's distorting type matchups!"
+  },
+  "terashift": {"transform": "[POKEMON] transformed!"},
   "teravolt": {"start": "  [POKEMON] is radiating a bursting aura!"},
   "trace": {"changeAbility": "  [POKEMON] traced [SOURCE]'s [ABILITY]!"},
   "truant": {"cant": "[POKEMON] is loafing around!"},

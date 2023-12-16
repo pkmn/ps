@@ -4736,19 +4736,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   mewtwo: {
     learnset: {
       amnesia: [ '4S1' ],
-      aurasphere: [ '6S4', '6S5', '5S2' ],
+      aurasphere: [ '9S8', '6S4', '6S5', '5S2' ],
       barrier: [ '6S4' ],
       blizzard: [ '8S7' ],
+      calmmind: [ '9S8' ],
       disable: [ '8S7' ],
       electroball: [ '5S2' ],
       guardswap: [ '4S1' ],
       healpulse: [ '5S3' ],
       hurricane: [ '5S3' ],
-      icebeam: [ '5S3' ],
+      icebeam: [ '9S8', '5S3' ],
       powerswap: [ '4S1' ],
       psychic: [ '8S7', '7S6', '6S4', '6S5', '3S0' ],
       psychocut: [ '7S6', '4S1' ],
-      psystrike: [ '6S5', '5S2', '5S3' ],
+      psystrike: [ '9S8', '6S5', '5S2', '5S3' ],
       recover: [ '8S7', '7S6', '6S4', '6S5', '3S0' ],
       safeguard: [ '3S0' ],
       shadowball: [ '5S2' ],
@@ -4806,6 +4807,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         level: 70,
         shiny: 1,
         moves: [ 'psychic', 'disable', 'recover', 'blizzard' ]
+      },
+      {
+        generation: 9,
+        level: 100,
+        nature: 'Modest',
+        perfectIVs: 6,
+        isHidden: true,
+        moves: [ 'psystrike', 'aurasphere', 'icebeam', 'calmmind' ]
       }
     ],
     encounters: [ { generation: 1, level: 70 } ],
@@ -9619,11 +9628,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   gastrodoneast: {
     learnset: {
-      earthpower: [ '9S2', '8S1', '8S0' ],
+      earthpower: [ '9S3', '9S2', '8S1', '8S0' ],
       icebeam: [ '9S2', '8S1', '8S0' ],
-      protect: [ '9S2', '8S1', '8S0' ],
+      icywind: [ '9S3' ],
+      protect: [ '9S3', '9S2', '8S1', '8S0' ],
       surf: [ '8S0' ],
-      yawn: [ '9S2', '8S1' ]
+      yawn: [ '9S3', '9S2', '8S1' ]
     },
     eventData: [
       {
@@ -9654,6 +9664,16 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         abilities: [ 'stormdrain' ],
         ivs: { hp: 31, atk: 0, def: 31, spa: 31, spd: 31, spe: 8 },
         moves: [ 'protect', 'yawn', 'icebeam', 'earthpower' ],
+        pokeball: 'cherishball'
+      },
+      {
+        generation: 9,
+        level: 50,
+        gender: 'F',
+        nature: 'Calm',
+        abilities: [ 'stormdrain' ],
+        ivs: { hp: 31, atk: 0, def: 31, spa: 31, spd: 31, spe: 8 },
+        moves: [ 'protect', 'yawn', 'icywind', 'earthpower' ],
         pokeball: 'cherishball'
       }
     ],
@@ -9794,19 +9814,20 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   lucario: {
     learnset: {
-      aurasphere: [ '8S6', '7S5', '6S4', '4S0' ],
+      aurasphere: [ '9S7', '8S6', '7S5', '6S4', '4S0' ],
       blazekick: [ '4S1' ],
       bonerush: [ '4S1' ],
-      bulletpunch: [ '8S6', '5S2', '5S3' ],
+      bulletpunch: [ '9S7', '8S6', '5S2', '5S3' ],
       closecombat: [ '6S4', '5S3' ],
       counter: [ '5S2' ],
       darkpulse: [ '4S0' ],
       detect: [ '5S2' ],
       dragonpulse: [ '7S5', '4S0' ],
       extremespeed: [ '7S5' ],
-      flashcannon: [ '6S4' ],
+      flashcannon: [ '9S7', '6S4' ],
       forcepalm: [ '4S1' ],
       highjumpkick: [ '7S5' ],
+      icepunch: [ '9S7' ],
       metalclaw: [ '5S2' ],
       quickattack: [ '6S4' ],
       reversal: [ '8S6' ],
@@ -9878,6 +9899,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         ivs: { hp: 31, atk: 30, def: 30, spa: 31, spd: 30, spe: 31 },
         moves: [ 'aurasphere', 'bulletpunch', 'reversal', 'steelbeam' ],
         pokeball: 'pokeball'
+      },
+      {
+        generation: 9,
+        level: 75,
+        shiny: true,
+        gender: 'M',
+        nature: 'Naive',
+        abilities: [ 'innerfocus' ],
+        ivs: { hp: 31, atk: 31, def: 20, spa: 31, spd: 20, spe: 31 },
+        moves: [ 'flashcannon', 'bulletpunch', 'aurasphere', 'icepunch' ],
+        pokeball: 'cherishball'
       }
     ]
   },
@@ -10111,11 +10143,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     learnset: {
       ancientpower: [ '8S11', '4S0' ],
       aurasphere: [ '7S7', '7S8', '7S9', '7S10', '6S5', '5S4' ],
-      dracometeor: [ '7S9', '7S10', '5S4' ],
+      dracometeor: [ '9S13', '7S9', '7S10', '5S4' ],
       dragonbreath: [ '5S3', '4S2' ],
       dragonclaw: [ '8S11', '4S0' ],
       dragonpulse: [ '5S4' ],
-      earthpower: [ '4S1' ],
+      earthpower: [ '9S13', '4S1' ],
+      fireblast: [ '9S13' ],
       flashcannon: [
         '8S12', '8S11',
         '7S7',  '7S8',
@@ -10135,7 +10168,8 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         '4S0',  '4S1'
       ],
       scaryface: [ '5S3', '4S2' ],
-      slash: [ '8S11', '4S1' ]
+      slash: [ '8S11', '4S1' ],
+      steelbeam: [ '9S13' ]
     },
     eventData: [
       {
@@ -10216,6 +10250,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         isHidden: true,
         moves: [ 'roaroftime', 'flashcannon', 'metalburst', 'overheat' ],
         pokeball: 'cherishball'
+      },
+      {
+        generation: 9,
+        level: 75,
+        nature: 'Quiet',
+        isHidden: true,
+        perfectIVs: 4,
+        moves: [ 'dracometeor', 'earthpower', 'fireblast', 'steelbeam' ]
       }
     ],
     eventOnly: true
@@ -10231,16 +10273,18 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         '7S10', '6S5',
         '6S6',  '5S4'
       ],
-      dracometeor: [ '7S9', '7S10', '5S4' ],
+      dracometeor: [ '9S13', '7S9', '7S10', '5S4' ],
       dragonbreath: [ '5S3', '4S2' ],
       dragonclaw: [ '8S11', '4S0' ],
       earthpower: [ '8S12', '6S5', '6S6', '4S1' ],
+      fireblast: [ '9S13' ],
       healblock: [ '4S1' ],
       hydropump: [
-        '8S12', '7S7',
-        '7S8',  '7S9',
-        '7S10', '6S5',
-        '6S6',  '5S4'
+        '9S13', '8S12',
+        '7S7',  '7S8',
+        '7S9',  '7S10',
+        '6S5',  '6S6',
+        '5S4'
       ],
       scaryface: [ '5S3', '4S2' ],
       slash: [ '8S11', '4S1' ],
@@ -10252,6 +10296,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         '4S0',  '4S1'
       ],
       surf: [ '8S11' ],
+      thunder: [ '9S13' ],
       waterpulse: [ '4S0' ]
     },
     eventData: [
@@ -10333,6 +10378,14 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         isHidden: true,
         moves: [ 'spacialrend', 'hydropump', 'aurasphere', 'earthpower' ],
         pokeball: 'cherishball'
+      },
+      {
+        generation: 9,
+        level: 75,
+        nature: 'Modest',
+        isHidden: true,
+        perfectIVs: 4,
+        moves: [ 'dracometeor', 'thunder', 'fireblast', 'hydropump' ]
       }
     ],
     eventOnly: true
@@ -10701,19 +10754,19 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   },
   darkrai: {
     learnset: {
-      darkpulse: [ '6S5', '4S2' ],
+      darkpulse: [ '9S8', '6S5', '4S2' ],
       darkvoid: [ '7S7', '6S5', '6S6', '5S4', '4S2' ],
       doubleteam: [ '4S2', '4S3' ],
-      dreameater: [ '6S5' ],
+      dreameater: [ '9S8', '6S5' ],
       feintattack: [ '7S7', '6S6', '5S4', '4S3' ],
-      hypnosis: [ '4S0', '4S1', '4S3' ],
+      hypnosis: [ '9S8', '4S0', '4S1', '4S3' ],
       nightmare: [ '7S7', '6S6', '5S4', '4S0', '4S1', '4S3' ],
       ominouswind: [ '7S7', '6S6', '5S4' ],
       phantomforce: [ '6S5' ],
       pursuit: [ '4S0' ],
       quickattack: [ '4S0' ],
       roaroftime: [ '4S1' ],
-      shadowball: [ '4S2' ],
+      shadowball: [ '9S8', '4S2' ],
       spacialrend: [ '4S1' ]
     },
     eventData: [
@@ -10763,6 +10816,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         generation: 7,
         level: 50,
         moves: [ 'darkvoid', 'feintattack', 'nightmare', 'ominouswind' ],
+        pokeball: 'cherishball'
+      },
+      {
+        generation: 9,
+        level: 50,
+        moves: [ 'darkpulse', 'shadowball', 'hypnosis', 'dreameater' ],
         pokeball: 'cherishball'
       }
     ],
@@ -13700,12 +13759,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       astonish: [ '7S0', '7S1' ],
       babydolleyes: [ '7S0' ],
       copycat: [ '7S0', '7S1' ],
-      destinybond: [ '7S2' ],
+      curse: [ '9S3' ],
+      destinybond: [ '9S3', '7S2' ],
       mimic: [ '7S2' ],
+      phantomforce: [ '9S3' ],
       playrough: [ '7S1' ],
       snatch: [ '7S2' ],
       splash: [ '7S0' ],
       substitute: [ '7S1' ],
+      thunderbolt: [ '9S3' ],
       trick: [ '7S2' ]
     },
     eventData: [
@@ -13727,6 +13789,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         level: 50,
         shiny: true,
         moves: [ 'mimic', 'snatch', 'trick', 'destinybond' ],
+        pokeball: 'cherishball'
+      },
+      {
+        generation: 9,
+        level: 25,
+        moves: [ 'thunderbolt', 'destinybond', 'phantomforce', 'curse' ],
         pokeball: 'cherishball'
       }
     ]
@@ -14635,6 +14703,26 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
     ],
     eventOnly: true
   },
+  dragapult: {
+    learnset: {
+      dragondarts: [ '9S0' ],
+      phantomforce: [ '9S0' ],
+      terablast: [ '9S0' ],
+      uturn: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 50,
+        gender: 'M',
+        nature: 'Jolly',
+        perfectIVs: 6,
+        abilities: [ 'clearbody' ],
+        moves: [ 'dragondarts', 'phantomforce', 'uturn', 'terablast' ],
+        pokeball: 'cherishball'
+      }
+    ]
+  },
   zacian: {
     learnset: {
       crunch: [ '8S0' ],
@@ -14883,6 +14971,21 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       }
     ]
   },
+  revavroom: {
+    learnset: { ironhead: [ '9S0' ], poisonjab: [ '9S0' ], swagger: [ '9S0' ], terablast: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 50,
+        gender: 'F',
+        nature: 'Naughty',
+        abilities: [ 'clearbody' ],
+        ivs: { hp: 20, atk: 31, def: 20, spa: 20, spd: 20, spe: 20 },
+        moves: [ 'ironhead', 'swagger', 'poisonjab', 'terablast' ],
+        pokeball: 'healball'
+      }
+    ]
+  },
   orthworm: {
     learnset: { headbutt: [ '9S0' ], irontail: [ '9S0' ], sandstorm: [ '9S0' ], wrap: [ '9S0' ] },
     eventData: [
@@ -14895,6 +14998,15 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         moves: [ 'irontail', 'headbutt', 'wrap', 'sandstorm' ]
       }
     ]
+  },
+  cetitan: {
+    learnset: {
+      amnesia: [ '9S0' ],
+      bodyslam: [ '9S0' ],
+      doubleedge: [ '9S0' ],
+      icespinner: [ '9S0' ]
+    },
+    eventData: [ { generation: 9, moves: [ 'bodyslam', 'amnesia', 'icespinner', 'doubleedge' ] } ]
   },
   tatsugiri: {
     learnset: { dragonpulse: [ '9S0' ], icywind: [ '9S0' ], muddywater: [ '9S0' ], taunt: [ '9S0' ] },
@@ -14921,6 +15033,22 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         generation: 9,
         level: 50,
         moves: [ 'dracometeor', 'muddywater', 'helpinghand', 'celebrate' ],
+        pokeball: 'cherishball'
+      }
+    ]
+  },
+  pawmi: {
+    learnset: {
+      celebrate: [ '9S0' ],
+      growl: [ '9S0' ],
+      terablast: [ '9S0' ],
+      thundershock: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 5,
+        moves: [ 'thundershock', 'growl', 'terablast', 'celebrate' ],
         pokeball: 'cherishball'
       }
     ]
@@ -14967,13 +15095,24 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       }
     ]
   },
+  fidough: {
+    learnset: { charm: [ '9S0' ], lick: [ '9S0' ], playrough: [ '9S0' ], tailwhip: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 5,
+        moves: [ 'playrough', 'charm', 'lick', 'tailwhip' ],
+        pokeball: 'cherishball'
+      }
+    ]
+  },
   gimmighoul: {
     learnset: {
-      astonish: [ '9S0' ],
+      astonish: [ '9S2', '9S0' ],
       hex: [ '9S1' ],
       powergem: [ '9S1' ],
       shadowball: [ '9S1' ],
-      tackle: [ '9S0' ],
+      tackle: [ '9S2', '9S0' ],
       takedown: [ '9S1' ]
     },
     eventData: [
@@ -14984,6 +15123,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         shiny: 1,
         perfectIVs: 4,
         moves: [ 'takedown', 'shadowball', 'hex', 'powergem' ]
+      },
+      {
+        generation: 9,
+        level: 5,
+        nature: 'Timid',
+        ivs: { hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 31 },
+        moves: [ 'astonish', 'tackle' ]
       }
     ],
     eventOnly: true
@@ -15322,6 +15468,17 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       }
     ],
     eventOnly: true
+  },
+  charcadet: {
+    learnset: { astonish: [ '9S0' ], celebrate: [ '9S0' ], ember: [ '9S0' ], terablast: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 5,
+        moves: [ 'ember', 'astonish', 'terablast', 'celebrate' ],
+        pokeball: 'cherishball'
+      }
+    ]
   },
   walkingwake: {
     learnset: {

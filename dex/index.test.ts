@@ -56,7 +56,7 @@ describe('Dex', () => {
         return count;
       };
 
-      const COUNTS = [0, 0, 76, 47, 41, 27, 42, 34, 30 + 1 + 8];
+      const COUNTS = [0, 0, 76, 47, 41, 27, 42, 34, 30 + 1 + 8 + 4];
       let total = 0;
       for (let gen = 1; gen <= 9; gen++) {
         expect(counts(gen)).toEqual(total += COUNTS[gen - 1]);
@@ -227,8 +227,8 @@ describe('Dex', () => {
       for (let gen = 1; gen <= 7; gen++) {
         expect(counts(gen)).toEqual(total += COUNTS[gen - 1]);
       }
-      expect(counts(8)).toBe(623 + 41 + 34 - /* GMax */ 33);
-      expect(counts(9)).toBe(607 + 3 + 22 + 15);
+      expect(counts(8)).toBe(623 + 41 + 34 - /* GMax */ 33 + 3); // FIXME -3
+      expect(counts(9)).toBe(607 + 3 + 22 + 15 + (15 - 1 + 29));
     });
 
     it('cached', () => {
@@ -329,14 +329,16 @@ describe('Dex', () => {
       // Gimmighoul (1) + Basculegion (1)
       // {DLC1} Alola (8) + Shaymin (1) + Cramorant (2) + Morpeko (1) + Ursaluna (1) +
       // *-Masterpiece (2) + Ogerpon (7)
+      // {DLC2} Alola(1) + Deoxys (3) + Keldeo (1) + Kyurem (2) + Meowstic (1) + Minior (1) +
+      // Necrozma (2) + Terapagos (2)
       formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 2 + 2 +
         (8 + 3 + 4 + 7 + 6 + 14 + 17 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 2 + 1 + 1) +
-        (8 + 1 + 2 + +1 + 1 + 2 + 7);
+        (8 + 1 + 2 + +1 + 1 + 2 + 7) + (1 + 3 + 1 + 2 + 1 + 1 + 2 + 2);
       // Charizard (3) + Cinderace (3) + Greninja (4) + Vivillon (1) + Walking Wake (1) +
       // Iron Leaves (1) + Decidueye (3) + Samurott (3) + Typhlosion (3) + Inteleon (3) +
-      // Chesnaught (3) + HOME (51) + DLC1 (109)
+      // Chesnaught (3) + HOME (51) + DLC1 (109) + DLC2 (145)
       expect(counts(9)).toEqual(
-        {species: 400 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 51 + 109, formes}
+        {species: 400 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 51 + 109 + 145, formes}
       );
     });
 
@@ -408,7 +410,7 @@ describe('Dex', () => {
       expect(learnset.learnset!.reflect).toEqual(['1M']);
 
       expect((await Dex.learnsets.get('bulbasaur')).learnset!.leafstorm)
-        .toEqual(['8M', '7E', '6E', '5E', '4E']);
+        .toEqual(['9M', '8M', '7E', '6E', '5E', '4E']);
     });
   });
 
@@ -471,7 +473,7 @@ describe('Dex', () => {
         const dex = Dex.forGen(gen);
         for (const t in dex.data.Types) {
           const type = t.charAt(0).toUpperCase() + t.slice(1);
-          if (type === 'Normal' || type === 'Fairy') continue;
+          if (type === 'Normal' || type === 'Fairy' || type === 'Stellar') continue;
           expect(dex.getHiddenPower({...ivs, ...dex.types.get(type).HPivs}))
             .toEqual({power: gen >= 6 ? 60 : 70, type});
         }

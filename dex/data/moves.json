@@ -4267,7 +4267,6 @@
     }
   },
   "8": {
-    "aeroblast": {"inherit": true, "isNonstandard": null},
     "allyswitch": {
       "inherit": true,
       "stallingMove": false,
@@ -4309,9 +4308,7 @@
       "desc": "Has a 10% chance to freeze the target. If the weather is Hail, this move does not check accuracy.",
       "shortDesc": "10% chance to freeze foe(s). Can't miss in Hail."
     },
-    "blueflare": {"inherit": true, "isNonstandard": null},
     "boltbeak": {"inherit": true, "isNonstandard": null},
-    "boltstrike": {"inherit": true, "isNonstandard": null},
     "bonemerang": {"inherit": true, "isNonstandard": null},
     "celebrate": {
       "inherit": true,
@@ -4344,8 +4341,6 @@
         "failmimic": 1
       }
     },
-    "conversion": {"inherit": true, "isNonstandard": null},
-    "conversion2": {"inherit": true, "isNonstandard": null},
     "copycat": {
       "inherit": true,
       "flags": {
@@ -4362,14 +4357,10 @@
       "isNonstandard": null,
       "desc": "If the user moves after the target, the target's Ability is rendered ineffective as long as it remains active. If the target uses Baton Pass, the replacement will remain under this effect. If the target's Ability is As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, or Zen Mode, this effect does not happen, and receiving the effect through Baton Pass ends the effect immediately."
     },
-    "cosmicpower": {"inherit": true, "isNonstandard": null},
     "craftyshield": {"inherit": true, "isNonstandard": null},
-    "crushgrip": {"inherit": true, "isNonstandard": null},
     "curse": {"inherit": true, "target": "randomNormal"},
-    "darkvoid": {"inherit": true, "isNonstandard": "Past"},
-    "decorate": {"inherit": true, "isNonstandard": null},
+    "darkvoid": {"inherit": true, "isNonstandard": "Past", "noSketch": false},
     "doubleironbash": {"inherit": true, "isNonstandard": null},
-    "dragonhammer": {"inherit": true, "isNonstandard": null},
     "dualchop": {"inherit": true, "isNonstandard": null},
     "electrify": {"inherit": true, "isNonstandard": null},
     "eternabeam": {
@@ -4378,23 +4369,17 @@
       "isNonstandard": null
     },
     "fishiousrend": {"inherit": true, "isNonstandard": null},
-    "floralhealing": {"inherit": true, "isNonstandard": null},
     "flowershield": {"inherit": true, "isNonstandard": null},
     "fly": {"inherit": true},
-    "freezeshock": {"inherit": true, "isNonstandard": null},
-    "fusionbolt": {"inherit": true, "isNonstandard": null},
-    "fusionflare": {"inherit": true, "isNonstandard": null},
     "futuresight": {"inherit": true, "flags": {"futuremove": 1}},
     "geargrind": {"inherit": true, "isNonstandard": null},
     "gearup": {"inherit": true, "isNonstandard": null},
     "geomancy": {"inherit": true, "isNonstandard": null},
     "glaciallance": {"inherit": true, "basePower": 130},
-    "glaciate": {"inherit": true, "isNonstandard": null},
     "grassyglide": {"inherit": true, "basePower": 70},
     "grudge": {"inherit": true, "isNonstandard": null},
     "hail": {"inherit": true, "isNonstandard": null},
     "headcharge": {"inherit": true, "isNonstandard": null},
-    "healbell": {"inherit": true, "isNonstandard": null},
     "heartswap": {"inherit": true, "isNonstandard": "Past"},
     "holdhands": {
       "inherit": true,
@@ -4406,9 +4391,12 @@
         "failinstruct": 1
       }
     },
-    "hyperspacefury": {"inherit": true, "isNonstandard": "Past"},
+    "hyperspacefury": {
+      "inherit": true,
+      "isNonstandard": "Past",
+      "noSketch": false
+    },
     "hyperspacehole": {"inherit": true, "isNonstandard": "Past"},
-    "iceburn": {"inherit": true, "isNonstandard": null},
     "icehammer": {"inherit": true, "isNonstandard": "Past"},
     "judgment": {"inherit": true, "isNonstandard": "Past"},
     "kinesis": {"inherit": true, "isNonstandard": null},
@@ -4421,7 +4409,7 @@
     "laserfocus": {"inherit": true, "isNonstandard": null},
     "leaftornado": {"inherit": true, "isNonstandard": null},
     "lovelykiss": {"inherit": true, "isNonstandard": null},
-    "lusterpurge": {"inherit": true, "isNonstandard": null},
+    "lusterpurge": {"inherit": true, "basePower": 70},
     "magiccoat": {"inherit": true, "isNonstandard": null},
     "matblock": {"inherit": true, "isNonstandard": null},
     "maxairstream": {"inherit": true, "isNonstandard": null},
@@ -4486,8 +4474,7 @@
         "failinstruct": 1
       }
     },
-    "mistball": {"inherit": true, "isNonstandard": null},
-    "moongeistbeam": {"inherit": true, "isNonstandard": null},
+    "mistball": {"inherit": true, "basePower": 70},
     "multiattack": {"inherit": true, "isNonstandard": null},
     "naturepower": {
       "inherit": true,
@@ -4509,10 +4496,8 @@
     },
     "octazooka": {"inherit": true, "isNonstandard": null},
     "octolock": {"inherit": true, "isNonstandard": null},
-    "photongeyser": {"inherit": true, "isNonstandard": null},
     "plasmafists": {"inherit": true, "isNonstandard": null},
     "poweruppunch": {"inherit": true, "isNonstandard": null},
-    "prismaticlaser": {"inherit": true, "isNonstandard": null},
     "psychoshift": {"inherit": true, "isNonstandard": null},
     "purify": {"inherit": true, "isNonstandard": null},
     "recover": {"inherit": true, "pp": 10},
@@ -4520,24 +4505,17 @@
     "rest": {"inherit": true, "pp": 10},
     "revelationdance": {"inherit": true, "isNonstandard": "Past"},
     "revenge": {"inherit": true, "isNonstandard": null},
-    "rockwrecker": {"inherit": true, "isNonstandard": null},
     "roost": {
       "inherit": true,
       "pp": 10,
       "desc": "The user restores 1/2 of its maximum HP, rounded half up. Until the end of the turn, Flying-type users lose their Flying type and pure Flying-type users become Normal type. Does nothing if the user's HP is full."
     },
-    "sacredfire": {"inherit": true, "isNonstandard": null},
     "searingshot": {"inherit": true, "isNonstandard": null},
     "secretsword": {"inherit": true, "isNonstandard": null},
     "seedflare": {"inherit": true, "isNonstandard": "Past"},
     "shadowbone": {"inherit": true, "isNonstandard": null},
     "shelltrap": {"inherit": true, "isNonstandard": null},
     "shoreup": {"inherit": true, "pp": 10},
-    "simplebeam": {
-      "inherit": true,
-      "isNonstandard": null,
-      "desc": "Causes the target's Ability to become Simple. Fails if the target's Ability is As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Power Construct, RKS System, Schooling, Shields Down, Simple, Stance Change, Truant, or Zen Mode."
-    },
     "skullbash": {"inherit": true, "isNonstandard": null},
     "slackoff": {"inherit": true, "pp": 10},
     "sleeptalk": {
@@ -4557,20 +4535,15 @@
       "desc": "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move."
     },
     "softboiled": {"inherit": true, "pp": 10},
-    "sparklingaria": {"inherit": true, "isNonstandard": null},
     "spectralthief": {"inherit": true, "isNonstandard": null},
-    "spiderweb": {"inherit": true, "isNonstandard": "Past"},
     "stormthrow": {"inherit": true, "isNonstandard": null},
     "submission": {"inherit": true, "isNonstandard": null},
-    "sunsteelstrike": {"inherit": true, "isNonstandard": null},
     "tailglow": {"inherit": true, "isNonstandard": "Past"},
     "technoblast": {"inherit": true, "isNonstandard": null},
     "thousandarrows": {"inherit": true, "isNonstandard": null},
     "thousandwaves": {"inherit": true, "isNonstandard": null},
-    "topsyturvy": {"inherit": true, "isNonstandard": null},
     "toxicthread": {"inherit": true, "isNonstandard": "Past"},
     "trickortreat": {"inherit": true, "isNonstandard": null},
-    "triplekick": {"inherit": true, "isNonstandard": null},
     "venomdrench": {"inherit": true, "isNonstandard": null},
     "vitalthrow": {"inherit": true, "isNonstandard": null},
     "wickedblow": {"inherit": true, "basePower": 80},
@@ -4677,6 +4650,10 @@
     "sandtomb": {
       "inherit": true,
       "desc": "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move."
+    },
+    "simplebeam": {
+      "inherit": true,
+      "desc": "Causes the target's Ability to become Simple. Fails if the target's Ability is As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Power Construct, RKS System, Schooling, Shields Down, Simple, Stance Change, Truant, or Zen Mode."
     },
     "skillswap": {
       "inherit": true,
@@ -4911,11 +4888,10 @@
       "accuracy": 95,
       "basePower": 100,
       "category": "Special",
-      "isNonstandard": "Past",
       "name": "Aeroblast",
       "pp": 5,
       "priority": 0,
-      "flags": {"protect": 1, "mirror": 1, "distance": 1},
+      "flags": {"protect": 1, "mirror": 1, "distance": 1, "wind": 1},
       "critRatio": 2,
       "secondary": null,
       "target": "any",
@@ -5002,6 +4978,21 @@
       "target": "normal",
       "type": "Fighting",
       "shortDesc": "Power is equal to the base move's Z-Power."
+    },
+    "alluringvoice": {
+      "num": 914,
+      "accuracy": 100,
+      "basePower": 80,
+      "category": "Special",
+      "name": "Alluring Voice",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1, "sound": 1, "bypasssub": 1},
+      "secondary": {"chance": 100},
+      "target": "normal",
+      "type": "Fairy",
+      "desc": "Has a 100% chance to confuse the target if it had a stat stage raised this turn.",
+      "shortDesc": "100% confuse target that had a stat rise this turn."
     },
     "allyswitch": {
       "num": 502,
@@ -5249,7 +5240,7 @@
       "secondary": null,
       "target": "self",
       "type": "Normal",
-      "desc": "A random move among those known by the user's party members is selected for use. Does not select Assist, Baneful Bunker, Beak Blast, Belch, Bestow, Blazing Torque, Bounce, Celebrate, Chatter, Circle Throw, Combat Torque, Copycat, Counter, Covet, Destiny Bond, Detect, Dig, Dive, Dragon Tail, Endure, Feint, Fly, Focus Punch, Follow Me, Helping Hand, Hold Hands, King's Shield, Magical Torque, Mat Block, Me First, Metronome, Mimic, Mirror Coat, Mirror Move, Nature Power, Noxious Torque, Phantom Force, Protect, Rage Powder, Roar, Shadow Force, Shell Trap, Sketch, Sky Drop, Sleep Talk, Snatch, Spiky Shield, Spotlight, Struggle, Switcheroo, Thief, Transform, Trick, Whirlwind, or Wicked Torque.",
+      "desc": "A random move among those known by the user's party members is selected for use. Does not select Assist, Baneful Bunker, Beak Blast, Belch, Bestow, Blazing Torque, Bounce, Celebrate, Chatter, Circle Throw, Combat Torque, Copycat, Counter, Covet, Destiny Bond, Detect, Dig, Dive, Dragon Tail, Endure, Feint, Fly, Focus Punch, Follow Me, Helping Hand, Hold Hands, King's Shield, Magical Torque, Mat Block, Me First, Metronome, Mimic, Mirror Coat, Mirror Move, Nature Power, Noxious Torque, Phantom Force, Protect, Rage Powder, Roar, Shadow Force, Shell Trap, Sketch, Sky Drop, Sleep Talk, Snatch, Spiky Shield, Spotlight, Struggle, Switcheroo, Tera Starstorm, Thief, Transform, Trick, Whirlwind, or Wicked Torque.",
       "shortDesc": "Uses a random move known by a team member."
     },
     "assurance": {
@@ -5502,7 +5493,7 @@
       "target": "self",
       "type": "Poison",
       "zMove": {"boost": {"def": 1}},
-      "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon making contact with the user become poisoned. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+      "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon making contact with the user become poisoned. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
       "shortDesc": "Protects from moves. Contact: poison."
     },
     "barbbarrage": {
@@ -5578,7 +5569,6 @@
       "accuracy": 100,
       "basePower": 100,
       "category": "Physical",
-      "isNonstandard": "Past",
       "name": "Beak Blast",
       "pp": 15,
       "priority": -3,
@@ -5783,7 +5773,13 @@
       "name": "Bitter Blade",
       "pp": 10,
       "priority": 0,
-      "flags": {"contact": 1, "protect": 1, "mirror": 1, "slicing": 1},
+      "flags": {
+        "contact": 1,
+        "protect": 1,
+        "mirror": 1,
+        "heal": 1,
+        "slicing": 1
+      },
       "drain": [1, 2],
       "secondary": null,
       "target": "normal",
@@ -5873,6 +5869,7 @@
         "failinstruct": 1,
         "failmimic": 1
       },
+      "noSketch": true,
       "secondary": {"chance": 30, "status": "brn"},
       "target": "normal",
       "type": "Fire",
@@ -5937,7 +5934,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Normal",
-      "shortDesc": "Cannot be used twice in a row."
+      "shortDesc": "Cannot be selected the turn after it's used."
     },
     "bloomdoom": {
       "num": 644,
@@ -5960,7 +5957,6 @@
       "accuracy": 85,
       "basePower": 130,
       "category": "Special",
-      "isNonstandard": "Past",
       "name": "Blue Flare",
       "pp": 5,
       "priority": 0,
@@ -6023,7 +6019,6 @@
       "accuracy": 85,
       "basePower": 130,
       "category": "Physical",
-      "isNonstandard": "Past",
       "name": "Bolt Strike",
       "pp": 5,
       "priority": 0,
@@ -6376,6 +6371,24 @@
       "maxMove": {"basePower": 130},
       "desc": "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.",
       "shortDesc": "Hits 2-5 times in one turn."
+    },
+    "burningbulwark": {
+      "num": 908,
+      "accuracy": true,
+      "basePower": 0,
+      "category": "Status",
+      "name": "Burning Bulwark",
+      "pp": 10,
+      "priority": 4,
+      "flags": {"noassist": 1, "failcopycat": 1},
+      "stallingMove": true,
+      "volatileStatus": "burningbulwark",
+      "condition": {"duration": 1, "onTryHitPriority": 3},
+      "secondary": null,
+      "target": "self",
+      "type": "Fire",
+      "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user become burned. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+      "shortDesc": "Protects from damaging attacks. Contact: burn."
     },
     "burningjealousy": {
       "num": 807,
@@ -6859,6 +6872,7 @@
         "failinstruct": 1,
         "failmimic": 1
       },
+      "noSketch": true,
       "secondary": {"chance": 30, "status": "par"},
       "target": "normal",
       "type": "Fighting",
@@ -6984,7 +6998,6 @@
       "accuracy": true,
       "basePower": 0,
       "category": "Status",
-      "isNonstandard": "Past",
       "name": "Conversion",
       "pp": 30,
       "priority": 0,
@@ -7001,7 +7014,6 @@
       "accuracy": true,
       "basePower": 0,
       "category": "Status",
-      "isNonstandard": "Past",
       "name": "Conversion 2",
       "pp": 30,
       "priority": 0,
@@ -7033,7 +7045,7 @@
       "target": "self",
       "type": "Normal",
       "zMove": {"boost": {"accuracy": 1}},
-      "desc": "The user uses the last move used by any Pokemon, including itself. Fails if no move has been used, or if the last move used was Assist, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Blazing Torque, Celebrate, Chatter, Circle Throw, Combat Torque, Copycat, Counter, Covet, Destiny Bond, Detect, Dragon Tail, Dynamax Cannon, Endure, Feint, Focus Punch, Follow Me, Helping Hand, Hold Hands, King's Shield, Magical Torque, Mat Block, Me First, Metronome, Mimic, Mirror Move, Nature Power, Noxious Torque, Protect, Rage Powder, Roar, Shell Trap, Sketch, Sleep Talk, Snatch, Spiky Shield, Spotlight, Struggle, Switcheroo, Thief, Transform, Trick, Whirlwind, or Wicked Torque.",
+      "desc": "The user uses the last move used by any Pokemon, including itself. Fails if no move has been used, or if the last move used was Assist, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Blazing Torque, Celebrate, Chatter, Circle Throw, Combat Torque, Copycat, Counter, Covet, Destiny Bond, Detect, Dragon Tail, Dynamax Cannon, Endure, Feint, Focus Punch, Follow Me, Helping Hand, Hold Hands, King's Shield, Magical Torque, Mat Block, Me First, Metronome, Mimic, Mirror Move, Nature Power, Noxious Torque, Protect, Rage Powder, Roar, Shell Trap, Sketch, Sleep Talk, Snatch, Spiky Shield, Spotlight, Struggle, Switcheroo, Tera Starstorm, Thief, Transform, Trick, Whirlwind, or Wicked Torque.",
       "shortDesc": "Uses the last move used in the battle."
     },
     "coreenforcer": {
@@ -7301,7 +7313,6 @@
       "accuracy": 100,
       "basePower": 0,
       "category": "Physical",
-      "isNonstandard": "Past",
       "name": "Crush Grip",
       "pp": 5,
       "priority": 0,
@@ -7389,6 +7400,7 @@
       "priority": 0,
       "flags": {"protect": 1, "reflectable": 1, "mirror": 1},
       "status": "slp",
+      "noSketch": true,
       "secondary": null,
       "target": "allAdjacentFoes",
       "type": "Dark",
@@ -7416,7 +7428,6 @@
       "accuracy": true,
       "basePower": 0,
       "category": "Status",
-      "isNonstandard": "Past",
       "name": "Decorate",
       "pp": 15,
       "priority": 0,
@@ -7513,7 +7524,7 @@
       "target": "self",
       "type": "Fighting",
       "zMove": {"boost": {"evasion": 1}},
-      "desc": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+      "desc": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
       "shortDesc": "Prevents moves from affecting the user this turn."
     },
     "devastatingdrake": {
@@ -7879,6 +7890,23 @@
       "desc": "Has a 30% chance to paralyze the target.",
       "shortDesc": "30% chance to paralyze the target."
     },
+    "dragoncheer": {
+      "num": 913,
+      "accuracy": true,
+      "basePower": 0,
+      "category": "Status",
+      "name": "Dragon Cheer",
+      "pp": 15,
+      "priority": 0,
+      "flags": {"bypasssub": 1, "allyanim": 1},
+      "volatileStatus": "dragoncheer",
+      "condition": {},
+      "secondary": null,
+      "target": "adjacentAlly",
+      "type": "Dragon",
+      "desc": "Raises the target's chance for a critical hit by 1 stage, or by 2 stages if the target is Dragon type. Fails if there is no ally adjacent to the user, or if the target already has this effect or the Focus Energy effect. Baton Pass can be used to transfer this effect to an ally.",
+      "shortDesc": "Ally: Crit ratio +1, or +2 if ally is Dragon type."
+    },
     "dragonclaw": {
       "num": 337,
       "accuracy": 100,
@@ -7948,7 +7976,6 @@
       "accuracy": 100,
       "basePower": 90,
       "category": "Physical",
-      "isNonstandard": "Past",
       "name": "Dragon Hammer",
       "pp": 15,
       "priority": 0,
@@ -8356,6 +8383,22 @@
       "desc": "Damage is multiplied by 1.3333 if this move is super effective against the target.",
       "shortDesc": "Deals 1.3333x damage with supereffective hits."
     },
+    "electroshot": {
+      "num": 905,
+      "accuracy": 100,
+      "basePower": 130,
+      "category": "Special",
+      "name": "Electro Shot",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"charge": 1, "protect": 1, "mirror": 1},
+      "secondary": null,
+      "hasSheerForce": true,
+      "target": "normal",
+      "type": "Electric",
+      "desc": "This attack charges on the first turn and executes on the second. Raises the user's Special Attack by 1 stage on the first turn. If the user is holding a Power Herb or the weather is Primordial Sea or Rain Dance, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Primordial Sea or Rain Dance, the move still requires a turn to charge.",
+      "shortDesc": "Raises Sp. Atk by 1, hits turn 2. Rain: no charge."
+    },
     "electroweb": {
       "num": 527,
       "accuracy": 95,
@@ -8462,7 +8505,7 @@
       "target": "self",
       "type": "Normal",
       "zMove": {"effect": "clearnegativeboost"},
-      "desc": "The user will survive attacks made by other Pokemon during this turn with at least 1 HP. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+      "desc": "The user will survive attacks made by other Pokemon during this turn with at least 1 HP. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
       "shortDesc": "User survives attacks this turn with at least 1 HP."
     },
     "energyball": {
@@ -8800,6 +8843,20 @@
       "type": "Bug",
       "desc": "Raises the user's Attack by 3 stages if this move knocks out the target.",
       "shortDesc": "Raises user's Attack by 3 if this KOes the target."
+    },
+    "ficklebeam": {
+      "num": 907,
+      "accuracy": 100,
+      "basePower": 80,
+      "category": "Special",
+      "name": "Fickle Beam",
+      "pp": 5,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1},
+      "secondary": null,
+      "target": "normal",
+      "type": "Dragon",
+      "shortDesc": "Has a 30% chance this move's power is doubled."
     },
     "fierydance": {
       "num": 552,
@@ -9228,7 +9285,6 @@
       "accuracy": true,
       "basePower": 0,
       "category": "Status",
-      "isNonstandard": "Past",
       "name": "Floral Healing",
       "pp": 10,
       "priority": 0,
@@ -9484,7 +9540,6 @@
       "accuracy": 90,
       "basePower": 140,
       "category": "Physical",
-      "isNonstandard": "Past",
       "name": "Freeze Shock",
       "pp": 5,
       "priority": 0,
@@ -9636,7 +9691,6 @@
       "accuracy": 100,
       "basePower": 100,
       "category": "Physical",
-      "isNonstandard": "Past",
       "name": "Fusion Bolt",
       "pp": 5,
       "priority": 0,
@@ -9652,7 +9706,6 @@
       "accuracy": 100,
       "basePower": 100,
       "category": "Special",
-      "isNonstandard": "Past",
       "name": "Fusion Flare",
       "pp": 5,
       "priority": 0,
@@ -9812,7 +9865,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Steel",
-      "shortDesc": "Cannot be used twice in a row."
+      "shortDesc": "Cannot be selected the turn after it's used."
     },
     "gigavolthavoc": {
       "num": 646,
@@ -9850,7 +9903,6 @@
       "accuracy": 95,
       "basePower": 65,
       "category": "Special",
-      "isNonstandard": "Past",
       "name": "Glaciate",
       "pp": 10,
       "priority": 0,
@@ -10907,6 +10959,21 @@
       "desc": "Raises the user's Defense by 1 stage.",
       "shortDesc": "Raises the user's Defense by 1."
     },
+    "hardpress": {
+      "num": 912,
+      "accuracy": 100,
+      "basePower": 0,
+      "category": "Physical",
+      "name": "Hard Press",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1, "mirror": 1},
+      "secondary": null,
+      "target": "normal",
+      "type": "Steel",
+      "desc": "Power is equal to 120 * (target's current HP / target's maximum HP), rounded half down, but not less than 1.",
+      "shortDesc": "More power the more HP the target has left."
+    },
     "haze": {
       "num": 114,
       "accuracy": true,
@@ -11740,6 +11807,7 @@
       "flags": {"mirror": 1, "bypasssub": 1},
       "breaksProtect": true,
       "self": {"boosts": {"def": -1}},
+      "noSketch": true,
       "secondary": null,
       "target": "normal",
       "type": "Dark",
@@ -11837,7 +11905,6 @@
       "accuracy": 90,
       "basePower": 140,
       "category": "Special",
-      "isNonstandard": "Past",
       "name": "Ice Burn",
       "pp": 5,
       "priority": 0,
@@ -12321,7 +12388,7 @@
       "target": "self",
       "type": "Steel",
       "zMove": {"effect": "clearnegativeboost"},
-      "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+      "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
       "shortDesc": "Protects from damaging attacks. Contact: -1 Atk."
     },
     "knockoff": {
@@ -12840,9 +12907,8 @@
     "lusterpurge": {
       "num": 295,
       "accuracy": 100,
-      "basePower": 70,
+      "basePower": 95,
       "category": "Special",
-      "isNonstandard": "Past",
       "name": "Luster Purge",
       "pp": 5,
       "priority": 0,
@@ -12901,6 +12967,7 @@
         "failinstruct": 1,
         "failmimic": 1
       },
+      "noSketch": true,
       "secondary": {"chance": 30, "volatileStatus": "confusion"},
       "target": "normal",
       "type": "Fairy",
@@ -13085,6 +13152,22 @@
       "desc": "Damage doubles and no accuracy check is done if the target has used Minimize while active.",
       "shortDesc": "Damage doubles if the target used Minimize."
     },
+    "malignantchain": {
+      "num": 919,
+      "accuracy": 100,
+      "basePower": 100,
+      "category": "Special",
+      "isNonstandard": "Unobtainable",
+      "name": "Malignant Chain",
+      "pp": 5,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1},
+      "secondary": {"chance": 50, "status": "tox"},
+      "target": "normal",
+      "type": "Poison",
+      "desc": "Has a 50% chance to badly poison the target.",
+      "shortDesc": "50% chance to badly poison the target."
+    },
     "matblock": {
       "num": 561,
       "accuracy": true,
@@ -13113,7 +13196,7 @@
       "name": "Matcha Gotcha",
       "pp": 15,
       "priority": 0,
-      "flags": {"protect": 1, "mirror": 1, "defrost": 1},
+      "flags": {"protect": 1, "mirror": 1, "heal": 1, "defrost": 1},
       "drain": [1, 2],
       "thawsTarget": true,
       "secondary": {"chance": 20, "status": "brn"},
@@ -13849,6 +13932,7 @@
         "Surging Strikes",
         "Switcheroo",
         "Techno Blast",
+        "Tera Starstorm",
         "Thief",
         "Thousand Arrows",
         "Thousand Waves",
@@ -13867,8 +13951,22 @@
       "secondary": null,
       "target": "self",
       "type": "Normal",
-      "desc": "A random move is selected for use, other than After You, Apple Acid, Armor Cannon, Assist, Astral Barrage, Aura Wheel, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Blazing Torque, Body Press, Branch Poke, Breaking Swipe, Celebrate, Chatter, Chilling Water, Chilly Reception, Clangorous Soul, Collision Course, Combat Torque, Comeuppance, Copycat, Counter, Covet, Crafty Shield, Decorate, Destiny Bond, Detect, Diamond Storm, Doodle, Double Iron Bash, Double Shock, Dragon Ascent, Dragon Energy, Drum Beating, Dynamax Cannon, Electro Drift, Endure, Eternabeam, False Surrender, Feint, Fiery Wrath, Fillet Away, Fleur Cannon, Focus Punch, Follow Me, Freeze Shock, Freezing Glare, Glacial Lance, Grav Apple, Helping Hand, Hold Hands, Hyper Drill, Hyperspace Fury, Hyperspace Hole, Ice Burn, Instruct, Jet Punch, Jungle Healing, King's Shield, Life Dew, Light of Ruin, Magical Torque, Make It Rain, Mat Block, Me First, Meteor Assault, Metronome, Mimic, Mind Blown, Mirror Coat, Mirror Move, Moongeist Beam, Nature Power, Nature's Madness, Noxious Torque, Obstruct, Order Up, Origin Pulse, Overdrive, Photon Geyser, Plasma Fists, Population Bomb, Pounce, Power Shift, Precipice Blades, Protect, Pyro Ball, Quash, Quick Guard, Rage Fist, Rage Powder, Raging Bull, Raging Fury, Relic Song, Revival Blessing, Ruination, Salt Cure, Secret Sword, Shed Tail, Shell Trap, Silk Trap, Sketch, Sleep Talk, Snap Trap, Snarl, Snatch, Snore, Snowscape, Spectral Thief, Spicy Extract, Spiky Shield, Spirit Break, Spotlight, Springtide Storm, Steam Eruption, Steel Beam, Strange Steam, Struggle, Sunsteel Strike, Surging Strikes, Switcheroo, Techno Blast, Thief, Thousand Arrows, Thousand Waves, Thunder Cage, Thunderous Kick, Tidy Up, Trailblaze, Transform, Trick, Twin Beam, V-create, Wicked Blow, Wicked Torque, or Wide Guard.",
+      "desc": "A random move is selected for use, other than After You, Apple Acid, Armor Cannon, Assist, Astral Barrage, Aura Wheel, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Blazing Torque, Body Press, Branch Poke, Breaking Swipe, Celebrate, Chatter, Chilling Water, Chilly Reception, Clangorous Soul, Collision Course, Combat Torque, Comeuppance, Copycat, Counter, Covet, Crafty Shield, Decorate, Destiny Bond, Detect, Diamond Storm, Doodle, Double Iron Bash, Double Shock, Dragon Ascent, Dragon Energy, Drum Beating, Dynamax Cannon, Electro Drift, Endure, Eternabeam, False Surrender, Feint, Fiery Wrath, Fillet Away, Fleur Cannon, Focus Punch, Follow Me, Freeze Shock, Freezing Glare, Glacial Lance, Grav Apple, Helping Hand, Hold Hands, Hyper Drill, Hyperspace Fury, Hyperspace Hole, Ice Burn, Instruct, Jet Punch, Jungle Healing, King's Shield, Life Dew, Light of Ruin, Magical Torque, Make It Rain, Mat Block, Me First, Meteor Assault, Metronome, Mimic, Mind Blown, Mirror Coat, Mirror Move, Moongeist Beam, Nature Power, Nature's Madness, Noxious Torque, Obstruct, Order Up, Origin Pulse, Overdrive, Photon Geyser, Plasma Fists, Population Bomb, Pounce, Power Shift, Precipice Blades, Protect, Pyro Ball, Quash, Quick Guard, Rage Fist, Rage Powder, Raging Bull, Raging Fury, Relic Song, Revival Blessing, Ruination, Salt Cure, Secret Sword, Shed Tail, Shell Trap, Silk Trap, Sketch, Sleep Talk, Snap Trap, Snarl, Snatch, Snore, Snowscape, Spectral Thief, Spicy Extract, Spiky Shield, Spirit Break, Spotlight, Springtide Storm, Steam Eruption, Steel Beam, Strange Steam, Struggle, Sunsteel Strike, Surging Strikes, Switcheroo, Techno Blast, Tera Starstorm, Thief, Thousand Arrows, Thousand Waves, Thunder Cage, Thunderous Kick, Tidy Up, Trailblaze, Transform, Trick, Twin Beam, V-create, Wicked Blow, Wicked Torque, or Wide Guard.",
       "shortDesc": "Picks a random move."
+    },
+    "mightycleave": {
+      "num": 910,
+      "accuracy": 100,
+      "basePower": 95,
+      "category": "Physical",
+      "name": "Mighty Cleave",
+      "pp": 5,
+      "priority": 0,
+      "flags": {"contact": 1, "mirror": 1, "slicing": 1},
+      "secondary": null,
+      "target": "normal",
+      "type": "Rock",
+      "shortDesc": "Bypasses protection without breaking it."
     },
     "milkdrink": {
       "num": 208,
@@ -13910,7 +14008,7 @@
       "target": "normal",
       "type": "Normal",
       "zMove": {"boost": {"accuracy": 1}},
-      "desc": "While the user remains active, this move is replaced by the last move used by the target. The copied move has the maximum PP for that move. Fails if the target has not made a move, if the user has Transformed, if the user already knows the move, or if the move is Assist, Behemoth Bash, Behemoth Blade, Belch, Blazing Torque, Celebrate, Chatter, Combat Torque, Copycat, Dynamax Cannon, Hold Hands, Magical Torque, Me First, Metronome, Mimic, Mirror Move, Nature Power, Noxious Torque, Sketch, Sleep Talk, Struggle, Transform, or Wicked Torque.",
+      "desc": "While the user remains active, this move is replaced by the last move used by the target. The copied move has the maximum PP for that move. Fails if the target has not made a move, if the user has Transformed, if the user already knows the move, or if the move is Assist, Behemoth Bash, Behemoth Blade, Belch, Blazing Torque, Celebrate, Chatter, Combat Torque, Copycat, Dynamax Cannon, Hold Hands, Magical Torque, Me First, Metronome, Mimic, Mirror Move, Nature Power, Noxious Torque, Sketch, Sleep Talk, Struggle, Tera Starstorm, Transform, or Wicked Torque.",
       "shortDesc": "The last move the target used replaces this one."
     },
     "mindblown": {
@@ -14070,9 +14168,8 @@
     "mistball": {
       "num": 296,
       "accuracy": 100,
-      "basePower": 70,
+      "basePower": 95,
       "category": "Special",
-      "isNonstandard": "Past",
       "name": "Mist Ball",
       "pp": 5,
       "priority": 0,
@@ -14142,7 +14239,6 @@
       "accuracy": 100,
       "basePower": 100,
       "category": "Special",
-      "isNonstandard": "Past",
       "name": "Moongeist Beam",
       "pp": 5,
       "priority": 0,
@@ -14581,6 +14677,7 @@
         "failinstruct": 1,
         "failmimic": 1
       },
+      "noSketch": true,
       "secondary": {"chance": 30, "status": "psn"},
       "target": "normal",
       "type": "Poison",
@@ -14635,7 +14732,7 @@
       "secondary": null,
       "target": "self",
       "type": "Dark",
-      "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Defense lowered by 2 stages. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+      "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Defense lowered by 2 stages. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
       "shortDesc": "Protects from damaging attacks. Contact: -2 Def."
     },
     "oceanicoperetta": {
@@ -15006,7 +15103,6 @@
       "accuracy": 100,
       "basePower": 100,
       "category": "Special",
-      "isNonstandard": "Past",
       "name": "Photon Geyser",
       "pp": 5,
       "priority": 0,
@@ -15489,7 +15585,6 @@
       "accuracy": 100,
       "basePower": 160,
       "category": "Special",
-      "isNonstandard": "Past",
       "name": "Prismatic Laser",
       "pp": 10,
       "priority": 0,
@@ -15517,7 +15612,7 @@
       "target": "self",
       "type": "Normal",
       "zMove": {"effect": "clearnegativeboost"},
-      "desc": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+      "desc": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
       "shortDesc": "Prevents moves from affecting the user this turn."
     },
     "psybeam": {
@@ -15596,6 +15691,21 @@
       "desc": "If this attack does not miss, the effects of Reflect, Light Screen, and Aurora Veil end for the target's side of the field before damage is calculated.",
       "shortDesc": "Destroys screens, unless the target is immune."
     },
+    "psychicnoise": {
+      "num": 917,
+      "accuracy": 100,
+      "basePower": 75,
+      "category": "Special",
+      "name": "Psychic Noise",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1, "sound": 1, "bypasssub": 1},
+      "secondary": {"chance": 100, "volatileStatus": "healblock"},
+      "target": "normal",
+      "type": "Psychic",
+      "desc": "For 2 turns, the target is prevented from restoring any HP as long as it remains active. During the effect, healing and draining moves are unusable, and Abilities and items that grant healing will not heal the user. If an affected Pokemon uses Baton Pass, the replacement will remain unable to restore its HP. Pain Split and the Regenerator Ability are unaffected.",
+      "shortDesc": "For 2 turns, the target is prevented from healing."
+    },
     "psychicterrain": {
       "num": 678,
       "accuracy": true,
@@ -15625,7 +15735,6 @@
       "accuracy": 90,
       "basePower": 140,
       "category": "Special",
-      "isNonstandard": "Past",
       "name": "Psycho Boost",
       "pp": 5,
       "priority": 0,
@@ -15863,7 +15972,7 @@
       "target": "allySide",
       "type": "Fighting",
       "zMove": {"boost": {"def": 1}},
-      "desc": "The user and its party members are protected from attacks with original or altered priority greater than 0 made by other Pokemon, including allies, during this turn. This move modifies the same 1/X chance of being successful used by other protection moves, where X starts at 1 and triples each time this move is successfully used, but does not use the chance to check for failure. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn or if this move is already in effect for the user's side.",
+      "desc": "The user and its party members are protected from attacks with original or altered priority greater than 0 made by other Pokemon, including allies, during this turn. This move modifies the same 1/X chance of being successful used by other protection moves, where X starts at 1 and triples each time this move is successfully used, but does not use the chance to check for failure. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn or if this move is already in effect for the user's side.",
       "shortDesc": "Protects allies from priority attacks this turn."
     },
     "quiverdance": {
@@ -16259,10 +16368,11 @@
       "pp": 1,
       "noPPBoosts": true,
       "priority": 0,
-      "flags": {},
+      "flags": {"heal": 1},
       "slotCondition": "revivalblessing",
       "selfSwitch": true,
       "condition": {"duration": 1},
+      "noSketch": true,
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -16441,7 +16551,6 @@
       "accuracy": 90,
       "basePower": 150,
       "category": "Physical",
-      "isNonstandard": "Past",
       "name": "Rock Wrecker",
       "pp": 5,
       "priority": 0,
@@ -16578,7 +16687,6 @@
       "accuracy": 95,
       "basePower": 100,
       "category": "Physical",
-      "isNonstandard": "Past",
       "name": "Sacred Fire",
       "pp": 5,
       "priority": 0,
@@ -16902,7 +17010,6 @@
       "accuracy": 100,
       "basePower": 85,
       "category": "Special",
-      "isNonstandard": "Past",
       "overrideDefensiveStat": "def",
       "name": "Secret Sword",
       "pp": 10,
@@ -17312,7 +17419,7 @@
       "condition": {"duration": 1, "onTryHitPriority": 3},
       "target": "self",
       "type": "Bug",
-      "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Speed lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+      "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Speed lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
       "shortDesc": "Protects from damaging attacks. Contact: -1 Spe."
     },
     "silverwind": {
@@ -17409,7 +17516,6 @@
       "accuracy": true,
       "basePower": 0,
       "category": "Status",
-      "isNonstandard": "Past",
       "name": "Sketch",
       "pp": 1,
       "noPPBoosts": true,
@@ -18019,7 +18125,6 @@
       "accuracy": 100,
       "basePower": 90,
       "category": "Special",
-      "isNonstandard": "Past",
       "name": "Sparkling Aria",
       "pp": 10,
       "priority": 0,
@@ -18169,7 +18274,7 @@
       "target": "self",
       "type": "Grass",
       "zMove": {"boost": {"def": 1}},
-      "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon making contact with the user lose 1/8 of their maximum HP, rounded down. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+      "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon making contact with the user lose 1/8 of their maximum HP, rounded down. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
       "shortDesc": "Protects from moves. Contact: loses 1/8 max HP."
     },
     "spinout": {
@@ -18822,7 +18927,6 @@
       "accuracy": 100,
       "basePower": 100,
       "category": "Physical",
-      "isNonstandard": "Past",
       "name": "Sunsteel Strike",
       "pp": 5,
       "priority": 0,
@@ -18833,6 +18937,22 @@
       "type": "Steel",
       "desc": "This move and its effects ignore the Abilities of other Pokemon.",
       "shortDesc": "Ignores the Abilities of other Pokemon."
+    },
+    "supercellslam": {
+      "num": 916,
+      "accuracy": 95,
+      "basePower": 100,
+      "category": "Physical",
+      "name": "Supercell Slam",
+      "pp": 15,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1, "mirror": 1},
+      "hasCrashDamage": true,
+      "secondary": null,
+      "target": "normal",
+      "type": "Electric",
+      "desc": "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+      "shortDesc": "User is hurt by 50% of its max HP if it misses."
     },
     "superfang": {
       "num": 162,
@@ -19105,6 +19225,24 @@
       "type": "Grass",
       "desc": "If this move is successful, it causes the target's Speed to be lowered by 1 stage at the end of each turn for 3 turns.",
       "shortDesc": "Target's Speed is lowered by 1 stage for 3 turns."
+    },
+    "tachyoncutter": {
+      "num": 911,
+      "accuracy": true,
+      "basePower": 50,
+      "category": "Special",
+      "name": "Tachyon Cutter",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1, "slicing": 1},
+      "multihit": 2,
+      "secondary": null,
+      "target": "normal",
+      "type": "Steel",
+      "zMove": {"basePower": 180},
+      "maxMove": {"basePower": 140},
+      "desc": "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. This move does not check accuracy.",
+      "shortDesc": "Hits twice. This move does not check accuracy."
     },
     "tackle": {
       "num": 33,
@@ -19392,6 +19530,21 @@
       "desc": "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
       "shortDesc": "User switches out."
     },
+    "temperflare": {
+      "num": 915,
+      "accuracy": 100,
+      "basePower": 75,
+      "category": "Physical",
+      "name": "Temper Flare",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1, "mirror": 1},
+      "secondary": null,
+      "target": "normal",
+      "type": "Fire",
+      "desc": "Power doubles if the user's last move on the previous turn, including moves called by other moves or those used through Instruct, Magic Coat, Snatch, or the Dancer or Magic Bounce Abilities, failed to do any of its normal effects, not including damage from an unsuccessful High Jump Kick, Jump Kick, or Mind Blown, or if the user was prevented from moving by any effect other than recharging or Sky Drop. A move that was blocked by Baneful Bunker, Detect, King's Shield, Protect, Spiky Shield, Crafty Shield, Mat Block, Quick Guard, or Wide Guard will not double this move's power, nor will Bounce or Fly ending early due to the effect of Gravity, Smack Down, or Thousand Arrows.",
+      "shortDesc": "Power doubles if the user's last move failed."
+    },
     "terablast": {
       "num": 851,
       "accuracy": 100,
@@ -19406,6 +19559,28 @@
       "type": "Normal",
       "desc": "If the user is Terastallized, this move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes, and this move's type becomes the same as the user's Tera Type.",
       "shortDesc": "If Terastallized: Phys. if Atk > SpA, type = Tera."
+    },
+    "terastarstorm": {
+      "num": 906,
+      "accuracy": 100,
+      "basePower": 120,
+      "category": "Special",
+      "name": "Tera Starstorm",
+      "pp": 5,
+      "priority": 0,
+      "flags": {
+        "protect": 1,
+        "mirror": 1,
+        "noassist": 1,
+        "failcopycat": 1,
+        "failmimic": 1
+      },
+      "noSketch": true,
+      "secondary": null,
+      "target": "normal",
+      "type": "Normal",
+      "desc": "If the user is a Terapagos in Stellar Form, this move's type becomes Stellar and hits all opposing Pokemon.",
+      "shortDesc": "Terapagos-Stellar: Stellar type, hits both foes."
     },
     "terrainpulse": {
       "num": 805,
@@ -19563,6 +19738,21 @@
       "desc": "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Shed Tail, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Mortal Spin, Rapid Spin, or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
       "shortDesc": "Traps and damages the target for 4-5 turns."
     },
+    "thunderclap": {
+      "num": 909,
+      "accuracy": 100,
+      "basePower": 70,
+      "category": "Special",
+      "name": "Thunderclap",
+      "pp": 5,
+      "priority": 1,
+      "flags": {"protect": 1, "mirror": 1},
+      "secondary": null,
+      "target": "normal",
+      "type": "Electric",
+      "desc": "Fails if the target did not select a physical attack, special attack, or Me First for use this turn, or if the target moves before the user.",
+      "shortDesc": "Usually goes first. Fails if target is not attacking."
+    },
     "thunderfang": {
       "num": 422,
       "accuracy": 95,
@@ -19681,7 +19871,6 @@
       "accuracy": true,
       "basePower": 0,
       "category": "Status",
-      "isNonstandard": "Past",
       "name": "Topsy-Turvy",
       "pp": 20,
       "priority": 0,
@@ -19952,7 +20141,6 @@
       "accuracy": 90,
       "basePower": 10,
       "category": "Physical",
-      "isNonstandard": "Past",
       "name": "Triple Kick",
       "pp": 10,
       "priority": 0,
@@ -20081,6 +20269,21 @@
       "type": "Bug",
       "desc": "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
       "shortDesc": "User switches out after damaging the target."
+    },
+    "upperhand": {
+      "num": 918,
+      "accuracy": 100,
+      "basePower": 65,
+      "category": "Physical",
+      "name": "Upper Hand",
+      "pp": 15,
+      "priority": 3,
+      "flags": {"contact": 1, "protect": 1, "mirror": 1},
+      "secondary": {"chance": 100, "volatileStatus": "flinch"},
+      "target": "normal",
+      "type": "Fighting",
+      "desc": "Has a 100% chance to make the target flinch. Fails if the target did not select a priority move for use this turn, or if the target moves before the user.",
+      "shortDesc": "100% flinch. Fails unless target using priority."
     },
     "uproar": {
       "num": 253,
@@ -20527,6 +20730,7 @@
         "failinstruct": 1,
         "failmimic": 1
       },
+      "noSketch": true,
       "secondary": {"chance": 10, "status": "slp"},
       "target": "normal",
       "type": "Dark",
@@ -20548,7 +20752,7 @@
       "target": "allySide",
       "type": "Rock",
       "zMove": {"boost": {"def": 1}},
-      "desc": "The user and its party members are protected from moves made by other Pokemon, including allies, during this turn that target all adjacent foes or all adjacent Pokemon. This move modifies the same 1/X chance of being successful used by other protection moves, where X starts at 1 and triples each time this move is successfully used, but does not use the chance to check for failure. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn or if this move is already in effect for the user's side.",
+      "desc": "The user and its party members are protected from moves made by other Pokemon, including allies, during this turn that target all adjacent foes or all adjacent Pokemon. This move modifies the same 1/X chance of being successful used by other protection moves, where X starts at 1 and triples each time this move is successfully used, but does not use the chance to check for failure. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn or if this move is already in effect for the user's side.",
       "shortDesc": "Protects allies from multi-target moves this turn."
     },
     "wildboltstorm": {

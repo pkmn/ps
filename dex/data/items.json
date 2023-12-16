@@ -1389,7 +1389,6 @@
       "fling": {"basePower": 10},
       "num": 1111,
       "gen": 8,
-      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "bignugget": {
@@ -1703,7 +1702,6 @@
       "fling": {"basePower": 10},
       "num": 1112,
       "gen": 8,
-      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "cobaberry": {
@@ -1970,7 +1968,6 @@
       "fling": {"basePower": 50},
       "num": 324,
       "gen": 4,
-      "isNonstandard": "Past",
       "desc": "Evolves Porygon2 into Porygon-Z when traded."
     },
     "durinberry": {
@@ -2038,7 +2035,6 @@
       "fling": {"basePower": 80},
       "num": 322,
       "gen": 4,
-      "isNonstandard": "Past",
       "desc": "Evolves Electabuzz into Electivire when traded."
     },
     "electricgem": {
@@ -2263,7 +2259,6 @@
       "fling": {"basePower": 0},
       "num": 1113,
       "gen": 8,
-      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "flyinggem": {
@@ -3022,7 +3017,6 @@
       "fling": {"basePower": 10},
       "num": 1110,
       "gen": 8,
-      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "lucarionite": {
@@ -3129,7 +3123,6 @@
       "fling": {"basePower": 80},
       "num": 323,
       "gen": 4,
-      "isNonstandard": "Past",
       "desc": "Evolves Magmar into Magmortar when traded."
     },
     "magnet": {
@@ -3260,6 +3253,13 @@
       "gen": 6,
       "isNonstandard": "Past",
       "desc": "If held by a Metagross, this item allows it to Mega Evolve in battle."
+    },
+    "metalalloy": {
+      "name": "Metal Alloy",
+      "fling": {"basePower": 30},
+      "num": 2482,
+      "gen": 9,
+      "desc": "Evolves Duraludon into Archaludon when used."
     },
     "metalcoat": {
       "name": "Metal Coat",
@@ -3787,7 +3787,6 @@
       "fling": {"basePower": 80},
       "num": 321,
       "gen": 4,
-      "isNonstandard": "Past",
       "desc": "Evolves Rhydon into Rhyperior when traded."
     },
     "psychicgem": {
@@ -3956,7 +3955,6 @@
       "fling": {"basePower": 10},
       "num": 1115,
       "gen": 8,
-      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "rindoberry": {
@@ -4395,7 +4393,6 @@
       "fling": {"basePower": 10},
       "num": 1114,
       "gen": 8,
-      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "steelixite": {
@@ -4477,7 +4474,6 @@
       "fling": {"basePower": 10},
       "num": 1109,
       "gen": 8,
-      "isNonstandard": "Past",
       "desc": "Evolves Milcery into Alcremie when held and spun around."
     },
     "sunstone": {
@@ -5453,7 +5449,6 @@
       "fling": {"basePower": 30},
       "num": 252,
       "gen": 2,
-      "isNonstandard": "Past",
       "desc": "Evolves Porygon into Porygon2 when traded."
     },
     "utilityumbrella": {

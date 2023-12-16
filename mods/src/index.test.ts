@@ -114,6 +114,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('gen9predlc', async () => {
+        Dex.mod('gen9dlc1' as ID, await import('./gen9dlc1') as ModData);
         const dex =
           new ModdedDex(Dex.mod('gen9predlc' as ID, await import('./gen9predlc') as ModData));
         expect(dex.gen).toBe(9);
@@ -122,6 +123,16 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.abilities.get('Hospitality').isNonstandard).toBe('Future');
         expect(dex.moves.get('Blood Moon').isNonstandard).toBe('Future');
         expect(dex.moves.get('Clanging Scales').isNonstandard).toBe('Past');
+      });
+
+      it('gen9dlc1', async () => {
+        const dex =
+          new ModdedDex(Dex.mod('gen9dlc1' as ID, await import('./gen9dlc1') as ModData));
+        expect(dex.gen).toBe(9);
+        expect(dex.species.get('Gouging Fire').tier).toBe('Illegal');
+        expect(dex.items.get('Dubious Disc').isNonstandard).toBe('Past');
+        expect(dex.moves.get('Tachyon Cutter').isNonstandard).toBe('Future');
+        expect(dex.moves.get('Sacred Fire').isNonstandard).toBe('Past');
       });
     });
 

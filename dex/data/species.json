@@ -25274,6 +25274,7 @@
       },
       "abilities": {"0": "Light Metal", "1": "Heavy Metal", "H": "Stalwart"},
       "weightkg": 40,
+      "evos": ["Archaludon"],
       "eggGroups": ["Mineral", "Dragon"],
       "canGigantamax": "G-Max Depletion"
     },
@@ -28057,6 +28058,7 @@
       },
       "weightkg": 4.4,
       "prevo": "Applin",
+      "evos": ["Hydrapple"],
       "evoType": "useItem",
       "evoItem": "Syrupy Apple",
       "eggGroups": ["Grass", "Dragon"]
@@ -28388,6 +28390,200 @@
       "requiredItem": "Cornerstone Mask",
       "battleOnly": "Ogerpon-Cornerstone",
       "forceTeraType": "Rock"
+    },
+    "archaludon": {
+      "num": 1018,
+      "name": "Archaludon",
+      "types": ["Steel", "Dragon"],
+      "baseStats": {
+        "hp": 90,
+        "atk": 105,
+        "def": 130,
+        "spa": 125,
+        "spd": 65,
+        "spe": 85
+      },
+      "abilities": {"0": "Stamina", "1": "Sturdy", "H": "Stalwart"},
+      "weightkg": 60,
+      "prevo": "Duraludon",
+      "evoType": "useItem",
+      "evoItem": "Metal Alloy",
+      "eggGroups": ["Mineral", "Dragon"]
+    },
+    "hydrapple": {
+      "num": 1019,
+      "name": "Hydrapple",
+      "types": ["Grass", "Dragon"],
+      "baseStats": {
+        "hp": 106,
+        "atk": 80,
+        "def": 110,
+        "spa": 120,
+        "spd": 80,
+        "spe": 44
+      },
+      "abilities": {
+        "0": "Supersweet Syrup",
+        "1": "Regenerator",
+        "H": "Sticky Hold"
+      },
+      "weightkg": 93,
+      "prevo": "Dipplin",
+      "evoType": "levelMove",
+      "evoMove": "Dragon Cheer",
+      "eggGroups": ["Grass", "Dragon"]
+    },
+    "gougingfire": {
+      "num": 1020,
+      "name": "Gouging Fire",
+      "types": ["Fire", "Dragon"],
+      "gender": "N",
+      "baseStats": {
+        "hp": 105,
+        "atk": 115,
+        "def": 121,
+        "spa": 65,
+        "spd": 93,
+        "spe": 91
+      },
+      "abilities": {"0": "Protosynthesis"},
+      "weightkg": 590,
+      "tags": ["Paradox"],
+      "eggGroups": ["Undiscovered"]
+    },
+    "ragingbolt": {
+      "num": 1021,
+      "name": "Raging Bolt",
+      "types": ["Electric", "Dragon"],
+      "gender": "N",
+      "baseStats": {
+        "hp": 125,
+        "atk": 73,
+        "def": 91,
+        "spa": 137,
+        "spd": 89,
+        "spe": 75
+      },
+      "abilities": {"0": "Protosynthesis"},
+      "weightkg": 480,
+      "tags": ["Paradox"],
+      "eggGroups": ["Undiscovered"]
+    },
+    "ironboulder": {
+      "num": 1022,
+      "name": "Iron Boulder",
+      "types": ["Rock", "Psychic"],
+      "gender": "N",
+      "baseStats": {
+        "hp": 90,
+        "atk": 120,
+        "def": 80,
+        "spa": 68,
+        "spd": 108,
+        "spe": 124
+      },
+      "abilities": {"0": "Quark Drive"},
+      "weightkg": 162.5,
+      "tags": ["Paradox"],
+      "eggGroups": ["Undiscovered"]
+    },
+    "ironcrown": {
+      "num": 1023,
+      "name": "Iron Crown",
+      "types": ["Steel", "Psychic"],
+      "gender": "N",
+      "baseStats": {
+        "hp": 90,
+        "atk": 72,
+        "def": 100,
+        "spa": 122,
+        "spd": 108,
+        "spe": 98
+      },
+      "abilities": {"0": "Quark Drive"},
+      "weightkg": 156,
+      "tags": ["Paradox"],
+      "eggGroups": ["Undiscovered"]
+    },
+    "terapagos": {
+      "num": 1024,
+      "name": "Terapagos",
+      "types": ["Normal"],
+      "baseStats": {
+        "hp": 90,
+        "atk": 65,
+        "def": 85,
+        "spa": 65,
+        "spd": 85,
+        "spe": 60
+      },
+      "abilities": {"0": "Tera Shift"},
+      "weightkg": 6.5,
+      "tags": ["Restricted Legendary"],
+      "eggGroups": ["Undiscovered"],
+      "otherFormes": ["Terapagos-Terastal", "Terapagos-Stellar"],
+      "formeOrder": ["Terapagos", "Terapagos-Terastal", "Terapagos-Stellar"],
+      "forceTeraType": "Stellar"
+    },
+    "terapagosterastal": {
+      "num": 1024,
+      "name": "Terapagos-Terastal",
+      "baseSpecies": "Terapagos",
+      "forme": "Terastal",
+      "types": ["Normal"],
+      "baseStats": {
+        "hp": 95,
+        "atk": 95,
+        "def": 110,
+        "spa": 105,
+        "spd": 110,
+        "spe": 85
+      },
+      "abilities": {"0": "Tera Shell"},
+      "weightkg": 16,
+      "tags": ["Restricted Legendary"],
+      "eggGroups": ["Undiscovered"],
+      "battleOnly": "Terapagos",
+      "forceTeraType": "Stellar"
+    },
+    "terapagosstellar": {
+      "num": 1024,
+      "name": "Terapagos-Stellar",
+      "baseSpecies": "Terapagos",
+      "forme": "Stellar",
+      "types": ["Normal"],
+      "baseStats": {
+        "hp": 160,
+        "atk": 105,
+        "def": 110,
+        "spa": 130,
+        "spd": 110,
+        "spe": 85
+      },
+      "abilities": {"0": "Teraform Zero"},
+      "weightkg": 77,
+      "tags": ["Restricted Legendary"],
+      "eggGroups": ["Undiscovered"],
+      "battleOnly": "Terapagos",
+      "forceTeraType": "Stellar"
+    },
+    "pecharunt": {
+      "num": 1024,
+      "name": "Pecharunt",
+      "types": ["Poison", "Ghost"],
+      "gender": "N",
+      "baseStats": {
+        "hp": 88,
+        "atk": 88,
+        "def": 160,
+        "spa": 88,
+        "spd": 88,
+        "spe": 88
+      },
+      "abilities": {"0": "Poison Puppeteer"},
+      "weightkg": 0.3,
+      "tags": ["Mythical"],
+      "eggGroups": ["Undiscovered"]
     },
     "missingno": {
       "num": 0,

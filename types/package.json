@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/types",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "types": "index.d.ts",
   "description": "Type definitions common across Pokemon Showdown",
   "repository": "github:pkmn/ps",

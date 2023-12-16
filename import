@@ -229,6 +229,13 @@ const MOD_IMPORTS = {
   'data/mods/gen9predlc/moves.ts': ['ModdedMoveData'],
   'data/mods/gen9predlc/pokedex.ts': ['ModdedSpeciesData'],
   'data/mods/gen9predlc/scripts.ts': ['ModdedBattleScriptsData'],
+
+  // gen9dlc1
+  'data/mods/gen9dlc1/abilities.ts': ['ModdedAbilityData'],
+  'data/mods/gen9dlc1/formats-data.ts': ['SpeciesFormatsData'],
+  'data/mods/gen9dlc1/items.ts': ['ModdedItemData'],
+  'data/mods/gen9dlc1/learnsets.ts': ['LearnsetData'],
+  'data/mods/gen9dlc1/moves.ts': ['ModdedMoveData'],
 };
 const RANDOMS_IMPORTS = {
   'data/random-teams.ts': [
@@ -474,6 +481,7 @@ const MOD_OVERRIDDEN = new Set([
   'data/mods/gen8bdsp/index.ts',
   'data/mods/gen8dlc1/index.ts',
   'data/mods/gen9predlc/index.ts',
+  'data/mods/gen9dlc1/index.ts',
   'data/mods/index.test.ts',
   'data/mods/index.ts',
 ]);

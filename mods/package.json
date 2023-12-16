@@ -61,6 +61,10 @@
     "./gen9predlc": {
       "require": "./build/gen9predlc/index.js",
       "import": "./build/gen9predlc/index.mjs"
+    },
+    "./gen9dlc1": {
+      "require": "./build/gen9dlc1/index.js",
+      "import": "./build/gen9dlc1/index.mjs"
     }
   },
   "typesVersions": {
@@ -97,6 +101,9 @@
       ],
       "gen9predlc": [
         "./build/gen9predlc/index.d.ts"
+      ],
+      "gen9dlc1": [
+        "./build/gen9dlc1/index.d.ts"
       ]
     }
   },
@@ -145,7 +152,8 @@
           "./src/gen7sm/*.ts",
           "./src/gen8bdsp/*.ts",
           "./src/gen8dlc1/*.ts",
-          "./src/gen9predlc/*.ts"
+          "./src/gen9predlc/*.ts",
+          "./src/gen9dlc1/*.ts"
         ],
         "rules": {
           "@typescript-eslint/quotes": "off",

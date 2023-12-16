@@ -16,7 +16,7 @@
     "build"
   ],
   "dependencies": {
-    "@pkmn/types": "^3.0.0"
+    "@pkmn/types": "^4.0.0"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
