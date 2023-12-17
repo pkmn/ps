@@ -1026,7 +1026,6 @@
     "seaincense": {"inherit": true, "isNonstandard": null},
     "shockdrive": {"inherit": true, "isNonstandard": null},
     "skyplate": {"inherit": true, "isNonstandard": "Past"},
-    "souldew": {"inherit": true, "isNonstandard": null},
     "splashplate": {"inherit": true, "isNonstandard": "Past"},
     "spookyplate": {"inherit": true, "isNonstandard": "Past"},
     "sportball": {"inherit": true, "isNonstandard": null},
@@ -4333,7 +4332,6 @@
       "itemUser": ["Latios", "Latias"],
       "num": 225,
       "gen": 3,
-      "isNonstandard": "Past",
       "desc": "If held by a Latias/Latios, its Dragon- and Psychic-type moves have 1.2x power."
     },
     "spelltag": {

@@ -228,7 +228,7 @@ describe('Dex', () => {
         expect(counts(gen)).toEqual(total += COUNTS[gen - 1]);
       }
       expect(counts(8)).toBe(623 + 41 + 34 - /* GMax */ 33);
-      expect(counts(9)).toBe(607 + 3 + 22 + 15 + (15 - 1 + 29));
+      expect(counts(9)).toBe(607 + 3 + 22 + 15 + (15 - 1 + 23));
     });
 
     it('cached', () => {

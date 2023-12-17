@@ -2131,6 +2131,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 100,
 		basePower: 130,
 		category: "Special",
+		isNonstandard: "Unobtainable",
 		name: "Burn Up",
 		pp: 5,
 		priority: 0,
@@ -2971,6 +2972,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
+		isNonstandard: "Unobtainable",
 		name: "Corrosive Gas",
 		pp: 40,
 		priority: 0,
@@ -3382,6 +3384,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 95,
 		basePower: 50,
 		category: "Physical",
+		isNonstandard: "Unobtainable",
 		name: "Cut",
 		pp: 30,
 		priority: 0,
@@ -8529,7 +8532,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 5,
 			durationCallback(target, source, effect) {
-				if (effect?.effectType === "Move") {
+				if (effect?.name === "Psychic Noise") {
 					return 2;
 				}
 				if (source?.hasAbility('persistent')) {
@@ -9179,6 +9182,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 100,
 		basePower: 40,
 		category: "Physical",
+		isNonstandard: "Unobtainable",
 		name: "Hold Back",
 		pp: 40,
 		priority: 0,
@@ -9197,6 +9201,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
+		isNonstandard: "Unobtainable",
 		name: "Hold Hands",
 		pp: 40,
 		priority: 0,
@@ -21061,6 +21066,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 95,
 		basePower: 180,
 		category: "Physical",
+		isNonstandard: "Unobtainable",
 		name: "V-create",
 		pp: 5,
 		priority: 0,

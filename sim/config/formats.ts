@@ -118,22 +118,24 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Same Type Clause', 'Terastal Clause' ],
     banlist: [
-      'Annihilape',         'Arceus',            'Calyrex-Ice',
-      'Calyrex-Shadow',     'Chi-Yu',            'Deoxys-Base',
-      'Deoxys-Attack',      'Dialga',            'Dialga-Origin',
-      'Eternatus',          'Giratina',          'Giratina-Origin',
-      'Groudon',            'Ho-Oh',             'Iron Bundle',
-      'Koraidon',           'Kyogre',            'Kyurem-White',
-      'Lugia',              'Lunala',            'Magearna',
-      'Mewtwo',             'Miraidon',          'Necrozma-Dawn-Wings',
-      'Necrozma-Dusk-Mane', 'Palafin',           'Palkia',
-      'Palkia-Origin',      'Rayquaza',          'Reshiram',
-      'Shaymin-Sky',        'Urshifu-Base',      'Zacian',
-      'Zacian-Crowned',     'Zamazenta-Crowned', 'Zekrom',
-      'Moody',              'Shadow Tag',        'Damp Rock',
-      'Focus Band',         "King's Rock",       'Razor Fang',
-      'Quick Claw',         'Acupressure',       'Baton Pass',
-      'Last Respects'
+      'Annihilape',      'Arceus',              'Calyrex-Ice',
+      'Calyrex-Shadow',  'Chi-Yu',              'Blaziken',
+      'Deoxys-Base',     'Deoxys-Attack',       'Dialga',
+      'Dialga-Origin',   'Eternatus',           'Giratina',
+      'Giratina-Origin', 'Groudon',             'Ho-Oh',
+      'Iron Bundle',     'Koraidon',            'Kyogre',
+      'Kyurem-Black',    'Kyurem-White',        'Lugia',
+      'Lunala',          'Magearna',            'Mewtwo',
+      'Miraidon',        'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
+      'Palafin',         'Palkia',              'Palkia-Origin',
+      'Rayquaza',        'Reshiram',            'Shaymin-Sky',
+      'Solgaleo',        'Urshifu-Base',        'Zacian',
+      'Zacian-Crowned',  'Zamazenta-Crowned',   'Zekrom',
+      'Moody',           'Shadow Tag',          'Booster Energy',
+      'Damp Rock',       'Focus Band',          "King's Rock",
+      'Quick Claw',      'Razor Fang',          'Smooth Rock',
+      'Acupressure',     'Baton Pass',          'Last Respects',
+      'Shed Tail'
     ]
   },
   {
@@ -486,9 +488,9 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 9] Monothreat Fire',
+    name: '[Gen 9] Monothreat Dark',
     mod: 'gen9',
-    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Fire' ]
+    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Dark' ]
   },
   {
     name: '[Gen 9] Monotype CAP',
@@ -1057,24 +1059,6 @@ export const Formats: FormatList = [
       'Power Construct',     'Assist',
       'Dark Void',           'Swagger'
     ]
-  },
-  {
-    name: '[Gen 9 DLC 1] Monothreat Fire',
-    mod: 'gen9dlc1',
-    ruleset: [ '[Gen 9 DLC 1] Monotype', 'Force Monotype = Fire' ]
-  },
-  {
-    name: '[Gen 9 DLC 1] Monotype CAP',
-    mod: 'gen9dlc1',
-    ruleset: [ '[Gen 9 DLC 1] Monotype', '+CAP' ],
-    banlist: [ 'Cawmodore', 'Fidgit', 'Hemogoblin', 'Heat Rock' ]
-  },
-  {
-    name: '[Gen 9 DLC 1] Monotype LC',
-    mod: 'gen9dlc1',
-    ruleset: [ '[Gen 9 DLC 1] LC', 'Same Type Clause', 'Terastal Clause' ],
-    banlist: [ 'Damp Rock', 'Focus Band', 'Heat Rock', 'Icy Rock', 'Quick Claw' ],
-    unbanlist: [ 'Diglett-Base', 'Growlithe-Hisui', 'Vulpix', 'Vulpix-Alola', 'Sticky Web' ]
   },
   {
     name: '[Gen 9] Monotype Random Battle',

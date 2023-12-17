@@ -4311,6 +4311,11 @@
     },
     "boltbeak": {"inherit": true, "isNonstandard": null},
     "bonemerang": {"inherit": true, "isNonstandard": null},
+    "burnup": {
+      "inherit": true,
+      "isNonstandard": null,
+      "desc": "Fails unless the user is a Fire type. If this move is successful, the user's Fire type becomes typeless as long as it remains active."
+    },
     "celebrate": {
       "inherit": true,
       "flags": {
@@ -4358,8 +4363,10 @@
       "isNonstandard": null,
       "desc": "If the user moves after the target, the target's Ability is rendered ineffective as long as it remains active. If the target uses Baton Pass, the replacement will remain under this effect. If the target's Ability is As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, or Zen Mode, this effect does not happen, and receiving the effect through Baton Pass ends the effect immediately."
     },
+    "corrosivegas": {"inherit": true, "isNonstandard": null},
     "craftyshield": {"inherit": true, "isNonstandard": null},
     "curse": {"inherit": true, "target": "randomNormal"},
+    "cut": {"inherit": true, "isNonstandard": null},
     "darkvoid": {"inherit": true, "isNonstandard": "Past", "noSketch": false},
     "doubleironbash": {"inherit": true, "isNonstandard": null},
     "dualchop": {"inherit": true, "isNonstandard": null},
@@ -4382,8 +4389,10 @@
     "hail": {"inherit": true, "isNonstandard": null},
     "headcharge": {"inherit": true, "isNonstandard": null},
     "heartswap": {"inherit": true, "isNonstandard": "Past"},
+    "holdback": {"inherit": true, "isNonstandard": null},
     "holdhands": {
       "inherit": true,
+      "isNonstandard": null,
       "flags": {
         "bypasssub": 1,
         "nosleeptalk": 1,
@@ -4547,6 +4556,7 @@
     "thousandwaves": {"inherit": true, "isNonstandard": null},
     "toxicthread": {"inherit": true, "isNonstandard": "Past"},
     "trickortreat": {"inherit": true, "isNonstandard": null},
+    "vcreate": {"inherit": true, "isNonstandard": null},
     "venomdrench": {"inherit": true, "isNonstandard": null},
     "vitalthrow": {"inherit": true, "isNonstandard": null},
     "wickedblow": {"inherit": true, "basePower": 80},
@@ -4565,10 +4575,6 @@
     "bind": {
       "inherit": true,
       "desc": "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move."
-    },
-    "burnup": {
-      "inherit": true,
-      "desc": "Fails unless the user is a Fire type. If this move is successful, the user's Fire type becomes typeless as long as it remains active."
     },
     "clamp": {
       "inherit": true,
@@ -6413,6 +6419,7 @@
       "accuracy": 100,
       "basePower": 130,
       "category": "Special",
+      "isNonstandard": "Unobtainable",
       "name": "Burn Up",
       "pp": 5,
       "priority": 0,
@@ -7089,6 +7096,7 @@
       "accuracy": 100,
       "basePower": 0,
       "category": "Status",
+      "isNonstandard": "Unobtainable",
       "name": "Corrosive Gas",
       "pp": 40,
       "priority": 0,
@@ -7352,6 +7360,7 @@
       "accuracy": 95,
       "basePower": 50,
       "category": "Physical",
+      "isNonstandard": "Unobtainable",
       "name": "Cut",
       "pp": 30,
       "priority": 0,
@@ -11560,6 +11569,7 @@
       "accuracy": 100,
       "basePower": 40,
       "category": "Physical",
+      "isNonstandard": "Unobtainable",
       "name": "Hold Back",
       "pp": 40,
       "priority": 0,
@@ -11576,6 +11586,7 @@
       "accuracy": true,
       "basePower": 0,
       "category": "Status",
+      "isNonstandard": "Unobtainable",
       "name": "Hold Hands",
       "pp": 40,
       "priority": 0,
@@ -20337,6 +20348,7 @@
       "accuracy": 95,
       "basePower": 180,
       "category": "Physical",
+      "isNonstandard": "Unobtainable",
       "name": "V-create",
       "pp": 5,
       "priority": 0,
