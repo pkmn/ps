@@ -697,7 +697,7 @@ export class DexConditions {
 			condition = new Condition({name: id, exists: false});
 		}
 
-		this.conditionCache.set(id, this.dex.deepFreeze(condition));
+		this.conditionCache.set(id, condition);
 		return condition;
 	}
 }

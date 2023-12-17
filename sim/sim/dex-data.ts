@@ -193,7 +193,7 @@ export class DexNatures {
 		}
 
 		(nature as any).kind = 'Nature';
-		if (nature.exists) this.natureCache.set(id, this.dex.deepFreeze(nature));
+		if (nature.exists) this.natureCache.set(id, nature);
 		return nature;
 	}
 
@@ -203,7 +203,7 @@ export class DexNatures {
 		for (const id in this.dex.data.Natures) {
 			natures.push(this.getByID(id as ID));
 		}
-		this.allCache = Object.freeze(natures);
+		this.allCache = natures;
 		return this.allCache;
 	}
 }
@@ -294,7 +294,7 @@ export class DexTypes {
 		}
 
 		(type as any).kind = 'Type';
-		if (type.exists) this.typeCache.set(id, this.dex.deepFreeze(type));
+		if (type.exists) this.typeCache.set(id, type);
 		return type;
 	}
 
@@ -318,7 +318,7 @@ export class DexTypes {
 		for (const id in this.dex.data.TypeChart) {
 			types.push(this.getByID(id as ID));
 		}
-		this.allCache = Object.freeze(types);
+		this.allCache = types;
 		return this.allCache;
 	}
 }

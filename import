@@ -349,7 +349,7 @@ const REWRITES = {
   'sim/dex-abilities.ts': {
     '\t\tif (ability.exists) this.abilityCache.set(id, this.dex.deepFreeze(ability));':
       `\t\tif (!(ability as any).kind) (ability as any).kind = 'Ability';\n` +
-      '\t\tif (ability.exists) this.abilityCache.set(id, this.dex.deepFreeze(ability));',
+      '\t\tif (ability.exists) this.abilityCache.set(id, ability);',
   },
   'sim/dex-conditions.ts': {
     '\t\t} else if (this.dex.data.Rulesets.hasOwnProperty(id)) {':
@@ -361,25 +361,27 @@ const REWRITES = {
       '\t\t\tcondition = item as any as Condition;',
     "\t\t\tcondition = {...ability, id: 'ability:' + ability.id as ID} as any as Condition;":
       '\t\t\tcondition = ability as any as Condition;',
+    "\t\tthis.conditionCache.set(id, this.dex.deepFreeze(condition));":
+      '\t\tthis.conditionCache.set(id, condition);',
     [KEY]: VALUE,
   },
   'sim/dex-items.ts': {
     '\t\tif (item.exists) this.itemCache.set(id, this.dex.deepFreeze(item));':
       `\t\t(item as any).kind = 'Item';\n` +
-      '\t\tif (item.exists) this.itemCache.set(id, this.dex.deepFreeze(item));',
+      '\t\tif (item.exists) this.itemCache.set(id, item);',
   },
   'sim/dex-moves.ts': {
     '\t\tif (move.exists) this.moveCache.set(id, this.dex.deepFreeze(move));':
       `\t\t(move as any).kind = 'Move';\n` +
-      '\t\tif (move.exists) this.moveCache.set(id, this.dex.deepFreeze(move));',
+      '\t\tif (move.exists) this.moveCache.set(id, move);',
   },
   'sim/dex-data.ts': {
     '\t\tif (nature.exists) this.natureCache.set(id, this.dex.deepFreeze(nature));':
       `\t\t(nature as any).kind = 'Nature';\n` +
-      '\t\tif (nature.exists) this.natureCache.set(id, this.dex.deepFreeze(nature));',
+      '\t\tif (nature.exists) this.natureCache.set(id, nature);',
     '\t\tif (type.exists) this.typeCache.set(id, this.dex.deepFreeze(type));':
       `\t\t(type as any).kind = 'Type';\n` +
-      '\t\tif (type.exists) this.typeCache.set(id, this.dex.deepFreeze(type));',
+      '\t\tif (type.exists) this.typeCache.set(id, type);',
   },
   'sim/battle.ts': {
     '\tgetCategory(move: string | Move) {':
@@ -674,9 +676,12 @@ const changes = async (where, last, now, repo) => ({
         const prefix = file.startsWith('data') ? '../sim'
           : file.startsWith('sim/tools/') ? '..' : '.';
         const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
-        const rewritten = REWRITES[file]
+        let rewritten = REWRITES[file]
           ? rewrite(original, line => line in REWRITES[file] ? REWRITES[file][line] : line)
           : original;
+        if (file.startsWith('sim/dex-')) {
+          rewritten = rewritten.replaceAll(/Object.freeze\((.*)\)/g, (_, $1) => $1);
+        }
         fs.writeFileSync(path.resolve(sim, file),
           `${imports(IMPORTS[file], prefix + '/exported-global-types')}${rewritten}`);
       } else {

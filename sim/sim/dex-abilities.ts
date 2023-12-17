@@ -109,7 +109,7 @@ export class DexAbilities {
 		}
 
 		if (!(ability as any).kind) (ability as any).kind = 'Ability';
-		if (ability.exists) this.abilityCache.set(id, this.dex.deepFreeze(ability));
+		if (ability.exists) this.abilityCache.set(id, ability);
 		return ability;
 	}
 
