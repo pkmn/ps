@@ -12626,11 +12626,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       celebrate: [ '7S3' ],
       closecombat: [ '7S2', '5S1' ],
       confusion: [ '5S0' ],
-      psychic: [ '7S2', '5S1' ],
+      hypervoice: [ '9S4' ],
+      psychic: [ '9S4', '7S2', '5S1' ],
       quickattack: [ '5S0' ],
-      relicsong: [ '7S3' ],
+      relicsong: [ '9S4', '7S3' ],
       round: [ '7S3', '5S0', '5S1' ],
-      sing: [ '7S2', '7S3' ],
+      sing: [ '9S4', '7S2', '7S3' ],
       teeterdance: [ '5S1' ]
     },
     eventData: [
@@ -12657,6 +12658,12 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         level: 50,
         moves: [ 'sing', 'celebrate', 'round', 'relicsong' ],
         pokeball: 'cherishball'
+      },
+      {
+        generation: 9,
+        level: 70,
+        perfectIVs: 3,
+        moves: [ 'relicsong', 'hypervoice', 'sing', 'psychic' ]
       }
     ],
     eventOnly: true

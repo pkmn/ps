@@ -305,6 +305,7 @@
       }
     }
   },
+  "8": {"stellar": {"inherit": true, "isNonstandard": "Future"}},
   "9": {
     "bug": {
       "damageTaken": {

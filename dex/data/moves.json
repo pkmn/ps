@@ -4292,6 +4292,7 @@
       "shortDesc": "For 5 turns, damage to allies is halved. Hail only."
     },
     "autotomize": {"inherit": true, "isNonstandard": null},
+    "beakblast": {"inherit": true, "isNonstandard": "Past"},
     "belch": {
       "inherit": true,
       "flags": {
@@ -4498,6 +4499,7 @@
     "octolock": {"inherit": true, "isNonstandard": null},
     "plasmafists": {"inherit": true, "isNonstandard": null},
     "poweruppunch": {"inherit": true, "isNonstandard": null},
+    "psychoboost": {"inherit": true, "isNonstandard": "Past"},
     "psychoshift": {"inherit": true, "isNonstandard": null},
     "purify": {"inherit": true, "isNonstandard": null},
     "recover": {"inherit": true, "pp": 10},
@@ -4516,6 +4518,7 @@
     "shadowbone": {"inherit": true, "isNonstandard": null},
     "shelltrap": {"inherit": true, "isNonstandard": null},
     "shoreup": {"inherit": true, "pp": 10},
+    "sketch": {"inherit": true, "isNonstandard": "Past"},
     "skullbash": {"inherit": true, "isNonstandard": null},
     "slackoff": {"inherit": true, "pp": 10},
     "sleeptalk": {

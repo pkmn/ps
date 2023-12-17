@@ -231,7 +231,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         for (const gen of gens) {
           expect(Array.from(gen.moves))
             .toHaveLength(gen.num === 9 ? 607 + 3 + 22 + 15 + (15 - 1 + 29)
-            : gen.num === 8 ? 623 + 41 + 34 - 33 + 3 // FIXME -3
+            : gen.num === 8 ? 623 + 41 + 34 - 33
             : (total += COUNTS[gen.num - 1]));
         }
       });
