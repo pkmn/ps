@@ -343,11 +343,11 @@ export const Formats: FormatList = [
       'Necrozma-Dusk-Mane', 'Ogerpon-Cornerstone', 'Palkia',
       'Palkia-Origin',      'Rayquaza',            'Reshiram',
       'Scream Tail',        'Shaymin-Sky',         'Snorlax',
-      'Solgaleo',           'Zacian',              'Zacian-Crowned',
-      'Zamazenta',          'Zamazenta-Crowned',   'Zekrom',
-      'Moody',              'Focus Band',          'Focus Sash',
-      "King's Rock",        'Razor Fang',          'Quick Claw',
-      'Acupressure',        'Perish Song'
+      'Solgaleo',           'Terapagos',           'Zacian',
+      'Zacian-Crowned',     'Zamazenta',           'Zamazenta-Crowned',
+      'Zekrom',             'Moody',               'Focus Band',
+      'Focus Sash',         "King's Rock",         'Razor Fang',
+      'Quick Claw',         'Acupressure',         'Perish Song'
     ]
   },
   {
@@ -522,20 +522,21 @@ export const Formats: FormatList = [
       'Terastal Clause'
     ],
     banlist: [
-      'Calyrex-Shadow',   'Gengar-Mega',      'Groudon-Primal',
-      'Mewtwo-Mega-Y',    'Rayquaza-Mega',    'Regigigas',
-      'Shedinja',         'Slaking',          'Arena Trap',
-      'Comatose',         'Contrary',         'Gorilla Tactics',
-      'Hadron Engine',    'Huge Power',       'Illusion',
-      'Innards Out',      'Libero',           'Magnet Pull',
-      'Moody',            'Neutralizing Gas', 'Orichalcum Pulse',
-      'Parental Bond',    'Poison Heal',      'Protean',
-      'Pure Power',       'Shadow Tag',       'Stakeout',
-      'Water Bubble',     'Wonder Guard',     'Baton Pass',
-      'Belly Drum',       'Ceaseless Edge',   'Dire Claw',
-      'Fillet Away',      'Imprison',         'Last Respects',
-      'Lumina Crash',     'Quiver Dance',     'Rage Fist',
-      'Revival Blessing', 'Shed Tail',        'Substitute',
+      'Calyrex-Shadow',   'Gengar-Mega',   'Groudon-Primal',
+      'Kartana',          'Mewtwo-Mega-Y', 'Rayquaza-Mega',
+      'Regigigas',        'Shedinja',      'Slaking',
+      'Arena Trap',       'Comatose',      'Contrary',
+      'Gorilla Tactics',  'Hadron Engine', 'Huge Power',
+      'Illusion',         'Innards Out',   'Libero',
+      'Magnet Pull',      'Moody',         'Neutralizing Gas',
+      'Orichalcum Pulse', 'Parental Bond', 'Poison Heal',
+      'Protean',          'Pure Power',    'Shadow Tag',
+      'Stakeout',         'Water Bubble',  'Wonder Guard',
+      'Baton Pass',       'Belly Drum',    'Ceaseless Edge',
+      'Dire Claw',        'Electro Shot',  'Fillet Away',
+      'Imprison',         'Last Respects', 'Lumina Crash',
+      'Photon Geyser',    'Quiver Dance',  'Rage Fist',
+      'Revival Blessing', 'Shed Tail',     'Substitute',
       'Shell Smash',      'Tail Glow'
     ]
   },
@@ -1397,20 +1398,13 @@ export const Formats: FormatList = [
   {
     name: '[Gen 4] OU',
     mod: 'gen4',
-    ruleset: [ 'Standard', 'Freeze Clause Mod' ],
-    banlist: [
-      'AG',
-      'Uber',
-      'Arena Trap',
-      'Sand Veil',
-      'Swinub + Snow Cloak',
-      'Piloswine + Snow Cloak',
-      'Mamoswine + Snow Cloak',
-      'Quick Claw',
-      'Soul Dew',
-      'Baton Pass',
-      'Swagger'
-    ]
+    ruleset: [
+      'Standard',
+      'Evasion Abilities Clause',
+      'Baton Pass Stat Trap Clause',
+      'Freeze Clause Mod'
+    ],
+    banlist: [ 'AG', 'Uber', 'Arena Trap', 'Quick Claw', 'Soul Dew', 'Swagger' ]
   },
   {
     name: '[Gen 3] OU',

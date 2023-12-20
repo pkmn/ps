@@ -367,7 +367,7 @@ export class Icons {
     const data = this.data.getPokemon(name);
 
     let num = data?.num ?? 0;
-    if (num < 0 || num > 1017) num = 0;
+    if (num < 0 || num > 1025) num = 0;
     if (data?.icon) num = data.icon;
     if (options?.gender === 'F') num = data?.iconf ?? num;
     if (options?.side !== 'p2') num = data?.iconl ?? num;

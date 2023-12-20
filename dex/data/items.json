@@ -3255,7 +3255,6 @@
     },
     "metalalloy": {
       "name": "Metal Alloy",
-      "fling": {"basePower": 30},
       "num": 2482,
       "gen": 9,
       "desc": "Evolves Duraludon into Archaludon when used."
