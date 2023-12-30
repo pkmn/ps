@@ -96,6 +96,11 @@ bandwidth costs). You should be able to easily copy the sprites from Pokémon Sh
 [`--mirror` option of
 `wget`](https://www.gnu.org/software/wget/manual/html_node/Recursive-Retrieval-Options.html).
 
+Importantly, **you should at minimum host the icon sheets** as Pokémon Showdown may change the
+various offsets on a whim causing the wrong icons to be shown until you update the package.
+Mirroring the icon sheets allows you to effectively pin the resource at the same version the
+`@pkmn/img` package is able to display correctly.
+
 ### Browser
 
 The recommended way of using `@pkmn/img` in a web browser is to **configure your bundler**

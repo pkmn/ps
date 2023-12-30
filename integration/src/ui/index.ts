@@ -94,6 +94,7 @@ const displayTeam = ($td: HTMLTableCellElement, side: Side) => {
       side: `p${side.n + 1}` as 'p1' | 'p2',
       gender: pokemon.gender || undefined,
       fainted: pokemon.fainted,
+      domain: 'pkmn.cc',
     });
     $span.style.display = icon.css.display;
     $span.style.width = icon.css.width;
