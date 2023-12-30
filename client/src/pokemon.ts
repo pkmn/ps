@@ -247,7 +247,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
 
   get types() {
     let types: [TypeName] | [TypeName, TypeName];
-    if (this.isTerastallized) {
+    if (this.isTerastallized && this.teraType !== 'Stellar') {
       types = [this.teraType!];
     } else if (this.volatiles.typechange) {
       types =

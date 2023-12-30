@@ -28448,7 +28448,6 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 590,
-      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "ragingbolt": {
@@ -28466,7 +28465,6 @@
       },
       "abilities": {"0": "Protosynthesis"},
       "weightkg": 480,
-      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "ironboulder": {
@@ -28484,7 +28482,6 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 162.5,
-      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "ironcrown": {
@@ -28502,7 +28499,6 @@
       },
       "abilities": {"0": "Quark Drive"},
       "weightkg": 156,
-      "tags": ["Paradox"],
       "eggGroups": ["Undiscovered"]
     },
     "terapagos": {
