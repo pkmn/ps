@@ -553,7 +553,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   effectiveAbility() {
     if (this.fainted || this.volatiles['gastroacid']) return '' as ID;
     const ability = this.side.battle.gen.abilities.get(this.ability || this.baseAbility || '');
-    if (this.side.battle.ngasActive() && !ability?.isPermanent) return '' as ID;
+    if (this.side.battle.ngasActive() && !ability?.flags.cantsuppress) return '' as ID;
     return ability?.id || '' as ID;
   }
 

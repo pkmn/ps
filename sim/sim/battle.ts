@@ -797,9 +797,9 @@ export class Battle {
 				// it's changed; call it off
 				continue;
 			}
-			if (effect.effectType === 'Ability' && effect.isBreakable !== false &&
+			if (effect.effectType === 'Ability' && effect.flags['breakable'] &&
 				this.suppressingAbility(effectHolder as Pokemon)) {
-				if (effect.isBreakable) {
+				if (effect.flags['breakable']) {
 					this.debug(eventid + ' handler suppressed by Mold Breaker');
 					continue;
 				}

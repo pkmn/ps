@@ -88,12 +88,7 @@ export const Formats: FormatList = [
     banlist: [ 'UU', 'RUBL', 'Light Clay' ]
   },
   { name: '[Gen 9] NU', mod: 'gen9', ruleset: [ '[Gen 9] RU' ], banlist: [ 'RU', 'NUBL' ] },
-  {
-    name: '[Gen 9] PU',
-    mod: 'gen9',
-    ruleset: [ '[Gen 9] NU' ],
-    banlist: [ 'NU', 'PUBL', 'Damp Rock', 'Heat Rock' ]
-  },
+  { name: '[Gen 9] PU', mod: 'gen9', ruleset: [ '[Gen 9] NU' ], banlist: [ 'NU', 'PUBL' ] },
   {
     name: '[Gen 9] LC',
     mod: 'gen9',
@@ -191,7 +186,8 @@ export const Formats: FormatList = [
       'Species Clause',
       'HP Percentage Mod',
       'Cancel Mod',
-      'Illusion Level Mod'
+      'Illusion Level Mod',
+      'Sleep Clause Mod'
     ]
   },
   {
@@ -406,39 +402,25 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] Ubers' ],
     banlist: [
-      'Alcremie',            'Araquanid',          'Archaludon',      'Bastiodon',
-      'Bellossom',           'Blastoise',          'Blaziken',        'Cinccino',
-      'Cobalion',            'Comfey',             'Deoxys',          'Deoxys-Attack',
-      'Deoxys-Defense',      'Deoxys-Speed',       'Dewgong',         'Dodrio',
-      'Electivire',          'Emboar',             'Entei',           'Excadrill',
-      'Exeggutor',           'Exeggutor-Alola',    'Feraligatr',      'Flygon',
-      'Galvantula',          'Golurk',             'Gouging Fire',    'Granbull',
-      'Hitmonchan',          'Hitmonlee',          'Hitmontop',       'Ho-Oh',
-      'Hydrapple',           'Incineroar',         'Iron Boulder',    'Iron Crown',
-      'Keldeo',              'Kingdra',            'Kyurem',          'Kyurem-Black',
-      'Kyurem-White',        'Lanturn',            'Lapras',          'Latias',
-      'Latios',              'Lugia',              'Lunala',          'Magmortar',
-      'Malamar',             'Meganium',           'Meowstic',        'Meowstic-F',
-      'Metagross',           'Minior',             'Minun',           'Necrozma',
-      'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Plusle',          'Porygon-Z',
-      'Primarina',           'Raging Bolt',        'Raikou',          'Rampardos',
-      'Regice',              'Regigigas',          'Regirock',        'Registeel',
-      'Reshiram',            'Reuniclus',          'Rhyperior',       'Sceptile',
-      'Scrafty',             'Serperior',          'Skarmory',        'Smeargle',
-      'Solgaleo',            'Suicune',            'Swampert',        'Tentacruel',
-      'Terapagos',           'Terrakion',          'Toucannon',       'Venusaur',
-      'Vileplume',           'Virizion',           'Whimsicott',      'Zebstrika',
-      'Zekrom',              'Annihilape',         'Arceus-Base',     'Arceus-Fairy',
-      'Arceus-Ground',       'Basculegion-Base',   'Calyrex-Ice',     'Chien-Pao',
-      'Clodsire',            'Ditto',              'Eternatus',       'Flutter Mane',
-      'Glimmora',            'Gliscor',            'Giratina-Origin', 'Great Tusk',
-      'Grimmsnarl',          'Groudon',            'Hatterene',       'Iron Bundle',
-      'Iron Treads',         'Kingambit',          'Koraidon',        'Kyogre',
-      'Landorus-Therian',    'Mewtwo',             'Miraidon',        'Ogerpon-Hearthflame',
-      'Rayquaza',            'Regieleki',          'Ribombee',        'Skeledirge',
-      'Ting-Lu',             'Toxapex',            'Zacian-Crowned',  'Arceus-Electric',
-      'Arceus-Flying',       'Arceus-Ghost',       'Arceus-Steel',    'Arceus-Water',
-      'Shaymin-Sky',         'Last Respects'
+      'Arceus-Base',        'Arceus-Fairy',
+      'Arceus-Ghost',       'Arceus-Ground',
+      'Basculegion-Base',   'Calyrex-Ice',
+      'Chien-Pao',          'Clodsire',
+      'Deoxys-Attack',      'Deoxys-Speed',
+      'Ditto',              'Eternatus',
+      'Flutter Mane',       'Giratina-Origin',
+      'Glimmora',           'Gliscor',
+      'Grimmsnarl',         'Groudon',
+      'Hatterene',          'Ho-Oh',
+      'Iron Bundle',        'Koraidon',
+      'Kyogre',             'Kyurem-Black',
+      'Lunala',             'Miraidon',
+      'Necrozma-Dusk-Mane', 'Rayquaza',
+      'Ribombee',           'Skeledirge',
+      'Terapagos',          'Ting-Lu',
+      'Zacian-Crowned',     'Arceus-Flying',
+      'Arceus-Steel',       'Arceus-Water',
+      'Shaymin-Sky',        'Last Respects'
     ]
   },
   { name: '[Gen 9] ZU', mod: 'gen9', ruleset: [ '[Gen 9] PU' ], banlist: [ 'PU', 'ZUBL' ] },
@@ -477,26 +459,24 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] LC' ],
     banlist: [
-      'Corphish',        'Diglett-Alola',
-      'Drifloon',        'Foongus',
-      'Glimmet',         'Gothita',
-      'Grimer-Alola',    'Grookey',
-      'Impidimp',        'Koffing',
-      'Larvesta',        'Magnemite',
-      'Mienfoo',         'Mudbray',
-      'Numel',           'Pawniard',
-      'Sandshrew-Alola', 'Shellder',
-      'Shroodle',        'Snover',
-      'Stunky',          'Timburr',
-      'Tinkatink',       'Toedscool',
-      'Voltorb-Hisui',   'Vullaby',
-      'Wattrel',         'Zorua-Hisui'
+      'Diglett-Alola',   'Drifloon',      'Drilbur',
+      'Elekid',          'Foongus',       'Gastly',
+      'Glimmet',         'Gothita',       'Grimer-Alola',
+      'Growlithe-Hisui', 'Impidimp',      'Koffing',
+      'Magby',           'Magnemite',     'Mareanie',
+      'Meowth-Base',     'Mienfoo',       'Minccino',
+      'Mudbray',         'Pawniard',      'Porygon',
+      'Shellder',        'Shroodle',      'Snivy',
+      'Snubbull',        'Stunky',        'Tentacool',
+      'Timburr',         'Tinkatink',     'Toedscool',
+      'Trapinch',        'Voltorb-Hisui', 'Vullaby',
+      'Wattrel'
     ]
   },
   {
-    name: '[Gen 9] Monothreat Grass',
+    name: '[Gen 9] Monothreat Ground',
     mod: 'gen9',
-    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Grass' ]
+    ruleset: [ '[Gen 9] Monotype', 'Force Monotype = Ground' ]
   },
   {
     name: '[Gen 9] Monotype CAP',
@@ -1063,6 +1043,12 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 6] First Blood Random Battle',
+    mod: 'gen6',
+    team: 'random',
+    ruleset: [ '[Gen 6] Random Battle', 'First Blood Rule' ]
+  },
+  {
     name: '[Gen 9] Monotype Random Battle',
     mod: 'gen9',
     team: 'random',
@@ -1324,24 +1310,34 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 7] Ubers',
-    mod: 'gen7',
-    ruleset: [ 'Standard', 'Mega Rayquaza Clause' ],
-    banlist: [ 'Baton Pass' ]
+    name: '[Gen 8] Ubers',
+    mod: 'gen8',
+    ruleset: [ 'Standard', 'Dynamax Clause' ],
+    banlist: [ 'AG', 'Shadow Tag', 'Baton Pass' ]
   },
   {
-    name: '[Gen 1] UU',
-    mod: 'gen1',
-    ruleset: [ '[Gen 1] OU', 'APT Clause' ],
-    banlist: [ 'OU', 'UUBL' ]
+    name: '[Gen 2] UU',
+    mod: 'gen2',
+    ruleset: [ '[Gen 2] OU' ],
+    banlist: [ 'OU', 'UUBL', 'Agility + Baton Pass' ],
+    unbanlist: [ 'Mean Look + Baton Pass', 'Spider Web + Baton Pass' ]
   },
   {
-    name: '[Gen 4] Doubles OU',
-    mod: 'gen4',
-    gameType: 'doubles',
-    ruleset: [ 'Standard' ],
-    banlist: [ 'AG', 'Uber', 'Soul Dew', 'Dark Void', 'Sand Veil' ],
-    unbanlist: [ 'Manaphy', 'Mew', 'Salamence', 'Wobbuffet', 'Wynaut' ]
+    name: '[Gen 3] RU',
+    mod: 'gen3',
+    ruleset: [ '[Gen 3] UU' ],
+    banlist: [ 'UU' ],
+    unbanlist: [
+      'Absol',      'Aggron',    'Azumarill',
+      'Banette',    'Camerupt',  'Exploud',
+      'Girafarig',  'Hypno',     'Kabutops',
+      'Magmar',     'Mantine',   'Meganium',
+      'Mr. Mime',   'Ninetales', 'Persian',
+      'Politoed',   'Poliwrath', 'Primeape',
+      'Raichu',     'Rapidash',  'Sharpedo',
+      'Shiftry',    'Sneasel',   'Stantler',
+      'Victreebel'
+    ]
   },
   {
     name: '[Gen 8] OU',
@@ -1458,18 +1454,20 @@ export const Formats: FormatList = [
     banlist: [ 'DUber', 'Soul Dew', 'Dark Void', 'Gravity' ]
   },
   {
+    name: '[Gen 4] Doubles OU',
+    mod: 'gen4',
+    gameType: 'doubles',
+    ruleset: [ 'Standard', 'Evasion Abilities Clause' ],
+    banlist: [ 'AG', 'Uber', 'Soul Dew', 'Dark Void' ],
+    unbanlist: [ 'Manaphy', 'Mew', 'Salamence', 'Wobbuffet', 'Wynaut' ]
+  },
+  {
     name: '[Gen 3] Doubles OU',
     mod: 'gen3',
     gameType: 'doubles',
     ruleset: [ 'Standard', '!Switch Priority Clause Mod' ],
     banlist: [ 'Uber', 'Soul Dew', 'Swagger' ],
     unbanlist: [ 'Latias', 'Wobbuffet', 'Wynaut' ]
-  },
-  {
-    name: '[Gen 8] Ubers',
-    mod: 'gen8',
-    ruleset: [ 'Standard', 'Dynamax Clause' ],
-    banlist: [ 'AG', 'Shadow Tag', 'Baton Pass' ]
   },
   {
     name: '[Gen 8] UU',
@@ -1698,6 +1696,12 @@ export const Formats: FormatList = [
       'Max Level = 9999',
       'Default Level = 100'
     ]
+  },
+  {
+    name: '[Gen 7] Ubers',
+    mod: 'gen7',
+    ruleset: [ 'Standard', 'Mega Rayquaza Clause' ],
+    banlist: [ 'Baton Pass' ]
   },
   {
     name: '[Gen 7] UU',
@@ -2555,7 +2559,7 @@ export const Formats: FormatList = [
       'Team Preview'
     ],
     banlist: [
-      'Clefable',      'Deoxys-Base',
+      'Clefable',      'Deoxys',
       'Deoxys-Attack', 'Deoxys-Defense',
       'Deoxys-Speed',  'Groudon',
       'Ho-Oh',         'Kyogre',
@@ -2565,9 +2569,9 @@ export const Formats: FormatList = [
       'Slaking',       'Snorlax',
       'Suicune',       'Zapdos',
       'Destiny Bond',  'Explosion',
-      'Ingrain',       'Perish Song',
-      'Self-Destruct', 'Focus Band',
-      "King's Rock",   'Quick Claw'
+      'Perish Song',   'Self-Destruct',
+      'Focus Band',    "King's Rock",
+      'Quick Claw'
     ]
   },
   {
@@ -2599,13 +2603,6 @@ export const Formats: FormatList = [
     ]
   },
   { name: '[Gen 2] Ubers', mod: 'gen2', ruleset: [ 'Standard' ] },
-  {
-    name: '[Gen 2] UU',
-    mod: 'gen2',
-    ruleset: [ '[Gen 2] OU' ],
-    banlist: [ 'OU', 'UUBL', 'Agility + Baton Pass' ],
-    unbanlist: [ 'Mean Look + Baton Pass', 'Spider Web + Baton Pass' ]
-  },
   {
     name: '[Gen 2] NU',
     mod: 'gen2',
@@ -2680,6 +2677,12 @@ export const Formats: FormatList = [
     ]
   },
   { name: '[Gen 1] Ubers', mod: 'gen1', ruleset: [ 'Standard' ] },
+  {
+    name: '[Gen 1] UU',
+    mod: 'gen1',
+    ruleset: [ '[Gen 1] OU', 'APT Clause' ],
+    banlist: [ 'OU', 'UUBL' ]
+  },
   {
     name: '[Gen 1] NU',
     mod: 'gen1',

@@ -52,9 +52,19 @@ export interface ConditionData extends Omit<EffectData, 'num'> {
   onResidualSubOrder?: number;
 }
 
+interface AbilityFlags {
+	breakable?: 1 | 0;
+	cantsuppress?: 1 | 0;
+	failroleplay?: 1 | 0;
+	failskillswap?: 1 | 0;
+	noentrain?: 1 | 0;
+	noreceiver?: 1 | 0;
+	notrace?: 1 | 0;
+	notransform?: 1 | 0;
+}
+
 export interface AbilityData extends EffectData {
-  isBreakable?: boolean;
-  isPermanent?: boolean;
+  flags: AbilityFlags;
   suppressWeather?: boolean;
   condition?: Partial<ConditionData>;
 }
@@ -339,6 +349,7 @@ export interface Condition extends Readonly<BasicEffect> {
 export interface Ability extends Readonly<BasicEffect<AbilityName> & AbilityData> {
   readonly effectType: 'Ability';
   readonly kind: 'Ability';
+  readonly flags: AbilityFlags;
 }
 
 export interface Item extends Readonly<BasicEffect<ItemName> & ItemData> {

@@ -119,6 +119,7 @@ function verifyAnimationName(name: Protocol.AnimationName, gen?: Generation): bo
   return verifyName(name) && (!gen ||
     IVY_CUDGEL.includes(name) ||
     SSA.includes(name) ||
+    name === 'Fickle Beam All Out' ||
     verifyMoveName(name as Protocol.MoveName, gen));
 }
 

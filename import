@@ -753,7 +753,8 @@ const changes = async (where, last, now, repo) => ({
           file === 'data/mods/gen7/random-teams.ts' ||
           file === 'data/mods/gen6/random-teams.ts' ||
           file === 'data/mods/gen5/random-teams.ts' ||
-          file === 'data/mods/gen4/random-teams.ts';
+          file === 'data/mods/gen4/random-teams.ts' ||
+          file === 'data/mods/gen3/random-teams.ts';
         let data =
           path.resolve(path.join(ps, file), '..', `random-${sets ? 'sets' : 'data'}.json`);
         let raw = fs.readFileSync(data, 'utf8');

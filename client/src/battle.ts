@@ -539,7 +539,7 @@ export class Battle {
 
   abilityActive(abilities: ID[]) {
     if (this.ngasActive()) {
-      abilities = abilities.filter(a => this.gen.abilities.get(a)?.isPermanent);
+      abilities = abilities.filter(a => this.gen.abilities.get(a)?.flags.cantsuppress);
       if (!abilities.length) return false;
     }
     for (const active of this.getAllActive()) {

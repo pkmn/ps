@@ -1,6 +1,14 @@
 import type {ModdedAbilityData} from '@pkmn/sim';
 
 export const Abilities: {[k: string]: ModdedAbilityData} = {
+	commander: {
+		inherit: true,
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1},
+	},
+	gulpmissile: {
+		inherit: true,
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1, notransform: 1},
+	},
 	protosynthesis: {
 		inherit: true,
 		condition: {
@@ -48,7 +56,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-end', pokemon, 'Protosynthesis');
 			},
 		},
-		isPermanent: true,
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1, cantsuppress: 1},
 	},
 	quarkdrive: {
 		inherit: true,
@@ -97,6 +105,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-end', pokemon, 'Quark Drive');
 			},
 		},
-		isPermanent: true,
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1, cantsuppress: 1},
 	},
 };
