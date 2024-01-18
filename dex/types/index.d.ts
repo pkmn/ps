@@ -114,6 +114,7 @@ interface MoveFlags {
   futuremove?: 1 | 0;
   gravity?: 1 | 0;
   heal?: 1 | 0;
+  metronome?: 1;
   mirror?: 1 | 0;
   mustpressure?: 1 | 0;
   noassist?: 1 | 0;
@@ -233,7 +234,6 @@ export interface MoveData extends EffectData, HitEffect {
   hasCrashDamage?: boolean;
   hasSheerForce?: boolean;
   isConfusionSelfHit?: boolean;
-  noMetronome?: string[];
   noSketch?: boolean;
   stallingMove?: boolean;
 }
@@ -383,7 +383,6 @@ export interface Move extends Readonly<BasicEffect<MoveName> & MoveData> {
   readonly maxMove?: {
     basePower: number;
   };
-  readonly noMetronome?: MoveName[];
   readonly volatileStatus?: ID;
   readonly slotCondition?: ID;
   readonly sideCondition?: ID;

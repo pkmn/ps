@@ -9,6 +9,7 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": false,
+    "noImplicitOverride": false,
     "noImplicitReturns": false,
     "tsBuildInfoFile": ".tsbuildinfo"
   },

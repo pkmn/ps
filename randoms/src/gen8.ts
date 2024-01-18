@@ -2173,7 +2173,7 @@ export class RandomGen8Teams {
 			(isNoDynamax && data.noDynamaxMoves) ||
 			data.moves;
 		const movePool: string[] = [...(randMoves || this.dex.species.getMovePool(species.id))];
-		if (this.format.gameType === 'multi' || this.format.gameType === 'freeforall') {
+		if (this.format.playerCount > 2) {
 			// Random Multi Battle uses doubles move pools, but Ally Switch fails in multi battles
 			// Random Free-For-All also uses doubles move pools, for now
 			const allySwitch = movePool.indexOf('allyswitch');
@@ -2484,6 +2484,7 @@ export class RandomGen8Teams {
 		const typeComboCount: {[k: string]: number} = {};
 		const typeWeaknesses: {[k: string]: number} = {};
 		const teamDetails: RandomTeamsTypes.TeamDetails = {};
+		let numMaxLevelPokemon = 0;
 
 		const pokemonList = [];
 		for (const poke of Object.keys(this.randomData)) {
@@ -2519,6 +2520,10 @@ export class RandomGen8Teams {
 
 			const types = species.types;
 			const typeCombo = types.slice().sort().join();
+			const weakToFreezeDry = (
+				this.dex.getEffectiveness('Ice', species) > 0 ||
+				(this.dex.getEffectiveness('Ice', species) > -2 && types.includes('Water'))
+			);
 			// Dynamically scale limits for different team sizes. The default and minimum value is 1.
 			const limitFactor = Math.round(this.maxTeamSize / 6) || 1;
 
@@ -2546,10 +2551,22 @@ export class RandomGen8Teams {
 					}
 				}
 				if (skip) continue;
+
+				// Limit four weak to Freeze-Dry
+				if (weakToFreezeDry) {
+					if (!typeWeaknesses['Freeze-Dry']) typeWeaknesses['Freeze-Dry'] = 0;
+					if (typeWeaknesses['Freeze-Dry'] >= 4 * limitFactor) continue;
+				}
+
+				// Limit one level 100 Pokemon
+				if (
+					!this.adjustLevel && numMaxLevelPokemon >= limitFactor &&
+					(this.getLevel(species, isDoubles, this.dex.formats.getRuleTable(this.format).has('dynamaxclause')) === 100)
+				) continue;
 			}
 
-			// Limit one of any type combination, three in Monotype
-			if (!this.forceMonotype && typeComboCount[typeCombo] >= (isMonotype ? 3 : 1) * limitFactor) continue;
+			// Limit three of any type combination in Monotype
+			if (!this.forceMonotype && isMonotype && (typeComboCount[typeCombo] >= 3 * limitFactor)) continue;
 
 			// The Pokemon of the Day
 			if (potd?.exists && (pokemon.length === 1 || this.maxTeamSize === 1)) species = potd;
@@ -2586,6 +2603,10 @@ export class RandomGen8Teams {
 					typeWeaknesses[typeName]++;
 				}
 			}
+			if (weakToFreezeDry) typeWeaknesses['Freeze-Dry']++;
+
+			// Increment level 100 counter
+			if (set.level === 100) numMaxLevelPokemon++;
 
 			// Track what the team has
 			if (set.ability === 'Drizzle' || set.moves.includes('raindance')) teamDetails.rain = 1;
@@ -2672,16 +2693,30 @@ export class RandomGen8Teams {
 
 		// Build a pool of eligible sets, given the team partners
 		// Also keep track of sets with moves the team requires
-		let effectivePool: {set: AnyObject, moveVariants?: number[]}[] = [];
+		let effectivePool: {set: AnyObject, moveVariants?: number[], item?: string, ability?: string}[] = [];
 		const priorityPool = [];
 		for (const curSet of setList) {
 			// if (this.forceMonotype && !species.types.includes(this.forceMonotype)) continue;
 
-			const item = this.dex.items.get(curSet.item);
-			if (itemsMax[item.id] && teamData.has[item.id] >= itemsMax[item.id]) continue;
+			// reject disallowed items, specifically a second of any given choice item
+			const allowedItems: string[] = [];
+			for (const itemString of curSet.item) {
+				const item = this.dex.items.get(itemString);
+				if (itemsMax[item.id] && teamData.has[item.id] >= itemsMax[item.id]) continue;
+				allowedItems.push(itemString);
+			}
+			if (allowedItems.length === 0) continue;
+			const curSetItem = this.sample(allowedItems);
 
-			const ability = this.dex.abilities.get(curSet.ability);
-			if (teamData.weather && weatherAbilities.includes(ability.id)) continue; // reject 2+ weather setters
+			// reject 2+ weather setters
+			const allowedAbilities: string[] = [];
+			for (const abilityString of curSet.ability) {
+				const ability = this.dex.abilities.get(abilityString);
+				if (teamData.weather && weatherAbilities.includes(ability.id)) continue;
+				allowedAbilities.push(abilityString);
+			}
+			if (allowedAbilities.length === 0) continue;
+			const curSetAbility = this.sample(allowedAbilities);
 
 			let reject = false;
 			let hasRequiredMove = false;
@@ -2699,8 +2734,10 @@ export class RandomGen8Teams {
 				curSetVariants.push(variantIndex);
 			}
 			if (reject) continue;
-			effectivePool.push({set: curSet, moveVariants: curSetVariants});
-			if (hasRequiredMove) priorityPool.push({set: curSet, moveVariants: curSetVariants});
+
+			const fullSetSpec = {set: curSet, moveVariants: curSetVariants, item: curSetItem, ability: curSetAbility};
+			effectivePool.push(fullSetSpec);
+			if (hasRequiredMove) priorityPool.push(fullSetSpec);
 		}
 		if (priorityPool.length) effectivePool = priorityPool;
 
@@ -2718,8 +2755,8 @@ export class RandomGen8Teams {
 		}
 
 
-		const item = this.sampleIfArray(setData.set.item);
-		const ability = this.sampleIfArray(setData.set.ability);
+		const item = setData.item || this.sampleIfArray(setData.set.item);
+		const ability = setData.ability || this.sampleIfArray(setData.set.ability);
 		const nature = this.sampleIfArray(setData.set.nature);
 		const level = this.adjustLevel || setData.set.level || (tier === "LC" ? 5 : 100);
 

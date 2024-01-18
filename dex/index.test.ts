@@ -228,7 +228,7 @@ describe('Dex', () => {
         expect(counts(gen)).toEqual(total += COUNTS[gen - 1]);
       }
       expect(counts(8)).toBe(623 + 41 + 34 - /* GMax */ 33);
-      expect(counts(9)).toBe(607 + 3 + 22 + 15 + (15 - 1 + 23));
+      expect(counts(9)).toBe(607 + 3 + 22 + 15 + (15 - 1 + 23) + 1);
     });
 
     it('cached', () => {
@@ -336,9 +336,9 @@ describe('Dex', () => {
         (8 + 1 + 2 + +1 + 1 + 2 + 7) + (1 + 3 + 1 + 2 + 1 + 1 + 2 + 2);
       // Charizard (3) + Cinderace (3) + Greninja (4) + Vivillon (1) + Walking Wake (1) +
       // Iron Leaves (1) + Decidueye (3) + Samurott (3) + Typhlosion (3) + Inteleon (3) +
-      // Chesnaught (3) + HOME (51) + DLC1 (109) + DLC2 (145)
+      // Chesnaught (3) + HOME (51) + DLC1 (109) + DLC2 (145) + Pecharunt (1)
       expect(counts(9)).toEqual(
-        {species: 400 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 51 + 109 + 145, formes}
+        {species: 400 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 51 + 109 + 145 + 1, formes}
       );
     });
 

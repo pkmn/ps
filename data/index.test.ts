@@ -230,7 +230,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         let total = 0;
         for (const gen of gens) {
           expect(Array.from(gen.moves))
-            .toHaveLength(gen.num === 9 ? 607 + 3 + 22 + 15 + (15 - 1 + 23)
+            .toHaveLength(gen.num === 9 ? 607 + 3 + 22 + 15 + (15 - 1 + 23) + 1
             : gen.num === 8 ? 623 + 41 + 34 - 33
             : (total += COUNTS[gen.num - 1]));
         }
@@ -348,9 +348,9 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
           (8 + 1 + 2 + 1 + 1 + 2 + 7) + (1 + 3 + 1 + 2 + 1 + 1 + 2 + 2);
         // Charizard (3) + Cinderace (3) + Greninja (3) + Vivillon (1) + Walking Wake (1) +
         // Iron Leaves (1) + Decidueye (3) + Samurott (3) + Typhlosion (3) + Inteleon (3) +
-        // Chesnaught (3) + HOME (51) + DLC1 (109) + DLC2 (145)
+        // Chesnaught (3) + HOME (51) + DLC1 (109) + DLC2 (145) + Pecharunt (1)
         expect(counts(9)).toEqual(
-          {species: 400 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 51 + 109 + 145, formes}
+          {species: 400 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 51 + 109 + 145 + 1, formes}
         );
       });
 
