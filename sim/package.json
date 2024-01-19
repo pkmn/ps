@@ -15,10 +15,12 @@
   "module": "build/esm/sim/index.mjs",
   "exports": {
     ".": {
+      "types": "./build/cjs/sim/index.d.ts",
       "require": "./build/cjs/sim/index.js",
       "import": "./build/esm/sim/index.mjs"
     },
     "./tools": {
+      "types": "./build/cjs/sim/tools/index.d.ts",
       "require": "./build/cjs/sim/tools/index.js",
       "import": "./build/esm/sim/tools/index.mjs"
     }
