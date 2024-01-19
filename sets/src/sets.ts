@@ -395,7 +395,7 @@ export const Sets = new class {
         swordsdance = true;
       } else if (id.startsWith('hiddenpower')) {
         if (id === 'hiddenpower') {
-          const type = s.hpType || getHiddenPower(data.gen, s.ivs)!.type;
+          const type = s.hpType || getHiddenPower(data.gen, s.ivs).type;
           id = `${id}${type}` as ID;
         } else {
           hpType = (id.substr(11, 1).toUpperCase() + id.substr(12)) as HPTypeName;

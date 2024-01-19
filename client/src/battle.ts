@@ -387,7 +387,7 @@ export class Battle {
   }
 
   getSwitchedOutPokemon(pokemonid: PokemonIdent, details: PokemonDetails) {
-    const poke = this.getSwitchedPokemon(pokemonid, details)!;
+    const poke = this.getSwitchedPokemon(pokemonid, details);
     return poke.side.active[poke.slot] || undefined;
   }
 

@@ -69,7 +69,7 @@ describe('Team', () => {
 
 describe('Teams', () => {
   it('importTeams + exportTeams', () => {
-    let imported = Teams.importTeams(TEAMS.replace(/\[ou\]/, ''), GEN[9])!;
+    let imported = Teams.importTeams(TEAMS.replace(/\[ou\]/, ''), GEN[9]);
     expect(imported[0].gen).toBe(9);
 
     imported = Teams.importTeams(TEAMS, GEN[9])!;

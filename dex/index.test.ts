@@ -379,7 +379,7 @@ describe('Dex', () => {
       expect(Dex.species.get('Shaymin').otherFormes).toEqual(['Shaymin-Sky']);
       expect(Dex.forGen(7).species.get('Charizard').otherFormes)
         .toEqual(['Charizard-Mega-X', 'Charizard-Mega-Y']);
-      expect(Dex.forGen(2).species.get('Venusaur')!.formeOrder)
+      expect(Dex.forGen(2).species.get('Venusaur').formeOrder)
         .toEqual(['Venusaur', 'Venusaur-Mega']);
       expect(Dex.species.get('Gastrodon').cosmeticFormes).toEqual(['Gastrodon-East']);
       expect(Dex.species.get('Garchomp-Mega').isMega).toBe(true);

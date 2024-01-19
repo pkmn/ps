@@ -144,7 +144,7 @@ export class Handler implements Protocol.Handler {
   }
 
   '|poke|'(args: Args['|poke|']) {
-    const pokemon = this.battle.rememberTeamPreviewPokemon(args[1], args[2])!;
+    const pokemon = this.battle.rememberTeamPreviewPokemon(args[1], args[2]);
     if (args[3] === 'item' || args[3] === 'mail') pokemon.teamPreviewItem = true; // TODO: mail
   }
 
@@ -177,7 +177,7 @@ export class Handler implements Protocol.Handler {
   }
 
   switch(args: Args['|switch|' | '|drag|' | '|replace|'], kwArgs?: KWArgs['|switch|']) {
-    const poke = this.battle.getSwitchedPokemon(args[1], args[2])!;
+    const poke = this.battle.getSwitchedPokemon(args[1], args[2]);
     const slot = poke.slot;
     if (args[3]) poke.healthParse(args[3]);
     poke.removeVolatile('itemremoved' as ID);
@@ -207,7 +207,7 @@ export class Handler implements Protocol.Handler {
       poke.side.swapWith(poke, poke2);
     } else {
       const poke = this.battle.getPokemon(args[1])!;
-      const index = parseInt(args[2]!);
+      const index = parseInt(args[2]);
       poke.side.swapTo(poke, index);
     }
   }

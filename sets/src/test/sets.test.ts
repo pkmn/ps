@@ -30,7 +30,7 @@ describe('Sets', () => {
         - Protect
         - Seismic Toss`;
 
-      expect(Sets.toString(Sets.fromString(imported(blissey))!))
+      expect(Sets.toString(Sets.fromString(imported(blissey))))
         .toEqual(exported(blissey));
     });
 
@@ -51,7 +51,7 @@ describe('Sets', () => {
         - Frustration
         - Swords Dance`);
 
-      expect(Sets.exportSet(Sets.importSet(marowakIn, GEN[2])!, GEN[2]))
+      expect(Sets.exportSet(Sets.importSet(marowakIn, GEN[2]), GEN[2]))
         .toEqual(marowakOut);
     });
 
@@ -84,7 +84,7 @@ describe('Sets', () => {
         - Hidden Power [Flying]
         - Volt Switch`);
 
-      expect(Sets.exportSet(Sets.importSet(magnezoneIn)!))
+      expect(Sets.exportSet(Sets.importSet(magnezoneIn)))
         .toEqual(magnezoneOut);
     });
 
@@ -96,7 +96,7 @@ describe('Sets', () => {
         - Earthquake
         - Hyper Beam`;
 
-      expect(Sets.exportSet(Sets.importSet(imported(tauros))!))
+      expect(Sets.exportSet(Sets.importSet(imported(tauros))))
         .toEqual(exported(tauros));
     });
 
@@ -109,7 +109,7 @@ describe('Sets', () => {
         - Fake Move 3
         - Hidden Power [Fake]`;
 
-      expect(Sets.exportSet(Sets.importSet(imported(fake))!))
+      expect(Sets.exportSet(Sets.importSet(imported(fake))))
         .toEqual(exported(fake));
     });
 
@@ -131,7 +131,7 @@ describe('Sets', () => {
         - Shadow Ball
         - Recover`;
 
-      const u = Sets.unpack(Sets.pack(Sets.importSet(imported(malakazam))!))!;
+      const u = Sets.unpack(Sets.pack(Sets.importSet(imported(malakazam))))!;
       expect(Sets.exportSet(u, GEN[7])).toEqual(exported(malakazam));
     });
 
@@ -185,7 +185,7 @@ describe('Sets', () => {
         - Volt Switch`);
 
       const u =
-          _unpack((Sets.pack(Sets.importSet(magnezoneIn, GEN[7])!)) + ']')!.set!;
+          _unpack((Sets.pack(Sets.importSet(magnezoneIn, GEN[7]))) + ']').set!;
       expect(Sets.exportSet(u, GEN[7])).toEqual(magnezoneOut);
     });
 
@@ -203,7 +203,7 @@ describe('Sets', () => {
         - Earthquake
         - Hyper Beam`);
 
-      const u = Sets.unpack(Sets.pack(Sets.importSet(taurosIn, GEN[1])!))!;
+      const u = Sets.unpack(Sets.pack(Sets.importSet(taurosIn, GEN[1])))!;
       expect(Sets.exportSet(u, GEN[1])).toEqual(taurosOut);
     });
 
@@ -227,7 +227,7 @@ describe('Sets', () => {
         - Protect
         - Seismic Toss`);
 
-      const u = Sets.unpack(Sets.pack(_import(blisseyIn.split('\n'))!.set))!;
+      const u = Sets.unpack(Sets.pack(_import(blisseyIn.split('\n')).set))!;
       expect(Sets.exportSet(u)).toEqual(blisseyOut);
     });
 
@@ -247,7 +247,7 @@ describe('Sets', () => {
         - Fake Move 3
         - Fake Move 4`);
 
-      const u = Sets.unpack(Sets.pack(Sets.importSet(fakeIn)!))!;
+      const u = Sets.unpack(Sets.pack(Sets.importSet(fakeIn)))!;
       expect(Sets.exportSet(u)).toEqual(fakeOut);
     });
 
@@ -320,7 +320,7 @@ describe('Sets', () => {
         @ Leftovers
         Ability: Illuminate`);
 
-    expect(Sets.exportSet(Sets.importSet(weirdIn)!)).toEqual(weirdOut);
+    expect(Sets.exportSet(Sets.importSet(weirdIn))).toEqual(weirdOut);
   });
 
   it('toJSON + fromJSON', () => {
@@ -336,7 +336,7 @@ describe('Sets', () => {
       - Recover`;
 
     const fj =
-        Sets.fromJSON(Sets.toJSON(Sets.importSet(imported(malakazam))! as PokemonSet))!;
+        Sets.fromJSON(Sets.toJSON(Sets.importSet(imported(malakazam)) as PokemonSet))!;
     expect(Sets.exportSet(fj)).toEqual(exported(malakazam));
 
     expect(Sets.fromJSON('foo')).toBeUndefined();
