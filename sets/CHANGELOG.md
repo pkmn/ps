@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.1.1
+
+- Fix handling of `gender: ""` in canonicalization.
+
 ## 5.1.0
 
 - Support for Generation 9 DLC1's `forceTeraType`.

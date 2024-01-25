@@ -366,7 +366,7 @@ export const Sets = new class {
     s.item = data.gen >= 2 && s.item ? toID(s.item) : undefined;
     s.ability =
       data.gen >= 3 ? toID(s.ability ? s.ability : species.abilities![0]) : undefined;
-    s.gender = data.gen >= 2 && s.gender !== species.gender ? s.gender : undefined;
+    s.gender = data.gen >= 2 && s.gender && s.gender !== species.gender ? s.gender : undefined;
     s.level = s.level || 100;
 
     let maxed = true;
