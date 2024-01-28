@@ -212,7 +212,7 @@ describe('Protocol', () => {
       }
     }
     const handler = new BoostHandler();
-    const chunk = '>battle-1\n|-boost|p2b: Diancie|atk|2\n|-unboost|p2a: Salamence|def|1';
+    let chunk = '>battle-1\n|-boost|p2b: Diancie|atk|2\n|-unboost|p2a: Salamence|def|1';
     const count = {called: 0, looped: 0};
     for (const {roomid, args, kwArgs} of Protocol.parse(chunk)) {
       expect(roomid).toBe('battle-1');
@@ -224,6 +224,9 @@ describe('Protocol', () => {
     }
     expect(count.called).toBe(1);
     expect(count.looped).toBe(2);
+
+    chunk = '>battle-1\n|-damage|p2a: Poliwrath|219/383|[from] Recoil|[of] p1a: Chansey';
+    expect(Object.keys(Array.from(Protocol.parse(chunk))[0].kwArgs)).toEqual(['of', 'from']);
   });
 
   it('#parsePokemonIdent', () => {
