@@ -361,7 +361,7 @@ export const Sets = new class {
   canonicalize(s: Partial<PokemonSet>, data: Data) {
     const species = data.species.get(s.species!)!;
     s.species = toID(species.battleOnly ? species.baseSpecies : species.name);
-    s.name = s.species;
+    s.name = undefined;
 
     s.item = data.gen >= 2 && s.item ? toID(s.item) : undefined;
     s.ability =
@@ -380,7 +380,7 @@ export const Sets = new class {
       }
     }
 
-    const nature = data.gen < 3 ? data.natures.get(s.nature || 'serious') : undefined;
+    const nature = data.gen < 3 ? undefined : data.natures.get(s.nature || 'serious');
     s.nature = nature && toID(nature.name);
 
     let hpType = s.hpType as HPTypeName | undefined;

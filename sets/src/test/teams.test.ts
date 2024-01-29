@@ -43,10 +43,10 @@ describe('Team', () => {
     team[3] = alakazam;
 
     const canon = Team.canonicalize(team, GEN[9]);
-    expect(canon.map(s => s.name)).toEqual([
+    expect(canon.map(s => s.species)).toEqual([
       'magnezone', 'alakazam', 'gliscor', 'magearna', 'tangrowth', 'tornadustherian',
     ]);
-    expect(alakazam.name).toBe('alakazam');
+    expect(alakazam.name).toBeUndefined();
     expect(alakazam.level).toBe(100);
     expect(alakazam.ivs!.atk).toBe(0);
     expect(alakazam.moves).toEqual(['focusblast', 'psychic', 'recover', 'shadowball']);

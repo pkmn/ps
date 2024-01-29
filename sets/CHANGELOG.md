@@ -1,5 +1,10 @@
 # Changelog
 
+## 5.1.2
+
+- Remove nicknames as part of canonicalization.
+- Ensure nature only gets included in canconicalized sets in Generation 3+.
+
 ## 5.1.1
 
 - Fix handling of `gender: ""` in canonicalization.
