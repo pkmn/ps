@@ -8,7 +8,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	venusaur: {
-		tier: "UU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	venusaurmega: {
@@ -167,7 +167,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "LC",
 	},
 	clefable: {
-		tier: "UU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	vulpix: {
@@ -247,7 +247,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		doublesTier: "DOU",
 	},
 	persianalola: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	psyduck: {
@@ -494,7 +494,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		doublesTier: "DOU",
 	},
 	chansey: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	tangela: {
@@ -590,11 +590,11 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		doublesTier: "DOU",
 	},
 	vaporeon: {
-		tier: "UU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	jolteon: {
-		tier: "UU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	flareon: {
@@ -650,7 +650,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	dragonite: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	mewtwo: {

@@ -30030,11 +30030,11 @@
         "def": 111,
         "spa": 88,
         "spd": 99,
-        "spe": 125
+        "spe": 124
       },
-      "abilities": {"0": "Multiscale", "1": "Rough Skin"},
+      "abilities": {"0": "Multiscale", "1": "Rough Skin", "H": "Water Veil"},
       "weightkg": 999.9,
-      "eggGroups": ["Undiscovered"],
+      "eggGroups": ["Amorphous", "Water 3"],
       "gen": 9
     },
     "pokestarsmeargle": {
