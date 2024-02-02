@@ -19,7 +19,7 @@
 
 This is the top level of [`@pkmn`](https://pkmn.cc/@pkmn/)'s Pokémon Showdown components.
 
-- [`@pkmn/sim`](sim): an automatically generated extraction of just the simulator portion of
+- [`@pkmn/sim`](sim): a generated extraction of just the simulator portion of
   [smogon/pokemon-showdown](https://github.com/smogon/pokemon-showdown)
 - [`@pkmn/dex`](dex): a unification of
   [smogon/pokemon-showdown](https://github.com/smogon/pokemon-showdown)'s and
@@ -42,8 +42,7 @@ This is the top level of [`@pkmn`](https://pkmn.cc/@pkmn/)'s Pokémon Showdown c
 - [`@pkmn/login`](login): logic for authenticating with Pokémon Showdown
 - [`@pkmn/randoms`](randoms): random team generation logic for Pokémon Showdown's Random Battle
   formats, for use with [`@pkmn/sim`](sim)
-- [`@pkmn/streams`](streams): an automatically generated extraction of Pokémon Showdown's streams
-  library
+- [`@pkmn/streams`](streams): a generated extraction of Pokémon Showdown's streams library
 
 Everything in this repository is distributed under the terms of the [MIT License](LICENSE). For
 some packages, substantial amounts of the code have been either derived or generated from the
