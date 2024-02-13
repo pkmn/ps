@@ -93,7 +93,12 @@ export const Formats: FormatList = [
     ruleset: [ '[Gen 9] RU' ],
     banlist: [ 'RU', 'NUBL', 'Quick Claw' ]
   },
-  { name: '[Gen 9] PU', mod: 'gen9', ruleset: [ '[Gen 9] NU' ], banlist: [ 'NU', 'PUBL' ] },
+  {
+    name: '[Gen 9] PU',
+    mod: 'gen9',
+    ruleset: [ '[Gen 9] NU' ],
+    banlist: [ 'NU', 'PUBL', 'Drought' ]
+  },
   {
     name: '[Gen 9] LC',
     mod: 'gen9',
@@ -108,10 +113,11 @@ export const Formats: FormatList = [
       'Porygon',       'Qwilfish-Hisui',
       'Rufflet',       'Scraggy',
       'Scyther',       'Sneasel',
-      'Sneasel-Hisui', 'Stantler',
-      'Vulpix',        'Vulpix-Alola',
-      'Yanma',         'Moody',
-      'Baton Pass',    'Sticky Web'
+      'Sneasel-Hisui', 'Snivy',
+      'Stantler',      'Vulpix',
+      'Vulpix-Alola',  'Yanma',
+      'Moody',         'Baton Pass',
+      'Sticky Web'
     ]
   },
   {
@@ -426,11 +432,17 @@ export const Formats: FormatList = [
     mod: 'gen3',
     ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause', 'Accuracy Moves Clause' ],
     banlist: [
-      'Chansey',    'Meditite',
-      'Omanyte',    'Scyther',
-      'Wynaut',     'Zigzagoon',
-      'Baton Pass', 'Dragon Rage',
-      'Sonic Boom', 'Swagger'
+      'Chansey',
+      'Meditite',
+      'Omanyte',
+      'Scyther',
+      'Wynaut',
+      'Zigzagoon',
+      'Deep Sea Tooth',
+      'Baton Pass',
+      'Dragon Rage',
+      'Sonic Boom',
+      'Swagger'
     ]
   },
   {
@@ -449,12 +461,11 @@ export const Formats: FormatList = [
       'Mienfoo',       'Minccino',
       'Mudbray',       'Pawniard',
       'Shellder',      'Shroodle',
-      'Snivy',         'Snubbull',
-      'Stunky',        'Tentacool',
-      'Timburr',       'Tinkatink',
-      'Toedscool',     'Trapinch',
-      'Voltorb-Hisui', 'Vullaby',
-      'Wattrel'
+      'Snubbull',      'Stunky',
+      'Tentacool',     'Timburr',
+      'Tinkatink',     'Toedscool',
+      'Trapinch',      'Voltorb-Hisui',
+      'Vullaby',       'Wattrel'
     ]
   },
   {
@@ -500,23 +511,23 @@ export const Formats: FormatList = [
       'Terastal Clause'
     ],
     banlist: [
-      'Calyrex-Shadow',   'Deoxys-Attack',  'Diancie-Mega',
-      'Gengar-Mega',      'Groudon-Primal', 'Kartana',
-      'Mewtwo-Mega-X',    'Mewtwo-Mega-Y',  'Rayquaza-Mega',
-      'Regigigas',        'Shedinja',       'Slaking',
-      'Arena Trap',       'Comatose',       'Contrary',
-      'Gorilla Tactics',  'Hadron Engine',  'Huge Power',
-      'Illusion',         'Innards Out',    'Libero',
-      'Magnet Pull',      'Moody',          'Neutralizing Gas',
-      'Orichalcum Pulse', 'Parental Bond',  'Poison Heal',
-      'Protean',          'Pure Power',     'Shadow Tag',
-      'Stakeout',         'Water Bubble',   'Wonder Guard',
-      'Baton Pass',       'Belly Drum',     'Ceaseless Edge',
-      'Dire Claw',        'Electro Shot',   'Fillet Away',
-      'Imprison',         'Last Respects',  'Lumina Crash',
-      'Photon Geyser',    'Quiver Dance',   'Rage Fist',
-      'Revival Blessing', 'Shed Tail',      'Substitute',
-      'Shell Smash',      'Tail Glow'
+      'Calyrex-Shadow',   'Deoxys-Attack',    'Diancie-Mega',
+      'Gengar-Mega',      'Groudon-Primal',   'Kartana',
+      'Mewtwo-Mega-X',    'Mewtwo-Mega-Y',    'Rayquaza-Mega',
+      'Regigigas',        'Shedinja',         'Slaking',
+      'Arena Trap',       'Comatose',         'Contrary',
+      'Gorilla Tactics',  'Hadron Engine',    'Huge Power',
+      'Illusion',         'Innards Out',      'Libero',
+      'Liquid Ooze',      'Magnet Pull',      'Moody',
+      'Neutralizing Gas', 'Orichalcum Pulse', 'Parental Bond',
+      'Poison Heal',      'Protean',          'Pure Power',
+      'Shadow Tag',       'Stakeout',         'Water Bubble',
+      'Wonder Guard',     'Baton Pass',       'Belly Drum',
+      'Ceaseless Edge',   'Dire Claw',        'Electro Shot',
+      'Fillet Away',      'Imprison',         'Last Respects',
+      'Lumina Crash',     'Photon Geyser',    'Quiver Dance',
+      'Rage Fist',        'Revival Blessing', 'Shed Tail',
+      'Substitute',       'Shell Smash',      'Tail Glow'
     ]
   },
   {
@@ -2213,7 +2224,7 @@ export const Formats: FormatList = [
     name: '[Gen 5] ZU',
     mod: 'gen5',
     ruleset: [ '[Gen 5] PU' ],
-    banlist: [ 'PU', 'ZUBL', 'Baton Pass' ],
+    banlist: [ 'PU', 'ZUBL', "King's Rock", 'Quick Claw', 'Razor Fang', 'Baton Pass' ],
     unbanlist: [ 'Damp Rock' ]
   },
   {
@@ -2467,7 +2478,7 @@ export const Formats: FormatList = [
   {
     name: '[Gen 3] PU',
     mod: 'gen3',
-    ruleset: [ 'Standard', 'Baton Pass Clause' ],
+    ruleset: [ 'Standard', 'Baton Pass Stat Clause' ],
     banlist: [
       'Uber', 'OU',
       'UUBL', 'UU',
@@ -2478,7 +2489,7 @@ export const Formats: FormatList = [
   {
     name: '[Gen 3] ZU',
     mod: 'gen3',
-    ruleset: [ 'Standard', 'Baton Pass Stat Clause' ],
+    ruleset: [ 'Standard', 'Baton Pass Stat Trap Clause' ],
     banlist: [
       'Uber',
       'OU',

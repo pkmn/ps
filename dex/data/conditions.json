@@ -212,7 +212,8 @@
       "name": "Commanding",
       "noCopy": true,
       "onDragOutPriority": 2,
-      "onTrapPokemonPriority": -11
+      "onTrapPokemonPriority": -11,
+      "onInvulnerability": false
     },
     "arceus": {"name": "Arceus", "onTypePriority": 1},
     "silvally": {"name": "Silvally", "onTypePriority": 1},
