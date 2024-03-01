@@ -270,7 +270,7 @@ export const Sets = new class {
     first = true;
     if (s.ivs) {
       let defaultIVs = true;
-      let hpType: HPTypeName|undefined = undefined;
+      let hpType: HPTypeName | undefined = undefined;
       if (s.moves) {
         for (const move of s.moves) {
           hpType = getHiddenPowerType(move);

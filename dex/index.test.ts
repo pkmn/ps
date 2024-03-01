@@ -487,7 +487,7 @@ describe('Dex', () => {
 describe('Bundle', () => {
   it('usage', () => {
     {
-      const window = {} as { pkmn: { dex: {Dex: typeof Dex }}};
+      const window = {} as {pkmn: {dex: {Dex: typeof Dex}}};
 
       // eslint-disable-next-line no-eval
       eval(fs.readFileSync(path.resolve(__dirname, './build/index.min.js'), 'utf8'));

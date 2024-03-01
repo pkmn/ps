@@ -139,7 +139,7 @@ export class Side {
     }
     if (this.team.length > this.totalPokemon || this.battle.speciesClause) {
       // check for Illusion
-      const existingTable: { [searchid: string]: number } = {};
+      const existingTable: {[searchid: string]: number} = {};
       let toRemove = -1;
       for (let poke1i = 0; poke1i < this.team.length; poke1i++) {
         const poke1 = this.team[poke1i];

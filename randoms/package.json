@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/randoms",
-  "version": "0.8.8",
+  "version": "0.8.9",
   "description": "Random team generation logic for Pokémon Showdown's Random Battle formats",
   "repository": "github:pkmn/ps",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "build"
   ],
   "dependencies": {
-    "@pkmn/sim": "^0.8.8"
+    "@pkmn/sim": "^0.8.9"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
@@ -38,23 +38,24 @@
     "extends": "@pkmn",
     "rules": {
       "@typescript-eslint/quotes": "off",
-      "@typescript-eslint/indent": [
+      "@typescript-eslint/member-delimiter-style": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/prefer-optional-chain": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
+      "@stylistic/indent": [
         "error",
         "tab",
         {
           "flatTernaryExpressions": true
         }
       ],
-      "@typescript-eslint/member-delimiter-style": "off",
-      "@typescript-eslint/no-unused-vars": "off",
-      "@typescript-eslint/prefer-optional-chain": "off",
-      "@typescript-eslint/restrict-template-expressions": "off",
+      "@stylistic/no-mixed-spaces-and-tabs": "off",
+      "@stylistic/no-multiple-empty-lines": "off",
+      "@stylistic/operator-linebreak": "off",
       "import/order": "off",
       "max-len": "off",
       "no-dupe-else-if": "off",
-      "no-mixed-spaces-and-tabs": "off",
-      "no-multiple-empty-lines": "off",
-      "operator-linebreak": "off"
+      "no-mixed-spaces-and-tabs": "off"
     }
   }
 }

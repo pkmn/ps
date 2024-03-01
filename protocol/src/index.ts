@@ -252,8 +252,8 @@ export namespace Protocol {
    * If the challenge is accepted, you will receive a room initialization message.
    */
   export interface Challenges {
-    challengesFrom: { [userid in ID]: ID };
-    challengeTo: null | { o: Username; format: ID };
+    challengesFrom: {[userid in ID]: ID};
+    challengeTo: null | {o: Username; format: ID};
   }
 
   /**
@@ -280,7 +280,7 @@ export namespace Protocol {
    */
   export interface SearchState {
     searching: ID[];
-    games: { [roomid in RoomID]: RoomTitle};
+    games: {[roomid in RoomID]: RoomTitle};
   }
 
   /**
@@ -767,7 +767,7 @@ export namespace Protocol {
      */
     '|tournament|battleend|':
     | readonly [
-      'tournament', 'battleend', Username, Username, 'win' | 'loss' | 'draw', Score, 'success'
+      'tournament', 'battleend', Username, Username, 'win' | 'loss' | 'draw', Score, 'success',
     ] | readonly ['tournament', 'battleend', Username, Username, 'draw', Score, 'fail'];
     /**
      * `|tournament|end|JSON`
@@ -1425,7 +1425,7 @@ export namespace Protocol {
       '-activate',
       PokemonIdent,
       EffectName | AbilityName | MoveName | '',
-      ItemName | MoveName | AbilityName | Num | PokemonIdent | ''
+      ItemName | MoveName | AbilityName | Num | PokemonIdent | '',
     ]
     | readonly ['-activate', PokemonIdent, EffectName, AbilityName | '', AbilityName | ''];
     '|-fieldactivate|': readonly ['-fieldactivate', EffectName];
@@ -1597,7 +1597,7 @@ export namespace Protocol {
     '|switch|': GeneralKWArgNames;
     '|-activate|': GeneralKWArgNames
     | 'ability' | 'ability2' | 'block' | 'broken' | 'damage' | 'item'
-    | 'move' | 'number'| 'consumed' | 'name' | 'fromitem' | 'source';
+    | 'move' | 'number' | 'consumed' | 'name' | 'fromitem' | 'source';
     '|-ability|': GeneralKWArgNames | 'move' | 'weaken' | 'fail';
     '|-block|': GeneralKWArgNames;
     '|-boost|': GeneralKWArgNames | 'multiple' | 'zeffect';
@@ -1605,7 +1605,7 @@ export namespace Protocol {
     '|-clearboost|': GeneralKWArgNames;
     '|-clearallboost|': GeneralKWArgNames | 'zeffect';
     '|-clearnegativeboost|': GeneralKWArgNames | 'zeffect';
-    '|-curestatus|': GeneralKWArgNames| 'thaw' | 'msg';
+    '|-curestatus|': GeneralKWArgNames | 'thaw' | 'msg';
     '|-cureteam|': GeneralKWArgNames;
     '|-damage|': GeneralKWArgNames | 'partiallytrapped';
     '|-end|': GeneralKWArgNames | 'partiallytrapped' | 'interrupt';
@@ -1641,10 +1641,10 @@ export namespace Protocol {
 
   export type BattleArgKWArgs<T extends BattleArgName> =
     Readonly< T extends BattleArgsWithKWArgName
-      ? { [K in BattleArgsWithKWArgs[T]]?: BattleArgsKWArgsTypes[K] | undefined }
+      ? {[K in BattleArgsWithKWArgs[T]]?: BattleArgsKWArgsTypes[K] | undefined}
       : {}>; // eslint-disable-line @typescript-eslint/ban-types
 
-  export type BattleArgsKWArgs = { [T in BattleArgName]: BattleArgKWArgs<T> };
+  export type BattleArgsKWArgs = {[T in BattleArgName]: BattleArgKWArgs<T>};
   export type BattleArgsKWArgName = BattleArgName;
   export type BattleArgsKWArgType = BattleArgsKWArgs[Protocol.BattleArgsWithKWArgName];
 
@@ -1934,7 +1934,7 @@ export const Protocol = new class {
     if (args) return {args: args as Protocol.ArgType, kwArgs: {}};
 
     args = line.slice(1).split('|') as [string, ...string[]];
-    const kwArgs: { [kw: string]: string | true } = {};
+    const kwArgs: {[kw: string]: string | true} = {};
     while (args.length > 1) {
       const lastArg = args[args.length - 1];
       if (lastArg.charAt(0) !== '[') break;
@@ -2054,7 +2054,7 @@ export const Protocol = new class {
 
   parseEffect(
     effect?: string, fn = (s: string) => s.trim()
-  ): { name: string; type?: 'move' | 'item' | 'ability' } {
+  ): {name: string; type?: 'move' | 'item' | 'ability'} {
     if (!effect) return {name: fn('')};
     if (effect.startsWith('item:') || effect.startsWith('move:')) {
       return {name: fn(effect.slice(5)), type: effect.slice(0, 4) as 'move' | 'item'};
@@ -2201,8 +2201,8 @@ const HEALING = new Set(['dryskin', 'eartheater', 'voltabsorb', 'waterabsorb']);
 
 function upgradeBattleArgs({args, kwArgs}: {
   args: Protocol.BattleArgType;
-  kwArgs: { [kw: string]: string | true | undefined };
-}): { args: Protocol.BattleArgType; kwArgs: Protocol.BattleArgsKWArgType } {
+  kwArgs: {[kw: string]: string | true | undefined};
+}): {args: Protocol.BattleArgType; kwArgs: Protocol.BattleArgsKWArgType} {
   switch (args[0]) {
     case '-activate': {
       if (kwArgs.item || kwArgs.move || kwArgs.number || kwArgs.ability) return {args, kwArgs};

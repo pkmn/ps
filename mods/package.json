@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/mods",
-  "version": "0.8.8",
+  "version": "0.8.9",
   "description": "Support for non-standard mods to @pkmn/sim and @pkmn/dex",
   "repository": "github:pkmn/ps",
   "author": "Guangcong Luo <guangcongluo@gmail.com> (http://guangcongluo.com)",
@@ -114,11 +114,11 @@
     "build"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.8.8"
+    "@pkmn/dex-types": "^0.8.9"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.8.8",
-    "@pkmn/sim": "^0.8.8"
+    "@pkmn/dex": "^0.8.9",
+    "@pkmn/sim": "^0.8.9"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
@@ -157,18 +157,19 @@
         ],
         "rules": {
           "@typescript-eslint/quotes": "off",
-          "@typescript-eslint/indent": [
+          "@typescript-eslint/no-unused-vars": "off",
+          "@typescript-eslint/prefer-optional-chain": "off",
+          "@typescript-eslint/no-base-to-string": "off",
+          "max-len": "off",
+          "@stylistic/indent": [
             "error",
             "tab",
             {
               "flatTernaryExpressions": true
             }
           ],
-          "@typescript-eslint/no-unused-vars": "off",
-          "@typescript-eslint/prefer-optional-chain": "off",
-          "@typescript-eslint/no-base-to-string": "off",
-          "max-len": "off",
-          "operator-linebreak": "off"
+          "@stylistic/no-mixed-spaces-and-tabs": "off",
+          "@stylistic/operator-linebreak": "off"
         }
       }
     ]

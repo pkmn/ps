@@ -1567,7 +1567,7 @@ function parseRawBattleLine(line: string) {
   if (args) return {args, kwArgs: {}};
 
   args = line.slice(1).split('|') as [string, ...string[]];
-  const kwArgs: { [kw: string]: string | true } = {};
+  const kwArgs: {[kw: string]: string | true} = {};
   while (args.length > 1) {
     const lastArg = args[args.length - 1];
     if (lastArg.charAt(0) !== '[') break;

@@ -196,7 +196,7 @@ export class Moves {
 }
 
 export class Species {
-  /* private */ readonly cache = Object.create(null) as { [id: string]: Specie };
+  /* private */ readonly cache = Object.create(null) as {[id: string]: Specie};
 
   /* private */ readonly dex: Dex;
   /* private */ readonly exists: BoundExistsFn;
@@ -261,7 +261,7 @@ export class Specie implements DexSpecies {
   readonly otherFormes?: SpeciesName[];
   readonly formeOrder?: SpeciesName[];
   readonly formes?: SpeciesName[];
-  readonly genderRatio: { M: number; F: number };
+  readonly genderRatio: {M: number; F: number};
   readonly isMega?: boolean;
   readonly isPrimal?: boolean;
   readonly battleOnly?: SpeciesName | SpeciesName[];
@@ -391,10 +391,10 @@ const EFFECTIVENESS = {
   '3': 8,
 };
 
-type TypeTarget = { getTypes: () => TypeName[] } | { types: TypeName[] } | TypeName[] | TypeName;
+type TypeTarget = {getTypes: () => TypeName[]} | {types: TypeName[]} | TypeName[] | TypeName;
 
 export class Types {
-  /* private */ readonly cache = Object.create(null) as { [id: string]: Type };
+  /* private */ readonly cache = Object.create(null) as {[id: string]: Type};
 
   /* private */ readonly unknown: Type;
   /* private */ readonly dex: Dex;
@@ -415,7 +415,7 @@ export class Types {
       exists: dex.gen <= 4,
       gen: 1,
       // This gets filled in for us by Type's constructor
-      damageTaken: {} as { [t in Exclude<TypeName, '???'>]: number },
+      damageTaken: {} as {[t in Exclude<TypeName, '???'>]: number},
       HPivs: {},
       HPdvs: {},
     }, dex, this);
@@ -444,11 +444,11 @@ export class Types {
     return this.dex.getHiddenPower(ivs);
   }
 
-  canDamage(source: { type: TypeName } | TypeName, target: TypeTarget) {
+  canDamage(source: {type: TypeName} | TypeName, target: TypeTarget) {
     return this.dex.getImmunity(source, target);
   }
 
-  totalEffectiveness(source: { type: TypeName } | TypeName, target: TypeTarget) {
+  totalEffectiveness(source: {type: TypeName} | TypeName, target: TypeTarget) {
     if (!this.canDamage(source, target)) return 0;
     const e = `${this.dex.getEffectiveness(source, target)}`;
     // convert from PS's ridiculous encoding to something usable
@@ -468,7 +468,7 @@ export class Type {
   readonly kind!: 'Type';
   readonly exists!: boolean;
   readonly gen!: GenerationNum;
-  readonly effectiveness: { [t in TypeName]: TypeEffectiveness };
+  readonly effectiveness: {[t in TypeName]: TypeEffectiveness};
   readonly HPivs!: Partial<StatsTable>;
   readonly HPdvs!: Partial<StatsTable>;
   readonly category?: Exclude<MoveCategory, 'Status'>;
@@ -481,7 +481,7 @@ export class Type {
     this.category =
       this.name === 'Fairy' ? undefined : SPECIAL.includes(this.name) ? 'Special' : 'Physical';
     // convert from PS's ridiculous encoding to something usable (plus damage taken -> dealt)
-    this.effectiveness = {'???': 1} as { [t in TypeName]: TypeEffectiveness };
+    this.effectiveness = {'???': 1} as {[t in TypeName]: TypeEffectiveness};
     for (const k in dex.data.Types) {
       const t = k.charAt(0).toUpperCase() + k.slice(1) as Exclude<TypeName, '???'>;
       this.effectiveness[t] = DAMAGE_TAKEN[dex.data.Types[k].damageTaken[this.name] || 0];
@@ -688,7 +688,7 @@ export class Learnsets {
 
 const STATS = ['hp', 'atk', 'def', 'spe', 'spa', 'spd'] as const;
 
-const NAMES: Readonly<{ [name: string]: StatID }> = {
+const NAMES: Readonly<{[name: string]: StatID}> = {
   HP: 'hp', hp: 'hp',
   Attack: 'atk', Atk: 'atk', atk: 'atk',
   Defense: 'def', Def: 'def', def: 'def',
@@ -698,7 +698,7 @@ const NAMES: Readonly<{ [name: string]: StatID }> = {
   Speed: 'spe', Spe: 'spe', Spd: 'spe', spe: 'spe',
 };
 
-const DISPLAY: Readonly<{ [stat: string]: Readonly<[string, string]> }> = {
+const DISPLAY: Readonly<{[stat: string]: Readonly<[string, string]>}> = {
   hp: ['HP', 'HP'],
   atk: ['Atk', 'Attack'],
   def: ['Def', 'Defense'],

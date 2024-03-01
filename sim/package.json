@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/sim",
-  "version": "0.8.8",
+  "version": "0.8.9",
   "description": "An automatically generated extraction of just the simulator portion of Pokémon Showdown",
   "repository": "github:pkmn/ps",
   "homepage": "https://psim.us",
@@ -36,7 +36,7 @@
     "@pkmn/streams": "^1.1.0"
   },
   "devDependencies": {
-    "mocha": "^10.2.0"
+    "mocha": "^10.3.0"
   },
   "scripts": {
     "compile": "tsc -p .",

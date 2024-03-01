@@ -38,7 +38,7 @@ interface Response {
   actionerror?: string;
 }
 
-type ID = (string & { __brand: 'ID'}) | (string & { __isID: true }) | '';
+type ID = (string & {__brand: 'ID'}) | (string & {__isID: true}) | '';
 
 /** Register with the server. */
 export function register(details: RegistrationDetails): Action {

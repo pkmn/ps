@@ -86,7 +86,7 @@ const EMPTY_CONDITION: Condition = new Condition({name: '', exists: false});
 
 class DexConditions implements T.DexTable<Condition> {
   readonly dex: ModdedDex;
-  readonly cache = Object.create(null) as { [id: string]: Condition };
+  readonly cache = Object.create(null) as {[id: string]: Condition};
 
   constructor(dex: ModdedDex) {
     this.dex = dex;
@@ -177,7 +177,7 @@ export class Ability extends BasicEffect<T.AbilityName> implements T.Ability {
 class DexAbilities implements T.DexTable<Ability> {
   readonly dex: ModdedDex;
   readonly caches = {
-    get: Object.create(null) as { [id: string]: Ability },
+    get: Object.create(null) as {[id: string]: Ability},
     all: undefined as ReadonlyArray<Ability> | undefined,
   };
 
@@ -240,7 +240,7 @@ export class Item extends BasicEffect<T.ItemName> implements T.Item {
   readonly isChoice?: boolean;
   readonly isGem?: boolean;
   readonly isPokeball?: boolean;
-  readonly naturalGift?: { basePower: number; type: T.TypeName };
+  readonly naturalGift?: {basePower: number; type: T.TypeName};
   readonly boosts?: Partial<T.BoostsTable> | false;
 
   constructor(data: AnyObject) {
@@ -282,7 +282,7 @@ export class Item extends BasicEffect<T.ItemName> implements T.Item {
 class DexItems implements T.DexTable<Item> {
   readonly dex: ModdedDex;
   readonly caches = {
-    get: Object.create(null) as { [id: string]: Item },
+    get: Object.create(null) as {[id: string]: Item},
     all: undefined as ReadonlyArray<Item> | undefined,
   };
 
@@ -370,7 +370,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly heal?: number[] | null;
   readonly forceSwitch?: boolean;
   readonly selfSwitch?: 'copyvolatile' | 'shedtail' | boolean;
-  readonly selfBoost?: { boosts?: Partial<T.BoostsTable> };
+  readonly selfBoost?: {boosts?: Partial<T.BoostsTable>};
   readonly selfdestruct?: boolean | 'ifHit' | 'always';
   readonly breaksProtect?: boolean;
   readonly recoil?: [number, number];
@@ -395,7 +395,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly ignoreAccuracy?: boolean;
   readonly ignoreDefensive?: boolean;
   readonly ignoreEvasion?: boolean;
-  readonly ignoreImmunity?: boolean | { [k in keyof T.TypeName]?: boolean };
+  readonly ignoreImmunity?: boolean | {[k in keyof T.TypeName]?: boolean};
   readonly ignoreNegativeOffensive?: boolean;
   readonly ignoreOffensive?: boolean;
   readonly ignorePositiveDefensive?: boolean;
@@ -552,7 +552,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
 class DexMoves implements T.DexTable<Move> {
   readonly dex: ModdedDex;
   readonly caches = {
-    get: Object.create(null) as { [id: string]: Move },
+    get: Object.create(null) as {[id: string]: Move},
     all: undefined as ReadonlyArray<Move> | undefined,
   };
 
@@ -630,7 +630,7 @@ export class Nature extends BasicEffect<T.NatureName> implements T.Nature {
 class DexNatures implements T.DexTable<Nature> {
   readonly dex: ModdedDex;
   readonly caches = {
-    get: Object.create(null) as { [id: string]: Nature },
+    get: Object.create(null) as {[id: string]: Nature},
     all: undefined as ReadonlyArray<Nature> | undefined,
   };
 
@@ -699,7 +699,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly cosmeticFormes?: T.SpeciesName[];
   readonly otherFormes?: T.SpeciesName[];
   readonly formeOrder?: T.SpeciesName[];
-  readonly genderRatio: { M: number; F: number };
+  readonly genderRatio: {M: number; F: number};
   readonly isMega?: boolean;
   readonly isPrimal?: boolean;
   readonly battleOnly?: T.SpeciesName | T.SpeciesName[];
@@ -797,7 +797,7 @@ type Mutable<T> = {-readonly [P in keyof T]: T[P]};
 class DexSpecies implements T.DexTable<Species> {
   readonly dex: ModdedDex;
   readonly caches = {
-    get: Object.create(null) as { [id: string]: Species },
+    get: Object.create(null) as {[id: string]: Species},
     all: undefined as ReadonlyArray<Species> | undefined,
   };
 
@@ -962,7 +962,7 @@ class DexSpecies implements T.DexTable<Species> {
 export class Learnset implements T.Learnset {
   readonly effectType: 'Learnset';
   readonly kind: 'Learnset';
-  readonly learnset?: { [moveid: string]: T.MoveSource[] };
+  readonly learnset?: {[moveid: string]: T.MoveSource[]};
   readonly eventOnly: boolean;
   readonly eventData?: T.EventInfo[];
   readonly encounters?: T.EventInfo[];
@@ -981,7 +981,7 @@ export class Learnset implements T.Learnset {
 
 class DexLearnsets {
   readonly dex: ModdedDex;
-  readonly cache = Object.create(null) as { [id: string]: Learnset };
+  readonly cache = Object.create(null) as {[id: string]: Learnset};
 
   constructor(dex: ModdedDex) {
     this.dex = dex;
@@ -1026,7 +1026,7 @@ export class Type implements T.Type {
   readonly exists: boolean;
   readonly gen: T.GenerationNum;
   readonly isNonstandard: T.Nonstandard | null;
-  readonly damageTaken: { [t in Exclude<T.TypeName, '???'>]: number } & { [key: string]: number };
+  readonly damageTaken: {[t in Exclude<T.TypeName, '???'>]: number} & {[key: string]: number};
   readonly HPivs: Partial<T.StatsTable>;
   readonly HPdvs: Partial<T.StatsTable>;
 
@@ -1054,7 +1054,7 @@ export class Type implements T.Type {
 class DexTypes implements T.DexTable<Type> {
   readonly dex: ModdedDex;
   readonly caches = {
-    get: Object.create(null) as { [id: string]: Type },
+    get: Object.create(null) as {[id: string]: Type},
     all: undefined as ReadonlyArray<Type> | undefined,
     names: undefined as ReadonlyArray<string> | undefined,
   };
@@ -1161,13 +1161,13 @@ class DexStats {
 
 // #region Dex
 
-type Data<T> = { 9: { [id: string]: T } } & {
-  [num in Exclude<T.GenerationNum, 9>]?: { [id: string]: { inherit?: boolean } & T.DeepPartial<T> }
+type Data<T> = {9: {[id: string]: T}} & {
+  [num in Exclude<T.GenerationNum, 9>]?: {[id: string]: {inherit?: boolean} & T.DeepPartial<T>}
 };
 
 const DATA = {
   Abilities: AbilitiesJSON as Data<T.AbilityData>,
-  Aliases: AliasesJSON as { [id: string]: string },
+  Aliases: AliasesJSON as {[id: string]: string},
   Conditions: ConditionsJSON as Data<T.ConditionData>,
   Items: ItemsJSON as Data<T.ItemData>,
   Moves: MovesJSON as unknown as Data<T.MoveData>,
@@ -1187,7 +1187,7 @@ const GEN_IDS = ['gen1', 'gen2', 'gen3', 'gen4', 'gen5', 'gen6', 'gen7', 'gen8',
 type GenID = typeof GEN_IDS[number];
 const CURRENT_GEN_ID: GenID = GEN_IDS[8];
 
-const dexes: { [mod: string]: ModdedDex } = Object.create(null);
+const dexes: {[mod: string]: ModdedDex} = Object.create(null);
 
 export type ModData = T.DeepPartial<ModdedDex['data']> & T.ModData;
 
@@ -1197,16 +1197,16 @@ export class ModdedDex implements T.Dex {
   readonly gen: T.GenerationNum;
   readonly modid: T.ID;
   readonly data!: {
-    Abilities: { [id: string]: T.AbilityData };
-    Aliases: { [id: string]: string };
-    Conditions: { [id: string]: T.ConditionData };
-    FormatsData: { [id: string]: FormatData };
-    Items: { [id: string]: T.ItemData };
-    Learnsets: null | { [id: string]: T.LearnsetData };
-    Moves: { [id: string]: T.MoveData };
-    Natures: { [id: string]: T.NatureData };
-    Species: { [id: string]: T.SpeciesData };
-    Types: { [id: string]: T.TypeData };
+    Abilities: {[id: string]: T.AbilityData};
+    Aliases: {[id: string]: string};
+    Conditions: {[id: string]: T.ConditionData};
+    FormatsData: {[id: string]: FormatData};
+    Items: {[id: string]: T.ItemData};
+    Learnsets: null | {[id: string]: T.LearnsetData};
+    Moves: {[id: string]: T.MoveData};
+    Natures: {[id: string]: T.NatureData};
+    Species: {[id: string]: T.SpeciesData};
+    Types: {[id: string]: T.TypeData};
   };
 
   readonly abilities: DexAbilities;
@@ -1252,8 +1252,8 @@ export class ModdedDex implements T.Dex {
   }
 
   getImmunity(
-    source: { type: string } | string,
-    target: { getTypes: () => string[] } | { types: string[] } | string[] | string
+    source: {type: string} | string,
+    target: {getTypes: () => string[]} | {types: string[]} | string[] | string
   ): boolean {
     const sourceType: string = typeof source !== 'string' ? source.type : source;
     // @ts-ignore
@@ -1270,8 +1270,8 @@ export class ModdedDex implements T.Dex {
   }
 
   getEffectiveness(
-    source: { type: string } | string,
-    target: { getTypes: () => string[] } | { types: string[] } | string[] | string
+    source: {type: string} | string,
+    target: {getTypes: () => string[]} | {types: string[]} | string[] | string
   ): number {
     const sourceType: string = typeof source !== 'string' ? source.type : source;
     // @ts-ignore

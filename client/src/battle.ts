@@ -11,7 +11,7 @@ import {Handler} from './handler';
 import {Pokemon} from './pokemon';
 import {Side} from './side';
 
-const SLOTS: { [slot: string]: number } = {a: 0, b: 1, c: 2, d: 3, e: 4, f: 5};
+const SLOTS: {[slot: string]: number} = {a: 0, b: 1, c: 2, d: 3, e: 4, f: 5};
 
 export const NULL = {name: '', id: '' as ID, kind: 'Condition' as DataKind};
 export type NA = typeof NULL;

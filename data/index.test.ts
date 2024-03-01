@@ -775,7 +775,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
 describe('Bundle', () => {
   it('usage', () => {
     {
-      const window = {} as { pkmn: {data: {Generations: typeof Generations}; dex: {Dex: DexT}}};
+      const window = {} as {pkmn: {data: {Generations: typeof Generations}; dex: {Dex: DexT}}};
 
       // Some gymnastics required to load the learnsets data... (the bundle is not for Node)
       const files = path.resolve(__dirname, './node_modules/@pkmn/dex');

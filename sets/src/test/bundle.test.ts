@@ -6,7 +6,7 @@ import {Sets, Teams} from '../index';
 describe('Bundle', () => {
   it('usage', () => {
     {
-      const window = {} as {pkmn: {sets: { Sets: typeof Sets; Teams: typeof Teams }}};
+      const window = {} as {pkmn: {sets: {Sets: typeof Sets; Teams: typeof Teams}}};
       // eslint-disable-next-line no-eval
       eval(fs.readFileSync(path.resolve(__dirname, '../../build/index.min.js'), 'utf8'));
       const raw =

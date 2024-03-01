@@ -4290,7 +4290,6 @@
   "8": {
     "allyswitch": {
       "inherit": true,
-      "stallingMove": false,
       "desc": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side.",
       "shortDesc": "The user swaps positions with its ally."
     },
@@ -5072,7 +5071,7 @@
       "pp": 15,
       "priority": 2,
       "flags": {"metronome": 1},
-      "stallingMove": true,
+      "condition": {"duration": 2, "counterMax": 729},
       "secondary": null,
       "target": "self",
       "type": "Psychic",

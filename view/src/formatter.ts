@@ -23,10 +23,10 @@ const Text = TextJSON as {
   // NOTE: this is called 'default' in the Pokemon Showdown client, but loaders get tripped up by
   // the keyword 'default' and think the JSON file is actually an ES module with a default export.
   // '_' at least has the benefit of being even less likely to cause collisions...
-  _: { [templateName: string]: string };
-  [id: string]: { [templateName: string]: string };
+  _: {[templateName: string]: string};
+  [id: string]: {[templateName: string]: string};
 } & {
-  [s in (StatID | 'spc')]: { statName: string; statShortName: string }
+  [s in (StatID | 'spc')]: {statName: string; statShortName: string}
 };
 
 /**
@@ -457,7 +457,7 @@ class Handler implements Protocol.Handler<string> {
 
   private formechange(
     args: Args['|detailschange|' | '|-formechange|' | '|-transform|'],
-    kwArgs: KWArgs[| '|-formechange|' | '|-transform|']
+    kwArgs: KWArgs[ | '|-formechange|' | '|-transform|']
   ) {
     const [cmd, pokemon, arg2] = args;
     let newSpecies = '' as SpeciesName;
@@ -650,7 +650,7 @@ class Handler implements Protocol.Handler<string> {
       PokemonIdent,
       AbilityName,
       AbilityName | PokemonIdent,
-      PokemonIdent | 'boost' | undefined
+      PokemonIdent | 'boost' | undefined,
     ];
     let line1 = '';
     if (oldAbility && (oldAbility.startsWith('p1') ||
@@ -1099,7 +1099,7 @@ class Handler implements Protocol.Handler<string> {
     kwArgs: KWArgs['|-boost|' | '|-unboost|']
   ) {
     let [cmd, pokemon, stat, num] = args as [
-      '-boost' | '-unboost', PokemonIdent, StatID | 'spc', Num
+      '-boost' | '-unboost', PokemonIdent, StatID | 'spc', Num,
     ];
     if (stat === 'spd' && this.parser.gen === 1) return '';
     if (stat === 'spa' && this.parser.gen === 1) stat = 'spc';

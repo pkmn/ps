@@ -80,7 +80,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
   beingCalledBack: boolean;
 
   statusStage: number;
-  statusState: { sleepTurns: number; toxicTurns: number };
+  statusState: {sleepTurns: number; toxicTurns: number};
   boosts: Partial<BoostsTable>;
   volatiles: EffectTable;
 

@@ -35,7 +35,7 @@ export class ModdedDex<
   M extends Move = Move,
   MD extends MoveData = MoveData,
   S extends Species = Species,
-  SD extends SpeciesData = SpeciesData,
+  SD extends SpeciesData = SpeciesData
 > implements Dex {
   private readonly dex: Dex;
 
@@ -112,14 +112,14 @@ export class ModdedDex<
 
   get data() {
     return this.dex.data as {
-      Abilities: { [id: string]: AD };
-      Aliases: { [id: string]: string };
-      Items: { [id: string]: ITD };
-      Moves: { [id: string]: MD };
-      Species: { [id: string]: SD };
-      Natures: { [id: string]: NatureData };
-      Learnsets: null | { [id: string]: LD };
-      Types: { [type in Exclude<TypeName, '???'>]: TypeData };
+      Abilities: {[id: string]: AD};
+      Aliases: {[id: string]: string};
+      Items: {[id: string]: ITD};
+      Moves: {[id: string]: MD};
+      Species: {[id: string]: SD};
+      Natures: {[id: string]: NatureData};
+      Learnsets: null | {[id: string]: LD};
+      Types: {[type in Exclude<TypeName, '???'>]: TypeData};
     };
   }
 
@@ -154,15 +154,15 @@ export class ModdedDex<
   }
 
   getImmunity(
-    source: { type: string } | string,
-    target: { getTypes: () => string[] } | { types: string[] } | string[] | string
+    source: {type: string} | string,
+    target: {getTypes: () => string[]} | {types: string[]} | string[] | string
   ) {
     return this.dex.getImmunity(source, target);
   }
 
   getEffectiveness(
-    source: { type: string } | string,
-    target: { getTypes: () => string[] } | { types: string[] } | string[] | string
+    source: {type: string} | string,
+    target: {getTypes: () => string[]} | {types: string[]} | string[] | string
   ) {
     return this.dex.getEffectiveness(source, target);
   }

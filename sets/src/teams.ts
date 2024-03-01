@@ -66,7 +66,7 @@ export class Team<S extends Partial<PokemonSet> = PokemonSet | Partial<PokemonSe
     return JSON.stringify(this.team);
   }
 
-  static fromJSON(json: string): Team<PokemonSet>|undefined {
+  static fromJSON(json: string): Team<PokemonSet> | undefined {
     if (json.charAt(0) !== '[' || json.charAt(json.length - 1) !== ']') {
       return undefined;
     }
@@ -124,7 +124,7 @@ export const Teams = new class {
     return new Team<PokemonSet>(team, data);
   }
 
-  importTeam(buf: string, data?: Data): Team|undefined {
+  importTeam(buf: string, data?: Data): Team | undefined {
     const teams = Teams.importTeams(buf, data, true);
     return teams.length ? teams[0] : undefined;
   }
@@ -137,7 +137,7 @@ export const Teams = new class {
   ): Readonly<Team<Partial<PokemonSet>>[]> {
     const lines = buf.split('\n');
     if (lines.length === 1 || (lines.length === 2 && !lines[1])) {
-      const team: Team<PokemonSet>|undefined = builder
+      const team: Team<PokemonSet> | undefined = builder
         ? unpackLine(lines[0], data)
         : Teams.unpackTeam(lines[0], data);
       return team ? [team] : [];
