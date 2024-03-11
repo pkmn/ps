@@ -228,20 +228,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 9] VGC 2023 Reg D',
-    mod: 'gen9predlc',
-    gameType: 'doubles',
-    bestOfDefault: true,
-    ruleset: [
-      'Flat Rules',
-      '!! Adjust Level = 50',
-      'Min Source Gen = 9',
-      'VGC Timer',
-      'Open Team Sheets'
-    ],
-    banlist: [ 'Walking Wake', 'Iron Leaves' ]
-  },
-  {
     name: '[Gen 9] VGC 2024 Reg F',
     mod: 'gen9',
     gameType: 'doubles',
@@ -815,275 +801,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 9 DLC 1] OU',
-    mod: 'gen9dlc1',
-    ruleset: [ 'Standard' ],
-    banlist: [
-      'Uber',          'AG',
-      'Arena Trap',    'Moody',
-      'Sand Veil',     'Shadow Tag',
-      'Snow Cloak',    "King's Rock",
-      'Razor Fang',    'Baton Pass',
-      'Last Respects', 'Shed Tail'
-    ]
-  },
-  {
-    name: '[Gen 9 DLC 1] Ubers',
-    mod: 'gen9dlc1',
-    ruleset: [ 'Standard' ],
-    banlist: [ 'AG', 'Moody', "King's Rock", 'Razor Fang', 'Baton Pass' ]
-  },
-  {
-    name: '[Gen 9 DLC 1] UU',
-    mod: 'gen9dlc1',
-    ruleset: [ '[Gen 9 DLC 1] OU' ],
-    banlist: [ 'OU', 'UUBL' ]
-  },
-  {
-    name: '[Gen 9 DLC 1] RU',
-    mod: 'gen9dlc1',
-    ruleset: [ '[Gen 9 DLC 1] UU' ],
-    banlist: [ 'UU', 'RUBL', 'Light Clay' ]
-  },
-  {
-    name: '[Gen 9 DLC 1] NU',
-    mod: 'gen9dlc1',
-    ruleset: [ '[Gen 9 DLC 1] RU' ],
-    banlist: [ 'RU', 'NUBL' ]
-  },
-  {
-    name: '[Gen 9 DLC 1] PU',
-    mod: 'gen9dlc1',
-    ruleset: [ '[Gen 9 DLC 1] NU' ],
-    banlist: [ 'NU', 'PUBL', 'Damp Rock', 'Heat Rock' ]
-  },
-  {
-    name: '[Gen 9 DLC 1] LC',
-    mod: 'gen9dlc1',
-    ruleset: [ 'Little Cup', 'Standard' ],
-    banlist: [
-      'Aipom',        'Basculin-White-Striped',
-      'Cutiefly',     'Diglett-Base',
-      'Dunsparce',    'Flittle',
-      'Gastly',       'Girafarig',
-      'Gligar',       'Growlithe-Hisui',
-      'Meditite',     'Misdreavus',
-      'Murkrow',      'Qwilfish-Hisui',
-      'Rufflet',      'Scyther',
-      'Sneasel',      'Sneasel-Hisui',
-      'Stantler',     'Vulpix',
-      'Vulpix-Alola', 'Yanma',
-      'Moody',        'Baton Pass',
-      'Sticky Web'
-    ]
-  },
-  {
-    name: '[Gen 9 DLC 1] Monotype',
-    mod: 'gen9dlc1',
-    ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Same Type Clause', 'Terastal Clause' ],
-    banlist: [
-      'Annihilape',     'Arceus',
-      'Calyrex-Ice',    'Calyrex-Shadow',
-      'Chi-Yu',         'Dialga',
-      'Dialga-Origin',  'Eternatus',
-      'Giratina',       'Giratina-Origin',
-      'Groudon',        'Iron Bundle',
-      'Koraidon',       'Kyogre',
-      'Magearna',       'Mewtwo',
-      'Miraidon',       'Palafin',
-      'Palkia',         'Palkia-Origin',
-      'Rayquaza',       'Shaymin-Sky',
-      'Urshifu-Base',   'Zacian',
-      'Zacian-Crowned', 'Zamazenta-Crowned',
-      'Moody',          'Shadow Tag',
-      'Booster Energy', 'Damp Rock',
-      'Focus Band',     "King's Rock",
-      'Razor Fang',     'Quick Claw',
-      'Acupressure',    'Baton Pass',
-      'Last Respects'
-    ]
-  },
-  {
-    name: '[Gen 9 DLC 1] Doubles OU',
-    mod: 'gen9dlc1',
-    gameType: 'doubles',
-    ruleset: [ 'Standard Doubles' ],
-    banlist: [ 'DUber', 'Shadow Tag' ]
-  },
-  {
-    name: '[Gen 9 DLC 1] Doubles UU',
-    mod: 'gen9dlc1',
-    gameType: 'doubles',
-    ruleset: [ '[Gen 9 DLC 1] Doubles OU', 'Evasion Abilities Clause' ],
-    banlist: [ 'DOU', 'DBL' ]
-  },
-  {
-    name: '[Gen 9 DLC 1] Doubles LC',
-    mod: 'gen9dlc1',
-    gameType: 'doubles',
-    ruleset: [ 'Standard Doubles', 'Little Cup', 'Sleep Clause Mod' ],
-    banlist: [
-      'Basculin-White-Striped',
-      'Dunsparce',
-      'Gligar',
-      'Murkrow',
-      'Qwilfish-Hisui',
-      'Scyther',
-      'Sneasel',
-      'Sneasel-Hisui',
-      'Vulpix',
-      'Vulpix-Alola',
-      'Yanma'
-    ]
-  },
-  {
-    name: '[Gen 9 DLC 1] 1v1',
-    mod: 'gen9dlc1',
-    ruleset: [
-      'Picked Team Size = 1',
-      'Max Team Size = 3',
-      'Standard',
-      'Terastal Clause',
-      'Sleep Moves Clause',
-      'Accuracy Moves Clause',
-      '!Sleep Clause Mod'
-    ],
-    banlist: [
-      'Arceus',              'Calyrex-Ice',       'Calyrex-Shadow',
-      'Chi-Yu',              'Cinderace',         'Dialga',
-      'Dialga-Origin',       'Dragonite',         'Eternatus',
-      'Flutter Mane',        'Gholdengo',         'Giratina',
-      'Giratina-Origin',     'Groudon',           'Hoopa-Unbound',
-      'Jirachi',             'Koraidon',          'Kyogre',
-      'Magearna',            'Meloetta',          'Mew',
-      'Mewtwo',              'Mimikyu',           'Miraidon',
-      'Ogerpon-Cornerstone', 'Palkia',            'Palkia-Origin',
-      'Rayquaza',            'Scream Tail',       'Shaymin-Sky',
-      'Snorlax',             'Zacian',            'Zacian-Crowned',
-      'Zamazenta',           'Zamazenta-Crowned', 'Moody',
-      'Focus Band',          'Focus Sash',        "King's Rock",
-      'Razor Fang',          'Quick Claw',        'Acupressure',
-      'Perish Song'
-    ]
-  },
-  {
-    name: '[Gen 9 DLC 1] Anything Goes',
-    mod: 'gen9dlc1',
-    ruleset: [
-      'Min Source Gen = 9',
-      'Obtainable',
-      'Team Preview',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Endless Battle Clause'
-    ]
-  },
-  {
-    name: '[Gen 9 DLC 1] ZU',
-    mod: 'gen9dlc1',
-    ruleset: [ '[Gen 9 DLC 1] PU' ],
-    banlist: [ 'PU', 'ZUBL' ]
-  },
-  {
-    name: '[Gen 9 DLC 1] National Dex',
-    mod: 'gen9dlc1',
-    ruleset: [
-      'Standard NatDex',
-      'OHKO Clause',
-      'Evasion Clause',
-      'Species Clause',
-      'Sleep Clause Mod'
-    ],
-    banlist: [
-      'ND Uber',         'ND AG',
-      'Arena Trap',      'Moody',
-      'Power Construct', 'Shadow Tag',
-      "King's Rock",     'Quick Claw',
-      'Razor Fang',      'Assist',
-      'Baton Pass',      'Last Respects',
-      'Shed Tail'
-    ]
-  },
-  {
-    name: '[Gen 9 DLC 1] National Dex Monotype',
-    mod: 'gen9dlc1',
-    ruleset: [
-      'Standard NatDex',
-      'Same Type Clause',
-      'Terastal Clause',
-      'Species Clause',
-      'OHKO Clause',
-      'Evasion Clause',
-      'Sleep Clause Mod'
-    ],
-    banlist: [
-      'Annihilape',          'Arceus',             'Baxcalibur',
-      'Blastoise-Mega',      'Blaziken',           'Blaziken-Mega',
-      'Calyrex-Ice',         'Calyrex-Shadow',     'Chi-Yu',
-      'Chien-Pao',           'Darkrai',            'Deoxys-Base',
-      'Deoxys-Attack',       'Dialga',             'Dracovish',
-      'Dragapult',           'Espathra',           'Eternatus',
-      'Flutter Mane',        'Genesect',           'Gengar-Mega',
-      'Giratina',            'Giratina-Origin',    'Groudon',
-      'Ho-Oh',               'Hoopa-Unbound',      'Iron Bundle',
-      'Kangaskhan-Mega',     'Kartana',            'Kingambit',
-      'Koraidon',            'Kyogre',             'Kyurem-Black',
-      'Kyurem-White',        'Lucario-Mega',       'Lugia',
-      'Lunala',              'Magearna',           'Marshadow',
-      'Mawile-Mega',         'Medicham-Mega',      'Metagross-Mega',
-      'Mewtwo',              'Miraidon',           'Naganadel',
-      'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Ogerpon-Hearthflame',
-      'Palafin',             'Palkia',             'Pheromosa',
-      'Rayquaza',            'Reshiram',           'Salamence-Mega',
-      'Shaymin-Sky',         'Solgaleo',           'Spectrier',
-      'Urshifu-Base',        'Xerneas',            'Yveltal',
-      'Zacian',              'Zacian-Crowned',     'Zamazenta',
-      'Zamazenta-Crowned',   'Zekrom',             'Zygarde-Base',
-      'Zygarde-Complete',    'Moody',              'Shadow Tag',
-      'Power Construct',     'Booster Energy',     'Damp Rock',
-      'Focus Band',          'Icy Rock',           "King's Rock",
-      'Leppa Berry',         'Quick Claw',         'Razor Fang',
-      'Smooth Rock',         'Terrain Extender',   'Acupressure',
-      'Baton Pass',          'Last Respects'
-    ]
-  },
-  {
-    name: '[Gen 9 DLC 1] National Dex Doubles',
-    mod: 'gen9dlc1',
-    gameType: 'doubles',
-    ruleset: [
-      'Standard NatDex',
-      'OHKO Clause',
-      'Evasion Moves Clause',
-      'Evasion Abilities Clause',
-      'Species Clause',
-      'Gravity Sleep Clause'
-    ],
-    banlist: [
-      'Annihilape',          'Arceus',
-      'Calyrex-Ice',         'Calyrex-Shadow',
-      'Dialga',              'Dialga-Origin',
-      'Eternatus',           'Genesect',
-      'Gengar-Mega',         'Giratina',
-      'Giratina-Origin',     'Groudon',
-      'Ho-Oh',               'Koraidon',
-      'Kyogre',              'Kyurem-White',
-      'Lugia',               'Lunala',
-      'Magearna',            'Melmetal',
-      'Mewtwo',              'Miraidon',
-      'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
-      'Palkia',              'Palkia-Origin',
-      'Rayquaza',            'Reshiram',
-      'Shedinja',            'Solgaleo',
-      'Urshifu-Base',        'Xerneas',
-      'Yveltal',             'Zacian',
-      'Zacian-Crowned',      'Zamazenta-Crowned',
-      'Zekrom',              'Commander',
-      'Power Construct',     'Assist',
-      'Dark Void',           'Swagger'
-    ]
-  },
-  {
     name: '[Gen 9] Monotype Random Battle',
     mod: 'gen9',
     team: 'random',
@@ -1255,12 +972,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 8 BDSP] Random Battle',
-    mod: 'gen8bdsp',
-    team: 'random',
-    ruleset: [ '[Gen 8] Random Battle', '!PotD' ]
-  },
-  {
     name: '[Gen 7] Random Battle',
     mod: 'gen7',
     team: 'random',
@@ -1291,12 +1002,6 @@ export const Formats: FormatList = [
     team: 'randomHC',
     ruleset: [ 'HP Percentage Mod', 'Cancel Mod' ],
     banlist: [ 'Nonexistent' ]
-  },
-  {
-    name: "[Gen 7 Let's Go] Random Battle",
-    mod: 'gen7letsgo',
-    team: 'random',
-    ruleset: [ 'Obtainable', 'Allow AVs', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod' ]
   },
   {
     name: '[Gen 6] Random Battle',
@@ -1625,21 +1330,6 @@ export const Formats: FormatList = [
     restricted: [ 'Restricted Legendary' ]
   },
   {
-    name: '[Gen 8 BDSP] OU',
-    mod: 'gen8bdsp',
-    ruleset: [ 'Standard', 'Evasion Abilities Clause' ],
-    banlist: [
-      'Uber',
-      'Arena Trap',
-      'Drizzle',
-      'Moody',
-      'Shadow Tag',
-      "King's Rock",
-      'Razor Fang',
-      'Baton Pass'
-    ]
-  },
-  {
     name: '[Gen 8] Custom Game',
     mod: 'gen8',
     debug: true,
@@ -1687,26 +1377,6 @@ export const Formats: FormatList = [
     gameType: 'doubles',
     bestOfDefault: true,
     ruleset: [ 'Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8', 'VGC Timer' ]
-  },
-  {
-    name: '[Gen 8] VGC 2020',
-    mod: 'gen8dlc1',
-    gameType: 'doubles',
-    bestOfDefault: true,
-    ruleset: [ 'Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8', 'VGC Timer' ]
-  },
-  {
-    name: '[Gen 8 BDSP] Doubles OU',
-    mod: 'gen8bdsp',
-    gameType: 'doubles',
-    ruleset: [ 'Standard Doubles' ],
-    banlist: [ 'DUber', 'Dark Void' ]
-  },
-  {
-    name: '[Gen 8 BDSP] Battle Festival Doubles',
-    mod: 'gen8bdsp',
-    gameType: 'doubles',
-    ruleset: [ 'Flat Rules', 'Min Source Gen = 8' ]
   },
   {
     name: '[Gen 8] Doubles Custom Game',
@@ -1854,23 +1524,6 @@ export const Formats: FormatList = [
     banlist: [ 'Battle Bond' ]
   },
   {
-    name: "[Gen 7 Let's Go] OU",
-    mod: 'gen7letsgo',
-    ruleset: [
-      'Adjust Level = 50',
-      'Obtainable',
-      'Species Clause',
-      'Nickname Clause',
-      'OHKO Clause',
-      'Evasion Moves Clause',
-      'Team Preview',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Sleep Clause Mod'
-    ],
-    banlist: [ 'Uber' ]
-  },
-  {
     name: '[Gen 7] Custom Game',
     mod: 'gen7',
     debug: true,
@@ -1934,43 +1587,12 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 7] VGC 2017',
-    mod: 'gen7sm',
-    gameType: 'doubles',
-    bestOfDefault: true,
-    timer: {
-      starting: 900,
-      addPerTurn: 0,
-      maxPerTurn: 55,
-      maxFirstTurn: 90,
-      grace: 90,
-      timeoutAutoChoose: true,
-      dcTimerBank: false
-    },
-    ruleset: [ 'Flat Rules', 'Old Alola Pokedex', '!! Adjust Level = 50', 'Min Source Gen = 7' ],
-    banlist: [
-      'Mega',
-      'Custap Berry',
-      'Enigma Berry',
-      'Jaboca Berry',
-      'Micle Berry',
-      'Rowap Berry'
-    ]
-  },
-  {
     name: '[Gen 7] Battle Spot Doubles',
     mod: 'gen7',
     gameType: 'doubles',
     bestOfDefault: true,
     ruleset: [ 'Flat Rules', 'Min Source Gen = 6' ],
     banlist: [ 'Battle Bond' ]
-  },
-  {
-    name: "[Gen 7 Let's Go] Doubles OU",
-    mod: 'gen7letsgo',
-    gameType: 'doubles',
-    ruleset: [ 'Standard Doubles', 'Sleep Clause Mod' ],
-    banlist: [ 'Mewtwo' ]
   },
   {
     name: '[Gen 7] Doubles Custom Game',
@@ -2142,13 +1764,6 @@ export const Formats: FormatList = [
       'Moltres + Flame Body',
       'Dragonite + Barrier'
     ]
-  },
-  {
-    name: '[Gen 6] VGC 2014',
-    mod: 'gen6xy',
-    gameType: 'doubles',
-    bestOfDefault: true,
-    ruleset: [ 'Flat Rules', 'Kalos Pokedex', 'Min Source Gen = 6' ]
   },
   {
     name: '[Gen 6] Battle Spot Doubles',
@@ -2329,30 +1944,6 @@ export const Formats: FormatList = [
     banlist: [ 'Chatot', 'Dark Void', 'Sky Drop', 'Soul Dew' ]
   },
   {
-    name: '[Gen 5] VGC 2012',
-    mod: 'gen5bw1',
-    gameType: 'doubles',
-    bestOfDefault: true,
-    ruleset: [ 'Flat Rules' ],
-    banlist: [ 'Dark Void', 'Sky Drop' ]
-  },
-  {
-    name: '[Gen 5] VGC 2011',
-    mod: 'gen5bw1',
-    gameType: 'doubles',
-    bestOfDefault: true,
-    ruleset: [ 'Flat Rules', 'Old Unova Pokedex' ],
-    banlist: [
-      'Sky Drop',
-      'Belue Berry',
-      'Durin Berry',
-      'Nomel Berry',
-      'Rabuta Berry',
-      'Spelon Berry',
-      'Watmel Berry'
-    ]
-  },
-  {
     name: '[Gen 5] Doubles Custom Game',
     mod: 'gen5',
     gameType: 'doubles',
@@ -2494,19 +2085,6 @@ export const Formats: FormatList = [
     ruleset: [ 'Flat Rules', 'Min Team Size = 4', 'Max Team Size = 4', 'Limit Two Restricted' ],
     restricted: [ 'Restricted Legendary' ],
     banlist: [ 'Soul Dew' ]
-  },
-  {
-    name: '[Gen 4] VGC 2009',
-    mod: 'gen4pt',
-    gameType: 'doubles',
-    ruleset: [
-      'Flat Rules',
-      '! Adjust Level Down',
-      'Max Level = 50',
-      'Min Team Size = 4',
-      'Max Team Size = 4'
-    ],
-    banlist: [ 'Tyranitar', 'Rotom', 'Judgment', 'Soul Dew' ]
   },
   {
     name: '[Gen 4] Doubles Custom Game',
@@ -2670,34 +2248,6 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 2] NC 2000',
-    mod: 'gen2stadium2',
-    ruleset: [
-      'Picked Team Size = 3',
-      'Min Level = 50',
-      'Max Level = 55',
-      'Max Total Level = 155',
-      'Obtainable',
-      'Stadium Sleep Clause',
-      'Freeze Clause Mod',
-      'Species Clause',
-      'Item Clause',
-      'Endless Battle Clause',
-      'Cancel Mod',
-      'Event Moves Clause',
-      'Nickname Clause',
-      'Team Preview',
-      'NC 2000 Move Legality'
-    ],
-    banlist: [ 'Uber' ]
-  },
-  {
-    name: '[Gen 2] Stadium OU',
-    mod: 'gen2stadium2',
-    ruleset: [ 'Standard' ],
-    banlist: [ 'Uber' ]
-  },
-  {
     name: '[Gen 2] Custom Game',
     mod: 'gen2',
     debug: true,
@@ -2739,48 +2289,9 @@ export const Formats: FormatList = [
     banlist: [ 'Mew', 'Mewtwo', 'Bind', 'Clamp', 'Explosion', 'Fire Spin', 'Self-Destruct', 'Wrap' ]
   },
   {
-    name: '[Gen 1] Japanese OU',
-    mod: 'gen1jpn',
-    ruleset: [ 'Standard' ],
-    banlist: [ 'Uber' ]
-  },
-  {
-    name: '[Gen 1] Stadium OU',
-    mod: 'gen1stadium',
-    ruleset: [ 'Standard', 'Team Preview' ],
-    banlist: [
-      'Uber',
-      'Nidoking + Fury Attack + Thrash',
-      'Exeggutor + Poison Powder + Stomp',
-      'Exeggutor + Sleep Powder + Stomp',
-      'Exeggutor + Stun Spore + Stomp',
-      'Jolteon + Focus Energy + Thunder Shock',
-      'Flareon + Focus Energy + Ember'
-    ]
-  },
-  {
     name: '[Gen 1] Tradebacks OU',
     mod: 'gen1',
     ruleset: [ '[Gen 1] OU', 'Allow Tradeback' ]
-  },
-  {
-    name: '[Gen 1] NC 1997',
-    mod: 'gen1jpn',
-    ruleset: [
-      'Picked Team Size = 3',
-      'Min Level = 50',
-      'Max Level = 55',
-      'Max Total Level = 155',
-      'Obtainable',
-      'Team Preview',
-      'Stadium Sleep Clause',
-      'Species Clause',
-      'Nickname Clause',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'NC 1997 Move Legality'
-    ],
-    banlist: [ 'Uber' ]
   },
   {
     name: '[Gen 1] Custom Game',

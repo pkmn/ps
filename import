@@ -704,7 +704,7 @@ const changes = async (where, last, now, repo) => ({
         }
         fs.writeFileSync(path.resolve(mods, file.replace('data/mods', 'src')),
           `${imports(MOD_IMPORTS[file], '@pkmn/sim', true)}${original}`);
-      } else {
+      } else if (!file.endsWith('formats.ts')) {
         fs.copyFileSync(
           path.resolve(ps, file), path.resolve(mods, file.replace('data/mods', 'src'))
         );
@@ -852,15 +852,23 @@ const changes = async (where, last, now, repo) => ({
 
     // Prune config/formats.ts
     const formats = [];
+    const modded = {};
     const remove = ['rated', 'challengeShow', 'searchShow', 'tournamentShow', 'threads', 'desc'];
     for (const format of require(path.resolve(ps, 'dist/config/formats.js')).Formats) {
-      if (!(format.mod && /^gen\d/.test(format.mod))) continue;
+      if (!format.mod) continue;
+      const m = /^gen\d(.*)$/.exec(format.mod);
+      if (!m) continue;
       if (format.ruleset.some(r => r.includes('Draft')) ||
         format.ruleset.includes('Standard OMs')) {
         continue;
       }
       if (Object.values(format).some(v => typeof v === 'function')) continue;
       if (format.battle && !format.name.includes('Custom Game')) continue;
+      if (m[1]) {
+        modded[format.mod] = modded[format.mod] || [];
+        modded[format.mod].push(format);
+        continue;
+      }
       for (const field of remove) delete format[field];
       formats.push(format);
     }
@@ -869,6 +877,10 @@ const changes = async (where, last, now, repo) => ({
         'trunc: [Function: trunc]',
         'trunc: Math.trunc'
       )};\n`);
+    for (const id in modded) {
+      fs.writeFileSync(path.resolve(mods, `src/${id}/formats.ts`),
+        `/* eslint-disable */\n\nexport const Formats = ${inspect(modded[id])};\n`);
+    }
 
     // Decompose learnsets into learnsets.ts with just the learnset and legality.ts with the rest
     for (const dir of ['mods/gen2/', 'mods/gen6/', 'mods/gen8/', '/']) {
