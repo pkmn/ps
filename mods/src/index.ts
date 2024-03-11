@@ -47,6 +47,7 @@ export class ModdedDex<
   readonly natures: DexTable<Nature>;
   readonly species: DexTable<S>;
   readonly types: DexTable<Type>;
+  readonly formats: any;
 
   constructor(dex: Dex) {
     this.dex = dex;
@@ -100,6 +101,7 @@ export class ModdedDex<
     };
     this.natures = this.dex.natures;
     this.types = this.dex.types;
+    this.formats = (this.dex as any).formats;
   }
 
   get gen() {

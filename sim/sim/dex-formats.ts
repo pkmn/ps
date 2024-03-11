@@ -471,17 +471,27 @@ export class DexFormats {
 	}
 
 	load(): this {
-		if (!this.dex.isBase) throw new Error(`This should only be run on the base mod`);
 		if (this.formatsListCache) return this;
-
-		const formatsList = [];
 
 		if (!Array.isArray(Formats)) {
 			throw new TypeError(`Exported property 'Formats' from "./config/formats.ts" must be an array`);
 		}
+		this.formatsListCache = this.buildList(Formats);
+		return this;
+	}
+
+	extend(formats: FormatList) {
+		this.load();
+		this.formatsListCache?.concat(this.buildList(formats));
+		return this;
+	}
+
+	private buildList(formats: FormatList) {
+		const formatsList = [];
+
 		let section = '';
 		let column = 1;
-		for (const [i, f] of Formats.entries()) {
+		for (const [i, f] of formats.entries()) {
 			const format = f as any; // (writeable) FormatData
 			const id = toID(format.name);
 			if (format.section) section = format.section;
@@ -507,8 +517,7 @@ export class DexFormats {
 			formatsList.push(ruleset);
 		}
 
-		this.formatsListCache = formatsList;
-		return this;
+		return formatsList;
 	}
 
 	/**

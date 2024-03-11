@@ -4,7 +4,7 @@ import {DataMove, DexMoves} from './dex-moves';
 import {Item, DexItems} from './dex-items';
 import {Ability, DexAbilities} from './dex-abilities';
 import {Species, DexSpecies, DexLearnsets, PokemonGoData} from './dex-species';
-import {Format, DexFormats, RuleTable} from './dex-formats';
+import {Format, FormatList, DexFormats, RuleTable} from './dex-formats';
 import {
 	AbilityData,
 	AbilityText,
@@ -217,7 +217,7 @@ export class ModdedDex {
 		return dexes;
 	}
 
-	mod(mod: string | undefined, modData?: DeepPartial<ModdedDex['data']>): ModdedDex {
+	mod(mod: string | undefined, modData?: DeepPartial<ModdedDex['data']> & {Formats?: FormatList}): ModdedDex {
 		if (!mod) return dexes['base'];
 		const modid = toID(mod);
 		if (modData?.Types && !modData.TypeChart) modData.TypeChart = modData.Types;
@@ -225,6 +225,7 @@ export class ModdedDex {
 		const dex = (modid in dexes) && !modData ? dexes[modid] : new ModdedDex(modid);
 		dex.loadData(modData);
 		if (!(modid in dexes)) dexes[modid] = dex;
+		if (modData?.Formats) dex.formats.extend(modData?.Formats);
 		return dex;
 	}
 

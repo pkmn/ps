@@ -9,7 +9,10 @@ describe('Rulesets', function () {
 			'Galar Pokedex', 'Hoenn Pokedex', 'Isle of Armor Pokedex', 'Limit One Restricted',
 			'Min Team Size', 'New Alola Pokedex', 'New Unova Pokedex', 'Obtainable Abilities',
 			'Obtainable Formes', 'Obtainable Misc', 'Obtainable Moves', 'Overflow Stat Mod',
-			'Sinnoh Pokedex', 'Sketch Post-Gen 7 Moves', 'Stadium Items Clause',
+			'Sinnoh Pokedex', 'Sketch Post-Gen 7 Moves', 'Stadium Items Clause', 'Adjust Level Down',
+			'Allow AVs', 'Event Moves Clause', 'Item Clause', 'Kalos Pokedex', 'Max Total Level',
+			'Min Level', 'NC 1997 Move Legality', 'NC 2000 Move Legality', 'Old Alola Pokedex',
+			'Old Unova Pokedex', 'Stadium Sleep Clause',
 		]);
 
 		for (const format of Dex.formats.formatsListCache) {

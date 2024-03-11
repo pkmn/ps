@@ -11,14 +11,19 @@ const DATA = {
 };
 
 for (const [pkg, Dex] of Object.entries(DATA)) {
+  const expectFormat = (dex: ModdedDex, s: string) => {
+    if (pkg === 'sim') expect((dex as unknown as typeof sim.Dex).formats.get(s)).toBeDefined();
+  };
+
   describe(`ModdedDex (${pkg})`, () => {
     describe('mods', () => {
       it('gen1jpn', async () => {
-        const dex =
-          new ModdedDex(Dex.mod('gen1stadium' as ID, await import('./gen1jpn') as ModData));
+        const data = await import('./gen1jpn') as ModData;
+        const dex = new ModdedDex(Dex.mod('gen1stadium' as ID, data));
         expect(dex.gen).toBe(1);
         expect(dex.moves.get('swift').accuracy).toBe(100);
         expect(dex.moves.get('blizzard').secondary!.chance).toBe(30);
+        expectFormat(dex, 'gen1japaneseou');
       });
 
       it('gen1stadium', async () => {
@@ -26,12 +31,14 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
           new ModdedDex(Dex.mod('gen1stadium' as ID, await import('./gen1stadium') as ModData));
         expect(dex.gen).toBe(1);
         expect(dex.moves.get('counter').ignoreImmunity).toBe(true);
+        expectFormat(dex, 'gen1stadiumou');
       });
 
       it('gen2stadium2', async () => {
         const dex =
           new ModdedDex(Dex.mod('gen1stadium' as ID, await import('./gen2stadium2') as ModData));
         expect(dex.gen).toBe(2);
+        expectFormat(dex, 'gen2nc2000');
       });
 
       it('gen4pt', async () => {
@@ -40,6 +47,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.gen).toBe(4);
         expect(dex.species.get('Pichu-Spiky-Eared').isNonstandard).toBe('Future');
         expect((await dex.learnsets.get('hooh')).learnset!['bravebird']).toBeUndefined();
+        expectFormat(dex, 'gen4vgc2009');
       });
 
       it('gen5bw1', async () => {
@@ -50,6 +58,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.species.get('beedrill').unreleasedHidden).toBe(true);
         expect(dex.items.get('Custap Berry').isNonstandard).toBe('Unobtainable');
         expect((await dex.learnsets.get('growlithe')).learnset!['outrage']).toBeUndefined();
+        expectFormat(dex, 'gen5vgc2012');
       });
 
       it('gen6xy', async () => {
@@ -61,6 +70,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.items.get('red orb').isNonstandard).toBe('Future');
         expect(dex.moves.get('Hyperspace Fury').isNonstandard).toBe('Future');
         expect((await dex.learnsets.get('groudon')).learnset!['precipiceblades']).toBeUndefined();
+        expectFormat(dex, 'gen6vgc2014');
       });
 
       it('gen7sm', async () => {
@@ -71,6 +81,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect((await dex.learnsets.get('swirlix')).learnset!['stickyweb']).toBeUndefined();
         expect(dex.species.get('incineroar').unreleasedHidden).toBe(true);
         expect((await dex.learnsets.get('sandslashalola')).learnset!['iceshard']).toBeUndefined();
+        expectFormat(dex, 'gen7vgc2017');
       });
 
       it('gen7letsgo', async () => {
@@ -83,6 +94,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.moves.get('bouncybubble').isNonstandard).toBeNull();
         expect(dex.moves.get('teleport').shortDesc).toBe('User switches out.');
         expect((await dex.learnsets.get('sandslashalola')).learnset!['iceshard']).toEqual(['7L1']);
+        expectFormat(dex, 'gen7letsgodoublesou');
       });
 
       it('gen8dlc1', async () => {
@@ -94,6 +106,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.species.get('dracozolt').unreleasedHidden).toBe(true);
         expect(dex.abilities.get('Curious Medicine').isNonstandard).toBe('Unobtainable');
         expect(dex.moves.get('Dragon Ascent').isNonstandard).toBe('Unobtainable');
+        expectFormat(dex, 'gen8vgc2020');
       });
 
       it('gen8bsdp', async () => {
@@ -111,6 +124,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect((await dex.learnsets.get('Manaphy')).learnset!['watergun']).toEqual(['8L1', '8S0']);
         expect((await dex.forGen(8).learnsets.get('Weavile')).learnset!['knockoff'])
           .toBeUndefined();
+        expectFormat(dex, 'gen8bdspou');
       });
 
       it('gen9predlc', async () => {
@@ -123,6 +137,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.abilities.get('Hospitality').isNonstandard).toBe('Future');
         expect(dex.moves.get('Blood Moon').isNonstandard).toBe('Future');
         expect(dex.moves.get('Clanging Scales').isNonstandard).toBe('Past');
+        expectFormat(dex, 'gen9vgc2023regd');
       });
 
       it('gen9dlc1', async () => {
@@ -133,6 +148,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.items.get('Dubious Disc').isNonstandard).toBe('Past');
         expect(dex.moves.get('Tachyon Cutter').isNonstandard).toBe('Future');
         expect(dex.moves.get('Sacred Fire').isNonstandard).toBe('Past');
+        expectFormat(dex, 'gen9dlc1ou');
       });
     });
 
