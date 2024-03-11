@@ -53,14 +53,14 @@ export interface ConditionData extends Omit<EffectData, 'num'> {
 }
 
 interface AbilityFlags {
-	breakable?: 1 | 0;
-	cantsuppress?: 1 | 0;
-	failroleplay?: 1 | 0;
-	failskillswap?: 1 | 0;
-	noentrain?: 1 | 0;
-	noreceiver?: 1 | 0;
-	notrace?: 1 | 0;
-	notransform?: 1 | 0;
+  breakable?: 1 | 0;
+  cantsuppress?: 1 | 0;
+  failroleplay?: 1 | 0;
+  failskillswap?: 1 | 0;
+  noentrain?: 1 | 0;
+  noreceiver?: 1 | 0;
+  notrace?: 1 | 0;
+  notransform?: 1 | 0;
 }
 
 export interface AbilityData extends EffectData {
@@ -86,7 +86,7 @@ export interface ItemData extends EffectData {
   isPokeball?: boolean;
   megaStone?: string;
   megaEvolves?: string;
-  naturalGift?: { basePower: number; type: TypeName };
+  naturalGift?: {basePower: number; type: TypeName};
   onDrive?: string;
   onMemory?: string;
   onPlate?: string;
@@ -187,7 +187,7 @@ export interface MoveData extends EffectData, HitEffect {
   heal?: number[] | null;
   forceSwitch?: boolean;
   selfSwitch?: 'copyvolatile' | 'shedtail' | boolean;
-  selfBoost?: { boosts?: Partial<BoostsTable> };
+  selfBoost?: {boosts?: Partial<BoostsTable>};
   selfdestruct?: boolean | 'ifHit' | 'always';
   breaksProtect?: boolean;
   recoil?: [number, number];
@@ -212,7 +212,7 @@ export interface MoveData extends EffectData, HitEffect {
   ignoreAccuracy?: boolean;
   ignoreDefensive?: boolean;
   ignoreEvasion?: boolean;
-  ignoreImmunity?: boolean | { [k in keyof TypeName]?: boolean };
+  ignoreImmunity?: boolean | {[k in keyof TypeName]?: boolean};
   ignoreNegativeOffensive?: boolean;
   ignoreOffensive?: boolean;
   ignorePositiveDefensive?: boolean;
@@ -263,7 +263,7 @@ export interface SpeciesData {
   evoType?: EvoType;
   forme?: string;
   gender?: GenderName;
-  genderRatio?: { M: number; F: number };
+  genderRatio?: {M: number; F: number};
   maxHP?: number;
   cosmeticFormes?: string[];
   otherFormes?: string[];
@@ -305,7 +305,7 @@ export interface EventInfoData {
 }
 
 export interface LearnsetData {
-  learnset?: { [moveid: string]: MoveSource[] };
+  learnset?: {[moveid: string]: MoveSource[]};
   eventData?: EventInfoData[];
   eventOnly?: boolean;
   encounters?: EventInfoData[];
@@ -313,7 +313,7 @@ export interface LearnsetData {
 }
 
 export interface TypeData {
-  damageTaken: { [t in Exclude<TypeName, '???'>]?: number } & { [key: string]: number };
+  damageTaken: {[t in Exclude<TypeName, '???'>]?: number} & {[key: string]: number};
   HPdvs?: Partial<StatsTable>;
   HPivs?: Partial<StatsTable>;
   isNonstandard?: Nonstandard | null;
@@ -407,7 +407,7 @@ export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData
   readonly cosmeticFormes?: SpeciesName[];
   readonly otherFormes?: SpeciesName[];
   readonly formeOrder?: SpeciesName[];
-  readonly genderRatio: { M: number; F: number };
+  readonly genderRatio: {M: number; F: number};
   readonly weighthg: number;
   readonly tags: SpeciesTag[];
   readonly unreleasedHidden: boolean | 'Past';
@@ -440,7 +440,7 @@ export interface Learnset {
   readonly eventOnly: boolean;
   readonly eventData?: EventInfo[];
   readonly encounters?: EventInfo[];
-  readonly learnset?: { [moveid: string]: MoveSource[] };
+  readonly learnset?: {[moveid: string]: MoveSource[]};
 }
 
 export interface Type extends Readonly<TypeData> {
@@ -450,7 +450,7 @@ export interface Type extends Readonly<TypeData> {
   readonly name: TypeName;
   readonly exists: boolean;
   readonly gen: GenerationNum;
-  readonly damageTaken: { [t in Exclude<TypeName, '???'>]: number } & { [key: string]: number };
+  readonly damageTaken: {[t in Exclude<TypeName, '???'>]: number} & {[key: string]: number};
   readonly HPivs: Partial<StatsTable>;
   readonly HPdvs: Partial<StatsTable>;
 }
@@ -476,14 +476,14 @@ export interface Dex {
   readonly gen: GenerationNum;
   readonly modid: ID;
   readonly data: {
-    Abilities: { [id: string]: AbilityData };
-    Aliases: { [id: string]: string };
-    Items: { [id: string]: ItemData };
-    Moves: { [id: string]: MoveData };
-    Species: { [id: string]: SpeciesData };
-    Natures: { [id: string]: NatureData };
-    Learnsets: null | { [id: string]: LearnsetData };
-    Types: { [id: string]: TypeData };
+    Abilities: {[id: string]: AbilityData};
+    Aliases: {[id: string]: string};
+    Items: {[id: string]: ItemData};
+    Moves: {[id: string]: MoveData};
+    Species: {[id: string]: SpeciesData};
+    Natures: {[id: string]: NatureData};
+    Learnsets: null | {[id: string]: LearnsetData};
+    Types: {[id: string]: TypeData};
   };
 
   mod(genid: GenID): Dex;
@@ -503,14 +503,14 @@ export interface Dex {
   species: DexTable<Species>;
   types: DexTable<Type>;
 
-  getHiddenPower(ivs: StatsTable): { type: TypeName; power: number };
+  getHiddenPower(ivs: StatsTable): {type: TypeName; power: number};
   getImmunity(
-    source: { type: string } | string,
-    target: { getTypes: () => string[] } | { types: string[] } | string[] | string
+    source: {type: string} | string,
+    target: {getTypes: () => string[]} | {types: string[]} | string[] | string
   ): boolean;
   getEffectiveness(
-    source: { type: string } | string,
-    target: { getTypes: () => string[] } | { types: string[] } | string[] | string
+    source: {type: string} | string,
+    target: {getTypes: () => string[]} | {types: string[]} | string[] | string
   ): number;
 }
 
@@ -537,8 +537,8 @@ export type DeepPartial<T> =
   : T extends Set<infer U> ? Set<DeepPartial<U>>
   : T extends ReadonlySet<infer U> ? ReadonlySet<DeepPartial<U>>
   : T extends Array<infer U> ? T extends IsTuple<T>
-    ? { [K in keyof T]?: DeepPartial<T[K]> }
+    ? {[K in keyof T]?: DeepPartial<T[K]>}
     : Array<DeepPartial<U>>
   : T extends Promise<infer U> ? Promise<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
+  : T extends {} ? {[K in keyof T]?: DeepPartial<T[K]>}
   : Partial<T>;

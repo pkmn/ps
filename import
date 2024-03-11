@@ -741,6 +741,9 @@ const changes = async (where, last, now, repo) => ({
           return undefined;
         } else if (line === '\t\tthis.dex = Dex.forFormat(format);') {
           return '\t\tthis.dex = dex;';
+        // eslint-disable-next-line max-len
+        } else if (line === '\t\t\t\t\tmovePool, moves, abilities, types, counter, species as Species, teamDetails') {
+          return '\t\t\t\t\tmovePool, moves, abilities, types, counter, species, teamDetails';
         }
         return line.replace(/Dex\./g, 'this.dex.');
       });

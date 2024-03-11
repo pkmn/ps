@@ -142,7 +142,7 @@ class DexConditions implements T.DexTable<Condition> {
 export class Ability extends BasicEffect<T.AbilityName> implements T.Ability {
   readonly effectType: 'Ability';
   readonly kind: 'Ability';
-  readonly flags!: T.Ability['flags'];
+  readonly flags: T.Ability['flags'];
   readonly suppressWeather?: boolean;
   readonly condition?: Partial<Condition>;
 
@@ -153,6 +153,7 @@ export class Ability extends BasicEffect<T.AbilityName> implements T.Ability {
     this.fullname = `ability: ${this.name}`;
     this.effectType = 'Ability';
     this.kind = 'Ability';
+    this.flags = data.flags || {};
 
     if (!this.gen) {
       if (this.num >= 268) {
