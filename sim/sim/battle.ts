@@ -206,13 +206,13 @@ export class Battle {
 	trunc: (num: number, bits?: number) => number;
 	clampIntRange: (num: any, min?: number, max?: number) => number;
 	toID = toID;
-	constructor(options: BattleOptions) {
+	constructor(options: BattleOptions, dex = Dex) {
 		this.log = [];
 		this.add('t:', Math.floor(Date.now() / 1000));
 
-		const format = options.format || Dex.formats.get(options.formatid, true);
+		const format = options.format || dex.formats.get(options.formatid, true);
 		this.format = format;
-		this.dex = Dex.forFormat(format);
+		this.dex = dex.forFormat(format);
 		this.gen = this.dex.gen;
 		this.ruleTable = this.dex.formats.getRuleTable(format);
 
@@ -3037,7 +3037,7 @@ export class Battle {
 				// when they use their signature move
 				if ((toID(set.species) === 'zacian' && toID(set.item) === 'rustedsword') ||
 					(toID(set.species) === 'zamazenta' && toID(set.item) === 'rustedshield')) {
-					newSet.species = Dex.species.get(set.species + 'crowned').name;
+					newSet.species = this.dex.species.get(set.species + 'crowned').name;
 					const crowned: {[k: string]: string} = {
 						'Zacian-Crowned': 'behemothblade', 'Zamazenta-Crowned': 'behemothbash',
 					};

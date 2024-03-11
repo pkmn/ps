@@ -97,7 +97,7 @@ const IMPORTS = {
     'Side', 'SpreadMoveTargets', 'SpreadMoveDamage', 'ZMoveOptions',
   ],
   'sim/battle-queue.ts': ['Pokemon', 'ID', 'Move', 'Effect'],
-  'sim/battle-stream.ts': ['AnyObject'],
+  'sim/battle-stream.ts': ['AnyObject', 'ModdedDex'],
   'sim/battle.ts': [
     'Effect', 'Format', 'ID', 'PlayerOptions', 'AnyObject', 'ActiveMove', 'SideID', 'StatsTable',
     'SparseBoostsTable', 'SpreadMoveDamage', 'Move', 'PokemonSet', 'GameType', 'ModdedDex',
@@ -389,11 +389,24 @@ const REWRITES = {
     '\t\t\tconst entry = this.dex.data.Scripts[i];':
       '\t\t\tconst entry = (this.dex.data.Scripts as any)[i];',
     '\t\treturn team as PokemonSet[];': '\t\treturn team;',
+    '\tconstructor(options: BattleOptions) {': '\tconstructor(options: BattleOptions, dex = Dex) {',
+    '\t\tconst format = options.format || Dex.formats.get(options.formatid, true);':
+      '\t\tconst format = options.format || dex.formats.get(options.formatid, true);',
+    '\t\tthis.dex = Dex.forFormat(format);': '\t\tthis.dex = dex.forFormat(format);',
+    "\t\t\t\t\tnewSet.species = Dex.species.get(set.species + 'crowned').name;":
+      "\t\t\t\t\tnewSet.species = this.dex.species.get(set.species + 'crowned').name;",
   },
   // smfh Zarle, please learn how Promises work
   'sim/battle-stream.ts': {
     '\t\tvoid this._listen();': undefined,
     '\tasync _listen() {': '\tasync start() {',
+    "import {Battle, extractChannelMessages} from './battle';":
+      "import {Battle, extractChannelMessages} from './battle';\nimport {Dex} from './dex';",
+    '\tbattle: Battle | null;': '\tbattle: Battle | null;\n\tdex: ModdedDex;',
+    '\t\t\tthis.battle = new Battle(options);':
+      '\t\t\tthis.battle = new Battle(options, this.dex);',
+    '\t} = {}) {': '\t} = {}, dex = Dex) {',
+    '\t\tthis.battle = null;': '\t\tthis.battle = null;\n\t\tthis.dex = dex;',
   },
   'sim/team-validator.ts': {
     '\t\t\t\ttestTeamGenerator.getTeam(options); // Throws error if generation fails':

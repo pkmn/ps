@@ -1,4 +1,4 @@
-import {AnyObject} from './exported-global-types';
+import {AnyObject, ModdedDex} from './exported-global-types';
 
 /**
  * Battle Stream
@@ -14,6 +14,7 @@ import {AnyObject} from './exported-global-types';
 import {Streams, Utils} from '../lib';
 import {Teams} from './teams';
 import {Battle, extractChannelMessages} from './battle';
+import {Dex} from './dex';
 
 /**
  * Like string.split(delimiter), but only recognizes the first `limit`
@@ -47,16 +48,18 @@ export class BattleStream extends Streams.ObjectReadWriteStream<string> {
 	replay: boolean | 'spectator';
 	keepAlive: boolean;
 	battle: Battle | null;
+	dex: ModdedDex;
 
 	constructor(options: {
 		debug?: boolean, noCatch?: boolean, keepAlive?: boolean, replay?: boolean | 'spectator',
-	} = {}) {
+	} = {}, dex = Dex) {
 		super();
 		this.debug = !!options.debug;
 		this.noCatch = !!options.noCatch;
 		this.replay = options.replay || false;
 		this.keepAlive = !!options.keepAlive;
 		this.battle = null;
+		this.dex = dex;
 	}
 
 	_write(chunk: string) {
@@ -108,7 +111,7 @@ export class BattleStream extends Streams.ObjectReadWriteStream<string> {
 				if (t === 'end' && !this.keepAlive) this.pushEnd();
 			};
 			if (this.debug) options.debug = true;
-			this.battle = new Battle(options);
+			this.battle = new Battle(options, this.dex);
 			break;
 		case 'player':
 			const [slot, optionsText] = splitFirst(message, ' ');
