@@ -93,7 +93,7 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
 - **only Gens 1 - 9 are supported, no other mods**. Generation 9 as the `base` mod is supported as
   with Pokémon Showdown, but after that only the canconical `genN` mods are supported (no Stadium,
   Let's Go, or pet mods). However, the [`@pkmn/mods`](../mods) package provides the information
-  required for additional formats, and support for Other Metagames can be acheived with the modified
+  required for additional formats, and support for Other Metagames can be achieved with the modified
   `Dex#mod` method. The `Dex#mod` and `Dex.forGen` methods will `throw` if an unsupported mod/gen is
   requested.  A `Dex#modid` method has also been added which returns the current mod applied to the
   `Dex`.
@@ -128,6 +128,38 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
   to search. The two differences with Pokémon Showdown's simulator is that the input is more lenient
   (the simulator expects `'move:<ID>'`, where the client allows for `'move: <Name>'`) and the
   returned object's ID is actually a legal ID (the simulator returns `'move:<ID>' as ID`).
+
+### Formats
+
+Pokémon Showdown expects server owners to modify
+[`config/formats.ts`](https://github.com/smogon/pokemon-showdown/blob/master/config/formats.ts) in
+order to configure the formats their simulator supports. **`@pkmn/sim` does not ship the same
+`config/formats.ts` as the upstream `smogon/pokemon-showdown` repository** - `@pkmn/sim` bundles
+stable, popular formats that require no mods, looking to cut down on bundle size and churn. However,
+users may extend the default formats by providing their own:
+
+
+```ts
+import {Dex} from '@pkmn/sim';
+import {Formats} from 'myformats.ts';
+
+Dex.formats.extend(Formats);
+```
+
+You can copy Pokémon Showdown's formats verbatim by simply fetching the latest formats and saving
+the file locally.
+
+```sh
+$ curl -o myformats.ts https://raw.githubusercontent.com/smogon/pokemon-showdown/master/config/formats.ts
+```
+
+Note that not all of Pokémon Showdown's formats are expected to work out of the box, you may need to
+mod the `Dex` with additional data (including any `Rulesets`). Furthrmore,  formats are
+`Dex`-specific, if you mod a `Dex` you must instead call `extend` on that `dex.formats`. Similarly,
+that `dex` then must be passed to whichever object (eg. `Battle`, `BattleStream`, `TeamValidator`,
+etc) needs access to the format. `Dex#mod` will automatically call `extend` if the data provided to
+it includes a `Formats` list.
+
 
 ## License
 

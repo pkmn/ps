@@ -30,6 +30,10 @@ This package contains data and logic for several mods:
 - `gen8dlc1`: A mod on top of Generation 8 which contains data from just Pokémon Sword and Shield
    and the Isle of Armor DLC (ie. Generation 8 **without** the data from the Crown Tundra DLC)
 - `gen8bdsp`: A mod on top of Generation 8 which implements Brilliant Diamond and Shining Pearl
+- `gen9dlc1`: A mod on top of Generation 9 which contains data from just Pokémon Scarlet and Violet
+  (ie. Generation 9 **without** the data from the Teal Mask or the Indigo Disk DLC)
+- `gen9dlc1`: A mod on top of Generation 9 which contains data from just Pokémon Scarlet and Violet
+   and the Teal Mask DLC (ie. Generation 9 **without** the data from the Indigo Disk DLC)
 
 These mods can be applied to a `Dex` implementation by passing the data as an argument to the `mod`
 method. Because of type inconsistencies between `@pkmn/sim` and `@pkmn/dex`, to typecheck **the
@@ -82,6 +86,12 @@ const modded = new ModdedDex<Ability & {foo?: number}, AbilityData & {foo?: numb
 
 console.log(modded.abilities.get('magicguard').foo);
 ```
+
+While not a true `Dex` data type, the `@pkmn/mods` data also includes
+`@pkmn/sim` format information for the the various mods it supports that will
+automatically extend the existing list of available formats when provided as an
+argument to `Dex.mod` - please refer to the `@pkmn/sim` documentation for full
+details.
 
 ### Browser
 
