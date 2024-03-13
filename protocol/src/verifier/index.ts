@@ -1106,13 +1106,44 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     }
   }
 
-  // TODO DEBUG
   '|-fieldstart|'(args: Args['|-fieldstart|'], kwArgs: KWArgs['|-fieldstart|']) {
-    if (this.gen && this.gen.num < 4) return false;
-    return args.length === 2 &&
-      (verifyMoveEffectName(args[1] as Protocol.MoveEffectName, this.gen) ||
-        verifyFieldCondition(args[1] as FieldCondition)) &&
-      verifyKWArgs(kwArgs, KWARGS, this.gen);
+    if (args.length !== 2) return false;
+
+    const terrains = [
+      'move: Electric Terrain', 'move: Grassy Terrain', 'move: Misty Terrain',
+      'move: Psychic Terrain',
+    ];
+    const indexes = [1, 3, 5, 5, 3, 3];
+    const effects = [
+      'move: Trick Room', 'move: Magic Room', 'move: Wonder Room',
+      'move: Mud Sport', 'move: Water Sport',
+    ];
+    const abilities = [
+      'ability: Electric Surge', 'ability: Grassy Surge', 'ability: Misty Surge',
+      'ability: Psychic Surge', 'ability: Hadron Engine', 'ability: Seed Sower',
+    ];
+
+    switch (this.gen?.num || 0) {
+      case 1: case 2: case 3: return false;
+      case 4: case 5: case 6: {
+        const t = this.gen!.num === 6 && terrains.slice(0, 3).includes(args[1]);
+        if (t || args[1] === 'move: Gravity') return !Object.keys(kwArgs).length;
+        return effects.slice(0, indexes[this.gen!.num - 4]).includes(args[1]) && !!kwArgs.of;
+      }
+      case 7: case 8: case 9: {
+        if (args[1] === 'move: Gravity') return !Object.keys(kwArgs).length;
+        if (terrains.includes(args[1])) {
+          return !!kwArgs.of &&
+            abilities.slice(0, this.gen!.num === 9 ? 6 : 4).includes(kwArgs.from!);
+        }
+        return effects.slice(0, indexes[this.gen!.num - 4]).includes(args[1]) && !!kwArgs.of;
+      }
+      default: {
+        return (verifyMoveEffectName(args[1] as Protocol.MoveEffectName, this.gen) ||
+          verifyFieldCondition(args[1] as FieldCondition)) &&
+          verifyKWArgs(kwArgs, KWARGS, this.gen);
+      }
+    }
   }
 
   // TODO DEBUG
