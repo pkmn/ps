@@ -1309,13 +1309,39 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 2 && verifyPokemonIdent(args[1]);
   }
 
-  // TODO DEBUG
   '|-immune|'(args: Args['|-immune|'], kwArgs: KWArgs['|-immune|']) {
     if (!verifyPokemonIdent(args[1])) return false;
+
+    const indexes = [11, 16, 19, 21, 24];
+    const abilities = [
+      // 3
+      'ability: Flash Fire', 'ability: Immunity', 'ability: Insomnia', 'ability: Limber',
+      'ability: Soundproof', 'ability: Sturdy', 'ability: Vital Spirit', 'ability: Volt Absorb',
+      'ability: Water Absorb', 'ability: Water Veil', 'ability: Wonder Guard',
+      // 4
+      'Oblivious', 'ability: Dry Skin', 'ability: Leaf Guard', 'ability: Levitate',
+      'ability: Motor Drive',
+      // 5
+      'ability: Lightning Rod', 'ability: Sap Sipper', 'ability: Storm Drain',
+      // 6
+      'ability: Bullet Proof', 'ability: Overcoat',
+      // 7
+      'ability: Comatose', 'ability: Shields Down', 'ability: Water Bubble',
+    ];
+    const modern = abilities.slice(0); // gen6+
+    modern[16] = 'abilitiy: Oblivious';
+    const gen8 = [...modern, 'ability: Pastel Veil'];
+    modern.splice(13, 1); // Leaf Guard
+    modern.splice(22 - 1, 1); // Shields Down
+    const gen9 = [...modern, 'ability: Leaf Guard', 'ability: Earth Eater',
+      'ability: Good as Gold', 'ability: Purifying Salt', 'abiity: Thermal Exchange',
+      'ability: Well-Baked Body', 'ability: Wind Rider', 'ability: Pastel Veil'];
+    modern.splice(16, 1); // Lightning Rod
+    modern.splice(22 - 1, 1); // Shields Down
+
     switch (this.gen?.num || 0) {
-      case 1: return args.length === 2 && verifyKWArgs(kwArgs, ['ohko'], this.gen);
-      case 2: return args.length === 2 && verifyKWArgs(kwArgs, ['ohko'], this.gen);
-      case 3: case 4: {
+      case 1: case 2: return args.length === 2 && verifyKWArgs(kwArgs, ['ohko'], this.gen);
+      case 3: case 4: case 5: case 6: case 7: case 8: case 9: {
         if (args.length === 3) {
           return args[2] === 'confusion' &&
             Object.keys(kwArgs).length === 1 &&
@@ -1323,8 +1349,10 @@ class Handler implements Required<Protocol.Handler<boolean>> {
         }
         if (!(args.length === 2 && verifyKWArgs(kwArgs, ['from', 'ohko'], this.gen))) return false;
         if (Object.keys(kwArgs).length > 1) return false;
-        return !kwArgs.from || (kwArgs.from.startsWith('ability: ') ||
-          this.gen!.num === 4 && kwArgs.from === 'Oblivious');
+        const from = this.gen!.num <= 7
+          ? (this.gen!.num < 6 ? abilities : modern).slice(0, indexes[this.gen!.num - 3])
+          : this.gen!.num === 8 ? gen8 : gen9;
+        return !kwArgs.from || from.includes(kwArgs.from);
       }
       default: {
         if (!verifyKWArgs(kwArgs, [...KWARGS, 'ohko'], this.gen)) return false;
