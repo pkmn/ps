@@ -1146,13 +1146,39 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     }
   }
 
-  // TODO DEBUG
   '|-fieldend|'(args: Args['|-fieldend|'], kwArgs: KWArgs['|-fieldend|']) {
-    if (this.gen && this.gen.num < 4) return false;
-    return args.length === 2 &&
-      (verifyMoveEffectName(args[1] as Protocol.MoveEffectName, this.gen) ||
+    if (args.length !== 2) return false;
+
+    const terrains = [
+      'move: Electric Terrain', 'move: Grassy Terrain', 'Misty Terrain',
+      'move: Psychic Terrain',
+    ];
+    const indexes = [2, 3, 5, 5, 3, 3];
+    const effects = [
+      'move: Gravity', 'move: Trick Room', 'move: Wonder Room',
+      'move: Mud Sport', 'move: Water Sport',
+    ];
+
+    switch (this.gen?.num || 0) {
+      case 1: case 2: case 3: return false;
+      case 4: case 5: case 6: {
+        if (args[1] === 'move: Magic Room') return !!kwArgs.of;
+        if (Object.keys(kwArgs).length) return false;
+        return (this.gen!.num === 6 && terrains.slice(0, 3).includes(args[1])) ||
+          effects.slice(0, indexes[this.gen!.num - 4]).includes(args[1]);
+      }
+      case 7: case 8: case 9: {
+        if (args[1] === 'move: Magic Room') return !!kwArgs.of;
+        if (Object.keys(kwArgs).length) return false;
+        return terrains.includes(args[1]) ||
+          effects.slice(0, indexes[this.gen!.num - 4]).includes(args[1]);
+      }
+      default: {
+        return (verifyMoveEffectName(args[1] as Protocol.MoveEffectName, this.gen) ||
         verifyFieldCondition(args[1] as FieldCondition)) &&
       verifyKWArgs(kwArgs, KWARGS, this.gen);
+      }
+    }
   }
 
   '|-sidestart|'(args: Args['|-sidestart|'], kwArgs: KWArgs['|-sidestart|']) {
