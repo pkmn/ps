@@ -340,6 +340,10 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 2 && !!args[1];
   }
 
+  '|customgroups|'(args: Args['|customgroups|']) {
+    return args.length === 2 && verifyJSON(args[1]);
+  }
+
   '|updateuser|'(args: Args['|updateuser|']) {
     if (args.length < 5) return false;
     return !!args[1] && (args[2] === '0' || args[2] === '1') && !!args[3] && verifyJSON(args[4]);
@@ -598,6 +602,10 @@ class Handler implements Required<Protocol.Handler<boolean>> {
 
   '|request|'(args: Args['|request|']) {
     return args.length === 2 && verifyJSON(args[1]);
+  }
+
+  '|sentchoice|'(args: Args['|sentchoice|']) {
+    return args.length === 2 && !!args[1];
   }
 
   '|inactive|'(args: Args['|inactive|']) {

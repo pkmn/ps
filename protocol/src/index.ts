@@ -128,6 +128,8 @@ export namespace Protocol {
 
   /** An arbitrary message to be displayed as is. */
   export type Message = string & As<'Message'>;
+  /** A choice string previously received by the server. */
+  export type Choice = string & As<'Choice'>;
   /** UNIX timestamp; (the number of seconds since 1970). */
   export type Timestamp = string & As<'Timestamp'>;
 
@@ -211,6 +213,8 @@ export namespace Protocol {
   export type TournamentEndedJSON = string & As<'TournamentEndedJSON'>;
   /** An unparsed JSON string containing `Request` information. */
   export type RequestJSON = string & As<'RequestJSON'>;
+  /** An unparsed JSON string containing `CustomGroups` information. */
+  export type CustomGroupsJSON = string & As<'CustomGroupsJSON'>;
 
   /**
    * A JSON object representing the current state of who the user is challenging and who is
@@ -281,6 +285,14 @@ export namespace Protocol {
   export interface SearchState {
     searching: ID[];
     games: {[roomid in RoomID]: RoomTitle};
+  }
+
+  /** A JSON object that reflects the custom user groups configured on the server. */
+  export type CustomGroups = CustomGroup[];
+  export interface CustomGroup {
+    symbol: string;
+    name: string | null;
+    type: 'leadership' | 'staff' | 'normal' | 'punishment';
   }
 
   /**
@@ -602,6 +614,12 @@ export namespace Protocol {
      * your desired username and `ASSERTION` is `data.assertion`.
      */
     '|challstr|': readonly ['challstr', string];
+    /**
+     * `|customgroups|JSON
+     *
+     * `JSON` is a JSON object that reflects the custom user groups configured on the server.
+     */
+    '|customgroups|': readonly ['customgroups', CustomGroupsJSON];
     /**
      * `|updateuser|USER|NAMED|AVATAR|SETTINGS`
      *
@@ -929,6 +947,13 @@ export namespace Protocol {
      * information about your, your team as a whole. `REQUEST.rqid` is an optional request ID.
      */
     '|request|': readonly ['request', RequestJSON];
+
+    /**
+     * `|sentchoice|CHOICE`
+     *
+     * Conveys that `CHOICE` has already been received for the player and cannot be undone.
+     */
+    '|sentchoice|': readonly ['sentchoice', Choice];
     /**
      * `|inactive|MESSAGE`
      *
@@ -1865,7 +1890,7 @@ export const Protocol = new class {
     '|-fieldactivate|': 1, '|-hint|': 1, '|-center|': 1, '|-message|': 1, '|-combine|': 1,
     '|-waiting|': 1, '|-prepare|': 1, '|-mustrecharge|': 1, '|-hitcount|': 1, '|-singlemove|': 1,
     '|-singleturn|': 1, '|-anim|': 1, '|warning|': 1, '|-candynamax|': 1, '|updatepoke|': 1,
-    '|-swapsideconditions|': 1, '|-terastallize|': 1,
+    '|-swapsideconditions|': 1, '|-terastallize|': 1, '|sentchoice|': 1, '|customgroups|': 1,
   };
   ARGS_WITH_KWARGS: {[k in Protocol.ArgsWithKWArgName]: 1} = {
     '|move|': 1, '|switch|': 1, '|cant|': 1, '|-formechange|': 1, '|-fail|': 1,
@@ -2128,6 +2153,10 @@ export const Protocol = new class {
 
   parseTournamentUpdate(json: Protocol.TournamentUpdateJSON) {
     return JSON.parse(json) as Protocol.TournamentUpdate;
+  }
+
+  parseCustomGroupsJSON(json: Protocol.CustomGroupsJSON) {
+    return JSON.parse(json) as Protocol.CustomGroups;
   }
 
   parseNameParts(text: string) {
