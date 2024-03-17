@@ -684,6 +684,7 @@ export namespace Protocol {
     '|fieldhtml|': readonly ['fieldhtml', HTML];
     '|debug|': readonly ['debug', Message];
     '|deinit|': readonly ['deinit'];
+    '|pagehtml|': readonly ['pagehtml', HTML];
     '|selectorhtml|': readonly ['selectorhtml', SelectorName, HTML];
     '|refresh|': readonly ['refresh'];
     '|tempnotify|':
@@ -1860,7 +1861,7 @@ function toID(s: string): ID {
 export const Protocol = new class {
   // NOTE: An object is used here to get TypeScript to perform exhaustiveness checking
   ARGS: {[k in Protocol.ArgName]: 1} = {
-    '|init|': 1, '|title|': 1, '|users|': 1, '||': 1, '|html|': 1, '|uhtml|': 1,
+    '|init|': 1, '|title|': 1, '|users|': 1, '||': 1, '|html|': 1, '|uhtml|': 1, '|pagehtml|': 1,
     '|uhtmlchange|': 1, '|join|': 1, '|leave|': 1, '|name|': 1, '|chat|': 1, '|notify|': 1,
     '|:|': 1, '|c:|': 1, '|t:|': 1, '|battle|': 1, '|popup|': 1, '|pm|': 1, '|usercount|': 1,
     '|nametaken|': 1, '|challstr|': 1, '|updateuser|': 1, '|formats|': 1, '|updatesearch|': 1,

@@ -270,6 +270,10 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 2 && !!args[1];
   }
 
+  '|pagehtml|'(args: Args['|pagehtml|']) {
+    return args.length === 2 && !!args[1];
+  }
+
   '|uhtml|'(args: Args['|uhtml|']) {
     return args.length === 3 && !!args[1];
   }
