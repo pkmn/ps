@@ -258,7 +258,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 2 && !!args[1];
   }
 
-  '|userlist|'(args: Args['|userlist|']) {
+  '|users|'(args: Args['|users|']) {
     return args.length === 2 && !!args[1];
   }
 
