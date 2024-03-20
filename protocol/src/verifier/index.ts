@@ -59,7 +59,7 @@ const SIDE_CONDITIONS = [
 ];
 const STAT_DISPLAY_NAMES = ['Attack', 'Defense'];
 const SSA = ['Shell Side Arm Physical', 'Shell Side Arm Special'];
-const IVY_CUDGEL = ['Ivy Cudgel Water', 'Ivy Cudgel Fire', 'Ivy Cudgel Rock'];
+const IVY_CUDGEL = ['Ivy Cudgel Water', 'Ivy Cudgel Fire', 'Ivy Cudgel Rock', 'Ivy Cudgel Normal'];
 
 function verifyRoomID(roomid: Protocol.RoomID) {
   return /^[-a-z0-9]+$/.test(roomid);
@@ -1128,26 +1128,29 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       case 4: case 5: case 6: {
         const t = this.gen!.num === 6 && terrains.slice(0, 3).includes(args[1]);
         if (t || args[1] === 'move: Gravity') return !Object.keys(kwArgs).length;
-        return effects.slice(0, indexes[this.gen!.num - 4]).includes(args[1]) && !!kwArgs.of;
+        return verifyKWArgs(kwArgs, ['of'], this.gen) &&
+          effects.slice(0, indexes[this.gen!.num - 4]).includes(args[1]) && !!kwArgs.of;
       }
       case 7: case 8: case 9: {
         if (args[1] === 'move: Gravity') return !Object.keys(kwArgs).length;
         if (terrains.includes(args[1])) {
-          return !!kwArgs.of &&
+          return verifyKWArgs(kwArgs, ['of', 'from'], this.gen) && !kwArgs.of ||
             abilities.slice(0, this.gen!.num === 9 ? 6 : 4).includes(kwArgs.from!);
         }
-        return effects.slice(0, indexes[this.gen!.num - 4]).includes(args[1]) && !!kwArgs.of;
+        return verifyKWArgs(kwArgs, ['of'], this.gen) &&
+          effects.slice(0, indexes[this.gen!.num - 4]).includes(args[1]) && !!kwArgs.of;
       }
       default: {
         return (verifyMoveEffectName(args[1] as Protocol.MoveEffectName, this.gen) ||
           verifyFieldCondition(args[1] as FieldCondition)) &&
-          verifyKWArgs(kwArgs, KWARGS, this.gen);
+          verifyKWArgs(kwArgs, ['of', 'from'], this.gen);
       }
     }
   }
 
   '|-fieldend|'(args: Args['|-fieldend|'], kwArgs: KWArgs['|-fieldend|']) {
     if (args.length !== 2) return false;
+    if (!verifyKWArgs(kwArgs, ['of'], this.gen)) return false;
 
     const terrains = [
       'move: Electric Terrain', 'move: Grassy Terrain', 'Misty Terrain',
@@ -1175,8 +1178,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       }
       default: {
         return (verifyMoveEffectName(args[1] as Protocol.MoveEffectName, this.gen) ||
-        verifyFieldCondition(args[1] as FieldCondition)) &&
-      verifyKWArgs(kwArgs, KWARGS, this.gen);
+        verifyFieldCondition(args[1] as FieldCondition));
       }
     }
   }
@@ -1324,20 +1326,19 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       // 5
       'ability: Lightning Rod', 'ability: Sap Sipper', 'ability: Storm Drain',
       // 6
-      'ability: Bullet Proof', 'ability: Overcoat',
+      'ability: Bulletproof', 'ability: Overcoat',
       // 7
       'ability: Comatose', 'ability: Shields Down', 'ability: Water Bubble',
     ];
     const modern = abilities.slice(0); // gen6+
-    modern[16] = 'abilitiy: Oblivious';
+    modern[11] = 'ability: Oblivious';
     const gen8 = [...modern, 'ability: Pastel Veil'];
-    modern.splice(13, 1); // Leaf Guard
-    modern.splice(22 - 1, 1); // Shields Down
-    const gen9 = [...modern, 'ability: Leaf Guard', 'ability: Earth Eater',
-      'ability: Good as Gold', 'ability: Purifying Salt', 'abiity: Thermal Exchange',
+    gen8.splice(22, 1); // Shields Down
+    const gen9 = [...modern, 'ability: Earth Eater',
+      'ability: Good as Gold', 'ability: Purifying Salt', 'ability: Thermal Exchange',
       'ability: Well-Baked Body', 'ability: Wind Rider', 'ability: Pastel Veil'];
-    modern.splice(16, 1); // Lightning Rod
-    modern.splice(22 - 1, 1); // Shields Down
+    gen9.splice(16, 1); // Lightning Rod
+    gen9.splice(22 - 1, 1); // Shields Down
 
     switch (this.gen?.num || 0) {
       case 1: case 2: return args.length === 2 && verifyKWArgs(kwArgs, ['ohko'], this.gen);
@@ -1363,12 +1364,12 @@ class Handler implements Required<Protocol.Handler<boolean>> {
 
   '|-item|'(args: Args['|-item|'], kwArgs: KWArgs['|-item|']) {
     if (this.gen && this.gen.num < 2) return false;
-    if (args.length !== 3 || !verifyPokemonIdent(args[1]) || verifyItemName(args[2], this.gen)) {
+    if (args.length !== 3 || !verifyPokemonIdent(args[1]) || !verifyItemName(args[2], this.gen)) {
       return false;
     }
 
     const fromOf = [
-      'move Thief', 'move: Covet', 'ability: Frisk',
+      'move: Thief', 'move: Covet', 'ability: Frisk',
       'ability: Pickpocket', 'ability: Magician', 'move: Bestow',
     ];
     const from = [
@@ -1380,6 +1381,10 @@ class Handler implements Required<Protocol.Handler<boolean>> {
         return verifyKWArgs(kwArgs, ['from', 'of']) && kwArgs.from === 'move: Thief' && !!kwArgs.of;
       case 3: case 4: {
         const n = this.gen!.num === 3 ? 2 : 3;
+        if (this.gen!.num === 4 && kwArgs.from === 'ability: Frisk') {
+          return verifyKWArgs(kwArgs, ['from', 'of', 'identify']) &&
+            !!kwArgs.of && !!kwArgs.identify;
+        }
         return verifyKWArgs(kwArgs, ['from', 'of']) && (
           (fromOf.slice(0, n).includes(kwArgs.from!) && !!kwArgs.of) ||
           (from.slice(0, n).includes(kwArgs.from!) && !kwArgs.of));
@@ -1390,12 +1395,12 @@ class Handler implements Required<Protocol.Handler<boolean>> {
           return verifyKWArgs(kwArgs, ['from', 'of', 'identify']) &&
             !!kwArgs.of && !!kwArgs.identify;
         }
-        return verifyKWArgs(kwArgs, ['from', 'of']) && (
+        return verifyKWArgs(kwArgs, ['from', 'of']) && !kwArgs.from || (
           (fo.includes(kwArgs.from!) && !!kwArgs.of) ||
           (from.includes(kwArgs.from!) && !kwArgs.of));
       }
       default: {
-        return verifyKWArgs(kwArgs, [...KWARGS, 'identify'], this.gen);
+        return verifyKWArgs(kwArgs, ['from', 'of', 'identify'], this.gen);
       }
     }
   }
@@ -1600,12 +1605,12 @@ class Handler implements Required<Protocol.Handler<boolean>> {
         verifyMoveName(args[2] as Protocol.MoveName, this.gen));
     if (!valid) return false;
 
-    const indexes = [2, 6, 7, 10, 15, 19];
+    const indexes = [2, 6, 7, 11, 16, 20];
     const reasons = [
       'Protect', 'move: Endure',
       'Snatch', 'move: Focus Punch', 'move: Follow Me', 'Helping Hand',
       'move: Roost',
-      'Quick Guard', 'Wide Guard', 'move: Rage Powder',
+      'Quick Guard', 'Wide Guard', 'move: Rage Powder', 'move: Magic Coat',
       'Crafty Shield', 'Mat Block', 'Powder', 'move: Electrify', 'move: Protect',
       'move: Beak Blast', 'move: Instruct', 'move: Shell Trap', 'move: Spotlight',
     ];
@@ -1614,7 +1619,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       !['Snatch', 'Powder', 'move: Spotlight', 'move: Beak Blast'].includes(e));
     const gen8 = [...dexit, 'Max Guard'];
     const gen9 = [...dexit.filter(e => ![
-      'Crafty Shield', 'Mat Block', 'move: Electrify', 'move: Shell Trap',
+      'Crafty Shield', 'Mat Block', 'move: Electrify', 'move: Shell Trap', 'move: Magic Coat',
     ].includes(e)), 'move: Beak Blast'];
 
     switch (this.gen?.num || 0) {
@@ -1626,7 +1631,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
         if (!r.includes(args[2])) return false;
         if (!verifyKWArgs(kwArgs, ['of', 'zeffect'], this.gen)) return false;
         if (kwArgs.zeffect && (this.gen!.num !== 7 || args[2] !== 'move: Follow Me')) return false;
-        return !kwArgs.of || ['Instruct', 'Helping Hand'].includes(args[2]);
+        return !kwArgs.of || ['move: Instruct', 'Helping Hand'].includes(args[2]);
       }
       default: {
         return verifyKWArgs(kwArgs, [...KWARGS, 'zeffect'], this.gen);
