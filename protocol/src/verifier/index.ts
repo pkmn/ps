@@ -1361,13 +1361,43 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     }
   }
 
-  // TODO
   '|-item|'(args: Args['|-item|'], kwArgs: KWArgs['|-item|']) {
     if (this.gen && this.gen.num < 2) return false;
-    return args.length === 3 &&
-      verifyPokemonIdent(args[1]) &&
-      verifyItemName(args[2], this.gen) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'identify'], this.gen);
+    if (args.length !== 3 || !verifyPokemonIdent(args[1]) || verifyItemName(args[2], this.gen)) {
+      return false;
+    }
+
+    const fromOf = [
+      'move Thief', 'move: Covet', 'ability: Frisk',
+      'ability: Pickpocket', 'ability: Magician', 'move: Bestow',
+    ];
+    const from = [
+      'move: Trick', 'move: Recycle', 'move: Switcheroo', 'ability: Harvest', 'ability: Pickup',
+    ];
+
+    switch (this.gen?.num || 0) {
+      case 2:
+        return verifyKWArgs(kwArgs, ['from', 'of']) && kwArgs.from === 'move: Thief' && !!kwArgs.of;
+      case 3: case 4: {
+        const n = this.gen!.num === 3 ? 2 : 3;
+        return verifyKWArgs(kwArgs, ['from', 'of']) && (
+          (fromOf.slice(0, n).includes(kwArgs.from!) && !!kwArgs.of) ||
+          (from.slice(0, n).includes(kwArgs.from!) && !kwArgs.of));
+      }
+      case 5: case 6: case 7: case 8: case 9: {
+        const fo = this.gen!.num < 8 ? fromOf : fromOf.slice(0, -1);
+        if (this.gen!.num > 5 && kwArgs.from === 'ability: Frisk') {
+          return verifyKWArgs(kwArgs, ['from', 'of', 'identify']) &&
+            !!kwArgs.of && !!kwArgs.identify;
+        }
+        return verifyKWArgs(kwArgs, ['from', 'of']) && (
+          (fo.includes(kwArgs.from!) && !!kwArgs.of) ||
+          (from.includes(kwArgs.from!) && !kwArgs.of));
+      }
+      default: {
+        return verifyKWArgs(kwArgs, [...KWARGS, 'identify'], this.gen);
+      }
+    }
   }
 
   // TODO
