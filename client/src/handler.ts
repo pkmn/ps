@@ -38,6 +38,7 @@ export class Handler implements Protocol.Handler {
   }
 
   '|request|'(args: Args['|request|']) {
+    if (!args[1]) return;
     this.battle.request = Protocol.parseRequest(args[1]);
     this.battle.requestStatus = 'received';
   }
