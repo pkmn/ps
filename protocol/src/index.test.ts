@@ -227,6 +227,10 @@ describe('Protocol', () => {
 
     chunk = '>battle-1\n|-damage|p2a: Poliwrath|219/383|[from] Recoil|[of] p1a: Chansey';
     expect(Object.keys(Array.from(Protocol.parse(chunk))[0].kwArgs)).toEqual(['of', 'from']);
+
+    const parsed = Protocol.parseBattleLine('|title|[Modlog][techcode]');
+    expect(parsed.args[1]).toBe('[Modlog][techcode]');
+    expect(Object.keys(parsed.kwArgs)).toHaveLength(0);
   });
 
   it('#parsePokemonIdent', () => {
