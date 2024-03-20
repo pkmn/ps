@@ -1593,27 +1593,43 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     }
   }
 
-  // TODO DEBUG
   '|-singleturn|'(args: Args['|-singleturn|'], kwArgs: KWArgs['|-singleturn|']) {
-    const valid = args.length === 3 && verifyPokemonIdent(args[1]);
+    const valid = args.length === 3 &&
+      verifyPokemonIdent(args[1]) &&
+      (verifyMoveEffectName(args[2] as Protocol.MoveEffectName, this.gen) ||
+        verifyMoveName(args[2] as Protocol.MoveName, this.gen));
     if (!valid) return false;
+
+    const indexes = [2, 6, 7, 10, 15, 19];
+    const reasons = [
+      'Protect', 'move: Endure',
+      'Snatch', 'move: Focus Punch', 'move: Follow Me', 'Helping Hand',
+      'move: Roost',
+      'Quick Guard', 'Wide Guard', 'move: Rage Powder',
+      'Crafty Shield', 'Mat Block', 'Powder', 'move: Electrify', 'move: Protect',
+      'move: Beak Blast', 'move: Instruct', 'move: Shell Trap', 'move: Spotlight',
+    ];
+
+    const dexit = reasons.filter(e =>
+      !['Snatch', 'Powder', 'move: Spotlight', 'move: Beak Blast'].includes(e));
+    const gen8 = [...dexit, 'Max Guard'];
+    const gen9 = [...dexit.filter(e => ![
+      'Crafty Shield', 'Mat Block', 'move: Electrify', 'move: Shell Trap',
+    ].includes(e)), 'move: Beak Blast'];
+
     switch (this.gen?.num || 0) {
       case 1: return false;
-      case 2: case 3: case 4: {
-        const reasons = ['Protect', 'move: Endure'];
-        if (this.gen!.num >= 3) {
-          reasons.push('Snatch', 'move: Focus Punch', 'move: Follow Me', 'Helping Hand');
-        }
-        if (this.gen!.num >= 4) reasons.push('move: Roost');
-        if (!reasons.includes(args[2])) return false;
-        if (this.gen!.num === 2 && Object.keys(kwArgs).length) return false;
-        if (!verifyKWArgs(kwArgs, ['of'], this.gen)) return false;
-        return !kwArgs.of || args[2] === 'Helping Hand';
+      case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: {
+        const r = this.gen!.num === 9
+          ? gen9 : this.gen!.num === 8
+            ? gen8 : reasons.slice(0, indexes[this.gen!.num - 2]);
+        if (!r.includes(args[2])) return false;
+        if (!verifyKWArgs(kwArgs, ['of', 'zeffect'], this.gen)) return false;
+        if (kwArgs.zeffect && (this.gen!.num !== 7 || args[2] !== 'move: Follow Me')) return false;
+        return !kwArgs.of || ['Instruct', 'Helping Hand'].includes(args[2]);
       }
       default: {
-        return (verifyMoveEffectName(args[2] as Protocol.MoveEffectName, this.gen) ||
-            verifyMoveName(args[2] as Protocol.MoveName, this.gen)) &&
-          verifyKWArgs(kwArgs, [...KWARGS, 'zeffect'], this.gen);
+        return verifyKWArgs(kwArgs, [...KWARGS, 'zeffect'], this.gen);
       }
     }
   }
