@@ -1399,19 +1399,62 @@ class Handler implements Required<Protocol.Handler<boolean>> {
           (fo.includes(kwArgs.from!) && !!kwArgs.of) ||
           (from.includes(kwArgs.from!) && !kwArgs.of));
       }
-      default: {
-        return verifyKWArgs(kwArgs, ['from', 'of', 'identify'], this.gen);
-      }
+      default: return verifyKWArgs(kwArgs, ['from', 'of', 'identify'], this.gen);
     }
   }
 
-  // TODO
   '|-enditem|'(args: Args['|-enditem|'], kwArgs: KWArgs['|-enditem|']) {
-    if (this.gen && this.gen.num < 2) return false;
-    return args.length === 3 &&
+    const valid = args.length === 3 &&
       verifyPokemonIdent(args[1]) &&
-      verifyItemName(args[2], this.gen) &&
-      verifyKWArgs(kwArgs, [...KWARGS, 'eat', 'move', 'weaken'], this.gen);
+      verifyItemName(args[2], this.gen);
+    if (!valid) return false;
+
+    const from = ['move: Knock Off', 'move: Fling', 'move: Incinerate'];
+    const fromSilent = ['move: Trick', 'move: Switcheroo'];
+    const fromOf = ['move: Knock Off', 'move: Corrosive Gas'];
+    const fromOfSilent = ['move: Thief', 'ability: Pickpocket'];
+    const stealEat = ['Bug Bite', 'Pluck'];
+
+    const n = Object.keys(kwArgs).length;
+    if (!n) return true;
+    switch (this.gen?.num || 0) {
+      case 1: return false;
+      case 2: {
+        return verifyKWArgs(kwArgs, ['eat'], this.gen) &&
+          (!kwArgs.eat || !!this.gen!.items.get(args[2])!.isBerry);
+      }
+      case 3: {
+        if (!verifyKWArgs(kwArgs, ['from', 'of', 'eat', 'silent'], this.gen)) return false;
+        if (kwArgs.eat) return n === 1 && !!this.gen!.items.get(args[2])!.isBerry;
+        if (from[0] === kwArgs.from) return n === 1;
+        if (fromSilent[0] === kwArgs.from) return n === 2 && !!kwArgs.silent;
+        return fromOfSilent[0] === kwArgs.from && n === 3 && !!kwArgs.silent && !!kwArgs.of;
+      }
+      case 4: {
+        if (!verifyKWArgs(kwArgs, ['from', 'of', 'eat', 'silent', 'move', 'weaken'], this.gen)) {
+          return false;
+        }
+        if (kwArgs.from === 'stealeat') return !!kwArgs.of && stealEat.includes(kwArgs.move!);
+        if (kwArgs.eat || kwArgs.weaken) return n === 1 && !!this.gen!.items.get(args[2])!.isBerry;
+        if (from.slice(0, 2).includes(kwArgs.from!)) return n === 1;
+        if (fromSilent.slice(0, 2).includes(kwArgs.from!)) return n === 2 && !!kwArgs.silent;
+        return fromOfSilent[0] === kwArgs.from && n === 3 && !!kwArgs.silent && !!kwArgs.of;
+      }
+      case 5: case 6: case 7: case 8: case 9: {
+        if (!verifyKWArgs(kwArgs, ['from', 'of', 'eat', 'silent', 'move', 'weaken'], this.gen)) {
+          return false;
+        }
+        if (n === 1 && kwArgs.of) return args[2] === 'Red Card';
+        if (kwArgs.from === 'stealeat') return !!kwArgs.of && stealEat.includes(kwArgs.move!);
+        if (kwArgs.from === 'gem') return n === 1 && !!this.gen!.items.get(args[2])!.isGem;
+        if (kwArgs.eat || kwArgs.weaken) return n === 1 && !!this.gen!.items.get(args[2])!.isBerry;
+        if (from.slice(1).includes(kwArgs.from!)) return n === 1;
+        if (fromOf.includes(kwArgs.from!)) return n === 2 && !!kwArgs.of;
+        if (fromSilent.includes(kwArgs.from!)) return n === 2 && !!kwArgs.silent;
+        return fromOfSilent.includes(kwArgs.from!) && n === 3 && !!kwArgs.silent && !!kwArgs.of;
+      }
+      default: return verifyKWArgs(kwArgs, [...KWARGS, 'eat', 'move', 'weaken'], this.gen);
+    }
   }
 
   // TODO
