@@ -11,7 +11,7 @@ import {
   Weather,
 } from '@pkmn/types';
 
-import {Args, KWArgs, PokemonIdent, Protocol, ignoreKwArgsSimple} from '../index';
+import {Args, HEALING, KWArgs, PokemonIdent, Protocol, ignoreKwArgsSimple, toID} from '../index';
 
 interface Generation {
   num: GenerationNum;
@@ -915,17 +915,65 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     }
   }
 
-  // TODO
   '|-heal|'(args: Args['|-heal|'], kwArgs: KWArgs['|-heal|']) {
     const valid =
       args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonHPStatus(args[2]);
     if (!valid) return false;
-    if (this.gen?.num === 1) {
-      if (!verifyKWArgs(kwArgs, ['from', 'of', 'silent'], this.gen)) return false;
-      if (!Object.keys(kwArgs).length) return true;
-      return kwArgs.silent ? !(kwArgs.from || kwArgs.of) : (kwArgs.from === 'drain' && !!kwArgs.of);
+
+    const indexes = [[1, 4], [4, 13], [6, 20], [6, 20], [6, 22], [6, 22], [13, 22], [15, 22]];
+    // Gen 9: -Berry Juice
+    const fromOf = [
+      'drain',
+      'ability: Volt Absorb', 'ability: Water Absorb', 'item: Shell Bell',
+      'item: Enigma Berry', 'ability: Dry Skin',
+      'item: Aguav Berry', 'item: Figy Berry', 'item: Iapapa Berry', 'item: Mago Berry',
+      'item: Oran Berry', 'item: Sitrus Berry', 'item: Wiki Berry',
+      'ability: Earth Eater', 'ability: Hospitality',
+    ];
+    // Gen 2 only: Berry, Gold Berry
+    // Gen 9: -Berry Juice
+    const from = [
+      'item: Berry', 'item: Gold Berry', 'item: Berry Juice', 'item: Leftovers',
+      'Ingrain', 'ability: Rain Dish', 'item: Aguav Berry', 'item: Figy Berry',
+      'item: Iapapa Berry', 'item: Mago Berry', 'item: Oran Berry', 'item: Sitrus Berry',
+      'item: Wiki Berry',
+      'Aqua Ring', 'ability: Dry Skin', 'ability: Ice Body', 'ability: Poison Heal',
+      'item: Black Sludge',
+      'move: Healing Wish', 'move: Lunar Dance',
+      'Grassy Terrain', 'ability: Cheek Pouch',
+    ];
+
+    if (!Object.keys(kwArgs).length) return true;
+    switch (this.gen?.num || 0) {
+      case 1: {
+        if (!verifyKWArgs(kwArgs, ['from', 'of', 'silent'], this.gen)) return false;
+        if (kwArgs.silent) return Object.keys.length === 1;
+        return fromOf[0] === kwArgs.from && !!kwArgs.of;
+      }
+      case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: {
+        const i = indexes[this.gen!.num - 2];
+        if (this.gen!.num >= 3 && kwArgs.wisher) {
+          return verifyKWArgs(kwArgs, ['from', 'wisher'], this.gen) &&
+            Object.keys(kwArgs).length === 2 &&
+            kwArgs.from === 'move: Wish';
+        }
+        if (this.gen!.num === 7 && kwArgs.zeffect) {
+          return verifyKWArgs(kwArgs, ['from', 'zeffect'], this.gen) &&
+          Object.keys(kwArgs).length === 1 || (Object.keys(kwArgs).length === 1 &&
+          kwArgs.from === 'move: Memento');
+        }
+        if (!verifyKWArgs(kwArgs, ['from', 'of', 'silent'], this.gen)) return false;
+        if (kwArgs.silent) return Object.keys.length === 1;
+        if (!this.raw && 'of' in kwArgs && kwArgs.of === '') {
+          const id = Protocol.parseEffect(kwArgs.from as string, toID).name;
+          return HEALING.has(id);
+        }
+        return !kwArgs.from || (kwArgs.of
+          ? fromOf.slice(0, i[1])
+          : from.slice(0, i[2])).includes(kwArgs.from);
+      }
+      default: return verifyKWArgs(kwArgs, [...KWARGS, 'wisher', 'zeffect'], this.gen);
     }
-    return verifyKWArgs(kwArgs, [...KWARGS, 'wisher', 'zeffect'], this.gen);
   }
 
   '|-sethp|'(args: Args['|-sethp|'], kwArgs: KWArgs['|-sethp|']) {

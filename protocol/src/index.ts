@@ -1862,7 +1862,7 @@ export interface DetailedPokemon {
   searchid: PokemonSearchID;
 }
 
-function toID(s: string): ID {
+export function toID(s: string): ID {
   return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
 }
 
@@ -2221,24 +2221,24 @@ function upgradeArgs<T extends Protocol.ArgType>(args: [string, ...string[]]): T
   return args as T;
 }
 
-const ACTIVATE_BLOCKABLE = new Set([
+export const ACTIVATE_BLOCKABLE = new Set([
   'ingrain', 'quickguard', 'wideguard', 'craftyshield', 'matblock',
   'protect', 'mist', 'safeguard', 'electricterrain', 'mistyterrain',
   'psychicterrain', 'telepathy', 'stickyhold', 'suctioncups', 'aromaveil',
   'flowerveil', 'sweetveil', 'disguise', 'safetygoggles', 'protectivepads',
 ]);
-const CANT_BLOCKABLE = new Set([
+export const CANT_BLOCKABLE = new Set([
   'ability: Damp', 'ability: Dazzling', 'ability: Queenly Majesty', 'ability: Armor Tail',
 ]);
-const STARTABLE = new Set([
+export const STARTABLE = new Set([
   'thundercage', 'clamp', 'whirlpool', 'firespin', 'magmastorm',
   'sandtomb', 'infestation', 'trapped', 'bind', 'snaptrap', 'wrap',
 ]);
-const NUMBERABLE = new Set([
+export const NUMBERABLE = new Set([
   'eeriespell', 'gmaxdepletion', 'spite', 'grudge',
   'forewarn', 'sketch', 'leppaberry', 'mysteryberry',
 ]);
-const HEALING = new Set(['dryskin', 'eartheater', 'voltabsorb', 'waterabsorb']);
+export const HEALING = new Set(['dryskin', 'eartheater', 'voltabsorb', 'waterabsorb']);
 
 function upgradeBattleArgs({args, kwArgs}: {
   args: Protocol.BattleArgType;
