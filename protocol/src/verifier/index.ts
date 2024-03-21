@@ -848,18 +848,71 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return this.gen?.num !== 1 && args.length === 3 && verifyPokemonIdent(args[2]);
   }
 
-  // TODO
   '|-damage|'(args: Args['|-damage|'], kwArgs: KWArgs['|-damage|']) {
     const valid =
       args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonHPStatus(args[2]);
     if (!valid) return false;
-    if (this.gen?.num === 1) {
-      if (!verifyKWArgs(kwArgs, ['from', 'of'], this.gen)) return false;
-      return !kwArgs.from || (kwArgs.of
-        ? ['brn', 'psn', 'Leech Seed', 'Recoil']
-        : ['brn', 'psn', 'confusion']).includes(kwArgs.from);
+
+    const indexes = [
+      [5, 4, 7], [6, 6, 8], [7, 12, 14], [7, 15, 17], [8, 16, 17],
+      [8, 17, 18], [10, 17, 19], [10, 17, 21],
+    ];
+    // Gen 8 = -Clamp
+    // Gen 9 = -Clamp -Snap Trap
+    const trapped = [
+      'move: Bind', 'move: Clamp', 'move: Fire Spin', 'move: Whirlpool', 'move: Wrap',
+      'move: Sand Tomb',
+      'move: Magma Storm',
+      'move: Infestation',
+      'move: Snap Trap', 'move: Thunder Cage',
+    ];
+    // Gen 8/9: -flameburst
+    const fromOf = [
+      'brn', 'psn', 'Leech Seed', 'Recoil',
+      'ability: Liquid Ooze', 'ability: Rough Skin',
+      'ability: Aftermath', 'ability: Bad Dreams', 'ability: Dry Skin',
+      'ability: Solar Power', 'item: Jaboca Berry', 'item: Rowap Berry',
+      'ability: Iron Barbs', 'flameburst', 'item: Rocky Helmet',
+      'Spiky Shield',
+      'ability: Innards Out',
+    ];
+    // Gen 8/9: -Nightmare
+    const from = [
+      'brn', 'psn', 'confusion',
+      'Curse', 'Nightmare', 'Sandstorm', 'Spikes',
+      'Hail',
+      'recoil', 'Recoil', 'Stealth Rock', 'item: Black Sludge', 'item: Life Orb',
+      'item: Sticky Barb',
+      'highjumpkick', 'jumpkick',
+      'Fire Pledge',
+      'mindblown',
+      'steelbeam',
+      'Salt Cure', 'supercellslam',
+    ];
+
+    switch (this.gen?.num || 0) {
+      case 1: {
+        if (!verifyKWArgs(kwArgs, ['from', 'of'], this.gen)) return false;
+        return !kwArgs.from || (kwArgs.of
+          ? fromOf.slice(0, 4)
+          : from.slice(0, 3)).includes(kwArgs.from);
+      }
+      case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: {
+        const i = indexes[this.gen!.num - 2];
+        if (this.gen!.num >= 6 && this.gen!.num <= 7 && kwArgs.silent) {
+          return Object.keys(kwArgs).length === 1;
+        }
+        if (!verifyKWArgs(kwArgs, ['from', 'of', 'partiallytrapped'], this.gen)) return false;
+        if (kwArgs.partiallytrapped) {
+          return !kwArgs.of && trapped.slice(0, i[0]).includes(kwArgs.from!);
+        }
+        if (this.gen!.num === 2 && ['Curse', 'Nightmare'].includes(kwArgs.from!)) return true;
+        return !kwArgs.from || (kwArgs.of
+          ? fromOf.slice(0, i[1])
+          : from.slice(0, i[2])).includes(kwArgs.from);
+      }
+      default: return verifyKWArgs(kwArgs, [...KWARGS, 'partiallytrapped'], this.gen);
     }
-    return verifyKWArgs(kwArgs, [...KWARGS, 'partiallytrapped'], this.gen);
   }
 
   // TODO
