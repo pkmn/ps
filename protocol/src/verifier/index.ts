@@ -1435,11 +1435,9 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     modern[11] = 'ability: Oblivious';
     const gen8 = [...modern, 'ability: Pastel Veil'];
     gen8.splice(22, 1); // Shields Down
-    const gen9 = [...modern, 'ability: Earth Eater',
-      'ability: Good as Gold', 'ability: Purifying Salt', 'ability: Thermal Exchange',
-      'ability: Well-Baked Body', 'ability: Wind Rider', 'ability: Pastel Veil'];
-    gen9.splice(16, 1); // Lightning Rod
-    gen9.splice(22 - 1, 1); // Shields Down
+    const gen9 = [...gen8,
+      'ability: Earth Eater', 'ability: Good as Gold', 'ability: Purifying Salt',
+      'ability: Thermal Exchange','ability: Well-Baked Body', 'ability: Wind Rider'];
 
     switch (this.gen?.num || 0) {
       case 1: case 2: return args.length === 2 && verifyKWArgs(kwArgs, ['ohko'], this.gen);
