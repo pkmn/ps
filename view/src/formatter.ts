@@ -42,7 +42,7 @@ const Text = TextJSON as {
 export interface Tracker {
   /** Pokemon at the provided slot for a side *before* any |swap| is applied */
   pokemonAt(side: SideID, slot: number): PokemonIdent | undefined;
-  /** Percentage damage of applying the health to the ident (ie. *before& |-damage| is applied) */
+  /** Percentage damage of applying the health to the ident (ie. *before* |-damage| is applied) */
   damagePercentage(ident: PokemonIdent, health: PokemonHPStatus): string | undefined;
   /** Weather (*before* |-weather| is applied) */
   currentWeather(): ID | undefined;
