@@ -1932,7 +1932,7 @@ export const Protocol = new class {
     const cmd = line.slice(1, index);
     switch (cmd) {
       case 'chatmsg': case 'chatmsg-raw': case 'raw': case 'error': case 'html':
-      case 'inactive': case 'inactiveoff': case 'warning': case 'title':
+      case 'inactive': case 'inactiveoff': case 'warning': case 'title': case 'formats':
       case 'fieldhtml': case 'controlshtml': case 'bigerror':
       case 'debug': case 'tier': case 'challstr': case 'popup': case '':
         return upgradeArgs([cmd, line.slice(index + 1)]);
