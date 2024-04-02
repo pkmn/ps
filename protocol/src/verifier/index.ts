@@ -1601,7 +1601,7 @@ function parseRawLine(line: string, noDefault?: boolean): string[] | null {
   switch (cmd) {
     case 'chatmsg': case 'chatmsg-raw': case 'raw': case 'error': case 'html':
     case 'inactive': case 'inactiveoff': case 'warning': case 'title': case 'formats':
-    case 'fieldhtml': case 'controlshtml': case 'bigerror':
+    case 'selectorhtml': case 'pagehtml': case 'fieldhtml': case 'controlshtml': case 'bigerror':
     case 'debug': case 'tier': case 'challstr': case 'popup': case '':
       return [cmd, line.slice(index + 1)];
     case 'c': case 'chat': case 'uhtml': case 'uhtmlchange':
