@@ -1,26 +1,44 @@
-import {MoveCounter, OldRandomBattleSpecies} from './gen8';
+import {MoveCounter} from './gen8';
 import {RandomGen3Teams} from './gen3';
 import {
 	Format,
 	ModdedDex,
-	Move,
 	PRNG,
 	PRNGSeed,
 	RandomTeamsTypes,
 	Species,
+	StatID,
 } from '@pkmn/sim';
 
 /* eslint-disable */
-const randomDataJSON = {"venusaur":{"moves":["growth","hiddenpowerfire","hiddenpowerice","leechseed","razorleaf","sleeppowder","synthesis"]},"charizard":{"moves":["bellydrum","earthquake","fireblast","hyperbeam","rockslide"]},"blastoise":{"moves":["icebeam","rapidspin","rest","sleeptalk","surf","toxic","zapcannon"]},"butterfree":{"moves":["nightmare","psychic","sleeppowder","stunspore","substitute"]},"beedrill":{"moves":["agility","hiddenpowerground","sludgebomb","substitute","swordsdance"]},"pidgeot":{"moves":["curse","hiddenpowerground","rest","return","sleeptalk","toxic","whirlwind"]},"raticate":{"moves":["irontail","rest","return","sleeptalk","superfang"]},"fearow":{"moves":["doubleedge","drillpeck","hiddenpowerground","rest","sleeptalk","substitute"]},"arbok":{"moves":["curse","earthquake","glare","haze","rest","sludgebomb"]},"pikachu":{"moves":["encore","hiddenpowerice","substitute","surf","thunderbolt"]},"raichu":{"moves":["encore","hiddenpowerice","rest","sleeptalk","surf","thunder","thunderbolt"]},"sandslash":{"moves":["earthquake","hiddenpowerbug","rockslide","substitute","swordsdance"]},"nidoqueen":{"moves":["earthquake","fireblast","icebeam","lovelykiss","moonlight","thunder"]},"nidoking":{"moves":["earthquake","fireblast","icebeam","lovelykiss","morningsun","thunder"]},"clefable":{"moves":["bellydrum","encore","fireblast","moonlight","return","shadowball"]},"ninetales":{"moves":["fireblast","hiddenpowergrass","rest","sleeptalk","toxic"]},"wigglytuff":{"moves":["bodyslam","charm","curse","doubleedge","fireblast","rest","sleeptalk","thunderwave"]},"vileplume":{"moves":["hiddenpowergrass","moonlight","sleeppowder","sludgebomb","stunspore","swordsdance"]},"parasect":{"moves":["bodyslam","gigadrain","hiddenpowerbug","spore","swordsdance","synthesis"]},"venomoth":{"moves":["disable","gigadrain","psychic","sleeppowder","sludgebomb","stunspore"]},"dugtrio":{"moves":["earthquake","rockslide","sludgebomb","substitute","swagger"]},"persian":{"moves":["bodyslam","hypnosis","irontail","rest","return","thunder"]},"golduck":{"moves":["crosschop","hiddenpowerelectric","hydropump","hypnosis","icebeam","psychic","surf"]},"primeape":{"moves":["crosschop","doubleedge","hiddenpowerghost","meditate","rest","rockslide","substitute"]},"arcanine":{"moves":["bodyslam","crunch","extremespeed","fireblast","hiddenpowergrass","rest","sleeptalk"]},"poliwrath":{"moves":["bellydrum","bodyslam","earthquake","lovelykiss"]},"alakazam":{"moves":["encore","firepunch","icepunch","psychic","recover","thunderpunch","thunderwave"]},"machamp":{"moves":["bodyslam","crosschop","curse","earthquake","hiddenpowerghost","rest","rockslide","sleeptalk"]},"victreebel":{"moves":["hiddenpowerground","razorleaf","sleeppowder","sludgebomb","swordsdance","synthesis"]},"tentacruel":{"moves":["hydropump","sludgebomb","substitute","swordsdance"]},"golem":{"moves":["curse","earthquake","explosion","fireblast","rapidspin","rockslide"]},"rapidash":{"moves":["bodyslam","fireblast","hiddenpowergrass","hypnosis","sunnyday"]},"slowbro":{"moves":["flamethrower","icebeam","psychic","rest","sleeptalk","surf","thunderwave"]},"magneton":{"moves":["hiddenpowerice","rest","sleeptalk","thunderbolt"]},"farfetchd":{"moves":["agility","batonpass","return","swordsdance"]},"dodrio":{"moves":["doubleedge","drillpeck","hiddenpowerground","rest","substitute"]},"dewgong":{"moves":["encore","icebeam","rest","sleeptalk","surf","toxic"]},"muk":{"moves":["curse","explosion","fireblast","hiddenpowerground","sludgebomb"]},"cloyster":{"moves":["explosion","icebeam","spikes","surf","toxic"]},"gengar":{"moves":["destinybond","explosion","firepunch","hypnosis","icepunch","thunderbolt"]},"hypno":{"moves":["psychic","rest","seismictoss","sleeptalk","thunderwave","toxic"]},"kingler":{"moves":["hiddenpowerground","rest","return","surf","swordsdance"]},"electrode":{"moves":["explosion","hiddenpowerice","thunderbolt","thunderwave"]},"exeggutor":{"moves":["explosion","gigadrain","hiddenpowerfire","psychic","sleeppowder","stunspore","synthesis"]},"marowak":{"moves":["earthquake","hiddenpowerbug","rockslide","swordsdance"]},"hitmonlee":{"moves":["bodyslam","hiddenpowerghost","highjumpkick","meditate","rest"]},"hitmonchan":{"moves":["bodyslam","counter","curse","hiddenpowerghost","highjumpkick"]},"lickitung":{"moves":["bodyslam","earthquake","fireblast","rest","sleeptalk","swordsdance"]},"weezing":{"moves":["explosion","fireblast","hiddenpowerice","painsplit","sludgebomb","thunder"]},"rhydon":{"moves":["curse","earthquake","rest","roar","rockslide","sleeptalk"]},"tangela":{"moves":["gigadrain","growth","hiddenpowerice","sleeppowder","synthesis"]},"kangaskhan":{"moves":["bodyslam","curse","earthquake","rest","return","roar","sleeptalk"]},"seaking":{"moves":["agility","return","substitute","surf","swordsdance"]},"starmie":{"moves":["psychic","rapidspin","recover","surf","thunderbolt","thunderwave"]},"mrmime":{"moves":["encore","firepunch","hypnosis","icepunch","psychic","thief","thunderbolt","thunderwave"]},"scyther":{"moves":["batonpass","hiddenpowerbug","hiddenpowerground","swordsdance","wingattack"]},"jynx":{"moves":["icebeam","lovelykiss","nightmare","psychic","substitute","thief"]},"electabuzz":{"moves":["crosschop","icepunch","psychic","pursuit","thunder","thunderbolt"]},"magmar":{"moves":["crosschop","fireblast","hiddenpowerground","sunnyday","thief","thunderpunch"]},"pinsir":{"moves":["bodyslam","doubleedge","hiddenpowerbug","rest","submission","swordsdance"]},"tauros":{"moves":["curse","doubleedge","earthquake","rest","return","sleeptalk"]},"gyarados":{"moves":["bodyslam","doubleedge","hiddenpowerflying","hydropump","rest","sleeptalk","thunder"]},"lapras":{"moves":["icebeam","rest","sleeptalk","surf","thunderbolt","toxic"]},"ditto":{"level":83,"moves":["transform"]},"vaporeon":{"moves":["growth","rest","sleeptalk","surf"]},"jolteon":{"moves":["batonpass","growth","hiddenpowerice","substitute","thunderbolt"]},"flareon":{"moves":["batonpass","doubleedge","fireblast","growth","hiddenpowergrass"]},"omastar":{"moves":["hiddenpowerelectric","icebeam","rest","sleeptalk","surf"]},"kabutops":{"moves":["ancientpower","hiddenpowerground","return","submission","surf","swordsdance"]},"aerodactyl":{"moves":["ancientpower","curse","earthquake","hiddenpowerflying","rest","whirlwind"]},"snorlax":{"moves":["curse","doubleedge","earthquake","lovelykiss","rest","return","sleeptalk"]},"articuno":{"moves":["hiddenpowerelectric","icebeam","rest","sleeptalk","toxic"]},"zapdos":{"moves":["hiddenpowerice","rest","sleeptalk","thunder"]},"moltres":{"moves":["fireblast","hiddenpowergrass","rest","sleeptalk","sunnyday"]},"dragonite":{"moves":["haze","hiddenpowerflying","rest","surf","thunder"]},"mewtwo":{"moves":["flamethrower","icebeam","psychic","recover","thunder","thunderbolt"]},"mew":{"moves":["earthquake","explosion","rockslide","softboiled","swordsdance"]},"meganium":{"moves":["bodyslam","earthquake","swordsdance","synthesis"]},"typhlosion":{"moves":["earthquake","fireblast","rest","sleeptalk","thunderpunch"]},"feraligatr":{"moves":["crunch","earthquake","icebeam","rest","rockslide","sleeptalk","surf"]},"furret":{"moves":["curse","doubleedge","rest","shadowball","sleeptalk","surf"]},"noctowl":{"moves":["hypnosis","nightshade","thief","toxic","whirlwind"]},"ledian":{"moves":["agility","barrier","batonpass","lightscreen"]},"ariados":{"moves":["batonpass","curse","sludgebomb","spiderweb"]},"crobat":{"moves":["gigadrain","haze","hiddenpowerground","rest","toxic","wingattack"]},"lanturn":{"moves":["icebeam","raindance","rest","sleeptalk","surf","thunder"]},"togetic":{"moves":["curse","doubleedge","rest","sleeptalk"]},"xatu":{"moves":["drillpeck","haze","psychic","rest","sleeptalk","thief"]},"ampharos":{"moves":["firepunch","hiddenpowerice","rest","sleeptalk","thunderbolt","thunderwave"]},"bellossom":{"moves":["hiddenpowerfire","leechseed","moonlight","razorleaf","sleeppowder","stunspore"]},"azumarill":{"moves":["perishsong","rest","surf","whirlpool"]},"sudowoodo":{"moves":["curse","earthquake","rest","rockslide","selfdestruct","sleeptalk"]},"politoed":{"moves":["growth","rest","sleeptalk","surf"]},"jumpluff":{"moves":["encore","gigadrain","hiddenpowerflying","leechseed","sleeppowder","stunspore"]},"aipom":{"moves":["agility","batonpass","curse","return","shadowball"]},"sunflora":{"moves":["growth","hiddenpowerfire","hiddenpowerice","razorleaf","synthesis"]},"yanma":{"moves":["gigadrain","hiddenpowerbug","hiddenpowerflying","return","screech","thief"]},"quagsire":{"moves":["bellydrum","earthquake","hiddenpowerrock","rest","sleeptalk","surf"]},"espeon":{"moves":["batonpass","bite","growth","hiddenpowerfire","morningsun","psychic","substitute"]},"umbreon":{"moves":["batonpass","growth","hiddenpowerdark","meanlook","moonlight"]},"murkrow":{"moves":["drillpeck","haze","hiddenpowerdark","hiddenpowerfire","pursuit","thief","toxic"]},"slowking":{"moves":["flamethrower","icebeam","psychic","rest","sleeptalk","surf","thunderwave"]},"misdreavus":{"moves":["meanlook","painsplit","perishsong","psychic","shadowball","thief","thunderbolt"]},"unown":{"level":87,"moves":["hiddenpowerpsychic"]},"wobbuffet":{"level":83,"moves":["counter","mimic","mirrorcoat","safeguard"]},"girafarig":{"moves":["crunch","curse","earthquake","psychic","rest","return","thunderbolt"]},"forretress":{"moves":["doubleedge","explosion","hiddenpowerbug","rapidspin","spikes","toxic"]},"dunsparce":{"moves":["curse","flamethrower","rest","return","sleeptalk","thunder","thunderbolt"]},"gligar":{"moves":["counter","earthquake","hiddenpowerflying","screech","thief"]},"steelix":{"moves":["curse","earthquake","explosion","irontail","rest","roar","sleeptalk","toxic"]},"granbull":{"moves":["curse","healbell","hiddenpowerground","lovelykiss","rest","return","sleeptalk"]},"qwilfish":{"moves":["curse","haze","hydropump","sludgebomb","spikes"]},"scizor":{"moves":["agility","batonpass","hiddenpowerbug","return","swordsdance"]},"shuckle":{"moves":["defensecurl","rest","rollout","toxic"]},"heracross":{"moves":["curse","earthquake","megahorn","rest","sleeptalk"]},"sneasel":{"moves":["icebeam","moonlight","return","screech","shadowball","thief"]},"ursaring":{"moves":["curse","earthquake","rest","return","roar","sleeptalk"]},"magcargo":{"moves":["curse","earthquake","fireblast","rest","rockslide","sleeptalk"]},"piloswine":{"moves":["ancientpower","curse","earthquake","icebeam","rest","sleeptalk"]},"corsola":{"moves":["curse","recover","rockslide","surf","toxic"]},"octillery":{"moves":["flamethrower","hiddenpowerelectric","icebeam","rest","sleeptalk","surf"]},"delibird":{"moves":["hiddenpowerflying","icebeam","rapidspin","spikes","thief"]},"mantine":{"moves":["haze","hiddenpowerelectric","icebeam","rest","sleeptalk","surf","toxic"]},"skarmory":{"moves":["curse","drillpeck","rest","sleeptalk","toxic"]},"houndoom":{"moves":["crunch","fireblast","pursuit","solarbeam","sunnyday"]},"kingdra":{"moves":["dragonbreath","hiddenpowerelectric","icebeam","rest","sleeptalk","surf"]},"donphan":{"moves":["ancientpower","curse","earthquake","hiddenpowerbug","rapidspin","rest","roar","sleeptalk"]},"porygon2":{"moves":["curse","doubleedge","icebeam","recover","return","thunderbolt","thunderwave"]},"stantler":{"moves":["curse","earthquake","rest","return","sleeptalk"]},"smeargle":{"moves":["agility","batonpass","spiderweb","spikes","spore","swordsdance"]},"hitmontop":{"moves":["curse","hiddenpowerghost","highjumpkick","rest","sleeptalk"]},"miltank":{"moves":["bodyslam","curse","earthquake","healbell","milkdrink"]},"blissey":{"moves":["flamethrower","healbell","icebeam","present","sing","softboiled","toxic"]},"raikou":{"moves":["crunch","hiddenpowerice","rest","roar","sleeptalk","thunder","thunderbolt"]},"entei":{"moves":["fireblast","hiddenpowerrock","return","solarbeam","sunnyday"]},"suicune":{"moves":["icebeam","rest","roar","sleeptalk","surf","toxic"]},"tyranitar":{"moves":["crunch","curse","earthquake","fireblast","pursuit","rest","roar","rockslide","surf"]},"lugia":{"moves":["aeroblast","curse","earthquake","icebeam","recover","whirlwind"]},"hooh":{"moves":["curse","earthquake","hiddenpowerflying","recover","sacredfire","thunder","thunderbolt"]},"celebi":{"moves":["hiddenpowergrass","healbell","leechseed","psychic","recover","toxic"]}} as any;
+const randomSetsJSON = {"venusaur":{"sets":[{"role":"Setup Sweeper","movepool":["growth","hiddenpowerfire","hiddenpowerice","razorleaf","sleeppowder","synthesis"]}]},"charizard":{"sets":[{"role":"Setup Sweeper","movepool":["bellydrum","earthquake","fireblast","rockslide","swordsdance"]}]},"blastoise":{"sets":[{"role":"Generalist","movepool":["icebeam","rest","sleeptalk","surf","zapcannon"]},{"role":"Bulky Support","movepool":["icebeam","rapidspin","rest","roar","surf","toxic"]}]},"butterfree":{"sets":[{"role":"Generalist","movepool":["nightmare","psychic","sleeppowder","substitute"]},{"role":"Fast Attacker","movepool":["psychic","sleeppowder","stunspore","substitute"]},{"role":"Bulky Attacker","movepool":["hiddenpowerbug","psychic","sleeppowder","stunspore"]}]},"beedrill":{"sets":[{"role":"Setup Sweeper","movepool":["agility","hiddenpowerground","sludgebomb","substitute","swordsdance"]}]},"pidgeot":{"sets":[{"role":"Bulky Setup","movepool":["curse","doubleedge","rest","sleeptalk"]},{"role":"Fast Attacker","movepool":["doubleedge","hiddenpowerground","hiddenpowerwater","rest","sleeptalk"]},{"role":"Thief user","movepool":["hiddenpowerground","hiddenpowerwater","return","thief","toxic"]}]},"raticate":{"sets":[{"role":"Generalist","movepool":["doubleedge","irontail","rest","return","sleeptalk","superfang"]}]},"fearow":{"sets":[{"role":"Fast Attacker","movepool":["doubleedge","drillpeck","hiddenpowerground","rest","sleeptalk","substitute"]}]},"arbok":{"sets":[{"role":"Generalist","movepool":["curse","earthquake","rest","sleeptalk","sludgebomb"]},{"role":"Fast Attacker","movepool":["curse","earthquake","glare","haze","sludgebomb"]}]},"pikachu":{"sets":[{"role":"Fast Attacker","movepool":["encore","hiddenpowerfire","hiddenpowerice","surf","thunderbolt"]},{"role":"Bulky Attacker","movepool":["hiddenpowerfire","hiddenpowerice","substitute","surf","thunderbolt"]},{"role":"Generalist","movepool":["hiddenpowerice","surf","thunder","thunderbolt"]}]},"raichu":{"sets":[{"role":"Generalist","movepool":["hiddenpowerice","rest","sleeptalk","surf","thunder"]}]},"sandslash":{"sets":[{"role":"Setup Sweeper","movepool":["earthquake","hiddenpowerbug","rockslide","substitute","swordsdance"],"preferredTypes":["Rock"]},{"role":"Generalist","movepool":["earthquake","rest","rockslide","sleeptalk","swordsdance"]}]},"nidoqueen":{"sets":[{"role":"Bulky Attacker","movepool":["earthquake","fireblast","icebeam","moonlight","thunder"],"preferredTypes":["Ice"]},{"role":"Fast Attacker","movepool":["earthquake","icebeam","lovelykiss","thunder"]}]},"nidoking":{"sets":[{"role":"Bulky Attacker","movepool":["earthquake","fireblast","icebeam","morningsun","thunder"],"preferredTypes":["Ice"]},{"role":"Fast Attacker","movepool":["earthquake","icebeam","lovelykiss","thunder"]}]},"clefable":{"sets":[{"role":"Bulky Setup","movepool":["bellydrum","bodyslam","hiddenpowerground","moonlight","return","thunderwave"]},{"role":"Bulky Support","movepool":["bodyslam","encore","fireblast","flamethrower","moonlight","return","thunderwave"]},{"role":"Setup Sweeper","movepool":["curse","moonlight","return","thunderwave"]}]},"ninetales":{"sets":[{"role":"Bulky Support","movepool":["fireblast","flamethrower","hiddenpowergrass","rest","sleeptalk","sunnyday","toxic"]}]},"wigglytuff":{"sets":[{"role":"Bulky Support","movepool":["bodyslam","charm","doubleedge","fireblast","rest","sleeptalk"]},{"role":"Bulky Setup","movepool":["curse","doubleedge","rest","sleeptalk"]}]},"vileplume":{"sets":[{"role":"Bulky Attacker","movepool":["moonlight","razorleaf","sleeppowder","sludgebomb","stunspore"]},{"role":"Setup Sweeper","movepool":["hiddenpowerground","moonlight","sleeppowder","sludgebomb","swordsdance"]},{"role":"Bulky Setup","movepool":["curse","moonlight","sludgebomb","stunspore"]}]},"parasect":{"sets":[{"role":"Setup Sweeper","movepool":["bodyslam","hiddenpowerground","return","spore","swordsdance"]},{"role":"Bulky Setup","movepool":["hiddenpowerbug","spore","swordsdance","synthesis"]},{"role":"Bulky Attacker","movepool":["bodyslam","gigadrain","hiddenpowerbug","spore","synthesis"],"preferredTypes":["Bug"]}]},"venomoth":{"sets":[{"role":"Fast Attacker","movepool":["gigadrain","hiddenpowerfire","psychic","sleeppowder","sludgebomb","stunspore"],"preferredTypes":["Psychic"]},{"role":"Bulky Setup","movepool":["batonpass","curse","sleeppowder","sludgebomb"]},{"role":"Setup Sweeper","movepool":["batonpass","curse","sludgebomb","stunspore"]}]},"dugtrio":{"sets":[{"role":"Fast Attacker","movepool":["earthquake","rockslide","sludgebomb","substitute","thief"],"preferredTypes":["Rock"]}]},"persian":{"sets":[{"role":"Fast Attacker","movepool":["doubleedge","hypnosis","irontail","rest","sleeptalk","thief"]},{"role":"Generalist","movepool":["doubleedge","hypnosis","rest","sleeptalk","thief","thunder"],"preferredTypes":["Electric"]},{"role":"Setup Sweeper","movepool":["curse","doubleedge","rest","sleeptalk"]}]},"golduck":{"sets":[{"role":"Generalist","movepool":["crosschop","hiddenpowerelectric","hydropump","hypnosis","icebeam"]},{"role":"Bulky Attacker","movepool":["crosschop","hiddenpowerelectric","icebeam","rest","sleeptalk","surf"]}]},"primeape":{"sets":[{"role":"Setup Sweeper","movepool":["crosschop","hiddenpowerghost","meditate","rest","rockslide","substitute"]},{"role":"Bulky Setup","movepool":["crosschop","doubleedge","hiddenpowerghost","meditate","rockslide"]},{"role":"Generalist","movepool":["meditate","reversal","rockslide","substitute"]}]},"arcanine":{"sets":[{"role":"Bulky Attacker","movepool":["crunch","doubleedge","fireblast","flamethrower","hiddenpowergrass","rest","sleeptalk"]}]},"poliwhirl":{"sets":[{"role":"Setup Sweeper","movepool":["bellydrum","earthquake","lovelykiss","return"]},{"role":"Generalist","movepool":["bellydrum","earthquake","hiddenpowerrock","lovelykiss"]}]},"poliwrath":{"sets":[{"role":"Bulky Support","movepool":["earthquake","growth","rest","sleeptalk","submission","surf"]},{"role":"Setup Sweeper","movepool":["bellydrum","bodyslam","earthquake","lovelykiss","return"]},{"role":"Generalist","movepool":["bellydrum","earthquake","hiddenpowerrock","lovelykiss"]}]},"alakazam":{"sets":[{"role":"Bulky Attacker","movepool":["encore","firepunch","hiddenpowerdark","psychic","recover","thunderwave"],"preferredTypes":["Fire"]},{"role":"Bulky Support","movepool":["encore","firepunch","icepunch","psychic","recover","thunderpunch"]}]},"machamp":{"sets":[{"role":"Generalist","movepool":["crosschop","curse","rest","rockslide","sleeptalk"]},{"role":"Setup Sweeper","movepool":["crosschop","curse","earthquake","hiddenpowerbug","rockslide"],"preferredTypes":["Rock"]}]},"victreebel":{"sets":[{"role":"Setup Sweeper","movepool":["hiddenpowerground","sleeppowder","sludgebomb","swordsdance","synthesis"]},{"role":"Generalist","movepool":["hiddenpowerground","razorleaf","sleeppowder","sludgebomb","synthesis"]}]},"tentacruel":{"sets":[{"role":"Setup Sweeper","movepool":["hydropump","sludgebomb","substitute","swordsdance"]}]},"golem":{"sets":[{"role":"Bulky Attacker","movepool":["curse","earthquake","explosion","rapidspin","roar","rockslide"]}]},"rapidash":{"sets":[{"role":"Generalist","movepool":["doubleedge","fireblast","hiddenpowergrass","hypnosis","sunnyday"]},{"role":"Bulky Support","movepool":["doubleedge","fireblast","flamethrower","rest","sleeptalk","sunnyday"]}]},"slowbro":{"sets":[{"role":"Generalist","movepool":["psychic","rest","sleeptalk","surf"]}]},"magneton":{"sets":[{"role":"Generalist","movepool":["hiddenpowerice","rest","sleeptalk","thunder"]}]},"farfetchd":{"sets":[{"role":"Generalist","movepool":["agility","batonpass","return","swordsdance"]}]},"dodrio":{"sets":[{"role":"Fast Attacker","movepool":["doubleedge","drillpeck","hiddenpowerground","rest","sleeptalk","substitute"]}]},"dewgong":{"sets":[{"role":"Bulky Attacker","movepool":["icebeam","rest","sleeptalk","surf"]},{"role":"Generalist","movepool":["encore","icebeam","protect","toxic"]}]},"muk":{"sets":[{"role":"Generalist","movepool":["explosion","fireblast","hiddenpowerground","sludgebomb"]},{"role":"Bulky Setup","movepool":["curse","explosion","hiddenpowerground","sludgebomb"]}]},"cloyster":{"sets":[{"role":"Fast Attacker","movepool":["explosion","icebeam","rapidspin","spikes","surf","toxic"]},{"role":"Generalist","movepool":["explosion","rapidspin","spikes","surf","toxic"]},{"role":"Bulky Support","movepool":["explosion","icebeam","rapidspin","spikes","toxic"]}]},"gengar":{"sets":[{"role":"Generalist","movepool":["explosion","firepunch","hypnosis","icepunch","psychic","thunderbolt"],"preferredTypes":["Electric","Ice"]},{"role":"Fast Attacker","movepool":["destinybond","firepunch","hypnosis","icepunch","psychic","thunderbolt"],"preferredTypes":["Electric","Ice"]}]},"hypno":{"sets":[{"role":"Generalist","movepool":["psychic","rest","seismictoss","sleeptalk","thunderwave"]},{"role":"Setup Sweeper","movepool":["curse","doubleedge","rest","sleeptalk"]},{"role":"Bulky Setup","movepool":["bodyslam","curse","psychic","rest","return"]}]},"kingler":{"sets":[{"role":"Setup Sweeper","movepool":["hiddenpowerground","protect","rest","return","substitute","swordsdance"]},{"role":"Bulky Setup","movepool":["hiddenpowerground","protect","return","substitute","surf","swordsdance"],"preferredTypes":["Normal"]},{"role":"Generalist","movepool":["doubleedge","rest","sleeptalk","swordsdance"]}]},"electrode":{"sets":[{"role":"Generalist","movepool":["explosion","hiddenpowerice","thunderbolt","thunderwave"]},{"role":"Fast Attacker","movepool":["explosion","hiddenpowerice","lightscreen","reflect","thunder"]}]},"exeggutor":{"sets":[{"role":"Bulky Attacker","movepool":["hiddenpowergrass","psychic","stunspore","synthesis"]},{"role":"Fast Attacker","movepool":["explosion","hiddenpowerfire","hiddenpowergrass","psychic","sleeppowder"]},{"role":"Generalist","movepool":["explosion","gigadrain","hiddenpowerfire","psychic"]}]},"marowak":{"sets":[{"role":"Setup Sweeper","movepool":["earthquake","hiddenpowerbug","rockslide","swordsdance"]}]},"hitmonlee":{"sets":[{"role":"Setup Sweeper","movepool":["hiddenpowerghost","hiddenpowerrock","highjumpkick","meditate","rest","substitute"]},{"role":"Bulky Setup","movepool":["doubleedge","hiddenpowerghost","hiddenpowerrock","highjumpkick","meditate"]},{"role":"Generalist","movepool":["bodyslam","hiddenpowerrock","highjumpkick","rest","sleeptalk"]}]},"hitmonchan":{"sets":[{"role":"Setup Sweeper","movepool":["curse","hiddenpowerghost","hiddenpowerrock","highjumpkick","machpunch","rest"]},{"role":"Bulky Setup","movepool":["curse","highjumpkick","rest","sleeptalk"]},{"role":"Generalist","movepool":["bodyslam","hiddenpowerrock","highjumpkick","rest","sleeptalk"]}]},"lickitung":{"sets":[{"role":"Setup Sweeper","movepool":["earthquake","protect","rest","return","swordsdance"]},{"role":"Bulky Setup","movepool":["curse","doubleedge","rest","return","sleeptalk","swordsdance"]},{"role":"Bulky Attacker","movepool":["doubleedge","earthquake","rest","sleeptalk","thunder"]}]},"weezing":{"sets":[{"role":"Fast Attacker","movepool":["explosion","fireblast","sludgebomb","thunder"]},{"role":"Generalist","movepool":["explosion","hiddenpowerwater","sludgebomb","thunder"]},{"role":"Bulky Attacker","movepool":["fireblast","haze","hiddenpowerwater","painsplit","sludgebomb","thunder"],"preferredTypes":["Electric"]}]},"rhydon":{"sets":[{"role":"Fast Attacker","movepool":["curse","earthquake","rest","roar","rockslide","sleeptalk"]},{"role":"Setup Sweeper","movepool":["curse","earthquake","rest","sleeptalk"]},{"role":"Bulky Setup","movepool":["curse","rest","rockslide","sleeptalk"]}]},"tangela":{"sets":[{"role":"Setup Sweeper","movepool":["gigadrain","growth","hiddenpowerfire","hiddenpowerice","sleeppowder","synthesis"]}]},"kangaskhan":{"sets":[{"role":"Bulky Attacker","movepool":["doubleedge","earthquake","rest","sleeptalk"]},{"role":"Bulky Setup","movepool":["bodyslam","curse","doubleedge","rest","return","sleeptalk"]},{"role":"Setup Sweeper","movepool":["bodyslam","curse","earthquake","return","roar"]}]},"seaking":{"sets":[{"role":"Bulky Setup","movepool":["agility","hydropump","return","substitute","swordsdance"],"preferredTypes":["Normal"]},{"role":"Setup Sweeper","movepool":["agility","hiddenpowerground","return","substitute","swordsdance"]}]},"starmie":{"sets":[{"role":"Bulky Attacker","movepool":["psychic","rapidspin","recover","surf","thunderbolt","thunderwave"],"preferredTypes":["Psychic"]},{"role":"Bulky Support","movepool":["icebeam","psychic","recover","surf","thunder"]}]},"mrmime":{"sets":[{"role":"Fast Attacker","movepool":["encore","firepunch","hypnosis","psychic","thief","thunder"]},{"role":"Generalist","movepool":["firepunch","psychic","rest","sleeptalk","thunder"]},{"role":"Bulky Attacker","movepool":["barrier","batonpass","psychic","thunder"]}]},"scyther":{"sets":[{"role":"Bulky Setup","movepool":["batonpass","doubleedge","hiddenpowerground","swordsdance"]},{"role":"Setup Sweeper","movepool":["doubleedge","hiddenpowerground","swordsdance","wingattack"]}]},"jynx":{"sets":[{"role":"Generalist","movepool":["icebeam","lovelykiss","nightmare","psychic"]},{"role":"Thief user","movepool":["icebeam","lovelykiss","psychic","thief"]},{"role":"Bulky Attacker","movepool":["icebeam","lovelykiss","psychic","substitute"]}]},"electabuzz":{"sets":[{"role":"Fast Attacker","movepool":["crosschop","icepunch","pursuit","thief","thunder","thunderbolt"],"preferredTypes":["Fighting","Ice"]},{"role":"Bulky Attacker","movepool":["icepunch","rest","sleeptalk","thunder"]}]},"magmar":{"sets":[{"role":"Setup Sweeper","movepool":["crosschop","fireblast","hiddenpowerground","sunnyday","thunderpunch"],"preferredTypes":["Electric"]},{"role":"Fast Attacker","movepool":["crosschop","fireblast","hiddenpowerground","thief","thunderpunch"],"preferredTypes":["Electric"]}]},"pinsir":{"sets":[{"role":"Setup Sweeper","movepool":["hiddenpowerground","protect","rest","return","substitute","swordsdance"]}]},"tauros":{"sets":[{"role":"Generalist","movepool":["curse","doubleedge","earthquake","rest","return","sleeptalk"]}]},"gyarados":{"sets":[{"role":"Generalist","movepool":["doubleedge","hiddenpowerflying","hydropump","roar","thunder"],"preferredTypes":["Electric"]},{"role":"Bulky Attacker","movepool":["doubleedge","hiddenpowerflying","hydropump","rest","sleeptalk"]},{"role":"Bulky Setup","movepool":["curse","hiddenpowerflying","rest","sleeptalk"]}]},"lapras":{"sets":[{"role":"Generalist","movepool":["icebeam","rest","sleeptalk","surf"]},{"role":"Fast Attacker","movepool":["rest","sleeptalk","surf","thunder"]},{"role":"Bulky Attacker","movepool":["icebeam","rest","sleeptalk","thunder"]}]},"ditto":{"level":90,"sets":[{"role":"Generalist","movepool":["transform"]}]},"vaporeon":{"sets":[{"role":"Generalist","movepool":["growth","rest","sleeptalk","surf"]}]},"jolteon":{"sets":[{"role":"Bulky Setup","movepool":["batonpass","growth","hiddenpowerice","substitute","thunderbolt"]}]},"flareon":{"sets":[{"role":"Setup Sweeper","movepool":["batonpass","fireblast","growth","hiddenpowergrass"]},{"role":"Generalist","movepool":["doubleedge","fireblast","flamethrower","rest","sleeptalk"]}]},"omastar":{"sets":[{"role":"Bulky Support","movepool":["hiddenpowerelectric","icebeam","rest","sandstorm","sleeptalk","surf"]}]},"kabutops":{"sets":[{"role":"Bulky Setup","movepool":["hiddenpowerground","hydropump","return","swordsdance"]},{"role":"Setup Sweeper","movepool":["ancientpower","hiddenpowerground","protect","rest","substitute","swordsdance"]}]},"aerodactyl":{"sets":[{"role":"Bulky Setup","movepool":["curse","earthquake","hiddenpowerrock","rest"]},{"role":"Setup Sweeper","movepool":["ancientpower","curse","earthquake","hiddenpowerflying"]},{"role":"Bulky Attacker","movepool":["curse","earthquake","hiddenpowerrock","whirlwind"]}]},"snorlax":{"sets":[{"role":"Generalist","movepool":["curse","doubleedge","earthquake","rest","sleeptalk"]},{"role":"Bulky Setup","movepool":["bodyslam","curse","doubleedge","earthquake","rest","return"]},{"role":"Bulky Attacker","movepool":["bodyslam","curse","earthquake","lovelykiss","return","selfdestruct"]}]},"articuno":{"sets":[{"role":"Generalist","movepool":["hiddenpowerelectric","icebeam","rest","sleeptalk","toxic"]}]},"zapdos":{"sets":[{"role":"Generalist","movepool":["hiddenpowerice","rest","sleeptalk","thunder"]}]},"moltres":{"sets":[{"role":"Generalist","movepool":["fireblast","flamethrower","hiddenpowergrass","rest","sleeptalk","sunnyday"]}]},"dragonite":{"sets":[{"role":"Generalist","movepool":["haze","hiddenpowerflying","rest","surf","thunder"]},{"role":"Bulky Attacker","movepool":["icebeam","rest","sleeptalk","thunder"]},{"role":"Fast Attacker","movepool":["dynamicpunch","hiddenpowerflying","icebeam","thunder"]}]},"mewtwo":{"sets":[{"role":"Bulky Attacker","movepool":["flamethrower","icebeam","psychic","recover","thunder"]},{"role":"Bulky Setup","movepool":["barrier","flamethrower","psychic","recover","thunder"]}]},"mew":{"sets":[{"role":"Setup Sweeper","movepool":["earthquake","explosion","rockslide","swordsdance"]},{"role":"Bulky Setup","movepool":["earthquake","rockslide","softboiled","swordsdance"]}]},"meganium":{"sets":[{"role":"Bulky Setup","movepool":["bodyslam","earthquake","swordsdance","synthesis"]},{"role":"Setup Sweeper","movepool":["earthquake","hiddenpowerrock","swordsdance","synthesis"]},{"role":"Bulky Attacker","movepool":["earthquake","hiddenpowerfire","leechseed","lightscreen","razorleaf","synthesis"]}]},"typhlosion":{"sets":[{"role":"Generalist","movepool":["earthquake","fireblast","flamethrower","rest","sleeptalk","thunderpunch"]},{"role":"Setup Sweeper","movepool":["earthquake","fireblast","sunnyday","thunderpunch"]}]},"feraligatr":{"sets":[{"role":"Bulky Attacker","movepool":["earthquake","hiddenpowerelectric","icebeam","rest","sleeptalk","surf"]}]},"furret":{"sets":[{"role":"Bulky Setup","movepool":["curse","doubleedge","rest","sleeptalk"]},{"role":"Bulky Attacker","movepool":["doubleedge","irontail","rest","sleeptalk","surf"]},{"role":"Setup Sweeper","movepool":["curse","irontail","quickattack","rest","return"]}]},"noctowl":{"sets":[{"role":"Thief user","movepool":["hypnosis","return","thief","toxic","whirlwind"]},{"role":"Bulky Support","movepool":["nightshade","rest","sleeptalk","toxic"]},{"role":"Bulky Setup","movepool":["curse","rest","return","sleeptalk"]}]},"ledian":{"sets":[{"role":"Generalist","movepool":["agility","barrier","batonpass","lightscreen"]}]},"ariados":{"sets":[{"role":"Generalist","movepool":["agility","batonpass","sludgebomb","spiderweb"]},{"role":"Bulky Setup","movepool":["agility","batonpass","growth","sludgebomb"]},{"role":"Setup Sweeper","movepool":["agility","batonpass","curse","sludgebomb"]}]},"crobat":{"sets":[{"role":"Bulky Support","movepool":["haze","hiddenpowerground","rest","return","toxic"],"preferredTypes":["Normal"]},{"role":"Generalist","movepool":["haze","protect","toxic","wingattack"]}]},"lanturn":{"sets":[{"role":"Generalist","movepool":["rest","sleeptalk","surf","thunder"]}]},"togetic":{"sets":[{"role":"Bulky Support","movepool":["charm","curse","doubleedge","fireblast","rest","sleeptalk"]},{"role":"Setup Sweeper","movepool":["encore","fireblast","solarbeam","sunnyday","zapcannon"],"preferredTypes":["Fire","Grass"]}]},"xatu":{"sets":[{"role":"Bulky Attacker","movepool":["drillpeck","psychic","rest","sleeptalk"]},{"role":"Thief user","movepool":["confuseray","drillpeck","hiddenpowerfire","psychic","thief"]}]},"ampharos":{"sets":[{"role":"Generalist","movepool":["firepunch","hiddenpowerice","rest","sleeptalk","thunder"]}]},"bellossom":{"sets":[{"role":"Bulky Support","movepool":["hiddenpowerfire","leechseed","moonlight","razorleaf","sleeppowder","stunspore"]},{"role":"Bulky Setup","movepool":["hiddenpowerground","moonlight","return","stunspore","swordsdance"],"preferredTypes":["Normal"]}]},"azumarill":{"sets":[{"role":"Bulky Attacker","movepool":["perishsong","rest","surf","whirlpool"]},{"role":"Bulky Support","movepool":["icebeam","lightscreen","rest","sleeptalk","surf","toxic"]},{"role":"Bulky Setup","movepool":["curse","doubleedge","rest","sleeptalk"]}]},"sudowoodo":{"sets":[{"role":"Setup Sweeper","movepool":["curse","earthquake","rockslide","selfdestruct"]},{"role":"Bulky Setup","movepool":["curse","rest","rockslide","sleeptalk"]},{"role":"Thief user","movepool":["earthquake","rockslide","selfdestruct","thief"]}]},"politoed":{"sets":[{"role":"Generalist","movepool":["growth","rest","sleeptalk","surf"]}]},"jumpluff":{"sets":[{"role":"Bulky Attacker","movepool":["encore","hiddenpowerflying","stunspore","synthesis"]},{"role":"Generalist","movepool":["encore","hiddenpowerflying","leechseed","stunspore"]},{"role":"Bulky Support","movepool":["encore","reflect","stunspore","synthesis"]}]},"aipom":{"sets":[{"role":"Generalist","movepool":["agility","batonpass","curse","return"]}]},"sunflora":{"sets":[{"role":"Bulky Setup","movepool":["growth","hiddenpowerfire","hiddenpowerice","razorleaf","synthesis"]}]},"yanma":{"sets":[{"role":"Fast Attacker","movepool":["gigadrain","hiddenpowerflying","return","thief"]},{"role":"Thief user","movepool":["gigadrain","hiddenpowerbug","thief","wingattack"]},{"role":"Setup Sweeper","movepool":["endure","hiddenpowerflying","return","reversal"]}]},"quagsire":{"sets":[{"role":"Generalist","movepool":["earthquake","rest","sleeptalk","surf"]},{"role":"Bulky Attacker","movepool":["earthquake","icebeam","rest","sleeptalk"]},{"role":"Setup Sweeper","movepool":["bellydrum","earthquake","hiddenpowerrock","rest"]}]},"espeon":{"sets":[{"role":"Setup Sweeper","movepool":["batonpass","growth","hiddenpowerfire","psychic","substitute"]},{"role":"Bulky Setup","movepool":["batonpass","growth","hiddenpowerfire","morningsun","psychic"]}]},"umbreon":{"sets":[{"role":"Bulky Setup","movepool":["batonpass","growth","hiddenpowerdark","moonlight"]},{"role":"Generalist","movepool":["batonpass","meanlook","moonlight","sandattack"]},{"role":"Bulky Support","movepool":["batonpass","growth","meanlook","moonlight"]}]},"murkrow":{"sets":[{"role":"Generalist","movepool":["drillpeck","hiddenpowerdark","pursuit","toxic"]},{"role":"Thief user","movepool":["drillpeck","haze","hiddenpowerdark","thief","toxic"],"preferredTypes":["Dark"]}]},"slowking":{"sets":[{"role":"Generalist","movepool":["psychic","rest","sleeptalk","surf"]}]},"misdreavus":{"sets":[{"role":"Generalist","movepool":["meanlook","painsplit","perishsong","protect","thunder"]},{"role":"Thief user","movepool":["hypnosis","psychic","thief","thunder"]},{"role":"Bulky Attacker","movepool":["hypnosis","painsplit","psychic","shadowball","thief","thunder"],"preferredTypes":["Electric"]}]},"unown":{"level":100,"sets":[{"role":"Generalist","movepool":["hiddenpowerpsychic"]}]},"wobbuffet":{"level":95,"sets":[{"role":"Generalist","movepool":["counter","mimic","mirrorcoat","safeguard"]}]},"girafarig":{"sets":[{"role":"Fast Attacker","movepool":["earthquake","psychic","rest","return","sleeptalk","thunder"]},{"role":"Setup Sweeper","movepool":["agility","amnesia","batonpass","psychic"]},{"role":"Bulky Setup","movepool":["agility","batonpass","psychic","thunder"]}]},"forretress":{"sets":[{"role":"Generalist","movepool":["explosion","hiddenpowerbug","hiddenpowersteel","rapidspin","spikes","toxic"]},{"role":"Bulky Support","movepool":["doubleedge","explosion","rapidspin","spikes","toxic"]}]},"dunsparce":{"sets":[{"role":"Setup Sweeper","movepool":["curse","glare","hiddenpowerground","return"]},{"role":"Bulky Setup","movepool":["curse","rest","return","sleeptalk"]},{"role":"Bulky Attacker","movepool":["flamethrower","rest","return","sleeptalk","thunder"]}]},"gligar":{"sets":[{"role":"Bulky Attacker","movepool":["earthquake","hiddenpowerflying","rest","sleeptalk"]},{"role":"Thief user","movepool":["counter","earthquake","hiddenpowerflying","thief","toxic"]}]},"steelix":{"sets":[{"role":"Generalist","movepool":["curse","earthquake","irontail","rest","roar","sleeptalk"]},{"role":"Bulky Attacker","movepool":["curse","earthquake","irontail","rest"]},{"role":"Bulky Setup","movepool":["curse","earthquake","explosion","irontail","roar"]}]},"granbull":{"sets":[{"role":"Bulky Setup","movepool":["curse","rest","return","sleeptalk"]},{"role":"Bulky Support","movepool":["healbell","hiddenpowerground","rest","return","sleeptalk"]},{"role":"Setup Sweeper","movepool":["curse","hiddenpowerground","lovelykiss","return"]}]},"qwilfish":{"sets":[{"role":"Generalist","movepool":["curse","haze","hydropump","sludgebomb","spikes"]}]},"scizor":{"sets":[{"role":"Generalist","movepool":["agility","batonpass","hiddenpowerbug","hiddenpowersteel","swordsdance"]},{"role":"Setup Sweeper","movepool":["agility","hiddenpowerground","return","swordsdance"]},{"role":"Bulky Setup","movepool":["curse","doubleedge","rest","sleeptalk","swordsdance"]}]},"shuckle":{"sets":[{"role":"Bulky Setup","movepool":["defensecurl","rest","rollout","toxic"]}]},"heracross":{"sets":[{"role":"Generalist","movepool":["curse","earthquake","megahorn","rest","sleeptalk"]},{"role":"Setup Sweeper","movepool":["curse","earthquake","hiddenpowerrock","megahorn"]}]},"sneasel":{"sets":[{"role":"Generalist","movepool":["irontail","moonlight","return","toxic"]},{"role":"Bulky Attacker","movepool":["dynamicpunch","icebeam","moonlight","return"]},{"role":"Thief user","movepool":["dynamicpunch","return","shadowball","thief"]}]},"ursaring":{"sets":[{"role":"Generalist","movepool":["curse","earthquake","rest","return","sleeptalk"]}]},"magcargo":{"sets":[{"role":"Generalist","movepool":["fireblast","flamethrower","hiddenpowergrass","rest","rockslide","sleeptalk"]},{"role":"Bulky Setup","movepool":["curse","rest","rockslide","sleeptalk"]}]},"piloswine":{"sets":[{"role":"Generalist","movepool":["earthquake","icebeam","rest","sleeptalk"]}]},"corsola":{"sets":[{"role":"Bulky Attacker","movepool":["curse","recover","rockslide","sandstorm","surf","toxic"]}]},"octillery":{"sets":[{"role":"Bulky Attacker","movepool":["flamethrower","hiddenpowerelectric","icebeam","rest","sleeptalk","surf"]}]},"delibird":{"sets":[{"role":"Thief user","movepool":["hiddenpowerflying","icebeam","rapidspin","spikes","thief","toxic"]}]},"mantine":{"sets":[{"role":"Generalist","movepool":["hiddenpowerelectric","icebeam","rest","sleeptalk","surf"]}]},"skarmory":{"sets":[{"role":"Generalist","movepool":["curse","drillpeck","rest","sleeptalk","toxic"]},{"role":"Bulky Setup","movepool":["curse","drillpeck","rest","whirlwind"]}]},"houndoom":{"sets":[{"role":"Setup Sweeper","movepool":["crunch","fireblast","pursuit","solarbeam","sunnyday"],"preferredTypes":["Grass"]},{"role":"Bulky Attacker","movepool":["crunch","fireblast","rest","sleeptalk"]},{"role":"Generalist","movepool":["counter","crunch","fireblast","pursuit"]}]},"kingdra":{"sets":[{"role":"Generalist","movepool":["dragonbreath","icebeam","rest","sleeptalk","surf"]}]},"donphan":{"sets":[{"role":"Generalist","movepool":["curse","earthquake","hiddenpowerrock","rest","sleeptalk"]},{"role":"Bulky Setup","movepool":["curse","earthquake","hiddenpowerrock","roar"]}]},"porygon2":{"sets":[{"role":"Generalist","movepool":["icebeam","recover","thunderbolt","thunderwave"]},{"role":"Bulky Attacker","movepool":["doubleedge","icebeam","recover","thunder","thunderwave"],"preferredTypes":["Ice"]},{"role":"Bulky Setup","movepool":["curse","doubleedge","icebeam","recover","thunderwave"]}]},"stantler":{"sets":[{"role":"Generalist","movepool":["curse","earthquake","rest","return","sleeptalk"]}]},"smeargle":{"sets":[{"role":"Generalist","movepool":["agility","batonpass","spiderweb","spikes","spore","swordsdance"]}]},"hitmontop":{"sets":[{"role":"Setup Sweeper","movepool":["curse","hiddenpowerghost","hiddenpowerrock","highjumpkick","machpunch","rest"]},{"role":"Bulky Setup","movepool":["curse","highjumpkick","rest","sleeptalk"]},{"role":"Generalist","movepool":["hiddenpowerghost","hiddenpowerrock","highjumpkick","rest","sleeptalk"]}]},"miltank":{"sets":[{"role":"Bulky Setup","movepool":["bodyslam","curse","earthquake","healbell","milkdrink"]}]},"blissey":{"sets":[{"role":"Bulky Support","movepool":["counter","flamethrower","healbell","icebeam","lightscreen","present","softboiled","thunderwave","toxic"]},{"role":"Bulky Attacker","movepool":["healbell","present","softboiled","thunder"]}]},"raikou":{"sets":[{"role":"Generalist","movepool":["crunch","hiddenpowerice","rest","sleeptalk","thunder"]}]},"entei":{"sets":[{"role":"Setup Sweeper","movepool":["fireblast","hiddenpowerground","hiddenpowerrock","solarbeam","sunnyday"]},{"role":"Generalist","movepool":["fireblast","flamethrower","hiddenpowergrass","rest","return","sleeptalk"]}]},"suicune":{"sets":[{"role":"Generalist","movepool":["icebeam","rest","sleeptalk","surf","toxic"]},{"role":"Bulky Support","movepool":["icebeam","rest","roar","surf","toxic"]}]},"tyranitar":{"sets":[{"role":"Generalist","movepool":["crunch","earthquake","fireblast","icebeam","pursuit","rockslide","thunderbolt"]},{"role":"Bulky Support","movepool":["curse","earthquake","rest","rockslide","sleeptalk"]},{"role":"Bulky Setup","movepool":["curse","rest","roar","rockslide"]}]},"lugia":{"sets":[{"role":"Setup Sweeper","movepool":["aeroblast","curse","earthquake","recover"]},{"role":"Bulky Setup","movepool":["curse","hiddenpowerflying","recover","whirlwind"]},{"role":"Bulky Support","movepool":["psychic","recover","thunder","whirlwind"]}]},"hooh":{"sets":[{"role":"Setup Sweeper","movepool":["curse","earthquake","hiddenpowerflying","recover"]},{"role":"Bulky Attacker","movepool":["earthquake","recover","sacredfire","thunder"]}]},"celebi":{"sets":[{"role":"Bulky Support","movepool":["healbell","leechseed","psychic","recover","toxic"]},{"role":"Bulky Attacker","movepool":["healbell","hiddenpowergrass","psychic","recover"]},{"role":"Bulky Setup","movepool":["batonpass","curse","recover","return"]}]}} as any;
 /* eslint-enable */
 
+// Moves that restore HP:
+const RECOVERY_MOVES = [
+	'milkdrink', 'moonlight', 'morningsun', 'painsplit', 'recover', 'softboiled', 'synthesis',
+];
+// Moves that boost Attack:
+const PHYSICAL_SETUP = [
+	'bellydrum', 'curse', 'meditate', 'swordsdance',
+];
+// Conglomerate for ease of access
+const SETUP = [
+	'agility', 'bellydrum', 'curse', 'growth', 'meditate', 'raindance', 'sunnyday', 'swordsdance',
+];
 // Moves that shouldn't be the only STAB moves:
 const NO_STAB = [
-	'explosion', 'icywind', 'machpunch', 'pursuit', 'quickattack', 'reversal', 'selfdestruct',
+	'explosion', 'icywind', 'machpunch', 'pursuit', 'quickattack', 'rapidspin', 'selfdestruct', 'skyattack', 'thief',
+];
+
+// Moves that should be paired together when possible
+const MOVE_PAIRS = [
+	['sleeptalk', 'rest'],
+	['meanlook', 'perishsong'],
 ];
 
 export class RandomGen2Teams extends RandomGen3Teams {
-	randomData: {[species: string]: OldRandomBattleSpecies} = randomDataJSON;
+	randomSets: {[species: string]: RandomTeamsTypes.RandomSpeciesData} = randomSetsJSON;
 
 	constructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {
 		super(dex, format, prng);
@@ -28,107 +46,315 @@ export class RandomGen2Teams extends RandomGen3Teams {
 		this.moveEnforcementCheckers = {
 			Electric: (movePool, moves, abilities, types, counter) => !counter.get('Electric'),
 			Fire: (movePool, moves, abilities, types, counter) => !counter.get('Fire'),
-			Flying: (movePool, moves, abilities, types, counter) => !counter.get('Flying') && types.has('Ground'),
+			Flying: (movePool, moves, abilities, types, counter, species) => (
+				!counter.get('Flying') && ['gligar', 'murkrow', 'xatu'].includes(species.id)
+			),
 			Ground: (movePool, moves, abilities, types, counter) => !counter.get('Ground'),
 			Ice: (movePool, moves, abilities, types, counter) => !counter.get('Ice'),
-			Normal: (movePool, moves, abilities, types, counter) => !counter.get('Normal') && counter.setupType === 'Physical',
-			Psychic: (movePool, moves, abilities, types, counter) => (
-				!counter.get('Psychic') && (types.has('Grass') || types.has('Ice'))
-			),
-			Rock: (movePool, moves, abilities, types, counter, species) => !counter.get('Rock') && species.baseStats.atk > 60,
+			Normal: (movePool, moves, abilities, types, counter) => !counter.get('Normal'),
+			Poison: (movePool, moves, abilities, types, counter) => !counter.get('Poison'),
+			Psychic: (movePool, moves, abilities, types, counter, species) => !counter.get('Psychic') && species.id !== 'starmie',
+			Rock: (movePool, moves, abilities, types, counter, species) => !counter.get('Rock') && species.id !== 'magcargo',
 			Water: (movePool, moves, abilities, types, counter) => !counter.get('Water'),
 		};
 	}
 
-	shouldCullMove(
-		move: Move,
-		types: Set<string>,
+	cullMovePool(
+		types: string[],
 		moves: Set<string>,
 		abilities = {},
 		counter: MoveCounter,
 		movePool: string[],
 		teamDetails: RandomTeamsTypes.TeamDetails,
-	): {cull: boolean, isSetup?: boolean} {
-		const restTalk = moves.has('rest') && moves.has('sleeptalk');
-
-		switch (move.id) {
-		// Set up once and only if we have the moves for it
-		case 'bellydrum': case 'curse': case 'meditate': case 'screech': case 'swordsdance':
-			return {
-				cull: (
-					(counter.setupType !== 'Physical' || counter.get('physicalsetup') > 1) ||
-					(!counter.get('Physical') || counter.damagingMoves.size < 2 && !moves.has('batonpass') && !moves.has('sleeptalk')) ||
-					(move.id === 'bellydrum' && moves.has('sleeptalk'))
-				),
-				isSetup: true,
-			};
-
-		// Not very useful without their supporting moves
-		case 'batonpass':
-			return {cull: !counter.setupType && !counter.get('speedsetup') && !moves.has('meanlook') && !moves.has('spiderweb')};
-		case 'meanlook': case 'spiderweb':
-			return {cull: movePool.includes('perishsong') || movePool.includes('batonpass')};
-		case 'nightmare':
-			return {cull: !moves.has('lovelykiss') && !moves.has('sleeppowder')};
-		case 'swagger':
-			return {cull: !moves.has('substitute')};
-
-		// Bad after setup
-		case 'charm': case 'counter':
-			return {cull: !!counter.setupType};
-		case 'haze':
-			return {cull: !!counter.setupType || restTalk};
-
-		// Ineffective to have both
-		case 'doubleedge':
-			return {cull: moves.has('bodyslam') || moves.has('return')};
-		case 'explosion': case 'selfdestruct':
-			return {cull: moves.has('softboiled') || restTalk};
-		case 'extremespeed':
-			return {cull: moves.has('bodyslam') || restTalk};
-		case 'hyperbeam':
-			return {cull: moves.has('rockslide')};
-		case 'rapidspin':
-			return {cull: !!teamDetails.rapidSpin || !!counter.setupType || moves.has('sleeptalk')};
-		case 'return':
-			return {cull: moves.has('bodyslam')};
-		case 'surf':
-			return {cull: moves.has('hydropump')};
-		case 'thunder':
-			return {cull: moves.has('thunderbolt')};
-		case 'razorleaf':
-			return {cull: moves.has('swordsdance') && movePool.includes('sludgebomb')};
-		case 'icebeam':
-			return {cull: moves.has('dragonbreath')};
-		case 'destinybond':
-			return {cull: moves.has('explosion')};
-		case 'pursuit':
-			return {cull: moves.has('crunch') && moves.has('solarbeam')};
-		case 'thief':
-			return {cull: moves.has('rest') || moves.has('substitute')};
-		case 'irontail':
-			return {cull: types.has('Ground') && movePool.includes('earthquake')};
-
-		// Status and illegal move rejections
-		case 'encore': case 'roar': case 'whirlwind':
-			return {cull: restTalk};
-		case 'lovelykiss':
-			return {cull: ['healbell', 'moonlight', 'morningsun', 'sleeptalk'].some(m => moves.has(m))};
-		case 'sleeptalk':
-			return {cull: moves.has('curse') && counter.get('stab') >= 2};
-		case 'softboiled':
-			return {cull: movePool.includes('swordsdance')};
-		case 'spikes':
-			return {cull: !!teamDetails.spikes};
-		case 'substitute':
-			return {cull: moves.has('agility') || moves.has('rest')};
-		case 'synthesis':
-			return {cull: moves.has('explosion')};
-		case 'thunderwave':
-			return {cull: moves.has('thunder') || moves.has('toxic')};
+		species: Species,
+		isLead: boolean,
+		preferredType: string,
+		role: RandomTeamsTypes.Role,
+	): void {
+		// Pokemon cannot have multiple Hidden Powers in any circumstance
+		let hasHiddenPower = false;
+		for (const move of moves) {
+			if (move.startsWith('hiddenpower')) hasHiddenPower = true;
+		}
+		if (hasHiddenPower) {
+			let movePoolHasHiddenPower = true;
+			while (movePoolHasHiddenPower) {
+				movePoolHasHiddenPower = false;
+				for (const moveid of movePool) {
+					if (moveid.startsWith('hiddenpower')) {
+						this.fastPop(movePool, movePool.indexOf(moveid));
+						movePoolHasHiddenPower = true;
+						break;
+					}
+				}
+			}
 		}
 
-		return {cull: false};
+		if (moves.size + movePool.length <= this.maxMoveCount) return;
+		// If we have two unfilled moves and only one unpaired move, cull the unpaired move.
+		if (moves.size === this.maxMoveCount - 2) {
+			const unpairedMoves = [...movePool];
+			for (const pair of MOVE_PAIRS) {
+				if (movePool.includes(pair[0]) && movePool.includes(pair[1])) {
+					this.fastPop(unpairedMoves, unpairedMoves.indexOf(pair[0]));
+					this.fastPop(unpairedMoves, unpairedMoves.indexOf(pair[1]));
+				}
+			}
+			if (unpairedMoves.length === 1) {
+				this.fastPop(movePool, movePool.indexOf(unpairedMoves[0]));
+			}
+		}
+
+		// These moves are paired, and shouldn't appear if there is not room for them both.
+		if (moves.size === this.maxMoveCount - 1) {
+			for (const pair of MOVE_PAIRS) {
+				if (movePool.includes(pair[0]) && movePool.includes(pair[1])) {
+					this.fastPop(movePool, movePool.indexOf(pair[0]));
+					this.fastPop(movePool, movePool.indexOf(pair[1]));
+				}
+			}
+		}
+
+		// Team-based move culls
+		if (teamDetails.spikes) {
+			if (movePool.includes('spikes')) this.fastPop(movePool, movePool.indexOf('spikes'));
+			if (moves.size + movePool.length <= this.maxMoveCount) return;
+		}
+		if (teamDetails.rapidSpin) {
+			if (movePool.includes('rapidspin')) this.fastPop(movePool, movePool.indexOf('rapidspin'));
+			if (moves.size + movePool.length <= this.maxMoveCount) return;
+		}
+
+		// General incompatibilities
+		const incompatiblePairs = [
+			// These moves don't mesh well with other aspects of the set
+			[PHYSICAL_SETUP, PHYSICAL_SETUP],
+			[SETUP, 'haze'],
+			['bodyslam', 'thunderwave'],
+			[['stunspore', 'thunderwave'], 'toxic'],
+
+			// These attacks are redundant with each other
+			['surf', 'hydropump'],
+			[['bodyslam', 'return'], ['bodyslam', 'doubleedge']],
+			['fireblast', 'flamethrower'],
+			['thunder', 'thunderbolt'],
+		];
+
+		for (const pair of incompatiblePairs) this.incompatibleMoves(moves, movePool, pair[0], pair[1]);
+
+		if (!role.includes('Bulky')) this.incompatibleMoves(moves, movePool, ['rest', 'sleeptalk'], 'roar');
+	}
+
+	// Generate random moveset for a given species, role, preferred type.
+	randomMoveset(
+		types: string[],
+		abilities: Set<string>,
+		teamDetails: RandomTeamsTypes.TeamDetails,
+		species: Species,
+		isLead: boolean,
+		movePool: string[],
+		preferredType: string,
+		role: RandomTeamsTypes.Role,
+	): Set<string> {
+		const preferredTypes = preferredType ? preferredType.split(',') : [];
+		const moves = new Set<string>();
+		let counter = this.newQueryMoves(moves, species, preferredType, abilities);
+		this.cullMovePool(types, moves, abilities, counter, movePool, teamDetails, species, isLead,
+			preferredType, role);
+
+		// If there are only four moves, add all moves and return early
+		if (movePool.length <= this.maxMoveCount) {
+			// Still need to ensure that multiple Hidden Powers are not added (if maxMoveCount is increased)
+			while (movePool.length) {
+				const moveid = this.sample(movePool);
+				counter = this.addMove(moveid, moves, types, abilities, teamDetails, species, isLead,
+					movePool, preferredType, role);
+			}
+			return moves;
+		}
+
+		const runEnforcementChecker = (checkerName: string) => {
+			if (!this.moveEnforcementCheckers[checkerName]) return false;
+			return this.moveEnforcementCheckers[checkerName](
+				movePool, moves, abilities, new Set(types), counter, species, teamDetails
+			);
+		};
+
+		// Add required move (e.g. Relic Song for Meloetta-P)
+		if (species.requiredMove) {
+			const move = this.dex.moves.get(species.requiredMove).id;
+			counter = this.addMove(move, moves, types, abilities, teamDetails, species, isLead,
+				movePool, preferredType, role);
+		}
+
+		// Add other moves you really want to have, e.g. STAB, recovery, setup.
+
+		// Enforce Destiny Bond, Explosion, Present, Spikes and Spore
+		for (const moveid of ['destinybond', 'explosion', 'present', 'spikes', 'spore']) {
+			if (movePool.includes(moveid)) {
+				counter = this.addMove(moveid, moves, types, abilities, teamDetails, species, isLead,
+					movePool, preferredType, role);
+			}
+		}
+
+		// Enforce Baton Pass on Smeargle
+		if (movePool.includes('batonpass') && species.id === 'smeargle') {
+			counter = this.addMove('batonpass', moves, types, abilities, teamDetails, species, isLead,
+				movePool, preferredType, role);
+		}
+
+		// Enforce moves of all Preferred Types
+		for (const type of preferredTypes) {
+			if (!counter.get(type)) {
+				const stabMoves = [];
+				for (const moveid of movePool) {
+					const move = this.dex.moves.get(moveid);
+					const moveType = this.getMoveType(move, species, abilities, preferredType);
+					if (!this.noStab.includes(moveid) && (move.basePower || move.basePowerCallback) && type === moveType) {
+						stabMoves.push(moveid);
+					}
+				}
+				if (stabMoves.length) {
+					const moveid = this.sample(stabMoves);
+					counter = this.addMove(moveid, moves, types, abilities, teamDetails, species, isLead,
+						movePool, preferredType, role);
+				}
+			}
+		}
+
+		// Enforce STAB
+		for (const type of types) {
+			// Check if a STAB move of that type should be required
+			const stabMoves = [];
+			for (const moveid of movePool) {
+				const move = this.dex.moves.get(moveid);
+				const moveType = this.getMoveType(move, species, abilities, preferredType);
+				if (!this.noStab.includes(moveid) && (move.basePower || move.basePowerCallback) && type === moveType) {
+					stabMoves.push(moveid);
+				}
+			}
+			while (runEnforcementChecker(type)) {
+				if (!stabMoves.length) break;
+				const moveid = this.sampleNoReplace(stabMoves);
+				counter = this.addMove(moveid, moves, types, abilities, teamDetails, species, isLead,
+					movePool, preferredType, role);
+			}
+		}
+
+		// If no STAB move was added, add a STAB move
+		if (!counter.get('stab')) {
+			const stabMoves = [];
+			for (const moveid of movePool) {
+				const move = this.dex.moves.get(moveid);
+				const moveType = this.getMoveType(move, species, abilities, preferredType);
+				if (!this.noStab.includes(moveid) && (move.basePower || move.basePowerCallback) && types.includes(moveType)) {
+					stabMoves.push(moveid);
+				}
+			}
+			if (stabMoves.length) {
+				const moveid = this.sample(stabMoves);
+				counter = this.addMove(moveid, moves, types, abilities, teamDetails, species, isLead,
+					movePool, preferredType, role);
+			}
+		}
+
+		// Enforce recovery
+		if (['Bulky Support', 'Bulky Attacker', 'Bulky Setup'].includes(role)) {
+			const recoveryMoves = movePool.filter(moveid => RECOVERY_MOVES.includes(moveid));
+			if (recoveryMoves.length) {
+				const moveid = this.sample(recoveryMoves);
+				counter = this.addMove(moveid, moves, types, abilities, teamDetails, species, isLead,
+					movePool, preferredType, role);
+			}
+			// Rest/Sleep Talk count as recovery in Gen 2
+			if (movePool.includes('rest')) {
+				counter = this.addMove('rest', moves, types, abilities, teamDetails, species, isLead,
+					movePool, preferredType, role);
+			}
+			if (movePool.includes('sleeptalk')) {
+				counter = this.addMove('sleeptalk', moves, types, abilities, teamDetails, species, isLead,
+					movePool, preferredType, role);
+			}
+		}
+
+		// Enforce setup
+		if (role.includes('Setup')) {
+			// First, try to add a non-Speed setup move
+			const nonSpeedSetupMoves = movePool.filter(moveid => SETUP.includes(moveid) && moveid !== 'agility');
+			if (nonSpeedSetupMoves.length) {
+				const moveid = this.sample(nonSpeedSetupMoves);
+				counter = this.addMove(moveid, moves, types, abilities, teamDetails, species, isLead,
+					movePool, preferredType, role);
+			} else {
+				if (movePool.includes('agility')) {
+					counter = this.addMove('agility', moves, types, abilities, teamDetails, species, isLead,
+						movePool, preferredType, role);
+				}
+			}
+		}
+
+		// Enforce Thief
+		if (role === 'Thief user') {
+			if (movePool.includes('thief')) {
+				counter = this.addMove('thief', moves, types, abilities, teamDetails, species, isLead,
+					movePool, preferredType, role);
+			}
+		}
+
+		// Enforce a move not on the noSTAB list
+		if (!counter.damagingMoves.size && !moves.has('present')) {
+			// Choose an attacking move
+			const attackingMoves = [];
+			for (const moveid of movePool) {
+				const move = this.dex.moves.get(moveid);
+				if (!this.noStab.includes(moveid) && (move.category !== 'Status')) attackingMoves.push(moveid);
+			}
+			if (attackingMoves.length) {
+				const moveid = this.sample(attackingMoves);
+				counter = this.addMove(moveid, moves, types, abilities, teamDetails, species, isLead,
+					movePool, preferredType, role);
+			}
+		}
+
+		// Enforce coverage move
+		if (['Fast Attacker', 'Setup Sweeper', 'Bulky Attacker'].includes(role)) {
+			if (counter.damagingMoves.size === 1) {
+				// Find the type of the current attacking move
+				const currentAttackType = counter.damagingMoves.values().next().value.type;
+				// Choose an attacking move that is of different type to the current single attack
+				const coverageMoves = [];
+				for (const moveid of movePool) {
+					const move = this.dex.moves.get(moveid);
+					const moveType = this.getMoveType(move, species, abilities, preferredType);
+					if (!this.noStab.includes(moveid) && (move.basePower || move.basePowerCallback)) {
+						if (currentAttackType !== moveType) coverageMoves.push(moveid);
+					}
+				}
+				if (coverageMoves.length) {
+					const moveid = this.sample(coverageMoves);
+					counter = this.addMove(moveid, moves, types, abilities, teamDetails, species, isLead,
+						movePool, preferredType, role);
+				}
+			}
+		}
+
+		// Choose remaining moves randomly from movepool and add them to moves list:
+		while (moves.size < this.maxMoveCount && movePool.length) {
+			const moveid = this.sample(movePool);
+			counter = this.addMove(moveid, moves, types, abilities, teamDetails, species, isLead,
+				movePool, preferredType, role);
+			for (const pair of MOVE_PAIRS) {
+				if (moveid === pair[0] && movePool.includes(pair[1])) {
+					counter = this.addMove(pair[1], moves, types, abilities, teamDetails, species, isLead,
+						movePool, preferredType, role);
+				}
+				if (moveid === pair[1] && movePool.includes(pair[0])) {
+					counter = this.addMove(pair[0], moves, types, abilities, teamDetails, species, isLead,
+						movePool, preferredType, role);
+				}
+			}
+		}
+		return moves;
 	}
 
 	getItem(
@@ -138,144 +364,77 @@ export class RandomGen2Teams extends RandomGen3Teams {
 		counter: MoveCounter,
 		teamDetails: RandomTeamsTypes.TeamDetails,
 		species: Species,
-	) {
+		isLead: boolean,
+		preferredType: string,
+		role: RandomTeamsTypes.Role,
+	): string {
 		// First, the high-priority items
-		if (species.name === 'Ditto') return 'Metal Powder';
-		if (species.name === 'Farfetch\u2019d') return 'Stick';
-		if (species.name === 'Marowak') return 'Thick Club';
-		if (species.name === 'Pikachu') return 'Light Ball';
-		if (species.name === 'Unown') return 'Twisted Spoon';
+		if (species.id === 'ditto') return 'Metal Powder';
+		if (species.id === 'farfetchd') return 'Stick';
+		if (species.id === 'marowak') return 'Thick Club';
+		if (species.id === 'pikachu') return 'Light Ball';
+
 		if (moves.has('thief')) return '';
 
-		// Medium priority
-		if (moves.has('rest') && !moves.has('sleeptalk')) return 'Mint Berry';
-		if (
-			(moves.has('bellydrum') || moves.has('swordsdance')) &&
-			species.baseStats.spe >= 60 && !types.includes('Ground') &&
-			!moves.has('sleeptalk') && !moves.has('substitute') &&
-			this.randomChance(1, 2)
-		) {
-			return 'Miracle Berry';
-		}
+		if (moves.has('flail')) return 'Pink Bow';
+		if (moves.has('reversal')) return 'Black Belt';
+
+		if (moves.has('rest') && !moves.has('sleeptalk') && !role.includes('Bulky')) return 'Mint Berry';
+
+		if (moves.has('bellydrum') && !counter.get('recovery') && this.randomChance(1, 2)) return 'Miracle Berry';
 
 		// Default to Leftovers
 		return 'Leftovers';
 	}
 
-	randomSet(species: string | Species, teamDetails: RandomTeamsTypes.TeamDetails = {}): RandomTeamsTypes.RandomSet {
+	randomSet(
+		species: string | Species,
+		teamDetails: RandomTeamsTypes.TeamDetails = {},
+		isLead = false
+	): RandomTeamsTypes.RandomSet {
 		species = this.dex.species.get(species);
+		const forme = this.getForme(species);
+		const sets = this.randomSets[species.id]["sets"];
 
-		const data = this.randomData[species.id];
-		const movePool: string[] = [...(data.moves || this.dex.species.getMovePool(species.id))];
-		const rejectedPool: string[] = [];
-		const moves = new Set<string>();
+		const set = this.sampleIfArray(sets);
+		const role = set.role;
+		const movePool: string[] = Array.from(set.movepool);
+		const preferredTypes = set.preferredTypes;
+		// In Gen 2, if a set has multiple preferred types, enforce all of them.
+		const preferredType = preferredTypes ? preferredTypes.join() : '';
 
-		let ivs = {hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30};
-		let availableHP = 0;
-		for (const setMoveid of movePool) {
-			if (setMoveid.startsWith('hiddenpower')) availableHP++;
-		}
+		const ability = '';
+		let item = undefined;
 
-		const types = new Set(species.types);
+		const evs = {hp: 255, atk: 255, def: 255, spa: 255, spd: 255, spe: 255};
+		const ivs = {hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30};
 
-		let counter;
+		const types = species.types;
+		const abilities = new Set(Object.values(species.abilities));
+
+		// Get moves
+		const moves = this.randomMoveset(types, abilities, teamDetails, species, isLead, movePool,
+			preferredType, role);
+		const counter = this.newQueryMoves(moves, species, preferredType, abilities);
+
+		// Get items
+		item = this.getItem(ability, types, moves, counter, teamDetails, species, isLead, preferredType, role);
+
+		const level = this.getLevel(species);
+
 		// We use a special variable to track Hidden Power
 		// so that we can check for all Hidden Powers at once
 		let hasHiddenPower = false;
+		for (const move of moves) {
+			if (move.startsWith('hiddenpower')) hasHiddenPower = true;
+		}
 
-		do {
-			// Choose next 4 moves from learnset/viable moves and add them to moves list:
-			while (moves.size < this.maxMoveCount && movePool.length) {
-				const moveid = this.sampleNoReplace(movePool);
-				if (moveid.startsWith('hiddenpower')) {
-					availableHP--;
-					if (hasHiddenPower) continue;
-					hasHiddenPower = true;
-				}
-				moves.add(moveid);
+		if (hasHiddenPower) {
+			let hpType;
+			for (const move of moves) {
+				if (move.startsWith('hiddenpower')) hpType = move.substr(11);
 			}
-			while (moves.size < this.maxMoveCount && rejectedPool.length) {
-				const moveid = this.sampleNoReplace(rejectedPool);
-				if (moveid.startsWith('hiddenpower')) {
-					if (hasHiddenPower) continue;
-					hasHiddenPower = true;
-				}
-				moves.add(moveid);
-			}
-
-			counter = this.queryMoves(moves, species.types, new Set(), movePool);
-
-			// Iterate through the moves again, this time to cull them:
-			for (const moveid of moves) {
-				const move = this.dex.moves.get(moveid);
-				let {cull, isSetup} = this.shouldCullMove(move, types, moves, {}, counter, movePool, teamDetails);
-
-				// This move doesn't satisfy our setup requirements:
-				if (counter.setupType === 'Physical' && move.category === 'Special' && !counter.get('Physical')) {
-					cull = true;
-				}
-
-
-				// Reject Status, non-STAB, or low basepower moves
-				const moveIsRejectable = (
-					(move.category !== 'Status' || !move.flags.heal) &&
-					// These moves cannot be rejected in favor of a forced move
-					!['batonpass', 'sleeptalk', 'spikes', 'spore', 'sunnyday'].includes(move.id) &&
-					(move.category === 'Status' || !types.has(move.type) || (move.basePower && move.basePower < 40))
-				);
-
-				if (!cull && !isSetup && moveIsRejectable && (counter.setupType || !move.stallingMove)) {
-					// There may be more important moves that this Pokemon needs
-					if (
-						// Pokemon should usually have at least one STAB move
-						(
-							!counter.get('stab') &&
-							!counter.get('damage') &&
-							!types.has('Ghost') &&
-							counter.get('physicalpool') + counter.get('specialpool') > 0
-						) || (movePool.includes('megahorn') || (movePool.includes('softboiled') && moves.has('present'))) ||
-						// Rest + Sleep Talk should be selected together
-						((moves.has('rest') && movePool.includes('sleeptalk')) || (moves.has('sleeptalk') && movePool.includes('rest'))) ||
-						// Sunny Day + Solar Beam should be selected together
-						(moves.has('sunnyday') && movePool.includes('solarbeam') ||
-						(moves.has('solarbeam') && movePool.includes('sunnyday'))) ||
-						['milkdrink', 'recover', 'spikes', 'spore'].some(m => movePool.includes(m))
-					) {
-						cull = true;
-					} else {
-						// Pokemon should have moves that benefit their typing
-						for (const type of types) {
-							if (this.moveEnforcementCheckers[type]?.(movePool, moves, new Set(), types, counter, species, teamDetails)) cull = true;
-						}
-					}
-				}
-
-				// Remove rejected moves from the move list
-				if (
-					cull &&
-					(movePool.length - availableHP || availableHP && (move.id === 'hiddenpower' || !hasHiddenPower))
-				) {
-					if (move.category !== 'Status' && !move.damage && (move.id !== 'hiddenpower' || !availableHP)) {
-						rejectedPool.push(moveid);
-					}
-					moves.delete(moveid);
-					if (moveid.startsWith('hiddenpower')) hasHiddenPower = false;
-					break;
-				}
-
-				if (cull && rejectedPool.length) {
-					moves.delete(moveid);
-					if (moveid.startsWith('hiddenpower')) hasHiddenPower = false;
-					break;
-				}
-			}
-		} while (moves.size < this.maxMoveCount && (movePool.length || rejectedPool.length));
-
-		// Adjust IVs for Hidden Power
-		for (const setMoveid of moves) {
-			if (!setMoveid.startsWith('hiddenpower')) continue;
-			const hpType = setMoveid.substr(11, setMoveid.length);
-
+			if (!hpType) throw new Error(`hasHiddenPower is true, but no Hidden Power move was found.`);
 			const hpIVs: {[k: string]: Partial<typeof ivs>} = {
 				dragon: {def: 28},
 				ice: {def: 26},
@@ -293,25 +452,43 @@ export class RandomGen2Teams extends RandomGen3Teams {
 				flying: {atk: 24, def: 26},
 				fighting: {atk: 24, def: 24},
 			};
-			if (hpIVs[hpType]) {
-				ivs = {...ivs, ...hpIVs[hpType]};
+			let iv: StatID;
+			for (iv in hpIVs[hpType]) {
+				ivs[iv] = hpIVs[hpType][iv]!;
 			}
-
 			if (ivs.atk === 28 || ivs.atk === 24) ivs.hp = 14;
 			if (ivs.def === 28 || ivs.def === 24) ivs.hp -= 8;
 		}
 
-		const level = this.getLevel(species);
+		// Prepare optimal HP
+		while (evs.hp > 1) {
+			const hp = Math.floor(Math.floor(2 * species.baseStats.hp + ivs.hp + Math.floor(evs.hp / 4) + 100) * level / 100 + 10);
+			if (moves.has('substitute') && item !== 'Leftovers') {
+				// Should be able to use four Substitutes
+				if (hp % 4 > 0) break;
+			} else if (moves.has('bellydrum') && item !== 'Leftovers') {
+				// Belly Drum users without Leftovers should reach exactly 50% HP
+				if (hp % 2 === 0) break;
+			} else {
+				break;
+			}
+			evs.hp -= 4;
+		}
+
+		// shuffle moves to add more randomness to camomons
+		const shuffledMoves = Array.from(moves);
+		this.prng.shuffle(shuffledMoves);
 
 		return {
-			name: species.name,
-			species: species.name,
-			moves: Array.from(moves),
-			ability: 'No Ability',
-			evs: {hp: 255, atk: 255, def: 255, spa: 255, spd: 255, spe: 255},
-			ivs,
-			item: this.getItem('None', species.types, moves, counter, teamDetails, species),
+			name: species.baseSpecies,
+			species: forme,
 			level,
+			moves: shuffledMoves,
+			ability: 'No Ability',
+			evs,
+			ivs,
+			item,
+			role,
 			// No shiny chance because Gen 2 shinies have bad IVs
 			shiny: false,
 			gender: species.gender ? species.gender : 'M',

@@ -219,6 +219,8 @@ interface ModdedBattleActions {
 	afterMoveSecondaryEvent?: (this: BattleActions, targets: Pokemon[], pokemon: Pokemon, move: ActiveMove) => undefined;
 	calcRecoilDamage?: (this: BattleActions, damageDealt: number, move: Move, pokemon: Pokemon) => number;
 	canMegaEvo?: (this: BattleActions, pokemon: Pokemon) => string | undefined | null;
+	canMegaEvoX?: (this: BattleActions, pokemon: Pokemon) => string | null;
+	canMegaEvoY?: (this: BattleActions, pokemon: Pokemon) => string | null;
 	canUltraBurst?: (this: BattleActions, pokemon: Pokemon) => string | null;
 	canZMove?: (this: BattleActions, pokemon: Pokemon) => ZMoveOptions | void;
 	canDynamax?: (this: BattleActions, pokemon: Pokemon, skipChecks?: boolean) => DynamaxOptions | void;
@@ -250,6 +252,8 @@ interface ModdedBattleActions {
 	) => number | undefined | false;
 	runAction?: (this: BattleActions, action: Action) => void;
 	runMegaEvo?: (this: BattleActions, pokemon: Pokemon) => boolean;
+	runMegaEvoX?: (this: BattleActions, pokemon: Pokemon) => boolean;
+	runMegaEvoY?: (this: BattleActions, pokemon: Pokemon) => boolean;
 	runMove?: (
 		this: BattleActions, moveOrMoveName: Move | string, pokemon: Pokemon, targetLoc: number, sourceEffect?: Effect | null,
 		zMove?: string, externalMove?: boolean, maxMove?: string, originalTarget?: Pokemon
@@ -577,5 +581,5 @@ namespace RandomTeamsTypes {
 	'Bulky Attacker' | 'Bulky Setup' | 'Fast Bulky Setup' | 'Bulky Support' | 'Fast Support' | 'AV Pivot' |
 	'Doubles Fast Attacker' | 'Doubles Setup Sweeper' | 'Doubles Wallbreaker' | 'Doubles Bulky Attacker' |
 	'Doubles Bulky Setup' | 'Offensive Protect' | 'Bulky Protect' | 'Doubles Support' | 'Choice Item user' |
-	'Z-Move user' | 'Staller' | 'Spinner' | 'Generalist' | 'Berry Sweeper';
+	'Z-Move user' | 'Staller' | 'Spinner' | 'Generalist' | 'Berry Sweeper' | 'Thief user';
 }

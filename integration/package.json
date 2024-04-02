@@ -5,16 +5,16 @@
   "dependencies": {
     "@pkmn/client": "file:../client",
     "@pkmn/data": "file:../data",
-    "@pkmn/eslint-config": "^7.1.0",
+    "@pkmn/eslint-config": "^7.2.0",
     "@pkmn/img": "file:../img",
     "@pkmn/protocol": "file:../protocol",
     "@pkmn/randoms": "file:../randoms",
     "@pkmn/sets": "file:../sets",
     "@pkmn/sim": "file:../sim",
     "@pkmn/view": "file:../view",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "cssnano": "^6.1.0",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
+    "cssnano": "^6.1.2",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jest": "^27.9.0",
@@ -22,7 +22,7 @@
     "minimist": "^1.2.8",
     "parcel": "^2.12.0",
     "source-map-support": "^0.5.21",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.3"
   },
   "alias": {
     "process": false,

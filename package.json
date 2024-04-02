@@ -4,12 +4,12 @@
   "repository": "github:pkmn/ps",
   "license": "MIT",
   "dependencies": {
-    "@pkmn/eslint-config": "^7.1.0",
+    "@pkmn/eslint-config": "^7.2.0",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.11.25",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "esbuild": "^0.20.1",
+    "@types/node": "^20.12.2",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
+    "esbuild": "^0.20.2",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jest": "^27.9.0",
@@ -17,10 +17,10 @@
     "json-stringify-pretty-compact": "3.0.0",
     "minimist": "^1.2.8",
     "subpkg": "^4.1.0",
-    "terser": "^5.29.1",
+    "terser": "^5.30.1",
     "ts-jest": "^29.1.2",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.3"
   },
   "subPackages": [
     "types",

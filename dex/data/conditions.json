@@ -110,7 +110,12 @@
   },
   "9": {
     "brn": {"name": "brn", "effectType": "Status", "onResidualOrder": 10},
-    "par": {"name": "par", "effectType": "Status", "onBeforeMovePriority": 1},
+    "par": {
+      "name": "par",
+      "effectType": "Status",
+      "onModifySpePriority": -101,
+      "onBeforeMovePriority": 1
+    },
     "slp": {"name": "slp", "effectType": "Status", "onBeforeMovePriority": 10},
     "frz": {"name": "frz", "effectType": "Status", "onBeforeMovePriority": 10},
     "psn": {"name": "psn", "effectType": "Status", "onResidualOrder": 9},

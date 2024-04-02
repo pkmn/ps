@@ -635,10 +635,6 @@
       "desc": "This Pokemon cannot be made to flinch.",
       "shortDesc": "This Pokemon cannot be made to flinch."
     },
-    "intimidate": {
-      "inherit": true,
-      "desc": "On switch-in, this Pokemon lowers the Attack of opposing Pokemon by 1 stage. Pokemon behind a substitute are immune."
-    },
     "moody": {
       "inherit": true,
       "desc": "This Pokemon has a random stat raised by 2 stages and another stat lowered by 1 stage at the end of each turn.",
@@ -713,6 +709,10 @@
     "hydration": {
       "inherit": true,
       "desc": "This Pokemon has its non-volatile status condition cured at the end of each turn if Rain Dance is active."
+    },
+    "intimidate": {
+      "inherit": true,
+      "desc": "On switch-in, this Pokemon lowers the Attack of opposing Pokemon by 1 stage. Pokemon behind a substitute are immune."
     },
     "leafguard": {
       "inherit": true,

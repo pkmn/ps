@@ -68,8 +68,4 @@ describe('TeamGenerators', () => {
 			}
 		});
 	}
-	it('gen7randomdoublesbattle', () => {
-		expect(() => TeamGenerators.getTeamGenerator('gen7randomdoublesbattle', [1, 2, 3, 4]))
-			.toThrow(`Unsupported format '[Gen 7] Random Doubles Battle'`);
-	});
 });

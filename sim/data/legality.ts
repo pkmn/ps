@@ -15407,8 +15407,11 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   fluttermane: {
     learnset: {
       dazzlinggleam: [ '9S0' ],
+      icywind: [ '9S1' ],
+      moonblast: [ '9S1' ],
       mysticalfire: [ '9S0' ],
-      shadowball: [ '9S0' ],
+      powergem: [ '9S1' ],
+      shadowball: [ '9S0', '9S1' ],
       wish: [ '9S0' ]
     },
     eventData: [
@@ -15417,6 +15420,13 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
         level: 52,
         shiny: 1,
         moves: [ 'shadowball', 'mysticalfire', 'wish', 'dazzlinggleam' ]
+      },
+      {
+        generation: 9,
+        level: 75,
+        shiny: 1,
+        perfectIVs: 4,
+        moves: [ 'shadowball', 'moonblast', 'powergem', 'icywind' ]
       }
     ],
     eventOnly: true

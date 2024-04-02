@@ -40,7 +40,7 @@ export const TeamGenerators = new class {
 	getTeamGenerator(format: Format | string, seed: PRNG | PRNGSeed | null = null) {
 		format = Dex.formats.get(format);
 		if (!format.exists) throw new Error(`Unknown format '${format.name}' - does not exist`);
-		if (format.team !== 'random' || format.id === 'gen7randomdoublesbattle') {
+		if (format.team !== 'random') {
 			throw new Error(`Unsupported format '${format.name}'`);
 		}
 		const Generator = format.mod && GENERATORS[format.mod];
