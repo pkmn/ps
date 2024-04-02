@@ -251,7 +251,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|init|'(args: Args['|init|']) {
-    return args.length === 2 && (['chat', 'battle'].includes(args[1]));
+    return args.length === 2 && (['chat', 'battle', 'html'].includes(args[1]));
   }
 
   '|title|'(args: Args['|title|']) {

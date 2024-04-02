@@ -432,9 +432,9 @@ export namespace Protocol {
      * `|init|ROOMTYPE`
      *
      * The first message received from a room when you join it. `ROOMTYPE` is one of:
-     * `chat` or `battle`
+     * `chat`, `battle`, or `html`.
      */
-    '|init|': readonly ['init', 'chat' | 'battle'];
+    '|init|': readonly ['init', 'chat' | 'battle' | 'html'];
     /**
      * `|title|TITLE`
      *
