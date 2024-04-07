@@ -48,6 +48,10 @@ export const Tags: {[id: string]: TagData} = {
 		name: "Restricted Legendary",
 		speciesFilter: species => species.tags.includes("Restricted Legendary"),
 	},
+	ultrabeast: {
+		name: "Ultra Beast",
+		speciesFilter: species => species.tags.includes("Ultra Beast"),
+	},
 	paradox: {
 		name: "Paradox",
 		speciesFilter: species => species.tags.includes("Paradox"),

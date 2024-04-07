@@ -93,12 +93,7 @@ export const Formats: FormatList = [
     ruleset: [ '[Gen 9] RU' ],
     banlist: [ 'RU', 'NUBL', 'Quick Claw' ]
   },
-  {
-    name: '[Gen 9] PU',
-    mod: 'gen9',
-    ruleset: [ '[Gen 9] NU' ],
-    banlist: [ 'NU', 'PUBL', 'Drought' ]
-  },
+  { name: '[Gen 9] PU', mod: 'gen9', ruleset: [ '[Gen 9] NU' ], banlist: [ 'NU', 'PUBL' ] },
   {
     name: '[Gen 9] LC',
     mod: 'gen9',
@@ -418,9 +413,8 @@ export const Formats: FormatList = [
       'Ribombee',           'Skeledirge',
       'Ting-Lu',            'Zacian-Crowned',
       'Arceus-Fire',        'Arceus-Flying',
-      'Arceus-Ghost',       'Arceus-Steel',
-      'Arceus-Water',       'Necrozma-Dawn-Wings',
-      'Shaymin-Sky',        'Zekrom'
+      'Arceus-Steel',       'Arceus-Water',
+      'Zekrom'
     ]
   },
   { name: '[Gen 9] ZU', mod: 'gen9', ruleset: [ '[Gen 9] PU' ], banlist: [ 'PU', 'ZUBL' ] },

@@ -22953,7 +22953,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 55.5,
-      "tags": ["Sub-Legendary"],
+      "tags": ["Ultra Beast"],
       "eggGroups": ["Undiscovered"]
     },
     "buzzwole": {
@@ -22971,7 +22971,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 333.6,
-      "tags": ["Sub-Legendary"],
+      "tags": ["Ultra Beast"],
       "eggGroups": ["Undiscovered"]
     },
     "pheromosa": {
@@ -22989,7 +22989,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 25,
-      "tags": ["Sub-Legendary"],
+      "tags": ["Ultra Beast"],
       "eggGroups": ["Undiscovered"]
     },
     "xurkitree": {
@@ -23007,7 +23007,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 100,
-      "tags": ["Sub-Legendary"],
+      "tags": ["Ultra Beast"],
       "eggGroups": ["Undiscovered"]
     },
     "celesteela": {
@@ -23025,7 +23025,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 999.9,
-      "tags": ["Sub-Legendary"],
+      "tags": ["Ultra Beast"],
       "eggGroups": ["Undiscovered"]
     },
     "kartana": {
@@ -23043,7 +23043,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 0.1,
-      "tags": ["Sub-Legendary"],
+      "tags": ["Ultra Beast"],
       "eggGroups": ["Undiscovered"]
     },
     "guzzlord": {
@@ -23061,7 +23061,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 888,
-      "tags": ["Sub-Legendary"],
+      "tags": ["Ultra Beast"],
       "eggGroups": ["Undiscovered"]
     },
     "necrozma": {
@@ -23226,7 +23226,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 1.8,
-      "tags": ["Sub-Legendary"],
+      "tags": ["Ultra Beast"],
       "evos": ["Naganadel"],
       "eggGroups": ["Undiscovered"]
     },
@@ -23245,7 +23245,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 150,
-      "tags": ["Sub-Legendary"],
+      "tags": ["Ultra Beast"],
       "prevo": "Poipole",
       "evoType": "levelMove",
       "evoMove": "Dragon Pulse",
@@ -23266,7 +23266,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 820,
-      "tags": ["Sub-Legendary"],
+      "tags": ["Ultra Beast"],
       "eggGroups": ["Undiscovered"]
     },
     "blacephalon": {
@@ -23284,7 +23284,7 @@
       },
       "abilities": {"0": "Beast Boost"},
       "weightkg": 13,
-      "tags": ["Sub-Legendary"],
+      "tags": ["Ultra Beast"],
       "eggGroups": ["Undiscovered"]
     },
     "zeraora": {
@@ -28164,6 +28164,7 @@
       },
       "abilities": {"0": "Toxic Chain", "H": "Guard Dog"},
       "weightkg": 92,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "munkidori": {
@@ -28181,6 +28182,7 @@
       },
       "abilities": {"0": "Toxic Chain", "H": "Frisk"},
       "weightkg": 12.2,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "fezandipiti": {
@@ -28198,6 +28200,7 @@
       },
       "abilities": {"0": "Toxic Chain", "H": "Technician"},
       "weightkg": 30.1,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"]
     },
     "ogerpon": {
@@ -28216,6 +28219,7 @@
       },
       "abilities": {"0": "Defiant"},
       "weightkg": 39.8,
+      "tags": ["Sub-Legendary"],
       "eggGroups": ["Undiscovered"],
       "otherFormes": [
         "Ogerpon-Wellspring",
@@ -28537,7 +28541,6 @@
       },
       "abilities": {"0": "Tera Shell"},
       "weightkg": 16,
-      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"],
       "battleOnly": "Terapagos",
       "forceTeraType": "Stellar"
@@ -28558,7 +28561,6 @@
       },
       "abilities": {"0": "Teraform Zero"},
       "weightkg": 77,
-      "tags": ["Restricted Legendary"],
       "eggGroups": ["Undiscovered"],
       "battleOnly": "Terapagos",
       "forceTeraType": "Stellar"
