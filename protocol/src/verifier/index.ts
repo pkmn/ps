@@ -11,7 +11,7 @@ import {
   Weather,
 } from '@pkmn/types';
 
-import {Args, KWArgs, PokemonIdent, Protocol} from '../index';
+import {Args, KWArgs, PokemonIdent, Protocol, ignoreKwArgsSimple} from '../index';
 
 interface Generation {
   num: GenerationNum;
@@ -1598,10 +1598,6 @@ function parseRawLine(line: string, noDefault?: boolean): string[] | null {
   if (line === '|') return ['done'];
   const index = line.indexOf('|', 1);
   const cmd = line.slice(1, index);
-  const ignoreKwArgsSimple = new Set(['chatmsg', 'chatmsg-raw', 'raw', 'error', 'html',
-    'inactive', 'inactiveoff', 'warning', 'title', 'formats', 'selectorhtml',
-    'pagehtml', 'fieldhtml', 'controlshtml', 'bigerror', 'debug', 'tier',
-    'challstr', 'popup', '', 'customgroups', 'notify']);
   if (ignoreKwArgsSimple.has(cmd)) return ([cmd, line.slice(index + 1)]);
   switch (cmd) {
     case 'c': case 'chat': case 'uhtml': case 'uhtmlchange':
