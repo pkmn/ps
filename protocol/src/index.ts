@@ -1858,6 +1858,11 @@ function toID(s: string): ID {
   return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
 }
 
+export const ignoreKwArgsSimple = new Set(['chatmsg', 'chatmsg-raw', 'raw', 'error', 'html',
+  'inactive', 'inactiveoff', 'warning', 'title', 'formats', 'selectorhtml',
+  'pagehtml', 'fieldhtml', 'controlshtml', 'bigerror', 'debug', 'tier',
+  'challstr', 'popup', '', 'customgroups', 'notify']);
+
 export const Protocol = new class {
   // NOTE: An object is used here to get TypeScript to perform exhaustiveness checking
   ARGS: {[k in Protocol.ArgName]: 1} = {
@@ -1930,10 +1935,6 @@ export const Protocol = new class {
     if (line === '|') return ['done'];
     const index = line.indexOf('|', 1);
     const cmd = line.slice(1, index);
-    const ignoreKwArgsSimple = new Set(['chatmsg', 'chatmsg-raw', 'raw', 'error', 'html',
-      'inactive', 'inactiveoff', 'warning', 'title', 'formats', 'selectorhtml',
-      'pagehtml', 'fieldhtml', 'controlshtml', 'bigerror', 'debug', 'tier',
-      'challstr', 'popup', '', 'customgroups', 'notify']);
     if (ignoreKwArgsSimple.has(cmd)) return upgradeArgs([cmd, line.slice(index + 1)]);
     switch (cmd) {
       case 'c': case 'chat': case 'uhtml': case 'uhtmlchange':
