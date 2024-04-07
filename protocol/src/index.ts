@@ -1930,12 +1930,12 @@ export const Protocol = new class {
     if (line === '|') return ['done'];
     const index = line.indexOf('|', 1);
     const cmd = line.slice(1, index);
+    const ignoreKwArgsSimple = new Set(['chatmsg', 'chatmsg-raw', 'raw', 'error', 'html',
+      'inactive', 'inactiveoff', 'warning', 'title', 'formats', 'selectorhtml',
+      'pagehtml', 'fieldhtml', 'controlshtml', 'bigerror', 'debug', 'tier',
+      'challstr', 'popup', '', 'customgroups', 'notify']);
+    if (ignoreKwArgsSimple.has(cmd)) return upgradeArgs([cmd, line.slice(index + 1)]);
     switch (cmd) {
-      case 'chatmsg': case 'chatmsg-raw': case 'raw': case 'error': case 'html':
-      case 'inactive': case 'inactiveoff': case 'warning': case 'title': case 'formats':
-      case 'selectorhtml': case 'pagehtml': case 'fieldhtml': case 'controlshtml': case 'bigerror':
-      case 'debug': case 'tier': case 'challstr': case 'popup': case '':
-        return upgradeArgs([cmd, line.slice(index + 1)]);
       case 'c': case 'chat': case 'uhtml': case 'uhtmlchange':
       // three parts
         const index2a = line.indexOf('|', index + 1);

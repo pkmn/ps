@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/client",
-  "version": "0.6.23",
+  "version": "0.6.24",
   "description": "Client battle engine for Pokémon Showdown",
   "repository": "github:pkmn/ps",
   "license": "MIT",
@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "@pkmn/data": "^0.9.1",
-    "@pkmn/protocol": "^0.6.23"
+    "@pkmn/protocol": "^0.6.24"
   },
   "devDependencies": {
     "@pkmn/dex": "^0.9.1"
