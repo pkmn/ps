@@ -982,8 +982,6 @@
     "fossilizeddrake": {"inherit": true, "isNonstandard": null},
     "fossilizedfish": {"inherit": true, "isNonstandard": null},
     "fullincense": {"inherit": true, "isNonstandard": null},
-    "galaricacuff": {"inherit": true, "isNonstandard": null},
-    "galaricawreath": {"inherit": true, "isNonstandard": null},
     "ghostmemory": {"inherit": true, "isNonstandard": null},
     "grassmemory": {"inherit": true, "isNonstandard": null},
     "griseouscore": {"inherit": true, "isNonstandard": "Future"},
@@ -1022,13 +1020,11 @@
     "roseincense": {"inherit": true, "isNonstandard": null},
     "rowapberry": {"inherit": true, "isNonstandard": null},
     "sachet": {"inherit": true, "isNonstandard": null},
-    "safariball": {"inherit": true, "isNonstandard": null},
     "seaincense": {"inherit": true, "isNonstandard": null},
     "shockdrive": {"inherit": true, "isNonstandard": null},
     "skyplate": {"inherit": true, "isNonstandard": "Past"},
     "splashplate": {"inherit": true, "isNonstandard": "Past"},
     "spookyplate": {"inherit": true, "isNonstandard": "Past"},
-    "sportball": {"inherit": true, "isNonstandard": null},
     "starsweet": {"inherit": true, "isNonstandard": null},
     "stoneplate": {"inherit": true, "isNonstandard": "Past"},
     "strawberrysweet": {"inherit": true, "isNonstandard": null},
@@ -2358,7 +2354,6 @@
       "fling": {"basePower": 30},
       "num": 1582,
       "gen": 8,
-      "isNonstandard": "Unobtainable",
       "desc": "Evolves Galarian Slowpoke into Galarian Slowbro when used."
     },
     "galaricawreath": {
@@ -2366,7 +2361,6 @@
       "fling": {"basePower": 30},
       "num": 1592,
       "gen": 8,
-      "isNonstandard": "Unobtainable",
       "desc": "Evolves Galarian Slowpoke into Galarian Slowking when used."
     },
     "galladite": {
@@ -4095,7 +4089,6 @@
       "num": 5,
       "gen": 1,
       "isPokeball": true,
-      "isNonstandard": "Unobtainable",
       "desc": "A special Poke Ball that is used only in the Safari Zone and Great Marsh."
     },
     "safetygoggles": {
@@ -4373,7 +4366,6 @@
       "num": 499,
       "gen": 2,
       "isPokeball": true,
-      "isNonstandard": "Unobtainable",
       "desc": "A special Poke Ball for the Bug-Catching Contest."
     },
     "starfberry": {

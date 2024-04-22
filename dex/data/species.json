@@ -20260,6 +20260,7 @@
       "weightkg": 150.5,
       "prevo": "Sliggoo",
       "evoLevel": 50,
+      "evoCondition": "during rain",
       "eggGroups": ["Dragon"],
       "otherFormes": ["Goodra-Hisui"],
       "formeOrder": ["Goodra", "Goodra-Hisui"]
@@ -20282,6 +20283,7 @@
       "weightkg": 334.1,
       "prevo": "Sliggoo-Hisui",
       "evoLevel": 50,
+      "evoCondition": "during rain",
       "eggGroups": ["Dragon"]
     },
     "klefki": {
@@ -25793,7 +25795,7 @@
       "abilities": {"0": "Swarm", "1": "Sheer Force", "H": "Sharpness"},
       "weightkg": 89,
       "prevo": "Scyther",
-      "evoType": "other",
+      "evoType": "useItem",
       "evoCondition": "Black Augurite",
       "eggGroups": ["Bug"]
     },
