@@ -555,6 +555,10 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 2 && gen >= 1 && gen <= 9;
   }
 
+  '|custom|'() {
+    return true; // ignore
+  }
+
   '|tier|'(args: Args['|tier|']) {
     return args.length === 2 && verifyName(args[1]);
   }
