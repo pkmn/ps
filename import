@@ -240,7 +240,7 @@ const MOD_IMPORTS = {
   'data/mods/gen9dlc1/moves.ts': ['ModdedMoveData'],
 };
 const RANDOMS_IMPORTS = {
-  'data/random-teams.ts': [
+  'data/random-battles/gen9/teams.ts': [
     [['Utils'], './utils'],
     [[
       'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatID',
@@ -248,7 +248,7 @@ const RANDOMS_IMPORTS = {
       'RuleTable', 'Tags', 'Item', 'Ability', 'Nature',
     ], '@pkmn/sim'],
   ],
-  'data/mods/gen8/random-teams.ts': [
+  'data/random-battles/gen8/teams.ts': [
     [['Utils'], './utils'],
     [[
       'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatID',
@@ -256,7 +256,7 @@ const RANDOMS_IMPORTS = {
       'RuleTable', 'Tags', 'Item', 'Ability', 'Nature', 'ID',
     ], '@pkmn/sim'],
   ],
-  'data/mods/gen7/random-teams.ts': [
+  'data/random-battles/gen7/teams.ts': [
     [['MoveCounter', 'RandomGen8Teams', 'TeamData'], './gen8'],
     [['Utils'], './utils'],
     [[
@@ -264,50 +264,50 @@ const RANDOMS_IMPORTS = {
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'Move', 'StatsTable', 'SparseStatsTable',
     ], '@pkmn/sim'],
   ],
-  'data/mods/gen6/random-teams.ts': [
+  'data/random-battles/gen6/teams.ts': [
     [['RandomGen7Teams', 'ZeroAttackHPIVs', 'BattleFactorySpecies'], './gen7'],
     [['MoveCounter', 'TeamData'], './gen8'],
     [['Utils'], './utils'],
     [[
-      'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'Move',
+      'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed',
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'StatID', 'Ability',
     ], '@pkmn/sim'],
   ],
-  'data/mods/gen5/random-teams.ts': [
-    [['MoveCounter', 'OldRandomBattleSpecies'], './gen8'],
+  'data/random-battles/gen5/teams.ts': [
+    [['MoveCounter'], './gen8'],
     [['RandomGen6Teams'], './gen6'],
     [['Utils'], './utils'],
     [[
-      'Species', 'StatID', 'SparseStatsTable', 'RandomTeamsTypes', 'toID',
-      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Move', 'Ability',
+      'Species', 'StatID', 'RandomTeamsTypes', 'toID',
+      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Ability',
     ], '@pkmn/sim'],
   ],
-  'data/mods/gen4/random-teams.ts': [
-    [['MoveCounter', 'OldRandomBattleSpecies'], './gen8'],
+  'data/random-battles/gen4/teams.ts': [
+    [['MoveCounter'], './gen8'],
     [['RandomGen5Teams'], './gen5'],
     [['Utils'], './utils'],
     [[
-      'Species', 'RandomTeamsTypes', 'toID', 'SparseStatsTable', 'StatID',
-      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Move', 'Ability',
+      'Species', 'RandomTeamsTypes', 'StatID',
+      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Ability',
     ], '@pkmn/sim'],
   ],
-  'data/mods/gen3/random-teams.ts': [
-    [['MoveCounter', 'OldRandomBattleSpecies'], './gen8'],
+  'data/random-battles/gen3/teams.ts': [
+    [['MoveCounter'], './gen8'],
     [['RandomGen4Teams'], './gen4'],
     [['Utils'], './utils'],
     [[
-      'ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes', 'Move', 'StatID',
+      'ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes', 'StatID',
       'Ability',
     ], '@pkmn/sim'],
   ],
-  'data/mods/gen2/random-teams.ts': [
+  'data/random-battles/gen2/teams.ts': [
     [['MoveCounter'], './gen8'],
     [['RandomGen3Teams'], './gen3'],
     [[
       'ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes', 'StatID',
     ], '@pkmn/sim'],
   ],
-  'data/mods/gen1/random-teams.ts': [
+  'data/random-battles/gen1/teams.ts': [
     [['MoveCounter'], './gen8'],
     [['RandomGen2Teams'], './gen2'],
     [['Utils'], './utils'],
@@ -506,7 +506,6 @@ const SKIP_TESTS = new Set([
   'test/sim/data.js',
   'test/sim/misc/mixandmega.js',
   'test/sim/misc/megaevolution.js',
-  'test/sim/misc/random-teams.js',
   'test/sim/misc/statuses.js',
   'test/sim/moves/counter.js',
   'test/sim/prng.js',
@@ -535,7 +534,7 @@ const INTERESTING = new Set([
 // This mostly exists to help detect when *new* files are added which may need to be included
 const interesting = f => {
   if (f.startsWith('sim') || f.startsWith('test/sim')) return true;
-  if (f.startsWith('data') && !f.endsWith('random-teams.js')) return true;
+  if (f.startsWith('data') && !f.endsWith('teams.ts')) return true;
   return COPIED.has(f) || MOD_COPIED.has(f);
 };
 
@@ -548,22 +547,22 @@ const removeFields = (data, fields) => {
 };
 
 const RANDOMS_FILES = {
-  'data/random-teams.ts': 'src/gen9.ts',
-  'data/mods/gen8/random-teams.ts': 'src/gen8.ts',
-  'data/mods/gen7/random-teams.ts': 'src/gen7.ts',
-  'data/mods/gen6/random-teams.ts': 'src/gen6.ts',
-  'data/mods/gen5/random-teams.ts': 'src/gen5.ts',
-  'data/mods/gen4/random-teams.ts': 'src/gen4.ts',
-  'data/mods/gen3/random-teams.ts': 'src/gen3.ts',
-  'data/mods/gen2/random-teams.ts': 'src/gen2.ts',
-  'data/mods/gen1/random-teams.ts': 'src/gen1.ts',
+  'data/random-battles/gen9/teams.ts': 'src/gen9.ts',
+  'data/random-battles/gen8/teams.ts': 'src/gen8.ts',
+  'data/random-battles/gen7/teams.ts': 'src/gen7.ts',
+  'data/random-battles/gen6/teams.ts': 'src/gen6.ts',
+  'data/random-battles/gen5/teams.ts': 'src/gen5.ts',
+  'data/random-battles/gen4/teams.ts': 'src/gen4.ts',
+  'data/random-battles/gen3/teams.ts': 'src/gen3.ts',
+  'data/random-battles/gen2/teams.ts': 'src/gen2.ts',
+  'data/random-battles/gen1/teams.ts': 'src/gen1.ts',
 };
 
 const INLINE_REQUIRE = /^(.*)require\(.*\);.*$/;
-const RANDOM_SETS = /^(\trandomSets:.*=) require\('\.\/random-sets\.json'\);(.*)/;
+const RANDOM_SETS = /^(\trandomSets:.*=) require\('\.\/sets\.json'\);(.*)/;
 const RANDOM_DOUBLES_SETS =
-  /^(\trandomDoublesSets:.*=) require\('\.\/random-doubles-sets\.json'\);(.*)/;
-const RANDOM_DATA = /^(\trandomData:.*=) require\('\.\/random-data\.json'\);(.*)/;
+  /^(\trandomDoublesSets:.*=) require\('\.\/doubles-sets\.json'\);(.*)/;
+const RANDOM_DATA = /^(\trandomData:.*=) require\('\.\/data\.json'\);(.*)/;
 
 const DATA = {
   'abilities.js': code => [
@@ -708,6 +707,10 @@ const changes = async (where, last, now, repo) => ({
       if (OVERRIDDEN.has(file) || SKIP_TESTS.has(file)) continue;
       fs.copyFileSync(path.resolve(ps, file), path.resolve(sim, file));
     }
+    for (const file of
+      tree(path.join(ps, 'test/random-battles')).map(f => f.slice(ps.length + 1))) {
+      fs.copyFileSync(path.resolve(ps, file), path.resolve(sim, file));
+    }
 
     for (const file of MOD_COPIED) {
       if (MOD_IMPORTS[file]) {
@@ -765,23 +768,23 @@ const changes = async (where, last, now, repo) => ({
 
       let dataJson = '';
       let doublesJson = '';
-      if (file.endsWith('random-teams.ts')) {
-        const current = !file.includes('mods');
-        const sets = file === 'data/random-teams.ts' ||
-          file === 'data/mods/gen7/random-teams.ts' ||
-          file === 'data/mods/gen6/random-teams.ts' ||
-          file === 'data/mods/gen5/random-teams.ts' ||
-          file === 'data/mods/gen4/random-teams.ts' ||
-          file === 'data/mods/gen3/random-teams.ts' ||
-          file === 'data/mods/gen2/random-teams.ts';
+      if (file.endsWith('teams.ts')) {
+        const current = file.includes('gen9');
+        const sets = file === 'data/random-battles/gen9/teams.ts' ||
+          file === 'data/random-battles/gen7/teams.ts' ||
+          file === 'data/random-battles/gen6/teams.ts' ||
+          file === 'data/random-battles/gen5/teams.ts' ||
+          file === 'data/random-battles/gen4/teams.ts' ||
+          file === 'data/random-battles/gen3/teams.ts' ||
+          file === 'data/random-battles/gen2/teams.ts';
         let data =
-          path.resolve(path.join(ps, file), '..', `random-${sets ? 'sets' : 'data'}.json`);
+          path.resolve(path.join(ps, file), '..', `${sets ? 'sets' : 'data'}.json`);
         let raw = fs.readFileSync(data, 'utf8');
         dataJson = '\n\n/* eslint-disable */\n' +
           `const random${sets ? 'Sets' : 'Data'}JSON = ${JSON.stringify(JSON.parse(raw))}` +
           ' as any;\n/* eslint-enable */';
         if (sets && current) {
-          data = path.resolve(path.join(ps, file), '..', `random-doubles-sets.json`);
+          data = path.resolve(path.join(ps, file), '..', `doubles-sets.json`);
           raw = fs.readFileSync(data, 'utf8');
           doublesJson = '\n\n/* eslint-disable */\n' +
             `const randomDoublesSetsJSON = ${JSON.stringify(JSON.parse(raw))}` +

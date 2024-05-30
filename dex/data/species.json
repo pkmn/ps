@@ -30041,6 +30041,23 @@
       "eggGroups": ["Amorphous", "Water 3"],
       "gen": 9
     },
+    "chuggalong": {
+      "num": -75,
+      "name": "Chuggalong",
+      "types": ["Dragon", "Poison"],
+      "baseStats": {
+        "hp": 45,
+        "atk": 43,
+        "def": 117,
+        "spa": 120,
+        "spd": 110,
+        "spe": 115
+      },
+      "abilities": {"0": "Armor Tail"},
+      "weightkg": 201.6,
+      "eggGroups": ["Undiscovered"],
+      "gen": 9
+    },
     "pokestarsmeargle": {
       "num": -5000,
       "name": "Pokestar Smeargle",

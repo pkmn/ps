@@ -34,6 +34,14 @@ export const Formats = [
     ]
   },
   {
+    name: '[Gen 8 BDSP] Ubers',
+    threads: [ '&bullet; <a href="https://www.smogon.com/forums/threads/3694036/">BDSP Ubers</a>' ],
+    mod: 'gen8bdsp',
+    searchShow: false,
+    ruleset: [ 'Standard' ],
+    banlist: [ 'AG', 'Baton Pass' ]
+  },
+  {
     name: '[Gen 8 BDSP] Doubles OU',
     threads: [
       '&bullet; <a href="https://www.smogon.com/forums/threads/3693891/">BDSP Doubles OU</a>'

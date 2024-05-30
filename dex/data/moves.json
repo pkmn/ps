@@ -1155,6 +1155,10 @@
       "inherit": true,
       "flags": {"protect": 1, "mirror": 1, "metronome": 1}
     },
+    "flail": {
+      "inherit": true,
+      "desc": "The power of this move is 20 if X is 33 to 48, 40 if X is 17 to 32, 80 if X is 10 to 16, 100 if X is 5 to 9, 150 if X is 2 to 4, and 200 if X is 0 or 1, where X is equal to (user's current HP * 48 / user's maximum HP), rounded down."
+    },
     "flash": {"inherit": true, "accuracy": 70},
     "fly": {
       "inherit": true,
@@ -1274,6 +1278,10 @@
       "desc": "The user spends two or three turns locked into this move and becomes confused at the end of the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, falls asleep, becomes frozen, or the attack is not successful against the target, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user."
     },
     "recover": {"inherit": true, "pp": 20},
+    "reversal": {
+      "inherit": true,
+      "desc": "The power of this move is 20 if X is 33 to 48, 40 if X is 17 to 32, 80 if X is 10 to 16, 100 if X is 5 to 9, 150 if X is 2 to 4, and 200 if X is 0 or 1, where X is equal to (user's current HP * 48 / user's maximum HP), rounded down."
+    },
     "rocksmash": {"inherit": true, "basePower": 20},
     "sketch": {
       "inherit": true,
@@ -1443,10 +1451,6 @@
       "inherit": true,
       "desc": "Prevents the target from switching for two to five turns. Causes damage to the target equal to 1/16 of its maximum HP, rounded down, at the end of each turn during effect. The target can still switch out if it uses Baton Pass. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move."
     },
-    "flail": {
-      "inherit": true,
-      "desc": "The power of this move is 20 if X is 33 to 48, 40 if X is 17 to 32, 80 if X is 10 to 16, 100 if X is 5 to 9, 150 if X is 2 to 4, and 200 if X is 0 or 1, where X is equal to (user's current HP * 48 / user's maximum HP), rounded down."
-    },
     "furyattack": {
       "inherit": true,
       "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits."
@@ -1538,10 +1542,6 @@
       "inherit": true,
       "desc": "Damage doubles if the user was hit by a Pokemon in the target's current position this turn, and that Pokemon was the last to hit the user.",
       "shortDesc": "Damage doubles if user is hit by the target."
-    },
-    "reversal": {
-      "inherit": true,
-      "desc": "The power of this move is 20 if X is 33 to 48, 40 if X is 17 to 32, 80 if X is 10 to 16, 100 if X is 5 to 9, 150 if X is 2 to 4, and 200 if X is 0 or 1, where X is equal to (user's current HP * 48 / user's maximum HP), rounded down."
     },
     "rockblast": {
       "inherit": true,
