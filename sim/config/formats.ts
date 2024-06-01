@@ -535,6 +535,29 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 8] National Dex',
+    mod: 'gen8',
+    ruleset: [
+      'Standard NatDex',
+      'OHKO Clause',
+      'Evasion Clause',
+      'Species Clause',
+      'Dynamax Clause',
+      'Sleep Clause Mod'
+    ],
+    banlist: [
+      'ND Uber',
+      'Arena Trap',
+      'Moody',
+      'Power Construct',
+      'Shadow Tag',
+      "King's Rock",
+      'Razor Fang',
+      'Quick Claw',
+      'Baton Pass'
+    ]
+  },
+  {
     name: '[Gen 9] National Dex Ubers',
     mod: 'gen9',
     ruleset: [
@@ -559,6 +582,40 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] National Dex UU' ],
     banlist: [ 'ND UU', 'ND RUBL', 'Slowbro-Base + Slowbronite', 'Heat Rock' ]
+  },
+  {
+    name: '[Gen 9] National Dex LC',
+    mod: 'gen9',
+    ruleset: [
+      'Standard NatDex',
+      'Little Cup',
+      'Species Clause',
+      'OHKO Clause',
+      'Evasion Clause',
+      'Sleep Clause Mod'
+    ],
+    banlist: [
+      'Aipom',         'Basculin-White-Striped',
+      'Clamperl',      'Corsola-Galar',
+      'Cutiefly',      'Drifloon',
+      'Dunsparce',     'Duraludon',
+      'Flittle',       'Girafarig',
+      'Gligar',        'Meditite',
+      'Misdreavus',    'Murkrow',
+      'Porygon',       'Qwilfish-Hisui',
+      'Rufflet',       'Scraggy',
+      'Scyther',       'Sneasel',
+      'Sneasel-Hisui', 'Stantler',
+      'Swirlix',       'Tangela',
+      'Vulpix-Alola',  'Woobat',
+      'Yanma',         'Zigzagoon-Base',
+      'Chlorophyll',   'Moody',
+      'Eevium Z',      "King's Rock",
+      'Quick Claw',    'Razor Fang',
+      'Assist',        'Baton Pass',
+      'Dragon Rage',   'Sonic Boom',
+      'Sticky Web'
+    ]
   },
   {
     name: '[Gen 9] National Dex Monotype',
@@ -655,29 +712,6 @@ export const Formats: FormatList = [
   },
   { name: '[Gen 9] National Dex AG', mod: 'gen9', ruleset: [ 'Standard NatDex' ] },
   {
-    name: '[Gen 8] National Dex',
-    mod: 'gen8',
-    ruleset: [
-      'Standard NatDex',
-      'OHKO Clause',
-      'Evasion Clause',
-      'Species Clause',
-      'Dynamax Clause',
-      'Sleep Clause Mod'
-    ],
-    banlist: [
-      'ND Uber',
-      'Arena Trap',
-      'Moody',
-      'Power Construct',
-      'Shadow Tag',
-      "King's Rock",
-      'Razor Fang',
-      'Quick Claw',
-      'Baton Pass'
-    ]
-  },
-  {
     name: '[Gen 8] National Dex UU',
     mod: 'gen8',
     ruleset: [ '[Gen 8] National Dex' ],
@@ -721,6 +755,19 @@ export const Formats: FormatList = [
       'Focus Band',         "King's Rock",     'Quick Claw',
       'Razor Fang',         'Smooth Rock',     'Terrain Extender',
       'Baton Pass'
+    ]
+  },
+  {
+    name: '[Gen 9] Baby Random Battle',
+    mod: 'gen9',
+    team: 'randomBaby',
+    ruleset: [
+      'Obtainable',
+      'Species Clause',
+      'HP Percentage Mod',
+      'Cancel Mod',
+      'Sleep Clause Mod',
+      'Illusion Level Mod'
     ]
   },
   {
@@ -966,34 +1013,29 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 6] UU',
-    mod: 'gen6',
-    ruleset: [ '[Gen 6] OU' ],
-    banlist: [ 'OU', 'UUBL', 'Drizzle', 'Drought' ]
+    name: '[Gen 7] UU',
+    mod: 'gen7',
+    ruleset: [ '[Gen 7] OU' ],
+    banlist: [ 'OU', 'UUBL', 'Drizzle', 'Drought', 'Kommonium Z', 'Mewnium Z' ]
   },
   {
-    name: '[Gen 3] UUBL',
-    mod: 'gen3',
-    ruleset: [ 'Standard', 'One Boost Passer Clause' ],
+    name: '[Gen 4] LC',
+    mod: 'gen4',
+    ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause' ],
     banlist: [
-      'Uber',
-      'OU',
-      'Smeargle + Baton Pass',
-      'Smeargle + Ingrain',
-      'Soundproof',
-      'Assist',
-      'Baton Pass + Block',
-      'Baton Pass + Mean Look',
-      'Baton Pass + Spider Web',
-      'Swagger'
+      'Meditite',       'Misdreavus',
+      'Murkrow',        'Scyther',
+      'Sneasel',        'Tangela',
+      'Yanma',          'Berry Juice',
+      'Deep Sea Tooth', 'Dragon Rage',
+      'Sonic Boom',     'Swagger'
     ]
   },
   {
-    name: '[Gen 7] RU',
-    mod: 'gen7',
-    ruleset: [ '[Gen 7] UU' ],
-    banlist: [ 'UU', 'RUBL', 'Mimikyu', 'Aurora Veil' ],
-    unbanlist: [ 'Drought' ]
+    name: '[Gen 8] NU',
+    mod: 'gen8',
+    ruleset: [ '[Gen 8] RU' ],
+    banlist: [ 'RU', 'NUBL', 'Drizzle', 'Drought', 'Slush Rush' ]
   },
   {
     name: '[Gen 8] OU',
@@ -1140,12 +1182,6 @@ export const Formats: FormatList = [
     banlist: [ 'OU', 'UUBL', 'Light Clay' ]
   },
   { name: '[Gen 8] RU', mod: 'gen8', ruleset: [ '[Gen 8] UU' ], banlist: [ 'UU', 'RUBL' ] },
-  {
-    name: '[Gen 8] NU',
-    mod: 'gen8',
-    ruleset: [ '[Gen 8] RU' ],
-    banlist: [ 'RU', 'NUBL', 'Drizzle', 'Drought', 'Slush Rush' ]
-  },
   { name: '[Gen 8] PU', mod: 'gen8', ruleset: [ '[Gen 8] NU' ], banlist: [ 'NU', 'PUBL' ] },
   {
     name: '[Gen 8] LC',
@@ -1333,10 +1369,11 @@ export const Formats: FormatList = [
     banlist: [ 'Baton Pass' ]
   },
   {
-    name: '[Gen 7] UU',
+    name: '[Gen 7] RU',
     mod: 'gen7',
-    ruleset: [ '[Gen 7] OU' ],
-    banlist: [ 'OU', 'UUBL', 'Drizzle', 'Drought', 'Kommonium Z', 'Mewnium Z' ]
+    ruleset: [ '[Gen 7] UU' ],
+    banlist: [ 'UU', 'RUBL', 'Mimikyu', 'Aurora Veil' ],
+    unbanlist: [ 'Drought' ]
   },
   {
     name: '[Gen 7] NU',
@@ -1539,6 +1576,12 @@ export const Formats: FormatList = [
     name: '[Gen 6] Ubers',
     mod: 'gen6',
     ruleset: [ 'Standard', 'Swagger Clause', 'Mega Rayquaza Clause' ]
+  },
+  {
+    name: '[Gen 6] UU',
+    mod: 'gen6',
+    ruleset: [ '[Gen 6] OU' ],
+    banlist: [ 'OU', 'UUBL', 'Drizzle', 'Drought' ]
   },
   { name: '[Gen 6] RU', mod: 'gen6', ruleset: [ '[Gen 6] UU' ], banlist: [ 'UU', 'RUBL' ] },
   { name: '[Gen 6] NU', mod: 'gen6', ruleset: [ '[Gen 6] RU' ], banlist: [ 'RU', 'NUBL' ] },
@@ -1928,19 +1971,6 @@ export const Formats: FormatList = [
       'Sandslash',  'Sharpedo',  'Shiftry',
       'Skuntank',   'Slowking',  'Tauros',
       'Typhlosion', 'Venomoth',  'Vileplume'
-    ]
-  },
-  {
-    name: '[Gen 4] LC',
-    mod: 'gen4',
-    ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause' ],
-    banlist: [
-      'Meditite',       'Misdreavus',
-      'Murkrow',        'Scyther',
-      'Sneasel',        'Tangela',
-      'Yanma',          'Berry Juice',
-      'Deep Sea Tooth', 'Dragon Rage',
-      'Sonic Boom',     'Swagger'
     ]
   },
   {

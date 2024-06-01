@@ -15,11 +15,11 @@
     "build"
   ],
   "dependencies": {
-    "@pkmn/data": "^0.9.4",
+    "@pkmn/data": "^0.9.5",
     "@pkmn/protocol": "^0.6.25"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.9.4"
+    "@pkmn/dex": "^0.9.5"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
