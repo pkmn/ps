@@ -245,7 +245,7 @@ const RANDOMS_IMPORTS = {
     [[
       'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatID',
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ModdedDex', 'Move', 'BasicEffect',
-      'RuleTable', 'Tags', 'Item', 'Ability', 'Nature',
+      'RuleTable', 'Tags', 'Item', 'Ability', 'Nature', 'AnyObject',
     ], '@pkmn/sim'],
   ],
   'data/random-battles/gen8/teams.ts': [

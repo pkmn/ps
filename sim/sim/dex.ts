@@ -186,6 +186,7 @@ export class ModdedDex {
 
 	deepClone = Utils.deepClone;
 	deepFreeze = Utils.deepFreeze;
+	Multiset = Utils.Multiset;
 
 	constructor(mod = 'base') {
 		this.isBase = (mod === 'base');

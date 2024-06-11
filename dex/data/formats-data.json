@@ -5345,7 +5345,7 @@
     "cleffa": {"tier": "LC"},
     "clefairy": {"tier": "NFE", "doublesTier": "DUU"},
     "clefable": {"tier": "OU", "doublesTier": "(DUU)"},
-    "vulpix": {"tier": "NFE"},
+    "vulpix": {"tier": "ZUBL", "doublesTier": "NFE"},
     "vulpixalola": {"tier": "NFE"},
     "ninetales": {"tier": "NU", "doublesTier": "DUU"},
     "ninetalesalola": {"tier": "UU", "doublesTier": "DOU"},

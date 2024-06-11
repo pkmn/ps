@@ -581,7 +581,7 @@ export const Formats: FormatList = [
     name: '[Gen 9] National Dex RU',
     mod: 'gen9',
     ruleset: [ '[Gen 9] National Dex UU' ],
-    banlist: [ 'ND UU', 'ND RUBL', 'Slowbro-Base + Slowbronite', 'Heat Rock' ]
+    banlist: [ 'ND UU', 'ND RUBL', 'Slowbro-Base + Slowbronite' ]
   },
   {
     name: '[Gen 9] National Dex LC',
@@ -756,6 +756,12 @@ export const Formats: FormatList = [
       'Razor Fang',         'Smooth Rock',     'Terrain Extender',
       'Baton Pass'
     ]
+  },
+  {
+    name: '[Gen 9] BSS Factory',
+    mod: 'gen9',
+    team: 'randomBSSFactory',
+    ruleset: [ 'Flat Rules', 'VGC Timer' ]
   },
   {
     name: '[Gen 9] Baby Random Battle',

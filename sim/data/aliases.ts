@@ -63,7 +63,7 @@ export const Aliases: {[alias: string]: string} = {
 	hc: "[Gen 9] Hackmons Cup",
 	monorandom: "[Gen 8] Monotype Random Battle",
 	bf: "[Gen 7] Battle Factory",
-	bssf: "[Gen 8] BSS Factory",
+	bssf: "[Gen 9] BSS Factory",
 	ssb: "[Gen 9] Super Staff Bros Ultimate",
 	ssbu: "[Gen 9] Super Staff Bros Ultimate",
 	lgrandom: "[Gen 7] Let's Go Random Battle",
@@ -72,6 +72,7 @@ export const Aliases: {[alias: string]: string} = {
 	gen7ag: "[Gen 7] Anything Goes",
 	gen7bss: "[Gen 7] Battle Spot Singles",
 	gen7bssf: "[Gen 7] BSS Factory",
+	gen8bssf: "[Gen 8] BSS Factory",
 	lgpeou: "[Gen 7 Let's Go] OU",
 	lgou: "[Gen 7 Let's Go] Let's Go OU",
 	lgdou: "[Gen 7 Let's Go] Doubles OU",
@@ -85,8 +86,8 @@ export const Aliases: {[alias: string]: string} = {
 	gen6ag: "[Gen 6] Anything Goes",
 	crossevo: "[Gen 9] Cross Evolution",
 	mayhem: "[Gen 9] Random Battle Mayhem",
-	omotm: "[Gen 9] Pokebilities",
-	lcotm: "[Gen 9] The Loser's Game",
+	omotm: "[Gen 9] Fervent Impersonation",
+	lcotm: "[Gen 9] 350 Cup",
 
 	// mega evos
 	fabio: "Ampharos-Mega",
