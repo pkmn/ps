@@ -414,6 +414,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly spreadModifier?: number;
   readonly tracksTarget?: boolean;
   readonly willCrit?: boolean;
+  readonly callsMove?: boolean;
 
   readonly hasCrashDamage?: boolean;
   readonly hasSheerForce?: boolean;
@@ -702,6 +703,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly formeOrder?: T.SpeciesName[];
   readonly genderRatio: {M: number; F: number};
   readonly isMega?: boolean;
+  readonly mother?: string;
   readonly isPrimal?: boolean;
   readonly battleOnly?: T.SpeciesName | T.SpeciesName[];
   readonly canGigantamax?: T.MoveName;
@@ -757,6 +759,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     this.unreleasedHidden = data.unreleasedHidden || false;
     this.maleOnlyHidden = !!data.maleOnlyHidden;
     this.isMega = !!(this.forme && ['Mega', 'Mega-X', 'Mega-Y'].includes(this.forme)) || undefined;
+    this.mother = data.mother;
     this.gmaxUnreleased = !!data.gmaxUnreleased;
     this.cannotDynamax = !!data.cannotDynamax;
     this.forceTeraType = data.forceTeraType;
@@ -1369,7 +1372,8 @@ export class ModdedDex implements T.Dex {
     if (this.data[type]) return;
 
     const d = modData ? modData[type] : DATA[type][this.gen];
-    if (d !== this.data[type]) this.data[type] = ({...d, ...this.data[type]}) as any;
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
+    if (d !== this.data[type]) this.data[type] = ({...d, ...(this.data[type] as any)}) as any;
 
     if (this.modid === CURRENT_GEN_ID) return;
 

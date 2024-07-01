@@ -2,6 +2,21 @@
 
 export const Formats = [
   {
+    name: '[Gen 5] BW1 OU',
+    threads: [ '&bullet; <a href="https://www.smogon.com/forums/threads/3744853/">BW1 OU</a>' ],
+    mod: 'gen5bw1',
+    ruleset: [ 'Standard', 'Sleep Clause Mod', 'Swagger Clause' ],
+    banlist: [
+      'Uber',
+      'Drizzle ++ Swift Swim',
+      "King's Rock",
+      'Razor Fang',
+      'Soul Dew',
+      'Acupressure',
+      'Assist'
+    ]
+  },
+  {
     name: '[Gen 5] VGC 2012',
     mod: 'gen5bw1',
     gameType: 'doubles',

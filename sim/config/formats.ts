@@ -91,7 +91,7 @@ export const Formats: FormatList = [
     name: '[Gen 9] NU',
     mod: 'gen9',
     ruleset: [ '[Gen 9] RU' ],
-    banlist: [ 'RU', 'NUBL', 'Quick Claw' ]
+    banlist: [ 'RU', 'NUBL', 'Drought', 'Quick Claw' ]
   },
   {
     name: '[Gen 9] PU',
@@ -369,24 +369,24 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] Ubers' ],
     banlist: [
-      'Arceus-Base',     'Arceus-Fairy',
-      'Arceus-Ground',   'Calyrex-Ice',
-      'Clodsire',        'Deoxys-Attack',
-      'Eternatus',       'Flutter Mane',
-      'Giratina-Origin', 'Glimmora',
-      'Gliscor',         'Grimmsnarl',
-      'Groudon',         'Hatterene',
-      'Ho-Oh',           'Iron Bundle',
-      'Kingambit',       'Koraidon',
-      'Kyogre',          'Kyurem-Black',
-      'Miraidon',        'Necrozma-Dusk-Mane',
-      'Rayquaza',        'Ribombee',
-      'Skeledirge',      'Ting-Lu',
-      'Zacian-Crowned',  'Arceus-Fire',
-      'Arceus-Flying',   'Arceus-Ghost',
-      'Arceus-Steel',    'Arceus-Water',
-      'Lunala',          'Shaymin-Sky',
-      'Zekrom'
+      'Arceus-Base',    'Arceus-Fairy',
+      'Arceus-Ground',  'Calyrex-Ice',
+      'Clodsire',       'Deoxys-Attack',
+      'Ditto',          'Eternatus',
+      'Flutter Mane',   'Giratina-Origin',
+      'Glimmora',       'Gliscor',
+      'Grimmsnarl',     'Groudon',
+      'Ho-Oh',          'Iron Bundle',
+      'Iron Treads',    'Kingambit',
+      'Koraidon',       'Kyogre',
+      'Kyurem-Black',   'Lunala',
+      'Miraidon',       'Necrozma-Dusk-Mane',
+      'Rayquaza',       'Ribombee',
+      'Skeledirge',     'Ting-Lu',
+      'Zacian-Crowned', 'Arceus-Fire',
+      'Arceus-Flying',  'Arceus-Ghost',
+      'Arceus-Steel',   'Arceus-Water',
+      'Shaymin-Sky',    'Zekrom'
     ]
   },
   { name: '[Gen 9] ZU', mod: 'gen9', ruleset: [ '[Gen 9] PU' ], banlist: [ 'PU', 'ZUBL' ] },
@@ -427,20 +427,20 @@ export const Formats: FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] LC' ],
     banlist: [
-      'Chinchou',        'Diglett-Alola',
-      'Elekid',          'Foongus',
-      'Glimmet',         'Gothita',
-      'Grimer-Alola',    'Grookey',
-      'Growlithe-Hisui', 'Impidimp',
-      'Koffing',         'Magby',
-      'Mareanie',        'Mienfoo',
-      'Minccino',        'Mudbray',
-      'Pawniard',        'Sandshrew-Alola',
-      'Shellder',        'Shellos',
-      'Snubbull',        'Stunky',
-      'Timburr',         'Tinkatink',
-      'Toedscool',       'Trapinch',
-      'Voltorb-Hisui',   'Vullaby'
+      'Diglett-Alola', 'Drifloon',
+      'Drilbur',       'Foongus',
+      'Glimmet',       'Gothita',
+      'Grookey',       'Growlithe-Hisui',
+      'Impidimp',      'Koffing',
+      'Magby',         'Mareanie',
+      'Mienfoo',       'Mudbray',
+      'Pawniard',      'Shellder',
+      'Snubbull',      'Stunky',
+      'Tentacool',     'Timburr',
+      'Tinkatink',     'Toedscool',
+      'Torchic',       'Voltorb-Hisui',
+      'Vullaby',       'Wattrel',
+      'Zorua-Hisui'
     ]
   },
   {
@@ -758,6 +758,25 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 9] CAP Random Battle',
+    mod: 'gen9',
+    team: 'random',
+    ruleset: [ '[Gen 9] Random Battle' ]
+  },
+  {
+    name: '[Gen 9] Monotype Random Battle',
+    mod: 'gen9',
+    team: 'random',
+    ruleset: [
+      'Obtainable',
+      'Same Type Clause',
+      'HP Percentage Mod',
+      'Cancel Mod',
+      'Sleep Clause Mod',
+      'Illusion Level Mod'
+    ]
+  },
+  {
     name: '[Gen 9] BSS Factory',
     mod: 'gen9',
     team: 'randomBSSFactory',
@@ -770,19 +789,6 @@ export const Formats: FormatList = [
     ruleset: [
       'Obtainable',
       'Species Clause',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Sleep Clause Mod',
-      'Illusion Level Mod'
-    ]
-  },
-  {
-    name: '[Gen 9] Monotype Random Battle',
-    mod: 'gen9',
-    team: 'random',
-    ruleset: [
-      'Obtainable',
-      'Same Type Clause',
       'HP Percentage Mod',
       'Cancel Mod',
       'Sleep Clause Mod',
@@ -1019,30 +1025,12 @@ export const Formats: FormatList = [
     ]
   },
   {
-    name: '[Gen 7] UU',
-    mod: 'gen7',
-    ruleset: [ '[Gen 7] OU' ],
-    banlist: [ 'OU', 'UUBL', 'Drizzle', 'Drought', 'Kommonium Z', 'Mewnium Z' ]
-  },
-  {
-    name: '[Gen 4] LC',
-    mod: 'gen4',
-    ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause' ],
-    banlist: [
-      'Meditite',       'Misdreavus',
-      'Murkrow',        'Scyther',
-      'Sneasel',        'Tangela',
-      'Yanma',          'Berry Juice',
-      'Deep Sea Tooth', 'Dragon Rage',
-      'Sonic Boom',     'Swagger'
-    ]
-  },
-  {
-    name: '[Gen 8] NU',
+    name: '[Gen 8] UU',
     mod: 'gen8',
-    ruleset: [ '[Gen 8] RU' ],
-    banlist: [ 'RU', 'NUBL', 'Drizzle', 'Drought', 'Slush Rush' ]
+    ruleset: [ '[Gen 8] OU' ],
+    banlist: [ 'OU', 'UUBL', 'Light Clay' ]
   },
+  { name: '[Gen 1] ZU', mod: 'gen1', ruleset: [ '[Gen 1] PU' ], banlist: [ 'PU', 'ZUBL' ] },
   {
     name: '[Gen 8] OU',
     mod: 'gen8',
@@ -1181,13 +1169,13 @@ export const Formats: FormatList = [
     ruleset: [ 'Standard', 'Dynamax Clause' ],
     banlist: [ 'AG', 'Shadow Tag', 'Baton Pass' ]
   },
-  {
-    name: '[Gen 8] UU',
-    mod: 'gen8',
-    ruleset: [ '[Gen 8] OU' ],
-    banlist: [ 'OU', 'UUBL', 'Light Clay' ]
-  },
   { name: '[Gen 8] RU', mod: 'gen8', ruleset: [ '[Gen 8] UU' ], banlist: [ 'UU', 'RUBL' ] },
+  {
+    name: '[Gen 8] NU',
+    mod: 'gen8',
+    ruleset: [ '[Gen 8] RU' ],
+    banlist: [ 'RU', 'NUBL', 'Drizzle', 'Drought', 'Slush Rush' ]
+  },
   { name: '[Gen 8] PU', mod: 'gen8', ruleset: [ '[Gen 8] NU' ], banlist: [ 'NU', 'PUBL' ] },
   {
     name: '[Gen 8] LC',
@@ -1373,6 +1361,12 @@ export const Formats: FormatList = [
     mod: 'gen7',
     ruleset: [ 'Standard', 'Mega Rayquaza Clause' ],
     banlist: [ 'Baton Pass' ]
+  },
+  {
+    name: '[Gen 7] UU',
+    mod: 'gen7',
+    ruleset: [ '[Gen 7] OU' ],
+    banlist: [ 'OU', 'UUBL', 'Drizzle', 'Drought', 'Kommonium Z', 'Mewnium Z' ]
   },
   {
     name: '[Gen 7] RU',
@@ -1980,6 +1974,19 @@ export const Formats: FormatList = [
     ]
   },
   {
+    name: '[Gen 4] LC',
+    mod: 'gen4',
+    ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause' ],
+    banlist: [
+      'Meditite',       'Misdreavus',
+      'Murkrow',        'Scyther',
+      'Sneasel',        'Tangela',
+      'Yanma',          'Berry Juice',
+      'Deep Sea Tooth', 'Dragon Rage',
+      'Sonic Boom',     'Swagger'
+    ]
+  },
+  {
     name: '[Gen 4] Anything Goes',
     mod: 'gen4',
     ruleset: [
@@ -2143,17 +2150,12 @@ export const Formats: FormatList = [
     mod: 'gen3',
     ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause', 'Accuracy Moves Clause' ],
     banlist: [
-      'Chansey',
-      'Meditite',
-      'Omanyte',
-      'Scyther',
-      'Wynaut',
-      'Zigzagoon',
-      'Deep Sea Tooth',
-      'Baton Pass',
-      'Dragon Rage',
-      'Sonic Boom',
-      'Swagger'
+      'Chansey',        'Meditite',
+      'Omanyte',        'Scyther',
+      'Wynaut',         'Zigzagoon',
+      'Deep Sea Tooth', 'Baton Pass',
+      'Dragon Rage',    'Sonic Boom',
+      'Swagger',        'Thunder Wave'
     ]
   },
   {
@@ -2233,6 +2235,7 @@ export const Formats: FormatList = [
     banlist: [ 'NU', 'PUBL' ],
     unbanlist: [ 'Swagger' ]
   },
+  { name: '[Gen 2] ZU', mod: 'gen2', ruleset: [ '[Gen 2] PU' ], banlist: [ 'PU', 'ZUBL' ] },
   {
     name: '[Gen 2] 1v1',
     mod: 'gen2',

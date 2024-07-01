@@ -4237,7 +4237,8 @@
       "abilities": {"0": "Poison Point", "1": "Rivalry", "H": "Hustle"},
       "weightkg": 9,
       "evos": ["Nidorino"],
-      "eggGroups": ["Monster", "Field"]
+      "eggGroups": ["Monster", "Field"],
+      "mother": "nidoranf"
     },
     "nidorino": {
       "num": 33,
@@ -11008,7 +11009,8 @@
       },
       "abilities": {"0": "Illuminate", "1": "Swarm", "H": "Prankster"},
       "weightkg": 17.7,
-      "eggGroups": ["Bug", "Human-Like"]
+      "eggGroups": ["Bug", "Human-Like"],
+      "mother": "illumise"
     },
     "illumise": {
       "num": 314,
@@ -25080,7 +25082,8 @@
       "weightkg": 28,
       "eggGroups": ["Fairy"],
       "otherFormes": ["Indeedee-F"],
-      "formeOrder": ["Indeedee", "Indeedee-F"]
+      "formeOrder": ["Indeedee", "Indeedee-F"],
+      "mother": "indeedeef"
     },
     "indeedeef": {
       "num": 876,

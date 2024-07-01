@@ -2056,7 +2056,7 @@
     },
     "mudsport": {
       "inherit": true,
-      "condition": {"noCopy": true, "onAnyBasePowerPriority": 3},
+      "condition": {"onAnyBasePowerPriority": 3},
       "desc": "While the user is active, all Electric-type attacks used by any active Pokemon have their power halved. Fails if this effect is already active for the user. Baton Pass can be used to transfer this effect to an ally.",
       "shortDesc": "Weakens Electric-type attacks to 1/2 their power."
     },
@@ -2316,7 +2316,7 @@
     },
     "watersport": {
       "inherit": true,
-      "condition": {"noCopy": true, "onAnyBasePowerPriority": 3},
+      "condition": {"onAnyBasePowerPriority": 3},
       "desc": "While the user is active, all Fire-type attacks used by any active Pokemon have their power halved. Fails if this effect is already active for the user. Baton Pass can be used to transfer this effect to an ally.",
       "shortDesc": "Weakens Fire-type attacks to 1/2 their power."
     },
@@ -5311,6 +5311,7 @@
         "failmimic": 1,
         "failinstruct": 1
       },
+      "callsMove": true,
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -7199,6 +7200,7 @@
         "failmimic": 1,
         "failinstruct": 1
       },
+      "callsMove": true,
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -14132,6 +14134,7 @@
         "failinstruct": 1
       },
       "condition": {"duration": 1, "onBasePowerPriority": 12},
+      "callsMove": true,
       "secondary": null,
       "target": "adjacentFoe",
       "type": "Normal",
@@ -14364,6 +14367,7 @@
         "failmimic": 1,
         "failinstruct": 1
       },
+      "callsMove": true,
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -14542,6 +14546,7 @@
         "failmimic": 1,
         "failinstruct": 1
       },
+      "callsMove": true,
       "secondary": null,
       "target": "normal",
       "type": "Flying",
@@ -14919,6 +14924,7 @@
         "failmimic": 1,
         "failinstruct": 1
       },
+      "callsMove": true,
       "secondary": null,
       "target": "normal",
       "type": "Normal",
@@ -18336,6 +18342,7 @@
         "failinstruct": 1
       },
       "sleepUsable": true,
+      "callsMove": true,
       "secondary": null,
       "target": "self",
       "type": "Normal",

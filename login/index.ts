@@ -145,7 +145,7 @@ function querystring(data: {[key: string]: string | undefined}) {
   const buf = [];
   for (const key in data) {
     if (data[key] === undefined) continue;
-    buf.push(`${key}=${encodeURIComponent(data[key]!)}`);
+    buf.push(`${key}=${encodeURIComponent(data[key])}`);
   }
   return buf.join('&');
 }

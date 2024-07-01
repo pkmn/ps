@@ -230,6 +230,7 @@ export interface MoveData extends EffectData, HitEffect {
   spreadModifier?: number;
   tracksTarget?: boolean;
   willCrit?: boolean;
+  callsMove?: boolean;
 
   hasCrashDamage?: boolean;
   hasSheerForce?: boolean;
@@ -238,7 +239,8 @@ export interface MoveData extends EffectData, HitEffect {
   stallingMove?: boolean;
 }
 
-export type SpeciesTag = 'Mythical' | 'Restricted Legendary' | 'Sub-Legendary' | 'Ultra Beast' | 'Paradox';
+export type SpeciesTag =
+  'Mythical' | 'Restricted Legendary' | 'Sub-Legendary' | 'Ultra Beast' | 'Paradox';
 export interface SpeciesAbility<A = string> { 0: A; 1?: A; H?: A; S?: A }
 
 export interface SpeciesData {
@@ -416,6 +418,7 @@ export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData
   readonly tier: Tier.Singles | Tier.Other | 'Illegal';
   readonly doublesTier: Tier.Doubles | 'Illegal';
   readonly isMega?: boolean;
+  readonly mother?: string;
   readonly isPrimal?: boolean;
   readonly battleOnly?: SpeciesName | SpeciesName[];
   readonly isGigantamax?: MoveName;

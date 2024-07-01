@@ -186,7 +186,7 @@ export class Handler implements Protocol.Handler {
     if (args[0] === 'switch') {
       const from = this.battle.get('conditions', kwArgs?.from);
       if (poke.side.active[slot]) {
-        poke.side.switchOut(poke.side.active[slot]!, from);
+        poke.side.switchOut(poke.side.active[slot], from);
       }
       poke.side.switchIn(poke, from);
     } else if (args[0] === 'replace') {
@@ -314,9 +314,9 @@ export class Handler implements Protocol.Handler {
 
     if (!poke.boosts[boost]) poke.boosts[boost] = 0;
     if (args[0] === '-boost') {
-      poke.boosts[boost]! += amount;
+      poke.boosts[boost] += amount;
     } else {
-      poke.boosts[boost]! -= amount;
+      poke.boosts[boost] -= amount;
     }
 
     if (!kwArgs.silent && kwArgs.from) {
