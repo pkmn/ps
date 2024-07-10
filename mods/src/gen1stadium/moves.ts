@@ -1,6 +1,6 @@
-import type {ActiveMove, ModdedMoveData} from '@pkmn/sim';
+import type {ActiveMove, ModdedMoveDataTable} from '@pkmn/sim';
 
-export const Moves: {[k: string]: ModdedMoveData} = {
+export const Moves: ModdedMoveDataTable = {
 	bide: {
 		inherit: true,
 		priority: 0,

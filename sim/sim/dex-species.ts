@@ -2,11 +2,11 @@ import {
 	AnyObject,
 	GenderName,
 	ID,
+	IDEntry,
 	ModdedDex,
 	Nonstandard,
 	StatsTable,
 	TierTypes,
-	MoveSource,
 	EventInfo,
 } from './exported-global-types';
 
@@ -67,6 +67,42 @@ export interface PokemonGoData {
 	encounters?: string[];
 	LGPERestrictiveMoves?: {[moveid: string]: number | null};
 }
+
+export interface SpeciesDataTable {[speciesid: IDEntry]: SpeciesData}
+export interface ModdedSpeciesDataTable {[speciesid: IDEntry]: ModdedSpeciesData}
+export interface SpeciesFormatsDataTable {[speciesid: IDEntry]: SpeciesFormatsData}
+export interface ModdedSpeciesFormatsDataTable {[speciesid: IDEntry]: ModdedSpeciesFormatsData}
+export interface LearnsetDataTable {[speciesid: IDEntry]: LearnsetData}
+export interface ModdedLearnsetDataTable {[speciesid: IDEntry]: ModdedLearnsetData}
+export interface PokemonGoDataTable {[speciesid: IDEntry]: PokemonGoData}
+
+/**
+ * Describes a possible way to get a move onto a pokemon.
+ *
+ * First character is a generation number, 1-9.
+ * Second character is a source ID, one of:
+ *
+ * - M = TM/HM
+ * - T = tutor
+ * - L = start or level-up, 3rd char+ is the level
+ * - R = restricted (special moves like Rotom moves)
+ * - E = egg
+ * - D = Dream World, only 5D is valid
+ * - S = event, 3rd char+ is the index in .eventData
+ * - V = Virtual Console or Let's Go transfer, only 7V/8V is valid
+ * - C = NOT A REAL SOURCE, see note, only 3C/4C is valid
+ *
+ * C marks certain moves learned by a pokemon's prevo. It's used to
+ * work around the chainbreeding checker's shortcuts for performance;
+ * it lets the pokemon be a valid father for teaching the move, but
+ * is otherwise ignored by the learnset checker (which will actually
+ * check prevos for compatibility).
+ */
+export type MoveSource = `${
+	1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+}${
+	'M' | 'T' | 'L' | 'R' | 'E' | 'D' | 'S' | 'V' | 'C'
+}${string}`;
 
 export class Species extends BasicEffect implements Readonly<BasicEffect & SpeciesFormatsData> {
 	declare readonly effectType: 'Pokemon';
@@ -434,7 +470,7 @@ export class DexSpecies {
 
 		if (!this.dex.data.Pokedex.hasOwnProperty(id)) {
 			let aliasTo = '';
-			const formeNames: {[k: string]: string[]} = {
+			const formeNames: {[k: IDEntry]: IDEntry[]} = {
 				alola: ['a', 'alola', 'alolan'],
 				galar: ['g', 'galar', 'galarian'],
 				hisui: ['h', 'hisui', 'hisuian'],
@@ -444,7 +480,7 @@ export class DexSpecies {
 			};
 			for (const forme in formeNames) {
 				let pokeName = '';
-				for (const i of formeNames[forme]) {
+				for (const i of formeNames[forme as ID]) {
 					if (id.startsWith(i)) {
 						pokeName = id.slice(i.length);
 					} else if (id.endsWith(i)) {
@@ -476,9 +512,10 @@ export class DexSpecies {
 			// Inherit any statuses from the base species (Arceus, Silvally).
 			const baseSpeciesStatuses = this.dex.data.Conditions[toID(species.baseSpecies)];
 			if (baseSpeciesStatuses !== undefined) {
-				let key: keyof EffectData;
-				for (key in baseSpeciesStatuses) {
-					if (!(key in species)) (species as any)[key] = baseSpeciesStatuses[key];
+				for (const key in baseSpeciesStatuses) {
+					if (!(key in species)) {
+						(species as any)[key] = (baseSpeciesStatuses as any)[key];
+					}
 				}
 			}
 			if (!species.tier && !species.doublesTier && !species.natDexTier && species.baseSpecies !== species.name) {

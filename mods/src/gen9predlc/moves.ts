@@ -1,6 +1,6 @@
-import type {ModdedMoveData} from '@pkmn/sim';
+import type {ModdedMoveDataTable} from '@pkmn/sim';
 
-export const Moves: {[k: string]: ModdedMoveData} = {
+export const Moves: ModdedMoveDataTable = {
 	aurawheel: {
 		inherit: true,
 		isNonstandard: "Past",

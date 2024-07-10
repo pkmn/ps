@@ -1,6 +1,6 @@
-import type {ModdedSpeciesData} from '@pkmn/sim';
+import type {ModdedSpeciesDataTable} from '@pkmn/sim';
 
-export const Pokedex: {[k: string]: ModdedSpeciesData} = {
+export const Pokedex: ModdedSpeciesDataTable = {
 	shiftry: {
 		inherit: true,
 		abilities: {0: "Chlorophyll", 1: "Early Bird", H: "Pickpocket"},

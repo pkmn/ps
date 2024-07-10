@@ -1,6 +1,6 @@
-import type {ModdedMoveData} from '@pkmn/sim';
+import type {ModdedMoveDataTable} from '@pkmn/sim';
 
-export const Moves: {[k: string]: ModdedMoveData} = {
+export const Moves: ModdedMoveDataTable = {
 	aeroblast: {
 		inherit: true,
 		flags: {protect: 1, mirror: 1, distance: 1, metronome: 1},

@@ -91,7 +91,7 @@ const streams = path.resolve(__dirname, 'streams');
 // files depending on global types - the `data/` files are currently not required to have
 // ///-references to work).
 const IMPORTS = {
-  'data/tags.ts': ['Species', 'Move', 'Item', 'Ability'],
+  'data/tags.ts': ['Species', 'Move', 'Item', 'Ability', 'IDEntry'],
   'sim/battle-actions.ts': [
     'Battle', 'ModdedDex', 'Pokemon', 'Effect', 'Move', 'ActiveMove',
     'Side', 'SpreadMoveTargets', 'SpreadMoveDamage', 'ZMoveOptions',
@@ -104,22 +104,22 @@ const IMPORTS = {
     'PokemonSlot',
   ],
   'sim/dex-abilities.ts': [
-    'AnyObject', 'Battle', 'Pokemon', 'Side', 'Field', 'ConditionData', 'ModdedDex', 'ID',
+    'AnyObject', 'Battle', 'Pokemon', 'Side', 'Field', 'ModdedDex', 'ID', 'IDEntry',
   ],
   'sim/dex-conditions.ts': [
     'AnyObject', 'Battle', 'Pokemon', 'Side', 'Field', 'Effect', 'ActiveMove', 'Item',
-    'CommonHandlers', 'SparseBoostsTable', 'ModdedDex', 'ID',
+    'CommonHandlers', 'SparseBoostsTable', 'ModdedDex', 'ID', 'IDEntry',
   ],
   'sim/dex-data.ts': [
-    'AnyObject', 'ID', 'SparseStatsTable', 'TypeData', 'NatureData', 'EffectType', 'Nonstandard',
-    'EffectData', 'StatIDExceptHP', 'ModdedDex', 'StatID',
+    'AnyObject', 'ID', 'SparseStatsTable', 'EffectType', 'Nonstandard',
+    'EffectData', 'StatIDExceptHP', 'ModdedDex', 'StatID', 'IDEntry',
   ],
   'sim/dex-items.ts': [
-    'AnyObject', 'Battle', 'Pokemon', 'SparseBoostsTable', 'ConditionData', 'CommonHandlers',
-    'ModdedDex', 'ID',
+    'AnyObject', 'Battle', 'Pokemon', 'SparseBoostsTable', 'CommonHandlers', 'ModdedDex', 'ID',
+    'IDEntry',
   ],
   'sim/dex-moves.ts': [
-    'AnyObject', 'ID', 'SparseBoostsTable', 'Pokemon', 'Ability', 'ConditionData', 'CommonHandlers',
+    'AnyObject', 'ID', 'IDEntry', 'SparseBoostsTable', 'Pokemon', 'Ability', 'CommonHandlers',
     'EffectData', 'Battle', 'Side', 'Effect', 'ModdedDex', 'StatIDExceptHP',
   ],
   'sim/field.ts': ['Effect', 'Condition', 'Pokemon', 'Battle', 'Side', 'AnyObject', 'ID'],
@@ -144,100 +144,100 @@ const IMPORTS = {
 };
 const MOD_IMPORTS = {
   // gen1jpn
-  'data/mods/gen1jpn/moves.ts': ['ModdedMoveData'],
-  'data/mods/gen1jpn/rulesets.ts': ['ModdedFormatData'],
+  'data/mods/gen1jpn/moves.ts': ['ModdedMoveDataTable'],
+  'data/mods/gen1jpn/rulesets.ts': ['ModdedFormatDataTable'],
   'data/mods/gen1jpn/scripts.ts': ['ModdedBattleScriptsData'],
 
   // gen1stadium
-  'data/mods/gen1stadium/conditions.ts': ['ModdedConditionData'],
-  'data/mods/gen1stadium/moves.ts': ['ModdedMoveData', 'ActiveMove'],
-  'data/mods/gen1stadium/rulesets.ts': ['ModdedFormatData'],
+  'data/mods/gen1stadium/conditions.ts': ['ModdedConditionDataTable'],
+  'data/mods/gen1stadium/moves.ts': ['ModdedMoveDataTable', 'ActiveMove'],
+  'data/mods/gen1stadium/rulesets.ts': ['ModdedFormatDataTable'],
   'data/mods/gen1stadium/scripts.ts': [
     'ModdedBattleScriptsData', 'StatIDExceptHP', 'BoostID', 'ActiveMove',
   ],
 
   // gen2stadium2
   'data/mods/gen2stadium2/conditions.ts': [
-    'ModdedConditionData', 'Battle', 'Pokemon', 'ActiveMove',
+    'ModdedConditionDataTable', 'Battle', 'Pokemon', 'ActiveMove',
   ],
-  'data/mods/gen2stadium2/items.ts': ['ModdedItemData'],
-  'data/mods/gen2stadium2/moves.ts': ['ModdedMoveData'],
-  'data/mods/gen2stadium2/rulesets.ts': ['ModdedFormatData'],
+  'data/mods/gen2stadium2/items.ts': ['ModdedItemDataTable'],
+  'data/mods/gen2stadium2/moves.ts': ['ModdedMoveDataTable'],
+  'data/mods/gen2stadium2/rulesets.ts': ['ModdedFormatDataTable'],
   'data/mods/gen2stadium2/scripts.ts': [
     'ModdedBattleScriptsData', 'ActiveMove', 'BoostID',
     'SparseBoostsTable', 'Pokemon', 'StatIDExceptHP',
   ],
 
   // gen4pt
-  'data/mods/gen4pt/formats-data.ts': ['ModdedSpeciesFormatsData'],
-  'data/mods/gen4pt/learnsets.ts': ['ModdedLearnsetData'],
+  'data/mods/gen4pt/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
+  'data/mods/gen4pt/learnsets.ts': ['ModdedLearnsetDataTable'],
   'data/mods/gen4pt/scripts.ts': ['ModdedBattleScriptsData'],
 
   // gen5bw1
-  'data/mods/gen5bw1/formats-data.ts': ['ModdedSpeciesFormatsData'],
-  'data/mods/gen5bw1/items.ts': ['ModdedItemData'],
-  'data/mods/gen5bw1/learnsets.ts': ['ModdedLearnsetData'],
-  'data/mods/gen5bw1/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/gen5bw1/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
+  'data/mods/gen5bw1/items.ts': ['ModdedItemDataTable'],
+  'data/mods/gen5bw1/learnsets.ts': ['ModdedLearnsetDataTable'],
+  'data/mods/gen5bw1/pokedex.ts': ['ModdedSpeciesDataTable'],
   'data/mods/gen5bw1/scripts.ts': ['ModdedBattleScriptsData'],
 
   // gen6xy
-  'data/mods/gen6xy/formats-data.ts': ['ModdedSpeciesFormatsData'],
-  'data/mods/gen6xy/items.ts': ['ModdedItemData'],
-  'data/mods/gen6xy/learnsets.ts': ['ModdedLearnsetData'],
-  'data/mods/gen6xy/moves.ts': ['ModdedMoveData'],
-  'data/mods/gen6xy/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/gen6xy/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
+  'data/mods/gen6xy/items.ts': ['ModdedItemDataTable'],
+  'data/mods/gen6xy/learnsets.ts': ['ModdedLearnsetDataTable'],
+  'data/mods/gen6xy/moves.ts': ['ModdedMoveDataTable'],
+  'data/mods/gen6xy/pokedex.ts': ['ModdedSpeciesDataTable'],
   'data/mods/gen6xy/scripts.ts': ['ModdedBattleScriptsData'],
 
   // gen7letsgo
-  'data/mods/gen7letsgo/formats-data.ts': ['ModdedSpeciesFormatsData'],
-  'data/mods/gen7letsgo/learnsets.ts': ['ModdedLearnsetData'],
-  'data/mods/gen7letsgo/moves.ts': ['ModdedMoveData'],
-  'data/mods/gen7letsgo/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/gen7letsgo/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
+  'data/mods/gen7letsgo/learnsets.ts': ['ModdedLearnsetDataTable'],
+  'data/mods/gen7letsgo/moves.ts': ['ModdedMoveDataTable'],
+  'data/mods/gen7letsgo/pokedex.ts': ['ModdedSpeciesDataTable'],
   'data/mods/gen7letsgo/scripts.ts': [
     'ModdedBattleScriptsData', 'StatsTable', 'StatID', 'Species', 'Battle',
   ],
 
   // gen7sm
-  'data/mods/gen7sm/formats-data.ts': ['ModdedSpeciesFormatsData'],
-  'data/mods/gen7sm/items.ts': ['ModdedItemData'],
-  'data/mods/gen7sm/learnsets.ts': ['ModdedLearnsetData'],
-  'data/mods/gen7sm/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/gen7sm/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
+  'data/mods/gen7sm/items.ts': ['ModdedItemDataTable'],
+  'data/mods/gen7sm/learnsets.ts': ['ModdedLearnsetDataTable'],
+  'data/mods/gen7sm/pokedex.ts': ['ModdedSpeciesDataTable'],
   'data/mods/gen7sm/scripts.ts': ['ModdedBattleScriptsData'],
 
   // gen8bdsp
-  'data/mods/gen8bdsp/abilities.ts': ['ModdedAbilityData'],
-  'data/mods/gen8bdsp/formats-data.ts': ['ModdedSpeciesFormatsData'],
-  'data/mods/gen8bdsp/items.ts': ['ModdedItemData'],
-  'data/mods/gen8bdsp/learnsets.ts': ['ModdedLearnsetData'],
-  'data/mods/gen8bdsp/moves.ts': ['ModdedMoveData'],
-  'data/mods/gen8bdsp/pokedex.ts': ['ModdedSpeciesData'],
-  'data/mods/gen8bdsp/rulesets.ts': ['ModdedFormatData'],
+  'data/mods/gen8bdsp/abilities.ts': ['ModdedAbilityDataTable'],
+  'data/mods/gen8bdsp/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
+  'data/mods/gen8bdsp/items.ts': ['ModdedItemDataTable'],
+  'data/mods/gen8bdsp/learnsets.ts': ['ModdedLearnsetDataTable'],
+  'data/mods/gen8bdsp/moves.ts': ['ModdedMoveDataTable'],
+  'data/mods/gen8bdsp/pokedex.ts': ['ModdedSpeciesDataTable'],
+  'data/mods/gen8bdsp/rulesets.ts': ['ModdedFormatDataTable'],
   'data/mods/gen8bdsp/scripts.ts': ['ModdedBattleScriptsData'],
 
   // gen8dlc1
-  'data/mods/gen8dlc1/abilities.ts': ['ModdedAbilityData'],
-  'data/mods/gen8dlc1/formats-data.ts': ['ModdedSpeciesFormatsData'],
-  'data/mods/gen8dlc1/items.ts': ['ModdedItemData'],
-  'data/mods/gen8dlc1/learnsets.ts': ['LearnsetData'],
-  'data/mods/gen8dlc1/moves.ts': ['ModdedMoveData'],
-  'data/mods/gen8dlc1/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/gen8dlc1/abilities.ts': ['ModdedAbilityDataTable'],
+  'data/mods/gen8dlc1/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
+  'data/mods/gen8dlc1/items.ts': ['ModdedItemDataTable'],
+  'data/mods/gen8dlc1/learnsets.ts': ['ModdedLearnsetDataTable'],
+  'data/mods/gen8dlc1/moves.ts': ['ModdedMoveDataTable'],
+  'data/mods/gen8dlc1/pokedex.ts': ['ModdedSpeciesDataTable'],
   'data/mods/gen8dlc1/scripts.ts': ['ModdedBattleScriptsData'],
 
   // gen9predlc
-  'data/mods/gen9predlc/abilities.ts': ['ModdedAbilityData'],
-  'data/mods/gen9predlc/formats-data.ts': ['SpeciesFormatsData'],
-  'data/mods/gen9predlc/items.ts': ['ModdedItemData'],
-  'data/mods/gen9predlc/learnsets.ts': ['LearnsetData'],
-  'data/mods/gen9predlc/moves.ts': ['ModdedMoveData'],
-  'data/mods/gen9predlc/pokedex.ts': ['ModdedSpeciesData'],
+  'data/mods/gen9predlc/abilities.ts': ['ModdedAbilityDataTable'],
+  'data/mods/gen9predlc/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
+  'data/mods/gen9predlc/items.ts': ['ModdedItemDataTable'],
+  'data/mods/gen9predlc/learnsets.ts': ['ModdedLearnsetDataTable'],
+  'data/mods/gen9predlc/moves.ts': ['ModdedMoveDataTable'],
+  'data/mods/gen9predlc/pokedex.ts': ['ModdedSpeciesDataTable'],
   'data/mods/gen9predlc/scripts.ts': ['ModdedBattleScriptsData'],
 
   // gen9dlc1
-  'data/mods/gen9dlc1/abilities.ts': ['ModdedAbilityData'],
-  'data/mods/gen9dlc1/formats-data.ts': ['SpeciesFormatsData'],
-  'data/mods/gen9dlc1/items.ts': ['ModdedItemData'],
-  'data/mods/gen9dlc1/learnsets.ts': ['LearnsetData'],
-  'data/mods/gen9dlc1/moves.ts': ['ModdedMoveData'],
+  'data/mods/gen9dlc1/abilities.ts': ['ModdedAbilityDataTable'],
+  'data/mods/gen9dlc1/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
+  'data/mods/gen9dlc1/items.ts': ['ModdedItemDataTable'],
+  'data/mods/gen9dlc1/learnsets.ts': ['ModdedLearnsetDataTable'],
+  'data/mods/gen9dlc1/moves.ts': ['ModdedMoveDataTable'],
 };
 const RANDOMS_IMPORTS = {
   'data/random-battles/gen9/teams.ts': [
@@ -245,7 +245,7 @@ const RANDOMS_IMPORTS = {
     [[
       'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatID',
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ModdedDex', 'Move', 'BasicEffect',
-      'RuleTable', 'Tags', 'Item', 'Ability', 'Nature', 'AnyObject',
+      'RuleTable', 'Tags', 'Item', 'Ability', 'Nature', 'AnyObject', 'ID',
     ], '@pkmn/sim'],
   ],
   'data/random-battles/gen8/teams.ts': [
@@ -305,14 +305,14 @@ const RANDOMS_IMPORTS = {
     [['RandomGen3Teams'], './gen3'],
     [[
       'ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes', 'StatID',
+      'IDEntry',
     ], '@pkmn/sim'],
   ],
   'data/random-battles/gen1/teams.ts': [
-    [['MoveCounter'], './gen8'],
     [['RandomGen2Teams'], './gen2'],
     [['Utils'], './utils'],
     [[
-      'ID', 'Species', 'RandomTeamsTypes', 'Move', 'StatsTable', 'StatID', 'PokemonSet',
+      'ID', 'IDEntry', 'Species', 'RandomTeamsTypes', 'StatsTable', 'StatID', 'PokemonSet',
     ], '@pkmn/sim'],
   ],
 };
@@ -713,19 +713,20 @@ const changes = async (where, last, now, repo) => ({
     }
 
     for (const file of MOD_COPIED) {
+      if (!file.startsWith('data/')) throw new Error('Unsupported import location');
+      if (file.endsWith('formats.ts')) continue;
+      let original = fs.readFileSync(path.resolve(ps, file), 'utf8');
+      original = original.replaceAll(/import\(.*\)\./g, '');
       if (MOD_IMPORTS[file]) {
-        if (!file.startsWith('data/')) throw new Error('Unsupported import location');
-        let original = fs.readFileSync(path.resolve(ps, file), 'utf8');
         if (file === 'data/mods/gen1jpn/rulesets.ts') {
           original = original.replace('} else if (set.level < legalityList[moveid]) {',
             '} else if (set.level < (legalityList[moveid] as number)) {');
         }
+
         fs.writeFileSync(path.resolve(mods, file.replace('data/mods', 'src')),
           `${imports(MOD_IMPORTS[file], '@pkmn/sim', true)}${original}`);
-      } else if (!file.endsWith('formats.ts')) {
-        fs.copyFileSync(
-          path.resolve(ps, file), path.resolve(mods, file.replace('data/mods', 'src'))
-        );
+      } else {
+        fs.writeFileSync(path.resolve(mods, file.replace('data/mods', 'src')), original);
       }
     }
 
@@ -892,7 +893,7 @@ const changes = async (where, last, now, repo) => ({
       formats.push(format);
     }
     fs.writeFileSync(path.resolve(sim, 'config/formats.ts'),
-      `export const Formats: FormatList = ${inspect(formats).replaceAll(
+      `export const Formats: import('../sim/dex-formats').FormatList = ${inspect(formats).replaceAll(
         'trunc: [Function: trunc]',
         'trunc: Math.trunc'
       )};\n`);
@@ -902,7 +903,7 @@ const changes = async (where, last, now, repo) => ({
     }
 
     // Decompose learnsets into learnsets.ts with just the learnset and legality.ts with the rest
-    for (const dir of ['mods/gen2/', 'mods/gen6/', 'mods/gen8/', '/']) {
+    for (const dir of ['mods/gen2/', 'mods/gen6/', 'mods/gen8/', '']) {
       const original = require(path.resolve(ps, `dist/data/${dir}learnsets.js`)).Learnsets;
       const learnsets = {};
       const legality = {};
@@ -937,10 +938,11 @@ const changes = async (where, last, now, repo) => ({
           }
         }
       }
+      const d = dir ? '../../' : '';
       fs.writeFileSync(path.resolve(sim, `data/${dir}learnsets.ts`),
-        `export const Learnsets: {[k: string]: ModdedLearnsetData} = ${inspect(learnsets)};\n`);
+        `export const Learnsets: {[k: string]:  import('../${d}sim/dex-species').ModdedLearnsetData} = ${inspect(learnsets)};\n`);
       fs.writeFileSync(path.resolve(sim, `data/${dir}legality.ts`),
-        `export const Legality: {[k: string]: ModdedLearnsetData} = ${inspect(legality)};\n`);
+        `export const Legality: {[k: string]:  import('../${d}sim/dex-species').ModdedLearnsetData} = ${inspect(legality)};\n`);
     }
 
     // Mirror `sim/global-types.ts` to export all of its types (making it a module). Its possible

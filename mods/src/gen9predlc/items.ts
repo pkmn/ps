@@ -1,6 +1,6 @@
-import type {ModdedItemData} from '@pkmn/sim';
+import type {ModdedItemDataTable} from '@pkmn/sim';
 
-export const Items: {[k: string]: ModdedItemData} = {
+export const Items: ModdedItemDataTable = {
 	custapberry: {
 		inherit: true,
 		isNonstandard: "Unobtainable",

@@ -1,4 +1,4 @@
-export const Learnsets: {[k: string]: ModdedLearnsetData} = {
+export const Learnsets: {[k: string]:  import('../../../sim/dex-species').ModdedLearnsetData} = {
   missingno: {
     learnset: {
       blizzard: [ '1M' ],

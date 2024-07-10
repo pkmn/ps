@@ -1,6 +1,6 @@
-import type {ModdedSpeciesFormatsData} from '@pkmn/sim';
+import type {ModdedSpeciesFormatsDataTable} from '@pkmn/sim';
 
-export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
+export const FormatsData: ModdedSpeciesFormatsDataTable = {
 	pikachuworld: {
 		isNonstandard: "Unobtainable",
 		tier: "Unreleased",

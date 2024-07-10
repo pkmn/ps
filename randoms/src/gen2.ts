@@ -2,6 +2,7 @@ import {MoveCounter} from './gen8';
 import {RandomGen3Teams} from './gen3';
 import {
 	Format,
+	IDEntry,
 	ModdedDex,
 	PRNG,
 	PRNGSeed,
@@ -38,7 +39,7 @@ const MOVE_PAIRS = [
 ];
 
 export class RandomGen2Teams extends RandomGen3Teams {
-	randomSets: {[species: string]: RandomTeamsTypes.RandomSpeciesData} = randomSetsJSON;
+	randomSets: {[species: IDEntry]: RandomTeamsTypes.RandomSpeciesData} = randomSetsJSON;
 
 	constructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {
 		super(dex, format, prng);

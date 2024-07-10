@@ -1,4 +1,4 @@
-export const Formats: FormatList = [
+export const Formats: import('../sim/dex-formats').FormatList = [
   {
     name: '[Gen 9] Random Battle',
     mod: 'gen9',

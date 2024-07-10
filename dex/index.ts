@@ -366,7 +366,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
     basePower: number;
   };
 
-  readonly ohko?: boolean | T.TypeName;
+  readonly ohko?: boolean | 'Ice';
   readonly thawsTarget?: boolean;
   readonly heal?: number[] | null;
   readonly forceSwitch?: boolean;
@@ -404,6 +404,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly infiltrates?: boolean;
   readonly multiaccuracy?: boolean;
   readonly multihit?: number | number[];
+  readonly multihitType?: 'parentalbond';
   readonly noCopy?: boolean;
   readonly noDamageVariance?: boolean;
   readonly noFaint?: boolean;

@@ -1,4 +1,4 @@
-import type {ActiveMove, Battle, ModdedConditionData, Pokemon} from '@pkmn/sim';
+import type {ActiveMove, Battle, ModdedConditionDataTable, Pokemon} from '@pkmn/sim';
 
 /**
  * Since Stadium 2 ignores stat drops while recalculating stats due to boosting moves, haze,
@@ -6,7 +6,7 @@ import type {ActiveMove, Battle, ModdedConditionData, Pokemon} from '@pkmn/sim';
  * a volatile along with them to keep track of if their respective stat changes should be factored
  * in during stat calculations or not.
  */
-export const Conditions: {[k: string]: ModdedConditionData} = {
+export const Conditions: ModdedConditionDataTable = {
 	brn: {
 		name: 'brn',
 		effectType: 'Status',

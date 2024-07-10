@@ -1,4 +1,4 @@
-export const Legality: {[k: string]: ModdedLearnsetData} = {
+export const Legality: {[k: string]:  import('../../../sim/dex-species').ModdedLearnsetData} = {
   bulbasaur: {
     learnset: { ancientpower: [ '2S0' ], growl: [ '2S0' ], tackle: [ '2S0' ] },
     eventData: [ { generation: 2, level: 5, shiny: 1, moves: [ 'tackle', 'growl', 'ancientpower' ] } ],

@@ -1,7 +1,7 @@
-import type {ModdedItemData} from '@pkmn/sim';
+import type {ModdedItemDataTable} from '@pkmn/sim';
 
 // Gen 2 Stadium fixes Dragon Fang and Dragon Scale having the wrong effects.
-export const Items: {[k: string]: ModdedItemData} = {
+export const Items: ModdedItemDataTable = {
 	dragonfang: {
 		inherit: true,
 		onModifyDamage(damage, source, target, move) {

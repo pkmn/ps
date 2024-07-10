@@ -182,7 +182,7 @@ export interface MoveData extends EffectData, HitEffect {
     basePower: number;
   };
 
-  ohko?: boolean | TypeName;
+  ohko?: boolean | 'Ice';
   thawsTarget?: boolean;
   heal?: number[] | null;
   forceSwitch?: boolean;
@@ -220,6 +220,7 @@ export interface MoveData extends EffectData, HitEffect {
   infiltrates?: boolean;
   multiaccuracy?: boolean;
   multihit?: number | number[];
+  multihitType?: 'parentalbond';
   noCopy?: boolean;
   noDamageVariance?: boolean;
   noFaint?: boolean;
@@ -479,14 +480,14 @@ export interface Dex {
   readonly gen: GenerationNum;
   readonly modid: ID;
   readonly data: {
-    Abilities: {[id: string]: AbilityData};
+    Abilities: {[id: Lowercase<string>]: AbilityData};
     Aliases: {[id: string]: string};
-    Items: {[id: string]: ItemData};
-    Moves: {[id: string]: MoveData};
-    Species: {[id: string]: SpeciesData};
-    Natures: {[id: string]: NatureData};
-    Learnsets: null | {[id: string]: LearnsetData};
-    Types: {[id: string]: TypeData};
+    Items: {[id: Lowercase<string>]: ItemData};
+    Moves: {[id: Lowercase<string>]: MoveData};
+    Species: {[id: Lowercase<string>]: SpeciesData};
+    Natures: {[id: Lowercase<string>]: NatureData};
+    Learnsets: null | {[id: Lowercase<string>]: LearnsetData};
+    Types: {[id: Lowercase<string>]: TypeData};
   };
 
   mod(genid: GenID): Dex;

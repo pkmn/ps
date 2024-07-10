@@ -1,6 +1,6 @@
-import type {SpeciesFormatsData} from '@pkmn/sim';
+import type {ModdedSpeciesFormatsDataTable} from '@pkmn/sim';
 
-export const FormatsData: {[k: string]: SpeciesFormatsData} = {
+export const FormatsData: ModdedSpeciesFormatsDataTable = {
 	bulbasaur: {
 		isNonstandard: "Past",
 		tier: "Illegal",

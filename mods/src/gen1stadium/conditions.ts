@@ -1,6 +1,6 @@
-import type {ModdedConditionData} from '@pkmn/sim';
+import type {ModdedConditionDataTable} from '@pkmn/sim';
 
-export const Conditions: {[k: string]: ModdedConditionData} = {
+export const Conditions: ModdedConditionDataTable = {
 	brn: {
 		name: 'brn',
 		effectType: 'Status',

@@ -1,6 +1,6 @@
-import type {ModdedAbilityData} from '@pkmn/sim';
+import type {ModdedAbilityDataTable} from '@pkmn/sim';
 
-export const Abilities: {[k: string]: ModdedAbilityData} = {
+export const Abilities: ModdedAbilityDataTable = {
 	commander: {
 		inherit: true,
 		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1},

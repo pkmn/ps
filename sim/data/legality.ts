@@ -1,4 +1,4 @@
-export const Legality: {[k: string]: ModdedLearnsetData} = {
+export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnsetData} = {
   bulbasaur: {
     learnset: {
       block: [ '5S3' ],
@@ -9100,41 +9100,37 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
   jirachi: {
     learnset: {
       confusion: [
-        '6S18', '6S20', '6S21',
-        '4S11', '4S12', '3S0',
-        '3S1',  '3S2',  '3S3',
-        '3S4',  '3S5',  '3S6',
-        '3S7',  '3S8',  '3S9'
+        '6S10', '6S12',
+        '6S13', '4S3',
+        '4S4',  '3S0',
+        '3S1'
       ],
-      cosmicpower: [ '6S19', '5S15' ],
-      dracometeor: [ '5S14', '4S12' ],
-      followme: [ '5S14' ],
-      happyhour: [ '6S20' ],
-      healingwish: [ '7S22', '6S17', '5S13', '5S15', '5S16' ],
-      heartstamp: [ '6S19' ],
-      helpinghand: [ '6S18', '3S10' ],
-      meteormash: [ '8S23', '5S13', '5S14', '5S15' ],
-      moonblast: [ '6S17' ],
-      playrough: [ '6S19' ],
-      psychic: [ '8S23', '5S13', '3S10' ],
-      refresh: [ '3S10' ],
+      cosmicpower: [ '6S11', '5S7' ],
+      dracometeor: [ '5S6', '4S4' ],
+      followme: [ '5S6' ],
+      happyhour: [ '6S12' ],
+      healingwish: [ '7S14', '6S9', '5S5', '5S7', '5S8' ],
+      heartstamp: [ '6S11' ],
+      helpinghand: [ '6S10', '3S2' ],
+      meteormash: [ '8S15', '5S5', '5S6', '5S7' ],
+      moonblast: [ '6S9' ],
+      playrough: [ '6S11' ],
+      psychic: [ '8S15', '5S5', '3S2' ],
+      refresh: [ '3S2' ],
       rest: [
-        '8S23', '7S22', '6S21',
-        '4S11', '4S12', '3S0',
-        '3S1',  '3S2',  '3S3',
-        '3S4',  '3S5',  '3S6',
-        '3S7',  '3S8',  '3S9',
-        '3S10'
+        '8S15', '7S14',
+        '6S13', '4S3',
+        '4S4',  '3S0',
+        '3S1',  '3S2'
       ],
-      return: [ '6S18', '5S16' ],
-      swift: [ '7S22', '6S17', '6S20', '5S13', '5S16' ],
+      return: [ '6S10', '5S8' ],
+      swift: [ '7S14', '6S9', '6S12', '5S5', '5S8' ],
       wish: [
-        '8S23', '7S22', '6S17', '6S18',
-        '6S19', '6S20', '6S21', '5S14',
-        '5S15', '5S16', '4S11', '4S12',
-        '3S0',  '3S1',  '3S2',  '3S3',
-        '3S4',  '3S5',  '3S6',  '3S7',
-        '3S8',  '3S9'
+        '8S15', '7S14', '6S9',
+        '6S10', '6S11', '6S12',
+        '6S13', '5S6',  '5S7',
+        '5S8',  '4S3',  '4S4',
+        '3S0',  '3S1'
       ]
     },
     eventData: [
@@ -9147,81 +9143,7 @@ export const Legality: {[k: string]: ModdedLearnsetData} = {
       {
         generation: 3,
         level: 5,
-        shiny: true,
-        nature: 'Bashful',
-        ivs: { hp: 24, atk: 3, def: 30, spa: 12, spd: 16, spe: 11 },
-        moves: [ 'wish', 'confusion', 'rest' ],
-        pokeball: 'pokeball'
-      },
-      {
-        generation: 3,
-        level: 5,
-        shiny: true,
-        nature: 'Careful',
-        ivs: { hp: 10, atk: 0, def: 10, spa: 10, spd: 26, spe: 12 },
-        moves: [ 'wish', 'confusion', 'rest' ],
-        pokeball: 'pokeball'
-      },
-      {
-        generation: 3,
-        level: 5,
-        shiny: true,
-        nature: 'Docile',
-        ivs: { hp: 19, atk: 7, def: 10, spa: 19, spd: 10, spe: 16 },
-        moves: [ 'wish', 'confusion', 'rest' ],
-        pokeball: 'pokeball'
-      },
-      {
-        generation: 3,
-        level: 5,
-        shiny: true,
-        nature: 'Hasty',
-        ivs: { hp: 3, atk: 12, def: 12, spa: 7, spd: 11, spe: 9 },
-        moves: [ 'wish', 'confusion', 'rest' ],
-        pokeball: 'pokeball'
-      },
-      {
-        generation: 3,
-        level: 5,
-        shiny: true,
-        nature: 'Jolly',
-        ivs: { hp: 11, atk: 8, def: 6, spa: 14, spd: 5, spe: 20 },
-        moves: [ 'wish', 'confusion', 'rest' ],
-        pokeball: 'pokeball'
-      },
-      {
-        generation: 3,
-        level: 5,
-        shiny: true,
-        nature: 'Lonely',
-        ivs: { hp: 31, atk: 23, def: 26, spa: 29, spd: 18, spe: 5 },
-        moves: [ 'wish', 'confusion', 'rest' ],
-        pokeball: 'pokeball'
-      },
-      {
-        generation: 3,
-        level: 5,
-        shiny: true,
-        nature: 'Naughty',
-        ivs: { hp: 21, atk: 31, def: 31, spa: 18, spd: 24, spe: 19 },
-        moves: [ 'wish', 'confusion', 'rest' ],
-        pokeball: 'pokeball'
-      },
-      {
-        generation: 3,
-        level: 5,
-        shiny: true,
-        nature: 'Serious',
-        ivs: { hp: 29, atk: 10, def: 31, spa: 25, spd: 23, spe: 21 },
-        moves: [ 'wish', 'confusion', 'rest' ],
-        pokeball: 'pokeball'
-      },
-      {
-        generation: 3,
-        level: 5,
-        shiny: true,
-        nature: 'Timid',
-        ivs: { hp: 15, atk: 28, def: 29, spa: 3, spd: 0, spe: 7 },
+        shiny: 1,
         moves: [ 'wish', 'confusion', 'rest' ],
         pokeball: 'pokeball'
       },

@@ -1,8 +1,8 @@
-import type {ModdedLearnsetData} from '@pkmn/sim';
+import type {ModdedLearnsetDataTable} from '@pkmn/sim';
 
 /* eslint-disable max-len */
 
-export const Learnsets: {[k: string]: ModdedLearnsetData} = {
+export const Learnsets: ModdedLearnsetDataTable = {
 	bulbasaur: {
 		learnset: {
 			doubleedge: ["7L32"],

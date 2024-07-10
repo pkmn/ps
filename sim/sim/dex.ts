@@ -3,27 +3,19 @@ import {Condition, DexConditions} from './dex-conditions';
 import {DataMove, DexMoves} from './dex-moves';
 import {Item, DexItems} from './dex-items';
 import {Ability, DexAbilities} from './dex-abilities';
-import {Species, DexSpecies, DexLearnsets, PokemonGoData} from './dex-species';
+import {Species, DexSpecies, DexLearnsets, ModdedLearnsetData} from './dex-species';
 import {Format, FormatList, DexFormats, RuleTable} from './dex-formats';
 import {
-	AbilityData,
 	AbilityText,
 	ActiveMove,
 	AnyObject,
-	EffectData,
-	FormatData,
 	ID,
-	ItemData,
+	IDEntry,
 	ItemText,
-	LearnsetData,
 	ModdedBattleScriptsData,
-	ModdedLearnsetData,
 	Move,
-	MoveData,
 	MoveText,
-	NatureData,
-	SpeciesData,
-	TypeData,
+	StatsTable,
 } from './exported-global-types';
 
 import * as gen1 from '../data/mods/gen1';
@@ -105,28 +97,28 @@ const DATA_TYPES: (DataType | 'Aliases')[] = [
 	'Natures', 'Pokedex', 'Scripts', 'Conditions', 'TypeChart', 'PokemonGoData',
 ];
 
-interface DexTable<T> {
-	[key: string]: T;
-}
+/** Unfortunately we do for..in too much to want to deal with the casts */
+export interface DexTable<T> {[id: string]: T}
+export interface AliasesTable {[id: IDEntry]: string}
 
 interface DexTableData {
-	Abilities: DexTable<AbilityData>;
-	Conditions: DexTable<EffectData>;
-	Rulesets: DexTable<FormatData>;
-	FormatsData: DexTable<import('./dex-species').ModdedSpeciesFormatsData>;
-	Items: DexTable<ItemData>;
-	Learnsets: DexTable<LearnsetData>;
-	Moves: DexTable<MoveData>;
-	Natures: DexTable<NatureData>;
-	Pokedex: DexTable<SpeciesData>;
-	PokemonGoData: DexTable<PokemonGoData>;
-	TypeChart: DexTable<TypeData>;
+	Abilities: DexTable<import('./dex-abilities').AbilityData>;
+	Rulesets: DexTable<import('./dex-formats').FormatData>;
+	Items: DexTable<import('./dex-items').ItemData>;
+	Learnsets: DexTable<import('./dex-species').LearnsetData>;
+	Moves: DexTable<import('./dex-moves').MoveData>;
+	Natures: DexTable<import('./dex-data').NatureData>;
+	Pokedex: DexTable<import('./dex-species').SpeciesData>;
+	FormatsData: DexTable<import('./dex-species').SpeciesFormatsData>;
+	PokemonGoData: DexTable<import('./dex-species').PokemonGoData>;
+	Conditions: DexTable<import('./dex-conditions').ConditionData>;
+	TypeChart: DexTable<import('./dex-data').TypeData>;
 
-	Aliases: {[id: string]: string};
+	Aliases: DexTable<string>;
 	Scripts: ModdedBattleScriptsData; // NB: Not a DexTable, but PS is dumb AF
 
-	Species: DexTable<SpeciesData>;
-	Types: DexTable<TypeData>;
+	Species: DexTable<import('./dex-species').SpeciesData>;
+	Types: DexTable<import('./dex-data').TypeData>;
 }
 
 const TEXT = {
@@ -379,7 +371,7 @@ export class ModdedDex {
 		return moveCopy;
 	}
 
-	getHiddenPower(ivs: AnyObject) {
+	getHiddenPower(ivs: StatsTable) {
 		const hpTypes = [
 			'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel',
 			'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark',
@@ -404,8 +396,8 @@ export class ModdedDex {
 			let hpPowerX = 0;
 			let i = 1;
 			for (const s in stats) {
-				hpTypeX += i * (ivs[s] % 2);
-				hpPowerX += i * (tr(ivs[s] / 2) % 2);
+				hpTypeX += i * (ivs[s as StatID] % 2);
+				hpPowerX += i * (tr(ivs[s as StatID] / 2) % 2);
 				i *= 2;
 			}
 			return {

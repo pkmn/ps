@@ -1,6 +1,6 @@
-import type {ModdedSpeciesFormatsData} from '@pkmn/sim';
+import type {ModdedSpeciesFormatsDataTable} from '@pkmn/sim';
 
-export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
+export const FormatsData: ModdedSpeciesFormatsDataTable = {
 	venusaur: {
 		tier: "OU",
 	},
@@ -43,6 +43,9 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	hippowdon: {
 		tier: "UUBL",
 	},
+	toxicroak: {
+		tier: "OU",
+	},
 	snover: {
 		tier: "UUBL",
 	},
@@ -68,6 +71,9 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "OU",
 	},
 	mienshao: {
+		tier: "OU",
+	},
+	hydreigon: {
 		tier: "OU",
 	},
 	virizion: {

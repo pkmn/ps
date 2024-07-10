@@ -1,9 +1,8 @@
-import {MoveCounter} from './gen8';
 import {RandomGen2Teams} from './gen2';
 import {Utils} from './utils';
 import {
 	ID,
-	Move,
+	IDEntry,
 	PokemonSet,
 	RandomTeamsTypes,
 	Species,
@@ -29,7 +28,7 @@ interface Gen1RandomBattleSpecies {
 }
 
 export class RandomGen1Teams extends RandomGen2Teams {
-	randomData: {[species: string]: Gen1RandomBattleSpecies} = randomDataJSON;
+	randomData: {[species: IDEntry]: Gen1RandomBattleSpecies} = randomDataJSON;
 
 	// Challenge Cup or CC teams are basically fully random teams.
 	randomCCTeam() {

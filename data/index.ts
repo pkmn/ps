@@ -484,7 +484,8 @@ export class Type {
     this.effectiveness = {'???': 1} as {[t in TypeName]: TypeEffectiveness};
     for (const k in dex.data.Types) {
       const t = k.charAt(0).toUpperCase() + k.slice(1) as Exclude<TypeName, '???'>;
-      this.effectiveness[t] = DAMAGE_TAKEN[dex.data.Types[k].damageTaken[this.name] || 0];
+      const data = dex.data.Types[k as Lowercase<string>];
+      this.effectiveness[t] = DAMAGE_TAKEN[data.damageTaken[this.name] || 0];
     }
   }
 

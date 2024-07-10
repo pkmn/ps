@@ -1,6 +1,6 @@
-import type {ModdedMoveData} from '@pkmn/sim';
+import type {ModdedMoveDataTable} from '@pkmn/sim';
 
-export const Moves: {[k: string]: ModdedMoveData} = {
+export const Moves: ModdedMoveDataTable = {
 	// Belly Drum no longer boosts attack by 2 stages if under 50% health.
 	bellydrum: {
 		inherit: true,

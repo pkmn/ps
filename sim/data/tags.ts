@@ -1,4 +1,4 @@
-import {Ability, Item, Move, Species} from '../sim/exported-global-types';
+import {Ability, IDEntry, Item, Move, Species} from '../sim/exported-global-types';
 
 interface TagData {
 	name: string;
@@ -11,7 +11,7 @@ interface TagData {
 	genericNumCol?: (thing: Species | Move | Item | Ability) => number;
 }
 
-export const Tags: {[id: string]: TagData} = {
+export const Tags: {[id: IDEntry]: TagData} = {
 	// Categories
 	// ----------
 	physical: {

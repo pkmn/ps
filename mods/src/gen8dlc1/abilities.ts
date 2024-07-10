@@ -1,6 +1,6 @@
-import type {ModdedAbilityData} from '@pkmn/sim';
+import type {ModdedAbilityDataTable} from '@pkmn/sim';
 
-export const Abilities: {[k: string]: ModdedAbilityData} = {
+export const Abilities: ModdedAbilityDataTable = {
 	asoneglastrier: {
 		inherit: true,
 		isNonstandard: "Unobtainable",

@@ -1,6 +1,6 @@
-import type {ModdedItemData} from '@pkmn/sim';
+import type {ModdedItemDataTable} from '@pkmn/sim';
 
-export const Items: {[k: string]: ModdedItemData} = {
+export const Items: ModdedItemDataTable = {
 	altarianite: {
 		inherit: true,
 		isNonstandard: "Future",
