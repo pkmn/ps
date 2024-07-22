@@ -915,6 +915,7 @@
     "illuminate": {
       "inherit": true,
       "flags": {},
+      "desc": "No competitive use.",
       "shortDesc": "No competitive use."
     },
     "illusion": {"inherit": true},

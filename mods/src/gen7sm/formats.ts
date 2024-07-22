@@ -3,11 +3,6 @@
 export const Formats = [
   {
     name: '[Gen 7] VGC 2017',
-    threads: [
-      '&bullet; <a href="https://www.smogon.com/forums/threads/3583926/">VGC 2017 Discussion</a>',
-      '&bullet; <a href="https://www.smogon.com/forums/threads/3591794/">VGC 2017 Viability Rankings</a>',
-      '&bullet; <a href="https://www.smogon.com/forums/threads/3590391/">VGC 2017 Sample Teams</a>'
-    ],
     mod: 'gen7sm',
     gameType: 'doubles',
     searchShow: false,

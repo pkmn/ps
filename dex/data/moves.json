@@ -581,7 +581,13 @@
     },
     "explosion": {
       "inherit": true,
-      "noSketch": true,
+      "flags": {
+        "protect": 1,
+        "mirror": 1,
+        "metronome": 1,
+        "noparentalbond": 1,
+        "nosketch": 1
+      },
       "desc": "The user faints after using this move. The target's Defense is halved during damage calculation."
     },
     "flail": {
@@ -649,20 +655,19 @@
     },
     "metronome": {
       "inherit": true,
-      "flags": {"failencore": 1},
-      "noSketch": true,
+      "flags": {"failencore": 1, "nosketch": 1},
       "desc": "A random move is selected for use, other than Counter, Destiny Bond, Detect, Endure, Metronome, Mimic, Mirror Coat, Protect, Sketch, Sleep Talk, Struggle, Thief, or any move the user already knows."
     },
     "mimic": {
       "inherit": true,
       "accuracy": 100,
-      "noSketch": true,
       "flags": {
         "protect": 1,
         "bypasssub": 1,
         "allyanim": 1,
         "failencore": 1,
-        "noassist": 1
+        "noassist": 1,
+        "nosketch": 1
       },
       "desc": "While the user remains active, this move is replaced by the last move used by the target. The copied move has 5 PP. Fails if the target has not made a move, if the user already knows the move, or if the move is Struggle."
     },
@@ -679,8 +684,7 @@
     },
     "mirrormove": {
       "inherit": true,
-      "flags": {"metronome": 1, "failencore": 1},
-      "noSketch": true,
+      "flags": {"metronome": 1, "failencore": 1, "nosketch": 1},
       "desc": "The user uses the last move used by the target. Fails if the target has not made a move since the user switched in, or if the last move used was Metronome, Mimic, Mirror Move, Sketch, Sleep Talk, Transform, or any move the user knows."
     },
     "mist": {
@@ -789,12 +793,18 @@
     },
     "selfdestruct": {
       "inherit": true,
-      "noSketch": true,
+      "flags": {
+        "protect": 1,
+        "mirror": 1,
+        "metronome": 1,
+        "noparentalbond": 1,
+        "nosketch": 1
+      },
       "desc": "The user faints after using this move. The target's Defense is halved during damage calculation."
     },
     "sketch": {
       "inherit": true,
-      "flags": {"bypasssub": 1, "failencore": 1, "noassist": 1},
+      "flags": {"bypasssub": 1, "failencore": 1, "noassist": 1, "nosketch": 1},
       "desc": "Fails when used in Link Battles.",
       "shortDesc": "Fails when used in Link Battles."
     },
@@ -809,8 +819,7 @@
     "slash": {"inherit": true, "critRatio": 3},
     "sleeptalk": {
       "inherit": true,
-      "flags": {"failencore": 1, "nosleeptalk": 1},
-      "noSketch": true,
+      "flags": {"failencore": 1, "nosleeptalk": 1, "nosketch": 1},
       "desc": "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not asleep. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Bide, Sleep Talk, or any two-turn move."
     },
     "solarbeam": {
@@ -851,7 +860,7 @@
     "toxic": {"inherit": true, "ignoreImmunity": false},
     "transform": {
       "inherit": true,
-      "noSketch": true,
+      "flags": {"bypasssub": 1, "metronome": 1, "failencore": 1, "nosketch": 1},
       "desc": "The user transforms into the target. The target's current stats, stat stages, types, moves, DVs, species, and sprite are copied. The user's level and HP remain the same and each copied move receives only 5 PP. This move fails if the target has transformed.",
       "shortDesc": "Copies target's stats, moves, types, and species."
     },
@@ -1285,7 +1294,13 @@
     "rocksmash": {"inherit": true, "basePower": 20},
     "sketch": {
       "inherit": true,
-      "flags": {"bypasssub": 1, "failencore": 1, "noassist": 1, "failmimic": 1},
+      "flags": {
+        "bypasssub": 1,
+        "failencore": 1,
+        "noassist": 1,
+        "failmimic": 1,
+        "nosketch": 1
+      },
       "desc": "This move is permanently replaced by the last move used by the target. The copied move has the maximum PP for that move. Fails if the target has not made a move, if the user has Transformed, or if the move is Sketch, Struggle, or any move the user knows."
     },
     "sleeptalk": {
@@ -1311,7 +1326,8 @@
         "protect": 1,
         "noassist": 1,
         "failencore": 1,
-        "failmimic": 1
+        "failmimic": 1,
+        "nosketch": 1
       },
       "accuracy": 100,
       "recoil": [1, 4],
@@ -2182,7 +2198,8 @@
         "noassist": 1,
         "failcopycat": 1,
         "failinstruct": 1,
-        "failmimic": 1
+        "failmimic": 1,
+        "nosketch": 1
       }
     },
     "skillswap": {
@@ -2222,7 +2239,8 @@
         "noassist": 1,
         "failcopycat": 1,
         "failinstruct": 1,
-        "failmimic": 1
+        "failmimic": 1,
+        "nosketch": 1
       },
       "desc": "Deals typeless damage to a random opposing Pokemon. If this move was successful, the user loses 1/4 of its maximum HP, rounded down, and the Rock Head Ability does not prevent this. This move is automatically used if none of the user's known moves can be selected."
     },
@@ -2730,7 +2748,8 @@
         "failcopycat": 1,
         "failmefirst": 1,
         "nosleeptalk": 1,
-        "failmimic": 1
+        "failmimic": 1,
+        "nosketch": 1
       },
       "desc": "Has an X% chance to confuse the target, where X is 0 unless the user is a Chatot that hasn't Transformed. If the user is a Chatot, X is 0 or 10 depending on the volume of Chatot's recorded cry, if any; 0 for a low volume or no recording, 10 for a medium to high volume recording.",
       "shortDesc": "For Chatot, 10% chance to confuse the target."
@@ -4364,7 +4383,8 @@
         "failinstruct": 1,
         "failmefirst": 1,
         "nosleeptalk": 1,
-        "failmimic": 1
+        "failmimic": 1,
+        "nosketch": 1
       }
     },
     "copycat": {
@@ -4387,7 +4407,11 @@
     "craftyshield": {"inherit": true, "isNonstandard": null},
     "curse": {"inherit": true, "target": "randomNormal"},
     "cut": {"inherit": true, "isNonstandard": null},
-    "darkvoid": {"inherit": true, "isNonstandard": "Past", "noSketch": false},
+    "darkvoid": {
+      "inherit": true,
+      "isNonstandard": "Past",
+      "flags": {"protect": 1, "reflectable": 1, "mirror": 1, "metronome": 1}
+    },
     "doubleironbash": {"inherit": true, "isNonstandard": null},
     "dragonhammer": {
       "inherit": true,
@@ -4431,7 +4455,7 @@
     "hyperspacefury": {
       "inherit": true,
       "isNonstandard": "Past",
-      "noSketch": false
+      "flags": {"mirror": 1, "bypasssub": 1}
     },
     "hyperspacehole": {"inherit": true, "isNonstandard": "Past"},
     "icehammer": {"inherit": true, "isNonstandard": "Past"},
@@ -4554,7 +4578,11 @@
     "shadowbone": {"inherit": true, "isNonstandard": null},
     "shelltrap": {"inherit": true, "isNonstandard": null},
     "shoreup": {"inherit": true, "pp": 10},
-    "sketch": {"inherit": true, "isNonstandard": "Past"},
+    "sketch": {
+      "inherit": true,
+      "isNonstandard": "Past",
+      "desc": "This move is permanently replaced by the last move used by the target. The copied move has the maximum PP for that move. Fails if the target has not made a move, if the user has Transformed, or if the move is Chatter, Sketch, Struggle, or any move the user knows."
+    },
     "skullbash": {"inherit": true, "isNonstandard": null},
     "slackoff": {"inherit": true, "pp": 10},
     "sleeptalk": {
@@ -5963,9 +5991,9 @@
         "noassist": 1,
         "failcopycat": 1,
         "failmimic": 1,
-        "failinstruct": 1
+        "failinstruct": 1,
+        "nosketch": 1
       },
-      "noSketch": true,
       "secondary": {"chance": 30, "status": "brn"},
       "target": "normal",
       "type": "Fire",
@@ -6753,7 +6781,6 @@
         "failmimic": 1,
         "failinstruct": 1
       },
-      "noSketch": true,
       "secondary": {"chance": 100, "volatileStatus": "confusion"},
       "target": "any",
       "type": "Flying",
@@ -7017,9 +7044,9 @@
         "noassist": 1,
         "failcopycat": 1,
         "failmimic": 1,
-        "failinstruct": 1
+        "failinstruct": 1,
+        "nosketch": 1
       },
-      "noSketch": true,
       "secondary": {"chance": 30, "status": "par"},
       "target": "normal",
       "type": "Fighting",
@@ -7596,9 +7623,14 @@
       "name": "Dark Void",
       "pp": 10,
       "priority": 0,
-      "flags": {"protect": 1, "reflectable": 1, "mirror": 1, "metronome": 1},
+      "flags": {
+        "protect": 1,
+        "reflectable": 1,
+        "mirror": 1,
+        "metronome": 1,
+        "nosketch": 1
+      },
       "status": "slp",
-      "noSketch": true,
       "secondary": null,
       "target": "allAdjacentFoes",
       "type": "Dark",
@@ -12285,10 +12317,9 @@
       "name": "Hyperspace Fury",
       "pp": 5,
       "priority": 0,
-      "flags": {"mirror": 1, "bypasssub": 1},
+      "flags": {"mirror": 1, "bypasssub": 1, "nosketch": 1},
       "breaksProtect": true,
       "self": {"boosts": {"def": -1}},
-      "noSketch": true,
       "secondary": null,
       "target": "normal",
       "type": "Dark",
@@ -13507,9 +13538,9 @@
         "noassist": 1,
         "failcopycat": 1,
         "failmimic": 1,
-        "failinstruct": 1
+        "failinstruct": 1,
+        "nosketch": 1
       },
-      "noSketch": true,
       "secondary": {"chance": 30, "volatileStatus": "confusion"},
       "target": "normal",
       "type": "Fairy",
@@ -15110,9 +15141,9 @@
         "noassist": 1,
         "failcopycat": 1,
         "failmimic": 1,
-        "failinstruct": 1
+        "failinstruct": 1,
+        "nosketch": 1
       },
-      "noSketch": true,
       "secondary": {"chance": 30, "status": "psn"},
       "target": "normal",
       "type": "Poison",
@@ -16887,11 +16918,10 @@
       "pp": 1,
       "noPPBoosts": true,
       "priority": 0,
-      "flags": {"heal": 1},
+      "flags": {"heal": 1, "nosketch": 1},
       "slotCondition": "revivalblessing",
       "selfSwitch": true,
       "condition": {"duration": 1},
-      "noSketch": true,
       "secondary": null,
       "target": "self",
       "type": "Normal",
@@ -18094,14 +18124,14 @@
         "noassist": 1,
         "failcopycat": 1,
         "failmimic": 1,
-        "failinstruct": 1
+        "failinstruct": 1,
+        "nosketch": 1
       },
-      "noSketch": true,
       "secondary": null,
       "target": "normal",
       "type": "Normal",
       "zMove": {"boost": {"atk": 1, "def": 1, "spa": 1, "spd": 1, "spe": 1}},
-      "desc": "This move is permanently replaced by the last move used by the target. The copied move has the maximum PP for that move. Fails if the target has not made a move, if the user has Transformed, or if the move is Chatter, Sketch, Struggle, or any move the user knows.",
+      "desc": "This move is permanently replaced by the last move used by the target. The copied move has the maximum PP for that move. Fails if the target has not made a move, if the user has Transformed, or if the move is Blazing Torque, Combat Torque, Dark Void, Hyperspace Fury, Magical Torque, Noxious Torque, Revival Blessing, Sketch, Struggle, Tera Starstorm, Wicked Torque, or any move the user knows.",
       "shortDesc": "Permanently copies the last move target used."
     },
     "skillswap": {
@@ -19437,9 +19467,9 @@
         "noassist": 1,
         "failcopycat": 1,
         "failmimic": 1,
-        "failinstruct": 1
+        "failinstruct": 1,
+        "nosketch": 1
       },
-      "noSketch": true,
       "struggleRecoil": true,
       "secondary": null,
       "target": "randomNormal",
@@ -20248,13 +20278,13 @@
         "mirror": 1,
         "noassist": 1,
         "failcopycat": 1,
-        "failmimic": 1
+        "failmimic": 1,
+        "nosketch": 1
       },
-      "noSketch": true,
       "secondary": null,
       "target": "normal",
       "type": "Normal",
-      "desc": "If the user is a Terapagos in Stellar Form, this move's type becomes Stellar and hits all opposing Pokemon.",
+      "desc": "If the user is a Terapagos in Stellar Form, this move's type becomes Stellar, hits all opposing Pokemon, and becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes.",
       "shortDesc": "Terapagos-Stellar: Stellar type, hits both foes."
     },
     "terrainpulse": {
@@ -21471,9 +21501,9 @@
         "noassist": 1,
         "failcopycat": 1,
         "failmimic": 1,
-        "failinstruct": 1
+        "failinstruct": 1,
+        "nosketch": 1
       },
-      "noSketch": true,
       "secondary": {"chance": 10, "status": "slp"},
       "target": "normal",
       "type": "Dark",

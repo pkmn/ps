@@ -304,14 +304,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Magearna',            'Meloetta',            'Mew',
       'Mewtwo',              'Mimikyu',             'Miraidon',
       'Necrozma',            'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
-      'Ogerpon-Cornerstone', 'Palkia',              'Palkia-Origin',
-      'Rayquaza',            'Reshiram',            'Scream Tail',
-      'Shaymin-Sky',         'Snorlax',             'Solgaleo',
-      'Terapagos',           'Zacian',              'Zacian-Crowned',
-      'Zamazenta',           'Zamazenta-Crowned',   'Zekrom',
-      'Moody',               'Focus Band',          'Focus Sash',
-      "King's Rock",         'Razor Fang',          'Quick Claw',
-      'Acupressure',         'Perish Song'
+      'Ogerpon-Cornerstone', 'Ogerpon-Hearthflame', 'Palkia',
+      'Palkia-Origin',       'Rayquaza',            'Reshiram',
+      'Scream Tail',         'Shaymin-Sky',         'Snorlax',
+      'Solgaleo',            'Terapagos',           'Zacian',
+      'Zacian-Crowned',      'Zamazenta',           'Zamazenta-Crowned',
+      'Zekrom',              'Moody',               'Focus Band',
+      'Focus Sash',          "King's Rock",         'Razor Fang',
+      'Quick Claw',          'Acupressure',         'Perish Song'
     ]
   },
   {
@@ -1030,6 +1030,23 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ruleset: [ '[Gen 8] OU' ],
     banlist: [ 'OU', 'UUBL', 'Light Clay' ]
   },
+  {
+    name: '[Gen 3] ZU',
+    mod: 'gen3',
+    ruleset: [ 'Standard', 'Baton Pass Stat Trap Clause', 'Swagger Clause' ],
+    banlist: [
+      'Uber',
+      'OU',
+      'UUBL',
+      'UU',
+      'NUBL',
+      'NU',
+      'PUBL',
+      'PU',
+      'ZUBL',
+      'Baton Pass + Substitute'
+    ]
+  },
   { name: '[Gen 1] ZU', mod: 'gen1', ruleset: [ '[Gen 1] PU' ], banlist: [ 'PU', 'ZUBL' ] },
   {
     name: '[Gen 8] OU',
@@ -1182,16 +1199,16 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     mod: 'gen8',
     ruleset: [ 'Little Cup', 'Standard', 'Dynamax Clause' ],
     banlist: [
-      'Corsola-Galar', 'Cutiefly',
-      'Drifloon',      'Gastly',
-      'Gothita',       'Magby',
-      'Rufflet',       'Scraggy',
-      'Scyther',       'Sneasel',
-      'Swirlix',       'Tangela',
-      'Vullaby',       'Vulpix-Alola',
-      'Woobat',        'Zigzagoon-Base',
-      'Chlorophyll',   'Moody',
-      'Baton Pass',    'Sticky Web'
+      'Corsola-Galar',  'Cutiefly',
+      'Drifloon',       'Gastly',
+      'Gothita',        'Magby',
+      'Rufflet',        'Scraggy',
+      'Scyther',        'Sneasel',
+      'Swirlix',        'Tangela',
+      'Vulpix-Alola',   'Woobat',
+      'Zigzagoon-Base', 'Chlorophyll',
+      'Moody',          'Baton Pass',
+      'Sticky Web'
     ]
   },
   {
@@ -2126,23 +2143,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'UUBL', 'UU',
       'NUBL', 'NU',
       'PUBL'
-    ]
-  },
-  {
-    name: '[Gen 3] ZU',
-    mod: 'gen3',
-    ruleset: [ 'Standard', 'Baton Pass Stat Trap Clause' ],
-    banlist: [
-      'Uber',
-      'OU',
-      'UUBL',
-      'UU',
-      'NUBL',
-      'NU',
-      'PUBL',
-      'PU',
-      'ZUBL',
-      'Baton Pass + Substitute'
     ]
   },
   {

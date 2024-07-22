@@ -3,9 +3,6 @@
 export const Formats = [
   {
     name: '[Gen 1] Stadium OU',
-    threads: [
-      '&bullet; <a href="https://www.smogon.com/forums/threads/3685877/">Stadium OU Viability Rankings</a>'
-    ],
     mod: 'gen1stadium',
     searchShow: false,
     ruleset: [ 'Standard', 'Team Preview' ],

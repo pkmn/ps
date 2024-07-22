@@ -44,7 +44,7 @@ export const Moves: ModdedMoveDataTable = {
 	},
 	darkvoid: {
 		inherit: true,
-		noSketch: false,
+		flags: {protect: 1, reflectable: 1, mirror: 1, metronome: 1},
 	},
 	decorate: {
 		inherit: true,
@@ -92,7 +92,7 @@ export const Moves: ModdedMoveDataTable = {
 	},
 	hyperspacefury: {
 		inherit: true,
-		noSketch: false,
+		flags: {mirror: 1, bypasssub: 1},
 	},
 	iceburn: {
 		inherit: true,
@@ -142,7 +142,7 @@ export const Moves: ModdedMoveDataTable = {
 	},
 	revivalblessing: {
 		inherit: true,
-		noSketch: false,
+		flags: {heal: 1},
 	},
 	rockwrecker: {
 		inherit: true,

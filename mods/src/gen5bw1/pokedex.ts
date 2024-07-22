@@ -45,6 +45,10 @@ export const Pokedex: ModdedSpeciesDataTable = {
 		inherit: true,
 		unreleasedHidden: true,
 	},
+	ditto: {
+		inherit: true,
+		unreleasedHidden: true,
+	},
 	snorlax: {
 		inherit: true,
 		unreleasedHidden: true,

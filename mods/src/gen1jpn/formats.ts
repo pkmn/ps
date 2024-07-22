@@ -11,9 +11,6 @@ export const Formats = [
   },
   {
     name: '[Gen 1] NC 1997',
-    threads: [
-      '&bullet; <a href="https://www.smogon.com/forums/threads/3682412/">NC 1997 Discussion &amp; Resources</a>'
-    ],
     mod: 'gen1jpn',
     searchShow: false,
     ruleset: [

@@ -10,10 +10,6 @@ export const Formats = [
   },
   {
     name: "[Gen 7 Let's Go] OU",
-    threads: [
-      '&bullet; <a href="https://www.smogon.com/forums/threads/3667865/">LGPE OU Metagame Discussion</a>',
-      '&bullet; <a href="https://www.smogon.com/forums/threads/3656868/">LGPE OU Viability Rankings</a>'
-    ],
     mod: 'gen7letsgo',
     searchShow: false,
     ruleset: [
@@ -32,9 +28,6 @@ export const Formats = [
   },
   {
     name: "[Gen 7 Let's Go] Doubles OU",
-    threads: [
-      '&bullet; <a href="https://www.smogon.com/forums/threads/3671748/#post-8685222">LGPE Doubles OU</a>'
-    ],
     mod: 'gen7letsgo',
     gameType: 'doubles',
     searchShow: false,

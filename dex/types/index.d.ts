@@ -121,6 +121,7 @@ interface MoveFlags {
   allyanim?: 1 | 0;
   nonsky?: 1 | 0;
   noparentalbond?: 1 | 0;
+  nosketch?: 1 | 0;
   nosleeptalk?: 1 | 0;
   pledgecombo?: 1 | 0;
   powder?: 1 | 0;
@@ -236,7 +237,6 @@ export interface MoveData extends EffectData, HitEffect {
   hasCrashDamage?: boolean;
   hasSheerForce?: boolean;
   isConfusionSelfHit?: boolean;
-  noSketch?: boolean;
   stallingMove?: boolean;
 }
 

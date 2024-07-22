@@ -420,7 +420,6 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly hasCrashDamage?: boolean;
   readonly hasSheerForce?: boolean;
   readonly isConfusionSelfHit?: boolean;
-  readonly noSketch?: boolean;
   readonly stallingMove?: boolean;
 
   constructor(data: AnyObject) {

@@ -3,10 +3,6 @@
 export const Formats = [
   {
     name: '[Gen 2] NC 2000',
-    threads: [
-      '&bullet; <a href="https://www.smogon.com/forums/threads/3682691/">NC 2000 Resource Hub</a>',
-      '&bullet; <a href="https://www.smogon.com/forums/threads/3677370/">Differences between NC 2000 and GSC OU</a>'
-    ],
     mod: 'gen2stadium2',
     searchShow: false,
     ruleset: [
@@ -30,7 +26,6 @@ export const Formats = [
   },
   {
     name: '[Gen 2] Stadium OU',
-    threads: [ '&bullet; <a href="https://www.smogon.com/forums/threads/3677370/">Placeholder</a>' ],
     mod: 'gen2stadium2',
     searchShow: false,
     ruleset: [ 'Standard' ],
