@@ -893,10 +893,8 @@ const changes = async (where, last, now, repo) => ({
       formats.push(format);
     }
     fs.writeFileSync(path.resolve(sim, 'config/formats.ts'),
-      `export const Formats: import('../sim/dex-formats').FormatList = ${inspect(formats).replaceAll(
-        'trunc: [Function: trunc]',
-        'trunc: Math.trunc'
-      )};\n`);
+      `export const Formats: import('../sim/dex-formats').FormatList = ${
+        inspect(formats).replaceAll('trunc: [Function: trunc]', 'trunc: Math.trunc')};\n`);
     for (const id in modded) {
       fs.writeFileSync(path.resolve(mods, `src/${id}/formats.ts`),
         `/* eslint-disable */\n\nexport const Formats = ${inspect(modded[id])};\n`);

@@ -267,7 +267,7 @@ export class RandomTeams {
 	getTeam(options?: PlayerOptions | null): PokemonSet[] {
 		const generatorName = (
 			typeof this.format.team === 'string' && this.format.team.startsWith('random')
-		 ) ? this.format.team + 'Team' : '';
+		) ? this.format.team + 'Team' : '';
 		// @ts-ignore
 		return this[generatorName || 'randomTeam'](options);
 	}
