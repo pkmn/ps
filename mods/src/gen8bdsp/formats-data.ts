@@ -1372,7 +1372,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	chimecho: {
-		tier: "PUBL",
+		tier: "PU",
 		doublesTier: "DUU",
 	},
 	absol: {

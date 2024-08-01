@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/dex",
-  "version": "0.9.10",
+  "version": "0.9.11",
   "description": "A unification of Pokémon Showdown's client's and server's data layers",
   "repository": "github:pkmn/ps",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "build"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.9.10"
+    "@pkmn/dex-types": "^0.9.11"
   },
   "scripts": {
     "lint": "eslint --cache *.ts",

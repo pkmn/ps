@@ -166,6 +166,20 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     restricted: [ 'Restricted Legendary' ]
   },
   {
+    name: '[Gen 9] BSS Reg H',
+    mod: 'gen9',
+    bestOfDefault: true,
+    ruleset: [ 'Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 9', 'VGC Timer' ],
+    banlist: [
+      'Sub-Legendary',
+      'Paradox',
+      'Gouging Fire',
+      'Iron Boulder',
+      'Iron Crown',
+      'Raging Bolt'
+    ]
+  },
+  {
     name: '[Gen 9] Custom Game',
     mod: 'gen9',
     debug: true,
@@ -263,6 +277,48 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Limit One Restricted'
     ],
     restricted: [ 'Restricted Legendary' ]
+  },
+  {
+    name: '[Gen 9] VGC 2024 Reg H',
+    mod: 'gen9',
+    gameType: 'doubles',
+    bestOfDefault: true,
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Min Source Gen = 9',
+      'VGC Timer',
+      'Open Team Sheets'
+    ],
+    banlist: [
+      'Sub-Legendary',
+      'Paradox',
+      'Gouging Fire',
+      'Iron Boulder',
+      'Iron Crown',
+      'Raging Bolt'
+    ]
+  },
+  {
+    name: '[Gen 9] VGC 2024 Reg H (Bo3)',
+    mod: 'gen9',
+    gameType: 'doubles',
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Min Source Gen = 9',
+      'VGC Timer',
+      'Force Open Team Sheets',
+      'Best of = 3'
+    ],
+    banlist: [
+      'Sub-Legendary',
+      'Paradox',
+      'Gouging Fire',
+      'Iron Boulder',
+      'Iron Crown',
+      'Raging Bolt'
+    ]
   },
   {
     name: '[Gen 9] Doubles Custom Game',
@@ -389,7 +445,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Shaymin-Sky',    'Zekrom'
     ]
   },
-  { name: '[Gen 9] ZU', mod: 'gen9', ruleset: [ '[Gen 9] PU' ], banlist: [ 'PU', 'ZUBL' ] },
+  {
+    name: '[Gen 9] ZU',
+    mod: 'gen9',
+    ruleset: [ '[Gen 9] PU' ],
+    banlist: [ 'PU', 'ZUBL', 'Unburden' ]
+  },
   {
     name: '[Gen 9] Free-For-All',
     mod: 'gen9',
@@ -692,20 +753,22 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     banlist: [
       'Arceus-Base',        'Arceus-Dark',
       'Arceus-Ground',      'Calyrex-Ice',
-      'Deoxys-Attack',      'Deoxys-Speed',
-      'Ditto',              'Eternatus',
-      'Giratina-Origin',    'Glimmora',
-      'Groudon-Primal',     'Hatterene',
+      'Chansey',            'Deoxys-Attack',
+      'Ditto',              'Dondozo',
+      'Eternatus',          'Giratina-Origin',
+      'Glimmora',           'Groudon-Primal',
       'Ho-Oh',              'Kyogre-Primal',
       'Lunala',             'Marshadow',
       'Melmetal',           'Mewtwo-Mega-Y',
       'Necrozma-Dusk-Mane', 'Necrozma-Ultra',
       'Rayquaza',           'Salamence-Mega',
-      'Yveltal',            'Zacian-Crowned',
-      'Zygarde-Base',       'Arceus-Fairy',
-      'Arceus-Ghost',       'Chi-Yu',
-      'Flutter Mane',       'Kyurem-Black',
-      'Shaymin-Sky',        'Zacian',
+      'Smeargle',           'Yveltal',
+      'Zacian-Crowned',     'Zygarde-Base',
+      'Arceus-Fairy',       'Arceus-Ghost',
+      'Blaziken-Mega',      'Chi-Yu',
+      'Flutter Mane',       'Kyogre',
+      'Kyurem-Black',       'Shaymin-Sky',
+      'Zacian',             'Zekrom',
       'Power Construct',    'Light Clay',
       'Ultranecrozium Z',   'Last Respects'
     ]
@@ -1024,29 +1087,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Freeze Clause Mod'
     ]
   },
-  {
-    name: '[Gen 8] UU',
-    mod: 'gen8',
-    ruleset: [ '[Gen 8] OU' ],
-    banlist: [ 'OU', 'UUBL', 'Light Clay' ]
-  },
-  {
-    name: '[Gen 3] ZU',
-    mod: 'gen3',
-    ruleset: [ 'Standard', 'Baton Pass Stat Trap Clause', 'Swagger Clause' ],
-    banlist: [
-      'Uber',
-      'OU',
-      'UUBL',
-      'UU',
-      'NUBL',
-      'NU',
-      'PUBL',
-      'PU',
-      'ZUBL',
-      'Baton Pass + Substitute'
-    ]
-  },
+  { name: '[Gen 1] Ubers', mod: 'gen1', ruleset: [ 'Standard' ] },
+  { name: '[Gen 1] PU', mod: 'gen1', ruleset: [ '[Gen 1] NU' ], banlist: [ 'NU', 'PUBL' ] },
+  { name: '[Gen 2] ZU', mod: 'gen2', ruleset: [ '[Gen 2] PU' ], banlist: [ 'PU', 'ZUBL' ] },
   { name: '[Gen 1] ZU', mod: 'gen1', ruleset: [ '[Gen 1] PU' ], banlist: [ 'PU', 'ZUBL' ] },
   {
     name: '[Gen 8] OU',
@@ -1185,6 +1228,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     mod: 'gen8',
     ruleset: [ 'Standard', 'Dynamax Clause' ],
     banlist: [ 'AG', 'Shadow Tag', 'Baton Pass' ]
+  },
+  {
+    name: '[Gen 8] UU',
+    mod: 'gen8',
+    ruleset: [ '[Gen 8] OU' ],
+    banlist: [ 'OU', 'UUBL', 'Light Clay' ]
   },
   { name: '[Gen 8] RU', mod: 'gen8', ruleset: [ '[Gen 8] UU' ], banlist: [ 'UU', 'RUBL' ] },
   {
@@ -2186,6 +2235,23 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
+    name: '[Gen 3] ZU',
+    mod: 'gen3',
+    ruleset: [ 'Standard', 'Baton Pass Stat Trap Clause', 'Swagger Clause' ],
+    banlist: [
+      'Uber',
+      'OU',
+      'UUBL',
+      'UU',
+      'NUBL',
+      'NU',
+      'PUBL',
+      'PU',
+      'ZUBL',
+      'Baton Pass + Substitute'
+    ]
+  },
+  {
     name: '[Gen 3] Custom Game',
     mod: 'gen3',
     debug: true,
@@ -2235,7 +2301,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     banlist: [ 'NU', 'PUBL' ],
     unbanlist: [ 'Swagger' ]
   },
-  { name: '[Gen 2] ZU', mod: 'gen2', ruleset: [ '[Gen 2] PU' ], banlist: [ 'PU', 'ZUBL' ] },
   {
     name: '[Gen 2] 1v1',
     mod: 'gen2',
@@ -2274,7 +2339,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Default Level = 100'
     ]
   },
-  { name: '[Gen 1] Ubers', mod: 'gen1', ruleset: [ 'Standard' ] },
   {
     name: '[Gen 1] UU',
     mod: 'gen1',
@@ -2287,7 +2351,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ruleset: [ '[Gen 1] UU', '!APT Clause' ],
     banlist: [ 'UU', 'NUBL' ]
   },
-  { name: '[Gen 1] PU', mod: 'gen1', ruleset: [ '[Gen 1] NU' ], banlist: [ 'NU', 'PUBL' ] },
   {
     name: '[Gen 1] 1v1',
     mod: 'gen1',

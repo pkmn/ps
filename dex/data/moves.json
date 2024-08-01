@@ -2032,7 +2032,6 @@
       "inherit": true,
       "flags": {
         "protect": 1,
-        "bypasssub": 1,
         "allyanim": 1,
         "noassist": 1,
         "failcopycat": 1,
