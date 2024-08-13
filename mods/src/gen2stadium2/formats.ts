@@ -14,7 +14,7 @@ export const Formats = [
       'Stadium Sleep Clause',
       'Freeze Clause Mod',
       'Species Clause',
-      'Item Clause',
+      'Item Clause = 1',
       'Endless Battle Clause',
       'Cancel Mod',
       'Event Moves Clause',

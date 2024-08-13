@@ -225,7 +225,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	arcanine: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	poliwag: {
@@ -259,7 +259,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "NFE",
 	},
 	machamp: {
-		tier: "RU",
+		tier: "UU",
 		doublesTier: "DUU",
 	},
 	bellsprout: {
@@ -276,7 +276,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	tentacruel: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DUU",
 	},
 	geodude: {
@@ -542,7 +542,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	gyarados: {
-		tier: "RUBL",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	lapras: {
@@ -569,7 +569,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DUU",
 	},
 	espeon: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DUU",
 	},
 	umbreon: {
@@ -772,7 +772,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	ambipom: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DUU",
 	},
 	sunkern: {
@@ -1243,7 +1243,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DUU",
 	},
 	torkoal: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	spoink: {
@@ -1617,7 +1617,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	gastrodon: {
-		tier: "RU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	drifloon: {
@@ -1744,7 +1744,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DUU",
 	},
 	uxie: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DUU",
 	},
 	mesprit: {
@@ -1780,7 +1780,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DUber",
 	},
 	cresselia: {
-		tier: "RUBL",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	phione: {

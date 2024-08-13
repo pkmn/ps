@@ -564,6 +564,34 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
+    name: '[Gen 9] Triples',
+    mod: 'gen9',
+    gameType: 'triples',
+    ruleset: [ 'Standard Doubles' ],
+    banlist: [
+      'Annihilape',           'Arceus',
+      'Calyrex-Ice',          'Calyrex-Shadow',
+      'Darkrai',              'Deoxys-Attack',
+      'Dialga',               'Dialga-Origin',
+      'Eternatus',            'Flutter Mane',
+      'Giratina',             'Giratina-Origin',
+      'Groudon',              'Ho-Oh',
+      'Koraidon',             'Kyogre',
+      'Kyurem-Black',         'Kyurem-White',
+      'Lugia',                'Lunala',
+      'Magearna',             'Mewtwo',
+      'Miraidon',             'Necrozma-Dawn-Wings',
+      'Necrozma-Dusk-Mane',   'Palkia',
+      'Palkia-Origin',        'Rayquaza',
+      'Reshiram',             'Solgaleo',
+      'Terapagos',            'Urshifu',
+      'Urshifu-Rapid-Strike', 'Zacian',
+      'Zacian-Crowned',       'Zamazenta',
+      'Zamazenta-Crowned',    'Zekrom',
+      'Shadow Tag'
+    ]
+  },
+  {
     name: '[Gen 6] Pure Hackmons',
     mod: 'gen6',
     ruleset: [
@@ -728,22 +756,23 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Gravity Sleep Clause'
     ],
     banlist: [
-      'Annihilape',           'Arceus',          'Calyrex-Ice',
-      'Calyrex-Shadow',       'Dialga',          'Dialga-Origin',
-      'Eternatus',            'Genesect',        'Gengar-Mega',
-      'Giratina',             'Giratina-Origin', 'Groudon',
-      'Ho-Oh',                'Koraidon',        'Kyogre',
-      'Kyurem-White',         'Lugia',           'Lunala',
-      'Magearna',             'Melmetal',        'Metagross-Mega',
-      'Mewtwo',               'Miraidon',        'Necrozma-Dawn-Wings',
-      'Necrozma-Dusk-Mane',   'Palkia',          'Palkia-Origin',
-      'Rayquaza',             'Reshiram',        'Shedinja',
-      'Solgaleo',             'Terapagos',       'Urshifu',
-      'Urshifu-Rapid-Strike', 'Xerneas',         'Yveltal',
-      'Zacian',               'Zacian-Crowned',  'Zamazenta',
-      'Zamazenta-Crowned',    'Zekrom',          'Commander',
-      'Power Construct',      'Assist',          'Coaching',
-      'Dark Void',            'Swagger'
+      'Annihilape',         'Arceus',               'Calyrex-Ice',
+      'Calyrex-Shadow',     'Dialga',               'Dialga-Origin',
+      'Eternatus',          'Genesect',             'Gengar-Mega',
+      'Giratina',           'Giratina-Origin',      'Groudon',
+      'Ho-Oh',              'Koraidon',             'Kyogre',
+      'Kyurem-White',       'Lugia',                'Lunala',
+      'Magearna',           'Melmetal',             'Metagross-Mega',
+      'Mewtwo',             'Miraidon',             'Necrozma-Dawn-Wings',
+      'Necrozma-Dusk-Mane', 'Necrozma-Ultra',       'Palkia',
+      'Palkia-Origin',      'Rayquaza',             'Reshiram',
+      'Shedinja',           'Solgaleo',             'Terapagos',
+      'Urshifu',            'Urshifu-Rapid-Strike', 'Xerneas',
+      'Yveltal',            'Zacian',               'Zacian-Crowned',
+      'Zamazenta',          'Zamazenta-Crowned',    'Zekrom',
+      'Zygarde-Base',       'Zygarde-Complete',     'Commander',
+      'Power Construct',    'Assist',               'Coaching',
+      'Dark Void',          'Swagger'
     ]
   },
   {
@@ -1090,7 +1119,23 @@ export const Formats: import('../sim/dex-formats').FormatList = [
   { name: '[Gen 1] Ubers', mod: 'gen1', ruleset: [ 'Standard' ] },
   { name: '[Gen 1] PU', mod: 'gen1', ruleset: [ '[Gen 1] NU' ], banlist: [ 'NU', 'PUBL' ] },
   { name: '[Gen 2] ZU', mod: 'gen2', ruleset: [ '[Gen 2] PU' ], banlist: [ 'PU', 'ZUBL' ] },
-  { name: '[Gen 1] ZU', mod: 'gen1', ruleset: [ '[Gen 1] PU' ], banlist: [ 'PU', 'ZUBL' ] },
+  {
+    name: '[Gen 3] ZU',
+    mod: 'gen3',
+    ruleset: [ 'Standard', 'Sleep Moves Clause', 'Baton Pass Stat Trap Clause', 'Swagger Clause' ],
+    banlist: [
+      'Uber',
+      'OU',
+      'UUBL',
+      'UU',
+      'NUBL',
+      'NU',
+      'PUBL',
+      'PU',
+      'ZUBL',
+      'Baton Pass + Substitute'
+    ]
+  },
   {
     name: '[Gen 8] OU',
     mod: 'gen8',
@@ -2235,23 +2280,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
-    name: '[Gen 3] ZU',
-    mod: 'gen3',
-    ruleset: [ 'Standard', 'Baton Pass Stat Trap Clause', 'Swagger Clause' ],
-    banlist: [
-      'Uber',
-      'OU',
-      'UUBL',
-      'UU',
-      'NUBL',
-      'NU',
-      'PUBL',
-      'PU',
-      'ZUBL',
-      'Baton Pass + Substitute'
-    ]
-  },
-  {
     name: '[Gen 3] Custom Game',
     mod: 'gen3',
     debug: true,
@@ -2364,6 +2392,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ],
     banlist: [ 'Mew', 'Mewtwo', 'Bind', 'Clamp', 'Explosion', 'Fire Spin', 'Self-Destruct', 'Wrap' ]
   },
+  { name: '[Gen 1] ZU', mod: 'gen1', ruleset: [ '[Gen 1] PU' ], banlist: [ 'PU', 'ZUBL' ] },
   {
     name: '[Gen 1] Tradebacks OU',
     mod: 'gen1',
