@@ -18,8 +18,8 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 	flatrules: {
 		effectType: 'ValidatorRule',
 		name: 'Flat Rules',
-		desc: "The in-game Flat Rules: Adjust Level Down 50, Species Clause, Item Clause, -Mythical, -Restricted Legendary, Bring 6 Pick 3-6 depending on game type.",
-		ruleset: ['Obtainable', 'Team Preview', 'Species Clause', 'Nickname Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto', 'Cancel Mod'],
+		desc: "The in-game Flat Rules: Adjust Level Down 50, Species Clause, Item Clause = 1, -Mythical, -Restricted Legendary, Bring 6 Pick 3-6 depending on game type.",
+		ruleset: ['Obtainable', 'Team Preview', 'Species Clause', 'Nickname Clause', 'Item Clause = 1', 'Adjust Level Down = 50', 'Picked Team Size = Auto', 'Cancel Mod'],
 		banlist: ['Mythical', 'Restricted Legendary', 'Greninja-Bond'],
 	},
 	limittworestricted: {
@@ -420,6 +420,17 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 			}
 		},
 	},
+	blitz: {
+		effectType: 'Rule',
+		name: 'Blitz',
+		// THIS 100% INTENTIONALLY SAYS TEN SECONDS PER TURN
+		// IGNORE maxPerTurn. addPerTurn IS 5, TRANSLATING TO AN INCREMENT OF 10.
+		desc: "Super-fast 'Blitz' timer giving 30 second Team Preview and 10 seconds per turn.",
+		onBegin() {
+			this.add('rule', 'Blitz: Super-fast timer');
+		},
+		timer: {starting: 15, addPerTurn: 5, maxPerTurn: 15, maxFirstTurn: 40, grace: 30},
+	},
 	vgctimer: {
 		effectType: 'Rule',
 		name: 'VGC Timer',
@@ -471,21 +482,31 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		effectType: 'ValidatorRule',
 		name: 'Item Clause',
 		desc: "Prevents teams from having more than one Pok&eacute;mon with the same item",
+		hasValue: 'positive-integer',
 		onBegin() {
-			this.add('rule', 'Item Clause: Limit one of each item');
+			this.add('rule', `Item Clause: Limit ${this.ruleTable.valueRules.get('itemclause') || 1} of each item`);
+		},
+		onValidateRule(value) {
+			const num = Number(value);
+			if (num < 1 || num > this.ruleTable.maxTeamSize) {
+				throw new Error(`Item Clause must be between 1 and ${this.ruleTable.maxTeamSize}.`);
+			}
+			return value;
 		},
 		onValidateTeam(team) {
-			const itemTable = new Set<string>();
+			const itemTable = new this.dex.Multiset<string>();
 			for (const set of team) {
 				const item = this.toID(set.item);
 				if (!item) continue;
-				if (itemTable.has(item)) {
-					return [
-						`You are limited to one of each item by Item Clause.`,
-						`(You have more than one ${this.dex.items.get(item).name})`,
-					];
-				}
 				itemTable.add(item);
+			}
+			const itemLimit = Number(this.ruleTable.valueRules.get('itemclause') || 1);
+			for (const [itemid, num] of itemTable) {
+				if (num <= itemLimit) continue;
+				return [
+					`You are limited to ${itemLimit} of each item by Item Clause.`,
+					`(You have more than ${itemLimit} ${this.dex.items.get(itemid).name})`,
+				];
 			}
 		},
 	},
@@ -1366,6 +1387,22 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		// Hardcoded into effect, cannot be disabled, ties into team preview
 		onBegin() {
 			this.add('rule', 'Species Reveal Clause: Reveals a Pok\u00e9mon\'s true species in hackmons-based metagames.');
+		},
+	},
+	bestof: {
+		effectType: 'ValidatorRule',
+		name: 'Best Of',
+		desc: "Allows players to define a best-of series where the winner of the series is the winner of the majority of games.",
+		hasValue: 'positive-integer',
+		onValidateRule(value) {
+			const num = Number(value);
+			if (num > 9 || num < 3 || num % 2 !== 1) {
+				throw new Error("Series length must be an odd number between three and nine (inclusive).");
+			}
+			if (!['singles', 'doubles'].includes(this.format.gameType)) {
+				throw new Error("Only single and doubles battles can be a Best-of series.");
+			}
+			return value;
 		},
 	},
 	illusionlevelmod: {

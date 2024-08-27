@@ -3,6 +3,12 @@
 const assert = require('../assert');
 
 describe('Rulesets', function () {
+	it('all formats should have functional rulesets', function () {
+		for (const format of Dex.formats.all()) {
+			assert.doesNotThrow(() => Dex.formats.getRuleTable(format));
+		}
+	});
+
 	it('should not contain unused rules', function () {
 		const used = new Set([
 			'Crown Tundra Pokedex', 'EV Limit', 'Exact HP Mod', 'Galar Expansion Pokedex',
@@ -12,7 +18,7 @@ describe('Rulesets', function () {
 			'Sinnoh Pokedex', 'Sketch Post-Gen 7 Moves', 'Stadium Items Clause', 'Adjust Level Down',
 			'Allow AVs', 'Event Moves Clause', 'Item Clause', 'Kalos Pokedex', 'Max Total Level',
 			'Min Level', 'NC 1997 Move Legality', 'NC 2000 Move Legality', 'Old Alola Pokedex',
-			'Old Unova Pokedex', 'Stadium Sleep Clause',
+			'Old Unova Pokedex', 'Stadium Sleep Clause', 'Best Of',
 		]);
 
 		for (const format of Dex.formats.formatsListCache) {
