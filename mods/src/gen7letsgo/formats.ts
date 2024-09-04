@@ -32,6 +32,6 @@ export const Formats = [
     gameType: 'doubles',
     searchShow: false,
     ruleset: [ 'Standard Doubles', 'Sleep Clause Mod' ],
-    banlist: [ 'Mewtwo' ]
+    banlist: [ 'DUber' ]
   }
 ];

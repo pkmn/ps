@@ -22,6 +22,7 @@ import {
 import {Utils} from '../lib';
 import {toID, BasicEffect} from './dex-data';
 import {EventMethods} from './dex-conditions';
+import {SpeciesData} from './dex-species';
 import {Tags} from '../data/tags';
 
 import {Formats} from '../config/formats';
@@ -420,6 +421,7 @@ export class Format extends BasicEffect implements Readonly<BasicEffect> {
 	 declare readonly challengeShow?: boolean;
 	 declare readonly searchShow?: boolean;
 	 declare readonly bestOfDefault?: boolean;
+	 declare readonly teraPreviewDefault?: boolean;
 	 declare readonly threads?: string[];
 	 declare readonly timer?: Partial<GameTimerSettings>;
 	 declare readonly tournamentShow?: boolean;
@@ -524,6 +526,7 @@ export class DexFormats {
 			if (format.searchShow === undefined) format.searchShow = true;
 			if (format.tournamentShow === undefined) format.tournamentShow = true;
 			if (format.bestOfDefault === undefined) format.bestOfDefault = false;
+			if (format.teraPreviewDefault === undefined) format.teraPreviewDefault = false;
 			if (format.mod === undefined) format.mod = DEFAULT_MOD;
 			if (!this.dex.dexes[format.mod]) format.exists = false;
 
@@ -906,8 +909,8 @@ export class DexFormats {
 			}
 			if (table.hasOwnProperty(id)) {
 				if (matchType === 'pokemon') {
-					const species: Species = table[id] as Species;
-					if ((species.otherFormes || species.cosmeticFormes) && ruleid !== species.id + toID(species.baseForme)) {
+					const species = table[id] as SpeciesData;
+					if ((species.otherFormes || species.cosmeticFormes) && ruleid === id) {
 						matches.push('basepokemon:' + id);
 						continue;
 					}

@@ -150,11 +150,15 @@ export class LogFormatter {
     return input.replace(/[\\^$.*+?()[\]{}|]/g, '\\$&');
   }
 
+  static escapeReplace<T extends string>(input: T): T {
+    return input.replace(/\$/g, '$$$$') as T;
+  }
+
   pokemonName(pokemon: PokemonIdent) {
     if (!pokemon) return '';
     if (!pokemon.startsWith('p')) return `???pokemon:${pokemon}???`;
-    if (pokemon.charAt(3) === ':') return pokemon.slice(4).trim();
-    else if (pokemon.charAt(2) === ':') return pokemon.slice(3).trim();
+    if (pokemon.charAt(3) === ':') return LogFormatter.escapeReplace(pokemon.slice(4).trim());
+    else if (pokemon.charAt(2) === ':') return LogFormatter.escapeReplace(pokemon.slice(3).trim());
     return `???pokemon:${pokemon}???`;
   }
 
@@ -165,7 +169,7 @@ export class LogFormatter {
     const name = this.pokemonName(pokemon);
     const isNear = side === this.perspective || side === LogFormatter.allyID(side as SideID);
     const template = Text._[isNear ? 'pokemon' : 'opposingPokemon'];
-    return template.replace('[NICKNAME]', name);
+    return template.replace('[NICKNAME]', name).replace(/\$/g, '$$$$');
   }
 
   pokemonFull(pokemon: PokemonIdent, details: PokemonDetails): [string, string] {
@@ -358,13 +362,13 @@ class Handler implements Protocol.Handler<string> {
   '|player|'(args: Args['|player|']) {
     const [, side, name] = args;
     if (side === 'p1' && name) {
-      this.parser.p1 = name;
+      this.parser.p1 = LogFormatter.escapeReplace(name);
     } else if (side === 'p2' && name) {
-      this.parser.p2 = name;
+      this.parser.p2 = LogFormatter.escapeReplace(name);
     } else if (side === 'p3' && name) {
-      this.parser.p3 = name;
+      this.parser.p3 = LogFormatter.escapeReplace(name);
     } else if (side === 'p4' && name) {
-      this.parser.p4 = name;
+      this.parser.p4 = LogFormatter.escapeReplace(name);
     }
     return '';
   }

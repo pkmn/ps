@@ -9372,7 +9372,7 @@
       "target": "normal",
       "type": "Bug",
       "desc": "Fails unless it is the user's first turn on the field.",
-      "shortDesc": "Hits first. First turn out only."
+      "shortDesc": "Nearly always goes first. First turn out only."
     },
     "fishiousrend": {
       "num": 755,
