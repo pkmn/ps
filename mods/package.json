@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/mods",
-  "version": "0.9.13",
+  "version": "0.9.14",
   "description": "Support for non-standard mods to @pkmn/sim and @pkmn/dex",
   "repository": "github:pkmn/ps",
   "author": "Guangcong Luo <guangcongluo@gmail.com> (http://guangcongluo.com)",
@@ -114,11 +114,11 @@
     "build"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.9.13"
+    "@pkmn/dex-types": "^0.9.14"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.9.13",
-    "@pkmn/sim": "^0.9.13"
+    "@pkmn/dex": "^0.9.14",
+    "@pkmn/sim": "^0.9.14"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",

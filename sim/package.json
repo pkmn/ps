@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/sim",
-  "version": "0.9.13",
+  "version": "0.9.14",
   "description": "An automatically generated extraction of just the simulator portion of Pokémon Showdown",
   "repository": "github:pkmn/ps",
   "homepage": "https://psim.us",
