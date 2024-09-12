@@ -15851,6 +15851,10 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       }
     ]
   },
+  necturine: {
+    learnset: { sketch: [ '9S0' ] },
+    eventData: [ { generation: 9, level: 1, shiny: 1, moves: [ 'sketch' ] } ]
+  },
   kerfluffle: {
     learnset: { celebrate: [ '6S0' ], fly: [ '6S0' ], holdhands: [ '6S0' ], metronome: [ '6S0' ] },
     eventData: [

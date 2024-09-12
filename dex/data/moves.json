@@ -15399,22 +15399,6 @@
       "desc": "The user and the target's HP become the average of their current HP, rounded down, but not more than the maximum HP of either one.",
       "shortDesc": "Shares HP of user and target equally."
     },
-    "paleowave": {
-      "num": 0,
-      "accuracy": 100,
-      "basePower": 85,
-      "category": "Special",
-      "isNonstandard": "CAP",
-      "name": "Paleo Wave",
-      "pp": 15,
-      "priority": 0,
-      "flags": {"protect": 1, "mirror": 1},
-      "secondary": {"chance": 20, "boosts": {"atk": -1}},
-      "target": "normal",
-      "type": "Rock",
-      "desc": "Has a 20% chance to lower the target's Attack by 1 stage.",
-      "shortDesc": "20% chance to lower the target's Attack by 1."
-    },
     "paraboliccharge": {
       "num": 570,
       "accuracy": 100,
@@ -17770,22 +17754,6 @@
       "type": "Ghost",
       "desc": "No additional effect.",
       "shortDesc": "Usually goes first."
-    },
-    "shadowstrike": {
-      "num": 0,
-      "accuracy": 95,
-      "basePower": 80,
-      "category": "Physical",
-      "isNonstandard": "CAP",
-      "name": "Shadow Strike",
-      "pp": 10,
-      "priority": 0,
-      "flags": {"contact": 1, "protect": 1, "mirror": 1},
-      "secondary": {"chance": 50, "boosts": {"def": -1}},
-      "target": "normal",
-      "type": "Ghost",
-      "desc": "Has a 50% chance to lower the target's Defense by 1 stage.",
-      "shortDesc": "50% chance to lower the target's Defense by 1."
     },
     "sharpen": {
       "num": 159,
@@ -21839,6 +21807,38 @@
       "type": "Electric",
       "desc": "Has a 100% chance to raise the user's evasion by 1 stage.",
       "shortDesc": "Goes first. Raises user's evasion by 1."
+    },
+    "paleowave": {
+      "num": 0,
+      "accuracy": 100,
+      "basePower": 85,
+      "category": "Special",
+      "isNonstandard": "CAP",
+      "name": "Paleo Wave",
+      "pp": 15,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1},
+      "secondary": {"chance": 20, "boosts": {"atk": -1}},
+      "target": "normal",
+      "type": "Rock",
+      "desc": "Has a 20% chance to lower the target's Attack by 1 stage.",
+      "shortDesc": "20% chance to lower the target's Attack by 1."
+    },
+    "shadowstrike": {
+      "num": 0,
+      "accuracy": 95,
+      "basePower": 80,
+      "category": "Physical",
+      "isNonstandard": "CAP",
+      "name": "Shadow Strike",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"contact": 1, "protect": 1, "mirror": 1},
+      "secondary": {"chance": 50, "boosts": {"def": -1}},
+      "target": "normal",
+      "type": "Ghost",
+      "desc": "Has a 50% chance to lower the target's Defense by 1 stage.",
+      "shortDesc": "50% chance to lower the target's Defense by 1."
     }
   }
 }

@@ -764,7 +764,9 @@ const changes = async (where, last, now, repo) => ({
         } else if (line === '\t\t\t\t\tmovePool, moves, abilities, types, counter, species as Species, teamDetails') {
           return '\t\t\t\t\tmovePool, moves, abilities, types, counter, species, teamDetails';
         }
-        return line.replace(/Dex\./g, 'this.dex.');
+        return (line
+          .replace('values().next().value', 'values().next().value!')
+          .replace(/Dex\./g, 'this.dex.'));
       });
 
       let dataJson = '';
