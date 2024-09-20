@@ -497,28 +497,28 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     gameType: 'triples',
     ruleset: [ 'Standard Doubles', 'Evasion Abilities Clause' ],
     banlist: [
-      'Annihilape',           'Arceus',
-      'Calyrex-Ice',          'Calyrex-Shadow',
-      'Darkrai',              'Deoxys-Attack',
-      'Dialga',               'Dialga-Origin',
-      'Eternatus',            'Flutter Mane',
-      'Giratina',             'Giratina-Origin',
-      'Groudon',              'Ho-Oh',
-      'Koraidon',             'Kyogre',
-      'Kyurem-Black',         'Kyurem-White',
-      'Lugia',                'Lunala',
-      'Magearna',             'Mewtwo',
-      'Miraidon',             'Necrozma-Dawn-Wings',
-      'Necrozma-Dusk-Mane',   'Palkia',
-      'Palkia-Origin',        'Rayquaza',
-      'Reshiram',             'Solgaleo',
-      'Terapagos',            'Urshifu',
-      'Urshifu-Rapid-Strike', 'Zacian',
-      'Zacian-Crowned',       'Zamazenta',
-      'Zamazenta-Crowned',    'Zekrom',
-      'Moody',                'Shadow Tag',
-      'Bright Powder',        "King's Rock",
-      'Razor Fang'
+      'Annihilape',          'Arceus',
+      'Calyrex-Ice',         'Calyrex-Shadow',
+      'Darkrai',             'Dialga',
+      'Dialga-Origin',       'Eternatus',
+      'Flutter Mane',        'Giratina',
+      'Giratina-Origin',     'Groudon',
+      'Ho-Oh',               'Indeedee-M',
+      'Indeedee-F',          'Koraidon',
+      'Kyogre',              'Kyurem-Black',
+      'Kyurem-White',        'Lugia',
+      'Lunala',              'Magearna',
+      'Mewtwo',              'Miraidon',
+      'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
+      'Palkia',              'Palkia-Origin',
+      'Rayquaza',            'Reshiram',
+      'Solgaleo',            'Terapagos',
+      'Urshifu',             'Urshifu-Rapid-Strike',
+      'Zacian',              'Zacian-Crowned',
+      'Zamazenta',           'Zamazenta-Crowned',
+      'Zekrom',              'Moody',
+      'Shadow Tag',          'Bright Powder',
+      "King's Rock",         'Razor Fang'
     ]
   },
   {
@@ -1253,7 +1253,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     mod: 'gen4',
     gameType: 'doubles',
     ruleset: [ 'Standard', 'Evasion Abilities Clause' ],
-    banlist: [ 'AG', 'Uber', 'Soul Dew', 'Dark Void' ],
+    banlist: [ 'AG', 'Uber', 'Soul Dew', 'Dark Void', 'Thunder Wave' ],
     unbanlist: [ 'Manaphy', 'Mew', 'Salamence', 'Wobbuffet', 'Wynaut' ]
   },
   {
@@ -1261,7 +1261,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     mod: 'gen3',
     gameType: 'doubles',
     ruleset: [ 'Standard', '!Switch Priority Clause Mod' ],
-    banlist: [ 'Uber', 'Quick Claw', 'Soul Dew', 'Swagger' ],
+    banlist: [ 'Uber', 'Quick Claw', 'Soul Dew', 'Explosion', 'Self-Destruct', 'Swagger' ],
     unbanlist: [ 'Wobbuffet', 'Wynaut' ]
   },
   {
@@ -2222,12 +2222,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     mod: 'gen3',
     ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause', 'Accuracy Moves Clause' ],
     banlist: [
-      'Chansey',        'Meditite',
-      'Omanyte',        'Scyther',
-      'Wynaut',         'Zigzagoon',
-      'Deep Sea Tooth', 'Baton Pass',
-      'Dragon Rage',    'Sonic Boom',
-      'Swagger',        'Thunder Wave'
+      'Chansey',      'Meditite',
+      'Omanyte',      'Porygon',
+      'Scyther',      'Wynaut',
+      'Zigzagoon',    'Deep Sea Tooth',
+      'Baton Pass',   'Dragon Rage',
+      'Sonic Boom',   'Swagger',
+      'Thunder Wave'
     ]
   },
   {

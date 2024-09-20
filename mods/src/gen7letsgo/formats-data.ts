@@ -30,7 +30,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DOU",
 	},
 	charizardmegay: {
-		tier: "RU",
+		tier: "RUBL",
 		doublesTier: "DOU",
 	},
 	squirtle: {

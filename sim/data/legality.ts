@@ -13632,7 +13632,15 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
     ]
   },
   steenee: {
-    learnset: { doubleslap: [ '7S0' ], magicalleaf: [ '7S0' ], sweetscent: [ '7S0' ] },
+    learnset: {
+      celebrate: [ '9S1' ],
+      dazzlinggleam: [ '9S1' ],
+      doubleslap: [ '7S0' ],
+      magicalleaf: [ '7S0' ],
+      splash: [ '9S1' ],
+      sunnyday: [ '9S1' ],
+      sweetscent: [ '7S0' ]
+    },
     eventData: [
       {
         generation: 7,
@@ -13640,6 +13648,13 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         nature: 'Naive',
         abilities: [ 'leafguard' ],
         moves: [ 'magicalleaf', 'doubleslap', 'sweetscent' ],
+        pokeball: 'cherishball'
+      },
+      {
+        generation: 9,
+        level: 50,
+        abilities: [ 'leafguard' ],
+        moves: [ 'celebrate', 'sunnyday', 'splash', 'dazzlinggleam' ],
         pokeball: 'cherishball'
       }
     ]
