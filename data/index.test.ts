@@ -433,7 +433,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
 
     describe('Conditions', () => {
       it('#get', () => {
-        const gen = Gen(8);
+        const gen = Gen(9);
         expect(gen.conditions.get('')).toBeUndefined();
         expect(gen.conditions.get('foo')).toBeUndefined();
         expect(gen.conditions.get('ability:flashfire')!.name).toBe('Flash Fire');
@@ -448,7 +448,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
 
     describe('Learnsets', () => {
       it('#get', async () => {
-        expect((await Gen(8).learnsets.get('foo'))).toBeUndefined();
+        expect((await Gen(9).learnsets.get('foo'))).toBeUndefined();
         const learnset = (await Gen(1).learnsets.get('mew'))!;
         expect(learnset.effectType).toBe('Learnset');
         expect(learnset.eventOnly).toBe(true);
@@ -524,7 +524,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
 
     describe('Natures', () => {
       it('#get', () => {
-        const adamant = Gen(8).natures.get('adamant')!;
+        const adamant = Gen(9).natures.get('adamant')!;
         expect(adamant.name).toBe('Adamant');
         expect(adamant.plus).toBe('atk');
         expect(adamant.minus).toBe('spa');
@@ -534,11 +534,11 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(serious.plus).toBeUndefined();
         expect(serious.minus).toBeUndefined();
 
-        expect(Gen(8).natures.get('foo')).toBeUndefined();
+        expect(Gen(9).natures.get('foo')).toBeUndefined();
       });
 
       it('count', () => {
-        expect(Array.from(Gen(8).natures)).toHaveLength(25);
+        expect(Array.from(Gen(9).natures)).toHaveLength(25);
       });
 
       it('toString', () => {
@@ -548,9 +548,13 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
 
     describe('Types', () => {
       it('#get', () => {
-        const gen = Gen(8);
+        const gen = Gen(9);
         expect(gen.types.get('Fairy')).toBeDefined();
+        expect(gen.types.get('Stellar')).toBeDefined();
+        expect(gen.types.get('???')).toBeUndefined();
+        expect(Gen(8).types.get('Stellar')).toBeUndefined();
         expect(Gen(5).types.get('Fairy')).toBeUndefined();
+        expect(Gen(2).types.get('???')).toBeDefined();
         expect(Gen(1).types.get('steel')).toBeUndefined();
         expect(Gen(1).types.get('Ghost')!.effectiveness['Psychic']).toBe(0);
         expect(gen.types.get('Ghost')!.effectiveness['Psychic']).toBe(2);
@@ -565,7 +569,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('#canDamage', () => {
-        const gen = Gen(8);
+        const gen = Gen(9);
         expect(gen.types.canDamage('Electric', ['Ground'])).toBe(false);
         expect(gen.types.get('Electric')!.canDamage(['Ground'])).toBe(false);
         expect(gen.types.canDamage({type: 'Fire'}, 'Fire')).toBe(true);
@@ -575,7 +579,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('#totalEffectiveness', () => {
-        const gen = Gen(8);
+        const gen = Gen(9);
         expect(gen.types.totalEffectiveness('Water', ['Fire'])).toBe(2);
         expect(gen.types.totalEffectiveness({type: 'Fire'}, 'Fire')).toBe(0.5);
         expect(gen.types.totalEffectiveness('Dark', ['Ghost', 'Psychic'])).toBe(4);
@@ -625,11 +629,11 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(5).stats.calc('hp', 1, 31, 252, 100, Gen(5).natures.get('jolly')))
           .toBe(1);
         // no nature
-        expect(Gen(8).stats.calc('atk', 100, 31, 252, 100)).toBe(299);
+        expect(Gen(9).stats.calc('atk', 100, 31, 252, 100)).toBe(299);
       });
 
       it('get', () => {
-        const gen = Gen(8);
+        const gen = Gen(9);
         expect(gen.stats.get('foo')).toBeUndefined();
         expect(gen.stats.get('Atk')).toBe('atk');
         expect(gen.stats.get('Spc')).toBe('spa');
@@ -638,17 +642,17 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('display', () => {
-        const gen = Gen(8);
+        const gen = Gen(9);
         expect(gen.stats.display('foo')).toBe('foo');
         expect(gen.stats.display('Atk')).toBe('Atk');
         expect(gen.stats.display('Spc')).toBe('SpA');
         expect(gen.stats.display('SpDef')).toBe('SpD');
-        expect(Gen(8).stats.display('SAtk', true)).toBe('Special Attack');
+        expect(gen.stats.display('SAtk', true)).toBe('Special Attack');
         expect(Gen(1).stats.display('SAtk', true)).toBe('Special');
       });
 
       it('fill', () => {
-        const gen = Gen(8);
+        const gen = Gen(9);
         expect(gen.stats.fill({atk: 10, def: 12, spd: 15}, 31))
           .toEqual({hp: 31, atk: 10, def: 12, spe: 31, spa: 31, spd: 15});
         expect(gen.stats.fill({spa: 200, spe: 252}, 0))
@@ -656,7 +660,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('getHPDV', () => {
-        const stats = Gen(8).stats;
+        const stats = Gen(9).stats;
         expect(stats.getHPDV({spa: stats.toIV(15), spe: stats.toIV(15)})).toBe(15);
         expect(
           stats.getHPDV({
@@ -671,7 +675,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('iterate', () => {
-        expect(Array.from(Gen(8).stats))
+        expect(Array.from(Gen(9).stats))
           .toStrictEqual(['hp', 'atk', 'def', 'spe', 'spa', 'spd']);
       });
     });

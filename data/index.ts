@@ -422,7 +422,7 @@ export class Types {
   }
 
   get(name: string) {
-    if (name === '???') return this.unknown;
+    if (name === '???' && this.dex.gen >= 2 && this.dex.gen <= 4) return this.unknown;
     const type = this.dex.types.get(name);
     if (!this.exists(type)) return undefined;
     const cached = this.cache[type.id];
@@ -478,8 +478,8 @@ export class Type {
   constructor(type: DexType, dex: Dex, types: Types) {
     Object.assign(this, type);
     this.types = types;
-    this.category =
-      this.name === 'Fairy' ? undefined : SPECIAL.includes(this.name) ? 'Special' : 'Physical';
+    this.category = ['Fairy', 'Stellar'].includes(this.name)
+      ? undefined : SPECIAL.includes(this.name) ? 'Special' : 'Physical';
     // convert from PS's ridiculous encoding to something usable (plus damage taken -> dealt)
     this.effectiveness = {'???': 1} as {[t in TypeName]: TypeEffectiveness};
     for (const k in dex.data.Types) {
