@@ -416,8 +416,9 @@ export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData
   readonly unreleasedHidden: boolean | 'Past';
   readonly maleOnlyHidden: boolean;
   readonly changesFrom?: SpeciesName;
-  readonly tier: Tier.Singles | Tier.Other | 'Illegal';
-  readonly doublesTier: Tier.Doubles | 'Illegal';
+  readonly tier: Tier.Singles | Tier.Other;
+  readonly doublesTier: Tier.Doubles | Tier.Other;
+  readonly natDexTier: Tier.Singles | Tier.Other;
   readonly isMega?: boolean;
   readonly mother?: string;
   readonly isPrimal?: boolean;

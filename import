@@ -580,7 +580,7 @@ const DATA = {
   ],
   'aliases.js': code => [code.Aliases, 'aliases.json'],
   'conditions.js': code => [code.Conditions, 'conditions.json'],
-  'formats-data.js': code => [removeFields(code.FormatsData, ['natDexTier']), 'formats-data.json'],
+  'formats-data.js': code => [code.FormatsData, 'formats-data.json'],
   'items.js': code => [removeFields(code.Items, ['spritenum']), 'items.json'],
   'learnsets.js': code => [code.Learnsets, 'learnsets.json'],
   'moves.js': code => [removeFields(code.Moves, ['contestType']), 'moves.json'],

@@ -254,7 +254,8 @@ export class Specie implements DexSpecies {
   readonly maleOnlyHidden!: boolean;
   readonly inheritsFrom!: ID;
   readonly tier!: Tier.Singles | Tier.Other;
-  readonly doublesTier!: Tier.Doubles;
+  readonly doublesTier!: Tier.Doubles | Tier.Other;
+  readonly natDexTier!: Tier.Singles | Tier.Other;
 
   readonly changesFrom?: SpeciesName;
   readonly cosmeticFormes?: SpeciesName[];

@@ -26,6 +26,7 @@ function getString(str: any): string {
 export interface FormatData {
   tier?: string;
   doublesTier?: string;
+  natDexTier?: string;
   isNonstandard?: T.Nonstandard | null;
   inherit?: boolean;
 }
@@ -695,8 +696,9 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly unreleasedHidden: boolean | 'Past';
   readonly maleOnlyHidden: boolean;
   readonly changesFrom?: T.SpeciesName;
-  readonly tier: T.Tier.Singles | T.Tier.Other | 'Illegal';
-  readonly doublesTier: T.Tier.Doubles | 'Illegal';
+  readonly tier: T.Tier.Singles | T.Tier.Other;
+  readonly doublesTier: T.Tier.Doubles | T.Tier.Other;
+  readonly natDexTier: T.Tier.Singles | T.Tier.Other;
 
   readonly cosmeticFormes?: T.SpeciesName[];
   readonly otherFormes?: T.SpeciesName[];
@@ -740,6 +742,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     this.prevo = data.prevo || '';
     this.tier = data.tier || '';
     this.doublesTier = data.doublesTier || '';
+    this.natDexTier = data.natDexTier || '';
     this.evos = data.evos || [];
     this.nfe = !!this.evos?.length;
     this.eggGroups = data.eggGroups || [];
@@ -909,16 +912,22 @@ class DexSpecies implements T.DexTable<Species> {
             this.dex.data.FormatsData[toID(species.baseSpecies)].tier || 'Illegal';
           (species as any).doublesTier =
             this.dex.data.FormatsData[toID(species.baseSpecies)].doublesTier || 'Illegal';
+          (species as any).natDexTier =
+            this.dex.data.FormatsData[toID(species.baseSpecies)].natDexTier || 'Illegal';
         } else if (species.id.endsWith('totem')) {
           (species as any).tier =
             this.dex.data.FormatsData[species.id.slice(0, -5)].tier || 'Illegal';
           (species as any).doublesTier =
             this.dex.data.FormatsData[species.id.slice(0, -5)].doublesTier || 'Illegal';
+          (species as any).natDexTier =
+            this.dex.data.FormatsData[species.id.slice(0, -5)].natDexTier || 'Illegal';
         } else if (species.battleOnly) {
           (species as any).tier =
             this.dex.data.FormatsData[toID(species.battleOnly)].tier || 'Illegal';
           (species as any).doublesTier =
             this.dex.data.FormatsData[toID(species.battleOnly)].doublesTier || 'Illegal';
+          (species as any).natDexTier =
+            this.dex.data.FormatsData[toID(species.battleOnly)].natDexTier || 'Illegal';
         } else {
           const baseFormatsData = this.dex.data.FormatsData[toID(species.baseSpecies)];
           if (!baseFormatsData) {
@@ -926,6 +935,7 @@ class DexSpecies implements T.DexTable<Species> {
           }
           (species as any).tier = baseFormatsData.tier || 'Illegal';
           (species as any).doublesTier = baseFormatsData.doublesTier || 'Illegal';
+          (species as any).natDexTier = baseFormatsData.natDexTier || 'Illegal';
         }
       }
       if (!species.tier) species.tier = 'Illegal';
@@ -933,6 +943,7 @@ class DexSpecies implements T.DexTable<Species> {
       if (species.gen > this.dex.gen) {
         species.tier = 'Illegal';
         species.doublesTier = 'Illegal';
+        species.natDexTier = 'Illegal';
         species.isNonstandard = 'Future';
       }
       species.nfe = !!(species.evos?.length && this.get(species.evos[0]).gen <= this.dex.gen);
