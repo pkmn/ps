@@ -15957,6 +15957,24 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       }
     ]
   },
+  chuggalong: {
+    learnset: {
+      celebrate: [ '9S0' ],
+      dragondance: [ '9S0' ],
+      dragontail: [ '9S0' ],
+      sludgebomb: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 50,
+        shiny: true,
+        abilities: [ 'armortail' ],
+        moves: [ 'celebrate', 'dragontail', 'sludgebomb', 'dragondance' ],
+        pokeball: 'cherishball'
+      }
+    ]
+  },
   pokestarsmeargle: {
     eventData: [
       {

@@ -18,7 +18,9 @@ describe('Rulesets', function () {
 			'Sinnoh Pokedex', 'Sketch Post-Gen 7 Moves', 'Stadium Items Clause', 'Adjust Level Down',
 			'Allow AVs', 'Event Moves Clause', 'Item Clause', 'Kalos Pokedex', 'Max Total Level',
 			'Min Level', 'NC 1997 Move Legality', 'NC 2000 Move Legality', 'Old Alola Pokedex',
-			'Old Unova Pokedex', 'Stadium Sleep Clause', 'Best Of',
+			'Old Unova Pokedex', 'Stadium Sleep Clause', 'Best Of', 'DC Timer Bank', 'DC Timer',
+			'Timeout Auto Choose', 'Timer Accelerate', 'Timer Add Per Turn', 'Timer Grace',
+			'Timer Max First Turn', 'Timer Max Per Turn',
 		]);
 
 		for (const format of Dex.formats.formatsListCache) {

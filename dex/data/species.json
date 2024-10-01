@@ -21481,7 +21481,7 @@
       "weightkg": 25,
       "prevo": "Rockruff",
       "evoLevel": 25,
-      "evoCondition": "from a special Rockruff",
+      "evoCondition": "from a special Rockruff during the evening",
       "eggGroups": ["Field"]
     },
     "wishiwashi": {
@@ -30069,11 +30069,11 @@
         "def": 117,
         "spa": 120,
         "spd": 110,
-        "spe": 115
+        "spe": 108
       },
-      "abilities": {"0": "Armor Tail"},
+      "abilities": {"0": "Armor Tail", "1": "White Smoke", "H": "Slow Start"},
       "weightkg": 201.6,
-      "eggGroups": ["Undiscovered"],
+      "eggGroups": ["Dragon", "Mineral"],
       "gen": 9
     },
     "pokestarsmeargle": {

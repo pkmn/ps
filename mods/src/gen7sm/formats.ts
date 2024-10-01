@@ -7,16 +7,14 @@ export const Formats = [
     gameType: 'doubles',
     searchShow: false,
     bestOfDefault: true,
-    timer: {
-      starting: 900,
-      addPerTurn: 0,
-      maxPerTurn: 55,
-      maxFirstTurn: 90,
-      grace: 90,
-      timeoutAutoChoose: true,
-      dcTimerBank: false
-    },
-    ruleset: [ 'Flat Rules', 'Old Alola Pokedex', '!! Adjust Level = 50', 'Min Source Gen = 7' ],
+    ruleset: [
+      'Flat Rules',
+      'Old Alola Pokedex',
+      '!! Adjust Level = 50',
+      'Min Source Gen = 7',
+      'VGC Timer',
+      '!! Timer Starting = 900'
+    ],
     banlist: [
       'Mega',
       'Custap Berry',
