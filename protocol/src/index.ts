@@ -1764,6 +1764,7 @@ export type TournamentEnded = Protocol.TournamentEnded;
 
 export type Request = Protocol.Request;
 export namespace Request {
+  export type SideInfo = Protocol.Request.SideInfo;
   export type ActivePokemon = Protocol.Request.ActivePokemon;
   export type Pokemon = Protocol.Request.Pokemon;
 }
