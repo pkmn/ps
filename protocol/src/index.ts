@@ -382,6 +382,12 @@ export namespace Protocol {
 
     export interface ActivePokemon {
       moves: Array<{
+        name: 'Recharge';
+        id: 'recharge';
+      } | {
+        name: MoveName;
+        id: ID;
+      } | {
         name: MoveName;
         id: ID;
         pp: number;
