@@ -700,7 +700,7 @@ export class TeamValidator {
 		}
 		if (set.teraType) {
 			const type = dex.types.get(set.teraType);
-			if (!type.exists) {
+			if (!type.exists || type.isNonstandard) {
 				problems.push(`${name}'s Terastal type (${set.teraType}) is invalid.`);
 			} else {
 				set.teraType = type.name;
@@ -2582,7 +2582,7 @@ export class TeamValidator {
 					continue;
 				}
 
-				if (!species.isNonstandard) {
+				if (species.isNonstandard !== 'CAP') {
 					// HMs can't be transferred
 					if (dex.gen >= 4 && learnedGen <= 3 && [
 						'cut', 'fly', 'surf', 'strength', 'flash', 'rocksmash', 'waterfall', 'dive',
@@ -2795,6 +2795,9 @@ export class TeamValidator {
 		nextSpecies = baseSpecies;
 		let speciesCount = 0;
 		if (!tradebackEligible) {
+			if (!dex.species.getLearnsetData(nextSpecies.id).learnset) {
+				nextSpecies = dex.species.get(nextSpecies.changesFrom || nextSpecies.baseSpecies);
+			}
 			while (nextSpecies) {
 				for (let gen = nextSpecies.gen; gen <= dex.gen; gen++) {
 					/**
