@@ -185,7 +185,7 @@ export class Battle {
           const mpoke = poke.volatiles.transform?.pokemon || poke;
           mpoke.moveSlots = [];
           for (const move of active.moves) {
-            if (move.id === 'struggle') continue;
+            if (move.id === 'struggle' || !('pp' in move)) continue;
             mpoke.moveSlots.push({ppUsed: move.maxpp - move.pp, ...move});
           }
           poke.maxMoves = active.maxMoves;
