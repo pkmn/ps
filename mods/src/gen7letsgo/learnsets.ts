@@ -1,7 +1,5 @@
 import type {ModdedLearnsetDataTable} from '@pkmn/sim';
 
-/* eslint-disable max-len */
-
 export const Learnsets: ModdedLearnsetDataTable = {
 	bulbasaur: {
 		learnset: {

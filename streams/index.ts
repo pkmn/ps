@@ -723,7 +723,6 @@ export class ObjectReadStream<T> {
 		return this._destroy();
 	}
 
-	// eslint-disable-next-line no-restricted-globals
 	[Symbol.asyncIterator]() { return this; }
 	async next() {
 		if (this.buf.length) return {value: this.buf.shift() as T, done: false as const};
