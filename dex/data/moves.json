@@ -19069,7 +19069,11 @@
         "failcopycat": 1
       },
       "volatileStatus": "spotlight",
-      "condition": {"duration": 1, "onFoeRedirectTargetPriority": 2},
+      "condition": {
+        "duration": 1,
+        "noCopy": true,
+        "onFoeRedirectTargetPriority": 2
+      },
       "secondary": null,
       "target": "normal",
       "type": "Normal",

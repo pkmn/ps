@@ -518,11 +518,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Poison Heal',      'Protean',          'Pure Power',
       'Shadow Tag',       'Stakeout',         'Water Bubble',
       'Wonder Guard',     'Baton Pass',       'Belly Drum',
-      'Ceaseless Edge',   'Dire Claw',        'Electro Shot',
-      'Fillet Away',      'Imprison',         'Last Respects',
-      'Lumina Crash',     'Photon Geyser',    'Quiver Dance',
-      'Rage Fist',        'Revival Blessing', 'Shed Tail',
-      'Substitute',       'Shell Smash',      'Tail Glow'
+      'Ceaseless Edge',   'Clangorous Soul',  'Dire Claw',
+      'Electro Shot',     'Fillet Away',      'Imprison',
+      'Last Respects',    'Lumina Crash',     'No Retreat',
+      'Photon Geyser',    'Quiver Dance',     'Rage Fist',
+      'Revival Blessing', 'Shed Tail',        'Substitute',
+      'Shell Smash',      'Tail Glow'
     ]
   },
   {
@@ -787,20 +788,21 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] National Dex Ubers' ],
     banlist: [
-      'Arceus-Normal',      'Arceus-Dark',     'Arceus-Ground',
-      'Calyrex-Ice',        'Chansey',         'Deoxys-Attack',
-      'Ditto',              'Dondozo',         'Eternatus',
-      'Giratina-Origin',    'Glimmora',        'Groudon-Primal',
-      'Ho-Oh',              'Kyogre-Primal',   'Lunala',
-      'Marshadow',          'Melmetal',        'Mewtwo-Mega-Y',
-      'Necrozma-Dusk-Mane', 'Necrozma-Ultra',  'Rayquaza',
-      'Salamence-Mega',     'Smeargle',        'Yveltal',
-      'Zacian-Crowned',     'Zygarde-50%',     'Arceus-Fairy',
-      'Arceus-Ghost',       'Arceus-Water',    'Blaziken-Mega',
-      'Chi-Yu',             'Flutter Mane',    'Kyogre',
-      'Kyurem-Black',       'Shaymin-Sky',     'Zacian',
-      'Zekrom',             'Power Construct', 'Light Clay',
-      'Ultranecrozium Z',   'Last Respects'
+      'Arceus-Normal',   'Arceus-Dark',        'Arceus-Ground',
+      'Calyrex-Ice',     'Chansey',            'Deoxys-Attack',
+      'Deoxys-Speed',    'Ditto',              'Dondozo',
+      'Eternatus',       'Glimmora',           'Groudon-Primal',
+      'Ho-Oh',           'Kyogre-Primal',      'Lugia',
+      'Lunala',          'Marshadow',          'Melmetal',
+      'Mewtwo-Mega-Y',   'Necrozma-Dusk-Mane', 'Necrozma-Ultra',
+      'Salamence-Mega',  'Smeargle',           'Yveltal',
+      'Zacian-Crowned',  'Zygarde-50%',        'Arceus-Fairy',
+      'Arceus-Fire',     'Arceus-Ghost',       'Arceus-Water',
+      'Blaziken-Mega',   'Chi-Yu',             'Flutter Mane',
+      'Kyogre',          'Kyurem-Black',       'Rayquaza',
+      'Shaymin-Sky',     'Zacian',             'Zekrom',
+      'Power Construct', 'Light Clay',         'Ultranecrozium Z',
+      'Last Respects'
     ]
   },
   { name: '[Gen 9] National Dex AG', mod: 'gen9', ruleset: [ 'Standard NatDex' ] },
@@ -2323,7 +2325,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     name: '[Gen 2] PU',
     mod: 'gen2',
     ruleset: [ '[Gen 2] NU' ],
-    banlist: [ 'NU', 'PUBL' ],
+    banlist: [ 'NU', 'PUBL', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web' ],
     unbanlist: [ 'Swagger' ]
   },
   {

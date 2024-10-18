@@ -417,9 +417,13 @@ export class ModdedDex {
 		return num >>> 0;
 	}
 
-	loadDataFile(mod: string, dataType: DataType | 'Aliases', modData?: DeepPartial<ModdedDex['data']>): AnyObject {
-		if (modData) return modData[dataType] || {};
-		return (dexData as any)[mod === 'base' ? BASE_MOD : mod][dataType] || {};
+	loadDataFile(
+		mod: string,
+		dataType: DataType | 'Aliases',
+		modData?: DeepPartial<ModdedDex['data']>
+	): AnyObject | void {
+		if (modData) return modData[dataType];
+		return (dexData as any)[mod === 'base' ? BASE_MOD : mod][dataType];
 	}
 
 	includeMods(): this {
@@ -442,7 +446,10 @@ export class ModdedDex {
 		if (this.dataCache) return this.dataCache;
 		const dataCache: {[k in keyof DexTableData]?: any} = {};
 
-		const Scripts = this.loadDataFile(this.currentMod, 'Scripts', modData);
+		const Scripts = this.loadDataFile(this.currentMod, 'Scripts', modData) || {};
+		// We want to inherit most of Scripts but not this.
+		const init = Scripts.init;
+
 		this.parentMod = this.isBase ? '' : (Scripts.inherit || 'base');
 
 		let parentDex;
@@ -460,17 +467,20 @@ export class ModdedDex {
 			this.includeFormats();
 		}
 		for (const dataType of DATA_TYPES.concat('Aliases')) {
-			const BattleData = this.loadDataFile(this.currentMod, dataType, modData);
-			if (BattleData !== dataCache[dataType]) dataCache[dataType] = Object.assign(BattleData, dataCache[dataType]);
+			dataCache[dataType] = this.loadDataFile(this.currentMod, dataType, modData);
 			if (dataType === 'Rulesets' && !parentDex) {
 				for (const format of this.formats.all()) {
-					BattleData[format.id] = {...format, ruleTable: null};
+					dataCache.Rulesets[format.id] = {...format, ruleTable: null};
 				}
 			}
 		}
 		if (parentDex) {
 			for (const dataType of DATA_TYPES) {
 				const parentTypedData: any = parentDex.data[dataType];
+				if (!dataCache[dataType] && !init) {
+					dataCache[dataType] = parentTypedData;
+					continue;
+				}
 				const childTypedData = dataCache[dataType] || (dataCache[dataType] = {});
 				for (const entryId in parentTypedData) {
 					if (childTypedData[entryId] === null) {
@@ -478,13 +488,7 @@ export class ModdedDex {
 						delete childTypedData[entryId];
 					} else if (!(entryId in childTypedData)) {
 						// If it doesn't exist it's inherited from the parent data
-						if (dataType === 'Pokedex') {
-							// Pokedex entries can be modified too many different ways
-							// e.g. inheriting different formats-data/learnsets
-							childTypedData[entryId] = Utils.deepClone((parentTypedData as DexTableData['Pokedex'])[entryId]);
-						} else {
-							childTypedData[entryId] = parentTypedData[entryId];
-						}
+						childTypedData[entryId] = parentTypedData[entryId];
 					} else if (childTypedData[entryId]?.inherit) {
 						// {inherit: true} can be used to modify only parts of the parent data,
 						// instead of overwriting entirely
@@ -513,7 +517,7 @@ export class ModdedDex {
 		this.dataCache = dataCache as DexTableData;
 
 		// Execute initialization script.
-		if (Scripts.init) Scripts.init.call(this);
+		if (init) init.call(this);
 
 		return this.dataCache;
 	}
