@@ -1,6 +1,0 @@
-{
-  "extends": "@pkmn",
-  "env": {
-    "es2020": true
-  }
-}

@@ -121,8 +121,8 @@
     "@pkmn/sim": "^0.9.20"
   },
   "scripts": {
-    "lint": "eslint --cache src --ext ts",
-    "fix": "eslint --fix src --ext ts",
+    "lint": "eslint --cache src",
+    "fix": "eslint --fix src",
     "compile": "tsc -p .",
     "build": "npm run compile && node ../build src/index.ts src/*/index.ts",
     "test": "jest",
@@ -135,43 +135,6 @@
     "testPathIgnorePatterns": [
       "node_modules/",
       "build/"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "@pkmn",
-    "overrides": [
-      {
-        "files": [
-          "./src/gen1jpn/*.ts",
-          "./src/gen1stadium/*.ts",
-          "./src/gen2stadium2/*.ts",
-          "./src/gen4pt/*.ts",
-          "./src/gen5bw1/*.ts",
-          "./src/gen6xy/*.ts",
-          "./src/gen7letsgo/*.ts",
-          "./src/gen7sm/*.ts",
-          "./src/gen8bdsp/*.ts",
-          "./src/gen8dlc1/*.ts",
-          "./src/gen9predlc/*.ts",
-          "./src/gen9dlc1/*.ts"
-        ],
-        "rules": {
-          "@typescript-eslint/quotes": "off",
-          "@typescript-eslint/no-unused-vars": "off",
-          "@typescript-eslint/prefer-optional-chain": "off",
-          "@typescript-eslint/no-base-to-string": "off",
-          "max-len": "off",
-          "@stylistic/indent": [
-            "error",
-            "tab",
-            {
-              "flatTernaryExpressions": true
-            }
-          ],
-          "@stylistic/no-mixed-spaces-and-tabs": "off",
-          "@stylistic/operator-linebreak": "off"
-        }
-      }
     ]
   }
 }

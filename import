@@ -442,10 +442,6 @@ const FRAGILE = new Set([
 // because they only exist in the generated package
 const OVERRIDDEN = new Set([
   ...Array.from(FRAGILE).slice(5), // most sim/dex-*.ts have *not* been overridden
-  '.eslintcache',
-  '.eslintrc-no-types.json',
-  '.eslintrc-types.json',
-  '.eslintrc',
   '.tsbuildinfo',
   'config/formats.ts',
   'data/index.ts',

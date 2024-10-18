@@ -839,16 +839,17 @@ export class Handler implements Protocol.Handler {
         break;
       case 'eeriespell':
       case 'gmaxdepletion':
-      case 'spite':
+      case 'spite': {
         const move = this.battle.get('moves', kwArgs.move).name as MoveName;
         const pp = Number(kwArgs.number);
         poke!.rememberMove(move, isNaN(pp) ? 4 : pp);
         break;
+      }
       case 'gravity':
         poke!.removeVolatile('magnetrise' as ID);
         poke!.removeVolatile('telekinesis' as ID);
         break;
-      case 'skillswap': case 'wanderingspirit':
+      case 'skillswap': case 'wanderingspirit': {
         if (this.battle.gen.num <= 4) break;
         const pokeability = toID(kwArgs.ability) || poke2!.ability;
         const targetability = toID(kwArgs.ability2) || poke!.ability;
@@ -865,8 +866,9 @@ export class Handler implements Protocol.Handler {
           poke2!.activateAbility(targetability, true);
         }
         break;
+      }
 
-        // ability activations
+      // ability activations
       case 'electromorphosis':
       case 'windpower':
         poke!.addVolatile('charge' as ID, {duration: 'move'});
@@ -883,13 +885,14 @@ export class Handler implements Protocol.Handler {
         }
         break;
       case 'lingeringaroma':
-      case 'mummy':
+      case 'mummy': {
         if (!kwArgs.ability) break; // if Mummy activated but failed, no ability will have been sent
         const ability = this.battle.get('abilities', kwArgs.ability);
         poke2!.activateAbility(ability.name);
         if (poke) poke.activateAbility(effect.name);
         poke2!.activateAbility(effect.name, true);
         break;
+      }
 
       // item activations
       case 'leppaberry':

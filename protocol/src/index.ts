@@ -1675,7 +1675,7 @@ export namespace Protocol {
   export type BattleArgKWArgs<T extends BattleArgName> =
     Readonly< T extends BattleArgsWithKWArgName
       ? {[K in BattleArgsWithKWArgs[T]]?: BattleArgsKWArgsTypes[K] | undefined}
-      : {}>; // eslint-disable-line @typescript-eslint/ban-types
+      : {}>; // eslint-disable-line @typescript-eslint/no-empty-object-type
 
   export type BattleArgsKWArgs = {[T in BattleArgName]: BattleArgKWArgs<T>};
   export type BattleArgsKWArgName = BattleArgName;
@@ -1945,11 +1945,12 @@ export const Protocol = new class {
     const cmd = line.slice(1, index);
     if (ignoreKwArgsSimple.has(cmd)) return upgradeArgs([cmd, line.slice(index + 1)]);
     switch (cmd) {
-      case 'c': case 'chat': case 'uhtml': case 'uhtmlchange':
+      case 'c': case 'chat': case 'uhtml': case 'uhtmlchange': {
       // three parts
         const index2a = line.indexOf('|', index + 1);
         return upgradeArgs([cmd, line.slice(index + 1, index2a), line.slice(index2a + 1)]);
-      case 'c:': case 'pm':
+      }
+      case 'c:': case 'pm': {
       // four parts
         const index2b = line.indexOf('|', index + 1);
         const index3b = line.indexOf('|', index2b + 1);
@@ -1959,6 +1960,7 @@ export const Protocol = new class {
           line.slice(index2b + 1, index3b),
           line.slice(index3b + 1),
         ]);
+      }
     }
     if (noDefault) return null;
     return upgradeArgs(line.slice(1).split('|') as [string, ...string[]]);

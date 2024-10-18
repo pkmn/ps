@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-floating-promises: ["error", {ignoreVoid: true}] */
 import fs from 'fs';
 
 import {Battle, Pokemon, Side} from '@pkmn/client';

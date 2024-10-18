@@ -330,12 +330,13 @@ export class ChoiceBuilder {
   private stringChoice(choice?: Choice) {
     if (!choice) return 'pass';
     switch (choice.choiceType) {
-      case 'move':
+      case 'move': {
         const target =
         choice.targetLoc ? ` ${choice.targetLoc > 0 ? '+' : ''}${choice.targetLoc}` : '';
         const boost = `${choice.max ? ' max' : ''}${choice.mega ? ' mega' : ''}${choice.z
           ? ' zmove' : ''}${choice.tera ? ' terastallize' : ''}`;
         return `move ${choice.move}${boost}${target}`;
+      }
       case 'switch':
       case 'team':
         return `${choice.choiceType} ${choice.targetPokemon}`;

@@ -1,4 +1,0 @@
-{
-  "extends": "./.eslintrc-types.json",
-  "root": true
-}

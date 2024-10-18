@@ -21,30 +21,5 @@
     "build": "npm run compile && node ../build index.ts",
     "pretest": "npm run build",
     "test": "npm run lint"
-  },
-  "eslintConfig": {
-    "extends": "@pkmn",
-    "rules": {
-      "@typescript-eslint/no-unnecessary-type-assertion": "off",
-      "@typescript-eslint/return-await": "off",
-      "@typescript-eslint/quotes": "off",
-      "@typescript-eslint/unbound-method": "off",
-      "@typescript-eslint/no-unused-vars": "off",
-      "@typescript-eslint/member-delimiter-style": "off",
-      "@typescript-eslint/no-floating-promises": [
-        "error",
-        {
-          "ignoreVoid": true
-        }
-      ],
-      "@stylistic/indent": [
-        "error",
-        "tab",
-        {
-          "flatTernaryExpressions": true
-        }
-      ],
-      "max-len": "off"
-    }
   }
 }

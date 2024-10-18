@@ -18,8 +18,8 @@
     "@pkmn/sim": "^0.9.20"
   },
   "scripts": {
-    "lint": "eslint --cache src --ext ts",
-    "fix": "eslint --fix src --ext ts",
+    "lint": "eslint --cache src",
+    "fix": "eslint --fix src",
     "compile": "tsc -p .",
     "build": "npm run compile && node ../build src/index.ts",
     "test": "jest",
@@ -33,29 +33,5 @@
       "node_modules/",
       "build/"
     ]
-  },
-  "eslintConfig": {
-    "extends": "@pkmn",
-    "rules": {
-      "@typescript-eslint/quotes": "off",
-      "@typescript-eslint/member-delimiter-style": "off",
-      "@typescript-eslint/no-unused-vars": "off",
-      "@typescript-eslint/prefer-optional-chain": "off",
-      "@typescript-eslint/restrict-template-expressions": "off",
-      "@stylistic/indent": [
-        "error",
-        "tab",
-        {
-          "flatTernaryExpressions": true
-        }
-      ],
-      "@stylistic/no-mixed-spaces-and-tabs": "off",
-      "@stylistic/no-multiple-empty-lines": "off",
-      "@stylistic/operator-linebreak": "off",
-      "import/order": "off",
-      "max-len": "off",
-      "no-dupe-else-if": "off",
-      "no-mixed-spaces-and-tabs": "off"
-    }
   }
 }

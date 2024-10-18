@@ -114,7 +114,7 @@ describe('LogFormatter', () => {
       .toBe('\\^\\(\\[a-z\\]\\+\\|b\\)\\?\\.\\*c\\{0,3\\}&');
   });
 
-  /* eslint-disable @typescript-eslint/quotes */
+  /* eslint-disable @stylistic/quotes */
   it('escapeHTML', () => {
     expect(LogFormatter.escapeHTML(`<html>"a & b"'\\n'</html>`))
       .toBe(`&lt;html&gt;&quot;a &amp; b&quot;'\\n'&lt;/html&gt;`);

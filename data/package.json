@@ -44,11 +44,5 @@
       "^@smogon/calc/(.*)$": "<rootDir>/node_modules/@smogon/calc/dist/$1",
       "^@pkmn/mods/(.*)$": "<rootDir>/node_modules/@pkmn/mods/build/$1"
     }
-  },
-  "eslintConfig": {
-    "extends": "@pkmn",
-    "rules": {
-      "@typescript-eslint/no-base-to-string": "off"
-    }
   }
 }

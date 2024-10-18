@@ -1013,7 +1013,7 @@ class DexLearnsets {
     if (!DATA.Learnsets) {
       try {
         DATA.Learnsets = (await import('./data/learnsets.json')).default as Data<T.LearnsetData>;
-      } catch (err) {
+      } catch {
         // @ts-ignore If we're being used via a <script> tag we depend on Learnsets being required
         DATA.Learnsets = (window as any).pkmn?.learnsets as Data<T.LearnsetData>;
         if (!DATA.Learnsets) throw new Error('Learnsets have not been included!');

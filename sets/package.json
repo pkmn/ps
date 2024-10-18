@@ -19,8 +19,8 @@
     "@pkmn/types": "^4.0.0"
   },
   "scripts": {
-    "lint": "eslint --cache src --ext ts",
-    "fix": "eslint --fix src --ext ts",
+    "lint": "eslint --cache src",
+    "fix": "eslint --fix src",
     "compile": "tsc -p .",
     "build": "npm run compile && node ../build src/index.ts --minify",
     "test": "jest",

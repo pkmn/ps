@@ -5,32 +5,31 @@
   "dependencies": {
     "@pkmn/client": "file:../client",
     "@pkmn/data": "file:../data",
-    "@pkmn/eslint-config": "^8.4.0",
+    "@pkmn/eslint-config": "^9.0.0",
     "@pkmn/img": "file:../img",
     "@pkmn/protocol": "file:../protocol",
     "@pkmn/randoms": "file:../randoms",
     "@pkmn/sets": "file:../sets",
     "@pkmn/sim": "file:../sim",
     "@pkmn/view": "file:../view",
-    "@typescript-eslint/eslint-plugin": "<=7",
-    "@typescript-eslint/parser": "<=7",
     "cssnano": "^7.0.6",
-    "eslint": "<=8",
-    "eslint-plugin-import": "<=2.30.0",
+    "eslint": "^9.12.0",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jest": "^28.8.3",
     "jest": "^29.7.0",
     "minimist": "^1.2.8",
     "parcel": "^2.12.0",
     "source-map-support": "^0.5.21",
-    "typescript": "^5.6.2"
+    "typescript-eslint": "^8.10.0",
+    "typescript": "^5.6.3"
   },
   "alias": {
     "process": false,
     "buffer": false
   },
   "scripts": {
-    "lint": "eslint --cache src --ext js,ts",
-    "fix": "eslint --fix src --ext js,ts",
+    "lint": "eslint --cache src",
+    "fix": "eslint --fix src",
     "compile": "tsc -p . && node ../vendor/pokemon-showdown/build && node build-client",
     "build": "npm run compile && parcel build index.html",
     "gh-pages": "npm run compile && parcel build --public-url /ps/integration/ index.html",
@@ -51,31 +50,5 @@
       "^@pkmn/protocol/(.*)$": "<rootDir>/node_modules/@pkmn/protocol/build/$1",
       "^@pkmn/sim/(.*)$": "<rootDir>/node_modules/@pkmn/sim/build/cjs/sim/$1"
     }
-  },
-  "eslintConfig": {
-    "extends": "@pkmn",
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": ["./tsconfig.json"]
-    },
-    "root": true,
-    "overrides": [
-      {
-        "files": [
-          "**/*.ts"
-        ],
-        "rules": {
-          "@typescript-eslint/no-shadow": "off",
-          "@typescript-eslint/no-floating-promises": [
-            "error",
-            {
-              "ignoreVoid": true
-            }
-          ],
-          "@typescript-eslint/no-unused-vars": "off",
-          "@typescript-eslint/parameter-properties": "off"
-        }
-      }
-    ]
   }
 }

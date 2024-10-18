@@ -181,7 +181,6 @@ function expectOnRenameResponse(rename: Action, username: string) {
 }
 
 describe('Bundle', () => {
-  // eslint-disable-next-line jest/expect-expect
   it('usage', () => {
     {
       const window = {} as {pkmn: {login: typeof Actions}};
