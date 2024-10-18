@@ -115,7 +115,8 @@ export class ChoiceBuilder {
       if (!choice.targetLoc && this.requestLength() > 1) {
         const choosableTargets =
           ['normal', 'any', 'adjacentAlly', 'adjacentAllyOrSelf', 'adjacentFoe'];
-        if (choosableTargets.includes(this.getChosenMove(choice, this.index()).target)) {
+        const move = this.getChosenMove(choice, this.index());
+        if ('target' in move && choosableTargets.includes(move.target)) {
           this.current.move = choice.move;
           this.current.mega = choice.mega;
           this.current.ultra = choice.ultra;
