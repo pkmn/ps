@@ -1,3 +1,3 @@
 import pkmn from "@pkmn/eslint-config";
 
-export default pkmn;
+export default [...pkmn, {"files": ["build", "import"]}];
