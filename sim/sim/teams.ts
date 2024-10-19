@@ -14,7 +14,6 @@ interface TeamGeneratorFactory {
 	getTeamGenerator(format: Format | string, seed?: PRNG | PRNGSeed | null): TeamGenerator;
 }
 
-// eslint-disable-next-line no-var
 var teamGeneratorFactory: TeamGeneratorFactory | undefined;
 
 export const Teams = new class Teams {

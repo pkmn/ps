@@ -129,7 +129,6 @@ const TEXT = {
 	Default: DefaultText as DexTable<AnyObject>,
 };
 
-/* eslint-disable @typescript-eslint/array-type */
 type DeepPartial<T> = {
 	[P in keyof T]?: T[P] extends Array<infer U>
 		? Array<DeepPartial<U>>
@@ -137,7 +136,6 @@ type DeepPartial<T> = {
 			? ReadonlyArray<DeepPartial<V>>
 			: DeepPartial<T[P]>
 };
-/* eslint-enable @typescript-eslint/array-type */
 
 export type ModData = DeepPartial<ModdedDex['data']>;
 

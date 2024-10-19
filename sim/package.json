@@ -42,7 +42,9 @@
     "compile": "tsc -p .",
     "build": "node ../build",
     "test": "mocha test/main.js test/sim/*.js test/sim/**/*.js -R dot -u bdd --exit",
+    "lint": "eslint --quiet --cache",
     "prepare": "npm run build",
-    "pretest": "node ../build --cjs"
+    "pretest": "node ../build --cjs",
+    "posttest": "npm run lint"
   }
 }

@@ -13,5 +13,5 @@
     "noImplicitReturns": false,
     "tsBuildInfoFile": ".tsbuildinfo"
   },
-  "exclude": ["test", "build"]
+  "exclude": ["eslint.config.mjs", "test", "build"]
 }

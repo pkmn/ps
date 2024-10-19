@@ -442,6 +442,7 @@ const FRAGILE = new Set([
 // because they only exist in the generated package
 const OVERRIDDEN = new Set([
   ...Array.from(FRAGILE).slice(5), // most sim/dex-*.ts have *not* been overridden
+  '.eslintcache',
   '.tsbuildinfo',
   'config/formats.ts',
   'data/index.ts',
@@ -464,6 +465,7 @@ const OVERRIDDEN = new Set([
   'data/mods/gen2/legality.ts',
   'data/mods/gen6/legality.ts',
   'data/mods/gen8/legality.ts',
+  'eslint.config.mjs',
   'lib/index.ts',
   'lib/streams.ts',
   'package-lock.json', // double sigh...
@@ -690,6 +692,7 @@ const changes = async (where, last, now, repo) => ({
         let rewritten = REWRITES[file]
           ? rewrite(original, line => line in REWRITES[file] ? REWRITES[file][line] : line)
           : original;
+        rewritten = rewritten.replaceAll(/\n[^\n]*@typescript-eslint\/ban-types[^\n]*/g, '');
         if (file.startsWith('sim/dex-')) {
           rewritten = rewritten.replaceAll(/Object.freeze\((.*)\)/g, (_, $1) => $1);
         }

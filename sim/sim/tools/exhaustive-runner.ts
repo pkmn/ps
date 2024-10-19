@@ -109,7 +109,6 @@ export class ExhaustiveRunner {
 		const log = console.log;
 		const error = console.error;
 		try {
-			// eslint-disable-next-line @typescript-eslint/no-this-alias
 			const self = this;
 			console.log = (...s) => {
 				self.maybeClear();

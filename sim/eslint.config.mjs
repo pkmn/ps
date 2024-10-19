@@ -1,0 +1,40 @@
+import pkmn from "@pkmn/eslint-config";
+
+export default [...pkmn, {
+  ignores: ["eslint.config.mjs", "build"],
+}, {
+  rules: {
+    "@stylistic/array-bracket-spacing": "off",
+    "@stylistic/comma-dangle": "off",
+    "@stylistic/indent": "off",
+    "@stylistic/key-spacing": "off",
+    "@stylistic/member-delimiter-style": "off",
+    "@stylistic/no-mixed-spaces-and-tabs": "off",
+    "@stylistic/no-multi-spaces": "off",
+    "@stylistic/no-multiple-empty-lines": "off",
+    "@stylistic/object-curly-spacing": "off",
+    "@stylistic/operator-linebreak": "off",
+    "@stylistic/quotes": "off",
+    "@stylistic/spaced-comment": "off",
+    "@typescript-eslint/no-base-to-string": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-redundant-type-constituents": "off",
+    "@typescript-eslint/no-this-alias": "off",
+    "@typescript-eslint/no-unnecessary-type-assertion": "off",
+    "@typescript-eslint/no-unsafe-function-type": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/prefer-optional-chain": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/return-await": "off",
+    "@typescript-eslint/unbound-method": "off",
+    "import/order": "off",
+    "max-len": "off",
+    "no-case-declarations": "off",
+    "no-constant-binary-expression": "off",
+    "no-shadow": "off",
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "no-var": "off",
+    "sort-imports": "off",
+  }
+}];
