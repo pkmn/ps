@@ -10,7 +10,7 @@ import {
 } from './exported-global-types';
 
 import type {PokemonEventMethods, ConditionData} from './dex-conditions';
-import {BasicEffect, toID} from './dex-data';
+import {assignMissingFields, BasicEffect, toID} from './dex-data';
 import {Utils} from '../lib';
 
 interface AbilityEventMethods {
@@ -75,6 +75,7 @@ export class Ability extends BasicEffect implements Readonly<BasicEffect> {
 				this.gen = 3;
 			}
 		}
+		assignMissingFields(this, data);
 	}
 }
 

@@ -412,25 +412,25 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] Ubers' ],
     banlist: [
-      'Arceus-Normal',       'Arceus-Fairy',
-      'Arceus-Ground',       'Calyrex-Ice',
-      'Chien-Pao',           'Deoxys-Attack',
-      'Eternatus',           'Flutter Mane',
-      'Giratina-Origin',     'Glimmora',
-      'Gliscor',             'Grimmsnarl',
-      'Groudon',             'Ho-Oh',
-      'Iron Bundle',         'Iron Treads',
-      'Kingambit',           'Koraidon',
-      'Kyogre',              'Kyurem-Black',
-      'Landorus-Therian',    'Lunala',
-      'Miraidon',            'Necrozma-Dusk-Mane',
-      'Rayquaza',            'Ribombee',
-      'Skeledirge',          'Ting-Lu',
-      'Zacian-Crowned',      'Arceus-Fire',
-      'Arceus-Flying',       'Arceus-Ghost',
-      'Arceus-Steel',        'Arceus-Water',
-      'Necrozma-Dawn-Wings', 'Shaymin-Sky',
-      'Zekrom'
+      'Arceus-Normal',    'Arceus-Fairy',
+      'Arceus-Ground',    'Calyrex-Ice',
+      'Chien-Pao',        'Deoxys-Attack',
+      'Eternatus',        'Flutter Mane',
+      'Giratina-Origin',  'Glimmora',
+      'Gliscor',          'Grimmsnarl',
+      'Groudon',          'Ho-Oh',
+      'Iron Bundle',      'Iron Treads',
+      'Kingambit',        'Koraidon',
+      'Kyogre',           'Kyurem-Black',
+      'Landorus-Therian', 'Lunala',
+      'Miraidon',         'Necrozma-Dusk-Mane',
+      'Rayquaza',         'Ribombee',
+      'Skeledirge',       'Ting-Lu',
+      'Zacian-Crowned',   'Arceus-Dragon',
+      'Arceus-Fire',      'Arceus-Flying',
+      'Arceus-Ghost',     'Arceus-Steel',
+      'Arceus-Water',     'Necrozma-Dawn-Wings',
+      'Shaymin-Sky',      'Zekrom'
     ]
   },
   {
@@ -853,6 +853,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
+    name: '[Gen 6] Triples Challenge Cup',
+    mod: 'gen6',
+    team: 'randomCC',
+    gameType: 'triples',
+    ruleset: [ 'Obtainable', 'HP Percentage Mod', 'Cancel Mod' ]
+  },
+  {
     name: '[Gen 9] Monotype Random Battle',
     mod: 'gen9',
     team: 'random',
@@ -1113,36 +1120,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Freeze Clause Mod'
     ]
   },
+  { name: '[Gen 4] Ubers', mod: 'gen4', ruleset: [ 'Standard' ], banlist: [ 'AG' ] },
   {
-    name: '[Gen 3] Ubers',
-    mod: 'gen3',
-    ruleset: [ 'Standard', 'Deoxys Camouflage Clause', 'One Baton Pass Clause' ],
-    banlist: [ 'Wobbuffet + Leftovers', 'Wynaut + Leftovers', 'Baton Pass' ]
-  },
-  {
-    name: '[Gen 5] PU',
+    name: '[Gen 5] Doubles OU',
     mod: 'gen5',
-    ruleset: [ '[Gen 5] NU', 'Sleep Moves Clause' ],
-    banlist: [ 'NU', 'PUBL', 'Damp Rock' ]
-  },
-  {
-    name: '[Gen 4] ZU',
-    mod: 'gen4',
-    ruleset: [ '[Gen 4] PU' ],
-    banlist: [
-      'Ampharos',   'Armaldo',    'Bellossom', 'Dragonair',
-      'Electabuzz', 'Gabite',     'Gastrodon', 'Glaceon',
-      'Glalie',     'Golduck',    'Gorebyss',  'Hippopotas',
-      'Kadabra',    'Kingler',    'Lapras',    'Machoke',
-      'Magmar',     'Mantine',    'Marowak',   'Metang',
-      'Misdreavus', 'Monferno',   'Mr. Mime',  'Muk',
-      'Murkrow',    'Pinsir',     'Politoed',  'Purugly',
-      'Quagsire',   'Raichu',     'Rampardos', 'Rapidash',
-      'Regigigas',  'Relicanth',  'Rhydon',    'Scyther',
-      'Sneasel',    'Snover',     'Solrock',   'Tangela',
-      'Torkoal',    'Victreebel', 'Xatu',      'Walrein',
-      'Zangoose',   'Damp Rock'
-    ]
+    gameType: 'doubles',
+    ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Swagger Clause', 'Sleep Clause Mod' ],
+    banlist: [ 'DUber', 'Soul Dew', 'Dark Void', 'Gravity' ]
   },
   {
     name: '[Gen 8] OU',
@@ -1252,13 +1236,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     gameType: 'doubles',
     ruleset: [ 'Standard Doubles', 'Swagger Clause' ],
     banlist: [ 'DUber', 'Soul Dew', 'Dark Void' ]
-  },
-  {
-    name: '[Gen 5] Doubles OU',
-    mod: 'gen5',
-    gameType: 'doubles',
-    ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Swagger Clause', 'Sleep Clause Mod' ],
-    banlist: [ 'DUber', 'Soul Dew', 'Dark Void', 'Gravity' ]
   },
   {
     name: '[Gen 4] Doubles OU',
@@ -1921,6 +1898,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     banlist: [ 'RU', 'NUBL', 'Assist', 'Copycat' ]
   },
   {
+    name: '[Gen 5] PU',
+    mod: 'gen5',
+    ruleset: [ '[Gen 5] NU', 'Sleep Moves Clause' ],
+    banlist: [ 'NU', 'PUBL', 'Damp Rock' ]
+  },
+  {
     name: '[Gen 5] LC',
     mod: 'gen5',
     ruleset: [ 'Standard', 'Little Cup', 'Sleep Moves Clause' ],
@@ -2054,7 +2037,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     battle: { trunc: Math.trunc },
     ruleset: [ 'Team Preview', 'Cancel Mod' ]
   },
-  { name: '[Gen 4] Ubers', mod: 'gen4', ruleset: [ 'Standard' ], banlist: [ 'AG' ] },
   {
     name: '[Gen 4] UU',
     mod: 'gen4',
@@ -2143,6 +2125,25 @@ export const Formats: import('../sim/dex-formats').FormatList = [
   },
   { name: '[Gen 4] CAP', mod: 'gen4', ruleset: [ '[Gen 4] OU', '+CAP' ] },
   {
+    name: '[Gen 4] ZU',
+    mod: 'gen4',
+    ruleset: [ '[Gen 4] PU' ],
+    banlist: [
+      'Ampharos',   'Armaldo',    'Bellossom', 'Dragonair',
+      'Electabuzz', 'Gabite',     'Gastrodon', 'Glaceon',
+      'Glalie',     'Golduck',    'Gorebyss',  'Hippopotas',
+      'Kadabra',    'Kingler',    'Lapras',    'Machoke',
+      'Magmar',     'Mantine',    'Marowak',   'Metang',
+      'Misdreavus', 'Monferno',   'Mr. Mime',  'Muk',
+      'Murkrow',    'Pinsir',     'Politoed',  'Purugly',
+      'Quagsire',   'Raichu',     'Rampardos', 'Rapidash',
+      'Regigigas',  'Relicanth',  'Rhydon',    'Scyther',
+      'Sneasel',    'Snover',     'Solrock',   'Tangela',
+      'Torkoal',    'Victreebel', 'Xatu',      'Walrein',
+      'Zangoose',   'Damp Rock'
+    ]
+  },
+  {
     name: '[Gen 4] Custom Game',
     mod: 'gen4',
     debug: true,
@@ -2176,6 +2177,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Max Level = 9999',
       'Default Level = 100'
     ]
+  },
+  {
+    name: '[Gen 3] Ubers',
+    mod: 'gen3',
+    ruleset: [ 'Standard', 'Deoxys Camouflage Clause', 'One Baton Pass Clause' ],
+    banlist: [ 'Wobbuffet + Leftovers', 'Wynaut + Leftovers', 'Baton Pass' ]
   },
   {
     name: '[Gen 3] UU',

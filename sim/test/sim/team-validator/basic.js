@@ -85,9 +85,9 @@ describe('Team Validator', function () {
 		const team = [
 			{species: 'xerneas', ability: 'fairyaura', moves: ['snore'], ivs: {hp: 0, atk: 0, def: 0, spa: 0}, evs: {hp: 1}},
 		];
-		assert.false.legalTeam(team, 'gen8anythinggoes');
+		assert.false.legalTeam(team, 'gen9anythinggoes');
 
-		assert.legalTeam(team, 'gen8purehackmons');
+		assert.legalTeam(team, 'gen9purehackmons');
 	});
 
 	it('should reject non-existent natures', function () {
@@ -192,7 +192,7 @@ describe('Team Validator', function () {
 		const team = [
 			{species: 'charizard', ability: 'blaze', moves: ['gmaxwildfire'], evs: {hp: 1}, gigantamax: true},
 		];
-		assert.false.legalTeam(team, 'gen8anythinggoes');
+		assert.false.legalTeam(team, 'gen9anythinggoes');
 		assert.false.legalTeam(team, 'gen8customgame@@@-nonexistent');
 	});
 
@@ -210,7 +210,7 @@ describe('Team Validator', function () {
 		];
 		assert.false.legalTeam(team, 'gen8anythinggoes');
 
-		assert.legalTeam(team, 'gen8purehackmons');
+		assert.legalTeam(team, 'gen9purehackmons');
 	});
 
 	it('should accept VC moves only with Hidden ability and correct IVs', function () {

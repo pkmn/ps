@@ -4455,7 +4455,8 @@
       "num": 1785,
       "gen": 8,
       "isPokeball": true,
-      "isNonstandard": "Unobtainable"
+      "isNonstandard": "Unobtainable",
+      "shortDesc": "Placeholder if caught in Poke Ball not in current game."
     },
     "strawberrysweet": {
       "name": "Strawberry Sweet",

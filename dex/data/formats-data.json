@@ -6583,7 +6583,7 @@
     "shellder": {"tier": "LC"},
     "cloyster": {"tier": "NUBL", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "gastly": {"tier": "NFE"},
-    "haunter": {"tier": "ZU", "doublesTier": "NFE", "natDexTier": "NFE"},
+    "haunter": {"tier": "NFE"},
     "gengar": {"tier": "RU", "doublesTier": "(DUU)", "natDexTier": "RUBL"},
     "gengarmega": {
       "isNonstandard": "Past",
@@ -6644,7 +6644,7 @@
     "weezing": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "weezinggalar": {"tier": "RU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "rhyhorn": {"tier": "LC"},
-    "rhydon": {"tier": "ZU", "doublesTier": "NFE", "natDexTier": "NFE"},
+    "rhydon": {"tier": "NFE"},
     "rhyperior": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "happiny": {"tier": "LC"},
     "chansey": {"tier": "RU", "doublesTier": "NFE", "natDexTier": "UU"},
@@ -6748,7 +6748,7 @@
     "glaceon": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "sylveon": {"tier": "NU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "porygon": {"tier": "NFE"},
-    "porygon2": {"tier": "ZU", "doublesTier": "DUU", "natDexTier": "NFE"},
+    "porygon2": {"tier": "NFE", "doublesTier": "DUU", "natDexTier": "NFE"},
     "porygonz": {"tier": "NU", "doublesTier": "(DUU)", "natDexTier": "RUBL"},
     "omanyte": {"isNonstandard": "Past", "tier": "Illegal", "natDexTier": "LC"},
     "omastar": {"isNonstandard": "Past", "tier": "Illegal", "natDexTier": "RU"},
@@ -6894,7 +6894,7 @@
       "natDexTier": "UU"
     },
     "sneasel": {"tier": "ZU", "doublesTier": "NFE", "natDexTier": "NFE"},
-    "sneaselhisui": {"tier": "ZU", "doublesTier": "NFE", "natDexTier": "NFE"},
+    "sneaselhisui": {"tier": "NFE"},
     "weavile": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "UUBL"},
     "sneasler": {"tier": "Uber", "doublesTier": "DUU", "natDexTier": "Uber"},
     "teddiursa": {"tier": "LC"},
@@ -6908,7 +6908,7 @@
     "slugma": {"tier": "LC"},
     "magcargo": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "swinub": {"tier": "LC"},
-    "piloswine": {"tier": "ZU", "doublesTier": "NFE", "natDexTier": "NFE"},
+    "piloswine": {"tier": "NFE"},
     "mamoswine": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "UU"},
     "corsola": {"isNonstandard": "Past", "tier": "Illegal", "natDexTier": "RU"},
     "corsolagalar": {
@@ -6967,7 +6967,7 @@
       "natDexTier": "RU"
     },
     "torchic": {"tier": "LC"},
-    "combusken": {"tier": "ZU", "doublesTier": "NFE", "natDexTier": "NFE"},
+    "combusken": {"tier": "NFE"},
     "blaziken": {"tier": "UUBL", "doublesTier": "(DUU)", "natDexTier": "UUBL"},
     "blazikenmega": {
       "isNonstandard": "Past",
@@ -6980,7 +6980,7 @@
     "swampertmega": {
       "isNonstandard": "Past",
       "tier": "Illegal",
-      "natDexTier": "UU"
+      "natDexTier": "RU"
     },
     "poochyena": {"tier": "LC"},
     "mightyena": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
@@ -7553,7 +7553,7 @@
       "natDexTier": "RU"
     },
     "timburr": {"tier": "LC"},
-    "gurdurr": {"tier": "ZU", "doublesTier": "NFE", "natDexTier": "NFE"},
+    "gurdurr": {"tier": "NFE"},
     "conkeldurr": {"tier": "RU", "doublesTier": "(DUU)", "natDexTier": "RUBL"},
     "tympole": {"isNonstandard": "Past", "tier": "Illegal", "natDexTier": "LC"},
     "palpitoad": {
@@ -7829,7 +7829,7 @@
       "doublesTier": "(DUU)",
       "natDexTier": "UUBL"
     },
-    "thundurus": {"tier": "RU", "doublesTier": "DUU", "natDexTier": "RU"},
+    "thundurus": {"tier": "RUBL", "doublesTier": "DUU", "natDexTier": "RU"},
     "thundurustherian": {
       "tier": "UU",
       "doublesTier": "(DUU)",
@@ -8073,7 +8073,7 @@
     "crabominable": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "oricorio": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "oricoriopompom": {
-      "tier": "PUBL",
+      "tier": "NUBL",
       "doublesTier": "(DUU)",
       "natDexTier": "RU"
     },
@@ -8373,7 +8373,7 @@
     },
     "melmetalgmax": {"isNonstandard": "Past", "tier": "Illegal"},
     "grookey": {"tier": "LC"},
-    "thwackey": {"tier": "ZU", "doublesTier": "DUU", "natDexTier": "NFE"},
+    "thwackey": {"tier": "NFE"},
     "rillaboom": {"tier": "OU", "doublesTier": "DOU", "natDexTier": "OU"},
     "rillaboomgmax": {"isNonstandard": "Past", "tier": "Illegal"},
     "scorbunny": {"tier": "LC"},
@@ -8560,7 +8560,7 @@
     "crocalor": {"tier": "NFE"},
     "skeledirge": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "UU"},
     "quaxly": {"tier": "LC"},
-    "quaxwell": {"tier": "ZU", "doublesTier": "NFE", "natDexTier": "NFE"},
+    "quaxwell": {"tier": "NFE"},
     "quaquaval": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "UU"},
     "lechonk": {"tier": "LC"},
     "oinkologne": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
@@ -8614,7 +8614,7 @@
     "flamigo": {"tier": "PUBL", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "klawf": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "nacli": {"tier": "LC"},
-    "naclstack": {"tier": "ZU", "doublesTier": "NFE", "natDexTier": "NFE"},
+    "naclstack": {"tier": "NFE"},
     "garganacl": {"tier": "OU", "doublesTier": "DUU", "natDexTier": "OU"},
     "glimmet": {"tier": "LC"},
     "glimmora": {"tier": "OU", "doublesTier": "DOU", "natDexTier": "OU"},
@@ -8652,7 +8652,7 @@
     "wochien": {"tier": "PU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "chiyu": {"tier": "Uber", "doublesTier": "DOU", "natDexTier": "Uber"},
     "koraidon": {"tier": "Uber", "doublesTier": "DUber", "natDexTier": "AG"},
-    "miraidon": {"tier": "Uber", "doublesTier": "DUber", "natDexTier": "AG"},
+    "miraidon": {"tier": "AG", "doublesTier": "DUber", "natDexTier": "AG"},
     "tinkatink": {"tier": "LC"},
     "tinkatuff": {"tier": "NFE"},
     "tinkaton": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "RU"},

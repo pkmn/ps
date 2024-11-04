@@ -12681,12 +12681,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       celebrate: [ '7S3' ],
       closecombat: [ '7S2', '5S1' ],
       confusion: [ '5S0' ],
+      echoedvoice: [ '9S5' ],
       hypervoice: [ '9S4' ],
+      psybeam: [ '9S5' ],
       psychic: [ '9S4', '7S2', '5S1' ],
       quickattack: [ '5S0' ],
-      relicsong: [ '9S4', '7S3' ],
+      relicsong: [ '9S4', '9S5', '7S3' ],
       round: [ '7S3', '5S0', '5S1' ],
-      sing: [ '9S4', '7S2', '7S3' ],
+      sing: [ '9S4', '9S5', '7S2', '7S3' ],
       teeterdance: [ '5S1' ]
     },
     eventData: [
@@ -12714,7 +12716,16 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         moves: [ 'sing', 'celebrate', 'round', 'relicsong' ],
         pokeball: 'cherishball'
       },
-      { generation: 9, level: 70, moves: [ 'relicsong', 'hypervoice', 'sing', 'psychic' ] }
+      { generation: 9, level: 70, moves: [ 'relicsong', 'hypervoice', 'sing', 'psychic' ] },
+      {
+        generation: 9,
+        level: 50,
+        shiny: true,
+        nature: 'Modest',
+        ivs: { hp: 20, atk: 20, def: 20, spa: 31, spd: 31, spe: 31 },
+        moves: [ 'relicsong', 'echoedvoice', 'psybeam', 'sing' ],
+        pokeball: 'cherishball'
+      }
     ],
     eventOnly: true
   },

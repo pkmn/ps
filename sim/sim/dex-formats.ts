@@ -20,7 +20,7 @@ import {
 } from './exported-global-types';
 
 import {Utils} from '../lib';
-import {toID, BasicEffect} from './dex-data';
+import {assignMissingFields, toID, BasicEffect} from './dex-data';
 import {EventMethods} from './dex-conditions';
 import {SpeciesData} from './dex-species';
 import {Tags} from '../data/tags';
@@ -501,10 +501,9 @@ export class Format extends BasicEffect implements Readonly<BasicEffect> {
 
 	constructor(data: AnyObject) {
 		super(data);
-		data = this;
 
 		this.mod = Utils.getString(data.mod) || DEFAULT_MOD;
-		this.effectType = Utils.getString(data.effectType) as FormatEffectType || 'Format';
+		this.effectType = Utils.getString(data.effectType) as FormatEffectType || 'Condition';
 		this.debug = !!data.debug;
 		this.rated = (typeof data.rated === 'string' ? data.rated : data.rated !== false);
 		this.gameType = data.gameType || 'singles';
@@ -518,6 +517,7 @@ export class Format extends BasicEffect implements Readonly<BasicEffect> {
 		this.onBegin = data.onBegin || undefined;
 		this.noLog = !!data.noLog;
 		this.playerCount = (this.gameType === 'multi' || this.gameType === 'freeforall' ? 4 : 2);
+		assignMissingFields(this, data);
 	}
 }
 
@@ -588,7 +588,7 @@ export class DexFormats {
 	validate(name: string) {
 		const [formatName, customRulesString] = name.split('@@@', 2);
 		const format = this.get(formatName);
-		if (!format.exists) throw new Error(`Unrecognized format "${formatName}"`);
+		if (format.effectType !== 'Format') throw new Error(`Unrecognized format "${formatName}"`);
 		if (!customRulesString) return format.id;
 		const ruleTable = this.getRuleTable(format);
 		const customRules = customRulesString.split(',').map(rule => {

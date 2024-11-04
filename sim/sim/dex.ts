@@ -493,12 +493,7 @@ export class ModdedDex {
 						delete childTypedData[entryId].inherit;
 
 						// Merge parent into children entry, preserving existing childs' properties.
-						// @ts-ignore
-						for (const key in parentTypedData[entryId]) {
-							if (key in childTypedData[entryId]) continue;
-							// @ts-ignore
-							childTypedData[entryId][key] = parentTypedData[entryId][key];
-						}
+						childTypedData[entryId] = {...parentTypedData[entryId], ...childTypedData[entryId]};
 					}
 				}
 			}

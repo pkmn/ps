@@ -221,7 +221,7 @@ export const Pokedex: ModdedSpeciesDataTable = {
 		inherit: true,
 		unreleasedHidden: true,
 	},
-	lillpup: {
+	lillipup: {
 		inherit: true,
 		unreleasedHidden: true,
 	},
@@ -385,7 +385,7 @@ export const Pokedex: ModdedSpeciesDataTable = {
 		inherit: true,
 		unreleasedHidden: true,
 	},
-	lillgant: {
+	lilligant: {
 		inherit: true,
 		unreleasedHidden: true,
 	},

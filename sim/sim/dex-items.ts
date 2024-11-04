@@ -10,7 +10,7 @@ import {
 } from './exported-global-types';
 
 import type {PokemonEventMethods, ConditionData} from './dex-conditions';
-import {BasicEffect, toID} from './dex-data';
+import {assignMissingFields, BasicEffect, toID} from './dex-data';
 import {Utils} from '../lib';
 
 interface FlingData {
@@ -118,8 +118,6 @@ export class Item extends BasicEffect implements Readonly<BasicEffect> {
 
 	constructor(data: AnyObject) {
 		super(data);
-		// eslint-disable-next-line @typescript-eslint/no-this-alias
-		data = this;
 
 		this.fullname = `item: ${this.name}`;
 		this.effectType = 'Item';
@@ -163,6 +161,8 @@ export class Item extends BasicEffect implements Readonly<BasicEffect> {
 		if (this.onDrive) this.fling = {basePower: 70};
 		if (this.megaStone) this.fling = {basePower: 80};
 		if (this.onMemory) this.fling = {basePower: 50};
+
+		assignMissingFields(this, data);
 	}
 }
 
