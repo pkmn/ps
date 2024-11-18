@@ -237,9 +237,9 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('cached', () => {
-        const a = Gen(6).moves.get('Earthquake');
-        const b = Gen(6).moves.get('Earthquake');
-        const c = Gen(7).moves.get('Earthquake');
+        const a = Gen(1).moves.get('Earthquake');
+        const b = Gen(1).moves.get('Earthquake');
+        const c = Gen(2).moves.get('Earthquake');
 
         expect(b).toBe(a);
         expect(c).not.toBe(a);
