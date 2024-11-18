@@ -181,6 +181,33 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
+    name: '[Gen 9] Team Star Challenge',
+    mod: 'gen9',
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Force Select = Revavroom',
+      'Min Source Gen = 9',
+      'VGC Timer'
+    ],
+    banlist: [ 'All Pokemon' ],
+    unbanlist: [
+      'Annihilape', 'Arcanine-Base',
+      'Armarouge',  'Azumarill',
+      'Cacturne',   'Coalossal',
+      'Dachsbun',   'Dragalge',
+      'Hatterene',  'Honchkrow',
+      'Houndoom',   'Kingambit',
+      'Klefki',     'Krookodile',
+      'Lucario',    'Mabosstiff',
+      'Muk-Base',   'Passimian',
+      'Pawniard',   'Primeape',
+      'Revavroom',  'Skuntank',
+      'Torkoal',    'Toxapex',
+      'Toxicroak',  'Wigglytuff'
+    ]
+  },
+  {
     name: '[Gen 9] Custom Game',
     mod: 'gen9',
     debug: true,
@@ -238,6 +265,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Basculin-White-Striped',
       'Dunsparce',
       'Duraludon',
+      'Girafarig',
       'Gligar',
       'Murkrow',
       'Qwilfish-Hisui',
@@ -465,9 +493,10 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Acupressure',        'Aromatic Mist',        'Baton Pass',
       'Coaching',           'Court Change',         'Decorate',
       'Dragon Cheer',       'Final Gambit',         'Flatter',
-      'Floral Healing',     'Follow Me',            'Heal Pulse',
-      'Last Respects',      'Malignant Chain',      'Poison Fang',
-      'Rage Powder',        'Spicy Extract',        'Swagger',
+      'Fling',              'Floral Healing',       'Follow Me',
+      'Heal Pulse',         'Heart Swap',           'Last Respects',
+      'Malignant Chain',    'Poison Fang',          'Rage Powder',
+      'Skill Swap',         'Spicy Extract',        'Swagger',
       'Toxic',              'Toxic Spikes'
     ]
   },
@@ -2193,28 +2222,24 @@ export const Formats: import('../sim/dex-formats').FormatList = [
   {
     name: '[Gen 3] RU',
     mod: 'gen3',
-    ruleset: [ '[Gen 3] UU' ],
+    ruleset: [ 'Standard' ],
     banlist: [
-      'Altaria',    'Ampharos',   'Arcanine',
-      'Blastoise',  'Clefable',   'Cradily',
-      'Electabuzz', 'Electrode',  'Fearow',
-      'Feraligatr', 'Gligar',     'Golduck',
-      'Golem',      'Gorebyss',   'Granbull',
-      'Grumpig',    'Hitmonlee',  'Hitmontop',
-      'Jumpluff',   'Kangaskhan', 'Lanturn',
-      'Lunatone',   'Manectric',  'Misdreavus',
-      'Muk',        'Nidoking',   'Nidoqueen',
-      'Ninjask',    'Omastar',    'Pinsir',
-      'Qwilfish',   'Sandslash',  'Scyther',
-      'Slowking',   'Solrock',    'Tentacruel',
-      'Vileplume',  'Walrein',    'Xatu'
+      'Uber',
+      'OU',
+      'UUBL',
+      'UU',
+      'RUBL',
+      'Smeargle + Ingrain',
+      'Arena Trap',
+      'Baton Pass',
+      'Swagger'
     ]
   },
   {
     name: '[Gen 3] NU',
     mod: 'gen3',
     ruleset: [ 'Standard' ],
-    banlist: [ 'Uber', 'OU', 'UUBL', 'UU', 'Smeargle + Ingrain' ]
+    banlist: [ 'Uber', 'OU', 'UUBL', 'UU', 'RUBL', 'RU', 'Smeargle + Ingrain' ]
   },
   {
     name: '[Gen 3] PU',
@@ -2223,6 +2248,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     banlist: [
       'Uber', 'OU',
       'UUBL', 'UU',
+      'RUBL', 'RU',
       'NUBL', 'NU',
       'PUBL'
     ]
@@ -2277,6 +2303,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'OU',
       'UUBL',
       'UU',
+      'RUBL',
+      'RU',
       'NUBL',
       'NU',
       'PUBL',

@@ -720,6 +720,10 @@ export class Handler implements Protocol.Handler {
       poke.terastallized = type;
       poke.details = `${poke.details}, tera:${type}` as PokemonDetails;
       poke.searchid = `${poke.searchid}, tera:${type}` as PokemonSearchID;
+      if (poke.speciesForme.startsWith('Morpeko')) {
+        poke.details = poke.details.replace('Morpeko', poke.speciesForme) as PokemonDetails;
+        poke.searchid = `${poke.ident}|${poke.details}` as PokemonSearchID;
+      }
     }
   }
 

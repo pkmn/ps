@@ -171,7 +171,7 @@ function sereneGraceBenefits(move: Move) {
 }
 
 export class RandomTeams {
-	dex: ModdedDex;
+	readonly dex: ModdedDex;
 	gen: number;
 	factoryTier: string;
 	format: Format;
@@ -189,6 +189,12 @@ export class RandomTeams {
 	 * returns true to try to force the move type, false otherwise.
 	 */
 	moveEnforcementCheckers: {[k: string]: MoveEnforcementChecker};
+
+	/** Used by .getPools() */
+	private poolsCacheKey: [string | undefined, number | undefined, RuleTable | undefined, boolean] | undefined;
+	private cachedPool: number[] | undefined;
+	private cachedSpeciesPool: Species[] | undefined;
+	protected cachedStatusMoves: ID[];
 
 	constructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {
 		this.dex = dex;
@@ -258,6 +264,10 @@ export class RandomTeams {
 			),
 			Water: (movePool, moves, abilities, types, counter) => (!counter.get('Water') && !types.includes('Ground')),
 		};
+		this.poolsCacheKey = undefined;
+		this.cachedPool = undefined;
+		this.cachedSpeciesPool = undefined;
+		this.cachedStatusMoves = this.dex.moves.all().filter(move => move.category === 'Status').map(move => move.id);
 	}
 
 	setSeed(prng?: PRNG | PRNGSeed) {
@@ -501,9 +511,7 @@ export class RandomTeams {
 		}
 
 		// Develop additional move lists
-		const statusMoves = this.dex.moves.all()
-			.filter(move => move.category === 'Status')
-			.map(move => move.id);
+		const statusMoves = this.cachedStatusMoves;
 
 		// Team-based move culls
 		if (teamDetails.screens) {
@@ -1988,7 +1996,7 @@ export class RandomTeams {
 				if (this.forceTeraType) {
 					set.teraType = this.forceTeraType;
 				} else {
-					set.teraType = this.sample(this.dex.types.all()).name;
+					set.teraType = this.sample(this.dex.types.names());
 				}
 			}
 			team.push(set);
@@ -1997,19 +2005,18 @@ export class RandomTeams {
 		return team;
 	}
 
-	randomNPokemon(n: number, requiredType?: string, minSourceGen?: number, ruleTable?: RuleTable, requireMoves = false) {
-		// Picks `n` random pokemon--no repeats, even among formes
-		// Also need to either normalize for formes or select formes at random
-		// Unreleased are okay but no CAP
-		if (requiredType && !this.dex.types.get(requiredType).exists) {
-			throw new Error(`"${requiredType}" is not a valid type.`);
-		}
-
+	private getPools(requiredType?: string, minSourceGen?: number, ruleTable?: RuleTable, requireMoves = false) {
+		// Memoize pool and speciesPool because, at least during tests, they are constructed with the same parameters
+		// hundreds of times and are expensive to compute.
 		const isNotCustom = !ruleTable;
-
-		const pool: number[] = [];
+		let pool: number[] = [];
 		let speciesPool: Species[] = [];
-		if (isNotCustom) {
+		const ck = this.poolsCacheKey;
+		if (ck && this.cachedPool && this.cachedSpeciesPool &&
+			ck[0] === requiredType && ck[1] === minSourceGen && ck[2] === ruleTable && ck[3] === requireMoves) {
+			speciesPool = this.cachedSpeciesPool.slice();
+			pool = this.cachedPool.slice();
+		} else if (isNotCustom) {
 			speciesPool = [...this.dex.species.all()];
 			for (const species of speciesPool) {
 				if (species.isNonstandard && species.isNonstandard !== 'Unobtainable') continue;
@@ -2023,6 +2030,9 @@ export class RandomTeams {
 				if (num <= 0 || pool.includes(num)) continue;
 				pool.push(num);
 			}
+			this.poolsCacheKey = [requiredType, minSourceGen, ruleTable, requireMoves];
+			this.cachedPool = pool.slice();
+			this.cachedSpeciesPool = speciesPool.slice();
 		} else {
 			const EXISTENCE_TAG = ['past', 'future', 'lgpe', 'unobtainable', 'cap', 'custom', 'nonexistent'];
 			const nonexistentBanReason = ruleTable.check('nonexistent');
@@ -2067,7 +2077,23 @@ export class RandomTeams {
 				if (pool.includes(num)) continue;
 				pool.push(num);
 			}
+			this.poolsCacheKey = [requiredType, minSourceGen, ruleTable, requireMoves];
+			this.cachedPool = pool.slice();
+			this.cachedSpeciesPool = speciesPool.slice();
 		}
+		return {pool, speciesPool};
+	}
+
+	randomNPokemon(n: number, requiredType?: string, minSourceGen?: number, ruleTable?: RuleTable, requireMoves = false) {
+		// Picks `n` random pokemon--no repeats, even among formes
+		// Also need to either normalize for formes or select formes at random
+		// Unreleased are okay but no CAP
+		if (requiredType && !this.dex.types.get(requiredType).exists) {
+			throw new Error(`"${requiredType}" is not a valid type.`);
+		}
+
+		const {pool, speciesPool} = this.getPools(requiredType, minSourceGen, ruleTable, requireMoves);
+		const isNotCustom = !ruleTable;
 
 		const hasDexNumber: {[k: string]: number} = {};
 		for (let i = 0; i < n; i++) {
@@ -2344,7 +2370,7 @@ export class RandomTeams {
 				if (this.forceTeraType) {
 					set.teraType = this.forceTeraType;
 				} else {
-					set.teraType = this.sample(this.dex.types.all()).name;
+					set.teraType = this.sample(this.dex.types.names());
 				}
 			}
 			team.push(set);

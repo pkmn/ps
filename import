@@ -260,7 +260,7 @@ const RANDOMS_IMPORTS = {
     [['MoveCounter', 'RandomGen8Teams', 'TeamData'], './gen8'],
     [['Utils'], './utils'],
     [[
-      'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'StatID', 'Ability',
+      'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'StatID', 'Ability', 'ID',
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'Move', 'StatsTable', 'SparseStatsTable',
     ], '@pkmn/sim'],
   ],

@@ -4,6 +4,7 @@ import {
 	Ability,
 	AnyObject,
 	Format,
+	ID,
 	ModdedDex,
 	Move,
 	PRNG,
@@ -118,6 +119,7 @@ function sereneGraceBenefits(move: Move) {
 
 export class RandomGen7Teams extends RandomGen8Teams {
 	randomSets: {[species: string]: RandomTeamsTypes.RandomSpeciesData} = randomSetsJSON;
+	protected cachedStatusMoves: ID[];
 
 	constructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {
 		super(dex, format, prng);
@@ -160,6 +162,10 @@ export class RandomGen7Teams extends RandomGen8Teams {
 			Steel: (movePool, moves, abilities, types, counter, species) => (!counter.get('Steel') && species.baseStats.atk >= 100),
 			Water: (movePool, moves, abilities, types, counter) => !counter.get('Water'),
 		};
+		// Nature Power is Tri Attack this gen
+		this.cachedStatusMoves = this.dex.moves.all()
+			.filter(move => move.category === 'Status' && move.id !== 'naturepower')
+			.map(move => move.id);
 	}
 
 	newQueryMoves(
@@ -330,10 +336,7 @@ export class RandomGen7Teams extends RandomGen8Teams {
 
 		// Develop additional move lists
 		const badWithSetup = ['defog', 'dragontail', 'haze', 'healbell', 'nuzzle', 'pursuit', 'rapidspin', 'toxic'];
-		// Nature Power is Tri Attack this gen
-		const statusMoves = this.dex.moves.all()
-			.filter(move => move.category === 'Status' && move.id !== 'naturepower')
-			.map(move => move.id);
+		const statusMoves = this.cachedStatusMoves;
 
 		// General incompatibilities
 		const incompatiblePairs = [
