@@ -2300,6 +2300,9 @@ export class Battle {
 					return target;
 				}
 				if (target.isAlly(pokemon)) {
+					if (move.target === 'adjacentAllyOrSelf' && this.gen !== 5) {
+						return pokemon;
+					}
 					// Target is a fainted ally: attack shouldn't retarget
 					return target;
 				}
@@ -3156,6 +3159,15 @@ export class Battle {
 
 	getSide(sideid: SideID): Side {
 		return this.sides[parseInt(sideid[1]) - 1];
+	}
+
+	/**
+	 * Currently, we treat Team Preview as turn 0, but the games start counting their turns at turn 0
+	 * There is also overflow that occurs in Gen 8+ that affects moves like Wish / Future Sight
+	 * https://www.smogon.com/forums/threads/10352797
+	 */
+	getOverflowedTurnCount(): number {
+		return this.gen >= 8 ? (this.turn - 1) % 256 : this.turn - 1;
 	}
 
 	destroy() {

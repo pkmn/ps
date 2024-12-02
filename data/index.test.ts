@@ -137,13 +137,13 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       });
 
       it('cached', () => {
-        const a = Gen(6).items.get('Choice Band');
-        const b = Gen(6).items.get('Choice Band');
-        const c = Gen(7).items.get('Choice Band');
+        const a = Gen(5).items.get('Dark Gem');
+        const b = Gen(5).items.get('Dark Gem');
+        const c = Gen(6).items.get('Dark Gem');
 
         expect(b).toBe(a);
         expect(c).not.toBe(a);
-        expect(b!.name).toBe('Choice Band');
+        expect(b!.name).toBe('Dark Gem');
       });
 
       it('toString', () => {

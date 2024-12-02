@@ -1137,6 +1137,10 @@
     "waveincense": {"inherit": true, "isNonstandard": null},
     "whippeddream": {"inherit": true, "isNonstandard": null},
     "zapplate": {"inherit": true, "isNonstandard": "Past"},
+    "icyrock": {
+      "inherit": true,
+      "shortDesc": "Holder's use of Hail lasts 8 turns instead of 5."
+    },
     "utilityumbrella": {
       "inherit": true,
       "desc": "The holder ignores rain- and sun-based effects, including those of its Ability. Damage and accuracy calculations from attacks used by the holder are affected by rain and sun, but not attacks used against the holder."
@@ -1692,6 +1696,7 @@
     "clearamulet": {
       "name": "Clear Amulet",
       "fling": {"basePower": 30},
+      "onTryBoostPriority": 1,
       "num": 1882,
       "gen": 9,
       "shortDesc": "Prevents other Pokemon from lowering the holder's stat stages."
@@ -2732,7 +2737,7 @@
       "fling": {"basePower": 40},
       "num": 282,
       "gen": 4,
-      "shortDesc": "Holder's use of Hail lasts 8 turns instead of 5."
+      "shortDesc": "Holder's use of Snowscape lasts 8 turns instead of 5."
     },
     "inciniumz": {
       "name": "Incinium Z",

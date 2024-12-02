@@ -12,6 +12,7 @@ export const Formats = [
   {
     name: '[Gen 8 BDSP] OU',
     mod: 'gen8bdsp',
+    searchShow: false,
     ruleset: [ 'Standard', 'Evasion Abilities Clause' ],
     banlist: [
       'Uber',

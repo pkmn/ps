@@ -1909,6 +1909,7 @@
     },
     "guarddog": {
       "onDragOutPriority": 1,
+      "onTryBoostPriority": 2,
       "flags": {"breakable": 1},
       "name": "Guard Dog",
       "num": 275,

@@ -96,6 +96,7 @@ function verifyType(name: TypeName, gen?: Generation) {
 
 function verifyTypes(types: Protocol.Types, gen?: Generation) {
   if (!gen) return verifyName(types);
+  if (types === '???') return true;
   const [type1, type2] = types.split('/');
   return verifyType(type1 as TypeName, gen) &&
     (!type2 || verifyType(type2 as TypeName, gen));
@@ -1280,7 +1281,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   '|-item|'(args: Args['|-item|'], kwArgs: KWArgs['|-item|']) {
     if (this.gen && this.gen.num < 2) return false;
     return args.length === 3 &&
-      verifyPokemonIdent(args[1]) &&
+      (args[1] === '' || verifyPokemonIdent(args[1])) &&
       verifyItemName(args[2], this.gen) &&
       verifyKWArgs(kwArgs, [...KWARGS, 'identify'], this.gen);
   }

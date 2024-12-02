@@ -138,7 +138,7 @@
       "onBeforeMovePriority": 11,
       "onLockMove": "recharge"
     },
-    "futuremove": {"name": "futuremove", "duration": 3, "onResidualOrder": 3},
+    "futuremove": {"name": "futuremove", "onResidualOrder": 3},
     "healreplacement": {"name": "healreplacement", "onSwitchInPriority": 1},
     "stall": {"name": "stall", "duration": 2, "counterMax": 729},
     "gem": {

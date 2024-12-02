@@ -1357,7 +1357,7 @@ export namespace Protocol {
      * `POKEMON` has just switched in, and its item `ITEM` is being announced to have a long-term
      * effect (will not use `[from]`). Air Balloon is the only current user of this.
      */
-    '|-item|': readonly ['-item', PokemonIdent, ItemName];
+    '|-item|': readonly ['-item', PokemonIdent | '', ItemName];
     /**
      * `|-enditem|POKEMON|ITEM|[from]EFFECT`
      *

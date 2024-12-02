@@ -489,10 +489,24 @@ export class Handler implements Protocol.Handler {
   }
 
   '|-item|'(args: Args['|-item|'], kwArgs: KWArgs['|-item|']): void {
-    const poke = this.battle.getPokemon(args[1])!;
+    let poke = this.battle.getPokemon(args[1])!;
     const item = this.battle.get('items', args[2]);
     const fromEffect = this.battle.get('conditions', kwArgs.from);
     const ofPoke = this.battle.getPokemon(kwArgs.of);
+
+    if (!poke) {
+      if (fromEffect.id === 'frisk') {
+        const possibleTargets = ofPoke!.side.foe.active.filter(p => p !== null);
+        if (possibleTargets.length === 1) {
+          poke = possibleTargets[0]!;
+        } else {
+          ofPoke!.activateAbility('Frisk');
+          return;
+        }
+      } else {
+        throw new Error('No Pokemon in -item message');
+      }
+    }
 
     poke.item = item.id;
     poke.itemEffect = '';
