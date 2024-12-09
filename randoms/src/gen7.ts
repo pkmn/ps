@@ -1,7 +1,5 @@
 import {MoveCounter, RandomGen8Teams, TeamData} from './gen8';
-import {Utils} from './utils';
 import {
-	Ability,
 	AnyObject,
 	Format,
 	ID,

@@ -245,7 +245,7 @@ const RANDOMS_IMPORTS = {
     [[
       'PlayerOptions', 'PRNG', 'PRNGSeed', 'PokemonSet', 'StatsTable', 'StatID',
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'ModdedDex', 'Move', 'BasicEffect',
-      'RuleTable', 'Tags', 'Item', 'Ability', 'Nature', 'AnyObject', 'ID',
+      'RuleTable', 'Tags', 'Teams', 'Item', 'Ability', 'Nature', 'AnyObject', 'ID',
     ], '@pkmn/sim'],
   ],
   'data/random-battles/gen8/teams.ts': [
@@ -258,46 +258,40 @@ const RANDOMS_IMPORTS = {
   ],
   'data/random-battles/gen7/teams.ts': [
     [['MoveCounter', 'RandomGen8Teams', 'TeamData'], './gen8'],
-    [['Utils'], './utils'],
     [[
-      'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'StatID', 'Ability', 'ID',
+      'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed', 'StatID', 'ID',
       'Format', 'Species', 'RandomTeamsTypes', 'toID', 'Move', 'StatsTable', 'SparseStatsTable',
     ], '@pkmn/sim'],
   ],
   'data/random-battles/gen6/teams.ts': [
     [['RandomGen7Teams', 'ZeroAttackHPIVs', 'BattleFactorySpecies'], './gen7'],
     [['MoveCounter', 'TeamData'], './gen8'],
-    [['Utils'], './utils'],
     [[
       'ModdedDex', 'AnyObject', 'PlayerOptions', 'PRNG', 'PRNGSeed',
-      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'StatID', 'Ability',
+      'Format', 'Species', 'RandomTeamsTypes', 'toID', 'StatID',
     ], '@pkmn/sim'],
   ],
   'data/random-battles/gen5/teams.ts': [
     [['MoveCounter'], './gen8'],
     [['RandomGen6Teams'], './gen6'],
-    [['Utils'], './utils'],
     [[
       'Species', 'StatID', 'RandomTeamsTypes', 'toID',
-      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Ability',
+      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed',
     ], '@pkmn/sim'],
   ],
   'data/random-battles/gen4/teams.ts': [
     [['MoveCounter'], './gen8'],
     [['RandomGen5Teams'], './gen5'],
-    [['Utils'], './utils'],
     [[
       'Species', 'RandomTeamsTypes', 'StatID',
-      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed', 'Ability',
+      'ModdedDex', 'Format', 'PRNG', 'PRNGSeed',
     ], '@pkmn/sim'],
   ],
   'data/random-battles/gen3/teams.ts': [
     [['MoveCounter'], './gen8'],
     [['RandomGen4Teams'], './gen4'],
-    [['Utils'], './utils'],
     [[
       'ModdedDex', 'PRNG', 'PRNGSeed', 'Format', 'Species', 'RandomTeamsTypes', 'StatID',
-      'Ability',
     ], '@pkmn/sim'],
   ],
   'data/random-battles/gen2/teams.ts': [
@@ -556,7 +550,7 @@ const RANDOMS_FILES = {
   'data/random-battles/gen1/teams.ts': 'src/gen1.ts',
 };
 
-const INLINE_REQUIRE = /^(.*)require\(.*\);.*$/;
+const INLINE_REQUIRE = /^(.*)require\(.*\)(\.matchups)?;.*$/;
 const RANDOM_SETS = /^(\trandomSets:.*=) require\('\.\/sets\.json'\);(.*)/;
 const RANDOM_DOUBLES_SETS =
   /^(\trandomDoublesSets:.*=) require\('\.\/doubles-sets\.json'\);(.*)/;

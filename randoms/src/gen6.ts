@@ -1,8 +1,6 @@
 import {BattleFactorySpecies, RandomGen7Teams, ZeroAttackHPIVs} from './gen7';
 import {MoveCounter, TeamData} from './gen8';
-import {Utils} from './utils';
 import {
-	Ability,
 	AnyObject,
 	Format,
 	ModdedDex,

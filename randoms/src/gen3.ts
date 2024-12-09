@@ -1,8 +1,6 @@
 import {MoveCounter} from './gen8';
 import {RandomGen4Teams} from './gen4';
-import {Utils} from './utils';
 import {
-	Ability,
 	Format,
 	ModdedDex,
 	PRNG,

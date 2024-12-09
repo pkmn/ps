@@ -30076,6 +30076,23 @@
       "eggGroups": ["Dragon", "Mineral"],
       "gen": 9
     },
+    "shox": {
+      "num": -77,
+      "name": "Shox",
+      "types": ["Electric", "Normal"],
+      "baseStats": {
+        "hp": 136,
+        "atk": 73,
+        "def": 81,
+        "spa": 90,
+        "spd": 98,
+        "spe": 56
+      },
+      "abilities": {"0": "Electromorphosis", "1": "Sticky Hold"},
+      "weightkg": 99.9,
+      "eggGroups": ["Field"],
+      "gen": 9
+    },
     "pokestarsmeargle": {
       "num": -5000,
       "name": "Pokestar Smeargle",

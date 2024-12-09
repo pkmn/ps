@@ -287,12 +287,17 @@
     "custapberry": {"inherit": true},
     "deepseascale": {"inherit": true},
     "deepseatooth": {"inherit": true},
+    "dracoplate": {"inherit": true, "onTakeItem": true},
+    "dreadplate": {"inherit": true, "onTakeItem": true},
+    "earthplate": {"inherit": true, "onTakeItem": true},
     "fastball": {"inherit": true, "isNonstandard": null},
+    "fistplate": {"inherit": true, "onTakeItem": true},
     "flameorb": {
       "inherit": true,
       "onResidualOrder": 10,
       "onResidualSubOrder": 20
     },
+    "flameplate": {"inherit": true, "onTakeItem": true},
     "focussash": {
       "inherit": true,
       "condition": {"duration": 1},
@@ -303,10 +308,13 @@
       "shortDesc": "Can only be held by Giratina. Its Ghost- & Dragon-type attacks have 1.2x power."
     },
     "heavyball": {"inherit": true, "isNonstandard": null},
+    "icicleplate": {"inherit": true, "onTakeItem": true},
+    "insectplate": {"inherit": true, "onTakeItem": true},
     "ironball": {
       "inherit": true,
       "shortDesc": "Holder's Speed is halved and it becomes grounded."
     },
+    "ironplate": {"inherit": true, "onTakeItem": true},
     "kingsrock": {"inherit": true},
     "laxincense": {"inherit": true, "onModifyAccuracyPriority": 5},
     "leftovers": {
@@ -324,6 +332,7 @@
     "luckypunch": {"inherit": true},
     "lureball": {"inherit": true, "isNonstandard": null},
     "lustrousorb": {"inherit": true},
+    "meadowplate": {"inherit": true, "onTakeItem": true},
     "mentalherb": {
       "inherit": true,
       "fling": {"basePower": 10},
@@ -338,8 +347,12 @@
       "inherit": true,
       "condition": {"duration": 2, "onSourceModifyAccuracyPriority": 3}
     },
+    "mindplate": {"inherit": true, "onTakeItem": true},
     "moonball": {"inherit": true, "isNonstandard": null},
     "razorfang": {"inherit": true},
+    "skyplate": {"inherit": true, "onTakeItem": true},
+    "splashplate": {"inherit": true, "onTakeItem": true},
+    "spookyplate": {"inherit": true, "onTakeItem": true},
     "sportball": {"inherit": true, "isNonstandard": null},
     "stick": {"inherit": true},
     "stickybarb": {
@@ -347,13 +360,16 @@
       "onResidualOrder": 10,
       "onResidualSubOrder": 20
     },
+    "stoneplate": {"inherit": true, "onTakeItem": true},
     "thickclub": {"inherit": true},
     "toxicorb": {
       "inherit": true,
       "onResidualOrder": 10,
       "onResidualSubOrder": 20
     },
+    "toxicplate": {"inherit": true, "onTakeItem": true},
     "widelens": {"inherit": true, "onSourceModifyAccuracyPriority": 4},
+    "zapplate": {"inherit": true, "onTakeItem": true},
     "zoomlens": {"inherit": true, "onSourceModifyAccuracyPriority": 4}
   },
   "5": {
@@ -1153,7 +1169,7 @@
       "ignoreKlutz": true,
       "num": 1881,
       "gen": 9,
-      "shortDesc": "Holder's Ability cannot be changed by any effect."
+      "shortDesc": "Holder's Ability cannot be changed, suppressed, or ignored by any effect."
     },
     "abomasite": {
       "name": "Abomasite",
@@ -2994,6 +3010,7 @@
       "fling": {"basePower": 30},
       "num": 1886,
       "gen": 9,
+      "desc": "The holder's moves that normally hit 2 to 5 times instead hit 4 or 5 times. If the first hit is successful, the holder's use of Triple Kick or Triple Axel hits 3 times, and Population Bomb hits 4 to 10 times, at random.",
       "shortDesc": "Holder's moves that hit 2-5 times hit 4-5 times; Population Bomb hits 4-10 times."
     },
     "lopunnite": {

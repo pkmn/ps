@@ -7313,7 +7313,7 @@
       "doublesTier": "(DUU)",
       "natDexTier": "RUBL"
     },
-    "deoxysspeed": {"tier": "OU", "doublesTier": "(DUU)", "natDexTier": "Uber"},
+    "deoxysspeed": {"tier": "OU", "doublesTier": "(DUU)", "natDexTier": "(OU)"},
     "turtwig": {"tier": "LC"},
     "grotle": {"tier": "NFE"},
     "torterra": {"tier": "NU", "doublesTier": "(DUU)", "natDexTier": "RU"},
@@ -8784,6 +8784,7 @@
     "hemogoblin": {"isNonstandard": "CAP", "tier": "CAP"},
     "cresceidon": {"isNonstandard": "CAP", "tier": "CAP"},
     "chuggalong": {"isNonstandard": "CAP", "tier": "CAP"},
+    "shox": {"isNonstandard": "CAP", "tier": "CAP"},
     "pokestarsmeargle": {"isNonstandard": "Custom", "tier": "Illegal"},
     "pokestarufo": {"isNonstandard": "Custom", "tier": "Illegal"},
     "pokestarufo2": {"isNonstandard": "Custom", "tier": "Illegal"},
