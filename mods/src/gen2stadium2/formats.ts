@@ -4,6 +4,7 @@ export const Formats = [
   {
     name: '[Gen 2] NC 2000',
     mod: 'gen2stadium2',
+    bestOfDefault: true,
     searchShow: false,
     ruleset: [
       'Picked Team Size = 3',
@@ -19,8 +20,7 @@ export const Formats = [
       'Cancel Mod',
       'Event Moves Clause',
       'Nickname Clause',
-      'Team Preview',
-      'NC 2000 Move Legality'
+      'Team Preview'
     ],
     banlist: [ 'Uber' ]
   },

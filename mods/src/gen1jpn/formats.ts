@@ -12,6 +12,7 @@ export const Formats = [
   {
     name: '[Gen 1] NC 1997',
     mod: 'gen1jpn',
+    bestOfDefault: true,
     searchShow: false,
     ruleset: [
       'Picked Team Size = 3',

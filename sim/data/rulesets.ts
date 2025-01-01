@@ -1213,7 +1213,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 			}
 		},
 		onTeamPreview() {
-			this.showOpenTeamSheets(this.rated === true);
+			this.showOpenTeamSheets();
 		},
 	},
 	eventmovesclause: {

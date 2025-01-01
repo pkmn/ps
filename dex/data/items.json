@@ -4210,7 +4210,7 @@
       "onTrapPokemonPriority": -10,
       "num": 295,
       "gen": 4,
-      "shortDesc": "Holder may switch out even when trapped by another Pokemon, or by Ingrain."
+      "shortDesc": "Holder cannot be prevented from choosing to switch out by any effect."
     },
     "shellbell": {
       "name": "Shell Bell",
