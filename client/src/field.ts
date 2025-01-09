@@ -87,8 +87,9 @@ export class Field {
       }
       return;
     }
-    this.weather = id ? WEATHERS[id] : undefined;
-    if (this.weather) {
+
+    if (id) {
+      this.weather = WEATHERS[id];
       this.weatherState.id = toID(this.weather);
       const isExtremeWeather = EXTREME_WEATHER.includes(this.weather);
       if (poke) {
@@ -102,6 +103,9 @@ export class Field {
         this.weatherState.maxDuration = this.battle.gen.num <= 3 ? 5 : 8;
         this.weatherState.minDuration = this.battle.gen.num <= 3 ? 0 : 5;
       }
+    } else {
+      this.weather = undefined;
+      this.weatherState = {id: '', minDuration: 0, maxDuration: 0};
     }
   }
 
