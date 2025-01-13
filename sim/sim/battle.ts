@@ -238,7 +238,7 @@ export class Battle {
 			(format.playerCount > 2 || this.gameType === 'doubles') ? 2 :
 			1;
 		this.prng = options.prng || new PRNG(options.seed || undefined);
-		this.prngSeed = this.prng.startingSeed.slice() as PRNGSeed;
+		this.prngSeed = this.prng.startingSeed;
 		this.rated = options.rated || !!options.rated;
 		this.reportExactHP = !!format.debug;
 		this.reportPercentages = false;
@@ -289,7 +289,7 @@ export class Battle {
 		this.send = options.send || (() => {});
 
 		const inputOptions: {formatid: ID, seed: PRNGSeed, rated?: string | true} = {
-			formatid: options.formatid, seed: this.prng.seed,
+			formatid: options.formatid, seed: this.prngSeed,
 		};
 		if (this.rated) inputOptions.rated = this.rated;
 		if (typeof __version !== 'undefined') {
@@ -356,7 +356,7 @@ export class Battle {
 	}
 
 	random(m?: number, n?: number) {
-		return this.prng.next(m, n);
+		return this.prng.random(m, n);
 	}
 
 	randomChance(numerator: number, denominator: number) {
@@ -369,7 +369,7 @@ export class Battle {
 	}
 
 	/** Note that passing `undefined` resets to the starting seed, but `null` will roll a new seed */
-	resetRNG(seed: PRNGSeed | null = this.prng.startingSeed) {
+	resetRNG(seed: PRNGSeed | null = this.prngSeed) {
 		this.prng = new PRNG(seed);
 		this.add('message', "The battle's RNG was reset.");
 	}
@@ -2059,13 +2059,15 @@ export class Battle {
 			this.lastDamage = damage;
 			if (target.volatiles['substitute']) {
 				const hint = "In Gen 1, if a Pokemon with a Substitute hurts itself due to confusion or Jump Kick/Hi Jump Kick recoil and the target";
-				if (source?.volatiles['substitute']) {
-					source.volatiles['substitute'].hp -= damage;
-					if (source.volatiles['substitute'].hp <= 0) {
-						source.removeVolatile('substitute');
-						source.subFainted = true;
+				// if the move was a self-targeting move, the source is the same as the target. We need to check the opposing substitute
+				const foe = target.side.foe.active[0];
+				if (foe?.volatiles['substitute']) {
+					foe.volatiles['substitute'].hp -= damage;
+					if (foe.volatiles['substitute'].hp <= 0) {
+						foe.removeVolatile('substitute');
+						foe.subFainted = true;
 					} else {
-						this.add('-activate', source, 'Substitute', '[damage]');
+						this.add('-activate', foe, 'Substitute', '[damage]');
 					}
 					this.hint(hint + " has a Substitute, the target's Substitute takes the damage.");
 					return damage;

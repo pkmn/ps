@@ -475,7 +475,7 @@ export class BattleActions {
 
 		let movename = move.name;
 		if (move.id === 'hiddenpower') movename = 'Hidden Power';
-		if (sourceEffect) attrs += `|[from]${sourceEffect.fullname}`;
+		if (sourceEffect) attrs += `|[from] ${sourceEffect.fullname}`;
 		if (zMove && move.isZ === true) {
 			attrs = '|[anim]' + movename + attrs;
 			movename = 'Z-' + movename;
@@ -1680,10 +1680,12 @@ export class BattleActions {
 			basePower = 0;
 		}
 
+		const dexMove = this.dex.moves.get(move.id);
 		if (
-			basePower < 60 && source.getTypes(true).includes(move.type) && source.terastallized && move.priority <= 0 &&
+			basePower < 60 && source.getTypes(true).includes(move.type) && source.terastallized &&
+			dexMove.priority <= 0 && !dexMove.multihit &&
 			// Hard move.basePower check for moves like Dragon Energy that have variable BP
-			!move.multihit && !((move.basePower === 0 || move.basePower === 150) && move.basePowerCallback)
+			!((move.basePower === 0 || move.basePower === 150) && move.basePowerCallback)
 		) {
 			basePower = 60;
 		}

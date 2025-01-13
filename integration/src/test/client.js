@@ -65,7 +65,7 @@ class Runner {
   async runGame(output) {
     const streams = sim.BattleStreams.getPlayerStreams(new sim.BattleStreams.BattleStream());
 
-    const spec = {formatid: this.format, seed: this.prng.seed};
+    const spec = {formatid: this.format, seed: this.prng.getSeed()};
     const p1spec = {name: 'Bot 1', ...this.p1options};
     const p2spec = {name: 'Bot 2', ...this.p2options};
 
@@ -137,10 +137,10 @@ class Runner {
   // NOTE: advances this.prng's seed by 4.
   newSeed() {
     return [
-      Math.floor(this.prng.next() * 0x10000),
-      Math.floor(this.prng.next() * 0x10000),
-      Math.floor(this.prng.next() * 0x10000),
-      Math.floor(this.prng.next() * 0x10000),
+      Math.floor(this.prng.random() * 0x10000),
+      Math.floor(this.prng.random() * 0x10000),
+      Math.floor(this.prng.random() * 0x10000),
+      Math.floor(this.prng.random() * 0x10000),
     ];
   }
 }

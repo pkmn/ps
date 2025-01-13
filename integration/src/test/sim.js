@@ -51,7 +51,7 @@ class MultiRandomRunner {
         games = [];
       }
 
-      const seed = this.prng.seed;
+      const seed = this.prng.getSeed();
       const game = new Runner(this.gens, Object.assign({format}, this.options)).run().catch(err => {
         failures++;
         console.error(
@@ -126,7 +126,7 @@ class Runner {
     const gen = this.gens.get(+format[3]);
     const formatid =
       format.slice(0, 4) + (format.includes('doubles') ? 'doublescustomgame' : 'customgame');
-    const spec = {formatid, seed: this.prng.seed};
+    const spec = {formatid, seed: this.prng.getSeed()};
 
     const teamSeed1 = this.newSeed();
     const teamSeed2 = this.newSeed();
@@ -160,6 +160,7 @@ class Runner {
 
     const psStart = psStreams.omniscient.write(start);
     const pkmnStart = pkmnStreams.omniscient.write(start);
+
     const streams = new AsyncIterableStreams(psStreams.omniscient, pkmnStreams.omniscient);
     const verifier = new Verifier(gen, true);
 
@@ -184,10 +185,10 @@ class Runner {
   // NOTE: advances this.prng's seed by 4.
   newSeed() {
     return [
-      Math.floor(this.prng.next() * 0x10000),
-      Math.floor(this.prng.next() * 0x10000),
-      Math.floor(this.prng.next() * 0x10000),
-      Math.floor(this.prng.next() * 0x10000),
+      Math.floor(this.prng.random() * 0x10000),
+      Math.floor(this.prng.random() * 0x10000),
+      Math.floor(this.prng.random() * 0x10000),
+      Math.floor(this.prng.random() * 0x10000),
     ];
   }
 }

@@ -1681,6 +1681,10 @@
       "flags": {"metronome": 1},
       "condition": {"onResidualOrder": 10, "onResidualSubOrder": 2}
     },
+    "assist": {
+      "inherit": true,
+      "desc": "A random move among those known by the user's party members is selected for use. Does not select Assist, Chatter, Copycat, Counter, Covet, Destiny Bond, Detect, Endure, Feint, Focus Punch, Follow Me, Helping Hand, Me First, Metronome, Mimic, Mirror Coat, Mirror Move, Protect, Sketch, Sleep Talk, Snatch, Struggle, Switcheroo, Thief, or Trick."
+    },
     "beatup": {
       "inherit": true,
       "basePower": 10,
@@ -1744,6 +1748,10 @@
       "inherit": true,
       "flags": {"metronome": 1},
       "desc": "The user's type changes to match the original type of one of its known moves besides this move and Curse, at random, but not either of its current types. Fails if the user cannot change its type, or if this move would only be able to select one of the user's current types."
+    },
+    "copycat": {
+      "inherit": true,
+      "desc": "The user uses the last move used by any Pokemon, including itself. Fails if no move has been used, or if the last move used was Assist, Chatter, Copycat, Counter, Covet, Destiny Bond, Detect, Endure, Feint, Focus Punch, Follow Me, Helping Hand, Me First, Metronome, Mimic, Mirror Coat, Mirror Move, Protect, Sketch, Sleep Talk, Snatch, Struggle, Switcheroo, Thief, or Trick."
     },
     "cottonspore": {"inherit": true, "accuracy": 85},
     "covet": {
@@ -2405,10 +2413,6 @@
       "inherit": true,
       "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the target has a Focus Sash and had full HP when this move started, it will not be knocked out regardless of the number of hits."
     },
-    "assist": {
-      "inherit": true,
-      "desc": "A random move among those known by the user's party members is selected for use. Does not select Assist, Chatter, Copycat, Counter, Covet, Destiny Bond, Detect, Endure, Feint, Focus Punch, Follow Me, Helping Hand, Me First, Metronome, Mimic, Mirror Coat, Mirror Move, Protect, Sketch, Sleep Talk, Snatch, Struggle, Switcheroo, Thief, or Trick."
-    },
     "assurance": {
       "inherit": true,
       "desc": "Power doubles if the target has already taken damage this turn."
@@ -2450,10 +2454,6 @@
       "inherit": true,
       "desc": "The user's type changes to match a type that resists or is immune to the type of the last move used against the user, if it was successful against the user, but not either of its current types. The determined type of the move is used rather than the original type. Fails if the last move used against the user was not successful, if the user has the Multitype Ability, or if this move would only be able to select one of the user's current types.",
       "shortDesc": "User's type changes to resist last move against it."
-    },
-    "copycat": {
-      "inherit": true,
-      "desc": "The user uses the last move used by any Pokemon, including itself. Fails if no move has been used, or if the last move used was Assist, Chatter, Copycat, Counter, Covet, Destiny Bond, Detect, Endure, Feint, Focus Punch, Follow Me, Helping Hand, Me First, Metronome, Mimic, Mirror Coat, Mirror Move, Protect, Sketch, Sleep Talk, Snatch, Struggle, Switcheroo, Thief, or Trick."
     },
     "counter": {
       "inherit": true,

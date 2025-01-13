@@ -45,7 +45,7 @@ describe('TeamGenerators', () => {
 			const generator = TeamGenerators.getTeamGenerator(format, [1, 2, 3, 4]);
 			const gen = +format.charAt(3);
 			for (let i = 0; i < N; i++) {
-				const seed = generator.prng.seed;
+				const seed = generator.prng.getSeed();
 				try {
 					const team = generator.getTeam();
 					if (team.length < 6) throw new Error(`Team with less than 6 Pokemon: ${JSON.stringify(team)}`);

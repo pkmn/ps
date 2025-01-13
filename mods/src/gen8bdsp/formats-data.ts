@@ -535,7 +535,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DUU",
 	},
 	tauros: {
-		tier: "NUBL",
+		tier: "RU",
 		doublesTier: "DUU",
 	},
 	magikarp: {
@@ -561,7 +561,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DUU",
 	},
 	jolteon: {
-		tier: "RU",
+		tier: "NU",
 		doublesTier: "DUU",
 	},
 	flareon: {
@@ -800,7 +800,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "NFE",
 	},
 	honchkrow: {
-		tier: "RU",
+		tier: "NU",
 		doublesTier: "DUU",
 	},
 	misdreavus: {
@@ -848,7 +848,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	granbull: {
-		tier: "RU",
+		tier: "NU",
 		doublesTier: "DUU",
 	},
 	qwilfish: {
@@ -988,7 +988,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "NFE",
 	},
 	sceptile: {
-		tier: "NUBL",
+		tier: "RU",
 		doublesTier: "DUU",
 	},
 	torchic: {
@@ -1171,7 +1171,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "NFE",
 	},
 	aggron: {
-		tier: "RU",
+		tier: "NU",
 		doublesTier: "DUU",
 	},
 	meditite: {
@@ -1243,7 +1243,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DUU",
 	},
 	torkoal: {
-		tier: "RU",
+		tier: "NU",
 		doublesTier: "DOU",
 	},
 	spoink: {
@@ -1271,7 +1271,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	cacturne: {
-		tier: "RU",
+		tier: "NU",
 		doublesTier: "DUU",
 	},
 	swablu: {
@@ -1315,7 +1315,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	claydol: {
-		tier: "RU",
+		tier: "NU",
 		doublesTier: "DUU",
 	},
 	lileep: {
@@ -1376,7 +1376,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DUU",
 	},
 	absol: {
-		tier: "NUBL",
+		tier: "RU",
 		doublesTier: "DUU",
 	},
 	snorunt: {
@@ -1748,7 +1748,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DUU",
 	},
 	mesprit: {
-		tier: "NUBL",
+		tier: "RU",
 		doublesTier: "DUU",
 	},
 	azelf: {
