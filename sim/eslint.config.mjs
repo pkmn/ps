@@ -7,6 +7,7 @@ export default [...pkmn, {
     "@stylistic/array-bracket-spacing": "off",
     "@stylistic/comma-dangle": "off",
     "@stylistic/indent": "off",
+    "@stylistic/comma-style": "off",
     "@stylistic/key-spacing": "off",
     "@stylistic/member-delimiter-style": "off",
     "@stylistic/no-mixed-spaces-and-tabs": "off",

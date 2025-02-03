@@ -146,6 +146,7 @@ class PreHandler implements Handler<void> {
     const poke = this.battle.getPokemon(args[1]);
     if (poke) {
       const $td = poke.side.n ? $p2 : $p1;
+      // eslint-disable-next-line @typescript-eslint/no-for-in-array
       for (const child in $td.children) {
         if (($td.children[child] as HTMLImageElement).dataset.name === poke.name) {
           const old = $td.children[child];
