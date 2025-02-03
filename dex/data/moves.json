@@ -2234,14 +2234,19 @@
       "inherit": true,
       "flags": {"protect": 1, "mirror": 1, "sound": 1, "metronome": 1}
     },
-    "spikes": {"inherit": true, "flags": {"metronome": 1, "mustpressure": 1}},
+    "spikes": {
+      "inherit": true,
+      "flags": {"metronome": 1, "mustpressure": 1},
+      "condition": {}
+    },
     "spite": {
       "inherit": true,
       "flags": {"protect": 1, "mirror": 1, "bypasssub": 1, "metronome": 1}
     },
     "stealthrock": {
       "inherit": true,
-      "flags": {"metronome": 1, "mustpressure": 1}
+      "flags": {"metronome": 1, "mustpressure": 1},
+      "condition": {}
     },
     "struggle": {
       "inherit": true,
@@ -20614,7 +20619,7 @@
       "secondary": null,
       "target": "self",
       "type": "Normal",
-      "desc": "Raises the user's Attack and Speed by 1 stage. Removes subtitutes from all active Pokemon and ends the effects of Spikes, Stealth Rock, Sticky Web, and Toxic Spikes for both sides.",
+      "desc": "Raises the user's Attack and Speed by 1 stage. Removes substitutes from all active Pokemon and ends the effects of Spikes, Stealth Rock, Sticky Web, and Toxic Spikes for both sides.",
       "shortDesc": "User +1 Atk, Spe. Clears all substitutes/hazards."
     },
     "topsyturvy": {

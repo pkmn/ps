@@ -1479,7 +1479,9 @@
     },
     "blueorb": {
       "name": "Blue Orb",
+      "onSwitchInPriority": -1,
       "itemUser": ["Kyogre"],
+      "isPrimalOrb": true,
       "num": 535,
       "gen": 6,
       "isNonstandard": "Past",
@@ -1505,6 +1507,7 @@
     "boosterenergy": {
       "name": "Booster Energy",
       "fling": {"basePower": 30},
+      "onSwitchInPriority": -2,
       "num": 1880,
       "gen": 9,
       "shortDesc": "Activates the Protosynthesis or Quark Drive Abilities. Single use."
@@ -2077,6 +2080,7 @@
     "electricseed": {
       "name": "Electric Seed",
       "fling": {"basePower": 10},
+      "onSwitchInPriority": -1,
       "boosts": {"def": 1},
       "num": 881,
       "gen": 7,
@@ -2516,6 +2520,7 @@
     "grassyseed": {
       "name": "Grassy Seed",
       "fling": {"basePower": 10},
+      "onSwitchInPriority": -1,
       "boosts": {"def": 1},
       "num": 884,
       "gen": 7,
@@ -3381,6 +3386,8 @@
     "mirrorherb": {
       "name": "Mirror Herb",
       "fling": {"basePower": 30},
+      "onAnySwitchInPriority": -3,
+      "onResidualOrder": 29,
       "num": 1883,
       "gen": 9,
       "shortDesc": "When an opposing Pokemon raises a stat stage, the holder copies it. Single use."
@@ -3388,6 +3395,7 @@
     "mistyseed": {
       "name": "Misty Seed",
       "fling": {"basePower": 10},
+      "onSwitchInPriority": -1,
       "boosts": {"spd": 1},
       "num": 883,
       "gen": 7,
@@ -3827,6 +3835,7 @@
     "psychicseed": {
       "name": "Psychic Seed",
       "fling": {"basePower": 10},
+      "onSwitchInPriority": -1,
       "boosts": {"spd": 1},
       "num": 882,
       "gen": 7,
@@ -3954,7 +3963,9 @@
     },
     "redorb": {
       "name": "Red Orb",
+      "onSwitchInPriority": -1,
       "itemUser": ["Groudon"],
+      "isPrimalOrb": true,
       "num": 534,
       "gen": 6,
       "isNonstandard": "Past",
@@ -4040,6 +4051,7 @@
     "roomservice": {
       "name": "Room Service",
       "fling": {"basePower": 100},
+      "onSwitchInPriority": -1,
       "boosts": {"spe": -1},
       "num": 1122,
       "gen": 8,
@@ -5588,6 +5600,7 @@
     "whiteherb": {
       "name": "White Herb",
       "fling": {"basePower": 10},
+      "onAnySwitchInPriority": -2,
       "num": 214,
       "gen": 3,
       "shortDesc": "Restores all lowered stat stages to 0 when one is less than 0. Single use."
@@ -5653,7 +5666,7 @@
       "name": "Berry",
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Poison"},
-      "onResidualOrder": 5,
+      "onResidualOrder": 10,
       "num": 155,
       "gen": 2,
       "isNonstandard": "Past",
@@ -5681,7 +5694,7 @@
       "name": "Gold Berry",
       "isBerry": true,
       "naturalGift": {"basePower": 80, "type": "Psychic"},
-      "onResidualOrder": 5,
+      "onResidualOrder": 10,
       "num": 158,
       "gen": 2,
       "isNonstandard": "Past",

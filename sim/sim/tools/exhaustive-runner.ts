@@ -75,8 +75,7 @@ export class ExhaustiveRunner {
 	constructor(options: ExhaustiveRunnerOptions) {
 		this.format = options.format;
 		this.cycles = options.cycles || ExhaustiveRunner.DEFAULT_CYCLES;
-		this.prng = (options.prng && !Array.isArray(options.prng)) ?
-			options.prng : new PRNG(options.prng);
+		this.prng = PRNG.get(options.prng);
 		this.log = !!options.log;
 		this.maxGames = options.maxGames;
 		this.maxFailures = options.maxFailures || ExhaustiveRunner.MAX_FAILURES;
@@ -137,7 +136,7 @@ export class ExhaustiveRunner {
 				} catch (err) {
 					this.failures++;
 					console.error(
-						`Run \`${this.cmd(this.cycles, this.format, seed.join())}\`:\n`,	err,
+						`Run \`${this.cmd(this.cycles, this.format, seed)}\`:\n`,	err,
 					);
 				}
 			} while ((!this.maxGames || this.games < this.maxGames) &&
@@ -257,7 +256,7 @@ class TeamGenerator {
 		signatures: Map<string, {item: string, move?: string}[]>
 	) {
 		this.dex = dex;
-		this.prng = prng && !Array.isArray(prng) ? prng : new PRNG(prng);
+		this.prng = PRNG.get(prng);
 		this.pools = pools;
 		this.signatures = signatures;
 

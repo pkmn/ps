@@ -139,7 +139,7 @@
       "onLockMove": "recharge"
     },
     "futuremove": {"name": "futuremove", "onResidualOrder": 3},
-    "healreplacement": {"name": "healreplacement", "onSwitchInPriority": 1},
+    "healreplacement": {"name": "healreplacement"},
     "stall": {"name": "stall", "duration": 2, "counterMax": 729},
     "gem": {
       "name": "gem",

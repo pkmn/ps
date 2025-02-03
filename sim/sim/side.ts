@@ -31,7 +31,7 @@ import {
  * @license MIT
  */
 
-import {Utils} from '../lib';
+import {Utils} from '../lib/utils';
 import type {RequestState} from './battle';
 import {Pokemon, EffectState} from './pokemon';
 import {State} from './state';
@@ -121,6 +121,7 @@ export class Side {
 		if (sideScripts) Object.assign(this, sideScripts);
 
 		this.battle = battle;
+		if (this.battle.format.side) Object.assign(this, this.battle.format.side);
 		this.id = ['p1', 'p2', 'p3', 'p4'][sideNum] as SideID;
 		this.n = sideNum;
 
@@ -306,13 +307,13 @@ export class Side {
 			if (!(status as any).onSideRestart) return false;
 			return this.battle.singleEvent('SideRestart', status, this.sideConditions[status.id], this, source, sourceEffect);
 		}
-		this.sideConditions[status.id] = {
+		this.sideConditions[status.id] = this.battle.initEffectState({
 			id: status.id,
 			target: this,
 			source,
 			sourceSlot: source.getSlot(),
 			duration: status.duration,
-		};
+		});
 		if (status.durationCallback) {
 			this.sideConditions[status.id].duration =
 				status.durationCallback.call(this.battle, this.active[0], source, sourceEffect);
@@ -358,13 +359,14 @@ export class Side {
 			if (!status.onRestart) return false;
 			return this.battle.singleEvent('Restart', status, this.slotConditions[target][status.id], this, source, sourceEffect);
 		}
-		const conditionState = this.slotConditions[target][status.id] = {
+		const conditionState = this.slotConditions[target][status.id] = this.battle.initEffectState({
 			id: status.id,
 			target: this,
 			source,
 			sourceSlot: source.getSlot(),
+			isSlotCondition: true,
 			duration: status.duration,
-		};
+		});
 		if (status.durationCallback) {
 			conditionState.duration =
 				status.durationCallback.call(this.battle, this.active[0], source, sourceEffect);

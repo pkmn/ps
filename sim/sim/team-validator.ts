@@ -25,7 +25,7 @@ import {
 
 import {Dex, toID} from './dex';
 import type {MoveSource} from './dex-species';
-import {Utils} from '../lib';
+import {Utils} from '../lib/utils';
 import {Tags} from '../data/tags';
 import {Teams} from './teams';
 import {PRNG} from './prng';
@@ -2633,15 +2633,12 @@ export class TeamValidator {
 					if (learnedGen === dex.gen && learned.charAt(1) !== 'R') {
 						// current-gen level-up, TM or tutor moves:
 						//   always available
-						if (!(learnedGen >= 8 && learned.charAt(1) === 'E') && babyOnly) {
-							if (setSources.isFromPokemonGo && species.evoLevel) {
-								cantLearnReason = `is from a prevo, which is incompatible with its Pokemon GO origin.`;
-								continue;
-							} else {
-								setSources.babyOnly = babyOnly;
-							}
+						if (!(learnedGen >= 8 && learned.charAt(1) === 'E') && babyOnly &&
+							setSources.isFromPokemonGo && species.evoLevel) {
+							cantLearnReason = `is from a prevo, which is incompatible with its Pokemon GO origin.`;
+							continue;
 						}
-						if (!moveSources.moveEvoCarryCount && !setSources.babyOnly) return null;
+						if (!moveSources.moveEvoCarryCount && !babyOnly) return null;
 					}
 					// past-gen level-up, TM, or tutor moves:
 					//   available as long as the source gen was or was before this gen
@@ -2692,7 +2689,9 @@ export class TeamValidator {
 					// DW moves:
 					//   only if that was the source
 					moveSources.add(learned + species.id);
-					moveSources.dreamWorldMoveCount++;
+					// If a DW move can be learned through some means other than DW,
+					// it should not be treated as a DW move
+					if (!moveSources.sourcesBefore) moveSources.dreamWorldMoveCount++;
 				} else if (learned.charAt(1) === 'V' && this.minSourceGen < learnedGen) {
 					// Virtual Console or Let's Go transfer moves:
 					//   only if that was the source

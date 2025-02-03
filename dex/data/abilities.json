@@ -1268,6 +1268,7 @@
       "shortDesc": "Protects user/allies from Attract, Disable, Encore, Heal Block, Taunt, and Torment."
     },
     "asoneglastrier": {
+      "onSwitchInPriority": 1,
       "flags": {
         "failroleplay": 1,
         "noreceiver": 1,
@@ -1281,6 +1282,7 @@
       "shortDesc": "Combination of the Unnerve and Chilling Neigh Abilities."
     },
     "asonespectrier": {
+      "onSwitchInPriority": 1,
       "flags": {
         "failroleplay": 1,
         "noreceiver": 1,
@@ -1440,6 +1442,7 @@
       "shortDesc": "This Pokemon cannot be statused, and is considered to be asleep."
     },
     "commander": {
+      "onAnySwitchInPriority": -2,
       "flags": {
         "failroleplay": 1,
         "noreceiver": 1,
@@ -1479,6 +1482,7 @@
       "shortDesc": "This Pokemon can poison or badly poison a Pokemon regardless of its typing."
     },
     "costar": {
+      "onSwitchInPriority": -2,
       "flags": {},
       "name": "Costar",
       "num": 294,
@@ -1773,6 +1777,7 @@
       "shortDesc": "This Pokemon's Fire attacks do 1.5x damage if hit by one Fire move; Fire immunity."
     },
     "flowergift": {
+      "onSwitchInPriority": -2,
       "onAllyModifyAtkPriority": 3,
       "onAllyModifySpDPriority": 4,
       "flags": {
@@ -1802,6 +1807,7 @@
       "shortDesc": "This Pokemon takes 1/2 damage from contact moves, 2x damage from Fire moves."
     },
     "forecast": {
+      "onSwitchInPriority": -2,
       "flags": {
         "failroleplay": 1,
         "noreceiver": 1,
@@ -1980,6 +1986,7 @@
       "shortDesc": "No competitive use."
     },
     "hospitality": {
+      "onSwitchInPriority": -2,
       "flags": {},
       "name": "Hospitality",
       "num": 299,
@@ -2039,6 +2046,7 @@
       "shortDesc": "If Snow is active, this Pokemon heals 1/16 of its max HP each turn."
     },
     "iceface": {
+      "onSwitchInPriority": -2,
       "onDamagePriority": 1,
       "flags": {
         "failroleplay": 1,
@@ -2170,6 +2178,7 @@
       "shortDesc": "This Pokemon's accuracy can't be lowered by others; ignores their evasiveness stat."
     },
     "klutz": {
+      "onSwitchInPriority": 1,
       "flags": {},
       "name": "Klutz",
       "num": 103,
@@ -2302,6 +2311,7 @@
       "shortDesc": "This Pokemon's attacks are critical hits if the target is poisoned."
     },
     "mimicry": {
+      "onSwitchInPriority": -1,
       "flags": {},
       "name": "Mimicry",
       "num": 250,
@@ -2415,6 +2425,7 @@
       "shortDesc": "This Pokemon's attacks that are super effective against the target do 1.25x damage."
     },
     "neutralizinggas": {
+      "onSwitchInPriority": 2,
       "flags": {
         "failroleplay": 1,
         "noreceiver": 1,
@@ -2452,6 +2463,8 @@
       "shortDesc": "This Pokemon cannot be infatuated or taunted. Immune to Intimidate."
     },
     "opportunist": {
+      "onAnySwitchInPriority": -3,
+      "onResidualOrder": 29,
       "flags": {},
       "name": "Opportunist",
       "num": 290,
@@ -2653,6 +2666,7 @@
       "shortDesc": "This Pokemon's type changes to the type of the move it is using. Once per switch-in."
     },
     "protosynthesis": {
+      "onSwitchInPriority": -2,
       "condition": {
         "noCopy": true,
         "onModifyAtkPriority": 5,
@@ -2704,6 +2718,7 @@
       "shortDesc": "Ghost damage to this Pokemon dealt with a halved offensive stat; can't be statused."
     },
     "quarkdrive": {
+      "onSwitchInPriority": -2,
       "condition": {
         "noCopy": true,
         "onModifyAtkPriority": 5,
@@ -2897,6 +2912,7 @@
       "shortDesc": "This Pokemon's Attack is raised 1 stage if hit by a Grass move; Grass immunity."
     },
     "schooling": {
+      "onSwitchInPriority": -1,
       "onResidualOrder": 29,
       "flags": {
         "failroleplay": 1,
@@ -2990,6 +3006,7 @@
       "shortDesc": "This Pokemon is not affected by the secondary effect of another Pokemon's attack."
     },
     "shieldsdown": {
+      "onSwitchInPriority": -1,
       "onResidualOrder": 29,
       "flags": {
         "failroleplay": 1,
@@ -3343,6 +3360,7 @@
       "shortDesc": "Terapagos: If full HP, attacks taken have 0.5x effectiveness unless naturally immune."
     },
     "terashift": {
+      "onSwitchInPriority": 2,
       "flags": {
         "failroleplay": 1,
         "noreceiver": 1,
@@ -3479,6 +3497,7 @@
       "shortDesc": "Speed is doubled on held item loss; boost is lost if it switches, gets new item/Ability."
     },
     "unnerve": {
+      "onSwitchInPriority": 1,
       "flags": {},
       "name": "Unnerve",
       "num": 127,

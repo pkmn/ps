@@ -1942,7 +1942,7 @@
     "duosion": {"tier": "NFE"},
     "reuniclus": {"tier": "OU", "doublesTier": "DOU"},
     "ducklett": {"tier": "LC"},
-    "swanna": {"tier": "PU", "doublesTier": "DUU"},
+    "swanna": {"tier": "PUBL", "doublesTier": "DUU"},
     "vanillite": {"tier": "LC"},
     "vanillish": {"tier": "NFE"},
     "vanilluxe": {"tier": "PU", "doublesTier": "DUU"},
@@ -7050,7 +7050,7 @@
     "shedinja": {
       "isNonstandard": "Past",
       "tier": "Illegal",
-      "natDexTier": "UU"
+      "natDexTier": "RU"
     },
     "whismur": {"isNonstandard": "Past", "tier": "Illegal", "natDexTier": "LC"},
     "loudred": {
@@ -7152,7 +7152,7 @@
       "tier": "Illegal",
       "natDexTier": "RU"
     },
-    "torkoal": {"tier": "NU", "doublesTier": "DOU", "natDexTier": "RU"},
+    "torkoal": {"tier": "PU", "doublesTier": "DOU", "natDexTier": "RU"},
     "spoink": {"tier": "LC"},
     "grumpig": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "spinda": {"isNonstandard": "Past", "tier": "Illegal", "natDexTier": "RU"},
@@ -7308,7 +7308,7 @@
     "deoxysspeed": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "Uber"},
     "turtwig": {"tier": "LC"},
     "grotle": {"tier": "NFE"},
-    "torterra": {"tier": "PU", "doublesTier": "(DUU)", "natDexTier": "RU"},
+    "torterra": {"tier": "PUBL", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "chimchar": {"tier": "LC"},
     "monferno": {"tier": "NFE"},
     "infernape": {"tier": "NU", "doublesTier": "(DUU)", "natDexTier": "RU"},
@@ -7785,7 +7785,7 @@
       "natDexTier": "RU"
     },
     "mienfoo": {"tier": "LC"},
-    "mienshao": {"tier": "NU", "doublesTier": "(DUU)", "natDexTier": "UU"},
+    "mienshao": {"tier": "NUBL", "doublesTier": "(DUU)", "natDexTier": "UU"},
     "druddigon": {
       "isNonstandard": "Past",
       "tier": "Illegal",
@@ -8070,7 +8070,11 @@
       "natDexTier": "RU"
     },
     "oricoriopau": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
-    "oricoriosensu": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
+    "oricoriosensu": {
+      "tier": "NUBL",
+      "doublesTier": "(DUU)",
+      "natDexTier": "RU"
+    },
     "cutiefly": {"tier": "NFE"},
     "ribombee": {"tier": "RU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "ribombeetotem": {"isNonstandard": "Past", "tier": "Illegal"},
@@ -8631,7 +8635,7 @@
       "natDexTier": "Uber"
     },
     "slitherwing": {"tier": "RU", "doublesTier": "(DUU)", "natDexTier": "RU"},
-    "roaringmoon": {"tier": "OU", "doublesTier": "DOU", "natDexTier": "Uber"},
+    "roaringmoon": {"tier": "OU", "doublesTier": "DOU", "natDexTier": "(OU)"},
     "irontreads": {"tier": "OU", "doublesTier": "(DUU)", "natDexTier": "OU"},
     "ironmoth": {"tier": "OU", "doublesTier": "(DUU)", "natDexTier": "UU"},
     "ironhands": {"tier": "UUBL", "doublesTier": "DOU", "natDexTier": "UUBL"},

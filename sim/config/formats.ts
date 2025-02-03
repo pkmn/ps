@@ -117,8 +117,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Snivy',          'Stantler',
       'Voltorb-Hisui',  'Vulpix',
       'Vulpix-Alola',   'Yanma',
-      'Moody',          'Baton Pass',
-      'Sticky Web'
+      'Moody',          'Heat Rock',
+      'Baton Pass',     'Sticky Web'
     ]
   },
   {
@@ -764,21 +764,21 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] National Dex Ubers' ],
     banlist: [
-      'Arceus-Normal',      'Arceus-Dark',     'Arceus-Ground',
-      'Calyrex-Ice',        'Chien-Pao',       'Deoxys-Attack',
-      'Deoxys-Speed',       'Ditto',           'Dondozo',
-      'Eternatus',          'Giratina-Origin', 'Groudon-Primal',
-      'Ho-Oh',              'Kyogre-Primal',   'Lunala',
-      'Marshadow',          'Melmetal',        'Mewtwo-Mega-Y',
-      'Necrozma-Dusk-Mane', 'Necrozma-Ultra',  'Salamence-Mega',
-      'Smeargle',           'Yveltal',         'Zacian-Crowned',
-      'Zygarde-50%',        'Arceus-Dragon',   'Arceus-Fairy',
-      'Arceus-Fire',        'Arceus-Ghost',    'Arceus-Water',
-      'Blaziken-Mega',      'Chi-Yu',          'Flutter Mane',
-      'Groudon',            'Kyogre',          'Kyurem-Black',
-      'Rayquaza',           'Shaymin-Sky',     'Zacian',
-      'Zekrom',             'Power Construct', 'Light Clay',
-      'Ultranecrozium Z',   'Last Respects'
+      'Arceus-Normal',      'Arceus-Dark',      'Arceus-Ground',
+      'Calyrex-Ice',        'Chien-Pao',        'Deoxys-Attack',
+      'Deoxys-Speed',       'Ditto',            'Dondozo',
+      'Eternatus',          'Giratina-Origin',  'Groudon-Primal',
+      'Ho-Oh',              'Kyogre-Primal',    'Lunala',
+      'Marshadow',          'Melmetal',         'Mewtwo-Mega-Y',
+      'Necrozma-Dusk-Mane', 'Necrozma-Ultra',   'Salamence-Mega',
+      'Smeargle',           'Yveltal',          'Zacian-Crowned',
+      'Zygarde-50%',        'Arceus-Dragon',    'Arceus-Fairy',
+      'Arceus-Fire',        'Arceus-Flying',    'Arceus-Ghost',
+      'Arceus-Water',       'Blaziken-Mega',    'Chi-Yu',
+      'Flutter Mane',       'Groudon',          'Kyogre',
+      'Kyurem-Black',       'Rayquaza',         'Shaymin-Sky',
+      'Zacian',             'Zekrom',           'Power Construct',
+      'Light Clay',         'Ultranecrozium Z', 'Last Respects'
     ]
   },
   { name: '[Gen 9] National Dex AG', mod: 'gen9', ruleset: [ 'Standard NatDex' ] },
@@ -1106,43 +1106,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
-    name: '[Gen 6] Ubers',
-    mod: 'gen6',
-    ruleset: [ 'Standard', 'Swagger Clause', 'Mega Rayquaza Clause' ]
-  },
-  {
-    name: '[Gen 5] VGC 2013',
-    mod: 'gen5',
-    gameType: 'doubles',
-    bestOfDefault: true,
-    ruleset: [ 'Flat Rules' ],
-    banlist: [ 'Chatot', 'Dark Void', 'Sky Drop', 'Soul Dew' ]
-  },
-  {
-    name: '[Gen 7] Monotype',
+    name: '[Gen 7] Ubers',
     mod: 'gen7',
-    ruleset: [ 'Same Type Clause', 'Standard', 'Evasion Abilities Clause', 'Swagger Clause' ],
-    banlist: [
-      'Aegislash',     'Arceus',              'Blaziken',
-      'Darkrai',       'Deoxys-Normal',       'Deoxys-Attack',
-      'Dialga',        'Genesect',            'Gengar-Mega',
-      'Giratina',      'Giratina-Origin',     'Groudon',
-      'Ho-Oh',         'Hoopa-Unbound',       'Kangaskhan-Mega',
-      'Kartana',       'Kyogre',              'Kyurem-White',
-      'Lucario-Mega',  'Lugia',               'Lunala',
-      'Magearna',      'Marshadow',           'Mawile-Mega',
-      'Medicham-Mega', 'Metagross-Mega',      'Mewtwo',
-      'Naganadel',     'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
-      'Palkia',        'Pheromosa',           'Rayquaza',
-      'Reshiram',      'Salamence-Mega',      'Shaymin-Sky',
-      'Solgaleo',      'Tapu Lele',           'Xerneas',
-      'Yveltal',       'Zekrom',              'Zygarde',
-      'Battle Bond',   'Shadow Tag',          'Damp Rock',
-      'Focus Band',    "King's Rock",         'Quick Claw',
-      'Razor Fang',    'Smooth Rock',         'Terrain Extender',
-      'Baton Pass'
-    ]
+    ruleset: [ 'Standard', 'Mega Rayquaza Clause' ],
+    banlist: [ 'Baton Pass' ]
   },
+  { name: '[Gen 1] PU', mod: 'gen1', ruleset: [ '[Gen 1] NU' ], banlist: [ 'NU', 'PUBL' ] },
+  { name: '[Gen 8] RU', mod: 'gen8', ruleset: [ '[Gen 8] UU' ], banlist: [ 'UU', 'RUBL' ] },
   {
     name: '[Gen 8] OU',
     mod: 'gen8',
@@ -1287,7 +1257,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ruleset: [ '[Gen 8] OU' ],
     banlist: [ 'OU', 'UUBL', 'Light Clay' ]
   },
-  { name: '[Gen 8] RU', mod: 'gen8', ruleset: [ '[Gen 8] UU' ], banlist: [ 'UU', 'RUBL' ] },
   {
     name: '[Gen 8] NU',
     mod: 'gen8',
@@ -1475,12 +1444,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
-    name: '[Gen 7] Ubers',
-    mod: 'gen7',
-    ruleset: [ 'Standard', 'Mega Rayquaza Clause' ],
-    banlist: [ 'Baton Pass' ]
-  },
-  {
     name: '[Gen 7] UU',
     mod: 'gen7',
     ruleset: [ '[Gen 7] OU' ],
@@ -1516,6 +1479,31 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Yanma',       'Eevium Z',
       'Baton Pass',  'Dragon Rage',
       'Sonic Boom',  'Sticky Web'
+    ]
+  },
+  {
+    name: '[Gen 7] Monotype',
+    mod: 'gen7',
+    ruleset: [ 'Same Type Clause', 'Standard', 'Evasion Abilities Clause', 'Swagger Clause' ],
+    banlist: [
+      'Aegislash',     'Arceus',              'Blaziken',
+      'Darkrai',       'Deoxys-Normal',       'Deoxys-Attack',
+      'Dialga',        'Genesect',            'Gengar-Mega',
+      'Giratina',      'Giratina-Origin',     'Groudon',
+      'Ho-Oh',         'Hoopa-Unbound',       'Kangaskhan-Mega',
+      'Kartana',       'Kyogre',              'Kyurem-White',
+      'Lucario-Mega',  'Lugia',               'Lunala',
+      'Magearna',      'Marshadow',           'Mawile-Mega',
+      'Medicham-Mega', 'Metagross-Mega',      'Mewtwo',
+      'Naganadel',     'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
+      'Palkia',        'Pheromosa',           'Rayquaza',
+      'Reshiram',      'Salamence-Mega',      'Shaymin-Sky',
+      'Solgaleo',      'Tapu Lele',           'Xerneas',
+      'Yveltal',       'Zekrom',              'Zygarde',
+      'Battle Bond',   'Shadow Tag',          'Damp Rock',
+      'Focus Band',    "King's Rock",         'Quick Claw',
+      'Razor Fang',    'Smooth Rock',         'Terrain Extender',
+      'Baton Pass'
     ]
   },
   {
@@ -1661,6 +1649,11 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Max Level = 9999',
       'Default Level = 100'
     ]
+  },
+  {
+    name: '[Gen 6] Ubers',
+    mod: 'gen6',
+    ruleset: [ 'Standard', 'Swagger Clause', 'Mega Rayquaza Clause' ]
   },
   {
     name: '[Gen 6] UU',
@@ -1996,6 +1989,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Max Level = 9999',
       'Default Level = 100'
     ]
+  },
+  {
+    name: '[Gen 5] VGC 2013',
+    mod: 'gen5',
+    gameType: 'doubles',
+    bestOfDefault: true,
+    ruleset: [ 'Flat Rules' ],
+    banlist: [ 'Chatot', 'Dark Void', 'Sky Drop', 'Soul Dew' ]
   },
   {
     name: '[Gen 5] Doubles Custom Game',
@@ -2370,7 +2371,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ruleset: [ '[Gen 1] UU', '!APT Clause' ],
     banlist: [ 'UU', 'NUBL' ]
   },
-  { name: '[Gen 1] PU', mod: 'gen1', ruleset: [ '[Gen 1] NU' ], banlist: [ 'NU', 'PUBL' ] },
   {
     name: '[Gen 1] 1v1',
     mod: 'gen1',

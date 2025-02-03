@@ -84,6 +84,7 @@ export interface ItemData extends EffectData {
   isChoice?: boolean;
   isGem?: boolean;
   isPokeball?: boolean;
+  isPrimalOrb?: boolean;
   megaStone?: string;
   megaEvolves?: string;
   naturalGift?: {basePower: number; type: TypeName};

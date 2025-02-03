@@ -242,6 +242,7 @@ export class Item extends BasicEffect<T.ItemName> implements T.Item {
   readonly isChoice?: boolean;
   readonly isGem?: boolean;
   readonly isPokeball?: boolean;
+  readonly isPrimalOrb?: boolean;
   readonly naturalGift?: {basePower: number; type: T.TypeName};
   readonly boosts?: Partial<T.BoostsTable> | false;
 
