@@ -6109,21 +6109,23 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
   },
   suicune: {
     learnset: {
-      airslash: [ '4S3' ],
-      aquaring: [ '4S3' ],
-      aurorabeam: [ '7S5', '6S4', '4S2', '3S0', '3S1' ],
-      bubblebeam: [ '7S5', '3S0' ],
-      calmmind: [ '8S6' ],
-      extrasensory: [ '9S7', '8S6' ],
-      extremespeed: [ '8S6', '4S3' ],
-      gust: [ '4S2', '3S0', '3S1' ],
-      icefang: [ '6S4' ],
-      liquidation: [ '8S6' ],
-      mirrorcoat: [ '9S7', '6S4', '3S1' ],
-      mist: [ '7S5', '6S4', '4S2', '3S1' ],
-      raindance: [ '9S7', '7S5', '4S2', '3S0' ],
-      sheercold: [ '4S3' ],
-      surf: [ '9S7' ]
+      airslash: [ '4S4' ],
+      aquaring: [ '4S4' ],
+      aurorabeam: [ '7S6', '6S5', '4S3', '3S0', '3S1' ],
+      bubblebeam: [ '7S6', '3S0' ],
+      calmmind: [ '8S7' ],
+      extrasensory: [ '9S8', '8S7' ],
+      extremespeed: [ '8S7', '4S4' ],
+      gust: [ '4S3', '3S0', '3S1', '3S2' ],
+      hydropump: [ '3S2' ],
+      icefang: [ '6S5' ],
+      leer: [ '3S2' ],
+      liquidation: [ '8S7' ],
+      mirrorcoat: [ '9S8', '6S5', '3S1' ],
+      mist: [ '7S6', '6S5', '4S3', '3S1' ],
+      raindance: [ '9S8', '7S6', '4S3', '3S0', '3S2' ],
+      sheercold: [ '4S4' ],
+      surf: [ '9S8' ]
     },
     eventData: [
       {
@@ -6137,6 +6139,12 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         moves: [ 'gust', 'aurorabeam', 'mist', 'mirrorcoat' ],
         pokeball: 'pokeball'
+      },
+      {
+        generation: 3,
+        level: 40,
+        shiny: 1,
+        moves: [ 'raindance', 'leer', 'gust', 'hydropump' ]
       },
       {
         generation: 4,
@@ -15212,8 +15220,20 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
     eventOnly: true
   },
   enamorus: {
-    learnset: { drainingkiss: [ '9S0' ], extrasensory: [ '9S0' ], moonblast: [ '9S0' ] },
+    learnset: {
+      drainingkiss: [ '9S1' ],
+      extrasensory: [ '9S1', '8S0' ],
+      moonblast: [ '9S1', '8S0' ],
+      springtidestorm: [ '8S0' ]
+    },
     eventData: [
+      {
+        generation: 8,
+        level: 70,
+        perfectIVs: 3,
+        moves: [ 'extrasensory', 'moonblast', 'springtidestorm' ],
+        pokeball: 'strangeball'
+      },
       {
         generation: 9,
         level: 50,
@@ -15223,8 +15243,10 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         moves: [ 'drainingkiss', 'extrasensory', 'moonblast' ],
         pokeball: 'cherishball'
       }
-    ]
+    ],
+    eventOnly: true
   },
+  enamorustherian: { eventOnly: true },
   sprigatito: {
     learnset: { leafage: [ '9S0' ], scratch: [ '9S0' ] },
     eventData: [

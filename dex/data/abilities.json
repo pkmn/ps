@@ -408,6 +408,10 @@
       "desc": "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage.",
       "shortDesc": "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage."
     },
+    "magicbounce": {
+      "inherit": true,
+      "desc": "This Pokemon is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. Moves reflected in this way are unable to be reflected again by this or Magic Coat's effect. Spikes, Stealth Rock, and Toxic Spikes can only be reflected once per side, by the leftmost Pokemon under this or Magic Coat's effect. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this Ability takes effect."
+    },
     "oblivious": {
       "inherit": true,
       "desc": "This Pokemon cannot be infatuated. Gaining this Ability while infatuated cures it.",
@@ -432,10 +436,6 @@
     "levitate": {
       "inherit": true,
       "desc": "This Pokemon is immune to Ground-type attacks and the effects of Spikes, Toxic Spikes, and the Arena Trap Ability. The effects of Gravity, Ingrain, Smack Down, and Iron Ball nullify the immunity."
-    },
-    "magicbounce": {
-      "inherit": true,
-      "desc": "This Pokemon is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. Moves reflected in this way are unable to be reflected again by this or Magic Coat's effect. Spikes, Stealth Rock, and Toxic Spikes can only be reflected once per side, by the leftmost Pokemon under this or Magic Coat's effect. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this Ability takes effect."
     },
     "magnetpull": {
       "inherit": true,

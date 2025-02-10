@@ -274,7 +274,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(gen.species.get('p groudon')!.name).toBe('Groudon-Primal');
         // Rockruff-Dusk
         expect(gen.species.get('Rockruff-Dusk')).toBeDefined();
-        // FIXME expect(Gen(7).species.get('Rockruff-Dusk')!.name).toBe('Rockruff-Dusk');
+        expect(Gen(7).species.get('Rockruff-Dusk')!.name).toBe('Rockruff-Dusk');
       });
 
       it('counts', () => {
@@ -315,7 +315,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         // Alola (18) + Totem (12) + Pikachu (7) - Pikachu (6) + Greninja (2) + Zygarde (2) +
         // Oricorio (3) + Rockruff (1) + Lycanroc (2) + Wishiwashi (1) + Silvally (17) + Minior (1)
         // Mimikyu (1) + Necrozma (3) [Magearna (1) + LGPE Starters/Meltan/Melmetal (4)]
-        formes += 18 + 12 + 7 - 6 + 2 + 2 + 3 + 1 + 2 + 1 + 17 + 1 + 1 + 3 - 1; // FIXME Rockruff
+        formes += 18 + 12 + 7 - 6 + 2 + 2 + 3 + 1 + 2 + 1 + 17 + 1 + 1 + 3;
         expect(counts(7)).toEqual({species: 807, formes});
         // Silvally (17) + Rotom (5) + Basculin (1) + Meowstic (1) +
         // Aegislash (1) + Pumpkaboo (3) + Gourgeist (3) + Pikachu (7) + Galar (14) +
@@ -329,10 +329,10 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         // {GMax} 26 + 7
         formes = 17 + 5 + 1 + 1 + 1 + 3 + 3 + 7 + 14 + 8 +
           1 + 1 + 1 + 2 + 1 + 2 + 2 + 2 + 1 + 1 + 2 + 2 + 1 +
-          (4 + 1 + 1 + 1 + 1 + 2 + (1 + 1)) + (1 + 3 + 4 + 2 + 3 + 1 + 2) - 1; // FIXME Rockruff
+          (4 + 1 + 1 + 1 + 1 + 2 + (1 + 1)) + (1 + 3 + 4 + 2 + 3 + 1 + 2);
         expect(counts(8)).toEqual({species: 664, formes});
         // Galar (1) + Paldea (4) + Rotom (5) + Basculin (1) + Vivillon-Fancy (1) + Oricorio (3) +
-        // Lycanroc (2) + Mimikyu (1) + Toxtricity (1) + Eiscue (1) + Indeedee (1) +
+        // Rockruff (1) + Lycanroc (2) + Mimikyu (1) + Toxtricity (1) + Eiscue (1) + Indeedee (1) +
         // Oinkologne (1) + Dudunsparce (1) + Palafin (1) + Maushold (1) + Squawkabilly (3) +
         // *-Antique (2) + Hisui (2)
         // {HOME} Pikachu (8) + *-Origin (3) + *-Therian (4) + Alola (7) + Galar (6) + Hisui (14) +
@@ -343,7 +343,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         // *-Masterpiece (2) + Ogerpon (7)
         // {DLC2} Alola(1) + Deoxys (3) + Keldeo (1) + Kyurem (2) + Meowstic (1) + Minior (1) +
         // Necrozma (2) + Terapagos (2)
-        formes = 1 + 4 + 5 + 1 + 1 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 2 + 2 +
+        formes = 1 + 4 + 5 + 1 + 1 + 3 + 1 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 3 + 2 + 2 +
           (8 + 3 + 4 + 7 + 6 + 14 + 17 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 2 + 1 + 1) +
           (8 + 1 + 2 + 1 + 1 + 2 + 7) + (1 + 3 + 1 + 2 + 1 + 1 + 2 + 2);
         // Charizard (3) + Cinderace (3) + Greninja (3) + Vivillon (1) + Walking Wake (1) +

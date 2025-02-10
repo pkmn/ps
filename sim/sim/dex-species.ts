@@ -447,7 +447,7 @@ export class DexSpecies {
 
 		if (this.dex.data.Aliases.hasOwnProperty(id)) {
 			if (this.dex.data.FormatsData.hasOwnProperty(id)) {
-				// special event ID, like Rockruff-Dusk
+				// special event ID
 				const baseId = toID(this.dex.data.Aliases[id]);
 				species = new Species({
 					...this.dex.data.Pokedex[baseId],
@@ -723,15 +723,8 @@ export class DexSpecies {
 	}
 
 	learnsetParent(species: Species, checkingMoves = false) {
-		// Own Tempo Rockruff and Battle Bond Greninja are special event formes
-		// that are visually indistinguishable from their base forme but have
-		// different learnsets. To prevent a leak, we make them show up as their
-		// base forme, but hardcode their learnsets into Rockruff-Dusk and
-		// Greninja-Ash
 		if (['Gastrodon', 'Pumpkaboo', 'Sinistea', 'Tatsugiri'].includes(species.baseSpecies) && species.forme) {
 			return this.get(species.baseSpecies);
-		} else if (species.name === 'Lycanroc-Dusk') {
-			return this.get('Rockruff-Dusk');
 		} else if (species.prevo) {
 			// there used to be a check for Hidden Ability here, but apparently it's unnecessary
 			// Shed Skin Pupitar can definitely evolve into Unnerve Tyranitar
