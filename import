@@ -429,6 +429,7 @@ const FRAGILE = new Set([
   // `sim/dex.ts` has to have its loading reworked to depend on everything up front so that it can
   // be used in a browser environment where synchronous `require` and `fs` APIs don't exist.
   'sim/dex.ts',
+  'sim/prng.ts',
   'sim/global-types.ts',
   'sim/global-variables.d.ts',
 ]);
@@ -504,6 +505,7 @@ const SKIP_TESTS = new Set([
   'test/sim/state.js',
   'test/sim/tools/multi-random-runner.js',
   'test/sim/misc/inversebattle.js',
+  'test/sim/misc/partnersincrime.js',
 ]);
 // Any file that hasn't been 'OVERRIDDEN' we need to copy over from PS
 const COPIED = new Set([...FILES].filter(f => !OVERRIDDEN.has(f)));

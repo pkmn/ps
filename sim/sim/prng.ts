@@ -14,7 +14,6 @@
 
 import {Chacha20} from 'ts-chacha20';
 import {Utils} from '../lib/utils';
-import * as crypto from 'crypto';
 
 export type PRNGSeed = `${'sodium' | 'gen5' | number},${string}`;
 export type SodiumRNGSeed = ['sodium', string];
@@ -159,7 +158,7 @@ export class PRNG {
 	}
 
 	static generateSeed(): PRNGSeed {
-		return PRNG.convertSeed(SodiumRNG.generateSeed());
+		return PRNG.convertSeed(Gen5RNG.generateSeed());
 	}
 	static convertSeed(seed: SodiumRNGSeed | Gen5RNGSeed): PRNGSeed {
 		return seed.join(',') as PRNGSeed;
@@ -206,13 +205,6 @@ export class SodiumRNG implements RNG {
 		this.seed = buf.slice(0, 32);
 		// reading big-endian
 		return buf.slice(32, 36).reduce((a, b) => a * 256 + b);
-	}
-
-	static generateSeed(): SodiumRNGSeed {
-		return [
-			'sodium',
-			crypto.randomBytes(16).toString('hex'),
-		];
 	}
 }
 
