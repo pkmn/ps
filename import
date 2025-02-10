@@ -557,6 +557,7 @@ const RANDOM_SETS = /^(\trandomSets:.*=) require\('\.\/sets\.json'\);(.*)/;
 const RANDOM_DOUBLES_SETS =
   /^(\trandomDoublesSets:.*=) require\('\.\/doubles-sets\.json'\);(.*)/;
 const RANDOM_DATA = /^(\trandomData:.*=) require\('\.\/data\.json'\);(.*)/;
+const RANDOM_POTD = /potd/i;
 
 const DATA = {
   'abilities.js': code => [
@@ -749,6 +750,8 @@ const changes = async (where, last, now, repo) => ({
         if (m) return `${m[1]} randomDoublesSetsJSON;${m[2]}`;
         m = INLINE_REQUIRE.exec(line);
         if (m) return `${m[1]}{};`;
+        m = RANDOM_POTD.exec(line);
+        if (m) return undefined;
         // Bless me, Father, for I have sinned...
         if (line.startsWith('\tconstructor(format:')) {
           return '\tconstructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {';
@@ -759,10 +762,15 @@ const changes = async (where, last, now, repo) => ({
         } else if (line === '\t\tthis.dex = Dex.forFormat(format);') {
           return '\t\tthis.dex = dex;';
         // eslint-disable-next-line max-len
+        } else if (line === '\t\t\tlet species = this.dex.species.get(this.sample(pokemonPool[baseSpecies]));') {
+          // eslint-disable-next-line max-len
+          return '\t\t\tconst species = this.dex.species.get(this.sample(pokemonPool[baseSpecies]));';
+        // eslint-disable-next-line max-len
         } else if (line === '\t\t\t\t\tmovePool, moves, abilities, types, counter, species as Species, teamDetails') {
           return '\t\t\t\t\tmovePool, moves, abilities, types, counter, species, teamDetails';
-        } else if (line == '\t\t ) ? this.format.team + \'Team\' : \'\';')
+        } else if (line === '\t\t ) ? this.format.team + \'Team\' : \'\';') {
           return '\t\t) ? this.format.team + \'Team\' : \'\';';
+        }
         return (line
           .replace('values().next().value', 'values().next().value!')
           .replace(/Dex\./g, 'this.dex.'));
