@@ -2370,6 +2370,11 @@ function upgradeBattleArgs({args, kwArgs}: {
       args[0] = '-clearnegativeboost';
       break;
     }
+    case '-weather': {
+      // @ts-ignore
+      if (args[1] === 'Snow') args[1] = 'Snowscape';
+      break;
+    }
     // @ts-ignore
     case '-nothing':
     // OLD: |-nothing

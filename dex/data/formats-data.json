@@ -8459,7 +8459,7 @@
       "natDexTier": "RU"
     },
     "sinistea": {"tier": "LC"},
-    "polteageist": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "RU"},
+    "polteageist": {"tier": "UUBL", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "hatenna": {"tier": "LC"},
     "hattrem": {"tier": "NFE"},
     "hatterene": {"tier": "OU", "doublesTier": "DOU", "natDexTier": "OU"},
@@ -8635,7 +8635,7 @@
       "natDexTier": "Uber"
     },
     "slitherwing": {"tier": "RU", "doublesTier": "(DUU)", "natDexTier": "RU"},
-    "roaringmoon": {"tier": "OU", "doublesTier": "DOU", "natDexTier": "(OU)"},
+    "roaringmoon": {"tier": "OU", "doublesTier": "DOU", "natDexTier": "OU"},
     "irontreads": {"tier": "OU", "doublesTier": "(DUU)", "natDexTier": "OU"},
     "ironmoth": {"tier": "OU", "doublesTier": "(DUU)", "natDexTier": "UU"},
     "ironhands": {"tier": "UUBL", "doublesTier": "DOU", "natDexTier": "UUBL"},
@@ -8691,7 +8691,7 @@
       "doublesTier": "DUU",
       "natDexTier": "UUBL"
     },
-    "archaludon": {"tier": "Uber", "doublesTier": "DOU", "natDexTier": "UU"},
+    "archaludon": {"tier": "Uber", "doublesTier": "DUber", "natDexTier": "UU"},
     "hydrapple": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "UU"},
     "gougingfire": {"tier": "Uber", "doublesTier": "DOU", "natDexTier": "Uber"},
     "ragingbolt": {"tier": "OU", "doublesTier": "DOU", "natDexTier": "OU"},
@@ -8779,6 +8779,8 @@
     "scattervein": {"isNonstandard": "CAP", "tier": "CAP NFE"},
     "hemogoblin": {"isNonstandard": "CAP", "tier": "CAP"},
     "cresceidon": {"isNonstandard": "CAP", "tier": "CAP"},
+    "chuggon": {"isNonstandard": "CAP", "tier": "CAP LC"},
+    "draggalong": {"isNonstandard": "CAP", "tier": "CAP NFE"},
     "chuggalong": {"isNonstandard": "CAP", "tier": "CAP"},
     "shox": {"isNonstandard": "CAP", "tier": "CAP"},
     "pokestarsmeargle": {"isNonstandard": "Custom", "tier": "Illegal"},

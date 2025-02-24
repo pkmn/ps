@@ -69,7 +69,7 @@ const WEATHERS: {[id: string]: ID} = {
   harshsunshine: 'desolateland' as ID,
   heavyrain: 'primordialsea' as ID,
   strongwinds: 'deltastream' as ID,
-  snow: 'snow' as ID,
+  snow: 'snowscape' as ID,
 };
 
 const NOOP = () => undefined;

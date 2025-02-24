@@ -1114,6 +1114,23 @@ export const Formats: import('../sim/dex-formats').FormatList = [
   { name: '[Gen 1] PU', mod: 'gen1', ruleset: [ '[Gen 1] NU' ], banlist: [ 'NU', 'PUBL' ] },
   { name: '[Gen 8] RU', mod: 'gen8', ruleset: [ '[Gen 8] UU' ], banlist: [ 'UU', 'RUBL' ] },
   {
+    name: '[Gen 3] UUBL',
+    mod: 'gen3',
+    ruleset: [ '[Gen 3] OU', '!One Boost Passer Clause' ],
+    banlist: [
+      'OU',
+      'Smeargle + Ingrain',
+      'Baton Pass + Block',
+      'Baton Pass + Mean Look',
+      'Baton Pass + Spider Web',
+      'Flail',
+      'Reversal',
+      'Baton Pass + Speed Boost',
+      'Baton Pass + Agility',
+      'Baton Pass + Dragon Dance'
+    ]
+  },
+  {
     name: '[Gen 8] OU',
     mod: 'gen8',
     ruleset: [ 'Standard', 'Dynamax Clause' ],

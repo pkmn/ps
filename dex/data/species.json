@@ -30079,6 +30079,44 @@
       "eggGroups": ["Amorphous", "Water 3"],
       "gen": 9
     },
+    "chuggon": {
+      "num": -73,
+      "name": "Chuggon",
+      "types": ["Dragon", "Poison"],
+      "baseStats": {
+        "hp": 30,
+        "atk": 23,
+        "def": 77,
+        "spa": 55,
+        "spd": 65,
+        "spe": 30
+      },
+      "abilities": {"0": "Shell Armor", "1": "White Smoke", "H": "Slow Start"},
+      "weightkg": 50,
+      "evos": ["Draggalong"],
+      "eggGroups": ["Dragon", "Mineral"],
+      "gen": 9
+    },
+    "draggalong": {
+      "num": -74,
+      "name": "Draggalong",
+      "types": ["Dragon", "Poison"],
+      "baseStats": {
+        "hp": 40,
+        "atk": 33,
+        "def": 92,
+        "spa": 95,
+        "spd": 80,
+        "spe": 85
+      },
+      "abilities": {"0": "Armor Tail", "1": "White Smoke", "H": "Slow Start"},
+      "weightkg": 110,
+      "prevo": "Chuggon",
+      "evoLevel": 36,
+      "evos": ["Chuggalong"],
+      "eggGroups": ["Dragon", "Mineral"],
+      "gen": 9
+    },
     "chuggalong": {
       "num": -75,
       "name": "Chuggalong",
@@ -30093,6 +30131,8 @@
       },
       "abilities": {"0": "Armor Tail", "1": "White Smoke", "H": "Slow Start"},
       "weightkg": 201.6,
+      "prevo": "Draggalong",
+      "evoLevel": 46,
       "eggGroups": ["Dragon", "Mineral"],
       "gen": 9
     },
@@ -30102,13 +30142,17 @@
       "types": ["Electric", "Normal"],
       "baseStats": {
         "hp": 136,
-        "atk": 73,
-        "def": 81,
-        "spa": 90,
-        "spd": 98,
+        "atk": 55,
+        "def": 87,
+        "spa": 108,
+        "spd": 108,
         "spe": 56
       },
-      "abilities": {"0": "Electromorphosis", "1": "Sticky Hold"},
+      "abilities": {
+        "0": "Electromorphosis",
+        "1": "Sticky Hold",
+        "H": "Cud Chew"
+      },
       "weightkg": 99.9,
       "eggGroups": ["Field"],
       "gen": 9

@@ -49,7 +49,7 @@ const BARE_EFFECTS = ['Dynamax', 'Recoil'] as Protocol.EffectName[];
 const POKE_ITEMS = ['item', 'mail', ''] as const;
 const WEATHER = [
   'RainDance', 'Sandstorm', 'SunnyDay', 'Hail',
-  'PrimordialSea', 'DesolateLand', 'DeltaStream', 'Snow',
+  'PrimordialSea', 'DesolateLand', 'DeltaStream', 'Snowscape',
 ];
 const FIELD_CONDITIONS = ['Misty Terrain'];
 const SIDE_CONDITIONS = [

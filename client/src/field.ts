@@ -14,7 +14,7 @@ const WEATHERS: {[id: string]: WeatherName} = {
   sunnyday: 'Sun',
   raindance: 'Rain',
   hail: 'Hail',
-  snow: 'Snow',
+  snowscape: 'Snow',
   desolateland: 'Harsh Sunshine',
   primordialsea: 'Heavy Rain',
   deltastream: 'Strong Winds',

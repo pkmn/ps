@@ -186,8 +186,8 @@
       "duration": 5,
       "onFieldResidualOrder": 1
     },
-    "snow": {
-      "name": "Snow",
+    "snowscape": {
+      "name": "Snowscape",
       "effectType": "Weather",
       "duration": 5,
       "onModifyDefPriority": 10,
