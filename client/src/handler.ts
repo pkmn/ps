@@ -491,7 +491,9 @@ export class Handler implements Protocol.Handler {
   '|-item|'(args: Args['|-item|'], kwArgs: KWArgs['|-item|']): void {
     let poke = this.battle.getPokemon(args[1])!;
     const item = this.battle.get('items', args[2]);
-    const fromEffect = this.battle.get('conditions', kwArgs.from);
+    const fromEffect = kwArgs.from?.startsWith('ability')
+      ? this.battle.get('abilities', kwArgs.from.substr(8).trim())
+      : this.battle.get('conditions', kwArgs.from);
     const ofPoke = this.battle.getPokemon(kwArgs.of);
 
     if (!poke) {

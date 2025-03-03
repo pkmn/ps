@@ -97,7 +97,7 @@ const IMPORTS = {
     'Side', 'SpreadMoveTargets', 'SpreadMoveDamage', 'ZMoveOptions',
   ],
   'sim/battle-queue.ts': ['Pokemon', 'ID', 'Move', 'Effect'],
-  'sim/battle-stream.ts': ['AnyObject', 'ModdedDex'],
+  'sim/battle-stream.ts': ['ModdedDex'],
   'sim/battle.ts': [
     'Effect', 'Format', 'ID', 'PlayerOptions', 'AnyObject', 'ActiveMove', 'SideID', 'StatsTable',
     'SparseBoostsTable', 'SpreadMoveDamage', 'Move', 'PokemonSet', 'GameType', 'ModdedDex',
@@ -125,12 +125,12 @@ const IMPORTS = {
   'sim/field.ts': ['Effect', 'Condition', 'Pokemon', 'Battle', 'Side', 'AnyObject', 'ID'],
   'sim/pokemon.ts': [
     'ActiveMove', 'Ability', 'Condition', 'Item', 'Species', 'SparseBoostsTable', 'Side', 'SideID',
-    'AnyObject', 'DynamaxOptions', 'Move', 'StatIDExceptHP', 'Effect', 'StatsExceptHPTable', 'ID',
+    'AnyObject', 'Move', 'StatIDExceptHP', 'Effect', 'StatsExceptHPTable', 'ID',
     'BoostsTable', 'StatsTable', 'GenderName', 'PokemonSet', 'Battle', 'PokemonSlot',
   ],
   'sim/side.ts': [
     'AnyObject', 'Effect', 'ActiveMove', 'Condition', 'PokemonSet', 'Battle',
-    'Move', 'SideID', 'ID',
+    'StatsExceptHPTable', 'MoveTarget', 'Move', 'SideID', 'ID',
   ],
   'sim/state.ts': [
     'AnyObject', 'Condition', 'Ability', 'Item', 'Move', 'Species', 'ActiveMove',
@@ -396,8 +396,8 @@ const REWRITES = {
   'sim/battle-stream.ts': {
     '\t\tvoid this._listen();': undefined,
     '\tasync _listen() {': '\tasync start() {',
-    "import {Battle, extractChannelMessages} from './battle';":
-      "import {Battle, extractChannelMessages} from './battle';\nimport {Dex} from './dex';",
+    "import { Battle, extractChannelMessages } from './battle';":
+      "import { Battle, extractChannelMessages } from './battle';\nimport {Dex} from './dex';",
     '\tbattle: Battle | null;': '\tbattle: Battle | null;\n\tdex: ModdedDex;',
     '\t\t\tthis.battle = new Battle(options);':
       '\t\t\tthis.battle = new Battle(options, this.dex);',
@@ -553,10 +553,10 @@ const RANDOMS_FILES = {
 };
 
 const INLINE_REQUIRE = /^(.*)require\(.*\)(\.matchups)?;.*$/;
-const RANDOM_SETS = /^(\trandomSets:.*=) require\('\.\/sets\.json'\);(.*)/;
+const RANDOM_SETS = /^(\t(?:override )?randomSets:.*=) require\('\.\/sets\.json'\);(.*)/;
 const RANDOM_DOUBLES_SETS =
   /^(\trandomDoublesSets:.*=) require\('\.\/doubles-sets\.json'\);(.*)/;
-const RANDOM_DATA = /^(\trandomData:.*=) require\('\.\/data\.json'\);(.*)/;
+const RANDOM_DATA = /^(\t(?:override )?randomData:.*=) require\('\.\/data\.json'\);(.*)/;
 const RANDOM_POTD = /potd/i;
 
 const DATA = {
@@ -771,9 +771,7 @@ const changes = async (where, last, now, repo) => ({
         } else if (line === '\t\t ) ? this.format.team + \'Team\' : \'\';') {
           return '\t\t) ? this.format.team + \'Team\' : \'\';';
         }
-        return (line
-          .replace('values().next().value', 'values().next().value!')
-          .replace(/Dex\./g, 'this.dex.'));
+        return line.replace(/Dex\./g, 'this.dex.');
       });
 
       let dataJson = '';
@@ -959,7 +957,7 @@ const changes = async (where, last, now, repo) => ({
     fs.writeFileSync(path.resolve(sim, 'sim/global-types.ts'), types);
     const exported = [];
     for (const line of types.split('\n')) {
-      exported.push(/^(type|interface|namespace)/.test(line) ? `export ${line}` : line);
+      exported.push(/^(type|interface|declare|namespace)/.test(line) ? `export ${line}` : line);
     }
     fs.writeFileSync(path.resolve(sim, 'sim/exported-global-types.ts'), exported.join('\n'));
 

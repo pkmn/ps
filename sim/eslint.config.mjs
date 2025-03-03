@@ -4,6 +4,7 @@ export default [...pkmn, {
   ignores: ["eslint.config.mjs", "build"],
 }, {
   rules: {
+    "arrow-body-style": "off",
     "@stylistic/array-bracket-spacing": "off",
     "@stylistic/comma-dangle": "off",
     "@stylistic/indent": "off",

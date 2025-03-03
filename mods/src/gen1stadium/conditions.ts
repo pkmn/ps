@@ -39,7 +39,7 @@ export const Conditions: ModdedConditionDataTable = {
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Move') {
-				this.add('-status', target, 'slp', '[from] move: ' + sourceEffect.name);
+				this.add('-status', target, 'slp', `[from] move: ${sourceEffect.name}`);
 			} else {
 				this.add('-status', target, 'slp');
 			}
@@ -110,7 +110,7 @@ export const Conditions: ModdedConditionDataTable = {
 		duration: 2,
 		onBeforeMovePriority: 1,
 		onStart(target, source, effect) {
-			this.add('-activate', target, 'move: ' + effect, '[of] ' + source);
+			this.add('-activate', target, `move: ${effect}`, `[of] ${source}`);
 		},
 		onBeforeMove(pokemon) {
 			if (this.effectState.source && (!this.effectState.source.isActive || this.effectState.source.hp <= 0)) {

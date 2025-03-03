@@ -11,7 +11,7 @@ interface TagData {
 	genericNumCol?: (thing: Species | Move | Item | Ability) => number;
 }
 
-export const Tags: {[id: IDEntry]: TagData} = {
+export const Tags: { [id: IDEntry]: TagData } = {
 	// Categories
 	// ----------
 	physical: {

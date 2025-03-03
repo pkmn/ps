@@ -3,6 +3,7 @@ import pkmn from "@pkmn/eslint-config";
 export default [...pkmn, {
   rules: {
     "@stylistic/indent": ["error", "tab", {flatTernaryExpressions: true}],
+    "@stylistic/object-curly-spacing": "off",
     "@stylistic/member-delimiter-style": "off",
     "@stylistic/quotes": "off",
     "@typescript-eslint/no-floating-promises": ["error", {ignoreVoid: true}],

@@ -18,11 +18,13 @@ export default [...pkmn, {
   rules: {
     "@stylistic/indent": ["error", "tab", {flatTernaryExpressions: true}],
     "@stylistic/no-mixed-spaces-and-tabs": "off",
+    "@stylistic/object-curly-spacing": "off",
     "@stylistic/operator-linebreak": "off",
     "@stylistic/quotes": "off",
     "@typescript-eslint/no-base-to-string": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/prefer-optional-chain": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
     "max-len": "off",
   }
 }];

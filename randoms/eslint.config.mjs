@@ -6,6 +6,7 @@ export default [...pkmn, {
     "@stylistic/member-delimiter-style": "off",
     "@stylistic/no-mixed-spaces-and-tabs": "off",
     "@stylistic/no-multiple-empty-lines": "off",
+    "@stylistic/object-curly-spacing": "off",
     "@stylistic/operator-linebreak": "off",
     "@stylistic/quotes": "off",
     "@typescript-eslint/no-unused-vars": "off",

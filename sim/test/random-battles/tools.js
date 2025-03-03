@@ -8,7 +8,7 @@
 
 const assert = require("../assert");
 const Teams = require('./../../build/cjs/sim/teams').Teams;
-const {TeamValidator, PokemonSources} = require('../../build/cjs/sim/team-validator');
+const { TeamValidator, PokemonSources } = require('../../build/cjs/sim/team-validator');
 
 /**
  * Unit test helper for Pokemon sets

@@ -19,28 +19,28 @@ export type TeamValidator = import('./team-validator').TeamValidator;
 export type PokemonSources = import('./team-validator').PokemonSources;
 
 /** An ID must be lowercase alphanumeric. */
-export type ID = '' | Lowercase<string> & {__isID: true};
+export type ID = '' | Lowercase<string> & { __isID: true };
 /** Like ID, but doesn't require you to type `as ID` to define it. For data files and object keys. */
 export type IDEntry = Lowercase<string>;
-export type PokemonSlot = '' | IDEntry & {__isSlot: true};
-export interface AnyObject {[k: string]: any}
+export type PokemonSlot = '' | IDEntry & { __isSlot: true };
+export interface AnyObject { [k: string]: any }
 
 export type GenderName = 'M' | 'F' | 'N' | '';
 export type StatIDExceptHP = 'atk' | 'def' | 'spa' | 'spd' | 'spe';
 export type StatID = 'hp' | StatIDExceptHP;
-export type StatsExceptHPTable = {[stat in StatIDExceptHP]: number};
-export type StatsTable = {[stat in StatID]: number};
+export type StatsExceptHPTable = { [stat in StatIDExceptHP]: number };
+export type StatsTable = { [stat in StatID]: number };
 export type SparseStatsTable = Partial<StatsTable>;
 export type BoostID = StatIDExceptHP | 'accuracy' | 'evasion';
-export type BoostsTable = {[boost in BoostID]: number };
+export type BoostsTable = { [boost in BoostID]: number };
 export type SparseBoostsTable = Partial<BoostsTable>;
 export type Nonstandard = 'Past' | 'Future' | 'Unobtainable' | 'CAP' | 'LGPE' | 'Custom' | 'Gigantamax';
 
 export type PokemonSet = import('./teams').PokemonSet;
 
-export namespace TierTypes {
+export declare namespace TierTypes {
 	export type Singles = "AG" | "Uber" | "(Uber)" | "OU" | "(OU)" | "UUBL" | "UU" | "RUBL" | "RU" | "NUBL" | "NU" |
-	"(NU)" | "PUBL" | "PU" | "(PU)" | "ZUBL" | "ZU" | "NFE" | "LC";
+		"(NU)" | "PUBL" | "PU" | "(PU)" | "ZUBL" | "ZU" | "NFE" | "LC";
 	export type Doubles = "DUber" | "(DUber)" | "DOU" | "(DOU)" | "DBL" | "DUU" | "(DUU)" | "NFE" | "LC";
 	export type Other = "Unreleased" | "Illegal" | "CAP" | "CAP NFE" | "CAP LC";
 }
@@ -107,7 +107,7 @@ export interface EffectData {
 	shortDesc?: string;
 }
 
-export type ModdedEffectData = EffectData | Partial<EffectData> & {inherit: true};
+export type ModdedEffectData = EffectData | Partial<EffectData> & { inherit: true };
 
 export type EffectType =
 	'Condition' | 'Pokemon' | 'Move' | 'Item' | 'Ability' | 'Format' |
@@ -144,11 +144,7 @@ export type SideID = 'p1' | 'p2' | 'p3' | 'p4';
 
 export type SpreadMoveTargets = (Pokemon | false | null)[];
 export type SpreadMoveDamage = (number | boolean | undefined)[];
-export type ZMoveOptions = ({move: string, target: MoveTarget} | null)[];
-export interface DynamaxOptions {
-	maxMoves: ({move: string, target: MoveTarget, disabled?: boolean})[];
-	gigantamax?: string;
-}
+export type ZMoveOptions = ({ move: string, target: MoveTarget } | null)[];
 
 export interface BattleScriptsData {
 	gen: number;
@@ -164,7 +160,7 @@ export interface ModdedBattleActions {
 	canTerastallize?: (this: BattleActions, pokemon: Pokemon) => string | null;
 	canUltraBurst?: (this: BattleActions, pokemon: Pokemon) => string | null;
 	canZMove?: (this: BattleActions, pokemon: Pokemon) => ZMoveOptions | void;
-	canDynamax?: (this: BattleActions, pokemon: Pokemon, skipChecks?: boolean) => DynamaxOptions | void;
+	canDynamax?: (this: BattleActions, pokemon: Pokemon, skipChecks?: boolean) => import('./side').DynamaxOptions | void;
 	forceSwitch?: (
 		this: BattleActions, damage: SpreadMoveDamage, targets: SpreadMoveTargets, source: Pokemon,
 		move: ActiveMove, moveData: ActiveMove, isSecondary?: boolean, isSelf?: boolean
@@ -265,7 +261,7 @@ export interface ModdedBattleSide {
 	canDynamaxNow?: (this: Side) => boolean;
 	chooseSwitch?: (this: Side, slotText?: string) => any;
 	getChoice?: (this: Side) => string;
-	getRequestData?: (this: Side, forAlly?: boolean) => {name: string, id: ID, pokemon: AnyObject[]};
+	getRequestData?: (this: Side, forAlly?: boolean) => { name: string, id: ID, pokemon: AnyObject[] };
 }
 
 export interface ModdedBattlePokemon {
@@ -288,7 +284,7 @@ export interface ModdedBattlePokemon {
 	getActionSpeed?: (this: Pokemon) => number;
 	getItem?: (this: Pokemon) => Item;
 	getMoveRequestData?: (this: Pokemon) => {
-		moves: {move: string, id: ID, target?: string, disabled?: boolean}[],
+		moves: { move: string, id: ID, target?: string, disabled?: boolean }[],
 		maybeDisabled?: boolean, trapped?: boolean, maybeTrapped?: boolean,
 		canMegaEvo?: boolean, canUltraBurst?: boolean, canZMove?: ZMoveOptions,
 	};
@@ -296,7 +292,9 @@ export interface ModdedBattlePokemon {
 		move: string, id: string, disabled?: string | boolean, disabledSource?: string,
 		target?: string, pp?: number, maxpp?: number,
 	}[];
-	getMoveTargets?: (this: Pokemon, move: ActiveMove, target: Pokemon) => {targets: Pokemon[], pressureTargets: Pokemon[]};
+	getMoveTargets?: (this: Pokemon, move: ActiveMove, target: Pokemon) => {
+		targets: Pokemon[], pressureTargets: Pokemon[],
+	};
 	getStat?: (
 		this: Pokemon, statName: StatIDExceptHP, unboosted?: boolean, unmodified?: boolean, fastReturn?: boolean
 	) => number;
@@ -446,7 +444,7 @@ export type ItemText = TextFile<ConditionTextData>;
 export type PokedexText = TextFile<BasicTextData>;
 export type DefaultText = AnyObject;
 
-export namespace RandomTeamsTypes {
+export declare namespace RandomTeamsTypes {
 	export interface TeamDetails {
 		megaStone?: number;
 		zMove?: number;
@@ -473,12 +471,12 @@ export namespace RandomTeamsTypes {
 		forceResult: boolean;
 		weather?: string;
 		terrain?: string[];
-		typeCount: {[k: string]: number};
-		typeComboCount: {[k: string]: number};
-		baseFormes: {[k: string]: number};
-		has: {[k: string]: number};
-		weaknesses: {[k: string]: number};
-		resistances: {[k: string]: number};
+		typeCount: { [k: string]: number };
+		typeComboCount: { [k: string]: number };
+		baseFormes: { [k: string]: number };
+		has: { [k: string]: number };
+		weaknesses: { [k: string]: number };
+		resistances: { [k: string]: number };
 		gigantamax?: boolean;
 	}
 	export interface RandomSet {
@@ -547,8 +545,8 @@ export namespace RandomTeamsTypes {
 		sets: RandomSetData[];
 	}
 	export type Role = '' | 'Fast Attacker' | 'Setup Sweeper' | 'Wallbreaker' | 'Tera Blast user' |
-	'Bulky Attacker' | 'Bulky Setup' | 'Fast Bulky Setup' | 'Bulky Support' | 'Fast Support' | 'AV Pivot' |
-	'Doubles Fast Attacker' | 'Doubles Setup Sweeper' | 'Doubles Wallbreaker' | 'Doubles Bulky Attacker' |
-	'Doubles Bulky Setup' | 'Offensive Protect' | 'Bulky Protect' | 'Doubles Support' | 'Choice Item user' |
-	'Z-Move user' | 'Staller' | 'Spinner' | 'Generalist' | 'Berry Sweeper' | 'Thief user';
+		'Bulky Attacker' | 'Bulky Setup' | 'Fast Bulky Setup' | 'Bulky Support' | 'Fast Support' | 'AV Pivot' |
+		'Doubles Fast Attacker' | 'Doubles Setup Sweeper' | 'Doubles Wallbreaker' | 'Doubles Bulky Attacker' |
+		'Doubles Bulky Setup' | 'Offensive Protect' | 'Bulky Protect' | 'Doubles Support' | 'Choice Item user' |
+		'Z-Move user' | 'Staller' | 'Spinner' | 'Generalist' | 'Berry Sweeper' | 'Thief user';
 }

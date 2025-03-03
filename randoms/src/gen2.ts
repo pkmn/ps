@@ -39,7 +39,7 @@ const MOVE_PAIRS = [
 ];
 
 export class RandomGen2Teams extends RandomGen3Teams {
-	randomSets: {[species: IDEntry]: RandomTeamsTypes.RandomSpeciesData} = randomSetsJSON;
+	override randomSets: { [species: IDEntry]: RandomTeamsTypes.RandomSpeciesData } = randomSetsJSON;
 
 	constructor(dex: ModdedDex, format: Format, prng: PRNG | PRNGSeed | null) {
 		super(dex, format, prng);
@@ -60,7 +60,7 @@ export class RandomGen2Teams extends RandomGen3Teams {
 		};
 	}
 
-	cullMovePool(
+	override cullMovePool(
 		types: string[],
 		moves: Set<string>,
 		abilities = {},
@@ -151,7 +151,7 @@ export class RandomGen2Teams extends RandomGen3Teams {
 	}
 
 	// Generate random moveset for a given species, role, preferred type.
-	randomMoveset(
+	override randomMoveset(
 		types: string[],
 		abilities: string[],
 		teamDetails: RandomTeamsTypes.TeamDetails,
@@ -362,7 +362,7 @@ export class RandomGen2Teams extends RandomGen3Teams {
 		return moves;
 	}
 
-	getItem(
+	override getItem(
 		ability: string,
 		types: string[],
 		moves: Set<string>,
@@ -391,7 +391,7 @@ export class RandomGen2Teams extends RandomGen3Teams {
 		return 'Leftovers';
 	}
 
-	randomSet(
+	override randomSet(
 		species: string | Species,
 		teamDetails: RandomTeamsTypes.TeamDetails = {},
 		isLead = false
@@ -410,8 +410,8 @@ export class RandomGen2Teams extends RandomGen3Teams {
 		const ability = '';
 		let item = undefined;
 
-		const evs = {hp: 255, atk: 255, def: 255, spa: 255, spd: 255, spe: 255};
-		const ivs = {hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30};
+		const evs = { hp: 255, atk: 255, def: 255, spa: 255, spd: 255, spe: 255 };
+		const ivs = { hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30 };
 
 		const types = species.types;
 		const abilities: string[] = [];
@@ -439,22 +439,22 @@ export class RandomGen2Teams extends RandomGen3Teams {
 				if (move.startsWith('hiddenpower')) hpType = move.substr(11);
 			}
 			if (!hpType) throw new Error(`hasHiddenPower is true, but no Hidden Power move was found.`);
-			const hpIVs: {[k: string]: Partial<typeof ivs>} = {
-				dragon: {def: 28},
-				ice: {def: 26},
-				psychic: {def: 24},
-				electric: {atk: 28},
-				grass: {atk: 28, def: 28},
-				water: {atk: 28, def: 26},
-				fire: {atk: 28, def: 24},
-				steel: {atk: 26},
-				ghost: {atk: 26, def: 28},
-				bug: {atk: 26, def: 26},
-				rock: {atk: 26, def: 24},
-				ground: {atk: 24},
-				poison: {atk: 24, def: 28},
-				flying: {atk: 24, def: 26},
-				fighting: {atk: 24, def: 24},
+			const hpIVs: { [k: string]: Partial<typeof ivs> } = {
+				dragon: { def: 28 },
+				ice: { def: 26 },
+				psychic: { def: 24 },
+				electric: { atk: 28 },
+				grass: { atk: 28, def: 28 },
+				water: { atk: 28, def: 26 },
+				fire: { atk: 28, def: 24 },
+				steel: { atk: 26 },
+				ghost: { atk: 26, def: 28 },
+				bug: { atk: 26, def: 26 },
+				rock: { atk: 26, def: 24 },
+				ground: { atk: 24 },
+				poison: { atk: 24, def: 28 },
+				flying: { atk: 24, def: 26 },
+				fighting: { atk: 24, def: 24 },
 			};
 			let iv: StatID;
 			for (iv in hpIVs[hpType]) {
