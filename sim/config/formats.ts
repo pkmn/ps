@@ -126,26 +126,26 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     mod: 'gen9',
     ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Same Type Clause', 'Terastal Clause' ],
     banlist: [
-      'Annihilape',            'Arceus',            'Baxcalibur',
-      'Calyrex-Ice',           'Calyrex-Shadow',    'Chi-Yu',
-      'Chien-Pao',             'Blaziken',          'Deoxys-Normal',
-      'Deoxys-Attack',         'Dialga',            'Dialga-Origin',
-      'Espathra',              'Eternatus',         'Giratina',
-      'Giratina-Origin',       'Groudon',           'Ho-Oh',
-      'Iron Bundle',           'Kingambit',         'Koraidon',
-      'Kyogre',                'Kyurem-Black',      'Kyurem-White',
-      'Lugia',                 'Lunala',            'Magearna',
-      'Mewtwo',                'Miraidon',          'Necrozma-Dawn-Wings',
-      'Necrozma-Dusk-Mane',    'Palafin',           'Palkia',
-      'Palkia-Origin',         'Rayquaza',          'Reshiram',
-      'Shaymin-Sky',           'Solgaleo',          'Ursaluna-Bloodmoon',
-      'Urshifu-Single-Strike', 'Zacian',            'Zacian-Crowned',
-      'Zamazenta',             'Zamazenta-Crowned', 'Zekrom',
-      'Moody',                 'Shadow Tag',        'Booster Energy',
-      'Damp Rock',             'Focus Band',        "King's Rock",
-      'Quick Claw',            'Razor Fang',        'Smooth Rock',
-      'Acupressure',           'Baton Pass',        'Last Respects',
-      'Shed Tail'
+      'Annihilape',          'Arceus',                'Baxcalibur',
+      'Calyrex-Ice',         'Calyrex-Shadow',        'Chi-Yu',
+      'Chien-Pao',           'Blaziken',              'Deoxys-Normal',
+      'Deoxys-Attack',       'Dialga',                'Dialga-Origin',
+      'Espathra',            'Eternatus',             'Giratina',
+      'Giratina-Origin',     'Gouging Fire',          'Groudon',
+      'Ho-Oh',               'Iron Bundle',           'Kingambit',
+      'Koraidon',            'Kyogre',                'Kyurem-Black',
+      'Kyurem-White',        'Lugia',                 'Lunala',
+      'Magearna',            'Mewtwo',                'Miraidon',
+      'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',    'Palafin',
+      'Palkia',              'Palkia-Origin',         'Rayquaza',
+      'Reshiram',            'Shaymin-Sky',           'Solgaleo',
+      'Ursaluna-Bloodmoon',  'Urshifu-Single-Strike', 'Zacian',
+      'Zacian-Crowned',      'Zamazenta',             'Zamazenta-Crowned',
+      'Zekrom',              'Moody',                 'Shadow Tag',
+      'Booster Energy',      'Damp Rock',             'Focus Band',
+      "King's Rock",         'Quick Claw',            'Razor Fang',
+      'Smooth Rock',         'Acupressure',           'Baton Pass',
+      'Last Respects',       'Shed Tail'
     ]
   },
   {
@@ -324,13 +324,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Miraidon',           'Necrozma',            'Necrozma-Dawn-Wings',
       'Necrozma-Dusk-Mane', 'Ogerpon-Cornerstone', 'Ogerpon-Hearthflame',
       'Palkia',             'Palkia-Origin',       'Rayquaza',
-      'Reshiram',           'Scream Tail',         'Shaymin-Sky',
-      'Snorlax',            'Solgaleo',            'Terapagos',
-      'Zacian',             'Zacian-Crowned',      'Zamazenta',
-      'Zamazenta-Crowned',  'Zekrom',              'Moody',
-      'Focus Band',         'Focus Sash',          "King's Rock",
-      'Razor Fang',         'Quick Claw',          'Acupressure',
-      'Perish Song'
+      'Regidrago',          'Reshiram',            'Scream Tail',
+      'Shaymin-Sky',        'Snorlax',             'Solgaleo',
+      'Terapagos',          'Zacian',              'Zacian-Crowned',
+      'Zamazenta',          'Zamazenta-Crowned',   'Zekrom',
+      'Moody',              'Focus Band',          'Focus Sash',
+      "King's Rock",        'Razor Fang',          'Quick Claw',
+      'Acupressure',        'Perish Song'
     ]
   },
   {
@@ -371,18 +371,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Swagger'
     ]
   },
-  {
-    name: '[Gen 9] Anything Goes',
-    mod: 'gen9',
-    ruleset: [
-      'Min Source Gen = 9',
-      'Obtainable',
-      'Team Preview',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Endless Battle Clause'
-    ]
-  },
+  { name: '[Gen 9] Anything Goes', mod: 'gen9', ruleset: [ 'Standard AG' ] },
   {
     name: '[Gen 9] Ubers UU',
     mod: 'gen9',
@@ -406,7 +395,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Zacian-Crowned', 'Arceus-Dragon',
       'Arceus-Fire',    'Arceus-Flying',
       'Arceus-Steel',   'Necrozma-Dawn-Wings',
-      'Shaymin-Sky',    'Zekrom'
+      'Shaymin-Sky',    'Zacian',
+      'Zekrom'
     ]
   },
   {
@@ -575,14 +565,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
   {
     name: '[Gen 9] National Dex',
     mod: 'gen9',
-    ruleset: [
-      'Standard NatDex',
-      'OHKO Clause',
-      'Evasion Clause',
-      'Species Clause',
-      'Sleep Clause Mod',
-      'Terastal Clause'
-    ],
+    ruleset: [ 'Standard NatDex', 'Terastal Clause' ],
     banlist: [
       'ND Uber',         'ND AG',
       'Arena Trap',      'Moody',
@@ -596,14 +579,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
   {
     name: '[Gen 8] National Dex',
     mod: 'gen8',
-    ruleset: [
-      'Standard NatDex',
-      'OHKO Clause',
-      'Evasion Clause',
-      'Species Clause',
-      'Dynamax Clause',
-      'Sleep Clause Mod'
-    ],
+    ruleset: [ 'Standard NatDex', 'Dynamax Clause' ],
     banlist: [
       'ND Uber',
       'Arena Trap',
@@ -621,11 +597,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     mod: 'gen9',
     ruleset: [
       'Standard NatDex',
-      'OHKO Clause',
+      '!Evasion Clause',
       'Evasion Moves Clause',
       'Evasion Items Clause',
-      'Species Clause',
-      'Sleep Clause Mod',
       'Mega Rayquaza Clause'
     ],
     banlist: [ 'ND AG', 'Shedinja', 'Assist', 'Baton Pass' ]
@@ -645,14 +619,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
   {
     name: '[Gen 9] National Dex LC',
     mod: 'gen9',
-    ruleset: [
-      'Standard NatDex',
-      'Little Cup',
-      'Species Clause',
-      'OHKO Clause',
-      'Evasion Clause',
-      'Sleep Clause Mod'
-    ],
+    ruleset: [ 'Standard NatDex', 'Little Cup' ],
     banlist: [
       'Aipom',         'Basculin-White-Striped',
       'Clamperl',      'Corsola-Galar',
@@ -679,15 +646,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
   {
     name: '[Gen 9] National Dex Monotype',
     mod: 'gen9',
-    ruleset: [
-      'Standard NatDex',
-      'Same Type Clause',
-      'Terastal Clause',
-      'Species Clause',
-      'OHKO Clause',
-      'Evasion Clause',
-      'Sleep Clause Mod'
-    ],
+    ruleset: [ 'Standard NatDex', 'Same Type Clause', 'Terastal Clause' ],
     banlist: [
       'Annihilape',          'Arceus',              'Baxcalibur',
       'Blastoise-Mega',      'Blaziken',            'Blaziken-Mega',
@@ -724,14 +683,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     name: '[Gen 9] National Dex Doubles',
     mod: 'gen9',
     gameType: 'doubles',
-    ruleset: [
-      'Standard NatDex',
-      'OHKO Clause',
-      'Evasion Moves Clause',
-      'Evasion Abilities Clause',
-      'Species Clause',
-      'Gravity Sleep Clause'
-    ],
+    ruleset: [ 'Standard Doubles', 'NatDex Mod', 'Evasion Abilities Clause' ],
     banlist: [
       'Annihilape',         'Arceus',          'Calyrex-Ice',
       'Calyrex-Shadow',     'Dialga',          'Dialga-Origin',
@@ -757,7 +709,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     name: '[Gen 9] National Dex Doubles Ubers',
     mod: 'gen9',
     gameType: 'doubles',
-    ruleset: [ 'Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause' ],
+    ruleset: [ 'Standard Doubles', 'NatDex Mod', '!Gravity Sleep Clause' ],
     banlist: [ 'Shedinja', 'Assist' ]
   },
   {
@@ -782,7 +734,11 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Light Clay',         'Ultranecrozium Z', 'Last Respects'
     ]
   },
-  { name: '[Gen 9] National Dex AG', mod: 'gen9', ruleset: [ 'Standard NatDex' ] },
+  {
+    name: '[Gen 9] National Dex AG',
+    mod: 'gen9',
+    ruleset: [ 'Standard AG', 'NatDex Mod' ]
+  },
   {
     name: '[Gen 8] National Dex UU',
     mod: 'gen8',
@@ -795,12 +751,10 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ruleset: [
       'Standard NatDex',
       'Same Type Clause',
-      'Species Clause',
-      'OHKO Clause',
+      '!Evasion Clause',
       'Evasion Moves Clause',
       'Evasion Items Clause',
-      'Dynamax Clause',
-      'Sleep Clause Mod'
+      'Dynamax Clause'
     ],
     banlist: [
       'Arceus',                'Blastoise-Mega',  'Blaziken',

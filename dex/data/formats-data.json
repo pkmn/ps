@@ -7,7 +7,7 @@
     "charmeleon": {"tier": "NFE"},
     "charizard": {"tier": "NU"},
     "squirtle": {"tier": "LC"},
-    "wartortle": {"tier": "ZU"},
+    "wartortle": {"tier": "NFE"},
     "blastoise": {"tier": "NU"},
     "caterpie": {"tier": "LC"},
     "metapod": {"tier": "NFE"},
@@ -76,7 +76,7 @@
     "geodude": {"tier": "LC"},
     "graveler": {"tier": "PU"},
     "golem": {"tier": "UU"},
-    "ponyta": {"tier": "ZU"},
+    "ponyta": {"tier": "LC"},
     "rapidash": {"tier": "PU"},
     "slowpoke": {"tier": "ZU"},
     "slowbro": {"tier": "OU"},
@@ -6468,7 +6468,7 @@
       "natDexTier": "RU"
     },
     "venonat": {"tier": "LC"},
-    "venomoth": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
+    "venomoth": {"tier": "ZUBL", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "diglett": {"tier": "NFE"},
     "diglettalola": {"tier": "LC"},
     "dugtrio": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
@@ -7036,7 +7036,7 @@
     "gallademega": {
       "isNonstandard": "Past",
       "tier": "Illegal",
-      "natDexTier": "UU"
+      "natDexTier": "UUBL"
     },
     "surskit": {"tier": "LC"},
     "masquerain": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
@@ -8507,7 +8507,7 @@
     "duraludongmax": {"isNonstandard": "Past", "tier": "Illegal"},
     "dreepy": {"tier": "LC"},
     "drakloak": {"tier": "NFE"},
-    "dragapult": {"tier": "OU", "doublesTier": "DUU", "natDexTier": "OU"},
+    "dragapult": {"tier": "OU", "doublesTier": "DUU", "natDexTier": "Uber"},
     "zacian": {"tier": "Uber", "doublesTier": "DUber", "natDexTier": "Uber"},
     "zaciancrowned": {
       "tier": "Uber",
@@ -8557,7 +8557,7 @@
     "skeledirge": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "UU"},
     "quaxly": {"tier": "LC"},
     "quaxwell": {"tier": "NFE"},
-    "quaquaval": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "UU"},
+    "quaquaval": {"tier": "UUBL", "doublesTier": "(DUU)", "natDexTier": "UU"},
     "lechonk": {"tier": "LC"},
     "oinkologne": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "oinkolognef": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},

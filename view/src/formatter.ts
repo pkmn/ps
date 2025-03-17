@@ -260,6 +260,10 @@ export class LogFormatter {
   }
 
   lineSection(args: ArgType | 'switchout', kwArgs: KWArgType) {
+    // BUG: TypeScript is wrong... ¯\_(ツ)_/¯
+    // @ts-ignore
+    if (kwArgs.premajor) return 'preMajor';
+
     const cmd = args[0];
     switch (cmd) {
       case 'done': case 'turn':

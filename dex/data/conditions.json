@@ -25,9 +25,13 @@
     "partiallytrapped": {
       "name": "partiallytrapped",
       "duration": 2,
-      "onBeforeMovePriority": 9
+      "onBeforeMovePriority": 0
     },
-    "partialtrappinglock": {"name": "partialtrappinglock"},
+    "fakepartiallytrapped": {"name": "fakepartiallytrapped", "duration": 2},
+    "partialtrappinglock": {
+      "name": "partialtrappinglock",
+      "onBeforeMovePriority": 0
+    },
     "mustrecharge": {"inherit": true, "duration": 0, "onBeforeMovePriority": 7},
     "lockedmove": {"name": "lockedmove"},
     "twoturnmove": {"name": "twoturnmove"},

@@ -1611,6 +1611,7 @@ export namespace Protocol {
     'weaken': true;
     'wisher': Nickname;
     'zeffect': true;
+    'premajor': true;
   } & {
     'already': true;
     'anim': AnimationName | 'prepare';
@@ -1653,6 +1654,7 @@ export namespace Protocol {
     '|-invertboost|': GeneralKWArgNames;
     '|-item|': GeneralKWArgNames | 'identify';
     '|-miss|': GeneralKWArgNames; // FIXME
+    '|-prepare|': 'premajor';
     '|-setboost|': GeneralKWArgNames;
     '|-sethp|': GeneralKWArgNames;
     '|-sidestart|': 'silent' | 'persistent';
@@ -1911,7 +1913,7 @@ export const Protocol = new class {
     '|-block|': 1, '|-damage|': 1, '|-heal|': 1, '|-sethp|': 1, '|-status|': 1, '|swap|': 1,
     '|-curestatus|': 1, '|-cureteam|': 1, '|-boost|': 1, '|-unboost|': 1, '|-setboost|': 1,
     '|-swapboost|': 1, '|-invertboost|': 1, '|-clearnegativeboost|': 1, '|-weather|': 1,
-    '|-fieldstart|': 1, '|-fieldend|': 1, '|-sidestart|': 1, '|-singlemove|': 1,
+    '|-fieldstart|': 1, '|-fieldend|': 1, '|-sidestart|': 1, '|-singlemove|': 1, '|-prepare|': 1,
     '|-sideend|': 1, '|-start|': 1, '|-end|': 1, '|-immune|': 1, '|-item|': 1, '|-enditem|': 1,
     '|-ability|': 1, '|-endability|': 1, '|-transform|': 1, '|-activate|': 1, '|-singleturn|': 1,
     '|-clearallboost|': 1, '|-anim|': 1, '|-copyboost|': 1, '|-clearboost|': 1, '|-miss|': 1,

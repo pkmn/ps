@@ -39,7 +39,7 @@ const BOOL_KWARGS = new Set<Protocol.BattleArgsWithKWArgType>([
   'broken', 'consumed', 'damage', 'eat', 'fail', 'fatigue', 'forme', 'heavy', 'miss', 'msg',
   'notarget', 'ohko', 'silent', 'still', 'thaw', 'upkeep', 'weak', 'weaken', 'zeffect', 'already',
   'identify', 'interrupt', 'multiple', 'partiallytrapped', 'prepare', 'fromitem', 'persistent',
-  'source',
+  'source', 'premajor',
 ]);
 const ABILITY_KWARGS: Protocol.BattleArgsWithKWArgType[] = ['ability', 'ability2'];
 const MOVE_KWARGS: Protocol.BattleArgsWithKWArgType[] = ['block'];
@@ -57,6 +57,7 @@ const SIDE_CONDITIONS = [
   'Safeguard', 'G-Max Volcalith', 'G-Max Wildfire', 'G-Max Cannonade', 'G-Max Steelsurge',
   'G-Max Vine Lash', 'Grass Pledge', 'Water Pledge', 'Fire Pledge', 'Aurora Veil',
 ];
+const BINDING = ['bind', 'clamp', 'firespin', 'wrap'];
 const STAT_DISPLAY_NAMES = ['Attack', 'Defense'];
 const SSA = ['Shell Side Arm Physical', 'Shell Side Arm Special'];
 const IVY_CUDGEL = ['Ivy Cudgel Water', 'Ivy Cudgel Fire', 'Ivy Cudgel Rock'];
@@ -644,13 +645,17 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   // TODO
   '|move|'(args: Args['|move|'], kwArgs: KWArgs['|move|']) {
     if (!verifyPokemonIdent(args[1])) return false;
-    if (!(args[2] === 'recharge' || verifyMoveName(args[2], this.gen))) return false;
+    if (!(args[2] === 'recharge' || verifyMoveName(args[2], this.gen) ||
+      (this.gen && (this.gen.num === 1 || this.gen.num === 2) && BINDING.includes(args[2])))) {
+      return false;
+    }
     switch (this.gen?.num || 0) {
       case 1: case 2: {
         return args.length === 4 &&
           (args[3] === '' || (args[3] !== 'null' && verifyPokemonIdent(args[3]))) &&
           verifyKWArgs(kwArgs, ['miss', 'still', 'from'], this.gen) &&
-          (!kwArgs.from || verifyMoveName(kwArgs.from as Protocol.MoveName, this.gen));
+          (!kwArgs.from || ((this.gen?.num === 1 && BINDING.includes(kwArgs.from)) ||
+            verifyMoveName(kwArgs.from as Protocol.MoveName, this.gen)));
       }
       case 3: {
         return args.length === 4 &&
@@ -1435,7 +1440,8 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 3 && verifyPokemonIdent(args[1]) && verifyPokemonIdent(args[2]);
   }
 
-  '|-prepare|'(args: Args['|-prepare|']) {
+  '|-prepare|'(args: Args['|-prepare|'], kwArgs: KWArgs['|-prepare|']) {
+    if (!verifyKWArgs(kwArgs, ['premajor'], this.gen)) return false;
     if (!(verifyPokemonIdent(args[1]) && verifyMoveName(args[2], this.gen))) return false;
     if (this.gen && this.gen.num < 5) return args.length === 3;
     return (args[2] === 'Sky Drop'

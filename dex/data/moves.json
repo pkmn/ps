@@ -30,7 +30,6 @@
     "bind": {
       "inherit": true,
       "ignoreImmunity": true,
-      "volatileStatus": "partiallytrapped",
       "self": {"volatileStatus": "partialtrappinglock"},
       "desc": "The user spends two to five turns using this move. Has a 3/8 chance to last two or three turns, and a 1/8 chance to last four or five turns. The damage calculated for the first turn is used for every other turn. The user cannot select a move and the target cannot execute a move during the effect, but both may switch out. If the user switches out, the target remains unable to execute a move during that turn. If the target switches out, the user uses this move again automatically, and if it had 0 PP at the time, it becomes 63. If the user or the target switch out, or the user is prevented from moving, the effect ends. This move can prevent the target from moving even if it has type immunity, but will not deal damage.",
       "shortDesc": "Prevents the target from moving for 2-5 turns."
@@ -61,7 +60,6 @@
       "inherit": true,
       "accuracy": 75,
       "pp": 10,
-      "volatileStatus": "partiallytrapped",
       "self": {"volatileStatus": "partialtrappinglock"},
       "desc": "The user spends two to five turns using this move. Has a 3/8 chance to last two or three turns, and a 1/8 chance to last four or five turns. The damage calculated for the first turn is used for every other turn. The user cannot select a move and the target cannot execute a move during the effect, but both may switch out. If the user switches out, the target remains unable to execute a move during that turn. If the target switches out, the user uses this move again automatically, and if it had 0 PP at the time, it becomes 63. If the user or the target switch out, or the user is prevented from moving, the effect ends. This move can prevent the target from moving even if it has type immunity, but will not deal damage.",
       "shortDesc": "Prevents the target from moving for 2-5 turns."
@@ -139,7 +137,6 @@
       "inherit": true,
       "accuracy": 70,
       "basePower": 15,
-      "volatileStatus": "partiallytrapped",
       "self": {"volatileStatus": "partialtrappinglock"},
       "desc": "The user spends two to five turns using this move. Has a 3/8 chance to last two or three turns, and a 1/8 chance to last four or five turns. The damage calculated for the first turn is used for every other turn. The user cannot select a move and the target cannot execute a move during the effect, but both may switch out. If the user switches out, the target remains unable to execute a move during that turn. If the target switches out, the user uses this move again automatically, and if it had 0 PP at the time, it becomes 63. If the user or the target switch out, or the user is prevented from moving, the effect ends. This move can prevent the target from moving even if it has type immunity, but will not deal damage.",
       "shortDesc": "Prevents the target from moving for 2-5 turns."
@@ -410,7 +407,6 @@
       "inherit": true,
       "accuracy": 85,
       "ignoreImmunity": true,
-      "volatileStatus": "partiallytrapped",
       "self": {"volatileStatus": "partialtrappinglock"},
       "desc": "The user spends two to five turns using this move. Has a 3/8 chance to last two or three turns, and a 1/8 chance to last four or five turns. The damage calculated for the first turn is used for every other turn. The user cannot select a move and the target cannot execute a move during the effect, but both may switch out. If the user switches out, the target remains unable to execute a move during that turn. If the target switches out, the user uses this move again automatically, and if it had 0 PP at the time, it becomes 63. If the user or the target switch out, or the user is prevented from moving, the effect ends. This move can prevent the target from moving even if it has type immunity, but will not deal damage.",
       "shortDesc": "Prevents the target from moving for 2-5 turns."
@@ -3496,6 +3492,7 @@
     "mistyterrain": {
       "inherit": true,
       "condition": {
+        "effectType": "Terrain",
         "duration": 5,
         "onFieldResidualOrder": 27,
         "onFieldResidualSubOrder": 7
@@ -3843,6 +3840,7 @@
     "electricterrain": {
       "inherit": true,
       "condition": {
+        "effectType": "Terrain",
         "duration": 5,
         "onFieldResidualOrder": 27,
         "onFieldResidualSubOrder": 7
@@ -3872,6 +3870,7 @@
     "grassyterrain": {
       "inherit": true,
       "condition": {
+        "effectType": "Terrain",
         "duration": 5,
         "onResidualOrder": 5,
         "onResidualSubOrder": 2,
@@ -4007,6 +4006,7 @@
     "psychicterrain": {
       "inherit": true,
       "condition": {
+        "effectType": "Terrain",
         "duration": 5,
         "onTryHitPriority": 4,
         "onFieldResidualOrder": 27,
@@ -6870,6 +6870,7 @@
       "weather": "snowscape",
       "selfSwitch": true,
       "secondary": null,
+      "condition": {"duration": 1, "onBeforeMovePriority": 100},
       "target": "all",
       "type": "Ice",
       "desc": "For 5 turns, the weather becomes Snow. The user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
@@ -8676,6 +8677,7 @@
       "flags": {"nonsky": 1, "metronome": 1},
       "terrain": "electricterrain",
       "condition": {
+        "effectType": "Terrain",
         "duration": 5,
         "onBasePowerPriority": 6,
         "onFieldResidualOrder": 27,
@@ -11155,6 +11157,7 @@
       "flags": {"nonsky": 1, "metronome": 1},
       "terrain": "grassyterrain",
       "condition": {
+        "effectType": "Terrain",
         "duration": 5,
         "onBasePowerPriority": 6,
         "onResidualOrder": 5,
@@ -14721,6 +14724,7 @@
       "flags": {"nonsky": 1, "metronome": 1},
       "terrain": "mistyterrain",
       "condition": {
+        "effectType": "Terrain",
         "duration": 5,
         "onBasePowerPriority": 6,
         "onFieldResidualOrder": 27,
@@ -16300,6 +16304,7 @@
       "flags": {"nonsky": 1, "metronome": 1},
       "terrain": "psychicterrain",
       "condition": {
+        "effectType": "Terrain",
         "duration": 5,
         "onTryHitPriority": 4,
         "onBasePowerPriority": 6,

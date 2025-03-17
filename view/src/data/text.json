@@ -333,7 +333,7 @@
   "celebrate": {"activate": "  Congratulations, [TRAINER]!"},
   "charge": {"start": "  [POKEMON] began charging power!"},
   "chillyreception": {
-    "activate": "  [POKEMON] is preparing to tell a chillingly bad joke!"
+    "prepare": "  [POKEMON] is preparing to tell a chillingly bad joke!"
   },
   "clamp": {"start": "  [SOURCE] clamped down on [POKEMON]!", "move": "#wrap"},
   "conversion": {"typeChange": "  Converted type to [SOURCE]'s!"},
