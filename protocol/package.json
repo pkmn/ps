@@ -40,8 +40,8 @@
     "@pkmn/types": "^4.0.0"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.9.32",
-    "@pkmn/data": "^0.9.32"
+    "@pkmn/dex": "^0.9.33",
+    "@pkmn/data": "^0.9.33"
   },
   "scripts": {
     "lint": "eslint --cache src",

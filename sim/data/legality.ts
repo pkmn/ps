@@ -12715,13 +12715,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
   keldeo: {
     learnset: {
       aquajet: [ '6S2', '6S3', '5S0', '5S1' ],
-      aquatail: [ '9S5' ],
+      aquatail: [ '9S5', '9S6' ],
       bubblebeam: [ '6S3', '5S0' ],
-      doublekick: [ '6S2', '6S3', '5S0' ],
+      doublekick: [ '9S6', '6S2', '6S3', '5S0' ],
       hydropump: [ '8S4', '6S2', '5S1' ],
       leer: [ '6S2', '6S3', '5S0' ],
+      quickguard: [ '9S6' ],
       retaliate: [ '9S5' ],
-      sacredsword: [ '9S5', '8S4', '5S1' ],
+      sacredsword: [ '9S5', '9S6', '8S4', '5S1' ],
       secretsword: [ '8S4' ],
       swordsdance: [ '8S4', '5S1' ],
       takedown: [ '9S5' ]
@@ -12761,6 +12762,15 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 50,
         nature: 'Docile',
         moves: [ 'retaliate', 'aquatail', 'takedown', 'sacredsword' ],
+        pokeball: 'cherishball'
+      },
+      {
+        generation: 9,
+        level: 50,
+        shiny: true,
+        nature: 'Modest',
+        moves: [ 'quickguard', 'doublekick', 'aquatail', 'sacredsword' ],
+        ivs: { hp: 31, atk: 20, def: 20, spa: 31, spd: 20, spe: 31 },
         pokeball: 'cherishball'
       }
     ],
@@ -14740,6 +14750,25 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       }
     ],
     eventOnly: true
+  },
+  meltan: {
+    learnset: {
+      acidarmor: [ '9S0' ],
+      flashcannon: [ '9S0' ],
+      headbutt: [ '9S0' ],
+      thunderwave: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 50,
+        shiny: true,
+        nature: 'Adamant',
+        moves: [ 'headbutt', 'acidarmor', 'thunderwave', 'flashcannon' ],
+        ivs: { hp: 31, atk: 31, def: 31, spa: 20, spd: 20, spe: 20 },
+        pokeball: 'cherishball'
+      }
+    ]
   },
   melmetal: {
     learnset: {
