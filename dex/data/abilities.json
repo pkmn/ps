@@ -107,6 +107,10 @@
       "desc": "This Pokemon does not take recoil damage, except Struggle. Does not affect crash damage.",
       "shortDesc": "This Pokemon does not take recoil damage besides Struggle and crash damage."
     },
+    "shielddust": {
+      "inherit": true,
+      "desc": "This Pokemon is not affected by the secondary effect of another Pokemon's attack. Attacks with secondary effects that are prevented include those with a chance (even 100%) to paralyze, sleep, freeze, burn, poison, confuse, cause this Pokemon to flinch, or cause this Pokemon's stat stages to be lowered. The secondary effect added by King's Rock is also prevented against this Pokemon."
+    },
     "thickfat": {
       "inherit": true,
       "desc": "If a Pokemon uses a Fire- or Ice-type attack against this Pokemon, that Pokemon's Special Attack is halved when calculating the damage to this Pokemon.",
@@ -367,6 +371,10 @@
       "desc": "Prevents opposing Pokemon from choosing to switch out, unless they are holding a Shed Shell or also have this Ability.",
       "shortDesc": "Prevents foes from choosing to switch unless they also have this Ability."
     },
+    "shielddust": {
+      "inherit": true,
+      "desc": "This Pokemon is not affected by the secondary effect of another Pokemon's attack. Attacks with secondary effects that are prevented include those with a chance (even 100%) to paralyze, sleep, freeze, burn, poison, confuse, cause this Pokemon to flinch, cause this Pokemon's stat stages to be lowered, and Fling. Secondary effects added by King's Rock and Razor Fang are also prevented against this Pokemon."
+    },
     "skilllink": {
       "inherit": true,
       "desc": "This Pokemon's multi-hit attacks always hit the maximum number of times. Does not affect Triple Kick."
@@ -602,6 +610,10 @@
       "inherit": true,
       "desc": "This Pokemon's attacks with secondary effects have their power multiplied by 1.3, but the secondary effects are removed. If a secondary effect was removed, it also removes the user's Life Orb recoil and Shell Bell recovery, and prevents the target's Color Change, Pickpocket, Red Card, Eject Button, Kee Berry, and Maranga Berry from activating."
     },
+    "shielddust": {
+      "inherit": true,
+      "desc": "This Pokemon is not affected by the secondary effect of another Pokemon's attack. Attacks with secondary effects that are prevented include those with a chance (even 100%) to paralyze, sleep, freeze, burn, poison, confuse, cause this Pokemon to flinch, cause this Pokemon's stat stages to be lowered, and Fling. Secondary effects added by King's Rock, Razor Fang, and the Poison Touch and Stench Abilities are also prevented against this Pokemon."
+    },
     "simple": {
       "inherit": true,
       "desc": "When one of this Pokemon's stat stages is raised or lowered, the amount is doubled."
@@ -750,6 +762,10 @@
     "receiver": {
       "inherit": true,
       "desc": "This Pokemon copies the Ability of an ally that faints. Abilities that cannot be copied are Battle Bond, Comatose, Disguise, Flower Gift, Forecast, Illusion, Imposter, Multitype, Power Construct, Power of Alchemy, Receiver, RKS System, Schooling, Shields Down, Stance Change, Trace, Wonder Guard, and Zen Mode."
+    },
+    "shielddust": {
+      "inherit": true,
+      "desc": "This Pokemon is not affected by the secondary effect of another Pokemon's attack. Attacks with secondary effects that are prevented include those with a chance (even 100%) to paralyze, sleep, freeze, burn, poison, confuse, cause this Pokemon to flinch, cause this Pokemon's stat stages to be lowered, as well as Anchor Shot, Fling, Spirit Shackle, and Throat Chop. The effect of Sparkling Aria is prevented if this Pokemon is the only target. Secondary effects added by King's Rock, Razor Fang, and the Poison Touch and Stench Abilities are also prevented against this Pokemon."
     },
     "simple": {
       "inherit": true,
@@ -1066,7 +1082,10 @@
       "desc": "This Pokemon's attacks with secondary effects have their power multiplied by 1.3, but the secondary effects are removed. If a secondary effect was removed, it also removes the user's Life Orb recoil and Shell Bell recovery, and prevents the target's Berserk, Color Change, Emergency Exit, Pickpocket, Wimp Out, Red Card, Eject Button, Kee Berry, and Maranga Berry from activating."
     },
     "shellarmor": {"inherit": true},
-    "shielddust": {"inherit": true},
+    "shielddust": {
+      "inherit": true,
+      "desc": "This Pokemon is not affected by the secondary effect of another Pokemon's attack. Attacks with secondary effects that are prevented include those with a chance (even 100%) to paralyze, sleep, freeze, burn, poison, confuse, cause this Pokemon to flinch, cause this Pokemon's stat stages to be lowered, as well as Anchor Shot, Eerie Spell, Fling, Spirit Shackle, and Throat Chop. The effect of Sparkling Aria is prevented if this Pokemon is the only target. Secondary effects added by King's Rock, Razor Fang, and the Poison Touch and Stench Abilities are also prevented against this Pokemon."
+    },
     "shieldsdown": {"inherit": true},
     "simple": {"inherit": true},
     "skilllink": {"inherit": true},
@@ -3003,6 +3022,7 @@
       "flags": {"breakable": 1},
       "name": "Shield Dust",
       "num": 19,
+      "desc": "This Pokemon is not affected by the secondary effect of another Pokemon's attack. Attacks with secondary effects that are prevented include those with a chance (even 100%) to paralyze, sleep, freeze, burn, poison, confuse, cause this Pokemon to flinch, cause this Pokemon's stat stages to be lowered, as well as Anchor Shot, Eerie Spell, Fling, Psychic Noise, Salt Cure, Spirit Shackle, Syrup Bomb, and Throat Chop. The effect of Sparkling Aria is prevented if this Pokemon is the only target. Secondary effects added by King's Rock, Razor Fang, and the Poison Touch, Stench, and Toxic Chain Abilities are also prevented against this Pokemon.",
       "shortDesc": "This Pokemon is not affected by the secondary effect of another Pokemon's attack."
     },
     "shieldsdown": {

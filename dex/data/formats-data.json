@@ -6839,7 +6839,7 @@
     },
     "azurill": {"tier": "LC"},
     "marill": {"tier": "NFE"},
-    "azumarill": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "RU"},
+    "azumarill": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "RUBL"},
     "bonsly": {"tier": "LC"},
     "sudowoodo": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "hoppip": {"tier": "LC"},
@@ -6890,7 +6890,7 @@
     "weavile": {"tier": "OU", "doublesTier": "(DUU)", "natDexTier": "UUBL"},
     "sneasler": {"tier": "Uber", "doublesTier": "DUU", "natDexTier": "Uber"},
     "teddiursa": {"tier": "LC"},
-    "ursaring": {"tier": "ZU", "doublesTier": "NFE", "natDexTier": "NFE"},
+    "ursaring": {"tier": "NFE"},
     "ursaluna": {"tier": "UUBL", "doublesTier": "DOU", "natDexTier": "UU"},
     "ursalunabloodmoon": {
       "tier": "Uber",
@@ -7545,7 +7545,7 @@
       "natDexTier": "RU"
     },
     "timburr": {"tier": "LC"},
-    "gurdurr": {"tier": "ZU", "doublesTier": "NFE", "natDexTier": "NFE"},
+    "gurdurr": {"tier": "NFE"},
     "conkeldurr": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "RUBL"},
     "tympole": {"isNonstandard": "Past", "tier": "Illegal", "natDexTier": "LC"},
     "palpitoad": {
@@ -7676,7 +7676,7 @@
     "zoruahisui": {"tier": "LC"},
     "zoroark": {"tier": "PU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "zoroarkhisui": {
-      "tier": "RU",
+      "tier": "RUBL",
       "doublesTier": "(DUU)",
       "natDexTier": "RUBL"
     },
@@ -7949,7 +7949,7 @@
       "natDexTier": "RU"
     },
     "skrelp": {"tier": "LC"},
-    "dragalge": {"tier": "PU", "doublesTier": "(DUU)", "natDexTier": "RU"},
+    "dragalge": {"tier": "PUBL", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "clauncher": {"tier": "LC"},
     "clawitzer": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "helioptile": {
@@ -8370,7 +8370,7 @@
     "melmetalgmax": {"isNonstandard": "Past", "tier": "Illegal"},
     "grookey": {"tier": "LC"},
     "thwackey": {"tier": "NFE"},
-    "rillaboom": {"tier": "UU", "doublesTier": "DOU", "natDexTier": "UU"},
+    "rillaboom": {"tier": "UUBL", "doublesTier": "DOU", "natDexTier": "UU"},
     "rillaboomgmax": {"isNonstandard": "Past", "tier": "Illegal"},
     "scorbunny": {"tier": "LC"},
     "raboot": {"tier": "NFE"},
@@ -8461,7 +8461,7 @@
     "sinistea": {"tier": "LC"},
     "polteageist": {"tier": "UUBL", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "hatenna": {"tier": "LC"},
-    "hattrem": {"tier": "NFE"},
+    "hattrem": {"tier": "ZU", "doublesTier": "NFE", "natDexTier": "NFE"},
     "hatterene": {"tier": "OU", "doublesTier": "DOU", "natDexTier": "OU"},
     "hatterenegmax": {"isNonstandard": "Past", "tier": "Illegal"},
     "impidimp": {"tier": "LC"},
@@ -8607,7 +8607,7 @@
     "klawf": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "nacli": {"tier": "LC"},
     "naclstack": {"tier": "NFE"},
-    "garganacl": {"tier": "OU", "doublesTier": "DUU", "natDexTier": "UUBL"},
+    "garganacl": {"tier": "OU", "doublesTier": "DUU", "natDexTier": "UU"},
     "glimmet": {"tier": "LC"},
     "glimmora": {"tier": "OU", "doublesTier": "DOU", "natDexTier": "UU"},
     "shroodle": {"tier": "LC"},

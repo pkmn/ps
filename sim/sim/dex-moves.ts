@@ -104,11 +104,6 @@ export interface SecondaryEffect extends HitEffect {
 	/** Used to flag a secondary effect as added by Poison Touch */
 	ability?: Ability;
 	/**
-	 * Applies to Sparkling Aria's secondary effect: Affected by
-	 * Sheer Force but not Shield Dust.
-	 */
-	dustproof?: boolean;
-	/**
 	 * Gen 2 specific mechanics: Bypasses Substitute only on Twineedle,
 	 * and allows it to flinch sleeping/frozen targets
 	 */
@@ -333,6 +328,7 @@ export interface ActiveMove extends MutableMove {
 	status?: ID;
 	hit: number;
 	moveHitData?: MoveHitData;
+	hitTargets?: Pokemon[];
 	ability?: Ability;
 	allies?: Pokemon[];
 	auraBooster?: Pokemon;

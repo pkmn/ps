@@ -3585,12 +3585,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onHit(target, source, move) {
 			let success = false;
 			if (!target.volatiles['substitute'] || move.infiltrates) success = !!this.boost({ evasion: -1 });
-			const removeTarget = [
-				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			const removeAll = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
+			const removeAll = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			const removeTarget = ['reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', ...removeAll];
 			for (const targetCondition of removeTarget) {
 				if (target.side.removeSideCondition(targetCondition)) {
 					if (!removeAll.includes(targetCondition)) continue;
@@ -3627,6 +3623,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			return !pokemon.removeVolatile('destinybond');
 		},
 		condition: {
+			noCopy: true, // doesn't get copied by Baton Pass
 			onStart(pokemon) {
 				this.add('-singlemove', pokemon, 'Destiny Bond');
 			},
@@ -7796,10 +7793,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		self: {
 			onHit(source) {
 				let success = false;
-				const removeTarget = [
-					'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb',
-				];
 				const removeAll = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+				const removeTarget = ['reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', ...removeAll];
 				for (const targetCondition of removeTarget) {
 					if (source.side.foe.removeSideCondition(targetCondition)) {
 						if (!removeAll.includes(targetCondition)) continue;
@@ -18049,13 +18044,20 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1 },
 		secondary: {
-			dustproof: true,
 			chance: 100,
 			volatileStatus: 'sparklingaria',
 		},
 		onAfterMove(source, target, move) {
-			for (const pokemon of this.getAllActive()) {
-				if (pokemon !== source && pokemon.removeVolatile('sparklingaria') && pokemon.status === 'brn' && !source.fainted) {
+			if (source.fainted || !move.hitTargets || move.hasSheerForce) {
+				// make sure the volatiles are cleared
+				for (const pokemon of this.getAllActive()) delete pokemon.volatiles['sparklingaria'];
+				return;
+			}
+			const numberTargets = move.hitTargets.length;
+			for (const pokemon of move.hitTargets) {
+				// bypasses Shield Dust when hitting multiple targets
+				if (pokemon !== source && pokemon.isActive && (pokemon.removeVolatile('sparklingaria') || numberTargets > 1) &&
+					pokemon.status === 'brn') {
 					pokemon.cureStatus();
 				}
 			}

@@ -518,13 +518,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Neutralizing Gas', 'Orichalcum Pulse', 'Parental Bond',
       'Poison Heal',      'Protean',          'Pure Power',
       'Shadow Tag',       'Stakeout',         'Water Bubble',
-      'Wonder Guard',     'Baton Pass',       'Belly Drum',
-      'Ceaseless Edge',   'Clangorous Soul',  'Dire Claw',
-      'Electro Shot',     'Fillet Away',      'Imprison',
-      'Last Respects',    'Lumina Crash',     'No Retreat',
-      'Photon Geyser',    'Quiver Dance',     'Rage Fist',
-      'Revival Blessing', 'Shed Tail',        'Substitute',
-      'Shell Smash',      'Tail Glow'
+      'Wonder Guard',     "King's Rock",      'Razor Fang',
+      'Baton Pass',       'Belly Drum',       'Ceaseless Edge',
+      'Clangorous Soul',  'Dire Claw',        'Electro Shot',
+      'Fillet Away',      'Imprison',         'Last Respects',
+      'Lumina Crash',     'No Retreat',       'Photon Geyser',
+      'Quiver Dance',     'Rage Fist',        'Revival Blessing',
+      'Shed Tail',        'Substitute',       'Shell Smash',
+      'Tail Glow'
     ]
   },
   {
@@ -730,9 +731,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Xerneas',            'Yveltal',         'Zacian',
       'Zacian-Crowned',     'Zamazenta',       'Zamazenta-Crowned',
       'Zekrom',             'Zygarde-50%',     'Zygarde-Complete',
-      'Commander',          'Power Construct', 'Eevium Z',
-      'Assist',             'Coaching',        'Dark Void',
-      'Swagger'
+      'Commander',          'Power Construct', 'Shadow Tag',
+      'Eevium Z',           'Assist',          'Coaching',
+      'Dark Void',          'Swagger'
     ]
   },
   {
@@ -1118,25 +1119,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ruleset: [ '[Gen 2] NU' ],
     banlist: [ 'NU', 'PUBL', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web' ],
     unbanlist: [ 'Swagger' ]
-  },
-  {
-    name: '[Gen 3] UUBL',
-    mod: 'gen3',
-    ruleset: [ '[Gen 3] OU' ],
-    banlist: [
-      'OU',
-      'Smeargle + Ingrain',
-      'Baton Pass + Block',
-      'Baton Pass + Mean Look',
-      'Baton Pass + Spider Web',
-      'Flail',
-      'Reversal',
-      'Baton Pass + Speed Boost',
-      'Baton Pass + Agility',
-      'Baton Pass + Dragon Dance',
-      'Baton Pass + Salac Berry'
-    ],
-    unbanlist: [ 'Soundproof', 'Sand Veil' ]
   },
   {
     name: '[Gen 8] OU',
@@ -2283,6 +2265,25 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
+    name: '[Gen 3] UUBL',
+    mod: 'gen3',
+    ruleset: [ '[Gen 3] OU' ],
+    banlist: [
+      'OU',
+      'Smeargle + Ingrain',
+      'Baton Pass + Block',
+      'Baton Pass + Mean Look',
+      'Baton Pass + Spider Web',
+      'Flail',
+      'Reversal',
+      'Baton Pass + Speed Boost',
+      'Baton Pass + Agility',
+      'Baton Pass + Dragon Dance',
+      'Baton Pass + Salac Berry'
+    ],
+    unbanlist: [ 'Soundproof', 'Sand Veil' ]
+  },
+  {
     name: '[Gen 3] ZU',
     mod: 'gen3',
     ruleset: [ 'Standard', 'Sleep Moves Clause', 'Baton Pass Stat Trap Clause', 'Swagger Clause' ],
@@ -2365,7 +2366,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Quick Claw',    'Attract',
       'Destiny Bond',  'Explosion',
       'Perish Song',   'Present',
-      'Self-Destruct', 'Swagger'
+      'Self-Destruct', 'Confuse Ray',
+      'Supersonic',    'Swagger',
+      'Sweet Kiss'
     ]
   },
   { name: '[Gen 2] ZU', mod: 'gen2', ruleset: [ '[Gen 2] PU' ], banlist: [ 'PU', 'ZUBL' ] },

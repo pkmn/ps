@@ -782,6 +782,12 @@ class Handler implements Protocol.Handler<string> {
   '|-status|'(args: Args['|-status|'], kwArgs: KWArgs['|-status|']) {
     const [, pokemon, status] = args;
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
+    if (kwArgs.from?.startsWith('item:')) {
+      const template = this.parser.template('startFromItem', status);
+      return (line1 + template
+        .replace('[POKEMON]', this.parser.pokemon(pokemon))
+        .replace('[ITEM]', this.parser.effect(kwArgs.from)));
+    }
     if (LogFormatter.effectId(kwArgs.from) === 'rest') {
       const template = this.parser.template('startFromRest', status);
       return line1 + template.replace('[POKEMON]', this.parser.pokemon(pokemon));

@@ -575,7 +575,7 @@ export class TeamValidator {
 
 		let species = dex.species.get(set.species);
 		set.species = species.name;
-		// Backwards compatability with old Gmax format
+		// Backwards compatibility with old Gmax format
 		if (set.species.toLowerCase().endsWith('-gmax') && this.format.id !== 'gen8megamax') {
 			set.species = set.species.slice(0, -5);
 			species = dex.species.get(set.species);
@@ -2327,7 +2327,7 @@ export class TeamValidator {
 		return problems;
 	}
 	/**
-	 * Returns a list of problems regarding a Pokemon's avilability in Pokemon GO (empty list if no problems)
+	 * Returns a list of problems regarding a Pokemon's availability in Pokemon GO (empty list if no problems)
 	 * If the Pokemon cannot be obtained from Pokemon GO, returns null
 	 */
 	validatePokemonGo(
@@ -2610,7 +2610,7 @@ export class TeamValidator {
 
 				const ability = dex.abilities.get(set.ability);
 				if (dex.gen < 6 && ability.gen > learnedGen && !checkingPrevo) {
-					// You can evolve a transfered mon to reroll for its new Ability.
+					// You can evolve a transferred mon to reroll for its new Ability.
 					cantLearnReason = `is learned in gen ${learnedGen}, but the Ability ${ability.name} did not exist then.`;
 					continue;
 				}

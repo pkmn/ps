@@ -16,7 +16,7 @@ export const Abilities: ModdedAbilityDataTable = {
 			if (this.field.isWeather('sunnyday')) {
 				pokemon.addVolatile('protosynthesis');
 			} else if (!pokemon.volatiles['protosynthesis']?.fromBooster && this.field.weather !== 'sunnyday') {
-				// Protosynthesis will not deactivite if Sun is suppressed, hence the direct ID check (isWeather respects supression)
+				// Protosynthesis will not deactivite if Sun is suppressed, hence the direct ID check (isWeather respects suppression)
 				pokemon.removeVolatile('protosynthesis');
 			}
 		},

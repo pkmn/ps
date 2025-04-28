@@ -619,6 +619,7 @@ export class BattleActions {
 			}
 		}
 
+		move.hitTargets = targets;
 		const moveResult = !!targets.length;
 		if (!moveResult && !atLeastOneFailure) pokemon.moveThisTurnResult = null;
 		const hitSlot = targets.map(p => p.getSlot());

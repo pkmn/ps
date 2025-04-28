@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/protocol",
-  "version": "0.6.32",
+  "version": "0.6.33",
   "description": "Parsing logic for Pokémon Showdown's PROTOCOL and SIM-PROTOCOL",
   "repository": "github:pkmn/ps",
   "license": "MIT",
@@ -40,8 +40,8 @@
     "@pkmn/types": "^4.0.0"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.9.33",
-    "@pkmn/data": "^0.9.33"
+    "@pkmn/dex": "^0.9.34",
+    "@pkmn/data": "^0.9.34"
   },
   "scripts": {
     "lint": "eslint --cache src",

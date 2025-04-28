@@ -892,6 +892,10 @@
       "inherit": true,
       "desc": "Causes the target to become infatuated, making it unable to attack 50% of the time. Fails if both the user and the target are the same gender, if either is genderless, or if the target is already infatuated. The effect ends when either the user or the target is no longer active."
     },
+    "batonpass": {
+      "inherit": true,
+      "desc": "The user is replaced with another Pokemon in its party. The selected Pokemon has the user's stat stage changes transferred to it, as well as the effects of confusion, Curse, Defense Curl, Focus Energy, Foresight, Leech Seed, Lock-On (Mind Reader), Minimize, Mist, Perish Song, the trapper or trapped effects of Mean Look (Spider Web), and a substitute with its remaining HP."
+    },
     "blizzard": {
       "inherit": true,
       "shortDesc": "10% chance to freeze the target."
@@ -1397,6 +1401,10 @@
     "barrage": {
       "inherit": true,
       "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits."
+    },
+    "batonpass": {
+      "inherit": true,
+      "desc": "The user is replaced with another Pokemon in its party. The selected Pokemon has the user's stat stage changes transferred to it, as well as the effects of confusion, Curse, Focus Energy, Ingrain, Leech Seed, Lock-On (Mind Reader), Mud Sport, Perish Song, Water Sport, the trapper or trapped effects of Mean Look (Block, Spider Web), and a substitute with its remaining HP."
     },
     "bind": {
       "inherit": true,
@@ -2426,6 +2434,10 @@
       "inherit": true,
       "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the target has a Focus Sash and had full HP when this move started, it will not be knocked out regardless of the number of hits."
     },
+    "batonpass": {
+      "inherit": true,
+      "desc": "The user is replaced with another Pokemon in its party. The selected Pokemon has the user's stat stage changes transferred to it, as well as the effects of confusion, Aqua Ring, Curse, Embargo, Focus Energy, Gastro Acid, Heal Block, Ingrain, Leech Seed, Lock-On (Mind Reader), Magnet Rise, Mud Sport, Perish Song, Power Trick, Water Sport, the trapper or trapped effects of Mean Look (Block, Spider Web), and a substitute with its remaining HP."
+    },
     "block": {
       "inherit": true,
       "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass or U-turn. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field, unless it uses Baton Pass, in which case the target will remain trapped."
@@ -3266,6 +3278,10 @@
     "attract": {
       "inherit": true,
       "desc": "Causes the target to become infatuated, making it unable to attack 50% of the time. Fails if both the user and the target are the same gender, if either is genderless, or if the target is already infatuated. The effect ends when either the user or the target is no longer active. Pokemon with the Oblivious Ability are immune."
+    },
+    "batonpass": {
+      "inherit": true,
+      "desc": "The user is replaced with another Pokemon in its party. The selected Pokemon has the user's stat stage changes transferred to it, as well as the effects of confusion, Aqua Ring, Curse, Embargo, Focus Energy, Gastro Acid, Heal Block, Ingrain, Leech Seed, Lock-On (Mind Reader), Magnet Rise, Perish Song, Power Trick, Telekinesis, the trapped effect of Mean Look (Block, Spider Web), and a substitute with its remaining HP."
     },
     "bind": {
       "inherit": true,
@@ -4133,6 +4149,10 @@
       "inherit": true,
       "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon making contact with the user become poisoned. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn."
     },
+    "batonpass": {
+      "inherit": true,
+      "desc": "The user is replaced with another Pokemon in its party. The selected Pokemon has the user's stat stage changes transferred to it, as well as the effects of confusion, Aqua Ring, Curse, Embargo, Focus Energy, Gastro Acid, Heal Block, Ingrain, Leech Seed, Lock-On (Mind Reader), Magnet Rise, Perish Song, Power Trick, Telekinesis, the trapped effect of Mean Look (Block, Spider Web), and a substitute with its remaining HP. The effect of Gastro Acid is not transferred if the recipient has an Ability that cannot be affected. The effect of Telekinesis is not transferred if the recipient is Mega Gengar."
+    },
     "bind": {
       "inherit": true,
       "desc": "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Parting Shot, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move."
@@ -4635,6 +4655,10 @@
     "banefulbunker": {
       "inherit": true,
       "desc": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon making contact with the user become poisoned. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn."
+    },
+    "batonpass": {
+      "inherit": true,
+      "desc": "The user is replaced with another Pokemon in its party. The selected Pokemon has the user's stat stage changes transferred to it, as well as the effects of confusion, Aqua Ring, Curse, Embargo, Focus Energy, Gastro Acid, Heal Block, Ingrain, Leech Seed, Lock-On (Mind Reader), Magnet Rise, Perish Song, Power Trick, Telekinesis, and a substitute with its remaining HP. The effect of Gastro Acid is not transferred if the recipient has an Ability that cannot be affected."
     },
     "behemothbash": {
       "inherit": true,
@@ -5193,7 +5217,7 @@
       "secondary": {"chance": 100},
       "target": "normal",
       "type": "Steel",
-      "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field.",
+      "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field.",
       "shortDesc": "Prevents the target from switching out."
     },
     "ancientpower": {
@@ -5733,7 +5757,7 @@
       "target": "self",
       "type": "Normal",
       "zMove": {"effect": "clearnegativeboost"},
-      "desc": "The user is replaced with another Pokemon in its party. The selected Pokemon has the user's stat stage changes, confusion, and certain move effects transferred to it.",
+      "desc": "The user is replaced with another Pokemon in its party. The selected Pokemon has the user's stat stage changes transferred to it, as well as the effects of confusion, Aqua Ring, Curse, Dragon Cheer, Embargo, Focus Energy, Gastro Acid, Heal Block, Ingrain, Leech Seed, Lock-On (Mind Reader), Magnet Rise, Perish Song, Power Trick, Telekinesis, and a substitute with its remaining HP. The effect of Gastro Acid is not transferred if the recipient has an Ability that cannot be affected.",
       "shortDesc": "User switches, passing stat changes and more."
     },
     "beakblast": {
@@ -6099,7 +6123,7 @@
       "target": "normal",
       "type": "Normal",
       "zMove": {"boost": {"def": 1}},
-      "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field.",
+      "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field.",
       "shortDesc": "Prevents the target from switching out."
     },
     "bloodmoon": {
@@ -7794,7 +7818,7 @@
       "priority": 0,
       "flags": {"bypasssub": 1, "noassist": 1, "failcopycat": 1},
       "volatileStatus": "destinybond",
-      "condition": {"onBeforeMovePriority": -1},
+      "condition": {"noCopy": true, "onBeforeMovePriority": -1},
       "secondary": null,
       "target": "self",
       "type": "Ghost",
@@ -10944,7 +10968,7 @@
       "secondary": null,
       "target": "adjacentFoe",
       "type": "Ghost",
-      "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side is prevented from switching out, even if they have a substitute. They can still switch out if they are holding Shed Shell or use Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If a target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field.",
+      "desc": "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side is prevented from switching out, even if they have a substitute. They can still switch out if they are holding Shed Shell or use Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field.",
       "shortDesc": "Base move affects power. Foes: trapped."
     },
     "gmaxvinelash": {
@@ -14182,7 +14206,7 @@
       "target": "normal",
       "type": "Normal",
       "zMove": {"boost": {"spd": 1}},
-      "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field.",
+      "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field.",
       "shortDesc": "Prevents the target from switching out."
     },
     "meditate": {
@@ -15181,7 +15205,7 @@
       "secondary": null,
       "target": "self",
       "type": "Fighting",
-      "desc": "Raises the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage, but it becomes prevented from switching out. The user can still switch out if it uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the user leaves the field using Baton Pass, the replacement will remain trapped. Fails if the user has already been prevented from switching by this effect.",
+      "desc": "Raises the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage, but it becomes prevented from switching out. The user can still switch out if it uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. Fails if the user has already been prevented from switching by this effect.",
       "shortDesc": "Raises all stats by 1 (not acc/eva). Traps user."
     },
     "noxioustorque": {
@@ -15314,7 +15338,7 @@
       "secondary": null,
       "target": "normal",
       "type": "Fighting",
-      "desc": "Prevents the target from switching out. At the end of each turn during effect, the target's Defense and Special Defense are lowered by 1 stage. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field.",
+      "desc": "Prevents the target from switching out. At the end of each turn during effect, the target's Defense and Special Defense are lowered by 1 stage. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field.",
       "shortDesc": "Traps target, lowers Def and SpD by 1 each turn."
     },
     "odorsleuth": {
@@ -18802,11 +18826,7 @@
         "bypasssub": 1,
         "metronome": 1
       },
-      "secondary": {
-        "dustproof": true,
-        "chance": 100,
-        "volatileStatus": "sparklingaria"
-      },
+      "secondary": {"chance": 100, "volatileStatus": "sparklingaria"},
       "target": "allAdjacent",
       "type": "Water",
       "desc": "If the user has not fainted, the target is cured of its burn.",
@@ -18898,7 +18918,7 @@
       "target": "normal",
       "type": "Bug",
       "zMove": {"boost": {"def": 1}},
-      "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field.",
+      "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field.",
       "shortDesc": "Prevents the target from switching out."
     },
     "spikecannon": {
@@ -19004,7 +19024,7 @@
       "secondary": {"chance": 100},
       "target": "normal",
       "type": "Ghost",
-      "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field.",
+      "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field.",
       "shortDesc": "Prevents the target from switching out."
     },
     "spitup": {
@@ -20391,7 +20411,7 @@
       "secondary": null,
       "target": "allAdjacentFoes",
       "type": "Ground",
-      "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field.",
+      "desc": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field.",
       "shortDesc": "Hits adjacent foes. Prevents them from switching."
     },
     "thrash": {

@@ -52,8 +52,8 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(7).abilities.get('Illuminate')!.effectType).toBe('Ability');
         expect(Gen(6).abilities.get('Beast Boost')).toBeUndefined();
         expect(Gen(7).abilities.get('Beast Boost')!).toBeDefined();
-        expect(Gen(7).abilities.get('Shield Dust'))
-          .toEqual(Gen(4).abilities.get('Shield Dust'));
+        expect(Gen(7).abilities.get('Battle Armor'))
+          .toEqual(Gen(4).abilities.get('Battle Armor'));
         expect(Gen(3).abilities.get('Lightning Rod'))
           .not.toEqual(Gen(4).abilities.get('Lightning Rod'));
 

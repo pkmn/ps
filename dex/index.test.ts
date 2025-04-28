@@ -30,8 +30,8 @@ describe('Dex', () => {
       expect(Dex.abilities.get('Illuminate').effectType).toBe('Ability');
       expect(Dex.forGen(6).abilities.get('Beast Boost').isNonstandard).toBe('Future');
       expect(Dex.forGen(7).abilities.get('Beast Boost').isNonstandard).toBeNull();
-      expect(Dex.abilities.get('Shield Dust'))
-        .toEqual(Dex.forGen(4).abilities.get('Shield Dust'));
+      expect(Dex.abilities.get('Battle Armor'))
+        .toEqual(Dex.forGen(4).abilities.get('Battle Armor'));
       expect(Dex.forGen(3).abilities.get('Lightning Rod'))
         .not.toEqual(Dex.forGen(4).abilities.get('Lightning Rod'));
 
