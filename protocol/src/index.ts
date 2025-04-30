@@ -478,7 +478,7 @@ export namespace Protocol {
     /**
      * `|uhtml|NAME|HTML`
      *
-     * We recieved an HTML message (NAME) that can change what it's displaying, this is used in
+     * We received an HTML message (NAME) that can change what it's displaying, this is used in
      * things like our Polls system, for example.
      */
     '|uhtml|': readonly ['uhtml', UHTMLName, HTML];
@@ -1004,7 +1004,7 @@ export namespace Protocol {
      * `|t:|TIMESTAMP`
      *
      * The current UNIX timestamp (the number of seconds since 1970) - useful for determining
-     * when events occured in real time.
+     * when events occurred in real time.
      */
     '|t:|': readonly ['t:', Timestamp];
   }
@@ -1114,7 +1114,7 @@ export namespace Protocol {
     /**
      * `|-fail|POKEMON|ACTION`
      *
-     * The specified `ACTION` has failed against the `POKEMON` targetted. The `ACTION` in question
+     * The specified `ACTION` has failed against the `POKEMON` targeted. The `ACTION` in question
      * should be a move that fails due to its own mechanics. Moves (or effect activations) that fail
      * because they're blocked by another effect should use `-block` instead.
      */

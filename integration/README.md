@@ -60,4 +60,4 @@ following additional flags may be used:
     just once. If `--cycles` is negative, `--forever` is implied.
 - **`--forever`**: continue iterating through formats infinitely, exhausting
     each `--cycles` times.
-- **`--maxFailures`**: exit early if this many failures have occured.
+- **`--maxFailures`**: exit early if this many failures have occurred.

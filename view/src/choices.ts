@@ -48,7 +48,7 @@ export class ChoiceBuilder {
   alreadyMega = false;
   alreadyMax = false;
   alreadyZ = false;
-  alreadTera = false;
+  alreadyTera = false;
 
   constructor(request: Protocol.Request) {
     this.request = request;
@@ -129,7 +129,7 @@ export class ChoiceBuilder {
       if (choice.mega) this.alreadyMega = true;
       if (choice.z) this.alreadyZ = true;
       if (choice.max) this.alreadyMax = true;
-      if (choice.tera) this.alreadTera = true;
+      if (choice.tera) this.alreadyTera = true;
       this.current.move = 0;
       this.current.mega = false;
       this.current.ultra = false;

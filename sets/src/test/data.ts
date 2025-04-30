@@ -4,7 +4,7 @@ import {GenerationNum, StatsTable} from '@pkmn/types';
 import {Data, toID} from '../sets';
 
 const ABILITIES: {[id: string]: string} = {
-  justifed: 'Justified',
+  justified: 'Justified',
   levitate: 'Levitate',
   magicguard: 'Magic Guard',
   magnetpull: 'Magnet Pull',

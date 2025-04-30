@@ -9,7 +9,7 @@ Parsing logic for [Pokémon Showdown](https://pokemonshowdown.com)'s
 [SIM-PROTOCOL](https://github.com/smogon/pokemon-showdown/blob/master/sim/SIM-PROTOCOL.md).
 
 This package converts Pokémon Showdown's text protocols into typed object
-respresentations for ease of use.
+representations for ease of use.
 
 ## Installation
 
