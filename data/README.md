@@ -43,7 +43,7 @@ import {Generations} from '@pkmn/data';
 const dexGens = new Generations(dex.Dex);
 
 // All of the types from sim.Dex don't actually line up perfectly, but casting sidesteps that
-const simGens = new Generations(sim.Dex as uknown as Dex);
+const simGens = new Generations(sim.Dex as unknown as Dex);
 ```
 
 ### `Generations`
@@ -72,7 +72,7 @@ a couple of Pokémon Showdown quirks. While this interface is far from the
   `Dex#stats` which just provides some lists of names).
 - a usable `Learnsets` API which allows you to easily determine which moves a Pokémon can legally
   learn (though validating combinations of moves or other features requires `@pkmn/sim`'s
-  `TeamValidator` - something as seemingly simple as determing Galar move legality cannot be
+  `TeamValidator` - something as seemingly simple as determining Galar move legality cannot be
   generally solved without the full power of the `TeamValidator`).
 
 **`Generations` handles existence at the field level slightly differently than at the object level**
@@ -119,7 +119,7 @@ the `Generations` constructor:
 
 ```ts
 // These species are unobtainable outside of their own generations, but @pkmn/dex doesn't contain
-// the artificial 'natDexTier' field which allows Pokémon Showdown to track this so we harcode it.
+// the artificial 'natDexTier' field which allows Pokémon Showdown to track this so we hardcode it.
 // If using @pkmn/sim instead, this list can be replaced with a `d.natDexTier !== 'Illegal'` check.
 const NATDEX_UNOBTAINABLE_SPECIES = [
   'Eevee-Starter', 'Floette-Eternal', 'Pichu-Spiky-eared', 'Pikachu-Belle', 'Pikachu-Cosplay',

@@ -67,7 +67,7 @@ The `ModdedDex` wrapper class around `Dex` exists for typechecking purposes as w
 contains entirely new fields, `ModdedDex` (initialized with the correct types as parameters) will
 allow for presenting a typesafe API to clients (though internally relies on casting, which is not
 guaranteed to be safe). There are cleaner ways to implement typesafe mods, but this `ModdedDex`
-approach aims to simply acheive parity with the upstream Pokémon Showdown implementation.
+approach aims to simply achieve parity with the upstream Pokémon Showdown implementation.
 
 ```ts
 import {Dex, ID, ModData, Ability, AbilityData} from '@pkmn/dex'; // '@pkmn/sim'
