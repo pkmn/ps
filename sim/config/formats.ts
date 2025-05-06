@@ -252,7 +252,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
-    name: '[Gen 9] VGC 2025 Reg G',
+    name: '[Gen 9] VGC 2024 Reg G',
     mod: 'gen9',
     gameType: 'doubles',
     bestOfDefault: true,
@@ -262,21 +262,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Min Source Gen = 9',
       'VGC Timer',
       'Open Team Sheets',
-      'Limit One Restricted'
-    ],
-    restricted: [ 'Restricted Legendary' ]
-  },
-  {
-    name: '[Gen 9] VGC 2025 Reg G (Bo3)',
-    mod: 'gen9',
-    gameType: 'doubles',
-    ruleset: [
-      'Flat Rules',
-      '!! Adjust Level = 50',
-      'Min Source Gen = 9',
-      'VGC Timer',
-      'Force Open Team Sheets',
-      'Best of = 3',
       'Limit One Restricted'
     ],
     restricted: [ 'Restricted Legendary' ]
@@ -487,7 +472,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Tinkatink',       'Toedscool',
       'Torchic',         'Vullaby',
       'Wingull',         'Zorua-Hisui',
-      'Deerling'
+      'Deerling',        'Minccino'
     ]
   },
   {
@@ -523,9 +508,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Clangorous Soul',  'Dire Claw',        'Electro Shot',
       'Fillet Away',      'Imprison',         'Last Respects',
       'Lumina Crash',     'No Retreat',       'Photon Geyser',
-      'Quiver Dance',     'Rage Fist',        'Revival Blessing',
-      'Shed Tail',        'Substitute',       'Shell Smash',
-      'Tail Glow'
+      'Power Trip',       'Quiver Dance',     'Rage Fist',
+      'Revival Blessing', 'Shed Tail',        'Substitute',
+      'Shell Smash',      'Tail Glow'
     ]
   },
   {
@@ -817,43 +802,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
-    name: '[Gen 9] B6P4 Random Doubles Battle (Bo3)',
-    mod: 'gen9',
-    gameType: 'doubles',
-    team: 'random',
-    ruleset: [
-      '[Gen 9] Random Doubles Battle',
-      'Max Team Size = 6',
-      'Picked Team Size = 4',
-      'Team Preview',
-      'VGC Timer',
-      'Force Open Team Sheets',
-      'Best of = 3'
-    ]
-  },
-  {
     name: '[Gen 9] Monotype Random Battle',
     mod: 'gen9',
     team: 'random',
     ruleset: [
       'Obtainable',
       'Same Type Clause',
-      'HP Percentage Mod',
-      'Cancel Mod',
-      'Sleep Clause Mod',
-      'Illusion Level Mod'
-    ]
-  },
-  {
-    name: '[Gen 9] Pick-Your-Team Random Battle',
-    mod: 'gen9',
-    team: 'random',
-    ruleset: [
-      'Team Preview',
-      'Max Team Size = 12',
-      'Picked Team Size = 6',
-      'Obtainable',
-      'Species Clause',
       'HP Percentage Mod',
       'Cancel Mod',
       'Sleep Clause Mod',
@@ -1108,17 +1062,17 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
-    name: '[Gen 1] UU',
-    mod: 'gen1',
-    ruleset: [ '[Gen 1] OU', 'APT Clause' ],
-    banlist: [ 'OU', 'UUBL' ]
+    name: '[Gen 2] UU',
+    mod: 'gen2',
+    ruleset: [ '[Gen 2] OU' ],
+    banlist: [ 'OU', 'UUBL', 'Agility + Baton Pass' ],
+    unbanlist: [ 'Mean Look + Baton Pass', 'Spider Web + Baton Pass' ]
   },
   {
-    name: '[Gen 2] PU',
-    mod: 'gen2',
-    ruleset: [ '[Gen 2] NU' ],
-    banlist: [ 'NU', 'PUBL', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web' ],
-    unbanlist: [ 'Swagger' ]
+    name: '[Gen 1] LC',
+    mod: 'gen1',
+    ruleset: [ 'Little Cup', 'Standard', '!Max Level', 'Adjust Level = 5' ],
+    banlist: [ 'Dragon Rage', 'Fire Spin', 'Sonic Boom', 'Wrap' ]
   },
   {
     name: '[Gen 8] OU',
@@ -2332,18 +2286,18 @@ export const Formats: import('../sim/dex-formats').FormatList = [
   },
   { name: '[Gen 2] Ubers', mod: 'gen2', ruleset: [ 'Standard' ] },
   {
-    name: '[Gen 2] UU',
-    mod: 'gen2',
-    ruleset: [ '[Gen 2] OU' ],
-    banlist: [ 'OU', 'UUBL', 'Agility + Baton Pass' ],
-    unbanlist: [ 'Mean Look + Baton Pass', 'Spider Web + Baton Pass' ]
-  },
-  {
     name: '[Gen 2] NU',
     mod: 'gen2',
     ruleset: [ '[Gen 2] UU' ],
     banlist: [ 'UU', 'NUBL', 'Swagger' ],
     unbanlist: [ 'Agility + Baton Pass' ]
+  },
+  {
+    name: '[Gen 2] PU',
+    mod: 'gen2',
+    ruleset: [ '[Gen 2] NU' ],
+    banlist: [ 'NU', 'PUBL', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web' ],
+    unbanlist: [ 'Swagger' ]
   },
   {
     name: '[Gen 2] 1v1',
@@ -2387,6 +2341,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   { name: '[Gen 1] Ubers', mod: 'gen1', ruleset: [ 'Standard' ] },
+  {
+    name: '[Gen 1] UU',
+    mod: 'gen1',
+    ruleset: [ '[Gen 1] OU', 'APT Clause' ],
+    banlist: [ 'OU', 'UUBL' ]
+  },
   { name: '[Gen 1] NU', mod: 'gen1', ruleset: [ '[Gen 1] UU' ], banlist: [ 'UU', 'NUBL' ] },
   { name: '[Gen 1] PU', mod: 'gen1', ruleset: [ '[Gen 1] NU' ], banlist: [ 'NU', 'PUBL' ] },
   {

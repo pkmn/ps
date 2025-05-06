@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/mods",
-  "version": "0.9.34",
+  "version": "0.9.35",
   "description": "Support for non-standard mods to @pkmn/sim and @pkmn/dex",
   "repository": "github:pkmn/ps",
   "author": "Guangcong Luo <guangcongluo@gmail.com> (http://guangcongluo.com)",
@@ -29,6 +29,10 @@
     "./gen2stadium2": {
       "require": "./build/gen2stadium2/index.js",
       "import": "./build/gen2stadium2/index.mjs"
+    },
+    "./gen3rs": {
+      "require": "./build/gen3rs/index.js",
+      "import": "./build/gen3rs/index.mjs"
     },
     "./gen4pt": {
       "require": "./build/gen4pt/index.js",
@@ -78,6 +82,9 @@
       "gen2stadium2": [
         "./build/gen2stadium2/index.d.ts"
       ],
+      "gen3rs": [
+        "./build/gen3rs/index.d.ts"
+      ],
       "gen4pt": [
         "./build/gen4pt/index.d.ts"
       ],
@@ -114,11 +121,11 @@
     "build"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.9.34"
+    "@pkmn/dex-types": "^0.9.35"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.9.34",
-    "@pkmn/sim": "^0.9.34"
+    "@pkmn/dex": "^0.9.35",
+    "@pkmn/sim": "^0.9.35"
   },
   "scripts": {
     "lint": "eslint --cache src",

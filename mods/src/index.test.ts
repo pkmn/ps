@@ -41,6 +41,16 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expectFormat(dex, 'gen2nc2000');
       });
 
+      it('gen3rs', async () => {
+        const dex =
+          new ModdedDex(Dex.mod('gen3rs' as ID, await import('./gen3rs') as ModData));
+        expect(dex.gen).toBe(3);
+        expect(dex.species.get('Jirachi').isNonstandard).toBe('Unobtainable');
+        expect(dex.items.get('Salac Berry').isNonstandard).toBe('Unobtainable');
+        expect((await dex.learnsets.get('seaking')).learnset!['megahorn']).toBeUndefined();
+        expectFormat(dex, 'gen3adv200');
+      });
+
       it('gen4pt', async () => {
         const dex =
           new ModdedDex(Dex.mod('gen4pt' as ID, await import('./gen4pt') as ModData));

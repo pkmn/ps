@@ -168,6 +168,12 @@ const MOD_IMPORTS = {
     'SparseBoostsTable', 'Pokemon', 'StatIDExceptHP',
   ],
 
+  // gen3rs
+  'data/mods/gen3rs/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
+  'data/mods/gen3rs/items.ts': ['ModdedItemDataTable'],
+  'data/mods/gen3rs/learnsets.ts': ['ModdedLearnsetDataTable'],
+  'data/mods/gen3rs/scripts.ts': ['ModdedBattleScriptsData'],
+
   // gen4pt
   'data/mods/gen4pt/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
   'data/mods/gen4pt/learnsets.ts': ['ModdedLearnsetDataTable'],
@@ -483,6 +489,7 @@ const MOD_OVERRIDDEN = new Set([
   'data/mods/gen1jpn/index.ts',
   'data/mods/gen1stadium/index.ts',
   'data/mods/gen2stadium2/index.ts',
+  'data/mods/gen3rs/index.ts',
   'data/mods/gen4pt/index.ts',
   'data/mods/gen5bw1/index.ts',
   'data/mods/gen6xy/index.ts',

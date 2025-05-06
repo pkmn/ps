@@ -21,6 +21,7 @@ This package contains data and logic for several mods:
 - `gen1jpn`: A mod on top of Generation 1 which implements Japanese version-specific mechanics
 - `gen1stadium`: A mod on top of Generation 1 which implements Pokémon Stadium
 - `gen2stadium2`: A mod on top of Generation 2 which implements Pokémon Stadium 2
+- `gen3rs`: A mod on top of Generation 3 which contains data from just Ruby and Sapphire
 - `gen4pt`: A mod on top of Generation 4 which contains data from just Diamond, Pearl, and Platinum
 - `gen5bw1`: A mod on top of Generation 5 which contains data from just Black & White
 - `gen6xy`: A mod on top of Generation 6 which contains data from just X & Y

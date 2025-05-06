@@ -5,6 +5,7 @@ export default [...pkmn, {
     "src/gen1jpn/*.ts",
     "src/gen1stadium/*.ts",
     "src/gen2stadium2/*.ts",
+    "src/gen3rs/*.ts",
     "src/gen4pt/*.ts",
     "src/gen5bw1/*.ts",
     "src/gen6xy/*.ts",
