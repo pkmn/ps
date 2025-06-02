@@ -666,8 +666,7 @@ export class BattleActions {
 
 		const hitResults = [];
 		for (const i of targets.keys()) {
-			hitResults[i] = (move.ignoreImmunity && (move.ignoreImmunity === true || move.ignoreImmunity[move.type])) ||
-				targets[i].runImmunity(move.type, !move.smartTarget);
+			hitResults[i] = targets[i].runImmunity(move, !move.smartTarget);
 		}
 
 		return hitResults;
@@ -1611,10 +1610,8 @@ export class BattleActions {
 			move.hit = 0;
 		}
 
-		if (!move.ignoreImmunity || (move.ignoreImmunity !== true && !move.ignoreImmunity[move.type])) {
-			if (!target.runImmunity(move.type, !suppressMessages)) {
-				return false;
-			}
+		if (!target.runImmunity(move, !suppressMessages)) {
+			return false;
 		}
 
 		if (move.ohko) return target.maxhp;
@@ -1935,6 +1932,12 @@ export class BattleActions {
 	}
 
 	terastallize(pokemon: Pokemon) {
+		if (pokemon.species.baseSpecies === 'Ogerpon' && !['Fire', 'Grass', 'Rock', 'Water'].includes(pokemon.teraType) &&
+			(!pokemon.illusion || pokemon.illusion.species.baseSpecies === 'Ogerpon')) {
+			this.battle.hint("If Ogerpon Terastallizes into a type other than Fire, Grass, Rock, or Water, the game softlocks.");
+			return;
+		}
+
 		if (pokemon.illusion && ['Ogerpon', 'Terapagos'].includes(pokemon.illusion.species.baseSpecies)) {
 			this.battle.singleEvent('End', this.dex.abilities.get('Illusion'), pokemon.abilityState, pokemon);
 		}
@@ -1949,10 +1952,11 @@ export class BattleActions {
 		pokemon.knownType = true;
 		pokemon.apparentType = type;
 		if (pokemon.species.baseSpecies === 'Ogerpon') {
-			const tera = pokemon.species.id === 'ogerpon' ? 'tealtera' : 'tera';
-			pokemon.formeChange(pokemon.species.id + tera, null, true);
+			let ogerponSpecies = toID(pokemon.species.battleOnly || pokemon.species.id);
+			ogerponSpecies += ogerponSpecies === 'ogerpon' ? 'tealtera' : 'tera';
+			pokemon.formeChange(ogerponSpecies, null, true);
 		}
-		if (pokemon.species.name === 'Terapagos-Terastal' && type === 'Stellar') {
+		if (pokemon.species.name === 'Terapagos-Terastal') {
 			pokemon.formeChange('Terapagos-Stellar', null, true);
 			pokemon.baseMaxhp = Math.floor(Math.floor(
 				2 * pokemon.species.baseStats['hp'] + pokemon.set.ivs['hp'] + Math.floor(pokemon.set.evs['hp'] / 4) + 100
@@ -1965,7 +1969,7 @@ export class BattleActions {
 		if (pokemon.species.baseSpecies === 'Morpeko' && !pokemon.transformed &&
 			pokemon.baseSpecies.id !== pokemon.species.id
 		) {
-			pokemon.regressionForme = true;
+			pokemon.formeRegression = true;
 			pokemon.baseSpecies = pokemon.species;
 			pokemon.details = pokemon.getUpdatedDetails();
 		}

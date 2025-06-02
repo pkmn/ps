@@ -5,6 +5,7 @@ import {Item, DexItems} from './dex-items';
 import {Ability, DexAbilities} from './dex-abilities';
 import {Species, DexSpecies, DexLearnsets, ModdedLearnsetData} from './dex-species';
 import {Format, FormatList, DexFormats, RuleTable} from './dex-formats';
+import {Aliases} from '../data/aliases';
 import {
 	AbilityText,
 	ActiveMove,
@@ -92,7 +93,7 @@ const dexes: {[mod: string]: ModdedDex} = Object.create(null);
 type DataType =
 	'Abilities' | 'Rulesets' | 'FormatsData' | 'Items' | 'Learnsets' | 'Moves' |
 	'Natures' | 'Pokedex' | 'Scripts' | 'Conditions' | 'TypeChart' | 'PokemonGoData';
-const DATA_TYPES: (DataType | 'Aliases')[] = [
+const DATA_TYPES: DataType[] = [
 	'Abilities', 'Rulesets', 'FormatsData', 'Items', 'Learnsets', 'Moves',
 	'Natures', 'Pokedex', 'Scripts', 'Conditions', 'TypeChart', 'PokemonGoData',
 ];
@@ -114,7 +115,6 @@ interface DexTableData {
 	Conditions: DexTable<import('./dex-conditions').ConditionData>;
 	TypeChart: DexTable<import('./dex-data').TypeData>;
 
-	Aliases: DexTable<string>;
 	Scripts: ModdedBattleScriptsData; // NB: Not a DexTable, but PS is dumb AF
 
 	Species: DexTable<import('./dex-species').SpeciesData>;
@@ -167,6 +167,7 @@ export class ModdedDex {
 	readonly natures: Data.DexNatures;
 	readonly types: Data.DexTypes;
 	readonly stats: Data.DexStats;
+	readonly aliases: Map<ID, ID> | null = null;
 
 	gen = 0;
 	parentMod = '';
@@ -417,11 +418,26 @@ export class ModdedDex {
 
 	loadDataFile(
 		mod: string,
-		dataType: DataType | 'Aliases',
+		dataType: DataType,
 		modData?: DeepPartial<ModdedDex['data']>
 	): AnyObject | void {
 		if (modData) return modData[dataType];
 		return (dexData as any)[mod === 'base' ? BASE_MOD : mod][dataType];
+	}
+
+	getAlias(id: ID): ID | undefined {
+		return this.loadAliases().get(id);
+	}
+
+	loadAliases(): NonNullable<ModdedDex['aliases']> {
+		if (!this.isBase) return Dex.loadAliases();
+		if (this.aliases) return this.aliases;
+		const aliases = new Map<ID, ID>();
+		for (const [alias, target] of Object.entries(Aliases)) {
+			aliases.set(alias as ID, toID(target));
+		}
+		(this as any).aliases = aliases satisfies this['aliases'];
+		return this.aliases!;
 	}
 
 	includeMods(): this {
@@ -464,7 +480,7 @@ export class ModdedDex {
 			// Formats are inherited by mods and used by Rulesets
 			this.includeFormats();
 		}
-		for (const dataType of DATA_TYPES.concat('Aliases')) {
+		for (const dataType of DATA_TYPES) {
 			dataCache[dataType] = this.loadDataFile(this.currentMod, dataType, modData);
 			if (dataType === 'Rulesets' && !parentDex) {
 				for (const format of this.formats.all()) {
@@ -497,7 +513,6 @@ export class ModdedDex {
 					}
 				}
 			}
-			dataCache['Aliases'] = parentDex.data['Aliases'];
 		}
 
 		// Flag the generation. Required for team validator.

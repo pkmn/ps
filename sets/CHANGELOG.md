@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.2
+
+- Pokémon Showdown renamed `forceTeraType` to `requiredTeraType`.
+
 ## 5.1.2
 
 - Remove nicknames as part of canonicalization.

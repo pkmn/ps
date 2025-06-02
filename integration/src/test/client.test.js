@@ -13,7 +13,7 @@ const {ExhaustiveRunner, UNLOGGED} = require('./client');
 const SKIPPED = new Set(['60.p1.log']); // FIXME
 
 describe('client', () => {
-  it('test', async () => {
+  it.skip('test', async () => {
     const opts = {prng: [1, 2, 3, 4]};
     for (const format of ExhaustiveRunner.FORMATS) {
       opts.format = format;

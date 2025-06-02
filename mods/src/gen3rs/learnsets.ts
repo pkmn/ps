@@ -213,6 +213,7 @@ export const Learnsets: ModdedLearnsetDataTable = {
 			roar: ["3M", "3L9"],
 			safeguard: ["3M", "3L33"],
 			secretpower: ["3M"],
+			spite: ["3E"],
 			sunnyday: ["3M"],
 			tailwhip: ["3L5"],
 			toxic: ["3M"],

@@ -34,7 +34,7 @@ export interface Data {
     battleOnly?: string | string[];
     abilities?: {0: string; 1?: string; H?: string; S?: string};
     types?: string[];
-    forceTeraType?: string;
+    requiredTeraType?: string;
   }>;
 }
 
@@ -246,7 +246,7 @@ export const Sets = new class {
     }
     if (s.teraType) {
       const d = data?.species.get(species);
-      buf += 'Tera Type: ' + (d?.forceTeraType || s.teraType || d?.types?.[0]) + '  \n';
+      buf += 'Tera Type: ' + (s.teraType || d?.requiredTeraType || d?.types?.[0]) + '  \n';
     }
     let first = true;
     if (s.evs && (!data || data.gen >= 3)) {

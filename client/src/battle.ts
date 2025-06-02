@@ -51,7 +51,6 @@ export class Battle {
   lastMove!: ID | 'switch-in' | 'healing-wish';
 
   request?: Protocol.Request;
-  requestStatus: 'inapplicable' | 'received' | 'applicable' | 'applied';
 
   private readonly handler: Handler;
 
@@ -89,9 +88,6 @@ export class Battle {
     this.totalTimeLeft = 0;
     this.graceTimeLeft = 0;
 
-    this.request = undefined;
-    this.requestStatus = 'inapplicable';
-
     this.handler = new Handler(this, player);
 
     this.reset();
@@ -107,14 +103,8 @@ export class Battle {
     if (key in this.handler) (this.handler as any)[key](args, kwArgs);
   }
 
-  update() {
-    if (this.requestStatus === 'received') {
-      this.requestStatus = 'applicable';
-      return;
-    }
-    if (this.requestStatus !== 'applicable' || !this.request) return;
-
-    const request = this.request;
+  update(request: Protocol.Request) {
+    this.request = request;
     if (request.side) {
       const side = this.getSide(request.side.id);
 
@@ -201,8 +191,6 @@ export class Battle {
         }
       }
     }
-
-    this.requestStatus = 'applied';
   }
 
   private findPokemon(pokemon: Protocol.Request.Pokemon, team: Pokemon[]) {

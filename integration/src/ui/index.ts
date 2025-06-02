@@ -216,7 +216,6 @@ void (async () => {
 
       displayLog(html);
     }
-    battle.update();
   }
 })();
 

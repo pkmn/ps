@@ -39,8 +39,7 @@ export class Handler implements Protocol.Handler {
 
   '|request|'(args: Args['|request|']) {
     if (!args[1]) return;
-    this.battle.request = Protocol.parseRequest(args[1]);
-    this.battle.requestStatus = 'received';
+    this.battle.update(Protocol.parseRequest(args[1]));
   }
 
   '|tier|'(args: Args['|tier|']) {
@@ -668,7 +667,9 @@ export class Handler implements Protocol.Handler {
     poke.ability = poke.baseAbility = (species.abilities ? toID(species.abilities['0']) : '');
 
     poke.details = args[2];
-    poke.searchid = args[1].substr(0, 2) + args[1].substr(3) + '|' + args[2] as PokemonSearchID;
+    poke.searchid = (args[1].substr(0, 2) +
+      args[1].substr(args[1].indexOf(':')) +
+      '|' + args[2]) as PokemonSearchID;
   }
 
   '|-transform|'(args: Args['|-transform|'], kwArgs: KWArgs['|-transform|']) {

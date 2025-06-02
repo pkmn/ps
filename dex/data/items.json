@@ -2049,6 +2049,8 @@
     "ejectpack": {
       "name": "Eject Pack",
       "fling": {"basePower": 50},
+      "onAnySwitchInPriority": -4,
+      "onResidualOrder": 29,
       "num": 1119,
       "gen": 8,
       "shortDesc": "If the holder's stat stages are lowered, it switches to a chosen ally. Single use."
@@ -5602,6 +5604,7 @@
       "name": "White Herb",
       "fling": {"basePower": 10},
       "onAnySwitchInPriority": -2,
+      "onResidualOrder": 29,
       "num": 214,
       "gen": 3,
       "shortDesc": "Restores all lowered stat stages to 0 when one is less than 0. Single use."

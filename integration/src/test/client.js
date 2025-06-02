@@ -125,7 +125,6 @@ class Runner {
         if (!UNLOGGED.has(args[0])) pkmn.log += pkmn.formatter.formatText(args, kwArgs);
         battle.add(args, kwArgs);
       }
-      battle.update();
 
       assert.deepStrictEqual(pkmn.log, ps.log);
       pkmn.log = '';

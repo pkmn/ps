@@ -1200,6 +1200,7 @@
       "ignoreImmunity": false,
       "desc": "Paralyzes the target. This move does not ignore type immunity."
     },
+    "haze": {"inherit": true},
     "hiddenpower": {"inherit": true, "category": "Physical"},
     "highjumpkick": {
       "inherit": true,
@@ -1921,6 +1922,7 @@
       "desc": "Raises the user's Special Attack by 1 stage.",
       "shortDesc": "Raises the user's Sp. Atk by 1."
     },
+    "haze": {"inherit": true},
     "healbell": {
       "inherit": true,
       "desc": "Every Pokemon in the user's party is cured of its non-volatile status condition. Pokemon with the Soundproof Ability are not cured."
@@ -2917,7 +2919,6 @@
     },
     "healpulse": {
       "inherit": true,
-      "heal": [1, 2],
       "desc": "The target restores 1/2 of its maximum HP, rounded half up."
     },
     "heatwave": {"inherit": true, "basePower": 100},

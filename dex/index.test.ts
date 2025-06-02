@@ -244,7 +244,7 @@ describe('Dex', () => {
 
   describe('Species', () => {
     it('#get', () => {
-      expect(Dex.species.get('foo').exists).toBe(false);
+      expect(Dex.species.get('foobar').exists).toBe(false);
       // normal
       expect(Dex.species.get('gengar').name).toBe('Gengar');
       expect(Dex.species.get('Gastrodon-East').name).toBe('Gastrodon-East');

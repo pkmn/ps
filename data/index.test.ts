@@ -254,7 +254,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
     describe('Species', () => {
       it('#get', () => {
         const gen = Gen(7);
-        expect(gen.species.get('foo')).toBeUndefined();
+        expect(gen.species.get('foobar')).toBeUndefined();
         // normal
         expect(gen.species.get('gengar')!.name).toBe('Gengar');
         expect(gen.species.get('Gastrodon-East')!.name).toBe('Gastrodon-East');

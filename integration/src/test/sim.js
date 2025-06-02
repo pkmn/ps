@@ -55,7 +55,7 @@ class MultiRandomRunner {
       const game = new Runner(this.gens, Object.assign({format}, this.options)).run().catch(err => {
         failures++;
         console.error(
-          `Run \`node integration/test sim 1 --format=${format} --seed=${seed.join()}\` ` +
+          `Run \`node integration/test sim 1 --format=${format} --seed=${seed}\` ` +
           `to debug (optionally with \`--output\` and/or \`--input\` for more info):\n`,
           err
         );
