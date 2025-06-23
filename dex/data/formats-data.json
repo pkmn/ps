@@ -715,7 +715,7 @@
     "lairon": {"tier": "ZUBL"},
     "aggron": {"tier": "RU"},
     "meditite": {"tier": "ZU"},
-    "medicham": {"tier": "UUBL"},
+    "medicham": {"tier": "OU"},
     "electrike": {"tier": "LC"},
     "manectric": {"tier": "UU"},
     "plusle": {"tier": "NU"},
@@ -8631,7 +8631,7 @@
       "natDexTier": "Uber"
     },
     "slitherwing": {"tier": "RU", "doublesTier": "(DUU)", "natDexTier": "RU"},
-    "roaringmoon": {"tier": "Uber", "doublesTier": "DBL", "natDexTier": "OU"},
+    "roaringmoon": {"tier": "Uber", "doublesTier": "DBL", "natDexTier": "Uber"},
     "irontreads": {"tier": "OU", "doublesTier": "(DUU)", "natDexTier": "OU"},
     "ironmoth": {"tier": "OU", "doublesTier": "(DUU)", "natDexTier": "UU"},
     "ironhands": {"tier": "UUBL", "doublesTier": "DOU", "natDexTier": "UUBL"},

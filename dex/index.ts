@@ -31,7 +31,7 @@ export interface FormatData {
   inherit?: boolean;
 }
 
-interface AnyObject { [k: string]: any }
+interface AnyObject {[k: string]: any}
 
 export class BasicEffect<NameT extends string = string> implements T.BasicEffect<NameT> {
   id: T.ID;

@@ -23,7 +23,7 @@ interface EffectState {
   duration?: 'turn' | 'move' | number;
 }
 
-interface EffectTable { [effectid: string]: EffectState }
+interface EffectTable {[effectid: string]: EffectState}
 
 type MoveSlot = {
   name: MoveName;

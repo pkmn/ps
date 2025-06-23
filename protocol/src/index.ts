@@ -536,8 +536,8 @@ export namespace Protocol {
      * or their username by default).
      */
     '|notify|':
-    | readonly ['notify', NotificationTitle, Message?]
-    | readonly ['notify', NotificationTitle, Message, HighlightToken];
+    | readonly ['notify', NotificationTitle, Message?] |
+    readonly ['notify', NotificationTitle, Message, HighlightToken];
     /**
      * `|:|TIMESTAMP`
      *
@@ -694,16 +694,16 @@ export namespace Protocol {
     '|selectorhtml|': readonly ['selectorhtml', SelectorName, HTML];
     '|refresh|': readonly ['refresh'];
     '|tempnotify|':
-    | readonly ['tempnotify', TempNotifyName, Message]
-    | readonly ['tempnotify', TempNotifyName, Message, Message]
-    | readonly ['tempnotify', TempNotifyName, Message, Message, string];
+    | readonly ['tempnotify', TempNotifyName, Message] |
+    readonly ['tempnotify', TempNotifyName, Message, Message] |
+    readonly ['tempnotify', TempNotifyName, Message, Message, string];
     '|tempnotifyoff|': readonly ['tempnotifyoff', TempNotifyName];
     '|noinit|':
-    | readonly ['noinit', 'joinfailed' | 'namerequired' | 'nonexistent', Message]
-    | readonly ['noinit', 'rename', RoomID, RoomTitle];
+    | readonly ['noinit', 'joinfailed' | 'namerequired' | 'nonexistent', Message] |
+    readonly ['noinit', 'rename', RoomID, RoomTitle];
     '|hidelines|':
-    | readonly ['hidelines', 'delete' | 'hide', ID, Num]
-    | readonly ['hidelines', 'unlink', ID];
+    | readonly ['hidelines', 'delete' | 'hide', ID, Num] |
+    readonly ['hidelines', 'unlink', ID];
     '|expire|': readonly ['expire'] | readonly ['expire', Message];
     '|askreg|': readonly ['askreg', ID];
   }
@@ -816,8 +816,8 @@ export namespace Protocol {
      * auto-start was turned off.
      */
     '|tournament|autostart|':
-    | readonly ['tournament', 'autostart', 'on', Num]
-    | readonly ['tournament', 'autostart', 'off'];
+    | readonly ['tournament', 'autostart', 'on', Num] |
+    readonly ['tournament', 'autostart', 'off'];
     /**
      * `|tournament|autodq|on|TIMEOUT`
      * `|tournament|autodq|off`
@@ -830,8 +830,8 @@ export namespace Protocol {
      * disqualified for inactivity.
      */
     '|tournament|autodq|':
-    | readonly ['tournament', 'autodq', 'on' | 'target', Num]
-    | readonly ['tournament', 'autodq', 'off'];
+    | readonly ['tournament', 'autodq', 'on' | 'target', Num] |
+    readonly ['tournament', 'autodq', 'off'];
   }
 
   export type TournamentArgName = keyof TournamentArgs;
@@ -851,8 +851,8 @@ export namespace Protocol {
      *     displayed in rated battles and when the player is first introduced otherwise it's blank.
      */
     '|player|':
-    | readonly ['player', Player]
-    | readonly ['player', Player, Username, AvatarIdent | '', Num | ''];
+    | readonly ['player', Player] |
+    readonly ['player', Player, Username, AvatarIdent | '', Num | ''];
     /**
      * `|teamsize|PLAYER|NUMBER`
      *
@@ -1021,8 +1021,8 @@ export namespace Protocol {
      * fainted) Pokémon on that side.
      */
     '|move|':
-    | readonly ['move', PokemonIdent, MoveName]
-    | readonly ['move', PokemonIdent, MoveName | 'recharge', PokemonIdent | 'null' | ''];
+    | readonly ['move', PokemonIdent, MoveName] |
+    readonly ['move', PokemonIdent, MoveName | 'recharge', PokemonIdent | 'null' | ''];
     /**
      * `|switch|POKEMON|DETAILS|HP STATUS`
      *
@@ -1081,8 +1081,8 @@ export namespace Protocol {
      * paralysis, Disable, etc). Sometimes, the move it was trying to use is given.
      */
     '|cant|':
-    | readonly ['cant', PokemonIdent, Reason | AbilityName | EffectName | MoveName]
-    | readonly [
+    | readonly ['cant', PokemonIdent, Reason | AbilityName | EffectName | MoveName] |
+    readonly [
       'cant', PokemonIdent, Reason | AbilityName | EffectName | MoveName, EffectName | MoveName,
     ];
     /**
@@ -1109,8 +1109,8 @@ export namespace Protocol {
      * Syntax is the same as `|switch|`, though with `SPECIES` in lieu of `DETAILS`.
      */
     '|-formechange|':
-    | readonly ['-formechange', PokemonIdent, SpeciesName]
-    | readonly ['-formechange', PokemonIdent, SpeciesName, ''];
+    | readonly ['-formechange', PokemonIdent, SpeciesName] |
+    readonly ['-formechange', PokemonIdent, SpeciesName, ''];
     /**
      * `|-fail|POKEMON|ACTION`
      *
@@ -1119,9 +1119,9 @@ export namespace Protocol {
      * because they're blocked by another effect should use `-block` instead.
      */
     '|-fail|':
-    | readonly ['-fail', PokemonIdent]
-    | readonly ['-fail', PokemonIdent, EffectName | MoveName | StatusName]
-    | readonly ['-fail', PokemonIdent, 'unboost', StatDisplayName | BoostID];
+    | readonly ['-fail', PokemonIdent] |
+    readonly ['-fail', PokemonIdent, EffectName | MoveName | StatusName] |
+    readonly ['-fail', PokemonIdent, 'unboost', StatDisplayName | BoostID];
     /**
      * `|-block|POKEMON|EFFECT|MOVE|ATTACKER`
      *
@@ -1130,9 +1130,9 @@ export namespace Protocol {
      * case that it's not `EFFECT` (for instance, an ally with Aroma Veil.)
      */
     '|-block|':
-    | readonly ['-block', PokemonIdent, EffectName]
-    | readonly ['-block', PokemonIdent, EffectName | MoveName, MoveName | '']
-    | readonly ['-block', PokemonIdent, EffectName, MoveName, PokemonIdent | ''];
+    | readonly ['-block', PokemonIdent, EffectName] |
+    readonly ['-block', PokemonIdent, EffectName | MoveName, MoveName | ''] |
+    readonly ['-block', PokemonIdent, EffectName, MoveName, PokemonIdent | ''];
     /**
      * `|-notarget|POKEMON`
      *
@@ -1169,8 +1169,8 @@ export namespace Protocol {
      * The specified Pokémon `POKEMON` now has `HP` hit points.
      */
     '|-sethp|':
-    | readonly ['-sethp', PokemonIdent, PokemonHPStatus]
-    | readonly ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
+    | readonly ['-sethp', PokemonIdent, PokemonHPStatus] |
+    readonly ['-sethp', PokemonIdent, Num, PokemonIdent, Num];
     /**
      * `|-status|POKEMON|STATUS`
      *
@@ -1216,8 +1216,8 @@ export namespace Protocol {
      * example: Guard Swap, Heart Swap).
      */
     '|-swapboost|':
-    | readonly ['-swapboost', PokemonIdent, PokemonIdent]
-    | readonly ['-swapboost', PokemonIdent, PokemonIdent, BoostIDs];
+    | readonly ['-swapboost', PokemonIdent, PokemonIdent] |
+    readonly ['-swapboost', PokemonIdent, PokemonIdent, BoostIDs];
     /**
      * `|-invertboost|POKEMON`
      *
@@ -1257,8 +1257,8 @@ export namespace Protocol {
      * Copy the boosts from `SOURCE` Pokémon to `TARGET` Pokémon (For example: Psych Up).
      */
     '|-copyboost|':
-    | readonly ['-copyboost', PokemonIdent, PokemonIdent]
-    | readonly ['-copyboost', PokemonIdent, PokemonIdent, BoostIDs];
+    | readonly ['-copyboost', PokemonIdent, PokemonIdent] |
+    readonly ['-copyboost', PokemonIdent, PokemonIdent, BoostIDs];
     /**
      * `|-weather|WEATHER`
      *
@@ -1308,12 +1308,12 @@ export namespace Protocol {
      * on the `POKEMON` Pokémon by `EFFECT`. (For example: confusion, Taunt, Substitute).
      */
     '|-start|':
-    | readonly ['-start', PokemonIdent, 'Dynamax']
-    | readonly ['-start', PokemonIdent, 'Dynamax', 'Gmax' | '']
-    | readonly ['-start', PokemonIdent, EffectName | MoveName]
-    | readonly ['-start', PokemonIdent, EffectName, MoveName]
-    | readonly ['-start', PokemonIdent, 'typechange', Types?]
-    | readonly ['-start', PokemonIdent, 'typeadd', TypeName];
+    | readonly ['-start', PokemonIdent, 'Dynamax'] |
+    readonly ['-start', PokemonIdent, 'Dynamax', 'Gmax' | ''] |
+    readonly ['-start', PokemonIdent, EffectName | MoveName] |
+    readonly ['-start', PokemonIdent, EffectName, MoveName] |
+    readonly ['-start', PokemonIdent, 'typechange', Types?] |
+    readonly ['-start', PokemonIdent, 'typeadd', TypeName];
     /**
      * `|-end|POKEMON|EFFECT`
      *
@@ -1344,8 +1344,8 @@ export namespace Protocol {
      * The `POKEMON` was immune to a move.
      */
     '|-immune|':
-    | readonly ['-immune', PokemonIdent]
-    | readonly ['-immune', PokemonIdent, 'confusion'];
+    | readonly ['-immune', PokemonIdent] |
+    readonly ['-immune', PokemonIdent, 'confusion'];
     /**
      * `|-item|POKEMON|ITEM|[from]EFFECT`
      *
@@ -1393,17 +1393,17 @@ export namespace Protocol {
      * (Intimidate should use `-activate`).
      */
     '|-ability|':
-    | readonly ['-ability', PokemonIdent, AbilityName]
-    | readonly ['-ability', PokemonIdent, AbilityName, Side | PokemonIdent | 'boost']
-    | readonly ['-ability', PokemonIdent, AbilityName, AbilityName, PokemonIdent];
+    | readonly ['-ability', PokemonIdent, AbilityName] |
+    readonly ['-ability', PokemonIdent, AbilityName, Side | PokemonIdent | 'boost'] |
+    readonly ['-ability', PokemonIdent, AbilityName, AbilityName, PokemonIdent];
     /**
      * `|-endability|POKEMON`
      *
      * The `POKEMON` has had its ability suppressed by Gastro Acid.
      */
     '|-endability|':
-    | readonly ['-endability', PokemonIdent]
-    | readonly ['-endability', PokemonIdent, AbilityName | 'none'];
+    | readonly ['-endability', PokemonIdent] |
+    readonly ['-endability', PokemonIdent, AbilityName | 'none'];
     /**
      * `|-transform|POKEMON|TARGET`
      *
@@ -1453,14 +1453,14 @@ export namespace Protocol {
      * the "restored" message as `-activate`.
      */
     '|-activate|':
-    | readonly ['-activate', PokemonIdent | '', EffectName]
-    | readonly [
+    | readonly ['-activate', PokemonIdent | '', EffectName] |
+    readonly [
       '-activate',
       PokemonIdent,
       EffectName | AbilityName | MoveName | '',
       ItemName | MoveName | AbilityName | Num | PokemonIdent | '',
-    ]
-    | readonly ['-activate', PokemonIdent, EffectName, AbilityName | '', AbilityName | ''];
+    ] |
+    readonly ['-activate', PokemonIdent, EffectName, AbilityName | '', AbilityName | ''];
     '|-fieldactivate|': readonly ['-fieldactivate', EffectName];
     /**
      * `|-hint|MESSAGE`
@@ -1505,8 +1505,8 @@ export namespace Protocol {
      * Dig, Fly).
      */
     '|-prepare|':
-    | readonly ['-prepare', PokemonIdent, MoveName]
-    | readonly ['-prepare', PokemonIdent, MoveName, PokemonIdent];
+    | readonly ['-prepare', PokemonIdent, MoveName] |
+    readonly ['-prepare', PokemonIdent, MoveName, PokemonIdent];
     /**
      * `|-mustrecharge|POKEMON`
      *
@@ -1548,10 +1548,10 @@ export namespace Protocol {
     BattleMajorArgs &
     BattleMinorArgs;
   export type BattleArgName =
-    | BattleInitArgName
-    | BattleProgressArgName
-    | BattleMajorArgName
-    | BattleMinorArgName;
+    | BattleInitArgName |
+    BattleProgressArgName |
+    BattleMajorArgName |
+    BattleMinorArgName;
   export type BattleArgType = BattleArgs[BattleArgName];
 
   export type BattleArgsKWArgsTypes = {
@@ -1630,9 +1630,9 @@ export namespace Protocol {
     '|swap|': GeneralKWArgNames;
     '|switch|': GeneralKWArgNames;
     '|detailschange|': GeneralKWArgNames;
-    '|-activate|': GeneralKWArgNames
-    | 'ability' | 'ability2' | 'block' | 'broken' | 'damage' | 'item'
-    | 'move' | 'number' | 'consumed' | 'name' | 'fromitem' | 'source';
+    '|-activate|': GeneralKWArgNames |
+    'ability' | 'ability2' | 'block' | 'broken' | 'damage' | 'item' |
+    'move' | 'number' | 'consumed' | 'name' | 'fromitem' | 'source';
     '|-ability|': GeneralKWArgNames | 'move' | 'weaken' | 'fail';
     '|-block|': GeneralKWArgNames;
     '|-boost|': GeneralKWArgNames | 'multiple' | 'zeffect';
@@ -1662,8 +1662,8 @@ export namespace Protocol {
     '|-sideend|': GeneralKWArgNames;
     '|-singlemove|': GeneralKWArgNames | 'zeffect';
     '|-singleturn|': GeneralKWArgNames | 'zeffect';
-    '|-start|': GeneralKWArgNames
-    | 'already' | 'damage' | 'block' | 'fatigue' | 'upkeep' | 'zeffect';
+    '|-start|': GeneralKWArgNames |
+    'already' | 'damage' | 'block' | 'fatigue' | 'upkeep' | 'zeffect';
     '|-status|': GeneralKWArgNames;
     '|-swapboost|': GeneralKWArgNames;
     '|-transform|': GeneralKWArgNames | 'msg';
@@ -1691,11 +1691,11 @@ export namespace Protocol {
   MiscArgs &
   BattleArgs>;
   export type ArgName =
-    | RoomArgName
-    | GlobalArgName
-    | TournamentArgName
-    | MiscArgName
-    | BattleArgName;
+    | RoomArgName |
+    GlobalArgName |
+    TournamentArgName |
+    MiscArgName |
+    BattleArgName;
 
   export type ArgType = Args[ArgName];
 

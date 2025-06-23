@@ -37,7 +37,7 @@
     "ts-chacha20": "^1.2.0"
   },
   "devDependencies": {
-    "mocha": "^11.5.0"
+    "mocha": "^11.7.0"
   },
   "scripts": {
     "compile": "tsc -p .",

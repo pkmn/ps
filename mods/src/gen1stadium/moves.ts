@@ -251,8 +251,6 @@ export const Moves: ModdedMoveDataTable = {
 					damage = target.volatiles['substitute'].hp;
 				}
 				if (!damage && damage !== 0) return null;
-				damage = this.runEvent('SubDamage', target, source, move, damage);
-				if (!damage && damage !== 0) return damage;
 				target.volatiles['substitute'].hp -= damage;
 				this.lastDamage = damage;
 				if (target.volatiles['substitute'].hp <= 0) {

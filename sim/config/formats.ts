@@ -64,14 +64,18 @@ export const Formats: import('../sim/dex-formats').FormatList = [
   {
     name: '[Gen 9] OU',
     mod: 'gen9',
-    ruleset: [ 'Standard', 'Sleep Moves Clause', '!Sleep Clause Mod' ],
+    ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Sleep Moves Clause', '!Sleep Clause Mod' ],
     banlist: [
-      'Uber',          'AG',
-      'Arena Trap',    'Moody',
-      'Sand Veil',     'Shadow Tag',
-      'Snow Cloak',    "King's Rock",
-      'Razor Fang',    'Baton Pass',
-      'Last Respects', 'Shed Tail'
+      'Uber',
+      'AG',
+      'Arena Trap',
+      'Moody',
+      'Shadow Tag',
+      "King's Rock",
+      'Razor Fang',
+      'Baton Pass',
+      'Last Respects',
+      'Shed Tail'
     ]
   },
   {
@@ -145,8 +149,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Zekrom',              'Moody',                 'Shadow Tag',
       'Booster Energy',      'Damp Rock',             'Focus Band',
       "King's Rock",         'Quick Claw',            'Razor Fang',
-      'Smooth Rock',         'Acupressure',           'Baton Pass',
-      'Last Respects',       'Shed Tail'
+      'Smooth Rock',         'Baton Pass',            'Last Respects',
+      'Shed Tail'
     ]
   },
   {
@@ -345,7 +349,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Zamazenta',          'Zamazenta-Crowned',   'Zekrom',
       'Moody',              'Focus Band',          'Focus Sash',
       "King's Rock",        'Razor Fang',          'Quick Claw',
-      'Acupressure',        'Perish Song'
+      'Perish Song'
     ]
   },
   {
@@ -443,14 +447,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Urshifu',            'Urshifu-Rapid-Strike', 'Zacian',
       'Zacian-Crowned',     'Zekrom',               'Moody',
       'Shadow Tag',         'Toxic Chain',          'Toxic Debris',
-      'Acupressure',        'Aromatic Mist',        'Baton Pass',
-      'Coaching',           'Court Change',         'Decorate',
-      'Dragon Cheer',       'Final Gambit',         'Flatter',
-      'Fling',              'Floral Healing',       'Follow Me',
-      'Heal Pulse',         'Heart Swap',           'Last Respects',
-      'Malignant Chain',    'Poison Fang',          'Rage Powder',
-      'Skill Swap',         'Spicy Extract',        'Swagger',
-      'Toxic',              'Toxic Spikes'
+      'Aromatic Mist',      'Baton Pass',           'Coaching',
+      'Court Change',       'Decorate',             'Dragon Cheer',
+      'Final Gambit',       'Flatter',              'Fling',
+      'Floral Healing',     'Follow Me',            'Heal Pulse',
+      'Heart Swap',         'Last Respects',        'Malignant Chain',
+      'Poison Fang',        'Rage Powder',          'Skill Swap',
+      'Spicy Extract',      'Swagger',              'Toxic',
+      'Toxic Spikes'
     ]
   },
   {
@@ -692,8 +696,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Booster Energy',      'Damp Rock',           'Focus Band',
       'Icy Rock',            "King's Rock",         'Leppa Berry',
       'Quick Claw',          'Razor Fang',          'Smooth Rock',
-      'Terrain Extender',    'Acupressure',         'Baton Pass',
-      'Last Respects',       'Shed Tail'
+      'Terrain Extender',    'Baton Pass',          'Last Respects',
+      'Shed Tail'
     ]
   },
   {
@@ -788,7 +792,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Yveltal',               'Zacian',              'Zacian-Crowned',
       'Zamazenta',             'Zamazenta-Crowned',   'Zekrom',
       'Moody',                 'Focus Band',          'Focus Sash',
-      'Fightinium Z + Detect', 'Acupressure',         'Perish Song'
+      'Fightinium Z + Detect', 'Perish Song'
     ]
   },
   {
@@ -1212,7 +1216,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       "King's Rock",
       'Razor Fang',
       'Soul Dew',
-      'Acupressure',
       'Assist'
     ]
   },
@@ -1351,8 +1354,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Zekrom',             'Zygarde-50%',         'Moody',
       'Power Construct',    'Shadow Tag',          'Damp Rock',
       'Focus Band',         "King's Rock",         'Quick Claw',
-      'Smooth Rock',        'Terrain Extender',    'Acupressure',
-      'Baton Pass'
+      'Smooth Rock',        'Terrain Extender',    'Baton Pass'
     ]
   },
   {
@@ -1389,8 +1391,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Zacian-Crowned',      'Zamazenta',          'Zamazenta-Crowned',
       'Zekrom',              'Moody',              'Power Construct',
       'Bright Powder',       'Focus Band',         'Focus Sash',
-      'Lax Incense',         'Quick Claw',         'Acupressure',
-      'Hypnosis',            'Perish Song',        'Sing'
+      'Lax Incense',         'Quick Claw',         'Hypnosis',
+      'Perish Song',         'Sing'
     ]
   },
   {
