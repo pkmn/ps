@@ -153,17 +153,6 @@ export class Battle {
           } else {
             side.active[i] = pokemon;
             pokemon.slot = i;
-            if (p.ability === 'illusion' && !pokemon.revealedDetails) {
-              const illusion = this.findIllusion(request.side, p, i);
-              if (illusion) pokemon.illusion = this.findPokemon(illusion, team);
-              if (pokemon.illusion) {
-                pokemon.revealedDetails =
-                  (pokemon.illusion.baseSpeciesForme +
-                   (pokemon.level === 100 ? '' : ', L' + pokemon.level) +
-                   (pokemon.illusion.gender === 'N' ? '' : ', ' + pokemon.illusion.gender) +
-                   (pokemon.illusion.shiny ? ', shiny' : '')) as PokemonDetails;
-              }
-            }
           }
         }
       }
@@ -203,20 +192,34 @@ export class Battle {
     return undefined;
   }
 
-  private findIllusion(
-    side: Protocol.Request.SideInfo,
-    pokemon: Protocol.Request.Pokemon,
-    position: number
-  ) {
-    let i: number;
-    for (i = side.pokemon.length - 1; i > position; i--) {
-      if (!side.pokemon[i]) continue;
-      if (!side.pokemon[i].fainted) break;
-    }
-    if (!side.pokemon[i]) return undefined;
-    if (pokemon === side.pokemon[i]) return undefined;
-    return side.pokemon[i];
-  }
+  // if (p.ability === 'illusion' && !pokemon.revealedDetails) {
+  //         const illusion = this.findIllusion(request.side, p, i);
+  //         console.debug(illusion, p, i);
+  //         if (illusion) pokemon.illusion = this.findPokemon(illusion, team);
+  //         if (pokemon.illusion) {
+  //           pokemon.revealedDetails =
+  //             (pokemon.illusion.baseSpeciesForme +
+  //              (pokemon.level === 100 ? '' : ', L' + pokemon.level) +
+  //              (pokemon.illusion.gender === 'N' ? '' : ', ' + pokemon.illusion.gender) +
+  //              (pokemon.illusion.shiny ? ', shiny' : '')) as PokemonDetails;
+  //         }
+  //         console.debug(pokemon.revealedDetails);
+  //       }
+
+  // private findIllusion(
+  //   side: Protocol.Request.SideInfo,
+  //   pokemon: Protocol.Request.Pokemon,
+  //   position: number
+  // ) {
+  //   let i: number;
+  //   for (i = side.pokemon.length - 1; i > position; i--) {
+  //     if (!side.pokemon[i]) continue;
+  //     if (!side.pokemon[i].fainted) break;
+  //   }
+  //   if (!side.pokemon[i]) return undefined;
+  //   if (pokemon === side.pokemon[i]) return undefined;
+  //   return side.pokemon[i];
+  // }
 
   // Null object pattern for data retrieval - the server is the source of
   // truth and if the client is out of date it should degrade gracefully
@@ -329,42 +332,46 @@ export class Battle {
     // If we have a request, we know the team is being accurately tracked after Team Preview and
     // thus hasIllusion will be accurate. Only active Pokemon can be an Illusion, so we must have
     // a slot as well.
-    if (this.request && hasIllusion.length && slot >= 0) {
-      const detailed = Protocol.parseDetails(name, pokemonid as PokemonIdent, details);
-      let pokemon: Pokemon | undefined;
+    // if (this.request && hasIllusion.length && slot >= 0) {
+    //   const detailed = Protocol.parseDetails(name, pokemonid as PokemonIdent, details);
+    //   let pokemon: Pokemon | undefined;
 
-      const poke = this.request.side?.pokemon[slot];
-      if (poke?.active) {
-        pokemon = this.findPokemon(poke, hasIllusion);
-      } else {
-        for (const p of hasIllusion) {
-          // BUG: its impossible for us to disambiguate *which* Illusion Pokemon if all are
-          // the same level, so we simply chose the first and hope that works.
-          if (p.level === detailed.level) {
-            pokemon = p;
-            break;
-          }
-        }
-      }
+    //   console.debug(details, pokemonid, slot, hasIllusion.map(s => s.species));
 
-      // We found a potential Illusion Pokemon, but now need to find the Pokemon they are posing as
-      if (pokemon) {
-        for (let i = side.team.length - 1; i >= 0; i--) {
-          const p = side.team[i];
-          if (p.speciesForme === detailed.speciesForme &&
-            p.gender === (detailed.gender || 'N') &&
-            p.shiny === detailed.shiny) {
-            pokemon.slot = slot;
-            if (pokemon.revealedDetails !== pokemon.details) {
-              pokemon.revealedDetails = detailed.details;
-              pokemon.illusion = p;
-            }
+    //   const poke = this.request.side?.pokemon[slot];
+    //   console.debug(poke);
+    //   if (poke?.active) {
+    //     pokemon = this.findPokemon(poke, hasIllusion);
+    //   } else {
+    //     for (const p of hasIllusion) {
+    //       // BUG: its impossible for us to disambiguate *which* Illusion Pokemon if all are
+    //       // the same level, so we simply chose the first and hope that works.
+    //       if (p.level === detailed.level) {
+    //         pokemon = p;
+    //         break;
+    //       }
+    //     }
+    //   }
 
-            return pokemon;
-          }
-        }
-      }
-    }
+    //   // We found a potential Illusion Pokemon, but now need to find the Pokemon they are posing as
+    //   if (pokemon) {
+    //     for (let i = side.team.length - 1; i >= 0; i--) {
+    //       const p = side.team[i];
+    //       if (p.speciesForme === detailed.speciesForme &&
+    //         p.gender === (detailed.gender || 'N') &&
+    //         p.shiny === detailed.shiny) {
+    //         pokemon.slot = slot;
+    //         if (pokemon.revealedDetails !== pokemon.details) {
+    //           console.debug('HI');
+    //           pokemon.revealedDetails = detailed.details;
+    //           pokemon.illusion = p;
+    //         }
+
+    //         return pokemon;
+    //       }
+    //     }
+    //   }
+    // }
 
     // pokemon not found, create a new pokemon object for it
     const pokemon = side.addPokemon(

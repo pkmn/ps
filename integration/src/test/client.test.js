@@ -35,13 +35,10 @@ describe('client', () => {
 
       let actual = '';
       for (const line of input.split('\n')) {
-        if (!line) {
-          battle.update();
-        } else {
-          const {args, kwArgs} = Protocol.parseBattleLine(line);
-          if (!UNLOGGED.has(args[0])) actual += formatter.formatText(args, kwArgs);
-          battle.add(args, kwArgs);
-        }
+        console.debug(line);
+        const {args, kwArgs} = Protocol.parseBattleLine(line);
+        if (!UNLOGGED.has(args[0])) actual += formatter.formatText(args, kwArgs);
+        battle.add(args, kwArgs);
       }
       try {
         expect(actual).toEqual(expected);
