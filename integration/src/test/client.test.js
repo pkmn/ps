@@ -10,10 +10,10 @@ const {LogFormatter} = require('@pkmn/view');
 
 const {ExhaustiveRunner, UNLOGGED} = require('./client');
 
-const SKIPPED = new Set(['60.p1.log']); // FIXME
+const SKIPPED = new Set([]);
 
 describe('client', () => {
-  it.skip('test', async () => {
+  it('test', async () => {
     const opts = {prng: [1, 2, 3, 4]};
     for (const format of ExhaustiveRunner.FORMATS) {
       opts.format = format;
@@ -35,13 +35,9 @@ describe('client', () => {
 
       let actual = '';
       for (const line of input.split('\n')) {
-        if (!line) {
-          battle.update();
-        } else {
-          const {args, kwArgs} = Protocol.parseBattleLine(line);
-          if (!UNLOGGED.has(args[0])) actual += formatter.formatText(args, kwArgs);
-          battle.add(args, kwArgs);
-        }
+        const {args, kwArgs} = Protocol.parseBattleLine(line);
+        if (!UNLOGGED.has(args[0])) actual += formatter.formatText(args, kwArgs);
+        battle.add(args, kwArgs);
       }
       try {
         expect(actual).toEqual(expected);
