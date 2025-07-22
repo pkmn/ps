@@ -160,7 +160,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "NFE",
 	},
 	nidoking: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	clefairy: {
@@ -278,7 +278,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "NFE",
 	},
 	poliwrath: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	abra: {
@@ -403,7 +403,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	cloyster: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	gastly: {
@@ -628,7 +628,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DOU",
 	},
 	snorlax: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	articuno: {

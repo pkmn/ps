@@ -6,6 +6,7 @@ export const Formats = [
     desc: 'Randomized teams of level-balanced Pok&eacute;mon with sets that are generated to be competitively viable.',
     mod: 'gen8bdsp',
     team: 'random',
+    bestOfDefault: true,
     searchShow: false,
     ruleset: [ '[Gen 8] Random Battle', '!PotD' ]
   },

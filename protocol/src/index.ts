@@ -2065,7 +2065,7 @@ export const Protocol = new class {
       output.maxhp = parseFloat(maxhp);
       if (output.hp > output.maxhp) output.hp = output.maxhp;
       const colorchar = maxhp.slice(-1);
-      if (colorchar === 'y' || colorchar === 'g') {
+      if (colorchar === 'r' || colorchar === 'y' || colorchar === 'g') {
         output.hpcolor = colorchar;
       }
     } else if (!isNaN(parseFloat(hp))) {

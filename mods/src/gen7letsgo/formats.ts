@@ -6,6 +6,7 @@ export const Formats = [
     mod: 'gen7letsgo',
     team: 'random',
     searchShow: false,
+    bestOfDefault: true,
     ruleset: [ 'Obtainable', 'Allow AVs', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod' ]
   },
   {

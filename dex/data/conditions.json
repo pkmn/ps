@@ -28,10 +28,7 @@
       "onBeforeMovePriority": 0
     },
     "fakepartiallytrapped": {"name": "fakepartiallytrapped", "duration": 2},
-    "partialtrappinglock": {
-      "name": "partialtrappinglock",
-      "onBeforeMovePriority": 0
-    },
+    "partialtrappinglock": {"name": "partialtrappinglock"},
     "mustrecharge": {"inherit": true, "duration": 0, "onBeforeMovePriority": 7},
     "lockedmove": {"name": "lockedmove"},
     "twoturnmove": {"name": "twoturnmove"},
@@ -91,6 +88,7 @@
       "onResidualOrder": 10,
       "onResidualSubOrder": 9
     },
+    "lockedmove": {"inherit": true},
     "choicelock": {"inherit": true},
     "futuremove": {"inherit": true, "onResidualOrder": 11},
     "stall": {"inherit": true, "counterMax": 8},

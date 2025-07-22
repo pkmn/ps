@@ -256,6 +256,9 @@ export interface ModdedBattleActions {
 
 export interface ModdedBattleSide {
 	inherit?: true;
+	addSideCondition?: (
+		this: Side, status: string | Condition, source: Pokemon | 'debug' | null, sourceEffect: Effect | null
+	) => boolean;
 	allies?: (this: Side, all?: boolean) => Pokemon[];
 	canDynamaxNow?: (this: Side) => boolean;
 	chooseSwitch?: (this: Side, slotText?: string) => any;
@@ -334,6 +337,15 @@ export interface ModdedBattleQueue extends Partial<BattleQueue> {
 export interface ModdedField extends Partial<Field> {
 	inherit?: true;
 	suppressingWeather?: (this: Field) => boolean;
+	addPseudoWeather?: (
+		this: Field, status: string | Condition, source: Pokemon | 'debug' | null, sourceEffect: Effect | null
+	) => boolean;
+	setWeather?: (
+		this: Field, status: string | Condition, source: Pokemon | 'debug' | null, sourceEffect: Effect | null
+	) => boolean | null;
+	setTerrain?: (
+		this: Field, status: string | Effect, source: Pokemon | 'debug' | null, sourceEffect: Effect | null
+	) => boolean;
 }
 
 export interface ModdedBattleScriptsData extends Partial<BattleScriptsData> {
@@ -358,6 +370,7 @@ export interface ModdedBattleScriptsData extends Partial<BattleScriptsData> {
 	runAction?: (this: Battle, action: Action) => void;
 	spreadModify?: (this: Battle, baseStats: StatsTable, set: PokemonSet) => StatsTable;
 	start?: (this: Battle) => void;
+	runPickTeam?: () => void;
 	suppressingWeather?: (this: Battle) => boolean;
 	trunc?: (n: number) => number;
 	win?: (this: Battle, side?: SideID | '' | Side | null) => boolean;

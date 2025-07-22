@@ -24,7 +24,6 @@ export const Formats = [
       'Stadium Sleep Clause',
       'Species Clause',
       'Nickname Clause',
-      'HP Percentage Mod',
       'Cancel Mod',
       'NC 1997 Move Legality'
     ],

@@ -4127,7 +4127,6 @@
       }
     },
     "toxicthread": {"inherit": true, "isNonstandard": null},
-    "trick": {"inherit": true},
     "trumpcard": {"inherit": true, "isNonstandard": null},
     "twineedle": {"inherit": true, "isNonstandard": null},
     "twinkletackle": {"inherit": true, "isNonstandard": null},
@@ -21897,7 +21896,7 @@
       "shortDesc": "Goes first. Raises user's evasion by 1."
     },
     "paleowave": {
-      "num": 0,
+      "num": -1,
       "accuracy": 100,
       "basePower": 85,
       "category": "Special",
@@ -21913,7 +21912,7 @@
       "shortDesc": "20% chance to lower the target's Attack by 1."
     },
     "shadowstrike": {
-      "num": 0,
+      "num": -2,
       "accuracy": 95,
       "basePower": 80,
       "category": "Physical",
@@ -21927,6 +21926,22 @@
       "type": "Ghost",
       "desc": "Has a 50% chance to lower the target's Defense by 1 stage.",
       "shortDesc": "50% chance to lower the target's Defense by 1."
+    },
+    "polarflare": {
+      "num": -3,
+      "accuracy": 100,
+      "basePower": 75,
+      "category": "Special",
+      "isNonstandard": "CAP",
+      "name": "Polar Flare",
+      "pp": 10,
+      "priority": 0,
+      "flags": {"protect": 1, "mirror": 1, "defrost": 1, "nosketch": 1},
+      "secondary": {"chance": 10, "status": "frz"},
+      "target": "allAdjacentFoes",
+      "type": "Fire",
+      "desc": "Has a 10% chance to freeze the target. This move cannot thaw a frozen target. If this move is successful on at least one target and the user is a Ramnarok, it changes to Radiant Forme if it is currently in Dormant Forme, or changes to Dormant Forme if it is currently in Radiant Forme. This forme change does not happen if the Ramnarok has the Sheer Force Ability. The Radiant Forme reverts to Dormant Forme when Ramnarok is not active.",
+      "shortDesc": "10% chance to frz foe(s). Ramnarok transforms."
     }
   }
 }

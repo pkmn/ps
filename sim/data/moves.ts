@@ -5955,7 +5955,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1, allyanim: 1, metronome: 1, noparentalbond: 1 },
 		onPrepareHit(target, source, move) {
-			if (source.ignoringItem()) return false;
+			if (source.ignoringItem(true)) return false;
 			const item = source.getItem();
 			if (!this.singleEvent('TakeItem', item, source.itemState, source, source, move, item)) return false;
 			if (!item.fling) return false;
@@ -9861,7 +9861,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			onFoeDisableMove(pokemon) {
 				for (const moveSlot of this.effectState.source.moveSlots) {
 					if (moveSlot.id === 'struggle') continue;
-					pokemon.disableMove(moveSlot.id, 'hidden');
+					pokemon.disableMove(moveSlot.id, true);
 				}
 				pokemon.maybeDisabled = true;
 			},
@@ -13557,11 +13557,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		self: {
 			volatileStatus: 'lockedmove',
 		},
-		onAfterMove(pokemon) {
-			if (pokemon.volatiles['lockedmove'] && pokemon.volatiles['lockedmove'].duration === 1) {
-				pokemon.removeVolatile('lockedmove');
-			}
-		},
 		secondary: null,
 		target: "randomNormal",
 		type: "Dragon",
@@ -13781,11 +13776,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: { contact: 1, protect: 1, mirror: 1, dance: 1, metronome: 1, failinstruct: 1 },
 		self: {
 			volatileStatus: 'lockedmove',
-		},
-		onAfterMove(pokemon) {
-			if (pokemon.volatiles['lockedmove'] && pokemon.volatiles['lockedmove'].duration === 1) {
-				pokemon.removeVolatile('lockedmove');
-			}
 		},
 		secondary: null,
 		target: "randomNormal",
@@ -15218,11 +15208,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: { protect: 1, mirror: 1 },
 		self: {
 			volatileStatus: 'lockedmove',
-		},
-		onAfterMove(pokemon) {
-			if (pokemon.volatiles['lockedmove']?.duration === 1) {
-				pokemon.removeVolatile('lockedmove');
-			}
 		},
 		secondary: null,
 		target: "randomNormal",
@@ -20147,11 +20132,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		self: {
 			volatileStatus: 'lockedmove',
 		},
-		onAfterMove(pokemon) {
-			if (pokemon.volatiles['lockedmove'] && pokemon.volatiles['lockedmove'].duration === 1) {
-				pokemon.removeVolatile('lockedmove');
-			}
-		},
 		secondary: null,
 		target: "randomNormal",
 		type: "Normal",
@@ -22084,7 +22064,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	// CAP moves
 
 	paleowave: {
-		num: 0,
+		num: -1,
 		accuracy: 100,
 		basePower: 85,
 		category: "Special",
@@ -22104,7 +22084,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		contestType: "Beautiful",
 	},
 	shadowstrike: {
-		num: 0,
+		num: -2,
 		accuracy: 95,
 		basePower: 80,
 		category: "Physical",
@@ -22122,5 +22102,34 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Ghost",
 		contestType: "Clever",
+	},
+	polarflare: {
+		num: -3,
+		accuracy: 100,
+		basePower: 75,
+		category: "Special",
+		isNonstandard: "CAP",
+		name: "Polar Flare",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, defrost: 1, nosketch: 1 },
+		secondary: {
+			chance: 10,
+			status: 'frz',
+		},
+		onHit(target, pokemon, move) {
+			if (pokemon.baseSpecies.baseSpecies === 'Ramnarok' && !pokemon.transformed) {
+				move.willChangeForme = true;
+			}
+		},
+		onAfterMoveSecondarySelf(pokemon, target, move) {
+			if (move.willChangeForme) {
+				const forme = pokemon.species.id === 'ramnarokradiant' ? '' : '-Radiant';
+				pokemon.formeChange('Ramnarok' + forme, this.effect, false, '0', '[msg]');
+			}
+		},
+		target: "allAdjacentFoes",
+		type: "Fire",
+		contestType: "Beautiful",
 	},
 };

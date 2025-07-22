@@ -1406,12 +1406,6 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		desc: "Prevents Pok\u00e9mon from having moves that would only be obtainable in Pok\u00e9mon Crystal.",
 		// Implemented in mods/gen2/rulesets.ts
 	},
-	aptclause: {
-		effectType: 'ValidatorRule',
-		name: 'APT Clause',
-		desc: "Bans the combination of Agility and partial trapping moves like Wrap.",
-		banlist: ['Agility + Wrap', 'Agility + Fire Spin', 'Agility + Bind', 'Agility + Clamp'],
-	},
 	nc1997movelegality: {
 		effectType: 'ValidatorRule',
 		name: "NC 1997 Move Legality",

@@ -32,6 +32,11 @@
       "desc": "If this Pokemon is not the target of a single-target Electric-type move used by an opposing Pokemon, this Pokemon redirects that move to itself. This effect considers Hidden Power a Normal-type move.",
       "shortDesc": "This Pokemon draws single-target Electric moves used by opponents to itself."
     },
+    "magnetpull": {
+      "inherit": true,
+      "desc": "Prevents Steel-type Pokemon from choosing to switch out, other than this Pokemon.",
+      "shortDesc": "Prevents Steel-type Pokemon from choosing to switch out, other than this Pokemon."
+    },
     "minus": {
       "inherit": true,
       "desc": "If an active Pokemon has the Plus Ability, this Pokemon's Special Attack is multiplied by 1.5.",
@@ -96,11 +101,6 @@
       "inherit": true,
       "desc": "This Pokemon is immune to Ground-type attacks and the effects of Spikes and the Arena Trap Ability.",
       "shortDesc": "This Pokemon is immune to Ground."
-    },
-    "magnetpull": {
-      "inherit": true,
-      "desc": "Prevents Steel-type Pokemon from choosing to switch out, other than this Pokemon.",
-      "shortDesc": "Prevents Steel-type Pokemon from choosing to switch out, other than this Pokemon."
     },
     "rockhead": {
       "inherit": true,
@@ -3683,7 +3683,7 @@
       "isNonstandard": "CAP",
       "flags": {"breakable": 1},
       "name": "Mountaineer",
-      "num": -2,
+      "num": -1,
       "shortDesc": "On switch-in, this Pokemon avoids all Rock-type attacks and Stealth Rock."
     },
     "rebound": {
@@ -3692,7 +3692,7 @@
       "condition": {"duration": 1},
       "flags": {"breakable": 1},
       "name": "Rebound",
-      "num": -3,
+      "num": -2,
       "desc": "On switch-in, this Pokemon blocks certain status moves and instead uses the move against the original user.",
       "shortDesc": "On switch-in, blocks certain status moves and bounces them back to the user."
     },
@@ -3700,7 +3700,7 @@
       "isNonstandard": "CAP",
       "flags": {},
       "name": "Persistent",
-      "num": -4,
+      "num": -3,
       "desc": "The duration of Gravity, Heal Block, Magic Room, Safeguard, Tailwind, Trick Room, and Wonder Room is increased by 2 turns if the effect is started by this Pokemon.",
       "shortDesc": "When used, Gravity/Heal Block/Safeguard/Tailwind/Room effects last 2 more turns."
     }

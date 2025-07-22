@@ -1624,7 +1624,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	drifblim: {
-		tier: "PU",
+		tier: "PUBL",
 		doublesTier: "DUU",
 	},
 	buneary: {
@@ -1656,7 +1656,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DOU",
 	},
 	chatot: {
-		tier: "PU",
+		tier: "PUBL",
 		doublesTier: "DUU",
 	},
 	spiritomb: {
