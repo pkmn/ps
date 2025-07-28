@@ -6748,7 +6748,7 @@
     "glaceon": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "sylveon": {"tier": "NU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "porygon": {"tier": "NFE"},
-    "porygon2": {"tier": "ZU", "doublesTier": "DUU", "natDexTier": "NFE"},
+    "porygon2": {"tier": "ZUBL", "doublesTier": "DUU", "natDexTier": "NFE"},
     "porygonz": {"tier": "NUBL", "doublesTier": "(DUU)", "natDexTier": "UU"},
     "omanyte": {"isNonstandard": "Past", "tier": "Illegal", "natDexTier": "LC"},
     "omastar": {"isNonstandard": "Past", "tier": "Illegal", "natDexTier": "RU"},

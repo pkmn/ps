@@ -340,6 +340,7 @@
       "inherit": true,
       "shortDesc": "This Pokemon is only damaged by Fire Fang, supereffective moves, indirect damage."
     },
+    "rebound": {"inherit": true},
     "anticipation": {
       "inherit": true,
       "desc": "On switch-in, this Pokemon is alerted if any opposing Pokemon has an attacking move with a type that is super effective against this Pokemon, or any OHKO move if this Pokemon is not immune to the type and the Pokemon with the move is not a lower level than this Pokemon. This effect considers moves to be their original type. This effect is not activated by Counter, Dragon Rage, Metal Burst, Mirror Coat, Night Shade, Psywave, or Seismic Toss. This effect checks if this Pokemon is holding an Iron Ball, if it is under the effects of Foresight (Odor Sleuth), Gravity, Ingrain, Miracle Eye, or Roost, and whether each opposing Pokemon has the Normalize or Scrappy Abilities before determining if their attacks fit the conditions."
@@ -437,6 +438,7 @@
       "inherit": true,
       "shortDesc": "This Pokemon is immune to sound-based moves, except Heal Bell."
     },
+    "rebound": {"inherit": true},
     "arenatrap": {
       "inherit": true,
       "desc": "Prevents adjacent opposing Pokemon from choosing to switch out unless they are airborne or holding a Shed Shell."
@@ -2270,7 +2272,6 @@
     },
     "magicbounce": {
       "onTryHitPriority": 1,
-      "condition": {"duration": 1},
       "flags": {"breakable": 1},
       "name": "Magic Bounce",
       "num": 156,
@@ -3689,7 +3690,6 @@
     "rebound": {
       "isNonstandard": "CAP",
       "onTryHitPriority": 1,
-      "condition": {"duration": 1},
       "flags": {"breakable": 1},
       "name": "Rebound",
       "num": -2,
