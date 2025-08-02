@@ -4,7 +4,7 @@
   "repository": "github:pkmn/ps",
   "license": "MIT",
   "dependencies": {
-    "@pkmn/eslint-config": "^9.11.0",
+    "@pkmn/eslint-config": "^9.12.0",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.1.0",
     "esbuild": "^0.25.8",
@@ -19,7 +19,7 @@
     "ts-jest": "^29.4.0",
     "tsup": "^8.5.0",
     "typescript-eslint": "^8.38.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "subPackages": [
     "types",

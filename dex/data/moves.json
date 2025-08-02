@@ -3909,7 +3909,7 @@
     },
     "healingwish": {
       "inherit": true,
-      "condition": {"duration": 2, "onSwitchInPriority": 1},
+      "condition": {"duration": 2},
       "desc": "The user faints and the Pokemon brought out to replace it has its HP fully restored along with having any non-volatile status condition cured. The new Pokemon is sent out at the end of the turn, and the healing happens before hazards take effect. Fails if the user is the last unfainted Pokemon in its party.",
       "shortDesc": "User faints. Replacement is fully healed."
     },
@@ -3972,7 +3972,7 @@
     "luckychant": {"inherit": true, "isNonstandard": null},
     "lunardance": {
       "inherit": true,
-      "condition": {"duration": 2, "onSwitchInPriority": 1},
+      "condition": {"duration": 2},
       "desc": "The user faints and the Pokemon brought out to replace it has its HP and PP fully restored along with having any non-volatile status condition cured. The new Pokemon is sent out at the end of the turn, and the healing happens before hazards take effect. Fails if the user is the last unfainted Pokemon in its party.",
       "shortDesc": "User faints. Replacement is fully healed, with PP."
     },

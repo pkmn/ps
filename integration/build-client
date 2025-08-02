@@ -604,7 +604,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 				if (isNatDex) {
 					let curItem = item;
 					let curGen = genNum;
-					while (item.isNonstandard && curGen >= 7) {
+					while (curItem.isNonstandard && curGen >= 7) {
 						curItem = Dex.forGen(curGen).items.get(item.id);
 						curGen--;
 					}
@@ -679,6 +679,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			case 'souldew':
 			// Other
 			// fallsthrough
+			case 'leek':
 			case 'stick':
 			case 'thickclub':
 			case 'lightball':

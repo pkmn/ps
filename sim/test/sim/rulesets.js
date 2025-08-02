@@ -20,7 +20,7 @@ describe('Rulesets', function () {
 			'Min Level', 'NC 1997 Move Legality', 'NC 2000 Move Legality', 'Old Alola Pokedex',
 			'Old Unova Pokedex', 'Stadium Sleep Clause', 'Best Of', 'DC Timer Bank', 'DC Timer',
 			'Timeout Auto Choose', 'Timer Accelerate', 'Timer Add Per Turn', 'Timer Grace',
-			'Timer Max First Turn', 'Timer Max Per Turn',
+			'Timer Max First Turn', 'Timer Max Per Turn', 'Guaranteed Secondary Mod',
 		]);
 
 		for (const format of Dex.formats.formatsListCache) {

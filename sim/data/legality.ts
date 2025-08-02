@@ -13024,6 +13024,18 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
     ],
     encounters: [ { generation: 6, level: 30 } ]
   },
+  flabebe: {
+    learnset: { celebrate: [ '9S0' ], fairywind: [ '9S0' ], vinewhip: [ '9S0' ], wish: [ '9S0' ] },
+    eventData: [
+      {
+        generation: 9,
+        level: 5,
+        abilities: [ 'flowerveil' ],
+        moves: [ 'vinewhip', 'fairywind', 'wish', 'celebrate' ],
+        pokeball: 'cherishball'
+      }
+    ]
+  },
   gogoat: { encounters: [ { generation: 6, level: 30 } ] },
   pancham: {
     learnset: { armthrust: [ '6S0' ], darkpulse: [ '6S0' ], stoneedge: [ '6S0' ] },

@@ -1412,6 +1412,19 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		desc: "Bans move combinations on Pok\u00e9mon that weren't legal in NC 1997.",
 		// Implemented in mods/gen1jpn/rulesets.ts
 	},
+	guaranteedsecondarymod: {
+		effectType: 'Rule',
+		name: 'Guaranteed Secondary Mod',
+		desc: 'All moves\' secondary effect chances are set to 100% (Tri Attack and Dire Claw set a random status; Poison Touch is not a real secondary and remains at 30%).',
+		onModifyMove(move) {
+			if (move.secondaries) {
+				this.debug('Freeze test: Guaranteeing secondary');
+				for (const secondary of move.secondaries) {
+					secondary.chance = 100;
+				}
+			}
+		},
+	},
 	hackmonsformelegality: {
 		effectType: 'ValidatorRule',
 		name: "Hackmons Forme Legality",

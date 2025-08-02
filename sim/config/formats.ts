@@ -162,19 +162,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     banlist: [ 'Crucibellite', 'Rage Fist' ]
   },
   {
-    name: '[Gen 9] BSS Reg G',
-    mod: 'gen9',
-    bestOfDefault: true,
-    ruleset: [
-      'Flat Rules',
-      '!! Adjust Level = 50',
-      'Min Source Gen = 9',
-      'VGC Timer',
-      'Limit One Restricted'
-    ],
-    restricted: [ 'Restricted Legendary' ]
-  },
-  {
     name: '[Gen 9] BSS Reg I',
     mod: 'gen9',
     bestOfDefault: true,
@@ -186,6 +173,19 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Limit Two Restricted'
     ],
     restricted: [ 'Restricted Legendary' ]
+  },
+  {
+    name: '[Gen 9] BSS Reg J',
+    mod: 'gen9',
+    bestOfDefault: true,
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Min Source Gen = 9',
+      'VGC Timer',
+      'Limit Two Restricted'
+    ],
+    restricted: [ 'Restricted Legendary', 'Mythical' ]
   },
   {
     name: '[Gen 9] Custom Game',
@@ -276,6 +276,48 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     restricted: [ 'Restricted Legendary' ]
   },
   {
+    name: '[Gen 9] VGC 2025 Reg H',
+    mod: 'gen9',
+    gameType: 'doubles',
+    bestOfDefault: true,
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Min Source Gen = 9',
+      'VGC Timer',
+      'Open Team Sheets'
+    ],
+    banlist: [
+      'Sub-Legendary',
+      'Paradox',
+      'Gouging Fire',
+      'Iron Boulder',
+      'Iron Crown',
+      'Raging Bolt'
+    ]
+  },
+  {
+    name: '[Gen 9] VGC 2025 Reg H (Bo3)',
+    mod: 'gen9',
+    gameType: 'doubles',
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Min Source Gen = 9',
+      'VGC Timer',
+      'Force Open Team Sheets',
+      'Best of = 3'
+    ],
+    banlist: [
+      'Sub-Legendary',
+      'Paradox',
+      'Gouging Fire',
+      'Iron Boulder',
+      'Iron Crown',
+      'Raging Bolt'
+    ]
+  },
+  {
     name: '[Gen 9] VGC 2025 Reg I',
     mod: 'gen9',
     gameType: 'doubles',
@@ -304,6 +346,35 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Limit Two Restricted'
     ],
     restricted: [ 'Restricted Legendary' ]
+  },
+  {
+    name: '[Gen 9] VGC 2025 Reg J',
+    mod: 'gen9',
+    gameType: 'doubles',
+    bestOfDefault: true,
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Min Source Gen = 9',
+      'VGC Timer',
+      'Limit Two Restricted'
+    ],
+    restricted: [ 'Restricted Legendary', 'Mythical' ]
+  },
+  {
+    name: '[Gen 9] VGC 2025 Reg J (Bo3)',
+    mod: 'gen9',
+    gameType: 'doubles',
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Min Source Gen = 9',
+      'VGC Timer',
+      'Force Open Team Sheets',
+      'Best of = 3',
+      'Limit Two Restricted'
+    ],
+    restricted: [ 'Restricted Legendary', 'Mythical' ]
   },
   {
     name: '[Gen 9] Doubles Custom Game',
@@ -1184,57 +1255,33 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
-    name: '[Gen 4] UU',
-    mod: 'gen4',
-    ruleset: [ '[Gen 4] OU', '!Baton Pass Stat Trap Clause', '!Freeze Clause Mod' ],
-    banlist: [ 'OU', 'UUBL', 'Baton Pass' ],
-    unbanlist: [ 'Arena Trap', 'Snow Cloak', 'Quick Claw', 'Swagger' ]
-  },
-  {
-    name: '[Gen 7] VGC 2018',
-    mod: 'gen7',
-    gameType: 'doubles',
-    bestOfDefault: true,
-    ruleset: [
-      'Flat Rules',
-      '!! Adjust Level = 50',
-      'Min Source Gen = 7',
-      'VGC Timer',
-      '!! Timer Starting = 300'
-    ],
+    name: '[Gen 5] UU',
+    mod: 'gen5',
+    ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Swagger Clause', 'Sleep Clause Mod' ],
     banlist: [
-      'Oranguru + Symbiosis',
-      'Passimian + Defiant',
-      'Unown',
-      'Custap Berry',
-      'Enigma Berry',
-      'Jaboca Berry',
-      'Micle Berry',
-      'Rowap Berry',
-      'Battle Bond'
+      'Uber',
+      'OU',
+      'UUBL',
+      'Arena Trap',
+      'Drought',
+      'Sand Stream',
+      'Snow Warning',
+      'Prankster + Assist',
+      'Prankster + Copycat',
+      'Baton Pass'
     ]
   },
   {
-    name: '[Gen 5] ZU',
-    mod: 'gen5',
-    ruleset: [ '[Gen 5] PU' ],
-    banlist: [
-      'Audino',     'Banette',     'Beheeyem',   'Bronzor',
-      'Dodrio',     'Duosion',     'Dwebble',    'Fraxure',
-      'Gabite',     'Golduck',     'Huntail',    'Jumpluff',
-      'Klang',      'Krokorok',    'Mantine',    'Maractus',
-      'Mawile',     'Monferno',    'Murkrow',    'Natu',
-      'Purugly',    'Rampardos',   'Rapidash',   'Relicanth',
-      'Scraggy',    'Shiftry',     'Simisage',   'Sneasel',
-      'Stoutland',  'Stunfisk',    'Swanna',     'Swoobat',
-      'Tentacool',  'Torterra',    'Ursaring',   'Victreebel',
-      'Vileplume',  'Volbeat',     'Zebstrika',  'Zweilous',
-      'Articuno',   'Dragonair',   'Glalie',     'Machoke',
-      'Marowak',    'Omanyte',     'Regigigas',  'Trubbish',
-      'Whirlipede', "King's Rock", 'Quick Claw', 'Razor Fang',
-      'Baton Pass'
-    ],
-    unbanlist: [ 'Damp Rock' ]
+    name: '[Gen 1] UU',
+    mod: 'gen1',
+    ruleset: [ '[Gen 1] OU' ],
+    banlist: [ 'OU', 'UUBL', 'Bind', 'Clamp', 'Fire Spin', 'Wrap' ]
+  },
+  {
+    name: '[Gen 6] ZU',
+    mod: 'gen6',
+    ruleset: [ '[Gen 6] PU' ],
+    banlist: [ 'PU', 'ZUBL', 'Light Clay' ]
   },
   {
     name: '[Gen 8] OU',
@@ -1732,6 +1779,30 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     banlist: [ 'Unown', 'Battle Bond' ]
   },
   {
+    name: '[Gen 7] VGC 2018',
+    mod: 'gen7',
+    gameType: 'doubles',
+    bestOfDefault: true,
+    ruleset: [
+      'Flat Rules',
+      '!! Adjust Level = 50',
+      'Min Source Gen = 7',
+      'VGC Timer',
+      '!! Timer Starting = 300'
+    ],
+    banlist: [
+      'Oranguru + Symbiosis',
+      'Passimian + Defiant',
+      'Unown',
+      'Custap Berry',
+      'Enigma Berry',
+      'Jaboca Berry',
+      'Micle Berry',
+      'Rowap Berry',
+      'Battle Bond'
+    ]
+  },
+  {
     name: '[Gen 7] Battle Spot Doubles',
     mod: 'gen7',
     gameType: 'doubles',
@@ -1861,12 +1932,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
-    name: '[Gen 6] ZU',
-    mod: 'gen6',
-    ruleset: [ '[Gen 6] PU' ],
-    banlist: [ 'PU', 'ZUBL', 'Light Clay' ]
-  },
-  {
     name: '[Gen 6] CAP',
     mod: 'gen6',
     ruleset: [ '[Gen 6] OU', '+CAP' ],
@@ -1962,23 +2027,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
   },
   { name: '[Gen 5] Ubers', mod: 'gen5', ruleset: [ 'Standard', 'Sleep Clause Mod' ] },
   {
-    name: '[Gen 5] UU',
-    mod: 'gen5',
-    ruleset: [ 'Standard', 'Evasion Abilities Clause', 'Swagger Clause', 'Sleep Clause Mod' ],
-    banlist: [
-      'Uber',
-      'OU',
-      'UUBL',
-      'Arena Trap',
-      'Drought',
-      'Sand Stream',
-      'Snow Warning',
-      'Prankster + Assist',
-      'Prankster + Copycat',
-      'Baton Pass'
-    ]
-  },
-  {
     name: '[Gen 5] RU',
     mod: 'gen5',
     ruleset: [ '[Gen 5] UU', 'Baton Pass Clause', '!Sleep Clause Mod', 'Sleep Moves Clause' ],
@@ -2058,6 +2106,28 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     banlist: [ 'Cawmodore' ]
   },
   {
+    name: '[Gen 5] ZU',
+    mod: 'gen5',
+    ruleset: [ '[Gen 5] PU' ],
+    banlist: [
+      'Audino',     'Banette',     'Beheeyem',   'Bronzor',
+      'Dodrio',     'Duosion',     'Dwebble',    'Fraxure',
+      'Gabite',     'Golduck',     'Huntail',    'Jumpluff',
+      'Klang',      'Krokorok',    'Mantine',    'Maractus',
+      'Mawile',     'Monferno',    'Murkrow',    'Natu',
+      'Purugly',    'Rampardos',   'Rapidash',   'Relicanth',
+      'Scraggy',    'Shiftry',     'Simisage',   'Sneasel',
+      'Stoutland',  'Stunfisk',    'Swanna',     'Swoobat',
+      'Tentacool',  'Torterra',    'Ursaring',   'Victreebel',
+      'Vileplume',  'Volbeat',     'Zebstrika',  'Zweilous',
+      'Articuno',   'Dragonair',   'Glalie',     'Machoke',
+      'Marowak',    'Omanyte',     'Regigigas',  'Trubbish',
+      'Whirlipede', "King's Rock", 'Quick Claw', 'Razor Fang',
+      'Baton Pass'
+    ],
+    unbanlist: [ 'Damp Rock' ]
+  },
+  {
     name: '[Gen 5] GBU Singles',
     mod: 'gen5',
     bestOfDefault: true,
@@ -2110,6 +2180,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ruleset: [ 'Team Preview', 'Cancel Mod' ]
   },
   { name: '[Gen 4] Ubers', mod: 'gen4', ruleset: [ 'Standard' ], banlist: [ 'AG' ] },
+  {
+    name: '[Gen 4] UU',
+    mod: 'gen4',
+    ruleset: [ '[Gen 4] OU', '!Baton Pass Stat Trap Clause', '!Freeze Clause Mod' ],
+    banlist: [ 'OU', 'UUBL', 'Baton Pass' ],
+    unbanlist: [ 'Arena Trap', 'Snow Cloak', 'Quick Claw', 'Swagger' ]
+  },
   {
     name: '[Gen 4] NU',
     mod: 'gen4',
@@ -2461,12 +2538,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   { name: '[Gen 1] Ubers', mod: 'gen1', ruleset: [ 'Standard' ] },
-  {
-    name: '[Gen 1] UU',
-    mod: 'gen1',
-    ruleset: [ '[Gen 1] OU' ],
-    banlist: [ 'OU', 'UUBL', 'Bind', 'Clamp', 'Fire Spin', 'Wrap' ]
-  },
   { name: '[Gen 1] NU', mod: 'gen1', ruleset: [ '[Gen 1] UU' ], banlist: [ 'UU', 'NUBL' ] },
   { name: '[Gen 1] PU', mod: 'gen1', ruleset: [ '[Gen 1] NU' ], banlist: [ 'NU', 'PUBL' ] },
   { name: '[Gen 1] ZU', mod: 'gen1', ruleset: [ '[Gen 1] PU' ], banlist: [ 'PU', 'ZUBL' ] },
