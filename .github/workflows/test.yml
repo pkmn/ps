@@ -11,5 +11,5 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: true
-    - run: npm install
+    - run: npm install --force
     - run: npm run test:integration
