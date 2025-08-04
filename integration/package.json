@@ -5,7 +5,7 @@
   "dependencies": {
     "@pkmn/client": "file:../client",
     "@pkmn/data": "file:../data",
-    "@pkmn/eslint-config": "^9.12.0",
+    "@pkmn/eslint-config": "^9.13.0",
     "@pkmn/img": "file:../img",
     "@pkmn/protocol": "file:../protocol",
     "@pkmn/randoms": "file:../randoms",
@@ -20,7 +20,7 @@
     "minimist": "^1.2.8",
     "parcel": "^2.15.4",
     "source-map-support": "^0.5.21",
-    "typescript-eslint": "^8.38.0",
+    "typescript-eslint": "^8.39.0",
     "typescript": "^5.9.2"
   },
   "alias": {
