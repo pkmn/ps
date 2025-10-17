@@ -1391,10 +1391,15 @@ export namespace Protocol {
      * Effects that start at switch-in include Mold Breaker and Neutralizing Gas. It does not
      * include abilities that activate once and don't have any long-term effects, like Intimidate
      * (Intimidate should use `-activate`).
+     *
+     * `|-ability|POKEMON|ABILITY|OLD_ABILITY|[from]EFFECT`
+     *
+     * The `ABILITY` of the `POKEMON` has been changed from `OLD_ABILITY` due to a move/ability
+     * `EFFECT`.
      */
     '|-ability|':
     | readonly ['-ability', PokemonIdent, AbilityName] |
-    readonly ['-ability', PokemonIdent, AbilityName, Side | PokemonIdent | 'boost'] |
+    readonly ['-ability', PokemonIdent, AbilityName, AbilityName | Side | PokemonIdent | 'boost'] |
     readonly ['-ability', PokemonIdent, AbilityName, AbilityName, PokemonIdent];
     /**
      * `|-endability|POKEMON`

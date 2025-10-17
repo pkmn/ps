@@ -7,30 +7,30 @@ try {
   if (err.code !== 'MODULE_NOT_FOUND') throw err;
 }
 
-const packages = [];
-for (const dep of ['@pkmn/dex', '@pkmn/data', '@pkmn/client']) {
-  try {
-    require.resolve(dep);
-  } catch (err) {
-    if (err.code !== 'MODULE_NOT_FOUND') throw err;
-    packages.push(dep);
-  }
-}
-if (packages.length) {
-  require('child_process').execSync(`npm install ${packages.join(' ')} --no-audit --no-save`, {
-    stdio: 'inherit',
-    cwd: __dirname,
-  });
-  console.error('Please rerun now that dependencies have been resolved.');
-  process.exit(1);
-}
+// const packages = [];
+// for (const dep of ['@pkmn/dex', '@pkmn/data', '@pkmn/client']) {
+//   try {
+//     require.resolve(dep);
+//   } catch (err) {
+//     if (err.code !== 'MODULE_NOT_FOUND') throw err;
+//     packages.push(dep);
+//   }
+// }
+// if (packages.length) {
+//   require('child_process').execSync(`npm install ${packages.join(' ')} --no-audit --no-save`, {
+//     stdio: 'inherit',
+//     cwd: __dirname,
+//   });
+//   console.error('Please rerun now that dependencies have been resolved.');
+//   process.exit(1);
+// }
 
 const readline = require('readline');
 
-const {Battle} = require('@pkmn/client');
-const {Dex} = require('@pkmn/dex');
-const {Generations} = require('@pkmn/data');
-const {Protocol} = require('@pkmn/protocol');
+const {Battle} = require('../client');
+const {Dex} = require('../dex');
+const {Generations} = require('../data');
+const {Protocol} = require('../protocol');
 
 const {LogFormatter} = require('.');
 

@@ -118,7 +118,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 	},
 	pikachustarter: {
 		isNonstandard: null,
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	raichu: {
@@ -140,7 +140,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DOU",
 	},
 	sandslashalola: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	nidoranf: {
@@ -188,7 +188,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	wigglytuff: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	zubat: {
@@ -205,7 +205,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "NFE",
 	},
 	vileplume: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	paras: {
@@ -229,7 +229,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	dugtrio: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	dugtrioalola: {
@@ -247,7 +247,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DOU",
 	},
 	persianalola: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	psyduck: {
@@ -268,7 +268,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	arcanine: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	poliwag: {
@@ -319,7 +319,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	tentacruel: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	geodude: {
@@ -403,7 +403,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	cloyster: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	gastly: {
@@ -435,7 +435,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	kingler: {
-		tier: "RU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	voltorb: {
@@ -494,7 +494,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DOU",
 	},
 	chansey: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	tangela: {
@@ -574,7 +574,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DOU",
 	},
 	lapras: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	ditto: {
@@ -586,7 +586,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 	},
 	eeveestarter: {
 		isNonstandard: null,
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	vaporeon: {
@@ -609,14 +609,14 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	omastar: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	kabuto: {
 		tier: "LC",
 	},
 	kabutops: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	aerodactyl: {
@@ -640,7 +640,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DOU",
 	},
 	moltres: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	dratini: {

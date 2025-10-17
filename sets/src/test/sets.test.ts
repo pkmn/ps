@@ -185,7 +185,7 @@ describe('Sets', () => {
         - Volt Switch`);
 
       const u =
-          _unpack((Sets.pack(Sets.importSet(magnezoneIn, GEN[7]))) + ']').set!;
+        _unpack((Sets.pack(Sets.importSet(magnezoneIn, GEN[7]))) + ']').set!;
       expect(Sets.exportSet(u, GEN[7])).toEqual(magnezoneOut);
     });
 
@@ -336,7 +336,7 @@ describe('Sets', () => {
       - Recover`;
 
     const fj =
-        Sets.fromJSON(Sets.toJSON(Sets.importSet(imported(malakazam)) as PokemonSet))!;
+      Sets.fromJSON(Sets.toJSON(Sets.importSet(imported(malakazam)) as PokemonSet))!;
     expect(Sets.exportSet(fj)).toEqual(exported(malakazam));
 
     expect(Sets.fromJSON('foo')).toBeUndefined();

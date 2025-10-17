@@ -1,6 +1,4 @@
-import type {ModdedSpeciesDataTable} from '@pkmn/sim';
-
-export const Pokedex: ModdedSpeciesDataTable = {
+export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable = {
 	eevee: {
 		inherit: true,
 		evos: ["Vaporeon", "Jolteon", "Flareon", "Espeon", "Umbreon", "Leafeon", "Glaceon"],

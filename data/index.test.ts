@@ -766,11 +766,11 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
   describe(`@pkmn/mods (${pkg})`, () => {
     it('usage', async () => {
       const modded = new ModdedDex(
-        Dex.mod('gen8bdsp' as ID, await import('@pkmn/mods/gen8bdsp') as ModData)
+        Dex.mod('gen4pt' as ID, await import('@pkmn/mods/gen4pt') as ModData)
       );
-      expect((await (new Generations(Dex).get(8).learnsets.canLearn('Weavile', 'Knock Off'))))
+      expect((await (new Generations(Dex).get(4).learnsets.canLearn('Scizor', 'Bug Bite'))))
         .toBe(true);
-      expect((await (new Generations(modded).get(8).learnsets.canLearn('Weavile', 'Knock Off'))))
+      expect((await (new Generations(modded).get(4).learnsets.canLearn('Scizor', 'Bug Bite'))))
         .toBe(false);
     });
   });

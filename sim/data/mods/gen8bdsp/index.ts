@@ -1,7 +1,6 @@
 export {Abilities} from './abilities';
-export {FormatsData} from './formats-data';
 export {Items} from './items';
-export {Learnsets} from './learnsets';
+export {FormatsData} from './formats-data';
 export {Moves} from './moves';
-export {Pokedex as Species} from './pokedex';
+export {Pokedex} from './pokedex';
 export {Scripts} from './scripts';

@@ -677,6 +677,27 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 			this.add('rule', 'Accuracy Moves Clause: Accuracy-lowering moves are banned');
 		},
 	},
+	accuracytrapclause: {
+		effectType: 'ValidatorRule',
+		name: 'Accuracy Trap Clause',
+		desc: "Bans guaranteed accuracy-dropping moves when used with a trapping move/ability on the same Pok&eacute;mon",
+		onValidateSet(set, format, setHas, teamHas) {
+			const trapping = [
+				'arenatrap', 'magnetpull', 'shadowtag', 'block', 'meanlook', 'spiderweb', 'anchorshot', 'jawlock', 'octolock', 'spiritshackle', 'thousandwaves',
+			];
+			const accuracy = this.dex.moves.all().filter(move => {
+				if (move.boosts?.accuracy) return move.boosts.accuracy < 0;
+				return move.secondaries?.some(x => x.chance === 100 && x.boosts?.accuracy && x.boosts.accuracy < 0);
+			}).map(x => x.id);
+			if (set.moves.map(this.toID).some(x => accuracy.includes(x)) && (
+				trapping.includes(this.toID(set.ability)) || set.moves.map(this.toID).some(x => trapping.includes(x))
+			)) {
+				return [
+					`${set.species} has the combination of a trapping move/ability and a guaranteed accuracy-lowering move, which is banned.`,
+				];
+			}
+		},
+	},
 	sleepmovesclause: {
 		effectType: 'ValidatorRule',
 		name: 'Sleep Moves Clause',
@@ -908,6 +929,37 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 				if (passableBoosts) {
 					return [
 						`${set.name || set.species} has Baton Pass and a way to boost its stats, which is banned by Baton Pass Stat Clause.`,
+					];
+				}
+			}
+		},
+	},
+	speedpassclause: {
+		effectType: 'ValidatorRule',
+		name: 'Speed Pass Clause',
+		desc: "Stops teams from having a Pok&eacute;mon with Baton Pass that can boost its Speed",
+		onBegin() {
+			this.add('rule', 'Baton Pass Stat Clause: No Baton Passer may have a way to boost its Speed');
+		},
+		onValidateTeam(team) {
+			const boostingEffects = [
+				'agility', 'dragondance', 'ancientpower', 'silverwind', 'salacberry', 'speedboost', 'starfberry',
+			];
+			for (const set of team) {
+				const moves = set.moves.map(this.toID);
+				if (!moves.includes('batonpass' as ID)) continue;
+				let passableBoosts = false;
+				const item = this.toID(set.item);
+				const ability = this.toID(set.ability);
+				if (
+					moves.some(m => boostingEffects.includes(m)) || boostingEffects.includes(item) ||
+					boostingEffects.includes(ability)
+				) {
+					passableBoosts = true;
+				}
+				if (passableBoosts) {
+					return [
+						`${set.name || set.species} has Baton Pass and a way to boost its Speed, which is banned by Speed Pass Clause.`,
 					];
 				}
 			}
@@ -1228,6 +1280,36 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		name: 'Overflow Stat Mod',
 		desc: "Caps stats at 654 after a positive nature, or 655 after a negative nature",
 		// Implemented in sim/battle.ts
+	},
+	formeclause: {
+		effectType: 'ValidatorRule',
+		name: 'Forme Clause',
+		desc: "Prevents teams from having more than one Pok&eacute;mon of the same forme",
+		onBegin() {
+			this.add('rule', 'Forme Clause: Limit one of each forme of a Pokémon');
+		},
+		onValidateTeam(team) {
+			const formeTable = new Set<string>();
+			for (const set of team) {
+				let species = this.dex.species.get(set.species);
+				if (species.name !== species.baseSpecies) {
+					const baseSpecies = this.dex.species.get(species.baseSpecies);
+					if (
+						species.types.join('/') === baseSpecies.types.join('/') &&
+						Object.values(species.baseStats).join('/') === Object.values(baseSpecies.baseStats).join('/')
+					) {
+						species = baseSpecies;
+					}
+				}
+				if (formeTable.has(species.name)) {
+					return [
+						`You are limited to one of each forme of a Pokémon by Forme Clause.`,
+						`(You have more than one of ${species.name})`,
+					];
+				}
+				formeTable.add(species.name);
+			}
+		},
 	},
 	openteamsheets: {
 		effectType: 'Rule',

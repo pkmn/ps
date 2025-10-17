@@ -25,6 +25,7 @@ const window = global;
   window.BattleAbilities = require(`${PSC}/data/abilities.js`).BattleAbilities;
   window.BattleItems = require(`${PSC}/data/items.js`).BattleItems;
   window.BattleMovedex = require(`${PSC}/data/moves.js`).BattleMovedex;
+  window.BattleAliases = require(`${PSC}/data/aliases.js`).BattleAliases;
   window.BattlePokedex = require(`${PSC}/data/pokedex.js`).BattlePokedex;
   window.BattleTypeChart = require(`${PSC}/data/typechart.js`).BattleTypeChart;
 

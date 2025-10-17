@@ -341,7 +341,7 @@ export class TeamValidator {
 	constructor(format: string | Format, dex = Dex) {
 		this.format = dex.formats.get(format);
 		if (this.format.effectType !== 'Format') {
-			throw new Error(`format should be a 'Format', but was a '${this.format.effectType}'`);
+			throw new Error(`format '${format}' should be a 'Format', but was a '${this.format.effectType}'`);
 		}
 		this.dex = dex.forFormat(this.format);
 		this.gen = this.dex.gen;
@@ -526,7 +526,8 @@ export class TeamValidator {
 
 		let outOfBattleSpecies = species;
 		let tierSpecies = species;
-		if (ability.id === 'battlebond' && toID(species.baseSpecies) === 'greninja') {
+		if (ability.id === 'battlebond' && toID(species.baseSpecies) === 'greninja' &&
+			this.format.mod !== 'gen9legendsou') {
 			outOfBattleSpecies = dex.species.get('greninjabond');
 			if (ruleTable.has('obtainableformes')) {
 				tierSpecies = outOfBattleSpecies;
@@ -650,6 +651,11 @@ export class TeamValidator {
 		species = dex.species.get(set.species);
 		item = dex.items.get(set.item);
 		ability = dex.abilities.get(set.ability);
+
+		if (!['M', 'F'].includes(set.gender)) set.gender = '';
+		if (this.gen <= 5 || ruleTable.has('obtainablemisc')) {
+			set.gender = species.gender || set.gender;
+		}
 
 		const { outOfBattleSpecies, tierSpecies } = this.getValidationSpecies(set);
 		if (ability.id === 'battlebond' && toID(species.baseSpecies) === 'greninja') {
@@ -1103,12 +1109,8 @@ export class TeamValidator {
 		}
 
 		if (!problems.length) {
-			if (!set.gender) {
-				if (this.gen <= 5 || ruleTable.has('obtainablemisc')) {
-					set.gender = species.gender || ['M', 'F'][Math.floor(Math.random() * 2)];
-				} else {
-					set.gender = 'N';
-				}
+			if (this.gen > 5 && !ruleTable.has('obtainablemisc')) {
+				set.gender ||= 'N';
 			}
 			if (adjustLevel) set.level = adjustLevel;
 			return null;
@@ -1121,7 +1123,7 @@ export class TeamValidator {
 		const ruleTable = this.ruleTable;
 		const dex = this.dex;
 
-		const allowAVs = ruleTable.has('allowavs');
+		const allowAVs = !ruleTable.has('lgpenormalrules');
 		const evLimit = ruleTable.evLimit;
 		const canBottleCap = dex.gen >= 7 && (set.level >= (dex.gen < 9 ? 100 : 50) || !ruleTable.has('obtainablemisc'));
 
@@ -1595,8 +1597,13 @@ export class TeamValidator {
 			} else {
 				problems.push(`Necrozma-Ultra must start the battle as Necrozma-Dusk-Mane or Necrozma-Dawn-Wings holding Ultranecrozium Z. Please specify which Necrozma it should start as.`);
 			}
-		} else if (species.name === 'Zygarde-Complete') {
-			problems.push(`Zygarde-Complete must start the battle as Zygarde or Zygarde-10% with Power Construct. Please specify which Zygarde it should start as.`);
+		} else if (species.baseSpecies === 'Zygarde') {
+			if (species.name === 'Zygarde-Complete' || species.name === 'Zygarde-Mega') {
+				problems.push(`${species.name} must start the battle as Zygarde or Zygarde-10% with Power Construct. Please specify which Zygarde it should start as.`);
+			}
+			if (item.id === 'zygardite' && set.ability !== 'Power Construct') {
+				problems.push(`Zygarde holding Zygardite can only Mega Evolve with the Power Construct ability.`);
+			}
 		} else if (species.baseSpecies === 'Terapagos') {
 			set.species = 'Terapagos';
 			set.ability = 'Tera Shift';
@@ -1628,13 +1635,10 @@ export class TeamValidator {
 			}
 			if (species.requiredItems && !species.requiredItems.includes(item.name)) {
 				if (dex.gen >= 8 && (species.baseSpecies === 'Arceus' || species.baseSpecies === 'Silvally')) {
-					// Arceus/Silvally formes in gen 8 only require the item with Multitype/RKS System
-					if (set.ability === species.abilities[0]) {
-						problems.push(
-							`${name} needs to hold ${species.requiredItems.join(' or ')}.`,
-							`(It will revert to its Normal forme if you remove the item or give it a different item.)`
-						);
-					}
+					problems.push(
+						`${name} needs to hold ${species.requiredItems.join(' or ')}.`,
+						`(It will revert to its Normal forme if you remove the item or give it a different item.)`
+					);
 				} else {
 					// Memory/Drive/Griseous Orb/Plate/Z-Crystal - Forme mismatch
 					const baseSpecies = this.dex.species.get(species.changesFrom);
@@ -2549,6 +2553,7 @@ export class TeamValidator {
 				}
 			}
 
+			let canUseHomeRelearner = false;
 			for (let learned of sources) {
 				// Every `learned` represents a single way a pokemon might
 				// learn a move. This can be handled one of several ways:
@@ -2576,7 +2581,7 @@ export class TeamValidator {
 					}
 					continue;
 				}
-				if (learnedGen < this.minSourceGen) {
+				if (learnedGen < this.minSourceGen && !canUseHomeRelearner) {
 					if (!cantLearnReason) {
 						cantLearnReason = `can't be transferred from Gen ${learnedGen} to ${this.minSourceGen}.`;
 					}
@@ -2588,6 +2593,8 @@ export class TeamValidator {
 					}
 					continue;
 				}
+
+				if (learnedGen === 9 && learned.charAt(1) !== 'S') canUseHomeRelearner = true;
 
 				if (
 					baseSpecies.evoRegion === 'Alola' && checkingPrevo && learnedGen >= 8 &&
@@ -2737,6 +2744,24 @@ export class TeamValidator {
 				if (!canLearnSpecies.includes(toID(species.baseSpecies))) canLearnSpecies.push(toID(species.baseSpecies));
 				minLearnGen = Math.min(minLearnGen, learnedGen);
 			}
+			if (canUseHomeRelearner) {
+				const fullSources = [];
+				let learnsetData = this.getExternalLearnsetData(species.id, 'gen8bdsp');
+				if (!['nincada', 'spinda'].includes(species.id) && learnsetData?.learnset?.[move.id]) {
+					fullSources.push(...learnsetData.learnset[move.id]);
+				}
+				learnsetData = this.getExternalLearnsetData(species.id, 'gen8legends');
+				if (learnsetData?.learnset?.[move.id]) {
+					fullSources.push(...learnsetData.learnset[move.id]);
+				}
+				for (const source of fullSources) {
+					// Non-event sources from BDSP/LA should always be legal through HOME relearner,
+					// assuming the Pokemon's level is high enough
+					if (source.charAt(1) === 'S') continue;
+					if (source.charAt(1) === 'L' && level < parseInt(source.substr(2))) continue;
+					return null;
+				}
+			}
 			if (ruleTable.has('mimicglitch') && species.gen < 5) {
 				// include the Mimic Glitch when checking this mon's learnset
 				const glitchMoves = ['metronome', 'copycat', 'transform', 'mimic', 'assist'];
@@ -2794,7 +2819,7 @@ export class TeamValidator {
 			// Pokemon that cannot be sent from Pokemon GO to Let's Go can only access Let's Go moves through HOME
 			// It can only obtain a chain of four level up moves and cannot have TM moves
 			const pokemonGoData = dex.species.getPokemonGoData(checkedSpecies.id);
-			if (pokemonGoData.LGPERestrictiveMoves) {
+			if (pokemonGoData?.LGPERestrictiveMoves) {
 				let levelUpMoveCount = 0;
 				const restrictiveMovesToID = [];
 				for (const moveName of setSources.restrictiveMoves) {
@@ -2874,6 +2899,12 @@ export class TeamValidator {
 
 		if (babyOnly) setSources.babyOnly = babyOnly;
 		return null;
+	}
+
+	getExternalLearnsetData(species: ID, mod: string) {
+		const moddedDex = this.dex.mod(mod);
+		if (moddedDex.species.get(species).isNonstandard) return null;
+		return moddedDex.species.getLearnsetData(species);
 	}
 
 	static fillStats(stats: SparseStatsTable | null, fillNum = 0): StatsTable {

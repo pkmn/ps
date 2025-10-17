@@ -27,6 +27,8 @@ import * as gen5 from '../data/mods/gen5';
 import * as gen6 from '../data/mods/gen6';
 import * as gen7 from '../data/mods/gen7';
 import * as gen8 from '../data/mods/gen8';
+import * as gen8bdsp from '../data/mods/gen8bdsp';
+import * as gen8legends from '../data/mods/gen8legends';
 import * as gen9 from '../data';
 
 import * as formats9 from '../data/formats-data';
@@ -34,6 +36,8 @@ import * as formats9 from '../data/formats-data';
 import * as learn2 from '../data/mods/gen2/learnsets';
 import * as learn6 from '../data/mods/gen6/learnsets';
 import * as learn8 from '../data/mods/gen8/learnsets';
+import * as learn8bdsp from '../data/mods/gen8bdsp/learnsets';
+import * as learn8legends from '../data/mods/gen8legends/learnsets';
 import * as learn9 from '../data/learnsets';
 
 import * as pokemongo from '../data/pokemongo';
@@ -41,6 +45,8 @@ import * as pokemongo from '../data/pokemongo';
 import * as legality2 from '../data/mods/gen2/legality';
 import * as legality6 from '../data/mods/gen6/legality';
 import * as legality8 from '../data/mods/gen8/legality';
+import * as legality8bdsp from '../data/mods/gen8bdsp/legality';
+import * as legality8legends from '../data/mods/gen8legends/legality';
 import * as legality9 from '../data/legality';
 
 import {AbilitiesText} from '../data/text/abilities';
@@ -85,6 +91,8 @@ const dexData = {
 	gen1, gen2: {...gen2, ...merge(learn2, legality2)}, gen3,
 	gen4, gen5, gen6: {...gen6, ...merge(learn6, legality6)},
 	gen7, gen8: {...gen8, ...merge(learn8, legality8)},
+	gen8bdsp: {...gen8bdsp, ...merge(learn8bdsp, legality8bdsp)},
+	gen8legends: {...gen8legends, ...merge(learn8legends, legality8legends)},
 	gen9: {...gen9, ...formats9, ...pokemongo, ...merge(learn9, legality9)},
 };
 
@@ -545,6 +553,10 @@ dexes['gen5'] = new ModdedDex('gen5');
 dexes['gen6'] = new ModdedDex('gen6');
 dexes['gen7'] = new ModdedDex('gen7');
 dexes['gen8'] = new ModdedDex('gen8');
+
+// required for gen 9 moveset validation
+dexes['gen8bdsp'] = new ModdedDex('gen8bdsp');
+dexes['gen8legends'] = new ModdedDex('gen8legends');
 
 // "gen9" is an alias for the current base data
 dexes[BASE_MOD] = dexes['base'];

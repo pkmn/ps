@@ -272,6 +272,7 @@ describe('Dex', () => {
         for (const id in dex.data.Species) {
           const s = dex.species.get(id);
           if (!s.exists || s.tier === 'Illegal' || s.isNonstandard) continue;
+          if (s.isCosmeticForme) continue;
           if (s.name !== s.baseSpecies) {
             count.formes++;
           } else {

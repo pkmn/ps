@@ -10,7 +10,7 @@ describe('Bundle', () => {
       // eslint-disable-next-line no-eval
       eval(fs.readFileSync(path.resolve(__dirname, '../../build/index.min.js'), 'utf8'));
       const raw =
-`Tangrowth @ Assault Vest
+        `Tangrowth @ Assault Vest
 Ability: Regenerator
 EVs: 248 HP / 8 Def / 252 SpD
 Sassy Nature

@@ -333,7 +333,7 @@ export class ChoiceBuilder {
     switch (choice.choiceType) {
       case 'move': {
         const target =
-        choice.targetLoc ? ` ${choice.targetLoc > 0 ? '+' : ''}${choice.targetLoc}` : '';
+          choice.targetLoc ? ` ${choice.targetLoc > 0 ? '+' : ''}${choice.targetLoc}` : '';
         const boost = `${choice.max ? ' max' : ''}${choice.mega ? ' mega' : ''}${choice.z
           ? ' zmove' : ''}${choice.tera ? ' terastallize' : ''}`;
         return `move ${choice.move}${boost}${target}`;

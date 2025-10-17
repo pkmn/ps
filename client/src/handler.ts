@@ -272,7 +272,7 @@ export class Handler implements Protocol.Handler {
         poke.fainted = false;
         poke.status = undefined;
       }
-      if (fromEffect.id !== 'lunardance' || fromEffect.id !== 'healingwish') return;
+      if (fromEffect.id !== 'lunardance' && fromEffect.id !== 'healingwish') return;
       if (fromEffect.id === 'lunardance') {
         for (const moveSlot of poke.moveSlots) {
           moveSlot.ppUsed = 0;
@@ -601,6 +601,7 @@ export class Handler implements Protocol.Handler {
   '|-ability|'(args: Args['|-ability|'], kwArgs: KWArgs['|-ability|']) {
     const poke = this.battle.getPokemon(args[1])!;
     const ability = this.battle.get('abilities', args[2]);
+    const oldAbility = this.battle.get('abilities', args[3]);
     const fromEffect = this.battle.get('conditions', kwArgs.from);
     const ofPoke = this.battle.getPokemon(kwArgs.of);
 
@@ -608,22 +609,14 @@ export class Handler implements Protocol.Handler {
 
     if (kwArgs.silent) return; // do nothing
 
+    if (oldAbility.id && ofPoke) {
+      poke.activateAbility(oldAbility.name);
+      poke.activateAbility(ability.name, true);
+      ofPoke.rememberAbility(ability.name);
+      return;
+    }
+
     switch (fromEffect.id) {
-      case 'trace':
-        poke.activateAbility('Trace');
-        poke.activateAbility(ability.name, true);
-        ofPoke!.rememberAbility(ability.name);
-        break;
-      case 'powerofalchemy':
-      case 'receiver':
-        poke.activateAbility(fromEffect.name);
-        poke.activateAbility(ability.name, true);
-        ofPoke!.rememberAbility(ability.name);
-        break;
-      case 'roleplay':
-        poke.activateAbility(ability.name, true);
-        ofPoke!.rememberAbility(ability.name);
-        break;
       case 'desolateland':
       case 'primordialsea':
       case 'deltastream':

@@ -468,9 +468,11 @@
   "haze": {"activate": "  All STATUS changes are eliminated!"},
   "healbell": {"activate": "  A bell chimed!"},
   "healblock": {
+    "endGen8": "  [POKEMON]'s Heal Block wore off!",
+    "cantGen8": "[POKEMON] can't use [MOVE] because of Heal Block!",
     "start": "  [POKEMON] was prevented from healing!",
-    "end": "  [POKEMON]'s Heal Block wore off!",
-    "cant": "[POKEMON] can't use [MOVE] because of Heal Block!",
+    "end": "  [POKEMON] is no longer prevented from healing!",
+    "cant": "[POKEMON] is prevented from healing, so it can't use [MOVE]!",
     "fail": "  But it failed to affect [POKEMON]!"
   },
   "healingwish": {"heal": "  The healing wish came true for [POKEMON]!"},

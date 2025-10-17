@@ -1308,6 +1308,7 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     if (args.length === 3) return true;
     if (args.length === 4) {
       return args[3] === 'boost' ||
+        verifyAbilityName(args[3] as Protocol.AbilityName, this.gen) ||
         verifySide(args[3] as Protocol.Side) ||
         verifyPokemonIdent(args[3] as Protocol.PokemonIdent);
     }

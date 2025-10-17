@@ -218,7 +218,7 @@ export class Species {
   *[Symbol.iterator]() {
     for (const species in this.dex.data.Species) {
       const s = this.get(species);
-      if (s) yield s;
+      if (s && !s.isCosmeticForme) yield s;
     }
   }
 }
@@ -283,6 +283,7 @@ export class Specie implements DexSpecies {
   readonly evoType?: EvoType;
   readonly condition?: Partial<Condition>;
   readonly canHatch!: boolean;
+  readonly isCosmeticForme!: boolean;
 
   /* private */ readonly dex: Dex;
 

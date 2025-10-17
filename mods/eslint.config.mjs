@@ -11,7 +11,6 @@ export default [...pkmn, {
     "src/gen6xy/*.ts",
     "src/gen7letsgo/*.ts",
     "src/gen7sm/*.ts",
-    "src/gen8bdsp/*.ts",
     "src/gen8dlc1/*.ts",
     "src/gen9predlc/*.ts",
     "src/gen9dlc1/*.ts"

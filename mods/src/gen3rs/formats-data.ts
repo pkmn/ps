@@ -1242,13 +1242,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "ZU",
 	},
 	castformsunny: {
-		tier: "ZU",
 	},
 	castformrainy: {
-		tier: "ZU",
 	},
 	castformsnowy: {
-		tier: "ZU",
 	},
 	kecleon: {
 		tier: "NU",

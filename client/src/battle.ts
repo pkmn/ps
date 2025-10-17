@@ -129,6 +129,7 @@ export class Battle {
           pokemon.ability = p.ability;
           pokemon.baseAbility = p.baseAbility;
           pokemon.item = p.item;
+          pokemon.terastallized = p.teraType;
 
           pokemon.hp = p.hp;
           pokemon.maxhp = p.maxhp;

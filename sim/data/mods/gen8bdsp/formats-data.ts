@@ -1,7 +1,5 @@
-import type {ModdedSpeciesFormatsDataTable} from '@pkmn/sim';
-
 // TODO: alphabetize move names. I'm trying to implement this on a low-quality laptop under time pressure, so I haven't bothered doing so.
-export const FormatsData: ModdedSpeciesFormatsDataTable = {
+export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormatsDataTable = {
 	bulbasaur: {
 		tier: "LC",
 	},
@@ -1342,6 +1340,12 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 	castform: {
 		tier: "PU",
 		doublesTier: "DUU",
+	},
+	castformsunny: {
+	},
+	castformrainy: {
+	},
+	castformsnowy: {
 	},
 	kecleon: {
 		tier: "PU",

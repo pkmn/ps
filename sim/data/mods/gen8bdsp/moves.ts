@@ -1,6 +1,4 @@
-import type {ModdedMoveDataTable} from '@pkmn/sim';
-
-export const Moves: ModdedMoveDataTable = {
+export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	accelerock: {
 		inherit: true,
 		isNonstandard: "Past",

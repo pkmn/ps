@@ -4353,13 +4353,13 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
     learnset: {
       agility: [ '4S3', '4S4', '3S0', '3S1' ],
       ancientpower: [ '7S7' ],
-      blizzard: [ '9S9' ],
+      blizzard: [ '9S10' ],
       extrasensory: [ '3S2' ],
       freezedry: [ '8S8', '7S7', '6S6' ],
       hail: [ '7S7', '6S5', '6S6' ],
-      haze: [ '9S9', '3S2' ],
+      haze: [ '9S10', '3S2' ],
       healbell: [ '3S2' ],
-      hurricane: [ '9S9', '8S8' ],
+      hurricane: [ '9S10', '8S8' ],
       icebeam: [
         '8S8', '6S5',
         '6S6', '4S3',
@@ -4370,7 +4370,7 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       mist: [ '8S8', '4S4', '3S0' ],
       reflect: [ '7S7', '6S5', '6S6', '4S3', '3S1' ],
       roost: [ '4S3' ],
-      sheercold: [ '9S9' ],
+      sheercold: [ '9S10' ],
       tailwind: [ '6S5' ]
     },
     eventData: [
@@ -4423,6 +4423,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         shiny: 1,
         moves: [ 'icebeam', 'freezedry', 'hurricane', 'mist' ]
       },
+      {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        isHidden: true,
+        moves: [ 'sheercold', 'blizzard', 'mindreader', 'hurricane' ],
+        source: 'gen8bdsp'
+      },
       { generation: 9, level: 70, moves: [ 'sheercold', 'blizzard', 'hurricane', 'haze' ] }
     ],
     encounters: [ { generation: 1, level: 50 } ],
@@ -4463,21 +4471,21 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       batonpass: [ '3S2' ],
       bravebird: [ '8S8' ],
       charge: [ '4S3', '3S1' ],
-      detect: [ '9S9', '4S4', '3S0', '3S1' ],
+      detect: [ '9S10', '4S4', '3S0', '3S1' ],
       discharge: [ '7S7', '6S5', '6S6', '4S3' ],
       drillpeck: [ '8S8', '4S4', '3S0', '3S1' ],
       extrasensory: [ '3S2' ],
       lightscreen: [ '6S5' ],
-      magneticflux: [ '9S9' ],
+      magneticflux: [ '9S10' ],
       metalsound: [ '3S2' ],
       pluck: [ '7S7' ],
       raindance: [ '7S7', '6S5', '6S6' ],
       roost: [ '4S3' ],
-      thunder: [ '9S9', '8S8' ],
+      thunder: [ '9S10', '8S8' ],
       thunderbolt: [ '3S2' ],
       thundershock: [ '6S6' ],
       thunderwave: [ '4S4', '3S0' ],
-      zapcannon: [ '9S9' ]
+      zapcannon: [ '9S10' ]
     },
     eventData: [
       {
@@ -4534,6 +4542,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         moves: [ 'thunder', 'drillpeck', 'bravebird', 'agility' ]
       },
       {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        isHidden: true,
+        moves: [ 'zapcannon', 'magneticflux', 'detect', 'thunder' ],
+        source: 'gen8bdsp'
+      },
+      {
         generation: 9,
         level: 70,
         moves: [ 'zapcannon', 'magneticflux', 'detect', 'thunder' ]
@@ -4570,18 +4586,18 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       agility: [ '4S4', '3S0', '3S1' ],
       airslash: [ '7S7', '6S5', '4S3' ],
       ancientpower: [ '7S7' ],
-      endure: [ '9S9', '4S4', '3S0', '3S1' ],
+      endure: [ '9S10', '4S4', '3S0', '3S1' ],
       extrasensory: [ '3S2' ],
       firespin: [ '8S8', '4S4', '3S0' ],
       flamethrower: [ '7S7', '4S3', '4S4', '3S0', '3S1', '3S2' ],
       heatwave: [ '8S8', '6S5', '6S6' ],
-      hurricane: [ '9S9' ],
+      hurricane: [ '9S10' ],
       leer: [ '8S8' ],
       morningsun: [ '3S2' ],
-      overheat: [ '9S9' ],
+      overheat: [ '9S10' ],
       roost: [ '4S3' ],
       safeguard: [ '6S5', '6S6', '4S3', '3S1' ],
-      skyattack: [ '9S9', '6S6' ],
+      skyattack: [ '9S10', '6S6' ],
       sunnyday: [ '7S7', '6S5', '6S6' ],
       willowisp: [ '3S2' ],
       wingattack: [ '8S8' ]
@@ -4639,6 +4655,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'heatwave', 'wingattack', 'leer', 'firespin' ]
+      },
+      {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        isHidden: true,
+        moves: [ 'skyattack', 'burnup', 'endure', 'hurricane' ],
+        source: 'gen8bdsp'
       },
       {
         generation: 9,
@@ -4787,20 +4811,20 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
   mewtwo: {
     learnset: {
       amnesia: [ '4S1' ],
-      aurasphere: [ '9S8', '6S4', '6S5', '5S2' ],
+      aurasphere: [ '9S9', '6S4', '6S5', '5S2' ],
       barrier: [ '6S4' ],
       blizzard: [ '8S7' ],
-      calmmind: [ '9S8' ],
+      calmmind: [ '9S9' ],
       disable: [ '8S7' ],
       electroball: [ '5S2' ],
       guardswap: [ '4S1' ],
       healpulse: [ '5S3' ],
       hurricane: [ '5S3' ],
-      icebeam: [ '9S8', '5S3' ],
+      icebeam: [ '9S9', '5S3' ],
       powerswap: [ '4S1' ],
       psychic: [ '8S7', '7S6', '6S4', '6S5', '3S0' ],
       psychocut: [ '7S6', '4S1' ],
-      psystrike: [ '9S8', '6S5', '5S2', '5S3' ],
+      psystrike: [ '9S9', '6S5', '5S2', '5S3' ],
       recover: [ '8S7', '7S6', '6S4', '6S5', '3S0' ],
       safeguard: [ '3S0' ],
       shadowball: [ '5S2' ],
@@ -4860,6 +4884,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         moves: [ 'psychic', 'disable', 'recover', 'blizzard' ]
       },
       {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        isHidden: true,
+        moves: [ 'mist', 'guardswap', 'powerswap', 'psychic' ],
+        source: 'gen8bdsp'
+      },
+      {
         generation: 9,
         level: 100,
         nature: 'Modest',
@@ -4873,30 +4905,30 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
   },
   mew: {
     learnset: {
-      airslash: [ '9S26' ],
+      airslash: [ '9S27' ],
       amnesia: [ '4S17' ],
       ancientpower: [ '4S14' ],
       aurasphere: [
-        '9S26', '4S14',
+        '9S27', '4S14',
         '4S15', '4S16',
         '4S17', '4S18',
         '4S19'
       ],
       barrier: [ '7S24', '4S15' ],
-      darkpulse: [ '9S26' ],
-      dazzlinggleam: [ '9S26' ],
-      dragonpulse: [ '9S26' ],
-      earthpower: [ '9S26' ],
-      energyball: [ '9S26' ],
+      darkpulse: [ '9S27' ],
+      dazzlinggleam: [ '9S27' ],
+      dragonpulse: [ '9S27' ],
+      earthpower: [ '9S27' ],
+      energyball: [ '9S27' ],
       fakeout: [ '3S2', '3S3' ],
       feintattack: [ '3S4', '3S5' ],
-      flamethrower: [ '9S26' ],
-      flashcannon: [ '9S26' ],
-      hypervoice: [ '9S26' ],
+      flamethrower: [ '9S27' ],
+      flashcannon: [ '9S27' ],
+      hypervoice: [ '9S27' ],
       hypnosis: [ '4S20', '3S6', '3S7' ],
-      icebeam: [ '9S26' ],
-      lifedew: [ '9S26' ],
-      lightscreen: [ '9S26' ],
+      icebeam: [ '9S27' ],
+      lifedew: [ '9S27' ],
+      lightscreen: [ '9S27' ],
       megapunch: [ '4S16', '3S0' ],
       metronome: [
         '7S24', '4S14',
@@ -4905,17 +4937,17 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         '4S19', '3S0'
       ],
       nightshade: [ '3S8', '3S9' ],
-      pollenpuff: [ '9S26' ],
+      pollenpuff: [ '9S27' ],
       pound: [ '8S25', '7S23', '6S22', '4S21', '3S0', '3S1' ],
-      powergem: [ '9S26' ],
+      powergem: [ '9S27' ],
       psychic: [ '7S24', '4S19' ],
-      psyshock: [ '9S26' ],
+      psyshock: [ '9S27' ],
       return: [ '4S20' ],
       roleplay: [ '3S10', '3S11' ],
-      shadowball: [ '9S26' ],
-      sludgebomb: [ '9S26' ],
-      surf: [ '9S26' ],
-      swift: [ '9S26' ],
+      shadowball: [ '9S27' ],
+      sludgebomb: [ '9S27' ],
+      surf: [ '9S27' ],
+      swift: [ '9S27' ],
       synthesis: [ '4S20' ],
       teleport: [
         '4S14', '4S15',
@@ -4923,7 +4955,7 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         '4S18', '4S19',
         '4S20'
       ],
-      thunderbolt: [ '9S26' ],
+      thunderbolt: [ '9S27' ],
       transform: [ '7S24', '4S18', '3S0', '3S1' ],
       zapcannon: [ '3S12', '3S13' ]
     },
@@ -4999,6 +5031,7 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         pokeball: 'cherishball'
       },
       { generation: 8, level: 1, moves: [ 'pound' ], pokeball: 'pokeball' },
+      { generation: 8, level: 1, moves: [ 'pound', 'reflecttype' ], source: 'gen8bdsp' },
       {
         generation: 9,
         level: 5,
@@ -5935,13 +5968,13 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       aurasphere: [ '4S3' ],
       calmmind: [ '7S7' ],
       crunch: [ '7S5', '7S6', '6S4', '3S1' ],
-      discharge: [ '9S9', '7S5', '7S6' ],
-      extrasensory: [ '9S9', '7S7' ],
+      discharge: [ '9S10', '7S5', '7S6' ],
+      extrasensory: [ '9S10', '7S7' ],
       extremespeed: [ '8S8', '4S3' ],
       howl: [ '8S8' ],
       quickattack: [ '4S2', '3S0', '3S1' ],
-      raindance: [ '9S9' ],
-      reflect: [ '9S9', '7S5', '7S6', '6S4', '4S2', '3S1' ],
+      raindance: [ '9S10' ],
+      reflect: [ '9S10', '7S5', '7S6', '6S4', '4S2', '3S1' ],
       roar: [ '4S2', '3S0' ],
       spark: [ '6S4', '4S2', '3S0', '3S1' ],
       thunderbolt: [ '8S8', '7S7' ],
@@ -6009,6 +6042,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         moves: [ 'thunderbolt', 'howl', 'extremespeed', 'weatherball' ]
       },
       {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        isHidden: true,
+        moves: [ 'raindance', 'reflect', 'discharge', 'extrasensory' ],
+        source: 'gen8bdsp'
+      },
+      {
         generation: 9,
         level: 70,
         moves: [ 'raindance', 'reflect', 'discharge', 'extrasensory' ]
@@ -6023,7 +6064,7 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       crunch: [ '8S8' ],
       crushclaw: [ '4S3' ],
       ember: [ '3S0' ],
-      extrasensory: [ '9S9' ],
+      extrasensory: [ '9S10' ],
       extremespeed: [ '8S8', '4S3' ],
       firefang: [ '6S4' ],
       firespin: [ '4S2', '3S0', '3S1' ],
@@ -6032,14 +6073,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       flareblitz: [ '4S3' ],
       howl: [ '4S3' ],
       ironhead: [ '7S7' ],
-      lavaplume: [ '9S9', '7S5', '7S6' ],
+      lavaplume: [ '9S10', '7S5', '7S6' ],
       roar: [ '4S2', '3S0' ],
       sacredfire: [ '7S7' ],
       scaryface: [ '8S8' ],
       stomp: [ '7S5', '7S6', '6S4', '4S2', '3S0', '3S1' ],
       stoneedge: [ '7S7' ],
-      sunnyday: [ '9S9' ],
-      swagger: [ '9S9', '7S5', '7S6', '6S4', '3S1' ]
+      sunnyday: [ '9S10' ],
+      swagger: [ '9S10', '7S5', '7S6', '6S4', '3S1' ]
     },
     eventData: [
       {
@@ -6099,6 +6140,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         moves: [ 'flamethrower', 'scaryface', 'extremespeed', 'crunch' ]
       },
       {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        isHidden: true,
+        moves: [ 'sunnyday', 'swagger', 'lavaplume', 'extrasensory' ],
+        source: 'gen8bdsp'
+      },
+      {
         generation: 9,
         level: 70,
         moves: [ 'sunnyday', 'swagger', 'lavaplume', 'extrasensory' ]
@@ -6114,18 +6163,18 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       aurorabeam: [ '7S6', '6S5', '4S3', '3S0', '3S1' ],
       bubblebeam: [ '7S6', '3S0' ],
       calmmind: [ '8S7' ],
-      extrasensory: [ '9S8', '8S7' ],
+      extrasensory: [ '9S9', '8S7' ],
       extremespeed: [ '8S7', '4S4' ],
       gust: [ '4S3', '3S0', '3S1', '3S2' ],
       hydropump: [ '3S2' ],
       icefang: [ '6S5' ],
       leer: [ '3S2' ],
       liquidation: [ '8S7' ],
-      mirrorcoat: [ '9S8', '6S5', '3S1' ],
+      mirrorcoat: [ '9S9', '6S5', '3S1' ],
       mist: [ '7S6', '6S5', '4S3', '3S1' ],
-      raindance: [ '9S8', '7S6', '4S3', '3S0', '3S2' ],
+      raindance: [ '9S9', '7S6', '4S3', '3S0', '3S2' ],
       sheercold: [ '4S4' ],
-      surf: [ '9S8' ]
+      surf: [ '9S9' ]
     },
     eventData: [
       {
@@ -6177,6 +6226,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'liquidation', 'extrasensory', 'extremespeed', 'calmmind' ]
+      },
+      {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        isHidden: true,
+        moves: [ 'raindance', 'mirrorcoat', 'surf', 'extrasensory' ],
+        source: 'gen8bdsp'
       },
       {
         generation: 9,
@@ -6289,7 +6346,7 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
   lugia: {
     learnset: {
       aeroblast: [
-        '9S12', '7S7',
+        '9S13', '7S7',
         '7S8',  '7S9',
         '7S10', '6S5',
         '6S6',  '4S2',
@@ -6301,7 +6358,7 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       dragonrush: [ '6S6' ],
       earthpower: [ '7S10' ],
       earthquake: [ '3S1' ],
-      extrasensory: [ '9S12', '8S11', '7S7', '7S9', '4S2' ],
+      extrasensory: [ '9S13', '8S11', '7S7', '7S9', '4S2' ],
       featherdance: [ '3S1' ],
       hurricane: [ '7S8' ],
       hydropump: [ '6S5', '6S6', '4S2', '3S0', '3S1' ],
@@ -6309,8 +6366,8 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       psychic: [ '7S10' ],
       psychoboost: [ '3S1' ],
       punishment: [ '6S5', '4S3' ],
-      raindance: [ '9S12', '6S5', '4S2', '3S0' ],
-      recover: [ '9S12', '3S0' ],
+      raindance: [ '9S13', '6S5', '4S2', '3S0' ],
+      recover: [ '9S13', '3S0' ],
       safeguard: [ '4S3' ],
       skillswap: [ '7S7', '7S9' ],
       swift: [ '3S0' ],
@@ -6395,6 +6452,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         moves: [ 'dragonpulse', 'extrasensory', 'whirlpool', 'ancientpower' ]
       },
       {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        isHidden: true,
+        moves: [ 'raindance', 'aeroblast', 'recover', 'extrasensory' ],
+        source: 'gen8bdsp'
+      },
+      {
         generation: 9,
         level: 70,
         moves: [ 'raindance', 'aeroblast', 'recover', 'extrasensory' ]
@@ -6410,20 +6475,20 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       burnup: [ '7S7', '7S8' ],
       celebrate: [ '6S5' ],
       earthquake: [ '7S9' ],
-      extrasensory: [ '9S11', '8S10', '7S7', '7S8', '4S1' ],
+      extrasensory: [ '9S12', '8S10', '7S7', '7S8', '4S1' ],
       fireblast: [ '6S4', '4S1', '3S0' ],
       flareblitz: [ '8S10' ],
       punishment: [ '6S4', '4S2' ],
-      recover: [ '9S11', '7S6', '6S5', '3S0' ],
+      recover: [ '9S12', '7S6', '6S5', '3S0' ],
       sacredfire: [
-        '9S11', '7S6',
+        '9S12', '7S6',
         '7S7',  '7S8',
         '7S9',  '6S4',
         '6S5',  '4S1',
         '4S2'
       ],
       safeguard: [ '7S6', '4S2' ],
-      sunnyday: [ '9S11', '8S10', '6S4', '4S1', '3S0' ],
+      sunnyday: [ '9S12', '8S10', '6S4', '4S1', '3S0' ],
       swift: [ '3S0' ],
       tailwind: [ '7S9' ],
       weatherball: [ '5S3' ],
@@ -6497,6 +6562,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'flareblitz', 'extrasensory', 'sunnyday', 'ancientpower' ]
+      },
+      {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        isHidden: true,
+        moves: [ 'sunnyday', 'sacredfire', 'recover', 'extrasensory' ],
+        source: 'gen8bdsp'
       },
       {
         generation: 9,
@@ -8486,6 +8559,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'superpower', 'stoneedge', 'hammerarm', 'curse' ]
+      },
+      {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        isHidden: true,
+        moves: [ 'zapcannon', 'lockon', 'superpower', 'stoneedge' ],
+        source: 'gen8bdsp'
       }
     ],
     eventOnly: true
@@ -8557,6 +8638,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'icebeam', 'zapcannon', 'amnesia', 'icywind' ]
+      },
+      {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        isHidden: true,
+        moves: [ 'zapcannon', 'lockon', 'superpower', 'blizzard' ],
+        source: 'gen8bdsp'
       }
     ],
     eventOnly: true
@@ -8630,6 +8719,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'heavyslam', 'flashcannon', 'irondefense', 'chargebeam' ]
+      },
+      {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        isHidden: true,
+        moves: [ 'zapcannon', 'lockon', 'superpower', 'heavyslam' ],
+        source: 'gen8bdsp'
       }
     ],
     eventOnly: true
@@ -8641,8 +8738,8 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       dracometeor: [ '7S9' ],
       dragonbreath: [ '8S10', '6S6', '4S3' ],
       dragonpulse: [ '8S11', '7S7', '7S8' ],
-      guardsplit: [ '9S12' ],
-      healingwish: [ '9S12' ],
+      guardsplit: [ '9S13' ],
+      healingwish: [ '9S13' ],
       healpulse: [ '6S6', '5S5' ],
       mistball: [
         '8S11', '7S7',
@@ -8651,10 +8748,10 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         '4S4',  '3S0',
         '3S1',  '3S2'
       ],
-      psychic: [ '9S12', '7S9', '5S5', '3S0', '3S1', '3S2' ],
+      psychic: [ '9S13', '7S9', '5S5', '3S0', '3S1', '3S2' ],
       psychoshift: [ '7S7', '7S8', '6S6', '5S5' ],
       recover: [ '3S1', '3S2' ],
-      reflecttype: [ '9S12', '8S10' ],
+      reflecttype: [ '9S13', '8S10' ],
       refresh: [ '4S3', '4S4', '3S0' ],
       surf: [ '8S10' ],
       sweetkiss: [ '8S11' ],
@@ -8738,6 +8835,13 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         pokeball: 'cherishball'
       },
       {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        moves: [ 'healingwish', 'guardsplit', 'psychic', 'reflecttype' ],
+        source: 'gen8bdsp'
+      },
+      {
         generation: 9,
         level: 70,
         moves: [ 'healingwish', 'guardsplit', 'psychic', 'reflecttype' ]
@@ -8749,12 +8853,12 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
     learnset: {
       aurasphere: [ '8S11' ],
       dracometeor: [ '7S10' ],
-      dragonbreath: [ '9S12', '7S8', '7S9', '6S6', '4S3' ],
+      dragonbreath: [ '9S13', '7S8', '7S9', '6S6', '4S3' ],
       dragondance: [ '8S11', '5S5', '3S1', '3S2' ],
-      dragonpulse: [ '9S12', '8S11', '7S8', '7S9', '6S7' ],
+      dragonpulse: [ '9S13', '8S11', '7S8', '7S9', '6S7' ],
       healpulse: [ '6S6', '6S7', '5S5' ],
       lusterpurge: [
-        '9S12', '7S8', '7S9',
+        '9S13', '7S8', '7S9',
         '7S10', '6S6', '6S7',
         '4S3',  '4S4', '3S0',
         '3S1',  '3S2'
@@ -8765,7 +8869,7 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       recover: [ '3S1', '3S2' ],
       refresh: [ '4S3', '4S4', '3S0' ],
       tailwind: [ '7S10' ],
-      zenheadbutt: [ '9S12', '8S11', '4S4' ]
+      zenheadbutt: [ '9S13', '8S11', '4S4' ]
     },
     eventData: [
       {
@@ -8842,6 +8946,13 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         moves: [ 'dragondance', 'dragonpulse', 'zenheadbutt', 'aurasphere' ]
       },
       {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        moves: [ 'memento', 'powersplit', 'psychic', 'simplebeam' ],
+        source: 'gen8bdsp'
+      },
+      {
         generation: 9,
         level: 70,
         moves: [ 'lusterpurge', 'dragonpulse', 'zenheadbutt', 'dragonbreath' ]
@@ -8852,21 +8963,21 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
   kyogre: {
     learnset: {
       ancientpower: [ '5S3', '4S2' ],
-      aquaring: [ '9S12', '8S11', '6S5', '4S2' ],
+      aquaring: [ '9S13', '8S11', '6S5', '4S2' ],
       bodyslam: [ '8S11', '6S5', '3S0' ],
       calmmind: [ '7S7', '7S8', '7S9', '7S10', '3S0' ],
       doubleedge: [ '3S1' ],
       hydropump: [ '3S0', '3S1' ],
       icebeam: [
-        '9S12', '7S7',  '7S8',
+        '9S13', '7S7',  '7S8',
         '7S9',  '7S10', '6S5',
         '6S6',  '5S3',  '5S4',
         '4S2',  '3S0'
       ],
-      muddywater: [ '9S12', '7S7', '7S8', '7S9' ],
+      muddywater: [ '9S13', '7S7', '7S8', '7S9' ],
       originpulse: [ '7S7', '7S8', '7S9', '7S10', '6S5' ],
       rest: [ '3S1' ],
-      sheercold: [ '9S12', '6S6', '5S4', '3S1' ],
+      sheercold: [ '9S13', '6S6', '5S4', '3S1' ],
       surf: [ '8S11' ],
       thunder: [ '8S11', '6S6', '5S3', '5S4' ],
       waterspout: [ '7S10', '6S6', '5S3', '5S4', '4S2' ]
@@ -8947,6 +9058,13 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         moves: [ 'surf', 'bodyslam', 'aquaring', 'thunder' ]
       },
       {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        moves: [ 'originpulse', 'aquaring', 'sheercold', 'icebeam' ],
+        source: 'gen8bdsp'
+      },
+      {
         generation: 9,
         level: 70,
         moves: [ 'aquaring', 'sheercold', 'icebeam', 'muddywater' ]
@@ -8960,7 +9078,7 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       bulkup: [ '7S7', '7S8', '7S9', '3S0' ],
       earthpower: [ '7S10', '5S4' ],
       earthquake: [
-        '9S12', '8S11',
+        '9S13', '8S11',
         '7S7',  '7S8',
         '7S9',  '6S5',
         '5S3',  '4S2',
@@ -8969,11 +9087,11 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       eruption: [ '5S3', '5S4', '4S2' ],
       fireblast: [ '3S0', '3S1' ],
       firepunch: [ '7S10', '6S6' ],
-      fissure: [ '9S12', '3S1' ],
-      hammerarm: [ '9S12', '8S11', '6S6', '5S4' ],
+      fissure: [ '9S13', '3S1' ],
+      hammerarm: [ '9S13', '8S11', '6S6', '5S4' ],
       lavaplume: [ '8S11', '6S5' ],
       precipiceblades: [ '7S7', '7S8', '7S9', '7S10', '6S5' ],
-      rest: [ '9S12', '6S5', '4S2', '3S1' ],
+      rest: [ '9S13', '6S5', '4S2', '3S1' ],
       rockslide: [ '6S6' ],
       scaryface: [ '8S11' ],
       slash: [ '3S0' ],
@@ -9060,6 +9178,13 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         shiny: 1,
         moves: [ 'earthquake', 'scaryface', 'lavaplume', 'hammerarm' ]
       },
+      {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        moves: [ 'precipiceblades', 'rest', 'fissure', 'hammerarm' ],
+        source: 'gen8bdsp'
+      },
       { generation: 9, level: 70, moves: [ 'rest', 'fissure', 'hammerarm', 'earthquake' ] }
     ],
     eventOnly: true
@@ -9074,18 +9199,18 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       dragonascent: [ '8S9', '6S4', '6S6', '6S7' ],
       dragonclaw: [ '6S6' ],
       dragondance: [ '7S8', '6S4', '6S6', '5S2' ],
-      dragonpulse: [ '9S10', '7S8', '6S4', '6S5', '5S2', '5S3' ],
+      dragonpulse: [ '9S11', '7S8', '6S4', '6S5', '5S2', '5S3' ],
       extremespeed: [
         '8S9', '7S8',
         '6S4', '6S5',
         '6S6', '5S3',
         '3S0'
       ],
-      fly: [ '9S10', '6S7', '3S0' ],
+      fly: [ '9S11', '6S7', '3S0' ],
       hyperbeam: [ '5S3' ],
-      hypervoice: [ '9S10' ],
+      hypervoice: [ '9S11' ],
       outrage: [ '5S2', '4S1', '3S0' ],
-      rest: [ '9S10', '7S8', '4S1', '3S0' ],
+      rest: [ '9S11', '7S8', '4S1', '3S0' ],
       thunder: [ '6S5' ],
       twister: [ '8S9', '6S5' ],
       vcreate: [ '5S3' ]
@@ -9153,6 +9278,13 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'dragonascent', 'brutalswing', 'extremespeed', 'twister' ]
+      },
+      {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        moves: [ 'fly', 'rest', 'hypervoice', 'dragonpulse' ],
+        source: 'gen8bdsp'
       },
       { generation: 9, level: 70, moves: [ 'fly', 'rest', 'hypervoice', 'dragonpulse' ] }
     ],
@@ -9295,7 +9427,8 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         nature: 'Timid',
         moves: [ 'meteormash', 'psychic', 'rest', 'wish' ],
         pokeball: 'cherishball'
-      }
+      },
+      { generation: 8, level: 5, moves: [ 'confusion', 'wish' ], source: 'gen8bdsp' }
     ],
     eventOnly: true
   },
@@ -10089,6 +10222,19 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'psychic', 'futuresight', 'magicroom', 'shadowball' ]
+      },
+      {
+        generation: 8,
+        level: 50,
+        shiny: 1,
+        moves: [ 'psychic', 'amnesia', 'extrasensory', 'imprison' ],
+        source: 'gen8bdsp'
+      },
+      {
+        generation: 8,
+        level: 70,
+        moves: [ 'swift', 'extrasensory', 'mysticalpower', 'hypnosis' ],
+        source: 'gen8legends'
       }
     ],
     eventOnly: true
@@ -10142,6 +10288,19 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'psychic', 'charm', 'drainingkiss', 'triattack' ]
+      },
+      {
+        generation: 8,
+        level: 50,
+        shiny: 1,
+        moves: [ 'psychic', 'charm', 'extrasensory', 'imprison' ],
+        source: 'gen8bdsp'
+      },
+      {
+        generation: 8,
+        level: 70,
+        moves: [ 'swift', 'extrasensory', 'mysticalpower', 'recover' ],
+        source: 'gen8legends'
       }
     ],
     eventOnly: true
@@ -10195,6 +10354,19 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'psychic', 'dazzlinggleam', 'nastyplot', 'facade' ]
+      },
+      {
+        generation: 8,
+        level: 50,
+        shiny: 1,
+        moves: [ 'psychic', 'nastyplot', 'extrasensory', 'imprison' ],
+        source: 'gen8bdsp'
+      },
+      {
+        generation: 8,
+        level: 70,
+        moves: [ 'swift', 'extrasensory', 'mysticalpower', 'doublehit' ],
+        source: 'gen8legends'
       }
     ],
     eventOnly: true
@@ -10203,12 +10375,12 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
     learnset: {
       ancientpower: [ '8S11', '4S0' ],
       aurasphere: [ '7S7', '7S8', '7S9', '7S10', '6S5', '5S4' ],
-      dracometeor: [ '9S13', '7S9', '7S10', '5S4' ],
+      dracometeor: [ '9S15', '7S9', '7S10', '5S4' ],
       dragonbreath: [ '5S3', '4S2' ],
       dragonclaw: [ '8S11', '4S0' ],
       dragonpulse: [ '5S4' ],
-      earthpower: [ '9S13', '4S1' ],
-      fireblast: [ '9S13' ],
+      earthpower: [ '9S15', '4S1' ],
+      fireblast: [ '9S15' ],
       flashcannon: [
         '8S12', '8S11',
         '7S7',  '7S8',
@@ -10229,7 +10401,7 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       ],
       scaryface: [ '5S3', '4S2' ],
       slash: [ '8S11', '4S1' ],
-      steelbeam: [ '9S13' ]
+      steelbeam: [ '9S15' ]
     },
     eventData: [
       {
@@ -10312,6 +10484,19 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         pokeball: 'cherishball'
       },
       {
+        generation: 8,
+        level: 47,
+        shiny: 1,
+        moves: [ 'roaroftime', 'flashcannon', 'slash', 'ancientpower' ],
+        source: 'gen8bdsp'
+      },
+      {
+        generation: 8,
+        level: 65,
+        moves: [ 'earthpower', 'irontail', 'flashcannon', 'roaroftime' ],
+        source: 'gen8legends'
+      },
+      {
         generation: 9,
         level: 75,
         nature: 'Quiet',
@@ -10333,14 +10518,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         '7S10', '6S5',
         '6S6',  '5S4'
       ],
-      dracometeor: [ '9S13', '7S9', '7S10', '5S4' ],
+      dracometeor: [ '9S15', '7S9', '7S10', '5S4' ],
       dragonbreath: [ '5S3', '4S2' ],
       dragonclaw: [ '8S11', '4S0' ],
       earthpower: [ '8S12', '6S5', '6S6', '4S1' ],
-      fireblast: [ '9S13' ],
+      fireblast: [ '9S15' ],
       healblock: [ '4S1' ],
       hydropump: [
-        '9S13', '8S12',
+        '9S15', '8S12',
         '7S7',  '7S8',
         '7S9',  '7S10',
         '6S5',  '6S6',
@@ -10356,7 +10541,7 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         '4S0',  '4S1'
       ],
       surf: [ '8S11' ],
-      thunder: [ '9S13' ],
+      thunder: [ '9S15' ],
       waterpulse: [ '4S0' ]
     },
     eventData: [
@@ -10438,6 +10623,19 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         isHidden: true,
         moves: [ 'spacialrend', 'hydropump', 'aurasphere', 'earthpower' ],
         pokeball: 'cherishball'
+      },
+      {
+        generation: 8,
+        level: 47,
+        shiny: 1,
+        moves: [ 'spacialrend', 'aquaring', 'slash', 'ancientpower' ],
+        source: 'gen8bdsp'
+      },
+      {
+        generation: 8,
+        level: 65,
+        moves: [ 'earthpower', 'aquatail', 'hydropump', 'spacialrend' ],
+        source: 'gen8legends'
       },
       {
         generation: 9,
@@ -10527,6 +10725,19 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'metalsound', 'lavaplume', 'crunch', 'ironhead' ]
+      },
+      {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        moves: [ 'stoneedge', 'heatwave', 'earthpower', 'metalsound' ],
+        source: 'gen8bdsp'
+      },
+      {
+        generation: 8,
+        level: 70,
+        moves: [ 'ironhead', 'crunch', 'earthpower', 'magmastorm' ],
+        source: 'gen8legends'
       }
     ],
     eventOnly: true
@@ -10611,6 +10822,19 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 100,
         shiny: 1,
         moves: [ 'gigaimpact', 'zenheadbutt', 'hammerarm', 'crushgrip' ]
+      },
+      {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        moves: [ 'crushgrip', 'gigaimpact', 'hammerarm', 'heavyslam' ],
+        source: 'gen8bdsp'
+      },
+      {
+        generation: 8,
+        level: 70,
+        moves: [ 'zenheadbutt', 'ironhead', 'crushgrip', 'gigaimpact' ],
+        source: 'gen8legends'
       }
     ],
     eventOnly: true
@@ -10687,6 +10911,19 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'dragonclaw', 'scaryface', 'shadowball', 'ancientpower' ]
+      },
+      {
+        generation: 8,
+        level: 70,
+        shiny: 1,
+        moves: [ 'dragonclaw', 'aurasphere', 'painsplit', 'shadowforce' ],
+        source: 'gen8bdsp'
+      },
+      {
+        generation: 8,
+        level: 70,
+        moves: [ 'dragonclaw', 'dragonpulse', 'earthpower', 'shadowforce' ],
+        source: 'gen8legends'
       }
     ],
     eventOnly: true
@@ -10743,6 +10980,19 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'icywind', 'moonblast', 'psychocut', 'psyshock' ]
+      },
+      {
+        generation: 8,
+        level: 50,
+        shiny: 1,
+        moves: [ 'safeguard', 'moonlight', 'psychocut', 'slash' ],
+        source: 'gen8bdsp'
+      },
+      {
+        generation: 8,
+        level: 70,
+        moves: [ 'psychocut', 'psychic', 'moonblast', 'lunarblessing' ],
+        source: 'gen8legends'
       }
     ],
     eventOnly: true
@@ -10760,15 +11010,15 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
   },
   manaphy: {
     learnset: {
-      acidarmor: [ '9S7', '4S2' ],
+      acidarmor: [ '9S9', '4S2' ],
       aquaring: [ '7S6', '4S3' ],
       bubble: [ '6S4', '6S5', '4S0', '4S1' ],
-      bubblebeam: [ '9S7' ],
+      bubblebeam: [ '9S9' ],
       heartswap: [ '7S6', '6S4', '4S2', '4S3' ],
       tailglow: [ '7S6', '6S4', '6S5', '4S0', '4S1' ],
-      waterpulse: [ '9S7', '7S6', '4S2', '4S3' ],
+      waterpulse: [ '9S9', '7S6', '4S2', '4S3' ],
       watersport: [ '6S4', '6S5', '4S0', '4S1', '4S3' ],
-      whirlpool: [ '9S7', '4S2' ]
+      whirlpool: [ '9S9', '4S2' ]
     },
     eventData: [
       { generation: 4, level: 5, moves: [ 'tailglow', 'bubble', 'watersport' ] },
@@ -10811,6 +11061,18 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         pokeball: 'cherishball'
       },
       {
+        generation: 8,
+        moves: [ 'tailglow', 'watergun' ],
+        pokeball: 'pokeball',
+        source: 'gen8bdsp'
+      },
+      {
+        generation: 8,
+        level: 50,
+        moves: [ 'waterpulse', 'zenheadbutt', 'moonblast', 'bubble' ],
+        source: 'gen8legends'
+      },
+      {
         generation: 9,
         level: 50,
         shiny: true,
@@ -10824,19 +11086,19 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
   },
   darkrai: {
     learnset: {
-      darkpulse: [ '9S8', '6S5', '4S2' ],
+      darkpulse: [ '9S10', '6S5', '4S2' ],
       darkvoid: [ '7S7', '6S5', '6S6', '5S4', '4S2' ],
       doubleteam: [ '4S2', '4S3' ],
-      dreameater: [ '9S8', '6S5' ],
+      dreameater: [ '9S10', '6S5' ],
       feintattack: [ '7S7', '6S6', '5S4', '4S3' ],
-      hypnosis: [ '9S8', '4S0', '4S1', '4S3' ],
+      hypnosis: [ '9S10', '4S0', '4S1', '4S3' ],
       nightmare: [ '7S7', '6S6', '5S4', '4S0', '4S1', '4S3' ],
       ominouswind: [ '7S7', '6S6', '5S4' ],
       phantomforce: [ '6S5' ],
       pursuit: [ '4S0' ],
       quickattack: [ '4S0' ],
       roaroftime: [ '4S1' ],
-      shadowball: [ '9S8', '4S2' ],
+      shadowball: [ '9S10', '4S2' ],
       spacialrend: [ '4S1' ]
     },
     eventData: [
@@ -10887,6 +11149,19 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 50,
         moves: [ 'darkvoid', 'feintattack', 'nightmare', 'ominouswind' ],
         pokeball: 'cherishball'
+      },
+      {
+        generation: 8,
+        level: 50,
+        shiny: 1,
+        moves: [ 'hypnosis', 'suckerpunch', 'foulplay', 'doubleteam' ],
+        source: 'gen8bdsp'
+      },
+      {
+        generation: 8,
+        level: 70,
+        moves: [ 'hex', 'darkpulse', 'psychic', 'darkvoid' ],
+        source: 'gen8legends'
       },
       {
         generation: 9,
@@ -10949,6 +11224,19 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 20,
         moves: [ 'return', 'growth', 'seedflare', 'celebrate' ],
         pokeball: 'cherishball'
+      },
+      {
+        generation: 8,
+        level: 30,
+        shiny: 1,
+        moves: [ 'growth', 'magicalleaf', 'leechseed', 'synthesis' ],
+        source: 'gen8bdsp'
+      },
+      {
+        generation: 8,
+        level: 70,
+        moves: [ 'seedflare', 'energyball', 'airslash', 'earthpower' ],
+        source: 'gen8legends'
       }
     ],
     eventOnly: true
@@ -10998,6 +11286,20 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 100,
         moves: [ 'judgment', 'extremespeed', 'recover', 'hyperbeam' ],
         pokeball: 'cherishball'
+      },
+      {
+        generation: 8,
+        level: 80,
+        shiny: 1,
+        moves: [ 'healingwish', 'futuresight', 'recover', 'hyperbeam' ],
+        source: 'gen8bdsp'
+      },
+      {
+        generation: 8,
+        level: 75,
+        moves: [ 'recover', 'calmmind', 'judgment', 'hyperbeam' ],
+        pokeball: 'pokeball',
+        source: 'gen8legends'
       }
     ],
     eventOnly: true
@@ -12228,6 +12530,12 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'hurricane', 'agility', 'icywind', 'heatwave' ]
+      },
+      {
+        generation: 8,
+        level: 70,
+        moves: [ 'extrasensory', 'crunch', 'hurricane', 'bleakwindstorm' ],
+        source: 'gen8legends'
       }
     ],
     eventOnly: true
@@ -12305,6 +12613,12 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'thunder', 'raindance', 'weatherball', 'sludgewave' ]
+      },
+      {
+        generation: 8,
+        level: 70,
+        moves: [ 'extrasensory', 'crunch', 'thunder', 'wildboltstorm' ],
+        source: 'gen8legends'
       }
     ],
     eventOnly: true
@@ -12524,6 +12838,12 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'sandtomb', 'rockslide', 'bulldoze', 'focusblast' ]
+      },
+      {
+        generation: 8,
+        level: 70,
+        moves: [ 'extrasensory', 'crunch', 'earthpower', 'sandsearstorm' ],
+        source: 'gen8legends'
       }
     ],
     eventOnly: true
@@ -13036,6 +13356,17 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
       }
     ]
   },
+  floetteeternal: {
+    eventData: [
+      {
+        generation: 9,
+        level: 72,
+        moves: [ 'lightofruin', 'energyball', 'gigadrain', 'synthesis' ],
+        source: 'gen9legends'
+      }
+    ],
+    eventOnly: true
+  },
   gogoat: { encounters: [ { generation: 6, level: 30 } ] },
   pancham: {
     learnset: { armthrust: [ '6S0' ], darkpulse: [ '6S0' ], stoneedge: [ '6S0' ] },
@@ -13281,6 +13612,12 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'ingrain', 'dazzlinggleam', 'moonblast', 'hornleech' ]
+      },
+      {
+        generation: 9,
+        level: 75,
+        moves: [ 'megahorn', 'moonblast', 'hornleech', 'geomancy' ],
+        source: 'gen9legends'
       }
     ],
     eventOnly: true
@@ -13336,6 +13673,12 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         level: 70,
         shiny: 1,
         moves: [ 'taunt', 'oblivionwing', 'dragonrush', 'suckerpunch' ]
+      },
+      {
+        generation: 9,
+        level: 75,
+        moves: [ 'hurricane', 'darkpulse', 'psychic', 'oblivionwing' ],
+        source: 'gen9legends'
       }
     ],
     eventOnly: true
@@ -13476,6 +13819,12 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         shiny: 1,
         isHidden: true,
         moves: [ 'thousandarrows', 'landswrath', 'dragonpulse', 'bind' ]
+      },
+      {
+        generation: 9,
+        level: 84,
+        moves: [ 'coreenforcer', 'thousandarrows', 'thousandwaves', 'landswrath' ],
+        source: 'gen9legends'
       }
     ],
     eventOnly: true
@@ -15261,19 +15610,14 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
     eventOnly: true
   },
   enamorus: {
-    learnset: {
-      drainingkiss: [ '9S1' ],
-      extrasensory: [ '9S1', '8S0' ],
-      moonblast: [ '9S1', '8S0' ],
-      springtidestorm: [ '8S0' ]
-    },
+    learnset: { drainingkiss: [ '9S1' ], extrasensory: [ '9S1' ], moonblast: [ '9S1' ] },
     eventData: [
       {
         generation: 8,
         level: 70,
         perfectIVs: 3,
-        moves: [ 'extrasensory', 'moonblast', 'springtidestorm' ],
-        pokeball: 'strangeball'
+        moves: [ 'extrasensory', 'crunch', 'moonblast', 'springtidestorm' ],
+        source: 'gen8legends'
       },
       {
         generation: 9,
@@ -15852,9 +16196,12 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
   },
   tinglu: {
     learnset: {
+      heavyslam: [ '9S1' ],
       rockslide: [ '9S0' ],
       ruination: [ '9S0' ],
-      stompingtantrum: [ '9S0' ],
+      snarl: [ '9S1' ],
+      stompingtantrum: [ '9S0', '9S1' ],
+      stoneedge: [ '9S1' ],
       throatchop: [ '9S0' ]
     },
     eventData: [
@@ -15862,15 +16209,26 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         generation: 9,
         level: 60,
         moves: [ 'stompingtantrum', 'ruination', 'throatchop', 'rockslide' ]
+      },
+      {
+        generation: 9,
+        level: 75,
+        shiny: true,
+        nature: 'Impish',
+        ivs: { hp: 31, atk: 31, def: 31, spa: 20, spd: 31, spe: 31 },
+        moves: [ 'stompingtantrum', 'stoneedge', 'snarl', 'heavyslam' ],
+        pokeball: 'cherishball'
       }
     ],
     eventOnly: true
   },
   chienpao: {
     learnset: {
-      iciclecrash: [ '9S0' ],
+      crunch: [ '9S1' ],
+      iceshard: [ '9S1' ],
+      iciclecrash: [ '9S0', '9S1' ],
       ruination: [ '9S0' ],
-      sacredsword: [ '9S0' ],
+      sacredsword: [ '9S0', '9S1' ],
       suckerpunch: [ '9S0' ]
     },
     eventData: [
@@ -15878,33 +16236,72 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         generation: 9,
         level: 60,
         moves: [ 'iciclecrash', 'ruination', 'suckerpunch', 'sacredsword' ]
+      },
+      {
+        generation: 9,
+        level: 75,
+        shiny: true,
+        nature: 'Adamant',
+        ivs: { hp: 31, atk: 31, def: 31, spa: 20, spd: 31, spe: 31 },
+        moves: [ 'iciclecrash', 'crunch', 'sacredsword', 'iceshard' ],
+        pokeball: 'cherishball'
       }
     ],
     eventOnly: true
   },
   wochien: {
     learnset: {
+      darkpulse: [ '9S1' ],
       foulplay: [ '9S0' ],
-      gigadrain: [ '9S0' ],
+      gigadrain: [ '9S0', '9S1' ],
+      pollenpuff: [ '9S1' ],
       powerwhip: [ '9S0' ],
-      ruination: [ '9S0' ]
+      ruination: [ '9S0' ],
+      snarl: [ '9S1' ]
     },
     eventData: [
       {
         generation: 9,
         level: 60,
         moves: [ 'gigadrain', 'ruination', 'foulplay', 'powerwhip' ]
+      },
+      {
+        generation: 9,
+        level: 75,
+        shiny: true,
+        nature: 'Calm',
+        ivs: { hp: 31, atk: 20, def: 31, spa: 31, spd: 31, spe: 31 },
+        moves: [ 'gigadrain', 'darkpulse', 'snarl', 'pollenpuff' ],
+        pokeball: 'cherishball'
       }
     ],
     eventOnly: true
   },
   chiyu: {
-    learnset: { bounce: [ '9S0' ], lavaplume: [ '9S0' ], ruination: [ '9S0' ], swagger: [ '9S0' ] },
+    learnset: {
+      bounce: [ '9S0' ],
+      darkpulse: [ '9S1' ],
+      flamethrower: [ '9S1' ],
+      heatwave: [ '9S1' ],
+      lavaplume: [ '9S0' ],
+      ruination: [ '9S0' ],
+      snarl: [ '9S1' ],
+      swagger: [ '9S0' ]
+    },
     eventData: [
       {
         generation: 9,
         level: 60,
         moves: [ 'lavaplume', 'ruination', 'bounce', 'swagger' ]
+      },
+      {
+        generation: 9,
+        level: 75,
+        shiny: true,
+        nature: 'Modest',
+        ivs: { hp: 31, atk: 20, def: 31, spa: 31, spd: 31, spe: 31 },
+        moves: [ 'heatwave', 'darkpulse', 'snarl', 'flamethrower' ],
+        pokeball: 'cherishball'
       }
     ],
     eventOnly: true
@@ -15912,10 +16309,12 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
   koraidon: {
     learnset: {
       bulkup: [ '9S1' ],
-      collisioncourse: [ '9S0', '9S1' ],
+      closecombat: [ '9S2' ],
+      collisioncourse: [ '9S0', '9S1', '9S2' ],
       endure: [ '9S0' ],
       flamethrower: [ '9S0', '9S1' ],
-      gigaimpact: [ '9S1' ],
+      flareblitz: [ '9S2' ],
+      gigaimpact: [ '9S1', '9S2' ],
       terablast: [ '9S0' ]
     },
     eventData: [
@@ -15933,6 +16332,15 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         nature: 'Adamant',
         ivs: { hp: 25, atk: 31, def: 25, spa: 31, spd: 25, spe: 31 },
         moves: [ 'gigaimpact', 'bulkup', 'collisioncourse', 'flamethrower' ]
+      },
+      {
+        generation: 9,
+        level: 100,
+        shiny: true,
+        nature: 'Adamant',
+        ivs: { hp: 31, atk: 31, def: 31, spa: 20, spd: 31, spe: 31 },
+        moves: [ 'collisioncourse', 'closecombat', 'flareblitz', 'gigaimpact' ],
+        pokeball: 'cherishball'
       }
     ],
     eventOnly: true
@@ -15940,11 +16348,13 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
   miraidon: {
     learnset: {
       charge: [ '9S1' ],
-      electrodrift: [ '9S0', '9S1' ],
+      electrodrift: [ '9S0', '9S1', '9S2' ],
       endure: [ '9S0' ],
-      hyperbeam: [ '9S1' ],
+      hyperbeam: [ '9S1', '9S2' ],
+      overheat: [ '9S2' ],
       powergem: [ '9S0', '9S1' ],
-      terablast: [ '9S0' ]
+      terablast: [ '9S0' ],
+      thunder: [ '9S2' ]
     },
     eventData: [
       {
@@ -15961,6 +16371,15 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         nature: 'Modest',
         ivs: { hp: 25, atk: 31, def: 25, spa: 31, spd: 25, spe: 31 },
         moves: [ 'hyperbeam', 'charge', 'electrodrift', 'powergem' ]
+      },
+      {
+        generation: 9,
+        level: 100,
+        shiny: true,
+        nature: 'Modest',
+        ivs: { hp: 31, atk: 20, def: 31, spa: 31, spd: 31, spe: 31 },
+        moves: [ 'electrodrift', 'thunder', 'overheat', 'hyperbeam' ],
+        pokeball: 'cherishball'
       }
     ],
     eventOnly: true
@@ -15972,6 +16391,22 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         generation: 9,
         level: 5,
         moves: [ 'ember', 'astonish', 'terablast', 'celebrate' ],
+        pokeball: 'cherishball'
+      }
+    ]
+  },
+  toedscool: {
+    learnset: {
+      celebrate: [ '9S0' ],
+      gigadrain: [ '9S0' ],
+      magicalleaf: [ '9S0' ],
+      spikes: [ '9S0' ]
+    },
+    eventData: [
+      {
+        generation: 9,
+        level: 50,
+        moves: [ 'celebrate', 'gigadrain', 'magicalleaf', 'spikes' ],
         pokeball: 'cherishball'
       }
     ]

@@ -233,7 +233,12 @@ export class LogFormatter {
         if (Text[id][type].charAt(1) === '.') type = Text[id][type].slice(2) as ID;
         if (Text[id][type].charAt(0) === '#') id = Text[id][type].slice(1) as ID;
         if (!Text[id][type]) return '';
-        return `${Text[id][type]}\n`;
+        let template = Text[id][type];
+        for (let i = 8; i >= this.gen; i--) {
+          const curTemplate = Text[id][`${type}Gen${i}`];
+          if (curTemplate) template = curTemplate;
+        }
+        return `${template}\n`;
       }
     }
     if (!Text._[type]) return '';
@@ -673,7 +678,7 @@ class Handler implements Protocol.Handler<string> {
       return line1 + template;
     }
     if (kwArgs.from) {
-      line1 = this.parser.maybeAbility(kwArgs.from, pokemon) + line1;
+      if (!oldAbility) line1 = this.parser.maybeAbility(kwArgs.from, pokemon) + line1;
       const template = this.parser.template('changeAbility', kwArgs.from);
       return (line1 + template
         .replace('[POKEMON]', this.parser.pokemon(pokemon))
@@ -772,7 +777,7 @@ class Handler implements Protocol.Handler<string> {
     let template = this.parser.template('end', item, 'NODEFAULT');
     if (!template) {
       template =
-      this.parser.template('activateItem').replace('[ITEM]', this.parser.effect(item));
+        this.parser.template('activateItem').replace('[ITEM]', this.parser.effect(item));
     }
     return (line1 + template
       .replace('[POKEMON]', this.parser.pokemon(pokemon))
@@ -850,7 +855,7 @@ class Handler implements Protocol.Handler<string> {
     let template = this.parser.template('start', effect, 'NODEFAULT');
     if (!template) {
       template =
-      this.parser.template('start').replace('[EFFECT]', this.parser.effect(effect));
+        this.parser.template('start').replace('[EFFECT]', this.parser.effect(effect));
     }
     return (line1 + template
       .replace('[POKEMON]', this.parser.pokemon(pokemon))

@@ -334,7 +334,6 @@
       "flags": {"notrace": 1},
       "desc": "On switch-in, this Pokemon copies a random opposing Pokemon's Ability. Abilities that cannot be copied are Forecast, Multitype, and Trace. If no opposing Pokemon has an Ability that can be copied, this Ability will activate as soon as one does."
     },
-    "unburden": {"inherit": true, "condition": {}},
     "vitalspirit": {"inherit": true},
     "wonderguard": {
       "inherit": true,
@@ -674,13 +673,7 @@
     },
     "slowstart": {
       "inherit": true,
-      "condition": {
-        "duration": 5,
-        "onResidualOrder": 28,
-        "onResidualSubOrder": 2,
-        "onModifyAtkPriority": 5,
-        "onModifySpAPriority": 5
-      },
+      "onModifySpAPriority": 5,
       "desc": "On switch-in, this Pokemon's Attack and Speed are halved for 5 turns. During the effect, if this Pokemon uses a generic Z-Move based on a special move, its Special Attack is halved during damage calculation."
     },
     "soundproof": {
@@ -1513,12 +1506,8 @@
       "shortDesc": "If this Pokemon is hit, it lowers the Speed of all other Pokemon on the field 1 stage."
     },
     "cudchew": {
-      "condition": {
-        "noCopy": true,
-        "duration": 2,
-        "onResidualOrder": 28,
-        "onResidualSubOrder": 2
-      },
+      "onResidualOrder": 28,
+      "onResidualSubOrder": 2,
       "flags": {},
       "name": "Cud Chew",
       "num": 291,
@@ -3052,12 +3041,9 @@
       "shortDesc": "This Pokemon's multi-hit attacks always hit the maximum number of times."
     },
     "slowstart": {
-      "condition": {
-        "duration": 5,
-        "onResidualOrder": 28,
-        "onResidualSubOrder": 2,
-        "onModifyAtkPriority": 5
-      },
+      "onResidualOrder": 28,
+      "onResidualSubOrder": 2,
+      "onModifyAtkPriority": 5,
       "flags": {},
       "name": "Slow Start",
       "num": 112,

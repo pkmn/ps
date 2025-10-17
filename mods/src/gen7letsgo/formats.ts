@@ -7,7 +7,7 @@ export const Formats = [
     team: 'random',
     searchShow: false,
     bestOfDefault: true,
-    ruleset: [ 'Obtainable', 'Allow AVs', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod' ]
+    ruleset: [ 'Obtainable', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod' ]
   },
   {
     name: "[Gen 7 Let's Go] OU",

@@ -257,6 +257,7 @@ export interface SpeciesData {
   tags?: SpeciesTag[];
   condition?: Partial<Condition>;
   canHatch?: boolean;
+  isCosmeticForme?: boolean;
   baseForme?: string;
   baseSpecies?: string;
   evoLevel?: number;
@@ -288,6 +289,14 @@ export interface SpeciesData {
   inherit?: boolean;
 }
 
+export interface CosmeticFormeData {
+  isCosmeticForme: boolean;
+  name: string;
+  baseSpecies: string;
+  forme: string;
+  color: string;
+}
+
 export type MoveSource = string;
 
 export interface EventInfoData {
@@ -306,6 +315,8 @@ export interface EventInfoData {
   pokeball?: string;
   from?: string;
   japan?: boolean;
+  emeraldEventEgg?: boolean;
+  source?: string;
 }
 
 export interface LearnsetData {

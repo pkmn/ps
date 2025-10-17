@@ -1368,6 +1368,16 @@
       "isNonstandard": "Past",
       "shortDesc": "If held by a Banette, this item allows it to Mega Evolve in battle."
     },
+    "barbaracite": {
+      "name": "Barbaracite",
+      "megaStone": "Barbaracle-Mega",
+      "megaEvolves": "Barbaracle",
+      "itemUser": ["Barbaracle"],
+      "num": 2581,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Barbaracle, this item allows it to Mega Evolve in battle."
+    },
     "beastball": {
       "name": "Beast Ball",
       "num": 851,
@@ -1585,6 +1595,16 @@
       "gen": 5,
       "shortDesc": "Raises holder's Attack by 1 if hit by an Electric-type attack. Single use."
     },
+    "chandelurite": {
+      "name": "Chandelurite",
+      "megaStone": "Chandelure-Mega",
+      "megaEvolves": "Chandelure",
+      "itemUser": ["Chandelure"],
+      "num": 2574,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Chandelure, this item allows it to Mega Evolve in battle."
+    },
     "charcoal": {
       "name": "Charcoal",
       "fling": {"basePower": 30},
@@ -1636,6 +1656,16 @@
       "isPokeball": true,
       "isNonstandard": "Unobtainable",
       "shortDesc": "A rare Poke Ball that has been crafted to commemorate an occasion."
+    },
+    "chesnaughtite": {
+      "name": "Chesnaughtite",
+      "megaStone": "Chesnaught-Mega",
+      "megaEvolves": "Chesnaught",
+      "itemUser": ["Chesnaught"],
+      "num": 2575,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Chesnaught, this item allows it to Mega Evolve in battle."
     },
     "chestoberry": {
       "name": "Chesto Berry",
@@ -1719,6 +1749,16 @@
       "num": 1882,
       "gen": 9,
       "shortDesc": "Prevents other Pokemon from lowering the holder's stat stages."
+    },
+    "clefablite": {
+      "name": "Clefablite",
+      "megaStone": "Clefable-Mega",
+      "megaEvolves": "Clefable",
+      "itemUser": ["Clefable"],
+      "num": 2559,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Clefable, this item allows it to Mega Evolve in battle."
     },
     "cloversweet": {
       "name": "Clover Sweet",
@@ -1873,6 +1913,16 @@
       "desc": "If held by a Clamperl, its Sp. Atk is doubled. Evolves Clamperl into Huntail when traded.",
       "shortDesc": "If held by a Clamperl, its Sp. Atk is doubled."
     },
+    "delphoxite": {
+      "name": "Delphoxite",
+      "megaStone": "Delphox-Mega",
+      "megaEvolves": "Delphox",
+      "itemUser": ["Delphox"],
+      "num": 2576,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Delphox, this item allows it to Mega Evolve in battle."
+    },
     "destinyknot": {
       "name": "Destiny Knot",
       "fling": {"basePower": 10},
@@ -1925,6 +1975,16 @@
       "gen": 4,
       "shortDesc": "Holder's Dragon-type attacks have 1.2x power. Judgment is Dragon type."
     },
+    "dragalgite": {
+      "name": "Dragalgite",
+      "megaStone": "Dragalge-Mega",
+      "megaEvolves": "Dragalge",
+      "itemUser": ["Dragalge"],
+      "num": 2582,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Dragalge, this item allows it to Mega Evolve in battle."
+    },
     "dragonfang": {
       "name": "Dragon Fang",
       "fling": {"basePower": 70},
@@ -1958,6 +2018,16 @@
       "gen": 2,
       "shortDesc": "Evolves Seadra into Kingdra when traded."
     },
+    "dragoninite": {
+      "name": "Dragoninite",
+      "megaStone": "Dragonite-Mega",
+      "megaEvolves": "Dragonite",
+      "itemUser": ["Dragonite"],
+      "num": 2562,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Dragonite, this item allows it to Mega Evolve in battle."
+    },
     "dragoniumz": {
       "name": "Dragonium Z",
       "onPlate": "Dragon",
@@ -1969,6 +2039,16 @@
       "gen": 7,
       "isNonstandard": "Past",
       "shortDesc": "If holder has a Dragon move, this item allows it to use a Dragon Z-Move."
+    },
+    "drampanite": {
+      "name": "Drampanite",
+      "megaStone": "Drampa-Mega",
+      "megaEvolves": "Drampa",
+      "itemUser": ["Drampa"],
+      "num": 2585,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Drampa, this item allows it to Mega Evolve in battle."
     },
     "dreadplate": {
       "name": "Dread Plate",
@@ -2026,6 +2106,16 @@
       "num": 305,
       "gen": 4,
       "shortDesc": "Holder's Ground-type attacks have 1.2x power. Judgment is Ground type."
+    },
+    "eelektrossite": {
+      "name": "Eelektrossite",
+      "megaStone": "Eelektross-Mega",
+      "megaEvolves": "Eelektross",
+      "itemUser": ["Eelektross"],
+      "num": 2573,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by an Eelektross, this item allows it to Mega Evolve in battle."
     },
     "eeviumz": {
       "name": "Eevium Z",
@@ -2101,6 +2191,16 @@
       "isNonstandard": "Past",
       "shortDesc": "If holder has an Electric move, this item allows it to use an Electric Z-Move."
     },
+    "emboarite": {
+      "name": "Emboarite",
+      "megaStone": "Emboar-Mega",
+      "megaEvolves": "Emboar",
+      "itemUser": ["Emboar"],
+      "num": 2569,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by an Emboar, this item allows it to Mega Evolve in battle."
+    },
     "enigmaberry": {
       "name": "Enigma Berry",
       "isBerry": true,
@@ -2117,6 +2217,16 @@
       "num": 538,
       "gen": 5,
       "shortDesc": "If holder's species can evolve, its Defense and Sp. Def are 1.5x."
+    },
+    "excadrite": {
+      "name": "Excadrite",
+      "megaStone": "Excadrill-Mega",
+      "megaEvolves": "Excadrill",
+      "itemUser": ["Excadrill"],
+      "num": 2570,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by an Excadrill, this item allows it to Mega Evolve in battle."
     },
     "expertbelt": {
       "name": "Expert Belt",
@@ -2163,12 +2273,32 @@
       "isNonstandard": "Past",
       "shortDesc": "Holder's Multi-Attack is Fairy type."
     },
+    "falinksite": {
+      "name": "Falinksite",
+      "megaStone": "Falinks-Mega",
+      "megaEvolves": "Falinks",
+      "itemUser": ["Falinks"],
+      "num": 2586,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Falinks, this item allows it to Mega Evolve in battle."
+    },
     "fastball": {
       "name": "Fast Ball",
       "num": 492,
       "gen": 2,
       "isPokeball": true,
       "shortDesc": "A Poke Ball that makes it easier to catch Pokemon which are quick to run away."
+    },
+    "feraligite": {
+      "name": "Feraligite",
+      "megaStone": "Feraligatr-Mega",
+      "megaEvolves": "Feraligatr",
+      "itemUser": ["Feraligatr"],
+      "num": 2564,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Feraligatr, this item allows it to Mega Evolve in battle."
     },
     "fightinggem": {
       "name": "Fighting Gem",
@@ -2280,6 +2410,16 @@
       "gen": 5,
       "shortDesc": "Holder's weight is halved."
     },
+    "floettite": {
+      "name": "Floettite",
+      "megaStone": "Floette-Mega",
+      "megaEvolves": "Floette-Eternal",
+      "itemUser": ["Floette-Eternal"],
+      "num": 2579,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by an Eternal Flower Floette, this item allows it to Mega Evolve in battle."
+    },
     "flowersweet": {
       "name": "Flower Sweet",
       "fling": {"basePower": 0},
@@ -2371,6 +2511,16 @@
       "gen": 2,
       "isPokeball": true,
       "shortDesc": "A Poke Ball that makes caught Pokemon more friendly."
+    },
+    "froslassite": {
+      "name": "Froslassite",
+      "megaStone": "Froslass-Mega",
+      "megaEvolves": "Froslass",
+      "itemUser": ["Froslass"],
+      "num": 2566,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Froslass, this item allows it to Mega Evolve in battle."
     },
     "fullincense": {
       "name": "Full Incense",
@@ -2536,6 +2686,16 @@
       "isPokeball": true,
       "shortDesc": "A high-performance Ball that provides a higher catch rate than a Poke Ball."
     },
+    "greninjite": {
+      "name": "Greninjite",
+      "megaStone": "Greninja-Mega",
+      "megaEvolves": "Greninja",
+      "itemUser": ["Greninja"],
+      "num": 2577,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Greninja, this item allows it to Mega Evolve in battle."
+    },
     "grepaberry": {
       "name": "Grepa Berry",
       "isBerry": true,
@@ -2625,6 +2785,16 @@
       "num": 238,
       "gen": 2,
       "shortDesc": "Holder's Rock-type attacks have 1.2x power."
+    },
+    "hawluchanite": {
+      "name": "Hawluchanite",
+      "megaStone": "Hawlucha-Mega",
+      "megaEvolves": "Hawlucha",
+      "itemUser": ["Hawlucha"],
+      "num": 2583,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Hawlucha, this item allows it to Mega Evolve in battle."
     },
     "healball": {
       "name": "Heal Ball",
@@ -3184,6 +3354,16 @@
       "isNonstandard": "Past",
       "shortDesc": "Cannot be given to or taken from a Pokemon, except by Covet/Knock Off/Thief."
     },
+    "malamarite": {
+      "name": "Malamarite",
+      "megaStone": "Malamar-Mega",
+      "megaEvolves": "Malamar",
+      "itemUser": ["Malamar"],
+      "num": 2580,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Malamar, this item allows it to Mega Evolve in battle."
+    },
     "maliciousarmor": {
       "name": "Malicious Armor",
       "fling": {"basePower": 30},
@@ -3262,6 +3442,16 @@
       "gen": 6,
       "isNonstandard": "Past",
       "shortDesc": "If held by a Medicham, this item allows it to Mega Evolve in battle."
+    },
+    "meganiumite": {
+      "name": "Meganiumite",
+      "megaStone": "Meganium-Mega",
+      "megaEvolves": "Meganium",
+      "itemUser": ["Meganium"],
+      "num": 2563,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Meganium, this item allows it to Mega Evolve in battle."
     },
     "mentalherb": {
       "name": "Mental Herb",
@@ -3785,6 +3975,13 @@
       "isPokeball": true,
       "shortDesc": "A rare Poke Ball that has been crafted to commemorate an event."
     },
+    "prettyfeather": {
+      "name": "Pretty Feather",
+      "fling": {"basePower": 20},
+      "num": 571,
+      "gen": 5,
+      "shortDesc": "Though this feather is beautiful, it's just a regular feather and has no effect."
+    },
     "primariumz": {
       "name": "Primarium Z",
       "onTakeItem": false,
@@ -3864,6 +4061,16 @@
       "num": 1884,
       "gen": 9,
       "shortDesc": "Holder's punch-based attacks have 1.1x power and do not make contact."
+    },
+    "pyroarite": {
+      "name": "Pyroarite",
+      "megaStone": "Pyroar-Mega",
+      "megaEvolves": "Pyroar",
+      "itemUser": ["Pyroar"],
+      "num": 2578,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Pyroar, this item allows it to Mega Evolve in battle."
     },
     "qualotberry": {
       "name": "Qualot Berry",
@@ -4185,12 +4392,32 @@
       "isNonstandard": "Past",
       "shortDesc": "If held by a Scizor, this item allows it to Mega Evolve in battle."
     },
+    "scolipite": {
+      "name": "Scolipite",
+      "megaStone": "Scolipede-Mega",
+      "megaEvolves": "Scolipede",
+      "itemUser": ["Scolipede"],
+      "num": 2571,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Scolipede, this item allows it to Mega Evolve in battle."
+    },
     "scopelens": {
       "name": "Scope Lens",
       "fling": {"basePower": 30},
       "num": 232,
       "gen": 2,
       "shortDesc": "Holder's critical hit ratio is raised by 1 stage."
+    },
+    "scraftinite": {
+      "name": "Scraftinite",
+      "megaStone": "Scrafty-Mega",
+      "megaEvolves": "Scrafty",
+      "itemUser": ["Scrafty"],
+      "num": 2572,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Scrafty, this item allows it to Mega Evolve in battle."
     },
     "seaincense": {
       "name": "Sea Incense",
@@ -4223,6 +4450,7 @@
       "name": "Shed Shell",
       "fling": {"basePower": 10},
       "onTrapPokemonPriority": -10,
+      "onMaybeTrapPokemonPriority": -10,
       "num": 295,
       "gen": 4,
       "shortDesc": "Holder cannot be prevented from choosing to switch out by any effect."
@@ -4284,6 +4512,16 @@
       "num": 158,
       "gen": 3,
       "shortDesc": "Restores 1/4 max HP when at 1/2 max HP or less. Single use."
+    },
+    "skarmorite": {
+      "name": "Skarmorite",
+      "megaStone": "Skarmory-Mega",
+      "megaEvolves": "Skarmory",
+      "itemUser": ["Skarmory"],
+      "num": 2565,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Skarmory, this item allows it to Mega Evolve in battle."
     },
     "skullfossil": {
       "name": "Skull Fossil",
@@ -4416,6 +4654,16 @@
       "num": 207,
       "gen": 3,
       "shortDesc": "Raises a random stat by 2 when at 1/4 max HP or less (not acc/eva). Single use."
+    },
+    "starminite": {
+      "name": "Starminite",
+      "megaStone": "Starmie-Mega",
+      "megaEvolves": "Starmie",
+      "itemUser": ["Starmie"],
+      "num": 2561,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Starmie, this item allows it to Mega Evolve in battle."
     },
     "starsweet": {
       "name": "Star Sweet",
@@ -5499,6 +5747,16 @@
       "isNonstandard": "Past",
       "shortDesc": "If held by a Venusaur, this item allows it to Mega Evolve in battle."
     },
+    "victreebelite": {
+      "name": "Victreebelite",
+      "megaStone": "Victreebel-Mega",
+      "megaEvolves": "Victreebel",
+      "itemUser": ["Victreebel"],
+      "num": 2560,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Victreebel, this item allows it to Mega Evolve in battle."
+    },
     "wacanberry": {
       "name": "Wacan Berry",
       "isBerry": true,
@@ -5657,6 +5915,16 @@
       "num": 276,
       "gen": 4,
       "shortDesc": "The accuracy of attacks by the holder is 1.2x if it moves after its target."
+    },
+    "zygardite": {
+      "name": "Zygardite",
+      "megaStone": "Zygarde-Mega",
+      "megaEvolves": "Zygarde-Complete",
+      "itemUser": ["Zygarde-Complete"],
+      "num": 2584,
+      "gen": 9,
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Zygarde in Complete Forme, this item allows it to Mega Evolve in battle."
     },
     "berserkgene": {
       "name": "Berserk Gene",
