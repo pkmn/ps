@@ -190,7 +190,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		inherit: true,
 		onStart(pokemon) {
 			const target = pokemon.side.randomFoe();
-			if (target?.item && !target.itemState.knockedOff) {
+			if (target?.item && !target.itemKnockedOff) {
 				this.add('-item', '', target.getItem().name, '[from] ability: Frisk', `[of] ${pokemon}`);
 			}
 		},
@@ -534,9 +534,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			if (bannedAbilities.includes(target.ability)) {
 				return;
 			}
-			if (pokemon.setAbility(ability)) {
-				this.add('-ability', pokemon, ability, '[from] ability: Trace', `[of] ${target}`);
-			}
+			pokemon.setAbility(ability, target);
 		},
 		flags: { notrace: 1 },
 	},
@@ -544,7 +542,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		inherit: true,
 		condition: {
 			onModifySpe(spe, pokemon) {
-				if ((!pokemon.item || pokemon.itemState.knockedOff) && !pokemon.ignoringAbility()) {
+				if ((!pokemon.item || pokemon.itemKnockedOff) && !pokemon.ignoringAbility()) {
 					return this.chainModify(2);
 				}
 			},

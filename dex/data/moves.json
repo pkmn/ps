@@ -1108,6 +1108,10 @@
       "inherit": true,
       "desc": "The user's type changes to match the original type of one of its known moves besides Curse, at random, but not either of its current types. Fails if the user cannot change its type, or if this move would only be able to select one of the user's current types."
     },
+    "conversion2": {
+      "inherit": true,
+      "desc": "The user's type changes to match a type that resists or is immune to the type of the last move used against the user, if it was successful against the user, but not either of its current types. The determined type of the move is used rather than the original type, but considers Struggle as Normal. Fails if the last move used against the user was not successful, or if this move would only be able to select one of the user's current types."
+    },
     "counter": {
       "inherit": true,
       "condition": {
@@ -1444,10 +1448,6 @@
       "inherit": true,
       "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits."
     },
-    "conversion2": {
-      "inherit": true,
-      "desc": "The user's type changes to match a type that resists or is immune to the type of the last move used against the user, if it was successful against the user, but not either of its current types. The determined type of the move is used rather than the original type, but considers Struggle as Normal. Fails if the last move used against the user was not successful, or if this move would only be able to select one of the user's current types."
-    },
     "detect": {
       "inherit": true,
       "desc": "The user is protected from most attacks made by other Pokemon during this turn. This move has an X/65536 chance of being successful, where X starts at 65535 and halves, rounded down, each time this move is successfully used. After the fourth successful use in a row, X drops to 118 and continues with seemingly random values from 0-65535 on subsequent successful uses. X resets to 65535 if this move fails or if the user's last move used is not Detect, Endure, or Protect. Fails if the user moves last this turn."
@@ -1754,6 +1754,11 @@
       "inherit": true,
       "flags": {"metronome": 1},
       "desc": "The user's type changes to match the original type of one of its known moves besides this move and Curse, at random, but not either of its current types. Fails if the user cannot change its type, or if this move would only be able to select one of the user's current types."
+    },
+    "conversion2": {
+      "inherit": true,
+      "desc": "The user's type changes to match a type that resists or is immune to the type of the last move used against the user, if it was successful against the user, but not either of its current types. The determined type of the move is used rather than the original type. Fails if the last move used against the user was not successful, if the user has the Multitype Ability, or if this move would only be able to select one of the user's current types.",
+      "shortDesc": "User's type changes to resist last move against it."
     },
     "copycat": {
       "inherit": true,
@@ -2465,11 +2470,6 @@
     "cometpunch": {
       "inherit": true,
       "desc": "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the target has a Focus Sash and had full HP when this move started, it will not be knocked out regardless of the number of hits."
-    },
-    "conversion2": {
-      "inherit": true,
-      "desc": "The user's type changes to match a type that resists or is immune to the type of the last move used against the user, if it was successful against the user, but not either of its current types. The determined type of the move is used rather than the original type. Fails if the last move used against the user was not successful, if the user has the Multitype Ability, or if this move would only be able to select one of the user's current types.",
-      "shortDesc": "User's type changes to resist last move against it."
     },
     "counter": {
       "inherit": true,

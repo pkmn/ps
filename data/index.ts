@@ -283,6 +283,7 @@ export class Specie implements DexSpecies {
   readonly evoType?: EvoType;
   readonly condition?: Partial<Condition>;
   readonly canHatch!: boolean;
+  readonly isCosmeticForme!: boolean;
 
   /* private */ readonly dex: Dex;
 

@@ -691,6 +691,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
   readonly nfe: boolean;
   readonly eggGroups: T.EggGroup[];
   readonly canHatch: boolean;
+  readonly isCosmeticForme: boolean;
   readonly weightkg: number;
   readonly weighthg: number;
   readonly tags: T.SpeciesTag[];
@@ -748,6 +749,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     this.nfe = !!this.evos?.length;
     this.eggGroups = data.eggGroups || [];
     this.canHatch = data.canHatch || false;
+    this.isCosmeticForme = !!data.isCosmeticForme;
     this.genderRatio = data.genderRatio || (this.gender === 'M' ? {M: 1, F: 0}
       : this.gender === 'F' ? {M: 0, F: 1}
       : this.gender === 'N' ? {M: 0, F: 0}

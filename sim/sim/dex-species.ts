@@ -33,8 +33,17 @@ export interface SpeciesData extends Partial<Species> {
 	eggGroups: string[];
 	weightkg: number;
 }
+export interface CosmeticFormeData {
+	isCosmeticForme: boolean;
+	name: string;
+	baseSpecies: string;
+	forme: string;
+	color: string;
+}
 
-export type ModdedSpeciesData = SpeciesData | Partial<Omit<SpeciesData, 'name'>> & {inherit: true};
+export type ModdedSpeciesData = SpeciesData | CosmeticFormeData |
+	Partial<Omit<SpeciesData, 'name'>> & { inherit: true } |
+	Partial<Omit<CosmeticFormeData, 'isCosmeticForme'>> & { inherit: true };
 
 export interface SpeciesFormatsData {
 	comboMoves?: readonly string[];
@@ -69,7 +78,7 @@ export interface PokemonGoData {
 	LGPERestrictiveMoves?: {[moveid: string]: number | null};
 }
 
-export interface SpeciesDataTable {[speciesid: IDEntry]: SpeciesData}
+export interface SpeciesDataTable { [speciesid: IDEntry]: SpeciesData | CosmeticFormeData }
 export interface ModdedSpeciesDataTable {[speciesid: IDEntry]: ModdedSpeciesData}
 export interface SpeciesFormatsDataTable {[speciesid: IDEntry]: SpeciesFormatsData}
 export interface ModdedSpeciesFormatsDataTable {[speciesid: IDEntry]: ModdedSpeciesFormatsData}
@@ -200,6 +209,8 @@ export class Species extends BasicEffect implements Readonly<BasicEffect & Speci
 	readonly eggGroups: string[];
 	/** True if this species can hatch from an Egg. */
 	readonly canHatch: boolean;
+	/** True if this species is a purely cosmetic forme. */
+	readonly isCosmeticForme: boolean;
 	/**
 	 * Gender. M = always male, F = always female, N = always
 	 * genderless, '' = sometimes male sometimes female.
@@ -340,6 +351,7 @@ export class Species extends BasicEffect implements Readonly<BasicEffect & Speci
 		this.weighthg = this.weightkg * 10;
 		this.heightm = data.heightm || 0;
 		this.color = data.color || '';
+		this.isCosmeticForme = data.isCosmeticForme || undefined;
 		this.tags = data.tags || [];
 		this.unreleasedHidden = data.unreleasedHidden || false;
 		this.maleOnlyHidden = !!data.maleOnlyHidden;
@@ -457,6 +469,17 @@ export class DexSpecies {
 				species.abilities = {0: species.abilities['S']!};
 			} else {
 				species = this.get(alias);
+				if (this.dex.data.Pokedex?.[id]?.isCosmeticForme) {
+					const cosmeticForme = this.dex.data.Pokedex[id];
+					species = new Species({
+						...species,
+						...cosmeticForme,
+						name: species.baseSpecies + '-' + cosmeticForme.forme!, // Forme always exists on cosmetic forme entries
+						baseForme: "",
+						otherFormes: null,
+						cosmeticFormes: null,
+					});
+				}
 				if (species.cosmeticFormes) {
 					for (const forme of species.cosmeticFormes) {
 						if (toID(forme) === id) {
@@ -465,6 +488,7 @@ export class DexSpecies {
 								name: forme,
 								forme: forme.slice(species.name.length + 1),
 								baseForme: "",
+								isCosmeticForme: true,
 								baseSpecies: species.name,
 								otherFormes: null,
 								cosmeticFormes: null,
@@ -530,25 +554,24 @@ export class DexSpecies {
 			}
 			if (!species.tier && !species.doublesTier && !species.natDexTier && species.baseSpecies !== species.name) {
 				if (species.baseSpecies === 'Mimikyu') {
-					species.tier = this.dex.data.FormatsData[toID(species.baseSpecies)].tier || 'Illegal';
-					species.doublesTier = this.dex.data.FormatsData[toID(species.baseSpecies)].doublesTier || 'Illegal';
-					species.natDexTier = this.dex.data.FormatsData[toID(species.baseSpecies)].natDexTier || 'Illegal';
+					species.doublesTier = this.dex.data.FormatsData[toID(species.baseSpecies)].doublesTier || species.tier as any;
+					species.natDexTier = this.dex.data.FormatsData[toID(species.baseSpecies)].natDexTier || species.tier;
 				} else if (species.id.endsWith('totem')) {
 					species.tier = this.dex.data.FormatsData[species.id.slice(0, -5)].tier || 'Illegal';
-					species.doublesTier = this.dex.data.FormatsData[species.id.slice(0, -5)].doublesTier || 'Illegal';
-					species.natDexTier = this.dex.data.FormatsData[species.id.slice(0, -5)].natDexTier || 'Illegal';
+					species.doublesTier = this.dex.data.FormatsData[species.id.slice(0, -5)].doublesTier || species.tier as any;
+					species.natDexTier = this.dex.data.FormatsData[species.id.slice(0, -5)].natDexTier || species.tier;
 				} else if (species.battleOnly) {
-					species.tier = this.dex.data.FormatsData[toID(species.battleOnly)].tier || 'Illegal';
-					species.doublesTier = this.dex.data.FormatsData[toID(species.battleOnly)].doublesTier || 'Illegal';
-					species.natDexTier = this.dex.data.FormatsData[toID(species.battleOnly)].natDexTier || 'Illegal';
+					species.tier = this.dex.data.FormatsData[toID(species.battleOnly)]?.tier || 'Illegal';
+					species.doublesTier = this.dex.data.FormatsData[toID(species.battleOnly)]?.doublesTier || species.tier as any;
+					species.natDexTier = this.dex.data.FormatsData[toID(species.battleOnly)]?.natDexTier || species.tier;
 				} else {
 					const baseFormatsData = this.dex.data.FormatsData[toID(species.baseSpecies)];
 					if (!baseFormatsData) {
 						throw new Error(`${species.baseSpecies} has no formats-data entry`);
 					}
 					species.tier = baseFormatsData.tier || 'Illegal';
-					species.doublesTier = baseFormatsData.doublesTier || 'Illegal';
-					species.natDexTier = baseFormatsData.natDexTier || 'Illegal';
+					species.doublesTier = baseFormatsData.doublesTier || species.tier as any;
+					species.natDexTier = baseFormatsData.natDexTier || species.tier;
 				}
 			}
 			if (!species.tier) species.tier = 'Illegal';
@@ -564,7 +587,7 @@ export class DexSpecies {
 				const isLetsGo = (
 					(species.num <= 151 || ['Meltan', 'Melmetal'].includes(species.name)) &&
 					(!species.forme || ['Alola', 'Mega', 'Mega-X', 'Mega-Y', 'Starter'].includes(species.forme) &&
-					species.name !== 'Pikachu-Alola')
+					species.name !== 'Pikachu-Alola' && species.gen <= 7)
 				);
 				if (!isLetsGo) species.isNonstandard = 'Past';
 			}

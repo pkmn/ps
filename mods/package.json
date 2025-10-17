@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/mods",
-  "version": "0.9.38",
+  "version": "0.9.39",
   "description": "Support for non-standard mods to @pkmn/sim and @pkmn/dex",
   "repository": "github:pkmn/ps",
   "author": "Guangcong Luo <guangcongluo@gmail.com> (http://guangcongluo.com)",
@@ -54,10 +54,6 @@
       "require": "./build/gen7sm/index.js",
       "import": "./build/gen7sm/index.mjs"
     },
-    "./gen8bdsp": {
-      "require": "./build/gen8bdsp/index.js",
-      "import": "./build/gen8bdsp/index.mjs"
-    },
     "./gen8dlc1": {
       "require": "./build/gen8dlc1/index.js",
       "import": "./build/gen8dlc1/index.mjs"
@@ -100,9 +96,6 @@
       "gen7sm": [
         "./build/gen7sm/index.d.ts"
       ],
-      "gen8bdsp": [
-        "./build/gen8bdsp/index.d.ts"
-      ],
       "gen8dlc1": [
         "./build/gen8dlc1/index.d.ts"
       ],
@@ -121,11 +114,11 @@
     "build"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.9.38"
+    "@pkmn/dex-types": "^0.10.0"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.9.38",
-    "@pkmn/sim": "^0.9.38"
+    "@pkmn/dex": "^0.9.39",
+    "@pkmn/sim": "^0.10.0"
   },
   "scripts": {
     "lint": "eslint --cache src",

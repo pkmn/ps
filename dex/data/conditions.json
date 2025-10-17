@@ -25,7 +25,7 @@
     "partiallytrapped": {
       "name": "partiallytrapped",
       "duration": 2,
-      "onBeforeMovePriority": 0
+      "onBeforeMovePriority": 9
     },
     "fakepartiallytrapped": {"name": "fakepartiallytrapped", "duration": 2},
     "partialtrappinglock": {"name": "partialtrappinglock"},

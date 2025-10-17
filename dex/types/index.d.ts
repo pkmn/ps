@@ -257,6 +257,7 @@ export interface SpeciesData {
   tags?: SpeciesTag[];
   condition?: Partial<Condition>;
   canHatch?: boolean;
+  isCosmeticForme?: boolean;
   baseForme?: string;
   baseSpecies?: string;
   evoLevel?: number;
