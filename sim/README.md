@@ -10,7 +10,7 @@ An automatically generated extraction of just the simulator portion of
 The package aims to meet the following requirements:
 
 - stay as close to `sim/` from `smogon/pokemon-showdown` as possible
-- be usable as a typed and verisoned module that exports a
+- be usable as a typed and versioned module that exports a
   [`@pkmn/dex-types`](../dex/types)-compatible data layer
 - be usable in the browser environment
 
@@ -91,7 +91,7 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
   with explicit `import` and `export` statements the TypeScript compiler better able to detect type
   errors. `index.ts` files have been added to each of the generations in `data/`.
 - **only Gens 1 - 9 are supported, no other mods**. Generation 9 as the `base` mod is supported as
-  with Pokémon Showdown, but after that only the canconical `genN` mods are supported (no Stadium,
+  with Pokémon Showdown, but after that only the canonical `genN` mods are supported (no Stadium,
   Let's Go, or pet mods). However, the [`@pkmn/mods`](../mods) package provides the information
   required for additional formats, and support for Other Metagames can be achieved with the modified
   `Dex#mod` method. The `Dex#mod` and `Dex.forGen` methods will `throw` if an unsupported mod/gen is
@@ -111,7 +111,7 @@ Pokémon Showdown's `sim/` directory has been modified in the following ways:
 - **`Teams` methods delegate to [`@pkmn/sets`](../sets)**. In Pokémon Showdown this logic is copied
   between the client and server, but in `@pkmn` has been extracted into a module. However, the
   `Teams` methods have slightly divergent behavior to Pokémon Showdown's `Teams` because of this,
-  most notably around defaults and parsing past genrations (eg. Pokémon Showdown will simply leave
+  most notably around defaults and parsing past generations (eg. Pokémon Showdown will simply leave
   `evs` absent when not present whereas `@pkmn/sets` will default to 0 or 252 depending on the
   generation, but since the `Teams` API does not support a generation `evs` will always default to
   0). Using `@pkmn/sets` directly and with the generation provided is the recommended approach to
