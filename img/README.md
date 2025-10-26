@@ -34,7 +34,7 @@ const sprite = document.createElement('img');
 sprite.src = url;
 sprite.width = w;
 sprite.height = h;
-if (pixelated) img.style.imageRendering = 'pixelated';
+if (pixelated) sprite.style.imageRendering = 'pixelated';
 
 const icon = document.createElement('span');
 icon.style = Icons.getItem('Choice Band').style;
