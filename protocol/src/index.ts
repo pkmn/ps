@@ -933,6 +933,17 @@ export namespace Protocol {
      * Indicates that the game has started.
      */
     '|start|': readonly ['start'];
+    /**
+     * `|badge|PLAYER|TYPE|FORMAT|THRESHOLD-SEASON`
+     *
+     * Indicates that a player has a ladder season badge.
+     *
+     *   - `PLAYER` is `p1`, `p2`, `p3`, or `p4`
+     *   - `TYPE` is `gold`, `silver`, or `bronze`
+     *   - `FORMAT` is the format ID (e.g. `gen9ou`)
+     *   - `THRESHOLD-SEASON` is the badge threshold and season (e.g. `100-7`)
+     */
+    '|badge|': readonly ['badge', Player, 'gold' | 'silver' | 'bronze', ID, string];
   }
 
   export type BattleInitArgName = keyof BattleInitArgs;
@@ -1897,7 +1908,8 @@ export const Protocol = new class {
     '|tournament|end|': 1, '|tournament|scouting|': 1, '|tournament|autostart|': 1,
     '|tournament|autodq|': 1, '|player|': 1, '|teamsize|': 1, '|gametype|': 1, '|gen|': 1,
     '|tier|': 1, '|rated|': 1, '|seed|': 1, '|rule|': 1, '|teampreview|': 1, '|custom|': 1,
-    '|clearpoke|': 1, '|poke|': 1, '|start|': 1, '|done|': 1, '|request|': 1, '|inactive|': 1,
+    '|clearpoke|': 1, '|poke|': 1, '|start|': 1, '|badge|': 1, '|done|': 1, '|request|': 1,
+    '|inactive|': 1,
     '|inactiveoff|': 1, '|upkeep|': 1, '|turn|': 1, '|win|': 1, '|tie|': 1, '|move|': 1,
     '|switch|': 1, '|drag|': 1, '|detailschange|': 1, '|replace|': 1, '|swap|': 1, '|cant|': 1,
     '|faint|': 1, '|-formechange|': 1, '|-fail|': 1, '|-block|': 1, '|-notarget|': 1, '|-miss|': 1,

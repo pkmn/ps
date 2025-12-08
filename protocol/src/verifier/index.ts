@@ -605,6 +605,14 @@ class Handler implements Required<Protocol.Handler<boolean>> {
     return args.length === 1;
   }
 
+  '|badge|'(args: Args['|badge|']) {
+    return args.length === 5 &&
+      verifyPlayer(args[1]) &&
+      ['gold', 'silver', 'bronze'].includes(args[2]) &&
+      verifyID(args[3]) &&
+      !!args[4];
+  }
+
   '|done|'(args: Args['|done|']) {
     return args.length === 1;
   }
