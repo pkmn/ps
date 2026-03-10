@@ -865,6 +865,7 @@ class DexSpecies implements T.DexTable<Species> {
                 baseSpecies: species.name,
                 otherFormes: null,
                 cosmeticFormes: null,
+                isCosmeticForme: true,
               });
               break;
             }
