@@ -1280,7 +1280,7 @@ export class ModdedDex implements T.Dex {
   mod(modid: T.ID, modData: ModData): ModdedDex;
   mod(modid: GenID | T.ID, modData?: ModData) {
     if (modid in dexes) return modData ? new ModdedDex(modid, modData) : dexes[modid];
-    return (dexes[modid] = new ModdedDex(modid as T.ID, modData));
+    return (dexes[modid] = new ModdedDex(modid, modData));
   }
 
   forGen(gen: number) {
@@ -1301,7 +1301,7 @@ export class ModdedDex implements T.Dex {
       }
       return true;
     }
-    const typeData = this.types.get(targetTyping as Exclude<T.TypeName, '???'>);
+    const typeData = this.types.get(targetTyping);
     if (typeData?.damageTaken[sourceType] === 3) return false;
     return true;
   }
@@ -1320,7 +1320,7 @@ export class ModdedDex implements T.Dex {
       }
       return totalTypeMod;
     }
-    const typeData = this.types.get(targetTyping as Exclude<T.TypeName, '???'>);
+    const typeData = this.types.get(targetTyping);
     if (!typeData) return 0;
     switch (typeData.damageTaken[sourceType]) {
       case 1: return 1; // super-effective
@@ -1412,11 +1412,11 @@ export class ModdedDex implements T.Dex {
 
     const parentDex = modData?.Scripts?.inherit
       ? this.mod(modData.Scripts.inherit)
-      : this.forGen(modData ? this.gen : this.gen + 1 as T.GenerationNum);
+      : this.forGen(modData ? this.gen : this.gen + 1);
     if (type === 'Learnsets') parentDex.load('Learnsets');
 
     const parentDataType = parentDex.data[type];
-    const childDataType = this.data[type] || (this.data[type] = {} as any);
+    const childDataType = this.data[type] || (this.data[type] = {});
     for (const e in parentDataType) {
       const entry = e as keyof typeof parentDataType;
       if (childDataType[entry] === null) {
@@ -1431,14 +1431,14 @@ export class ModdedDex implements T.Dex {
         } else {
           childDataType[entry] = parentDataType[entry];
         }
-      } else if (childDataType[entry]?.inherit) {
+      } else if ((childDataType[entry] as any)?.inherit) {
         // {inherit: true} can be used to modify only parts of the parent data,
         // instead of overwriting entirely
-        delete childDataType[entry].inherit;
+        delete (childDataType[entry] as any).inherit;
         // Merge parent into children entry, preserving existing childs' properties.
         for (const key in parentDataType[entry]) {
           if (key in childDataType[entry]) continue;
-          (childDataType[entry])[key] = (parentDataType[entry] as any)[key];
+          (childDataType[entry] as any)[key] = (parentDataType[entry] as any)[key];
         }
       }
     }

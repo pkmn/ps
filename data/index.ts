@@ -77,7 +77,7 @@ export class Generations {
 
   *[Symbol.iterator]() {
     for (let gen = 1; gen <= 9; gen++) {
-      yield this.get(gen as GenerationNum);
+      yield this.get(gen);
     }
   }
 }
@@ -537,7 +537,7 @@ export class Learnsets {
   }
 
   async *[Symbol.iterator]() {
-    if (!this.dex.data.Learnsets) await this.dex.learnsets.get('LOAD' as ID);
+    if (!this.dex.data.Learnsets) await this.dex.learnsets.get('LOAD');
     for (const id in this.dex.data.Learnsets) {
       const l = await this.get(id);
       if (l) yield l;

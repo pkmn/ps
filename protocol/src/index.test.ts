@@ -2,6 +2,8 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
+import {HPColor} from '@pkmn/types';
+
 import {Args, KWArgs, PokemonHealth, Protocol} from './index';
 
 const REQUEST = {
@@ -295,7 +297,7 @@ describe('Protocol', () => {
     const parse = (hpstring: string, output?: PokemonHealth) =>
       Protocol.parseHealth(hpstring as Protocol.PokemonHPStatus, output);
     const health = (h: Partial<PokemonHealth>) =>
-      ({hp: 0, maxhp: 100, hpcolor: '', ...h} as PokemonHealth);
+      ({hp: 0, maxhp: 100, hpcolor: '' as HPColor, ...h});
     expect(parse('0 fnt')).toEqual(health({hp: 0, fainted: true}));
     expect(parse('0 fnt', health({maxhp: 250})))
       .toEqual(health({hp: 0, maxhp: 250, fainted: true}));

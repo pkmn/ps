@@ -869,11 +869,11 @@ export class Handler implements Protocol.Handler {
         const targetability = toID(kwArgs.ability2) || poke!.ability;
         if (pokeability) {
           poke!.ability = pokeability;
-          if (!poke2!.baseAbility) poke2!.baseAbility = pokeability as ID;
+          if (!poke2!.baseAbility) poke2!.baseAbility = pokeability;
         }
         if (targetability) {
           poke2!.ability = targetability;
-          if (!poke!.baseAbility) poke!.baseAbility = targetability as ID;
+          if (!poke!.baseAbility) poke!.baseAbility = targetability;
         }
         if (poke!.side !== poke2!.side) {
           poke!.activateAbility(pokeability, true);

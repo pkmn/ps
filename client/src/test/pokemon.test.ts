@@ -1,4 +1,4 @@
-import {Effect, Generations, ID, SpeciesName} from '@pkmn/data';
+import {Generations, ID, SpeciesName} from '@pkmn/data';
 import {Dex} from '@pkmn/dex';
 import {
   DetailedPokemon,
@@ -18,7 +18,7 @@ const gen = gens.get(7);
 // NOTE: tested exhaustively in integration/src/test/client.js
 describe('Pokemon', () => {
   it('#ident', () => {
-    const pokemon = new Pokemon(null! as Side, {ident: 'p1: Gengar'} as DetailedPokemon);
+    const pokemon = new Pokemon(null!, {ident: 'p1: Gengar'} as DetailedPokemon);
     expect(pokemon.ident).toBe('p1a: Gengar');
     pokemon.slot = 2;
     expect(pokemon.ident).toBe('p1c: Gengar');
@@ -29,7 +29,7 @@ describe('Pokemon', () => {
       hpstring: string,
       options = {} as Partial<PokemonHealth>
     ) => {
-      const pokemon = new Pokemon(null! as Side, {} as DetailedPokemon);
+      const pokemon = new Pokemon(null!, {} as DetailedPokemon);
       const attrs: Array<keyof PokemonHealth> = ['hp', 'maxhp', 'hpcolor', 'status', 'fainted'];
       for (const attr of attrs) {
         if (options[attr]) (pokemon as any)[attr] = options[attr];
@@ -87,7 +87,7 @@ describe('Pokemon', () => {
   it('#checkDetails', () => {
     const detailed =
       Protocol.parseDetails('', 'p1: Arceus' as PokemonIdent, 'Arceus-*, L50' as PokemonDetails);
-    const pokemon = new Pokemon(null! as Side, detailed);
+    const pokemon = new Pokemon(null!, detailed);
 
     expect(pokemon.checkDetails()).toBe(false);
     expect(pokemon.checkDetails('Arceus-*, L50' as PokemonDetails)).toBe(true);
@@ -159,9 +159,9 @@ describe('Pokemon', () => {
   it('#abilities', () => {
     const pokemon =
       new Pokemon({battle: new Battle(gens)} as unknown as Side, {} as DetailedPokemon);
-    pokemon.activateAbility({kind: 'Move', name: 'Tackle'} as Effect);
+    pokemon.activateAbility({kind: 'Move', name: 'Tackle'});
     expect(pokemon.ability).not.toBe('tackle');
-    pokemon.activateAbility({kind: 'Ability', name: 'Pressure'} as Effect);
+    pokemon.activateAbility({kind: 'Ability', name: 'Pressure'});
     expect(pokemon.ability).toBe('pressure');
     expect(pokemon.baseAbility).toBe('pressure');
     pokemon.activateAbility('Magic Guard', true);

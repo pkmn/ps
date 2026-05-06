@@ -64,7 +64,7 @@ describe('Field', () => {
     expect(field.terrain).toBe('Electric');
     expect(field.terrainState).toEqual({id: 'electric', minDuration: 5, maxDuration: 8});
 
-    field.setTerrain('' as ID);
+    field.setTerrain('');
     expect(field.terrain).toBeUndefined();
     expect(field.terrainState).toEqual({id: '', minDuration: 0, maxDuration: 0});
 

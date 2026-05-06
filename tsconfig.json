@@ -14,6 +14,8 @@
     "sourceMap": true,
     "strict": true,
     "target": "es2018",
-    "tsBuildInfoFile": ".tsbuildinfo"
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "ignoreDeprecations": "6.0",
+    "types": ["node", "jest"]
   }
 }

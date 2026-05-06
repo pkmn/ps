@@ -204,7 +204,7 @@ export class Sprites {
     const facingf = facing + 'f' as 'frontf' | 'backf';
     if (graphics in this.ANIMATED) {
       const d = graphics === 'gen5ani' ? (data.bw ?? {}) : data;
-      if (d[facingf] && options?.gender === 'F') facing = `${facing}f` as Facing;
+      if (d[facingf] && options?.gender === 'F') facing = `${facing}f`;
 
       if (d[facing] && !data.missing?.includes(dir)) {
         const w = d[facing]!.w ?? 96;
@@ -216,7 +216,7 @@ export class Sprites {
 
       [gen, graphics, dir] = rewrite(dir, graphics, 'gen5');
     } else if ((data[facingf] && options?.gender === 'F')) {
-      facing = `${facing}f` as Facing;
+      facing = `${facing}f`;
     }
 
     // Visual gender differences didn't exist for sprites until Gen 4
@@ -297,7 +297,7 @@ export class Sprites {
     const ih = 0; // TODO innerHeight
 
     let gen: GraphicsGen | GenerationNum = options?.gen || 9;
-    if (typeof gen === 'string') gen = GENS[gen] as GenerationNum;
+    if (typeof gen === 'string') gen = GENS[gen];
     if (gen < 3) {
       dir = 'gen1';
     } else if (gen < 4) {

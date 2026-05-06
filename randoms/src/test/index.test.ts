@@ -5,7 +5,7 @@ import {TeamGenerators} from '../index';
 const N = 1000;
 
 function isValidSet(gen: number, set: PokemonSet) {
-	const dex = Dex.mod(`gen${gen}` as ID);
+	const dex = Dex.mod(`gen${gen}`);
 	const species = dex.species.get(set.species || set.name);
 	if (!species.exists || species.gen > gen) return false;
 	if (set.item) {

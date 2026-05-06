@@ -554,7 +554,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     if (this.fainted || this.volatiles['gastroacid']) return '' as ID;
     const ability = this.side.battle.gen.abilities.get(this.ability || this.baseAbility || '');
     if (this.side.battle.ngasActive() && !ability?.flags.cantsuppress) return '' as ID;
-    return ability?.id || '' as ID;
+    return ability?.id || '';
   }
 
   rememberAbility(ability: string, isNotBase?: boolean) {
@@ -591,7 +591,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       this.volatiles['embargo'] ||
       ability === 'klutz'
     ) {
-      item = '' as ID;
+      item = '';
     }
 
     if (item === 'ironball') return true;

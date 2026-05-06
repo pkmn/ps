@@ -230,7 +230,7 @@ export class LogFormatter {
       if (namespace === 'NODEFAULT') return '';
       let id = LogFormatter.effectId(namespace);
       if (Text[id] && type in Text[id]) {
-        if (Text[id][type].charAt(1) === '.') type = Text[id][type].slice(2) as ID;
+        if (Text[id][type].charAt(1) === '.') type = Text[id][type].slice(2);
         if (Text[id][type].charAt(0) === '#') id = Text[id][type].slice(1) as ID;
         if (!Text[id][type]) return '';
         let template = Text[id][type];

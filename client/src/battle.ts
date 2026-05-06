@@ -262,7 +262,7 @@ export class Battle {
 
   getSwitchedPokemon(pokemonid: PokemonIdent | SideID, details: PokemonDetails) {
     const {name, siden, slot, pokemonid: parsedPokemonid} =
-      this.parsePokemonId(pokemonid as PokemonIdent);
+      this.parsePokemonId(pokemonid);
     pokemonid = parsedPokemonid;
 
     const searchid = `${pokemonid}|${details}` as PokemonSearchID;
