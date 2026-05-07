@@ -103,6 +103,8 @@ export class Side {
           {name, level: 1, minDuration: persist ? 7 : 5, maxDuration: 0});
       case 'mist': case 'luckychant':
         return (this.sideConditions[id] = {name, level: 1, minDuration: 5, maxDuration: 0});
+      case 'doomdesire': case 'futuresight':
+        return (this.sideConditions[id] = {name, level: 1, minDuration: 3, maxDuration: 0});
       case 'quickguard': case 'wideguard': case 'craftyshield': case 'matblock':
         return (this.sideConditions[id] =
           {name, level: 1, minDuration: 1, maxDuration: 1, remove: true});
@@ -267,8 +269,11 @@ export class Side {
   }
 
   switchOut(pokemon: Pokemon, from?: {id: ID}, slot = pokemon.slot) {
-    if (!['batonpass', 'zbatonpass', 'shedtail'].includes(from?.id || '')) {
+    if (!['batonpass', 'zbatonpass'].includes(from?.id || '')) {
       pokemon.clearVolatile();
+      if (from?.id === 'shedtail') {
+        pokemon.volatiles = {substitute: {id: 'substitute' as ID}};
+      }
     } else {
       pokemon.removeVolatile('transform' as ID);
       pokemon.removeVolatile('formechange' as ID);

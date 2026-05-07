@@ -14,6 +14,7 @@ export default [...pkmn, {
     "@typescript-eslint/restrict-template-expressions": "off",
     "import/order": "off",
     "max-len": "off",
+    "prefer-const": "off",
     "no-case-declarations": "off",
     "no-dupe-else-if": "off",
     "no-mixed-spaces-and-tabs": "off",

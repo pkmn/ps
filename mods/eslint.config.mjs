@@ -5,6 +5,7 @@ export default [...pkmn, {
     "src/gen1jpn/*.ts",
     "src/gen1stadium/*.ts",
     "src/gen2stadium2/*.ts",
+    "src/gen3frlg/*.ts",
     "src/gen3rs/*.ts",
     "src/gen4pt/*.ts",
     "src/gen5bw1/*.ts",
@@ -16,6 +17,7 @@ export default [...pkmn, {
     "src/gen9dlc1/*.ts"
   ],
   rules: {
+    "@stylistic/eol-last": "off",
     "@stylistic/indent": "off",
     "@stylistic/no-mixed-spaces-and-tabs": "off",
     "@stylistic/object-curly-spacing": "off",

@@ -20,6 +20,7 @@ export const Formats = [
       'Cancel Mod',
       'Event Moves Clause',
       'Nickname Clause',
+      'Beat Up Nicknames Mod',
       'Team Preview'
     ],
     banlist: [ 'Uber' ]

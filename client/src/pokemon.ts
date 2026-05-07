@@ -28,12 +28,12 @@ interface EffectTable {[effectid: string]: EffectState}
 type MoveSlot = {
   name: MoveName;
   id: ID;
-  ppUsed: number;
+  ppUsed: PPState;
   virtual?: boolean;
 } | {
   name: MoveName;
   id: ID;
-  ppUsed: number;
+  ppUsed: PPState;
   pp: number;
   maxpp: number;
   target: MoveTarget;
@@ -47,6 +47,7 @@ export type ItemEffect =
 export type LastItemEffect =
    'eaten' | 'flung' | 'knocked off' | 'stolen' | 'consumed' | 'incinerated' | 'popped' | 'held up';
 export type CopySource = 'batonpass' | 'illusion' | 'shedtail';
+export type PPState = number | [number, number];
 
 const VOLATILES = [
   'airballoon', 'attract', 'autotomize', 'disable', 'encore', 'foresight', 'gmaxchistrike',
@@ -396,13 +397,9 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       for (const volatile of VOLATILES) {
         delete this.volatiles[volatile];
       }
-    } else if (copySource === 'shedtail') {
-      for (const i in this.volatiles) {
-        if (i === 'substitute') continue;
-        delete this.volatiles[i];
-      }
-      this.boosts = {};
     }
+    // Shed Tail doesn't need special handling because the source already has
+    // its volatiles except Substitute cleared in switchOut.
     delete this.volatiles['transform'];
     delete this.volatiles['formechange'];
     delete this.volatiles['terastallize'];
@@ -412,7 +409,42 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     pokemon.statusStage = 0;
   }
 
-  rememberMove(moveName: MoveName | ID, ppUsed = 1, recursionSource?: PokemonIdent) {
+  private mergePP(entry: [MoveName, PPState], pp: PPState): PPState {
+    let ppUsed = entry[1];
+    if (typeof ppUsed === 'number') {
+      if (typeof pp === 'number') {
+        ppUsed += pp;
+      } else {
+        ppUsed = [ppUsed + pp[0], ppUsed + pp[1]];
+      }
+    } else {
+      if (typeof pp === 'number') {
+        ppUsed[0] += pp;
+        ppUsed[1] += pp;
+      } else {
+        ppUsed[0] += pp[0];
+        ppUsed[1] += pp[1];
+      }
+    }
+    if (typeof ppUsed === 'number') {
+      if (ppUsed < 0) ppUsed = 0;
+    } else {
+      if (ppUsed[0] < 0) ppUsed[0] = 0;
+      if (ppUsed[1] < 0) ppUsed[1] = 0;
+      const move = this.side.battle.gen.moves.get(entry[0])!;
+      let maxpp = (move.pp === 1 || move.noPPBoosts ? move.pp : move.pp * 8 / 5);
+      if (this.side.battle.tier.includes('Champions')) {
+        maxpp = move.pp > 20 ? 20 : move.pp;
+        maxpp = move.pp === 1 || move.noPPBoosts ? move.pp : (move.pp / 5 + 1) * 4;
+      }
+      if (ppUsed[0] > maxpp) ppUsed[0] = maxpp;
+      if (ppUsed[0] < ppUsed[1]) ppUsed[0] = ppUsed[1];
+      if (ppUsed[0] === ppUsed[1]) ppUsed = ppUsed[0];
+    }
+    return ppUsed;
+  }
+
+  rememberMove(moveName: MoveName | ID, ppUsed: PPState = 1, recursionSource?: PokemonIdent) {
     if (recursionSource === this.originalIdent) return;
     const move = this.side.battle.get('moves', moveName);
     if (move.name === 'Struggle') return;
@@ -425,8 +457,7 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     }
     for (const entry of this.moveSlots) {
       if (move.name === entry.name && virtual === entry.virtual) {
-        entry.ppUsed += ppUsed;
-        if (entry.ppUsed < 0) entry.ppUsed = 0;
+        entry.ppUsed = this.mergePP([entry.name, entry.ppUsed], ppUsed);
         return;
       }
     }
@@ -453,12 +484,15 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     if (!fromeffect.id || callerMoveForPressure || fromeffect.id === 'pursuit') {
       let moveName = move.name;
       if (!callerMoveForPressure) {
-        if (move.isZ) {
+        // const previousLine = this.stepQueue[this.currentStep - 1];
+        // const zPower = previousLine.startsWith('|-zpower');
+        const zPower = true; // BUG
+        if (move.isZ && zPower) {
           const isZ = move.isZ as ID;
           this.item = isZ;
           const item = this.side.battle.gen.items.get(isZ);
           if (item?.zMoveFrom) moveName = item.zMoveFrom;
-        } else if (move.name.slice(0, 2) === 'Z-') {
+        } else if (move.name.startsWith('Z-') && zPower) {
           moveName = moveName.slice(2) as MoveName;
           move = this.side.battle.get('moves', moveName) as Partial<Move> & NA;
           for (const item of this.side.battle.gen.items) {
@@ -469,9 +503,11 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
           }
         }
       }
-      let pp = 1;
-      // Sticky Web is never affected by pressure
-      if (this.side.battle.abilityActive(['pressure'] as ID[]) && move.id !== 'stickyweb') {
+      // 1 pp was already deducted from using the move itself
+      let pp: PPState = callerMoveForPressure ? 0 : 1;
+      if ((this.side.battle.abilityActive(['pressure'] as ID[]) ||
+      this.side.battle.gen.num === 3) &&
+        move.id !== 'stickyweb') {
         const foeTargets = [];
         const moveTarget = (move.pressureTarget || move.target)!;
         const singles = [
@@ -494,18 +530,9 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
           foeTargets.push(target);
         }
 
-        for (const foe of foeTargets) {
-          if (foe && !foe.fainted && foe.effectiveAbility() === 'pressure') {
-            pp += 1;
-          }
-        }
+        pp = this.getPressurePP(pp, foeTargets.filter(foe => foe && !foe.fainted) as Pokemon[]);
       }
-      if (!callerMoveForPressure) {
-        this.rememberMove(moveName, pp);
-      } else {
-        // 1 pp was already deducted from using the move itself
-        this.rememberMove(callerMoveForPressure.name, pp - 1);
-      }
+      this.rememberMove(callerMoveForPressure ? callerMoveForPressure.name : moveName, pp);
     }
     this.lastMove = move.id;
     this.lastMoveTargetLoc = target
@@ -517,6 +544,27 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
     if (move.id === 'wish' || move.id === 'healingwish') {
       this.side.wisher = this;
     }
+  }
+  private getPressurePP(pp: PPState, foes: Pokemon[]) {
+    for (const foe of foes) {
+      const abilities =
+        Object.values(this.side.battle.gen.species.get(foe.speciesForme)!.abilities);
+      const canHavePressure = this.side.battle.gen.num === 3 && abilities.includes('Pressure');
+      if (foe.effectiveAbility() === 'Pressure' || (canHavePressure && abilities.length === 1)) {
+        if (typeof pp === 'number') {
+          pp += 1;
+        } else {
+          pp[0] += 1;
+          pp[1] += 1;
+        }
+      } else if (canHavePressure) {
+        if (typeof pp === 'number') {
+          pp = [pp, pp];
+        }
+        pp[0] += 1;
+      }
+    }
+    return pp;
   }
 
   cantUseMove(

@@ -5,8 +5,8 @@ export const Formats = [
     name: '[Gen 5] BW1 OU',
     mod: 'gen5bw1',
     searchShow: false,
-    ruleset: [ 'Standard', 'Sleep Clause Mod', 'Swagger Clause', 'Baton Pass Stat Clause' ],
-    banlist: [ 'Uber', 'Drizzle ++ Swift Swim', "King's Rock", 'Razor Fang', 'Soul Dew' ]
+    ruleset: [ 'Standard', 'Sleep Clause Mod', 'Baton Pass Stat Clause' ],
+    banlist: [ 'Uber', 'Drizzle ++ Swift Swim', "King's Rock", 'Razor Fang', 'Soul Dew', 'Swagger' ]
   },
   {
     name: '[Gen 5] VGC 2012',

@@ -228,7 +228,7 @@ describe('Icons', () => {
 
     pokemon = Icons.getPokemon('Kingler', {side: 'p1'});
     expect(pokemon.left).toBe(-400);
-    expect(pokemon.top).toBe(-3600);
+    expect(pokemon.top).toBe(-3630);
 
     pokemon = Icons.getPokemon('Kingler', {side: 'p2', fainted: true});
     expect(pokemon.style).toEqual(

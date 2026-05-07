@@ -15,8 +15,8 @@ export const Abilities: ModdedAbilityDataTable = {
 	},
 	illuminate: {
 		inherit: true,
-		onTryBoost() {},
-		onModifyMove() {},
+		onTryBoost: undefined, // no inherit
+		onModifyMove: undefined, // no inherit
 		flags: {},
 		rating: 0,
 	},

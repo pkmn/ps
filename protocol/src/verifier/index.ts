@@ -99,7 +99,7 @@ function verifyTypes(types: Protocol.Types, gen?: Generation) {
   if (!gen) return verifyName(types);
   const [type1, type2] = types.split('/');
   return (type1 === '???' || verifyType(type1 as TypeName, gen)) &&
-    (!type2 || verifyType(type2 as TypeName, gen));
+    (!type2 || type2 === '???' || verifyType(type2 as TypeName, gen));
 }
 
 function verifyAbilityName(name: Protocol.AbilityName, gen?: Generation) {
@@ -948,11 +948,9 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       case 2: return verifyKWArgs(kwArgs, ['msg'], this.gen) && !!kwArgs.msg;
       case 3: case 4: {
         if (!verifyKWArgs(kwArgs, ['msg', 'silent', 'from'], this.gen)) return false;
-        if (Object.keys(kwArgs).length > 1) return false;
+        if (Object.keys(kwArgs).length > 1 && !Object.keys(kwArgs).includes('silent')) return false;
         if (!kwArgs.from) return true;
-        if (args[2] === 'frz') {
-          if (kwArgs.silent) return false;
-        } else {
+        if (args[2] !== 'frz') {
           return kwArgs.from === 'ability: Natural Cure';
         }
         const from = ['move: Flame Wheel', 'move: Sacred Fire', 'ability: Natural Cure'];
@@ -1144,27 +1142,26 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       : !Object.keys(kwArgs).length);
     if (!valid) return false;
 
-    const modern = [
+    const base = [
       'Reflect', 'Safeguard', 'move: Light Screen', 'Spikes', 'Mist',
       'move: Lucky Chant', 'move: Stealth Rock', 'move: Tailwind', 'move: Toxic Spikes',
       'Grass Pledge', 'Fire Pledge', 'Water Pledge', 'move: Sticky Web', 'move: Aurora Veil',
     ];
-    const classic = modern.slice(0, 9);
-    classic[2] = 'Light Screen';
-    const dexit = modern.slice(0);
+    const dexit = base.slice(0);
     dexit.splice(5, 1); // Lucky Chant
     const gen8 = [...dexit,
-      'G-Max Volcalith', 'G-Max Wildfire', 'G-Max Cannonade', 'G-Max Steelsurge', 'G-Max Vine Lash',
+      'G-Max Volcalith', 'G-Max Wildfire', 'G-Max Cannonade', 'move: G-Max Steelsurge',
+      'G-Max Vine Lash',
     ];
 
     switch (this.gen?.num || 0) {
       case 1: return false;
-      case 2: return modern.slice(0, 4).includes(args[2]); // NB: modern
-      case 3: return classic.slice(0, 5).includes(args[2]);
-      case 4: return classic.includes(args[2]);
-      case 5: return modern.slice(0, 12).includes(args[2]);
-      case 6: return modern.slice(0, 13).includes(args[2]);
-      case 7: return modern.includes(args[2]);
+      case 2: return base.slice(0, 4).includes(args[2]);
+      case 3: return base.slice(0, 5).includes(args[2]);
+      case 4: return base.slice(0, 9).includes(args[2]);
+      case 5: return base.slice(0, 12).includes(args[2]);
+      case 6: return base.slice(0, 13).includes(args[2]);
+      case 7: return base.includes(args[2]);
       case 8: return gen8.includes(args[2]);
       case 9: return dexit.includes(args[2]);
       default: {
@@ -1255,15 +1252,18 @@ class Handler implements Required<Protocol.Handler<boolean>> {
   }
 
   '|-crit|'(args: Args['|-crit|']) {
-    return args.length === 2 && verifyPokemonIdent(args[1]);
+    return verifyPokemonIdent(args[1]) && (args.length === 2 ||
+      (args.length === 3 && verifyNum(args[2])));
   }
 
   '|-supereffective|'(args: Args['|-supereffective|']) {
-    return args.length === 2 && verifyPokemonIdent(args[1]);
+    return verifyPokemonIdent(args[1]) && (args.length === 2 ||
+      (args.length === 3 && verifyNum(args[2])));
   }
 
   '|-resisted|'(args: Args['|-resisted|']) {
-    return args.length === 2 && verifyPokemonIdent(args[1]);
+    return verifyPokemonIdent(args[1]) && (args.length === 2 ||
+      (args.length === 3 && verifyNum(args[2])));
   }
 
   // TODO DEBUG
@@ -1503,7 +1503,13 @@ class Handler implements Required<Protocol.Handler<boolean>> {
       case 2: case 3: case 4: {
         const reasons = ['Protect', 'move: Endure'];
         if (this.gen!.num >= 3) {
-          reasons.push('Snatch', 'move: Focus Punch', 'move: Follow Me', 'Helping Hand');
+          reasons.push(
+            'Snatch',
+            'move: Focus Punch',
+            'move: Follow Me',
+            'Helping Hand',
+            'move: Magic Coat'
+          );
         }
         if (this.gen!.num >= 4) reasons.push('move: Roost');
         if (!reasons.includes(args[2])) return false;

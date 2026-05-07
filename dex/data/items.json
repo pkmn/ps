@@ -303,8 +303,15 @@
       "condition": {"duration": 1},
       "shortDesc": "If holder's HP is full, survives all hits of one attack with at least 1 HP. Single use."
     },
+    "fullincense": {
+      "inherit": true,
+      "onFractionalPriorityPriority": 1,
+      "onFractionalPriority": -0.2
+    },
     "griseousorb": {
       "inherit": true,
+      "onTakeItem": false,
+      "onSetAbility": false,
       "shortDesc": "Can only be held by Giratina. Its Ghost- & Dragon-type attacks have 1.2x power."
     },
     "heavyball": {"inherit": true, "isNonstandard": null},
@@ -316,6 +323,11 @@
     },
     "ironplate": {"inherit": true, "onTakeItem": true},
     "kingsrock": {"inherit": true},
+    "laggingtail": {
+      "inherit": true,
+      "onFractionalPriorityPriority": 1,
+      "onFractionalPriority": -0.2
+    },
     "laxincense": {"inherit": true, "onModifyAccuracyPriority": 5},
     "leftovers": {
       "inherit": true,
@@ -340,12 +352,12 @@
     },
     "metronome": {
       "inherit": true,
-      "condition": {"onTryMovePriority": -2},
+      "condition": {"inherit": true},
       "shortDesc": "Damage of moves used on consecutive turns is increased. Max 2x after 10 turns."
     },
     "micleberry": {
       "inherit": true,
-      "condition": {"duration": 2, "onSourceModifyAccuracyPriority": 3}
+      "condition": {"inherit": true, "onSourceModifyAccuracyPriority": 3}
     },
     "mindplate": {"inherit": true, "onTakeItem": true},
     "moonball": {"inherit": true, "isNonstandard": null},
@@ -1187,15 +1199,16 @@
       "num": 677,
       "gen": 6,
       "isNonstandard": "Past",
-      "shortDesc": "If held by an Absol, this item allows it to Mega Evolve in battle."
+      "shortDesc": "If held by an Absol, this item allows it to Mega Evolve into Mega Absol in battle."
     },
     "absolitez": {
       "name": "Absolite Z",
       "megaStone": {"Absol": "Absol-Mega-Z"},
       "itemUser": ["Absol"],
-      "num": 2588,
+      "num": 2638,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by an Absol, this item allows it to Mega Evolve into Mega Absol Z in battle."
     },
     "absorbbulb": {
       "name": "Absorb Bulb",
@@ -1380,9 +1393,10 @@
       "name": "Baxcalibrite",
       "megaStone": {"Baxcalibur": "Baxcalibur-Mega"},
       "itemUser": ["Baxcalibur"],
-      "num": 2601,
+      "num": 2648,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Baxcalibur, this item allows it to Mega Evolve in battle."
     },
     "beastball": {
       "name": "Beast Ball",
@@ -1621,7 +1635,7 @@
       "num": 660,
       "gen": 6,
       "isNonstandard": "Past",
-      "shortDesc": "If held by a Charizard, this item allows it to Mega Evolve in battle."
+      "shortDesc": "If held by a Charizard, this item allows it to Mega Evolve into Mega Charizard X."
     },
     "charizarditey": {
       "name": "Charizardite Y",
@@ -1630,7 +1644,7 @@
       "num": 678,
       "gen": 6,
       "isNonstandard": "Past",
-      "shortDesc": "If held by a Charizard, this item allows it to Mega Evolve in battle."
+      "shortDesc": "If held by a Charizard, this item allows it to Mega Evolve into Mega Charizard Y."
     },
     "chartiberry": {
       "name": "Charti Berry",
@@ -1695,9 +1709,10 @@
       "name": "Chimechite",
       "megaStone": {"Chimecho": "Chimecho-Mega"},
       "itemUser": ["Chimecho"],
-      "num": 2587,
+      "num": 2637,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Chimecho, this item allows it to Mega Evolve in battle."
     },
     "chippedpot": {
       "name": "Chipped Pot",
@@ -1828,9 +1843,10 @@
       "name": "Crabominite",
       "megaStone": {"Crabominable": "Crabominable-Mega"},
       "itemUser": ["Crabominable"],
-      "num": 2595,
+      "num": 2644,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Crabominable, this item allows it to Mega Evolve in battle."
     },
     "crackedpot": {
       "name": "Cracked Pot",
@@ -1889,9 +1905,10 @@
       "name": "Darkranite",
       "megaStone": {"Darkrai": "Darkrai-Mega"},
       "itemUser": ["Darkrai"],
-      "num": 2593,
+      "num": 2568,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Darkrai, this item allows it to Mega Evolve in battle."
     },
     "dawnstone": {
       "name": "Dawn Stone",
@@ -2290,7 +2307,7 @@
       "name": "Falinksite",
       "megaStone": {"Falinks": "Falinks-Mega"},
       "itemUser": ["Falinks"],
-      "num": 2586,
+      "num": 2587,
       "gen": 9,
       "isNonstandard": "Future",
       "shortDesc": "If held by a Falinks, this item allows it to Mega Evolve in battle."
@@ -2578,15 +2595,16 @@
       "num": 683,
       "gen": 6,
       "isNonstandard": "Past",
-      "shortDesc": "If held by a Garchomp, this item allows it to Mega Evolve in battle."
+      "shortDesc": "If held by a Garchomp, this item allows it to Mega Evolve into Mega Garchomp."
     },
     "garchompitez": {
       "name": "Garchompite Z",
       "megaStone": {"Garchomp": "Garchomp-Mega-Z"},
       "itemUser": ["Garchomp"],
-      "num": 2590,
+      "num": 2640,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Garchomp, this item allows it to Mega Evolve into Mega Garchomp Z."
     },
     "gardevoirite": {
       "name": "Gardevoirite",
@@ -2649,9 +2667,10 @@
       "name": "Glimmoranite",
       "megaStone": {"Glimmora": "Glimmora-Mega"},
       "itemUser": ["Glimmora"],
-      "num": 2600,
+      "num": 2650,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Glimmora, this item allows it to Mega Evolve in battle."
     },
     "goldbottlecap": {
       "name": "Gold Bottle Cap",
@@ -2664,17 +2683,19 @@
       "name": "Golisopite",
       "megaStone": {"Golisopod": "Golisopod-Mega"},
       "itemUser": ["Golisopod"],
-      "num": 2596,
+      "num": 2645,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Golisopod, this item allows it to Mega Evolve in battle."
     },
     "golurkite": {
       "name": "Golurkite",
       "megaStone": {"Golurk": "Golurk-Mega"},
       "itemUser": ["Golurk"],
-      "num": 2594,
+      "num": 2642,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Golurk, this item allows it to Mega Evolve in battle."
     },
     "grassgem": {
       "name": "Grass Gem",
@@ -2850,9 +2871,10 @@
       "name": "Heatranite",
       "megaStone": {"Heatran": "Heatran-Mega"},
       "itemUser": ["Heatran"],
-      "num": 2592,
+      "num": 2567,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Heatran, this item allows it to Mega Evolve in battle."
     },
     "heatrock": {
       "name": "Heat Rock",
@@ -3257,15 +3279,16 @@
       "num": 673,
       "gen": 6,
       "isNonstandard": "Past",
-      "shortDesc": "If held by a Lucario, this item allows it to Mega Evolve in battle."
+      "shortDesc": "If held by a Lucario, this item allows it to Mega Evolve into Mega Lucario in battle."
     },
     "lucarionitez": {
       "name": "Lucarionite Z",
       "megaStone": {"Lucario": "Lucario-Mega-Z"},
       "itemUser": ["Lucario"],
-      "num": 2591,
+      "num": 2641,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Lucario, this item allows it to Mega Evolve into Mega Lucario Z in battle."
     },
     "luckypunch": {
       "name": "Lucky Punch",
@@ -3363,9 +3386,10 @@
         "Magearna-Original": "Magearna-Original-Mega"
       },
       "itemUser": ["Magearna", "Magearna-Original"],
-      "num": 2597,
+      "num": 2646,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Magearna, this item allows it to Mega Evolve in battle."
     },
     "magmarizer": {
       "name": "Magmarizer",
@@ -3515,9 +3539,10 @@
         "Meowstic-F": "Meowstic-F-Mega"
       },
       "itemUser": ["Meowstic", "Meowstic-F"],
-      "num": 2594,
+      "num": 2643,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Meowstic, this item allows it to Mega Evolve in battle."
     },
     "metagrossite": {
       "name": "Metagrossite",
@@ -3579,7 +3604,7 @@
       "num": 662,
       "gen": 6,
       "isNonstandard": "Past",
-      "shortDesc": "If held by a Mewtwo, this item allows it to Mega Evolve in battle."
+      "shortDesc": "If held by a Mewtwo, this item allows it to Mega Evolve into Mega Mewtwo X in battle."
     },
     "mewtwonitey": {
       "name": "Mewtwonite Y",
@@ -3588,7 +3613,7 @@
       "num": 663,
       "gen": 6,
       "isNonstandard": "Past",
-      "shortDesc": "If held by a Mewtwo, this item allows it to Mega Evolve in battle."
+      "shortDesc": "If held by a Mewtwo, this item allows it to Mega Evolve into Mega Mewtwo Y in battle."
     },
     "micleberry": {
       "name": "Micle Berry",
@@ -4172,17 +4197,19 @@
       "name": "Raichunite X",
       "megaStone": {"Raichu": "Raichu-Mega-X"},
       "itemUser": ["Raichu"],
-      "num": 2585,
+      "num": 2635,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Raichu, this item allows it to Mega Evolve into Mega Raichu X in battle."
     },
     "raichunitey": {
       "name": "Raichunite Y",
       "megaStone": {"Raichu": "Raichu-Mega-Y"},
       "itemUser": ["Raichu"],
-      "num": 2586,
+      "num": 2636,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Raichu, this item allows it to Mega Evolve into Mega Raichu Y in battle."
     },
     "rarebone": {
       "name": "Rare Bone",
@@ -4477,9 +4504,10 @@
       "name": "Scovillainite",
       "megaStone": {"Scovillain": "Scovillain-Mega"},
       "itemUser": ["Scovillain"],
-      "num": 2599,
+      "num": 2647,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Scovillain, this item allows it to Mega Evolve in battle."
     },
     "scraftinite": {
       "name": "Scraftinite",
@@ -4719,9 +4747,10 @@
       "name": "Staraptite",
       "megaStone": {"Staraptor": "Staraptor-Mega"},
       "itemUser": ["Staraptor"],
-      "num": 2589,
+      "num": 2639,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Staraptor, this item allows it to Mega Evolve in battle."
     },
     "starfberry": {
       "name": "Starf Berry",
@@ -4902,9 +4931,10 @@
         "Tatsugiri-Stretchy": "Tatsugiri-Stretchy-Mega"
       },
       "itemUser": ["Tatsugiri", "Tatsugiri-Droopy", "Tatsugiri-Stretchy"],
-      "num": 2601,
+      "num": 2649,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Tatsugiri, this item allows it to Mega Evolve in battle."
     },
     "terrainextender": {
       "name": "Terrain Extender",
@@ -5994,9 +6024,10 @@
       "name": "Zeraorite",
       "megaStone": {"Zeraora": "Zeraora-Mega"},
       "itemUser": ["Zeraora"],
-      "num": 2598,
+      "num": 2586,
       "gen": 9,
-      "isNonstandard": "Future"
+      "isNonstandard": "Future",
+      "shortDesc": "If held by a Zeraora, this item allows it to Mega Evolve in battle."
     },
     "zoomlens": {
       "name": "Zoom Lens",

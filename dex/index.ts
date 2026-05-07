@@ -369,7 +369,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
 
   readonly ohko?: boolean | 'Ice';
   readonly thawsTarget?: boolean;
-  readonly heal?: number[] | null;
+  readonly heal?: number[];
   readonly forceSwitch?: boolean;
   readonly selfSwitch?: 'copyvolatile' | 'shedtail' | boolean;
   readonly selfBoost?: {boosts?: Partial<T.BoostsTable>};
@@ -380,9 +380,9 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly mindBlownRecoil?: boolean;
   readonly struggleRecoil?: boolean;
   readonly stealsBoosts?: boolean;
-  readonly secondary?: T.SecondaryEffect | null;
-  readonly secondaries: T.SecondaryEffect[] | null;
-  readonly self?: T.HitEffect | null;
+  readonly secondary?: T.SecondaryEffect;
+  readonly secondaries: T.SecondaryEffect[];
+  readonly self?: T.HitEffect;
 
   readonly alwaysHit?: boolean;
   readonly basePowerModifier?: number;
@@ -419,7 +419,7 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
   readonly callsMove?: boolean;
 
   readonly hasCrashDamage?: boolean;
-  readonly hasSheerForce?: boolean;
+  readonly hasSheerForceBoost?: boolean;
   readonly isConfusionSelfHit?: boolean;
   readonly stallingMove?: boolean;
 
@@ -434,12 +434,9 @@ export class Move extends BasicEffect<T.MoveName> implements T.Move {
     this.type = getString(data.type) as T.TypeName;
     this.basePower = Number(data.basePower);
     this.critRatio = Number(data.critRatio) || 1;
-    this.secondary = data.secondary || null;
-    this.secondaries = data.secondaries?.length
-      ? data.secondaries : this.secondary
-        ? [this.secondary]
-        : null;
-    this.hasSheerForce = !!(data.hasSheerForce && !this.secondaries);
+    this.secondary = data.secondary || undefined;
+    this.secondaries = data.secondaries || (this.secondary && [this.secondary]) || undefined;
+    this.hasSheerForceBoost = data.hasSheerForceBoost || false;
     this.priority = Number(data.priority) || 0;
     this.ignoreImmunity =
       (data.ignoreImmunity !== undefined ? data.ignoreImmunity : data.category === 'Status');

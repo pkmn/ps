@@ -41,6 +41,15 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expectFormat(dex, 'gen2nc2000');
       });
 
+      it('gen3frlg', async () => {
+        const dex =
+          new ModdedDex(Dex.mod('gen3frlg' as ID, await import('./gen3frlg') as ModData));
+        expect(dex.gen).toBe(3);
+        expect(dex.species.get('Charmander').isNonstandard).toBeNull();
+        expect(dex.species.get('Jirachi').isNonstandard).toBe('Unobtainable');
+        expectFormat(dex, 'gen3frlgou');
+      });
+
       it('gen3rs', async () => {
         const dex =
           new ModdedDex(Dex.mod('gen3rs' as ID, await import('./gen3rs') as ModData));

@@ -382,28 +382,6 @@ export class RuleTable extends Map<string, string> {
 		if (timer.maxFirstTurn !== undefined && (timer.maxFirstTurn < 10 || timer.maxFirstTurn > 1200)) {
 			throw new Error(`Timer max first turn value ${timer.maxFirstTurn}${this.blame('timermaxfirstturn')} must be between 10 and 1200 seconds.`);
 		}
-
-		if ((format as any).cupLevelLimit) {
-			throw new Error(`cupLevelLimit.range[0], cupLevelLimit.range[1], cupLevelLimit.total are now rules, respectively: "Min Level = NUMBER", "Max Level = NUMBER", and "Max Total Level = NUMBER"`);
-		}
-		if ((format as any).teamLength) {
-			throw new Error(`teamLength.validate[0], teamLength.validate[1], teamLength.battle are now rules, respectively: "Min Team Size = NUMBER", "Max Team Size = NUMBER", and "Picked Team Size = NUMBER"`);
-		}
-		if ((format as any).minSourceGen) {
-			throw new Error(`minSourceGen is now a rule: "Min Source Gen = NUMBER"`);
-		}
-		if ((format as any).maxLevel) {
-			throw new Error(`maxLevel is now a rule: "Max Level = NUMBER"`);
-		}
-		if ((format as any).defaultLevel) {
-			throw new Error(`defaultLevel is now a rule: "Default Level = NUMBER"`);
-		}
-		if ((format as any).forcedLevel) {
-			throw new Error(`forcedLevel is now a rule: "Adjust Level = NUMBER"`);
-		}
-		if ((format as any).maxForcedLevel) {
-			throw new Error(`maxForcedLevel is now a rule: "Adjust Level Down = NUMBER"`);
-		}
 	}
 
 	hasComplexBans() {
@@ -472,6 +450,7 @@ export class Format extends BasicEffect implements Readonly<BasicEffect> {
 	 declare readonly searchShow?: boolean;
 	 declare readonly bestOfDefault?: boolean;
 	 declare readonly teraPreviewDefault?: boolean;
+	 declare readonly itemClauseDefault?: boolean;
 	 declare readonly threads?: string[];
 	 declare readonly tournamentShow?: boolean;
 	 declare readonly checkCanLearn?: (
@@ -578,8 +557,11 @@ export class DexFormats {
 			if (format.tournamentShow === undefined) format.tournamentShow = true;
 			if (format.bestOfDefault === undefined) format.bestOfDefault = false;
 			if (format.teraPreviewDefault === undefined) format.teraPreviewDefault = false;
+			if (format.itemClauseDefault === undefined) format.itemClauseDefault = false;
 			if (format.mod === undefined) format.mod = DEFAULT_MOD;
 			if (!this.dex.dexes[format.mod]) format.exists = false;
+
+			this.checkDeprecated(format);
 
 			const ruleset = new Format(format);
 			this.rulesetCache.set(id, ruleset);
@@ -587,6 +569,30 @@ export class DexFormats {
 		}
 
 		return formatsList;
+	}
+
+	checkDeprecated(format: AnyObject) {
+		if (format.cupLevelLimit) {
+			throw new Error(`cupLevelLimit.range[0], cupLevelLimit.range[1], cupLevelLimit.total are now rules, respectively: "Min Level = NUMBER", "Max Level = NUMBER", and "Max Total Level = NUMBER"`);
+		}
+		if (format.teamLength) {
+			throw new Error(`teamLength.validate[0], teamLength.validate[1], teamLength.battle are now rules, respectively: "Min Team Size = NUMBER", "Max Team Size = NUMBER", and "Picked Team Size = NUMBER"`);
+		}
+		if (format.minSourceGen) {
+			throw new Error(`minSourceGen is now a rule: "Min Source Gen = NUMBER"`);
+		}
+		if (format.maxLevel) {
+			throw new Error(`maxLevel is now a rule: "Max Level = NUMBER"`);
+		}
+		if (format.defaultLevel) {
+			throw new Error(`defaultLevel is now a rule: "Default Level = NUMBER"`);
+		}
+		if (format.forcedLevel) {
+			throw new Error(`forcedLevel is now a rule: "Adjust Level = NUMBER"`);
+		}
+		if (format.maxForcedLevel) {
+			throw new Error(`maxForcedLevel is now a rule: "Adjust Level Down = NUMBER"`);
+		}
 	}
 
 	/**

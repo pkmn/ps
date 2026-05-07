@@ -753,7 +753,7 @@ export class Handler implements Protocol.Handler {
       poke.addVolatile('protosynthesis' as ID, {stat: effect.id.slice(-3) as StatID});
       return;
     } else if (effect.id.startsWith('quarkdrive')) {
-      poke.addVolatile('protosynthesis' as ID, {stat: effect.id.slice(-3) as StatID});
+      poke.addVolatile('quarkdrive' as ID, {stat: effect.id.slice(-3) as StatID});
       return;
     } else if (effect.id.startsWith('perish')) {
       poke.addVolatile('perishsong' as ID, {
@@ -789,8 +789,12 @@ export class Handler implements Protocol.Handler {
         poke.removeVolatile('magnetrise' as ID);
         poke.removeVolatile('telekinesis' as ID);
         break;
+      case 'futuresight': case 'doomdesire':
+        poke.side.addSideCondition(effect, false);
+        break;
     }
-    if (!(effect.id === 'typechange' && poke.isTerastallized)) {
+    if (!(effect.id === 'typechange' && poke.terastallized) &&
+				effect.id !== 'futuresight' && effect.id !== 'doomdesire') {
       poke.addVolatile(effect.id);
     }
   }
@@ -798,7 +802,11 @@ export class Handler implements Protocol.Handler {
   '|-end|'(args: Args['|-end|'], kwArgs: KWArgs['|-end|']) {
     const poke = this.battle.getPokemon(args[1])!;
     const effect = this.battle.get('conditions', args[2]);
-    poke.removeVolatile(effect.id);
+    if (['doomdesire', 'futuresight'].includes(effect.id)) {
+      poke.side.foe.removeSideCondition(effect.id);
+    } else {
+      poke.removeVolatile(effect.id);
+    }
 
     if (kwArgs.silent) return; // do nothing
     if (effect.id === 'illusion') poke.rememberAbility('Illusion');

@@ -15,12 +15,7 @@ export const Moves: ModdedMoveDataTable = {
 	substitute: {
 		inherit: true,
 		condition: {
-			onStart(target) {
-				this.add('-start', target, 'Substitute');
-				this.effectState.hp = Math.floor(target.maxhp / 4) + 1;
-				delete target.volatiles['partiallytrapped'];
-			},
-			onTryHitPriority: -1,
+			inherit: true,
 			onTryHit(target, source, move) {
 				if (move.drain) {
 					this.add('-miss', source);
@@ -77,9 +72,6 @@ export const Moves: ModdedMoveDataTable = {
 					return true;
 				}
 				return accuracy;
-			},
-			onEnd(target) {
-				this.add('-end', target, 'Substitute');
 			},
 		},
 	},

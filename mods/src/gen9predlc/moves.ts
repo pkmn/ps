@@ -39,7 +39,7 @@ export const Moves: ModdedMoveDataTable = {
 	},
 	jetpunch: {
 		inherit: true,
-		hasSheerForce: true,
+		hasSheerForceBoost: true,
 	},
 	matchagotcha: {
 		inherit: true,

@@ -1,10 +1,19 @@
 import type {ModdedFormatDataTable} from '@pkmn/sim';
 
 export const Rulesets: ModdedFormatDataTable = {
+	standardag: {
+		inherit: true,
+		ruleset: [
+			'Obtainable', 'Team Preview', 'Exact HP Mod', 'Cancel Mod', 'Beat Up Nicknames Mod',
+		],
+	},
 	standard: {
 		effectType: 'ValidatorRule',
 		name: 'Standard',
-		ruleset: ['Obtainable', 'Team Preview', 'Stadium Sleep Clause', 'Freeze Clause Mod', 'Self-KO Clause', 'Species Clause', 'Nickname Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Exact HP Mod', 'Cancel Mod', 'Stadium Items Clause'],
+		ruleset: [
+			'Standard AG',
+			'Stadium Sleep Clause', 'Freeze Clause Mod', 'Self-KO Clause', 'Species Clause', 'Nickname Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Stadium Items Clause',
+		],
 	},
 	selfkoclause: {
 		effectType: 'Rule',

@@ -12,6 +12,6 @@ export const Items: ModdedItemDataTable = {
 	},
 	dragonscale: {
 		inherit: true,
-		onModifyDamage() {},
+		onModifyDamage: undefined, // no inherit
 	},
 };

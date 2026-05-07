@@ -25,9 +25,14 @@
     "partiallytrapped": {
       "name": "partiallytrapped",
       "duration": 2,
-      "onBeforeMovePriority": 9
+      "onBeforeMovePriority": 9,
+      "onDisableMovePriority": 1
     },
-    "fakepartiallytrapped": {"name": "fakepartiallytrapped", "duration": 2},
+    "fakepartiallytrapped": {
+      "name": "fakepartiallytrapped",
+      "duration": 2,
+      "onDisableMovePriority": 1
+    },
     "partialtrappinglock": {"name": "partialtrappinglock"},
     "mustrecharge": {"inherit": true, "duration": 0, "onBeforeMovePriority": 7},
     "lockedmove": {"name": "lockedmove"},

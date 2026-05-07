@@ -219,13 +219,13 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(Gen(7).moves.get('Overheat')!.self!.boosts).toEqual({spa: -2});
 
         // secondaries
-        expect(Gen(7).moves.get('Thunder Fang')!.secondaries!).toHaveLength(2);
-        expect(Gen(1).moves.get('Psychic')!.secondaries![0].chance).toBe(33);
-        expect(Gen(2).moves.get('Psychic')!.secondaries![0].chance).toBe(10);
-        expect(Gen(1).moves.get('Psychic')!.secondaries![0].boosts).toEqual({spa: -1, spd: -1});
-        expect(Gen(2).moves.get('Psychic')!.secondaries![0].boosts).toEqual({spd: -1});
-        expect(Gen(7).moves.get('Fire Blast')!.secondaries![0].status).toBe('brn');
-        expect(Gen(7).moves.get('Hurricane')!.secondaries![0].volatileStatus).toBe('confusion');
+        expect(Gen(7).moves.get('Thunder Fang')!.secondaries).toHaveLength(2);
+        expect(Gen(1).moves.get('Psychic')!.secondaries[0].chance).toBe(33);
+        expect(Gen(2).moves.get('Psychic')!.secondaries[0].chance).toBe(10);
+        expect(Gen(1).moves.get('Psychic')!.secondaries[0].boosts).toEqual({spa: -1, spd: -1});
+        expect(Gen(2).moves.get('Psychic')!.secondaries[0].boosts).toEqual({spd: -1});
+        expect(Gen(7).moves.get('Fire Blast')!.secondaries[0].status).toBe('brn');
+        expect(Gen(7).moves.get('Hurricane')!.secondaries[0].volatileStatus).toBe('confusion');
       });
 
       it('counts', () => {

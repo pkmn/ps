@@ -103,7 +103,7 @@ export const Conditions: ModdedConditionDataTable = {
 	},
 	flinch: {
 		inherit: true,
-		onStart() {},
+		onStart: undefined, // no inherit
 	},
 	partiallytrapped: {
 		name: 'partiallytrapped',

@@ -346,6 +346,7 @@ export namespace Protocol {
     requestType: 'move';
     rqid: number;
     side: Request.SideInfo;
+    ally?: Request.AllyInfo;
     active: (Request.ActivePokemon | null)[];
     noCancel?: boolean;
   }
@@ -354,6 +355,7 @@ export namespace Protocol {
     requestType: 'switch';
     rqid: number;
     side: Request.SideInfo;
+    ally?: Request.AllyInfo;
     forceSwitch: boolean[];
     noCancel?: boolean;
   }
@@ -362,6 +364,7 @@ export namespace Protocol {
     requestType: 'team';
     rqid: number;
     side: Request.SideInfo;
+    ally?: Request.AllyInfo;
     maxTeamSize?: number;
     noCancel?: boolean;
   }
@@ -370,11 +373,18 @@ export namespace Protocol {
     requestType: 'wait';
     rqid: number;
     side: undefined;
+    ally: undefined;
     noCancel?: boolean;
   }
 
   export namespace Request {
     export interface SideInfo {
+      name: Username;
+      id: SideID;
+      pokemon: Pokemon[];
+    }
+
+    export interface AllyInfo {
       name: Username;
       id: SideID;
       pokemon: Pokemon[];
@@ -427,8 +437,8 @@ export namespace Protocol {
       item: ID;
       moves: ID[];
       stats: Omit<StatsTable, 'hp'>;
-      commanding?: boolean;
       reviving?: boolean;
+      commanding?: boolean;
       teraType?: TypeName;
     }
   }
@@ -1336,19 +1346,22 @@ export namespace Protocol {
      *
      * A move has dealt a critical hit against the `POKEMON`.
      */
-    '|-crit|': readonly ['-crit', PokemonIdent];
+    '|-crit|': readonly ['-crit', PokemonIdent] |
+      readonly ['-crit', PokemonIdent, Num];
     /**
      * `|-supereffective|POKEMON`
      *
      * A move was super effective against the `POKEMON`.
      */
-    '|-supereffective|': readonly ['-supereffective', PokemonIdent];
+    '|-supereffective|': readonly ['-supereffective', PokemonIdent] |
+      readonly ['-supereffective', PokemonIdent, Num];
     /**
      * `|-resisted|POKEMON`
      *
      * A move was not very effective against the `POKEMON`.
      */
-    '|-resisted|': readonly ['-resisted', PokemonIdent];
+    '|-resisted|': readonly ['-resisted', PokemonIdent] |
+        readonly ['--resisted', PokemonIdent, Num];
     /**
      * `|-immune|POKEMON`
      *
@@ -2138,6 +2151,13 @@ export const Protocol = new class {
     if (request.requestType === 'wait') request.noCancel = true;
     if (request.side) {
       for (const pokemon of request.side.pokemon) {
+        this.parseDetails(pokemon.ident.substr(4), pokemon.ident, pokemon.details, pokemon);
+        this.parseHealth(pokemon.condition, pokemon);
+        pokemon.ability = pokemon.ability || pokemon.baseAbility;
+      }
+    }
+    if (request.ally) {
+      for (const pokemon of request.ally.pokemon) {
         this.parseDetails(pokemon.ident.substr(4), pokemon.ident, pokemon.details, pokemon);
         this.parseHealth(pokemon.condition, pokemon);
         pokemon.ability = pokemon.ability || pokemon.baseAbility;

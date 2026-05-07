@@ -1228,9 +1228,13 @@ class Handler implements Protocol.Handler<string> {
   private effectiveness(
     args: Args['|-crit|' | '|-supereffective|' | '|-resisted|']
   ) {
-    const [cmd, pokemon] = args;
+    const [cmd, pokemon, effectiveness] = args;
     let templateId = cmd.slice(1);
     if (templateId === 'supereffective') templateId = 'superEffective';
+    if (effectiveness === '2') {
+      if (templateId === 'superEffective') templateId = 'extremelyEffective';
+      if (templateId === 'resisted') templateId = 'mostlyIneffective';
+    }
     if (this.parser.activeMoveIsSpread) templateId += 'Spread';
     const template = this.parser.template(templateId);
     return template.replace('[POKEMON]', this.parser.pokemon(pokemon));

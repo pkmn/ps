@@ -9,10 +9,6 @@ export const Items: ModdedItemDataTable = {
 		inherit: true,
 		isNonstandard: "Unobtainable",
 	},
-	enigmaberry: {
-		inherit: true,
-		isNonstandard: "Unobtainable",
-	},
 	fastball: {
 		inherit: true,
 		isNonstandard: "Unobtainable",

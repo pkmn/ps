@@ -15483,12 +15483,13 @@ export const Legality: {[k: string]:  import('../sim/dex-species').ModdedLearnse
         generation: 8,
         level: 10,
         perfectIVs: 3,
-        moves: [ 'rocksmash', 'leer', 'endure', 'focusenergy' ]
+        moves: [ 'rocksmash', 'leer', 'endure', 'focusenergy' ],
+        pokeball: 'pokeball'
       },
       {
         generation: 9,
         level: 30,
-        moves: [ 'detect', 'brickbreak', 'headbutt', 'scaryface' ]
+        moves: [ 'scaryface', 'headbutt', 'brickbreak', 'detect' ]
       }
     ],
     eventOnly: true

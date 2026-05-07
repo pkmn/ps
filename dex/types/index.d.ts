@@ -114,7 +114,8 @@ interface MoveFlags {
   futuremove?: 1 | 0;
   gravity?: 1 | 0;
   heal?: 1 | 0;
-  metronome?: 1;
+  metronome?: 1 | 0;
+  mminimize?: 1 | 0;
   mirror?: 1 | 0;
   mustpressure?: 1 | 0;
   noassist?: 1 | 0;
@@ -185,7 +186,7 @@ export interface MoveData extends EffectData, HitEffect {
 
   ohko?: boolean | 'Ice';
   thawsTarget?: boolean;
-  heal?: number[] | null;
+  heal?: number[];
   forceSwitch?: boolean;
   selfSwitch?: 'copyvolatile' | 'shedtail' | boolean;
   selfBoost?: {boosts?: Partial<BoostsTable>};
@@ -195,9 +196,9 @@ export interface MoveData extends EffectData, HitEffect {
   drain?: [number, number];
   mindBlownRecoil?: boolean;
   stealsBoosts?: boolean;
-  secondary?: SecondaryEffect | null;
-  secondaries?: SecondaryEffect[] | null;
-  self?: HitEffect | null;
+  secondary?: SecondaryEffect;
+  secondaries?: SecondaryEffect[];
+  self?: HitEffect;
   struggleRecoil?: boolean;
 
   alwaysHit?: boolean;
@@ -235,7 +236,7 @@ export interface MoveData extends EffectData, HitEffect {
   callsMove?: boolean;
 
   hasCrashDamage?: boolean;
-  hasSheerForce?: boolean;
+  hasSheerForceBoost?: boolean;
   isConfusionSelfHit?: boolean;
   stallingMove?: boolean;
 }
@@ -383,7 +384,7 @@ export interface Item extends Readonly<BasicEffect<ItemName> & ItemData> {
 export interface Move extends Readonly<BasicEffect<MoveName> & MoveData> {
   readonly effectType: 'Move';
   readonly kind: 'Move';
-  readonly secondaries: SecondaryEffect[] | null;
+  readonly secondaries: SecondaryEffect[];
   readonly flags: MoveFlags;
   readonly zMoveEffect?: ID;
   readonly isZ: boolean | ID;

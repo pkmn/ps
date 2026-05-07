@@ -201,15 +201,15 @@ describe('Dex', () => {
       expect(Dex.moves.get('Overheat').self!.boosts).toEqual({spa: -2});
 
       // secondaries
-      expect(Dex.moves.get('Thunder Fang').secondaries!).toHaveLength(2);
-      expect(Dex.forGen(1).moves.get('Psychic').secondaries![0].chance).toBe(33);
-      expect(Dex.forGen(2).moves.get('Psychic').secondaries![0].chance).toBe(10);
-      expect(Dex.forGen(1).moves.get('Psychic').secondaries![0].boosts)
+      expect(Dex.moves.get('Thunder Fang').secondaries).toHaveLength(2);
+      expect(Dex.forGen(1).moves.get('Psychic').secondaries[0].chance).toBe(33);
+      expect(Dex.forGen(2).moves.get('Psychic').secondaries[0].chance).toBe(10);
+      expect(Dex.forGen(1).moves.get('Psychic').secondaries[0].boosts)
         .toEqual({spa: -1, spd: -1});
-      expect(Dex.forGen(2).moves.get('Psychic').secondaries![0].boosts)
+      expect(Dex.forGen(2).moves.get('Psychic').secondaries[0].boosts)
         .toEqual({spd: -1});
-      expect(Dex.moves.get('Fire Blast').secondaries![0].status).toBe('brn');
-      expect(Dex.moves.get('Hurricane').secondaries![0].volatileStatus)
+      expect(Dex.moves.get('Fire Blast').secondaries[0].status).toBe('brn');
+      expect(Dex.moves.get('Hurricane').secondaries[0].volatileStatus)
         .toBe('confusion');
     });
 

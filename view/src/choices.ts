@@ -59,7 +59,9 @@ export class ChoiceBuilder {
     const r = this.request;
     switch (r.requestType) {
       case 'move':
-        while (this.choices.length < r.active.length && !r.active[this.choices.length]) {
+        while (this.choices.length < r.active.length &&
+					!r.active[this.choices.length] ||
+					r.side?.pokemon[this.choices.length]?.commanding) {
           this.choices.push('pass');
         }
         break;
@@ -266,6 +268,7 @@ export class ChoiceBuilder {
         choiceType: isTeamPreview ? 'team' : 'switch',
         targetPokemon: 0,
       };
+      if (choice === 'notMine') throw new Error('You cannot decide for your partner!');
       if (/^[0-9]+$/.test(choice)) {
         // Parse a one-based move index.
         current.targetPokemon = parseInt(choice);
