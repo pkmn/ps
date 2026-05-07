@@ -7,7 +7,8 @@
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "lib": ["es2016", "dom"],
-    "module": "commonjs",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
@@ -15,7 +16,6 @@
     "strict": true,
     "target": "es2018",
     "tsBuildInfoFile": ".tsbuildinfo",
-    "ignoreDeprecations": "6.0",
     "types": ["node", "jest"]
   }
 }

@@ -3,7 +3,6 @@
   "compilerOptions": {
     "allowUnusedLabels": false,
     "lib": ["es2015", "es2016.array.include", "es2017.object", "dom"],
-    "moduleResolution": "node",
     "noFallthroughCasesInSwitch": false,
     "noImplicitReturns": false,
     "resolveJsonModule": true,

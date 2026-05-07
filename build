@@ -114,16 +114,26 @@ process.on('exit', () => {
     process.exit(0);
   }
 
-  // We need to call esbuild/rollup through tsup to get declaration files
+  // We need to call esbuild/rollup through tsup
   await tsup.build({
     entry: argv._,
     outDir: 'build',
     format: ['cjs', 'esm'],
     sourcemap: true,
     splitting: true,
-    dts: true,
+    dts: false,
     clean: true,
   });
+
+  // tsup's dts generation is currently incompatible with TS 6.0's baseUrl deprecation
+  // so we use tsc directly to generate declaration files
+  console.log(`Generating declaration files for \x1b[34m@pkmn/${pkg}\x1b[0m...`);
+  const rootDir = fs.existsSync(path.join(cwd, 'src')) ? 'src' : '.';
+  sh('npx', ['tsc', '-p', '.', '--declaration', '--emitDeclarationOnly', '--outDir', 'build', '--noEmit', 'false', '--rootDir', rootDir]);
+
+  if (fs.existsSync(path.join(cwd, 'build', 'index.d.ts'))) {
+    fs.copyFileSync(path.join(cwd, 'build', 'index.d.ts'), path.join(cwd, 'build', 'index.d.mts'));
+  }
 
   // Use esbuild directly for minified IIFE build to be able to rewrite
   if (argv.minify) {
