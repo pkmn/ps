@@ -69,6 +69,10 @@
     "./gen9dlc1": {
       "require": "./build/gen9dlc1/index.js",
       "import": "./build/gen9dlc1/index.mjs"
+    },
+    "./champions": {
+      "require": "./build/champions/index.js",
+      "import": "./build/champions/index.mjs"
     }
   },
   "typesVersions": {
@@ -111,6 +115,9 @@
       ],
       "gen9dlc1": [
         "./build/gen9dlc1/index.d.ts"
+      ],
+      "champions": [
+        "./build/champions/index.d.ts"
       ]
     }
   },

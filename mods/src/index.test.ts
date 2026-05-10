@@ -151,6 +151,16 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.moves.get('Sacred Fire').isNonstandard).toBe('Past');
         expectFormat(dex, 'gen9dlc1ou');
       });
+
+      it('champions', async () => {
+        const dex =
+          new ModdedDex(Dex.mod('champions' as ID, await import('./champions') as ModData));
+        expect(dex.gen).toBe(9);
+        expect(dex.species.get('Incineroar').isNonstandard).toBeNull();
+        expect(dex.species.get('Bulbasaur').isNonstandard).toBe('Past');
+        expect(dex.species.get('Koraidon').isNonstandard).toBe('Past');
+        expectFormat(dex, 'gen9championsou');
+      });
     });
 
     describe('types', () => {

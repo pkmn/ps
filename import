@@ -248,9 +248,9 @@ const MOD_IMPORTS = {
   // champions
   'data/mods/champions/abilities.ts': ['ModdedAbilityDataTable'],
   'data/mods/champions/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
-  'data/mods/champions/items.ts': ['ModdedItemDataTable'],
+  'data/mods/champions/items.ts': ['ModdedItemDataTable', 'Pokemon'],
   'data/mods/champions/learnsets.ts': ['ModdedLearnsetDataTable'],
-  'data/mods/champions/moves.ts': ['ModdedMoveDataTable'],
+  'data/mods/champions/moves.ts': ['ModdedMoveDataTable', 'Move', 'ActiveMove'],
 };
 const RANDOMS_IMPORTS = {
   'data/random-battles/gen9/teams.ts': [
