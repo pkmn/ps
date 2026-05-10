@@ -244,6 +244,13 @@ const MOD_IMPORTS = {
   'data/mods/gen9dlc1/items.ts': ['ModdedItemDataTable'],
   'data/mods/gen9dlc1/learnsets.ts': ['ModdedLearnsetDataTable'],
   'data/mods/gen9dlc1/moves.ts': ['ModdedMoveDataTable'],
+
+  // champions
+  'data/mods/champions/abilities.ts': ['ModdedAbilityDataTable'],
+  'data/mods/champions/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
+  'data/mods/champions/items.ts': ['ModdedItemDataTable'],
+  'data/mods/champions/learnsets.ts': ['ModdedLearnsetDataTable'],
+  'data/mods/champions/moves.ts': ['ModdedMoveDataTable'],
 };
 const RANDOMS_IMPORTS = {
   'data/random-battles/gen9/teams.ts': [
@@ -506,6 +513,7 @@ const MOD_OVERRIDDEN = new Set([
   'data/mods/gen8dlc1/index.ts',
   'data/mods/gen9predlc/index.ts',
   'data/mods/gen9dlc1/index.ts',
+  'data/mods/champions/index.ts',
   'data/mods/index.test.ts',
   'data/mods/index.ts',
 ]);
@@ -920,15 +928,16 @@ const changes = async (where, last, now, repo) => ({
     ];
     for (const format of require(path.resolve(ps, 'dist/config/formats.js')).Formats) {
       if (!format.mod) continue;
-      const m = /^gen\d(.*)$/.exec(format.mod);
-      if (!m) continue;
+      const isBaseGen = /^gen\d$/.test(format.mod);
+      const hasModDir = fs.existsSync(path.resolve(mods, 'src', format.mod));
+      if (!isBaseGen && !hasModDir) continue;
       if (format.ruleset.some(r => r.includes('Draft')) ||
         format.ruleset.includes('Standard OMs') || skip.includes(format.name)) {
         continue;
       }
       if (Object.values(format).some(v => typeof v === 'function')) continue;
       if (format.battle && !format.name.includes('Custom Game')) continue;
-      if (m[1]) {
+      if (!isBaseGen) {
         modded[format.mod] = modded[format.mod] || [];
         modded[format.mod].push(format);
         continue;
@@ -940,10 +949,9 @@ const changes = async (where, last, now, repo) => ({
       `export const Formats: import('../sim/dex-formats').FormatList = ${
         inspect(formats).replaceAll('trunc: [Function: trunc]', 'trunc: Math.trunc')};\n`);
     for (const id in modded) {
-      if (!['gen8bdsp', 'gen8legends'].includes(id)) {
-        fs.writeFileSync(path.resolve(mods, `src/${id}/formats.ts`),
-          `/* eslint-disable */\n\nexport const Formats = ${inspect(modded[id])};\n`);
-      }
+      fs.writeFileSync(path.resolve(mods, `src/${id}/formats.ts`),
+        `/* eslint-disable */\n\nexport const Formats = ${
+          inspect(modded[id]).replaceAll('trunc: [Function: trunc]', 'trunc: Math.trunc')};\n`);
     }
 
     // Decompose learnsets into learnsets.ts with just the learnset and legality.ts with the rest
