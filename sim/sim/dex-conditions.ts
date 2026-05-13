@@ -511,6 +511,7 @@ export interface EventMethods {
 	onTryMovePriority?: number;
 	onTryPrimaryHitPriority?: number;
 	onTypePriority?: number;
+	onWeatherModifyDamagePriority?: number;
 }
 
 export interface PokemonEventMethods extends EventMethods {

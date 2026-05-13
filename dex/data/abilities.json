@@ -2306,6 +2306,7 @@
     },
     "megasol": {
       "isNonstandard": "Future",
+      "onWeatherModifyDamagePriority": 1,
       "flags": {},
       "name": "Mega Sol",
       "num": 315,
