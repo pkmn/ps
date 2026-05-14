@@ -14,7 +14,8 @@ export default [...pkmn, {
     "src/gen7sm/*.ts",
     "src/gen8dlc1/*.ts",
     "src/gen9predlc/*.ts",
-    "src/gen9dlc1/*.ts"
+    "src/gen9dlc1/*.ts",
+    "src/champions/*.ts"
   ],
   rules: {
     "@stylistic/eol-last": "off",
