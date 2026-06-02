@@ -24,7 +24,10 @@ const Text = TextJSON as {
   // the keyword 'default' and think the JSON file is actually an ES module with a default export.
   // '_' at least has the benefit of being even less likely to cause collisions...
   _: {[templateName: string]: string};
-  [id: string]: {[templateName: string]: string};
+  [id: string]: {
+    champions?: {desc?: string; shortDesc?: string};
+    [templateName: string]: any;
+  };
 } & {
   [s in (StatID | 'spc')]: {statName: string; statShortName: string}
 };

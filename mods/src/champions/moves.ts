@@ -206,7 +206,7 @@ export const Moves: ModdedMoveDataTable = {
 					if (target.status === status) {
 						this.add('-fail', target, status);
 					} else {
-						this.add('-fail', source);
+						this.add('-fail', target);
 					}
 					return;
 				}
@@ -310,7 +310,7 @@ export const Moves: ModdedMoveDataTable = {
 				if (!action) {
 					this.effectState.duration!++;
 					// TODO: this is a quick fix, check if move priority is changed when Mental Herb cures Encore
-				} else if (!target.hasItem('mentalherb')) {
+				} else if (action.moveid !== move.id && !target.hasItem('mentalherb')) {
 					const priority = action.priority -
 						this.dex.moves.get(action.moveid).priority +
 						this.dex.moves.get(move.id).priority;
@@ -499,6 +499,10 @@ export const Moves: ModdedMoveDataTable = {
 	hornattack: {
 		inherit: true,
 		isNonstandard: "Past",
+	},
+	howl: {
+		inherit: true,
+		flags: { snatch: 1, sound: 1, bypasssub: 1, metronome: 1 },
 	},
 	hydrosteam: {
 		inherit: true,

@@ -31,7 +31,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "UU",
 	},
 	charizardmegax: {
-		tier: "UU",
+		tier: "UUBL",
 	},
 	charizardmegay: {
 		tier: "UUBL",
@@ -835,7 +835,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "OU",
 	},
 	scizormega: {
-		tier: "(OU)",
+		tier: "OU",
 	},
 	kleavor: {
 		tier: "UU",
@@ -1930,13 +1930,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "UU",
 	},
 	castformsunny: {
-		isNonstandard: "Past",
 	},
 	castformrainy: {
-		isNonstandard: "Past",
 	},
 	castformsnowy: {
-		isNonstandard: "Past",
 	},
 	kecleon: {
 		isNonstandard: "Past",
@@ -2806,7 +2803,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		isNonstandard: "Past",
 	},
 	basculegion: {
-		tier: "UU",
+		tier: "OU",
 	},
 	basculegionf: {
 		tier: "UU",
@@ -3437,7 +3434,6 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "OU",
 	},
 	aegislashblade: {
-		isNonstandard: "Past",
 	},
 	spritzee: {
 		isNonstandard: "Past",
@@ -4695,7 +4691,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	espathra: {
-		tier: "UU",
+		tier: "UUBL",
 	},
 	wiglett: {
 		isNonstandard: "Past",
@@ -4881,7 +4877,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "OU",
 	},
 	glimmoramega: {
-		tier: "(OU)",
+		tier: "OU",
 	},
 	shroodle: {
 		isNonstandard: "Past",

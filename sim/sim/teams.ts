@@ -16,6 +16,7 @@ interface TeamGeneratorFactory {
 
 var teamGeneratorFactory: TeamGeneratorFactory | undefined;
 
+// eslint-disable-next-line @typescript-eslint/no-shadow
 export const Teams = new class Teams {
 	pack(team: pkmn.PokemonSet[] | null): string {
 		return new pkmn.Team(team || []).pack();

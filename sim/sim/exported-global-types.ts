@@ -39,8 +39,8 @@ export type Nonstandard = 'Past' | 'Future' | 'Unobtainable' | 'CAP' | 'LGPE' | 
 export type PokemonSet = import('./teams').PokemonSet;
 
 export declare namespace TierTypes {
-	export type Singles = "AG" | "Uber" | "(Uber)" | "OU" | "(OU)" | "UUBL" | "UU" | "RUBL" | "RU" | "NUBL" | "NU" |
-		"(NU)" | "PUBL" | "PU" | "(PU)" | "ZUBL" | "ZU" | "NFE" | "LC";
+	export type Singles = "AG" | "Uber" | "(AG)" | "OU" | "(OU)" | "UUBL" | "UU" | "RUBL" | "RU" | "NUBL" | "NU" |
+		"PUBL" | "PU" | "ZUBL" | "ZU" | "NFE" | "LC";
 	export type Doubles = "DUber" | "(DUber)" | "DOU" | "(DOU)" | "DBL" | "DUU" | "(DUU)" | "NFE" | "LC";
 	export type Other = "Unreleased" | "Illegal" | "CAP" | "CAP NFE" | "CAP LC";
 }
@@ -462,6 +462,7 @@ export type TextFile<T> = T & {
 	gen6?: T,
 	gen7?: T,
 	gen8?: T,
+	champions?: T,
 };
 
 export type AbilityText = TextFile<ConditionTextData & {

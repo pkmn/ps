@@ -31645,6 +31645,23 @@
       "battleOnly": "Ramnarok",
       "gen": 9
     },
+    "obliteryx": {
+      "num": -80,
+      "name": "Obliteryx",
+      "types": ["Dark", "Flying"],
+      "baseStats": {
+        "hp": 102,
+        "atk": 128,
+        "def": 126,
+        "spa": 45,
+        "spd": 90,
+        "spe": 64
+      },
+      "abilities": {"0": "Opportunist", "1": "Analytic"},
+      "weightkg": 62,
+      "eggGroups": ["Flying"],
+      "gen": 9
+    },
     "pokestarsmeargle": {
       "num": -5000,
       "name": "Pokestar Smeargle",
