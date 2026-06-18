@@ -172,19 +172,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     restricted: [ 'Restricted Legendary' ]
   },
   {
-    name: '[Gen 9] BSS Reg J',
-    mod: 'gen9',
-    bestOfDefault: true,
-    ruleset: [
-      'Flat Rules',
-      '!! Adjust Level = 50',
-      'Min Source Gen = 9',
-      'VGC Timer',
-      'Limit Two Restricted'
-    ],
-    restricted: [ 'Restricted Legendary', 'Mythical' ]
-  },
-  {
     name: '[Gen 9] Custom Game',
     mod: 'gen9',
     debug: true,
@@ -273,20 +260,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     restricted: [ 'Restricted Legendary' ]
   },
   {
-    name: '[Gen 9] VGC 2026 Reg F',
-    mod: 'gen9',
-    gameType: 'doubles',
-    bestOfDefault: true,
-    ruleset: [
-      'Flat Rules',
-      '!! Adjust Level = 50',
-      'Min Source Gen = 9',
-      'VGC Timer',
-      'Open Team Sheets'
-    ]
-  },
-  {
-    name: '[Gen 9] VGC 2026 Reg I',
+    name: '[Gen 9] VGC 2025 Reg I',
     mod: 'gen9',
     gameType: 'doubles',
     bestOfDefault: true,
@@ -296,21 +270,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Min Source Gen = 9',
       'VGC Timer',
       'Open Team Sheets',
-      'Limit Two Restricted'
-    ],
-    restricted: [ 'Restricted Legendary' ]
-  },
-  {
-    name: '[Gen 9] VGC 2026 Reg I (Bo3)',
-    mod: 'gen9',
-    gameType: 'doubles',
-    ruleset: [
-      'Flat Rules',
-      '!! Adjust Level = 50',
-      'Min Source Gen = 9',
-      'VGC Timer',
-      'Force Open Team Sheets',
-      'Best of = 3',
       'Limit Two Restricted'
     ],
     restricted: [ 'Restricted Legendary' ]
@@ -455,20 +414,18 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     mod: 'gen9',
     ruleset: [ '[Gen 9] LC' ],
     banlist: [
-      'Chinchou',        'Diglett-Alola',
-      'Drifloon',        'Elekid',
-      'Foongus',         'Glimmet',
-      'Gothita',         'Grookey',
-      'Growlithe-Hisui', 'Impidimp',
-      'Koffing',         'Mareanie',
-      'Mienfoo',         'Mudbray',
-      'Larvesta',        'Pawniard',
-      'Sandshrew-Alola', 'Shellos',
-      'Stunky',          'Tentacool',
-      'Tinkatink',       'Toedscool',
-      'Trapinch',        'Vullaby',
-      'Wingull',         'Zorua-Hisui',
-      'Deerling',        'Minccino',
+      'Chinchou',   'Diglett-Alola',
+      'Elekid',     'Foongus',
+      'Glimmet',    'Gothita',
+      'Grookey',    'Growlithe-Hisui',
+      'Impidimp',   'Mareanie',
+      'Mienfoo',    'Mudbray',
+      'Larvesta',   'Sandshrew-Alola',
+      'Shellos',    'Stunky',
+      'Tinkatink',  'Toedscool',
+      'Trapinch',   'Vullaby',
+      'Wingull',    'Zorua-Hisui',
+      'Deerling',   'Minccino',
       'Light Clay'
     ]
   },
@@ -1297,6 +1254,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Smeargle + Ingrain',
       'Sand Veil',
       'Soundproof',
+      'Quick Claw',
       'Assist',
       'Baton Pass + Block',
       'Baton Pass + Mean Look',
@@ -2164,7 +2122,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   { name: '[Gen 4] CAP', mod: 'gen4', ruleset: [ '[Gen 4] OU', '+CAP' ] },
-  { name: '[Gen 4] PU', mod: 'gen4', ruleset: [ '[Gen 4] NU' ], banlist: [ 'NU', 'PUBL' ] },
+  {
+    name: '[Gen 4] PU',
+    mod: 'gen4',
+    ruleset: [ '[Gen 4] NU', '!Baton Pass Clause' ],
+    banlist: [ 'NU', 'PUBL', 'Baton Pass' ]
+  },
   {
     name: '[Gen 4] ZU',
     mod: 'gen4',
@@ -2315,7 +2278,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
       'Baton Pass + Dragon Dance',
       'Baton Pass + Salac Berry'
     ],
-    unbanlist: [ 'Soundproof', 'Sand Veil', 'Regice', 'Raikou', 'Porygon2' ]
+    unbanlist: [ 'Soundproof', 'Sand Veil', 'Regice', 'Raikou', 'Porygon2', 'Quick Claw' ]
   },
   {
     name: '[Gen 3] ZU',

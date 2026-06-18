@@ -4163,7 +4163,7 @@
         "spd": 95,
         "spe": 110
       },
-      "abilities": {"0": "Surge Surfer"},
+      "abilities": {"0": "Electric Surge"},
       "weightkg": 38,
       "eggGroups": ["Field", "Fairy"],
       "requiredItem": "Raichunite X",
@@ -4183,7 +4183,7 @@
         "spd": 80,
         "spe": 130
       },
-      "abilities": {"0": "Surge Surfer"},
+      "abilities": {"0": "No Guard"},
       "weightkg": 26,
       "eggGroups": ["Field", "Fairy"],
       "requiredItem": "Raichunite Y",
@@ -13278,7 +13278,7 @@
         "spd": 90,
         "spe": 110
       },
-      "abilities": {"0": "Intimidate", "H": "Reckless"},
+      "abilities": {"0": "Contrary"},
       "weightkg": 50,
       "eggGroups": ["Flying"],
       "requiredItem": "Staraptite",
@@ -17016,7 +17016,7 @@
         "spd": 99,
         "spe": 62
       },
-      "abilities": {"0": "Poison Point", "1": "Swarm", "H": "Speed Boost"},
+      "abilities": {"0": "Shell Armor"},
       "weightkg": 230.5,
       "eggGroups": ["Bug"],
       "requiredItem": "Scolipite",
@@ -17470,7 +17470,7 @@
         "spd": 135,
         "spe": 68
       },
-      "abilities": {"0": "Shed Skin", "1": "Moxie", "H": "Intimidate"},
+      "abilities": {"0": "Intimidate"},
       "weightkg": 31,
       "eggGroups": ["Field", "Dragon"],
       "requiredItem": "Scraftinite",
@@ -18410,7 +18410,7 @@
         "spd": 90,
         "spe": 80
       },
-      "abilities": {"0": "Levitate"},
+      "abilities": {"0": "Eelevate"},
       "weightkg": 180,
       "eggGroups": ["Amorphous"],
       "requiredItem": "Eelektrossite",
@@ -20242,7 +20242,7 @@
         "spd": 86,
         "spe": 126
       },
-      "abilities": {"0": "Rivalry", "1": "Unnerve", "H": "Moxie"},
+      "abilities": {"0": "Fire Mane"},
       "weightkg": 93.3,
       "eggGroups": ["Field"],
       "requiredItem": "Pyroarite",
@@ -20814,7 +20814,7 @@
         "spd": 120,
         "spe": 88
       },
-      "abilities": {"0": "Contrary", "1": "Suction Cups", "H": "Infiltrator"},
+      "abilities": {"0": "Contrary"},
       "weightkg": 69.8,
       "eggGroups": ["Water 1", "Water 2"],
       "requiredItem": "Malamarite",
@@ -20871,7 +20871,7 @@
         "spd": 106,
         "spe": 88
       },
-      "abilities": {"0": "Tough Claws", "1": "Sniper", "H": "Pickpocket"},
+      "abilities": {"0": "Tough Claws"},
       "weightkg": 100,
       "eggGroups": ["Water 3"],
       "requiredItem": "Barbaracite",
@@ -20936,11 +20936,7 @@
         "spd": 163,
         "spe": 44
       },
-      "abilities": {
-        "0": "Poison Point",
-        "1": "Poison Touch",
-        "H": "Adaptability"
-      },
+      "abilities": {"0": "Regenerator"},
       "weightkg": 100.3,
       "eggGroups": ["Water 1", "Dragon"],
       "requiredItem": "Dragalgite",
@@ -26232,7 +26228,7 @@
         "spd": 65,
         "spe": 100
       },
-      "abilities": {"0": "Battle Armor", "H": "Defiant"},
+      "abilities": {"0": "Defiant"},
       "weightkg": 99,
       "eggGroups": ["Fairy", "Mineral"],
       "requiredItem": "Falinksite",

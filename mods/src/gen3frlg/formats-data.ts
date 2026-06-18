@@ -26,7 +26,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "NFE",
 	},
 	blastoise: {
-		tier: "OU",
+		tier: "UU",
 	},
 	caterpie: {
 		tier: "LC",
@@ -119,7 +119,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "LC",
 	},
 	ninetales: {
-		tier: "OU",
+		tier: "UU",
 	},
 	igglybuff: {
 		tier: "LC",
@@ -200,7 +200,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "NFE",
 	},
 	poliwrath: {
-		tier: "OU",
+		tier: "UU",
 	},
 	politoed: {
 		tier: "UU",
@@ -440,7 +440,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "OU",
 	},
 	lapras: {
-		tier: "OU",
+		tier: "UU",
 	},
 	ditto: {
 		tier: "UU",
@@ -496,7 +496,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "OU",
 	},
 	moltres: {
-		tier: "OU",
+		tier: "UU",
 	},
 	dratini: {
 		tier: "LC",
@@ -615,7 +615,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "NFE",
 	},
 	azumarill: {
-		tier: "OU",
+		tier: "UU",
 	},
 	sudowoodo: {
 		tier: "Unreleased",
@@ -628,7 +628,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "NFE",
 	},
 	jumpluff: {
-		tier: "OU",
+		tier: "UU",
 	},
 	aipom: {
 		tier: "Unreleased",

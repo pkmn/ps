@@ -2,6 +2,21 @@
 
 export const Formats = [
   {
+    name: '[Gen 9 Champions] Random Battle',
+    desc: 'Randomized teams of Pok&eacute;mon with sets that are generated to be competitively viable.',
+    mod: 'champions',
+    team: 'random',
+    bestOfDefault: true,
+    ruleset: [
+      'Obtainable',
+      'Species Clause',
+      'Cancel Mod',
+      'Sleep Clause Mod',
+      'Illusion Level Mod',
+      'Level Clause Mod'
+    ]
+  },
+  {
     name: '[Gen 9 Champions] OU',
     mod: 'champions',
     ruleset: [ 'Standard' ],
@@ -15,20 +30,20 @@ export const Formats = [
     banlist: [ 'OU', 'UUBL' ]
   },
   {
-    name: '[Gen 9 Champions] BSS Reg M-A',
+    name: '[Gen 9 Champions] BSS Reg M-B',
     mod: 'champions',
     bestOfDefault: true,
     ruleset: [ 'Flat Rules', 'VGC Timer' ]
   },
   {
-    name: '[Gen 9 Champions] VGC 2026 Reg M-A',
+    name: '[Gen 9 Champions] VGC 2026 Reg M-B',
     mod: 'champions',
     gameType: 'doubles',
     bestOfDefault: true,
     ruleset: [ 'Flat Rules', 'VGC Timer', 'Open Team Sheets' ]
   },
   {
-    name: '[Gen 9 Champions] VGC 2026 Reg M-A (Bo3)',
+    name: '[Gen 9 Champions] VGC 2026 Reg M-B (Bo3)',
     mod: 'champions',
     gameType: 'doubles',
     ruleset: [ 'Flat Rules', 'VGC Timer', 'Force Open Team Sheets', 'Best of = 3' ]
@@ -49,35 +64,19 @@ export const Formats = [
     ]
   },
   {
-    name: '[Gen 9 Champions] 4v4 Doubles UU',
-    desc: 'VGC rules, but only Pok&eacute;mon that get less than 4.52% usage on the [Gen 9 Champions] VGC 2026 Reg M-A ladder are legal, as well as a few other guidelines.',
+    name: '[Gen 9 Champions] Doubles Custom Game',
     mod: 'champions',
     gameType: 'doubles',
-    bestOfDefault: true,
+    searchShow: false,
+    debug: true,
+    battle: { trunc: Math.trunc },
     ruleset: [
-      '[Gen 9 Champions] VGC 2026 Reg M-A',
-      'Evasion Clause',
-      'OHKO Clause',
-      'Gravity Sleep Clause'
-    ],
-    banlist: [
-      'Aegislash',        'Aerodactyl',
-      'Archaludon',       'Basculegion-M',
-      'Charizard-Mega-Y', 'Delphox-Mega',
-      'Excadrill',        'Farigiraf',
-      'Floette-Mega',     'Froslass-Mega',
-      'Garchomp',         'Gardevoir-Mega',
-      'Gengar-Mega',      'Incineroar',
-      'Kingambit',        'Kommo-o',
-      'Maushold',         'Meganium-Mega',
-      'Milotic',          'Ninetales-Alola',
-      'Pelipper',         'Rotom-Wash',
-      'Scizor-Mega',      'Scovillain-Mega',
-      'Sinistcha',        'Sneasler',
-      'Talonflame',       'Tyranitar-Mega',
-      'Venusaur',         'Whimsicott',
-      'Focus Band',       "King's Rock",
-      'Quick Claw'
+      'Team Preview',
+      'Cancel Mod',
+      'Max Team Size = 24',
+      'Max Move Count = 24',
+      'Max Level = 9999',
+      'Default Level = 50'
     ]
   }
 ];

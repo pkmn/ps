@@ -16970,7 +16970,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			noCopy: true,
 			onStart(pokemon) {
 				let applies = false;
-				if (pokemon.hasType('Flying') || pokemon.hasAbility('levitate')) applies = true;
+				if (pokemon.hasType('Flying') || pokemon.hasAbility(['levitate', 'eelevate'])) applies = true;
 				if (pokemon.hasItem('ironball') || pokemon.volatiles['ingrain'] ||
 					this.field.getPseudoWeather('gravity')) applies = false;
 				if (pokemon.removeVolatile('fly') || pokemon.removeVolatile('bounce')) {
@@ -19845,9 +19845,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { allyanim: 1, failencore: 1, noassist: 1, failcopycat: 1, failmimic: 1, failinstruct: 1 },
 		onHit(target, pokemon) {
-			if (!pokemon.transformInto(target)) {
-				return false;
-			}
+			return pokemon.transformInto(target);
 		},
 		target: "normal",
 		type: "Normal",

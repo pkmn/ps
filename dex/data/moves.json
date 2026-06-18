@@ -492,6 +492,11 @@
       "desc": "The user spends two or three turns locked into this move and then, on the second or third turn after using this move, the user attacks the opponent, inflicting double the damage in HP it lost during those turns. If the user is prevented from moving during this move's use, the effect ends. This move does not ignore type immunity.",
       "shortDesc": "Waits 2-3 turns; deals double the damage taken."
     },
+    "conversion2": {
+      "inherit": true,
+      "desc": "The user's type changes to match a type that resists or is immune to the type of the last move used by the opposing Pokemon, even if it is one of the user's current types. The original type of the move is used rather than the determined type. Fails if the opposing Pokemon has not used a move.",
+      "shortDesc": "Changes user's type to resist the foe's last move."
+    },
     "counter": {
       "inherit": true,
       "condition": {},
@@ -845,11 +850,6 @@
     "bubble": {
       "inherit": true,
       "shortDesc": "10% chance to lower the target's Speed by 1."
-    },
-    "conversion2": {
-      "inherit": true,
-      "desc": "The user's type changes to match a type that resists or is immune to the type of the last move used by the opposing Pokemon, even if it is one of the user's current types. The original type of the move is used rather than the determined type. Fails if the opposing Pokemon has not used a move.",
-      "shortDesc": "Changes user's type to resist the foe's last move."
     },
     "defensecurl": {
       "inherit": true,

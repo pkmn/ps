@@ -1283,20 +1283,6 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 			}
 		},
 	},
-	forceopenteamsheets: {
-		effectType: 'Rule',
-		name: 'Force Open Team Sheets',
-		desc: "Allows each player to see the Pok&eacute;mon and all non-stat information about them, before they choose their lead Pok&eacute;mon",
-		mutuallyExclusiveWith: 'openteamsheets',
-		onValidateRule() {
-			if (!(this.ruleTable.has('teampreview') || this.ruleTable.has('teamtypepreview'))) {
-				throw new Error(`The "Force Open Team Sheets" rule${this.ruleTable.blame('forceopenteamsheets')} requires Team Preview.`);
-			}
-		},
-		onTeamPreview() {
-			this.showOpenTeamSheets();
-		},
-	},
 	pickedteamsize: {
 		effectType: 'Rule',
 		name: 'Picked Team Size',

@@ -37,6 +37,14 @@ export const Abilities: ModdedAbilityDataTable = {
 		inherit: true,
 		isNonstandard: null,
 	},
+	eelevate: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	firemane: {
+		inherit: true,
+		isNonstandard: null,
+	},
 	healer: {
 		inherit: true,
 		onResidual(pokemon) {
