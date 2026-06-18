@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/mods",
-  "version": "0.10.10",
+  "version": "0.10.11",
   "description": "Support for non-standard mods to @pkmn/sim and @pkmn/dex",
   "repository": "github:pkmn/ps",
   "author": "Guangcong Luo <guangcongluo@gmail.com> (http://guangcongluo.com)",
@@ -73,6 +73,10 @@
     "./champions": {
       "require": "./build/champions/index.js",
       "import": "./build/champions/index.mjs"
+    },
+    "./championsregma": {
+      "require": "./build/championsregma/index.js",
+      "import": "./build/championsregma/index.mjs"
     }
   },
   "typesVersions": {
@@ -118,6 +122,9 @@
       ],
       "champions": [
         "./build/champions/index.d.ts"
+      ],
+      "championsregma": [
+        "./build/championsregma/index.d.ts"
       ]
     }
   },
@@ -128,11 +135,11 @@
     "build"
   ],
   "dependencies": {
-    "@pkmn/dex-types": "^0.10.10"
+    "@pkmn/dex-types": "^0.10.11"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.10.10",
-    "@pkmn/sim": "^0.10.10"
+    "@pkmn/dex": "^0.10.11",
+    "@pkmn/sim": "^0.10.11"
   },
   "scripts": {
     "lint": "eslint --cache src",

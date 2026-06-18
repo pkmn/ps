@@ -21,7 +21,7 @@ describe('Rulesets', function () {
 			'Old Unova Pokedex', 'Stadium Sleep Clause', 'Best Of', 'DC Timer Bank', 'DC Timer',
 			'Timeout Auto Choose', 'Timer Accelerate', 'Timer Add Per Turn', 'Timer Grace',
 			'Timer Max First Turn', 'Timer Max Per Turn', 'Guaranteed Secondary Mod',
-			'Full Arceus Clause', 'Beat Up Nicknames Mod',
+			'Full Arceus Clause', 'Beat Up Nicknames Mod', 'Force Open Team Sheets',
 		]);
 
 		for (const format of Dex.formats.formatsListCache) {

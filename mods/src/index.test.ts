@@ -159,6 +159,15 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expect(dex.species.get('Koraidon').isNonstandard).toBe('Past');
         expectFormat(dex, 'gen9championsou');
       });
+      it('championsregma', async () => {
+        const dex =
+          new ModdedDex(Dex.mod('championsregma' as ID,
+            await import('./championsregma') as ModData));
+        expect(dex.gen).toBe(9);
+        expect(dex.species.get('Venusaur').isNonstandard).toBeNull();
+        expect(dex.items.get('Life Orb').isNonstandard).toBe('Past');
+        expectFormat(dex, 'gen9championsvgc2026regma');
+      });
     });
 
     describe('types', () => {

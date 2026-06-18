@@ -256,6 +256,11 @@ const MOD_IMPORTS = {
   'data/mods/champions/scripts.ts': [
     'ModdedBattleScriptsData', 'Pokemon', 'ActiveMove', 'toID', 'Condition',
   ],
+
+  // championsregma
+  'data/mods/championsregma/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
+  'data/mods/championsregma/items.ts': ['ModdedItemDataTable'],
+  'data/mods/championsregma/scripts.ts': ['ModdedBattleScriptsData'],
 };
 const RANDOMS_IMPORTS = {
   'data/random-battles/gen9/teams.ts': [
@@ -519,6 +524,7 @@ const MOD_OVERRIDDEN = new Set([
   'data/mods/gen9predlc/index.ts',
   'data/mods/gen9dlc1/index.ts',
   'data/mods/champions/index.ts',
+  'data/mods/championsregma/index.ts',
   'data/mods/index.test.ts',
   'data/mods/index.ts',
 ]);
