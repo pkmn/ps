@@ -145,7 +145,7 @@ type DeepPartial<T> = {
 			: DeepPartial<T[P]>
 };
 
-export type ModData = DeepPartial<ModdedDex['data']>;
+export type ModData = DeepPartial<ModdedDex['data']> & {Formats?: FormatList};
 
 export const toID = Data.toID;
 
@@ -217,7 +217,7 @@ export class ModdedDex {
 		return dexes;
 	}
 
-	mod(mod: string | undefined, modData?: DeepPartial<ModdedDex['data']> & {Formats?: FormatList}): ModdedDex {
+	mod(mod: string | undefined, modData?: ModData): ModdedDex {
 		if (!mod) return dexes['base'];
 		const modid = toID(mod);
 		if (modData?.Types && !modData.TypeChart) modData.TypeChart = modData.Types;
@@ -325,10 +325,10 @@ export class ModdedDex {
 		const typeData = this.types.get(targetTyping);
 		if (!typeData) return 0;
 		switch (typeData.damageTaken[sourceType]) {
-		case 1: return 1; // super-effective
-		case 2: return -1; // resist
-		// in case of weird situations like Gravity, immunity is handled elsewhere
-		default: return 0;
+			case 1: return 1; // super-effective
+			case 2: return -1; // resist
+			// in case of weird situations like Gravity, immunity is handled elsewhere
+			default: return 0;
 		}
 	}
 
@@ -427,7 +427,7 @@ export class ModdedDex {
 	loadDataFile(
 		mod: string,
 		dataType: DataType,
-		modData?: DeepPartial<ModdedDex['data']>
+		modData?: ModData
 	): AnyObject | void {
 		if (modData) return modData[dataType];
 		return (dexData as any)[mod === 'base' ? BASE_MOD : mod][dataType];
@@ -464,7 +464,7 @@ export class ModdedDex {
 		return this;
 	}
 
-	loadData(modData?: DeepPartial<ModdedDex['data']>): DexTableData {
+	loadData(modData?: ModData): DexTableData {
 		if (this.dataCache) return this.dataCache;
 		const dataCache: {[k in keyof DexTableData]?: any} = {};
 
