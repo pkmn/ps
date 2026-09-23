@@ -37,7 +37,7 @@ This package contains data and logic for several mods:
 - `gen9dlc1`: A mod on top of Generation 9 which contains data from just Pokémon Scarlet and Violet
    and the Teal Mask DLC (ie. Generation 9 **without** the data from the Indigo Disk DLC)
 - `champions`: A mod on top of Generation 9 which contains the data and logic for Pokémon Champions
-- `championsregma`: A mod on top of Generation 9 which applies the Regulation M-A restrictions to
+- `championsregmb`: A mod on top of Generation 9 which applies the Regulation M-B restrictions to
   Pokémon Champions data
 
 These mods can be applied to a `Dex` implementation by passing the data as an argument to the `mod`

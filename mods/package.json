@@ -74,9 +74,9 @@
       "require": "./build/champions/index.js",
       "import": "./build/champions/index.mjs"
     },
-    "./championsregma": {
-      "require": "./build/championsregma/index.js",
-      "import": "./build/championsregma/index.mjs"
+    "./championsregmb": {
+      "require": "./build/championsregmb/index.js",
+      "import": "./build/championsregmb/index.mjs"
     }
   },
   "typesVersions": {
@@ -123,8 +123,8 @@
       "champions": [
         "./build/champions/index.d.ts"
       ],
-      "championsregma": [
-        "./build/championsregma/index.d.ts"
+      "championsregmb": [
+        "./build/championsregmb/index.d.ts"
       ]
     }
   },

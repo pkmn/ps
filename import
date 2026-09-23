@@ -257,10 +257,12 @@ const MOD_IMPORTS = {
     'ModdedBattleScriptsData', 'Pokemon', 'ActiveMove', 'toID', 'Condition',
   ],
 
-  // championsregma
-  'data/mods/championsregma/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
-  'data/mods/championsregma/items.ts': ['ModdedItemDataTable'],
-  'data/mods/championsregma/scripts.ts': ['ModdedBattleScriptsData'],
+  // championsregmb
+  'data/mods/championsregmb/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
+  'data/mods/championsregmb/items.ts': ['ModdedItemDataTable'],
+  'data/mods/championsregmb/learnsets.ts': ['ModdedLearnsetDataTable'],
+  'data/mods/championsregmb/moves.ts': ['ModdedMoveDataTable'],
+  'data/mods/championsregmb/scripts.ts': ['ModdedBattleScriptsData'],
 };
 const RANDOMS_IMPORTS = {
   'data/random-battles/gen9/teams.ts': [
@@ -524,7 +526,7 @@ const MOD_OVERRIDDEN = new Set([
   'data/mods/gen9predlc/index.ts',
   'data/mods/gen9dlc1/index.ts',
   'data/mods/champions/index.ts',
-  'data/mods/championsregma/index.ts',
+  'data/mods/championsregmb/index.ts',
   'data/mods/index.test.ts',
   'data/mods/index.ts',
 ]);
@@ -839,10 +841,12 @@ const changes = async (where, last, now, repo) => ({
             ' as any;\n/* eslint-enable */';
           // i fucking hate this bullshit
           data = path.resolve(path.join(ps, file), '..', `sets-megainvasion.json`);
-          raw = fs.readFileSync(data, 'utf8');
-          megaJson = '\n\n/* eslint-disable */\n' +
-            `const randomMegaInvasionSetsJSON = ${JSON.stringify(JSON.parse(raw))}` +
-            ' as any;\n/* eslint-enable */';
+          if (fs.existsSync(data)) {
+            raw = fs.readFileSync(data, 'utf8');
+            megaJson = '\n\n/* eslint-disable */\n' +
+              `const randomMegaInvasionSetsJSON = ${JSON.stringify(JSON.parse(raw))}` +
+              ' as any;\n/* eslint-enable */';
+          }
         }
       }
 

@@ -28,7 +28,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	charizard: {
-		tier: "UU",
+		tier: "RU",
 	},
 	charizardmegax: {
 		tier: "UUBL",
@@ -83,7 +83,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	beedrill: {
-		tier: "UU",
+		tier: "RU",
 	},
 	beedrillmega: {
 		tier: "UU",
@@ -97,10 +97,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	pidgeot: {
-		tier: "UU",
+		tier: "RU",
 	},
 	pidgeotmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	rattata: {
 		isNonstandard: "Past",
@@ -135,7 +135,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	arbok: {
-		tier: "UU",
+		tier: "RU",
 	},
 	pichu: {
 		isNonstandard: "Past",
@@ -213,18 +213,16 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	raichu: {
-		tier: "UU",
+		tier: "RU",
 	},
 	raichualola: {
-		tier: "UU",
+		tier: "RU",
 	},
 	raichumegax: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	raichumegay: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
 	},
 	sandshrew: {
 		isNonstandard: "Past",
@@ -289,7 +287,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	ninetales: {
-		tier: "UU",
+		tier: "RU",
 	},
 	ninetalesalola: {
 		tier: "UU",
@@ -327,8 +325,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	vileplume: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	bellossom: {
 		isNonstandard: "Past",
@@ -419,7 +416,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	arcanine: {
-		tier: "UU",
+		tier: "RU",
 	},
 	arcaninehisui: {
 		tier: "UU",
@@ -437,7 +434,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	politoed: {
-		tier: "UU",
+		tier: "RU",
 	},
 	abra: {
 		isNonstandard: "Past",
@@ -462,7 +459,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	machamp: {
-		tier: "UU",
+		tier: "RU",
 	},
 	machampgmax: {
 		isNonstandard: "Past",
@@ -477,7 +474,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	victreebel: {
-		tier: "UU",
+		tier: "RU",
 	},
 	victreebelmega: {
 		tier: "UU",
@@ -539,13 +536,13 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	slowbro: {
-		tier: "UU",
+		tier: "RU",
 	},
 	slowbromega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	slowbrogalar: {
-		tier: "UU",
+		tier: "RU",
 	},
 	slowking: {
 		tier: "UU",
@@ -640,10 +637,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	steelix: {
-		tier: "UU",
+		tier: "RU",
 	},
 	steelixmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	drowzee: {
 		isNonstandard: "Past",
@@ -777,10 +774,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	kangaskhan: {
-		tier: "UU",
+		tier: "RU",
 	},
 	kangaskhanmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	horsea: {
 		isNonstandard: "Past",
@@ -825,7 +822,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	mrrime: {
-		tier: "UU",
+		tier: "RU",
 	},
 	scyther: {
 		isNonstandard: "Past",
@@ -835,7 +832,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "OU",
 	},
 	scizormega: {
-		tier: "OU",
+		tier: "(OU)",
 	},
 	kleavor: {
 		tier: "UU",
@@ -873,19 +870,19 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	pinsir: {
-		tier: "UU",
+		tier: "RU",
 	},
 	pinsirmega: {
 		tier: "UU",
 	},
 	tauros: {
-		tier: "UU",
+		tier: "RU",
 	},
 	taurospaldeacombat: {
-		tier: "UU",
+		tier: "RU",
 	},
 	taurospaldeablaze: {
-		tier: "UU",
+		tier: "RU",
 	},
 	taurospaldeaaqua: {
 		tier: "UU",
@@ -927,22 +924,22 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "UU",
 	},
 	jolteon: {
-		tier: "UU",
+		tier: "RU",
 	},
 	flareon: {
-		tier: "UU",
+		tier: "RU",
 	},
 	espeon: {
-		tier: "UU",
+		tier: "RU",
 	},
 	umbreon: {
 		tier: "UU",
 	},
 	leafeon: {
-		tier: "UU",
+		tier: "RU",
 	},
 	glaceon: {
-		tier: "UU",
+		tier: "RU",
 	},
 	sylveon: {
 		tier: "UU",
@@ -976,17 +973,17 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	aerodactyl: {
-		tier: "UU",
+		tier: "RU",
 	},
 	aerodactylmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	munchlax: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	snorlax: {
-		tier: "UU",
+		tier: "RU",
 	},
 	snorlaxgmax: {
 		isNonstandard: "Past",
@@ -1055,7 +1052,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	meganium: {
-		tier: "UU",
+		tier: "RU",
 	},
 	meganiummega: {
 		tier: "OU",
@@ -1069,10 +1066,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	typhlosion: {
-		tier: "UU",
+		tier: "RU",
 	},
 	typhlosionhisui: {
-		tier: "UU",
+		tier: "RU",
 	},
 	totodile: {
 		isNonstandard: "Past",
@@ -1083,7 +1080,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	feraligatr: {
-		tier: "UU",
+		tier: "RU",
 	},
 	feraligatrmega: {
 		tier: "UU",
@@ -1117,7 +1114,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	ariados: {
-		tier: "UU",
+		tier: "RU",
 	},
 	chinchou: {
 		isNonstandard: "Past",
@@ -1156,10 +1153,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	ampharos: {
-		tier: "UU",
+		tier: "RU",
 	},
 	ampharosmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	azurill: {
 		isNonstandard: "Past",
@@ -1261,7 +1258,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	farigiraf: {
-		tier: "UU",
+		tier: "RU",
 	},
 	pineco: {
 		isNonstandard: "Past",
@@ -1297,26 +1294,24 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	qwilfish: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	qwilfishhisui: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	overqwil: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "UU",
 	},
 	shuckle: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	heracross: {
-		tier: "UU",
+		tier: "RU",
 	},
 	heracrossmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	sneasel: {
 		isNonstandard: "Past",
@@ -1410,10 +1405,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	houndoom: {
-		tier: "UU",
+		tier: "RU",
 	},
 	houndoommega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	phanpy: {
 		isNonstandard: "Past",
@@ -1428,7 +1423,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	wyrdeer: {
-		tier: "UU",
+		tier: "RU",
 	},
 	smeargle: {
 		isNonstandard: "Past",
@@ -1459,10 +1454,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	tyranitar: {
-		tier: "UU",
+		tier: "RU",
 	},
 	tyranitarmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	lugia: {
 		isNonstandard: "Past",
@@ -1485,12 +1480,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	sceptile: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	sceptilemega: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	torchic: {
 		isNonstandard: "Past",
@@ -1501,12 +1494,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	blaziken: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
 	},
 	blazikenmega: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "Uber",
 	},
 	mudkip: {
 		isNonstandard: "Past",
@@ -1517,12 +1508,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	swampert: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "UU",
 	},
 	swampertmega: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
 	},
 	poochyena: {
 		isNonstandard: "Past",
@@ -1623,7 +1612,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "UU",
 	},
 	gardevoirmega: {
-		tier: "UU",
+		tier: "UUBL",
 	},
 	gallade: {
 		tier: "UU",
@@ -1708,18 +1697,16 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	sableye: {
-		tier: "UU",
+		tier: "RU",
 	},
 	sableyemega: {
 		tier: "UU",
 	},
 	mawile: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	mawilemega: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
 	},
 	aron: {
 		isNonstandard: "Past",
@@ -1730,30 +1717,30 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	aggron: {
-		tier: "UU",
+		tier: "RU",
 	},
 	aggronmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	meditite: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	medicham: {
-		tier: "UU",
+		tier: "RU",
 	},
 	medichammega: {
-		tier: "UU",
+		tier: "UUBL",
 	},
 	electrike: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	manectric: {
-		tier: "UU",
+		tier: "RU",
 	},
 	manectricmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	plusle: {
 		isNonstandard: "Past",
@@ -1795,7 +1782,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	sharpedo: {
-		tier: "UU",
+		tier: "RU",
 	},
 	sharpedomega: {
 		tier: "UU",
@@ -1813,10 +1800,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	camerupt: {
-		tier: "UU",
+		tier: "RU",
 	},
 	cameruptmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	torkoal: {
 		tier: "UU",
@@ -1927,7 +1914,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "UU",
 	},
 	castform: {
-		tier: "UU",
+		tier: "RU",
 	},
 	castformsunny: {
 	},
@@ -1944,10 +1931,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	banette: {
-		tier: "UU",
+		tier: "RU",
 	},
 	banettemega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	duskull: {
 		isNonstandard: "Past",
@@ -1970,16 +1957,16 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	chimecho: {
-		tier: "UU",
+		tier: "RU",
 	},
 	chimechomega: {
 		tier: "UU",
 	},
 	absol: {
-		tier: "UU",
+		tier: "RU",
 	},
 	absolmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	absolmegaz: {
 		isNonstandard: "Past",
@@ -1990,16 +1977,16 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	glalie: {
-		tier: "UU",
+		tier: "RU",
 	},
 	glaliemega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	froslass: {
-		tier: "UU",
+		tier: "RU",
 	},
 	froslassmega: {
-		tier: "UU",
+		tier: "UUBL",
 	},
 	spheal: {
 		isNonstandard: "Past",
@@ -2058,12 +2045,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	metagross: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	metagrossmega: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
 	},
 	regirock: {
 		isNonstandard: "Past",
@@ -2146,7 +2131,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	torterra: {
-		tier: "UU",
+		tier: "RU",
 	},
 	chimchar: {
 		isNonstandard: "Past",
@@ -2179,12 +2164,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	staraptor: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	staraptormega: {
-		isNonstandard: "Future",
-		tier: "Illegal",
+		tier: "OU",
 	},
 	bidoof: {
 		isNonstandard: "Past",
@@ -2211,21 +2194,21 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	luxray: {
-		tier: "UU",
+		tier: "RU",
 	},
 	cranidos: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	rampardos: {
-		tier: "UU",
+		tier: "RU",
 	},
 	shieldon: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	bastiodon: {
-		tier: "UU",
+		tier: "RU",
 	},
 	burmy: {
 		isNonstandard: "Past",
@@ -2299,7 +2282,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	lopunny: {
-		tier: "UU",
+		tier: "RU",
 	},
 	lopunnymega: {
 		tier: "OU",
@@ -2333,7 +2316,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	spiritomb: {
-		tier: "UU",
+		tier: "RU",
 	},
 	gible: {
 		isNonstandard: "Past",
@@ -2358,7 +2341,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	lucario: {
-		tier: "UU",
+		tier: "RU",
 	},
 	lucariomega: {
 		tier: "Uber",
@@ -2387,7 +2370,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	toxicroak: {
-		tier: "UU",
+		tier: "RU",
 	},
 	carnivine: {
 		isNonstandard: "Past",
@@ -2406,13 +2389,13 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	abomasnow: {
-		tier: "UU",
+		tier: "RU",
 	},
 	abomasnowmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	rotom: {
-		tier: "UU",
+		tier: "RU",
 	},
 	rotomheat: {
 		tier: "UU",
@@ -2421,10 +2404,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "OU",
 	},
 	rotomfrost: {
-		tier: "UU",
+		tier: "RU",
 	},
 	rotomfan: {
-		tier: "UU",
+		tier: "RU",
 	},
 	rotommow: {
 		tier: "UU",
@@ -2584,10 +2567,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	emboar: {
-		tier: "UU",
+		tier: "RU",
 	},
 	emboarmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	oshawott: {
 		isNonstandard: "Past",
@@ -2598,7 +2581,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	samurott: {
-		tier: "UU",
+		tier: "RU",
 	},
 	samurotthisui: {
 		tier: "OU",
@@ -2608,7 +2591,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	watchog: {
-		tier: "UU",
+		tier: "RU",
 	},
 	lillipup: {
 		isNonstandard: "Past",
@@ -2627,36 +2610,35 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	liepard: {
-		tier: "UU",
+		tier: "RU",
 	},
 	pansage: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	simisage: {
-		tier: "UU",
+		tier: "RU",
 	},
 	pansear: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	simisear: {
-		tier: "UU",
+		tier: "RU",
 	},
 	panpour: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	simipour: {
-		tier: "UU",
+		tier: "RU",
 	},
 	munna: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	musharna: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	pidove: {
 		isNonstandard: "Past",
@@ -2709,10 +2691,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "(OU)",
 	},
 	audino: {
-		tier: "UU",
+		tier: "RU",
 	},
 	audinomega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	timburr: {
 		isNonstandard: "Past",
@@ -2766,19 +2748,17 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	scolipede: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	scolipedemega: {
-		isNonstandard: "Future",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	cottonee: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	whimsicott: {
-		tier: "UU",
+		tier: "RU",
 	},
 	petilil: {
 		isNonstandard: "Past",
@@ -2858,12 +2838,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	scrafty: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	scraftymega: {
-		isNonstandard: "Future",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	sigilyph: {
 		isNonstandard: "Past",
@@ -2904,7 +2882,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	garbodor: {
-		tier: "UU",
+		tier: "RU",
 	},
 	garbodorgmax: {
 		isNonstandard: "Past",
@@ -2919,7 +2897,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	zoroark: {
-		tier: "UU",
+		tier: "RU",
 	},
 	zoroarkhisui: {
 		tier: "UU",
@@ -2953,7 +2931,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	reuniclus: {
-		tier: "UU",
+		tier: "RU",
 	},
 	ducklett: {
 		isNonstandard: "Past",
@@ -2972,7 +2950,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	vanilluxe: {
-		tier: "UU",
+		tier: "RU",
 	},
 	deerling: {
 		isNonstandard: "Past",
@@ -2983,7 +2961,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	emolga: {
-		tier: "UU",
+		tier: "RU",
 	},
 	karrablast: {
 		isNonstandard: "Past",
@@ -3050,12 +3028,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	eelektross: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	eelektrossmega: {
-		isNonstandard: "Future",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	elgyem: {
 		isNonstandard: "Past",
@@ -3074,10 +3050,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	chandelure: {
-		tier: "UU",
+		tier: "RU",
 	},
 	chandeluremega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	axew: {
 		isNonstandard: "Past",
@@ -3096,7 +3072,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	beartic: {
-		tier: "UU",
+		tier: "RU",
 	},
 	cryogonal: {
 		isNonstandard: "Past",
@@ -3111,10 +3087,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	stunfisk: {
-		tier: "UU",
+		tier: "RU",
 	},
 	stunfiskgalar: {
-		tier: "UU",
+		tier: "RU",
 	},
 	mienfoo: {
 		isNonstandard: "Past",
@@ -3133,10 +3109,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	golurk: {
-		tier: "UU",
+		tier: "RU",
 	},
 	golurkmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	pawniard: {
 		isNonstandard: "Past",
@@ -3292,10 +3268,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	chesnaught: {
-		tier: "UU",
+		tier: "RU",
 	},
 	chesnaughtmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	fennekin: {
 		isNonstandard: "Past",
@@ -3306,7 +3282,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	delphox: {
-		tier: "UU",
+		tier: "RU",
 	},
 	delphoxmega: {
 		tier: "OU",
@@ -3360,19 +3336,17 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	vivillon: {
-		tier: "UU",
+		tier: "RU",
 	},
 	litleo: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	pyroar: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	pyroarmega: {
-		isNonstandard: "Future",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	flabebe: {
 		isNonstandard: "Past",
@@ -3389,7 +3363,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "OU",
 	},
 	florges: {
-		tier: "UU",
+		tier: "RU",
 	},
 	skiddo: {
 		isNonstandard: "Past",
@@ -3407,20 +3381,20 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "UU",
 	},
 	furfrou: {
-		tier: "UU",
+		tier: "RU",
 	},
 	espurr: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	meowstic: {
-		tier: "UU",
+		tier: "RU",
 	},
 	meowsticmmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	meowsticfmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	honedge: {
 		isNonstandard: "Past",
@@ -3440,7 +3414,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	aromatisse: {
-		tier: "UU",
+		tier: "RU",
 	},
 	swirlix: {
 		isNonstandard: "Past",
@@ -3454,43 +3428,37 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	malamar: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	malamarmega: {
-		isNonstandard: "Future",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	binacle: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	barbaracle: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	barbaraclemega: {
-		isNonstandard: "Future",
-		tier: "Illegal",
+		tier: "UUBL",
 	},
 	skrelp: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	dragalge: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	dragalgemega: {
-		isNonstandard: "Future",
-		tier: "Illegal",
+		tier: "OU",
 	},
 	clauncher: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	clawitzer: {
-		tier: "UU",
+		tier: "RU",
 	},
 	helioptile: {
 		isNonstandard: "Past",
@@ -3504,7 +3472,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	tyrantrum: {
-		tier: "UU",
+		tier: "RU",
 	},
 	amaura: {
 		isNonstandard: "Past",
@@ -3520,7 +3488,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "UU",
 	},
 	dedenne: {
-		tier: "UU",
+		tier: "RU",
 	},
 	carbink: {
 		isNonstandard: "Past",
@@ -3539,7 +3507,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	goodra: {
-		tier: "UU",
+		tier: "RU",
 	},
 	goodrahisui: {
 		tier: "UU",
@@ -3552,7 +3520,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	trevenant: {
-		tier: "UU",
+		tier: "RU",
 	},
 	pumpkaboo: {
 		isNonstandard: "Past",
@@ -3568,26 +3536,26 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		isNonstandard: "Past",
 	},
 	gourgeist: {
-		tier: "UU",
+		tier: "RU",
 	},
 	gourgeistsmall: {
-		tier: "UU",
+		tier: "RU",
 	},
 	gourgeistlarge: {
-		tier: "UU",
+		tier: "RU",
 	},
 	gourgeistsuper: {
-		tier: "UU",
+		tier: "RU",
 	},
 	bergmite: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	avalugg: {
-		tier: "UU",
+		tier: "RU",
 	},
 	avalugghisui: {
-		tier: "UU",
+		tier: "RU",
 	},
 	noibat: {
 		isNonstandard: "Past",
@@ -3653,7 +3621,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	decidueye: {
-		tier: "UU",
+		tier: "RU",
 	},
 	decidueyehisui: {
 		tier: "UU",
@@ -3667,7 +3635,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	incineroar: {
-		tier: "UU",
+		tier: "RU",
 	},
 	popplio: {
 		isNonstandard: "Past",
@@ -3689,7 +3657,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	toucannon: {
-		tier: "UU",
+		tier: "RU",
 	},
 	yungoos: {
 		isNonstandard: "Past",
@@ -3724,7 +3692,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	crabominable: {
-		tier: "UU",
+		tier: "RU",
 	},
 	crabominablemega: {
 		tier: "UU",
@@ -3766,13 +3734,13 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	lycanroc: {
-		tier: "UU",
+		tier: "RU",
 	},
 	lycanrocmidnight: {
-		tier: "UU",
+		tier: "RU",
 	},
 	lycanrocdusk: {
-		tier: "UU",
+		tier: "RU",
 	},
 	wishiwashi: {
 		isNonstandard: "Past",
@@ -3831,7 +3799,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	salazzle: {
-		tier: "UU",
+		tier: "RU",
 	},
 	salazzletotem: {
 		isNonstandard: "Past",
@@ -3861,10 +3829,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	oranguru: {
-		tier: "UU",
+		tier: "RU",
 	},
 	passimian: {
-		tier: "UU",
+		tier: "RU",
 	},
 	wimpod: {
 		isNonstandard: "Past",
@@ -4002,10 +3970,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	drampa: {
-		tier: "UU",
+		tier: "RU",
 	},
 	drampamega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	dhelmise: {
 		isNonstandard: "Past",
@@ -4307,14 +4275,14 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	flapple: {
-		tier: "UU",
+		tier: "RU",
 	},
 	flapplegmax: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	appletun: {
-		tier: "UU",
+		tier: "RU",
 	},
 	appletungmax: {
 		isNonstandard: "Past",
@@ -4329,7 +4297,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	sandaconda: {
-		tier: "UU",
+		tier: "RU",
 	},
 	sandacondagmax: {
 		isNonstandard: "Past",
@@ -4392,7 +4360,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		isNonstandard: "Past",
 	},
 	polteageist: {
-		tier: "UU",
+		tier: "UUBL",
 	},
 	hatenna: {
 		isNonstandard: "Past",
@@ -4418,8 +4386,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	grimmsnarl: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "UU",
 	},
 	grimmsnarlgmax: {
 		isNonstandard: "Past",
@@ -4430,19 +4397,17 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	alcremie: {
-		tier: "UU",
+		tier: "RU",
 	},
 	alcremiegmax: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	falinks: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	falinksmega: {
-		isNonstandard: "Future",
-		tier: "Illegal",
+		tier: "RU",
 	},
 	pincurchin: {
 		isNonstandard: "Past",
@@ -4473,7 +4438,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	morpeko: {
-		tier: "UU",
+		tier: "RU",
 	},
 	cufant: {
 		isNonstandard: "Past",
@@ -4683,8 +4648,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	houndstone: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "UU",
 	},
 	flittle: {
 		isNonstandard: "Past",
@@ -4733,10 +4697,10 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	scovillain: {
-		tier: "UU",
+		tier: "RU",
 	},
 	scovillainmega: {
-		tier: "UU",
+		tier: "RU",
 	},
 	tadbulb: {
 		isNonstandard: "Past",
@@ -4754,7 +4718,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	orthworm: {
-		tier: "UU",
+		tier: "RU",
 	},
 	tandemaus: {
 		isNonstandard: "Past",
@@ -4867,7 +4831,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	garganacl: {
-		tier: "UU",
+		tier: "RU",
 	},
 	glimmet: {
 		isNonstandard: "Past",
@@ -4877,7 +4841,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "OU",
 	},
 	glimmoramega: {
-		tier: "OU",
+		tier: "(OU)",
 	},
 	shroodle: {
 		isNonstandard: "Past",
@@ -4920,8 +4884,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	gholdengo: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "Uber",
 	},
 	greattusk: {
 		isNonstandard: "Past",
@@ -5019,7 +4982,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	armarouge: {
-		tier: "UU",
+		tier: "RU",
 	},
 	ceruledge: {
 		tier: "OU",
@@ -5040,8 +5003,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		tier: "Illegal",
 	},
 	annihilape: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
 	},
 	walkingwake: {
 		isNonstandard: "Past",
