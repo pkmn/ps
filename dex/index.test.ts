@@ -387,6 +387,8 @@ describe('Dex', () => {
         .toEqual(['Venusaur', 'Venusaur-Mega']);
       expect(Dex.species.get('Gastrodon').cosmeticFormes).toEqual(['Gastrodon-East']);
       expect(Dex.species.get('Garchomp-Mega').isMega).toBe(true);
+      expect(Dex.species.get('Garchomp-Mega-Z').isMega).toBe(true);
+      expect(Dex.species.get('Meowstic-F-Mega').isMega).toBe(true);
       expect(Dex.species.get('Yanmega').isMega).toBeUndefined();
       expect(Dex.species.get('Kyogre-Primal').isPrimal).toBe(true);
     });

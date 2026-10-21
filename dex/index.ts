@@ -760,7 +760,7 @@ export class Species extends BasicEffect<T.SpeciesName> implements T.Species {
     this.tags = data.tags || [];
     this.unreleasedHidden = data.unreleasedHidden || false;
     this.maleOnlyHidden = !!data.maleOnlyHidden;
-    this.isMega = !!(this.forme && ['Mega', 'Mega-X', 'Mega-Y'].includes(this.forme)) || undefined;
+    this.isMega = this.forme.includes('Mega') || undefined;
     this.isPrimal = this.forme === 'Primal' || undefined;
     this.mother = data.mother;
     this.gmaxUnreleased = !!data.gmaxUnreleased;
