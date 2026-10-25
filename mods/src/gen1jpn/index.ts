@@ -1,3 +1,4 @@
+export {Conditions} from './conditions';
 export {Formats} from './formats';
 export {Moves} from './moves';
 export {Rulesets} from './rulesets';

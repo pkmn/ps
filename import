@@ -144,12 +144,14 @@ const IMPORTS = {
 };
 const MOD_IMPORTS = {
   // gen1jpn
+  'data/mods/gen1jpn/conditions.ts': ['ModdedConditionDataTable'],
   'data/mods/gen1jpn/moves.ts': ['ModdedMoveDataTable'],
   'data/mods/gen1jpn/rulesets.ts': ['ModdedFormatDataTable'],
   'data/mods/gen1jpn/scripts.ts': ['ModdedBattleScriptsData'],
 
   // gen1stadium
   'data/mods/gen1stadium/conditions.ts': ['ModdedConditionDataTable'],
+  'data/mods/gen1stadium/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
   'data/mods/gen1stadium/moves.ts': ['ModdedMoveDataTable', 'ActiveMove'],
   'data/mods/gen1stadium/rulesets.ts': ['ModdedFormatDataTable'],
   'data/mods/gen1stadium/scripts.ts': [
@@ -179,6 +181,9 @@ const MOD_IMPORTS = {
   'data/mods/gen3frlg/scripts.ts': ['ModdedBattleScriptsData'],
 
   // gen3rs
+  'data/mods/gen3rs/abilities.ts': [
+    'ModdedAbilityDataTable', 'Battle', 'Pokemon', 'ActiveMove',
+  ],
   'data/mods/gen3rs/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
   'data/mods/gen3rs/items.ts': ['ModdedItemDataTable'],
   'data/mods/gen3rs/learnsets.ts': ['ModdedLearnsetDataTable'],
@@ -209,6 +214,7 @@ const MOD_IMPORTS = {
   'data/mods/gen7letsgo/learnsets.ts': ['ModdedLearnsetDataTable'],
   'data/mods/gen7letsgo/moves.ts': ['ModdedMoveDataTable'],
   'data/mods/gen7letsgo/pokedex.ts': ['ModdedSpeciesDataTable'],
+  'data/mods/gen7letsgo/rulesets.ts': ['ModdedFormatDataTable'],
   'data/mods/gen7letsgo/scripts.ts': [
     'ModdedBattleScriptsData', 'StatsTable', 'StatID', 'Species', 'Battle',
   ],
@@ -217,6 +223,7 @@ const MOD_IMPORTS = {
   'data/mods/gen7sm/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
   'data/mods/gen7sm/items.ts': ['ModdedItemDataTable'],
   'data/mods/gen7sm/learnsets.ts': ['ModdedLearnsetDataTable'],
+  'data/mods/gen7sm/moves.ts': ['ModdedMoveDataTable'],
   'data/mods/gen7sm/pokedex.ts': ['ModdedSpeciesDataTable'],
   'data/mods/gen7sm/scripts.ts': ['ModdedBattleScriptsData'],
 
@@ -227,6 +234,7 @@ const MOD_IMPORTS = {
   'data/mods/gen8dlc1/learnsets.ts': ['ModdedLearnsetDataTable'],
   'data/mods/gen8dlc1/moves.ts': ['ModdedMoveDataTable'],
   'data/mods/gen8dlc1/pokedex.ts': ['ModdedSpeciesDataTable'],
+  'data/mods/gen8dlc1/rulesets.ts': ['ModdedFormatDataTable'],
   'data/mods/gen8dlc1/scripts.ts': ['ModdedBattleScriptsData'],
 
   // gen9predlc
@@ -244,6 +252,11 @@ const MOD_IMPORTS = {
   'data/mods/gen9dlc1/items.ts': ['ModdedItemDataTable'],
   'data/mods/gen9dlc1/learnsets.ts': ['ModdedLearnsetDataTable'],
   'data/mods/gen9dlc1/moves.ts': ['ModdedMoveDataTable'],
+  'data/mods/gen9dlc1/pokedex.ts': ['ModdedSpeciesDataTable'],
+  'data/mods/gen9dlc1/scripts.ts': [
+    'ModdedBattleScriptsData', 'StatIDExceptHP', 'BoostID',
+  ],
+  'data/mods/gen9dlc1/typechart.ts': ['ModdedTypeDataTable'],
 
   // champions
   'data/mods/champions/abilities.ts': ['ModdedAbilityDataTable'],
@@ -254,7 +267,7 @@ const MOD_IMPORTS = {
   'data/mods/champions/moves.ts': ['ModdedMoveDataTable', 'Move', 'ActiveMove'],
   'data/mods/champions/rulesets.ts': ['ModdedFormatDataTable'],
   'data/mods/champions/scripts.ts': [
-    'ModdedBattleScriptsData', 'Pokemon', 'ActiveMove', 'toID', 'Condition',
+    'ModdedBattleScriptsData', 'Pokemon', 'ActiveMove', 'Condition',
   ],
 
   // championsregmb
@@ -757,11 +770,12 @@ const changes = async (where, last, now, repo) => ({
             '} else if (set.level < (legalityList[moveid] as number)) {');
         } else if (file.endsWith('learnsets.ts')) {
           original = original.replace('/* eslint-disable max-len */\n\n', '');
+        } else if (file.endsWith('scripts.ts')) {
+          original = original.replaceAll(/(?<!\.)\btoID\(/g, 'this.dex.toID(');
         }
 
-        const typesOnly = file !== 'data/mods/champions/scripts.ts';
         fs.writeFileSync(path.resolve(mods, file.replace('data/mods', 'src')),
-          `${imports(MOD_IMPORTS[file], '@pkmn/sim', typesOnly)}${original}`);
+          `${imports(MOD_IMPORTS[file], '@pkmn/sim', true)}${original}`);
       } else {
         fs.writeFileSync(path.resolve(mods, file.replace('data/mods', 'src')), original);
       }
@@ -944,7 +958,7 @@ const changes = async (where, last, now, repo) => ({
     ];
     for (const format of require(path.resolve(ps, 'dist/config/formats.js')).Formats) {
       if (!format.mod) continue;
-      const isBaseGen = /^gen\d$/.test(format.mod);
+      const isBaseGen = /^gen\d(bdsp|legends)?$/.test(format.mod);
       const hasModDir = fs.existsSync(path.resolve(mods, 'src', format.mod));
       if (!isBaseGen && !hasModDir) continue;
       if (format.ruleset.some(r => r.includes('Draft')) ||

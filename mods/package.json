@@ -32,7 +32,7 @@
     },
     "./gen3frlg": {
       "require": "./build/gen3frlg/index.js",
-      "import": "./build/gengen3frlg/index.mjs"
+      "import": "./build/gen3frlg/index.mjs"
     },
     "./gen3rs": {
       "require": "./build/gen3rs/index.js",

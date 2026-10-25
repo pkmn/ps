@@ -5,6 +5,7 @@ export * from './state';
 export {Dex, toID, ModData, RuleTable} from './dex';
 export {ModdedAbilityDataTable} from './dex-abilities';
 export {ModdedConditionDataTable} from './dex-conditions';
+export {ModdedTypeDataTable} from './dex-data';
 export {ModdedFormatDataTable} from './dex-formats';
 export {ModdedItemDataTable} from './dex-items';
 export {ModdedMoveDataTable} from './dex-moves';

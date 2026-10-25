@@ -1,4 +1,4 @@
-import {ActiveMove, Condition, ModdedBattleScriptsData, Pokemon, toID} from '@pkmn/sim';
+import type {ActiveMove, Condition, ModdedBattleScriptsData, Pokemon} from '@pkmn/sim';
 
 export const Scripts: ModdedBattleScriptsData = {
 	gen: 9,
@@ -189,7 +189,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			if ((this.battle.gen <= 7 || this.battle.ruleTable.has('+pokemontag:past') ||
 				this.battle.ruleTable.has('+pokemontag:future')) &&
 				altForme?.isMega && altForme?.requiredMove &&
-				pokemon.baseMoves.includes(toID(altForme.requiredMove)) && !item.zMove) {
+				pokemon.baseMoves.includes(this.dex.toID(altForme.requiredMove)) && !item.zMove) {
 				return altForme.name;
 			}
 			return item.megaStone?.[species.name] || null;

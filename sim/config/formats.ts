@@ -1070,6 +1070,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ]
   },
   {
+    name: '[Gen 8 BDSP] Random Battle',
+    mod: 'gen8bdsp',
+    team: 'random',
+    bestOfDefault: true,
+    ruleset: [ '[Gen 8] Random Battle', '!PotD' ]
+  },
+  {
     name: '[Gen 7] Random Battle',
     mod: 'gen7',
     team: 'random',
@@ -1447,6 +1454,27 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     restricted: [ 'Restricted Legendary' ]
   },
   {
+    name: '[Gen 8 BDSP] OU',
+    mod: 'gen8bdsp',
+    ruleset: [ 'Standard', 'Evasion Abilities Clause' ],
+    banlist: [
+      'Uber',
+      'Arena Trap',
+      'Drizzle',
+      'Moody',
+      'Shadow Tag',
+      "King's Rock",
+      'Razor Fang',
+      'Baton Pass'
+    ]
+  },
+  {
+    name: '[Gen 8 BDSP] Ubers',
+    mod: 'gen8bdsp',
+    ruleset: [ 'Standard' ],
+    banlist: [ 'AG', 'Baton Pass' ]
+  },
+  {
     name: '[Gen 8] Custom Game',
     mod: 'gen8',
     debug: true,
@@ -1494,6 +1522,19 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     gameType: 'doubles',
     bestOfDefault: true,
     ruleset: [ 'Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8', 'VGC Timer' ]
+  },
+  {
+    name: '[Gen 8 BDSP] Doubles OU',
+    mod: 'gen8bdsp',
+    gameType: 'doubles',
+    ruleset: [ 'Standard Doubles', 'Evasion Abilities Clause', 'Evasion Items Clause' ],
+    banlist: [ 'DUber', 'Dark Void' ]
+  },
+  {
+    name: '[Gen 8 BDSP] Battle Festival Doubles',
+    mod: 'gen8bdsp',
+    gameType: 'doubles',
+    ruleset: [ 'Flat Rules', 'Min Source Gen = 8' ]
   },
   {
     name: '[Gen 8] Doubles Custom Game',

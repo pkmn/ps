@@ -532,7 +532,14 @@ export class DexFormats {
 
 	extend(formats: FormatList) {
 		this.load();
-		this.formatsListCache?.concat(this.buildList(formats));
+		const extended = this.buildList(formats);
+		if (this.dex.parentMod && this.dex.data.Rulesets === this.dex.dexes[this.dex.parentMod].data.Rulesets) {
+			this.dex.data.Rulesets = {...this.dex.data.Rulesets};
+		}
+		for (const format of extended) {
+			this.dex.data.Rulesets[format.id] = {...format, ruleTable: null};
+		}
+		this.formatsListCache = [...this.formatsListCache!, ...extended];
 		return this;
 	}
 
