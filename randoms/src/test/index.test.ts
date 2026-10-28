@@ -35,7 +35,6 @@ describe('TeamGenerators', () => {
 		'gen6randombattle',
 		'gen7randombattle',
 		'gen8randombattle',
-		'gen8randomdoublesbattle',
 		'gen9randombattle',
 		'gen9randomdoublesbattle',
 		'gen9monotyperandombattle',

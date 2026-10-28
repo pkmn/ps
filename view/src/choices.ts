@@ -10,6 +10,8 @@ interface MoveChoice {
   move: number; // 1-based
   targetLoc: number;
   mega: boolean;
+  megax: boolean;
+  megay: boolean;
   ultra: boolean;
   max: boolean;
   z: boolean;
@@ -39,6 +41,8 @@ export class ChoiceBuilder {
     // NOTE: should always be 0 - not partial if `targetLoc` is known
     targetLoc: 0,
     mega: false,
+    megax: false,
+    megay: false,
     ultra: false,
     z: false,
     max: false,
@@ -49,6 +53,7 @@ export class ChoiceBuilder {
   alreadyMax = false;
   alreadyZ = false;
   alreadyTera = false;
+  serializedChoice: string | null = null;
 
   constructor(request: Protocol.Request) {
     this.request = request;
@@ -66,21 +71,54 @@ export class ChoiceBuilder {
         }
         break;
       case 'switch':
-        while (this.choices.length < r.forceSwitch.length && !r.forceSwitch[this.choices.length]) {
-          this.choices.push('pass');
+        while (this.choices.length < r.forceSwitch.length) {
+          if (!r.forceSwitch[this.choices.length] || this.noMoreSwitchChoices()) {
+            this.choices.push('pass');
+          } else {
+            break;
+          }
         }
     }
   }
 
   isDone() {
-    return this.choices.length >= this.requestLength();
+    return !!this.serializedChoice || this.choices.length >= this.requestLength();
   }
 
   isEmpty() {
+    if (this.serializedChoice) return false;
     for (const choice of this.choices) {
       if (choice !== 'pass') return false;
     }
     return !this.current.move;
+  }
+
+  previous(data?: Data) {
+    const previous = new ChoiceBuilder(this.request);
+    const choices = this.choices.slice();
+    let partialChoice = '';
+
+    if (!this.current.move && !this.serializedChoice) {
+      while (choices[choices.length - 1] === 'pass') choices.pop();
+      const lastChoiceString = choices.pop();
+      if (lastChoiceString) {
+        const lastChoice = this.parseChoice(lastChoiceString, data, choices.length);
+        if (lastChoice?.choiceType === 'move' && lastChoice.targetLoc) {
+          lastChoice.targetLoc = 0;
+          partialChoice = this.stringChoice(lastChoice);
+        }
+      }
+    }
+    for (const choice of choices) {
+      if (choice === 'pass') continue;
+      const possibleError = previous.addChoice(choice, data);
+      if (possibleError) throw new Error(possibleError);
+    }
+    if (partialChoice) {
+      const possibleError = previous.addChoice(partialChoice, data);
+      if (possibleError) throw new Error(possibleError);
+    }
+    return previous;
   }
 
   index() {
@@ -105,7 +143,32 @@ export class ChoiceBuilder {
     return this.request.requestType === 'move' ? this.request.active[this.index()] : undefined;
   }
 
+  isReviving(index = this.index()) {
+    if (this.request.requestType !== 'switch') return false;
+    return !!this.request.side?.pokemon[index]?.reviving;
+  }
+
+  noMoreSwitchChoices() {
+    if (this.request.requestType !== 'switch' || !this.request.side) return false;
+    const isReviving = this.isReviving();
+    const firstChoice = isReviving ? 0 : this.requestLength();
+    for (let i = firstChoice; i < this.request.side.pokemon.length; i++) {
+      const pokemon = this.request.side.pokemon[i];
+      if (!!pokemon.fainted === isReviving && !this.alreadySwitchingIn.includes(i + 1)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   addChoice(choiceString: string, data?: Data) {
+    if (this.request.requestType === 'wait') return 'It\'s not your turn to choose anything';
+    if (this.isDone()) return 'You\'ve already chosen for this turn; cancel to change your choice';
+    if (choiceString === 'auto' || choiceString === 'default') {
+      const currentChoice = this.toString();
+      this.serializedChoice = currentChoice ? `${currentChoice}, default` : 'default';
+      return undefined;
+    }
     let choice: Choice | undefined;
     try {
       choice = this.parseChoice(choiceString, data);
@@ -121,6 +184,8 @@ export class ChoiceBuilder {
         if ('target' in move && choosableTargets.includes(move.target)) {
           this.current.move = choice.move;
           this.current.mega = choice.mega;
+          this.current.megax = choice.megax;
+          this.current.megay = choice.megay;
           this.current.ultra = choice.ultra;
           this.current.z = choice.z;
           this.current.max = choice.max;
@@ -128,12 +193,14 @@ export class ChoiceBuilder {
           return undefined;
         }
       }
-      if (choice.mega) this.alreadyMega = true;
+      if (choice.mega || choice.megax || choice.megay) this.alreadyMega = true;
       if (choice.z) this.alreadyZ = true;
       if (choice.max) this.alreadyMax = true;
       if (choice.tera) this.alreadyTera = true;
       this.current.move = 0;
       this.current.mega = false;
+      this.current.megax = false;
+      this.current.megay = false;
       this.current.ultra = false;
       this.current.z = false;
       this.current.max = false;
@@ -164,11 +231,44 @@ export class ChoiceBuilder {
     return undefined;
   }
 
-  private parseChoice(choice: string, data?: Data): Choice | undefined {
+  addChoices(choiceString: string, data?: Data) {
+    let choiceStrings: string[];
+    if (choiceString.startsWith('team ')) {
+      let teamChoice = choiceString.slice(5).trim();
+      const isBracketedTeam = teamChoice.startsWith('[') && teamChoice.endsWith(']');
+      if (isBracketedTeam) teamChoice = teamChoice.slice(1, -1).trim();
+      const teamChoices =
+        isBracketedTeam ||
+        teamChoice.includes(',') ||
+        (this.request.side?.pokemon.length ?? 0) >= 10
+          ? teamChoice.split(',')
+          : (/^[0-9]+$/.test(teamChoice) ? teamChoice.split('') : [teamChoice]);
+      choiceStrings =
+        teamChoices.slice(0, this.requestLength()).map(choice => `team ${choice.trim()}`);
+    } else {
+      choiceStrings = choiceString.split(',').map(choice => choice.trim());
+    }
+    for (const choice of choiceStrings) {
+      const possibleError = this.addChoice(choice, data);
+      if (possibleError) return possibleError;
+    }
+    if (this.request.requestType === 'team' && choiceString.startsWith('team ')) {
+      for (let i = 1; this.choices.length < this.requestLength(); i++) {
+        if (this.alreadySwitchingIn.includes(i)) continue;
+        const possibleError = this.addChoice(`team ${i}`, data);
+        if (possibleError) return possibleError;
+      }
+    }
+    return undefined;
+  }
+
+  private parseChoice(
+    choice: string,
+    data?: Data,
+    index = this.choices.length
+  ): Choice | undefined {
     const request = this.request;
     if (request.requestType === 'wait') throw new Error('It\'s not your turn to choose anything');
-
-    const index = this.choices.length;
 
     if (choice === 'shift') return {choiceType: 'shift'};
 
@@ -183,6 +283,8 @@ export class ChoiceBuilder {
         move: 0,
         targetLoc: 0,
         mega: false,
+        megax: false,
+        megay: false,
         ultra: false,
         z: false,
         max: false,
@@ -200,6 +302,12 @@ export class ChoiceBuilder {
         } else if (choice.endsWith(' mega')) {
           current.mega = true;
           choice = choice.slice(0, -5);
+        } else if (choice.endsWith(' megax')) {
+          current.megax = true;
+          choice = choice.slice(0, -6);
+        } else if (choice.endsWith(' megay')) {
+          current.megay = true;
+          choice = choice.slice(0, -6);
         } else if (choice.endsWith(' zmove')) {
           current.z = true;
           choice = choice.slice(0, -6);
@@ -300,11 +408,16 @@ export class ChoiceBuilder {
         if (!match) throw new Error(`Couldn't find Pokémon '${choice}' to switch to`);
         current.targetPokemon = match;
       }
-      if (!isTeamPreview && current.targetPokemon - 1 < this.requestLength()) {
+      const target = request.side.pokemon[current.targetPokemon - 1];
+      const isReviving = this.isReviving(index);
+      if (!target) throw new Error(`Couldn't find Pokémon '${choice}' to switch to!`);
+      if (!isTeamPreview && !isReviving && current.targetPokemon - 1 < this.requestLength()) {
         throw new Error('That Pokémon is already in battle!');
       }
-      const target = request.side.pokemon[current.targetPokemon - 1];
-      if (!target) throw new Error(`Couldn't find Pokémon '${choice}' to switch to!`);
+      if (isReviving && target.fainted) return current;
+      if (isReviving && !target.fainted) {
+        throw new Error(`${target.name} still has energy to battle!`);
+      }
       if (target.fainted) throw new Error(`${target.name} is fainted and cannot battle!`);
       return current;
     }
@@ -326,6 +439,7 @@ export class ChoiceBuilder {
   }
 
   toString() {
+    if (this.serializedChoice) return this.serializedChoice;
     let choices = this.choices;
     if (this.current.move) choices = choices.concat(this.stringChoice(this.current));
     return choices.join(', ').replace(/, team /g, ', ');
@@ -337,8 +451,13 @@ export class ChoiceBuilder {
       case 'move': {
         const target =
           choice.targetLoc ? ` ${choice.targetLoc > 0 ? '+' : ''}${choice.targetLoc}` : '';
-        const boost = `${choice.max ? ' max' : ''}${choice.mega ? ' mega' : ''}${choice.z
-          ? ' zmove' : ''}${choice.tera ? ' terastallize' : ''}`;
+        const boost = `${choice.max ? ' max' : ''}${
+          choice.mega ? ' mega' : ''}${
+          choice.megax ? ' megax' : ''}${
+          choice.megay ? ' megay' : ''}${
+          choice.ultra ? ' ultra' : ''}${
+          choice.z ? ' zmove' : ''}${
+          choice.tera ? ' terastallize' : ''}`;
         return `move ${choice.move}${boost}${target}`;
       }
       case 'switch':

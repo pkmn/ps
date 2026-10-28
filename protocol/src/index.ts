@@ -2396,6 +2396,30 @@ function upgradeBattleArgs({args, kwArgs}: {
       }
       break;
     }
+    case '-fail': {
+      const [, pokemon, effect, arg3] = args;
+      if (kwArgs.from === 'ability: Flower Veil') {
+        return {
+          args: [
+            '-block',
+            kwArgs.of as Protocol.PokemonIdent,
+            'ability: Flower Veil' as Protocol.EffectName,
+          ],
+          kwArgs: {of: pokemon},
+        };
+      }
+      if (effect === 'unboost' && arg3) {
+        const statMap: {[key: string]: BoostID} = {
+          'Attack': 'atk',
+          'Defense': 'def',
+          'Special Attack': 'spa',
+          'Special Defense': 'spd',
+          'Speed': 'spe',
+        };
+        if (statMap[arg3]) (args as any)[3] = statMap[arg3];
+      }
+      break;
+    }
     case '-heal': {
       const id = Protocol.parseEffect(kwArgs.from as string, toID).name;
       if (HEALING.has(id)) kwArgs.of = '';

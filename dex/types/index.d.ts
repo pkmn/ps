@@ -95,6 +95,7 @@ export interface ItemData extends EffectData {
   zMoveFrom?: string;
   itemUser?: string[];
   boosts?: Partial<BoostsTable> | false;
+  tags?: ('True Past' | 'Past Unobtainable')[];
 }
 
 interface MoveFlags {
@@ -168,7 +169,7 @@ export interface MoveData extends EffectData, HitEffect {
   flags: MoveFlags;
   category: MoveCategory;
 
-  realMove?: string;
+  placeholderFor?: string;
   condition?: Partial<ConditionData>;
   damage?: number | 'level' | false | null;
   noPPBoosts?: boolean;
@@ -195,6 +196,7 @@ export interface MoveData extends EffectData, HitEffect {
   recoil?: [number, number];
   drain?: [number, number];
   mindBlownRecoil?: boolean;
+  chloroblastRecoil?: boolean;
   stealsBoosts?: boolean;
   secondary?: SecondaryEffect;
   secondaries?: SecondaryEffect[];
@@ -226,7 +228,6 @@ export interface MoveData extends EffectData, HitEffect {
   noCopy?: boolean;
   noDamageVariance?: boolean;
   noFaint?: boolean;
-  nonGhostTarget?: MoveTarget;
   pressureTarget?: MoveTarget;
   sleepUsable?: boolean;
   smartTarget?: boolean;
@@ -239,10 +240,12 @@ export interface MoveData extends EffectData, HitEffect {
   hasSheerForceBoost?: boolean;
   isConfusionSelfHit?: boolean;
   stallingMove?: boolean;
+  tags?: ('True Past' | 'Past Unobtainable')[];
 }
 
 export type SpeciesTag =
-  'Mythical' | 'Restricted Legendary' | 'Sub-Legendary' | 'Ultra Beast' | 'Paradox';
+  'Mythical' | 'Restricted Legendary' | 'Sub-Legendary' | 'Ultra Beast' | 'Paradox' |
+  'Pokestar' | 'True Past' | 'Past Unobtainable';
 export interface SpeciesAbility<A = string> {0: A; 1?: A; H?: A; S?: A}
 
 export interface SpeciesData {
@@ -281,10 +284,10 @@ export interface SpeciesData {
   requiredMove?: string;
   battleOnly?: string | string[];
   canGigantamax?: string;
-  gmaxUnreleased?: boolean;
   cannotDynamax?: boolean;
   requiredTeraType?: string;
   changesFrom?: string;
+  placeholderFor?: string;
   tier?: Tier.Singles | Tier.Other;
   inherit?: boolean;
 }
@@ -403,6 +406,7 @@ export interface Move extends Readonly<BasicEffect<MoveName> & MoveData> {
   readonly terrain?: ID;
   readonly pseudoWeather?: ID;
   readonly weather?: ID;
+  readonly placeholderFor?: MoveName;
 }
 
 export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData> {
@@ -439,6 +443,7 @@ export interface Species extends Readonly<BasicEffect<SpeciesName> & SpeciesData
   readonly requiredItem?: ItemName;
   readonly requiredItems?: ItemName[];
   readonly requiredMove?: MoveName;
+  readonly placeholderFor?: SpeciesName;
 }
 
 export interface EventInfo extends Readonly<EventInfoData> {

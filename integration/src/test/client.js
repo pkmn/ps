@@ -30,9 +30,9 @@ const window = global;
   window.BattleTypeChart = require(`${PSC}/data/typechart.js`).BattleTypeChart;
 
   require(`${PSC}/js/battle-dex-data.js`);
+  global.BattleText = require(`${PSC}/data/text/en.js`).BattleText;
   require(`${PSC}/js/battle-dex.js`);
   require(`${PSC}/js/battle-scene-stub.js`);
-  global.BattleText = require(`${PSC}/data/text.js`).BattleText;
   require(`${PSC}/js/battle-text-parser.js`);
   require(`${PSC}/js/battle.js`);
 }

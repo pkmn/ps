@@ -24,7 +24,7 @@ export const Moves: ModdedMoveDataTable = {
 			},
 			onDamage(damage, target, source, move) {
 				if (!source || source.isAlly(target)) return;
-				if (!move || move.effectType !== 'Move') return;
+				if (move?.effectType !== 'Move') return;
 				if (!damage && this.effectState.lastDamage > 0) {
 					damage = this.effectState.totalDamage;
 				}
@@ -99,7 +99,7 @@ export const Moves: ModdedMoveDataTable = {
 			// - a move is Counterable if it is Normal or Fighting type, has nonzero Base Power, and is not Counter
 			// - Counter succeeds if the target used a Counterable move earlier this turn
 
-			const lastMoveThisTurn = target.side.lastMove && target.side.lastMove.id === target.side.lastSelectedMove &&
+			const lastMoveThisTurn = target.side.lastMove?.id === target.side.lastSelectedMove &&
 				!this.queue.willMove(target) && this.dex.moves.get(target.side.lastMove.id);
 			if (!lastMoveThisTurn) {
 				this.debug("Stadium 1 Counter: last move was not this turn");

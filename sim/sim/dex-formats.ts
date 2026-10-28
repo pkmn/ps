@@ -1,10 +1,12 @@
 import {
+	Ability,
 	AnyObject,
 	Battle,
 	Effect,
 	GameType,
 	ID,
 	IDEntry,
+	Item,
 	ModdedBattleActions,
 	ModdedBattlePokemon,
 	ModdedBattleSide,
@@ -29,6 +31,7 @@ import {Tags} from '../data/tags';
 import {Formats} from '../config/formats';
 
 const DEFAULT_MOD = 'gen9';
+const EXISTENCE_TAGS = ['past', 'future', 'lgpe', 'legends', 'unobtainable', 'cap', 'custom', 'nonexistent'];
 
 export interface FormatData extends Partial<Format>, EventMethods {
 	name: string;
@@ -44,6 +47,8 @@ type FormatEffectType = 'Format' | 'Ruleset' | 'Rule' | 'ValidatorRule';
 /** rule, source, limit, bans */
 export type ComplexBan = [string, string, number, string[]];
 export type ComplexTeamBan = ComplexBan;
+type NumericTagRule = [tagid: ID, operator: '<' | '<=' | '=' | '>=' | '>', number: number];
+type TagRule = [type: '+' | '*' | '-', match: ID | NumericTagRule];
 
 export interface GameTimerSettings {
 	dcTimer: boolean;
@@ -62,17 +67,19 @@ export interface GameTimerSettings {
  * - '[ruleid]' the ID of a rule in effect
  * - '-[thing]' or '-[category]:[thing]' ban a thing
  * - '+[thing]' or '+[category]:[thing]' allow a thing (override a ban)
- * [category] is one of: item, move, ability, species, basespecies
+ * [category] is one of: item, move, ability, species, basespecies, tag
  *
  * The value is the name of the parent rule (blank for the active format).
  */
 export class RuleTable extends Map<string, string> {
-	complexBans: ComplexBan[];
-	complexTeamBans: ComplexTeamBan[];
+	complexBans: Map<ID, ComplexBan>;
+	complexTeamBans: Map<ID, ComplexTeamBan>;
 	checkCanLearn: [TeamValidator['checkCanLearn'], string] | null;
 	onChooseTeam: [NonNullable<Format['onChooseTeam']>, string] | null;
 	timer: [Partial<GameTimerSettings>, string] | null;
-	tagRules: string[];
+	/** Sorted by precedence, in reverse order from a format's ban/unbanlist
+	 *  DO NOT search this; just use ruleTable.has(...). This is purely for tag rule precedence. */
+	tagRules: TagRule[];
 	valueRules: Map<string, string>;
 
 	minTeamSize!: number;
@@ -90,8 +97,8 @@ export class RuleTable extends Map<string, string> {
 
 	constructor() {
 		super();
-		this.complexBans = [];
-		this.complexTeamBans = [];
+		this.complexBans = new Map();
+		this.complexTeamBans = new Map();
 		this.checkCanLearn = null;
 		this.onChooseTeam = null;
 		this.timer = null;
@@ -104,24 +111,28 @@ export class RuleTable extends Map<string, string> {
 		return this.has(`-${thing}`);
 	}
 
-	isBannedSpecies(species: Species) {
+	isBannedSpecies(species: Species, baseSpecies?: Species) {
 		if (this.has(`+pokemon:${species.id}`)) return false;
 		if (this.has(`-pokemon:${species.id}`)) return true;
-		if (this.has(`+basepokemon:${toID(species.baseSpecies)}`)) return false;
 		if (this.has(`-basepokemon:${toID(species.baseSpecies)}`)) return true;
-		for (const tagid in Tags) {
-			const tag = Tags[tagid as ID];
-			if (this.has(`-pokemontag:${tagid}`)) {
-				if ((tag.speciesFilter || tag.genericFilter)!(species)) return true;
-			}
+
+		if (this.has(`+basepokemon:${toID(species.baseSpecies)}`)) {
+			if (!baseSpecies || baseSpecies.isNonstandard === species.isNonstandard) return false;
 		}
-		for (const tagid in Tags) {
-			const tag = Tags[tagid as ID];
-			if (this.has(`+pokemontag:${tagid}`)) {
-				if ((tag.speciesFilter || tag.genericFilter)!(species)) return false;
+
+		const nonexistentCheck = Tags.nonexistent.genericFilter!(species) && this.check('nonexistent');
+		for (const [type, match] of this.tagRules) {
+			if (type === '*') continue;
+			if (!this.matchesTagRule(match, species)) continue;
+			const existenceTag = typeof match === 'string' && EXISTENCE_TAGS.includes(match as string);
+			if (type === '+') {
+				if (!existenceTag && nonexistentCheck) continue;
+				return false;
 			}
+			return true;
 		}
-		return this.has(`-pokemontag:allpokemon`);
+		if (nonexistentCheck) return true;
+		return this.has(`-tag:allpokemon`);
 	}
 
 	isRestricted(thing: string) {
@@ -134,40 +145,95 @@ export class RuleTable extends Map<string, string> {
 		if (this.has(`*pokemon:${species.id}`)) return true;
 		if (this.has(`+basepokemon:${toID(species.baseSpecies)}`)) return false;
 		if (this.has(`*basepokemon:${toID(species.baseSpecies)}`)) return true;
-		for (const tagid in Tags) {
-			const tag = Tags[tagid as ID];
-			if (this.has(`*pokemontag:${tagid}`)) {
-				if ((tag.speciesFilter || tag.genericFilter)!(species)) return true;
-			}
+		for (const [type, match] of this.tagRules) {
+			if (type !== '*' && type !== '+') continue;
+			if (!this.matchesTagRule(match, species)) continue;
+			return type === '*';
 		}
-		for (const tagid in Tags) {
-			const tag = Tags[tagid as ID];
-			if (this.has(`+pokemontag:${tagid}`)) {
-				if ((tag.speciesFilter || tag.genericFilter)!(species)) return false;
-			}
-		}
-		return this.has(`*pokemontag:allpokemon`);
+		return this.has(`*tag:allpokemon`);
 	}
 
 	getTagRules() {
-		const tagRules = [];
+		const tagRules: TagRule[] = [];
 		for (const ruleid of this.keys()) {
-			if (/^[+*-]pokemontag:/.test(ruleid)) {
-				const banid = ruleid.slice(12);
-				if (
-					banid === 'allpokemon' || banid === 'allitems' || banid === 'allmoves' ||
-					banid === 'allabilities' || banid === 'allnatures'
-				) {
-					// hardcoded and not a part of the ban rule system
-				} else {
-					tagRules.push(ruleid);
-				}
-			} else if ('+*-'.includes(ruleid.charAt(0)) && ruleid.slice(1) === 'nonexistent') {
-				tagRules.push(ruleid.charAt(0) + 'pokemontag:nonexistent');
-			}
+			const tagRule = RuleTable.parseTagRule(ruleid);
+			if (tagRule) tagRules.push(tagRule);
 		}
 		this.tagRules = tagRules.reverse();
 		return this.tagRules;
+	}
+
+	getNumericTagValue([tagid]: NumericTagRule, thing: Species | Move | Item | Ability) {
+		const tag = Tags[tagid];
+		switch (thing.effectType) {
+		case 'Pokemon':
+			return (tag.speciesNumCol || tag.genericNumCol)?.(thing);
+		case 'Move':
+			return (tag.moveNumCol || tag.genericNumCol)?.(thing);
+		case 'Item':
+		case 'Ability':
+			return tag.genericNumCol?.(thing);
+		default:
+			return undefined;
+		}
+	}
+
+	matchesTagRule(match: ID | NumericTagRule, thing: Species | Move | Item | Ability) {
+		if (typeof match === 'string') {
+			const tag = Tags[match];
+			if (!tag) return false;
+			switch (thing.effectType) {
+			case 'Pokemon':
+				return !!(tag.speciesFilter || tag.genericFilter)?.(thing);
+			case 'Move':
+				return !!(tag.moveFilter || tag.genericFilter)?.(thing);
+			case 'Item':
+			case 'Ability':
+				return !!tag.genericFilter?.(thing);
+			default:
+				return false;
+			}
+		}
+		const value = this.getNumericTagValue(match, thing);
+		if (value === undefined) return false;
+		switch (match[1]) {
+		case '<': return value < match[2];
+		case '<=': return value <= match[2];
+		case '=': return value === match[2];
+		case '>=': return value >= match[2];
+		case '>': return value > match[2];
+		}
+	}
+
+	describeTagRule(match: ID | NumericTagRule) {
+		if (typeof match === 'string') {
+			return `is tagged ${Tags[match].name}`;
+		}
+		return `has ${Tags[match[0]].name} ${match[1]} ${match[2]}`;
+	}
+
+	static parseTagRule(ruleid: string): TagRule | null {
+		const type = ruleid.charAt(0);
+		if (type !== '+' && type !== '*' && type !== '-') return null;
+		const id = ruleid.slice(1);
+		if (id === 'nonexistent') return [type, 'nonexistent' as ID];
+
+		const tagMatch = /^tag:(.+)/.exec(id);
+		if (tagMatch) {
+			const tagid = tagMatch[1] as ID;
+			if (
+				tagid === 'allpokemon' || tagid === 'allitems' || tagid === 'allmoves' ||
+				tagid === 'allabilities' || tagid === 'allnatures'
+			) {
+				// hardcoded and not a part of the ban rule system
+				return null;
+			}
+			return [type, tagid];
+		}
+
+		const numTagMatch = /^numtag:([a-z0-9]+)(<=|>=|=|<|>)(-?(?:\d+(?:\.\d*)?|\.\d+))$/.exec(id);
+		if (!numTagMatch) return null;
+		return [type, [numTagMatch[1] as ID, numTagMatch[2] as NumericTagRule[1], Number(numTagMatch[3])]];
 	}
 
 	/**
@@ -195,36 +261,16 @@ export class RuleTable extends Map<string, string> {
 		return source ? ` from ${source}` : ``;
 	}
 
-	getComplexBanIndex(complexBans: ComplexBan[], rule: string): number {
-		const ruleId = toID(rule);
-		let complexBanIndex = -1;
-		for (let i = 0; i < complexBans.length; i++) {
-			if (toID(complexBans[i][0]) === ruleId) {
-				complexBanIndex = i;
-				break;
-			}
-		}
-		return complexBanIndex;
-	}
-
 	addComplexBan(rule: string, source: string, limit: number, bans: string[]) {
-		const complexBanIndex = this.getComplexBanIndex(this.complexBans, rule);
-		if (complexBanIndex !== -1) {
-			if (this.complexBans[complexBanIndex][2] === Infinity) return;
-			this.complexBans[complexBanIndex] = [rule, source, limit, bans];
-		} else {
-			this.complexBans.push([rule, source, limit, bans]);
-		}
+		const ruleId = toID(rule);
+		if (this.complexBans.get(ruleId)?.[2] === Infinity) return;
+		this.complexBans.set(ruleId, [rule, source, limit, bans]);
 	}
 
 	addComplexTeamBan(rule: string, source: string, limit: number, bans: string[]) {
-		const complexBanTeamIndex = this.getComplexBanIndex(this.complexTeamBans, rule);
-		if (complexBanTeamIndex !== -1) {
-			if (this.complexTeamBans[complexBanTeamIndex][2] === Infinity) return;
-			this.complexTeamBans[complexBanTeamIndex] = [rule, source, limit, bans];
-		} else {
-			this.complexTeamBans.push([rule, source, limit, bans]);
-		}
+		const ruleId = toID(rule);
+		if (this.complexTeamBans.get(ruleId)?.[2] === Infinity) return;
+		this.complexTeamBans.set(ruleId, [rule, source, limit, bans]);
 	}
 
 	/** After a RuleTable has been filled out, resolve its hardcoded numeric properties */
@@ -247,7 +293,7 @@ export class RuleTable extends Map<string, string> {
 		this.pickedTeamSize = Number(this.valueRules.get('pickedteamsize')) || null;
 		this.maxTotalLevel = Number(this.valueRules.get('maxtotallevel')) || null;
 		this.maxMoveCount = Number(this.valueRules.get('maxmovecount')) || 4;
-		this.minSourceGen = Number(this.valueRules.get('minsourcegen')) || 1;
+		this.minSourceGen = Number(this.valueRules.get('minsourcegen'));
 		this.minLevel = Number(this.valueRules.get('minlevel')) || 1;
 		this.maxLevel = Number(this.valueRules.get('maxlevel')) || 100;
 		this.defaultLevel = Number(this.valueRules.get('defaultlevel')) || 0;
@@ -255,6 +301,13 @@ export class RuleTable extends Map<string, string> {
 		this.adjustLevelDown = Number(this.valueRules.get('adjustleveldown')) || null;
 		this.evLimit = Number(this.valueRules.get('evlimit'));
 		if (isNaN(this.evLimit)) this.evLimit = null;
+		if (!this.minSourceGen) {
+			if (dex.gen >= 9 && this.has('obtainable') && !this.has('natdexmod')) {
+				this.minSourceGen = dex.gen;
+			} else {
+				this.minSourceGen = 1;
+			}
+		}
 
 		const timer: Partial<GameTimerSettings> = {};
 		if (this.valueRules.has('timerstarting')) {
@@ -388,7 +441,7 @@ export class RuleTable extends Map<string, string> {
 	}
 
 	hasComplexBans() {
-		return (this.complexBans?.length > 0) || (this.complexTeamBans?.length > 0);
+		return this.complexBans.size > 0 || this.complexTeamBans.size > 0;
 	}
 }
 
@@ -399,7 +452,7 @@ export class Format extends BasicEffect implements Readonly<BasicEffect> {
 	 * random/fixed teams. null if players can bring teams.
 	 */
 	declare readonly team?: string;
-	readonly effectType: FormatEffectType;
+	override readonly effectType: FormatEffectType;
 	readonly debug: boolean;
 	/**
 	 * Whether or not a format will update ladder points if searched
@@ -609,6 +662,11 @@ export class DexFormats {
 	 * Returns a sanitized format ID if valid, or throws if invalid.
 	 */
 	validate(name: string) {
+		if (name.length > 32 * 1024) {
+			// technically UTF-16 code units, but close enough
+			// chosen arbitrarily. feel free to increase this limit if you need more
+			throw new Error(`Custom formats must be at most 32 KB long.`);
+		}
 		const [formatName, customRulesString] = name.split('@@@', 2);
 		const format = this.get(formatName);
 		if (format.effectType !== 'Format') throw new Error(`Unrecognized format "${formatName}"`);
@@ -620,7 +678,7 @@ export class DexFormats {
 			rule = rule.replace(/[\r\n|]*/g, '').trim();
 			const ruleSpec = this.validateRule(rule);
 			if (typeof ruleSpec === 'string') {
-				if (ruleSpec === '-pokemontag:allpokemon' || ruleSpec === '+pokemontag:allpokemon') {
+				if (ruleSpec === '-tag:allpokemon' || ruleSpec === '+tag:allpokemon') {
 					if (hasPokemonRule) throw new Error(`You can't ban/unban pokemon before banning/unbanning all Pokemon.`);
 				}
 				if (this.isPokemonRule(ruleSpec)) hasPokemonRule = true;
@@ -635,6 +693,12 @@ export class DexFormats {
 		return validatedFormatid;
 	}
 
+	/**
+	 * The default mode is `isTrusted = false`, which is a bit of a
+	 * footgun. PS will never do anything unsafe, but `isTrusted = true`
+	 * will throw if the format string is invalid, while
+	 * `isTrusted = false` will silently fall back to the original format.
+	 */
 	get(name?: string | Format, isTrusted = false): Format {
 		if (name && typeof name !== 'string') return name;
 
@@ -673,9 +737,9 @@ export class DexFormats {
 		}
 		let effect;
 		if (this.dex.data.Rulesets.hasOwnProperty(id)) {
-			effect = new Format({name, ...this.dex.data.Rulesets[id] as any, ...supplementaryAttributes});
+			effect = new Format({ name, ...this.dex.data.Rulesets[id] as any, ...supplementaryAttributes });
 		} else {
-			effect = new Format({id, name, exists: false});
+			effect = new Format({ id, name, exists: false });
 		}
 		return effect;
 	}
@@ -686,8 +750,15 @@ export class DexFormats {
 	}
 
 	isPokemonRule(ruleSpec: string) {
+		if (ruleSpec.slice(1).startsWith('numtag:')) {
+			const tagid = /([a-z0-9]+)/i.exec(ruleSpec)?.[1] as ID | undefined;
+			if (!tagid) return false;
+			const tag = Tags[tagid];
+			if (!tag) return false;
+			return !!(tag.speciesNumCol || tag.genericNumCol);
+		}
 		return (
-			ruleSpec.slice(1).startsWith('pokemontag:') || ruleSpec.slice(1).startsWith('pokemon:') ||
+			ruleSpec.slice(1).startsWith('tag:') || ruleSpec.slice(1).startsWith('pokemon:') ||
 			ruleSpec.slice(1).startsWith('basepokemon:')
 		);
 	}
@@ -737,10 +808,10 @@ export class DexFormats {
 			}
 		}
 
-		let skipPokemonBans = ruleSpecs.filter(r => r === '+pokemontag:allpokemon').length;
+		let skipPokemonBans = ruleSpecs.filter(r => r === '+tag:allpokemon').length;
 		let hasPokemonBans = false;
 		const warnForNoPokemonBans = !!skipPokemonBans && !format.customRules;
-		skipPokemonBans += ruleSpecs.filter(r => r === '-pokemontag:allpokemon').length;
+		skipPokemonBans += ruleSpecs.filter(r => r === '-tag:allpokemon').length;
 
 		// if (format.customRules) console.log(`${format.id}: ${format.customRules.join(', ')}`);
 
@@ -754,7 +825,7 @@ export class DexFormats {
 					const complexBan: ComplexBan = ruleSpec.slice(1) as ComplexBan;
 					ruleTable.addComplexBan(complexBan[0], complexBan[1], complexBan[2], complexBan[3]);
 				} else {
-					throw new Error(`Unrecognized rule spec ${ruleSpec}`);
+					throw new Error(`Unrecognized rule spec ${ruleSpec.join(',')}`);
 				}
 				continue;
 			}
@@ -780,7 +851,7 @@ export class DexFormats {
 					throw new Error(`Rule "${ruleSpec}" in "${format.name}" already exists in "${ruleTable.get(ruleSpec) || format.name}"`);
 				}
 				if (skipPokemonBans) {
-					if (ruleSpec === '-pokemontag:allpokemon' || ruleSpec === '+pokemontag:allpokemon') {
+					if (ruleSpec === '-tag:allpokemon' || ruleSpec === '+tag:allpokemon') {
 						skipPokemonBans--;
 					} else if (this.isPokemonRule(ruleSpec)) {
 						if (!format.customRules) {
@@ -844,7 +915,7 @@ export class DexFormats {
 						throw new Error(`Rule "${ruleSpec}" conflicts with "${subformat.id}=${oldValue}"${ruleTable.blame(subformat.id)} (Use "!! ${ruleSpec}" to override "${subformat.id}=${oldValue}".)`);
 					}
 					if (subformat.mutuallyExclusiveWith && ruleTable.valueRules.has(subformat.mutuallyExclusiveWith)) {
-						const oldRule = `"${subformat.mutuallyExclusiveWith}=${ruleTable.valueRules.get(subformat.mutuallyExclusiveWith)}"`;
+						const oldRule = `"${subformat.mutuallyExclusiveWith}=${ruleTable.valueRules.get(subformat.mutuallyExclusiveWith)!}"`;
 						throw new Error(`Format can't simultaneously have "${ruleSpec}" and ${oldRule}${ruleTable.blame(subformat.mutuallyExclusiveWith)} (Use "!! ${ruleSpec}" to override ${oldRule}.)`);
 					}
 				}
@@ -858,7 +929,7 @@ export class DexFormats {
 			}
 			ruleTable.set(subformat.id, '');
 			if (depth > 16) {
-				throw new Error(`Excessive ruleTable recursion in ${format.name}: ${ruleSpec} of ${format.ruleset}`);
+				throw new Error(`Excessive ruleTable recursion in ${format.name}: ${ruleSpec} of ${format.ruleset.join(',')}`);
 			}
 			const subRuleTable = this.getRuleTable(subformat, depth + 1, repeals);
 			for (const [ruleid, sourceFormat] of subRuleTable) {
@@ -879,7 +950,7 @@ export class DexFormats {
 					const subSubFormat = this.get(ruleid);
 					if (subSubFormat.mutuallyExclusiveWith && ruleTable.valueRules.has(subSubFormat.mutuallyExclusiveWith)) {
 						// mutually exclusive conflict!
-						throw new Error(`Rule "${ruleid}=${newValue}" from ${subformat.name}${subRuleTable.blame(ruleid)} conflicts with "${subSubFormat.mutuallyExclusiveWith}=${ruleTable.valueRules.get(subSubFormat.mutuallyExclusiveWith)}"${ruleTable.blame(subSubFormat.mutuallyExclusiveWith)} (Repeal one with ! before adding another)`);
+						throw new Error(`Rule "${ruleid}=${newValue}" from ${subformat.name}${subRuleTable.blame(ruleid)} conflicts with "${subSubFormat.mutuallyExclusiveWith}=${ruleTable.valueRules.get(subSubFormat.mutuallyExclusiveWith)!}"${ruleTable.blame(subSubFormat.mutuallyExclusiveWith)} (Repeal one with ! before adding another)`);
 					}
 					if (newValue !== oldValue) {
 						if (oldValue !== undefined) {
@@ -891,10 +962,10 @@ export class DexFormats {
 				}
 				ruleTable.set(ruleid, sourceFormat || subformat.name);
 			}
-			for (const [subRule, source, limit, bans] of subRuleTable.complexBans) {
+			for (const [subRule, source, limit, bans] of subRuleTable.complexBans.values()) {
 				ruleTable.addComplexBan(subRule, source || subformat.name, limit, bans);
 			}
-			for (const [subRule, source, limit, bans] of subRuleTable.complexTeamBans) {
+			for (const [subRule, source, limit, bans] of subRuleTable.complexTeamBans.values()) {
 				ruleTable.addComplexTeamBan(subRule, source || subformat.name, limit, bans);
 			}
 			if (subRuleTable.checkCanLearn) {
@@ -923,7 +994,8 @@ export class DexFormats {
 
 		ruleTable.resolveNumbers(format, this.dex);
 
-		const canMegaEvo = this.dex.gen <= 7 || ruleTable.has('+pokemontag:past');
+		const canMegaEvo = (this.dex.gen >= 6 || ruleTable.has('+tag:future')) &&
+			(this.dex.gen <= 7 || ruleTable.has('+tag:past'));
 		if (ruleTable.has('obtainableformes') && canMegaEvo &&
 			ruleTable.isBannedSpecies(this.dex.species.get('rayquazamega')) &&
 			!ruleTable.isBannedSpecies(this.dex.species.get('rayquaza'))
@@ -954,6 +1026,8 @@ export class DexFormats {
 		case '-':
 		case '*':
 		case '+':
+			const numericRule = this.validateNumericRule(rule);
+			if (numericRule) return numericRule;
 			if (rule.slice(1).includes('>') || rule.slice(1).includes('+')) {
 				let buf = rule.slice(1);
 				const gtIndex = buf.lastIndexOf('>');
@@ -993,18 +1067,36 @@ export class DexFormats {
 		}
 	}
 
-	validPokemonTag(tagid: ID) {
+	validTag(tagid: ID) {
 		const tag = Tags.hasOwnProperty(tagid) && Tags[tagid];
 		if (!tag) return false;
-		return !!(tag.speciesFilter || tag.genericFilter);
+		return !!(tag.speciesFilter || tag.moveFilter || tag.genericFilter);
+	}
+
+	validateNumericRule(rule: string) {
+		const sign = rule.charAt(0);
+		const match = /^(.*?)(<=|>=|=|<|>)\s*(-?(?:\d+(?:\.\d*)?|\.\d+))$/.exec(rule.slice(1).trim());
+		if (!match) return null;
+		let tagName = match[1].trim();
+		if (tagName.startsWith('tag:')) tagName = tagName.slice(4);
+		if (tagName.includes(':')) return null;
+
+		const tagid = toID(tagName);
+		const tag = Tags.hasOwnProperty(tagid) && Tags[tagid];
+		if (!tag || !(tag.speciesNumCol || tag.moveNumCol || tag.genericNumCol)) return null;
+
+		return `${sign}numtag:${tagid}${match[2]}${Number(match[3])}`;
 	}
 
 	validateBanRule(rule: string) {
+		const numericRule = this.validateNumericRule('-' + rule);
+		if (numericRule) return numericRule.slice(1);
+
 		let id = toID(rule);
 		if (id === 'unreleased') return 'unreleased';
 		if (id === 'nonexistent') return 'nonexistent';
 		const matches = [];
-		let matchTypes = ['pokemon', 'move', 'ability', 'item', 'nature', 'pokemontag'];
+		let matchTypes = ['pokemon', 'move', 'ability', 'item', 'type', 'teratype', 'nature', 'tag'];
 		for (const matchType of matchTypes) {
 			if (rule.startsWith(`${matchType}:`)) {
 				matchTypes = [matchType];
@@ -1022,15 +1114,19 @@ export class DexFormats {
 			case 'move': table = this.dex.data.Moves; break;
 			case 'item': table = this.dex.data.Items; break;
 			case 'ability': table = this.dex.data.Abilities; break;
+			case 'type': table = this.dex.data.TypeChart; break;
+			case 'teratype': table = this.dex.data.TypeChart; break;
 			case 'nature': table = this.dex.data.Natures; break;
-			case 'pokemontag':
-				// valid pokemontags
+			case 'tag':
+				// valid tags
 				const validTags = [
 					// all
 					'allpokemon', 'allitems', 'allmoves', 'allabilities', 'allnatures',
 				];
-				if (validTags.includes(ruleid) || this.validPokemonTag(ruleid)) {
-					matches.push('pokemontag:' + ruleid);
+				if (validTags.includes(ruleid) || this.validTag(ruleid)) {
+					matches.push('tag:' + ruleid);
+				} else if (this.validTag(id)) {
+					matches.push('tag:' + id);
 				}
 				continue;
 			default:

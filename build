@@ -129,7 +129,10 @@ process.on('exit', () => {
   // so we use tsc directly to generate declaration files
   console.log(`Generating declaration files for \x1b[34m@pkmn/${pkg}\x1b[0m...`);
   const rootDir = fs.existsSync(path.join(cwd, 'src')) ? 'src' : '.';
-  sh('npx', ['tsc', '-p', '.', '--declaration', '--emitDeclarationOnly', '--outDir', 'build', '--noEmit', 'false', '--rootDir', rootDir]);
+  sh('npx', [
+    'tsc', '-p', '.', '--declaration', '--emitDeclarationOnly',
+    '--outDir', 'build', '--noEmit', 'false', '--rootDir', rootDir,
+  ]);
 
   if (fs.existsSync(path.join(cwd, 'build', 'index.d.ts'))) {
     fs.copyFileSync(path.join(cwd, 'build', 'index.d.ts'), path.join(cwd, 'build', 'index.d.mts'));

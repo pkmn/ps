@@ -91,12 +91,13 @@ const streams = path.resolve(__dirname, 'streams');
 // files depending on global types - the `data/` files are currently not required to have
 // ///-references to work).
 const IMPORTS = {
-  'data/tags.ts': ['Species', 'Move', 'Item', 'Ability', 'IDEntry'],
+  'data/tags.ts': ['Species', 'Move', 'Item', 'Ability', 'IDEntry', 'TableTag'],
+  'lib/utils.ts': ['DebugOutput'],
   'sim/battle-actions.ts': [
     'Battle', 'ModdedDex', 'Pokemon', 'Effect', 'Move', 'ActiveMove',
     'Side', 'SpreadMoveTargets', 'SpreadMoveDamage', 'ZMoveOptions',
   ],
-  'sim/battle-queue.ts': ['Pokemon', 'ID', 'Move', 'Effect'],
+  'sim/battle-queue.ts': ['Pokemon', 'ID', 'Move', 'Effect', 'Side'],
   'sim/battle-stream.ts': ['ModdedDex'],
   'sim/battle.ts': [
     'Effect', 'Format', 'ID', 'PlayerOptions', 'AnyObject', 'ActiveMove', 'SideID', 'StatsTable',
@@ -111,8 +112,10 @@ const IMPORTS = {
     'CommonHandlers', 'SparseBoostsTable', 'ModdedDex', 'ID', 'IDEntry',
   ],
   'sim/dex-data.ts': [
-    'AnyObject', 'ID', 'SparseStatsTable', 'EffectType', 'Nonstandard',
-    'EffectData', 'StatIDExceptHP', 'ModdedDex', 'StatID', 'IDEntry',
+    'Ability', 'AnyObject', 'ID', 'SparseStatsTable', 'EffectType', 'Nonstandard',
+    'EffectData', 'StatIDExceptHP', 'ModdedDex', 'StatID', 'IDEntry', 'Item', 'Move',
+    'ResolvedAbilityText', 'ResolvedItemText', 'ResolvedMoveText', 'ResolvedNameText',
+    'ResolvedSpeciesText', 'Species', 'TableTag',
   ],
   'sim/dex-items.ts': [
     'AnyObject', 'Battle', 'Pokemon', 'SparseBoostsTable', 'CommonHandlers', 'ModdedDex', 'ID',
@@ -130,16 +133,16 @@ const IMPORTS = {
   ],
   'sim/side.ts': [
     'AnyObject', 'Effect', 'ActiveMove', 'Condition', 'PokemonSet', 'Battle',
-    'StatsExceptHPTable', 'MoveTarget', 'Move', 'SideID', 'ID',
+    'StatsExceptHPTable', 'MoveTarget', 'SideID', 'ID',
   ],
   'sim/state.ts': [
     'AnyObject', 'Condition', 'Ability', 'Item', 'Move', 'Species', 'ActiveMove',
   ],
   'sim/team-validator.ts': [
     'Format', 'StatsTable', 'SparseStatsTable', 'Species', 'AnyObject', 'Move',
-    'EventInfo', 'PokemonSet', 'Ability', 'Item', 'ID', 'ModdedDex', 'Nature',
+    'EventInfo', 'PokemonSet', 'Ability', 'Item', 'ID', 'ModdedDex', 'Nature', 'TypeInfo',
   ],
-  'sim/tools/random-player-ai.ts': ['AnyObject'],
+  'sim/tools/random-player-ai.ts': ['AnyObject', 'DebugOutput'],
   'sim/tools/runner.ts': ['PokemonSet'],
 };
 const MOD_IMPORTS = {
@@ -155,7 +158,7 @@ const MOD_IMPORTS = {
   'data/mods/gen1stadium/moves.ts': ['ModdedMoveDataTable', 'ActiveMove'],
   'data/mods/gen1stadium/rulesets.ts': ['ModdedFormatDataTable'],
   'data/mods/gen1stadium/scripts.ts': [
-    'ModdedBattleScriptsData', 'StatIDExceptHP', 'BoostID', 'ActiveMove',
+    'ModdedBattleScriptsData', 'StatIDExceptHP', 'BoostID', 'ActiveMove', 'DebugOutput',
   ],
 
   // gen2stadium2
@@ -187,6 +190,7 @@ const MOD_IMPORTS = {
   'data/mods/gen3rs/formats-data.ts': ['ModdedSpeciesFormatsDataTable'],
   'data/mods/gen3rs/items.ts': ['ModdedItemDataTable'],
   'data/mods/gen3rs/learnsets.ts': ['ModdedLearnsetDataTable'],
+  'data/mods/gen3rs/rulesets.ts': ['ModdedFormatDataTable'],
   'data/mods/gen3rs/scripts.ts': ['ModdedBattleScriptsData'],
 
   // gen4pt
@@ -381,6 +385,8 @@ const REWRITES = {
       '\tgetDetails = (): {side: SideID, secret: string, shared: string} => {',
   },
   'sim/dex-abilities.ts': {
+    '\t\t\t\t...abilityData,':
+      `\t\t\t\t...abilityData,\n\t\t\t\t...this.dex.getDescs('Abilities', id, abilityData),`,
     '\t\tif (ability.exists) this.abilityCache.set(id, this.dex.deepFreeze(ability));':
       `\t\tif (!(ability as any).kind) (ability as any).kind = 'Ability';\n` +
       '\t\tif (ability.exists) this.abilityCache.set(id, ability);',
@@ -400,16 +406,44 @@ const REWRITES = {
     [KEY]: VALUE,
   },
   'sim/dex-items.ts': {
+    '\t\t\t\t...itemData,':
+      `\t\t\t\t...itemData,\n\t\t\t\t...this.dex.getDescs('Items', id, itemData),`,
+    '\t\t\t\t\tif (item.isNonstandard === parentItem.isNonstandard) {':
+      '\t\t\t\t\tif (\n' +
+      '\t\t\t\t\t\titem.isNonstandard === parentItem.isNonstandard &&\n' +
+      '\t\t\t\t\t\titem.desc === parentItem.desc &&\n' +
+      '\t\t\t\t\t\titem.shortDesc === parentItem.shortDesc\n' +
+      '\t\t\t\t\t) {',
     '\t\tif (item.exists) this.itemCache.set(id, this.dex.deepFreeze(item));':
       `\t\t(item as any).kind = 'Item';\n` +
       '\t\tif (item.exists) this.itemCache.set(id, item);',
   },
   'sim/dex-moves.ts': {
+    '\t\t\t\t...moveData,':
+      `\t\t\t\t...moveData,\n\t\t\t\t...this.dex.getDescs('Moves', id, moveData),`,
+    '\t\t\t\t\tif (move.isNonstandard === parentMove.isNonstandard) {':
+      '\t\t\t\t\tif (\n' +
+      '\t\t\t\t\t\tmove.isNonstandard === parentMove.isNonstandard &&\n' +
+      '\t\t\t\t\t\tmove.desc === parentMove.desc && move.shortDesc === parentMove.shortDesc\n' +
+      '\t\t\t\t\t) {',
     '\t\tif (move.exists) this.moveCache.set(id, this.dex.deepFreeze(move));':
       `\t\t(move as any).kind = 'Move';\n` +
       '\t\tif (move.exists) this.moveCache.set(id, move);',
   },
   'sim/dex-data.ts': {
+    '\tgen: number;':
+      '\tgen: number;\n' +
+      '\t/**\n' +
+      '\t * A shortened form of the description of this effect.\n' +
+      '\t * Not all effects have this.\n' +
+      '\t */\n' +
+      '\tshortDesc: string;\n' +
+      '\t/** The full description for this effect. */\n' +
+      '\tdesc: string;',
+    '\t\tthis.num = data.num || 0;':
+      '\t\tthis.num = data.num || 0;\n' +
+      "\t\tthis.shortDesc = data.shortDesc || '';\n" +
+      "\t\tthis.desc = data.desc || '';",
     '\t\tif (nature.exists) this.natureCache.set(id, this.dex.deepFreeze(nature));':
       `\t\t(nature as any).kind = 'Nature';\n` +
       '\t\tif (nature.exists) this.natureCache.set(id, nature);',
@@ -441,6 +475,10 @@ const REWRITES = {
       '\t\t\tthis.battle = new Battle(options, this.dex);',
     '\t} = {}) {': '\t} = {}, dex = Dex) {',
     '\t\tthis.battle = null;': '\t\tthis.battle = null;\n\t\tthis.dex = dex;',
+    '\t\t\t\t/* oxlint-disable no-eval, no-unused-vars */':
+      '\t\t\t\t/* eslint-disable no-eval, @typescript-eslint/no-unused-vars */',
+    '\t\t\t\t/* oxlint-enable no-eval, no-unused-vars */':
+      '\t\t\t\t/* eslint-enable no-eval, @typescript-eslint/no-unused-vars */',
   },
   'sim/team-validator.ts': {
     '\t\t\t\ttestTeamGenerator.getTeam(options); // Throws error if generation fails':
@@ -519,9 +557,10 @@ const OVERRIDDEN = new Set([
   'sim/tools/exhaustive-runner.ts',
   'sim/tools/index.ts',
   'test/main.js',
+  'test/sim/dex.js',
   'test/sim/rulesets.js',
   'test/sim/team-validator/basic.js',
-  'test/sim/team-validator/formes.js',
+  'test/sim/team-validator/events.js',
   'tsconfig.json',
 ]);
 const MOD_OVERRIDDEN = new Set([
@@ -544,13 +583,14 @@ const MOD_OVERRIDDEN = new Set([
   'data/mods/index.ts',
 ]);
 const SKIP_TESTS = new Set([
+  'test/sim/champions.js',
   'test/sim/data.js',
+  'test/sim/dex-text.js',
   'test/sim/misc/megaevolution.js',
   'test/sim/misc/statuses.js',
   'test/sim/moves/counter.js',
   'test/sim/othermetas/mixandmega.js',
   'test/sim/othermetas/partnersincrime.js',
-  'test/sim/prng.js',
   'test/sim/rulesets/inversebattle.js',
   'test/sim/state.js',
   'test/sim/tools/multi-random-runner.js',
@@ -563,13 +603,14 @@ const MOD_COPIED = new Set([...MOD_FILES].filter(f => !MOD_OVERRIDDEN.has(f)));
 const INTERESTING = new Set([
   'build',
   'build-tools/build-indexes',
-  'js/storage.js',
-  'src/battle-choices.ts',
-  'src/battle-dex-data.ts',
-  'src/battle-dex.ts',
-  'src/battle-scene-stub.ts',
-  'src/battle-text-parser.ts',
-  'src/battle.ts',
+  'play.pokemonshowdown.com/src/oldclient/storage.js',
+  'play.pokemonshowdown.com/src/battle-choices.ts',
+  'play.pokemonshowdown.com/src/battle-dex-data.ts',
+  'play.pokemonshowdown.com/src/battle-dex.ts',
+  'play.pokemonshowdown.com/src/battle-scene-stub.ts',
+  'play.pokemonshowdown.com/src/battle-teams.ts',
+  'play.pokemonshowdown.com/src/battle-text-parser.ts',
+  'play.pokemonshowdown.com/src/battle.ts',
 ]);
 
 // Pretty much all changes within sim/ and data/ are interesting to review, whether copied or not.
@@ -604,8 +645,6 @@ const INLINE_REQUIRE = /^(.*)require\(.*\)(\.matchups)?;.*$/;
 const RANDOM_SETS = /^(\t(?:override )?randomSets:.*=) require\('\.\/sets\.json'\);(.*)/;
 const RANDOM_DOUBLES_SETS =
   /^(\trandomDoublesSets:.*=) require\('\.\/doubles-sets\.json'\);(.*)/;
-const RANDOM_MEGA_INVASION_SETS =
-  /^(\trandomMegaSets:.*=) require\('\.\/sets\-megainvasion.json'\);(.*)/;
 const RANDOM_DATA = /^(\t(?:override )?randomData:.*=) require\('\.\/data\.json'\);(.*)/;
 const RANDOM_POTD = /potd/i;
 
@@ -720,7 +759,9 @@ const changes = async (where, last, now, repo) => ({
       'Documented in STREAMS.md.', 'Documentation can be found at\n' +
       ' * https://github.com/smogon/pokemon-showdown/blob/master/lib/STREAMS.md'
     ).replace('let options;', 'let options: any;')
-      .replace('\n\t// eslint-disable-next-line no-restricted-globals', '');
+      .replace('\n\t// eslint-disable-next-line no-restricted-globals', '')
+      .replaceAll('oxlint-disable-next-line typescript/no-this-alias',
+        'eslint-disable-next-line @typescript-eslint/no-this-alias');
     // double fuck you zarle, AnyObject is a dreadful hack to begin with, feel ashamed
     fs.writeFileSync(path.resolve(streams, 'index.ts'),
       `interface AnyObject {[k: string]: any}\n${index}`);
@@ -730,10 +771,10 @@ const changes = async (where, last, now, repo) => ({
     for (const file of COPIED) {
       if (IMPORTS[file]) {
         // Handling arbitrary relative imports is overkill right now, bail
-        if (!file.startsWith('sim/') && file !== 'data/tags.ts') {
+        if (!file.startsWith('sim/') && file !== 'data/tags.ts' && file !== 'lib/utils.ts') {
           throw new Error('Unsupported import location');
         }
-        const prefix = file.startsWith('data') ? '../sim'
+        const prefix = (file.startsWith('data') || file.startsWith('lib')) ? '../sim'
           : file.startsWith('sim/tools/') ? '..' : '.';
         const original = fs.readFileSync(path.resolve(ps, file), 'utf8');
         let rewritten = REWRITES[file]
@@ -759,19 +800,52 @@ const changes = async (where, last, now, repo) => ({
       fs.copyFileSync(path.resolve(ps, file), path.resolve(sim, file));
     }
 
+    // The data files are Typescript, so we need to build to convert them to JS before requiring
+    await execOrDie(`node build`, ps);
+
+    const TEXTS = {
+      'moves.json': require(path.resolve(ps, 'dist/data/text/moves.js')).MovesText,
+      'abilities.json': require(path.resolve(ps, 'dist/data/text/abilities.js')).AbilitiesText,
+      'items.json': require(path.resolve(ps, 'dist/data/text/items.js')).ItemsText,
+      // 'species.json': require(path.resolve(ps, 'dist/data/text/pokedex.js')).PokedexText,
+    };
+
     for (const file of MOD_COPIED) {
       if (!file.startsWith('data/')) throw new Error('Unsupported import location');
       if (file.endsWith('formats.ts')) continue;
       let original = fs.readFileSync(path.resolve(ps, file), 'utf8');
       original = original.replaceAll(/import\(.*\)\./g, '');
+      const match = /^data\/mods\/(champions|gen7letsgo)\/(abilities|items|moves)\.ts$/.exec(file);
+      if (match) {
+        const [, mod, table] = match;
+        const textTable = TEXTS[`${table}.json`];
+        for (const id in textTable) {
+          const modText = textTable[id][mod];
+          if (!modText) continue;
+          const fields = [];
+          if (modText.desc) fields.push(`\t\tdesc: ${JSON.stringify(modText.desc)},`);
+          if (modText.shortDesc) {
+            fields.push(`\t\tshortDesc: ${JSON.stringify(modText.shortDesc)},`);
+          }
+          if (!fields.length) continue;
+          const target = `\t${id}: {\n\t\tinherit: true,`;
+          if (original.includes(target)) {
+            original = original.replace(target, `${target}\n${fields.join('\n')}`);
+          } else {
+            original = original.replace(/\n};\s*$/,
+              `\n\t${id}: {\n\t\tinherit: true,\n${fields.join('\n')}\n\t},\n};\n`);
+          }
+        }
+      }
       if (MOD_IMPORTS[file]) {
         if (file === 'data/mods/gen1jpn/rulesets.ts') {
           original = original.replace('} else if (set.level < legalityList[moveid]) {',
             '} else if (set.level < (legalityList[moveid] as number)) {');
         } else if (file.endsWith('learnsets.ts')) {
-          original = original.replace('/* eslint-disable max-len */\n\n', '');
+          original = original.replace(/^(?:\/\* eslint-disable max-len \*\/)?\n+/, '');
         } else if (file.endsWith('scripts.ts')) {
-          original = original.replaceAll(/(?<!\.)\btoID\(/g, 'this.dex.toID(');
+          original = original.replace('import { toID } from \'../../../sim/dex-data\';\n\n', '')
+            .replaceAll(/(?<!\.)\btoID\(/g, 'this.dex.toID(');
         }
 
         fs.writeFileSync(path.resolve(mods, file.replace('data/mods', 'src')),
@@ -800,8 +874,6 @@ const changes = async (where, last, now, repo) => ({
         if (m) return `${m[1]} randomSetsJSON;${m[2]}`;
         m = RANDOM_DOUBLES_SETS.exec(line);
         if (m) return `${m[1]} randomDoublesSetsJSON;${m[2]}`;
-        m = RANDOM_MEGA_INVASION_SETS.exec(line);
-        if (m) return `${m[1]} randomMegaInvasionSetsJSON;${m[2]}`;
         m = INLINE_REQUIRE.exec(line);
         if (m) return `${m[1]}{};`;
         m = RANDOM_POTD.exec(line);
@@ -830,7 +902,6 @@ const changes = async (where, last, now, repo) => ({
 
       let dataJson = '';
       let doublesJson = '';
-      let megaJson = '';
       if (file.endsWith('teams.ts')) {
         const current = file.includes('gen9');
         const sets = file === 'data/random-battles/gen9/teams.ts' ||
@@ -853,32 +924,14 @@ const changes = async (where, last, now, repo) => ({
           doublesJson = '\n\n/* eslint-disable */\n' +
             `const randomDoublesSetsJSON = ${JSON.stringify(JSON.parse(raw))}` +
             ' as any;\n/* eslint-enable */';
-          // i fucking hate this bullshit
-          data = path.resolve(path.join(ps, file), '..', `sets-megainvasion.json`);
-          if (fs.existsSync(data)) {
-            raw = fs.readFileSync(data, 'utf8');
-            megaJson = '\n\n/* eslint-disable */\n' +
-              `const randomMegaInvasionSetsJSON = ${JSON.stringify(JSON.parse(raw))}` +
-              ' as any;\n/* eslint-enable */';
-          }
         }
       }
 
       fs.writeFileSync(
         path.resolve(randoms, RANDOMS_FILES[file]),
-        `${header.join('\n')}${dataJson}${doublesJson}${megaJson}\n${rewritten}`
+        `${header.join('\n')}${dataJson}${doublesJson}\n${rewritten}`
       );
     }
-
-    // The data files are Typescript, so we need to build to convert them to JS before requiring
-    await execOrDie(`node build`, ps);
-
-    const TEXTS = {
-      'moves.json': require(path.resolve(ps, 'dist/data/text/moves.js')).MovesText,
-      'abilities.json': require(path.resolve(ps, 'dist/data/text/abilities.js')).AbilitiesText,
-      'items.json': require(path.resolve(ps, 'dist/data/text/items.js')).ItemsText,
-      // 'species.json': require(path.resolve(ps, 'dist/data/text/pokedex.js')).PokedexText,
-    };
 
     const DEX = {};
     for (let gen = 9; gen >= 1; gen--) {
@@ -896,9 +949,13 @@ const changes = async (where, last, now, repo) => ({
       }
     }
 
+    const toID = s => ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '');
     const DefaultText = require(path.resolve(ps, 'dist/data/text/default.js')).DefaultText;
+    const {StatNames, StatShortNames} = require(path.resolve(ps, 'dist/data/text/names.js'));
+    const PokedexText = require(path.resolve(ps, 'dist/data/text/pokedex.js')).PokedexText;
     const TEXT = {};
     for (const key in DefaultText) {
+      if (key === 'ui') continue;
       if (key === 'sandstorm') {
         DefaultText[key].weatherName = 'Sand';
       } else if (key === 'desolateland') {
@@ -906,6 +963,19 @@ const changes = async (where, last, now, repo) => ({
       }
 
       TEXT[key === 'default' ? '_' : key] = DefaultText[key];
+      if (key === 'default') {
+        delete TEXT._.fullName;
+        TEXT._.hitCount = TEXT._.hitCount.replace('{INFLECT:NUMBER:s=time:p=times}', 'times');
+        TEXT._.hitCountSingular = '  The Pokémon was hit 1 time!';
+        for (const stat in StatNames) {
+          TEXT[stat] = {statName: StatNames[stat]};
+          if (StatShortNames[stat]) TEXT[stat].statShortName = StatShortNames[stat];
+        }
+      } else if (key === 'unboost') {
+        TEXT.unboost.fail = TEXT.unboost.failNoStat;
+        delete TEXT.unboost.failNoStat;
+        TEXT.unboost.failSingular = "  {POKEMON}'s {STAT} was not lowered!";
+      }
     }
     for (const text in TEXTS) {
       for (const id in TEXTS[text]) {
@@ -913,16 +983,23 @@ const changes = async (where, last, now, repo) => ({
         for (const key in entry) {
           if (['name', 'desc', 'shortDesc'].includes(key)) continue;
           TEXT[id] = TEXT[id] || {};
-          if (key.startsWith('gen')) {
+          if (/^gen[1-8]$/.test(key)) {
             for (const modKey in entry[key]) {
               if (['desc', 'shortDesc'].includes(modKey)) continue;
               TEXT[id][modKey + 'Gen' + key.charAt(3)] = entry[key][modKey];
             }
-          } else {
+          } else if (typeof entry[key] !== 'object') {
             TEXT[id][key] = entry[key];
           }
         }
         if (TEXT[id] && !Object.keys(TEXT[id]).length) delete TEXT[id];
+      }
+    }
+    for (const id in PokedexText) {
+      const name = PokedexText[id].name;
+      if (toID(name) !== id) {
+        TEXT[id] = TEXT[id] || {};
+        TEXT[id].speciesName = name;
       }
     }
     fs.writeFileSync(path.join(view, 'src/data/text.json'), stringify(TEXT));
@@ -945,6 +1022,12 @@ const changes = async (where, last, now, repo) => ({
     const formats = [];
     const modded = {};
     const remove = ['rated', 'challengeShow', 'searchShow', 'tournamentShow', 'threads', 'desc'];
+    const psRules = new Set(
+      Object.keys(require(path.resolve(ps, 'dist/data/rulesets.js')).Rulesets)
+    );
+    const simRulesText = fs.readFileSync(path.resolve(sim, 'data/rulesets.ts'), 'utf8');
+    const simRules = new Set([...simRulesText.matchAll(/^\t([a-z0-9]+): \{/gm)].map(m => m[1]));
+    const omRules = new Set([...psRules].filter(r => !simRules.has(r)));
     const skip = [
       '[Gen 5] Almost Any Ability',
       '[Gen 7] Balanced Hackmons',
@@ -956,13 +1039,21 @@ const changes = async (where, last, now, repo) => ({
       '[Gen 9] Monocolor',
       '[Gen 9] Godly Gift VG 2024 Reg G (Bo3)',
     ];
+    let section = '';
     for (const format of require(path.resolve(ps, 'dist/config/formats.js')).Formats) {
+      if (format.section) {
+        section = format.section;
+        continue;
+      }
       if (!format.mod) continue;
       const isBaseGen = /^gen\d(bdsp|legends)?$/.test(format.mod);
       const hasModDir = fs.existsSync(path.resolve(mods, 'src', format.mod));
       if (!isBaseGen && !hasModDir) continue;
-      if (format.ruleset.some(r => r.includes('Draft')) ||
-        format.ruleset.includes('Standard OMs') || skip.includes(format.name)) {
+      if (['Draft', 'Temporary Tour Metas', 'Pet Mods'].includes(section)) continue;
+      if (format.name.includes('Draft') || format.ruleset.some(r => r.includes('Draft')) ||
+        format.ruleset.includes('Standard OMs') || skip.includes(format.name) ||
+        (isBaseGen &&
+          format.ruleset.some(r => omRules.has(toID(r.split('=')[0].replace(/^[!+-]+/, '')))))) {
         continue;
       }
       if (Object.values(format).some(v => typeof v === 'function')) continue;
@@ -1033,7 +1124,11 @@ const changes = async (where, last, now, repo) => ({
     // Mirror `sim/global-types.ts` to export all of its types (making it a module). Its possible
     // that ///-references could also be added to the data/ files and *nothing* then relies on
     // ambient declarations, but this hack is the least involved way to get things to work
-    const types = fs.readFileSync(path.resolve(ps, 'sim/global-types.ts'), 'utf8');
+    const types = fs.readFileSync(path.resolve(ps, 'sim/global-types.ts'), 'utf8')
+      .replace('/* oxlint-disable no-unused-vars */',
+        '/* eslint-disable @typescript-eslint/no-unused-vars */')
+      .replace('interface EffectData {\n\tname?: string;',
+        'interface EffectData {\n\tname?: string;\n\tdesc?: string;\n\tshortDesc?: string;');
     fs.writeFileSync(path.resolve(sim, 'sim/global-types.ts'), types);
     const exported = [];
     for (const line of types.split('\n')) {

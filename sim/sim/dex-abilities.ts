@@ -10,7 +10,7 @@ import {
 } from './exported-global-types';
 
 import type { PokemonEventMethods, ConditionData, ModdedConditionData } from './dex-conditions';
-import { assignMissingFields, BasicEffect, toID } from './dex-data';
+import { assignMissingFields, BasicEffect, toID, type ModdedEffectText } from './dex-data';
 import { Utils } from '../lib/utils';
 
 interface AbilityEventMethods {
@@ -35,10 +35,10 @@ export interface AbilityData extends Partial<Ability>, AbilityEventMethods, Poke
 	name: string;
 }
 
-export type ModdedAbilityData = AbilityData | Partial<AbilityData> & {
+export type ModdedAbilityData = (AbilityData | Partial<AbilityData> & {
 	inherit: true,
 	condition?: ModdedConditionData,
-};
+}) & ModdedEffectText;
 export interface AbilityDataTable { [abilityid: IDEntry]: AbilityData }
 export interface ModdedAbilityDataTable { [abilityid: IDEntry]: ModdedAbilityData }
 
@@ -107,11 +107,10 @@ export class DexAbilities {
 			ability = this.get(this.dex.getAlias(id));
 		} else if (id && this.dex.data.Abilities.hasOwnProperty(id)) {
 			const abilityData = this.dex.data.Abilities[id] as any;
-			const abilityTextData = this.dex.getDescs('Abilities', id, abilityData);
 			ability = new Ability({
 				name: id,
 				...abilityData,
-				...abilityTextData,
+				...this.dex.getDescs('Abilities', id, abilityData),
 			});
 			if (ability.gen > this.dex.gen) {
 				(ability as any).isNonstandard = 'Future';

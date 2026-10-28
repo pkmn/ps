@@ -66,6 +66,13 @@ describe('Dex#getSpecies', () => {
 });
 
 describe('Dex#getItem', () => {
+	it('should only assign Plate Fling power to held Plates', () => {
+		assert.equal(Dex.items.get('Flame Plate').fling.basePower, 90);
+		assert.equal(Dex.items.get('Blank Plate').fling, undefined);
+		assert.equal(Dex.items.get('Legend Plate').fling, undefined);
+		assert.equal(Dex.items.get('Firium Z').fling, undefined);
+	});
+
 	it(`should correctly mark Gem legality`, () => {
 		assert.false(Dex.forGen(5).items.get('Normal Gem').isNonstandard);
 		assert.false(Dex.forGen(5).items.get('Rock Gem').isNonstandard);
@@ -85,7 +92,23 @@ describe('Dex#getMove', () => {
 	it(`should correctly handle G-Max moves`, () => {
 		assert.equal(Dex.forGen(8).moves.get('G-Max Befuddle').name, "G-Max Befuddle");
 		assert.equal(Dex.forGen(8).moves.get('G-Max Befuddle').gen, 8);
-		assert.equal(Dex.forGen(8).moves.get('G-Max Befuddle').isNonstandard, "Gigantamax");
+		assert.equal(Dex.forGen(8).moves.get('G-Max Befuddle').isMax, "Butterfree");
+	});
+});
+
+describe('Dex#isTagged', () => {
+	it(`should check species, move, and generic tags`, () => {
+		assert(Dex.isTagged(Dex.species.get('Mew'), 'Mythical'));
+		assert(Dex.isTagged(Dex.species.get('Charizard-Gmax'), 'Gigantamax'));
+		assert(Dex.isTagged(Dex.moves.get('Tackle'), 'Contact'));
+		assert(Dex.isTagged(Dex.moves.get('Shadow Strike'), 'CAP'));
+		assert(Dex.isTagged(Dex.moves.get('Light of Ruin'), 'Past Unobtainable'));
+		assert(Dex.isTagged(Dex.items.get('Berserk Gene'), 'True Past'));
+
+		assert.false(Dex.isTagged(Dex.species.get('Charizard'), 'Gigantamax'));
+		assert.false(Dex.isTagged(Dex.moves.get('Confusion'), 'Contact'));
+		assert.false(Dex.isTagged(Dex.abilities.get('Pressure'), 'Mythical'));
+		assert.false(Dex.isTagged(Dex.species.get('Pikachu'), 'definitely not a real tag'));
 	});
 });
 

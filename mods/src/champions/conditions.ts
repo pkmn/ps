@@ -13,9 +13,9 @@ export const Conditions: ModdedConditionDataTable = {
 	slp: {
 		inherit: true,
 		onStart(target, source, sourceEffect) {
-			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+			if (sourceEffect?.effectType === 'Ability') {
 				this.add('-status', target, 'slp', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
-			} else if (sourceEffect && sourceEffect.effectType === 'Move') {
+			} else if (sourceEffect?.effectType === 'Move') {
 				this.add('-status', target, 'slp', `[from] move: ${sourceEffect.name}`);
 			} else {
 				this.add('-status', target, 'slp');
@@ -33,7 +33,7 @@ export const Conditions: ModdedConditionDataTable = {
 	frz: {
 		inherit: true,
 		onStart(target, source, sourceEffect) {
-			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+			if (sourceEffect?.effectType === 'Ability') {
 				this.add('-status', target, 'frz', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
 			} else {
 				this.add('-status', target, 'frz');

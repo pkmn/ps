@@ -11,7 +11,7 @@
     "dragonfang": {"inherit": true, "shortDesc": "No competitive use."},
     "dragonscale": {
       "inherit": true,
-      "shortDesc": "Holder's Dragon-type attacks have 1.1x power. Evolves Seadra (trade)."
+      "shortDesc": "Holder's Dragon-type attacks have 1.1× power. Evolves Seadra (trade)."
     },
     "fastball": {"inherit": true, "isNonstandard": null},
     "focusband": {
@@ -39,7 +39,7 @@
     "metalcoat": {"inherit": true},
     "metalpowder": {
       "inherit": true,
-      "shortDesc": "If held by a Ditto, its Defense and Sp. Def are 1.5x, even while Transformed."
+      "shortDesc": "If held by a Ditto, its Defense and Sp. Def are 1.5×, even while Transformed."
     },
     "miracleseed": {"inherit": true},
     "moonball": {"inherit": true, "isNonstandard": null},
@@ -96,22 +96,22 @@
     "blackbelt": {
       "inherit": true,
       "onModifyAtkPriority": 1,
-      "shortDesc": "Holder's Fighting-type attacks have 1.1x power."
+      "shortDesc": "Holder's Fighting-type attacks have 1.1× power."
     },
     "blackglasses": {
       "inherit": true,
       "onModifySpAPriority": 1,
-      "shortDesc": "Holder's Dark-type attacks have 1.1x power."
+      "shortDesc": "Holder's Dark-type attacks have 1.1× power."
     },
     "charcoal": {
       "inherit": true,
       "onModifySpAPriority": 1,
-      "shortDesc": "Holder's Fire-type attacks have 1.1x power."
+      "shortDesc": "Holder's Fire-type attacks have 1.1× power."
     },
     "dragonfang": {
       "inherit": true,
       "onModifySpAPriority": 1,
-      "shortDesc": "Holder's Dragon-type attacks have 1.1x power."
+      "shortDesc": "Holder's Dragon-type attacks have 1.1× power."
     },
     "enigmaberry": {
       "name": "Enigma Berry",
@@ -135,7 +135,7 @@
     "hardstone": {
       "inherit": true,
       "onModifyAtkPriority": 1,
-      "shortDesc": "Holder's Rock-type attacks have 1.1x power."
+      "shortDesc": "Holder's Rock-type attacks have 1.1× power."
     },
     "heavyball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "iapapaberry": {
@@ -151,7 +151,7 @@
     },
     "laxincense": {
       "inherit": true,
-      "shortDesc": "The accuracy of attacks against the holder is 0.95x."
+      "shortDesc": "The accuracy of attacks against the holder is 0.95×."
     },
     "levelball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "liechiberry": {
@@ -168,7 +168,7 @@
     "magnet": {
       "inherit": true,
       "onModifySpAPriority": 1,
-      "shortDesc": "Holder's Electric-type attacks have 1.1x power."
+      "shortDesc": "Holder's Electric-type attacks have 1.1× power."
     },
     "magoberry": {
       "inherit": true,
@@ -178,24 +178,24 @@
     "metalcoat": {
       "inherit": true,
       "onModifyAtkPriority": 1,
-      "desc": "Holder's Steel-type attacks have 1.1x power. Evolves Onix into Steelix and Scyther into Scizor when traded.",
-      "shortDesc": "Holder's Steel-type attacks have 1.1x power."
+      "desc": "Holder's Steel-type attacks have 1.1× power. Evolves Onix into Steelix and Scyther into Scizor when traded.",
+      "shortDesc": "Holder's Steel-type attacks have 1.1× power."
     },
     "miracleseed": {
       "inherit": true,
       "onModifySpAPriority": 1,
-      "shortDesc": "Holder's Grass-type attacks have 1.1x power."
+      "shortDesc": "Holder's Grass-type attacks have 1.1× power."
     },
     "moonball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "mysticwater": {
       "inherit": true,
       "onModifySpAPriority": 1,
-      "shortDesc": "Holder's Water-type attacks have 1.1x power."
+      "shortDesc": "Holder's Water-type attacks have 1.1× power."
     },
     "nevermeltice": {
       "inherit": true,
       "onModifySpAPriority": 1,
-      "shortDesc": "Holder's Ice-type attacks have 1.1x power."
+      "shortDesc": "Holder's Ice-type attacks have 1.1× power."
     },
     "oranberry": {
       "inherit": true,
@@ -210,7 +210,7 @@
     "poisonbarb": {
       "inherit": true,
       "onModifyAtkPriority": 1,
-      "shortDesc": "Holder's Poison-type attacks have 1.1x power."
+      "shortDesc": "Holder's Poison-type attacks have 1.1× power."
     },
     "quickclaw": {"inherit": true},
     "salacberry": {
@@ -221,22 +221,22 @@
     "seaincense": {
       "inherit": true,
       "onModifySpAPriority": 1,
-      "shortDesc": "Holder's Water-type attacks have 1.05x power."
+      "shortDesc": "Holder's Water-type attacks have 1.05× power."
     },
     "sharpbeak": {
       "inherit": true,
       "onModifyAtkPriority": 1,
-      "shortDesc": "Holder's Flying-type attacks have 1.1x power."
+      "shortDesc": "Holder's Flying-type attacks have 1.1× power."
     },
     "silkscarf": {
       "inherit": true,
       "onModifyAtkPriority": 1,
-      "shortDesc": "Holder's Normal-type attacks have 1.1x power."
+      "shortDesc": "Holder's Normal-type attacks have 1.1× power."
     },
     "silverpowder": {
       "inherit": true,
       "onModifyAtkPriority": 1,
-      "shortDesc": "Holder's Bug-type attacks have 1.1x power."
+      "shortDesc": "Holder's Bug-type attacks have 1.1× power."
     },
     "sitrusberry": {
       "inherit": true,
@@ -247,12 +247,12 @@
     "softsand": {
       "inherit": true,
       "onModifyAtkPriority": 1,
-      "shortDesc": "Holder's Ground-type attacks have 1.1x power."
+      "shortDesc": "Holder's Ground-type attacks have 1.1× power."
     },
     "spelltag": {
       "inherit": true,
       "onModifyAtkPriority": 1,
-      "shortDesc": "Holder's Ghost-type attacks have 1.1x power."
+      "shortDesc": "Holder's Ghost-type attacks have 1.1× power."
     },
     "sportball": {"inherit": true, "isNonstandard": "Unobtainable"},
     "starfberry": {
@@ -263,7 +263,7 @@
     "twistedspoon": {
       "inherit": true,
       "onModifySpAPriority": 1,
-      "shortDesc": "Holder's Psychic-type attacks have 1.1x power."
+      "shortDesc": "Holder's Psychic-type attacks have 1.1× power."
     },
     "wikiberry": {
       "inherit": true,
@@ -312,7 +312,7 @@
       "inherit": true,
       "onTakeItem": false,
       "onSetAbility": false,
-      "shortDesc": "Can only be held by Giratina. Its Ghost- & Dragon-type attacks have 1.2x power."
+      "shortDesc": "Can only be held by Giratina. Its Ghost- & Dragon-type attacks have 1.2× power."
     },
     "heavyball": {"inherit": true, "isNonstandard": null},
     "icicleplate": {"inherit": true, "onTakeItem": true},
@@ -353,7 +353,7 @@
     "metronome": {
       "inherit": true,
       "condition": {"inherit": true},
-      "shortDesc": "Damage of moves used on consecutive turns is increased. Max 2x after 10 turns."
+      "shortDesc": "Damage of moves used on consecutive turns is increased. Max 2× after 10 turns."
     },
     "micleberry": {
       "inherit": true,
@@ -361,6 +361,8 @@
     },
     "mindplate": {"inherit": true, "onTakeItem": true},
     "moonball": {"inherit": true, "isNonstandard": null},
+    "quickclaw": {"inherit": true},
+    "quickpowder": {"inherit": true},
     "razorfang": {"inherit": true},
     "skyplate": {"inherit": true, "onTakeItem": true},
     "splashplate": {"inherit": true, "onTakeItem": true},
@@ -380,6 +382,7 @@
       "onResidualSubOrder": 20
     },
     "toxicplate": {"inherit": true, "onTakeItem": true},
+    "whiteherb": {"inherit": true},
     "widelens": {"inherit": true, "onSourceModifyAccuracyPriority": 4},
     "zapplate": {"inherit": true, "onTakeItem": true},
     "zoomlens": {"inherit": true, "onSourceModifyAccuracyPriority": 4}
@@ -412,7 +415,7 @@
     "buggem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Bug-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Bug-type attack will have 1.5× power. Single use."
     },
     "chartiberry": {
       "inherit": true,
@@ -453,12 +456,12 @@
     "darkgem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Dark-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Dark-type attack will have 1.5× power. Single use."
     },
     "dragongem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Dragon-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Dragon-type attack will have 1.5× power. Single use."
     },
     "durinberry": {
       "inherit": true,
@@ -467,7 +470,7 @@
     "electricgem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Electric-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Electric-type attack will have 1.5× power. Single use."
     },
     "enigmaberry": {
       "inherit": true,
@@ -476,7 +479,7 @@
     "fightinggem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Fighting-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Fighting-type attack will have 1.5× power. Single use."
     },
     "figyberry": {
       "inherit": true,
@@ -485,12 +488,12 @@
     "firegem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Fire-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Fire-type attack will have 1.5× power. Single use."
     },
     "flyinggem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Flying-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Flying-type attack will have 1.5× power. Single use."
     },
     "ganlonberry": {
       "inherit": true,
@@ -499,12 +502,12 @@
     "ghostgem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Ghost-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Ghost-type attack will have 1.5× power. Single use."
     },
     "grassgem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Grass-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Grass-type attack will have 1.5× power. Single use."
     },
     "grepaberry": {
       "inherit": true,
@@ -513,7 +516,7 @@
     "groundgem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Ground-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Ground-type attack will have 1.5× power. Single use."
     },
     "habanberry": {
       "inherit": true,
@@ -530,7 +533,7 @@
     "icegem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Ice-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Ice-type attack will have 1.5× power. Single use."
     },
     "jabocaberry": {
       "inherit": true,
@@ -624,7 +627,7 @@
     "poisongem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Poison-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Poison-type attack will have 1.5× power. Single use."
     },
     "pomegberry": {
       "inherit": true,
@@ -633,7 +636,7 @@
     "psychicgem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Psychic-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Psychic-type attack will have 1.5× power. Single use."
     },
     "qualotberry": {
       "inherit": true,
@@ -658,7 +661,7 @@
     "rockgem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Rock-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Rock-type attack will have 1.5× power. Single use."
     },
     "rowapberry": {
       "inherit": true,
@@ -687,7 +690,7 @@
     "steelgem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Steel-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Steel-type attack will have 1.5× power. Single use."
     },
     "tamatoberry": {
       "inherit": true,
@@ -704,7 +707,7 @@
     "watergem": {
       "inherit": true,
       "isNonstandard": null,
-      "shortDesc": "Holder's first successful Water-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Water-type attack will have 1.5× power. Single use."
     },
     "watmelberry": {
       "inherit": true,
@@ -724,7 +727,7 @@
     },
     "normalgem": {
       "inherit": true,
-      "shortDesc": "Holder's first successful Normal-type attack will have 1.5x power. Single use."
+      "shortDesc": "Holder's first successful Normal-type attack will have 1.5× power. Single use."
     }
   },
   "6": {
@@ -770,7 +773,7 @@
       "inherit": true,
       "onModifySpAPriority": 1,
       "onModifySpDPriority": 2,
-      "shortDesc": "If held by a Latias or a Latios, its Sp. Atk and Sp. Def are 1.5x."
+      "shortDesc": "If held by a Latias or a Latios, its Sp. Atk and Sp. Def are 1.5×."
     },
     "watmelberry": {"inherit": true, "isNonstandard": null},
     "wepearberry": {"inherit": true, "isNonstandard": null},
@@ -780,7 +783,7 @@
     },
     "bigroot": {
       "inherit": true,
-      "shortDesc": "Holder gains 1.3x HP from draining moves, Aqua Ring, Ingrain, and Leech Seed."
+      "shortDesc": "Holder gains 1.3× HP from draining moves, Aqua Ring, Ingrain, and Leech Seed."
     },
     "lightclay": {
       "inherit": true,
@@ -1225,7 +1228,7 @@
       "itemUser": ["Dialga-Origin"],
       "num": 1777,
       "gen": 8,
-      "shortDesc": "If held by a Dialga, its Steel- and Dragon-type attacks have 1.2x power."
+      "shortDesc": "If held by a Dialga, its Steel- and Dragon-type attacks have 1.2× power."
     },
     "adamantorb": {
       "name": "Adamant Orb",
@@ -1234,7 +1237,7 @@
       "itemUser": ["Dialga"],
       "num": 135,
       "gen": 4,
-      "shortDesc": "If held by a Dialga, its Steel- and Dragon-type attacks have 1.2x power."
+      "shortDesc": "If held by a Dialga, its Steel- and Dragon-type attacks have 1.2× power."
     },
     "adrenalineorb": {
       "name": "Adrenaline Orb",
@@ -1345,7 +1348,7 @@
       "onModifySpDPriority": 1,
       "num": 640,
       "gen": 6,
-      "shortDesc": "Holder's Sp. Def is 1.5x, but it can only select damaging moves."
+      "shortDesc": "Holder's Sp. Def is 1.5×, but it can only select damaging moves."
     },
     "audinite": {
       "name": "Audinite",
@@ -1452,7 +1455,7 @@
       "onTryHealPriority": 1,
       "num": 296,
       "gen": 4,
-      "shortDesc": "Holder gains 1.3x HP from draining/Aqua Ring/Ingrain/Leech Seed/Strength Sap."
+      "shortDesc": "Holder gains 1.3× HP from draining/Aqua Ring/Ingrain/Leech Seed/Strength Sap."
     },
     "bindingband": {
       "name": "Binding Band",
@@ -1461,13 +1464,20 @@
       "gen": 5,
       "shortDesc": "Holder's partial-trapping moves deal 1/6 max HP per turn instead of 1/8."
     },
+    "blackaugurite": {
+      "name": "Black Augurite",
+      "num": 1691,
+      "gen": 8,
+      "isNonstandard": "Legends",
+      "shortDesc": "Evolves Scyther into Kleavor when used."
+    },
     "blackbelt": {
       "name": "Black Belt",
       "fling": {"basePower": 30},
       "onBasePowerPriority": 15,
       "num": 241,
       "gen": 2,
-      "shortDesc": "Holder's Fighting-type attacks have 1.2x power."
+      "shortDesc": "Holder's Fighting-type attacks have 1.2× power."
     },
     "blackglasses": {
       "name": "Black Glasses",
@@ -1475,7 +1485,7 @@
       "onBasePowerPriority": 15,
       "num": 240,
       "gen": 2,
-      "shortDesc": "Holder's Dark-type attacks have 1.2x power."
+      "shortDesc": "Holder's Dark-type attacks have 1.2× power."
     },
     "blacksludge": {
       "name": "Black Sludge",
@@ -1485,6 +1495,13 @@
       "num": 281,
       "gen": 4,
       "shortDesc": "Each turn, if holder is a Poison type, restores 1/16 max HP; loses 1/8 if not."
+    },
+    "blankplate": {
+      "name": "Blank Plate",
+      "num": 1780,
+      "gen": 8,
+      "isNonstandard": "Legends",
+      "shortDesc": "Changes Arceus to the Normal type when used in Legends: Arceus."
     },
     "blastoisinite": {
       "name": "Blastoisinite",
@@ -1552,7 +1569,7 @@
       "onModifyAccuracyPriority": -2,
       "num": 213,
       "gen": 2,
-      "shortDesc": "The accuracy of attacks against the holder is 0.9x."
+      "shortDesc": "The accuracy of attacks against the holder is 0.9×."
     },
     "buggem": {
       "name": "Bug Gem",
@@ -1560,7 +1577,7 @@
       "num": 558,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Bug-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Bug-type attack will have 1.3× power. Single use."
     },
     "buginiumz": {
       "name": "Buginium Z",
@@ -1626,7 +1643,7 @@
       "onBasePowerPriority": 15,
       "num": 249,
       "gen": 2,
-      "shortDesc": "Holder's Fire-type attacks have 1.2x power."
+      "shortDesc": "Holder's Fire-type attacks have 1.2× power."
     },
     "charizarditex": {
       "name": "Charizardite X",
@@ -1728,7 +1745,7 @@
       "isChoice": true,
       "num": 220,
       "gen": 3,
-      "shortDesc": "Holder's Attack is 1.5x, but it can only select the first move it executes."
+      "shortDesc": "Holder's Attack is 1.5×, but it can only select the first move it executes."
     },
     "choicescarf": {
       "name": "Choice Scarf",
@@ -1736,7 +1753,7 @@
       "isChoice": true,
       "num": 287,
       "gen": 4,
-      "shortDesc": "Holder's Speed is 1.5x, but it can only select the first move it executes."
+      "shortDesc": "Holder's Speed is 1.5×, but it can only select the first move it executes."
     },
     "choicespecs": {
       "name": "Choice Specs",
@@ -1745,7 +1762,7 @@
       "isChoice": true,
       "num": 297,
       "gen": 4,
-      "shortDesc": "Holder's Sp. Atk is 1.5x, but it can only select the first move it executes."
+      "shortDesc": "Holder's Sp. Atk is 1.5×, but it can only select the first move it executes."
     },
     "chopleberry": {
       "name": "Chople Berry",
@@ -1811,7 +1828,7 @@
       "itemUser": ["Ogerpon-Cornerstone"],
       "num": 2406,
       "gen": 9,
-      "shortDesc": "Ogerpon-Cornerstone: 1.2x power attacks; Terastallize to gain Embody Aspect."
+      "shortDesc": "Ogerpon-Cornerstone: 1.2× power attacks; Terastallize to gain Embody Aspect."
     },
     "cornnberry": {
       "name": "Cornn Berry",
@@ -1877,7 +1894,7 @@
       "num": 562,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Dark-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Dark-type attack will have 1.3× power. Single use."
     },
     "darkiniumz": {
       "name": "Darkinium Z",
@@ -2009,7 +2026,7 @@
       "forcedForme": "Arceus-Dragon",
       "num": 311,
       "gen": 4,
-      "shortDesc": "Holder's Dragon-type attacks have 1.2x power. Judgment is Dragon type."
+      "shortDesc": "Holder's Dragon-type attacks have 1.2× power. Judgment is Dragon type."
     },
     "dragalgite": {
       "name": "Dragalgite",
@@ -2026,7 +2043,7 @@
       "onBasePowerPriority": 15,
       "num": 250,
       "gen": 2,
-      "shortDesc": "Holder's Dragon-type attacks have 1.2x power."
+      "shortDesc": "Holder's Dragon-type attacks have 1.2× power."
     },
     "dragongem": {
       "name": "Dragon Gem",
@@ -2034,7 +2051,7 @@
       "num": 561,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Dragon-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Dragon-type attack will have 1.3× power. Single use."
     },
     "dragoninite": {
       "name": "Dragoninite",
@@ -2090,7 +2107,7 @@
       "forcedForme": "Arceus-Dark",
       "num": 312,
       "gen": 4,
-      "shortDesc": "Holder's Dark-type attacks have 1.2x power. Judgment is Dark type."
+      "shortDesc": "Holder's Dark-type attacks have 1.2× power. Judgment is Dark type."
     },
     "dreamball": {
       "name": "Dream Ball",
@@ -2138,7 +2155,7 @@
       "forcedForme": "Arceus-Ground",
       "num": 305,
       "gen": 4,
-      "shortDesc": "Holder's Ground-type attacks have 1.2x power. Judgment is Ground type."
+      "shortDesc": "Holder's Ground-type attacks have 1.2× power. Judgment is Ground type."
     },
     "eelektrossite": {
       "name": "Eelektrossite",
@@ -2190,7 +2207,7 @@
       "num": 550,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Electric-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Electric-type attack will have 1.3× power. Single use."
     },
     "electricmemory": {
       "name": "Electric Memory",
@@ -2247,7 +2264,7 @@
       "onModifySpDPriority": 2,
       "num": 538,
       "gen": 5,
-      "shortDesc": "If holder's species can evolve, its Defense and Sp. Def are 1.5x."
+      "shortDesc": "If holder's species can evolve, its Defense and Sp. Def are 1.5×."
     },
     "excadrite": {
       "name": "Excadrite",
@@ -2263,7 +2280,7 @@
       "fling": {"basePower": 10},
       "num": 268,
       "gen": 4,
-      "shortDesc": "Holder's attacks that are super effective against the target do 1.2x damage."
+      "shortDesc": "Holder's attacks that are super effective against the target do 1.2× damage."
     },
     "fairiumz": {
       "name": "Fairium Z",
@@ -2283,7 +2300,7 @@
       "onBasePowerPriority": 15,
       "num": 2401,
       "gen": 9,
-      "shortDesc": "Holder's Fairy-type attacks have 1.2x power."
+      "shortDesc": "Holder's Fairy-type attacks have 1.2× power."
     },
     "fairygem": {
       "name": "Fairy Gem",
@@ -2291,7 +2308,7 @@
       "num": 715,
       "gen": 6,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Fairy-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Fairy-type attack will have 1.3× power. Single use."
     },
     "fairymemory": {
       "name": "Fairy Memory",
@@ -2334,7 +2351,7 @@
       "num": 553,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Fighting-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Fighting-type attack will have 1.3× power. Single use."
     },
     "fightingmemory": {
       "name": "Fighting Memory",
@@ -2372,7 +2389,7 @@
       "num": 548,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Fire-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Fire-type attack will have 1.3× power. Single use."
     },
     "firememory": {
       "name": "Fire Memory",
@@ -2411,7 +2428,7 @@
       "forcedForme": "Arceus-Fighting",
       "num": 303,
       "gen": 4,
-      "shortDesc": "Holder's Fighting-type attacks have 1.2x power. Judgment is Fighting type."
+      "shortDesc": "Holder's Fighting-type attacks have 1.2× power. Judgment is Fighting type."
     },
     "flameorb": {
       "name": "Flame Orb",
@@ -2429,7 +2446,7 @@
       "forcedForme": "Arceus-Fire",
       "num": 298,
       "gen": 4,
-      "shortDesc": "Holder's Fire-type attacks have 1.2x power. Judgment is Fire type."
+      "shortDesc": "Holder's Fire-type attacks have 1.2× power. Judgment is Fire type."
     },
     "floatstone": {
       "name": "Float Stone",
@@ -2460,7 +2477,7 @@
       "num": 556,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Flying-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Flying-type attack will have 1.3× power. Single use."
     },
     "flyingmemory": {
       "name": "Flying Memory",
@@ -2630,7 +2647,7 @@
       "num": 560,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Ghost-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Ghost-type attack will have 1.3× power. Single use."
     },
     "ghostiumz": {
       "name": "Ghostium Z",
@@ -2703,7 +2720,7 @@
       "num": 551,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Grass-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Grass-type attack will have 1.3× power. Single use."
     },
     "grassiumz": {
       "name": "Grassium Z",
@@ -2775,7 +2792,7 @@
       "itemUser": ["Giratina-Origin"],
       "num": 1779,
       "gen": 8,
-      "shortDesc": "If held by a Giratina, its Ghost- and Dragon-type attacks have 1.2x power."
+      "shortDesc": "If held by a Giratina, its Ghost- and Dragon-type attacks have 1.2× power."
     },
     "griseousorb": {
       "name": "Griseous Orb",
@@ -2784,7 +2801,7 @@
       "itemUser": ["Giratina"],
       "num": 112,
       "gen": 4,
-      "shortDesc": "If held by a Giratina, its Ghost- and Dragon-type attacks have 1.2x power."
+      "shortDesc": "If held by a Giratina, its Ghost- and Dragon-type attacks have 1.2× power."
     },
     "groundgem": {
       "name": "Ground Gem",
@@ -2792,7 +2809,7 @@
       "num": 555,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Ground-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Ground-type attack will have 1.3× power. Single use."
     },
     "groundiumz": {
       "name": "Groundium Z",
@@ -2839,7 +2856,7 @@
       "onBasePowerPriority": 15,
       "num": 238,
       "gen": 2,
-      "shortDesc": "Holder's Rock-type attacks have 1.2x power."
+      "shortDesc": "Holder's Rock-type attacks have 1.2× power."
     },
     "hawluchanite": {
       "name": "Hawluchanite",
@@ -2865,7 +2882,7 @@
       "itemUser": ["Ogerpon-Hearthflame"],
       "num": 2408,
       "gen": 9,
-      "shortDesc": "Ogerpon-Hearthflame: 1.2x power attacks; Terastallize to gain Embody Aspect."
+      "shortDesc": "Ogerpon-Hearthflame: 1.2× power attacks; Terastallize to gain Embody Aspect."
     },
     "heatranite": {
       "name": "Heatranite",
@@ -2946,7 +2963,7 @@
       "num": 552,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Ice-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Ice-type attack will have 1.3× power. Single use."
     },
     "icememory": {
       "name": "Ice Memory",
@@ -2973,7 +2990,7 @@
       "forcedForme": "Arceus-Ice",
       "num": 302,
       "gen": 4,
-      "shortDesc": "Holder's Ice-type attacks have 1.2x power. Judgment is Ice type."
+      "shortDesc": "Holder's Ice-type attacks have 1.2× power. Judgment is Ice type."
     },
     "iciumz": {
       "name": "Icium Z",
@@ -3012,7 +3029,7 @@
       "forcedForme": "Arceus-Bug",
       "num": 308,
       "gen": 4,
-      "shortDesc": "Holder's Bug-type attacks have 1.2x power. Judgment is Bug type."
+      "shortDesc": "Holder's Bug-type attacks have 1.2× power. Judgment is Bug type."
     },
     "ironball": {
       "name": "Iron Ball",
@@ -3028,7 +3045,7 @@
       "forcedForme": "Arceus-Steel",
       "num": 313,
       "gen": 4,
-      "shortDesc": "Holder's Steel-type attacks have 1.2x power. Judgment is Steel type."
+      "shortDesc": "Holder's Steel-type attacks have 1.2× power. Judgment is Steel type."
     },
     "jabocaberry": {
       "name": "Jaboca Berry",
@@ -3149,7 +3166,7 @@
       "num": 255,
       "gen": 3,
       "isNonstandard": "Past",
-      "shortDesc": "The accuracy of attacks against the holder is 0.9x."
+      "shortDesc": "The accuracy of attacks against the holder is 0.9×."
     },
     "leafstone": {
       "name": "Leaf Stone",
@@ -3176,6 +3193,14 @@
       "num": 234,
       "gen": 2,
       "shortDesc": "At the end of every turn, holder restores 1/16 of its max HP."
+    },
+    "legendplate": {
+      "name": "Legend Plate",
+      "num": 1828,
+      "gen": 8,
+      "isNonstandard": "Legends",
+      "desc": "When used on Arceus in Legends: Arceus, changes it to the Normal type. When Arceus uses Judgment, Arceus and the move change to a type that is most effective against the target.",
+      "shortDesc": "In Legends: Arceus, Arceus's Judgment changes type to be supereffective."
     },
     "leppaberry": {
       "name": "Leppa Berry",
@@ -3205,7 +3230,7 @@
       "fling": {"basePower": 30},
       "num": 270,
       "gen": 4,
-      "shortDesc": "Holder's attacks do 1.3x damage, and it loses 1/10 its max HP after the attack."
+      "shortDesc": "Holder's attacks do 1.3× damage, and it loses 1/10 its max HP after the attack."
     },
     "lightball": {
       "name": "Light Ball",
@@ -3341,7 +3366,7 @@
       "itemUser": ["Palkia-Origin"],
       "num": 1778,
       "gen": 8,
-      "shortDesc": "If held by a Palkia, its Water- and Dragon-type attacks have 1.2x power."
+      "shortDesc": "If held by a Palkia, its Water- and Dragon-type attacks have 1.2× power."
     },
     "lustrousorb": {
       "name": "Lustrous Orb",
@@ -3350,7 +3375,7 @@
       "itemUser": ["Palkia"],
       "num": 136,
       "gen": 4,
-      "shortDesc": "If held by a Palkia, its Water- and Dragon-type attacks have 1.2x power."
+      "shortDesc": "If held by a Palkia, its Water- and Dragon-type attacks have 1.2× power."
     },
     "luxuryball": {
       "name": "Luxury Ball",
@@ -3404,7 +3429,7 @@
       "onBasePowerPriority": 15,
       "num": 242,
       "gen": 2,
-      "shortDesc": "Holder's Electric-type attacks have 1.2x power."
+      "shortDesc": "Holder's Electric-type attacks have 1.2× power."
     },
     "magoberry": {
       "name": "Mago Berry",
@@ -3505,7 +3530,7 @@
       "forcedForme": "Arceus-Grass",
       "num": 301,
       "gen": 4,
-      "shortDesc": "Holder's Grass-type attacks have 1.2x power. Judgment is Grass type."
+      "shortDesc": "Holder's Grass-type attacks have 1.2× power. Judgment is Grass type."
     },
     "medichamite": {
       "name": "Medichamite",
@@ -3565,8 +3590,8 @@
       "onBasePowerPriority": 15,
       "num": 233,
       "gen": 2,
-      "desc": "Holder's Steel-type attacks have 1.2x power. Evolves Onix into Steelix and Scyther into Scizor when traded.",
-      "shortDesc": "Holder's Steel-type attacks have 1.2x power."
+      "desc": "Holder's Steel-type attacks have 1.2× power. Evolves Onix into Steelix and Scyther into Scizor when traded.",
+      "shortDesc": "Holder's Steel-type attacks have 1.2× power."
     },
     "metalpowder": {
       "name": "Metal Powder",
@@ -3584,7 +3609,7 @@
       "condition": {"onTryMovePriority": -2},
       "num": 277,
       "gen": 4,
-      "shortDesc": "Damage of moves used on consecutive turns is increased. Max 2x after 5 turns."
+      "shortDesc": "Damage of moves used on consecutive turns is increased. Max 2× after 5 turns."
     },
     "mewniumz": {
       "name": "Mewnium Z",
@@ -3622,7 +3647,7 @@
       "condition": {"duration": 2},
       "num": 209,
       "gen": 4,
-      "shortDesc": "Holder's next move has 1.2x accuracy when at 1/4 max HP or less. Single use."
+      "shortDesc": "Holder's next move has 1.2× accuracy when at 1/4 max HP or less. Single use."
     },
     "mimikiumz": {
       "name": "Mimikium Z",
@@ -3647,7 +3672,7 @@
       "forcedForme": "Arceus-Psychic",
       "num": 307,
       "gen": 4,
-      "shortDesc": "Holder's Psychic-type attacks have 1.2x power. Judgment is Psychic type."
+      "shortDesc": "Holder's Psychic-type attacks have 1.2× power. Judgment is Psychic type."
     },
     "miracleseed": {
       "name": "Miracle Seed",
@@ -3655,7 +3680,7 @@
       "onBasePowerPriority": 15,
       "num": 239,
       "gen": 2,
-      "shortDesc": "Holder's Grass-type attacks have 1.2x power."
+      "shortDesc": "Holder's Grass-type attacks have 1.2× power."
     },
     "mirrorherb": {
       "name": "Mirror Herb",
@@ -3696,7 +3721,7 @@
       "onBasePowerPriority": 16,
       "num": 266,
       "gen": 4,
-      "shortDesc": "Holder's physical attacks have 1.1x power."
+      "shortDesc": "Holder's physical attacks have 1.1× power."
     },
     "mysticwater": {
       "name": "Mystic Water",
@@ -3704,7 +3729,7 @@
       "onBasePowerPriority": 15,
       "num": 243,
       "gen": 2,
-      "shortDesc": "Holder's Water-type attacks have 1.2x power."
+      "shortDesc": "Holder's Water-type attacks have 1.2× power."
     },
     "nanabberry": {
       "name": "Nanab Berry",
@@ -3736,7 +3761,7 @@
       "onBasePowerPriority": 15,
       "num": 246,
       "gen": 2,
-      "shortDesc": "Holder's Ice-type attacks have 1.2x power."
+      "shortDesc": "Holder's Ice-type attacks have 1.2× power."
     },
     "nomelberry": {
       "name": "Nomel Berry",
@@ -3753,7 +3778,7 @@
       "isGem": true,
       "num": 564,
       "gen": 5,
-      "shortDesc": "Holder's first successful Normal-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Normal-type attack will have 1.3× power. Single use."
     },
     "normaliumz": {
       "name": "Normalium Z",
@@ -3780,7 +3805,7 @@
       "num": 314,
       "gen": 4,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's Psychic-type attacks have 1.2x power."
+      "shortDesc": "Holder's Psychic-type attacks have 1.2× power."
     },
     "oldamber": {
       "name": "Old Amber",
@@ -3838,6 +3863,13 @@
       "num": 193,
       "gen": 4,
       "shortDesc": "Halves damage taken from a supereffective Psychic-type attack. Single use."
+    },
+    "peatblock": {
+      "name": "Peat Block",
+      "num": 1692,
+      "gen": 8,
+      "isNonstandard": "Legends",
+      "shortDesc": "Evolves Ursaring into Ursaluna when used during a full moon."
     },
     "pechaberry": {
       "name": "Pecha Berry",
@@ -3928,7 +3960,7 @@
       "forcedForme": "Arceus-Fairy",
       "num": 644,
       "gen": 6,
-      "shortDesc": "Holder's Fairy-type attacks have 1.2x power. Judgment is Fairy type."
+      "shortDesc": "Holder's Fairy-type attacks have 1.2× power. Judgment is Fairy type."
     },
     "plumefossil": {
       "name": "Plume Fossil",
@@ -3944,7 +3976,7 @@
       "onBasePowerPriority": 15,
       "num": 245,
       "gen": 2,
-      "shortDesc": "Holder's Poison-type attacks have 1.2x power."
+      "shortDesc": "Holder's Poison-type attacks have 1.2× power."
     },
     "poisongem": {
       "name": "Poison Gem",
@@ -3952,7 +3984,7 @@
       "num": 554,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Poison-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Poison-type attack will have 1.3× power. Single use."
     },
     "poisoniumz": {
       "name": "Poisonium Z",
@@ -4099,7 +4131,7 @@
       "num": 557,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Psychic-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Psychic-type attack will have 1.3× power. Single use."
     },
     "psychicmemory": {
       "name": "Psychic Memory",
@@ -4139,7 +4171,7 @@
       "onModifyMovePriority": 1,
       "num": 1884,
       "gen": 9,
-      "shortDesc": "Holder's punch-based attacks have 1.1x power and do not make contact."
+      "shortDesc": "Holder's punch-based attacks have 1.1× power and do not make contact."
     },
     "pyroarite": {
       "name": "Pyroarite",
@@ -4313,7 +4345,7 @@
       "num": 559,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Rock-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Rock-type attack will have 1.3× power. Single use."
     },
     "rockincense": {
       "name": "Rock Incense",
@@ -4322,7 +4354,7 @@
       "num": 315,
       "gen": 4,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's Rock-type attacks have 1.2x power."
+      "shortDesc": "Holder's Rock-type attacks have 1.2× power."
     },
     "rockiumz": {
       "name": "Rockium Z",
@@ -4378,7 +4410,7 @@
       "num": 318,
       "gen": 4,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's Grass-type attacks have 1.2x power."
+      "shortDesc": "Holder's Grass-type attacks have 1.2× power."
     },
     "roseliberry": {
       "name": "Roseli Berry",
@@ -4525,7 +4557,7 @@
       "num": 254,
       "gen": 3,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's Water-type attacks have 1.2x power."
+      "shortDesc": "Holder's Water-type attacks have 1.2× power."
     },
     "sharpbeak": {
       "name": "Sharp Beak",
@@ -4533,7 +4565,7 @@
       "onBasePowerPriority": 15,
       "num": 244,
       "gen": 2,
-      "shortDesc": "Holder's Flying-type attacks have 1.2x power."
+      "shortDesc": "Holder's Flying-type attacks have 1.2× power."
     },
     "sharpedonite": {
       "name": "Sharpedonite",
@@ -4593,7 +4625,7 @@
       "onBasePowerPriority": 15,
       "num": 251,
       "gen": 3,
-      "shortDesc": "Holder's Normal-type attacks have 1.2x power."
+      "shortDesc": "Holder's Normal-type attacks have 1.2× power."
     },
     "silverpowder": {
       "name": "Silver Powder",
@@ -4601,7 +4633,7 @@
       "onBasePowerPriority": 15,
       "num": 222,
       "gen": 2,
-      "shortDesc": "Holder's Bug-type attacks have 1.2x power."
+      "shortDesc": "Holder's Bug-type attacks have 1.2× power."
     },
     "sitrusberry": {
       "name": "Sitrus Berry",
@@ -4635,7 +4667,7 @@
       "forcedForme": "Arceus-Flying",
       "num": 306,
       "gen": 4,
-      "shortDesc": "Holder's Flying-type attacks have 1.2x power. Judgment is Flying type."
+      "shortDesc": "Holder's Flying-type attacks have 1.2× power. Judgment is Flying type."
     },
     "slowbronite": {
       "name": "Slowbronite",
@@ -4678,7 +4710,7 @@
       "onBasePowerPriority": 15,
       "num": 237,
       "gen": 2,
-      "shortDesc": "Holder's Ground-type attacks have 1.2x power."
+      "shortDesc": "Holder's Ground-type attacks have 1.2× power."
     },
     "solganiumz": {
       "name": "Solganium Z",
@@ -4698,7 +4730,7 @@
       "itemUser": ["Latios", "Latias"],
       "num": 225,
       "gen": 3,
-      "shortDesc": "If held by a Latias/Latios, its Dragon- and Psychic-type moves have 1.2x power."
+      "shortDesc": "If held by a Latias/Latios, its Dragon- and Psychic-type moves have 1.2× power."
     },
     "spelltag": {
       "name": "Spell Tag",
@@ -4706,7 +4738,7 @@
       "onBasePowerPriority": 15,
       "num": 247,
       "gen": 2,
-      "shortDesc": "Holder's Ghost-type attacks have 1.2x power."
+      "shortDesc": "Holder's Ghost-type attacks have 1.2× power."
     },
     "spelonberry": {
       "name": "Spelon Berry",
@@ -4725,7 +4757,7 @@
       "forcedForme": "Arceus-Water",
       "num": 299,
       "gen": 4,
-      "shortDesc": "Holder's Water-type attacks have 1.2x power. Judgment is Water type."
+      "shortDesc": "Holder's Water-type attacks have 1.2× power. Judgment is Water type."
     },
     "spookyplate": {
       "name": "Spooky Plate",
@@ -4734,7 +4766,7 @@
       "forcedForme": "Arceus-Ghost",
       "num": 310,
       "gen": 4,
-      "shortDesc": "Holder's Ghost-type attacks have 1.2x power. Judgment is Ghost type."
+      "shortDesc": "Holder's Ghost-type attacks have 1.2× power. Judgment is Ghost type."
     },
     "sportball": {
       "name": "Sport Ball",
@@ -4782,7 +4814,7 @@
       "num": 563,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Steel-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Steel-type attack will have 1.3× power. Single use."
     },
     "steeliumz": {
       "name": "Steelium Z",
@@ -4840,7 +4872,7 @@
       "forcedForme": "Arceus-Rock",
       "num": 309,
       "gen": 4,
-      "shortDesc": "Holder's Rock-type attacks have 1.2x power. Judgment is Rock type."
+      "shortDesc": "Holder's Rock-type attacks have 1.2× power. Judgment is Rock type."
     },
     "strangeball": {
       "name": "Strange Ball",
@@ -4992,7 +5024,7 @@
       "forcedForme": "Arceus-Poison",
       "num": 304,
       "gen": 4,
-      "shortDesc": "Holder's Poison-type attacks have 1.2x power. Judgment is Poison type."
+      "shortDesc": "Holder's Poison-type attacks have 1.2× power. Judgment is Poison type."
     },
     "tr00": {
       "name": "TR00",
@@ -5800,7 +5832,7 @@
       "onBasePowerPriority": 15,
       "num": 248,
       "gen": 2,
-      "shortDesc": "Holder's Psychic-type attacks have 1.2x power."
+      "shortDesc": "Holder's Psychic-type attacks have 1.2× power."
     },
     "tyranitarite": {
       "name": "Tyranitarite",
@@ -5883,7 +5915,7 @@
       "num": 549,
       "gen": 5,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's first successful Water-type attack will have 1.3x power. Single use."
+      "shortDesc": "Holder's first successful Water-type attack will have 1.3× power. Single use."
     },
     "wateriumz": {
       "name": "Waterium Z",
@@ -5932,7 +5964,7 @@
       "num": 317,
       "gen": 4,
       "isNonstandard": "Past",
-      "shortDesc": "Holder's Water-type attacks have 1.2x power."
+      "shortDesc": "Holder's Water-type attacks have 1.2× power."
     },
     "weaknesspolicy": {
       "name": "Weakness Policy",
@@ -5950,7 +5982,7 @@
       "itemUser": ["Ogerpon-Wellspring"],
       "num": 2407,
       "gen": 9,
-      "shortDesc": "Ogerpon-Wellspring: 1.2x power attacks; Terastallize to gain Embody Aspect."
+      "shortDesc": "Ogerpon-Wellspring: 1.2× power attacks; Terastallize to gain Embody Aspect."
     },
     "wepearberry": {
       "name": "Wepear Berry",
@@ -5985,7 +6017,7 @@
       "onSourceModifyAccuracyPriority": -2,
       "num": 265,
       "gen": 4,
-      "shortDesc": "The accuracy of attacks by the holder is 1.1x."
+      "shortDesc": "The accuracy of attacks by the holder is 1.1×."
     },
     "wikiberry": {
       "name": "Wiki Berry",
@@ -6001,7 +6033,7 @@
       "onBasePowerPriority": 16,
       "num": 267,
       "gen": 4,
-      "shortDesc": "Holder's special attacks have 1.1x power."
+      "shortDesc": "Holder's special attacks have 1.1× power."
     },
     "yacheberry": {
       "name": "Yache Berry",
@@ -6018,7 +6050,7 @@
       "forcedForme": "Arceus-Electric",
       "num": 300,
       "gen": 4,
-      "shortDesc": "Holder's Electric-type attacks have 1.2x power. Judgment is Electric type."
+      "shortDesc": "Holder's Electric-type attacks have 1.2× power. Judgment is Electric type."
     },
     "zeraorite": {
       "name": "Zeraorite",
@@ -6035,7 +6067,7 @@
       "onSourceModifyAccuracyPriority": -2,
       "num": 276,
       "gen": 4,
-      "shortDesc": "The accuracy of attacks by the holder is 1.2x if it moves after its target."
+      "shortDesc": "The accuracy of attacks by the holder is 1.2× if it moves after its target."
     },
     "zygardite": {
       "name": "Zygardite",
@@ -6053,6 +6085,7 @@
       "onResidualOrder": 10,
       "num": 155,
       "gen": 2,
+      "tags": ["True Past"],
       "isNonstandard": "Past",
       "shortDesc": "(Gen 2) Restores 10 HP when at 1/2 max HP or less. Single use."
     },
@@ -6061,6 +6094,7 @@
       "boosts": {"atk": 2},
       "num": 0,
       "gen": 2,
+      "tags": ["True Past"],
       "isNonstandard": "Past",
       "shortDesc": "(Gen 2) On switch-in, raises holder's Attack by 2 and confuses it. Single use."
     },
@@ -6070,6 +6104,7 @@
       "naturalGift": {"basePower": 80, "type": "Ground"},
       "num": 156,
       "gen": 2,
+      "tags": ["True Past"],
       "isNonstandard": "Past",
       "shortDesc": "(Gen 2) Holder is cured if it is confused. Single use."
     },
@@ -6079,6 +6114,7 @@
       "naturalGift": {"basePower": 80, "type": "Ice"},
       "num": 153,
       "gen": 2,
+      "tags": ["True Past"],
       "isNonstandard": "Past",
       "shortDesc": "(Gen 2) Holder is cured if it is frozen. Single use."
     },
@@ -6089,6 +6125,7 @@
       "onResidualOrder": 10,
       "num": 158,
       "gen": 2,
+      "tags": ["True Past"],
       "isNonstandard": "Past",
       "shortDesc": "(Gen 2) Restores 30 HP when at 1/2 max HP or less. Single use."
     },
@@ -6098,6 +6135,7 @@
       "naturalGift": {"basePower": 80, "type": "Grass"},
       "num": 152,
       "gen": 2,
+      "tags": ["True Past"],
       "isNonstandard": "Past",
       "shortDesc": "(Gen 2) Holder is cured if it is burned. Single use."
     },
@@ -6107,6 +6145,7 @@
       "naturalGift": {"basePower": 80, "type": "Water"},
       "num": 150,
       "gen": 2,
+      "tags": ["True Past"],
       "isNonstandard": "Past",
       "shortDesc": "(Gen 2) Holder wakes up if it is asleep. Single use."
     },
@@ -6116,6 +6155,7 @@
       "naturalGift": {"basePower": 80, "type": "Flying"},
       "num": 157,
       "gen": 2,
+      "tags": ["True Past"],
       "isNonstandard": "Past",
       "shortDesc": "(Gen 2) Holder cures itself if it is confused or has a status condition. Single use."
     },
@@ -6125,6 +6165,7 @@
       "naturalGift": {"basePower": 80, "type": "Fighting"},
       "num": 154,
       "gen": 2,
+      "tags": ["True Past"],
       "isNonstandard": "Past",
       "shortDesc": "(Gen 2) Restores 5 PP to the first of the holder's moves to reach 0 PP. Single use."
     },
@@ -6132,15 +6173,17 @@
       "name": "Pink Bow",
       "num": 251,
       "gen": 2,
+      "tags": ["True Past"],
       "isNonstandard": "Past",
-      "shortDesc": "(Gen 2) Holder's Normal-type attacks have 1.1x power."
+      "shortDesc": "(Gen 2) Holder's Normal-type attacks have 1.1× power."
     },
     "polkadotbow": {
       "name": "Polkadot Bow",
       "num": 251,
       "gen": 2,
+      "tags": ["True Past"],
       "isNonstandard": "Past",
-      "shortDesc": "(Gen 2) Holder's Normal-type attacks have 1.1x power."
+      "shortDesc": "(Gen 2) Holder's Normal-type attacks have 1.1× power."
     },
     "przcureberry": {
       "name": "PRZ Cure Berry",
@@ -6148,6 +6191,7 @@
       "naturalGift": {"basePower": 80, "type": "Fire"},
       "num": 149,
       "gen": 2,
+      "tags": ["True Past"],
       "isNonstandard": "Past",
       "shortDesc": "(Gen 2) Holder cures itself if it is paralyzed. Single use."
     },
@@ -6157,6 +6201,7 @@
       "naturalGift": {"basePower": 80, "type": "Electric"},
       "num": 151,
       "gen": 2,
+      "tags": ["True Past"],
       "isNonstandard": "Past",
       "shortDesc": "(Gen 2) Holder is cured if it is poisoned. Single use."
     },
@@ -6178,7 +6223,7 @@
       "num": -2,
       "gen": 8,
       "isNonstandard": "CAP",
-      "shortDesc": "If held by a Venomicon, its Poison- and Flying-type attacks have 1.2x power."
+      "shortDesc": "If held by a Venomicon, its Poison- and Flying-type attacks have 1.2× power."
     }
   }
 }

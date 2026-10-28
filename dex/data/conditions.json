@@ -95,6 +95,7 @@
     },
     "lockedmove": {"inherit": true},
     "choicelock": {"inherit": true},
+    "mustrecharge": {"inherit": true},
     "futuremove": {"inherit": true, "onResidualOrder": 11},
     "stall": {"inherit": true, "counterMax": 8},
     "raindance": {"inherit": true, "onFieldResidualOrder": 8},

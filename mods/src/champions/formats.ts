@@ -20,30 +20,63 @@ export const Formats = [
     name: '[Gen 9 Champions] OU',
     mod: 'champions',
     ruleset: [ 'Standard' ],
-    banlist: [ 'AG', 'Uber', 'Moody', 'Quick Claw', 'Baton Pass', 'Last Respects', 'Shed Tail' ]
+    banlist: [
+      'AG',
+      'Uber',
+      'Moody',
+      'Damp Rock',
+      "King's Rock",
+      'Light Clay',
+      'Quick Claw',
+      'Baton Pass',
+      'Last Respects',
+      'Shed Tail'
+    ]
   },
   {
     name: '[Gen 9 Champions] UU',
     mod: 'champions',
-    searchShow: false,
     ruleset: [ '[Gen 9 Champions] OU' ],
-    banlist: [ 'OU', 'UUBL' ]
+    banlist: [ 'OU', 'UUBL', 'Drought' ]
   },
   {
-    name: '[Gen 9 Champions] BSS Reg M-B',
+    name: '[Gen 9 Champions] Doubles',
+    mod: 'champions',
+    gameType: 'doubles',
+    searchShow: false,
+    ruleset: [ 'Standard Doubles' ],
+    banlist: [ 'DUber' ]
+  },
+  {
+    name: '[Gen 9 Champions] BSS Reg M-C',
     mod: 'champions',
     bestOfDefault: true,
     ruleset: [ 'Flat Rules', 'VGC Timer' ]
   },
   {
-    name: '[Gen 9 Champions] VGC 2026 Reg M-B',
+    name: '[Gen 9 Champions] Random Doubles Battle',
+    mod: 'champions',
+    gameType: 'doubles',
+    team: 'random',
+    bestOfDefault: true,
+    ruleset: [
+      'Obtainable',
+      'Species Clause',
+      'Cancel Mod',
+      'Sleep Clause Mod',
+      'Illusion Level Mod',
+      'Level Clause Mod'
+    ]
+  },
+  {
+    name: '[Gen 9 Champions] VGC 2026 Reg M-C',
     mod: 'champions',
     gameType: 'doubles',
     bestOfDefault: true,
     ruleset: [ 'Flat Rules', 'VGC Timer', 'Open Team Sheets' ]
   },
   {
-    name: '[Gen 9 Champions] VGC 2026 Reg M-B (Bo3)',
+    name: '[Gen 9 Champions] VGC 2026 Reg M-C (Bo3)',
     mod: 'champions',
     gameType: 'doubles',
     ruleset: [ 'Flat Rules', 'VGC Timer', 'Force Open Team Sheets', 'Best of = 3' ]

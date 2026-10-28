@@ -545,6 +545,7 @@ const BattlePokemonIconIndexes = {
 	ramnarok: 1560 + 78,
 	ramnarokradiant: 1560 + 79,
 	flox: 1560 + 80,
+	obliteryx: 1560 + 81,
 };
 
 const BattlePokemonIconIndexesLeft = {

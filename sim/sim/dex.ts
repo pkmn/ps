@@ -6,6 +6,7 @@ import {Ability, DexAbilities} from './dex-abilities';
 import {Species, DexSpecies, DexLearnsets, ModdedLearnsetData} from './dex-species';
 import {Format, FormatList, DexFormats, RuleTable} from './dex-formats';
 import {Aliases} from '../data/aliases';
+import {Tags} from '../data/tags';
 import {
 	AbilityText,
 	ActiveMove,
@@ -332,32 +333,53 @@ export class ModdedDex {
 		}
 	}
 
+	isTagged(thing: Species | Move | Item | Ability, tagName: string) {
+		const tag = Tags[toID(tagName)];
+		if (!tag) return undefined;
+		if (thing.effectType === 'Pokemon') {
+			return !!(tag.speciesFilter || tag.genericFilter)?.(thing);
+		}
+		if (thing.effectType === 'Move') {
+			return !!(tag.moveFilter || tag.genericFilter)?.(thing);
+		}
+		return !!tag.genericFilter?.(thing);
+	}
+
 	getDescs(table: keyof typeof TEXT, id: ID, dataEntry: AnyObject) {
-		if (dataEntry.shortDesc) {
+		if (dataEntry.desc && dataEntry.shortDesc) {
 			return {
 				desc: dataEntry.desc,
 				shortDesc: dataEntry.shortDesc,
 			};
 		}
 		const entry = TEXT[table][id];
-		if (!entry) return null;
+		if (!entry && !dataEntry.desc && !dataEntry.shortDesc) return null;
 		const descs = {
-			desc: '',
-			shortDesc: '',
+			desc: dataEntry.desc || '',
+			shortDesc: dataEntry.shortDesc || '',
 		};
-		for (let i = this.gen; i < dexes['base'].gen; i++) {
-			const curDesc = entry[`gen${i}` as keyof typeof entry]?.desc;
-			const curShortDesc = entry[`gen${i}` as keyof typeof entry]?.shortDesc;
-			if (!descs.desc && curDesc) {
-				descs.desc = curDesc;
+		if (entry) {
+			if (!this.isBase) {
+				const mod = entry[this.currentMod as keyof typeof entry] as Data.ModdedEffectText | undefined;
+				if (!descs.desc && mod?.desc) descs.desc = mod.desc;
+				if (!descs.shortDesc && mod?.shortDesc) descs.shortDesc = mod.shortDesc;
 			}
-			if (!descs.shortDesc && curShortDesc) {
-				descs.shortDesc = curShortDesc;
+			for (let i = this.gen; i < dexes['base'].gen; i++) {
+				const curDesc = entry[`gen${i}` as keyof typeof entry]?.desc;
+				const curShortDesc = entry[`gen${i}` as keyof typeof entry]?.shortDesc;
+				if (!descs.desc && curDesc) {
+					descs.desc = curDesc;
+				}
+				if (!descs.shortDesc && curShortDesc) {
+					descs.shortDesc = curShortDesc;
+				}
+				if (descs.desc && descs.shortDesc) break;
 			}
-			if (descs.desc && descs.shortDesc) break;
+			if (!descs.shortDesc) descs.shortDesc = entry.shortDesc || '';
+			if (!descs.desc) descs.desc = entry.desc || descs.shortDesc;
 		}
-		if (!descs.shortDesc) descs.shortDesc = entry.shortDesc || '';
-		if (!descs.desc) descs.desc = entry.desc || descs.shortDesc;
+		if (!descs.desc) descs.desc = descs.shortDesc;
+		if (!descs.shortDesc) descs.shortDesc = descs.desc;
 		return descs;
 	}
 

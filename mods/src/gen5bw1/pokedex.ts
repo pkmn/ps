@@ -396,6 +396,7 @@ export const Pokedex: ModdedSpeciesDataTable = {
 	basculinbluestriped: {
 		inherit: true,
 		unreleasedHidden: true,
+		abilities: { 0: "Reckless", 1: "Adaptability", H: "Mold Breaker", S: "Rock Head" },
 	},
 	sandile: {
 		inherit: true,

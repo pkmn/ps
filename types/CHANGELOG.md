@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.0
+
+- Pokémon Showdown renamed `Nonstandard` `'Gigantamax'` -> `'Gmax'` and added `'Legends'`.
+
 ## 4.0.0
 
 - Generation 9 Indigo Disk DLC released with a new `Stellar` type.
