@@ -16,6 +16,7 @@ child_process.execSync('npm run build', {cwd: '../vendor/pokemon-showdown'});
 console.log("DONE");
 
 const psc = path.resolve(__dirname, '../vendor/pokemon-showdown-client');
+fs.mkdirSync(path.join(psc, 'play.pokemonshowdown.com/data'), { recursive: true });
 
 const Dex = require('../vendor/pokemon-showdown/dist/sim/dex').Dex;
 const CompoundWordNames = require('../vendor/pokemon-showdown/dist/data/aliases').CompoundWordNames;
