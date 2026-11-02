@@ -7571,7 +7571,7 @@
     },
     "basculin": {"tier": "ZU", "doublesTier": "(DUU)", "natDexTier": "RU"},
     "basculegion": {"tier": "NU", "doublesTier": "DUber", "natDexTier": "RU"},
-    "basculegionf": {"tier": "RU", "doublesTier": "DUU", "natDexTier": "RU"},
+    "basculegionf": {"tier": "RU", "doublesTier": "DUU", "natDexTier": "RUBL"},
     "sandile": {"tier": "LC"},
     "krokorok": {"tier": "NFE"},
     "krookodile": {"tier": "RU", "doublesTier": "(DUU)", "natDexTier": "RU"},
@@ -8650,7 +8650,7 @@
       "natDexTier": "Uber"
     },
     "slitherwing": {"tier": "UU", "doublesTier": "(DUU)", "natDexTier": "RU"},
-    "roaringmoon": {"tier": "Uber", "doublesTier": "DOU", "natDexTier": "Uber"},
+    "roaringmoon": {"tier": "OU", "doublesTier": "DOU", "natDexTier": "Uber"},
     "irontreads": {"tier": "OU", "doublesTier": "(DUU)", "natDexTier": "OU"},
     "ironmoth": {"tier": "OU", "doublesTier": "(DUU)", "natDexTier": "UUBL"},
     "ironhands": {"tier": "UUBL", "doublesTier": "DOU", "natDexTier": "UUBL"},

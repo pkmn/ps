@@ -5,7 +5,7 @@ export const Rulesets: ModdedFormatDataTable = {
 		inherit: true,
 		ruleset: [
 			'Standard AG',
-			'LGPE Normal Rules', 'Species Clause', 'Nickname Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Sleep Clause Mod',
+			'LGPE Normal Rules', 'Species Clause', 'Nickname Clause', 'OHKO Clause', 'Evasion Moves Clause',
 		],
 	},
 	standarddoubles: {

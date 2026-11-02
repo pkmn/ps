@@ -1412,7 +1412,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 		doublesTier: "DOU",
 	},
 	sneasler: {
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	teddiursa: {
@@ -5356,7 +5356,7 @@ export const FormatsData: ModdedSpeciesFormatsDataTable = {
 	},
 	archaludon: {
 		tier: "OU",
-		doublesTier: "DOU",
+		doublesTier: "DUber",
 	},
 	hydrapple: {
 		tier: "RU",

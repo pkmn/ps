@@ -13,7 +13,7 @@ export const Formats = [
     name: "[Gen 7 Let's Go] OU",
     mod: 'gen7letsgo',
     searchShow: false,
-    ruleset: [ 'Standard' ],
+    ruleset: [ 'Standard', 'Sleep Moves Clause' ],
     banlist: [ 'Uber' ]
   },
   {

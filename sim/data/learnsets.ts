@@ -42452,7 +42452,6 @@ export const Learnsets: {[k: string]:  import('../sim/dex-species').ModdedLearns
         '3L1'
       ],
       curse: [ '7V' ],
-      defensecurl: [ '7V' ],
       discharge: [ '9L40', '8L40', '7L40', '6L40', '5L40', '4L40' ],
       doubleedge: [ '9M', '9L50', '7V', '3T' ],
       doubleteam: [ '7M', '7V', '6M', '5M', '4M', '3M' ],

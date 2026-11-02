@@ -5,7 +5,6 @@ export const Formats = [
     name: '[Gen 5] BW1 OU',
     desc: 'A time capsule metagame that reflects the state of [Gen 5] OU before the release of Pok&eacute;mon Black 2 and White 2.',
     mod: 'gen5bw1',
-    searchShow: false,
     ruleset: [ 'Standard', 'Sleep Clause Mod', 'Baton Pass Stat Clause' ],
     banlist: [ 'Uber', 'Drizzle ++ Swift Swim', "King's Rock", 'Razor Fang', 'Soul Dew', 'Swagger' ]
   },
