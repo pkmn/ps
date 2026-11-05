@@ -248,7 +248,6 @@ export class Item extends BasicEffect<T.ItemName> implements T.Item {
 
   constructor(data: AnyObject) {
     super(data);
-    data = this;
 
     this.fullname = `item: ${this.name}`;
     this.effectType = 'Item';
@@ -1262,7 +1261,7 @@ export class ModdedDex implements T.Dex {
     const isGen = (GEN_IDS as unknown as Array<GenID | T.ID>).includes(modid);
     if (!isGen && !modData) throw new Error(`Must provide mod data with mod '${modid}'`);
     this.modid = modid as T.ID;
-    this.gen = parseInt((modData?.Scripts?.inherit ?? modid).slice(3)) as T.GenerationNum || 9;
+    this.gen = parseInt((modData?.Scripts?.inherit ?? modid).slice(3), 10) as T.GenerationNum || 9;
     this.loadData(modData);
 
     this.abilities = new DexAbilities(this);

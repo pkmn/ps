@@ -30,5 +30,6 @@ export default [...pkmn, {
     "@typescript-eslint/prefer-optional-chain": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "max-len": "off",
+    "no-useless-assignment": "off",
   }
 }];

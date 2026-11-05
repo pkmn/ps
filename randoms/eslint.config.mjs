@@ -18,5 +18,6 @@ export default [...pkmn, {
     "no-case-declarations": "off",
     "no-dupe-else-if": "off",
     "no-mixed-spaces-and-tabs": "off",
+    "no-useless-assignment": "off",
   }
 }];

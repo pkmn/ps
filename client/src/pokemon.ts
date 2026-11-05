@@ -434,7 +434,6 @@ export class Pokemon implements DetailedPokemon, PokemonHealth {
       const move = this.side.battle.gen.moves.get(entry[0])!;
       let maxpp = (move.pp === 1 || move.noPPBoosts ? move.pp : move.pp * 8 / 5);
       if (this.side.battle.tier.includes('Champions')) {
-        maxpp = move.pp > 20 ? 20 : move.pp;
         maxpp = move.pp === 1 || move.noPPBoosts ? move.pp : (move.pp / 5 + 1) * 4;
       }
       if (ppUsed[0] > maxpp) ppUsed[0] = maxpp;

@@ -403,7 +403,7 @@ class Handler implements Protocol.Handler<string> {
 
   '|turn|'(args: Args['|turn|']) {
     const [, num] = args;
-    this.parser.turn = Number.parseInt(num);
+    this.parser.turn = Number.parseInt(num, 10);
     return this.parser.template('turn').replace('{NUMBER}', num) + '\n';
   }
 
@@ -1137,7 +1137,7 @@ class Handler implements Protocol.Handler<string> {
     ];
     if (stat === 'spd' && this.parser.gen === 1) return '';
     if (stat === 'spa' && this.parser.gen === 1) stat = 'spc';
-    const amount = parseInt(num);
+    const amount = parseInt(num, 10);
     const line1 = this.parser.maybeAbility(kwArgs.from, kwArgs.of || pokemon);
     let templateId = cmd.slice(1);
     if (amount >= 3) templateId += '3';

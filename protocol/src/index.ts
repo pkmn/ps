@@ -2073,7 +2073,7 @@ export const Protocol = new class {
       output.gender = gender;
       splitDetails.pop();
     }
-    if (splitDetails[1]) output.level = parseInt(splitDetails[1].substr(1)) || 100;
+    if (splitDetails[1]) output.level = parseInt(splitDetails[1].substr(1), 10) || 100;
     if (splitDetails[0]) output.speciesForme = splitDetails[0];
     return output;
   }

@@ -69,7 +69,9 @@ export class Generations {
 
   get(g: string | number) {
     // May not actually be a GenerationNum, but isNaN and Dex.forGen will validate the rest
-    const gen = (typeof g === 'string' ? parseInt(g.slice(g.search(/\d/))) : g) as GenerationNum;
+    const gen = (
+      typeof g === 'string' ? parseInt(g.slice(g.search(/\d/)), 10) : g
+    ) as GenerationNum;
     if (isNaN(+gen)) throw new Error(`Invalid gen ${g}`);
     if (this.cache[gen]) return this.cache[gen];
     return (this.cache[gen] = new Generation(this.dex.forGen(gen), d => this.exists(d, gen)));

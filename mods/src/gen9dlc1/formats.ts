@@ -132,8 +132,7 @@ export const Formats = [
       'Booster Energy', 'Damp Rock',
       'Focus Band',     "King's Rock",
       'Razor Fang',     'Quick Claw',
-      'Acupressure',    'Baton Pass',
-      'Last Respects'
+      'Baton Pass',     'Last Respects'
     ]
   },
   {
@@ -209,8 +208,7 @@ export const Formats = [
       'Snorlax',             'Zacian',            'Zacian-Crowned',
       'Zamazenta',           'Zamazenta-Crowned', 'Moody',
       'Focus Band',          'Focus Sash',        "King's Rock",
-      'Razor Fang',          'Quick Claw',        'Acupressure',
-      'Perish Song'
+      'Razor Fang',          'Quick Claw',        'Perish Song'
     ]
   },
   {
@@ -304,8 +302,8 @@ export const Formats = [
       'Power Construct',     'Booster Energy',     'Damp Rock',
       'Focus Band',          'Icy Rock',           "King's Rock",
       'Leppa Berry',         'Quick Claw',         'Razor Fang',
-      'Smooth Rock',         'Terrain Extender',   'Acupressure',
-      'Baton Pass',          'Last Respects'
+      'Smooth Rock',         'Terrain Extender',   'Baton Pass',
+      'Last Respects'
     ]
   },
   {

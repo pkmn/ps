@@ -297,7 +297,7 @@ export class ChoiceBuilder {
         // '2' (since Conversion targets 'self', targetLoc can't be 2).
         if (/\s(?:-|\+)?[1-3]$/.test(choice) && toID(choice) !== 'conversion2') {
           if (current.targetLoc) throw new Error('Move choice has multiple targets');
-          current.targetLoc = parseInt(choice.slice(-2));
+          current.targetLoc = parseInt(choice.slice(-2), 10);
           choice = choice.slice(0, -2).trim();
         } else if (choice.endsWith(' mega')) {
           current.mega = true;
@@ -333,7 +333,7 @@ export class ChoiceBuilder {
 
       if (/^[0-9]+$/.test(choice)) {
         // Parse a one-based move index.
-        current.move = parseInt(choice);
+        current.move = parseInt(choice, 10);
       } else {
         // Parse a move ID. Move names are also allowed, but may cause ambiguity.
         let moveid = toID(choice);
@@ -379,7 +379,7 @@ export class ChoiceBuilder {
       if (choice === 'notMine') throw new Error('You cannot decide for your partner!');
       if (/^[0-9]+$/.test(choice)) {
         // Parse a one-based move index.
-        current.targetPokemon = parseInt(choice);
+        current.targetPokemon = parseInt(choice, 10);
       } else {
         // Parse a pokemon name
         const lowerChoice = choice.toLowerCase();

@@ -105,20 +105,20 @@ export class Handler implements Protocol.Handler {
     if (this.battle.kickingInactive === 'off') this.battle.kickingInactive = 'on-unknown';
     if (args[1].slice(0, 11) === 'Time left: ') {
       const [time, totalTime, graceTime] = args[1].split(' | ');
-      this.battle.kickingInactive = parseInt(time.slice(11)) || 'on-unknown';
-      this.battle.totalTimeLeft = parseInt(totalTime);
-      this.battle.graceTimeLeft = parseInt(graceTime || '') || 0;
+      this.battle.kickingInactive = parseInt(time.slice(11), 10) || 'on-unknown';
+      this.battle.totalTimeLeft = parseInt(totalTime, 10);
+      this.battle.graceTimeLeft = parseInt(graceTime || '', 10) || 0;
       if (this.battle.totalTimeLeft === this.battle.kickingInactive) this.battle.totalTimeLeft = 0;
       return;
     } else if (args[1].slice(0, 9) === 'You have ') {
       // this is ugly but parseInt is documented to work this way so I'm going to be lazy
       // and not chop off the rest of the sentence
-      this.battle.kickingInactive = parseInt(args[1].slice(9)) || 'on-unknown';
+      this.battle.kickingInactive = parseInt(args[1].slice(9), 10) || 'on-unknown';
       return;
     } else if (args[1].slice(-14) === ' seconds left.') {
       const hasIndex = args[1].indexOf(' has ');
       if (toID(args[1].slice(0, hasIndex)) === this.player) {
-        this.battle.kickingInactive = parseInt(args[1].slice(hasIndex + 5)) || 'on-unknown';
+        this.battle.kickingInactive = parseInt(args[1].slice(hasIndex + 5), 10) || 'on-unknown';
       }
     }
   }
@@ -135,7 +135,7 @@ export class Handler implements Protocol.Handler {
   }
 
   '|teamsize|'(args: Args['|teamsize|']) {
-    this.battle.getSide(args[1]).totalPokemon = parseInt(args[2]);
+    this.battle.getSide(args[1]).totalPokemon = parseInt(args[2], 10);
   }
 
   '|clearpoke|'() {
@@ -149,7 +149,7 @@ export class Handler implements Protocol.Handler {
   }
 
   '|teampreview|'(args: Args['|teampreview|']) {
-    this.battle.teamPreviewCount = args[1] ? parseInt(args[1]) : 6;
+    this.battle.teamPreviewCount = args[1] ? parseInt(args[1], 10) : 6;
   }
 
   '|updatepoke|'(args: Args['|updatepoke|']) {
@@ -207,7 +207,7 @@ export class Handler implements Protocol.Handler {
       poke.side.swapWith(poke, poke2);
     } else {
       const poke = this.battle.getPokemon(args[1])!;
-      const index = parseInt(args[2]);
+      const index = parseInt(args[2], 10);
       poke.side.swapTo(poke, index);
     }
   }
@@ -308,7 +308,7 @@ export class Handler implements Protocol.Handler {
     const boost = args[2];
     if (this.battle.gen.num === 1 && boost === 'spd') return;
     // if (this.battle.gen.num === 1 && boost === 'spa') boost = 'spc';
-    const amount = parseInt(args[3]);
+    const amount = parseInt(args[3], 10);
     if (amount === 0) return;
 
     if (!poke.boosts[boost]) poke.boosts[boost] = 0;
@@ -328,7 +328,7 @@ export class Handler implements Protocol.Handler {
   '|-setboost|'(args: Args['|-setboost|']) {
     const poke = this.battle.getPokemon(args[1])!;
     const boost = args[2];
-    poke.boosts[boost] = parseInt(args[3]);
+    poke.boosts[boost] = parseInt(args[3], 10);
   }
 
   '|-swapboost|'(args: Args['|-swapboost|']) {
@@ -646,7 +646,7 @@ export class Handler implements Protocol.Handler {
     const commaIndex = newSpeciesForme.indexOf(',');
     if (commaIndex !== -1) {
       const level = newSpeciesForme.substr(commaIndex + 1).trim();
-      if (level.charAt(0) === 'L') poke.level = parseInt(level.substr(1));
+      if (level.charAt(0) === 'L') poke.level = parseInt(level.substr(1), 10);
       newSpeciesForme = args[2].substr(0, commaIndex);
     }
 

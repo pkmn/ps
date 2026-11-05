@@ -2064,7 +2064,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     mod: 'gen5',
     bestOfDefault: true,
     ruleset: [ 'Flat Rules' ],
-    banlist: [ 'Dark Void', 'Sky Drop', 'Soul Dew' ]
+    banlist: [ 'Chatot', 'Dark Void', 'Sky Drop', 'Soul Dew' ]
   },
   {
     name: '[Gen 5] Custom Game',

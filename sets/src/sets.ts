@@ -572,7 +572,7 @@ export function _unpack(buf: string, i = 0, j = 0, data?: Data) {
   // level
   j = buf.indexOf('|', i);
   if (j < 0) return {i, j};
-  if (i !== j) s.level = parseInt(buf.substring(i, j));
+  if (i !== j) s.level = parseInt(buf.substring(i, j), 10);
   i = j + 1;
 
   // happiness
@@ -668,7 +668,7 @@ export function _import(lines: string[], i = 0, data?: Data) {
         const spaceIndex = evLine.indexOf(' ');
         if (spaceIndex === -1) continue;
         const stat = DECODE_STAT[evLine.substr(spaceIndex + 1)];
-        const val = parseInt(evLine.substr(0, spaceIndex));
+        const val = parseInt(evLine.substr(0, spaceIndex), 10);
         if (!stat) continue;
         s.evs[stat] = val;
       }
@@ -680,7 +680,7 @@ export function _import(lines: string[], i = 0, data?: Data) {
         const spaceIndex = ivLine.indexOf(' ');
         if (spaceIndex === -1) continue;
         const stat = DECODE_STAT[ivLine.substr(spaceIndex + 1)];
-        let val = parseInt(ivLine.substr(0, spaceIndex));
+        let val = parseInt(ivLine.substr(0, spaceIndex), 10);
         if (!stat) continue;
         if (isNaN(val)) val = 31;
         s.ivs[stat] = val;

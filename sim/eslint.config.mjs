@@ -38,8 +38,10 @@ export default [...pkmn, {
     "no-shadow": "off",
     "no-undef": "off",
     "no-unused-vars": "off",
+    "no-useless-assignment": "off",
     "no-var": "off",
     "preserve-caught-error": "off",
+    "radix": "off",
     "sort-imports": "off",
   }
 }];

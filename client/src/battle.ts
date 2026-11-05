@@ -199,7 +199,7 @@ export class Battle {
   }
 
   setTurn(turnNum: string | number) {
-    turnNum = parseInt(turnNum as string);
+    turnNum = parseInt(turnNum as string, 10);
     this.turn = turnNum;
 
     for (const side of this.sides) {
@@ -248,10 +248,10 @@ export class Battle {
     let siden = -1;
     let slot = -1; // if there is an explicit slot for this pokemon
     if (/^p[1-9]($|: )/.test(name)) {
-      siden = parseInt(name.charAt(1)) - 1;
+      siden = parseInt(name.charAt(1), 10) - 1;
       name = name.slice(4);
     } else if (/^p[1-9][a-f]: /.test(name)) {
-      siden = parseInt(name.charAt(1)) - 1;
+      siden = parseInt(name.charAt(1), 10) - 1;
       slot = SLOTS[name.charAt(2)];
       name = name.slice(5);
       pokemonid = `p${siden + 1}: ${name}` as PokemonIdent;

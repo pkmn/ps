@@ -17,6 +17,12 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
       const format = formats.get(s);
       expect(format.exists).toBe(true);
       expect(() => formats.getRuleTable(format)).not.toThrow();
+      for (const f of formats.all()) {
+        if (f.mod === dex.modid) {
+          expect(f.exists).toBe(true);
+          expect(() => formats.getRuleTable(f)).not.toThrow();
+        }
+      }
     }
   };
 

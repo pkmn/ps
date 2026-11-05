@@ -214,7 +214,7 @@ export class Sprites {
         return {gen, w, h, url: `${url}/${dir}/${file}.gif`, pixelated: gen <= 5};
       }
 
-      [gen, graphics, dir] = rewrite(dir, graphics, 'gen5');
+      [gen, , dir] = rewrite(dir, graphics, 'gen5');
     } else if ((data[facingf] && options?.gender === 'F')) {
       facing = `${facing}f`;
     }
@@ -401,8 +401,8 @@ export class Icons {
    *   - `domain`: the domain to fetch sprites from, defaults to `'play.pokemonshowdown.com`
    */
   getPokeball(name: string, options?: {protocol?: Protocol; domain?: string}) {
-    let left = 0;
-    let top = 0;
+    let left: number;
+    let top: number;
 
     const css: {[attr: string]: string} = {
       display: 'inline-block',
