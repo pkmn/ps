@@ -21,6 +21,7 @@ export interface Data {
   forGen?(gen: GenerationNum): Data;
 
   readonly gen: GenerationNum;
+  readonly modid?: ID;
 
   readonly abilities: DataTable<{name: string}>;
   readonly items: DataTable<{name: string}>;
@@ -244,7 +245,7 @@ export const Sets = new class {
     if (s.gigantamax) {
       buf += 'Gigantamax: Yes  \n';
     }
-    if (s.teraType) {
+    if (s.teraType && !data?.modid?.startsWith('champions')) {
       const d = data?.species.get(species);
       buf += 'Tera Type: ' + (s.teraType || d?.requiredTeraType || d?.types?.[0]) + '  \n';
     }
@@ -359,18 +360,25 @@ export const Sets = new class {
 
   // NOTE: to properly dedupe you still must compare computed stats
   canonicalize(s: Partial<PokemonSet>, data: Data) {
+    const champions = !!data.modid?.startsWith('champions');
     const species = data.species.get(s.species!)!;
-    s.species = toID(species.battleOnly ? species.baseSpecies : species.name);
+    s.species = toID(
+      typeof species.battleOnly === 'string' && species.battleOnly !== 'Greninja-Bond'
+        ? species.battleOnly
+        : species.battleOnly
+          ? species.baseSpecies
+          : species.name
+    );
     s.name = undefined;
 
     s.item = data.gen >= 2 && s.item ? toID(s.item) : undefined;
     s.ability =
       data.gen >= 3 ? toID(s.ability ? s.ability : species.abilities![0]) : undefined;
     s.gender = data.gen >= 2 && s.gender && s.gender !== species.gender ? s.gender : undefined;
-    s.level = s.level || 100;
+    s.level = s.level || (champions ? 50 : 100);
 
     let maxed = true;
-    if (!s.ivs) {
+    if (!s.ivs || champions) {
       s.ivs = {hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31};
     } else {
       for (const stat of STATS) {
@@ -378,6 +386,7 @@ export const Sets = new class {
         if (data.gen < 3) s.ivs[stat] = toIV(toDV(s.ivs[stat]));
         if (s.ivs[stat] !== 31) maxed = false;
       }
+      if (data.gen < 3) s.ivs.hp = toIV(getHPDV(s.ivs));
     }
 
     const nature = data.gen < 3 ? undefined : data.natures.get(s.nature || 'serious');
@@ -389,7 +398,12 @@ export const Sets = new class {
     const moves = [];
     for (const move of s.moves!) {
       let id = toID(move);
-      if (id === 'return' || id === 'frustration') {
+      if (
+        (s.species === 'zacian' && id === 'behemothblade') ||
+        (s.species === 'zamazenta' && id === 'behemothbash')
+      ) {
+        id = 'ironhead' as ID;
+      } else if (id === 'return' || id === 'frustration') {
         happiness = id;
       } else if (id === 'swordsdance') {
         swordsdance = true;
@@ -414,16 +428,20 @@ export const Sets = new class {
         if (!s.evs[stat]) {
           s.evs[stat] = 0;
         } else {
-          const val = calc(data.gen, stat, base[stat], s.ivs[stat], s.evs[stat], s.level, nature);
+          const val = calc(
+            data.gen, stat, base[stat], s.ivs[stat], s.evs[stat], s.level, nature, champions
+          );
+          let x: number;
           if (stat === 'hp') {
-            s.evs[stat] = base[stat] === 1 ? 0
-              : Math.max(0, (Math.ceil(((val - s.level - 10) * 100) / s.level) -
-                2 * base[stat] - s.ivs[stat]) * 4);
+            x = base[stat] === 1
+              ? 0
+              : Math.ceil(((val - s.level - 10) * 100) / s.level) - 2 * base[stat] - s.ivs[stat];
           } else {
             const n = !nature ? 1 : nature.plus === stat ? 1.1 : nature.minus === stat ? 0.9 : 1;
-            s.evs[stat] = Math.max(0, (Math.ceil(((Math.ceil(val / n) - 5) * 100) / s.level) -
-              2 * base[stat] - s.ivs[stat]) * 4);
+            x = Math.ceil(((Math.ceil(val / n) - 5) * 100) / s.level) -
+              2 * base[stat] - s.ivs[stat];
           }
+          s.evs[stat] = x <= 0 ? 0 : champions ? Math.ceil((x + 1) / 2) : x * 4;
         }
       }
     }
@@ -437,7 +455,7 @@ export const Sets = new class {
     }
 
     const canBottle = data.gen >= 7 && s.level === 100;
-    if (hpType && maxed) {
+    if (hpType && (maxed || (!canBottle && getHiddenPower(data.gen, s.ivs).type !== hpType))) {
       const ivs = data.gen === 2 ? HP[hpType].dvs : HP[hpType].ivs;
       for (const stat of STATS) {
         if (data.gen === 2) {
@@ -463,7 +481,7 @@ export const Sets = new class {
     s.pokeball = undefined;
     s.dynamaxLevel = data.gen === 8 ? s.dynamaxLevel : undefined;
     s.gigantamax = data.gen === 8 && s.gigantamax ? s.gigantamax : undefined;
-    s.teraType = data.gen === 9 ? s.teraType : undefined;
+    s.teraType = data.gen === 9 && !champions ? s.teraType : undefined;
 
     return s;
   }
@@ -868,17 +886,19 @@ function calc(
   iv = 31,
   ev?: number,
   level = 100,
-  nature?: Nature
+  nature?: Nature,
+  champions?: boolean
 ) {
   if (ev === undefined) ev = gen < 3 ? 252 : 0;
   if (gen < 3) {
     iv = toDV(iv) * 2;
     nature = undefined;
   }
+  const e = champions ? Math.max(2 * ev - 1, 0) : tr(ev / 4);
   if (stat === 'hp') {
-    return base === 1 ? base : tr(tr(2 * base + iv + tr(ev / 4) + 100) * level / 100 + 10);
+    return base === 1 ? base : tr(tr(2 * base + iv + e + 100) * level / 100 + 10);
   } else {
-    const val = tr(tr(2 * base + iv + tr(ev / 4)) * level / 100 + 5);
+    const val = tr(tr(2 * base + iv + e) * level / 100 + 5);
     if (nature !== undefined) {
       if (nature.plus === stat) return tr(tr(val * 110, 16) / 100);
       if (nature.minus === stat) return tr(tr(val * 90, 16) / 100);

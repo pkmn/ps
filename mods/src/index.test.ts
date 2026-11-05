@@ -171,6 +171,7 @@ for (const [pkg, Dex] of Object.entries(DATA)) {
         expectFormat(dex, 'gen9championsou');
       });
       it('championsregmb', async () => {
+        Dex.mod('champions' as ID, await import('./champions') as ModData);
         const dex =
           new ModdedDex(Dex.mod('championsregmb' as ID,
             await import('./championsregmb') as ModData));

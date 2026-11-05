@@ -32,7 +32,7 @@ This package contains data and logic for several mods:
 - `gen7letsgo`: A mod on top of Generation 7 which implements Let's Go Pikachu and Let's Go Eevee
 - `gen8dlc1`: A mod on top of Generation 8 which contains data from just Pokémon Sword and Shield
    and the Isle of Armor DLC (ie. Generation 8 **without** the data from the Crown Tundra DLC)
-- `gen9dlc1`: A mod on top of Generation 9 which contains data from just Pokémon Scarlet and Violet
+- `gen9predlc`: A mod on top of Generation 9 which contains data from just Pokémon Scarlet and Violet
   (ie. Generation 9 **without** the data from the Teal Mask or the Indigo Disk DLC)
 - `gen9dlc1`: A mod on top of Generation 9 which contains data from just Pokémon Scarlet and Violet
    and the Teal Mask DLC (ie. Generation 9 **without** the data from the Indigo Disk DLC)
@@ -43,7 +43,9 @@ This package contains data and logic for several mods:
 These mods can be applied to a `Dex` implementation by passing the data as an argument to the `mod`
 method. Because of type inconsistencies between `@pkmn/sim` and `@pkmn/dex`, to typecheck **the
 imported mod must be cast to `ModData`** first. This cast should be safe, but unfortunately results
-in slightly less ergonomic usage than would be desirable.
+in slightly less ergonomic usage than would be desirable. Note that mods which inherit from another
+non-base mod (`gen9predlc` inherits from `gen9dlc1` and `championsregmb` inherits from `champions`)
+require the parent mod to be loaded via `Dex.mod` first.
 
 > [!NOTE]
 > The `gen8bdsp` and `gen8legends` mods exist within the `@pkmn/sim` package along with the base
@@ -80,7 +82,7 @@ approach aims to simply achieve parity with the upstream Pokémon Showdown imple
 
 ```ts
 import {Dex, ID, ModData, Ability, AbilityData} from '@pkmn/dex'; // '@pkmn/sim'
-import {ModdexDex} from '@pkmn/mods';
+import {ModdedDex} from '@pkmn/mods';
 
 const dex = Dex.mod('foo' as ID, {
   Abilities: {

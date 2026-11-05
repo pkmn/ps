@@ -1,5 +1,5 @@
 
-import {GenerationNum, StatsTable} from '@pkmn/types';
+import {GenerationNum, ID, StatID, StatsTable} from '@pkmn/types';
 
 import {Data, toID} from '../sets';
 
@@ -201,6 +201,14 @@ for (let gen = 1; gen <= 9; gen++) {
     },
     natures: {
       get(name: string) {
+        const id = toID(name);
+        if (id === 'sassy') {
+          return {
+            name: 'Sassy',
+            plus: 'spd' as Exclude<StatID, 'hp'>,
+            minus: 'spe' as Exclude<StatID, 'hp'>,
+          };
+        }
         return {name};
       },
     },
@@ -209,3 +217,8 @@ for (let gen = 1; gen <= 9; gen++) {
     },
   };
 }
+
+export const CHAMPIONS: Data = {
+  ...GEN[9],
+  modid: 'champions' as ID,
+};

@@ -2,7 +2,7 @@ import * as fs from 'fs';
 
 import {Team, Teams} from '../teams';
 
-import {GEN} from './data';
+import {CHAMPIONS, GEN} from './data';
 
 const readTeam = (file: string) => fs.readFileSync(`${__dirname}/fixtures/${file}`, 'utf8');
 const TEAM: string = readTeam('team');
@@ -50,6 +50,58 @@ describe('Team', () => {
     expect(alakazam.moves).toEqual(['focusblast', 'psychic', 'recover', 'shadowball']);
     expect(magnezone.ivs).toEqual({hp: 31, atk: 0, def: 31, spa: 31, spd: 31, spe: 31});
     expect(magnezone.hpType).toBe('Fire');
+
+    const gen3Magnezone = Team.canonicalize([
+      {
+        species: 'Magnezone',
+        ability: 'Magnet Pull',
+        ivs: {hp: 31, atk: 0, def: 31, spa: 31, spd: 31, spe: 31},
+        moves: ['Hidden Power Fire', 'Thunderbolt'],
+      },
+    ], GEN[6])[0];
+    expect(gen3Magnezone.ivs).toEqual({hp: 31, atk: 30, def: 31, spa: 30, spd: 31, spe: 30});
+
+    const gen1Alakazam = Team.canonicalize([
+      {
+        species: 'Alakazam',
+        ivs: {hp: 31, atk: 1, def: 31, spa: 31, spd: 31, spe: 31},
+        moves: ['Psychic'],
+      },
+    ], GEN[1])[0];
+    expect(gen1Alakazam.ivs).toEqual({hp: 15, atk: 1, def: 31, spa: 31, spd: 31, spe: 31});
+  });
+
+  it('canonicalize (champions)', () => {
+    const team = [
+      {
+        species: 'Tangrowth',
+        item: 'Assault Vest',
+        ability: 'Regenerator',
+        evs: {hp: 32, atk: 0, def: 9, spa: 0, spd: 25, spe: 1},
+        ivs: {hp: 31, atk: 0, def: 31, spa: 31, spd: 31, spe: 0},
+        nature: 'Sassy',
+        teraType: 'Steel',
+        moves: ['Giga Drain', 'Knock Off', 'Power Whip', 'Earthquake'],
+      },
+      {
+        species: 'Alakazam-Mega',
+        item: 'Alakazite',
+        ability: 'Magic Guard',
+        evs: {hp: 2, atk: 0, def: 0, spa: 32, spd: 0, spe: 32},
+        nature: 'Timid',
+        moves: ['Psychic', 'Focus Blast', 'Shadow Ball', 'Recover'],
+      },
+    ];
+
+    const canon = Team.canonicalize(team, CHAMPIONS);
+    expect(canon.map(s => s.species)).toEqual(['tangrowth', 'alakazam']);
+    expect(canon[0].level).toBe(50);
+    expect(canon[0].ivs).toEqual({hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31});
+    // 1 Spe Stat Point on Base 50 Sassy (70*0.9=63 vs 71*0.9=63) is wasted and canonicalizes to 0,
+    // while 9 Def and 25 SpD Stat Points are preserved without rounding to multiples of 4.
+    expect(canon[0].evs).toEqual({hp: 32, atk: 0, def: 9, spa: 0, spd: 25, spe: 0});
+    expect(canon[0].teraType).toBeUndefined();
+    expect(canon[1].evs).toEqual({hp: 2, atk: 0, def: 0, spa: 32, spd: 0, spe: 32});
   });
 
   it('fromString', () => {
@@ -62,6 +114,13 @@ describe('Team', () => {
     expect(amoonguss.species).toBe('amoonguss');
     expect(amoonguss.ability).toBe('effectspore');
     expect(amoonguss.level).toBe(50);
+
+    const c = Team.fromString(
+      'gen9championsou]Team Name|Nickname|tangrowth||regenerator|||||||50|,,,,,Steel',
+      CHAMPIONS
+    )!;
+    expect(c.data?.modid).toBe('champions');
+    expect(c.toString()).not.toContain('Tera Type:');
   });
 });
 

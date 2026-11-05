@@ -48,8 +48,8 @@ parameter to the method you're using. The `Data` interface has been written such
 compatible with the `Dex` type from
 [smogon/pokemon-showdown-client](https://github.com/smogon/pokemon-showdown-client),
 [smogon/pokemon-showdown](https://github.com/smogon/pokemon-showdown), and from the
-[`pkmn/dex`](../dex) package which can be used in a standalone fashion outside of Pokémon Showdown
-codebase:
+[`@pkmn/dex`](../dex) package (optionally modded with [`@pkmn/mods`](../mods)) which can be used in
+a standalone fashion outside of the Pokémon Showdown codebase:
 
 ```ts
 import {Dex} from '@pkmn/dex';

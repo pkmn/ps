@@ -20,12 +20,14 @@ export class Team<S extends Partial<PokemonSet> = Partial<PokemonSet>> {
 
     this.data = data;
     if (format && data?.forGen) {
+      let gen: GenerationNum;
       if (format.slice(0, 3) === 'gen') {
-        this.data = data.forGen(parseInt(format[3], 10) as GenerationNum);
+        gen = parseInt(format[3], 10) as GenerationNum;
       } else {
         this.format = `gen6${format}`;
-        this.data = data.forGen(6);
+        gen = 6;
       }
+      if (data.gen !== gen) this.data = data.forGen(gen);
     }
   }
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## 6.0.0
+
+- Upgrade `@pkmn/types` dependency to `^5.0.0`.
+- Add support for Pokémon Champions (`modid` starting with `'champions'`) in `Sets.exportSet` and
+  `Sets.canonicalize` / `Team.canonicalize`, and properly canonicalize `battleOnly` formes.
+- Preserve modded `Data` in `Team` constructor when `data.gen` already matches the format's
+  generation.
+
 ## 5.2
 
 - Pokémon Showdown renamed `forceTeraType` to `requiredTeraType`.
