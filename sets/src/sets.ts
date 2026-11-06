@@ -361,7 +361,7 @@ export const Sets = new class {
   // NOTE: to properly dedupe you still must compare computed stats
   canonicalize(s: Partial<PokemonSet>, data: Data) {
     const champions = !!data.modid?.startsWith('champions');
-    const species = data.species.get(s.species!)!;
+    let species = data.species.get(s.species!)!;
     s.species = toID(
       typeof species.battleOnly === 'string' && species.battleOnly !== 'Greninja-Bond'
         ? species.battleOnly
@@ -369,6 +369,7 @@ export const Sets = new class {
           ? species.baseSpecies
           : species.name
     );
+    species = data.species.get(s.species)!;
     s.name = undefined;
 
     s.item = data.gen >= 2 && s.item ? toID(s.item) : undefined;
@@ -419,7 +420,7 @@ export const Sets = new class {
     }
     s.moves = moves.sort((a, b) => a.localeCompare(b));
 
-    const base = data.species.get(s.species)!.baseStats;
+    const base = species.baseStats;
     s.evs = s.evs || {} as any as StatsTable;
     for (const stat of STATS) {
       if (data.gen < 3) {

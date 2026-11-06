@@ -1,6 +1,6 @@
 {
   "name": "@pkmn/sets",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "Parsing logic for Pokémon Showdown sets and teams",
   "repository": "github:pkmn/ps",
   "license": "MIT",

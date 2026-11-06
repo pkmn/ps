@@ -82,13 +82,14 @@ export class Team<S extends Partial<PokemonSet> = Partial<PokemonSet>> {
     const rest: Array<[ID, Partial<PokemonSet>]> = [];
     for (const s of team) {
       const set = Sets.canonicalize(s, data);
-      if (lead) {
+      if (lead || data.gen >= 5) {
         rest.push([set.species as ID, set]);
       } else {
         lead = set;
       }
     }
-    return [lead!, ...rest.sort((a, b) => a[0].localeCompare(b[0])).map(([, set]) => set)];
+    const sorted = rest.sort((a, b) => a[0].localeCompare(b[0])).map(([, set]) => set);
+    return lead ? [lead, ...sorted] : sorted;
   }
 }
 

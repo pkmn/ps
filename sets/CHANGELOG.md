@@ -1,5 +1,10 @@
 # Changelog
 
+## 7.0.0
+
+- Only preserve lead slot ordering in `Team.canonicalize` in Generations 1–4.
+- Use canonicalized base species for default ability and gender lookups in `Sets.canonicalize`.
+
 ## 6.0.0
 
 - Upgrade `@pkmn/types` dependency to `^5.0.0`.

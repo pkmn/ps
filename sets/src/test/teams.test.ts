@@ -42,7 +42,7 @@ describe('Team', () => {
 
     const canon = Team.canonicalize(team, GEN[9]);
     expect(canon.map(s => s.species)).toEqual([
-      'magnezone', 'alakazam', 'gliscor', 'magearna', 'tangrowth', 'tornadustherian',
+      'alakazam', 'gliscor', 'magearna', 'magnezone', 'tangrowth', 'tornadustherian',
     ]);
     expect(alakazam.name).toBeUndefined();
     expect(alakazam.level).toBe(100);
@@ -50,6 +50,11 @@ describe('Team', () => {
     expect(alakazam.moves).toEqual(['focusblast', 'psychic', 'recover', 'shadowball']);
     expect(magnezone.ivs).toEqual({hp: 31, atk: 0, def: 31, spa: 31, spd: 31, spe: 31});
     expect(magnezone.hpType).toBe('Fire');
+
+    const gen4Canon = Team.canonicalize(team, GEN[4]);
+    expect(gen4Canon.map(s => s.species)).toEqual([
+      'magnezone', 'alakazam', 'gliscor', 'magearna', 'tangrowth', 'tornadustherian',
+    ]);
 
     const gen3Magnezone = Team.canonicalize([
       {
@@ -94,14 +99,14 @@ describe('Team', () => {
     ];
 
     const canon = Team.canonicalize(team, CHAMPIONS);
-    expect(canon.map(s => s.species)).toEqual(['tangrowth', 'alakazam']);
-    expect(canon[0].level).toBe(50);
-    expect(canon[0].ivs).toEqual({hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31});
+    expect(canon.map(s => s.species)).toEqual(['alakazam', 'tangrowth']);
+    expect(canon[0].evs).toEqual({hp: 2, atk: 0, def: 0, spa: 32, spd: 0, spe: 32});
+    expect(canon[1].level).toBe(50);
+    expect(canon[1].ivs).toEqual({hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31});
     // 1 Spe Stat Point on Base 50 Sassy (70*0.9=63 vs 71*0.9=63) is wasted and canonicalizes to 0,
     // while 9 Def and 25 SpD Stat Points are preserved without rounding to multiples of 4.
-    expect(canon[0].evs).toEqual({hp: 32, atk: 0, def: 9, spa: 0, spd: 25, spe: 0});
-    expect(canon[0].teraType).toBeUndefined();
-    expect(canon[1].evs).toEqual({hp: 2, atk: 0, def: 0, spa: 32, spd: 0, spe: 32});
+    expect(canon[1].evs).toEqual({hp: 32, atk: 0, def: 9, spa: 0, spd: 25, spe: 0});
+    expect(canon[1].teraType).toBeUndefined();
   });
 
   it('fromString', () => {
