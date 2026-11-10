@@ -146,7 +146,7 @@ type DeepPartial<T> = {
 			: DeepPartial<T[P]>
 };
 
-export type ModData = DeepPartial<ModdedDex['data']>;
+export type ModData = DeepPartial<ModdedDex['data']> & {Formats?: FormatList};
 
 export const toID = Data.toID;
 
@@ -218,7 +218,7 @@ export class ModdedDex {
 		return dexes;
 	}
 
-	mod(mod: string | undefined, modData?: DeepPartial<ModdedDex['data']> & {Formats?: FormatList}): ModdedDex {
+	mod(mod: string | undefined, modData?: ModData): ModdedDex {
 		if (!mod) return dexes['base'];
 		const modid = toID(mod);
 		if (modData?.Types && !modData.TypeChart) modData.TypeChart = modData.Types;
